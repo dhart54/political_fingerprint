@@ -129,6 +129,22 @@ def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
     }
 
 
+def search_legislators(*, query: str = "") -> list[dict[str, object]]:
+    normalized_query = query.strip().lower()
+    matches = [
+        _serialize_legislator(legislator)
+        for legislator in FIXTURE_DATA.legislators
+        if not normalized_query or normalized_query in str(legislator["name_display"]).lower()
+    ]
+    return sorted(
+        matches,
+        key=lambda legislator: (
+            str(legislator["name_display"]).lower(),
+            str(legislator["id"]).lower(),
+        ),
+    )
+
+
 def _infer_legislator_chamber(legislator_id: str) -> str:
     if legislator_id not in LEGISLATOR_CHAMBERS:
         raise KeyError(f"Unknown legislator_id: {legislator_id}")

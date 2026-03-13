@@ -274,6 +274,17 @@ Returned data includes:
 - House representative for that district
 - both senators for that state
 
+## Legislator Search API
+
+The legislator search endpoint returns fixture-backed legislator records for frontend discovery.
+
+Current behavior:
+
+- supports case-insensitive substring matching against `name_display`
+- returns all available legislators when the query is empty
+- sorts results deterministically by display name, then legislator id
+- returns stable identity and display fields for selection flows
+
 ## Frontend API Connectivity
 
 The frontend home page performs a client-side health check against `NEXT_PUBLIC_API_BASE_URL`.
