@@ -53,3 +53,12 @@ def test_run_ingest_supports_congress_sample_source() -> None:
     assert ingest_result.source == "congress_sample"
     assert ingest_result.records_loaded == 48
     assert isinstance(ingest_result.fixtures, FixtureBundle)
+
+
+def test_run_ingest_supports_house_clerk_sample_source() -> None:
+    ingest_result = run_ingest(source="house_clerk_sample")
+
+    assert isinstance(ingest_result, IngestResult)
+    assert ingest_result.source == "house_clerk_sample"
+    assert ingest_result.records_loaded == 26
+    assert isinstance(ingest_result.fixtures, FixtureBundle)

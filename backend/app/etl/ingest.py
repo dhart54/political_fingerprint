@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any
 
 from app.etl.congress_adapter import load_congress_sample_bundle
+from app.etl.house_clerk_adapter import load_house_clerk_sample_bundle
 from app.etl.types import FixtureBundle
 
 
@@ -33,6 +34,8 @@ def run_ingest(*, source: str = "fixtures") -> IngestResult:
         fixtures = load_fixture_bundle()
     elif source == "congress_sample":
         fixtures = load_congress_sample_bundle()
+    elif source == "house_clerk_sample":
+        fixtures = load_house_clerk_sample_bundle()
     else:
         raise ValueError(f"Unsupported ingest source: {source}")
 

@@ -225,22 +225,30 @@ The ETL fixture runner loads the fixture files, classifies roll calls determinis
 
 For this repository state, fixture design prioritizes the `10` policy roll call requirement. Under the locked drift threshold of `20` total eligible votes, that means fixture drift outputs remain `insufficient_data` for all three legislators.
 
-## Live Source Adapter
+## Live Source Adapters
 
-The repository now includes a first non-fixture ingestion adapter through `source="congress_sample"`.
+The repository now includes non-fixture ingestion adapters through:
+
+- `source="congress_sample"`
+- `source="house_clerk_sample"`
 
 Current source assumptions:
 
-- input records are official-style Congress JSON exports stored locally
-- member records provide `bioguideId`, display name, chamber, state, district, and party code
-- bill records provide congress, bill type, bill number, title, summary, committee, and subjects
-- roll call records provide chamber, congress, roll number, ISO vote date, question, description, bill reference, and source URL
-- vote records provide chamber, roll number, member display name, and vote position
+- `congress_sample` input records are official-style Congress JSON exports stored locally
+- `congress_sample` member records provide `bioguideId`, display name, chamber, state, district, and party code
+- `congress_sample` bill records provide congress, bill type, bill number, title, summary, committee, and subjects
+- `congress_sample` roll call records provide chamber, congress, roll number, ISO vote date, question, description, bill reference, and source URL
+- `congress_sample` vote records provide chamber, roll number, member display name, and vote position
+- `house_clerk_sample` input records are official-style House Clerk member XML and roll call XML samples stored locally
+- `house_clerk_sample` member records provide `bioguideID`, official display name, party, state postal code, and state-district code
+- `house_clerk_sample` roll call records provide congress, session, roll call number, `legis-num`, `vote-question`, `vote-desc`, and action date
+- `house_clerk_sample` votes are matched to legislators by `bioguide-id`
 
 Current adapter behavior:
 
 - normalizes official-style fields into the existing ingest bundle shape
 - derives stable internal ids for legislators, bills, and roll calls
+- for House Clerk samples, derives bill identity from `legis-num` and bill title from `vote-desc`
 - reuses the same downstream classification, metric, ETL write, and API read paths as fixture ingestion
 
 ## Fingerprint API

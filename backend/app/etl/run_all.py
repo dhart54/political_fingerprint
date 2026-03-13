@@ -8,10 +8,15 @@ from app.etl.seed import run_etl_and_persist
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--fixtures", action="store_true")
+    parser.add_argument(
+        "--source",
+        choices=("fixtures", "congress_sample", "house_clerk_sample"),
+        default="fixtures",
+    )
     parser.add_argument("--compute-only", action="store_true")
     args = parser.parse_args()
 
-    source = "fixtures" if args.fixtures else "fixtures"
+    source = "fixtures" if args.fixtures else args.source
     if args.compute_only:
         result = run_etl(source=source, as_of=date(2026, 3, 12))
     else:
