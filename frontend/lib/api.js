@@ -16,3 +16,21 @@ export async function fetchHealth() {
 export function getApiBaseUrl() {
   return API_BASE_URL;
 }
+
+export async function fetchFingerprint({
+  legislatorId,
+  comparisonParty = "ALL",
+}) {
+  const response = await fetch(
+    `${API_BASE_URL}/legislators/${legislatorId}/fingerprint?comparison_party=${comparisonParty}`,
+    {
+      cache: "no-store",
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`Fingerprint request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}

@@ -306,7 +306,7 @@ Health endpoint visible in UI.
 
 # Phase 8 — Fingerprint UI
 
-## Task 8.1 — Radar chart component
+## Task 8.1 — Radar chart component [COMPLETED]
 
 Create:
 

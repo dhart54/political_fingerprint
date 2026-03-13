@@ -212,3 +212,16 @@ Current behavior:
 - requests `GET /health`
 - renders connected, checking, or unavailable status in the UI
 - displays the configured API base URL so the active backend target is visible
+
+## Fingerprint Radar UI
+
+The frontend radar chart renders:
+
+- the legislator fingerprint polygon from `vote_share`
+- the chamber median overlay polygon from `median_share`
+
+Current UI behavior:
+
+- overlay defaults to `ALL`
+- the user can toggle overlay comparison between `ALL`, `D`, and `R`
+- the toggle changes only the median overlay, not the fingerprint values

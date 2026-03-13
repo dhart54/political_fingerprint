@@ -1,4 +1,5 @@
 import HealthStatus from "../components/HealthStatus";
+import FingerprintRadar from "../components/FingerprintRadar";
 
 export default function HomePage() {
   return (
@@ -40,6 +41,7 @@ export default function HomePage() {
             </p>
           </article>
         </div>
+        <FingerprintRadar />
         <HealthStatus />
       </section>
     </main>
