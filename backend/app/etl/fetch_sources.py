@@ -55,7 +55,7 @@ def fetch_house_clerk_roll_calls(
     *,
     year: int,
     roll_numbers: list[int],
-    output_dir: Path,
+    output_dir: Path = HOUSE_CLERK_CACHE_DIR,
     overwrite: bool = False,
 ) -> list[DownloadResult]:
     return [
@@ -73,7 +73,7 @@ def fetch_senate_vote_files(
     congress: int,
     session: int,
     roll_numbers: list[int],
-    output_dir: Path,
+    output_dir: Path = SENATE_XML_CACHE_DIR,
     overwrite: bool = False,
 ) -> list[DownloadResult]:
     return [

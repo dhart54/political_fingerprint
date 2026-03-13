@@ -294,6 +294,22 @@ Current CLI examples:
 - `python -m app.etl.fetch_sources senate-members`
 - `python -m app.etl.fetch_sources congress-bill --congress 119 --bill-type hr --bill-number 120 --api-key YOUR_KEY`
 
+## Live Pipeline Orchestration
+
+The repository now includes a single orchestration entry point in `app.etl.live_pipeline`.
+
+Current orchestration behavior:
+
+- fetches House member XML before House roll call downloads when House roll numbers are requested
+- fetches Senate member XML before Senate vote downloads when Senate roll numbers are requested
+- fetches Congress.gov bill metadata for each requested bill reference
+- runs persistent ETL immediately after the fetch step
+- currently persists either `house_clerk_cache` or `senate_xml_cache` as the primary source for that run
+
+Current CLI example:
+
+- `python -m app.etl.live_pipeline --house-year 2025 --house-roll 1 --bill 119:hr:120 --congress-api-key YOUR_KEY`
+
 ## Fingerprint API
 
 The fingerprint endpoint returns precomputed fingerprint rows only.

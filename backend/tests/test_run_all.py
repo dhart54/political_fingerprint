@@ -37,3 +37,7 @@ def test_run_all_supports_compute_only_flag(monkeypatch, capsys) -> None:
     output = capsys.readouterr().out
 
     assert "compute" in output
+
+
+def test_default_as_of_date_is_locked() -> None:
+    assert run_all.DEFAULT_AS_OF_DATE.isoformat() == "2026-03-12"
