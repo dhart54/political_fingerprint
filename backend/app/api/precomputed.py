@@ -42,6 +42,24 @@ def has_legislator(*, legislator_id: str) -> bool:
     )
 
 
+def get_legislator_profile(*, legislator_id: str) -> dict[str, object] | None:
+    legislator = _get_db_legislator_by_external_id(legislator_id)
+    if legislator is not None:
+        return _serialize_legislator(legislator)
+
+    fixture_legislator = next(
+        (
+            row
+            for row in FALLBACK_FIXTURE_DATA.legislators
+            if _serialize_legislator(row)["id"] == legislator_id
+        ),
+        None,
+    )
+    if fixture_legislator is None:
+        return None
+    return _serialize_legislator(fixture_legislator)
+
+
 def search_legislators(*, query: str = "") -> list[dict[str, object]]:
     database_results = _search_db_legislators(query=query)
     if database_results is not None:

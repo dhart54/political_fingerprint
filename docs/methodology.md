@@ -418,3 +418,15 @@ Current UI behavior:
 - fingerprint, drift, and summary failures show plain recovery guidance
 - ZIP lookup validates 5-digit input before requesting data
 - empty summary and fingerprint states are rendered explicitly instead of leaving blank sections
+
+## Comparison API
+
+The comparison endpoint bundles two legislators into one side-by-side response without changing single-legislator endpoints.
+
+Current behavior:
+
+- `GET /compare/legislators`
+- requires `left_legislator_id` and `right_legislator_id`
+- supports the same `comparison_party` overlay toggle as the fingerprint endpoint
+- returns legislator metadata plus each side's fingerprint, drift, and summary payload
+- does not add ranking, winner labels, or evaluative comparison language
