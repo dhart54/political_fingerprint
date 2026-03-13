@@ -102,7 +102,7 @@ Connection test passes.
 
 # Phase 2 — Database Schema
 
-## Task 2.1 — Create migrations
+## Task 2.1 — Create migrations [COMPLETED]
 
 Create migration files defining:
 
