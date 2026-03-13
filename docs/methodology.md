@@ -311,6 +311,18 @@ Current CLI example:
 - `python -m app.etl.live_pipeline --house-year 2025 --house-roll 1 --bill 119:hr:120 --congress-api-key YOUR_KEY`
 - `python -m app.etl.live_pipeline --house-year 2025 --house-roll 1 --senate-congress 119 --senate-session 1 --senate-roll 1 --bill 119:hr:120 --bill 119:s:210 --congress-api-key YOUR_KEY`
 
+## Starter Real-Data Run
+
+The repository now includes a convenience starter script in `scripts/run_real_data_starter.py`.
+
+Current starter behavior:
+
+- targets one verified House example roll and one verified Senate example roll
+- fetches the corresponding chamber member rosters
+- fetches the related Congress.gov bill metadata
+- runs the mixed House+Senate live pipeline into Postgres
+- is intended as the fastest reproducible path to seeing non-sample stored data in the frontend
+
 ## Fingerprint API
 
 The fingerprint endpoint returns precomputed fingerprint rows only.
