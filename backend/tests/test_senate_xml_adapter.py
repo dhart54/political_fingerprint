@@ -1,8 +1,10 @@
 from datetime import date
+import json
+from pathlib import Path
 
 from app.etl.compute import run_etl
 from app.etl.seed import build_seed_bundle
-from app.etl.senate_xml_adapter import load_senate_xml_sample_bundle
+from app.etl.senate_xml_adapter import SENATE_XML_SAMPLE_DIR, load_senate_xml_bundle, load_senate_xml_sample_bundle
 
 
 def test_load_senate_xml_sample_bundle_normalizes_senate_xml() -> None:
@@ -33,3 +35,39 @@ def test_build_seed_bundle_supports_senate_xml_sample_source() -> None:
     assert len(bundle.legislators) == 2
     assert len(bundle.vote_classifications) == 4
     assert len(bundle.summaries) == 2
+
+
+def test_senate_xml_bundle_prefers_cached_congress_bill_metadata(tmp_path: Path) -> None:
+    source_dir = tmp_path / "senate_cache"
+    source_dir.mkdir()
+    (source_dir / "vote_001.xml").write_text((SENATE_XML_SAMPLE_DIR / "vote_001.xml").read_text())
+
+    congress_cache_dir = tmp_path / "congress" / "bills"
+    congress_cache_dir.mkdir(parents=True)
+    (congress_cache_dir / "119_s_210.json").write_text(
+        json.dumps(
+            {
+                "bill": {
+                    "congress": 119,
+                    "type": "s",
+                    "number": 210,
+                    "title": "Cached Senate Bill Title",
+                },
+                "summaries": [{"text": "Cached Senate summary"}],
+                "committees": [{"name": "Cached Senate Committee"}],
+                "policyArea": {"name": "immigration"},
+            }
+        )
+    )
+
+    bundle = load_senate_xml_bundle(
+        source_dir=source_dir,
+        fallback_dir=SENATE_XML_SAMPLE_DIR,
+        congress_cache_dir=congress_cache_dir,
+    )
+
+    bill = next(item for item in bundle.bills if item["id"] == "bill_119_s_210")
+    assert bill["title"] == "Cached Senate Bill Title"
+    assert bill["summary"] == "Cached Senate summary"
+    assert bill["committee"] == "Cached Senate Committee"
+    assert bill["subjects"] == ["immigration"]

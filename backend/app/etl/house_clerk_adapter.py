@@ -3,8 +3,8 @@ import re
 from pathlib import Path
 from xml.etree import ElementTree
 
-from app.etl.congress_adapter import normalize_congress_bill_records
-from app.etl.fetch_sources import HOUSE_CLERK_CACHE_DIR
+from app.etl.congress_adapter import load_congress_bill_cache, normalize_congress_bill_records
+from app.etl.fetch_sources import CONGRESS_BILL_CACHE_DIR, HOUSE_CLERK_CACHE_DIR
 from app.etl.types import FixtureBundle
 
 
@@ -16,14 +16,23 @@ def load_house_clerk_sample_bundle(source_dir: Path = HOUSE_CLERK_SAMPLE_DIR) ->
     return load_house_clerk_bundle(source_dir=source_dir)
 
 
-def load_house_clerk_cache_bundle(source_dir: Path = HOUSE_CLERK_CACHE_DIR) -> FixtureBundle:
-    return load_house_clerk_bundle(source_dir=source_dir, fallback_dir=HOUSE_CLERK_SAMPLE_DIR)
+def load_house_clerk_cache_bundle(
+    source_dir: Path = HOUSE_CLERK_CACHE_DIR,
+    *,
+    congress_cache_dir: Path = CONGRESS_BILL_CACHE_DIR,
+) -> FixtureBundle:
+    return load_house_clerk_bundle(
+        source_dir=source_dir,
+        fallback_dir=HOUSE_CLERK_SAMPLE_DIR,
+        congress_cache_dir=congress_cache_dir,
+    )
 
 
 def load_house_clerk_bundle(
     *,
     source_dir: Path,
     fallback_dir: Path | None = None,
+    congress_cache_dir: Path | None = None,
 ) -> FixtureBundle:
     member_tree = ElementTree.parse(_resolve_source_file(source_dir, "members.xml", fallback_dir))
     legislators = _parse_members(member_tree)
@@ -38,6 +47,8 @@ def load_house_clerk_bundle(
         (int(bill["congress"]), str(bill["bill_type"]), int(bill["bill_number"])): bill
         for bill in congress_bill_records
     }
+    if congress_cache_dir is not None:
+        congress_bill_lookup.update(load_congress_bill_cache(congress_cache_dir))
 
     roll_files = sorted(source_dir.glob("roll*.xml"))
     if not roll_files and fallback_dir is not None:

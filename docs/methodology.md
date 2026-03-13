@@ -273,11 +273,14 @@ Current supported fetch targets:
 
 - House Clerk roll call XML by calendar year and roll number
 - Senate roll call XML by congress, session, and roll number
+- Congress.gov bill metadata JSON by congress, bill type, and bill number
 
 Current fetch behavior:
 
 - downloads official XML files into a caller-specified local directory
+- downloads Congress.gov bill metadata JSON into `backend/data_sources/congress/bills/`
 - uses deterministic official URL patterns for House Clerk and Senate XML vote files
+- uses the Congress.gov v3 bill endpoint with an API key and JSON format parameter
 - skips existing files unless `--overwrite` is provided
 - writes downloads atomically through a temporary file replacement step
 
@@ -285,6 +288,7 @@ Current CLI examples:
 
 - `python -m app.etl.fetch_sources house --year 2025 --roll 1 --output-dir ./tmp/house`
 - `python -m app.etl.fetch_sources senate --congress 119 --session 1 --roll 1 --output-dir ./tmp/senate`
+- `python -m app.etl.fetch_sources congress-bill --congress 119 --bill-type hr --bill-number 120 --api-key YOUR_KEY`
 
 ## Fingerprint API
 

@@ -43,6 +43,55 @@ def normalize_congress_bill_records(bills: list[dict[str, Any]]) -> list[dict[st
     return [_normalize_bill(bill) for bill in bills]
 
 
+def normalize_congress_bill_response(payload: dict[str, Any]) -> dict[str, Any]:
+    bill = payload.get("bill", payload)
+    congress = int(bill["congress"])
+    bill_type = str(bill.get("type") or bill.get("billType")).lower()
+    bill_number = int(bill.get("number") or bill.get("billNumber"))
+
+    summaries = payload.get("summaries") or bill.get("summaries") or []
+    committees = payload.get("committees") or bill.get("committees") or []
+    subjects = payload.get("subjects") or bill.get("subjects") or []
+    policy_area = payload.get("policyArea") or bill.get("policyArea") or {}
+
+    normalized_subjects = [
+        _coerce_subject(subject)
+        for subject in subjects
+        if _coerce_subject(subject)
+    ]
+    policy_area_name = _coerce_subject(policy_area)
+    if policy_area_name and policy_area_name not in normalized_subjects:
+        normalized_subjects.append(policy_area_name)
+
+    return {
+        "id": _to_bill_id(congress=congress, bill_type=bill_type, bill_number=bill_number),
+        "congress": congress,
+        "bill_type": bill_type,
+        "bill_number": bill_number,
+        "title": _extract_bill_title(bill),
+        "summary": _extract_latest_summary(summaries),
+        "committee": _extract_committee_name(committees),
+        "subjects": normalized_subjects,
+    }
+
+
+def load_congress_bill_cache(cache_dir: Path) -> dict[tuple[int, str, int], dict[str, Any]]:
+    if not cache_dir.exists():
+        return {}
+
+    lookup: dict[tuple[int, str, int], dict[str, Any]] = {}
+    for path in sorted(cache_dir.glob("*.json")):
+        normalized = normalize_congress_bill_response(json.loads(path.read_text()))
+        lookup[
+            (
+                int(normalized["congress"]),
+                str(normalized["bill_type"]),
+                int(normalized["bill_number"]),
+            )
+        ] = normalized
+    return lookup
+
+
 def _normalize_member(member: dict[str, Any]) -> dict[str, Any]:
     name_display = str(member["directOrderName"])
     return {
@@ -121,3 +170,41 @@ def _to_bill_id(*, congress: int, bill_type: str, bill_number: int) -> str:
 
 def _load_json(path: Path) -> Any:
     return json.loads(path.read_text())
+
+
+def _extract_bill_title(bill: dict[str, Any]) -> str:
+    if bill.get("title"):
+        return str(bill["title"])
+    titles = bill.get("titles") or []
+    for title in titles:
+        if isinstance(title, dict) and title.get("title"):
+            return str(title["title"])
+    raise ValueError("Congress bill payload is missing title")
+
+
+def _extract_latest_summary(summaries: list[Any]) -> str:
+    for summary in summaries:
+        if isinstance(summary, dict):
+            text = summary.get("text") or summary.get("summary")
+            if text:
+                return str(text)
+    return ""
+
+
+def _extract_committee_name(committees: list[Any]) -> str | None:
+    for committee in committees:
+        if isinstance(committee, dict):
+            name = committee.get("name") or committee.get("systemCode")
+            if name:
+                return str(name)
+    return None
+
+
+def _coerce_subject(subject: Any) -> str | None:
+    if isinstance(subject, str) and subject.strip():
+        return subject.strip()
+    if isinstance(subject, dict):
+        value = subject.get("name")
+        if value:
+            return str(value).strip()
+    return None

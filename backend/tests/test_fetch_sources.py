@@ -32,6 +32,18 @@ def test_build_senate_vote_url_uses_official_pattern() -> None:
     )
 
 
+def test_build_congress_bill_url_uses_inferred_v3_pattern() -> None:
+    assert (
+        fetch_sources.build_congress_bill_url(
+            congress=119,
+            bill_type="hr",
+            bill_number=120,
+            api_key="demo-key",
+        )
+        == "https://api.congress.gov/v3/bill/119/hr/120?format=json&api_key=demo-key"
+    )
+
+
 def test_download_to_path_writes_payload(monkeypatch, tmp_path: Path) -> None:
     captured = {}
 
@@ -72,6 +84,18 @@ def test_download_to_path_skips_existing_file_when_not_overwriting(tmp_path: Pat
 
     assert result.skipped is True
     assert result.bytes_written == len("cached")
+
+
+def test_resolve_congress_api_key_prefers_explicit_value(monkeypatch) -> None:
+    monkeypatch.setenv("CONGRESS_API_KEY", "env-key")
+
+    assert fetch_sources.resolve_congress_api_key("explicit-key") == "explicit-key"
+
+
+def test_resolve_congress_api_key_reads_environment(monkeypatch) -> None:
+    monkeypatch.setenv("CONGRESS_API_KEY", "env-key")
+
+    assert fetch_sources.resolve_congress_api_key() == "env-key"
 
 
 def test_main_supports_house_subcommand(monkeypatch, capsys, tmp_path: Path) -> None:
@@ -169,3 +193,40 @@ def test_main_supports_senate_subcommand(monkeypatch, capsys, tmp_path: Path) ->
 
     assert "downloaded" in output
     assert "vote_003.xml" in output
+
+
+def test_main_supports_congress_bill_subcommand(monkeypatch, capsys, tmp_path: Path) -> None:
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "fetch_sources.py",
+            "congress-bill",
+            "--congress",
+            "119",
+            "--bill-type",
+            "hr",
+            "--bill-number",
+            "120",
+            "--api-key",
+            "demo-key",
+            "--output-dir",
+            str(tmp_path),
+        ],
+    )
+    monkeypatch.setattr(
+        fetch_sources,
+        "fetch_congress_bill_metadata",
+        lambda *, congress, bill_type, bill_number, api_key, output_dir, overwrite: fetch_sources.DownloadResult(
+            source_url="https://api.congress.gov/v3/bill/119/hr/120?format=json&api_key=demo-key",
+            destination=output_dir / "119_hr_120.json",
+            bytes_written=512,
+            skipped=False,
+        ),
+    )
+
+    fetch_sources.main()
+    output = capsys.readouterr().out
+
+    assert "downloaded" in output
+    assert "119_hr_120.json" in output
