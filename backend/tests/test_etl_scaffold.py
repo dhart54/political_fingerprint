@@ -44,3 +44,12 @@ def test_run_etl_executes_without_errors() -> None:
     assert isinstance(result, ComputeStepResult)
     assert result.records_loaded == 52
     assert result.records_classified == 14
+
+
+def test_run_ingest_supports_congress_sample_source() -> None:
+    ingest_result = run_ingest(source="congress_sample")
+
+    assert isinstance(ingest_result, IngestResult)
+    assert ingest_result.source == "congress_sample"
+    assert ingest_result.records_loaded == 48
+    assert isinstance(ingest_result.fixtures, FixtureBundle)

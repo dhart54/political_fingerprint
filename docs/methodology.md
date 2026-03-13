@@ -225,6 +225,24 @@ The ETL fixture runner loads the fixture files, classifies roll calls determinis
 
 For this repository state, fixture design prioritizes the `10` policy roll call requirement. Under the locked drift threshold of `20` total eligible votes, that means fixture drift outputs remain `insufficient_data` for all three legislators.
 
+## Live Source Adapter
+
+The repository now includes a first non-fixture ingestion adapter through `source="congress_sample"`.
+
+Current source assumptions:
+
+- input records are official-style Congress JSON exports stored locally
+- member records provide `bioguideId`, display name, chamber, state, district, and party code
+- bill records provide congress, bill type, bill number, title, summary, committee, and subjects
+- roll call records provide chamber, congress, roll number, ISO vote date, question, description, bill reference, and source URL
+- vote records provide chamber, roll number, member display name, and vote position
+
+Current adapter behavior:
+
+- normalizes official-style fields into the existing ingest bundle shape
+- derives stable internal ids for legislators, bills, and roll calls
+- reuses the same downstream classification, metric, ETL write, and API read paths as fixture ingestion
+
 ## Fingerprint API
 
 The fingerprint endpoint returns precomputed fingerprint rows only.

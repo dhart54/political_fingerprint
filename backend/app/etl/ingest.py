@@ -3,18 +3,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from app.etl.congress_adapter import load_congress_sample_bundle
+from app.etl.types import FixtureBundle
+
 
 FIXTURES_DIR = Path(__file__).resolve().parents[2] / "fixtures"
-
-
-@dataclass(frozen=True)
-class FixtureBundle:
-    legislators: list[dict[str, Any]]
-    bills: list[dict[str, Any]]
-    roll_calls: list[dict[str, Any]]
-    votes_cast: list[dict[str, Any]]
-    vote_subject_tags: dict[str, list[str]]
-    zip_district_map: list[dict[str, Any]]
 
 
 @dataclass(frozen=True)
@@ -36,7 +29,13 @@ def load_fixture_bundle(fixtures_dir: Path = FIXTURES_DIR) -> FixtureBundle:
 
 
 def run_ingest(*, source: str = "fixtures") -> IngestResult:
-    fixtures = load_fixture_bundle()
+    if source == "fixtures":
+        fixtures = load_fixture_bundle()
+    elif source == "congress_sample":
+        fixtures = load_congress_sample_bundle()
+    else:
+        raise ValueError(f"Unsupported ingest source: {source}")
+
     records_loaded = (
         len(fixtures.legislators)
         + len(fixtures.bills)
