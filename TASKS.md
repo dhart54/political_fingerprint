@@ -63,7 +63,7 @@ curl http://localhost:8000/health returns:
 
 ---
 
-## Task 1.2 — Backend environment setup
+## Task 1.2 — Backend environment setup [COMPLETED]
 
 Create:
 
