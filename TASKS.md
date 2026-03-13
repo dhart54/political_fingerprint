@@ -133,7 +133,7 @@ Migrations apply successfully.
 
 # Phase 3 — Classification Engine
 
-## Task 3.1 — Procedural exclusion rules
+## Task 3.1 — Procedural exclusion rules [COMPLETED]
 
 Create:
 
