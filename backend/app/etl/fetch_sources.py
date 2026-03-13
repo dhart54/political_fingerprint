@@ -29,11 +29,21 @@ def build_house_clerk_roll_url(*, year: int, roll_number: int) -> str:
     return f"https://clerk.house.gov/evs/{year}/roll{roll_number:03d}.xml"
 
 
+def build_house_clerk_members_url() -> str:
+    return "https://clerk.house.gov/xml/lists/MemberData.xml"
+
+
 def build_senate_vote_url(*, congress: int, session: int, roll_number: int) -> str:
     return (
         "https://www.senate.gov/legislative/LIS/roll_call_votes/"
         f"vote{congress}{session}/vote_{congress}_{session}_{roll_number:05d}.xml"
     )
+
+
+def build_senate_members_url(*, detailed: bool = False) -> str:
+    if detailed:
+        return "https://www.senate.gov/legislative/LIS_MEMBER/cvc_member_data.xml"
+    return "https://www.senate.gov/general/contact_information/senators_cfm.xml"
 
 
 def build_congress_bill_url(*, congress: int, bill_type: str, bill_number: int, api_key: str) -> str:
@@ -102,6 +112,31 @@ def fetch_congress_bill_metadata(
     )
 
 
+def fetch_house_clerk_members(
+    *,
+    output_dir: Path = HOUSE_CLERK_CACHE_DIR,
+    overwrite: bool = False,
+) -> DownloadResult:
+    return download_to_path(
+        build_house_clerk_members_url(),
+        output_dir / "members.xml",
+        overwrite=overwrite,
+    )
+
+
+def fetch_senate_members(
+    *,
+    detailed: bool = True,
+    output_dir: Path = SENATE_XML_CACHE_DIR,
+    overwrite: bool = False,
+) -> DownloadResult:
+    return download_to_path(
+        build_senate_members_url(detailed=detailed),
+        output_dir / "members.xml",
+        overwrite=overwrite,
+    )
+
+
 def download_to_path(
     source_url: str,
     destination: Path,
@@ -155,12 +190,21 @@ def main() -> None:
     house_parser.add_argument("--output-dir", type=Path, default=HOUSE_CLERK_CACHE_DIR)
     house_parser.add_argument("--overwrite", action="store_true")
 
+    house_members_parser = subparsers.add_parser("house-members")
+    house_members_parser.add_argument("--output-dir", type=Path, default=HOUSE_CLERK_CACHE_DIR)
+    house_members_parser.add_argument("--overwrite", action="store_true")
+
     senate_parser = subparsers.add_parser("senate")
     senate_parser.add_argument("--congress", type=int, required=True)
     senate_parser.add_argument("--session", type=int, required=True)
     senate_parser.add_argument("--roll", type=int, action="append", dest="roll_numbers", required=True)
     senate_parser.add_argument("--output-dir", type=Path, default=SENATE_XML_CACHE_DIR)
     senate_parser.add_argument("--overwrite", action="store_true")
+
+    senate_members_parser = subparsers.add_parser("senate-members")
+    senate_members_parser.add_argument("--output-dir", type=Path, default=SENATE_XML_CACHE_DIR)
+    senate_members_parser.add_argument("--overwrite", action="store_true")
+    senate_members_parser.add_argument("--contact-only", action="store_true")
 
     congress_parser = subparsers.add_parser("congress-bill")
     congress_parser.add_argument("--congress", type=int, required=True)
@@ -179,6 +223,13 @@ def main() -> None:
             output_dir=args.output_dir,
             overwrite=args.overwrite,
         )
+    elif args.source == "house-members":
+        results = [
+            fetch_house_clerk_members(
+                output_dir=args.output_dir,
+                overwrite=args.overwrite,
+            )
+        ]
     elif args.source == "senate":
         results = fetch_senate_vote_files(
             congress=args.congress,
@@ -187,6 +238,14 @@ def main() -> None:
             output_dir=args.output_dir,
             overwrite=args.overwrite,
         )
+    elif args.source == "senate-members":
+        results = [
+            fetch_senate_members(
+                detailed=not args.contact_only,
+                output_dir=args.output_dir,
+                overwrite=args.overwrite,
+            )
+        ]
     else:
         results = [
             fetch_congress_bill_metadata(

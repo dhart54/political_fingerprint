@@ -25,10 +25,28 @@ def test_build_house_clerk_roll_url_uses_official_pattern() -> None:
     )
 
 
+def test_build_house_clerk_members_url_uses_official_pattern() -> None:
+    assert (
+        fetch_sources.build_house_clerk_members_url()
+        == "https://clerk.house.gov/xml/lists/MemberData.xml"
+    )
+
+
 def test_build_senate_vote_url_uses_official_pattern() -> None:
     assert (
         fetch_sources.build_senate_vote_url(congress=119, session=1, roll_number=7)
         == "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00007.xml"
+    )
+
+
+def test_build_senate_members_url_uses_official_patterns() -> None:
+    assert (
+        fetch_sources.build_senate_members_url(detailed=False)
+        == "https://www.senate.gov/general/contact_information/senators_cfm.xml"
+    )
+    assert (
+        fetch_sources.build_senate_members_url(detailed=True)
+        == "https://www.senate.gov/legislative/LIS_MEMBER/cvc_member_data.xml"
     )
 
 
@@ -158,6 +176,35 @@ def test_main_defaults_house_output_dir(monkeypatch, capsys) -> None:
     assert str(fetch_sources.HOUSE_CLERK_CACHE_DIR / "roll001.xml") in output
 
 
+def test_main_supports_house_members_subcommand(monkeypatch, capsys, tmp_path: Path) -> None:
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "fetch_sources.py",
+            "house-members",
+            "--output-dir",
+            str(tmp_path),
+        ],
+    )
+    monkeypatch.setattr(
+        fetch_sources,
+        "fetch_house_clerk_members",
+        lambda *, output_dir, overwrite: fetch_sources.DownloadResult(
+            source_url="https://clerk.house.gov/xml/lists/MemberData.xml",
+            destination=output_dir / "members.xml",
+            bytes_written=1024,
+            skipped=False,
+        ),
+    )
+
+    fetch_sources.main()
+    output = capsys.readouterr().out
+
+    assert "members.xml" in output
+    assert "downloaded" in output
+
+
 def test_main_supports_senate_subcommand(monkeypatch, capsys, tmp_path: Path) -> None:
     monkeypatch.setattr(
         sys,
@@ -193,6 +240,35 @@ def test_main_supports_senate_subcommand(monkeypatch, capsys, tmp_path: Path) ->
 
     assert "downloaded" in output
     assert "vote_003.xml" in output
+
+
+def test_main_supports_senate_members_subcommand(monkeypatch, capsys, tmp_path: Path) -> None:
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "fetch_sources.py",
+            "senate-members",
+            "--output-dir",
+            str(tmp_path),
+        ],
+    )
+    monkeypatch.setattr(
+        fetch_sources,
+        "fetch_senate_members",
+        lambda *, detailed, output_dir, overwrite: fetch_sources.DownloadResult(
+            source_url="https://www.senate.gov/legislative/LIS_MEMBER/cvc_member_data.xml",
+            destination=output_dir / "members.xml",
+            bytes_written=2048,
+            skipped=False,
+        ),
+    )
+
+    fetch_sources.main()
+    output = capsys.readouterr().out
+
+    assert "members.xml" in output
+    assert "downloaded" in output
 
 
 def test_main_supports_congress_bill_subcommand(monkeypatch, capsys, tmp_path: Path) -> None:

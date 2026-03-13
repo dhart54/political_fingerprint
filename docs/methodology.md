@@ -271,7 +271,9 @@ The repository now includes a cached XML download utility in `app.etl.fetch_sour
 
 Current supported fetch targets:
 
+- House Clerk current member XML
 - House Clerk roll call XML by calendar year and roll number
+- Senate current member XML
 - Senate roll call XML by congress, session, and roll number
 - Congress.gov bill metadata JSON by congress, bill type, and bill number
 
@@ -287,7 +289,9 @@ Current fetch behavior:
 Current CLI examples:
 
 - `python -m app.etl.fetch_sources house --year 2025 --roll 1 --output-dir ./tmp/house`
+- `python -m app.etl.fetch_sources house-members`
 - `python -m app.etl.fetch_sources senate --congress 119 --session 1 --roll 1 --output-dir ./tmp/senate`
+- `python -m app.etl.fetch_sources senate-members`
 - `python -m app.etl.fetch_sources congress-bill --congress 119 --bill-type hr --bill-number 120 --api-key YOUR_KEY`
 
 ## Fingerprint API
