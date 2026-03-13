@@ -17,7 +17,7 @@ def load_congress_sample_bundle(source_dir: Path = CONGRESS_SAMPLE_DIR) -> Fixtu
     votes = _load_json(source_dir / "votes.json")
     zip_map = _load_json(source_dir / "zip_district_map.json")
 
-    bill_records = [_normalize_bill(bill) for bill in bills]
+    bill_records = normalize_congress_bill_records(bills)
     bill_id_by_lookup = {
         (bill["congress"], bill["bill_type"], bill["bill_number"]): bill["id"]
         for bill in bill_records
@@ -37,6 +37,10 @@ def load_congress_sample_bundle(source_dir: Path = CONGRESS_SAMPLE_DIR) -> Fixtu
         },
         zip_district_map=list(zip_map),
     )
+
+
+def normalize_congress_bill_records(bills: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [_normalize_bill(bill) for bill in bills]
 
 
 def _normalize_member(member: dict[str, Any]) -> dict[str, Any]:

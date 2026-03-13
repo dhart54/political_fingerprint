@@ -3,6 +3,7 @@ import re
 from pathlib import Path
 from xml.etree import ElementTree
 
+from app.etl.congress_adapter import normalize_congress_bill_records
 from app.etl.types import FixtureBundle
 
 
@@ -17,6 +18,13 @@ def load_house_clerk_sample_bundle(source_dir: Path = HOUSE_CLERK_SAMPLE_DIR) ->
         str(legislator["bioguide_id"]): legislator
         for legislator in legislators
     }
+    congress_bill_records = normalize_congress_bill_records(
+        json.loads((source_dir / "bills.json").read_text())
+    )
+    congress_bill_lookup = {
+        (int(bill["congress"]), str(bill["bill_type"]), int(bill["bill_number"])): bill
+        for bill in congress_bill_records
+    }
 
     roll_files = sorted(source_dir.glob("roll*.xml"))
     roll_calls = []
@@ -27,6 +35,7 @@ def load_house_clerk_sample_bundle(source_dir: Path = HOUSE_CLERK_SAMPLE_DIR) ->
         roll_call, bill, votes = _parse_roll_call(
             ElementTree.parse(roll_file),
             legislators_by_bioguide=legislators_by_bioguide,
+            congress_bill_lookup=congress_bill_lookup,
         )
         bills_by_id[str(bill["id"])] = bill
         roll_calls.append(roll_call)
@@ -39,7 +48,10 @@ def load_house_clerk_sample_bundle(source_dir: Path = HOUSE_CLERK_SAMPLE_DIR) ->
         bills=list(bills_by_id.values()),
         roll_calls=roll_calls,
         votes_cast=votes_cast,
-        vote_subject_tags={},
+        vote_subject_tags={
+            str(bill["id"]): list(bill.get("subjects", []))
+            for bill in bills_by_id.values()
+        },
         zip_district_map=zip_district_map,
     )
 
@@ -85,6 +97,7 @@ def _parse_roll_call(
     tree: ElementTree.ElementTree,
     *,
     legislators_by_bioguide: dict[str, dict[str, object]],
+    congress_bill_lookup: dict[tuple[int, str, int], dict[str, object]],
 ) -> tuple[dict[str, object], dict[str, object], list[dict[str, object]]]:
     root = tree.getroot()
     metadata = root.find("vote-metadata")
@@ -100,11 +113,13 @@ def _parse_roll_call(
     action_date = _require_text(metadata.find("action-date"))
 
     bill_type, bill_number = _parse_house_bill_reference(bill_number_text)
+    bill_key = (congress, bill_type, bill_number)
     bill_id = _to_bill_id(
         congress=congress,
         bill_type=bill_type,
         bill_number=bill_number,
     )
+    congress_bill = congress_bill_lookup.get(bill_key)
 
     roll_call = {
         "id": f"rc_house_{roll_number:03d}",
@@ -122,10 +137,10 @@ def _parse_roll_call(
         "congress": congress,
         "bill_type": bill_type,
         "bill_number": bill_number,
-        "title": vote_description,
-        "summary": "",
-        "committee": None,
-        "subjects": [],
+        "title": str(congress_bill["title"]) if congress_bill is not None else vote_description,
+        "summary": str(congress_bill["summary"]) if congress_bill is not None else "",
+        "committee": congress_bill.get("committee") if congress_bill is not None else None,
+        "subjects": list(congress_bill.get("subjects", [])) if congress_bill is not None else [],
     }
 
     votes: list[dict[str, object]] = []

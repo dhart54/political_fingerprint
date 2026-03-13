@@ -240,6 +240,7 @@ Current source assumptions:
 - `congress_sample` roll call records provide chamber, congress, roll number, ISO vote date, question, description, bill reference, and source URL
 - `congress_sample` vote records provide chamber, roll number, member display name, and vote position
 - `house_clerk_sample` input records are official-style House Clerk member XML and roll call XML samples stored locally
+- `house_clerk_sample` bill metadata is enriched from local Congress.gov-style bill JSON keyed by congress, bill type, and bill number
 - `house_clerk_sample` member records provide `bioguideID`, official display name, party, state postal code, and state-district code
 - `house_clerk_sample` roll call records provide congress, session, roll call number, `legis-num`, `vote-question`, `vote-desc`, and action date
 - `house_clerk_sample` votes are matched to legislators by `bioguide-id`
@@ -248,7 +249,7 @@ Current adapter behavior:
 
 - normalizes official-style fields into the existing ingest bundle shape
 - derives stable internal ids for legislators, bills, and roll calls
-- for House Clerk samples, derives bill identity from `legis-num` and bill title from `vote-desc`
+- for House Clerk samples, derives bill identity from `legis-num` and enriches title, summary, committee, and subjects from matching Congress-style metadata when available
 - reuses the same downstream classification, metric, ETL write, and API read paths as fixture ingestion
 
 ## Fingerprint API

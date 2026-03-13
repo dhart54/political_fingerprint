@@ -12,6 +12,8 @@ def test_load_house_clerk_sample_bundle_normalizes_house_clerk_xml() -> None:
     assert bundle.legislators[0]["id"] == "leg_alex_morgan"
     assert len(bundle.bills) == 4
     assert bundle.roll_calls[0]["bill_ref"] == "bill_119_hr_120"
+    assert bundle.bills[0]["committee"] == "Transportation and Infrastructure"
+    assert bundle.vote_subject_tags["bill_119_hr_120"] == ["transportation", "infrastructure", "broadband"]
     assert bundle.votes_cast[0]["roll_call_id"] == "rc_house_001"
     assert bundle.votes_cast[1]["position"] == "nay"
 
