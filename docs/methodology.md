@@ -259,6 +259,27 @@ Current adapter behavior:
 - for Senate XML samples, derives bill identity from the document number and enriches title, summary, committee, and subjects from matching Congress-style metadata when available
 - reuses the same downstream classification, metric, ETL write, and API read paths as fixture ingestion
 
+## Official File Fetch Layer
+
+The repository now includes a cached XML download utility in `app.etl.fetch_sources`.
+
+Current supported fetch targets:
+
+- House Clerk roll call XML by calendar year and roll number
+- Senate roll call XML by congress, session, and roll number
+
+Current fetch behavior:
+
+- downloads official XML files into a caller-specified local directory
+- uses deterministic official URL patterns for House Clerk and Senate XML vote files
+- skips existing files unless `--overwrite` is provided
+- writes downloads atomically through a temporary file replacement step
+
+Current CLI examples:
+
+- `python -m app.etl.fetch_sources house --year 2025 --roll 1 --output-dir ./tmp/house`
+- `python -m app.etl.fetch_sources senate --congress 119 --session 1 --roll 1 --output-dir ./tmp/senate`
+
 ## Fingerprint API
 
 The fingerprint endpoint returns precomputed fingerprint rows only.
