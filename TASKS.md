@@ -352,7 +352,7 @@ Lookup works end-to-end.
 
 # Phase 10 — Documentation
 
-## Task 10.1 — Methodology doc
+## Task 10.1 — Methodology doc [COMPLETED]
 
 Create:
 

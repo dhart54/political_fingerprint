@@ -1,5 +1,58 @@
 # Methodology
 
+## Product Scope and Guardrails
+
+This MVP is a curiosity-led, trust-anchored civic analytics platform focused on observable legislative behavior.
+
+The current product scope is limited to:
+
+- behavioral fingerprint
+- stability or drift indicator
+- plain-language descriptive summary
+- ZIP code lookup for one House representative and two senators
+
+The methodology intentionally does not support:
+
+- corruption claims
+- donor-to-vote causal claims
+- predictive modeling
+- ranking language
+- moral judgments
+- composite influence scoring
+
+## System Principles
+
+Implemented logic follows these repository-wide priorities:
+
+- determinism
+- transparency
+- reproducibility
+- low operational cost
+- simplicity
+
+All metric-producing logic must remain a deterministic function of stored inputs.
+
+## Stack and Deployment Assumptions
+
+The current MVP implementation is built for:
+
+- Python 3.11+ with FastAPI on the backend
+- Postgres as the system database
+- Next.js with Tailwind CSS on the frontend
+- precompute-heavy deployment on Render and Vercel within the locked cost target
+
+## Precomputed Data Rule
+
+API endpoints must read precomputed outputs rather than computing metrics on request.
+
+The authoritative computed outputs are:
+
+- `vote_classifications`
+- `fingerprints`
+- `chamber_medians`
+- `drift_scores`
+- `summaries`
+
 ## Eligibility Rules
 
 Vote eligibility is deterministic.
@@ -114,15 +167,26 @@ No estimation or extrapolation is used.
 
 ## ETL Order
 
-The ETL pipeline is deterministic and runs in this order:
+The ETL pipeline is deterministic, idempotent in design, and versioned through `classification_version`.
 
-1. ingest source records
-2. classify eligible policy votes
-3. compute fingerprints
-4. compute chamber medians
-5. compute drift scores
+Current operation order:
 
-The current scaffold provides these steps as explicit modules so fixture ingestion can be added without changing the ETL sequence.
+1. ingest fixture source records
+2. evaluate procedural eligibility for each roll call
+3. classify eligible policy votes into one primary domain
+4. build eligible vote records for legislators
+5. compute fingerprints
+6. compute chamber medians
+7. compute drift scores
+
+In the current fixture-backed implementation, ingestion loads:
+
+- legislators
+- bills
+- roll calls
+- votes cast
+- subject tags
+- ZIP mappings
 
 ## Fixture Dataset
 
@@ -190,6 +254,13 @@ The fallback summary is descriptive only and includes:
 - vote volume
 - the largest fingerprint emphasis areas
 - drift availability or the insufficient-data condition
+
+The summary layer must remain neutral:
+
+- no causal claims
+- no ranking language
+- no motive inference
+- no forbidden terms such as `corrupt`, `extreme`, `radical`, `worst`, `best`, `biased`, or `bought`
 
 ## ZIP Lookup API
 
