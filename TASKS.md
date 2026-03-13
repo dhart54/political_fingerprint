@@ -12,7 +12,7 @@ Mark tasks complete as they are finished.
 
 # Phase 0 — Repository Initialization
 
-## Task 0.1 — Initialize project
+## Task 0.1 — Initialize project [COMPLETED]
 
 - Initialize git repository
 - Create required directory structure:
