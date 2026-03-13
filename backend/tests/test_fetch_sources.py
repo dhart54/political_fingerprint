@@ -109,6 +109,31 @@ def test_main_supports_house_subcommand(monkeypatch, capsys, tmp_path: Path) -> 
     assert "roll001.xml" in output
 
 
+def test_main_defaults_house_output_dir(monkeypatch, capsys) -> None:
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["fetch_sources.py", "house", "--year", "2025", "--roll", "1"],
+    )
+    monkeypatch.setattr(
+        fetch_sources,
+        "fetch_house_clerk_roll_calls",
+        lambda *, year, roll_numbers, output_dir, overwrite: [
+            fetch_sources.DownloadResult(
+                source_url="https://clerk.house.gov/evs/2025/roll001.xml",
+                destination=output_dir / "roll001.xml",
+                bytes_written=128,
+                skipped=False,
+            )
+        ],
+    )
+
+    fetch_sources.main()
+    output = capsys.readouterr().out
+
+    assert str(fetch_sources.HOUSE_CLERK_CACHE_DIR / "roll001.xml") in output
+
+
 def test_main_supports_senate_subcommand(monkeypatch, capsys, tmp_path: Path) -> None:
     monkeypatch.setattr(
         sys,

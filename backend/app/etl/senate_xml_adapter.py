@@ -4,6 +4,7 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 from app.etl.congress_adapter import normalize_congress_bill_records
+from app.etl.fetch_sources import SENATE_XML_CACHE_DIR
 from app.etl.types import FixtureBundle
 
 
@@ -12,14 +13,26 @@ SENATE_XML_SAMPLE_DIR = FIXTURES_DIR / "senate_xml_sample"
 
 
 def load_senate_xml_sample_bundle(source_dir: Path = SENATE_XML_SAMPLE_DIR) -> FixtureBundle:
-    member_tree = ElementTree.parse(source_dir / "members.xml")
+    return load_senate_xml_bundle(source_dir=source_dir)
+
+
+def load_senate_xml_cache_bundle(source_dir: Path = SENATE_XML_CACHE_DIR) -> FixtureBundle:
+    return load_senate_xml_bundle(source_dir=source_dir, fallback_dir=SENATE_XML_SAMPLE_DIR)
+
+
+def load_senate_xml_bundle(
+    *,
+    source_dir: Path,
+    fallback_dir: Path | None = None,
+) -> FixtureBundle:
+    member_tree = ElementTree.parse(_resolve_source_file(source_dir, "members.xml", fallback_dir))
     legislators = _parse_members(member_tree)
     legislators_by_lis = {
         str(legislator["lis_member_id"]): legislator
         for legislator in legislators
     }
     congress_bill_records = normalize_congress_bill_records(
-        json.loads((source_dir / "bills.json").read_text())
+        json.loads(_resolve_source_file(source_dir, "bills.json", fallback_dir).read_text())
     )
     congress_bill_lookup = {
         (int(bill["congress"]), str(bill["bill_type"]), int(bill["bill_number"])): bill
@@ -27,6 +40,8 @@ def load_senate_xml_sample_bundle(source_dir: Path = SENATE_XML_SAMPLE_DIR) -> F
     }
 
     vote_files = sorted(source_dir.glob("vote_*.xml"))
+    if not vote_files and fallback_dir is not None:
+        vote_files = sorted(fallback_dir.glob("vote_*.xml"))
     bills_by_id: dict[str, dict[str, object]] = {}
     roll_calls = []
     votes_cast = []
@@ -41,7 +56,9 @@ def load_senate_xml_sample_bundle(source_dir: Path = SENATE_XML_SAMPLE_DIR) -> F
         roll_calls.append(roll_call)
         votes_cast.extend(votes)
 
-    zip_district_map = json.loads((source_dir / "zip_district_map.json").read_text())
+    zip_district_map = json.loads(
+        _resolve_source_file(source_dir, "zip_district_map.json", fallback_dir).read_text()
+    )
 
     return FixtureBundle(
         legislators=[
@@ -177,6 +194,17 @@ def _to_legislator_id(name_display: str) -> str:
 
 def _to_bill_id(*, congress: int, bill_type: str, bill_number: int) -> str:
     return f"bill_{congress}_{bill_type}_{bill_number}"
+
+
+def _resolve_source_file(source_dir: Path, filename: str, fallback_dir: Path | None) -> Path:
+    primary_path = source_dir / filename
+    if primary_path.exists():
+        return primary_path
+    if fallback_dir is not None:
+        fallback_path = fallback_dir / filename
+        if fallback_path.exists():
+            return fallback_path
+    raise FileNotFoundError(f"Missing required Senate XML source file: {filename}")
 
 
 def _require_text(element: ElementTree.Element | None) -> str:

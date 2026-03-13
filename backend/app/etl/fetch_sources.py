@@ -7,6 +7,10 @@ from urllib.request import Request, urlopen
 
 DEFAULT_TIMEOUT_SECONDS = 30
 DEFAULT_USER_AGENT = "political-fingerprint/0.1"
+BACKEND_DIR = Path(__file__).resolve().parents[2]
+DATA_SOURCES_DIR = BACKEND_DIR / "data_sources"
+HOUSE_CLERK_CACHE_DIR = DATA_SOURCES_DIR / "house_clerk"
+SENATE_XML_CACHE_DIR = DATA_SOURCES_DIR / "senate_xml"
 
 
 @dataclass(frozen=True)
@@ -108,14 +112,14 @@ def main() -> None:
     house_parser = subparsers.add_parser("house")
     house_parser.add_argument("--year", type=int, required=True)
     house_parser.add_argument("--roll", type=int, action="append", dest="roll_numbers", required=True)
-    house_parser.add_argument("--output-dir", type=Path, required=True)
+    house_parser.add_argument("--output-dir", type=Path, default=HOUSE_CLERK_CACHE_DIR)
     house_parser.add_argument("--overwrite", action="store_true")
 
     senate_parser = subparsers.add_parser("senate")
     senate_parser.add_argument("--congress", type=int, required=True)
     senate_parser.add_argument("--session", type=int, required=True)
     senate_parser.add_argument("--roll", type=int, action="append", dest="roll_numbers", required=True)
-    senate_parser.add_argument("--output-dir", type=Path, required=True)
+    senate_parser.add_argument("--output-dir", type=Path, default=SENATE_XML_CACHE_DIR)
     senate_parser.add_argument("--overwrite", action="store_true")
 
     args = parser.parse_args()
