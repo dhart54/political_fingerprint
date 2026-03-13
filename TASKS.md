@@ -83,7 +83,7 @@ Backend runs locally.
 
 ---
 
-## Task 1.3 — Database connection module
+## Task 1.3 — Database connection module [COMPLETED]
 
 Create:
 
