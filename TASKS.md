@@ -169,7 +169,7 @@ Tests pass.
 
 # Phase 4 — Metrics Engine
 
-## Task 4.1 — Fingerprint calculation
+## Task 4.1 — Fingerprint calculation [COMPLETED]
 
 Create:
 

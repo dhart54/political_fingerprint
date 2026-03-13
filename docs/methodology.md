@@ -66,3 +66,24 @@ Stored outputs:
 - `primary_domain`
 - `score_breakdown`
 - `classification_version`
+
+## Fingerprint Rules
+
+Fingerprint calculation is deterministic and uses only eligible classified policy votes.
+
+Window:
+
+- rolling 730 days ending on the computation date
+
+For each legislator and each locked issue domain:
+
+- `vote_count` = count of eligible votes in that domain within the 730-day window
+- `total_votes` = count of all eligible votes across all domains within the same window
+- `vote_share` = `vote_count / total_votes`
+
+Explicit-zero rule:
+
+- if `vote_count = 0`, the domain row is still stored
+- if `total_votes = 0`, then `vote_share = 0.0`
+
+Fingerprint output always includes all 8 domains and never omits a domain row.
