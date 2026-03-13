@@ -340,7 +340,7 @@ Summary visible.
 
 ---
 
-# Phase 9 — ZIP Lookup UI
+# Phase 9 — ZIP Lookup UI [COMPLETED]
 
 Create ZIP input and legislator pages.
 

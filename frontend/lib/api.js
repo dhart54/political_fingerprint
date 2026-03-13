@@ -58,3 +58,15 @@ export async function fetchSummary({ legislatorId }) {
 
   return response.json();
 }
+
+export async function fetchZipLookup({ zipCode }) {
+  const response = await fetch(`${API_BASE_URL}/lookup/zip/${zipCode}`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`ZIP lookup request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}

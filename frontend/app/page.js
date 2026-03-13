@@ -2,6 +2,7 @@ import HealthStatus from "../components/HealthStatus";
 import DriftIndicator from "../components/DriftIndicator";
 import FingerprintRadar from "../components/FingerprintRadar";
 import SummaryPanel from "../components/SummaryPanel";
+import ZipLookupPanel from "../components/ZipLookupPanel";
 
 export default function HomePage() {
   return (
@@ -46,6 +47,7 @@ export default function HomePage() {
         <FingerprintRadar />
         <DriftIndicator />
         <SummaryPanel />
+        <ZipLookupPanel />
         <HealthStatus />
       </section>
     </main>

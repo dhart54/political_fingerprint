@@ -245,3 +245,14 @@ Current UI behavior:
 - displays the summary text returned by the backend
 - surfaces generation method, window end, classification version, and created timestamp
 - does not generate or rewrite summary text on the client
+
+## ZIP Lookup UI
+
+The frontend ZIP lookup panel calls the ZIP lookup API directly from the home page.
+
+Current UI behavior:
+
+- defaults to fixture ZIP `27701` for local verification
+- requests `GET /lookup/zip/{zip}`
+- renders the returned district, House representative, and both senators
+- surfaces request failures explicitly instead of inferring fallback data on the client
