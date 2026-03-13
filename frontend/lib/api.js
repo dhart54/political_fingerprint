@@ -34,3 +34,15 @@ export async function fetchFingerprint({
 
   return response.json();
 }
+
+export async function fetchDrift({ legislatorId }) {
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/drift`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Drift request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}

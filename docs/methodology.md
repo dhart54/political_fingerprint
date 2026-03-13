@@ -225,3 +225,13 @@ Current UI behavior:
 - overlay defaults to `ALL`
 - the user can toggle overlay comparison between `ALL`, `D`, and `R`
 - the toggle changes only the median overlay, not the fingerprint values
+
+## Drift Indicator UI
+
+The frontend drift indicator renders the drift API result directly.
+
+Current UI behavior:
+
+- shows the deterministic drift value when available
+- shows the insufficient-data state explicitly when the backend returns `insufficient_data = true`
+- surfaces early and recent vote totals alongside the indicator

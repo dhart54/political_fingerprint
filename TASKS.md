@@ -318,7 +318,7 @@ Displays fingerprint and median overlay.
 
 ---
 
-## Task 8.2 — Drift indicator
+## Task 8.2 — Drift indicator [COMPLETED]
 
 Create:
 

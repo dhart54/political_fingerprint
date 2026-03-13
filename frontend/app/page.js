@@ -1,4 +1,5 @@
 import HealthStatus from "../components/HealthStatus";
+import DriftIndicator from "../components/DriftIndicator";
 import FingerprintRadar from "../components/FingerprintRadar";
 
 export default function HomePage() {
@@ -42,6 +43,7 @@ export default function HomePage() {
           </article>
         </div>
         <FingerprintRadar />
+        <DriftIndicator />
         <HealthStatus />
       </section>
     </main>
