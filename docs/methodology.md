@@ -338,3 +338,14 @@ Current UI behavior:
 - requests `GET /lookup/zip/{zip}`
 - renders the returned district, House representative, and both senators
 - surfaces request failures explicitly instead of inferring fallback data on the client
+
+## Legislator Selection UI
+
+The frontend legislator picker uses the legislator search endpoint to drive the analysis panels.
+
+Current UI behavior:
+
+- loads available legislators from `GET /legislators/search`
+- supports client-side search input backed by server search results
+- updates fingerprint, drift, and summary panels together when a legislator is selected
+- keeps ZIP lookup independent from the currently selected legislator

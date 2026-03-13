@@ -1,10 +1,27 @@
+"use client";
+
+import { useState } from "react";
+
 import HealthStatus from "../components/HealthStatus";
 import DriftIndicator from "../components/DriftIndicator";
 import FingerprintRadar from "../components/FingerprintRadar";
+import LegislatorPicker from "../components/LegislatorPicker";
 import SummaryPanel from "../components/SummaryPanel";
 import ZipLookupPanel from "../components/ZipLookupPanel";
 
+const DEFAULT_LEGISLATOR = {
+  id: "leg_alex_morgan",
+  bioguide_id: "H000001",
+  name_display: "Alex Morgan",
+  chamber: "house",
+  state: "NC",
+  district: "04",
+  party: "D",
+};
+
 export default function HomePage() {
+  const [selectedLegislator, setSelectedLegislator] = useState(DEFAULT_LEGISLATOR);
+
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#f4eee1,_#e6dbc1_50%,_#d5c3a2)] text-stone-900">
       <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-20">
@@ -44,9 +61,16 @@ export default function HomePage() {
             </p>
           </article>
         </div>
-        <FingerprintRadar />
-        <DriftIndicator />
-        <SummaryPanel />
+        <LegislatorPicker
+          onSelect={setSelectedLegislator}
+          selectedLegislator={selectedLegislator}
+        />
+        <FingerprintRadar
+          legislatorId={selectedLegislator.id}
+          title={selectedLegislator.name_display}
+        />
+        <DriftIndicator legislatorId={selectedLegislator.id} />
+        <SummaryPanel legislatorId={selectedLegislator.id} />
         <ZipLookupPanel />
         <HealthStatus />
       </section>

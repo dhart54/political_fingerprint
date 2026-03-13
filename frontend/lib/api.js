@@ -70,3 +70,21 @@ export async function fetchZipLookup({ zipCode }) {
 
   return response.json();
 }
+
+export async function fetchLegislatorSearch({ query = "" } = {}) {
+  const searchParams = new URLSearchParams();
+  if (query) {
+    searchParams.set("q", query);
+  }
+
+  const suffix = searchParams.toString() ? `?${searchParams.toString()}` : "";
+  const response = await fetch(`${API_BASE_URL}/legislators/search${suffix}`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Legislator search request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
