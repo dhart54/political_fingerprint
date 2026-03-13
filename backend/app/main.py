@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.drift import router as drift_router
 from app.api.fingerprint import router as fingerprint_router
+from app.api.summary import router as summary_router
 
 
 app = FastAPI(title="Political Fingerprint API")
@@ -20,6 +21,7 @@ app.add_middleware(
 
 app.include_router(fingerprint_router)
 app.include_router(drift_router)
+app.include_router(summary_router)
 
 
 @app.get("/health")

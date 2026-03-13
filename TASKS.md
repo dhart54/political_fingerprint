@@ -258,7 +258,7 @@ Returns drift value.
 
 ---
 
-## Task 6.3 — Summary endpoint
+## Task 6.3 — Summary endpoint [COMPLETED]
 
 Create:
 
