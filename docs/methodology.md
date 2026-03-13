@@ -194,7 +194,7 @@ In the current fixture-backed implementation, ingestion loads:
 
 The repository now also includes a deterministic local database seed path:
 
-- `python -m app.etl.run_all --seed-db`
+- `python -m app.etl.run_all --fixtures`
 
 Current seed behavior:
 
@@ -202,6 +202,10 @@ Current seed behavior:
 - writes source tables plus precomputed outputs
 - uses stable integer ids derived from fixture order
 - fully replaces previously seeded rows so repeated runs are idempotent for local development
+
+The ETL runner also supports a compute-only mode for local inspection without database writes:
+
+- `python -m app.etl.run_all --fixtures --compute-only`
 
 ## Fixture Dataset
 

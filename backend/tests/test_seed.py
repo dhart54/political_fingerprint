@@ -1,6 +1,11 @@
 from datetime import date
 
-from app.etl.seed import build_seed_bundle, persist_seed_bundle, seed_fixture_database
+from app.etl.seed import (
+    build_seed_bundle,
+    persist_seed_bundle,
+    run_etl_and_persist,
+    seed_fixture_database,
+)
 
 
 def test_build_seed_bundle_contains_expected_fixture_counts() -> None:
@@ -74,3 +79,12 @@ def test_seed_fixture_database_returns_seed_counts(monkeypatch) -> None:
     assert result.source == "fixtures"
     assert result.legislators_seeded == 3
     assert result.summaries_seeded == 3
+
+
+def test_run_etl_and_persist_uses_source_and_returns_seed_counts(monkeypatch) -> None:
+    monkeypatch.setattr("app.etl.seed.persist_seed_bundle", lambda bundle: None)
+
+    result = run_etl_and_persist(source="fixtures", as_of=date(2026, 3, 12))
+
+    assert result.source == "fixtures"
+    assert result.fingerprints_seeded == 24

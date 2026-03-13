@@ -38,10 +38,14 @@ class SeedResult:
 
 
 def seed_fixture_database(*, as_of: date) -> SeedResult:
-    bundle = build_seed_bundle(as_of=as_of)
+    return run_etl_and_persist(source="fixtures", as_of=as_of)
+
+
+def run_etl_and_persist(*, source: str = "fixtures", as_of: date) -> SeedResult:
+    bundle = build_seed_bundle(source=source, as_of=as_of)
     persist_seed_bundle(bundle)
     return SeedResult(
-        source="fixtures",
+        source=source,
         legislators_seeded=len(bundle.legislators),
         bills_seeded=len(bundle.bills),
         roll_calls_seeded=len(bundle.roll_calls),
@@ -55,8 +59,8 @@ def seed_fixture_database(*, as_of: date) -> SeedResult:
     )
 
 
-def build_seed_bundle(*, as_of: date) -> SeedBundle:
-    ingest_result = run_ingest(source="fixtures")
+def build_seed_bundle(*, source: str = "fixtures", as_of: date) -> SeedBundle:
+    ingest_result = run_ingest(source=source)
     classification_result = run_classification(ingest_result, classification_version="v1")
     compute_result = run_compute(classification_result, ingest_result, as_of=as_of)
 
