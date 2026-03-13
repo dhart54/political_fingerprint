@@ -43,7 +43,7 @@ Completion criteria:
 
 # Phase 1 — Backend Foundation
 
-## Task 1.1 — FastAPI scaffold
+## Task 1.1 — FastAPI scaffold [COMPLETED]
 
 Create:
 
