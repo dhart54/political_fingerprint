@@ -45,7 +45,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
           setSearchState({
             status: "error",
             results: [],
-            error: error instanceof Error ? error.message : "Legislator search failed.",
+            error: "Legislator search is unavailable right now. Try reloading the page or checking the backend connection.",
           });
         });
       }
@@ -108,7 +108,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
             ) : null}
             {searchState.status !== "error" && searchState.results.length === 0 ? (
               <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600 sm:col-span-2 xl:col-span-3">
-                No legislators match this search.
+                No legislators match this search. Try a broader name.
               </div>
             ) : null}
             {searchState.results.map((legislator) => {

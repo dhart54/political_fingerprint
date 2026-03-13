@@ -35,7 +35,7 @@ export default function SummaryPanel({
         setState({
           status: "error",
           payload: null,
-          error: error instanceof Error ? error.message : "Summary request failed.",
+          error: "The summary is unavailable right now.",
         });
       }
     }
@@ -74,10 +74,19 @@ export default function SummaryPanel({
             <p className="mt-4 text-[17px] leading-9 text-stone-200">Loading summary...</p>
           ) : null}
           {state.status === "error" ? (
-            <p className="mt-4 text-[17px] leading-9 text-stone-200">{state.error}</p>
+            <p className="mt-4 text-[17px] leading-9 text-stone-200">
+              {state.error} Try reloading the page after the backend finishes loading.
+            </p>
           ) : null}
           {state.status === "ready" ? (
             <div className="mt-4 space-y-3">
+              {summaryPoints.length === 0 ? (
+                <div className="rounded-[1.5rem] border border-white/8 bg-white/4 px-4 py-4">
+                  <p className="text-[17px] leading-8 text-stone-100">
+                    No summary has been generated for this legislator yet.
+                  </p>
+                </div>
+              ) : null}
               {summaryPoints.map((point, index) => (
                 <div
                   className="rounded-[1.5rem] border border-white/8 bg-white/4 px-4 py-4"

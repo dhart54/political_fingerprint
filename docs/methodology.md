@@ -406,3 +406,15 @@ Current UI behavior:
 - splits the returned summary into short insight blocks for faster reading
 - keeps metadata visible but visually secondary to the narrative
 - does not rewrite, rank, or reinterpret the stored summary text on the client
+
+## Error and Empty States
+
+The frontend now uses explicit user-facing empty and error states across the main product surfaces.
+
+Current UI behavior:
+
+- backend connectivity errors explain that the API may not be running
+- legislator search errors avoid raw technical failure text
+- fingerprint, drift, and summary failures show plain recovery guidance
+- ZIP lookup validates 5-digit input before requesting data
+- empty summary and fingerprint states are rendered explicitly instead of leaving blank sections

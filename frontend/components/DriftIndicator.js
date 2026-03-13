@@ -35,7 +35,7 @@ export default function DriftIndicator({
         setState({
           status: "error",
           payload: null,
-          error: error instanceof Error ? error.message : "Drift request failed.",
+          error: "Drift data is unavailable for this legislator right now.",
         });
       }
     }
@@ -68,7 +68,7 @@ export default function DriftIndicator({
         </h3>
         <p className="mt-4 max-w-md text-sm leading-6 text-stone-300">
           {state.status === "loading" ? "Waiting for the backend drift response." : null}
-          {state.status === "error" ? state.error : null}
+          {state.status === "error" ? `${state.error} Try reloading the page or selecting another legislator.` : null}
           {state.status === "ready" && state.payload?.insufficient_data
             ? "The current fixture-backed data stays below the locked 20-vote threshold, so drift is reported as unavailable rather than estimated."
             : null}

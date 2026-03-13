@@ -15,6 +15,15 @@ export default function ZipLookupPanel() {
   });
 
   async function runLookup(nextZipCode) {
+    if (nextZipCode.length !== 5) {
+      setState({
+        status: "error",
+        payload: null,
+        error: "Enter a valid 5-digit ZIP code.",
+      });
+      return;
+    }
+
     try {
       setState({
         status: "loading",
@@ -32,7 +41,7 @@ export default function ZipLookupPanel() {
       setState({
         status: "error",
         payload: null,
-        error: error instanceof Error ? error.message : "ZIP lookup failed.",
+        error: "That ZIP code could not be matched. Try 27701 or 27601 for the current fixture data.",
       });
     }
   }
@@ -85,7 +94,7 @@ export default function ZipLookupPanel() {
           <p className="mt-3 text-lg text-stone-50">
             {state.status === "idle" ? "Ready to lookup" : null}
             {state.status === "loading" ? "Looking up legislators..." : null}
-            {state.status === "error" ? "ZIP not found" : null}
+            {state.status === "error" ? "Lookup unavailable" : null}
             {state.status === "ready"
               ? `ZIP ${state.payload.zip} maps to ${state.payload.state}-${state.payload.district}.`
               : null}

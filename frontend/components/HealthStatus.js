@@ -7,7 +7,7 @@ import { fetchHealth, getApiBaseUrl } from "../lib/api";
 export default function HealthStatus() {
   const [state, setState] = useState({
     status: "checking",
-    detail: "Waiting for backend response.",
+    detail: "Waiting for the backend health check.",
   });
 
   useEffect(() => {
@@ -23,8 +23,8 @@ export default function HealthStatus() {
           status: payload.status === "ok" ? "connected" : "unexpected",
           detail:
             payload.status === "ok"
-              ? `Backend health check returned ${payload.status}.`
-              : `Backend returned an unexpected payload: ${JSON.stringify(payload)}.`,
+              ? "The API is responding normally."
+              : "The API responded, but not with the expected health payload.",
         });
       } catch (error) {
         if (!active) {
@@ -33,9 +33,7 @@ export default function HealthStatus() {
         setState({
           status: "offline",
           detail:
-            error instanceof Error
-              ? error.message
-              : "Backend health request failed.",
+            "The frontend could not reach the backend. Make sure the API server is running and the base URL is correct.",
         });
       }
     }

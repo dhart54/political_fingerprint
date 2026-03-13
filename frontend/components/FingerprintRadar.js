@@ -50,7 +50,7 @@ export default function FingerprintRadar({
         setState({
           status: "error",
           payload: null,
-          error: error instanceof Error ? error.message : "Fingerprint request failed.",
+          error: "Fingerprint data is unavailable for this legislator right now.",
         });
       }
     }
@@ -198,7 +198,7 @@ export default function FingerprintRadar({
           </p>
           <p className="mt-2 text-sm leading-6 text-stone-300">
             {state.status === "loading" ? "Waiting for the backend fingerprint response." : null}
-            {state.status === "error" ? state.error : null}
+            {state.status === "error" ? `${state.error} Try choosing another legislator or checking the backend.` : null}
             {state.status === "ready"
               ? `Comparison overlay: ${comparisonParty}. Total eligible votes in the current fingerprint: ${fingerprintRows[0]?.total_votes ?? 0}.`
               : null}
@@ -213,6 +213,11 @@ export default function FingerprintRadar({
           </p>
         </article>
         <div className="grid gap-3 sm:grid-cols-2">
+          {state.status === "ready" && fingerprintRows.length === 0 ? (
+            <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600 sm:col-span-2">
+              No fingerprint rows are available for this legislator yet.
+            </div>
+          ) : null}
           {fingerprintRows.map((row) => (
             <div
               key={row.domain}
