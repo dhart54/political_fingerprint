@@ -2,23 +2,99 @@
 
 ## Current Status
 
-Work completed through:
+The original MVP plan in `TASKS.md` is complete.
 
-- Task 0.1
-- Task 1.1
-- Task 1.2
-- Task 1.3
-- Task 2.1
-- Task 3.1
-- Task 3.2
-- Task 4.1
-- Task 4.2
-- Task 5.1
-- Task 5.2
+Phase 2 / post-MVP work completed through:
 
-Next task in order:
+- legislator search API and picker
+- database-first API read layer
+- deterministic DB seeding
+- persistent ETL writes
+- DB-centered summary caching
+- official-style House and Senate sample adapters
+- official source fetch layer
+- cache-backed live pipeline
+- mixed House + Senate live ETL support
+- provenance and summary UX improvements
+- comparison API and UI
+- starter and expanded real-data import scripts
 
-- Task 6.1 `GET /legislators/{id}/fingerprint`
+Most recent commits:
+
+- `0db98bd` `Add psycopg-binary for hosted Postgres connectivity`
+- `3ad7746` `Support live House and Senate source formats`
+- `ce7bf65` `Add expanded real-data batch importer`
+
+## Live Data / Database State
+
+Database target:
+
+- Supabase Postgres via pooler `DATABASE_URL` in `backend/.env`
+
+Verified:
+
+- backend can connect to Supabase
+- initial schema from `backend/migrations/0001_initial_schema.sql` has been applied
+
+Real-data imports completed:
+
+1. Starter batch
+   - 1 House roll
+   - 1 Senate roll
+
+2. Expanded batch
+   - House 2025 rolls: `347`, `349`, `351`, `356`, `358`, `360`, `362`
+   - Senate 119th Congress, 1st Session rolls: `127`, `133`, `318`, `372`, `480`, `618`
+
+Latest persisted Supabase row counts after expanded batch:
+
+- `legislators`: `540`
+- `bills`: `13`
+- `roll_calls`: `13`
+- `votes_cast`: `3631`
+- `vote_classifications`: `13`
+- `fingerprints`: `4320`
+- `chamber_medians`: `48`
+- `drift_scores`: `540`
+- `summaries`: `540`
+- `zip_district_map`: `4`
+
+Coverage reality check:
+
+- `533` legislators have at least one eligible vote
+- `0` legislators have `5+` eligible votes
+- current max `total_votes` per legislator is `3`
+
+Implication:
+
+- the frontend is now reading real legislator roster data and real computed rows from Supabase
+- but the imported vote set is still too small for rich, informative fingerprints for most legislators
+
+## Important Runtime Notes
+
+Local app setup:
+
+- frontend site runs on `http://127.0.0.1:3000`
+- backend API runs on `http://127.0.0.1:8000`
+
+Important Windows runtime lesson from this session:
+
+- do not leave multiple uvicorn processes bound to port `8000`
+- if requests hang, check `netstat -ano | findstr :8000`
+- safest local backend startup command:
+
+```cmd
+cd C:\Users\Dylan\Documents\Data Science\political_fingerprint\backend
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+Frontend restart if stale:
+
+```cmd
+cd C:\Users\Dylan\Documents\Data Science\political_fingerprint\frontend
+rmdir /s /q .next
+npm run dev
+```
 
 ## Important Repo Instructions
 
@@ -30,68 +106,41 @@ On resume, re-read:
 - `CONSTRAINTS.md`
 - `TASKS.md`
 - `FIXTURES.md`
+- this `HANDOFF.md`
 
-Follow repo instructions strictly.
-Commit after each completed task.
-Do not skip tasks.
+Continue following repo instructions strictly.
 
-## Important Decision Made This Session
+## Key Decisions Still In Effect
 
-Task 5.2 fixture implementation was blocked by a conflict in `FIXTURES.md`.
+Fixture decision from earlier work remains locked:
 
-User decision:
+- prioritize `10` policy roll calls in fixtures
 
-- prioritize `10` policy roll calls
-
-Resulting implication:
-
-- the fixture set is internally consistent on the `10` policy roll call count
-- under the locked drift threshold of `20` eligible votes, all current fixture drift outputs are `insufficient_data`
-
-Do not silently "fix" this later without user approval, because it was an explicit choice.
+Do not silently change fixture assumptions later without user approval.
 
 ## Current Verification State
 
-Backend test suite status at end of session:
+Most recent validations completed:
 
-- `backend/.venv/bin/pytest` -> `36 passed`
+- `backend/.venv/bin/pytest tests/test_live_pipeline.py` -> `7 passed`
+- expanded real-data script dry run works
+- expanded real-data batch ran successfully into Supabase
 
-Fixture ETL runner:
+## Next Recommended Task
 
-- `backend/.venv/bin/python -m app.etl.run_all --fixtures` runs successfully
+Next highest-value work is not UI polish.
 
-## Git / Remote Status
+It is a larger bulk real-data import strategy so the frontend becomes genuinely informative.
 
-Remote:
+Recommended next step:
 
-- `origin` is configured
-- `main` was pushed to GitHub successfully earlier in the session
+1. build a range-based or curated bulk import path for many more substantive House and Senate bill votes
+2. bias imports toward bill-passage / amendment votes that are more likely to survive procedural exclusion
+3. rerun ETL into Supabase
+4. verify that many legislators now have meaningful non-zero fingerprints and less-empty summaries
 
-SSH:
+## Fast Resume Prompt
 
-- GitHub SSH key was created for this environment
-- remote is using SSH
+Use this tomorrow:
 
-## Files Added / Updated Recently
-
-Key implementation areas completed so far:
-
-- backend foundation
-- deterministic classification
-- fingerprint math
-- drift math
-- ETL scaffold
-- fixture dataset and fixture ETL runner
-
-Important docs:
-
-- `docs/methodology.md`
-- `TASKS.md`
-
-## Resume Plan
-
-1. Re-read the instruction files listed above.
-2. Continue with Task 6.1.
-3. Build the fingerprint endpoint against precomputed/fixture-driven outputs already available from the ETL layer.
-4. Add API tests.
-5. Commit Task 6.1 separately.
+“Read `HANDOFF.md` plus the repo instruction files, then continue from the bulk real-data import step.”
