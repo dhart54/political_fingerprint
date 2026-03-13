@@ -157,6 +157,7 @@ def _get_db_fingerprint_response(*, legislator_id: str, comparison_party: str) -
         "window_start": str(first_row["window_start"]),
         "window_end": str(first_row["window_end"]),
         "classification_version": str(first_row["classification_version"]),
+        "last_updated": str(first_row["created_at"]),
         "comparison_party": comparison_party,
         "fingerprint": [
             FingerprintResponseRow(
@@ -262,6 +263,7 @@ def _get_fallback_fingerprint_response(*, legislator_id: str, comparison_party: 
         "window_start": first_row.window_start.isoformat(),
         "window_end": first_row.window_end.isoformat(),
         "classification_version": first_row.classification_version,
+        "last_updated": f"{FIXTURE_AS_OF_DATE.isoformat()}T00:00:00+00:00",
         "comparison_party": comparison_party,
         "fingerprint": [
             FingerprintResponseRow(
@@ -344,7 +346,7 @@ def _get_db_fingerprint_rows(*, legislator_db_id: int) -> list[dict[str, Any]] |
             ORDER BY window_end DESC, classification_version DESC
             LIMIT 1
         )
-        SELECT domain, vote_count, total_votes, vote_share, window_start, window_end, classification_version
+        SELECT domain, vote_count, total_votes, vote_share, window_start, window_end, classification_version, created_at
         FROM fingerprints
         WHERE legislator_id = %s
           AND (window_start, window_end, classification_version) IN (

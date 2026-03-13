@@ -62,6 +62,7 @@ def test_get_fingerprint_response_uses_database_rows(monkeypatch) -> None:
                 "window_start": "2024-03-12",
                 "window_end": "2026-03-12",
                 "classification_version": "db-v1",
+                "created_at": "2026-03-13T10:15:00+00:00",
             },
             {
                 "domain": "HEALTH_SOCIAL",
@@ -71,6 +72,7 @@ def test_get_fingerprint_response_uses_database_rows(monkeypatch) -> None:
                 "window_start": "2024-03-12",
                 "window_end": "2026-03-12",
                 "classification_version": "db-v1",
+                "created_at": "2026-03-13T10:15:00+00:00",
             },
         ],
     )
@@ -86,6 +88,7 @@ def test_get_fingerprint_response_uses_database_rows(monkeypatch) -> None:
 
     assert payload["classification_version"] == "db-v1"
     assert payload["window_end"] == "2026-03-12"
+    assert payload["last_updated"] == "2026-03-13T10:15:00+00:00"
     assert payload["fingerprint"][0]["median_share"] == 0.25
 
 

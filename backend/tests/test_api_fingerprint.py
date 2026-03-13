@@ -14,6 +14,7 @@ def test_get_fingerprint_endpoint_returns_precomputed_vector() -> None:
 
     assert payload["legislator_id"] == "leg_alex_morgan"
     assert payload["comparison_party"] == "ALL"
+    assert payload["last_updated"] == "2026-03-12T00:00:00+00:00"
     assert len(payload["fingerprint"]) == 8
     assert next(item for item in payload["fingerprint"] if item["domain"] == "HEALTH_SOCIAL") == {
         "domain": "HEALTH_SOCIAL",

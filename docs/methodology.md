@@ -386,3 +386,13 @@ Current UI behavior:
 - supports client-side search input backed by server search results
 - updates fingerprint, drift, and summary panels together when a legislator is selected
 - keeps ZIP lookup independent from the currently selected legislator
+
+## Provenance UI
+
+The frontend now surfaces provenance details near both the fingerprint and summary sections.
+
+Current UI behavior:
+
+- fingerprint UI shows last updated time, computation window end, and classification version
+- summary UI shows last updated time, computation window end, and classification version
+- both sections include a concise on-page methodology explainer instead of relying on hidden implementation details

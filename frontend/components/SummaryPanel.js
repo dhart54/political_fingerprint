@@ -75,6 +75,10 @@ export default function SummaryPanel({
         </article>
         <div className="grid gap-4">
           <MetaCard
+            label="Last Updated"
+            value={state.status === "ready" ? formatTimestamp(state.payload?.created_at) : "--"}
+          />
+          <MetaCard
             label="Window End"
             value={state.status === "ready" ? state.payload?.window_end : "--"}
           />
@@ -82,12 +86,16 @@ export default function SummaryPanel({
             label="Version"
             value={state.status === "ready" ? state.payload?.classification_version : "--"}
           />
-          <MetaCard
-            label="Created"
-            value={state.status === "ready" ? state.payload?.created_at : "--"}
-          />
         </div>
       </div>
+      <article className="mt-6 rounded-[1.8rem] border border-amber-200 bg-amber-50/80 px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
+        <p className="text-xs uppercase tracking-[0.25em] text-amber-800">
+          Methodology
+        </p>
+        <p className="mt-3 text-sm leading-6 text-stone-700">
+          Summaries are descriptive only. They are generated from precomputed fingerprint and drift outputs, stored by legislator, window end, and classification version, and blocked from using ranking or causal language.
+        </p>
+      </article>
     </section>
   );
 }
@@ -99,4 +107,12 @@ function MetaCard({ label, value }) {
       <p className="mt-3 text-sm leading-6 text-stone-700 break-words">{value}</p>
     </div>
   );
+}
+
+function formatTimestamp(value) {
+  if (!value) {
+    return "--";
+  }
+
+  return String(value).replace("T", " ").replace("+00:00", " UTC");
 }

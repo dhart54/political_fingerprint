@@ -173,6 +173,20 @@ export default function FingerprintRadar({
             The amber shape is the legislator fingerprint. The green dashed overlay is the chamber median for the selected comparison party.
           </p>
         </div>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <ProvenanceCard
+            label="Last Updated"
+            value={state.status === "ready" ? formatTimestamp(state.payload?.last_updated) : "--"}
+          />
+          <ProvenanceCard
+            label="Window End"
+            value={state.status === "ready" ? state.payload?.window_end : "--"}
+          />
+          <ProvenanceCard
+            label="Version"
+            value={state.status === "ready" ? state.payload?.classification_version : "--"}
+          />
+        </div>
         <div className="rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
             Status
@@ -190,6 +204,14 @@ export default function FingerprintRadar({
               : null}
           </p>
         </div>
+        <article className="rounded-[1.8rem] border border-amber-200 bg-amber-50/80 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
+          <p className="text-xs uppercase tracking-[0.25em] text-amber-800">
+            Methodology
+          </p>
+          <p className="mt-3 text-sm leading-6 text-stone-700">
+            Fingerprints use a rolling 730-day window of eligible policy votes, grouped into 8 fixed issue domains. Procedural and low-confidence votes are excluded before shares and medians are precomputed.
+          </p>
+        </article>
         <div className="grid gap-3 sm:grid-cols-2">
           {fingerprintRows.map((row) => (
             <div
@@ -252,4 +274,21 @@ function formatDomainLabel(domain) {
     .split("_")
     .map((segment) => segment[0] + segment.slice(1).toLowerCase())
     .join(" ");
+}
+
+function ProvenanceCard({ label, value }) {
+  return (
+    <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
+      <p className="text-xs uppercase tracking-[0.22em] text-stone-500">{label}</p>
+      <p className="mt-3 text-sm leading-6 text-stone-800 break-words">{value}</p>
+    </div>
+  );
+}
+
+function formatTimestamp(value) {
+  if (!value) {
+    return "--";
+  }
+
+  return String(value).replace("T", " ").replace("+00:00", " UTC");
 }
