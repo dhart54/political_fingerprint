@@ -235,3 +235,13 @@ Current UI behavior:
 - shows the deterministic drift value when available
 - shows the insufficient-data state explicitly when the backend returns `insufficient_data = true`
 - surfaces early and recent vote totals alongside the indicator
+
+## Summary UI
+
+The frontend summary panel renders the cached summary endpoint response directly.
+
+Current UI behavior:
+
+- displays the summary text returned by the backend
+- surfaces generation method, window end, classification version, and created timestamp
+- does not generate or rewrite summary text on the client

@@ -330,7 +330,7 @@ Displays drift score.
 
 ---
 
-## Task 8.3 — Summary display
+## Task 8.3 — Summary display [COMPLETED]
 
 Display summary text.
 
