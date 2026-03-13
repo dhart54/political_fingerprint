@@ -284,7 +284,7 @@ Returns legislators.
 
 # Phase 7 — Frontend Foundation
 
-## Task 7.1 — Next.js scaffold
+## Task 7.1 — Next.js scaffold [COMPLETED]
 
 Create Next.js app.
 
