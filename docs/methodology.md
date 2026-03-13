@@ -190,3 +190,15 @@ The fallback summary is descriptive only and includes:
 - vote volume
 - the largest fingerprint emphasis areas
 - drift availability or the insufficient-data condition
+
+## ZIP Lookup API
+
+The ZIP lookup endpoint returns fixture-backed legislator mappings for the requested ZIP code.
+
+Returned data includes:
+
+- ZIP code
+- state
+- congressional district
+- House representative for that district
+- both senators for that state

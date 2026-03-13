@@ -270,7 +270,7 @@ Returns cached summary.
 
 ---
 
-## Task 6.4 — ZIP lookup endpoint
+## Task 6.4 — ZIP lookup endpoint [COMPLETED]
 
 Create:
 

@@ -1,15 +1,21 @@
 from dataclasses import dataclass
 from datetime import date
 
+from app.etl.ingest import run_ingest
 from app.etl.compute import run_etl
 
 
 FIXTURE_AS_OF_DATE = date(2026, 3, 12)
 PRECOMPUTED_DATA = run_etl(as_of=FIXTURE_AS_OF_DATE)
+FIXTURE_DATA = run_ingest().fixtures
 LEGISLATOR_CHAMBERS = {
     "leg_alex_morgan": "house",
     "leg_jordan_lee": "senate",
     "leg_taylor_nguyen": "senate",
+}
+LEGISLATORS_BY_ID = {
+    legislator["id"]: legislator
+    for legislator in FIXTURE_DATA.legislators
 }
 
 
@@ -93,7 +99,49 @@ def get_drift_response(*, legislator_id: str) -> dict[str, object] | None:
     }
 
 
+def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
+    zip_record = next((row for row in FIXTURE_DATA.zip_district_map if row["zip"] == zip_code), None)
+    if zip_record is None:
+        return None
+
+    house_rep = next(
+        (
+            legislator
+            for legislator in FIXTURE_DATA.legislators
+            if legislator["chamber"] == "house"
+            and legislator["state"] == zip_record["state"]
+            and legislator["district"] == zip_record["district"]
+        ),
+        None,
+    )
+    senators = [
+        legislator
+        for legislator in FIXTURE_DATA.legislators
+        if legislator["chamber"] == "senate" and legislator["state"] == zip_record["state"]
+    ]
+
+    return {
+        "zip": zip_record["zip"],
+        "state": zip_record["state"],
+        "district": zip_record["district"],
+        "house_rep": _serialize_legislator(house_rep) if house_rep is not None else None,
+        "senators": [_serialize_legislator(legislator) for legislator in senators],
+    }
+
+
 def _infer_legislator_chamber(legislator_id: str) -> str:
     if legislator_id not in LEGISLATOR_CHAMBERS:
         raise KeyError(f"Unknown legislator_id: {legislator_id}")
     return LEGISLATOR_CHAMBERS[legislator_id]
+
+
+def _serialize_legislator(legislator: dict[str, object]) -> dict[str, object]:
+    return {
+        "id": legislator["id"],
+        "bioguide_id": legislator["bioguide_id"],
+        "name_display": legislator["name_display"],
+        "chamber": legislator["chamber"],
+        "state": legislator["state"],
+        "district": legislator["district"],
+        "party": legislator["party"],
+    }
