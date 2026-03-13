@@ -151,7 +151,7 @@ Tests pass.
 
 ---
 
-## Task 3.2 — Domain classification engine
+## Task 3.2 — Domain classification engine [COMPLETED]
 
 Create:
 
