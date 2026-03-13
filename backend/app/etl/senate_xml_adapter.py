@@ -1,5 +1,6 @@
 import json
 import re
+from datetime import datetime
 from pathlib import Path
 from xml.etree import ElementTree
 
@@ -95,19 +96,30 @@ def _parse_members(tree: ElementTree.ElementTree) -> list[dict[str, object]]:
     root = tree.getroot()
     legislators: list[dict[str, object]] = []
 
-    for member in root.findall("./members/member"):
-        full_name = _require_text(member.find("full_name"))
+    members = root.findall("./members/member")
+    if not members:
+        members = root.findall("./senator")
+
+    for member in members:
+        full_name = _extract_senate_member_name(member)
+        lis_member_id = _optional_text(member.find("lis_member_id")) or member.attrib.get("lis_member_id")
+        bioguide_id = _optional_text(member.find("bioguide_id")) or _optional_text(member.find("bioguideId"))
+        party = _optional_text(member.find("party"))
+        state = _optional_text(member.find("state"))
+        if not lis_member_id or not bioguide_id or not party or not state:
+            raise ValueError("Senate XML member is missing required identifiers")
+
         legislators.append(
             {
                 "id": _to_legislator_id(full_name),
-                "lis_member_id": _require_text(member.find("lis_member_id")),
-                "bioguide_id": _require_text(member.find("bioguide_id")),
+                "lis_member_id": lis_member_id,
+                "bioguide_id": bioguide_id,
                 "name_display": full_name,
                 "chamber": "senate",
-                "state": _require_text(member.find("state")),
+                "state": state,
                 "district": "Statewide",
-                "party": _require_text(member.find("party")),
-                "in_office": _require_text(member.find("in_office")).lower() == "true",
+                "party": party,
+                "in_office": _parse_senate_in_office(member),
             }
         )
 
@@ -124,12 +136,18 @@ def _parse_roll_call(
     congress = int(_require_text(root.find("congress")))
     session = int(_require_text(root.find("session")))
     roll_number = int(_require_text(root.find("vote_number")))
-    vote_date = _require_text(root.find("vote_date"))
+    vote_date = _normalize_senate_vote_date(_require_text(root.find("vote_date")))
     question = _require_text(root.find("question"))
     description = _require_text(root.find("vote_title"))
-    document_text = _require_text(root.find("document/document_number"))
+    document_type = _optional_text(root.find("document/document_type"))
+    document_number = _optional_text(root.find("document/document_number"))
+    document_name = _optional_text(root.find("document/document_name"))
 
-    bill_type, bill_number = _parse_senate_bill_reference(document_text)
+    bill_type, bill_number = _parse_senate_bill_reference(
+        document_type=document_type,
+        document_number=document_number,
+        document_name=document_name,
+    )
     bill_key = (congress, bill_type, bill_number)
     bill_id = _to_bill_id(congress=congress, bill_type=bill_type, bill_number=bill_number)
     congress_bill = congress_bill_lookup.get(bill_key)
@@ -172,13 +190,38 @@ def _parse_roll_call(
     return roll_call, bill, votes
 
 
-def _parse_senate_bill_reference(value: str) -> tuple[str, int]:
+def _parse_senate_bill_reference(
+    *,
+    document_type: str | None,
+    document_number: str | None,
+    document_name: str | None,
+) -> tuple[str, int]:
+    if document_type and document_number:
+        normalized_type = re.sub(r"[^A-Z0-9]+", " ", document_type.upper()).strip()
+        normalized_number = re.sub(r"[^0-9]+", "", document_number)
+        if normalized_number:
+            if normalized_type == "S":
+                return "s", int(normalized_number)
+            if normalized_type == "S RES":
+                return "sres", int(normalized_number)
+            if normalized_type == "H R":
+                return "hr", int(normalized_number)
+            if normalized_type == "H RES":
+                return "hres", int(normalized_number)
+
+    value = document_name or document_number or ""
     normalized = re.sub(r"[^A-Z0-9]+", " ", value.upper()).strip()
     if normalized.startswith("S RES "):
         return "sres", int(normalized.split()[-1])
     if normalized.startswith("S "):
         return "s", int(normalized.split()[-1])
-    raise ValueError(f"Unsupported Senate bill reference: {value}")
+    if normalized.startswith("H RES "):
+        return "hres", int(normalized.split()[-1])
+    if normalized.startswith("H R "):
+        return "hr", int(normalized.split()[-1])
+    raise ValueError(
+        f"Unsupported Senate bill reference: type={document_type!r} number={document_number!r} name={document_name!r}"
+    )
 
 
 def _normalize_vote_position(value: str) -> str:
@@ -222,3 +265,45 @@ def _require_text(element: ElementTree.Element | None) -> str:
     if element is None or element.text is None:
         raise ValueError("Expected XML element text in Senate XML sample source")
     return element.text.strip()
+
+
+def _optional_text(element: ElementTree.Element | None) -> str | None:
+    if element is None or element.text is None:
+        return None
+    value = element.text.strip()
+    return value or None
+
+
+def _extract_senate_member_name(member: ElementTree.Element) -> str:
+    full_name = _optional_text(member.find("full_name"))
+    if full_name:
+        return full_name
+
+    name_element = member.find("name")
+    if name_element is None:
+        raise ValueError("Senate XML member is missing a usable display name")
+
+    parts = [
+        _optional_text(name_element.find("first")),
+        _optional_text(name_element.find("last")),
+    ]
+    name = " ".join(part for part in parts if part)
+    if name:
+        return name
+    raise ValueError("Senate XML member is missing a usable display name")
+
+
+def _parse_senate_in_office(member: ElementTree.Element) -> bool:
+    in_office = _optional_text(member.find("in_office"))
+    if in_office is not None:
+        return in_office.lower() == "true"
+    return True
+
+
+def _normalize_senate_vote_date(value: str) -> str:
+    for format_string in ("%Y-%m-%d", "%B %d, %Y,  %I:%M %p"):
+        try:
+            return datetime.strptime(value, format_string).date().isoformat()
+        except ValueError:
+            continue
+    raise ValueError(f"Unsupported Senate vote_date format: {value}")
