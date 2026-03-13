@@ -144,15 +144,6 @@ export default function FingerprintRadar({
                 </g>
               );
             })}
-            {medianPolygon ? (
-              <polygon
-                fill="rgba(20,83,45,0.14)"
-                points={medianPolygon}
-                stroke="#166534"
-                strokeDasharray="6 6"
-                strokeWidth="2"
-              />
-            ) : null}
             {fingerprintPolygon ? (
               <polygon
                 fill="rgba(161,98,7,0.22)"
@@ -160,6 +151,24 @@ export default function FingerprintRadar({
                 stroke="#a16207"
                 strokeWidth="3"
               />
+            ) : null}
+            {medianPolygon ? (
+              <>
+                <polygon
+                  fill="rgba(16,185,129,0.08)"
+                  points={medianPolygon}
+                  stroke="rgba(4,120,87,0.26)"
+                  strokeWidth="8"
+                />
+                <polygon
+                  fill="none"
+                  points={medianPolygon}
+                  stroke="#047857"
+                  strokeDasharray="10 8"
+                  strokeLinecap="round"
+                  strokeWidth="4"
+                />
+              </>
             ) : null}
           </svg>
         </div>
@@ -172,6 +181,17 @@ export default function FingerprintRadar({
           <p className="mt-3 max-w-md text-sm leading-6 text-stone-700">
             The amber shape is the legislator fingerprint. The green dashed overlay is the chamber median for the selected comparison party.
           </p>
+          <div className="mt-4 flex flex-wrap gap-4">
+            <LegendSwatch
+              label="Legislator fingerprint"
+              sampleClassName="bg-amber-700"
+            />
+            <LegendSwatch
+              dashed
+              label="Chamber median overlay"
+              sampleClassName="bg-emerald-700"
+            />
+          </div>
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
           <ProvenanceCard
@@ -286,6 +306,29 @@ function ProvenanceCard({ label, value }) {
     <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
       <p className="text-xs uppercase tracking-[0.22em] text-stone-500">{label}</p>
       <p className="mt-3 text-sm leading-6 text-stone-800 break-words">{value}</p>
+    </div>
+  );
+}
+
+function LegendSwatch({ dashed = false, label, sampleClassName }) {
+  return (
+    <div className="flex items-center gap-2">
+      <span
+        aria-hidden="true"
+        className={`block h-[4px] w-10 rounded-full ${sampleClassName}`}
+        style={
+          dashed
+            ? {
+                backgroundColor: "transparent",
+                backgroundImage:
+                  "repeating-linear-gradient(90deg, #047857 0 12px, transparent 12px 20px)",
+              }
+            : undefined
+        }
+      />
+      <span className="text-[11px] uppercase tracking-[0.18em] text-stone-600">
+        {label}
+      </span>
     </div>
   );
 }
