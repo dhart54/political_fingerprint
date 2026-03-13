@@ -5,6 +5,7 @@ import { useState } from "react";
 import HealthStatus from "../components/HealthStatus";
 import DriftIndicator from "../components/DriftIndicator";
 import FingerprintRadar from "../components/FingerprintRadar";
+import ComparisonPanel from "../components/ComparisonPanel";
 import LegislatorPicker from "../components/LegislatorPicker";
 import SummaryPanel from "../components/SummaryPanel";
 import ZipLookupPanel from "../components/ZipLookupPanel";
@@ -17,6 +18,16 @@ const DEFAULT_LEGISLATOR = {
   state: "NC",
   district: "04",
   party: "D",
+};
+
+const DEFAULT_COMPARE_RIGHT = {
+  id: "leg_jordan_lee",
+  bioguide_id: "S000001",
+  name_display: "Jordan Lee",
+  chamber: "senate",
+  state: "NC",
+  district: null,
+  party: "R",
 };
 
 export default function HomePage() {
@@ -71,6 +82,10 @@ export default function HomePage() {
         />
         <DriftIndicator legislatorId={selectedLegislator.id} />
         <SummaryPanel legislatorId={selectedLegislator.id} />
+        <ComparisonPanel
+          defaultLeftLegislator={selectedLegislator}
+          defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
+        />
         <ZipLookupPanel />
         <HealthStatus />
       </section>

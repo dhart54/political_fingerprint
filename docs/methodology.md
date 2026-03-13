@@ -430,3 +430,14 @@ Current behavior:
 - supports the same `comparison_party` overlay toggle as the fingerprint endpoint
 - returns legislator metadata plus each side's fingerprint, drift, and summary payload
 - does not add ranking, winner labels, or evaluative comparison language
+
+## Comparison UI
+
+The frontend comparison section uses the comparison endpoint to render two legislators side by side.
+
+Current UI behavior:
+
+- supports choosing a left and right legislator independently
+- uses the same `ALL`, `D`, and `R` overlay context as the fingerprint comparison
+- shows top fingerprint emphasis, drift state, and summary preview for each side
+- labels both sides explicitly and avoids winner framing or ranked language

@@ -88,3 +88,25 @@ export async function fetchLegislatorSearch({ query = "" } = {}) {
 
   return response.json();
 }
+
+export async function fetchLegislatorComparison({
+  leftLegislatorId,
+  rightLegislatorId,
+  comparisonParty = "ALL",
+}) {
+  const searchParams = new URLSearchParams({
+    left_legislator_id: leftLegislatorId,
+    right_legislator_id: rightLegislatorId,
+    comparison_party: comparisonParty,
+  });
+
+  const response = await fetch(`${API_BASE_URL}/compare/legislators?${searchParams.toString()}`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Comparison request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
