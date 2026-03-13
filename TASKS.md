@@ -181,7 +181,7 @@ Correct vote share outputs.
 
 ---
 
-## Task 4.2 — Drift calculation
+## Task 4.2 — Drift calculation [COMPLETED]
 
 Create:
 

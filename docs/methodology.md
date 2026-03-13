@@ -87,3 +87,27 @@ Explicit-zero rule:
 - if `total_votes = 0`, then `vote_share = 0.0`
 
 Fingerprint output always includes all 8 domains and never omits a domain row.
+
+## Drift Rules
+
+Drift is deterministic and uses the same 730-day window as the fingerprint.
+
+Window split:
+
+- early window: older 365 days
+- recent window: newer 365 days
+
+For each half-window, compute a domain share vector across the 8 locked issue domains.
+
+Formula:
+
+- `drift = 0.5 × sum(abs(P_recent[D] - P_early[D]))`
+
+Constraints:
+
+- `0 <= drift <= 1`
+- if total eligible votes in the full 730-day window are fewer than `20`, then:
+  - `insufficient_data = true`
+  - `drift_value = null`
+
+No estimation or extrapolation is used.
