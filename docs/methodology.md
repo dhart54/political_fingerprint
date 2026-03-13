@@ -111,3 +111,15 @@ Constraints:
   - `drift_value = null`
 
 No estimation or extrapolation is used.
+
+## ETL Order
+
+The ETL pipeline is deterministic and runs in this order:
+
+1. ingest source records
+2. classify eligible policy votes
+3. compute fingerprints
+4. compute chamber medians
+5. compute drift scores
+
+The current scaffold provides these steps as explicit modules so fixture ingestion can be added without changing the ETL sequence.

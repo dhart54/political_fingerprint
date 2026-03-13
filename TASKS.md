@@ -195,7 +195,7 @@ Drift matches formula.
 
 # Phase 5 — ETL Pipeline
 
-## Task 5.1 — ETL scaffold
+## Task 5.1 — ETL scaffold [COMPLETED]
 
 Create:
 
