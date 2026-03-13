@@ -1,4 +1,5 @@
 import sys
+from pathlib import Path
 
 from app.etl import live_pipeline
 
@@ -65,6 +66,8 @@ def test_run_live_pipeline_fetches_house_flow(monkeypatch) -> None:
             },
         )(),
     )
+    monkeypatch.setattr(live_pipeline, "infer_house_bill_refs_from_cache", lambda **kwargs: set())
+    monkeypatch.setattr(live_pipeline, "infer_senate_bill_refs_from_cache", lambda **kwargs: set())
 
     result = live_pipeline.run_live_pipeline(
         house_year=2025,
@@ -87,6 +90,11 @@ def test_run_live_pipeline_fetches_congress_bill_metadata(monkeypatch) -> None:
 
     monkeypatch.setattr(live_pipeline, "fetch_house_clerk_members", lambda: None)
     monkeypatch.setattr(live_pipeline, "fetch_house_clerk_roll_calls", lambda **kwargs: [])
+    monkeypatch.setattr(
+        live_pipeline,
+        "infer_house_bill_refs_from_cache",
+        lambda **kwargs: {(119, "hr", 121)},
+    )
     monkeypatch.setattr(
         live_pipeline,
         "run_etl_and_persist_sources",
@@ -116,6 +124,11 @@ def test_run_live_pipeline_fetches_congress_bill_metadata(monkeypatch) -> None:
         ),
     )
     monkeypatch.setattr(live_pipeline, "resolve_congress_api_key", lambda api_key: "resolved-key")
+    monkeypatch.setattr(
+        live_pipeline,
+        "infer_senate_bill_refs_from_cache",
+        lambda **kwargs: set(),
+    )
     monkeypatch.setattr(
         live_pipeline,
         "run_etl_and_persist",
@@ -148,8 +161,11 @@ def test_run_live_pipeline_fetches_congress_bill_metadata(monkeypatch) -> None:
         congress_api_key=None,
     )
 
-    assert fetched == [(119, "hr", 120, "resolved-key")]
-    assert result.congress_bills_fetched == 1
+    assert fetched == [
+        (119, "hr", 120, "resolved-key"),
+        (119, "hr", 121, "resolved-key"),
+    ]
+    assert result.congress_bills_fetched == 2
 
 
 def test_run_live_pipeline_supports_mixed_house_and_senate_runs(monkeypatch) -> None:
@@ -159,6 +175,8 @@ def test_run_live_pipeline_supports_mixed_house_and_senate_runs(monkeypatch) -> 
     monkeypatch.setattr(live_pipeline, "fetch_house_clerk_roll_calls", lambda **kwargs: [])
     monkeypatch.setattr(live_pipeline, "fetch_senate_members", lambda: None)
     monkeypatch.setattr(live_pipeline, "fetch_senate_vote_files", lambda **kwargs: [])
+    monkeypatch.setattr(live_pipeline, "infer_house_bill_refs_from_cache", lambda **kwargs: set())
+    monkeypatch.setattr(live_pipeline, "infer_senate_bill_refs_from_cache", lambda **kwargs: set())
     monkeypatch.setattr(
         live_pipeline,
         "run_etl_and_persist",
@@ -198,6 +216,52 @@ def test_run_live_pipeline_supports_mixed_house_and_senate_runs(monkeypatch) -> 
 
     assert calls["sources"] == ["house_clerk_cache", "senate_xml_cache"]
     assert result.persisted_source == "house_clerk_cache+senate_xml_cache"
+
+
+def test_infer_house_bill_refs_from_cache_reads_house_roll_xml(tmp_path: Path) -> None:
+    source_dir = tmp_path / "house"
+    source_dir.mkdir()
+    (source_dir / "roll362.xml").write_text(
+        """
+        <rollcall-vote>
+          <vote-metadata>
+            <congress>119</congress>
+            <legis-num>H R 498</legis-num>
+          </vote-metadata>
+        </rollcall-vote>
+        """.strip()
+    )
+
+    refs = live_pipeline.infer_house_bill_refs_from_cache(
+        roll_numbers=[362],
+        source_dir=source_dir,
+    )
+
+    assert refs == {(119, "hr", 498)}
+
+
+def test_infer_senate_bill_refs_from_cache_reads_senate_vote_xml(tmp_path: Path) -> None:
+    source_dir = tmp_path / "senate"
+    source_dir.mkdir()
+    (source_dir / "vote_372.xml").write_text(
+        """
+        <roll_call_vote>
+          <congress>119</congress>
+          <document>
+            <document_type>H.R.</document_type>
+            <document_number>1</document_number>
+            <document_name>H.R. 1</document_name>
+          </document>
+        </roll_call_vote>
+        """.strip()
+    )
+
+    refs = live_pipeline.infer_senate_bill_refs_from_cache(
+        roll_numbers=[372],
+        source_dir=source_dir,
+    )
+
+    assert refs == {(119, "hr", 1)}
 
 
 def test_main_supports_cli(monkeypatch, capsys) -> None:

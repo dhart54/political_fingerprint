@@ -1,8 +1,12 @@
 import argparse
 from dataclasses import dataclass
 from datetime import date
+from pathlib import Path
+from xml.etree import ElementTree
 
 from app.etl.fetch_sources import (
+    HOUSE_CLERK_CACHE_DIR,
+    SENATE_XML_CACHE_DIR,
     fetch_congress_bill_metadata,
     fetch_house_clerk_members,
     fetch_house_clerk_roll_calls,
@@ -10,7 +14,9 @@ from app.etl.fetch_sources import (
     fetch_senate_vote_files,
     resolve_congress_api_key,
 )
+from app.etl.house_clerk_adapter import _parse_house_bill_reference
 from app.etl.run_all import DEFAULT_AS_OF_DATE
+from app.etl.senate_xml_adapter import _parse_senate_bill_reference
 from app.etl.seed import run_etl_and_persist, run_etl_and_persist_sources
 
 
@@ -56,16 +62,32 @@ def run_live_pipeline(
         )
         senate_fetch_count = len(senate_roll_numbers)
 
-    if bill_refs:
+    inferred_bill_refs: set[tuple[int, str, int]] = set()
+    if house_roll_numbers:
+        inferred_bill_refs.update(
+            infer_house_bill_refs_from_cache(
+                roll_numbers=house_roll_numbers,
+            )
+        )
+    if senate_roll_numbers:
+        inferred_bill_refs.update(
+            infer_senate_bill_refs_from_cache(
+                roll_numbers=senate_roll_numbers,
+            )
+        )
+
+    resolved_bill_refs = sorted(set(bill_refs) | inferred_bill_refs)
+
+    if resolved_bill_refs:
         api_key = resolve_congress_api_key(congress_api_key)
-        for congress, bill_type, bill_number in bill_refs:
+        for congress, bill_type, bill_number in resolved_bill_refs:
             fetch_congress_bill_metadata(
                 congress=congress,
                 bill_type=bill_type,
                 bill_number=bill_number,
                 api_key=api_key,
             )
-        bill_fetch_count = len(bill_refs)
+        bill_fetch_count = len(resolved_bill_refs)
 
     persist_sources = [
         source
@@ -103,12 +125,83 @@ def run_live_pipeline(
     )
 
 
+def infer_house_bill_refs_from_cache(
+    *,
+    roll_numbers: list[int],
+    source_dir: Path = HOUSE_CLERK_CACHE_DIR,
+) -> set[tuple[int, str, int]]:
+    bill_refs: set[tuple[int, str, int]] = set()
+    for roll_number in roll_numbers:
+        roll_path = source_dir / f"roll{roll_number:03d}.xml"
+        if not roll_path.exists():
+            continue
+
+        root = ElementTree.parse(roll_path).getroot()
+        metadata = root.find("vote-metadata")
+        if metadata is None:
+            continue
+
+        congress_text = _optional_text(metadata.find("congress"))
+        legis_num = _optional_text(metadata.find("legis-num"))
+        if not congress_text or not legis_num:
+            continue
+
+        try:
+            bill_type, bill_number = _parse_house_bill_reference(legis_num)
+        except ValueError:
+            continue
+
+        bill_refs.add((int(congress_text), bill_type, bill_number))
+
+    return bill_refs
+
+
+def infer_senate_bill_refs_from_cache(
+    *,
+    roll_numbers: list[int],
+    source_dir: Path = SENATE_XML_CACHE_DIR,
+) -> set[tuple[int, str, int]]:
+    bill_refs: set[tuple[int, str, int]] = set()
+    for roll_number in roll_numbers:
+        vote_path = source_dir / f"vote_{roll_number:03d}.xml"
+        if not vote_path.exists():
+            continue
+
+        root = ElementTree.parse(vote_path).getroot()
+        congress_text = _optional_text(root.find("congress"))
+        if not congress_text:
+            continue
+
+        document_type = _optional_text(root.find("document/document_type"))
+        document_number = _optional_text(root.find("document/document_number"))
+        document_name = _optional_text(root.find("document/document_name"))
+        try:
+            bill_type, bill_number = _parse_senate_bill_reference(
+                document_type=document_type,
+                document_number=document_number,
+                document_name=document_name,
+            )
+        except ValueError:
+            continue
+
+        bill_refs.add((int(congress_text), bill_type, bill_number))
+
+    return bill_refs
+
+
 def parse_bill_ref(value: str) -> tuple[int, str, int]:
     parts = value.split(":")
     if len(parts) != 3:
         raise argparse.ArgumentTypeError("Bill refs must be in congress:bill_type:bill_number form")
     congress, bill_type, bill_number = parts
     return int(congress), bill_type.lower(), int(bill_number)
+
+
+def _optional_text(element: ElementTree.Element | None) -> str | None:
+    if element is None or element.text is None:
+        return None
+    value = element.text.strip()
+    return value or None
 
 
 def main() -> None:

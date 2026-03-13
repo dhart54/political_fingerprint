@@ -79,3 +79,46 @@ Senate-only:
 cd backend
 .venv/bin/python ../scripts/run_real_data_starter.py --skip-house
 ```
+
+## Larger Curated Batch
+
+To move beyond mostly zero-state profiles, use the expanded batch script. It pulls a wider set of House and Senate bill votes and infers the matching Congress.gov bill metadata directly from the downloaded roll XML.
+
+From the repo root:
+
+```bash
+cd backend
+.venv/bin/python ../scripts/run_real_data_expanded.py
+```
+
+Windows `cmd`:
+
+```cmd
+cd backend
+python ..\scripts\run_real_data_expanded.py
+```
+
+Default expanded coverage:
+
+- House 2025 rolls:
+  - `347`
+  - `349`
+  - `351`
+  - `356`
+  - `358`
+  - `360`
+  - `362`
+- Senate 119th Congress, 1st Session rolls:
+  - `127`
+  - `133`
+  - `318`
+  - `372`
+  - `480`
+  - `618`
+
+Dry run:
+
+```bash
+cd backend
+.venv/bin/python ../scripts/run_real_data_expanded.py --dry-run
+```

@@ -302,7 +302,8 @@ Current orchestration behavior:
 
 - fetches House member XML before House roll call downloads when House roll numbers are requested
 - fetches Senate member XML before Senate vote downloads when Senate roll numbers are requested
-- fetches Congress.gov bill metadata for each requested bill reference
+- infers bill references from downloaded House `legis-num` fields and Senate `document` fields when possible
+- fetches Congress.gov bill metadata for the union of explicitly requested bill references and inferred bill references
 - runs persistent ETL immediately after the fetch step
 - persists a combined mixed-source seed bundle when both House and Senate cache inputs are present in the same run
 
@@ -322,6 +323,14 @@ Current starter behavior:
 - fetches the related Congress.gov bill metadata
 - runs the mixed House+Senate live pipeline into Postgres
 - is intended as the fastest reproducible path to seeing non-sample stored data in the frontend
+
+The repository also includes an expanded convenience script in `scripts/run_real_data_expanded.py`.
+
+Current expanded-batch behavior:
+
+- targets a larger curated set of recent House and Senate bill votes
+- relies on live pipeline bill-reference inference from downloaded vote XML instead of a hand-maintained bill list
+- broadens the stored real-data coverage so the frontend shows fewer zero-state legislator profiles
 
 ## Fingerprint API
 
