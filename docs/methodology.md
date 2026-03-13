@@ -141,3 +141,19 @@ Current fixture implementation includes:
 The ETL fixture runner loads the fixture files, classifies roll calls deterministically, builds eligible votes, and computes fingerprints, chamber medians, and drift results in a local deterministic pass.
 
 For this repository state, fixture design prioritizes the `10` policy roll call requirement. Under the locked drift threshold of `20` total eligible votes, that means fixture drift outputs remain `insufficient_data` for all three legislators.
+
+## Fingerprint API
+
+The fingerprint endpoint returns precomputed fingerprint rows only.
+
+Default overlay behavior:
+
+- chamber median overlay uses the `ALL` party grouping by default
+
+Supported overlay toggle:
+
+- `comparison_party=ALL`
+- `comparison_party=D`
+- `comparison_party=R`
+
+The party toggle changes only the overlay median values. It does not change the legislator fingerprint itself.

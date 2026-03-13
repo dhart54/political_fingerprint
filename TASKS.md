@@ -234,7 +234,7 @@ Fixture ETL populates database.
 
 # Phase 6 — API Layer
 
-## Task 6.1 — Fingerprint endpoint
+## Task 6.1 — Fingerprint endpoint [COMPLETED]
 
 Create:
 
