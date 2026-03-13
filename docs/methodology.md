@@ -192,6 +192,17 @@ In the current fixture-backed implementation, ingestion loads:
 - subject tags
 - ZIP mappings
 
+The repository now also includes a deterministic local database seed path:
+
+- `python -m app.etl.run_all --seed-db`
+
+Current seed behavior:
+
+- rebuilds the local database from fixtures
+- writes source tables plus precomputed outputs
+- uses stable integer ids derived from fixture order
+- fully replaces previously seeded rows so repeated runs are idempotent for local development
+
 ## Fixture Dataset
 
 The local fixture dataset lives under `backend/fixtures/` and is the authoritative development dataset before live ingestion is introduced.
