@@ -10,7 +10,7 @@ def main() -> None:
     parser.add_argument("--fixtures", action="store_true")
     parser.add_argument(
         "--source",
-        choices=("fixtures", "congress_sample", "house_clerk_sample"),
+        choices=("fixtures", "congress_sample", "house_clerk_sample", "senate_xml_sample"),
         default="fixtures",
     )
     parser.add_argument("--compute-only", action="store_true")

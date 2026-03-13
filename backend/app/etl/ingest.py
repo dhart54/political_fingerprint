@@ -5,6 +5,7 @@ from typing import Any
 
 from app.etl.congress_adapter import load_congress_sample_bundle
 from app.etl.house_clerk_adapter import load_house_clerk_sample_bundle
+from app.etl.senate_xml_adapter import load_senate_xml_sample_bundle
 from app.etl.types import FixtureBundle
 
 
@@ -36,6 +37,8 @@ def run_ingest(*, source: str = "fixtures") -> IngestResult:
         fixtures = load_congress_sample_bundle()
     elif source == "house_clerk_sample":
         fixtures = load_house_clerk_sample_bundle()
+    elif source == "senate_xml_sample":
+        fixtures = load_senate_xml_sample_bundle()
     else:
         raise ValueError(f"Unsupported ingest source: {source}")
 

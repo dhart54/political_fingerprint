@@ -231,6 +231,7 @@ The repository now includes non-fixture ingestion adapters through:
 
 - `source="congress_sample"`
 - `source="house_clerk_sample"`
+- `source="senate_xml_sample"`
 
 Current source assumptions:
 
@@ -244,12 +245,18 @@ Current source assumptions:
 - `house_clerk_sample` member records provide `bioguideID`, official display name, party, state postal code, and state-district code
 - `house_clerk_sample` roll call records provide congress, session, roll call number, `legis-num`, `vote-question`, `vote-desc`, and action date
 - `house_clerk_sample` votes are matched to legislators by `bioguide-id`
+- `senate_xml_sample` input records are official-style Senate roll call XML and local Senate member XML samples stored locally
+- `senate_xml_sample` bill metadata is enriched from local Congress.gov-style bill JSON keyed by congress, bill type, and bill number
+- `senate_xml_sample` member records provide `lis_member_id`, `bioguide_id`, display name, state, and party
+- `senate_xml_sample` roll call records provide congress, session, vote number, vote date, question, vote title, and document number
+- `senate_xml_sample` votes are matched to legislators by `lis_member_id`
 
 Current adapter behavior:
 
 - normalizes official-style fields into the existing ingest bundle shape
 - derives stable internal ids for legislators, bills, and roll calls
 - for House Clerk samples, derives bill identity from `legis-num` and enriches title, summary, committee, and subjects from matching Congress-style metadata when available
+- for Senate XML samples, derives bill identity from the document number and enriches title, summary, committee, and subjects from matching Congress-style metadata when available
 - reuses the same downstream classification, metric, ETL write, and API read paths as fixture ingestion
 
 ## Fingerprint API
