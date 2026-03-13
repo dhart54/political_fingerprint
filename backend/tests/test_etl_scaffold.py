@@ -1,48 +1,46 @@
+from datetime import date
+
 from app.etl.classify import ClassificationStepResult, run_classification
 from app.etl.compute import ComputeStepResult, run_compute, run_etl
-from app.etl.ingest import IngestResult, run_ingest
+from app.etl.ingest import FixtureBundle, IngestResult, run_ingest
 
 
-def test_run_ingest_returns_deterministic_empty_result() -> None:
-    assert run_ingest() == IngestResult(
-        source="fixtures",
-        records_loaded=0,
-    )
+def test_run_ingest_returns_fixture_bundle() -> None:
+    ingest_result = run_ingest()
+
+    assert isinstance(ingest_result, IngestResult)
+    assert ingest_result.source == "fixtures"
+    assert ingest_result.records_loaded == 52
+    assert isinstance(ingest_result.fixtures, FixtureBundle)
 
 
 def test_run_classification_uses_ingest_result() -> None:
-    ingest_result = IngestResult(source="fixtures", records_loaded=12)
+    ingest_result = run_ingest()
+    result = run_classification(ingest_result)
 
-    assert run_classification(ingest_result) == ClassificationStepResult(
-        source="fixtures",
-        records_loaded=12,
-        records_classified=0,
-    )
+    assert isinstance(result, ClassificationStepResult)
+    assert result.source == "fixtures"
+    assert result.records_loaded == 52
+    assert result.records_classified == 14
+    assert len(result.classified_roll_calls) == 14
 
 
 def test_run_compute_uses_classification_result() -> None:
-    classification_result = ClassificationStepResult(
-        source="fixtures",
-        records_loaded=12,
-        records_classified=9,
-    )
+    ingest_result = run_ingest()
+    classification_result = run_classification(ingest_result)
+    result = run_compute(classification_result, ingest_result, as_of=date(2026, 3, 12))
 
-    assert run_compute(classification_result) == ComputeStepResult(
-        source="fixtures",
-        records_loaded=12,
-        records_classified=9,
-        fingerprints_computed=0,
-        chamber_medians_computed=0,
-        drift_scores_computed=0,
-    )
+    assert isinstance(result, ComputeStepResult)
+    assert result.records_loaded == 52
+    assert result.records_classified == 14
+    assert result.fingerprints_computed == 24
+    assert result.chamber_medians_computed == 48
+    assert result.drift_scores_computed == 3
 
 
 def test_run_etl_executes_without_errors() -> None:
-    assert run_etl(source="fixtures") == ComputeStepResult(
-        source="fixtures",
-        records_loaded=0,
-        records_classified=0,
-        fingerprints_computed=0,
-        chamber_medians_computed=0,
-        drift_scores_computed=0,
-    )
+    result = run_etl(source="fixtures", as_of=date(2026, 3, 12))
+
+    assert isinstance(result, ComputeStepResult)
+    assert result.records_loaded == 52
+    assert result.records_classified == 14

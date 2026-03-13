@@ -123,3 +123,21 @@ The ETL pipeline is deterministic and runs in this order:
 5. compute drift scores
 
 The current scaffold provides these steps as explicit modules so fixture ingestion can be added without changing the ETL sequence.
+
+## Fixture Dataset
+
+The local fixture dataset lives under `backend/fixtures/` and is the authoritative development dataset before live ingestion is introduced.
+
+Current fixture implementation includes:
+
+- 3 legislators
+- 12 bills
+- 14 roll calls
+- 10 policy roll calls
+- 2 procedural roll calls
+- 2 low-confidence roll calls
+- 2 ZIP mappings
+
+The ETL fixture runner loads the fixture files, classifies roll calls deterministically, builds eligible votes, and computes fingerprints, chamber medians, and drift results in a local deterministic pass.
+
+For this repository state, fixture design prioritizes the `10` policy roll call requirement. Under the locked drift threshold of `20` total eligible votes, that means fixture drift outputs remain `insufficient_data` for all three legislators.

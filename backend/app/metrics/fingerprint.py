@@ -77,7 +77,10 @@ def calculate_vote_share(*, vote_count: int, total_votes: int) -> float:
 
 
 def build_eligible_vote(*, legislator_id: int, vote_date: date | datetime, primary_domain: str) -> EligibleVote:
-    normalized_date = vote_date.date() if isinstance(vote_date, datetime) else vote_date
+    if isinstance(vote_date, str):
+        normalized_date = datetime.fromisoformat(vote_date.replace("Z", "+00:00")).date()
+    else:
+        normalized_date = vote_date.date() if isinstance(vote_date, datetime) else vote_date
     return EligibleVote(
         legislator_id=legislator_id,
         vote_date=normalized_date,

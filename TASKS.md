@@ -213,7 +213,7 @@ ETL runs without errors.
 
 ---
 
-## Task 5.2 — Fixture dataset
+## Task 5.2 — Fixture dataset [COMPLETED]
 
 Create:
 
