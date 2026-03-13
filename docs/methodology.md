@@ -202,3 +202,13 @@ Returned data includes:
 - congressional district
 - House representative for that district
 - both senators for that state
+
+## Frontend API Connectivity
+
+The frontend home page performs a client-side health check against `NEXT_PUBLIC_API_BASE_URL`.
+
+Current behavior:
+
+- requests `GET /health`
+- renders connected, checking, or unavailable status in the UI
+- displays the configured API base URL so the active backend target is visible

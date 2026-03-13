@@ -1,3 +1,5 @@
+import HealthStatus from "../components/HealthStatus";
+
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#f3efe4,_#e7dcc5_52%,_#d8c7aa)] text-stone-900">
@@ -38,6 +40,7 @@ export default function HomePage() {
             </p>
           </article>
         </div>
+        <HealthStatus />
       </section>
     </main>
   );

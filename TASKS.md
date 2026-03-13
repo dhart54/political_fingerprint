@@ -294,7 +294,7 @@ Frontend runs locally.
 
 ---
 
-## Task 7.2 — API connectivity
+## Task 7.2 — API connectivity [COMPLETED]
 
 Frontend can call backend.
 
