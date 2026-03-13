@@ -246,7 +246,7 @@ Returns fingerprint vector.
 
 ---
 
-## Task 6.2 — Drift endpoint
+## Task 6.2 — Drift endpoint [COMPLETED]
 
 Create:
 

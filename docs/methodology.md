@@ -157,3 +157,20 @@ Supported overlay toggle:
 - `comparison_party=R`
 
 The party toggle changes only the overlay median values. It does not change the legislator fingerprint itself.
+
+## Drift API
+
+The drift endpoint returns precomputed drift rows only.
+
+Returned fields include:
+
+- full 730-day window bounds
+- early and recent half-window bounds
+- total vote counts
+- insufficient-data flag
+- drift value
+
+If a legislator is below the locked minimum vote threshold, the endpoint returns:
+
+- `insufficient_data = true`
+- `drift_value = null`
