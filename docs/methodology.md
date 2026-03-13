@@ -53,6 +53,10 @@ The authoritative computed outputs are:
 - `drift_scores`
 - `summaries`
 
+Current repository state uses a database-first read layer for these outputs.
+
+If the database is unavailable in local development, the repository currently falls back to the deterministic fixture-backed precomputed store so local validation remains usable before the seed flow is in place.
+
 ## Eligibility Rules
 
 Vote eligibility is deterministic.

@@ -1,7 +1,12 @@
 from dataclasses import dataclass
 from datetime import datetime, timezone
 
-from app.api.precomputed import get_drift_response, get_fingerprint_response, has_legislator
+from app.api.precomputed import (
+    get_drift_response,
+    get_fingerprint_response,
+    get_summary_response,
+    has_legislator,
+)
 
 
 @dataclass(frozen=True)
@@ -20,6 +25,17 @@ SUMMARY_CACHE: dict[tuple[str, str, str], SummaryRecord] = {}
 def get_or_create_summary(*, legislator_id: str) -> SummaryRecord | None:
     if not has_legislator(legislator_id=legislator_id):
         return None
+
+    stored_summary = get_summary_response(legislator_id=legislator_id)
+    if stored_summary is not None:
+        return SummaryRecord(
+            legislator_id=str(stored_summary["legislator_id"]),
+            window_end=str(stored_summary["window_end"]),
+            classification_version=str(stored_summary["classification_version"]),
+            summary_text=str(stored_summary["summary_text"]),
+            generation_method=str(stored_summary["generation_method"]),
+            created_at=str(stored_summary["created_at"]),
+        )
 
     fingerprint = get_fingerprint_response(legislator_id=legislator_id, comparison_party="ALL")
     drift = get_drift_response(legislator_id=legislator_id)
