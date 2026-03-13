@@ -25,11 +25,33 @@ def test_run_live_pipeline_fetches_house_flow(monkeypatch) -> None:
     )
     monkeypatch.setattr(
         live_pipeline,
+        "run_etl_and_persist_sources",
+        lambda *, sources, as_of: type(
+            "PersistResult",
+            (),
+            {
+                "source": "+".join(sources),
+                "legislators_seeded": 3,
+                "bills_seeded": 4,
+                "roll_calls_seeded": 4,
+                "votes_seeded": 12,
+                "classifications_seeded": 4,
+                "fingerprints_seeded": 24,
+                "chamber_medians_seeded": 48,
+                "drift_scores_seeded": 3,
+                "summaries_seeded": 3,
+                "zip_mappings_seeded": 3,
+            },
+        )(),
+    )
+    monkeypatch.setattr(
+        live_pipeline,
         "run_etl_and_persist",
         lambda *, source, as_of: type(
             "PersistResult",
             (),
             {
+                "source": source,
                 "legislators_seeded": 3,
                 "bills_seeded": 4,
                 "roll_calls_seeded": 4,
@@ -67,6 +89,27 @@ def test_run_live_pipeline_fetches_congress_bill_metadata(monkeypatch) -> None:
     monkeypatch.setattr(live_pipeline, "fetch_house_clerk_roll_calls", lambda **kwargs: [])
     monkeypatch.setattr(
         live_pipeline,
+        "run_etl_and_persist_sources",
+        lambda *, sources, as_of: type(
+            "PersistResult",
+            (),
+            {
+                "source": "+".join(sources),
+                "legislators_seeded": 3,
+                "bills_seeded": 4,
+                "roll_calls_seeded": 4,
+                "votes_seeded": 12,
+                "classifications_seeded": 4,
+                "fingerprints_seeded": 24,
+                "chamber_medians_seeded": 48,
+                "drift_scores_seeded": 3,
+                "summaries_seeded": 3,
+                "zip_mappings_seeded": 3,
+            },
+        )(),
+    )
+    monkeypatch.setattr(
+        live_pipeline,
         "fetch_congress_bill_metadata",
         lambda *, congress, bill_type, bill_number, api_key: fetched.append(
             (congress, bill_type, bill_number, api_key)
@@ -80,6 +123,7 @@ def test_run_live_pipeline_fetches_congress_bill_metadata(monkeypatch) -> None:
             "PersistResult",
             (),
             {
+                "source": source,
                 "legislators_seeded": 3,
                 "bills_seeded": 4,
                 "roll_calls_seeded": 4,
@@ -108,21 +152,52 @@ def test_run_live_pipeline_fetches_congress_bill_metadata(monkeypatch) -> None:
     assert result.congress_bills_fetched == 1
 
 
-def test_run_live_pipeline_rejects_mixed_house_and_senate_runs() -> None:
-    try:
-        live_pipeline.run_live_pipeline(
-            house_year=2025,
-            house_roll_numbers=[1],
-            senate_congress=119,
-            senate_session=1,
-            senate_roll_numbers=[1],
-            bill_refs=[],
-            congress_api_key=None,
-        )
-    except ValueError as error:
-        assert "either House or Senate" in str(error)
-    else:
-        raise AssertionError("Expected ValueError for mixed House and Senate orchestration")
+def test_run_live_pipeline_supports_mixed_house_and_senate_runs(monkeypatch) -> None:
+    calls = {"sources": None}
+
+    monkeypatch.setattr(live_pipeline, "fetch_house_clerk_members", lambda: None)
+    monkeypatch.setattr(live_pipeline, "fetch_house_clerk_roll_calls", lambda **kwargs: [])
+    monkeypatch.setattr(live_pipeline, "fetch_senate_members", lambda: None)
+    monkeypatch.setattr(live_pipeline, "fetch_senate_vote_files", lambda **kwargs: [])
+    monkeypatch.setattr(
+        live_pipeline,
+        "run_etl_and_persist",
+        lambda *, source, as_of: (_ for _ in ()).throw(AssertionError("single-source persist should not be used")),
+    )
+    monkeypatch.setattr(
+        live_pipeline,
+        "run_etl_and_persist_sources",
+        lambda *, sources, as_of: calls.__setitem__("sources", sources) or type(
+            "PersistResult",
+            (),
+            {
+                "source": "+".join(sources),
+                "legislators_seeded": 5,
+                "bills_seeded": 8,
+                "roll_calls_seeded": 8,
+                "votes_seeded": 20,
+                "classifications_seeded": 8,
+                "fingerprints_seeded": 40,
+                "chamber_medians_seeded": 48,
+                "drift_scores_seeded": 5,
+                "summaries_seeded": 5,
+                "zip_mappings_seeded": 3,
+            },
+        )(),
+    )
+
+    result = live_pipeline.run_live_pipeline(
+        house_year=2025,
+        house_roll_numbers=[1],
+        senate_congress=119,
+        senate_session=1,
+        senate_roll_numbers=[1],
+        bill_refs=[],
+        congress_api_key=None,
+    )
+
+    assert calls["sources"] == ["house_clerk_cache", "senate_xml_cache"]
+    assert result.persisted_source == "house_clerk_cache+senate_xml_cache"
 
 
 def test_main_supports_cli(monkeypatch, capsys) -> None:

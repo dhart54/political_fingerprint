@@ -4,7 +4,7 @@ from datetime import date
 from app.db import get_connection
 from app.etl.classify import run_classification
 from app.etl.compute import run_compute
-from app.etl.ingest import run_ingest
+from app.etl.ingest import IngestResult, run_ingest
 from app.summaries.cache import build_fallback_summary
 
 
@@ -44,23 +44,27 @@ def seed_fixture_database(*, as_of: date) -> SeedResult:
 def run_etl_and_persist(*, source: str = "fixtures", as_of: date) -> SeedResult:
     bundle = build_seed_bundle(source=source, as_of=as_of)
     persist_seed_bundle(bundle)
-    return SeedResult(
-        source=source,
-        legislators_seeded=len(bundle.legislators),
-        bills_seeded=len(bundle.bills),
-        roll_calls_seeded=len(bundle.roll_calls),
-        votes_seeded=len(bundle.votes_cast),
-        classifications_seeded=len(bundle.vote_classifications),
-        fingerprints_seeded=len(bundle.fingerprints),
-        chamber_medians_seeded=len(bundle.chamber_medians),
-        drift_scores_seeded=len(bundle.drift_scores),
-        summaries_seeded=len(bundle.summaries),
-        zip_mappings_seeded=len(bundle.zip_district_map),
-    )
+    return _build_seed_result(source=source, bundle=bundle)
+
+
+def run_etl_and_persist_sources(*, sources: list[str], as_of: date) -> SeedResult:
+    bundle = build_seed_bundle_for_sources(sources=sources, as_of=as_of)
+    persist_seed_bundle(bundle)
+    return _build_seed_result(source="+".join(sources), bundle=bundle)
 
 
 def build_seed_bundle(*, source: str = "fixtures", as_of: date) -> SeedBundle:
     ingest_result = run_ingest(source=source)
+    return _build_seed_bundle_from_ingest_result(ingest_result=ingest_result, as_of=as_of)
+
+
+def build_seed_bundle_for_sources(*, sources: list[str], as_of: date) -> SeedBundle:
+    ingest_results = [run_ingest(source=source) for source in sources]
+    combined_ingest_result = _merge_ingest_results(ingest_results)
+    return _build_seed_bundle_from_ingest_result(ingest_result=combined_ingest_result, as_of=as_of)
+
+
+def _build_seed_bundle_from_ingest_result(*, ingest_result: IngestResult, as_of: date) -> SeedBundle:
     classification_result = run_classification(ingest_result, classification_version="v1")
     compute_result = run_compute(classification_result, ingest_result, as_of=as_of)
 
@@ -219,6 +223,72 @@ def build_seed_bundle(*, source: str = "fixtures", as_of: date) -> SeedBundle:
         summaries=summaries,
         zip_district_map=zip_district_map,
     )
+
+
+def _merge_ingest_results(ingest_results: list[IngestResult]) -> IngestResult:
+    if not ingest_results:
+        raise ValueError("At least one ingest result is required")
+
+    merged_fixtures = ingest_results[0].fixtures
+    for ingest_result in ingest_results[1:]:
+        merged_fixtures = _merge_fixture_bundles(merged_fixtures, ingest_result.fixtures)
+
+    return IngestResult(
+        source="+".join(result.source for result in ingest_results),
+        records_loaded=sum(result.records_loaded for result in ingest_results),
+        fixtures=merged_fixtures,
+    )
+
+
+def _merge_fixture_bundles(left, right):
+    return type(left)(
+        legislators=_dedupe_rows(left.legislators + right.legislators, key="id"),
+        bills=_dedupe_rows(left.bills + right.bills, key="id"),
+        roll_calls=_dedupe_rows(left.roll_calls + right.roll_calls, key="id"),
+        votes_cast=_dedupe_vote_rows(left.votes_cast + right.votes_cast),
+        vote_subject_tags=_merge_vote_subject_tags(left.vote_subject_tags, right.vote_subject_tags),
+        zip_district_map=_dedupe_rows(left.zip_district_map + right.zip_district_map, key="zip"),
+    )
+
+
+def _build_seed_result(*, source: str, bundle: SeedBundle) -> SeedResult:
+    return SeedResult(
+        source=source,
+        legislators_seeded=len(bundle.legislators),
+        bills_seeded=len(bundle.bills),
+        roll_calls_seeded=len(bundle.roll_calls),
+        votes_seeded=len(bundle.votes_cast),
+        classifications_seeded=len(bundle.vote_classifications),
+        fingerprints_seeded=len(bundle.fingerprints),
+        chamber_medians_seeded=len(bundle.chamber_medians),
+        drift_scores_seeded=len(bundle.drift_scores),
+        summaries_seeded=len(bundle.summaries),
+        zip_mappings_seeded=len(bundle.zip_district_map),
+    )
+
+
+def _dedupe_rows(rows: list[dict[str, object]], *, key: str) -> list[dict[str, object]]:
+    deduped: dict[object, dict[str, object]] = {}
+    for row in rows:
+        deduped[row[key]] = row
+    return list(deduped.values())
+
+
+def _dedupe_vote_rows(rows: list[dict[str, object]]) -> list[dict[str, object]]:
+    deduped: dict[tuple[object, object, object], dict[str, object]] = {}
+    for row in rows:
+        deduped[(row["roll_call_id"], row["legislator_id"], row["position"])] = row
+    return list(deduped.values())
+
+
+def _merge_vote_subject_tags(
+    left: dict[str, list[str]],
+    right: dict[str, list[str]],
+) -> dict[str, list[str]]:
+    merged = {key: list(value) for key, value in left.items()}
+    for bill_id, subjects in right.items():
+        merged[bill_id] = list(dict.fromkeys(merged.get(bill_id, []) + list(subjects)))
+    return merged
 
 
 def persist_seed_bundle(bundle: SeedBundle) -> None:

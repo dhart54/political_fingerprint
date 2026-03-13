@@ -2,8 +2,10 @@ from datetime import date
 
 from app.etl.seed import (
     build_seed_bundle,
+    build_seed_bundle_for_sources,
     persist_seed_bundle,
     run_etl_and_persist,
+    run_etl_and_persist_sources,
     seed_fixture_database,
 )
 
@@ -88,3 +90,34 @@ def test_run_etl_and_persist_uses_source_and_returns_seed_counts(monkeypatch) ->
 
     assert result.source == "fixtures"
     assert result.fingerprints_seeded == 24
+
+
+def test_build_seed_bundle_for_sources_combines_house_and_senate_cache_inputs() -> None:
+    bundle = build_seed_bundle_for_sources(
+        sources=["house_clerk_cache", "senate_xml_cache"],
+        as_of=date(2026, 3, 12),
+    )
+
+    assert len(bundle.legislators) == 5
+    assert len(bundle.bills) == 8
+    assert len(bundle.roll_calls) == 8
+    assert len(bundle.votes_cast) == 20
+    assert len(bundle.vote_classifications) == 8
+    assert len(bundle.fingerprints) == 40
+    assert len(bundle.chamber_medians) == 48
+    assert len(bundle.drift_scores) == 5
+    assert len(bundle.summaries) == 5
+    assert len(bundle.zip_district_map) == 4
+
+
+def test_run_etl_and_persist_sources_returns_combined_seed_counts(monkeypatch) -> None:
+    monkeypatch.setattr("app.etl.seed.persist_seed_bundle", lambda bundle: None)
+
+    result = run_etl_and_persist_sources(
+        sources=["house_clerk_cache", "senate_xml_cache"],
+        as_of=date(2026, 3, 12),
+    )
+
+    assert result.source == "house_clerk_cache+senate_xml_cache"
+    assert result.legislators_seeded == 5
+    assert result.roll_calls_seeded == 8

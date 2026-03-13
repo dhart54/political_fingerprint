@@ -304,11 +304,12 @@ Current orchestration behavior:
 - fetches Senate member XML before Senate vote downloads when Senate roll numbers are requested
 - fetches Congress.gov bill metadata for each requested bill reference
 - runs persistent ETL immediately after the fetch step
-- currently persists either `house_clerk_cache` or `senate_xml_cache` as the primary source for that run
+- persists a combined mixed-source seed bundle when both House and Senate cache inputs are present in the same run
 
 Current CLI example:
 
 - `python -m app.etl.live_pipeline --house-year 2025 --house-roll 1 --bill 119:hr:120 --congress-api-key YOUR_KEY`
+- `python -m app.etl.live_pipeline --house-year 2025 --house-roll 1 --senate-congress 119 --senate-session 1 --senate-roll 1 --bill 119:hr:120 --bill 119:s:210 --congress-api-key YOUR_KEY`
 
 ## Fingerprint API
 

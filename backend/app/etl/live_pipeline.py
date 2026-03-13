@@ -11,7 +11,7 @@ from app.etl.fetch_sources import (
     resolve_congress_api_key,
 )
 from app.etl.run_all import DEFAULT_AS_OF_DATE
-from app.etl.seed import run_etl_and_persist
+from app.etl.seed import run_etl_and_persist, run_etl_and_persist_sources
 
 
 @dataclass(frozen=True)
@@ -34,9 +34,6 @@ def run_live_pipeline(
     congress_api_key: str | None,
     as_of: date = DEFAULT_AS_OF_DATE,
 ) -> LivePipelineResult:
-    if house_roll_numbers and senate_roll_numbers:
-        raise ValueError("run_live_pipeline currently supports either House or Senate cache persistence per run")
-
     house_fetch_count = 0
     senate_fetch_count = 0
     bill_fetch_count = 0
@@ -70,14 +67,27 @@ def run_live_pipeline(
             )
         bill_fetch_count = len(bill_refs)
 
-    persist_source = "house_clerk_cache" if house_roll_numbers else "senate_xml_cache"
-    persist_result = run_etl_and_persist(source=persist_source, as_of=as_of)
+    persist_sources = [
+        source
+        for source, enabled in (
+            ("house_clerk_cache", bool(house_roll_numbers)),
+            ("senate_xml_cache", bool(senate_roll_numbers)),
+        )
+        if enabled
+    ]
+    if not persist_sources:
+        raise ValueError("At least one House or Senate roll number is required")
+
+    if len(persist_sources) == 1:
+        persist_result = run_etl_and_persist(source=persist_sources[0], as_of=as_of)
+    else:
+        persist_result = run_etl_and_persist_sources(sources=persist_sources, as_of=as_of)
 
     return LivePipelineResult(
         house_rolls_fetched=house_fetch_count,
         senate_rolls_fetched=senate_fetch_count,
         congress_bills_fetched=bill_fetch_count,
-        persisted_source=persist_source,
+        persisted_source=persist_result.source,
         persisted_rows={
             "legislators": persist_result.legislators_seeded,
             "bills": persist_result.bills_seeded,
