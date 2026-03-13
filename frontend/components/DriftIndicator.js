@@ -51,7 +51,7 @@ export default function DriftIndicator({
   const percent = Math.min(100, Math.max(0, driftValue * 100));
 
   return (
-    <section className="mt-8 grid gap-6 rounded-[2.25rem] border border-stone-300/80 bg-stone-950 px-6 py-6 text-stone-100 shadow-[0_20px_80px_rgba(72,52,24,0.18)] lg:grid-cols-[0.9fr_1.1fr]">
+    <section className="mt-8 grid gap-6 rounded-[2.25rem] border border-stone-300/80 bg-[linear-gradient(135deg,#060505,#171311_55%,#090706)] px-6 py-6 text-stone-100 shadow-[0_20px_80px_rgba(72,52,24,0.18)] lg:grid-cols-[0.9fr_1.1fr] lg:p-8">
       <div>
         <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
           {title}
@@ -78,7 +78,7 @@ export default function DriftIndicator({
         </p>
       </div>
       <div className="flex flex-col justify-between">
-        <div className="rounded-[2rem] bg-white/8 p-5">
+        <div className="rounded-[2rem] border border-white/6 bg-white/8 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.25em] text-stone-400">
@@ -99,7 +99,9 @@ export default function DriftIndicator({
           <div className="mt-6 h-4 rounded-full bg-stone-800">
             <div
               className={`h-4 rounded-full ${
-                state.payload?.insufficient_data ? "bg-stone-500" : "bg-emerald-500"
+                state.payload?.insufficient_data
+                  ? "bg-[repeating-linear-gradient(90deg,#a8a29e_0,#a8a29e_24px,#78716c_24px,#78716c_36px)]"
+                  : "bg-[linear-gradient(90deg,#34d399,#10b981)]"
               }`}
               style={{ width: `${state.payload?.insufficient_data ? 100 : percent}%` }}
             />
@@ -123,9 +125,9 @@ export default function DriftIndicator({
 
 function Metric({ label, value }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-3">
+    <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
       <dt className="text-xs uppercase tracking-[0.25em] text-stone-400">{label}</dt>
-      <dd className="mt-2 text-lg text-stone-50">{value}</dd>
+      <dd className="mt-3 text-2xl text-stone-50">{value}</dd>
     </div>
   );
 }

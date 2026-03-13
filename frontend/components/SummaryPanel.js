@@ -48,7 +48,7 @@ export default function SummaryPanel({
   }, [legislatorId]);
 
   return (
-    <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/75 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur">
+    <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/75 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-8">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
@@ -63,8 +63,11 @@ export default function SummaryPanel({
         </p>
       </div>
       <div className="mt-6 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <article className="rounded-[2rem] bg-stone-950 px-6 py-6 text-stone-100">
-          <p className="text-sm leading-8 text-stone-200">
+        <article className="rounded-[2rem] bg-[linear-gradient(180deg,#100d0b,#171311)] px-6 py-6 text-stone-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+          <p className="text-xs uppercase tracking-[0.28em] text-stone-400">
+            Generated Narrative
+          </p>
+          <p className="mt-4 text-[17px] leading-9 text-stone-200">
             {state.status === "loading" ? "Loading summary..." : null}
             {state.status === "error" ? state.error : null}
             {state.status === "ready" ? state.payload?.summary_text : null}
@@ -91,9 +94,9 @@ export default function SummaryPanel({
 
 function MetaCard({ label, value }) {
   return (
-    <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4">
+    <div className="rounded-2xl border border-stone-200 bg-stone-50 px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
       <p className="text-xs uppercase tracking-[0.25em] text-stone-500">{label}</p>
-      <p className="mt-3 text-sm leading-6 text-stone-700">{value}</p>
+      <p className="mt-3 text-sm leading-6 text-stone-700 break-words">{value}</p>
     </div>
   );
 }

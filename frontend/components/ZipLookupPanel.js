@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { fetchZipLookup } from "../lib/api";
 
@@ -14,9 +14,7 @@ export default function ZipLookupPanel() {
     error: null,
   });
 
-  async function handleLookup(event) {
-    event.preventDefault();
-
+  async function runLookup(nextZipCode) {
     try {
       setState({
         status: "loading",
@@ -24,7 +22,7 @@ export default function ZipLookupPanel() {
         error: null,
       });
 
-      const payload = await fetchZipLookup({ zipCode });
+      const payload = await fetchZipLookup({ zipCode: nextZipCode });
       setState({
         status: "ready",
         payload,
@@ -39,8 +37,17 @@ export default function ZipLookupPanel() {
     }
   }
 
+  useEffect(() => {
+    runLookup(DEFAULT_ZIP);
+  }, []);
+
+  function handleLookup(event) {
+    event.preventDefault();
+    runLookup(zipCode);
+  }
+
   return (
-    <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/75 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur">
+    <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/75 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-8">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
@@ -70,25 +77,40 @@ export default function ZipLookupPanel() {
           Lookup
         </button>
       </form>
-      <div className="mt-6 rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100">
-        <p className="text-sm leading-7 text-stone-200">
+      <div className="mt-6 flex flex-col gap-3 rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
+            Lookup Status
+          </p>
+          <p className="mt-3 text-lg text-stone-50">
+            {state.status === "idle" ? "Ready to lookup" : null}
+            {state.status === "loading" ? "Looking up legislators..." : null}
+            {state.status === "error" ? "ZIP not found" : null}
+            {state.status === "ready"
+              ? `ZIP ${state.payload.zip} maps to ${state.payload.state}-${state.payload.district}.`
+              : null}
+          </p>
+        </div>
+        <p className="text-sm leading-7 text-stone-300">
           {state.status === "idle" ? "Run a ZIP lookup to load representatives." : null}
-          {state.status === "loading" ? "Looking up legislators..." : null}
+          {state.status === "loading" ? "Loading House and Senate results." : null}
           {state.status === "error" ? state.error : null}
           {state.status === "ready"
-            ? `ZIP ${state.payload.zip} maps to NC-${state.payload.district}.`
+            ? `${state.payload.senators.length + (state.payload.house_rep ? 1 : 0)} legislators returned from the fixture mapping.`
             : null}
         </p>
       </div>
       {state.status === "ready" ? (
         <div className="mt-6 grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
           <LegislatorCard
+            accent="bg-amber-100 text-amber-900"
             heading="House Representative"
             legislator={state.payload.house_rep}
           />
           <div className="grid gap-4">
             {state.payload.senators.map((senator) => (
               <LegislatorCard
+                accent="bg-emerald-100 text-emerald-900"
                 key={senator.id}
                 heading="Senator"
                 legislator={senator}
@@ -101,20 +123,28 @@ export default function ZipLookupPanel() {
   );
 }
 
-function LegislatorCard({ heading, legislator }) {
+function LegislatorCard({ accent, heading, legislator }) {
   return (
-    <article className="rounded-[2rem] border border-stone-200 bg-stone-50 px-5 py-5">
-      <p className="text-xs uppercase tracking-[0.25em] text-stone-500">{heading}</p>
+    <article className="rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(245,241,233,0.94))] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="text-xs uppercase tracking-[0.25em] text-stone-500">{heading}</p>
+        <span className={`rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.22em] ${accent}`}>
+          {formatParty(legislator.party)}
+        </span>
+      </div>
       <h4 className="mt-3 font-serif text-2xl text-stone-900">
         {legislator.name_display}
       </h4>
-      <dl className="mt-4 grid gap-3 sm:grid-cols-2">
+      <p className="mt-2 text-sm text-stone-600">
+        {formatChamber(legislator.chamber)} • {legislator.state}
+      </p>
+      <dl className="mt-5 grid gap-4 sm:grid-cols-2">
         <Meta label="Bioguide" value={legislator.bioguide_id} />
-        <Meta label="Party" value={legislator.party} />
+        <Meta label="Party" value={formatParty(legislator.party)} />
         <Meta label="Chamber" value={legislator.chamber} />
         <Meta
           label="District"
-          value={legislator.district ? legislator.district : "Statewide"}
+          value={legislator.district ? `${legislator.state}-${legislator.district}` : "Statewide"}
         />
       </dl>
     </article>
@@ -128,4 +158,12 @@ function Meta({ label, value }) {
       <dd className="mt-1 text-sm text-stone-700">{value}</dd>
     </div>
   );
+}
+
+function formatChamber(chamber) {
+  return chamber ? chamber[0].toUpperCase() + chamber.slice(1) : "";
+}
+
+function formatParty(party) {
+  return party === "D" ? "Democrat" : party === "R" ? "Republican" : party;
 }

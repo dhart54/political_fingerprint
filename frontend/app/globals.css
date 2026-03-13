@@ -3,6 +3,9 @@
 :root {
   color-scheme: light;
   font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  --paper: #f4eee1;
+  --sand: #e6dbc1;
+  --ink: #1c1917;
 }
 
 * {
@@ -11,9 +14,15 @@
 
 body {
   margin: 0;
+  background: radial-gradient(circle at top, var(--paper), var(--sand) 52%, #d5c3a2);
+  color: var(--ink);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+::selection {
+  background: rgba(180, 83, 9, 0.18);
 }

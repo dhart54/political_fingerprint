@@ -55,7 +55,7 @@ export default function HealthStatus() {
         : "text-rose-700";
 
   return (
-    <article className="mt-12 rounded-[2rem] border border-stone-300/70 bg-stone-950 px-6 py-5 text-stone-100 shadow-[0_18px_60px_rgba(72,52,24,0.18)]">
+    <article className="mt-12 rounded-[2rem] border border-stone-300/70 bg-[linear-gradient(135deg,#060505,#16110f)] px-6 py-5 text-stone-100 shadow-[0_18px_60px_rgba(72,52,24,0.18)]">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-stone-400">

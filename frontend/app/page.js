@@ -6,12 +6,12 @@ import ZipLookupPanel from "../components/ZipLookupPanel";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#f3efe4,_#e7dcc5_52%,_#d8c7aa)] text-stone-900">
-      <section className="mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-6 py-20">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#f4eee1,_#e6dbc1_50%,_#d5c3a2)] text-stone-900">
+      <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-20">
         <p className="mb-4 text-sm uppercase tracking-[0.35em] text-stone-600">
           Political Fingerprint
         </p>
-        <h1 className="max-w-3xl font-serif text-5xl leading-tight sm:text-7xl">
+        <h1 className="max-w-4xl font-serif text-5xl leading-[0.98] sm:text-7xl">
           In 60 seconds, understand how this politician actually behaves.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700">
