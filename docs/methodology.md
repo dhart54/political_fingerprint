@@ -396,3 +396,13 @@ Current UI behavior:
 - fingerprint UI shows last updated time, computation window end, and classification version
 - summary UI shows last updated time, computation window end, and classification version
 - both sections include a concise on-page methodology explainer instead of relying on hidden implementation details
+
+## Summary UX
+
+The frontend summary section keeps the stored summary text intact but presents it in a more scannable layout.
+
+Current UI behavior:
+
+- splits the returned summary into short insight blocks for faster reading
+- keeps metadata visible but visually secondary to the narrative
+- does not rewrite, rank, or reinterpret the stored summary text on the client
