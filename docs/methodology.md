@@ -264,8 +264,8 @@ The summary endpoint returns cached summary text.
 
 Current behavior:
 
-- on first request, a deterministic fallback summary is generated from precomputed fingerprint and drift outputs
-- the generated summary is cached and reused on later requests
+- on first request, a deterministic fallback summary is generated from precomputed fingerprint and drift outputs when no stored summary row exists
+- generated summaries are written to the `summaries` table and reused on later requests
 - the cache key is based on legislator, window end, and classification version
 
 The fallback summary is descriptive only and includes:
