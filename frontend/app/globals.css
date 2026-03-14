@@ -6,6 +6,8 @@
   --paper: #f4eee1;
   --sand: #e6dbc1;
   --ink: #1c1917;
+  --panel: rgba(255, 252, 247, 0.72);
+  --panel-border: rgba(120, 113, 108, 0.22);
 }
 
 * {
@@ -16,6 +18,8 @@ body {
   margin: 0;
   background: radial-gradient(circle at top, var(--paper), var(--sand) 52%, #d5c3a2);
   color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -25,4 +29,25 @@ a {
 
 ::selection {
   background: rgba(180, 83, 9, 0.18);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(120, 113, 108, 0.45) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: rgba(120, 113, 108, 0.38);
+  background-clip: padding-box;
 }

@@ -172,7 +172,7 @@ export default function ComparisonPanel({
         </div>
       </div>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+      <div className="mt-6 grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
         <div className="rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(245,241,233,0.94))] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
             Select Legislators
@@ -183,7 +183,7 @@ export default function ComparisonPanel({
             placeholder="Search by legislator name"
             value={query}
           />
-          <div className="mt-4 grid gap-3">
+          <div className="mt-4 grid max-h-[760px] gap-3 overflow-y-auto pr-1">
             {searchState.status === "error" ? (
               <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
                 {searchState.error}
@@ -235,7 +235,7 @@ export default function ComparisonPanel({
           </div>
         </div>
 
-        <div className="grid gap-4 lg:grid-cols-2">
+          <div className="grid gap-4 lg:grid-cols-2">
           <CompareSideCard
             heading="Left"
             side={compareState.payload?.left}
@@ -303,7 +303,7 @@ function CompareSideCard({ heading, side, fallbackLegislator }) {
 
 function CompareMetric({ label, value }) {
   return (
-    <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4">
+    <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
       <p className="text-xs uppercase tracking-[0.22em] text-stone-500">{label}</p>
       <p className="mt-3 text-sm leading-6 text-stone-800">{value}</p>
     </div>

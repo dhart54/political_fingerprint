@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 import { fetchFingerprint } from "../lib/api";
 
 const COMPARISON_OPTIONS = ["ALL", "D", "R"];
-const SVG_WIDTH = 560;
-const SVG_HEIGHT = 500;
+const SVG_WIDTH = 600;
+const SVG_HEIGHT = 520;
 const CENTER_X = SVG_WIDTH / 2;
-const CENTER_Y = 256;
-const RADIUS = 156;
-const LABEL_DISTANCE = 1.22;
+const CENTER_Y = 272;
+const RADIUS = 168;
+const LABEL_DISTANCE = 1.25;
 
 export default function FingerprintRadar({
   legislatorId = "leg_alex_morgan",
@@ -65,9 +65,13 @@ export default function FingerprintRadar({
   const fingerprintRows = state.payload?.fingerprint || [];
   const fingerprintPolygon = buildPolygonPoints(fingerprintRows, "vote_share");
   const medianPolygon = buildPolygonPoints(fingerprintRows, "median_share");
+  const topDomains = [...fingerprintRows]
+    .sort((left, right) => right.vote_share - left.vote_share)
+    .filter((row) => row.vote_share > 0)
+    .slice(0, 2);
 
   return (
-    <section className="mt-14 grid gap-8 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:grid-cols-[1.18fr_0.82fr] lg:p-8">
+    <section className="mt-14 grid gap-8 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:grid-cols-[1.16fr_0.84fr] lg:p-8">
       <div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -95,10 +99,10 @@ export default function FingerprintRadar({
             ))}
           </div>
         </div>
-        <div className="mt-8 flex justify-center overflow-x-auto rounded-[2rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.7),rgba(244,239,231,0.55))] px-2 py-4">
+        <div className="mt-8 flex justify-center overflow-x-auto rounded-[2rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(244,239,231,0.56))] px-3 py-5">
           <svg
             aria-label="Fingerprint radar chart"
-            className="h-[460px] w-[520px] min-w-[520px]"
+            className="h-[480px] w-[560px] min-w-[560px]"
             viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
           >
             {[0.2, 0.4, 0.6, 0.8, 1].map((ratio) => (
@@ -173,11 +177,11 @@ export default function FingerprintRadar({
           </svg>
         </div>
       </div>
-      <div className="flex flex-col justify-between gap-6">
-        <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-            Overlay
-          </p>
+        <div className="flex flex-col justify-between gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
+              Overlay
+            </p>
           <p className="mt-3 max-w-md text-sm leading-6 text-stone-700">
             The amber shape is the legislator fingerprint. The green dashed overlay is the chamber median for the selected comparison party.
           </p>
@@ -192,6 +196,20 @@ export default function FingerprintRadar({
               sampleClassName="bg-emerald-700"
             />
           </div>
+          </div>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <HighlightCard
+            label="Eligible Votes"
+            value={state.status === "ready" ? String(fingerprintRows[0]?.total_votes ?? 0) : "--"}
+          />
+          <HighlightCard
+            label="Top Domain"
+            value={state.status === "ready" ? formatDomainLabel(topDomains[0]?.domain || "NONE") : "--"}
+          />
+          <HighlightCard
+            label="Overlay"
+            value={comparisonParty}
+          />
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
           <ProvenanceCard
@@ -241,7 +259,11 @@ export default function FingerprintRadar({
           {fingerprintRows.map((row) => (
             <div
               key={row.domain}
-              className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]"
+              className={`rounded-2xl border px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] ${
+                row.vote_share > 0
+                  ? "border-amber-200 bg-amber-50/55"
+                  : "border-stone-200 bg-stone-50"
+              }`}
             >
               <div className="flex items-center justify-between gap-3">
                 <p className="text-sm font-medium text-stone-800">
@@ -306,6 +328,15 @@ function ProvenanceCard({ label, value }) {
     <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
       <p className="text-xs uppercase tracking-[0.22em] text-stone-500">{label}</p>
       <p className="mt-3 text-sm leading-6 text-stone-800 break-words">{value}</p>
+    </div>
+  );
+}
+
+function HighlightCard({ label, value }) {
+  return (
+    <div className="rounded-2xl border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(245,241,233,0.95))] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
+      <p className="text-xs uppercase tracking-[0.25em] text-stone-500">{label}</p>
+      <p className="mt-3 text-lg leading-6 text-stone-900">{value}</p>
     </div>
   );
 }

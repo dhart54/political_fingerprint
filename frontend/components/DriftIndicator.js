@@ -51,7 +51,7 @@ export default function DriftIndicator({
   const percent = Math.min(100, Math.max(0, driftValue * 100));
 
   return (
-    <section className="mt-8 grid gap-6 rounded-[2.25rem] border border-stone-300/80 bg-[linear-gradient(135deg,#060505,#171311_55%,#090706)] px-6 py-6 text-stone-100 shadow-[0_20px_80px_rgba(72,52,24,0.18)] lg:grid-cols-[0.9fr_1.1fr] lg:p-8">
+    <section className="mt-8 grid gap-6 rounded-[2.25rem] border border-stone-300/80 bg-[linear-gradient(135deg,#060505,#171311_55%,#090706)] px-6 py-6 text-stone-100 shadow-[0_20px_80px_rgba(72,52,24,0.18)] lg:grid-cols-[0.88fr_1.12fr] lg:p-8">
       <div>
         <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
           {title}
@@ -76,6 +76,11 @@ export default function DriftIndicator({
             ? "Drift compares the early 365-day vote-share vector to the recent 365-day vote-share vector using deterministic L1 distance."
             : null}
         </p>
+        {state.status === "ready" && !state.payload?.insufficient_data ? (
+          <div className="mt-5 inline-flex rounded-full border border-emerald-400/20 bg-emerald-400/8 px-4 py-2 text-xs uppercase tracking-[0.23em] text-emerald-200">
+            Real drift signal available
+          </div>
+        ) : null}
       </div>
       <div className="flex flex-col justify-between">
         <div className="rounded-[2rem] border border-white/6 bg-white/8 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">

@@ -58,7 +58,7 @@ export default function SummaryPanel({
             {title}
           </p>
           <h3 className="mt-2 font-serif text-3xl text-stone-900">
-            Neutral, cached narrative
+            Deterministic summary
           </h3>
         </div>
         <p className="text-xs uppercase tracking-[0.25em] text-stone-500">

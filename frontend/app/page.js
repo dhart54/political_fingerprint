@@ -35,23 +35,23 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#f4eee1,_#e6dbc1_50%,_#d5c3a2)] text-stone-900">
-      <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-20">
+      <section className="mx-auto flex min-h-screen max-w-[1180px] flex-col justify-center px-5 py-16 sm:px-6 lg:py-20">
         <p className="mb-4 text-sm uppercase tracking-[0.35em] text-stone-600">
           Political Fingerprint
         </p>
-        <h1 className="max-w-4xl font-serif text-5xl leading-[0.98] sm:text-7xl">
+        <h1 className="max-w-[980px] font-serif text-5xl leading-[0.95] sm:text-7xl">
           In 60 seconds, understand how this politician actually behaves.
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700">
+        <p className="mt-6 max-w-[740px] text-lg leading-8 text-stone-700">
           Deterministic civic analytics built from categorized policy votes,
           precomputed metrics, and neutral summaries.
         </p>
-        <div className="mt-12 grid gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
           <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Fingerprint
             </p>
-            <p className="mt-3 text-sm leading-6 text-stone-700">
+            <p className="mt-3 text-base leading-7 text-stone-700">
               Eight-domain vote emphasis with explicit zeroes and chamber median comparison.
             </p>
           </article>
@@ -59,7 +59,7 @@ export default function HomePage() {
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Drift
             </p>
-            <p className="mt-3 text-sm leading-6 text-stone-700">
+            <p className="mt-3 text-base leading-7 text-stone-700">
               Deterministic stability measurement across early and recent voting windows.
             </p>
           </article>
@@ -67,7 +67,7 @@ export default function HomePage() {
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Lookup
             </p>
-            <p className="mt-3 text-sm leading-6 text-stone-700">
+            <p className="mt-3 text-base leading-7 text-stone-700">
               ZIP-based representative and senator lookup backed by deterministic fixture data.
             </p>
           </article>

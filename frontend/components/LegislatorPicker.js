@@ -61,7 +61,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
   return (
     <section className="mt-10 rounded-[2.5rem] border border-stone-300/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-6">
       <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr]">
-        <div className="rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+        <div className="rounded-[2rem] bg-[linear-gradient(180deg,#0f0c0a,#17120f)] px-5 py-5 text-stone-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
             Active Legislator
           </p>
@@ -72,6 +72,11 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
             {formatChamber(selectedLegislator.chamber)} • {selectedLegislator.party} • {selectedLegislator.state}
             {selectedLegislator.district ? `-${selectedLegislator.district}` : ""}
           </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <Tag>{selectedLegislator.party === "D" ? "Democrat" : selectedLegislator.party === "R" ? "Republican" : selectedLegislator.party}</Tag>
+            <Tag>{selectedLegislator.chamber === "house" ? "House member" : "Senator"}</Tag>
+            <Tag>{selectedLegislator.district ? `${selectedLegislator.state}-${selectedLegislator.district}` : `${selectedLegislator.state} statewide`}</Tag>
+          </div>
           <p className="mt-5 text-sm leading-6 text-stone-300">
             Use search to switch the fingerprint, drift, and summary panels to a different legislator without changing the ZIP lookup workflow.
           </p>
@@ -100,7 +105,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
             placeholder="Search legislators"
             value={query}
           />
-          <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-4 grid max-h-[980px] gap-3 overflow-y-auto pr-1 sm:grid-cols-2 xl:grid-cols-3">
             {searchState.status === "error" ? (
               <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700 sm:col-span-2 xl:col-span-3">
                 {searchState.error}
@@ -123,11 +128,16 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
                   key={legislator.id}
                   onClick={() => onSelect(legislator)}
                   type="button"
-                >
-                  <p className={`text-xs uppercase tracking-[0.24em] ${isSelected ? "text-stone-400" : "text-stone-500"}`}>
+                  >
+                  <div className="flex items-start justify-between gap-3">
+                    <p className={`text-xs uppercase tracking-[0.24em] ${isSelected ? "text-stone-400" : "text-stone-500"}`}>
                     {formatChamber(legislator.chamber)}
-                  </p>
-                  <p className="mt-3 font-serif text-2xl">
+                    </p>
+                    <span className={`rounded-full px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] ${isSelected ? "bg-white/10 text-stone-300" : "bg-stone-100 text-stone-600"}`}>
+                      {legislator.party}
+                    </span>
+                  </div>
+                  <p className="mt-3 font-serif text-[1.7rem] leading-[1.02]">
                     {legislator.name_display}
                   </p>
                   <p className={`mt-2 text-sm ${isSelected ? "text-stone-300" : "text-stone-600"}`}>
@@ -146,4 +156,12 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
 
 function formatChamber(chamber) {
   return chamber ? chamber[0].toUpperCase() + chamber.slice(1) : "";
+}
+
+function Tag({ children }) {
+  return (
+    <span className="rounded-full border border-white/10 bg-white/6 px-3 py-1.5 text-[11px] uppercase tracking-[0.2em] text-stone-300">
+      {children}
+    </span>
+  );
 }
