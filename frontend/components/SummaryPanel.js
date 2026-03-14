@@ -6,7 +6,7 @@ import { fetchSummary } from "../lib/api";
 
 export default function SummaryPanel({
   legislatorId = "leg_alex_morgan",
-  title = "Plain-Language Summary",
+  title = "What Stands Out",
 }) {
   const [state, setState] = useState({
     status: "loading",
@@ -58,7 +58,7 @@ export default function SummaryPanel({
             {title}
           </p>
           <h3 className="mt-2 font-serif text-3xl text-stone-900">
-            Deterministic summary
+            Fast read of the record
           </h3>
         </div>
         <p className="text-xs uppercase tracking-[0.25em] text-stone-500">
@@ -120,10 +120,10 @@ export default function SummaryPanel({
       </div>
       <article className="mt-6 rounded-[1.8rem] border border-amber-200 bg-amber-50/80 px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
         <p className="text-xs uppercase tracking-[0.25em] text-amber-800">
-          Methodology
+          How To Use It
         </p>
         <p className="mt-3 text-base leading-7 text-stone-700">
-          Summaries are descriptive only. They are generated from precomputed fingerprint and drift outputs, stored by legislator, window end, and classification version, and blocked from using ranking or causal language.
+          These takeaways summarize the current behavioral window. They stay descriptive on purpose and do not infer motives, corruption, or ideology.
         </p>
       </article>
     </section>

@@ -124,10 +124,10 @@ export default function ComparisonPanel({
             Comparison Mode
           </p>
           <h2 className="mt-2 font-serif text-3xl text-stone-900">
-            Compare two legislators side by side
+            Compare behavioral profiles side by side
           </h2>
           <p className="mt-3 max-w-2xl text-base leading-7 text-stone-700">
-            This view places two legislators next to each other using the same precomputed fingerprint, drift, and summary outputs. It is descriptive only and does not rank either side.
+            Use the same issue-focus, change-over-time, and summary lens on both legislators at once. It stays descriptive and does not rank either side.
           </p>
         </div>
         <div className="flex rounded-full border border-stone-300 bg-stone-100 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
@@ -166,7 +166,7 @@ export default function ComparisonPanel({
             {compareState.status === "loading" ? "Fetching fingerprint, drift, and summary data for both sides." : null}
             {compareState.status === "error" ? compareState.error : null}
             {compareState.status === "ready"
-              ? `Overlay comparison is set to ${comparisonParty}.`
+              ? `Overlay comparison is set to ${comparisonParty}. Compare issue focus first, then drift and summary.`
               : null}
           </p>
         </div>

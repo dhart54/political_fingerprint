@@ -78,7 +78,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
             <Tag>{selectedLegislator.district ? `${selectedLegislator.state}-${selectedLegislator.district}` : `${selectedLegislator.state} statewide`}</Tag>
           </div>
           <p className="mt-5 max-w-md text-base leading-7 text-stone-300">
-            Use search to switch the fingerprint, drift, and summary panels to a different legislator without changing the ZIP lookup workflow.
+            Start here to inspect one voting record in depth. The sections below show issue focus, change over time, and the clearest takeaways from the current window.
           </p>
         </div>
         <div>
@@ -88,7 +88,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
                 Legislator Search
               </p>
               <p className="mt-2 text-base leading-7 text-stone-700">
-                Search by display name and pick a legislator to update the analysis panels.
+                Search by name to swap in a different legislator and instantly update the behavioral profile below.
               </p>
             </div>
             <p className="text-xs uppercase tracking-[0.25em] text-stone-500">

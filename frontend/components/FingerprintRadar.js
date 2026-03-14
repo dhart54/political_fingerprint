@@ -76,7 +76,7 @@ export default function FingerprintRadar({
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Fingerprint Radar
+              Issue Focus
             </p>
             <h2 className="mt-2 font-serif text-3xl text-stone-900">
               {title}
@@ -180,10 +180,10 @@ export default function FingerprintRadar({
         <div className="flex flex-col justify-between gap-6">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Overlay
+              Reading The Chart
             </p>
           <p className="mt-3 max-w-md text-base leading-7 text-stone-700">
-            The amber shape is the legislator fingerprint. The green dashed overlay is the chamber median for the selected comparison party.
+            The amber shape shows where this legislator's recent eligible votes are concentrated. The green dashed overlay shows the chamber median for the selected comparison group.
           </p>
           <div className="mt-4 flex flex-wrap gap-4">
             <LegendSwatch
@@ -238,16 +238,16 @@ export default function FingerprintRadar({
             {state.status === "loading" ? "Waiting for the backend fingerprint response." : null}
             {state.status === "error" ? `${state.error} Try choosing another legislator or checking the backend.` : null}
             {state.status === "ready"
-              ? `Comparison overlay: ${comparisonParty}. Total eligible votes in the current fingerprint: ${fingerprintRows[0]?.total_votes ?? 0}.`
+              ? `This profile is based on ${fingerprintRows[0]?.total_votes ?? 0} eligible votes in the current 730-day window. Comparison overlay: ${comparisonParty}.`
               : null}
           </p>
         </div>
         <article className="rounded-[1.8rem] border border-amber-200 bg-amber-50/80 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
           <p className="text-xs uppercase tracking-[0.25em] text-amber-800">
-            Methodology
+            What It Means
           </p>
           <p className="mt-3 text-base leading-7 text-stone-700">
-            Fingerprints use a rolling 730-day window of eligible policy votes, grouped into 8 fixed issue domains. Procedural and low-confidence votes are excluded before shares and medians are precomputed.
+            This does not score ideology. It shows which issue domains absorb the largest share of this legislator's eligible policy votes over the last two years.
           </p>
         </article>
         <div className="grid gap-3 sm:grid-cols-2">

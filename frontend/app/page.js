@@ -40,35 +40,35 @@ export default function HomePage() {
           Political Fingerprint
         </p>
         <h1 className="max-w-[980px] font-serif text-5xl leading-[0.95] sm:text-7xl">
-          In 60 seconds, understand how this politician actually behaves.
+          See what issues your representative actually spends votes on.
         </h1>
         <p className="mt-6 max-w-[740px] text-xl leading-8 text-stone-700">
-          Deterministic civic analytics built from categorized policy votes,
-          precomputed metrics, and neutral summaries.
+          A fast behavioral profile built from categorized policy votes, precomputed
+          issue emphasis, and change-over-time metrics.
         </p>
         <div className="mt-10 grid gap-4 lg:grid-cols-3">
           <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Fingerprint
+              Issue Focus
             </p>
             <p className="mt-3 text-base leading-7 text-stone-700">
-              Eight-domain vote emphasis with explicit zeroes and chamber median comparison.
+              See which policy domains dominate this legislator's recent voting record, with chamber comparison built in.
             </p>
           </article>
           <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Drift
+              Change Over Time
             </p>
             <p className="mt-3 text-base leading-7 text-stone-700">
-              Deterministic stability measurement across early and recent voting windows.
+              Measure whether their recent issue mix looks stable or has shifted meaningfully across the last two years.
             </p>
           </article>
           <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Lookup
+              Who Represents Me
             </p>
             <p className="mt-3 text-base leading-7 text-stone-700">
-              ZIP-based representative and senator lookup backed by deterministic fixture data.
+              Start with your ZIP code, then inspect the voting behavior of your House member and senators side by side.
             </p>
           </article>
         </div>

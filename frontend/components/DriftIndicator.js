@@ -6,7 +6,7 @@ import { fetchDrift } from "../lib/api";
 
 export default function DriftIndicator({
   legislatorId = "leg_alex_morgan",
-  title = "Stability / Drift",
+  title = "Change Over Time",
 }) {
   const [state, setState] = useState({
     status: "loading",
@@ -63,17 +63,17 @@ export default function DriftIndicator({
             ? "Insufficient data"
             : null}
           {state.status === "ready" && !state.payload?.insufficient_data
-            ? `Drift ${driftValue.toFixed(2)}`
+            ? `Change score ${driftValue.toFixed(2)}`
             : null}
         </h3>
         <p className="mt-4 max-w-md text-base leading-7 text-stone-300">
           {state.status === "loading" ? "Waiting for the backend drift response." : null}
           {state.status === "error" ? `${state.error} Try reloading the page or selecting another legislator.` : null}
           {state.status === "ready" && state.payload?.insufficient_data
-            ? "The current fixture-backed data stays below the locked 20-vote threshold, so drift is reported as unavailable rather than estimated."
+            ? "There are not yet enough eligible votes in this window to say whether this legislator's issue emphasis is stable or changing."
             : null}
           {state.status === "ready" && !state.payload?.insufficient_data
-            ? "Drift compares the early 365-day vote-share vector to the recent 365-day vote-share vector using deterministic L1 distance."
+            ? "This compares the early and recent halves of the 730-day window to show whether the legislator's issue mix stayed similar or moved."
             : null}
         </p>
         {state.status === "ready" && !state.payload?.insufficient_data ? (
@@ -87,7 +87,7 @@ export default function DriftIndicator({
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.25em] text-stone-400">
-                Drift Gauge
+                Change Gauge
               </p>
               <p className="mt-2 text-5xl font-semibold text-stone-50">
                 {state.status === "ready" && !state.payload?.insufficient_data
