@@ -35,19 +35,19 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#f4eee1,_#e6dbc1_50%,_#d5c3a2)] text-stone-900">
-      <section className="mx-auto flex min-h-screen max-w-[1180px] flex-col justify-center px-5 py-16 sm:px-6 lg:py-20">
+      <section className="mx-auto flex min-h-screen max-w-[1240px] flex-col justify-center px-5 py-14 sm:px-6 lg:py-16">
         <p className="mb-4 text-sm uppercase tracking-[0.35em] text-stone-600">
           Political Fingerprint
         </p>
-        <h1 className="max-w-[980px] font-serif text-5xl leading-[0.95] sm:text-7xl">
+        <h1 className="max-w-[900px] font-serif text-5xl leading-[0.95] sm:text-6xl lg:text-[6.2rem]">
           See what issues your representative actually spends votes on.
         </h1>
-        <p className="mt-6 max-w-[740px] text-xl leading-8 text-stone-700">
+        <p className="mt-5 max-w-[720px] text-lg leading-8 text-stone-700 sm:text-xl">
           A fast behavioral profile built from categorized policy votes, precomputed
           issue emphasis, and change-over-time metrics.
         </p>
-        <div className="mt-10 grid gap-4 lg:grid-cols-3">
-          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur">
+        <div className="mt-9 grid gap-4 lg:grid-cols-3">
+          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Issue Focus
             </p>
@@ -55,7 +55,7 @@ export default function HomePage() {
               See which policy domains dominate this legislator's recent voting record, with chamber comparison built in.
             </p>
           </article>
-          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur">
+          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Change Over Time
             </p>
@@ -63,7 +63,7 @@ export default function HomePage() {
               Measure whether their recent issue mix looks stable or has shifted meaningfully across the last two years.
             </p>
           </article>
-          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur">
+          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Who Represents Me
             </p>

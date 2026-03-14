@@ -59,25 +59,25 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
   }, [deferredQuery]);
 
   return (
-    <section className="mt-10 rounded-[2.5rem] border border-stone-300/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-6">
-      <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr]">
-        <div className="rounded-[2rem] bg-[linear-gradient(180deg,#0f0c0a,#17120f)] px-5 py-5 text-stone-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] lg:min-h-[360px]">
+    <section className="mt-8 rounded-[2.5rem] border border-stone-300/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
+      <div className="grid gap-4 lg:grid-cols-[0.84fr_1.16fr]">
+        <div className="rounded-[2rem] bg-[linear-gradient(180deg,#0f0c0a,#17120f)] px-5 py-5 text-stone-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] lg:min-h-[312px]">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
             Active Legislator
           </p>
-          <h2 className="mt-3 font-serif text-3xl text-stone-50">
+          <h2 className="mt-3 font-serif text-[2.7rem] leading-[0.95] text-stone-50">
             {selectedLegislator.name_display}
           </h2>
           <p className="mt-3 text-base leading-6 text-stone-300">
             {formatChamber(selectedLegislator.chamber)} • {selectedLegislator.party} • {selectedLegislator.state}
             {selectedLegislator.district ? `-${selectedLegislator.district}` : ""}
           </p>
-          <div className="mt-5 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2">
             <Tag>{selectedLegislator.party === "D" ? "Democrat" : selectedLegislator.party === "R" ? "Republican" : selectedLegislator.party}</Tag>
             <Tag>{selectedLegislator.chamber === "house" ? "House member" : "Senator"}</Tag>
             <Tag>{selectedLegislator.district ? `${selectedLegislator.state}-${selectedLegislator.district}` : `${selectedLegislator.state} statewide`}</Tag>
           </div>
-          <p className="mt-5 max-w-md text-base leading-7 text-stone-300">
+          <p className="mt-4 max-w-md text-[15px] leading-7 text-stone-300">
             Start here to inspect one voting record in depth. The sections below show issue focus, change over time, and the clearest takeaways from the current window.
           </p>
         </div>
@@ -87,7 +87,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
               <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
                 Legislator Search
               </p>
-              <p className="mt-2 text-base leading-7 text-stone-700">
+              <p className="mt-2 text-[15px] leading-7 text-stone-700">
                 Search by name to swap in a different legislator and instantly update the behavioral profile below.
               </p>
             </div>
@@ -105,7 +105,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
             placeholder="Search legislators"
             value={query}
           />
-          <div className="mt-4 grid max-h-[760px] gap-3 overflow-y-auto pr-1 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-4 grid max-h-[620px] gap-3 overflow-y-auto pr-1 sm:grid-cols-2 xl:grid-cols-3">
             {searchState.status === "error" ? (
               <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700 sm:col-span-2 xl:col-span-3">
                 {searchState.error}
@@ -120,7 +120,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
               const isSelected = legislator.id === selectedLegislator.id;
               return (
                 <button
-                  className={`rounded-[1.6rem] border px-4 py-4 text-left transition ${
+                  className={`rounded-[1.5rem] border px-4 py-4 text-left transition ${
                     isSelected
                       ? "border-stone-900 bg-stone-900 text-stone-100 shadow-[0_12px_28px_rgba(28,25,23,0.16)]"
                       : "border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(245,241,233,0.94))] text-stone-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] hover:border-stone-400"
@@ -137,7 +137,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
                       {legislator.party}
                     </span>
                   </div>
-                  <p className="mt-3 font-serif text-[1.7rem] leading-[1.02]">
+                  <p className="mt-3 font-serif text-[1.55rem] leading-[1.02]">
                     {legislator.name_display}
                   </p>
                   <p className={`mt-2 text-[15px] leading-6 ${isSelected ? "text-stone-300" : "text-stone-600"}`}>

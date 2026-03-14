@@ -122,16 +122,16 @@ export default function ComparisonPanel({
       : null;
 
   return (
-    <section className="mt-10 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-8">
+    <section className="mt-10 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-7">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
             Comparison Mode
           </p>
-          <h2 className="mt-2 font-serif text-3xl text-stone-900">
+          <h2 className="mt-2 font-serif text-[2.85rem] leading-[0.95] text-stone-900">
             Compare behavioral profiles side by side
           </h2>
-          <p className="mt-3 max-w-2xl text-base leading-7 text-stone-700">
+          <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
             Use the same issue-focus, change-over-time, and summary lens on both legislators at once. It stays descriptive and does not rank either side.
           </p>
         </div>
@@ -153,7 +153,7 @@ export default function ComparisonPanel({
         </div>
       </div>
 
-      <div className="mt-6 rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100">
+      <div className="mt-5 rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
@@ -171,7 +171,7 @@ export default function ComparisonPanel({
             {compareState.status === "loading" ? "Fetching fingerprint, drift, and summary data for both sides." : null}
             {compareState.status === "error" ? compareState.error : null}
             {compareState.status === "ready"
-              ? `Overlay comparison is set to ${comparisonParty}. Compare issue focus first, then drift and summary.`
+              ? `Overlay comparison is set to ${comparisonParty}. Compare issue focus first, then use drift and summary as supporting context.`
               : null}
           </p>
         </div>
@@ -181,11 +181,14 @@ export default function ComparisonPanel({
               Biggest Gap
             </p>
             <p className="mt-2">{comparisonInsight}</p>
+            <p className="mt-2 text-[13px] leading-6 text-stone-400">
+              This compares issue focus only. Two legislators can show the same issue mix here while still voting differently within those issues.
+            </p>
           </div>
         ) : null}
       </div>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
+      <div className="mt-5 grid gap-5 lg:grid-cols-[0.84fr_1.16fr]">
         <div className="rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(245,241,233,0.94))] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
             Select Legislators
@@ -196,7 +199,7 @@ export default function ComparisonPanel({
             placeholder="Search by legislator name"
             value={query}
           />
-          <div className="mt-4 grid max-h-[620px] gap-3 overflow-y-auto pr-1">
+          <div className="mt-4 grid max-h-[540px] gap-3 overflow-y-auto pr-1">
             {searchState.status === "error" ? (
               <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
                 {searchState.error}
@@ -278,7 +281,7 @@ function CompareSideCard({ heading, side, fallbackLegislator }) {
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-xs uppercase tracking-[0.28em] text-stone-500">{heading}</p>
-          <h3 className="mt-3 font-serif text-3xl text-stone-900">{legislator.name_display}</h3>
+          <h3 className="mt-3 font-serif text-[2.8rem] leading-[0.95] text-stone-900">{legislator.name_display}</h3>
           <p className="mt-2 text-[15px] leading-6 text-stone-600">
             {formatChamber(legislator.chamber)} • {legislator.party} • {legislator.state}
             {legislator.district ? `-${legislator.district}` : " • Statewide"}

@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 import { fetchFingerprint } from "../lib/api";
 
 const COMPARISON_OPTIONS = ["ALL", "D", "R"];
-const SVG_WIDTH = 600;
-const SVG_HEIGHT = 520;
+const SVG_WIDTH = 560;
+const SVG_HEIGHT = 480;
 const CENTER_X = SVG_WIDTH / 2;
-const CENTER_Y = 272;
-const RADIUS = 168;
+const CENTER_Y = 248;
+const RADIUS = 152;
 const LABEL_DISTANCE = 1.25;
 
 export default function FingerprintRadar({
@@ -72,14 +72,14 @@ export default function FingerprintRadar({
   const focusSummary = buildFocusSummary(topDomains);
 
   return (
-    <section className="mt-14 grid gap-8 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:grid-cols-[1.16fr_0.84fr] lg:p-8">
+    <section className="mt-12 grid gap-6 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:grid-cols-[1.1fr_0.9fr] lg:p-7">
       <div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Issue Focus
             </p>
-            <h2 className="mt-2 font-serif text-3xl text-stone-900">
+            <h2 className="mt-2 font-serif text-[2.65rem] leading-[0.95] text-stone-900">
               {title}
             </h2>
           </div>
@@ -100,10 +100,10 @@ export default function FingerprintRadar({
             ))}
           </div>
         </div>
-        <div className="mt-8 flex justify-center overflow-x-auto rounded-[2rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(244,239,231,0.56))] px-3 py-5">
+        <div className="mt-6 flex justify-center overflow-x-auto rounded-[2rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(244,239,231,0.56))] px-3 py-4">
           <svg
             aria-label="Fingerprint radar chart"
-            className="h-[500px] w-[580px] min-w-[580px]"
+            className="h-[450px] w-[540px] min-w-[540px]"
             viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
           >
             {[0.2, 0.4, 0.6, 0.8, 1].map((ratio) => (
@@ -131,7 +131,7 @@ export default function FingerprintRadar({
                   />
                   <text
                     fill="#57534e"
-                    fontSize="14"
+                    fontSize="13"
                     textAnchor={x < CENTER_X - 10 ? "end" : x > CENTER_X + 10 ? "start" : "middle"}
                     x={x}
                     y={y}
