@@ -101,3 +101,46 @@ def test_load_senate_xml_bundle_skips_unsupported_senate_reference(tmp_path: Pat
     bundle = load_senate_xml_bundle(source_dir=source_dir, fallback_dir=SENATE_XML_SAMPLE_DIR)
 
     assert bundle.roll_calls == []
+
+
+def test_load_senate_xml_bundle_builds_fallback_legislator_for_unknown_lis_id(tmp_path: Path) -> None:
+    source_dir = tmp_path / "senate_cache"
+    source_dir.mkdir()
+    for filename in ("members.xml", "bills.json", "zip_district_map.json"):
+        (source_dir / filename).write_text((SENATE_XML_SAMPLE_DIR / filename).read_text())
+
+    (source_dir / "vote_001.xml").write_text(
+        """
+        <roll_call_vote>
+          <congress>119</congress>
+          <session>1</session>
+          <vote_number>1</vote_number>
+          <vote_date>July 1, 2025,  11:56 AM</vote_date>
+          <question>On Passage</question>
+          <vote_title>Fallback senator test</vote_title>
+          <document>
+            <document_type>S.</document_type>
+            <document_number>210</document_number>
+            <document_name>S. 210</document_name>
+          </document>
+          <members>
+            <member>
+              <member_full>Alsobrooks (D-MD)</member_full>
+              <last_name>Alsobrooks</last_name>
+              <first_name>Angela</first_name>
+              <party>D</party>
+              <state>MD</state>
+              <vote_cast>Yea</vote_cast>
+              <lis_member_id>S428</lis_member_id>
+            </member>
+          </members>
+        </roll_call_vote>
+        """.strip()
+    )
+
+    bundle = load_senate_xml_bundle(source_dir=source_dir, fallback_dir=SENATE_XML_SAMPLE_DIR)
+
+    fallback_legislator = next(item for item in bundle.legislators if item["id"] == "leg_alsobrooks_d_md")
+    assert fallback_legislator["name_display"] == "Alsobrooks (D-MD)"
+    assert fallback_legislator["state"] == "MD"
+    assert bundle.votes_cast[0]["legislator_id"] == "leg_alsobrooks_d_md"

@@ -1,4 +1,5 @@
 import argparse
+from urllib.error import HTTPError
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
@@ -81,13 +82,20 @@ def run_live_pipeline(
     if resolved_bill_refs:
         api_key = resolve_congress_api_key(congress_api_key)
         for congress, bill_type, bill_number in resolved_bill_refs:
-            fetch_congress_bill_metadata(
-                congress=congress,
-                bill_type=bill_type,
-                bill_number=bill_number,
-                api_key=api_key,
-            )
-        bill_fetch_count = len(resolved_bill_refs)
+            try:
+                fetch_congress_bill_metadata(
+                    congress=congress,
+                    bill_type=bill_type,
+                    bill_number=bill_number,
+                    api_key=api_key,
+                )
+            except HTTPError as exc:
+                # Chamber feeds can reference bill identifiers that the Congress metadata
+                # endpoint does not currently resolve; only skip true not-found responses.
+                if exc.code != 404:
+                    raise
+                continue
+            bill_fetch_count += 1
 
     persist_sources = [
         source

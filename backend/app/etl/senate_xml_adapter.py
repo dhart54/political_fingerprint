@@ -41,6 +41,7 @@ def load_senate_xml_bundle(
         str(legislator["lis_member_id"]): legislator
         for legislator in legislators
     }
+    supplemental_legislators: list[dict[str, object]] = []
     congress_bill_records = normalize_congress_bill_records(
         json.loads(_resolve_source_file(source_dir, "bills.json", fallback_dir).read_text())
     )
@@ -63,6 +64,7 @@ def load_senate_xml_bundle(
             roll_call, bill, votes = _parse_roll_call(
                 ElementTree.parse(vote_file),
                 legislators_by_lis=legislators_by_lis,
+                supplemental_legislators=supplemental_legislators,
                 congress_bill_lookup=congress_bill_lookup,
             )
         except ValueError as error:
@@ -84,7 +86,7 @@ def load_senate_xml_bundle(
                 for key, value in legislator.items()
                 if key != "lis_member_id"
             }
-            for legislator in legislators
+            for legislator in legislators + supplemental_legislators
         ],
         bills=list(bills_by_id.values()),
         roll_calls=roll_calls,
@@ -135,6 +137,7 @@ def _parse_roll_call(
     tree: ElementTree.ElementTree,
     *,
     legislators_by_lis: dict[str, dict[str, object]],
+    supplemental_legislators: list[dict[str, object]],
     congress_bill_lookup: dict[tuple[int, str, int], dict[str, object]],
 ) -> tuple[dict[str, object], dict[str, object], list[dict[str, object]]]:
     root = tree.getroot()
@@ -183,7 +186,11 @@ def _parse_roll_call(
     for member_vote in root.findall("./members/member"):
         lis_member_id = _require_text(member_vote.find("lis_member_id"))
         if lis_member_id not in legislators_by_lis:
-            raise ValueError("Senate XML sample vote references unknown lis_member_id")
+            legislators_by_lis[lis_member_id] = _build_senate_vote_legislator(
+                lis_member_id=lis_member_id,
+                member_vote=member_vote,
+            )
+            supplemental_legislators.append(legislators_by_lis[lis_member_id])
         votes.append(
             {
                 "roll_call_id": roll_call["id"],
@@ -248,6 +255,39 @@ def _normalize_vote_position(value: str) -> str:
 
 def _build_senate_source_url(*, congress: int, session: int, roll_number: int) -> str:
     return f"https://www.senate.gov/legislative/LIS/roll_call_votes/vote{congress}{session}/vote_{congress}_{session}_{roll_number:05d}.xml"
+
+
+def _build_senate_vote_legislator(
+    *,
+    lis_member_id: str,
+    member_vote: ElementTree.Element,
+) -> dict[str, object]:
+    full_name = (
+        _optional_text(member_vote.find("member_full"))
+        or " ".join(
+            part
+            for part in (
+                _optional_text(member_vote.find("first_name")),
+                _optional_text(member_vote.find("last_name")),
+            )
+            if part
+        )
+        or lis_member_id
+    )
+    party = _optional_text(member_vote.find("party")) or "Unknown"
+    state = _optional_text(member_vote.find("state")) or "XX"
+
+    return {
+        "id": _to_legislator_id(full_name),
+        "lis_member_id": lis_member_id,
+        "bioguide_id": lis_member_id,
+        "name_display": full_name,
+        "chamber": "senate",
+        "state": state,
+        "district": "Statewide",
+        "party": party,
+        "in_office": True,
+    }
 
 
 def _to_legislator_id(name_display: str) -> str:

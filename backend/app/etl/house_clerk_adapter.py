@@ -68,7 +68,7 @@ def load_house_clerk_bundle(
                 congress_bill_lookup=congress_bill_lookup,
             )
         except ValueError as error:
-            if "Unsupported House bill reference" in str(error):
+            if "Unsupported House bill reference" in str(error) or "Missing House bill reference" in str(error):
                 continue
             raise
         bills_by_id[str(bill["id"])] = bill
@@ -148,7 +148,9 @@ def _parse_roll_call(
     congress = int(_require_text(metadata.find("congress")))
     session = _parse_house_session(_require_text(metadata.find("session")))
     roll_number = int(_require_text(metadata.find("rollcall-num")))
-    bill_number_text = _require_text(metadata.find("legis-num"))
+    bill_number_text = _optional_text(metadata.find("legis-num"))
+    if not bill_number_text:
+        raise ValueError("Missing House bill reference")
     vote_question = _require_text(metadata.find("vote-question"))
     vote_description = _extract_house_vote_description(metadata)
     action_date = _normalize_house_action_date(_require_text(metadata.find("action-date")))

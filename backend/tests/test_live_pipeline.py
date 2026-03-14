@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+from urllib.error import HTTPError
 
 from app.etl import live_pipeline
 
@@ -166,6 +167,78 @@ def test_run_live_pipeline_fetches_congress_bill_metadata(monkeypatch) -> None:
         (119, "hr", 121, "resolved-key"),
     ]
     assert result.congress_bills_fetched == 2
+
+
+def test_run_live_pipeline_skips_404_congress_bill_metadata(monkeypatch) -> None:
+    fetched = []
+
+    monkeypatch.setattr(live_pipeline, "fetch_house_clerk_members", lambda: None)
+    monkeypatch.setattr(live_pipeline, "fetch_house_clerk_roll_calls", lambda **kwargs: [])
+    monkeypatch.setattr(
+        live_pipeline,
+        "infer_house_bill_refs_from_cache",
+        lambda **kwargs: {(119, "hr", 121)},
+    )
+    monkeypatch.setattr(
+        live_pipeline,
+        "infer_senate_bill_refs_from_cache",
+        lambda **kwargs: set(),
+    )
+    monkeypatch.setattr(live_pipeline, "resolve_congress_api_key", lambda api_key: "resolved-key")
+
+    def fake_fetch_congress_bill_metadata(*, congress, bill_type, bill_number, api_key):
+        fetched.append((congress, bill_type, bill_number, api_key))
+        if bill_number == 121:
+            raise HTTPError(
+                url=f"https://api.congress.gov/v3/bill/{congress}/{bill_type}/{bill_number}",
+                code=404,
+                msg="Not Found",
+                hdrs=None,
+                fp=None,
+            )
+
+    monkeypatch.setattr(
+        live_pipeline,
+        "fetch_congress_bill_metadata",
+        fake_fetch_congress_bill_metadata,
+    )
+    monkeypatch.setattr(
+        live_pipeline,
+        "run_etl_and_persist",
+        lambda *, source, as_of: type(
+            "PersistResult",
+            (),
+            {
+                "source": source,
+                "legislators_seeded": 3,
+                "bills_seeded": 4,
+                "roll_calls_seeded": 4,
+                "votes_seeded": 12,
+                "classifications_seeded": 4,
+                "fingerprints_seeded": 24,
+                "chamber_medians_seeded": 48,
+                "drift_scores_seeded": 3,
+                "summaries_seeded": 3,
+                "zip_mappings_seeded": 3,
+            },
+        )(),
+    )
+
+    result = live_pipeline.run_live_pipeline(
+        house_year=2025,
+        house_roll_numbers=[1],
+        senate_congress=None,
+        senate_session=None,
+        senate_roll_numbers=[],
+        bill_refs=[(119, "hr", 120)],
+        congress_api_key=None,
+    )
+
+    assert fetched == [
+        (119, "hr", 120, "resolved-key"),
+        (119, "hr", 121, "resolved-key"),
+    ]
+    assert result.congress_bills_fetched == 1
 
 
 def test_run_live_pipeline_supports_mixed_house_and_senate_runs(monkeypatch) -> None:

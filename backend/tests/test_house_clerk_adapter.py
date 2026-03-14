@@ -99,3 +99,30 @@ def test_load_house_clerk_bundle_skips_unsupported_house_reference(tmp_path: Pat
     bundle = load_house_clerk_bundle(source_dir=source_dir, fallback_dir=HOUSE_CLERK_SAMPLE_DIR)
 
     assert bundle.roll_calls == []
+
+
+def test_load_house_clerk_bundle_skips_missing_house_reference(tmp_path: Path) -> None:
+    source_dir = tmp_path / "house_cache"
+    source_dir.mkdir()
+    for filename in ("members.xml", "bills.json", "zip_district_map.json"):
+        (source_dir / filename).write_text((HOUSE_CLERK_SAMPLE_DIR / filename).read_text())
+
+    (source_dir / "roll001.xml").write_text(
+        """
+        <rollcall-vote>
+          <vote-metadata>
+            <congress>119</congress>
+            <session>1st</session>
+            <rollcall-num>1</rollcall-num>
+            <vote-question>On Motion</vote-question>
+            <vote-desc>Missing bill reference</vote-desc>
+            <action-date>18-Dec-2025</action-date>
+          </vote-metadata>
+          <vote-data />
+        </rollcall-vote>
+        """.strip()
+    )
+
+    bundle = load_house_clerk_bundle(source_dir=source_dir, fallback_dir=HOUSE_CLERK_SAMPLE_DIR)
+
+    assert bundle.roll_calls == []
