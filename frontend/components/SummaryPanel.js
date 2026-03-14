@@ -49,6 +49,12 @@ export default function SummaryPanel({
 
   const summaryPoints =
     state.status === "ready" ? splitSummaryText(state.payload?.summary_text) : [];
+  const quickRead =
+    state.status === "ready"
+      ? summaryPoints[0] || "No quick summary is available for this legislator yet."
+      : state.status === "loading"
+        ? "Summarizing the current record into a few takeaways."
+        : "The site cannot summarize this record right now.";
 
   return (
     <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/75 p-5 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-6">
@@ -60,6 +66,9 @@ export default function SummaryPanel({
           <h3 className="mt-2 font-serif text-[2.7rem] leading-[0.95] text-stone-900">
             Fast read of the record
           </h3>
+          <p className="mt-3 max-w-3xl text-[18px] leading-8 text-stone-900">
+            {quickRead}
+          </p>
         </div>
         <p className="text-xs uppercase tracking-[0.25em] text-stone-500">
           {state.status === "ready" ? state.payload?.generation_method : "loading"}

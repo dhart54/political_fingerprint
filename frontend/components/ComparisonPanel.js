@@ -178,7 +178,7 @@ export default function ComparisonPanel({
         {comparisonInsight ? (
           <div className="mt-4 rounded-[1.5rem] border border-stone-800 bg-stone-900/70 px-4 py-4 text-sm leading-7 text-stone-200">
             <p className="text-xs uppercase tracking-[0.26em] text-stone-400">
-              Biggest Gap
+              What To Conclude
             </p>
             <p className="mt-2">{comparisonInsight}</p>
             <p className="mt-2 text-[13px] leading-6 text-stone-400">
@@ -370,7 +370,7 @@ function buildComparisonInsight(payload) {
 
   const biggest = differences[0];
   if (!biggest || biggest.gap <= 0) {
-    return "These two legislators currently show the same issue-focus mix in this window.";
+    return "These two legislators currently look similar on issue focus, so this comparison does not show a strong difference in what kinds of issues dominated their recent votes.";
   }
 
   const leader =
@@ -380,7 +380,7 @@ function buildComparisonInsight(payload) {
   const leaderShare = Math.max(biggest.leftShare, biggest.rightShare);
   const trailingShare = Math.min(biggest.leftShare, biggest.rightShare);
 
-  return `${leader} places more vote emphasis on ${formatDomainLabel(biggest.domain)}: ${Math.round(
+  return `The clearest difference is that ${leader} places more vote emphasis on ${formatDomainLabel(biggest.domain)}: ${Math.round(
     leaderShare * 100,
   )}% of eligible votes versus ${Math.round(trailingShare * 100)}% for ${trailing}.`;
 }

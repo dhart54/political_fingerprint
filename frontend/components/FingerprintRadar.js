@@ -70,6 +70,7 @@ export default function FingerprintRadar({
     .filter((row) => row.vote_share > 0)
     .slice(0, 2);
   const focusSummary = buildFocusSummary(topDomains);
+  const focusTakeaway = buildFocusTakeaway(topDomains);
 
   return (
     <section className="mt-10 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-5 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur xl:p-6">
@@ -182,16 +183,18 @@ export default function FingerprintRadar({
         <div className="flex flex-col gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Reading The Chart
-            </p>
-            <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
-              The amber shape shows where this legislator's recent eligible votes are concentrated. The green dashed overlay shows the chamber median for the selected comparison group.
+              What To Conclude
             </p>
             {state.status === "ready" ? (
-              <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-900">
-                {focusSummary}
+              <p className="mt-3 max-w-2xl text-[18px] leading-8 text-stone-900">
+                {focusTakeaway}
               </p>
             ) : null}
+            <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
+              {state.status === "ready"
+                ? focusSummary
+                : "The amber shape shows where this legislator's recent eligible votes are concentrated. The green dashed overlay shows the chamber median for the selected comparison group."}
+            </p>
             <div className="mt-4 flex flex-wrap gap-4">
               <LegendSwatch
                 label="Legislator fingerprint"
@@ -350,6 +353,18 @@ function buildFocusSummary(topDomains) {
   }
 
   return `Right now, the clearest concentrations are ${formatDomainLabel(topDomains[0].domain)} at ${(topDomains[0].vote_share * 100).toFixed(0)}% and ${formatDomainLabel(topDomains[1].domain)} at ${(topDomains[1].vote_share * 100).toFixed(0)}% of eligible votes.`;
+}
+
+function buildFocusTakeaway(topDomains) {
+  if (!topDomains.length) {
+    return "There is not enough eligible vote data yet to say which issues dominate this record.";
+  }
+
+  if (topDomains.length === 1) {
+    return `Most of this legislator's recent eligible votes are concentrated in ${formatDomainLabel(topDomains[0].domain)}.`;
+  }
+
+  return `This record is most concentrated in ${formatDomainLabel(topDomains[0].domain)} and ${formatDomainLabel(topDomains[1].domain)} right now.`;
 }
 
 function ProvenanceCard({ label, value }) {
