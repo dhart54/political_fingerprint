@@ -40,6 +40,10 @@ def test_persist_seed_bundle_replaces_tables_and_commits(monkeypatch) -> None:
         def execute(self, query, params=None):
             executed.append((query.strip(), params))
 
+        def executemany(self, query, params_seq):
+            params_list = list(params_seq)
+            executed.append((query.strip(), params_list))
+
     class FakeConnection:
         def __init__(self):
             self.cursor_instance = FakeCursor()
@@ -92,7 +96,18 @@ def test_run_etl_and_persist_uses_source_and_returns_seed_counts(monkeypatch) ->
     assert result.fingerprints_seeded == 24
 
 
-def test_build_seed_bundle_for_sources_combines_house_and_senate_cache_inputs() -> None:
+def test_build_seed_bundle_for_sources_combines_house_and_senate_cache_inputs(monkeypatch) -> None:
+    from app.etl.ingest import run_ingest
+
+    def fake_run_ingest(*, source):
+        source_map = {
+            "house_clerk_cache": "house_clerk_sample",
+            "senate_xml_cache": "senate_xml_sample",
+        }
+        return run_ingest(source=source_map.get(source, source))
+
+    monkeypatch.setattr("app.etl.seed.run_ingest", fake_run_ingest)
+
     bundle = build_seed_bundle_for_sources(
         sources=["house_clerk_cache", "senate_xml_cache"],
         as_of=date(2026, 3, 12),
@@ -111,6 +126,16 @@ def test_build_seed_bundle_for_sources_combines_house_and_senate_cache_inputs() 
 
 
 def test_run_etl_and_persist_sources_returns_combined_seed_counts(monkeypatch) -> None:
+    from app.etl.ingest import run_ingest
+
+    def fake_run_ingest(*, source):
+        source_map = {
+            "house_clerk_cache": "house_clerk_sample",
+            "senate_xml_cache": "senate_xml_sample",
+        }
+        return run_ingest(source=source_map.get(source, source))
+
+    monkeypatch.setattr("app.etl.seed.run_ingest", fake_run_ingest)
     monkeypatch.setattr("app.etl.seed.persist_seed_bundle", lambda bundle: None)
 
     result = run_etl_and_persist_sources(

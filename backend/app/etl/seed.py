@@ -298,12 +298,13 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
         for statement in _delete_statements():
             cursor.execute(statement)
 
-        for row in bundle.legislators:
-            cursor.execute(
-                """
-                INSERT INTO legislators (id, bioguide_id, name_display, chamber, state, district, party, in_office)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-                """,
+        _executemany(
+            cursor,
+            """
+            INSERT INTO legislators (id, bioguide_id, name_display, chamber, state, district, party, in_office)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            [
                 (
                     row["id"],
                     row["bioguide_id"],
@@ -313,14 +314,17 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["district"],
                     row["party"],
                     row["in_office"],
-                ),
-            )
-        for row in bundle.bills:
-            cursor.execute(
-                """
-                INSERT INTO bills (id, congress, bill_type, bill_number, title, summary, committee, subjects)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s::jsonb)
-                """,
+                )
+                for row in bundle.legislators
+            ],
+        )
+        _executemany(
+            cursor,
+            """
+            INSERT INTO bills (id, congress, bill_type, bill_number, title, summary, committee, subjects)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s::jsonb)
+            """,
+            [
                 (
                     row["id"],
                     row["congress"],
@@ -330,14 +334,17 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["summary"],
                     row["committee"],
                     _to_json(row["subjects"]),
-                ),
-            )
-        for row in bundle.roll_calls:
-            cursor.execute(
-                """
-                INSERT INTO roll_calls (id, chamber, congress, rollcall_number, vote_date, question, description, bill_id, source_url)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-                """,
+                )
+                for row in bundle.bills
+            ],
+        )
+        _executemany(
+            cursor,
+            """
+            INSERT INTO roll_calls (id, chamber, congress, rollcall_number, vote_date, question, description, bill_id, source_url)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            [
                 (
                     row["id"],
                     row["chamber"],
@@ -348,29 +355,35 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["description"],
                     row["bill_id"],
                     row["source_url"],
-                ),
-            )
-        for row in bundle.votes_cast:
-            cursor.execute(
-                """
-                INSERT INTO votes_cast (id, roll_call_id, legislator_id, position)
-                VALUES (%s, %s, %s, %s)
-                """,
+                )
+                for row in bundle.roll_calls
+            ],
+        )
+        _executemany(
+            cursor,
+            """
+            INSERT INTO votes_cast (id, roll_call_id, legislator_id, position)
+            VALUES (%s, %s, %s, %s)
+            """,
+            [
                 (
                     row["id"],
                     row["roll_call_id"],
                     row["legislator_id"],
                     row["position"],
-                ),
-            )
-        for row in bundle.vote_classifications:
-            cursor.execute(
-                """
-                INSERT INTO vote_classifications (
-                    roll_call_id, is_eligible, eligibility_reason, primary_domain, score_breakdown, classification_version
                 )
-                VALUES (%s, %s, %s, %s, %s::jsonb, %s)
-                """,
+                for row in bundle.votes_cast
+            ],
+        )
+        _executemany(
+            cursor,
+            """
+            INSERT INTO vote_classifications (
+                roll_call_id, is_eligible, eligibility_reason, primary_domain, score_breakdown, classification_version
+            )
+            VALUES (%s, %s, %s, %s, %s::jsonb, %s)
+            """,
+            [
                 (
                     row["roll_call_id"],
                     row["is_eligible"],
@@ -378,16 +391,19 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["primary_domain"],
                     _to_json(row["score_breakdown"]),
                     row["classification_version"],
-                ),
-            )
-        for row in bundle.fingerprints:
-            cursor.execute(
-                """
-                INSERT INTO fingerprints (
-                    id, legislator_id, window_start, window_end, classification_version, domain, vote_count, total_votes, vote_share
                 )
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-                """,
+                for row in bundle.vote_classifications
+            ],
+        )
+        _executemany(
+            cursor,
+            """
+            INSERT INTO fingerprints (
+                id, legislator_id, window_start, window_end, classification_version, domain, vote_count, total_votes, vote_share
+            )
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            [
                 (
                     row["id"],
                     row["legislator_id"],
@@ -398,16 +414,19 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["vote_count"],
                     row["total_votes"],
                     row["vote_share"],
-                ),
-            )
-        for row in bundle.chamber_medians:
-            cursor.execute(
-                """
-                INSERT INTO chamber_medians (
-                    id, chamber, party, window_start, window_end, classification_version, domain, legislator_count, median_share
                 )
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-                """,
+                for row in bundle.fingerprints
+            ],
+        )
+        _executemany(
+            cursor,
+            """
+            INSERT INTO chamber_medians (
+                id, chamber, party, window_start, window_end, classification_version, domain, legislator_count, median_share
+            )
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            [
                 (
                     row["id"],
                     row["chamber"],
@@ -418,18 +437,21 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["domain"],
                     row["legislator_count"],
                     row["median_share"],
-                ),
-            )
-        for row in bundle.drift_scores:
-            cursor.execute(
-                """
-                INSERT INTO drift_scores (
-                    id, legislator_id, window_start, window_end, early_window_start, early_window_end,
-                    recent_window_start, recent_window_end, classification_version, total_votes,
-                    early_total_votes, recent_total_votes, insufficient_data, drift_value
                 )
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                """,
+                for row in bundle.chamber_medians
+            ],
+        )
+        _executemany(
+            cursor,
+            """
+            INSERT INTO drift_scores (
+                id, legislator_id, window_start, window_end, early_window_start, early_window_end,
+                recent_window_start, recent_window_end, classification_version, total_votes,
+                early_total_votes, recent_total_votes, insufficient_data, drift_value
+            )
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            [
                 (
                     row["id"],
                     row["legislator_id"],
@@ -445,16 +467,19 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["recent_total_votes"],
                     row["insufficient_data"],
                     row["drift_value"],
-                ),
-            )
-        for row in bundle.summaries:
-            cursor.execute(
-                """
-                INSERT INTO summaries (
-                    id, legislator_id, window_end, classification_version, summary_text, generation_method, created_at
                 )
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
-                """,
+                for row in bundle.drift_scores
+            ],
+        )
+        _executemany(
+            cursor,
+            """
+            INSERT INTO summaries (
+                id, legislator_id, window_end, classification_version, summary_text, generation_method, created_at
+            )
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """,
+            [
                 (
                     row["id"],
                     row["legislator_id"],
@@ -463,20 +488,25 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["summary_text"],
                     row["generation_method"],
                     row["created_at"],
-                ),
-            )
-        for row in bundle.zip_district_map:
-            cursor.execute(
-                """
-                INSERT INTO zip_district_map (zip, state, district)
-                VALUES (%s, %s, %s)
-                """,
+                )
+                for row in bundle.summaries
+            ],
+        )
+        _executemany(
+            cursor,
+            """
+            INSERT INTO zip_district_map (zip, state, district)
+            VALUES (%s, %s, %s)
+            """,
+            [
                 (
                     row["zip"],
                     row["state"],
                     row["district"],
-                ),
-            )
+                )
+                for row in bundle.zip_district_map
+            ],
+        )
         for statement in _sequence_statements(bundle):
             cursor.execute(statement)
         connection.commit()
@@ -553,3 +583,9 @@ def _to_json(value: object) -> str:
     import json
 
     return json.dumps(value)
+
+
+def _executemany(cursor, statement: str, rows: list[tuple[object, ...]]) -> None:
+    if not rows:
+        return
+    cursor.executemany(statement, rows)
