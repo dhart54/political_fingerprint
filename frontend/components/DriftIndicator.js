@@ -51,12 +51,12 @@ export default function DriftIndicator({
   const percent = Math.min(100, Math.max(0, driftValue * 100));
 
   return (
-    <section className="mt-8 grid gap-6 rounded-[2.25rem] border border-stone-300/80 bg-[linear-gradient(135deg,#060505,#171311_55%,#090706)] px-6 py-6 text-stone-100 shadow-[0_20px_80px_rgba(72,52,24,0.18)] lg:grid-cols-[0.88fr_1.12fr] lg:p-8">
+    <section className="mt-8 grid gap-5 rounded-[2.25rem] border border-stone-300/80 bg-[linear-gradient(135deg,#060505,#171311_55%,#090706)] px-5 py-5 text-stone-100 shadow-[0_20px_80px_rgba(72,52,24,0.18)] lg:grid-cols-[0.84fr_1.16fr] lg:p-6">
       <div>
         <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
           {title}
         </p>
-        <h3 className="mt-3 font-serif text-3xl text-stone-50">
+        <h3 className="mt-3 font-serif text-[2.7rem] leading-[0.95] text-stone-50">
           {state.status === "loading" ? "Loading drift..." : null}
           {state.status === "error" ? "Drift unavailable" : null}
           {state.status === "ready" && state.payload?.insufficient_data
@@ -66,7 +66,7 @@ export default function DriftIndicator({
             ? `Change score ${driftValue.toFixed(2)}`
             : null}
         </h3>
-        <p className="mt-4 max-w-md text-base leading-7 text-stone-300">
+        <p className="mt-4 max-w-md text-[15px] leading-7 text-stone-300">
           {state.status === "loading" ? "Waiting for the backend drift response." : null}
           {state.status === "error" ? `${state.error} Try reloading the page or selecting another legislator.` : null}
           {state.status === "ready" && state.payload?.insufficient_data
@@ -77,31 +77,31 @@ export default function DriftIndicator({
             : null}
         </p>
         {state.status === "ready" && !state.payload?.insufficient_data ? (
-          <div className="mt-5 inline-flex rounded-full border border-emerald-400/20 bg-emerald-400/8 px-4 py-2 text-xs uppercase tracking-[0.23em] text-emerald-200">
+          <div className="mt-4 inline-flex rounded-full border border-emerald-400/20 bg-emerald-400/8 px-4 py-2 text-xs uppercase tracking-[0.23em] text-emerald-200">
             Real drift signal available
           </div>
         ) : null}
       </div>
       <div className="flex flex-col justify-between">
-        <div className="rounded-[2rem] border border-white/6 bg-white/8 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+        <div className="rounded-[2rem] border border-white/6 bg-white/8 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.25em] text-stone-400">
                 Change Gauge
               </p>
-              <p className="mt-2 text-5xl font-semibold text-stone-50">
+              <p className="mt-2 text-4xl font-semibold text-stone-50">
                 {state.status === "ready" && !state.payload?.insufficient_data
                   ? driftValue.toFixed(2)
                   : "--"}
               </p>
             </div>
-            <p className="text-base text-stone-300">
+            <p className="text-[15px] text-stone-300">
               {state.status === "ready"
                 ? `${state.payload?.early_total_votes ?? 0} early / ${state.payload?.recent_total_votes ?? 0} recent`
                 : ""}
             </p>
           </div>
-          <div className="mt-6 h-4 rounded-full bg-stone-800">
+          <div className="mt-5 h-4 rounded-full bg-stone-800">
             <div
               className={`h-4 rounded-full ${
                 state.payload?.insufficient_data
@@ -112,7 +112,7 @@ export default function DriftIndicator({
             />
           </div>
         </div>
-        <dl className="mt-6 grid gap-3 sm:grid-cols-3">
+        <dl className="mt-4 grid gap-3 sm:grid-cols-3">
           <Metric label="Window" value="730 days" />
           <Metric
             label="Early"
@@ -130,9 +130,9 @@ export default function DriftIndicator({
 
 function Metric({ label, value }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+    <div className="rounded-2xl border border-white/10 bg-white/6 px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
       <dt className="text-xs uppercase tracking-[0.25em] text-stone-400">{label}</dt>
-      <dd className="mt-3 text-2xl text-stone-50">{value}</dd>
+      <dd className="mt-2 text-[1.9rem] leading-none text-stone-50">{value}</dd>
     </div>
   );
 }

@@ -53,19 +53,19 @@ export default function HealthStatus() {
         : "text-rose-700";
 
   return (
-    <article className="mt-12 rounded-[2rem] border border-stone-300/70 bg-[linear-gradient(135deg,#060505,#16110f)] px-6 py-5 text-stone-100 shadow-[0_18px_60px_rgba(72,52,24,0.18)]">
+    <article className="mt-10 rounded-[2rem] border border-stone-300/70 bg-[linear-gradient(135deg,#060505,#16110f)] px-5 py-4 text-stone-100 shadow-[0_18px_60px_rgba(72,52,24,0.18)]">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
             API Connectivity
           </p>
-          <p className={`mt-3 text-lg font-medium ${tone}`}>
+          <p className={`mt-3 text-base font-medium ${tone}`}>
             {state.status === "connected" ? "Backend reachable" : null}
             {state.status === "checking" ? "Checking backend health" : null}
             {state.status === "offline" ? "Backend unavailable" : null}
             {state.status === "unexpected" ? "Unexpected backend response" : null}
           </p>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-300">
+          <p className="mt-2 max-w-2xl text-[13px] leading-6 text-stone-300">
             {state.detail}
           </p>
         </div>

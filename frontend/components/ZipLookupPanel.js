@@ -56,13 +56,13 @@ export default function ZipLookupPanel() {
   }
 
   return (
-    <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/75 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-8">
+    <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/75 p-5 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
             ZIP Lookup
           </p>
-          <h3 className="mt-2 font-serif text-3xl text-stone-900">
+          <h3 className="mt-2 font-serif text-[2.85rem] leading-[0.95] text-stone-900">
             Find your House rep and senators
           </h3>
         </div>
@@ -70,7 +70,7 @@ export default function ZipLookupPanel() {
           Try 27701 or 27601
         </p>
       </div>
-      <form className="mt-6 flex flex-col gap-3 sm:flex-row" onSubmit={handleLookup}>
+      <form className="mt-5 flex flex-col gap-3 sm:flex-row" onSubmit={handleLookup}>
         <input
           className="h-12 flex-1 rounded-full border border-stone-300 bg-stone-50 px-5 text-sm text-stone-900 outline-none ring-0 placeholder:text-stone-500"
           inputMode="numeric"
@@ -86,7 +86,7 @@ export default function ZipLookupPanel() {
           Lookup
         </button>
       </form>
-      <div className="mt-6 flex flex-col gap-3 rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mt-5 flex flex-col gap-3 rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
             Lookup Status
@@ -110,7 +110,7 @@ export default function ZipLookupPanel() {
         </p>
       </div>
       {state.status === "ready" ? (
-        <div className="mt-6 grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="mt-5 grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
           <LegislatorCard
             accent="bg-amber-100 text-amber-900"
             heading="House Representative"
@@ -141,13 +141,13 @@ function LegislatorCard({ accent, heading, legislator }) {
           {formatParty(legislator.party)}
         </span>
       </div>
-      <h4 className="mt-3 font-serif text-2xl text-stone-900">
+      <h4 className="mt-3 font-serif text-[2.1rem] leading-[0.98] text-stone-900">
         {legislator.name_display}
       </h4>
       <p className="mt-2 text-sm text-stone-600">
         {formatChamber(legislator.chamber)} • {legislator.state}
       </p>
-      <dl className="mt-5 grid gap-4 sm:grid-cols-2">
+      <dl className="mt-4 grid gap-4 sm:grid-cols-2">
         <Meta label="Bioguide" value={legislator.bioguide_id} />
         <Meta label="Party" value={formatParty(legislator.party)} />
         <Meta label="Chamber" value={legislator.chamber} />
