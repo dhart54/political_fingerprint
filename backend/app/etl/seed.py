@@ -298,13 +298,17 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
         for statement in _delete_statements():
             cursor.execute(statement)
 
-        _executemany(
+        _write_rows(
             cursor,
-            """
+            insert_statement="""
             INSERT INTO legislators (id, bioguide_id, name_display, chamber, state, district, party, in_office)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """,
-            [
+            copy_statement="""
+            COPY legislators (id, bioguide_id, name_display, chamber, state, district, party, in_office)
+            FROM STDIN
+            """,
+            rows=[
                 (
                     row["id"],
                     row["bioguide_id"],
@@ -318,13 +322,17 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                 for row in bundle.legislators
             ],
         )
-        _executemany(
+        _write_rows(
             cursor,
-            """
+            insert_statement="""
             INSERT INTO bills (id, congress, bill_type, bill_number, title, summary, committee, subjects)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s::jsonb)
             """,
-            [
+            copy_statement="""
+            COPY bills (id, congress, bill_type, bill_number, title, summary, committee, subjects)
+            FROM STDIN
+            """,
+            rows=[
                 (
                     row["id"],
                     row["congress"],
@@ -338,13 +346,17 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                 for row in bundle.bills
             ],
         )
-        _executemany(
+        _write_rows(
             cursor,
-            """
+            insert_statement="""
             INSERT INTO roll_calls (id, chamber, congress, rollcall_number, vote_date, question, description, bill_id, source_url)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
             """,
-            [
+            copy_statement="""
+            COPY roll_calls (id, chamber, congress, rollcall_number, vote_date, question, description, bill_id, source_url)
+            FROM STDIN
+            """,
+            rows=[
                 (
                     row["id"],
                     row["chamber"],
@@ -359,13 +371,17 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                 for row in bundle.roll_calls
             ],
         )
-        _executemany(
+        _write_rows(
             cursor,
-            """
+            insert_statement="""
             INSERT INTO votes_cast (id, roll_call_id, legislator_id, position)
             VALUES (%s, %s, %s, %s)
             """,
-            [
+            copy_statement="""
+            COPY votes_cast (id, roll_call_id, legislator_id, position)
+            FROM STDIN
+            """,
+            rows=[
                 (
                     row["id"],
                     row["roll_call_id"],
@@ -375,15 +391,21 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                 for row in bundle.votes_cast
             ],
         )
-        _executemany(
+        _write_rows(
             cursor,
-            """
+            insert_statement="""
             INSERT INTO vote_classifications (
                 roll_call_id, is_eligible, eligibility_reason, primary_domain, score_breakdown, classification_version
             )
             VALUES (%s, %s, %s, %s, %s::jsonb, %s)
             """,
-            [
+            copy_statement="""
+            COPY vote_classifications (
+                roll_call_id, is_eligible, eligibility_reason, primary_domain, score_breakdown, classification_version
+            )
+            FROM STDIN
+            """,
+            rows=[
                 (
                     row["roll_call_id"],
                     row["is_eligible"],
@@ -395,15 +417,21 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                 for row in bundle.vote_classifications
             ],
         )
-        _executemany(
+        _write_rows(
             cursor,
-            """
+            insert_statement="""
             INSERT INTO fingerprints (
                 id, legislator_id, window_start, window_end, classification_version, domain, vote_count, total_votes, vote_share
             )
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
             """,
-            [
+            copy_statement="""
+            COPY fingerprints (
+                id, legislator_id, window_start, window_end, classification_version, domain, vote_count, total_votes, vote_share
+            )
+            FROM STDIN
+            """,
+            rows=[
                 (
                     row["id"],
                     row["legislator_id"],
@@ -418,15 +446,21 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                 for row in bundle.fingerprints
             ],
         )
-        _executemany(
+        _write_rows(
             cursor,
-            """
+            insert_statement="""
             INSERT INTO chamber_medians (
                 id, chamber, party, window_start, window_end, classification_version, domain, legislator_count, median_share
             )
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
             """,
-            [
+            copy_statement="""
+            COPY chamber_medians (
+                id, chamber, party, window_start, window_end, classification_version, domain, legislator_count, median_share
+            )
+            FROM STDIN
+            """,
+            rows=[
                 (
                     row["id"],
                     row["chamber"],
@@ -441,9 +475,9 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                 for row in bundle.chamber_medians
             ],
         )
-        _executemany(
+        _write_rows(
             cursor,
-            """
+            insert_statement="""
             INSERT INTO drift_scores (
                 id, legislator_id, window_start, window_end, early_window_start, early_window_end,
                 recent_window_start, recent_window_end, classification_version, total_votes,
@@ -451,7 +485,15 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
             )
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """,
-            [
+            copy_statement="""
+            COPY drift_scores (
+                id, legislator_id, window_start, window_end, early_window_start, early_window_end,
+                recent_window_start, recent_window_end, classification_version, total_votes,
+                early_total_votes, recent_total_votes, insufficient_data, drift_value
+            )
+            FROM STDIN
+            """,
+            rows=[
                 (
                     row["id"],
                     row["legislator_id"],
@@ -471,15 +513,21 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                 for row in bundle.drift_scores
             ],
         )
-        _executemany(
+        _write_rows(
             cursor,
-            """
+            insert_statement="""
             INSERT INTO summaries (
                 id, legislator_id, window_end, classification_version, summary_text, generation_method, created_at
             )
             VALUES (%s, %s, %s, %s, %s, %s, %s)
             """,
-            [
+            copy_statement="""
+            COPY summaries (
+                id, legislator_id, window_end, classification_version, summary_text, generation_method, created_at
+            )
+            FROM STDIN
+            """,
+            rows=[
                 (
                     row["id"],
                     row["legislator_id"],
@@ -492,13 +540,17 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                 for row in bundle.summaries
             ],
         )
-        _executemany(
+        _write_rows(
             cursor,
-            """
+            insert_statement="""
             INSERT INTO zip_district_map (zip, state, district)
             VALUES (%s, %s, %s)
             """,
-            [
+            copy_statement="""
+            COPY zip_district_map (zip, state, district)
+            FROM STDIN
+            """,
+            rows=[
                 (
                     row["zip"],
                     row["state"],
@@ -589,7 +641,18 @@ def _to_json(value: object) -> str:
     return json.dumps(value)
 
 
-def _executemany(cursor, statement: str, rows: list[tuple[object, ...]]) -> None:
+def _write_rows(
+    cursor,
+    *,
+    insert_statement: str,
+    copy_statement: str,
+    rows: list[tuple[object, ...]],
+) -> None:
     if not rows:
         return
-    cursor.executemany(statement, rows)
+    if hasattr(cursor, "copy"):
+        with cursor.copy(copy_statement) as copy:
+            for row in rows:
+                copy.write_row(row)
+        return
+    cursor.executemany(insert_statement, rows)
