@@ -18,12 +18,15 @@ Phase 2 / post-MVP work completed through:
 - provenance and summary UX improvements
 - comparison API and UI
 - starter and expanded real-data import scripts
+- bulk real-data import tooling and persistence optimization
+- successful large House + Senate real-data backfill into Supabase
+- major frontend framing, density, and interpretability passes
 
 Most recent commits:
 
-- `0db98bd` `Add psycopg-binary for hosted Postgres connectivity`
-- `3ad7746` `Support live House and Senate source formats`
-- `ce7bf65` `Add expanded real-data batch importer`
+- `95972fa` `Lead with plain-English takeaways`
+- `913bd3c` `Reorganize issue focus layout`
+- `ce5a7d2` `Optimize desktop layout for large monitors`
 
 ## Live Data / Database State
 
@@ -39,36 +42,34 @@ Verified:
 Real-data imports completed:
 
 1. Starter batch
-   - 1 House roll
-   - 1 Senate roll
-
 2. Expanded batch
-   - House 2025 rolls: `347`, `349`, `351`, `356`, `358`, `360`, `362`
-   - Senate 119th Congress, 1st Session rolls: `127`, `133`, `318`, `372`, `480`, `618`
+3. Controlled bulk backfill
+4. Full cached House + Senate bulk persist using Postgres `COPY`
 
-Latest persisted Supabase row counts after expanded batch:
+Latest persisted Supabase row counts after the successful full bulk backfill:
 
-- `legislators`: `540`
-- `bills`: `13`
-- `roll_calls`: `13`
-- `votes_cast`: `3631`
-- `vote_classifications`: `13`
-- `fingerprints`: `4320`
+- `legislators`: `548`
+- `bills`: `234`
+- `roll_calls`: `419`
+- `votes_cast`: `154767`
+- `vote_classifications`: `419`
+- `fingerprints`: `4384`
 - `chamber_medians`: `48`
-- `drift_scores`: `540`
-- `summaries`: `540`
+- `drift_scores`: `548`
+- `summaries`: `548`
 - `zip_district_map`: `4`
 
 Coverage reality check:
 
-- `533` legislators have at least one eligible vote
-- `0` legislators have `5+` eligible votes
-- current max `total_votes` per legislator is `3`
+- `fingerprints_ge_5`: `4352`
+- `fingerprints_ge_20`: `3456`
+- `fingerprints_max_total_votes`: `58`
 
 Implication:
 
-- the frontend is now reading real legislator roster data and real computed rows from Supabase
-- but the imported vote set is still too small for rich, informative fingerprints for most legislators
+- the frontend is now reading a substantial real legislator roster and meaningful computed rows from Supabase
+- House members now have materially useful issue-focus and drift signals
+- comparison still feels weaker than users expect because it compares issue focus, not vote direction within issue
 
 ## Important Runtime Notes
 
@@ -122,25 +123,34 @@ Do not silently change fixture assumptions later without user approval.
 
 Most recent validations completed:
 
-- `backend/.venv/bin/pytest tests/test_live_pipeline.py` -> `7 passed`
-- expanded real-data script dry run works
-- expanded real-data batch ran successfully into Supabase
+- `npm run build` in `frontend` passes after the latest interpretability/layout work
+- live bulk data now persists successfully into Supabase
+- local UI was verified against real data, including:
+  - meaningful fingerprint outputs
+  - meaningful drift outputs for many House members
+  - real legislator search results
+
+## Product Reality Check
+
+The current site is now credible and much more understandable, but one important limitation remains:
+
+- casual users can still expect comparison to show political difference more strongly than it currently can
+- the current fingerprint and comparison logic measure issue focus, not vote direction within issue
+
+This means two legislators can legitimately look similar if they voted on the same kinds of issues, even if they took different sides on some of those votes.
 
 ## Next Recommended Task
 
-Next highest-value work is not UI polish.
+Next highest-value work is a product feature, not more generic polish:
 
-It is a larger bulk real-data import strategy so the frontend becomes genuinely informative.
+1. add a vote-direction or position layer within issue domains for comparison
+2. keep it deterministic and descriptive
+3. make comparison answer not just “what issues dominated” but also “did they tend to take different sides on those issues?”
 
-Recommended next step:
-
-1. build a range-based or curated bulk import path for many more substantive House and Senate bill votes
-2. bias imports toward bill-passage / amendment votes that are more likely to survive procedural exclusion
-3. rerun ETL into Supabase
-4. verify that many legislators now have meaningful non-zero fingerprints and less-empty summaries
+This is the clearest next step to make the product more useful for casual voters.
 
 ## Fast Resume Prompt
 
 Use this tomorrow:
 
-“Read `HANDOFF.md` plus the repo instruction files, then continue from the bulk real-data import step.”
+“Read `HANDOFF.md` plus the repo instruction files, then continue from the vote-direction / comparison-improvement step.”
