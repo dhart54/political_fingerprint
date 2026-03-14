@@ -59,16 +59,16 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
   }, [deferredQuery]);
 
   return (
-    <section className="mt-8 rounded-[2.5rem] border border-stone-300/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
-      <div className="grid gap-4 lg:grid-cols-[0.84fr_1.16fr]">
-        <div className="rounded-[2rem] bg-[linear-gradient(180deg,#0f0c0a,#17120f)] px-5 py-5 text-stone-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] lg:min-h-[312px]">
+    <section className="mt-7 rounded-[2.5rem] border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
+      <div className="grid gap-4 xl:grid-cols-[0.72fr_1.28fr]">
+        <div className="rounded-[2rem] bg-[linear-gradient(180deg,#0f0c0a,#17120f)] px-5 py-5 text-stone-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] xl:min-h-[272px]">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
             Active Legislator
           </p>
-          <h2 className="mt-3 font-serif text-[2.7rem] leading-[0.95] text-stone-50">
+          <h2 className="mt-2 font-serif text-[2.3rem] leading-[0.95] text-stone-50">
             {selectedLegislator.name_display}
           </h2>
-          <p className="mt-3 text-base leading-6 text-stone-300">
+          <p className="mt-2 text-[15px] leading-6 text-stone-300">
             {formatChamber(selectedLegislator.chamber)} • {selectedLegislator.party} • {selectedLegislator.state}
             {selectedLegislator.district ? `-${selectedLegislator.district}` : ""}
           </p>
@@ -77,7 +77,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
             <Tag>{selectedLegislator.chamber === "house" ? "House member" : "Senator"}</Tag>
             <Tag>{selectedLegislator.district ? `${selectedLegislator.state}-${selectedLegislator.district}` : `${selectedLegislator.state} statewide`}</Tag>
           </div>
-          <p className="mt-4 max-w-md text-[15px] leading-7 text-stone-300">
+          <p className="mt-4 max-w-md text-[14px] leading-6 text-stone-300">
             Start here to inspect one voting record in depth. The sections below show issue focus, change over time, and the clearest takeaways from the current window.
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
             placeholder="Search legislators"
             value={query}
           />
-          <div className="mt-4 grid max-h-[620px] gap-3 overflow-y-auto pr-1 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-4 grid max-h-[470px] gap-3 overflow-y-auto pr-1 sm:grid-cols-2 2xl:grid-cols-3">
             {searchState.status === "error" ? (
               <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700 sm:col-span-2 xl:col-span-3">
                 {searchState.error}
@@ -137,10 +137,10 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
                       {legislator.party}
                     </span>
                   </div>
-                  <p className="mt-3 font-serif text-[1.55rem] leading-[1.02]">
+                  <p className="mt-2 font-serif text-[1.35rem] leading-[1.04]">
                     {legislator.name_display}
                   </p>
-                  <p className={`mt-2 text-[15px] leading-6 ${isSelected ? "text-stone-300" : "text-stone-600"}`}>
+                  <p className={`mt-2 text-[14px] leading-5 ${isSelected ? "text-stone-300" : "text-stone-600"}`}>
                     {legislator.party} • {legislator.state}
                     {legislator.district ? `-${legislator.district}` : " • Statewide"}
                   </p>

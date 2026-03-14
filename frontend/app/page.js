@@ -35,18 +35,18 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#f4eee1,_#e6dbc1_50%,_#d5c3a2)] text-stone-900">
-      <section className="mx-auto flex min-h-screen max-w-[1240px] flex-col justify-center px-5 py-14 sm:px-6 lg:py-16">
+      <section className="mx-auto flex min-h-screen max-w-[1440px] flex-col justify-center px-5 py-10 sm:px-6 lg:py-12">
         <p className="mb-4 text-sm uppercase tracking-[0.35em] text-stone-600">
           Political Fingerprint
         </p>
-        <h1 className="max-w-[900px] font-serif text-5xl leading-[0.95] sm:text-6xl lg:text-[6.2rem]">
+        <h1 className="max-w-[760px] font-serif text-5xl leading-[0.95] sm:text-[4.4rem] lg:text-[5.2rem]">
           See what issues your representative actually spends votes on.
         </h1>
-        <p className="mt-5 max-w-[720px] text-lg leading-8 text-stone-700 sm:text-xl">
+        <p className="mt-4 max-w-[660px] text-[17px] leading-8 text-stone-700 sm:text-lg">
           A fast behavioral profile built from categorized policy votes, precomputed
           issue emphasis, and change-over-time metrics.
         </p>
-        <div className="mt-9 grid gap-4 lg:grid-cols-3">
+        <div className="mt-7 grid gap-4 xl:grid-cols-3">
           <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Issue Focus

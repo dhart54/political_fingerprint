@@ -122,13 +122,13 @@ export default function ComparisonPanel({
       : null;
 
   return (
-    <section className="mt-10 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-7">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+    <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-5 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur xl:p-6">
+      <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
             Comparison Mode
           </p>
-          <h2 className="mt-2 font-serif text-[2.85rem] leading-[0.95] text-stone-900">
+          <h2 className="mt-2 max-w-[820px] font-serif text-[2.35rem] leading-[0.95] text-stone-900">
             Compare behavioral profiles side by side
           </h2>
           <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
@@ -188,7 +188,7 @@ export default function ComparisonPanel({
         ) : null}
       </div>
 
-      <div className="mt-5 grid gap-5 lg:grid-cols-[0.84fr_1.16fr]">
+      <div className="mt-5 grid gap-4 xl:grid-cols-[0.72fr_1.28fr]">
         <div className="rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(245,241,233,0.94))] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
             Select Legislators
@@ -199,7 +199,7 @@ export default function ComparisonPanel({
             placeholder="Search by legislator name"
             value={query}
           />
-          <div className="mt-4 grid max-h-[540px] gap-3 overflow-y-auto pr-1">
+          <div className="mt-4 grid max-h-[430px] gap-3 overflow-y-auto pr-1">
             {searchState.status === "error" ? (
               <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
                 {searchState.error}
@@ -216,8 +216,8 @@ export default function ComparisonPanel({
                 key={legislator.id}
               >
                 <div>
-                  <p className="font-serif text-2xl text-stone-900">{legislator.name_display}</p>
-                  <p className="mt-1 text-sm text-stone-600">
+                  <p className="font-serif text-[1.5rem] leading-tight text-stone-900">{legislator.name_display}</p>
+                  <p className="mt-1 text-[13px] text-stone-600">
                     {formatChamber(legislator.chamber)} • {legislator.party} • {legislator.state}
                     {legislator.district ? `-${legislator.district}` : " • Statewide"}
                   </p>
@@ -251,7 +251,7 @@ export default function ComparisonPanel({
           </div>
         </div>
 
-          <div className="grid gap-4 lg:grid-cols-2">
+          <div className="grid gap-4 xl:grid-cols-2">
           <CompareSideCard
             heading="Left"
             side={compareState.payload?.left}
@@ -277,19 +277,19 @@ function CompareSideCard({ heading, side, fallbackLegislator }) {
     .slice(0, 2);
 
   return (
-    <article className="rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(245,241,233,0.96))] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
+    <article className="rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(245,241,233,0.96))] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-xs uppercase tracking-[0.28em] text-stone-500">{heading}</p>
-          <h3 className="mt-3 font-serif text-[2.8rem] leading-[0.95] text-stone-900">{legislator.name_display}</h3>
-          <p className="mt-2 text-[15px] leading-6 text-stone-600">
+          <h3 className="mt-3 font-serif text-[2.15rem] leading-[0.95] text-stone-900">{legislator.name_display}</h3>
+          <p className="mt-2 text-[14px] leading-5 text-stone-600">
             {formatChamber(legislator.chamber)} • {legislator.party} • {legislator.state}
             {legislator.district ? `-${legislator.district}` : " • Statewide"}
           </p>
         </div>
       </div>
 
-      <div className="mt-5 grid gap-3">
+      <div className="mt-4 grid gap-3">
         <CompareMetric
           label="Fingerprint"
           value={

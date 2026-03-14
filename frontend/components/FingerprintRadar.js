@@ -72,14 +72,14 @@ export default function FingerprintRadar({
   const focusSummary = buildFocusSummary(topDomains);
 
   return (
-    <section className="mt-12 grid gap-6 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:grid-cols-[1.1fr_0.9fr] lg:p-7">
+    <section className="mt-10 grid gap-5 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-5 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur xl:grid-cols-[1fr_0.9fr] xl:p-6">
       <div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Issue Focus
             </p>
-            <h2 className="mt-2 font-serif text-[2.65rem] leading-[0.95] text-stone-900">
+            <h2 className="mt-2 font-serif text-[2.25rem] leading-[0.95] text-stone-900">
               {title}
             </h2>
           </div>
@@ -100,10 +100,10 @@ export default function FingerprintRadar({
             ))}
           </div>
         </div>
-        <div className="mt-6 flex justify-center overflow-x-auto rounded-[2rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(244,239,231,0.56))] px-3 py-4">
+        <div className="mt-5 flex justify-center overflow-x-auto rounded-[2rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(244,239,231,0.56))] px-3 py-3">
           <svg
             aria-label="Fingerprint radar chart"
-            className="h-[450px] w-[540px] min-w-[540px]"
+            className="h-[390px] w-[500px] min-w-[500px]"
             viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
           >
             {[0.2, 0.4, 0.6, 0.8, 1].map((ratio) => (
