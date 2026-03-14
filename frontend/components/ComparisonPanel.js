@@ -116,6 +116,11 @@ export default function ComparisonPanel({
     };
   }, [comparisonParty, selected.left.id, selected.right.id]);
 
+  const comparisonInsight =
+    compareState.status === "ready"
+      ? buildComparisonInsight(compareState.payload)
+      : null;
+
   return (
     <section className="mt-10 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-8">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
@@ -154,7 +159,7 @@ export default function ComparisonPanel({
             <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
               Comparison Status
             </p>
-            <p className="mt-3 text-lg text-stone-50">
+          <p className="mt-3 text-lg text-stone-50">
               {compareState.status === "loading" ? "Loading side-by-side comparison..." : null}
               {compareState.status === "error" ? "Comparison unavailable" : null}
               {compareState.status === "ready"
@@ -170,6 +175,14 @@ export default function ComparisonPanel({
               : null}
           </p>
         </div>
+        {comparisonInsight ? (
+          <div className="mt-4 rounded-[1.5rem] border border-stone-800 bg-stone-900/70 px-4 py-4 text-sm leading-7 text-stone-200">
+            <p className="text-xs uppercase tracking-[0.26em] text-stone-400">
+              Biggest Gap
+            </p>
+            <p className="mt-2">{comparisonInsight}</p>
+          </div>
+        ) : null}
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
@@ -327,4 +340,44 @@ function truncateSummary(summaryText) {
     return normalized;
   }
   return `${normalized.slice(0, 157)}...`;
+}
+
+function buildComparisonInsight(payload) {
+  const leftRows = payload?.left?.fingerprint?.fingerprint || [];
+  const rightRows = payload?.right?.fingerprint?.fingerprint || [];
+
+  if (!leftRows.length || !rightRows.length) {
+    return "There is not enough issue-focus data yet to describe the strongest difference.";
+  }
+
+  const differences = leftRows
+    .map((leftRow) => {
+      const rightRow = rightRows.find((candidate) => candidate.domain === leftRow.domain);
+      return {
+        domain: leftRow.domain,
+        leftShare: leftRow.vote_share || 0,
+        rightShare: rightRow?.vote_share || 0,
+      };
+    })
+    .map((row) => ({
+      ...row,
+      gap: Math.abs(row.leftShare - row.rightShare),
+    }))
+    .sort((left, right) => right.gap - left.gap);
+
+  const biggest = differences[0];
+  if (!biggest || biggest.gap <= 0) {
+    return "These two legislators currently show the same issue-focus mix in this window.";
+  }
+
+  const leader =
+    biggest.leftShare > biggest.rightShare ? payload.left.legislator.name_display : payload.right.legislator.name_display;
+  const trailing =
+    biggest.leftShare > biggest.rightShare ? payload.right.legislator.name_display : payload.left.legislator.name_display;
+  const leaderShare = Math.max(biggest.leftShare, biggest.rightShare);
+  const trailingShare = Math.min(biggest.leftShare, biggest.rightShare);
+
+  return `${leader} places more vote emphasis on ${formatDomainLabel(biggest.domain)}: ${Math.round(
+    leaderShare * 100,
+  )}% of eligible votes versus ${Math.round(trailingShare * 100)}% for ${trailing}.`;
 }

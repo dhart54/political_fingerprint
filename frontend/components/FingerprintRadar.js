@@ -69,6 +69,7 @@ export default function FingerprintRadar({
     .sort((left, right) => right.vote_share - left.vote_share)
     .filter((row) => row.vote_share > 0)
     .slice(0, 2);
+  const focusSummary = buildFocusSummary(topDomains);
 
   return (
     <section className="mt-14 grid gap-8 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-6 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:grid-cols-[1.16fr_0.84fr] lg:p-8">
@@ -185,6 +186,11 @@ export default function FingerprintRadar({
           <p className="mt-3 max-w-md text-base leading-7 text-stone-700">
             The amber shape shows where this legislator's recent eligible votes are concentrated. The green dashed overlay shows the chamber median for the selected comparison group.
           </p>
+          {state.status === "ready" ? (
+            <p className="mt-3 max-w-md text-base leading-7 text-stone-900">
+              {focusSummary}
+            </p>
+          ) : null}
           <div className="mt-4 flex flex-wrap gap-4">
             <LegendSwatch
               label="Legislator fingerprint"
@@ -321,6 +327,18 @@ function formatDomainLabel(domain) {
     .split("_")
     .map((segment) => segment[0] + segment.slice(1).toLowerCase())
     .join(" ");
+}
+
+function buildFocusSummary(topDomains) {
+  if (!topDomains.length) {
+    return "No eligible issue-focus signal is available in the current two-year window.";
+  }
+
+  if (topDomains.length === 1) {
+    return `Right now, the clearest concentration is ${formatDomainLabel(topDomains[0].domain)} at ${(topDomains[0].vote_share * 100).toFixed(0)}% of eligible votes.`;
+  }
+
+  return `Right now, the clearest concentrations are ${formatDomainLabel(topDomains[0].domain)} at ${(topDomains[0].vote_share * 100).toFixed(0)}% and ${formatDomainLabel(topDomains[1].domain)} at ${(topDomains[1].vote_share * 100).toFixed(0)}% of eligible votes.`;
 }
 
 function ProvenanceCard({ label, value }) {
