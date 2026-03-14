@@ -102,7 +102,7 @@ export default function FingerprintRadar({
         <div className="mt-8 flex justify-center overflow-x-auto rounded-[2rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(244,239,231,0.56))] px-3 py-5">
           <svg
             aria-label="Fingerprint radar chart"
-            className="h-[480px] w-[560px] min-w-[560px]"
+            className="h-[500px] w-[580px] min-w-[580px]"
             viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
           >
             {[0.2, 0.4, 0.6, 0.8, 1].map((ratio) => (
@@ -130,7 +130,7 @@ export default function FingerprintRadar({
                   />
                   <text
                     fill="#57534e"
-                    fontSize="13"
+                    fontSize="14"
                     textAnchor={x < CENTER_X - 10 ? "end" : x > CENTER_X + 10 ? "start" : "middle"}
                     x={x}
                     y={y}
@@ -182,7 +182,7 @@ export default function FingerprintRadar({
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Overlay
             </p>
-          <p className="mt-3 max-w-md text-sm leading-6 text-stone-700">
+          <p className="mt-3 max-w-md text-base leading-7 text-stone-700">
             The amber shape is the legislator fingerprint. The green dashed overlay is the chamber median for the selected comparison party.
           </p>
           <div className="mt-4 flex flex-wrap gap-4">
@@ -234,7 +234,7 @@ export default function FingerprintRadar({
             {state.status === "error" ? "Fingerprint unavailable" : null}
             {state.status === "ready" ? `Loaded ${fingerprintRows.length} domains.` : null}
           </p>
-          <p className="mt-2 text-sm leading-6 text-stone-300">
+          <p className="mt-2 text-base leading-7 text-stone-300">
             {state.status === "loading" ? "Waiting for the backend fingerprint response." : null}
             {state.status === "error" ? `${state.error} Try choosing another legislator or checking the backend.` : null}
             {state.status === "ready"
@@ -246,7 +246,7 @@ export default function FingerprintRadar({
           <p className="text-xs uppercase tracking-[0.25em] text-amber-800">
             Methodology
           </p>
-          <p className="mt-3 text-sm leading-6 text-stone-700">
+          <p className="mt-3 text-base leading-7 text-stone-700">
             Fingerprints use a rolling 730-day window of eligible policy votes, grouped into 8 fixed issue domains. Procedural and low-confidence votes are excluded before shares and medians are precomputed.
           </p>
         </article>
@@ -266,10 +266,10 @@ export default function FingerprintRadar({
               }`}
             >
               <div className="flex items-center justify-between gap-3">
-                <p className="text-sm font-medium text-stone-800">
+                <p className="text-[15px] font-medium text-stone-800">
                   {formatDomainLabel(row.domain)}
                 </p>
-                <p className="text-sm text-stone-600">
+                <p className="text-[15px] text-stone-600">
                   {(row.vote_share * 100).toFixed(0)}%
                 </p>
               </div>

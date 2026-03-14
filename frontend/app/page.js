@@ -11,23 +11,23 @@ import SummaryPanel from "../components/SummaryPanel";
 import ZipLookupPanel from "../components/ZipLookupPanel";
 
 const DEFAULT_LEGISLATOR = {
-  id: "leg_alex_morgan",
-  bioguide_id: "H000001",
-  name_display: "Alex Morgan",
+  id: "leg_aaron_bean",
+  bioguide_id: "B001317",
+  name_display: "Aaron Bean",
   chamber: "house",
-  state: "NC",
+  state: "FL",
   district: "04",
-  party: "D",
+  party: "R",
 };
 
 const DEFAULT_COMPARE_RIGHT = {
-  id: "leg_jordan_lee",
-  bioguide_id: "S000001",
-  name_display: "Jordan Lee",
-  chamber: "senate",
-  state: "NC",
-  district: null,
-  party: "R",
+  id: "leg_adam_smith",
+  bioguide_id: "S000510",
+  name_display: "Adam Smith",
+  chamber: "house",
+  state: "WA",
+  district: "09",
+  party: "D",
 };
 
 export default function HomePage() {
@@ -42,7 +42,7 @@ export default function HomePage() {
         <h1 className="max-w-[980px] font-serif text-5xl leading-[0.95] sm:text-7xl">
           In 60 seconds, understand how this politician actually behaves.
         </h1>
-        <p className="mt-6 max-w-[740px] text-lg leading-8 text-stone-700">
+        <p className="mt-6 max-w-[740px] text-xl leading-8 text-stone-700">
           Deterministic civic analytics built from categorized policy votes,
           precomputed metrics, and neutral summaries.
         </p>

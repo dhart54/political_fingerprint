@@ -126,7 +126,7 @@ export default function ComparisonPanel({
           <h2 className="mt-2 font-serif text-3xl text-stone-900">
             Compare two legislators side by side
           </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-stone-700">
+          <p className="mt-3 max-w-2xl text-base leading-7 text-stone-700">
             This view places two legislators next to each other using the same precomputed fingerprint, drift, and summary outputs. It is descriptive only and does not rank either side.
           </p>
         </div>
@@ -183,7 +183,7 @@ export default function ComparisonPanel({
             placeholder="Search by legislator name"
             value={query}
           />
-          <div className="mt-4 grid max-h-[760px] gap-3 overflow-y-auto pr-1">
+          <div className="mt-4 grid max-h-[620px] gap-3 overflow-y-auto pr-1">
             {searchState.status === "error" ? (
               <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
                 {searchState.error}
@@ -266,7 +266,7 @@ function CompareSideCard({ heading, side, fallbackLegislator }) {
         <div>
           <p className="text-xs uppercase tracking-[0.28em] text-stone-500">{heading}</p>
           <h3 className="mt-3 font-serif text-3xl text-stone-900">{legislator.name_display}</h3>
-          <p className="mt-2 text-sm text-stone-600">
+          <p className="mt-2 text-[15px] leading-6 text-stone-600">
             {formatChamber(legislator.chamber)} • {legislator.party} • {legislator.state}
             {legislator.district ? `-${legislator.district}` : " • Statewide"}
           </p>

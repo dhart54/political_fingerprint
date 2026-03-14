@@ -66,7 +66,7 @@ export default function DriftIndicator({
             ? `Drift ${driftValue.toFixed(2)}`
             : null}
         </h3>
-        <p className="mt-4 max-w-md text-sm leading-6 text-stone-300">
+        <p className="mt-4 max-w-md text-base leading-7 text-stone-300">
           {state.status === "loading" ? "Waiting for the backend drift response." : null}
           {state.status === "error" ? `${state.error} Try reloading the page or selecting another legislator.` : null}
           {state.status === "ready" && state.payload?.insufficient_data
@@ -95,7 +95,7 @@ export default function DriftIndicator({
                   : "--"}
               </p>
             </div>
-            <p className="text-sm text-stone-300">
+            <p className="text-base text-stone-300">
               {state.status === "ready"
                 ? `${state.payload?.early_total_votes ?? 0} early / ${state.payload?.recent_total_votes ?? 0} recent`
                 : ""}

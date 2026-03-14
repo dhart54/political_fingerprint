@@ -95,7 +95,7 @@ export default function SummaryPanel({
                   <p className="text-sm uppercase tracking-[0.22em] text-stone-400">
                     Insight {index + 1}
                   </p>
-                  <p className="mt-2 text-[17px] leading-8 text-stone-100">
+                  <p className="mt-2 text-[18px] leading-8 text-stone-100">
                     {point}
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export default function SummaryPanel({
         <p className="text-xs uppercase tracking-[0.25em] text-amber-800">
           Methodology
         </p>
-        <p className="mt-3 text-sm leading-6 text-stone-700">
+        <p className="mt-3 text-base leading-7 text-stone-700">
           Summaries are descriptive only. They are generated from precomputed fingerprint and drift outputs, stored by legislator, window end, and classification version, and blocked from using ranking or causal language.
         </p>
       </article>
@@ -134,7 +134,7 @@ function MetaCard({ label, value }) {
   return (
     <div className="rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
       <p className="text-xs uppercase tracking-[0.25em] text-stone-500">{label}</p>
-      <p className="mt-3 text-sm leading-6 text-stone-700 break-words">{value}</p>
+      <p className="mt-3 text-base leading-7 text-stone-700 break-words">{value}</p>
     </div>
   );
 }
