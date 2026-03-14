@@ -263,6 +263,7 @@ Current adapter behavior:
 - for House Clerk cache ingestion, downloaded roll call XML can be used directly while bundled sample metadata files remain the fallback for members, bill metadata, and ZIP mappings until those fetch layers are added
 - for Senate XML samples, derives bill identity from the document number and enriches title, summary, committee, and subjects from matching Congress-style metadata when available
 - for Senate XML cache ingestion, downloaded roll call XML can be used directly while bundled sample metadata files remain the fallback for members, bill metadata, and ZIP mappings until those fetch layers are added
+- for larger live-source imports, unsupported non-bill references such as nominations are skipped deterministically rather than failing the whole chamber import
 - reuses the same downstream classification, metric, ETL write, and API read paths as fixture ingestion
 
 ## Official File Fetch Layer

@@ -71,3 +71,31 @@ def test_house_clerk_bundle_prefers_cached_congress_bill_metadata(tmp_path: Path
     assert bill["summary"] == "Cached summary"
     assert bill["committee"] == "Cached Committee"
     assert bill["subjects"] == ["cached subject"]
+
+
+def test_load_house_clerk_bundle_skips_unsupported_house_reference(tmp_path: Path) -> None:
+    source_dir = tmp_path / "house_cache"
+    source_dir.mkdir()
+    for filename in ("members.xml", "bills.json", "zip_district_map.json"):
+        (source_dir / filename).write_text((HOUSE_CLERK_SAMPLE_DIR / filename).read_text())
+
+    (source_dir / "roll001.xml").write_text(
+        """
+        <rollcall-vote>
+          <vote-metadata>
+            <congress>119</congress>
+            <session>1st</session>
+            <rollcall-num>1</rollcall-num>
+            <legis-num>H J RES 1</legis-num>
+            <vote-question>On Passage</vote-question>
+            <vote-desc>Unsupported test reference</vote-desc>
+            <action-date>18-Dec-2025</action-date>
+          </vote-metadata>
+          <vote-data />
+        </rollcall-vote>
+        """.strip()
+    )
+
+    bundle = load_house_clerk_bundle(source_dir=source_dir, fallback_dir=HOUSE_CLERK_SAMPLE_DIR)
+
+    assert bundle.roll_calls == []

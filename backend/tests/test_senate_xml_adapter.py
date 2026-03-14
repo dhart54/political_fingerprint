@@ -71,3 +71,33 @@ def test_senate_xml_bundle_prefers_cached_congress_bill_metadata(tmp_path: Path)
     assert bill["summary"] == "Cached Senate summary"
     assert bill["committee"] == "Cached Senate Committee"
     assert bill["subjects"] == ["immigration"]
+
+
+def test_load_senate_xml_bundle_skips_unsupported_senate_reference(tmp_path: Path) -> None:
+    source_dir = tmp_path / "senate_cache"
+    source_dir.mkdir()
+    for filename in ("members.xml", "bills.json", "zip_district_map.json"):
+        (source_dir / filename).write_text((SENATE_XML_SAMPLE_DIR / filename).read_text())
+
+    (source_dir / "vote_001.xml").write_text(
+        """
+        <roll_call_vote>
+          <congress>119</congress>
+          <session>1</session>
+          <vote_number>1</vote_number>
+          <vote_date>July 1, 2025,  11:56 AM</vote_date>
+          <question>On the Nomination</question>
+          <vote_title>Nomination test</vote_title>
+          <document>
+            <document_type>PN</document_type>
+            <document_number>12-43</document_number>
+            <document_name>PN12-43</document_name>
+          </document>
+          <members />
+        </roll_call_vote>
+        """.strip()
+    )
+
+    bundle = load_senate_xml_bundle(source_dir=source_dir, fallback_dir=SENATE_XML_SAMPLE_DIR)
+
+    assert bundle.roll_calls == []

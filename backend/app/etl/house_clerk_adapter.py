@@ -60,12 +60,17 @@ def load_house_clerk_bundle(
     bills_by_id: dict[str, dict[str, object]] = {}
 
     for roll_file in roll_files:
-        roll_call, bill, votes = _parse_roll_call(
-            ElementTree.parse(roll_file),
-            legislators_by_bioguide=legislators_by_bioguide,
-            supplemental_legislators=supplemental_legislators,
-            congress_bill_lookup=congress_bill_lookup,
-        )
+        try:
+            roll_call, bill, votes = _parse_roll_call(
+                ElementTree.parse(roll_file),
+                legislators_by_bioguide=legislators_by_bioguide,
+                supplemental_legislators=supplemental_legislators,
+                congress_bill_lookup=congress_bill_lookup,
+            )
+        except ValueError as error:
+            if "Unsupported House bill reference" in str(error):
+                continue
+            raise
         bills_by_id[str(bill["id"])] = bill
         roll_calls.append(roll_call)
         votes_cast.extend(votes)
@@ -145,7 +150,7 @@ def _parse_roll_call(
     roll_number = int(_require_text(metadata.find("rollcall-num")))
     bill_number_text = _require_text(metadata.find("legis-num"))
     vote_question = _require_text(metadata.find("vote-question"))
-    vote_description = _require_text(metadata.find("vote-desc"))
+    vote_description = _extract_house_vote_description(metadata)
     action_date = _normalize_house_action_date(_require_text(metadata.find("action-date")))
 
     bill_type, bill_number = _parse_house_bill_reference(bill_number_text)
@@ -207,10 +212,14 @@ def _parse_roll_call(
 
 def _parse_house_bill_reference(value: str) -> tuple[str, int]:
     normalized = re.sub(r"[^A-Z0-9]+", " ", value.upper()).strip()
+    if normalized.startswith("H CON RES "):
+        return "hconres", int(normalized.split()[-1])
     if normalized.startswith("H RES "):
         return "hres", int(normalized.split()[-1])
     if normalized.startswith("H R "):
         return "hr", int(normalized.split()[-1])
+    if normalized.startswith("S "):
+        return "s", int(normalized.split()[-1])
     raise ValueError(f"Unsupported House bill reference: {value}")
 
 
@@ -243,6 +252,18 @@ def _normalize_house_action_date(value: str) -> str:
         except ValueError:
             continue
     raise ValueError(f"Unsupported House Clerk action-date format: {value}")
+
+
+def _extract_house_vote_description(metadata: ElementTree.Element) -> str:
+    vote_description = _optional_text(metadata.find("vote-desc"))
+    if vote_description:
+        return vote_description
+
+    amendment_author = _optional_text(metadata.find("amendment-author"))
+    if amendment_author:
+        return amendment_author
+
+    return _require_text(metadata.find("vote-question"))
 
 
 def _build_house_clerk_source_url(*, session: int, roll_number: int) -> str:

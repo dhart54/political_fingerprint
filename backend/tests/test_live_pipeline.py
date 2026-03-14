@@ -240,6 +240,28 @@ def test_infer_house_bill_refs_from_cache_reads_house_roll_xml(tmp_path: Path) -
     assert refs == {(119, "hr", 498)}
 
 
+def test_infer_house_bill_refs_from_cache_ignores_unsupported_entries(tmp_path: Path) -> None:
+    source_dir = tmp_path / "house"
+    source_dir.mkdir()
+    (source_dir / "roll362.xml").write_text(
+        """
+        <rollcall-vote>
+          <vote-metadata>
+            <congress>119</congress>
+            <legis-num>H J RES 1</legis-num>
+          </vote-metadata>
+        </rollcall-vote>
+        """.strip()
+    )
+
+    refs = live_pipeline.infer_house_bill_refs_from_cache(
+        roll_numbers=[362],
+        source_dir=source_dir,
+    )
+
+    assert refs == set()
+
+
 def test_infer_senate_bill_refs_from_cache_reads_senate_vote_xml(tmp_path: Path) -> None:
     source_dir = tmp_path / "senate"
     source_dir.mkdir()
@@ -262,6 +284,30 @@ def test_infer_senate_bill_refs_from_cache_reads_senate_vote_xml(tmp_path: Path)
     )
 
     assert refs == {(119, "hr", 1)}
+
+
+def test_infer_senate_bill_refs_from_cache_ignores_unsupported_entries(tmp_path: Path) -> None:
+    source_dir = tmp_path / "senate"
+    source_dir.mkdir()
+    (source_dir / "vote_372.xml").write_text(
+        """
+        <roll_call_vote>
+          <congress>119</congress>
+          <document>
+            <document_type>PN</document_type>
+            <document_number>12-43</document_number>
+            <document_name>PN12-43</document_name>
+          </document>
+        </roll_call_vote>
+        """.strip()
+    )
+
+    refs = live_pipeline.infer_senate_bill_refs_from_cache(
+        roll_numbers=[372],
+        source_dir=source_dir,
+    )
+
+    assert refs == set()
 
 
 def test_main_supports_cli(monkeypatch, capsys) -> None:

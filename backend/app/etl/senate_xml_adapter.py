@@ -59,11 +59,16 @@ def load_senate_xml_bundle(
     votes_cast = []
 
     for vote_file in vote_files:
-        roll_call, bill, votes = _parse_roll_call(
-            ElementTree.parse(vote_file),
-            legislators_by_lis=legislators_by_lis,
-            congress_bill_lookup=congress_bill_lookup,
-        )
+        try:
+            roll_call, bill, votes = _parse_roll_call(
+                ElementTree.parse(vote_file),
+                legislators_by_lis=legislators_by_lis,
+                congress_bill_lookup=congress_bill_lookup,
+            )
+        except ValueError as error:
+            if "Unsupported Senate bill reference" in str(error):
+                continue
+            raise
         bills_by_id[str(bill["id"])] = bill
         roll_calls.append(roll_call)
         votes_cast.extend(votes)
@@ -204,6 +209,8 @@ def _parse_senate_bill_reference(
                 return "s", int(normalized_number)
             if normalized_type == "S RES":
                 return "sres", int(normalized_number)
+            if normalized_type == "S J RES":
+                return "sjres", int(normalized_number)
             if normalized_type == "H R":
                 return "hr", int(normalized_number)
             if normalized_type == "H RES":
@@ -213,6 +220,8 @@ def _parse_senate_bill_reference(
     normalized = re.sub(r"[^A-Z0-9]+", " ", value.upper()).strip()
     if normalized.startswith("S RES "):
         return "sres", int(normalized.split()[-1])
+    if normalized.startswith("S J RES "):
+        return "sjres", int(normalized.split()[-1])
     if normalized.startswith("S "):
         return "s", int(normalized.split()[-1])
     if normalized.startswith("H RES "):
