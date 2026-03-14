@@ -545,16 +545,20 @@ def _build_summary_drift_payload(*, legislator_id: str, drift_rows: list[object]
 
 def _delete_statements() -> list[str]:
     return [
-        "DELETE FROM summaries",
-        "DELETE FROM drift_scores",
-        "DELETE FROM chamber_medians",
-        "DELETE FROM fingerprints",
-        "DELETE FROM vote_classifications",
-        "DELETE FROM votes_cast",
-        "DELETE FROM roll_calls",
-        "DELETE FROM bills",
-        "DELETE FROM legislators",
-        "DELETE FROM zip_district_map",
+        """
+        TRUNCATE TABLE
+            summaries,
+            drift_scores,
+            chamber_medians,
+            fingerprints,
+            vote_classifications,
+            votes_cast,
+            roll_calls,
+            bills,
+            legislators,
+            zip_district_map
+        RESTART IDENTITY CASCADE
+        """.strip(),
     ]
 
 

@@ -69,7 +69,7 @@ def test_persist_seed_bundle_replaces_tables_and_commits(monkeypatch) -> None:
     bundle = build_seed_bundle(as_of=date(2026, 3, 12))
     persist_seed_bundle(bundle)
 
-    assert any(statement.startswith("DELETE FROM summaries") for statement, _ in executed)
+    assert any(statement.startswith("TRUNCATE TABLE") for statement, _ in executed)
     assert any(statement.startswith("INSERT INTO legislators") for statement, _ in executed)
     assert any(statement.startswith("INSERT INTO summaries") for statement, _ in executed)
     assert fake_connection.committed is True
