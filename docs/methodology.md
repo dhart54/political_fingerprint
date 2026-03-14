@@ -332,6 +332,15 @@ Current expanded-batch behavior:
 - relies on live pipeline bill-reference inference from downloaded vote XML instead of a hand-maintained bill list
 - broadens the stored real-data coverage so the frontend shows fewer zero-state legislator profiles
 
+The repository also includes a bulk range import script in `scripts/run_real_data_bulk.py`.
+
+Current bulk-script behavior:
+
+- accepts explicit House and Senate roll numbers and inclusive roll ranges
+- expands those ranges deterministically into sorted roll lists
+- relies on the same live pipeline bill-reference inference from downloaded vote XML
+- is intended for much larger real-data backfills than the starter or expanded scripts
+
 ## Fingerprint API
 
 The fingerprint endpoint returns precomputed fingerprint rows only.

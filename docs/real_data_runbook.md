@@ -122,3 +122,32 @@ Dry run:
 cd backend
 .venv/bin/python ../scripts/run_real_data_expanded.py --dry-run
 ```
+
+## Bulk Range Import
+
+For materially better coverage, use the bulk range script and choose larger House and Senate roll ranges.
+
+Example:
+
+```bash
+cd backend
+.venv/bin/python ../scripts/run_real_data_bulk.py \
+  --house-year 2025 \
+  --house-roll-range 1:362 \
+  --senate-congress 119 \
+  --senate-session 1 \
+  --senate-roll-range 1:618
+```
+
+Windows `cmd`:
+
+```cmd
+cd backend
+python ..\scripts\run_real_data_bulk.py --house-year 2025 --house-roll-range 1:362 --senate-congress 119 --senate-session 1 --senate-roll-range 1:618
+```
+
+Notes:
+
+- the bulk script infers matching Congress bill metadata from the downloaded vote XML
+- this can take materially longer than the starter or expanded runs
+- use `--dry-run` first if you want to inspect the resolved plan
