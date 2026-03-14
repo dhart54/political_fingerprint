@@ -72,38 +72,39 @@ export default function FingerprintRadar({
   const focusSummary = buildFocusSummary(topDomains);
 
   return (
-    <section className="mt-10 grid gap-5 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-5 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur xl:grid-cols-[1fr_0.9fr] xl:p-6">
-      <div>
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Issue Focus
-            </p>
-            <h2 className="mt-2 font-serif text-[2.25rem] leading-[0.95] text-stone-900">
-              {title}
-            </h2>
-          </div>
-          <div className="flex rounded-full border border-stone-300 bg-stone-100 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
-            {COMPARISON_OPTIONS.map((option) => (
-              <button
-                key={option}
-                className={`rounded-full px-4 py-2 text-xs tracking-[0.25em] transition ${
-                  comparisonParty === option
-                    ? "bg-stone-900 text-stone-100 shadow-[0_6px_18px_rgba(28,25,23,0.18)]"
-                    : "text-stone-600 hover:text-stone-900"
-                }`}
-                onClick={() => setComparisonParty(option)}
-                type="button"
-              >
-                {option}
-              </button>
-            ))}
-          </div>
+    <section className="mt-10 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-5 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur xl:p-6">
+      <div className="flex flex-col gap-3 border-b border-stone-200/80 pb-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
+            Issue Focus
+          </p>
+          <h2 className="mt-2 font-serif text-[2.25rem] leading-[0.95] text-stone-900">
+            {title}
+          </h2>
         </div>
-        <div className="mt-5 flex justify-center overflow-x-auto rounded-[2rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(244,239,231,0.56))] px-3 py-3">
+        <div className="flex rounded-full border border-stone-300 bg-stone-100 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
+          {COMPARISON_OPTIONS.map((option) => (
+            <button
+              key={option}
+              className={`rounded-full px-4 py-2 text-xs tracking-[0.25em] transition ${
+                comparisonParty === option
+                  ? "bg-stone-900 text-stone-100 shadow-[0_6px_18px_rgba(28,25,23,0.18)]"
+                  : "text-stone-600 hover:text-stone-900"
+              }`}
+              onClick={() => setComparisonParty(option)}
+              type="button"
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-5 grid gap-5 xl:grid-cols-[0.86fr_1.14fr]">
+        <div className="flex justify-center overflow-x-auto rounded-[2rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(244,239,231,0.56))] px-3 py-3">
           <svg
             aria-label="Fingerprint radar chart"
-            className="h-[390px] w-[500px] min-w-[500px]"
+            className="h-[350px] w-[460px] min-w-[460px]"
             viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
           >
             {[0.2, 0.4, 0.6, 0.8, 1].map((ratio) => (
@@ -177,91 +178,101 @@ export default function FingerprintRadar({
             ) : null}
           </svg>
         </div>
-      </div>
-        <div className="flex flex-col justify-between gap-6">
+
+        <div className="flex flex-col gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Reading The Chart
             </p>
-          <p className="mt-3 max-w-md text-base leading-7 text-stone-700">
-            The amber shape shows where this legislator's recent eligible votes are concentrated. The green dashed overlay shows the chamber median for the selected comparison group.
-          </p>
-          {state.status === "ready" ? (
-            <p className="mt-3 max-w-md text-base leading-7 text-stone-900">
-              {focusSummary}
+            <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
+              The amber shape shows where this legislator's recent eligible votes are concentrated. The green dashed overlay shows the chamber median for the selected comparison group.
             </p>
-          ) : null}
-          <div className="mt-4 flex flex-wrap gap-4">
-            <LegendSwatch
-              label="Legislator fingerprint"
-              sampleClassName="bg-amber-700"
-            />
-            <LegendSwatch
-              dashed
-              label="Chamber median overlay"
-              sampleClassName="bg-emerald-700"
-            />
-          </div>
-          </div>
-        <div className="grid gap-3 sm:grid-cols-3">
-          <HighlightCard
-            label="Eligible Votes"
-            value={state.status === "ready" ? String(fingerprintRows[0]?.total_votes ?? 0) : "--"}
-          />
-          <HighlightCard
-            label="Top Domain"
-            value={state.status === "ready" ? formatDomainLabel(topDomains[0]?.domain || "NONE") : "--"}
-          />
-          <HighlightCard
-            label="Overlay"
-            value={comparisonParty}
-          />
-        </div>
-        <div className="grid gap-3 sm:grid-cols-3">
-          <ProvenanceCard
-            label="Last Updated"
-            value={state.status === "ready" ? formatTimestamp(state.payload?.last_updated) : "--"}
-          />
-          <ProvenanceCard
-            label="Window End"
-            value={state.status === "ready" ? state.payload?.window_end : "--"}
-          />
-          <ProvenanceCard
-            label="Version"
-            value={state.status === "ready" ? state.payload?.classification_version : "--"}
-          />
-        </div>
-        <div className="rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100">
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
-            Status
-          </p>
-          <p className="mt-3 text-lg text-stone-50">
-            {state.status === "loading" ? "Loading fingerprint..." : null}
-            {state.status === "error" ? "Fingerprint unavailable" : null}
-            {state.status === "ready" ? `Loaded ${fingerprintRows.length} domains.` : null}
-          </p>
-          <p className="mt-2 text-base leading-7 text-stone-300">
-            {state.status === "loading" ? "Waiting for the backend fingerprint response." : null}
-            {state.status === "error" ? `${state.error} Try choosing another legislator or checking the backend.` : null}
-            {state.status === "ready"
-              ? `This profile is based on ${fingerprintRows[0]?.total_votes ?? 0} eligible votes in the current 730-day window. Comparison overlay: ${comparisonParty}.`
-              : null}
-          </p>
-        </div>
-        <article className="rounded-[1.8rem] border border-amber-200 bg-amber-50/80 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
-          <p className="text-xs uppercase tracking-[0.25em] text-amber-800">
-            What It Means
-          </p>
-          <p className="mt-3 text-base leading-7 text-stone-700">
-            This does not score ideology. It shows which issue domains absorb the largest share of this legislator's eligible policy votes over the last two years.
-          </p>
-        </article>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {state.status === "ready" && fingerprintRows.length === 0 ? (
-            <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600 sm:col-span-2">
-              No fingerprint rows are available for this legislator yet.
+            {state.status === "ready" ? (
+              <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-900">
+                {focusSummary}
+              </p>
+            ) : null}
+            <div className="mt-4 flex flex-wrap gap-4">
+              <LegendSwatch
+                label="Legislator fingerprint"
+                sampleClassName="bg-amber-700"
+              />
+              <LegendSwatch
+                dashed
+                label="Chamber median overlay"
+                sampleClassName="bg-emerald-700"
+              />
             </div>
-          ) : null}
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            <HighlightCard
+              label="Eligible Votes"
+              value={state.status === "ready" ? String(fingerprintRows[0]?.total_votes ?? 0) : "--"}
+            />
+            <HighlightCard
+              label="Top Domain"
+              value={state.status === "ready" ? formatDomainLabel(topDomains[0]?.domain || "NONE") : "--"}
+            />
+            <HighlightCard
+              label="Overlay"
+              value={comparisonParty}
+            />
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            <ProvenanceCard
+              label="Last Updated"
+              value={state.status === "ready" ? formatTimestamp(state.payload?.last_updated) : "--"}
+            />
+            <ProvenanceCard
+              label="Window End"
+              value={state.status === "ready" ? state.payload?.window_end : "--"}
+            />
+            <ProvenanceCard
+              label="Version"
+              value={state.status === "ready" ? state.payload?.classification_version : "--"}
+            />
+          </div>
+
+          <div className="grid gap-3 xl:grid-cols-[1.05fr_0.95fr]">
+            <div className="rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100">
+              <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
+                Status
+              </p>
+              <p className="mt-3 text-lg text-stone-50">
+                {state.status === "loading" ? "Loading fingerprint..." : null}
+                {state.status === "error" ? "Fingerprint unavailable" : null}
+                {state.status === "ready" ? `Loaded ${fingerprintRows.length} domains.` : null}
+              </p>
+              <p className="mt-2 text-[15px] leading-7 text-stone-300">
+                {state.status === "loading" ? "Waiting for the backend fingerprint response." : null}
+                {state.status === "error" ? `${state.error} Try choosing another legislator or checking the backend.` : null}
+                {state.status === "ready"
+                  ? `This profile is based on ${fingerprintRows[0]?.total_votes ?? 0} eligible votes in the current 730-day window. Comparison overlay: ${comparisonParty}.`
+                  : null}
+              </p>
+            </div>
+
+            <article className="rounded-[1.8rem] border border-amber-200 bg-amber-50/80 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
+              <p className="text-xs uppercase tracking-[0.25em] text-amber-800">
+                What It Means
+              </p>
+              <p className="mt-3 text-[15px] leading-7 text-stone-700">
+                This does not score ideology. It shows which issue domains absorb the largest share of this legislator's eligible policy votes over the last two years.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-5">
+        {state.status === "ready" && fingerprintRows.length === 0 ? (
+          <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600">
+            No fingerprint rows are available for this legislator yet.
+          </div>
+        ) : null}
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           {fingerprintRows.map((row) => (
             <div
               key={row.domain}
