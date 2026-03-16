@@ -24,9 +24,13 @@ Phase 2 / post-MVP work completed through:
 
 Most recent commits:
 
-- `95972fa` `Lead with plain-English takeaways`
-- `913bd3c` `Reorganize issue focus layout`
-- `ce5a7d2` `Optimize desktop layout for large monitors`
+- `32f5c69` `Add vote-direction context to comparison`
+- `1c11533` `Promote position by issue as primary read`
+- `638ceeb` `Connect ZIP lookup to profile flow`
+- `185568e` `Feature ZIP lookup as primary entry path`
+- `3cdcffc` `Seed comparison from ZIP lookup`
+- `b98ec54` `Prioritize vote-direction comparison flow`
+- `2e8907d` `Add plain-language position labels`
 
 ## Live Data / Database State
 
@@ -68,8 +72,8 @@ Coverage reality check:
 Implication:
 
 - the frontend is now reading a substantial real legislator roster and meaningful computed rows from Supabase
-- House members now have materially useful issue-focus and drift signals
-- comparison still feels weaker than users expect because it compares issue focus, not vote direction within issue
+- House members now have materially useful issue-focus, vote-direction, and drift signals
+- comparison is now more useful because it includes deterministic per-domain yea/nay context
 
 ## Important Runtime Notes
 
@@ -132,25 +136,33 @@ Most recent validations completed:
 
 ## Product Reality Check
 
-The current site is now credible and much more understandable, but one important limitation remains:
+The current site is now much closer to the actual voter use case:
 
-- casual users can still expect comparison to show political difference more strongly than it currently can
-- the current fingerprint and comparison logic measure issue focus, not vote direction within issue
+- `Position by Issue` is now the primary signal
+- comparison now uses vote-direction context within issue domains
+- issue focus and change-over-time are now supporting context rather than the headline read
 
-This means two legislators can legitimately look similar if they voted on the same kinds of issues, even if they took different sides on some of those votes.
+Important interpretation boundary still in effect:
+
+- issue focus shows what topics absorbed attention
+- vote direction shows how the legislator tended to vote inside those topics
+- drift only measures change in issue-attention mix over time, not ideological consistency or belief change
 
 ## Next Recommended Task
 
-Next highest-value work is a product feature, not more generic polish:
+Next highest-value work is to deepen the now-corrected voter workflow:
 
-1. add a vote-direction or position layer within issue domains for comparison
-2. keep it deterministic and descriptive
-3. make comparison answer not just “what issues dominated” but also “did they tend to take different sides on those issues?”
+1. make ZIP lookup seed comparison more aggressively
+2. let a user compare their House member against each senator with one click
+3. keep pushing the product center toward `Position by Issue`, with radar/drift clearly secondary
 
-This is the clearest next step to make the product more useful for casual voters.
+Best next implementation target:
+
+- tighten the comparison and ZIP-to-profile journey even more, or
+- improve the single-legislator `Position by Issue` section with richer domain-level interpretation
 
 ## Fast Resume Prompt
 
 Use this tomorrow:
 
-“Read `HANDOFF.md` plus the repo instruction files, then continue from the vote-direction / comparison-improvement step.”
+“Read `HANDOFF.md` plus the repo instruction files, then continue from the ZIP-to-comparison / position-by-issue improvement step.”
