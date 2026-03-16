@@ -178,6 +178,15 @@ Rules:
 
 This view is descriptive only. It shows how a legislator voted within issue domains, not ideology or motive.
 
+Frontend interpretation:
+
+- domains are surfaced in descending `recorded_votes`
+- each domain card uses a plain-language read:
+  - `leans yea` if `abs(yea_share - nay_share) >= 0.15` and `yea_share > nay_share`
+  - `leans nay` if `abs(yea_share - nay_share) >= 0.15` and `nay_share > yea_share`
+  - `mixed` if the yea/nay gap is smaller than `0.15`
+- this label is a UI interpretation aid only; the stored metrics remain the underlying shares and counts
+
 ## Drift Rules
 
 Drift is deterministic and uses the same 730-day window as the fingerprint.

@@ -102,6 +102,14 @@ export default function PositionByIssue({
                 </p>
                 <p className="text-sm text-stone-500">{row.recorded_votes} votes</p>
               </div>
+              <div className="mt-3 flex items-center justify-between gap-3">
+                <span className={`rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.22em] ${getPositionBadgeClass(row)}`}>
+                  {getPositionLabel(row)}
+                </span>
+                <p className="text-[13px] text-stone-600">
+                  {buildPositionRead(row)}
+                </p>
+              </div>
               <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
                 <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-3">
                   <p className="text-[11px] uppercase tracking-[0.22em] text-emerald-700">Yea</p>
@@ -162,4 +170,34 @@ function buildTakeaway(rows) {
   return `The clearest recorded position pattern in this window is ${formatDomainLabel(strongest.domain)}, where this legislator ${leaning} ${(leaningShare * 100).toFixed(
     0,
   )}% of the time.`;
+}
+
+function getPositionLabel(row) {
+  const gap = Math.abs(row.yea_share - row.nay_share);
+  if (gap < 0.15) {
+    return "Mixed";
+  }
+
+  return row.yea_share >= row.nay_share ? "Leans Yea" : "Leans Nay";
+}
+
+function getPositionBadgeClass(row) {
+  const label = getPositionLabel(row);
+  if (label === "Leans Yea") {
+    return "bg-emerald-100 text-emerald-800";
+  }
+  if (label === "Leans Nay") {
+    return "bg-rose-100 text-rose-800";
+  }
+  return "bg-stone-200 text-stone-700";
+}
+
+function buildPositionRead(row) {
+  const label = getPositionLabel(row);
+  if (label === "Mixed") {
+    return `${(row.yea_share * 100).toFixed(0)}% yea / ${(row.nay_share * 100).toFixed(0)}% nay`;
+  }
+
+  const strongerShare = Math.max(row.yea_share, row.nay_share);
+  return `${(strongerShare * 100).toFixed(0)}% of recorded votes`;
 }
