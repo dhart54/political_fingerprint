@@ -33,6 +33,10 @@ const DEFAULT_COMPARE_RIGHT = {
 
 export default function HomePage() {
   const [selectedLegislator, setSelectedLegislator] = useState(DEFAULT_LEGISLATOR);
+  const [comparisonSeed, setComparisonSeed] = useState({
+    left: DEFAULT_LEGISLATOR,
+    right: DEFAULT_COMPARE_RIGHT,
+  });
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#f4eee1,_#e6dbc1_50%,_#d5c3a2)] text-stone-900">
@@ -72,7 +76,10 @@ export default function HomePage() {
             </p>
           </article>
         </div>
-        <ZipLookupPanel onSelectLegislator={setSelectedLegislator} />
+        <ZipLookupPanel
+          onComparePair={setComparisonSeed}
+          onSelectLegislator={setSelectedLegislator}
+        />
         <LegislatorPicker
           onSelect={setSelectedLegislator}
           selectedLegislator={selectedLegislator}
@@ -87,6 +94,7 @@ export default function HomePage() {
         <ComparisonPanel
           defaultLeftLegislator={selectedLegislator}
           defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
+          seedPair={comparisonSeed}
         />
         <HealthStatus />
       </section>

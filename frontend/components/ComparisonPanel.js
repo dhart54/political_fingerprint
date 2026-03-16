@@ -9,6 +9,7 @@ const COMPARISON_OPTIONS = ["ALL", "D", "R"];
 export default function ComparisonPanel({
   defaultLeftLegislator,
   defaultRightLegislator,
+  seedPair,
 }) {
   const [comparisonParty, setComparisonParty] = useState("ALL");
   const [query, setQuery] = useState("");
@@ -27,6 +28,17 @@ export default function ComparisonPanel({
     payload: null,
     error: null,
   });
+
+  useEffect(() => {
+    if (!seedPair?.left || !seedPair?.right) {
+      return;
+    }
+
+    setSelected({
+      left: seedPair.left,
+      right: seedPair.right,
+    });
+  }, [seedPair?.left?.id, seedPair?.right?.id]);
 
   useEffect(() => {
     let active = true;
