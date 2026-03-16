@@ -49,6 +49,14 @@ export default function HomePage() {
         <div className="mt-7 grid gap-4 xl:grid-cols-3">
           <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
+              Start With Your ZIP
+            </p>
+            <p className="mt-3 text-base leading-7 text-stone-700">
+              Find your House member and senators first, then open any of them directly into the behavioral profile.
+            </p>
+          </article>
+          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
+            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
               Position By Issue
             </p>
             <p className="mt-3 text-base leading-7 text-stone-700">
@@ -57,21 +65,14 @@ export default function HomePage() {
           </article>
           <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Issue Focus Context
+              Supporting Context
             </p>
             <p className="mt-3 text-base leading-7 text-stone-700">
-              See which policy domains dominate the record, with chamber comparison built in.
-            </p>
-          </article>
-          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Change Over Time
-            </p>
-            <p className="mt-3 text-base leading-7 text-stone-700">
-              Measure whether the issue mix stayed steady or shifted across the last two years.
+              Use issue focus and change over time to understand where attention is concentrated and whether that pattern shifted.
             </p>
           </article>
         </div>
+        <ZipLookupPanel onSelectLegislator={setSelectedLegislator} />
         <LegislatorPicker
           onSelect={setSelectedLegislator}
           selectedLegislator={selectedLegislator}
@@ -87,7 +88,6 @@ export default function HomePage() {
           defaultLeftLegislator={selectedLegislator}
           defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
         />
-        <ZipLookupPanel onSelectLegislator={setSelectedLegislator} />
         <HealthStatus />
       </section>
     </main>
