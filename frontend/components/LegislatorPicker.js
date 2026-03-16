@@ -78,7 +78,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
             <Tag>{selectedLegislator.district ? `${selectedLegislator.state}-${selectedLegislator.district}` : `${selectedLegislator.state} statewide`}</Tag>
           </div>
           <p className="mt-4 max-w-md text-[14px] leading-6 text-stone-300">
-            Start here to inspect one voting record in depth. The sections below show issue focus, change over time, and the clearest takeaways from the current window.
+            Start here to inspect one voting record in depth. The sections below show how this legislator votes within major issues, then add issue-focus and change-over-time context.
           </p>
         </div>
         <div>

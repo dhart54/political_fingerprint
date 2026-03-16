@@ -44,8 +44,7 @@ export default function HomePage() {
           See what issues your representative actually spends votes on.
         </h1>
         <p className="mt-4 max-w-[660px] text-[17px] leading-8 text-stone-700 sm:text-lg">
-          A fast behavioral profile built from categorized policy votes, precomputed
-          issue emphasis, and change-over-time metrics.
+          A fast behavioral profile built from categorized policy votes, showing where a legislator spends attention and how they actually vote inside those issues.
         </p>
         <div className="mt-7 grid gap-4 xl:grid-cols-3">
           <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
@@ -88,7 +87,7 @@ export default function HomePage() {
           defaultLeftLegislator={selectedLegislator}
           defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
         />
-        <ZipLookupPanel />
+        <ZipLookupPanel onSelectLegislator={setSelectedLegislator} />
         <HealthStatus />
       </section>
     </main>

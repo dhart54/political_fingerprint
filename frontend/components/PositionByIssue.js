@@ -70,11 +70,11 @@ export default function PositionByIssue({
                 ? "Reading how this legislator voted inside their most active issue domains."
                 : "The site cannot read how this legislator voted inside issue domains right now."}
           </p>
-          <div className="mt-5 rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100">
+          <div className="mt-4 rounded-[1.7rem] bg-stone-950 px-4 py-4 text-stone-100">
             <p className="text-xs uppercase tracking-[0.28em] text-stone-400">
               Why This Matters
             </p>
-            <p className="mt-3 text-[16px] leading-7 text-stone-200">
+            <p className="mt-2 text-[15px] leading-7 text-stone-200">
               Issue focus shows what topics absorbed the most votes. This section shows how the legislator actually voted within those topics using recorded yea and nay positions.
             </p>
           </div>

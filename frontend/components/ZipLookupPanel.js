@@ -6,7 +6,7 @@ import { fetchZipLookup } from "../lib/api";
 
 const DEFAULT_ZIP = "27701";
 
-export default function ZipLookupPanel() {
+export default function ZipLookupPanel({ onSelectLegislator }) {
   const [zipCode, setZipCode] = useState(DEFAULT_ZIP);
   const [state, setState] = useState({
     status: "idle",
@@ -59,13 +59,16 @@ export default function ZipLookupPanel() {
     <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/75 p-5 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-            ZIP Lookup
-          </p>
-          <h3 className="mt-2 font-serif text-[2.85rem] leading-[0.95] text-stone-900">
-            Find your House rep and senators
-          </h3>
-        </div>
+        <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
+          ZIP Lookup
+        </p>
+        <h3 className="mt-2 font-serif text-[2.85rem] leading-[0.95] text-stone-900">
+          Find your House rep and senators
+        </h3>
+        <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
+          Use ZIP lookup as the fastest entry point, then open any returned legislator in the behavioral profile above.
+        </p>
+      </div>
         <p className="text-xs uppercase tracking-[0.25em] text-stone-500">
           Try 27701 or 27601
         </p>
@@ -115,6 +118,7 @@ export default function ZipLookupPanel() {
             accent="bg-amber-100 text-amber-900"
             heading="House Representative"
             legislator={state.payload.house_rep}
+            onSelectLegislator={onSelectLegislator}
           />
           <div className="grid gap-4">
             {state.payload.senators.map((senator) => (
@@ -123,6 +127,7 @@ export default function ZipLookupPanel() {
                 key={senator.id}
                 heading="Senator"
                 legislator={senator}
+                onSelectLegislator={onSelectLegislator}
               />
             ))}
           </div>
@@ -132,7 +137,7 @@ export default function ZipLookupPanel() {
   );
 }
 
-function LegislatorCard({ accent, heading, legislator }) {
+function LegislatorCard({ accent, heading, legislator, onSelectLegislator }) {
   return (
     <article className="rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(245,241,233,0.94))] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -156,6 +161,17 @@ function LegislatorCard({ accent, heading, legislator }) {
           value={legislator.district ? `${legislator.state}-${legislator.district}` : "Statewide"}
         />
       </dl>
+      {onSelectLegislator ? (
+        <div className="mt-4">
+          <button
+            className="rounded-full bg-stone-900 px-4 py-2 text-xs uppercase tracking-[0.22em] text-stone-100"
+            onClick={() => onSelectLegislator(legislator)}
+            type="button"
+          >
+            Open Profile
+          </button>
+        </div>
+      ) : null}
     </article>
   );
 }
