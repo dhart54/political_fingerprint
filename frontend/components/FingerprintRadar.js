@@ -77,7 +77,7 @@ export default function FingerprintRadar({
       <div className="flex flex-col gap-3 border-b border-stone-200/80 pb-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-            Issue Focus
+            Issue Focus Context
           </p>
           <h2 className="mt-2 font-serif text-[2.25rem] leading-[0.95] text-stone-900">
             {title}
@@ -183,7 +183,7 @@ export default function FingerprintRadar({
         <div className="flex flex-col gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              What To Conclude
+              What This Adds
             </p>
             {state.status === "ready" ? (
               <p className="mt-3 max-w-2xl font-serif text-[1.7rem] leading-[1.25] text-stone-900">
@@ -193,7 +193,7 @@ export default function FingerprintRadar({
             <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
               {state.status === "ready"
                 ? focusSummary
-                : "The amber shape shows where this legislator's recent eligible votes are concentrated. The green dashed overlay shows the chamber median for the selected comparison group."}
+                : "The amber shape shows which issue domains absorbed the most eligible votes. The green dashed overlay shows the chamber median for the selected comparison group."}
             </p>
             <div className="mt-4 flex flex-wrap gap-4">
               <LegendSwatch
@@ -214,7 +214,7 @@ export default function FingerprintRadar({
               value={state.status === "ready" ? String(fingerprintRows[0]?.total_votes ?? 0) : "--"}
             />
             <HighlightCard
-              label="Top Domain"
+              label="Top Focus"
               value={state.status === "ready" ? formatDomainLabel(topDomains[0]?.domain || "NONE") : "--"}
             />
             <HighlightCard
@@ -252,7 +252,7 @@ export default function FingerprintRadar({
                 {state.status === "loading" ? "Waiting for the backend fingerprint response." : null}
                 {state.status === "error" ? `${state.error} Try choosing another legislator or checking the backend.` : null}
                 {state.status === "ready"
-                  ? `This profile is based on ${fingerprintRows[0]?.total_votes ?? 0} eligible votes in the current 730-day window. Comparison overlay: ${comparisonParty}.`
+                  ? `This issue-focus context is based on ${fingerprintRows[0]?.total_votes ?? 0} eligible votes in the current 730-day window. Comparison overlay: ${comparisonParty}.`
                   : null}
               </p>
             </div>
@@ -262,7 +262,7 @@ export default function FingerprintRadar({
                 What It Means
               </p>
               <p className="mt-3 text-[15px] leading-7 text-stone-700">
-                This does not score ideology. It shows which issue domains absorb the largest share of this legislator's eligible policy votes over the last two years.
+                This does not show vote direction. It shows which issue domains absorbed the largest share of this legislator's eligible policy votes over the last two years.
               </p>
             </article>
           </div>

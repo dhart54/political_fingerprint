@@ -7,6 +7,7 @@ import DriftIndicator from "../components/DriftIndicator";
 import FingerprintRadar from "../components/FingerprintRadar";
 import ComparisonPanel from "../components/ComparisonPanel";
 import LegislatorPicker from "../components/LegislatorPicker";
+import PositionByIssue from "../components/PositionByIssue";
 import SummaryPanel from "../components/SummaryPanel";
 import ZipLookupPanel from "../components/ZipLookupPanel";
 
@@ -49,10 +50,18 @@ export default function HomePage() {
         <div className="mt-7 grid gap-4 xl:grid-cols-3">
           <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
             <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Issue Focus
+              Position By Issue
             </p>
             <p className="mt-3 text-base leading-7 text-stone-700">
-              See which policy domains dominate this legislator's recent voting record, with chamber comparison built in.
+              See how this legislator actually votes inside their most active issue domains using recorded yea and nay positions.
+            </p>
+          </article>
+          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
+            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
+              Issue Focus Context
+            </p>
+            <p className="mt-3 text-base leading-7 text-stone-700">
+              See which policy domains dominate the record, with chamber comparison built in.
             </p>
           </article>
           <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
@@ -60,15 +69,7 @@ export default function HomePage() {
               Change Over Time
             </p>
             <p className="mt-3 text-base leading-7 text-stone-700">
-              Measure whether their recent issue mix looks stable or has shifted meaningfully across the last two years.
-            </p>
-          </article>
-          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Who Represents Me
-            </p>
-            <p className="mt-3 text-base leading-7 text-stone-700">
-              Start with your ZIP code, then inspect the voting behavior of your House member and senators side by side.
+              Measure whether the issue mix stayed steady or shifted across the last two years.
             </p>
           </article>
         </div>
@@ -76,6 +77,7 @@ export default function HomePage() {
           onSelect={setSelectedLegislator}
           selectedLegislator={selectedLegislator}
         />
+        <PositionByIssue legislatorId={selectedLegislator.id} />
         <FingerprintRadar
           legislatorId={selectedLegislator.id}
           title={selectedLegislator.name_display}

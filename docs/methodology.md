@@ -152,6 +152,32 @@ Explicit-zero rule:
 
 Fingerprint output always includes all 8 domains and never omits a domain row.
 
+Interpretation boundary:
+
+- fingerprint is an issue-attention metric
+- it shows where eligible votes are concentrated
+- it does not show whether the legislator mostly voted `yea` or `nay` inside those domains
+
+## Position by Issue Rules
+
+The product now exposes a deterministic vote-direction view for each legislator.
+
+For the same latest 730-day fingerprint window and `classification_version`:
+
+- join `votes_cast` to eligible `vote_classifications`
+- group votes by `primary_domain`
+- count `yea`, `nay`, and `other` positions
+- compute `yea_share` and `nay_share` using only recorded `yea + nay` votes
+
+Rules:
+
+- `present` and `not_voting` are counted as `other_count`
+- `other_count` contributes to `total_votes` but not to `yea_share` or `nay_share`
+- if a domain has no recorded `yea` or `nay` votes, both shares are `0.0`
+- domains still appear with explicit zeroes
+
+This view is descriptive only. It shows how a legislator voted within issue domains, not ideology or motive.
+
 ## Drift Rules
 
 Drift is deterministic and uses the same 730-day window as the fingerprint.
@@ -175,6 +201,11 @@ Constraints:
   - `drift_value = null`
 
 No estimation or extrapolation is used.
+
+Interpretation boundary:
+
+- drift measures change in issue emphasis over time
+- it does not measure ideological moderation, extremity, or consistency of beliefs
 
 ## ETL Order
 

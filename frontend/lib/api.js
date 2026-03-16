@@ -47,6 +47,18 @@ export async function fetchDrift({ legislatorId }) {
   return response.json();
 }
 
+export async function fetchPositions({ legislatorId }) {
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/positions`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Positions request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchSummary({ legislatorId }) {
   const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/summary`, {
     cache: "no-store",

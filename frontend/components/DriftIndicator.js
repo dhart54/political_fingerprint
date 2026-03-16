@@ -6,7 +6,7 @@ import { fetchDrift } from "../lib/api";
 
 export default function DriftIndicator({
   legislatorId = "leg_alex_morgan",
-  title = "Change Over Time",
+  title = "Issue-Attention Change",
 }) {
   const [state, setState] = useState({
     status: "loading",
@@ -145,7 +145,7 @@ function Metric({ label, value }) {
 
 function buildDriftTakeaway({ status, insufficientData, driftValue }) {
   if (status === "loading") {
-    return "Checking whether this legislator's issue mix has stayed steady or moved.";
+    return "Checking whether this legislator's issue-attention mix has stayed steady or moved.";
   }
 
   if (status === "error") {
@@ -153,18 +153,18 @@ function buildDriftTakeaway({ status, insufficientData, driftValue }) {
   }
 
   if (insufficientData) {
-    return "There are not enough eligible votes yet to tell whether this voting pattern stayed consistent.";
+    return "There are not enough eligible votes yet to tell whether this issue-attention pattern stayed consistent.";
   }
 
   if (driftValue >= 0.6) {
-    return "This voting record shifted noticeably between the earlier and more recent parts of the window.";
+    return "This legislator's issue-attention mix shifted noticeably between the earlier and more recent parts of the window.";
   }
 
   if (driftValue >= 0.3) {
-    return "This voting record changed somewhat over the current two-year window.";
+    return "This legislator's issue-attention mix changed somewhat over the current two-year window.";
   }
 
-  return "This voting record stayed relatively stable over the current two-year window.";
+  return "This legislator's issue-attention mix stayed relatively stable over the current two-year window.";
 }
 
 function buildDriftVerdict({ status, insufficientData, driftValue }) {
@@ -181,12 +181,12 @@ function buildDriftVerdict({ status, insufficientData, driftValue }) {
   }
 
   if (driftValue >= 0.6) {
-    return "This record shifted noticeably";
+    return "Issue focus shifted noticeably";
   }
 
   if (driftValue >= 0.3) {
-    return "This record changed somewhat";
+    return "Issue focus changed somewhat";
   }
 
-  return "This record stayed fairly steady";
+  return "Issue focus stayed fairly steady";
 }
