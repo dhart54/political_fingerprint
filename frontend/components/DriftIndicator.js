@@ -54,6 +54,11 @@ export default function DriftIndicator({
     insufficientData: state.payload?.insufficient_data,
     driftValue,
   });
+  const driftVerdict = buildDriftVerdict({
+    status: state.status,
+    insufficientData: state.payload?.insufficient_data,
+    driftValue,
+  });
 
   return (
     <section className="mt-8 grid gap-5 rounded-[2.25rem] border border-stone-300/80 bg-[linear-gradient(135deg,#060505,#171311_55%,#090706)] px-5 py-5 text-stone-100 shadow-[0_20px_80px_rgba(72,52,24,0.18)] lg:grid-cols-[0.84fr_1.16fr] lg:p-6">
@@ -62,14 +67,7 @@ export default function DriftIndicator({
           {title}
         </p>
         <h3 className="mt-3 font-serif text-[2.7rem] leading-[0.95] text-stone-50">
-          {state.status === "loading" ? "Reading change over time..." : null}
-          {state.status === "error" ? "Drift unavailable" : null}
-          {state.status === "ready" && state.payload?.insufficient_data
-            ? "Insufficient data"
-            : null}
-          {state.status === "ready" && !state.payload?.insufficient_data
-            ? `Change score ${driftValue.toFixed(2)}`
-            : null}
+          {driftVerdict}
         </h3>
         <p className="mt-4 max-w-md text-[18px] leading-8 text-stone-100">
           {driftTakeaway}
@@ -167,4 +165,28 @@ function buildDriftTakeaway({ status, insufficientData, driftValue }) {
   }
 
   return "This voting record stayed relatively stable over the current two-year window.";
+}
+
+function buildDriftVerdict({ status, insufficientData, driftValue }) {
+  if (status === "loading") {
+    return "Reading change over time...";
+  }
+
+  if (status === "error") {
+    return "Change unavailable";
+  }
+
+  if (insufficientData) {
+    return "Not enough votes yet";
+  }
+
+  if (driftValue >= 0.6) {
+    return "This record shifted noticeably";
+  }
+
+  if (driftValue >= 0.3) {
+    return "This record changed somewhat";
+  }
+
+  return "This record stayed fairly steady";
 }

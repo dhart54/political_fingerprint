@@ -64,7 +64,7 @@ export default function SummaryPanel({
             {title}
           </p>
           <h3 className="mt-2 font-serif text-[2.7rem] leading-[0.95] text-stone-900">
-            Fast read of the record
+            What a voter should notice first
           </h3>
           <p className="mt-3 max-w-3xl text-[18px] leading-8 text-stone-900">
             {quickRead}
@@ -77,7 +77,7 @@ export default function SummaryPanel({
       <div className="mt-5 grid gap-5 lg:grid-cols-[1.08fr_0.92fr]">
         <article className="rounded-[2rem] bg-[linear-gradient(180deg,#100d0b,#171311)] px-5 py-5 text-stone-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
           <p className="text-xs uppercase tracking-[0.28em] text-stone-400">
-            At A Glance
+            Supporting Detail
           </p>
           {state.status === "loading" ? (
             <p className="mt-4 text-base leading-8 text-stone-200">Loading summary...</p>

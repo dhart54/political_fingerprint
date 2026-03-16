@@ -186,7 +186,7 @@ export default function FingerprintRadar({
               What To Conclude
             </p>
             {state.status === "ready" ? (
-              <p className="mt-3 max-w-2xl text-[18px] leading-8 text-stone-900">
+              <p className="mt-3 max-w-2xl font-serif text-[1.7rem] leading-[1.25] text-stone-900">
                 {focusTakeaway}
               </p>
             ) : null}
@@ -361,10 +361,10 @@ function buildFocusTakeaway(topDomains) {
   }
 
   if (topDomains.length === 1) {
-    return `Most of this legislator's recent eligible votes are concentrated in ${formatDomainLabel(topDomains[0].domain)}.`;
+    return `Most of this legislator's recent voting attention is concentrated in ${formatDomainLabel(topDomains[0].domain)}.`;
   }
 
-  return `This record is most concentrated in ${formatDomainLabel(topDomains[0].domain)} and ${formatDomainLabel(topDomains[1].domain)} right now.`;
+  return `This record is mainly focused on ${formatDomainLabel(topDomains[0].domain)} and ${formatDomainLabel(topDomains[1].domain)} right now.`;
 }
 
 function ProvenanceCard({ label, value }) {

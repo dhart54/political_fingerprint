@@ -180,7 +180,7 @@ export default function ComparisonPanel({
             <p className="text-xs uppercase tracking-[0.26em] text-stone-400">
               What To Conclude
             </p>
-            <p className="mt-2">{comparisonInsight}</p>
+            <p className="mt-2 text-[18px] leading-8 text-stone-100">{comparisonInsight}</p>
             <p className="mt-2 text-[13px] leading-6 text-stone-400">
               This compares issue focus only. Two legislators can show the same issue mix here while still voting differently within those issues.
             </p>
@@ -370,7 +370,7 @@ function buildComparisonInsight(payload) {
 
   const biggest = differences[0];
   if (!biggest || biggest.gap <= 0) {
-    return "These two legislators currently look similar on issue focus, so this comparison does not show a strong difference in what kinds of issues dominated their recent votes.";
+    return "These two legislators currently look similar on issue focus, so this view does not show a strong difference in what kinds of issues dominated their recent votes.";
   }
 
   const leader =
