@@ -144,7 +144,7 @@ export default function ComparisonPanel({
             Compare behavioral profiles side by side
           </h2>
           <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
-            Use the same issue-focus, change-over-time, and summary lens on both legislators at once. It stays descriptive and does not rank either side.
+            Start with vote direction inside the same issue domains, then use issue focus and change-over-time as supporting context. It stays descriptive and does not rank either side.
           </p>
         </div>
         <div className="flex rounded-full border border-stone-300 bg-stone-100 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
@@ -183,7 +183,7 @@ export default function ComparisonPanel({
             {compareState.status === "loading" ? "Fetching fingerprint, drift, and summary data for both sides." : null}
             {compareState.status === "error" ? compareState.error : null}
             {compareState.status === "ready"
-              ? `Overlay comparison is set to ${comparisonParty}. Compare issue focus first, then use drift and summary as supporting context.`
+              ? `Overlay comparison is set to ${comparisonParty}. Compare vote direction first, then use issue focus and drift as supporting context.`
               : null}
           </p>
         </div>
@@ -194,7 +194,7 @@ export default function ComparisonPanel({
             </p>
             <p className="mt-2 text-[18px] leading-8 text-stone-100">{comparisonInsight}</p>
             <p className="mt-2 text-[13px] leading-6 text-stone-400">
-              This comparison now checks issue focus first, then uses per-domain yea versus nay splits when the recorded votes show a meaningful directional gap.
+              This comparison checks vote direction inside the same domains first, then uses issue focus when the two records are spending attention on similar topics.
             </p>
           </div>
         ) : null}
@@ -305,16 +305,16 @@ function CompareSideCard({ heading, side, fallbackLegislator }) {
 
       <div className="mt-4 grid gap-3">
         <CompareMetric
-          label="Fingerprint"
+          label="Vote Direction"
+          value={topPosition}
+        />
+        <CompareMetric
+          label="Issue Focus Context"
           value={
             topDomains.length
               ? topDomains.map((row) => `${formatDomainLabel(row.domain)} ${(row.vote_share * 100).toFixed(0)}%`).join(" • ")
               : "No eligible domain emphasis available"
           }
-        />
-        <CompareMetric
-          label="Vote Direction"
-          value={topPosition}
         />
         <CompareMetric
           label="Drift"

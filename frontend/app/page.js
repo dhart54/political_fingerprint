@@ -85,17 +85,17 @@ export default function HomePage() {
           selectedLegislator={selectedLegislator}
         />
         <PositionByIssue legislatorId={selectedLegislator.id} />
+        <ComparisonPanel
+          defaultLeftLegislator={selectedLegislator}
+          defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
+          seedPair={comparisonSeed}
+        />
         <FingerprintRadar
           legislatorId={selectedLegislator.id}
           title={selectedLegislator.name_display}
         />
         <DriftIndicator legislatorId={selectedLegislator.id} />
         <SummaryPanel legislatorId={selectedLegislator.id} />
-        <ComparisonPanel
-          defaultLeftLegislator={selectedLegislator}
-          defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
-          seedPair={comparisonSeed}
-        />
         <HealthStatus />
       </section>
     </main>
