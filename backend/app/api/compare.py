@@ -4,6 +4,7 @@ from app.api.precomputed import (
     get_drift_response,
     get_fingerprint_response,
     get_legislator_profile,
+    get_position_response,
 )
 from app.summaries.cache import get_or_create_summary
 
@@ -44,15 +45,17 @@ def _build_comparison_side(*, legislator_id: str, comparison_party: str) -> dict
         legislator_id=legislator_id,
         comparison_party=comparison_party,
     )
+    position = get_position_response(legislator_id=legislator_id)
     drift = get_drift_response(legislator_id=legislator_id)
     summary = get_or_create_summary(legislator_id=legislator_id)
 
-    if profile is None or fingerprint is None or drift is None or summary is None:
+    if profile is None or fingerprint is None or position is None or drift is None or summary is None:
         return None
 
     return {
         "legislator": profile,
         "fingerprint": fingerprint,
+        "position": position,
         "drift": drift,
         "summary": {
             "legislator_id": summary.legislator_id,

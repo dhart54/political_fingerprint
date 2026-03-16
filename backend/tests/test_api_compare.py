@@ -20,6 +20,10 @@ def test_compare_legislators_returns_side_by_side_payloads() -> None:
     assert payload["left"]["legislator"]["name_display"] == "Alex Morgan"
     assert payload["right"]["legislator"]["name_display"] == "Jordan Lee"
     assert payload["left"]["fingerprint"]["legislator_id"] == "leg_alex_morgan"
+    assert payload["left"]["position"]["legislator_id"] == "leg_alex_morgan"
+    assert len(payload["left"]["position"]["positions"]) == 8
+    assert "yea_count" in payload["left"]["position"]["positions"][0]
+    assert "yea_share" in payload["right"]["position"]["positions"][0]
     assert payload["right"]["drift"]["legislator_id"] == "leg_jordan_lee"
     assert "summary_text" in payload["left"]["summary"]
 

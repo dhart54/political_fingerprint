@@ -182,7 +182,7 @@ export default function ComparisonPanel({
             </p>
             <p className="mt-2 text-[18px] leading-8 text-stone-100">{comparisonInsight}</p>
             <p className="mt-2 text-[13px] leading-6 text-stone-400">
-              This compares issue focus only. Two legislators can show the same issue mix here while still voting differently within those issues.
+              This comparison now checks issue focus first, then uses per-domain yea versus nay splits when the recorded votes show a meaningful directional gap.
             </p>
           </div>
         ) : null}
@@ -271,10 +271,12 @@ export default function ComparisonPanel({
 function CompareSideCard({ heading, side, fallbackLegislator }) {
   const legislator = side?.legislator || fallbackLegislator;
   const fingerprintRows = side?.fingerprint?.fingerprint || [];
+  const positionRows = side?.position?.positions || [];
   const topDomains = fingerprintRows
     .filter((row) => row.vote_share > 0)
     .sort((left, right) => right.vote_share - left.vote_share)
     .slice(0, 2);
+  const topPosition = buildTopPositionSummary(positionRows);
 
   return (
     <article className="rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(245,241,233,0.96))] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
@@ -297,6 +299,10 @@ function CompareSideCard({ heading, side, fallbackLegislator }) {
               ? topDomains.map((row) => `${formatDomainLabel(row.domain)} ${(row.vote_share * 100).toFixed(0)}%`).join(" • ")
               : "No eligible domain emphasis available"
           }
+        />
+        <CompareMetric
+          label="Vote Direction"
+          value={topPosition}
         />
         <CompareMetric
           label="Drift"
@@ -348,6 +354,18 @@ function truncateSummary(summaryText) {
 function buildComparisonInsight(payload) {
   const leftRows = payload?.left?.fingerprint?.fingerprint || [];
   const rightRows = payload?.right?.fingerprint?.fingerprint || [];
+  const leftPositionRows = payload?.left?.position?.positions || [];
+  const rightPositionRows = payload?.right?.position?.positions || [];
+
+  const positionInsight = buildPositionComparisonInsight({
+    leftName: payload?.left?.legislator?.name_display,
+    rightName: payload?.right?.legislator?.name_display,
+    leftRows: leftPositionRows,
+    rightRows: rightPositionRows,
+  });
+  if (positionInsight) {
+    return positionInsight;
+  }
 
   if (!leftRows.length || !rightRows.length) {
     return "There is not enough issue-focus data yet to describe the strongest difference.";
@@ -383,4 +401,56 @@ function buildComparisonInsight(payload) {
   return `The clearest difference is that ${leader} places more vote emphasis on ${formatDomainLabel(biggest.domain)}: ${Math.round(
     leaderShare * 100,
   )}% of eligible votes versus ${Math.round(trailingShare * 100)}% for ${trailing}.`;
+}
+
+function buildPositionComparisonInsight({ leftName, rightName, leftRows, rightRows }) {
+  if (!leftRows.length || !rightRows.length) {
+    return null;
+  }
+
+  const differences = leftRows
+    .map((leftRow) => {
+      const rightRow = rightRows.find((candidate) => candidate.domain === leftRow.domain);
+      const leftRecorded = leftRow?.recorded_votes || 0;
+      const rightRecorded = rightRow?.recorded_votes || 0;
+      if (!rightRow || leftRecorded === 0 || rightRecorded === 0) {
+        return null;
+      }
+      return {
+        domain: leftRow.domain,
+        leftYeaShare: leftRow.yea_share || 0,
+        rightYeaShare: rightRow.yea_share || 0,
+        gap: Math.abs((leftRow.yea_share || 0) - (rightRow.yea_share || 0)),
+      };
+    })
+    .filter(Boolean)
+    .sort((left, right) => right.gap - left.gap);
+
+  const biggest = differences[0];
+  if (!biggest || biggest.gap < 0.2) {
+    return null;
+  }
+
+  const leader = biggest.leftYeaShare > biggest.rightYeaShare ? leftName : rightName;
+  const trailing = biggest.leftYeaShare > biggest.rightYeaShare ? rightName : leftName;
+  const leaderShare = Math.max(biggest.leftYeaShare, biggest.rightYeaShare);
+  const trailingShare = Math.min(biggest.leftYeaShare, biggest.rightYeaShare);
+
+  return `The clearest voting-direction difference is in ${formatDomainLabel(biggest.domain)}: ${leader} voted yea ${(leaderShare * 100).toFixed(
+    0,
+  )}% of the time versus ${(trailingShare * 100).toFixed(0)}% for ${trailing}.`;
+}
+
+function buildTopPositionSummary(positionRows) {
+  const strongest = [...positionRows]
+    .filter((row) => (row?.recorded_votes || 0) > 0)
+    .sort((left, right) => (right.recorded_votes || 0) - (left.recorded_votes || 0))[0];
+
+  if (!strongest) {
+    return "No yea/nay split available in the current issue window.";
+  }
+
+  return `${formatDomainLabel(strongest.domain)}: ${(strongest.yea_share * 100).toFixed(0)}% yea / ${(strongest.nay_share * 100).toFixed(
+    0,
+  )}% nay`;
 }

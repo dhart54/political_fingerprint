@@ -4,6 +4,7 @@ from datetime import date
 from typing import Any
 
 from app.db import get_connection
+from app.etl.classify import run_classification
 from app.etl.compute import run_etl
 from app.etl.ingest import run_ingest
 
@@ -30,6 +31,18 @@ class FingerprintResponseRow:
     total_votes: int
     vote_share: float
     median_share: float
+
+
+@dataclass(frozen=True)
+class PositionResponseRow:
+    domain: str
+    yea_count: int
+    nay_count: int
+    other_count: int
+    total_votes: int
+    recorded_votes: int
+    yea_share: float
+    nay_share: float
 
 
 def has_legislator(*, legislator_id: str) -> bool:
@@ -100,6 +113,14 @@ def get_drift_response(*, legislator_id: str) -> dict[str, object] | None:
         return db_response
 
     return _get_fallback_drift_response(legislator_id=legislator_id)
+
+
+def get_position_response(*, legislator_id: str) -> dict[str, object] | None:
+    db_response = _get_db_position_response(legislator_id=legislator_id)
+    if db_response is not None:
+        return db_response
+
+    return _get_fallback_position_response(legislator_id=legislator_id)
 
 
 def get_summary_response(*, legislator_id: str) -> dict[str, object] | None:
@@ -237,6 +258,58 @@ def _get_db_summary_response(*, legislator_id: str) -> dict[str, object] | None:
     }
 
 
+def _get_db_position_response(*, legislator_id: str) -> dict[str, object] | None:
+    legislator = _get_db_legislator_by_external_id(legislator_id)
+    if legislator is None:
+        return None
+
+    fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    if fingerprint_rows is None:
+        return None
+    if not fingerprint_rows:
+        return None
+
+    first_row = fingerprint_rows[0]
+    position_rows = _get_db_position_rows(
+        legislator_db_id=int(legislator["id"]),
+        window_start=str(first_row["window_start"]),
+        window_end=str(first_row["window_end"]),
+        classification_version=str(first_row["classification_version"]),
+    )
+    if position_rows is None:
+        return None
+
+    position_map = {str(row["domain"]): row for row in position_rows}
+    serialized_rows = []
+    for domain in DOMAIN_ORDER:
+        row = position_map.get(domain, {})
+        yea_count = int(row.get("yea_count", 0) or 0)
+        nay_count = int(row.get("nay_count", 0) or 0)
+        other_count = int(row.get("other_count", 0) or 0)
+        recorded_votes = yea_count + nay_count
+        total_votes = recorded_votes + other_count
+        serialized_rows.append(
+            PositionResponseRow(
+                domain=domain,
+                yea_count=yea_count,
+                nay_count=nay_count,
+                other_count=other_count,
+                total_votes=total_votes,
+                recorded_votes=recorded_votes,
+                yea_share=(yea_count / recorded_votes) if recorded_votes else 0.0,
+                nay_share=(nay_count / recorded_votes) if recorded_votes else 0.0,
+            ).__dict__
+        )
+
+    return {
+        "legislator_id": legislator_id,
+        "window_start": str(first_row["window_start"]),
+        "window_end": str(first_row["window_end"]),
+        "classification_version": str(first_row["classification_version"]),
+        "positions": serialized_rows,
+    }
+
+
 def _get_db_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
     zip_record = _get_db_zip_record(zip_code=zip_code)
     if zip_record is None:
@@ -318,6 +391,74 @@ def _get_fallback_drift_response(*, legislator_id: str) -> dict[str, object] | N
         "recent_total_votes": drift_row.recent_total_votes,
         "insufficient_data": drift_row.insufficient_data,
         "drift_value": drift_row.drift_value,
+    }
+
+
+def _get_fallback_position_response(*, legislator_id: str) -> dict[str, object] | None:
+    fingerprint_rows = [
+        row
+        for row in FALLBACK_PRECOMPUTED_DATA.fingerprint_records
+        if row.legislator_id == legislator_id
+    ]
+    if not fingerprint_rows:
+        return None
+
+    first_row = fingerprint_rows[0]
+    roll_calls_by_id = {row["id"]: row for row in FALLBACK_FIXTURE_DATA.roll_calls}
+    classification_result = {
+        row.roll_call_id: row
+        for row in run_classification(
+            run_ingest(),
+            classification_version=first_row.classification_version,
+        ).classified_roll_calls
+    }
+
+    counts_by_domain = {
+        domain: {"yea_count": 0, "nay_count": 0, "other_count": 0}
+        for domain in DOMAIN_ORDER
+    }
+    for vote in FALLBACK_FIXTURE_DATA.votes_cast:
+        if vote["legislator_id"] != legislator_id:
+            continue
+        classified = classification_result.get(vote["roll_call_id"])
+        if classified is None or not classified.is_eligible or classified.primary_domain is None:
+            continue
+        vote_date = str(roll_calls_by_id[vote["roll_call_id"]]["vote_date"])
+        if not (first_row.window_start.isoformat() <= vote_date <= first_row.window_end.isoformat()):
+            continue
+        if vote["position"] == "yea":
+            counts_by_domain[classified.primary_domain]["yea_count"] += 1
+        elif vote["position"] == "nay":
+            counts_by_domain[classified.primary_domain]["nay_count"] += 1
+        else:
+            counts_by_domain[classified.primary_domain]["other_count"] += 1
+
+    return {
+        "legislator_id": legislator_id,
+        "window_start": first_row.window_start.isoformat(),
+        "window_end": first_row.window_end.isoformat(),
+        "classification_version": first_row.classification_version,
+        "positions": [
+            PositionResponseRow(
+                domain=domain,
+                yea_count=counts["yea_count"],
+                nay_count=counts["nay_count"],
+                other_count=counts["other_count"],
+                total_votes=counts["yea_count"] + counts["nay_count"] + counts["other_count"],
+                recorded_votes=counts["yea_count"] + counts["nay_count"],
+                yea_share=(
+                    counts["yea_count"] / (counts["yea_count"] + counts["nay_count"])
+                    if (counts["yea_count"] + counts["nay_count"])
+                    else 0.0
+                ),
+                nay_share=(
+                    counts["nay_count"] / (counts["yea_count"] + counts["nay_count"])
+                    if (counts["yea_count"] + counts["nay_count"])
+                    else 0.0
+                ),
+            ).__dict__
+            for domain, counts in counts_by_domain.items()
+        ],
     }
 
 
@@ -431,6 +572,38 @@ def _get_db_latest_summary_row(*, legislator_db_id: int) -> dict[str, Any] | Non
         LIMIT 1
         """,
         (legislator_db_id,),
+    )
+
+
+def _get_db_position_rows(
+    *,
+    legislator_db_id: int,
+    window_start: str,
+    window_end: str,
+    classification_version: str,
+) -> list[dict[str, Any]] | None:
+    return _query_all_dicts(
+        f"""
+        SELECT
+            vcf.primary_domain AS domain,
+            COUNT(*) FILTER (WHERE vc.position = 'yea') AS yea_count,
+            COUNT(*) FILTER (WHERE vc.position = 'nay') AS nay_count,
+            COUNT(*) FILTER (WHERE vc.position NOT IN ('yea', 'nay')) AS other_count
+        FROM votes_cast vc
+        JOIN roll_calls rc ON rc.id = vc.roll_call_id
+        JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        WHERE vc.legislator_id = %s
+          AND vcf.is_eligible = TRUE
+          AND vcf.primary_domain IS NOT NULL
+          AND vcf.classification_version = %s
+          AND DATE(rc.vote_date) BETWEEN %s AND %s
+        GROUP BY vcf.primary_domain
+        ORDER BY CASE vcf.primary_domain
+            {''.join(f" WHEN '{domain}' THEN {index}" for index, domain in enumerate(DOMAIN_ORDER, start=1))}
+            ELSE 999
+          END
+        """,
+        (legislator_db_id, classification_version, window_start, window_end),
     )
 
 

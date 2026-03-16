@@ -57,6 +57,13 @@ Current repository state uses a database-first read layer for these outputs.
 
 If the database is unavailable in local development, the repository currently falls back to the deterministic fixture-backed precomputed store so local validation remains usable before the seed flow is in place.
 
+The comparison view remains descriptive, but it now uses two deterministic lenses:
+
+- issue focus from precomputed fingerprint shares
+- vote-direction context from stored `votes_cast.position` joined to eligible classified domains within the same 730-day fingerprint window
+
+Vote-direction context is limited to per-domain `yea` versus `nay` shares. It does not infer ideology, motives, or causal explanations.
+
 ## Eligibility Rules
 
 Vote eligibility is deterministic.
