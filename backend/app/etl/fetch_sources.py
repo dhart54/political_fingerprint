@@ -261,12 +261,14 @@ def main() -> None:
     for result in results:
         status = "skipped" if result.skipped else "downloaded"
         print(
-            {
-                "status": status,
-                "source_url": result.source_url,
-                "destination": str(result.destination),
-                "bytes_written": result.bytes_written,
-            }
+            " ".join(
+                [
+                    f"status={status}",
+                    f"source_url={result.source_url}",
+                    f"destination={result.destination}",
+                    f"bytes_written={result.bytes_written}",
+                ]
+            )
         )
 
 

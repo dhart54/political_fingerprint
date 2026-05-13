@@ -39,52 +39,62 @@ export default function HomePage() {
   });
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#f4eee1,_#e6dbc1_50%,_#d5c3a2)] text-stone-900">
-      <section className="mx-auto flex min-h-screen max-w-[1440px] flex-col justify-center px-5 py-10 sm:px-6 lg:py-12">
-        <p className="mb-4 text-sm uppercase tracking-[0.35em] text-stone-600">
-          Political Fingerprint
-        </p>
-        <h1 className="max-w-[760px] font-serif text-5xl leading-[0.95] sm:text-[4.4rem] lg:text-[5.2rem]">
-          See what issues your representative actually spends votes on.
-        </h1>
-        <p className="mt-4 max-w-[660px] text-[17px] leading-8 text-stone-700 sm:text-lg">
-          A fast behavioral profile built from categorized policy votes, showing where a legislator spends attention and how they actually vote inside those issues.
-        </p>
-        <div className="mt-7 grid gap-4 xl:grid-cols-3">
-          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Start With Your ZIP
+    <main className="min-h-screen bg-[#f7f4ec] text-stone-900">
+      <section className="mx-auto max-w-[1440px] px-5 py-6 sm:px-6 lg:py-8">
+        <div className="grid min-h-[calc(100vh-4rem)] gap-7 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+          <div className="max-w-[720px]">
+            <p className="mb-4 text-sm uppercase tracking-[0.35em] text-cyan-800">
+              Political Fingerprint
             </p>
-            <p className="mt-3 text-base leading-7 text-stone-700">
-              Find your House member and senators first, then open any of them directly into the behavioral profile.
+            <h1 className="font-serif text-5xl leading-[0.95] text-stone-950 sm:text-[4.4rem] lg:text-[5.45rem]">
+              In 60 seconds, see how your politicians vote.
+            </h1>
+            <p className="mt-5 max-w-[640px] text-[17px] leading-8 text-stone-700 sm:text-lg">
+              Enter a ZIP code, open a representative or senator, and see their recent voting record by issue. The read is deterministic, neutral, and built from categorized policy votes.
             </p>
-          </article>
-          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Position By Issue
-            </p>
-            <p className="mt-3 text-base leading-7 text-stone-700">
-              See how this legislator actually votes inside their most active issue domains using recorded yea and nay positions.
-            </p>
-          </article>
-          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Supporting Context
-            </p>
-            <p className="mt-3 text-base leading-7 text-stone-700">
-              Use issue focus and change over time to understand where attention is concentrated and whether that pattern shifted.
-            </p>
-          </article>
+            <div className="mt-7 grid gap-3 sm:grid-cols-3">
+              <HeroStat value="548" label="legislators loaded" />
+              <HeroStat value="8" label="issue domains" />
+              <HeroStat value="730" label="day window" />
+            </div>
+          </div>
+          <ZipLookupPanel
+            onComparePair={setComparisonSeed}
+            onSelectLegislator={setSelectedLegislator}
+            variant="hero"
+          />
         </div>
-        <ZipLookupPanel
-          onComparePair={setComparisonSeed}
-          onSelectLegislator={setSelectedLegislator}
-        />
+
+        <section className="mt-8 rounded-[2rem] border border-stone-200 bg-white px-5 py-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] lg:px-6">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
+                Current Profile
+              </p>
+              <h2 className="mt-2 font-serif text-[2.75rem] leading-none text-stone-950">
+                {selectedLegislator.name_display}
+              </h2>
+              <p className="mt-2 text-[15px] leading-6 text-stone-600">
+                {formatChamber(selectedLegislator.chamber)} - {selectedLegislator.party} - {selectedLegislator.state}
+                {selectedLegislator.district ? `-${selectedLegislator.district}` : " statewide"}
+              </p>
+            </div>
+            <div className="grid gap-2 sm:grid-cols-3 lg:min-w-[520px]">
+              <MiniStep label="1" value="Position by issue" />
+              <MiniStep label="2" value="Compare records" />
+              <MiniStep label="3" value="Check context" />
+            </div>
+          </div>
+        </section>
+
         <LegislatorPicker
           onSelect={setSelectedLegislator}
           selectedLegislator={selectedLegislator}
         />
-        <PositionByIssue legislatorId={selectedLegislator.id} />
+        <PositionByIssue
+          legislatorId={selectedLegislator.id}
+          title={`${selectedLegislator.name_display}'s voting pattern by issue`}
+        />
         <ComparisonPanel
           defaultLeftLegislator={selectedLegislator}
           defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
@@ -100,4 +110,26 @@ export default function HomePage() {
       </section>
     </main>
   );
+}
+
+function HeroStat({ value, label }) {
+  return (
+    <div className="border-l border-cyan-700/30 pl-4">
+      <p className="font-serif text-[2.4rem] leading-none text-cyan-900">{value}</p>
+      <p className="mt-2 text-xs uppercase tracking-[0.2em] text-stone-600">{label}</p>
+    </div>
+  );
+}
+
+function MiniStep({ label, value }) {
+  return (
+    <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">
+      <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">Step {label}</p>
+      <p className="mt-2 text-sm leading-5 text-stone-800">{value}</p>
+    </div>
+  );
+}
+
+function formatChamber(chamber) {
+  return chamber ? chamber[0].toUpperCase() + chamber.slice(1) : "";
 }

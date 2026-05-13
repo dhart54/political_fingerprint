@@ -54,13 +54,13 @@ export default function PositionByIssue({
   const takeaway = buildTakeaway(rows);
 
   return (
-    <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/75 p-5 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-6">
+    <section className="mt-8 rounded-[2rem] border border-stone-200 bg-white p-5 shadow-[0_18px_48px_rgba(15,23,42,0.1)] lg:p-6">
       <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-            Position By Issue
+          <p className="text-xs uppercase tracking-[0.3em] text-cyan-800">
+            First Read
           </p>
-          <h3 className="mt-2 font-serif text-[2.7rem] leading-[0.95] text-stone-900">
+          <h3 className="mt-2 font-serif text-[2.7rem] leading-[0.95] text-stone-950">
             {title}
           </h3>
           <p className="mt-3 max-w-xl text-[18px] leading-8 text-stone-900">
@@ -70,12 +70,12 @@ export default function PositionByIssue({
                 ? "Reading how this legislator voted inside their most active issue domains."
                 : "The site cannot read how this legislator voted inside issue domains right now."}
           </p>
-          <div className="mt-4 rounded-[1.7rem] bg-stone-950 px-4 py-4 text-stone-100">
+          <div className="mt-4 rounded-[1.5rem] bg-stone-950 px-4 py-4 text-stone-100">
             <p className="text-xs uppercase tracking-[0.28em] text-stone-400">
-              Why This Matters
+              How To Read This
             </p>
             <p className="mt-2 text-[15px] leading-7 text-stone-200">
-              Issue focus shows what topics absorbed the most votes. This section shows how the legislator actually voted within those topics using recorded yea and nay positions.
+              Each tile starts with the domains where this legislator has the most recorded votes, then shows the yea/nay split inside that domain. It is descriptive, not a score.
             </p>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function PositionByIssue({
           ) : null}
           {rows.map((row) => (
             <article
-              className="rounded-[1.5rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(245,241,233,0.92))] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]"
+              className="rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]"
               key={row.domain}
             >
               <div className="flex items-start justify-between gap-3">

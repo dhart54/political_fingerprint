@@ -6,7 +6,11 @@ import { fetchZipLookup } from "../lib/api";
 
 const DEFAULT_ZIP = "27701";
 
-export default function ZipLookupPanel({ onComparePair, onSelectLegislator }) {
+export default function ZipLookupPanel({
+  onComparePair,
+  onSelectLegislator,
+  variant = "standard",
+}) {
   const [zipCode, setZipCode] = useState(DEFAULT_ZIP);
   const [state, setState] = useState({
     status: "idle",
@@ -55,24 +59,30 @@ export default function ZipLookupPanel({ onComparePair, onSelectLegislator }) {
     runLookup(zipCode);
   }
 
+  const isHero = variant === "hero";
+  const sectionClassName = isHero
+    ? "rounded-[2rem] border border-cyan-900/15 bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.16)] lg:p-6"
+    : "mt-8 rounded-[2rem] border border-stone-200 bg-white p-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] lg:p-6";
+
   return (
-    <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/75 p-5 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur lg:p-6">
+    <section className={sectionClassName}>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-        <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-          ZIP Lookup
-        </p>
-        <h3 className="mt-2 font-serif text-[2.85rem] leading-[0.95] text-stone-900">
-          Find your House rep and senators
-        </h3>
-        <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
-          Use ZIP lookup as the fastest entry point, then open any returned legislator in the behavioral profile above.
-        </p>
-      </div>
+          <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
+            Start Here
+          </p>
+          <h3 className="mt-2 font-serif text-[2.65rem] leading-[0.95] text-stone-950">
+            Find your ballot-level officials
+          </h3>
+          <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
+            Look up a ZIP, then open a profile or compare your House member with either senator.
+          </p>
+        </div>
         <p className="text-xs uppercase tracking-[0.25em] text-stone-500">
           Try 27701 or 27601
         </p>
       </div>
+
       <form className="mt-5 flex flex-col gap-3 sm:flex-row" onSubmit={handleLookup}>
         <input
           className="h-12 flex-1 rounded-full border border-stone-300 bg-stone-50 px-5 text-sm text-stone-900 outline-none ring-0 placeholder:text-stone-500"
@@ -83,16 +93,17 @@ export default function ZipLookupPanel({ onComparePair, onSelectLegislator }) {
           value={zipCode}
         />
         <button
-          className="h-12 rounded-full bg-stone-900 px-6 text-sm uppercase tracking-[0.25em] text-stone-100"
+          className="h-12 rounded-full bg-cyan-900 px-6 text-sm uppercase tracking-[0.25em] text-white shadow-[0_10px_24px_rgba(22,78,99,0.22)]"
           type="submit"
         >
-          Lookup
+          Show My Reps
         </button>
       </form>
-      <div className="mt-5 flex flex-col gap-3 rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100 sm:flex-row sm:items-end sm:justify-between">
+
+      <div className="mt-5 flex flex-col gap-3 rounded-[1.5rem] bg-stone-950 px-5 py-5 text-stone-100 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
-            Lookup Status
+            Result
           </p>
           <p className="mt-3 text-lg text-stone-50">
             {state.status === "idle" ? "Ready to lookup" : null}
@@ -108,19 +119,20 @@ export default function ZipLookupPanel({ onComparePair, onSelectLegislator }) {
           {state.status === "loading" ? "Loading House and Senate results." : null}
           {state.status === "error" ? state.error : null}
           {state.status === "ready"
-            ? `${state.payload.senators.length + (state.payload.house_rep ? 1 : 0)} legislators returned from the fixture mapping.`
+            ? `${state.payload.senators.length + (state.payload.house_rep ? 1 : 0)} officials ready to inspect.`
             : null}
         </p>
       </div>
+
       {state.status === "ready" ? (
         <div className="mt-5">
-          <div className="mb-4 flex flex-wrap gap-3 rounded-[1.75rem] border border-stone-200 bg-stone-50/90 px-4 py-4">
+          <div className="mb-4 flex flex-wrap gap-3 rounded-[1.25rem] border border-cyan-900/10 bg-cyan-50 px-4 py-4">
             <p className="w-full text-sm leading-6 text-stone-700">
-              Open a profile or seed a side-by-side comparison directly from these results.
+              Good next click: open your House profile, then compare it with either senator.
             </p>
             {state.payload.house_rep && state.payload.senators[0] ? (
               <button
-                className="rounded-full bg-stone-900 px-4 py-2 text-xs uppercase tracking-[0.22em] text-stone-100"
+                className="rounded-full bg-cyan-900 px-4 py-2 text-xs uppercase tracking-[0.22em] text-white"
                 onClick={() => {
                   onSelectLegislator?.(state.payload.house_rep);
                   onComparePair?.({
@@ -130,12 +142,12 @@ export default function ZipLookupPanel({ onComparePair, onSelectLegislator }) {
                 }}
                 type="button"
               >
-                Compare House vs Senator 1
+                House vs Senator
               </button>
             ) : null}
             {state.payload.house_rep && state.payload.senators[1] ? (
               <button
-                className="rounded-full bg-stone-200 px-4 py-2 text-xs uppercase tracking-[0.22em] text-stone-700"
+                className="rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-cyan-900"
                 onClick={() => {
                   onSelectLegislator?.(state.payload.house_rep);
                   onComparePair?.({
@@ -145,12 +157,12 @@ export default function ZipLookupPanel({ onComparePair, onSelectLegislator }) {
                 }}
                 type="button"
               >
-                Compare House vs Senator 2
+                House vs Other Senator
               </button>
             ) : null}
             {state.payload.senators[0] && state.payload.senators[1] ? (
               <button
-                className="rounded-full bg-stone-200 px-4 py-2 text-xs uppercase tracking-[0.22em] text-stone-700"
+                className="rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-cyan-900"
                 onClick={() =>
                   onComparePair?.({
                     left: state.payload.senators[0],
@@ -163,24 +175,25 @@ export default function ZipLookupPanel({ onComparePair, onSelectLegislator }) {
               </button>
             ) : null}
           </div>
+
           <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
-          <LegislatorCard
-            accent="bg-amber-100 text-amber-900"
-            heading="House Representative"
-            legislator={state.payload.house_rep}
-            onSelectLegislator={onSelectLegislator}
-          />
-          <div className="grid gap-4">
-            {state.payload.senators.map((senator) => (
-              <LegislatorCard
-                accent="bg-emerald-100 text-emerald-900"
-                key={senator.id}
-                heading="Senator"
-                legislator={senator}
-                onSelectLegislator={onSelectLegislator}
-              />
-            ))}
-          </div>
+            <LegislatorCard
+              accent="bg-cyan-100 text-cyan-900"
+              heading="House Representative"
+              legislator={state.payload.house_rep}
+              onSelectLegislator={onSelectLegislator}
+            />
+            <div className="grid gap-4">
+              {state.payload.senators.map((senator) => (
+                <LegislatorCard
+                  accent="bg-emerald-100 text-emerald-900"
+                  key={senator.id}
+                  heading="Senator"
+                  legislator={senator}
+                  onSelectLegislator={onSelectLegislator}
+                />
+              ))}
+            </div>
           </div>
         </div>
       ) : null}
@@ -190,18 +203,18 @@ export default function ZipLookupPanel({ onComparePair, onSelectLegislator }) {
 
 function LegislatorCard({ accent, heading, legislator, onSelectLegislator }) {
   return (
-    <article className="rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(245,241,233,0.94))] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
+    <article className="rounded-[1.5rem] border border-stone-200 bg-white px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-xs uppercase tracking-[0.25em] text-stone-500">{heading}</p>
         <span className={`rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.22em] ${accent}`}>
           {formatParty(legislator.party)}
         </span>
       </div>
-      <h4 className="mt-3 font-serif text-[2.1rem] leading-[0.98] text-stone-900">
+      <h4 className="mt-3 font-serif text-[2.1rem] leading-[0.98] text-stone-950">
         {legislator.name_display}
       </h4>
       <p className="mt-2 text-sm text-stone-600">
-        {formatChamber(legislator.chamber)} • {legislator.state}
+        {formatChamber(legislator.chamber)} - {legislator.state}
       </p>
       <dl className="mt-4 grid gap-4 sm:grid-cols-2">
         <Meta label="Bioguide" value={legislator.bioguide_id} />
