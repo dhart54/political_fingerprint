@@ -67,25 +67,14 @@ Last updated: 2026-05-14
 - Browser QA cache workflow:
   - committed as `4c64035 Record browser QA cache workflow`
   - Windows Next dev cache reset notes are documented
+- Windows test workflow:
+  - committed as `3d0c702 Stabilize Windows test workflow`
+  - full backend fixture suite passes with `pytest --basetemp=..\.local\pytest_basetemp`
+  - cache-source scaffold tests now allow real cached source counts
 
 ## Active Checkpoint
 
-Checkpoint target: `Stabilize full Windows test run`.
-
-Files in this checkpoint:
-
-- `.gitignore`
-- `backend/tests/test_etl_scaffold.py`
-- `docs/development_workflow.md`
-- `docs/product_v2_tasklist.md`
-- `docs/autonomous_handoff.md`
-
-Intent of current changes:
-
-- ignore repo-local `backend/.pytest_tmp/`
-- document `pytest --basetemp=..\.local\pytest_basetemp` for Windows test runs
-- document that Codex desktop may need elevated execution for pytest `tmp_path` tests
-- make cache-ingest scaffold tests accept real cached data counts instead of assuming tiny sample counts
+No active uncommitted checkpoint.
 
 ## Verification Already Run
 
@@ -125,7 +114,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the full-test stabilization checkpoint.
+1. Start the next product pass from the first real voter journey gap found in browser QA, keeping the alignment and evidence workflow as the primary path.
+2. Prefer focused backend tests while developing, then run the full backend fixture suite with `pytest --basetemp=..\.local\pytest_basetemp` before the next checkpoint.
 
 ## Operating Mode
 
