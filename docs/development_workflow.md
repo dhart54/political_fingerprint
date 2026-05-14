@@ -74,6 +74,8 @@ Do not use Supabase mode for routine UI copy, layout, or deterministic alignment
 
 If the browser shows stale Next.js chunks or an error such as `__webpack_modules__[moduleId] is not a function`, stop the dev server, remove `.next`, and restart.
 
+Avoid running `npm run build` while `npm run dev` is still active. On Windows, building over an active dev server can leave the browser attached to stale Webpack chunks. If that happens, use this reset workflow before continuing browser QA.
+
 Find the process:
 
 ```powershell
@@ -98,4 +100,3 @@ Restart the frontend:
 cd frontend
 npm run dev
 ```
-

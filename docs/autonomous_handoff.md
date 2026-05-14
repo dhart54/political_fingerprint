@@ -60,23 +60,24 @@ Last updated: 2026-05-14
 - Monitoring docs:
   - committed as `316ae36 Document lightweight monitoring`
   - Render/Vercel checks, privacy-safe logging, and release checklist are documented
+- Browser QA alignment fallback:
+  - committed as `af1178d Handle missing alignment interpretations`
+  - database-backed alignment now returns insufficient-evidence rows when interpretation rows are unavailable
+  - alignment copy now says `0 interpreted` rather than implying no classified roll calls exist
 
 ## Active Checkpoint
 
-Checkpoint target: `Browser QA alignment fallback`.
+Checkpoint target: `Record browser QA cache workflow`.
 
 Files in this checkpoint:
 
-- `backend/app/api/precomputed.py`
-- `backend/tests/test_db_read_layer.py`
-- `frontend/components/AlignmentPanel.js`
+- `docs/development_workflow.md`
 - `docs/autonomous_handoff.md`
 
 Intent of current changes:
 
-- return insufficient-evidence alignment rows when database legislators/fingerprints exist but interpretation rows are unavailable
-- avoid showing this as a legislator-not-found error in the voter flow
-- clarify alignment card copy so `0 interpreted` does not imply no classified roll calls exist
+- record that running `npm run build` over an active Next dev server can reproduce the stale Webpack runtime overlay
+- preserve the cache reset workflow now proven by browser QA
 
 ## Verification Already Run
 
@@ -97,6 +98,7 @@ Reported results:
 - in-app browser is now unblocked after starting backend/frontend servers
 - stale `__webpack_modules__[moduleId] is not a function` overlay was fixed by stopping Next, deleting `frontend/.next`, and restarting dev server
 - browser QA passed for ZIP lookup, opening a House profile, selecting an issue, insufficient-evidence alignment fallback, alignment evidence, Quick Read evidence, and comparison supporting context
+- mobile-sized browser smoke check passed after clearing `frontend/.next` and restarting Next dev
 - `$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_db_read_layer.py tests\test_api_alignment.py` passed (`11 passed`)
 - `cd frontend; npm run build` passed after the alignment copy fix
 
@@ -109,19 +111,11 @@ Remove-Item -LiteralPath frontend\.next -Recurse -Force
 Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p','3000' -WorkingDirectory '<repo>\frontend' -WindowStyle Hidden
 ```
 
-Current checkpoint still needs commit:
-
-```powershell
-git add backend/app/api/precomputed.py backend/tests/test_db_read_layer.py frontend/components/AlignmentPanel.js docs/autonomous_handoff.md
-git commit -m "Handle missing alignment interpretations"
-```
-
 ## Next Product Tasks After Commit
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Continue mobile viewport visual QA now that browser access is working.
-2. Resolve or quarantine the local `backend/.pytest_tmp` permission warning if it starts blocking tooling.
+1. Resolve or quarantine the local `backend/.pytest_tmp` permission warning if it starts blocking tooling.
 
 ## Operating Mode
 
