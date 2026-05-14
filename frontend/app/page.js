@@ -8,6 +8,7 @@ import FingerprintRadar from "../components/FingerprintRadar";
 import ComparisonPanel from "../components/ComparisonPanel";
 import LegislatorPicker from "../components/LegislatorPicker";
 import PositionByIssue from "../components/PositionByIssue";
+import ProfileQuickRead from "../components/ProfileQuickRead";
 import SummaryPanel from "../components/SummaryPanel";
 import ZipLookupPanel from "../components/ZipLookupPanel";
 
@@ -86,6 +87,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <ProfileQuickRead legislator={selectedLegislator} />
 
         <LegislatorPicker
           onSelect={setSelectedLegislator}

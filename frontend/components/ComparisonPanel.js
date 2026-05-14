@@ -41,6 +41,19 @@ export default function ComparisonPanel({
   }, [seedPair?.left?.id, seedPair?.right?.id]);
 
   useEffect(() => {
+    setSelected((current) => {
+      if (!defaultLeftLegislator?.id || current.left.id === defaultLeftLegislator.id) {
+        return current;
+      }
+
+      return {
+        ...current,
+        left: defaultLeftLegislator,
+      };
+    });
+  }, [defaultLeftLegislator?.id]);
+
+  useEffect(() => {
     let active = true;
 
     startTransition(() => {
