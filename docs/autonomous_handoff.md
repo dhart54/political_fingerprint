@@ -57,23 +57,19 @@ Last updated: 2026-05-14
 - Accessibility/mobile readiness:
   - committed as `11233a4 Add accessibility mobile checklist`
   - accessible names, selected states, and manual mobile QA checklist are in place
+- Monitoring docs:
+  - committed as `316ae36 Document lightweight monitoring`
+  - Render/Vercel checks, privacy-safe logging, and release checklist are documented
 
 ## Active Checkpoint
 
-Checkpoint target: `Document lightweight monitoring`.
+No active uncommitted checkpoint.
 
-Files in this checkpoint:
+Last clean checkpoint:
 
-- `README.md`
-- `docs/monitoring.md`
-- `docs/product_v2_tasklist.md`
-- `docs/autonomous_handoff.md`
+- `316ae36 Document lightweight monitoring`
 
-Intent of current changes:
-
-- add basic Render/Vercel monitoring guidance
-- document privacy-safe logging guardrails
-- add a manual release checklist
+If work resumes, start with browser-based desktop/mobile QA once localhost access is unblocked.
 
 ## Verification Already Run
 
@@ -92,10 +88,6 @@ Reported results:
 - `$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_api_metadata.py tests\test_api_lookup.py` passed (`6 passed`)
 - `cd frontend; npm run build` passed
 - browser smoke test attempted, but the in-app browser blocked `http://127.0.0.1:3000/` and `http://localhost:3000/` with `ERR_BLOCKED_BY_CLIENT`
-
-Current checkpoint still needs verification:
-
-- docs-only checkpoint; no build required
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
