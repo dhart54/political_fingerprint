@@ -58,6 +58,27 @@ const STANCE_OPTIONS = [
   },
 ];
 
+const STARTER_CHECKS = [
+  {
+    id: "costs",
+    label: "Cost of Living",
+    description: "Taxes, services, infrastructure, and household-cost votes",
+    domains: ["ECONOMY_TAXES", "HEALTH_SOCIAL", "INFRASTRUCTURE_TECH_TRANSPORT"],
+  },
+  {
+    id: "community",
+    label: "Community Safety",
+    description: "Courts, public safety, immigration systems, and local capacity",
+    domains: ["JUSTICE_PUBLIC_SAFETY", "IMMIGRATION_BORDER", "INFRASTRUCTURE_TECH_TRANSPORT"],
+  },
+  {
+    id: "future",
+    label: "Future Investment",
+    description: "Schools, workforce, energy, technology, and transportation",
+    domains: ["EDUCATION_WORKFORCE", "ENVIRONMENT_ENERGY", "INFRASTRUCTURE_TECH_TRANSPORT"],
+  },
+];
+
 export default function IssuePreferencePanel({ preferences, onChange }) {
   const selectedCount = Object.keys(preferences).length;
 
@@ -82,6 +103,18 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
     });
   }
 
+  function applyStarterCheck(starterCheck) {
+    const nextPreferences = { ...preferences };
+    starterCheck.domains.forEach((domain) => {
+      nextPreferences[domain] = preferences[domain] || "show_record";
+    });
+    onChange(nextPreferences);
+  }
+
+  function clearPreferences() {
+    onChange({});
+  }
+
   return (
     <section className="mt-8 rounded-[2rem] border border-stone-200 bg-white px-5 py-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] lg:px-6">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
@@ -96,9 +129,41 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
             This does not change the politician's record. It tells the site which issues to inspect first when alignment is available.
           </p>
         </div>
-        <div className="rounded-full border border-cyan-900/10 bg-cyan-50 px-4 py-2 text-xs uppercase tracking-[0.22em] text-cyan-900">
-          {selectedCount} selected
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="rounded-full border border-cyan-900/10 bg-cyan-50 px-4 py-2 text-xs uppercase tracking-[0.22em] text-cyan-900">
+            {selectedCount} selected
+          </div>
+          {selectedCount > 0 ? (
+            <button
+              className="rounded-full border border-stone-300 bg-white px-4 py-2 text-xs uppercase tracking-[0.18em] text-stone-700"
+              onClick={clearPreferences}
+              type="button"
+            >
+              Clear
+            </button>
+          ) : null}
         </div>
+      </div>
+
+      <div className="mt-5 grid gap-3 lg:grid-cols-3">
+        {STARTER_CHECKS.map((starterCheck) => (
+          <button
+            className="rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4 text-left transition hover:border-cyan-700/50 hover:bg-cyan-50"
+            key={starterCheck.id}
+            onClick={() => applyStarterCheck(starterCheck)}
+            type="button"
+          >
+            <span className="text-xs uppercase tracking-[0.24em] text-cyan-800">
+              Starter Check
+            </span>
+            <span className="mt-2 block text-[18px] leading-6 text-stone-950">
+              {starterCheck.label}
+            </span>
+            <span className="mt-2 block text-sm leading-6 text-stone-600">
+              {starterCheck.description}
+            </span>
+          </button>
+        ))}
       </div>
 
       <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">

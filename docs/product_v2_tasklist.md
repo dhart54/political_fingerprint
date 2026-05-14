@@ -69,10 +69,13 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Add production deployment docs for Render and Vercel.
 - [x] Add lightweight error monitoring guidance.
 - [x] Add accessibility and mobile layout checks for the full voter journey.
+- [x] Add neutral starter issue checks to reduce first-use friction.
+- [x] Auto-open the ZIP-mapped House profile after lookup.
+- [x] Make evidence source URLs clickable in vote drilldowns.
 
 ## Working Priority
 
 Current next build target:
 
-1. Run browser-based desktop/mobile QA once localhost access is unblocked.
+1. Continue product QA from the selected-issue comparison section.
 2. Use `pytest --basetemp=..\.local\pytest_basetemp` for full Windows fixture-mode test runs.

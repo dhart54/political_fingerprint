@@ -283,7 +283,7 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
               </div>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <Meta label="Classification" value={row.classification_reason} />
-                <Meta label="Source" value={row.source_url || "No source URL"} />
+                <Meta href={row.source_url} label="Source" value={row.source_url || "No source URL"} />
               </div>
             </article>
           ))}
@@ -331,11 +331,22 @@ function getVoteBadgeClass(position) {
   return "bg-stone-200 text-stone-700";
 }
 
-function Meta({ label, value }) {
+function Meta({ href, label, value }) {
   return (
     <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
       <p className="text-xs uppercase tracking-[0.2em] text-stone-500">{label}</p>
-      <p className="mt-2 break-words text-sm leading-6 text-stone-700">{value}</p>
+      {href ? (
+        <a
+          className="mt-2 block break-all text-sm leading-6 text-cyan-800 underline decoration-cyan-800/30 underline-offset-4"
+          href={href}
+          rel="noreferrer"
+          target="_blank"
+        >
+          {value}
+        </a>
+      ) : (
+        <p className="mt-2 break-words text-sm leading-6 text-stone-700">{value}</p>
+      )}
     </div>
   );
 }

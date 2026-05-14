@@ -46,6 +46,15 @@ export default function ZipLookupPanel({
         payload,
         error: null,
       });
+      if (payload.house_rep) {
+        onSelectLegislator?.(payload.house_rep);
+      }
+      if (payload.house_rep && payload.senators?.[0]) {
+        onComparePair?.({
+          left: payload.house_rep,
+          right: payload.senators[0],
+        });
+      }
     } catch (error) {
       const suggestions = buildZipSuggestion(supportedZips.zips);
       setState({
