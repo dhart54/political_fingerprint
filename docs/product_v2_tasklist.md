@@ -11,7 +11,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Update `docs/methodology.md` to document Product v2 methodology.
 - [x] Split local verification into fixture-mode and Supabase-mode test commands.
 - [x] Document the Windows Next.js cache reset workflow.
-- [ ] Fix or quarantine the locked `backend/.pytest_tmp` local permission issue.
+- [x] Fix or quarantine the locked `backend/.pytest_tmp` local permission issue.
 
 ## Phase 2 - Evidence Drilldown
 
@@ -75,4 +75,4 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 Current next build target:
 
 1. Run browser-based desktop/mobile QA once localhost access is unblocked.
-2. Resolve or quarantine the local `backend/.pytest_tmp` permission warning if it starts blocking tooling.
+2. Use `pytest --basetemp=..\.local\pytest_basetemp` for full Windows fixture-mode test runs.

@@ -64,20 +64,28 @@ Last updated: 2026-05-14
   - committed as `af1178d Handle missing alignment interpretations`
   - database-backed alignment now returns insufficient-evidence rows when interpretation rows are unavailable
   - alignment copy now says `0 interpreted` rather than implying no classified roll calls exist
+- Browser QA cache workflow:
+  - committed as `4c64035 Record browser QA cache workflow`
+  - Windows Next dev cache reset notes are documented
 
 ## Active Checkpoint
 
-Checkpoint target: `Record browser QA cache workflow`.
+Checkpoint target: `Stabilize full Windows test run`.
 
 Files in this checkpoint:
 
+- `.gitignore`
+- `backend/tests/test_etl_scaffold.py`
 - `docs/development_workflow.md`
+- `docs/product_v2_tasklist.md`
 - `docs/autonomous_handoff.md`
 
 Intent of current changes:
 
-- record that running `npm run build` over an active Next dev server can reproduce the stale Webpack runtime overlay
-- preserve the cache reset workflow now proven by browser QA
+- ignore repo-local `backend/.pytest_tmp/`
+- document `pytest --basetemp=..\.local\pytest_basetemp` for Windows test runs
+- document that Codex desktop may need elevated execution for pytest `tmp_path` tests
+- make cache-ingest scaffold tests accept real cached data counts instead of assuming tiny sample counts
 
 ## Verification Already Run
 
@@ -101,6 +109,8 @@ Reported results:
 - mobile-sized browser smoke check passed after clearing `frontend/.next` and restarting Next dev
 - `$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_db_read_layer.py tests\test_api_alignment.py` passed (`11 passed`)
 - `cd frontend; npm run build` passed after the alignment copy fix
+- full `pytest` without `--basetemp` is blocked by `C:\Users\Dylan\AppData\Local\Temp\pytest-of-Dylan` permissions
+- `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp` passed outside the sandbox (`144 passed`)
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -115,7 +125,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Resolve or quarantine the local `backend/.pytest_tmp` permission warning if it starts blocking tooling.
+1. Commit the full-test stabilization checkpoint.
 
 ## Operating Mode
 

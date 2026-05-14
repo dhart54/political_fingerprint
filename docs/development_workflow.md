@@ -11,7 +11,7 @@ Backend focused tests:
 ```powershell
 cd backend
 $env:DATABASE_URL='postgresql://invalid'
-pytest tests\test_api_alignment.py tests\test_api_compare.py
+pytest --basetemp=..\.local\pytest_basetemp tests\test_api_alignment.py tests\test_api_compare.py
 ```
 
 Backend full tests:
@@ -19,8 +19,12 @@ Backend full tests:
 ```powershell
 cd backend
 $env:DATABASE_URL='postgresql://invalid'
-pytest
+pytest --basetemp=..\.local\pytest_basetemp
 ```
+
+Use `--basetemp=..\.local\pytest_basetemp` on Windows so pytest writes temporary files inside the repo workspace instead of `AppData\Local\Temp`, which can be permission-blocked in this environment. `.local/` and `backend/.pytest_tmp/` are ignored by Git.
+
+In Codex desktop, tests that use pytest `tmp_path` may still need approval to run outside the sandbox. If the suite fails with `PermissionError` while creating or cleaning the basetemp directory, rerun the same command with elevated execution.
 
 Frontend build:
 
