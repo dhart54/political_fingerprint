@@ -30,3 +30,7 @@ Use [docs/deployment.md](/mnt/c/Users/Dylan/Documents/Data%20Science/political_f
 ## Accessibility and Mobile Checks
 
 Use [docs/accessibility_mobile_checklist.md](/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/accessibility_mobile_checklist.md) before sharing the voter journey outside development.
+
+## Monitoring
+
+Use [docs/monitoring.md](/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/monitoring.md) for the lightweight production monitoring and privacy guardrails.

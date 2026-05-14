@@ -54,28 +54,26 @@ Last updated: 2026-05-14
 - Deployment docs:
   - committed as `89de46b Document production deployment`
   - Render/Vercel setup, env vars, CORS, checks, and cost notes are documented
+- Accessibility/mobile readiness:
+  - committed as `11233a4 Add accessibility mobile checklist`
+  - accessible names, selected states, and manual mobile QA checklist are in place
 
 ## Active Checkpoint
 
-Checkpoint target: `Add accessibility and mobile readiness pass`.
+Checkpoint target: `Document lightweight monitoring`.
 
 Files in this checkpoint:
 
 - `README.md`
-- `docs/accessibility_mobile_checklist.md`
-- `frontend/components/ComparisonPanel.js`
-- `frontend/components/IssuePreferencePanel.js`
-- `frontend/components/LegislatorPicker.js`
-- `frontend/components/ZipLookupPanel.js`
+- `docs/monitoring.md`
 - `docs/product_v2_tasklist.md`
 - `docs/autonomous_handoff.md`
 
 Intent of current changes:
 
-- add accessible names for ZIP and legislator search inputs
-- expose selected state with `aria-pressed` on toggle-like controls
-- add clearer labels for comparison and ZIP shortcut buttons
-- document the manual accessibility/mobile voter-journey checklist
+- add basic Render/Vercel monitoring guidance
+- document privacy-safe logging guardrails
+- add a manual release checklist
 
 ## Verification Already Run
 
@@ -97,7 +95,7 @@ Reported results:
 
 Current checkpoint still needs verification:
 
-- `cd frontend; npm run build` passed
+- docs-only checkpoint; no build required
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -112,7 +110,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Add lightweight error monitoring guidance.
+1. Run browser-based desktop/mobile QA once localhost access is unblocked.
+2. Resolve or quarantine the local `backend/.pytest_tmp` permission warning if it starts blocking tooling.
 
 ## Operating Mode
 

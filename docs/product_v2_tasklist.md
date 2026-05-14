@@ -67,11 +67,12 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Improve ZIP coverage beyond fixture/demo mappings.
 - [x] Surface data freshness and source coverage in the first viewport.
 - [x] Add production deployment docs for Render and Vercel.
-- [ ] Add lightweight error monitoring guidance.
+- [x] Add lightweight error monitoring guidance.
 - [x] Add accessibility and mobile layout checks for the full voter journey.
 
 ## Working Priority
 
 Current next build target:
 
-1. Add lightweight error monitoring guidance.
+1. Run browser-based desktop/mobile QA once localhost access is unblocked.
+2. Resolve or quarantine the local `backend/.pytest_tmp` permission warning if it starts blocking tooling.
