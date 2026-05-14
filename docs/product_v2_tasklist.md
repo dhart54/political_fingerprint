@@ -1,0 +1,81 @@
+# Product v2 Autonomous Tasklist
+
+This tasklist moves Political Fingerprint from an MVP dashboard into a quick voter-facing product for checking whether current officials' recorded votes align with issues the user cares about.
+
+Core rule: inform the user, do not persuade the user. The product may show evidence-based alignment relative to user-selected preferences. It must not tell the user how to vote.
+
+## Phase 1 - Trust Rules and Local Stability
+
+- [x] Update `AGENTS.md` to allow Product v2 alignment, vote interpretation, and evidence drilldown.
+- [x] Update `CONSTRAINTS.md` with vote-interpretation and user-alignment constraints.
+- [x] Update `docs/methodology.md` to document Product v2 methodology.
+- [ ] Split local verification into fixture-mode and Supabase-mode test commands.
+- [ ] Document the Windows Next.js cache reset workflow.
+- [ ] Fix or quarantine the locked `backend/.pytest_tmp` local permission issue.
+
+## Phase 2 - Evidence Drilldown
+
+- [x] Add backend read support for the votes behind a legislator/domain pair.
+- [x] Return roll call date, bill title, question, description, vote position, classification reason, score breakdown, and source URL.
+- [x] Add tests for the evidence endpoint response shape.
+- [x] Add a frontend domain drilldown panel from `Position by Issue`.
+- [ ] Make each quick-read claim traceable to the relevant evidence rows.
+
+## Phase 3 - Vote Interpretation Foundation
+
+- [ ] Add `vote_interpretations` migration.
+- [ ] Add deterministic interpretation types and statuses.
+- [ ] Build an initial deterministic interpreter for obvious bill-passage and amendment cases.
+- [ ] Mark ambiguous roll calls as `ambiguous` or `insufficient_evidence`.
+- [ ] Persist interpretation records during ETL.
+- [ ] Add tests for unambiguous and ambiguous interpretation cases.
+- [ ] Update methodology with exact interpretation rules.
+
+## Phase 4 - Issue Preference Onboarding
+
+- [ ] Add a short preference picker using the 8 issue domains.
+- [ ] Let users mark each selected issue as "support more action", "oppose more action", or "just show me the record" where interpretation supports it.
+- [ ] Keep language plain and nonpartisan.
+- [ ] Store preferences client-side for the current session.
+- [ ] Add empty, mixed, and insufficient-evidence states.
+
+## Phase 5 - User Alignment API
+
+- [ ] Add an alignment endpoint that accepts explicit preference inputs.
+- [ ] Compute lightweight alignment from stored vote interpretations and votes.
+- [ ] Return aligned, not aligned, mixed, or insufficient_evidence per issue.
+- [ ] Include evidence counts and underlying vote ids.
+- [ ] Add tests proving ambiguous votes do not count toward alignment.
+
+## Phase 6 - Alignment UI
+
+- [ ] Add a "Your Issues" read after ZIP lookup.
+- [ ] Show each official against the same selected preferences.
+- [ ] Use counts and labels instead of scores or rankings.
+- [ ] Make evidence drilldown one click away from every alignment label.
+- [ ] Preserve neutral copy: no "vote for", "vote against", or candidate recommendation language.
+
+## Phase 7 - Comparison Reframe
+
+- [ ] Reframe comparison around user-selected issues, not generic politician-vs-politician contrast.
+- [ ] Compare House rep and senators against the same preference set.
+- [ ] Show where records are aligned, not aligned, mixed, or insufficiently evidenced.
+- [ ] Keep the current generic comparison as a secondary exploration tool only if it remains useful.
+
+## Phase 8 - Launch Usefulness
+
+- [ ] Improve ZIP coverage beyond fixture/demo mappings.
+- [ ] Surface data freshness and source coverage in the first viewport.
+- [ ] Add production deployment docs for Render and Vercel.
+- [ ] Add lightweight error monitoring guidance.
+- [ ] Add accessibility and mobile layout checks for the full voter journey.
+
+## Working Priority
+
+Current next build target:
+
+1. Evidence drilldown endpoint.
+2. Position-by-issue drilldown UI.
+3. Vote interpretation migration and deterministic seed.
+4. Preference picker.
+5. Alignment endpoint and UI.

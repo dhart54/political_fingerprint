@@ -20,6 +20,7 @@ This platform:
 - Does NOT make moral judgments
 - Does NOT rank politicians
 - Does NOT infer motives or causality
+- Lets users compare their own stated issue preferences against observable voting records
 
 Explicitly prohibited:
 
@@ -29,14 +30,18 @@ Explicitly prohibited:
 - Predictive modeling
 - Net worth analysis
 - Composite influence scoring
+- Prescriptive voting advice ("vote for", "vote against", "should vote for")
+- Personalized electoral persuasion
 
 If a requested feature violates this, STOP and ask for clarification.
 
 ---
 
-# MVP Scope (STRICT)
+# Product Scope
 
-MVP includes ONLY:
+The original MVP is complete. Product v2 may build beyond the MVP when the work preserves the locked product identity and deterministic methodology.
+
+Core product surfaces:
 
 1. Behavioral Fingerprint
    - Based on categorized policy votes only
@@ -60,7 +65,24 @@ MVP includes ONLY:
 4. ZIP code lookup
    - Returns House rep and both Senators
 
-Do not implement phase-2 features unless explicitly instructed.
+5. Position by Issue
+   - Shows recorded yea/nay behavior within issue domains
+   - Descriptive only
+   - Does not infer ideology, motive, or causal explanations
+
+6. User-defined issue alignment
+   - Users may select issue domains and preference directions
+   - Alignment must be computed from stored votes, stored classifications, and deterministic vote-interpretation records
+   - Alignment language must be evidence-based: aligned, not aligned, mixed, or insufficient evidence
+   - Alignment must never become a politician ranking or voting recommendation
+
+7. Evidence drilldown
+   - Every alignment or vote-direction claim must be traceable to underlying roll calls, bill metadata, vote position, classification reason, and source URL when available
+
+8. Vote interpretation
+   - Interpretation of what yea/nay meant may be stored and surfaced only when source-grounded
+   - Ambiguous or unsupported vote meaning must be marked insufficient evidence
+   - LLMs may help draft cached plain-language explanations, but may not decide vote classification, eligibility, vote meaning, or alignment
 
 ---
 
@@ -142,6 +164,9 @@ All computed outputs must be stored in tables:
 - drift_scores
 - vote_classifications
 - summaries
+- vote_interpretations
+
+User-specific alignment may be computed on request from precomputed vote_interpretations and the user's explicit preferences, because preferences are session inputs. Heavy shared aggregates must still be precomputed.
 
 API endpoints must read from precomputed tables, not compute on request.
 
@@ -160,13 +185,15 @@ ETL must be:
 
 # Summary Generation Rules
 
-Summary text must be:
+Summary and explainer text must be:
 
 Allowed:
 
 - Descriptive
 - Statistical
 - Neutral
+- Source-grounded
+- Explicit about insufficient evidence
 
 Forbidden words:
 
@@ -179,6 +206,15 @@ Forbidden words:
 - bought
 
 If these appear, rewrite summary.
+
+Forbidden directives:
+
+- "you should vote for"
+- "you should vote against"
+- "support this candidate"
+- "oppose this candidate"
+
+If these appear, rewrite the text into neutral evidence language.
 
 ---
 

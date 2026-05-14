@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { fetchPositions } from "../lib/api";
+import { fetchPositionEvidence, fetchPositions } from "../lib/api";
 
 export default function PositionByIssue({
   legislatorId = "leg_alex_morgan",
@@ -10,6 +10,12 @@ export default function PositionByIssue({
 }) {
   const [state, setState] = useState({
     status: "loading",
+    payload: null,
+    error: null,
+  });
+  const [selectedDomain, setSelectedDomain] = useState(null);
+  const [evidenceState, setEvidenceState] = useState({
+    status: "idle",
     payload: null,
     error: null,
   });
@@ -47,11 +53,45 @@ export default function PositionByIssue({
     };
   }, [legislatorId]);
 
+  useEffect(() => {
+    setSelectedDomain(null);
+    setEvidenceState({
+      status: "idle",
+      payload: null,
+      error: null,
+    });
+  }, [legislatorId]);
+
   const rows = (state.payload?.positions || [])
     .filter((row) => row.recorded_votes > 0)
     .sort((left, right) => right.recorded_votes - left.recorded_votes || right.yea_share - left.yea_share)
     .slice(0, 6);
   const takeaway = buildTakeaway(rows);
+  const selectedRow = rows.find((row) => row.domain === selectedDomain) || rows[0] || null;
+
+  async function inspectDomain(domain) {
+    setSelectedDomain(domain);
+    setEvidenceState({
+      status: "loading",
+      payload: null,
+      error: null,
+    });
+
+    try {
+      const payload = await fetchPositionEvidence({ legislatorId, domain });
+      setEvidenceState({
+        status: "ready",
+        payload,
+        error: null,
+      });
+    } catch (error) {
+      setEvidenceState({
+        status: "error",
+        payload: null,
+        error: "The vote evidence for this issue is unavailable right now.",
+      });
+    }
+  }
 
   return (
     <section className="mt-8 rounded-[2rem] border border-stone-200 bg-white p-5 shadow-[0_18px_48px_rgba(15,23,42,0.1)] lg:p-6">
@@ -92,9 +132,15 @@ export default function PositionByIssue({
             </div>
           ) : null}
           {rows.map((row) => (
-            <article
-              className="rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]"
+            <button
+              className={`rounded-[1.25rem] border px-4 py-4 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition ${
+                selectedDomain === row.domain
+                  ? "border-cyan-800 bg-cyan-50"
+                  : "border-stone-200 bg-stone-50 hover:border-cyan-700/50"
+              }`}
               key={row.domain}
+              onClick={() => inspectDomain(row.domain)}
+              type="button"
             >
               <div className="flex items-start justify-between gap-3">
                 <p className="max-w-[200px] text-[16px] leading-7 text-stone-900">
@@ -136,11 +182,100 @@ export default function PositionByIssue({
                   />
                 </div>
               </div>
-            </article>
+            </button>
           ))}
         </div>
       </div>
+
+      <EvidencePanel
+        evidenceState={evidenceState}
+        onInspectDomain={inspectDomain}
+        selectedRow={selectedRow}
+      />
     </section>
+  );
+}
+
+function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
+  if (!selectedRow) {
+    return null;
+  }
+
+  const evidenceRows = evidenceState.payload?.evidence || [];
+  const isSelected = evidenceState.payload?.domain === selectedRow.domain;
+
+  return (
+    <div className="mt-5 rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4 lg:px-5">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.28em] text-stone-500">
+            Evidence
+          </p>
+          <h4 className="mt-2 font-serif text-[2rem] leading-none text-stone-950">
+            {formatDomainLabel(selectedRow.domain)}
+          </h4>
+        </div>
+        <button
+          className="rounded-full bg-stone-900 px-4 py-2 text-xs uppercase tracking-[0.22em] text-stone-100"
+          onClick={() => onInspectDomain(selectedRow.domain)}
+          type="button"
+        >
+          Show Votes
+        </button>
+      </div>
+
+      {evidenceState.status === "idle" ? (
+        <p className="mt-4 text-sm leading-7 text-stone-700">
+          Select an issue card or use Show Votes to inspect the roll calls behind this read.
+        </p>
+      ) : null}
+      {evidenceState.status === "loading" ? (
+        <p className="mt-4 text-sm leading-7 text-stone-700">
+          Loading underlying votes...
+        </p>
+      ) : null}
+      {evidenceState.status === "error" ? (
+        <p className="mt-4 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm leading-6 text-rose-700">
+          {evidenceState.error}
+        </p>
+      ) : null}
+      {evidenceState.status === "ready" && isSelected && evidenceRows.length === 0 ? (
+        <p className="mt-4 rounded-2xl border border-stone-200 bg-white px-4 py-3 text-sm leading-6 text-stone-700">
+          No underlying vote rows are available for this issue in the current window.
+        </p>
+      ) : null}
+      {evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (
+        <div className="mt-4 grid gap-3">
+          {evidenceRows.map((row) => (
+            <article
+              className="rounded-[1.1rem] border border-stone-200 bg-white px-4 py-4"
+              key={`${row.roll_call_id}-${row.position}`}
+            >
+              <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.24em] text-stone-500">
+                    {formatDate(row.vote_date)} - {formatChamber(row.chamber)} Roll {row.rollcall_number}
+                  </p>
+                  <h5 className="mt-2 text-[17px] leading-7 text-stone-950">
+                    {row.bill_title || row.question}
+                  </h5>
+                  <p className="mt-2 text-sm leading-6 text-stone-700">
+                    {row.description}
+                  </p>
+                </div>
+                <span className={`w-fit rounded-full px-3 py-1 text-xs uppercase tracking-[0.2em] ${getVoteBadgeClass(row.position)}`}>
+                  {formatVotePosition(row.position)}
+                </span>
+              </div>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <Meta label="Classification" value={row.classification_reason} />
+                <Meta label="Source" value={row.source_url || "No source URL"} />
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : null}
+    </div>
   );
 }
 
@@ -149,6 +284,46 @@ function formatDomainLabel(domain) {
     .split("_")
     .map((segment) => segment[0] + segment.slice(1).toLowerCase())
     .join(" ");
+}
+
+function formatChamber(chamber) {
+  return chamber ? chamber[0].toUpperCase() + chamber.slice(1) : "";
+}
+
+function formatDate(value) {
+  if (!value) {
+    return "Unknown date";
+  }
+  return String(value).slice(0, 10);
+}
+
+function formatVotePosition(position) {
+  if (position === "not_voting") {
+    return "Not voting";
+  }
+  return String(position)
+    .split("_")
+    .map((segment) => segment[0].toUpperCase() + segment.slice(1))
+    .join(" ");
+}
+
+function getVoteBadgeClass(position) {
+  if (position === "yea") {
+    return "bg-emerald-100 text-emerald-800";
+  }
+  if (position === "nay") {
+    return "bg-rose-100 text-rose-800";
+  }
+  return "bg-stone-200 text-stone-700";
+}
+
+function Meta({ label, value }) {
+  return (
+    <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
+      <p className="text-xs uppercase tracking-[0.2em] text-stone-500">{label}</p>
+      <p className="mt-2 break-words text-sm leading-6 text-stone-700">{value}</p>
+    </div>
+  );
 }
 
 function buildTakeaway(rows) {

@@ -59,6 +59,18 @@ export async function fetchPositions({ legislatorId }) {
   return response.json();
 }
 
+export async function fetchPositionEvidence({ legislatorId, domain }) {
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/positions/${domain}/evidence`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Position evidence request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchSummary({ legislatorId }) {
   const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/summary`, {
     cache: "no-store",

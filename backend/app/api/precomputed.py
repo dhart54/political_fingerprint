@@ -123,6 +123,24 @@ def get_position_response(*, legislator_id: str) -> dict[str, object] | None:
     return _get_fallback_position_response(legislator_id=legislator_id)
 
 
+def get_position_evidence_response(*, legislator_id: str, domain: str) -> dict[str, object] | None:
+    normalized_domain = domain.strip().upper()
+    if normalized_domain not in DOMAIN_ORDER:
+        return None
+
+    db_response = _get_db_position_evidence_response(
+        legislator_id=legislator_id,
+        domain=normalized_domain,
+    )
+    if db_response is not None:
+        return db_response
+
+    return _get_fallback_position_evidence_response(
+        legislator_id=legislator_id,
+        domain=normalized_domain,
+    )
+
+
 def get_summary_response(*, legislator_id: str) -> dict[str, object] | None:
     db_response = _get_db_summary_response(legislator_id=legislator_id)
     if db_response is not None:
@@ -310,6 +328,38 @@ def _get_db_position_response(*, legislator_id: str) -> dict[str, object] | None
     }
 
 
+def _get_db_position_evidence_response(*, legislator_id: str, domain: str) -> dict[str, object] | None:
+    legislator = _get_db_legislator_by_external_id(legislator_id)
+    if legislator is None:
+        return None
+
+    fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    if fingerprint_rows is None:
+        return None
+    if not fingerprint_rows:
+        return None
+
+    first_row = fingerprint_rows[0]
+    evidence_rows = _get_db_position_evidence_rows(
+        legislator_db_id=int(legislator["id"]),
+        domain=domain,
+        window_start=str(first_row["window_start"]),
+        window_end=str(first_row["window_end"]),
+        classification_version=str(first_row["classification_version"]),
+    )
+    if evidence_rows is None:
+        return None
+
+    return {
+        "legislator_id": legislator_id,
+        "domain": domain,
+        "window_start": str(first_row["window_start"]),
+        "window_end": str(first_row["window_end"]),
+        "classification_version": str(first_row["classification_version"]),
+        "evidence": [_serialize_evidence_row(row) for row in evidence_rows],
+    }
+
+
 def _get_db_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
     zip_record = _get_db_zip_record(zip_code=zip_code)
     if zip_record is None:
@@ -462,6 +512,71 @@ def _get_fallback_position_response(*, legislator_id: str) -> dict[str, object] 
     }
 
 
+def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str) -> dict[str, object] | None:
+    fingerprint_rows = [
+        row
+        for row in FALLBACK_PRECOMPUTED_DATA.fingerprint_records
+        if row.legislator_id == legislator_id
+    ]
+    if not fingerprint_rows:
+        return None
+
+    first_row = fingerprint_rows[0]
+    roll_calls_by_id = {row["id"]: row for row in FALLBACK_FIXTURE_DATA.roll_calls}
+    bills_by_id = {row["id"]: row for row in FALLBACK_FIXTURE_DATA.bills}
+    classification_result = {
+        row.roll_call_id: row
+        for row in run_classification(
+            run_ingest(),
+            classification_version=first_row.classification_version,
+        ).classified_roll_calls
+    }
+
+    evidence_rows = []
+    for vote in FALLBACK_FIXTURE_DATA.votes_cast:
+        if vote["legislator_id"] != legislator_id:
+            continue
+        classified = classification_result.get(vote["roll_call_id"])
+        if (
+            classified is None
+            or not classified.is_eligible
+            or classified.primary_domain != domain
+        ):
+            continue
+        roll_call = roll_calls_by_id[vote["roll_call_id"]]
+        vote_date = str(roll_call["vote_date"])
+        if not (first_row.window_start.isoformat() <= vote_date <= first_row.window_end.isoformat()):
+            continue
+        bill = bills_by_id.get(str(roll_call.get("bill_ref")))
+        evidence_rows.append(
+            {
+                "roll_call_id": str(roll_call["id"]),
+                "vote_date": vote_date,
+                "chamber": str(roll_call["chamber"]),
+                "congress": int(roll_call["congress"]),
+                "rollcall_number": int(roll_call["rollcall_number"]),
+                "position": str(vote["position"]),
+                "question": str(roll_call["question"]),
+                "description": str(roll_call["description"]),
+                "bill_title": str(bill["title"]) if bill is not None else None,
+                "bill_summary": str(bill["summary"]) if bill is not None else None,
+                "classification_reason": str(classified.eligibility_reason),
+                "score_breakdown": classified.score_breakdown,
+                "source_url": roll_call.get("source_url"),
+            }
+        )
+
+    evidence_rows.sort(key=lambda row: (str(row["vote_date"]), int(row["rollcall_number"])))
+    return {
+        "legislator_id": legislator_id,
+        "domain": domain,
+        "window_start": first_row.window_start.isoformat(),
+        "window_end": first_row.window_end.isoformat(),
+        "classification_version": first_row.classification_version,
+        "evidence": evidence_rows,
+    }
+
+
 def _search_db_legislators(*, query: str) -> list[dict[str, object]] | None:
     normalized_query = query.strip().lower()
     search_value = f"%{normalized_query}%"
@@ -607,6 +722,45 @@ def _get_db_position_rows(
     )
 
 
+def _get_db_position_evidence_rows(
+    *,
+    legislator_db_id: int,
+    domain: str,
+    window_start: str,
+    window_end: str,
+    classification_version: str,
+) -> list[dict[str, Any]] | None:
+    return _query_all_dicts(
+        """
+        SELECT
+            rc.id AS roll_call_id,
+            rc.vote_date,
+            rc.chamber,
+            rc.congress,
+            rc.rollcall_number,
+            vc.position,
+            rc.question,
+            rc.description,
+            b.title AS bill_title,
+            b.summary AS bill_summary,
+            vcf.eligibility_reason AS classification_reason,
+            vcf.score_breakdown,
+            rc.source_url
+        FROM votes_cast vc
+        JOIN roll_calls rc ON rc.id = vc.roll_call_id
+        JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        LEFT JOIN bills b ON b.id = rc.bill_id
+        WHERE vc.legislator_id = %s
+          AND vcf.is_eligible = TRUE
+          AND vcf.primary_domain = %s
+          AND vcf.classification_version = %s
+          AND DATE(rc.vote_date) BETWEEN %s AND %s
+        ORDER BY rc.vote_date, rc.rollcall_number
+        """,
+        (legislator_db_id, domain, classification_version, window_start, window_end),
+    )
+
+
 def _get_db_zip_record(*, zip_code: str) -> dict[str, Any] | None:
     return _query_one_dict(
         """
@@ -666,6 +820,24 @@ def _query_one_dict(query: str, params: tuple[Any, ...] = ()) -> dict[str, Any] 
     if rows is None or not rows:
         return None
     return rows[0]
+
+
+def _serialize_evidence_row(row: dict[str, Any]) -> dict[str, object]:
+    return {
+        "roll_call_id": str(row["roll_call_id"]),
+        "vote_date": str(row["vote_date"]),
+        "chamber": str(row["chamber"]),
+        "congress": int(row["congress"]),
+        "rollcall_number": int(row["rollcall_number"]),
+        "position": str(row["position"]),
+        "question": str(row["question"]),
+        "description": str(row["description"]),
+        "bill_title": None if row.get("bill_title") is None else str(row["bill_title"]),
+        "bill_summary": None if row.get("bill_summary") is None else str(row["bill_summary"]),
+        "classification_reason": str(row["classification_reason"]),
+        "score_breakdown": row.get("score_breakdown") or {},
+        "source_url": row.get("source_url"),
+    }
 
 
 def _infer_fallback_legislator_chamber(legislator_id: str) -> str:
