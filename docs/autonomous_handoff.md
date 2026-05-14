@@ -31,29 +31,31 @@ Last updated: 2026-05-14
   - committed as `fff81f8 Reframe comparison around selected issues`
   - comparison accepts the same issue preferences used by the alignment panel
   - both comparison sides show a `Your Issues` aligned/not-aligned/mixed/insufficient count
+- Alignment state polish:
+  - committed as `1e88a90 Polish alignment states`
+  - preference picker no longer shows build-stage copy
+  - alignment panel includes idle, loading, empty, mixed, and insufficient-evidence states
 
 ## Active Checkpoint
 
-Checkpoint target: `Polish alignment empty states and neutral copy`.
+Checkpoint target: `Link quick read claims to evidence`.
 
 Files in this checkpoint:
 
-- `frontend/components/AlignmentPanel.js`
-- `frontend/components/IssuePreferencePanel.js`
-- `frontend/components/SummaryPanel.js`
+- `frontend/app/page.js`
+- `frontend/components/ProfileQuickRead.js`
 - `docs/product_v2_tasklist.md`
 - `docs/autonomous_handoff.md`
 
 Intent of current changes:
 
-- remove build-stage copy from the preference picker
-- add explicit idle, loading, empty, mixed, and insufficient-evidence states
-- remove a prohibited-term-adjacent public UI mention from the summary helper copy
-- mark neutral-copy and state-polish tasks complete
+- add `Open Votes` actions to quick-read domain and vote-direction claims
+- reuse the existing Position by Issue evidence drilldown
+- mark the quick-read traceability task complete
 
 ## Verification Already Run For Current Work
 
-Latest committed comparison checkpoint verification:
+Latest committed checkpoint verification:
 
 ```powershell
 $env:DATABASE_URL='postgresql://invalid'; pytest tests\test_api_alignment.py tests\test_api_compare.py
@@ -82,19 +84,19 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 After verification, stage and commit these checkpoint files:
 
 ```powershell
-git add frontend/components/AlignmentPanel.js frontend/components/IssuePreferencePanel.js docs/product_v2_tasklist.md docs/autonomous_handoff.md
-git commit -m "Polish alignment states"
+git add frontend/app/page.js frontend/components/ProfileQuickRead.js docs/product_v2_tasklist.md docs/autonomous_handoff.md
+git commit -m "Link quick read to evidence"
 ```
 
 ## Next Product Tasks After Commit
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Make each quick-read claim traceable to evidence rows.
-2. Decide whether generic comparison remains useful as secondary context.
-3. Document fixture-mode versus Supabase-mode verification commands.
-4. Document Windows Next.js cache reset workflow.
-5. Improve ZIP coverage beyond fixture/demo mappings.
+1. Decide whether generic comparison remains useful as secondary context.
+2. Document fixture-mode versus Supabase-mode verification commands.
+3. Document Windows Next.js cache reset workflow.
+4. Improve ZIP coverage beyond fixture/demo mappings.
+5. Surface data freshness and source coverage in the first viewport.
 
 ## Operating Mode
 

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { fetchDrift, fetchFingerprint, fetchPositions } from "../lib/api";
 
-export default function ProfileQuickRead({ legislator }) {
+export default function ProfileQuickRead({ legislator, onInspectDomain }) {
   const [state, setState] = useState({
     status: "loading",
     fingerprint: null,
@@ -103,11 +103,21 @@ export default function ProfileQuickRead({ legislator }) {
         <QuickCard
           eyebrow="What They Vote On"
           label={state.status === "ready" ? topFocus.label : "Loading"}
+          onInspect={
+            state.status === "ready" && topFocus.domain !== "NONE"
+              ? () => onInspectDomain?.(topFocus.domain)
+              : null
+          }
           value={state.status === "ready" ? topFocus.value : "--"}
         />
         <QuickCard
           eyebrow="How They Vote There"
           label={state.status === "ready" ? topPosition.label : "Loading"}
+          onInspect={
+            state.status === "ready" && topPosition.domain !== "NONE"
+              ? () => onInspectDomain?.(topPosition.domain)
+              : null
+          }
           value={state.status === "ready" ? topPosition.value : "--"}
         />
         <QuickCard
@@ -125,12 +135,21 @@ export default function ProfileQuickRead({ legislator }) {
   );
 }
 
-function QuickCard({ eyebrow, label, value }) {
+function QuickCard({ eyebrow, label, onInspect, value }) {
   return (
     <article className="rounded-[1.25rem] border border-white/10 bg-white/10 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]">
       <p className="text-xs uppercase tracking-[0.24em] text-cyan-100">{eyebrow}</p>
       <p className="mt-3 text-[1.65rem] leading-none text-white">{value}</p>
       <p className="mt-3 text-sm leading-6 text-cyan-50">{label}</p>
+      {onInspect ? (
+        <button
+          className="mt-4 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white transition hover:bg-white/20"
+          onClick={onInspect}
+          type="button"
+        >
+          Open Votes
+        </button>
+      ) : null}
     </article>
   );
 }
@@ -179,6 +198,7 @@ function buildTopPosition(rows) {
   if (!strongest) {
     return {
       shortLabel: "no clear vote direction",
+      domain: "NONE",
       label: "No yea/nay split is available in the current window.",
       value: "--",
     };
@@ -191,6 +211,7 @@ function buildTopPosition(rows) {
 
   return {
     shortLabel: `${direction} in ${formatDomainLabel(strongest.domain)}`,
+    domain: strongest.domain,
     label: `${formatDomainLabel(strongest.domain)} has ${strongest.recorded_votes} recorded votes in this window.`,
     value: direction === "Mixed" ? "Mixed" : `${(strongerShare * 100).toFixed(0)}%`,
   };

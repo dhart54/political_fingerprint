@@ -19,7 +19,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Return roll call date, bill title, question, description, vote position, classification reason, score breakdown, and source URL.
 - [x] Add tests for the evidence endpoint response shape.
 - [x] Add a frontend domain drilldown panel from `Position by Issue`.
-- [ ] Make each quick-read claim traceable to the relevant evidence rows.
+- [x] Make each quick-read claim traceable to the relevant evidence rows.
 
 ## Phase 3 - Vote Interpretation Foundation
 
@@ -74,8 +74,8 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 Current next build target:
 
-1. Make each quick-read claim traceable to evidence rows.
-2. Decide whether generic comparison remains useful as secondary context.
-3. Split fixture-mode and Supabase-mode verification docs.
-4. Document Windows Next.js cache reset workflow.
-5. Improve ZIP coverage beyond fixture/demo mappings.
+1. Decide whether generic comparison remains useful as secondary context.
+2. Split fixture-mode and Supabase-mode verification docs.
+3. Document Windows Next.js cache reset workflow.
+4. Improve ZIP coverage beyond fixture/demo mappings.
+5. Surface data freshness and source coverage in the first viewport.

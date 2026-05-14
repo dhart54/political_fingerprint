@@ -108,7 +108,15 @@ export default function HomePage() {
           }
         />
 
-        <ProfileQuickRead legislator={selectedLegislator} />
+        <ProfileQuickRead
+          legislator={selectedLegislator}
+          onInspectDomain={(domain) =>
+            setEvidenceRequest({
+              domain,
+              requestedAt: Date.now(),
+            })
+          }
+        />
 
         <LegislatorPicker
           onSelect={setSelectedLegislator}
