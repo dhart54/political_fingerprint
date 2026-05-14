@@ -37,6 +37,7 @@ const DEFAULT_COMPARE_RIGHT = {
 export default function HomePage() {
   const [selectedLegislator, setSelectedLegislator] = useState(DEFAULT_LEGISLATOR);
   const [issuePreferences, setIssuePreferences] = useState({});
+  const [evidenceRequest, setEvidenceRequest] = useState(null);
   const [comparisonSeed, setComparisonSeed] = useState({
     left: DEFAULT_LEGISLATOR,
     right: DEFAULT_COMPARE_RIGHT,
@@ -99,6 +100,12 @@ export default function HomePage() {
         <AlignmentPanel
           legislator={selectedLegislator}
           preferences={issuePreferences}
+          onInspectDomain={(domain) =>
+            setEvidenceRequest({
+              domain,
+              requestedAt: Date.now(),
+            })
+          }
         />
 
         <ProfileQuickRead legislator={selectedLegislator} />
@@ -108,6 +115,7 @@ export default function HomePage() {
           selectedLegislator={selectedLegislator}
         />
         <PositionByIssue
+          evidenceRequest={evidenceRequest}
           legislatorId={selectedLegislator.id}
           title={`${selectedLegislator.name_display}'s voting pattern by issue`}
         />

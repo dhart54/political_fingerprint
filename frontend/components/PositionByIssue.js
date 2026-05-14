@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { fetchPositionEvidence, fetchPositions } from "../lib/api";
 
 export default function PositionByIssue({
+  evidenceRequest = null,
   legislatorId = "leg_alex_morgan",
   title = "How They Vote By Issue",
 }) {
@@ -54,6 +55,19 @@ export default function PositionByIssue({
   }, [legislatorId]);
 
   useEffect(() => {
+    if (!evidenceRequest?.domain) {
+      return;
+    }
+
+    inspectDomain(evidenceRequest.domain);
+    const element = document.getElementById("position-evidence");
+    element?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, [evidenceRequest?.requestedAt]);
+
+  useEffect(() => {
     setSelectedDomain(null);
     setEvidenceState({
       status: "idle",
@@ -94,7 +108,7 @@ export default function PositionByIssue({
   }
 
   return (
-    <section className="mt-8 rounded-[2rem] border border-stone-200 bg-white p-5 shadow-[0_18px_48px_rgba(15,23,42,0.1)] lg:p-6">
+    <section id="position-by-issue" className="mt-8 rounded-[2rem] border border-stone-200 bg-white p-5 shadow-[0_18px_48px_rgba(15,23,42,0.1)] lg:p-6">
       <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-cyan-800">
@@ -205,7 +219,7 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
   const isSelected = evidenceState.payload?.domain === selectedRow.domain;
 
   return (
-    <div className="mt-5 rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4 lg:px-5">
+    <div id="position-evidence" className="mt-5 scroll-mt-6 rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4 lg:px-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.28em] text-stone-500">

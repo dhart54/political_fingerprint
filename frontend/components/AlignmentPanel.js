@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { fetchAlignment } from "../lib/api";
 
-export default function AlignmentPanel({ legislator, preferences }) {
+export default function AlignmentPanel({ legislator, preferences, onInspectDomain }) {
   const [state, setState] = useState({
     status: "idle",
     payload: null,
@@ -115,6 +115,13 @@ export default function AlignmentPanel({ legislator, preferences }) {
               <p className="mt-3 text-sm leading-6 text-stone-700">
                 {buildRowCopy(row)}
               </p>
+              <button
+                className="mt-4 rounded-full bg-stone-900 px-4 py-2 text-xs uppercase tracking-[0.2em] text-stone-100"
+                onClick={() => onInspectDomain?.(row.domain)}
+                type="button"
+              >
+                Inspect Votes
+              </button>
             </article>
           ))}
         </div>

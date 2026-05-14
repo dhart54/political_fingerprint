@@ -29,7 +29,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Mark ambiguous roll calls as `ambiguous` or `insufficient_evidence`.
 - [x] Persist interpretation records during ETL.
 - [x] Add tests for unambiguous and ambiguous interpretation cases.
-- [ ] Update methodology with exact interpretation rules.
+- [x] Update methodology with exact interpretation rules.
 
 ## Phase 4 - Issue Preference Onboarding
 
@@ -51,8 +51,8 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 - [x] Add a "Your Issues" read after ZIP lookup.
 - [x] Show each official against the same selected preferences.
-- [ ] Use counts and labels instead of scores or rankings.
-- [ ] Make evidence drilldown one click away from every alignment label.
+- [x] Use counts and labels instead of scores or rankings.
+- [x] Make evidence drilldown one click away from every alignment label.
 - [ ] Preserve neutral copy: no "vote for", "vote against", or candidate recommendation language.
 
 ## Phase 7 - Comparison Reframe
