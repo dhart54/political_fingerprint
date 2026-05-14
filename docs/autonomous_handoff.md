@@ -48,13 +48,19 @@ Last updated: 2026-05-14
 
 ## Active Checkpoint
 
-No active uncommitted checkpoint.
+Checkpoint target: `Demote generic comparison context`.
 
-Last clean checkpoint:
+Files in this checkpoint:
 
-- `ab5f856 Surface coverage metadata`
+- `frontend/components/ComparisonPanel.js`
+- `docs/product_v2_tasklist.md`
+- `docs/autonomous_handoff.md`
 
-If work resumes, start from `docs/product_v2_tasklist.md` and avoid redoing completed checkpoint work listed above.
+Intent of current changes:
+
+- keep user-selected issue alignment as the primary comparison read
+- move generic vote direction, issue focus, drift, and summary reads into supporting context
+- soften comparison note language so it describes visible differences without sounding like a ranking
 
 ## Verification Already Run
 
@@ -74,6 +80,10 @@ Reported results:
 - `cd frontend; npm run build` passed
 - browser smoke test attempted, but the in-app browser blocked `http://127.0.0.1:3000/` and `http://localhost:3000/` with `ERR_BLOCKED_BY_CLIENT`
 
+Current checkpoint still needs verification:
+
+- `cd frontend; npm run build` passed
+
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
 ```powershell
@@ -87,10 +97,10 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Decide whether generic comparison remains useful as secondary context.
-2. Improve ZIP coverage beyond fixture/demo mappings.
-3. Add production deployment docs for Render and Vercel.
-4. Add accessibility and mobile layout checks for the full voter journey.
+1. Improve ZIP coverage beyond fixture/demo mappings.
+2. Add production deployment docs for Render and Vercel.
+3. Add accessibility and mobile layout checks for the full voter journey.
+4. Add lightweight error monitoring guidance.
 
 ## Operating Mode
 

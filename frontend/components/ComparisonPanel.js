@@ -216,13 +216,13 @@ export default function ComparisonPanel({
       <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-            Comparison Mode
+            Issue Comparison
           </p>
           <h2 className="mt-2 max-w-[820px] font-serif text-[2.35rem] leading-[0.95] text-stone-900">
             Compare both records against the same issues
           </h2>
           <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
-            Start with your selected issues when available, then use vote direction, issue focus, and change-over-time as supporting context. It stays descriptive and does not rank either side.
+            This section keeps your selected issues first. Vote direction, issue focus, drift, and summaries are available as supporting context only, so the comparison stays descriptive and does not rank either side.
           </p>
         </div>
         <div className="flex rounded-full border border-stone-300 bg-stone-100 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
@@ -271,11 +271,11 @@ export default function ComparisonPanel({
         {comparisonInsight ? (
           <div className="mt-4 rounded-[1.5rem] border border-stone-800 bg-stone-900/70 px-4 py-4 text-sm leading-7 text-stone-200">
             <p className="text-xs uppercase tracking-[0.26em] text-stone-400">
-              What To Conclude
+              Context Note
             </p>
             <p className="mt-2 text-[18px] leading-8 text-stone-100">{comparisonInsight}</p>
             <p className="mt-2 text-[13px] leading-6 text-stone-400">
-              This comparison checks vote direction inside the same domains first, then uses issue focus when the two records are spending attention on similar topics.
+              This note is secondary to the issue labels above. It describes a visible difference in the available record without scoring either legislator.
             </p>
           </div>
         ) : null}
@@ -391,32 +391,39 @@ function CompareSideCard({ alignment, heading, side, fallbackLegislator }) {
           label="Your Issues"
           value={buildAlignmentSummary(alignment)}
         />
-        <CompareMetric
-          label="Vote Direction"
-          value={topPosition}
-        />
-        <CompareMetric
-          label="Issue Focus Context"
-          value={
-            topDomains.length
-              ? topDomains.map((row) => `${formatDomainLabel(row.domain)} ${(row.vote_share * 100).toFixed(0)}%`).join(" / ")
-              : "No eligible domain emphasis available"
-          }
-        />
-        <CompareMetric
-          label="Drift"
-          value={
-            side?.drift
-              ? side.drift.insufficient_data
-                ? "Insufficient data"
-                : String(side.drift.drift_value?.toFixed(2))
-              : "--"
-          }
-        />
-        <CompareMetric
-          label="Summary"
-          value={side?.summary?.summary_text ? truncateSummary(side.summary.summary_text) : "Summary unavailable"}
-        />
+        <details className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
+          <summary className="cursor-pointer text-xs uppercase tracking-[0.22em] text-stone-600">
+            Supporting Context
+          </summary>
+          <div className="mt-4 grid gap-3">
+            <CompareMetric
+              label="Vote Direction"
+              value={topPosition}
+            />
+            <CompareMetric
+              label="Issue Focus"
+              value={
+                topDomains.length
+                  ? topDomains.map((row) => `${formatDomainLabel(row.domain)} ${(row.vote_share * 100).toFixed(0)}%`).join(" / ")
+                  : "No eligible domain emphasis available"
+              }
+            />
+            <CompareMetric
+              label="Drift"
+              value={
+                side?.drift
+                  ? side.drift.insufficient_data
+                    ? "Insufficient data"
+                    : String(side.drift.drift_value?.toFixed(2))
+                  : "--"
+              }
+            />
+            <CompareMetric
+              label="Summary"
+              value={side?.summary?.summary_text ? truncateSummary(side.summary.summary_text) : "Summary unavailable"}
+            />
+          </div>
+        </details>
       </div>
     </article>
   );
@@ -485,7 +492,7 @@ function buildComparisonInsight(payload) {
   }
 
   if (!leftRows.length || !rightRows.length) {
-    return "There is not enough issue-focus data yet to describe the strongest difference.";
+    return "There is not enough issue-focus data yet to describe a visible difference.";
   }
 
   const differences = leftRows
@@ -505,7 +512,7 @@ function buildComparisonInsight(payload) {
 
   const biggest = differences[0];
   if (!biggest || biggest.gap <= 0) {
-    return "These two legislators currently look similar on issue focus, so this view does not show a strong difference in what kinds of issues dominated their recent votes.";
+    return "These two legislators currently look similar on issue focus, so this view does not show a clear difference in what kinds of issues dominated their recent votes.";
   }
 
   const leader =
@@ -515,7 +522,7 @@ function buildComparisonInsight(payload) {
   const leaderShare = Math.max(biggest.leftShare, biggest.rightShare);
   const trailingShare = Math.min(biggest.leftShare, biggest.rightShare);
 
-  return `The clearest difference is that ${leader} places more vote emphasis on ${formatDomainLabel(biggest.domain)}: ${Math.round(
+  return `One visible issue-focus difference is that ${leader} has more vote emphasis on ${formatDomainLabel(biggest.domain)}: ${Math.round(
     leaderShare * 100,
   )}% of eligible votes versus ${Math.round(trailingShare * 100)}% for ${trailing}.`;
 }
@@ -553,7 +560,7 @@ function buildPositionComparisonInsight({ leftName, rightName, leftRows, rightRo
   const leaderShare = Math.max(biggest.leftYeaShare, biggest.rightYeaShare);
   const trailingShare = Math.min(biggest.leftYeaShare, biggest.rightYeaShare);
 
-  return `The clearest voting-direction difference is in ${formatDomainLabel(biggest.domain)}: ${leader} voted yea ${(leaderShare * 100).toFixed(
+  return `One visible voting-direction difference is in ${formatDomainLabel(biggest.domain)}: ${leader} voted yea ${(leaderShare * 100).toFixed(
     0,
   )}% of the time versus ${(trailingShare * 100).toFixed(0)}% for ${trailing}.`;
 }

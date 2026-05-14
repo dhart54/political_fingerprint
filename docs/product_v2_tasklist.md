@@ -60,7 +60,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Reframe comparison around user-selected issues, not generic politician-vs-politician contrast.
 - [x] Compare House rep and senators against the same preference set.
 - [x] Show where records are aligned, not aligned, mixed, or insufficiently evidenced.
-- [ ] Keep the current generic comparison as a secondary exploration tool only if it remains useful.
+- [x] Keep the current generic comparison as a secondary exploration tool only if it remains useful.
 
 ## Phase 8 - Launch Usefulness
 
@@ -74,7 +74,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 Current next build target:
 
-1. Decide whether generic comparison remains useful as secondary context.
-2. Improve ZIP coverage beyond fixture/demo mappings.
-3. Add production deployment docs for Render and Vercel.
-4. Add accessibility and mobile layout checks for the full voter journey.
+1. Improve ZIP coverage beyond fixture/demo mappings.
+2. Add production deployment docs for Render and Vercel.
+3. Add accessibility and mobile layout checks for the full voter journey.
+4. Add lightweight error monitoring guidance.
