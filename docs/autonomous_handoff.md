@@ -88,46 +88,16 @@ Last updated: 2026-05-14
   - committed as `b519364 Clean up switch official utility`
   - old duplicate Active Legislator slab was replaced with a compact lower search utility
   - useful deleted-section signals remain compactly in Quick Read, hero coverage, and footer methodology/data-window context
+- Mobile voter journey polish:
+  - committed as `64890da Polish mobile voter journey`
+  - mobile hero no longer forces a full viewport
+  - primary journey headings scale down on phones
+  - individual issue-domain selection is now inside a fine-tune drawer
+  - comparison supporting context keeps vote direction and issue focus only
 
 ## Active Checkpoint
 
-Checkpoint target: `Mobile polish for shortened voter journey`.
-
-Files in this checkpoint:
-
-- `frontend/app/page.js`
-- `frontend/components/AlignmentPanel.js`
-- `frontend/components/ComparisonPanel.js`
-- `frontend/components/IssuePreferencePanel.js`
-- `frontend/components/PositionByIssue.js`
-- `frontend/components/ProfileQuickRead.js`
-- `frontend/components/ZipLookupPanel.js`
-- `docs/product_v2_tasklist.md`
-- `docs/autonomous_handoff.md`
-
-Completed in this checkpoint:
-
-- removed forced mobile full-viewport hero height while preserving desktop hero framing
-- scaled large headings down on mobile across the primary journey
-- moved individual issue-domain selection into a fine-tune drawer to reduce vertical fatigue after starter checks
-- removed drift/summary rows and copy from comparison supporting context; comparison now keeps vote direction and issue focus only
-- kept removed radar/drift/summary/API health sections out of the main page
-
-Verification already run for this checkpoint:
-
-- `cd frontend; npm run build` passed
-- browser QA at 390x844 passed: ZIP `27701` loads Valerie P. Foushee, starter checks render, fine-tune drawer renders, comparison remains visible, removed summary/drift copy is absent
-- mobile interaction QA passed: Cost of Living selects 3 issues, alignment loads insufficient-evidence rows, Open Votes opens evidence, source links render
-- browser console errors were empty
-- browser viewport was reset after mobile QA
-
-Next exact steps after committing:
-
-1. Polish insufficient-evidence copy so missing interpretation data feels useful and intentional.
-2. Focus on `AlignmentPanel`, `ComparisonPanel`, and `PositionByIssue` empty/evidence states.
-3. Run `cd frontend; npm run build`.
-4. Browser QA ZIP `27701` -> starter check -> insufficient evidence -> evidence.
-5. Commit checkpoint and push if requested.
+No active uncommitted checkpoint.
 
 ## Verification Already Run
 
