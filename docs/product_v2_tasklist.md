@@ -9,8 +9,8 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Update `AGENTS.md` to allow Product v2 alignment, vote interpretation, and evidence drilldown.
 - [x] Update `CONSTRAINTS.md` with vote-interpretation and user-alignment constraints.
 - [x] Update `docs/methodology.md` to document Product v2 methodology.
-- [ ] Split local verification into fixture-mode and Supabase-mode test commands.
-- [ ] Document the Windows Next.js cache reset workflow.
+- [x] Split local verification into fixture-mode and Supabase-mode test commands.
+- [x] Document the Windows Next.js cache reset workflow.
 - [ ] Fix or quarantine the locked `backend/.pytest_tmp` local permission issue.
 
 ## Phase 2 - Evidence Drilldown
@@ -75,7 +75,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 Current next build target:
 
 1. Decide whether generic comparison remains useful as secondary context.
-2. Split fixture-mode and Supabase-mode verification docs.
-3. Document Windows Next.js cache reset workflow.
-4. Improve ZIP coverage beyond fixture/demo mappings.
-5. Surface data freshness and source coverage in the first viewport.
+2. Improve ZIP coverage beyond fixture/demo mappings.
+3. Surface data freshness and source coverage in the first viewport.
+4. Add production deployment docs for Render and Vercel.
+5. Add accessibility and mobile layout checks for the full voter journey.

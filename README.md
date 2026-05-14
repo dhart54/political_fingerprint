@@ -18,3 +18,7 @@ Deterministic civic analytics platform for understanding observable legislative 
 ## Fastest Real-Data Path
 
 See [docs/real_data_runbook.md](/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/real_data_runbook.md) for the quickest route to load a starter House+Senate real dataset into Postgres and then view it through the existing frontend.
+
+## Verification Workflow
+
+Use [docs/development_workflow.md](/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/development_workflow.md) for the fixture-mode, Supabase-mode, frontend build, and Windows Next.js cache reset commands.

@@ -35,23 +35,26 @@ Last updated: 2026-05-14
   - committed as `1e88a90 Polish alignment states`
   - preference picker no longer shows build-stage copy
   - alignment panel includes idle, loading, empty, mixed, and insufficient-evidence states
+- Quick-read evidence links:
+  - committed as `460db51 Link quick read to evidence`
+  - quick-read domain and vote-direction cards can open underlying vote evidence
 
 ## Active Checkpoint
 
-Checkpoint target: `Link quick read claims to evidence`.
+Checkpoint target: `Document verification workflow`.
 
 Files in this checkpoint:
 
-- `frontend/app/page.js`
-- `frontend/components/ProfileQuickRead.js`
+- `README.md`
+- `docs/development_workflow.md`
 - `docs/product_v2_tasklist.md`
 - `docs/autonomous_handoff.md`
 
 Intent of current changes:
 
-- add `Open Votes` actions to quick-read domain and vote-direction claims
-- reuse the existing Position by Issue evidence drilldown
-- mark the quick-read traceability task complete
+- split fixture-mode and Supabase-mode verification commands
+- document the Windows Next.js cache reset path for stale chunk errors
+- link the workflow from the README
 
 ## Verification Already Run For Current Work
 
@@ -69,7 +72,7 @@ Reported results:
 
 Current checkpoint still needs verification:
 
-- `cd frontend; npm run build` passed
+- docs-only checkpoint; no build required
 - browser smoke test attempted, but the in-app browser blocked `http://127.0.0.1:3000/` and `http://localhost:3000/` with `ERR_BLOCKED_BY_CLIENT`
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
@@ -84,8 +87,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 After verification, stage and commit these checkpoint files:
 
 ```powershell
-git add frontend/app/page.js frontend/components/ProfileQuickRead.js docs/product_v2_tasklist.md docs/autonomous_handoff.md
-git commit -m "Link quick read to evidence"
+git add README.md docs/development_workflow.md docs/product_v2_tasklist.md docs/autonomous_handoff.md
+git commit -m "Document verification workflow"
 ```
 
 ## Next Product Tasks After Commit
@@ -93,10 +96,10 @@ git commit -m "Link quick read to evidence"
 Work from `docs/product_v2_tasklist.md` in this order:
 
 1. Decide whether generic comparison remains useful as secondary context.
-2. Document fixture-mode versus Supabase-mode verification commands.
-3. Document Windows Next.js cache reset workflow.
-4. Improve ZIP coverage beyond fixture/demo mappings.
-5. Surface data freshness and source coverage in the first viewport.
+2. Improve ZIP coverage beyond fixture/demo mappings.
+3. Surface data freshness and source coverage in the first viewport.
+4. Add production deployment docs for Render and Vercel.
+5. Add accessibility and mobile layout checks for the full voter journey.
 
 ## Operating Mode
 
