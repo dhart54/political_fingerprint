@@ -41,45 +41,35 @@ Last updated: 2026-05-14
 - Verification workflow docs:
   - committed as `084cfda Document verification workflow`
   - fixture/Supabase verification modes and Windows Next cache reset are documented
+- Coverage metadata:
+  - committed as `ab5f856 Surface coverage metadata`
+  - `/metadata/coverage` returns source, window, counts, and source-link share
+  - hero displays coverage window, loaded legislators, eligible roll calls, and source-link coverage
 
 ## Active Checkpoint
 
-Checkpoint target: `Surface first-viewport coverage metadata`.
+No active uncommitted checkpoint.
 
-Files in this checkpoint:
+Last clean checkpoint:
 
-- `backend/app/api/metadata.py`
-- `backend/app/api/precomputed.py`
-- `backend/app/main.py`
-- `backend/tests/test_api_metadata.py`
-- `frontend/app/page.js`
-- `frontend/lib/api.js`
-- `docs/methodology.md`
-- `docs/product_v2_tasklist.md`
-- `docs/autonomous_handoff.md`
+- `ab5f856 Surface coverage metadata`
 
-Intent of current changes:
+If work resumes, start from `docs/product_v2_tasklist.md` and avoid redoing completed checkpoint work listed above.
 
-- add `/metadata/coverage`
-- show coverage window, legislator count, eligible roll calls, and source-link share in the hero
-- document the coverage metadata methodology
+## Verification Already Run
 
-## Verification Already Run For Current Work
-
-Latest committed checkpoint verification:
+Latest checks:
 
 ```powershell
 $env:DATABASE_URL='postgresql://invalid'; pytest tests\test_api_alignment.py tests\test_api_compare.py
 npm run build
+$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_api_metadata.py tests\test_api_lookup.py
 ```
 
 Reported results:
 
 - `10 passed`
 - frontend build passed
-
-Current checkpoint still needs verification:
-
 - `$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_api_metadata.py tests\test_api_lookup.py` passed (`6 passed`)
 - `cd frontend; npm run build` passed
 - browser smoke test attempted, but the in-app browser blocked `http://127.0.0.1:3000/` and `http://localhost:3000/` with `ERR_BLOCKED_BY_CLIENT`
@@ -91,13 +81,6 @@ netstat -ano | findstr :3000
 Stop-Process -Id <PID> -Force
 Remove-Item -LiteralPath frontend\.next -Recurse -Force
 Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p','3000' -WorkingDirectory '<repo>\frontend' -WindowStyle Hidden
-```
-
-After verification, stage and commit these checkpoint files:
-
-```powershell
-git add backend/app/api/metadata.py backend/app/api/precomputed.py backend/app/main.py backend/tests/test_api_metadata.py frontend/app/page.js frontend/lib/api.js docs/methodology.md docs/product_v2_tasklist.md docs/autonomous_handoff.md
-git commit -m "Surface coverage metadata"
 ```
 
 ## Next Product Tasks After Commit
