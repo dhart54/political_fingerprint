@@ -5,6 +5,7 @@ import { useState } from "react";
 import HealthStatus from "../components/HealthStatus";
 import DriftIndicator from "../components/DriftIndicator";
 import FingerprintRadar from "../components/FingerprintRadar";
+import IssuePreferencePanel from "../components/IssuePreferencePanel";
 import ComparisonPanel from "../components/ComparisonPanel";
 import LegislatorPicker from "../components/LegislatorPicker";
 import PositionByIssue from "../components/PositionByIssue";
@@ -34,6 +35,7 @@ const DEFAULT_COMPARE_RIGHT = {
 
 export default function HomePage() {
   const [selectedLegislator, setSelectedLegislator] = useState(DEFAULT_LEGISLATOR);
+  const [issuePreferences, setIssuePreferences] = useState({});
   const [comparisonSeed, setComparisonSeed] = useState({
     left: DEFAULT_LEGISLATOR,
     right: DEFAULT_COMPARE_RIGHT,
@@ -87,6 +89,11 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <IssuePreferencePanel
+          preferences={issuePreferences}
+          onChange={setIssuePreferences}
+        />
 
         <ProfileQuickRead legislator={selectedLegislator} />
 

@@ -33,10 +33,10 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 ## Phase 4 - Issue Preference Onboarding
 
-- [ ] Add a short preference picker using the 8 issue domains.
-- [ ] Let users mark each selected issue as "support more action", "oppose more action", or "just show me the record" where interpretation supports it.
-- [ ] Keep language plain and nonpartisan.
-- [ ] Store preferences client-side for the current session.
+- [x] Add a short preference picker using the 8 issue domains.
+- [x] Let users mark each selected issue as "support more action", "oppose more action", or "just show me the record" where interpretation supports it.
+- [x] Keep language plain and nonpartisan.
+- [x] Store preferences client-side for the current session.
 - [ ] Add empty, mixed, and insufficient-evidence states.
 
 ## Phase 5 - User Alignment API
