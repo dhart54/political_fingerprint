@@ -2,16 +2,12 @@
 
 import { useEffect, useState } from "react";
 
-import HealthStatus from "../components/HealthStatus";
 import AlignmentPanel from "../components/AlignmentPanel";
-import DriftIndicator from "../components/DriftIndicator";
-import FingerprintRadar from "../components/FingerprintRadar";
 import IssuePreferencePanel from "../components/IssuePreferencePanel";
 import ComparisonPanel from "../components/ComparisonPanel";
 import LegislatorPicker from "../components/LegislatorPicker";
 import PositionByIssue from "../components/PositionByIssue";
 import ProfileQuickRead from "../components/ProfileQuickRead";
-import SummaryPanel from "../components/SummaryPanel";
 import ZipLookupPanel from "../components/ZipLookupPanel";
 import { fetchCoverageMetadata } from "../lib/api";
 
@@ -113,12 +109,22 @@ export default function HomePage() {
               </p>
             </div>
             <div className="grid gap-2 sm:grid-cols-3 lg:min-w-[520px]">
-              <MiniStep label="1" value="Position by issue" />
+              <MiniStep label="1" value="Pick issues" />
               <MiniStep label="2" value="Compare records" />
-              <MiniStep label="3" value="Check context" />
+              <MiniStep label="3" value="Inspect evidence" />
             </div>
           </div>
         </section>
+
+        <ProfileQuickRead
+          legislator={selectedLegislator}
+          onInspectDomain={(domain) =>
+            setEvidenceRequest({
+              domain,
+              requestedAt: Date.now(),
+            })
+          }
+        />
 
         <IssuePreferencePanel
           preferences={issuePreferences}
@@ -136,20 +142,6 @@ export default function HomePage() {
           }
         />
 
-        <ProfileQuickRead
-          legislator={selectedLegislator}
-          onInspectDomain={(domain) =>
-            setEvidenceRequest({
-              domain,
-              requestedAt: Date.now(),
-            })
-          }
-        />
-
-        <LegislatorPicker
-          onSelect={setSelectedLegislator}
-          selectedLegislator={selectedLegislator}
-        />
         <PositionByIssue
           evidenceRequest={evidenceRequest}
           legislatorId={selectedLegislator.id}
@@ -168,13 +160,22 @@ export default function HomePage() {
           preferences={issuePreferences}
           seedPair={comparisonSeed}
         />
-        <FingerprintRadar
-          legislatorId={selectedLegislator.id}
-          title={selectedLegislator.name_display}
+
+        <LegislatorPicker
+          onSelect={setSelectedLegislator}
+          selectedLegislator={selectedLegislator}
         />
-        <DriftIndicator legislatorId={selectedLegislator.id} />
-        <SummaryPanel legislatorId={selectedLegislator.id} />
-        <HealthStatus />
+
+        <footer className="mt-8 border-t border-stone-300/80 py-6 text-sm leading-6 text-stone-600">
+          <div className="grid gap-4 md:grid-cols-[1.2fr_0.8fr] md:items-start">
+            <p>
+              Political Fingerprint uses categorized policy votes, excludes procedural votes, and keeps issue alignment tied to interpreted roll-call evidence when available.
+            </p>
+            <p className="md:text-right">
+              Data window: {formatDate(coverageMetadata?.window_start)} to {formatDate(coverageMetadata?.window_end)}.
+            </p>
+          </div>
+        </footer>
       </section>
     </main>
   );

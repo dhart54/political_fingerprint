@@ -74,10 +74,12 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Make evidence source URLs clickable in vote drilldowns.
 - [x] Replace compressed comparison counts with per-issue comparison cards.
 - [x] Link comparison issue rows to the same evidence drilldown used by profile reads.
+- [x] Remove dashboard-style radar, drift, summary, and API health sections from the main voter path.
+- [x] Reorder the page around quick read, issue selection, alignment, evidence, and comparison.
 
 ## Working Priority
 
 Current next build target:
 
-1. Continue product QA from mobile layout around selected-issue comparison and evidence drilldown.
+1. Continue product QA from mobile layout around the shortened voter journey.
 2. Use `pytest --basetemp=..\.local\pytest_basetemp` for full Windows fixture-mode test runs.

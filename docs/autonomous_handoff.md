@@ -83,7 +83,36 @@ Last updated: 2026-05-14
 
 ## Active Checkpoint
 
-No active uncommitted checkpoint.
+Checkpoint target: `Shorten main voter journey`.
+
+Files in this checkpoint:
+
+- `frontend/app/page.js`
+- `docs/product_v2_tasklist.md`
+- `docs/autonomous_handoff.md`
+
+Keep / adjust / dump decision:
+
+- keep: ZIP lookup, current profile, quick read, issue starter checks, alignment, position evidence, selected-issue comparison
+- adjust: profile switcher remains as a lower utility after the primary voter path
+- dump from main page: radar, drift, summary, API health
+
+Intent of current changes:
+
+- remove dashboard-style sections that appear after comparison and do not help the quick voter question
+- move Quick Read directly after Current Profile
+- align the step labels to the actual voter path: pick issues, compare records, inspect evidence
+- keep a small trust footer for methodology/data-window context
+
+Verification already run for this checkpoint:
+
+- `cd frontend; npm run build` passed after stopping the active dev server
+- browser QA: page still loads ZIP `27701` to Valerie P. Foushee
+- browser QA: Quick Read and Issue Comparison remain visible
+- browser QA: radar/drift/summary/API health sections are no longer visible in the main page
+- browser QA: starter check plus Open Votes still opens evidence with no console errors
+
+After committing this checkpoint, update this section back to `No active uncommitted checkpoint`.
 
 ## Verification Already Run
 
@@ -113,6 +142,8 @@ Reported results:
 - browser QA passed after the voter journey friction checkpoint: reload opens ZIP `27701` to `Valerie P. Foushee`, starter checks select issues, evidence source links render, and console errors are empty
 - `cd frontend; npm run build` passed for the comparison issue-row checkpoint
 - browser QA passed after the comparison issue-row checkpoint: selected issue rows render for both comparison sides, and Inspect Votes opens evidence for House and Senate officials
+- `cd frontend; npm run build` passed for the shortened voter journey checkpoint
+- browser QA passed after the shortened voter journey checkpoint: late dashboard sections are gone and evidence still opens from the shortened path
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -127,7 +158,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Continue product QA from mobile layout around selected-issue comparison and evidence drilldown.
+1. Continue product QA from mobile layout around the shortened voter journey.
 2. Prefer focused backend tests while developing, then run the full backend fixture suite with `pytest --basetemp=..\.local\pytest_basetemp` before the next checkpoint.
 
 ## Operating Mode
