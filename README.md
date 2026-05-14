@@ -22,3 +22,7 @@ See [docs/real_data_runbook.md](/mnt/c/Users/Dylan/Documents/Data%20Science/poli
 ## Verification Workflow
 
 Use [docs/development_workflow.md](/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/development_workflow.md) for the fixture-mode, Supabase-mode, frontend build, and Windows Next.js cache reset commands.
+
+## Deployment
+
+Use [docs/deployment.md](/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/deployment.md) for the Render backend and Vercel frontend deployment checklist.

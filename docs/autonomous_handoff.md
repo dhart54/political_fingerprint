@@ -48,27 +48,26 @@ Last updated: 2026-05-14
 - Comparison context:
   - committed as `8d7026c Demote generic comparison context`
   - selected issue alignment remains primary; generic comparison reads are supporting context
+- Loaded ZIP coverage:
+  - committed as `2e66017 Expose loaded ZIP coverage`
+  - `/lookup/zips` exposes database or fixture ZIP mappings for UI suggestions
 
 ## Active Checkpoint
 
-Checkpoint target: `Expose loaded ZIP coverage`.
+Checkpoint target: `Document production deployment`.
 
 Files in this checkpoint:
 
-- `backend/app/api/lookup.py`
-- `backend/app/api/precomputed.py`
-- `backend/tests/test_api_lookup.py`
-- `frontend/components/ZipLookupPanel.js`
-- `frontend/lib/api.js`
-- `docs/methodology.md`
+- `README.md`
+- `docs/deployment.md`
 - `docs/product_v2_tasklist.md`
 - `docs/autonomous_handoff.md`
 
 Intent of current changes:
 
-- add `/lookup/zips` to expose loaded ZIP mappings from database or fixtures
-- replace hard-coded demo ZIP prompts with backend-backed suggestions
-- keep ZIP coverage honest by showing loaded mappings instead of implying national coverage
+- document Render backend deployment
+- document Vercel frontend deployment
+- record CORS, env vars, post-deploy checks, and cost notes
 
 ## Verification Already Run
 
@@ -90,8 +89,7 @@ Reported results:
 
 Current checkpoint still needs verification:
 
-- `$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_api_lookup.py tests\test_db_read_layer.py` passed (`10 passed`)
-- `cd frontend; npm run build` passed
+- docs-only checkpoint; no build required
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -106,9 +104,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Add production deployment docs for Render and Vercel.
-2. Add accessibility and mobile layout checks for the full voter journey.
-3. Add lightweight error monitoring guidance.
+1. Add accessibility and mobile layout checks for the full voter journey.
+2. Add lightweight error monitoring guidance.
 
 ## Operating Mode
 
