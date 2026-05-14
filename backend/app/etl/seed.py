@@ -5,6 +5,7 @@ from app.db import get_connection
 from app.etl.classify import run_classification
 from app.etl.compute import run_compute
 from app.etl.ingest import IngestResult, run_ingest
+from app.etl.interpret import run_interpretation
 from app.summaries.cache import build_fallback_summary
 
 
@@ -15,6 +16,7 @@ class SeedBundle:
     roll_calls: list[dict[str, object]]
     votes_cast: list[dict[str, object]]
     vote_classifications: list[dict[str, object]]
+    vote_interpretations: list[dict[str, object]]
     fingerprints: list[dict[str, object]]
     chamber_medians: list[dict[str, object]]
     drift_scores: list[dict[str, object]]
@@ -30,6 +32,7 @@ class SeedResult:
     roll_calls_seeded: int
     votes_seeded: int
     classifications_seeded: int
+    interpretations_seeded: int
     fingerprints_seeded: int
     chamber_medians_seeded: int
     drift_scores_seeded: int
@@ -66,6 +69,7 @@ def build_seed_bundle_for_sources(*, sources: list[str], as_of: date) -> SeedBun
 
 def _build_seed_bundle_from_ingest_result(*, ingest_result: IngestResult, as_of: date) -> SeedBundle:
     classification_result = run_classification(ingest_result, classification_version="v1")
+    interpretation_result = run_interpretation(ingest_result, classification_result)
     compute_result = run_compute(classification_result, ingest_result, as_of=as_of)
 
     legislator_id_map = {
@@ -140,6 +144,19 @@ def _build_seed_bundle_from_ingest_result(*, ingest_result: IngestResult, as_of:
             "classification_version": row.classification_version,
         }
         for row in classification_result.classified_roll_calls
+    ]
+    vote_interpretations = [
+        {
+            "roll_call_id": roll_call_id_map[row.roll_call_id],
+            "interpretation_status": row.interpretation_status,
+            "support_position": row.support_position,
+            "oppose_position": row.oppose_position,
+            "interpretation_reason": row.interpretation_reason,
+            "source_url": row.source_url,
+            "interpretation_version": row.interpretation_version,
+            "classification_version": row.classification_version,
+        }
+        for row in interpretation_result.vote_interpretations
     ]
     fingerprints = [
         {
@@ -217,6 +234,7 @@ def _build_seed_bundle_from_ingest_result(*, ingest_result: IngestResult, as_of:
         roll_calls=roll_calls,
         votes_cast=votes_cast,
         vote_classifications=vote_classifications,
+        vote_interpretations=vote_interpretations,
         fingerprints=fingerprints,
         chamber_medians=chamber_medians,
         drift_scores=drift_scores,
@@ -259,6 +277,7 @@ def _build_seed_result(*, source: str, bundle: SeedBundle) -> SeedResult:
         roll_calls_seeded=len(bundle.roll_calls),
         votes_seeded=len(bundle.votes_cast),
         classifications_seeded=len(bundle.vote_classifications),
+        interpretations_seeded=len(bundle.vote_interpretations),
         fingerprints_seeded=len(bundle.fingerprints),
         chamber_medians_seeded=len(bundle.chamber_medians),
         drift_scores_seeded=len(bundle.drift_scores),
@@ -415,6 +434,36 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["classification_version"],
                 )
                 for row in bundle.vote_classifications
+            ],
+        )
+        _write_rows(
+            cursor,
+            insert_statement="""
+            INSERT INTO vote_interpretations (
+                roll_call_id, interpretation_status, support_position, oppose_position,
+                interpretation_reason, source_url, interpretation_version, classification_version
+            )
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            copy_statement="""
+            COPY vote_interpretations (
+                roll_call_id, interpretation_status, support_position, oppose_position,
+                interpretation_reason, source_url, interpretation_version, classification_version
+            )
+            FROM STDIN
+            """,
+            rows=[
+                (
+                    row["roll_call_id"],
+                    row["interpretation_status"],
+                    row["support_position"],
+                    row["oppose_position"],
+                    row["interpretation_reason"],
+                    row["source_url"],
+                    row["interpretation_version"],
+                    row["classification_version"],
+                )
+                for row in bundle.vote_interpretations
             ],
         )
         _write_rows(
@@ -603,6 +652,7 @@ def _delete_statements() -> list[str]:
             drift_scores,
             chamber_medians,
             fingerprints,
+            vote_interpretations,
             vote_classifications,
             votes_cast,
             roll_calls,

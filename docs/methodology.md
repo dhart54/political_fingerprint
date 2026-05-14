@@ -110,6 +110,19 @@ Rules:
 - ambiguous votes must not count as aligned or not aligned
 - LLMs may draft cached plain-language explanations from stored interpretation records, but may not decide the interpretation result
 
+Current deterministic interpretation version:
+
+- `interpretation_v1`
+
+Initial rules:
+
+- eligible roll calls with wording such as `on passage`, `on agreeing`, `on adoption`, or `on the bill` are interpreted as `yea` supporting the measure and `nay` opposing the measure
+- ineligible roll calls are marked `insufficient_evidence`
+- roll calls with amendment or motion wording are marked `ambiguous`
+- vague roll call wording is marked `insufficient_evidence`
+
+These rules are intentionally conservative. They prioritize not counting a vote over counting a vote whose yea/nay meaning is unclear.
+
 ## User Alignment Rules
 
 User alignment compares explicit user-selected preferences to interpreted recorded votes.

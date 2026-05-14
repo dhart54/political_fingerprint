@@ -24,11 +24,11 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 ## Phase 3 - Vote Interpretation Foundation
 
 - [x] Add `vote_interpretations` migration.
-- [ ] Add deterministic interpretation types and statuses.
-- [ ] Build an initial deterministic interpreter for obvious bill-passage and amendment cases.
-- [ ] Mark ambiguous roll calls as `ambiguous` or `insufficient_evidence`.
-- [ ] Persist interpretation records during ETL.
-- [ ] Add tests for unambiguous and ambiguous interpretation cases.
+- [x] Add deterministic interpretation types and statuses.
+- [x] Build an initial deterministic interpreter for obvious bill-passage and amendment cases.
+- [x] Mark ambiguous roll calls as `ambiguous` or `insufficient_evidence`.
+- [x] Persist interpretation records during ETL.
+- [x] Add tests for unambiguous and ambiguous interpretation cases.
 - [ ] Update methodology with exact interpretation rules.
 
 ## Phase 4 - Issue Preference Onboarding
