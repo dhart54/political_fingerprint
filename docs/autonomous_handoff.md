@@ -45,22 +45,30 @@ Last updated: 2026-05-14
   - committed as `ab5f856 Surface coverage metadata`
   - `/metadata/coverage` returns source, window, counts, and source-link share
   - hero displays coverage window, loaded legislators, eligible roll calls, and source-link coverage
+- Comparison context:
+  - committed as `8d7026c Demote generic comparison context`
+  - selected issue alignment remains primary; generic comparison reads are supporting context
 
 ## Active Checkpoint
 
-Checkpoint target: `Demote generic comparison context`.
+Checkpoint target: `Expose loaded ZIP coverage`.
 
 Files in this checkpoint:
 
-- `frontend/components/ComparisonPanel.js`
+- `backend/app/api/lookup.py`
+- `backend/app/api/precomputed.py`
+- `backend/tests/test_api_lookup.py`
+- `frontend/components/ZipLookupPanel.js`
+- `frontend/lib/api.js`
+- `docs/methodology.md`
 - `docs/product_v2_tasklist.md`
 - `docs/autonomous_handoff.md`
 
 Intent of current changes:
 
-- keep user-selected issue alignment as the primary comparison read
-- move generic vote direction, issue focus, drift, and summary reads into supporting context
-- soften comparison note language so it describes visible differences without sounding like a ranking
+- add `/lookup/zips` to expose loaded ZIP mappings from database or fixtures
+- replace hard-coded demo ZIP prompts with backend-backed suggestions
+- keep ZIP coverage honest by showing loaded mappings instead of implying national coverage
 
 ## Verification Already Run
 
@@ -82,6 +90,7 @@ Reported results:
 
 Current checkpoint still needs verification:
 
+- `$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_api_lookup.py tests\test_db_read_layer.py` passed (`10 passed`)
 - `cd frontend; npm run build` passed
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
@@ -97,10 +106,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Improve ZIP coverage beyond fixture/demo mappings.
-2. Add production deployment docs for Render and Vercel.
-3. Add accessibility and mobile layout checks for the full voter journey.
-4. Add lightweight error monitoring guidance.
+1. Add production deployment docs for Render and Vercel.
+2. Add accessibility and mobile layout checks for the full voter journey.
+3. Add lightweight error monitoring guidance.
 
 ## Operating Mode
 

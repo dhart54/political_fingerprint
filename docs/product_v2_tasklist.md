@@ -64,7 +64,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 ## Phase 8 - Launch Usefulness
 
-- [ ] Improve ZIP coverage beyond fixture/demo mappings.
+- [x] Improve ZIP coverage beyond fixture/demo mappings.
 - [x] Surface data freshness and source coverage in the first viewport.
 - [ ] Add production deployment docs for Render and Vercel.
 - [ ] Add lightweight error monitoring guidance.
@@ -74,7 +74,6 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 Current next build target:
 
-1. Improve ZIP coverage beyond fixture/demo mappings.
-2. Add production deployment docs for Render and Vercel.
-3. Add accessibility and mobile layout checks for the full voter journey.
-4. Add lightweight error monitoring guidance.
+1. Add production deployment docs for Render and Vercel.
+2. Add accessibility and mobile layout checks for the full voter journey.
+3. Add lightweight error monitoring guidance.

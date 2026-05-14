@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 
-from app.api.precomputed import get_zip_lookup_response
+from app.api.precomputed import get_supported_zip_responses, get_zip_lookup_response
 
 
 router = APIRouter()
@@ -12,3 +12,8 @@ def lookup_zip(zip_code: str) -> dict[str, object]:
     if response is None:
         raise HTTPException(status_code=404, detail="ZIP code not found")
     return response
+
+
+@router.get("/lookup/zips")
+def list_supported_zips() -> dict[str, object]:
+    return get_supported_zip_responses()

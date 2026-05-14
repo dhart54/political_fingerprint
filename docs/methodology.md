@@ -549,7 +549,7 @@ The summary layer must remain neutral:
 
 ## ZIP Lookup API
 
-The ZIP lookup endpoint returns fixture-backed legislator mappings for the requested ZIP code.
+The ZIP lookup endpoint returns loaded legislator mappings for the requested ZIP code. It reads from `zip_district_map` when the database is available and falls back to fixture mappings in local development.
 
 Returned data includes:
 
@@ -558,6 +558,8 @@ Returned data includes:
 - congressional district
 - House representative for that district
 - both senators for that state
+
+The `/lookup/zips` endpoint returns a deterministic list of loaded ZIP mappings for the UI to suggest. This avoids hard-coded demo-only ZIP prompts and lets the frontend reflect whichever mappings are present in Supabase or fixtures.
 
 ## Legislator Search API
 
@@ -637,7 +639,9 @@ Current UI behavior:
 
 - defaults to fixture ZIP `27701` for local verification
 - requests `GET /lookup/zip/{zip}`
+- requests `GET /lookup/zips` for loaded ZIP suggestions
 - renders the returned district, House representative, and both senators
+- shows clickable loaded ZIP suggestions instead of hard-coded demo copy
 - surfaces request failures explicitly instead of inferring fallback data on the client
 
 ## Legislator Selection UI

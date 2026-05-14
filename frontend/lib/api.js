@@ -124,6 +124,18 @@ export async function fetchZipLookup({ zipCode }) {
   return response.json();
 }
 
+export async function fetchSupportedZips() {
+  const response = await fetch(`${API_BASE_URL}/lookup/zips`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Supported ZIP request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchLegislatorSearch({ query = "" } = {}) {
   const searchParams = new URLSearchParams();
   if (query) {

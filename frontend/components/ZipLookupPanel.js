@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { fetchZipLookup } from "../lib/api";
+import { fetchSupportedZips, fetchZipLookup } from "../lib/api";
 
 const DEFAULT_ZIP = "27701";
 
@@ -16,6 +16,11 @@ export default function ZipLookupPanel({
     status: "idle",
     payload: null,
     error: null,
+  });
+  const [supportedZips, setSupportedZips] = useState({
+    status: "loading",
+    dataSource: null,
+    zips: [],
   });
 
   async function runLookup(nextZipCode) {
@@ -42,16 +47,52 @@ export default function ZipLookupPanel({
         error: null,
       });
     } catch (error) {
+      const suggestions = buildZipSuggestion(supportedZips.zips);
       setState({
         status: "error",
         payload: null,
-        error: "That ZIP code could not be matched. Try 27701 or 27601 for the current fixture data.",
+        error: suggestions
+          ? `That ZIP code is not in the loaded map yet. Try ${suggestions}.`
+          : "That ZIP code is not in the loaded map yet.",
       });
     }
   }
 
   useEffect(() => {
     runLookup(DEFAULT_ZIP);
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadSupportedZips() {
+      try {
+        const payload = await fetchSupportedZips();
+        if (!active) {
+          return;
+        }
+        setSupportedZips({
+          status: "ready",
+          dataSource: payload.data_source,
+          zips: payload.zips || [],
+        });
+      } catch (error) {
+        if (!active) {
+          return;
+        }
+        setSupportedZips({
+          status: "error",
+          dataSource: null,
+          zips: [],
+        });
+      }
+    }
+
+    loadSupportedZips();
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   function handleLookup(event) {
@@ -79,7 +120,9 @@ export default function ZipLookupPanel({
           </p>
         </div>
         <p className="text-xs uppercase tracking-[0.25em] text-stone-500">
-          Try 27701 or 27601
+          {supportedZips.status === "ready" && supportedZips.zips.length
+            ? `Try ${buildZipSuggestion(supportedZips.zips)}`
+            : "Loaded ZIPs appear here"}
         </p>
       </div>
 
@@ -197,6 +240,33 @@ export default function ZipLookupPanel({
           </div>
         </div>
       ) : null}
+
+      {supportedZips.status === "ready" && supportedZips.zips.length > 0 ? (
+        <div className="mt-5 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4">
+          <p className="text-xs uppercase tracking-[0.24em] text-stone-500">
+            Loaded ZIP Coverage
+          </p>
+          <p className="mt-2 text-sm leading-6 text-stone-700">
+            Showing {supportedZips.zips.length} loaded ZIP {supportedZips.zips.length === 1 ? "mapping" : "mappings"}
+            {supportedZips.dataSource ? ` from ${supportedZips.dataSource}.` : "."}
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {supportedZips.zips.slice(0, 8).map((row) => (
+              <button
+                className="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs uppercase tracking-[0.18em] text-stone-700"
+                key={row.zip}
+                onClick={() => {
+                  setZipCode(row.zip);
+                  runLookup(row.zip);
+                }}
+                type="button"
+              >
+                {row.zip} {row.state}-{row.district}
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }
@@ -255,4 +325,17 @@ function formatChamber(chamber) {
 
 function formatParty(party) {
   return party === "D" ? "Democrat" : party === "R" ? "Republican" : party;
+}
+
+function buildZipSuggestion(zips) {
+  const values = zips
+    .map((row) => row.zip)
+    .filter(Boolean)
+    .slice(0, 3);
+
+  if (!values.length) {
+    return "";
+  }
+
+  return values.join(", ");
 }

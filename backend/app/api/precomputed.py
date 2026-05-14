@@ -217,6 +217,23 @@ def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
     }
 
 
+def get_supported_zip_responses(*, limit: int = 12) -> dict[str, object]:
+    db_rows = _get_db_supported_zip_rows(limit=limit)
+    if db_rows is not None:
+        return {
+            "data_source": "database",
+            "zips": [_serialize_zip_row(row) for row in db_rows],
+        }
+
+    return {
+        "data_source": "fixtures",
+        "zips": [
+            _serialize_zip_row(row)
+            for row in sorted(FALLBACK_FIXTURE_DATA.zip_district_map, key=lambda item: str(item["zip"]))[:limit]
+        ],
+    }
+
+
 def _get_db_fingerprint_response(*, legislator_id: str, comparison_party: str) -> dict[str, object] | None:
     legislator = _get_db_legislator_by_external_id(legislator_id)
     if legislator is None:
@@ -945,6 +962,18 @@ def _get_db_zip_record(*, zip_code: str) -> dict[str, Any] | None:
     )
 
 
+def _get_db_supported_zip_rows(*, limit: int) -> list[dict[str, Any]] | None:
+    return _query_all_dicts(
+        """
+        SELECT zip, state, district
+        FROM zip_district_map
+        ORDER BY zip
+        LIMIT %s
+        """,
+        (limit,),
+    )
+
+
 def _get_db_house_rep(*, state: str, district: str) -> dict[str, Any] | None:
     return _query_one_dict(
         """
@@ -1073,6 +1102,14 @@ def _serialize_evidence_row(row: dict[str, Any]) -> dict[str, object]:
         "classification_reason": str(row["classification_reason"]),
         "score_breakdown": row.get("score_breakdown") or {},
         "source_url": row.get("source_url"),
+    }
+
+
+def _serialize_zip_row(row: dict[str, Any]) -> dict[str, object]:
+    return {
+        "zip": str(row["zip"]),
+        "state": str(row["state"]),
+        "district": str(row["district"]),
     }
 
 
