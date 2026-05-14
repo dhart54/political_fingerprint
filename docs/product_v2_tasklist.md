@@ -41,16 +41,16 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 ## Phase 5 - User Alignment API
 
-- [ ] Add an alignment endpoint that accepts explicit preference inputs.
-- [ ] Compute lightweight alignment from stored vote interpretations and votes.
-- [ ] Return aligned, not aligned, mixed, or insufficient_evidence per issue.
-- [ ] Include evidence counts and underlying vote ids.
-- [ ] Add tests proving ambiguous votes do not count toward alignment.
+- [x] Add an alignment endpoint that accepts explicit preference inputs.
+- [x] Compute lightweight alignment from stored vote interpretations and votes.
+- [x] Return aligned, not aligned, mixed, or insufficient_evidence per issue.
+- [x] Include evidence counts and underlying vote ids.
+- [x] Add tests proving ambiguous votes do not count toward alignment.
 
 ## Phase 6 - Alignment UI
 
-- [ ] Add a "Your Issues" read after ZIP lookup.
-- [ ] Show each official against the same selected preferences.
+- [x] Add a "Your Issues" read after ZIP lookup.
+- [x] Show each official against the same selected preferences.
 - [ ] Use counts and labels instead of scores or rankings.
 - [ ] Make evidence drilldown one click away from every alignment label.
 - [ ] Preserve neutral copy: no "vote for", "vote against", or candidate recommendation language.

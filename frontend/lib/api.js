@@ -71,6 +71,23 @@ export async function fetchPositionEvidence({ legislatorId, domain }) {
   return response.json();
 }
 
+export async function fetchAlignment({ legislatorId, preferences }) {
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/alignment`, {
+    cache: "no-store",
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ preferences }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Alignment request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchSummary({ legislatorId }) {
   const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/summary`, {
     cache: "no-store",

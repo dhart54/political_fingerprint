@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import HealthStatus from "../components/HealthStatus";
+import AlignmentPanel from "../components/AlignmentPanel";
 import DriftIndicator from "../components/DriftIndicator";
 import FingerprintRadar from "../components/FingerprintRadar";
 import IssuePreferencePanel from "../components/IssuePreferencePanel";
@@ -93,6 +94,11 @@ export default function HomePage() {
         <IssuePreferencePanel
           preferences={issuePreferences}
           onChange={setIssuePreferences}
+        />
+
+        <AlignmentPanel
+          legislator={selectedLegislator}
+          preferences={issuePreferences}
         />
 
         <ProfileQuickRead legislator={selectedLegislator} />
