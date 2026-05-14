@@ -84,31 +84,14 @@ Last updated: 2026-05-14
   - committed as `95707b9 Shorten main voter journey`
   - main page now keeps ZIP lookup, quick read, issue alignment, position evidence, comparison, and lower profile switching
   - radar, drift, summary, and API health are removed from the main voter path
+- Switch-official cleanup:
+  - committed as `b519364 Clean up switch official utility`
+  - old duplicate Active Legislator slab was replaced with a compact lower search utility
+  - useful deleted-section signals remain compactly in Quick Read, hero coverage, and footer methodology/data-window context
 
 ## Active Checkpoint
 
-Checkpoint target: `Clean up switch official utility`.
-
-Files in this checkpoint:
-
-- `frontend/components/LegislatorPicker.js`
-- `docs/product_v2_tasklist.md`
-- `docs/autonomous_handoff.md`
-
-Review decision:
-
-- useful signals from deleted sections are still represented compactly: Quick Read keeps issue focus, vote direction, data confidence, and change-over-time; hero/footer keep coverage and methodology context
-- the old large Active Legislator/search block no longer fits because the main profile already exists above it
-- search should be a lower utility for switching officials while preserving the same issue checks
-
-Verification already run for this checkpoint:
-
-- `cd frontend; npm run build` passed after stopping the active dev server
-- browser QA: stale `ACTIVE LEGISLATOR` and `issue-focus and change-over-time context` copy are gone
-- browser QA: `SWITCH OFFICIAL`, Quick Read, Data Confidence, Change Over Time, and Issue Comparison remain visible
-- browser QA: no browser console errors
-
-After committing this checkpoint, update this section back to `No active uncommitted checkpoint`.
+No active uncommitted checkpoint.
 
 ## Verification Already Run
 
