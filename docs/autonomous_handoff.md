@@ -79,7 +79,33 @@ Last updated: 2026-05-14
 
 ## Active Checkpoint
 
-No active uncommitted checkpoint.
+Checkpoint target: `Make comparison issue rows inspectable`.
+
+Files in this checkpoint:
+
+- `frontend/app/page.js`
+- `frontend/components/ComparisonPanel.js`
+- `frontend/components/PositionByIssue.js`
+- `docs/product_v2_tasklist.md`
+- `docs/autonomous_handoff.md`
+
+Intent of current changes:
+
+- replace compressed comparison alignment counts with per-issue rows for each side
+- keep comparison labels neutral: aligned, not aligned, mixed, insufficient evidence
+- let each comparison issue row open the evidence drilldown for the corresponding official and issue
+- preserve supporting context as secondary content
+
+Verification already run for this checkpoint:
+
+- `cd frontend; npm run build` passed after stopping the active dev server
+- browser QA: ZIP `27701` opens Valerie P. Foushee automatically
+- browser QA: `Cost of Living` starter check creates six comparison issue rows across both officials
+- browser QA: left-side comparison Inspect Votes opens House evidence rows
+- browser QA: right-side comparison Inspect Votes switches the current profile to Ted Budd and opens Senate evidence rows
+- browser QA: no browser console errors after the comparison flow
+
+After committing this checkpoint, update this section back to `No active uncommitted checkpoint`.
 
 ## Verification Already Run
 
@@ -107,6 +133,8 @@ Reported results:
 - `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp` passed outside the sandbox (`144 passed`)
 - `cd frontend; npm run build` passed for the voter journey friction checkpoint
 - browser QA passed after the voter journey friction checkpoint: reload opens ZIP `27701` to `Valerie P. Foushee`, starter checks select issues, evidence source links render, and console errors are empty
+- `cd frontend; npm run build` passed for the comparison issue-row checkpoint
+- browser QA passed after the comparison issue-row checkpoint: selected issue rows render for both comparison sides, and Inspect Votes opens evidence for House and Senate officials
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -121,7 +149,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Continue product QA from the selected-issue comparison section, especially whether the side-by-side alignment summary is useful enough without opening supporting context.
+1. Continue product QA from mobile layout around selected-issue comparison and evidence drilldown.
 2. Prefer focused backend tests while developing, then run the full backend fixture suite with `pytest --basetemp=..\.local\pytest_basetemp` before the next checkpoint.
 
 ## Operating Mode

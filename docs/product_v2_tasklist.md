@@ -72,10 +72,12 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Add neutral starter issue checks to reduce first-use friction.
 - [x] Auto-open the ZIP-mapped House profile after lookup.
 - [x] Make evidence source URLs clickable in vote drilldowns.
+- [x] Replace compressed comparison counts with per-issue comparison cards.
+- [x] Link comparison issue rows to the same evidence drilldown used by profile reads.
 
 ## Working Priority
 
 Current next build target:
 
-1. Continue product QA from the selected-issue comparison section.
+1. Continue product QA from mobile layout around selected-issue comparison and evidence drilldown.
 2. Use `pytest --basetemp=..\.local\pytest_basetemp` for full Windows fixture-mode test runs.

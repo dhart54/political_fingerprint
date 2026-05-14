@@ -55,6 +55,15 @@ export default function PositionByIssue({
   }, [legislatorId]);
 
   useEffect(() => {
+    setSelectedDomain(null);
+    setEvidenceState({
+      status: "idle",
+      payload: null,
+      error: null,
+    });
+  }, [legislatorId]);
+
+  useEffect(() => {
     if (!evidenceRequest?.domain) {
       return;
     }
@@ -66,15 +75,6 @@ export default function PositionByIssue({
       block: "start",
     });
   }, [evidenceRequest?.requestedAt]);
-
-  useEffect(() => {
-    setSelectedDomain(null);
-    setEvidenceState({
-      status: "idle",
-      payload: null,
-      error: null,
-    });
-  }, [legislatorId]);
 
   const rows = (state.payload?.positions || [])
     .filter((row) => row.recorded_votes > 0)

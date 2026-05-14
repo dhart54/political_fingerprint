@@ -158,6 +158,13 @@ export default function HomePage() {
         <ComparisonPanel
           defaultLeftLegislator={selectedLegislator}
           defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
+          onInspectDomain={(legislator, domain) => {
+            setSelectedLegislator(legislator);
+            setEvidenceRequest({
+              domain,
+              requestedAt: Date.now(),
+            });
+          }}
           preferences={issuePreferences}
           seedPair={comparisonSeed}
         />

@@ -9,6 +9,7 @@ const COMPARISON_OPTIONS = ["ALL", "D", "R"];
 export default function ComparisonPanel({
   defaultLeftLegislator,
   defaultRightLegislator,
+  onInspectDomain,
   preferences = {},
   seedPair,
 }) {
@@ -355,12 +356,14 @@ export default function ComparisonPanel({
             alignment={alignmentState.left}
             side={compareState.payload?.left}
             fallbackLegislator={selected.left}
+            onInspectDomain={onInspectDomain}
           />
           <CompareSideCard
             heading="Right"
             alignment={alignmentState.right}
             side={compareState.payload?.right}
             fallbackLegislator={selected.right}
+            onInspectDomain={onInspectDomain}
           />
         </div>
       </div>
@@ -368,7 +371,7 @@ export default function ComparisonPanel({
   );
 }
 
-function CompareSideCard({ alignment, heading, side, fallbackLegislator }) {
+function CompareSideCard({ alignment, heading, side, fallbackLegislator, onInspectDomain }) {
   const legislator = side?.legislator || fallbackLegislator;
   const fingerprintRows = side?.fingerprint?.fingerprint || [];
   const positionRows = side?.position?.positions || [];
@@ -392,9 +395,10 @@ function CompareSideCard({ alignment, heading, side, fallbackLegislator }) {
       </div>
 
       <div className="mt-4 grid gap-3">
-        <CompareMetric
-          label="Your Issues"
-          value={buildAlignmentSummary(alignment)}
+        <IssueAlignmentRows
+          alignment={alignment}
+          legislator={legislator}
+          onInspectDomain={onInspectDomain}
         />
         <details className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
           <summary className="cursor-pointer text-xs uppercase tracking-[0.22em] text-stone-600">
@@ -431,6 +435,64 @@ function CompareSideCard({ alignment, heading, side, fallbackLegislator }) {
         </details>
       </div>
     </article>
+  );
+}
+
+function IssueAlignmentRows({ alignment, legislator, onInspectDomain }) {
+  if (!alignment) {
+    return (
+      <div className="rounded-2xl border border-dashed border-stone-300 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-600">
+        Select issues above to add a side-by-side read for this official.
+      </div>
+    );
+  }
+
+  const rows = alignment.alignment || [];
+  if (!rows.length) {
+    return (
+      <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-700">
+        No selected issue rows are available for this comparison side.
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid gap-3">
+      <div className="rounded-2xl border border-stone-200 bg-white px-4 py-4">
+        <p className="text-xs uppercase tracking-[0.22em] text-stone-500">Your Issues</p>
+        <p className="mt-3 text-sm leading-6 text-stone-800">{buildAlignmentSummary(alignment)}</p>
+      </div>
+      {rows.map((row) => (
+        <article
+          className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]"
+          key={row.domain}
+        >
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
+                {formatDomainLabel(row.domain)}
+              </p>
+              <p className="mt-2 text-[1.25rem] leading-7 text-stone-950">
+                {formatAlignmentLabel(row.label)}
+              </p>
+            </div>
+            <span className={`w-fit rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.18em] ${getLabelClass(row.label)}`}>
+              {row.interpreted_count} interpreted
+            </span>
+          </div>
+          <p className="mt-3 text-sm leading-6 text-stone-700">
+            {buildIssueRowCopy(row)}
+          </p>
+          <button
+            className="mt-4 rounded-full bg-stone-900 px-4 py-2 text-xs uppercase tracking-[0.18em] text-stone-100"
+            onClick={() => onInspectDomain?.(legislator, row.domain)}
+            type="button"
+          >
+            Inspect Votes
+          </button>
+        </article>
+      ))}
+    </div>
   );
 }
 
@@ -478,6 +540,42 @@ function buildAlignmentSummary(alignment) {
   const insufficient = rows.filter((row) => row.label === "insufficient_evidence").length;
 
   return `${aligned} aligned / ${notAligned} not aligned / ${mixed} mixed / ${insufficient} insufficient`;
+}
+
+function buildIssueRowCopy(row) {
+  if (row.label === "insufficient_evidence") {
+    return "There are not enough interpreted vote-meaning rows to label this issue for this official.";
+  }
+  if (row.label === "mixed") {
+    return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes are available.`;
+  }
+  if (row.preference === "show_record") {
+    return `${row.interpreted_count} interpreted votes are available for this issue.`;
+  }
+  return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes are available.`;
+}
+
+function formatAlignmentLabel(label) {
+  if (label === "not_aligned") {
+    return "Not aligned";
+  }
+  if (label === "insufficient_evidence") {
+    return "Insufficient evidence";
+  }
+  return String(label)[0].toUpperCase() + String(label).slice(1);
+}
+
+function getLabelClass(label) {
+  if (label === "aligned") {
+    return "bg-emerald-100 text-emerald-800";
+  }
+  if (label === "not_aligned") {
+    return "bg-rose-100 text-rose-800";
+  }
+  if (label === "mixed") {
+    return "bg-amber-100 text-amber-800";
+  }
+  return "bg-stone-200 text-stone-700";
 }
 
 function buildComparisonInsight(payload) {
