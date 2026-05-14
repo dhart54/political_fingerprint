@@ -121,7 +121,7 @@ export default function ZipLookupPanel({
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
             Start Here
           </p>
-          <h3 className="mt-2 font-serif text-[2.65rem] leading-[0.95] text-stone-950">
+          <h3 className="mt-2 font-serif text-[2.05rem] leading-[0.98] text-stone-950 sm:text-[2.65rem] sm:leading-[0.95]">
             Find your ballot-level officials
           </h3>
           <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
@@ -297,7 +297,7 @@ function LegislatorCard({ accent, heading, legislator, onSelectLegislator }) {
           {formatParty(legislator.party)}
         </span>
       </div>
-      <h4 className="mt-3 font-serif text-[2.1rem] leading-[0.98] text-stone-950">
+      <h4 className="mt-3 font-serif text-[1.75rem] leading-[1] text-stone-950 sm:text-[2.1rem] sm:leading-[0.98]">
         {legislator.name_display}
       </h4>
       <p className="mt-2 text-sm text-stone-600">

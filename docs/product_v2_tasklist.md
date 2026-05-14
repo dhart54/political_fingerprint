@@ -77,10 +77,11 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Remove dashboard-style radar, drift, summary, and API health sections from the main voter path.
 - [x] Reorder the page around quick read, issue selection, alignment, evidence, and comparison.
 - [x] Convert the old active-legislator/search block into a compact switch-official utility.
+- [x] Polish mobile headings, first-viewport height, issue selection, and comparison supporting context.
 
 ## Working Priority
 
 Current next build target:
 
-1. Continue product QA from mobile layout around the shortened voter journey and compact switch-official utility.
+1. Polish insufficient-evidence copy so honest missing-data states feel useful rather than broken.
 2. Use `pytest --basetemp=..\.local\pytest_basetemp` for full Windows fixture-mode test runs.

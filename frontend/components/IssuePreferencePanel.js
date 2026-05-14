@@ -122,7 +122,7 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
           <p className="text-xs uppercase tracking-[0.3em] text-cyan-800">
             Your Issues
           </p>
-          <h3 className="mt-2 max-w-[760px] font-serif text-[2.65rem] leading-[0.96] text-stone-950">
+          <h3 className="mt-2 max-w-[760px] font-serif text-[2rem] leading-[1] text-stone-950 sm:text-[2.65rem] sm:leading-[0.96]">
             Pick what you want this record checked against.
           </h3>
           <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
@@ -166,62 +166,67 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
         ))}
       </div>
 
-      <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-        {ISSUE_OPTIONS.map((issue) => {
-          const selectedStance = preferences[issue.domain];
-          const isSelected = Boolean(selectedStance);
+      <details className="mt-5 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4" open={selectedCount === 0}>
+        <summary className="cursor-pointer text-sm font-medium text-stone-900">
+          Fine-tune individual issue domains
+        </summary>
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {ISSUE_OPTIONS.map((issue) => {
+            const selectedStance = preferences[issue.domain];
+            const isSelected = Boolean(selectedStance);
 
-          return (
-            <article
-              className={`rounded-[1.25rem] border px-4 py-4 transition ${
-                isSelected
-                  ? "border-cyan-800 bg-cyan-50"
-                  : "border-stone-200 bg-stone-50"
-              }`}
-              key={issue.domain}
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <h4 className="text-[17px] leading-6 text-stone-950">{issue.label}</h4>
-                  <p className="mt-2 text-sm leading-6 text-stone-600">{issue.prompt}</p>
+            return (
+              <article
+                className={`rounded-[1.25rem] border px-4 py-4 transition ${
+                  isSelected
+                    ? "border-cyan-800 bg-cyan-50"
+                    : "border-stone-200 bg-white"
+                }`}
+                key={issue.domain}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <h4 className="text-[17px] leading-6 text-stone-950">{issue.label}</h4>
+                    <p className="mt-2 text-sm leading-6 text-stone-600">{issue.prompt}</p>
+                  </div>
+                  <button
+                    className={`h-9 min-w-9 rounded-full border px-3 text-sm ${
+                      isSelected
+                        ? "border-cyan-800 bg-cyan-900 text-white"
+                        : "border-stone-300 bg-white text-stone-700"
+                    }`}
+                    onClick={() => toggleIssue(issue.domain)}
+                    type="button"
+                    aria-label={isSelected ? `Remove ${issue.label}` : `Select ${issue.label}`}
+                  >
+                    {isSelected ? "x" : "+"}
+                  </button>
                 </div>
-                <button
-                  className={`h-9 min-w-9 rounded-full border px-3 text-sm ${
-                    isSelected
-                      ? "border-cyan-800 bg-cyan-900 text-white"
-                      : "border-stone-300 bg-white text-stone-700"
-                  }`}
-                  onClick={() => toggleIssue(issue.domain)}
-                  type="button"
-                  aria-label={isSelected ? `Remove ${issue.label}` : `Select ${issue.label}`}
-                >
-                  {isSelected ? "x" : "+"}
-                </button>
-              </div>
 
-              {isSelected ? (
-                <div className="mt-4 grid gap-2">
-                  {STANCE_OPTIONS.map((stance) => (
-                    <button
-                      className={`rounded-full px-3 py-2 text-left text-xs uppercase tracking-[0.16em] ${
-                        selectedStance === stance.value
-                          ? "bg-cyan-900 text-white"
-                          : "bg-white text-stone-700"
-                      }`}
-                      aria-pressed={selectedStance === stance.value}
-                      key={stance.value}
-                      onClick={() => setStance(issue.domain, stance.value)}
-                      type="button"
-                    >
-                      {stance.label}
-                    </button>
-                  ))}
-                </div>
-              ) : null}
-            </article>
-          );
-        })}
-      </div>
+                {isSelected ? (
+                  <div className="mt-4 grid gap-2">
+                    {STANCE_OPTIONS.map((stance) => (
+                      <button
+                        className={`rounded-full px-3 py-2 text-left text-xs uppercase tracking-[0.16em] ${
+                          selectedStance === stance.value
+                            ? "bg-cyan-900 text-white"
+                            : "bg-white text-stone-700"
+                        }`}
+                        aria-pressed={selectedStance === stance.value}
+                        key={stance.value}
+                        onClick={() => setStance(issue.domain, stance.value)}
+                        type="button"
+                      >
+                        {stance.label}
+                      </button>
+                    ))}
+                  </div>
+                ) : null}
+              </article>
+            );
+          })}
+        </div>
+      </details>
 
       <div className="mt-4 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-700">
         {selectedCount === 0

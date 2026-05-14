@@ -67,12 +67,12 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#f7f4ec] text-stone-900">
       <section className="mx-auto max-w-[1440px] px-5 py-6 sm:px-6 lg:py-8">
-        <div className="grid min-h-[calc(100vh-4rem)] gap-7 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+        <div className="grid gap-7 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
           <div className="max-w-[720px]">
             <p className="mb-4 text-sm uppercase tracking-[0.35em] text-cyan-800">
               Political Fingerprint
             </p>
-            <h1 className="font-serif text-5xl leading-[0.95] text-stone-950 sm:text-[4.4rem] lg:text-[5.45rem]">
+            <h1 className="font-serif text-4xl leading-[0.98] text-stone-950 sm:text-[4.4rem] sm:leading-[0.95] lg:text-[5.45rem]">
               In 60 seconds, see how your politicians vote.
             </h1>
             <p className="mt-5 max-w-[640px] text-[17px] leading-8 text-stone-700 sm:text-lg">
@@ -100,7 +100,7 @@ export default function HomePage() {
               <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
                 Current Profile
               </p>
-              <h2 className="mt-2 font-serif text-[2.75rem] leading-none text-stone-950">
+              <h2 className="mt-2 font-serif text-[2.2rem] leading-none text-stone-950 sm:text-[2.75rem]">
                 {selectedLegislator.name_display}
               </h2>
               <p className="mt-2 text-[15px] leading-6 text-stone-600">
@@ -184,7 +184,7 @@ export default function HomePage() {
 function HeroStat({ value, label }) {
   return (
     <div className="border-l border-cyan-700/30 pl-4">
-      <p className="font-serif text-[2.4rem] leading-none text-cyan-900">{value}</p>
+      <p className="font-serif text-[2rem] leading-none text-cyan-900 sm:text-[2.4rem]">{value}</p>
       <p className="mt-2 text-xs uppercase tracking-[0.2em] text-stone-600">{label}</p>
     </div>
   );

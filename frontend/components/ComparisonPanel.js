@@ -219,11 +219,11 @@ export default function ComparisonPanel({
           <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
             Issue Comparison
           </p>
-          <h2 className="mt-2 max-w-[820px] font-serif text-[2.35rem] leading-[0.95] text-stone-900">
+          <h2 className="mt-2 max-w-[820px] font-serif text-[2rem] leading-[1] text-stone-900 sm:text-[2.35rem] sm:leading-[0.95]">
             Compare both records against the same issues
           </h2>
           <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
-            This section keeps your selected issues first. Vote direction, issue focus, drift, and summaries are available as supporting context only, so the comparison stays descriptive and does not rank either side.
+            This section keeps your selected issues first. Vote direction and issue focus are available as supporting context only, so the comparison stays descriptive and does not rank either side.
           </p>
         </div>
         <div className="flex rounded-full border border-stone-300 bg-stone-100 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
@@ -259,7 +259,7 @@ export default function ComparisonPanel({
             </p>
           </div>
           <p className="text-sm leading-6 text-stone-300">
-            {compareState.status === "loading" ? "Fetching fingerprint, drift, and summary data for both sides." : null}
+            {compareState.status === "loading" ? "Fetching issue focus and vote-direction data for both sides." : null}
             {compareState.status === "error" ? compareState.error : null}
             {compareState.status === "ready"
               ? `Overlay comparison is set to ${comparisonParty}. ${Object.keys(preferences).length ? "Your issue selections are applied to both sides." : "Select issues above to add an alignment read for both sides."}`
@@ -386,7 +386,7 @@ function CompareSideCard({ alignment, heading, side, fallbackLegislator, onInspe
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-xs uppercase tracking-[0.28em] text-stone-500">{heading}</p>
-          <h3 className="mt-3 font-serif text-[2.15rem] leading-[0.95] text-stone-900">{legislator.name_display}</h3>
+          <h3 className="mt-3 font-serif text-[1.8rem] leading-[1] text-stone-900 sm:text-[2.15rem] sm:leading-[0.95]">{legislator.name_display}</h3>
           <p className="mt-2 text-[14px] leading-5 text-stone-600">
             {formatChamber(legislator.chamber)} - {legislator.party} - {legislator.state}
             {legislator.district ? `-${legislator.district}` : " - Statewide"}
@@ -416,20 +416,6 @@ function CompareSideCard({ alignment, heading, side, fallbackLegislator, onInspe
                   ? topDomains.map((row) => `${formatDomainLabel(row.domain)} ${(row.vote_share * 100).toFixed(0)}%`).join(" / ")
                   : "No eligible domain emphasis available"
               }
-            />
-            <CompareMetric
-              label="Drift"
-              value={
-                side?.drift
-                  ? side.drift.insufficient_data
-                    ? "Insufficient data"
-                    : String(side.drift.drift_value?.toFixed(2))
-                  : "--"
-              }
-            />
-            <CompareMetric
-              label="Summary"
-              value={side?.summary?.summary_text ? truncateSummary(side.summary.summary_text) : "Summary unavailable"}
             />
           </div>
         </details>
@@ -514,14 +500,6 @@ function formatDomainLabel(domain) {
     .split("_")
     .map((segment) => segment[0] + segment.slice(1).toLowerCase())
     .join(" ");
-}
-
-function truncateSummary(summaryText) {
-  const normalized = String(summaryText).trim();
-  if (normalized.length <= 160) {
-    return normalized;
-  }
-  return `${normalized.slice(0, 157)}...`;
 }
 
 function buildAlignmentSummary(alignment) {

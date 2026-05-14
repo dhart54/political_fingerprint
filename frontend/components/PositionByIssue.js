@@ -114,7 +114,7 @@ export default function PositionByIssue({
           <p className="text-xs uppercase tracking-[0.3em] text-cyan-800">
             First Read
           </p>
-          <h3 className="mt-2 font-serif text-[2.7rem] leading-[0.95] text-stone-950">
+          <h3 className="mt-2 font-serif text-[2rem] leading-[1] text-stone-950 sm:text-[2.7rem] sm:leading-[0.95]">
             {title}
           </h3>
           <p className="mt-3 max-w-xl text-[18px] leading-8 text-stone-900">
@@ -225,7 +225,7 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
           <p className="text-xs uppercase tracking-[0.28em] text-stone-500">
             Evidence
           </p>
-          <h4 className="mt-2 font-serif text-[2rem] leading-none text-stone-950">
+          <h4 className="mt-2 font-serif text-[1.75rem] leading-none text-stone-950 sm:text-[2rem]">
             {formatDomainLabel(selectedRow.domain)}
           </h4>
         </div>

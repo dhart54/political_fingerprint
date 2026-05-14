@@ -91,7 +91,43 @@ Last updated: 2026-05-14
 
 ## Active Checkpoint
 
-No active uncommitted checkpoint.
+Checkpoint target: `Mobile polish for shortened voter journey`.
+
+Files in this checkpoint:
+
+- `frontend/app/page.js`
+- `frontend/components/AlignmentPanel.js`
+- `frontend/components/ComparisonPanel.js`
+- `frontend/components/IssuePreferencePanel.js`
+- `frontend/components/PositionByIssue.js`
+- `frontend/components/ProfileQuickRead.js`
+- `frontend/components/ZipLookupPanel.js`
+- `docs/product_v2_tasklist.md`
+- `docs/autonomous_handoff.md`
+
+Completed in this checkpoint:
+
+- removed forced mobile full-viewport hero height while preserving desktop hero framing
+- scaled large headings down on mobile across the primary journey
+- moved individual issue-domain selection into a fine-tune drawer to reduce vertical fatigue after starter checks
+- removed drift/summary rows and copy from comparison supporting context; comparison now keeps vote direction and issue focus only
+- kept removed radar/drift/summary/API health sections out of the main page
+
+Verification already run for this checkpoint:
+
+- `cd frontend; npm run build` passed
+- browser QA at 390x844 passed: ZIP `27701` loads Valerie P. Foushee, starter checks render, fine-tune drawer renders, comparison remains visible, removed summary/drift copy is absent
+- mobile interaction QA passed: Cost of Living selects 3 issues, alignment loads insufficient-evidence rows, Open Votes opens evidence, source links render
+- browser console errors were empty
+- browser viewport was reset after mobile QA
+
+Next exact steps after committing:
+
+1. Polish insufficient-evidence copy so missing interpretation data feels useful and intentional.
+2. Focus on `AlignmentPanel`, `ComparisonPanel`, and `PositionByIssue` empty/evidence states.
+3. Run `cd frontend; npm run build`.
+4. Browser QA ZIP `27701` -> starter check -> insufficient evidence -> evidence.
+5. Commit checkpoint and push if requested.
 
 ## Verification Already Run
 
@@ -125,6 +161,8 @@ Reported results:
 - browser QA passed after the shortened voter journey checkpoint: late dashboard sections are gone and evidence still opens from the shortened path
 - `cd frontend; npm run build` passed for the switch-official cleanup checkpoint
 - browser QA passed after the switch-official cleanup checkpoint: stale search copy is gone and compact retained signals still render
+- `cd frontend; npm run build` passed for the mobile polish checkpoint
+- browser QA passed at 390x844 after the mobile polish checkpoint: profile, starter checks, fine-tune drawer, alignment, evidence, and source links work with no console errors
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -139,7 +177,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Continue product QA from mobile layout around the shortened voter journey and compact switch-official utility.
+1. Polish insufficient-evidence copy so honest missing-data states feel useful rather than broken.
 2. Prefer focused backend tests while developing, then run the full backend fixture suite with `pytest --basetemp=..\.local\pytest_basetemp` before the next checkpoint.
 
 ## Operating Mode

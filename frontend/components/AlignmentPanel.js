@@ -75,7 +75,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
           <p className="text-xs uppercase tracking-[0.3em] text-cyan-800">
             Your Issues vs This Record
           </p>
-          <h3 className="mt-2 max-w-[760px] font-serif text-[2.45rem] leading-[0.98] text-stone-950">
+          <h3 className="mt-2 max-w-[760px] font-serif text-[2rem] leading-[1] text-stone-950 sm:text-[2.45rem] sm:leading-[0.98]">
             {buildHeadline({ status: state.status, selectedCount, rows, name: legislator.name_display })}
           </h3>
         </div>

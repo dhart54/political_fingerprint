@@ -79,7 +79,7 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
           <p className="text-xs uppercase tracking-[0.3em] text-cyan-100">
             Quick Read
           </p>
-          <h3 className="mt-2 max-w-[760px] font-serif text-[2.45rem] leading-[0.98] text-white">
+          <h3 className="mt-2 max-w-[760px] font-serif text-[2rem] leading-[1] text-white sm:text-[2.45rem] sm:leading-[0.98]">
             {buildHeadline({
               status: state.status,
               name: legislator.name_display,
