@@ -57,9 +57,9 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 ## Phase 7 - Comparison Reframe
 
-- [ ] Reframe comparison around user-selected issues, not generic politician-vs-politician contrast.
-- [ ] Compare House rep and senators against the same preference set.
-- [ ] Show where records are aligned, not aligned, mixed, or insufficiently evidenced.
+- [x] Reframe comparison around user-selected issues, not generic politician-vs-politician contrast.
+- [x] Compare House rep and senators against the same preference set.
+- [x] Show where records are aligned, not aligned, mixed, or insufficiently evidenced.
 - [ ] Keep the current generic comparison as a secondary exploration tool only if it remains useful.
 
 ## Phase 8 - Launch Usefulness

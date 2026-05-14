@@ -2,13 +2,14 @@
 
 import { startTransition, useDeferredValue, useEffect, useState } from "react";
 
-import { fetchLegislatorComparison, fetchLegislatorSearch } from "../lib/api";
+import { fetchAlignment, fetchLegislatorComparison, fetchLegislatorSearch } from "../lib/api";
 
 const COMPARISON_OPTIONS = ["ALL", "D", "R"];
 
 export default function ComparisonPanel({
   defaultLeftLegislator,
   defaultRightLegislator,
+  preferences = {},
   seedPair,
 }) {
   const [comparisonParty, setComparisonParty] = useState("ALL");
@@ -26,6 +27,12 @@ export default function ComparisonPanel({
   const [compareState, setCompareState] = useState({
     status: "loading",
     payload: null,
+    error: null,
+  });
+  const [alignmentState, setAlignmentState] = useState({
+    status: "idle",
+    left: null,
+    right: null,
     error: null,
   });
 
@@ -141,6 +148,64 @@ export default function ComparisonPanel({
     };
   }, [comparisonParty, selected.left.id, selected.right.id]);
 
+  useEffect(() => {
+    let active = true;
+    const preferenceCount = Object.keys(preferences).length;
+
+    if (preferenceCount === 0) {
+      setAlignmentState({
+        status: "idle",
+        left: null,
+        right: null,
+        error: null,
+      });
+      return () => {
+        active = false;
+      };
+    }
+
+    async function loadAlignment() {
+      setAlignmentState({
+        status: "loading",
+        left: null,
+        right: null,
+        error: null,
+      });
+
+      try {
+        const [left, right] = await Promise.all([
+          fetchAlignment({ legislatorId: selected.left.id, preferences }),
+          fetchAlignment({ legislatorId: selected.right.id, preferences }),
+        ]);
+        if (!active) {
+          return;
+        }
+        setAlignmentState({
+          status: "ready",
+          left,
+          right,
+          error: null,
+        });
+      } catch (error) {
+        if (!active) {
+          return;
+        }
+        setAlignmentState({
+          status: "error",
+          left: null,
+          right: null,
+          error: "Issue alignment is unavailable for this comparison right now.",
+        });
+      }
+    }
+
+    loadAlignment();
+
+    return () => {
+      active = false;
+    };
+  }, [selected.left.id, selected.right.id, preferences]);
+
   const comparisonInsight =
     compareState.status === "ready"
       ? buildComparisonInsight(compareState.payload)
@@ -154,10 +219,10 @@ export default function ComparisonPanel({
             Comparison Mode
           </p>
           <h2 className="mt-2 max-w-[820px] font-serif text-[2.35rem] leading-[0.95] text-stone-900">
-            Compare behavioral profiles side by side
+            Compare both records against the same issues
           </h2>
           <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
-            Start with vote direction inside the same issue domains, then use issue focus and change-over-time as supporting context. It stays descriptive and does not rank either side.
+            Start with your selected issues when available, then use vote direction, issue focus, and change-over-time as supporting context. It stays descriptive and does not rank either side.
           </p>
         </div>
         <div className="flex rounded-full border border-stone-300 bg-stone-100 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
@@ -184,7 +249,7 @@ export default function ComparisonPanel({
             <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
               Comparison Status
             </p>
-          <p className="mt-3 text-lg text-stone-50">
+            <p className="mt-3 text-lg text-stone-50">
               {compareState.status === "loading" ? "Loading side-by-side comparison..." : null}
               {compareState.status === "error" ? "Comparison unavailable" : null}
               {compareState.status === "ready"
@@ -196,9 +261,12 @@ export default function ComparisonPanel({
             {compareState.status === "loading" ? "Fetching fingerprint, drift, and summary data for both sides." : null}
             {compareState.status === "error" ? compareState.error : null}
             {compareState.status === "ready"
-              ? `Overlay comparison is set to ${comparisonParty}. Compare vote direction first, then use issue focus and drift as supporting context.`
+              ? `Overlay comparison is set to ${comparisonParty}. ${Object.keys(preferences).length ? "Your issue selections are applied to both sides." : "Select issues above to add an alignment read for both sides."}`
               : null}
           </p>
+          {alignmentState.status === "error" ? (
+            <p className="mt-3 text-sm leading-6 text-rose-200">{alignmentState.error}</p>
+          ) : null}
         </div>
         {comparisonInsight ? (
           <div className="mt-4 rounded-[1.5rem] border border-stone-800 bg-stone-900/70 px-4 py-4 text-sm leading-7 text-stone-200">
@@ -243,8 +311,8 @@ export default function ComparisonPanel({
                 <div>
                   <p className="font-serif text-[1.5rem] leading-tight text-stone-900">{legislator.name_display}</p>
                   <p className="mt-1 text-[13px] text-stone-600">
-                    {formatChamber(legislator.chamber)} • {legislator.party} • {legislator.state}
-                    {legislator.district ? `-${legislator.district}` : " • Statewide"}
+                    {formatChamber(legislator.chamber)} - {legislator.party} - {legislator.state}
+                    {legislator.district ? `-${legislator.district}` : " - Statewide"}
                   </p>
                 </div>
                 <div className="flex gap-2">
@@ -279,11 +347,13 @@ export default function ComparisonPanel({
           <div className="grid gap-4 xl:grid-cols-2">
           <CompareSideCard
             heading="Left"
+            alignment={alignmentState.left}
             side={compareState.payload?.left}
             fallbackLegislator={selected.left}
           />
           <CompareSideCard
             heading="Right"
+            alignment={alignmentState.right}
             side={compareState.payload?.right}
             fallbackLegislator={selected.right}
           />
@@ -293,7 +363,7 @@ export default function ComparisonPanel({
   );
 }
 
-function CompareSideCard({ heading, side, fallbackLegislator }) {
+function CompareSideCard({ alignment, heading, side, fallbackLegislator }) {
   const legislator = side?.legislator || fallbackLegislator;
   const fingerprintRows = side?.fingerprint?.fingerprint || [];
   const positionRows = side?.position?.positions || [];
@@ -310,13 +380,17 @@ function CompareSideCard({ heading, side, fallbackLegislator }) {
           <p className="text-xs uppercase tracking-[0.28em] text-stone-500">{heading}</p>
           <h3 className="mt-3 font-serif text-[2.15rem] leading-[0.95] text-stone-900">{legislator.name_display}</h3>
           <p className="mt-2 text-[14px] leading-5 text-stone-600">
-            {formatChamber(legislator.chamber)} • {legislator.party} • {legislator.state}
-            {legislator.district ? `-${legislator.district}` : " • Statewide"}
+            {formatChamber(legislator.chamber)} - {legislator.party} - {legislator.state}
+            {legislator.district ? `-${legislator.district}` : " - Statewide"}
           </p>
         </div>
       </div>
 
       <div className="mt-4 grid gap-3">
+        <CompareMetric
+          label="Your Issues"
+          value={buildAlignmentSummary(alignment)}
+        />
         <CompareMetric
           label="Vote Direction"
           value={topPosition}
@@ -325,7 +399,7 @@ function CompareSideCard({ heading, side, fallbackLegislator }) {
           label="Issue Focus Context"
           value={
             topDomains.length
-              ? topDomains.map((row) => `${formatDomainLabel(row.domain)} ${(row.vote_share * 100).toFixed(0)}%`).join(" • ")
+              ? topDomains.map((row) => `${formatDomainLabel(row.domain)} ${(row.vote_share * 100).toFixed(0)}%`).join(" / ")
               : "No eligible domain emphasis available"
           }
         />
@@ -374,6 +448,24 @@ function truncateSummary(summaryText) {
     return normalized;
   }
   return `${normalized.slice(0, 157)}...`;
+}
+
+function buildAlignmentSummary(alignment) {
+  if (!alignment) {
+    return "Select issues above to add this read.";
+  }
+
+  const rows = alignment.alignment || [];
+  if (!rows.length) {
+    return "No issue preferences selected.";
+  }
+
+  const aligned = rows.filter((row) => row.label === "aligned").length;
+  const notAligned = rows.filter((row) => row.label === "not_aligned").length;
+  const mixed = rows.filter((row) => row.label === "mixed").length;
+  const insufficient = rows.filter((row) => row.label === "insufficient_evidence").length;
+
+  return `${aligned} aligned / ${notAligned} not aligned / ${mixed} mixed / ${insufficient} insufficient`;
 }
 
 function buildComparisonInsight(payload) {

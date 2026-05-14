@@ -122,6 +122,7 @@ export default function HomePage() {
         <ComparisonPanel
           defaultLeftLegislator={selectedLegislator}
           defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
+          preferences={issuePreferences}
           seedPair={comparisonSeed}
         />
         <FingerprintRadar
