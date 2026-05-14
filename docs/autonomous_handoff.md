@@ -63,13 +63,20 @@ Last updated: 2026-05-14
 
 ## Active Checkpoint
 
-No active uncommitted checkpoint.
+Checkpoint target: `Browser QA alignment fallback`.
 
-Last clean checkpoint:
+Files in this checkpoint:
 
-- `316ae36 Document lightweight monitoring`
+- `backend/app/api/precomputed.py`
+- `backend/tests/test_db_read_layer.py`
+- `frontend/components/AlignmentPanel.js`
+- `docs/autonomous_handoff.md`
 
-If work resumes, start with browser-based desktop/mobile QA once localhost access is unblocked.
+Intent of current changes:
+
+- return insufficient-evidence alignment rows when database legislators/fingerprints exist but interpretation rows are unavailable
+- avoid showing this as a legislator-not-found error in the voter flow
+- clarify alignment card copy so `0 interpreted` does not imply no classified roll calls exist
 
 ## Verification Already Run
 
@@ -87,7 +94,11 @@ Reported results:
 - frontend build passed
 - `$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_api_metadata.py tests\test_api_lookup.py` passed (`6 passed`)
 - `cd frontend; npm run build` passed
-- browser smoke test attempted, but the in-app browser blocked `http://127.0.0.1:3000/` and `http://localhost:3000/` with `ERR_BLOCKED_BY_CLIENT`
+- in-app browser is now unblocked after starting backend/frontend servers
+- stale `__webpack_modules__[moduleId] is not a function` overlay was fixed by stopping Next, deleting `frontend/.next`, and restarting dev server
+- browser QA passed for ZIP lookup, opening a House profile, selecting an issue, insufficient-evidence alignment fallback, alignment evidence, Quick Read evidence, and comparison supporting context
+- `$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_db_read_layer.py tests\test_api_alignment.py` passed (`11 passed`)
+- `cd frontend; npm run build` passed after the alignment copy fix
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -98,11 +109,18 @@ Remove-Item -LiteralPath frontend\.next -Recurse -Force
 Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p','3000' -WorkingDirectory '<repo>\frontend' -WindowStyle Hidden
 ```
 
+Current checkpoint still needs commit:
+
+```powershell
+git add backend/app/api/precomputed.py backend/tests/test_db_read_layer.py frontend/components/AlignmentPanel.js docs/autonomous_handoff.md
+git commit -m "Handle missing alignment interpretations"
+```
+
 ## Next Product Tasks After Commit
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Run browser-based desktop/mobile QA once localhost access is unblocked.
+1. Continue mobile viewport visual QA now that browser access is working.
 2. Resolve or quarantine the local `backend/.pytest_tmp` permission warning if it starts blocking tooling.
 
 ## Operating Mode

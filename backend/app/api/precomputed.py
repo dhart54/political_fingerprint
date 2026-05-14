@@ -432,7 +432,7 @@ def _get_db_alignment_response(*, legislator_id: str, preferences: dict[str, str
         classification_version=str(first_row["classification_version"]),
     )
     if evidence_rows is None:
-        return None
+        evidence_rows = []
 
     return _build_alignment_payload(
         legislator_id=legislator_id,

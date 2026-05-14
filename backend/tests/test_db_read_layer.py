@@ -1,6 +1,7 @@
 from app.api.precomputed import (
     get_drift_response,
     get_fingerprint_response,
+    get_alignment_response,
     get_summary_response,
     get_zip_lookup_response,
     search_legislators,
@@ -148,6 +149,37 @@ def test_get_summary_response_uses_database_rows(monkeypatch) -> None:
         "generation_method": "cached_llm",
         "created_at": "2026-03-13T10:00:00+00:00",
     }
+
+
+def test_get_alignment_response_returns_insufficient_when_db_interpretations_unavailable(monkeypatch) -> None:
+    monkeypatch.setattr(
+        "app.api.precomputed._get_db_legislator_by_external_id",
+        lambda legislator_id: {"id": 11},
+    )
+    monkeypatch.setattr(
+        "app.api.precomputed._get_db_fingerprint_rows",
+        lambda *, legislator_db_id: [
+            {
+                "window_start": "2024-03-13",
+                "window_end": "2026-03-12",
+                "classification_version": "v1",
+            }
+        ],
+    )
+    monkeypatch.setattr(
+        "app.api.precomputed._get_db_alignment_rows",
+        lambda **kwargs: None,
+    )
+
+    payload = get_alignment_response(
+        legislator_id="leg_casey_rivera",
+        preferences={"ECONOMY_TAXES": "show_record"},
+    )
+
+    assert payload["legislator_id"] == "leg_casey_rivera"
+    assert payload["alignment"][0]["domain"] == "ECONOMY_TAXES"
+    assert payload["alignment"][0]["label"] == "insufficient_evidence"
+    assert payload["alignment"][0]["evidence_count"] == 0
 
 
 def test_get_zip_lookup_response_uses_database_rows(monkeypatch) -> None:

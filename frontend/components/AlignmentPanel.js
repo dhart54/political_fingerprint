@@ -127,7 +127,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
                   </p>
                 </div>
                 <span className={`rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.18em] ${getLabelClass(row.label)}`}>
-                  {row.interpreted_count} votes
+                  {row.interpreted_count} interpreted
                 </span>
               </div>
               <p className="mt-3 text-sm leading-6 text-stone-700">
@@ -167,7 +167,7 @@ function buildHeadline({ status, selectedCount, rows, name }) {
 
 function buildRowCopy(row) {
   if (row.label === "insufficient_evidence") {
-    return `${row.evidence_count} relevant votes found, but none had enough interpreted yea/nay evidence to label alignment.`;
+    return "No interpreted vote-meaning rows are available for this issue yet. Use Inspect Votes to review the classified roll calls behind the read.";
   }
   if (row.label === "mixed") {
     return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes, so the record is split for this issue.`;
