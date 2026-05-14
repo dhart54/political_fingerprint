@@ -71,34 +71,15 @@ Last updated: 2026-05-14
   - committed as `3d0c702 Stabilize Windows test workflow`
   - full backend fixture suite passes with `pytest --basetemp=..\.local\pytest_basetemp`
   - cache-source scaffold tests now allow real cached source counts
+- Voter journey friction:
+  - committed as `27e2051 Reduce voter journey friction`
+  - ZIP lookup now auto-opens the House profile and seeds House-vs-senator comparison
+  - issue starter checks let users begin with neutral `show_record` bundles
+  - evidence source URLs are clickable and visible
 
 ## Active Checkpoint
 
-Checkpoint target: `Reduce first-use voter journey friction`.
-
-Files in this checkpoint:
-
-- `frontend/components/IssuePreferencePanel.js`
-- `frontend/components/PositionByIssue.js`
-- `frontend/components/ZipLookupPanel.js`
-- `docs/product_v2_tasklist.md`
-- `docs/autonomous_handoff.md`
-
-Intent of current changes:
-
-- add neutral starter issue checks that select common issue bundles as `show_record`
-- auto-open the ZIP-mapped House profile and seed House-vs-senator comparison after lookup
-- make evidence source URLs clickable while still displaying the underlying URL text
-
-Verification already run for this checkpoint:
-
-- `cd frontend; npm run build` passed after stopping the active dev server
-- browser QA: reload opens ZIP `27701` to `Valerie P. Foushee` as the current profile
-- browser QA: `Cost of Living` starter check selects 3 issues and loads alignment rows
-- browser QA: evidence drilldown exposes clickable source URLs
-- browser QA: no browser console errors after final dev-server restart
-
-After committing this checkpoint, update this section back to `No active uncommitted checkpoint`.
+No active uncommitted checkpoint.
 
 ## Verification Already Run
 
@@ -124,6 +105,8 @@ Reported results:
 - `cd frontend; npm run build` passed after the alignment copy fix
 - full `pytest` without `--basetemp` is blocked by `C:\Users\Dylan\AppData\Local\Temp\pytest-of-Dylan` permissions
 - `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp` passed outside the sandbox (`144 passed`)
+- `cd frontend; npm run build` passed for the voter journey friction checkpoint
+- browser QA passed after the voter journey friction checkpoint: reload opens ZIP `27701` to `Valerie P. Foushee`, starter checks select issues, evidence source links render, and console errors are empty
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -138,7 +121,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Start the next product pass from the first real voter journey gap found in browser QA, keeping the alignment and evidence workflow as the primary path.
+1. Continue product QA from the selected-issue comparison section, especially whether the side-by-side alignment summary is useful enough without opening supporting context.
 2. Prefer focused backend tests while developing, then run the full backend fixture suite with `pytest --basetemp=..\.local\pytest_basetemp` before the next checkpoint.
 
 ## Operating Mode
