@@ -51,23 +51,31 @@ Last updated: 2026-05-14
 - Loaded ZIP coverage:
   - committed as `2e66017 Expose loaded ZIP coverage`
   - `/lookup/zips` exposes database or fixture ZIP mappings for UI suggestions
+- Deployment docs:
+  - committed as `89de46b Document production deployment`
+  - Render/Vercel setup, env vars, CORS, checks, and cost notes are documented
 
 ## Active Checkpoint
 
-Checkpoint target: `Document production deployment`.
+Checkpoint target: `Add accessibility and mobile readiness pass`.
 
 Files in this checkpoint:
 
 - `README.md`
-- `docs/deployment.md`
+- `docs/accessibility_mobile_checklist.md`
+- `frontend/components/ComparisonPanel.js`
+- `frontend/components/IssuePreferencePanel.js`
+- `frontend/components/LegislatorPicker.js`
+- `frontend/components/ZipLookupPanel.js`
 - `docs/product_v2_tasklist.md`
 - `docs/autonomous_handoff.md`
 
 Intent of current changes:
 
-- document Render backend deployment
-- document Vercel frontend deployment
-- record CORS, env vars, post-deploy checks, and cost notes
+- add accessible names for ZIP and legislator search inputs
+- expose selected state with `aria-pressed` on toggle-like controls
+- add clearer labels for comparison and ZIP shortcut buttons
+- document the manual accessibility/mobile voter-journey checklist
 
 ## Verification Already Run
 
@@ -89,7 +97,7 @@ Reported results:
 
 Current checkpoint still needs verification:
 
-- docs-only checkpoint; no build required
+- `cd frontend; npm run build` passed
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -104,8 +112,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Add accessibility and mobile layout checks for the full voter journey.
-2. Add lightweight error monitoring guidance.
+1. Add lightweight error monitoring guidance.
 
 ## Operating Mode
 

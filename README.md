@@ -26,3 +26,7 @@ Use [docs/development_workflow.md](/mnt/c/Users/Dylan/Documents/Data%20Science/p
 ## Deployment
 
 Use [docs/deployment.md](/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/deployment.md) for the Render backend and Vercel frontend deployment checklist.
+
+## Accessibility and Mobile Checks
+
+Use [docs/accessibility_mobile_checklist.md](/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/accessibility_mobile_checklist.md) before sharing the voter journey outside development.

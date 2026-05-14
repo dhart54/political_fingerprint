@@ -69,7 +69,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
             {selectedLegislator.name_display}
           </h2>
           <p className="mt-2 text-[15px] leading-6 text-stone-300">
-            {formatChamber(selectedLegislator.chamber)} • {selectedLegislator.party} • {selectedLegislator.state}
+            {formatChamber(selectedLegislator.chamber)} - {selectedLegislator.party} - {selectedLegislator.state}
             {selectedLegislator.district ? `-${selectedLegislator.district}` : ""}
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -100,6 +100,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
             </p>
           </div>
           <input
+            aria-label="Search legislators"
             className="mt-4 h-12 w-full rounded-full border border-stone-300 bg-stone-50 px-5 text-sm text-stone-900 outline-none placeholder:text-stone-500"
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search legislators"
@@ -126,6 +127,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
                       : "border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(245,241,233,0.94))] text-stone-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] hover:border-stone-400"
                   }`}
                   key={legislator.id}
+                  aria-pressed={isSelected}
                   onClick={() => onSelect(legislator)}
                   type="button"
                   >
@@ -141,8 +143,8 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
                     {legislator.name_display}
                   </p>
                   <p className={`mt-2 text-[14px] leading-5 ${isSelected ? "text-stone-300" : "text-stone-600"}`}>
-                    {legislator.party} • {legislator.state}
-                    {legislator.district ? `-${legislator.district}` : " • Statewide"}
+                    {legislator.party} - {legislator.state}
+                    {legislator.district ? `-${legislator.district}` : " - Statewide"}
                   </p>
                 </button>
               );

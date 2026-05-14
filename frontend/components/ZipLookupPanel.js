@@ -127,7 +127,11 @@ export default function ZipLookupPanel({
       </div>
 
       <form className="mt-5 flex flex-col gap-3 sm:flex-row" onSubmit={handleLookup}>
+        <label className="sr-only" htmlFor="zip-code-input">
+          ZIP code
+        </label>
         <input
+          id="zip-code-input"
           className="h-12 flex-1 rounded-full border border-stone-300 bg-stone-50 px-5 text-sm text-stone-900 outline-none ring-0 placeholder:text-stone-500"
           inputMode="numeric"
           maxLength={5}
@@ -176,6 +180,7 @@ export default function ZipLookupPanel({
             {state.payload.house_rep && state.payload.senators[0] ? (
               <button
                 className="rounded-full bg-cyan-900 px-4 py-2 text-xs uppercase tracking-[0.22em] text-white"
+                aria-label={`Compare ${state.payload.house_rep.name_display} with ${state.payload.senators[0].name_display}`}
                 onClick={() => {
                   onSelectLegislator?.(state.payload.house_rep);
                   onComparePair?.({
@@ -191,6 +196,7 @@ export default function ZipLookupPanel({
             {state.payload.house_rep && state.payload.senators[1] ? (
               <button
                 className="rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-cyan-900"
+                aria-label={`Compare ${state.payload.house_rep.name_display} with ${state.payload.senators[1].name_display}`}
                 onClick={() => {
                   onSelectLegislator?.(state.payload.house_rep);
                   onComparePair?.({
@@ -206,6 +212,7 @@ export default function ZipLookupPanel({
             {state.payload.senators[0] && state.payload.senators[1] ? (
               <button
                 className="rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-cyan-900"
+                aria-label={`Compare ${state.payload.senators[0].name_display} with ${state.payload.senators[1].name_display}`}
                 onClick={() =>
                   onComparePair?.({
                     left: state.payload.senators[0],
@@ -254,6 +261,7 @@ export default function ZipLookupPanel({
             {supportedZips.zips.slice(0, 8).map((row) => (
               <button
                 className="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs uppercase tracking-[0.18em] text-stone-700"
+                aria-label={`Lookup ZIP ${row.zip}, ${row.state}-${row.district}`}
                 key={row.zip}
                 onClick={() => {
                   setZipCode(row.zip);
@@ -299,6 +307,7 @@ function LegislatorCard({ accent, heading, legislator, onSelectLegislator }) {
         <div className="mt-4">
           <button
             className="rounded-full bg-stone-900 px-4 py-2 text-xs uppercase tracking-[0.22em] text-stone-100"
+            aria-label={`Open profile for ${legislator.name_display}`}
             onClick={() => onSelectLegislator(legislator)}
             type="button"
           >

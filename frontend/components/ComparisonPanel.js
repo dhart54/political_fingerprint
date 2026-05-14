@@ -287,6 +287,7 @@ export default function ComparisonPanel({
             Select Legislators
           </p>
           <input
+            aria-label="Search legislators to compare"
             className="mt-4 h-12 w-full rounded-full border border-stone-300 bg-stone-50 px-5 text-sm text-stone-900 outline-none placeholder:text-stone-500"
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search by legislator name"
@@ -322,6 +323,8 @@ export default function ComparisonPanel({
                         ? "bg-stone-900 text-stone-100"
                         : "bg-stone-200 text-stone-700"
                     }`}
+                    aria-label={`Set ${legislator.name_display} as the left comparison record`}
+                    aria-pressed={selected.left.id === legislator.id}
                     onClick={() => setSelected((current) => ({ ...current, left: legislator }))}
                     type="button"
                   >
@@ -333,6 +336,8 @@ export default function ComparisonPanel({
                         ? "bg-stone-900 text-stone-100"
                         : "bg-stone-200 text-stone-700"
                     }`}
+                    aria-label={`Set ${legislator.name_display} as the right comparison record`}
+                    aria-pressed={selected.right.id === legislator.id}
                     onClick={() => setSelected((current) => ({ ...current, right: legislator }))}
                     type="button"
                   >

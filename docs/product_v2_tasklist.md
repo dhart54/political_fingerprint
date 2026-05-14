@@ -68,11 +68,10 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Surface data freshness and source coverage in the first viewport.
 - [x] Add production deployment docs for Render and Vercel.
 - [ ] Add lightweight error monitoring guidance.
-- [ ] Add accessibility and mobile layout checks for the full voter journey.
+- [x] Add accessibility and mobile layout checks for the full voter journey.
 
 ## Working Priority
 
 Current next build target:
 
-1. Add accessibility and mobile layout checks for the full voter journey.
-2. Add lightweight error monitoring guidance.
+1. Add lightweight error monitoring guidance.

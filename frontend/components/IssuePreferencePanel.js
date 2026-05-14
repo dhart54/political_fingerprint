@@ -143,6 +143,7 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
                           ? "bg-cyan-900 text-white"
                           : "bg-white text-stone-700"
                       }`}
+                      aria-pressed={selectedStance === stance.value}
                       key={stance.value}
                       onClick={() => setStance(issue.domain, stance.value)}
                       type="button"
