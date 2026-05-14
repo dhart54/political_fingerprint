@@ -65,7 +65,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 ## Phase 8 - Launch Usefulness
 
 - [ ] Improve ZIP coverage beyond fixture/demo mappings.
-- [ ] Surface data freshness and source coverage in the first viewport.
+- [x] Surface data freshness and source coverage in the first viewport.
 - [ ] Add production deployment docs for Render and Vercel.
 - [ ] Add lightweight error monitoring guidance.
 - [ ] Add accessibility and mobile layout checks for the full voter journey.
@@ -76,6 +76,5 @@ Current next build target:
 
 1. Decide whether generic comparison remains useful as secondary context.
 2. Improve ZIP coverage beyond fixture/demo mappings.
-3. Surface data freshness and source coverage in the first viewport.
-4. Add production deployment docs for Render and Vercel.
-5. Add accessibility and mobile layout checks for the full voter journey.
+3. Add production deployment docs for Render and Vercel.
+4. Add accessibility and mobile layout checks for the full voter journey.

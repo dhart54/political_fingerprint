@@ -6,6 +6,7 @@ from app.api.compare import router as compare_router
 from app.api.drift import router as drift_router
 from app.api.fingerprint import router as fingerprint_router
 from app.api.lookup import router as lookup_router
+from app.api.metadata import router as metadata_router
 from app.api.positions import router as positions_router
 from app.api.search import router as search_router
 from app.api.summary import router as summary_router
@@ -30,6 +31,7 @@ app.include_router(alignment_router)
 app.include_router(drift_router)
 app.include_router(summary_router)
 app.include_router(lookup_router)
+app.include_router(metadata_router)
 app.include_router(search_router)
 app.include_router(compare_router)
 

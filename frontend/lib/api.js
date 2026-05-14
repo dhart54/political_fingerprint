@@ -17,6 +17,18 @@ export function getApiBaseUrl() {
   return API_BASE_URL;
 }
 
+export async function fetchCoverageMetadata() {
+  const response = await fetch(`${API_BASE_URL}/metadata/coverage`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Coverage metadata request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchFingerprint({
   legislatorId,
   comparisonParty = "ALL",

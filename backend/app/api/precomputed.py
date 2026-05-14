@@ -94,6 +94,14 @@ def search_legislators(*, query: str = "") -> list[dict[str, object]]:
     )
 
 
+def get_coverage_metadata() -> dict[str, object]:
+    db_metadata = _get_db_coverage_metadata()
+    if db_metadata is not None:
+        return db_metadata
+
+    return _get_fallback_coverage_metadata()
+
+
 def get_fingerprint_response(*, legislator_id: str, comparison_party: str = "ALL") -> dict[str, object] | None:
     db_response = _get_db_fingerprint_response(
         legislator_id=legislator_id,
@@ -960,6 +968,69 @@ def _get_db_senators(*, state: str) -> list[dict[str, Any]] | None:
         """,
         (state,),
     )
+
+
+def _get_db_coverage_metadata() -> dict[str, object] | None:
+    row = _query_one_dict(
+        """
+        SELECT
+            (SELECT COUNT(*) FROM legislators WHERE in_office = TRUE) AS legislator_count,
+            (SELECT COUNT(*) FROM roll_calls) AS roll_call_count,
+            (SELECT COUNT(*) FROM roll_calls WHERE source_url IS NOT NULL AND source_url <> '') AS source_url_count,
+            (SELECT COUNT(*) FROM vote_classifications WHERE is_eligible = TRUE) AS eligible_roll_call_count,
+            (SELECT MIN(window_start) FROM fingerprints) AS window_start,
+            (SELECT MAX(window_end) FROM fingerprints) AS window_end,
+            (SELECT classification_version FROM fingerprints ORDER BY window_end DESC, classification_version DESC LIMIT 1) AS classification_version
+        """,
+    )
+    if row is None or row.get("window_end") is None:
+        return None
+
+    roll_call_count = int(row["roll_call_count"] or 0)
+    source_url_count = int(row["source_url_count"] or 0)
+    return {
+        "data_source": "database",
+        "window_start": str(row["window_start"]),
+        "window_end": str(row["window_end"]),
+        "classification_version": str(row["classification_version"] or "unknown"),
+        "legislator_count": int(row["legislator_count"] or 0),
+        "roll_call_count": roll_call_count,
+        "eligible_roll_call_count": int(row["eligible_roll_call_count"] or 0),
+        "source_url_count": source_url_count,
+        "source_url_share": _safe_share(source_url_count, roll_call_count),
+    }
+
+
+def _get_fallback_coverage_metadata() -> dict[str, object]:
+    classification_result = run_classification(run_ingest(), classification_version="v1")
+    roll_call_count = len(FALLBACK_FIXTURE_DATA.roll_calls)
+    source_url_count = sum(
+        1
+        for roll_call in FALLBACK_FIXTURE_DATA.roll_calls
+        if str(roll_call.get("source_url") or "").strip()
+    )
+    fingerprint_rows = FALLBACK_PRECOMPUTED_DATA.fingerprint_records
+    window_start = min(row.window_start for row in fingerprint_rows)
+    window_end = max(row.window_end for row in fingerprint_rows)
+    classification_version = fingerprint_rows[0].classification_version if fingerprint_rows else "v1"
+
+    return {
+        "data_source": "fixtures",
+        "window_start": window_start.isoformat(),
+        "window_end": window_end.isoformat(),
+        "classification_version": classification_version,
+        "legislator_count": len(FALLBACK_FIXTURE_DATA.legislators),
+        "roll_call_count": roll_call_count,
+        "eligible_roll_call_count": sum(1 for row in classification_result.classified_roll_calls if row.is_eligible),
+        "source_url_count": source_url_count,
+        "source_url_share": _safe_share(source_url_count, roll_call_count),
+    }
+
+
+def _safe_share(numerator: int, denominator: int) -> float:
+    if denominator <= 0:
+        return 0.0
+    return numerator / denominator
 
 
 def _query_all_dicts(query: str, params: tuple[Any, ...] = ()) -> list[dict[str, Any]] | None:

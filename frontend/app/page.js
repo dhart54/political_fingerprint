@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import HealthStatus from "../components/HealthStatus";
 import AlignmentPanel from "../components/AlignmentPanel";
@@ -13,6 +13,7 @@ import PositionByIssue from "../components/PositionByIssue";
 import ProfileQuickRead from "../components/ProfileQuickRead";
 import SummaryPanel from "../components/SummaryPanel";
 import ZipLookupPanel from "../components/ZipLookupPanel";
+import { fetchCoverageMetadata } from "../lib/api";
 
 const DEFAULT_LEGISLATOR = {
   id: "leg_aaron_bean",
@@ -42,6 +43,30 @@ export default function HomePage() {
     left: DEFAULT_LEGISLATOR,
     right: DEFAULT_COMPARE_RIGHT,
   });
+  const [coverageMetadata, setCoverageMetadata] = useState(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadCoverageMetadata() {
+      try {
+        const payload = await fetchCoverageMetadata();
+        if (active) {
+          setCoverageMetadata(payload);
+        }
+      } catch (error) {
+        if (active) {
+          setCoverageMetadata(null);
+        }
+      }
+    }
+
+    loadCoverageMetadata();
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#f7f4ec] text-stone-900">
@@ -57,10 +82,13 @@ export default function HomePage() {
             <p className="mt-5 max-w-[640px] text-[17px] leading-8 text-stone-700 sm:text-lg">
               Enter a ZIP code, open a representative or senator, and see their recent voting record by issue. The read is deterministic, neutral, and built from categorized policy votes.
             </p>
+            <p className="mt-4 max-w-[640px] text-[14px] leading-7 text-stone-600">
+              {buildCoverageRead(coverageMetadata)}
+            </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-3">
-              <HeroStat value="548" label="legislators loaded" />
-              <HeroStat value="8" label="issue domains" />
-              <HeroStat value="730" label="day window" />
+              <HeroStat value={formatNumber(coverageMetadata?.legislator_count, "548")} label="legislators loaded" />
+              <HeroStat value={formatNumber(coverageMetadata?.eligible_roll_call_count, "8")} label="eligible roll calls" />
+              <HeroStat value={formatPercent(coverageMetadata?.source_url_share)} label="source links" />
             </div>
           </div>
           <ZipLookupPanel
@@ -152,6 +180,38 @@ function HeroStat({ value, label }) {
       <p className="mt-2 text-xs uppercase tracking-[0.2em] text-stone-600">{label}</p>
     </div>
   );
+}
+
+function buildCoverageRead(metadata) {
+  if (!metadata) {
+    return "Coverage context loads from the backend when available; local fallback data remains deterministic for development.";
+  }
+
+  return `Coverage window ${formatDate(metadata.window_start)} to ${formatDate(metadata.window_end)}. Procedural votes are excluded, and source links are tracked for evidence drilldowns.`;
+}
+
+function formatNumber(value, fallback) {
+  if (typeof value !== "number") {
+    return fallback;
+  }
+
+  return new Intl.NumberFormat("en-US").format(value);
+}
+
+function formatPercent(value) {
+  if (typeof value !== "number") {
+    return "--";
+  }
+
+  return `${Math.round(value * 100)}%`;
+}
+
+function formatDate(value) {
+  if (!value) {
+    return "unknown";
+  }
+
+  return String(value).slice(0, 10);
 }
 
 function MiniStep({ label, value }) {

@@ -38,23 +38,31 @@ Last updated: 2026-05-14
 - Quick-read evidence links:
   - committed as `460db51 Link quick read to evidence`
   - quick-read domain and vote-direction cards can open underlying vote evidence
+- Verification workflow docs:
+  - committed as `084cfda Document verification workflow`
+  - fixture/Supabase verification modes and Windows Next cache reset are documented
 
 ## Active Checkpoint
 
-Checkpoint target: `Document verification workflow`.
+Checkpoint target: `Surface first-viewport coverage metadata`.
 
 Files in this checkpoint:
 
-- `README.md`
-- `docs/development_workflow.md`
+- `backend/app/api/metadata.py`
+- `backend/app/api/precomputed.py`
+- `backend/app/main.py`
+- `backend/tests/test_api_metadata.py`
+- `frontend/app/page.js`
+- `frontend/lib/api.js`
+- `docs/methodology.md`
 - `docs/product_v2_tasklist.md`
 - `docs/autonomous_handoff.md`
 
 Intent of current changes:
 
-- split fixture-mode and Supabase-mode verification commands
-- document the Windows Next.js cache reset path for stale chunk errors
-- link the workflow from the README
+- add `/metadata/coverage`
+- show coverage window, legislator count, eligible roll calls, and source-link share in the hero
+- document the coverage metadata methodology
 
 ## Verification Already Run For Current Work
 
@@ -72,7 +80,8 @@ Reported results:
 
 Current checkpoint still needs verification:
 
-- docs-only checkpoint; no build required
+- `$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_api_metadata.py tests\test_api_lookup.py` passed (`6 passed`)
+- `cd frontend; npm run build` passed
 - browser smoke test attempted, but the in-app browser blocked `http://127.0.0.1:3000/` and `http://localhost:3000/` with `ERR_BLOCKED_BY_CLIENT`
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
@@ -87,8 +96,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 After verification, stage and commit these checkpoint files:
 
 ```powershell
-git add README.md docs/development_workflow.md docs/product_v2_tasklist.md docs/autonomous_handoff.md
-git commit -m "Document verification workflow"
+git add backend/app/api/metadata.py backend/app/api/precomputed.py backend/app/main.py backend/tests/test_api_metadata.py frontend/app/page.js frontend/lib/api.js docs/methodology.md docs/product_v2_tasklist.md docs/autonomous_handoff.md
+git commit -m "Surface coverage metadata"
 ```
 
 ## Next Product Tasks After Commit
@@ -97,9 +106,8 @@ Work from `docs/product_v2_tasklist.md` in this order:
 
 1. Decide whether generic comparison remains useful as secondary context.
 2. Improve ZIP coverage beyond fixture/demo mappings.
-3. Surface data freshness and source coverage in the first viewport.
-4. Add production deployment docs for Render and Vercel.
-5. Add accessibility and mobile layout checks for the full voter journey.
+3. Add production deployment docs for Render and Vercel.
+4. Add accessibility and mobile layout checks for the full voter journey.
 
 ## Operating Mode
 

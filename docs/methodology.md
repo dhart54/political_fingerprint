@@ -580,6 +580,22 @@ Current behavior:
 - renders connected, checking, or unavailable status in the UI
 - displays the configured API base URL so the active backend target is visible
 
+## Coverage Metadata API
+
+The `/metadata/coverage` endpoint exposes lightweight first-viewport context:
+
+- data source used by the response (`database` or `fixtures`)
+- current fingerprint window start and end
+- classification version
+- loaded legislator count
+- total roll call count
+- eligible roll call count
+- count and share of roll calls with source URLs
+
+The endpoint reads from precomputed database tables when available. If the database is unavailable in local development, it falls back to the deterministic fixture bundle and fixture-derived computed outputs.
+
+Coverage metadata is descriptive only. It does not score quality, rank officials, infer completeness beyond stored counts, or change any alignment calculation.
+
 ## Fingerprint Radar UI
 
 The frontend radar chart renders:
