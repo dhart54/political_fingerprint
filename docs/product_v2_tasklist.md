@@ -23,7 +23,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 ## Phase 3 - Vote Interpretation Foundation
 
-- [ ] Add `vote_interpretations` migration.
+- [x] Add `vote_interpretations` migration.
 - [ ] Add deterministic interpretation types and statuses.
 - [ ] Build an initial deterministic interpreter for obvious bill-passage and amendment cases.
 - [ ] Mark ambiguous roll calls as `ambiguous` or `insufficient_evidence`.
