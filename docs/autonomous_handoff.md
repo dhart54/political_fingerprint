@@ -80,39 +80,14 @@ Last updated: 2026-05-14
   - committed as `eeec66f Make comparison issue rows inspectable`
   - selected-issue comparison now shows per-issue rows for both officials
   - each comparison issue row can open the evidence drilldown for that official and issue
+- Shortened voter journey:
+  - committed as `95707b9 Shorten main voter journey`
+  - main page now keeps ZIP lookup, quick read, issue alignment, position evidence, comparison, and lower profile switching
+  - radar, drift, summary, and API health are removed from the main voter path
 
 ## Active Checkpoint
 
-Checkpoint target: `Shorten main voter journey`.
-
-Files in this checkpoint:
-
-- `frontend/app/page.js`
-- `docs/product_v2_tasklist.md`
-- `docs/autonomous_handoff.md`
-
-Keep / adjust / dump decision:
-
-- keep: ZIP lookup, current profile, quick read, issue starter checks, alignment, position evidence, selected-issue comparison
-- adjust: profile switcher remains as a lower utility after the primary voter path
-- dump from main page: radar, drift, summary, API health
-
-Intent of current changes:
-
-- remove dashboard-style sections that appear after comparison and do not help the quick voter question
-- move Quick Read directly after Current Profile
-- align the step labels to the actual voter path: pick issues, compare records, inspect evidence
-- keep a small trust footer for methodology/data-window context
-
-Verification already run for this checkpoint:
-
-- `cd frontend; npm run build` passed after stopping the active dev server
-- browser QA: page still loads ZIP `27701` to Valerie P. Foushee
-- browser QA: Quick Read and Issue Comparison remain visible
-- browser QA: radar/drift/summary/API health sections are no longer visible in the main page
-- browser QA: starter check plus Open Votes still opens evidence with no console errors
-
-After committing this checkpoint, update this section back to `No active uncommitted checkpoint`.
+No active uncommitted checkpoint.
 
 ## Verification Already Run
 
