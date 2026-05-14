@@ -27,47 +27,50 @@ Last updated: 2026-05-14
   - backend alignment endpoint
   - frontend alignment read
   - alignment cards link to vote evidence
+- Comparison reframe:
+  - committed as `fff81f8 Reframe comparison around selected issues`
+  - comparison accepts the same issue preferences used by the alignment panel
+  - both comparison sides show a `Your Issues` aligned/not-aligned/mixed/insufficient count
 
 ## Active Checkpoint
 
-Checkpoint target: `Reframe comparison around selected issues`.
+Checkpoint target: `Polish alignment empty states and neutral copy`.
 
 Files in this checkpoint:
 
-- `frontend/app/page.js`
-- `frontend/components/ComparisonPanel.js`
+- `frontend/components/AlignmentPanel.js`
+- `frontend/components/IssuePreferencePanel.js`
+- `frontend/components/SummaryPanel.js`
 - `docs/product_v2_tasklist.md`
 - `docs/autonomous_handoff.md`
 
 Intent of current changes:
 
-- pass `issuePreferences` into comparison
-- fetch alignment for both comparison sides
-- show a `Your Issues` comparison metric for each side
-- mark Phase 7 comparison reframe tasks in the tasklist
+- remove build-stage copy from the preference picker
+- add explicit idle, loading, empty, mixed, and insufficient-evidence states
+- remove a prohibited-term-adjacent public UI mention from the summary helper copy
+- mark neutral-copy and state-polish tasks complete
 
 ## Verification Already Run For Current Work
 
-Backend focused tests passed, though the shell wrapper timed out after output:
+Latest committed comparison checkpoint verification:
 
 ```powershell
 $env:DATABASE_URL='postgresql://invalid'; pytest tests\test_api_alignment.py tests\test_api_compare.py
-```
-
-Reported result:
-
-- `10 passed`
-
-## Still Needed For This Checkpoint
-
-1. Run frontend build:
-
-```powershell
-cd frontend
 npm run build
 ```
 
-2. If the dev server is running, clear stale Next cache before browser refresh:
+Reported results:
+
+- `10 passed`
+- frontend build passed
+
+Current checkpoint still needs verification:
+
+- `cd frontend; npm run build` passed
+- browser smoke test attempted, but the in-app browser blocked `http://127.0.0.1:3000/` and `http://localhost:3000/` with `ERR_BLOCKED_BY_CLIENT`
+
+If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
 ```powershell
 netstat -ano | findstr :3000
@@ -76,22 +79,22 @@ Remove-Item -LiteralPath frontend\.next -Recurse -Force
 Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p','3000' -WorkingDirectory '<repo>\frontend' -WindowStyle Hidden
 ```
 
-3. Stage and commit these checkpoint files:
+After verification, stage and commit these checkpoint files:
 
 ```powershell
-git add frontend/app/page.js frontend/components/ComparisonPanel.js docs/product_v2_tasklist.md docs/autonomous_handoff.md
-git commit -m "Reframe comparison around selected issues"
+git add frontend/components/AlignmentPanel.js frontend/components/IssuePreferencePanel.js docs/product_v2_tasklist.md docs/autonomous_handoff.md
+git commit -m "Polish alignment states"
 ```
 
 ## Next Product Tasks After Commit
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Preserve neutral copy review for alignment/comparison UI.
-2. Improve empty, mixed, and insufficient-evidence states in the preference/alignment flow.
-3. Make quick-read claims traceable to evidence rows.
-4. Decide whether generic comparison remains useful as secondary context.
-5. Document fixture-mode versus Supabase-mode verification commands.
+1. Make each quick-read claim traceable to evidence rows.
+2. Decide whether generic comparison remains useful as secondary context.
+3. Document fixture-mode versus Supabase-mode verification commands.
+4. Document Windows Next.js cache reset workflow.
+5. Improve ZIP coverage beyond fixture/demo mappings.
 
 ## Operating Mode
 

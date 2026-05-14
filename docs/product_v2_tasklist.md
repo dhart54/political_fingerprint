@@ -37,7 +37,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Let users mark each selected issue as "support more action", "oppose more action", or "just show me the record" where interpretation supports it.
 - [x] Keep language plain and nonpartisan.
 - [x] Store preferences client-side for the current session.
-- [ ] Add empty, mixed, and insufficient-evidence states.
+- [x] Add empty, mixed, and insufficient-evidence states.
 
 ## Phase 5 - User Alignment API
 
@@ -53,7 +53,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Show each official against the same selected preferences.
 - [x] Use counts and labels instead of scores or rankings.
 - [x] Make evidence drilldown one click away from every alignment label.
-- [ ] Preserve neutral copy: no "vote for", "vote against", or candidate recommendation language.
+- [x] Preserve neutral copy: no "vote for", "vote against", or candidate recommendation language.
 
 ## Phase 7 - Comparison Reframe
 
@@ -74,8 +74,8 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 Current next build target:
 
-1. Evidence drilldown endpoint.
-2. Position-by-issue drilldown UI.
-3. Vote interpretation migration and deterministic seed.
-4. Preference picker.
-5. Alignment endpoint and UI.
+1. Make each quick-read claim traceable to evidence rows.
+2. Decide whether generic comparison remains useful as secondary context.
+3. Split fixture-mode and Supabase-mode verification docs.
+4. Document Windows Next.js cache reset workflow.
+5. Improve ZIP coverage beyond fixture/demo mappings.

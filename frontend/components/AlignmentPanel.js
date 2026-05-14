@@ -82,7 +82,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
         <p className="max-w-md text-sm leading-6 text-stone-600">
           {selectedCount === 0
             ? "Choose issues above to check this voting record against your stated preferences."
-            : "Labels are based only on interpreted votes. Ambiguous votes stay out of aligned and not-aligned counts."}
+            : "Labels are based only on interpreted votes. Mixed and insufficient-evidence labels keep unclear records visible without forcing a conclusion."}
         </p>
       </div>
 
@@ -92,7 +92,25 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
         </p>
       ) : null}
 
-      {state.status === "ready" ? (
+      {state.status === "idle" ? (
+        <div className="mt-5 rounded-[1.25rem] border border-dashed border-stone-300 bg-stone-50 px-4 py-5 text-sm leading-6 text-stone-600">
+          Select at least one issue to see whether the current interpreted record is aligned, not aligned, mixed, or still missing enough evidence.
+        </div>
+      ) : null}
+
+      {state.status === "loading" ? (
+        <div className="mt-5 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-5 text-sm leading-6 text-stone-600">
+          Checking interpreted votes for the selected issues...
+        </div>
+      ) : null}
+
+      {state.status === "ready" && rows.length === 0 ? (
+        <div className="mt-5 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-5 text-sm leading-6 text-stone-700">
+          No issue rows came back for this selection. The record remains available below, but this alignment check does not have enough structured data yet.
+        </div>
+      ) : null}
+
+      {state.status === "ready" && rows.length > 0 ? (
         <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {rows.map((row) => (
             <article
@@ -142,13 +160,17 @@ function buildHeadline({ status, selectedCount, rows, name }) {
   }
   const aligned = rows.filter((row) => row.label === "aligned").length;
   const notAligned = rows.filter((row) => row.label === "not_aligned").length;
+  const mixed = rows.filter((row) => row.label === "mixed").length;
   const insufficient = rows.filter((row) => row.label === "insufficient_evidence").length;
-  return `${aligned} aligned, ${notAligned} not aligned, ${insufficient} with insufficient evidence.`;
+  return `${aligned} aligned, ${notAligned} not aligned, ${mixed} mixed, ${insufficient} insufficient.`;
 }
 
 function buildRowCopy(row) {
   if (row.label === "insufficient_evidence") {
     return `${row.evidence_count} relevant votes found, but none had enough interpreted yea/nay evidence to label alignment.`;
+  }
+  if (row.label === "mixed") {
+    return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes, so the record is split for this issue.`;
   }
   if (row.preference === "show_record") {
     return `${row.interpreted_count} interpreted votes are available for inspection.`;

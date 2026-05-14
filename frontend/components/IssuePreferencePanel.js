@@ -121,7 +121,7 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
                   <p className="mt-2 text-sm leading-6 text-stone-600">{issue.prompt}</p>
                 </div>
                 <button
-                  className={`h-9 min-w-9 rounded-full border text-sm ${
+                  className={`h-9 min-w-9 rounded-full border px-3 text-sm ${
                     isSelected
                       ? "border-cyan-800 bg-cyan-900 text-white"
                       : "border-stone-300 bg-white text-stone-700"
@@ -130,7 +130,7 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
                   type="button"
                   aria-label={isSelected ? `Remove ${issue.label}` : `Select ${issue.label}`}
                 >
-                  {isSelected ? "✓" : "+"}
+                  {isSelected ? "x" : "+"}
                 </button>
               </div>
 
@@ -157,9 +157,11 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
         })}
       </div>
 
-      <p className="mt-4 text-sm leading-6 text-stone-600">
-        Next step in the build: compare these selections to interpreted vote records and show aligned, not aligned, mixed, or insufficient evidence.
-      </p>
+      <div className="mt-4 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-700">
+        {selectedCount === 0
+          ? "No issues selected yet. Pick one or more topics to add a record check below the ZIP lookup."
+          : `${selectedCount} issue ${selectedCount === 1 ? "selection is" : "selections are"} active for the alignment and comparison sections on this page.`}
+      </div>
     </section>
   );
 }
