@@ -76,36 +76,14 @@ Last updated: 2026-05-14
   - ZIP lookup now auto-opens the House profile and seeds House-vs-senator comparison
   - issue starter checks let users begin with neutral `show_record` bundles
   - evidence source URLs are clickable and visible
+- Inspectable comparison issue rows:
+  - committed as `eeec66f Make comparison issue rows inspectable`
+  - selected-issue comparison now shows per-issue rows for both officials
+  - each comparison issue row can open the evidence drilldown for that official and issue
 
 ## Active Checkpoint
 
-Checkpoint target: `Make comparison issue rows inspectable`.
-
-Files in this checkpoint:
-
-- `frontend/app/page.js`
-- `frontend/components/ComparisonPanel.js`
-- `frontend/components/PositionByIssue.js`
-- `docs/product_v2_tasklist.md`
-- `docs/autonomous_handoff.md`
-
-Intent of current changes:
-
-- replace compressed comparison alignment counts with per-issue rows for each side
-- keep comparison labels neutral: aligned, not aligned, mixed, insufficient evidence
-- let each comparison issue row open the evidence drilldown for the corresponding official and issue
-- preserve supporting context as secondary content
-
-Verification already run for this checkpoint:
-
-- `cd frontend; npm run build` passed after stopping the active dev server
-- browser QA: ZIP `27701` opens Valerie P. Foushee automatically
-- browser QA: `Cost of Living` starter check creates six comparison issue rows across both officials
-- browser QA: left-side comparison Inspect Votes opens House evidence rows
-- browser QA: right-side comparison Inspect Votes switches the current profile to Ted Budd and opens Senate evidence rows
-- browser QA: no browser console errors after the comparison flow
-
-After committing this checkpoint, update this section back to `No active uncommitted checkpoint`.
+No active uncommitted checkpoint.
 
 ## Verification Already Run
 
