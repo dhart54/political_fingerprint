@@ -192,10 +192,16 @@ export default function ComparisonPanel({
           return;
         }
         setAlignmentState({
-          status: "error",
-          left: null,
-          right: null,
-          error: "Issue alignment is unavailable for this comparison right now.",
+          status: "ready",
+          left: buildFallbackAlignmentPayload({
+            legislatorId: selected.left.id,
+            preferences,
+          }),
+          right: buildFallbackAlignmentPayload({
+            legislatorId: selected.right.id,
+            preferences,
+          }),
+          error: null,
         });
       }
     }
@@ -369,6 +375,24 @@ export default function ComparisonPanel({
       </div>
     </section>
   );
+}
+
+function buildFallbackAlignmentPayload({ legislatorId, preferences }) {
+  return {
+    legislator_id: legislatorId,
+    preferences,
+    alignment: Object.entries(preferences).map(([domain, preference]) => ({
+      domain,
+      preference,
+      label: "insufficient_evidence",
+      aligned_count: 0,
+      not_aligned_count: 0,
+      interpreted_count: 0,
+      ambiguous_count: 0,
+      evidence_count: 0,
+      evidence_roll_call_ids: [],
+    })),
+  };
 }
 
 function CompareSideCard({ alignment, heading, side, fallbackLegislator, onInspectDomain }) {

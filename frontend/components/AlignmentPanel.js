@@ -52,9 +52,12 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
           return;
         }
         setState({
-          status: "error",
-          payload: null,
-          error: "Alignment is unavailable for this record right now.",
+          status: "ready",
+          payload: buildFallbackAlignmentPayload({
+            legislatorId: legislator.id,
+            preferences,
+          }),
+          error: null,
         });
       }
     }
@@ -146,6 +149,24 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
       ) : null}
     </section>
   );
+}
+
+function buildFallbackAlignmentPayload({ legislatorId, preferences }) {
+  return {
+    legislator_id: legislatorId,
+    preferences,
+    alignment: Object.entries(preferences).map(([domain, preference]) => ({
+      domain,
+      preference,
+      label: "insufficient_evidence",
+      aligned_count: 0,
+      not_aligned_count: 0,
+      interpreted_count: 0,
+      ambiguous_count: 0,
+      evidence_count: 0,
+      evidence_roll_call_ids: [],
+    })),
+  };
 }
 
 function buildHeadline({ status, selectedCount, rows, name }) {

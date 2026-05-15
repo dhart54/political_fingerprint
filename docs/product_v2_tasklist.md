@@ -84,5 +84,5 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 Current next build target:
 
-1. Restore browser automation if the browser helper module is missing after refresh, then run the ZIP-to-evidence browser QA path.
+1. Continue with comparison search/selector UX tightening now that browser QA is restored.
 2. Use `pytest --basetemp=..\.local\pytest_basetemp` for full Windows fixture-mode test runs.

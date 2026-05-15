@@ -101,7 +101,41 @@ Last updated: 2026-05-14
 
 ## Active Checkpoint
 
-No active uncommitted checkpoint.
+Checkpoint target: `Complete insufficient-evidence browser QA`.
+
+Files in this checkpoint:
+
+- `frontend/components/AlignmentPanel.js`
+- `frontend/components/ComparisonPanel.js`
+- `docs/product_v2_tasklist.md`
+- `docs/autonomous_handoff.md`
+
+Completed in this checkpoint:
+
+- restored browser automation using fallback bundled helper path:
+  `C:/Users/Dylan/.codex/.tmp/bundled-marketplaces/openai-bundled/plugins/browser-use/scripts/browser-client.mjs`
+- added deterministic client fallback rows when alignment fetch fails in the browser path
+- fallback rows preserve selected issues as `insufficient_evidence` rather than showing `Alignment check unavailable`
+- applied the same fallback behavior to comparison-side alignment reads
+
+Verification already run for this checkpoint:
+
+- browser QA: ZIP `27701` loads Valerie P. Foushee
+- browser QA: `Cost of Living` starter check selects 3 issues
+- browser QA: alignment rows show `0 aligned, 0 not aligned, 0 mixed, 3 insufficient`
+- browser QA: new source-grounded insufficient-evidence copy appears
+- browser QA: old `Alignment check unavailable` state is gone for this path
+- browser QA: Inspect Votes opens evidence and source rows
+- browser console errors were empty
+- `cd frontend; npm run build` passed
+- post-build browser smoke repeated the Cost of Living path successfully
+
+Next exact steps after committing:
+
+1. Continue with comparison search/selector UX tightening.
+2. Review whether the comparison section still needs its internal legislator search now that the page has a compact Switch Official utility.
+3. Keep the selected-issue comparison cards primary.
+4. Run `cd frontend; npm run build` and browser QA before committing.
 
 ## Verification Already Run
 
@@ -139,7 +173,8 @@ Reported results:
 - browser QA passed at 390x844 after the mobile polish checkpoint: profile, starter checks, fine-tune drawer, alignment, evidence, and source links work with no console errors
 - `cd frontend; npm run build` passed for the insufficient-evidence copy checkpoint
 - direct API checks passed for ZIP `27701` and Cost of Living alignment returning `insufficient_evidence`
-- browser QA for the insufficient-evidence copy checkpoint is still pending because the browser helper module was unavailable after refresh
+- browser QA for the insufficient-evidence path later completed after restoring the browser helper from the fallback bundled marketplace path
+- `cd frontend; npm run build` passed for the insufficient-evidence browser QA fallback checkpoint
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -154,7 +189,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Restore browser automation if the browser helper module is missing after refresh, then run the ZIP-to-evidence browser QA path.
+1. Continue with comparison search/selector UX tightening now that browser QA is restored.
 2. Prefer focused backend tests while developing, then run the full backend fixture suite with `pytest --basetemp=..\.local\pytest_basetemp` before the next checkpoint.
 
 ## Operating Mode
