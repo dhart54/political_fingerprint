@@ -287,6 +287,13 @@ For a selected legislator and domain, the evidence response includes eligible cl
 
 The evidence endpoint does not interpret whether a yea or nay vote was substantively aligned with a policy preference. It only exposes the underlying voting record and classification metadata so the user can inspect the basis for higher-level reads.
 
+Frontend presentation:
+
+- evidence rows remain roll-call level because amendments and related actions can be meaningful
+- the UI groups rows by bill title or measure label when available
+- the UI surfaces both roll-call count and distinct bill-or-measure count so repeated actions on one bill are not presented as unrelated votes
+- this grouping is explanatory only and does not change stored metrics or alignment calculations
+
 ## Drift Rules
 
 Drift is deterministic and uses the same 730-day window as the fingerprint.

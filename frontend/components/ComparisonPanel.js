@@ -4,8 +4,6 @@ import { startTransition, useDeferredValue, useEffect, useState } from "react";
 
 import { fetchAlignment, fetchLegislatorComparison, fetchLegislatorSearch } from "../lib/api";
 
-const COMPARISON_OPTIONS = ["ALL", "D", "R"];
-
 export default function ComparisonPanel({
   defaultLeftLegislator,
   defaultRightLegislator,
@@ -13,7 +11,6 @@ export default function ComparisonPanel({
   preferences = {},
   seedPair,
 }) {
-  const [comparisonParty, setComparisonParty] = useState("ALL");
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query);
   const [selected, setSelected] = useState({
@@ -120,7 +117,7 @@ export default function ComparisonPanel({
         const payload = await fetchLegislatorComparison({
           leftLegislatorId: selected.left.id,
           rightLegislatorId: selected.right.id,
-          comparisonParty,
+          comparisonParty: "ALL",
         });
         if (!active) {
           return;
@@ -147,7 +144,7 @@ export default function ComparisonPanel({
     return () => {
       active = false;
     };
-  }, [comparisonParty, selected.left.id, selected.right.id]);
+  }, [selected.left.id, selected.right.id]);
 
   useEffect(() => {
     let active = true;
@@ -232,23 +229,6 @@ export default function ComparisonPanel({
             This section keeps your selected issues first. Vote direction and issue focus are available as supporting context only, so the comparison stays descriptive and does not order either side.
           </p>
         </div>
-        <div className="flex rounded-full border border-stone-300 bg-stone-100 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
-          {COMPARISON_OPTIONS.map((option) => (
-            <button
-              aria-pressed={comparisonParty === option}
-              className={`rounded-full px-4 py-2 text-xs tracking-[0.25em] transition ${
-                comparisonParty === option
-                  ? "bg-stone-900 text-stone-100 shadow-[0_6px_18px_rgba(28,25,23,0.18)]"
-                  : "text-stone-600 hover:text-stone-900"
-              }`}
-              key={option}
-              onClick={() => setComparisonParty(option)}
-              type="button"
-            >
-              {option}
-            </button>
-          ))}
-        </div>
       </div>
 
       <div className="mt-5 rounded-[2rem] bg-stone-950 px-5 py-5 text-stone-100">
@@ -269,7 +249,9 @@ export default function ComparisonPanel({
             {compareState.status === "loading" ? "Fetching issue focus and vote-direction data for both sides." : null}
             {compareState.status === "error" ? compareState.error : null}
             {compareState.status === "ready"
-              ? `Overlay comparison is set to ${comparisonParty}. ${Object.keys(preferences).length ? "Your issue selections are applied to both sides." : "Select issues above to add an alignment read for both sides."}`
+              ? Object.keys(preferences).length
+                ? "Your issue selections are applied to both sides."
+                : "Select issues above to add an alignment read for both sides."
               : null}
           </p>
           {alignmentState.status === "error" ? (

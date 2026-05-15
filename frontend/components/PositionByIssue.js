@@ -219,6 +219,7 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
 
   const evidenceRows = evidenceState.payload?.evidence || [];
   const isSelected = evidenceState.payload?.domain === selectedRow.domain;
+  const billGroups = groupEvidenceByBill(evidenceRows);
 
   return (
     <div id="position-evidence" className="mt-5 scroll-mt-6 rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4 lg:px-5">
@@ -262,30 +263,53 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
       ) : null}
       {evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (
         <div className="mt-4 grid gap-3">
-          {evidenceRows.map((row) => (
-            <article
-              className="rounded-[1.1rem] border border-stone-200 bg-white px-4 py-4"
-              key={`${row.roll_call_id}-${row.position}`}
-            >
-              <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+          <div className="rounded-2xl border border-cyan-900/10 bg-cyan-50 px-4 py-4 text-sm leading-6 text-stone-700">
+            {formatBillGroupSummary(evidenceRows.length, billGroups.length)}
+          </div>
+          {billGroups.map((group) => (
+            <article className="rounded-[1.25rem] border border-stone-200 bg-white px-4 py-4" key={group.key}>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-[0.24em] text-stone-500">
-                    {formatDate(row.vote_date)} - {formatChamber(row.chamber)} Roll {row.rollcall_number}
+                    Bill group
                   </p>
-                  <h5 className="mt-2 text-[17px] leading-7 text-stone-950">
-                    {row.bill_title || row.question}
+                  <h5 className="mt-2 text-[18px] leading-7 text-stone-950">
+                    {group.title}
                   </h5>
-                  <p className="mt-2 text-sm leading-6 text-stone-700">
-                    {row.description}
+                  <p className="mt-2 text-sm leading-6 text-stone-600">
+                    {group.rows.length} {group.rows.length === 1 ? "roll call" : "roll calls"} shown for this bill or measure.
                   </p>
                 </div>
-                <span className={`w-fit rounded-full px-3 py-1 text-xs uppercase tracking-[0.2em] ${getVoteBadgeClass(row.position)}`}>
-                  {formatVotePosition(row.position)}
+                <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-xs uppercase tracking-[0.2em] text-stone-700">
+                  {group.rows.length} rows
                 </span>
               </div>
-              <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <Meta label="Classification" value={row.classification_reason} />
-                <Meta href={row.source_url} label="Source" value={row.source_url || "No source URL"} />
+
+              <div className="mt-4 grid gap-3">
+                {group.rows.map((row) => (
+                  <div
+                    className="rounded-[1.1rem] border border-stone-200 bg-stone-50 px-4 py-4"
+                    key={`${row.roll_call_id}-${row.position}`}
+                  >
+                    <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.24em] text-stone-500">
+                          {formatDate(row.vote_date)} - {formatChamber(row.chamber)} Roll {row.rollcall_number}
+                        </p>
+                        <p className="mt-2 text-sm leading-6 text-stone-700">
+                          {row.description || row.question}
+                        </p>
+                      </div>
+                      <span className={`w-fit rounded-full px-3 py-1 text-xs uppercase tracking-[0.2em] ${getVoteBadgeClass(row.position)}`}>
+                        {formatVotePosition(row.position)}
+                      </span>
+                    </div>
+                    <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                      <Meta label="Classification" value={row.classification_reason} />
+                      <Meta href={row.source_url} label="Source" value={row.source_url || "No source URL"} />
+                    </div>
+                  </div>
+                ))}
               </div>
             </article>
           ))}
@@ -293,6 +317,30 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
       ) : null}
     </div>
   );
+}
+
+function groupEvidenceByBill(rows) {
+  const groups = new Map();
+
+  rows.forEach((row) => {
+    const title = row.bill_title || row.question || "Unlabeled bill or measure";
+    const key = title.toLowerCase();
+    const current = groups.get(key) || {
+      key,
+      title,
+      rows: [],
+    };
+    current.rows.push(row);
+    groups.set(key, current);
+  });
+
+  return Array.from(groups.values());
+}
+
+function formatBillGroupSummary(rollCallCount, billCount) {
+  return `${rollCallCount} ${rollCallCount === 1 ? "roll-call vote" : "roll-call votes"} shown across ${billCount} ${
+    billCount === 1 ? "bill or measure" : "bills or measures"
+  }. Repeated rows can be amendments or related actions on the same bill.`;
 }
 
 function formatDomainLabel(domain) {

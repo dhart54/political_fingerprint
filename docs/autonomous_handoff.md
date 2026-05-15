@@ -123,18 +123,18 @@ Last updated: 2026-05-14
 - Release-prep staging docs:
   - `docs/staging_readiness.md` records current status, intentional limits, env vars, deploy checks, and reviewer focus questions
   - deployment and monitoring docs point to the staging readiness checklist
+- Comparison overlay cleanup:
+  - visible `ALL / D / R` toggle removed from the issue-comparison header
+  - `Overlay comparison is set to...` status copy removed
+  - comparison still uses the default all-legislator context internally for supporting data
+- Evidence bill grouping:
+  - evidence rows now show roll-call count versus bill-or-measure count
+  - related roll calls are grouped under the same bill title or measure label
+  - methodology now documents that grouping is presentational and does not change metrics
 
 ## Active Checkpoint
 
-User requested next-task note only; no implementation due to low usage.
-
-Recorded next product task:
-
-- Remove the visible `ALL / D / R` toggle from the issue-comparison header.
-- Remove or rewrite related `Overlay comparison is set to...` status copy.
-- Rationale: this is leftover chamber/party overlay context from the older fingerprint comparison and is confusing in the selected-issues comparison view.
-
-No code changes have been made for this task yet.
+No active uncommitted checkpoint.
 
 ## Verification Already Run
 
@@ -212,6 +212,14 @@ Reported results:
   - no runtime or stale webpack overlay text appeared
   - note: the in-app browser helper hit a virtual-clipboard issue when filling ZIP, so this specific QA run used the default loaded profile path for the ARIA checks
 - docs guardrail/search check passed for the release-prep staging docs checkpoint; remaining matches are existing guardrail/tasklist references
+- `cd frontend; npm run build` passed for the comparison overlay/evidence grouping checkpoint
+- browser QA passed for the comparison overlay/evidence grouping checkpoint:
+  - issue comparison renders
+  - visible `ALL / D / R` toggle is absent from the comparison header
+  - `Overlay comparison is set...` copy is absent
+  - evidence panel shows roll-call count across bill-or-measure count
+  - evidence rows render under bill groups
+  - no runtime or stale webpack overlay text appeared
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -226,9 +234,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Remove the `ALL / D / R` comparison overlay toggle from the visible issue-comparison header.
-2. Remove or rewrite the related `Overlay comparison is set to...` status copy.
-3. Then prepare a concise staging readiness summary for review.
+1. Prepare a concise staging readiness summary for review.
+2. Then decide whether to merge/deploy this branch or do one final full-suite verification first.
 
 ## Operating Mode
 
