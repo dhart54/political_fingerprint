@@ -15,6 +15,27 @@ The main voter path is ready for staging review:
 - Comparison keeps selected issues primary and supports changing the comparison pair.
 - The footer explains method, evidence, limits, and data window.
 
+## Latest Local Verification
+
+Last local release-prep check: 2026-05-15.
+
+Passed:
+
+- full backend fixture suite: `146 passed`
+- frontend production build: `npm run build`
+- local API checks:
+  - `GET /health`
+  - `GET /metadata/coverage`
+  - `GET /lookup/zips`
+  - `GET /lookup/zip/27701`
+- in-app browser rendered the local page without runtime or stale webpack overlay text
+- rendered page confirmed ZIP `27701`, Valerie P. Foushee, issue comparison, removed comparison overlay toggle, switch-official utility, and footer trust notes
+
+Browser automation note:
+
+- click-based browser smoke was partially limited by the in-app browser helper timing out on click actions
+- prior browser checks in this branch covered starter issue selection, evidence opening, evidence grouping, and comparison rendering after the same code path
+
 ## Intentional Limits
 
 These are acceptable for staging and should not block review:

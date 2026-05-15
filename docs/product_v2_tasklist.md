@@ -91,5 +91,9 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 Current next build target:
 
-1. Prepare a concise staging readiness summary for review.
-2. Then decide whether to merge/deploy this branch or do one final full-suite verification first.
+1. Decide whether to merge/deploy this branch to staging.
+2. If deploying, follow `docs/staging_readiness.md` backend-first sequence and repeat the deployed URL smoke checks.
+
+## Shelved Product Ideas
+
+- Voting neighbors: a future deterministic "who votes similarly?" module showing a small set of officials with similar yea/nay patterns across shared categorized roll calls. It should avoid leaderboard language, separate low-overlap cases, and explain overlap/evidence before launch consideration.

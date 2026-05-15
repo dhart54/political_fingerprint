@@ -1,6 +1,6 @@
 # Autonomous Handoff
 
-Last updated: 2026-05-14
+Last updated: 2026-05-15
 
 ## Current Branch
 
@@ -131,6 +131,14 @@ Last updated: 2026-05-14
   - evidence rows now show roll-call count versus bill-or-measure count
   - related roll calls are grouped under the same bill title or measure label
   - methodology now documents that grouping is presentational and does not change metrics
+- Final local staging verification:
+  - full backend fixture suite passed
+  - frontend build passed
+  - local API checks passed
+  - staging readiness summary updated
+- Shelved product idea:
+  - future deterministic "Voting neighbors" module recorded in `docs/product_v2_tasklist.md`
+  - should avoid leaderboard language and explain overlap/evidence before launch consideration
 
 ## Active Checkpoint
 
@@ -220,6 +228,12 @@ Reported results:
   - evidence panel shows roll-call count across bill-or-measure count
   - evidence rows render under bill groups
   - no runtime or stale webpack overlay text appeared
+- final local staging verification passed:
+  - escalated full backend fixture suite: `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp_final_staging_admin` (`146 passed`)
+  - `cd frontend; npm run build` passed
+  - local API checks passed for `/health`, `/metadata/coverage`, `/lookup/zips`, and `/lookup/zip/27701`
+  - in-app browser rendered the local page with ZIP `27701`, Valerie P. Foushee, issue comparison, removed comparison overlay toggle, switch-official utility, footer trust notes, and no runtime/stale webpack overlay text
+  - note: the final click-based browser smoke was partially limited by the in-app browser helper timing out on click actions; prior browser checks in this branch covered starter issue selection, evidence opening, evidence grouping, and comparison rendering
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -234,8 +248,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Prepare a concise staging readiness summary for review.
-2. Then decide whether to merge/deploy this branch or do one final full-suite verification first.
+1. Decide whether to merge/deploy this branch to staging.
+2. If deploying, follow `docs/staging_readiness.md` backend-first sequence and repeat the deployed URL smoke checks.
 
 ## Operating Mode
 
