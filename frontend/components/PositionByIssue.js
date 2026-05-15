@@ -142,7 +142,7 @@ export default function PositionByIssue({
           ) : null}
           {state.status === "ready" && rows.length === 0 ? (
             <div className="rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600 md:col-span-2 xl:col-span-3">
-              No recorded yea/nay splits are available in the current window.
+              No recorded yea/nay policy-vote splits are available in the current window. This is a coverage note, not an alignment finding.
             </div>
           ) : null}
           {rows.map((row) => (
@@ -240,7 +240,7 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
 
       {evidenceState.status === "idle" ? (
         <p className="mt-4 text-sm leading-7 text-stone-700">
-          Select an issue card or use Show Votes to inspect the roll calls behind this read.
+          Select an issue card or use Show Votes to inspect the roll calls behind this read. Evidence appears here before any alignment label is treated as meaningful.
         </p>
       ) : null}
       {evidenceState.status === "loading" ? (
@@ -255,7 +255,7 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
       ) : null}
       {evidenceState.status === "ready" && isSelected && evidenceRows.length === 0 ? (
         <p className="mt-4 rounded-2xl border border-stone-200 bg-white px-4 py-3 text-sm leading-6 text-stone-700">
-          No underlying vote rows are available for this issue in the current window.
+          No underlying roll-call rows are available for this issue in the current window. The site leaves this issue unlabeled rather than filling the gap with a guess.
         </p>
       ) : null}
       {evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (

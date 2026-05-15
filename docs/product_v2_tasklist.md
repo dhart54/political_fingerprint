@@ -78,10 +78,11 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Reorder the page around quick read, issue selection, alignment, evidence, and comparison.
 - [x] Convert the old active-legislator/search block into a compact switch-official utility.
 - [x] Polish mobile headings, first-viewport height, issue selection, and comparison supporting context.
+- [x] Polish insufficient-evidence copy so missing vote-meaning data reads as an honest evidence status.
 
 ## Working Priority
 
 Current next build target:
 
-1. Polish insufficient-evidence copy so honest missing-data states feel useful rather than broken.
+1. Restore browser automation if the browser helper module is missing after refresh, then run the ZIP-to-evidence browser QA path.
 2. Use `pytest --basetemp=..\.local\pytest_basetemp` for full Windows fixture-mode test runs.

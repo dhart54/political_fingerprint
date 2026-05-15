@@ -437,7 +437,7 @@ function IssueAlignmentRows({ alignment, legislator, onInspectDomain }) {
   if (!rows.length) {
     return (
       <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-700">
-        No selected issue rows are available for this comparison side.
+        No selected issue rows are available for this comparison side yet. The profile record remains available for direct inspection.
       </div>
     );
   }
@@ -522,7 +522,7 @@ function buildAlignmentSummary(alignment) {
 
 function buildIssueRowCopy(row) {
   if (row.label === "insufficient_evidence") {
-    return "There are not enough interpreted vote-meaning rows to label this issue for this official.";
+    return "This official does not yet have enough source-grounded vote meaning on this issue for an alignment label. Inspect Votes shows the available roll-call record.";
   }
   if (row.label === "mixed") {
     return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes are available.`;

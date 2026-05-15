@@ -82,7 +82,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
         <p className="max-w-md text-sm leading-6 text-stone-600">
           {selectedCount === 0
             ? "Choose issues above to check this voting record against your stated preferences."
-            : "Labels are based only on interpreted votes. Mixed and insufficient-evidence labels keep unclear records visible without forcing a conclusion."}
+            : "Labels use only source-grounded vote meanings. When that meaning is not available yet, the issue stays visible as insufficient evidence instead of being guessed."}
         </p>
       </div>
 
@@ -106,7 +106,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
 
       {state.status === "ready" && rows.length === 0 ? (
         <div className="mt-5 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-5 text-sm leading-6 text-stone-700">
-          No issue rows came back for this selection. The record remains available below, but this alignment check does not have enough structured data yet.
+          The selected issues did not return alignment rows yet. The voting record below is still available for direct inspection.
         </div>
       ) : null}
 
@@ -167,7 +167,7 @@ function buildHeadline({ status, selectedCount, rows, name }) {
 
 function buildRowCopy(row) {
   if (row.label === "insufficient_evidence") {
-    return "No interpreted vote-meaning rows are available for this issue yet. Use Inspect Votes to review the classified roll calls behind the read.";
+    return "This issue does not yet have enough source-grounded vote meaning to label alignment. Use Inspect Votes to review any classified roll calls behind the issue.";
   }
   if (row.label === "mixed") {
     return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes, so the record is split for this issue.`;

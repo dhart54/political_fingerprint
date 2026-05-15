@@ -97,7 +97,42 @@ Last updated: 2026-05-14
 
 ## Active Checkpoint
 
-No active uncommitted checkpoint.
+Checkpoint target: `Polish insufficient-evidence copy`.
+
+Files in this checkpoint:
+
+- `frontend/components/AlignmentPanel.js`
+- `frontend/components/ComparisonPanel.js`
+- `frontend/components/PositionByIssue.js`
+- `docs/product_v2_tasklist.md`
+- `docs/autonomous_handoff.md`
+
+Completed in this checkpoint:
+
+- kept deterministic insufficient-evidence behavior intact
+- reframed missing interpretation data as source-grounded vote-meaning status rather than a broken feature
+- preserved evidence drilldown as the next action
+- updated empty evidence states to say the site leaves issues unlabeled instead of guessing
+
+Verification already run for this checkpoint:
+
+- `cd frontend; npm run build` passed
+- frontend localhost returned HTTP 200
+- `/lookup/zip/27701` returned Valerie P. Foushee, Ted Budd, and Thom Tillis
+- `/legislators/leg_valerie_p_foushee/alignment` with Cost of Living preferences returned 3 `insufficient_evidence` rows as expected
+- `git diff --check` passed
+
+Browser QA note:
+
+- In-app browser automation was attempted after refresh, but the browser helper module path was missing in this session.
+- Do not treat browser QA as complete for this checkpoint until the browser helper is restored or another in-app browser tool is available.
+
+Next exact steps after committing:
+
+1. Restore browser automation if possible.
+2. Browser QA ZIP `27701` -> Cost of Living -> insufficient-evidence rows -> Inspect/Open Votes.
+3. If browser QA passes, continue with the next product polish task.
+4. If browser automation remains unavailable, proceed with direct API/build checks and record the limitation.
 
 ## Verification Already Run
 
@@ -133,6 +168,9 @@ Reported results:
 - browser QA passed after the switch-official cleanup checkpoint: stale search copy is gone and compact retained signals still render
 - `cd frontend; npm run build` passed for the mobile polish checkpoint
 - browser QA passed at 390x844 after the mobile polish checkpoint: profile, starter checks, fine-tune drawer, alignment, evidence, and source links work with no console errors
+- `cd frontend; npm run build` passed for the insufficient-evidence copy checkpoint
+- direct API checks passed for ZIP `27701` and Cost of Living alignment returning `insufficient_evidence`
+- browser QA for the insufficient-evidence copy checkpoint is still pending because the browser helper module was unavailable after refresh
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -147,7 +185,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Polish insufficient-evidence copy so honest missing-data states feel useful rather than broken.
+1. Restore browser automation if the browser helper module is missing after refresh, then run the ZIP-to-evidence browser QA path.
 2. Prefer focused backend tests while developing, then run the full backend fixture suite with `pytest --basetemp=..\.local\pytest_basetemp` before the next checkpoint.
 
 ## Operating Mode
