@@ -262,6 +262,12 @@ Reported results:
   - browser QA confirmed starter checks switch from `Starter Check` to `Active Check`
   - browser QA confirmed active starter checks expose selected state with `aria-pressed`
   - browser QA confirmed evidence still opens, compact source links render, raw `policy_vote` is absent, and no runtime/stale webpack overlay appears
+- Staging local release gate passed:
+  - sandboxed backend fixture suite reached all tests but hit the known Windows pytest temp cleanup permission issue
+  - escalated rerun passed with `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp_release_staging_admin` (`146 passed`)
+  - sandboxed frontend build hit Windows `spawn EPERM`
+  - escalated rerun of `cd frontend; npm run build` passed
+  - deployment is blocked on external staging access: no Vercel CLI, no Render CLI, no local `.vercel` project link, and GitHub CLI is installed but not authenticated
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -276,9 +282,11 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit and push the final frontend pass checkpoint if it has not already been committed.
-2. Decide whether to merge/deploy this branch to staging.
-3. If deploying, follow `docs/staging_readiness.md` backend-first sequence and repeat the deployed URL smoke checks.
+1. Unblock deployment access by either logging into GitHub CLI for auto-deploy inspection, installing/linking Vercel and Render controls, or providing the existing Render and Vercel staging URLs.
+2. Deploy backend first or confirm Render auto-deployed commit `967846a`.
+3. Run backend staging checks from `docs/staging_readiness.md`.
+4. Deploy frontend or confirm Vercel auto-deployed commit `967846a`.
+5. Run frontend staging smoke checks from `docs/staging_readiness.md`.
 
 ## Operating Mode
 
