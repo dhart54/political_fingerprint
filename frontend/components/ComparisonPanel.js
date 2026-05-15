@@ -229,7 +229,7 @@ export default function ComparisonPanel({
             Compare both records against the same issues
           </h2>
           <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
-            This section keeps your selected issues first. Vote direction and issue focus are available as supporting context only, so the comparison stays descriptive and does not rank either side.
+            This section keeps your selected issues first. Vote direction and issue focus are available as supporting context only, so the comparison stays descriptive and does not order either side.
           </p>
         </div>
         <div className="flex rounded-full border border-stone-300 bg-stone-100 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
@@ -288,90 +288,91 @@ export default function ComparisonPanel({
         ) : null}
       </div>
 
-      <div className="mt-5 grid gap-4 xl:grid-cols-[0.72fr_1.28fr]">
-        <div className="rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(245,241,233,0.94))] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-            Select Legislators
-          </p>
-          <input
-            aria-label="Search legislators to compare"
-            className="mt-4 h-12 w-full rounded-full border border-stone-300 bg-stone-50 px-5 text-sm text-stone-900 outline-none placeholder:text-stone-500"
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search by legislator name"
-            value={query}
-          />
-          <div className="mt-4 grid max-h-[430px] gap-3 overflow-y-auto pr-1">
-            {searchState.status === "error" ? (
-              <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
-                {searchState.error}
+      <details className="mt-5 rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(245,241,233,0.94))] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
+        <summary className="cursor-pointer text-xs uppercase tracking-[0.26em] text-stone-600">
+          Change Comparison Pair
+        </summary>
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-stone-700">
+          Keep the same selected issues, then set either side to another official for a focused side-by-side read.
+        </p>
+        <input
+          aria-label="Search legislators to compare"
+          className="mt-4 h-12 w-full rounded-full border border-stone-300 bg-stone-50 px-5 text-sm text-stone-900 outline-none placeholder:text-stone-500"
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Search by legislator name"
+          value={query}
+        />
+        <div className="mt-4 grid max-h-[430px] gap-3 overflow-y-auto pr-1 lg:grid-cols-2 xl:grid-cols-3">
+          {searchState.status === "error" ? (
+            <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
+              {searchState.error}
+            </div>
+          ) : null}
+          {searchState.status !== "error" && searchState.results.length === 0 ? (
+            <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600">
+              No legislators match this search yet.
+            </div>
+          ) : null}
+          {searchState.results.map((legislator) => (
+            <div
+              className="flex flex-col gap-3 rounded-[1.5rem] border border-stone-200 bg-white/70 px-4 py-4 sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-start xl:min-h-[150px]"
+              key={legislator.id}
+            >
+              <div>
+                <p className="font-serif text-[1.45rem] leading-tight text-stone-900">{legislator.name_display}</p>
+                <p className="mt-1 text-[13px] text-stone-600">
+                  {formatChamber(legislator.chamber)} - {legislator.party} - {legislator.state}
+                  {legislator.district ? `-${legislator.district}` : " - Statewide"}
+                </p>
               </div>
-            ) : null}
-            {searchState.status !== "error" && searchState.results.length === 0 ? (
-              <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600">
-                No legislators match this search yet.
+              <div className="flex gap-2">
+                <button
+                  className={`rounded-full px-4 py-2 text-xs uppercase tracking-[0.22em] ${
+                    selected.left.id === legislator.id
+                      ? "bg-stone-900 text-stone-100"
+                      : "bg-stone-200 text-stone-700"
+                  }`}
+                  aria-label={`Set ${legislator.name_display} as the left comparison record`}
+                  aria-pressed={selected.left.id === legislator.id}
+                  onClick={() => setSelected((current) => ({ ...current, left: legislator }))}
+                  type="button"
+                >
+                  Left
+                </button>
+                <button
+                  className={`rounded-full px-4 py-2 text-xs uppercase tracking-[0.22em] ${
+                    selected.right.id === legislator.id
+                      ? "bg-stone-900 text-stone-100"
+                      : "bg-stone-200 text-stone-700"
+                  }`}
+                  aria-label={`Set ${legislator.name_display} as the right comparison record`}
+                  aria-pressed={selected.right.id === legislator.id}
+                  onClick={() => setSelected((current) => ({ ...current, right: legislator }))}
+                  type="button"
+                >
+                  Right
+                </button>
               </div>
-            ) : null}
-            {searchState.results.map((legislator) => (
-              <div
-                className="flex flex-col gap-3 rounded-[1.5rem] border border-stone-200 bg-white/70 px-4 py-4 sm:flex-row sm:items-center sm:justify-between"
-                key={legislator.id}
-              >
-                <div>
-                  <p className="font-serif text-[1.5rem] leading-tight text-stone-900">{legislator.name_display}</p>
-                  <p className="mt-1 text-[13px] text-stone-600">
-                    {formatChamber(legislator.chamber)} - {legislator.party} - {legislator.state}
-                    {legislator.district ? `-${legislator.district}` : " - Statewide"}
-                  </p>
-                </div>
-                <div className="flex gap-2">
-                  <button
-                    className={`rounded-full px-4 py-2 text-xs uppercase tracking-[0.22em] ${
-                      selected.left.id === legislator.id
-                        ? "bg-stone-900 text-stone-100"
-                        : "bg-stone-200 text-stone-700"
-                    }`}
-                    aria-label={`Set ${legislator.name_display} as the left comparison record`}
-                    aria-pressed={selected.left.id === legislator.id}
-                    onClick={() => setSelected((current) => ({ ...current, left: legislator }))}
-                    type="button"
-                  >
-                    Left
-                  </button>
-                  <button
-                    className={`rounded-full px-4 py-2 text-xs uppercase tracking-[0.22em] ${
-                      selected.right.id === legislator.id
-                        ? "bg-stone-900 text-stone-100"
-                        : "bg-stone-200 text-stone-700"
-                    }`}
-                    aria-label={`Set ${legislator.name_display} as the right comparison record`}
-                    aria-pressed={selected.right.id === legislator.id}
-                    onClick={() => setSelected((current) => ({ ...current, right: legislator }))}
-                    type="button"
-                  >
-                    Right
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+      </details>
 
-          <div className="grid gap-4 xl:grid-cols-2">
-          <CompareSideCard
-            heading="Left"
-            alignment={alignmentState.left}
-            side={compareState.payload?.left}
-            fallbackLegislator={selected.left}
-            onInspectDomain={onInspectDomain}
-          />
-          <CompareSideCard
-            heading="Right"
-            alignment={alignmentState.right}
-            side={compareState.payload?.right}
-            fallbackLegislator={selected.right}
-            onInspectDomain={onInspectDomain}
-          />
-        </div>
+      <div className="mt-5 grid gap-4 xl:grid-cols-2">
+        <CompareSideCard
+          heading="Left"
+          alignment={alignmentState.left}
+          side={compareState.payload?.left}
+          fallbackLegislator={selected.left}
+          onInspectDomain={onInspectDomain}
+        />
+        <CompareSideCard
+          heading="Right"
+          alignment={alignmentState.right}
+          side={compareState.payload?.right}
+          fallbackLegislator={selected.right}
+          onInspectDomain={onInspectDomain}
+        />
       </div>
     </section>
   );

@@ -79,10 +79,11 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Convert the old active-legislator/search block into a compact switch-official utility.
 - [x] Polish mobile headings, first-viewport height, issue selection, and comparison supporting context.
 - [x] Polish insufficient-evidence copy so missing vote-meaning data reads as an honest evidence status.
+- [x] Collapse comparison legislator search into a secondary pair-edit drawer.
 
 ## Working Priority
 
 Current next build target:
 
-1. Continue with comparison search/selector UX tightening now that browser QA is restored.
-2. Use `pytest --basetemp=..\.local\pytest_basetemp` for full Windows fixture-mode test runs.
+1. Review final launch clarity around methodology/source affordances without adding friction to the voter path.
+2. Do a quick final mobile visual smoke of the shortened voter path before the next push.

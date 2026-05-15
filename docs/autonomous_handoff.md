@@ -103,6 +103,10 @@ Last updated: 2026-05-14
   - restored in-app browser automation from fallback bundled helper path
   - alignment/comparison now render deterministic insufficient-evidence fallback rows if the browser alignment fetch fails
   - browser QA confirmed the Cost of Living path no longer shows `Alignment check unavailable`
+- Comparison selector UX:
+  - comparison cards now occupy the primary comparison area by default
+  - legislator search moved into a closed `Change Comparison Pair` drawer
+  - pair swapping still supports setting either comparison side
 
 ## Active Checkpoint
 
@@ -146,6 +150,16 @@ Reported results:
 - direct API checks passed for ZIP `27701` and Cost of Living alignment returning `insufficient_evidence`
 - browser QA for the insufficient-evidence path later completed after restoring the browser helper from the fallback bundled marketplace path
 - `cd frontend; npm run build` passed for the insufficient-evidence browser QA fallback checkpoint
+- `cd frontend; npm run build` passed for the comparison pair-edit drawer checkpoint
+- browser QA passed for the comparison pair-edit drawer checkpoint:
+  - ZIP `27701` loads Valerie P. Foushee
+  - Cost of Living starter applies selected issues
+  - issue comparison renders side-by-side rows
+  - `Change Comparison Pair` drawer and search input exist
+  - searching `Schiff` and setting the right side updates comparison to Adam B. Schiff
+  - no runtime error overlay, stale webpack overlay, `Comparison unavailable`, or `Alignment check unavailable` text appeared
+- sandboxed backend fixture runs reached test execution but hit Windows temp-directory cleanup `PermissionError` on `.local\pytest_basetemp*`
+- escalated backend fixture suite passed with `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp_comparison_drawer_admin` (`144 passed`)
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -160,8 +174,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Continue with comparison search/selector UX tightening now that browser QA is restored.
-2. Prefer focused backend tests while developing, then run the full backend fixture suite with `pytest --basetemp=..\.local\pytest_basetemp` before the next checkpoint.
+1. Review final launch clarity around methodology/source affordances, especially whether the footer and evidence panels make the deterministic approach obvious without adding friction.
+2. After that, do a quick final mobile visual smoke of the shortened voter path before the next push.
 
 ## Operating Mode
 
