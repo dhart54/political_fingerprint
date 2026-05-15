@@ -94,45 +94,14 @@ Last updated: 2026-05-14
   - primary journey headings scale down on phones
   - individual issue-domain selection is now inside a fine-tune drawer
   - comparison supporting context keeps vote direction and issue focus only
+- Insufficient-evidence copy:
+  - committed as `24754c3 Clarify insufficient evidence states`
+  - missing interpretation data now reads as source-grounded vote-meaning status
+  - alignment/comparison/evidence empty states point users back to Inspect Votes instead of sounding broken
 
 ## Active Checkpoint
 
-Checkpoint target: `Polish insufficient-evidence copy`.
-
-Files in this checkpoint:
-
-- `frontend/components/AlignmentPanel.js`
-- `frontend/components/ComparisonPanel.js`
-- `frontend/components/PositionByIssue.js`
-- `docs/product_v2_tasklist.md`
-- `docs/autonomous_handoff.md`
-
-Completed in this checkpoint:
-
-- kept deterministic insufficient-evidence behavior intact
-- reframed missing interpretation data as source-grounded vote-meaning status rather than a broken feature
-- preserved evidence drilldown as the next action
-- updated empty evidence states to say the site leaves issues unlabeled instead of guessing
-
-Verification already run for this checkpoint:
-
-- `cd frontend; npm run build` passed
-- frontend localhost returned HTTP 200
-- `/lookup/zip/27701` returned Valerie P. Foushee, Ted Budd, and Thom Tillis
-- `/legislators/leg_valerie_p_foushee/alignment` with Cost of Living preferences returned 3 `insufficient_evidence` rows as expected
-- `git diff --check` passed
-
-Browser QA note:
-
-- In-app browser automation was attempted after refresh, but the browser helper module path was missing in this session.
-- Do not treat browser QA as complete for this checkpoint until the browser helper is restored or another in-app browser tool is available.
-
-Next exact steps after committing:
-
-1. Restore browser automation if possible.
-2. Browser QA ZIP `27701` -> Cost of Living -> insufficient-evidence rows -> Inspect/Open Votes.
-3. If browser QA passes, continue with the next product polish task.
-4. If browser automation remains unavailable, proceed with direct API/build checks and record the limitation.
+No active uncommitted checkpoint.
 
 ## Verification Already Run
 
