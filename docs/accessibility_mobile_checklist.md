@@ -31,6 +31,8 @@ Use this checklist before sharing the site outside development. It is written fo
 - Legislator search inputs have accessible names.
 - Icon-like issue select/remove buttons have explicit labels.
 - Toggle-style buttons expose selected state with `aria-pressed`.
+- Position issue cards expose selected state with `aria-pressed`.
+- Comparison overlay buttons expose selected state with `aria-pressed`.
 - Status messages are understandable without relying on color alone.
 - Evidence rows include roll call date, chamber, roll number, vote position, and classification reason.
 
@@ -54,7 +56,6 @@ Verify:
 - comparison cards stack before desktop width
 - all button text fits without clipping
 
-## Known Local Limitation
+## Current Local QA Note
 
-The Codex in-app browser currently blocks `localhost` and `127.0.0.1` in this thread with `ERR_BLOCKED_BY_CLIENT`, so this checklist has not been completed visually here. Until browser access is unblocked, use build checks plus manual browser review.
-
+The in-app browser is currently able to reach `127.0.0.1:3000` in this thread. Recent browser smoke checks covered ZIP lookup, issue starter checks, evidence opening, comparison rendering, switch-official search, and the trust footer without a runtime overlay.

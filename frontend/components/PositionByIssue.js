@@ -147,6 +147,8 @@ export default function PositionByIssue({
           ) : null}
           {rows.map((row) => (
             <button
+              aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
+              aria-pressed={selectedDomain === row.domain}
               className={`rounded-[1.25rem] border px-4 py-4 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition ${
                 selectedDomain === row.domain
                   ? "border-cyan-800 bg-cyan-50"

@@ -115,6 +115,11 @@ Last updated: 2026-05-14
   - ZIP lookup card now says `Start with your ZIP.`
   - ready-state copy reflects that the House profile opens automatically
   - issue picker explains that selected issues guide which records appear first without changing the vote record
+- Staging-readiness accessibility/CORS polish:
+  - `FRONTEND_ORIGINS` now configures explicit deployed frontend CORS origins
+  - comparison overlay buttons expose selected state with `aria-pressed`
+  - position issue cards expose selected state and clearer accessible names
+  - deployment and accessibility docs now reflect the current staging setup
 
 ## Active Checkpoint
 
@@ -184,6 +189,17 @@ Reported results:
   - Cost of Living starter selects 3 issues
   - issue comparison renders
   - no runtime or stale webpack overlay text appeared
+- `$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_app_config.py tests\test_api_metadata.py tests\test_api_lookup.py` passed (`9 passed`)
+- `cd frontend; npm run build` passed for the staging-readiness accessibility/CORS checkpoint
+- browser QA passed for the staging-readiness accessibility/CORS checkpoint:
+  - default profile path loads
+  - Cost of Living starter selects 3 issues
+  - issue comparison renders
+  - comparison overlay exposes selected state with `aria-pressed`
+  - position issue card exposes selected state after selection
+  - evidence opens from a selected issue card
+  - no runtime or stale webpack overlay text appeared
+  - note: the in-app browser helper hit a virtual-clipboard issue when filling ZIP, so this specific QA run used the default loaded profile path for the ARIA checks
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 

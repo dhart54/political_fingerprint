@@ -27,6 +27,7 @@ Environment variables:
 ```text
 DATABASE_URL=<supabase-postgres-pooler-url>
 CLASSIFICATION_VERSION=v1
+FRONTEND_ORIGINS=https://<vercel-project>.vercel.app
 CONGRESS_API_KEY=<optional-for-live-ingestion>
 ```
 
@@ -77,16 +78,12 @@ Post-deploy checks:
 
 ## CORS
 
-The backend currently allows local frontend origins. Before production launch, add the deployed Vercel origin to the FastAPI CORS allowlist in `backend/app/main.py`.
+The backend always allows local frontend origins. For staging or production, set `FRONTEND_ORIGINS` to a comma-separated list of deployed frontend origins.
 
-Example:
+Example Render value:
 
-```python
-allow_origins=[
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://<vercel-project>.vercel.app",
-]
+```text
+FRONTEND_ORIGINS=https://<vercel-project>.vercel.app,https://<custom-domain>
 ```
 
 Keep the list explicit. Do not use a wildcard origin for production.
@@ -112,4 +109,3 @@ To stay under the project cost target:
 - avoid runtime recomputation of fingerprints, medians, drift, summaries, or interpretations
 - keep frontend rendering static/client-side against API reads
 - schedule data refreshes only after the product flow is worth refreshing
-

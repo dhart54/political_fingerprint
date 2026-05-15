@@ -82,10 +82,11 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Collapse comparison legislator search into a secondary pair-edit drawer.
 - [x] Add compact method, evidence, and limits notes to the footer.
 - [x] Tighten first-screen copy around ZIP lookup, auto-open behavior, and issue selection.
+- [x] Add final staging-readiness accessibility and CORS configuration polish.
 
 ## Working Priority
 
 Current next build target:
 
-1. Review whether the main path is ready for deployment staging or needs one final accessibility pass.
-2. If staging-ready, document the exact deployment/check sequence and push a release-prep checkpoint.
+1. Document the exact deployment/check sequence and push a release-prep checkpoint.
+2. Then prepare a concise staging readiness summary for review.

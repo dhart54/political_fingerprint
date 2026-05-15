@@ -235,6 +235,7 @@ export default function ComparisonPanel({
         <div className="flex rounded-full border border-stone-300 bg-stone-100 p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
           {COMPARISON_OPTIONS.map((option) => (
             <button
+              aria-pressed={comparisonParty === option}
               className={`rounded-full px-4 py-2 text-xs tracking-[0.25em] transition ${
                 comparisonParty === option
                   ? "bg-stone-900 text-stone-100 shadow-[0_6px_18px_rgba(28,25,23,0.18)]"

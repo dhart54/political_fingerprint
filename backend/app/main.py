@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -12,14 +14,23 @@ from app.api.search import router as search_router
 from app.api.summary import router as summary_router
 
 
+DEFAULT_CORS_ORIGINS = (
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+)
+
+
+def get_cors_origins() -> list[str]:
+    configured = os.getenv("FRONTEND_ORIGINS", "")
+    origins = [origin.strip() for origin in configured.split(",") if origin.strip()]
+    return list(DEFAULT_CORS_ORIGINS) + origins
+
+
 app = FastAPI(title="Political Fingerprint API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-    ],
+    allow_origins=get_cors_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
