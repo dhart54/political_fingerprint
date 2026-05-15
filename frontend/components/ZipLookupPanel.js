@@ -22,6 +22,7 @@ export default function ZipLookupPanel({
     dataSource: null,
     zips: [],
   });
+  const [selectedComparisonPreset, setSelectedComparisonPreset] = useState("house_first_senator");
 
   async function runLookup(nextZipCode) {
     if (nextZipCode.length !== 5) {
@@ -41,6 +42,7 @@ export default function ZipLookupPanel({
       });
 
       const payload = await fetchZipLookup({ zipCode: nextZipCode });
+      setSelectedComparisonPreset("house_first_senator");
       setState({
         status: "ready",
         payload,
@@ -107,6 +109,12 @@ export default function ZipLookupPanel({
   function handleLookup(event) {
     event.preventDefault();
     runLookup(zipCode);
+  }
+
+  function selectComparisonPreset(preset, pair, selectedLegislator = pair.left) {
+    setSelectedComparisonPreset(preset);
+    onSelectLegislator?.(selectedLegislator);
+    onComparePair?.(pair);
   }
 
   const isHero = variant === "hero";
@@ -188,15 +196,15 @@ export default function ZipLookupPanel({
             </p>
             {state.payload.house_rep && state.payload.senators[0] ? (
               <button
-                className="rounded-full bg-cyan-900 px-4 py-2 text-xs uppercase tracking-[0.22em] text-white"
+                className={getComparePresetClass(selectedComparisonPreset === "house_first_senator")}
                 aria-label={`Compare ${state.payload.house_rep.name_display} with ${state.payload.senators[0].name_display}`}
-                onClick={() => {
-                  onSelectLegislator?.(state.payload.house_rep);
-                  onComparePair?.({
+                aria-pressed={selectedComparisonPreset === "house_first_senator"}
+                onClick={() =>
+                  selectComparisonPreset("house_first_senator", {
                     left: state.payload.house_rep,
                     right: state.payload.senators[0],
-                  });
-                }}
+                  })
+                }
                 type="button"
               >
                 House vs Senator
@@ -204,15 +212,15 @@ export default function ZipLookupPanel({
             ) : null}
             {state.payload.house_rep && state.payload.senators[1] ? (
               <button
-                className="rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-cyan-900"
+                className={getComparePresetClass(selectedComparisonPreset === "house_second_senator")}
                 aria-label={`Compare ${state.payload.house_rep.name_display} with ${state.payload.senators[1].name_display}`}
-                onClick={() => {
-                  onSelectLegislator?.(state.payload.house_rep);
-                  onComparePair?.({
+                aria-pressed={selectedComparisonPreset === "house_second_senator"}
+                onClick={() =>
+                  selectComparisonPreset("house_second_senator", {
                     left: state.payload.house_rep,
                     right: state.payload.senators[1],
-                  });
-                }}
+                  })
+                }
                 type="button"
               >
                 House vs Other Senator
@@ -220,13 +228,18 @@ export default function ZipLookupPanel({
             ) : null}
             {state.payload.senators[0] && state.payload.senators[1] ? (
               <button
-                className="rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.22em] text-cyan-900"
+                className={getComparePresetClass(selectedComparisonPreset === "senators")}
                 aria-label={`Compare ${state.payload.senators[0].name_display} with ${state.payload.senators[1].name_display}`}
+                aria-pressed={selectedComparisonPreset === "senators"}
                 onClick={() =>
-                  onComparePair?.({
-                    left: state.payload.senators[0],
-                    right: state.payload.senators[1],
-                  })
+                  selectComparisonPreset(
+                    "senators",
+                    {
+                      left: state.payload.senators[0],
+                      right: state.payload.senators[1],
+                    },
+                    state.payload.senators[0],
+                  )
                 }
                 type="button"
               >
@@ -335,6 +348,16 @@ function Meta({ label, value }) {
       <dd className="mt-1 text-sm text-stone-700">{value}</dd>
     </div>
   );
+}
+
+function getComparePresetClass(isSelected) {
+  const base =
+    "rounded-full border px-4 py-2 text-xs uppercase tracking-[0.22em] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-900";
+  if (isSelected) {
+    return `${base} border-cyan-900 bg-cyan-900 text-white shadow-[0_10px_24px_rgba(22,78,99,0.22)]`;
+  }
+
+  return `${base} border-white bg-white text-cyan-900 hover:border-cyan-800/30 hover:bg-cyan-100 hover:text-cyan-950`;
 }
 
 function formatChamber(chamber) {

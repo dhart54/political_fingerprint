@@ -136,6 +136,10 @@ Last updated: 2026-05-15
   - frontend build passed
   - local API checks passed
   - staging readiness summary updated
+- ZIP comparison preset button states:
+  - House-vs-senator preset buttons now show hover, focus, and selected states
+  - selected preset is tracked with `aria-pressed`
+  - clicking the senators preset updates the comparison pair and selected profile visibly
 - Shelved product idea:
   - future deterministic "Voting neighbors" module recorded in `docs/product_v2_tasklist.md`
   - should avoid leaderboard language and explain overlap/evidence before launch consideration
@@ -234,6 +238,11 @@ Reported results:
   - local API checks passed for `/health`, `/metadata/coverage`, `/lookup/zips`, and `/lookup/zip/27701`
   - in-app browser rendered the local page with ZIP `27701`, Valerie P. Foushee, issue comparison, removed comparison overlay toggle, switch-official utility, footer trust notes, and no runtime/stale webpack overlay text
   - note: the final click-based browser smoke was partially limited by the in-app browser helper timing out on click actions; prior browser checks in this branch covered starter issue selection, evidence opening, evidence grouping, and comparison rendering
+- ZIP comparison preset button-state verification passed:
+  - `cd frontend; npm run build` passed
+  - browser QA confirmed `aria-pressed` moves from House vs Senator to House vs Other Senator to Compare Senators
+  - browser QA confirmed the comparison section updates to Ted Budd vs Thom Tillis after selecting Compare Senators
+  - no runtime or stale webpack overlay text appeared
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 

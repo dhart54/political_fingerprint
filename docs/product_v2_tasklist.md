@@ -86,6 +86,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Document staging readiness, deployment checks, and review focus.
 - [x] Remove confusing comparison overlay toggle from the selected-issues comparison view.
 - [x] Group evidence roll calls by bill or measure and show roll-call count versus bill count.
+- [x] Make ZIP lookup comparison preset buttons show hover, focus, and selected states.
 
 ## Working Priority
 
