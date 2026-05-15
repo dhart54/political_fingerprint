@@ -98,44 +98,15 @@ Last updated: 2026-05-14
   - committed as `24754c3 Clarify insufficient evidence states`
   - missing interpretation data now reads as source-grounded vote-meaning status
   - alignment/comparison/evidence empty states point users back to Inspect Votes instead of sounding broken
+- Insufficient-evidence browser QA:
+  - committed as `9b418b1 Complete evidence copy browser QA`
+  - restored in-app browser automation from fallback bundled helper path
+  - alignment/comparison now render deterministic insufficient-evidence fallback rows if the browser alignment fetch fails
+  - browser QA confirmed the Cost of Living path no longer shows `Alignment check unavailable`
 
 ## Active Checkpoint
 
-Checkpoint target: `Complete insufficient-evidence browser QA`.
-
-Files in this checkpoint:
-
-- `frontend/components/AlignmentPanel.js`
-- `frontend/components/ComparisonPanel.js`
-- `docs/product_v2_tasklist.md`
-- `docs/autonomous_handoff.md`
-
-Completed in this checkpoint:
-
-- restored browser automation using fallback bundled helper path:
-  `C:/Users/Dylan/.codex/.tmp/bundled-marketplaces/openai-bundled/plugins/browser-use/scripts/browser-client.mjs`
-- added deterministic client fallback rows when alignment fetch fails in the browser path
-- fallback rows preserve selected issues as `insufficient_evidence` rather than showing `Alignment check unavailable`
-- applied the same fallback behavior to comparison-side alignment reads
-
-Verification already run for this checkpoint:
-
-- browser QA: ZIP `27701` loads Valerie P. Foushee
-- browser QA: `Cost of Living` starter check selects 3 issues
-- browser QA: alignment rows show `0 aligned, 0 not aligned, 0 mixed, 3 insufficient`
-- browser QA: new source-grounded insufficient-evidence copy appears
-- browser QA: old `Alignment check unavailable` state is gone for this path
-- browser QA: Inspect Votes opens evidence and source rows
-- browser console errors were empty
-- `cd frontend; npm run build` passed
-- post-build browser smoke repeated the Cost of Living path successfully
-
-Next exact steps after committing:
-
-1. Continue with comparison search/selector UX tightening.
-2. Review whether the comparison section still needs its internal legislator search now that the page has a compact Switch Official utility.
-3. Keep the selected-issue comparison cards primary.
-4. Run `cd frontend; npm run build` and browser QA before committing.
+No active uncommitted checkpoint.
 
 ## Verification Already Run
 
