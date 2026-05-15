@@ -107,6 +107,9 @@ Last updated: 2026-05-14
   - comparison cards now occupy the primary comparison area by default
   - legislator search moved into a closed `Change Comparison Pair` drawer
   - pair swapping still supports setting either comparison side
+- Launch trust clarity:
+  - footer now shows compact Method, Evidence, and Limits notes
+  - data window remains visible below those notes
 
 ## Active Checkpoint
 
@@ -160,6 +163,14 @@ Reported results:
   - no runtime error overlay, stale webpack overlay, `Comparison unavailable`, or `Alignment check unavailable` text appeared
 - sandboxed backend fixture runs reached test execution but hit Windows temp-directory cleanup `PermissionError` on `.local\pytest_basetemp*`
 - escalated backend fixture suite passed with `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp_comparison_drawer_admin` (`144 passed`)
+- `cd frontend; npm run build` passed for the launch trust clarity checkpoint
+- browser QA passed for the launch trust clarity checkpoint:
+  - ZIP `27701` loads Valerie P. Foushee
+  - Cost of Living starter still applies selected issues
+  - issue comparison still renders
+  - Method, Evidence, and Limits footer notes render once as expected
+  - data window remains visible
+  - no runtime or stale webpack overlay text appeared
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -174,8 +185,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Review final launch clarity around methodology/source affordances, especially whether the footer and evidence panels make the deterministic approach obvious without adding friction.
-2. After that, do a quick final mobile visual smoke of the shortened voter path before the next push.
+1. Do a quick final mobile visual smoke of the shortened voter path before the next push.
+2. Then review any remaining rough copy in the first two screens for speed and clarity.
 
 ## Operating Mode
 

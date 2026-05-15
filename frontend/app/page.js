@@ -166,15 +166,24 @@ export default function HomePage() {
           selectedLegislator={selectedLegislator}
         />
 
-        <footer className="mt-8 border-t border-stone-300/80 py-6 text-sm leading-6 text-stone-600">
-          <div className="grid gap-4 md:grid-cols-[1.2fr_0.8fr] md:items-start">
-            <p>
-              Political Fingerprint uses categorized policy votes, excludes procedural votes, and keeps issue alignment tied to interpreted roll-call evidence when available.
-            </p>
-            <p className="md:text-right">
-              Data window: {formatDate(coverageMetadata?.window_start)} to {formatDate(coverageMetadata?.window_end)}.
-            </p>
+        <footer className="mt-8 border-t border-stone-300/80 py-6">
+          <div className="grid gap-3 md:grid-cols-3">
+            <TrustNote
+              eyebrow="Method"
+              text="Uses categorized policy votes only. Procedural votes are excluded before issue reads or alignment labels are shown."
+            />
+            <TrustNote
+              eyebrow="Evidence"
+              text="Open Votes and Inspect Votes show the roll calls, vote position, classification reason, and source link when available."
+            />
+            <TrustNote
+              eyebrow="Limits"
+              text="Alignment labels use interpreted vote meaning when available. Ambiguous votes stay out of the label instead of being guessed."
+            />
           </div>
+          <p className="mt-4 text-sm leading-6 text-stone-600 md:text-right">
+            Data window: {formatDate(coverageMetadata?.window_start)} to {formatDate(coverageMetadata?.window_end)}.
+          </p>
         </footer>
       </section>
     </main>
@@ -227,6 +236,15 @@ function MiniStep({ label, value }) {
     <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">
       <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">Step {label}</p>
       <p className="mt-2 text-sm leading-5 text-stone-800">{value}</p>
+    </div>
+  );
+}
+
+function TrustNote({ eyebrow, text }) {
+  return (
+    <div className="rounded-2xl border border-stone-200 bg-white/70 px-4 py-4">
+      <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">{eyebrow}</p>
+      <p className="mt-2 text-sm leading-6 text-stone-600">{text}</p>
     </div>
   );
 }

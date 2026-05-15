@@ -80,10 +80,11 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Polish mobile headings, first-viewport height, issue selection, and comparison supporting context.
 - [x] Polish insufficient-evidence copy so missing vote-meaning data reads as an honest evidence status.
 - [x] Collapse comparison legislator search into a secondary pair-edit drawer.
+- [x] Add compact method, evidence, and limits notes to the footer.
 
 ## Working Priority
 
 Current next build target:
 
-1. Review final launch clarity around methodology/source affordances without adding friction to the voter path.
-2. Do a quick final mobile visual smoke of the shortened voter path before the next push.
+1. Do a quick final mobile visual smoke of the shortened voter path before the next push.
+2. Then review any remaining rough copy in the first two screens for speed and clarity.
