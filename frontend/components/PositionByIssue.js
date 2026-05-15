@@ -222,7 +222,7 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
   const billGroups = groupEvidenceByBill(evidenceRows);
 
   return (
-    <div id="position-evidence" className="mt-5 scroll-mt-6 rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4 lg:px-5">
+    <div id="position-evidence" className="mt-5 scroll-mt-6 rounded-[1.5rem] border border-stone-200 bg-stone-50 px-3 py-4 sm:px-4 lg:px-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.28em] text-stone-500">
@@ -233,7 +233,7 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
           </h4>
         </div>
         <button
-          className="rounded-full bg-stone-900 px-4 py-2 text-xs uppercase tracking-[0.22em] text-stone-100"
+          className="rounded-full bg-stone-900 px-4 py-2 text-xs uppercase tracking-[0.22em] text-stone-100 transition hover:bg-cyan-900 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
           onClick={() => onInspectDomain(selectedRow.domain)}
           type="button"
         >
@@ -267,13 +267,13 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
             {formatBillGroupSummary(evidenceRows.length, billGroups.length)}
           </div>
           {billGroups.map((group) => (
-            <article className="rounded-[1.25rem] border border-stone-200 bg-white px-4 py-4" key={group.key}>
+            <article className="rounded-[1.25rem] border border-stone-200 bg-white px-3 py-4 sm:px-4" key={group.key}>
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-[0.24em] text-stone-500">
                     Bill group
                   </p>
-                  <h5 className="mt-2 text-[18px] leading-7 text-stone-950">
+                  <h5 className="mt-2 break-words text-base leading-6 text-stone-950 sm:text-[18px] sm:leading-7">
                     {group.title}
                   </h5>
                   <p className="mt-2 text-sm leading-6 text-stone-600">
@@ -288,15 +288,15 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
               <div className="mt-4 grid gap-3">
                 {group.rows.map((row) => (
                   <div
-                    className="rounded-[1.1rem] border border-stone-200 bg-stone-50 px-4 py-4"
+                    className="rounded-[1.1rem] border border-stone-200 bg-stone-50 px-3 py-3 sm:px-4 sm:py-4"
                     key={`${row.roll_call_id}-${row.position}`}
                   >
                     <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                       <div>
-                        <p className="text-xs uppercase tracking-[0.24em] text-stone-500">
+                        <p className="break-words text-xs uppercase tracking-[0.18em] text-stone-500 sm:tracking-[0.24em]">
                           {formatDate(row.vote_date)} - {formatChamber(row.chamber)} Roll {row.rollcall_number}
                         </p>
-                        <p className="mt-2 text-sm leading-6 text-stone-700">
+                        <p className="mt-2 text-[13px] leading-6 text-stone-700 sm:text-sm">
                           {row.description || row.question}
                         </p>
                       </div>
@@ -305,7 +305,7 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
                       </span>
                     </div>
                     <div className="mt-3 flex flex-col gap-3 border-t border-stone-200 pt-3 sm:flex-row sm:items-center sm:justify-between">
-                      <p className="text-xs uppercase tracking-[0.18em] text-stone-500">
+                      <p className="text-xs uppercase leading-5 tracking-[0.16em] text-stone-500 sm:tracking-[0.18em]">
                         Included as {formatClassificationReason(row.classification_reason)}
                       </p>
                       {row.source_url ? (

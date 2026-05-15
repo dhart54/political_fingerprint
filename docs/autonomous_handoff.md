@@ -147,6 +147,10 @@ Last updated: 2026-05-15
   - bulky `Classification` and raw `policy_vote` cards were removed from evidence rows
   - evidence rows now show compact `Included as eligible policy vote` context
   - source URLs remain available through a compact `Source` link
+- Final frontend pass:
+  - no additional pages recommended before staging; the one-page voter journey remains the clearest product shape
+  - starter issue checks now show active selected state and `aria-pressed`
+  - narrow evidence cards have tighter spacing and mobile-friendly text wrapping
 
 ## Active Checkpoint
 
@@ -252,6 +256,12 @@ Reported results:
   - browser QA confirmed evidence rows show `Included as eligible policy vote`
   - browser QA confirmed compact `Source` links render
   - browser QA confirmed raw `policy_vote`, bulky `Classification` labels, runtime overlays, and stale webpack overlays are absent
+- Final frontend pass verification passed:
+  - first sandboxed `cd frontend; npm run build` hit Windows `spawn EPERM`; escalated rerun passed
+  - stale Next webpack overlay appeared after build and was cleared by the documented `frontend/.next` cache reset
+  - browser QA confirmed starter checks switch from `Starter Check` to `Active Check`
+  - browser QA confirmed active starter checks expose selected state with `aria-pressed`
+  - browser QA confirmed evidence still opens, compact source links render, raw `policy_vote` is absent, and no runtime/stale webpack overlay appears
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -266,7 +276,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit and push the evidence metadata compaction checkpoint if it has not already been committed.
+1. Commit and push the final frontend pass checkpoint if it has not already been committed.
 2. Decide whether to merge/deploy this branch to staging.
 3. If deploying, follow `docs/staging_readiness.md` backend-first sequence and repeat the deployed URL smoke checks.
 

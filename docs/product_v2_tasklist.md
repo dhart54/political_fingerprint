@@ -88,6 +88,7 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Group evidence roll calls by bill or measure and show roll-call count versus bill count.
 - [x] Make ZIP lookup comparison preset buttons show hover, focus, and selected states.
 - [x] Compact evidence row metadata so source access remains available without giving internal classification labels primary space.
+- [x] Run final frontend pass and polish starter-check selected states plus narrow evidence-card spacing.
 
 ## Working Priority
 

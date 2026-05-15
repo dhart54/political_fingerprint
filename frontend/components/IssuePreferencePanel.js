@@ -146,24 +146,33 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
       </div>
 
       <div className="mt-5 grid gap-3 lg:grid-cols-3">
-        {STARTER_CHECKS.map((starterCheck) => (
-          <button
-            className="rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4 text-left transition hover:border-cyan-700/50 hover:bg-cyan-50"
-            key={starterCheck.id}
-            onClick={() => applyStarterCheck(starterCheck)}
-            type="button"
-          >
-            <span className="text-xs uppercase tracking-[0.24em] text-cyan-800">
-              Starter Check
-            </span>
-            <span className="mt-2 block text-[18px] leading-6 text-stone-950">
-              {starterCheck.label}
-            </span>
-            <span className="mt-2 block text-sm leading-6 text-stone-600">
-              {starterCheck.description}
-            </span>
-          </button>
-        ))}
+        {STARTER_CHECKS.map((starterCheck) => {
+          const isActive = starterCheck.domains.every((domain) => preferences[domain]);
+
+          return (
+            <button
+              aria-pressed={isActive}
+              className={`rounded-[1.25rem] border px-4 py-4 text-left transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
+                isActive
+                  ? "border-cyan-800 bg-cyan-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]"
+                  : "border-stone-200 bg-stone-50 hover:border-cyan-700/50 hover:bg-cyan-50"
+              }`}
+              key={starterCheck.id}
+              onClick={() => applyStarterCheck(starterCheck)}
+              type="button"
+            >
+              <span className={`text-xs uppercase tracking-[0.24em] ${isActive ? "text-cyan-900" : "text-cyan-800"}`}>
+                {isActive ? "Active Check" : "Starter Check"}
+              </span>
+              <span className="mt-2 block text-[18px] leading-6 text-stone-950">
+                {starterCheck.label}
+              </span>
+              <span className="mt-2 block text-sm leading-6 text-stone-600">
+                {starterCheck.description}
+              </span>
+            </button>
+          );
+        })}
       </div>
 
       <details className="mt-5 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4" open={selectedCount === 0}>
