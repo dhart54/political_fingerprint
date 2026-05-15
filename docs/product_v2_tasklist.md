@@ -89,5 +89,6 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 Current next build target:
 
-1. Prepare a concise staging readiness summary for review.
-2. Then decide whether to merge/deploy this branch or do one final full-suite verification first.
+1. Remove the `ALL / D / R` comparison overlay toggle from the visible issue-comparison header.
+2. Remove or rewrite the related `Overlay comparison is set to...` status copy.
+3. Then prepare a concise staging readiness summary for review.

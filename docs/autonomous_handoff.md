@@ -126,7 +126,15 @@ Last updated: 2026-05-14
 
 ## Active Checkpoint
 
-No active uncommitted checkpoint.
+User requested next-task note only; no implementation due to low usage.
+
+Recorded next product task:
+
+- Remove the visible `ALL / D / R` toggle from the issue-comparison header.
+- Remove or rewrite related `Overlay comparison is set to...` status copy.
+- Rationale: this is leftover chamber/party overlay context from the older fingerprint comparison and is confusing in the selected-issues comparison view.
+
+No code changes have been made for this task yet.
 
 ## Verification Already Run
 
@@ -218,8 +226,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Prepare a concise staging readiness summary for review.
-2. Then decide whether to merge/deploy this branch or do one final full-suite verification first.
+1. Remove the `ALL / D / R` comparison overlay toggle from the visible issue-comparison header.
+2. Remove or rewrite the related `Overlay comparison is set to...` status copy.
+3. Then prepare a concise staging readiness summary for review.
 
 ## Operating Mode
 
