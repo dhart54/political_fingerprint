@@ -304,9 +304,22 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
                         {formatVotePosition(row.position)}
                       </span>
                     </div>
-                    <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                      <Meta label="Classification" value={row.classification_reason} />
-                      <Meta href={row.source_url} label="Source" value={row.source_url || "No source URL"} />
+                    <div className="mt-3 flex flex-col gap-3 border-t border-stone-200 pt-3 sm:flex-row sm:items-center sm:justify-between">
+                      <p className="text-xs uppercase tracking-[0.18em] text-stone-500">
+                        Included as {formatClassificationReason(row.classification_reason)}
+                      </p>
+                      {row.source_url ? (
+                        <a
+                          className="w-fit rounded-full border border-cyan-800/20 bg-white px-3 py-2 text-xs uppercase tracking-[0.18em] text-cyan-800 underline-offset-4 transition hover:border-cyan-800 hover:bg-cyan-50 hover:underline"
+                          href={row.source_url}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          Source
+                        </a>
+                      ) : (
+                        <p className="text-xs uppercase tracking-[0.18em] text-stone-500">No source URL</p>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -381,26 +394,6 @@ function getVoteBadgeClass(position) {
   return "bg-stone-200 text-stone-700";
 }
 
-function Meta({ href, label, value }) {
-  return (
-    <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
-      <p className="text-xs uppercase tracking-[0.2em] text-stone-500">{label}</p>
-      {href ? (
-        <a
-          className="mt-2 block break-all text-sm leading-6 text-cyan-800 underline decoration-cyan-800/30 underline-offset-4"
-          href={href}
-          rel="noreferrer"
-          target="_blank"
-        >
-          {value}
-        </a>
-      ) : (
-        <p className="mt-2 break-words text-sm leading-6 text-stone-700">{value}</p>
-      )}
-    </div>
-  );
-}
-
 function buildTakeaway(rows) {
   if (!rows.length) {
     return "There are not enough recorded yea and nay votes in the current window to show a clear position pattern by issue.";
@@ -420,6 +413,14 @@ function buildTakeaway(rows) {
   return `The clearest recorded position pattern in this window is ${formatDomainLabel(strongest.domain)}, where this legislator ${leaning} ${(leaningShare * 100).toFixed(
     0,
   )}% of the time.`;
+}
+
+function formatClassificationReason(reason) {
+  if (reason === "policy_vote") {
+    return "eligible policy vote";
+  }
+
+  return String(reason || "eligible vote").replaceAll("_", " ");
 }
 
 function getPositionLabel(row) {

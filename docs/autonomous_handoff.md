@@ -143,6 +143,10 @@ Last updated: 2026-05-15
 - Shelved product idea:
   - future deterministic "Voting neighbors" module recorded in `docs/product_v2_tasklist.md`
   - should avoid leaderboard language and explain overlap/evidence before launch consideration
+- Evidence metadata compaction:
+  - bulky `Classification` and raw `policy_vote` cards were removed from evidence rows
+  - evidence rows now show compact `Included as eligible policy vote` context
+  - source URLs remain available through a compact `Source` link
 
 ## Active Checkpoint
 
@@ -243,6 +247,11 @@ Reported results:
   - browser QA confirmed `aria-pressed` moves from House vs Senator to House vs Other Senator to Compare Senators
   - browser QA confirmed the comparison section updates to Ted Budd vs Thom Tillis after selecting Compare Senators
   - no runtime or stale webpack overlay text appeared
+- Evidence metadata compaction verification passed:
+  - `cd frontend; npm run build` passed
+  - browser QA confirmed evidence rows show `Included as eligible policy vote`
+  - browser QA confirmed compact `Source` links render
+  - browser QA confirmed raw `policy_vote`, bulky `Classification` labels, runtime overlays, and stale webpack overlays are absent
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -257,8 +266,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Decide whether to merge/deploy this branch to staging.
-2. If deploying, follow `docs/staging_readiness.md` backend-first sequence and repeat the deployed URL smoke checks.
+1. Commit and push the evidence metadata compaction checkpoint if it has not already been committed.
+2. Decide whether to merge/deploy this branch to staging.
+3. If deploying, follow `docs/staging_readiness.md` backend-first sequence and repeat the deployed URL smoke checks.
 
 ## Operating Mode
 
