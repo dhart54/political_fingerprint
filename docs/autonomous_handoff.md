@@ -110,6 +110,11 @@ Last updated: 2026-05-14
 - Launch trust clarity:
   - footer now shows compact Method, Evidence, and Limits notes
   - data window remains visible below those notes
+- First-screen copy polish:
+  - hero supporting copy now leads with ZIP, issue selection, and evidence inspection
+  - ZIP lookup card now says `Start with your ZIP.`
+  - ready-state copy reflects that the House profile opens automatically
+  - issue picker explains that selected issues guide which records appear first without changing the vote record
 
 ## Active Checkpoint
 
@@ -171,6 +176,14 @@ Reported results:
   - Method, Evidence, and Limits footer notes render once as expected
   - data window remains visible
   - no runtime or stale webpack overlay text appeared
+- mobile-path browser smoke before first-screen copy polish reached ZIP lookup, issue starter, evidence, comparison, switch-official search, and trust footer with no runtime overlay
+- `cd frontend; npm run build` passed for the first-screen copy polish checkpoint
+- browser QA passed for the first-screen copy polish checkpoint:
+  - new hero, ZIP, auto-open, and issue-picker copy rendered
+  - ZIP `27701` loads Valerie P. Foushee
+  - Cost of Living starter selects 3 issues
+  - issue comparison renders
+  - no runtime or stale webpack overlay text appeared
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -185,8 +198,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Do a quick final mobile visual smoke of the shortened voter path before the next push.
-2. Then review any remaining rough copy in the first two screens for speed and clarity.
+1. Review whether the main path is ready for deployment staging or needs one final accessibility pass.
+2. If staging-ready, document the exact deployment/check sequence and push a release-prep checkpoint.
 
 ## Operating Mode
 

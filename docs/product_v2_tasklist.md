@@ -81,10 +81,11 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 - [x] Polish insufficient-evidence copy so missing vote-meaning data reads as an honest evidence status.
 - [x] Collapse comparison legislator search into a secondary pair-edit drawer.
 - [x] Add compact method, evidence, and limits notes to the footer.
+- [x] Tighten first-screen copy around ZIP lookup, auto-open behavior, and issue selection.
 
 ## Working Priority
 
 Current next build target:
 
-1. Do a quick final mobile visual smoke of the shortened voter path before the next push.
-2. Then review any remaining rough copy in the first two screens for speed and clarity.
+1. Review whether the main path is ready for deployment staging or needs one final accessibility pass.
+2. If staging-ready, document the exact deployment/check sequence and push a release-prep checkpoint.

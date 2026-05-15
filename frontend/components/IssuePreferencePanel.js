@@ -126,7 +126,7 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
             Pick what you want this record checked against.
           </h3>
           <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
-            This does not change the politician's record. It tells the site which issues to inspect first when alignment is available.
+            Your picks only guide which records appear first. They do not change the vote record.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">

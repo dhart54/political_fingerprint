@@ -122,10 +122,10 @@ export default function ZipLookupPanel({
             Start Here
           </p>
           <h3 className="mt-2 font-serif text-[2.05rem] leading-[0.98] text-stone-950 sm:text-[2.65rem] sm:leading-[0.95]">
-            Find your ballot-level officials
+            Start with your ZIP.
           </h3>
           <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
-            Look up a ZIP, then open a profile or compare your House member with either senator.
+            Load your House member and senators, then compare their records against the same issues.
           </p>
         </div>
         <p className="text-xs uppercase tracking-[0.25em] text-stone-500">
@@ -184,7 +184,7 @@ export default function ZipLookupPanel({
         <div className="mt-5">
           <div className="mb-4 flex flex-wrap gap-3 rounded-[1.25rem] border border-cyan-900/10 bg-cyan-50 px-4 py-4">
             <p className="w-full text-sm leading-6 text-stone-700">
-              Good next click: open your House profile, then compare it with either senator.
+              Your House profile opened below. Use these buttons to change the comparison pair.
             </p>
             {state.payload.house_rep && state.payload.senators[0] ? (
               <button

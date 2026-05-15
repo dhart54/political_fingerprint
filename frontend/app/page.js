@@ -76,7 +76,7 @@ export default function HomePage() {
               In 60 seconds, see how your politicians vote.
             </h1>
             <p className="mt-5 max-w-[640px] text-[17px] leading-8 text-stone-700 sm:text-lg">
-              Enter a ZIP code, open a representative or senator, and see their recent voting record by issue. The read is deterministic, neutral, and built from categorized policy votes.
+              Enter a ZIP, pick issues, and inspect the votes behind the read. Everything here is deterministic, neutral, and built from categorized policy votes.
             </p>
             <p className="mt-4 max-w-[640px] text-[14px] leading-7 text-stone-600">
               {buildCoverageRead(coverageMetadata)}
