@@ -120,6 +120,9 @@ Last updated: 2026-05-14
   - comparison overlay buttons expose selected state with `aria-pressed`
   - position issue cards expose selected state and clearer accessible names
   - deployment and accessibility docs now reflect the current staging setup
+- Release-prep staging docs:
+  - `docs/staging_readiness.md` records current status, intentional limits, env vars, deploy checks, and reviewer focus questions
+  - deployment and monitoring docs point to the staging readiness checklist
 
 ## Active Checkpoint
 
@@ -200,6 +203,7 @@ Reported results:
   - evidence opens from a selected issue card
   - no runtime or stale webpack overlay text appeared
   - note: the in-app browser helper hit a virtual-clipboard issue when filling ZIP, so this specific QA run used the default loaded profile path for the ARIA checks
+- docs guardrail/search check passed for the release-prep staging docs checkpoint; remaining matches are existing guardrail/tasklist references
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -214,8 +218,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Review whether the main path is ready for deployment staging or needs one final accessibility pass.
-2. If staging-ready, document the exact deployment/check sequence and push a release-prep checkpoint.
+1. Prepare a concise staging readiness summary for review.
+2. Then decide whether to merge/deploy this branch or do one final full-suite verification first.
 
 ## Operating Mode
 

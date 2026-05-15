@@ -5,6 +5,8 @@ Political Fingerprint deploys as two services:
 - backend API on Render
 - frontend Next.js app on Vercel
 
+Use `docs/staging_readiness.md` for the exact staging checklist before sharing a deployment.
+
 Official references:
 
 - Render FastAPI deployment: https://render.com/docs/deploy-fastapi

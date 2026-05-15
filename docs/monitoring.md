@@ -56,7 +56,7 @@ Safe to log:
 
 ## Manual Release Checklist
 
-Before sharing a deployment:
+Before sharing a deployment, run the fuller staging sequence in `docs/staging_readiness.md`. Minimum checks:
 
 1. Run backend fixture tests.
 2. Run frontend build.
@@ -66,4 +66,3 @@ Before sharing a deployment:
 6. Run one ZIP lookup.
 7. Open one evidence panel.
 8. Check logs for backend or frontend errors.
-
