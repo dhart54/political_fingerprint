@@ -24,9 +24,10 @@ These must be reproducible exactly from database state.
 
 Allowed LLM usage:
 
-- summary generation ONLY
-- summaries must be cached
-- summaries must not influence any computed metric
+- summary and explainer drafting ONLY
+- summaries and explainers must be cached
+- summaries and explainers must not influence any computed metric
+- LLM text MUST NOT decide vote eligibility, domain classification, vote meaning, alignment, or recommendations
 
 ---
 
@@ -153,10 +154,19 @@ The following MUST be stored in database tables:
 - drift_scores
 - vote_classifications
 - summaries
+- vote_interpretations
 
 API endpoints MUST read from these tables only.
 
-API endpoints MUST NOT compute these dynamically.
+API endpoints MUST NOT compute shared metrics dynamically.
+
+User-specific alignment may be computed at request time ONLY as a lightweight comparison between:
+
+- explicit user-selected preferences
+- precomputed vote_interpretations
+- stored votes_cast positions
+
+This exception exists because user preferences are session inputs. The endpoint MUST NOT perform vote classification, vote interpretation, or heavy aggregation at request time.
 
 ---
 
@@ -234,7 +244,7 @@ The system MUST remain operable under $50/month hosting cost.
 
 # Section 13 — Summary Neutrality Constraint
 
-Summary generation MUST NOT include:
+Summary, explainer, and alignment language MUST NOT include:
 
 corrupt
 extreme
@@ -244,11 +254,29 @@ best
 biased
 bought
 
-Summary MUST be descriptive only.
+Language MUST be descriptive only.
 
-Summary MUST NOT imply causation.
+Language MUST NOT imply causation.
 
-Summary MUST NOT rank legislators.
+Language MUST NOT rank legislators.
+
+Language MUST NOT prescribe voting behavior, including:
+
+- "vote for"
+- "vote against"
+- "should vote for"
+- "should vote against"
+- "support this candidate"
+- "oppose this candidate"
+
+Allowed alignment labels are limited to evidence terms such as:
+
+- aligned
+- not aligned
+- mixed
+- insufficient evidence
+
+Alignment labels MUST refer to the user's stated preferences and the available voting record, not to moral quality or electoral worthiness.
 
 ---
 
@@ -278,6 +306,49 @@ System MUST return:
 System MUST NOT estimate missing values.
 
 System MUST NOT fabricate data.
+
+---
+
+# Section 16 - Vote Interpretation Constraint
+
+Vote interpretation records MUST be deterministic and source-grounded.
+
+For each interpreted roll call, store:
+
+- roll_call_id
+- support_position, when determinable
+- oppose_position, when determinable
+- interpretation_status
+- interpretation_reason
+- source_url or source reference, when available
+- classification_version or interpretation_version
+
+If yea/nay meaning is ambiguous:
+
+- interpretation_status MUST be insufficient_evidence or ambiguous
+- alignment MUST NOT count the vote as aligned or not aligned
+
+---
+
+# Section 17 - User Alignment Constraint
+
+User alignment MUST be computed only from:
+
+- explicit user preference inputs
+- eligible classified votes
+- stored vote_interpretations
+- stored vote positions
+
+Alignment MUST NOT:
+
+- rank legislators globally
+- create a composite influence score
+- infer motives
+- infer causality
+- tell the user how to vote
+- compare users to other users
+
+Alignment MUST expose enough evidence for a user to inspect why a label was shown.
 
 ---
 

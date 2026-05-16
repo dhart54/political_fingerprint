@@ -18,6 +18,7 @@ def test_build_seed_bundle_contains_expected_fixture_counts() -> None:
     assert len(bundle.roll_calls) == 14
     assert len(bundle.votes_cast) == 21
     assert len(bundle.vote_classifications) == 14
+    assert len(bundle.vote_interpretations) == 14
     assert len(bundle.fingerprints) == 24
     assert len(bundle.chamber_medians) == 48
     assert len(bundle.drift_scores) == 3
@@ -71,6 +72,7 @@ def test_persist_seed_bundle_replaces_tables_and_commits(monkeypatch) -> None:
 
     assert any(statement.startswith("TRUNCATE TABLE") for statement, _ in executed)
     assert any(statement.startswith("INSERT INTO legislators") for statement, _ in executed)
+    assert any(statement.startswith("INSERT INTO vote_interpretations") for statement, _ in executed)
     assert any(statement.startswith("INSERT INTO summaries") for statement, _ in executed)
     assert fake_connection.committed is True
     assert fake_connection.rolled_back is False
@@ -84,6 +86,7 @@ def test_seed_fixture_database_returns_seed_counts(monkeypatch) -> None:
 
     assert result.source == "fixtures"
     assert result.legislators_seeded == 3
+    assert result.interpretations_seeded == 14
     assert result.summaries_seeded == 3
 
 
@@ -118,6 +121,7 @@ def test_build_seed_bundle_for_sources_combines_house_and_senate_cache_inputs(mo
     assert len(bundle.roll_calls) == 8
     assert len(bundle.votes_cast) == 20
     assert len(bundle.vote_classifications) == 8
+    assert len(bundle.vote_interpretations) == 8
     assert len(bundle.fingerprints) == 40
     assert len(bundle.chamber_medians) == 48
     assert len(bundle.drift_scores) == 5

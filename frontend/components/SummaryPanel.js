@@ -132,7 +132,7 @@ export default function SummaryPanel({
           How To Use It
         </p>
         <p className="mt-3 text-[15px] leading-7 text-stone-700">
-          These takeaways summarize the current behavioral window. They stay descriptive on purpose and do not infer motives, corruption, or ideology.
+          These takeaways summarize the current behavioral window. They stay descriptive on purpose and do not infer motives or ideology.
         </p>
       </article>
     </section>

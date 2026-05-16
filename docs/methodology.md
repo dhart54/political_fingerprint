@@ -2,14 +2,22 @@
 
 ## Product Scope and Guardrails
 
-This MVP is a curiosity-led, trust-anchored civic analytics platform focused on observable legislative behavior.
+This product is a curiosity-led, trust-anchored civic analytics platform focused on observable legislative behavior.
 
-The current product scope is limited to:
+The original MVP scope included:
 
 - behavioral fingerprint
 - stability or drift indicator
 - plain-language descriptive summary
 - ZIP code lookup for one House representative and two senators
+
+The current Product v2 direction adds:
+
+- position by issue
+- source-grounded vote interpretation
+- user-defined issue preferences
+- evidence-based alignment between those preferences and recorded votes
+- drilldowns from every high-level read to underlying roll calls and sources
 
 The methodology intentionally does not support:
 
@@ -19,6 +27,10 @@ The methodology intentionally does not support:
 - ranking language
 - moral judgments
 - composite influence scoring
+- prescriptive voting advice
+- personalized electoral persuasion
+
+The product may say that a recorded voting pattern appears aligned, not aligned, mixed, or insufficiently evidenced relative to preferences the user explicitly selected. It must not tell the user how to vote.
 
 ## System Principles
 
@@ -52,6 +64,7 @@ The authoritative computed outputs are:
 - `chamber_medians`
 - `drift_scores`
 - `summaries`
+- `vote_interpretations`
 
 Current repository state uses a database-first read layer for these outputs.
 
@@ -63,6 +76,72 @@ The comparison view remains descriptive, but it now uses two deterministic lense
 - vote-direction context from stored `votes_cast.position` joined to eligible classified domains within the same 730-day fingerprint window
 
 Vote-direction context is limited to per-domain `yea` versus `nay` shares. It does not infer ideology, motives, or causal explanations.
+
+User-specific alignment is the limited exception to the precomputed-output rule. Because user preferences are session inputs, alignment may be computed at request time as a lightweight comparison between explicit user preferences, stored vote positions, and precomputed vote interpretation records. The API must not classify votes, infer vote meaning, or run heavy aggregation during the request.
+
+## Vote Interpretation Rules
+
+Vote interpretation is the source-grounded record of what a yea or nay vote meant for a roll call when that can be determined.
+
+Allowed inputs:
+
+- bill title
+- bill summary
+- roll call question
+- roll call description
+- official source URL
+- stored classification metadata
+
+Stored outputs:
+
+- `roll_call_id`
+- `support_position`, when determinable
+- `oppose_position`, when determinable
+- `interpretation_status`
+- `interpretation_reason`
+- `source_url` or source reference
+- `interpretation_version`
+- `classification_version`
+
+Rules:
+
+- vote interpretation must be deterministic and auditable
+- ambiguous vote meaning must be marked `ambiguous` or `insufficient_evidence`
+- ambiguous votes must not count as aligned or not aligned
+- LLMs may draft cached plain-language explanations from stored interpretation records, but may not decide the interpretation result
+
+Current deterministic interpretation version:
+
+- `interpretation_v1`
+
+Initial rules:
+
+- eligible roll calls with wording such as `on passage`, `on agreeing`, `on adoption`, or `on the bill` are interpreted as `yea` supporting the measure and `nay` opposing the measure
+- ineligible roll calls are marked `insufficient_evidence`
+- roll calls with amendment or motion wording are marked `ambiguous`
+- vague roll call wording is marked `insufficient_evidence`
+
+These rules are intentionally conservative. They prioritize not counting a vote over counting a vote whose yea/nay meaning is unclear.
+
+## User Alignment Rules
+
+User alignment compares explicit user-selected preferences to interpreted recorded votes.
+
+Allowed labels:
+
+- `aligned`
+- `not_aligned`
+- `mixed`
+- `insufficient_evidence`
+
+Alignment must be based only on:
+
+- the user's explicit issue preference inputs
+- eligible classified votes
+- stored vote positions
+- stored vote interpretations
+
+Alignment must expose evidence counts and underlying vote rows. It must not rank legislators, infer motives, assign moral quality, or tell the user how to vote.
 
 ## Eligibility Rules
 
@@ -186,6 +265,34 @@ Frontend interpretation:
   - `leans nay` if `abs(yea_share - nay_share) >= 0.15` and `nay_share > yea_share`
   - `mixed` if the yea/nay gap is smaller than `0.15`
 - this label is a UI interpretation aid only; the stored metrics remain the underlying shares and counts
+
+## Position Evidence Rules
+
+The position-by-issue view supports an evidence drilldown for each legislator and issue domain.
+
+For a selected legislator and domain, the evidence response includes eligible classified votes in the latest 730-day fingerprint window:
+
+- roll call id
+- vote date
+- chamber
+- congress
+- roll call number
+- recorded vote position
+- roll call question
+- roll call description
+- bill title and summary when available
+- classification reason
+- classification score breakdown
+- source URL when available
+
+The evidence endpoint does not interpret whether a yea or nay vote was substantively aligned with a policy preference. It only exposes the underlying voting record and classification metadata so the user can inspect the basis for higher-level reads.
+
+Frontend presentation:
+
+- evidence rows remain roll-call level because amendments and related actions can be meaningful
+- the UI groups rows by bill title or measure label when available
+- the UI surfaces both roll-call count and distinct bill-or-measure count so repeated actions on one bill are not presented as unrelated votes
+- this grouping is explanatory only and does not change stored metrics or alignment calculations
 
 ## Drift Rules
 
@@ -449,7 +556,7 @@ The summary layer must remain neutral:
 
 ## ZIP Lookup API
 
-The ZIP lookup endpoint returns fixture-backed legislator mappings for the requested ZIP code.
+The ZIP lookup endpoint returns loaded legislator mappings for the requested ZIP code. It reads from `zip_district_map` when the database is available and falls back to fixture mappings in local development.
 
 Returned data includes:
 
@@ -458,6 +565,8 @@ Returned data includes:
 - congressional district
 - House representative for that district
 - both senators for that state
+
+The `/lookup/zips` endpoint returns a deterministic list of loaded ZIP mappings for the UI to suggest. This avoids hard-coded demo-only ZIP prompts and lets the frontend reflect whichever mappings are present in Supabase or fixtures.
 
 ## Legislator Search API
 
@@ -479,6 +588,22 @@ Current behavior:
 - requests `GET /health`
 - renders connected, checking, or unavailable status in the UI
 - displays the configured API base URL so the active backend target is visible
+
+## Coverage Metadata API
+
+The `/metadata/coverage` endpoint exposes lightweight first-viewport context:
+
+- data source used by the response (`database` or `fixtures`)
+- current fingerprint window start and end
+- classification version
+- loaded legislator count
+- total roll call count
+- eligible roll call count
+- count and share of roll calls with source URLs
+
+The endpoint reads from precomputed database tables when available. If the database is unavailable in local development, it falls back to the deterministic fixture bundle and fixture-derived computed outputs.
+
+Coverage metadata is descriptive only. It does not score quality, rank officials, infer completeness beyond stored counts, or change any alignment calculation.
 
 ## Fingerprint Radar UI
 
@@ -521,7 +646,9 @@ Current UI behavior:
 
 - defaults to fixture ZIP `27701` for local verification
 - requests `GET /lookup/zip/{zip}`
+- requests `GET /lookup/zips` for loaded ZIP suggestions
 - renders the returned district, House representative, and both senators
+- shows clickable loaded ZIP suggestions instead of hard-coded demo copy
 - surfaces request failures explicitly instead of inferring fallback data on the client
 
 ## Legislator Selection UI

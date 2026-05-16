@@ -81,7 +81,7 @@ def load_congress_bill_cache(cache_dir: Path) -> dict[tuple[int, str, int], dict
 
     lookup: dict[tuple[int, str, int], dict[str, Any]] = {}
     for path in sorted(cache_dir.glob("*.json")):
-        normalized = normalize_congress_bill_response(json.loads(path.read_text()))
+        normalized = normalize_congress_bill_response(json.loads(path.read_text(encoding="utf-8")))
         lookup[
             (
                 int(normalized["congress"]),

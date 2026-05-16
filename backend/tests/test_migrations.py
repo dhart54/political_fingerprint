@@ -1,7 +1,9 @@
 from pathlib import Path
 
 
-MIGRATION_PATH = Path(__file__).resolve().parents[1] / "migrations" / "0001_initial_schema.sql"
+MIGRATIONS_DIR = Path(__file__).resolve().parents[1] / "migrations"
+MIGRATION_PATH = MIGRATIONS_DIR / "0001_initial_schema.sql"
+VOTE_INTERPRETATIONS_MIGRATION_PATH = MIGRATIONS_DIR / "0002_vote_interpretations.sql"
 
 
 def test_initial_migration_defines_required_enums_and_tables() -> None:
@@ -51,3 +53,19 @@ def test_initial_migration_captures_locked_domain_and_precompute_constraints() -
     assert "party TEXT NOT NULL CHECK (party IN ('ALL', 'D', 'R'))" in migration_sql
     assert "CHECK (\n        (insufficient_data = TRUE AND drift_value IS NULL)" in migration_sql
     assert "UNIQUE (legislator_id, window_end, classification_version)" in migration_sql
+
+
+def test_vote_interpretations_migration_defines_alignment_foundation() -> None:
+    migration_sql = VOTE_INTERPRETATIONS_MIGRATION_PATH.read_text()
+    lowered = migration_sql.lower()
+
+    assert "create type vote_interpretation_status as enum" in lowered
+    assert "create table vote_interpretations" in lowered
+    assert "roll_call_id bigint primary key references roll_calls(id) on delete cascade" in lowered
+    assert "interpretation_status vote_interpretation_status not null" in lowered
+    assert "support_position vote_position" in lowered
+    assert "oppose_position vote_position" in lowered
+    assert "interpretation_version text not null" in lowered
+    assert "classification_version text not null" in lowered
+    assert "support_position <> oppose_position" in lowered
+    assert "interpretation_status in ('ambiguous', 'insufficient_evidence')" in lowered

@@ -1,15 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import HealthStatus from "../components/HealthStatus";
-import DriftIndicator from "../components/DriftIndicator";
-import FingerprintRadar from "../components/FingerprintRadar";
+import AlignmentPanel from "../components/AlignmentPanel";
+import IssuePreferencePanel from "../components/IssuePreferencePanel";
 import ComparisonPanel from "../components/ComparisonPanel";
 import LegislatorPicker from "../components/LegislatorPicker";
 import PositionByIssue from "../components/PositionByIssue";
-import SummaryPanel from "../components/SummaryPanel";
+import ProfileQuickRead from "../components/ProfileQuickRead";
 import ZipLookupPanel from "../components/ZipLookupPanel";
+import { fetchCoverageMetadata } from "../lib/api";
 
 const DEFAULT_LEGISLATOR = {
   id: "leg_aaron_bean",
@@ -33,71 +33,222 @@ const DEFAULT_COMPARE_RIGHT = {
 
 export default function HomePage() {
   const [selectedLegislator, setSelectedLegislator] = useState(DEFAULT_LEGISLATOR);
+  const [issuePreferences, setIssuePreferences] = useState({});
+  const [evidenceRequest, setEvidenceRequest] = useState(null);
   const [comparisonSeed, setComparisonSeed] = useState({
     left: DEFAULT_LEGISLATOR,
     right: DEFAULT_COMPARE_RIGHT,
   });
+  const [coverageMetadata, setCoverageMetadata] = useState(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadCoverageMetadata() {
+      try {
+        const payload = await fetchCoverageMetadata();
+        if (active) {
+          setCoverageMetadata(payload);
+        }
+      } catch (error) {
+        if (active) {
+          setCoverageMetadata(null);
+        }
+      }
+    }
+
+    loadCoverageMetadata();
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#f4eee1,_#e6dbc1_50%,_#d5c3a2)] text-stone-900">
-      <section className="mx-auto flex min-h-screen max-w-[1440px] flex-col justify-center px-5 py-10 sm:px-6 lg:py-12">
-        <p className="mb-4 text-sm uppercase tracking-[0.35em] text-stone-600">
-          Political Fingerprint
-        </p>
-        <h1 className="max-w-[760px] font-serif text-5xl leading-[0.95] sm:text-[4.4rem] lg:text-[5.2rem]">
-          See what issues your representative actually spends votes on.
-        </h1>
-        <p className="mt-4 max-w-[660px] text-[17px] leading-8 text-stone-700 sm:text-lg">
-          A fast behavioral profile built from categorized policy votes, showing where a legislator spends attention and how they actually vote inside those issues.
-        </p>
-        <div className="mt-7 grid gap-4 xl:grid-cols-3">
-          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Start With Your ZIP
+    <main className="min-h-screen bg-[#f7f4ec] text-stone-900">
+      <section className="mx-auto max-w-[1440px] px-5 py-6 sm:px-6 lg:py-8">
+        <div className="grid gap-7 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+          <div className="max-w-[720px]">
+            <p className="mb-4 text-sm uppercase tracking-[0.35em] text-cyan-800">
+              Political Fingerprint
             </p>
-            <p className="mt-3 text-base leading-7 text-stone-700">
-              Find your House member and senators first, then open any of them directly into the behavioral profile.
+            <h1 className="font-serif text-4xl leading-[0.98] text-stone-950 sm:text-[4.4rem] sm:leading-[0.95] lg:text-[5.45rem]">
+              In 60 seconds, see how your politicians vote.
+            </h1>
+            <p className="mt-5 max-w-[640px] text-[17px] leading-8 text-stone-700 sm:text-lg">
+              Enter a ZIP, pick issues, and inspect the votes behind the read. Everything here is deterministic, neutral, and built from categorized policy votes.
             </p>
-          </article>
-          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Position By Issue
+            <p className="mt-4 max-w-[640px] text-[14px] leading-7 text-stone-600">
+              {buildCoverageRead(coverageMetadata)}
             </p>
-            <p className="mt-3 text-base leading-7 text-stone-700">
-              See how this legislator actually votes inside their most active issue domains using recorded yea and nay positions.
-            </p>
-          </article>
-          <article className="rounded-3xl border border-stone-300/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(72,52,24,0.08)] backdrop-blur lg:p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
-              Supporting Context
-            </p>
-            <p className="mt-3 text-base leading-7 text-stone-700">
-              Use issue focus and change over time to understand where attention is concentrated and whether that pattern shifted.
-            </p>
-          </article>
+            <div className="mt-7 grid gap-3 sm:grid-cols-3">
+              <HeroStat value={formatNumber(coverageMetadata?.legislator_count, "548")} label="legislators loaded" />
+              <HeroStat value={formatNumber(coverageMetadata?.eligible_roll_call_count, "8")} label="eligible roll calls" />
+              <HeroStat value={formatPercent(coverageMetadata?.source_url_share)} label="source links" />
+            </div>
+          </div>
+          <ZipLookupPanel
+            onComparePair={setComparisonSeed}
+            onSelectLegislator={setSelectedLegislator}
+            variant="hero"
+          />
         </div>
-        <ZipLookupPanel
-          onComparePair={setComparisonSeed}
-          onSelectLegislator={setSelectedLegislator}
+
+        <section className="mt-8 rounded-[2rem] border border-stone-200 bg-white px-5 py-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] lg:px-6">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
+                Current Profile
+              </p>
+              <h2 className="mt-2 font-serif text-[2.2rem] leading-none text-stone-950 sm:text-[2.75rem]">
+                {selectedLegislator.name_display}
+              </h2>
+              <p className="mt-2 text-[15px] leading-6 text-stone-600">
+                {formatChamber(selectedLegislator.chamber)} - {selectedLegislator.party} - {selectedLegislator.state}
+                {selectedLegislator.district ? `-${selectedLegislator.district}` : " statewide"}
+              </p>
+            </div>
+            <div className="grid gap-2 sm:grid-cols-3 lg:min-w-[520px]">
+              <MiniStep label="1" value="Pick issues" />
+              <MiniStep label="2" value="Compare records" />
+              <MiniStep label="3" value="Inspect evidence" />
+            </div>
+          </div>
+        </section>
+
+        <ProfileQuickRead
+          legislator={selectedLegislator}
+          onInspectDomain={(domain) =>
+            setEvidenceRequest({
+              domain,
+              requestedAt: Date.now(),
+            })
+          }
         />
+
+        <IssuePreferencePanel
+          preferences={issuePreferences}
+          onChange={setIssuePreferences}
+        />
+
+        <AlignmentPanel
+          legislator={selectedLegislator}
+          preferences={issuePreferences}
+          onInspectDomain={(domain) =>
+            setEvidenceRequest({
+              domain,
+              requestedAt: Date.now(),
+            })
+          }
+        />
+
+        <PositionByIssue
+          evidenceRequest={evidenceRequest}
+          legislatorId={selectedLegislator.id}
+          title={`${selectedLegislator.name_display}'s voting pattern by issue`}
+        />
+        <ComparisonPanel
+          defaultLeftLegislator={selectedLegislator}
+          defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
+          onInspectDomain={(legislator, domain) => {
+            setSelectedLegislator(legislator);
+            setEvidenceRequest({
+              domain,
+              requestedAt: Date.now(),
+            });
+          }}
+          preferences={issuePreferences}
+          seedPair={comparisonSeed}
+        />
+
         <LegislatorPicker
           onSelect={setSelectedLegislator}
           selectedLegislator={selectedLegislator}
         />
-        <PositionByIssue legislatorId={selectedLegislator.id} />
-        <ComparisonPanel
-          defaultLeftLegislator={selectedLegislator}
-          defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
-          seedPair={comparisonSeed}
-        />
-        <FingerprintRadar
-          legislatorId={selectedLegislator.id}
-          title={selectedLegislator.name_display}
-        />
-        <DriftIndicator legislatorId={selectedLegislator.id} />
-        <SummaryPanel legislatorId={selectedLegislator.id} />
-        <HealthStatus />
+
+        <footer className="mt-8 border-t border-stone-300/80 py-6">
+          <div className="grid gap-3 md:grid-cols-3">
+            <TrustNote
+              eyebrow="Method"
+              text="Uses categorized policy votes only. Procedural votes are excluded before issue reads or alignment labels are shown."
+            />
+            <TrustNote
+              eyebrow="Evidence"
+              text="Open Votes and Inspect Votes show the roll calls, vote position, classification reason, and source link when available."
+            />
+            <TrustNote
+              eyebrow="Limits"
+              text="Alignment labels use interpreted vote meaning when available. Ambiguous votes stay out of the label instead of being guessed."
+            />
+          </div>
+          <p className="mt-4 text-sm leading-6 text-stone-600 md:text-right">
+            Data window: {formatDate(coverageMetadata?.window_start)} to {formatDate(coverageMetadata?.window_end)}.
+          </p>
+        </footer>
       </section>
     </main>
   );
+}
+
+function HeroStat({ value, label }) {
+  return (
+    <div className="border-l border-cyan-700/30 pl-4">
+      <p className="font-serif text-[2rem] leading-none text-cyan-900 sm:text-[2.4rem]">{value}</p>
+      <p className="mt-2 text-xs uppercase tracking-[0.2em] text-stone-600">{label}</p>
+    </div>
+  );
+}
+
+function buildCoverageRead(metadata) {
+  if (!metadata) {
+    return "Coverage context loads from the backend when available; local fallback data remains deterministic for development.";
+  }
+
+  return `Coverage window ${formatDate(metadata.window_start)} to ${formatDate(metadata.window_end)}. Procedural votes are excluded, and source links are tracked for evidence drilldowns.`;
+}
+
+function formatNumber(value, fallback) {
+  if (typeof value !== "number") {
+    return fallback;
+  }
+
+  return new Intl.NumberFormat("en-US").format(value);
+}
+
+function formatPercent(value) {
+  if (typeof value !== "number") {
+    return "--";
+  }
+
+  return `${Math.round(value * 100)}%`;
+}
+
+function formatDate(value) {
+  if (!value) {
+    return "unknown";
+  }
+
+  return String(value).slice(0, 10);
+}
+
+function MiniStep({ label, value }) {
+  return (
+    <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">
+      <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">Step {label}</p>
+      <p className="mt-2 text-sm leading-5 text-stone-800">{value}</p>
+    </div>
+  );
+}
+
+function TrustNote({ eyebrow, text }) {
+  return (
+    <div className="rounded-2xl border border-stone-200 bg-white/70 px-4 py-4">
+      <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">{eyebrow}</p>
+      <p className="mt-2 text-sm leading-6 text-stone-600">{text}</p>
+    </div>
+  );
+}
+
+function formatChamber(chamber) {
+  return chamber ? chamber[0].toUpperCase() + chamber.slice(1) : "";
 }

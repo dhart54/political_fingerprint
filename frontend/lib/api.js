@@ -17,6 +17,18 @@ export function getApiBaseUrl() {
   return API_BASE_URL;
 }
 
+export async function fetchCoverageMetadata() {
+  const response = await fetch(`${API_BASE_URL}/metadata/coverage`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Coverage metadata request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchFingerprint({
   legislatorId,
   comparisonParty = "ALL",
@@ -59,6 +71,35 @@ export async function fetchPositions({ legislatorId }) {
   return response.json();
 }
 
+export async function fetchPositionEvidence({ legislatorId, domain }) {
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/positions/${domain}/evidence`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Position evidence request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
+export async function fetchAlignment({ legislatorId, preferences }) {
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/alignment`, {
+    cache: "no-store",
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ preferences }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Alignment request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchSummary({ legislatorId }) {
   const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/summary`, {
     cache: "no-store",
@@ -78,6 +119,18 @@ export async function fetchZipLookup({ zipCode }) {
 
   if (!response.ok) {
     throw new Error(`ZIP lookup request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
+export async function fetchSupportedZips() {
+  const response = await fetch(`${API_BASE_URL}/lookup/zips`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Supported ZIP request failed with status ${response.status}`);
   }
 
   return response.json();

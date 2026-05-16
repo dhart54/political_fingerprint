@@ -7,6 +7,7 @@ from app.db import get_connection
 from app.etl.classify import run_classification
 from app.etl.compute import run_etl
 from app.etl.ingest import run_ingest
+from app.etl.interpret import run_interpretation
 
 
 FIXTURE_AS_OF_DATE = date(2026, 3, 12)
@@ -93,6 +94,14 @@ def search_legislators(*, query: str = "") -> list[dict[str, object]]:
     )
 
 
+def get_coverage_metadata() -> dict[str, object]:
+    db_metadata = _get_db_coverage_metadata()
+    if db_metadata is not None:
+        return db_metadata
+
+    return _get_fallback_coverage_metadata()
+
+
 def get_fingerprint_response(*, legislator_id: str, comparison_party: str = "ALL") -> dict[str, object] | None:
     db_response = _get_db_fingerprint_response(
         legislator_id=legislator_id,
@@ -121,6 +130,50 @@ def get_position_response(*, legislator_id: str) -> dict[str, object] | None:
         return db_response
 
     return _get_fallback_position_response(legislator_id=legislator_id)
+
+
+def get_position_evidence_response(*, legislator_id: str, domain: str) -> dict[str, object] | None:
+    normalized_domain = domain.strip().upper()
+    if normalized_domain not in DOMAIN_ORDER:
+        return None
+
+    db_response = _get_db_position_evidence_response(
+        legislator_id=legislator_id,
+        domain=normalized_domain,
+    )
+    if db_response is not None:
+        return db_response
+
+    return _get_fallback_position_evidence_response(
+        legislator_id=legislator_id,
+        domain=normalized_domain,
+    )
+
+
+def get_alignment_response(*, legislator_id: str, preferences: dict[str, str]) -> dict[str, object] | None:
+    normalized_preferences = {
+        domain.strip().upper(): stance
+        for domain, stance in preferences.items()
+        if domain.strip().upper() in DOMAIN_ORDER
+    }
+    if not normalized_preferences:
+        return {
+            "legislator_id": legislator_id,
+            "preferences": {},
+            "alignment": [],
+        } if has_legislator(legislator_id=legislator_id) else None
+
+    db_response = _get_db_alignment_response(
+        legislator_id=legislator_id,
+        preferences=normalized_preferences,
+    )
+    if db_response is not None:
+        return db_response
+
+    return _get_fallback_alignment_response(
+        legislator_id=legislator_id,
+        preferences=normalized_preferences,
+    )
 
 
 def get_summary_response(*, legislator_id: str) -> dict[str, object] | None:
@@ -161,6 +214,23 @@ def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
         "district": zip_record["district"],
         "house_rep": _serialize_legislator(house_rep) if house_rep is not None else None,
         "senators": [_serialize_legislator(legislator) for legislator in senators],
+    }
+
+
+def get_supported_zip_responses(*, limit: int = 12) -> dict[str, object]:
+    db_rows = _get_db_supported_zip_rows(limit=limit)
+    if db_rows is not None:
+        return {
+            "data_source": "database",
+            "zips": [_serialize_zip_row(row) for row in db_rows],
+        }
+
+    return {
+        "data_source": "fixtures",
+        "zips": [
+            _serialize_zip_row(row)
+            for row in sorted(FALLBACK_FIXTURE_DATA.zip_district_map, key=lambda item: str(item["zip"]))[:limit]
+        ],
     }
 
 
@@ -308,6 +378,70 @@ def _get_db_position_response(*, legislator_id: str) -> dict[str, object] | None
         "classification_version": str(first_row["classification_version"]),
         "positions": serialized_rows,
     }
+
+
+def _get_db_position_evidence_response(*, legislator_id: str, domain: str) -> dict[str, object] | None:
+    legislator = _get_db_legislator_by_external_id(legislator_id)
+    if legislator is None:
+        return None
+
+    fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    if fingerprint_rows is None:
+        return None
+    if not fingerprint_rows:
+        return None
+
+    first_row = fingerprint_rows[0]
+    evidence_rows = _get_db_position_evidence_rows(
+        legislator_db_id=int(legislator["id"]),
+        domain=domain,
+        window_start=str(first_row["window_start"]),
+        window_end=str(first_row["window_end"]),
+        classification_version=str(first_row["classification_version"]),
+    )
+    if evidence_rows is None:
+        return None
+
+    return {
+        "legislator_id": legislator_id,
+        "domain": domain,
+        "window_start": str(first_row["window_start"]),
+        "window_end": str(first_row["window_end"]),
+        "classification_version": str(first_row["classification_version"]),
+        "evidence": [_serialize_evidence_row(row) for row in evidence_rows],
+    }
+
+
+def _get_db_alignment_response(*, legislator_id: str, preferences: dict[str, str]) -> dict[str, object] | None:
+    legislator = _get_db_legislator_by_external_id(legislator_id)
+    if legislator is None:
+        return None
+
+    fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    if fingerprint_rows is None:
+        return None
+    if not fingerprint_rows:
+        return None
+
+    first_row = fingerprint_rows[0]
+    evidence_rows = _get_db_alignment_rows(
+        legislator_db_id=int(legislator["id"]),
+        domains=tuple(preferences.keys()),
+        window_start=str(first_row["window_start"]),
+        window_end=str(first_row["window_end"]),
+        classification_version=str(first_row["classification_version"]),
+    )
+    if evidence_rows is None:
+        evidence_rows = []
+
+    return _build_alignment_payload(
+        legislator_id=legislator_id,
+        preferences=preferences,
+        evidence_rows=[_serialize_alignment_row(row) for row in evidence_rows],
+        window_start=str(first_row["window_start"]),
+        window_end=str(first_row["window_end"]),
+        classification_version=str(first_row["classification_version"]),
+    )
 
 
 def _get_db_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
@@ -462,6 +596,136 @@ def _get_fallback_position_response(*, legislator_id: str) -> dict[str, object] 
     }
 
 
+def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str) -> dict[str, object] | None:
+    fingerprint_rows = [
+        row
+        for row in FALLBACK_PRECOMPUTED_DATA.fingerprint_records
+        if row.legislator_id == legislator_id
+    ]
+    if not fingerprint_rows:
+        return None
+
+    first_row = fingerprint_rows[0]
+    roll_calls_by_id = {row["id"]: row for row in FALLBACK_FIXTURE_DATA.roll_calls}
+    bills_by_id = {row["id"]: row for row in FALLBACK_FIXTURE_DATA.bills}
+    classification_result = {
+        row.roll_call_id: row
+        for row in run_classification(
+            run_ingest(),
+            classification_version=first_row.classification_version,
+        ).classified_roll_calls
+    }
+
+    evidence_rows = []
+    for vote in FALLBACK_FIXTURE_DATA.votes_cast:
+        if vote["legislator_id"] != legislator_id:
+            continue
+        classified = classification_result.get(vote["roll_call_id"])
+        if (
+            classified is None
+            or not classified.is_eligible
+            or classified.primary_domain != domain
+        ):
+            continue
+        roll_call = roll_calls_by_id[vote["roll_call_id"]]
+        vote_date = str(roll_call["vote_date"])
+        if not (first_row.window_start.isoformat() <= vote_date <= first_row.window_end.isoformat()):
+            continue
+        bill = bills_by_id.get(str(roll_call.get("bill_ref")))
+        evidence_rows.append(
+            {
+                "roll_call_id": str(roll_call["id"]),
+                "vote_date": vote_date,
+                "chamber": str(roll_call["chamber"]),
+                "congress": int(roll_call["congress"]),
+                "rollcall_number": int(roll_call["rollcall_number"]),
+                "position": str(vote["position"]),
+                "question": str(roll_call["question"]),
+                "description": str(roll_call["description"]),
+                "bill_title": str(bill["title"]) if bill is not None else None,
+                "bill_summary": str(bill["summary"]) if bill is not None else None,
+                "classification_reason": str(classified.eligibility_reason),
+                "score_breakdown": classified.score_breakdown,
+                "source_url": roll_call.get("source_url"),
+            }
+        )
+
+    evidence_rows.sort(key=lambda row: (str(row["vote_date"]), int(row["rollcall_number"])))
+    return {
+        "legislator_id": legislator_id,
+        "domain": domain,
+        "window_start": first_row.window_start.isoformat(),
+        "window_end": first_row.window_end.isoformat(),
+        "classification_version": first_row.classification_version,
+        "evidence": evidence_rows,
+    }
+
+
+def _get_fallback_alignment_response(*, legislator_id: str, preferences: dict[str, str]) -> dict[str, object] | None:
+    fingerprint_rows = [
+        row
+        for row in FALLBACK_PRECOMPUTED_DATA.fingerprint_records
+        if row.legislator_id == legislator_id
+    ]
+    if not fingerprint_rows:
+        return None
+
+    first_row = fingerprint_rows[0]
+    ingest_result = run_ingest()
+    classification_result = run_classification(
+        ingest_result,
+        classification_version=first_row.classification_version,
+    )
+    interpretation_result = run_interpretation(ingest_result, classification_result)
+    roll_calls_by_id = {row["id"]: row for row in FALLBACK_FIXTURE_DATA.roll_calls}
+    classification_by_roll_call = {
+        row.roll_call_id: row
+        for row in classification_result.classified_roll_calls
+    }
+    interpretation_by_roll_call = {
+        row.roll_call_id: row
+        for row in interpretation_result.vote_interpretations
+    }
+
+    evidence_rows = []
+    for vote in FALLBACK_FIXTURE_DATA.votes_cast:
+        if vote["legislator_id"] != legislator_id:
+            continue
+        classified = classification_by_roll_call.get(vote["roll_call_id"])
+        if (
+            classified is None
+            or not classified.is_eligible
+            or classified.primary_domain not in preferences
+        ):
+            continue
+        roll_call = roll_calls_by_id[vote["roll_call_id"]]
+        vote_date = str(roll_call["vote_date"])
+        if not (first_row.window_start.isoformat() <= vote_date <= first_row.window_end.isoformat()):
+            continue
+        interpreted = interpretation_by_roll_call.get(vote["roll_call_id"])
+        if interpreted is None:
+            continue
+        evidence_rows.append(
+            {
+                "domain": classified.primary_domain,
+                "roll_call_id": str(vote["roll_call_id"]),
+                "position": str(vote["position"]),
+                "interpretation_status": interpreted.interpretation_status,
+                "support_position": interpreted.support_position,
+                "oppose_position": interpreted.oppose_position,
+            }
+        )
+
+    return _build_alignment_payload(
+        legislator_id=legislator_id,
+        preferences=preferences,
+        evidence_rows=evidence_rows,
+        window_start=first_row.window_start.isoformat(),
+        window_end=first_row.window_end.isoformat(),
+        classification_version=first_row.classification_version,
+    )
+
+
 def _search_db_legislators(*, query: str) -> list[dict[str, object]] | None:
     normalized_query = query.strip().lower()
     search_value = f"%{normalized_query}%"
@@ -607,6 +871,86 @@ def _get_db_position_rows(
     )
 
 
+def _get_db_position_evidence_rows(
+    *,
+    legislator_db_id: int,
+    domain: str,
+    window_start: str,
+    window_end: str,
+    classification_version: str,
+) -> list[dict[str, Any]] | None:
+    return _query_all_dicts(
+        """
+        SELECT
+            rc.id AS roll_call_id,
+            rc.vote_date,
+            rc.chamber,
+            rc.congress,
+            rc.rollcall_number,
+            vc.position,
+            rc.question,
+            rc.description,
+            b.title AS bill_title,
+            b.summary AS bill_summary,
+            vcf.eligibility_reason AS classification_reason,
+            vcf.score_breakdown,
+            rc.source_url
+        FROM votes_cast vc
+        JOIN roll_calls rc ON rc.id = vc.roll_call_id
+        JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        LEFT JOIN bills b ON b.id = rc.bill_id
+        WHERE vc.legislator_id = %s
+          AND vcf.is_eligible = TRUE
+          AND vcf.primary_domain = %s
+          AND vcf.classification_version = %s
+          AND DATE(rc.vote_date) BETWEEN %s AND %s
+        ORDER BY rc.vote_date, rc.rollcall_number
+        """,
+        (legislator_db_id, domain, classification_version, window_start, window_end),
+    )
+
+
+def _get_db_alignment_rows(
+    *,
+    legislator_db_id: int,
+    domains: tuple[str, ...],
+    window_start: str,
+    window_end: str,
+    classification_version: str,
+) -> list[dict[str, Any]] | None:
+    placeholders = ", ".join(["%s"] * len(domains))
+    return _query_all_dicts(
+        f"""
+        SELECT
+            vcf.primary_domain AS domain,
+            rc.id AS roll_call_id,
+            vc.position,
+            vi.interpretation_status,
+            vi.support_position,
+            vi.oppose_position
+        FROM votes_cast vc
+        JOIN roll_calls rc ON rc.id = vc.roll_call_id
+        JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        JOIN vote_interpretations vi ON vi.roll_call_id = rc.id
+        WHERE vc.legislator_id = %s
+          AND vcf.is_eligible = TRUE
+          AND vcf.primary_domain IN ({placeholders})
+          AND vcf.classification_version = %s
+          AND vi.classification_version = %s
+          AND DATE(rc.vote_date) BETWEEN %s AND %s
+        ORDER BY rc.vote_date, rc.rollcall_number
+        """,
+        (
+            legislator_db_id,
+            *domains,
+            classification_version,
+            classification_version,
+            window_start,
+            window_end,
+        ),
+    )
+
+
 def _get_db_zip_record(*, zip_code: str) -> dict[str, Any] | None:
     return _query_one_dict(
         """
@@ -615,6 +959,18 @@ def _get_db_zip_record(*, zip_code: str) -> dict[str, Any] | None:
         WHERE zip = %s
         """,
         (zip_code,),
+    )
+
+
+def _get_db_supported_zip_rows(*, limit: int) -> list[dict[str, Any]] | None:
+    return _query_all_dicts(
+        """
+        SELECT zip, state, district
+        FROM zip_district_map
+        ORDER BY zip
+        LIMIT %s
+        """,
+        (limit,),
     )
 
 
@@ -643,6 +999,69 @@ def _get_db_senators(*, state: str) -> list[dict[str, Any]] | None:
     )
 
 
+def _get_db_coverage_metadata() -> dict[str, object] | None:
+    row = _query_one_dict(
+        """
+        SELECT
+            (SELECT COUNT(*) FROM legislators WHERE in_office = TRUE) AS legislator_count,
+            (SELECT COUNT(*) FROM roll_calls) AS roll_call_count,
+            (SELECT COUNT(*) FROM roll_calls WHERE source_url IS NOT NULL AND source_url <> '') AS source_url_count,
+            (SELECT COUNT(*) FROM vote_classifications WHERE is_eligible = TRUE) AS eligible_roll_call_count,
+            (SELECT MIN(window_start) FROM fingerprints) AS window_start,
+            (SELECT MAX(window_end) FROM fingerprints) AS window_end,
+            (SELECT classification_version FROM fingerprints ORDER BY window_end DESC, classification_version DESC LIMIT 1) AS classification_version
+        """,
+    )
+    if row is None or row.get("window_end") is None:
+        return None
+
+    roll_call_count = int(row["roll_call_count"] or 0)
+    source_url_count = int(row["source_url_count"] or 0)
+    return {
+        "data_source": "database",
+        "window_start": str(row["window_start"]),
+        "window_end": str(row["window_end"]),
+        "classification_version": str(row["classification_version"] or "unknown"),
+        "legislator_count": int(row["legislator_count"] or 0),
+        "roll_call_count": roll_call_count,
+        "eligible_roll_call_count": int(row["eligible_roll_call_count"] or 0),
+        "source_url_count": source_url_count,
+        "source_url_share": _safe_share(source_url_count, roll_call_count),
+    }
+
+
+def _get_fallback_coverage_metadata() -> dict[str, object]:
+    classification_result = run_classification(run_ingest(), classification_version="v1")
+    roll_call_count = len(FALLBACK_FIXTURE_DATA.roll_calls)
+    source_url_count = sum(
+        1
+        for roll_call in FALLBACK_FIXTURE_DATA.roll_calls
+        if str(roll_call.get("source_url") or "").strip()
+    )
+    fingerprint_rows = FALLBACK_PRECOMPUTED_DATA.fingerprint_records
+    window_start = min(row.window_start for row in fingerprint_rows)
+    window_end = max(row.window_end for row in fingerprint_rows)
+    classification_version = fingerprint_rows[0].classification_version if fingerprint_rows else "v1"
+
+    return {
+        "data_source": "fixtures",
+        "window_start": window_start.isoformat(),
+        "window_end": window_end.isoformat(),
+        "classification_version": classification_version,
+        "legislator_count": len(FALLBACK_FIXTURE_DATA.legislators),
+        "roll_call_count": roll_call_count,
+        "eligible_roll_call_count": sum(1 for row in classification_result.classified_roll_calls if row.is_eligible),
+        "source_url_count": source_url_count,
+        "source_url_share": _safe_share(source_url_count, roll_call_count),
+    }
+
+
+def _safe_share(numerator: int, denominator: int) -> float:
+    if denominator <= 0:
+        return 0.0
+    return numerator / denominator
+
+
 def _query_all_dicts(query: str, params: tuple[Any, ...] = ()) -> list[dict[str, Any]] | None:
     try:
         connection = get_connection()
@@ -666,6 +1085,145 @@ def _query_one_dict(query: str, params: tuple[Any, ...] = ()) -> dict[str, Any] 
     if rows is None or not rows:
         return None
     return rows[0]
+
+
+def _serialize_evidence_row(row: dict[str, Any]) -> dict[str, object]:
+    return {
+        "roll_call_id": str(row["roll_call_id"]),
+        "vote_date": str(row["vote_date"]),
+        "chamber": str(row["chamber"]),
+        "congress": int(row["congress"]),
+        "rollcall_number": int(row["rollcall_number"]),
+        "position": str(row["position"]),
+        "question": str(row["question"]),
+        "description": str(row["description"]),
+        "bill_title": None if row.get("bill_title") is None else str(row["bill_title"]),
+        "bill_summary": None if row.get("bill_summary") is None else str(row["bill_summary"]),
+        "classification_reason": str(row["classification_reason"]),
+        "score_breakdown": row.get("score_breakdown") or {},
+        "source_url": row.get("source_url"),
+    }
+
+
+def _serialize_zip_row(row: dict[str, Any]) -> dict[str, object]:
+    return {
+        "zip": str(row["zip"]),
+        "state": str(row["state"]),
+        "district": str(row["district"]),
+    }
+
+
+def _serialize_alignment_row(row: dict[str, Any]) -> dict[str, object]:
+    return {
+        "domain": str(row["domain"]),
+        "roll_call_id": str(row["roll_call_id"]),
+        "position": str(row["position"]),
+        "interpretation_status": str(row["interpretation_status"]),
+        "support_position": None if row.get("support_position") is None else str(row["support_position"]),
+        "oppose_position": None if row.get("oppose_position") is None else str(row["oppose_position"]),
+    }
+
+
+def _build_alignment_payload(
+    *,
+    legislator_id: str,
+    preferences: dict[str, str],
+    evidence_rows: list[dict[str, object]],
+    window_start: str,
+    window_end: str,
+    classification_version: str,
+) -> dict[str, object]:
+    rows_by_domain = {
+        domain: [
+            row
+            for row in evidence_rows
+            if row["domain"] == domain
+        ]
+        for domain in preferences
+    }
+
+    return {
+        "legislator_id": legislator_id,
+        "window_start": window_start,
+        "window_end": window_end,
+        "classification_version": classification_version,
+        "preferences": preferences,
+        "alignment": [
+            _build_domain_alignment(
+                domain=domain,
+                preference=preference,
+                evidence_rows=rows_by_domain.get(domain, []),
+            )
+            for domain, preference in preferences.items()
+        ],
+    }
+
+
+def _build_domain_alignment(
+    *,
+    domain: str,
+    preference: str,
+    evidence_rows: list[dict[str, object]],
+) -> dict[str, object]:
+    aligned_count = 0
+    not_aligned_count = 0
+    interpreted_count = 0
+    ambiguous_count = 0
+    evidence_roll_call_ids = []
+
+    for row in evidence_rows:
+        if row["interpretation_status"] != "interpreted":
+            ambiguous_count += 1
+            continue
+        evidence_roll_call_ids.append(row["roll_call_id"])
+        if row["position"] not in {row["support_position"], row["oppose_position"]}:
+            ambiguous_count += 1
+            continue
+        interpreted_count += 1
+        if preference == "show_record":
+            continue
+        preferred_position = row["support_position"] if preference == "support_more_action" else row["oppose_position"]
+        if row["position"] == preferred_position:
+            aligned_count += 1
+        else:
+            not_aligned_count += 1
+
+    label = _alignment_label(
+        preference=preference,
+        interpreted_count=interpreted_count,
+        aligned_count=aligned_count,
+        not_aligned_count=not_aligned_count,
+    )
+
+    return {
+        "domain": domain,
+        "preference": preference,
+        "label": label,
+        "aligned_count": aligned_count,
+        "not_aligned_count": not_aligned_count,
+        "interpreted_count": interpreted_count,
+        "ambiguous_count": ambiguous_count,
+        "evidence_count": len(evidence_rows),
+        "evidence_roll_call_ids": evidence_roll_call_ids,
+    }
+
+
+def _alignment_label(
+    *,
+    preference: str,
+    interpreted_count: int,
+    aligned_count: int,
+    not_aligned_count: int,
+) -> str:
+    if interpreted_count == 0:
+        return "insufficient_evidence"
+    if preference == "show_record":
+        return "mixed"
+    if aligned_count > 0 and not_aligned_count == 0:
+        return "aligned"
+    if not_aligned_count > 0 and aligned_count == 0:
+        return "not_aligned"
+    return "mixed"
 
 
 def _infer_fallback_legislator_chamber(legislator_id: str) -> str:
