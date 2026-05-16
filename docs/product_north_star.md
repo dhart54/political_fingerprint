@@ -6,7 +6,9 @@ Political Fingerprint helps a voter answer one practical question:
 
 **Who is on my ballot, and what does the evidence show about how they act on the issues I care about?**
 
-The product should make civic research feel fast, grounded, and understandable without telling the user what to think. The long-term experience is ZIP-first and ballot-aware:
+The product should make civic research feel fast, grounded, and understandable without telling the user what to think. The practical user need is to help someone more quickly determine who is representing their interests at the national and state level, using evidence they can inspect for themselves.
+
+The long-term experience is ZIP-first and ballot-aware:
 
 1. A user enters their ZIP code.
 2. The site identifies current representatives and upcoming federal, state, and local races when reliable data is available.
@@ -134,6 +136,10 @@ Every interpreted vote should be able to answer:
 - How confident is this interpretation?
 
 ## Feasibility Path
+
+The current product already covers the first layer: current federal officials by ZIP, interpreted congressional votes, user-selected issues, and evidence drilldowns.
+
+The path from here is expansion, not reinvention.
 
 ### Federal Proof
 

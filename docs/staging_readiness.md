@@ -4,7 +4,7 @@ This is the release-prep checklist for sharing Political Fingerprint in a stagin
 
 ## Current Status
 
-The main voter path is ready for staging review:
+The current main voter path is ready for staging review as the federal current-officials proof. It is not yet the full ballot-aware product described in `docs/product_north_star.md`.
 
 - ZIP lookup loads a House representative and two senators.
 - The House profile opens automatically after lookup.
@@ -12,8 +12,16 @@ The main voter path is ready for staging review:
 - Starter issue checks let users select a useful bundle quickly.
 - Alignment labels remain evidence-based: aligned, not aligned, mixed, or insufficient evidence.
 - Evidence drilldowns expose roll calls, vote position, classification reason, and source URL when available.
+- DC-speak breakdowns and interpreted issue patterns appear where cached vote meanings exist.
 - Comparison keeps selected issues primary and supports changing the comparison pair.
 - The footer explains method, evidence, limits, and data window.
+
+North-star gaps that should not be mistaken for staging regressions:
+
+- upcoming races are not loaded yet
+- candidate rosters are not loaded yet
+- challenger stated positions are not loaded yet
+- state and local offices are not loaded yet
 
 Public staging URLs:
 

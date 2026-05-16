@@ -16,6 +16,7 @@ The following must NEVER use LLM inference:
 
 - vote eligibility
 - vote classification
+- evidence tier assignment for recorded governing behavior
 - fingerprint calculation
 - chamber median calculation
 - drift calculation
@@ -27,7 +28,7 @@ Allowed LLM usage:
 - summary and explainer drafting ONLY
 - summaries and explainers must be cached
 - summaries and explainers must not influence any computed metric
-- LLM text MUST NOT decide vote eligibility, domain classification, vote meaning, alignment, or recommendations
+- LLM text MUST NOT decide vote eligibility, domain classification, vote meaning, evidence tier, alignment, or recommendations
 
 ---
 
@@ -349,6 +350,31 @@ Alignment MUST NOT:
 - compare users to other users
 
 Alignment MUST expose enough evidence for a user to inspect why a label was shown.
+
+---
+
+# Section 18 - Candidate Evidence Tier Constraint
+
+Candidate and race expansion MUST preserve the evidence ladder:
+
+1. recorded governing behavior
+2. institutional record
+3. sourced stated positions
+4. insufficient evidence
+
+Recorded votes and official actions are the highest-confidence evidence.
+
+Stated positions from campaign websites, questionnaires, debates, interviews, or public statements MUST be labeled as stated positions and MUST NOT be presented as equivalent to recorded governing behavior.
+
+Candidate comparison MUST NOT:
+
+- rank candidates
+- declare a winner
+- prescribe voting behavior
+- hide source confidence
+- merge stated positions into vote-based alignment math
+
+Every candidate claim MUST be traceable to a source URL or explicit source reference when available.
 
 ---
 

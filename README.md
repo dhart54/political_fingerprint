@@ -2,6 +2,12 @@
 
 Deterministic civic analytics platform for understanding observable legislative behavior.
 
+North star:
+
+**Who is on my ballot, and what does the evidence show about how they act on the issues I care about?**
+
+The current product proves the first layer with current federal officials, interpreted vote records, issue preferences, and evidence drilldowns. The long-term product expands into ballot-aware candidate comparison using an evidence ladder: recorded governing behavior first, institutional record second, sourced stated positions third, and insufficient evidence when sources are weak or missing.
+
 ## Repository Structure
 
 - `backend/` FastAPI application, ETL, metrics, tests, and migrations
@@ -18,6 +24,12 @@ Deterministic civic analytics platform for understanding observable legislative 
 ## Fastest Real-Data Path
 
 See [docs/real_data_runbook.md](/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/real_data_runbook.md) for the quickest route to load a starter House+Senate real dataset into Postgres and then view it through the existing frontend.
+
+## Product Direction
+
+- [Product North Star](docs/product_north_star.md)
+- [North-Star Action Plan](docs/north_star_action_plan.md)
+- [Product Roadmap](docs/product_v2_tasklist.md)
 
 ## Verification Workflow
 

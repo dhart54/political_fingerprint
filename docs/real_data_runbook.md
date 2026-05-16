@@ -1,6 +1,8 @@
 # Real Data Runbook
 
-This is the fastest path to getting non-sample data into the frontend.
+This is the fastest path to getting non-sample current-official voting data into the frontend.
+
+This runbook currently supports the Tier 1 evidence layer from `docs/product_north_star.md`: recorded governing behavior. It does not yet ingest upcoming election races, candidate rosters, or lower-confidence stated candidate positions. Those belong to the ballot-aware expansion plan in `docs/north_star_action_plan.md`.
 
 ## Prerequisites
 

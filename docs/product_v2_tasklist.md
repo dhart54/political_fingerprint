@@ -10,6 +10,8 @@ The current v2 product focuses on current federal officials and interpreted voti
 
 Core rule: inform the user, do not persuade the user. The product may show evidence-based alignment relative to user-selected preferences. It must not tell the user how to vote.
 
+Execution detail lives in `docs/north_star_action_plan.md`.
+
 ## Phase 1 - Trust Rules and Local Stability
 
 - [x] Update `AGENTS.md` to allow Product v2 alignment, vote interpretation, and evidence drilldown.

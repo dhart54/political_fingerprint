@@ -363,6 +363,8 @@ Work from `docs/product_v2_tasklist.md` in this order:
    - draft `upcoming_races` and `race_candidates` schema
 5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
 
+The detailed action plan is `docs/north_star_action_plan.md`.
+
 ## Operating Mode
 
 - Batch 2-4 related changes per checkpoint.
