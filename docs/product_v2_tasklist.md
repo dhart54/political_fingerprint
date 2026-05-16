@@ -109,5 +109,5 @@ Current next build target:
 - [x] Export the first high-impact batch for ZIP demo officials and starter issue bundles.
 - [x] Draft reviewed interpretations for that batch.
 - [x] Import reviewed interpretations into Supabase.
-- [ ] Surface plain-English vote meaning in evidence rows.
+- [x] Surface plain-English vote meaning in evidence rows.
 - [ ] Aggregate interpreted vote meanings into neutral issue pattern cards.

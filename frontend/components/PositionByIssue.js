@@ -304,6 +304,7 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
                         {formatVotePosition(row.position)}
                       </span>
                     </div>
+                    <InterpretationBreakdown row={row} />
                     <div className="mt-3 flex flex-col gap-3 border-t border-stone-200 pt-3 sm:flex-row sm:items-center sm:justify-between">
                       <p className="text-xs uppercase leading-5 tracking-[0.16em] text-stone-500 sm:tracking-[0.18em]">
                         Included as {formatClassificationReason(row.classification_reason)}
@@ -328,6 +329,75 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
           ))}
         </div>
       ) : null}
+    </div>
+  );
+}
+
+function InterpretationBreakdown({ row }) {
+  if (!hasInterpretationDetail(row)) {
+    return null;
+  }
+
+  const isInterpreted = row.interpretation_status === "interpreted";
+  const statusLabel = formatInterpretationStatus(row.interpretation_status);
+
+  return (
+    <div className="mt-3 rounded-2xl border border-cyan-900/10 bg-white px-3 py-3 sm:px-4">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xs uppercase tracking-[0.22em] text-cyan-900">
+          DC-Speak Breakdown
+        </p>
+        <span className={`w-fit rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.18em] ${getInterpretationBadgeClass(row.interpretation_status)}`}>
+          {statusLabel}
+        </span>
+      </div>
+
+      {isInterpreted ? (
+        <>
+          <p className="mt-3 text-[15px] leading-7 text-stone-950">
+            {row.plain_english_summary || row.policy_effect}
+          </p>
+          <div className="mt-3 grid gap-2 md:grid-cols-2">
+            {row.yea_meaning ? (
+              <MeaningCard label="Yea meant" text={row.yea_meaning} />
+            ) : null}
+            {row.nay_meaning ? (
+              <MeaningCard label="Nay meant" text={row.nay_meaning} />
+            ) : null}
+          </div>
+          {row.policy_effect ? (
+            <p className="mt-3 text-sm leading-6 text-stone-700">
+              {row.policy_effect}
+            </p>
+          ) : null}
+        </>
+      ) : (
+        <p className="mt-3 text-sm leading-6 text-stone-700">
+          {row.uncertainty_note || row.interpretation_reason || "The available source text is not clear enough to summarize what this vote meant."}
+        </p>
+      )}
+
+      <div className="mt-3 flex flex-wrap gap-2">
+        {row.issue_facet ? (
+          <span className="rounded-full bg-stone-100 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-stone-600">
+            {formatIssueFacet(row.issue_facet)}
+          </span>
+        ) : null}
+        {row.confidence ? (
+          <span className="rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-900">
+            {formatConfidence(row.confidence)} confidence
+          </span>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function MeaningCard({ label, text }) {
+  return (
+    <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
+      <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">{label}</p>
+      <p className="mt-2 text-sm leading-6 text-stone-800">{text}</p>
     </div>
   );
 }
@@ -421,6 +491,55 @@ function formatClassificationReason(reason) {
   }
 
   return String(reason || "eligible vote").replaceAll("_", " ");
+}
+
+function hasInterpretationDetail(row) {
+  return Boolean(
+    row.plain_english_summary ||
+      row.yea_meaning ||
+      row.nay_meaning ||
+      row.policy_effect ||
+      row.uncertainty_note ||
+      row.interpretation_reason,
+  );
+}
+
+function formatInterpretationStatus(status) {
+  if (status === "interpreted") {
+    return "Interpreted";
+  }
+  if (status === "ambiguous") {
+    return "Ambiguous";
+  }
+  if (status === "insufficient_evidence") {
+    return "Needs More Evidence";
+  }
+  return "Not Reviewed";
+}
+
+function getInterpretationBadgeClass(status) {
+  if (status === "interpreted") {
+    return "bg-cyan-900 text-white";
+  }
+  if (status === "ambiguous") {
+    return "bg-amber-100 text-amber-900";
+  }
+  return "bg-stone-200 text-stone-700";
+}
+
+function formatIssueFacet(value) {
+  return String(value || "")
+    .split("_")
+    .filter(Boolean)
+    .map((segment) => segment[0].toUpperCase() + segment.slice(1))
+    .join(" ");
+}
+
+function formatConfidence(value) {
+  return String(value || "unknown")
+    .split("_")
+    .map((segment) => segment[0].toUpperCase() + segment.slice(1))
+    .join(" ");
 }
 
 function getPositionLabel(row) {

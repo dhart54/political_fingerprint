@@ -47,6 +47,12 @@ def test_get_position_evidence_endpoint_returns_underlying_votes() -> None:
     assert payload["evidence"][0]["bill_title"] == "A bill to support teacher workforce apprenticeships"
     assert payload["evidence"][0]["classification_reason"] == "policy_vote"
     assert payload["evidence"][0]["source_url"] == "https://example.com/rollcalls/house/2"
+    assert payload["evidence"][0]["interpretation_status"] in {
+        "interpreted",
+        "ambiguous",
+        "insufficient_evidence",
+    }
+    assert "plain_english_summary" in payload["evidence"][0]
 
 
 def test_get_position_evidence_endpoint_rejects_unknown_domain() -> None:

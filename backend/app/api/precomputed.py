@@ -606,14 +606,21 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
         return None
 
     first_row = fingerprint_rows[0]
+    ingest_result = run_ingest()
     roll_calls_by_id = {row["id"]: row for row in FALLBACK_FIXTURE_DATA.roll_calls}
     bills_by_id = {row["id"]: row for row in FALLBACK_FIXTURE_DATA.bills}
+    classification_step = run_classification(
+        ingest_result,
+        classification_version=first_row.classification_version,
+    )
+    interpretation_step = run_interpretation(ingest_result, classification_step)
     classification_result = {
         row.roll_call_id: row
-        for row in run_classification(
-            run_ingest(),
-            classification_version=first_row.classification_version,
-        ).classified_roll_calls
+        for row in classification_step.classified_roll_calls
+    }
+    interpretation_result = {
+        row.roll_call_id: row
+        for row in interpretation_step.vote_interpretations
     }
 
     evidence_rows = []
@@ -632,6 +639,7 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
         if not (first_row.window_start.isoformat() <= vote_date <= first_row.window_end.isoformat()):
             continue
         bill = bills_by_id.get(str(roll_call.get("bill_ref")))
+        interpreted = interpretation_result.get(vote["roll_call_id"])
         evidence_rows.append(
             {
                 "roll_call_id": str(roll_call["id"]),
@@ -647,6 +655,18 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
                 "classification_reason": str(classified.eligibility_reason),
                 "score_breakdown": classified.score_breakdown,
                 "source_url": roll_call.get("source_url"),
+                "interpretation_status": interpreted.interpretation_status if interpreted is not None else None,
+                "support_position": interpreted.support_position if interpreted is not None else None,
+                "oppose_position": interpreted.oppose_position if interpreted is not None else None,
+                "interpretation_reason": interpreted.interpretation_reason if interpreted is not None else None,
+                "plain_english_summary": None,
+                "yea_meaning": None,
+                "nay_meaning": None,
+                "policy_effect": None,
+                "issue_facet": None,
+                "confidence": None,
+                "source_basis": [],
+                "uncertainty_note": None,
             }
         )
 
@@ -894,10 +914,25 @@ def _get_db_position_evidence_rows(
             b.summary AS bill_summary,
             vcf.eligibility_reason AS classification_reason,
             vcf.score_breakdown,
-            rc.source_url
+            rc.source_url,
+            vi.interpretation_status,
+            vi.support_position,
+            vi.oppose_position,
+            vi.interpretation_reason,
+            vi.plain_english_summary,
+            vi.yea_meaning,
+            vi.nay_meaning,
+            vi.policy_effect,
+            vi.issue_facet,
+            vi.confidence,
+            vi.source_basis,
+            vi.uncertainty_note
         FROM votes_cast vc
         JOIN roll_calls rc ON rc.id = vc.roll_call_id
         JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        LEFT JOIN vote_interpretations vi
+          ON vi.roll_call_id = rc.id
+         AND vi.classification_version = vcf.classification_version
         LEFT JOIN bills b ON b.id = rc.bill_id
         WHERE vc.legislator_id = %s
           AND vcf.is_eligible = TRUE
@@ -1102,6 +1137,18 @@ def _serialize_evidence_row(row: dict[str, Any]) -> dict[str, object]:
         "classification_reason": str(row["classification_reason"]),
         "score_breakdown": row.get("score_breakdown") or {},
         "source_url": row.get("source_url"),
+        "interpretation_status": None if row.get("interpretation_status") is None else str(row["interpretation_status"]),
+        "support_position": None if row.get("support_position") is None else str(row["support_position"]),
+        "oppose_position": None if row.get("oppose_position") is None else str(row["oppose_position"]),
+        "interpretation_reason": None if row.get("interpretation_reason") is None else str(row["interpretation_reason"]),
+        "plain_english_summary": None if row.get("plain_english_summary") is None else str(row["plain_english_summary"]),
+        "yea_meaning": None if row.get("yea_meaning") is None else str(row["yea_meaning"]),
+        "nay_meaning": None if row.get("nay_meaning") is None else str(row["nay_meaning"]),
+        "policy_effect": None if row.get("policy_effect") is None else str(row["policy_effect"]),
+        "issue_facet": None if row.get("issue_facet") is None else str(row["issue_facet"]),
+        "confidence": None if row.get("confidence") is None else str(row["confidence"]),
+        "source_basis": row.get("source_basis") or [],
+        "uncertainty_note": None if row.get("uncertainty_note") is None else str(row["uncertainty_note"]),
     }
 
 

@@ -168,6 +168,10 @@ Last updated: 2026-05-16
   - drafted `docs/interpretation_batches/batch_001_nc_starter_interpretations.json`
   - imported 48 records into Supabase with `--reviewed-by codex_manual_review`
   - status mix after import: 24 interpreted, 12 ambiguous, 12 insufficient evidence
+- Evidence-row interpretation UI:
+  - backend position evidence rows now include cached interpretation status, support/oppose positions, plain-English summary, yea/nay meaning, policy effect, issue facet, confidence, source basis, and uncertainty note
+  - frontend evidence rows now render a `DC-Speak Breakdown` block when cached interpretation details or uncertainty notes exist
+  - ambiguous and insufficient-evidence votes are shown as evidence limits rather than inferred policy reads
 
 ## Active Checkpoint
 
@@ -301,6 +305,11 @@ Reported results:
   - importer returned `imported_count: 48` with no validation errors
   - Supabase status count check returned 24 interpreted, 12 ambiguous, and 12 insufficient-evidence records
   - targeted backend checks passed with `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp_manual_interpret_admin_3 tests\test_manual_interpretations.py tests\test_migrations.py` (`7 passed`)
+- Evidence-row interpretation UI verification:
+  - `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp_interpret_ui tests\test_api_positions.py tests\test_db_read_layer.py` passed (`11 passed`)
+  - sandboxed `cd frontend; npm run build` hit Windows `spawn EPERM`
+  - escalated rerun of `cd frontend; npm run build` passed
+  - direct Supabase-backed backend response check confirmed `leg_valerie_p_foushee` `ECONOMY_TAXES` evidence rows now include cached interpretation fields
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -315,9 +324,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Build the backend response fields needed for cached plain-English interpretation details in evidence rows.
-2. Build the frontend evidence-row UI that shows what the vote appears to do, yea/nay meaning, confidence, and source.
-3. Add neutral issue pattern cards that aggregate cached interpreted vote meanings.
+1. Smoke-test the deployed evidence-row interpretation UI after Render/Vercel redeploy.
+2. Add neutral issue pattern cards that aggregate cached interpreted vote meanings.
 
 ## Operating Mode
 
