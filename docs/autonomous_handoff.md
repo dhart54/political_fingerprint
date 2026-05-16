@@ -360,7 +360,12 @@ Reported results:
   - FEC-only candidates are labeled `declared_candidate` and `insufficient_evidence` because FEC records do not provide issue positions
   - added `docs/federal_race_sources.md` and methodology notes
   - focused backend tests passed: `tests\test_federal_races.py tests\test_migrations.py tests\test_api_positions.py` (`15 passed`)
-  - next best task: run a dry-run against the actual downloaded FEC CSV, inspect counts/sample rows, then persist to Supabase if sane
+  - downloaded official FEC 2026 candidate summary CSV to local ignored cache path `backend\data_sources\fec\candidate_summary_2026.csv`
+  - dry-run parsed `504` federal House/Senate races and `3973` candidates
+  - applied migrations `0004_upcoming_races.sql` and `0005_race_candidate_source_keys.sql` to the configured database
+  - persisted `504` races and `3973` candidate rows to Supabase
+  - backend smoke for ZIP `27701` returned `data_source = database`, NC-04 House race with 5 candidates, and NC Senate race with 25 candidates
+  - next best task: add high-confidence candidate-to-legislator matching for incumbents so incumbent candidates can surface recorded voting behavior instead of only `insufficient_evidence`
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -379,10 +384,9 @@ Work from `docs/product_v2_tasklist.md` in this order:
 2. Confirm Render and Vercel redeploy through the latest pushed commit.
 3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
 4. Start Phase 9 federal ballot proof:
-   - run FEC candidate-summary importer in dry-run mode against downloaded 2026 CSV
-   - inspect parsed race/candidate counts and sample rows before persisting
-   - persist FEC race context to Supabase if the dry-run is sane
-   - then add high-confidence candidate-to-legislator matching for incumbents
+   - add high-confidence candidate-to-legislator matching for incumbents
+   - rerun FEC import after matching is implemented
+   - smoke-test ZIP `27701` to confirm Valerie Foushee displays linked recorded behavior while challengers remain insufficient/stated-position pending
 5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
