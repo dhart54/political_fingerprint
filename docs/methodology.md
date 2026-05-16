@@ -460,6 +460,9 @@ Current CLI examples:
 - `python -m app.etl.fetch_sources senate --congress 119 --session 1 --roll 1 --output-dir ./tmp/senate`
 - `python -m app.etl.fetch_sources senate-members`
 - `python -m app.etl.fetch_sources congress-bill --congress 119 --bill-type hr --bill-number 120 --api-key YOUR_KEY`
+- `python -m app.etl.fetch_sources congress-bill --congress 119 --bill-type hr --bill-number 120 --include-enrichment`
+
+When `--include-enrichment` is used, the Congress.gov pull stores the bill detail payload plus the bill summaries and bill subjects subresources in separate cache directories. The ETL merges those companion payloads deterministically before classification, so interpretation packets can use CRS summary text and official subject terms when Congress.gov provides them.
 
 ## Live Pipeline Orchestration
 

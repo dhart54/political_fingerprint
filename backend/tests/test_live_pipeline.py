@@ -86,7 +86,7 @@ def test_run_live_pipeline_fetches_house_flow(monkeypatch) -> None:
     assert result.persisted_source == "house_clerk_cache"
 
 
-def test_run_live_pipeline_fetches_congress_bill_metadata(monkeypatch) -> None:
+def test_run_live_pipeline_fetches_congress_bill_enrichment(monkeypatch) -> None:
     fetched = []
 
     monkeypatch.setattr(live_pipeline, "fetch_house_clerk_members", lambda: None)
@@ -119,7 +119,7 @@ def test_run_live_pipeline_fetches_congress_bill_metadata(monkeypatch) -> None:
     )
     monkeypatch.setattr(
         live_pipeline,
-        "fetch_congress_bill_metadata",
+        "fetch_congress_bill_enrichment",
         lambda *, congress, bill_type, bill_number, api_key: fetched.append(
             (congress, bill_type, bill_number, api_key)
         ),
@@ -169,7 +169,7 @@ def test_run_live_pipeline_fetches_congress_bill_metadata(monkeypatch) -> None:
     assert result.congress_bills_fetched == 2
 
 
-def test_run_live_pipeline_skips_404_congress_bill_metadata(monkeypatch) -> None:
+def test_run_live_pipeline_skips_404_congress_bill_enrichment(monkeypatch) -> None:
     fetched = []
 
     monkeypatch.setattr(live_pipeline, "fetch_house_clerk_members", lambda: None)
@@ -186,7 +186,7 @@ def test_run_live_pipeline_skips_404_congress_bill_metadata(monkeypatch) -> None
     )
     monkeypatch.setattr(live_pipeline, "resolve_congress_api_key", lambda api_key: "resolved-key")
 
-    def fake_fetch_congress_bill_metadata(*, congress, bill_type, bill_number, api_key):
+    def fake_fetch_congress_bill_enrichment(*, congress, bill_type, bill_number, api_key):
         fetched.append((congress, bill_type, bill_number, api_key))
         if bill_number == 121:
             raise HTTPError(
@@ -199,8 +199,8 @@ def test_run_live_pipeline_skips_404_congress_bill_metadata(monkeypatch) -> None
 
     monkeypatch.setattr(
         live_pipeline,
-        "fetch_congress_bill_metadata",
-        fake_fetch_congress_bill_metadata,
+        "fetch_congress_bill_enrichment",
+        fake_fetch_congress_bill_enrichment,
     )
     monkeypatch.setattr(
         live_pipeline,

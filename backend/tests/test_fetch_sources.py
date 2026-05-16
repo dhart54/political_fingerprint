@@ -62,6 +62,30 @@ def test_build_congress_bill_url_uses_inferred_v3_pattern() -> None:
     )
 
 
+def test_build_congress_bill_summaries_url_uses_official_subresource_pattern() -> None:
+    assert (
+        fetch_sources.build_congress_bill_summaries_url(
+            congress=119,
+            bill_type="hr",
+            bill_number=120,
+            api_key="demo-key",
+        )
+        == "https://api.congress.gov/v3/bill/119/hr/120/summaries?format=json&api_key=demo-key&limit=250"
+    )
+
+
+def test_build_congress_bill_subjects_url_uses_official_subresource_pattern() -> None:
+    assert (
+        fetch_sources.build_congress_bill_subjects_url(
+            congress=119,
+            bill_type="hr",
+            bill_number=120,
+            api_key="demo-key",
+        )
+        == "https://api.congress.gov/v3/bill/119/hr/120/subjects?format=json&api_key=demo-key&limit=250"
+    )
+
+
 def test_download_to_path_writes_payload(monkeypatch, tmp_path: Path) -> None:
     captured = {}
 
@@ -114,6 +138,14 @@ def test_resolve_congress_api_key_reads_environment(monkeypatch) -> None:
     monkeypatch.setenv("CONGRESS_API_KEY", "env-key")
 
     assert fetch_sources.resolve_congress_api_key() == "env-key"
+
+
+def test_resolve_congress_api_key_reads_backend_dotenv(monkeypatch, tmp_path: Path) -> None:
+    monkeypatch.delenv("CONGRESS_API_KEY", raising=False)
+    monkeypatch.setattr(fetch_sources, "BACKEND_DIR", tmp_path)
+    (tmp_path / ".env").write_text("CONGRESS_API_KEY='dotenv-key'\n", encoding="utf-8")
+
+    assert fetch_sources.resolve_congress_api_key() == "dotenv-key"
 
 
 def test_main_supports_house_subcommand(monkeypatch, capsys, tmp_path: Path) -> None:
@@ -306,3 +338,46 @@ def test_main_supports_congress_bill_subcommand(monkeypatch, capsys, tmp_path: P
 
     assert "downloaded" in output
     assert "119_hr_120.json" in output
+
+
+def test_main_supports_congress_bill_enrichment_subcommand(monkeypatch, capsys) -> None:
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "fetch_sources.py",
+            "congress-bill",
+            "--congress",
+            "119",
+            "--bill-type",
+            "hr",
+            "--bill-number",
+            "120",
+            "--api-key",
+            "demo-key",
+            "--include-enrichment",
+        ],
+    )
+    monkeypatch.setattr(
+        fetch_sources,
+        "fetch_congress_bill_enrichment",
+        lambda *, congress, bill_type, bill_number, api_key, overwrite: [
+            fetch_sources.DownloadResult(
+                source_url="https://api.congress.gov/v3/bill/119/hr/120?format=json&api_key=demo-key",
+                destination=fetch_sources.CONGRESS_BILL_CACHE_DIR / "119_hr_120.json",
+                bytes_written=512,
+                skipped=False,
+            ),
+            fetch_sources.DownloadResult(
+                source_url="https://api.congress.gov/v3/bill/119/hr/120/summaries?format=json&api_key=demo-key&limit=250",
+                destination=fetch_sources.CONGRESS_BILL_SUMMARY_CACHE_DIR / "119_hr_120.json",
+                bytes_written=256,
+                skipped=False,
+            ),
+        ],
+    )
+
+    fetch_sources.main()
+    output = capsys.readouterr().out
+
+    assert "bill_summaries" in output

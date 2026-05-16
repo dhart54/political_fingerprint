@@ -8,7 +8,7 @@ from xml.etree import ElementTree
 from app.etl.fetch_sources import (
     HOUSE_CLERK_CACHE_DIR,
     SENATE_XML_CACHE_DIR,
-    fetch_congress_bill_metadata,
+    fetch_congress_bill_enrichment,
     fetch_house_clerk_members,
     fetch_house_clerk_roll_calls,
     fetch_senate_members,
@@ -83,7 +83,7 @@ def run_live_pipeline(
         api_key = resolve_congress_api_key(congress_api_key)
         for congress, bill_type, bill_number in resolved_bill_refs:
             try:
-                fetch_congress_bill_metadata(
+                fetch_congress_bill_enrichment(
                     congress=congress,
                     bill_type=bill_type,
                     bill_number=bill_number,

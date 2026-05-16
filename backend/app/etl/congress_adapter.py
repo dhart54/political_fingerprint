@@ -55,9 +55,9 @@ def normalize_congress_bill_response(payload: dict[str, Any]) -> dict[str, Any]:
     policy_area = payload.get("policyArea") or bill.get("policyArea") or {}
 
     normalized_subjects = [
-        _coerce_subject(subject)
-        for subject in subjects
-        if _coerce_subject(subject)
+        subject_name
+        for subject_name in (_coerce_subject(subject) for subject in _iter_subject_entries(subjects))
+        if subject_name
     ]
     policy_area_name = _coerce_subject(policy_area)
     if policy_area_name and policy_area_name not in normalized_subjects:
@@ -79,9 +79,14 @@ def load_congress_bill_cache(cache_dir: Path) -> dict[tuple[int, str, int], dict
     if not cache_dir.exists():
         return {}
 
+    summaries_dir = cache_dir.parent / "bill_summaries"
+    subjects_dir = cache_dir.parent / "bill_subjects"
     lookup: dict[tuple[int, str, int], dict[str, Any]] = {}
     for path in sorted(cache_dir.glob("*.json")):
-        normalized = normalize_congress_bill_response(json.loads(path.read_text(encoding="utf-8")))
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        _merge_companion_payload(payload, summaries_dir / path.name, "summaries")
+        _merge_companion_payload(payload, subjects_dir / path.name, "subjects")
+        normalized = normalize_congress_bill_response(payload)
         lookup[
             (
                 int(normalized["congress"]),
@@ -183,6 +188,8 @@ def _extract_bill_title(bill: dict[str, Any]) -> str:
 
 
 def _extract_latest_summary(summaries: list[Any]) -> str:
+    if isinstance(summaries, dict):
+        summaries = summaries.get("summaries") or summaries.get("items") or []
     for summary in summaries:
         if isinstance(summary, dict):
             text = summary.get("text") or summary.get("summary")
@@ -208,3 +215,32 @@ def _coerce_subject(subject: Any) -> str | None:
         if value:
             return str(value).strip()
     return None
+
+
+def _iter_subject_entries(subjects: Any) -> list[Any]:
+    if isinstance(subjects, list):
+        return subjects
+    if isinstance(subjects, dict):
+        entries: list[Any] = []
+        legislative_subjects = subjects.get("legislativeSubjects")
+        if isinstance(legislative_subjects, list):
+            entries.extend(legislative_subjects)
+        policy_area = subjects.get("policyArea")
+        if policy_area:
+            entries.append(policy_area)
+        return entries
+    return []
+
+
+def _merge_companion_payload(payload: dict[str, Any], path: Path, field_name: str) -> None:
+    if not path.exists():
+        return
+
+    companion = json.loads(path.read_text(encoding="utf-8"))
+    values = companion.get(field_name)
+    if values is None:
+        return
+
+    bill = payload.setdefault("bill", {})
+    bill[field_name] = values
+    payload[field_name] = values

@@ -13,6 +13,8 @@ BACKEND_DIR = Path(__file__).resolve().parents[2]
 DATA_SOURCES_DIR = BACKEND_DIR / "data_sources"
 CONGRESS_CACHE_DIR = DATA_SOURCES_DIR / "congress"
 CONGRESS_BILL_CACHE_DIR = CONGRESS_CACHE_DIR / "bills"
+CONGRESS_BILL_SUMMARY_CACHE_DIR = CONGRESS_CACHE_DIR / "bill_summaries"
+CONGRESS_BILL_SUBJECT_CACHE_DIR = CONGRESS_CACHE_DIR / "bill_subjects"
 HOUSE_CLERK_CACHE_DIR = DATA_SOURCES_DIR / "house_clerk"
 SENATE_XML_CACHE_DIR = DATA_SOURCES_DIR / "senate_xml"
 
@@ -49,6 +51,16 @@ def build_senate_members_url(*, detailed: bool = False) -> str:
 def build_congress_bill_url(*, congress: int, bill_type: str, bill_number: int, api_key: str) -> str:
     query = urlencode({"format": "json", "api_key": api_key})
     return f"https://api.congress.gov/v3/bill/{congress}/{bill_type}/{bill_number}?{query}"
+
+
+def build_congress_bill_summaries_url(*, congress: int, bill_type: str, bill_number: int, api_key: str) -> str:
+    query = urlencode({"format": "json", "api_key": api_key, "limit": 250})
+    return f"https://api.congress.gov/v3/bill/{congress}/{bill_type}/{bill_number}/summaries?{query}"
+
+
+def build_congress_bill_subjects_url(*, congress: int, bill_type: str, bill_number: int, api_key: str) -> str:
+    query = urlencode({"format": "json", "api_key": api_key, "limit": 250})
+    return f"https://api.congress.gov/v3/bill/{congress}/{bill_type}/{bill_number}/subjects?{query}"
 
 
 def fetch_house_clerk_roll_calls(
@@ -110,6 +122,83 @@ def fetch_congress_bill_metadata(
         output_dir / f"{congress}_{normalized_bill_type}_{bill_number}.json",
         overwrite=overwrite,
     )
+
+
+def fetch_congress_bill_summaries(
+    *,
+    congress: int,
+    bill_type: str,
+    bill_number: int,
+    api_key: str,
+    output_dir: Path = CONGRESS_BILL_SUMMARY_CACHE_DIR,
+    overwrite: bool = False,
+) -> DownloadResult:
+    normalized_bill_type = bill_type.lower()
+    return download_to_path(
+        build_congress_bill_summaries_url(
+            congress=congress,
+            bill_type=normalized_bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+        ),
+        output_dir / f"{congress}_{normalized_bill_type}_{bill_number}.json",
+        overwrite=overwrite,
+    )
+
+
+def fetch_congress_bill_subjects(
+    *,
+    congress: int,
+    bill_type: str,
+    bill_number: int,
+    api_key: str,
+    output_dir: Path = CONGRESS_BILL_SUBJECT_CACHE_DIR,
+    overwrite: bool = False,
+) -> DownloadResult:
+    normalized_bill_type = bill_type.lower()
+    return download_to_path(
+        build_congress_bill_subjects_url(
+            congress=congress,
+            bill_type=normalized_bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+        ),
+        output_dir / f"{congress}_{normalized_bill_type}_{bill_number}.json",
+        overwrite=overwrite,
+    )
+
+
+def fetch_congress_bill_enrichment(
+    *,
+    congress: int,
+    bill_type: str,
+    bill_number: int,
+    api_key: str,
+    overwrite: bool = False,
+) -> list[DownloadResult]:
+    return [
+        fetch_congress_bill_metadata(
+            congress=congress,
+            bill_type=bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+            overwrite=overwrite,
+        ),
+        fetch_congress_bill_summaries(
+            congress=congress,
+            bill_type=bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+            overwrite=overwrite,
+        ),
+        fetch_congress_bill_subjects(
+            congress=congress,
+            bill_type=bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+            overwrite=overwrite,
+        ),
+    ]
 
 
 def fetch_house_clerk_members(
@@ -177,7 +266,26 @@ def resolve_congress_api_key(explicit_api_key: str | None = None) -> str:
     api_key = os.getenv("CONGRESS_API_KEY")
     if api_key:
         return api_key
+    dotenv_api_key = _read_dotenv_value(BACKEND_DIR / ".env", "CONGRESS_API_KEY")
+    if dotenv_api_key:
+        return dotenv_api_key
     raise ValueError("Congress API key is required. Set CONGRESS_API_KEY or pass --api-key.")
+
+
+def _read_dotenv_value(path: Path, key: str) -> str | None:
+    if not path.exists():
+        return None
+
+    prefix = f"{key}="
+    for line in path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or not stripped.startswith(prefix):
+            continue
+        value = stripped[len(prefix):].strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
+            value = value[1:-1]
+        return value or None
+    return None
 
 
 def main() -> None:
@@ -213,6 +321,11 @@ def main() -> None:
     congress_parser.add_argument("--api-key")
     congress_parser.add_argument("--output-dir", type=Path, default=CONGRESS_BILL_CACHE_DIR)
     congress_parser.add_argument("--overwrite", action="store_true")
+    congress_parser.add_argument(
+        "--include-enrichment",
+        action="store_true",
+        help="Also fetch Congress.gov bill summaries and subjects into the standard cache directories.",
+    )
 
     args = parser.parse_args()
 
@@ -247,16 +360,26 @@ def main() -> None:
             )
         ]
     else:
-        results = [
-            fetch_congress_bill_metadata(
+        api_key = resolve_congress_api_key(args.api_key)
+        if args.include_enrichment and args.output_dir == CONGRESS_BILL_CACHE_DIR:
+            results = fetch_congress_bill_enrichment(
                 congress=args.congress,
                 bill_type=args.bill_type,
                 bill_number=args.bill_number,
-                api_key=resolve_congress_api_key(args.api_key),
-                output_dir=args.output_dir,
+                api_key=api_key,
                 overwrite=args.overwrite,
             )
-        ]
+        else:
+            results = [
+                fetch_congress_bill_metadata(
+                    congress=args.congress,
+                    bill_type=args.bill_type,
+                    bill_number=args.bill_number,
+                    api_key=api_key,
+                    output_dir=args.output_dir,
+                    overwrite=args.overwrite,
+                )
+            ]
 
     for result in results:
         status = "skipped" if result.skipped else "downloaded"

@@ -1,6 +1,7 @@
 import json
 
 from app.etl.manual_interpretations import (
+    _enrich_packets_from_congress_cache,
     import_manual_interpretations,
     validate_manual_interpretations,
 )
@@ -79,3 +80,32 @@ def test_import_manual_interpretations_validates_before_persisting(tmp_path, mon
 
     assert result["imported_count"] == 0
     assert result["errors"]
+
+
+def test_enrich_packets_from_congress_cache_prefers_cached_summary_and_subjects(monkeypatch) -> None:
+    monkeypatch.setattr(
+        "app.etl.manual_interpretations.load_congress_bill_cache",
+        lambda cache_dir: {
+            (119, "hr", 120): {
+                "summary": "CRS summary explains the bill's operating change.",
+                "subjects": ["Health care costs"],
+            }
+        },
+    )
+
+    packets = _enrich_packets_from_congress_cache(
+        [
+            {
+                "official_text": {
+                    "bill_congress": 119,
+                    "bill_type": "hr",
+                    "bill_number": 120,
+                    "bill_summary": "",
+                    "bill_subjects": [],
+                }
+            }
+        ]
+    )
+
+    assert packets[0]["official_text"]["bill_summary"] == "CRS summary explains the bill's operating change."
+    assert packets[0]["official_text"]["bill_subjects"] == ["Health care costs"]

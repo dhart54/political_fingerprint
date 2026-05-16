@@ -6,6 +6,8 @@ from pathlib import Path
 from typing import Any
 
 from app.db import get_connection
+from app.etl.congress_adapter import load_congress_bill_cache
+from app.etl.fetch_sources import CONGRESS_BILL_CACHE_DIR
 from app.etl.interpret import INTERPRETATION_VERSION
 
 
@@ -47,6 +49,7 @@ def export_interpretation_packets(
         domains=[domain.upper() for domain in domains or []],
         limit=limit,
     )
+    packets = _enrich_packets_from_congress_cache(packets)
     payload = {
         "schema_version": MANUAL_INTERPRETATION_VERSION,
         "instructions": [
@@ -208,6 +211,35 @@ def _fetch_interpretation_packets(*, legislator_ids: list[str], domains: list[st
         connection.close()
 
     return [_serialize_packet(row) for row in rows]
+
+
+def _enrich_packets_from_congress_cache(packets: list[dict[str, object]]) -> list[dict[str, object]]:
+    congress_cache = load_congress_bill_cache(CONGRESS_BILL_CACHE_DIR)
+    if not congress_cache:
+        return packets
+
+    for packet in packets:
+        official_text = packet.get("official_text")
+        if not isinstance(official_text, dict):
+            continue
+        try:
+            bill_key = (
+                int(official_text["bill_congress"]),
+                str(official_text["bill_type"]),
+                int(official_text["bill_number"]),
+            )
+        except (KeyError, TypeError, ValueError):
+            continue
+
+        cached_bill = congress_cache.get(bill_key)
+        if cached_bill is None:
+            continue
+        if cached_bill.get("summary"):
+            official_text["bill_summary"] = cached_bill["summary"]
+        if cached_bill.get("subjects"):
+            official_text["bill_subjects"] = cached_bill["subjects"]
+
+    return packets
 
 
 def _persist_manual_interpretations(rows: list[dict[str, object]]) -> None:
