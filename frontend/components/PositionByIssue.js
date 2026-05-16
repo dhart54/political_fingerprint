@@ -340,6 +340,8 @@ function InterpretationBreakdown({ row }) {
 
   const isInterpreted = row.interpretation_status === "interpreted";
   const statusLabel = formatInterpretationStatus(row.interpretation_status);
+  const policyEffectAddsDetail = row.policy_effect && row.policy_effect !== row.plain_english_summary;
+  const interpretedVoteRead = buildInterpretedVoteRead(row);
 
   return (
     <div className="mt-3 rounded-2xl border border-cyan-900/10 bg-white px-3 py-3 sm:px-4">
@@ -357,6 +359,16 @@ function InterpretationBreakdown({ row }) {
           <p className="mt-3 text-[15px] leading-7 text-stone-950">
             {row.plain_english_summary || row.policy_effect}
           </p>
+          {interpretedVoteRead ? (
+            <div className="mt-3 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
+                Their recorded vote
+              </p>
+              <p className="mt-2 text-sm leading-6 text-stone-800">
+                {interpretedVoteRead}
+              </p>
+            </div>
+          ) : null}
           <div className="mt-3 grid gap-2 md:grid-cols-2">
             {row.yea_meaning ? (
               <MeaningCard label="Yea meant" text={row.yea_meaning} />
@@ -365,10 +377,15 @@ function InterpretationBreakdown({ row }) {
               <MeaningCard label="Nay meant" text={row.nay_meaning} />
             ) : null}
           </div>
-          {row.policy_effect ? (
-            <p className="mt-3 text-sm leading-6 text-stone-700">
-              {row.policy_effect}
-            </p>
+          {policyEffectAddsDetail ? (
+            <div className="mt-3 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
+                Policy effect
+              </p>
+              <p className="mt-2 text-sm leading-6 text-stone-800">
+                {row.policy_effect}
+              </p>
+            </div>
           ) : null}
         </>
       ) : (
@@ -400,6 +417,21 @@ function MeaningCard({ label, text }) {
       <p className="mt-2 text-sm leading-6 text-stone-800">{text}</p>
     </div>
   );
+}
+
+function buildInterpretedVoteRead(row) {
+  if (!row.position || !row.support_position || !row.oppose_position) {
+    return "";
+  }
+
+  const position = formatVotePosition(row.position);
+  if (row.position === row.support_position) {
+    return `This legislator voted ${position}, which matched the support side described above.`;
+  }
+  if (row.position === row.oppose_position) {
+    return `This legislator voted ${position}, which matched the oppose side described above.`;
+  }
+  return `This legislator's recorded position was ${position}.`;
 }
 
 function groupEvidenceByBill(rows) {

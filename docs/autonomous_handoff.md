@@ -312,6 +312,22 @@ Reported results:
   - direct Supabase-backed backend response check confirmed `leg_valerie_p_foushee` `ECONOMY_TAXES` evidence rows now include cached interpretation fields
   - local browser smoke passed for ZIP `27701` to Cost of Living evidence: `DC-Speak Breakdown`, `Yea meant`, `Nay meant`, confidence labels, and needs-more-evidence states rendered with no console errors
   - Render still served the older evidence response shape after push `26c23c2`; redeploy Render before expecting Vercel staging to show the new breakdown
+- Congress.gov source-enrichment checkpoint:
+  - pushed commit `daa097f Enrich vote interpretations with Congress sources` to `main`
+  - Congress.gov bill detail, summary, and subject subresources were fetched for the first 48-record interpretation batch using the local `backend\.env` Congress API key
+  - generated enriched packet artifacts:
+    - `docs/interpretation_batches/batch_001_nc_starter_packets_enriched.json`
+    - `docs/interpretation_batches/batch_001_nc_starter_packets_enriched_full.json`
+    - `docs/interpretation_batches/batch_001_nc_starter_interpretations_v2.json`
+  - imported 48 v2 interpretation records into Supabase with no validation errors
+  - targeted backend source-enrichment tests passed: `tests\test_fetch_sources.py tests\test_congress_adapter.py tests\test_live_pipeline.py tests\test_manual_interpretations.py` (`38 passed`)
+  - API smoke confirmed `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` includes a source-grounded explanation for S.J.Res. 55, including support/oppose mapping
+- Evidence-card presentation checkpoint:
+  - frontend now shows `Their recorded vote` for interpreted evidence rows, mapping the legislator's recorded position to the source-grounded support or oppose side
+  - duplicate policy-effect text is suppressed when it is identical to the plain-English summary
+  - sandboxed `cd frontend; npm run build` hit Windows `spawn EPERM`
+  - escalated rerun of `cd frontend; npm run build` passed
+  - Playwright browser smoke could not run because Playwright is not installed in this repo; no dependency was added
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -326,9 +342,10 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Trigger or confirm Render redeploy for commit `26c23c2 Show cached vote interpretation details`.
-2. Smoke-test the deployed evidence-row interpretation UI after Render/Vercel redeploy.
-3. Add neutral issue pattern cards that aggregate cached interpreted vote meanings.
+1. Commit and push the evidence-card presentation cleanup if not already pushed.
+2. Confirm Render and Vercel redeploy through commit `daa097f` plus the evidence-card cleanup commit.
+3. Smoke-test deployed evidence rows for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
+4. Add neutral issue pattern cards that aggregate cached interpreted vote meanings.
 
 ## Operating Mode
 
