@@ -328,6 +328,10 @@ Reported results:
   - sandboxed `cd frontend; npm run build` hit Windows `spawn EPERM`
   - escalated rerun of `cd frontend; npm run build` passed
   - Playwright browser smoke could not run because Playwright is not installed in this repo; no dependency was added
+  - pushed commit `0564e65 Clarify interpreted vote evidence cards` to `main`
+  - deployed smoke from this shell was blocked by local network/TLS/proxy behavior:
+    - PowerShell `Invoke-WebRequest` returned `The underlying connection was closed`
+    - `curl.exe` attempted `127.0.0.1:9` and could not connect
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -342,10 +346,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit and push the evidence-card presentation cleanup if not already pushed.
-2. Confirm Render and Vercel redeploy through commit `daa097f` plus the evidence-card cleanup commit.
-3. Smoke-test deployed evidence rows for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
-4. Add neutral issue pattern cards that aggregate cached interpreted vote meanings.
+1. Confirm Render and Vercel redeploy through commit `0564e65 Clarify interpreted vote evidence cards`.
+2. Smoke-test deployed evidence rows for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
+3. Add neutral issue pattern cards that aggregate cached interpreted vote meanings.
 
 ## Operating Mode
 
