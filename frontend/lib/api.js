@@ -18,15 +18,27 @@ export function getApiBaseUrl() {
 }
 
 export async function fetchCoverageMetadata() {
-  const response = await fetch(`${API_BASE_URL}/metadata/coverage`, {
+  const response = await fetchWithFallback(["/metadata/coverage", "/coverage/metadata"], {
     cache: "no-store",
   });
 
-  if (!response.ok) {
-    throw new Error(`Coverage metadata request failed with status ${response.status}`);
+  return response.json();
+}
+
+async function fetchWithFallback(paths, options) {
+  let lastResponse = null;
+
+  for (const path of paths) {
+    const response = await fetch(`${API_BASE_URL}${path}`, options);
+
+    if (response.ok) {
+      return response;
+    }
+
+    lastResponse = response;
   }
 
-  return response.json();
+  throw new Error(`Request failed with status ${lastResponse?.status || "unknown"}`);
 }
 
 export async function fetchFingerprint({

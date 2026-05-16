@@ -25,7 +25,7 @@ Passed:
 - frontend production build: `npm run build`
 - local API checks:
   - `GET /health`
-  - `GET /metadata/coverage`
+  - `GET /coverage/metadata`
   - `GET /lookup/zips`
   - `GET /lookup/zip/27701`
 - in-app browser rendered the local page without runtime or stale webpack overlay text
@@ -86,7 +86,7 @@ After Render deploy:
 
 ```text
 GET https://<render-service>.onrender.com/health
-GET https://<render-service>.onrender.com/metadata/coverage
+GET https://<render-service>.onrender.com/coverage/metadata
 GET https://<render-service>.onrender.com/lookup/zips
 GET https://<render-service>.onrender.com/lookup/zip/<loaded-zip>
 ```
@@ -94,7 +94,7 @@ GET https://<render-service>.onrender.com/lookup/zip/<loaded-zip>
 Expected:
 
 - `/health` returns `{"status":"ok"}`.
-- `/metadata/coverage` returns window dates, roll-call counts, and source-link share.
+- `/coverage/metadata` returns window dates, roll-call counts, and source-link share.
 - `/lookup/zips` returns at least one loaded ZIP mapping.
 - `/lookup/zip/<loaded-zip>` returns a House representative and senators.
 

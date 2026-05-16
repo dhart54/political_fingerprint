@@ -3,7 +3,9 @@ from app.main import app
 
 
 def test_app_registers_metadata_coverage_route() -> None:
-    assert "/metadata/coverage" in {route.path for route in app.routes}
+    routes = {route.path for route in app.routes}
+    assert "/metadata/coverage" in routes
+    assert "/coverage/metadata" in routes
 
 
 def test_metadata_coverage_returns_fixture_window_and_counts() -> None:

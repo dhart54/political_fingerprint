@@ -39,14 +39,14 @@ Post-deploy checks:
 
 ```text
 GET https://<render-service>.onrender.com/health
-GET https://<render-service>.onrender.com/metadata/coverage
+GET https://<render-service>.onrender.com/coverage/metadata
 GET https://<render-service>.onrender.com/lookup/zips
 ```
 
 Expected behavior:
 
 - `/health` returns `{"status":"ok"}`
-- `/metadata/coverage` returns window and source coverage metadata
+- `/coverage/metadata` returns window and source coverage metadata
 - `/lookup/zips` returns the loaded ZIP mappings from Supabase, or fixture fallback if the database is unavailable
 
 ## Frontend - Vercel

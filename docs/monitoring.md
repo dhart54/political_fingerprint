@@ -10,7 +10,7 @@ Render checks:
 
 - watch deploy logs after every release
 - verify `GET /health`
-- verify `GET /metadata/coverage`
+- verify `GET /coverage/metadata`
 - verify one known `GET /lookup/zip/{zip_code}` request
 
 Recommended log signals:
@@ -61,7 +61,7 @@ Before sharing a deployment, run the fuller staging sequence in `docs/staging_re
 1. Run backend fixture tests.
 2. Run frontend build.
 3. Confirm Render `/health`.
-4. Confirm Render `/metadata/coverage`.
+4. Confirm Render `/coverage/metadata`.
 5. Confirm Vercel can reach the Render API.
 6. Run one ZIP lookup.
 7. Open one evidence panel.

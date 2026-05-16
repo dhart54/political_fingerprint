@@ -591,7 +591,7 @@ Current behavior:
 
 ## Coverage Metadata API
 
-The `/metadata/coverage` endpoint exposes lightweight first-viewport context:
+The `/coverage/metadata` endpoint exposes lightweight first-viewport context. The original `/metadata/coverage` route remains available for local/backward compatibility when the hosting layer permits it:
 
 - data source used by the response (`database` or `fixtures`)
 - current fingerprint window start and end
