@@ -4,6 +4,7 @@ from pathlib import Path
 MIGRATIONS_DIR = Path(__file__).resolve().parents[1] / "migrations"
 MIGRATION_PATH = MIGRATIONS_DIR / "0001_initial_schema.sql"
 VOTE_INTERPRETATIONS_MIGRATION_PATH = MIGRATIONS_DIR / "0002_vote_interpretations.sql"
+VOTE_INTERPRETATION_DETAILS_MIGRATION_PATH = MIGRATIONS_DIR / "0003_vote_interpretation_details.sql"
 
 
 def test_initial_migration_defines_required_enums_and_tables() -> None:
@@ -69,3 +70,18 @@ def test_vote_interpretations_migration_defines_alignment_foundation() -> None:
     assert "classification_version text not null" in lowered
     assert "support_position <> oppose_position" in lowered
     assert "interpretation_status in ('ambiguous', 'insufficient_evidence')" in lowered
+
+
+def test_vote_interpretation_details_migration_adds_plain_language_cache_fields() -> None:
+    migration_sql = VOTE_INTERPRETATION_DETAILS_MIGRATION_PATH.read_text()
+    lowered = migration_sql.lower()
+
+    assert "alter table vote_interpretations" in lowered
+    assert "add column plain_english_summary text" in lowered
+    assert "add column yea_meaning text" in lowered
+    assert "add column nay_meaning text" in lowered
+    assert "add column policy_effect text" in lowered
+    assert "add column issue_facet text" in lowered
+    assert "add column confidence text" in lowered
+    assert "source_basis jsonb not null default '[]'::jsonb" in lowered
+    assert "reviewed_by text" in lowered

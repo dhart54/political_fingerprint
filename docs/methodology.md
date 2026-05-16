@@ -99,6 +99,14 @@ Stored outputs:
 - `oppose_position`, when determinable
 - `interpretation_status`
 - `interpretation_reason`
+- `plain_english_summary`, when reviewed source text supports it
+- `yea_meaning`, when reviewed source text supports it
+- `nay_meaning`, when reviewed source text supports it
+- `policy_effect`, when reviewed source text supports it
+- `issue_facet`, when useful and source-grounded
+- `confidence`
+- `source_basis`
+- `uncertainty_note`
 - `source_url` or source reference
 - `interpretation_version`
 - `classification_version`
@@ -108,7 +116,8 @@ Rules:
 - vote interpretation must be deterministic and auditable
 - ambiguous vote meaning must be marked `ambiguous` or `insufficient_evidence`
 - ambiguous votes must not count as aligned or not aligned
-- LLMs may draft cached plain-language explanations from stored interpretation records, but may not decide the interpretation result
+- LLMs or local/offline models may draft plain-language vote-meaning records for review, but imported records must be cached, source-grounded, schema-validated, neutral, and traceable to official/source fields
+- the public application reads cached interpretation records only; it must not call an LLM at request time
 
 Current deterministic interpretation version:
 
@@ -122,6 +131,8 @@ Initial rules:
 - vague roll call wording is marked `insufficient_evidence`
 
 These rules are intentionally conservative. They prioritize not counting a vote over counting a vote whose yea/nay meaning is unclear.
+
+Manual interpretation batches use `docs/manual_interpretation_workflow.md`. They are designed for the first "DC-speak breakdown" layer without an ongoing API dependency. The importer rejects invalid status values, invalid confidence labels, unsupported support/oppose positions, missing source basis for interpreted records, and persuasive or judgmental language.
 
 ## User Alignment Rules
 

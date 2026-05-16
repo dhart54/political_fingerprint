@@ -100,3 +100,14 @@ Current next build target:
 ## Shelved Product Ideas
 
 - Voting neighbors: a future deterministic "who votes similarly?" module showing a small set of officials with similar yea/nay patterns across shared categorized roll calls. It should avoid leaderboard language, separate low-overlap cases, and explain overlap/evidence before launch consideration.
+
+## Next Lens - DC-Speak Breakdown
+
+- [x] Add database fields for cached plain-English vote interpretation details.
+- [x] Add offline packet export and reviewed JSON import workflow for manual interpretation batches.
+- [x] Document the no-API-key manual interpretation workflow.
+- [ ] Export the first high-impact batch for ZIP demo officials and starter issue bundles.
+- [ ] Draft reviewed interpretations for that batch.
+- [ ] Import reviewed interpretations into Supabase.
+- [ ] Surface plain-English vote meaning in evidence rows.
+- [ ] Aggregate interpreted vote meanings into neutral issue pattern cards.

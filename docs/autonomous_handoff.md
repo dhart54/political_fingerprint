@@ -156,6 +156,12 @@ Last updated: 2026-05-16
   - frontend is live at `https://political-fingerprint.vercel.app`
   - Render-safe coverage route `/coverage/metadata` was added because `/metadata/coverage` did not reliably route through Render
   - frontend coverage metadata fetch falls back from `/metadata/coverage` to `/coverage/metadata`
+- Offline manual interpretation workflow:
+  - added migration `0003_vote_interpretation_details.sql` for cached plain-English vote meaning fields
+  - added `backend/app/etl/manual_interpretations.py`
+  - added exporter for bounded source packets from Supabase
+  - added importer for reviewed interpretation JSON with neutral-language and schema validation
+  - added workflow docs at `docs/manual_interpretation_workflow.md`
 
 ## Active Checkpoint
 
@@ -281,6 +287,9 @@ Reported results:
   - Render checks passed for `/health`, `/coverage/metadata`, `/lookup/zips`, and `/lookup/zip/27701`
   - Vercel first-screen check confirmed title, hero, coverage metadata, ZIP input, and no runtime overlay
   - browser smoke confirmed ZIP `27701`, House profile, senators, Quick Read, active starter check, alignment, comparison, evidence, source links, comparison-pair drawer, footer trust notes, and empty console error log
+- Offline manual interpretation workflow verification:
+  - first sandboxed targeted pytest hit the known Windows temp permission issue
+  - escalated rerun passed with `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp_manual_interpret_admin tests\test_manual_interpretations.py tests\test_migrations.py tests\test_seed.py` (`14 passed`)
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -295,9 +304,11 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. In Render, ensure `FRONTEND_ORIGINS=https://political-fingerprint.vercel.app` is set and redeploy once if it was added after the frontend smoke test.
-2. Share the staging URL with reviewers and collect feedback against the questions in `docs/staging_readiness.md`.
-3. If feedback is clean, decide whether to keep the same URLs as public launch URLs or add a custom domain.
+1. Apply migration `backend/migrations/0003_vote_interpretation_details.sql` in Supabase.
+2. Export the first manual interpretation packet batch using `python -m app.etl.manual_interpretations export`.
+3. Draft and review interpretations for the ZIP demo officials and starter issue bundles.
+4. Import reviewed interpretations with `python -m app.etl.manual_interpretations import`.
+5. Build the frontend evidence-row and pattern-card UI on top of cached interpretation fields.
 
 ## Operating Mode
 
