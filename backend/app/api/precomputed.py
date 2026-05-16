@@ -221,6 +221,40 @@ def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
     }
 
 
+def get_zip_race_response(*, zip_code: str) -> dict[str, object] | None:
+    db_response = _get_db_zip_race_response(zip_code=zip_code)
+    if db_response is not None:
+        return db_response
+
+    zip_record = next((row for row in FALLBACK_FIXTURE_DATA.zip_district_map if row["zip"] == zip_code), None)
+    if zip_record is None:
+        return None
+
+    house_rep = next(
+        (
+            legislator
+            for legislator in FALLBACK_FIXTURE_DATA.legislators
+            if legislator["chamber"] == "house"
+            and legislator["state"] == zip_record["state"]
+            and legislator["district"] == zip_record["district"]
+        ),
+        None,
+    )
+    senators = [
+        legislator
+        for legislator in FALLBACK_FIXTURE_DATA.legislators
+        if legislator["chamber"] == "senate" and legislator["state"] == zip_record["state"]
+    ]
+
+    return _build_fixture_zip_races(
+        zip_code=zip_code,
+        state=str(zip_record["state"]),
+        district=str(zip_record["district"]),
+        house_rep=_serialize_legislator(house_rep) if house_rep is not None else None,
+        senators=[_serialize_legislator(legislator) for legislator in senators],
+    )
+
+
 def get_supported_zip_responses(*, limit: int = 12) -> dict[str, object]:
     db_rows = _get_db_supported_zip_rows(limit=limit)
     if db_rows is not None:
@@ -475,6 +509,61 @@ def _get_db_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
         "district": str(zip_record["district"]),
         "house_rep": _serialize_legislator(house_rep) if house_rep is not None else None,
         "senators": [_serialize_legislator(legislator) for legislator in senators],
+    }
+
+
+def _get_db_zip_race_response(*, zip_code: str) -> dict[str, object] | None:
+    zip_record = _get_db_zip_record(zip_code=zip_code)
+    if zip_record is None:
+        return None
+
+    rows = _get_db_upcoming_race_rows(
+        state=str(zip_record["state"]),
+        district=str(zip_record["district"]),
+    )
+    if rows is None:
+        return None
+    if not rows:
+        return {
+            "zip": str(zip_record["zip"]),
+            "state": str(zip_record["state"]),
+            "district": str(zip_record["district"]),
+            "data_source": "database",
+            "races": [],
+        }
+
+    race_map: dict[int, dict[str, object]] = {}
+    for row in rows:
+        race_id = int(row["race_id"])
+        race = race_map.setdefault(
+            race_id,
+            {
+                "id": str(row["race_key"]),
+                "election_date": str(row["election_date"]),
+                "election_label": str(row["election_label"]),
+                "office_level": str(row["office_level"]),
+                "office_name": str(row["office_name"]),
+                "chamber": None if row.get("chamber") is None else str(row["chamber"]),
+                "state": str(row["state"]),
+                "district": None if row.get("district") is None else str(row["district"]),
+                "status": str(row["status"]),
+                "source_url": row.get("race_source_url"),
+                "source_type": str(row["race_source_type"]),
+                "source_retrieved_at": None
+                if row.get("race_source_retrieved_at") is None
+                else str(row["race_source_retrieved_at"]),
+                "candidates": [],
+            },
+        )
+        if row.get("candidate_id") is not None:
+            race["candidates"].append(_serialize_race_candidate(row))
+
+    return {
+        "zip": str(zip_record["zip"]),
+        "state": str(zip_record["state"]),
+        "district": str(zip_record["district"]),
+        "data_source": "database",
+        "races": list(race_map.values()),
     }
 
 
@@ -1094,6 +1183,54 @@ def _get_db_senators(*, state: str) -> list[dict[str, Any]] | None:
     )
 
 
+def _get_db_upcoming_race_rows(*, state: str, district: str) -> list[dict[str, Any]] | None:
+    return _query_all_dicts(
+        """
+        SELECT
+            r.id AS race_id,
+            r.race_key,
+            r.election_date,
+            r.election_label,
+            r.office_level,
+            r.office_name,
+            r.chamber,
+            r.state,
+            r.district,
+            r.status,
+            r.source_url AS race_source_url,
+            r.source_type AS race_source_type,
+            r.source_retrieved_at AS race_source_retrieved_at,
+            c.id AS candidate_id,
+            c.candidate_name,
+            c.party,
+            c.incumbent,
+            c.candidate_status,
+            c.evidence_tier,
+            c.evidence_note,
+            c.source_url AS candidate_source_url,
+            c.source_type AS candidate_source_type,
+            c.source_retrieved_at AS candidate_source_retrieved_at,
+            l.id AS legislator_db_id,
+            l.bioguide_id,
+            l.name_display,
+            l.chamber AS legislator_chamber,
+            l.state AS legislator_state,
+            l.district AS legislator_district,
+            l.party AS legislator_party
+        FROM upcoming_races r
+        LEFT JOIN race_candidates c ON c.race_id = r.id
+        LEFT JOIN legislators l ON l.id = c.legislator_id
+        WHERE r.office_level = 'federal'
+          AND (
+            (r.chamber = 'house' AND r.state = %s AND r.district = %s)
+            OR (r.chamber = 'senate' AND r.state = %s)
+          )
+        ORDER BY r.election_date, r.chamber, r.district, c.incumbent DESC, c.candidate_name
+        """,
+        (state, district, state),
+    )
+
+
 def _get_db_coverage_metadata() -> dict[str, object] | None:
     row = _query_one_dict(
         """
@@ -1217,6 +1354,121 @@ def _serialize_zip_row(row: dict[str, Any]) -> dict[str, object]:
         "zip": str(row["zip"]),
         "state": str(row["state"]),
         "district": str(row["district"]),
+    }
+
+
+def _serialize_race_candidate(row: dict[str, Any]) -> dict[str, object]:
+    linked_legislator = None
+    if row.get("legislator_db_id") is not None:
+        linked_legislator = _serialize_legislator(
+            {
+                "id": row["legislator_db_id"],
+                "bioguide_id": row["bioguide_id"],
+                "name_display": row["name_display"],
+                "chamber": row["legislator_chamber"],
+                "state": row["legislator_state"],
+                "district": row["legislator_district"],
+                "party": row["legislator_party"],
+            }
+        )
+
+    return {
+        "id": str(row["candidate_id"]),
+        "name": str(row["candidate_name"]),
+        "party": None if row.get("party") is None else str(row["party"]),
+        "incumbent": bool(row["incumbent"]),
+        "candidate_status": str(row["candidate_status"]),
+        "evidence_tier": str(row["evidence_tier"]),
+        "evidence_note": None if row.get("evidence_note") is None else str(row["evidence_note"]),
+        "source_url": row.get("candidate_source_url"),
+        "source_type": str(row["candidate_source_type"]),
+        "source_retrieved_at": None
+        if row.get("candidate_source_retrieved_at") is None
+        else str(row["candidate_source_retrieved_at"]),
+        "linked_legislator": linked_legislator,
+    }
+
+
+def _build_fixture_zip_races(
+    *,
+    zip_code: str,
+    state: str,
+    district: str,
+    house_rep: dict[str, object] | None,
+    senators: list[dict[str, object]],
+) -> dict[str, object]:
+    races = [
+        _build_fixture_race(
+            race_id=f"fixture_2026_house_{state}_{district}",
+            office_name="U.S. House",
+            chamber="house",
+            state=state,
+            district=district,
+            current_official=house_rep,
+        )
+    ]
+    if state == "NC":
+        races.append(
+            _build_fixture_race(
+                race_id="fixture_2026_senate_nc",
+                office_name="U.S. Senate",
+                chamber="senate",
+                state=state,
+                district=None,
+                current_official=next((senator for senator in senators if senator.get("name_display") == "Thom Tillis"), senators[0] if senators else None),
+            )
+        )
+
+    return {
+        "zip": zip_code,
+        "state": state,
+        "district": district,
+        "data_source": "fixtures",
+        "races": races,
+    }
+
+
+def _build_fixture_race(
+    *,
+    race_id: str,
+    office_name: str,
+    chamber: str,
+    state: str,
+    district: str | None,
+    current_official: dict[str, object] | None,
+) -> dict[str, object]:
+    candidates = []
+    if current_official is not None:
+        candidates.append(
+            {
+                "id": f"{race_id}_current_official",
+                "name": current_official["name_display"],
+                "party": current_official["party"],
+                "incumbent": True,
+                "candidate_status": "current_official_context",
+                "evidence_tier": "recorded_governing_behavior",
+                "evidence_note": "Current officeholder shown for voting-record context. Candidate filing data is not loaded yet.",
+                "source_url": None,
+                "source_type": "current_official_mapping",
+                "source_retrieved_at": None,
+                "linked_legislator": current_official,
+            }
+        )
+
+    return {
+        "id": race_id,
+        "election_date": "2026-11-03",
+        "election_label": "2026 general election",
+        "office_level": "federal",
+        "office_name": office_name,
+        "chamber": chamber,
+        "state": state,
+        "district": district,
+        "status": "upcoming",
+        "source_url": None,
+        "source_type": "fixture_planning",
+        "source_retrieved_at": None,
+        "candidates": candidates,
     }
 
 

@@ -137,10 +137,10 @@ Evidence ladder:
 
 - [ ] Identify reliable federal election/race data source options.
 - [ ] Document cost, license, freshness, and coverage tradeoffs for each source.
-- [ ] Add `upcoming_races` and `race_candidates` schema draft.
-- [ ] Add ZIP/state/district mapping from a user ZIP to upcoming federal House and Senate races.
-- [ ] Add backend endpoint for upcoming federal races by ZIP.
-- [ ] Add frontend "Your Upcoming Federal Races" section after ZIP lookup.
+- [x] Add `upcoming_races` and `race_candidates` schema draft.
+- [x] Add ZIP/state/district mapping from a user ZIP to upcoming federal House and Senate races.
+- [x] Add backend endpoint for upcoming federal races by ZIP.
+- [x] Add frontend "Your Upcoming Federal Races" section after ZIP lookup.
 - [ ] Label races as upcoming, active, or past based on election dates.
 - [ ] Keep race display neutral and non-ranked.
 

@@ -316,9 +316,9 @@ Acceptance criteria:
 1. Confirm deployed staging includes the latest interpreted issue pattern cards.
 2. Expand manual federal vote interpretations for the most visible demo paths.
 3. Run a data-source spike for upcoming federal races.
-4. Draft and review federal race/candidate schema.
-5. Implement a fixture-backed upcoming federal race endpoint.
-6. Add a small frontend "Upcoming Federal Races" section with honest empty states.
+4. Review and refine the fixture-backed race/candidate schema now present in migration `0004_upcoming_races.sql`.
+5. Smoke-test the fixture-backed "Upcoming Federal Races" section for ZIP `27701`.
+6. Add source-research notes before wiring live race data.
 7. Only then wire live race data.
 
 ## Decision Rules

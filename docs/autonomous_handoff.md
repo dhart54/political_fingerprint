@@ -340,6 +340,18 @@ Reported results:
   - targeted backend tests passed: `tests\test_api_positions.py tests\test_db_read_layer.py` (`11 passed`)
   - sandboxed `cd frontend; npm run build` hit Windows `spawn EPERM`
   - escalated rerun of `cd frontend; npm run build` passed
+- Ballot branch first implementation checkpoint:
+  - created branch `codex/ballot-north-star`
+  - added migration `0004_upcoming_races.sql` for `upcoming_races` and `race_candidates`
+  - added `GET /lookup/zip/{zip_code}/races`
+  - added fixture-backed upcoming federal House race rows and NC Senate race context
+  - frontend ZIP lookup now renders an `Upcoming Federal Races` ballot preview section
+  - the slice labels current officeholders as voting-record context, not confirmed candidates
+  - targeted backend tests passed: `tests\test_api_positions.py tests\test_migrations.py` (`12 passed`)
+  - sandboxed `cd frontend; npm run build` hit Windows `spawn EPERM`
+  - escalated rerun of `cd frontend; npm run build` passed
+  - API smoke for ZIP `27701` returned 2 races and recorded-governing-behavior context
+  - unrelated root deletions for `HANDOFF.md` and `PHASE2_ROADMAP.md` were present in the worktree and were not staged
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 

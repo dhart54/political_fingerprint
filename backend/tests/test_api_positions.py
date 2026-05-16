@@ -1,6 +1,7 @@
 import pytest
 from fastapi import HTTPException
 
+from app.api.lookup import lookup_zip_races
 from app.api.positions import get_legislator_position_evidence, get_legislator_positions
 from app.main import app
 
@@ -8,6 +9,10 @@ from app.main import app
 def test_app_registers_positions_route() -> None:
     assert "/legislators/{legislator_id}/positions" in {route.path for route in app.routes}
     assert "/legislators/{legislator_id}/positions/{domain}/evidence" in {route.path for route in app.routes}
+
+
+def test_app_registers_zip_races_route() -> None:
+    assert "/lookup/zip/{zip_code}/races" in {route.path for route in app.routes}
 
 
 def test_get_positions_endpoint_returns_domain_position_profile() -> None:
@@ -65,3 +70,16 @@ def test_get_position_evidence_endpoint_rejects_unknown_domain() -> None:
 
     assert exc_info.value.status_code == 404
     assert exc_info.value.detail == "Evidence not found"
+
+
+def test_lookup_zip_races_returns_fixture_federal_races() -> None:
+    payload = lookup_zip_races("27701")
+
+    assert payload["zip"] == "27701"
+    assert payload["data_source"] in {"fixtures", "database"}
+    assert payload["races"]
+    house_race = next(race for race in payload["races"] if race["chamber"] == "house")
+    assert house_race["office_name"] == "U.S. House"
+    assert house_race["status"] == "upcoming"
+    assert house_race["candidates"][0]["candidate_status"] == "current_official_context"
+    assert house_race["candidates"][0]["evidence_tier"] == "recorded_governing_behavior"

@@ -5,6 +5,7 @@ MIGRATIONS_DIR = Path(__file__).resolve().parents[1] / "migrations"
 MIGRATION_PATH = MIGRATIONS_DIR / "0001_initial_schema.sql"
 VOTE_INTERPRETATIONS_MIGRATION_PATH = MIGRATIONS_DIR / "0002_vote_interpretations.sql"
 VOTE_INTERPRETATION_DETAILS_MIGRATION_PATH = MIGRATIONS_DIR / "0003_vote_interpretation_details.sql"
+UPCOMING_RACES_MIGRATION_PATH = MIGRATIONS_DIR / "0004_upcoming_races.sql"
 
 
 def test_initial_migration_defines_required_enums_and_tables() -> None:
@@ -85,3 +86,17 @@ def test_vote_interpretation_details_migration_adds_plain_language_cache_fields(
     assert "add column confidence text" in lowered
     assert "source_basis jsonb not null default '[]'::jsonb" in lowered
     assert "reviewed_by text" in lowered
+
+
+def test_upcoming_races_migration_defines_ballot_foundation() -> None:
+    migration_sql = UPCOMING_RACES_MIGRATION_PATH.read_text()
+    lowered = migration_sql.lower()
+
+    assert "create table if not exists upcoming_races" in lowered
+    assert "create table if not exists race_candidates" in lowered
+    assert "race_key text not null unique" in lowered
+    assert "office_level text not null check" in lowered
+    assert "candidate_status text not null check" in lowered
+    assert "recorded_governing_behavior" in lowered
+    assert "sourced_stated_position" in lowered
+    assert "legislator_id bigint references legislators(id)" in lowered

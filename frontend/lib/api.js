@@ -136,6 +136,18 @@ export async function fetchZipLookup({ zipCode }) {
   return response.json();
 }
 
+export async function fetchZipRaces({ zipCode }) {
+  const response = await fetch(`${API_BASE_URL}/lookup/zip/${zipCode}/races`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`ZIP race request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchSupportedZips() {
   const response = await fetch(`${API_BASE_URL}/lookup/zips`, {
     cache: "no-store",
