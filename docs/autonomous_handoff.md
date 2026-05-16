@@ -1,10 +1,10 @@
 # Autonomous Handoff
 
-Last updated: 2026-05-15
+Last updated: 2026-05-16
 
 ## Current Branch
 
-- `codex-product-engagement-pass`
+- `main`
 
 ## Completed and Committed
 
@@ -151,6 +151,11 @@ Last updated: 2026-05-15
   - no additional pages recommended before staging; the one-page voter journey remains the clearest product shape
   - starter issue checks now show active selected state and `aria-pressed`
   - narrow evidence cards have tighter spacing and mobile-friendly text wrapping
+- First staging deployment:
+  - backend is live at `https://political-fingerprint.onrender.com`
+  - frontend is live at `https://political-fingerprint.vercel.app`
+  - Render-safe coverage route `/coverage/metadata` was added because `/metadata/coverage` did not reliably route through Render
+  - frontend coverage metadata fetch falls back from `/metadata/coverage` to `/coverage/metadata`
 
 ## Active Checkpoint
 
@@ -267,7 +272,15 @@ Reported results:
   - escalated rerun passed with `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp_release_staging_admin` (`146 passed`)
   - sandboxed frontend build hit Windows `spawn EPERM`
   - escalated rerun of `cd frontend; npm run build` passed
-  - deployment is blocked on external staging access: no Vercel CLI, no Render CLI, no local `.vercel` project link, and GitHub CLI is installed but not authenticated
+- Render-safe coverage route checkpoint:
+  - `$env:DATABASE_URL='postgresql://invalid'; pytest tests\test_api_metadata.py` passed (`2 passed`)
+  - sandboxed `cd frontend; npm run build` hit Windows `spawn EPERM`
+  - escalated rerun of `cd frontend; npm run build` passed
+  - pushed commit `72779f6 Add Render-safe coverage metadata route` to `main`
+- Deployed staging smoke check passed:
+  - Render checks passed for `/health`, `/coverage/metadata`, `/lookup/zips`, and `/lookup/zip/27701`
+  - Vercel first-screen check confirmed title, hero, coverage metadata, ZIP input, and no runtime overlay
+  - browser smoke confirmed ZIP `27701`, House profile, senators, Quick Read, active starter check, alignment, comparison, evidence, source links, comparison-pair drawer, footer trust notes, and empty console error log
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -282,11 +295,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Unblock deployment access by either logging into GitHub CLI for auto-deploy inspection, installing/linking Vercel and Render controls, or providing the existing Render and Vercel staging URLs.
-2. Deploy backend first or confirm Render auto-deployed commit `967846a`.
-3. Run backend staging checks from `docs/staging_readiness.md`.
-4. Deploy frontend or confirm Vercel auto-deployed commit `967846a`.
-5. Run frontend staging smoke checks from `docs/staging_readiness.md`.
+1. In Render, ensure `FRONTEND_ORIGINS=https://political-fingerprint.vercel.app` is set and redeploy once if it was added after the frontend smoke test.
+2. Share the staging URL with reviewers and collect feedback against the questions in `docs/staging_readiness.md`.
+3. If feedback is clean, decide whether to keep the same URLs as public launch URLs or add a custom domain.
 
 ## Operating Mode
 

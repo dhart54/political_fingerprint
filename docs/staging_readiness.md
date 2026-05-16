@@ -15,6 +15,11 @@ The main voter path is ready for staging review:
 - Comparison keeps selected issues primary and supports changing the comparison pair.
 - The footer explains method, evidence, limits, and data window.
 
+Public staging URLs:
+
+- Backend: `https://political-fingerprint.onrender.com`
+- Frontend: `https://political-fingerprint.vercel.app`
+
 ## Latest Local Verification
 
 Last local release-prep check: 2026-05-15.
@@ -113,6 +118,24 @@ After Vercel deploy:
 9. Confirm `Issue Comparison` renders the same selected issues.
 10. Open `Change Comparison Pair` and search for another official.
 11. Confirm Method, Evidence, Limits, and Data window appear in the footer.
+
+Latest deployed smoke check: 2026-05-16.
+
+Passed:
+
+- Render `GET /health`
+- Render `GET /coverage/metadata`
+- Render `GET /lookup/zips`
+- Render `GET /lookup/zip/27701`
+- Vercel page loads with the expected title and hero
+- hero coverage line loads from Render
+- ZIP `27701` loads Valerie P. Foushee, Ted Budd, and Thom Tillis
+- `Cost of Living` starter check becomes active and selects three issues
+- alignment and issue comparison render without unavailable states
+- evidence opens, bill groups render, source links remain visible, and raw `policy_vote` does not appear
+- `Change Comparison Pair` drawer exposes search
+- Method, Evidence, Limits, and data window render in the footer
+- browser console error log was empty during the smoke path
 
 ## Staging Review Focus
 
