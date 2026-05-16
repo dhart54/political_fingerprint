@@ -44,6 +44,10 @@ class PositionResponseRow:
     recorded_votes: int
     yea_share: float
     nay_share: float
+    interpreted_support_count: int
+    interpreted_oppose_count: int
+    interpreted_other_count: int
+    interpreted_total: int
 
 
 def has_legislator(*, legislator_id: str) -> bool:
@@ -356,8 +360,12 @@ def _get_db_position_response(*, legislator_id: str) -> dict[str, object] | None
         yea_count = int(row.get("yea_count", 0) or 0)
         nay_count = int(row.get("nay_count", 0) or 0)
         other_count = int(row.get("other_count", 0) or 0)
+        interpreted_support_count = int(row.get("interpreted_support_count", 0) or 0)
+        interpreted_oppose_count = int(row.get("interpreted_oppose_count", 0) or 0)
+        interpreted_other_count = int(row.get("interpreted_other_count", 0) or 0)
         recorded_votes = yea_count + nay_count
         total_votes = recorded_votes + other_count
+        interpreted_total = interpreted_support_count + interpreted_oppose_count + interpreted_other_count
         serialized_rows.append(
             PositionResponseRow(
                 domain=domain,
@@ -368,6 +376,10 @@ def _get_db_position_response(*, legislator_id: str) -> dict[str, object] | None
                 recorded_votes=recorded_votes,
                 yea_share=(yea_count / recorded_votes) if recorded_votes else 0.0,
                 nay_share=(nay_count / recorded_votes) if recorded_votes else 0.0,
+                interpreted_support_count=interpreted_support_count,
+                interpreted_oppose_count=interpreted_oppose_count,
+                interpreted_other_count=interpreted_other_count,
+                interpreted_total=interpreted_total,
             ).__dict__
         )
 
@@ -539,16 +551,32 @@ def _get_fallback_position_response(*, legislator_id: str) -> dict[str, object] 
 
     first_row = fingerprint_rows[0]
     roll_calls_by_id = {row["id"]: row for row in FALLBACK_FIXTURE_DATA.roll_calls}
+    ingest_result = run_ingest()
+    classification_step = run_classification(
+        ingest_result,
+        classification_version=first_row.classification_version,
+    )
     classification_result = {
         row.roll_call_id: row
-        for row in run_classification(
-            run_ingest(),
-            classification_version=first_row.classification_version,
-        ).classified_roll_calls
+        for row in classification_step.classified_roll_calls
+    }
+    interpretation_result = {
+        row.roll_call_id: row
+        for row in run_interpretation(
+            ingest_result,
+            classification_step,
+        ).vote_interpretations
     }
 
     counts_by_domain = {
-        domain: {"yea_count": 0, "nay_count": 0, "other_count": 0}
+        domain: {
+            "yea_count": 0,
+            "nay_count": 0,
+            "other_count": 0,
+            "interpreted_support_count": 0,
+            "interpreted_oppose_count": 0,
+            "interpreted_other_count": 0,
+        }
         for domain in DOMAIN_ORDER
     }
     for vote in FALLBACK_FIXTURE_DATA.votes_cast:
@@ -566,6 +594,15 @@ def _get_fallback_position_response(*, legislator_id: str) -> dict[str, object] 
             counts_by_domain[classified.primary_domain]["nay_count"] += 1
         else:
             counts_by_domain[classified.primary_domain]["other_count"] += 1
+        interpretation = interpretation_result.get(vote["roll_call_id"])
+        if interpretation is None or interpretation.interpretation_status != "interpreted":
+            continue
+        if vote["position"] == interpretation.support_position:
+            counts_by_domain[classified.primary_domain]["interpreted_support_count"] += 1
+        elif vote["position"] == interpretation.oppose_position:
+            counts_by_domain[classified.primary_domain]["interpreted_oppose_count"] += 1
+        else:
+            counts_by_domain[classified.primary_domain]["interpreted_other_count"] += 1
 
     return {
         "legislator_id": legislator_id,
@@ -589,6 +626,14 @@ def _get_fallback_position_response(*, legislator_id: str) -> dict[str, object] 
                     counts["nay_count"] / (counts["yea_count"] + counts["nay_count"])
                     if (counts["yea_count"] + counts["nay_count"])
                     else 0.0
+                ),
+                interpreted_support_count=counts["interpreted_support_count"],
+                interpreted_oppose_count=counts["interpreted_oppose_count"],
+                interpreted_other_count=counts["interpreted_other_count"],
+                interpreted_total=(
+                    counts["interpreted_support_count"]
+                    + counts["interpreted_oppose_count"]
+                    + counts["interpreted_other_count"]
                 ),
             ).__dict__
             for domain, counts in counts_by_domain.items()
@@ -872,10 +917,25 @@ def _get_db_position_rows(
             vcf.primary_domain AS domain,
             COUNT(*) FILTER (WHERE vc.position = 'yea') AS yea_count,
             COUNT(*) FILTER (WHERE vc.position = 'nay') AS nay_count,
-            COUNT(*) FILTER (WHERE vc.position NOT IN ('yea', 'nay')) AS other_count
+            COUNT(*) FILTER (WHERE vc.position NOT IN ('yea', 'nay')) AS other_count,
+            COUNT(*) FILTER (
+                WHERE vi.interpretation_status = 'interpreted'
+                  AND vc.position = vi.support_position
+            ) AS interpreted_support_count,
+            COUNT(*) FILTER (
+                WHERE vi.interpretation_status = 'interpreted'
+                  AND vc.position = vi.oppose_position
+            ) AS interpreted_oppose_count,
+            COUNT(*) FILTER (
+                WHERE vi.interpretation_status = 'interpreted'
+                  AND vc.position NOT IN (vi.support_position, vi.oppose_position)
+            ) AS interpreted_other_count
         FROM votes_cast vc
         JOIN roll_calls rc ON rc.id = vc.roll_call_id
         JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        LEFT JOIN vote_interpretations vi
+          ON vi.roll_call_id = rc.id
+         AND vi.classification_version = vcf.classification_version
         WHERE vc.legislator_id = %s
           AND vcf.is_eligible = TRUE
           AND vcf.primary_domain IS NOT NULL

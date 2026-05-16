@@ -110,4 +110,4 @@ Current next build target:
 - [x] Draft reviewed interpretations for that batch.
 - [x] Import reviewed interpretations into Supabase.
 - [x] Surface plain-English vote meaning in evidence rows.
-- [ ] Aggregate interpreted vote meanings into neutral issue pattern cards.
+- [x] Aggregate interpreted vote meanings into neutral issue pattern cards.

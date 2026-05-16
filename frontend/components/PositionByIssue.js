@@ -80,6 +80,7 @@ export default function PositionByIssue({
     .filter((row) => row.recorded_votes > 0)
     .sort((left, right) => right.recorded_votes - left.recorded_votes || right.yea_share - left.yea_share)
     .slice(0, 6);
+  const patternRows = buildPatternRows(state.payload?.positions || []);
   const takeaway = buildTakeaway(rows);
   const selectedRow = rows.find((row) => row.domain === selectedDomain) || rows[0] || null;
 
@@ -208,7 +209,75 @@ export default function PositionByIssue({
         onInspectDomain={inspectDomain}
         selectedRow={selectedRow}
       />
+
+      <IssuePatternCards
+        onInspectDomain={inspectDomain}
+        rows={patternRows}
+        status={state.status}
+      />
     </section>
+  );
+}
+
+function IssuePatternCards({ onInspectDomain, rows, status }) {
+  if (status !== "ready") {
+    return null;
+  }
+
+  return (
+    <div className="mt-5 rounded-[1.5rem] border border-stone-200 bg-white px-3 py-4 sm:px-4 lg:px-5">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.28em] text-stone-500">
+            Issue Patterns
+          </p>
+          <h4 className="mt-2 font-serif text-[1.75rem] leading-none text-stone-950 sm:text-[2rem]">
+            What interpreted votes show
+          </h4>
+        </div>
+        <p className="max-w-xl text-sm leading-6 text-stone-600">
+          These cards use only cached vote meanings. Missing or ambiguous meanings stay out of the pattern instead of being guessed.
+        </p>
+      </div>
+
+      {rows.length === 0 ? (
+        <p className="mt-4 rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm leading-6 text-stone-700">
+          No interpreted issue patterns are available yet for this official. The evidence rows still show recorded votes and source links.
+        </p>
+      ) : (
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {rows.map((row) => (
+            <button
+              aria-label={`Open interpreted votes for ${formatDomainLabel(row.domain)}`}
+              className="rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4 text-left transition hover:border-cyan-700/50 hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
+              key={row.domain}
+              onClick={() => onInspectDomain(row.domain)}
+              type="button"
+            >
+              <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
+                {formatDomainLabel(row.domain)}
+              </p>
+              <p className="mt-3 text-[1.35rem] leading-7 text-stone-950">
+                {row.label}
+              </p>
+              <p className="mt-3 text-sm leading-6 text-stone-700">
+                {row.detail}
+              </p>
+              <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
+                <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3">
+                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">Support side</p>
+                  <p className="mt-2 text-[1.4rem] leading-none text-stone-950">{row.supportCount}</p>
+                </div>
+                <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3">
+                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">Oppose side</p>
+                  <p className="mt-2 text-[1.4rem] leading-none text-stone-950">{row.opposeCount}</p>
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -515,6 +584,52 @@ function buildTakeaway(rows) {
   return `The clearest recorded position pattern in this window is ${formatDomainLabel(strongest.domain)}, where this legislator ${leaning} ${(leaningShare * 100).toFixed(
     0,
   )}% of the time.`;
+}
+
+function buildPatternRows(rows) {
+  return [...rows]
+    .filter((row) => (row.interpreted_total || 0) > 0)
+    .sort(
+      (left, right) =>
+        (right.interpreted_total || 0) - (left.interpreted_total || 0) ||
+        Math.abs((right.interpreted_support_count || 0) - (right.interpreted_oppose_count || 0)) -
+          Math.abs((left.interpreted_support_count || 0) - (left.interpreted_oppose_count || 0)),
+    )
+    .slice(0, 3)
+    .map((row) => {
+      const supportCount = row.interpreted_support_count || 0;
+      const opposeCount = row.interpreted_oppose_count || 0;
+      const otherCount = row.interpreted_other_count || 0;
+      const interpretedTotal = row.interpreted_total || 0;
+      const recordedVotes = row.recorded_votes || 0;
+      const coverageText = `${interpretedTotal} of ${recordedVotes} recorded yea/nay votes have a cached vote meaning`;
+      let label = "Split interpreted record";
+
+      if (supportCount > opposeCount && opposeCount === 0) {
+        label = "Recorded support-side votes";
+      } else if (opposeCount > supportCount && supportCount === 0) {
+        label = "Recorded oppose-side votes";
+      } else if (supportCount > opposeCount) {
+        label = "More support-side than oppose-side";
+      } else if (opposeCount > supportCount) {
+        label = "More oppose-side than support-side";
+      }
+
+      return {
+        domain: row.domain,
+        label,
+        supportCount,
+        opposeCount,
+        detail: `${coverageText}. ${formatOtherInterpretedCount(otherCount)}`,
+      };
+    });
+}
+
+function formatOtherInterpretedCount(count) {
+  if (!count) {
+    return "No interpreted votes used another recorded position.";
+  }
+  return `${count} interpreted ${count === 1 ? "vote used" : "votes used"} another recorded position.`;
 }
 
 function formatClassificationReason(reason) {

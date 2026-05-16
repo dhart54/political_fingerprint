@@ -332,6 +332,14 @@ Reported results:
   - deployed smoke from this shell was blocked by local network/TLS/proxy behavior:
     - PowerShell `Invoke-WebRequest` returned `The underlying connection was closed`
     - `curl.exe` attempted `127.0.0.1:9` and could not connect
+- Interpreted issue pattern cards checkpoint:
+  - backend position rows now include interpreted support-side, oppose-side, other-position, and total interpreted counts per issue domain
+  - frontend `PositionByIssue` renders neutral `Issue Patterns` cards from those counts
+  - cards show coverage language and open the existing evidence drilldown when clicked
+  - Supabase-backed API smoke confirmed interpreted pattern counts for `leg_thom_tillis`
+  - targeted backend tests passed: `tests\test_api_positions.py tests\test_db_read_layer.py` (`11 passed`)
+  - sandboxed `cd frontend; npm run build` hit Windows `spawn EPERM`
+  - escalated rerun of `cd frontend; npm run build` passed
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -346,9 +354,10 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Confirm Render and Vercel redeploy through commit `0564e65 Clarify interpreted vote evidence cards`.
-2. Smoke-test deployed evidence rows for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
-3. Add neutral issue pattern cards that aggregate cached interpreted vote meanings.
+1. Commit and push the interpreted issue pattern cards if not already pushed.
+2. Confirm Render and Vercel redeploy through the latest pushed commit.
+3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
+4. Decide next product target: more manual interpretations for high-traffic ZIP/starter issues, or a small homepage copy punch-up around "actual votes, plain-English breakdowns."
 
 ## Operating Mode
 

@@ -25,6 +25,10 @@ def test_get_positions_endpoint_returns_domain_position_profile() -> None:
         "recorded_votes": 1,
         "yea_share": 1.0,
         "nay_share": 0.0,
+        "interpreted_support_count": 1,
+        "interpreted_oppose_count": 0,
+        "interpreted_other_count": 1,
+        "interpreted_total": 2,
     }
 
 

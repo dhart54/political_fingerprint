@@ -464,6 +464,18 @@ Current CLI examples:
 
 When `--include-enrichment` is used, the Congress.gov pull stores the bill detail payload plus the bill summaries and bill subjects subresources in separate cache directories. The ETL merges those companion payloads deterministically before classification, so interpretation packets can use CRS summary text and official subject terms when Congress.gov provides them.
 
+## Interpreted Issue Patterns
+
+The position endpoint now includes neutral interpreted-pattern counts for each issue domain.
+
+These counts are derived only from stored `vote_interpretations` rows where:
+
+- `interpretation_status = interpreted`
+- the interpretation classification version matches the vote classification version
+- the legislator's recorded vote matches the stored `support_position` or `oppose_position`, or is counted separately as another interpreted position
+
+The frontend renders these as issue pattern cards. The cards may say that interpreted votes were recorded on the support side, oppose side, or split between those sides. They must also show coverage language, such as how many recorded yea/nay votes have cached vote meanings. These cards are descriptive only; they do not rank officials, infer motives, or recommend electoral action.
+
 ## Live Pipeline Orchestration
 
 The repository now includes a single orchestration entry point in `app.etl.live_pipeline`.
