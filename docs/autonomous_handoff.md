@@ -310,6 +310,8 @@ Reported results:
   - sandboxed `cd frontend; npm run build` hit Windows `spawn EPERM`
   - escalated rerun of `cd frontend; npm run build` passed
   - direct Supabase-backed backend response check confirmed `leg_valerie_p_foushee` `ECONOMY_TAXES` evidence rows now include cached interpretation fields
+  - local browser smoke passed for ZIP `27701` to Cost of Living evidence: `DC-Speak Breakdown`, `Yea meant`, `Nay meant`, confidence labels, and needs-more-evidence states rendered with no console errors
+  - Render still served the older evidence response shape after push `26c23c2`; redeploy Render before expecting Vercel staging to show the new breakdown
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -324,8 +326,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Smoke-test the deployed evidence-row interpretation UI after Render/Vercel redeploy.
-2. Add neutral issue pattern cards that aggregate cached interpreted vote meanings.
+1. Trigger or confirm Render redeploy for commit `26c23c2 Show cached vote interpretation details`.
+2. Smoke-test the deployed evidence-row interpretation UI after Render/Vercel redeploy.
+3. Add neutral issue pattern cards that aggregate cached interpreted vote meanings.
 
 ## Operating Mode
 
