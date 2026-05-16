@@ -352,6 +352,15 @@ Reported results:
   - escalated rerun of `cd frontend; npm run build` passed
   - API smoke for ZIP `27701` returned 2 races and recorded-governing-behavior context
   - unrelated root deletions for `HANDOFF.md` and `PHASE2_ROADMAP.md` were present in the worktree and were not staged
+- FEC federal race importer checkpoint:
+  - added migration `0005_race_candidate_source_keys.sql` for idempotent candidate imports by source and external candidate id
+  - added `external_candidate_id` to race candidate API serialization
+  - added `backend/app/etl/federal_races.py` for local FEC candidate-summary CSV imports
+  - importer groups federal House/Senate candidates into deterministic `upcoming_races` records
+  - FEC-only candidates are labeled `declared_candidate` and `insufficient_evidence` because FEC records do not provide issue positions
+  - added `docs/federal_race_sources.md` and methodology notes
+  - focused backend tests passed: `tests\test_federal_races.py tests\test_migrations.py tests\test_api_positions.py` (`15 passed`)
+  - next best task: run a dry-run against the actual downloaded FEC CSV, inspect counts/sample rows, then persist to Supabase if sane
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -370,9 +379,10 @@ Work from `docs/product_v2_tasklist.md` in this order:
 2. Confirm Render and Vercel redeploy through the latest pushed commit.
 3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
 4. Start Phase 9 federal ballot proof:
-   - research reliable upcoming federal race data sources
-   - document source cost/license/freshness/coverage
-   - draft `upcoming_races` and `race_candidates` schema
+   - run FEC candidate-summary importer in dry-run mode against downloaded 2026 CSV
+   - inspect parsed race/candidate counts and sample rows before persisting
+   - persist FEC race context to Supabase if the dry-run is sane
+   - then add high-confidence candidate-to-legislator matching for incumbents
 5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
 
 The detailed action plan is `docs/north_star_action_plan.md`.

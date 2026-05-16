@@ -6,6 +6,7 @@ MIGRATION_PATH = MIGRATIONS_DIR / "0001_initial_schema.sql"
 VOTE_INTERPRETATIONS_MIGRATION_PATH = MIGRATIONS_DIR / "0002_vote_interpretations.sql"
 VOTE_INTERPRETATION_DETAILS_MIGRATION_PATH = MIGRATIONS_DIR / "0003_vote_interpretation_details.sql"
 UPCOMING_RACES_MIGRATION_PATH = MIGRATIONS_DIR / "0004_upcoming_races.sql"
+RACE_CANDIDATE_SOURCE_KEYS_MIGRATION_PATH = MIGRATIONS_DIR / "0005_race_candidate_source_keys.sql"
 
 
 def test_initial_migration_defines_required_enums_and_tables() -> None:
@@ -100,3 +101,12 @@ def test_upcoming_races_migration_defines_ballot_foundation() -> None:
     assert "recorded_governing_behavior" in lowered
     assert "sourced_stated_position" in lowered
     assert "legislator_id bigint references legislators(id)" in lowered
+
+
+def test_race_candidate_source_keys_migration_supports_idempotent_imports() -> None:
+    migration_sql = RACE_CANDIDATE_SOURCE_KEYS_MIGRATION_PATH.read_text()
+    lowered = migration_sql.lower()
+
+    assert "external_candidate_id text" in lowered
+    assert "idx_race_candidates_external_source" in lowered
+    assert "race_id, source_type, external_candidate_id" in lowered

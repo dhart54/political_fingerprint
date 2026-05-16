@@ -542,6 +542,39 @@ Current CLI example:
 - `python -m app.etl.live_pipeline --house-year 2025 --house-roll 1 --bill 119:hr:120 --congress-api-key YOUR_KEY`
 - `python -m app.etl.live_pipeline --house-year 2025 --house-roll 1 --senate-congress 119 --senate-session 1 --senate-roll 1 --bill 119:hr:120 --bill 119:s:210 --congress-api-key YOUR_KEY`
 
+## Federal Race And Candidate Context
+
+The repository includes an initial federal race importer in `app.etl.federal_races`.
+
+Current source:
+
+- FEC candidate summary bulk data
+
+Current source boundary:
+
+- FEC candidate summary rows establish federal candidate/race context.
+- They do not establish ballot qualification in every state.
+- They do not establish issue positions.
+- They do not count as recorded governing behavior.
+
+Current importer behavior:
+
+- reads FEC candidate summary CSV exports from a local file
+- keeps House and Senate rows only
+- groups House candidates by cycle, state, and district
+- groups Senate candidates by cycle and state
+- writes deterministic `upcoming_races` and `race_candidates` rows
+- uses `source_type = fec_candidate_summary`
+- stores the FEC candidate id as `external_candidate_id` for idempotent re-imports
+- marks FEC-only candidate rows as `candidate_status = declared_candidate`
+- marks FEC-only candidate evidence as `insufficient_evidence`
+
+Candidate issue alignment must not be computed from FEC candidacy rows. A candidate needs linked recorded governing behavior or separate sourced stated-position records before issue comparison can show more than insufficient evidence.
+
+Current CLI example:
+
+- `python -m app.etl.federal_races --fec-candidate-summary ./backend/data_sources/fec/candidate_summary_2026.csv --cycle 2026 --dry-run`
+
 ## Starter Real-Data Run
 
 The repository now includes a convenience starter script in `scripts/run_real_data_starter.py`.

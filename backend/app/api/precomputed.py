@@ -1210,6 +1210,7 @@ def _get_db_upcoming_race_rows(*, state: str, district: str) -> list[dict[str, A
             c.source_url AS candidate_source_url,
             c.source_type AS candidate_source_type,
             c.source_retrieved_at AS candidate_source_retrieved_at,
+            c.external_candidate_id,
             l.id AS legislator_db_id,
             l.bioguide_id,
             l.name_display,
@@ -1385,6 +1386,9 @@ def _serialize_race_candidate(row: dict[str, Any]) -> dict[str, object]:
         "source_retrieved_at": None
         if row.get("candidate_source_retrieved_at") is None
         else str(row["candidate_source_retrieved_at"]),
+        "external_candidate_id": None
+        if row.get("external_candidate_id") is None
+        else str(row["external_candidate_id"]),
         "linked_legislator": linked_legislator,
     }
 

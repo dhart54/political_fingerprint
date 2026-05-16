@@ -315,11 +315,12 @@ Acceptance criteria:
 
 1. Confirm deployed staging includes the latest interpreted issue pattern cards.
 2. Expand manual federal vote interpretations for the most visible demo paths.
-3. Run a data-source spike for upcoming federal races.
+3. Run a data-source spike for upcoming federal races. Initial decision: use FEC candidate summary data for declared federal candidate/race context, while labeling it separately from ballot certification and issue evidence.
 4. Review and refine the fixture-backed race/candidate schema now present in migration `0004_upcoming_races.sql`.
 5. Smoke-test the fixture-backed "Upcoming Federal Races" section for ZIP `27701`.
 6. Add source-research notes before wiring live race data.
-7. Only then wire live race data.
+7. Wire the initial FEC candidate-summary importer into Supabase with a dry-run first.
+8. Add candidate-to-legislator matching only when identity confidence is high enough to avoid false voting-record links.
 
 ## Decision Rules
 
