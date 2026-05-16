@@ -4,6 +4,10 @@
 
 This product is a curiosity-led, trust-anchored civic analytics platform focused on observable legislative behavior.
 
+The expanded product north star is documented in `docs/product_north_star.md`:
+
+**Who is on my ballot, and what does the evidence show about how they act on the issues I care about?**
+
 The original MVP scope included:
 
 - behavioral fingerprint
@@ -19,6 +23,14 @@ The current Product v2 direction adds:
 - evidence-based alignment between those preferences and recorded votes
 - drilldowns from every high-level read to underlying roll calls and sources
 
+The long-term Product v3 direction adds ballot-aware candidate comparison:
+
+- upcoming races by ZIP code when reliable election data is available
+- incumbent and prior-officeholder comparison based first on recorded governing behavior
+- new-candidate coverage based on sourced stated positions when no voting record exists
+- explicit confidence labels separating recorded behavior from stated positions
+- evidence-tiered race pages that make strong, thin, and missing evidence clear
+
 The methodology intentionally does not support:
 
 - corruption claims
@@ -32,6 +44,8 @@ The methodology intentionally does not support:
 
 The product may say that a recorded voting pattern appears aligned, not aligned, mixed, or insufficiently evidenced relative to preferences the user explicitly selected. It must not tell the user how to vote.
 
+When candidate stated positions are used, the product may say what the candidate claims or lists as a position, with source and date context when available. It must not present stated positions as proven governing behavior.
+
 ## System Principles
 
 Implemented logic follows these repository-wide priorities:
@@ -43,6 +57,39 @@ Implemented logic follows these repository-wide priorities:
 - simplicity
 
 All metric-producing logic must remain a deterministic function of stored inputs.
+
+## Evidence Tiers
+
+Product claims must be tied to an evidence tier.
+
+Tier 1: recorded governing behavior.
+
+- roll-call votes
+- signed or vetoed bills
+- official executive actions
+- source-grounded amendments or sponsorships
+
+Tier 2: institutional record.
+
+- sponsorship and cosponsorship patterns
+- committee roles
+- attendance and participation records
+- previous public office history
+
+Tier 3: sourced stated positions.
+
+- campaign issue pages
+- official candidate questionnaires
+- debate transcripts
+- public candidate statements
+
+Tier 4: insufficient evidence.
+
+- no reliable source found
+- source text is too ambiguous
+- record is not yet available
+
+Recorded governing behavior should be treated as the highest-confidence evidence. Stated positions may be useful for challengers or first-time candidates, but must be labeled as lower confidence than actual votes or official actions.
 
 ## Stack and Deployment Assumptions
 

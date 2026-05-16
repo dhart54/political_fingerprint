@@ -354,10 +354,14 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit and push the interpreted issue pattern cards if not already pushed.
+1. Commit and push the north-star roadmap/docs update if not already pushed.
 2. Confirm Render and Vercel redeploy through the latest pushed commit.
 3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
-4. Decide next product target: more manual interpretations for high-traffic ZIP/starter issues, or a small homepage copy punch-up around "actual votes, plain-English breakdowns."
+4. Start Phase 9 federal ballot proof:
+   - research reliable upcoming federal race data sources
+   - document source cost/license/freshness/coverage
+   - draft `upcoming_races` and `race_candidates` schema
+5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
 
 ## Operating Mode
 

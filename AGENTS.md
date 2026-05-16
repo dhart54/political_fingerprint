@@ -13,14 +13,19 @@ This is a curiosity-led, trust-anchored civic analytics platform.
 Primary promise:
 "In 60 seconds, understand how this politician actually behaves."
 
+Long-term north star:
+"Who is on my ballot, and what does the evidence show about how they act on the issues I care about?"
+
 This platform:
 
 - Maps observable legislative behavior
+- Helps users inspect current officials and, eventually, upcoming candidates by ZIP code and ballot context
 - Uses deterministic analysis only
 - Does NOT make moral judgments
 - Does NOT rank politicians
 - Does NOT infer motives or causality
 - Lets users compare their own stated issue preferences against observable voting records
+- Separates recorded governing behavior from lower-confidence stated candidate positions
 
 Explicitly prohibited:
 
@@ -32,6 +37,7 @@ Explicitly prohibited:
 - Composite influence scoring
 - Prescriptive voting advice ("vote for", "vote against", "should vote for")
 - Personalized electoral persuasion
+- Treating campaign statements as equivalent to recorded governing behavior
 
 If a requested feature violates this, STOP and ask for clarification.
 
@@ -83,6 +89,13 @@ Core product surfaces:
    - Interpretation of what yea/nay meant may be stored and surfaced only when source-grounded
    - Ambiguous or unsupported vote meaning must be marked insufficient evidence
    - LLMs may help draft cached plain-language explanations, but may not decide vote classification, eligibility, vote meaning, or alignment
+
+9. Ballot and candidate expansion
+   - ZIP lookup may expand from current officials to upcoming races when reliable election data is available
+   - Incumbents and prior officeholders should be evaluated first through recorded governing behavior
+   - New candidates may use sourced stated positions only when no governing record exists
+   - Stated-position reads must be clearly labeled as lower confidence than recorded votes
+   - Candidate comparison must remain evidence-tiered, neutral, and non-prescriptive
 
 ---
 

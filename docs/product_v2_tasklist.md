@@ -1,6 +1,12 @@
-# Product v2 Autonomous Tasklist
+# Product Roadmap
 
-This tasklist moves Political Fingerprint from an MVP dashboard into a quick voter-facing product for checking whether current officials' recorded votes align with issues the user cares about.
+This roadmap moves Political Fingerprint from an MVP dashboard into a ballot-aware civic product.
+
+North star:
+
+**Who is on my ballot, and what does the evidence show about how they act on the issues I care about?**
+
+The current v2 product focuses on current federal officials and interpreted voting records. The next expansion should add upcoming races and candidate evidence tiers while preserving the original trust rules.
 
 Core rule: inform the user, do not persuade the user. The product may show evidence-based alignment relative to user-selected preferences. It must not tell the user how to vote.
 
@@ -94,8 +100,10 @@ Core rule: inform the user, do not persuade the user. The product may show evide
 
 Current next build target:
 
-1. Decide whether to merge/deploy this branch to staging.
-2. If deploying, follow `docs/staging_readiness.md` backend-first sequence and repeat the deployed URL smoke checks.
+1. Confirm deployment through the latest main commit and smoke-test interpreted issue patterns.
+2. Expand source-grounded manual interpretations for high-visibility federal/starter issue records.
+3. Begin federal ballot proof: ZIP to upcoming federal races and candidate records.
+4. Add candidate evidence tiers before expanding beyond current officials.
 
 ## Shelved Product Ideas
 
@@ -111,3 +119,60 @@ Current next build target:
 - [x] Import reviewed interpretations into Supabase.
 - [x] Surface plain-English vote meaning in evidence rows.
 - [x] Aggregate interpreted vote meanings into neutral issue pattern cards.
+
+## Next Lens - Ballot-Aware Candidate Comparison
+
+Goal: move from "current officials by ZIP" to "current officials plus upcoming races by ZIP," using the strongest available evidence for each candidate.
+
+Evidence ladder:
+
+1. Recorded governing behavior
+2. Institutional record
+3. Sourced stated positions
+4. Insufficient evidence
+
+### Phase 9 - Federal Ballot Proof
+
+- [ ] Identify reliable federal election/race data source options.
+- [ ] Document cost, license, freshness, and coverage tradeoffs for each source.
+- [ ] Add `upcoming_races` and `race_candidates` schema draft.
+- [ ] Add ZIP/state/district mapping from a user ZIP to upcoming federal House and Senate races.
+- [ ] Add backend endpoint for upcoming federal races by ZIP.
+- [ ] Add frontend "Your Upcoming Federal Races" section after ZIP lookup.
+- [ ] Label races as upcoming, active, or past based on election dates.
+- [ ] Keep race display neutral and non-ranked.
+
+### Phase 10 - Candidate Evidence Tiers
+
+- [ ] Add candidate profile schema with evidence tier fields.
+- [ ] Support incumbent candidate linkage to existing legislator voting records.
+- [ ] Support prior-officeholder linkage when candidate has a past voting record.
+- [ ] Add sourced stated-position records for candidates without voting history.
+- [ ] Store source URL, source type, retrieved date, issue domain, statement text, and confidence label.
+- [ ] Add candidate evidence endpoint.
+- [ ] Add tests that stated positions are marked lower confidence than recorded votes.
+- [ ] Document stated-position methodology and forbidden persuasion language.
+
+### Phase 11 - Race Comparison UI
+
+- [ ] Add race page or race panel for ZIP-selected upcoming races.
+- [ ] Compare candidates by selected user issues.
+- [ ] Show "recorded votes," "stated positions," and "insufficient evidence" as separate evidence types.
+- [ ] Make every candidate claim expandable to source details.
+- [ ] Avoid aggregate candidate scores or ranking language.
+- [ ] Add empty states for uncontested races and missing candidate data.
+
+### Phase 12 - North Carolina State Pilot
+
+- [ ] Research NC state legislative voting and election data availability.
+- [ ] Document NC source reliability, access method, and update cadence.
+- [ ] Add NC state district mapping plan.
+- [ ] Add one NC state office/race pilot before broad state expansion.
+- [ ] Keep state-level methodology separate from federal methodology where source formats differ.
+
+### Phase 13 - Broader State and Local Expansion
+
+- [ ] Create a state adapter checklist.
+- [ ] Add states only when source quality and maintenance burden are understood.
+- [ ] Evaluate local election data vendors or civic data partnerships.
+- [ ] Treat local coverage as lower priority until federal and NC pilot flows are useful.
