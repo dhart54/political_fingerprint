@@ -162,6 +162,12 @@ Last updated: 2026-05-16
   - added exporter for bounded source packets from Supabase
   - added importer for reviewed interpretation JSON with neutral-language and schema validation
   - added workflow docs at `docs/manual_interpretation_workflow.md`
+- First manual interpretation batch:
+  - applied `0002_vote_interpretations.sql` and `0003_vote_interpretation_details.sql` to the configured Supabase database
+  - exported `docs/interpretation_batches/batch_001_nc_starter_packets.json`
+  - drafted `docs/interpretation_batches/batch_001_nc_starter_interpretations.json`
+  - imported 48 records into Supabase with `--reviewed-by codex_manual_review`
+  - status mix after import: 24 interpreted, 12 ambiguous, 12 insufficient evidence
 
 ## Active Checkpoint
 
@@ -290,6 +296,11 @@ Reported results:
 - Offline manual interpretation workflow verification:
   - first sandboxed targeted pytest hit the known Windows temp permission issue
   - escalated rerun passed with `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp_manual_interpret_admin tests\test_manual_interpretations.py tests\test_migrations.py tests\test_seed.py` (`14 passed`)
+- First manual interpretation batch verification:
+  - Supabase schema check confirmed new cached interpretation detail columns
+  - importer returned `imported_count: 48` with no validation errors
+  - Supabase status count check returned 24 interpreted, 12 ambiguous, and 12 insufficient-evidence records
+  - targeted backend checks passed with `$env:DATABASE_URL='postgresql://invalid'; pytest --basetemp=..\.local\pytest_basetemp_manual_interpret_admin_3 tests\test_manual_interpretations.py tests\test_migrations.py` (`7 passed`)
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -304,11 +315,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Apply migration `backend/migrations/0003_vote_interpretation_details.sql` in Supabase.
-2. Export the first manual interpretation packet batch using `python -m app.etl.manual_interpretations export`.
-3. Draft and review interpretations for the ZIP demo officials and starter issue bundles.
-4. Import reviewed interpretations with `python -m app.etl.manual_interpretations import`.
-5. Build the frontend evidence-row and pattern-card UI on top of cached interpretation fields.
+1. Build the backend response fields needed for cached plain-English interpretation details in evidence rows.
+2. Build the frontend evidence-row UI that shows what the vote appears to do, yea/nay meaning, confidence, and source.
+3. Add neutral issue pattern cards that aggregate cached interpreted vote meanings.
 
 ## Operating Mode
 

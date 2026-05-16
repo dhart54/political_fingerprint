@@ -106,8 +106,8 @@ Current next build target:
 - [x] Add database fields for cached plain-English vote interpretation details.
 - [x] Add offline packet export and reviewed JSON import workflow for manual interpretation batches.
 - [x] Document the no-API-key manual interpretation workflow.
-- [ ] Export the first high-impact batch for ZIP demo officials and starter issue bundles.
-- [ ] Draft reviewed interpretations for that batch.
-- [ ] Import reviewed interpretations into Supabase.
+- [x] Export the first high-impact batch for ZIP demo officials and starter issue bundles.
+- [x] Draft reviewed interpretations for that batch.
+- [x] Import reviewed interpretations into Supabase.
 - [ ] Surface plain-English vote meaning in evidence rows.
 - [ ] Aggregate interpreted vote meanings into neutral issue pattern cards.
