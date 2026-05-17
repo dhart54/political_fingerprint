@@ -422,7 +422,22 @@ Reported results:
   - post-import coverage for Valerie Foushee `NATIONAL_SECURITY_FOREIGN`: 22 eligible, 2 interpreted, 20 reviewed not interpreted, 0 without reviewed record
   - API smoke confirmed rolls `242`, `243`, `244`, and `251` return transparent ambiguity/insufficient-evidence notes
   - targeted tests passed after escalated rerun to avoid Windows temp permission issue: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
-  - next best task: move to the next high-value shared vote interpretation gap that improves ZIP `27701` issue reads, likely Thom Tillis/Ted Budd shared Senate records or Valerie Foushee's next largest issue domain
+- Budget interpretation punch-up checkpoint:
+  - added `docs/interpretation_batches/batch_004_budget_resolution_punchup.json`
+  - imported refreshed interpretations into Supabase for House rolls `50` and `100`
+  - rewrote the budget-resolution read from generic “adopting the resolution” language into a practical read:
+    - budget blueprint, not final agency funding law
+    - opened reconciliation for later tax/spending/deficit/debt-limit legislation
+    - directed committees to produce follow-up legislation
+    - included the Congress.gov-described $4.5T / $2T deficit-reduction mechanism
+  - evidence cards now lead with `What this vote was`, `Their vote`, and `What it could change` before yea/nay detail
+  - targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - browser verification passed after clearing stale `.next` cache and restarting local Next dev:
+    - no stale `__webpack_modules__[moduleId] is not a function` overlay
+    - Economy/Taxes evidence shows the new `budget blueprint` wording and `What it could change`
+    - old repeated `This concurrent resolution establishes...` paragraph is gone from those budget rows
+  - next best task: apply this punchier interpretation standard to the next largest high-impact ZIP `27701` interpretation gap, likely Thom Tillis/Ted Budd shared Senate records or Valerie Foushee's next largest issue domain
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -440,7 +455,7 @@ Work from `docs/product_v2_tasklist.md` in this order:
 1. Confirm Render and Vercel redeploy through the latest pushed commit.
 2. Smoke-test deployed evidence rows and pattern cards for ZIP `27701`.
 3. Continue expanding manual interpretations for high-visibility federal/starter issue records:
-   - next interpretation priority: pick the largest remaining issue-read gap among ZIP `27701` officials, likely Thom Tillis/Ted Budd shared Senate records or Valerie Foushee's next largest issue domain.
+   - next interpretation priority: use the punchier `what this was / what changed / vote meaning` standard on the largest remaining ZIP `27701` gap, likely Thom Tillis/Ted Budd shared Senate records or Valerie Foushee's next largest issue domain.
 4. Continue Phase 9/10 ballot proof after the next interpretation checkpoint:
    - add another reviewed candidate seed
    - add tests that stated positions remain lower confidence than recorded votes

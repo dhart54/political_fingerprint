@@ -123,6 +123,7 @@ Current next build target:
 - [x] Aggregate interpreted vote meanings into neutral issue pattern cards.
 - [x] Add second reviewed interpretation batch for Valerie Foushee national-security/defense votes.
 - [x] Complete remaining Valerie Foushee national-security/defense review pass with explicit ambiguity and insufficient-evidence records.
+- [x] Punch up budget-resolution interpretations so evidence rows explain practical process effects, not just formal vote labels.
 
 ## Next Lens - Ballot-Aware Candidate Comparison
 

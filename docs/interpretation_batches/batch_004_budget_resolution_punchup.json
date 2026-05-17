@@ -1,0 +1,59 @@
+{
+  "schema_version": "manual_interpretation_v1",
+  "interpretations": [
+    {
+      "roll_call_id": 48,
+      "classification_version": "v1",
+      "interpretation_version": "interpretation_v1",
+      "interpretation_status": "interpreted",
+      "plain_english_summary": "This was a budget blueprint, not a final agency funding law. It set Congress's FY2025 budget framework and opened a reconciliation process for later tax, spending, deficit, and debt-limit legislation.",
+      "yea_meaning": "A Yea vote supported adopting the budget framework and starting the reconciliation instructions tied to later budget legislation.",
+      "nay_meaning": "A Nay vote opposed adopting that budget framework and those reconciliation instructions.",
+      "policy_effect": "The resolution directed 11 House committees to write follow-up legislation affecting deficits over FY2025-FY2034, set recommended levels for revenues and spending categories, and allowed a statutory debt-limit increase by specified amounts. Congress.gov notes that one Ways and Means instruction could allow up to a $4.5 trillion deficit increase unless other committees produced at least $2 trillion in net deficit reduction.",
+      "issue_facet": "budget_reconciliation_and_debt_limit",
+      "support_position": "yea",
+      "oppose_position": "nay",
+      "confidence": "medium",
+      "source_basis": [
+        {
+          "field": "bill_summary",
+          "source": "Congress.gov summary for 119 H.Con.Res.14"
+        },
+        {
+          "field": "question",
+          "source": "House Clerk roll 50"
+        }
+      ],
+      "source_url": "https://clerk.house.gov/evs/2025/roll050.xml",
+      "uncertainty_note": null,
+      "interpretation_reason": "Manual punch-up used the existing Congress.gov summary to separate the practical budget-process effect from the formal vote title while keeping the yea/nay meaning neutral."
+    },
+    {
+      "roll_call_id": 91,
+      "classification_version": "v1",
+      "interpretation_version": "interpretation_v1",
+      "interpretation_status": "interpreted",
+      "plain_english_summary": "This was a vote on the Senate-amended version of the same budget blueprint. It kept the FY2025-FY2034 budget framework moving and advanced reconciliation instructions for later tax, spending, deficit, and debt-limit legislation.",
+      "yea_meaning": "A Yea vote supported concurring in the Senate-amended budget framework and moving those reconciliation instructions forward.",
+      "nay_meaning": "A Nay vote opposed concurring in the Senate-amended budget framework and those reconciliation instructions.",
+      "policy_effect": "The resolution directed committees to write follow-up legislation affecting deficits over FY2025-FY2034, set recommended levels for revenues and spending categories, and allowed a statutory debt-limit increase by specified amounts. Congress.gov notes that one Ways and Means instruction could allow up to a $4.5 trillion deficit increase unless other committees produced at least $2 trillion in net deficit reduction.",
+      "issue_facet": "budget_reconciliation_and_debt_limit",
+      "support_position": "yea",
+      "oppose_position": "nay",
+      "confidence": "medium",
+      "source_basis": [
+        {
+          "field": "bill_summary",
+          "source": "Congress.gov summary for 119 H.Con.Res.14"
+        },
+        {
+          "field": "question",
+          "source": "House Clerk roll 100"
+        }
+      ],
+      "source_url": "https://clerk.house.gov/evs/2025/roll100.xml",
+      "uncertainty_note": null,
+      "interpretation_reason": "Manual punch-up used the existing Congress.gov summary to distinguish the Senate-amendment concurrence vote from the earlier House adoption vote while keeping the substantive read neutral."
+    }
+  ]
+}

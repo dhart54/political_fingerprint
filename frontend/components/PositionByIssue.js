@@ -409,7 +409,9 @@ function InterpretationBreakdown({ row }) {
 
   const isInterpreted = row.interpretation_status === "interpreted";
   const statusLabel = formatInterpretationStatus(row.interpretation_status);
-  const policyEffectAddsDetail = row.policy_effect && row.policy_effect !== row.plain_english_summary;
+  const summaryText = buildUsefulInterpretationText(row.plain_english_summary);
+  const policyEffectText = buildUsefulInterpretationText(row.policy_effect);
+  const policyEffectAddsDetail = policyEffectText && policyEffectText !== summaryText;
   const interpretedVoteRead = buildInterpretedVoteRead(row);
 
   return (
@@ -425,18 +427,25 @@ function InterpretationBreakdown({ row }) {
 
       {isInterpreted ? (
         <>
-          <p className="mt-3 text-[15px] leading-7 text-stone-950">
-            {row.plain_english_summary || row.policy_effect}
-          </p>
-          {interpretedVoteRead ? (
-            <div className="mt-3 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
-                Their recorded vote
-              </p>
-              <p className="mt-2 text-sm leading-6 text-stone-800">
-                {interpretedVoteRead}
-              </p>
-            </div>
+          <div className="mt-3 grid gap-2 lg:grid-cols-[1.1fr_0.9fr]">
+            <InsightCard
+              label="What this vote was"
+              text={summaryText || policyEffectText}
+            />
+            {interpretedVoteRead ? (
+              <InsightCard
+                label="Their vote"
+                text={interpretedVoteRead}
+                tone={row.position === row.support_position ? "support" : row.position === row.oppose_position ? "oppose" : "neutral"}
+              />
+            ) : null}
+          </div>
+          {policyEffectAddsDetail ? (
+            <InsightCard
+              className="mt-2"
+              label="What it could change"
+              text={policyEffectText}
+            />
           ) : null}
           <div className="mt-3 grid gap-2 md:grid-cols-2">
             {row.yea_meaning ? (
@@ -446,16 +455,6 @@ function InterpretationBreakdown({ row }) {
               <MeaningCard label="Nay meant" text={row.nay_meaning} />
             ) : null}
           </div>
-          {policyEffectAddsDetail ? (
-            <div className="mt-3 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
-                Policy effect
-              </p>
-              <p className="mt-2 text-sm leading-6 text-stone-800">
-                {row.policy_effect}
-              </p>
-            </div>
-          ) : null}
         </>
       ) : (
         <p className="mt-3 text-sm leading-6 text-stone-700">
@@ -479,6 +478,26 @@ function InterpretationBreakdown({ row }) {
   );
 }
 
+function InsightCard({ className = "", label, text, tone = "neutral" }) {
+  const toneClass =
+    tone === "support"
+      ? "border-emerald-200 bg-emerald-50"
+      : tone === "oppose"
+        ? "border-rose-200 bg-rose-50"
+        : "border-stone-200 bg-stone-50";
+
+  if (!text) {
+    return null;
+  }
+
+  return (
+    <div className={`rounded-xl border px-3 py-3 ${toneClass} ${className}`}>
+      <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">{label}</p>
+      <p className="mt-2 text-sm leading-6 text-stone-800">{text}</p>
+    </div>
+  );
+}
+
 function MeaningCard({ label, text }) {
   return (
     <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
@@ -495,12 +514,19 @@ function buildInterpretedVoteRead(row) {
 
   const position = formatVotePosition(row.position);
   if (row.position === row.support_position) {
-    return `This legislator voted ${position}, which matched the support side described above.`;
+    return `${position}, matching the side that supported the action described here.`;
   }
   if (row.position === row.oppose_position) {
-    return `This legislator voted ${position}, which matched the oppose side described above.`;
+    return `${position}, matching the side that opposed the action described here.`;
   }
-  return `This legislator's recorded position was ${position}.`;
+  return `${position}.`;
+}
+
+function buildUsefulInterpretationText(value) {
+  return String(value || "")
+    .replace(/^This was a vote on (adopting|passing|agreeing to) (the|a) (resolution|bill|measure)\.?\s*/i, "")
+    .replace(/^This was a vote on (adopting|passing|agreeing to) .+?\.\s*/i, "")
+    .trim();
 }
 
 function groupEvidenceByBill(rows) {
