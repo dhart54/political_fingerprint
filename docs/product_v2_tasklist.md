@@ -122,6 +122,7 @@ Current next build target:
 - [x] Surface plain-English vote meaning in evidence rows.
 - [x] Aggregate interpreted vote meanings into neutral issue pattern cards.
 - [x] Add second reviewed interpretation batch for Valerie Foushee national-security/defense votes.
+- [x] Complete remaining Valerie Foushee national-security/defense review pass with explicit ambiguity and insufficient-evidence records.
 
 ## Next Lens - Ballot-Aware Candidate Comparison
 

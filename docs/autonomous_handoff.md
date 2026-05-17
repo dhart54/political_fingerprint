@@ -1,10 +1,10 @@
 # Autonomous Handoff
 
-Last updated: 2026-05-16
+Last updated: 2026-05-17
 
 ## Current Branch
 
-- `main`
+- `codex/ballot-north-star`
 
 ## Completed and Committed
 
@@ -412,7 +412,17 @@ Reported results:
   - post-import coverage for Valerie Foushee `NATIONAL_SECURITY_FOREIGN`: 22 eligible, 2 interpreted, 10 reviewed not interpreted, 10 still without reviewed record
   - API smoke confirmed roll `242` and `297` now return plain-English summaries, while amendment roll `240` returns an uncertainty note instead of guessed meaning
   - targeted tests passed after escalated rerun to avoid Windows temp permission issue: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
-  - next best task: export the remaining 10 Valerie Foushee `NATIONAL_SECURITY_FOREIGN` rows or move to the next high-value shared Senate infrastructure gap
+- Vote interpretation batch 003 checkpoint:
+  - fetched Congress.gov enrichment for `119:hres:682`
+  - exported/reused `docs/interpretation_batches/batch_003_valerie_national_security_remaining_packets.json`
+  - drafted/imported `docs/interpretation_batches/batch_003_valerie_national_security_remaining_interpretations.json`
+  - imported the remaining 10 Valerie Foushee `NATIONAL_SECURITY_FOREIGN` review records into Supabase:
+    - 8 NDAA amendment rows marked insufficient evidence because the packet identifies amendment sponsor/number but lacks enough official amendment text to explain the policy change
+    - 2 H.Res. 682 floor-procedure rows marked ambiguous rather than treating rule votes as direct policy alignment
+  - post-import coverage for Valerie Foushee `NATIONAL_SECURITY_FOREIGN`: 22 eligible, 2 interpreted, 20 reviewed not interpreted, 0 without reviewed record
+  - API smoke confirmed rolls `242`, `243`, `244`, and `251` return transparent ambiguity/insufficient-evidence notes
+  - targeted tests passed after escalated rerun to avoid Windows temp permission issue: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+  - next best task: move to the next high-value shared vote interpretation gap that improves ZIP `27701` issue reads, likely Thom Tillis/Ted Budd shared Senate records or Valerie Foushee's next largest issue domain
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -427,14 +437,14 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit and push the north-star roadmap/docs update if not already pushed.
-2. Confirm Render and Vercel redeploy through the latest pushed commit.
-3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
-4. Start Phase 9 federal ballot proof:
-   - rerun FEC importer with `--as-of 2026-05-17`
+1. Confirm Render and Vercel redeploy through the latest pushed commit.
+2. Smoke-test deployed evidence rows and pattern cards for ZIP `27701`.
+3. Continue expanding manual interpretations for high-visibility federal/starter issue records:
+   - next interpretation priority: pick the largest remaining issue-read gap among ZIP `27701` officials, likely Thom Tillis/Ted Budd shared Senate records or Valerie Foushee's next largest issue domain.
+4. Continue Phase 9/10 ballot proof after the next interpretation checkpoint:
    - add another reviewed candidate seed
-5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
-   - next interpretation priority: finish Valerie Foushee `NATIONAL_SECURITY_FOREIGN` remaining rows, unless the user prefers Senate shared infrastructure votes first.
+   - add tests that stated positions remain lower confidence than recorded votes
+   - document stated-position methodology and forbidden persuasion language
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 
