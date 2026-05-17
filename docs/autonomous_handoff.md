@@ -393,7 +393,12 @@ Reported results:
   - frontend race cards now include `View Evidence` / `Hide Evidence` for candidates with sourced rows
   - expanded candidate evidence rows show evidence tier, issue label, confidence, neutral summary, and source link
   - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
-  - next best task: visually verify the expanded Nida Allam evidence row in the browser, then add race status/date labeling polish or another reviewed candidate seed
+  - browser verification passed locally after starting backend/frontend:
+    - Nida Allam renders with `3 sourced evidence records loaded across 3 issue areas`
+    - `View Evidence` expands to three institutional-record rows with neutral summaries and source links
+    - no browser console errors were reported
+  - FEC race importer now derives `upcoming` or `past` status from election date and importer `as_of` date
+  - next best task: rerun FEC importer with `--as-of 2026-05-17` to update stored statuses deterministically, then add another reviewed candidate seed
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -412,9 +417,8 @@ Work from `docs/product_v2_tasklist.md` in this order:
 2. Confirm Render and Vercel redeploy through the latest pushed commit.
 3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
 4. Start Phase 9 federal ballot proof:
-   - manually verify linked incumbent race cards show compact voting summaries and open the existing profile/alignment view
-   - visually verify expandable candidate evidence rows in the frontend
-   - then add race status/date labeling polish or another reviewed candidate seed
+   - rerun FEC importer with `--as-of 2026-05-17`
+   - add another reviewed candidate seed
 5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
 
 The detailed action plan is `docs/north_star_action_plan.md`.

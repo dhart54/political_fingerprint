@@ -148,7 +148,7 @@ Evidence ladder:
 - [x] Add candidate evidence schema and endpoint foundation for non-incumbents.
 - [x] Add first reviewed candidate evidence seed for one NC-04 challenger.
 - [x] Make seeded candidate evidence expandable with source links in race cards.
-- [ ] Label races as upcoming, active, or past based on election dates.
+- [x] Label races as upcoming or past based on election dates.
 - [ ] Keep race display neutral and non-ranked.
 
 ### Phase 10 - Candidate Evidence Tiers

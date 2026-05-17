@@ -564,6 +564,7 @@ Current importer behavior:
 - groups House candidates by cycle, state, and district
 - groups Senate candidates by cycle and state
 - writes deterministic `upcoming_races` and `race_candidates` rows
+- sets race status from election date and importer `as_of` date, currently `upcoming` before or on election day and `past` after election day
 - uses `source_type = fec_candidate_summary`
 - stores the FEC candidate id as `external_candidate_id` for idempotent re-imports
 - marks FEC-only candidate rows as `candidate_status = declared_candidate`
@@ -577,6 +578,7 @@ Candidate issue alignment must not be computed from FEC candidacy rows. A candid
 Current CLI example:
 
 - `python -m app.etl.federal_races --fec-candidate-summary ./backend/data_sources/fec/candidate_summary_2026.csv --cycle 2026 --dry-run`
+- `python -m app.etl.federal_races --fec-candidate-summary ./backend/data_sources/fec/candidate_summary_2026.csv --cycle 2026 --as-of 2026-05-17 --dry-run`
 
 ## Candidate Evidence Records
 

@@ -39,6 +39,7 @@ class FederalRace:
     chamber: str
     state: str
     district: str | None
+    status: str
     source_url: str
     source_type: str
     candidates: tuple[RaceCandidate, ...]
@@ -62,10 +63,12 @@ def build_federal_races_from_fec_rows(
     *,
     cycle: int,
     election_date: date | None = None,
+    as_of: date | None = None,
 ) -> list[FederalRace]:
     resolved_election_date = election_date or FEDERAL_GENERAL_ELECTION_DATES.get(cycle)
     if resolved_election_date is None:
         raise ValueError(f"No federal general election date configured for {cycle}")
+    resolved_as_of = as_of or date.today()
 
     race_candidates: dict[str, list[RaceCandidate]] = {}
     race_fields: dict[str, dict[str, str | None]] = {}
@@ -121,6 +124,7 @@ def build_federal_races_from_fec_rows(
             chamber=str(fields["chamber"]),
             state=str(fields["state"]),
             district=None if fields["district"] is None else str(fields["district"]),
+            status=_race_status(election_date=resolved_election_date, as_of=resolved_as_of),
             source_url=FEC_CANDIDATE_SUMMARY_URL,
             source_type="fec_candidate_summary",
             candidates=tuple(sorted(candidates, key=lambda item: (item.candidate_name, item.external_candidate_id))),
@@ -176,7 +180,7 @@ def _upsert_race(cursor: Any, race: FederalRace) -> int:
             source_type,
             source_retrieved_at
         )
-        VALUES (%s, %s, %s, 'federal', %s, %s, %s, %s, 'upcoming', %s, %s, NOW())
+        VALUES (%s, %s, %s, 'federal', %s, %s, %s, %s, %s, %s, %s, NOW())
         ON CONFLICT (race_key) DO UPDATE SET
             election_date = EXCLUDED.election_date,
             election_label = EXCLUDED.election_label,
@@ -198,6 +202,7 @@ def _upsert_race(cursor: Any, race: FederalRace) -> int:
             race.chamber,
             race.state,
             race.district,
+            race.status,
             race.source_url,
             race.source_type,
         ),
@@ -314,6 +319,12 @@ def _race_key(*, cycle: int, chamber: str, state: str, district: str | None) -> 
     return f"fec_{cycle}_{chamber}_{state}_{suffix}".lower()
 
 
+def _race_status(*, election_date: date, as_of: date) -> str:
+    if election_date < as_of:
+        return "past"
+    return "upcoming"
+
+
 def _get(row: dict[str, str], *keys: str) -> str:
     for key in keys:
         value = row.get(key)
@@ -392,12 +403,14 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--fec-candidate-summary", type=Path, required=True)
     parser.add_argument("--cycle", type=int, default=2026)
+    parser.add_argument("--as-of", type=date.fromisoformat)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
     races = build_federal_races_from_fec_rows(
         load_fec_candidate_summary(args.fec_candidate_summary),
         cycle=args.cycle,
+        as_of=args.as_of,
     )
     if args.dry_run:
         candidate_count = sum(len(race.candidates) for race in races)
