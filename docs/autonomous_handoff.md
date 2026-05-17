@@ -471,7 +471,22 @@ Reported results:
   - targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
   - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
   - methodology and manual workflow docs now define the gold-slice standard
-  - next best task: either review this gold slice with the user visually, or replicate the same standard to Valerie's next visible issue domain
+- Simplified interpretation-card checkpoint:
+  - user agreed the UI should not show generic separate `Yea meant` / `Nay meant` boxes when the selected legislator's actual vote is known
+  - interpretation cards now lead with:
+    - `Why this mattered`
+    - `What this vote was`
+    - `Their vote`
+  - `Their vote` uses the stored yea/nay meaning for the recorded position
+  - `Yea meant` / `Nay meant` remain cached fields for computation/source traceability, but are no longer front-and-center in the public evidence card
+  - browser verification passed after clearing stale `.next` cache:
+    - `Why this mattered` appears
+    - `fast-track budget bill` appears for the budget row
+    - `Their vote` includes `Nay:`
+    - `Yea meant` and `Nay meant` are not shown
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - targeted backend test passed after escalated rerun: `tests\test_api_positions.py` (`11 passed`)
+  - next best task: review this simplified gold slice visually with the user, then replicate the same interpretation/content standard to Valerie's next visible issue domain
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -489,7 +504,7 @@ Work from `docs/product_v2_tasklist.md` in this order:
 1. Confirm Render and Vercel redeploy through the latest pushed commit.
 2. Smoke-test deployed evidence rows and pattern cards for ZIP `27701`.
 3. Continue expanding manual interpretations for high-visibility federal/starter issue records:
-   - next interpretation priority: review the Valerie Foushee / `ECONOMY_TAXES` gold slice in the browser, then replicate the same standard to the next visible issue domain.
+   - next interpretation priority: review the simplified Valerie Foushee / `ECONOMY_TAXES` gold slice in the browser, then replicate the same standard to the next visible issue domain.
 4. Continue Phase 9/10 ballot proof after the next interpretation checkpoint:
    - add another reviewed candidate seed
    - add tests that stated positions remain lower confidence than recorded votes

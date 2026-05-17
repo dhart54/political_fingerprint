@@ -83,7 +83,11 @@ For each interpreted vote:
 
 For procedural votes, do not collapse procedure into final policy. Say exactly what procedural step was being voted on. If the packet does not include the exact amendment, conference instruction, rule text, or motion effect, use `ambiguous` or `insufficient_evidence`.
 
-For a legislator's recorded vote, the frontend should read the stored yea/nay meaning back in the context of their actual position. A `not_voting` record must be shown as a non-position, even when the underlying roll call itself is interpreted.
+For a legislator's recorded vote, the frontend should read the stored yea/nay meaning back in the context of their actual position. A `not_voting` record must be shown as a non-position, even when the underlying roll call itself is interpreted. The public UI should not lead with separate `Yea meant` and `Nay meant` boxes when the selected legislator's vote is already known. Prefer:
+
+- why this mattered
+- what this vote was
+- their vote and what that recorded position meant
 
 The first gold slice is Valerie Foushee / `ECONOMY_TAXES`, stored in:
 

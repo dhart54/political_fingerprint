@@ -411,8 +411,8 @@ function InterpretationBreakdown({ row }) {
   const statusLabel = formatInterpretationStatus(row.interpretation_status);
   const summaryText = buildUsefulInterpretationText(row.plain_english_summary);
   const policyEffectText = buildUsefulInterpretationText(row.policy_effect);
-  const policyEffectAddsDetail = policyEffectText && policyEffectText !== summaryText;
   const interpretedVoteRead = buildInterpretedVoteRead(row);
+  const plainTakeaway = buildPlainTakeaway(row);
 
   return (
     <div className="mt-3 rounded-2xl border border-cyan-900/10 bg-white px-3 py-3 sm:px-4">
@@ -427,7 +427,14 @@ function InterpretationBreakdown({ row }) {
 
       {isInterpreted ? (
         <>
-          <div className="mt-3 grid gap-2 lg:grid-cols-[1.1fr_0.9fr]">
+          {plainTakeaway ? (
+            <InsightCard
+              className="mt-3 border-cyan-900/20 bg-cyan-50"
+              label="Why this mattered"
+              text={plainTakeaway}
+            />
+          ) : null}
+          <div className="mt-2 grid gap-2 lg:grid-cols-[1.1fr_0.9fr]">
             <InsightCard
               label="What this vote was"
               text={summaryText || policyEffectText}
@@ -438,21 +445,6 @@ function InterpretationBreakdown({ row }) {
                 text={interpretedVoteRead}
                 tone={row.position === row.support_position ? "support" : row.position === row.oppose_position ? "oppose" : "neutral"}
               />
-            ) : null}
-          </div>
-          {policyEffectAddsDetail ? (
-            <InsightCard
-              className="mt-2"
-              label="What it could change"
-              text={policyEffectText}
-            />
-          ) : null}
-          <div className="mt-3 grid gap-2 md:grid-cols-2">
-            {row.yea_meaning ? (
-              <MeaningCard label="Yea meant" text={row.yea_meaning} />
-            ) : null}
-            {row.nay_meaning ? (
-              <MeaningCard label="Nay meant" text={row.nay_meaning} />
             ) : null}
           </div>
         </>
@@ -498,15 +490,6 @@ function InsightCard({ className = "", label, text, tone = "neutral" }) {
   );
 }
 
-function MeaningCard({ label, text }) {
-  return (
-    <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
-      <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">{label}</p>
-      <p className="mt-2 text-sm leading-6 text-stone-800">{text}</p>
-    </div>
-  );
-}
-
 function buildInterpretedVoteRead(row) {
   if (!row.position || !row.support_position || !row.oppose_position) {
     return "";
@@ -524,6 +507,30 @@ function buildInterpretedVoteRead(row) {
     return `${position}: ${formatRecordedSideMeaning(row.position === "yea" ? row.yea_meaning : row.nay_meaning)}`;
   }
   return `${position}.`;
+}
+
+function buildPlainTakeaway(row) {
+  const summary = buildUsefulInterpretationText(row.plain_english_summary);
+  const effect = buildUsefulInterpretationText(row.policy_effect);
+  const text = `${summary} ${effect}`.toLowerCase();
+
+  if (text.includes("budget blueprint") || text.includes("reconciliation")) {
+    return "This vote helped set the rules for a later fast-track budget bill that could affect taxes, spending, deficits, and the debt limit.";
+  }
+  if (text.includes("shutdown") || text.includes("continuing appropriations") || text.includes("short-term funding")) {
+    return "This vote was about keeping federal funding moving and deciding whether agencies and programs would continue operating under temporary or catch-up funding.";
+  }
+  if (text.includes("small business administration") || text.includes("sba")) {
+    if (text.includes("loan")) {
+      return "This vote was about who could qualify for certain SBA-backed small-business loans.";
+    }
+    return "This vote was about limiting net new SBA rulemaking costs for small businesses.";
+  }
+  if (text.includes("military construction") || text.includes("veterans affairs")) {
+    return "This vote was about funding military construction, military housing, and veterans-related agencies and programs.";
+  }
+
+  return effect || summary;
 }
 
 function formatRecordedSideMeaning(value) {
