@@ -399,6 +399,20 @@ Reported results:
     - no browser console errors were reported
   - FEC race importer now derives `upcoming` or `past` status from election date and importer `as_of` date
   - next best task: rerun FEC importer with `--as-of 2026-05-17` to update stored statuses deterministically, then add another reviewed candidate seed
+- Vote interpretation batch 002 checkpoint:
+  - identified largest ZIP `27701` incumbent interpretation gap: Valerie Foushee `NATIONAL_SECURITY_FOREIGN` had 22 eligible votes, 0 interpreted plain-English records
+  - exported `docs/interpretation_batches/batch_002_valerie_national_security_packets.json`
+  - fetched Congress.gov enrichment for `119:s:1071` and `119:hr:3838`
+  - exported enriched packets to `docs/interpretation_batches/batch_002_valerie_national_security_packets_enriched.json`
+  - drafted/imported `docs/interpretation_batches/batch_002_valerie_national_security_interpretations.json`
+  - imported 12 reviewed records into Supabase:
+    - 2 interpreted direct passage votes
+    - 1 ambiguous motion to commit
+    - 9 amendment rows marked insufficient evidence because amendment text was not present in the packet
+  - post-import coverage for Valerie Foushee `NATIONAL_SECURITY_FOREIGN`: 22 eligible, 2 interpreted, 10 reviewed not interpreted, 10 still without reviewed record
+  - API smoke confirmed roll `242` and `297` now return plain-English summaries, while amendment roll `240` returns an uncertainty note instead of guessed meaning
+  - targeted tests passed after escalated rerun to avoid Windows temp permission issue: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+  - next best task: export the remaining 10 Valerie Foushee `NATIONAL_SECURITY_FOREIGN` rows or move to the next high-value shared Senate infrastructure gap
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -420,6 +434,7 @@ Work from `docs/product_v2_tasklist.md` in this order:
    - rerun FEC importer with `--as-of 2026-05-17`
    - add another reviewed candidate seed
 5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
+   - next interpretation priority: finish Valerie Foushee `NATIONAL_SECURITY_FOREIGN` remaining rows, unless the user prefers Senate shared infrastructure votes first.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 

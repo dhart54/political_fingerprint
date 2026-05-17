@@ -121,6 +121,7 @@ Current next build target:
 - [x] Import reviewed interpretations into Supabase.
 - [x] Surface plain-English vote meaning in evidence rows.
 - [x] Aggregate interpreted vote meanings into neutral issue pattern cards.
+- [x] Add second reviewed interpretation batch for Valerie Foushee national-security/defense votes.
 
 ## Next Lens - Ballot-Aware Candidate Comparison
 
