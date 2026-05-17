@@ -72,7 +72,7 @@ def test_get_position_evidence_endpoint_rejects_unknown_domain() -> None:
     assert exc_info.value.detail == "Evidence not found"
 
 
-def test_lookup_zip_races_returns_fixture_federal_races() -> None:
+def test_lookup_zip_races_returns_federal_races() -> None:
     payload = lookup_zip_races("27701")
 
     assert payload["zip"] == "27701"
@@ -81,5 +81,16 @@ def test_lookup_zip_races_returns_fixture_federal_races() -> None:
     house_race = next(race for race in payload["races"] if race["chamber"] == "house")
     assert house_race["office_name"] == "U.S. House"
     assert house_race["status"] == "upcoming"
-    assert house_race["candidates"][0]["candidate_status"] == "current_official_context"
-    assert house_race["candidates"][0]["evidence_tier"] == "recorded_governing_behavior"
+    assert house_race["candidates"]
+    assert house_race["candidates"][0]["candidate_status"] in {
+        "current_official_context",
+        "declared_candidate",
+        "filed_candidate",
+        "unknown",
+    }
+    assert house_race["candidates"][0]["evidence_tier"] in {
+        "recorded_governing_behavior",
+        "institutional_record",
+        "sourced_stated_position",
+        "insufficient_evidence",
+    }

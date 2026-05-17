@@ -1,6 +1,6 @@
 from datetime import date
 
-from app.etl.federal_races import build_federal_races_from_fec_rows
+from app.etl.federal_races import RaceCandidate, _name_match_key, _with_legislator_match, build_federal_races_from_fec_rows
 
 
 def test_build_federal_races_from_fec_rows_groups_house_candidates() -> None:
@@ -68,3 +68,73 @@ def test_build_federal_races_from_fec_rows_groups_senate_statewide() -> None:
     assert races[0].district is None
     assert races[0].candidates[0].candidate_name == "Thom Tillis"
     assert races[0].candidates[0].source_url.endswith("/S6NC00001/")
+
+
+def test_name_match_key_allows_middle_initials_without_overmatching() -> None:
+    assert _name_match_key("Valerie P. Foushee") == _name_match_key("FOUSHEE, VALERIE")
+    assert _name_match_key("Thom Tillis") != _name_match_key("Thomas Massie")
+
+
+def test_incumbent_candidate_can_match_current_legislator_record() -> None:
+    race = build_federal_races_from_fec_rows(
+        [
+            {
+                "Cand_Name": "FOUSHEE, VALERIE",
+                "Cand_Id": "H2NC06114",
+                "Cand_Office": "H",
+                "Cand_Office_St": "NC",
+                "Cand_Office_Dist": "04",
+                "Cand_Party_Affiliation": "DEM",
+                "Cand_Incumbent_Challenger_Open_Seat": "I",
+            },
+        ],
+        cycle=2026,
+    )[0]
+    candidate = race.candidates[0]
+
+    matched = _with_legislator_match(
+        candidate,
+        race=race,
+        legislator_matches={("house", "NC", "04", "D", "valerie foushee"): 101},
+    )
+
+    assert matched.legislator_id == 101
+    assert matched.evidence_tier == "recorded_governing_behavior"
+    assert "Recorded voting behavior is available" in matched.evidence_note
+
+
+def test_non_incumbent_candidate_does_not_match_legislator_record() -> None:
+    candidate = RaceCandidate(
+        candidate_name="Valerie Foushee",
+        party="D",
+        incumbent=False,
+        candidate_status="declared_candidate",
+        evidence_tier="insufficient_evidence",
+        evidence_note="FEC candidate-summary record loaded.",
+        source_url="https://www.fec.gov/data/candidate/H2NC06114/",
+        source_type="fec_candidate_summary",
+        external_candidate_id="H2NC06114",
+    )
+    race = build_federal_races_from_fec_rows(
+        [
+            {
+                "Cand_Name": "FOUSHEE, VALERIE",
+                "Cand_Id": "H2NC06114",
+                "Cand_Office": "H",
+                "Cand_Office_St": "NC",
+                "Cand_Office_Dist": "04",
+                "Cand_Party_Affiliation": "DEM",
+                "Cand_Incumbent_Challenger_Open_Seat": "I",
+            },
+        ],
+        cycle=2026,
+    )[0]
+
+    matched = _with_legislator_match(
+        candidate,
+        race=race,
+        legislator_matches={("house", "NC", "04", "D", "valerie foushee"): 101},
+    )
+
+    assert matched.legislator_id is None
+    assert matched.evidence_tier == "insufficient_evidence"

@@ -568,6 +568,8 @@ Current importer behavior:
 - stores the FEC candidate id as `external_candidate_id` for idempotent re-imports
 - marks FEC-only candidate rows as `candidate_status = declared_candidate`
 - marks FEC-only candidate evidence as `insufficient_evidence`
+- links an incumbent candidate to an existing legislator only when office, state, district, party, incumbent flag, and candidate name match a current in-office legislator record
+- upgrades matched incumbent candidate evidence to `recorded_governing_behavior`
 
 Candidate issue alignment must not be computed from FEC candidacy rows. A candidate needs linked recorded governing behavior or separate sourced stated-position records before issue comparison can show more than insufficient evidence.
 

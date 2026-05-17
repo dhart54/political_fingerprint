@@ -365,7 +365,11 @@ Reported results:
   - applied migrations `0004_upcoming_races.sql` and `0005_race_candidate_source_keys.sql` to the configured database
   - persisted `504` races and `3973` candidate rows to Supabase
   - backend smoke for ZIP `27701` returned `data_source = database`, NC-04 House race with 5 candidates, and NC Senate race with 25 candidates
-  - next best task: add high-confidence candidate-to-legislator matching for incumbents so incumbent candidates can surface recorded voting behavior instead of only `insufficient_evidence`
+  - added high-confidence incumbent matching by office, state, district, party, incumbent flag, and name
+  - reran the FEC import after matching
+  - backend smoke for ZIP `27701` confirmed Valerie Foushee links to `leg_valerie_p_foushee` with `recorded_governing_behavior`, while challengers remain `insufficient_evidence`
+  - targeted backend tests passed: `tests\test_federal_races.py tests\test_api_positions.py` (`12 passed`)
+  - next best task: make the race card's recorded-behavior link actively open that candidate's existing profile/alignment view from the Upcoming Federal Races section
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -384,9 +388,8 @@ Work from `docs/product_v2_tasklist.md` in this order:
 2. Confirm Render and Vercel redeploy through the latest pushed commit.
 3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
 4. Start Phase 9 federal ballot proof:
-   - add high-confidence candidate-to-legislator matching for incumbents
-   - rerun FEC import after matching is implemented
-   - smoke-test ZIP `27701` to confirm Valerie Foushee displays linked recorded behavior while challengers remain insufficient/stated-position pending
+   - make linked incumbent race cards open the existing profile/alignment view
+   - then add candidate evidence endpoint or sourced stated-position schema for non-incumbents
 5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
 
 The detailed action plan is `docs/north_star_action_plan.md`.

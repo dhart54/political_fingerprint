@@ -142,13 +142,14 @@ Evidence ladder:
 - [x] Add backend endpoint for upcoming federal races by ZIP.
 - [x] Add frontend "Your Upcoming Federal Races" section after ZIP lookup.
 - [x] Add initial FEC candidate-summary importer for federal House/Senate race context.
+- [x] Add high-confidence incumbent candidate linkage to existing legislator voting records.
 - [ ] Label races as upcoming, active, or past based on election dates.
 - [ ] Keep race display neutral and non-ranked.
 
 ### Phase 10 - Candidate Evidence Tiers
 
 - [ ] Add candidate profile schema with evidence tier fields.
-- [ ] Support incumbent candidate linkage to existing legislator voting records.
+- [x] Support incumbent candidate linkage to existing legislator voting records.
 - [ ] Support prior-officeholder linkage when candidate has a past voting record.
 - [ ] Add sourced stated-position records for candidates without voting history.
 - [ ] Store source URL, source type, retrieved date, issue domain, statement text, and confidence label.

@@ -27,6 +27,7 @@ class RaceCandidate:
     source_url: str
     source_type: str
     external_candidate_id: str
+    legislator_id: int | None = None
 
 
 @dataclass(frozen=True)
@@ -133,12 +134,17 @@ def persist_federal_races(races: list[FederalRace]) -> FederalRacePersistResult:
     connection = get_connection()
     try:
         cursor = connection.cursor()
+        legislator_matches = _load_current_legislator_matches(cursor)
         candidates_seen = 0
         for race in races:
             race_id = _upsert_race(cursor, race)
             for candidate in race.candidates:
                 candidates_seen += 1
-                _upsert_candidate(cursor, race_id, candidate)
+                _upsert_candidate(
+                    cursor,
+                    race_id,
+                    _with_legislator_match(candidate, race=race, legislator_matches=legislator_matches),
+                )
         connection.commit()
         return FederalRacePersistResult(
             races_seen=len(races),
@@ -213,9 +219,10 @@ def _upsert_candidate(cursor: Any, race_id: int, candidate: RaceCandidate) -> No
             source_url,
             source_type,
             source_retrieved_at,
+            legislator_id,
             external_candidate_id
         )
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, NOW(), %s)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, NOW(), %s, %s)
         ON CONFLICT (race_id, source_type, external_candidate_id)
             WHERE external_candidate_id IS NOT NULL
         DO UPDATE SET
@@ -226,7 +233,8 @@ def _upsert_candidate(cursor: Any, race_id: int, candidate: RaceCandidate) -> No
             evidence_tier = EXCLUDED.evidence_tier,
             evidence_note = EXCLUDED.evidence_note,
             source_url = EXCLUDED.source_url,
-            source_retrieved_at = EXCLUDED.source_retrieved_at
+            source_retrieved_at = EXCLUDED.source_retrieved_at,
+            legislator_id = EXCLUDED.legislator_id
         """,
         (
             race_id,
@@ -238,8 +246,66 @@ def _upsert_candidate(cursor: Any, race_id: int, candidate: RaceCandidate) -> No
             candidate.evidence_note,
             candidate.source_url,
             candidate.source_type,
+            candidate.legislator_id,
             candidate.external_candidate_id,
         ),
+    )
+
+
+def _load_current_legislator_matches(cursor: Any) -> dict[tuple[str, str, str | None, str, str], int]:
+    cursor.execute(
+        """
+        SELECT id, name_display, chamber, state, district, party
+        FROM legislators
+        WHERE in_office = TRUE
+        """
+    )
+    matches = {}
+    for legislator_id, name_display, chamber, state, district, party in cursor.fetchall():
+        matches[
+            (
+                str(chamber),
+                str(state),
+                None if district is None else str(district),
+                str(party),
+                _name_match_key(str(name_display)),
+            )
+        ] = int(legislator_id)
+    return matches
+
+
+def _with_legislator_match(
+    candidate: RaceCandidate,
+    *,
+    race: FederalRace,
+    legislator_matches: dict[tuple[str, str, str | None, str, str], int],
+) -> RaceCandidate:
+    if not candidate.incumbent or candidate.party is None:
+        return candidate
+
+    legislator_id = legislator_matches.get(
+        (
+            race.chamber,
+            race.state,
+            race.district,
+            candidate.party,
+            _name_match_key(candidate.candidate_name),
+        )
+    )
+    if legislator_id is None:
+        return candidate
+
+    return RaceCandidate(
+        candidate_name=candidate.candidate_name,
+        party=candidate.party,
+        incumbent=candidate.incumbent,
+        candidate_status=candidate.candidate_status,
+        evidence_tier="recorded_governing_behavior",
+        evidence_note="Matched to a current officeholder record by office, party, and candidate name. Recorded voting behavior is available.",
+        source_url=candidate.source_url,
+        source_type=candidate.source_type,
+        external_candidate_id=candidate.external_candidate_id,
+        legislator_id=legislator_id,
     )
 
 
@@ -302,6 +368,20 @@ def _format_candidate_name(value: str) -> str:
         return cleaned.title()
     last, rest = [part.strip() for part in cleaned.split(",", 1)]
     return f"{rest.title()} {last.title()}".strip()
+
+
+def _name_match_key(value: str) -> str:
+    if "," in value:
+        last, rest = [part.strip() for part in value.split(",", 1)]
+        value = f"{rest} {last}".strip()
+    parts = [
+        part.strip(" .,'\"").lower()
+        for part in value.replace("-", " ").split()
+        if part.strip(" .,'\"")
+    ]
+    if len(parts) < 2:
+        return " ".join(parts)
+    return f"{parts[0]} {parts[-1]}"
 
 
 def _candidate_source_url(candidate_id: str) -> str:
