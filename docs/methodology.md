@@ -599,6 +599,14 @@ Rules:
 
 The candidate evidence endpoint returns stored source records only. It does not infer issue positions from FEC candidacy rows and does not generate summaries at request time.
 
+Initial reviewed seed:
+
+- Nida Allam, FEC candidate id `H2NC06098`
+- source: Justice Democrats candidate profile, retrieved May 17, 2026
+- evidence tier: `institutional_record`
+- issue domains: `ECONOMY_TAXES`, `EDUCATION_WORKFORCE`, `HEALTH_SOCIAL`
+- confidence: `medium`
+
 ## Starter Real-Data Run
 
 The repository now includes a convenience starter script in `scripts/run_real_data_starter.py`.

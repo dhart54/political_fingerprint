@@ -146,6 +146,7 @@ Evidence ladder:
 - [x] Let linked incumbent race cards open the existing voting-record profile.
 - [x] Add compact linked-incumbent voting summaries to race cards.
 - [x] Add candidate evidence schema and endpoint foundation for non-incumbents.
+- [x] Add first reviewed candidate evidence seed for one NC-04 challenger.
 - [ ] Label races as upcoming, active, or past based on election dates.
 - [ ] Keep race display neutral and non-ranked.
 
@@ -155,6 +156,7 @@ Evidence ladder:
 - [x] Support incumbent candidate linkage to existing legislator voting records.
 - [ ] Support prior-officeholder linkage when candidate has a past voting record.
 - [ ] Add sourced stated-position records for candidates without voting history.
+- [x] Add reviewed institutional-record seed for one candidate without a federal voting history.
 - [ ] Store source URL, source type, retrieved date, issue domain, statement text, and confidence label.
 - [x] Add candidate evidence endpoint.
 - [ ] Add tests that stated positions are marked lower confidence than recorded votes.

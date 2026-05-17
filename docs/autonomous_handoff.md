@@ -385,7 +385,12 @@ Reported results:
   - backend smoke for ZIP `27701` confirmed an NC-04 challenger returns an empty candidate-evidence payload instead of an error
   - targeted backend tests passed: `tests\test_api_positions.py tests\test_migrations.py` (`18 passed`)
   - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
-  - next best task: add the first small sourced-position seed for one NC-04 challenger
+  - added candidate evidence importer `backend/app/etl/candidate_evidence.py`
+  - added reviewed seed `docs/candidate_evidence/nc04_nida_allam_seed.json`
+  - imported 3 Nida Allam institutional-record rows to Supabase from the Justice Democrats candidate profile source
+  - backend smoke for ZIP `27701` confirmed Nida Allam now has 3 candidate evidence records across 3 issue areas
+  - targeted backend tests passed: `tests\test_candidate_evidence.py tests\test_api_positions.py` (`13 passed`)
+  - next best task: make candidate evidence rows expandable/clickable in the frontend instead of only showing counts
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -405,7 +410,7 @@ Work from `docs/product_v2_tasklist.md` in this order:
 3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
 4. Start Phase 9 federal ballot proof:
    - manually verify linked incumbent race cards show compact voting summaries and open the existing profile/alignment view
-   - add the first small sourced-position seed for one NC-04 challenger
+   - make candidate evidence rows expandable/clickable in the frontend instead of only showing counts
 5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
