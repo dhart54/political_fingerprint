@@ -369,7 +369,10 @@ Reported results:
   - reran the FEC import after matching
   - backend smoke for ZIP `27701` confirmed Valerie Foushee links to `leg_valerie_p_foushee` with `recorded_governing_behavior`, while challengers remain `insufficient_evidence`
   - targeted backend tests passed: `tests\test_federal_races.py tests\test_api_positions.py` (`12 passed`)
-  - next best task: make the race card's recorded-behavior link actively open that candidate's existing profile/alignment view from the Upcoming Federal Races section
+  - frontend race cards now show an `Open Voting Record` button for linked incumbent candidates and use the existing selected-legislator profile path
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - in-app browser automation was blocked by `net::ERR_BLOCKED_BY_CLIENT` during local visual verification
+  - next best task: verify the new race-card button manually in the visible browser, then add candidate evidence endpoint or sourced stated-position schema for non-incumbents
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -388,7 +391,7 @@ Work from `docs/product_v2_tasklist.md` in this order:
 2. Confirm Render and Vercel redeploy through the latest pushed commit.
 3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
 4. Start Phase 9 federal ballot proof:
-   - make linked incumbent race cards open the existing profile/alignment view
+   - manually verify linked incumbent race cards open the existing profile/alignment view
    - then add candidate evidence endpoint or sourced stated-position schema for non-incumbents
 5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
 

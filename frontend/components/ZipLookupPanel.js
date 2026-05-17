@@ -301,7 +301,10 @@ export default function ZipLookupPanel({
             </div>
           </div>
 
-          <UpcomingRacePanel raceState={raceState} />
+          <UpcomingRacePanel
+            onSelectLegislator={onSelectLegislator}
+            raceState={raceState}
+          />
         </div>
       ) : null}
 
@@ -336,7 +339,7 @@ export default function ZipLookupPanel({
   );
 }
 
-function UpcomingRacePanel({ raceState }) {
+function UpcomingRacePanel({ onSelectLegislator, raceState }) {
   if (raceState.status === "idle") {
     return null;
   }
@@ -397,7 +400,11 @@ function UpcomingRacePanel({ raceState }) {
               <div className="mt-4 grid gap-2">
                 {(race.candidates || []).length ? (
                   race.candidates.map((candidate) => (
-                    <RaceCandidateCard candidate={candidate} key={candidate.id} />
+                    <RaceCandidateCard
+                      candidate={candidate}
+                      key={candidate.id}
+                      onSelectLegislator={onSelectLegislator}
+                    />
                   ))
                 ) : (
                   <p className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
@@ -413,7 +420,9 @@ function UpcomingRacePanel({ raceState }) {
   );
 }
 
-function RaceCandidateCard({ candidate }) {
+function RaceCandidateCard({ candidate, onSelectLegislator }) {
+  const linkedLegislator = candidate.linked_legislator;
+
   return (
     <div className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -425,10 +434,14 @@ function RaceCandidateCard({ candidate }) {
       <p className="mt-2 text-sm leading-6 text-stone-700">
         {candidate.evidence_note || "Evidence details are not loaded yet."}
       </p>
-      {candidate.linked_legislator ? (
-        <p className="mt-2 text-xs uppercase tracking-[0.16em] text-cyan-800">
-          Recorded-vote profile available below
-        </p>
+      {linkedLegislator ? (
+        <button
+          className="mt-3 rounded-full border border-cyan-800 bg-white px-3 py-2 text-xs uppercase tracking-[0.16em] text-cyan-900 transition hover:bg-cyan-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
+          onClick={() => onSelectLegislator?.(linkedLegislator)}
+          type="button"
+        >
+          Open Voting Record
+        </button>
       ) : null}
     </div>
   );
