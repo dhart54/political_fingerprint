@@ -437,7 +437,20 @@ Reported results:
     - no stale `__webpack_modules__[moduleId] is not a function` overlay
     - Economy/Taxes evidence shows the new `budget blueprint` wording and `What it could change`
     - old repeated `This concurrent resolution establishes...` paragraph is gone from those budget rows
-  - next best task: apply this punchier interpretation standard to the next largest high-impact ZIP `27701` interpretation gap, likely Thom Tillis/Ted Budd shared Senate records or Valerie Foushee's next largest issue domain
+- Vote interpretation batch 005 checkpoint:
+  - identified the largest remaining shared ZIP `27701` Senate gap: Thom Tillis and Ted Budd each had 4 `NATIONAL_SECURITY_FOREIGN` eligible votes with 0 interpretations
+  - fetched Congress.gov enrichment for `119:sjres:54`, `119:sjres:53`, `119:sjres:26`, and `119:sjres:33`
+  - exported `docs/interpretation_batches/batch_005_nc_senate_national_security_packets.json`
+  - drafted/imported `docs/interpretation_batches/batch_005_nc_senate_national_security_interpretations.json`
+  - interpreted all 4 shared Senate rows as medium-confidence procedural votes on motions to discharge sale-disapproval resolutions:
+    - UAE proposed foreign military sale
+    - Qatar proposed foreign military sale
+    - two Israel proposed foreign military sale resolutions
+  - key interpretation rule: these were not final votes blocking or approving the sales; a Yea would have advanced a resolution to block the sale, while a Nay opposed advancing that disapproval resolution through the motion
+  - post-import coverage for both `leg_thom_tillis` and `leg_ted_budd` `NATIONAL_SECURITY_FOREIGN`: 4 eligible, 4 interpreted, 0 missing
+  - API smoke confirmed both senators now return interpreted national-security evidence rows with the punchier procedural-sale-disapproval read
+  - targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+  - next best task: find the next largest useful ZIP `27701` interpretation gap after Senate national security, likely improving issue pattern quality for Valerie Foushee's non-defense domains or shared Senate infrastructure rows
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -455,7 +468,7 @@ Work from `docs/product_v2_tasklist.md` in this order:
 1. Confirm Render and Vercel redeploy through the latest pushed commit.
 2. Smoke-test deployed evidence rows and pattern cards for ZIP `27701`.
 3. Continue expanding manual interpretations for high-visibility federal/starter issue records:
-   - next interpretation priority: use the punchier `what this was / what changed / vote meaning` standard on the largest remaining ZIP `27701` gap, likely Thom Tillis/Ted Budd shared Senate records or Valerie Foushee's next largest issue domain.
+   - next interpretation priority: use the punchier `what this was / what changed / vote meaning` standard on the next largest ZIP `27701` gap after Senate national security, likely Valerie Foushee's non-defense domains or shared Senate infrastructure rows.
 4. Continue Phase 9/10 ballot proof after the next interpretation checkpoint:
    - add another reviewed candidate seed
    - add tests that stated positions remain lower confidence than recorded votes

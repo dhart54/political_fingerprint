@@ -124,6 +124,7 @@ Current next build target:
 - [x] Add second reviewed interpretation batch for Valerie Foushee national-security/defense votes.
 - [x] Complete remaining Valerie Foushee national-security/defense review pass with explicit ambiguity and insufficient-evidence records.
 - [x] Punch up budget-resolution interpretations so evidence rows explain practical process effects, not just formal vote labels.
+- [x] Add shared NC Senate national-security interpretations for foreign-military-sale disapproval motions.
 
 ## Next Lens - Ballot-Aware Candidate Comparison
 
