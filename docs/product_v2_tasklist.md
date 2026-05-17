@@ -147,6 +147,7 @@ Evidence ladder:
 - [x] Add compact linked-incumbent voting summaries to race cards.
 - [x] Add candidate evidence schema and endpoint foundation for non-incumbents.
 - [x] Add first reviewed candidate evidence seed for one NC-04 challenger.
+- [x] Make seeded candidate evidence expandable with source links in race cards.
 - [ ] Label races as upcoming, active, or past based on election dates.
 - [ ] Keep race display neutral and non-ranked.
 

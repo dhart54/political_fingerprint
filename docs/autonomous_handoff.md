@@ -390,7 +390,10 @@ Reported results:
   - imported 3 Nida Allam institutional-record rows to Supabase from the Justice Democrats candidate profile source
   - backend smoke for ZIP `27701` confirmed Nida Allam now has 3 candidate evidence records across 3 issue areas
   - targeted backend tests passed: `tests\test_candidate_evidence.py tests\test_api_positions.py` (`13 passed`)
-  - next best task: make candidate evidence rows expandable/clickable in the frontend instead of only showing counts
+  - frontend race cards now include `View Evidence` / `Hide Evidence` for candidates with sourced rows
+  - expanded candidate evidence rows show evidence tier, issue label, confidence, neutral summary, and source link
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - next best task: visually verify the expanded Nida Allam evidence row in the browser, then add race status/date labeling polish or another reviewed candidate seed
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -410,7 +413,8 @@ Work from `docs/product_v2_tasklist.md` in this order:
 3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
 4. Start Phase 9 federal ballot proof:
    - manually verify linked incumbent race cards show compact voting summaries and open the existing profile/alignment view
-   - make candidate evidence rows expandable/clickable in the frontend instead of only showing counts
+   - visually verify expandable candidate evidence rows in the frontend
+   - then add race status/date labeling polish or another reviewed candidate seed
 5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
 
 The detailed action plan is `docs/north_star_action_plan.md`.

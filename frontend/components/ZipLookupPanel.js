@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { fetchSupportedZips, fetchZipLookup, fetchZipRaces } from "../lib/api";
+import { fetchCandidateEvidence, fetchSupportedZips, fetchZipLookup, fetchZipRaces } from "../lib/api";
 
 const DEFAULT_ZIP = "27701";
 
@@ -424,6 +424,42 @@ function RaceCandidateCard({ candidate, onSelectLegislator }) {
   const linkedLegislator = candidate.linked_legislator;
   const votingSummary = candidate.voting_summary;
   const candidateEvidenceSummary = candidate.candidate_evidence_summary;
+  const [evidenceState, setEvidenceState] = useState({
+    status: "idle",
+    payload: null,
+    error: null,
+  });
+
+  async function toggleCandidateEvidence() {
+    if (evidenceState.status === "ready") {
+      setEvidenceState({
+        status: "idle",
+        payload: null,
+        error: null,
+      });
+      return;
+    }
+
+    try {
+      setEvidenceState({
+        status: "loading",
+        payload: null,
+        error: null,
+      });
+      const payload = await fetchCandidateEvidence({ candidateId: candidate.id });
+      setEvidenceState({
+        status: "ready",
+        payload,
+        error: null,
+      });
+    } catch (error) {
+      setEvidenceState({
+        status: "error",
+        payload: null,
+        error: "Candidate evidence could not be loaded.",
+      });
+    }
+  }
 
   return (
     <div className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3">
@@ -474,9 +510,19 @@ function RaceCandidateCard({ candidate, onSelectLegislator }) {
             Candidate Evidence
           </p>
           {candidateEvidenceSummary?.total_count > 0 ? (
-            <p className="mt-2 text-sm leading-6 text-stone-700">
-              {formatNumber(candidateEvidenceSummary.total_count)} sourced evidence record{candidateEvidenceSummary.total_count === 1 ? "" : "s"} loaded across {formatNumber(candidateEvidenceSummary.issue_domain_count)} issue area{candidateEvidenceSummary.issue_domain_count === 1 ? "" : "s"}.
-            </p>
+            <>
+              <p className="mt-2 text-sm leading-6 text-stone-700">
+                {formatNumber(candidateEvidenceSummary.total_count)} sourced evidence record{candidateEvidenceSummary.total_count === 1 ? "" : "s"} loaded across {formatNumber(candidateEvidenceSummary.issue_domain_count)} issue area{candidateEvidenceSummary.issue_domain_count === 1 ? "" : "s"}.
+              </p>
+              <button
+                className="mt-3 rounded-full border border-stone-300 bg-stone-50 px-3 py-2 text-xs uppercase tracking-[0.16em] text-stone-800 transition hover:border-cyan-800 hover:bg-cyan-50 hover:text-cyan-950 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
+                onClick={toggleCandidateEvidence}
+                type="button"
+              >
+                {evidenceState.status === "ready" ? "Hide Evidence" : "View Evidence"}
+              </button>
+              <CandidateEvidenceDetails evidenceState={evidenceState} />
+            </>
           ) : (
             <p className="mt-2 text-sm leading-6 text-stone-700">
               No recorded governing behavior or sourced issue-position evidence is loaded yet.
@@ -493,6 +539,68 @@ function RaceCandidateCard({ candidate, onSelectLegislator }) {
           Open Voting Record
         </button>
       ) : null}
+    </div>
+  );
+}
+
+function CandidateEvidenceDetails({ evidenceState }) {
+  if (evidenceState.status === "idle") {
+    return null;
+  }
+  if (evidenceState.status === "loading") {
+    return (
+      <p className="mt-3 text-sm leading-6 text-stone-600">
+        Loading sourced evidence...
+      </p>
+    );
+  }
+  if (evidenceState.status === "error") {
+    return (
+      <p className="mt-3 rounded-2xl border border-amber-200 bg-amber-50 px-3 py-3 text-sm leading-6 text-amber-900">
+        {evidenceState.error}
+      </p>
+    );
+  }
+
+  const evidenceRows = evidenceState.payload?.evidence || [];
+  if (!evidenceRows.length) {
+    return (
+      <p className="mt-3 rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
+        No candidate evidence rows are loaded for this candidate yet.
+      </p>
+    );
+  }
+
+  return (
+    <div className="mt-3 grid gap-2">
+      {evidenceRows.map((row) => (
+        <article className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3" key={row.id}>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded-full bg-white px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-stone-700">
+              {formatEvidenceTier(row.evidence_tier)}
+            </span>
+            {row.issue_domain ? (
+              <span className="rounded-full bg-cyan-50 px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-cyan-950">
+                {formatDomainLabel(row.issue_domain)}
+              </span>
+            ) : null}
+            <span className="rounded-full bg-white px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-stone-600">
+              {row.confidence} confidence
+            </span>
+          </div>
+          <p className="mt-2 text-sm leading-6 text-stone-800">
+            {row.neutral_summary}
+          </p>
+          <a
+            className="mt-2 inline-flex text-xs uppercase tracking-[0.16em] text-cyan-900 underline-offset-4 hover:underline"
+            href={row.source_url}
+            rel="noreferrer"
+            target="_blank"
+          >
+            Open Source
+          </a>
+        </article>
+      ))}
     </div>
   );
 }
