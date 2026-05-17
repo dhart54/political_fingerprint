@@ -144,6 +144,7 @@ Evidence ladder:
 - [x] Add initial FEC candidate-summary importer for federal House/Senate race context.
 - [x] Add high-confidence incumbent candidate linkage to existing legislator voting records.
 - [x] Let linked incumbent race cards open the existing voting-record profile.
+- [x] Add compact linked-incumbent voting summaries to race cards.
 - [ ] Label races as upcoming, active, or past based on election dates.
 - [ ] Keep race display neutral and non-ranked.
 

@@ -422,6 +422,7 @@ function UpcomingRacePanel({ onSelectLegislator, raceState }) {
 
 function RaceCandidateCard({ candidate, onSelectLegislator }) {
   const linkedLegislator = candidate.linked_legislator;
+  const votingSummary = candidate.voting_summary;
 
   return (
     <div className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3">
@@ -434,6 +435,38 @@ function RaceCandidateCard({ candidate, onSelectLegislator }) {
       <p className="mt-2 text-sm leading-6 text-stone-700">
         {candidate.evidence_note || "Evidence details are not loaded yet."}
       </p>
+      {votingSummary ? (
+        <div className="mt-3 rounded-2xl border border-cyan-900/10 bg-white px-3 py-3">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-cyan-900">
+            Recorded Votes
+          </p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            <MiniMetric
+              label="Eligible votes"
+              value={formatNumber(votingSummary.eligible_vote_count)}
+            />
+            <MiniMetric
+              label="Interpreted"
+              value={formatNumber(votingSummary.interpreted_vote_count)}
+            />
+          </div>
+          {votingSummary.top_domains?.length ? (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {votingSummary.top_domains.map((domain) => (
+                <span
+                  className="rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-cyan-950"
+                  key={domain.domain}
+                >
+                  {formatDomainLabel(domain.domain)} - {domain.vote_count}
+                </span>
+              ))}
+            </div>
+          ) : null}
+          <p className="mt-3 text-xs leading-5 text-stone-500">
+            Window {formatDate(votingSummary.window_start)} to {formatDate(votingSummary.window_end)}
+          </p>
+        </div>
+      ) : null}
       {linkedLegislator ? (
         <button
           className="mt-3 rounded-full border border-cyan-800 bg-white px-3 py-2 text-xs uppercase tracking-[0.16em] text-cyan-900 transition hover:bg-cyan-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
@@ -443,6 +476,15 @@ function RaceCandidateCard({ candidate, onSelectLegislator }) {
           Open Voting Record
         </button>
       ) : null}
+    </div>
+  );
+}
+
+function MiniMetric({ label, value }) {
+  return (
+    <div>
+      <p className="font-serif text-[1.45rem] leading-none text-stone-950">{value}</p>
+      <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-stone-500">{label}</p>
     </div>
   );
 }
@@ -542,6 +584,21 @@ function formatEvidenceTier(tier) {
     return "Stated position";
   }
   return "Insufficient evidence";
+}
+
+function formatDomainLabel(domain) {
+  return String(domain || "")
+    .toLowerCase()
+    .split("_")
+    .map((segment) => segment[0]?.toUpperCase() + segment.slice(1))
+    .join(" ");
+}
+
+function formatNumber(value) {
+  if (typeof value !== "number") {
+    return "0";
+  }
+  return new Intl.NumberFormat("en-US").format(value);
 }
 
 function formatDate(value) {

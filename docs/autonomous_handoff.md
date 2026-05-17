@@ -372,7 +372,11 @@ Reported results:
   - frontend race cards now show an `Open Voting Record` button for linked incumbent candidates and use the existing selected-legislator profile path
   - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
   - in-app browser automation was blocked by `net::ERR_BLOCKED_BY_CLIENT` during local visual verification
-  - next best task: verify the new race-card button manually in the visible browser, then add candidate evidence endpoint or sourced stated-position schema for non-incumbents
+  - linked incumbent race cards now include compact voting summaries from precomputed rows: eligible vote count, interpreted vote count, top issue domains, and data window
+  - backend smoke for ZIP `27701` confirmed Valerie Foushee summary: 58 eligible votes, 20 interpreted votes, top domains `NATIONAL_SECURITY_FOREIGN` and `JUSTICE_PUBLIC_SAFETY`
+  - targeted backend tests passed: `tests\test_api_positions.py` (`9 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - next best task: verify the new race-card summary visually, then add candidate evidence endpoint or sourced stated-position schema for non-incumbents
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -391,7 +395,7 @@ Work from `docs/product_v2_tasklist.md` in this order:
 2. Confirm Render and Vercel redeploy through the latest pushed commit.
 3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
 4. Start Phase 9 federal ballot proof:
-   - manually verify linked incumbent race cards open the existing profile/alignment view
+   - manually verify linked incumbent race cards show compact voting summaries and open the existing profile/alignment view
    - then add candidate evidence endpoint or sourced stated-position schema for non-incumbents
 5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
 

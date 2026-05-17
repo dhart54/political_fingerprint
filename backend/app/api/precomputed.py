@@ -1360,6 +1360,7 @@ def _serialize_zip_row(row: dict[str, Any]) -> dict[str, object]:
 
 def _serialize_race_candidate(row: dict[str, Any]) -> dict[str, object]:
     linked_legislator = None
+    voting_summary = None
     if row.get("legislator_db_id") is not None:
         linked_legislator = _serialize_legislator(
             {
@@ -1372,6 +1373,7 @@ def _serialize_race_candidate(row: dict[str, Any]) -> dict[str, object]:
                 "party": row["legislator_party"],
             }
         )
+        voting_summary = _build_candidate_voting_summary(legislator_db_id=int(row["legislator_db_id"]))
 
     return {
         "id": str(row["candidate_id"]),
@@ -1390,6 +1392,52 @@ def _serialize_race_candidate(row: dict[str, Any]) -> dict[str, object]:
         if row.get("external_candidate_id") is None
         else str(row["external_candidate_id"]),
         "linked_legislator": linked_legislator,
+        "voting_summary": voting_summary,
+    }
+
+
+def _build_candidate_voting_summary(*, legislator_db_id: int) -> dict[str, object] | None:
+    fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=legislator_db_id)
+    if fingerprint_rows is None or not fingerprint_rows:
+        return None
+
+    first_row = fingerprint_rows[0]
+    position_rows = _get_db_position_rows(
+        legislator_db_id=legislator_db_id,
+        window_start=str(first_row["window_start"]),
+        window_end=str(first_row["window_end"]),
+        classification_version=str(first_row["classification_version"]),
+    )
+    if position_rows is None:
+        position_rows = []
+
+    top_domains = [
+        {
+            "domain": str(row["domain"]),
+            "vote_count": int(row["vote_count"] or 0),
+            "vote_share": float(row["vote_share"] or 0.0),
+        }
+        for row in sorted(
+            fingerprint_rows,
+            key=lambda item: (-int(item["vote_count"] or 0), DOMAIN_ORDER.index(str(item["domain"]))),
+        )
+        if int(row["vote_count"] or 0) > 0
+    ][:2]
+
+    interpreted_vote_count = sum(
+        int(row.get("interpreted_support_count", 0) or 0)
+        + int(row.get("interpreted_oppose_count", 0) or 0)
+        + int(row.get("interpreted_other_count", 0) or 0)
+        for row in position_rows
+    )
+
+    return {
+        "window_start": str(first_row["window_start"]),
+        "window_end": str(first_row["window_end"]),
+        "classification_version": str(first_row["classification_version"]),
+        "eligible_vote_count": int(first_row["total_votes"] or 0),
+        "interpreted_vote_count": interpreted_vote_count,
+        "top_domains": top_domains,
     }
 
 
