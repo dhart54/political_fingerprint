@@ -69,6 +69,28 @@ For `interpreted` records, fill:
 
 Use `insufficient_evidence` when the official text does not clearly say what the vote would change.
 
+## Gold Slice Standard
+
+Before scaling a new issue area, create one gold slice for one official and one issue domain. A good slice should let a user understand the record without already knowing congressional procedure.
+
+For each interpreted vote:
+
+- `plain_english_summary` should answer: what was this vote, in one or two plain sentences?
+- `policy_effect` should answer: what would change if this action succeeded?
+- `yea_meaning` and `nay_meaning` should describe the side of the action, not just say "supported the bill" or "opposed the bill" when a more concrete action is source-grounded.
+- `issue_facet` should name the practical issue within the broader domain, such as `small_business_loan_eligibility`, `temporary_government_funding`, or `budget_reconciliation_and_debt_limit`.
+- `interpretation_reason` should explain why the source is enough, or why it is not enough.
+
+For procedural votes, do not collapse procedure into final policy. Say exactly what procedural step was being voted on. If the packet does not include the exact amendment, conference instruction, rule text, or motion effect, use `ambiguous` or `insufficient_evidence`.
+
+For a legislator's recorded vote, the frontend should read the stored yea/nay meaning back in the context of their actual position. A `not_voting` record must be shown as a non-position, even when the underlying roll call itself is interpreted.
+
+The first gold slice is Valerie Foushee / `ECONOMY_TAXES`, stored in:
+
+```text
+docs/interpretation_batches/batch_006_valerie_economy_gold_interpretations.json
+```
+
 ## Import Reviewed JSON
 
 The import file should contain:

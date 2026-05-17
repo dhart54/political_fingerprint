@@ -513,13 +513,24 @@ function buildInterpretedVoteRead(row) {
   }
 
   const position = formatVotePosition(row.position);
+  if (row.position === "not_voting") {
+    return "Not voting on this roll call, so this record does not show a yea or nay position.";
+  }
+
   if (row.position === row.support_position) {
-    return `${position}, matching the side that supported the action described here.`;
+    return `${position}: ${formatRecordedSideMeaning(row.position === "yea" ? row.yea_meaning : row.nay_meaning)}`;
   }
   if (row.position === row.oppose_position) {
-    return `${position}, matching the side that opposed the action described here.`;
+    return `${position}: ${formatRecordedSideMeaning(row.position === "yea" ? row.yea_meaning : row.nay_meaning)}`;
   }
   return `${position}.`;
+}
+
+function formatRecordedSideMeaning(value) {
+  return String(value || "Recorded position did not map cleanly to the stored yea/nay meaning.")
+    .replace(/^A Yea vote /i, "")
+    .replace(/^A Nay vote /i, "")
+    .trim();
 }
 
 function buildUsefulInterpretationText(value) {

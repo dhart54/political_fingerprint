@@ -450,7 +450,28 @@ Reported results:
   - post-import coverage for both `leg_thom_tillis` and `leg_ted_budd` `NATIONAL_SECURITY_FOREIGN`: 4 eligible, 4 interpreted, 0 missing
   - API smoke confirmed both senators now return interpreted national-security evidence rows with the punchier procedural-sale-disapproval read
   - targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
-  - next best task: find the next largest useful ZIP `27701` interpretation gap after Senate national security, likely improving issue pattern quality for Valerie Foushee's non-defense domains or shared Senate infrastructure rows
+- Valerie Economy/Taxes gold-slice checkpoint:
+  - user narrowed the interpretation goal to one official and one issue area before scaling
+  - selected Valerie Foushee / `ECONOMY_TAXES` because it is visible in ZIP `27701` and exposed the generic-interpretation problem
+  - exported `docs/interpretation_batches/batch_006_valerie_economy_gold_packets.json`
+  - drafted/imported `docs/interpretation_batches/batch_006_valerie_economy_gold_interpretations.json`
+  - updated all 9 Valerie Economy/Taxes evidence rows:
+    - budget reconciliation and debt-limit blueprint rows
+    - SBA small-business loan eligibility
+    - SBA regulatory-budget limits
+    - short-term government funding and shutdown funding rows
+    - military construction and VA appropriations
+    - ambiguous amendment/conference-instruction rows left non-interpreted with clear uncertainty notes
+  - frontend `Their vote` now reads the actual stored yea/nay meaning for the legislator's recorded position, and `not_voting` is shown as a non-position
+  - browser verification passed locally:
+    - SBA loan row shows `What this vote was`, `Their vote`, and `What it could change`
+    - shutdown/funding rows render practical effect language
+    - amendment/conference rows render evidence-boundary notes
+    - old generic `This was a vote on passing the bill...` text is gone from the gold slice
+  - targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - methodology and manual workflow docs now define the gold-slice standard
+  - next best task: either review this gold slice with the user visually, or replicate the same standard to Valerie's next visible issue domain
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -468,7 +489,7 @@ Work from `docs/product_v2_tasklist.md` in this order:
 1. Confirm Render and Vercel redeploy through the latest pushed commit.
 2. Smoke-test deployed evidence rows and pattern cards for ZIP `27701`.
 3. Continue expanding manual interpretations for high-visibility federal/starter issue records:
-   - next interpretation priority: use the punchier `what this was / what changed / vote meaning` standard on the next largest ZIP `27701` gap after Senate national security, likely Valerie Foushee's non-defense domains or shared Senate infrastructure rows.
+   - next interpretation priority: review the Valerie Foushee / `ECONOMY_TAXES` gold slice in the browser, then replicate the same standard to the next visible issue domain.
 4. Continue Phase 9/10 ballot proof after the next interpretation checkpoint:
    - add another reviewed candidate seed
    - add tests that stated positions remain lower confidence than recorded votes

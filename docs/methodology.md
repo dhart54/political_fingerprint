@@ -181,6 +181,8 @@ These rules are intentionally conservative. They prioritize not counting a vote 
 
 Manual interpretation batches use `docs/manual_interpretation_workflow.md`. They are designed for the first "DC-speak breakdown" layer without an ongoing API dependency. The importer rejects invalid status values, invalid confidence labels, unsupported support/oppose positions, missing source basis for interpreted records, and persuasive or judgmental language.
 
+Manual interpretation quality is developed through gold slices: one official, one issue domain, reviewed end to end before scaling. The gold-slice standard requires each interpreted vote to explain the practical action, the likely policy or process effect if the action succeeded, what yea and nay meant, and the evidence boundary. Procedural votes must stay procedural; the product must not translate a motion, amendment, rule, or conference instruction into a final policy effect unless the official packet supports that translation.
+
 ## User Alignment Rules
 
 User alignment compares explicit user-selected preferences to interpreted recorded votes.
