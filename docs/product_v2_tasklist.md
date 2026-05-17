@@ -145,17 +145,18 @@ Evidence ladder:
 - [x] Add high-confidence incumbent candidate linkage to existing legislator voting records.
 - [x] Let linked incumbent race cards open the existing voting-record profile.
 - [x] Add compact linked-incumbent voting summaries to race cards.
+- [x] Add candidate evidence schema and endpoint foundation for non-incumbents.
 - [ ] Label races as upcoming, active, or past based on election dates.
 - [ ] Keep race display neutral and non-ranked.
 
 ### Phase 10 - Candidate Evidence Tiers
 
-- [ ] Add candidate profile schema with evidence tier fields.
+- [x] Add candidate profile schema with evidence tier fields.
 - [x] Support incumbent candidate linkage to existing legislator voting records.
 - [ ] Support prior-officeholder linkage when candidate has a past voting record.
 - [ ] Add sourced stated-position records for candidates without voting history.
 - [ ] Store source URL, source type, retrieved date, issue domain, statement text, and confidence label.
-- [ ] Add candidate evidence endpoint.
+- [x] Add candidate evidence endpoint.
 - [ ] Add tests that stated positions are marked lower confidence than recorded votes.
 - [ ] Document stated-position methodology and forbidden persuasion language.
 

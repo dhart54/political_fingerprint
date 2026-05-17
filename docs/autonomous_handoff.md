@@ -376,7 +376,16 @@ Reported results:
   - backend smoke for ZIP `27701` confirmed Valerie Foushee summary: 58 eligible votes, 20 interpreted votes, top domains `NATIONAL_SECURITY_FOREIGN` and `JUSTICE_PUBLIC_SAFETY`
   - targeted backend tests passed: `tests\test_api_positions.py` (`9 passed`)
   - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
-  - next best task: verify the new race-card summary visually, then add candidate evidence endpoint or sourced stated-position schema for non-incumbents
+  - added candidate evidence foundation:
+    - migration `0006_candidate_evidence.sql`
+    - `GET /race-candidates/{candidate_id}/evidence`
+    - race-card candidate evidence summary/empty state for non-incumbents
+    - methodology note that stated positions stay separate from vote-based alignment
+  - applied migration `0006_candidate_evidence.sql` to Supabase
+  - backend smoke for ZIP `27701` confirmed an NC-04 challenger returns an empty candidate-evidence payload instead of an error
+  - targeted backend tests passed: `tests\test_api_positions.py tests\test_migrations.py` (`18 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - next best task: add the first small sourced-position seed for one NC-04 challenger
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -396,7 +405,7 @@ Work from `docs/product_v2_tasklist.md` in this order:
 3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
 4. Start Phase 9 federal ballot proof:
    - manually verify linked incumbent race cards show compact voting summaries and open the existing profile/alignment view
-   - then add candidate evidence endpoint or sourced stated-position schema for non-incumbents
+   - add the first small sourced-position seed for one NC-04 challenger
 5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
 
 The detailed action plan is `docs/north_star_action_plan.md`.

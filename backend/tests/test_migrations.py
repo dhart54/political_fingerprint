@@ -7,6 +7,7 @@ VOTE_INTERPRETATIONS_MIGRATION_PATH = MIGRATIONS_DIR / "0002_vote_interpretation
 VOTE_INTERPRETATION_DETAILS_MIGRATION_PATH = MIGRATIONS_DIR / "0003_vote_interpretation_details.sql"
 UPCOMING_RACES_MIGRATION_PATH = MIGRATIONS_DIR / "0004_upcoming_races.sql"
 RACE_CANDIDATE_SOURCE_KEYS_MIGRATION_PATH = MIGRATIONS_DIR / "0005_race_candidate_source_keys.sql"
+CANDIDATE_EVIDENCE_MIGRATION_PATH = MIGRATIONS_DIR / "0006_candidate_evidence.sql"
 
 
 def test_initial_migration_defines_required_enums_and_tables() -> None:
@@ -110,3 +111,18 @@ def test_race_candidate_source_keys_migration_supports_idempotent_imports() -> N
     assert "external_candidate_id text" in lowered
     assert "idx_race_candidates_external_source" in lowered
     assert "race_id, source_type, external_candidate_id" in lowered
+
+
+def test_candidate_evidence_migration_keeps_stated_positions_separate() -> None:
+    migration_sql = CANDIDATE_EVIDENCE_MIGRATION_PATH.read_text()
+    lowered = migration_sql.lower()
+
+    assert "create table if not exists candidate_evidence" in lowered
+    assert "race_candidate_id bigint not null references race_candidates(id)" in lowered
+    assert "sourced_stated_position" in lowered
+    assert "institutional_record" in lowered
+    assert "issue_domain issue_domain" in lowered
+    assert "neutral_summary text not null" in lowered
+    assert "confidence text not null check" in lowered
+    assert "source_url text not null" in lowered
+    assert "idx_candidate_evidence_candidate" in lowered

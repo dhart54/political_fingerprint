@@ -1,7 +1,7 @@
 import pytest
 from fastapi import HTTPException
 
-from app.api.lookup import lookup_zip_races
+from app.api.lookup import lookup_candidate_evidence, lookup_zip_races
 from app.api import precomputed
 from app.api.positions import get_legislator_position_evidence, get_legislator_positions
 from app.main import app
@@ -14,6 +14,7 @@ def test_app_registers_positions_route() -> None:
 
 def test_app_registers_zip_races_route() -> None:
     assert "/lookup/zip/{zip_code}/races" in {route.path for route in app.routes}
+    assert "/race-candidates/{candidate_id}/evidence" in {route.path for route in app.routes}
 
 
 def test_get_positions_endpoint_returns_domain_position_profile() -> None:
@@ -194,3 +195,59 @@ def test_candidate_serialization_leaves_unlinked_candidates_without_voting_summa
 
     assert candidate["linked_legislator"] is None
     assert candidate["voting_summary"] is None
+    assert candidate["candidate_evidence_summary"]["total_count"] == 0
+
+
+def test_candidate_evidence_endpoint_returns_stored_source_records(monkeypatch) -> None:
+    monkeypatch.setattr(
+        precomputed,
+        "_get_db_race_candidate",
+        lambda *, candidate_id: {"id": int(candidate_id), "candidate_name": "Casey Candidate"},
+    )
+    monkeypatch.setattr(
+        precomputed,
+        "_get_db_candidate_evidence_rows",
+        lambda *, candidate_id: [
+            {
+                "id": 99,
+                "evidence_tier": "sourced_stated_position",
+                "issue_domain": "HEALTH_SOCIAL",
+                "statement_text": "Campaign page says health care access is a priority.",
+                "neutral_summary": "Candidate lists health care access as a campaign issue.",
+                "confidence": "medium",
+                "source_url": "https://example.com/issues",
+                "source_type": "campaign_issue_page",
+                "source_retrieved_at": "2026-05-17 10:00:00+00",
+                "external_evidence_id": "casey-health",
+            }
+        ],
+    )
+
+    payload = lookup_candidate_evidence("123")
+
+    assert payload["candidate_id"] == "123"
+    assert payload["candidate_name"] == "Casey Candidate"
+    assert payload["evidence"] == [
+        {
+            "id": "99",
+            "evidence_tier": "sourced_stated_position",
+            "issue_domain": "HEALTH_SOCIAL",
+            "statement_text": "Campaign page says health care access is a priority.",
+            "neutral_summary": "Candidate lists health care access as a campaign issue.",
+            "confidence": "medium",
+            "source_url": "https://example.com/issues",
+            "source_type": "campaign_issue_page",
+            "source_retrieved_at": "2026-05-17 10:00:00+00",
+            "external_evidence_id": "casey-health",
+        }
+    ]
+
+
+def test_candidate_evidence_endpoint_rejects_unknown_candidate(monkeypatch) -> None:
+    monkeypatch.setattr(precomputed, "_get_db_candidate_evidence_rows", lambda *, candidate_id: [])
+    monkeypatch.setattr(precomputed, "_get_db_race_candidate", lambda *, candidate_id: None)
+
+    with pytest.raises(HTTPException) as exc_info:
+        lookup_candidate_evidence("123")
+
+    assert exc_info.value.status_code == 404

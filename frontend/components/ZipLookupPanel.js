@@ -423,6 +423,7 @@ function UpcomingRacePanel({ onSelectLegislator, raceState }) {
 function RaceCandidateCard({ candidate, onSelectLegislator }) {
   const linkedLegislator = candidate.linked_legislator;
   const votingSummary = candidate.voting_summary;
+  const candidateEvidenceSummary = candidate.candidate_evidence_summary;
 
   return (
     <div className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3">
@@ -465,6 +466,22 @@ function RaceCandidateCard({ candidate, onSelectLegislator }) {
           <p className="mt-3 text-xs leading-5 text-stone-500">
             Window {formatDate(votingSummary.window_start)} to {formatDate(votingSummary.window_end)}
           </p>
+        </div>
+      ) : null}
+      {!votingSummary ? (
+        <div className="mt-3 rounded-2xl border border-stone-200 bg-white px-3 py-3">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
+            Candidate Evidence
+          </p>
+          {candidateEvidenceSummary?.total_count > 0 ? (
+            <p className="mt-2 text-sm leading-6 text-stone-700">
+              {formatNumber(candidateEvidenceSummary.total_count)} sourced evidence record{candidateEvidenceSummary.total_count === 1 ? "" : "s"} loaded across {formatNumber(candidateEvidenceSummary.issue_domain_count)} issue area{candidateEvidenceSummary.issue_domain_count === 1 ? "" : "s"}.
+            </p>
+          ) : (
+            <p className="mt-2 text-sm leading-6 text-stone-700">
+              No recorded governing behavior or sourced issue-position evidence is loaded yet.
+            </p>
+          )}
         </div>
       ) : null}
       {linkedLegislator ? (

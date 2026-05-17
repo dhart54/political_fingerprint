@@ -578,6 +578,27 @@ Current CLI example:
 
 - `python -m app.etl.federal_races --fec-candidate-summary ./backend/data_sources/fec/candidate_summary_2026.csv --cycle 2026 --dry-run`
 
+## Candidate Evidence Records
+
+Candidate evidence records are the lower-confidence companion to recorded governing behavior.
+
+Stored candidate evidence may include:
+
+- institutional records
+- sourced stated positions
+- explicit insufficient-evidence records
+
+Rules:
+
+- candidate evidence is stored in `candidate_evidence`
+- each row must link to one `race_candidates` row
+- sourced stated positions must include a source URL
+- stated positions must remain separate from vote-based alignment math
+- candidate evidence may describe what a source says, but it must not tell users how to vote
+- missing candidate evidence should render as an intentional not-loaded state, not as a negative claim about the candidate
+
+The candidate evidence endpoint returns stored source records only. It does not infer issue positions from FEC candidacy rows and does not generate summaries at request time.
+
 ## Starter Real-Data Run
 
 The repository now includes a convenience starter script in `scripts/run_real_data_starter.py`.

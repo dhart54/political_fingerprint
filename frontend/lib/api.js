@@ -148,6 +148,18 @@ export async function fetchZipRaces({ zipCode }) {
   return response.json();
 }
 
+export async function fetchCandidateEvidence({ candidateId }) {
+  const response = await fetch(`${API_BASE_URL}/race-candidates/${candidateId}/evidence`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Candidate evidence request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchSupportedZips() {
   const response = await fetch(`${API_BASE_URL}/lookup/zips`, {
     cache: "no-store",

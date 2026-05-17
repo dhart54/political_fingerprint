@@ -255,6 +255,22 @@ def get_zip_race_response(*, zip_code: str) -> dict[str, object] | None:
     )
 
 
+def get_candidate_evidence_response(*, candidate_id: str) -> dict[str, object] | None:
+    rows = _get_db_candidate_evidence_rows(candidate_id=candidate_id)
+    if rows is None:
+        return None
+
+    candidate_row = _get_db_race_candidate(candidate_id=candidate_id)
+    if candidate_row is None:
+        return None
+
+    return {
+        "candidate_id": candidate_id,
+        "candidate_name": str(candidate_row["candidate_name"]),
+        "evidence": [_serialize_candidate_evidence_row(row) for row in rows],
+    }
+
+
 def get_supported_zip_responses(*, limit: int = 12) -> dict[str, object]:
     db_rows = _get_db_supported_zip_rows(limit=limit)
     if db_rows is not None:
@@ -1232,6 +1248,50 @@ def _get_db_upcoming_race_rows(*, state: str, district: str) -> list[dict[str, A
     )
 
 
+def _get_db_race_candidate(*, candidate_id: str) -> dict[str, Any] | None:
+    if not candidate_id.isdigit():
+        return None
+    return _query_one_dict(
+        """
+        SELECT id, candidate_name
+        FROM race_candidates
+        WHERE id = %s
+        """,
+        (int(candidate_id),),
+    )
+
+
+def _get_db_candidate_evidence_rows(*, candidate_id: str) -> list[dict[str, Any]] | None:
+    if not candidate_id.isdigit():
+        return None
+    return _query_all_dicts(
+        """
+        SELECT
+            id,
+            evidence_tier,
+            issue_domain,
+            statement_text,
+            neutral_summary,
+            confidence,
+            source_url,
+            source_type,
+            source_retrieved_at,
+            external_evidence_id
+        FROM candidate_evidence
+        WHERE race_candidate_id = %s
+        ORDER BY
+            CASE evidence_tier
+                WHEN 'institutional_record' THEN 1
+                WHEN 'sourced_stated_position' THEN 2
+                ELSE 3
+            END,
+            issue_domain,
+            id
+        """,
+        (int(candidate_id),),
+    )
+
+
 def _get_db_coverage_metadata() -> dict[str, object] | None:
     row = _query_one_dict(
         """
@@ -1393,6 +1453,32 @@ def _serialize_race_candidate(row: dict[str, Any]) -> dict[str, object]:
         else str(row["external_candidate_id"]),
         "linked_legislator": linked_legislator,
         "voting_summary": voting_summary,
+        "candidate_evidence_summary": _build_candidate_evidence_summary(candidate_id=str(row["candidate_id"])),
+    }
+
+
+def _build_candidate_evidence_summary(*, candidate_id: str) -> dict[str, object]:
+    rows = _get_db_candidate_evidence_rows(candidate_id=candidate_id)
+    if rows is None:
+        rows = []
+
+    tier_counts = {
+        "institutional_record": 0,
+        "sourced_stated_position": 0,
+        "insufficient_evidence": 0,
+    }
+    issue_domains = set()
+    for row in rows:
+        tier = str(row["evidence_tier"])
+        if tier in tier_counts:
+            tier_counts[tier] += 1
+        if row.get("issue_domain") is not None:
+            issue_domains.add(str(row["issue_domain"]))
+
+    return {
+        "total_count": len(rows),
+        "tier_counts": tier_counts,
+        "issue_domain_count": len(issue_domains),
     }
 
 
@@ -1438,6 +1524,21 @@ def _build_candidate_voting_summary(*, legislator_db_id: int) -> dict[str, objec
         "eligible_vote_count": int(first_row["total_votes"] or 0),
         "interpreted_vote_count": interpreted_vote_count,
         "top_domains": top_domains,
+    }
+
+
+def _serialize_candidate_evidence_row(row: dict[str, Any]) -> dict[str, object]:
+    return {
+        "id": str(row["id"]),
+        "evidence_tier": str(row["evidence_tier"]),
+        "issue_domain": None if row.get("issue_domain") is None else str(row["issue_domain"]),
+        "statement_text": None if row.get("statement_text") is None else str(row["statement_text"]),
+        "neutral_summary": str(row["neutral_summary"]),
+        "confidence": str(row["confidence"]),
+        "source_url": str(row["source_url"]),
+        "source_type": str(row["source_type"]),
+        "source_retrieved_at": None if row.get("source_retrieved_at") is None else str(row["source_retrieved_at"]),
+        "external_evidence_id": None if row.get("external_evidence_id") is None else str(row["external_evidence_id"]),
     }
 
 
