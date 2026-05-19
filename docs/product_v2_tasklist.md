@@ -216,7 +216,7 @@ Allowed action types:
 Rules:
 
 - Actions must be user-directed and optional.
-- Suggested text must be neutral, editable, and tied to cited evidence.
+- Current action UI should show official contact information and evidence context without generating a message body.
 - Actions must not imply a voting recommendation or electoral persuasion.
 - Action history must not affect vote classification, vote interpretation, alignment, or candidate evidence tiers.
 
@@ -233,7 +233,7 @@ Rules:
 ### Phase 15 - Evidence-Linked Actions
 
 - [x] Add action entry points from representative profile, issue cards, and interpreted vote evidence rows.
-- [x] Add neutral contact, ask, thank, and track UI states.
+- [x] Add contact, ask, thank, and track UI states without generated message starters.
 - [x] Keep cited vote/source context visible when an action starts from evidence.
 - [ ] Add tests proving action state does not change alignment labels or evidence tiers.
 - [ ] Keep upcoming race action prompts out of scope until current-representative actions are stable.

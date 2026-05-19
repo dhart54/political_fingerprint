@@ -212,9 +212,9 @@ Completed in that committed checkpoint:
 
 Current uncommitted continuation:
 
-- `CivicActionPanel` drafts are now actually editable.
-- `Reset Draft` restores the neutral generated draft after user edits.
-- Browser smoke confirmed the Valerie Economy/Taxes draft can be edited and reset with no console errors.
+- User rejected generated action draft starters as too awkward and app-authored.
+- `CivicActionPanel` now removes generated message bodies entirely.
+- Action states now show official contact metadata, selected evidence context, and a prompt to write in the user's own words.
 - `ZipLookupPanel` still fetches ZIP race context, but `UpcomingRacePanel` is now rendered from the home page below the accountability/evidence/action/comparison path.
 - Browser smoke confirmed `Secondary Election Context` appears after `Issue Comparison` and not before `Current Profile`.
 

@@ -434,7 +434,6 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
 function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRow }) {
   const [selectedAction, setSelectedAction] = useState("contact");
   const [tracked, setTracked] = useState(false);
-  const [draftText, setDraftText] = useState("");
   const [contactState, setContactState] = useState({
     status: "idle",
     payload: null,
@@ -447,19 +446,6 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
     representativeName,
     selectedEvidenceRow,
   });
-  const actionDraft = buildActionDraft({
-    action: selectedAction,
-    contact: contactState.payload,
-    context: actionContext,
-    representativeName,
-  });
-  const draftResetKey = [
-    selectedAction,
-    domain,
-    representativeName,
-    rowActionKey(selectedEvidenceRow),
-    contactState.payload?.contact_form_url || "",
-  ].join("|");
 
   useEffect(() => {
     let active = true;
@@ -511,10 +497,6 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
     };
   }, [legislator?.id]);
 
-  useEffect(() => {
-    setDraftText(actionDraft);
-  }, [actionDraft, draftResetKey]);
-
   return (
     <div className="rounded-[1.25rem] border border-stone-200 bg-white px-4 py-4">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
@@ -530,7 +512,7 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
           </p>
         </div>
         <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-stone-700">
-          UI-only draft
+          Contact info only
         </span>
       </div>
 
@@ -561,7 +543,8 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
       </div>
 
       <div className="mt-4 rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4">
-        <ContactMetadataCard contactState={contactState} selectedAction={selectedAction} />
+        <ContactMetadataCard contactState={contactState} />
+        <ActionIntentNote selectedAction={selectedAction} />
         <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
           Evidence context
         </p>
@@ -574,7 +557,7 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
           </p>
         ) : (
           <p className="mt-2 text-xs leading-5 text-stone-500">
-            Use a row's Use For Action button to target a specific vote in this draft.
+            Use a row's Use For Action button to keep a specific vote visible while you write in your own words.
           </p>
         )}
         {selectedAction === "track" ? (
@@ -583,42 +566,13 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
               ? "Tracked in this page session. Persistent alerts or newsletters are not enabled in this slice."
               : "Use Track to keep this issue in view during this page session."}
           </p>
-        ) : (
-          <>
-            <label className="mt-3 block text-[11px] uppercase tracking-[0.18em] text-stone-500" htmlFor="action-draft">
-              Neutral draft starter
-            </label>
-            <textarea
-              className="mt-2 min-h-32 w-full rounded-xl border border-stone-300 bg-white px-3 py-3 text-sm leading-6 text-stone-800 outline-none focus:border-cyan-800 focus:ring-2 focus:ring-cyan-800/20"
-              id="action-draft"
-              onChange={(event) => setDraftText(event.target.value)}
-              value={draftText}
-            />
-            <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-xs leading-5 text-stone-500">
-                Edit before sending. This draft is not sent from the app.
-              </p>
-              <button
-                className="w-fit rounded-full border border-stone-300 bg-white px-3 py-2 text-xs uppercase tracking-[0.16em] text-stone-700 transition hover:border-cyan-800 hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                disabled={draftText === actionDraft}
-                onClick={() => setDraftText(actionDraft)}
-                type="button"
-              >
-                Reset Draft
-              </button>
-            </div>
-          </>
-        )}
+        ) : null}
       </div>
     </div>
   );
 }
 
-function ContactMetadataCard({ contactState, selectedAction }) {
-  if (selectedAction !== "contact") {
-    return null;
-  }
-
+function ContactMetadataCard({ contactState }) {
   if (contactState.status === "loading") {
     return (
       <p className="mb-4 rounded-xl border border-stone-200 bg-white px-3 py-3 text-sm leading-6 text-stone-600">
@@ -680,6 +634,30 @@ function ContactMetadataCard({ contactState, selectedAction }) {
       </div>
       <p className="mt-2 text-xs leading-5 text-stone-500">
         Source: {formatContactSource(contact)}.
+      </p>
+    </div>
+  );
+}
+
+function ActionIntentNote({ selectedAction }) {
+  if (selectedAction === "track") {
+    return null;
+  }
+
+  const label =
+    selectedAction === "ask"
+      ? "Ask in your own words"
+      : selectedAction === "thank"
+        ? "Thank in your own words"
+        : "Write in your own words";
+
+  return (
+    <div className="mb-4 rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-3">
+      <p className="text-[11px] uppercase tracking-[0.18em] text-cyan-900">
+        {label}
+      </p>
+      <p className="mt-2 text-sm leading-6 text-cyan-950">
+        The app does not generate a message. Use the official contact options and the evidence shown here as reference.
       </p>
     </div>
   );
@@ -1132,31 +1110,6 @@ function buildActionContext({ domain, evidenceRows, representativeName, selected
     selectedVoteLine,
     selectedVoteMeaning,
   };
-}
-
-function buildActionDraft({ action, contact, context, representativeName }) {
-  const voteContext = context.selectedVoteLine
-    ? `\n\nSelected vote: ${context.selectedVoteLine}${context.selectedVoteMeaning ? `\nRecorded-position read: ${context.selectedVoteMeaning}` : ""}`
-    : context.exampleLine
-      ? `\n\nExample record: ${context.exampleLine}`
-      : "";
-  const contactLine = contact?.contact_status === "loaded" && contact.contact_form_url
-    ? `\n\nOfficial contact form loaded by the app: ${contact.contact_form_url}`
-    : "";
-
-  if (action === "contact") {
-    return `Hello ${representativeName} office,\n\nI am reviewing the public voting record for ${context.issueLabel}. ${context.contextLine}${voteContext}${contactLine}\n\nCould you point me to any public explanation or constituent resources about this record?\n\nThank you.`;
-  }
-
-  if (action === "ask") {
-    return `Hello ${representativeName} office,\n\nI am looking at ${context.issueLabel} votes in the public record. ${context.contextLine}${voteContext}\n\nCan you explain how the office understands the policy stakes behind this record?\n\nThank you.`;
-  }
-
-  if (action === "thank") {
-    return `Hello ${representativeName} office,\n\nI am writing about the public voting record for ${context.issueLabel}. ${context.contextLine}${voteContext}\n\nI wanted to acknowledge that this record is available for constituents to review and ask about.\n\nThank you.`;
-  }
-
-  return "";
 }
 
 function formatActionVoteLine(row) {

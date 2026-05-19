@@ -236,10 +236,11 @@ Allowed inputs:
 Rules:
 
 - actions must be optional and user-initiated
-- action copy must stay neutral, editable, and evidence-based
+- action UI may show cited evidence context and official contact metadata, but should not generate a message body for the user
+- if future action copy is added, it must stay neutral, user-editable, and evidence-based
 - actions may summarize cited evidence, but may not tell the user what position to take
 - ask and thank actions must preserve the cited vote, issue, or evidence context
-- UI-only action drafts must clearly indicate that the app has not sent, stored, or subscribed the user to anything
+- UI-only action states must clearly indicate that the app has not sent, stored, or subscribed the user to anything
 - tracking an issue, vote, or official must not alter any computed metric
 - action history, if stored, must remain separate from `vote_classifications`, `vote_interpretations`, `fingerprints`, `drift_scores`, `summaries`, and candidate evidence
 - contact metadata must be treated as operational context, not evidence of policy behavior

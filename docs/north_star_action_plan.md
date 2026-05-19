@@ -143,7 +143,7 @@ Allowed action types:
 Action rules:
 
 - actions are user-directed and optional
-- suggested text must be neutral, editable, and tied to cited evidence
+- current action UI should show official contact information and cited evidence context without generating a message body
 - no action can imply a voting recommendation
 - no action can change alignment math or evidence tiers
 - contact metadata should be stored separately from vote and candidate evidence
