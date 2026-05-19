@@ -51,15 +51,15 @@ The current frontend already supports most of the accountability-first direction
 - `frontend/app/page.js` opens with ZIP lookup, then current profile, quick read, issue preferences, alignment, vote evidence, and comparison.
 - `ProfileQuickRead`, `AlignmentPanel`, and `PositionByIssue` are the strongest accountability surfaces.
 - `PositionByIssue` now includes the best interpreted evidence card pattern: `Why this mattered`, `What this vote was`, and `Their vote`.
-- `ZipLookupPanel` currently includes `UpcomingRacePanel` inside the ZIP result card. That keeps race context near the start of the journey, which made sense for the ballot-first direction but should become secondary.
-- There is no dedicated contact/action component yet.
+- `ZipLookupPanel` now fetches race context but the home page renders `UpcomingRacePanel` below the representative accountability, evidence, action, and comparison flow.
+- `PositionByIssue` now includes a UI-only contact/action panel with editable contact, ask, thank, and session-only track states.
 
 Recommended structure:
 
 1. Keep ZIP lookup and current representative cards first.
 2. Keep current profile, quick read, user issues, alignment, and interpreted evidence as the main body.
 3. Add a new action layer after evidence, where the user can contact, ask, thank, or track from a specific official/issue/vote.
-4. Move upcoming race context below the accountability flow or collapse it behind a secondary section after current-representative evidence.
+4. Keep upcoming race context below the accountability flow and collapsed behind a secondary section after current-representative evidence.
 5. Keep comparison framed around current officials and selected issues unless the user explicitly opens election context.
 
 ## Guiding Architecture
@@ -390,13 +390,12 @@ Acceptance criteria:
 
 ## Immediate Next Tasks
 
-1. Visually review the improved Valerie Foushee / `ECONOMY_TAXES` gold slice in the user-visible page.
-2. Update the main page IA so upcoming election context is secondary to the representative accountability flow.
-3. Add the first contact/action design slice: contact, ask, thank, and track entry points tied to current representatives and evidence rows.
-4. Define the minimal contact metadata source and storage plan for current federal officials.
-5. Expand manual federal vote interpretations for the next most visible current-official issue domain.
-6. Add action-layer methodology and tests before persisting any user action state.
-7. Keep race/candidate work to maintenance and neutral evidence-tier cleanup until the accountability/action path is coherent.
+1. Apply the `legislator_contacts` migration to Supabase and replace the curated demo fallback with stored official contact rows.
+2. Define the minimal contact metadata source/update workflow for current federal officials beyond the NC pilot rows.
+3. Expand manual federal vote interpretations for the next most visible current-official issue domain.
+4. Add action-layer tests proving UI-only action state does not change alignment labels, vote interpretation, or evidence tiers.
+5. Keep newsletter/email tracking out of scope until users validate that persistent reminders are actually needed.
+6. Keep race/candidate work to maintenance and neutral evidence-tier cleanup until the accountability/action path is coherent.
 
 ## Decision Rules
 

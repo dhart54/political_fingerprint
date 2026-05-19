@@ -434,6 +434,7 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
 function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRow }) {
   const [selectedAction, setSelectedAction] = useState("contact");
   const [tracked, setTracked] = useState(false);
+  const [draftText, setDraftText] = useState("");
   const [contactState, setContactState] = useState({
     status: "idle",
     payload: null,
@@ -452,6 +453,13 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
     context: actionContext,
     representativeName,
   });
+  const draftResetKey = [
+    selectedAction,
+    domain,
+    representativeName,
+    rowActionKey(selectedEvidenceRow),
+    contactState.payload?.contact_form_url || "",
+  ].join("|");
 
   useEffect(() => {
     let active = true;
@@ -502,6 +510,10 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
       active = false;
     };
   }, [legislator?.id]);
+
+  useEffect(() => {
+    setDraftText(actionDraft);
+  }, [actionDraft, draftResetKey]);
 
   return (
     <div className="rounded-[1.25rem] border border-stone-200 bg-white px-4 py-4">
@@ -579,12 +591,22 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
             <textarea
               className="mt-2 min-h-32 w-full rounded-xl border border-stone-300 bg-white px-3 py-3 text-sm leading-6 text-stone-800 outline-none focus:border-cyan-800 focus:ring-2 focus:ring-cyan-800/20"
               id="action-draft"
-              readOnly
-              value={actionDraft}
+              onChange={(event) => setDraftText(event.target.value)}
+              value={draftText}
             />
-            <p className="mt-2 text-xs leading-5 text-stone-500">
-              Edit before sending. This draft is not sent from the app.
-            </p>
+            <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-xs leading-5 text-stone-500">
+                Edit before sending. This draft is not sent from the app.
+              </p>
+              <button
+                className="w-fit rounded-full border border-stone-300 bg-white px-3 py-2 text-xs uppercase tracking-[0.16em] text-stone-700 transition hover:border-cyan-800 hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                disabled={draftText === actionDraft}
+                onClick={() => setDraftText(actionDraft)}
+                type="button"
+              >
+                Reset Draft
+              </button>
+            </div>
           </>
         )}
       </div>

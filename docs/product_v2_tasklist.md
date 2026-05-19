@@ -155,7 +155,7 @@ Evidence ladder:
 - [x] Add `upcoming_races` and `race_candidates` schema draft.
 - [x] Add ZIP/state/district mapping from a user ZIP to upcoming federal House and Senate races.
 - [x] Add backend endpoint for upcoming federal races by ZIP.
-- [x] Add frontend "Your Upcoming Federal Races" section after ZIP lookup.
+- [x] Move frontend upcoming-race context below the representative accountability flow.
 - [x] Add initial FEC candidate-summary importer for federal House/Senate race context.
 - [x] Add high-confidence incumbent candidate linkage to existing legislator voting records.
 - [x] Let linked incumbent race cards open the existing voting-record profile.
@@ -180,7 +180,7 @@ Evidence ladder:
 
 ### Phase 11 - Race Comparison UI
 
-- [ ] Add race page or race panel for ZIP-selected upcoming races.
+- [x] Add race page or race panel for ZIP-selected upcoming races.
 - [ ] Compare candidates by selected user issues.
 - [ ] Show "recorded votes," "stated positions," and "insufficient evidence" as separate evidence types.
 - [ ] Make every candidate claim expandable to source details.
@@ -224,14 +224,14 @@ Rules:
 
 - [ ] Identify a low-cost, reliable source for current federal official contact metadata.
 - [ ] Document source license, fields, update cadence, and failure modes.
-- [ ] Add minimal backend model or read adapter for contact links.
-- [ ] Add tests for loaded and missing contact metadata.
-- [ ] Update `docs/methodology.md` with contact/action boundaries.
+- [x] Add minimal backend model or read adapter for contact links.
+- [x] Add tests for loaded and missing contact metadata.
+- [x] Update `docs/methodology.md` with contact/action boundaries.
 
 ### Phase 15 - Evidence-Linked Actions
 
-- [ ] Add action entry points from representative profile, issue cards, and interpreted vote evidence rows.
-- [ ] Add neutral contact, ask, thank, and track UI states.
-- [ ] Keep cited vote/source context visible when an action starts from evidence.
+- [x] Add action entry points from representative profile, issue cards, and interpreted vote evidence rows.
+- [x] Add neutral contact, ask, thank, and track UI states.
+- [x] Keep cited vote/source context visible when an action starts from evidence.
 - [ ] Add tests proving action state does not change alignment labels or evidence tiers.
 - [ ] Keep upcoming race action prompts out of scope until current-representative actions are stable.

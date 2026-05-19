@@ -8,7 +8,9 @@ const DEFAULT_ZIP = "27701";
 
 export default function ZipLookupPanel({
   onComparePair,
+  onRaceStateChange,
   onSelectLegislator,
+  showElectionContext = true,
   variant = "standard",
 }) {
   const [zipCode, setZipCode] = useState(DEFAULT_ZIP);
@@ -77,28 +79,39 @@ export default function ZipLookupPanel({
         payload: null,
         error: null,
       });
+      onRaceStateChange?.({
+        status: "idle",
+        payload: null,
+        error: null,
+      });
     }
   }
 
   async function loadZipRaces(nextZipCode) {
     try {
-      setRaceState({
+      const loadingState = {
         status: "loading",
         payload: null,
         error: null,
-      });
+      };
+      setRaceState(loadingState);
+      onRaceStateChange?.(loadingState);
       const payload = await fetchZipRaces({ zipCode: nextZipCode });
-      setRaceState({
+      const readyState = {
         status: "ready",
         payload,
         error: null,
-      });
+      };
+      setRaceState(readyState);
+      onRaceStateChange?.(readyState);
     } catch (error) {
-      setRaceState({
+      const errorState = {
         status: "error",
         payload: null,
         error: "Upcoming race data is not loaded for this ZIP yet.",
-      });
+      };
+      setRaceState(errorState);
+      onRaceStateChange?.(errorState);
     }
   }
 
@@ -301,10 +314,12 @@ export default function ZipLookupPanel({
             </div>
           </div>
 
-          <UpcomingRacePanel
-            onSelectLegislator={onSelectLegislator}
-            raceState={raceState}
-          />
+          {showElectionContext ? (
+            <UpcomingRacePanel
+              onSelectLegislator={onSelectLegislator}
+              raceState={raceState}
+            />
+          ) : null}
         </div>
       ) : null}
 
@@ -339,7 +354,7 @@ export default function ZipLookupPanel({
   );
 }
 
-function UpcomingRacePanel({ onSelectLegislator, raceState }) {
+export function UpcomingRacePanel({ onSelectLegislator, raceState }) {
   if (raceState.status === "idle") {
     return null;
   }

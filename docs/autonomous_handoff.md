@@ -175,7 +175,7 @@ Last updated: 2026-05-19
 
 ## Active Checkpoint
 
-Accountability/action checkpoint completed locally; changes are not committed unless a later step commits them.
+Accountability/action checkpoint was committed as `2b07c69 Add accountability action layer`.
 
 Current direction shift:
 
@@ -188,7 +188,7 @@ Current direction shift:
 - Current representatives, issue evidence, interpreted vote meaning, and neutral contact/ask/thank/track actions should drive near-term work.
 - Upcoming election and challenger context remains supported but should not lead the primary journey.
 
-Completed in the local uncommitted checkpoint:
+Completed in that committed checkpoint:
 
 - Product docs and methodology now use the accountability-first north star.
 - Valerie Foushee / `ECONOMY_TAXES` gold-slice review passed:
@@ -209,6 +209,14 @@ Completed in the local uncommitted checkpoint:
   - backend endpoint `GET /legislators/{legislator_id}/contact`
   - curated official contact fallback for Valerie Foushee, Ted Budd, and Thom Tillis
   - frontend Contact action displays official contact form, official site, phone, source type, and retrieved date when loaded
+
+Current uncommitted continuation:
+
+- `CivicActionPanel` drafts are now actually editable.
+- `Reset Draft` restores the neutral generated draft after user edits.
+- Browser smoke confirmed the Valerie Economy/Taxes draft can be edited and reset with no console errors.
+- `ZipLookupPanel` still fetches ZIP race context, but `UpcomingRacePanel` is now rendered from the home page below the accountability/evidence/action/comparison path.
+- Browser smoke confirmed `Secondary Election Context` appears after `Issue Comparison` and not before `Current Profile`.
 
 ## Verification Already Run
 
@@ -545,11 +553,11 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the current local checkpoint if it looks good.
+1. Commit the editable action-draft continuation if it looks good.
 2. Apply migration `0007_legislator_contacts.sql` to Supabase before expecting database-backed contact rows.
 3. Replace curated contact fallbacks with imported/stored official contact metadata when the source workflow is ready.
 4. Continue expanding manual interpretations for the next visible current-official issue domain.
-5. Consider moving secondary election context fully below the evidence/action flow by extracting the race panel out of `ZipLookupPanel`.
+5. Add action-layer tests proving UI-only action state does not alter alignment, interpretation, or evidence-tier outputs.
 6. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
