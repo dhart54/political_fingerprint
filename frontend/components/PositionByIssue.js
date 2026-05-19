@@ -518,11 +518,14 @@ function buildPlainTakeaway(row) {
     return "This vote helped set the rules for a later fast-track budget bill that could affect taxes, spending, deficits, and the debt limit.";
   }
   if (text.includes("shutdown") || text.includes("continuing appropriations") || text.includes("short-term funding")) {
-    return "This vote was about keeping federal funding moving and deciding whether agencies and programs would continue operating under temporary or catch-up funding.";
+    if (text.includes("back pay") || text.includes("reduction-in-force")) {
+      return "This vote was about ending a shutdown, paying federal workers, and deciding how agencies would operate while longer-term funding was still unresolved.";
+    }
+    return "This vote was about avoiding a shutdown by keeping most federal agencies temporarily funded while longer-term spending bills were unfinished.";
   }
   if (text.includes("small business administration") || text.includes("sba")) {
     if (text.includes("loan")) {
-      return "This vote was about who could qualify for certain SBA-backed small-business loans.";
+      return "This vote was about restricting access to certain SBA-backed small-business loans based on immigration or residency status.";
     }
     return "This vote was about limiting net new SBA rulemaking costs for small businesses.";
   }

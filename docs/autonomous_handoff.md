@@ -486,7 +486,18 @@ Reported results:
     - `Yea meant` and `Nay meant` are not shown
   - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
   - targeted backend test passed after escalated rerun: `tests\test_api_positions.py` (`11 passed`)
-  - next best task: review this simplified gold slice visually with the user, then replicate the same interpretation/content standard to Valerie's next visible issue domain
+- Gold-slice specificity checkpoint:
+  - tightened Valerie Foushee / `ECONOMY_TAXES` interpretation language using existing Congress.gov summaries, without adding new data
+  - SBA loan eligibility row now states the real stakes: restricting certain SBA-backed small-business loans based on immigration or residency status
+  - `Their vote` for the SBA loan row now reads as opposing those eligibility restrictions
+  - short-term and shutdown-ending funding rows now distinguish avoiding a shutdown, ending a shutdown, back pay, reduction-in-force limits, and temporary agency funding
+  - SBA regulatory-budget row now says it limits net new SBA rulemaking costs for small businesses
+  - imported refreshed `docs/interpretation_batches/batch_006_valerie_economy_gold_interpretations.json` into Supabase
+  - API smoke confirmed the updated rows for House rolls `156`, `281`, `285`, and `310`
+  - targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - browser automation was blocked by browser security policy on the open local tab; visual browser review is still needed in the user-visible page
+  - next best task: visually review the improved SBA row with the user, then replicate this higher-specificity standard to Valerie's next visible issue domain
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -504,7 +515,7 @@ Work from `docs/product_v2_tasklist.md` in this order:
 1. Confirm Render and Vercel redeploy through the latest pushed commit.
 2. Smoke-test deployed evidence rows and pattern cards for ZIP `27701`.
 3. Continue expanding manual interpretations for high-visibility federal/starter issue records:
-   - next interpretation priority: review the simplified Valerie Foushee / `ECONOMY_TAXES` gold slice in the browser, then replicate the same standard to the next visible issue domain.
+   - next interpretation priority: visually review the higher-specificity Valerie Foushee / `ECONOMY_TAXES` gold slice, then replicate the same standard to the next visible issue domain.
 4. Continue Phase 9/10 ballot proof after the next interpretation checkpoint:
    - add another reviewed candidate seed
    - add tests that stated positions remain lower confidence than recorded votes

@@ -126,6 +126,7 @@ Current next build target:
 - [x] Punch up budget-resolution interpretations so evidence rows explain practical process effects, not just formal vote labels.
 - [x] Add shared NC Senate national-security interpretations for foreign-military-sale disapproval motions.
 - [x] Create Valerie Foushee / Economy-Taxes gold slice for replicable high-quality vote interpretation.
+- [x] Tighten the Valerie Economy-Taxes gold slice with higher-specificity stakes from existing official summaries.
 
 ## Next Lens - Ballot-Aware Candidate Comparison
 
