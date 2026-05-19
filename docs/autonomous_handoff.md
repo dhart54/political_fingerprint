@@ -237,6 +237,15 @@ Current interpretation continuation:
   - 6 procedural motion rows marked ambiguous so they remain visible but do not become support/oppose counts
 - Supabase-backed API smoke confirmed the direct vote now has the specific hydrogen-vehicle safety standards read, while the procedural rows show ambiguity notes.
 - Targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`18 passed`).
+- Exported `docs/interpretation_batches/batch_008_valerie_justice_punchup_packets.json`.
+- Added/imported `docs/interpretation_batches/batch_008_valerie_justice_punchup_interpretations.json`.
+- Imported 6 refreshed Valerie Foushee `JUSTICE_PUBLIC_SAFETY` direct-passage interpretations into Supabase:
+  - HALT Fentanyl Act rows now explain permanent classwide scheduling, penalty thresholds, and research-registration changes
+  - Federal law enforcement service-weapon purchase row now explains the GSA retired-firearm purchase program
+  - law enforcement safety/wellness row now explains the DOJ reporting requirement
+  - D.C. policing rows now distinguish vehicular-pursuit policy and repeal of the D.C. policing reform act
+- Supabase-backed API smoke confirmed the refreshed Valerie Justice/Public Safety rows return the more specific summaries and yea/nay meanings.
+- Targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`18 passed`).
 
 ## Verification Already Run
 
@@ -573,7 +582,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the Thom infrastructure interpretation continuation if it looks good.
+1. Commit the Valerie Justice/Public Safety punch-up continuation if it looks good.
 2. Define the broader official contact source/update workflow beyond the NC pilot rows.
 3. Continue expanding manual interpretations for the next visible current-official issue domain.
 4. Add action-layer tests proving UI-only action state does not alter alignment, interpretation, or evidence-tier outputs.
