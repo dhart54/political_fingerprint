@@ -227,6 +227,17 @@ Current contact-import continuation:
 - Imported the NC federal contact seed to Supabase: 3 records seen, 3 imported.
 - Supabase-backed API smoke confirmed Valerie Foushee, Ted Budd, and Thom Tillis now return `data_source = database` for contact metadata.
 
+Current interpretation continuation:
+
+- Selected Thom Tillis / `INFRASTRUCTURE_TECH_TRANSPORT` as the next visible current-official interpretation slice because it had 7 recorded votes and 1 interpreted vote.
+- Exported `docs/interpretation_batches/batch_007_thom_infra_packets.json`.
+- Added/imported `docs/interpretation_batches/batch_007_thom_infra_interpretations.json`.
+- Imported 7 reviewed records into Supabase:
+  - 1 interpreted direct S.J.Res. 55 passage vote on disapproving the NHTSA hydrogen-vehicle safety standards rule
+  - 6 procedural motion rows marked ambiguous so they remain visible but do not become support/oppose counts
+- Supabase-backed API smoke confirmed the direct vote now has the specific hydrogen-vehicle safety standards read, while the procedural rows show ambiguity notes.
+- Targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`18 passed`).
+
 ## Verification Already Run
 
 Latest checks:
@@ -562,7 +573,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the contact-import continuation if it looks good.
+1. Commit the Thom infrastructure interpretation continuation if it looks good.
 2. Define the broader official contact source/update workflow beyond the NC pilot rows.
 3. Continue expanding manual interpretations for the next visible current-official issue domain.
 4. Add action-layer tests proving UI-only action state does not alter alignment, interpretation, or evidence-tier outputs.
