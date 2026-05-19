@@ -144,6 +144,7 @@ export default function HomePage() {
 
         <PositionByIssue
           evidenceRequest={evidenceRequest}
+          legislator={selectedLegislator}
           legislatorId={selectedLegislator.id}
           title={`${selectedLegislator.name_display}'s voting pattern by issue`}
         />

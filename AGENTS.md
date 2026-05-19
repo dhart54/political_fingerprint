@@ -14,18 +14,19 @@ Primary promise:
 "In 60 seconds, understand how this politician actually behaves."
 
 Long-term north star:
-"Who is on my ballot, and what does the evidence show about how they act on the issues I care about?"
+"Who represents me, how are they acting on the issues I care about, and what can I do next?"
 
 This platform:
 
 - Maps observable legislative behavior
-- Helps users inspect current officials and, eventually, upcoming candidates by ZIP code and ballot context
+- Helps users inspect current officials first and, secondarily, upcoming candidates by ZIP code and election context
 - Uses deterministic analysis only
 - Does NOT make moral judgments
 - Does NOT rank politicians
 - Does NOT infer motives or causality
 - Lets users compare their own stated issue preferences against observable voting records
 - Separates recorded governing behavior from lower-confidence stated candidate positions
+- Helps users take neutral civic actions such as contact, ask, thank, or track, without electoral persuasion
 
 Explicitly prohibited:
 
@@ -38,6 +39,7 @@ Explicitly prohibited:
 - Prescriptive voting advice ("vote for", "vote against", "should vote for")
 - Personalized electoral persuasion
 - Treating campaign statements as equivalent to recorded governing behavior
+- Auto-generating persuasive constituent messages that tell users what position to take
 
 If a requested feature violates this, STOP and ask for clarification.
 
@@ -48,6 +50,12 @@ If a requested feature violates this, STOP and ask for clarification.
 The original MVP is complete. Product v2 may build beyond the MVP when the work preserves the locked product identity and deterministic methodology.
 
 Core product surfaces:
+
+0. Representative Accountability Dashboard
+   - Primary v2 surface
+   - Starts from current House representative and both Senators by ZIP code
+   - Centers issue evidence, interpreted vote meaning, and source-backed accountability
+   - Election context remains secondary to the current representative record
 
 1. Behavioral Fingerprint
    - Based on categorized policy votes only
@@ -90,8 +98,16 @@ Core product surfaces:
    - Ambiguous or unsupported vote meaning must be marked insufficient evidence
    - LLMs may help draft cached plain-language explanations, but may not decide vote classification, eligibility, vote meaning, or alignment
 
-9. Ballot and candidate expansion
+9. Civic action / contact layer
+   - Lets users contact, ask, thank, or track current representatives from evidence pages
+   - Actions must be user-directed and neutral in framing
+   - The product may help summarize the underlying evidence and provide contact metadata
+   - The product must not tell users what position to take or generate electoral persuasion
+   - Tracked actions must be clearly separate from vote classification, interpretation, and alignment math
+
+10. Ballot and candidate expansion
    - ZIP lookup may expand from current officials to upcoming races when reliable election data is available
+   - Election and challenger context is secondary to current representative accountability
    - Incumbents and prior officeholders should be evaluated first through recorded governing behavior
    - New candidates may use sourced stated positions only when no governing record exists
    - Stated-position reads must be clearly labeled as lower confidence than recorded votes

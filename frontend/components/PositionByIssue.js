@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-import { fetchPositionEvidence, fetchPositions } from "../lib/api";
+import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
 
 export default function PositionByIssue({
   evidenceRequest = null,
+  legislator = null,
   legislatorId = "leg_alex_morgan",
   title = "How They Vote By Issue",
 }) {
@@ -206,6 +207,7 @@ export default function PositionByIssue({
 
       <EvidencePanel
         evidenceState={evidenceState}
+        legislator={legislator}
         onInspectDomain={inspectDomain}
         selectedRow={selectedRow}
       />
@@ -281,7 +283,13 @@ function IssuePatternCards({ onInspectDomain, rows, status }) {
   );
 }
 
-function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
+function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow }) {
+  const [selectedActionRow, setSelectedActionRow] = useState(null);
+
+  useEffect(() => {
+    setSelectedActionRow(null);
+  }, [selectedRow?.domain]);
+
   if (!selectedRow) {
     return null;
   }
@@ -335,6 +343,13 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
           <div className="rounded-2xl border border-cyan-900/10 bg-cyan-50 px-4 py-4 text-sm leading-6 text-stone-700">
             {formatBillGroupSummary(evidenceRows.length, billGroups.length)}
           </div>
+          <IssueEvidenceSummary rows={evidenceRows} />
+          <CivicActionPanel
+            domain={selectedRow.domain}
+            evidenceRows={evidenceRows}
+            legislator={legislator}
+            selectedEvidenceRow={selectedActionRow}
+          />
           {billGroups.map((group) => (
             <article className="rounded-[1.25rem] border border-stone-200 bg-white px-3 py-4 sm:px-4" key={group.key}>
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
@@ -378,18 +393,32 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
                       <p className="text-xs uppercase leading-5 tracking-[0.16em] text-stone-500 sm:tracking-[0.18em]">
                         Included as {formatClassificationReason(row.classification_reason)}
                       </p>
-                      {row.source_url ? (
-                        <a
-                          className="w-fit rounded-full border border-cyan-800/20 bg-white px-3 py-2 text-xs uppercase tracking-[0.18em] text-cyan-800 underline-offset-4 transition hover:border-cyan-800 hover:bg-cyan-50 hover:underline"
-                          href={row.source_url}
-                          rel="noreferrer"
-                          target="_blank"
+                      <div className="flex flex-wrap gap-2">
+                        <button
+                          aria-pressed={rowActionKey(selectedActionRow) === rowActionKey(row)}
+                          className={`w-fit rounded-full border px-3 py-2 text-xs uppercase tracking-[0.18em] transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
+                            rowActionKey(selectedActionRow) === rowActionKey(row)
+                              ? "border-cyan-900 bg-cyan-900 text-white"
+                              : "border-stone-300 bg-white text-stone-700 hover:border-cyan-800 hover:bg-cyan-50"
+                          }`}
+                          onClick={() => setSelectedActionRow(row)}
+                          type="button"
                         >
-                          Source
-                        </a>
-                      ) : (
-                        <p className="text-xs uppercase tracking-[0.18em] text-stone-500">No source URL</p>
-                      )}
+                          Use For Action
+                        </button>
+                        {row.source_url ? (
+                          <a
+                            className="w-fit rounded-full border border-cyan-800/20 bg-white px-3 py-2 text-xs uppercase tracking-[0.18em] text-cyan-800 underline-offset-4 transition hover:border-cyan-800 hover:bg-cyan-50 hover:underline"
+                            href={row.source_url}
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            Source
+                          </a>
+                        ) : (
+                          <p className="text-xs uppercase tracking-[0.18em] text-stone-500">No source URL</p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -398,6 +427,303 @@ function EvidencePanel({ evidenceState, onInspectDomain, selectedRow }) {
           ))}
         </div>
       ) : null}
+    </div>
+  );
+}
+
+function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRow }) {
+  const [selectedAction, setSelectedAction] = useState("contact");
+  const [tracked, setTracked] = useState(false);
+  const [contactState, setContactState] = useState({
+    status: "idle",
+    payload: null,
+    error: null,
+  });
+  const representativeName = legislator?.name_display || "this representative";
+  const actionContext = buildActionContext({
+    domain,
+    evidenceRows,
+    representativeName,
+    selectedEvidenceRow,
+  });
+  const actionDraft = buildActionDraft({
+    action: selectedAction,
+    contact: contactState.payload,
+    context: actionContext,
+    representativeName,
+  });
+
+  useEffect(() => {
+    let active = true;
+
+    if (!legislator?.id) {
+      setContactState({
+        status: "idle",
+        payload: null,
+        error: null,
+      });
+      return () => {
+        active = false;
+      };
+    }
+
+    async function loadContact() {
+      setContactState({
+        status: "loading",
+        payload: null,
+        error: null,
+      });
+
+      try {
+        const payload = await fetchLegislatorContact({ legislatorId: legislator.id });
+        if (!active) {
+          return;
+        }
+        setContactState({
+          status: "ready",
+          payload,
+          error: null,
+        });
+      } catch (error) {
+        if (!active) {
+          return;
+        }
+        setContactState({
+          status: "error",
+          payload: null,
+          error: "Official contact metadata is not loaded yet.",
+        });
+      }
+    }
+
+    loadContact();
+
+    return () => {
+      active = false;
+    };
+  }, [legislator?.id]);
+
+  return (
+    <div className="rounded-[1.25rem] border border-stone-200 bg-white px-4 py-4">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.24em] text-cyan-900">
+            Take Action
+          </p>
+          <h5 className="mt-2 text-[1.35rem] leading-7 text-stone-950">
+            Use this evidence with {representativeName}
+          </h5>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-stone-600">
+            These actions are optional and user-directed. The site keeps the evidence context visible, but it does not tell you what position to take.
+          </p>
+        </div>
+        <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-stone-700">
+          UI-only draft
+        </span>
+      </div>
+
+      <div className="mt-4 grid gap-2 sm:grid-cols-4">
+        <ActionButton
+          active={selectedAction === "contact"}
+          label="Contact"
+          onClick={() => setSelectedAction("contact")}
+        />
+        <ActionButton
+          active={selectedAction === "ask"}
+          label="Ask"
+          onClick={() => setSelectedAction("ask")}
+        />
+        <ActionButton
+          active={selectedAction === "thank"}
+          label="Thank"
+          onClick={() => setSelectedAction("thank")}
+        />
+        <ActionButton
+          active={selectedAction === "track"}
+          label="Track"
+          onClick={() => {
+            setSelectedAction("track");
+            setTracked(true);
+          }}
+        />
+      </div>
+
+      <div className="mt-4 rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4">
+        <ContactMetadataCard contactState={contactState} selectedAction={selectedAction} />
+        <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
+          Evidence context
+        </p>
+        <p className="mt-2 text-sm leading-6 text-stone-700">
+          {actionContext.contextLine}
+        </p>
+        {actionContext.selectedVoteLine ? (
+          <p className="mt-2 rounded-xl border border-cyan-900/10 bg-white px-3 py-3 text-sm leading-6 text-stone-700">
+            Selected vote: {actionContext.selectedVoteLine}
+          </p>
+        ) : (
+          <p className="mt-2 text-xs leading-5 text-stone-500">
+            Use a row's Use For Action button to target a specific vote in this draft.
+          </p>
+        )}
+        {selectedAction === "track" ? (
+          <p className="mt-3 rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-3 text-sm leading-6 text-cyan-950">
+            {tracked
+              ? "Tracked in this page session. Persistent alerts or newsletters are not enabled in this slice."
+              : "Use Track to keep this issue in view during this page session."}
+          </p>
+        ) : (
+          <>
+            <label className="mt-3 block text-[11px] uppercase tracking-[0.18em] text-stone-500" htmlFor="action-draft">
+              Neutral draft starter
+            </label>
+            <textarea
+              className="mt-2 min-h-32 w-full rounded-xl border border-stone-300 bg-white px-3 py-3 text-sm leading-6 text-stone-800 outline-none focus:border-cyan-800 focus:ring-2 focus:ring-cyan-800/20"
+              id="action-draft"
+              readOnly
+              value={actionDraft}
+            />
+            <p className="mt-2 text-xs leading-5 text-stone-500">
+              Edit before sending. This draft is not sent from the app.
+            </p>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ContactMetadataCard({ contactState, selectedAction }) {
+  if (selectedAction !== "contact") {
+    return null;
+  }
+
+  if (contactState.status === "loading") {
+    return (
+      <p className="mb-4 rounded-xl border border-stone-200 bg-white px-3 py-3 text-sm leading-6 text-stone-600">
+        Loading official contact metadata...
+      </p>
+    );
+  }
+
+  if (contactState.status === "error") {
+    return (
+      <p className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-3 py-3 text-sm leading-6 text-amber-900">
+        {contactState.error}
+      </p>
+    );
+  }
+
+  const contact = contactState.payload;
+  if (!contact || contact.contact_status !== "loaded") {
+    return (
+      <p className="mb-4 rounded-xl border border-stone-200 bg-white px-3 py-3 text-sm leading-6 text-stone-600">
+        Official contact metadata is not loaded for this representative yet.
+      </p>
+    );
+  }
+
+  return (
+    <div className="mb-4 rounded-xl border border-cyan-900/10 bg-white px-3 py-3">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
+            Official contact
+          </p>
+          <p className="mt-1 text-sm leading-6 text-stone-700">
+            {contact.phone ? `Phone: ${contact.phone}` : "Phone not loaded"}
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {contact.contact_form_url ? (
+            <a
+              className="rounded-full border border-cyan-800 bg-cyan-900 px-3 py-2 text-xs uppercase tracking-[0.16em] text-white transition hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
+              href={contact.contact_form_url}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Open Contact Form
+            </a>
+          ) : null}
+          {contact.official_website_url ? (
+            <a
+              className="rounded-full border border-stone-300 bg-white px-3 py-2 text-xs uppercase tracking-[0.16em] text-stone-700 transition hover:border-cyan-800 hover:bg-cyan-50"
+              href={contact.official_website_url}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Official Site
+            </a>
+          ) : null}
+        </div>
+      </div>
+      <p className="mt-2 text-xs leading-5 text-stone-500">
+        Source: {formatContactSource(contact)}.
+      </p>
+    </div>
+  );
+}
+
+function ActionButton({ active, label, onClick }) {
+  return (
+    <button
+      aria-pressed={active}
+      className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.18em] transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
+        active
+          ? "border-cyan-900 bg-cyan-900 text-white"
+          : "border-stone-300 bg-white text-stone-700 hover:border-cyan-800 hover:bg-cyan-50"
+      }`}
+      onClick={onClick}
+      type="button"
+    >
+      {label}
+    </button>
+  );
+}
+
+function IssueEvidenceSummary({ rows }) {
+  const summary = buildIssueEvidenceSummary(rows);
+  if (!summary) {
+    return null;
+  }
+
+  return (
+    <div className="rounded-[1.25rem] border border-cyan-900/10 bg-white px-4 py-4">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.24em] text-cyan-900">
+            High-Level Read
+          </p>
+          <p className="mt-2 text-base leading-7 text-stone-900">
+            {summary.lead}
+          </p>
+        </div>
+        <span className="w-fit rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-950">
+          {summary.coverageLabel}
+        </span>
+      </div>
+      <div className="mt-4 grid gap-2 sm:grid-cols-4">
+        <SummaryMetric label="Support side" value={summary.supportCount} />
+        <SummaryMetric label="Oppose side" value={summary.opposeCount} />
+        <SummaryMetric label="Other position" value={summary.otherCount} />
+        <SummaryMetric label="Needs caution" value={summary.unresolvedCount} />
+      </div>
+      {summary.focusText ? (
+        <p className="mt-3 text-sm leading-6 text-stone-700">
+          {summary.focusText}
+        </p>
+      ) : null}
+      <p className="mt-3 text-xs leading-5 text-stone-500">
+        This read uses only cached vote meanings shown below. Ambiguous rows stay visible but do not become support or oppose counts.
+      </p>
+    </div>
+  );
+}
+
+function SummaryMetric({ label, value }) {
+  return (
+    <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
+      <p className="font-serif text-[1.65rem] leading-none text-stone-950">{value}</p>
+      <p className="mt-1 text-[11px] uppercase tracking-[0.15em] text-stone-500">{label}</p>
     </div>
   );
 }
@@ -465,6 +791,29 @@ function InterpretationBreakdown({ row }) {
             {formatConfidence(row.confidence)} confidence
           </span>
         ) : null}
+      </div>
+      <SourceBasisList sourceBasis={row.source_basis} />
+    </div>
+  );
+}
+
+function SourceBasisList({ sourceBasis }) {
+  if (!Array.isArray(sourceBasis) || sourceBasis.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="mt-3 border-t border-stone-200 pt-3">
+      <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">Source basis</p>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {sourceBasis.map((item, index) => (
+          <span
+            className="rounded-full bg-stone-100 px-3 py-1 text-[11px] leading-5 text-stone-700"
+            key={`${item.field || "source"}-${index}`}
+          >
+            {formatSourceBasis(item)}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -568,6 +917,14 @@ function groupEvidenceByBill(rows) {
   return Array.from(groups.values());
 }
 
+function rowActionKey(row) {
+  if (!row) {
+    return "";
+  }
+
+  return `${row.roll_call_id}-${row.position}`;
+}
+
 function formatBillGroupSummary(rollCallCount, billCount) {
   return `${rollCallCount} ${rollCallCount === 1 ? "roll-call vote" : "roll-call votes"} shown across ${billCount} ${
     billCount === 1 ? "bill or measure" : "bills or measures"
@@ -647,9 +1004,9 @@ function buildPatternRows(rows) {
       const supportCount = row.interpreted_support_count || 0;
       const opposeCount = row.interpreted_oppose_count || 0;
       const otherCount = row.interpreted_other_count || 0;
-      const interpretedTotal = row.interpreted_total || 0;
       const recordedVotes = row.recorded_votes || 0;
-      const coverageText = `${interpretedTotal} of ${recordedVotes} recorded yea/nay votes have a cached vote meaning`;
+      const interpretedRecordedVotes = supportCount + opposeCount;
+      const coverageText = `${interpretedRecordedVotes} of ${recordedVotes} recorded yea/nay votes have a cached vote meaning`;
       let label = "Split interpreted record";
 
       if (supportCount > opposeCount && opposeCount === 0) {
@@ -672,11 +1029,149 @@ function buildPatternRows(rows) {
     });
 }
 
+function buildIssueEvidenceSummary(rows) {
+  if (!rows.length) {
+    return null;
+  }
+
+  const interpretedRows = rows.filter((row) => row.interpretation_status === "interpreted");
+  const supportCount = interpretedRows.filter((row) => row.position === row.support_position).length;
+  const opposeCount = interpretedRows.filter((row) => row.position === row.oppose_position).length;
+  const otherCount = interpretedRows.length - supportCount - opposeCount;
+  const unresolvedCount = rows.filter((row) => row.interpretation_status && row.interpretation_status !== "interpreted").length;
+  const recordedCount = interpretedRows.filter((row) => row.position === "yea" || row.position === "nay").length;
+  const focusText = buildIssueFocusText(interpretedRows);
+
+  let pattern = "a mixed interpreted record";
+  if (supportCount > opposeCount && opposeCount === 0) {
+    pattern = "recorded support-side votes";
+  } else if (opposeCount > supportCount && supportCount === 0) {
+    pattern = "recorded oppose-side votes";
+  } else if (supportCount > opposeCount) {
+    pattern = "more support-side than oppose-side interpreted votes";
+  } else if (opposeCount > supportCount) {
+    pattern = "more oppose-side than support-side interpreted votes";
+  }
+
+  const lead = `Across the interpreted votes in this issue, this record shows ${pattern}: ${supportCount} support-side, ${opposeCount} oppose-side, and ${otherCount} other recorded ${otherCount === 1 ? "position" : "positions"}.`;
+
+  return {
+    coverageLabel: `${recordedCount} interpreted yea/nay`,
+    focusText,
+    lead,
+    opposeCount,
+    otherCount,
+    supportCount,
+    unresolvedCount,
+  };
+}
+
+function buildIssueFocusText(rows) {
+  const facets = rows
+    .map((row) => row.issue_facet)
+    .filter(Boolean)
+    .map(formatIssueFacet);
+  const uniqueFacets = Array.from(new Set(facets)).slice(0, 4);
+
+  if (!uniqueFacets.length) {
+    return "";
+  }
+
+  return `The interpreted rows touch ${formatList(uniqueFacets)}.`;
+}
+
+function formatList(values) {
+  if (values.length === 1) {
+    return values[0];
+  }
+  if (values.length === 2) {
+    return `${values[0]} and ${values[1]}`;
+  }
+  return `${values.slice(0, -1).join(", ")}, and ${values[values.length - 1]}`;
+}
+
+function buildActionContext({ domain, evidenceRows, representativeName, selectedEvidenceRow }) {
+  const interpretedRows = evidenceRows.filter((row) => row.interpretation_status === "interpreted");
+  const supportCount = interpretedRows.filter((row) => row.position === row.support_position).length;
+  const opposeCount = interpretedRows.filter((row) => row.position === row.oppose_position).length;
+  const otherCount = interpretedRows.length - supportCount - opposeCount;
+  const cautiousCount = evidenceRows.filter((row) => row.interpretation_status && row.interpretation_status !== "interpreted").length;
+  const issueLabel = formatDomainLabel(domain);
+  const contextLine = `${representativeName}'s ${issueLabel} evidence currently shows ${supportCount} support-side, ${opposeCount} oppose-side, ${otherCount} other-position, and ${cautiousCount} caution rows among the cached vote meanings shown here.`;
+  const example = selectedEvidenceRow || interpretedRows.find((row) => row.position === "yea" || row.position === "nay") || interpretedRows[0] || evidenceRows[0] || null;
+  const exampleLine = formatActionVoteLine(example);
+  const selectedVoteLine = selectedEvidenceRow ? formatActionVoteLine(selectedEvidenceRow) : "";
+  const selectedVoteMeaning = selectedEvidenceRow ? buildSelectedVoteMeaning(selectedEvidenceRow) : "";
+
+  return {
+    contextLine,
+    exampleLine,
+    issueLabel,
+    selectedVoteLine,
+    selectedVoteMeaning,
+  };
+}
+
+function buildActionDraft({ action, contact, context, representativeName }) {
+  const voteContext = context.selectedVoteLine
+    ? `\n\nSelected vote: ${context.selectedVoteLine}${context.selectedVoteMeaning ? `\nRecorded-position read: ${context.selectedVoteMeaning}` : ""}`
+    : context.exampleLine
+      ? `\n\nExample record: ${context.exampleLine}`
+      : "";
+  const contactLine = contact?.contact_status === "loaded" && contact.contact_form_url
+    ? `\n\nOfficial contact form loaded by the app: ${contact.contact_form_url}`
+    : "";
+
+  if (action === "contact") {
+    return `Hello ${representativeName} office,\n\nI am reviewing the public voting record for ${context.issueLabel}. ${context.contextLine}${voteContext}${contactLine}\n\nCould you point me to any public explanation or constituent resources about this record?\n\nThank you.`;
+  }
+
+  if (action === "ask") {
+    return `Hello ${representativeName} office,\n\nI am looking at ${context.issueLabel} votes in the public record. ${context.contextLine}${voteContext}\n\nCan you explain how the office understands the policy stakes behind this record?\n\nThank you.`;
+  }
+
+  if (action === "thank") {
+    return `Hello ${representativeName} office,\n\nI am writing about the public voting record for ${context.issueLabel}. ${context.contextLine}${voteContext}\n\nI wanted to acknowledge that this record is available for constituents to review and ask about.\n\nThank you.`;
+  }
+
+  return "";
+}
+
+function formatActionVoteLine(row) {
+  if (!row) {
+    return "";
+  }
+
+  return `${formatDate(row.vote_date)} ${formatChamber(row.chamber)} Roll ${row.rollcall_number}: ${row.description || row.question}`;
+}
+
+function buildSelectedVoteMeaning(row) {
+  if (!row || row.interpretation_status !== "interpreted") {
+    return "";
+  }
+
+  return buildInterpretedVoteRead(row);
+}
+
 function formatOtherInterpretedCount(count) {
   if (!count) {
     return "No interpreted votes used another recorded position.";
   }
-  return `${count} interpreted ${count === 1 ? "vote used" : "votes used"} another recorded position.`;
+  return `${count} additional interpreted ${count === 1 ? "roll call used" : "roll calls used"} another recorded position, such as not voting.`;
+}
+
+function formatSourceBasis(item) {
+  if (!item || typeof item !== "object") {
+    return "Source basis recorded";
+  }
+
+  return item.source || item.field || "Source basis recorded";
+}
+
+function formatContactSource(contact) {
+  const sourceType = String(contact?.source_type || "official source").replaceAll("_", " ");
+  const retrievedAt = contact?.source_retrieved_at ? `retrieved ${String(contact.source_retrieved_at).slice(0, 10)}` : "retrieval date not loaded";
+  return `${sourceType}, ${retrievedAt}`;
 }
 
 function formatClassificationReason(reason) {

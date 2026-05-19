@@ -1,6 +1,6 @@
 # Autonomous Handoff
 
-Last updated: 2026-05-17
+Last updated: 2026-05-19
 
 ## Current Branch
 
@@ -175,7 +175,40 @@ Last updated: 2026-05-17
 
 ## Active Checkpoint
 
-No active uncommitted checkpoint.
+Accountability/action checkpoint completed locally; changes are not committed unless a later step commits them.
+
+Current direction shift:
+
+- Political Fingerprint is now accountability-first rather than ballot-first.
+- Updated north star: `Who represents me, how are they acting on the issues I care about, and what can I do next?`
+- Product hierarchy:
+  1. Representative Accountability Dashboard
+  2. Civic Action / Contact Layer
+  3. Election / Challenger Layer as secondary context
+- Current representatives, issue evidence, interpreted vote meaning, and neutral contact/ask/thank/track actions should drive near-term work.
+- Upcoming election and challenger context remains supported but should not lead the primary journey.
+
+Completed in the local uncommitted checkpoint:
+
+- Product docs and methodology now use the accountability-first north star.
+- Valerie Foushee / `ECONOMY_TAXES` gold-slice review passed:
+  - Supabase-backed evidence rows present
+  - 9 evidence rows
+  - 7 interpreted
+  - 2 ambiguous
+  - source-basis fields available
+- `PositionByIssue` now shows:
+  - deterministic high-level issue read from opened evidence rows
+  - source-basis chips for interpreted rows
+  - corrected interpreted yea/nay coverage that does not count `not_voting`
+  - UI-only `Take Action` panel with Contact, Ask, Thank, Track
+  - row-level `Use For Action` targeting for action drafts
+- `ZipLookupPanel` now collapses upcoming federal races under `Secondary Election Context`.
+- Contact metadata foundation added:
+  - migration `0007_legislator_contacts.sql`
+  - backend endpoint `GET /legislators/{legislator_id}/contact`
+  - curated official contact fallback for Valerie Foushee, Ted Budd, and Thom Tillis
+  - frontend Contact action displays official contact form, official site, phone, source type, and retrieved date when loaded
 
 ## Verification Already Run
 
@@ -512,14 +545,12 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Confirm Render and Vercel redeploy through the latest pushed commit.
-2. Smoke-test deployed evidence rows and pattern cards for ZIP `27701`.
-3. Continue expanding manual interpretations for high-visibility federal/starter issue records:
-   - next interpretation priority: visually review the higher-specificity Valerie Foushee / `ECONOMY_TAXES` gold slice, then replicate the same standard to the next visible issue domain.
-4. Continue Phase 9/10 ballot proof after the next interpretation checkpoint:
-   - add another reviewed candidate seed
-   - add tests that stated positions remain lower confidence than recorded votes
-   - document stated-position methodology and forbidden persuasion language
+1. Commit the current local checkpoint if it looks good.
+2. Apply migration `0007_legislator_contacts.sql` to Supabase before expecting database-backed contact rows.
+3. Replace curated contact fallbacks with imported/stored official contact metadata when the source workflow is ready.
+4. Continue expanding manual interpretations for the next visible current-official issue domain.
+5. Consider moving secondary election context fully below the evidence/action flow by extracting the race panel out of `ZipLookupPanel`.
+6. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 

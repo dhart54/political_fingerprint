@@ -24,6 +24,33 @@ DOMAIN_ORDER = [
     "INFRASTRUCTURE_TECH_TRANSPORT",
 ]
 
+FALLBACK_LEGISLATOR_CONTACTS = {
+    "leg_valerie_p_foushee": {
+        "official_website_url": "https://foushee.house.gov/",
+        "contact_form_url": "https://foushee.house.gov/contact",
+        "phone": "(202) 225-1784",
+        "source_url": "https://foushee.house.gov/",
+        "source_type": "official_house_website",
+        "source_retrieved_at": "2026-05-19",
+    },
+    "leg_ted_budd": {
+        "official_website_url": "https://www.budd.senate.gov/",
+        "contact_form_url": "https://www.budd.senate.gov/contact/",
+        "phone": "(202) 224-3154",
+        "source_url": "https://www.budd.senate.gov/contact/",
+        "source_type": "official_senate_website",
+        "source_retrieved_at": "2026-05-19",
+    },
+    "leg_thom_tillis": {
+        "official_website_url": "https://www.tillis.senate.gov/",
+        "contact_form_url": "https://www.tillis.senate.gov/",
+        "phone": "(202) 224-6342",
+        "source_url": "https://www.tillis.senate.gov/",
+        "source_type": "official_senate_website",
+        "source_retrieved_at": "2026-05-19",
+    },
+}
+
 
 @dataclass(frozen=True)
 class FingerprintResponseRow:
@@ -76,6 +103,42 @@ def get_legislator_profile(*, legislator_id: str) -> dict[str, object] | None:
     if fixture_legislator is None:
         return None
     return _serialize_legislator(fixture_legislator)
+
+
+def get_legislator_contact_response(*, legislator_id: str) -> dict[str, object] | None:
+    database_contact = _get_db_legislator_contact(legislator_id=legislator_id)
+    if database_contact is not None:
+        return _serialize_legislator_contact(
+            legislator_id=legislator_id,
+            row=database_contact,
+            status="loaded",
+            data_source="database",
+        )
+
+    fallback_contact = FALLBACK_LEGISLATOR_CONTACTS.get(legislator_id)
+    if fallback_contact is not None:
+        return _serialize_legislator_contact(
+            legislator_id=legislator_id,
+            row=fallback_contact,
+            status="loaded",
+            data_source="curated_fallback",
+        )
+
+    legislator = get_legislator_profile(legislator_id=legislator_id)
+    if legislator is None:
+        return None
+
+    return {
+        "legislator_id": legislator_id,
+        "contact_status": "not_loaded",
+        "data_source": "none",
+        "official_website_url": None,
+        "contact_form_url": None,
+        "phone": None,
+        "source_url": None,
+        "source_type": None,
+        "source_retrieved_at": None,
+    }
 
 
 def search_legislators(*, query: str = "") -> list[dict[str, object]]:
@@ -929,6 +992,27 @@ def _get_db_legislator_by_external_id(legislator_id: str) -> dict[str, Any] | No
     return None
 
 
+def _get_db_legislator_contact(*, legislator_id: str) -> dict[str, Any] | None:
+    legislator = _get_db_legislator_by_external_id(legislator_id)
+    if legislator is None:
+        return None
+
+    return _query_one_dict(
+        """
+        SELECT
+            official_website_url,
+            contact_form_url,
+            phone,
+            source_url,
+            source_type,
+            source_retrieved_at
+        FROM legislator_contacts
+        WHERE legislator_id = %s
+        """,
+        (legislator["id"],),
+    )
+
+
 def _get_db_fingerprint_rows(*, legislator_db_id: int) -> list[dict[str, Any]] | None:
     return _query_all_dicts(
         f"""
@@ -1761,6 +1845,26 @@ def _serialize_legislator(legislator: dict[str, object]) -> dict[str, object]:
         "state": legislator["state"],
         "district": legislator["district"],
         "party": legislator["party"],
+    }
+
+
+def _serialize_legislator_contact(
+    *,
+    legislator_id: str,
+    row: dict[str, object],
+    status: str,
+    data_source: str,
+) -> dict[str, object]:
+    return {
+        "legislator_id": legislator_id,
+        "contact_status": status,
+        "data_source": data_source,
+        "official_website_url": row.get("official_website_url"),
+        "contact_form_url": row.get("contact_form_url"),
+        "phone": row.get("phone"),
+        "source_url": row.get("source_url"),
+        "source_type": row.get("source_type"),
+        "source_retrieved_at": None if row.get("source_retrieved_at") is None else str(row["source_retrieved_at"]),
     }
 
 

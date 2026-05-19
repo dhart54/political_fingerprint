@@ -1,12 +1,12 @@
 # Product Roadmap
 
-This roadmap moves Political Fingerprint from an MVP dashboard into a ballot-aware civic product.
+This roadmap moves Political Fingerprint from an MVP dashboard into an accountability-first civic product.
 
 North star:
 
-**Who is on my ballot, and what does the evidence show about how they act on the issues I care about?**
+**Who represents me, how are they acting on the issues I care about, and what can I do next?**
 
-The current v2 product focuses on current federal officials and interpreted voting records. The next expansion should add upcoming races and candidate evidence tiers while preserving the original trust rules.
+The current v2 product focuses on current federal officials, interpreted voting records, issue evidence, and user-selected issue alignment. The next expansion should add a neutral civic action/contact layer before continuing broad election or challenger work.
 
 Core rule: inform the user, do not persuade the user. The product may show evidence-based alignment relative to user-selected preferences. It must not tell the user how to vote.
 
@@ -102,10 +102,17 @@ Execution detail lives in `docs/north_star_action_plan.md`.
 
 Current next build target:
 
-1. Confirm deployment through the latest main commit and smoke-test interpreted issue patterns.
-2. Expand source-grounded manual interpretations for high-visibility federal/starter issue records.
-3. Begin federal ballot proof: ZIP to upcoming federal races and candidate records.
-4. Add candidate evidence tiers before expanding beyond current officials.
+1. Visually review the improved Valerie Foushee / `ECONOMY_TAXES` gold slice.
+2. Make the current-representative accountability dashboard the clear primary journey.
+3. Add a neutral contact/action layer for current representatives: contact, ask, thank, and track.
+4. Expand source-grounded manual interpretations for high-visibility current-official issue records.
+5. Keep upcoming election and challenger context secondary, evidence-tiered, and non-prescriptive.
+
+Priority hierarchy for new work:
+
+1. Representative Accountability Dashboard
+2. Civic Action / Contact Layer
+3. Election / Challenger Layer
 
 ## Shelved Product Ideas
 
@@ -130,7 +137,9 @@ Current next build target:
 
 ## Next Lens - Ballot-Aware Candidate Comparison
 
-Goal: move from "current officials by ZIP" to "current officials plus upcoming races by ZIP," using the strongest available evidence for each candidate.
+Goal: keep election context available after the current-representative accountability flow, using the strongest available evidence for each candidate.
+
+This lens is now secondary to the Representative Accountability Dashboard and Civic Action / Contact Layer.
 
 Evidence ladder:
 
@@ -192,3 +201,37 @@ Evidence ladder:
 - [ ] Add states only when source quality and maintenance burden are understood.
 - [ ] Evaluate local election data vendors or civic data partnerships.
 - [ ] Treat local coverage as lower priority until federal and NC pilot flows are useful.
+
+## Next Lens - Civic Action / Contact Layer
+
+Goal: let users move from source-grounded evidence to a neutral next step with their current representatives.
+
+Allowed action types:
+
+1. Contact a current representative.
+2. Ask about a specific issue, vote, or missing evidence.
+3. Thank a representative for a recorded action.
+4. Track an issue, vote, official, or race for later review.
+
+Rules:
+
+- Actions must be user-directed and optional.
+- Suggested text must be neutral, editable, and tied to cited evidence.
+- Actions must not imply a voting recommendation or electoral persuasion.
+- Action history must not affect vote classification, vote interpretation, alignment, or candidate evidence tiers.
+
+### Phase 14 - Contact Metadata Foundation
+
+- [ ] Identify a low-cost, reliable source for current federal official contact metadata.
+- [ ] Document source license, fields, update cadence, and failure modes.
+- [ ] Add minimal backend model or read adapter for contact links.
+- [ ] Add tests for loaded and missing contact metadata.
+- [ ] Update `docs/methodology.md` with contact/action boundaries.
+
+### Phase 15 - Evidence-Linked Actions
+
+- [ ] Add action entry points from representative profile, issue cards, and interpreted vote evidence rows.
+- [ ] Add neutral contact, ask, thank, and track UI states.
+- [ ] Keep cited vote/source context visible when an action starts from evidence.
+- [ ] Add tests proving action state does not change alignment labels or evidence tiers.
+- [ ] Keep upcoming race action prompts out of scope until current-representative actions are stable.

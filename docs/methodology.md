@@ -6,7 +6,7 @@ This product is a curiosity-led, trust-anchored civic analytics platform focused
 
 The expanded product north star is documented in `docs/product_north_star.md`:
 
-**Who is on my ballot, and what does the evidence show about how they act on the issues I care about?**
+**Who represents me, how are they acting on the issues I care about, and what can I do next?**
 
 The original MVP scope included:
 
@@ -22,8 +22,17 @@ The current Product v2 direction adds:
 - user-defined issue preferences
 - evidence-based alignment between those preferences and recorded votes
 - drilldowns from every high-level read to underlying roll calls and sources
+- neutral civic actions for current representatives, such as contact, ask, thank, or track
 
-The long-term Product v3 direction adds ballot-aware candidate comparison:
+The current product hierarchy is:
+
+1. Representative Accountability Dashboard
+2. Civic Action / Contact Layer
+3. Election / Challenger Layer
+
+The election and challenger layer remains secondary to current-representative accountability. Ballot-aware candidate comparison may expand when reliable election data is available, but it must not displace issue evidence, interpreted vote meaning, or neutral civic follow-through for current representatives.
+
+The long-term election context adds ballot-aware candidate comparison:
 
 - upcoming races by ZIP code when reliable election data is available
 - incumbent and prior-officeholder comparison based first on recorded governing behavior
@@ -45,6 +54,8 @@ The methodology intentionally does not support:
 The product may say that a recorded voting pattern appears aligned, not aligned, mixed, or insufficiently evidenced relative to preferences the user explicitly selected. It must not tell the user how to vote.
 
 When candidate stated positions are used, the product may say what the candidate claims or lists as a position, with source and date context when available. It must not present stated positions as proven governing behavior.
+
+The product may support neutral action workflows. Actions must be user-directed, source-linked when they reference evidence, and separate from all vote interpretation and alignment calculations. Contact, ask, thank, and track features must not generate voting recommendations, campaign support language, or claims that exceed the cited evidence.
 
 ## System Principles
 
@@ -203,6 +214,47 @@ Alignment must be based only on:
 
 Alignment must expose evidence counts and underlying vote rows. It must not rank legislators, infer motives, assign moral quality, or tell the user how to vote.
 
+## Civic Action Rules
+
+Civic action features help users decide what to do next after inspecting evidence about current representatives.
+
+Allowed action types:
+
+- `contact`
+- `ask`
+- `thank`
+- `track`
+
+Allowed inputs:
+
+- selected current representative
+- selected issue domain
+- selected roll call or interpreted vote evidence
+- source URL or official contact URL when available
+- user-authored note or preference
+
+Rules:
+
+- actions must be optional and user-initiated
+- action copy must stay neutral, editable, and evidence-based
+- actions may summarize cited evidence, but may not tell the user what position to take
+- ask and thank actions must preserve the cited vote, issue, or evidence context
+- UI-only action drafts must clearly indicate that the app has not sent, stored, or subscribed the user to anything
+- tracking an issue, vote, or official must not alter any computed metric
+- action history, if stored, must remain separate from `vote_classifications`, `vote_interpretations`, `fingerprints`, `drift_scores`, `summaries`, and candidate evidence
+- contact metadata must be treated as operational context, not evidence of policy behavior
+- contact metadata is stored separately in `legislator_contacts` when available
+- contact metadata may include official website URL, contact form URL, phone, source URL, source type, and retrieved date
+- official contact links help users reach representatives but must not be interpreted as policy evidence
+
+Forbidden action behavior:
+
+- vote-for or vote-against language
+- candidate support or opposition directives
+- generated persuasion scripts framed as the product's recommendation
+- hidden scoring of representatives based on user actions
+- using action history to change alignment labels
+
 ## Eligibility Rules
 
 Vote eligibility is deterministic.
@@ -352,6 +404,10 @@ Frontend presentation:
 - evidence rows remain roll-call level because amendments and related actions can be meaningful
 - the UI groups rows by bill title or measure label when available
 - the UI surfaces both roll-call count and distinct bill-or-measure count so repeated actions on one bill are not presented as unrelated votes
+- the UI may show a deterministic high-level read for the opened issue using only the evidence rows already returned by the endpoint
+- that high-level read may count interpreted support-side, oppose-side, other-position, and ambiguous or insufficient-evidence rows
+- that high-level read may list source-grounded issue facets from cached `vote_interpretations`
+- it must not infer motive, ideology, causality, rank, or recommend an electoral action
 - this grouping is explanatory only and does not change stored metrics or alignment calculations
 
 ## Drift Rules

@@ -347,76 +347,97 @@ function UpcomingRacePanel({ onSelectLegislator, raceState }) {
   const races = raceState.payload?.races || [];
 
   return (
-    <div className="mt-5 rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4">
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-xs uppercase tracking-[0.26em] text-stone-500">
-            Upcoming Federal Races
-          </p>
-          <h4 className="mt-2 font-serif text-[1.85rem] leading-none text-stone-950">
-            Ballot preview
-          </h4>
+    <details className="mt-5 rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4">
+      <summary className="cursor-pointer list-none">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[0.26em] text-stone-500">
+              Secondary Election Context
+            </p>
+            <h4 className="mt-2 font-serif text-[1.65rem] leading-none text-stone-950">
+              Upcoming federal races
+            </h4>
+          </div>
+          <span className="w-fit rounded-full border border-stone-300 bg-white px-3 py-2 text-[11px] uppercase tracking-[0.16em] text-stone-700">
+            Open election context
+          </span>
         </div>
-        <p className="max-w-xl text-sm leading-6 text-stone-600">
-          This first slice shows office context before live candidate filings are loaded. Current officeholders link back to recorded-vote evidence.
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-stone-600">
+          Current representatives and voting evidence are the primary read. Open this when you want the upcoming race context loaded for the ZIP.
         </p>
-      </div>
+      </summary>
 
-      {raceState.status === "loading" ? (
-        <p className="mt-4 text-sm leading-6 text-stone-700">
-          Checking upcoming federal race coverage...
-        </p>
-      ) : null}
-      {raceState.status === "error" ? (
-        <p className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-900">
-          {raceState.error}
-        </p>
-      ) : null}
-      {raceState.status === "ready" && races.length === 0 ? (
-        <p className="mt-4 rounded-2xl border border-stone-200 bg-white px-4 py-3 text-sm leading-6 text-stone-700">
-          No upcoming federal race rows are loaded for this ZIP yet.
-        </p>
-      ) : null}
-      {raceState.status === "ready" && races.length > 0 ? (
-        <div className="mt-4 grid gap-3 md:grid-cols-2">
-          {races.map((race) => (
-            <article className="rounded-[1.25rem] border border-stone-200 bg-white px-4 py-4" key={race.id}>
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
-                    {formatRaceOffice(race)}
-                  </p>
-                  <h5 className="mt-2 text-[1.35rem] leading-7 text-stone-950">
-                    {race.office_name}
-                  </h5>
-                </div>
-                <span className="rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-900">
-                  {formatRaceStatus(race.status)}
-                </span>
-              </div>
-              <p className="mt-3 text-sm leading-6 text-stone-700">
-                {race.election_label} - {formatDate(race.election_date)}
-              </p>
-              <div className="mt-4 grid gap-2">
-                {(race.candidates || []).length ? (
-                  race.candidates.map((candidate) => (
-                    <RaceCandidateCard
-                      candidate={candidate}
-                      key={candidate.id}
-                      onSelectLegislator={onSelectLegislator}
-                    />
-                  ))
-                ) : (
-                  <p className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
-                    Candidate roster is not loaded yet. The race row is shown as ballot structure only.
-                  </p>
-                )}
-              </div>
-            </article>
-          ))}
+      <div className="mt-5 border-t border-stone-200 pt-4">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[0.26em] text-stone-500">
+              Election / Challenger Layer
+            </p>
+            <h5 className="mt-2 font-serif text-[1.55rem] leading-none text-stone-950">
+              Race context after the voting record
+            </h5>
+          </div>
+          <p className="max-w-xl text-sm leading-6 text-stone-600">
+            Candidate rows use evidence tiers. Linked incumbents point back to recorded-vote evidence; unlinked candidates remain lower-confidence or insufficient-evidence context.
+          </p>
         </div>
-      ) : null}
-    </div>
+
+        {raceState.status === "loading" ? (
+          <p className="mt-4 text-sm leading-6 text-stone-700">
+            Checking upcoming federal race coverage...
+          </p>
+        ) : null}
+        {raceState.status === "error" ? (
+          <p className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-900">
+            {raceState.error}
+          </p>
+        ) : null}
+        {raceState.status === "ready" && races.length === 0 ? (
+          <p className="mt-4 rounded-2xl border border-stone-200 bg-white px-4 py-3 text-sm leading-6 text-stone-700">
+            No upcoming federal race rows are loaded for this ZIP yet.
+          </p>
+        ) : null}
+        {raceState.status === "ready" && races.length > 0 ? (
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            {races.map((race) => (
+              <article className="rounded-[1.25rem] border border-stone-200 bg-white px-4 py-4" key={race.id}>
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
+                      {formatRaceOffice(race)}
+                    </p>
+                    <h5 className="mt-2 text-[1.35rem] leading-7 text-stone-950">
+                      {race.office_name}
+                    </h5>
+                  </div>
+                  <span className="rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-900">
+                    {formatRaceStatus(race.status)}
+                  </span>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-stone-700">
+                  {race.election_label} - {formatDate(race.election_date)}
+                </p>
+                <div className="mt-4 grid gap-2">
+                  {(race.candidates || []).length ? (
+                    race.candidates.map((candidate) => (
+                      <RaceCandidateCard
+                        candidate={candidate}
+                        key={candidate.id}
+                        onSelectLegislator={onSelectLegislator}
+                      />
+                    ))
+                  ) : (
+                    <p className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
+                      Candidate roster is not loaded yet. The race row is shown as election structure only.
+                    </p>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : null}
+      </div>
+    </details>
   );
 }
 

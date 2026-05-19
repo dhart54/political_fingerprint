@@ -8,6 +8,7 @@ VOTE_INTERPRETATION_DETAILS_MIGRATION_PATH = MIGRATIONS_DIR / "0003_vote_interpr
 UPCOMING_RACES_MIGRATION_PATH = MIGRATIONS_DIR / "0004_upcoming_races.sql"
 RACE_CANDIDATE_SOURCE_KEYS_MIGRATION_PATH = MIGRATIONS_DIR / "0005_race_candidate_source_keys.sql"
 CANDIDATE_EVIDENCE_MIGRATION_PATH = MIGRATIONS_DIR / "0006_candidate_evidence.sql"
+LEGISLATOR_CONTACTS_MIGRATION_PATH = MIGRATIONS_DIR / "0007_legislator_contacts.sql"
 
 
 def test_initial_migration_defines_required_enums_and_tables() -> None:
@@ -126,3 +127,18 @@ def test_candidate_evidence_migration_keeps_stated_positions_separate() -> None:
     assert "confidence text not null check" in lowered
     assert "source_url text not null" in lowered
     assert "idx_candidate_evidence_candidate" in lowered
+
+
+def test_legislator_contacts_migration_keeps_contact_metadata_separate() -> None:
+    migration_sql = LEGISLATOR_CONTACTS_MIGRATION_PATH.read_text()
+    lowered = migration_sql.lower()
+
+    assert "create table if not exists legislator_contacts" in lowered
+    assert "legislator_id bigint primary key references legislators(id)" in lowered
+    assert "official_website_url text" in lowered
+    assert "contact_form_url text" in lowered
+    assert "phone text" in lowered
+    assert "source_url text not null" in lowered
+    assert "source_type text not null" in lowered
+    assert "source_retrieved_at date not null" in lowered
+    assert "idx_legislator_contacts_source" in lowered

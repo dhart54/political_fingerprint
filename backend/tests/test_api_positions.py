@@ -1,6 +1,7 @@
 import pytest
 from fastapi import HTTPException
 
+from app.api.contact import get_legislator_contact
 from app.api.lookup import lookup_candidate_evidence, lookup_zip_races
 from app.api import precomputed
 from app.api.positions import get_legislator_position_evidence, get_legislator_positions
@@ -15,6 +16,7 @@ def test_app_registers_positions_route() -> None:
 def test_app_registers_zip_races_route() -> None:
     assert "/lookup/zip/{zip_code}/races" in {route.path for route in app.routes}
     assert "/race-candidates/{candidate_id}/evidence" in {route.path for route in app.routes}
+    assert "/legislators/{legislator_id}/contact" in {route.path for route in app.routes}
 
 
 def test_get_positions_endpoint_returns_domain_position_profile() -> None:
@@ -249,5 +251,31 @@ def test_candidate_evidence_endpoint_rejects_unknown_candidate(monkeypatch) -> N
 
     with pytest.raises(HTTPException) as exc_info:
         lookup_candidate_evidence("123")
+
+    assert exc_info.value.status_code == 404
+
+
+def test_legislator_contact_endpoint_returns_curated_contact_metadata() -> None:
+    payload = get_legislator_contact("leg_valerie_p_foushee")
+
+    assert payload["legislator_id"] == "leg_valerie_p_foushee"
+    assert payload["contact_status"] == "loaded"
+    assert payload["data_source"] == "curated_fallback"
+    assert payload["contact_form_url"] == "https://foushee.house.gov/contact"
+    assert payload["phone"] == "(202) 225-1784"
+    assert payload["source_type"] == "official_house_website"
+
+
+def test_legislator_contact_endpoint_returns_not_loaded_for_known_without_contact() -> None:
+    payload = get_legislator_contact("leg_alex_morgan")
+
+    assert payload["legislator_id"] == "leg_alex_morgan"
+    assert payload["contact_status"] == "not_loaded"
+    assert payload["contact_form_url"] is None
+
+
+def test_legislator_contact_endpoint_rejects_unknown_legislator() -> None:
+    with pytest.raises(HTTPException) as exc_info:
+        get_legislator_contact("unknown")
 
     assert exc_info.value.status_code == 404
