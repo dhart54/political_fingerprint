@@ -544,7 +544,6 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
 
       <div className="mt-4 rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4">
         <ContactMetadataCard contactState={contactState} />
-        <ActionIntentNote selectedAction={selectedAction} />
         <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
           Evidence context
         </p>
@@ -557,7 +556,7 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
           </p>
         ) : (
           <p className="mt-2 text-xs leading-5 text-stone-500">
-            Use a row's Use For Action button to keep a specific vote visible while you write in your own words.
+            Select a vote below to keep it visible here.
           </p>
         )}
         {selectedAction === "track" ? (
@@ -634,30 +633,6 @@ function ContactMetadataCard({ contactState }) {
       </div>
       <p className="mt-2 text-xs leading-5 text-stone-500">
         Source: {formatContactSource(contact)}.
-      </p>
-    </div>
-  );
-}
-
-function ActionIntentNote({ selectedAction }) {
-  if (selectedAction === "track") {
-    return null;
-  }
-
-  const label =
-    selectedAction === "ask"
-      ? "Ask in your own words"
-      : selectedAction === "thank"
-        ? "Thank in your own words"
-        : "Write in your own words";
-
-  return (
-    <div className="mb-4 rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-3">
-      <p className="text-[11px] uppercase tracking-[0.18em] text-cyan-900">
-        {label}
-      </p>
-      <p className="mt-2 text-sm leading-6 text-cyan-950">
-        The app does not generate a message. Use the official contact options and the evidence shown here as reference.
       </p>
     </div>
   );
