@@ -225,6 +225,8 @@ Rules:
 - [ ] Identify a low-cost, reliable source for current federal official contact metadata.
 - [ ] Document source license, fields, update cadence, and failure modes.
 - [x] Add minimal backend model or read adapter for contact links.
+- [x] Add reviewed NC federal contact seed and importer keyed by Bioguide ID.
+- [x] Apply the contact metadata migration and NC pilot seed to Supabase.
 - [x] Add tests for loaded and missing contact metadata.
 - [x] Update `docs/methodology.md` with contact/action boundaries.
 

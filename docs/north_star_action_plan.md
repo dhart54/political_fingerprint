@@ -390,12 +390,11 @@ Acceptance criteria:
 
 ## Immediate Next Tasks
 
-1. Apply the `legislator_contacts` migration to Supabase and replace the curated demo fallback with stored official contact rows.
-2. Define the minimal contact metadata source/update workflow for current federal officials beyond the NC pilot rows.
-3. Expand manual federal vote interpretations for the next most visible current-official issue domain.
-4. Add action-layer tests proving UI-only action state does not change alignment labels, vote interpretation, or evidence tiers.
-5. Keep newsletter/email tracking out of scope until users validate that persistent reminders are actually needed.
-6. Keep race/candidate work to maintenance and neutral evidence-tier cleanup until the accountability/action path is coherent.
+1. Define the minimal contact metadata source/update workflow for current federal officials beyond the NC pilot rows.
+2. Expand manual federal vote interpretations for the next most visible current-official issue domain.
+3. Add action-layer tests proving UI-only action state does not change alignment labels, vote interpretation, or evidence tiers.
+4. Keep newsletter/email tracking out of scope until users validate that persistent reminders are actually needed.
+5. Keep race/candidate work to maintenance and neutral evidence-tier cleanup until the accountability/action path is coherent.
 
 ## Decision Rules
 

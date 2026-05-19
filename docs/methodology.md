@@ -246,6 +246,13 @@ Rules:
 - contact metadata is stored separately in `legislator_contacts` when available
 - contact metadata may include official website URL, contact form URL, phone, source URL, source type, and retrieved date
 - official contact links help users reach representatives but must not be interpreted as policy evidence
+- contact rows are imported through `app.etl.legislator_contacts` from reviewed official-source records keyed by Bioguide ID
+- the first reviewed contact seed is `docs/legislator_contacts/nc_federal_contacts_seed.json`
+
+Current CLI example:
+
+- `python -m app.etl.legislator_contacts --input ../docs/legislator_contacts/nc_federal_contacts_seed.json --dry-run`
+- `python -m app.etl.legislator_contacts --input ../docs/legislator_contacts/nc_federal_contacts_seed.json`
 
 Forbidden action behavior:
 

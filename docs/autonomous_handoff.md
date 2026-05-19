@@ -218,6 +218,15 @@ Current uncommitted continuation:
 - `ZipLookupPanel` still fetches ZIP race context, but `UpcomingRacePanel` is now rendered from the home page below the accountability/evidence/action/comparison path.
 - Browser smoke confirmed `Secondary Election Context` appears after `Issue Comparison` and not before `Current Profile`.
 
+Current contact-import continuation:
+
+- Added `backend/app/etl/legislator_contacts.py` for reviewed official contact imports keyed by Bioguide ID.
+- Added `docs/legislator_contacts/nc_federal_contacts_seed.json` with Valerie Foushee, Ted Budd, and Thom Tillis official contact metadata.
+- Added parser/validation tests for the NC federal contact seed.
+- Applied `backend/migrations/0007_legislator_contacts.sql` to the configured Supabase database.
+- Imported the NC federal contact seed to Supabase: 3 records seen, 3 imported.
+- Supabase-backed API smoke confirmed Valerie Foushee, Ted Budd, and Thom Tillis now return `data_source = database` for contact metadata.
+
 ## Verification Already Run
 
 Latest checks:
@@ -553,12 +562,11 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the editable action-draft continuation if it looks good.
-2. Apply migration `0007_legislator_contacts.sql` to Supabase before expecting database-backed contact rows.
-3. Replace curated contact fallbacks with imported/stored official contact metadata when the source workflow is ready.
-4. Continue expanding manual interpretations for the next visible current-official issue domain.
-5. Add action-layer tests proving UI-only action state does not alter alignment, interpretation, or evidence-tier outputs.
-6. Keep newsletter/email tracking out of scope until users validate persistent tracking.
+1. Commit the contact-import continuation if it looks good.
+2. Define the broader official contact source/update workflow beyond the NC pilot rows.
+3. Continue expanding manual interpretations for the next visible current-official issue domain.
+4. Add action-layer tests proving UI-only action state does not alter alignment, interpretation, or evidence-tier outputs.
+5. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 
