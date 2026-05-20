@@ -218,12 +218,11 @@ Alignment must expose evidence counts and underlying vote rows. It must not rank
 
 Civic action features help users decide what to do next after inspecting evidence about current representatives.
 
-Allowed action types:
+Current action surface:
 
-- `contact`
-- `ask`
-- `thank`
-- `track`
+- official contact information for the current representative
+- selected issue context
+- optional selected roll-call reference
 
 Allowed inputs:
 
@@ -231,7 +230,6 @@ Allowed inputs:
 - selected issue domain
 - selected roll call or interpreted vote evidence
 - source URL or official contact URL when available
-- user-authored note or preference
 
 Rules:
 
@@ -239,7 +237,6 @@ Rules:
 - action UI may show cited evidence context and official contact metadata, but should not generate a message body for the user
 - if future action copy is added, it must stay neutral, user-editable, and evidence-based
 - actions may summarize cited evidence, but may not tell the user what position to take
-- ask and thank actions must preserve the cited vote, issue, or evidence context
 - UI-only action states must clearly indicate that the app has not sent, stored, or subscribed the user to anything
 - tracking an issue, vote, or official must not alter any computed metric
 - action history, if stored, must remain separate from `vote_classifications`, `vote_interpretations`, `fingerprints`, `drift_scores`, `summaries`, and candidate evidence

@@ -404,7 +404,7 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
                           onClick={() => setSelectedActionRow(row)}
                           type="button"
                         >
-                          Use For Action
+                          Reference Vote
                         </button>
                         {row.source_url ? (
                           <a
@@ -432,8 +432,6 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
 }
 
 function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRow }) {
-  const [selectedAction, setSelectedAction] = useState("contact");
-  const [tracked, setTracked] = useState(false);
   const [contactState, setContactState] = useState({
     status: "idle",
     payload: null,
@@ -502,44 +500,18 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
       <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.24em] text-cyan-900">
-            Take Action
+            Contact This Office
           </p>
           <h5 className="mt-2 text-[1.35rem] leading-7 text-stone-950">
-            Use this evidence with {representativeName}
+            {representativeName}
           </h5>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-stone-600">
-            These actions are optional and user-directed. The site keeps the evidence context visible, but it does not tell you what position to take.
+            Official contact information and the evidence context shown on this page.
           </p>
         </div>
         <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-stone-700">
-          Contact info only
+          Official contact
         </span>
-      </div>
-
-      <div className="mt-4 grid gap-2 sm:grid-cols-4">
-        <ActionButton
-          active={selectedAction === "contact"}
-          label="Contact"
-          onClick={() => setSelectedAction("contact")}
-        />
-        <ActionButton
-          active={selectedAction === "ask"}
-          label="Ask"
-          onClick={() => setSelectedAction("ask")}
-        />
-        <ActionButton
-          active={selectedAction === "thank"}
-          label="Thank"
-          onClick={() => setSelectedAction("thank")}
-        />
-        <ActionButton
-          active={selectedAction === "track"}
-          label="Track"
-          onClick={() => {
-            setSelectedAction("track");
-            setTracked(true);
-          }}
-        />
       </div>
 
       <div className="mt-4 rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4">
@@ -559,13 +531,6 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
             Select a vote below to keep it visible here.
           </p>
         )}
-        {selectedAction === "track" ? (
-          <p className="mt-3 rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-3 text-sm leading-6 text-cyan-950">
-            {tracked
-              ? "Tracked in this page session. Persistent alerts or newsletters are not enabled in this slice."
-              : "Use Track to keep this issue in view during this page session."}
-          </p>
-        ) : null}
       </div>
     </div>
   );
@@ -635,23 +600,6 @@ function ContactMetadataCard({ contactState }) {
         Source: {formatContactSource(contact)}.
       </p>
     </div>
-  );
-}
-
-function ActionButton({ active, label, onClick }) {
-  return (
-    <button
-      aria-pressed={active}
-      className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.18em] transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
-        active
-          ? "border-cyan-900 bg-cyan-900 text-white"
-          : "border-stone-300 bg-white text-stone-700 hover:border-cyan-800 hover:bg-cyan-50"
-      }`}
-      onClick={onClick}
-      type="button"
-    >
-      {label}
-    </button>
   );
 }
 

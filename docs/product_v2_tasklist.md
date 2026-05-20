@@ -206,12 +206,11 @@ Evidence ladder:
 
 Goal: let users move from source-grounded evidence to a neutral next step with their current representatives.
 
-Allowed action types:
+Current action surface:
 
-1. Contact a current representative.
-2. Ask about a specific issue, vote, or missing evidence.
-3. Thank a representative for a recorded action.
-4. Track an issue, vote, official, or race for later review.
+1. Show official contact paths for the current representative.
+2. Preserve the issue and optional roll-call context the user is looking at.
+3. Do not create ask, thank, or track modes until there is a validated need for them.
 
 Rules:
 
@@ -233,7 +232,7 @@ Rules:
 ### Phase 15 - Evidence-Linked Actions
 
 - [x] Add action entry points from representative profile, issue cards, and interpreted vote evidence rows.
-- [x] Add contact, ask, thank, and track UI states without generated message starters.
+- [x] Collapse contact/action UI to official contact information plus evidence context.
 - [x] Keep cited vote/source context visible when an action starts from evidence.
-- [ ] Add tests proving action state does not change alignment labels or evidence tiers.
-- [ ] Keep upcoming race action prompts out of scope until current-representative actions are stable.
+- [x] Keep ask, thank, track, newsletters, and persistent reminders out of scope until users validate a need.
+- [ ] Add tests proving contact/reference state does not change alignment labels or evidence tiers.

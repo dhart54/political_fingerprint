@@ -133,12 +133,11 @@ Product output:
 
 The action layer should be evidence-linked but not persuasive.
 
-Allowed action types:
+Current action surface:
 
-- `contact`: open official contact paths and preserve the related evidence context
-- `ask`: help the user ask a representative about a vote, issue, or missing evidence
-- `thank`: help the user reference a recorded vote or action they appreciate
-- `track`: save an issue, official, race, or vote for later review
+- open official contact paths and preserve the related evidence context
+- keep a selected roll call visible when the user chooses one
+- avoid ask, thank, track, newsletters, and reminders until there is a validated need
 
 Action rules:
 

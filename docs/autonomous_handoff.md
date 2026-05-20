@@ -568,6 +568,13 @@ Reported results:
   - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
   - browser automation was blocked by browser security policy on the open local tab; visual browser review is still needed in the user-visible page
   - next best task: visually review the improved SBA row with the user, then replicate this higher-specificity standard to Valerie's next visible issue domain
+- Contact surface simplification checkpoint:
+  - user rejected generated message starters and later rejected copy that still felt like it was coaching them how to write
+  - the civic action panel is now a plain `Contact This Office` surface with official contact metadata and the evidence context already on the page
+  - ask, thank, track, newsletters, and persistent reminders are intentionally out of scope until users validate a need
+  - interpreted vote rows now use `Reference Vote` instead of `Use For Action`
+  - docs now describe the current action surface as official contact paths plus issue/roll-call context, not as four action modes
+  - frontend production build passed before this note; browser restart/visual verification was blocked by the app usage-limit guard, so visual review remains the only missing check for this slice
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -582,11 +589,12 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the Valerie Justice/Public Safety punch-up continuation if it looks good.
-2. Define the broader official contact source/update workflow beyond the NC pilot rows.
-3. Continue expanding manual interpretations for the next visible current-official issue domain.
-4. Add action-layer tests proving UI-only action state does not alter alignment, interpretation, or evidence-tier outputs.
-5. Keep newsletter/email tracking out of scope until users validate persistent tracking.
+1. Visually confirm the simplified contact panel in the local app.
+2. Commit the contact-surface simplification if the visual check looks good.
+3. Define the broader official contact source/update workflow beyond the NC pilot rows.
+4. Continue expanding manual interpretations for the next visible current-official issue domain.
+5. Add action-layer tests proving contact/reference state does not alter alignment, interpretation, or evidence-tier outputs.
+6. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 
