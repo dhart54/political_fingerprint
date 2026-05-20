@@ -104,7 +104,7 @@ Current next build target:
 
 1. Visually review the improved Valerie Foushee / `ECONOMY_TAXES` gold slice.
 2. Make the current-representative accountability dashboard the clear primary journey.
-3. Add a neutral contact/action layer for current representatives: contact, ask, thank, and track.
+3. Keep the neutral contact layer focused on official contact metadata and evidence context.
 4. Expand source-grounded manual interpretations for high-visibility current-official issue records.
 5. Keep upcoming election and challenger context secondary, evidence-tiered, and non-prescriptive.
 
@@ -235,4 +235,4 @@ Rules:
 - [x] Collapse contact/action UI to official contact information plus evidence context.
 - [x] Keep cited vote/source context visible when an action starts from evidence.
 - [x] Keep ask, thank, track, newsletters, and persistent reminders out of scope until users validate a need.
-- [ ] Add tests proving contact/reference state does not change alignment labels or evidence tiers.
+- [x] Add tests proving contact/reference state does not change alignment labels or evidence tiers.

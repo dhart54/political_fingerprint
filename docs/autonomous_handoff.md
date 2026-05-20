@@ -185,7 +185,7 @@ Current direction shift:
   1. Representative Accountability Dashboard
   2. Civic Action / Contact Layer
   3. Election / Challenger Layer as secondary context
-- Current representatives, issue evidence, interpreted vote meaning, and neutral contact/ask/thank/track actions should drive near-term work.
+- Current representatives, issue evidence, interpreted vote meaning, and neutral official contact paths should drive near-term work.
 - Upcoming election and challenger context remains supported but should not lead the primary journey.
 
 Completed in that committed checkpoint:
@@ -214,7 +214,7 @@ Current uncommitted continuation:
 
 - User rejected generated action draft starters as too awkward and app-authored.
 - `CivicActionPanel` now removes generated message bodies entirely.
-- Action states now show official contact metadata, selected evidence context, and a prompt to write in the user's own words.
+- The contact surface now shows official contact metadata and selected evidence context only.
 - `ZipLookupPanel` still fetches ZIP race context, but `UpcomingRacePanel` is now rendered from the home page below the accountability/evidence/action/comparison path.
 - Browser smoke confirmed `Secondary Election Context` appears after `Issue Comparison` and not before `Current Profile`.
 
@@ -575,6 +575,11 @@ Reported results:
   - interpreted vote rows now use `Reference Vote` instead of `Use For Action`
   - docs now describe the current action surface as official contact paths plus issue/roll-call context, not as four action modes
   - frontend production build passed before this note; browser restart/visual verification was blocked by the app usage-limit guard, so visual review remains the only missing check for this slice
+- Contact/reference invariant test checkpoint:
+  - added a backend contract test proving contact lookup does not change alignment payloads, position evidence payloads, or race candidate evidence-tier labels
+  - loosened the Valerie contact source assertion so it accepts either the curated fallback or the Supabase-backed database seed while still requiring the official contact fields
+  - targeted backend tests passed: `tests\test_api_positions.py tests\test_api_alignment.py` (`20 passed`)
+  - task/action docs now mark the Phase 15 contact/reference invariant test complete and remove stale ask/thank/track implementation language
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -589,12 +594,10 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Visually confirm the simplified contact panel in the local app.
-2. Commit the contact-surface simplification if the visual check looks good.
-3. Define the broader official contact source/update workflow beyond the NC pilot rows.
-4. Continue expanding manual interpretations for the next visible current-official issue domain.
-5. Add action-layer tests proving contact/reference state does not alter alignment, interpretation, or evidence-tier outputs.
-6. Keep newsletter/email tracking out of scope until users validate persistent tracking.
+1. Commit the contact/reference invariant test and doc cleanup.
+2. Define the broader official contact source/update workflow beyond the NC pilot rows.
+3. Continue expanding manual interpretations for the next visible current-official issue domain.
+4. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 

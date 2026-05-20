@@ -22,7 +22,7 @@ The current Product v2 direction adds:
 - user-defined issue preferences
 - evidence-based alignment between those preferences and recorded votes
 - drilldowns from every high-level read to underlying roll calls and sources
-- neutral civic actions for current representatives, such as contact, ask, thank, or track
+- neutral civic contact paths for current representatives
 
 The current product hierarchy is:
 
@@ -55,7 +55,7 @@ The product may say that a recorded voting pattern appears aligned, not aligned,
 
 When candidate stated positions are used, the product may say what the candidate claims or lists as a position, with source and date context when available. It must not present stated positions as proven governing behavior.
 
-The product may support neutral action workflows. Actions must be user-directed, source-linked when they reference evidence, and separate from all vote interpretation and alignment calculations. Contact, ask, thank, and track features must not generate voting recommendations, campaign support language, or claims that exceed the cited evidence.
+The product may support neutral contact workflows. Contact surfaces must be user-directed, source-linked when they reference evidence, and separate from all vote interpretation and alignment calculations. The current product shows official contact metadata and evidence context only; ask, thank, track, newsletters, and reminders are deferred until there is a validated need.
 
 ## System Principles
 

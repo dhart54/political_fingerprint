@@ -1,6 +1,7 @@
 import pytest
 from fastapi import HTTPException
 
+from app.api.alignment import AlignmentRequest, get_legislator_alignment
 from app.api.contact import get_legislator_contact
 from app.api.lookup import lookup_candidate_evidence, lookup_zip_races
 from app.api import precomputed
@@ -260,7 +261,7 @@ def test_legislator_contact_endpoint_returns_curated_contact_metadata() -> None:
 
     assert payload["legislator_id"] == "leg_valerie_p_foushee"
     assert payload["contact_status"] == "loaded"
-    assert payload["data_source"] == "curated_fallback"
+    assert payload["data_source"] in {"curated_fallback", "database"}
     assert payload["contact_form_url"] == "https://foushee.house.gov/contact"
     assert payload["phone"] == "(202) 225-1784"
     assert payload["source_type"] == "official_house_website"
@@ -279,3 +280,34 @@ def test_legislator_contact_endpoint_rejects_unknown_legislator() -> None:
         get_legislator_contact("unknown")
 
     assert exc_info.value.status_code == 404
+
+
+def test_contact_lookup_does_not_change_alignment_evidence_or_candidate_tiers() -> None:
+    alignment_before = get_legislator_alignment(
+        "leg_alex_morgan",
+        AlignmentRequest(preferences={"EDUCATION_WORKFORCE": "support_more_action"}),
+    )
+    evidence_before = get_legislator_position_evidence("leg_alex_morgan", "EDUCATION_WORKFORCE")
+    races_before = lookup_zip_races("27701")
+
+    contact_payload = get_legislator_contact("leg_alex_morgan")
+
+    alignment_after = get_legislator_alignment(
+        "leg_alex_morgan",
+        AlignmentRequest(preferences={"EDUCATION_WORKFORCE": "support_more_action"}),
+    )
+    evidence_after = get_legislator_position_evidence("leg_alex_morgan", "EDUCATION_WORKFORCE")
+    races_after = lookup_zip_races("27701")
+
+    assert contact_payload["contact_status"] == "not_loaded"
+    assert alignment_after == alignment_before
+    assert evidence_after == evidence_before
+    assert [
+        candidate["evidence_tier"]
+        for race in races_after["races"]
+        for candidate in race["candidates"]
+    ] == [
+        candidate["evidence_tier"]
+        for race in races_before["races"]
+        for candidate in race["candidates"]
+    ]

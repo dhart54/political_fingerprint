@@ -35,8 +35,8 @@ What exists now:
 
 Important current limitations:
 
-- no civic action or contact layer
-- no ask, thank, or track workflow
+- limited official contact metadata beyond the NC pilot
+- no validated need yet for ask, thank, track, newsletters, or reminders
 - limited contact metadata for current officials
 - thin interpretation coverage outside the first high-visibility slices
 - limited challenger or first-time candidate stated-position records
@@ -52,13 +52,13 @@ The current frontend already supports most of the accountability-first direction
 - `ProfileQuickRead`, `AlignmentPanel`, and `PositionByIssue` are the strongest accountability surfaces.
 - `PositionByIssue` now includes the best interpreted evidence card pattern: `Why this mattered`, `What this vote was`, and `Their vote`.
 - `ZipLookupPanel` now fetches race context but the home page renders `UpcomingRacePanel` below the representative accountability, evidence, action, and comparison flow.
-- `PositionByIssue` now includes a UI-only contact/action panel with editable contact, ask, thank, and session-only track states.
+- `PositionByIssue` now includes a UI-only contact surface with official contact metadata and evidence context.
 
 Recommended structure:
 
 1. Keep ZIP lookup and current representative cards first.
 2. Keep current profile, quick read, user issues, alignment, and interpreted evidence as the main body.
-3. Add a new action layer after evidence, where the user can contact, ask, thank, or track from a specific official/issue/vote.
+3. Keep the contact layer after evidence, where the user can open official contact paths while retaining the specific official/issue/vote context.
 4. Keep upcoming race context below the accountability flow and collapsed behind a secondary section after current-representative evidence.
 5. Keep comparison framed around current officials and selected issues unless the user explicitly opens election context.
 
@@ -175,8 +175,8 @@ Goal: let users move from evidence inspection to a neutral next action with thei
 Backend deliverables:
 
 - contact metadata model or read adapter for current legislators
-- stored action-intent schema if tracking is implemented server-side
-- action type enum: contact, ask, thank, track
+- stored action-intent schema only if tracking is later validated
+- contact metadata must remain separate from vote, alignment, and candidate evidence tables
 - source/evidence reference fields for actions tied to votes or issues
 - tests proving actions do not affect alignment, vote interpretation, or candidate evidence
 
@@ -184,15 +184,15 @@ Frontend deliverables:
 
 - action entry points from representative profile, issue pattern cards, and evidence rows
 - contact card for official phone/site/contact-form links when available
-- ask/thank affordance that keeps the cited vote and source visible
-- track affordance for issue, official, or vote
+- official contact affordance that keeps the cited vote and source visible
+- no ask, thank, track, newsletter, or reminder affordance until users validate a need
 - neutral empty states when contact metadata is missing
 
 Acceptance criteria:
 
 - user can open a current representative's contact path from the accountability dashboard
-- user can start an ask or thank flow from a specific interpreted vote
-- user can track an issue or vote without creating a score, ranking, or recommendation
+- user can open official contact paths from a specific interpreted vote
+- contact/reference UI does not create a score, ranking, recommendation, or persistent state
 - all action copy remains neutral and user-directed
 
 ## Phase C - Interpretation Coverage Expansion
@@ -391,7 +391,7 @@ Acceptance criteria:
 
 1. Define the minimal contact metadata source/update workflow for current federal officials beyond the NC pilot rows.
 2. Expand manual federal vote interpretations for the next most visible current-official issue domain.
-3. Add action-layer tests proving UI-only action state does not change alignment labels, vote interpretation, or evidence tiers.
+3. Keep action-layer tests proving UI-only contact/reference state does not change alignment labels, vote interpretation, or evidence tiers.
 4. Keep newsletter/email tracking out of scope until users validate that persistent reminders are actually needed.
 5. Keep race/candidate work to maintenance and neutral evidence-tier cleanup until the accountability/action path is coherent.
 
