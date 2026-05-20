@@ -595,9 +595,10 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 Work from `docs/product_v2_tasklist.md` in this order:
 
 1. Commit the contact/reference invariant test and doc cleanup.
-2. Define the broader official contact source/update workflow beyond the NC pilot rows.
-3. Continue expanding manual interpretations for the next visible current-official issue domain.
-4. Keep newsletter/email tracking out of scope until users validate persistent tracking.
+2. Commit the contact source/update workflow doc.
+3. Identify any remaining legal/license caveats for broader use of official federal contact metadata.
+4. Continue expanding manual interpretations for the next visible current-official issue domain.
+5. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 

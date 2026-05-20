@@ -389,7 +389,7 @@ Acceptance criteria:
 
 ## Immediate Next Tasks
 
-1. Define the minimal contact metadata source/update workflow for current federal officials beyond the NC pilot rows.
+1. Identify any remaining legal/license caveats for broader use of official federal contact metadata.
 2. Expand manual federal vote interpretations for the next most visible current-official issue domain.
 3. Keep action-layer tests proving UI-only contact/reference state does not change alignment labels, vote interpretation, or evidence tiers.
 4. Keep newsletter/email tracking out of scope until users validate that persistent reminders are actually needed.
