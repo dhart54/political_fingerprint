@@ -131,7 +131,7 @@ export default function PositionByIssue({
               How To Read This
             </p>
             <p className="mt-2 text-[15px] leading-7 text-stone-200">
-              Each tile starts with the domains where this legislator has the most recorded votes, then shows the yea/nay split inside that domain. It is descriptive, not a score.
+              Each tile starts with the domains where this legislator has the most recorded votes, then shows the yea/nay split and how many votes have cached plain-English meaning. It is descriptive, not a score.
             </p>
           </div>
         </div>
@@ -200,6 +200,9 @@ export default function PositionByIssue({
                   />
                 </div>
               </div>
+              <p className="mt-3 text-xs leading-5 text-stone-500">
+                {buildInterpretationCoverageRead(row)}
+              </p>
             </button>
           ))}
         </div>
@@ -1157,4 +1160,20 @@ function buildPositionRead(row) {
 
   const strongerShare = Math.max(row.yea_share, row.nay_share);
   return `${(strongerShare * 100).toFixed(0)}% of recorded votes`;
+}
+
+function buildInterpretationCoverageRead(row) {
+  const interpretedYeaNay = (row.interpreted_support_count || 0) + (row.interpreted_oppose_count || 0);
+  const recordedVotes = row.recorded_votes || 0;
+
+  if (!recordedVotes) {
+    return "No recorded yea/nay votes in this issue.";
+  }
+  if (!interpretedYeaNay) {
+    return "0 interpreted yea/nay meanings cached; open evidence to inspect raw roll calls.";
+  }
+  if (interpretedYeaNay === recordedVotes) {
+    return `${interpretedYeaNay} of ${recordedVotes} recorded yea/nay votes have cached vote meaning.`;
+  }
+  return `${interpretedYeaNay} of ${recordedVotes} recorded yea/nay votes have cached vote meaning; the rest stay visible but uninterpreted.`;
 }

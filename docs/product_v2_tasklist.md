@@ -128,6 +128,7 @@ Priority hierarchy for new work:
 - [x] Import reviewed interpretations into Supabase.
 - [x] Surface plain-English vote meaning in evidence rows.
 - [x] Aggregate interpreted vote meanings into neutral issue pattern cards.
+- [x] Show interpreted-vote coverage on issue tiles before users open evidence.
 - [x] Add second reviewed interpretation batch for Valerie Foushee national-security/defense votes.
 - [x] Complete remaining Valerie Foushee national-security/defense review pass with explicit ambiguity and insufficient-evidence records.
 - [x] Punch up budget-resolution interpretations so evidence rows explain practical process effects, not just formal vote labels.

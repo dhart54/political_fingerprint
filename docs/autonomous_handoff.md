@@ -633,6 +633,10 @@ Reported results:
   - identified NCSBE/NCGA shapefiles and block assignment files as district mapping sources
   - explicitly marked ZIP-only state district lookup as insufficient for reliable state legislative lookup
   - marked Phase 12 research/source/district-mapping documentation tasks complete
+- Federal issue coverage clarity checkpoint:
+  - `PositionByIssue` tiles now show interpreted yea/nay coverage, such as `3 of 6 recorded yea/nay votes have cached vote meaning`
+  - `How To Read This` copy now distinguishes recorded vote splits from cached plain-English vote meaning
+  - this keeps classified-but-uninterpreted records visible without making them look like interpreted evidence
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -647,11 +651,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the NC state pilot source research doc.
-2. Keep state-level methodology separate from federal methodology where source formats differ.
-3. Add one NC state office/race pilot before broad state expansion.
-4. Continue expanding manual interpretations for NC senators' next visible issue gaps only if source text supports a real policy read.
-5. Keep newsletter/email tracking out of scope until users validate persistent tracking.
+1. Commit the federal issue coverage clarity UI.
+2. Continue expanding manual interpretations for current-official visible issue gaps only if source text supports a real policy read.
+3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 
