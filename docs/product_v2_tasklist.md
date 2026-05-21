@@ -190,9 +190,9 @@ Evidence ladder:
 
 ### Phase 12 - North Carolina State Pilot
 
-- [ ] Research NC state legislative voting and election data availability.
-- [ ] Document NC source reliability, access method, and update cadence.
-- [ ] Add NC state district mapping plan.
+- [x] Research NC state legislative voting and election data availability.
+- [x] Document NC source reliability, access method, and update cadence.
+- [x] Add NC state district mapping plan.
 - [ ] Add one NC state office/race pilot before broad state expansion.
 - [ ] Keep state-level methodology separate from federal methodology where source formats differ.
 

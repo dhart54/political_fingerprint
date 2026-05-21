@@ -341,10 +341,10 @@ Goal: prove state-level feasibility in one state before national state coverage.
 
 Research tasks:
 
-- identify NC election data source for state races
-- identify NC legislative roll-call source
-- identify NC district mapping requirements
-- document source format, update cadence, and reliability
+- identify NC election data source for state races: documented in `docs/nc_state_pilot_sources.md`
+- identify NC legislative roll-call source: documented in `docs/nc_state_pilot_sources.md`
+- identify NC district mapping requirements: documented in `docs/nc_state_pilot_sources.md`
+- document source format, update cadence, and reliability: documented in `docs/nc_state_pilot_sources.md`
 
 Backend deliverables:
 

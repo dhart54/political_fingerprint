@@ -626,6 +626,13 @@ Reported results:
   - race candidate cards now expose `Open Candidate Source` from the candidate row's source URL
   - this gives FEC-only and linked-incumbent candidate rows a direct source path before any expanded candidate evidence rows are opened
   - marked the Phase 11 candidate-claim source-details item complete
+- NC state pilot source research checkpoint:
+  - added `docs/nc_state_pilot_sources.md`
+  - identified NCSBE candidate CSVs/lists as the first state race source
+  - identified NCGA bill/vote pages plus NCGA web services as the first legislative vote source to inspect
+  - identified NCSBE/NCGA shapefiles and block assignment files as district mapping sources
+  - explicitly marked ZIP-only state district lookup as insufficient for reliable state legislative lookup
+  - marked Phase 12 research/source/district-mapping documentation tasks complete
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -640,9 +647,11 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the race candidate source-link UI.
-2. Continue expanding manual interpretations for NC senators' next visible issue gaps only if source text supports a real policy read.
-3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
+1. Commit the NC state pilot source research doc.
+2. Keep state-level methodology separate from federal methodology where source formats differ.
+3. Add one NC state office/race pilot before broad state expansion.
+4. Continue expanding manual interpretations for NC senators' next visible issue gaps only if source text supports a real policy read.
+5. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 
