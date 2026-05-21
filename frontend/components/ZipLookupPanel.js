@@ -393,7 +393,7 @@ export function UpcomingRacePanel({ onSelectLegislator, raceState }) {
             </h5>
           </div>
           <p className="max-w-xl text-sm leading-6 text-stone-600">
-            Candidate rows use evidence tiers. Linked incumbents point back to recorded-vote evidence; unlinked candidates remain lower-confidence or insufficient-evidence context.
+            Candidate rows stay separated by evidence type: recorded votes for linked incumbents, sourced stated-position or institutional records when reviewed, and insufficient evidence when nothing issue-specific is loaded.
           </p>
         </div>
 
@@ -443,7 +443,7 @@ export function UpcomingRacePanel({ onSelectLegislator, raceState }) {
                     ))
                   ) : (
                     <p className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
-                      Candidate roster is not loaded yet. The race row is shown as election structure only.
+                      Candidate roster is not loaded for this race yet. This row is election structure only, not a candidate comparison.
                     </p>
                   )}
                 </div>
@@ -553,12 +553,12 @@ function RaceCandidateCard({ candidate, onSelectLegislator }) {
       {!votingSummary ? (
         <div className="mt-3 rounded-2xl border border-stone-200 bg-white px-3 py-3">
           <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
-            Candidate Evidence
+            Candidate Evidence Type
           </p>
           {candidateEvidenceSummary?.total_count > 0 ? (
             <>
               <p className="mt-2 text-sm leading-6 text-stone-700">
-                {formatNumber(candidateEvidenceSummary.total_count)} sourced evidence record{candidateEvidenceSummary.total_count === 1 ? "" : "s"} loaded across {formatNumber(candidateEvidenceSummary.issue_domain_count)} issue area{candidateEvidenceSummary.issue_domain_count === 1 ? "" : "s"}.
+                {formatNumber(candidateEvidenceSummary.total_count)} reviewed sourced record{candidateEvidenceSummary.total_count === 1 ? "" : "s"} loaded across {formatNumber(candidateEvidenceSummary.issue_domain_count)} issue area{candidateEvidenceSummary.issue_domain_count === 1 ? "" : "s"}. These stay separate from recorded-vote evidence.
               </p>
               <button
                 className="mt-3 rounded-full border border-stone-300 bg-stone-50 px-3 py-2 text-xs uppercase tracking-[0.16em] text-stone-800 transition hover:border-cyan-800 hover:bg-cyan-50 hover:text-cyan-950 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
@@ -571,7 +571,7 @@ function RaceCandidateCard({ candidate, onSelectLegislator }) {
             </>
           ) : (
             <p className="mt-2 text-sm leading-6 text-stone-700">
-              No recorded governing behavior or sourced issue-position evidence is loaded yet.
+              Insufficient evidence: no recorded governing behavior, reviewed stated position, or reviewed institutional record is loaded for this candidate yet.
             </p>
           )}
         </div>
@@ -623,7 +623,7 @@ function CandidateEvidenceDetails({ evidenceState }) {
         <article className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3" key={row.id}>
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-white px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-stone-700">
-              {formatEvidenceTier(row.evidence_tier)}
+              {formatEvidenceTypeLabel(row.evidence_tier)}
             </span>
             {row.issue_domain ? (
               <span className="rounded-full bg-cyan-50 px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-cyan-950">
@@ -747,6 +747,19 @@ function formatRaceStatus(status) {
 function formatEvidenceTier(tier) {
   if (tier === "recorded_governing_behavior") {
     return "Recorded behavior";
+  }
+  if (tier === "institutional_record") {
+    return "Institutional record";
+  }
+  if (tier === "sourced_stated_position") {
+    return "Stated position";
+  }
+  return "Insufficient evidence";
+}
+
+function formatEvidenceTypeLabel(tier) {
+  if (tier === "recorded_governing_behavior") {
+    return "Recorded votes";
   }
   if (tier === "institutional_record") {
     return "Institutional record";

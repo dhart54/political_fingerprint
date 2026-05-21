@@ -645,6 +645,10 @@ Reported results:
   - kept FEC candidate summary bulk data as the primary federal race context source
   - kept Google Civic deferred for address-level election-window lookup, Ballotpedia deferred pending license review, and state election offices reserved for state pilots/ballot certification
   - marked Phase 9 source tradeoff documentation complete
+- Race evidence-type UI checkpoint:
+  - race cards now state evidence type explicitly: recorded votes, sourced stated-position/institutional records, or insufficient evidence
+  - missing roster and missing candidate-evidence states now avoid implying a candidate comparison exists when the data is not loaded
+  - Phase 11 race UI evidence-type, non-ranking, and empty-state tasks are marked complete
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -659,7 +663,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the federal race source tradeoff docs.
+1. Commit the race evidence-type UI checkpoint.
 2. Continue expanding manual interpretations for current-official visible issue gaps only if source text supports a real policy read.
 3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
