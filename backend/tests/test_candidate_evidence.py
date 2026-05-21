@@ -11,14 +11,24 @@ SEED_PATH = Path(__file__).resolve().parents[2] / "docs" / "candidate_evidence" 
 def test_load_candidate_evidence_accepts_seed_records() -> None:
     records = load_candidate_evidence(SEED_PATH)
 
-    assert len(records) == 3
+    assert len(records) == 6
     assert {record.issue_domain for record in records} == {
         "ECONOMY_TAXES",
         "EDUCATION_WORKFORCE",
         "HEALTH_SOCIAL",
     }
-    assert all(record.evidence_tier == "institutional_record" for record in records)
-    assert all(record.confidence == "medium" for record in records)
+    assert sum(record.evidence_tier == "institutional_record" for record in records) == 3
+    assert sum(record.evidence_tier == "sourced_stated_position" for record in records) == 3
+    assert all(
+        record.confidence == "medium"
+        for record in records
+        if record.evidence_tier == "institutional_record"
+    )
+    assert all(
+        record.confidence == "low"
+        for record in records
+        if record.evidence_tier == "sourced_stated_position"
+    )
 
 
 def test_load_candidate_evidence_rejects_persuasive_language() -> None:

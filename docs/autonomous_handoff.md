@@ -654,6 +654,10 @@ Reported results:
   - incumbent candidates still link only to current in-office records
   - non-incumbent candidates can link to recorded governing behavior only when the same office, state, district, party, and normalized name match a stored legislator record marked no longer in office
   - Phase 10 prior-officeholder linkage is marked complete
+- Candidate stated-position seed checkpoint:
+  - expanded the Nida Allam NC-04 candidate evidence seed with low-confidence campaign-platform stated-position rows
+  - kept those rows separate from the existing institutional-record rows and below recorded-vote confidence
+  - Phase 10 sourced stated-position records are marked complete
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -668,7 +672,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the prior-officeholder linkage checkpoint.
+1. Commit the candidate stated-position seed checkpoint.
 2. Continue expanding manual interpretations for current-official visible issue gaps only if source text supports a real policy read.
 3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
