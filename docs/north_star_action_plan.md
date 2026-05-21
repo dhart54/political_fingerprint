@@ -389,11 +389,10 @@ Acceptance criteria:
 
 ## Immediate Next Tasks
 
-1. Identify any remaining legal/license caveats for broader use of official federal contact metadata.
-2. Expand manual federal vote interpretations for the next most visible current-official issue domain.
-3. Keep action-layer tests proving UI-only contact/reference state does not change alignment labels, vote interpretation, or evidence tiers.
-4. Keep newsletter/email tracking out of scope until users validate that persistent reminders are actually needed.
-5. Keep race/candidate work to maintenance and neutral evidence-tier cleanup until the accountability/action path is coherent.
+1. Expand manual federal vote interpretations for the next most visible current-official issue domain.
+2. Visually review the latest Valerie visible-domain batch in the local app.
+3. Keep newsletter/email tracking out of scope until users validate that persistent reminders are actually needed.
+4. Keep race/candidate work to maintenance and neutral evidence-tier cleanup until the accountability/action path is coherent.
 
 ## Decision Rules
 

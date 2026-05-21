@@ -597,6 +597,11 @@ Reported results:
     - `ENVIRONMENT_ENERGY`: 1 interpreted, 2 insufficient
     - `IMMIGRATION_BORDER`: 1 interpreted, 0 insufficient
   - targeted backend tests passed after escalated rerun for Windows temp permissions: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`19 passed`)
+- Contact source caveat checkpoint:
+  - official House and Senate XML source pages confirm public XML availability for House Member Data and Senate contact/member lists
+  - contact workflow now records no-paid-vendor/no-API-key posture while requiring a source-page review before scheduled broad imports
+  - the workflow explicitly does not permit scraping, submitting, or automating member-office contact forms
+  - Phase 14 contact metadata foundation is now complete except for future source-specific maintenance
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -611,12 +616,10 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the contact/reference invariant test and doc cleanup.
-2. Commit the contact source/update workflow doc.
-3. Identify any remaining legal/license caveats for broader use of official federal contact metadata.
-4. Visually review batch 009 in the local app, especially Valerie `Education Workforce` and `Health Social`.
-5. Continue expanding manual interpretations for NC senators' next visible issue gaps.
-6. Keep newsletter/email tracking out of scope until users validate persistent tracking.
+1. Commit the contact source caveat doc update.
+2. Visually review batch 009 in the local app, especially Valerie `Education Workforce` and `Health Social`.
+3. Continue expanding manual interpretations for NC senators' next visible issue gaps.
+4. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 

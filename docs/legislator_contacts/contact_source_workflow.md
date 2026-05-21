@@ -32,7 +32,15 @@ Current source posture:
 - Cost: no paid vendor is required for the official House and Senate directory files used by this workflow.
 - Access: no API key is required for the House MemberData XML or Senate contact XML files.
 - Freshness: the files should be treated as current official directory snapshots, not historical records.
-- License/legal posture: these are official government/chamber sources, but this project should still record any publication terms or reuse caveats before broad automated contact expansion.
+- Source availability:
+  - Senate.gov publishes an XML sources page that lists the current senators contact list and current senators information as XML-available resources.
+  - The Senate public contact guidance also tells users they can download the senators contact list XML and open it in a spreadsheet.
+  - XML.house.gov publishes House Member Data XML resources, including a schema, user guide, and sample.
+- License/legal posture:
+  - The official pages confirm public XML availability, but they do not by themselves grant permission to scrape, submit, or automate member-office contact forms.
+  - Store the source URL, source type, and retrieval date for every imported record.
+  - Before broad scheduled production imports, do one human review of each source page for any usage notices, robots/access guidance, or changed publication terms.
+  - If a chamber or member site publishes stricter terms, the stricter source-specific rule controls this workflow.
 
 Do not treat this workflow as permission to scrape, submit, or automate member-office web forms. It only supports storing official contact paths and metadata for user-directed contact.
 
@@ -70,21 +78,22 @@ Store the retrieval date from the actual review/import date, not from a previous
 1. Fetch current official source files into `backend/data_sources`.
 2. Build or update a reviewed JSON seed in `docs/legislator_contacts/`.
 3. Verify each record is keyed by Bioguide ID and has at least one contact field.
-4. Run a dry-run parse:
+4. Review source pages for changed publication or access caveats, especially before changing cadence from manual review to scheduled imports.
+5. Run a dry-run parse:
 
 ```powershell
 cd backend
 python -m app.etl.legislator_contacts --input ..\docs\legislator_contacts\<seed>.json --dry-run
 ```
 
-5. Import only after review:
+6. Import only after review:
 
 ```powershell
 cd backend
 python -m app.etl.legislator_contacts --input ..\docs\legislator_contacts\<seed>.json
 ```
 
-6. Smoke-test representative contact endpoints for loaded and missing records.
+7. Smoke-test representative contact endpoints for loaded and missing records.
 
 ## Failure Modes
 
