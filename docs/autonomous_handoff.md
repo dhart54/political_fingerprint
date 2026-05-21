@@ -622,6 +622,10 @@ Reported results:
   - confirmed `candidate_evidence` migration/importer already store source URL, source type, retrieved date, issue domain, statement text, and confidence
   - methodology already documents stated-position separation from votes and forbidden persuasion/action language
   - marked those Phase 10 documentation/storage items complete
+- Race candidate source-link checkpoint:
+  - race candidate cards now expose `Open Candidate Source` from the candidate row's source URL
+  - this gives FEC-only and linked-incumbent candidate rows a direct source path before any expanded candidate evidence rows are opened
+  - marked the Phase 11 candidate-claim source-details item complete
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -636,7 +640,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the candidate evidence roadmap cleanup.
+1. Commit the race candidate source-link UI.
 2. Continue expanding manual interpretations for NC senators' next visible issue gaps only if source text supports a real policy read.
 3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 

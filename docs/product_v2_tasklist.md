@@ -184,7 +184,7 @@ Evidence ladder:
 - [x] Add race page or race panel for ZIP-selected upcoming races.
 - [ ] Compare candidates by selected user issues.
 - [ ] Show "recorded votes," "stated positions," and "insufficient evidence" as separate evidence types.
-- [ ] Make every candidate claim expandable to source details.
+- [x] Make every candidate claim expandable to source details.
 - [ ] Avoid aggregate candidate scores or ranking language.
 - [ ] Add empty states for uncontested races and missing candidate data.
 

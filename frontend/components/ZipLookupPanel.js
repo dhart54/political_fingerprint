@@ -508,6 +508,16 @@ function RaceCandidateCard({ candidate, onSelectLegislator }) {
       <p className="mt-2 text-sm leading-6 text-stone-700">
         {candidate.evidence_note || "Evidence details are not loaded yet."}
       </p>
+      {candidate.source_url ? (
+        <a
+          className="mt-2 inline-flex text-xs uppercase tracking-[0.16em] text-cyan-900 underline-offset-4 hover:underline"
+          href={candidate.source_url}
+          rel="noreferrer"
+          target="_blank"
+        >
+          Open Candidate Source
+        </a>
+      ) : null}
       {votingSummary ? (
         <div className="mt-3 rounded-2xl border border-cyan-900/10 bg-white px-3 py-3">
           <p className="text-[11px] uppercase tracking-[0.18em] text-cyan-900">
