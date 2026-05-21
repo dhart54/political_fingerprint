@@ -658,6 +658,7 @@ Rules:
 - candidate evidence is stored in `candidate_evidence`
 - each row must link to one `race_candidates` row
 - sourced stated positions must include a source URL
+- sourced stated positions may use `low` or `medium` confidence, but not `high`
 - stated positions must remain separate from vote-based alignment math
 - candidate evidence may describe what a source says, but it must not tell users how to vote
 - missing candidate evidence should render as an intentional not-loaded state, not as a negative claim about the candidate

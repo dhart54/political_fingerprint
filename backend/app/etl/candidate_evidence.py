@@ -95,6 +95,8 @@ def _validate_record(record: CandidateEvidenceRecord) -> None:
         raise ValueError(f"Unsupported evidence_tier: {record.evidence_tier}")
     if record.confidence not in ALLOWED_CONFIDENCE:
         raise ValueError(f"Unsupported confidence: {record.confidence}")
+    if record.evidence_tier == "sourced_stated_position" and record.confidence == "high":
+        raise ValueError("sourced_stated_position evidence must remain lower confidence than recorded votes")
     if not record.source_url.startswith(("http://", "https://")):
         raise ValueError("source_url must be an HTTP(S) URL")
 

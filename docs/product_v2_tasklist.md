@@ -176,7 +176,7 @@ Evidence ladder:
 - [x] Add reviewed institutional-record seed for one candidate without a federal voting history.
 - [ ] Store source URL, source type, retrieved date, issue domain, statement text, and confidence label.
 - [x] Add candidate evidence endpoint.
-- [ ] Add tests that stated positions are marked lower confidence than recorded votes.
+- [x] Add tests that stated positions are marked lower confidence than recorded votes.
 - [ ] Document stated-position methodology and forbidden persuasion language.
 
 ### Phase 11 - Race Comparison UI

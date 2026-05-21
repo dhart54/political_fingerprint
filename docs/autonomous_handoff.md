@@ -613,6 +613,11 @@ Reported results:
   - added an API serialization test proving race candidate payloads do not expose rank, score, winner, recommendation, preferred, or similar fields
   - marked the Phase 9 race display neutrality item complete
   - targeted tests passed: `tests\test_api_positions.py tests\test_federal_races.py tests\test_candidate_evidence.py` (`24 passed`)
+- Candidate stated-position confidence checkpoint:
+  - candidate evidence importer now rejects `sourced_stated_position` rows with `high` confidence
+  - methodology now states sourced stated positions may use `low` or `medium` confidence, but not `high`
+  - Phase 10 stated-position lower-confidence test item is now complete
+  - targeted tests passed: `tests\test_candidate_evidence.py tests\test_api_positions.py tests\test_federal_races.py` (`25 passed`)
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -627,7 +632,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the race neutrality guard.
+1. Commit the stated-position confidence guard.
 2. Continue expanding manual interpretations for NC senators' next visible issue gaps only if source text supports a real policy read.
 3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 

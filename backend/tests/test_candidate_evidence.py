@@ -37,3 +37,21 @@ def test_load_candidate_evidence_rejects_persuasive_language() -> None:
                 "external_evidence_id": "bad",
             }
         )
+
+
+def test_sourced_stated_positions_cannot_be_high_confidence() -> None:
+    with pytest.raises(ValueError, match="lower confidence than recorded votes"):
+        _parse_record(
+            {
+                "external_candidate_id": "H2NC06098",
+                "evidence_tier": "sourced_stated_position",
+                "issue_domain": "HEALTH_SOCIAL",
+                "statement_text": "Candidate issue page says health care access is a listed priority.",
+                "neutral_summary": "Candidate lists health care access as a campaign issue.",
+                "confidence": "high",
+                "source_url": "https://example.com",
+                "source_type": "campaign_issue_page",
+                "source_retrieved_at": "2026-05-17T00:00:00Z",
+                "external_evidence_id": "too-high",
+            }
+        )
