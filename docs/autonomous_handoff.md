@@ -580,6 +580,23 @@ Reported results:
   - loosened the Valerie contact source assertion so it accepts either the curated fallback or the Supabase-backed database seed while still requiring the official contact fields
   - targeted backend tests passed: `tests\test_api_positions.py tests\test_api_alignment.py` (`20 passed`)
   - task/action docs now mark the Phase 15 contact/reference invariant test complete and remove stale ask/thank/track implementation language
+- Vote interpretation batch 009 checkpoint:
+  - exported `docs/interpretation_batches/batch_009_valerie_visible_domain_packets.json`
+  - drafted/imported `docs/interpretation_batches/batch_009_valerie_visible_domain_interpretations.json`
+  - updated 14 Valerie Foushee rows across `HEALTH_SOCIAL`, `EDUCATION_WORKFORCE`, `ENVIRONMENT_ENERGY`, and `IMMIGRATION_BORDER`
+  - direct-passage rows with official summaries now have more practical vote meaning:
+    - Medicaid payment rules for specified procedures for people under age 18
+    - natural gas pipeline and LNG review coordination
+    - federal employee collective-bargaining exclusions
+    - school foreign-influence notifications and foreign funding/contract restrictions
+    - DC immigration-status information-sharing restrictions
+  - title-only and floor-rule rows remain `insufficient_evidence` so they do not become support/oppose alignment counts
+  - API smoke confirmed interpreted counts after import:
+    - `HEALTH_SOCIAL`: 1 interpreted, 3 insufficient
+    - `EDUCATION_WORKFORCE`: 3 interpreted, 3 insufficient
+    - `ENVIRONMENT_ENERGY`: 1 interpreted, 2 insufficient
+    - `IMMIGRATION_BORDER`: 1 interpreted, 0 insufficient
+  - targeted backend tests passed after escalated rerun for Windows temp permissions: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`19 passed`)
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -597,8 +614,9 @@ Work from `docs/product_v2_tasklist.md` in this order:
 1. Commit the contact/reference invariant test and doc cleanup.
 2. Commit the contact source/update workflow doc.
 3. Identify any remaining legal/license caveats for broader use of official federal contact metadata.
-4. Continue expanding manual interpretations for the next visible current-official issue domain.
-5. Keep newsletter/email tracking out of scope until users validate persistent tracking.
+4. Visually review batch 009 in the local app, especially Valerie `Education Workforce` and `Health Social`.
+5. Continue expanding manual interpretations for NC senators' next visible issue gaps.
+6. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 
