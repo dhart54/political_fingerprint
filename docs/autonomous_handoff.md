@@ -649,6 +649,11 @@ Reported results:
   - race cards now state evidence type explicitly: recorded votes, sourced stated-position/institutional records, or insufficient evidence
   - missing roster and missing candidate-evidence states now avoid implying a candidate comparison exists when the data is not loaded
   - Phase 11 race UI evidence-type, non-ranking, and empty-state tasks are marked complete
+- Prior-officeholder linkage checkpoint:
+  - federal race importer now loads all stored legislator records for matching instead of current officials only
+  - incumbent candidates still link only to current in-office records
+  - non-incumbent candidates can link to recorded governing behavior only when the same office, state, district, party, and normalized name match a stored legislator record marked no longer in office
+  - Phase 10 prior-officeholder linkage is marked complete
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -663,7 +668,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the race evidence-type UI checkpoint.
+1. Commit the prior-officeholder linkage checkpoint.
 2. Continue expanding manual interpretations for current-official visible issue gaps only if source text supports a real policy read.
 3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 

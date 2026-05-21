@@ -53,6 +53,12 @@ class FederalRacePersistResult:
     candidates_upserted: int
 
 
+@dataclass(frozen=True)
+class LegislatorRecordMatch:
+    legislator_id: int
+    in_office: bool
+
+
 def load_fec_candidate_summary(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8-sig") as handle:
         return list(csv.DictReader(handle))
@@ -138,7 +144,7 @@ def persist_federal_races(races: list[FederalRace]) -> FederalRacePersistResult:
     connection = get_connection()
     try:
         cursor = connection.cursor()
-        legislator_matches = _load_current_legislator_matches(cursor)
+        legislator_matches = _load_legislator_record_matches(cursor)
         candidates_seen = 0
         for race in races:
             race_id = _upsert_race(cursor, race)
@@ -257,16 +263,15 @@ def _upsert_candidate(cursor: Any, race_id: int, candidate: RaceCandidate) -> No
     )
 
 
-def _load_current_legislator_matches(cursor: Any) -> dict[tuple[str, str, str | None, str, str], int]:
+def _load_legislator_record_matches(cursor: Any) -> dict[tuple[str, str, str | None, str, str], LegislatorRecordMatch]:
     cursor.execute(
         """
-        SELECT id, name_display, chamber, state, district, party
+        SELECT id, name_display, chamber, state, district, party, in_office
         FROM legislators
-        WHERE in_office = TRUE
         """
     )
     matches = {}
-    for legislator_id, name_display, chamber, state, district, party in cursor.fetchall():
+    for legislator_id, name_display, chamber, state, district, party, in_office in cursor.fetchall():
         matches[
             (
                 str(chamber),
@@ -275,7 +280,7 @@ def _load_current_legislator_matches(cursor: Any) -> dict[tuple[str, str, str | 
                 str(party),
                 _name_match_key(str(name_display)),
             )
-        ] = int(legislator_id)
+        ] = LegislatorRecordMatch(legislator_id=int(legislator_id), in_office=bool(in_office))
     return matches
 
 
@@ -283,12 +288,12 @@ def _with_legislator_match(
     candidate: RaceCandidate,
     *,
     race: FederalRace,
-    legislator_matches: dict[tuple[str, str, str | None, str, str], int],
+    legislator_matches: dict[tuple[str, str, str | None, str, str], LegislatorRecordMatch],
 ) -> RaceCandidate:
-    if not candidate.incumbent or candidate.party is None:
+    if candidate.party is None:
         return candidate
 
-    legislator_id = legislator_matches.get(
+    match = legislator_matches.get(
         (
             race.chamber,
             race.state,
@@ -297,8 +302,16 @@ def _with_legislator_match(
             _name_match_key(candidate.candidate_name),
         )
     )
-    if legislator_id is None:
+    if match is None:
         return candidate
+    if not candidate.incumbent and match.in_office:
+        return candidate
+
+    evidence_note = (
+        "Matched to a current officeholder record by office, party, and candidate name. Recorded voting behavior is available."
+        if match.in_office
+        else "Matched to a prior officeholder record by office, party, and candidate name. Past recorded voting behavior is available."
+    )
 
     return RaceCandidate(
         candidate_name=candidate.candidate_name,
@@ -306,11 +319,11 @@ def _with_legislator_match(
         incumbent=candidate.incumbent,
         candidate_status=candidate.candidate_status,
         evidence_tier="recorded_governing_behavior",
-        evidence_note="Matched to a current officeholder record by office, party, and candidate name. Recorded voting behavior is available.",
+        evidence_note=evidence_note,
         source_url=candidate.source_url,
         source_type=candidate.source_type,
         external_candidate_id=candidate.external_candidate_id,
-        legislator_id=legislator_id,
+        legislator_id=match.legislator_id,
     )
 
 

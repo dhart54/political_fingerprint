@@ -1,6 +1,12 @@
 from datetime import date
 
-from app.etl.federal_races import RaceCandidate, _name_match_key, _with_legislator_match, build_federal_races_from_fec_rows
+from app.etl.federal_races import (
+    LegislatorRecordMatch,
+    RaceCandidate,
+    _name_match_key,
+    _with_legislator_match,
+    build_federal_races_from_fec_rows,
+)
 
 
 def test_build_federal_races_from_fec_rows_groups_house_candidates() -> None:
@@ -120,7 +126,12 @@ def test_incumbent_candidate_can_match_current_legislator_record() -> None:
     matched = _with_legislator_match(
         candidate,
         race=race,
-        legislator_matches={("house", "NC", "04", "D", "valerie foushee"): 101},
+        legislator_matches={
+            ("house", "NC", "04", "D", "valerie foushee"): LegislatorRecordMatch(
+                legislator_id=101,
+                in_office=True,
+            )
+        },
     )
 
     assert matched.legislator_id == 101
@@ -159,8 +170,57 @@ def test_non_incumbent_candidate_does_not_match_legislator_record() -> None:
     matched = _with_legislator_match(
         candidate,
         race=race,
-        legislator_matches={("house", "NC", "04", "D", "valerie foushee"): 101},
+        legislator_matches={
+            ("house", "NC", "04", "D", "valerie foushee"): LegislatorRecordMatch(
+                legislator_id=101,
+                in_office=True,
+            )
+        },
     )
 
     assert matched.legislator_id is None
     assert matched.evidence_tier == "insufficient_evidence"
+
+
+def test_prior_officeholder_candidate_can_match_past_voting_record() -> None:
+    candidate = RaceCandidate(
+        candidate_name="Casey Durham",
+        party="R",
+        incumbent=False,
+        candidate_status="declared_candidate",
+        evidence_tier="insufficient_evidence",
+        evidence_note="FEC candidate-summary record loaded.",
+        source_url="https://www.fec.gov/data/candidate/H6NC04002/",
+        source_type="fec_candidate_summary",
+        external_candidate_id="H6NC04002",
+    )
+    race = build_federal_races_from_fec_rows(
+        [
+            {
+                "Cand_Name": "DURHAM, CASEY",
+                "Cand_Id": "H6NC04002",
+                "Cand_Office": "H",
+                "Cand_Office_St": "NC",
+                "Cand_Office_Dist": "04",
+                "Cand_Party_Affiliation": "REP",
+                "Cand_Incumbent_Challenger_Open_Seat": "C",
+            },
+        ],
+        cycle=2026,
+        as_of=date(2026, 5, 17),
+    )[0]
+
+    matched = _with_legislator_match(
+        candidate,
+        race=race,
+        legislator_matches={
+            ("house", "NC", "04", "R", "casey durham"): LegislatorRecordMatch(
+                legislator_id=202,
+                in_office=False,
+            )
+        },
+    )
+
+    assert matched.legislator_id == 202
+    assert matched.evidence_tier == "recorded_governing_behavior"
+    assert "prior officeholder" in matched.evidence_note
