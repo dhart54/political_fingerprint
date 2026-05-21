@@ -153,7 +153,7 @@ Evidence ladder:
 ### Phase 9 - Federal Ballot Proof
 
 - [x] Identify reliable federal election/race data source options.
-- [ ] Document cost, license, freshness, and coverage tradeoffs for each source.
+- [x] Document cost, license, freshness, and coverage tradeoffs for each source.
 - [x] Add `upcoming_races` and `race_candidates` schema draft.
 - [x] Add ZIP/state/district mapping from a user ZIP to upcoming federal House and Senate races.
 - [x] Add backend endpoint for upcoming federal races by ZIP.

@@ -640,6 +640,11 @@ Reported results:
 - Interpreted coverage API contract checkpoint:
   - added backend test coverage for `interpreted_support_count`, `interpreted_oppose_count`, `interpreted_other_count`, and `interpreted_total` in the positions endpoint
   - this protects the frontend coverage language added to issue tiles
+- Federal race source tradeoff checkpoint:
+  - expanded `docs/federal_race_sources.md` with cost, access/license, freshness, coverage, and source-decision notes
+  - kept FEC candidate summary bulk data as the primary federal race context source
+  - kept Google Civic deferred for address-level election-window lookup, Ballotpedia deferred pending license review, and state election offices reserved for state pilots/ballot certification
+  - marked Phase 9 source tradeoff documentation complete
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -654,7 +659,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the interpreted coverage API contract test.
+1. Commit the federal race source tradeoff docs.
 2. Continue expanding manual interpretations for current-official visible issue gaps only if source text supports a real policy read.
 3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
