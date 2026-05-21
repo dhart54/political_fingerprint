@@ -210,6 +210,7 @@ def test_candidate_serialization_leaves_unlinked_candidates_without_voting_summa
     assert candidate["linked_legislator"] is None
     assert candidate["voting_summary"] is None
     assert candidate["candidate_evidence_summary"]["total_count"] == 0
+    assert candidate["candidate_evidence_summary"]["issue_domains"] == []
 
 
 def test_candidate_serialization_does_not_add_rank_or_winner_fields() -> None:
@@ -241,6 +242,53 @@ def test_candidate_serialization_does_not_add_rank_or_winner_fields() -> None:
     }
 
     assert forbidden_keys.isdisjoint(candidate)
+
+
+def test_candidate_evidence_summary_groups_rows_by_issue(monkeypatch) -> None:
+    monkeypatch.setattr(
+        precomputed,
+        "_get_db_candidate_evidence_rows",
+        lambda *, candidate_id: [
+            {
+                "evidence_tier": "institutional_record",
+                "issue_domain": "ECONOMY_TAXES",
+            },
+            {
+                "evidence_tier": "sourced_stated_position",
+                "issue_domain": "ECONOMY_TAXES",
+            },
+            {
+                "evidence_tier": "sourced_stated_position",
+                "issue_domain": "HEALTH_SOCIAL",
+            },
+        ],
+    )
+
+    summary = precomputed._build_candidate_evidence_summary(candidate_id="123")
+
+    assert summary["total_count"] == 3
+    assert summary["tier_counts"]["institutional_record"] == 1
+    assert summary["tier_counts"]["sourced_stated_position"] == 2
+    assert summary["issue_domains"] == [
+        {
+            "domain": "ECONOMY_TAXES",
+            "total_count": 2,
+            "tier_counts": {
+                "institutional_record": 1,
+                "sourced_stated_position": 1,
+                "insufficient_evidence": 0,
+            },
+        },
+        {
+            "domain": "HEALTH_SOCIAL",
+            "total_count": 1,
+            "tier_counts": {
+                "institutional_record": 0,
+                "sourced_stated_position": 1,
+                "insufficient_evidence": 0,
+            },
+        },
+    ]
 
 
 def test_candidate_evidence_endpoint_returns_stored_source_records(monkeypatch) -> None:

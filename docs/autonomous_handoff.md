@@ -658,6 +658,11 @@ Reported results:
   - expanded the Nida Allam NC-04 candidate evidence seed with low-confidence campaign-platform stated-position rows
   - kept those rows separate from the existing institutional-record rows and below recorded-vote confidence
   - Phase 10 sourced stated-position records are marked complete
+- Selected-issue race comparison checkpoint:
+  - candidate evidence summaries now include per-issue evidence counts by tier
+  - race cards use the user's selected issues to show whether each candidate has linked recorded-vote evidence, reviewed institutional/stated-position rows, or insufficient evidence for that issue
+  - this remains a coverage comparison, not a candidate score, winner, or voting recommendation
+  - Phase 11 selected-issue candidate comparison is marked complete
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -672,7 +677,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the candidate stated-position seed checkpoint.
+1. Commit the selected-issue race comparison checkpoint.
 2. Continue expanding manual interpretations for current-official visible issue gaps only if source text supports a real policy read.
 3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 

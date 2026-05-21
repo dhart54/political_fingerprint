@@ -639,6 +639,8 @@ Current importer behavior:
 
 Candidate issue alignment must not be computed from FEC candidacy rows. A candidate needs linked recorded governing behavior or separate sourced stated-position records before issue comparison can show more than insufficient evidence.
 
+Race-card selected-issue comparison is evidence coverage only. For each user-selected issue, the UI may show that a candidate has linked recorded-vote evidence, reviewed institutional or stated-position records, or insufficient evidence. It must not aggregate those rows into a candidate score, winner, rank, or vote recommendation.
+
 Current CLI example:
 
 - `python -m app.etl.federal_races --fec-candidate-summary ./backend/data_sources/fec/candidate_summary_2026.csv --cycle 2026 --dry-run`

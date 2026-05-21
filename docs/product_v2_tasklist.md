@@ -183,7 +183,7 @@ Evidence ladder:
 ### Phase 11 - Race Comparison UI
 
 - [x] Add race page or race panel for ZIP-selected upcoming races.
-- [ ] Compare candidates by selected user issues.
+- [x] Compare candidates by selected user issues.
 - [x] Show "recorded votes," "stated positions," and "insufficient evidence" as separate evidence types.
 - [x] Make every candidate claim expandable to source details.
 - [x] Avoid aggregate candidate scores or ranking language.

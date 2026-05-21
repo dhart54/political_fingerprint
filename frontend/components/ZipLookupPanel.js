@@ -354,7 +354,7 @@ export default function ZipLookupPanel({
   );
 }
 
-export function UpcomingRacePanel({ onSelectLegislator, raceState }) {
+export function UpcomingRacePanel({ onSelectLegislator, preferences = {}, raceState }) {
   if (raceState.status === "idle") {
     return null;
   }
@@ -439,6 +439,7 @@ export function UpcomingRacePanel({ onSelectLegislator, raceState }) {
                         candidate={candidate}
                         key={candidate.id}
                         onSelectLegislator={onSelectLegislator}
+                        preferences={preferences}
                       />
                     ))
                   ) : (
@@ -456,10 +457,15 @@ export function UpcomingRacePanel({ onSelectLegislator, raceState }) {
   );
 }
 
-function RaceCandidateCard({ candidate, onSelectLegislator }) {
+function RaceCandidateCard({ candidate, onSelectLegislator, preferences = {} }) {
   const linkedLegislator = candidate.linked_legislator;
   const votingSummary = candidate.voting_summary;
   const candidateEvidenceSummary = candidate.candidate_evidence_summary;
+  const selectedIssueReads = buildSelectedIssueCandidateReads({
+    candidateEvidenceSummary,
+    hasVotingSummary: Boolean(votingSummary),
+    preferences,
+  });
   const [evidenceState, setEvidenceState] = useState({
     status: "idle",
     payload: null,
@@ -550,6 +556,21 @@ function RaceCandidateCard({ candidate, onSelectLegislator }) {
           </p>
         </div>
       ) : null}
+      {selectedIssueReads.length ? (
+        <div className="mt-3 rounded-2xl border border-stone-200 bg-white px-3 py-3">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
+            Selected Issue Evidence
+          </p>
+          <div className="mt-2 grid gap-2">
+            {selectedIssueReads.map((read) => (
+              <p className="text-sm leading-6 text-stone-700" key={read.domain}>
+                <span className="font-medium text-stone-950">{formatDomainLabel(read.domain)}:</span>{" "}
+                {read.text}
+              </p>
+            ))}
+          </div>
+        </div>
+      ) : null}
       {!votingSummary ? (
         <div className="mt-3 rounded-2xl border border-stone-200 bg-white px-3 py-3">
           <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
@@ -587,6 +608,49 @@ function RaceCandidateCard({ candidate, onSelectLegislator }) {
       ) : null}
     </div>
   );
+}
+
+function buildSelectedIssueCandidateReads({ candidateEvidenceSummary, hasVotingSummary, preferences }) {
+  const selectedDomains = Object.keys(preferences || {});
+  if (!selectedDomains.length) {
+    return [];
+  }
+
+  const issueDomainMap = new Map(
+    (candidateEvidenceSummary?.issue_domains || []).map((row) => [row.domain, row]),
+  );
+
+  return selectedDomains.map((domain) => {
+    if (hasVotingSummary) {
+      return {
+        domain,
+        text: "Recorded-vote evidence is available through this candidate's linked voting record.",
+      };
+    }
+
+    const row = issueDomainMap.get(domain);
+    if (!row || !row.total_count) {
+      return {
+        domain,
+        text: "insufficient evidence loaded for this candidate.",
+      };
+    }
+
+    const statedCount = row.tier_counts?.sourced_stated_position || 0;
+    const institutionalCount = row.tier_counts?.institutional_record || 0;
+    const parts = [];
+    if (institutionalCount) {
+      parts.push(`${formatNumber(institutionalCount)} institutional record${institutionalCount === 1 ? "" : "s"}`);
+    }
+    if (statedCount) {
+      parts.push(`${formatNumber(statedCount)} stated-position record${statedCount === 1 ? "" : "s"}`);
+    }
+
+    return {
+      domain,
+      text: parts.length ? `${parts.join(" and ")} loaded.` : "reviewed evidence loaded.",
+    };
+  });
 }
 
 function CandidateEvidenceDetails({ evidenceState }) {

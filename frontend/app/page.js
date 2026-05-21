@@ -171,6 +171,7 @@ export default function HomePage() {
 
         <UpcomingRacePanel
           onSelectLegislator={setSelectedLegislator}
+          preferences={issuePreferences}
           raceState={zipRaceState}
         />
 

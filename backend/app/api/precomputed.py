@@ -1552,17 +1552,42 @@ def _build_candidate_evidence_summary(*, candidate_id: str) -> dict[str, object]
         "insufficient_evidence": 0,
     }
     issue_domains = set()
+    issue_domain_counts: dict[str, dict[str, object]] = {}
     for row in rows:
         tier = str(row["evidence_tier"])
         if tier in tier_counts:
             tier_counts[tier] += 1
         if row.get("issue_domain") is not None:
-            issue_domains.add(str(row["issue_domain"]))
+            issue_domain = str(row["issue_domain"])
+            issue_domains.add(issue_domain)
+            issue_domain_count = issue_domain_counts.setdefault(
+                issue_domain,
+                {
+                    "domain": issue_domain,
+                    "total_count": 0,
+                    "tier_counts": {
+                        "institutional_record": 0,
+                        "sourced_stated_position": 0,
+                        "insufficient_evidence": 0,
+                    },
+                },
+            )
+            issue_domain_count["total_count"] = int(issue_domain_count["total_count"]) + 1
+            domain_tier_counts = issue_domain_count["tier_counts"]
+            if isinstance(domain_tier_counts, dict) and tier in domain_tier_counts:
+                domain_tier_counts[tier] += 1
 
     return {
         "total_count": len(rows),
         "tier_counts": tier_counts,
         "issue_domain_count": len(issue_domains),
+        "issue_domains": [
+            issue_domain_counts[domain]
+            for domain in sorted(
+                (domain for domain in issue_domain_counts if domain in DOMAIN_ORDER),
+                key=lambda item: DOMAIN_ORDER.index(item),
+            )
+        ],
     }
 
 
