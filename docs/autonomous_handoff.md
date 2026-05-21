@@ -597,6 +597,13 @@ Reported results:
     - `ENVIRONMENT_ENERGY`: 1 interpreted, 2 insufficient
     - `IMMIGRATION_BORDER`: 1 interpreted, 0 insufficient
   - targeted backend tests passed after escalated rerun for Windows temp permissions: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`19 passed`)
+- Batch 009 browser review checkpoint:
+  - local backend/frontend smoke reached ZIP `27701` and Valerie Foushee profile
+  - `Education Workforce` evidence renders practical interpretations for CLASS, TRACE, and Protect America's Workforce rows
+  - education floor-rule and censure/table rows stay `Needs More Evidence`
+  - `Health Social` renders the Medicaid payment row literally and cautiously, with procedural health-rule rows staying `Needs More Evidence`
+  - contact/reference UI still shows `Contact This Office` and `Reference Vote`
+  - browser console error check returned 0 errors for the reviewed slices
 - Contact source caveat checkpoint:
   - official House and Senate XML source pages confirm public XML availability for House Member Data and Senate contact/member lists
   - contact workflow now records no-paid-vendor/no-API-key posture while requiring a source-page review before scheduled broad imports
@@ -616,10 +623,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the contact source caveat doc update.
-2. Visually review batch 009 in the local app, especially Valerie `Education Workforce` and `Health Social`.
-3. Continue expanding manual interpretations for NC senators' next visible issue gaps.
-4. Keep newsletter/email tracking out of scope until users validate persistent tracking.
+1. Commit the batch 009 visual review handoff update.
+2. Continue expanding manual interpretations for NC senators' next visible issue gaps.
+3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 
