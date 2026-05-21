@@ -174,10 +174,10 @@ Evidence ladder:
 - [ ] Support prior-officeholder linkage when candidate has a past voting record.
 - [ ] Add sourced stated-position records for candidates without voting history.
 - [x] Add reviewed institutional-record seed for one candidate without a federal voting history.
-- [ ] Store source URL, source type, retrieved date, issue domain, statement text, and confidence label.
+- [x] Store source URL, source type, retrieved date, issue domain, statement text, and confidence label.
 - [x] Add candidate evidence endpoint.
 - [x] Add tests that stated positions are marked lower confidence than recorded votes.
-- [ ] Document stated-position methodology and forbidden persuasion language.
+- [x] Document stated-position methodology and forbidden persuasion language.
 
 ### Phase 11 - Race Comparison UI
 
