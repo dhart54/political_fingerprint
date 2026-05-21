@@ -201,6 +201,37 @@ def test_candidate_serialization_leaves_unlinked_candidates_without_voting_summa
     assert candidate["candidate_evidence_summary"]["total_count"] == 0
 
 
+def test_candidate_serialization_does_not_add_rank_or_winner_fields() -> None:
+    candidate = precomputed._serialize_race_candidate(
+        {
+            "candidate_id": 1,
+            "candidate_name": "Casey Candidate",
+            "party": "D",
+            "incumbent": False,
+            "candidate_status": "declared_candidate",
+            "evidence_tier": "insufficient_evidence",
+            "evidence_note": "FEC candidate-summary record loaded.",
+            "candidate_source_url": "https://example.com",
+            "candidate_source_type": "fixture",
+            "candidate_source_retrieved_at": None,
+            "external_candidate_id": "H6NC00000",
+            "legislator_db_id": None,
+        }
+    )
+
+    forbidden_keys = {
+        "rank",
+        "ranking",
+        "score",
+        "winner",
+        "recommendation",
+        "recommended",
+        "preferred",
+    }
+
+    assert forbidden_keys.isdisjoint(candidate)
+
+
 def test_candidate_evidence_endpoint_returns_stored_source_records(monkeypatch) -> None:
     monkeypatch.setattr(
         precomputed,

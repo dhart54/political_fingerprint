@@ -609,6 +609,10 @@ Reported results:
   - contact workflow now records no-paid-vendor/no-API-key posture while requiring a source-page review before scheduled broad imports
   - the workflow explicitly does not permit scraping, submitting, or automating member-office contact forms
   - Phase 14 contact metadata foundation is now complete except for future source-specific maintenance
+- Race neutrality guard checkpoint:
+  - added an API serialization test proving race candidate payloads do not expose rank, score, winner, recommendation, preferred, or similar fields
+  - marked the Phase 9 race display neutrality item complete
+  - targeted tests passed: `tests\test_api_positions.py tests\test_federal_races.py tests\test_candidate_evidence.py` (`24 passed`)
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -623,8 +627,8 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the batch 009 visual review handoff update.
-2. Continue expanding manual interpretations for NC senators' next visible issue gaps.
+1. Commit the race neutrality guard.
+2. Continue expanding manual interpretations for NC senators' next visible issue gaps only if source text supports a real policy read.
 3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
