@@ -42,6 +42,17 @@ def test_get_positions_endpoint_returns_domain_position_profile() -> None:
     }
 
 
+def test_positions_endpoint_exposes_interpreted_coverage_counts() -> None:
+    payload = get_legislator_positions("leg_alex_morgan")
+    education = next(item for item in payload["positions"] if item["domain"] == "EDUCATION_WORKFORCE")
+
+    assert education["recorded_votes"] == 1
+    assert education["interpreted_support_count"] == 1
+    assert education["interpreted_oppose_count"] == 0
+    assert education["interpreted_other_count"] == 1
+    assert education["interpreted_total"] == 2
+
+
 def test_get_positions_endpoint_returns_404_for_unknown_legislator() -> None:
     with pytest.raises(HTTPException) as exc_info:
         get_legislator_positions("unknown")

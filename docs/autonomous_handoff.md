@@ -637,6 +637,9 @@ Reported results:
   - `PositionByIssue` tiles now show interpreted yea/nay coverage, such as `3 of 6 recorded yea/nay votes have cached vote meaning`
   - `How To Read This` copy now distinguishes recorded vote splits from cached plain-English vote meaning
   - this keeps classified-but-uninterpreted records visible without making them look like interpreted evidence
+- Interpreted coverage API contract checkpoint:
+  - added backend test coverage for `interpreted_support_count`, `interpreted_oppose_count`, `interpreted_other_count`, and `interpreted_total` in the positions endpoint
+  - this protects the frontend coverage language added to issue tiles
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -651,7 +654,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the federal issue coverage clarity UI.
+1. Commit the interpreted coverage API contract test.
 2. Continue expanding manual interpretations for current-official visible issue gaps only if source text supports a real policy read.
 3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
