@@ -673,6 +673,13 @@ Reported results:
     - `docs/interpretation_batches/batch_009_valerie_visible_domains_packets_so_what.json`
   - targeted backend tests passed after escalated rerun for Windows temp permissions: `tests\test_fetch_sources.py tests\test_congress_adapter.py tests\test_manual_interpretations.py` (`29 passed`)
   - methodology now states this enrichment is source context for reviewed interpretation, not an automatic support/oppose or policy-effect conclusion
+- Valerie Economy interpretation punch-up checkpoint:
+  - refreshed `docs/interpretation_batches/batch_006_valerie_economy_gold_interpretations.json` using the enriched so-what packet context
+  - imported 9 Valerie Foushee `ECONOMY_TAXES` records into Supabase with `--reviewed-by codex_so_what_review`
+  - interpreted rows now make vote type, practical lever, direct stake, lifecycle boundary, and CBO/action-history source basis clearer
+  - the two ambiguous rows remain ambiguous because the enriched packet still does not provide enough official instruction/amendment text for a source-grounded policy effect
+  - targeted backend tests passed after escalated rerun for Windows temp permissions: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`22 passed`)
+  - local API and browser QA confirmed the Economy evidence panel shows the refreshed wording
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
