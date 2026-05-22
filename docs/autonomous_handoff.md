@@ -680,6 +680,13 @@ Reported results:
   - the two ambiguous rows remain ambiguous because the enriched packet still does not provide enough official instruction/amendment text for a source-grounded policy effect
   - targeted backend tests passed after escalated rerun for Windows temp permissions: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`22 passed`)
   - local API and browser QA confirmed the Economy evidence panel shows the refreshed wording
+- Repeatable issue-read checkpoint:
+  - `PositionByIssue` high-level evidence reads now use deterministic opened-row data instead of a generic support/oppose count sentence
+  - the read states whether interpreted yea/nay votes were for, against, mostly for, mostly against, or split across interpreted measures
+  - the read groups interpreted issue facets into practical measure descriptions and adds scope language for interpreted yea/nay count, other records, and caution rows
+  - methodology documents the issue-read boundary: opened slice only, no motive, no broad ideology score, no voting recommendation
+  - frontend production build passed after escalated rerun: `npm run build`
+  - browser QA confirmed Valerie `ECONOMY_TAXES` now reads as a plain conclusion with source-boundary text
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 

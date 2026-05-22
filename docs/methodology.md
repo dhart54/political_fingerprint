@@ -418,9 +418,12 @@ Frontend presentation:
 - the UI groups rows by bill title or measure label when available
 - the UI surfaces both roll-call count and distinct bill-or-measure count so repeated actions on one bill are not presented as unrelated votes
 - the UI may show a deterministic high-level read for the opened issue using only the evidence rows already returned by the endpoint
-- that high-level read may count interpreted support-side, oppose-side, other-position, and ambiguous or insufficient-evidence rows
-- that high-level read may list source-grounded issue facets from cached `vote_interpretations`
+- that high-level read may count interpreted for-side, against-side, other-record, and ambiguous or insufficient-evidence rows
+- that high-level read may say whether the representative's interpreted yea/nay votes in the opened issue slice were for, against, mostly for, mostly against, or split across the interpreted measures
+- that high-level read may group source-grounded issue facets from cached `vote_interpretations` into short practical measure descriptions, such as budget-reconciliation instructions, loan-eligibility restrictions, or temporary funding packages
+- that high-level read must state its scope, including interpreted yea/nay count, total roll-call rows shown, other recorded positions, and ambiguous/procedural rows left outside the for/against read
 - it must not infer motive, ideology, causality, rank, or recommend an electoral action
+- it must describe only the opened evidence slice, not a broad issue ideology
 - this grouping is explanatory only and does not change stored metrics or alignment calculations
 
 ## Drift Rules

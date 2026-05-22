@@ -346,7 +346,11 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
           <div className="rounded-2xl border border-cyan-900/10 bg-cyan-50 px-4 py-4 text-sm leading-6 text-stone-700">
             {formatBillGroupSummary(evidenceRows.length, billGroups.length)}
           </div>
-          <IssueEvidenceSummary rows={evidenceRows} />
+          <IssueEvidenceSummary
+            domain={selectedRow.domain}
+            representativeName={legislator?.name_display}
+            rows={evidenceRows}
+          />
           <CivicActionPanel
             domain={selectedRow.domain}
             evidenceRows={evidenceRows}
@@ -606,8 +610,8 @@ function ContactMetadataCard({ contactState }) {
   );
 }
 
-function IssueEvidenceSummary({ rows }) {
-  const summary = buildIssueEvidenceSummary(rows);
+function IssueEvidenceSummary({ domain, representativeName, rows }) {
+  const summary = buildIssueEvidenceSummary(rows, { domain, representativeName });
   if (!summary) {
     return null;
   }
@@ -628,9 +632,9 @@ function IssueEvidenceSummary({ rows }) {
         </span>
       </div>
       <div className="mt-4 grid gap-2 sm:grid-cols-4">
-        <SummaryMetric label="Support side" value={summary.supportCount} />
-        <SummaryMetric label="Oppose side" value={summary.opposeCount} />
-        <SummaryMetric label="Other position" value={summary.otherCount} />
+        <SummaryMetric label="For side" value={summary.supportCount} />
+        <SummaryMetric label="Against side" value={summary.opposeCount} />
+        <SummaryMetric label="Other record" value={summary.otherCount} />
         <SummaryMetric label="Needs caution" value={summary.unresolvedCount} />
       </div>
       {summary.focusText ? (
@@ -638,8 +642,13 @@ function IssueEvidenceSummary({ rows }) {
           {summary.focusText}
         </p>
       ) : null}
+      {summary.scopeText ? (
+        <p className="mt-2 text-sm leading-6 text-stone-600">
+          {summary.scopeText}
+        </p>
+      ) : null}
       <p className="mt-3 text-xs leading-5 text-stone-500">
-        This read uses only cached vote meanings shown below. Ambiguous rows stay visible but do not become support or oppose counts.
+        Rows below remain the source of truth for each claim; missing vote meanings are not guessed.
       </p>
     </div>
   );
@@ -955,7 +964,30 @@ function buildPatternRows(rows) {
     });
 }
 
-function buildIssueEvidenceSummary(rows) {
+const ISSUE_FACET_READS = {
+  budget_reconciliation_and_debt_limit: "budget-reconciliation instructions tied to taxes, spending, deficits, and the debt limit",
+  government_funding_and_shutdown: "a shutdown-ending federal funding package",
+  temporary_government_funding: "short-term federal funding while regular appropriations were unfinished",
+  small_business_loan_eligibility: "SBA loan eligibility restrictions based on citizenship or residency status",
+  small_business_regulation: "SBA regulatory-cost limits for small businesses",
+  military_construction_and_va_appropriations: "military construction, military housing, and veterans affairs appropriations",
+  appropriations_amendment: "an appropriations amendment",
+  conference_instruction: "a conference instruction",
+  fentanyl_scheduling_and_penalties: "fentanyl scheduling and penalty changes",
+  federal_law_enforcement_equipment: "federal law-enforcement equipment transfers",
+  law_enforcement_safety_reporting: "law-enforcement safety reporting",
+  dc_police_pursuit_policy: "D.C. police pursuit policy",
+  dc_policing_reform_repeal: "repeal of a D.C. policing reform law",
+  dc_immigration_information_sharing: "D.C. immigration information-sharing rules",
+  school_foreign_funding_and_contract_restrictions: "school restrictions tied to foreign funding and contracts",
+  school_foreign_influence_parent_notifications: "parent-notification requirements for foreign influence in schools",
+  federal_employee_collective_bargaining: "federal employee collective-bargaining rules",
+  medicaid_payment_rules_for_minor_health_procedures: "Medicaid payment rules for minor health procedures",
+  hydrogen_vehicle_safety_standards: "hydrogen vehicle safety standards",
+  natural_gas_pipeline_and_lng_review_coordination: "natural-gas pipeline and LNG review coordination",
+};
+
+function buildIssueEvidenceSummary(rows, { domain = "", representativeName = "" } = {}) {
   if (!rows.length) {
     return null;
   }
@@ -965,21 +997,30 @@ function buildIssueEvidenceSummary(rows) {
   const opposeCount = interpretedRows.filter((row) => row.position === row.oppose_position).length;
   const otherCount = interpretedRows.length - supportCount - opposeCount;
   const unresolvedCount = rows.filter((row) => row.interpretation_status && row.interpretation_status !== "interpreted").length;
-  const recordedCount = interpretedRows.filter((row) => row.position === "yea" || row.position === "nay").length;
-  const focusText = buildIssueFocusText(interpretedRows);
+  const directionalRows = interpretedRows.filter(
+    (row) => (row.position === "yea" || row.position === "nay") && (row.position === row.support_position || row.position === row.oppose_position),
+  );
+  const supportRows = directionalRows.filter((row) => row.position === row.support_position);
+  const opposeRows = directionalRows.filter((row) => row.position === row.oppose_position);
+  const recordedCount = directionalRows.length;
+  const issueLabel = formatDomainLabel(domain || rows[0]?.primary_domain || "this issue");
+  const personLabel = formatRepresentativeReference(representativeName);
+  const focusText = buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows });
+  const scopeText = buildIssueScopeText({
+    directionalCount: recordedCount,
+    issueLabel,
+    otherCount,
+    rowCount: rows.length,
+    unresolvedCount,
+  });
 
-  let pattern = "a mixed interpreted record";
-  if (supportCount > opposeCount && opposeCount === 0) {
-    pattern = "recorded support-side votes";
-  } else if (opposeCount > supportCount && supportCount === 0) {
-    pattern = "recorded oppose-side votes";
-  } else if (supportCount > opposeCount) {
-    pattern = "more support-side than oppose-side interpreted votes";
-  } else if (opposeCount > supportCount) {
-    pattern = "more oppose-side than support-side interpreted votes";
-  }
-
-  const lead = `Across the interpreted votes in this issue, this record shows ${pattern}: ${supportCount} support-side, ${opposeCount} oppose-side, and ${otherCount} other recorded ${otherCount === 1 ? "position" : "positions"}.`;
+  const lead = buildDirectionalLead({
+    issueLabel,
+    opposeCount,
+    otherCount,
+    personLabel,
+    supportCount,
+  });
 
   return {
     coverageLabel: `${recordedCount} interpreted yea/nay`,
@@ -987,23 +1028,130 @@ function buildIssueEvidenceSummary(rows) {
     lead,
     opposeCount,
     otherCount,
+    scopeText,
     supportCount,
     unresolvedCount,
   };
 }
 
-function buildIssueFocusText(rows) {
-  const facets = rows
-    .map((row) => row.issue_facet)
-    .filter(Boolean)
-    .map(formatIssueFacet);
-  const uniqueFacets = Array.from(new Set(facets)).slice(0, 4);
+function buildDirectionalLead({ issueLabel, opposeCount, otherCount, personLabel, supportCount }) {
+  if (supportCount > opposeCount && opposeCount === 0) {
+    return `In this interpreted ${issueLabel} slice, ${personLabel} voted for each interpreted measure with a recorded yea or nay.`;
+  }
+  if (opposeCount > supportCount && supportCount === 0) {
+    return `In this interpreted ${issueLabel} slice, ${personLabel} voted against each interpreted measure with a recorded yea or nay.`;
+  }
+  if (supportCount > opposeCount) {
+    return `In this interpreted ${issueLabel} slice, ${personLabel} voted for ${supportCount} measures and against ${opposeCount}.`;
+  }
+  if (opposeCount > supportCount) {
+    return `In this interpreted ${issueLabel} slice, ${personLabel} voted against ${opposeCount} measures and for ${supportCount}.`;
+  }
+  if (supportCount === opposeCount && supportCount > 0) {
+    return `In this interpreted ${issueLabel} slice, ${formatPossessive(personLabel)} yea/nay votes were split: ${supportCount} for and ${opposeCount} against.`;
+  }
+  if (otherCount > 0) {
+    return `The interpreted ${issueLabel} rows shown here do not include a recorded yea or nay position for ${personLabel}.`;
+  }
 
-  if (!uniqueFacets.length) {
+  return `The interpreted ${issueLabel} votes shown here are mixed.`;
+}
+
+function buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows }) {
+  const supportReads = buildMeasureReads(supportRows);
+  const opposeReads = buildMeasureReads(opposeRows);
+
+  let read = "";
+  if (supportReads.length && !opposeReads.length) {
+    read = `In plain terms, those votes were for ${formatList(supportReads)}.`;
+  } else if (opposeReads.length && !supportReads.length) {
+    read = `In plain terms, those votes were against ${formatList(opposeReads)}.`;
+  } else if (supportReads.length && opposeReads.length) {
+    read = `In plain terms, the for-side votes concerned ${formatList(supportReads)}, while the against-side votes concerned ${formatList(opposeReads)}.`;
+  }
+
+  if (!read) {
     return "";
   }
 
-  return `The interpreted rows touch ${formatList(uniqueFacets)}.`;
+  const otherText = otherCount
+    ? ` ${otherCount} interpreted ${otherCount === 1 ? "row uses" : "rows use"} another recorded position, such as not voting.`
+    : "";
+
+  return `${read}${otherText}`;
+}
+
+function buildIssueScopeText({ directionalCount, issueLabel, otherCount, rowCount, unresolvedCount }) {
+  const pieces = [
+    `This conclusion is based on ${directionalCount} interpreted yea/nay ${directionalCount === 1 ? "vote" : "votes"} among ${rowCount} roll-call ${rowCount === 1 ? "row" : "rows"} shown.`,
+  ];
+
+  if (otherCount) {
+    pieces.push(`${otherCount} interpreted ${otherCount === 1 ? "row has" : "rows have"} another recorded position.`);
+  }
+  if (unresolvedCount) {
+    pieces.push(`${unresolvedCount} procedural or ambiguous ${unresolvedCount === 1 ? "row stays" : "rows stay"} visible but outside the for/against read.`);
+  }
+
+  pieces.push(`It describes this ${issueLabel} evidence slice only, not a broad ideology score or voting recommendation.`);
+
+  return pieces.join(" ");
+}
+
+function buildMeasureReads(rows) {
+  const reads = [];
+
+  rows.forEach((row) => {
+    const read = buildMeasureRead(row);
+    if (read && !reads.includes(read)) {
+      reads.push(read);
+    }
+  });
+
+  if (reads.length <= 5) {
+    return reads;
+  }
+
+  return [...reads.slice(0, 4), `${reads.length - 4} other interpreted ${reads.length - 4 === 1 ? "measure" : "measures"}`];
+}
+
+function buildMeasureRead(row) {
+  const facet = String(row.issue_facet || "").trim();
+  if (ISSUE_FACET_READS[facet]) {
+    return ISSUE_FACET_READS[facet];
+  }
+
+  const takeaway = buildPlainTakeaway(row)
+    .replace(/^This vote was about\s+/i, "")
+    .replace(/^This vote helped set the rules for\s+/i, "rules for ")
+    .replace(/\.$/, "")
+    .trim();
+  if (takeaway) {
+    return takeaway[0].toLowerCase() + takeaway.slice(1);
+  }
+
+  if (facet) {
+    return formatIssueFacet(facet).toLowerCase();
+  }
+
+  return String(row.bill_title || row.description || row.question || "the interpreted measure").trim();
+}
+
+function formatRepresentativeReference(name) {
+  const cleaned = String(name || "").trim();
+  if (!cleaned) {
+    return "this representative";
+  }
+
+  const parts = cleaned.split(/\s+/).filter(Boolean);
+  return parts.length > 1 ? parts[parts.length - 1] : cleaned;
+}
+
+function formatPossessive(name) {
+  if (name === "this representative") {
+    return "this representative's";
+  }
+  return name.endsWith("s") ? `${name}'` : `${name}'s`;
 }
 
 function formatList(values) {
