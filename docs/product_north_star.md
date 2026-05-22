@@ -179,8 +179,8 @@ For each upcoming race, show candidates side by side using the evidence ladder:
 The user should be able to say:
 
 - I care about this issue.
-- I want to see support-side records.
-- I want to see oppose-side records.
+- I want to see records where the official voted for interpreted measures.
+- I want to see records where the official voted against interpreted measures.
 - I just want the record without an alignment label.
 
 The product may describe alignment to those explicit preferences, but must never become a voting recommendation.

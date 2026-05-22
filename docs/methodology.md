@@ -423,7 +423,7 @@ Frontend presentation:
 - that high-level read may group source-grounded issue facets from cached `vote_interpretations` into short practical measure descriptions, such as budget-reconciliation instructions, loan-eligibility restrictions, or temporary funding packages
 - that high-level read must state its scope, including interpreted yea/nay count, total roll-call rows shown, other recorded positions, and ambiguous/procedural rows left outside the for/against read
 - it must not infer motive, ideology, causality, rank, or recommend an electoral action
-- it must describe only the opened evidence slice, not a broad issue ideology
+- it must describe only the opened evidence section, not a broad issue ideology
 - this grouping is explanatory only and does not change stored metrics or alignment calculations
 
 ## Drift Rules
@@ -597,7 +597,7 @@ These counts are derived only from stored `vote_interpretations` rows where:
 - the interpretation classification version matches the vote classification version
 - the legislator's recorded vote matches the stored `support_position` or `oppose_position`, or is counted separately as another interpreted position
 
-The frontend renders these as issue pattern cards. The cards may say that interpreted votes were recorded on the support side, oppose side, or split between those sides. They must also show coverage language, such as how many recorded yea/nay votes have cached vote meanings. These cards are descriptive only; they do not rank officials, infer motives, or recommend electoral action.
+The frontend renders these as issue pattern cards. The cards may say that interpreted votes were recorded on the for side, against side, or split between those sides. They must also show coverage language, such as how many recorded yea/nay votes have cached vote meanings. These cards are descriptive only; they do not rank officials, infer motives, or recommend electoral action.
 
 ## Live Pipeline Orchestration
 

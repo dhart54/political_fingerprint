@@ -150,6 +150,77 @@ The first gold slice is Valerie Foushee / `ECONOMY_TAXES`, stored in:
 docs/interpretation_batches/batch_006_valerie_economy_gold_interpretations.json
 ```
 
+## Replicating the Issue-Read Standard
+
+Use this checklist when moving the gold-slice quality bar to another official or issue domain.
+
+1. Pick one visible accountability slice:
+   - one current official
+   - one issue domain
+   - enough eligible roll calls to make the section worth reading
+
+2. Export packets from Supabase:
+
+```powershell
+cd backend
+python -m app.etl.manual_interpretations export --output ..\docs\interpretation_batches\<batch>_packets.json --legislator-id <legislator_id> --domain <DOMAIN> --limit 25
+```
+
+3. Fetch bounded Congress.gov enrichment for the bills in that packet:
+   - bill detail
+   - summaries
+   - subjects
+   - actions
+   - text versions
+   - amendments
+   - committees
+
+Use `--include-enrichment` on each bill reference so the next packet export can include `so_what_context`.
+
+4. Re-export the same slice to a `*_so_what.json` packet and review each row against:
+   - vote type
+   - practical mechanism
+   - direct stakes
+   - yea/nay meaning
+   - actual recorded vote
+   - evidence boundary
+   - one-sentence civic so-what
+
+5. Write or refresh the reviewed interpretation JSON:
+   - use concrete `issue_facet` values that can be grouped into practical measure descriptions
+   - keep amendment, rule, conference, and motion rows ambiguous when the official packet does not show the exact effect
+   - do not turn lifecycle context into a stronger claim than the vote supports
+
+6. Import the reviewed file:
+
+```powershell
+cd backend
+python -m app.etl.manual_interpretations import --input ..\docs\interpretation_batches\<batch>_interpretations.json --reviewed-by <reviewer_id>
+```
+
+7. Verify the API and UI:
+   - API evidence rows show the refreshed `plain_english_summary`, `policy_effect`, `issue_facet`, and `source_basis`
+   - the opened issue's high-level read says whether interpreted yea/nay votes were for, against, mostly for, mostly against, or split
+   - the read names the practical measures in plain terms
+   - the read states the scope: interpreted yea/nay count, total rows, other records, and caution rows
+   - the read says it is not a broad ideology score or voting recommendation
+
+8. Run checks before committing:
+
+```powershell
+cd backend
+pytest --basetemp=..\.local\pytest_<batch> tests\test_manual_interpretations.py tests\test_api_positions.py
+
+cd ..\frontend
+npm run build
+```
+
+9. Browser QA the opened issue section. A user should be able to answer:
+   - What did this official do in the interpreted votes?
+   - What kinds of measures were those votes about?
+   - Which rows are excluded from the conclusion, and why?
+   - What broader conclusion is the product explicitly not making?
+
 ## Import Reviewed JSON
 
 The import file should contain:

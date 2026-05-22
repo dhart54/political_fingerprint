@@ -270,11 +270,11 @@ function IssuePatternCards({ onInspectDomain, rows, status }) {
               </p>
               <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
                 <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3">
-                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">Support side</p>
+                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">For side</p>
                   <p className="mt-2 text-[1.4rem] leading-none text-stone-950">{row.supportCount}</p>
                 </div>
                 <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3">
-                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">Oppose side</p>
+                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">Against side</p>
                   <p className="mt-2 text-[1.4rem] leading-none text-stone-950">{row.opposeCount}</p>
                 </div>
               </div>
@@ -867,11 +867,26 @@ function formatBillGroupSummary(rollCallCount, billCount) {
 }
 
 function formatDomainLabel(domain) {
+  const label = DOMAIN_LABELS[domain];
+  if (label) {
+    return label;
+  }
+
   return String(domain)
     .split("_")
     .map((segment) => segment[0] + segment.slice(1).toLowerCase())
     .join(" ");
 }
+
+const DOMAIN_LABELS = {
+  ECONOMY_TAXES: "Economy & Taxes",
+  EDUCATION_WORKFORCE: "Education & Workforce",
+  ENVIRONMENT_ENERGY: "Environment & Energy",
+  HEALTH_SOCIAL: "Health & Social Services",
+  INFRASTRUCTURE_TECH_TRANSPORT: "Infrastructure, Tech & Transport",
+  JUSTICE_PUBLIC_SAFETY: "Justice & Public Safety",
+  NATIONAL_SECURITY_FOREIGN: "National Security & Foreign Policy",
+};
 
 function formatChamber(chamber) {
   return chamber ? chamber[0].toUpperCase() + chamber.slice(1) : "";
@@ -945,13 +960,13 @@ function buildPatternRows(rows) {
       let label = "Split interpreted record";
 
       if (supportCount > opposeCount && opposeCount === 0) {
-        label = "Recorded support-side votes";
+        label = "Recorded for-side votes";
       } else if (opposeCount > supportCount && supportCount === 0) {
-        label = "Recorded oppose-side votes";
+        label = "Recorded against-side votes";
       } else if (supportCount > opposeCount) {
-        label = "More support-side than oppose-side";
+        label = "More for-side than against-side";
       } else if (opposeCount > supportCount) {
-        label = "More oppose-side than support-side";
+        label = "More against-side than for-side";
       }
 
       return {
@@ -1036,19 +1051,19 @@ function buildIssueEvidenceSummary(rows, { domain = "", representativeName = "" 
 
 function buildDirectionalLead({ issueLabel, opposeCount, otherCount, personLabel, supportCount }) {
   if (supportCount > opposeCount && opposeCount === 0) {
-    return `In this interpreted ${issueLabel} slice, ${personLabel} voted for each interpreted measure with a recorded yea or nay.`;
+    return `Among the interpreted ${issueLabel} votes shown here, ${formatPossessive(personLabel)} recorded yea/nay votes were all for the interpreted measures.`;
   }
   if (opposeCount > supportCount && supportCount === 0) {
-    return `In this interpreted ${issueLabel} slice, ${personLabel} voted against each interpreted measure with a recorded yea or nay.`;
+    return `Among the interpreted ${issueLabel} votes shown here, ${formatPossessive(personLabel)} recorded yea/nay votes were all against the interpreted measures.`;
   }
   if (supportCount > opposeCount) {
-    return `In this interpreted ${issueLabel} slice, ${personLabel} voted for ${supportCount} measures and against ${opposeCount}.`;
+    return `Among the interpreted ${issueLabel} votes shown here, ${personLabel} recorded ${supportCount} for-side votes and ${opposeCount} against-side votes.`;
   }
   if (opposeCount > supportCount) {
-    return `In this interpreted ${issueLabel} slice, ${personLabel} voted against ${opposeCount} measures and for ${supportCount}.`;
+    return `Among the interpreted ${issueLabel} votes shown here, ${personLabel} recorded ${opposeCount} against-side votes and ${supportCount} for-side votes.`;
   }
   if (supportCount === opposeCount && supportCount > 0) {
-    return `In this interpreted ${issueLabel} slice, ${formatPossessive(personLabel)} yea/nay votes were split: ${supportCount} for and ${opposeCount} against.`;
+    return `Among the interpreted ${issueLabel} votes shown here, ${formatPossessive(personLabel)} recorded yea/nay votes were split: ${supportCount} for and ${opposeCount} against.`;
   }
   if (otherCount > 0) {
     return `The interpreted ${issueLabel} rows shown here do not include a recorded yea or nay position for ${personLabel}.`;
@@ -1093,7 +1108,7 @@ function buildIssueScopeText({ directionalCount, issueLabel, otherCount, rowCoun
     pieces.push(`${unresolvedCount} procedural or ambiguous ${unresolvedCount === 1 ? "row stays" : "rows stay"} visible but outside the for/against read.`);
   }
 
-  pieces.push(`It describes this ${issueLabel} evidence slice only, not a broad ideology score or voting recommendation.`);
+  pieces.push(`It describes this ${issueLabel} evidence section only, not a broad ideology score or voting recommendation.`);
 
   return pieces.join(" ");
 }
@@ -1171,7 +1186,7 @@ function buildActionContext({ domain, evidenceRows, representativeName, selected
   const otherCount = interpretedRows.length - supportCount - opposeCount;
   const cautiousCount = evidenceRows.filter((row) => row.interpretation_status && row.interpretation_status !== "interpreted").length;
   const issueLabel = formatDomainLabel(domain);
-  const contextLine = `${representativeName}'s ${issueLabel} evidence currently shows ${supportCount} support-side, ${opposeCount} oppose-side, ${otherCount} other-position, and ${cautiousCount} caution rows among the cached vote meanings shown here.`;
+  const contextLine = `${representativeName}'s ${issueLabel} evidence currently shows ${supportCount} for-side, ${opposeCount} against-side, ${otherCount} other-record, and ${cautiousCount} caution rows among the cached vote meanings shown here.`;
   const example = selectedEvidenceRow || interpretedRows.find((row) => row.position === "yea" || row.position === "nay") || interpretedRows[0] || evidenceRows[0] || null;
   const exampleLine = formatActionVoteLine(example);
   const selectedVoteLine = selectedEvidenceRow ? formatActionVoteLine(selectedEvidenceRow) : "";

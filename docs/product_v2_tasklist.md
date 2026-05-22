@@ -135,6 +135,8 @@ Priority hierarchy for new work:
 - [x] Add shared NC Senate national-security interpretations for foreign-military-sale disapproval motions.
 - [x] Create Valerie Foushee / Economy-Taxes gold slice for replicable high-quality vote interpretation.
 - [x] Tighten the Valerie Economy-Taxes gold slice with higher-specificity stakes from existing official summaries.
+- [x] Make opened issue evidence reads draw a bounded, repeatable plain-language conclusion from interpreted votes.
+- [x] Document the repeatable issue-read workflow from enriched packet export through browser QA.
 - [x] Add Valerie Foushee visible-domain interpretation batch for Health/Social, Education/Workforce, Environment/Energy, and Immigration/Border rows.
 
 ## Next Lens - Ballot-Aware Candidate Comparison

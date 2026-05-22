@@ -684,7 +684,9 @@ Reported results:
   - `PositionByIssue` high-level evidence reads now use deterministic opened-row data instead of a generic support/oppose count sentence
   - the read states whether interpreted yea/nay votes were for, against, mostly for, mostly against, or split across interpreted measures
   - the read groups interpreted issue facets into practical measure descriptions and adds scope language for interpreted yea/nay count, other records, and caution rows
-  - methodology documents the issue-read boundary: opened slice only, no motive, no broad ideology score, no voting recommendation
+  - visible labels now use for-side/against-side/other-record language instead of support-side/oppose-side internal phrasing
+  - `docs/manual_interpretation_workflow.md` records the replication checklist from enriched packet export through API/UI/browser QA
+  - methodology documents the issue-read boundary: opened evidence section only, no motive, no broad ideology score, no voting recommendation
   - frontend production build passed after escalated rerun: `npm run build`
   - browser QA confirmed Valerie `ECONOMY_TAXES` now reads as a plain conclusion with source-boundary text
 
