@@ -145,6 +145,12 @@ Allowed inputs:
 
 - bill title
 - bill summary
+- bill lifecycle details, including introduced date, origin chamber, latest action, and public law status when available
+- bill text-version metadata
+- bill action history
+- amendment metadata
+- committee activity metadata
+- CBO cost-estimate links or descriptions when available
 - roll call question
 - roll call description
 - official source URL
@@ -193,6 +199,8 @@ These rules are intentionally conservative. They prioritize not counting a vote 
 Manual interpretation batches use `docs/manual_interpretation_workflow.md`. They are designed for the first "DC-speak breakdown" layer without an ongoing API dependency. The importer rejects invalid status values, invalid confidence labels, unsupported support/oppose positions, missing source basis for interpreted records, and persuasive or judgmental language.
 
 Manual interpretation quality is developed through gold slices: one official, one issue domain, reviewed end to end before scaling. The gold-slice standard requires each interpreted vote to explain the practical action, the likely policy or process effect if the action succeeded, what yea and nay meant, and the evidence boundary. Procedural votes must stay procedural; the product must not translate a motion, amendment, rule, or conference instruction into a final policy effect unless the official packet supports that translation.
+
+Interpretation packets may include a `so_what_context` block assembled from cached Congress.gov subresources. This context is source material for human-reviewed interpretation, not an automatic conclusion engine. It can show bill lifecycle, text versions, recorded actions, amendments, committees, CBO links, and enrichment counts so reviewers can identify the vote type, practical mechanism, direct stakes, and evidence boundary. If those source fields do not support a specific practical read, the interpretation must remain ambiguous or insufficient evidence.
 
 ## User Alignment Rules
 
@@ -572,7 +580,9 @@ Current CLI examples:
 - `python -m app.etl.fetch_sources congress-bill --congress 119 --bill-type hr --bill-number 120 --api-key YOUR_KEY`
 - `python -m app.etl.fetch_sources congress-bill --congress 119 --bill-type hr --bill-number 120 --include-enrichment`
 
-When `--include-enrichment` is used, the Congress.gov pull stores the bill detail payload plus the bill summaries and bill subjects subresources in separate cache directories. The ETL merges those companion payloads deterministically before classification, so interpretation packets can use CRS summary text and official subject terms when Congress.gov provides them.
+When `--include-enrichment` is used, the Congress.gov pull stores the bill detail payload plus bill summaries, bill subjects, bill actions, bill text-version metadata, bill amendments, and bill committees in separate cache directories. The ETL merges those companion payloads deterministically before classification, so interpretation packets can use CRS summary text, official subject terms, lifecycle/action context, text-version links, amendment context, committee activity, CBO links, and public-law status when Congress.gov provides them.
+
+These Congress.gov enrichment records improve interpretation packets but do not by themselves decide support/oppose meaning. The reviewed interpretation must still cite the specific source basis and must mark the row ambiguous or insufficient when the bill/action/amendment context does not justify a plain-English practical effect.
 
 ## Interpreted Issue Patterns
 

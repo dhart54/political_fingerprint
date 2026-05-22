@@ -238,8 +238,64 @@ def _enrich_packets_from_congress_cache(packets: list[dict[str, object]]) -> lis
             official_text["bill_summary"] = cached_bill["summary"]
         if cached_bill.get("subjects"):
             official_text["bill_subjects"] = cached_bill["subjects"]
+        packet["so_what_context"] = _build_so_what_context(cached_bill)
 
     return packets
+
+
+def _build_so_what_context(cached_bill: dict[str, Any]) -> dict[str, object]:
+    latest_action = cached_bill.get("latest_action")
+    laws = cached_bill.get("laws") or []
+    text_versions = cached_bill.get("text_versions") or []
+    cbo_cost_estimates = cached_bill.get("cbo_cost_estimates") or []
+    amendments = cached_bill.get("amendments") or []
+    actions = cached_bill.get("actions") or []
+    committees = cached_bill.get("committees") or []
+
+    return {
+        "bill_lifecycle": {
+            "introduced_date": cached_bill.get("introduced_date"),
+            "origin_chamber": cached_bill.get("origin_chamber"),
+            "latest_action": latest_action,
+            "laws": laws,
+            "became_law": bool(laws)
+            or (
+                isinstance(latest_action, dict)
+                and "became public law" in str(latest_action.get("text") or "").lower()
+            ),
+        },
+        "practical_stakes_prompts": [
+            "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+            "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+            "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+            "What cannot be concluded from the available source text?",
+        ],
+        "available_enrichment": {
+            "bill_detail": True,
+            "latest_action": latest_action is not None,
+            "public_law": bool(laws),
+            "cbo_cost_estimates": len(cbo_cost_estimates),
+            "text_versions": len(text_versions),
+            "actions": len(actions),
+            "amendments": len(amendments),
+            "committees": len(committees),
+        },
+        "cbo_cost_estimates": [
+            {
+                "title": estimate.get("title"),
+                "description": estimate.get("description"),
+                "pub_date": estimate.get("pubDate"),
+                "url": estimate.get("url"),
+            }
+            for estimate in cbo_cost_estimates
+            if isinstance(estimate, dict)
+        ],
+        "text_versions": text_versions[:5],
+        "actions": actions[:8],
+        "amendments": amendments[:12],
+        "committees": committees,
+        "legislation_url": cached_bill.get("legislation_url"),
+    }
 
 
 def _persist_manual_interpretations(rows: list[dict[str, object]]) -> None:
@@ -352,6 +408,11 @@ def _serialize_packet(row: dict[str, Any]) -> dict[str, object]:
             "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
             "support_position": "yea | nay | null",
             "oppose_position": "yea | nay | null",
+            "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+            "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+            "direct_stakes": "",
+            "evidence_boundary": "",
+            "so_what_summary": "",
             "plain_english_summary": "",
             "yea_meaning": "",
             "nay_meaning": "",

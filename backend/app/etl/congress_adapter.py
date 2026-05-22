@@ -81,12 +81,31 @@ def load_congress_bill_cache(cache_dir: Path) -> dict[tuple[int, str, int], dict
 
     summaries_dir = cache_dir.parent / "bill_summaries"
     subjects_dir = cache_dir.parent / "bill_subjects"
+    actions_dir = cache_dir.parent / "bill_actions"
+    texts_dir = cache_dir.parent / "bill_texts"
+    amendments_dir = cache_dir.parent / "bill_amendments"
+    committees_dir = cache_dir.parent / "bill_committees"
     lookup: dict[tuple[int, str, int], dict[str, Any]] = {}
     for path in sorted(cache_dir.glob("*.json")):
         payload = json.loads(path.read_text(encoding="utf-8"))
         _merge_companion_payload(payload, summaries_dir / path.name, "summaries")
         _merge_companion_payload(payload, subjects_dir / path.name, "subjects")
+        _merge_companion_payload(payload, actions_dir / path.name, "actions")
+        _merge_companion_payload(payload, texts_dir / path.name, "textVersions")
+        _merge_companion_payload(payload, amendments_dir / path.name, "amendments")
+        _merge_companion_payload(payload, committees_dir / path.name, "committees")
         normalized = normalize_congress_bill_response(payload)
+        bill = payload.get("bill", payload)
+        normalized["latest_action"] = _extract_latest_action(bill)
+        normalized["introduced_date"] = bill.get("introducedDate")
+        normalized["origin_chamber"] = bill.get("originChamber")
+        normalized["laws"] = _coerce_list(bill.get("laws"))
+        normalized["cbo_cost_estimates"] = _coerce_list(bill.get("cboCostEstimates"))
+        normalized["text_versions"] = _extract_text_versions(bill.get("textVersions"))
+        normalized["actions"] = _coerce_list(bill.get("actions"))
+        normalized["amendments"] = _coerce_list(bill.get("amendments"))
+        normalized["committees"] = _coerce_list(bill.get("committees"))
+        normalized["legislation_url"] = bill.get("legislationUrl")
         lookup[
             (
                 int(normalized["congress"]),
@@ -244,3 +263,59 @@ def _merge_companion_payload(payload: dict[str, Any], path: Path, field_name: st
     bill = payload.setdefault("bill", {})
     bill[field_name] = values
     payload[field_name] = values
+
+
+def _extract_latest_action(bill: dict[str, Any]) -> dict[str, str] | None:
+    latest_action = bill.get("latestAction")
+    if isinstance(latest_action, dict):
+        return {
+            "action_date": str(latest_action.get("actionDate") or ""),
+            "text": str(latest_action.get("text") or ""),
+        }
+    actions = bill.get("actions")
+    if isinstance(actions, list) and actions:
+        action = actions[0]
+        if isinstance(action, dict):
+            return {
+                "action_date": str(action.get("actionDate") or ""),
+                "text": str(action.get("text") or action.get("actionCode") or ""),
+            }
+    return None
+
+
+def _extract_text_versions(text_versions: Any) -> list[dict[str, Any]]:
+    if isinstance(text_versions, dict):
+        text_versions = text_versions.get("textVersions") or text_versions.get("items") or []
+    if not isinstance(text_versions, list):
+        return []
+    extracted = []
+    for version in text_versions:
+        if not isinstance(version, dict):
+            continue
+        formats = [
+            {
+                "type": str(text_format.get("type") or ""),
+                "url": str(text_format.get("url") or ""),
+            }
+            for text_format in _coerce_list(version.get("formats"))
+            if isinstance(text_format, dict)
+        ]
+        extracted.append(
+            {
+                "date": version.get("date"),
+                "type": version.get("type"),
+                "formatted_text": version.get("formattedText"),
+                "formats": formats,
+            }
+        )
+    return extracted
+
+
+def _coerce_list(value: Any) -> list[Any]:
+    if isinstance(value, list):
+        return value
+    if isinstance(value, dict):
+        for key in ("items", "actions", "amendments", "committees", "cboCostEstimates"):
+            if isinstance(value.get(key), list):
+                return value[key]
+    return []

@@ -89,6 +89,16 @@ def test_enrich_packets_from_congress_cache_prefers_cached_summary_and_subjects(
             (119, "hr", 120): {
                 "summary": "CRS summary explains the bill's operating change.",
                 "subjects": ["Health care costs"],
+                "latest_action": {"action_date": "2025-02-01", "text": "Passed House."},
+                "introduced_date": "2025-01-03",
+                "origin_chamber": "House",
+                "laws": [],
+                "cbo_cost_estimates": [{"title": "CBO estimate", "url": "https://example.com/cbo"}],
+                "text_versions": [{"type": "Engrossed in House"}],
+                "actions": [{"actionDate": "2025-02-01", "text": "Passed House."}],
+                "amendments": [{"number": "1", "purpose": "Test amendment"}],
+                "committees": [{"name": "Committee on Testing"}],
+                "legislation_url": "https://www.congress.gov/bill/119th-congress/house-bill/120",
             }
         },
     )
@@ -109,3 +119,6 @@ def test_enrich_packets_from_congress_cache_prefers_cached_summary_and_subjects(
 
     assert packets[0]["official_text"]["bill_summary"] == "CRS summary explains the bill's operating change."
     assert packets[0]["official_text"]["bill_subjects"] == ["Health care costs"]
+    assert packets[0]["so_what_context"]["bill_lifecycle"]["latest_action"]["text"] == "Passed House."
+    assert packets[0]["so_what_context"]["available_enrichment"]["cbo_cost_estimates"] == 1
+    assert packets[0]["so_what_context"]["available_enrichment"]["amendments"] == 1

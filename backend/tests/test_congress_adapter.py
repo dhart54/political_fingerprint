@@ -37,9 +37,13 @@ def test_load_congress_bill_cache_merges_summary_and_subject_subresources(tmp_pa
     bills_dir = tmp_path / "congress" / "bills"
     summaries_dir = tmp_path / "congress" / "bill_summaries"
     subjects_dir = tmp_path / "congress" / "bill_subjects"
+    actions_dir = tmp_path / "congress" / "bill_actions"
+    texts_dir = tmp_path / "congress" / "bill_texts"
     bills_dir.mkdir(parents=True)
     summaries_dir.mkdir()
     subjects_dir.mkdir()
+    actions_dir.mkdir()
+    texts_dir.mkdir()
 
     (bills_dir / "119_hr_120.json").write_text(
         json.dumps(
@@ -49,6 +53,9 @@ def test_load_congress_bill_cache_merges_summary_and_subject_subresources(tmp_pa
                     "type": "HR",
                     "number": "120",
                     "title": "Test Act",
+                    "introducedDate": "2025-01-03",
+                    "originChamber": "House",
+                    "latestAction": {"actionDate": "2025-02-01", "text": "Passed House."},
                     "summaries": {
                         "count": 1,
                         "url": "https://api.congress.gov/v3/bill/119/hr/120/summaries",
@@ -70,12 +77,35 @@ def test_load_congress_bill_cache_merges_summary_and_subject_subresources(tmp_pa
         json.dumps({"subjects": [{"name": "Education programs"}]}),
         encoding="utf-8",
     )
+    (actions_dir / "119_hr_120.json").write_text(
+        json.dumps({"actions": [{"actionDate": "2025-02-01", "text": "Passed House."}]}),
+        encoding="utf-8",
+    )
+    (texts_dir / "119_hr_120.json").write_text(
+        json.dumps(
+            {
+                "textVersions": [
+                    {
+                        "date": "2025-02-01",
+                        "type": "Engrossed in House",
+                        "formats": [{"type": "Formatted Text", "url": "https://example.com/text.htm"}],
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
 
     cache = load_congress_bill_cache(bills_dir)
 
     bill = cache[(119, "hr", 120)]
     assert bill["summary"] == "CRS says the bill expands a grant program."
     assert bill["subjects"] == ["Education programs"]
+    assert bill["latest_action"] == {"action_date": "2025-02-01", "text": "Passed House."}
+    assert bill["introduced_date"] == "2025-01-03"
+    assert bill["origin_chamber"] == "House"
+    assert bill["actions"] == [{"actionDate": "2025-02-01", "text": "Passed House."}]
+    assert bill["text_versions"][0]["type"] == "Engrossed in House"
 
 
 def test_load_congress_bill_cache_flattens_nested_subject_subresource(tmp_path) -> None:

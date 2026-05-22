@@ -86,6 +86,45 @@ def test_build_congress_bill_subjects_url_uses_official_subresource_pattern() ->
     )
 
 
+def test_build_congress_so_what_subresource_urls_use_official_patterns() -> None:
+    assert (
+        fetch_sources.build_congress_bill_actions_url(
+            congress=119,
+            bill_type="hr",
+            bill_number=120,
+            api_key="demo-key",
+        )
+        == "https://api.congress.gov/v3/bill/119/hr/120/actions?format=json&api_key=demo-key&limit=250"
+    )
+    assert (
+        fetch_sources.build_congress_bill_text_url(
+            congress=119,
+            bill_type="hr",
+            bill_number=120,
+            api_key="demo-key",
+        )
+        == "https://api.congress.gov/v3/bill/119/hr/120/text?format=json&api_key=demo-key&limit=250"
+    )
+    assert (
+        fetch_sources.build_congress_bill_amendments_url(
+            congress=119,
+            bill_type="hr",
+            bill_number=120,
+            api_key="demo-key",
+        )
+        == "https://api.congress.gov/v3/bill/119/hr/120/amendments?format=json&api_key=demo-key&limit=250"
+    )
+    assert (
+        fetch_sources.build_congress_bill_committees_url(
+            congress=119,
+            bill_type="hr",
+            bill_number=120,
+            api_key="demo-key",
+        )
+        == "https://api.congress.gov/v3/bill/119/hr/120/committees?format=json&api_key=demo-key&limit=250"
+    )
+
+
 def test_download_to_path_writes_payload(monkeypatch, tmp_path: Path) -> None:
     captured = {}
 

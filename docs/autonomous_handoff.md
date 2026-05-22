@@ -663,6 +663,16 @@ Reported results:
   - race cards use the user's selected issues to show whether each candidate has linked recorded-vote evidence, reviewed institutional/stated-position rows, or insufficient evidence for that issue
   - this remains a coverage comparison, not a candidate score, winner, or voting recommendation
   - Phase 11 selected-issue candidate comparison is marked complete
+- Interpretation so-what enrichment checkpoint:
+  - Congress.gov enrichment now fetches and caches bill actions, text-version metadata, amendments, and committees in addition to bill detail, summaries, and subjects
+  - the Congress adapter merges those companion files into bill metadata for deterministic packet export
+  - manual interpretation packets now include `so_what_context` with lifecycle, latest action, public-law status, CBO links, text versions, actions, amendments, committees, and enrichment counts
+  - exported bounded Valerie review packets:
+    - `docs/interpretation_batches/batch_006_valerie_economy_gold_packets_so_what.json`
+    - `docs/interpretation_batches/batch_008_valerie_justice_packets_so_what.json`
+    - `docs/interpretation_batches/batch_009_valerie_visible_domains_packets_so_what.json`
+  - targeted backend tests passed after escalated rerun for Windows temp permissions: `tests\test_fetch_sources.py tests\test_congress_adapter.py tests\test_manual_interpretations.py` (`29 passed`)
+  - methodology now states this enrichment is source context for reviewed interpretation, not an automatic support/oppose or policy-effect conclusion
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 

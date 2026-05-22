@@ -1,0 +1,3935 @@
+{
+  "instructions": [
+    "Interpret only from the official/source text in each packet.",
+    "Explain what the vote appears to do; do not judge whether the outcome is good or bad.",
+    "Use insufficient_evidence when the source text does not support a plain-English interpretation.",
+    "Keep every claim neutral and traceable to source_basis fields."
+  ],
+  "packets": [
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": "high",
+        "interpretation_reason": "Official roll-call wording identifies passage of the bill, and the Congress.gov summary describes repeal of the D.C. policing and justice reform act and the provisions affected.",
+        "interpretation_status": "interpreted",
+        "issue_facet": "dc_policing_reform_repeal",
+        "nay_meaning": "A Nay vote opposed passing the bill to repeal D.C.'s 2022 policing and justice reform act and restore or revive provisions it changed.",
+        "plain_english_summary": "This was House passage of the CLEAN DC Act. The bill would repeal D.C.'s Comprehensive Policing and Justice Reform Amendment Act of 2022 and restore or revive provisions changed by that act.",
+        "policy_effect": "The bill would reverse D.C. policing reforms described in the Congress.gov summary, including provisions related to neck-restraint limits, body-worn camera procedures, and access to police disciplinary records.",
+        "uncertainty_note": null,
+        "yea_meaning": "A Yea vote supported passing the bill to repeal D.C.'s 2022 policing and justice reform act and restore or revive provisions it changed."
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 276,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll299.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 5107,
+        "bill_subjects": [
+          "District of Columbia",
+          "Law enforcement administration and funding",
+          "Law enforcement officers",
+          "Crime and Law Enforcement"
+        ],
+        "bill_summary": "<p><strong>Common-Sense Law Enforcement and Accountability Now in DC Act or the CLEAN DC Act</strong></p><p>This bill repeals the Comprehensive Policing and Justice Reform Amendment Act of 2022, enacted by the Council of the District of Columbia.</p><p>Any provision of law amended or repealed by that act is restored or revived as if it had not been enacted.</p><p>(The act sets forth a variety of measures that focus on policing, including measures prohibiting the use of certain neck restraints by law enforcement officers, requiring additional procedures related to body-worn cameras, and expanding access to police disciplinary records.)</p>",
+        "bill_title": "Common-Sense Law Enforcement and Accountability Now in DC Act of 2025",
+        "bill_type": "hr",
+        "description": "CLEAN DC Act",
+        "question": "On Passage",
+        "source_url": "https://clerk.house.gov/evs/2025/roll299.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 276,
+      "rollcall_number": 299,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionDate": "2025-11-20",
+            "sourceSystem": {
+              "name": "Senate"
+            },
+            "text": "Received in the Senate.",
+            "type": "IntroReferral"
+          },
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-11-19",
+            "actionTime": "20:46:13",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-11-19",
+            "actionTime": "20:46:11",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-11-20T01:46:11Z",
+                "rollNumber": 299,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll299.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On passage Passed by the Yeas and Nays: 233 - 190 (Roll no. 299). (text of amendment in the nature of a substitute: CR H4800-4801)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-11-19",
+            "actionTime": "20:46:11",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-11-20T01:46:11Z",
+                "rollNumber": 299,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll299.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 233 - 190 (Roll no. 299). (text of amendment in the nature of a substitute: CR H4800-4801)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-11-19",
+            "actionTime": "20:39:51",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H4806-4807)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-11-19",
+            "actionTime": "14:42:23",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on H.R. 5107, the Chair put the question on passage of the bill and by voice vote announced the ayes had prevailed. Mr. Clyde demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H35000",
+            "actionDate": "2025-11-19",
+            "actionTime": "14:41:41",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "The previous question was ordered pursuant to the rule.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-11-19",
+            "actionTime": "14:23:42",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "DEBATE - The House proceeded with one hour of debate on H.R. 5107.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [
+          {
+            "congress": 119,
+            "description": "Pursuant to the provisions of H.Res. 879, the amendment in the nature of a substitute recommended by the Committee on Oversight and Government Reform printed in the bill is considered adopted.",
+            "latestAction": {
+              "actionDate": "2025-11-19",
+              "text": "On agreeing to the Rules amendment (A001) Agreed to without objection."
+            },
+            "number": "110",
+            "type": "HAMDT",
+            "updateDate": "2025-11-20T09:09:14Z",
+            "url": "https://api.congress.gov/v3/amendment/119/hamdt/110?format=json"
+          }
+        ],
+        "available_enrichment": {
+          "actions": 19,
+          "amendments": 1,
+          "bill_detail": true,
+          "cbo_cost_estimates": 1,
+          "committees": 1,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 3
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-09-03",
+          "latest_action": {
+            "action_date": "2025-11-20",
+            "text": "Received in the Senate."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [
+          {
+            "description": "As ordered reported by the House Committee on Oversight and Government Reform on \nSeptember 10, 2025\n",
+            "pub_date": "2025-10-03T14:04:00Z",
+            "title": "H.R. 5107, CLEAN DC Act of 2025",
+            "url": "https://www.cbo.gov/publication/61793"
+          }
+        ],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-09-30T16:24:35Z",
+                "name": "Reported By"
+              },
+              {
+                "date": "2025-09-10T16:40:19Z",
+                "name": "Markup By"
+              },
+              {
+                "date": "2025-09-03T14:02:45Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "House",
+            "name": "Oversight and Government Reform Committee",
+            "systemCode": "hsgo00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsgo00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-bill/5107",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-11-19T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr5107/BILLS-119hr5107eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr5107/BILLS-119hr5107eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr5107/BILLS-119hr5107eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-09-30T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr5107/BILLS-119hr5107rh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr5107/BILLS-119hr5107rh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr5107/BILLS-119hr5107rh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Reported in House"
+          },
+          {
+            "date": "2025-09-03T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr5107/BILLS-119hr5107ih.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr5107/BILLS-119hr5107ih.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr5107/BILLS-119hr5107ih.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Introduced in House"
+          }
+        ]
+      },
+      "vote_date": "2025-11-19T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": null,
+        "interpretation_reason": "Manual review left this uninterpreted because the source text does not support a plain-English policy effect.",
+        "interpretation_status": "insufficient_evidence",
+        "issue_facet": "house_of_representatives",
+        "nay_meaning": null,
+        "plain_english_summary": null,
+        "policy_effect": null,
+        "uncertainty_note": "The available official text describes a procedural motion or rule rather than a clear final policy choice.",
+        "yea_meaning": null
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 270,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll291.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 879,
+        "bill_subjects": [
+          "House of Representatives",
+          "Legislative rules and procedure",
+          "Congress"
+        ],
+        "bill_summary": "",
+        "bill_title": "Providing for consideration of the joint resolution (S.J. Res. 80) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ''National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision''; providing for consideration of the joint resolution (H.J. Res. 130) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ''Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment''; providing for consideration of the joint resolution (H.J. Res. 131) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ''Coastal Plain Oil and Gas Leasing Program Record of Decision''; providing for consideration of the concurrent resolution (H. Con. Res. 58) denouncing the horrors of socialism; providing for consideration of the bill (H.R. 1949) to repeal restrictions on the export and import of natural gas; providing for consideration of the bill (H.R. 3109) to require the Secretary of Energy to direct the National Petroleum Council to issue a report with respect to petrochemical refineries in the United States, and for other purposes; providing for consideration of the bill (H.R. 5107) to repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council; providing for consideration of the bill (H.R. 5214) to require mandatory pretrial and post conviction detention for crimes of violence and dangerous crimes and require mandatory cash bail for certain offenses that pose a threat to public safety or order in the District of Columbia, and for other purposes; and for other purposes.",
+        "bill_type": "hres",
+        "description": "Providing for consideration of the joint resolutions S.J. Res. 80, H.J. Res. 130, and H.J. Res. 131; providing for consideration of the concurrent resolution H. Con. Res. 58; providing for consideration of the bills H.R. 1949, H.R. 3109, H.R. 5107, and H.R. 5214; and for other purposes",
+        "question": "On Agreeing to the Resolution",
+        "source_url": "https://clerk.house.gov/evs/2025/roll291.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 270,
+      "rollcall_number": 291,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-11-18",
+            "actionTime": "15:05:03",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-11-18",
+            "actionTime": "15:05:01",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-11-18T20:05:01Z",
+                "rollNumber": 291,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll291.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On agreeing to the resolution Agreed to by recorded vote: 217 - 210 (Roll no. 291). (text: CR H4719)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-11-18",
+            "actionTime": "15:05:01",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-11-18T20:05:01Z",
+                "rollNumber": 291,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll291.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On agreeing to the resolution Agreed to by recorded vote: 217 - 210 (Roll no. 291). (text: CR H4719)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-11-18",
+            "actionTime": "14:56:55",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H4735-4736)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-11-18",
+            "actionTime": "14:53:05",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - The Chair put the question on agreeing to the resolution and by voice vote, announced the ayes had prevailed. Mr. McGovern demanded a recorded vote and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H35000",
+            "actionDate": "2025-11-18",
+            "actionTime": "14:52:30",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-11-18T19:52:30Z",
+                "rollNumber": 290,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll290.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On ordering the previous question Agreed to by the Yeas and Nays: 217 - 211 (Roll no. 290).",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-11-18",
+            "actionTime": "14:44:15",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H4734-4735)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-11-18",
+            "actionTime": "13:16:18",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on H. Res. 879, the Chair put the question on ordering the previous question, and by voice vote announced that the noes had prevailed. Ms. Foxx demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [],
+        "available_enrichment": {
+          "actions": 14,
+          "amendments": 0,
+          "bill_detail": true,
+          "cbo_cost_estimates": 0,
+          "committees": 1,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 2
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-11-17",
+          "latest_action": {
+            "action_date": "2025-11-18",
+            "text": "Motion to reconsider laid on the table Agreed to without objection."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-11-18T01:02:18Z",
+                "name": "Reported Original Measure"
+              }
+            ],
+            "chamber": "House",
+            "name": "Rules Committee",
+            "systemCode": "hsru00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsru00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-resolution/879",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-11-18T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-11-17T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879rh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879rh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879rh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Reported in House"
+          }
+        ]
+      },
+      "vote_date": "2025-11-18T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": null,
+        "interpretation_reason": "Manual review left this uninterpreted because the source text does not support a plain-English policy effect.",
+        "interpretation_status": "insufficient_evidence",
+        "issue_facet": "house_of_representatives",
+        "nay_meaning": null,
+        "plain_english_summary": null,
+        "policy_effect": null,
+        "uncertainty_note": "The available official text describes a procedural motion or rule rather than a clear final policy choice.",
+        "yea_meaning": null
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 269,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll290.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 879,
+        "bill_subjects": [
+          "House of Representatives",
+          "Legislative rules and procedure",
+          "Congress"
+        ],
+        "bill_summary": "",
+        "bill_title": "Providing for consideration of the joint resolution (S.J. Res. 80) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ''National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision''; providing for consideration of the joint resolution (H.J. Res. 130) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ''Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment''; providing for consideration of the joint resolution (H.J. Res. 131) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to ''Coastal Plain Oil and Gas Leasing Program Record of Decision''; providing for consideration of the concurrent resolution (H. Con. Res. 58) denouncing the horrors of socialism; providing for consideration of the bill (H.R. 1949) to repeal restrictions on the export and import of natural gas; providing for consideration of the bill (H.R. 3109) to require the Secretary of Energy to direct the National Petroleum Council to issue a report with respect to petrochemical refineries in the United States, and for other purposes; providing for consideration of the bill (H.R. 5107) to repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council; providing for consideration of the bill (H.R. 5214) to require mandatory pretrial and post conviction detention for crimes of violence and dangerous crimes and require mandatory cash bail for certain offenses that pose a threat to public safety or order in the District of Columbia, and for other purposes; and for other purposes.",
+        "bill_type": "hres",
+        "description": "Providing for consideration of the joint resolutions S.J. Res. 80, H.J. Res. 130, and H.J. Res. 131; providing for consideration of the concurrent resolution H. Con. Res. 58; providing for consideration of the bills H.R. 1949, H.R. 3109, H.R. 5107, and H.R. 5214; and for other purposes",
+        "question": "On Ordering the Previous Question",
+        "source_url": "https://clerk.house.gov/evs/2025/roll290.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 269,
+      "rollcall_number": 290,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-11-18",
+            "actionTime": "15:05:03",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-11-18",
+            "actionTime": "15:05:01",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-11-18T20:05:01Z",
+                "rollNumber": 291,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll291.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On agreeing to the resolution Agreed to by recorded vote: 217 - 210 (Roll no. 291). (text: CR H4719)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-11-18",
+            "actionTime": "15:05:01",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-11-18T20:05:01Z",
+                "rollNumber": 291,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll291.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On agreeing to the resolution Agreed to by recorded vote: 217 - 210 (Roll no. 291). (text: CR H4719)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-11-18",
+            "actionTime": "14:56:55",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H4735-4736)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-11-18",
+            "actionTime": "14:53:05",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - The Chair put the question on agreeing to the resolution and by voice vote, announced the ayes had prevailed. Mr. McGovern demanded a recorded vote and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H35000",
+            "actionDate": "2025-11-18",
+            "actionTime": "14:52:30",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-11-18T19:52:30Z",
+                "rollNumber": 290,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll290.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On ordering the previous question Agreed to by the Yeas and Nays: 217 - 211 (Roll no. 290).",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-11-18",
+            "actionTime": "14:44:15",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H4734-4735)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-11-18",
+            "actionTime": "13:16:18",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on H. Res. 879, the Chair put the question on ordering the previous question, and by voice vote announced that the noes had prevailed. Ms. Foxx demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [],
+        "available_enrichment": {
+          "actions": 14,
+          "amendments": 0,
+          "bill_detail": true,
+          "cbo_cost_estimates": 0,
+          "committees": 1,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 2
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-11-17",
+          "latest_action": {
+            "action_date": "2025-11-18",
+            "text": "Motion to reconsider laid on the table Agreed to without objection."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-11-18T01:02:18Z",
+                "name": "Reported Original Measure"
+              }
+            ],
+            "chamber": "House",
+            "name": "Rules Committee",
+            "systemCode": "hsru00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsru00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-resolution/879",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-11-18T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-11-17T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879rh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879rh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres879/BILLS-119hres879rh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Reported in House"
+          }
+        ]
+      },
+      "vote_date": "2025-11-18T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": "high",
+        "interpretation_reason": "Official roll-call wording identifies passage of the bill, and the Congress.gov summary describes the D.C. vehicular-pursuit policy change and DOJ reporting requirement.",
+        "interpretation_status": "interpreted",
+        "issue_facet": "dc_police_pursuit_policy",
+        "nay_meaning": "A Nay vote opposed passing the bill to repeal D.C. vehicular-pursuit restrictions and replace them with the bill's pursuit requirement and exceptions.",
+        "plain_english_summary": "This was House passage of the District of Columbia Policing Protection Act. The bill would repeal D.C. restrictions on police vehicular pursuits and generally require pursuits when no other means of apprehension is available, subject to listed exceptions.",
+        "policy_effect": "The bill would change D.C. police-pursuit rules by removing the current restrictions described in the Congress.gov summary, adding a general pursuit requirement unless listed risk or effectiveness exceptions apply, and requiring a DOJ report on pursuit-alert technology.",
+        "uncertainty_note": null,
+        "yea_meaning": "A Yea vote supported passing the bill to repeal D.C. vehicular-pursuit restrictions and replace them with the bill's pursuit requirement and exceptions."
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 254,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll275.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 5143,
+        "bill_subjects": [
+          "Computers and information technology",
+          "Congressional oversight",
+          "District of Columbia",
+          "Law enforcement administration and funding",
+          "Law enforcement officers",
+          "Motor vehicles",
+          "Crime and Law Enforcement"
+        ],
+        "bill_summary": "<p><strong>District of Columbia Policing Protection Act</strong></p><p>This bill&nbsp;repeals restrictions on the circumstances under which law enforcement officers in the District of Columbia (DC) may engage in vehicular pursuits (i.e., police chases) of suspects fleeing in motor vehicles, and instead generally requires such pursuits in the absence&nbsp;of other means of apprehension.</p><p>Currently, pursuant to DC's Comprehensive Policing and Justice Reform Amendment Act of 2022, law enforcement officers generally may not engage in vehicular pursuits of suspects fleeing in motor vehicles unless the officer reasonably believes (1) the suspect was involved in a crime of violence or poses an immediate and serious threat to another person, (2) the pursuit is necessary to prevent that threat and is not likely to result in death or serious injury to any person, and (3) all other options have been exhausted or are unreasonable given the circumstances.</p><p>The bill repeals these restrictions and instead&nbsp;requires law enforcement officers&nbsp;to engage in vehicular pursuits of suspects fleeing in motor vehicles&nbsp;unless the officer or a higher-ranking officer reasonably believes that (1) such pursuit would be futile, (2) the pursuit would entail an unacceptable risk of harm to a person other than the suspect, or (3)&nbsp;the suspect can be apprehended more effectively or expeditiously by other means.</p><p>The bill also requires the Department of Justice to report to Congress on the costs and benefits of DC\u2019s Metropolitan Police Department adopting technology that alerts the public of an active police pursuit in their immediate vicinity.&nbsp;</p>",
+        "bill_title": "District of Columbia Policing Protection Act of 2025",
+        "bill_type": "hr",
+        "description": "District of Columbia Policing Protection Act",
+        "question": "On Passage",
+        "source_url": "https://clerk.house.gov/evs/2025/roll275.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 254,
+      "rollcall_number": 275,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionDate": "2025-09-18",
+            "sourceSystem": {
+              "name": "Senate"
+            },
+            "text": "Received in the Senate.",
+            "type": "IntroReferral"
+          },
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-09-17",
+            "actionTime": "18:17:14",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-09-17",
+            "actionTime": "18:17:12",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-09-17T22:17:12Z",
+                "rollNumber": 275,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll275.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On passage Passed by the Yeas and Nays: 245 - 182 (Roll no. 275). (text of amendment in the nature of a substitute: CR H4379)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-09-17",
+            "actionTime": "18:17:12",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-09-17T22:17:12Z",
+                "rollNumber": 275,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll275.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 245 - 182 (Roll no. 275). (text of amendment in the nature of a substitute: CR H4379)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-09-17",
+            "actionTime": "18:11:09",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H4395)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-09-17",
+            "actionTime": "13:08:24",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on H.R. 5143, the Chair put the question on passage of the bill, and by voice vote, announced that the ayes had prevailed. Mr. Garcia (CA) demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H35000",
+            "actionDate": "2025-09-17",
+            "actionTime": "13:07:42",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "The previous question was ordered pursuant to the rule.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-09-17",
+            "actionTime": "12:35:53",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "DEBATE - The House proceeded with one hour of debate on H.R. 5143.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [
+          {
+            "congress": 119,
+            "description": "Pursuant to the provisions of H. Res. 707, the amendment in the nature of a substitute consisting of the text of Rules Committee Print 119-11 is considered adopted.",
+            "latestAction": {
+              "actionDate": "2025-09-17",
+              "text": "On agreeing to the Rules amendment (A001) Agreed to without objection."
+            },
+            "number": "106",
+            "type": "HAMDT",
+            "updateDate": "2025-09-18T08:09:12Z",
+            "url": "https://api.congress.gov/v3/amendment/119/hamdt/106?format=json"
+          }
+        ],
+        "available_enrichment": {
+          "actions": 16,
+          "amendments": 1,
+          "bill_detail": true,
+          "cbo_cost_estimates": 1,
+          "committees": 1,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 2
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-09-04",
+          "latest_action": {
+            "action_date": "2025-09-18",
+            "text": "Received in the Senate."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [
+          {
+            "description": "As ordered reported by the House Committee on Oversight and Government Reform on September 10, 2025",
+            "pub_date": "2025-09-15T19:38:15Z",
+            "title": "H.R. 5143, District of Columbia Policing Protection Act of 2025",
+            "url": "https://www.cbo.gov/publication/61743"
+          }
+        ],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-09-10T16:40:30Z",
+                "name": "Markup By"
+              },
+              {
+                "date": "2025-09-04T13:03:25Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "House",
+            "name": "Oversight and Government Reform Committee",
+            "systemCode": "hsgo00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsgo00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-bill/5143",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-09-17T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr5143/BILLS-119hr5143eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr5143/BILLS-119hr5143eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr5143/BILLS-119hr5143eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-09-04T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr5143/BILLS-119hr5143ih.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr5143/BILLS-119hr5143ih.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr5143/BILLS-119hr5143ih.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Introduced in House"
+          }
+        ]
+      },
+      "vote_date": "2025-09-17T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": null,
+        "interpretation_reason": "Manual review left this uninterpreted because the source text does not support a plain-English policy effect.",
+        "interpretation_status": "insufficient_evidence",
+        "issue_facet": "house_of_representatives",
+        "nay_meaning": null,
+        "plain_english_summary": null,
+        "policy_effect": null,
+        "uncertainty_note": "The available official text describes a procedural motion or rule rather than a clear final policy choice.",
+        "yea_meaning": null
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 247,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll268.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 707,
+        "bill_subjects": [
+          "House of Representatives",
+          "Legislative rules and procedure",
+          "Congress"
+        ],
+        "bill_summary": "",
+        "bill_title": "Providing for consideration of the bill (H.R. 4922) to limit youth offender status in the District of Columbia to individuals 18 years of age or younger, to direct the Attorney General of the District of Columbia to establish and operate a publicly accessible website containing updated statistics on juvenile crime in the District of Columbia, to amend the District of Columbia Home Rule Act to prohibit the Council of the District of Columbia from enacting changes to existing criminal liability sentences, and for other purposes; providing for consideration of the bill (H.R. 5143) to establish standards for law enforcement officers in the District of Columbia to engage in vehicular pursuits of suspects, and for other purposes; providing for consideration of the bill (H.R. 5140) to lower the age at which a minor may be tried as an adult for certain criminal offenses in the District of Columbia to 14 years of age; providing for consideration of the bill (H.R. 5125) to amend the District of Columbia Home Rule Act to terminate the District of Columbia Judicial Nomination Commission, and for other purposes; providing for consideration of the bill (H.R. 1047) to require the Federal Energy Regulatory Commission to reform the interconnection queue process for the prioritization and approval of certain projects, and for other purposes; providing for consideration of the bill (H.R. 3015) to reestablish the National Coal Council in the Department of Energy to provide advice and recommendations to the Secretary of Energy on matters related to coal and the coal industry, and for other purposes; providing for consideration of the bill (H.R. 3062) to establish a more uniform, transparent, and modern process to authorize the construction, connection, operation, and maintenance of international border-crossing facilities for the import and export of oil and natural gas and the transmission of electricity; and for other purposes.",
+        "bill_type": "hres",
+        "description": "Providing for consideration of the bills H.R. 4922, H.R. 5143, H.R. 5140, H.R. 5125, H.R. 1047, H.R. 3015, and H.R. 3062; and for other purposes",
+        "question": "On Agreeing to the Resolution",
+        "source_url": "https://clerk.house.gov/evs/2025/roll268.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 247,
+      "rollcall_number": 268,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionCode": "H1B000",
+            "actionDate": "2026-03-25",
+            "actionTime": "14:07:00",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Pursuant to the provisions of H.Res. 1131, H.Res. 707 is amended.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H1B000",
+            "actionDate": "2025-09-17",
+            "actionTime": "18:05:25",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Pursuant to the provisions of H.Res. 722, H.Res. 707 is amended.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-09-16",
+            "actionTime": "14:44:25",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-09-16",
+            "actionTime": "14:44:23",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-09-16T18:44:23Z",
+                "rollNumber": 268,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll268.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On agreeing to the resolution Agreed to by recorded vote: 213 - 211 (Roll no. 268). (text: CR H4321)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-09-16",
+            "actionTime": "14:44:23",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-09-16T18:44:23Z",
+                "rollNumber": 268,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll268.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On agreeing to the resolution Agreed to by recorded vote: 213 - 211 (Roll no. 268). (text: CR H4321)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H35000",
+            "actionDate": "2025-09-16",
+            "actionTime": "13:58:37",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-09-16T17:58:37Z",
+                "rollNumber": 267,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll267.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On ordering the previous question Agreed to by the Yeas and Nays: 213 - 207 (Roll no. 267). (consideration: CR H4329)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-09-16",
+            "actionTime": "13:31:10",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H4329)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-09-16",
+            "actionTime": "13:21:50",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on H.Res. 707, the Chair put the question on ordering the previous question and by voice vote announced the ayes had prevailed. Mr. McGovern demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [],
+        "available_enrichment": {
+          "actions": 14,
+          "amendments": 0,
+          "bill_detail": true,
+          "cbo_cost_estimates": 0,
+          "committees": 1,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 2
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-09-15",
+          "latest_action": {
+            "action_date": "2025-09-17",
+            "text": "Pursuant to the provisions of H.Res. 722, H.Res. 707 is amended."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-09-15T23:25:23Z",
+                "name": "Reported Original Measure"
+              }
+            ],
+            "chamber": "House",
+            "name": "Rules Committee",
+            "systemCode": "hsru00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsru00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-resolution/707",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-09-16T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-09-15T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707rh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707rh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707rh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Reported in House"
+          }
+        ]
+      },
+      "vote_date": "2025-09-16T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": null,
+        "interpretation_reason": "Manual review left this uninterpreted because the source text does not support a plain-English policy effect.",
+        "interpretation_status": "insufficient_evidence",
+        "issue_facet": "house_of_representatives",
+        "nay_meaning": null,
+        "plain_english_summary": null,
+        "policy_effect": null,
+        "uncertainty_note": "The available official text describes a procedural motion or rule rather than a clear final policy choice.",
+        "yea_meaning": null
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 246,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll267.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 707,
+        "bill_subjects": [
+          "House of Representatives",
+          "Legislative rules and procedure",
+          "Congress"
+        ],
+        "bill_summary": "",
+        "bill_title": "Providing for consideration of the bill (H.R. 4922) to limit youth offender status in the District of Columbia to individuals 18 years of age or younger, to direct the Attorney General of the District of Columbia to establish and operate a publicly accessible website containing updated statistics on juvenile crime in the District of Columbia, to amend the District of Columbia Home Rule Act to prohibit the Council of the District of Columbia from enacting changes to existing criminal liability sentences, and for other purposes; providing for consideration of the bill (H.R. 5143) to establish standards for law enforcement officers in the District of Columbia to engage in vehicular pursuits of suspects, and for other purposes; providing for consideration of the bill (H.R. 5140) to lower the age at which a minor may be tried as an adult for certain criminal offenses in the District of Columbia to 14 years of age; providing for consideration of the bill (H.R. 5125) to amend the District of Columbia Home Rule Act to terminate the District of Columbia Judicial Nomination Commission, and for other purposes; providing for consideration of the bill (H.R. 1047) to require the Federal Energy Regulatory Commission to reform the interconnection queue process for the prioritization and approval of certain projects, and for other purposes; providing for consideration of the bill (H.R. 3015) to reestablish the National Coal Council in the Department of Energy to provide advice and recommendations to the Secretary of Energy on matters related to coal and the coal industry, and for other purposes; providing for consideration of the bill (H.R. 3062) to establish a more uniform, transparent, and modern process to authorize the construction, connection, operation, and maintenance of international border-crossing facilities for the import and export of oil and natural gas and the transmission of electricity; and for other purposes.",
+        "bill_type": "hres",
+        "description": "Providing for consideration of the bills H.R. 4922, H.R. 5143, H.R. 5140, H.R. 5125, H.R. 1047, H.R. 3015, and H.R. 3062; and for other purposes",
+        "question": "On Ordering the Previous Question",
+        "source_url": "https://clerk.house.gov/evs/2025/roll267.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 246,
+      "rollcall_number": 267,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionCode": "H1B000",
+            "actionDate": "2026-03-25",
+            "actionTime": "14:07:00",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Pursuant to the provisions of H.Res. 1131, H.Res. 707 is amended.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H1B000",
+            "actionDate": "2025-09-17",
+            "actionTime": "18:05:25",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Pursuant to the provisions of H.Res. 722, H.Res. 707 is amended.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-09-16",
+            "actionTime": "14:44:25",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-09-16",
+            "actionTime": "14:44:23",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-09-16T18:44:23Z",
+                "rollNumber": 268,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll268.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On agreeing to the resolution Agreed to by recorded vote: 213 - 211 (Roll no. 268). (text: CR H4321)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-09-16",
+            "actionTime": "14:44:23",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-09-16T18:44:23Z",
+                "rollNumber": 268,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll268.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On agreeing to the resolution Agreed to by recorded vote: 213 - 211 (Roll no. 268). (text: CR H4321)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H35000",
+            "actionDate": "2025-09-16",
+            "actionTime": "13:58:37",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-09-16T17:58:37Z",
+                "rollNumber": 267,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll267.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On ordering the previous question Agreed to by the Yeas and Nays: 213 - 207 (Roll no. 267). (consideration: CR H4329)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-09-16",
+            "actionTime": "13:31:10",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H4329)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-09-16",
+            "actionTime": "13:21:50",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on H.Res. 707, the Chair put the question on ordering the previous question and by voice vote announced the ayes had prevailed. Mr. McGovern demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [],
+        "available_enrichment": {
+          "actions": 14,
+          "amendments": 0,
+          "bill_detail": true,
+          "cbo_cost_estimates": 0,
+          "committees": 1,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 2
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-09-15",
+          "latest_action": {
+            "action_date": "2025-09-17",
+            "text": "Pursuant to the provisions of H.Res. 722, H.Res. 707 is amended."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-09-15T23:25:23Z",
+                "name": "Reported Original Measure"
+              }
+            ],
+            "chamber": "House",
+            "name": "Rules Committee",
+            "systemCode": "hsru00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsru00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-resolution/707",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-09-16T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-09-15T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707rh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707rh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres707/BILLS-119hres707rh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Reported in House"
+          }
+        ]
+      },
+      "vote_date": "2025-09-16T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": "high",
+        "interpretation_reason": "Official roll-call wording identifies passage of the HALT Fentanyl Act, and the Congress.gov summary describes the scheduling, penalty, and research-registration changes.",
+        "interpretation_status": "interpreted",
+        "issue_facet": "fentanyl_scheduling_and_penalties",
+        "nay_meaning": "A Nay vote opposed passing the bill to permanently schedule fentanyl-related substances and apply the bill's penalty and research-registration changes.",
+        "plain_english_summary": "This was House passage of the HALT Fentanyl Act after Senate action. The bill would permanently place fentanyl-related substances as a class into Schedule I and set penalties using the same quantity thresholds as fentanyl analogues.",
+        "policy_effect": "The bill would move fentanyl-related substances from temporary classwide scheduling to permanent Schedule I status, apply fentanyl-analogue quantity thresholds and penalties, and create or revise registration paths for certain Schedule I research.",
+        "uncertainty_note": null,
+        "yea_meaning": "A Yea vote supported passing the bill to permanently schedule fentanyl-related substances and apply the bill's penalty and research-registration changes."
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 151,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll166.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 331,
+        "bill_subjects": [
+          "Administrative law and regulatory procedures",
+          "Department of Justice",
+          "Drug trafficking and controlled substances",
+          "Licensing and registrations",
+          "Research administration and funding",
+          "Crime and Law Enforcement"
+        ],
+        "bill_summary": "<p><strong>Halt All Lethal Trafficking of Fentanyl Act or the HALT Fentanyl Act</strong></p><p>This bill permanently places fentanyl-related substances as a class into schedule I of the Controlled Substances Act. A schedule I controlled substance is a drug, substance, or chemical that has a high potential for abuse; has no currently accepted medical value; and is subject to regulatory controls and administrative, civil, and criminal penalties under the Controlled Substances Act.</p><p>Under the bill, offenses involving fentanyl-related substances are triggered by the same quantity thresholds and subject to the same penalties as offenses involving fentanyl analogues (e.g., offenses involving 100 grams or more trigger a 10-year mandatory minimum prison term).</p><p>Additionally, the bill establishes a new, alternative registration process for certain schedule I research.</p><p>The bill also makes several other changes to registration requirements for conducting research with controlled substances, including</p><ul><li>permitting a single registration for related research sites in certain circumstances,</li><li>waiving the requirement for a new inspection in certain situations, and</li><li>allowing a registered researcher to perform certain manufacturing activities with small quantities of a substance without obtaining a manufacturing registration.</li></ul><p>Finally, the bill expresses the sense that Congress agrees with the interpretation of the Controlled Substances Act in <em>United States v. McCray</em>, a 2018 case decided by the U.S. District Court for the Western District of New York. In that case, the court held that butyryl fentanyl, a controlled substance, can be considered an analogue of fentanyl even though, under the Controlled Substances Act, the term <em>controlled substance analogue</em> specifically excludes a controlled substance.</p>",
+        "bill_title": "HALT Fentanyl Act",
+        "bill_type": "s",
+        "description": "HALT Fentanyl Act",
+        "question": "On Passage",
+        "source_url": "https://clerk.house.gov/evs/2025/roll166.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 151,
+      "rollcall_number": 166,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionCode": "E40000",
+            "actionDate": "2025-07-16",
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Became Public Law No: 119-26.",
+            "type": "President"
+          },
+          {
+            "actionCode": "36000",
+            "actionDate": "2025-07-16",
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Became Public Law No: 119-26.",
+            "type": "BecameLaw"
+          },
+          {
+            "actionCode": "E30000",
+            "actionDate": "2025-07-16",
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Signed by President.",
+            "type": "President"
+          },
+          {
+            "actionCode": "36000",
+            "actionDate": "2025-07-16",
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Signed by President.",
+            "type": "BecameLaw"
+          },
+          {
+            "actionCode": "E20000",
+            "actionDate": "2025-07-08",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Presented to President.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "28000",
+            "actionDate": "2025-07-08",
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Presented to President.",
+            "type": "President"
+          },
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-06-12",
+            "actionTime": "15:36:36",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-06-12",
+            "actionTime": "15:36:34",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-06-12T19:36:34Z",
+                "rollNumber": 166,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll166.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On passage Passed by the Yeas and Nays: 321 - 104 (Roll no. 166). (text: 6/11/2025 CR H2625-2627)",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [
+          {
+            "congress": 119,
+            "number": "1265",
+            "type": "SAMDT",
+            "updateDate": "2025-03-13T11:08:21Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1265?format=json"
+          },
+          {
+            "congress": 119,
+            "number": "1264",
+            "type": "SAMDT",
+            "updateDate": "2025-03-13T11:08:21Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1264?format=json"
+          },
+          {
+            "congress": 119,
+            "number": "1263",
+            "type": "SAMDT",
+            "updateDate": "2025-03-13T11:08:21Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1263?format=json"
+          },
+          {
+            "congress": 119,
+            "number": "1262",
+            "type": "SAMDT",
+            "updateDate": "2025-03-13T11:08:21Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1262?format=json"
+          },
+          {
+            "congress": 119,
+            "number": "1261",
+            "type": "SAMDT",
+            "updateDate": "2025-03-13T11:08:20Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1261?format=json"
+          },
+          {
+            "congress": 119,
+            "number": "1260",
+            "type": "SAMDT",
+            "updateDate": "2025-03-13T11:08:20Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1260?format=json"
+          },
+          {
+            "congress": 119,
+            "number": "1259",
+            "type": "SAMDT",
+            "updateDate": "2025-03-13T11:08:20Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1259?format=json"
+          },
+          {
+            "congress": 119,
+            "number": "1258",
+            "type": "SAMDT",
+            "updateDate": "2025-03-12T11:08:25Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1258?format=json"
+          },
+          {
+            "congress": 119,
+            "number": "1257",
+            "type": "SAMDT",
+            "updateDate": "2025-03-12T11:08:25Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1257?format=json"
+          },
+          {
+            "congress": 119,
+            "number": "1256",
+            "type": "SAMDT",
+            "updateDate": "2025-03-12T11:08:25Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1256?format=json"
+          },
+          {
+            "congress": 119,
+            "number": "1255",
+            "type": "SAMDT",
+            "updateDate": "2025-03-12T11:08:25Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1255?format=json"
+          },
+          {
+            "congress": 119,
+            "number": "1254",
+            "type": "SAMDT",
+            "updateDate": "2025-03-12T11:08:25Z",
+            "url": "https://api.congress.gov/v3/amendment/119/samdt/1254?format=json"
+          }
+        ],
+        "available_enrichment": {
+          "actions": 42,
+          "amendments": 35,
+          "bill_detail": true,
+          "cbo_cost_estimates": 1,
+          "committees": 1,
+          "latest_action": true,
+          "public_law": true,
+          "text_versions": 5
+        },
+        "bill_lifecycle": {
+          "became_law": true,
+          "introduced_date": "2025-01-30",
+          "latest_action": {
+            "action_date": "2025-07-16",
+            "text": "Became Public Law No: 119-26."
+          },
+          "laws": [
+            {
+              "number": "119-26",
+              "type": "Public Law"
+            }
+          ],
+          "origin_chamber": "Senate"
+        },
+        "cbo_cost_estimates": [
+          {
+            "description": "As reported by the Senate Committee on the Judiciary on March 3, 2025",
+            "pub_date": "2025-03-10T17:59:00Z",
+            "title": "S. 331, HALT Fentanyl Act",
+            "url": "https://www.cbo.gov/publication/61243"
+          }
+        ],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-03-03T21:28:30Z",
+                "name": "Reported By"
+              },
+              {
+                "date": "2025-02-27T17:07:19Z",
+                "name": "Markup By"
+              },
+              {
+                "date": "2025-01-30T18:13:22Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "Senate",
+            "name": "Judiciary Committee",
+            "systemCode": "ssju00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/senate/ssju00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/senate-bill/331",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": null,
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331enr.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331enr.pdf"
+              },
+              {
+                "type": "United States Legislative Markup",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331enr_uslm.xml"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331enr.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Enrolled Bill"
+          },
+          {
+            "date": "2025-03-14T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331es.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331es.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331es.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in Senate"
+          },
+          {
+            "date": "2025-03-03T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331rs.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331rs.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331rs.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Reported to Senate"
+          },
+          {
+            "date": "2025-01-30T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331is.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331is.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/s331/BILLS-119s331is.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Introduced in Senate"
+          },
+          {
+            "date": "2025-07-16T04:55:59Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/plaws/publ26/PLAW-119publ26.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/plaws/publ26/PLAW-119publ26.pdf"
+              },
+              {
+                "type": "United States Legislative Markup",
+                "url": "https://www.congress.gov/119/plaws/publ26/PLAW-119publ26_uslm.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Public Law"
+          }
+        ]
+      },
+      "vote_date": "2025-06-12T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": null,
+        "interpretation_reason": "Manual review left this uninterpreted because the source text does not support a plain-English policy effect.",
+        "interpretation_status": "insufficient_evidence",
+        "issue_facet": "house_of_representatives",
+        "nay_meaning": null,
+        "plain_english_summary": null,
+        "policy_effect": null,
+        "uncertainty_note": "The available official text describes a procedural motion or rule rather than a clear final policy choice.",
+        "yea_meaning": null
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 146,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll161.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 489,
+        "bill_subjects": [
+          "House of Representatives",
+          "Legislative rules and procedure",
+          "Congress"
+        ],
+        "bill_summary": "",
+        "bill_title": "Providing for consideration of the bill (H.R. 884) to prohibit individuals who are not citizens of the United States from voting in elections in the District of Columbia and to repeal the Local Resident Voting Rights Amendment Act of 2022; providing for consideration of the bill (H.R. 2056) to require the District of Columbia to comply with federal immigration laws; providing for consideration of the bill (H.R. 2096) to restore the right to negotiate matters pertaining to the discipline of law enforcement officers of the District of Columbia through collective bargaining, to restore the statute of limitations for bringing disciplinary cases against members or civilian employees of the Metropolitan Police Department of the District of Columbia, and for other purposes; and providing for consideration of the bill (S. 331) to amend the Controlled Substances Act with respect to the scheduling of fentanyl-related substances, and for other purposes.",
+        "bill_type": "hres",
+        "description": "Providing for consideration of the bills H.R. 884, H.R. 2056, H.R. 2096, S. 331, and for other purposes",
+        "question": "On Agreeing to the Resolution",
+        "source_url": "https://clerk.house.gov/evs/2025/roll161.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 146,
+      "rollcall_number": 161,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-06-10",
+            "actionTime": "14:16:11",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-06-10",
+            "actionTime": "14:16:08",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-06-10T18:16:08Z",
+                "rollNumber": 161,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll161.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On agreeing to the resolution Agreed to by recorded vote: 211 - 206 (Roll no. 161). (text: CR H2581-2582)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-06-10",
+            "actionTime": "14:16:08",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-06-10T18:16:08Z",
+                "rollNumber": 161,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll161.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On agreeing to the resolution Agreed to by recorded vote: 211 - 206 (Roll no. 161). (text: CR H2581-2582)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-06-10",
+            "actionTime": "14:07:37",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H2589)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-06-10",
+            "actionTime": "13:58:52",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - The Chair put the question on agreeing to the resolution and by voice vote, announced that the ayes had prevailed. Mr. McGovern demanded a recorded vote and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H35000",
+            "actionDate": "2025-06-10",
+            "actionTime": "13:58:15",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-06-10T17:58:15Z",
+                "rollNumber": 160,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll160.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On ordering the previous question Agreed to by the Yeas and Nays: 213 - 206 (Roll no. 160).",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-06-10",
+            "actionTime": "13:31:02",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H2587-2588)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-06-10",
+            "actionTime": "13:01:37",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on H. Res. 489, the Chair put the question on ordering the previous question and by voice vote, announced that the ayes had prevailed. Mr. McGovern demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [],
+        "available_enrichment": {
+          "actions": 14,
+          "amendments": 0,
+          "bill_detail": true,
+          "cbo_cost_estimates": 0,
+          "committees": 1,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 2
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-06-09",
+          "latest_action": {
+            "action_date": "2025-06-10",
+            "text": "Motion to reconsider laid on the table Agreed to without objection."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-06-09T22:43:42Z",
+                "name": "Reported Original Measure"
+              }
+            ],
+            "chamber": "House",
+            "name": "Rules Committee",
+            "systemCode": "hsru00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsru00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-resolution/489",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-06-10T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-06-09T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489rh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489rh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489rh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Reported in House"
+          }
+        ]
+      },
+      "vote_date": "2025-06-10T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": null,
+        "interpretation_reason": "Manual review left this uninterpreted because the source text does not support a plain-English policy effect.",
+        "interpretation_status": "insufficient_evidence",
+        "issue_facet": "house_of_representatives",
+        "nay_meaning": null,
+        "plain_english_summary": null,
+        "policy_effect": null,
+        "uncertainty_note": "The available official text describes a procedural motion or rule rather than a clear final policy choice.",
+        "yea_meaning": null
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 145,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll160.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 489,
+        "bill_subjects": [
+          "House of Representatives",
+          "Legislative rules and procedure",
+          "Congress"
+        ],
+        "bill_summary": "",
+        "bill_title": "Providing for consideration of the bill (H.R. 884) to prohibit individuals who are not citizens of the United States from voting in elections in the District of Columbia and to repeal the Local Resident Voting Rights Amendment Act of 2022; providing for consideration of the bill (H.R. 2056) to require the District of Columbia to comply with federal immigration laws; providing for consideration of the bill (H.R. 2096) to restore the right to negotiate matters pertaining to the discipline of law enforcement officers of the District of Columbia through collective bargaining, to restore the statute of limitations for bringing disciplinary cases against members or civilian employees of the Metropolitan Police Department of the District of Columbia, and for other purposes; and providing for consideration of the bill (S. 331) to amend the Controlled Substances Act with respect to the scheduling of fentanyl-related substances, and for other purposes.",
+        "bill_type": "hres",
+        "description": "Providing for consideration of the bills H.R. 884, H.R. 2056, H.R. 2096, S. 331, and for other purposes",
+        "question": "On Ordering the Previous Question",
+        "source_url": "https://clerk.house.gov/evs/2025/roll160.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 145,
+      "rollcall_number": 160,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-06-10",
+            "actionTime": "14:16:11",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-06-10",
+            "actionTime": "14:16:08",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-06-10T18:16:08Z",
+                "rollNumber": 161,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll161.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On agreeing to the resolution Agreed to by recorded vote: 211 - 206 (Roll no. 161). (text: CR H2581-2582)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-06-10",
+            "actionTime": "14:16:08",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-06-10T18:16:08Z",
+                "rollNumber": 161,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll161.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On agreeing to the resolution Agreed to by recorded vote: 211 - 206 (Roll no. 161). (text: CR H2581-2582)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-06-10",
+            "actionTime": "14:07:37",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H2589)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-06-10",
+            "actionTime": "13:58:52",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - The Chair put the question on agreeing to the resolution and by voice vote, announced that the ayes had prevailed. Mr. McGovern demanded a recorded vote and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H35000",
+            "actionDate": "2025-06-10",
+            "actionTime": "13:58:15",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-06-10T17:58:15Z",
+                "rollNumber": 160,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll160.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On ordering the previous question Agreed to by the Yeas and Nays: 213 - 206 (Roll no. 160).",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-06-10",
+            "actionTime": "13:31:02",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H2587-2588)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-06-10",
+            "actionTime": "13:01:37",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on H. Res. 489, the Chair put the question on ordering the previous question and by voice vote, announced that the ayes had prevailed. Mr. McGovern demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [],
+        "available_enrichment": {
+          "actions": 14,
+          "amendments": 0,
+          "bill_detail": true,
+          "cbo_cost_estimates": 0,
+          "committees": 1,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 2
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-06-09",
+          "latest_action": {
+            "action_date": "2025-06-10",
+            "text": "Motion to reconsider laid on the table Agreed to without objection."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-06-09T22:43:42Z",
+                "name": "Reported Original Measure"
+              }
+            ],
+            "chamber": "House",
+            "name": "Rules Committee",
+            "systemCode": "hsru00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsru00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-resolution/489",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-06-10T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-06-09T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489rh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489rh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hres489/BILLS-119hres489rh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Reported in House"
+          }
+        ]
+      },
+      "vote_date": "2025-06-10T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": "high",
+        "interpretation_reason": "Official roll-call wording identifies passage of the bill, and the Congress.gov summary describes the specific DOJ reporting requirement.",
+        "interpretation_status": "interpreted",
+        "issue_facet": "law_enforcement_safety_reporting",
+        "nay_meaning": "A Nay vote opposed passing the bill to require the DOJ reporting on officer attacks, crime-reporting systems, and mental health resources.",
+        "plain_english_summary": "This was House passage of the Improving Law Enforcement Officer Safety and Wellness Through Data Act. The bill would require the Department of Justice to report on targeted attacks on law enforcement officers, crime-reporting feasibility, and officer mental health resources.",
+        "policy_effect": "The bill would create a DOJ reporting requirement rather than directly changing criminal penalties or law enforcement operations.",
+        "uncertainty_note": null,
+        "yea_meaning": "A Yea vote supported passing the bill to require the DOJ reporting on officer attacks, crime-reporting systems, and mental health resources."
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 117,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll131.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 2240,
+        "bill_subjects": [
+          "Data collection, sharing, protection",
+          "Government studies and investigations",
+          "Law enforcement officers",
+          "Mental health",
+          "Violent crime",
+          "Crime and Law Enforcement"
+        ],
+        "bill_summary": "<p><strong>Improving Law Enforcement Officer Safety and Wellness Through Data Act of 2025</strong></p><p>This bill requires the Department of Justice to report on (1) targeted attacks on law enforcement officers, (2) the feasibility of incorporating such attacks into existing crime reporting systems, and (3) the mental health resources that are available to law enforcement officers.</p>",
+        "bill_title": "Improving Law Enforcement Officer Safety and Wellness Through Data Act",
+        "bill_type": "hr",
+        "description": "Improving Law Enforcement Officer Safety and Wellness Through Data Act",
+        "question": "On Passage",
+        "source_url": "https://clerk.house.gov/evs/2025/roll131.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 117,
+      "rollcall_number": 131,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionDate": "2025-05-19",
+            "committees": [
+              {
+                "name": "Judiciary Committee",
+                "systemCode": "ssju00",
+                "url": "https://api.congress.gov/v3/committee/senate/ssju00?format=json"
+              }
+            ],
+            "sourceSystem": {
+              "name": "Senate"
+            },
+            "text": "Received in the Senate and Read twice and referred to the Committee on the Judiciary.",
+            "type": "IntroReferral"
+          },
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-05-15",
+            "actionTime": "16:37:59",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-05-15",
+            "actionTime": "16:37:57",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-05-15T20:37:57Z",
+                "rollNumber": 131,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll131.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On passage Passed by the Yeas and Nays: 403 - 11 (Roll no. 131). (text of amendment in the nature of a substitute: CR H2071-2072)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-05-15",
+            "actionTime": "16:37:57",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-05-15T20:37:57Z",
+                "rollNumber": 131,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll131.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 403 - 11 (Roll no. 131). (text of amendment in the nature of a substitute: CR H2071-2072)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-05-15",
+            "actionTime": "16:31:08",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H2078-2079)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-05-15",
+            "actionTime": "13:55:44",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on H.R. 2240, the Chair put the question on passage of the bill and by voice vote, announced that the ayes had prevailed. Mrs. McBath demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H35000",
+            "actionDate": "2025-05-15",
+            "actionTime": "13:55:02",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "The previous question was ordered pursuant to the rule.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-05-15",
+            "actionTime": "13:09:06",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "DEBATE - The House proceeded with one hour of debate on H.R. 2240.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [
+          {
+            "congress": 119,
+            "description": "Pursuant to the provisions of H. Res. 405, the respective amendments in the nature of a substitute recommended by the Committee on the Judiciary now printed in each such bill is considered as adopted.",
+            "latestAction": {
+              "actionDate": "2025-05-15",
+              "text": "On agreeing to the Rules amendment (A001) Agreed to without objection."
+            },
+            "number": "21",
+            "type": "HAMDT",
+            "updateDate": "2025-05-16T08:09:14Z",
+            "url": "https://api.congress.gov/v3/amendment/119/hamdt/21?format=json"
+          }
+        ],
+        "available_enrichment": {
+          "actions": 19,
+          "amendments": 1,
+          "bill_detail": true,
+          "cbo_cost_estimates": 1,
+          "committees": 2,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 4
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-03-21",
+          "latest_action": {
+            "action_date": "2025-05-19",
+            "text": "Received in the Senate and Read twice and referred to the Committee on the Judiciary."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [
+          {
+            "description": "As ordered reported by the House Committee the Judiciary on March 25, 2025",
+            "pub_date": "2025-03-31T19:42:00Z",
+            "title": "H.R. 2240, Improving Law Enforcement Officer Safety and Wellness Through Data Act",
+            "url": "https://www.cbo.gov/publication/61282"
+          }
+        ],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-05-19T20:17:14Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "Senate",
+            "name": "Judiciary Committee",
+            "systemCode": "ssju00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/senate/ssju00?format=json"
+          },
+          {
+            "activities": [
+              {
+                "date": "2025-04-28T16:34:03Z",
+                "name": "Reported By"
+              },
+              {
+                "date": "2025-03-25T16:35:23Z",
+                "name": "Markup By"
+              },
+              {
+                "date": "2025-03-21T20:03:45Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "House",
+            "name": "Judiciary Committee",
+            "systemCode": "hsju00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsju00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-bill/2240",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-05-19T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240rfs.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240rfs.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240rfs.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Referred in Senate"
+          },
+          {
+            "date": "2025-05-15T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-04-28T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240rh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240rh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240rh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Reported in House"
+          },
+          {
+            "date": "2025-03-21T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240ih.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240ih.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr2240/BILLS-119hr2240ih.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Introduced in House"
+          }
+        ]
+      },
+      "vote_date": "2025-05-15T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": "high",
+        "interpretation_reason": "Official roll-call wording identifies passage of the bill, and the Congress.gov summary describes the GSA purchase-program requirement.",
+        "interpretation_status": "interpreted",
+        "issue_facet": "federal_law_enforcement_equipment",
+        "nay_meaning": "A Nay vote opposed passing the bill to create the retired-service-weapon purchase program for federal law enforcement officers.",
+        "plain_english_summary": "This was House passage of the Federal Law Enforcement Officer Service Weapon Purchase Act. The bill would direct the General Services Administration to create a program letting federal law enforcement officers buy retired firearms from the agencies that issued those firearms.",
+        "policy_effect": "The bill would require GSA to establish a process for federal law enforcement officers to purchase retired agency-issued firearms from their issuing agencies.",
+        "uncertainty_note": null,
+        "yea_meaning": "A Yea vote supported passing the bill to create the retired-service-weapon purchase program for federal law enforcement officers."
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 116,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll130.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 2255,
+        "bill_subjects": [
+          "Firearms and explosives",
+          "Government buildings, facilities, and property",
+          "Law enforcement officers",
+          "Crime and Law Enforcement"
+        ],
+        "bill_summary": "<p><strong>Federal Law Enforcement Officer Service Weapon Purchase Act</strong></p> <p>This bill directs the General Services Administration to establish a program under which a federal law enforcement officer may purchase a retired firearm from the agency that issued the firearm to the officer.</p>",
+        "bill_title": "Federal Law Enforcement Officer Service Weapon Purchase Act of 2025",
+        "bill_type": "hr",
+        "description": "Federal Law Enforcement Officer Service Weapon Purchase Act",
+        "question": "On Passage",
+        "source_url": "https://clerk.house.gov/evs/2025/roll130.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 116,
+      "rollcall_number": 130,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionDate": "2025-05-19",
+            "committees": [
+              {
+                "name": "Judiciary Committee",
+                "systemCode": "ssju00",
+                "url": "https://api.congress.gov/v3/committee/senate/ssju00?format=json"
+              }
+            ],
+            "sourceSystem": {
+              "name": "Senate"
+            },
+            "text": "Received in the Senate and Read twice and referred to the Committee on the Judiciary.",
+            "type": "IntroReferral"
+          },
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-05-15",
+            "actionTime": "16:30:57",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-05-15",
+            "actionTime": "16:30:55",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-05-15T20:30:55Z",
+                "rollNumber": 130,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll130.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On passage Passed by the Yeas and Nays: 234 - 182 (Roll no. 130). (text of amendment in the nature of a substitute: CR H2067)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-05-15",
+            "actionTime": "16:30:55",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-05-15T20:30:55Z",
+                "rollNumber": 130,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll130.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 234 - 182 (Roll no. 130). (text of amendment in the nature of a substitute: CR H2067)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-05-15",
+            "actionTime": "16:00:41",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H2077-2078)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-05-15",
+            "actionTime": "13:08:00",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on H.R. 2255, the Chair put the question on passage of the bill and by voice vote, announced that the ayes had prevailed. Mr. Raskin demanded the yeas and nays and the Chair postponed further proceedings until a time to be announced.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H35000",
+            "actionDate": "2025-05-15",
+            "actionTime": "13:07:14",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "The previous question was ordered pursuant to the rule.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-05-15",
+            "actionTime": "13:06:33",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "DEBATE - The House resumed debate on H.R. 2255.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [
+          {
+            "congress": 119,
+            "description": "Pursuant to the provisions of H. Res. 405, the respective amendments in the nature of a substitute recommended by the Committee on the Judiciary now printed in each such bill is considered as adopted.",
+            "latestAction": {
+              "actionDate": "2025-05-15",
+              "text": "On agreeing to the Rules amendment (A001) Agreed to without objection."
+            },
+            "number": "20",
+            "type": "HAMDT",
+            "updateDate": "2025-05-16T08:09:14Z",
+            "url": "https://api.congress.gov/v3/amendment/119/hamdt/20?format=json"
+          }
+        ],
+        "available_enrichment": {
+          "actions": 21,
+          "amendments": 1,
+          "bill_detail": true,
+          "cbo_cost_estimates": 1,
+          "committees": 2,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 4
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-03-21",
+          "latest_action": {
+            "action_date": "2025-05-19",
+            "text": "Received in the Senate and Read twice and referred to the Committee on the Judiciary."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [
+          {
+            "description": "As ordered reported by the House Committee on the Judiciary on March 25, 2025",
+            "pub_date": "2025-04-21T15:36:00Z",
+            "title": "H.R. 2255, Federal Law Enforcement Officer Service Weapon Purchase Act of 2025",
+            "url": "https://www.cbo.gov/publication/61349"
+          }
+        ],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-05-19T20:17:34Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "Senate",
+            "name": "Judiciary Committee",
+            "systemCode": "ssju00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/senate/ssju00?format=json"
+          },
+          {
+            "activities": [
+              {
+                "date": "2025-04-28T16:35:20Z",
+                "name": "Reported By"
+              },
+              {
+                "date": "2025-03-25T16:42:55Z",
+                "name": "Markup By"
+              },
+              {
+                "date": "2025-03-21T20:02:50Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "House",
+            "name": "Judiciary Committee",
+            "systemCode": "hsju00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsju00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-bill/2255",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-05-19T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255rfs.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255rfs.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255rfs.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Referred in Senate"
+          },
+          {
+            "date": "2025-05-15T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-04-28T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255rh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255rh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255rh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Reported in House"
+          },
+          {
+            "date": "2025-03-21T04:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255ih.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255ih.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr2255/BILLS-119hr2255ih.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Introduced in House"
+          }
+        ]
+      },
+      "vote_date": "2025-05-15T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": "high",
+        "interpretation_reason": "Official roll-call wording identifies passage of the HALT Fentanyl Act, and the Congress.gov summary describes the scheduling, penalty, and research-registration changes.",
+        "interpretation_status": "interpreted",
+        "issue_facet": "fentanyl_scheduling_and_penalties",
+        "nay_meaning": "A Nay vote opposed passing the bill to permanently schedule fentanyl-related substances and apply the bill's penalty and research-registration changes.",
+        "plain_english_summary": "This was House passage of the HALT Fentanyl Act. The bill would permanently place fentanyl-related substances as a class into Schedule I of the Controlled Substances Act and set penalties using the same quantity thresholds as fentanyl analogues.",
+        "policy_effect": "The bill would move fentanyl-related substances from temporary classwide scheduling to permanent Schedule I status, apply fentanyl-analogue quantity thresholds and penalties, and create or revise registration paths for certain Schedule I research.",
+        "uncertainty_note": null,
+        "yea_meaning": "A Yea vote supported passing the bill to permanently schedule fentanyl-related substances and apply the bill's penalty and research-registration changes."
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 31,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll033.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 27,
+        "bill_subjects": [
+          "Administrative law and regulatory procedures",
+          "Department of Justice",
+          "Drug trafficking and controlled substances",
+          "Licensing and registrations",
+          "Research administration and funding",
+          "Crime and Law Enforcement"
+        ],
+        "bill_summary": "<p><strong>Halt All Lethal Trafficking of Fentanyl Act or the HALT Fentanyl Act</strong></p><p>This bill permanently places fentanyl-related substances as a class into schedule I of the Controlled Substances Act. A schedule I controlled substance is a drug, substance, or chemical that has a high potential for abuse; has no currently accepted medical value; and is subject to regulatory controls and administrative, civil, and criminal penalties under the Controlled Substances Act.</p><p>Under the bill, offenses involving fentanyl-related substances are triggered by the same quantity thresholds and subject to the same penalties as offenses involving fentanyl analogues (e.g., offenses involving 100 grams or more trigger a 10-year mandatory minimum prison term).</p><p>Additionally, the bill establishes a new, alternative registration process for certain schedule I research.</p><p>The bill also makes several other changes to registration requirements for conducting research with controlled substances, including</p><ul><li>permitting a single registration for related research sites in certain circumstances,</li><li>waiving the requirement for a new inspection in certain situations, and</li><li>allowing a registered researcher to perform certain manufacturing activities with small quantities of a substance without obtaining a manufacturing registration.</li></ul><p>Finally, the bill expresses the sense that Congress agrees with the interpretation of Controlled Substances Act in <em>United States v. McCray</em>, a 2018 case decided by the U.S. District Court for the Western District of New York. In that case, the court held that butyryl fentanyl, a controlled substance, can be considered an analogue of fentanyl even though, under the Controlled Substances Act, the term <em>controlled substance analogue</em> specifically excludes a controlled substance.</p>",
+        "bill_title": "HALT Fentanyl Act",
+        "bill_type": "hr",
+        "description": "HALT Fentanyl Act",
+        "question": "On Passage",
+        "source_url": "https://clerk.house.gov/evs/2025/roll033.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 31,
+      "rollcall_number": 33,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionDate": "2025-02-10",
+            "committees": [
+              {
+                "name": "Judiciary Committee",
+                "systemCode": "ssju00",
+                "url": "https://api.congress.gov/v3/committee/senate/ssju00?format=json"
+              }
+            ],
+            "sourceSystem": {
+              "name": "Senate"
+            },
+            "text": "Received in the Senate and Read twice and referred to the Committee on the Judiciary.",
+            "type": "IntroReferral"
+          },
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-02-06",
+            "actionTime": "16:49:09",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-02-06",
+            "actionTime": "16:49:07",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-02-06T21:49:07Z",
+                "rollNumber": 33,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll033.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On passage Passed by the Yeas and Nays: 312 - 108 (Roll no. 33). (text: CR H520-522)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-02-06",
+            "actionTime": "16:49:07",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-02-06T21:49:07Z",
+                "rollNumber": 33,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll033.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 312 - 108 (Roll no. 33). (text: CR H520-522)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-02-06",
+            "actionTime": "16:00:40",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H533-535)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-02-06",
+            "actionTime": "13:42:58",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on the Trahan amendment No. 2, the Chair put the question on agreeing to the amendment and by voice vote, announced that the noes prevailed. Mrs. Trahan demanded the yeas and nays and the Chair postponed further proceeding until a time to be announced.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-02-06",
+            "actionTime": "13:33:24",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "DEBATE - Pursuant to the provisions of H. Res. 93, the House proceeded with 10 minutes of debate on the Trahan amendment No. 2.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-02-06",
+            "actionTime": "12:29:59",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "DEBATE - The House proceeded with one hour of debate on H.R. 27.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [
+          {
+            "congress": 119,
+            "description": "An amendment numbered 2 printed in Part B of House Report 119-2 to delay the enactment of this bill until the Secretary of Health and Human Services and the Attorney General each certify that the bill will lead to a reduction in overdose deaths.",
+            "latestAction": {
+              "actionDate": "2025-02-06",
+              "actionTime": "16:35:35",
+              "text": "On agreeing to the Trahan amendment (A002) Failed by the Yeas and Nays: 182 - 226 (Roll no. 32)."
+            },
+            "number": "5",
+            "type": "HAMDT",
+            "updateDate": "2025-02-07T17:45:22Z",
+            "url": "https://api.congress.gov/v3/amendment/119/hamdt/5?format=json"
+          },
+          {
+            "congress": 119,
+            "description": "Pursuant to the provisions of H. Res. 93, the amendment printed in part A of House Report 119-2 is considered as adopted.",
+            "latestAction": {
+              "actionDate": "2025-02-06",
+              "text": "On agreeing to the Rules amendment (A001) Agreed to without objection."
+            },
+            "number": "4",
+            "type": "HAMDT",
+            "updateDate": "2025-02-07T09:09:15Z",
+            "url": "https://api.congress.gov/v3/amendment/119/hamdt/4?format=json"
+          }
+        ],
+        "available_enrichment": {
+          "actions": 16,
+          "amendments": 2,
+          "bill_detail": true,
+          "cbo_cost_estimates": 0,
+          "committees": 3,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 3
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-01-03",
+          "latest_action": {
+            "action_date": "2025-02-10",
+            "text": "Received in the Senate and Read twice and referred to the Committee on the Judiciary."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-02-10T21:16:21Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "Senate",
+            "name": "Judiciary Committee",
+            "systemCode": "ssju00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/senate/ssju00?format=json"
+          },
+          {
+            "activities": [
+              {
+                "date": "2025-01-03T16:01:15Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "House",
+            "name": "Judiciary Committee",
+            "systemCode": "hsju00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsju00?format=json"
+          },
+          {
+            "activities": [
+              {
+                "date": "2025-01-03T16:01:10Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "House",
+            "name": "Energy and Commerce Committee",
+            "systemCode": "hsif00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsif00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-bill/27",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-02-10T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27rfs.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27rfs.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27rfs.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Referred in Senate"
+          },
+          {
+            "date": "2025-02-06T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-01-03T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27ih.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27ih.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27ih.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Introduced in House"
+          }
+        ]
+      },
+      "vote_date": "2025-02-06T00:00:00+00:00"
+    },
+    {
+      "chamber": "house",
+      "classification_reason": "policy_vote",
+      "classification_version": "v1",
+      "congress": 119,
+      "current_interpretation": {
+        "confidence": null,
+        "interpretation_reason": "Manual review found amendment wording without enough official amendment text to assign yea/nay meaning.",
+        "interpretation_status": "ambiguous",
+        "issue_facet": "administrative_law_and_regulatory_procedures",
+        "nay_meaning": null,
+        "plain_english_summary": null,
+        "policy_effect": null,
+        "uncertainty_note": "The packet identifies an amendment vote, but the cached bill summary describes the underlying bill rather than the exact amendment change.",
+        "yea_meaning": null
+      },
+      "draft_template": {
+        "classification_version": "v1",
+        "confidence": "low | medium | high | null",
+        "direct_stakes": "",
+        "evidence_boundary": "",
+        "interpretation_reason": "",
+        "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
+        "interpretation_version": "interpretation_v1",
+        "issue_facet": "",
+        "nay_meaning": "",
+        "oppose_position": "yea | nay | null",
+        "plain_english_summary": "",
+        "policy_effect": "",
+        "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+        "roll_call_id": 30,
+        "so_what_summary": "",
+        "source_basis": [],
+        "source_url": "https://clerk.house.gov/evs/2025/roll032.xml",
+        "support_position": "yea | nay | null",
+        "uncertainty_note": "",
+        "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+        "yea_meaning": ""
+      },
+      "official_text": {
+        "bill_congress": 119,
+        "bill_number": 27,
+        "bill_subjects": [
+          "Administrative law and regulatory procedures",
+          "Department of Justice",
+          "Drug trafficking and controlled substances",
+          "Licensing and registrations",
+          "Research administration and funding",
+          "Crime and Law Enforcement"
+        ],
+        "bill_summary": "<p><strong>Halt All Lethal Trafficking of Fentanyl Act or the HALT Fentanyl Act</strong></p><p>This bill permanently places fentanyl-related substances as a class into schedule I of the Controlled Substances Act. A schedule I controlled substance is a drug, substance, or chemical that has a high potential for abuse; has no currently accepted medical value; and is subject to regulatory controls and administrative, civil, and criminal penalties under the Controlled Substances Act.</p><p>Under the bill, offenses involving fentanyl-related substances are triggered by the same quantity thresholds and subject to the same penalties as offenses involving fentanyl analogues (e.g., offenses involving 100 grams or more trigger a 10-year mandatory minimum prison term).</p><p>Additionally, the bill establishes a new, alternative registration process for certain schedule I research.</p><p>The bill also makes several other changes to registration requirements for conducting research with controlled substances, including</p><ul><li>permitting a single registration for related research sites in certain circumstances,</li><li>waiving the requirement for a new inspection in certain situations, and</li><li>allowing a registered researcher to perform certain manufacturing activities with small quantities of a substance without obtaining a manufacturing registration.</li></ul><p>Finally, the bill expresses the sense that Congress agrees with the interpretation of Controlled Substances Act in <em>United States v. McCray</em>, a 2018 case decided by the U.S. District Court for the Western District of New York. In that case, the court held that butyryl fentanyl, a controlled substance, can be considered an analogue of fentanyl even though, under the Controlled Substances Act, the term <em>controlled substance analogue</em> specifically excludes a controlled substance.</p>",
+        "bill_title": "HALT Fentanyl Act",
+        "bill_type": "hr",
+        "description": "Trahan of Massachusetts Part B Amendment No. 2",
+        "question": "On Agreeing to the Amendment",
+        "source_url": "https://clerk.house.gov/evs/2025/roll032.xml"
+      },
+      "primary_domain": "JUSTICE_PUBLIC_SAFETY",
+      "roll_call_id": 30,
+      "rollcall_number": 32,
+      "so_what_context": {
+        "actions": [
+          {
+            "actionDate": "2025-02-10",
+            "committees": [
+              {
+                "name": "Judiciary Committee",
+                "systemCode": "ssju00",
+                "url": "https://api.congress.gov/v3/committee/senate/ssju00?format=json"
+              }
+            ],
+            "sourceSystem": {
+              "name": "Senate"
+            },
+            "text": "Received in the Senate and Read twice and referred to the Committee on the Judiciary.",
+            "type": "IntroReferral"
+          },
+          {
+            "actionCode": "H38310",
+            "actionDate": "2025-02-06",
+            "actionTime": "16:49:09",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H37100",
+            "actionDate": "2025-02-06",
+            "actionTime": "16:49:07",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-02-06T21:49:07Z",
+                "rollNumber": 33,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll033.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "On passage Passed by the Yeas and Nays: 312 - 108 (Roll no. 33). (text: CR H520-522)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "8000",
+            "actionDate": "2025-02-06",
+            "actionTime": "16:49:07",
+            "recordedVotes": [
+              {
+                "chamber": "House",
+                "congress": 119,
+                "date": "2025-02-06T21:49:07Z",
+                "rollNumber": 33,
+                "sessionNumber": 1,
+                "url": "https://clerk.house.gov/evs/2025/roll033.xml"
+              }
+            ],
+            "sourceSystem": {
+              "code": 9,
+              "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 312 - 108 (Roll no. 33). (text: CR H520-522)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H30000",
+            "actionDate": "2025-02-06",
+            "actionTime": "16:00:40",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H533-535)",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-02-06",
+            "actionTime": "13:42:58",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on the Trahan amendment No. 2, the Chair put the question on agreeing to the amendment and by voice vote, announced that the noes prevailed. Mrs. Trahan demanded the yeas and nays and the Chair postponed further proceeding until a time to be announced.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-02-06",
+            "actionTime": "13:33:24",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "DEBATE - Pursuant to the provisions of H. Res. 93, the House proceeded with 10 minutes of debate on the Trahan amendment No. 2.",
+            "type": "Floor"
+          },
+          {
+            "actionCode": "H8D000",
+            "actionDate": "2025-02-06",
+            "actionTime": "12:29:59",
+            "sourceSystem": {
+              "code": 2,
+              "name": "House floor actions"
+            },
+            "text": "DEBATE - The House proceeded with one hour of debate on H.R. 27.",
+            "type": "Floor"
+          }
+        ],
+        "amendments": [
+          {
+            "congress": 119,
+            "description": "An amendment numbered 2 printed in Part B of House Report 119-2 to delay the enactment of this bill until the Secretary of Health and Human Services and the Attorney General each certify that the bill will lead to a reduction in overdose deaths.",
+            "latestAction": {
+              "actionDate": "2025-02-06",
+              "actionTime": "16:35:35",
+              "text": "On agreeing to the Trahan amendment (A002) Failed by the Yeas and Nays: 182 - 226 (Roll no. 32)."
+            },
+            "number": "5",
+            "type": "HAMDT",
+            "updateDate": "2025-02-07T17:45:22Z",
+            "url": "https://api.congress.gov/v3/amendment/119/hamdt/5?format=json"
+          },
+          {
+            "congress": 119,
+            "description": "Pursuant to the provisions of H. Res. 93, the amendment printed in part A of House Report 119-2 is considered as adopted.",
+            "latestAction": {
+              "actionDate": "2025-02-06",
+              "text": "On agreeing to the Rules amendment (A001) Agreed to without objection."
+            },
+            "number": "4",
+            "type": "HAMDT",
+            "updateDate": "2025-02-07T09:09:15Z",
+            "url": "https://api.congress.gov/v3/amendment/119/hamdt/4?format=json"
+          }
+        ],
+        "available_enrichment": {
+          "actions": 16,
+          "amendments": 2,
+          "bill_detail": true,
+          "cbo_cost_estimates": 0,
+          "committees": 3,
+          "latest_action": true,
+          "public_law": false,
+          "text_versions": 3
+        },
+        "bill_lifecycle": {
+          "became_law": false,
+          "introduced_date": "2025-01-03",
+          "latest_action": {
+            "action_date": "2025-02-10",
+            "text": "Received in the Senate and Read twice and referred to the Committee on the Judiciary."
+          },
+          "laws": [],
+          "origin_chamber": "House"
+        },
+        "cbo_cost_estimates": [],
+        "committees": [
+          {
+            "activities": [
+              {
+                "date": "2025-02-10T21:16:21Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "Senate",
+            "name": "Judiciary Committee",
+            "systemCode": "ssju00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/senate/ssju00?format=json"
+          },
+          {
+            "activities": [
+              {
+                "date": "2025-01-03T16:01:15Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "House",
+            "name": "Judiciary Committee",
+            "systemCode": "hsju00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsju00?format=json"
+          },
+          {
+            "activities": [
+              {
+                "date": "2025-01-03T16:01:10Z",
+                "name": "Referred To"
+              }
+            ],
+            "chamber": "House",
+            "name": "Energy and Commerce Committee",
+            "systemCode": "hsif00",
+            "type": "Standing",
+            "url": "https://api.congress.gov/v3/committee/house/hsif00?format=json"
+          }
+        ],
+        "legislation_url": "https://www.congress.gov/bill/119th-congress/house-bill/27",
+        "practical_stakes_prompts": [
+          "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+          "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+          "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+          "What cannot be concluded from the available source text?"
+        ],
+        "text_versions": [
+          {
+            "date": "2025-02-10T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27rfs.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27rfs.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27rfs.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Referred in Senate"
+          },
+          {
+            "date": "2025-02-06T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27eh.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27eh.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27eh.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Engrossed in House"
+          },
+          {
+            "date": "2025-01-03T05:00:00Z",
+            "formats": [
+              {
+                "type": "Formatted Text",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27ih.htm"
+              },
+              {
+                "type": "PDF",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27ih.pdf"
+              },
+              {
+                "type": "Formatted XML",
+                "url": "https://www.congress.gov/119/bills/hr27/BILLS-119hr27ih.xml"
+              }
+            ],
+            "formatted_text": null,
+            "type": "Introduced in House"
+          }
+        ]
+      },
+      "vote_date": "2025-02-06T00:00:00+00:00"
+    }
+  ],
+  "schema_version": "manual_interpretation_v1"
+}
