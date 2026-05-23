@@ -86,6 +86,7 @@ Execution detail lives in `docs/north_star_action_plan.md`.
 - [x] Remove dashboard-style radar, drift, summary, and API health sections from the main voter path.
 - [x] Reorder the page around quick read, issue selection, alignment, evidence, and comparison.
 - [x] Convert the old active-legislator/search block into a compact switch-official utility.
+- [x] Keep switch-official and comparison-pair searches idle until the user types a real query.
 - [x] Polish mobile headings, first-viewport height, issue selection, and comparison supporting context.
 - [x] Polish insufficient-evidence copy so missing vote-meaning data reads as an honest evidence status.
 - [x] Collapse comparison legislator search into a secondary pair-edit drawer.

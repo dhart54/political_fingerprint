@@ -699,6 +699,10 @@ Reported results:
   - added `frontend/lib/issueDomains.js` as the shared issue-domain label map
   - replaced duplicated label formatters in profile quick read, alignment, comparison, issue evidence, race evidence, and the legacy fingerprint panel
   - browser QA confirmed the Cost of Living path now shows `Economy & Taxes`, `Health & Social Services`, and `Infrastructure, Tech & Transportation` with no old all-caps/domain-code labels and no console errors
+- Roster-search containment checkpoint:
+  - switch-official and comparison-pair searches now stay idle until the user enters at least two characters
+  - broad search results are capped to the first 12 matches with a note to keep typing when more matches exist
+  - browser QA confirmed the main page no longer shows the full 548-result roster by default, searching `fou` finds Valerie Foushee, and the console has no errors
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
