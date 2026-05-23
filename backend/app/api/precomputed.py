@@ -8,6 +8,7 @@ from app.etl.classify import run_classification
 from app.etl.compute import run_etl
 from app.etl.ingest import run_ingest
 from app.etl.interpret import run_interpretation
+from app.etl.vote_context import build_vote_contexts
 
 
 FIXTURE_AS_OF_DATE = date(2026, 3, 12)
@@ -891,6 +892,14 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
         row.roll_call_id: row
         for row in interpretation_step.vote_interpretations
     }
+    vote_context_result = {
+        (row["roll_call_id"], row["legislator_id"]): row
+        for row in build_vote_contexts(
+            legislators=FALLBACK_FIXTURE_DATA.legislators,
+            roll_calls=FALLBACK_FIXTURE_DATA.roll_calls,
+            votes_cast=FALLBACK_FIXTURE_DATA.votes_cast,
+        )
+    }
 
     evidence_rows = []
     for vote in FALLBACK_FIXTURE_DATA.votes_cast:
@@ -909,6 +918,7 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
             continue
         bill = bills_by_id.get(str(roll_call.get("bill_ref")))
         interpreted = interpretation_result.get(vote["roll_call_id"])
+        vote_context = vote_context_result.get((vote["roll_call_id"], vote["legislator_id"]), {})
         evidence_rows.append(
             {
                 "roll_call_id": str(roll_call["id"]),
@@ -936,6 +946,19 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
                 "confidence": None,
                 "source_basis": [],
                 "uncertainty_note": None,
+                "vote_type": vote_context.get("vote_type"),
+                "final_result": vote_context.get("final_result"),
+                "vote_margin": vote_context.get("vote_margin"),
+                "winning_position": vote_context.get("winning_position"),
+                "party_vote_totals": vote_context.get("party_vote_totals"),
+                "member_party": vote_context.get("member_party"),
+                "member_party_majority_position": vote_context.get("member_party_majority_position"),
+                "member_voted_with_party_majority": vote_context.get("member_voted_with_party_majority"),
+                "member_voted_with_winning_side": vote_context.get("member_voted_with_winning_side"),
+                "bipartisan_majority": vote_context.get("bipartisan_majority"),
+                "sponsor_party": vote_context.get("sponsor_party"),
+                "context_source_list": vote_context.get("context_source_list"),
+                "context_version": vote_context.get("context_version"),
             }
         )
 
@@ -946,7 +969,7 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
         "window_start": first_row.window_start.isoformat(),
         "window_end": first_row.window_end.isoformat(),
         "classification_version": first_row.classification_version,
-        "evidence": evidence_rows,
+        "evidence": [_serialize_evidence_row(row) for row in evidence_rows],
     }
 
 
@@ -1231,13 +1254,29 @@ def _get_db_position_evidence_rows(
             vi.issue_facet,
             vi.confidence,
             vi.source_basis,
-            vi.uncertainty_note
+            vi.uncertainty_note,
+            vctx.vote_type,
+            vctx.final_result,
+            vctx.vote_margin,
+            vctx.winning_position,
+            vctx.party_vote_totals,
+            vctx.member_party,
+            vctx.member_party_majority_position,
+            vctx.member_voted_with_party_majority,
+            vctx.member_voted_with_winning_side,
+            vctx.bipartisan_majority,
+            vctx.sponsor_party,
+            vctx.context_source_list,
+            vctx.context_version
         FROM votes_cast vc
         JOIN roll_calls rc ON rc.id = vc.roll_call_id
         JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
         LEFT JOIN vote_interpretations vi
           ON vi.roll_call_id = rc.id
          AND vi.classification_version = vcf.classification_version
+        LEFT JOIN vote_contexts vctx
+          ON vctx.roll_call_id = rc.id
+         AND vctx.legislator_id = vc.legislator_id
         LEFT JOIN bills b ON b.id = rc.bill_id
         WHERE vc.legislator_id = %s
           AND vcf.is_eligible = TRUE
@@ -1547,6 +1586,30 @@ def _serialize_evidence_row(row: dict[str, Any]) -> dict[str, object]:
         "confidence": None if row.get("confidence") is None else str(row["confidence"]),
         "source_basis": row.get("source_basis") or [],
         "uncertainty_note": None if row.get("uncertainty_note") is None else str(row["uncertainty_note"]),
+        "vote_context": _serialize_vote_context(row),
+    }
+
+
+def _serialize_vote_context(row: dict[str, Any]) -> dict[str, object] | None:
+    if row.get("context_version") is None:
+        return None
+
+    return {
+        "vote_type": None if row.get("vote_type") is None else str(row["vote_type"]),
+        "final_result": None if row.get("final_result") is None else str(row["final_result"]),
+        "vote_margin": None if row.get("vote_margin") is None else int(row["vote_margin"]),
+        "winning_position": None if row.get("winning_position") is None else str(row["winning_position"]),
+        "party_vote_totals": row.get("party_vote_totals") or {},
+        "member_party": None if row.get("member_party") is None else str(row["member_party"]),
+        "member_party_majority_position": None
+        if row.get("member_party_majority_position") is None
+        else str(row["member_party_majority_position"]),
+        "member_voted_with_party_majority": row.get("member_voted_with_party_majority"),
+        "member_voted_with_winning_side": row.get("member_voted_with_winning_side"),
+        "bipartisan_majority": bool(row.get("bipartisan_majority")),
+        "sponsor_party": None if row.get("sponsor_party") is None else str(row["sponsor_party"]),
+        "context_source_list": row.get("context_source_list") or [],
+        "context_version": str(row["context_version"]),
     }
 
 

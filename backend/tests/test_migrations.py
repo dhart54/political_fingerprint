@@ -9,6 +9,7 @@ UPCOMING_RACES_MIGRATION_PATH = MIGRATIONS_DIR / "0004_upcoming_races.sql"
 RACE_CANDIDATE_SOURCE_KEYS_MIGRATION_PATH = MIGRATIONS_DIR / "0005_race_candidate_source_keys.sql"
 CANDIDATE_EVIDENCE_MIGRATION_PATH = MIGRATIONS_DIR / "0006_candidate_evidence.sql"
 LEGISLATOR_CONTACTS_MIGRATION_PATH = MIGRATIONS_DIR / "0007_legislator_contacts.sql"
+VOTE_CONTEXTS_MIGRATION_PATH = MIGRATIONS_DIR / "0008_vote_contexts.sql"
 
 
 def test_initial_migration_defines_required_enums_and_tables() -> None:
@@ -142,3 +143,25 @@ def test_legislator_contacts_migration_keeps_contact_metadata_separate() -> None
     assert "source_type text not null" in lowered
     assert "source_retrieved_at date not null" in lowered
     assert "idx_legislator_contacts_source" in lowered
+
+
+def test_vote_contexts_migration_adds_context_baselines() -> None:
+    migration_sql = VOTE_CONTEXTS_MIGRATION_PATH.read_text()
+    lowered = migration_sql.lower()
+
+    assert "alter table roll_calls" in lowered
+    assert "add column if not exists session integer" in lowered
+    assert "create table if not exists vote_contexts" in lowered
+    assert "roll_call_id bigint not null references roll_calls(id)" in lowered
+    assert "legislator_id bigint not null references legislators(id)" in lowered
+    assert "vote_type text not null check" in lowered
+    assert "final_passage" in lowered
+    assert "member_position vote_position not null" in lowered
+    assert "final_result text not null check" in lowered
+    assert "vote_margin integer not null check" in lowered
+    assert "party_vote_totals jsonb not null default '{}'::jsonb" in lowered
+    assert "member_voted_with_party_majority boolean" in lowered
+    assert "member_voted_with_winning_side boolean" in lowered
+    assert "context_source_list jsonb not null default '[]'::jsonb" in lowered
+    assert "primary key (roll_call_id, legislator_id)" in lowered
+    assert "idx_vote_contexts_party_result" in lowered

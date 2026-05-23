@@ -6,6 +6,7 @@ from app.etl.classify import run_classification
 from app.etl.compute import run_compute
 from app.etl.ingest import IngestResult, run_ingest
 from app.etl.interpret import run_interpretation
+from app.etl.vote_context import build_vote_contexts
 from app.summaries.cache import build_fallback_summary
 
 
@@ -17,6 +18,7 @@ class SeedBundle:
     votes_cast: list[dict[str, object]]
     vote_classifications: list[dict[str, object]]
     vote_interpretations: list[dict[str, object]]
+    vote_contexts: list[dict[str, object]]
     fingerprints: list[dict[str, object]]
     chamber_medians: list[dict[str, object]]
     drift_scores: list[dict[str, object]]
@@ -116,6 +118,7 @@ def _build_seed_bundle_from_ingest_result(*, ingest_result: IngestResult, as_of:
             "id": roll_call_id_map[roll_call["id"]],
             "chamber": roll_call["chamber"],
             "congress": roll_call["congress"],
+            "session": roll_call.get("session"),
             "rollcall_number": roll_call["rollcall_number"],
             "vote_date": roll_call["vote_date"],
             "question": roll_call["question"],
@@ -157,6 +160,18 @@ def _build_seed_bundle_from_ingest_result(*, ingest_result: IngestResult, as_of:
             "classification_version": row.classification_version,
         }
         for row in interpretation_result.vote_interpretations
+    ]
+    vote_contexts = [
+        {
+            **row,
+            "roll_call_id": roll_call_id_map[row["roll_call_id"]],
+            "legislator_id": legislator_id_map[row["legislator_id"]],
+        }
+        for row in build_vote_contexts(
+            legislators=ingest_result.fixtures.legislators,
+            roll_calls=ingest_result.fixtures.roll_calls,
+            votes_cast=ingest_result.fixtures.votes_cast,
+        )
     ]
     fingerprints = [
         {
@@ -235,6 +250,7 @@ def _build_seed_bundle_from_ingest_result(*, ingest_result: IngestResult, as_of:
         votes_cast=votes_cast,
         vote_classifications=vote_classifications,
         vote_interpretations=vote_interpretations,
+        vote_contexts=vote_contexts,
         fingerprints=fingerprints,
         chamber_medians=chamber_medians,
         drift_scores=drift_scores,
@@ -368,11 +384,11 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
         _write_rows(
             cursor,
             insert_statement="""
-            INSERT INTO roll_calls (id, chamber, congress, rollcall_number, vote_date, question, description, bill_id, source_url)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO roll_calls (id, chamber, congress, session, rollcall_number, vote_date, question, description, bill_id, source_url)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """,
             copy_statement="""
-            COPY roll_calls (id, chamber, congress, rollcall_number, vote_date, question, description, bill_id, source_url)
+            COPY roll_calls (id, chamber, congress, session, rollcall_number, vote_date, question, description, bill_id, source_url)
             FROM STDIN
             """,
             rows=[
@@ -380,6 +396,7 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["id"],
                     row["chamber"],
                     row["congress"],
+                    row["session"],
                     row["rollcall_number"],
                     row["vote_date"],
                     row["question"],
@@ -388,6 +405,51 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["source_url"],
                 )
                 for row in bundle.roll_calls
+            ],
+        )
+        _write_rows(
+            cursor,
+            insert_statement="""
+            INSERT INTO vote_contexts (
+                roll_call_id, legislator_id, chamber_session, vote_type, member_position,
+                final_result, vote_margin, winning_position, party_vote_totals, member_party,
+                member_party_majority_position, member_voted_with_party_majority,
+                member_voted_with_winning_side, bipartisan_majority, sponsor_party,
+                context_source_list, context_version
+            )
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s::jsonb, %s, %s, %s, %s, %s, %s, %s::jsonb, %s)
+            """,
+            copy_statement="""
+            COPY vote_contexts (
+                roll_call_id, legislator_id, chamber_session, vote_type, member_position,
+                final_result, vote_margin, winning_position, party_vote_totals, member_party,
+                member_party_majority_position, member_voted_with_party_majority,
+                member_voted_with_winning_side, bipartisan_majority, sponsor_party,
+                context_source_list, context_version
+            )
+            FROM STDIN
+            """,
+            rows=[
+                (
+                    row["roll_call_id"],
+                    row["legislator_id"],
+                    row["chamber_session"],
+                    row["vote_type"],
+                    row["member_position"],
+                    row["final_result"],
+                    row["vote_margin"],
+                    row["winning_position"],
+                    _to_json(row["party_vote_totals"]),
+                    row["member_party"],
+                    row["member_party_majority_position"],
+                    row["member_voted_with_party_majority"],
+                    row["member_voted_with_winning_side"],
+                    row["bipartisan_majority"],
+                    row["sponsor_party"],
+                    _to_json(row["context_source_list"]),
+                    row["context_version"],
+                )
+                for row in bundle.vote_contexts
             ],
         )
         _write_rows(
@@ -653,6 +715,7 @@ def _delete_statements() -> list[str]:
             chamber_medians,
             fingerprints,
             vote_interpretations,
+            vote_contexts,
             vote_classifications,
             votes_cast,
             roll_calls,

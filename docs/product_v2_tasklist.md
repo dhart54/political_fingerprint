@@ -142,9 +142,10 @@ Priority hierarchy for new work:
 - [x] Document the repeatable issue-read workflow from enriched packet export through browser QA.
 - [x] Add Valerie Foushee visible-domain interpretation batch for Health/Social, Education/Workforce, Environment/Energy, and Immigration/Border rows.
 - [x] Mark one-vote issue reads as limited signals instead of broad all-for/all-against patterns.
-- [ ] Add vote-context storage for final result, vote margin, vote type, party vote totals, sponsor party when available, member-with-party status, member-with-winning-side status, and interpretation source list.
-- [ ] Derive party and winning-side baselines deterministically from stored roll-call/member-vote data.
-- [ ] Update interpretation packet export to include vote-context baselines and source lists.
+- [x] Add vote-context storage for final result, vote margin, vote type, party vote totals, sponsor party when available, member-with-party status, member-with-winning-side status, and interpretation source list.
+- [x] Derive party and winning-side baselines deterministically from stored roll-call/member-vote data.
+- [x] Update interpretation packet export to include vote-context baselines and source lists.
+- [x] Expose stored vote-context baselines on issue evidence API rows for frontend use.
 - [ ] Add reviewed interpretation fields for `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`.
 - [ ] Replace broad `leans yea/nay` public labels with sample-bound labels: `Mostly Yea in votes shown`, `Mostly Nay in votes shown`, `Mixed record in votes shown`, and `Too little interpreted evidence`.
 - [ ] Replace generic public confidence labels with caution/type labels such as `Procedural vote`, `Amendment vote`, `Final passage`, `Plain-English interpretation available`, and `Limited source context`.

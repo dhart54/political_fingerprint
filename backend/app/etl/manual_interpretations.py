@@ -189,13 +189,28 @@ def _fetch_interpretation_packets(*, legislator_ids: list[str], domains: list[st
             vi.policy_effect,
             vi.issue_facet,
             vi.confidence,
-            vi.uncertainty_note
+            vi.uncertainty_note,
+            vc.position AS member_vote,
+            l.party AS member_party,
+            vctx.vote_type,
+            vctx.final_result,
+            vctx.vote_margin,
+            vctx.winning_position,
+            vctx.party_vote_totals,
+            vctx.member_party_majority_position,
+            vctx.member_voted_with_party_majority,
+            vctx.member_voted_with_winning_side,
+            vctx.bipartisan_majority,
+            vctx.sponsor_party,
+            vctx.context_source_list,
+            vctx.context_version
         FROM roll_calls rc
         JOIN bills b ON b.id = rc.bill_id
         JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
         LEFT JOIN vote_interpretations vi ON vi.roll_call_id = rc.id
         LEFT JOIN votes_cast vc ON vc.roll_call_id = rc.id
         LEFT JOIN legislators l ON l.id = vc.legislator_id
+        LEFT JOIN vote_contexts vctx ON vctx.roll_call_id = rc.id AND vctx.legislator_id = l.id
         WHERE {" AND ".join(where_clauses)}
         ORDER BY rc.vote_date DESC, rc.id DESC
         LIMIT %(limit)s
@@ -392,6 +407,22 @@ def _serialize_packet(row: dict[str, Any]) -> dict[str, object]:
             "description": row["description"],
             "source_url": row["source_url"],
         },
+        "vote_context": {
+            "member_vote": row["member_vote"],
+            "member_party": row["member_party"],
+            "vote_type": row["vote_type"],
+            "final_result": row["final_result"],
+            "vote_margin": row["vote_margin"],
+            "winning_position": row["winning_position"],
+            "party_vote_totals": row["party_vote_totals"] or {},
+            "member_party_majority_position": row["member_party_majority_position"],
+            "member_voted_with_party_majority": row["member_voted_with_party_majority"],
+            "member_voted_with_winning_side": row["member_voted_with_winning_side"],
+            "bipartisan_majority": row["bipartisan_majority"],
+            "sponsor_party": row["sponsor_party"],
+            "context_source_list": row["context_source_list"] or [],
+            "context_version": row["context_version"],
+        },
         "current_interpretation": {
             "interpretation_status": row["interpretation_status"],
             "interpretation_reason": row["interpretation_reason"],
@@ -408,7 +439,11 @@ def _serialize_packet(row: dict[str, Any]) -> dict[str, object]:
             "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
             "support_position": "yea | nay | null",
             "oppose_position": "yea | nay | null",
-            "vote_type": "final_passage | amendment | rule_or_procedure | appropriations | cra_disapproval | motion | other",
+            "vote_type": "final_passage | amendment | rule | motion | concurrence | procedural | nomination | appropriations | cra_disapproval | other",
+            "what_happened": "",
+            "why_it_mattered": "",
+            "member_vote_context": "",
+            "what_not_to_infer": "",
             "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
             "direct_stakes": "",
             "evidence_boundary": "",

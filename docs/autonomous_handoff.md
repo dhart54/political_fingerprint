@@ -727,6 +727,12 @@ Reported results:
   - methodology now requires source-grounded fields for what happened, why it mattered, what the member's vote meant in context, and what not to infer
   - near-term docs now prioritize backend vote-context storage for final result, vote margin, vote type, party totals, member-with-party status, member-with-winning-side status, sponsor party when available, and interpretation source lists
   - public labels should move to sample-bound language such as `Mostly Nay in votes shown`, `Mixed record in votes shown`, or `Too little interpreted evidence`
+- Vote-context baseline implementation checkpoint:
+  - added `vote_contexts` storage plus nullable `roll_calls.session`
+  - deterministic ETL now derives vote type, final yea/nay result, vote margin, party totals, party-majority flag, winning-side flag, bipartisan winning-side flag, and official roll-call source lists
+  - manual interpretation packet export now includes `vote_context` and four blank "so what" draft fields
+  - issue evidence API rows now expose `vote_context` for frontend copy/label work
+  - targeted backend verification passed outside the sandbox after the known Windows pytest temp permission issue: `pytest backend/tests/test_vote_context.py backend/tests/test_seed.py backend/tests/test_migrations.py backend/tests/test_manual_interpretations.py backend/tests/test_api_positions.py --basetemp .pytest_tmp` (`42 passed`)
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -741,9 +747,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Add backend vote-context storage and deterministic derivation for result, margin, party totals, winning side, vote type, and source list.
-2. Update manual interpretation packet export/import for the four-part user-facing interpretation fields.
-3. Replace broad `leans yea/nay` labels with sample-bound labels after the backend context exists.
+1. Add reviewed interpretation storage/import fields for `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`.
+2. Update frontend evidence cards to use vote-context labels such as final passage, amendment, procedural, voted with party majority, and voted with winning side.
+3. Replace broad `leans yea/nay` labels with sample-bound labels after reviewed fields exist.
 4. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.

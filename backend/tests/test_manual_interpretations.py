@@ -2,6 +2,7 @@ import json
 
 from app.etl.manual_interpretations import (
     _enrich_packets_from_congress_cache,
+    _serialize_packet,
     import_manual_interpretations,
     validate_manual_interpretations,
 )
@@ -122,3 +123,58 @@ def test_enrich_packets_from_congress_cache_prefers_cached_summary_and_subjects(
     assert packets[0]["so_what_context"]["bill_lifecycle"]["latest_action"]["text"] == "Passed House."
     assert packets[0]["so_what_context"]["available_enrichment"]["cbo_cost_estimates"] == 1
     assert packets[0]["so_what_context"]["available_enrichment"]["amendments"] == 1
+
+
+def test_serialize_packet_includes_vote_context_and_so_what_template() -> None:
+    packet = _serialize_packet(
+        {
+            "roll_call_id": 50,
+            "chamber": "house",
+            "congress": 119,
+            "rollcall_number": 50,
+            "vote_date": "2025-02-25",
+            "primary_domain": "ECONOMY_TAXES",
+            "classification_reason": "policy_vote",
+            "classification_version": "v1",
+            "bill_title": "Budget resolution",
+            "bill_congress": 119,
+            "bill_type": "hconres",
+            "bill_number": 14,
+            "bill_summary": "Official summary.",
+            "bill_subjects": ["Budget process"],
+            "question": "On Agreeing to the Resolution",
+            "description": "Establishing the congressional budget.",
+            "source_url": "https://example.com/roll/50",
+            "member_vote": "nay",
+            "member_party": "D",
+            "vote_type": "final_passage",
+            "final_result": "passed",
+            "vote_margin": 2,
+            "winning_position": "yea",
+            "party_vote_totals": {"D": {"yea": 0, "nay": 2}},
+            "member_party_majority_position": "nay",
+            "member_voted_with_party_majority": True,
+            "member_voted_with_winning_side": False,
+            "bipartisan_majority": False,
+            "sponsor_party": None,
+            "context_source_list": [{"source_type": "official_roll_call", "url": "https://example.com/roll/50"}],
+            "context_version": "vote_context_v1",
+            "interpretation_status": "interpreted",
+            "interpretation_reason": "Manual review.",
+            "plain_english_summary": "Plain read.",
+            "yea_meaning": "Yea supported the resolution.",
+            "nay_meaning": "Nay opposed the resolution.",
+            "policy_effect": "Would set budget levels.",
+            "issue_facet": "budget_process",
+            "confidence": "medium",
+            "uncertainty_note": None,
+        }
+    )
+
+    assert packet["vote_context"]["member_voted_with_party_majority"] is True
+    assert packet["vote_context"]["member_voted_with_winning_side"] is False
+    assert packet["draft_template"]["what_happened"] == ""
+    assert packet["draft_template"]["why_it_mattered"] == ""
+    assert packet["draft_template"]["member_vote_context"] == ""
+    assert packet["draft_template"]["what_not_to_infer"] == ""
+    assert "rule | motion | concurrence | procedural" in packet["draft_template"]["vote_type"]

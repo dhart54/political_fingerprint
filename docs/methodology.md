@@ -223,7 +223,9 @@ Manual interpretation quality is developed through gold slices: one official, on
 
 Interpretation packets may include a `so_what_context` block assembled from cached Congress.gov subresources. This context is source material for human-reviewed interpretation, not an automatic conclusion engine. It can show bill lifecycle, text versions, recorded actions, amendments, committees, CBO links, and enrichment counts so reviewers can identify the vote type, practical mechanism, direct stakes, and evidence boundary. If those source fields do not support a specific practical read, the interpretation must remain ambiguous or insufficient evidence.
 
-Next methodology target: persist vote-context baselines before broadening interpretation coverage. The backend should collect or derive final result, vote margin, party vote totals, member-with-party status, member-with-winning-side status, vote type, sponsor party when available, and interpretation source lists. These fields are deterministic legislative context. They should be stored and exposed to the manual interpretation packet workflow before asking reviewers to write stronger user-facing "so what" summaries.
+Current vote-context baseline: the backend stores deterministic member-level vote context in `vote_contexts`. Seeded context derives vote type, final yea/nay result, vote margin, party vote totals, whether the member voted with their party majority, whether the member voted with the winning side, bipartisan winning-side presence, and official roll-call source lists from stored roll-call and member-vote records. Sponsor party remains nullable until a source supplies it. These fields are exposed through position evidence responses and manual interpretation packet export so reviewed "so what" summaries can use context without inferring from raw yea/nay counts alone.
+
+Next methodology target: persist reviewed interpretation fields for `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`, then replace broad public labels only after those reviewed fields are available.
 
 ## User Alignment Rules
 
