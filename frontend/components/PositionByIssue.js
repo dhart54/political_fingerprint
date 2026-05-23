@@ -168,7 +168,7 @@ export default function PositionByIssue({
                 <p className="text-sm text-stone-500">{row.recorded_votes} votes</p>
               </div>
               <div className="mt-3 flex items-center justify-between gap-3">
-                <span className={`rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.22em] ${getPositionBadgeClass(row)}`}>
+                <span className={`max-w-full rounded-xl px-3 py-1 text-[11px] uppercase leading-4 tracking-[0.12em] ${getPositionBadgeClass(row)}`}>
                   {getPositionLabel(row)}
                 </span>
                 <p className="text-[13px] text-stone-600">
@@ -674,7 +674,10 @@ function InterpretationBreakdown({ row }) {
   const summaryText = buildUsefulInterpretationText(row.plain_english_summary);
   const policyEffectText = buildUsefulInterpretationText(row.policy_effect);
   const interpretedVoteRead = buildInterpretedVoteRead(row);
-  const plainTakeaway = buildPlainTakeaway(row);
+  const whatHappened = row.what_happened || summaryText || policyEffectText;
+  const whyItMattered = row.why_it_mattered || buildPlainTakeaway(row);
+  const memberVoteContext = row.member_vote_context || interpretedVoteRead;
+  const contextBadges = buildContextBadges(row);
 
   return (
     <div className="mt-3 rounded-2xl border border-cyan-900/10 bg-white px-3 py-3 sm:px-4">
@@ -689,26 +692,33 @@ function InterpretationBreakdown({ row }) {
 
       {isInterpreted ? (
         <>
-          {plainTakeaway ? (
+          {whyItMattered ? (
             <InsightCard
               className="mt-3 border-cyan-900/20 bg-cyan-50"
               label="Why this mattered"
-              text={plainTakeaway}
+              text={whyItMattered}
             />
           ) : null}
           <div className="mt-2 grid gap-2 lg:grid-cols-[1.1fr_0.9fr]">
             <InsightCard
               label="What this vote was"
-              text={summaryText || policyEffectText}
+              text={whatHappened}
             />
-            {interpretedVoteRead ? (
+            {memberVoteContext ? (
               <InsightCard
                 label="Their vote"
-                text={interpretedVoteRead}
+                text={memberVoteContext}
                 tone={row.position === row.support_position ? "support" : row.position === row.oppose_position ? "oppose" : "neutral"}
               />
             ) : null}
           </div>
+          {row.what_not_to_infer ? (
+            <InsightCard
+              className="mt-2"
+              label="What not to infer"
+              text={row.what_not_to_infer}
+            />
+          ) : null}
         </>
       ) : (
         <p className="mt-3 text-sm leading-6 text-stone-700">
@@ -722,11 +732,11 @@ function InterpretationBreakdown({ row }) {
             {formatIssueFacet(row.issue_facet)}
           </span>
         ) : null}
-        {row.confidence ? (
-          <span className="rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-900">
-            {formatConfidence(row.confidence)} confidence
+        {contextBadges.map((badge) => (
+          <span className="rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-900" key={badge}>
+            {badge}
           </span>
-        ) : null}
+        ))}
       </div>
       <SourceBasisList sourceBasis={row.source_basis} />
     </div>
@@ -936,16 +946,16 @@ function buildPatternRows(rows) {
       const recordedVotes = row.recorded_votes || 0;
       const interpretedRecordedVotes = supportCount + opposeCount;
       const coverageText = `${interpretedRecordedVotes} of ${recordedVotes} recorded yea/nay votes have a cached vote meaning`;
-      let label = "Split interpreted record";
+      let label = "Mixed record in votes shown";
 
       if (supportCount > opposeCount && opposeCount === 0) {
-        label = "Recorded for-side votes";
+        label = "Mostly support-side in votes shown";
       } else if (opposeCount > supportCount && supportCount === 0) {
-        label = "Recorded against-side votes";
+        label = "Mostly oppose-side in votes shown";
       } else if (supportCount > opposeCount) {
-        label = "More for-side than against-side";
+        label = "Mostly support-side in votes shown";
       } else if (opposeCount > supportCount) {
-        label = "More against-side than for-side";
+        label = "Mostly oppose-side in votes shown";
       }
 
       return {
@@ -1285,28 +1295,76 @@ function formatIssueFacet(value) {
     .join(" ");
 }
 
-function formatConfidence(value) {
-  return String(value || "unknown")
+function buildContextBadges(row) {
+  const badges = [];
+  const voteType = row.vote_context?.vote_type;
+
+  if (voteType) {
+    badges.push(formatVoteType(voteType));
+  }
+  if (row.interpretation_status === "interpreted") {
+    badges.push("Plain-English interpretation available");
+  }
+  if (row.interpretation_status === "ambiguous") {
+    badges.push("Limited source context");
+  }
+  if (row.interpretation_status === "insufficient_evidence") {
+    badges.push("Limited source context");
+  }
+  if (row.vote_context?.member_voted_with_party_majority === true) {
+    badges.push("Voted with most of their party");
+  } else if (row.vote_context?.member_voted_with_party_majority === false) {
+    badges.push("Broke with most of their party");
+  }
+  if (row.vote_context?.member_voted_with_winning_side === true) {
+    badges.push("Voted with the winning side");
+  } else if (row.vote_context?.member_voted_with_winning_side === false) {
+    badges.push("Voted against the final outcome");
+  }
+
+  return Array.from(new Set(badges));
+}
+
+function formatVoteType(value) {
+  const labels = {
+    final_passage: "Final passage",
+    amendment: "Amendment vote",
+    rule: "Rule vote",
+    motion: "Motion vote",
+    concurrence: "Concurrence vote",
+    procedural: "Procedural vote",
+    nomination: "Nomination vote",
+    appropriations: "Appropriations vote",
+    cra_disapproval: "CRA disapproval vote",
+    other: "Other vote type",
+  };
+
+  return labels[value] || String(value || "Vote context")
     .split("_")
     .map((segment) => segment[0].toUpperCase() + segment.slice(1))
     .join(" ");
 }
 
 function getPositionLabel(row) {
-  const gap = Math.abs(row.yea_share - row.nay_share);
-  if (gap < 0.15) {
-    return "Mixed";
+  const interpretedYeaNay = (row.interpreted_support_count || 0) + (row.interpreted_oppose_count || 0);
+  if (!interpretedYeaNay) {
+    return "Too little interpreted evidence";
   }
 
-  return row.yea_share >= row.nay_share ? "Leans Yea" : "Leans Nay";
+  const gap = Math.abs(row.yea_share - row.nay_share);
+  if (gap < 0.15) {
+    return "Mixed record in votes shown";
+  }
+
+  return row.yea_share >= row.nay_share ? "Mostly Yea in votes shown" : "Mostly Nay in votes shown";
 }
 
 function getPositionBadgeClass(row) {
   const label = getPositionLabel(row);
-  if (label === "Leans Yea") {
+  if (label === "Mostly Yea in votes shown") {
     return "bg-emerald-100 text-emerald-800";
   }
-  if (label === "Leans Nay") {
+  if (label === "Mostly Nay in votes shown") {
     return "bg-rose-100 text-rose-800";
   }
   return "bg-stone-200 text-stone-700";
@@ -1314,7 +1372,10 @@ function getPositionBadgeClass(row) {
 
 function buildPositionRead(row) {
   const label = getPositionLabel(row);
-  if (label === "Mixed") {
+  if (label === "Too little interpreted evidence") {
+    return `${row.recorded_votes || 0} recorded votes`;
+  }
+  if (label === "Mixed record in votes shown") {
     return `${(row.yea_share * 100).toFixed(0)}% yea / ${(row.nay_share * 100).toFixed(0)}% nay`;
   }
 

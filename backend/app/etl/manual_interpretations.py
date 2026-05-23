@@ -121,6 +121,9 @@ def validate_manual_interpretations(records: list[dict[str, object]]) -> ManualI
             for field in ("plain_english_summary", "yea_meaning", "nay_meaning", "policy_effect"):
                 if not _clean_text(record.get(field)):
                     errors.append(f"{label}: {field} is required for interpreted records")
+            for field in ("what_happened", "why_it_mattered", "member_vote_context", "what_not_to_infer"):
+                if field in record and not _clean_text(record.get(field)):
+                    errors.append(f"{label}: {field} must be non-empty when provided")
             if not source_basis:
                 errors.append(f"{label}: interpreted records require at least one source_basis item")
 
@@ -130,6 +133,11 @@ def validate_manual_interpretations(records: list[dict[str, object]]) -> ManualI
             "nay_meaning",
             "policy_effect",
             "issue_facet",
+            "what_happened",
+            "why_it_mattered",
+            "member_vote_context",
+            "what_not_to_infer",
+            "so_what_summary",
             "uncertainty_note",
             "interpretation_reason",
         ):
@@ -189,6 +197,10 @@ def _fetch_interpretation_packets(*, legislator_ids: list[str], domains: list[st
             vi.policy_effect,
             vi.issue_facet,
             vi.confidence,
+            vi.what_happened,
+            vi.why_it_mattered,
+            vi.member_vote_context,
+            vi.what_not_to_infer,
             vi.uncertainty_note,
             vc.position AS member_vote,
             l.party AS member_party,
@@ -322,13 +334,15 @@ def _persist_manual_interpretations(rows: list[dict[str, object]]) -> None:
             roll_call_id, interpretation_status, support_position, oppose_position,
             interpretation_reason, source_url, interpretation_version, classification_version,
             plain_english_summary, yea_meaning, nay_meaning, policy_effect, issue_facet,
-            confidence, source_basis, uncertainty_note, reviewed_by, reviewed_at
+            confidence, source_basis, uncertainty_note, what_happened, why_it_mattered,
+            member_vote_context, what_not_to_infer, reviewed_by, reviewed_at
         )
         VALUES (
             %(roll_call_id)s, %(interpretation_status)s, %(support_position)s, %(oppose_position)s,
             %(interpretation_reason)s, %(source_url)s, %(interpretation_version)s, %(classification_version)s,
             %(plain_english_summary)s, %(yea_meaning)s, %(nay_meaning)s, %(policy_effect)s, %(issue_facet)s,
-            %(confidence)s, %(source_basis)s::jsonb, %(uncertainty_note)s, %(reviewed_by)s, %(reviewed_at)s
+            %(confidence)s, %(source_basis)s::jsonb, %(uncertainty_note)s, %(what_happened)s, %(why_it_mattered)s,
+            %(member_vote_context)s, %(what_not_to_infer)s, %(reviewed_by)s, %(reviewed_at)s
         )
         ON CONFLICT (roll_call_id) DO UPDATE SET
             interpretation_status = EXCLUDED.interpretation_status,
@@ -346,6 +360,10 @@ def _persist_manual_interpretations(rows: list[dict[str, object]]) -> None:
             confidence = EXCLUDED.confidence,
             source_basis = EXCLUDED.source_basis,
             uncertainty_note = EXCLUDED.uncertainty_note,
+            what_happened = EXCLUDED.what_happened,
+            why_it_mattered = EXCLUDED.why_it_mattered,
+            member_vote_context = EXCLUDED.member_vote_context,
+            what_not_to_infer = EXCLUDED.what_not_to_infer,
             reviewed_by = EXCLUDED.reviewed_by,
             reviewed_at = EXCLUDED.reviewed_at,
             updated_at = NOW()
@@ -381,6 +399,10 @@ def _build_import_row(*, record: dict[str, object], reviewed_by: str) -> dict[st
         "confidence": record.get("confidence"),
         "source_basis": json.dumps(record.get("source_basis", []), sort_keys=True),
         "uncertainty_note": _nullable_text(record.get("uncertainty_note")),
+        "what_happened": _nullable_text(record.get("what_happened")),
+        "why_it_mattered": _nullable_text(record.get("why_it_mattered")),
+        "member_vote_context": _nullable_text(record.get("member_vote_context")),
+        "what_not_to_infer": _nullable_text(record.get("what_not_to_infer")),
         "reviewed_by": reviewed_by,
         "reviewed_at": datetime.now(timezone.utc).isoformat(),
     }
@@ -432,6 +454,10 @@ def _serialize_packet(row: dict[str, Any]) -> dict[str, object]:
             "policy_effect": row["policy_effect"],
             "issue_facet": row["issue_facet"],
             "confidence": row["confidence"],
+            "what_happened": row["what_happened"],
+            "why_it_mattered": row["why_it_mattered"],
+            "member_vote_context": row["member_vote_context"],
+            "what_not_to_infer": row["what_not_to_infer"],
             "uncertainty_note": row["uncertainty_note"],
         },
         "draft_template": {

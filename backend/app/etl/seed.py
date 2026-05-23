@@ -158,6 +158,10 @@ def _build_seed_bundle_from_ingest_result(*, ingest_result: IngestResult, as_of:
             "source_url": row.source_url,
             "interpretation_version": row.interpretation_version,
             "classification_version": row.classification_version,
+            "what_happened": None,
+            "why_it_mattered": None,
+            "member_vote_context": None,
+            "what_not_to_infer": None,
         }
         for row in interpretation_result.vote_interpretations
     ]
@@ -503,14 +507,16 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
             insert_statement="""
             INSERT INTO vote_interpretations (
                 roll_call_id, interpretation_status, support_position, oppose_position,
-                interpretation_reason, source_url, interpretation_version, classification_version
+                interpretation_reason, source_url, interpretation_version, classification_version,
+                what_happened, why_it_mattered, member_vote_context, what_not_to_infer
             )
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """,
             copy_statement="""
             COPY vote_interpretations (
                 roll_call_id, interpretation_status, support_position, oppose_position,
-                interpretation_reason, source_url, interpretation_version, classification_version
+                interpretation_reason, source_url, interpretation_version, classification_version,
+                what_happened, why_it_mattered, member_vote_context, what_not_to_infer
             )
             FROM STDIN
             """,
@@ -524,6 +530,10 @@ def persist_seed_bundle(bundle: SeedBundle) -> None:
                     row["source_url"],
                     row["interpretation_version"],
                     row["classification_version"],
+                    row["what_happened"],
+                    row["why_it_mattered"],
+                    row["member_vote_context"],
+                    row["what_not_to_infer"],
                 )
                 for row in bundle.vote_interpretations
             ],

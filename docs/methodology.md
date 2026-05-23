@@ -225,7 +225,9 @@ Interpretation packets may include a `so_what_context` block assembled from cach
 
 Current vote-context baseline: the backend stores deterministic member-level vote context in `vote_contexts`. Seeded context derives vote type, final yea/nay result, vote margin, party vote totals, whether the member voted with their party majority, whether the member voted with the winning side, bipartisan winning-side presence, and official roll-call source lists from stored roll-call and member-vote records. Sponsor party remains nullable until a source supplies it. These fields are exposed through position evidence responses and manual interpretation packet export so reviewed "so what" summaries can use context without inferring from raw yea/nay counts alone.
 
-Next methodology target: persist reviewed interpretation fields for `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`, then replace broad public labels only after those reviewed fields are available.
+Current reviewed "so what" fields: `vote_interpretations` stores `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`. Manual interpretation import validates those fields for forbidden persuasive or evaluative language when provided, and the evidence API returns them alongside legacy plain-English fields and deterministic vote context. Public evidence cards should prefer these reviewed fields, falling back to older cached fields only when reviewed fields are not yet loaded.
+
+Next methodology target: broaden reviewed interpretation records using the new fields and replace remaining aggregate copy with sample-bound language that describes only the votes shown.
 
 ## User Alignment Rules
 

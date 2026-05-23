@@ -10,6 +10,7 @@ RACE_CANDIDATE_SOURCE_KEYS_MIGRATION_PATH = MIGRATIONS_DIR / "0005_race_candidat
 CANDIDATE_EVIDENCE_MIGRATION_PATH = MIGRATIONS_DIR / "0006_candidate_evidence.sql"
 LEGISLATOR_CONTACTS_MIGRATION_PATH = MIGRATIONS_DIR / "0007_legislator_contacts.sql"
 VOTE_CONTEXTS_MIGRATION_PATH = MIGRATIONS_DIR / "0008_vote_contexts.sql"
+VOTE_INTERPRETATION_SO_WHAT_MIGRATION_PATH = MIGRATIONS_DIR / "0009_vote_interpretation_so_what_fields.sql"
 
 
 def test_initial_migration_defines_required_enums_and_tables() -> None:
@@ -165,3 +166,14 @@ def test_vote_contexts_migration_adds_context_baselines() -> None:
     assert "context_source_list jsonb not null default '[]'::jsonb" in lowered
     assert "primary key (roll_call_id, legislator_id)" in lowered
     assert "idx_vote_contexts_party_result" in lowered
+
+
+def test_vote_interpretation_so_what_migration_adds_reviewed_fields() -> None:
+    migration_sql = VOTE_INTERPRETATION_SO_WHAT_MIGRATION_PATH.read_text()
+    lowered = migration_sql.lower()
+
+    assert "alter table vote_interpretations" in lowered
+    assert "add column if not exists what_happened text" in lowered
+    assert "add column if not exists why_it_mattered text" in lowered
+    assert "add column if not exists member_vote_context text" in lowered
+    assert "add column if not exists what_not_to_infer text" in lowered

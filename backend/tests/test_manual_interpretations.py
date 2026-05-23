@@ -1,6 +1,7 @@
 import json
 
 from app.etl.manual_interpretations import (
+    _build_import_row,
     _enrich_packets_from_congress_cache,
     _serialize_packet,
     import_manual_interpretations,
@@ -20,6 +21,10 @@ def test_validate_manual_interpretations_accepts_neutral_interpreted_record() ->
                 "yea_meaning": "A Yea vote supported passing the bill.",
                 "nay_meaning": "A Nay vote opposed passing the bill.",
                 "policy_effect": "Would fund bridge repair grants.",
+                "what_happened": "The House voted on final passage of a bridge repair funding bill.",
+                "why_it_mattered": "The bill would affect whether the grant program could spend money on bridge repairs.",
+                "member_vote_context": "The member voted Yea, which matched the interpreted support side for passage.",
+                "what_not_to_infer": "This vote alone does not show the member's motive or full transportation record.",
                 "issue_facet": "infrastructure_funding",
                 "confidence": "medium",
                 "source_basis": ["bill_title", "question"],
@@ -50,6 +55,33 @@ def test_validate_manual_interpretations_rejects_persuasive_language() -> None:
     )
 
     assert any("forbidden language" in error for error in result.errors)
+
+
+def test_build_import_row_preserves_reviewed_so_what_fields() -> None:
+    row = _build_import_row(
+        record={
+            "roll_call_id": 1,
+            "interpretation_status": "interpreted",
+            "support_position": "yea",
+            "oppose_position": "nay",
+            "plain_english_summary": "This vote was on final passage of a bill funding bridge repairs.",
+            "yea_meaning": "A Yea vote supported passing the bill.",
+            "nay_meaning": "A Nay vote opposed passing the bill.",
+            "policy_effect": "Would fund bridge repair grants.",
+            "what_happened": "The House voted on final passage of a bridge repair funding bill.",
+            "why_it_mattered": "The bill would affect whether a grant program could spend money on repairs.",
+            "member_vote_context": "The member voted Yea, with the winning side.",
+            "what_not_to_infer": "This vote alone does not prove motive or a full transportation record.",
+            "confidence": "medium",
+            "source_basis": ["bill_title", "question"],
+        },
+        reviewed_by="tester",
+    )
+
+    assert row["what_happened"] == "The House voted on final passage of a bridge repair funding bill."
+    assert row["why_it_mattered"] == "The bill would affect whether a grant program could spend money on repairs."
+    assert row["member_vote_context"] == "The member voted Yea, with the winning side."
+    assert row["what_not_to_infer"] == "This vote alone does not prove motive or a full transportation record."
 
 
 def test_import_manual_interpretations_validates_before_persisting(tmp_path, monkeypatch) -> None:
@@ -167,6 +199,10 @@ def test_serialize_packet_includes_vote_context_and_so_what_template() -> None:
             "policy_effect": "Would set budget levels.",
             "issue_facet": "budget_process",
             "confidence": "medium",
+            "what_happened": "The House voted on a budget resolution.",
+            "why_it_mattered": "The resolution set budget instructions for later legislation.",
+            "member_vote_context": "The member voted Nay, with most Democrats and against the winning side.",
+            "what_not_to_infer": "This vote alone does not prove motive or the member's whole fiscal policy record.",
             "uncertainty_note": None,
         }
     )
@@ -177,4 +213,8 @@ def test_serialize_packet_includes_vote_context_and_so_what_template() -> None:
     assert packet["draft_template"]["why_it_mattered"] == ""
     assert packet["draft_template"]["member_vote_context"] == ""
     assert packet["draft_template"]["what_not_to_infer"] == ""
+    assert packet["current_interpretation"]["what_happened"] == "The House voted on a budget resolution."
+    assert packet["current_interpretation"]["member_vote_context"] == (
+        "The member voted Nay, with most Democrats and against the winning side."
+    )
     assert "rule | motion | concurrence | procedural" in packet["draft_template"]["vote_type"]

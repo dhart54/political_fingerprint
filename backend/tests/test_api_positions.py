@@ -78,6 +78,10 @@ def test_get_position_evidence_endpoint_returns_underlying_votes() -> None:
         "insufficient_evidence",
     }
     assert "plain_english_summary" in payload["evidence"][0]
+    assert "what_happened" in payload["evidence"][0]
+    assert "why_it_mattered" in payload["evidence"][0]
+    assert "member_vote_context" in payload["evidence"][0]
+    assert "what_not_to_infer" in payload["evidence"][0]
     assert payload["evidence"][0]["vote_context"]["vote_type"] == "final_passage"
     assert payload["evidence"][0]["vote_context"]["member_party"] == "D"
     assert "party_vote_totals" in payload["evidence"][0]["vote_context"]

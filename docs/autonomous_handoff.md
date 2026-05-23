@@ -733,6 +733,19 @@ Reported results:
   - manual interpretation packet export now includes `vote_context` and four blank "so what" draft fields
   - issue evidence API rows now expose `vote_context` for frontend copy/label work
   - targeted backend verification passed outside the sandbox after the known Windows pytest temp permission issue: `pytest backend/tests/test_vote_context.py backend/tests/test_seed.py backend/tests/test_migrations.py backend/tests/test_manual_interpretations.py backend/tests/test_api_positions.py --basetemp .pytest_tmp` (`42 passed`)
+- Reviewed "so what" field checkpoint:
+  - added `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer` storage/import/API fields
+  - frontend evidence cards now prefer the reviewed fields, show vote-context/caution labels, and avoid broad `Leans Yea/Nay` labels
+  - targeted backend verification passed outside the sandbox after the known Windows pytest temp permission issue: `pytest backend/tests/test_migrations.py backend/tests/test_manual_interpretations.py backend/tests/test_seed.py backend/tests/test_api_positions.py --basetemp .pytest_tmp` (`42 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - applied migrations `0008_vote_contexts.sql` and `0009_vote_interpretation_so_what_fields.sql` to the configured Supabase database
+  - backfilled `154,767` Supabase `vote_contexts` rows from stored legislators, roll calls, and member votes
+  - browser QA passed after clearing stale `.next` and restarting backend/frontend dev servers:
+    - sample-bound labels appear
+    - `Leans Yea/Nay` is absent
+    - `Final passage`, `Plain-English interpretation available`, party-context, and winning-side labels render
+    - generic confidence labels are absent
+    - no stale webpack/runtime overlay appears
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -747,9 +760,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Add reviewed interpretation storage/import fields for `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`.
-2. Update frontend evidence cards to use vote-context labels such as final passage, amendment, procedural, voted with party majority, and voted with winning side.
-3. Replace broad `leans yea/nay` labels with sample-bound labels after reviewed fields exist.
+1. Regenerate/import a small reviewed interpretation batch using `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`.
+2. Browser-QA the evidence card copy against real reviewed fields, not only legacy fallback copy.
+3. Decide whether the high-level issue read should use the reviewed fields directly before adding more interpretation coverage.
 4. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
