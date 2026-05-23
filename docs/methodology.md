@@ -424,6 +424,7 @@ Frontend presentation:
 - that high-level read may say whether the representative's interpreted yea/nay votes in the opened issue slice were for, against, mostly for, mostly against, or split across the interpreted measures
 - that high-level read may group source-grounded issue facets from cached `vote_interpretations` into short practical measure descriptions, such as budget-reconciliation instructions, loan-eligibility restrictions, or temporary funding packages
 - that high-level read must state its scope, including interpreted yea/nay count, total roll-call rows shown, other recorded positions, and ambiguous/procedural rows left outside the for/against read
+- issue sections with only one interpreted yea/nay vote must be framed as a limited read and treated as a narrow signal until more interpreted votes are loaded
 - it must not infer motive, ideology, causality, rank, or recommend an electoral action
 - it must describe only the opened evidence section, not a broad issue ideology
 - this grouping is explanatory only and does not change stored metrics or alignment calculations

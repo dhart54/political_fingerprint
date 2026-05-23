@@ -1029,6 +1029,14 @@ function buildIssueEvidenceSummary(rows, { domain = "", representativeName = "" 
 }
 
 function buildDirectionalLead({ issueLabel, opposeCount, otherCount, personLabel, supportCount }) {
+  const directionalCount = supportCount + opposeCount;
+
+  if (directionalCount === 1 && supportCount === 1) {
+    return `This is a limited read: among the interpreted ${issueLabel} votes shown here, ${formatPossessive(personLabel)} one recorded yea/nay vote was for the interpreted measure.`;
+  }
+  if (directionalCount === 1 && opposeCount === 1) {
+    return `This is a limited read: among the interpreted ${issueLabel} votes shown here, ${formatPossessive(personLabel)} one recorded yea/nay vote was against the interpreted measure.`;
+  }
   if (supportCount > opposeCount && opposeCount === 0) {
     return `Among the interpreted ${issueLabel} votes shown here, ${formatPossessive(personLabel)} recorded yea/nay votes were all for the interpreted measures.`;
   }
@@ -1057,9 +1065,15 @@ function buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows }
 
   let read = "";
   if (supportReads.length && !opposeReads.length) {
-    read = `In plain terms, those votes were for ${formatList(supportReads)}.`;
+    read =
+      supportRows.length === 1
+        ? `In plain terms, that vote was for ${formatList(supportReads)}.`
+        : `In plain terms, those votes were for ${formatList(supportReads)}.`;
   } else if (opposeReads.length && !supportReads.length) {
-    read = `In plain terms, those votes were against ${formatList(opposeReads)}.`;
+    read =
+      opposeRows.length === 1
+        ? `In plain terms, that vote was against ${formatList(opposeReads)}.`
+        : `In plain terms, those votes were against ${formatList(opposeReads)}.`;
   } else if (supportReads.length && opposeReads.length) {
     read = `In plain terms, the for-side votes concerned ${formatList(supportReads)}, while the against-side votes concerned ${formatList(opposeReads)}.`;
   }
@@ -1079,6 +1093,10 @@ function buildIssueScopeText({ directionalCount, issueLabel, otherCount, rowCoun
   const pieces = [
     `This conclusion is based on ${directionalCount} interpreted yea/nay ${directionalCount === 1 ? "vote" : "votes"} among ${rowCount} roll-call ${rowCount === 1 ? "row" : "rows"} shown.`,
   ];
+
+  if (directionalCount === 1) {
+    pieces.push("Treat it as a narrow signal until more interpreted votes are loaded for this issue.");
+  }
 
   if (otherCount) {
     pieces.push(`${otherCount} interpreted ${otherCount === 1 ? "row has" : "rows have"} another recorded position.`);

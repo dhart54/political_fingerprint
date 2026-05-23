@@ -708,6 +708,11 @@ Reported results:
   - methodology now requires state-level expansion to pass a separate adapter checklist before public UI or broad ETL
   - checklist covers district lookup, current official identity, member-level roll calls, state-specific vote interpretation, candidate context, separate state storage, UI labels, and go/no-go criteria
   - marked the state-methodology separation and state-adapter checklist tasks complete
+- Limited issue-read checkpoint:
+  - visual review of Valerie visible-domain evidence found one-vote Health/Social and Environment/Energy reads were technically accurate but too conclusive
+  - `PositionByIssue` now frames one interpreted yea/nay vote as a limited read and adds a narrow-signal scope sentence
+  - single-vote practical reads now use singular wording such as `that vote was against`
+  - methodology and task list now record the limited-read rule
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 

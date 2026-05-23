@@ -141,6 +141,7 @@ Priority hierarchy for new work:
 - [x] Make opened issue evidence reads draw a bounded, repeatable plain-language conclusion from interpreted votes.
 - [x] Document the repeatable issue-read workflow from enriched packet export through browser QA.
 - [x] Add Valerie Foushee visible-domain interpretation batch for Health/Social, Education/Workforce, Environment/Energy, and Immigration/Border rows.
+- [x] Mark one-vote issue reads as limited signals instead of broad all-for/all-against patterns.
 
 ## Next Lens - Ballot-Aware Candidate Comparison
 
