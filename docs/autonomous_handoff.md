@@ -713,6 +713,10 @@ Reported results:
   - `PositionByIssue` now frames one interpreted yea/nay vote as a limited read and adds a narrow-signal scope sentence
   - single-vote practical reads now use singular wording such as `that vote was against`
   - methodology and task list now record the limited-read rule
+- Contact copy checkpoint:
+  - evidence-linked contact block now says the app has not sent or saved anything
+  - the badge now reads `User-directed` instead of repeating `Official contact`
+  - this keeps the action layer neutral and avoids implying a drafted or tracked message
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 

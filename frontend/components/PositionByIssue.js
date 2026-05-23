@@ -514,11 +514,11 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
             {representativeName}
           </h5>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-stone-600">
-            Official contact information and the evidence context shown on this page.
+            Official contact paths for this representative, kept next to the evidence you are reviewing. The app has not sent or saved anything.
           </p>
         </div>
         <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-stone-700">
-          Official contact
+          User-directed
         </span>
       </div>
 

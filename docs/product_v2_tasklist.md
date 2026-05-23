@@ -243,6 +243,7 @@ Rules:
 
 - [x] Add action entry points from representative profile, issue cards, and interpreted vote evidence rows.
 - [x] Collapse contact/action UI to official contact information plus evidence context.
+- [x] Clarify that evidence-linked contact UI has not sent, saved, or tracked anything.
 - [x] Keep cited vote/source context visible when an action starts from evidence.
 - [x] Keep ask, thank, track, newsletters, and persistent reminders out of scope until users validate a need.
 - [x] Add tests proving contact/reference state does not change alignment labels or evidence tiers.
