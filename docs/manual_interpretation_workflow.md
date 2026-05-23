@@ -70,6 +70,10 @@ Accepted statuses:
 For `interpreted` records, fill:
 
 - `vote_type`
+- `what_happened`
+- `why_it_mattered`
+- `member_vote_context`
+- `what_not_to_infer`
 - `practical_mechanism`
 - `direct_stakes`
 - `evidence_boundary`
@@ -81,8 +85,18 @@ For `interpreted` records, fill:
 - `issue_facet`
 - `confidence`
 - `source_basis`
+- `interpretation_source_list`
 
 Use `insufficient_evidence` when the official text does not clearly say what the vote would change.
+
+The next schema/workflow revision should make the four user-facing fields first-class output:
+
+1. What happened
+2. Why it mattered
+3. What this member's vote meant in context
+4. What not to infer from this vote
+
+Reviewers should use party and result context only when it is present in the packet or stored vote-context baseline. Acceptable context phrases include "voted with most Democrats," "voted against most Republicans," "joined a bipartisan majority," "broke with most of their party," "voted with the winning side," and "voted against the final outcome." Do not infer motive from those baselines.
 
 ## Gold Slice Standard
 
@@ -90,6 +104,10 @@ Before scaling a new issue area, create one gold slice for one official and one 
 
 For each interpreted vote:
 
+- `what_happened` should answer: what legislative action happened in this roll call?
+- `why_it_mattered` should answer: why would a constituent care about this action, in neutral practical terms?
+- `member_vote_context` should answer: what did this member's recorded vote mean in the context of the action, party baseline, and final result when those baselines are available?
+- `what_not_to_infer` should answer: what this single vote does not prove about motive, broad ideology, final implementation, or total record.
 - `plain_english_summary` should answer: what was this vote, in one or two plain sentences?
 - `policy_effect` should answer: what would change if this action succeeded?
 - `vote_type` should identify whether the roll call was final passage, an amendment, a rule/procedure vote, appropriations, CRA disapproval, a motion, or another action.
@@ -134,7 +152,7 @@ For each roll call, answer:
    Do not say only "supported/opposed the bill" if a more concrete source-grounded meaning is available.
 
 5. Legislator vote:
-   State what this legislator's recorded vote meant.
+   State what this legislator's recorded vote meant. If supplied, include whether the member voted with most of their party, with or against the winning side, or in a bipartisan majority. Do not infer motive from those baselines.
 
 6. Evidence boundary:
    Say what cannot be concluded from this vote.
@@ -142,6 +160,9 @@ For each roll call, answer:
 
 7. So-what summary:
    In one plain sentence, explain why a normal constituent might care, without telling them what position to take.
+
+8. What not to infer:
+   State the main caution in user-facing language. Examples: this does not prove motive; this was procedural rather than final passage; this vote alone does not describe the member's full position on the issue; the source packet does not show implementation details.
 ```
 
 The first gold slice is Valerie Foushee / `ECONOMY_TAXES`, stored in:

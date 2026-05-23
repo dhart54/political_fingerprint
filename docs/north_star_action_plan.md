@@ -13,7 +13,7 @@ The product must keep its trust posture:
 - actual governing behavior first
 - current representatives before election context
 - sourced stated positions only when no governing record exists
-- confidence labels everywhere evidence quality changes
+- evidence-type and caution labels everywhere evidence quality changes
 - no candidate rankings
 - no voting recommendations
 - every claim traceable to source material
@@ -39,6 +39,7 @@ Important current limitations:
 - no validated need yet for ask, thank, track, newsletters, or reminders
 - limited contact metadata for current officials
 - thin interpretation coverage outside the first high-visibility slices
+- missing persisted vote-context baselines for final result, margin, party totals, member-with-party status, and member-with-winning-side status
 - limited challenger or first-time candidate stated-position records
 - no state legislative voting records
 - no state election coverage
@@ -115,7 +116,7 @@ Data examples:
 Product output:
 
 - stated-position cards
-- lower-confidence labels
+- lower-confidence/evidence-type labels
 - source URLs and retrieved dates
 - separate display from recorded vote behavior
 
@@ -195,12 +196,16 @@ Acceptance criteria:
 - contact/reference UI does not create a score, ranking, recommendation, or persistent state
 - all action copy remains neutral and user-directed
 
-## Phase C - Interpretation Coverage Expansion
+## Phase C - Vote Context And Interpretation Expansion
 
-Goal: scale the gold-slice interpretation standard before adding more surface area.
+Goal: scale the gold-slice interpretation standard by collecting enough vote context to explain "so what" without leaning on raw yea/nay counts.
 
 Deliverables:
 
+- add stored vote-context fields for final result, vote margin, vote type, party vote totals, sponsor party when available, member-with-party status, member-with-winning-side status, and interpretation source list
+- update House/Senate ETL or deterministic post-processing to derive party and result baselines from stored member votes
+- update interpretation packets to include vote-context baselines alongside Congress.gov summaries, subjects, actions, committees, CBO links, amendments, and text versions
+- revise reviewed interpretation outputs around four user-facing fields: what happened, why it mattered, what this member's vote meant in context, and what not to infer
 - visually review the Valerie Foushee / `ECONOMY_TAXES` gold slice
 - replicate the standard to the next visible Valerie issue domain
 - expand to the NC senators' highest-visible starter issue gaps
@@ -210,8 +215,11 @@ Deliverables:
 Acceptance criteria:
 
 - the most common loaded ZIP path has multiple issue domains with practical vote meaning
+- issue summaries say: "The clearest pattern in this evidence is [specific pattern], based on [n] interpreted votes. This is a summary of the votes shown, not a full ideology score."
+- vote cards can explain whether the member voted with most of their party, with or against the winning side, or in a bipartisan majority when those baselines are available
 - procedural or unclear rows remain explicit evidence-boundary cases
 - frontend cards avoid generic bill-passage language in reviewed slices
+- frontend labels use sample-bound language such as `Mostly Nay in votes shown`, `Mostly Yea in votes shown`, `Mixed record in votes shown`, or `Too little interpreted evidence`
 
 ## Phase D - Federal Election Context As Secondary
 
@@ -389,10 +397,11 @@ Acceptance criteria:
 
 ## Immediate Next Tasks
 
-1. Expand manual federal vote interpretations for the next most visible current-official issue domain.
-2. Visually review the latest Valerie visible-domain batch in the local app.
-3. Keep newsletter/email tracking out of scope until users validate that persistent reminders are actually needed.
-4. Keep race/candidate work to maintenance and neutral evidence-tier cleanup until the accountability/action path is coherent.
+1. Add backend vote-context storage and deterministic derivation for final result, margin, party totals, member-with-party status, member-with-winning-side status, vote type, and source list.
+2. Update the manual interpretation packet/export workflow to include those vote-context baselines.
+3. Revise frontend issue labels away from broad `leans yea/nay` language and toward sample-bound labels.
+4. Keep newsletter/email tracking out of scope until users validate that persistent reminders are actually needed.
+5. Keep race/candidate work to maintenance and neutral evidence-tier cleanup until the accountability/action path is coherent.
 
 ## Decision Rules
 

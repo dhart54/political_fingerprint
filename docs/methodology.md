@@ -37,7 +37,7 @@ The long-term election context adds ballot-aware candidate comparison:
 - upcoming races by ZIP code when reliable election data is available
 - incumbent and prior-officeholder comparison based first on recorded governing behavior
 - new-candidate coverage based on sourced stated positions when no voting record exists
-- explicit confidence labels separating recorded behavior from stated positions
+- explicit evidence-type and caution labels separating recorded behavior from stated positions
 - evidence-tiered race pages that make strong, thin, and missing evidence clear
 
 The methodology intentionally does not support:
@@ -133,7 +133,7 @@ The comparison view remains descriptive, but it now uses two deterministic lense
 - issue focus from precomputed fingerprint shares
 - vote-direction context from stored `votes_cast.position` joined to eligible classified domains within the same 730-day fingerprint window
 
-Vote-direction context is limited to per-domain `yea` versus `nay` shares. It does not infer ideology, motives, or causal explanations.
+Vote-direction context is limited to per-domain `yea` versus `nay` shares. It does not infer ideology, motives, causal explanations, or the practical meaning of a vote. User-facing summaries must not use raw yea/nay shares alone as a "so what" interpretation.
 
 User-specific alignment is the limited exception to the precomputed-output rule. Because user preferences are session inputs, alignment may be computed at request time as a lightweight comparison between explicit user preferences, stored vote positions, and precomputed vote interpretation records. The API must not classify votes, infer vote meaning, or run heavy aggregation during the request.
 
@@ -143,22 +143,39 @@ Vote interpretation is the source-grounded record of what a yea or nay vote mean
 
 Allowed inputs:
 
+- chamber
+- congress and session
+- bill number or document number
+- roll call number
 - bill title
 - bill summary
+- bill subjects
 - bill lifecycle details, including introduced date, origin chamber, latest action, and public law status when available
 - bill text-version metadata
 - bill action history
 - amendment metadata
 - committee activity metadata
 - CBO cost-estimate links or descriptions when available
+- CRS, JCT, committee-report, or other official explanatory context when available
 - roll call question
 - roll call description
+- final roll call result, when available
+- vote margin, when available
+- party vote totals, when available
+- sponsor party, when available
+- whether the member voted with most of their party, when party totals are available
+- whether the member voted with the winning side, when final result is available
 - official source URL
 - stored classification metadata
 
 Stored outputs:
 
 - `roll_call_id`
+- `vote_type`, when determinable: final passage, amendment, rule, motion, concurrence, procedural, nomination, appropriations, CRA disapproval, or other
+- `what_happened`, when reviewed source text supports it
+- `why_it_mattered`, when reviewed source text supports it
+- `member_vote_context`, when reviewed source and vote-context baselines support it
+- `what_not_to_infer`, required for interpreted public-facing rows
 - `support_position`, when determinable
 - `oppose_position`, when determinable
 - `interpretation_status`
@@ -170,6 +187,7 @@ Stored outputs:
 - `issue_facet`, when useful and source-grounded
 - `confidence`
 - `source_basis`
+- `interpretation_source_list`, containing the official/source records used for the interpretation
 - `uncertainty_note`
 - `source_url` or source reference
 - `interpretation_version`
@@ -180,6 +198,9 @@ Rules:
 - vote interpretation must be deterministic and auditable
 - ambiguous vote meaning must be marked `ambiguous` or `insufficient_evidence`
 - ambiguous votes must not count as aligned or not aligned
+- public interpretation cards should answer four questions when source context supports them: what happened, why it mattered, what the member's vote meant in context, and what not to infer
+- party and result baselines may be surfaced only when computed from stored vote totals: for example, voted with most Democrats, voted against most Republicans, joined a bipartisan majority, broke with most of their party, voted with the winning side, or voted against the final outcome
+- party-context language must describe the recorded vote context only; it must not infer motive, pressure, loyalty, ideology, or strategic intent
 - LLMs or local/offline models may draft plain-language vote-meaning records for review, but imported records must be cached, source-grounded, schema-validated, neutral, and traceable to official/source fields
 - the public application reads cached interpretation records only; it must not call an LLM at request time
 
@@ -198,9 +219,11 @@ These rules are intentionally conservative. They prioritize not counting a vote 
 
 Manual interpretation batches use `docs/manual_interpretation_workflow.md`. They are designed for the first "DC-speak breakdown" layer without an ongoing API dependency. The importer rejects invalid status values, invalid confidence labels, unsupported support/oppose positions, missing source basis for interpreted records, and persuasive or judgmental language.
 
-Manual interpretation quality is developed through gold slices: one official, one issue domain, reviewed end to end before scaling. The gold-slice standard requires each interpreted vote to explain the practical action, the likely policy or process effect if the action succeeded, what yea and nay meant, and the evidence boundary. Procedural votes must stay procedural; the product must not translate a motion, amendment, rule, or conference instruction into a final policy effect unless the official packet supports that translation.
+Manual interpretation quality is developed through gold slices: one official, one issue domain, reviewed end to end before scaling. The gold-slice standard requires each interpreted vote to explain the practical action, why it mattered, what the member's vote meant in context, and what not to infer. Procedural votes must stay procedural; the product must not translate a motion, amendment, rule, or conference instruction into a final policy effect unless the official packet supports that translation.
 
 Interpretation packets may include a `so_what_context` block assembled from cached Congress.gov subresources. This context is source material for human-reviewed interpretation, not an automatic conclusion engine. It can show bill lifecycle, text versions, recorded actions, amendments, committees, CBO links, and enrichment counts so reviewers can identify the vote type, practical mechanism, direct stakes, and evidence boundary. If those source fields do not support a specific practical read, the interpretation must remain ambiguous or insufficient evidence.
+
+Next methodology target: persist vote-context baselines before broadening interpretation coverage. The backend should collect or derive final result, vote margin, party vote totals, member-with-party status, member-with-winning-side status, vote type, sponsor party when available, and interpretation source lists. These fields are deterministic legislative context. They should be stored and exposed to the manual interpretation packet workflow before asking reviewers to write stronger user-facing "so what" summaries.
 
 ## User Alignment Rules
 
@@ -384,14 +407,18 @@ Rules:
 
 This view is descriptive only. It shows how a legislator voted within issue domains, not ideology or motive.
 
-Frontend interpretation:
+Frontend presentation:
 
 - domains are surfaced in descending `recorded_votes`
-- each domain card uses a plain-language read:
-  - `leans yea` if `abs(yea_share - nay_share) >= 0.15` and `yea_share > nay_share`
-  - `leans nay` if `abs(yea_share - nay_share) >= 0.15` and `nay_share > yea_share`
-  - `mixed` if the yea/nay gap is smaller than `0.15`
-- this label is a UI interpretation aid only; the stored metrics remain the underlying shares and counts
+- raw yea/nay shares may be shown as record context, but they must not be presented as broad ideology or "so what" conclusions
+- sample-bound labels may be used only for the votes shown:
+  - `Mostly Yea in votes shown`
+  - `Mostly Nay in votes shown`
+  - `Mixed record in votes shown`
+  - `Too little interpreted evidence`
+- issue summaries should use this bounded form: `The clearest pattern in this evidence is [specific pattern], based on [n] interpreted votes. This is a summary of the votes shown, not a full ideology score.`
+- user-facing caution labels should explain the type of caution, such as `Procedural vote`, `Amendment vote`, `Final passage`, `Plain-English interpretation available`, or `Limited source context`; generic confidence labels should not be the primary public label unless they explain evidence type or caution
+- stored metrics remain the underlying shares and counts
 
 ## Position Evidence Rules
 

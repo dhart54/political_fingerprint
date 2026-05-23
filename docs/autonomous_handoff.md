@@ -722,6 +722,11 @@ Reported results:
   - added curated fallback contact metadata for Deborah Ross, Lizzie Fletcher, John Cornyn, Ted Cruz, Lateefah Simon, Adam Schiff, and Alex Padilla
   - source pages were official House or Senate/member-office contact pages reviewed on 2026-05-22
   - added tests for the new seed and a loaded-ZIP fallback contact endpoint
+- Vote-context interpretation direction checkpoint:
+  - user accepted a stronger framework: interpretations should produce user-facing "so what" summaries from vote context, not broad yea/nay labels
+  - methodology now requires source-grounded fields for what happened, why it mattered, what the member's vote meant in context, and what not to infer
+  - near-term docs now prioritize backend vote-context storage for final result, vote margin, vote type, party totals, member-with-party status, member-with-winning-side status, sponsor party when available, and interpretation source lists
+  - public labels should move to sample-bound language such as `Mostly Nay in votes shown`, `Mixed record in votes shown`, or `Too little interpreted evidence`
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -736,9 +741,10 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit the selected-issue race comparison checkpoint.
-2. Continue expanding manual interpretations for current-official visible issue gaps only if source text supports a real policy read.
-3. Keep newsletter/email tracking out of scope until users validate persistent tracking.
+1. Add backend vote-context storage and deterministic derivation for result, margin, party totals, winning side, vote type, and source list.
+2. Update manual interpretation packet export/import for the four-part user-facing interpretation fields.
+3. Replace broad `leans yea/nay` labels with sample-bound labels after the backend context exists.
+4. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 
