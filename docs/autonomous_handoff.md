@@ -746,6 +746,12 @@ Reported results:
     - `Final passage`, `Plain-English interpretation available`, party-context, and winning-side labels render
     - generic confidence labels are absent
     - no stale webpack/runtime overlay appears
+- Valerie Economy reviewed-field import checkpoint:
+  - refreshed `docs/interpretation_batches/batch_006_valerie_economy_gold_interpretations.json` with populated `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer` fields for interpreted rows
+  - imported the refreshed gold slice to Supabase with `--reviewed-by codex_so_what_review` (`9` records imported, `0` errors)
+  - targeted backend verification passed: `pytest backend/tests/test_manual_interpretations.py backend/tests/test_api_positions.py --basetemp .pytest_tmp` (`25 passed`)
+  - verification export confirmed the new fields persisted in Supabase, then the temporary export was removed
+  - browser QA on Valerie Foushee / `ECONOMY_TAXES` confirmed the evidence cards show reviewed what-happened, why-it-mattered, member-context, not-voting context, and what-not-to-infer text; `Leans Yea/Nay` and generic confidence labels remain absent
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -760,9 +766,9 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Regenerate/import a small reviewed interpretation batch using `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`.
-2. Browser-QA the evidence card copy against real reviewed fields, not only legacy fallback copy.
-3. Decide whether the high-level issue read should use the reviewed fields directly before adding more interpretation coverage.
+1. Decide whether the high-level issue read should use the reviewed fields directly before adding more interpretation coverage.
+2. Apply the same reviewed-field pass to one more visible domain only after the high-level read shape is accepted.
+3. Keep checking that not-voting and ambiguous rows stay visible without becoming support/opposition counts.
 4. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
