@@ -752,6 +752,11 @@ Reported results:
   - targeted backend verification passed: `pytest backend/tests/test_manual_interpretations.py backend/tests/test_api_positions.py --basetemp .pytest_tmp` (`25 passed`)
   - verification export confirmed the new fields persisted in Supabase, then the temporary export was removed
   - browser QA on Valerie Foushee / `ECONOMY_TAXES` confirmed the evidence cards show reviewed what-happened, why-it-mattered, member-context, not-voting context, and what-not-to-infer text; `Leans Yea/Nay` and generic confidence labels remain absent
+- Reviewed high-level issue-read checkpoint:
+  - `PositionByIssue` high-level reads now prefer reviewed `why_it_mattered` and measure context when present
+  - the lead uses the bounded "clearest pattern in this evidence" framing before falling back to older count/facet copy
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - browser QA on Valerie Foushee / `ECONOMY_TAXES` confirmed reviewed high-level copy appears, no `Leans Yea/Nay` labels appear, and the stale Next overlay is absent after cache reset/restart
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
@@ -766,7 +771,7 @@ Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p'
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Decide whether the high-level issue read should use the reviewed fields directly before adding more interpretation coverage.
+1. Review the Valerie Economy issue section visually and decide whether the high-level read shape is good enough to replicate.
 2. Apply the same reviewed-field pass to one more visible domain only after the high-level read shape is accepted.
 3. Keep checking that not-voting and ambiguous rows stay visible without becoming support/opposition counts.
 4. Keep newsletter/email tracking out of scope until users validate persistent tracking.

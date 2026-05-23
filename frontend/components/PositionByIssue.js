@@ -1009,7 +1009,15 @@ function buildIssueEvidenceSummary(rows, { domain = "", representativeName = "" 
   const recordedCount = directionalRows.length;
   const issueLabel = formatDomainLabel(domain || rows[0]?.primary_domain || "this issue");
   const personLabel = formatRepresentativeReference(representativeName);
-  const focusText = buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows });
+  const reviewedLead = buildReviewedIssueLead({
+    issueLabel,
+    opposeRows,
+    personLabel,
+    supportRows,
+  });
+  const focusText =
+    buildReviewedIssueFocus({ opposeRows, supportRows }) ||
+    buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows });
   const scopeText = buildIssueScopeText({
     directionalCount: recordedCount,
     issueLabel,
@@ -1018,13 +1026,15 @@ function buildIssueEvidenceSummary(rows, { domain = "", representativeName = "" 
     unresolvedCount,
   });
 
-  const lead = buildDirectionalLead({
-    issueLabel,
-    opposeCount,
-    otherCount,
-    personLabel,
-    supportCount,
-  });
+  const lead =
+    reviewedLead ||
+    buildDirectionalLead({
+      issueLabel,
+      opposeCount,
+      otherCount,
+      personLabel,
+      supportCount,
+    });
 
   return {
     coverageLabel: `${recordedCount} interpreted yea/nay`,
@@ -1067,6 +1077,47 @@ function buildDirectionalLead({ issueLabel, opposeCount, otherCount, personLabel
   }
 
   return `The interpreted ${issueLabel} votes shown here are mixed.`;
+}
+
+function buildReviewedIssueLead({ issueLabel, opposeRows, personLabel, supportRows }) {
+  const supportReads = buildMeasureReads(supportRows);
+  const opposeReads = buildMeasureReads(opposeRows);
+  const directionalCount = supportRows.length + opposeRows.length;
+
+  if (!directionalCount || (!supportReads.length && !opposeReads.length)) {
+    return "";
+  }
+
+  if (opposeRows.length > supportRows.length && opposeReads.length) {
+    return `The clearest pattern in this evidence is ${formatPossessive(personLabel)} repeated Nay votes on measures involving ${formatList(
+      opposeReads,
+    )}, based on ${directionalCount} interpreted yea/nay ${directionalCount === 1 ? "vote" : "votes"} shown.`;
+  }
+  if (supportRows.length > opposeRows.length && supportReads.length) {
+    return `The clearest pattern in this evidence is ${formatPossessive(personLabel)} repeated Yea votes on measures involving ${formatList(
+      supportReads,
+    )}, based on ${directionalCount} interpreted yea/nay ${directionalCount === 1 ? "vote" : "votes"} shown.`;
+  }
+  if (supportReads.length && opposeReads.length) {
+    return `The clearest pattern in this evidence is a mixed interpreted record: Yea votes involved ${formatList(
+      supportReads,
+    )}, while Nay votes involved ${formatList(opposeReads)}.`;
+  }
+
+  return "";
+}
+
+function buildReviewedIssueFocus({ opposeRows, supportRows }) {
+  const reasons = [...opposeRows, ...supportRows]
+    .map((row) => cleanReviewedSentence(row.why_it_mattered))
+    .filter(Boolean);
+  const uniqueReasons = Array.from(new Set(reasons)).slice(0, 3);
+
+  if (!uniqueReasons.length) {
+    return "";
+  }
+
+  return `Why these rows mattered: ${formatList(uniqueReasons)}.`;
 }
 
 function buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows }) {
@@ -1157,6 +1208,12 @@ function buildMeasureRead(row) {
   }
 
   return String(row.bill_title || row.description || row.question || "the interpreted measure").trim();
+}
+
+function cleanReviewedSentence(value) {
+  return String(value || "")
+    .replace(/\.$/, "")
+    .trim();
 }
 
 function formatRepresentativeReference(name) {

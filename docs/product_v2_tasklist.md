@@ -149,7 +149,7 @@ Priority hierarchy for new work:
 - [x] Add reviewed interpretation fields for `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`.
 - [x] Replace broad `leans yea/nay` public labels with sample-bound labels: `Mostly Yea in votes shown`, `Mostly Nay in votes shown`, `Mixed record in votes shown`, and `Too little interpreted evidence`.
 - [x] Replace generic public confidence labels with caution/type labels such as `Procedural vote`, `Amendment vote`, `Final passage`, `Plain-English interpretation available`, and `Limited source context`.
-- [ ] Update issue summaries to use the bounded pattern: "The clearest pattern in this evidence is [specific pattern], based on [n] interpreted votes. This is a summary of the votes shown, not a full ideology score."
+- [x] Update issue summaries to use the bounded pattern: "The clearest pattern in this evidence is [specific pattern], based on [n] interpreted votes. This is a summary of the votes shown, not a full ideology score."
 
 ## Next Lens - Ballot-Aware Candidate Comparison
 
