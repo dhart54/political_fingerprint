@@ -695,6 +695,10 @@ Reported results:
   - noisy race candidate lists are capped to the strongest 6 evidence rows first, with a visible note disclosing hidden lower-signal rows
   - methodology now documents the neutral record-view and candidate-list cap behavior
   - browser QA confirmed Cost of Living rows show `Record shown`, comparison mirrors the label, the NC Senate race cap note appears, and the console has no errors
+- Shared issue-label checkpoint:
+  - added `frontend/lib/issueDomains.js` as the shared issue-domain label map
+  - replaced duplicated label formatters in profile quick read, alignment, comparison, issue evidence, race evidence, and the legacy fingerprint panel
+  - browser QA confirmed the Cost of Living path now shows `Economy & Taxes`, `Health & Social Services`, and `Infrastructure, Tech & Transportation` with no old all-caps/domain-code labels and no console errors
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { fetchFingerprint } from "../lib/api";
+import { formatDomainLabel } from "../lib/issueDomains";
 
 const COMPARISON_OPTIONS = ["ALL", "D", "R"];
 const SVG_WIDTH = 560;
@@ -334,13 +335,6 @@ function getAxisPoint(index, ratio) {
     x: CENTER_X + Math.cos(angle) * distance,
     y: CENTER_Y + Math.sin(angle) * distance,
   };
-}
-
-function formatDomainLabel(domain) {
-  return domain
-    .split("_")
-    .map((segment) => segment[0] + segment.slice(1).toLowerCase())
-    .join(" ");
 }
 
 function buildFocusSummary(topDomains) {

@@ -3,6 +3,7 @@
 import { startTransition, useDeferredValue, useEffect, useState } from "react";
 
 import { fetchAlignment, fetchLegislatorComparison, fetchLegislatorSearch } from "../lib/api";
+import { formatDomainLabel } from "../lib/issueDomains";
 
 export default function ComparisonPanel({
   defaultLeftLegislator,
@@ -501,13 +502,6 @@ function CompareMetric({ label, value }) {
 
 function formatChamber(chamber) {
   return chamber ? chamber[0].toUpperCase() + chamber.slice(1) : "";
-}
-
-function formatDomainLabel(domain) {
-  return String(domain)
-    .split("_")
-    .map((segment) => segment[0] + segment.slice(1).toLowerCase())
-    .join(" ");
 }
 
 function buildAlignmentSummary(alignment) {

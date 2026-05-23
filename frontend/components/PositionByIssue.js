@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
+import { DOMAIN_LABELS, formatDomainLabel } from "../lib/issueDomains";
 
 export default function PositionByIssue({
   evidenceRequest = null,
@@ -865,28 +866,6 @@ function formatBillGroupSummary(rollCallCount, billCount) {
     billCount === 1 ? "bill or measure" : "bills or measures"
   }. Repeated rows can be amendments or related actions on the same bill.`;
 }
-
-function formatDomainLabel(domain) {
-  const label = DOMAIN_LABELS[domain];
-  if (label) {
-    return label;
-  }
-
-  return String(domain)
-    .split("_")
-    .map((segment) => segment[0] + segment.slice(1).toLowerCase())
-    .join(" ");
-}
-
-const DOMAIN_LABELS = {
-  ECONOMY_TAXES: "Economy & Taxes",
-  EDUCATION_WORKFORCE: "Education & Workforce",
-  ENVIRONMENT_ENERGY: "Environment & Energy",
-  HEALTH_SOCIAL: "Health & Social Services",
-  INFRASTRUCTURE_TECH_TRANSPORT: "Infrastructure, Tech & Transport",
-  JUSTICE_PUBLIC_SAFETY: "Justice & Public Safety",
-  NATIONAL_SECURITY_FOREIGN: "National Security & Foreign Policy",
-};
 
 function formatChamber(chamber) {
   return chamber ? chamber[0].toUpperCase() + chamber.slice(1) : "";

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { fetchCandidateEvidence, fetchSupportedZips, fetchZipLookup, fetchZipRaces } from "../lib/api";
+import { formatDomainLabel } from "../lib/issueDomains";
 
 const DEFAULT_ZIP = "27701";
 
@@ -870,14 +871,6 @@ function formatEvidenceTypeLabel(tier) {
     return "Stated position";
   }
   return "Insufficient evidence";
-}
-
-function formatDomainLabel(domain) {
-  return String(domain || "")
-    .toLowerCase()
-    .split("_")
-    .map((segment) => segment[0]?.toUpperCase() + segment.slice(1))
-    .join(" ");
 }
 
 function formatNumber(value) {

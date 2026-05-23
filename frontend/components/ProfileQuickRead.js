@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { fetchDrift, fetchFingerprint, fetchPositions } from "../lib/api";
+import { formatDomainLabel } from "../lib/issueDomains";
 
 export default function ProfileQuickRead({ legislator, onInspectDomain }) {
   const [state, setState] = useState({
@@ -269,11 +270,4 @@ function buildDriftRead(drift) {
     label: `Drift score ${driftValue.toFixed(2)} across the two-year window.`,
     value: "Steady",
   };
-}
-
-function formatDomainLabel(domain) {
-  return String(domain)
-    .split("_")
-    .map((segment) => segment[0] + segment.slice(1).toLowerCase())
-    .join(" ");
 }

@@ -98,6 +98,7 @@ Execution detail lives in `docs/north_star_action_plan.md`.
 - [x] Make ZIP lookup comparison preset buttons show hover, focus, and selected states.
 - [x] Compact evidence row metadata so source access remains available without giving internal classification labels primary space.
 - [x] Run final frontend pass and polish starter-check selected states plus narrow evidence-card spacing.
+- [x] Share human-readable issue-domain labels across accountability, comparison, and race evidence surfaces.
 
 ## Working Priority
 

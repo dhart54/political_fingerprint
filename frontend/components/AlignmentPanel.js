@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { fetchAlignment } from "../lib/api";
+import { formatDomainLabel } from "../lib/issueDomains";
 
 export default function AlignmentPanel({ legislator, preferences, onInspectDomain }) {
   const [state, setState] = useState({
@@ -231,11 +232,4 @@ function getLabelClass(label) {
     return "bg-amber-100 text-amber-800";
   }
   return "bg-stone-200 text-stone-700";
-}
-
-function formatDomainLabel(domain) {
-  return String(domain)
-    .split("_")
-    .map((segment) => segment[0] + segment.slice(1).toLowerCase())
-    .join(" ");
 }
