@@ -914,19 +914,19 @@ function buildTakeaway(rows) {
   }
 
   const strongest = rows[0];
-  const leaning = strongest.yea_share >= strongest.nay_share ? "more often voted yea" : "more often voted nay";
-  const leaningShare = Math.max(strongest.yea_share, strongest.nay_share);
+  const strongestLabel = getPositionLabel(strongest).toLowerCase();
+  const strongestShare = Math.max(strongest.yea_share, strongest.nay_share);
   const second = rows[1];
 
   if (second) {
-    return `In the strongest recorded domains, this legislator ${leaning} on ${formatDomainLabel(strongest.domain)} (${(leaningShare * 100).toFixed(
+    return `In the strongest recorded domains, this section shows ${strongestLabel} for ${formatDomainLabel(strongest.domain)} (${(strongestShare * 100).toFixed(
       0,
-    )}%) and also shows recorded positions in ${formatDomainLabel(second.domain)}.`;
+    )}% of recorded yea/nay votes) and additional recorded positions in ${formatDomainLabel(second.domain)}.`;
   }
 
-  return `The clearest recorded position pattern in this window is ${formatDomainLabel(strongest.domain)}, where this legislator ${leaning} ${(leaningShare * 100).toFixed(
-    0,
-  )}% of the time.`;
+  return `The clearest vote-direction sample in this window is ${strongestLabel} for ${formatDomainLabel(
+    strongest.domain,
+  )}, across ${strongest.recorded_votes} recorded votes.`;
 }
 
 function buildPatternRows(rows) {
@@ -1089,19 +1089,15 @@ function buildReviewedIssueLead({ issueLabel, opposeRows, personLabel, supportRo
   }
 
   if (opposeRows.length > supportRows.length && opposeReads.length) {
-    return `The clearest pattern in this evidence is ${formatPossessive(personLabel)} repeated Nay votes on measures involving ${formatList(
-      opposeReads,
-    )}, based on ${directionalCount} interpreted yea/nay ${directionalCount === 1 ? "vote" : "votes"} shown.`;
+    return `The clearest pattern in this evidence is ${formatPossessive(personLabel)} repeated Nay votes across reviewed ${issueLabel} measures, based on ${directionalCount} interpreted yea/nay ${directionalCount === 1 ? "vote" : "votes"} shown. Examples include ${formatMeasureExamples(opposeReads)}.`;
   }
   if (supportRows.length > opposeRows.length && supportReads.length) {
-    return `The clearest pattern in this evidence is ${formatPossessive(personLabel)} repeated Yea votes on measures involving ${formatList(
-      supportReads,
-    )}, based on ${directionalCount} interpreted yea/nay ${directionalCount === 1 ? "vote" : "votes"} shown.`;
+    return `The clearest pattern in this evidence is ${formatPossessive(personLabel)} repeated Yea votes across reviewed ${issueLabel} measures, based on ${directionalCount} interpreted yea/nay ${directionalCount === 1 ? "vote" : "votes"} shown. Examples include ${formatMeasureExamples(supportReads)}.`;
   }
   if (supportReads.length && opposeReads.length) {
-    return `The clearest pattern in this evidence is a mixed interpreted record: Yea votes involved ${formatList(
+    return `The clearest pattern in this evidence is a mixed interpreted record across reviewed ${issueLabel} measures. Yea-vote examples include ${formatMeasureExamples(
       supportReads,
-    )}, while Nay votes involved ${formatList(opposeReads)}.`;
+    )}; Nay-vote examples include ${formatMeasureExamples(opposeReads)}.`;
   }
 
   return "";
@@ -1241,6 +1237,17 @@ function formatList(values) {
     return `${values[0]} and ${values[1]}`;
   }
   return `${values.slice(0, -1).join(", ")}, and ${values[values.length - 1]}`;
+}
+
+function formatMeasureExamples(values, limit = 2) {
+  const examples = values.slice(0, limit);
+  const extraCount = values.length - examples.length;
+
+  if (extraCount <= 0) {
+    return formatList(examples);
+  }
+
+  return `${formatList(examples)}, plus ${extraCount} other reviewed ${extraCount === 1 ? "measure" : "measures"}`;
 }
 
 function buildActionContext({ domain, evidenceRows, representativeName, selectedEvidenceRow }) {

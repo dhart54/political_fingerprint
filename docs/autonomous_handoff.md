@@ -757,6 +757,13 @@ Reported results:
   - the lead uses the bounded "clearest pattern in this evidence" framing before falling back to older count/facet copy
   - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
   - browser QA on Valerie Foushee / `ECONOMY_TAXES` confirmed reviewed high-level copy appears, no `Leans Yea/Nay` labels appear, and the stale Next overlay is absent after cache reset/restart
+- Sample-bound public-copy checkpoint:
+  - `ProfileQuickRead` now uses `Mostly Yea/Nay in votes shown`, `Mixed record in votes shown`, or `Too little interpreted evidence` instead of `Leans Yea/Nay`
+  - quick-read coverage now appears as `Evidence Coverage` with eligible-vote count, not `Data Confidence` with strong/usable/thin labels
+  - the issue first-read sentence now says the section shows a sample-bound pattern, not that the legislator "more often voted" a direction
+  - reviewed issue leads now show two concrete examples and a bounded "plus N other reviewed measures" clause to keep the economy read shorter
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - browser QA before the final list-polish confirmed the Valerie Economy high-level read appeared with reviewed examples and no stale overlay; the final browser reload after dev restart was blocked by Browser URL policy, so the final polish was verified by build and source-language checks
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
