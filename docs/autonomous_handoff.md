@@ -703,6 +703,11 @@ Reported results:
   - switch-official and comparison-pair searches now stay idle until the user enters at least two characters
   - broad search results are capped to the first 12 matches with a note to keep typing when more matches exist
   - browser QA confirmed the main page no longer shows the full 548-result roster by default, searching `fou` finds Valerie Foushee, and the console has no errors
+- State expansion guardrail checkpoint:
+  - added `docs/state_adapter_checklist.md`
+  - methodology now requires state-level expansion to pass a separate adapter checklist before public UI or broad ETL
+  - checklist covers district lookup, current official identity, member-level roll calls, state-specific vote interpretation, candidate context, separate state storage, UI labels, and go/no-go criteria
+  - marked the state-methodology separation and state-adapter checklist tasks complete
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 

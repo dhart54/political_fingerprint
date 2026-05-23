@@ -201,11 +201,11 @@ Evidence ladder:
 - [x] Document NC source reliability, access method, and update cadence.
 - [x] Add NC state district mapping plan.
 - [ ] Add one NC state office/race pilot before broad state expansion.
-- [ ] Keep state-level methodology separate from federal methodology where source formats differ.
+- [x] Keep state-level methodology separate from federal methodology where source formats differ.
 
 ### Phase 13 - Broader State and Local Expansion
 
-- [ ] Create a state adapter checklist.
+- [x] Create a state adapter checklist.
 - [ ] Add states only when source quality and maintenance burden are understood.
 - [ ] Evaluate local election data vendors or civic data partnerships.
 - [ ] Treat local coverage as lower priority until federal and NC pilot flows are useful.

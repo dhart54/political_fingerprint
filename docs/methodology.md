@@ -663,6 +663,16 @@ Current CLI example:
 - `python -m app.etl.federal_races --fec-candidate-summary ./backend/data_sources/fec/candidate_summary_2026.csv --cycle 2026 --dry-run`
 - `python -m app.etl.federal_races --fec-candidate-summary ./backend/data_sources/fec/candidate_summary_2026.csv --cycle 2026 --as-of 2026-05-17 --dry-run`
 
+## State-Level Expansion Boundary
+
+State records must use a separate methodology from federal records until the source shape, district lookup, vote subjects, candidate data, and interpretation rules are proven for that state. A state pilot may reuse product principles, but it must not reuse federal assumptions blindly.
+
+State-level expansion must pass `docs/state_adapter_checklist.md` before adding public UI or broad ETL. The checklist requires official district mapping, current official identity, member-level roll-call data, state-specific vote interpretation rules, source-backed candidate context, separate state storage, and clear UI labels.
+
+ZIP-only state district lookup is not sufficient to auto-select a state representative unless the ZIP maps unambiguously to one district. When a ZIP crosses districts, the UI must require address-level lookup or show an approximate/multiple-district state.
+
+State records must not be merged into federal fingerprints, chamber medians, drift scores, federal summaries, or federal vote interpretations. Cross-level comparison is deferred until there is a documented methodology for mixed federal/state evidence.
+
 ## Candidate Evidence Records
 
 Candidate evidence records are the lower-confidence companion to recorded governing behavior.
