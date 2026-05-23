@@ -434,14 +434,17 @@ export function UpcomingRacePanel({ onSelectLegislator, preferences = {}, raceSt
                 </p>
                 <div className="mt-4 grid gap-2">
                   {(race.candidates || []).length ? (
-                    race.candidates.map((candidate) => (
-                      <RaceCandidateCard
-                        candidate={candidate}
-                        key={candidate.id}
-                        onSelectLegislator={onSelectLegislator}
-                        preferences={preferences}
-                      />
-                    ))
+                    <>
+                      <RaceCandidateLimitNote candidates={race.candidates} />
+                      {getVisibleRaceCandidates(race.candidates).map((candidate) => (
+                        <RaceCandidateCard
+                          candidate={candidate}
+                          key={candidate.id}
+                          onSelectLegislator={onSelectLegislator}
+                          preferences={preferences}
+                        />
+                      ))}
+                    </>
                   ) : (
                     <p className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
                       Candidate roster is not loaded for this race yet. This row is election structure only, not a candidate comparison.
@@ -455,6 +458,41 @@ export function UpcomingRacePanel({ onSelectLegislator, preferences = {}, raceSt
       </div>
     </details>
   );
+}
+
+function RaceCandidateLimitNote({ candidates }) {
+  const hiddenCount = Math.max(0, candidates.length - VISIBLE_RACE_CANDIDATE_LIMIT);
+
+  if (!hiddenCount) {
+    return null;
+  }
+
+  return (
+    <p className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
+      Showing the strongest {VISIBLE_RACE_CANDIDATE_LIMIT} candidate evidence rows first. {hiddenCount} additional lower-signal candidate {hiddenCount === 1 ? "row is" : "rows are"} hidden here to keep election context secondary to the current voting record.
+    </p>
+  );
+}
+
+const VISIBLE_RACE_CANDIDATE_LIMIT = 6;
+
+function getVisibleRaceCandidates(candidates) {
+  return [...candidates]
+    .sort((left, right) => candidateEvidencePriority(right) - candidateEvidencePriority(left))
+    .slice(0, VISIBLE_RACE_CANDIDATE_LIMIT);
+}
+
+function candidateEvidencePriority(candidate) {
+  if (candidate.voting_summary) {
+    return 4;
+  }
+  if ((candidate.candidate_evidence_summary?.total_count || 0) > 0) {
+    return 3;
+  }
+  if (candidate.evidence_tier && candidate.evidence_tier !== "insufficient_evidence") {
+    return 2;
+  }
+  return 1;
 }
 
 function RaceCandidateCard({ candidate, onSelectLegislator, preferences = {} }) {

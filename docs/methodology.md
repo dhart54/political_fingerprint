@@ -222,6 +222,8 @@ Alignment must be based only on:
 
 Alignment must expose evidence counts and underlying vote rows. It must not rank legislators, infer motives, assign moral quality, or tell the user how to vote.
 
+Neutral issue starters use `show_record` preferences. These are not directional alignment inputs. When interpreted vote evidence exists, the UI should label those rows as `Record shown`, exclude them from aligned/not-aligned/mixed counts, and explain that no for/against preference was selected. If interpreted vote evidence is missing, the row remains `insufficient_evidence`.
+
 ## Civic Action Rules
 
 Civic action features help users decide what to do next after inspecting evidence about current representatives.
@@ -653,6 +655,8 @@ Current importer behavior:
 Candidate issue alignment must not be computed from FEC candidacy rows. A candidate needs linked recorded governing behavior or separate sourced stated-position records before issue comparison can show more than insufficient evidence.
 
 Race-card selected-issue comparison is evidence coverage only. For each user-selected issue, the UI may show that a candidate has linked recorded-vote evidence, reviewed institutional or stated-position records, or insufficient evidence. It must not aggregate those rows into a candidate score, winner, rank, or vote recommendation.
+
+The race panel may limit visible candidates when a race has many low-signal rows. The visible order should prefer linked recorded-vote records, then reviewed candidate evidence, then other non-insufficient evidence tiers, then FEC-only insufficient-evidence rows. Any cap must be disclosed in the UI and must not imply that hidden candidates are worse or less legitimate; it only preserves the product hierarchy where election context is secondary to the current representative record.
 
 Current CLI example:
 

@@ -78,6 +78,7 @@ Execution detail lives in `docs/north_star_action_plan.md`.
 - [x] Add lightweight error monitoring guidance.
 - [x] Add accessibility and mobile layout checks for the full voter journey.
 - [x] Add neutral starter issue checks to reduce first-use friction.
+- [x] Label neutral starter issue rows as record views instead of alignment conclusions.
 - [x] Auto-open the ZIP-mapped House profile after lookup.
 - [x] Make evidence source URLs clickable in vote drilldowns.
 - [x] Replace compressed comparison counts with per-issue comparison cards.
@@ -190,6 +191,7 @@ Evidence ladder:
 - [x] Make every candidate claim expandable to source details.
 - [x] Avoid aggregate candidate scores or ranking language.
 - [x] Add empty states for uncontested races and missing candidate data.
+- [x] Cap noisy low-signal race candidate lists while disclosing hidden rows.
 
 ### Phase 12 - North Carolina State Pilot
 

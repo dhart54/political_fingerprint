@@ -467,7 +467,7 @@ function IssueAlignmentRows({ alignment, legislator, onInspectDomain }) {
                 {formatDomainLabel(row.domain)}
               </p>
               <p className="mt-2 text-[1.25rem] leading-7 text-stone-950">
-                {formatAlignmentLabel(row.label)}
+                {formatDisplayLabel(row)}
               </p>
             </div>
             <span className={`w-fit rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.18em] ${getLabelClass(row.label)}`}>
@@ -520,25 +520,36 @@ function buildAlignmentSummary(alignment) {
     return "No issue preferences selected.";
   }
 
-  const aligned = rows.filter((row) => row.label === "aligned").length;
-  const notAligned = rows.filter((row) => row.label === "not_aligned").length;
-  const mixed = rows.filter((row) => row.label === "mixed").length;
+  const directionalRows = rows.filter((row) => row.preference !== "show_record");
+  const recordOnly = rows.filter((row) => row.preference === "show_record" && row.label !== "insufficient_evidence").length;
+  const aligned = directionalRows.filter((row) => row.label === "aligned").length;
+  const notAligned = directionalRows.filter((row) => row.label === "not_aligned").length;
+  const mixed = directionalRows.filter((row) => row.label === "mixed").length;
   const insufficient = rows.filter((row) => row.label === "insufficient_evidence").length;
+  const recordOnlyText = recordOnly ? `${recordOnly} record shown / ` : "";
 
-  return `${aligned} aligned / ${notAligned} not aligned / ${mixed} mixed / ${insufficient} insufficient`;
+  return `${recordOnlyText}${aligned} aligned / ${notAligned} not aligned / ${mixed} mixed / ${insufficient} insufficient`;
 }
 
 function buildIssueRowCopy(row) {
   if (row.label === "insufficient_evidence") {
     return "This official does not yet have enough source-grounded vote meaning on this issue for an alignment label. Inspect Votes shows the available roll-call record.";
   }
+  if (row.preference === "show_record") {
+    return `${row.interpreted_count} interpreted ${row.interpreted_count === 1 ? "vote is" : "votes are"} available. No for/against preference was selected, so this row is record context rather than an alignment label.`;
+  }
   if (row.label === "mixed") {
     return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes are available.`;
   }
-  if (row.preference === "show_record") {
-    return `${row.interpreted_count} interpreted votes are available for this issue.`;
-  }
   return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes are available.`;
+}
+
+function formatDisplayLabel(row) {
+  if (row.preference === "show_record" && row.label !== "insufficient_evidence") {
+    return "Record shown";
+  }
+
+  return formatAlignmentLabel(row.label);
 }
 
 function formatAlignmentLabel(label) {

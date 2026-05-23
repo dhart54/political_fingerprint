@@ -689,6 +689,12 @@ Reported results:
   - methodology documents the issue-read boundary: opened evidence section only, no motive, no broad ideology score, no voting recommendation
   - frontend production build passed after escalated rerun: `npm run build`
   - browser QA confirmed Valerie `ECONOMY_TAXES` now reads as a plain conclusion with source-boundary text
+- Neutral record and race-context checkpoint:
+  - neutral starter checks now render interpreted rows as `Record shown` instead of `Mixed`
+  - neutral `show_record` rows are excluded from aligned/not-aligned/mixed headline counts in the alignment and comparison panels
+  - noisy race candidate lists are capped to the strongest 6 evidence rows first, with a visible note disclosing hidden lower-signal rows
+  - methodology now documents the neutral record-view and candidate-list cap behavior
+  - browser QA confirmed Cost of Living rows show `Record shown`, comparison mirrors the label, the NC Senate race cap note appears, and the console has no errors
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 
