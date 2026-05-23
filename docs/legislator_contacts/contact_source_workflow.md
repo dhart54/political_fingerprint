@@ -77,6 +77,9 @@ Store the retrieval date from the actual review/import date, not from a previous
 
 1. Fetch current official source files into `backend/data_sources`.
 2. Build or update a reviewed JSON seed in `docs/legislator_contacts/`.
+   - Current reviewed seeds:
+     - `nc_federal_contacts_seed.json`
+     - `loaded_zip_federal_contacts_seed.json`
 3. Verify each record is keyed by Bioguide ID and has at least one contact field.
 4. Review source pages for changed publication or access caveats, especially before changing cadence from manual review to scheduled imports.
 5. Run a dry-run parse:

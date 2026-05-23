@@ -357,6 +357,17 @@ def test_legislator_contact_endpoint_returns_curated_contact_metadata() -> None:
     assert payload["source_type"] == "official_house_website"
 
 
+def test_legislator_contact_endpoint_returns_loaded_zip_contact_metadata() -> None:
+    payload = get_legislator_contact("leg_lateefah_simon")
+
+    assert payload["legislator_id"] == "leg_lateefah_simon"
+    assert payload["contact_status"] == "loaded"
+    assert payload["data_source"] in {"curated_fallback", "database"}
+    assert payload["contact_form_url"] == "https://simon.house.gov/contact"
+    assert payload["phone"] == "(202) 225-2661"
+    assert payload["source_type"] == "official_house_website"
+
+
 def test_legislator_contact_endpoint_returns_not_loaded_for_known_without_contact() -> None:
     payload = get_legislator_contact("leg_alex_morgan")
 

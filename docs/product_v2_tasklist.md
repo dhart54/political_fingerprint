@@ -235,6 +235,7 @@ Rules:
 - [x] Confirm legal/source-access caveats before broad automated contact expansion.
 - [x] Add minimal backend model or read adapter for contact links.
 - [x] Add reviewed NC federal contact seed and importer keyed by Bioguide ID.
+- [x] Add reviewed official contact seed for the other loaded federal demo ZIP officials.
 - [x] Apply the contact metadata migration and NC pilot seed to Supabase.
 - [x] Add tests for loaded and missing contact metadata.
 - [x] Update `docs/methodology.md` with contact/action boundaries.

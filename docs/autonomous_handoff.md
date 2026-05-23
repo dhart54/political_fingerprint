@@ -717,6 +717,11 @@ Reported results:
   - evidence-linked contact block now says the app has not sent or saved anything
   - the badge now reads `User-directed` instead of repeating `Official contact`
   - this keeps the action layer neutral and avoids implying a drafted or tracked message
+- Loaded-ZIP contact seed checkpoint:
+  - added `docs/legislator_contacts/loaded_zip_federal_contacts_seed.json`
+  - added curated fallback contact metadata for Deborah Ross, Lizzie Fletcher, John Cornyn, Ted Cruz, Lateefah Simon, Adam Schiff, and Alex Padilla
+  - source pages were official House or Senate/member-office contact pages reviewed on 2026-05-22
+  - added tests for the new seed and a loaded-ZIP fallback contact endpoint
 
 If the dev server is running and the browser looks stale, clear the Next cache before refresh:
 

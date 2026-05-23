@@ -6,6 +6,9 @@ from app.etl.legislator_contacts import _parse_record, load_legislator_contacts
 
 
 SEED_PATH = Path(__file__).resolve().parents[2] / "docs" / "legislator_contacts" / "nc_federal_contacts_seed.json"
+LOADED_ZIP_SEED_PATH = (
+    Path(__file__).resolve().parents[2] / "docs" / "legislator_contacts" / "loaded_zip_federal_contacts_seed.json"
+)
 
 
 def test_load_legislator_contacts_accepts_nc_seed_records() -> None:
@@ -18,6 +21,26 @@ def test_load_legislator_contacts_accepts_nc_seed_records() -> None:
         "official_senate_website",
     }
     assert all(record.source_retrieved_at == "2026-05-19" for record in records)
+
+
+def test_load_legislator_contacts_accepts_loaded_zip_seed_records() -> None:
+    records = load_legislator_contacts(LOADED_ZIP_SEED_PATH)
+
+    assert len(records) == 7
+    assert {record.bioguide_id for record in records} == {
+        "C001056",
+        "C001098",
+        "F000468",
+        "P000145",
+        "R000305",
+        "S001150",
+        "S001231",
+    }
+    assert {record.source_type for record in records} == {
+        "official_house_website",
+        "official_senate_website",
+    }
+    assert all(record.source_retrieved_at == "2026-05-22" for record in records)
 
 
 def test_load_legislator_contacts_requires_a_contact_field() -> None:
