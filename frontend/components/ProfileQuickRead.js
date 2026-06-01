@@ -218,7 +218,7 @@ function buildTopPosition(rows) {
   return {
     shortLabel: `${direction} in ${formatDomainLabel(strongest.domain)}`,
     domain: strongest.domain,
-    label: `${formatDomainLabel(strongest.domain)} has ${strongest.recorded_votes} recorded votes in this window; ${interpretedYeaNay} have cached vote meaning.`,
+    label: `${formatDomainLabel(strongest.domain)} has ${strongest.recorded_votes} recorded votes in this window; ${interpretedYeaNay} have reviewed vote meaning.`,
     value:
       direction === "Mixed record in votes shown"
         ? "Mixed"

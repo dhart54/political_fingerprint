@@ -152,7 +152,7 @@ export default function PositionByIssue({
             <button
               aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
               aria-pressed={selectedDomain === row.domain}
-              className={`rounded-[1.25rem] border px-4 py-4 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition ${
+              className={`rounded-[1.1rem] border px-4 py-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition ${
                 selectedDomain === row.domain
                   ? "border-cyan-800 bg-cyan-50"
                   : "border-stone-200 bg-stone-50 hover:border-cyan-700/50"
@@ -162,34 +162,20 @@ export default function PositionByIssue({
               type="button"
             >
               <div className="flex items-start justify-between gap-3">
-                <p className="max-w-[200px] text-[16px] leading-7 text-stone-900">
+                <p className="max-w-[220px] text-[15px] leading-6 text-stone-950">
                   {formatDomainLabel(row.domain)}
                 </p>
-                <p className="text-sm text-stone-500">{row.recorded_votes} votes</p>
+                <p className="shrink-0 text-sm text-stone-500">{row.recorded_votes} votes</p>
               </div>
-              <div className="mt-3 flex items-center justify-between gap-3">
-                <span className={`max-w-full rounded-xl px-3 py-1 text-[11px] uppercase leading-4 tracking-[0.12em] ${getPositionBadgeClass(row)}`}>
+              <div className="mt-3 flex flex-col gap-2">
+                <span className={`w-fit max-w-full rounded-xl px-3 py-1 text-[11px] uppercase leading-4 tracking-[0.12em] ${getPositionBadgeClass(row)}`}>
                   {getPositionLabel(row)}
                 </span>
-                <p className="text-[13px] text-stone-600">
-                  {buildPositionRead(row)}
+                <p className="text-[13px] leading-5 text-stone-700">
+                  {buildPositionRead(row)}. {buildInterpretationCoverageRead(row)}
                 </p>
               </div>
-              <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
-                <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-3">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-emerald-700">Yea</p>
-                  <p className="mt-2 text-[1.45rem] leading-none text-stone-900">
-                    {(row.yea_share * 100).toFixed(0)}%
-                  </p>
-                </div>
-                <div className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-3">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-rose-700">Nay</p>
-                  <p className="mt-2 text-[1.45rem] leading-none text-stone-900">
-                    {(row.nay_share * 100).toFixed(0)}%
-                  </p>
-                </div>
-              </div>
-              <div className="mt-4 h-3 overflow-hidden rounded-full bg-stone-200">
+              <div className="mt-3 h-2 overflow-hidden rounded-full bg-stone-200">
                 <div className="flex h-full w-full">
                   <div
                     className="bg-emerald-500"
@@ -201,9 +187,6 @@ export default function PositionByIssue({
                   />
                 </div>
               </div>
-              <p className="mt-3 text-xs leading-5 text-stone-500">
-                {buildInterpretationCoverageRead(row)}
-              </p>
             </button>
           ))}
         </div>
@@ -242,7 +225,7 @@ function IssuePatternCards({ onInspectDomain, rows, status }) {
           </h4>
         </div>
         <p className="max-w-xl text-sm leading-6 text-stone-600">
-          These cards use only cached vote meanings. Missing or ambiguous meanings stay out of the pattern instead of being guessed.
+          These cards use only reviewed vote meanings. Missing or ambiguous meanings stay out of the pattern instead of being guessed.
         </p>
       </div>
 
@@ -624,7 +607,7 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
           <p className="text-xs uppercase tracking-[0.24em] text-cyan-900">
             High-Level Read
           </p>
-          <p className="mt-2 text-base leading-7 text-stone-900">
+          <p className="mt-2 max-w-4xl text-[18px] leading-8 text-stone-950">
             {summary.lead}
           </p>
         </div>
@@ -632,15 +615,24 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
           {summary.coverageLabel}
         </span>
       </div>
-      <div className="mt-4 grid gap-2 sm:grid-cols-4">
-        <SummaryMetric label="For side" value={summary.supportCount} />
-        <SummaryMetric label="Against side" value={summary.opposeCount} />
-        <SummaryMetric label="Other record" value={summary.otherCount} />
-        <SummaryMetric label="Needs caution" value={summary.unresolvedCount} />
-      </div>
-      {summary.focusText ? (
+      <p className="mt-3 rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
+        {summary.countText}
+      </p>
+      {summary.focusText?.length ? (
+        <div className="mt-3 rounded-2xl border border-cyan-900/10 bg-cyan-50 px-3 py-3">
+          <p className="text-xs uppercase tracking-[0.2em] text-cyan-900">Why this matters</p>
+          <ul className="mt-2 grid list-disc gap-2 pl-5 text-sm leading-6 text-stone-800">
+            {summary.focusText.map((item) => (
+              <li key={item}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+      {summary.contextText ? (
         <p className="mt-3 text-sm leading-6 text-stone-700">
-          {summary.focusText}
+          {summary.contextText}
         </p>
       ) : null}
       {summary.scopeText ? (
@@ -651,15 +643,6 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
       <p className="mt-3 text-xs leading-5 text-stone-500">
         Rows below remain the source of truth for each claim; missing vote meanings are not guessed.
       </p>
-    </div>
-  );
-}
-
-function SummaryMetric({ label, value }) {
-  return (
-    <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
-      <p className="font-serif text-[1.65rem] leading-none text-stone-950">{value}</p>
-      <p className="mt-1 text-[11px] uppercase tracking-[0.15em] text-stone-500">{label}</p>
     </div>
   );
 }
@@ -678,6 +661,7 @@ function InterpretationBreakdown({ row }) {
   const whyItMattered = row.why_it_mattered || buildPlainTakeaway(row);
   const memberVoteContext = row.member_vote_context || interpretedVoteRead;
   const contextBadges = buildContextBadges(row);
+  const voteContextLine = buildVoteContextLine(row);
 
   return (
     <div className="mt-3 rounded-2xl border border-cyan-900/10 bg-white px-3 py-3 sm:px-4">
@@ -689,6 +673,11 @@ function InterpretationBreakdown({ row }) {
           {statusLabel}
         </span>
       </div>
+      {voteContextLine ? (
+        <p className="mt-2 rounded-xl bg-stone-50 px-3 py-2 text-xs leading-5 text-stone-600">
+          {voteContextLine}
+        </p>
+      ) : null}
 
       {isInterpreted ? (
         <>
@@ -945,7 +934,7 @@ function buildPatternRows(rows) {
       const otherCount = row.interpreted_other_count || 0;
       const recordedVotes = row.recorded_votes || 0;
       const interpretedRecordedVotes = supportCount + opposeCount;
-      const coverageText = `${interpretedRecordedVotes} of ${recordedVotes} recorded yea/nay votes have a cached vote meaning`;
+      const coverageText = `${interpretedRecordedVotes} of ${recordedVotes} recorded yes/no votes have reviewed meaning`;
       let label = "Mixed record in votes shown";
 
       if (supportCount > opposeCount && opposeCount === 0) {
@@ -969,12 +958,12 @@ function buildPatternRows(rows) {
 }
 
 const ISSUE_FACET_READS = {
-  budget_reconciliation_and_debt_limit: "budget-reconciliation instructions tied to taxes, spending, deficits, and the debt limit",
-  government_funding_and_shutdown: "a shutdown-ending federal funding package",
-  temporary_government_funding: "short-term federal funding while regular appropriations were unfinished",
-  small_business_loan_eligibility: "SBA loan eligibility restrictions based on citizenship or residency status",
-  small_business_regulation: "SBA regulatory-cost limits for small businesses",
-  military_construction_and_va_appropriations: "military construction, military housing, and veterans affairs appropriations",
+  budget_reconciliation_and_debt_limit: "a budget process that could set up later tax, spending, deficit, and debt-limit changes",
+  government_funding_and_shutdown: "a package to reopen or keep funding the federal government",
+  temporary_government_funding: "short-term federal funding while Congress worked on full-year spending bills",
+  small_business_loan_eligibility: "who can qualify for certain SBA-backed small-business loans",
+  small_business_regulation: "limits on new regulatory costs for small businesses",
+  military_construction_and_va_appropriations: "funding for military construction, military housing, and veterans affairs",
   appropriations_amendment: "an appropriations amendment",
   conference_instruction: "a conference instruction",
   fentanyl_scheduling_and_penalties: "fentanyl scheduling and penalty changes",
@@ -1015,9 +1004,18 @@ function buildIssueEvidenceSummary(rows, { domain = "", representativeName = "" 
     personLabel,
     supportRows,
   });
-  const focusText =
-    buildReviewedIssueFocus({ opposeRows, supportRows }) ||
-    buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows });
+  const reviewedFocus = buildReviewedIssueFocus({ opposeRows, supportRows });
+  const focusText = reviewedFocus.length
+    ? reviewedFocus
+    : buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows });
+  const contextText = buildVoteContextSummary({ directionalRows, personLabel });
+  const countText = buildIssueCountText({
+    directionalCount: recordedCount,
+    opposeCount,
+    otherCount,
+    supportCount,
+    unresolvedCount,
+  });
   const scopeText = buildIssueScopeText({
     directionalCount: recordedCount,
     issueLabel,
@@ -1037,7 +1035,9 @@ function buildIssueEvidenceSummary(rows, { domain = "", representativeName = "" 
     });
 
   return {
-    coverageLabel: `${recordedCount} interpreted yea/nay`,
+    coverageLabel: `${recordedCount} reviewed yes/no`,
+    contextText,
+    countText,
     focusText,
     lead,
     opposeCount,
@@ -1089,15 +1089,15 @@ function buildReviewedIssueLead({ issueLabel, opposeRows, personLabel, supportRo
   }
 
   if (opposeRows.length > supportRows.length && opposeReads.length) {
-    return `The clearest pattern in this evidence is ${formatPossessive(personLabel)} repeated Nay votes across reviewed ${issueLabel} measures, based on ${directionalCount} interpreted yea/nay ${directionalCount === 1 ? "vote" : "votes"} shown. Examples include ${formatMeasureExamples(opposeReads)}.`;
+    return `${formatPossessive(personLabel)} clearest pattern here is voting No on the reviewed ${issueLabel} measures shown. Those votes involved ${formatMeasureExamples(opposeReads)}.`;
   }
   if (supportRows.length > opposeRows.length && supportReads.length) {
-    return `The clearest pattern in this evidence is ${formatPossessive(personLabel)} repeated Yea votes across reviewed ${issueLabel} measures, based on ${directionalCount} interpreted yea/nay ${directionalCount === 1 ? "vote" : "votes"} shown. Examples include ${formatMeasureExamples(supportReads)}.`;
+    return `${formatPossessive(personLabel)} clearest pattern here is voting Yes on the reviewed ${issueLabel} measures shown. Those votes involved ${formatMeasureExamples(supportReads)}.`;
   }
   if (supportReads.length && opposeReads.length) {
-    return `The clearest pattern in this evidence is a mixed interpreted record across reviewed ${issueLabel} measures. Yea-vote examples include ${formatMeasureExamples(
+    return `The reviewed ${issueLabel} votes shown are mixed. Yes-vote examples include ${formatMeasureExamples(
       supportReads,
-    )}; Nay-vote examples include ${formatMeasureExamples(opposeReads)}.`;
+    )}; No-vote examples include ${formatMeasureExamples(opposeReads)}.`;
   }
 
   return "";
@@ -1107,13 +1107,13 @@ function buildReviewedIssueFocus({ opposeRows, supportRows }) {
   const reasons = [...opposeRows, ...supportRows]
     .map((row) => cleanReviewedSentence(row.why_it_mattered))
     .filter(Boolean);
-  const uniqueReasons = Array.from(new Set(reasons)).slice(0, 3);
+  const uniqueReasons = Array.from(new Set(reasons)).slice(0, 2);
 
   if (!uniqueReasons.length) {
-    return "";
+    return [];
   }
 
-  return `Why these rows mattered: ${formatList(uniqueReasons)}.`;
+  return uniqueReasons.map((reason) => `${reason}.`);
 }
 
 function buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows }) {
@@ -1136,35 +1136,78 @@ function buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows }
   }
 
   if (!read) {
-    return "";
+    return [];
   }
 
   const otherText = otherCount
     ? ` ${otherCount} interpreted ${otherCount === 1 ? "row uses" : "rows use"} another recorded position, such as not voting.`
     : "";
 
-  return `${read}${otherText}`;
+  return [`${read}${otherText}`];
 }
 
 function buildIssueScopeText({ directionalCount, issueLabel, otherCount, rowCount, unresolvedCount }) {
   const pieces = [
-    `This conclusion is based on ${directionalCount} interpreted yea/nay ${directionalCount === 1 ? "vote" : "votes"} among ${rowCount} roll-call ${rowCount === 1 ? "row" : "rows"} shown.`,
+    `This is a read of the ${rowCount} roll-call ${rowCount === 1 ? "row" : "rows"} shown in this section, not a broad ideology score or voting recommendation.`,
   ];
 
   if (directionalCount === 1) {
     pieces.push("Treat it as a narrow signal until more interpreted votes are loaded for this issue.");
   }
-
-  if (otherCount) {
-    pieces.push(`${otherCount} interpreted ${otherCount === 1 ? "row has" : "rows have"} another recorded position.`);
+  if (otherCount || unresolvedCount) {
+    pieces.push("Rows with no yea/nay position or unclear vote meaning stay visible below instead of being forced into the pattern.");
   }
-  if (unresolvedCount) {
-    pieces.push(`${unresolvedCount} procedural or ambiguous ${unresolvedCount === 1 ? "row stays" : "rows stay"} visible but outside the for/against read.`);
-  }
-
-  pieces.push(`It describes this ${issueLabel} evidence section only, not a broad ideology score or voting recommendation.`);
 
   return pieces.join(" ");
+}
+
+function buildIssueCountText({ directionalCount, opposeCount, otherCount, supportCount, unresolvedCount }) {
+  const pieces = [
+    `${directionalCount} reviewed yes/no ${directionalCount === 1 ? "vote" : "votes"}`,
+    `${supportCount} for-side`,
+    `${opposeCount} against-side`,
+  ];
+
+  if (otherCount) {
+    pieces.push(`${otherCount} other recorded position`);
+  }
+  if (unresolvedCount) {
+    pieces.push(`${unresolvedCount} caution ${unresolvedCount === 1 ? "row" : "rows"}`);
+  }
+
+  return `Evidence shown: ${pieces.join(" | ")}.`;
+}
+
+function buildVoteContextSummary({ directionalRows, personLabel }) {
+  if (!directionalRows.length) {
+    return "";
+  }
+
+  const partyRows = directionalRows.filter((row) => row.vote_context?.member_voted_with_party_majority !== null && row.vote_context?.member_voted_with_party_majority !== undefined);
+  const winningRows = directionalRows.filter((row) => row.vote_context?.member_voted_with_winning_side !== null && row.vote_context?.member_voted_with_winning_side !== undefined);
+  const partyMatchCount = partyRows.filter((row) => row.vote_context.member_voted_with_party_majority).length;
+  const winningMatchCount = winningRows.filter((row) => row.vote_context.member_voted_with_winning_side).length;
+  const partyLabel = directionalRows.find((row) => row.vote_context?.member_party)?.vote_context?.member_party;
+  const parts = [];
+
+  if (partyRows.length) {
+    const partyPhrase = partyLabel ? `most ${formatPartyName(partyLabel)}s` : "most of their party";
+    parts.push(`${formatSharePhrase(partyMatchCount, partyRows.length)} matched ${partyPhrase}`);
+  }
+  if (winningRows.length) {
+    const againstWinningCount = winningRows.length - winningMatchCount;
+    if (againstWinningCount > winningMatchCount) {
+      parts.push(`${formatSharePhrase(againstWinningCount, winningRows.length)} were against the final outcome`);
+    } else {
+      parts.push(`${formatSharePhrase(winningMatchCount, winningRows.length)} were with the final outcome`);
+    }
+  }
+
+  if (!parts.length) {
+    return "";
+  }
+
+  return `Context: among the reviewed yes/no votes shown, ${formatPossessive(personLabel)} votes ${formatList(parts)}.`;
 }
 
 function buildMeasureReads(rows) {
@@ -1239,6 +1282,32 @@ function formatList(values) {
   return `${values.slice(0, -1).join(", ")}, and ${values[values.length - 1]}`;
 }
 
+function formatSharePhrase(count, total) {
+  if (count === total) {
+    return "all";
+  }
+  if (count === 0) {
+    return "none";
+  }
+  if (count > total / 2) {
+    return "most";
+  }
+  if (count === total / 2) {
+    return "half";
+  }
+  return `${count} of ${total}`;
+}
+
+function formatPartyName(party) {
+  const labels = {
+    D: "Democrat",
+    R: "Republican",
+    I: "Independent",
+  };
+
+  return labels[party] || String(party || "party member");
+}
+
 function formatMeasureExamples(values, limit = 2) {
   const examples = values.slice(0, limit);
   const extraCount = values.length - examples.length;
@@ -1257,7 +1326,7 @@ function buildActionContext({ domain, evidenceRows, representativeName, selected
   const otherCount = interpretedRows.length - supportCount - opposeCount;
   const cautiousCount = evidenceRows.filter((row) => row.interpretation_status && row.interpretation_status !== "interpreted").length;
   const issueLabel = formatDomainLabel(domain);
-  const contextLine = `${representativeName}'s ${issueLabel} evidence currently shows ${supportCount} for-side, ${opposeCount} against-side, ${otherCount} other-record, and ${cautiousCount} caution rows among the cached vote meanings shown here.`;
+  const contextLine = `${representativeName}'s ${issueLabel} evidence currently shows ${supportCount} for-side, ${opposeCount} against-side, ${otherCount} other-record, and ${cautiousCount} caution rows among the reviewed vote meanings shown here.`;
   const example = selectedEvidenceRow || interpretedRows.find((row) => row.position === "yea" || row.position === "nay") || interpretedRows[0] || evidenceRows[0] || null;
   const exampleLine = formatActionVoteLine(example);
   const selectedVoteLine = selectedEvidenceRow ? formatActionVoteLine(selectedEvidenceRow) : "";
@@ -1389,6 +1458,51 @@ function buildContextBadges(row) {
   return Array.from(new Set(badges));
 }
 
+function buildVoteContextLine(row) {
+  const context = row.vote_context;
+  if (!context) {
+    return "";
+  }
+
+  const pieces = [];
+  if (context.final_result && context.vote_margin !== null && context.vote_margin !== undefined) {
+    pieces.push(`Outcome: ${formatFinalResult(context.final_result)} by ${context.vote_margin} ${context.vote_margin === 1 ? "vote" : "votes"}`);
+  } else if (context.final_result) {
+    pieces.push(`Outcome: ${formatFinalResult(context.final_result)}`);
+  }
+
+  if (context.member_party_majority_position && context.member_party) {
+    pieces.push(`Most ${formatPartyName(context.member_party)}s voted ${formatContextPosition(context.member_party_majority_position)}`);
+  }
+
+  if (!pieces.length) {
+    return "";
+  }
+
+  return pieces.join(". ") + ".";
+}
+
+function formatFinalResult(value) {
+  const labels = {
+    failed: "failed",
+    no_yea_nay_majority: "had no yea/nay majority",
+    passed: "passed",
+  };
+
+  return labels[value] || String(value || "recorded").replaceAll("_", " ");
+}
+
+function formatContextPosition(value) {
+  const labels = {
+    nay: "Nay",
+    not_voting: "Not Voting",
+    present: "Present",
+    yea: "Yea",
+  };
+
+  return labels[value] || String(value || "unknown").replaceAll("_", " ");
+}
+
 function formatVoteType(value) {
   const labels = {
     final_passage: "Final passage",
@@ -1455,10 +1569,10 @@ function buildInterpretationCoverageRead(row) {
     return "No recorded yea/nay votes in this issue.";
   }
   if (!interpretedYeaNay) {
-    return "0 interpreted yea/nay meanings cached; open evidence to inspect raw roll calls.";
+    return "No reviewed yes/no meanings yet; open evidence to inspect raw roll calls.";
   }
   if (interpretedYeaNay === recordedVotes) {
-    return `${interpretedYeaNay} of ${recordedVotes} recorded yea/nay votes have cached vote meaning.`;
+    return `${interpretedYeaNay} of ${recordedVotes} recorded yes/no votes have reviewed meaning.`;
   }
-  return `${interpretedYeaNay} of ${recordedVotes} recorded yea/nay votes have cached vote meaning; the rest stay visible but uninterpreted.`;
+  return `${interpretedYeaNay} of ${recordedVotes} recorded yes/no votes have reviewed meaning; the rest stay visible but uninterpreted.`;
 }
