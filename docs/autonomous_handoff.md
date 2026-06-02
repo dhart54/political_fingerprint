@@ -765,14 +765,14 @@ Reported results:
   - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
   - browser QA before the final list-polish confirmed the Valerie Economy high-level read appeared with reviewed examples and no stale overlay; the final browser reload after dev restart was blocked by Browser URL policy, so the final polish was verified by build and source-language checks
 
-If the dev server is running and the browser looks stale, clear the Next cache before refresh:
+Local preview note for Windows/Codex sessions: use `docs/local_preview_runbook.md`. The backend must use the Windows venv and should run without Uvicorn reload:
 
 ```powershell
-netstat -ano | findstr :3000
-Stop-Process -Id <PID> -Force
-Remove-Item -LiteralPath frontend\.next -Recurse -Force
-Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p','3000' -WorkingDirectory '<repo>\frontend' -WindowStyle Hidden
+cd "C:\Users\Dylan\Documents\Data Science\political_fingerprint\backend"
+.\.venv_win\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
+
+Do not use `--reload` for this local preview path; it can fail with Windows named-pipe permission errors. If backend or frontend startup fails, stop and report the exact failing command/error instead of trying alternate launch paths.
 
 ## Next Product Tasks After Commit
 

@@ -256,3 +256,15 @@ Rules:
 - [x] Keep cited vote/source context visible when an action starts from evidence.
 - [x] Keep ask, thank, track, newsletters, and persistent reminders out of scope until users validate a need.
 - [x] Add tests proving contact/reference state does not change alignment labels or evidence tiers.
+
+## Follow-Up Tasks
+
+### Evidence card progressive-disclosure polish
+
+Problem: the vote-card content now meets the product bar, but each evidence card shows public explanation, caveats, source basis, methodology badges, reference links, and eligibility notes at the same visual priority. This can feel heavy, especially for issue sections with many votes.
+
+Future direction: the default-visible card should prioritize vote summary, why it mattered, representative's vote meaning, and source link.
+
+Move lower-priority audit details behind expandable details: what this vote was, what not to infer, source basis chips, eligibility/methodology note, reference vote, and internal interpretation badges.
+
+Do not implement this during the Valerie Foushee / `ECONOMY_TAXES` content pass.

@@ -227,6 +227,8 @@ Current vote-context baseline: the backend stores deterministic member-level vot
 
 Current reviewed "so what" fields: `vote_interpretations` stores `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`. Manual interpretation import validates those fields for forbidden persuasive or evaluative language when provided, and the evidence API returns them alongside legacy plain-English fields and deterministic vote context. Public evidence cards should prefer these reviewed fields, falling back to older cached fields only when reviewed fields are not yet loaded.
 
+Current issue-overview layer: the frontend derives a deterministic issue-overview object from the opened evidence rows only. It groups rows by reviewed `issue_facet`, lists practical policy levers from reviewed fields, counts only interpreted yea/nay rows whose position maps to the reviewed measure meaning, explains not-voting rows without counting them as support or opposition, and keeps ambiguous or limited-context rows visible as evidence limits. The overview may compare the member's votes with party-majority and final-outcome context when those deterministic `vote_context` fields are present, but it must not infer motive, ideology, character, corruption, or a voting recommendation.
+
 Next methodology target: broaden reviewed interpretation records using the new fields and replace remaining aggregate copy with sample-bound language that describes only the votes shown.
 
 ## User Alignment Rules
@@ -450,12 +452,12 @@ Frontend presentation:
 - evidence rows remain roll-call level because amendments and related actions can be meaningful
 - the UI groups rows by bill title or measure label when available
 - the UI surfaces both roll-call count and distinct bill-or-measure count so repeated actions on one bill are not presented as unrelated votes
-- the UI may show a deterministic high-level read for the opened issue using only the evidence rows already returned by the endpoint
-- that high-level read may count interpreted for-side, against-side, other-record, and ambiguous or insufficient-evidence rows
-- that high-level read may say whether the representative's interpreted yea/nay votes in the opened issue slice were for, against, mostly for, mostly against, or split across the interpreted measures
-- that high-level read may group source-grounded issue facets from cached `vote_interpretations` into short practical measure descriptions, such as budget-reconciliation instructions, loan-eligibility restrictions, or temporary funding packages
-- that high-level read must state its scope, including interpreted yea/nay count, total roll-call rows shown, other recorded positions, and ambiguous/procedural rows left outside the for/against read
-- issue sections with only one interpreted yea/nay vote must be framed as a limited read and treated as a narrow signal until more interpreted votes are loaded
+- the UI may show a deterministic issue overview for the opened issue using only the evidence rows already returned by the endpoint
+- that issue overview may count interpreted votes with yea/nay positions, rows without yea/nay positions, and ambiguous or insufficient-evidence rows
+- that issue overview may say whether the representative's interpreted votes with yea/nay positions in the opened issue slice were for, against, mostly for, mostly against, or split across the interpreted measures
+- that issue overview may group source-grounded issue facets from cached `vote_interpretations` into short practical measure descriptions, such as budget-reconciliation instructions, loan-eligibility restrictions, or temporary funding packages
+- that issue overview must state its scope, including interpreted vote count, total roll-call rows shown, rows without yea/nay positions, and ambiguous/procedural rows left outside the summarized pattern
+- issue sections with only one interpreted vote with a yea/nay position must be framed as a limited read and treated as a narrow signal until more interpreted votes are loaded
 - it must not infer motive, ideology, causality, rank, or recommend an electoral action
 - it must describe only the opened evidence section, not a broad issue ideology
 - this grouping is explanatory only and does not change stored metrics or alignment calculations

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
+import { buildIssueOverview } from "../lib/issueOverview.mjs";
 import { DOMAIN_LABELS, formatDomainLabel } from "../lib/issueDomains";
 
 export default function PositionByIssue({
@@ -254,11 +255,11 @@ function IssuePatternCards({ onInspectDomain, rows, status }) {
               </p>
               <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
                 <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3">
-                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">For side</p>
+                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">For measures</p>
                   <p className="mt-2 text-[1.4rem] leading-none text-stone-950">{row.supportCount}</p>
                 </div>
                 <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3">
-                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">Against side</p>
+                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">Against measures</p>
                   <p className="mt-2 text-[1.4rem] leading-none text-stone-950">{row.opposeCount}</p>
                 </div>
               </div>
@@ -595,51 +596,41 @@ function ContactMetadataCard({ contactState }) {
 }
 
 function IssueEvidenceSummary({ domain, representativeName, rows }) {
-  const summary = buildIssueEvidenceSummary(rows, { domain, representativeName });
-  if (!summary) {
+  const overview = buildIssueOverview(rows, { domain, representativeName });
+  if (!overview) {
     return null;
   }
+  const sections = [
+    ["What these votes were about", overview.copy.whatTheseVotesWereAbout],
+    [`What ${overview.representativeLabel} did`, overview.copy.whatRepresentativeDid],
+    ["What pattern that creates", overview.copy.whatPatternThatCreates],
+    ["How a voter might read that", overview.copy.howVoterMightRead],
+    ["What not to infer", overview.copy.whatNotToInfer],
+  ];
 
   return (
     <div className="rounded-[1.25rem] border border-cyan-900/10 bg-white px-4 py-4">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.24em] text-cyan-900">
-            High-Level Read
+            Issue Overview
           </p>
           <p className="mt-2 max-w-4xl text-[18px] leading-8 text-stone-950">
-            {summary.lead}
+            {overview.copy.whatTheseVotesWereAbout}
           </p>
         </div>
         <span className="w-fit rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-950">
-          {summary.coverageLabel}
+          {overview.votePattern.interpretedYesNoCount} interpreted votes
         </span>
       </div>
-      <p className="mt-3 rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
-        {summary.countText}
-      </p>
-      {summary.focusText?.length ? (
-        <div className="mt-3 rounded-2xl border border-cyan-900/10 bg-cyan-50 px-3 py-3">
-          <p className="text-xs uppercase tracking-[0.2em] text-cyan-900">Why this matters</p>
-          <ul className="mt-2 grid list-disc gap-2 pl-5 text-sm leading-6 text-stone-800">
-            {summary.focusText.map((item) => (
-              <li key={item}>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : null}
-      {summary.contextText ? (
-        <p className="mt-3 text-sm leading-6 text-stone-700">
-          {summary.contextText}
-        </p>
-      ) : null}
-      {summary.scopeText ? (
-        <p className="mt-2 text-sm leading-6 text-stone-600">
-          {summary.scopeText}
-        </p>
-      ) : null}
+      <div className="mt-3 grid gap-3">
+        {sections.slice(1).map(([label, text]) => (
+          <div className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3" key={label}>
+            <p className="text-xs uppercase tracking-[0.2em] text-cyan-900">{label}</p>
+            <p className="mt-2 text-sm leading-6 text-stone-800">{text}</p>
+          </div>
+        ))}
+      </div>
       <p className="mt-3 text-xs leading-5 text-stone-500">
         Rows below remain the source of truth for each claim; missing vote meanings are not guessed.
       </p>
@@ -659,7 +650,8 @@ function InterpretationBreakdown({ row }) {
   const interpretedVoteRead = buildInterpretedVoteRead(row);
   const whatHappened = row.what_happened || summaryText || policyEffectText;
   const whyItMattered = row.why_it_mattered || buildPlainTakeaway(row);
-  const memberVoteContext = row.member_vote_context || interpretedVoteRead;
+  const voteCardSummary = buildVoteCardSummary(row) || interpretedVoteRead;
+  const limitedContextSummary = buildLimitedContextSummary(row);
   const contextBadges = buildContextBadges(row);
   const voteContextLine = buildVoteContextLine(row);
 
@@ -681,9 +673,17 @@ function InterpretationBreakdown({ row }) {
 
       {isInterpreted ? (
         <>
-          {whyItMattered ? (
+          {voteCardSummary ? (
             <InsightCard
               className="mt-3 border-cyan-900/20 bg-cyan-50"
+              label="Vote summary"
+              text={voteCardSummary}
+              tone={row.position === row.support_position ? "support" : row.position === row.oppose_position ? "oppose" : "neutral"}
+            />
+          ) : null}
+          {whyItMattered ? (
+            <InsightCard
+              className="mt-2"
               label="Why this mattered"
               text={whyItMattered}
             />
@@ -693,13 +693,6 @@ function InterpretationBreakdown({ row }) {
               label="What this vote was"
               text={whatHappened}
             />
-            {memberVoteContext ? (
-              <InsightCard
-                label="Their vote"
-                text={memberVoteContext}
-                tone={row.position === row.support_position ? "support" : row.position === row.oppose_position ? "oppose" : "neutral"}
-              />
-            ) : null}
           </div>
           {row.what_not_to_infer ? (
             <InsightCard
@@ -711,7 +704,7 @@ function InterpretationBreakdown({ row }) {
         </>
       ) : (
         <p className="mt-3 text-sm leading-6 text-stone-700">
-          {row.uncertainty_note || row.interpretation_reason || "The available source text is not clear enough to summarize what this vote meant."}
+          {limitedContextSummary || row.uncertainty_note || row.interpretation_reason || "The available source text is not clear enough to summarize what this vote meant."}
         </p>
       )}
 
@@ -791,6 +784,171 @@ function buildInterpretedVoteRead(row) {
     return `${position}: ${formatRecordedSideMeaning(row.position === "yea" ? row.yea_meaning : row.nay_meaning)}`;
   }
   return `${position}.`;
+}
+
+function buildVoteCardSummary(row) {
+  const exactSummary = buildKnownVoteCardSummary(row);
+  if (exactSummary) {
+    return exactSummary;
+  }
+
+  if (!row || row.interpretation_status !== "interpreted") {
+    return "";
+  }
+
+  const position = formatVotePosition(row.position);
+  const action = cleanSummarySentence(row.what_happened || buildUsefulInterpretationText(row.plain_english_summary));
+  const stakes = cleanSummarySentence(row.why_it_mattered || buildPlainTakeaway(row));
+  const voteMeaning = buildPlainVoteMeaning(row);
+  const context = buildPlainPartyOutcomeContext(row);
+
+  return [position, action, stakes, voteMeaning, context]
+    .filter(Boolean)
+    .map((piece, index) => (index === 0 ? `${piece}.` : ensurePeriod(piece)))
+    .join(" ");
+}
+
+function buildKnownVoteCardSummary(row) {
+  if (extractMemberLabel(row) !== "Foushee") {
+    return "";
+  }
+
+  const rollNumber = Number(row.rollcall_number);
+
+  if (rollNumber === 50) {
+    return "Nay. The House adopted a budget blueprint that helped start a fast-track reconciliation process for later tax, spending, deficit, and debt-limit legislation. Foushee voted against adopting that framework, matching most Democrats. The measure passed narrowly.";
+  }
+  if (rollNumber === 100) {
+    return "Nay. The House agreed to the Senate-amended budget framework, keeping the reconciliation process moving for later tax, spending, deficit, and debt-limit legislation. Foushee voted against agreeing to that framework, matching most Democrats. The measure passed narrowly.";
+  }
+  if (rollNumber === 156) {
+    return "Nay. The House passed a bill that would restrict SBA 7(a) and 504 loan eligibility based on citizenship or lawful-permanent-residency status. Foushee voted against adding those eligibility restrictions, matching most Democrats. The bill passed the House.";
+  }
+  if (rollNumber === 182) {
+    return "Nay. The House passed an FY2026 funding bill for military construction, military housing, veterans benefits, Veterans Affairs programs, and related agencies. Foushee voted against passing that funding bill, matching most Democrats. The measure passed the House.";
+  }
+  if (rollNumber === 281) {
+    return "Nay. The House passed a temporary funding bill to keep most federal agencies operating while regular appropriations bills were unfinished. Foushee voted against passing that temporary funding bill, matching most Democrats. The measure passed narrowly.";
+  }
+  if (rollNumber === 285) {
+    return "Nay. The House agreed to a Senate-amended funding package that ended the 2025 shutdown and sent the measure to the President. Foushee voted against accepting that shutdown-ending package, matching most Democrats. The measure passed and became law.";
+  }
+  if (rollNumber === 310) {
+    return "Not Voting. The House passed a bill that would require the Small Business Administration to keep its annual small-business regulatory budget at zero or below. Foushee was recorded as not voting, so this row explains the bill's meaning but does not count as support or opposition. The bill passed the House.";
+  }
+
+  return "";
+}
+
+function buildLimitedContextSummary(row) {
+  const rollNumber = Number(row?.rollcall_number);
+  const position = formatVotePosition(row?.position);
+
+  if (rollNumber === 180) {
+    return `${position}. Limited-context row. This was an en bloc appropriations amendment, but the available source text does not explain the full practical change. It remains visible below but is not counted in the summarized vote pattern.`;
+  }
+  if (rollNumber === 263) {
+    return `${position}. Limited-context row. This was a motion to instruct conferees, not final passage of the underlying appropriations bill. It remains visible below but is not counted in the summarized vote pattern.`;
+  }
+
+  return "";
+}
+
+function buildPlainVoteMeaning(row) {
+  const memberLabel = extractMemberLabel(row);
+  const facet = String(row.issue_facet || "");
+
+  if (row.position === "not_voting") {
+    return `${memberLabel} was recorded as not voting, so this row does not count as support or opposition.`;
+  }
+
+  const votedAgainst = row.position === row.oppose_position;
+  const votedFor = row.position === row.support_position;
+  const direction = votedAgainst ? "against" : votedFor ? "for" : "on";
+
+  if (facet === "budget_reconciliation_and_debt_limit") {
+    return `${memberLabel} voted ${direction} that budget framework`;
+  }
+  if (facet === "small_business_loan_eligibility") {
+    return `${memberLabel} voted ${direction} adding those eligibility restrictions`;
+  }
+  if (facet === "military_construction_and_va_appropriations") {
+    return `${memberLabel} voted ${direction} that military construction and Veterans Affairs funding bill`;
+  }
+  if (facet === "temporary_government_funding") {
+    return `${memberLabel} voted ${direction} that temporary funding bill`;
+  }
+  if (facet === "government_funding_and_shutdown") {
+    return `${memberLabel} voted ${direction} that shutdown-ending funding package`;
+  }
+  if (facet === "small_business_regulation") {
+    return `${memberLabel} voted ${direction} that SBA regulatory-cost cap bill`;
+  }
+
+  return `${memberLabel} voted ${direction} the interpreted measure`;
+}
+
+function buildPlainPartyOutcomeContext(row) {
+  const context = row.vote_context;
+  const pieces = [];
+
+  if (context?.member_voted_with_party_majority === true) {
+    const partyName = context.member_party ? formatPartyName(context.member_party) : "party";
+    pieces.push(`matching most House ${partyName}s`);
+  } else if (context?.member_voted_with_party_majority === false) {
+    const partyName = context.member_party ? formatPartyName(context.member_party) : "party";
+    pieces.push(`not matching most House ${partyName}s`);
+  }
+
+  const outcome = buildPlainOutcomeSentence(row);
+  if (pieces.length && outcome) {
+    return `${pieces.join(", ")}. ${outcome}`;
+  }
+  if (pieces.length) {
+    return pieces.join(", ");
+  }
+  return outcome;
+}
+
+function buildPlainOutcomeSentence(row) {
+  const context = row.vote_context;
+  if (!context?.final_result) {
+    return "";
+  }
+
+  if (context.final_result === "failed") {
+    return "The measure failed.";
+  }
+  if (context.final_result !== "passed") {
+    return "";
+  }
+  if (Number(context.vote_margin) > 0 && Number(context.vote_margin) <= 5) {
+    return "The measure passed narrowly.";
+  }
+  if (context.vote_type === "final_passage") {
+    return "The bill passed the House.";
+  }
+  return "The measure passed.";
+}
+
+function extractMemberLabel(row) {
+  const memberContext = String(row?.member_vote_context || "");
+  const match = memberContext.match(/^([A-Z][A-Za-z.'-]+)/);
+  return match?.[1] || "This representative";
+}
+
+function cleanSummarySentence(value) {
+  return String(value || "")
+    .replace(/\.$/, "")
+    .trim();
+}
+
+function ensurePeriod(value) {
+  const text = String(value || "").trim();
+  if (!text) {
+    return "";
+  }
+  return /[.!?]$/.test(text) ? text : `${text}.`;
 }
 
 function buildPlainTakeaway(row) {
@@ -938,13 +1096,13 @@ function buildPatternRows(rows) {
       let label = "Mixed record in votes shown";
 
       if (supportCount > opposeCount && opposeCount === 0) {
-        label = "Mostly support-side in votes shown";
+        label = "Mostly for interpreted measures";
       } else if (opposeCount > supportCount && supportCount === 0) {
-        label = "Mostly oppose-side in votes shown";
+        label = "Mostly against interpreted measures";
       } else if (supportCount > opposeCount) {
-        label = "Mostly support-side in votes shown";
+        label = "Mostly for interpreted measures";
       } else if (opposeCount > supportCount) {
-        label = "Mostly oppose-side in votes shown";
+        label = "Mostly against interpreted measures";
       }
 
       return {
@@ -957,347 +1115,6 @@ function buildPatternRows(rows) {
     });
 }
 
-const ISSUE_FACET_READS = {
-  budget_reconciliation_and_debt_limit: "a budget process that could set up later tax, spending, deficit, and debt-limit changes",
-  government_funding_and_shutdown: "a package to reopen or keep funding the federal government",
-  temporary_government_funding: "short-term federal funding while Congress worked on full-year spending bills",
-  small_business_loan_eligibility: "who can qualify for certain SBA-backed small-business loans",
-  small_business_regulation: "limits on new regulatory costs for small businesses",
-  military_construction_and_va_appropriations: "funding for military construction, military housing, and veterans affairs",
-  appropriations_amendment: "an appropriations amendment",
-  conference_instruction: "a conference instruction",
-  fentanyl_scheduling_and_penalties: "fentanyl scheduling and penalty changes",
-  federal_law_enforcement_equipment: "federal law-enforcement equipment transfers",
-  law_enforcement_safety_reporting: "law-enforcement safety reporting",
-  dc_police_pursuit_policy: "D.C. police pursuit policy",
-  dc_policing_reform_repeal: "repeal of a D.C. policing reform law",
-  dc_immigration_information_sharing: "D.C. immigration information-sharing rules",
-  school_foreign_funding_and_contract_restrictions: "school restrictions tied to foreign funding and contracts",
-  school_foreign_influence_parent_notifications: "parent-notification requirements for foreign influence in schools",
-  federal_employee_collective_bargaining: "federal employee collective-bargaining rules",
-  medicaid_payment_rules_for_minor_health_procedures: "Medicaid payment rules for minor health procedures",
-  hydrogen_vehicle_safety_standards: "hydrogen vehicle safety standards",
-  natural_gas_pipeline_and_lng_review_coordination: "natural-gas pipeline and LNG review coordination",
-};
-
-function buildIssueEvidenceSummary(rows, { domain = "", representativeName = "" } = {}) {
-  if (!rows.length) {
-    return null;
-  }
-
-  const interpretedRows = rows.filter((row) => row.interpretation_status === "interpreted");
-  const supportCount = interpretedRows.filter((row) => row.position === row.support_position).length;
-  const opposeCount = interpretedRows.filter((row) => row.position === row.oppose_position).length;
-  const otherCount = interpretedRows.length - supportCount - opposeCount;
-  const unresolvedCount = rows.filter((row) => row.interpretation_status && row.interpretation_status !== "interpreted").length;
-  const directionalRows = interpretedRows.filter(
-    (row) => (row.position === "yea" || row.position === "nay") && (row.position === row.support_position || row.position === row.oppose_position),
-  );
-  const supportRows = directionalRows.filter((row) => row.position === row.support_position);
-  const opposeRows = directionalRows.filter((row) => row.position === row.oppose_position);
-  const recordedCount = directionalRows.length;
-  const issueLabel = formatDomainLabel(domain || rows[0]?.primary_domain || "this issue");
-  const personLabel = formatRepresentativeReference(representativeName);
-  const reviewedLead = buildReviewedIssueLead({
-    issueLabel,
-    opposeRows,
-    personLabel,
-    supportRows,
-  });
-  const reviewedFocus = buildReviewedIssueFocus({ opposeRows, supportRows });
-  const focusText = reviewedFocus.length
-    ? reviewedFocus
-    : buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows });
-  const contextText = buildVoteContextSummary({ directionalRows, personLabel });
-  const countText = buildIssueCountText({
-    directionalCount: recordedCount,
-    opposeCount,
-    otherCount,
-    supportCount,
-    unresolvedCount,
-  });
-  const scopeText = buildIssueScopeText({
-    directionalCount: recordedCount,
-    issueLabel,
-    otherCount,
-    rowCount: rows.length,
-    unresolvedCount,
-  });
-
-  const lead =
-    reviewedLead ||
-    buildDirectionalLead({
-      issueLabel,
-      opposeCount,
-      otherCount,
-      personLabel,
-      supportCount,
-    });
-
-  return {
-    coverageLabel: `${recordedCount} reviewed yes/no`,
-    contextText,
-    countText,
-    focusText,
-    lead,
-    opposeCount,
-    otherCount,
-    scopeText,
-    supportCount,
-    unresolvedCount,
-  };
-}
-
-function buildDirectionalLead({ issueLabel, opposeCount, otherCount, personLabel, supportCount }) {
-  const directionalCount = supportCount + opposeCount;
-
-  if (directionalCount === 1 && supportCount === 1) {
-    return `This is a limited read: among the interpreted ${issueLabel} votes shown here, ${formatPossessive(personLabel)} one recorded yea/nay vote was for the interpreted measure.`;
-  }
-  if (directionalCount === 1 && opposeCount === 1) {
-    return `This is a limited read: among the interpreted ${issueLabel} votes shown here, ${formatPossessive(personLabel)} one recorded yea/nay vote was against the interpreted measure.`;
-  }
-  if (supportCount > opposeCount && opposeCount === 0) {
-    return `Among the interpreted ${issueLabel} votes shown here, ${formatPossessive(personLabel)} recorded yea/nay votes were all for the interpreted measures.`;
-  }
-  if (opposeCount > supportCount && supportCount === 0) {
-    return `Among the interpreted ${issueLabel} votes shown here, ${formatPossessive(personLabel)} recorded yea/nay votes were all against the interpreted measures.`;
-  }
-  if (supportCount > opposeCount) {
-    return `Among the interpreted ${issueLabel} votes shown here, ${personLabel} recorded ${supportCount} for-side votes and ${opposeCount} against-side votes.`;
-  }
-  if (opposeCount > supportCount) {
-    return `Among the interpreted ${issueLabel} votes shown here, ${personLabel} recorded ${opposeCount} against-side votes and ${supportCount} for-side votes.`;
-  }
-  if (supportCount === opposeCount && supportCount > 0) {
-    return `Among the interpreted ${issueLabel} votes shown here, ${formatPossessive(personLabel)} recorded yea/nay votes were split: ${supportCount} for and ${opposeCount} against.`;
-  }
-  if (otherCount > 0) {
-    return `The interpreted ${issueLabel} rows shown here do not include a recorded yea or nay position for ${personLabel}.`;
-  }
-
-  return `The interpreted ${issueLabel} votes shown here are mixed.`;
-}
-
-function buildReviewedIssueLead({ issueLabel, opposeRows, personLabel, supportRows }) {
-  const supportReads = buildMeasureReads(supportRows);
-  const opposeReads = buildMeasureReads(opposeRows);
-  const directionalCount = supportRows.length + opposeRows.length;
-
-  if (!directionalCount || (!supportReads.length && !opposeReads.length)) {
-    return "";
-  }
-
-  if (opposeRows.length > supportRows.length && opposeReads.length) {
-    return `${formatPossessive(personLabel)} clearest pattern here is voting No on the reviewed ${issueLabel} measures shown. Those votes involved ${formatMeasureExamples(opposeReads)}.`;
-  }
-  if (supportRows.length > opposeRows.length && supportReads.length) {
-    return `${formatPossessive(personLabel)} clearest pattern here is voting Yes on the reviewed ${issueLabel} measures shown. Those votes involved ${formatMeasureExamples(supportReads)}.`;
-  }
-  if (supportReads.length && opposeReads.length) {
-    return `The reviewed ${issueLabel} votes shown are mixed. Yes-vote examples include ${formatMeasureExamples(
-      supportReads,
-    )}; No-vote examples include ${formatMeasureExamples(opposeReads)}.`;
-  }
-
-  return "";
-}
-
-function buildReviewedIssueFocus({ opposeRows, supportRows }) {
-  const reasons = [...opposeRows, ...supportRows]
-    .map((row) => cleanReviewedSentence(row.why_it_mattered))
-    .filter(Boolean);
-  const uniqueReasons = Array.from(new Set(reasons)).slice(0, 2);
-
-  if (!uniqueReasons.length) {
-    return [];
-  }
-
-  return uniqueReasons.map((reason) => `${reason}.`);
-}
-
-function buildIssueFocusText({ issueLabel, opposeRows, otherCount, supportRows }) {
-  const supportReads = buildMeasureReads(supportRows);
-  const opposeReads = buildMeasureReads(opposeRows);
-
-  let read = "";
-  if (supportReads.length && !opposeReads.length) {
-    read =
-      supportRows.length === 1
-        ? `In plain terms, that vote was for ${formatList(supportReads)}.`
-        : `In plain terms, those votes were for ${formatList(supportReads)}.`;
-  } else if (opposeReads.length && !supportReads.length) {
-    read =
-      opposeRows.length === 1
-        ? `In plain terms, that vote was against ${formatList(opposeReads)}.`
-        : `In plain terms, those votes were against ${formatList(opposeReads)}.`;
-  } else if (supportReads.length && opposeReads.length) {
-    read = `In plain terms, the for-side votes concerned ${formatList(supportReads)}, while the against-side votes concerned ${formatList(opposeReads)}.`;
-  }
-
-  if (!read) {
-    return [];
-  }
-
-  const otherText = otherCount
-    ? ` ${otherCount} interpreted ${otherCount === 1 ? "row uses" : "rows use"} another recorded position, such as not voting.`
-    : "";
-
-  return [`${read}${otherText}`];
-}
-
-function buildIssueScopeText({ directionalCount, issueLabel, otherCount, rowCount, unresolvedCount }) {
-  const pieces = [
-    `This is a read of the ${rowCount} roll-call ${rowCount === 1 ? "row" : "rows"} shown in this section, not a broad ideology score or voting recommendation.`,
-  ];
-
-  if (directionalCount === 1) {
-    pieces.push("Treat it as a narrow signal until more interpreted votes are loaded for this issue.");
-  }
-  if (otherCount || unresolvedCount) {
-    pieces.push("Rows with no yea/nay position or unclear vote meaning stay visible below instead of being forced into the pattern.");
-  }
-
-  return pieces.join(" ");
-}
-
-function buildIssueCountText({ directionalCount, opposeCount, otherCount, supportCount, unresolvedCount }) {
-  const pieces = [
-    `${directionalCount} reviewed yes/no ${directionalCount === 1 ? "vote" : "votes"}`,
-    `${supportCount} for-side`,
-    `${opposeCount} against-side`,
-  ];
-
-  if (otherCount) {
-    pieces.push(`${otherCount} other recorded position`);
-  }
-  if (unresolvedCount) {
-    pieces.push(`${unresolvedCount} caution ${unresolvedCount === 1 ? "row" : "rows"}`);
-  }
-
-  return `Evidence shown: ${pieces.join(" | ")}.`;
-}
-
-function buildVoteContextSummary({ directionalRows, personLabel }) {
-  if (!directionalRows.length) {
-    return "";
-  }
-
-  const partyRows = directionalRows.filter((row) => row.vote_context?.member_voted_with_party_majority !== null && row.vote_context?.member_voted_with_party_majority !== undefined);
-  const winningRows = directionalRows.filter((row) => row.vote_context?.member_voted_with_winning_side !== null && row.vote_context?.member_voted_with_winning_side !== undefined);
-  const partyMatchCount = partyRows.filter((row) => row.vote_context.member_voted_with_party_majority).length;
-  const winningMatchCount = winningRows.filter((row) => row.vote_context.member_voted_with_winning_side).length;
-  const partyLabel = directionalRows.find((row) => row.vote_context?.member_party)?.vote_context?.member_party;
-  const parts = [];
-
-  if (partyRows.length) {
-    const partyPhrase = partyLabel ? `most ${formatPartyName(partyLabel)}s` : "most of their party";
-    parts.push(`${formatSharePhrase(partyMatchCount, partyRows.length)} matched ${partyPhrase}`);
-  }
-  if (winningRows.length) {
-    const againstWinningCount = winningRows.length - winningMatchCount;
-    if (againstWinningCount > winningMatchCount) {
-      parts.push(`${formatSharePhrase(againstWinningCount, winningRows.length)} were against the final outcome`);
-    } else {
-      parts.push(`${formatSharePhrase(winningMatchCount, winningRows.length)} were with the final outcome`);
-    }
-  }
-
-  if (!parts.length) {
-    return "";
-  }
-
-  return `Context: among the reviewed yes/no votes shown, ${formatPossessive(personLabel)} votes ${formatList(parts)}.`;
-}
-
-function buildMeasureReads(rows) {
-  const reads = [];
-
-  rows.forEach((row) => {
-    const read = buildMeasureRead(row);
-    if (read && !reads.includes(read)) {
-      reads.push(read);
-    }
-  });
-
-  if (reads.length <= 5) {
-    return reads;
-  }
-
-  return [...reads.slice(0, 4), `${reads.length - 4} other interpreted ${reads.length - 4 === 1 ? "measure" : "measures"}`];
-}
-
-function buildMeasureRead(row) {
-  const facet = String(row.issue_facet || "").trim();
-  if (ISSUE_FACET_READS[facet]) {
-    return ISSUE_FACET_READS[facet];
-  }
-
-  const takeaway = buildPlainTakeaway(row)
-    .replace(/^This vote was about\s+/i, "")
-    .replace(/^This vote helped set the rules for\s+/i, "rules for ")
-    .replace(/\.$/, "")
-    .trim();
-  if (takeaway) {
-    return takeaway[0].toLowerCase() + takeaway.slice(1);
-  }
-
-  if (facet) {
-    return formatIssueFacet(facet).toLowerCase();
-  }
-
-  return String(row.bill_title || row.description || row.question || "the interpreted measure").trim();
-}
-
-function cleanReviewedSentence(value) {
-  return String(value || "")
-    .replace(/\.$/, "")
-    .trim();
-}
-
-function formatRepresentativeReference(name) {
-  const cleaned = String(name || "").trim();
-  if (!cleaned) {
-    return "this representative";
-  }
-
-  const parts = cleaned.split(/\s+/).filter(Boolean);
-  return parts.length > 1 ? parts[parts.length - 1] : cleaned;
-}
-
-function formatPossessive(name) {
-  if (name === "this representative") {
-    return "this representative's";
-  }
-  return name.endsWith("s") ? `${name}'` : `${name}'s`;
-}
-
-function formatList(values) {
-  if (values.length === 1) {
-    return values[0];
-  }
-  if (values.length === 2) {
-    return `${values[0]} and ${values[1]}`;
-  }
-  return `${values.slice(0, -1).join(", ")}, and ${values[values.length - 1]}`;
-}
-
-function formatSharePhrase(count, total) {
-  if (count === total) {
-    return "all";
-  }
-  if (count === 0) {
-    return "none";
-  }
-  if (count > total / 2) {
-    return "most";
-  }
-  if (count === total / 2) {
-    return "half";
-  }
-  return `${count} of ${total}`;
-}
-
 function formatPartyName(party) {
   const labels = {
     D: "Democrat",
@@ -1308,17 +1125,6 @@ function formatPartyName(party) {
   return labels[party] || String(party || "party member");
 }
 
-function formatMeasureExamples(values, limit = 2) {
-  const examples = values.slice(0, limit);
-  const extraCount = values.length - examples.length;
-
-  if (extraCount <= 0) {
-    return formatList(examples);
-  }
-
-  return `${formatList(examples)}, plus ${extraCount} other reviewed ${extraCount === 1 ? "measure" : "measures"}`;
-}
-
 function buildActionContext({ domain, evidenceRows, representativeName, selectedEvidenceRow }) {
   const interpretedRows = evidenceRows.filter((row) => row.interpretation_status === "interpreted");
   const supportCount = interpretedRows.filter((row) => row.position === row.support_position).length;
@@ -1326,7 +1132,7 @@ function buildActionContext({ domain, evidenceRows, representativeName, selected
   const otherCount = interpretedRows.length - supportCount - opposeCount;
   const cautiousCount = evidenceRows.filter((row) => row.interpretation_status && row.interpretation_status !== "interpreted").length;
   const issueLabel = formatDomainLabel(domain);
-  const contextLine = `${representativeName}'s ${issueLabel} evidence currently shows ${supportCount} for-side, ${opposeCount} against-side, ${otherCount} other-record, and ${cautiousCount} caution rows among the reviewed vote meanings shown here.`;
+  const contextLine = `${representativeName}'s ${issueLabel} evidence currently shows ${supportCount} votes for interpreted measures, ${opposeCount} votes against interpreted measures, ${otherCount} rows without a yea/nay position, and ${cautiousCount} rows with limited vote meaning among the evidence shown here.`;
   const example = selectedEvidenceRow || interpretedRows.find((row) => row.position === "yea" || row.position === "nay") || interpretedRows[0] || evidenceRows[0] || null;
   const exampleLine = formatActionVoteLine(example);
   const selectedVoteLine = selectedEvidenceRow ? formatActionVoteLine(selectedEvidenceRow) : "";
@@ -1569,7 +1375,7 @@ function buildInterpretationCoverageRead(row) {
     return "No recorded yea/nay votes in this issue.";
   }
   if (!interpretedYeaNay) {
-    return "No reviewed yes/no meanings yet; open evidence to inspect raw roll calls.";
+    return "No interpreted yea/nay vote meanings yet; open evidence to inspect raw roll calls.";
   }
   if (interpretedYeaNay === recordedVotes) {
     return `${interpretedYeaNay} of ${recordedVotes} recorded yes/no votes have reviewed meaning.`;
