@@ -727,7 +727,7 @@ function InterpretationBreakdown({ row, selectedActionRow, setSelectedActionRow 
               onClick={() => setSelectedActionRow(row)}
               type="button"
             >
-              Reference Vote
+              Official Vote Record
             </button>
           </div>
           <SourceBasisList sourceBasis={row.source_basis} />
@@ -1217,7 +1217,7 @@ function hasInterpretationDetail(row) {
 
 function formatInterpretationStatus(status) {
   if (status === "interpreted") {
-    return "Interpreted";
+    return "Plain-English";
   }
   if (status === "ambiguous") {
     return "Ambiguous";
