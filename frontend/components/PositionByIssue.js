@@ -380,37 +380,24 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
                         {formatVotePosition(row.position)}
                       </span>
                     </div>
-                    <InterpretationBreakdown row={row} />
-                    <div className="mt-3 flex flex-col gap-3 border-t border-stone-200 pt-3 sm:flex-row sm:items-center sm:justify-between">
-                      <p className="text-xs uppercase leading-5 tracking-[0.16em] text-stone-500 sm:tracking-[0.18em]">
-                        Included as {formatClassificationReason(row.classification_reason)}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        <button
-                          aria-pressed={rowActionKey(selectedActionRow) === rowActionKey(row)}
-                          className={`w-fit rounded-full border px-3 py-2 text-xs uppercase tracking-[0.18em] transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
-                            rowActionKey(selectedActionRow) === rowActionKey(row)
-                              ? "border-cyan-900 bg-cyan-900 text-white"
-                              : "border-stone-300 bg-white text-stone-700 hover:border-cyan-800 hover:bg-cyan-50"
-                          }`}
-                          onClick={() => setSelectedActionRow(row)}
-                          type="button"
+                    <InterpretationBreakdown
+                      row={row}
+                      selectedActionRow={selectedActionRow}
+                      setSelectedActionRow={setSelectedActionRow}
+                    />
+                    <div className="mt-3 flex justify-start border-t border-stone-200 pt-3 sm:justify-end">
+                      {row.source_url ? (
+                        <a
+                          className="w-fit rounded-full border border-cyan-800/20 bg-white px-3 py-2 text-xs uppercase tracking-[0.18em] text-cyan-800 underline-offset-4 transition hover:border-cyan-800 hover:bg-cyan-50 hover:underline"
+                          href={row.source_url}
+                          rel="noreferrer"
+                          target="_blank"
                         >
-                          Reference Vote
-                        </button>
-                        {row.source_url ? (
-                          <a
-                            className="w-fit rounded-full border border-cyan-800/20 bg-white px-3 py-2 text-xs uppercase tracking-[0.18em] text-cyan-800 underline-offset-4 transition hover:border-cyan-800 hover:bg-cyan-50 hover:underline"
-                            href={row.source_url}
-                            rel="noreferrer"
-                            target="_blank"
-                          >
-                            Source
-                          </a>
-                        ) : (
-                          <p className="text-xs uppercase tracking-[0.18em] text-stone-500">No source URL</p>
-                        )}
-                      </div>
+                          Source
+                        </a>
+                      ) : (
+                        <p className="text-xs uppercase tracking-[0.18em] text-stone-500">No source URL</p>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -638,7 +625,7 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
   );
 }
 
-function InterpretationBreakdown({ row }) {
+function InterpretationBreakdown({ row, selectedActionRow, setSelectedActionRow }) {
   if (!hasInterpretationDetail(row)) {
     return null;
   }
@@ -654,28 +641,19 @@ function InterpretationBreakdown({ row }) {
   const limitedContextSummary = buildLimitedContextSummary(row);
   const contextBadges = buildContextBadges(row);
   const voteContextLine = buildVoteContextLine(row);
+  const visibleLimitedSummary =
+    limitedContextSummary ||
+    row.uncertainty_note ||
+    row.interpretation_reason ||
+    "The available source text is not clear enough to summarize what this vote meant.";
 
   return (
-    <div className="mt-3 rounded-2xl border border-cyan-900/10 bg-white px-3 py-3 sm:px-4">
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs uppercase tracking-[0.22em] text-cyan-900">
-          DC-Speak Breakdown
-        </p>
-        <span className={`w-fit rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.18em] ${getInterpretationBadgeClass(row.interpretation_status)}`}>
-          {statusLabel}
-        </span>
-      </div>
-      {voteContextLine ? (
-        <p className="mt-2 rounded-xl bg-stone-50 px-3 py-2 text-xs leading-5 text-stone-600">
-          {voteContextLine}
-        </p>
-      ) : null}
-
+    <div className="mt-3 grid gap-2">
       {isInterpreted ? (
         <>
           {voteCardSummary ? (
             <InsightCard
-              className="mt-3 border-cyan-900/20 bg-cyan-50"
+              className="border-cyan-900/20 bg-cyan-50"
               label="Vote summary"
               text={voteCardSummary}
               tone={row.position === row.support_position ? "support" : row.position === row.oppose_position ? "oppose" : "neutral"}
@@ -683,44 +661,78 @@ function InterpretationBreakdown({ row }) {
           ) : null}
           {whyItMattered ? (
             <InsightCard
-              className="mt-2"
               label="Why this mattered"
               text={whyItMattered}
             />
           ) : null}
-          <div className="mt-2 grid gap-2 lg:grid-cols-[1.1fr_0.9fr]">
-            <InsightCard
-              label="What this vote was"
-              text={whatHappened}
-            />
-          </div>
-          {row.what_not_to_infer ? (
-            <InsightCard
-              className="mt-2"
-              label="What not to infer"
-              text={row.what_not_to_infer}
-            />
-          ) : null}
         </>
       ) : (
-        <p className="mt-3 text-sm leading-6 text-stone-700">
-          {limitedContextSummary || row.uncertainty_note || row.interpretation_reason || "The available source text is not clear enough to summarize what this vote meant."}
-        </p>
+        <InsightCard
+          className="border-amber-200 bg-amber-50"
+          label="Vote summary"
+          text={visibleLimitedSummary}
+        />
       )}
 
-      <div className="mt-3 flex flex-wrap gap-2">
-        {row.issue_facet ? (
-          <span className="rounded-full bg-stone-100 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-stone-600">
-            {formatIssueFacet(row.issue_facet)}
-          </span>
-        ) : null}
-        {contextBadges.map((badge) => (
-          <span className="rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-900" key={badge}>
-            {badge}
-          </span>
-        ))}
-      </div>
-      <SourceBasisList sourceBasis={row.source_basis} />
+      <details className="rounded-xl border border-stone-200 bg-white px-3 py-3">
+        <summary className="cursor-pointer text-xs uppercase tracking-[0.18em] text-stone-600 marker:text-cyan-900">
+          Details
+        </summary>
+        <div className="mt-3 grid gap-3 border-t border-stone-200 pt-3">
+          <div className="flex flex-wrap gap-2">
+            <span className={`w-fit rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.18em] ${getInterpretationBadgeClass(row.interpretation_status)}`}>
+              {statusLabel}
+            </span>
+            {row.issue_facet ? (
+              <span className="rounded-full bg-stone-100 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-stone-600">
+                {formatIssueFacet(row.issue_facet)}
+              </span>
+            ) : null}
+            {contextBadges.map((badge) => (
+              <span className="rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-900" key={badge}>
+                {badge}
+              </span>
+            ))}
+          </div>
+          {voteContextLine ? (
+            <p className="rounded-xl bg-stone-50 px-3 py-2 text-xs leading-5 text-stone-600">
+              {voteContextLine}
+            </p>
+          ) : null}
+          {isInterpreted ? (
+            <>
+              <InsightCard
+                label="What this vote was"
+                text={whatHappened}
+              />
+              {row.what_not_to_infer ? (
+                <InsightCard
+                  label="What not to infer"
+                  text={row.what_not_to_infer}
+                />
+              ) : null}
+            </>
+          ) : null}
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-xs uppercase leading-5 tracking-[0.16em] text-stone-500 sm:tracking-[0.18em]">
+              Included as {formatClassificationReason(row.classification_reason)}
+            </p>
+            <button
+              aria-pressed={rowActionKey(selectedActionRow) === rowActionKey(row)}
+              className={`w-fit rounded-full border px-3 py-2 text-xs uppercase tracking-[0.18em] transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
+                rowActionKey(selectedActionRow) === rowActionKey(row)
+                  ? "border-cyan-900 bg-cyan-900 text-white"
+                  : "border-stone-300 bg-white text-stone-700 hover:border-cyan-800 hover:bg-cyan-50"
+              }`}
+              onClick={() => setSelectedActionRow(row)}
+              type="button"
+            >
+              Reference Vote
+            </button>
+          </div>
+          <SourceBasisList sourceBasis={row.source_basis} />
+        </div>
+      </details>
     </div>
   );
 }
