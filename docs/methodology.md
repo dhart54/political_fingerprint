@@ -462,6 +462,16 @@ Frontend presentation:
 - it must describe only the opened evidence section, not a broad issue ideology
 - this grouping is explanatory only and does not change stored metrics or alignment calculations
 
+Vote-card UX rules:
+
+- the default visible layer must explain the vote in plain English before showing audit or methodology details
+- default-visible cards should prioritize roll date, roll number, recorded vote, vote summary, why it mattered, and source access
+- source links must remain available without opening an expandable details section
+- the expandable details layer is for audit, methodology, source-basis chips, interpretation/status badges, eligibility notes, and reference-vote actions
+- source-basis and methodology details should not be visible by default
+- ambiguous or limited-context votes must show their caveat plainly and must not be over-interpreted into a support/opposition pattern
+- rows where the member was recorded as not voting may explain the bill or measure, but must never be counted as support or opposition
+
 ## Drift Rules
 
 Drift is deterministic and uses the same 730-day window as the fingerprint.
