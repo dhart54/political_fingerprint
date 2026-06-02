@@ -3,6 +3,7 @@
 import { startTransition, useDeferredValue, useEffect, useState } from "react";
 
 import { fetchAlignment, fetchLegislatorComparison, fetchLegislatorSearch } from "../lib/api";
+import { formatDomainLabel } from "../lib/issueDomains";
 
 export default function ComparisonPanel({
   defaultLeftLegislator,
@@ -13,12 +14,13 @@ export default function ComparisonPanel({
 }) {
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query);
+  const trimmedQuery = deferredQuery.trim();
   const [selected, setSelected] = useState({
     left: defaultLeftLegislator,
     right: defaultRightLegislator,
   });
   const [searchState, setSearchState] = useState({
-    status: "loading",
+    status: "idle",
     results: [],
     error: null,
   });
@@ -60,6 +62,18 @@ export default function ComparisonPanel({
 
   useEffect(() => {
     let active = true;
+    const searchQuery = trimmedQuery;
+
+    if (searchQuery.length < 2) {
+      setSearchState({
+        status: "idle",
+        results: [],
+        error: null,
+      });
+      return () => {
+        active = false;
+      };
+    }
 
     startTransition(() => {
       setSearchState((current) => ({
@@ -71,7 +85,7 @@ export default function ComparisonPanel({
 
     async function loadResults() {
       try {
-        const payload = await fetchLegislatorSearch({ query: deferredQuery.trim() });
+        const payload = await fetchLegislatorSearch({ query: searchQuery });
         if (!active) {
           return;
         }
@@ -101,7 +115,7 @@ export default function ComparisonPanel({
     return () => {
       active = false;
     };
-  }, [deferredQuery]);
+  }, [trimmedQuery]);
 
   useEffect(() => {
     let active = true;
@@ -214,6 +228,8 @@ export default function ComparisonPanel({
     compareState.status === "ready"
       ? buildComparisonInsight(compareState.payload)
       : null;
+  const visibleSearchResults = searchState.results.slice(0, 12);
+  const hiddenSearchResultCount = Math.max(0, searchState.results.length - visibleSearchResults.length);
 
   return (
     <section className="mt-8 rounded-[2.5rem] border border-stone-300/80 bg-white/72 p-5 shadow-[0_20px_80px_rgba(72,52,24,0.12)] backdrop-blur xl:p-6">
@@ -286,17 +302,27 @@ export default function ComparisonPanel({
           value={query}
         />
         <div className="mt-4 grid max-h-[430px] gap-3 overflow-y-auto pr-1 lg:grid-cols-2 xl:grid-cols-3">
+          {searchState.status === "idle" ? (
+            <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-600 lg:col-span-2 xl:col-span-3">
+              Enter at least two characters to search for another official. The comparison stays on the current pair until you choose a replacement.
+            </div>
+          ) : null}
           {searchState.status === "error" ? (
             <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
               {searchState.error}
             </div>
           ) : null}
-          {searchState.status !== "error" && searchState.results.length === 0 ? (
+          {searchState.status === "ready" && searchState.results.length === 0 ? (
             <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600">
               No legislators match this search yet.
             </div>
           ) : null}
-          {searchState.results.map((legislator) => (
+          {searchState.status === "ready" && hiddenSearchResultCount ? (
+            <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-600 lg:col-span-2 xl:col-span-3">
+              Showing the first {visibleSearchResults.length} matches. Keep typing to narrow {hiddenSearchResultCount} more.
+            </div>
+          ) : null}
+          {visibleSearchResults.map((legislator) => (
             <div
               className="flex flex-col gap-3 rounded-[1.5rem] border border-stone-200 bg-white/70 px-4 py-4 sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-start xl:min-h-[150px]"
               key={legislator.id}
@@ -467,7 +493,7 @@ function IssueAlignmentRows({ alignment, legislator, onInspectDomain }) {
                 {formatDomainLabel(row.domain)}
               </p>
               <p className="mt-2 text-[1.25rem] leading-7 text-stone-950">
-                {formatAlignmentLabel(row.label)}
+                {formatDisplayLabel(row)}
               </p>
             </div>
             <span className={`w-fit rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.18em] ${getLabelClass(row.label)}`}>
@@ -503,13 +529,6 @@ function formatChamber(chamber) {
   return chamber ? chamber[0].toUpperCase() + chamber.slice(1) : "";
 }
 
-function formatDomainLabel(domain) {
-  return String(domain)
-    .split("_")
-    .map((segment) => segment[0] + segment.slice(1).toLowerCase())
-    .join(" ");
-}
-
 function buildAlignmentSummary(alignment) {
   if (!alignment) {
     return "Select issues above to add this read.";
@@ -520,25 +539,36 @@ function buildAlignmentSummary(alignment) {
     return "No issue preferences selected.";
   }
 
-  const aligned = rows.filter((row) => row.label === "aligned").length;
-  const notAligned = rows.filter((row) => row.label === "not_aligned").length;
-  const mixed = rows.filter((row) => row.label === "mixed").length;
+  const directionalRows = rows.filter((row) => row.preference !== "show_record");
+  const recordOnly = rows.filter((row) => row.preference === "show_record" && row.label !== "insufficient_evidence").length;
+  const aligned = directionalRows.filter((row) => row.label === "aligned").length;
+  const notAligned = directionalRows.filter((row) => row.label === "not_aligned").length;
+  const mixed = directionalRows.filter((row) => row.label === "mixed").length;
   const insufficient = rows.filter((row) => row.label === "insufficient_evidence").length;
+  const recordOnlyText = recordOnly ? `${recordOnly} record shown / ` : "";
 
-  return `${aligned} aligned / ${notAligned} not aligned / ${mixed} mixed / ${insufficient} insufficient`;
+  return `${recordOnlyText}${aligned} aligned / ${notAligned} not aligned / ${mixed} mixed / ${insufficient} insufficient`;
 }
 
 function buildIssueRowCopy(row) {
   if (row.label === "insufficient_evidence") {
     return "This official does not yet have enough source-grounded vote meaning on this issue for an alignment label. Inspect Votes shows the available roll-call record.";
   }
+  if (row.preference === "show_record") {
+    return `${row.interpreted_count} interpreted ${row.interpreted_count === 1 ? "vote is" : "votes are"} available. No for/against preference was selected, so this row is record context rather than an alignment label.`;
+  }
   if (row.label === "mixed") {
     return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes are available.`;
   }
-  if (row.preference === "show_record") {
-    return `${row.interpreted_count} interpreted votes are available for this issue.`;
-  }
   return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes are available.`;
+}
+
+function formatDisplayLabel(row) {
+  if (row.preference === "show_record" && row.label !== "insufficient_evidence") {
+    return "Record shown";
+  }
+
+  return formatAlignmentLabel(row.label);
 }
 
 function formatAlignmentLabel(label) {

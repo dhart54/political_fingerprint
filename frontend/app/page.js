@@ -8,7 +8,7 @@ import ComparisonPanel from "../components/ComparisonPanel";
 import LegislatorPicker from "../components/LegislatorPicker";
 import PositionByIssue from "../components/PositionByIssue";
 import ProfileQuickRead from "../components/ProfileQuickRead";
-import ZipLookupPanel from "../components/ZipLookupPanel";
+import ZipLookupPanel, { UpcomingRacePanel } from "../components/ZipLookupPanel";
 import { fetchCoverageMetadata } from "../lib/api";
 
 const DEFAULT_LEGISLATOR = {
@@ -40,6 +40,11 @@ export default function HomePage() {
     right: DEFAULT_COMPARE_RIGHT,
   });
   const [coverageMetadata, setCoverageMetadata] = useState(null);
+  const [zipRaceState, setZipRaceState] = useState({
+    status: "idle",
+    payload: null,
+    error: null,
+  });
 
   useEffect(() => {
     let active = true;
@@ -89,7 +94,9 @@ export default function HomePage() {
           </div>
           <ZipLookupPanel
             onComparePair={setComparisonSeed}
+            onRaceStateChange={setZipRaceState}
             onSelectLegislator={setSelectedLegislator}
+            showElectionContext={false}
             variant="hero"
           />
         </div>
@@ -144,6 +151,7 @@ export default function HomePage() {
 
         <PositionByIssue
           evidenceRequest={evidenceRequest}
+          legislator={selectedLegislator}
           legislatorId={selectedLegislator.id}
           title={`${selectedLegislator.name_display}'s voting pattern by issue`}
         />
@@ -159,6 +167,12 @@ export default function HomePage() {
           }}
           preferences={issuePreferences}
           seedPair={comparisonSeed}
+        />
+
+        <UpcomingRacePanel
+          onSelectLegislator={setSelectedLegislator}
+          preferences={issuePreferences}
+          raceState={zipRaceState}
         />
 
         <LegislatorPicker

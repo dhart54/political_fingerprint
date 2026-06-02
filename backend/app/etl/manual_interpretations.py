@@ -121,6 +121,9 @@ def validate_manual_interpretations(records: list[dict[str, object]]) -> ManualI
             for field in ("plain_english_summary", "yea_meaning", "nay_meaning", "policy_effect"):
                 if not _clean_text(record.get(field)):
                     errors.append(f"{label}: {field} is required for interpreted records")
+            for field in ("what_happened", "why_it_mattered", "member_vote_context", "what_not_to_infer"):
+                if field in record and not _clean_text(record.get(field)):
+                    errors.append(f"{label}: {field} must be non-empty when provided")
             if not source_basis:
                 errors.append(f"{label}: interpreted records require at least one source_basis item")
 
@@ -130,6 +133,11 @@ def validate_manual_interpretations(records: list[dict[str, object]]) -> ManualI
             "nay_meaning",
             "policy_effect",
             "issue_facet",
+            "what_happened",
+            "why_it_mattered",
+            "member_vote_context",
+            "what_not_to_infer",
+            "so_what_summary",
             "uncertainty_note",
             "interpretation_reason",
         ):
@@ -189,13 +197,32 @@ def _fetch_interpretation_packets(*, legislator_ids: list[str], domains: list[st
             vi.policy_effect,
             vi.issue_facet,
             vi.confidence,
-            vi.uncertainty_note
+            vi.what_happened,
+            vi.why_it_mattered,
+            vi.member_vote_context,
+            vi.what_not_to_infer,
+            vi.uncertainty_note,
+            vc.position AS member_vote,
+            l.party AS member_party,
+            vctx.vote_type,
+            vctx.final_result,
+            vctx.vote_margin,
+            vctx.winning_position,
+            vctx.party_vote_totals,
+            vctx.member_party_majority_position,
+            vctx.member_voted_with_party_majority,
+            vctx.member_voted_with_winning_side,
+            vctx.bipartisan_majority,
+            vctx.sponsor_party,
+            vctx.context_source_list,
+            vctx.context_version
         FROM roll_calls rc
         JOIN bills b ON b.id = rc.bill_id
         JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
         LEFT JOIN vote_interpretations vi ON vi.roll_call_id = rc.id
         LEFT JOIN votes_cast vc ON vc.roll_call_id = rc.id
         LEFT JOIN legislators l ON l.id = vc.legislator_id
+        LEFT JOIN vote_contexts vctx ON vctx.roll_call_id = rc.id AND vctx.legislator_id = l.id
         WHERE {" AND ".join(where_clauses)}
         ORDER BY rc.vote_date DESC, rc.id DESC
         LIMIT %(limit)s
@@ -238,8 +265,64 @@ def _enrich_packets_from_congress_cache(packets: list[dict[str, object]]) -> lis
             official_text["bill_summary"] = cached_bill["summary"]
         if cached_bill.get("subjects"):
             official_text["bill_subjects"] = cached_bill["subjects"]
+        packet["so_what_context"] = _build_so_what_context(cached_bill)
 
     return packets
+
+
+def _build_so_what_context(cached_bill: dict[str, Any]) -> dict[str, object]:
+    latest_action = cached_bill.get("latest_action")
+    laws = cached_bill.get("laws") or []
+    text_versions = cached_bill.get("text_versions") or []
+    cbo_cost_estimates = cached_bill.get("cbo_cost_estimates") or []
+    amendments = cached_bill.get("amendments") or []
+    actions = cached_bill.get("actions") or []
+    committees = cached_bill.get("committees") or []
+
+    return {
+        "bill_lifecycle": {
+            "introduced_date": cached_bill.get("introduced_date"),
+            "origin_chamber": cached_bill.get("origin_chamber"),
+            "latest_action": latest_action,
+            "laws": laws,
+            "became_law": bool(laws)
+            or (
+                isinstance(latest_action, dict)
+                and "became public law" in str(latest_action.get("text") or "").lower()
+            ),
+        },
+        "practical_stakes_prompts": [
+            "What government lever would change: funding, eligibility, penalties, agency authority, reporting, repeal, delay, enforcement, procurement, disclosure, or procedure?",
+            "Who or what is directly affected by the source text: programs, agencies, regulated entities, legal standards, or groups of people?",
+            "Where is this vote in the bill lifecycle: final passage, amendment, rule/procedure, CRA disapproval, appropriations, or another step?",
+            "What cannot be concluded from the available source text?",
+        ],
+        "available_enrichment": {
+            "bill_detail": True,
+            "latest_action": latest_action is not None,
+            "public_law": bool(laws),
+            "cbo_cost_estimates": len(cbo_cost_estimates),
+            "text_versions": len(text_versions),
+            "actions": len(actions),
+            "amendments": len(amendments),
+            "committees": len(committees),
+        },
+        "cbo_cost_estimates": [
+            {
+                "title": estimate.get("title"),
+                "description": estimate.get("description"),
+                "pub_date": estimate.get("pubDate"),
+                "url": estimate.get("url"),
+            }
+            for estimate in cbo_cost_estimates
+            if isinstance(estimate, dict)
+        ],
+        "text_versions": text_versions[:5],
+        "actions": actions[:8],
+        "amendments": amendments[:12],
+        "committees": committees,
+        "legislation_url": cached_bill.get("legislation_url"),
+    }
 
 
 def _persist_manual_interpretations(rows: list[dict[str, object]]) -> None:
@@ -251,13 +334,15 @@ def _persist_manual_interpretations(rows: list[dict[str, object]]) -> None:
             roll_call_id, interpretation_status, support_position, oppose_position,
             interpretation_reason, source_url, interpretation_version, classification_version,
             plain_english_summary, yea_meaning, nay_meaning, policy_effect, issue_facet,
-            confidence, source_basis, uncertainty_note, reviewed_by, reviewed_at
+            confidence, source_basis, uncertainty_note, what_happened, why_it_mattered,
+            member_vote_context, what_not_to_infer, reviewed_by, reviewed_at
         )
         VALUES (
             %(roll_call_id)s, %(interpretation_status)s, %(support_position)s, %(oppose_position)s,
             %(interpretation_reason)s, %(source_url)s, %(interpretation_version)s, %(classification_version)s,
             %(plain_english_summary)s, %(yea_meaning)s, %(nay_meaning)s, %(policy_effect)s, %(issue_facet)s,
-            %(confidence)s, %(source_basis)s::jsonb, %(uncertainty_note)s, %(reviewed_by)s, %(reviewed_at)s
+            %(confidence)s, %(source_basis)s::jsonb, %(uncertainty_note)s, %(what_happened)s, %(why_it_mattered)s,
+            %(member_vote_context)s, %(what_not_to_infer)s, %(reviewed_by)s, %(reviewed_at)s
         )
         ON CONFLICT (roll_call_id) DO UPDATE SET
             interpretation_status = EXCLUDED.interpretation_status,
@@ -275,6 +360,10 @@ def _persist_manual_interpretations(rows: list[dict[str, object]]) -> None:
             confidence = EXCLUDED.confidence,
             source_basis = EXCLUDED.source_basis,
             uncertainty_note = EXCLUDED.uncertainty_note,
+            what_happened = EXCLUDED.what_happened,
+            why_it_mattered = EXCLUDED.why_it_mattered,
+            member_vote_context = EXCLUDED.member_vote_context,
+            what_not_to_infer = EXCLUDED.what_not_to_infer,
             reviewed_by = EXCLUDED.reviewed_by,
             reviewed_at = EXCLUDED.reviewed_at,
             updated_at = NOW()
@@ -310,6 +399,10 @@ def _build_import_row(*, record: dict[str, object], reviewed_by: str) -> dict[st
         "confidence": record.get("confidence"),
         "source_basis": json.dumps(record.get("source_basis", []), sort_keys=True),
         "uncertainty_note": _nullable_text(record.get("uncertainty_note")),
+        "what_happened": _nullable_text(record.get("what_happened")),
+        "why_it_mattered": _nullable_text(record.get("why_it_mattered")),
+        "member_vote_context": _nullable_text(record.get("member_vote_context")),
+        "what_not_to_infer": _nullable_text(record.get("what_not_to_infer")),
         "reviewed_by": reviewed_by,
         "reviewed_at": datetime.now(timezone.utc).isoformat(),
     }
@@ -336,6 +429,22 @@ def _serialize_packet(row: dict[str, Any]) -> dict[str, object]:
             "description": row["description"],
             "source_url": row["source_url"],
         },
+        "vote_context": {
+            "member_vote": row["member_vote"],
+            "member_party": row["member_party"],
+            "vote_type": row["vote_type"],
+            "final_result": row["final_result"],
+            "vote_margin": row["vote_margin"],
+            "winning_position": row["winning_position"],
+            "party_vote_totals": row["party_vote_totals"] or {},
+            "member_party_majority_position": row["member_party_majority_position"],
+            "member_voted_with_party_majority": row["member_voted_with_party_majority"],
+            "member_voted_with_winning_side": row["member_voted_with_winning_side"],
+            "bipartisan_majority": row["bipartisan_majority"],
+            "sponsor_party": row["sponsor_party"],
+            "context_source_list": row["context_source_list"] or [],
+            "context_version": row["context_version"],
+        },
         "current_interpretation": {
             "interpretation_status": row["interpretation_status"],
             "interpretation_reason": row["interpretation_reason"],
@@ -345,6 +454,10 @@ def _serialize_packet(row: dict[str, Any]) -> dict[str, object]:
             "policy_effect": row["policy_effect"],
             "issue_facet": row["issue_facet"],
             "confidence": row["confidence"],
+            "what_happened": row["what_happened"],
+            "why_it_mattered": row["why_it_mattered"],
+            "member_vote_context": row["member_vote_context"],
+            "what_not_to_infer": row["what_not_to_infer"],
             "uncertainty_note": row["uncertainty_note"],
         },
         "draft_template": {
@@ -352,6 +465,15 @@ def _serialize_packet(row: dict[str, Any]) -> dict[str, object]:
             "interpretation_status": "interpreted | ambiguous | insufficient_evidence",
             "support_position": "yea | nay | null",
             "oppose_position": "yea | nay | null",
+            "vote_type": "final_passage | amendment | rule | motion | concurrence | procedural | nomination | appropriations | cra_disapproval | other",
+            "what_happened": "",
+            "why_it_mattered": "",
+            "member_vote_context": "",
+            "what_not_to_infer": "",
+            "practical_mechanism": "funding | eligibility | penalties | agency_authority | reporting | repeal | delay | enforcement | procurement | disclosure | procedure | other",
+            "direct_stakes": "",
+            "evidence_boundary": "",
+            "so_what_summary": "",
             "plain_english_summary": "",
             "yea_meaning": "",
             "nay_meaning": "",

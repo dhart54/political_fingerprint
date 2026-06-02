@@ -2,13 +2,16 @@
 
 import { useEffect, useState } from "react";
 
-import { fetchSupportedZips, fetchZipLookup } from "../lib/api";
+import { fetchCandidateEvidence, fetchSupportedZips, fetchZipLookup, fetchZipRaces } from "../lib/api";
+import { formatDomainLabel } from "../lib/issueDomains";
 
 const DEFAULT_ZIP = "27701";
 
 export default function ZipLookupPanel({
   onComparePair,
+  onRaceStateChange,
   onSelectLegislator,
+  showElectionContext = true,
   variant = "standard",
 }) {
   const [zipCode, setZipCode] = useState(DEFAULT_ZIP);
@@ -21,6 +24,11 @@ export default function ZipLookupPanel({
     status: "loading",
     dataSource: null,
     zips: [],
+  });
+  const [raceState, setRaceState] = useState({
+    status: "idle",
+    payload: null,
+    error: null,
   });
   const [selectedComparisonPreset, setSelectedComparisonPreset] = useState("house_first_senator");
 
@@ -42,6 +50,7 @@ export default function ZipLookupPanel({
       });
 
       const payload = await fetchZipLookup({ zipCode: nextZipCode });
+      loadZipRaces(nextZipCode);
       setSelectedComparisonPreset("house_first_senator");
       setState({
         status: "ready",
@@ -66,6 +75,44 @@ export default function ZipLookupPanel({
           ? `That ZIP code is not in the loaded map yet. Try ${suggestions}.`
           : "That ZIP code is not in the loaded map yet.",
       });
+      setRaceState({
+        status: "idle",
+        payload: null,
+        error: null,
+      });
+      onRaceStateChange?.({
+        status: "idle",
+        payload: null,
+        error: null,
+      });
+    }
+  }
+
+  async function loadZipRaces(nextZipCode) {
+    try {
+      const loadingState = {
+        status: "loading",
+        payload: null,
+        error: null,
+      };
+      setRaceState(loadingState);
+      onRaceStateChange?.(loadingState);
+      const payload = await fetchZipRaces({ zipCode: nextZipCode });
+      const readyState = {
+        status: "ready",
+        payload,
+        error: null,
+      };
+      setRaceState(readyState);
+      onRaceStateChange?.(readyState);
+    } catch (error) {
+      const errorState = {
+        status: "error",
+        payload: null,
+        error: "Upcoming race data is not loaded for this ZIP yet.",
+      };
+      setRaceState(errorState);
+      onRaceStateChange?.(errorState);
     }
   }
 
@@ -267,6 +314,13 @@ export default function ZipLookupPanel({
               ))}
             </div>
           </div>
+
+          {showElectionContext ? (
+            <UpcomingRacePanel
+              onSelectLegislator={onSelectLegislator}
+              raceState={raceState}
+            />
+          ) : null}
         </div>
       ) : null}
 
@@ -298,6 +352,414 @@ export default function ZipLookupPanel({
         </div>
       ) : null}
     </section>
+  );
+}
+
+export function UpcomingRacePanel({ onSelectLegislator, preferences = {}, raceState }) {
+  if (raceState.status === "idle") {
+    return null;
+  }
+
+  const races = raceState.payload?.races || [];
+
+  return (
+    <details className="mt-5 rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4">
+      <summary className="cursor-pointer list-none">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[0.26em] text-stone-500">
+              Secondary Election Context
+            </p>
+            <h4 className="mt-2 font-serif text-[1.65rem] leading-none text-stone-950">
+              Upcoming federal races
+            </h4>
+          </div>
+          <span className="w-fit rounded-full border border-stone-300 bg-white px-3 py-2 text-[11px] uppercase tracking-[0.16em] text-stone-700">
+            Open election context
+          </span>
+        </div>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-stone-600">
+          Current representatives and voting evidence are the primary read. Open this when you want the upcoming race context loaded for the ZIP.
+        </p>
+      </summary>
+
+      <div className="mt-5 border-t border-stone-200 pt-4">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-[0.26em] text-stone-500">
+              Election / Challenger Layer
+            </p>
+            <h5 className="mt-2 font-serif text-[1.55rem] leading-none text-stone-950">
+              Race context after the voting record
+            </h5>
+          </div>
+          <p className="max-w-xl text-sm leading-6 text-stone-600">
+            Candidate rows stay separated by evidence type: recorded votes for linked incumbents, sourced stated-position or institutional records when reviewed, and insufficient evidence when nothing issue-specific is loaded.
+          </p>
+        </div>
+
+        {raceState.status === "loading" ? (
+          <p className="mt-4 text-sm leading-6 text-stone-700">
+            Checking upcoming federal race coverage...
+          </p>
+        ) : null}
+        {raceState.status === "error" ? (
+          <p className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-900">
+            {raceState.error}
+          </p>
+        ) : null}
+        {raceState.status === "ready" && races.length === 0 ? (
+          <p className="mt-4 rounded-2xl border border-stone-200 bg-white px-4 py-3 text-sm leading-6 text-stone-700">
+            No upcoming federal race rows are loaded for this ZIP yet.
+          </p>
+        ) : null}
+        {raceState.status === "ready" && races.length > 0 ? (
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            {races.map((race) => (
+              <article className="rounded-[1.25rem] border border-stone-200 bg-white px-4 py-4" key={race.id}>
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
+                      {formatRaceOffice(race)}
+                    </p>
+                    <h5 className="mt-2 text-[1.35rem] leading-7 text-stone-950">
+                      {race.office_name}
+                    </h5>
+                  </div>
+                  <span className="rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-900">
+                    {formatRaceStatus(race.status)}
+                  </span>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-stone-700">
+                  {race.election_label} - {formatDate(race.election_date)}
+                </p>
+                <div className="mt-4 grid gap-2">
+                  {(race.candidates || []).length ? (
+                    <>
+                      <RaceCandidateLimitNote candidates={race.candidates} />
+                      {getVisibleRaceCandidates(race.candidates).map((candidate) => (
+                        <RaceCandidateCard
+                          candidate={candidate}
+                          key={candidate.id}
+                          onSelectLegislator={onSelectLegislator}
+                          preferences={preferences}
+                        />
+                      ))}
+                    </>
+                  ) : (
+                    <p className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
+                      Candidate roster is not loaded for this race yet. This row is election structure only, not a candidate comparison.
+                    </p>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : null}
+      </div>
+    </details>
+  );
+}
+
+function RaceCandidateLimitNote({ candidates }) {
+  const hiddenCount = Math.max(0, candidates.length - VISIBLE_RACE_CANDIDATE_LIMIT);
+
+  if (!hiddenCount) {
+    return null;
+  }
+
+  return (
+    <p className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
+      Showing the strongest {VISIBLE_RACE_CANDIDATE_LIMIT} candidate evidence rows first. {hiddenCount} additional lower-signal candidate {hiddenCount === 1 ? "row is" : "rows are"} hidden here to keep election context secondary to the current voting record.
+    </p>
+  );
+}
+
+const VISIBLE_RACE_CANDIDATE_LIMIT = 6;
+
+function getVisibleRaceCandidates(candidates) {
+  return [...candidates]
+    .sort((left, right) => candidateEvidencePriority(right) - candidateEvidencePriority(left))
+    .slice(0, VISIBLE_RACE_CANDIDATE_LIMIT);
+}
+
+function candidateEvidencePriority(candidate) {
+  if (candidate.voting_summary) {
+    return 4;
+  }
+  if ((candidate.candidate_evidence_summary?.total_count || 0) > 0) {
+    return 3;
+  }
+  if (candidate.evidence_tier && candidate.evidence_tier !== "insufficient_evidence") {
+    return 2;
+  }
+  return 1;
+}
+
+function RaceCandidateCard({ candidate, onSelectLegislator, preferences = {} }) {
+  const linkedLegislator = candidate.linked_legislator;
+  const votingSummary = candidate.voting_summary;
+  const candidateEvidenceSummary = candidate.candidate_evidence_summary;
+  const selectedIssueReads = buildSelectedIssueCandidateReads({
+    candidateEvidenceSummary,
+    hasVotingSummary: Boolean(votingSummary),
+    preferences,
+  });
+  const [evidenceState, setEvidenceState] = useState({
+    status: "idle",
+    payload: null,
+    error: null,
+  });
+
+  async function toggleCandidateEvidence() {
+    if (evidenceState.status === "ready") {
+      setEvidenceState({
+        status: "idle",
+        payload: null,
+        error: null,
+      });
+      return;
+    }
+
+    try {
+      setEvidenceState({
+        status: "loading",
+        payload: null,
+        error: null,
+      });
+      const payload = await fetchCandidateEvidence({ candidateId: candidate.id });
+      setEvidenceState({
+        status: "ready",
+        payload,
+        error: null,
+      });
+    } catch (error) {
+      setEvidenceState({
+        status: "error",
+        payload: null,
+        error: "Candidate evidence could not be loaded.",
+      });
+    }
+  }
+
+  return (
+    <div className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="text-sm font-medium text-stone-950">{candidate.name}</p>
+        <span className="rounded-full bg-white px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-stone-700">
+          {formatEvidenceTier(candidate.evidence_tier)}
+        </span>
+      </div>
+      <p className="mt-2 text-sm leading-6 text-stone-700">
+        {candidate.evidence_note || "Evidence details are not loaded yet."}
+      </p>
+      {candidate.source_url ? (
+        <a
+          className="mt-2 inline-flex text-xs uppercase tracking-[0.16em] text-cyan-900 underline-offset-4 hover:underline"
+          href={candidate.source_url}
+          rel="noreferrer"
+          target="_blank"
+        >
+          Open Candidate Source
+        </a>
+      ) : null}
+      {votingSummary ? (
+        <div className="mt-3 rounded-2xl border border-cyan-900/10 bg-white px-3 py-3">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-cyan-900">
+            Recorded Votes
+          </p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            <MiniMetric
+              label="Eligible votes"
+              value={formatNumber(votingSummary.eligible_vote_count)}
+            />
+            <MiniMetric
+              label="Interpreted"
+              value={formatNumber(votingSummary.interpreted_vote_count)}
+            />
+          </div>
+          {votingSummary.top_domains?.length ? (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {votingSummary.top_domains.map((domain) => (
+                <span
+                  className="rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-cyan-950"
+                  key={domain.domain}
+                >
+                  {formatDomainLabel(domain.domain)} - {domain.vote_count}
+                </span>
+              ))}
+            </div>
+          ) : null}
+          <p className="mt-3 text-xs leading-5 text-stone-500">
+            Window {formatDate(votingSummary.window_start)} to {formatDate(votingSummary.window_end)}
+          </p>
+        </div>
+      ) : null}
+      {selectedIssueReads.length ? (
+        <div className="mt-3 rounded-2xl border border-stone-200 bg-white px-3 py-3">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
+            Selected Issue Evidence
+          </p>
+          <div className="mt-2 grid gap-2">
+            {selectedIssueReads.map((read) => (
+              <p className="text-sm leading-6 text-stone-700" key={read.domain}>
+                <span className="font-medium text-stone-950">{formatDomainLabel(read.domain)}:</span>{" "}
+                {read.text}
+              </p>
+            ))}
+          </div>
+        </div>
+      ) : null}
+      {!votingSummary ? (
+        <div className="mt-3 rounded-2xl border border-stone-200 bg-white px-3 py-3">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
+            Candidate Evidence Type
+          </p>
+          {candidateEvidenceSummary?.total_count > 0 ? (
+            <>
+              <p className="mt-2 text-sm leading-6 text-stone-700">
+                {formatNumber(candidateEvidenceSummary.total_count)} reviewed sourced record{candidateEvidenceSummary.total_count === 1 ? "" : "s"} loaded across {formatNumber(candidateEvidenceSummary.issue_domain_count)} issue area{candidateEvidenceSummary.issue_domain_count === 1 ? "" : "s"}. These stay separate from recorded-vote evidence.
+              </p>
+              <button
+                className="mt-3 rounded-full border border-stone-300 bg-stone-50 px-3 py-2 text-xs uppercase tracking-[0.16em] text-stone-800 transition hover:border-cyan-800 hover:bg-cyan-50 hover:text-cyan-950 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
+                onClick={toggleCandidateEvidence}
+                type="button"
+              >
+                {evidenceState.status === "ready" ? "Hide Evidence" : "View Evidence"}
+              </button>
+              <CandidateEvidenceDetails evidenceState={evidenceState} />
+            </>
+          ) : (
+            <p className="mt-2 text-sm leading-6 text-stone-700">
+              Insufficient evidence: no recorded governing behavior, reviewed stated position, or reviewed institutional record is loaded for this candidate yet.
+            </p>
+          )}
+        </div>
+      ) : null}
+      {linkedLegislator ? (
+        <button
+          className="mt-3 rounded-full border border-cyan-800 bg-white px-3 py-2 text-xs uppercase tracking-[0.16em] text-cyan-900 transition hover:bg-cyan-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
+          onClick={() => onSelectLegislator?.(linkedLegislator)}
+          type="button"
+        >
+          Open Voting Record
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
+function buildSelectedIssueCandidateReads({ candidateEvidenceSummary, hasVotingSummary, preferences }) {
+  const selectedDomains = Object.keys(preferences || {});
+  if (!selectedDomains.length) {
+    return [];
+  }
+
+  const issueDomainMap = new Map(
+    (candidateEvidenceSummary?.issue_domains || []).map((row) => [row.domain, row]),
+  );
+
+  return selectedDomains.map((domain) => {
+    if (hasVotingSummary) {
+      return {
+        domain,
+        text: "Recorded-vote evidence is available through this candidate's linked voting record.",
+      };
+    }
+
+    const row = issueDomainMap.get(domain);
+    if (!row || !row.total_count) {
+      return {
+        domain,
+        text: "insufficient evidence loaded for this candidate.",
+      };
+    }
+
+    const statedCount = row.tier_counts?.sourced_stated_position || 0;
+    const institutionalCount = row.tier_counts?.institutional_record || 0;
+    const parts = [];
+    if (institutionalCount) {
+      parts.push(`${formatNumber(institutionalCount)} institutional record${institutionalCount === 1 ? "" : "s"}`);
+    }
+    if (statedCount) {
+      parts.push(`${formatNumber(statedCount)} stated-position record${statedCount === 1 ? "" : "s"}`);
+    }
+
+    return {
+      domain,
+      text: parts.length ? `${parts.join(" and ")} loaded.` : "reviewed evidence loaded.",
+    };
+  });
+}
+
+function CandidateEvidenceDetails({ evidenceState }) {
+  if (evidenceState.status === "idle") {
+    return null;
+  }
+  if (evidenceState.status === "loading") {
+    return (
+      <p className="mt-3 text-sm leading-6 text-stone-600">
+        Loading sourced evidence...
+      </p>
+    );
+  }
+  if (evidenceState.status === "error") {
+    return (
+      <p className="mt-3 rounded-2xl border border-amber-200 bg-amber-50 px-3 py-3 text-sm leading-6 text-amber-900">
+        {evidenceState.error}
+      </p>
+    );
+  }
+
+  const evidenceRows = evidenceState.payload?.evidence || [];
+  if (!evidenceRows.length) {
+    return (
+      <p className="mt-3 rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
+        No candidate evidence rows are loaded for this candidate yet.
+      </p>
+    );
+  }
+
+  return (
+    <div className="mt-3 grid gap-2">
+      {evidenceRows.map((row) => (
+        <article className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3" key={row.id}>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded-full bg-white px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-stone-700">
+              {formatEvidenceTypeLabel(row.evidence_tier)}
+            </span>
+            {row.issue_domain ? (
+              <span className="rounded-full bg-cyan-50 px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-cyan-950">
+                {formatDomainLabel(row.issue_domain)}
+              </span>
+            ) : null}
+            <span className="rounded-full bg-white px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-stone-600">
+              {row.confidence} confidence
+            </span>
+          </div>
+          <p className="mt-2 text-sm leading-6 text-stone-800">
+            {row.neutral_summary}
+          </p>
+          <a
+            className="mt-2 inline-flex text-xs uppercase tracking-[0.16em] text-cyan-900 underline-offset-4 hover:underline"
+            href={row.source_url}
+            rel="noreferrer"
+            target="_blank"
+          >
+            Open Source
+          </a>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function MiniMetric({ label, value }) {
+  return (
+    <div>
+      <p className="font-serif text-[1.45rem] leading-none text-stone-950">{value}</p>
+      <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-stone-500">{label}</p>
+    </div>
   );
 }
 
@@ -366,6 +828,63 @@ function formatChamber(chamber) {
 
 function formatParty(party) {
   return party === "D" ? "Democrat" : party === "R" ? "Republican" : party;
+}
+
+function formatRaceOffice(race) {
+  if (race.chamber === "house" && race.district) {
+    return `${race.state}-${race.district}`;
+  }
+  if (race.chamber === "senate") {
+    return `${race.state} statewide`;
+  }
+  return race.state || "Federal";
+}
+
+function formatRaceStatus(status) {
+  return String(status || "upcoming")
+    .split("_")
+    .map((segment) => segment[0].toUpperCase() + segment.slice(1))
+    .join(" ");
+}
+
+function formatEvidenceTier(tier) {
+  if (tier === "recorded_governing_behavior") {
+    return "Recorded behavior";
+  }
+  if (tier === "institutional_record") {
+    return "Institutional record";
+  }
+  if (tier === "sourced_stated_position") {
+    return "Stated position";
+  }
+  return "Insufficient evidence";
+}
+
+function formatEvidenceTypeLabel(tier) {
+  if (tier === "recorded_governing_behavior") {
+    return "Recorded votes";
+  }
+  if (tier === "institutional_record") {
+    return "Institutional record";
+  }
+  if (tier === "sourced_stated_position") {
+    return "Stated position";
+  }
+  return "Insufficient evidence";
+}
+
+function formatNumber(value) {
+  if (typeof value !== "number") {
+    return "0";
+  }
+  return new Intl.NumberFormat("en-US").format(value);
+}
+
+function formatDate(value) {
+  if (!value) {
+    return "date not loaded";
+  }
+  return String(value).slice(0, 10);
 }
 
 function buildZipSuggestion(zips) {

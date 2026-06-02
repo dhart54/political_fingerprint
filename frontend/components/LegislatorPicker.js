@@ -7,14 +7,27 @@ import { fetchLegislatorSearch } from "../lib/api";
 export default function LegislatorPicker({ selectedLegislator, onSelect }) {
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query);
+  const trimmedQuery = deferredQuery.trim();
   const [searchState, setSearchState] = useState({
-    status: "loading",
+    status: "idle",
     results: [],
     error: null,
   });
 
   useEffect(() => {
     let active = true;
+    const searchQuery = trimmedQuery;
+
+    if (searchQuery.length < 2) {
+      setSearchState({
+        status: "idle",
+        results: [],
+        error: null,
+      });
+      return () => {
+        active = false;
+      };
+    }
 
     startTransition(() => {
       setSearchState((current) => ({
@@ -26,7 +39,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
 
     async function loadResults() {
       try {
-        const payload = await fetchLegislatorSearch({ query: deferredQuery.trim() });
+        const payload = await fetchLegislatorSearch({ query: searchQuery });
         if (!active) {
           return;
         }
@@ -56,7 +69,10 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
     return () => {
       active = false;
     };
-  }, [deferredQuery]);
+  }, [trimmedQuery]);
+
+  const visibleResults = searchState.results.slice(0, 12);
+  const hiddenResultCount = Math.max(0, searchState.results.length - visibleResults.length);
 
   return (
     <section className="mt-7 rounded-[2rem] border border-stone-300/70 bg-white/70 p-5 shadow-[0_14px_40px_rgba(72,52,24,0.07)] backdrop-blur">
@@ -73,8 +89,10 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
           </p>
         </div>
         <p className="text-xs uppercase tracking-[0.25em] text-stone-500">
-          {searchState.status === "ready"
-            ? `${searchState.results.length} results`
+          {searchState.status === "idle"
+            ? "Type to search"
+            : searchState.status === "ready"
+              ? `${searchState.results.length} results`
             : searchState.status === "loading"
               ? "Searching"
               : "Search error"}
@@ -90,17 +108,27 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
       />
 
       <div className="mt-4 grid max-h-[360px] gap-3 overflow-y-auto pr-1 md:grid-cols-2 xl:grid-cols-4">
+        {searchState.status === "idle" ? (
+          <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-600 md:col-span-2 xl:col-span-4">
+            Enter at least two characters to search the federal roster. The current representative record stays in view until you choose another official.
+          </div>
+        ) : null}
         {searchState.status === "error" ? (
           <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700 md:col-span-2 xl:col-span-4">
             {searchState.error}
           </div>
         ) : null}
-        {searchState.status !== "error" && searchState.results.length === 0 ? (
+        {searchState.status === "ready" && searchState.results.length === 0 ? (
           <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600 md:col-span-2 xl:col-span-4">
             No legislators match this search. Try a broader name.
           </div>
         ) : null}
-        {searchState.results.map((legislator) => {
+        {searchState.status === "ready" && hiddenResultCount ? (
+          <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-600 md:col-span-2 xl:col-span-4">
+            Showing the first {visibleResults.length} matches. Keep typing to narrow {hiddenResultCount} more.
+          </div>
+        ) : null}
+        {visibleResults.map((legislator) => {
           const isSelected = legislator.id === selectedLegislator.id;
           return (
             <button

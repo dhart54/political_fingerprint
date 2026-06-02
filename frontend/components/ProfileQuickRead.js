@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { fetchDrift, fetchFingerprint, fetchPositions } from "../lib/api";
+import { formatDomainLabel } from "../lib/issueDomains";
 
 export default function ProfileQuickRead({ legislator, onInspectDomain }) {
   const [state, setState] = useState({
@@ -69,7 +70,7 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
   const positionRows = state.positions?.positions || [];
   const topFocus = buildTopFocus(fingerprintRows);
   const topPosition = buildTopPosition(positionRows);
-  const confidence = buildConfidence(fingerprintRows);
+  const coverage = buildCoverage(fingerprintRows);
   const drift = buildDriftRead(state.drift);
 
   return (
@@ -94,7 +95,7 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
             : null}
           {state.status === "error" ? state.error : null}
           {state.status === "ready"
-            ? "A voter-friendly read of issue focus, vote direction, data volume, and change over time."
+            ? "A bounded read of issue focus, vote-direction samples, coverage, and change over time."
             : null}
         </p>
       </div>
@@ -121,9 +122,9 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
           value={state.status === "ready" ? topPosition.value : "--"}
         />
         <QuickCard
-          eyebrow="Data Confidence"
-          label={state.status === "ready" ? confidence.label : "Loading"}
-          value={state.status === "ready" ? confidence.value : "--"}
+          eyebrow="Evidence Coverage"
+          label={state.status === "ready" ? coverage.label : "Loading"}
+          value={state.status === "ready" ? coverage.value : "--"}
         />
         <QuickCard
           eyebrow="Change Over Time"
@@ -164,10 +165,10 @@ function buildHeadline({ status, name, topFocus, topPosition }) {
   }
 
   if (topFocus.domain === "NONE") {
-    return `${name} does not have enough eligible policy votes for a strong read yet.`;
+    return `${name} does not have enough eligible policy votes for a clear read yet.`;
   }
 
-  return `${name}'s recent record centers on ${topFocus.label.toLowerCase()}, with ${topPosition.shortLabel.toLowerCase()} as the clearest vote-direction signal.`;
+  return `${name}'s recent record centers on ${topFocus.label.toLowerCase()}. The clearest vote-direction sample is ${topPosition.shortLabel.toLowerCase()}.`;
 }
 
 function buildTopFocus(rows) {
@@ -204,36 +205,34 @@ function buildTopPosition(rows) {
     };
   }
 
+  const interpretedYeaNay = (strongest.interpreted_support_count || 0) + (strongest.interpreted_oppose_count || 0);
   const gap = Math.abs((strongest.yea_share || 0) - (strongest.nay_share || 0));
-  const direction =
-    gap < 0.15 ? "Mixed" : strongest.yea_share >= strongest.nay_share ? "Leans yea" : "Leans nay";
+  let direction = "Mixed record in votes shown";
+  if (!interpretedYeaNay) {
+    direction = "Too little interpreted evidence";
+  } else if (gap >= 0.15) {
+    direction = strongest.yea_share >= strongest.nay_share ? "Mostly Yea in votes shown" : "Mostly Nay in votes shown";
+  }
   const strongerShare = Math.max(strongest.yea_share || 0, strongest.nay_share || 0);
 
   return {
     shortLabel: `${direction} in ${formatDomainLabel(strongest.domain)}`,
     domain: strongest.domain,
-    label: `${formatDomainLabel(strongest.domain)} has ${strongest.recorded_votes} recorded votes in this window.`,
-    value: direction === "Mixed" ? "Mixed" : `${(strongerShare * 100).toFixed(0)}%`,
+    label: `${formatDomainLabel(strongest.domain)} has ${strongest.recorded_votes} recorded votes in this window; ${interpretedYeaNay} have reviewed vote meaning.`,
+    value:
+      direction === "Mixed record in votes shown"
+        ? "Mixed"
+        : direction === "Too little interpreted evidence"
+          ? "Limited"
+          : `${(strongerShare * 100).toFixed(0)}%`,
   };
 }
 
-function buildConfidence(rows) {
+function buildCoverage(rows) {
   const totalVotes = rows[0]?.total_votes || 0;
-  if (totalVotes >= 50) {
-    return {
-      label: `${totalVotes} eligible votes in the current two-year window.`,
-      value: "Strong",
-    };
-  }
-  if (totalVotes >= 20) {
-    return {
-      label: `${totalVotes} eligible votes in the current two-year window.`,
-      value: "Usable",
-    };
-  }
   return {
     label: `${totalVotes} eligible votes in the current two-year window.`,
-    value: "Thin",
+    value: `${totalVotes} votes`,
   };
 }
 
@@ -269,11 +268,4 @@ function buildDriftRead(drift) {
     label: `Drift score ${driftValue.toFixed(2)} across the two-year window.`,
     value: "Steady",
   };
-}
-
-function formatDomainLabel(domain) {
-  return String(domain)
-    .split("_")
-    .map((segment) => segment[0] + segment.slice(1).toLowerCase())
-    .join(" ");
 }

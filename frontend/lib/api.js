@@ -112,6 +112,18 @@ export async function fetchAlignment({ legislatorId, preferences }) {
   return response.json();
 }
 
+export async function fetchLegislatorContact({ legislatorId }) {
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/contact`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Legislator contact request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchSummary({ legislatorId }) {
   const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/summary`, {
     cache: "no-store",
@@ -131,6 +143,30 @@ export async function fetchZipLookup({ zipCode }) {
 
   if (!response.ok) {
     throw new Error(`ZIP lookup request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
+export async function fetchZipRaces({ zipCode }) {
+  const response = await fetch(`${API_BASE_URL}/lookup/zip/${zipCode}/races`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`ZIP race request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
+export async function fetchCandidateEvidence({ candidateId }) {
+  const response = await fetch(`${API_BASE_URL}/race-candidates/${candidateId}/evidence`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Candidate evidence request failed with status ${response.status}`);
   }
 
   return response.json();

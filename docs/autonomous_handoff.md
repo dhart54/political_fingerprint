@@ -1,10 +1,10 @@
 # Autonomous Handoff
 
-Last updated: 2026-05-16
+Last updated: 2026-05-19
 
 ## Current Branch
 
-- `main`
+- `codex/ballot-north-star`
 
 ## Completed and Committed
 
@@ -175,7 +175,77 @@ Last updated: 2026-05-16
 
 ## Active Checkpoint
 
-No active uncommitted checkpoint.
+Accountability/action checkpoint was committed as `2b07c69 Add accountability action layer`.
+
+Current direction shift:
+
+- Political Fingerprint is now accountability-first rather than ballot-first.
+- Updated north star: `Who represents me, how are they acting on the issues I care about, and what can I do next?`
+- Product hierarchy:
+  1. Representative Accountability Dashboard
+  2. Civic Action / Contact Layer
+  3. Election / Challenger Layer as secondary context
+- Current representatives, issue evidence, interpreted vote meaning, and neutral official contact paths should drive near-term work.
+- Upcoming election and challenger context remains supported but should not lead the primary journey.
+
+Completed in that committed checkpoint:
+
+- Product docs and methodology now use the accountability-first north star.
+- Valerie Foushee / `ECONOMY_TAXES` gold-slice review passed:
+  - Supabase-backed evidence rows present
+  - 9 evidence rows
+  - 7 interpreted
+  - 2 ambiguous
+  - source-basis fields available
+- `PositionByIssue` now shows:
+  - deterministic high-level issue read from opened evidence rows
+  - source-basis chips for interpreted rows
+  - corrected interpreted yea/nay coverage that does not count `not_voting`
+  - UI-only `Take Action` panel with Contact, Ask, Thank, Track
+  - row-level `Use For Action` targeting for action drafts
+- `ZipLookupPanel` now collapses upcoming federal races under `Secondary Election Context`.
+- Contact metadata foundation added:
+  - migration `0007_legislator_contacts.sql`
+  - backend endpoint `GET /legislators/{legislator_id}/contact`
+  - curated official contact fallback for Valerie Foushee, Ted Budd, and Thom Tillis
+  - frontend Contact action displays official contact form, official site, phone, source type, and retrieved date when loaded
+
+Current uncommitted continuation:
+
+- User rejected generated action draft starters as too awkward and app-authored.
+- `CivicActionPanel` now removes generated message bodies entirely.
+- The contact surface now shows official contact metadata and selected evidence context only.
+- `ZipLookupPanel` still fetches ZIP race context, but `UpcomingRacePanel` is now rendered from the home page below the accountability/evidence/action/comparison path.
+- Browser smoke confirmed `Secondary Election Context` appears after `Issue Comparison` and not before `Current Profile`.
+
+Current contact-import continuation:
+
+- Added `backend/app/etl/legislator_contacts.py` for reviewed official contact imports keyed by Bioguide ID.
+- Added `docs/legislator_contacts/nc_federal_contacts_seed.json` with Valerie Foushee, Ted Budd, and Thom Tillis official contact metadata.
+- Added parser/validation tests for the NC federal contact seed.
+- Applied `backend/migrations/0007_legislator_contacts.sql` to the configured Supabase database.
+- Imported the NC federal contact seed to Supabase: 3 records seen, 3 imported.
+- Supabase-backed API smoke confirmed Valerie Foushee, Ted Budd, and Thom Tillis now return `data_source = database` for contact metadata.
+
+Current interpretation continuation:
+
+- Selected Thom Tillis / `INFRASTRUCTURE_TECH_TRANSPORT` as the next visible current-official interpretation slice because it had 7 recorded votes and 1 interpreted vote.
+- Exported `docs/interpretation_batches/batch_007_thom_infra_packets.json`.
+- Added/imported `docs/interpretation_batches/batch_007_thom_infra_interpretations.json`.
+- Imported 7 reviewed records into Supabase:
+  - 1 interpreted direct S.J.Res. 55 passage vote on disapproving the NHTSA hydrogen-vehicle safety standards rule
+  - 6 procedural motion rows marked ambiguous so they remain visible but do not become support/oppose counts
+- Supabase-backed API smoke confirmed the direct vote now has the specific hydrogen-vehicle safety standards read, while the procedural rows show ambiguity notes.
+- Targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`18 passed`).
+- Exported `docs/interpretation_batches/batch_008_valerie_justice_punchup_packets.json`.
+- Added/imported `docs/interpretation_batches/batch_008_valerie_justice_punchup_interpretations.json`.
+- Imported 6 refreshed Valerie Foushee `JUSTICE_PUBLIC_SAFETY` direct-passage interpretations into Supabase:
+  - HALT Fentanyl Act rows now explain permanent classwide scheduling, penalty thresholds, and research-registration changes
+  - Federal law enforcement service-weapon purchase row now explains the GSA retired-firearm purchase program
+  - law enforcement safety/wellness row now explains the DOJ reporting requirement
+  - D.C. policing rows now distinguish vehicular-pursuit policy and repeal of the D.C. policing reform act
+- Supabase-backed API smoke confirmed the refreshed Valerie Justice/Public Safety rows return the more specific summaries and yea/nay meanings.
+- Targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`18 passed`).
 
 ## Verification Already Run
 
@@ -340,28 +410,378 @@ Reported results:
   - targeted backend tests passed: `tests\test_api_positions.py tests\test_db_read_layer.py` (`11 passed`)
   - sandboxed `cd frontend; npm run build` hit Windows `spawn EPERM`
   - escalated rerun of `cd frontend; npm run build` passed
+- Ballot branch first implementation checkpoint:
+  - created branch `codex/ballot-north-star`
+  - added migration `0004_upcoming_races.sql` for `upcoming_races` and `race_candidates`
+  - added `GET /lookup/zip/{zip_code}/races`
+  - added fixture-backed upcoming federal House race rows and NC Senate race context
+  - frontend ZIP lookup now renders an `Upcoming Federal Races` ballot preview section
+  - the slice labels current officeholders as voting-record context, not confirmed candidates
+  - targeted backend tests passed: `tests\test_api_positions.py tests\test_migrations.py` (`12 passed`)
+  - sandboxed `cd frontend; npm run build` hit Windows `spawn EPERM`
+  - escalated rerun of `cd frontend; npm run build` passed
+  - API smoke for ZIP `27701` returned 2 races and recorded-governing-behavior context
+  - unrelated root deletions for `HANDOFF.md` and `PHASE2_ROADMAP.md` were present in the worktree and were not staged
+- FEC federal race importer checkpoint:
+  - added migration `0005_race_candidate_source_keys.sql` for idempotent candidate imports by source and external candidate id
+  - added `external_candidate_id` to race candidate API serialization
+  - added `backend/app/etl/federal_races.py` for local FEC candidate-summary CSV imports
+  - importer groups federal House/Senate candidates into deterministic `upcoming_races` records
+  - FEC-only candidates are labeled `declared_candidate` and `insufficient_evidence` because FEC records do not provide issue positions
+  - added `docs/federal_race_sources.md` and methodology notes
+  - focused backend tests passed: `tests\test_federal_races.py tests\test_migrations.py tests\test_api_positions.py` (`15 passed`)
+  - downloaded official FEC 2026 candidate summary CSV to local ignored cache path `backend\data_sources\fec\candidate_summary_2026.csv`
+  - dry-run parsed `504` federal House/Senate races and `3973` candidates
+  - applied migrations `0004_upcoming_races.sql` and `0005_race_candidate_source_keys.sql` to the configured database
+  - persisted `504` races and `3973` candidate rows to Supabase
+  - backend smoke for ZIP `27701` returned `data_source = database`, NC-04 House race with 5 candidates, and NC Senate race with 25 candidates
+  - added high-confidence incumbent matching by office, state, district, party, incumbent flag, and name
+  - reran the FEC import after matching
+  - backend smoke for ZIP `27701` confirmed Valerie Foushee links to `leg_valerie_p_foushee` with `recorded_governing_behavior`, while challengers remain `insufficient_evidence`
+  - targeted backend tests passed: `tests\test_federal_races.py tests\test_api_positions.py` (`12 passed`)
+  - frontend race cards now show an `Open Voting Record` button for linked incumbent candidates and use the existing selected-legislator profile path
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - in-app browser automation was blocked by `net::ERR_BLOCKED_BY_CLIENT` during local visual verification
+  - linked incumbent race cards now include compact voting summaries from precomputed rows: eligible vote count, interpreted vote count, top issue domains, and data window
+  - backend smoke for ZIP `27701` confirmed Valerie Foushee summary: 58 eligible votes, 20 interpreted votes, top domains `NATIONAL_SECURITY_FOREIGN` and `JUSTICE_PUBLIC_SAFETY`
+  - targeted backend tests passed: `tests\test_api_positions.py` (`9 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - added candidate evidence foundation:
+    - migration `0006_candidate_evidence.sql`
+    - `GET /race-candidates/{candidate_id}/evidence`
+    - race-card candidate evidence summary/empty state for non-incumbents
+    - methodology note that stated positions stay separate from vote-based alignment
+  - applied migration `0006_candidate_evidence.sql` to Supabase
+  - backend smoke for ZIP `27701` confirmed an NC-04 challenger returns an empty candidate-evidence payload instead of an error
+  - targeted backend tests passed: `tests\test_api_positions.py tests\test_migrations.py` (`18 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - added candidate evidence importer `backend/app/etl/candidate_evidence.py`
+  - added reviewed seed `docs/candidate_evidence/nc04_nida_allam_seed.json`
+  - imported 3 Nida Allam institutional-record rows to Supabase from the Justice Democrats candidate profile source
+  - backend smoke for ZIP `27701` confirmed Nida Allam now has 3 candidate evidence records across 3 issue areas
+  - targeted backend tests passed: `tests\test_candidate_evidence.py tests\test_api_positions.py` (`13 passed`)
+  - frontend race cards now include `View Evidence` / `Hide Evidence` for candidates with sourced rows
+  - expanded candidate evidence rows show evidence tier, issue label, confidence, neutral summary, and source link
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - browser verification passed locally after starting backend/frontend:
+    - Nida Allam renders with `3 sourced evidence records loaded across 3 issue areas`
+    - `View Evidence` expands to three institutional-record rows with neutral summaries and source links
+    - no browser console errors were reported
+  - FEC race importer now derives `upcoming` or `past` status from election date and importer `as_of` date
+  - next best task: rerun FEC importer with `--as-of 2026-05-17` to update stored statuses deterministically, then add another reviewed candidate seed
+- Vote interpretation batch 002 checkpoint:
+  - identified largest ZIP `27701` incumbent interpretation gap: Valerie Foushee `NATIONAL_SECURITY_FOREIGN` had 22 eligible votes, 0 interpreted plain-English records
+  - exported `docs/interpretation_batches/batch_002_valerie_national_security_packets.json`
+  - fetched Congress.gov enrichment for `119:s:1071` and `119:hr:3838`
+  - exported enriched packets to `docs/interpretation_batches/batch_002_valerie_national_security_packets_enriched.json`
+  - drafted/imported `docs/interpretation_batches/batch_002_valerie_national_security_interpretations.json`
+  - imported 12 reviewed records into Supabase:
+    - 2 interpreted direct passage votes
+    - 1 ambiguous motion to commit
+    - 9 amendment rows marked insufficient evidence because amendment text was not present in the packet
+  - post-import coverage for Valerie Foushee `NATIONAL_SECURITY_FOREIGN`: 22 eligible, 2 interpreted, 10 reviewed not interpreted, 10 still without reviewed record
+  - API smoke confirmed roll `242` and `297` now return plain-English summaries, while amendment roll `240` returns an uncertainty note instead of guessed meaning
+  - targeted tests passed after escalated rerun to avoid Windows temp permission issue: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+- Vote interpretation batch 003 checkpoint:
+  - fetched Congress.gov enrichment for `119:hres:682`
+  - exported/reused `docs/interpretation_batches/batch_003_valerie_national_security_remaining_packets.json`
+  - drafted/imported `docs/interpretation_batches/batch_003_valerie_national_security_remaining_interpretations.json`
+  - imported the remaining 10 Valerie Foushee `NATIONAL_SECURITY_FOREIGN` review records into Supabase:
+    - 8 NDAA amendment rows marked insufficient evidence because the packet identifies amendment sponsor/number but lacks enough official amendment text to explain the policy change
+    - 2 H.Res. 682 floor-procedure rows marked ambiguous rather than treating rule votes as direct policy alignment
+  - post-import coverage for Valerie Foushee `NATIONAL_SECURITY_FOREIGN`: 22 eligible, 2 interpreted, 20 reviewed not interpreted, 0 without reviewed record
+  - API smoke confirmed rolls `242`, `243`, `244`, and `251` return transparent ambiguity/insufficient-evidence notes
+  - targeted tests passed after escalated rerun to avoid Windows temp permission issue: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+- Budget interpretation punch-up checkpoint:
+  - added `docs/interpretation_batches/batch_004_budget_resolution_punchup.json`
+  - imported refreshed interpretations into Supabase for House rolls `50` and `100`
+  - rewrote the budget-resolution read from generic “adopting the resolution” language into a practical read:
+    - budget blueprint, not final agency funding law
+    - opened reconciliation for later tax/spending/deficit/debt-limit legislation
+    - directed committees to produce follow-up legislation
+    - included the Congress.gov-described $4.5T / $2T deficit-reduction mechanism
+  - evidence cards now lead with `What this vote was`, `Their vote`, and `What it could change` before yea/nay detail
+  - targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - browser verification passed after clearing stale `.next` cache and restarting local Next dev:
+    - no stale `__webpack_modules__[moduleId] is not a function` overlay
+    - Economy/Taxes evidence shows the new `budget blueprint` wording and `What it could change`
+    - old repeated `This concurrent resolution establishes...` paragraph is gone from those budget rows
+- Vote interpretation batch 005 checkpoint:
+  - identified the largest remaining shared ZIP `27701` Senate gap: Thom Tillis and Ted Budd each had 4 `NATIONAL_SECURITY_FOREIGN` eligible votes with 0 interpretations
+  - fetched Congress.gov enrichment for `119:sjres:54`, `119:sjres:53`, `119:sjres:26`, and `119:sjres:33`
+  - exported `docs/interpretation_batches/batch_005_nc_senate_national_security_packets.json`
+  - drafted/imported `docs/interpretation_batches/batch_005_nc_senate_national_security_interpretations.json`
+  - interpreted all 4 shared Senate rows as medium-confidence procedural votes on motions to discharge sale-disapproval resolutions:
+    - UAE proposed foreign military sale
+    - Qatar proposed foreign military sale
+    - two Israel proposed foreign military sale resolutions
+  - key interpretation rule: these were not final votes blocking or approving the sales; a Yea would have advanced a resolution to block the sale, while a Nay opposed advancing that disapproval resolution through the motion
+  - post-import coverage for both `leg_thom_tillis` and `leg_ted_budd` `NATIONAL_SECURITY_FOREIGN`: 4 eligible, 4 interpreted, 0 missing
+  - API smoke confirmed both senators now return interpreted national-security evidence rows with the punchier procedural-sale-disapproval read
+  - targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+- Valerie Economy/Taxes gold-slice checkpoint:
+  - user narrowed the interpretation goal to one official and one issue area before scaling
+  - selected Valerie Foushee / `ECONOMY_TAXES` because it is visible in ZIP `27701` and exposed the generic-interpretation problem
+  - exported `docs/interpretation_batches/batch_006_valerie_economy_gold_packets.json`
+  - drafted/imported `docs/interpretation_batches/batch_006_valerie_economy_gold_interpretations.json`
+  - updated all 9 Valerie Economy/Taxes evidence rows:
+    - budget reconciliation and debt-limit blueprint rows
+    - SBA small-business loan eligibility
+    - SBA regulatory-budget limits
+    - short-term government funding and shutdown funding rows
+    - military construction and VA appropriations
+    - ambiguous amendment/conference-instruction rows left non-interpreted with clear uncertainty notes
+  - frontend `Their vote` now reads the actual stored yea/nay meaning for the legislator's recorded position, and `not_voting` is shown as a non-position
+  - browser verification passed locally:
+    - SBA loan row shows `What this vote was`, `Their vote`, and `What it could change`
+    - shutdown/funding rows render practical effect language
+    - amendment/conference rows render evidence-boundary notes
+    - old generic `This was a vote on passing the bill...` text is gone from the gold slice
+  - targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - methodology and manual workflow docs now define the gold-slice standard
+- Simplified interpretation-card checkpoint:
+  - user agreed the UI should not show generic separate `Yea meant` / `Nay meant` boxes when the selected legislator's actual vote is known
+  - interpretation cards now lead with:
+    - `Why this mattered`
+    - `What this vote was`
+    - `Their vote`
+  - `Their vote` uses the stored yea/nay meaning for the recorded position
+  - `Yea meant` / `Nay meant` remain cached fields for computation/source traceability, but are no longer front-and-center in the public evidence card
+  - browser verification passed after clearing stale `.next` cache:
+    - `Why this mattered` appears
+    - `fast-track budget bill` appears for the budget row
+    - `Their vote` includes `Nay:`
+    - `Yea meant` and `Nay meant` are not shown
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - targeted backend test passed after escalated rerun: `tests\test_api_positions.py` (`11 passed`)
+- Gold-slice specificity checkpoint:
+  - tightened Valerie Foushee / `ECONOMY_TAXES` interpretation language using existing Congress.gov summaries, without adding new data
+  - SBA loan eligibility row now states the real stakes: restricting certain SBA-backed small-business loans based on immigration or residency status
+  - `Their vote` for the SBA loan row now reads as opposing those eligibility restrictions
+  - short-term and shutdown-ending funding rows now distinguish avoiding a shutdown, ending a shutdown, back pay, reduction-in-force limits, and temporary agency funding
+  - SBA regulatory-budget row now says it limits net new SBA rulemaking costs for small businesses
+  - imported refreshed `docs/interpretation_batches/batch_006_valerie_economy_gold_interpretations.json` into Supabase
+  - API smoke confirmed the updated rows for House rolls `156`, `281`, `285`, and `310`
+  - targeted backend tests passed after escalated rerun: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`15 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - browser automation was blocked by browser security policy on the open local tab; visual browser review is still needed in the user-visible page
+  - next best task: visually review the improved SBA row with the user, then replicate this higher-specificity standard to Valerie's next visible issue domain
+- Contact surface simplification checkpoint:
+  - user rejected generated message starters and later rejected copy that still felt like it was coaching them how to write
+  - the civic action panel is now a plain `Contact This Office` surface with official contact metadata and the evidence context already on the page
+  - ask, thank, track, newsletters, and persistent reminders are intentionally out of scope until users validate a need
+  - interpreted vote rows now use `Reference Vote` instead of `Use For Action`
+  - docs now describe the current action surface as official contact paths plus issue/roll-call context, not as four action modes
+  - frontend production build passed before this note; browser restart/visual verification was blocked by the app usage-limit guard, so visual review remains the only missing check for this slice
+- Contact/reference invariant test checkpoint:
+  - added a backend contract test proving contact lookup does not change alignment payloads, position evidence payloads, or race candidate evidence-tier labels
+  - loosened the Valerie contact source assertion so it accepts either the curated fallback or the Supabase-backed database seed while still requiring the official contact fields
+  - targeted backend tests passed: `tests\test_api_positions.py tests\test_api_alignment.py` (`20 passed`)
+  - task/action docs now mark the Phase 15 contact/reference invariant test complete and remove stale ask/thank/track implementation language
+- Vote interpretation batch 009 checkpoint:
+  - exported `docs/interpretation_batches/batch_009_valerie_visible_domain_packets.json`
+  - drafted/imported `docs/interpretation_batches/batch_009_valerie_visible_domain_interpretations.json`
+  - updated 14 Valerie Foushee rows across `HEALTH_SOCIAL`, `EDUCATION_WORKFORCE`, `ENVIRONMENT_ENERGY`, and `IMMIGRATION_BORDER`
+  - direct-passage rows with official summaries now have more practical vote meaning:
+    - Medicaid payment rules for specified procedures for people under age 18
+    - natural gas pipeline and LNG review coordination
+    - federal employee collective-bargaining exclusions
+    - school foreign-influence notifications and foreign funding/contract restrictions
+    - DC immigration-status information-sharing restrictions
+  - title-only and floor-rule rows remain `insufficient_evidence` so they do not become support/oppose alignment counts
+  - API smoke confirmed interpreted counts after import:
+    - `HEALTH_SOCIAL`: 1 interpreted, 3 insufficient
+    - `EDUCATION_WORKFORCE`: 3 interpreted, 3 insufficient
+    - `ENVIRONMENT_ENERGY`: 1 interpreted, 2 insufficient
+    - `IMMIGRATION_BORDER`: 1 interpreted, 0 insufficient
+  - targeted backend tests passed after escalated rerun for Windows temp permissions: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`19 passed`)
+- Batch 009 browser review checkpoint:
+  - local backend/frontend smoke reached ZIP `27701` and Valerie Foushee profile
+  - `Education Workforce` evidence renders practical interpretations for CLASS, TRACE, and Protect America's Workforce rows
+  - education floor-rule and censure/table rows stay `Needs More Evidence`
+  - `Health Social` renders the Medicaid payment row literally and cautiously, with procedural health-rule rows staying `Needs More Evidence`
+  - contact/reference UI still shows `Contact This Office` and `Reference Vote`
+  - browser console error check returned 0 errors for the reviewed slices
+- Contact source caveat checkpoint:
+  - official House and Senate XML source pages confirm public XML availability for House Member Data and Senate contact/member lists
+  - contact workflow now records no-paid-vendor/no-API-key posture while requiring a source-page review before scheduled broad imports
+  - the workflow explicitly does not permit scraping, submitting, or automating member-office contact forms
+  - Phase 14 contact metadata foundation is now complete except for future source-specific maintenance
+- Race neutrality guard checkpoint:
+  - added an API serialization test proving race candidate payloads do not expose rank, score, winner, recommendation, preferred, or similar fields
+  - marked the Phase 9 race display neutrality item complete
+  - targeted tests passed: `tests\test_api_positions.py tests\test_federal_races.py tests\test_candidate_evidence.py` (`24 passed`)
+- Candidate stated-position confidence checkpoint:
+  - candidate evidence importer now rejects `sourced_stated_position` rows with `high` confidence
+  - methodology now states sourced stated positions may use `low` or `medium` confidence, but not `high`
+  - Phase 10 stated-position lower-confidence test item is now complete
+  - targeted tests passed: `tests\test_candidate_evidence.py tests\test_api_positions.py tests\test_federal_races.py` (`25 passed`)
+- Candidate evidence roadmap cleanup:
+  - confirmed `candidate_evidence` migration/importer already store source URL, source type, retrieved date, issue domain, statement text, and confidence
+  - methodology already documents stated-position separation from votes and forbidden persuasion/action language
+  - marked those Phase 10 documentation/storage items complete
+- Race candidate source-link checkpoint:
+  - race candidate cards now expose `Open Candidate Source` from the candidate row's source URL
+  - this gives FEC-only and linked-incumbent candidate rows a direct source path before any expanded candidate evidence rows are opened
+  - marked the Phase 11 candidate-claim source-details item complete
+- NC state pilot source research checkpoint:
+  - added `docs/nc_state_pilot_sources.md`
+  - identified NCSBE candidate CSVs/lists as the first state race source
+  - identified NCGA bill/vote pages plus NCGA web services as the first legislative vote source to inspect
+  - identified NCSBE/NCGA shapefiles and block assignment files as district mapping sources
+  - explicitly marked ZIP-only state district lookup as insufficient for reliable state legislative lookup
+  - marked Phase 12 research/source/district-mapping documentation tasks complete
+- Federal issue coverage clarity checkpoint:
+  - `PositionByIssue` tiles now show interpreted yea/nay coverage, such as `3 of 6 recorded yea/nay votes have cached vote meaning`
+  - `How To Read This` copy now distinguishes recorded vote splits from cached plain-English vote meaning
+  - this keeps classified-but-uninterpreted records visible without making them look like interpreted evidence
+- Interpreted coverage API contract checkpoint:
+  - added backend test coverage for `interpreted_support_count`, `interpreted_oppose_count`, `interpreted_other_count`, and `interpreted_total` in the positions endpoint
+  - this protects the frontend coverage language added to issue tiles
+- Federal race source tradeoff checkpoint:
+  - expanded `docs/federal_race_sources.md` with cost, access/license, freshness, coverage, and source-decision notes
+  - kept FEC candidate summary bulk data as the primary federal race context source
+  - kept Google Civic deferred for address-level election-window lookup, Ballotpedia deferred pending license review, and state election offices reserved for state pilots/ballot certification
+  - marked Phase 9 source tradeoff documentation complete
+- Race evidence-type UI checkpoint:
+  - race cards now state evidence type explicitly: recorded votes, sourced stated-position/institutional records, or insufficient evidence
+  - missing roster and missing candidate-evidence states now avoid implying a candidate comparison exists when the data is not loaded
+  - Phase 11 race UI evidence-type, non-ranking, and empty-state tasks are marked complete
+- Prior-officeholder linkage checkpoint:
+  - federal race importer now loads all stored legislator records for matching instead of current officials only
+  - incumbent candidates still link only to current in-office records
+  - non-incumbent candidates can link to recorded governing behavior only when the same office, state, district, party, and normalized name match a stored legislator record marked no longer in office
+  - Phase 10 prior-officeholder linkage is marked complete
+- Candidate stated-position seed checkpoint:
+  - expanded the Nida Allam NC-04 candidate evidence seed with low-confidence campaign-platform stated-position rows
+  - kept those rows separate from the existing institutional-record rows and below recorded-vote confidence
+  - Phase 10 sourced stated-position records are marked complete
+- Selected-issue race comparison checkpoint:
+  - candidate evidence summaries now include per-issue evidence counts by tier
+  - race cards use the user's selected issues to show whether each candidate has linked recorded-vote evidence, reviewed institutional/stated-position rows, or insufficient evidence for that issue
+  - this remains a coverage comparison, not a candidate score, winner, or voting recommendation
+  - Phase 11 selected-issue candidate comparison is marked complete
+- Interpretation so-what enrichment checkpoint:
+  - Congress.gov enrichment now fetches and caches bill actions, text-version metadata, amendments, and committees in addition to bill detail, summaries, and subjects
+  - the Congress adapter merges those companion files into bill metadata for deterministic packet export
+  - manual interpretation packets now include `so_what_context` with lifecycle, latest action, public-law status, CBO links, text versions, actions, amendments, committees, and enrichment counts
+  - exported bounded Valerie review packets:
+    - `docs/interpretation_batches/batch_006_valerie_economy_gold_packets_so_what.json`
+    - `docs/interpretation_batches/batch_008_valerie_justice_packets_so_what.json`
+    - `docs/interpretation_batches/batch_009_valerie_visible_domains_packets_so_what.json`
+  - targeted backend tests passed after escalated rerun for Windows temp permissions: `tests\test_fetch_sources.py tests\test_congress_adapter.py tests\test_manual_interpretations.py` (`29 passed`)
+  - methodology now states this enrichment is source context for reviewed interpretation, not an automatic support/oppose or policy-effect conclusion
+- Valerie Economy interpretation punch-up checkpoint:
+  - refreshed `docs/interpretation_batches/batch_006_valerie_economy_gold_interpretations.json` using the enriched so-what packet context
+  - imported 9 Valerie Foushee `ECONOMY_TAXES` records into Supabase with `--reviewed-by codex_so_what_review`
+  - interpreted rows now make vote type, practical lever, direct stake, lifecycle boundary, and CBO/action-history source basis clearer
+  - the two ambiguous rows remain ambiguous because the enriched packet still does not provide enough official instruction/amendment text for a source-grounded policy effect
+  - targeted backend tests passed after escalated rerun for Windows temp permissions: `tests\test_manual_interpretations.py tests\test_api_positions.py` (`22 passed`)
+  - local API and browser QA confirmed the Economy evidence panel shows the refreshed wording
+- Repeatable issue-read checkpoint:
+  - `PositionByIssue` high-level evidence reads now use deterministic opened-row data instead of a generic support/oppose count sentence
+  - the read states whether interpreted yea/nay votes were for, against, mostly for, mostly against, or split across interpreted measures
+  - the read groups interpreted issue facets into practical measure descriptions and adds scope language for interpreted yea/nay count, other records, and caution rows
+  - visible labels now use for-side/against-side/other-record language instead of support-side/oppose-side internal phrasing
+  - `docs/manual_interpretation_workflow.md` records the replication checklist from enriched packet export through API/UI/browser QA
+  - methodology documents the issue-read boundary: opened evidence section only, no motive, no broad ideology score, no voting recommendation
+  - frontend production build passed after escalated rerun: `npm run build`
+  - browser QA confirmed Valerie `ECONOMY_TAXES` now reads as a plain conclusion with source-boundary text
+- Neutral record and race-context checkpoint:
+  - neutral starter checks now render interpreted rows as `Record shown` instead of `Mixed`
+  - neutral `show_record` rows are excluded from aligned/not-aligned/mixed headline counts in the alignment and comparison panels
+  - noisy race candidate lists are capped to the strongest 6 evidence rows first, with a visible note disclosing hidden lower-signal rows
+  - methodology now documents the neutral record-view and candidate-list cap behavior
+  - browser QA confirmed Cost of Living rows show `Record shown`, comparison mirrors the label, the NC Senate race cap note appears, and the console has no errors
+- Shared issue-label checkpoint:
+  - added `frontend/lib/issueDomains.js` as the shared issue-domain label map
+  - replaced duplicated label formatters in profile quick read, alignment, comparison, issue evidence, race evidence, and the legacy fingerprint panel
+  - browser QA confirmed the Cost of Living path now shows `Economy & Taxes`, `Health & Social Services`, and `Infrastructure, Tech & Transportation` with no old all-caps/domain-code labels and no console errors
+- Roster-search containment checkpoint:
+  - switch-official and comparison-pair searches now stay idle until the user enters at least two characters
+  - broad search results are capped to the first 12 matches with a note to keep typing when more matches exist
+  - browser QA confirmed the main page no longer shows the full 548-result roster by default, searching `fou` finds Valerie Foushee, and the console has no errors
+- State expansion guardrail checkpoint:
+  - added `docs/state_adapter_checklist.md`
+  - methodology now requires state-level expansion to pass a separate adapter checklist before public UI or broad ETL
+  - checklist covers district lookup, current official identity, member-level roll calls, state-specific vote interpretation, candidate context, separate state storage, UI labels, and go/no-go criteria
+  - marked the state-methodology separation and state-adapter checklist tasks complete
+- Limited issue-read checkpoint:
+  - visual review of Valerie visible-domain evidence found one-vote Health/Social and Environment/Energy reads were technically accurate but too conclusive
+  - `PositionByIssue` now frames one interpreted yea/nay vote as a limited read and adds a narrow-signal scope sentence
+  - single-vote practical reads now use singular wording such as `that vote was against`
+  - methodology and task list now record the limited-read rule
+- Contact copy checkpoint:
+  - evidence-linked contact block now says the app has not sent or saved anything
+  - the badge now reads `User-directed` instead of repeating `Official contact`
+  - this keeps the action layer neutral and avoids implying a drafted or tracked message
+- Loaded-ZIP contact seed checkpoint:
+  - added `docs/legislator_contacts/loaded_zip_federal_contacts_seed.json`
+  - added curated fallback contact metadata for Deborah Ross, Lizzie Fletcher, John Cornyn, Ted Cruz, Lateefah Simon, Adam Schiff, and Alex Padilla
+  - source pages were official House or Senate/member-office contact pages reviewed on 2026-05-22
+  - added tests for the new seed and a loaded-ZIP fallback contact endpoint
+- Vote-context interpretation direction checkpoint:
+  - user accepted a stronger framework: interpretations should produce user-facing "so what" summaries from vote context, not broad yea/nay labels
+  - methodology now requires source-grounded fields for what happened, why it mattered, what the member's vote meant in context, and what not to infer
+  - near-term docs now prioritize backend vote-context storage for final result, vote margin, vote type, party totals, member-with-party status, member-with-winning-side status, sponsor party when available, and interpretation source lists
+  - public labels should move to sample-bound language such as `Mostly Nay in votes shown`, `Mixed record in votes shown`, or `Too little interpreted evidence`
+- Vote-context baseline implementation checkpoint:
+  - added `vote_contexts` storage plus nullable `roll_calls.session`
+  - deterministic ETL now derives vote type, final yea/nay result, vote margin, party totals, party-majority flag, winning-side flag, bipartisan winning-side flag, and official roll-call source lists
+  - manual interpretation packet export now includes `vote_context` and four blank "so what" draft fields
+  - issue evidence API rows now expose `vote_context` for frontend copy/label work
+  - targeted backend verification passed outside the sandbox after the known Windows pytest temp permission issue: `pytest backend/tests/test_vote_context.py backend/tests/test_seed.py backend/tests/test_migrations.py backend/tests/test_manual_interpretations.py backend/tests/test_api_positions.py --basetemp .pytest_tmp` (`42 passed`)
+- Reviewed "so what" field checkpoint:
+  - added `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer` storage/import/API fields
+  - frontend evidence cards now prefer the reviewed fields, show vote-context/caution labels, and avoid broad `Leans Yea/Nay` labels
+  - targeted backend verification passed outside the sandbox after the known Windows pytest temp permission issue: `pytest backend/tests/test_migrations.py backend/tests/test_manual_interpretations.py backend/tests/test_seed.py backend/tests/test_api_positions.py --basetemp .pytest_tmp` (`42 passed`)
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - applied migrations `0008_vote_contexts.sql` and `0009_vote_interpretation_so_what_fields.sql` to the configured Supabase database
+  - backfilled `154,767` Supabase `vote_contexts` rows from stored legislators, roll calls, and member votes
+  - browser QA passed after clearing stale `.next` and restarting backend/frontend dev servers:
+    - sample-bound labels appear
+    - `Leans Yea/Nay` is absent
+    - `Final passage`, `Plain-English interpretation available`, party-context, and winning-side labels render
+    - generic confidence labels are absent
+    - no stale webpack/runtime overlay appears
+- Valerie Economy reviewed-field import checkpoint:
+  - refreshed `docs/interpretation_batches/batch_006_valerie_economy_gold_interpretations.json` with populated `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer` fields for interpreted rows
+  - imported the refreshed gold slice to Supabase with `--reviewed-by codex_so_what_review` (`9` records imported, `0` errors)
+  - targeted backend verification passed: `pytest backend/tests/test_manual_interpretations.py backend/tests/test_api_positions.py --basetemp .pytest_tmp` (`25 passed`)
+  - verification export confirmed the new fields persisted in Supabase, then the temporary export was removed
+  - browser QA on Valerie Foushee / `ECONOMY_TAXES` confirmed the evidence cards show reviewed what-happened, why-it-mattered, member-context, not-voting context, and what-not-to-infer text; `Leans Yea/Nay` and generic confidence labels remain absent
+- Reviewed high-level issue-read checkpoint:
+  - `PositionByIssue` high-level reads now prefer reviewed `why_it_mattered` and measure context when present
+  - the lead uses the bounded "clearest pattern in this evidence" framing before falling back to older count/facet copy
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - browser QA on Valerie Foushee / `ECONOMY_TAXES` confirmed reviewed high-level copy appears, no `Leans Yea/Nay` labels appear, and the stale Next overlay is absent after cache reset/restart
+- Sample-bound public-copy checkpoint:
+  - `ProfileQuickRead` now uses `Mostly Yea/Nay in votes shown`, `Mixed record in votes shown`, or `Too little interpreted evidence` instead of `Leans Yea/Nay`
+  - quick-read coverage now appears as `Evidence Coverage` with eligible-vote count, not `Data Confidence` with strong/usable/thin labels
+  - the issue first-read sentence now says the section shows a sample-bound pattern, not that the legislator "more often voted" a direction
+  - reviewed issue leads now show two concrete examples and a bounded "plus N other reviewed measures" clause to keep the economy read shorter
+  - frontend production build passed after the known Windows `spawn EPERM` escalated rerun
+  - browser QA before the final list-polish confirmed the Valerie Economy high-level read appeared with reviewed examples and no stale overlay; the final browser reload after dev restart was blocked by Browser URL policy, so the final polish was verified by build and source-language checks
 
-If the dev server is running and the browser looks stale, clear the Next cache before refresh:
+Local preview note for Windows/Codex sessions: use `docs/local_preview_runbook.md`. The backend must use the Windows venv and should run without Uvicorn reload:
 
 ```powershell
-netstat -ano | findstr :3000
-Stop-Process -Id <PID> -Force
-Remove-Item -LiteralPath frontend\.next -Recurse -Force
-Start-Process -FilePath npx.cmd -ArgumentList 'next','dev','-H','127.0.0.1','-p','3000' -WorkingDirectory '<repo>\frontend' -WindowStyle Hidden
+cd "C:\Users\Dylan\Documents\Data Science\political_fingerprint\backend"
+.\.venv_win\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
+
+Do not use `--reload` for this local preview path; it can fail with Windows named-pipe permission errors. If backend or frontend startup fails, stop and report the exact failing command/error instead of trying alternate launch paths.
 
 ## Next Product Tasks After Commit
 
 Work from `docs/product_v2_tasklist.md` in this order:
 
-1. Commit and push the north-star roadmap/docs update if not already pushed.
-2. Confirm Render and Vercel redeploy through the latest pushed commit.
-3. Smoke-test deployed evidence rows and pattern cards for `leg_thom_tillis` `INFRASTRUCTURE_TECH_TRANSPORT` and ZIP `27701`.
-4. Start Phase 9 federal ballot proof:
-   - research reliable upcoming federal race data sources
-   - document source cost/license/freshness/coverage
-   - draft `upcoming_races` and `race_candidates` schema
-5. Continue expanding manual interpretations for high-visibility federal/starter issue records in parallel with ballot-data research.
+1. Review the Valerie Economy issue section visually and decide whether the high-level read shape is good enough to replicate.
+2. Apply the same reviewed-field pass to one more visible domain only after the high-level read shape is accepted.
+3. Keep checking that not-voting and ambiguous rows stay visible without becoming support/opposition counts.
+4. Keep newsletter/email tracking out of scope until users validate persistent tracking.
 
 The detailed action plan is `docs/north_star_action_plan.md`.
 

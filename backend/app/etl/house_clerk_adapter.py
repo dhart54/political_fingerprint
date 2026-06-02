@@ -168,6 +168,7 @@ def _parse_roll_call(
         "id": f"rc_house_{roll_number:03d}",
         "chamber": "house",
         "congress": congress,
+        "session": session,
         "rollcall_number": roll_number,
         "vote_date": action_date,
         "question": vote_question,

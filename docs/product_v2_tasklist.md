@@ -1,12 +1,12 @@
 # Product Roadmap
 
-This roadmap moves Political Fingerprint from an MVP dashboard into a ballot-aware civic product.
+This roadmap moves Political Fingerprint from an MVP dashboard into an accountability-first civic product.
 
 North star:
 
-**Who is on my ballot, and what does the evidence show about how they act on the issues I care about?**
+**Who represents me, how are they acting on the issues I care about, and what can I do next?**
 
-The current v2 product focuses on current federal officials and interpreted voting records. The next expansion should add upcoming races and candidate evidence tiers while preserving the original trust rules.
+The current v2 product focuses on current federal officials, interpreted voting records, issue evidence, and user-selected issue alignment. The next expansion should add a neutral civic action/contact layer before continuing broad election or challenger work.
 
 Core rule: inform the user, do not persuade the user. The product may show evidence-based alignment relative to user-selected preferences. It must not tell the user how to vote.
 
@@ -78,6 +78,7 @@ Execution detail lives in `docs/north_star_action_plan.md`.
 - [x] Add lightweight error monitoring guidance.
 - [x] Add accessibility and mobile layout checks for the full voter journey.
 - [x] Add neutral starter issue checks to reduce first-use friction.
+- [x] Label neutral starter issue rows as record views instead of alignment conclusions.
 - [x] Auto-open the ZIP-mapped House profile after lookup.
 - [x] Make evidence source URLs clickable in vote drilldowns.
 - [x] Replace compressed comparison counts with per-issue comparison cards.
@@ -85,6 +86,7 @@ Execution detail lives in `docs/north_star_action_plan.md`.
 - [x] Remove dashboard-style radar, drift, summary, and API health sections from the main voter path.
 - [x] Reorder the page around quick read, issue selection, alignment, evidence, and comparison.
 - [x] Convert the old active-legislator/search block into a compact switch-official utility.
+- [x] Keep switch-official and comparison-pair searches idle until the user types a real query.
 - [x] Polish mobile headings, first-viewport height, issue selection, and comparison supporting context.
 - [x] Polish insufficient-evidence copy so missing vote-meaning data reads as an honest evidence status.
 - [x] Collapse comparison legislator search into a secondary pair-edit drawer.
@@ -97,15 +99,23 @@ Execution detail lives in `docs/north_star_action_plan.md`.
 - [x] Make ZIP lookup comparison preset buttons show hover, focus, and selected states.
 - [x] Compact evidence row metadata so source access remains available without giving internal classification labels primary space.
 - [x] Run final frontend pass and polish starter-check selected states plus narrow evidence-card spacing.
+- [x] Share human-readable issue-domain labels across accountability, comparison, and race evidence surfaces.
 
 ## Working Priority
 
 Current next build target:
 
-1. Confirm deployment through the latest main commit and smoke-test interpreted issue patterns.
-2. Expand source-grounded manual interpretations for high-visibility federal/starter issue records.
-3. Begin federal ballot proof: ZIP to upcoming federal races and candidate records.
-4. Add candidate evidence tiers before expanding beyond current officials.
+1. Visually review the improved Valerie Foushee / `ECONOMY_TAXES` gold slice.
+2. Make the current-representative accountability dashboard the clear primary journey.
+3. Keep the neutral contact layer focused on official contact metadata and evidence context.
+4. Expand source-grounded manual interpretations for high-visibility current-official issue records.
+5. Keep upcoming election and challenger context secondary, evidence-tiered, and non-prescriptive.
+
+Priority hierarchy for new work:
+
+1. Representative Accountability Dashboard
+2. Civic Action / Contact Layer
+3. Election / Challenger Layer
 
 ## Shelved Product Ideas
 
@@ -121,10 +131,31 @@ Current next build target:
 - [x] Import reviewed interpretations into Supabase.
 - [x] Surface plain-English vote meaning in evidence rows.
 - [x] Aggregate interpreted vote meanings into neutral issue pattern cards.
+- [x] Show interpreted-vote coverage on issue tiles before users open evidence.
+- [x] Add second reviewed interpretation batch for Valerie Foushee national-security/defense votes.
+- [x] Complete remaining Valerie Foushee national-security/defense review pass with explicit ambiguity and insufficient-evidence records.
+- [x] Punch up budget-resolution interpretations so evidence rows explain practical process effects, not just formal vote labels.
+- [x] Add shared NC Senate national-security interpretations for foreign-military-sale disapproval motions.
+- [x] Create Valerie Foushee / Economy-Taxes gold slice for replicable high-quality vote interpretation.
+- [x] Tighten the Valerie Economy-Taxes gold slice with higher-specificity stakes from existing official summaries.
+- [x] Make opened issue evidence reads draw a bounded, repeatable plain-language conclusion from interpreted votes.
+- [x] Document the repeatable issue-read workflow from enriched packet export through browser QA.
+- [x] Add Valerie Foushee visible-domain interpretation batch for Health/Social, Education/Workforce, Environment/Energy, and Immigration/Border rows.
+- [x] Mark one-vote issue reads as limited signals instead of broad all-for/all-against patterns.
+- [x] Add vote-context storage for final result, vote margin, vote type, party vote totals, sponsor party when available, member-with-party status, member-with-winning-side status, and interpretation source list.
+- [x] Derive party and winning-side baselines deterministically from stored roll-call/member-vote data.
+- [x] Update interpretation packet export to include vote-context baselines and source lists.
+- [x] Expose stored vote-context baselines on issue evidence API rows for frontend use.
+- [x] Add reviewed interpretation fields for `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`.
+- [x] Replace broad `leans yea/nay` public labels with sample-bound labels: `Mostly Yea in votes shown`, `Mostly Nay in votes shown`, `Mixed record in votes shown`, and `Too little interpreted evidence`.
+- [x] Replace generic public confidence labels with caution/type labels such as `Procedural vote`, `Amendment vote`, `Final passage`, `Plain-English interpretation available`, and `Limited source context`.
+- [x] Update issue summaries to use the bounded pattern: "The clearest pattern in this evidence is [specific pattern], based on [n] interpreted votes. This is a summary of the votes shown, not a full ideology score."
 
 ## Next Lens - Ballot-Aware Candidate Comparison
 
-Goal: move from "current officials by ZIP" to "current officials plus upcoming races by ZIP," using the strongest available evidence for each candidate.
+Goal: keep election context available after the current-representative accountability flow, using the strongest available evidence for each candidate.
+
+This lens is now secondary to the Representative Accountability Dashboard and Civic Action / Contact Layer.
 
 Evidence ladder:
 
@@ -135,46 +166,105 @@ Evidence ladder:
 
 ### Phase 9 - Federal Ballot Proof
 
-- [ ] Identify reliable federal election/race data source options.
-- [ ] Document cost, license, freshness, and coverage tradeoffs for each source.
-- [ ] Add `upcoming_races` and `race_candidates` schema draft.
-- [ ] Add ZIP/state/district mapping from a user ZIP to upcoming federal House and Senate races.
-- [ ] Add backend endpoint for upcoming federal races by ZIP.
-- [ ] Add frontend "Your Upcoming Federal Races" section after ZIP lookup.
-- [ ] Label races as upcoming, active, or past based on election dates.
-- [ ] Keep race display neutral and non-ranked.
+- [x] Identify reliable federal election/race data source options.
+- [x] Document cost, license, freshness, and coverage tradeoffs for each source.
+- [x] Add `upcoming_races` and `race_candidates` schema draft.
+- [x] Add ZIP/state/district mapping from a user ZIP to upcoming federal House and Senate races.
+- [x] Add backend endpoint for upcoming federal races by ZIP.
+- [x] Move frontend upcoming-race context below the representative accountability flow.
+- [x] Add initial FEC candidate-summary importer for federal House/Senate race context.
+- [x] Add high-confidence incumbent candidate linkage to existing legislator voting records.
+- [x] Let linked incumbent race cards open the existing voting-record profile.
+- [x] Add compact linked-incumbent voting summaries to race cards.
+- [x] Add candidate evidence schema and endpoint foundation for non-incumbents.
+- [x] Add first reviewed candidate evidence seed for one NC-04 challenger.
+- [x] Make seeded candidate evidence expandable with source links in race cards.
+- [x] Label races as upcoming or past based on election dates.
+- [x] Keep race display neutral and non-ranked.
 
 ### Phase 10 - Candidate Evidence Tiers
 
-- [ ] Add candidate profile schema with evidence tier fields.
-- [ ] Support incumbent candidate linkage to existing legislator voting records.
-- [ ] Support prior-officeholder linkage when candidate has a past voting record.
-- [ ] Add sourced stated-position records for candidates without voting history.
-- [ ] Store source URL, source type, retrieved date, issue domain, statement text, and confidence label.
-- [ ] Add candidate evidence endpoint.
-- [ ] Add tests that stated positions are marked lower confidence than recorded votes.
-- [ ] Document stated-position methodology and forbidden persuasion language.
+- [x] Add candidate profile schema with evidence tier fields.
+- [x] Support incumbent candidate linkage to existing legislator voting records.
+- [x] Support prior-officeholder linkage when candidate has a past voting record.
+- [x] Add sourced stated-position records for candidates without voting history.
+- [x] Add reviewed institutional-record seed for one candidate without a federal voting history.
+- [x] Store source URL, source type, retrieved date, issue domain, statement text, and confidence label.
+- [x] Add candidate evidence endpoint.
+- [x] Add tests that stated positions are marked lower confidence than recorded votes.
+- [x] Document stated-position methodology and forbidden persuasion language.
 
 ### Phase 11 - Race Comparison UI
 
-- [ ] Add race page or race panel for ZIP-selected upcoming races.
-- [ ] Compare candidates by selected user issues.
-- [ ] Show "recorded votes," "stated positions," and "insufficient evidence" as separate evidence types.
-- [ ] Make every candidate claim expandable to source details.
-- [ ] Avoid aggregate candidate scores or ranking language.
-- [ ] Add empty states for uncontested races and missing candidate data.
+- [x] Add race page or race panel for ZIP-selected upcoming races.
+- [x] Compare candidates by selected user issues.
+- [x] Show "recorded votes," "stated positions," and "insufficient evidence" as separate evidence types.
+- [x] Make every candidate claim expandable to source details.
+- [x] Avoid aggregate candidate scores or ranking language.
+- [x] Add empty states for uncontested races and missing candidate data.
+- [x] Cap noisy low-signal race candidate lists while disclosing hidden rows.
 
 ### Phase 12 - North Carolina State Pilot
 
-- [ ] Research NC state legislative voting and election data availability.
-- [ ] Document NC source reliability, access method, and update cadence.
-- [ ] Add NC state district mapping plan.
+- [x] Research NC state legislative voting and election data availability.
+- [x] Document NC source reliability, access method, and update cadence.
+- [x] Add NC state district mapping plan.
 - [ ] Add one NC state office/race pilot before broad state expansion.
-- [ ] Keep state-level methodology separate from federal methodology where source formats differ.
+- [x] Keep state-level methodology separate from federal methodology where source formats differ.
 
 ### Phase 13 - Broader State and Local Expansion
 
-- [ ] Create a state adapter checklist.
+- [x] Create a state adapter checklist.
 - [ ] Add states only when source quality and maintenance burden are understood.
 - [ ] Evaluate local election data vendors or civic data partnerships.
 - [ ] Treat local coverage as lower priority until federal and NC pilot flows are useful.
+
+## Next Lens - Civic Action / Contact Layer
+
+Goal: let users move from source-grounded evidence to a neutral next step with their current representatives.
+
+Current action surface:
+
+1. Show official contact paths for the current representative.
+2. Preserve the issue and optional roll-call context the user is looking at.
+3. Do not create ask, thank, or track modes until there is a validated need for them.
+
+Rules:
+
+- Actions must be user-directed and optional.
+- Current action UI should show official contact information and evidence context without generating a message body.
+- Actions must not imply a voting recommendation or electoral persuasion.
+- Action history must not affect vote classification, vote interpretation, alignment, or candidate evidence tiers.
+
+### Phase 14 - Contact Metadata Foundation
+
+- [x] Identify a low-cost, reliable source for current federal official contact metadata.
+- [x] Document source fields, update cadence, review workflow, and failure modes.
+- [x] Confirm legal/source-access caveats before broad automated contact expansion.
+- [x] Add minimal backend model or read adapter for contact links.
+- [x] Add reviewed NC federal contact seed and importer keyed by Bioguide ID.
+- [x] Add reviewed official contact seed for the other loaded federal demo ZIP officials.
+- [x] Apply the contact metadata migration and NC pilot seed to Supabase.
+- [x] Add tests for loaded and missing contact metadata.
+- [x] Update `docs/methodology.md` with contact/action boundaries.
+
+### Phase 15 - Evidence-Linked Actions
+
+- [x] Add action entry points from representative profile, issue cards, and interpreted vote evidence rows.
+- [x] Collapse contact/action UI to official contact information plus evidence context.
+- [x] Clarify that evidence-linked contact UI has not sent, saved, or tracked anything.
+- [x] Keep cited vote/source context visible when an action starts from evidence.
+- [x] Keep ask, thank, track, newsletters, and persistent reminders out of scope until users validate a need.
+- [x] Add tests proving contact/reference state does not change alignment labels or evidence tiers.
+
+## Follow-Up Tasks
+
+### Evidence card progressive-disclosure polish
+
+Problem: the vote-card content now meets the product bar, but each evidence card shows public explanation, caveats, source basis, methodology badges, reference links, and eligibility notes at the same visual priority. This can feel heavy, especially for issue sections with many votes.
+
+Future direction: the default-visible card should prioritize vote summary, why it mattered, representative's vote meaning, and source link.
+
+Move lower-priority audit details behind expandable details: what this vote was, what not to infer, source basis chips, eligibility/methodology note, reference vote, and internal interpretation badges.
+
+Do not implement this during the Valerie Foushee / `ECONOMY_TAXES` content pass.

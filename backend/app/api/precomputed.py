@@ -8,6 +8,7 @@ from app.etl.classify import run_classification
 from app.etl.compute import run_etl
 from app.etl.ingest import run_ingest
 from app.etl.interpret import run_interpretation
+from app.etl.vote_context import build_vote_contexts
 
 
 FIXTURE_AS_OF_DATE = date(2026, 3, 12)
@@ -23,6 +24,89 @@ DOMAIN_ORDER = [
     "JUSTICE_PUBLIC_SAFETY",
     "INFRASTRUCTURE_TECH_TRANSPORT",
 ]
+
+FALLBACK_LEGISLATOR_CONTACTS = {
+    "leg_valerie_p_foushee": {
+        "official_website_url": "https://foushee.house.gov/",
+        "contact_form_url": "https://foushee.house.gov/contact",
+        "phone": "(202) 225-1784",
+        "source_url": "https://foushee.house.gov/",
+        "source_type": "official_house_website",
+        "source_retrieved_at": "2026-05-19",
+    },
+    "leg_ted_budd": {
+        "official_website_url": "https://www.budd.senate.gov/",
+        "contact_form_url": "https://www.budd.senate.gov/contact/",
+        "phone": "(202) 224-3154",
+        "source_url": "https://www.budd.senate.gov/contact/",
+        "source_type": "official_senate_website",
+        "source_retrieved_at": "2026-05-19",
+    },
+    "leg_thom_tillis": {
+        "official_website_url": "https://www.tillis.senate.gov/",
+        "contact_form_url": "https://www.tillis.senate.gov/",
+        "phone": "(202) 224-6342",
+        "source_url": "https://www.tillis.senate.gov/",
+        "source_type": "official_senate_website",
+        "source_retrieved_at": "2026-05-19",
+    },
+    "leg_deborah_k_ross": {
+        "official_website_url": "https://ross.house.gov/",
+        "contact_form_url": "https://rossforms.house.gov/forms/writeyourrep/",
+        "phone": "(202) 225-3032",
+        "source_url": "https://ross.house.gov/contact",
+        "source_type": "official_house_website",
+        "source_retrieved_at": "2026-05-22",
+    },
+    "leg_lizzie_fletcher": {
+        "official_website_url": "https://fletcher.house.gov/",
+        "contact_form_url": "https://fletcher.house.gov/contact/",
+        "phone": "(202) 225-2571",
+        "source_url": "https://fletcher.house.gov/contact/offices.htm",
+        "source_type": "official_house_website",
+        "source_retrieved_at": "2026-05-22",
+    },
+    "leg_john_cornyn": {
+        "official_website_url": "https://www.cornyn.senate.gov/",
+        "contact_form_url": "https://www.cornyn.senate.gov/contact-john-cornyn/",
+        "phone": "(202) 224-2934",
+        "source_url": "https://www.cornyn.senate.gov/contact-john-cornyn/",
+        "source_type": "official_senate_website",
+        "source_retrieved_at": "2026-05-22",
+    },
+    "leg_ted_cruz": {
+        "official_website_url": "https://www.cruz.senate.gov/",
+        "contact_form_url": "https://www.cruz.senate.gov/contact",
+        "phone": "(202) 224-5922",
+        "source_url": "https://www.cruz.senate.gov/contact",
+        "source_type": "official_senate_website",
+        "source_retrieved_at": "2026-05-22",
+    },
+    "leg_lateefah_simon": {
+        "official_website_url": "https://simon.house.gov/",
+        "contact_form_url": "https://simon.house.gov/contact",
+        "phone": "(202) 225-2661",
+        "source_url": "https://simon.house.gov/contact",
+        "source_type": "official_house_website",
+        "source_retrieved_at": "2026-05-22",
+    },
+    "leg_adam_b_schiff": {
+        "official_website_url": "https://www.schiff.senate.gov/",
+        "contact_form_url": "https://www.schiff.senate.gov/contact/",
+        "phone": "(202) 224-3841",
+        "source_url": "https://www.schiff.senate.gov/contact/",
+        "source_type": "official_senate_website",
+        "source_retrieved_at": "2026-05-22",
+    },
+    "leg_alex_padilla": {
+        "official_website_url": "https://www.padilla.senate.gov/",
+        "contact_form_url": "https://www.padilla.senate.gov/contact/contact-form/",
+        "phone": "(202) 224-3553",
+        "source_url": "https://www.padilla.senate.gov/contact/",
+        "source_type": "official_senate_website",
+        "source_retrieved_at": "2026-05-22",
+    },
+}
 
 
 @dataclass(frozen=True)
@@ -76,6 +160,42 @@ def get_legislator_profile(*, legislator_id: str) -> dict[str, object] | None:
     if fixture_legislator is None:
         return None
     return _serialize_legislator(fixture_legislator)
+
+
+def get_legislator_contact_response(*, legislator_id: str) -> dict[str, object] | None:
+    database_contact = _get_db_legislator_contact(legislator_id=legislator_id)
+    if database_contact is not None:
+        return _serialize_legislator_contact(
+            legislator_id=legislator_id,
+            row=database_contact,
+            status="loaded",
+            data_source="database",
+        )
+
+    fallback_contact = FALLBACK_LEGISLATOR_CONTACTS.get(legislator_id)
+    if fallback_contact is not None:
+        return _serialize_legislator_contact(
+            legislator_id=legislator_id,
+            row=fallback_contact,
+            status="loaded",
+            data_source="curated_fallback",
+        )
+
+    legislator = get_legislator_profile(legislator_id=legislator_id)
+    if legislator is None:
+        return None
+
+    return {
+        "legislator_id": legislator_id,
+        "contact_status": "not_loaded",
+        "data_source": "none",
+        "official_website_url": None,
+        "contact_form_url": None,
+        "phone": None,
+        "source_url": None,
+        "source_type": None,
+        "source_retrieved_at": None,
+    }
 
 
 def search_legislators(*, query: str = "") -> list[dict[str, object]]:
@@ -218,6 +338,56 @@ def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
         "district": zip_record["district"],
         "house_rep": _serialize_legislator(house_rep) if house_rep is not None else None,
         "senators": [_serialize_legislator(legislator) for legislator in senators],
+    }
+
+
+def get_zip_race_response(*, zip_code: str) -> dict[str, object] | None:
+    db_response = _get_db_zip_race_response(zip_code=zip_code)
+    if db_response is not None:
+        return db_response
+
+    zip_record = next((row for row in FALLBACK_FIXTURE_DATA.zip_district_map if row["zip"] == zip_code), None)
+    if zip_record is None:
+        return None
+
+    house_rep = next(
+        (
+            legislator
+            for legislator in FALLBACK_FIXTURE_DATA.legislators
+            if legislator["chamber"] == "house"
+            and legislator["state"] == zip_record["state"]
+            and legislator["district"] == zip_record["district"]
+        ),
+        None,
+    )
+    senators = [
+        legislator
+        for legislator in FALLBACK_FIXTURE_DATA.legislators
+        if legislator["chamber"] == "senate" and legislator["state"] == zip_record["state"]
+    ]
+
+    return _build_fixture_zip_races(
+        zip_code=zip_code,
+        state=str(zip_record["state"]),
+        district=str(zip_record["district"]),
+        house_rep=_serialize_legislator(house_rep) if house_rep is not None else None,
+        senators=[_serialize_legislator(legislator) for legislator in senators],
+    )
+
+
+def get_candidate_evidence_response(*, candidate_id: str) -> dict[str, object] | None:
+    rows = _get_db_candidate_evidence_rows(candidate_id=candidate_id)
+    if rows is None:
+        return None
+
+    candidate_row = _get_db_race_candidate(candidate_id=candidate_id)
+    if candidate_row is None:
+        return None
+
+    return {
+        "candidate_id": candidate_id,
+        "candidate_name": str(candidate_row["candidate_name"]),
+        "evidence": [_serialize_candidate_evidence_row(row) for row in rows],
     }
 
 
@@ -478,6 +648,61 @@ def _get_db_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
     }
 
 
+def _get_db_zip_race_response(*, zip_code: str) -> dict[str, object] | None:
+    zip_record = _get_db_zip_record(zip_code=zip_code)
+    if zip_record is None:
+        return None
+
+    rows = _get_db_upcoming_race_rows(
+        state=str(zip_record["state"]),
+        district=str(zip_record["district"]),
+    )
+    if rows is None:
+        return None
+    if not rows:
+        return {
+            "zip": str(zip_record["zip"]),
+            "state": str(zip_record["state"]),
+            "district": str(zip_record["district"]),
+            "data_source": "database",
+            "races": [],
+        }
+
+    race_map: dict[int, dict[str, object]] = {}
+    for row in rows:
+        race_id = int(row["race_id"])
+        race = race_map.setdefault(
+            race_id,
+            {
+                "id": str(row["race_key"]),
+                "election_date": str(row["election_date"]),
+                "election_label": str(row["election_label"]),
+                "office_level": str(row["office_level"]),
+                "office_name": str(row["office_name"]),
+                "chamber": None if row.get("chamber") is None else str(row["chamber"]),
+                "state": str(row["state"]),
+                "district": None if row.get("district") is None else str(row["district"]),
+                "status": str(row["status"]),
+                "source_url": row.get("race_source_url"),
+                "source_type": str(row["race_source_type"]),
+                "source_retrieved_at": None
+                if row.get("race_source_retrieved_at") is None
+                else str(row["race_source_retrieved_at"]),
+                "candidates": [],
+            },
+        )
+        if row.get("candidate_id") is not None:
+            race["candidates"].append(_serialize_race_candidate(row))
+
+    return {
+        "zip": str(zip_record["zip"]),
+        "state": str(zip_record["state"]),
+        "district": str(zip_record["district"]),
+        "data_source": "database",
+        "races": list(race_map.values()),
+    }
+
+
 def _get_fallback_fingerprint_response(*, legislator_id: str, comparison_party: str = "ALL") -> dict[str, object] | None:
     fingerprint_rows = [
         row
@@ -667,6 +892,14 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
         row.roll_call_id: row
         for row in interpretation_step.vote_interpretations
     }
+    vote_context_result = {
+        (row["roll_call_id"], row["legislator_id"]): row
+        for row in build_vote_contexts(
+            legislators=FALLBACK_FIXTURE_DATA.legislators,
+            roll_calls=FALLBACK_FIXTURE_DATA.roll_calls,
+            votes_cast=FALLBACK_FIXTURE_DATA.votes_cast,
+        )
+    }
 
     evidence_rows = []
     for vote in FALLBACK_FIXTURE_DATA.votes_cast:
@@ -685,6 +918,7 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
             continue
         bill = bills_by_id.get(str(roll_call.get("bill_ref")))
         interpreted = interpretation_result.get(vote["roll_call_id"])
+        vote_context = vote_context_result.get((vote["roll_call_id"], vote["legislator_id"]), {})
         evidence_rows.append(
             {
                 "roll_call_id": str(roll_call["id"]),
@@ -710,8 +944,25 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
                 "policy_effect": None,
                 "issue_facet": None,
                 "confidence": None,
+                "what_happened": None,
+                "why_it_mattered": None,
+                "member_vote_context": None,
+                "what_not_to_infer": None,
                 "source_basis": [],
                 "uncertainty_note": None,
+                "vote_type": vote_context.get("vote_type"),
+                "final_result": vote_context.get("final_result"),
+                "vote_margin": vote_context.get("vote_margin"),
+                "winning_position": vote_context.get("winning_position"),
+                "party_vote_totals": vote_context.get("party_vote_totals"),
+                "member_party": vote_context.get("member_party"),
+                "member_party_majority_position": vote_context.get("member_party_majority_position"),
+                "member_voted_with_party_majority": vote_context.get("member_voted_with_party_majority"),
+                "member_voted_with_winning_side": vote_context.get("member_voted_with_winning_side"),
+                "bipartisan_majority": vote_context.get("bipartisan_majority"),
+                "sponsor_party": vote_context.get("sponsor_party"),
+                "context_source_list": vote_context.get("context_source_list"),
+                "context_version": vote_context.get("context_version"),
             }
         )
 
@@ -722,7 +973,7 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
         "window_start": first_row.window_start.isoformat(),
         "window_end": first_row.window_end.isoformat(),
         "classification_version": first_row.classification_version,
-        "evidence": evidence_rows,
+        "evidence": [_serialize_evidence_row(row) for row in evidence_rows],
     }
 
 
@@ -822,6 +1073,27 @@ def _get_db_legislator_by_external_id(legislator_id: str) -> dict[str, Any] | No
         if _serialize_legislator(row)["id"] == legislator_id:
             return row
     return None
+
+
+def _get_db_legislator_contact(*, legislator_id: str) -> dict[str, Any] | None:
+    legislator = _get_db_legislator_by_external_id(legislator_id)
+    if legislator is None:
+        return None
+
+    return _query_one_dict(
+        """
+        SELECT
+            official_website_url,
+            contact_form_url,
+            phone,
+            source_url,
+            source_type,
+            source_retrieved_at
+        FROM legislator_contacts
+        WHERE legislator_id = %s
+        """,
+        (legislator["id"],),
+    )
 
 
 def _get_db_fingerprint_rows(*, legislator_db_id: int) -> list[dict[str, Any]] | None:
@@ -985,14 +1257,34 @@ def _get_db_position_evidence_rows(
             vi.policy_effect,
             vi.issue_facet,
             vi.confidence,
+            vi.what_happened,
+            vi.why_it_mattered,
+            vi.member_vote_context,
+            vi.what_not_to_infer,
             vi.source_basis,
-            vi.uncertainty_note
+            vi.uncertainty_note,
+            vctx.vote_type,
+            vctx.final_result,
+            vctx.vote_margin,
+            vctx.winning_position,
+            vctx.party_vote_totals,
+            vctx.member_party,
+            vctx.member_party_majority_position,
+            vctx.member_voted_with_party_majority,
+            vctx.member_voted_with_winning_side,
+            vctx.bipartisan_majority,
+            vctx.sponsor_party,
+            vctx.context_source_list,
+            vctx.context_version
         FROM votes_cast vc
         JOIN roll_calls rc ON rc.id = vc.roll_call_id
         JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
         LEFT JOIN vote_interpretations vi
           ON vi.roll_call_id = rc.id
          AND vi.classification_version = vcf.classification_version
+        LEFT JOIN vote_contexts vctx
+          ON vctx.roll_call_id = rc.id
+         AND vctx.legislator_id = vc.legislator_id
         LEFT JOIN bills b ON b.id = rc.bill_id
         WHERE vc.legislator_id = %s
           AND vcf.is_eligible = TRUE
@@ -1091,6 +1383,99 @@ def _get_db_senators(*, state: str) -> list[dict[str, Any]] | None:
         ORDER BY lower(name_display), id
         """,
         (state,),
+    )
+
+
+def _get_db_upcoming_race_rows(*, state: str, district: str) -> list[dict[str, Any]] | None:
+    return _query_all_dicts(
+        """
+        SELECT
+            r.id AS race_id,
+            r.race_key,
+            r.election_date,
+            r.election_label,
+            r.office_level,
+            r.office_name,
+            r.chamber,
+            r.state,
+            r.district,
+            r.status,
+            r.source_url AS race_source_url,
+            r.source_type AS race_source_type,
+            r.source_retrieved_at AS race_source_retrieved_at,
+            c.id AS candidate_id,
+            c.candidate_name,
+            c.party,
+            c.incumbent,
+            c.candidate_status,
+            c.evidence_tier,
+            c.evidence_note,
+            c.source_url AS candidate_source_url,
+            c.source_type AS candidate_source_type,
+            c.source_retrieved_at AS candidate_source_retrieved_at,
+            c.external_candidate_id,
+            l.id AS legislator_db_id,
+            l.bioguide_id,
+            l.name_display,
+            l.chamber AS legislator_chamber,
+            l.state AS legislator_state,
+            l.district AS legislator_district,
+            l.party AS legislator_party
+        FROM upcoming_races r
+        LEFT JOIN race_candidates c ON c.race_id = r.id
+        LEFT JOIN legislators l ON l.id = c.legislator_id
+        WHERE r.office_level = 'federal'
+          AND (
+            (r.chamber = 'house' AND r.state = %s AND r.district = %s)
+            OR (r.chamber = 'senate' AND r.state = %s)
+          )
+        ORDER BY r.election_date, r.chamber, r.district, c.incumbent DESC, c.candidate_name
+        """,
+        (state, district, state),
+    )
+
+
+def _get_db_race_candidate(*, candidate_id: str) -> dict[str, Any] | None:
+    if not candidate_id.isdigit():
+        return None
+    return _query_one_dict(
+        """
+        SELECT id, candidate_name
+        FROM race_candidates
+        WHERE id = %s
+        """,
+        (int(candidate_id),),
+    )
+
+
+def _get_db_candidate_evidence_rows(*, candidate_id: str) -> list[dict[str, Any]] | None:
+    if not candidate_id.isdigit():
+        return None
+    return _query_all_dicts(
+        """
+        SELECT
+            id,
+            evidence_tier,
+            issue_domain,
+            statement_text,
+            neutral_summary,
+            confidence,
+            source_url,
+            source_type,
+            source_retrieved_at,
+            external_evidence_id
+        FROM candidate_evidence
+        WHERE race_candidate_id = %s
+        ORDER BY
+            CASE evidence_tier
+                WHEN 'institutional_record' THEN 1
+                WHEN 'sourced_stated_position' THEN 2
+                ELSE 3
+            END,
+            issue_domain,
+            id
+        """,
+        (int(candidate_id),),
     )
 
 
@@ -1207,8 +1592,36 @@ def _serialize_evidence_row(row: dict[str, Any]) -> dict[str, object]:
         "policy_effect": None if row.get("policy_effect") is None else str(row["policy_effect"]),
         "issue_facet": None if row.get("issue_facet") is None else str(row["issue_facet"]),
         "confidence": None if row.get("confidence") is None else str(row["confidence"]),
+        "what_happened": None if row.get("what_happened") is None else str(row["what_happened"]),
+        "why_it_mattered": None if row.get("why_it_mattered") is None else str(row["why_it_mattered"]),
+        "member_vote_context": None if row.get("member_vote_context") is None else str(row["member_vote_context"]),
+        "what_not_to_infer": None if row.get("what_not_to_infer") is None else str(row["what_not_to_infer"]),
         "source_basis": row.get("source_basis") or [],
         "uncertainty_note": None if row.get("uncertainty_note") is None else str(row["uncertainty_note"]),
+        "vote_context": _serialize_vote_context(row),
+    }
+
+
+def _serialize_vote_context(row: dict[str, Any]) -> dict[str, object] | None:
+    if row.get("context_version") is None:
+        return None
+
+    return {
+        "vote_type": None if row.get("vote_type") is None else str(row["vote_type"]),
+        "final_result": None if row.get("final_result") is None else str(row["final_result"]),
+        "vote_margin": None if row.get("vote_margin") is None else int(row["vote_margin"]),
+        "winning_position": None if row.get("winning_position") is None else str(row["winning_position"]),
+        "party_vote_totals": row.get("party_vote_totals") or {},
+        "member_party": None if row.get("member_party") is None else str(row["member_party"]),
+        "member_party_majority_position": None
+        if row.get("member_party_majority_position") is None
+        else str(row["member_party_majority_position"]),
+        "member_voted_with_party_majority": row.get("member_voted_with_party_majority"),
+        "member_voted_with_winning_side": row.get("member_voted_with_winning_side"),
+        "bipartisan_majority": bool(row.get("bipartisan_majority")),
+        "sponsor_party": None if row.get("sponsor_party") is None else str(row["sponsor_party"]),
+        "context_source_list": row.get("context_source_list") or [],
+        "context_version": str(row["context_version"]),
     }
 
 
@@ -1217,6 +1630,238 @@ def _serialize_zip_row(row: dict[str, Any]) -> dict[str, object]:
         "zip": str(row["zip"]),
         "state": str(row["state"]),
         "district": str(row["district"]),
+    }
+
+
+def _serialize_race_candidate(row: dict[str, Any]) -> dict[str, object]:
+    linked_legislator = None
+    voting_summary = None
+    if row.get("legislator_db_id") is not None:
+        linked_legislator = _serialize_legislator(
+            {
+                "id": row["legislator_db_id"],
+                "bioguide_id": row["bioguide_id"],
+                "name_display": row["name_display"],
+                "chamber": row["legislator_chamber"],
+                "state": row["legislator_state"],
+                "district": row["legislator_district"],
+                "party": row["legislator_party"],
+            }
+        )
+        voting_summary = _build_candidate_voting_summary(legislator_db_id=int(row["legislator_db_id"]))
+
+    return {
+        "id": str(row["candidate_id"]),
+        "name": str(row["candidate_name"]),
+        "party": None if row.get("party") is None else str(row["party"]),
+        "incumbent": bool(row["incumbent"]),
+        "candidate_status": str(row["candidate_status"]),
+        "evidence_tier": str(row["evidence_tier"]),
+        "evidence_note": None if row.get("evidence_note") is None else str(row["evidence_note"]),
+        "source_url": row.get("candidate_source_url"),
+        "source_type": str(row["candidate_source_type"]),
+        "source_retrieved_at": None
+        if row.get("candidate_source_retrieved_at") is None
+        else str(row["candidate_source_retrieved_at"]),
+        "external_candidate_id": None
+        if row.get("external_candidate_id") is None
+        else str(row["external_candidate_id"]),
+        "linked_legislator": linked_legislator,
+        "voting_summary": voting_summary,
+        "candidate_evidence_summary": _build_candidate_evidence_summary(candidate_id=str(row["candidate_id"])),
+    }
+
+
+def _build_candidate_evidence_summary(*, candidate_id: str) -> dict[str, object]:
+    rows = _get_db_candidate_evidence_rows(candidate_id=candidate_id)
+    if rows is None:
+        rows = []
+
+    tier_counts = {
+        "institutional_record": 0,
+        "sourced_stated_position": 0,
+        "insufficient_evidence": 0,
+    }
+    issue_domains = set()
+    issue_domain_counts: dict[str, dict[str, object]] = {}
+    for row in rows:
+        tier = str(row["evidence_tier"])
+        if tier in tier_counts:
+            tier_counts[tier] += 1
+        if row.get("issue_domain") is not None:
+            issue_domain = str(row["issue_domain"])
+            issue_domains.add(issue_domain)
+            issue_domain_count = issue_domain_counts.setdefault(
+                issue_domain,
+                {
+                    "domain": issue_domain,
+                    "total_count": 0,
+                    "tier_counts": {
+                        "institutional_record": 0,
+                        "sourced_stated_position": 0,
+                        "insufficient_evidence": 0,
+                    },
+                },
+            )
+            issue_domain_count["total_count"] = int(issue_domain_count["total_count"]) + 1
+            domain_tier_counts = issue_domain_count["tier_counts"]
+            if isinstance(domain_tier_counts, dict) and tier in domain_tier_counts:
+                domain_tier_counts[tier] += 1
+
+    return {
+        "total_count": len(rows),
+        "tier_counts": tier_counts,
+        "issue_domain_count": len(issue_domains),
+        "issue_domains": [
+            issue_domain_counts[domain]
+            for domain in sorted(
+                (domain for domain in issue_domain_counts if domain in DOMAIN_ORDER),
+                key=lambda item: DOMAIN_ORDER.index(item),
+            )
+        ],
+    }
+
+
+def _build_candidate_voting_summary(*, legislator_db_id: int) -> dict[str, object] | None:
+    fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=legislator_db_id)
+    if fingerprint_rows is None or not fingerprint_rows:
+        return None
+
+    first_row = fingerprint_rows[0]
+    position_rows = _get_db_position_rows(
+        legislator_db_id=legislator_db_id,
+        window_start=str(first_row["window_start"]),
+        window_end=str(first_row["window_end"]),
+        classification_version=str(first_row["classification_version"]),
+    )
+    if position_rows is None:
+        position_rows = []
+
+    top_domains = [
+        {
+            "domain": str(row["domain"]),
+            "vote_count": int(row["vote_count"] or 0),
+            "vote_share": float(row["vote_share"] or 0.0),
+        }
+        for row in sorted(
+            fingerprint_rows,
+            key=lambda item: (-int(item["vote_count"] or 0), DOMAIN_ORDER.index(str(item["domain"]))),
+        )
+        if int(row["vote_count"] or 0) > 0
+    ][:2]
+
+    interpreted_vote_count = sum(
+        int(row.get("interpreted_support_count", 0) or 0)
+        + int(row.get("interpreted_oppose_count", 0) or 0)
+        + int(row.get("interpreted_other_count", 0) or 0)
+        for row in position_rows
+    )
+
+    return {
+        "window_start": str(first_row["window_start"]),
+        "window_end": str(first_row["window_end"]),
+        "classification_version": str(first_row["classification_version"]),
+        "eligible_vote_count": int(first_row["total_votes"] or 0),
+        "interpreted_vote_count": interpreted_vote_count,
+        "top_domains": top_domains,
+    }
+
+
+def _serialize_candidate_evidence_row(row: dict[str, Any]) -> dict[str, object]:
+    return {
+        "id": str(row["id"]),
+        "evidence_tier": str(row["evidence_tier"]),
+        "issue_domain": None if row.get("issue_domain") is None else str(row["issue_domain"]),
+        "statement_text": None if row.get("statement_text") is None else str(row["statement_text"]),
+        "neutral_summary": str(row["neutral_summary"]),
+        "confidence": str(row["confidence"]),
+        "source_url": str(row["source_url"]),
+        "source_type": str(row["source_type"]),
+        "source_retrieved_at": None if row.get("source_retrieved_at") is None else str(row["source_retrieved_at"]),
+        "external_evidence_id": None if row.get("external_evidence_id") is None else str(row["external_evidence_id"]),
+    }
+
+
+def _build_fixture_zip_races(
+    *,
+    zip_code: str,
+    state: str,
+    district: str,
+    house_rep: dict[str, object] | None,
+    senators: list[dict[str, object]],
+) -> dict[str, object]:
+    races = [
+        _build_fixture_race(
+            race_id=f"fixture_2026_house_{state}_{district}",
+            office_name="U.S. House",
+            chamber="house",
+            state=state,
+            district=district,
+            current_official=house_rep,
+        )
+    ]
+    if state == "NC":
+        races.append(
+            _build_fixture_race(
+                race_id="fixture_2026_senate_nc",
+                office_name="U.S. Senate",
+                chamber="senate",
+                state=state,
+                district=None,
+                current_official=next((senator for senator in senators if senator.get("name_display") == "Thom Tillis"), senators[0] if senators else None),
+            )
+        )
+
+    return {
+        "zip": zip_code,
+        "state": state,
+        "district": district,
+        "data_source": "fixtures",
+        "races": races,
+    }
+
+
+def _build_fixture_race(
+    *,
+    race_id: str,
+    office_name: str,
+    chamber: str,
+    state: str,
+    district: str | None,
+    current_official: dict[str, object] | None,
+) -> dict[str, object]:
+    candidates = []
+    if current_official is not None:
+        candidates.append(
+            {
+                "id": f"{race_id}_current_official",
+                "name": current_official["name_display"],
+                "party": current_official["party"],
+                "incumbent": True,
+                "candidate_status": "current_official_context",
+                "evidence_tier": "recorded_governing_behavior",
+                "evidence_note": "Current officeholder shown for voting-record context. Candidate filing data is not loaded yet.",
+                "source_url": None,
+                "source_type": "current_official_mapping",
+                "source_retrieved_at": None,
+                "linked_legislator": current_official,
+            }
+        )
+
+    return {
+        "id": race_id,
+        "election_date": "2026-11-03",
+        "election_label": "2026 general election",
+        "office_level": "federal",
+        "office_name": office_name,
+        "chamber": chamber,
+        "state": state,
+        "district": district,
+        "status": "upcoming",
+        "source_url": None,
+        "source_type": "fixture_planning",
+        "source_retrieved_at": None,
+        "candidates": candidates,
     }
 
 
@@ -1356,6 +2001,26 @@ def _serialize_legislator(legislator: dict[str, object]) -> dict[str, object]:
         "state": legislator["state"],
         "district": legislator["district"],
         "party": legislator["party"],
+    }
+
+
+def _serialize_legislator_contact(
+    *,
+    legislator_id: str,
+    row: dict[str, object],
+    status: str,
+    data_source: str,
+) -> dict[str, object]:
+    return {
+        "legislator_id": legislator_id,
+        "contact_status": status,
+        "data_source": data_source,
+        "official_website_url": row.get("official_website_url"),
+        "contact_form_url": row.get("contact_form_url"),
+        "phone": row.get("phone"),
+        "source_url": row.get("source_url"),
+        "source_type": row.get("source_type"),
+        "source_retrieved_at": None if row.get("source_retrieved_at") is None else str(row["source_retrieved_at"]),
     }
 
 

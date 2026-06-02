@@ -6,7 +6,7 @@ This product is a curiosity-led, trust-anchored civic analytics platform focused
 
 The expanded product north star is documented in `docs/product_north_star.md`:
 
-**Who is on my ballot, and what does the evidence show about how they act on the issues I care about?**
+**Who represents me, how are they acting on the issues I care about, and what can I do next?**
 
 The original MVP scope included:
 
@@ -22,13 +22,22 @@ The current Product v2 direction adds:
 - user-defined issue preferences
 - evidence-based alignment between those preferences and recorded votes
 - drilldowns from every high-level read to underlying roll calls and sources
+- neutral civic contact paths for current representatives
 
-The long-term Product v3 direction adds ballot-aware candidate comparison:
+The current product hierarchy is:
+
+1. Representative Accountability Dashboard
+2. Civic Action / Contact Layer
+3. Election / Challenger Layer
+
+The election and challenger layer remains secondary to current-representative accountability. Ballot-aware candidate comparison may expand when reliable election data is available, but it must not displace issue evidence, interpreted vote meaning, or neutral civic follow-through for current representatives.
+
+The long-term election context adds ballot-aware candidate comparison:
 
 - upcoming races by ZIP code when reliable election data is available
 - incumbent and prior-officeholder comparison based first on recorded governing behavior
 - new-candidate coverage based on sourced stated positions when no voting record exists
-- explicit confidence labels separating recorded behavior from stated positions
+- explicit evidence-type and caution labels separating recorded behavior from stated positions
 - evidence-tiered race pages that make strong, thin, and missing evidence clear
 
 The methodology intentionally does not support:
@@ -45,6 +54,8 @@ The methodology intentionally does not support:
 The product may say that a recorded voting pattern appears aligned, not aligned, mixed, or insufficiently evidenced relative to preferences the user explicitly selected. It must not tell the user how to vote.
 
 When candidate stated positions are used, the product may say what the candidate claims or lists as a position, with source and date context when available. It must not present stated positions as proven governing behavior.
+
+The product may support neutral contact workflows. Contact surfaces must be user-directed, source-linked when they reference evidence, and separate from all vote interpretation and alignment calculations. The current product shows official contact metadata and evidence context only; ask, thank, track, newsletters, and reminders are deferred until there is a validated need.
 
 ## System Principles
 
@@ -122,7 +133,7 @@ The comparison view remains descriptive, but it now uses two deterministic lense
 - issue focus from precomputed fingerprint shares
 - vote-direction context from stored `votes_cast.position` joined to eligible classified domains within the same 730-day fingerprint window
 
-Vote-direction context is limited to per-domain `yea` versus `nay` shares. It does not infer ideology, motives, or causal explanations.
+Vote-direction context is limited to per-domain `yea` versus `nay` shares. It does not infer ideology, motives, causal explanations, or the practical meaning of a vote. User-facing summaries must not use raw yea/nay shares alone as a "so what" interpretation.
 
 User-specific alignment is the limited exception to the precomputed-output rule. Because user preferences are session inputs, alignment may be computed at request time as a lightweight comparison between explicit user preferences, stored vote positions, and precomputed vote interpretation records. The API must not classify votes, infer vote meaning, or run heavy aggregation during the request.
 
@@ -132,16 +143,39 @@ Vote interpretation is the source-grounded record of what a yea or nay vote mean
 
 Allowed inputs:
 
+- chamber
+- congress and session
+- bill number or document number
+- roll call number
 - bill title
 - bill summary
+- bill subjects
+- bill lifecycle details, including introduced date, origin chamber, latest action, and public law status when available
+- bill text-version metadata
+- bill action history
+- amendment metadata
+- committee activity metadata
+- CBO cost-estimate links or descriptions when available
+- CRS, JCT, committee-report, or other official explanatory context when available
 - roll call question
 - roll call description
+- final roll call result, when available
+- vote margin, when available
+- party vote totals, when available
+- sponsor party, when available
+- whether the member voted with most of their party, when party totals are available
+- whether the member voted with the winning side, when final result is available
 - official source URL
 - stored classification metadata
 
 Stored outputs:
 
 - `roll_call_id`
+- `vote_type`, when determinable: final passage, amendment, rule, motion, concurrence, procedural, nomination, appropriations, CRA disapproval, or other
+- `what_happened`, when reviewed source text supports it
+- `why_it_mattered`, when reviewed source text supports it
+- `member_vote_context`, when reviewed source and vote-context baselines support it
+- `what_not_to_infer`, required for interpreted public-facing rows
 - `support_position`, when determinable
 - `oppose_position`, when determinable
 - `interpretation_status`
@@ -153,6 +187,7 @@ Stored outputs:
 - `issue_facet`, when useful and source-grounded
 - `confidence`
 - `source_basis`
+- `interpretation_source_list`, containing the official/source records used for the interpretation
 - `uncertainty_note`
 - `source_url` or source reference
 - `interpretation_version`
@@ -163,6 +198,9 @@ Rules:
 - vote interpretation must be deterministic and auditable
 - ambiguous vote meaning must be marked `ambiguous` or `insufficient_evidence`
 - ambiguous votes must not count as aligned or not aligned
+- public interpretation cards should answer four questions when source context supports them: what happened, why it mattered, what the member's vote meant in context, and what not to infer
+- party and result baselines may be surfaced only when computed from stored vote totals: for example, voted with most Democrats, voted against most Republicans, joined a bipartisan majority, broke with most of their party, voted with the winning side, or voted against the final outcome
+- party-context language must describe the recorded vote context only; it must not infer motive, pressure, loyalty, ideology, or strategic intent
 - LLMs or local/offline models may draft plain-language vote-meaning records for review, but imported records must be cached, source-grounded, schema-validated, neutral, and traceable to official/source fields
 - the public application reads cached interpretation records only; it must not call an LLM at request time
 
@@ -180,6 +218,18 @@ Initial rules:
 These rules are intentionally conservative. They prioritize not counting a vote over counting a vote whose yea/nay meaning is unclear.
 
 Manual interpretation batches use `docs/manual_interpretation_workflow.md`. They are designed for the first "DC-speak breakdown" layer without an ongoing API dependency. The importer rejects invalid status values, invalid confidence labels, unsupported support/oppose positions, missing source basis for interpreted records, and persuasive or judgmental language.
+
+Manual interpretation quality is developed through gold slices: one official, one issue domain, reviewed end to end before scaling. The gold-slice standard requires each interpreted vote to explain the practical action, why it mattered, what the member's vote meant in context, and what not to infer. Procedural votes must stay procedural; the product must not translate a motion, amendment, rule, or conference instruction into a final policy effect unless the official packet supports that translation.
+
+Interpretation packets may include a `so_what_context` block assembled from cached Congress.gov subresources. This context is source material for human-reviewed interpretation, not an automatic conclusion engine. It can show bill lifecycle, text versions, recorded actions, amendments, committees, CBO links, and enrichment counts so reviewers can identify the vote type, practical mechanism, direct stakes, and evidence boundary. If those source fields do not support a specific practical read, the interpretation must remain ambiguous or insufficient evidence.
+
+Current vote-context baseline: the backend stores deterministic member-level vote context in `vote_contexts`. Seeded context derives vote type, final yea/nay result, vote margin, party vote totals, whether the member voted with their party majority, whether the member voted with the winning side, bipartisan winning-side presence, and official roll-call source lists from stored roll-call and member-vote records. Sponsor party remains nullable until a source supplies it. These fields are exposed through position evidence responses and manual interpretation packet export so reviewed "so what" summaries can use context without inferring from raw yea/nay counts alone.
+
+Current reviewed "so what" fields: `vote_interpretations` stores `what_happened`, `why_it_mattered`, `member_vote_context`, and `what_not_to_infer`. Manual interpretation import validates those fields for forbidden persuasive or evaluative language when provided, and the evidence API returns them alongside legacy plain-English fields and deterministic vote context. Public evidence cards should prefer these reviewed fields, falling back to older cached fields only when reviewed fields are not yet loaded.
+
+Current issue-overview layer: the frontend derives a deterministic issue-overview object from the opened evidence rows only. It groups rows by reviewed `issue_facet`, lists practical policy levers from reviewed fields, counts only interpreted yea/nay rows whose position maps to the reviewed measure meaning, explains not-voting rows without counting them as support or opposition, and keeps ambiguous or limited-context rows visible as evidence limits. The overview may compare the member's votes with party-majority and final-outcome context when those deterministic `vote_context` fields are present, but it must not infer motive, ideology, character, corruption, or a voting recommendation.
+
+Next methodology target: broaden reviewed interpretation records using the new fields and replace remaining aggregate copy with sample-bound language that describes only the votes shown.
 
 ## User Alignment Rules
 
@@ -200,6 +250,54 @@ Alignment must be based only on:
 - stored vote interpretations
 
 Alignment must expose evidence counts and underlying vote rows. It must not rank legislators, infer motives, assign moral quality, or tell the user how to vote.
+
+Neutral issue starters use `show_record` preferences. These are not directional alignment inputs. When interpreted vote evidence exists, the UI should label those rows as `Record shown`, exclude them from aligned/not-aligned/mixed counts, and explain that no for/against preference was selected. If interpreted vote evidence is missing, the row remains `insufficient_evidence`.
+
+## Civic Action Rules
+
+Civic action features help users decide what to do next after inspecting evidence about current representatives.
+
+Current action surface:
+
+- official contact information for the current representative
+- selected issue context
+- optional selected roll-call reference
+
+Allowed inputs:
+
+- selected current representative
+- selected issue domain
+- selected roll call or interpreted vote evidence
+- source URL or official contact URL when available
+
+Rules:
+
+- actions must be optional and user-initiated
+- action UI may show cited evidence context and official contact metadata, but should not generate a message body for the user
+- if future action copy is added, it must stay neutral, user-editable, and evidence-based
+- actions may summarize cited evidence, but may not tell the user what position to take
+- UI-only action states must clearly indicate that the app has not sent, stored, or subscribed the user to anything
+- tracking an issue, vote, or official must not alter any computed metric
+- action history, if stored, must remain separate from `vote_classifications`, `vote_interpretations`, `fingerprints`, `drift_scores`, `summaries`, and candidate evidence
+- contact metadata must be treated as operational context, not evidence of policy behavior
+- contact metadata is stored separately in `legislator_contacts` when available
+- contact metadata may include official website URL, contact form URL, phone, source URL, source type, and retrieved date
+- official contact links help users reach representatives but must not be interpreted as policy evidence
+- contact rows are imported through `app.etl.legislator_contacts` from reviewed official-source records keyed by Bioguide ID
+- the first reviewed contact seed is `docs/legislator_contacts/nc_federal_contacts_seed.json`
+
+Current CLI example:
+
+- `python -m app.etl.legislator_contacts --input ../docs/legislator_contacts/nc_federal_contacts_seed.json --dry-run`
+- `python -m app.etl.legislator_contacts --input ../docs/legislator_contacts/nc_federal_contacts_seed.json`
+
+Forbidden action behavior:
+
+- vote-for or vote-against language
+- candidate support or opposition directives
+- generated persuasion scripts framed as the product's recommendation
+- hidden scoring of representatives based on user actions
+- using action history to change alignment labels
 
 ## Eligibility Rules
 
@@ -315,14 +413,18 @@ Rules:
 
 This view is descriptive only. It shows how a legislator voted within issue domains, not ideology or motive.
 
-Frontend interpretation:
+Frontend presentation:
 
 - domains are surfaced in descending `recorded_votes`
-- each domain card uses a plain-language read:
-  - `leans yea` if `abs(yea_share - nay_share) >= 0.15` and `yea_share > nay_share`
-  - `leans nay` if `abs(yea_share - nay_share) >= 0.15` and `nay_share > yea_share`
-  - `mixed` if the yea/nay gap is smaller than `0.15`
-- this label is a UI interpretation aid only; the stored metrics remain the underlying shares and counts
+- raw yea/nay shares may be shown as record context, but they must not be presented as broad ideology or "so what" conclusions
+- sample-bound labels may be used only for the votes shown:
+  - `Mostly Yea in votes shown`
+  - `Mostly Nay in votes shown`
+  - `Mixed record in votes shown`
+  - `Too little interpreted evidence`
+- issue summaries should use this bounded form: `The clearest pattern in this evidence is [specific pattern], based on [n] interpreted votes. This is a summary of the votes shown, not a full ideology score.`
+- user-facing caution labels should explain the type of caution, such as `Procedural vote`, `Amendment vote`, `Final passage`, `Plain-English interpretation available`, or `Limited source context`; generic confidence labels should not be the primary public label unless they explain evidence type or caution
+- stored metrics remain the underlying shares and counts
 
 ## Position Evidence Rules
 
@@ -350,6 +452,14 @@ Frontend presentation:
 - evidence rows remain roll-call level because amendments and related actions can be meaningful
 - the UI groups rows by bill title or measure label when available
 - the UI surfaces both roll-call count and distinct bill-or-measure count so repeated actions on one bill are not presented as unrelated votes
+- the UI may show a deterministic issue overview for the opened issue using only the evidence rows already returned by the endpoint
+- that issue overview may count interpreted votes with yea/nay positions, rows without yea/nay positions, and ambiguous or insufficient-evidence rows
+- that issue overview may say whether the representative's interpreted votes with yea/nay positions in the opened issue slice were for, against, mostly for, mostly against, or split across the interpreted measures
+- that issue overview may group source-grounded issue facets from cached `vote_interpretations` into short practical measure descriptions, such as budget-reconciliation instructions, loan-eligibility restrictions, or temporary funding packages
+- that issue overview must state its scope, including interpreted vote count, total roll-call rows shown, rows without yea/nay positions, and ambiguous/procedural rows left outside the summarized pattern
+- issue sections with only one interpreted vote with a yea/nay position must be framed as a limited read and treated as a narrow signal until more interpreted votes are loaded
+- it must not infer motive, ideology, causality, rank, or recommend an electoral action
+- it must describe only the opened evidence section, not a broad issue ideology
 - this grouping is explanatory only and does not change stored metrics or alignment calculations
 
 ## Drift Rules
@@ -509,7 +619,9 @@ Current CLI examples:
 - `python -m app.etl.fetch_sources congress-bill --congress 119 --bill-type hr --bill-number 120 --api-key YOUR_KEY`
 - `python -m app.etl.fetch_sources congress-bill --congress 119 --bill-type hr --bill-number 120 --include-enrichment`
 
-When `--include-enrichment` is used, the Congress.gov pull stores the bill detail payload plus the bill summaries and bill subjects subresources in separate cache directories. The ETL merges those companion payloads deterministically before classification, so interpretation packets can use CRS summary text and official subject terms when Congress.gov provides them.
+When `--include-enrichment` is used, the Congress.gov pull stores the bill detail payload plus bill summaries, bill subjects, bill actions, bill text-version metadata, bill amendments, and bill committees in separate cache directories. The ETL merges those companion payloads deterministically before classification, so interpretation packets can use CRS summary text, official subject terms, lifecycle/action context, text-version links, amendment context, committee activity, CBO links, and public-law status when Congress.gov provides them.
+
+These Congress.gov enrichment records improve interpretation packets but do not by themselves decide support/oppose meaning. The reviewed interpretation must still cite the specific source basis and must mark the row ambiguous or insufficient when the bill/action/amendment context does not justify a plain-English practical effect.
 
 ## Interpreted Issue Patterns
 
@@ -521,7 +633,7 @@ These counts are derived only from stored `vote_interpretations` rows where:
 - the interpretation classification version matches the vote classification version
 - the legislator's recorded vote matches the stored `support_position` or `oppose_position`, or is counted separately as another interpreted position
 
-The frontend renders these as issue pattern cards. The cards may say that interpreted votes were recorded on the support side, oppose side, or split between those sides. They must also show coverage language, such as how many recorded yea/nay votes have cached vote meanings. These cards are descriptive only; they do not rank officials, infer motives, or recommend electoral action.
+The frontend renders these as issue pattern cards. The cards may say that interpreted votes were recorded on the for side, against side, or split between those sides. They must also show coverage language, such as how many recorded yea/nay votes have cached vote meanings. These cards are descriptive only; they do not rank officials, infer motives, or recommend electoral action.
 
 ## Live Pipeline Orchestration
 
@@ -541,6 +653,89 @@ Current CLI example:
 
 - `python -m app.etl.live_pipeline --house-year 2025 --house-roll 1 --bill 119:hr:120 --congress-api-key YOUR_KEY`
 - `python -m app.etl.live_pipeline --house-year 2025 --house-roll 1 --senate-congress 119 --senate-session 1 --senate-roll 1 --bill 119:hr:120 --bill 119:s:210 --congress-api-key YOUR_KEY`
+
+## Federal Race And Candidate Context
+
+The repository includes an initial federal race importer in `app.etl.federal_races`.
+
+Current source:
+
+- FEC candidate summary bulk data
+
+Current source boundary:
+
+- FEC candidate summary rows establish federal candidate/race context.
+- They do not establish ballot qualification in every state.
+- They do not establish issue positions.
+- They do not count as recorded governing behavior.
+
+Current importer behavior:
+
+- reads FEC candidate summary CSV exports from a local file
+- keeps House and Senate rows only
+- groups House candidates by cycle, state, and district
+- groups Senate candidates by cycle and state
+- writes deterministic `upcoming_races` and `race_candidates` rows
+- sets race status from election date and importer `as_of` date, currently `upcoming` before or on election day and `past` after election day
+- uses `source_type = fec_candidate_summary`
+- stores the FEC candidate id as `external_candidate_id` for idempotent re-imports
+- marks FEC-only candidate rows as `candidate_status = declared_candidate`
+- marks FEC-only candidate evidence as `insufficient_evidence`
+- links an incumbent candidate to an existing legislator only when office, state, district, party, incumbent flag, and candidate name match a current in-office legislator record
+- links a non-incumbent prior officeholder only when the same office, state, district, party, and candidate name match a stored legislator record that is no longer in office
+- upgrades matched incumbent or prior-officeholder candidate evidence to `recorded_governing_behavior`
+- includes a compact voting summary for linked incumbents using existing precomputed rows: eligible vote count, interpreted vote count, top issue domains, computation window, and classification version
+
+Candidate issue alignment must not be computed from FEC candidacy rows. A candidate needs linked recorded governing behavior or separate sourced stated-position records before issue comparison can show more than insufficient evidence.
+
+Race-card selected-issue comparison is evidence coverage only. For each user-selected issue, the UI may show that a candidate has linked recorded-vote evidence, reviewed institutional or stated-position records, or insufficient evidence. It must not aggregate those rows into a candidate score, winner, rank, or vote recommendation.
+
+The race panel may limit visible candidates when a race has many low-signal rows. The visible order should prefer linked recorded-vote records, then reviewed candidate evidence, then other non-insufficient evidence tiers, then FEC-only insufficient-evidence rows. Any cap must be disclosed in the UI and must not imply that hidden candidates are worse or less legitimate; it only preserves the product hierarchy where election context is secondary to the current representative record.
+
+Current CLI example:
+
+- `python -m app.etl.federal_races --fec-candidate-summary ./backend/data_sources/fec/candidate_summary_2026.csv --cycle 2026 --dry-run`
+- `python -m app.etl.federal_races --fec-candidate-summary ./backend/data_sources/fec/candidate_summary_2026.csv --cycle 2026 --as-of 2026-05-17 --dry-run`
+
+## State-Level Expansion Boundary
+
+State records must use a separate methodology from federal records until the source shape, district lookup, vote subjects, candidate data, and interpretation rules are proven for that state. A state pilot may reuse product principles, but it must not reuse federal assumptions blindly.
+
+State-level expansion must pass `docs/state_adapter_checklist.md` before adding public UI or broad ETL. The checklist requires official district mapping, current official identity, member-level roll-call data, state-specific vote interpretation rules, source-backed candidate context, separate state storage, and clear UI labels.
+
+ZIP-only state district lookup is not sufficient to auto-select a state representative unless the ZIP maps unambiguously to one district. When a ZIP crosses districts, the UI must require address-level lookup or show an approximate/multiple-district state.
+
+State records must not be merged into federal fingerprints, chamber medians, drift scores, federal summaries, or federal vote interpretations. Cross-level comparison is deferred until there is a documented methodology for mixed federal/state evidence.
+
+## Candidate Evidence Records
+
+Candidate evidence records are the lower-confidence companion to recorded governing behavior.
+
+Stored candidate evidence may include:
+
+- institutional records
+- sourced stated positions
+- explicit insufficient-evidence records
+
+Rules:
+
+- candidate evidence is stored in `candidate_evidence`
+- each row must link to one `race_candidates` row
+- sourced stated positions must include a source URL
+- sourced stated positions may use `low` or `medium` confidence, but not `high`
+- stated positions must remain separate from vote-based alignment math
+- candidate evidence may describe what a source says, but it must not tell users how to vote
+- missing candidate evidence should render as an intentional not-loaded state, not as a negative claim about the candidate
+
+The candidate evidence endpoint returns stored source records only. It does not infer issue positions from FEC candidacy rows and does not generate summaries at request time.
+
+Initial reviewed seed:
+
+- Nida Allam, FEC candidate id `H2NC06098`
+- source: Justice Democrats candidate profile, retrieved May 17, 2026
+- evidence tier: `institutional_record`
+- issue domains: `ECONOMY_TAXES`, `EDUCATION_WORKFORCE`, `HEALTH_SOCIAL`
+- confidence: `medium`
 
 ## Starter Real-Data Run
 

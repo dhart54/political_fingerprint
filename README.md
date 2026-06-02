@@ -4,9 +4,9 @@ Deterministic civic analytics platform for understanding observable legislative 
 
 North star:
 
-**Who is on my ballot, and what does the evidence show about how they act on the issues I care about?**
+**Who represents me, how are they acting on the issues I care about, and what can I do next?**
 
-The current product proves the first layer with current federal officials, interpreted vote records, issue preferences, and evidence drilldowns. The long-term product expands into ballot-aware candidate comparison using an evidence ladder: recorded governing behavior first, institutional record second, sourced stated positions third, and insufficient evidence when sources are weak or missing.
+The current product proves the first layer with current federal officials, interpreted vote records, issue preferences, and evidence drilldowns. The next product layer adds neutral civic actions for current representatives: contact, ask, thank, and track. Election and challenger context remains secondary and uses an evidence ladder: recorded governing behavior first, institutional record second, sourced stated positions third, and insufficient evidence when sources are weak or missing.
 
 ## Repository Structure
 

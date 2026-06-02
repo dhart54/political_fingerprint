@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { fetchAlignment } from "../lib/api";
+import { formatDomainLabel } from "../lib/issueDomains";
 
 export default function AlignmentPanel({ legislator, preferences, onInspectDomain }) {
   const [state, setState] = useState({
@@ -85,7 +86,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
         <p className="max-w-md text-sm leading-6 text-stone-600">
           {selectedCount === 0
             ? "Choose issues above to check this voting record against your stated preferences."
-            : "Labels use only source-grounded vote meanings. When that meaning is not available yet, the issue stays visible as insufficient evidence instead of being guessed."}
+            : "For neutral issue checks, the app shows reviewed records without calling them aligned or not aligned. Alignment labels appear only when you choose a direction."}
         </p>
       </div>
 
@@ -97,7 +98,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
 
       {state.status === "idle" ? (
         <div className="mt-5 rounded-[1.25rem] border border-dashed border-stone-300 bg-stone-50 px-4 py-5 text-sm leading-6 text-stone-600">
-          Select at least one issue to see whether the current interpreted record is aligned, not aligned, mixed, or still missing enough evidence.
+          Select at least one issue to inspect interpreted records. Choose a direction only when you want an aligned or not-aligned label.
         </div>
       ) : null}
 
@@ -126,7 +127,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
                     {formatDomainLabel(row.domain)}
                   </p>
                   <p className="mt-3 text-[1.55rem] leading-none text-stone-950">
-                    {formatAlignmentLabel(row.label)}
+                    {formatDisplayLabel(row)}
                   </p>
                 </div>
                 <span className={`rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.18em] ${getLabelClass(row.label)}`}>
@@ -179,24 +180,35 @@ function buildHeadline({ status, selectedCount, rows, name }) {
   if (status === "error") {
     return "Alignment check unavailable.";
   }
-  const aligned = rows.filter((row) => row.label === "aligned").length;
-  const notAligned = rows.filter((row) => row.label === "not_aligned").length;
-  const mixed = rows.filter((row) => row.label === "mixed").length;
+  const directionalRows = rows.filter((row) => row.preference !== "show_record");
+  const recordOnly = rows.filter((row) => row.preference === "show_record" && row.label !== "insufficient_evidence").length;
+  const aligned = directionalRows.filter((row) => row.label === "aligned").length;
+  const notAligned = directionalRows.filter((row) => row.label === "not_aligned").length;
+  const mixed = directionalRows.filter((row) => row.label === "mixed").length;
   const insufficient = rows.filter((row) => row.label === "insufficient_evidence").length;
-  return `${aligned} aligned, ${notAligned} not aligned, ${mixed} mixed, ${insufficient} insufficient.`;
+  const recordOnlyText = recordOnly ? `${recordOnly} record shown, ` : "";
+  return `${recordOnlyText}${aligned} aligned, ${notAligned} not aligned, ${mixed} mixed, ${insufficient} insufficient.`;
 }
 
 function buildRowCopy(row) {
   if (row.label === "insufficient_evidence") {
     return "This issue does not yet have enough source-grounded vote meaning to label alignment. Use Inspect Votes to review any classified roll calls behind the issue.";
   }
+  if (row.preference === "show_record") {
+    return `${row.interpreted_count} interpreted ${row.interpreted_count === 1 ? "vote is" : "votes are"} available for inspection. No for/against preference was selected, so this is a record view rather than an alignment label.`;
+  }
   if (row.label === "mixed") {
     return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes, so the record is split for this issue.`;
   }
-  if (row.preference === "show_record") {
-    return `${row.interpreted_count} interpreted votes are available for inspection.`;
-  }
   return `${row.aligned_count} aligned and ${row.not_aligned_count} not aligned interpreted votes. ${row.ambiguous_count} votes stayed out of the label.`;
+}
+
+function formatDisplayLabel(row) {
+  if (row.preference === "show_record" && row.label !== "insufficient_evidence") {
+    return "Record shown";
+  }
+
+  return formatAlignmentLabel(row.label);
 }
 
 function formatAlignmentLabel(label) {
@@ -220,11 +232,4 @@ function getLabelClass(label) {
     return "bg-amber-100 text-amber-800";
   }
   return "bg-stone-200 text-stone-700";
-}
-
-function formatDomainLabel(domain) {
-  return String(domain)
-    .split("_")
-    .map((segment) => segment[0] + segment.slice(1).toLowerCase())
-    .join(" ");
 }

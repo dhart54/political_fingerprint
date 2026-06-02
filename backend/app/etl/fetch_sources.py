@@ -15,6 +15,10 @@ CONGRESS_CACHE_DIR = DATA_SOURCES_DIR / "congress"
 CONGRESS_BILL_CACHE_DIR = CONGRESS_CACHE_DIR / "bills"
 CONGRESS_BILL_SUMMARY_CACHE_DIR = CONGRESS_CACHE_DIR / "bill_summaries"
 CONGRESS_BILL_SUBJECT_CACHE_DIR = CONGRESS_CACHE_DIR / "bill_subjects"
+CONGRESS_BILL_ACTION_CACHE_DIR = CONGRESS_CACHE_DIR / "bill_actions"
+CONGRESS_BILL_TEXT_CACHE_DIR = CONGRESS_CACHE_DIR / "bill_texts"
+CONGRESS_BILL_AMENDMENT_CACHE_DIR = CONGRESS_CACHE_DIR / "bill_amendments"
+CONGRESS_BILL_COMMITTEE_CACHE_DIR = CONGRESS_CACHE_DIR / "bill_committees"
 HOUSE_CLERK_CACHE_DIR = DATA_SOURCES_DIR / "house_clerk"
 SENATE_XML_CACHE_DIR = DATA_SOURCES_DIR / "senate_xml"
 
@@ -61,6 +65,26 @@ def build_congress_bill_summaries_url(*, congress: int, bill_type: str, bill_num
 def build_congress_bill_subjects_url(*, congress: int, bill_type: str, bill_number: int, api_key: str) -> str:
     query = urlencode({"format": "json", "api_key": api_key, "limit": 250})
     return f"https://api.congress.gov/v3/bill/{congress}/{bill_type}/{bill_number}/subjects?{query}"
+
+
+def build_congress_bill_actions_url(*, congress: int, bill_type: str, bill_number: int, api_key: str) -> str:
+    query = urlencode({"format": "json", "api_key": api_key, "limit": 250})
+    return f"https://api.congress.gov/v3/bill/{congress}/{bill_type}/{bill_number}/actions?{query}"
+
+
+def build_congress_bill_text_url(*, congress: int, bill_type: str, bill_number: int, api_key: str) -> str:
+    query = urlencode({"format": "json", "api_key": api_key, "limit": 250})
+    return f"https://api.congress.gov/v3/bill/{congress}/{bill_type}/{bill_number}/text?{query}"
+
+
+def build_congress_bill_amendments_url(*, congress: int, bill_type: str, bill_number: int, api_key: str) -> str:
+    query = urlencode({"format": "json", "api_key": api_key, "limit": 250})
+    return f"https://api.congress.gov/v3/bill/{congress}/{bill_type}/{bill_number}/amendments?{query}"
+
+
+def build_congress_bill_committees_url(*, congress: int, bill_type: str, bill_number: int, api_key: str) -> str:
+    query = urlencode({"format": "json", "api_key": api_key, "limit": 250})
+    return f"https://api.congress.gov/v3/bill/{congress}/{bill_type}/{bill_number}/committees?{query}"
 
 
 def fetch_house_clerk_roll_calls(
@@ -168,6 +192,94 @@ def fetch_congress_bill_subjects(
     )
 
 
+def fetch_congress_bill_actions(
+    *,
+    congress: int,
+    bill_type: str,
+    bill_number: int,
+    api_key: str,
+    output_dir: Path = CONGRESS_BILL_ACTION_CACHE_DIR,
+    overwrite: bool = False,
+) -> DownloadResult:
+    normalized_bill_type = bill_type.lower()
+    return download_to_path(
+        build_congress_bill_actions_url(
+            congress=congress,
+            bill_type=normalized_bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+        ),
+        output_dir / f"{congress}_{normalized_bill_type}_{bill_number}.json",
+        overwrite=overwrite,
+    )
+
+
+def fetch_congress_bill_text(
+    *,
+    congress: int,
+    bill_type: str,
+    bill_number: int,
+    api_key: str,
+    output_dir: Path = CONGRESS_BILL_TEXT_CACHE_DIR,
+    overwrite: bool = False,
+) -> DownloadResult:
+    normalized_bill_type = bill_type.lower()
+    return download_to_path(
+        build_congress_bill_text_url(
+            congress=congress,
+            bill_type=normalized_bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+        ),
+        output_dir / f"{congress}_{normalized_bill_type}_{bill_number}.json",
+        overwrite=overwrite,
+    )
+
+
+def fetch_congress_bill_amendments(
+    *,
+    congress: int,
+    bill_type: str,
+    bill_number: int,
+    api_key: str,
+    output_dir: Path = CONGRESS_BILL_AMENDMENT_CACHE_DIR,
+    overwrite: bool = False,
+) -> DownloadResult:
+    normalized_bill_type = bill_type.lower()
+    return download_to_path(
+        build_congress_bill_amendments_url(
+            congress=congress,
+            bill_type=normalized_bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+        ),
+        output_dir / f"{congress}_{normalized_bill_type}_{bill_number}.json",
+        overwrite=overwrite,
+    )
+
+
+def fetch_congress_bill_committees(
+    *,
+    congress: int,
+    bill_type: str,
+    bill_number: int,
+    api_key: str,
+    output_dir: Path = CONGRESS_BILL_COMMITTEE_CACHE_DIR,
+    overwrite: bool = False,
+) -> DownloadResult:
+    normalized_bill_type = bill_type.lower()
+    return download_to_path(
+        build_congress_bill_committees_url(
+            congress=congress,
+            bill_type=normalized_bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+        ),
+        output_dir / f"{congress}_{normalized_bill_type}_{bill_number}.json",
+        overwrite=overwrite,
+    )
+
+
 def fetch_congress_bill_enrichment(
     *,
     congress: int,
@@ -192,6 +304,34 @@ def fetch_congress_bill_enrichment(
             overwrite=overwrite,
         ),
         fetch_congress_bill_subjects(
+            congress=congress,
+            bill_type=bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+            overwrite=overwrite,
+        ),
+        fetch_congress_bill_actions(
+            congress=congress,
+            bill_type=bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+            overwrite=overwrite,
+        ),
+        fetch_congress_bill_text(
+            congress=congress,
+            bill_type=bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+            overwrite=overwrite,
+        ),
+        fetch_congress_bill_amendments(
+            congress=congress,
+            bill_type=bill_type,
+            bill_number=bill_number,
+            api_key=api_key,
+            overwrite=overwrite,
+        ),
+        fetch_congress_bill_committees(
             congress=congress,
             bill_type=bill_type,
             bill_number=bill_number,

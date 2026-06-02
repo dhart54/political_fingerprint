@@ -2,17 +2,18 @@
 
 ## Destination
 
-Build Political Fingerprint into a ZIP-first civic product that helps users quickly inspect who represents their interests at the national and state level.
+Build Political Fingerprint into a ZIP-first accountability product that helps users quickly inspect current representatives, understand how they are acting on personally important issues, and choose a neutral next action.
 
 The product should answer:
 
-**Who represents me, who is running next, and what does the evidence show about how they act on the issues I care about?**
+**Who represents me, how are they acting on the issues I care about, and what can I do next?**
 
 The product must keep its trust posture:
 
 - actual governing behavior first
+- current representatives before election context
 - sourced stated positions only when no governing record exists
-- confidence labels everywhere evidence quality changes
+- evidence-type and caution labels everywhere evidence quality changes
 - no candidate rankings
 - no voting recommendations
 - every claim traceable to source material
@@ -28,17 +29,39 @@ What exists now:
 - alignment labels against interpreted votes
 - evidence drilldowns with source links
 - interpreted issue pattern cards
+- federal race and candidate context through FEC candidate-summary imports
+- first candidate evidence seed for a challenger
 - Render/Vercel staging path
 
 Important current limitations:
 
-- no upcoming race data
-- no candidate roster data
-- no challenger or first-time candidate stated-position records
+- limited official contact metadata beyond the NC pilot
+- no validated need yet for ask, thank, track, newsletters, or reminders
+- limited contact metadata for current officials
+- thin interpretation coverage outside the first high-visibility slices
+- missing persisted vote-context baselines for final result, margin, party totals, member-with-party status, and member-with-winning-side status
+- limited challenger or first-time candidate stated-position records
 - no state legislative voting records
 - no state election coverage
 - no local election coverage
-- interpretation coverage is still thin outside the first high-impact batch
+
+## Frontend Structure Review
+
+The current frontend already supports most of the accountability-first direction:
+
+- `frontend/app/page.js` opens with ZIP lookup, then current profile, quick read, issue preferences, alignment, vote evidence, and comparison.
+- `ProfileQuickRead`, `AlignmentPanel`, and `PositionByIssue` are the strongest accountability surfaces.
+- `PositionByIssue` now includes the best interpreted evidence card pattern: `Why this mattered`, `What this vote was`, and `Their vote`.
+- `ZipLookupPanel` now fetches race context but the home page renders `UpcomingRacePanel` below the representative accountability, evidence, action, and comparison flow.
+- `PositionByIssue` now includes a UI-only contact surface with official contact metadata and evidence context.
+
+Recommended structure:
+
+1. Keep ZIP lookup and current representative cards first.
+2. Keep current profile, quick read, user issues, alignment, and interpreted evidence as the main body.
+3. Keep the contact layer after evidence, where the user can open official contact paths while retaining the specific official/issue/vote context.
+4. Keep upcoming race context below the accountability flow and collapsed behind a secondary section after current-representative evidence.
+5. Keep comparison framed around current officials and selected issues unless the user explicitly opens election context.
 
 ## Guiding Architecture
 
@@ -93,7 +116,7 @@ Data examples:
 Product output:
 
 - stated-position cards
-- lower-confidence labels
+- lower-confidence/evidence-type labels
 - source URLs and retrieved dates
 - separate display from recorded vote behavior
 
@@ -107,9 +130,27 @@ Product output:
 - no inferred stance
 - no filler claims
 
-## Phase A - Stabilize The Federal Current-Official Proof
+## Civic Action Model
 
-Goal: make the current federal product compelling enough to prove the core value before adding ballot complexity.
+The action layer should be evidence-linked but not persuasive.
+
+Current action surface:
+
+- open official contact paths and preserve the related evidence context
+- keep a selected roll call visible when the user chooses one
+- avoid ask, thank, track, newsletters, and reminders until there is a validated need
+
+Action rules:
+
+- actions are user-directed and optional
+- current action UI should show official contact information and cited evidence context without generating a message body
+- no action can imply a voting recommendation
+- no action can change alignment math or evidence tiers
+- contact metadata should be stored separately from vote and candidate evidence
+
+## Phase A - Representative Accountability Dashboard
+
+Goal: make the current federal representative product compelling enough to prove the core value before adding more election complexity.
 
 Deliverables:
 
@@ -118,6 +159,8 @@ Deliverables:
 - improve plain-English summaries where official titles are too vague
 - keep all interpretations cached and source-grounded
 - add coverage indicators showing interpreted versus uninterpreted records per issue
+- make the current representative dashboard the obvious primary screen after ZIP lookup
+- demote upcoming races to a secondary section below the accountability flow
 
 Acceptance criteria:
 
@@ -126,45 +169,85 @@ Acceptance criteria:
 - every interpretation links to source material
 - no copy tells the user what to think
 
-## Phase B - Federal Ballot Data Spike
+## Phase B - Civic Action / Contact Layer
 
-Goal: decide how upcoming federal races and candidate rosters will enter the system.
+Goal: let users move from evidence inspection to a neutral next action with their current representatives.
 
-Research tasks:
+Backend deliverables:
 
-- identify candidate/race data sources for upcoming federal elections
-- evaluate source cost, license, freshness, API reliability, and coverage
-- determine whether race data can be stored within the current cost target
-- document source update cadence and failure modes
+- contact metadata model or read adapter for current legislators
+- stored action-intent schema only if tracking is later validated
+- contact metadata must remain separate from vote, alignment, and candidate evidence tables
+- source/evidence reference fields for actions tied to votes or issues
+- tests proving actions do not affect alignment, vote interpretation, or candidate evidence
 
-Likely data categories:
+Frontend deliverables:
 
-- election cycle
-- office
-- state
-- district
-- election date
-- candidate name
-- party when available
-- incumbent/challenger flag when available
-- source URL
-- source retrieved date
-
-Deliverables:
-
-- data source decision memo
-- schema proposal for races and candidates
-- update cadence recommendation
-- ingestion plan with dry-run mode
+- action entry points from representative profile, issue pattern cards, and evidence rows
+- contact card for official phone/site/contact-form links when available
+- official contact affordance that keeps the cited vote and source visible
+- no ask, thank, track, newsletter, or reminder affordance until users validate a need
+- neutral empty states when contact metadata is missing
 
 Acceptance criteria:
 
-- one preferred federal race data source or source combination is chosen
+- user can open a current representative's contact path from the accountability dashboard
+- user can open official contact paths from a specific interpreted vote
+- contact/reference UI does not create a score, ranking, recommendation, or persistent state
+- all action copy remains neutral and user-directed
+
+## Phase C - Vote Context And Interpretation Expansion
+
+Goal: scale the gold-slice interpretation standard by collecting enough vote context to explain "so what" without leaning on raw yea/nay counts.
+
+Deliverables:
+
+- add stored vote-context fields for final result, vote margin, vote type, party vote totals, sponsor party when available, member-with-party status, member-with-winning-side status, and interpretation source list
+- update House/Senate ETL or deterministic post-processing to derive party and result baselines from stored member votes
+- update interpretation packets to include vote-context baselines alongside Congress.gov summaries, subjects, actions, committees, CBO links, amendments, and text versions
+- revise reviewed interpretation outputs around four user-facing fields: what happened, why it mattered, what this member's vote meant in context, and what not to infer
+- visually review the Valerie Foushee / `ECONOMY_TAXES` gold slice
+- replicate the standard to the next visible Valerie issue domain
+- expand to the NC senators' highest-visible starter issue gaps
+- add coverage metadata that distinguishes reviewed, interpreted, ambiguous, and insufficient-evidence rows
+- update manual interpretation workflow examples as quality patterns improve
+
+Acceptance criteria:
+
+- the most common loaded ZIP path has multiple issue domains with practical vote meaning
+- issue summaries say: "The clearest pattern in this evidence is [specific pattern], based on [n] interpreted votes. This is a summary of the votes shown, not a full ideology score."
+- vote cards can explain whether the member voted with most of their party, with or against the winning side, or in a bipartisan majority when those baselines are available
+- procedural or unclear rows remain explicit evidence-boundary cases
+- frontend cards avoid generic bill-passage language in reviewed slices
+- frontend labels use sample-bound language such as `Mostly Nay in votes shown`, `Mostly Yea in votes shown`, `Mixed record in votes shown`, or `Too little interpreted evidence`
+
+## Phase D - Federal Election Context As Secondary
+
+Goal: keep federal race and challenger context useful without making it the primary journey.
+
+Current status:
+
+- FEC candidate-summary race context is imported to Supabase.
+- High-confidence incumbent linkage is available for current federal legislators.
+- The frontend can render upcoming federal races and candidate evidence rows.
+- Remaining work is mostly hierarchy, source documentation, and evidence-tier polish.
+
+Deliverables:
+
+- keep FEC candidate-summary race context as secondary election data
+- document cost, license, freshness, and coverage tradeoffs for FEC and any supplemental sources
+- keep upcoming races visually separate from current representative evidence
+- add another reviewed candidate evidence seed only after the accountability/action layer has a clear path
+
+Acceptance criteria:
+
+- the user can ignore election context and still complete the accountability flow
+- one preferred federal race data source or source combination is documented
 - licensing and cost are understood
 - candidate identity matching risk is documented
-- no implementation begins until source terms are acceptable
+- challenger evidence remains clearly lower confidence than recorded votes
 
-## Phase C - Federal Race Schema And API
+## Phase E - Federal Race Schema And API
 
 Goal: add upcoming federal races without changing the trust model.
 
@@ -193,7 +276,7 @@ Acceptance criteria:
 - candidate cards expose source and confidence state
 - the experience remains useful when race data is missing
 
-## Phase D - Candidate Evidence Tiers
+## Phase F - Candidate Evidence Tiers
 
 Goal: compare candidates by the strongest available evidence.
 
@@ -230,18 +313,19 @@ Acceptance criteria:
 - users can tell which claims come from votes and which come from statements
 - tests prove stated positions do not feed vote-based alignment math
 
-## Phase E - Race Comparison Experience
+## Phase G - Race Comparison Experience
 
-Goal: turn the product from current-official inspection into ballot-aware comparison.
+Goal: support ballot-aware comparison after the current-representative accountability and action flow is solid.
 
 User flow:
 
 1. enter ZIP
 2. select issues
 3. see current officials
-4. see upcoming federal races
-5. open a race
-6. compare candidates by evidence tier and issue
+4. inspect evidence and choose any current-representative action
+5. optionally see upcoming federal races
+6. open a race
+7. compare candidates by evidence tier and issue
 
 UI deliverables:
 
@@ -259,16 +343,16 @@ Acceptance criteria:
 - all comparison claims are expandable to sources
 - missing evidence feels intentional, not broken
 
-## Phase F - North Carolina State Pilot
+## Phase H - North Carolina State Pilot
 
 Goal: prove state-level feasibility in one state before national state coverage.
 
 Research tasks:
 
-- identify NC election data source for state races
-- identify NC legislative roll-call source
-- identify NC district mapping requirements
-- document source format, update cadence, and reliability
+- identify NC election data source for state races: documented in `docs/nc_state_pilot_sources.md`
+- identify NC legislative roll-call source: documented in `docs/nc_state_pilot_sources.md`
+- identify NC district mapping requirements: documented in `docs/nc_state_pilot_sources.md`
+- document source format, update cadence, and reliability: documented in `docs/nc_state_pilot_sources.md`
 
 Backend deliverables:
 
@@ -288,7 +372,7 @@ Acceptance criteria:
 - methodology clearly explains any differences from federal data
 - source quality is good enough to justify continuing state expansion
 
-## Phase G - Broader State And Local Expansion
+## Phase I - Broader State And Local Expansion
 
 Goal: scale only after the federal and NC pilot flows prove useful.
 
@@ -313,13 +397,11 @@ Acceptance criteria:
 
 ## Immediate Next Tasks
 
-1. Confirm deployed staging includes the latest interpreted issue pattern cards.
-2. Expand manual federal vote interpretations for the most visible demo paths.
-3. Run a data-source spike for upcoming federal races.
-4. Draft and review federal race/candidate schema.
-5. Implement a fixture-backed upcoming federal race endpoint.
-6. Add a small frontend "Upcoming Federal Races" section with honest empty states.
-7. Only then wire live race data.
+1. Add backend vote-context storage and deterministic derivation for final result, margin, party totals, member-with-party status, member-with-winning-side status, vote type, and source list.
+2. Update the manual interpretation packet/export workflow to include those vote-context baselines.
+3. Revise frontend issue labels away from broad `leans yea/nay` language and toward sample-bound labels.
+4. Keep newsletter/email tracking out of scope until users validate that persistent reminders are actually needed.
+5. Keep race/candidate work to maintenance and neutral evidence-tier cleanup until the accountability/action path is coherent.
 
 ## Decision Rules
 
