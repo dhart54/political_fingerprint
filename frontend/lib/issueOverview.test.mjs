@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { buildIssueOverview, formatRenderedIssueOverview } from "./issueOverview.mjs";
+import { buildLimitedContextSummary, buildVoteCardSummary } from "./voteCardSummary.mjs";
 
 const partyOutcomeContext = {
   member_party: "D",
@@ -84,6 +85,69 @@ const valerieEconomyRows = [
     support_position: "yea",
     what_happened: "The House passed a bill that would require the Small Business Administration to keep its annual small-business regulatory budget at zero or below.",
     why_it_mattered: "The vote concerned how much new regulatory cost the SBA could impose on small businesses through its own rulemaking.",
+  }),
+];
+
+const valerieJusticeRows = [
+  row({
+    description: "HALT Fentanyl Act",
+    issue_facet: "fentanyl_scheduling_and_penalties",
+    plain_english_summary: "This was House passage of the HALT Fentanyl Act. The bill would permanently place fentanyl-related substances as a class into Schedule I.",
+    policy_effect: "The bill would move fentanyl-related substances from temporary classwide scheduling to permanent Schedule I status, apply fentanyl-analogue quantity thresholds and penalties, and create or revise registration paths for certain Schedule I research.",
+    rollcall_number: 33,
+    vote_context: { ...partyOutcomeContext, final_result: "passed", vote_type: "final_passage" },
+  }),
+  row({
+    description: "Federal Law Enforcement Officer Service Weapon Purchase Act",
+    issue_facet: "federal_law_enforcement_equipment",
+    plain_english_summary: "This was House passage of the Federal Law Enforcement Officer Service Weapon Purchase Act.",
+    policy_effect: "The bill would require GSA to establish a process for federal law enforcement officers to purchase retired agency-issued firearms from their issuing agencies.",
+    rollcall_number: 130,
+    vote_context: { ...partyOutcomeContext, final_result: "passed", vote_type: "final_passage" },
+  }),
+  row({
+    description: "Improving Law Enforcement Officer Safety and Wellness Through Data Act",
+    issue_facet: "law_enforcement_safety_reporting",
+    plain_english_summary: "This was House passage of the Improving Law Enforcement Officer Safety and Wellness Through Data Act.",
+    policy_effect: "The bill would create a DOJ reporting requirement rather than directly changing criminal penalties or law enforcement operations.",
+    position: "yea",
+    rollcall_number: 131,
+    vote_context: { ...partyOutcomeContext, final_result: "passed", member_voted_with_winning_side: true, vote_type: "final_passage" },
+  }),
+  row({
+    description: "District of Columbia Policing Protection Act",
+    issue_facet: "dc_police_pursuit_policy",
+    plain_english_summary: "This was House passage of the District of Columbia Policing Protection Act.",
+    policy_effect: "The bill would change D.C. police-pursuit rules by removing current restrictions and adding a general pursuit requirement with exceptions.",
+    rollcall_number: 275,
+    vote_context: { ...partyOutcomeContext, final_result: "passed", vote_type: "final_passage" },
+  }),
+  row({
+    description: "CLEAN DC Act",
+    issue_facet: "dc_policing_reform_repeal",
+    plain_english_summary: "This was House passage of the CLEAN DC Act.",
+    policy_effect: "The bill would reverse D.C. policing reforms involving neck-restraint limits, body-worn camera procedures, and access to police disciplinary records.",
+    rollcall_number: 299,
+    vote_context: { ...partyOutcomeContext, final_result: "passed", vote_type: "final_passage" },
+  }),
+  row({
+    description: "Trahan of Massachusetts Part B Amendment No. 2",
+    interpretation_status: "ambiguous",
+    issue_facet: "administrative_law_and_regulatory_procedures",
+    position: "yea",
+    rollcall_number: 32,
+    support_position: null,
+    oppose_position: null,
+    uncertainty_note: "The packet identifies an amendment vote, but the cached bill summary describes the underlying bill rather than the exact amendment change.",
+  }),
+  row({
+    description: "Providing for consideration of the bills H.R. 884, H.R. 2056, H.R. 2096, S. 331, and for other purposes",
+    interpretation_status: "insufficient_evidence",
+    issue_facet: "house_of_representatives",
+    rollcall_number: 160,
+    support_position: null,
+    oppose_position: null,
+    uncertainty_note: "The available official text describes a procedural motion or rule rather than a clear final policy choice.",
   }),
 ];
 
@@ -188,6 +252,63 @@ test("approved Valerie Economy vote summaries and limited-row caveats remain unc
 
   assert.ok(source.includes("Plain-English"));
   assert.ok(source.includes("Official Vote Record"));
+});
+
+test("Justice & Public Safety overview uses domain-aware generic language", () => {
+  const overview = buildIssueOverview(valerieJusticeRows, {
+    domain: "JUSTICE_PUBLIC_SAFETY",
+    representativeName: "Valerie P. Foushee",
+  });
+  const rendered = formatRenderedIssueOverview(overview);
+
+  assert.equal(overview.issueLabel, "Justice & Public Safety");
+  assert.equal(overview.votePattern.supportCount, 1);
+  assert.equal(overview.votePattern.opposeCount, 4);
+  assert.equal(overview.votePattern.ambiguousCount, 2);
+  assert.equal(overview.votePattern.predominantPosition, "mixed interpreted vote pattern");
+  assert.deepEqual(
+    overview.measureGroups.map((group) => group.label),
+    [
+      "fentanyl scheduling and penalty thresholds",
+      "federal law-enforcement retired weapon purchases",
+      "law-enforcement safety reporting",
+      "D.C. police pursuit policy",
+      "D.C. policing reform repeal",
+    ],
+  );
+  assert.match(rendered, /public-safety and legal-policy questions/);
+  assert.match(rendered, /whether to permanently schedule fentanyl-related substances/);
+  assert.match(rendered, /whether to create a program for federal law-enforcement officers to buy retired agency-issued firearms/);
+  assert.match(rendered, /whether to require DOJ reporting on targeted attacks against law-enforcement officers/);
+  assert.match(rendered, /whether to change D\.C\. police pursuit rules/);
+  assert.match(rendered, /whether to repeal D\.C\.'s 2022 policing and justice reform act/);
+  assert.match(rendered, /mixed/);
+  assert.match(rendered, /Of the 5 reviewed Yes\/No votes that could be interpreted, 1 supported the measures shown and 4 opposed them\./);
+  assert.match(rendered, /Most opposed measures that passed the House\./);
+  assert.match(rendered, /not as a simple statement that she is broadly for or against this issue area/);
+  assert.match(rendered, /Two additional rows remain visible below but are not counted because the available source text does not clearly explain the practical policy effect\./);
+  assert.doesNotMatch(rendered, /concrete fiscal questions|for" or "against taxes|full fiscal record|JUSTICE PUBLIC SAFETY|administrative law and regulatory procedures|house of representatives|Yes-pattern|No-pattern/);
+});
+
+test("generic Justice card summaries use legislator name and clean punctuation", () => {
+  const summary = buildVoteCardSummary(valerieJusticeRows[0], {
+    representativeName: "Valerie P. Foushee",
+  });
+  const federalLawEnforcementSummary = buildVoteCardSummary(valerieJusticeRows[1], {
+    representativeName: "Valerie P. Foushee",
+  });
+  const limitedSummary = buildLimitedContextSummary(valerieJusticeRows[6]);
+
+  assert.equal(
+    summary,
+    "Nay. The House passed the HALT Fentanyl Act, which would permanently place fentanyl-related substances as a class into Schedule I and apply fentanyl-analogue penalty thresholds, while creating or revising research-registration paths. Foushee voted against passing the bill, matching most Democrats. The bill passed the House.",
+  );
+  assert.equal(
+    federalLawEnforcementSummary,
+    "Nay. The House passed a bill directing GSA to create a process for federal law-enforcement officers to buy retired agency-issued firearms. Foushee voted against passing the bill, matching most Democrats. The bill passed the House.",
+  );
+  assert.doesNotMatch(summary, /This representative|\. matching|interpreted measure/);
+  assert.match(limitedSummary, /This row remains visible but is not counted in the summarized vote pattern because the available source text does not explain the practical policy effect\./);
 });
 
 function row(overrides) {

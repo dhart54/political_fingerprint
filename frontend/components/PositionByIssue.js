@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
 import { buildIssueOverview } from "../lib/issueOverview.mjs";
 import { DOMAIN_LABELS, formatDomainLabel } from "../lib/issueDomains";
+import {
+  buildLimitedContextSummary as buildGenericLimitedContextSummary,
+  buildVoteCardSummary as buildGenericVoteCardSummary,
+} from "../lib/voteCardSummary.mjs";
 
 export default function PositionByIssue({
   evidenceRequest = null,
@@ -381,6 +385,7 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
                       </span>
                     </div>
                     <InterpretationBreakdown
+                      representativeName={legislator?.name_display}
                       row={row}
                       selectedActionRow={selectedActionRow}
                       setSelectedActionRow={setSelectedActionRow}
@@ -625,7 +630,7 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
   );
 }
 
-function InterpretationBreakdown({ row, selectedActionRow, setSelectedActionRow }) {
+function InterpretationBreakdown({ representativeName, row, selectedActionRow, setSelectedActionRow }) {
   if (!hasInterpretationDetail(row)) {
     return null;
   }
@@ -637,7 +642,7 @@ function InterpretationBreakdown({ row, selectedActionRow, setSelectedActionRow 
   const interpretedVoteRead = buildInterpretedVoteRead(row);
   const whatHappened = row.what_happened || summaryText || policyEffectText;
   const whyItMattered = row.why_it_mattered || buildPlainTakeaway(row);
-  const voteCardSummary = buildVoteCardSummary(row) || interpretedVoteRead;
+  const voteCardSummary = buildVoteCardSummary(row, { representativeName }) || interpretedVoteRead;
   const limitedContextSummary = buildLimitedContextSummary(row);
   const contextBadges = buildContextBadges(row);
   const voteContextLine = buildVoteContextLine(row);
@@ -798,26 +803,13 @@ function buildInterpretedVoteRead(row) {
   return `${position}.`;
 }
 
-function buildVoteCardSummary(row) {
+function buildVoteCardSummary(row, options = {}) {
   const exactSummary = buildKnownVoteCardSummary(row);
   if (exactSummary) {
     return exactSummary;
   }
 
-  if (!row || row.interpretation_status !== "interpreted") {
-    return "";
-  }
-
-  const position = formatVotePosition(row.position);
-  const action = cleanSummarySentence(row.what_happened || buildUsefulInterpretationText(row.plain_english_summary));
-  const stakes = cleanSummarySentence(row.why_it_mattered || buildPlainTakeaway(row));
-  const voteMeaning = buildPlainVoteMeaning(row);
-  const context = buildPlainPartyOutcomeContext(row);
-
-  return [position, action, stakes, voteMeaning, context]
-    .filter(Boolean)
-    .map((piece, index) => (index === 0 ? `${piece}.` : ensurePeriod(piece)))
-    .join(" ");
+  return buildGenericVoteCardSummary(row, options);
 }
 
 function buildKnownVoteCardSummary(row) {
@@ -863,104 +855,13 @@ function buildLimitedContextSummary(row) {
     return `${position}. Limited-context row. This was a motion to instruct conferees, not final passage of the underlying appropriations bill. It remains visible below but is not counted in the summarized vote pattern.`;
   }
 
-  return "";
-}
-
-function buildPlainVoteMeaning(row) {
-  const memberLabel = extractMemberLabel(row);
-  const facet = String(row.issue_facet || "");
-
-  if (row.position === "not_voting") {
-    return `${memberLabel} was recorded as not voting, so this row does not count as support or opposition.`;
-  }
-
-  const votedAgainst = row.position === row.oppose_position;
-  const votedFor = row.position === row.support_position;
-  const direction = votedAgainst ? "against" : votedFor ? "for" : "on";
-
-  if (facet === "budget_reconciliation_and_debt_limit") {
-    return `${memberLabel} voted ${direction} that budget framework`;
-  }
-  if (facet === "small_business_loan_eligibility") {
-    return `${memberLabel} voted ${direction} adding those eligibility restrictions`;
-  }
-  if (facet === "military_construction_and_va_appropriations") {
-    return `${memberLabel} voted ${direction} that military construction and Veterans Affairs funding bill`;
-  }
-  if (facet === "temporary_government_funding") {
-    return `${memberLabel} voted ${direction} that temporary funding bill`;
-  }
-  if (facet === "government_funding_and_shutdown") {
-    return `${memberLabel} voted ${direction} that shutdown-ending funding package`;
-  }
-  if (facet === "small_business_regulation") {
-    return `${memberLabel} voted ${direction} that SBA regulatory-cost cap bill`;
-  }
-
-  return `${memberLabel} voted ${direction} the interpreted measure`;
-}
-
-function buildPlainPartyOutcomeContext(row) {
-  const context = row.vote_context;
-  const pieces = [];
-
-  if (context?.member_voted_with_party_majority === true) {
-    const partyName = context.member_party ? formatPartyName(context.member_party) : "party";
-    pieces.push(`matching most House ${partyName}s`);
-  } else if (context?.member_voted_with_party_majority === false) {
-    const partyName = context.member_party ? formatPartyName(context.member_party) : "party";
-    pieces.push(`not matching most House ${partyName}s`);
-  }
-
-  const outcome = buildPlainOutcomeSentence(row);
-  if (pieces.length && outcome) {
-    return `${pieces.join(", ")}. ${outcome}`;
-  }
-  if (pieces.length) {
-    return pieces.join(", ");
-  }
-  return outcome;
-}
-
-function buildPlainOutcomeSentence(row) {
-  const context = row.vote_context;
-  if (!context?.final_result) {
-    return "";
-  }
-
-  if (context.final_result === "failed") {
-    return "The measure failed.";
-  }
-  if (context.final_result !== "passed") {
-    return "";
-  }
-  if (Number(context.vote_margin) > 0 && Number(context.vote_margin) <= 5) {
-    return "The measure passed narrowly.";
-  }
-  if (context.vote_type === "final_passage") {
-    return "The bill passed the House.";
-  }
-  return "The measure passed.";
+  return buildGenericLimitedContextSummary(row);
 }
 
 function extractMemberLabel(row) {
   const memberContext = String(row?.member_vote_context || "");
   const match = memberContext.match(/^([A-Z][A-Za-z.'-]+)/);
   return match?.[1] || "This representative";
-}
-
-function cleanSummarySentence(value) {
-  return String(value || "")
-    .replace(/\.$/, "")
-    .trim();
-}
-
-function ensurePeriod(value) {
-  const text = String(value || "").trim();
-  if (!text) {
-    return "";
-  }
-  return /[.!?]$/.test(text) ? text : `${text}.`;
 }
 
 function buildPlainTakeaway(row) {
