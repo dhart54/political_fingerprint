@@ -456,6 +456,8 @@ Frontend presentation:
 - that issue overview may count interpreted votes with yea/nay positions, rows without yea/nay positions, and ambiguous or insufficient-evidence rows
 - that issue overview may say whether the representative's interpreted votes with yea/nay positions in the opened issue slice were for, against, mostly for, mostly against, or split across the interpreted measures
 - that issue overview may group source-grounded issue facets from cached `vote_interpretations` into short practical measure descriptions, such as budget-reconciliation instructions, loan-eligibility restrictions, or temporary funding packages
+- issue-overview language must be domain-aware: Economy & Taxes may use fiscal/tax language, Justice & Public Safety may use public-safety and legal-policy language, and other domains should fall back to neutral "policy questions" or "reviewed measures" language
+- issue-overview measure groups may use a small reviewed mapping from `issue_facet` values to voter-facing labels; if no mapping exists, fallback text must still be neutral and source-grounded
 - that issue overview must state its scope, including interpreted vote count, total roll-call rows shown, rows without yea/nay positions, and ambiguous/procedural rows left outside the summarized pattern
 - issue sections with only one interpreted vote with a yea/nay position must be framed as a limited read and treated as a narrow signal until more interpreted votes are loaded
 - it must not infer motive, ideology, causality, rank, or recommend an electoral action
@@ -471,6 +473,7 @@ Vote-card UX rules:
 - source-basis and methodology details should not be visible by default
 - ambiguous or limited-context votes must show their caveat plainly and must not be over-interpreted into a support/opposition pattern
 - rows where the member was recorded as not voting may explain the bill or measure, but must never be counted as support or opposition
+- generic vote-card summaries should use the representative's available display name rather than "this representative" when a name is available
 
 ## Drift Rules
 
