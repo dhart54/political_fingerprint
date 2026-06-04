@@ -311,6 +311,84 @@ test("generic Justice card summaries use legislator name and clean punctuation",
   assert.match(limitedSummary, /This row remains visible but is not counted in the summarized vote pattern because the available source text does not explain the practical policy effect\./);
 });
 
+test("generic card summary templates improve top non-gold interpreted facets", () => {
+  const summaryRows = [
+    row({
+      chamber: "house",
+      issue_facet: "law_enforcement_safety_reporting",
+      position: "yea",
+      rollcall_number: 131,
+      vote_context: { ...partyOutcomeContext, final_result: "passed", member_voted_with_winning_side: true, vote_type: "final_passage" },
+    }),
+    row({
+      chamber: "house",
+      issue_facet: "dc_police_pursuit_policy",
+      rollcall_number: 275,
+      vote_context: { ...partyOutcomeContext, final_result: "passed", vote_type: "final_passage" },
+    }),
+    row({
+      chamber: "house",
+      issue_facet: "school_foreign_funding_and_contract_restrictions",
+      rollcall_number: 301,
+      vote_context: { ...partyOutcomeContext, final_result: "passed", vote_type: "final_passage" },
+    }),
+    row({
+      chamber: "house",
+      issue_facet: "medicaid_payment_rules",
+      position: "yea",
+      rollcall_number: 501,
+      vote_context: { ...partyOutcomeContext, final_result: "passed", member_voted_with_winning_side: true, vote_type: "final_passage" },
+    }),
+    row({
+      chamber: "senate",
+      issue_facet: "foreign_military_sales",
+      rollcall_number: 12,
+      vote_context: { ...partyOutcomeContext, final_result: "passed", vote_type: "passage" },
+    }),
+  ];
+  const summaries = summaryRows.map((summaryRow) =>
+    buildVoteCardSummary(summaryRow, {
+      representativeName: "Valerie P. Foushee",
+    }),
+  );
+  const limitedSummary = buildLimitedContextSummary(
+    row({
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "Defense authorization amendment",
+      rollcall_number: 202,
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "The available source text identifies an amendment but does not explain the full practical policy effect.",
+    }),
+  );
+
+  assert.equal(
+    summaries[0],
+    "Yea. The House passed a bill requiring DOJ reports on targeted attacks against law-enforcement officers, reporting-system feasibility, and officer mental-health resources. Foushee voted to pass the bill, matching most Democrats. The bill passed the House.",
+  );
+  assert.equal(
+    summaries[1],
+    "Nay. The House passed a bill changing D.C. police pursuit rules by removing current restrictions and adding a general pursuit requirement with listed exceptions. Foushee voted against passing the bill, matching most Democrats. The bill passed the House.",
+  );
+  assert.equal(
+    summaries[2],
+    "Nay. The House passed a bill adding school restrictions tied to foreign funding, contracts, or influence. Foushee voted against passing the bill, matching most Democrats. The bill passed the House.",
+  );
+  assert.equal(
+    summaries[3],
+    "Yea. The House passed a bill restricting federal Medicaid payment for specified procedures involving minors. Foushee voted to pass the bill, matching most Democrats. The bill passed the House.",
+  );
+  assert.equal(
+    summaries[4],
+    "Nay. The Senate voted on whether to allow a specific foreign military sale to proceed. Foushee voted against allowing that foreign military sale to proceed, matching most Democrats. The measure passed.",
+  );
+  assert.match(limitedSummary, /This row remains visible but is not counted in the summarized vote pattern/);
+
+  const publicCopy = [...summaries, limitedSummary].join(" ");
+  assert.match(publicCopy, /Foushee voted/);
+  assert.doesNotMatch(publicCopy, /This representative|\. matching|stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|Yes-pattern|No-pattern|is corrupt|you should vote/i);
+});
+
 test("scale-readiness facet labels avoid raw public overview leakage", () => {
   const nationalSecurityRows = [
     row({
