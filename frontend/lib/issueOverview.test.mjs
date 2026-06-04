@@ -538,7 +538,10 @@ test("overview readiness gating limits thin or dominated slices without changing
   const dominatedRendered = formatRenderedIssueOverview(dominatedOverview);
 
   assert.equal(thinOverview.readiness.status, "limited");
-  assert.deepEqual(thinOverview.readiness.reasons, ["too_few_counted_interpreted_yes_no_rows"]);
+  assert.deepEqual(thinOverview.readiness.reasons, [
+    "too_few_counted_interpreted_yes_no_rows",
+    "limited_or_ambiguous_rows_dominate",
+  ]);
   assert.equal(thinOverview.votePattern.interpretedYesNoCount, 1);
   assert.equal(thinOverview.votePattern.opposeCount, 1);
   assert.match(thinRendered, /limited interpreted evidence/);
