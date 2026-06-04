@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
 import { buildIssueOverview } from "../lib/issueOverview.mjs";
+import { groupIssueRowsByReadiness, sortIssueRowsByReadiness } from "../lib/issueReadiness.mjs";
 import { DOMAIN_LABELS, formatDomainLabel } from "../lib/issueDomains";
 import {
   buildLimitedContextSummary as buildGenericLimitedContextSummary,
@@ -83,10 +84,9 @@ export default function PositionByIssue({
     });
   }, [evidenceRequest?.requestedAt]);
 
-  const rows = (state.payload?.positions || [])
-    .filter((row) => row.recorded_votes > 0)
-    .sort((left, right) => right.recorded_votes - left.recorded_votes || right.yea_share - left.yea_share)
-    .slice(0, 6);
+  const issueRows = sortIssueRowsByReadiness(state.payload?.positions || []);
+  const rows = issueRows.filter((row) => row.recorded_votes > 0 || row.readiness.key === "not_enough_to_summarize");
+  const readinessGroups = groupIssueRowsByReadiness(state.payload?.positions || []);
   const patternRows = buildPatternRows(state.payload?.positions || []);
   const takeaway = buildTakeaway(rows);
   const selectedRow = rows.find((row) => row.domain === selectedDomain) || rows[0] || null;
@@ -129,71 +129,37 @@ export default function PositionByIssue({
             {state.status === "ready"
               ? takeaway
               : state.status === "loading"
-                ? "Reading how this legislator voted inside their most active issue domains."
-                : "The site cannot read how this legislator voted inside issue domains right now."}
+                ? "Reading where this legislator's reviewed issue evidence is strongest."
+                : "The site cannot read issue readiness for this legislator right now."}
           </p>
           <div className="mt-4 rounded-[1.5rem] bg-stone-950 px-4 py-4 text-stone-100">
             <p className="text-xs uppercase tracking-[0.28em] text-stone-400">
               How To Read This
             </p>
             <p className="mt-2 text-[15px] leading-7 text-stone-200">
-              Each tile starts with the domains where this legislator has the most recorded votes, then shows the yea/nay split and how many votes have cached plain-English meaning. It is descriptive, not a score.
+              Issue areas are grouped by reviewed evidence strength. Strong and mixed sections come first; limited sections stay visible without being treated as confident summaries. It is descriptive, not a score.
             </p>
           </div>
         </div>
 
-        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-3">
           {state.status === "error" ? (
-            <div className="rounded-[1.5rem] border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700 md:col-span-2 xl:col-span-3">
+            <div className="rounded-[1.5rem] border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
               {state.error}
             </div>
           ) : null}
           {state.status === "ready" && rows.length === 0 ? (
-            <div className="rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600 md:col-span-2 xl:col-span-3">
+            <div className="rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600">
               No recorded yea/nay policy-vote splits are available in the current window. This is a coverage note, not an alignment finding.
             </div>
           ) : null}
-          {rows.map((row) => (
-            <button
-              aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
-              aria-pressed={selectedDomain === row.domain}
-              className={`rounded-[1.1rem] border px-4 py-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition ${
-                selectedDomain === row.domain
-                  ? "border-cyan-800 bg-cyan-50"
-                  : "border-stone-200 bg-stone-50 hover:border-cyan-700/50"
-              }`}
-              key={row.domain}
-              onClick={() => inspectDomain(row.domain)}
-              type="button"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <p className="max-w-[220px] text-[15px] leading-6 text-stone-950">
-                  {formatDomainLabel(row.domain)}
-                </p>
-                <p className="shrink-0 text-sm text-stone-500">{row.recorded_votes} votes</p>
-              </div>
-              <div className="mt-3 flex flex-col gap-2">
-                <span className={`w-fit max-w-full rounded-xl px-3 py-1 text-[11px] uppercase leading-4 tracking-[0.12em] ${getPositionBadgeClass(row)}`}>
-                  {getPositionLabel(row)}
-                </span>
-                <p className="text-[13px] leading-5 text-stone-700">
-                  {buildPositionRead(row)}. {buildInterpretationCoverageRead(row)}
-                </p>
-              </div>
-              <div className="mt-3 h-2 overflow-hidden rounded-full bg-stone-200">
-                <div className="flex h-full w-full">
-                  <div
-                    className="bg-emerald-500"
-                    style={{ width: `${row.yea_share * 100}%` }}
-                  />
-                  <div
-                    className="bg-rose-500"
-                    style={{ width: `${row.nay_share * 100}%` }}
-                  />
-                </div>
-              </div>
-            </button>
-          ))}
+          {state.status === "ready" ? (
+            <IssueReadinessGroups
+              groups={readinessGroups}
+              inspectDomain={inspectDomain}
+              selectedDomain={selectedDomain}
+            />
+          ) : null}
         </div>
       </div>
 
@@ -210,6 +176,92 @@ export default function PositionByIssue({
         status={state.status}
       />
     </section>
+  );
+}
+
+function IssueReadinessGroups({ groups, inspectDomain, selectedDomain }) {
+  const visibleGroups = groups.filter((group) => group.rows.length > 0);
+
+  if (!visibleGroups.length) {
+    return null;
+  }
+
+  return (
+    <div className="grid gap-3">
+      {visibleGroups.map((group) => (
+        <section className="rounded-[1.25rem] border border-stone-200 bg-stone-50 px-3 py-3" key={group.key}>
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-cyan-900">
+                {group.label}
+              </p>
+              <p className="mt-1 text-sm leading-6 text-stone-600">
+                {formatReadinessGroupHelp(group.key)}
+              </p>
+            </div>
+            <span className="w-fit rounded-full bg-white px-3 py-1 text-xs uppercase tracking-[0.16em] text-stone-600">
+              {group.rows.length} {group.rows.length === 1 ? "issue" : "issues"}
+            </span>
+          </div>
+          <div className="mt-3 grid gap-3 md:grid-cols-2">
+            {group.rows.map((row) => (
+              <IssueReadinessTile
+                inspectDomain={inspectDomain}
+                key={row.domain}
+                row={row}
+                selectedDomain={selectedDomain}
+              />
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+}
+
+function IssueReadinessTile({ inspectDomain, row, selectedDomain }) {
+  return (
+    <button
+      aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
+      aria-pressed={selectedDomain === row.domain}
+      className={`rounded-[1.1rem] border px-4 py-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition ${
+        selectedDomain === row.domain
+          ? "border-cyan-800 bg-cyan-50"
+          : "border-stone-200 bg-white hover:border-cyan-700/50"
+      }`}
+      onClick={() => inspectDomain(row.domain)}
+      type="button"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <p className="max-w-[220px] text-[15px] leading-6 text-stone-950">
+          {formatDomainLabel(row.domain)}
+        </p>
+        <p className="shrink-0 text-sm text-stone-500">{row.recorded_votes || 0} votes</p>
+      </div>
+      <div className="mt-3 flex flex-col gap-2">
+        <span className={`w-fit max-w-full rounded-xl px-3 py-1 text-[11px] uppercase leading-4 tracking-[0.12em] ${getReadinessBadgeClass(row.readiness?.key)}`}>
+          {row.readiness?.label || "Not enough to summarize"}
+        </span>
+        <p className="text-[13px] leading-5 text-stone-700">
+          {buildPositionRead(row)}. {buildInterpretationCoverageRead(row)}
+        </p>
+        <p className="text-[13px] leading-5 text-stone-600">
+          {row.readiness?.reason}
+        </p>
+      </div>
+      <div className="mt-3 h-2 overflow-hidden rounded-full bg-stone-200">
+        <div className="flex h-full w-full">
+          <div
+            className="bg-emerald-500"
+            style={{ width: `${(row.yea_share || 0) * 100}%` }}
+          />
+          <div
+            className="bg-rose-500"
+            style={{ width: `${(row.nay_share || 0) * 100}%` }}
+          />
+        </div>
+      </div>
+    </button>
   );
 }
 
@@ -970,23 +1022,27 @@ function getVoteBadgeClass(position) {
 
 function buildTakeaway(rows) {
   if (!rows.length) {
-    return "There are not enough recorded yea and nay votes in the current window to show a clear position pattern by issue.";
+    return "There is not enough reviewed issue evidence in the current window to show a confident issue read.";
   }
 
-  const strongest = rows[0];
-  const strongestLabel = getPositionLabel(strongest).toLowerCase();
-  const strongestShare = Math.max(strongest.yea_share, strongest.nay_share);
-  const second = rows[1];
+  const bestRead = rows.find((row) => row.readiness?.key === "strong_evidence");
+  const mixedRead = rows.find((row) => row.readiness?.key === "mixed_but_interpretable");
+  const firstLimited = rows.find((row) => row.readiness?.key === "limited_evidence");
 
-  if (second) {
-    return `In the strongest recorded domains, this section shows ${strongestLabel} for ${formatDomainLabel(strongest.domain)} (${(strongestShare * 100).toFixed(
-      0,
-    )}% of recorded yea/nay votes) and additional recorded positions in ${formatDomainLabel(second.domain)}.`;
+  if (bestRead && mixedRead) {
+    return `The strongest reviewed issue read is ${formatDomainLabel(bestRead.domain)}. ${formatDomainLabel(mixedRead.domain)} is also useful, but the interpreted votes are mixed.`;
+  }
+  if (bestRead) {
+    return `The strongest reviewed issue read is ${formatDomainLabel(bestRead.domain)}. Limited sections remain visible below without being treated as confident summaries.`;
+  }
+  if (mixedRead) {
+    return `${formatDomainLabel(mixedRead.domain)} has enough reviewed evidence to inspect, but the vote pattern is mixed rather than one-directional.`;
+  }
+  if (firstLimited) {
+    return `The available issue reads are limited. Start with ${formatDomainLabel(firstLimited.domain)} if you want to inspect the strongest available evidence, but do not treat it as a confident issue pattern.`;
   }
 
-  return `The clearest vote-direction sample in this window is ${strongestLabel} for ${formatDomainLabel(
-    strongest.domain,
-  )}, across ${strongest.recorded_votes} recorded votes.`;
+  return "The current issue sections are visible as evidence, but none have enough reviewed vote meaning for a confident summary yet.";
 }
 
 function buildPatternRows(rows) {
@@ -1265,6 +1321,32 @@ function getPositionBadgeClass(row) {
     return "bg-rose-100 text-rose-800";
   }
   return "bg-stone-200 text-stone-700";
+}
+
+function getReadinessBadgeClass(key) {
+  if (key === "strong_evidence") {
+    return "bg-cyan-900 text-white";
+  }
+  if (key === "mixed_but_interpretable") {
+    return "bg-indigo-100 text-indigo-900";
+  }
+  if (key === "limited_evidence") {
+    return "bg-amber-100 text-amber-900";
+  }
+  return "bg-stone-200 text-stone-700";
+}
+
+function formatReadinessGroupHelp(key) {
+  if (key === "strong_evidence") {
+    return "Enough reviewed vote meaning is available for a clear issue read.";
+  }
+  if (key === "mixed_but_interpretable") {
+    return "Enough reviewed vote meaning is available, but the votes point in more than one direction.";
+  }
+  if (key === "limited_evidence") {
+    return "Some reviewed evidence is available, but the section should stay cautious.";
+  }
+  return "Evidence rows may still be visible, but the issue should not get a confident summary yet.";
 }
 
 function buildPositionRead(row) {
