@@ -389,6 +389,220 @@ test("generic card summary templates improve top non-gold interpreted facets", (
   assert.doesNotMatch(publicCopy, /This representative|\. matching|stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|Yes-pattern|No-pattern|is corrupt|you should vote/i);
 });
 
+test("phase 1 generic templates cover additional high-confidence facets without upgrading limited rows", () => {
+  const summaryRows = [
+    row({
+      chamber: "house",
+      issue_facet: "dc_policing_reform_repeal",
+      rollcall_number: 299,
+      vote_context: { ...partyOutcomeContext, final_result: "passed", vote_type: "final_passage" },
+    }),
+    row({
+      chamber: "house",
+      issue_facet: "school_foreign_influence_parent_notifications",
+      position: "yea",
+      rollcall_number: 302,
+      vote_context: { ...partyOutcomeContext, final_result: "passed", member_voted_with_winning_side: true, vote_type: "final_passage" },
+    }),
+    row({
+      chamber: "house",
+      issue_facet: "health_insurance_premium_assistance",
+      rollcall_number: 500,
+      vote_context: { ...partyOutcomeContext, final_result: "passed", vote_type: "final_passage" },
+    }),
+    row({
+      chamber: "house",
+      issue_facet: "defense_authorization",
+      position: "yea",
+      rollcall_number: 200,
+      vote_context: { ...partyOutcomeContext, final_result: "passed", member_voted_with_winning_side: true, vote_type: "final_passage" },
+    }),
+    row({
+      chamber: "house",
+      issue_facet: "natural_gas_pipeline_and_lng_review_coordination",
+      rollcall_number: 400,
+      vote_context: { ...partyOutcomeContext, final_result: "passed", vote_type: "final_passage" },
+    }),
+    row({
+      chamber: "house",
+      issue_facet: "federal_employee_collective_bargaining",
+      position: "yea",
+      rollcall_number: 300,
+      vote_context: { ...partyOutcomeContext, final_result: "passed", member_voted_with_winning_side: true, vote_type: "final_passage" },
+    }),
+  ];
+  const summaries = summaryRows.map((summaryRow) =>
+    buildVoteCardSummary(summaryRow, {
+      representativeName: "Valerie P. Foushee",
+    }),
+  );
+  const limitedSummary = buildLimitedContextSummary(
+    row({
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "House floor procedure",
+      rollcall_number: 401,
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "This was a floor-rule vote, not final passage of the underlying policies.",
+    }),
+  );
+
+  assert.equal(
+    summaries[0],
+    "Nay. The House passed a bill that would repeal D.C.'s 2022 policing and justice reform act, including provisions related to neck restraints, body-worn cameras, and police disciplinary records. Foushee voted against passing the bill, matching most Democrats. The bill passed the House.",
+  );
+  assert.equal(
+    summaries[1],
+    "Yea. The House passed a bill requiring parent notifications about foreign-influence issues in schools. Foushee voted to pass the bill, matching most Democrats. The bill passed the House.",
+  );
+  assert.equal(
+    summaries[2],
+    "Nay. The House passed a bill addressing health insurance premium assistance and affordability rules. Foushee voted against passing the bill, matching most Democrats. The bill passed the House.",
+  );
+  assert.equal(
+    summaries[3],
+    "Yea. The House passed defense and national-security authorization legislation. Foushee voted to pass that defense authorization legislation, matching most Democrats. The bill passed the House.",
+  );
+  assert.equal(
+    summaries[4],
+    "Nay. The House passed a bill coordinating federal review of natural gas pipeline and LNG projects. Foushee voted against passing that review-coordination bill, matching most Democrats. The bill passed the House.",
+  );
+  assert.equal(
+    summaries[5],
+    "Yea. The House voted on a measure changing federal employee collective-bargaining rules. Foushee voted to change those collective-bargaining rules, matching most Democrats. The bill passed the House.",
+  );
+  assert.match(limitedSummary, /not counted in the summarized vote pattern/);
+
+  const publicCopy = [...summaries, limitedSummary].join(" ");
+  assert.doesNotMatch(publicCopy, /This representative|\. matching|stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|Yes-pattern|No-pattern|is corrupt|you should vote/i);
+});
+
+test("overview readiness gating limits thin or dominated slices without changing counts", () => {
+  const thinRows = [
+    row({
+      issue_facet: "foreign_military_sales",
+      what_happened: "The Senate voted on a foreign military sale.",
+      why_it_mattered: "The vote concerned whether to allow or disapprove a specific foreign military sale.",
+    }),
+    row({
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "House floor procedure",
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "The available source text describes floor procedure rather than a clear final policy choice.",
+    }),
+  ];
+  const dominatedRows = [
+    row({
+      issue_facet: "federal_employee_collective_bargaining",
+      what_happened: "The House voted on a measure changing federal employee collective-bargaining rules.",
+      why_it_mattered: "The vote concerned whether to change collective-bargaining rules for federal employees.",
+    }),
+    row({
+      issue_facet: "school_foreign_influence_parent_notifications",
+      what_happened: "The House passed a bill requiring parent notifications about foreign-influence issues in schools.",
+      why_it_mattered: "The vote concerned whether to require parent notifications about foreign-influence issues in schools.",
+    }),
+    row({
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "floor_rule_for_multiple_bills",
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "This was a floor-rule vote for considering multiple bills.",
+    }),
+    row({
+      interpretation_status: "ambiguous",
+      issue_facet: "Defense authorization amendment",
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "The amendment source text does not explain the full practical policy effect.",
+    }),
+    row({
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "house_of_representatives",
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "The available official text describes a procedural motion or rule.",
+    }),
+  ];
+
+  const thinOverview = buildIssueOverview(thinRows, {
+    domain: "NATIONAL_SECURITY_FOREIGN",
+    representativeName: "Valerie P. Foushee",
+  });
+  const dominatedOverview = buildIssueOverview(dominatedRows, {
+    domain: "EDUCATION_WORKFORCE",
+    representativeName: "Valerie P. Foushee",
+  });
+  const thinRendered = formatRenderedIssueOverview(thinOverview);
+  const dominatedRendered = formatRenderedIssueOverview(dominatedOverview);
+
+  assert.equal(thinOverview.readiness.status, "limited");
+  assert.deepEqual(thinOverview.readiness.reasons, ["too_few_counted_interpreted_yes_no_rows"]);
+  assert.equal(thinOverview.votePattern.interpretedYesNoCount, 1);
+  assert.equal(thinOverview.votePattern.opposeCount, 1);
+  assert.match(thinRendered, /limited interpreted evidence/);
+  assert.match(thinRendered, /should not be read as a stable pattern/);
+  assert.doesNotMatch(thinRendered, /consistently opposed|consistently supported/);
+
+  assert.equal(dominatedOverview.readiness.status, "limited");
+  assert.deepEqual(dominatedOverview.readiness.reasons, [
+    "too_few_counted_interpreted_yes_no_rows",
+    "limited_or_ambiguous_rows_dominate",
+  ]);
+  assert.equal(dominatedOverview.votePattern.ambiguousCount, 3);
+  assert.match(dominatedRendered, /limited-context rows make up much of this sample/);
+  assert.match(dominatedRendered, /not forced into the pattern/);
+  assert.doesNotMatch(`${thinRendered} ${dominatedRendered}`, /stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|Yes-pattern|No-pattern|is corrupt|you should vote/i);
+});
+
+test("large issue sections keep overview measure groups compact", () => {
+  const largeRows = [
+    row({
+      issue_facet: "fentanyl_scheduling_and_penalties",
+      what_happened: "The House passed the HALT Fentanyl Act.",
+      why_it_mattered: "The vote concerned fentanyl scheduling and penalty-threshold changes.",
+    }),
+    row({
+      issue_facet: "federal_law_enforcement_equipment",
+      what_happened: "The House passed a bill about retired federal law-enforcement service weapons.",
+      why_it_mattered: "The vote concerned whether federal law-enforcement officers could buy retired agency-issued firearms.",
+    }),
+    row({
+      issue_facet: "law_enforcement_safety_reporting",
+      what_happened: "The House passed a bill requiring DOJ law-enforcement safety reporting.",
+      why_it_mattered: "The vote concerned DOJ reporting on law-enforcement officer safety and wellness.",
+    }),
+    row({
+      issue_facet: "dc_police_pursuit_policy",
+      what_happened: "The House passed a bill changing D.C. police pursuit rules.",
+      why_it_mattered: "The vote concerned whether to change D.C. police pursuit rules.",
+    }),
+    row({
+      issue_facet: "dc_policing_reform_repeal",
+      what_happened: "The House passed a bill repealing D.C. policing reforms.",
+      why_it_mattered: "The vote concerned whether to repeal D.C.'s 2022 policing and justice reform act.",
+    }),
+    row({
+      issue_facet: "foreign_military_sales",
+      what_happened: "The Senate voted on a foreign military sale.",
+      why_it_mattered: "The vote concerned whether to allow or disapprove specific foreign military sales.",
+    }),
+  ];
+  const overview = buildIssueOverview(largeRows, {
+    domain: "JUSTICE_PUBLIC_SAFETY",
+    representativeName: "Valerie P. Foushee",
+  });
+  const rendered = formatRenderedIssueOverview(overview);
+
+  assert.equal(overview.readiness.status, "safe");
+  assert.equal(overview.measureGroups.length, 6);
+  assert.equal(overview.overviewMeasureGroups.length, 5);
+  assert.match(rendered, /One additional measure group is shown in the evidence below\./);
+  assert.doesNotMatch(rendered, /whether to allow or disapprove specific foreign military sales/);
+  assert.doesNotMatch(rendered, /plus other reviewed measures|stored vote context|for-side|against-side|leans Nay|Yes-pattern|No-pattern/i);
+});
+
 test("scale-readiness facet labels avoid raw public overview leakage", () => {
   const nationalSecurityRows = [
     row({
