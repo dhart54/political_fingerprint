@@ -229,6 +229,8 @@ Current reviewed "so what" fields: `vote_interpretations` stores `what_happened`
 
 Current issue-overview layer: the frontend derives a deterministic issue-overview object from the opened evidence rows only. It groups rows by reviewed `issue_facet`, lists practical policy levers from reviewed fields, counts only interpreted yea/nay rows whose position maps to the reviewed measure meaning, explains not-voting rows without counting them as support or opposition, and keeps ambiguous or limited-context rows visible as evidence limits. The overview may compare the member's votes with party-majority and final-outcome context when those deterministic `vote_context` fields are present, but it must not infer motive, ideology, character, corruption, or a voting recommendation.
 
+Issue-overview readiness: public overview copy must become more cautious when the opened slice has too few counted interpreted yea/nay rows or when ambiguous/insufficient rows dominate the slice. In those cases, the overview should describe the limited evidence, preserve the support/opposition counts that are available, and avoid presenting a stable issue pattern. For large issue sections, the overview should keep the measure-group list compact and direct users to the evidence rows below for additional groups rather than rendering a long paragraph.
+
 Next methodology target: broaden reviewed interpretation records using the new fields and replace remaining aggregate copy with sample-bound language that describes only the votes shown.
 
 ## User Alignment Rules

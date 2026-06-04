@@ -74,6 +74,12 @@ function buildFacetSpecificVoteCardSummary(row, { representativeName = "", posit
     action = `${formatChamberLabel(row.chamber)} voted on whether to allow a specific foreign military sale to proceed`;
   } else if (facet === "Defense authorization" || facet === "defense_authorization") {
     action = `${formatChamberLabel(row.chamber)} passed defense and national-security authorization legislation`;
+  } else if (facet === "federal_employee_collective_bargaining") {
+    action = `${formatChamberLabel(row.chamber)} voted on a measure changing federal employee collective-bargaining rules`;
+  } else if (facet === "natural_gas_pipeline_and_lng_review_coordination") {
+    action = `${formatChamberLabel(row.chamber)} passed a bill coordinating federal review of natural gas pipeline and LNG projects`;
+  } else if (facet === "Veterans cemetery administration") {
+    action = `${formatChamberLabel(row.chamber)} passed a bill affecting veterans cemetery administration`;
   }
 
   if (!action) {
@@ -95,6 +101,15 @@ function buildFacetSpecificVoteMeaning(row, { memberLabel }) {
   }
   if (facet === "Defense authorization" || facet === "defense_authorization") {
     return `${memberLabel} ${formatInfinitiveVoteMeaning(direction, "pass that defense authorization legislation", "passing that defense authorization legislation")}`;
+  }
+  if (facet === "federal_employee_collective_bargaining") {
+    return `${memberLabel} ${formatInfinitiveVoteMeaning(direction, "change those collective-bargaining rules", "changing those collective-bargaining rules")}`;
+  }
+  if (facet === "natural_gas_pipeline_and_lng_review_coordination") {
+    return `${memberLabel} ${formatInfinitiveVoteMeaning(direction, "pass that review-coordination bill", "passing that review-coordination bill")}`;
+  }
+  if (facet === "Veterans cemetery administration") {
+    return `${memberLabel} ${formatInfinitiveVoteMeaning(direction, "pass that veterans cemetery bill", "passing that veterans cemetery bill")}`;
   }
   return `${memberLabel} ${formatInfinitiveVoteMeaning(direction, "pass the bill", "passing the bill")}`;
 }

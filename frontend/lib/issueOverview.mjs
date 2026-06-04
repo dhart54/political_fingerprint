@@ -225,6 +225,10 @@ const ISSUE_FACET_GROUPS = {
   },
 };
 
+const MIN_COUNTED_ROWS_FOR_CONFIDENT_OVERVIEW = 3;
+const LIMITED_ROW_DOMINANCE_SHARE = 0.5;
+const MAX_MEASURE_GROUPS_IN_OVERVIEW = 5;
+
 export function buildIssueOverview(rows, { domain = "", representativeName = "" } = {}) {
   if (!Array.isArray(rows) || rows.length === 0) {
     return null;
@@ -269,22 +273,32 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
     partyPattern: summarizePartyPattern({ partyLabel, partyMatchCount, total: partyRows.length }),
     finalOutcomePattern: summarizeOutcomePattern({ matchCount: outcomeMatchCount, passedOpposedCount, total: outcomeRows.length }),
   };
+  const readiness = assessOverviewReadiness({
+    rows,
+    directionalRows,
+    ambiguousRows,
+    countedMeasureGroups,
+  });
+  const overviewMeasureGroups = selectOverviewMeasureGroups(countedMeasureGroups, readiness);
+  const additionalMeasureGroupCount = countedMeasureGroups.length - overviewMeasureGroups.length;
   const practicalPolicyLevers = uniqueStrings(
     [...countedMeasureGroups, ...notVotingMeasureGroups]
       .map((group) => group.practicalLever)
       .filter(Boolean),
   );
-  const concreteQuestions = uniqueStrings(countedMeasureGroups.map((group) => group.concreteQuestion).filter(Boolean));
+  const concreteQuestions = uniqueStrings(overviewMeasureGroups.map((group) => group.concreteQuestion).filter(Boolean));
   const copy = buildOverviewCopy({
+    additionalMeasureGroupCount,
     ambiguousMeasureGroups,
     ambiguousRows,
-    countedMeasureGroups,
+    countedMeasureGroups: overviewMeasureGroups,
     issueLabel,
     notVotingMeasureGroups,
     notVotingRows,
     practicalPolicyLevers,
     concreteQuestions,
     issueDomain,
+    readiness,
     representativeLabel,
     votePattern,
   });
@@ -293,9 +307,11 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
     issueLabel,
     representativeLabel,
     measureGroups: countedMeasureGroups,
+    overviewMeasureGroups,
     notVotingMeasureGroups,
     ambiguousMeasureGroups,
     practicalPolicyLevers,
+    readiness,
     votePattern,
     takeaways: {
       reasonable: copy.howVoterMightRead,
@@ -329,6 +345,7 @@ export function formatRenderedIssueOverview(overview) {
 }
 
 function buildOverviewCopy({
+  additionalMeasureGroupCount,
   ambiguousMeasureGroups,
   ambiguousRows,
   countedMeasureGroups,
@@ -338,9 +355,25 @@ function buildOverviewCopy({
   practicalPolicyLevers,
   concreteQuestions,
   issueDomain,
+  readiness,
   representativeLabel,
   votePattern,
 }) {
+  if (readiness.status !== "safe") {
+    return buildLimitedEvidenceOverviewCopy({
+      ambiguousMeasureGroups,
+      ambiguousRows,
+      concreteQuestions,
+      issueDomain,
+      issueLabel,
+      notVotingMeasureGroups,
+      notVotingRows,
+      readiness,
+      representativeLabel,
+      votePattern,
+    });
+  }
+
   const notVotingGroupText = formatList(notVotingMeasureGroups.map((group) => group.overviewPhrase));
   const concreteQuestionText = formatList(concreteQuestions, { semicolon: true });
   const aboutParts = [];
@@ -355,6 +388,11 @@ function buildOverviewCopy({
   if (notVotingRows.length && notVotingGroupText) {
     aboutParts.push(
       `A separate not-voting row concerned ${notVotingGroupText}, but ${representativeLabel} was recorded as not voting, so it is explained below and not counted as support or opposition.`,
+    );
+  }
+  if (additionalMeasureGroupCount > 0) {
+    aboutParts.push(
+      `${capitalize(formatNumber(additionalMeasureGroupCount))} additional ${additionalMeasureGroupCount === 1 ? "measure group is" : "measure groups are"} shown in the evidence below.`,
     );
   }
   if (ambiguousRows.length) {
@@ -416,6 +454,112 @@ function buildOverviewCopy({
     whatPatternThatCreates: patternParts.join(" "),
     howVoterMightRead,
     whatNotToInfer: notInferParts.join(" "),
+  };
+}
+
+function assessOverviewReadiness({ rows, directionalRows, ambiguousRows, countedMeasureGroups }) {
+  const totalRows = rows.length;
+  const countedYesNoCount = directionalRows.length;
+  const limitedCount = ambiguousRows.length;
+  const limitedShare = totalRows ? limitedCount / totalRows : 0;
+  const reasons = [];
+
+  if (countedYesNoCount < MIN_COUNTED_ROWS_FOR_CONFIDENT_OVERVIEW) {
+    reasons.push("too_few_counted_interpreted_yes_no_rows");
+  }
+  if (limitedCount > countedYesNoCount || limitedShare > LIMITED_ROW_DOMINANCE_SHARE) {
+    reasons.push("limited_or_ambiguous_rows_dominate");
+  }
+
+  return {
+    status: reasons.length ? "limited" : "safe",
+    reasons,
+    countedYesNoCount,
+    limitedCount,
+    totalRows,
+    limitedShare,
+    measureGroupCount: countedMeasureGroups.length,
+    maxMeasureGroupsShown: MAX_MEASURE_GROUPS_IN_OVERVIEW,
+  };
+}
+
+function selectOverviewMeasureGroups(groups, readiness) {
+  if (groups.length <= readiness.maxMeasureGroupsShown) {
+    return groups;
+  }
+
+  return [...groups]
+    .sort((left, right) => right.rowCount - left.rowCount || groups.indexOf(left) - groups.indexOf(right))
+    .slice(0, readiness.maxMeasureGroupsShown);
+}
+
+function buildLimitedEvidenceOverviewCopy({
+  ambiguousMeasureGroups,
+  ambiguousRows,
+  concreteQuestions,
+  issueDomain,
+  issueLabel,
+  notVotingMeasureGroups,
+  notVotingRows,
+  readiness,
+  representativeLabel,
+  votePattern,
+}) {
+  const concreteQuestionText = formatList(concreteQuestions, { semicolon: true });
+  const notVotingGroupText = formatList(notVotingMeasureGroups.map((group) => group.overviewPhrase));
+  const aboutParts = [];
+
+  if (concreteQuestionText) {
+    aboutParts.push(
+      `This ${issueLabel} sample has limited interpreted evidence. The rows that can be summarized concern ${concreteQuestionText}.`,
+    );
+  } else {
+    aboutParts.push(`This ${issueLabel} sample has limited interpreted evidence and does not yet support a clear issue overview.`);
+  }
+  if (readiness.reasons.includes("too_few_counted_interpreted_yes_no_rows")) {
+    aboutParts.push(
+      `Only ${readiness.countedYesNoCount} reviewed Yes/No ${readiness.countedYesNoCount === 1 ? "vote could" : "votes could"} be interpreted, so the section should not be read as a stable pattern.`,
+    );
+  }
+  if (notVotingRows.length && notVotingGroupText) {
+    aboutParts.push(
+      `A not-voting row concerned ${notVotingGroupText}, but ${representativeLabel} was recorded as not voting, so it is explained below and not counted as support or opposition.`,
+    );
+  }
+  if (ambiguousRows.length) {
+    aboutParts.push(formatLimitedContextOverviewSentence({ ambiguousMeasureGroups, ambiguousRows, issueDomain }));
+  }
+
+  const actionParts = [];
+  if (votePattern.supportCount || votePattern.opposeCount) {
+    actionParts.push(
+      `Of the ${votePattern.interpretedYesNoCount} reviewed Yes/No ${votePattern.interpretedYesNoCount === 1 ? "vote" : "votes"} that could be interpreted, ${votePattern.supportCount} supported the measures shown and ${votePattern.opposeCount} opposed them.`,
+    );
+  } else {
+    actionParts.push(`${representativeLabel} does not have enough interpreted Yes/No votes in this sample to summarize support or opposition.`);
+  }
+  if (votePattern.partyPattern) {
+    actionParts.push(votePattern.partyPattern);
+  }
+  if (votePattern.finalOutcomePattern) {
+    actionParts.push(votePattern.finalOutcomePattern);
+  }
+
+  const limitedReason = readiness.reasons.includes("limited_or_ambiguous_rows_dominate")
+    ? "limited-context rows make up much of this sample"
+    : "the interpreted evidence is still thin";
+
+  return {
+    whatTheseVotesWereAbout: aboutParts.join(" "),
+    whatRepresentativeDid: actionParts.join(" "),
+    whatPatternThatCreates: `This section is best read as limited evidence, not a stable issue pattern, because ${limitedReason}.`,
+    howVoterMightRead:
+      "A voter can use these rows as source-backed examples of what was reviewed, but should look at the individual evidence cards before drawing a broader issue-area conclusion. The vote record alone does not show her motive.",
+    whatNotToInfer: [
+      "Do not infer motive, ideology, character, corruption, or a voting recommendation from this section.",
+      formatFullRecordBoundary(issueDomain),
+      "Not-voting and limited-context rows remain visible below, but they are not forced into the pattern.",
+    ].join(" "),
   };
 }
 
