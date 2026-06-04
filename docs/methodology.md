@@ -231,6 +231,8 @@ Current issue-overview layer: the frontend derives a deterministic issue-overvie
 
 Issue-overview readiness: public overview copy must become more cautious when the opened slice has too few counted interpreted yea/nay rows or when ambiguous/insufficient rows dominate the slice. In those cases, the overview should describe the limited evidence, preserve the support/opposition counts that are available, and avoid presenting a stable issue pattern. For large issue sections, the overview should keep the measure-group list compact and direct users to the evidence rows below for additional groups rather than rendering a long paragraph.
 
+Evidence grouping: the frontend may derive grouping metadata from opened evidence rows to make repeated bills, amendments, procedural rows, limited-context rows, and not-voting rows easier to review. Grouping must use stable bill or measure identifiers when present, or normalized measure titles when identifiers are unavailable; broad issue facets alone must not group unrelated rows. Grouping is presentation metadata only. It must not change interpretation status, support/opposition counting, alignment math, or whether ambiguous/procedural rows are excluded from the summarized pattern.
+
 Next methodology target: broaden reviewed interpretation records using the new fields and replace remaining aggregate copy with sample-bound language that describes only the votes shown.
 
 ## User Alignment Rules

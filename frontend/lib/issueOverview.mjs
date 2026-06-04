@@ -1,3 +1,4 @@
+import { deriveEvidenceGroups } from "./evidenceGrouping.mjs";
 import { formatDomainLabel } from "./issueDomains.js";
 
 const ISSUE_FACET_GROUPS = {
@@ -238,6 +239,7 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
   const issueDomain = String(domain || rows[0]?.primary_domain || "");
   const representativeLabel = formatRepresentativeReference(representativeName);
   const interpretedRows = rows.filter((row) => row.interpretation_status === "interpreted");
+  const evidenceGrouping = deriveEvidenceGroups(rows);
   const directionalRows = interpretedRows.filter(isCountedDirectionalRow);
   const supportRows = directionalRows.filter((row) => row.position === row.support_position);
   const opposeRows = directionalRows.filter((row) => row.position === row.oppose_position);
@@ -306,6 +308,7 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
   return {
     issueLabel,
     representativeLabel,
+    evidenceGrouping,
     measureGroups: countedMeasureGroups,
     overviewMeasureGroups,
     notVotingMeasureGroups,
@@ -467,7 +470,7 @@ function assessOverviewReadiness({ rows, directionalRows, ambiguousRows, counted
   if (countedYesNoCount < MIN_COUNTED_ROWS_FOR_CONFIDENT_OVERVIEW) {
     reasons.push("too_few_counted_interpreted_yes_no_rows");
   }
-  if (limitedCount > countedYesNoCount || limitedShare > LIMITED_ROW_DOMINANCE_SHARE) {
+  if (limitedCount > countedYesNoCount || limitedShare >= LIMITED_ROW_DOMINANCE_SHARE) {
     reasons.push("limited_or_ambiguous_rows_dominate");
   }
 
