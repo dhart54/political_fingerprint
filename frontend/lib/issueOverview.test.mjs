@@ -311,6 +311,156 @@ test("generic Justice card summaries use legislator name and clean punctuation",
   assert.match(limitedSummary, /This row remains visible but is not counted in the summarized vote pattern because the available source text does not explain the practical policy effect\./);
 });
 
+test("scale-readiness facet labels avoid raw public overview leakage", () => {
+  const nationalSecurityRows = [
+    row({
+      description: "National Defense Authorization Act",
+      issue_facet: "Defense authorization",
+      policy_effect: "Would authorize defense and national-security programs.",
+      rollcall_number: 200,
+      what_happened: "The House passed defense authorization legislation.",
+      why_it_mattered: "The vote concerned annual defense and national-security policy authorization.",
+    }),
+    row({
+      description: "Motion to Commit",
+      issue_facet: "Motion to commit",
+      policy_effect: "Would use a motion to commit before final disposition.",
+      rollcall_number: 201,
+      what_happened: "The House considered a procedural motion to commit.",
+      why_it_mattered: "The vote concerned whether to send the measure back for further consideration.",
+    }),
+    row({
+      description: "Defense authorization amendment",
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "Defense authorization amendment",
+      rollcall_number: 202,
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "The available source text identifies an amendment but does not explain the full practical policy effect.",
+    }),
+    row({
+      description: "House floor procedure",
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "House floor procedure",
+      rollcall_number: 203,
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "The available source text identifies floor procedure rather than a clear final policy choice.",
+    }),
+  ];
+  const educationRows = [
+    row({
+      description: "Federal employee collective bargaining",
+      issue_facet: "federal_employee_collective_bargaining",
+      policy_effect: "Would change collective-bargaining rules for federal employees.",
+      rollcall_number: 300,
+    }),
+    row({
+      description: "School foreign funding restrictions",
+      issue_facet: "school_foreign_funding_and_contract_restrictions",
+      policy_effect: "Would add foreign-funding or contract restrictions for schools.",
+      rollcall_number: 301,
+    }),
+    row({
+      description: "School foreign influence parent notifications",
+      issue_facet: "school_foreign_influence_parent_notifications",
+      policy_effect: "Would require parent notifications about foreign-influence issues in schools.",
+      position: "yea",
+      rollcall_number: 302,
+    }),
+    row({
+      description: "Floor rule for multiple bills",
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "floor_rule_for_multiple_bills",
+      rollcall_number: 303,
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "This was a floor-rule vote for considering multiple bills, not final passage of the underlying policies.",
+    }),
+  ];
+  const environmentRows = [
+    row({
+      description: "Natural gas pipeline review coordination",
+      issue_facet: "natural_gas_pipeline_and_lng_review_coordination",
+      policy_effect: "Would coordinate federal review of natural gas pipeline and LNG projects.",
+      rollcall_number: 400,
+    }),
+    row({
+      description: "Floor rule for energy and budget measures",
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "floor_rule_for_energy_and_budget_measures",
+      rollcall_number: 401,
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "This was a floor-rule vote for considering energy and budget measures, not final passage of the underlying policies.",
+    }),
+  ];
+  const healthRows = [
+    row({
+      description: "Health insurance premium assistance",
+      issue_facet: "health_insurance_premiums",
+      policy_effect: "Would change health insurance premium assistance or affordability rules.",
+      rollcall_number: 500,
+    }),
+    row({
+      description: "Medicaid payment rules",
+      issue_facet: "medicaid_payment_rules_for_minor_health_procedures",
+      policy_effect: "Would restrict federal Medicaid payment for specified procedures involving minors.",
+      position: "yea",
+      rollcall_number: 501,
+    }),
+    row({
+      description: "House rule",
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "house_of_representatives",
+      rollcall_number: 502,
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "The available official text describes a procedural motion or rule rather than a clear final policy choice.",
+    }),
+  ];
+
+  const cases = [
+    ["NATIONAL_SECURITY_FOREIGN", nationalSecurityRows],
+    ["EDUCATION_WORKFORCE", educationRows],
+    ["ENVIRONMENT_ENERGY", environmentRows],
+    ["HEALTH_SOCIAL", healthRows],
+  ];
+
+  for (const [domain, rows] of cases) {
+    const overview = buildIssueOverview(rows, {
+      domain,
+      representativeName: "Valerie P. Foushee",
+    });
+    const rendered = formatRenderedIssueOverview(overview);
+    const groupLabels = [...overview.measureGroups, ...overview.ambiguousMeasureGroups].map((group) => group.label).join(" | ");
+
+    assert.doesNotMatch(
+      rendered,
+      /Defense authorization amendment|House floor procedure|floor_rule_for_multiple_bills|house_of_representatives|floor_rule_for_energy_and_budget_measures|federal_employee_collective_bargaining|school_foreign_funding_and_contract_restrictions|school_foreign_influence_parent_notifications|natural_gas_pipeline_and_lng_review_coordination|health_insurance_premiums|medicaid_payment_rules_for_minor_health_procedures|stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|is corrupt|you should vote/i,
+    );
+    assert.doesNotMatch(groupLabels, /floor_rule|house_of_representatives|federal_employee_collective_bargaining|school_foreign|natural_gas_pipeline|health_insurance_premiums|medicaid_payment_rules/i);
+  }
+
+  const nationalSecurityOverview = buildIssueOverview(nationalSecurityRows, {
+    domain: "NATIONAL_SECURITY_FOREIGN",
+    representativeName: "Valerie P. Foushee",
+  });
+  assert.match(
+    nationalSecurityOverview.ambiguousMeasureGroups.map((group) => group.label).join(" | "),
+    /limited-context defense authorization amendments|procedural House floor action/,
+  );
+
+  const educationOverview = buildIssueOverview(educationRows, {
+    domain: "EDUCATION_WORKFORCE",
+    representativeName: "Valerie P. Foushee",
+  });
+  assert.match(
+    [...educationOverview.measureGroups, ...educationOverview.ambiguousMeasureGroups].map((group) => group.label).join(" | "),
+    /procedural floor rule for multiple bills|federal employee collective bargaining|school foreign-funding and contract restrictions|school foreign-influence parent notifications/,
+  );
+});
+
 function row(overrides) {
   return {
     interpretation_status: "interpreted",
