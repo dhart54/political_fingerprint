@@ -38,7 +38,7 @@ export function buildLimitedContextSummary(row) {
 function buildFacetSpecificVoteCardSummary(row, { representativeName = "", position }) {
   const memberLabel = formatRepresentativeReference(representativeName) || extractMemberLabel(row);
   const context = buildPlainPartyOutcomeContext(row);
-  const voteMeaning = `${memberLabel} voted ${formatPassageDirection(row)} passing the bill`;
+  const voteMeaning = buildFacetSpecificVoteMeaning(row, { memberLabel });
   const voteAndContext = combineVoteMeaningAndContext(voteMeaning, context);
   const facet = String(row.issue_facet || "");
   let action = "";
@@ -46,9 +46,34 @@ function buildFacetSpecificVoteCardSummary(row, { representativeName = "", posit
   if (facet === "fentanyl_scheduling_and_penalties") {
     action =
       "The House passed the HALT Fentanyl Act, which would permanently place fentanyl-related substances as a class into Schedule I and apply fentanyl-analogue penalty thresholds, while creating or revising research-registration paths";
-  } else if (facet === "federal_law_enforcement_equipment") {
+  } else if (facet === "federal_law_enforcement_equipment" || facet === "federal_law_enforcement_retired_weapon_purchases") {
     action =
       "The House passed a bill directing GSA to create a process for federal law-enforcement officers to buy retired agency-issued firearms";
+  } else if (facet === "law_enforcement_safety_reporting") {
+    action =
+      "The House passed a bill requiring DOJ reports on targeted attacks against law-enforcement officers, reporting-system feasibility, and officer mental-health resources";
+  } else if (facet === "dc_police_pursuit_policy") {
+    action =
+      "The House passed a bill changing D.C. police pursuit rules by removing current restrictions and adding a general pursuit requirement with listed exceptions";
+  } else if (facet === "dc_policing_reform_repeal") {
+    action =
+      "The House passed a bill that would repeal D.C.'s 2022 policing and justice reform act, including provisions related to neck restraints, body-worn cameras, and police disciplinary records";
+  } else if (facet === "school_foreign_funding_and_contract_restrictions") {
+    action =
+      "The House passed a bill adding school restrictions tied to foreign funding, contracts, or influence";
+  } else if (facet === "school_foreign_influence_parent_notifications") {
+    action =
+      "The House passed a bill requiring parent notifications about foreign-influence issues in schools";
+  } else if (facet === "health_insurance_premiums" || facet === "health_insurance_premium_assistance") {
+    action =
+      "The House passed a bill addressing health insurance premium assistance and affordability rules";
+  } else if (facet === "medicaid_payment_rules_for_minor_health_procedures" || facet === "medicaid_payment_rules") {
+    action =
+      "The House passed a bill restricting federal Medicaid payment for specified procedures involving minors";
+  } else if (facet === "foreign_military_sales") {
+    action = `${formatChamberLabel(row.chamber)} voted on whether to allow a specific foreign military sale to proceed`;
+  } else if (facet === "Defense authorization" || facet === "defense_authorization") {
+    action = `${formatChamberLabel(row.chamber)} passed defense and national-security authorization legislation`;
   }
 
   if (!action) {
@@ -59,6 +84,19 @@ function buildFacetSpecificVoteCardSummary(row, { representativeName = "", posit
     .filter(Boolean)
     .map((piece, index) => (index === 0 ? `${piece}.` : ensurePeriod(piece)))
     .join(" ");
+}
+
+function buildFacetSpecificVoteMeaning(row, { memberLabel }) {
+  const facet = String(row.issue_facet || "");
+  const direction = formatPassageDirection(row);
+
+  if (facet === "foreign_military_sales") {
+    return `${memberLabel} ${formatInfinitiveVoteMeaning(direction, "allow that foreign military sale to proceed", "allowing that foreign military sale to proceed")}`;
+  }
+  if (facet === "Defense authorization" || facet === "defense_authorization") {
+    return `${memberLabel} ${formatInfinitiveVoteMeaning(direction, "pass that defense authorization legislation", "passing that defense authorization legislation")}`;
+  }
+  return `${memberLabel} ${formatInfinitiveVoteMeaning(direction, "pass the bill", "passing the bill")}`;
 }
 
 export function formatVotePosition(position) {
@@ -79,6 +117,27 @@ function formatPassageDirection(row) {
     return "for";
   }
   return "on";
+}
+
+function formatInfinitiveVoteMeaning(direction, supportPhrase, opposePhrase) {
+  if (direction === "for") {
+    return `voted to ${supportPhrase}`;
+  }
+  if (direction === "against") {
+    return `voted against ${opposePhrase}`;
+  }
+  return `voted on ${supportPhrase}`;
+}
+
+function formatChamberLabel(chamber) {
+  const normalized = String(chamber || "").toLowerCase();
+  if (normalized === "senate") {
+    return "The Senate";
+  }
+  if (normalized === "house") {
+    return "The House";
+  }
+  return "The chamber";
 }
 
 function buildPlainVoteMeaning(row, { representativeName = "" } = {}) {
