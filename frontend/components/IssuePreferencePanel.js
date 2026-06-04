@@ -123,10 +123,10 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
             Your Issues
           </p>
           <h3 className="mt-2 max-w-[760px] font-serif text-[2rem] leading-[1] text-stone-950 sm:text-[2.65rem] sm:leading-[0.96]">
-            Pick what you want this record checked against.
+            Choose issue areas to inspect.
           </h3>
           <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
-            Your picks only guide which records appear first. They do not change the vote record.
+            Your picks guide which reviewed records appear first. Choose a direction only when you want an alignment label.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -239,8 +239,8 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
 
       <div className="mt-4 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-700">
         {selectedCount === 0
-          ? "No issues selected yet. Pick one or more topics to add a record check below the ZIP lookup."
-          : `${selectedCount} issue ${selectedCount === 1 ? "selection is" : "selections are"} active for the alignment and comparison sections on this page.`}
+          ? "No issues selected yet. Pick one or more topics to add reviewed records below the ZIP lookup."
+          : `${selectedCount} issue ${selectedCount === 1 ? "selection is" : "selections are"} active for the reviewed-record and comparison sections on this page.`}
       </div>
     </section>
   );

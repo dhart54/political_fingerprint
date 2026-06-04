@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
+import { deriveEvidenceGroups } from "../lib/evidenceGrouping.mjs";
 import { buildIssueOverview } from "../lib/issueOverview.mjs";
 import { groupIssueRowsByReadiness, sortIssueRowsByReadiness } from "../lib/issueReadiness.mjs";
 import { DOMAIN_LABELS, formatDomainLabel } from "../lib/issueDomains";
@@ -90,6 +91,7 @@ export default function PositionByIssue({
   const patternRows = buildPatternRows(state.payload?.positions || []);
   const takeaway = buildTakeaway(rows);
   const selectedRow = rows.find((row) => row.domain === selectedDomain) || rows[0] || null;
+  const startPlan = buildSixtySecondPlan(readinessGroups);
 
   async function inspectDomain(domain) {
     setSelectedDomain(domain);
@@ -140,6 +142,12 @@ export default function PositionByIssue({
               Issue areas are grouped by reviewed evidence strength. Strong and mixed sections come first; limited sections stay visible without being treated as confident summaries. It is descriptive, not a score.
             </p>
           </div>
+          {state.status === "ready" ? (
+            <SixtySecondPath
+              inspectDomain={inspectDomain}
+              plan={startPlan}
+            />
+          ) : null}
         </div>
 
         <div className="grid gap-3">
@@ -179,6 +187,58 @@ export default function PositionByIssue({
   );
 }
 
+function SixtySecondPath({ inspectDomain, plan }) {
+  if (!plan) {
+    return null;
+  }
+
+  return (
+    <div className="mt-4 rounded-[1.5rem] border border-cyan-900/10 bg-cyan-50 px-4 py-4">
+      <p className="text-xs uppercase tracking-[0.24em] text-cyan-900">
+        What You Can Learn In 60 Seconds
+      </p>
+      <p className="mt-2 text-[15px] leading-7 text-stone-800">
+        {plan.summary}
+      </p>
+      <div className="mt-4 grid gap-2">
+        {plan.steps.map((step, index) => (
+          <button
+            className={`rounded-xl border px-3 py-3 text-left transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
+              step.priority === "primary"
+                ? "border-cyan-800 bg-white hover:bg-cyan-50"
+                : "border-stone-200 bg-white/80 hover:border-cyan-700/50"
+            }`}
+            key={`${step.domain}-${step.title}`}
+            onClick={() => inspectDomain(step.domain)}
+            type="button"
+          >
+            <div className="flex items-start gap-3">
+              <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
+                step.priority === "primary" ? "bg-cyan-900 text-white" : "bg-stone-200 text-stone-700"
+              }`}>
+                {index + 1}
+              </span>
+              <div>
+                <p className="text-sm font-semibold leading-6 text-stone-950">
+                  {step.title}
+                </p>
+                <p className="mt-1 text-sm leading-6 text-stone-700">
+                  {step.detail}
+                </p>
+              </div>
+            </div>
+          </button>
+        ))}
+      </div>
+      {plan.limitedNote ? (
+        <p className="mt-3 rounded-xl bg-white/70 px-3 py-2 text-sm leading-6 text-stone-700">
+          {plan.limitedNote}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
 function IssueReadinessGroups({ groups, inspectDomain, selectedDomain }) {
   const visibleGroups = groups.filter((group) => group.rows.length > 0);
 
@@ -189,7 +249,7 @@ function IssueReadinessGroups({ groups, inspectDomain, selectedDomain }) {
   return (
     <div className="grid gap-3">
       {visibleGroups.map((group) => (
-        <section className="rounded-[1.25rem] border border-stone-200 bg-stone-50 px-3 py-3" key={group.key}>
+        <section className={`rounded-[1.25rem] border px-3 py-3 ${getReadinessGroupContainerClass(group.key)}`} key={group.key}>
           <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-cyan-900">
@@ -220,6 +280,8 @@ function IssueReadinessGroups({ groups, inspectDomain, selectedDomain }) {
 }
 
 function IssueReadinessTile({ inspectDomain, row, selectedDomain }) {
+  const readinessKey = row.readiness?.key;
+
   return (
     <button
       aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
@@ -227,7 +289,11 @@ function IssueReadinessTile({ inspectDomain, row, selectedDomain }) {
       className={`rounded-[1.1rem] border px-4 py-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition ${
         selectedDomain === row.domain
           ? "border-cyan-800 bg-cyan-50"
-          : "border-stone-200 bg-white hover:border-cyan-700/50"
+          : readinessKey === "strong_evidence"
+            ? "border-cyan-800/30 bg-white hover:border-cyan-800"
+            : readinessKey === "mixed_but_interpretable"
+              ? "border-indigo-200 bg-white hover:border-indigo-500"
+              : "border-stone-200 bg-white hover:border-cyan-700/50"
       }`}
       onClick={() => inspectDomain(row.domain)}
       type="button"
@@ -243,10 +309,13 @@ function IssueReadinessTile({ inspectDomain, row, selectedDomain }) {
           {row.readiness?.label || "Not enough to summarize"}
         </span>
         <p className="text-[13px] leading-5 text-stone-700">
-          {buildPositionRead(row)}. {buildInterpretationCoverageRead(row)}
+          {formatIssueCardEvidenceLine(row)}
         </p>
         <p className="text-[13px] leading-5 text-stone-600">
-          {row.readiness?.reason}
+          {formatIssueCardReason(row)}
+        </p>
+        <p className="text-[12px] uppercase leading-5 tracking-[0.14em] text-stone-500">
+          {formatIssueCardPriority(row.readiness?.key)}
         </p>
       </div>
       <div className="mt-3 h-2 overflow-hidden rounded-full bg-stone-200">
@@ -278,7 +347,7 @@ function IssuePatternCards({ onInspectDomain, rows, status }) {
             Issue Patterns
           </p>
           <h4 className="mt-2 font-serif text-[1.75rem] leading-none text-stone-950 sm:text-[2rem]">
-            What interpreted votes show
+            Reviewed issue patterns
           </h4>
         </div>
         <p className="max-w-xl text-sm leading-6 text-stone-600">
@@ -340,6 +409,7 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
 
   const evidenceRows = evidenceState.payload?.evidence || [];
   const isSelected = evidenceState.payload?.domain === selectedRow.domain;
+  const evidenceGrouping = deriveEvidenceGroups(evidenceRows);
   const billGroups = groupEvidenceByBill(evidenceRows);
 
   return (
@@ -364,7 +434,7 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
 
       {evidenceState.status === "idle" ? (
         <p className="mt-4 text-sm leading-7 text-stone-700">
-          Select an issue card or use Show Votes to inspect the roll calls behind this read. Evidence appears here before any alignment label is treated as meaningful.
+          Start with the strongest issue card above or use Show Votes to inspect the roll calls behind this read. The clearest sections get summarized first; limited sections stay available as evidence without being forced into a confident pattern.
         </p>
       ) : null}
       {evidenceState.status === "loading" ? (
@@ -385,18 +455,13 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
       {evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (
         <div className="mt-4 grid gap-3">
           <div className="rounded-2xl border border-cyan-900/10 bg-cyan-50 px-4 py-4 text-sm leading-6 text-stone-700">
-            {formatBillGroupSummary(evidenceRows.length, billGroups.length)}
+            {formatBillGroupSummary(evidenceGrouping.summary)}
           </div>
+          <EvidenceGroupingPreview evidenceGrouping={evidenceGrouping} />
           <IssueEvidenceSummary
             domain={selectedRow.domain}
             representativeName={legislator?.name_display}
             rows={evidenceRows}
-          />
-          <CivicActionPanel
-            domain={selectedRow.domain}
-            evidenceRows={evidenceRows}
-            legislator={legislator}
-            selectedEvidenceRow={selectedActionRow}
           />
           {billGroups.map((group) => (
             <article className="rounded-[1.25rem] border border-stone-200 bg-white px-3 py-4 sm:px-4" key={group.key}>
@@ -432,9 +497,14 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
                           {row.description || row.question}
                         </p>
                       </div>
-                      <span className={`w-fit rounded-full px-3 py-1 text-xs uppercase tracking-[0.2em] ${getVoteBadgeClass(row.position)}`}>
-                        {formatVotePosition(row.position)}
-                      </span>
+                      <div className="flex flex-wrap gap-2">
+                        <span className={`w-fit rounded-full px-3 py-1 text-xs uppercase tracking-[0.2em] ${getVoteBadgeClass(row.position)}`}>
+                          {formatVotePosition(row.position)}
+                        </span>
+                        <span className={`w-fit rounded-full px-3 py-1 text-xs uppercase tracking-[0.16em] ${getEvidenceConfidenceBadgeClass(row)}`}>
+                          {formatEvidenceConfidenceLabel(row)}
+                        </span>
+                      </div>
                     </div>
                     <InterpretationBreakdown
                       representativeName={legislator?.name_display}
@@ -461,8 +531,70 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
               </div>
             </article>
           ))}
+          <CivicActionPanel
+            domain={selectedRow.domain}
+            evidenceRows={evidenceRows}
+            legislator={legislator}
+            selectedEvidenceRow={selectedActionRow}
+          />
         </div>
       ) : null}
+    </div>
+  );
+}
+
+function EvidenceGroupingPreview({ evidenceGrouping }) {
+  const groups = evidenceGrouping?.groups || [];
+  const repeatedGroups = groups.filter((group) => group.rowCount > 1);
+  const limitedGroups = groups.filter((group) => group.category === "limited_context_rows");
+  const notVotingGroups = groups.filter((group) => group.category === "not_voting_rows");
+  const previewGroups = [...repeatedGroups, ...limitedGroups, ...notVotingGroups]
+    .filter((group, index, allGroups) => allGroups.findIndex((candidate) => candidate.id === group.id) === index)
+    .slice(0, 4);
+
+  if (!groups.length) {
+    return null;
+  }
+
+  return (
+    <div className="rounded-[1.25rem] border border-stone-200 bg-white px-4 py-4">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.24em] text-cyan-900">
+            Grouped Evidence Preview
+          </p>
+          <p className="mt-2 text-sm leading-6 text-stone-700">
+            {formatEvidenceGroupingOverview(evidenceGrouping.summary)}
+          </p>
+          <p className="mt-1 text-sm leading-6 text-stone-600">
+            Repeated bill groups help show when several rows are about the same package. Limited-context and not-voting rows remain visible without being counted as support or opposition.
+          </p>
+        </div>
+        <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-xs uppercase tracking-[0.16em] text-stone-700">
+          {groups.length} {groups.length === 1 ? "group" : "groups"}
+        </span>
+      </div>
+      {previewGroups.length ? (
+        <div className="mt-3 grid gap-2">
+          {previewGroups.map((group) => (
+            <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3" key={group.id}>
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <p className="text-sm leading-6 text-stone-900">{group.label}</p>
+                <span className="w-fit rounded-full bg-white px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-stone-600">
+                  {formatEvidenceGroupCategory(group)}
+                </span>
+              </div>
+              <p className="mt-2 text-sm leading-6 text-stone-600">
+                {group.scanSummary}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p className="mt-3 text-sm leading-6 text-stone-600">
+          No repeated bill or limited/not-voting clusters were detected in this issue section.
+        </p>
+      )}
     </div>
   );
 }
@@ -984,9 +1116,200 @@ function rowActionKey(row) {
 }
 
 function formatBillGroupSummary(rollCallCount, billCount) {
+  if (typeof rollCallCount === "object" && rollCallCount !== null) {
+    return formatEvidenceGroupingOverview(rollCallCount);
+  }
+
   return `${rollCallCount} ${rollCallCount === 1 ? "roll-call vote" : "roll-call votes"} shown across ${billCount} ${
     billCount === 1 ? "bill or measure" : "bills or measures"
   }. Repeated rows can be amendments or related actions on the same bill.`;
+}
+
+function formatEvidenceGroupingOverview(summary) {
+  const totalRows = summary?.totalRows || 0;
+  const totalGroups = summary?.totalGroups || 0;
+  const repeatedGroupCount = summary?.repeatedGroupCount || 0;
+  const limitedCount = summary?.ambiguousOrInsufficientRows || 0;
+  const notVotingCount = summary?.notVotingRows || 0;
+  const parts = [
+    `${totalRows} ${totalRows === 1 ? "evidence row" : "evidence rows"} shown across ${totalGroups} ${totalGroups === 1 ? "bill or measure group" : "bill or measure groups"}`,
+  ];
+
+  if (repeatedGroupCount) {
+    parts.push(`${repeatedGroupCount} repeated ${repeatedGroupCount === 1 ? "group" : "groups"} detected`);
+  }
+  if (limitedCount) {
+    parts.push(`${limitedCount} limited-context ${limitedCount === 1 ? "row" : "rows"} kept separate`);
+  }
+  if (notVotingCount) {
+    parts.push(`${notVotingCount} not-voting ${notVotingCount === 1 ? "row" : "rows"} not counted as support or opposition`);
+  }
+
+  return `${parts.join("; ")}.`;
+}
+
+function formatEvidenceGroupCategory(group) {
+  const category = group?.category || group;
+  const label = buildVoterFacingGroupLabel(group);
+  if (label) {
+    return label;
+  }
+
+  const labels = {
+    limited_context_rows: "Limited context",
+    not_voting_rows: "Not voting",
+    primary_bill_or_measure: "Primary measure",
+    related_amendments: "Related amendments",
+    related_floor_or_procedural_votes: "Related procedural votes",
+  };
+
+  return labels[category] || "Evidence group";
+}
+
+function buildVoterFacingGroupLabel(group) {
+  const text = `${group?.label || ""} ${group?.rollCalls?.map((row) => `${row.issue_facet || ""} ${row.description || ""}`).join(" ") || ""}`.toLowerCase();
+
+  if (text.includes("budget") && text.includes("reconciliation")) {
+    return "Budget framework / reconciliation setup";
+  }
+  if (text.includes("sba") && text.includes("loan")) {
+    return "SBA loan eligibility";
+  }
+  if (text.includes("military construction") || text.includes("veterans affairs")) {
+    return "Military construction and VA funding";
+  }
+  if (text.includes("continuing appropriations") || text.includes("shutdown")) {
+    return "Temporary funding / shutdown package";
+  }
+  if (text.includes("regulatory") && text.includes("sba")) {
+    return "SBA regulatory-cost cap";
+  }
+
+  return "";
+}
+
+function buildSixtySecondPlan(groups) {
+  const groupByKey = new Map((groups || []).map((group) => [group.key, group]));
+  const strong = groupByKey.get("strong_evidence")?.rows?.[0] || null;
+  const mixed = groupByKey.get("mixed_but_interpretable")?.rows?.[0] || null;
+  const limitedRows = groupByKey.get("limited_evidence")?.rows || [];
+  const notReadyRows = groupByKey.get("not_enough_to_summarize")?.rows || [];
+  const firstStart = strong || mixed || limitedRows[0] || notReadyRows[0] || null;
+
+  if (!firstStart) {
+    return null;
+  }
+
+  const steps = [
+    {
+      domain: firstStart.domain,
+      priority: "primary",
+      title: strong
+        ? `Start with ${formatDomainLabel(strong.domain)}`
+        : mixed
+          ? `Start with ${formatDomainLabel(mixed.domain)}`
+          : `Start with ${formatDomainLabel(firstStart.domain)}`,
+      detail: strong
+        ? "This is the clearest reviewed issue read available for this representative."
+        : mixed
+          ? "This has enough reviewed vote meaning to inspect, but the pattern is mixed."
+          : "Only limited evidence is available, so read the evidence before drawing a broader conclusion.",
+    },
+  ];
+
+  if (mixed && mixed.domain !== firstStart.domain) {
+    steps.push({
+      domain: mixed.domain,
+      priority: "secondary",
+      title: `Then compare ${formatDomainLabel(mixed.domain)}`,
+      detail: "This section is useful because reviewed votes point in more than one direction.",
+    });
+  }
+
+  const limitedTarget = limitedRows.find((row) => row.domain !== firstStart.domain);
+  if (limitedTarget) {
+    steps.push({
+      domain: limitedTarget.domain,
+      priority: "secondary",
+      title: `Use ${formatDomainLabel(limitedTarget.domain)} as a caution check`,
+      detail: "This section remains visible, but it should not be read as a stable issue pattern yet.",
+    });
+  }
+
+  return {
+    summary: strong
+      ? `Start with ${formatDomainLabel(strong.domain)} for the clearest reviewed record, then use mixed or limited sections to understand where the evidence gets thinner.`
+      : "No strong issue read is available yet. The page still shows the best available evidence first and labels where the record is limited.",
+    steps: steps.slice(0, 3),
+    limitedNote: buildLimitedReadinessNote(limitedRows.length, notReadyRows.length),
+  };
+}
+
+function buildLimitedReadinessNote(limitedCount, notReadyCount) {
+  const pieces = [];
+  if (limitedCount) {
+    pieces.push(`${limitedCount} limited ${limitedCount === 1 ? "section is" : "sections are"} lower priority because reviewed vote meaning is thin`);
+  }
+  if (notReadyCount) {
+    pieces.push(`${notReadyCount} ${notReadyCount === 1 ? "section does" : "sections do"} not have enough reviewed vote meaning to summarize`);
+  }
+  if (!pieces.length) {
+    return "";
+  }
+  return `${pieces.join("; ")}.`;
+}
+
+function getReadinessGroupContainerClass(key) {
+  if (key === "strong_evidence") {
+    return "border-cyan-800/30 bg-cyan-50";
+  }
+  if (key === "mixed_but_interpretable") {
+    return "border-indigo-200 bg-indigo-50";
+  }
+  if (key === "limited_evidence") {
+    return "border-amber-200 bg-amber-50";
+  }
+  return "border-stone-200 bg-stone-50";
+}
+
+function formatIssueCardPriority(key) {
+  if (key === "strong_evidence") {
+    return "Best place to start";
+  }
+  if (key === "mixed_but_interpretable") {
+    return "Useful comparison read";
+  }
+  if (key === "limited_evidence") {
+    return "Lower priority: read cautiously";
+  }
+  return "Evidence visible, not ready to summarize";
+}
+
+function formatIssueCardEvidenceLine(row) {
+  const interpretedYeaNay = (row.interpreted_support_count || 0) + (row.interpreted_oppose_count || 0);
+  const recordedVotes = row.recorded_votes || 0;
+
+  if (!interpretedYeaNay) {
+    return recordedVotes
+      ? `No reviewed Yes/No vote meaning is available yet out of ${recordedVotes} recorded ${recordedVotes === 1 ? "vote" : "votes"}.`
+      : "No recorded Yes/No votes are available in this issue yet.";
+  }
+
+  return `${interpretedYeaNay} reviewed Yes/No ${interpretedYeaNay === 1 ? "vote" : "votes"} out of ${recordedVotes} recorded ${recordedVotes === 1 ? "vote" : "votes"}.`;
+}
+
+function formatIssueCardReason(row) {
+  const key = row.readiness?.key;
+  if (key === "strong_evidence") {
+    return "Best place to start.";
+  }
+  if (key === "mixed_but_interpretable") {
+    return "Reviewed votes point in more than one direction. Useful comparison read.";
+  }
+  if (key === "limited_evidence") {
+    return "Reviewed vote meaning is thin. Read cautiously.";
+  }
+  return "Evidence may still be visible, but this issue is not ready for a confident summary.";
 }
 
 function formatChamber(chamber) {
@@ -1018,6 +1341,38 @@ function getVoteBadgeClass(position) {
     return "bg-rose-100 text-rose-800";
   }
   return "bg-stone-200 text-stone-700";
+}
+
+function formatEvidenceConfidenceLabel(row) {
+  if (row.position === "not_voting") {
+    return "Not counted";
+  }
+  if (row.interpretation_status === "interpreted") {
+    return "Reviewed meaning";
+  }
+  if (row.interpretation_status === "ambiguous") {
+    return "Limited context";
+  }
+  if (row.interpretation_status === "insufficient_evidence") {
+    return "Needs source support";
+  }
+  return "Evidence only";
+}
+
+function getEvidenceConfidenceBadgeClass(row) {
+  if (row.position === "not_voting") {
+    return "bg-stone-200 text-stone-700";
+  }
+  if (row.interpretation_status === "interpreted") {
+    return "bg-cyan-100 text-cyan-900";
+  }
+  if (row.interpretation_status === "ambiguous") {
+    return "bg-amber-100 text-amber-900";
+  }
+  if (row.interpretation_status === "insufficient_evidence") {
+    return "bg-stone-200 text-stone-700";
+  }
+  return "bg-stone-100 text-stone-600";
 }
 
 function buildTakeaway(rows) {

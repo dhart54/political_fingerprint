@@ -73,6 +73,13 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
   const topPosition = buildTopPosition(positionRows);
   const coverage = buildCoverage(fingerprintRows);
   const drift = buildDriftRead(state.drift);
+  const sixtySecondRead = buildSixtySecondRead({
+    status: state.status,
+    topFocus,
+    topPosition,
+    coverage,
+    drift,
+  });
 
   return (
     <section className="mt-4 rounded-[2rem] border border-cyan-900/10 bg-[linear-gradient(135deg,#083344,#115e59)] px-5 py-5 text-white shadow-[0_18px_48px_rgba(15,23,42,0.16)] lg:px-6">
@@ -96,10 +103,32 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
             : null}
           {state.status === "error" ? state.error : null}
           {state.status === "ready"
-            ? "A bounded read of issue focus, strongest reviewed issue evidence, coverage, and change over time."
+            ? sixtySecondRead
             : null}
         </p>
       </div>
+
+      {state.status === "ready" && topPosition.domain !== "NONE" ? (
+        <div className="mt-5 rounded-[1.5rem] border border-white/10 bg-white/10 px-4 py-4">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.24em] text-cyan-100">
+                Start Here
+              </p>
+              <p className="mt-2 text-[17px] leading-7 text-white">
+                {buildStartHereCopy({ topFocus, topPosition })}
+              </p>
+            </div>
+            <button
+              className="w-fit rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.18em] text-cyan-950 transition hover:bg-cyan-50"
+              onClick={() => onInspectDomain?.(topPosition.domain)}
+              type="button"
+            >
+              Open Best Read
+            </button>
+          </div>
+        </div>
+      ) : null}
 
       <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
         <QuickCard
@@ -169,7 +198,36 @@ function buildHeadline({ status, name, topFocus, topPosition }) {
     return `${name} does not have enough eligible policy votes for a clear read yet.`;
   }
 
-  return `${name}'s recent record centers on ${topFocus.label.toLowerCase()}. The clearest reviewed issue read is ${topPosition.shortLabel.toLowerCase()}.`;
+  if (topPosition.domain === "NONE") {
+    return `${name}'s profile has recorded votes, but no issue area has enough reviewed vote meaning for a confident first read yet.`;
+  }
+
+  if (topFocus.domain !== topPosition.domain) {
+    return `Start with ${formatDomainLabel(topPosition.domain)}. It has the clearest reviewed vote meaning in this profile.`;
+  }
+
+  return `Start with ${formatDomainLabel(topPosition.domain)}. It has both the clearest reviewed vote meaning and the largest recorded-vote footprint in this profile.`;
+}
+
+function buildSixtySecondRead({ status, topFocus, topPosition, coverage, drift }) {
+  if (status !== "ready") {
+    return "";
+  }
+  if (topPosition.domain === "NONE") {
+    return "In 60 seconds, you can see where evidence exists, where it is too limited, and why the page avoids a confident issue read.";
+  }
+  if (topFocus.domain !== topPosition.domain) {
+    return `In 60 seconds, start with ${formatDomainLabel(topPosition.domain)} for reviewed vote meaning. ${topFocus.label} has more recorded votes, but the best place to start is the issue with clearer reviewed evidence. ${coverage.value}; drift read: ${drift.value}.`;
+  }
+  return `In 60 seconds, start with ${formatDomainLabel(topPosition.domain)} because it has the clearest reviewed vote meaning. Then use coverage and change-over-time as context. ${coverage.value}; drift read: ${drift.value}.`;
+}
+
+function buildStartHereCopy({ topFocus, topPosition }) {
+  const bestIssue = formatDomainLabel(topPosition.domain);
+  if (topFocus.domain !== topPosition.domain && topFocus.domain !== "NONE") {
+    return `Open ${bestIssue} first. It has the clearest reviewed vote meaning; ${topFocus.label} has more recorded votes but is not the best first read.`;
+  }
+  return `Open ${bestIssue} first. It is the clearest reviewed issue read, and limited issue sections are intentionally lower priority.`;
 }
 
 function buildTopFocus(rows) {
