@@ -419,7 +419,9 @@ This view is descriptive only. It shows how a legislator voted within issue doma
 
 Frontend presentation:
 
-- domains are surfaced in descending `recorded_votes`
+- domains are grouped by evidence readiness before raw vote volume: `Strong evidence`, `Mixed but interpretable`, `Limited evidence`, and `Not enough to summarize`
+- readiness grouping is derived from existing position summary counts; it does not change vote classification, interpretation, support/opposition counting, or alignment math
+- limited and not-ready issue sections remain visible, but they are not treated as confident issue summaries
 - raw yea/nay shares may be shown as record context, but they must not be presented as broad ideology or "so what" conclusions
 - sample-bound labels may be used only for the votes shown:
   - `Mostly Yea in votes shown`

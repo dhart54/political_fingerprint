@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { fetchDrift, fetchFingerprint, fetchPositions } from "../lib/api";
+import { getBestIssueRead } from "../lib/issueReadiness.mjs";
 import { formatDomainLabel } from "../lib/issueDomains";
 
 export default function ProfileQuickRead({ legislator, onInspectDomain }) {
@@ -95,7 +96,7 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
             : null}
           {state.status === "error" ? state.error : null}
           {state.status === "ready"
-            ? "A bounded read of issue focus, vote-direction samples, coverage, and change over time."
+            ? "A bounded read of issue focus, strongest reviewed issue evidence, coverage, and change over time."
             : null}
         </p>
       </div>
@@ -112,7 +113,7 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
           value={state.status === "ready" ? topFocus.value : "--"}
         />
         <QuickCard
-          eyebrow="How They Vote There"
+          eyebrow="Best Reviewed Issue Read"
           label={state.status === "ready" ? topPosition.label : "Loading"}
           onInspect={
             state.status === "ready" && topPosition.domain !== "NONE"
@@ -168,7 +169,7 @@ function buildHeadline({ status, name, topFocus, topPosition }) {
     return `${name} does not have enough eligible policy votes for a clear read yet.`;
   }
 
-  return `${name}'s recent record centers on ${topFocus.label.toLowerCase()}. The clearest vote-direction sample is ${topPosition.shortLabel.toLowerCase()}.`;
+  return `${name}'s recent record centers on ${topFocus.label.toLowerCase()}. The clearest reviewed issue read is ${topPosition.shortLabel.toLowerCase()}.`;
 }
 
 function buildTopFocus(rows) {
@@ -192,15 +193,13 @@ function buildTopFocus(rows) {
 }
 
 function buildTopPosition(rows) {
-  const strongest = [...rows]
-    .filter((row) => (row?.recorded_votes || 0) > 0)
-    .sort((left, right) => (right.recorded_votes || 0) - (left.recorded_votes || 0))[0];
+  const strongest = getBestIssueRead(rows);
 
   if (!strongest) {
     return {
-      shortLabel: "no clear vote direction",
+      shortLabel: "no confident issue read",
       domain: "NONE",
-      label: "No yea/nay split is available in the current window.",
+      label: "No issue has enough reviewed Yes/No vote meaning for a confident read in the current window.",
       value: "--",
     };
   }
@@ -213,18 +212,16 @@ function buildTopPosition(rows) {
   } else if (gap >= 0.15) {
     direction = strongest.yea_share >= strongest.nay_share ? "Mostly Yea in votes shown" : "Mostly Nay in votes shown";
   }
-  const strongerShare = Math.max(strongest.yea_share || 0, strongest.nay_share || 0);
-
   return {
-    shortLabel: `${direction} in ${formatDomainLabel(strongest.domain)}`,
+    shortLabel: `${strongest.readiness?.label || direction} in ${formatDomainLabel(strongest.domain)}`,
     domain: strongest.domain,
-    label: `${formatDomainLabel(strongest.domain)} has ${strongest.recorded_votes} recorded votes in this window; ${interpretedYeaNay} have reviewed vote meaning.`,
+    label: `${formatDomainLabel(strongest.domain)} has ${strongest.recorded_votes} recorded votes in this window; ${interpretedYeaNay} reviewed Yes/No votes can be summarized.`,
     value:
-      direction === "Mixed record in votes shown"
+      strongest.readiness?.key === "mixed_but_interpretable"
         ? "Mixed"
-        : direction === "Too little interpreted evidence"
+        : strongest.readiness?.key === "limited_evidence"
           ? "Limited"
-          : `${(strongerShare * 100).toFixed(0)}%`,
+          : "Strong",
   };
 }
 
