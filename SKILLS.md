@@ -15,8 +15,14 @@ Never use LLM inference for:
 - classification
 - fingerprint math
 - drift math
+- eligibility
+- vote meaning
+- evidence tier
+- readiness status
+- support/opposition counting
+- alignment
 
-LLMs may only generate descriptive summaries from deterministic inputs.
+LLMs may only help draft cached/source-grounded plain-language explanations from deterministic stored inputs.
 
 ---
 
@@ -214,14 +220,116 @@ classification_version
 
 # API Data Flow Rule
 
-API endpoints must read ONLY from:
+Shared heavy metrics must read from precomputed tables:
 
-fingerprints
-chamber_medians
-drift_scores
-summaries
+- fingerprints
+- chamber_medians
+- drift_scores
+- vote_classifications
+- summaries
 
-Never compute on request.
+Position-by-issue and evidence drilldown may read from stored deterministic tables such as:
+
+- votes_cast
+- roll_calls
+- bills
+- vote_classifications
+- vote_interpretations
+- vote_contexts, if present
+- stored source fields / source URLs
+
+User-specific alignment may be computed on request only as a lightweight comparison between:
+
+- explicit user-selected preferences
+- stored vote_interpretations
+- stored votes_cast positions
+
+The API must not perform vote classification, vote interpretation, source inference, or heavy aggregation at request time.
+
+---
+
+# Vote Interpretation Pattern
+
+Vote interpretation records must be source-grounded and stored.
+
+Each interpreted row should identify, where determinable:
+
+- roll_call_id
+- support_position
+- oppose_position
+- interpretation_status
+- interpretation_reason
+- what_happened
+- why_it_mattered
+- what_not_to_infer
+- source_basis or source_url
+- interpretation_version or classification_version
+
+If yea/nay meaning is ambiguous or unsupported, mark ambiguous or insufficient_evidence.
+
+Ambiguous/insufficient/procedural rows must not count toward support/opposition patterns.
+
+Not-voting rows may explain bill substance but must not count as support or opposition.
+
+---
+
+# Readiness-First Profile Pattern
+
+The representative profile should lead with issue areas where reviewed evidence is strongest.
+
+Readiness labels are presentation/evidence-confidence labels, not ideology labels.
+
+Use:
+
+- Strong Evidence
+- Mixed But Interpretable
+- Limited Evidence
+- Not Enough To Summarize
+
+Limited evidence should remain visible but cautious.
+
+Highest vote volume is not necessarily the clearest reviewed issue read.
+
+The app should distinguish "most recorded votes" from "clearest reviewed vote meaning."
+
+---
+
+# Evidence Confidence Labels
+
+Use these evidence confidence labels:
+
+- Reviewed meaning: source-grounded vote meaning is available.
+- Limited context: row remains visible but practical effect is limited or procedural.
+- Needs source support: row lacks enough source detail for confident interpretation.
+- Not counted: row does not count toward support/opposition due to not-voting, ambiguity, insufficiency, or procedural status.
+
+---
+
+# Grouped Evidence Pattern
+
+Related evidence rows may be grouped using stable bill/measure identifiers first.
+
+Normalized title/measure text may be a fallback.
+
+Broad issue domain or issue_facet alone must not be used as a grouping key.
+
+Grouped evidence is for scanability only.
+
+Grouping must not change support/opposition counting, alignment, or interpretation status.
+
+Procedural/amendment groups must not be presented as final policy claims unless source support exists.
+
+---
+
+# User Alignment Pattern
+
+Alignment language may only be used when the user has provided explicit issue preference direction.
+
+When no directional preference is selected, use neutral record/evidence language.
+
+Alignment labels must be evidence-based and limited to terms like aligned, not aligned, mixed, or insufficient evidence.
+
+Alignment must not rank politicians, infer ideology, or recommend votes.
 
 ---
 
@@ -241,9 +349,15 @@ recompute per request
 
 Codex must implement tests for:
 
-classification correctness
-drift correctness
-API response structure
+- classification correctness
+- drift correctness
+- API response structure
+- vote interpretation status handling
+- ambiguous/insufficient rows excluded from support/opposition patterns
+- not-voting rows excluded from support/opposition
+- readiness grouping/order
+- grouped evidence preserving counts
+- no forbidden recommendation/motive/ranking language
 
 ---
 
