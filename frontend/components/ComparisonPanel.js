@@ -267,7 +267,7 @@ export default function ComparisonPanel({
             {compareState.status === "ready"
               ? Object.keys(preferences).length
                 ? "Your issue selections are applied to both sides."
-                : "Select issues above to add an alignment read for both sides."
+                : "Select issue areas above to inspect reviewed records for both sides."
               : null}
           </p>
           {alignmentState.status === "error" ? (
@@ -462,7 +462,7 @@ function IssueAlignmentRows({ alignment, legislator, onInspectDomain }) {
   if (!alignment) {
     return (
       <div className="rounded-2xl border border-dashed border-stone-300 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-600">
-        Select issues above to add a side-by-side read for this official.
+        Select issue areas above to add a side-by-side record view for this official.
       </div>
     );
   }
@@ -479,7 +479,7 @@ function IssueAlignmentRows({ alignment, legislator, onInspectDomain }) {
   return (
     <div className="grid gap-3">
       <div className="rounded-2xl border border-stone-200 bg-white px-4 py-4">
-        <p className="text-xs uppercase tracking-[0.22em] text-stone-500">Your Issues</p>
+        <p className="text-xs uppercase tracking-[0.22em] text-stone-500">Selected Issue Records</p>
         <p className="mt-3 text-sm leading-6 text-stone-800">{buildAlignmentSummary(alignment)}</p>
       </div>
       {rows.map((row) => (
@@ -541,11 +541,16 @@ function buildAlignmentSummary(alignment) {
 
   const directionalRows = rows.filter((row) => row.preference !== "show_record");
   const recordOnly = rows.filter((row) => row.preference === "show_record" && row.label !== "insufficient_evidence").length;
+  const allRecordOnly = rows.length > 0 && directionalRows.length === 0;
+  if (allRecordOnly) {
+    const insufficientOnly = rows.filter((row) => row.label === "insufficient_evidence").length;
+    return `${recordOnly} reviewed ${recordOnly === 1 ? "record" : "records"} shown / ${insufficientOnly} insufficient ${insufficientOnly === 1 ? "issue" : "issues"}`;
+  }
   const aligned = directionalRows.filter((row) => row.label === "aligned").length;
   const notAligned = directionalRows.filter((row) => row.label === "not_aligned").length;
   const mixed = directionalRows.filter((row) => row.label === "mixed").length;
   const insufficient = rows.filter((row) => row.label === "insufficient_evidence").length;
-  const recordOnlyText = recordOnly ? `${recordOnly} record shown / ` : "";
+  const recordOnlyText = recordOnly ? `${recordOnly} reviewed ${recordOnly === 1 ? "record" : "records"} / ` : "";
 
   return `${recordOnlyText}${aligned} aligned / ${notAligned} not aligned / ${mixed} mixed / ${insufficient} insufficient`;
 }
@@ -565,7 +570,7 @@ function buildIssueRowCopy(row) {
 
 function formatDisplayLabel(row) {
   if (row.preference === "show_record" && row.label !== "insufficient_evidence") {
-    return "Record shown";
+    return "Evidence available";
   }
 
   return formatAlignmentLabel(row.label);

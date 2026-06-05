@@ -458,6 +458,10 @@ Frontend presentation:
 - evidence rows remain roll-call level because amendments and related actions can be meaningful
 - the UI groups rows by bill title or measure label when available
 - the UI surfaces both roll-call count and distinct bill-or-measure count so repeated actions on one bill are not presented as unrelated votes
+- the UI may show a compact grouped-evidence preview using derived metadata only; this preview must not change support/opposition counts or upgrade limited rows into interpreted rows
+- the representative page may show a deterministic 60-second path that points users to the strongest reviewed issue read first and marks limited/not-ready sections as lower priority
+- the representative page must not imply that the issue domain with the most recorded votes is the best place to start when another domain has clearer reviewed vote meaning
+- when a user selects issues without a directional preference, public copy should describe selected records or evidence available rather than alignment or non-alignment
 - the UI may show a deterministic issue overview for the opened issue using only the evidence rows already returned by the endpoint
 - that issue overview may count interpreted votes with yea/nay positions, rows without yea/nay positions, and ambiguous or insufficient-evidence rows
 - that issue overview may say whether the representative's interpreted votes with yea/nay positions in the opened issue slice were for, against, mostly for, mostly against, or split across the interpreted measures
@@ -480,6 +484,7 @@ Vote-card UX rules:
 - ambiguous or limited-context votes must show their caveat plainly and must not be over-interpreted into a support/opposition pattern
 - rows where the member was recorded as not voting may explain the bill or measure, but must never be counted as support or opposition
 - generic vote-card summaries should use the representative's available display name rather than "this representative" when a name is available
+- default-visible cards may show compact evidence confidence labels such as `Reviewed meaning`, `Limited context`, `Needs source support`, or `Not counted`; these labels describe evidence readiness and must not imply ideology or motive
 
 ## Drift Rules
 

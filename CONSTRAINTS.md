@@ -351,6 +351,17 @@ Alignment MUST NOT:
 
 Alignment MUST expose enough evidence for a user to inspect why a label was shown.
 
+Alignment language such as aligned or not aligned may be used only when the user has selected an explicit directional preference.
+
+When no directional preference is selected, the product MUST use neutral record/evidence language such as:
+
+- selected issue records
+- reviewed records
+- evidence available
+- insufficient evidence
+
+No-preference states MUST NOT imply the product has determined alignment or misalignment.
+
 ---
 
 # Section 18 - Candidate Evidence Tier Constraint
@@ -375,6 +386,99 @@ Candidate comparison MUST NOT:
 - merge stated positions into vote-based alignment math
 
 Every candidate claim MUST be traceable to a source URL or explicit source reference when available.
+
+---
+
+# Section 19 - Readiness-First Evidence Constraint
+
+Readiness labels are evidence-confidence / presentation labels, not ideology labels.
+
+Allowed readiness labels:
+
+- Strong Evidence
+- Mixed But Interpretable
+- Limited Evidence
+- Not Enough To Summarize
+
+Readiness labels MUST be based on available reviewed evidence, interpreted vote counts, limited/ambiguous/insufficient rows, and not-voting treatment.
+
+Readiness labels MUST NOT imply comprehensive coverage of every possible vote.
+
+Highest vote volume MUST NOT be treated as equivalent to clearest reviewed vote meaning.
+
+The product MUST distinguish "most recorded votes" from "clearest reviewed issue read" when they differ.
+
+Limited or not-ready issue areas may remain visible, but MUST NOT receive confident issue-pattern summaries.
+
+Readiness labels MUST NOT change support/opposition counting, alignment logic, vote interpretation status, or classification math.
+
+---
+
+# Section 20 - Evidence Confidence Label Constraint
+
+Card-level confidence labels are presentation labels only.
+
+Allowed labels include:
+
+- Reviewed meaning
+- Limited context
+- Needs source support
+- Not counted
+
+Reviewed meaning may be shown only when source-grounded vote meaning is available.
+
+Limited context must be used for procedural, amendment, or limited-source rows where practical policy effect is not fully supported.
+
+Needs source support must be used when the row lacks enough source detail for confident interpretation.
+
+Not counted must be used for rows that do not count toward support/opposition due to not-voting, ambiguity, insufficiency, or procedural status.
+
+Confidence labels MUST NOT upgrade a row's interpretation status.
+
+Confidence labels MUST NOT cause ambiguous, insufficient, procedural, or not-voting rows to count as support/opposition.
+
+---
+
+# Section 21 - Grouped Evidence Constraint
+
+Grouped evidence is for scanability only.
+
+Grouping MUST NOT change:
+
+- support/opposition counts
+- alignment labels
+- vote interpretation status
+- eligibility
+- domain classification
+- fingerprint/drift/median calculations
+
+Grouping should use stable bill/measure identifiers first.
+
+Normalized title or measure text may be used as a fallback.
+
+Broad issue domain or issue_facet alone MUST NOT be used as the sole grouping key.
+
+Procedural, amendment, or limited-context groups MUST NOT be presented as final policy claims unless source support exists.
+
+Group labels must remain cautious when the underlying rows are mixed, procedural, or limited-source.
+
+If grouping label confidence is weak, the UI should prefer cautious wording or expose the rows without over-summarizing.
+
+---
+
+# Section 22 - Chamber Consistency Constraint
+
+Evidence rows for a legislator MUST match the legislator's chamber.
+
+House members MUST NOT receive Senate roll-call evidence rows.
+
+Senators MUST NOT receive House roll-call evidence rows.
+
+Any fixture, seed, ETL, or review-bundle data that intentionally uses synthetic cross-chamber examples MUST clearly label them as synthetic and non-representative-specific.
+
+Production/API evidence endpoints should rely on valid votes_cast links and should eventually enforce or validate legislator.chamber == roll_call.chamber.
+
+Chamber mismatch must be treated as a data-integrity error, not a frontend copy issue.
 
 ---
 

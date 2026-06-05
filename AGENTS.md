@@ -49,12 +49,26 @@ If a requested feature violates this, STOP and ask for clarification.
 
 The original MVP is complete. Product v2 may build beyond the MVP when the work preserves the locked product identity and deterministic methodology.
 
+---
+
+# Current v2 Product Direction — Readiness-First Accountability Profile
+
+The current v2 product direction is a readiness-first accountability profile.
+
+- The product is an evidence-based accountability profile, not an ideology score.
+- The representative page should lead with the strongest reviewed issue reads.
+- Limited evidence should remain visible but cautious.
+- Position-by-issue, vote interpretation, readiness labels, grouped evidence, and evidence drilldown are current v2 surfaces.
+- LLMs may draft cached/source-grounded explanations, but must not decide eligibility, vote meaning, alignment, readiness, or evidence tier.
+
+---
+
 Core product surfaces:
 
 0. Representative Accountability Dashboard
    - Primary v2 surface
    - Starts from current House representative and both Senators by ZIP code
-   - Centers issue evidence, interpreted vote meaning, and source-backed accountability
+   - Centers issue evidence, interpreted vote meaning, readiness, grouped evidence, and source-backed accountability
    - Election context remains secondary to the current representative record
 
 1. Behavioral Fingerprint
@@ -249,34 +263,86 @@ If these appear, rewrite the text into neutral evidence language.
 
 # Development Workflow
 
-Before major changes:
+Use milestone-sized branches for related product work.
 
-1. Create git commit checkpoint
-2. Implement change
-3. Run tests
-4. Verify locally
+- Work on milestone branches.
+- Do not open PRs unless the user explicitly asks.
+- Do not stop after one small task if the milestone is not complete.
+- A milestone is complete only when the user-facing outcome is materially achieved, tests/build pass, and a progress summary is provided.
+- If a task takes only a few minutes and is not risky, continue to the next related milestone item instead of opening a PR.
+- Keep changes cohesive to the active milestone.
+- Do not broaden rollout, add new interpretation data, or change product claims unless explicitly requested.
 
-Always add tests for:
+Always add or update tests for:
 
 - classification logic
 - drift math
 - API responses
+- issue readiness, vote-card, alignment/copy, grouped evidence, or profile behavior when those surfaces change
+
+---
+
+# Approval Boundaries
+
+Allowed without asking:
+
+- in-repo code edits for the active milestone
+- tests/build
+- docs/review packets tied to the milestone
+
+Ask first before:
+
+- backend/API behavior changes
+- database migrations
+- counting/alignment logic changes
+- dependency installs/upgrades
+- deploys
+- destructive git commands
+- process/port killing
+- local launch script creation
+- source enrichment ingestion
+
+---
+
+# Stopping And Reporting Rules
+
+When stopping, report:
+
+- what changed
+- product outcome achieved
+- files changed
+- tests/build status
+- blockers
+- whether the user should continue, review, or request PR
 
 ---
 
 # Commands Codex should use
 
-Backend dev:
-cd backend
-uvicorn app.main:app --reload
+Windows direct backend command:
 
-Frontend dev:
+```powershell
+cd backend
+.\.venv_win\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+Do not use `uvicorn --reload` as the default Codex/Windows path.
+
+Frontend:
+
+```powershell
 cd frontend
 npm run dev
+```
+
+If the Codex-managed shell hits Next.js `spawn EPERM`, report it and stop. The user may run local launch manually from normal Windows PowerShell or a VS Code terminal. Do not create or patch local launch scripts unless explicitly requested.
 
 Tests:
+
+```powershell
 cd backend
 pytest
+```
 
 ---
 

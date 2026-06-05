@@ -77,7 +77,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-cyan-800">
-            Your Issues vs This Record
+            Selected Issue Records
           </p>
           <h3 className="mt-2 max-w-[760px] font-serif text-[2rem] leading-[1] text-stone-950 sm:text-[2.45rem] sm:leading-[0.98]">
             {buildHeadline({ status: state.status, selectedCount, rows, name: legislator.name_display })}
@@ -85,8 +85,8 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
         </div>
         <p className="max-w-md text-sm leading-6 text-stone-600">
           {selectedCount === 0
-            ? "Choose issues above to check this voting record against your stated preferences."
-            : "For neutral issue checks, the app shows reviewed records without calling them aligned or not aligned. Alignment labels appear only when you choose a direction."}
+            ? "Choose issue areas above to inspect reviewed records."
+            : "For neutral issue checks, the app shows reviewed records. Alignment labels appear only when you choose a direction."}
         </p>
       </div>
 
@@ -98,7 +98,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
 
       {state.status === "idle" ? (
         <div className="mt-5 rounded-[1.25rem] border border-dashed border-stone-300 bg-stone-50 px-4 py-5 text-sm leading-6 text-stone-600">
-          Select at least one issue to inspect interpreted records. Choose a direction only when you want an aligned or not-aligned label.
+          Select at least one issue area to inspect reviewed records. Choose a direction only when you want an alignment label.
         </div>
       ) : null}
 
@@ -172,7 +172,7 @@ function buildFallbackAlignmentPayload({ legislatorId, preferences }) {
 
 function buildHeadline({ status, selectedCount, rows, name }) {
   if (selectedCount === 0) {
-    return "Choose your issues, then check the record.";
+    return "Choose issue areas to inspect.";
   }
   if (status === "loading") {
     return `Checking ${name}'s interpreted votes...`;
@@ -182,11 +182,16 @@ function buildHeadline({ status, selectedCount, rows, name }) {
   }
   const directionalRows = rows.filter((row) => row.preference !== "show_record");
   const recordOnly = rows.filter((row) => row.preference === "show_record" && row.label !== "insufficient_evidence").length;
+  const allRecordOnly = rows.length > 0 && directionalRows.length === 0;
+  if (allRecordOnly) {
+    const insufficientOnly = rows.filter((row) => row.label === "insufficient_evidence").length;
+    return `${recordOnly} reviewed ${recordOnly === 1 ? "record" : "records"} shown, ${insufficientOnly} insufficient ${insufficientOnly === 1 ? "issue" : "issues"}.`;
+  }
   const aligned = directionalRows.filter((row) => row.label === "aligned").length;
   const notAligned = directionalRows.filter((row) => row.label === "not_aligned").length;
   const mixed = directionalRows.filter((row) => row.label === "mixed").length;
   const insufficient = rows.filter((row) => row.label === "insufficient_evidence").length;
-  const recordOnlyText = recordOnly ? `${recordOnly} record shown, ` : "";
+  const recordOnlyText = recordOnly ? `${recordOnly} reviewed ${recordOnly === 1 ? "record" : "records"}, ` : "";
   return `${recordOnlyText}${aligned} aligned, ${notAligned} not aligned, ${mixed} mixed, ${insufficient} insufficient.`;
 }
 
@@ -205,7 +210,7 @@ function buildRowCopy(row) {
 
 function formatDisplayLabel(row) {
   if (row.preference === "show_record" && row.label !== "insufficient_evidence") {
-    return "Record shown";
+    return "Evidence available";
   }
 
   return formatAlignmentLabel(row.label);

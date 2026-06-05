@@ -176,4 +176,57 @@ Rationale:
 
 ---
 
+## 2026-06-05 — Product v2 Direction: Readiness-First Accountability Profile
+
+Decision:
+
+- The original fingerprint/drift/summary/ZIP MVP remains historically locked and complete.
+- Product v2 expands the user-facing surface into a readiness-first representative accountability profile.
+- The representative page should lead with the strongest reviewed issue reads first, then mixed but interpretable sections, then limited evidence, then not-enough-to-summarize sections.
+- Issue sections may include interpreted vote meaning, readiness labels, grouped evidence previews, confidence labels, and evidence drilldowns.
+- Limited, ambiguous, procedural, insufficient, and not-voting rows must remain visible where useful, but must not be forced into confident issue patterns.
+- "Reviewed evidence" language is preferred over implying comprehensive voting-record coverage.
+- This product remains an evidence-based accountability profile, not an ideology score, ranking system, or voting recommendation tool.
+
+Rationale:
+
+- The scale-readiness work showed that evidence quality varies materially by issue domain and vote type.
+- A readiness-first experience helps users start where the evidence is strongest while preserving transparency around limited evidence.
+- This direction keeps the product useful without overclaiming from sparse or procedural data.
+
+---
+
+## 2026-06-05 — Vote Interpretation and Evidence Readiness Guardrails
+
+Decision:
+
+- Vote interpretation may be surfaced only when source-grounded and stored in deterministic records.
+- LLMs may help draft cached plain-language explanations, but must not decide eligibility, domain classification, vote meaning, evidence tier, readiness status, support/opposition counting, or alignment.
+- Readiness labels are presentation/evidence-confidence labels, not ideology labels.
+- Alignment language may be used only when tied to explicit user preference inputs and stored vote interpretations.
+- When no directional user preference is selected, use neutral record/evidence language rather than aligned/not-aligned framing.
+
+Rationale:
+
+- The product must preserve trust by separating source-backed evidence, deterministic classifications, user preferences, and explanatory language.
+- Better future source enrichment should move rows from insufficient/contextual toward stronger evidence; it should not weaken the underlying guardrails.
+
+---
+
+## 2026-06-05 — Workflow Direction for Codex Work
+
+Decision:
+
+- Current product work should use milestone branches, not one PR per tiny cleanup.
+- Codex should not open PRs unless explicitly instructed.
+- A milestone is complete when the user-facing outcome is materially achieved, tests/build pass, and a progress summary is provided.
+- Local launch/debugging and dev-tooling work should be separated from product implementation unless explicitly requested.
+
+Rationale:
+
+- The project has moved past original MVP scaffolding into product iteration.
+- Milestone-based work reduces micro-PR churn and keeps implementation tied to product outcomes.
+
+---
+
 ## End of DECISIONS.md
