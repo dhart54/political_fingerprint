@@ -112,10 +112,11 @@ const ISSUE_FACET_GROUPS = {
   },
   "Defense authorization amendment": {
     id: "Defense authorization amendment",
-    label: "limited-context defense authorization amendments",
-    overviewPhrase: "limited-context defense authorization amendments",
-    practicalLever: "amendments tied to defense authorization where source text may not explain the full practical policy effect",
-    plainAction: "reviewing defense authorization amendments with limited source context",
+    label: "defense authorization amendments",
+    overviewPhrase: "defense authorization amendments",
+    practicalLever: "amendments tied to defense authorization, not final passage of the full defense authorization bill",
+    plainAction: "reviewing defense authorization amendments",
+    concreteQuestion: "whether to adopt amendments to defense authorization legislation",
   },
   "House floor procedure": {
     id: "House floor procedure",
@@ -245,9 +246,9 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
   const opposeRows = directionalRows.filter((row) => row.position === row.oppose_position);
   const notVotingRows = interpretedRows.filter((row) => row.position === "not_voting");
   const ambiguousRows = rows.filter((row) => row.interpretation_status && row.interpretation_status !== "interpreted");
-  const countedMeasureGroups = groupRowsByFacet(directionalRows);
-  const notVotingMeasureGroups = groupRowsByFacet(notVotingRows);
-  const ambiguousMeasureGroups = groupRowsByFacet(ambiguousRows);
+  const countedMeasureGroups = groupRowsByFacet(directionalRows, { allRows: rows });
+  const notVotingMeasureGroups = groupRowsByFacet(notVotingRows, { allRows: rows });
+  const ambiguousMeasureGroups = groupRowsByFacet(ambiguousRows, { allRows: rows });
   const partyRows = directionalRows.filter(hasPartyContext);
   const outcomeRows = directionalRows.filter(hasOutcomeContext);
   const partyMatchCount = partyRows.filter((row) => row.vote_context.member_voted_with_party_majority).length;
@@ -566,8 +567,19 @@ function buildLimitedEvidenceOverviewCopy({
   };
 }
 
-function groupRowsByFacet(rows) {
+function groupRowsByFacet(rows, { allRows = rows } = {}) {
   const groups = new Map();
+  const allRowsByFacet = new Map();
+
+  allRows.forEach((row) => {
+    const facet = String(row.issue_facet || "").trim();
+    if (!facet) {
+      return;
+    }
+    const current = allRowsByFacet.get(facet) || [];
+    current.push(row);
+    allRowsByFacet.set(facet, current);
+  });
 
   rows.forEach((row) => {
     const facet = String(row.issue_facet || "").trim();
@@ -582,6 +594,7 @@ function groupRowsByFacet(rows) {
     const current = groups.get(group.id) || {
       ...group,
       rows: [],
+      statusRows: allRowsByFacet.get(facet) || [],
       positions: {},
     };
     current.rows.push(row);
@@ -589,13 +602,19 @@ function groupRowsByFacet(rows) {
     groups.set(group.id, current);
   });
 
-  return Array.from(groups.values()).map((group) => ({
+  return Array.from(groups.values()).map(formatMeasureGroup);
+}
+
+function formatMeasureGroup(group) {
+  const copy = buildDynamicMeasureGroupCopy(group);
+
+  return {
     id: group.id,
-    label: group.label,
-    overviewPhrase: group.overviewPhrase,
-    practicalLever: group.practicalLever,
-    plainAction: group.plainAction,
-    concreteQuestion: group.concreteQuestion,
+    label: copy.label,
+    overviewPhrase: copy.overviewPhrase,
+    practicalLever: copy.practicalLever,
+    plainAction: copy.plainAction,
+    concreteQuestion: copy.concreteQuestion,
     rowCount: group.rows.length,
     positions: group.positions,
     rollCalls: group.rows.map((row) => ({
@@ -605,7 +624,52 @@ function groupRowsByFacet(rows) {
       interpretation_status: row.interpretation_status,
       description: row.description || row.question || "",
     })),
-  }));
+  };
+}
+
+function buildDynamicMeasureGroupCopy(group) {
+  if (group.id !== "Defense authorization amendment") {
+    return group;
+  }
+
+  const statusRows = group.statusRows?.length ? group.statusRows : group.rows;
+  const interpretedCount = statusRows.filter((row) => row.interpretation_status === "interpreted").length;
+  const limitedCount = statusRows.filter(
+    (row) => row.interpretation_status === "ambiguous" || row.interpretation_status === "insufficient_evidence" || !row.interpretation_status,
+  ).length;
+  const totalCount = statusRows.length || 1;
+  const interpretedShare = interpretedCount / totalCount;
+  const limitedShare = limitedCount / totalCount;
+  const baseCopy = {
+    ...group,
+    practicalLever: "amendments tied to defense authorization, not final passage of the full defense authorization bill",
+    plainAction: "reviewing defense authorization amendments",
+  };
+
+  if (interpretedShare >= 0.67) {
+    return {
+      ...baseCopy,
+      label: "defense authorization amendments",
+      overviewPhrase: "defense authorization amendments",
+      concreteQuestion: "whether to adopt amendments to defense authorization legislation",
+    };
+  }
+
+  if (limitedShare >= 0.67) {
+    return {
+      ...baseCopy,
+      label: "limited-context defense authorization amendments",
+      overviewPhrase: "limited-context defense authorization amendments",
+      concreteQuestion: "",
+    };
+  }
+
+  return {
+    ...baseCopy,
+    label: "mixed-context defense authorization amendments",
+    overviewPhrase: "mixed-context defense authorization amendments",
+    concreteQuestion: "whether to adopt some defense authorization amendments, while other amendment rows remain limited-context",
+  };
 }
 
 function isCountedDirectionalRow(row) {
