@@ -756,6 +756,57 @@ test("scale-readiness facet labels avoid raw public overview leakage", () => {
   );
 });
 
+test("defense authorization amendment labels reflect interpreted versus limited evidence mix", () => {
+  const interpretedAmendment = (rollcall_number) =>
+    row({
+      description: `Defense authorization amendment ${rollcall_number}`,
+      issue_facet: "Defense authorization amendment",
+      rollcall_number,
+      what_happened: "The House voted on whether to agree to a defense authorization amendment.",
+      why_it_mattered: "The vote decided whether that amendment would be adopted, not final passage of the full defense authorization bill.",
+      policy_effect: "Would change one amendment provision in defense authorization legislation.",
+      vote_context: { ...partyOutcomeContext, final_result: "passed", vote_type: "amendment" },
+    });
+  const limitedAmendment = (rollcall_number) =>
+    row({
+      description: `Defense authorization amendment ${rollcall_number}`,
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "Defense authorization amendment",
+      rollcall_number,
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "The available source text identifies an amendment but does not explain the full practical policy effect.",
+    });
+
+  const mostlyInterpretedOverview = buildIssueOverview(
+    [interpretedAmendment(244), interpretedAmendment(245), interpretedAmendment(246), limitedAmendment(247)],
+    { domain: "NATIONAL_SECURITY_FOREIGN", representativeName: "Valerie P. Foushee" },
+  );
+  assert.equal(mostlyInterpretedOverview.measureGroups[0].label, "defense authorization amendments");
+  assert.match(formatRenderedIssueOverview(mostlyInterpretedOverview), /whether to adopt amendments to defense authorization legislation/);
+
+  const mostlyLimitedOverview = buildIssueOverview(
+    [interpretedAmendment(244), limitedAmendment(245), limitedAmendment(246), limitedAmendment(247)],
+    { domain: "NATIONAL_SECURITY_FOREIGN", representativeName: "Valerie P. Foushee" },
+  );
+  assert.equal(mostlyLimitedOverview.measureGroups[0].label, "limited-context defense authorization amendments");
+  assert.equal(mostlyLimitedOverview.ambiguousMeasureGroups[0].label, "limited-context defense authorization amendments");
+
+  const mixedOverview = buildIssueOverview(
+    [interpretedAmendment(244), limitedAmendment(245)],
+    { domain: "NATIONAL_SECURITY_FOREIGN", representativeName: "Valerie P. Foushee" },
+  );
+  assert.equal(mixedOverview.measureGroups[0].label, "mixed-context defense authorization amendments");
+  assert.equal(mixedOverview.ambiguousMeasureGroups[0].label, "mixed-context defense authorization amendments");
+
+  const publicCopy = [
+    formatRenderedIssueOverview(mostlyInterpretedOverview),
+    formatRenderedIssueOverview(mostlyLimitedOverview),
+    formatRenderedIssueOverview(mixedOverview),
+  ].join(" ");
+  assert.doesNotMatch(publicCopy, /final passage of the full defense authorization bill|for or against national security|you should vote/i);
+});
+
 function row(overrides) {
   return {
     interpretation_status: "interpreted",

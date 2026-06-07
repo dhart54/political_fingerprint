@@ -88,6 +88,8 @@ def load_congress_bill_cache(cache_dir: Path) -> dict[tuple[int, str, int], dict
     lookup: dict[tuple[int, str, int], dict[str, Any]] = {}
     for path in sorted(cache_dir.glob("*.json")):
         payload = json.loads(path.read_text(encoding="utf-8"))
+        bill_payload = payload.get("bill", payload)
+        source_subresources = _extract_source_subresources(bill_payload)
         _merge_companion_payload(payload, summaries_dir / path.name, "summaries")
         _merge_companion_payload(payload, subjects_dir / path.name, "subjects")
         _merge_companion_payload(payload, actions_dir / path.name, "actions")
@@ -105,7 +107,9 @@ def load_congress_bill_cache(cache_dir: Path) -> dict[tuple[int, str, int], dict
         normalized["actions"] = _coerce_list(bill.get("actions"))
         normalized["amendments"] = _coerce_list(bill.get("amendments"))
         normalized["committees"] = _coerce_list(bill.get("committees"))
+        normalized["committee_reports"] = _coerce_list(bill.get("committeeReports"))
         normalized["legislation_url"] = bill.get("legislationUrl")
+        normalized["source_subresources"] = source_subresources
         lookup[
             (
                 int(normalized["congress"]),
@@ -309,6 +313,31 @@ def _extract_text_versions(text_versions: Any) -> list[dict[str, Any]]:
             }
         )
     return extracted
+
+
+def _extract_source_subresources(bill: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    subresources: dict[str, dict[str, Any]] = {}
+    for key, value in {
+        "summaries": bill.get("summaries"),
+        "subjects": bill.get("subjects"),
+        "actions": bill.get("actions"),
+        "text_versions": bill.get("textVersions"),
+        "amendments": bill.get("amendments"),
+        "committees": bill.get("committees"),
+    }.items():
+        if isinstance(value, dict):
+            source = {
+                "count": value.get("count"),
+                "url": value.get("url"),
+            }
+            if source["count"] is not None or source["url"]:
+                subresources[key] = source
+        elif isinstance(value, list):
+            subresources[key] = {
+                "count": len(value),
+                "url": None,
+            }
+    return subresources
 
 
 def _coerce_list(value: Any) -> list[Any]:
