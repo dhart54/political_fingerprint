@@ -1,0 +1,88 @@
+{
+  "schema_version": "manual_interpretation_v1",
+  "batch_id": "batch_012_health_rule_hres953_procedural_context_candidates",
+  "batch_type": "supervised_enrichment_review_only",
+  "created_at": "2026-06-07",
+  "workflow_boundary": [
+    "Review-only candidate batch.",
+    "Production read-only data and local source cache informed this artifact.",
+    "No production data is written by this artifact.",
+    "Procedural-context candidates must remain non-counting with null support/opposition positions."
+  ],
+  "target_scope": {
+    "issue_domain": "HEALTH_SOCIAL",
+    "issue_facet": "floor_rule_for_multiple_bills",
+    "roll_call_ids": [320, 321],
+    "house_roll_numbers": [343, 344],
+    "affected_officials": 433,
+    "affected_vote_rows": 866,
+    "not_voting_rows": 37
+  },
+  "candidate_type_counts": {
+    "substantive_interpretation": 0,
+    "procedural_context": 2,
+    "still_insufficient": 0
+  },
+  "interpretations": [
+    {
+      "roll_call_id": 320,
+      "roll_number": 343,
+      "chamber": "house",
+      "issue_domain": "HEALTH_SOCIAL",
+      "issue_facet": "floor_rule_for_multiple_bills",
+      "candidate_type": "procedural_context",
+      "interpretation_status": "insufficient_evidence",
+      "interpretation_status_recommendation": "procedural_context_only",
+      "support_position": null,
+      "oppose_position": null,
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "medium",
+      "would_count_if_approved": false,
+      "procedural_context": true,
+      "source_url": "https://clerk.house.gov/evs/2025/roll343.xml",
+      "source_basis": [
+        "House Clerk Roll 343 question and result",
+        "Congress.gov H. Res. 953 bill detail, actions, text versions, committees, and committee report metadata",
+        "H. Res. 953 title and description listing H.R. 6703, H.R. 498, H.R. 3492, and H.R. 4776"
+      ],
+      "plain_english_summary": "The House voted on ordering the previous question for H. Res. 953, a procedural step tied to floor consideration of H.R. 6703, H.R. 498, H.R. 3492, and H.R. 4776.",
+      "what_happened": "The House voted on whether to order the previous question for H. Res. 953.",
+      "why_it_mattered": "The vote affected whether the House moved forward procedurally toward adopting the rule for considering the listed measures.",
+      "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
+      "what_not_to_infer": "Do not treat this as final passage of H.R. 6703, H.R. 498, H.R. 3492, or H.R. 4776, or as a direct policy position on every measure included in the rule.",
+      "uncertainty_note": "Procedural-context row. It explains House floor process and remains excluded from support/opposition and alignment math.",
+      "interpretation_reason": "Candidate uses the official roll-call question and Congress.gov rule-resolution context. It is not a substantive issue-position interpretation."
+    },
+    {
+      "roll_call_id": 321,
+      "roll_number": 344,
+      "chamber": "house",
+      "issue_domain": "HEALTH_SOCIAL",
+      "issue_facet": "floor_rule_for_multiple_bills",
+      "candidate_type": "procedural_context",
+      "interpretation_status": "insufficient_evidence",
+      "interpretation_status_recommendation": "procedural_context_only",
+      "support_position": null,
+      "oppose_position": null,
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "medium",
+      "would_count_if_approved": false,
+      "procedural_context": true,
+      "source_url": "https://clerk.house.gov/evs/2025/roll344.xml",
+      "source_basis": [
+        "House Clerk Roll 344 question and result",
+        "Congress.gov H. Res. 953 bill detail, actions, text versions, committees, and committee report metadata",
+        "H. Res. 953 title and description listing H.R. 6703, H.R. 498, H.R. 3492, and H.R. 4776"
+      ],
+      "plain_english_summary": "The House voted on agreeing to H. Res. 953, which set terms for considering H.R. 6703, H.R. 498, H.R. 3492, and H.R. 4776.",
+      "what_happened": "The House voted on whether to agree to H. Res. 953.",
+      "why_it_mattered": "The vote decided whether the House would adopt that floor rule for considering the listed measures.",
+      "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
+      "what_not_to_infer": "Do not treat this as final passage of H.R. 6703, H.R. 498, H.R. 3492, or H.R. 4776, or as a direct policy position on every measure included in the rule.",
+      "uncertainty_note": "Procedural-context row. It explains House floor process and remains excluded from support/opposition and alignment math.",
+      "interpretation_reason": "Candidate uses the official roll-call question and Congress.gov rule-resolution context. It is not a substantive issue-position interpretation."
+    }
+  ]
+}
