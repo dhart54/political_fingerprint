@@ -286,7 +286,7 @@ test("Justice & Public Safety overview uses domain-aware generic language", () =
   assert.match(rendered, /Of the 5 reviewed Yes\/No votes that could be interpreted, 1 supported the measures shown and 4 opposed them\./);
   assert.match(rendered, /Most opposed measures that passed the House\./);
   assert.match(rendered, /not as a simple statement that she is broadly for or against this issue area/);
-  assert.match(rendered, /Two additional rows remain visible below but are not counted because the available source text does not clearly explain the practical policy effect\./);
+  assert.match(rendered, /Two additional rows remain visible below, including one procedural-context row and one other limited-context row; they are not used to summarize support, opposition, or alignment\./);
   assert.doesNotMatch(rendered, /concrete fiscal questions|for" or "against taxes|full fiscal record|JUSTICE PUBLIC SAFETY|administrative law and regulatory procedures|house of representatives|Yes-pattern|No-pattern/);
 });
 
@@ -308,7 +308,9 @@ test("generic Justice card summaries use legislator name and clean punctuation",
     "Nay. The House passed a bill directing GSA to create a process for federal law-enforcement officers to buy retired agency-issued firearms. Foushee voted against passing the bill, matching most Democrats. The bill passed the House.",
   );
   assert.doesNotMatch(summary, /This representative|\. matching|interpreted measure/);
-  assert.match(limitedSummary, /This row remains visible but is not counted in the summarized vote pattern because the available source text does not explain the practical policy effect\./);
+  assert.match(limitedSummary, /Procedural-context row/);
+  assert.match(limitedSummary, /not counted as support or opposition/);
+  assert.match(limitedSummary, /should not be read as final passage/);
 });
 
 test("generic card summary templates improve top non-gold interpreted facets", () => {

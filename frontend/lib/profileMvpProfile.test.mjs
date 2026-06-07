@@ -20,6 +20,7 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   assert.ok(source.includes("Grouped Evidence Preview"), "grouped evidence preview should be user-visible");
   assert.ok(source.includes("formatEvidenceGroupingOverview"), "grouping summary should be rendered");
   assert.ok(source.includes("Reviewed meaning"), "interpreted rows should get a confidence label");
+  assert.ok(source.includes("Procedural context"), "procedural rows should get a confidence label");
   assert.ok(source.includes("Limited context"), "ambiguous rows should get a confidence label");
   assert.ok(source.includes("Needs source support"), "insufficient rows should get a confidence label");
   assert.ok(source.includes("Not counted"), "not-voting rows should get a confidence label");
@@ -35,6 +36,7 @@ test("grouped preview copy preserves limited and not-voting caveats", () => {
   ].join("\n");
 
   assert.match(source, /limited-context .* kept separate/);
+  assert.match(source, /procedural-context .* shown for floor process only/);
   assert.match(source, /not-voting .* not counted as support or opposition/);
   assert.match(source, /should not be treated as final policy votes/);
 });

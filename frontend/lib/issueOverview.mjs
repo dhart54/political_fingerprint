@@ -1,5 +1,6 @@
 import { deriveEvidenceGroups } from "./evidenceGrouping.mjs";
 import { formatDomainLabel } from "./issueDomains.js";
+import { isProceduralContextRow } from "./proceduralContext.mjs";
 
 const ISSUE_FACET_GROUPS = {
   budget_reconciliation_and_debt_limit: {
@@ -246,9 +247,11 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
   const opposeRows = directionalRows.filter((row) => row.position === row.oppose_position);
   const notVotingRows = interpretedRows.filter((row) => row.position === "not_voting");
   const ambiguousRows = rows.filter((row) => row.interpretation_status && row.interpretation_status !== "interpreted");
+  const proceduralContextRows = ambiguousRows.filter(isProceduralContextRow);
   const countedMeasureGroups = groupRowsByFacet(directionalRows, { allRows: rows });
   const notVotingMeasureGroups = groupRowsByFacet(notVotingRows, { allRows: rows });
   const ambiguousMeasureGroups = groupRowsByFacet(ambiguousRows, { allRows: rows });
+  const proceduralContextMeasureGroups = groupRowsByFacet(proceduralContextRows, { allRows: rows });
   const partyRows = directionalRows.filter(hasPartyContext);
   const outcomeRows = directionalRows.filter(hasOutcomeContext);
   const partyMatchCount = partyRows.filter((row) => row.vote_context.member_voted_with_party_majority).length;
@@ -266,6 +269,7 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
     opposeCount: opposeRows.length,
     notVotingCount: notVotingRows.length,
     ambiguousCount: ambiguousRows.length,
+    proceduralContextCount: proceduralContextRows.length,
     partyComparedCount: partyRows.length,
     partyMatchCount,
     finalOutcomeComparedCount: outcomeRows.length,
@@ -298,6 +302,8 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
     issueLabel,
     notVotingMeasureGroups,
     notVotingRows,
+    proceduralContextMeasureGroups,
+    proceduralContextRows,
     practicalPolicyLevers,
     concreteQuestions,
     issueDomain,
@@ -314,6 +320,7 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
     overviewMeasureGroups,
     notVotingMeasureGroups,
     ambiguousMeasureGroups,
+    proceduralContextMeasureGroups,
     practicalPolicyLevers,
     readiness,
     votePattern,
@@ -356,6 +363,8 @@ function buildOverviewCopy({
   issueLabel,
   notVotingMeasureGroups,
   notVotingRows,
+  proceduralContextMeasureGroups,
+  proceduralContextRows,
   practicalPolicyLevers,
   concreteQuestions,
   issueDomain,
@@ -372,6 +381,8 @@ function buildOverviewCopy({
       issueLabel,
       notVotingMeasureGroups,
       notVotingRows,
+      proceduralContextMeasureGroups,
+      proceduralContextRows,
       readiness,
       representativeLabel,
       votePattern,
@@ -400,7 +411,7 @@ function buildOverviewCopy({
     );
   }
   if (ambiguousRows.length) {
-    aboutParts.push(formatLimitedContextOverviewSentence({ ambiguousMeasureGroups, ambiguousRows, issueDomain }));
+    aboutParts.push(formatLimitedContextOverviewSentence({ ambiguousMeasureGroups, ambiguousRows, issueDomain, proceduralContextMeasureGroups, proceduralContextRows }));
   }
 
   const actionParts = [];
@@ -449,7 +460,11 @@ function buildOverviewCopy({
     formatFullRecordBoundary(issueDomain),
   ];
   if (notVotingRows.length || ambiguousRows.length) {
-    notInferParts.push("Not-voting and limited-context rows remain visible below, but they are not forced into the pattern.");
+    notInferParts.push(
+      proceduralContextRows.length
+        ? "Not-voting, limited-context, and procedural-context rows remain visible below, but they are not forced into the pattern."
+        : "Not-voting and limited-context rows remain visible below, but they are not forced into the pattern.",
+    );
   }
 
   return {
@@ -505,6 +520,8 @@ function buildLimitedEvidenceOverviewCopy({
   issueLabel,
   notVotingMeasureGroups,
   notVotingRows,
+  proceduralContextMeasureGroups,
+  proceduralContextRows,
   readiness,
   representativeLabel,
   votePattern,
@@ -531,7 +548,7 @@ function buildLimitedEvidenceOverviewCopy({
     );
   }
   if (ambiguousRows.length) {
-    aboutParts.push(formatLimitedContextOverviewSentence({ ambiguousMeasureGroups, ambiguousRows, issueDomain }));
+    aboutParts.push(formatLimitedContextOverviewSentence({ ambiguousMeasureGroups, ambiguousRows, issueDomain, proceduralContextMeasureGroups, proceduralContextRows }));
   }
 
   const actionParts = [];
@@ -562,7 +579,9 @@ function buildLimitedEvidenceOverviewCopy({
     whatNotToInfer: [
       "Do not infer motive, ideology, character, corruption, or a voting recommendation from this section.",
       formatFullRecordBoundary(issueDomain),
-      "Not-voting and limited-context rows remain visible below, but they are not forced into the pattern.",
+      proceduralContextRows.length
+        ? "Not-voting, limited-context, and procedural-context rows remain visible below, but they are not forced into the pattern."
+        : "Not-voting and limited-context rows remain visible below, but they are not forced into the pattern.",
     ].join(" "),
   };
 }
@@ -710,7 +729,17 @@ function summarizePartyPattern({ partyLabel, partyMatchCount, total }) {
   return `${capitalize(formatSharePhrase(partyMatchCount, total))} of those votes matched ${partyName}.`;
 }
 
-function formatLimitedContextOverviewSentence({ ambiguousMeasureGroups, ambiguousRows, issueDomain }) {
+function formatLimitedContextOverviewSentence({ ambiguousMeasureGroups, ambiguousRows, issueDomain, proceduralContextMeasureGroups = [], proceduralContextRows = [] }) {
+  if (proceduralContextRows.length === ambiguousRows.length && proceduralContextRows.length) {
+    const proceduralText = formatList(proceduralContextMeasureGroups.map((group) => group.overviewPhrase));
+    return proceduralText
+      ? `${capitalize(formatNumber(proceduralContextRows.length))} procedural-context ${proceduralContextRows.length === 1 ? "row remains" : "rows remain"} visible for ${proceduralText}, but ${proceduralContextRows.length === 1 ? "it explains" : "they explain"} floor process and ${proceduralContextRows.length === 1 ? "is" : "are"} not used to summarize support, opposition, or alignment.`
+      : `${capitalize(formatNumber(proceduralContextRows.length))} procedural-context ${proceduralContextRows.length === 1 ? "row remains" : "rows remain"} visible, but ${proceduralContextRows.length === 1 ? "it explains" : "they explain"} floor process and ${proceduralContextRows.length === 1 ? "is" : "are"} not used to summarize support, opposition, or alignment.`;
+  }
+  if (proceduralContextRows.length) {
+    const otherLimitedCount = ambiguousRows.length - proceduralContextRows.length;
+    return `${capitalize(formatNumber(ambiguousRows.length))} additional rows remain visible below, including ${formatNumber(proceduralContextRows.length)} procedural-context ${proceduralContextRows.length === 1 ? "row" : "rows"} and ${formatNumber(otherLimitedCount)} other limited-context ${otherLimitedCount === 1 ? "row" : "rows"}; they are not used to summarize support, opposition, or alignment.`;
+  }
   if (issueDomain !== "ECONOMY_TAXES") {
     return `${capitalize(formatNumber(ambiguousRows.length))} additional ${ambiguousRows.length === 1 ? "row remains" : "rows remain"} visible below but ${ambiguousRows.length === 1 ? "is" : "are"} not counted because the available source text does not clearly explain the practical policy effect.`;
   }

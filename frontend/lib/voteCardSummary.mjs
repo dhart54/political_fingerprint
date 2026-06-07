@@ -1,3 +1,5 @@
+import { buildProceduralContextSummary, isProceduralContextRow } from "./proceduralContext.mjs";
+
 export function buildVoteCardSummary(row, { representativeName = "" } = {}) {
   if (!row || row.interpretation_status !== "interpreted") {
     return "";
@@ -23,6 +25,10 @@ export function buildVoteCardSummary(row, { representativeName = "" } = {}) {
 
 export function buildLimitedContextSummary(row) {
   const position = formatVotePosition(row?.position);
+
+  if (isProceduralContextRow(row)) {
+    return buildProceduralContextSummary(row);
+  }
 
   if (row?.interpretation_status === "ambiguous" || row?.interpretation_status === "insufficient_evidence") {
     const explanation =
