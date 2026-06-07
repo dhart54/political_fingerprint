@@ -6,6 +6,7 @@ import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from ".
 import { deriveEvidenceGroups } from "../lib/evidenceGrouping.mjs";
 import { buildIssueOverview } from "../lib/issueOverview.mjs";
 import { groupIssueRowsByReadiness, sortIssueRowsByReadiness } from "../lib/issueReadiness.mjs";
+import { isProceduralContextRow } from "../lib/proceduralContext.mjs";
 import { DOMAIN_LABELS, formatDomainLabel } from "../lib/issueDomains";
 import {
   buildLimitedContextSummary as buildGenericLimitedContextSummary,
@@ -547,8 +548,9 @@ function EvidenceGroupingPreview({ evidenceGrouping }) {
   const groups = evidenceGrouping?.groups || [];
   const repeatedGroups = groups.filter((group) => group.rowCount > 1);
   const limitedGroups = groups.filter((group) => group.category === "limited_context_rows");
+  const proceduralContextGroups = groups.filter((group) => group.category === "procedural_context_rows");
   const notVotingGroups = groups.filter((group) => group.category === "not_voting_rows");
-  const previewGroups = [...repeatedGroups, ...limitedGroups, ...notVotingGroups]
+  const previewGroups = [...repeatedGroups, ...proceduralContextGroups, ...limitedGroups, ...notVotingGroups]
     .filter((group, index, allGroups) => allGroups.findIndex((candidate) => candidate.id === group.id) === index)
     .slice(0, 4);
 
@@ -567,7 +569,7 @@ function EvidenceGroupingPreview({ evidenceGrouping }) {
             {formatEvidenceGroupingOverview(evidenceGrouping.summary)}
           </p>
           <p className="mt-1 text-sm leading-6 text-stone-600">
-            Repeated bill groups help show when several rows are about the same package. Limited-context and not-voting rows remain visible without being counted as support or opposition.
+            Repeated bill groups help show when several rows are about the same package. Procedural-context, limited-context, and not-voting rows remain visible without being counted as support or opposition.
           </p>
         </div>
         <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-xs uppercase tracking-[0.16em] text-stone-700">
@@ -592,7 +594,7 @@ function EvidenceGroupingPreview({ evidenceGrouping }) {
         </div>
       ) : (
         <p className="mt-3 text-sm leading-6 text-stone-600">
-          No repeated bill or limited/not-voting clusters were detected in this issue section.
+          No repeated bill, procedural-context, limited-context, or not-voting clusters were detected in this issue section.
         </p>
       )}
     </div>
@@ -820,7 +822,7 @@ function InterpretationBreakdown({ representativeName, row, selectedActionRow, s
   }
 
   const isInterpreted = row.interpretation_status === "interpreted";
-  const statusLabel = formatInterpretationStatus(row.interpretation_status);
+  const statusLabel = formatInterpretationStatus(row);
   const summaryText = buildUsefulInterpretationText(row.plain_english_summary);
   const policyEffectText = buildUsefulInterpretationText(row.policy_effect);
   const interpretedVoteRead = buildInterpretedVoteRead(row);
@@ -869,7 +871,7 @@ function InterpretationBreakdown({ representativeName, row, selectedActionRow, s
         </summary>
         <div className="mt-3 grid gap-3 border-t border-stone-200 pt-3">
           <div className="flex flex-wrap gap-2">
-            <span className={`w-fit rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.18em] ${getInterpretationBadgeClass(row.interpretation_status)}`}>
+            <span className={`w-fit rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.18em] ${getInterpretationBadgeClass(row)}`}>
               {statusLabel}
             </span>
             {row.issue_facet ? (
@@ -1031,6 +1033,11 @@ function buildKnownVoteCardSummary(row) {
 function buildLimitedContextSummary(row) {
   const rollNumber = Number(row?.rollcall_number);
   const position = formatVotePosition(row?.position);
+  const genericSummary = buildGenericLimitedContextSummary(row);
+
+  if (isProceduralContextRow(row) && genericSummary) {
+    return genericSummary;
+  }
 
   if (rollNumber === 180) {
     return `${position}. Limited-context row. This was an en bloc appropriations amendment, but the available source text does not explain the full practical change. It remains visible below but is not counted in the summarized vote pattern.`;
@@ -1039,7 +1046,7 @@ function buildLimitedContextSummary(row) {
     return `${position}. Limited-context row. This was a motion to instruct conferees, not final passage of the underlying appropriations bill. It remains visible below but is not counted in the summarized vote pattern.`;
   }
 
-  return buildGenericLimitedContextSummary(row);
+  return genericSummary;
 }
 
 function extractMemberLabel(row) {
@@ -1130,6 +1137,7 @@ function formatEvidenceGroupingOverview(summary) {
   const totalGroups = summary?.totalGroups || 0;
   const repeatedGroupCount = summary?.repeatedGroupCount || 0;
   const limitedCount = summary?.ambiguousOrInsufficientRows || 0;
+  const proceduralContextCount = summary?.proceduralContextRows || 0;
   const notVotingCount = summary?.notVotingRows || 0;
   const parts = [
     `${totalRows} ${totalRows === 1 ? "evidence row" : "evidence rows"} shown across ${totalGroups} ${totalGroups === 1 ? "bill or measure group" : "bill or measure groups"}`,
@@ -1140,6 +1148,9 @@ function formatEvidenceGroupingOverview(summary) {
   }
   if (limitedCount) {
     parts.push(`${limitedCount} limited-context ${limitedCount === 1 ? "row" : "rows"} kept separate`);
+  }
+  if (proceduralContextCount) {
+    parts.push(`${proceduralContextCount} procedural-context ${proceduralContextCount === 1 ? "row" : "rows"} shown for floor process only`);
   }
   if (notVotingCount) {
     parts.push(`${notVotingCount} not-voting ${notVotingCount === 1 ? "row" : "rows"} not counted as support or opposition`);
@@ -1158,6 +1169,7 @@ function formatEvidenceGroupCategory(group) {
   const labels = {
     limited_context_rows: "Limited context",
     not_voting_rows: "Not voting",
+    procedural_context_rows: "Procedural context",
     primary_bill_or_measure: "Primary measure",
     related_amendments: "Related amendments",
     related_floor_or_procedural_votes: "Related procedural votes",
@@ -1347,6 +1359,9 @@ function formatEvidenceConfidenceLabel(row) {
   if (row.position === "not_voting") {
     return "Not counted";
   }
+  if (isProceduralContextRow(row)) {
+    return "Procedural context";
+  }
   if (row.interpretation_status === "interpreted") {
     return "Reviewed meaning";
   }
@@ -1362,6 +1377,9 @@ function formatEvidenceConfidenceLabel(row) {
 function getEvidenceConfidenceBadgeClass(row) {
   if (row.position === "not_voting") {
     return "bg-stone-200 text-stone-700";
+  }
+  if (isProceduralContextRow(row)) {
+    return "bg-sky-100 text-sky-900";
   }
   if (row.interpretation_status === "interpreted") {
     return "bg-cyan-100 text-cyan-900";
@@ -1527,7 +1545,11 @@ function hasInterpretationDetail(row) {
   );
 }
 
-function formatInterpretationStatus(status) {
+function formatInterpretationStatus(statusInput) {
+  if (isProceduralContextRow(statusInput)) {
+    return "Procedural Context";
+  }
+  const status = typeof statusInput === "object" ? statusInput?.interpretation_status : statusInput;
   if (status === "interpreted") {
     return "Plain-English";
   }
@@ -1540,7 +1562,11 @@ function formatInterpretationStatus(status) {
   return "Not Reviewed";
 }
 
-function getInterpretationBadgeClass(status) {
+function getInterpretationBadgeClass(statusInput) {
+  if (isProceduralContextRow(statusInput)) {
+    return "bg-sky-100 text-sky-900";
+  }
+  const status = typeof statusInput === "object" ? statusInput?.interpretation_status : statusInput;
   if (status === "interpreted") {
     return "bg-cyan-900 text-white";
   }
@@ -1573,6 +1599,9 @@ function buildContextBadges(row) {
   }
   if (row.interpretation_status === "insufficient_evidence") {
     badges.push("Limited source context");
+  }
+  if (isProceduralContextRow(row)) {
+    badges.push("Procedural context only");
   }
   if (row.vote_context?.member_voted_with_party_majority === true) {
     badges.push("Voted with most of their party");

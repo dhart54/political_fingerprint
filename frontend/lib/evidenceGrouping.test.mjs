@@ -183,6 +183,55 @@ test("high-risk national security grouping remains limited and does not overinte
   assert.doesNotMatch(rendered, /consistently opposed|consistently supported|you should vote|is corrupt/i);
 });
 
+test("procedural-context rows stay visible without becoming counted evidence", () => {
+  const rows = [
+    row({
+      bill_id: "119:hres:489",
+      bill_title: "Providing for consideration of several measures",
+      description: "On Ordering the Previous Question",
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "house_of_representatives",
+      rollcall_number: 160,
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "The vote was procedural and tied to floor consideration of multiple bills.",
+      vote_context: { ...partyOutcomeContext, vote_type: "rule" },
+    }),
+    row({
+      bill_id: "119:hres:489",
+      bill_title: "Providing for consideration of several measures",
+      description: "On Agreeing to the Resolution",
+      interpretation_status: "insufficient_evidence",
+      issue_facet: "house_of_representatives",
+      rollcall_number: 161,
+      support_position: null,
+      oppose_position: null,
+      uncertainty_note: "The vote was on adopting a House rule resolution.",
+      vote_context: { ...partyOutcomeContext, vote_type: "rule" },
+    }),
+  ];
+
+  const grouping = deriveEvidenceGroups(rows);
+  const overview = buildIssueOverview(rows, {
+    domain: "JUSTICE_PUBLIC_SAFETY",
+    representativeName: "Valerie P. Foushee",
+  });
+  const rendered = formatRenderedIssueOverview(overview);
+
+  assert.equal(grouping.summary.countedYesNoRows, 0);
+  assert.equal(grouping.summary.ambiguousOrInsufficientRows, 2);
+  assert.equal(grouping.summary.proceduralContextRows, 2);
+  assert.equal(grouping.groups[0].category, "procedural_context_rows");
+  assert.match(grouping.groups[0].scanSummary, /procedural context/);
+  assert.equal(overview.votePattern.supportCount, 0);
+  assert.equal(overview.votePattern.opposeCount, 0);
+  assert.equal(overview.votePattern.proceduralContextCount, 2);
+  assert.equal(overview.readiness.status, "limited");
+  assert.match(rendered, /procedural-context/);
+  assert.match(rendered, /not used to summarize support, opposition, or alignment/);
+  assert.doesNotMatch(rendered, /consistently opposed|consistently supported|broad Justice|you should vote/i);
+});
+
 function row(overrides) {
   return {
     interpretation_status: "interpreted",

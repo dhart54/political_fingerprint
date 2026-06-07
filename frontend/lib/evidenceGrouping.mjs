@@ -1,3 +1,5 @@
+import { isProceduralContextRow } from "./proceduralContext.mjs";
+
 export function deriveEvidenceGroups(rows = []) {
   if (!Array.isArray(rows) || rows.length === 0) {
     return {
@@ -34,6 +36,7 @@ export function deriveEvidenceGroups(rows = []) {
     ambiguousOrInsufficientRows: groups.reduce((total, group) => total + group.ambiguousOrInsufficientCount, 0),
     notVotingRows: groups.reduce((total, group) => total + group.notVotingCount, 0),
     proceduralRows: groups.reduce((total, group) => total + group.proceduralCount, 0),
+    proceduralContextRows: groups.reduce((total, group) => total + group.proceduralContextCount, 0),
     amendmentRows: groups.reduce((total, group) => total + group.amendmentCount, 0),
     repeatedGroups: repeatedGroups.map((group) => ({
       id: group.id,
@@ -56,6 +59,7 @@ function formatGroup(group) {
   const ambiguousRows = rows.filter(isAmbiguousOrInsufficientRow);
   const notVotingRows = rows.filter((row) => row.interpretation_status === "interpreted" && row.position === "not_voting");
   const proceduralRows = rows.filter(isProceduralRow);
+  const proceduralContextRows = rows.filter(isProceduralContextRow);
   const amendmentRows = rows.filter(isAmendmentRow);
   const category = categorizeGroup({
     rows,
@@ -63,6 +67,7 @@ function formatGroup(group) {
     ambiguousRows,
     notVotingRows,
     proceduralRows,
+    proceduralContextRows,
     amendmentRows,
   });
 
@@ -77,6 +82,7 @@ function formatGroup(group) {
     ambiguousOrInsufficientCount: ambiguousRows.length,
     notVotingCount: notVotingRows.length,
     proceduralCount: proceduralRows.length,
+    proceduralContextCount: proceduralContextRows.length,
     amendmentCount: amendmentRows.length,
     rollCalls: rows.map((row) => ({
       roll_call_id: row.roll_call_id,
@@ -95,6 +101,7 @@ function formatGroup(group) {
       ambiguousCount: ambiguousRows.length,
       notVotingCount: notVotingRows.length,
       proceduralCount: proceduralRows.length,
+      proceduralContextCount: proceduralContextRows.length,
       amendmentCount: amendmentRows.length,
     }),
   };
@@ -152,7 +159,10 @@ function buildBillIdentifier(row) {
   return "";
 }
 
-function categorizeGroup({ countedRows, ambiguousRows, notVotingRows, proceduralRows, amendmentRows }) {
+function categorizeGroup({ countedRows, ambiguousRows, notVotingRows, proceduralRows, proceduralContextRows, amendmentRows }) {
+  if (proceduralContextRows.length && proceduralContextRows.length === countedRows.length + ambiguousRows.length + notVotingRows.length) {
+    return "procedural_context_rows";
+  }
   if (ambiguousRows.length && ambiguousRows.length === countedRows.length + ambiguousRows.length + notVotingRows.length) {
     return "limited_context_rows";
   }
@@ -185,6 +195,9 @@ function buildScanSummary({
 
   if (category === "limited_context_rows") {
     return `${countPhrase} ${remainVerb} visible as limited-context evidence for ${label}; ${rowCount === 1 ? "it is" : "they are"} not counted in the summarized pattern.`;
+  }
+  if (category === "procedural_context_rows") {
+    return `${countPhrase} ${remainVerb} visible as procedural context for ${label}; ${rowCount === 1 ? "it explains" : "they explain"} floor process and ${rowCount === 1 ? "is" : "are"} not counted as support or opposition.`;
   }
   if (category === "not_voting_rows") {
     return `${countPhrase} ${explainVerb} ${label}, but not-voting rows are not counted as support or opposition.`;
@@ -221,7 +234,7 @@ function isAmbiguousOrInsufficientRow(row) {
 
 function isProceduralRow(row) {
   const text = `${row.issue_facet || ""} ${row.description || ""} ${row.question || ""} ${row.vote_context?.vote_type || row.vote_type || ""}`.toLowerCase();
-  return /\b(procedure|procedural|floor rule|rule|motion to commit|motion|conference instruction|instruct conferees|concurrence)\b/.test(text);
+  return isProceduralContextRow(row) || /\b(procedure|procedural|floor rule|rule|motion to commit|motion|conference instruction|instruct conferees|concurrence)\b/.test(text);
 }
 
 function isAmendmentRow(row) {
@@ -278,6 +291,7 @@ function emptySummary() {
     ambiguousOrInsufficientRows: 0,
     notVotingRows: 0,
     proceduralRows: 0,
+    proceduralContextRows: 0,
     amendmentRows: 0,
     repeatedGroups: [],
   };
