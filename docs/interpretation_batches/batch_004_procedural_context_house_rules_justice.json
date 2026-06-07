@@ -1,0 +1,164 @@
+{
+  "schema_version": "manual_interpretation_v1",
+  "batch_id": "batch_004_procedural_context_house_rules_justice",
+  "batch_type": "procedural_context_review_only",
+  "created_at": "2026-06-07",
+  "workflow_boundary": [
+    "Review-only candidate batch.",
+    "Do not import without explicit production-write approval.",
+    "Procedural-context rows are not support/opposition evidence.",
+    "support_position and oppose_position must remain null."
+  ],
+  "target_scope": {
+    "issue_domain": "JUSTICE_PUBLIC_SAFETY",
+    "issue_facet": "house_of_representatives",
+    "roll_call_ids": [145, 146, 246, 247, 269, 270],
+    "house_roll_numbers": [160, 161, 267, 268, 290, 291]
+  },
+  "interpretations": [
+    {
+      "roll_call_id": 145,
+      "house_roll_number": 160,
+      "interpretation_status": "insufficient_evidence",
+      "support_position": null,
+      "oppose_position": null,
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "medium",
+      "issue_facet": "house_of_representatives",
+      "procedural_context": true,
+      "counting_boundary": "Visible procedural context only; not support/opposition evidence and not alignment evidence.",
+      "source_url": "https://clerk.house.gov/evs/2025/roll160.xml",
+      "source_basis": [
+        "House Clerk Roll 160 question and recorded vote",
+        "Congress.gov H. Res. 489 bill detail, actions, text versions, committees, and H. Rept. 119-151"
+      ],
+      "plain_english_summary": "The House voted on ordering the previous question for H. Res. 489, a procedural step tied to floor consideration of H.R. 884, H.R. 2056, H.R. 2096, and S. 331.",
+      "what_happened": "The House voted on whether to order the previous question for H. Res. 489.",
+      "why_it_mattered": "The vote affected whether the House moved forward procedurally toward adopting the rule for considering the listed measures.",
+      "what_not_to_infer": "Do not treat this as final passage of any listed bill, as direct support or opposition on the underlying policies, as an alignment label, or as a voting recommendation.",
+      "uncertainty_note": "Procedural-context row. It explains House floor process and remains excluded from support/opposition and alignment math.",
+      "interpretation_reason": "Procedural-context candidate based on House Clerk roll context and local Congress.gov rule-resolution source context."
+    },
+    {
+      "roll_call_id": 146,
+      "house_roll_number": 161,
+      "interpretation_status": "insufficient_evidence",
+      "support_position": null,
+      "oppose_position": null,
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "medium",
+      "issue_facet": "house_of_representatives",
+      "procedural_context": true,
+      "counting_boundary": "Visible procedural context only; not support/opposition evidence and not alignment evidence.",
+      "source_url": "https://clerk.house.gov/evs/2025/roll161.xml",
+      "source_basis": [
+        "House Clerk Roll 161 question and recorded vote",
+        "Congress.gov H. Res. 489 bill detail, actions, text versions, committees, and H. Rept. 119-151"
+      ],
+      "plain_english_summary": "The House voted on agreeing to H. Res. 489, which set terms for considering H.R. 884, H.R. 2056, H.R. 2096, and S. 331.",
+      "what_happened": "The House voted on whether to agree to H. Res. 489.",
+      "why_it_mattered": "The vote decided whether that floor rule would be adopted.",
+      "what_not_to_infer": "Do not treat this as final passage of the listed bills, as a broad Justice/Public Safety position, as an alignment label, or as a voting recommendation.",
+      "uncertainty_note": "Procedural-context row. It explains House floor process and remains excluded from support/opposition and alignment math.",
+      "interpretation_reason": "Procedural-context candidate based on House Clerk roll context and local Congress.gov rule-resolution source context."
+    },
+    {
+      "roll_call_id": 246,
+      "house_roll_number": 267,
+      "interpretation_status": "insufficient_evidence",
+      "support_position": null,
+      "oppose_position": null,
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "medium",
+      "issue_facet": "house_of_representatives",
+      "procedural_context": true,
+      "counting_boundary": "Visible procedural context only; not support/opposition evidence and not alignment evidence.",
+      "source_url": "https://clerk.house.gov/evs/2025/roll267.xml",
+      "source_basis": [
+        "House Clerk Roll 267 question and recorded vote",
+        "Congress.gov H. Res. 707 bill detail, actions, text versions, committees, and H. Rept. 119-298"
+      ],
+      "plain_english_summary": "The House voted on ordering the previous question for H. Res. 707, a procedural step tied to floor consideration of several D.C. justice/public-safety bills and several energy-related measures.",
+      "what_happened": "The House voted on whether to order the previous question for H. Res. 707.",
+      "why_it_mattered": "The vote affected whether the House moved forward procedurally toward adopting the rule.",
+      "what_not_to_infer": "Do not treat this as final passage of any listed bill, as direct support or opposition on every measure in the rule, as an alignment label, or as a voting recommendation.",
+      "uncertainty_note": "Procedural-context row. It explains House floor process and remains excluded from support/opposition and alignment math.",
+      "interpretation_reason": "Procedural-context candidate based on House Clerk roll context and local Congress.gov rule-resolution source context."
+    },
+    {
+      "roll_call_id": 247,
+      "house_roll_number": 268,
+      "interpretation_status": "insufficient_evidence",
+      "support_position": null,
+      "oppose_position": null,
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "medium",
+      "issue_facet": "house_of_representatives",
+      "procedural_context": true,
+      "counting_boundary": "Visible procedural context only; not support/opposition evidence and not alignment evidence.",
+      "source_url": "https://clerk.house.gov/evs/2025/roll268.xml",
+      "source_basis": [
+        "House Clerk Roll 268 question and recorded vote",
+        "Congress.gov H. Res. 707 bill detail, actions, text versions, committees, and H. Rept. 119-298"
+      ],
+      "plain_english_summary": "The House voted on agreeing to H. Res. 707, which set terms for considering several D.C. justice/public-safety bills and several energy-related measures.",
+      "what_happened": "The House voted on whether to agree to H. Res. 707.",
+      "why_it_mattered": "The vote decided whether that floor rule would be adopted.",
+      "what_not_to_infer": "Do not treat this as final passage of the listed bills, as direct support or opposition on every measure in the rule, as an alignment label, or as a voting recommendation.",
+      "uncertainty_note": "Procedural-context row. It explains House floor process and remains excluded from support/opposition and alignment math.",
+      "interpretation_reason": "Procedural-context candidate based on House Clerk roll context and local Congress.gov rule-resolution source context."
+    },
+    {
+      "roll_call_id": 269,
+      "house_roll_number": 290,
+      "interpretation_status": "insufficient_evidence",
+      "support_position": null,
+      "oppose_position": null,
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "medium",
+      "issue_facet": "house_of_representatives",
+      "procedural_context": true,
+      "counting_boundary": "Visible procedural context only; not support/opposition evidence and not alignment evidence.",
+      "source_url": "https://clerk.house.gov/evs/2025/roll290.xml",
+      "source_basis": [
+        "House Clerk Roll 290 question and recorded vote",
+        "Congress.gov H. Res. 879 bill detail, actions, text versions, committees, and H. Rept. 119-380"
+      ],
+      "plain_english_summary": "The House voted on a procedural step for H. Res. 879, a rule covering several Congressional Review Act resolutions, energy measures, a D.C. policing bill, and other measures.",
+      "what_happened": "The House voted on a procedural step tied to H. Res. 879.",
+      "why_it_mattered": "The vote affected whether the House moved forward procedurally toward adopting the rule context.",
+      "what_not_to_infer": "Do not treat this as final passage of any listed resolution or bill, as support or opposition for every bundled measure, as an alignment label, or as a voting recommendation.",
+      "uncertainty_note": "Procedural-context row. It explains House floor process and remains excluded from support/opposition and alignment math.",
+      "interpretation_reason": "Procedural-context candidate based on House Clerk roll context and local Congress.gov rule-resolution source context."
+    },
+    {
+      "roll_call_id": 270,
+      "house_roll_number": 291,
+      "interpretation_status": "insufficient_evidence",
+      "support_position": null,
+      "oppose_position": null,
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "medium",
+      "issue_facet": "house_of_representatives",
+      "procedural_context": true,
+      "counting_boundary": "Visible procedural context only; not support/opposition evidence and not alignment evidence.",
+      "source_url": "https://clerk.house.gov/evs/2025/roll291.xml",
+      "source_basis": [
+        "House Clerk Roll 291 question and recorded vote",
+        "Congress.gov H. Res. 879 bill detail, actions, text versions, committees, and H. Rept. 119-380"
+      ],
+      "plain_english_summary": "The House voted on agreeing to H. Res. 879, which set terms for considering several Congressional Review Act resolutions, energy measures, D.C. policing/public-safety measures, and other measures.",
+      "what_happened": "The House voted on whether to agree to H. Res. 879.",
+      "why_it_mattered": "The vote decided whether that floor rule would be adopted.",
+      "what_not_to_infer": "Do not treat this as final passage of the listed measures, as direct support for each included issue, as an alignment label, or as a voting recommendation.",
+      "uncertainty_note": "Procedural-context row. It explains House floor process and remains excluded from support/opposition and alignment math.",
+      "interpretation_reason": "Procedural-context candidate based on House Clerk roll context and local Congress.gov rule-resolution source context."
+    }
+  ]
+}
