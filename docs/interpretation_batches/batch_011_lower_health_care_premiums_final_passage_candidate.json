@@ -1,0 +1,60 @@
+{
+  "schema_version": "manual_interpretation_v1",
+  "batch_id": "batch_011_lower_health_care_premiums_final_passage_candidate",
+  "batch_type": "supervised_enrichment_review_only",
+  "created_at": "2026-06-07",
+  "workflow_boundary": [
+    "Review-only candidate batch.",
+    "Production read-only data and local source cache informed this artifact.",
+    "No production data is written by this artifact.",
+    "Do not import without explicit substantive import approval, preflight, rollback artifact, and post-import validation."
+  ],
+  "target_scope": {
+    "issue_domain": "HEALTH_SOCIAL",
+    "issue_facet": "health_insurance_premiums",
+    "roll_call_ids": [326],
+    "house_roll_numbers": [349],
+    "affected_officials": 433,
+    "affected_vote_rows": 433,
+    "not_voting_rows": 6
+  },
+  "candidate_type_counts": {
+    "substantive_interpretation": 1,
+    "procedural_context": 0,
+    "still_insufficient": 0
+  },
+  "interpretations": [
+    {
+      "roll_call_id": 326,
+      "roll_number": 349,
+      "chamber": "house",
+      "issue_domain": "HEALTH_SOCIAL",
+      "issue_facet": "health_insurance_premiums",
+      "candidate_type": "substantive_interpretation",
+      "interpretation_status": "interpreted",
+      "interpretation_status_recommendation": "interpreted_after_review_approval",
+      "support_position": "yea",
+      "oppose_position": "nay",
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "medium",
+      "would_count_if_approved": true,
+      "source_url": "https://clerk.house.gov/evs/2025/roll349.xml",
+      "source_basis": [
+        "House Clerk Roll 349 question and result",
+        "Congress.gov H.R. 6703 bill detail, actions, and text-version metadata",
+        "Official bill title: Lower Health Care Premiums for All Americans Act"
+      ],
+      "plain_english_summary": "This vote was on House passage of H.R. 6703, the Lower Health Care Premiums for All Americans Act. A Yea vote supported passing the bill in the House, while a Nay vote opposed passing it.",
+      "what_happened": "The House voted on passage of H.R. 6703, the Lower Health Care Premiums for All Americans Act. The bill passed the House and was received in the Senate.",
+      "why_it_mattered": "The vote decided whether the House would pass H.R. 6703 and send it to the Senate. It was a final-passage vote in the House, not an amendment or floor-rule vote.",
+      "member_vote_context": "A Yea vote supported House passage of H.R. 6703. A Nay vote opposed House passage of H.R. 6703.",
+      "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a complete position on health care policy from this one final-passage vote.",
+      "yea_meaning": "A Yea vote supported House passage of H.R. 6703.",
+      "nay_meaning": "A Nay vote opposed House passage of H.R. 6703.",
+      "policy_effect": "If enacted after the rest of the legislative process, the bill would advance the measure titled Lower Health Care Premiums for All Americans Act. This candidate does not summarize provisions beyond the available official title and action context.",
+      "uncertainty_note": "Source-grounded substantive candidate with medium confidence because local cache has bill actions and text-version metadata but no CRS summary text.",
+      "interpretation_reason": "Candidate uses the official final-passage roll-call action, bill title, and Congress.gov action context. It is not an import-ready production interpretation until separately reviewed."
+    }
+  ]
+}

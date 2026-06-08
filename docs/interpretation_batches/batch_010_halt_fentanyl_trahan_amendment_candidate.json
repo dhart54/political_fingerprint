@@ -1,0 +1,60 @@
+{
+  "schema_version": "manual_interpretation_v1",
+  "batch_id": "batch_010_halt_fentanyl_trahan_amendment_candidate",
+  "batch_type": "supervised_enrichment_review_only",
+  "created_at": "2026-06-07",
+  "workflow_boundary": [
+    "Review-only candidate batch.",
+    "Production read-only data and local source cache informed this artifact.",
+    "No production data is written by this artifact.",
+    "Do not import without explicit substantive import approval, preflight, rollback artifact, and post-import validation."
+  ],
+  "target_scope": {
+    "issue_domain": "JUSTICE_PUBLIC_SAFETY",
+    "issue_facet": "administrative_law_and_regulatory_procedures",
+    "roll_call_ids": [30],
+    "house_roll_numbers": [32],
+    "affected_officials": 432,
+    "affected_vote_rows": 432,
+    "not_voting_rows": 24
+  },
+  "candidate_type_counts": {
+    "substantive_interpretation": 1,
+    "procedural_context": 0,
+    "still_insufficient": 0
+  },
+  "interpretations": [
+    {
+      "roll_call_id": 30,
+      "roll_number": 32,
+      "chamber": "house",
+      "issue_domain": "JUSTICE_PUBLIC_SAFETY",
+      "issue_facet": "administrative_law_and_regulatory_procedures",
+      "candidate_type": "substantive_interpretation",
+      "interpretation_status": "interpreted",
+      "interpretation_status_recommendation": "interpreted_after_review_approval",
+      "support_position": "yea",
+      "oppose_position": "nay",
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "high",
+      "would_count_if_approved": true,
+      "source_url": "https://clerk.house.gov/evs/2025/roll032.xml",
+      "source_basis": [
+        "House Clerk Roll 32 question and result",
+        "Congress.gov amendment record 119:hamdt:5 description for H.R. 27",
+        "Congress.gov H.R. 27 bill summary, actions, and amendment list"
+      ],
+      "plain_english_summary": "This vote was on whether to agree to the Trahan amendment to H.R. 27, the HALT Fentanyl Act. The amendment would have delayed enactment until the Secretary of Health and Human Services and the Attorney General each certified that the bill would lead to a reduction in overdose deaths.",
+      "what_happened": "The House voted on whether to agree to the Trahan amendment to H.R. 27. The amendment would have delayed enactment until the Secretary of Health and Human Services and the Attorney General each certified that the bill would lead to a reduction in overdose deaths. The amendment failed.",
+      "why_it_mattered": "The vote decided whether that amendment would be adopted into H.R. 27 before final passage. It was not final passage of the HALT Fentanyl Act.",
+      "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
+      "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on fentanyl policy from this amendment vote. This was an amendment vote, not final passage of H.R. 27.",
+      "yea_meaning": "A Yea vote supported agreeing to the Trahan amendment.",
+      "nay_meaning": "A Nay vote opposed agreeing to the Trahan amendment.",
+      "policy_effect": "If adopted, the amendment would have delayed enactment of H.R. 27 until the Secretary of Health and Human Services and the Attorney General each certified that the bill would lead to a reduction in overdose deaths.",
+      "uncertainty_note": "Source-grounded substantive candidate. It remains review-only until a separate production import approval is provided.",
+      "interpretation_reason": "Candidate uses the official roll-call action and matched Congress.gov amendment description. It is not an import-ready production interpretation until separately reviewed."
+    }
+  ]
+}

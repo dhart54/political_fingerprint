@@ -1,0 +1,88 @@
+{
+  "schema_version": "manual_interpretation_v1",
+  "batch_id": "batch_013_education_rule_hres916_procedural_context_candidates",
+  "batch_type": "supervised_enrichment_review_only",
+  "created_at": "2026-06-07",
+  "workflow_boundary": [
+    "Review-only candidate batch.",
+    "Production read-only data and local source cache informed this artifact.",
+    "No production data is written by this artifact.",
+    "Procedural-context candidates must remain non-counting with null support/opposition positions."
+  ],
+  "target_scope": {
+    "issue_domain": "EDUCATION_WORKFORCE",
+    "issue_facet": "floor_rule_for_multiple_bills",
+    "roll_call_ids": [285, 286],
+    "house_roll_numbers": [308, 309],
+    "affected_officials": 432,
+    "affected_vote_rows": 864,
+    "not_voting_rows": 30
+  },
+  "candidate_type_counts": {
+    "substantive_interpretation": 0,
+    "procedural_context": 2,
+    "still_insufficient": 0
+  },
+  "interpretations": [
+    {
+      "roll_call_id": 285,
+      "roll_number": 308,
+      "chamber": "house",
+      "issue_domain": "EDUCATION_WORKFORCE",
+      "issue_facet": "floor_rule_for_multiple_bills",
+      "candidate_type": "procedural_context",
+      "interpretation_status": "insufficient_evidence",
+      "interpretation_status_recommendation": "procedural_context_only",
+      "support_position": null,
+      "oppose_position": null,
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "medium",
+      "would_count_if_approved": false,
+      "procedural_context": true,
+      "source_url": "https://clerk.house.gov/evs/2025/roll308.xml",
+      "source_basis": [
+        "House Clerk Roll 308 question and result",
+        "Congress.gov H. Res. 916 bill detail, actions, text versions, committees, and committee report metadata",
+        "H. Res. 916 title and description listing H.R. 4312, H.R. 1005, H.R. 1049, H.R. 1069, H.R. 2965, and H.R. 4305"
+      ],
+      "plain_english_summary": "The House voted on ordering the previous question for H. Res. 916, a procedural step tied to floor consideration of several education and small-business regulatory measures.",
+      "what_happened": "The House voted on whether to order the previous question for H. Res. 916.",
+      "why_it_mattered": "The vote affected whether the House moved forward procedurally toward adopting the rule for considering the listed measures.",
+      "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
+      "what_not_to_infer": "Do not treat this as final passage of any listed bill, or as a direct policy position on every education or small-business measure included in the rule.",
+      "uncertainty_note": "Procedural-context row. It explains House floor process and remains excluded from support/opposition and alignment math.",
+      "interpretation_reason": "Candidate uses the official roll-call question and Congress.gov rule-resolution context. It is not a substantive issue-position interpretation."
+    },
+    {
+      "roll_call_id": 286,
+      "roll_number": 309,
+      "chamber": "house",
+      "issue_domain": "EDUCATION_WORKFORCE",
+      "issue_facet": "floor_rule_for_multiple_bills",
+      "candidate_type": "procedural_context",
+      "interpretation_status": "insufficient_evidence",
+      "interpretation_status_recommendation": "procedural_context_only",
+      "support_position": null,
+      "oppose_position": null,
+      "interpretation_version": "interpretation_v1",
+      "classification_version": "v1",
+      "confidence": "medium",
+      "would_count_if_approved": false,
+      "procedural_context": true,
+      "source_url": "https://clerk.house.gov/evs/2025/roll309.xml",
+      "source_basis": [
+        "House Clerk Roll 309 question and result",
+        "Congress.gov H. Res. 916 bill detail, actions, text versions, committees, and committee report metadata",
+        "H. Res. 916 title and description listing H.R. 4312, H.R. 1005, H.R. 1049, H.R. 1069, H.R. 2965, and H.R. 4305"
+      ],
+      "plain_english_summary": "The House voted on agreeing to H. Res. 916, which set terms for considering several education and small-business regulatory measures.",
+      "what_happened": "The House voted on whether to agree to H. Res. 916.",
+      "why_it_mattered": "The vote decided whether the House would adopt that floor rule for considering the listed measures.",
+      "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
+      "what_not_to_infer": "Do not treat this as final passage of any listed bill, or as a direct policy position on every education or small-business measure included in the rule.",
+      "uncertainty_note": "Procedural-context row. It explains House floor process and remains excluded from support/opposition and alignment math.",
+      "interpretation_reason": "Candidate uses the official roll-call question and Congress.gov rule-resolution context. It is not a substantive issue-position interpretation."
+    }
+  ]
+}
