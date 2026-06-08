@@ -223,6 +223,10 @@ def _parse_senate_bill_reference(
                 return "hr", int(normalized_number)
             if normalized_type == "H RES":
                 return "hres", int(normalized_number)
+            if normalized_type == "H J RES":
+                return "hjres", int(normalized_number)
+            if normalized_type == "H CON RES":
+                return "hconres", int(normalized_number)
 
     value = document_name or document_number or ""
     normalized = re.sub(r"[^A-Z0-9]+", " ", value.upper()).strip()
@@ -234,6 +238,10 @@ def _parse_senate_bill_reference(
         return "s", int(normalized.split()[-1])
     if normalized.startswith("H RES "):
         return "hres", int(normalized.split()[-1])
+    if normalized.startswith("H J RES "):
+        return "hjres", int(normalized.split()[-1])
+    if normalized.startswith("H CON RES "):
+        return "hconres", int(normalized.split()[-1])
     if normalized.startswith("H R "):
         return "hr", int(normalized.split()[-1])
     raise ValueError(

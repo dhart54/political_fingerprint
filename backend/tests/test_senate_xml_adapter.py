@@ -4,7 +4,12 @@ from pathlib import Path
 
 from app.etl.compute import run_etl
 from app.etl.seed import build_seed_bundle
-from app.etl.senate_xml_adapter import SENATE_XML_SAMPLE_DIR, load_senate_xml_bundle, load_senate_xml_sample_bundle
+from app.etl.senate_xml_adapter import (
+    SENATE_XML_SAMPLE_DIR,
+    _parse_senate_bill_reference,
+    load_senate_xml_bundle,
+    load_senate_xml_sample_bundle,
+)
 
 
 def test_load_senate_xml_sample_bundle_normalizes_senate_xml() -> None:
@@ -35,6 +40,35 @@ def test_build_seed_bundle_supports_senate_xml_sample_source() -> None:
     assert len(bundle.legislators) == 2
     assert len(bundle.vote_classifications) == 4
     assert len(bundle.summaries) == 2
+
+
+def test_parse_senate_bill_reference_supports_house_joint_resolution() -> None:
+    assert _parse_senate_bill_reference(
+        document_type="H.J.Res.",
+        document_number="35",
+        document_name="H.J.Res. 35",
+    ) == ("hjres", 35)
+
+
+def test_parse_senate_bill_reference_supports_house_concurrent_resolution() -> None:
+    assert _parse_senate_bill_reference(
+        document_type="H.Con.Res.",
+        document_number="14",
+        document_name="H.Con.Res. 14",
+    ) == ("hconres", 14)
+
+
+def test_parse_senate_bill_reference_still_rejects_nomination() -> None:
+    try:
+        _parse_senate_bill_reference(
+            document_type="PN",
+            document_number="11-13",
+            document_name="PN11-13",
+        )
+    except ValueError as error:
+        assert "Unsupported Senate bill reference" in str(error)
+    else:
+        raise AssertionError("PN nominations must remain unsupported in the Senate bill parser")
 
 
 def test_senate_xml_bundle_prefers_cached_congress_bill_metadata(tmp_path: Path) -> None:
