@@ -679,6 +679,8 @@ Current orchestration behavior:
 - runs persistent ETL immediately after the fetch step
 - persists a combined mixed-source seed bundle when both House and Senate cache inputs are present in the same run
 
+The Senate fact-only dry-run helper is separate from the persistent ETL path. `app.etl.senate_fact_import` reads an explicit Senate manifest, parses cached Senate XML vote facts, optionally validates production state with read-only queries, and reports planned `bills`, `roll_calls`, `votes_cast`, and `vote_contexts` inserts. It does not call the persistent seed path and must not create, update, or delete `vote_interpretations`. Future production fact imports require a bounded approval gate and rollback artifact before any write.
+
 Current CLI example:
 
 - `python -m app.etl.live_pipeline --house-year 2025 --house-roll 1 --bill 119:hr:120 --congress-api-key YOUR_KEY`
