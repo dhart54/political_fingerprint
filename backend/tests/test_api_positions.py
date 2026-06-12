@@ -87,6 +87,69 @@ def test_get_position_evidence_endpoint_returns_underlying_votes() -> None:
     assert "party_vote_totals" in payload["evidence"][0]["vote_context"]
 
 
+def test_serialize_evidence_row_labels_senate_amendment_fact_without_counting_claims() -> None:
+    row = {
+        "roll_call_id": 10,
+        "vote_date": "2025-01-15",
+        "chamber": "senate",
+        "congress": 119,
+        "rollcall_number": 3,
+        "position": "yea",
+        "question": "On the Amendment",
+        "description": "Cornyn Amdt. No. 14",
+        "bill_title": "Laken Riley Act",
+        "bill_summary": "",
+        "classification_reason": "policy_vote",
+        "score_breakdown": {},
+        "source_url": "https://www.senate.gov/example.xml",
+        "interpretation_status": None,
+        "support_position": None,
+        "oppose_position": None,
+        "interpretation_reason": None,
+        "plain_english_summary": None,
+        "yea_meaning": None,
+        "nay_meaning": None,
+        "policy_effect": None,
+        "issue_facet": None,
+        "confidence": None,
+        "what_happened": None,
+        "why_it_mattered": None,
+        "member_vote_context": None,
+        "what_not_to_infer": None,
+        "source_basis": [],
+        "uncertainty_note": None,
+        "amendment_number": "S.Amdt. 14",
+        "amendment_type": "S.Amdt.",
+        "amendment_to_amendment_number": "S.Amdt. 8",
+        "parent_bill_type": "s",
+        "parent_bill_number": 5,
+        "parent_bill_display": "S. 5",
+        "amendment_purpose": "To expand mandatory detention offenses.",
+        "amendment_fact_status": "fact_only_uninterpreted",
+        "amendment_source_url": "https://www.senate.gov/example.xml",
+        "context_version": None,
+    }
+
+    payload = precomputed._serialize_evidence_row(row)
+
+    assert payload["evidence_type"] == "senate_amendment_fact"
+    assert payload["support_position"] is None
+    assert payload["oppose_position"] is None
+    assert payload["interpretation_status"] is None
+    assert payload["amendment_reference"] == {
+        "amendment_number": "S.Amdt. 14",
+        "amendment_type": "S.Amdt.",
+        "amendment_to_amendment_number": "S.Amdt. 8",
+        "parent_bill_type": "s",
+        "parent_bill_number": 5,
+        "parent_bill_display": "S. 5",
+        "amendment_purpose": "To expand mandatory detention offenses.",
+        "fact_status": "fact_only_uninterpreted",
+        "source_url": "https://www.senate.gov/example.xml",
+        "counts_as_interpretation": False,
+    }
+
+
 def test_get_position_evidence_endpoint_rejects_unknown_domain() -> None:
     with pytest.raises(HTTPException) as exc_info:
         get_legislator_position_evidence("leg_alex_morgan", "NOT_A_DOMAIN")
