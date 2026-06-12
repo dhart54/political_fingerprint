@@ -29,6 +29,11 @@ class SenateAmendmentDryRunResult:
     candidate_rows: int
     safe_future_import_rows: int
     deferred_rows: int
+    planned_bill_inserts: int
+    planned_roll_call_inserts: int
+    planned_votes_cast_inserts: int
+    planned_vote_context_inserts: int
+    planned_amendment_reference_inserts: int
     planned_vote_interpretation_inserts: int
     planned_vote_interpretation_updates: int
     planned_vote_interpretation_deletes: int
@@ -40,6 +45,14 @@ class SenateAmendmentDryRunResult:
             "candidate_rows": self.candidate_rows,
             "safe_future_import_rows": self.safe_future_import_rows,
             "deferred_rows": self.deferred_rows,
+            "planned_inserts": {
+                "bills": self.planned_bill_inserts,
+                "roll_calls": self.planned_roll_call_inserts,
+                "votes_cast": self.planned_votes_cast_inserts,
+                "vote_contexts": self.planned_vote_context_inserts,
+                "senate_amendment_references": self.planned_amendment_reference_inserts,
+                "vote_interpretations": self.planned_vote_interpretation_inserts,
+            },
             "planned_vote_interpretation_inserts": self.planned_vote_interpretation_inserts,
             "planned_vote_interpretation_updates": self.planned_vote_interpretation_updates,
             "planned_vote_interpretation_deletes": self.planned_vote_interpretation_deletes,
@@ -66,6 +79,7 @@ def build_senate_amendment_fact_manifest(
 
         row = {
             **parsed,
+            "planned_senate_amendment_reference": _build_planned_amendment_reference(parsed),
             "proposed_storage_representation": {
                 "recommended_model": "new_amendment_reference_table",
                 "parent_bill_storage": "roll_calls.bill_id may point to parent bill only when amendment identity is also stored separately",
@@ -77,7 +91,8 @@ def build_senate_amendment_fact_manifest(
                 "it does not assign support_position, oppose_position, alignment, or substantive meaning."
             ),
             "interpretations_included": False,
-            "schema_model_changes_required_before_import": True,
+            "schema_model_available": True,
+            "production_migration_required_before_import": True,
         }
 
         if _is_safe_future_candidate(row):
@@ -101,8 +116,8 @@ def build_senate_amendment_fact_manifest(
             )
 
     return {
-        "phase": "Phase 16",
-        "scope": "119th Congress / 2025 Senate amendment fact model preflight",
+        "phase": "Phase 17",
+        "scope": "119th Congress / 2025 Senate amendment reference implementation validation",
         "import_policy": "local dry-run only; do not import",
         "recommended_model": "new_amendment_reference_table",
         "schema_migration_required_before_import": True,
@@ -112,6 +127,20 @@ def build_senate_amendment_fact_manifest(
         "summary": {
             "safe_future_import_rows": len(candidates),
             "deferred_rows": len(deferred),
+            "planned_bill_inserts": len(
+                {
+                    (
+                        row["congress"],
+                        row["parent_bill"]["bill_type"],
+                        row["parent_bill"]["bill_number"],
+                    )
+                    for row in candidates
+                }
+            ),
+            "planned_roll_call_inserts": len(candidates),
+            "planned_votes_cast_inserts": sum(int(row["expected_member_vote_rows"]) for row in candidates),
+            "planned_vote_context_inserts": sum(int(row["expected_member_vote_rows"]) for row in candidates),
+            "planned_amendment_reference_inserts": len(candidates),
             "planned_vote_interpretation_inserts": 0,
             "planned_vote_interpretation_updates": 0,
             "planned_vote_interpretation_deletes": 0,
@@ -147,10 +176,17 @@ def validate_senate_amendment_fact_manifest(manifest: dict[str, object]) -> Sena
             errors.append(f"Roll {roll_number} is missing parent bill context.")
         if not int(row.get("expected_member_vote_rows") or 0):
             errors.append(f"Roll {roll_number} has no member vote rows.")
+        planned_reference = row.get("planned_senate_amendment_reference")
+        if not isinstance(planned_reference, dict):
+            errors.append(f"Roll {roll_number} is missing planned senate_amendment_references row.")
+        elif planned_reference.get("fact_status") != "fact_only_uninterpreted":
+            errors.append(f"Roll {roll_number} amendment reference must remain fact_only_uninterpreted.")
         if row.get("interpretations_included") is not False:
             errors.append(f"Roll {roll_number} must not include interpretations.")
-        if row.get("schema_model_changes_required_before_import") is not True:
-            errors.append(f"Roll {roll_number} must require schema/model changes before import.")
+        if row.get("schema_model_available") is not True:
+            errors.append(f"Roll {roll_number} must use the amendment reference schema model.")
+        if row.get("production_migration_required_before_import") is not True:
+            errors.append(f"Roll {roll_number} must require production migration before import.")
 
     summary = manifest.get("summary") or {}
     return SenateAmendmentDryRunResult(
@@ -158,6 +194,11 @@ def validate_senate_amendment_fact_manifest(manifest: dict[str, object]) -> Sena
         candidate_rows=len(candidates),
         safe_future_import_rows=int(summary.get("safe_future_import_rows") or len(candidates)),
         deferred_rows=len(deferred),
+        planned_bill_inserts=int(summary.get("planned_bill_inserts") or 0),
+        planned_roll_call_inserts=int(summary.get("planned_roll_call_inserts") or 0),
+        planned_votes_cast_inserts=int(summary.get("planned_votes_cast_inserts") or 0),
+        planned_vote_context_inserts=int(summary.get("planned_vote_context_inserts") or 0),
+        planned_amendment_reference_inserts=int(summary.get("planned_amendment_reference_inserts") or 0),
         planned_vote_interpretation_inserts=int(summary.get("planned_vote_interpretation_inserts") or 0),
         planned_vote_interpretation_updates=int(summary.get("planned_vote_interpretation_updates") or 0),
         planned_vote_interpretation_deletes=int(summary.get("planned_vote_interpretation_deletes") or 0),
@@ -221,6 +262,30 @@ def _parse_amendment_candidate(vote_path: Path) -> dict[str, object] | None:
         "source_url": _build_senate_source_url(congress=congress, session=session, roll_number=roll_number),
         "category": "senate_amendment_fact_preflight",
         "no_interpretation_included": True,
+    }
+
+
+def _build_planned_amendment_reference(parsed: dict[str, object]) -> dict[str, object]:
+    parent_bill = parsed.get("parent_bill") or {}
+    if not isinstance(parent_bill, dict):
+        parent_bill = {}
+    return {
+        "roll_call_lookup": {
+            "chamber": "senate",
+            "congress": parsed["congress"],
+            "roll_number": parsed["roll_number"],
+        },
+        "amendment_number": parsed["amendment_number"],
+        "amendment_type": parsed["amendment_type"],
+        "amendment_to_amendment_number": parsed.get("amendment_to_amendment_number"),
+        "parent_bill_type": parent_bill.get("bill_type"),
+        "parent_bill_number": parent_bill.get("bill_number"),
+        "parent_bill_display": parent_bill.get("display"),
+        "amendment_purpose": parsed.get("amendment_purpose"),
+        "source_url": parsed["source_url"],
+        "source_xml_path": parsed["source_xml_path"],
+        "fact_status": "fact_only_uninterpreted",
+        "source_version": "senate_xml_119_2025_v1",
     }
 
 

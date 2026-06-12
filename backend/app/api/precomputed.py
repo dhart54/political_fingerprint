@@ -1275,7 +1275,16 @@ def _get_db_position_evidence_rows(
             vctx.bipartisan_majority,
             vctx.sponsor_party,
             vctx.context_source_list,
-            vctx.context_version
+            vctx.context_version,
+            sar.amendment_number,
+            sar.amendment_type,
+            sar.amendment_to_amendment_number,
+            sar.parent_bill_type,
+            sar.parent_bill_number,
+            sar.parent_bill_display,
+            sar.amendment_purpose,
+            sar.fact_status AS amendment_fact_status,
+            sar.source_url AS amendment_source_url
         FROM votes_cast vc
         JOIN roll_calls rc ON rc.id = vc.roll_call_id
         JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
@@ -1285,6 +1294,8 @@ def _get_db_position_evidence_rows(
         LEFT JOIN vote_contexts vctx
           ON vctx.roll_call_id = rc.id
          AND vctx.legislator_id = vc.legislator_id
+        LEFT JOIN senate_amendment_references sar
+          ON sar.roll_call_id = rc.id
         LEFT JOIN bills b ON b.id = rc.bill_id
         WHERE vc.legislator_id = %s
           AND vcf.is_eligible = TRUE
@@ -1598,7 +1609,35 @@ def _serialize_evidence_row(row: dict[str, Any]) -> dict[str, object]:
         "what_not_to_infer": None if row.get("what_not_to_infer") is None else str(row["what_not_to_infer"]),
         "source_basis": row.get("source_basis") or [],
         "uncertainty_note": None if row.get("uncertainty_note") is None else str(row["uncertainty_note"]),
+        "evidence_type": _evidence_type(row),
+        "amendment_reference": _serialize_amendment_reference(row),
         "vote_context": _serialize_vote_context(row),
+    }
+
+
+def _evidence_type(row: dict[str, Any]) -> str:
+    if row.get("amendment_number") is not None:
+        return "senate_amendment_fact"
+    return "roll_call_vote"
+
+
+def _serialize_amendment_reference(row: dict[str, Any]) -> dict[str, object] | None:
+    if row.get("amendment_number") is None:
+        return None
+
+    return {
+        "amendment_number": str(row["amendment_number"]),
+        "amendment_type": None if row.get("amendment_type") is None else str(row["amendment_type"]),
+        "amendment_to_amendment_number": None
+        if row.get("amendment_to_amendment_number") is None
+        else str(row["amendment_to_amendment_number"]),
+        "parent_bill_type": None if row.get("parent_bill_type") is None else str(row["parent_bill_type"]),
+        "parent_bill_number": None if row.get("parent_bill_number") is None else int(row["parent_bill_number"]),
+        "parent_bill_display": None if row.get("parent_bill_display") is None else str(row["parent_bill_display"]),
+        "amendment_purpose": None if row.get("amendment_purpose") is None else str(row["amendment_purpose"]),
+        "fact_status": None if row.get("amendment_fact_status") is None else str(row["amendment_fact_status"]),
+        "source_url": None if row.get("amendment_source_url") is None else str(row["amendment_source_url"]),
+        "counts_as_interpretation": False,
     }
 
 

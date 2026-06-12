@@ -11,6 +11,7 @@ CANDIDATE_EVIDENCE_MIGRATION_PATH = MIGRATIONS_DIR / "0006_candidate_evidence.sq
 LEGISLATOR_CONTACTS_MIGRATION_PATH = MIGRATIONS_DIR / "0007_legislator_contacts.sql"
 VOTE_CONTEXTS_MIGRATION_PATH = MIGRATIONS_DIR / "0008_vote_contexts.sql"
 VOTE_INTERPRETATION_SO_WHAT_MIGRATION_PATH = MIGRATIONS_DIR / "0009_vote_interpretation_so_what_fields.sql"
+SENATE_AMENDMENT_REFERENCES_MIGRATION_PATH = MIGRATIONS_DIR / "0010_senate_amendment_references.sql"
 
 
 def test_initial_migration_defines_required_enums_and_tables() -> None:
@@ -177,3 +178,19 @@ def test_vote_interpretation_so_what_migration_adds_reviewed_fields() -> None:
     assert "add column if not exists why_it_mattered text" in lowered
     assert "add column if not exists member_vote_context text" in lowered
     assert "add column if not exists what_not_to_infer text" in lowered
+
+
+def test_senate_amendment_references_migration_preserves_amendment_identity() -> None:
+    migration_sql = SENATE_AMENDMENT_REFERENCES_MIGRATION_PATH.read_text()
+    lowered = migration_sql.lower()
+
+    assert "create table if not exists senate_amendment_references" in lowered
+    assert "roll_call_id bigint primary key references roll_calls(id) on delete cascade" in lowered
+    assert "amendment_number text not null" in lowered
+    assert "amendment_to_amendment_number text" in lowered
+    assert "parent_bill_type text not null" in lowered
+    assert "parent_bill_number integer not null" in lowered
+    assert "parent_bill_display text not null" in lowered
+    assert "amendment_purpose text" in lowered
+    assert "fact_only_uninterpreted" in lowered
+    assert "idx_senate_amendment_references_parent_bill" in lowered
