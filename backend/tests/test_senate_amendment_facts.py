@@ -1,9 +1,12 @@
 from pathlib import Path
 from app.etl.senate_amendment_facts import (
+    PHASE_19_APPROVAL_PHRASE,
     SenateAmendmentProductionState,
     _parse_bill_reference,
+    apply_senate_amendment_reference_migration,
     build_phase_18_amendment_import_manifest,
     build_senate_amendment_fact_manifest,
+    run_senate_amendment_fact_import,
     run_senate_amendment_import_dry_run_for_manifest,
     validate_local_amendment_reference_migration,
     validate_senate_amendment_fact_manifest,
@@ -186,6 +189,30 @@ def test_local_amendment_reference_migration_is_additive_and_non_interpretive() 
     assert result["has_destructive_drop"] is False
     assert result["has_parent_bill_index"] is True
     assert result["has_fact_status_constraint"] is True
+
+
+def test_phase_19_migration_requires_exact_approval_phrase_before_database_access() -> None:
+    try:
+        apply_senate_amendment_reference_migration(
+            approval_phrase=PHASE_19_APPROVAL_PHRASE.replace("Phase 18", "Phase XVIII")
+        )
+    except ValueError as error:
+        assert "Phase 19 approval gate" in str(error)
+    else:
+        raise AssertionError("Phase 19 migration must require exact approval phrase")
+
+
+def test_phase_19_amendment_import_requires_exact_approval_phrase_before_database_access() -> None:
+    try:
+        run_senate_amendment_fact_import(
+            manifest_path=REPO_ROOT / "docs" / "review_packets" / "senate_amendment_fact_import_manifest_phase_18.json",
+            senate_xml_dir=SENATE_XML_DIR,
+            approval_phrase=PHASE_19_APPROVAL_PHRASE.replace("112", "one hundred twelve"),
+        )
+    except ValueError as error:
+        assert "Phase 19 approval gate" in str(error)
+    else:
+        raise AssertionError("Phase 19 amendment import must require exact approval phrase")
 
 
 _SHEEHY_EARLY_ROLL_LIS_ID = "S350"
