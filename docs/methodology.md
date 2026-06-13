@@ -685,6 +685,8 @@ Senate amendment reference handling keeps amendment facts separate from parent-b
 
 Senate amendment import preflight remains dry-run only until explicitly approved. Phase 18 uses the same `app.etl.senate_amendment_facts` helper to convert safe amendment candidates into a bounded import manifest, validate the local migration against production metadata with read-only queries, and plan future writes to `bills`, `roll_calls`, `votes_cast`, `vote_contexts`, and `senate_amendment_references`. The preflight must plan zero `vote_interpretations` inserts, updates, or deletes, zero support/opposition inference, and zero alignment impact. A future import must have rollback SQL scoped only to the target amendment roll calls and must not proceed without an explicit approval phrase covering the schema and data boundaries.
 
+Phase 19 applied the `senate_amendment_references` migration and imported the approved 112-row Senate amendment fact-only package. The import added only parent bill, roll-call, member vote, vote-context, and amendment-reference facts. It did not create `vote_interpretations`, did not infer support/opposition, did not change alignment inputs, and did not handle PN nominations, treaty/executive votes, or the deferred roll 344.
+
 Current CLI example:
 
 - `python -m app.etl.live_pipeline --house-year 2025 --house-roll 1 --bill 119:hr:120 --congress-api-key YOUR_KEY`
