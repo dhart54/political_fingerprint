@@ -166,37 +166,37 @@ export default function ZipLookupPanel({
 
   const isHero = variant === "hero";
   const sectionClassName = isHero
-    ? "rounded-[2rem] border border-cyan-900/15 bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.16)] lg:p-6"
+    ? "rounded-2xl border border-cyan-900/15 bg-white p-4 shadow-[0_16px_42px_rgba(15,23,42,0.12)] lg:p-5"
     : "mt-8 rounded-[2rem] border border-stone-200 bg-white p-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] lg:p-6";
 
   return (
     <section className={sectionClassName}>
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
+          <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
             Start Here
           </p>
-          <h3 className="mt-2 font-serif text-[2.05rem] leading-[0.98] text-stone-950 sm:text-[2.65rem] sm:leading-[0.95]">
+          <h3 className="mt-1 font-serif text-[1.8rem] leading-[1] text-stone-950 sm:text-[2.25rem]">
             Start with your ZIP.
           </h3>
-          <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-700">
             Load your House member and senators, then compare their records against the same issues.
           </p>
         </div>
-        <p className="text-xs uppercase tracking-[0.25em] text-stone-500">
+        <p className="text-xs uppercase tracking-[0.18em] text-stone-500">
           {supportedZips.status === "ready" && supportedZips.zips.length
             ? `Try ${buildZipSuggestion(supportedZips.zips)}`
             : "Loaded ZIPs appear here"}
         </p>
       </div>
 
-      <form className="mt-5 flex flex-col gap-3 sm:flex-row" onSubmit={handleLookup}>
+      <form className="mt-3 flex flex-col gap-2 sm:flex-row" onSubmit={handleLookup}>
         <label className="sr-only" htmlFor="zip-code-input">
           ZIP code
         </label>
         <input
           id="zip-code-input"
-          className="h-12 flex-1 rounded-full border border-stone-300 bg-stone-50 px-5 text-sm text-stone-900 outline-none ring-0 placeholder:text-stone-500"
+          className="h-11 flex-1 rounded-full border border-stone-300 bg-stone-50 px-4 text-sm text-stone-900 outline-none ring-0 placeholder:text-stone-500"
           inputMode="numeric"
           maxLength={5}
           onChange={(event) => setZipCode(event.target.value.replace(/\D/g, "").slice(0, 5))}
@@ -204,19 +204,19 @@ export default function ZipLookupPanel({
           value={zipCode}
         />
         <button
-          className="h-12 rounded-full bg-cyan-900 px-6 text-sm uppercase tracking-[0.25em] text-white shadow-[0_10px_24px_rgba(22,78,99,0.22)]"
+          className="h-11 rounded-full bg-cyan-900 px-5 text-sm uppercase tracking-[0.18em] text-white shadow-[0_10px_24px_rgba(22,78,99,0.22)]"
           type="submit"
         >
           Show My Reps
         </button>
       </form>
 
-      <div className="mt-5 flex flex-col gap-3 rounded-[1.5rem] bg-stone-950 px-5 py-5 text-stone-100 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mt-3 flex flex-col gap-2 rounded-xl bg-stone-950 px-4 py-3 text-stone-100 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-400">
+          <p className="text-xs uppercase tracking-[0.2em] text-stone-400">
             Result
           </p>
-          <p className="mt-3 text-lg text-stone-50">
+          <p className="mt-1 text-base text-stone-50">
             {state.status === "idle" ? "Ready to lookup" : null}
             {state.status === "loading" ? "Looking up legislators..." : null}
             {state.status === "error" ? "Lookup unavailable" : null}
@@ -225,7 +225,7 @@ export default function ZipLookupPanel({
               : null}
           </p>
         </div>
-        <p className="text-sm leading-7 text-stone-300">
+        <p className="text-sm leading-6 text-stone-300">
           {state.status === "idle" ? "Run a ZIP lookup to load representatives." : null}
           {state.status === "loading" ? "Loading House and Senate results." : null}
           {state.status === "error" ? state.error : null}
@@ -236,95 +236,115 @@ export default function ZipLookupPanel({
       </div>
 
       {state.status === "ready" ? (
-        <div className="mt-5">
-          <div className="mb-4 flex flex-wrap gap-3 rounded-[1.25rem] border border-cyan-900/10 bg-cyan-50 px-4 py-4">
-            <p className="w-full text-sm leading-6 text-stone-700">
-              Your House profile opened below. Use these buttons to change the comparison pair.
-            </p>
-            {state.payload.house_rep && state.payload.senators[0] ? (
-              <button
-                className={getComparePresetClass(selectedComparisonPreset === "house_first_senator")}
-                aria-label={`Compare ${state.payload.house_rep.name_display} with ${state.payload.senators[0].name_display}`}
-                aria-pressed={selectedComparisonPreset === "house_first_senator"}
-                onClick={() =>
-                  selectComparisonPreset("house_first_senator", {
-                    left: state.payload.house_rep,
-                    right: state.payload.senators[0],
-                  })
-                }
-                type="button"
-              >
-                House vs Senator
-              </button>
-            ) : null}
-            {state.payload.house_rep && state.payload.senators[1] ? (
-              <button
-                className={getComparePresetClass(selectedComparisonPreset === "house_second_senator")}
-                aria-label={`Compare ${state.payload.house_rep.name_display} with ${state.payload.senators[1].name_display}`}
-                aria-pressed={selectedComparisonPreset === "house_second_senator"}
-                onClick={() =>
-                  selectComparisonPreset("house_second_senator", {
-                    left: state.payload.house_rep,
-                    right: state.payload.senators[1],
-                  })
-                }
-                type="button"
-              >
-                House vs Other Senator
-              </button>
-            ) : null}
-            {state.payload.senators[0] && state.payload.senators[1] ? (
-              <button
-                className={getComparePresetClass(selectedComparisonPreset === "senators")}
-                aria-label={`Compare ${state.payload.senators[0].name_display} with ${state.payload.senators[1].name_display}`}
-                aria-pressed={selectedComparisonPreset === "senators"}
-                onClick={() =>
-                  selectComparisonPreset(
-                    "senators",
-                    {
-                      left: state.payload.senators[0],
-                      right: state.payload.senators[1],
-                    },
-                    state.payload.senators[0],
-                  )
-                }
-                type="button"
-              >
-                Compare Senators
-              </button>
-            ) : null}
-          </div>
-
-          <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
-            <LegislatorCard
-              accent="bg-cyan-100 text-cyan-900"
-              heading="House Representative"
-              legislator={state.payload.house_rep}
-              onSelectLegislator={onSelectLegislator}
-            />
-            <div className="grid gap-4">
+        <div className="mt-3">
+          {isHero ? (
+            <div className="grid gap-2 sm:grid-cols-3">
+              <CompactOfficialButton
+                heading="House"
+                legislator={state.payload.house_rep}
+                onSelectLegislator={onSelectLegislator}
+              />
               {state.payload.senators.map((senator) => (
-                <LegislatorCard
-                  accent="bg-emerald-100 text-emerald-900"
+                <CompactOfficialButton
+                  heading="Senate"
                   key={senator.id}
-                  heading="Senator"
                   legislator={senator}
                   onSelectLegislator={onSelectLegislator}
                 />
               ))}
             </div>
-          </div>
+          ) : (
+            <>
+              <div className="mb-3 flex flex-wrap gap-2 rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-3">
+                <p className="w-full text-sm leading-5 text-stone-700">
+                  Your House profile opened below. Use these buttons to change the comparison pair.
+                </p>
+                {state.payload.house_rep && state.payload.senators[0] ? (
+                  <button
+                    className={getComparePresetClass(selectedComparisonPreset === "house_first_senator")}
+                    aria-label={`Compare ${state.payload.house_rep.name_display} with ${state.payload.senators[0].name_display}`}
+                    aria-pressed={selectedComparisonPreset === "house_first_senator"}
+                    onClick={() =>
+                      selectComparisonPreset("house_first_senator", {
+                        left: state.payload.house_rep,
+                        right: state.payload.senators[0],
+                      })
+                    }
+                    type="button"
+                  >
+                    House vs Senator
+                  </button>
+                ) : null}
+                {state.payload.house_rep && state.payload.senators[1] ? (
+                  <button
+                    className={getComparePresetClass(selectedComparisonPreset === "house_second_senator")}
+                    aria-label={`Compare ${state.payload.house_rep.name_display} with ${state.payload.senators[1].name_display}`}
+                    aria-pressed={selectedComparisonPreset === "house_second_senator"}
+                    onClick={() =>
+                      selectComparisonPreset("house_second_senator", {
+                        left: state.payload.house_rep,
+                        right: state.payload.senators[1],
+                      })
+                    }
+                    type="button"
+                  >
+                    House vs Other Senator
+                  </button>
+                ) : null}
+                {state.payload.senators[0] && state.payload.senators[1] ? (
+                  <button
+                    className={getComparePresetClass(selectedComparisonPreset === "senators")}
+                    aria-label={`Compare ${state.payload.senators[0].name_display} with ${state.payload.senators[1].name_display}`}
+                    aria-pressed={selectedComparisonPreset === "senators"}
+                    onClick={() =>
+                      selectComparisonPreset(
+                        "senators",
+                        {
+                          left: state.payload.senators[0],
+                          right: state.payload.senators[1],
+                        },
+                        state.payload.senators[0],
+                      )
+                    }
+                    type="button"
+                  >
+                    Compare Senators
+                  </button>
+                ) : null}
+              </div>
 
-          {showElectionContext ? (
-            <UpcomingRacePanel
-              onSelectLegislator={onSelectLegislator}
-              raceState={raceState}
-            />
-          ) : null}
+              <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
+                <LegislatorCard
+                  accent="bg-cyan-100 text-cyan-900"
+                  heading="House Representative"
+                  legislator={state.payload.house_rep}
+                  onSelectLegislator={onSelectLegislator}
+                />
+                <div className="grid gap-4">
+                  {state.payload.senators.map((senator) => (
+                    <LegislatorCard
+                      accent="bg-emerald-100 text-emerald-900"
+                      key={senator.id}
+                      heading="Senator"
+                      legislator={senator}
+                      onSelectLegislator={onSelectLegislator}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {showElectionContext ? (
+                <UpcomingRacePanel
+                  onSelectLegislator={onSelectLegislator}
+                  raceState={raceState}
+                />
+              ) : null}
+            </>
+          )}
         </div>
       ) : null}
 
-      {supportedZips.status === "ready" && supportedZips.zips.length > 0 ? (
+      {!isHero && supportedZips.status === "ready" && supportedZips.zips.length > 0 ? (
         <div className="mt-5 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4">
           <p className="text-xs uppercase tracking-[0.24em] text-stone-500">
             Loaded ZIP Coverage
@@ -352,6 +372,27 @@ export default function ZipLookupPanel({
         </div>
       ) : null}
     </section>
+  );
+}
+
+function CompactOfficialButton({ heading, legislator, onSelectLegislator }) {
+  if (!legislator) {
+    return null;
+  }
+
+  return (
+    <button
+      className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3 text-left transition hover:border-cyan-800 hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
+      onClick={() => onSelectLegislator?.(legislator)}
+      type="button"
+    >
+      <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">{heading}</p>
+      <p className="mt-1 text-sm font-semibold leading-5 text-stone-950">{legislator.name_display}</p>
+      <p className="mt-1 text-xs leading-4 text-stone-600">
+        {legislator.party} - {legislator.state}
+        {legislator.district ? `-${legislator.district}` : " statewide"}
+      </p>
+    </button>
   );
 }
 

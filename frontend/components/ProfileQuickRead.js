@@ -82,13 +82,13 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
   });
 
   return (
-    <section className="mt-4 rounded-[2rem] border border-cyan-900/10 bg-[linear-gradient(135deg,#083344,#115e59)] px-5 py-5 text-white shadow-[0_18px_48px_rgba(15,23,42,0.16)] lg:px-6">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+    <section className="mt-4 rounded-2xl border border-cyan-900/10 bg-[linear-gradient(135deg,#083344,#115e59)] px-4 py-4 text-white shadow-[0_14px_36px_rgba(15,23,42,0.14)] lg:px-5">
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(340px,0.9fr)] lg:items-start">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-100">
+          <p className="text-xs uppercase tracking-[0.24em] text-cyan-100">
             Quick Read
           </p>
-          <h3 className="mt-2 max-w-[760px] font-serif text-[2rem] leading-[1] text-white sm:text-[2.45rem] sm:leading-[0.98]">
+          <h3 className="mt-2 max-w-[780px] font-serif text-[1.85rem] leading-[1.05] text-white sm:text-[2.25rem]">
             {buildHeadline({
               status: state.status,
               name: legislator.name_display,
@@ -96,26 +96,48 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
               topPosition,
             })}
           </h3>
+          <p className="mt-3 max-w-3xl text-[14px] leading-6 text-cyan-50">
+            {state.status === "loading"
+              ? "Loading the profile summary from the same deterministic data used below."
+              : null}
+            {state.status === "error" ? state.error : null}
+            {state.status === "ready"
+              ? sixtySecondRead
+              : null}
+          </p>
         </div>
-        <p className="max-w-md text-[14px] leading-6 text-cyan-50">
-          {state.status === "loading"
-            ? "Loading the profile summary from the same deterministic data used below."
-            : null}
-          {state.status === "error" ? state.error : null}
-          {state.status === "ready"
-            ? sixtySecondRead
-            : null}
-        </p>
+        <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-1">
+          <QuickCard
+            eyebrow="Best issue read"
+            label={state.status === "ready" ? topPosition.label : "Loading"}
+            onInspect={
+              state.status === "ready" && topPosition.domain !== "NONE"
+                ? () => onInspectDomain?.(topPosition.domain)
+                : null
+            }
+            value={state.status === "ready" ? topPosition.value : "--"}
+          />
+          <QuickCard
+            eyebrow="Coverage"
+            label={state.status === "ready" ? coverage.label : "Loading"}
+            value={state.status === "ready" ? coverage.value : "--"}
+          />
+          <QuickCard
+            eyebrow="Change context"
+            label={state.status === "ready" ? drift.label : "Loading"}
+            value={state.status === "ready" ? drift.value : "--"}
+          />
+        </div>
       </div>
 
       {state.status === "ready" && topPosition.domain !== "NONE" ? (
-        <div className="mt-5 rounded-[1.5rem] border border-white/10 bg-white/10 px-4 py-4">
+        <div className="mt-3 rounded-xl border border-white/10 bg-white/10 px-3 py-3">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.24em] text-cyan-100">
+              <p className="text-xs uppercase tracking-[0.18em] text-cyan-100">
                 Start Here
               </p>
-              <p className="mt-2 text-[17px] leading-7 text-white">
+              <p className="mt-1 text-[15px] leading-6 text-white">
                 {buildStartHereCopy({ topFocus, topPosition })}
               </p>
             </div>
@@ -129,52 +151,19 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
           </div>
         </div>
       ) : null}
-
-      <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-        <QuickCard
-          eyebrow="What They Vote On"
-          label={state.status === "ready" ? topFocus.label : "Loading"}
-          onInspect={
-            state.status === "ready" && topFocus.domain !== "NONE"
-              ? () => onInspectDomain?.(topFocus.domain)
-              : null
-          }
-          value={state.status === "ready" ? topFocus.value : "--"}
-        />
-        <QuickCard
-          eyebrow="Best Reviewed Issue Read"
-          label={state.status === "ready" ? topPosition.label : "Loading"}
-          onInspect={
-            state.status === "ready" && topPosition.domain !== "NONE"
-              ? () => onInspectDomain?.(topPosition.domain)
-              : null
-          }
-          value={state.status === "ready" ? topPosition.value : "--"}
-        />
-        <QuickCard
-          eyebrow="Evidence Coverage"
-          label={state.status === "ready" ? coverage.label : "Loading"}
-          value={state.status === "ready" ? coverage.value : "--"}
-        />
-        <QuickCard
-          eyebrow="Change Over Time"
-          label={state.status === "ready" ? drift.label : "Loading"}
-          value={state.status === "ready" ? drift.value : "--"}
-        />
-      </div>
     </section>
   );
 }
 
 function QuickCard({ eyebrow, label, onInspect, value }) {
   return (
-    <article className="rounded-[1.25rem] border border-white/10 bg-white/10 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]">
-      <p className="text-xs uppercase tracking-[0.24em] text-cyan-100">{eyebrow}</p>
-      <p className="mt-3 text-[1.65rem] leading-none text-white">{value}</p>
-      <p className="mt-3 text-sm leading-6 text-cyan-50">{label}</p>
+    <article className="rounded-xl border border-white/10 bg-white/10 px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]">
+      <p className="text-[11px] uppercase tracking-[0.18em] text-cyan-100">{eyebrow}</p>
+      <p className="mt-2 text-[1.35rem] leading-none text-white">{value}</p>
+      <p className="mt-2 text-xs leading-5 text-cyan-50">{label}</p>
       {onInspect ? (
         <button
-          className="mt-4 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.18em] text-white transition hover:bg-white/20"
+          className="mt-3 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-[11px] uppercase tracking-[0.16em] text-white transition hover:bg-white/20"
           onClick={onInspect}
           type="button"
         >
@@ -217,9 +206,9 @@ function buildSixtySecondRead({ status, topFocus, topPosition, coverage, drift }
     return "In 60 seconds, you can see where evidence exists, where it is too limited, and why the page avoids a confident issue read.";
   }
   if (topFocus.domain !== topPosition.domain) {
-    return `In 60 seconds, start with ${formatDomainLabel(topPosition.domain)} for reviewed vote meaning. ${topFocus.label} has more recorded votes, but the best place to start is the issue with clearer reviewed evidence. ${coverage.value}; drift read: ${drift.value}.`;
+    return `In 60 seconds, start with ${formatDomainLabel(topPosition.domain)} for reviewed vote meaning. ${topFocus.label} has more recorded votes, but the clearest evidence is elsewhere. ${coverage.value}; ${drift.label}`;
   }
-  return `In 60 seconds, start with ${formatDomainLabel(topPosition.domain)} because it has the clearest reviewed vote meaning. Then use coverage and change-over-time as context. ${coverage.value}; drift read: ${drift.value}.`;
+  return `In 60 seconds, start with ${formatDomainLabel(topPosition.domain)} because it has the clearest reviewed vote meaning. ${coverage.value}; ${drift.label}`;
 }
 
 function buildStartHereCopy({ topFocus, topPosition }) {
@@ -309,18 +298,18 @@ function buildDriftRead(drift) {
   const driftValue = drift.drift_value || 0;
   if (driftValue >= 0.6) {
     return {
-      label: `Drift score ${driftValue.toFixed(2)} across the two-year window.`,
-      value: "Shifted",
+      label: `Issue mix changed noticeably across the two-year window (${driftValue.toFixed(2)}).`,
+      value: "Shifted mix",
     };
   }
   if (driftValue >= 0.3) {
     return {
-      label: `Drift score ${driftValue.toFixed(2)} across the two-year window.`,
-      value: "Changed",
+      label: `Issue mix changed somewhat across the two-year window (${driftValue.toFixed(2)}).`,
+      value: "Some shift",
     };
   }
   return {
-    label: `Drift score ${driftValue.toFixed(2)} across the two-year window.`,
-    value: "Steady",
+    label: `Issue mix looks broadly steady across the two-year window (${driftValue.toFixed(2)}).`,
+    value: "Steady mix",
   };
 }
