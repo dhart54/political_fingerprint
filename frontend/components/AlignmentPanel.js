@@ -72,14 +72,18 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
 
   const rows = state.payload?.alignment || [];
 
+  if (selectedCount === 0) {
+    return null;
+  }
+
   return (
-    <section className="mt-4 rounded-[2rem] border border-stone-200 bg-white px-5 py-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] lg:px-6">
+    <section className="mt-4 rounded-2xl border border-stone-200 bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)] lg:px-5">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-800">
+          <p className="text-xs uppercase tracking-[0.22em] text-cyan-800">
             Selected Issue Records
           </p>
-          <h3 className="mt-2 max-w-[760px] font-serif text-[2rem] leading-[1] text-stone-950 sm:text-[2.45rem] sm:leading-[0.98]">
+          <h3 className="mt-1 max-w-[760px] font-serif text-[1.55rem] leading-[1.05] text-stone-950 sm:text-[2rem]">
             {buildHeadline({ status: state.status, selectedCount, rows, name: legislator.name_display })}
           </h3>
         </div>
@@ -96,26 +100,20 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
         </p>
       ) : null}
 
-      {state.status === "idle" ? (
-        <div className="mt-5 rounded-[1.25rem] border border-dashed border-stone-300 bg-stone-50 px-4 py-5 text-sm leading-6 text-stone-600">
-          Select at least one issue area to inspect reviewed records. Choose a direction only when you want an alignment label.
-        </div>
-      ) : null}
-
       {state.status === "loading" ? (
-        <div className="mt-5 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-5 text-sm leading-6 text-stone-600">
+        <div className="mt-4 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-600">
           Checking interpreted votes for the selected issues...
         </div>
       ) : null}
 
       {state.status === "ready" && rows.length === 0 ? (
-        <div className="mt-5 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-5 text-sm leading-6 text-stone-700">
+        <div className="mt-4 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-700">
           The selected issues did not return alignment rows yet. The voting record below is still available for direct inspection.
         </div>
       ) : null}
 
       {state.status === "ready" && rows.length > 0 ? (
-        <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {rows.map((row) => (
             <article
               className="rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4"

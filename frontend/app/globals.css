@@ -51,3 +51,17 @@ a {
   background: rgba(120, 113, 108, 0.38);
   background-clip: padding-box;
 }
+
+@media (max-width: 640px) {
+  #userwayAccessibilityIcon,
+  .userway_p1,
+  #INDmenu-btn,
+  iframe[title*="Accessibility"],
+  iframe[aria-label*="Accessibility"] {
+    bottom: 88px !important;
+    max-height: 52px !important;
+    max-width: 52px !important;
+    transform: scale(0.88) !important;
+    transform-origin: bottom right !important;
+  }
+}

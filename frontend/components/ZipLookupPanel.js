@@ -166,8 +166,9 @@ export default function ZipLookupPanel({
 
   const isHero = variant === "hero";
   const sectionClassName = isHero
-    ? "rounded-2xl border border-cyan-900/15 bg-white p-4 shadow-[0_16px_42px_rgba(15,23,42,0.12)] lg:p-5"
+    ? "rounded-2xl border border-cyan-900/15 bg-white p-3 shadow-[0_10px_28px_rgba(15,23,42,0.09)] lg:p-4"
     : "mt-8 rounded-[2rem] border border-stone-200 bg-white p-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] lg:p-6";
+  const hasResult = state.status === "ready";
 
   return (
     <section className={sectionClassName}>
@@ -176,10 +177,10 @@ export default function ZipLookupPanel({
           <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
             Start Here
           </p>
-          <h3 className="mt-1 font-serif text-[1.8rem] leading-[1] text-stone-950 sm:text-[2.25rem]">
-            Start with your ZIP.
+          <h3 className="mt-1 font-serif text-[1.45rem] leading-[1] text-stone-950 sm:text-[1.85rem]">
+            {hasResult ? "Your officials" : "Start with your ZIP."}
           </h3>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-700">
+          <p className={`mt-2 max-w-2xl text-sm leading-5 text-stone-700 ${hasResult && isHero ? "sr-only" : ""}`}>
             Load your House member and senators, then compare their records against the same issues.
           </p>
         </div>
@@ -211,12 +212,12 @@ export default function ZipLookupPanel({
         </button>
       </form>
 
-      <div className="mt-3 flex flex-col gap-2 rounded-xl bg-stone-950 px-4 py-3 text-stone-100 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mt-3 flex flex-col gap-1.5 rounded-xl bg-stone-950 px-3 py-2.5 text-stone-100 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-stone-400">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-stone-400">
             Result
           </p>
-          <p className="mt-1 text-base text-stone-50">
+          <p className="mt-1 text-sm text-stone-50">
             {state.status === "idle" ? "Ready to lookup" : null}
             {state.status === "loading" ? "Looking up legislators..." : null}
             {state.status === "error" ? "Lookup unavailable" : null}
@@ -225,7 +226,7 @@ export default function ZipLookupPanel({
               : null}
           </p>
         </div>
-        <p className="text-sm leading-6 text-stone-300">
+        <p className="text-sm leading-5 text-stone-300">
           {state.status === "idle" ? "Run a ZIP lookup to load representatives." : null}
           {state.status === "loading" ? "Loading House and Senate results." : null}
           {state.status === "error" ? state.error : null}
@@ -236,7 +237,7 @@ export default function ZipLookupPanel({
       </div>
 
       {state.status === "ready" ? (
-        <div className="mt-3">
+        <div className="mt-2">
           {isHero ? (
             <div className="grid gap-2 sm:grid-cols-3">
               <CompactOfficialButton

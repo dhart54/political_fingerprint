@@ -6,6 +6,7 @@ import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from ".
 import { deriveEvidenceGroups } from "../lib/evidenceGrouping.mjs";
 import { buildIssueOverview } from "../lib/issueOverview.mjs";
 import { groupIssueRowsByReadiness, sortIssueRowsByReadiness } from "../lib/issueReadiness.mjs";
+import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
 import { isProceduralContextRow } from "../lib/proceduralContext.mjs";
 import { DOMAIN_LABELS, formatDomainLabel } from "../lib/issueDomains";
 import {
@@ -36,7 +37,12 @@ export default function PositionByIssue({
 
     async function loadPositions() {
       try {
-        const payload = await fetchPositions({ legislatorId });
+        const positionsPayload = await fetchPositions({ legislatorId });
+        const payload = await fillMissingInterpretedCounts({
+          payload: positionsPayload,
+          fetchEvidence: fetchPositionEvidence,
+          legislatorId,
+        });
         if (!active) {
           return;
         }
@@ -119,35 +125,30 @@ export default function PositionByIssue({
   }
 
   return (
-    <section id="position-by-issue" className="mt-5 rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_14px_38px_rgba(15,23,42,0.08)] lg:p-5">
-      <div className="grid gap-4 lg:grid-cols-[minmax(0,0.82fr)_minmax(520px,1.18fr)]">
+    <section id="position-by-issue" className="mt-4 rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.07)] lg:p-5">
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,0.72fr)_minmax(520px,1.28fr)]">
         <div>
-          <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">
-            First Read
+          <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">
+            Issue Evidence
           </p>
-          <h3 className="mt-1 font-serif text-[1.85rem] leading-[1.05] text-stone-950 sm:text-[2.35rem]">
+          <h3 className="mt-1 font-serif text-[1.55rem] leading-[1.05] text-stone-950 sm:text-[2rem]">
             {title}
           </h3>
-          <p className="mt-2 max-w-xl text-[16px] leading-7 text-stone-900">
+          <p className="mt-2 max-w-xl text-[15px] leading-6 text-stone-800">
             {state.status === "ready"
               ? takeaway
               : state.status === "loading"
                 ? "Reading where this legislator's reviewed issue evidence is strongest."
                 : "The site cannot read issue readiness for this legislator right now."}
           </p>
-          <div className="mt-3 rounded-xl bg-stone-950 px-3 py-3 text-stone-100">
-            <p className="text-xs uppercase tracking-[0.2em] text-stone-400">
-              How To Read This
-            </p>
-            <p className="mt-1 text-sm leading-6 text-stone-200">
-              Issue areas are grouped by reviewed evidence strength. Strong and mixed sections come first; limited sections stay visible without being treated as confident summaries. It is descriptive, not a score.
-            </p>
-          </div>
-          {state.status === "ready" ? (
-            <SixtySecondPath
-              inspectDomain={inspectDomain}
-              plan={startPlan}
-            />
+          {state.status === "ready" && startPlan?.steps?.[0] ? (
+            <button
+              className="mt-3 rounded-full border border-cyan-900/20 bg-cyan-50 px-4 py-2 text-left text-xs uppercase tracking-[0.15em] text-cyan-950 transition hover:bg-cyan-100"
+              onClick={() => inspectDomain(startPlan.steps[0].domain)}
+              type="button"
+            >
+              Start with {formatDomainLabel(startPlan.steps[0].domain)}
+            </button>
           ) : null}
         </div>
 
@@ -188,58 +189,6 @@ export default function PositionByIssue({
   );
 }
 
-function SixtySecondPath({ inspectDomain, plan }) {
-  if (!plan) {
-    return null;
-  }
-
-  return (
-    <div className="mt-3 rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-3">
-      <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
-        What You Can Learn In 60 Seconds
-      </p>
-      <p className="mt-1 text-sm leading-6 text-stone-800">
-        {plan.summary}
-      </p>
-      <div className="mt-3 grid gap-2">
-        {plan.steps.map((step, index) => (
-          <button
-            className={`rounded-xl border px-3 py-2.5 text-left transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
-              step.priority === "primary"
-                ? "border-cyan-800 bg-white hover:bg-cyan-50"
-                : "border-stone-200 bg-white/80 hover:border-cyan-700/50"
-            }`}
-            key={`${step.domain}-${step.title}`}
-            onClick={() => inspectDomain(step.domain)}
-            type="button"
-          >
-            <div className="flex items-start gap-3">
-              <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
-                step.priority === "primary" ? "bg-cyan-900 text-white" : "bg-stone-200 text-stone-700"
-              }`}>
-                {index + 1}
-              </span>
-              <div>
-                <p className="text-sm font-semibold leading-6 text-stone-950">
-                  {step.title}
-                </p>
-                <p className="mt-1 text-sm leading-5 text-stone-700">
-                  {step.detail}
-                </p>
-              </div>
-            </div>
-          </button>
-        ))}
-      </div>
-      {plan.limitedNote ? (
-        <p className="mt-2 rounded-xl bg-white/70 px-3 py-2 text-sm leading-5 text-stone-700">
-          {plan.limitedNote}
-        </p>
-      ) : null}
-    </div>
-  );
-}
-
 function IssueReadinessGroups({ groups, inspectDomain, selectedDomain }) {
   const visibleGroups = groups.filter((group) => group.rows.length > 0);
 
@@ -264,17 +213,54 @@ function IssueReadinessGroups({ groups, inspectDomain, selectedDomain }) {
               {group.rows.length} {group.rows.length === 1 ? "issue" : "issues"}
             </span>
           </div>
-          <div className="mt-2 grid gap-2 md:grid-cols-2">
-            {group.rows.map((row) => (
-              <IssueReadinessTile
-                inspectDomain={inspectDomain}
-                key={row.domain}
-                row={row}
-                selectedDomain={selectedDomain}
-              />
-            ))}
-          </div>
+          {group.key === "limited_evidence" || group.key === "not_enough_to_summarize" ? (
+            <CompactIssueList
+              inspectDomain={inspectDomain}
+              rows={group.rows}
+              selectedDomain={selectedDomain}
+            />
+          ) : (
+            <div className="mt-2 grid gap-2 md:grid-cols-2">
+              {group.rows.map((row) => (
+                <IssueReadinessTile
+                  inspectDomain={inspectDomain}
+                  key={row.domain}
+                  row={row}
+                  selectedDomain={selectedDomain}
+                />
+              ))}
+            </div>
+          )}
         </section>
+      ))}
+    </div>
+  );
+}
+
+function CompactIssueList({ inspectDomain, rows, selectedDomain }) {
+  return (
+    <div className="mt-2 divide-y divide-stone-200 overflow-hidden rounded-xl border border-stone-200 bg-white">
+      {rows.map((row) => (
+        <button
+          aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
+          aria-pressed={selectedDomain === row.domain}
+          className={`grid w-full gap-1 px-3 py-2.5 text-left transition sm:grid-cols-[minmax(0,1fr)_auto_auto] sm:items-center sm:gap-3 ${
+            selectedDomain === row.domain ? "bg-cyan-50" : "hover:bg-stone-50"
+          }`}
+          key={row.domain}
+          onClick={() => inspectDomain(row.domain)}
+          type="button"
+        >
+          <span className="text-sm font-medium leading-5 text-stone-950">
+            {formatDomainLabel(row.domain)}
+          </span>
+          <span className="text-xs uppercase tracking-[0.12em] text-stone-500">
+            {row.recorded_votes || 0} votes
+          </span>
+          <span className={`w-fit rounded-full px-2.5 py-1 text-[11px] uppercase tracking-[0.1em] ${getReadinessBadgeClass(row.readiness?.key)}`}>
+            {(row.interpreted_support_count || 0) + (row.interpreted_oppose_count || 0)} reviewed
+          </span>
+        </button>
       ))}
     </div>
   );
@@ -336,7 +322,7 @@ function IssueReadinessTile({ inspectDomain, row, selectedDomain }) {
 }
 
 function IssuePatternCards({ onInspectDomain, rows, status }) {
-  if (status !== "ready") {
+  if (status !== "ready" || rows.length === 0) {
     return null;
   }
 
@@ -356,12 +342,7 @@ function IssuePatternCards({ onInspectDomain, rows, status }) {
         </p>
       </div>
 
-      {rows.length === 0 ? (
-        <p className="mt-4 rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3 text-sm leading-6 text-stone-700">
-          No interpreted issue patterns are available yet for this official. The evidence rows still show recorded votes and source links.
-        </p>
-      ) : (
-        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {rows.map((row) => (
             <button
               aria-label={`Open interpreted votes for ${formatDomainLabel(row.domain)}`}
@@ -392,7 +373,6 @@ function IssuePatternCards({ onInspectDomain, rows, status }) {
             </button>
           ))}
         </div>
-      )}
     </div>
   );
 }
@@ -472,7 +452,7 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
                     {formatEvidenceGroupCategory(group)}
                   </p>
                   <h5 className="mt-1 break-words text-base leading-6 text-stone-950">
-                    {group.title}
+                    {formatDisplayMeasureTitle(group.title)}
                   </h5>
                   <p className="mt-1 text-sm leading-5 text-stone-600">
                     {formatBillGroupScanLine(group)}
@@ -535,7 +515,7 @@ function VoteEvidenceRow({ representativeName, row, selectedActionRow, setSelect
             {typeLabel ? ` - ${typeLabel}` : ""}
           </p>
           <p className="mt-1 break-words text-sm leading-5 text-stone-950">
-            {row.description || row.question}
+            {formatDisplayMeasureTitle(row.description || row.question)}
           </p>
           <p className="mt-1 text-sm leading-6 text-stone-700">
             {scanSummary}
@@ -562,6 +542,9 @@ function VoteEvidenceRow({ representativeName, row, selectedActionRow, setSelect
             selectedActionRow={selectedActionRow}
             setSelectedActionRow={setSelectedActionRow}
           />
+          <p className="mt-3 text-xs leading-5 text-stone-500">
+            Full official title: {row.description || row.question || "Unavailable"}
+          </p>
           <div className="mt-3 flex justify-start border-t border-stone-200 pt-3 sm:justify-end">
             {row.source_url ? (
               <a
@@ -1520,6 +1503,35 @@ function formatEvidenceConfidenceLabel(row) {
     return "Needs source support";
   }
   return "Evidence only";
+}
+
+function formatDisplayMeasureTitle(value) {
+  const title = String(value || "").trim();
+  const normalized = title.toLowerCase();
+
+  if (!title) {
+    return "Recorded vote";
+  }
+  if (normalized.includes("concurrent resolution on the budget for fiscal year 2025")) {
+    return "FY2025 Congressional Budget Resolution";
+  }
+  if (normalized.includes("military construction") && normalized.includes("veterans affairs") && normalized.includes("appropriations act, 2026")) {
+    return "Military Construction and Veterans Affairs Appropriations Act, 2026";
+  }
+  if (normalized.includes("continuing appropriations") && normalized.includes("extensions act")) {
+    return "Temporary Government Funding Package";
+  }
+  if (normalized.includes("halt fentanyl")) {
+    return "HALT Fentanyl Act";
+  }
+  if (normalized.includes("lower health care premiums")) {
+    return "Lower Health Care Premiums Act";
+  }
+  if (title.length <= 92) {
+    return title;
+  }
+
+  return `${title.slice(0, 89).trim()}...`;
 }
 
 function getEvidenceConfidenceBadgeClass(row) {

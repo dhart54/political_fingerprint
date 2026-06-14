@@ -13,8 +13,8 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   const sourceButtonStart = source.indexOf("{row.source_url ?", voteRowStart);
   const detailsStart = source.indexOf("<details", voteRowStart);
 
-  assert.ok(source.includes("What You Can Learn In 60 Seconds"), "profile should provide a clear 60-second path");
-  assert.ok(source.includes("Start Here"), "quick read should tell voters where to begin");
+  assert.ok(source.includes("Start with {formatDomainLabel(startPlan.steps[0].domain)}"), "profile should provide a compact start path");
+  assert.ok(source.includes("Start with"), "quick read should tell voters where to begin");
   assert.ok(source.includes("Open Best Read"), "quick read should provide a direct path to the strongest issue read");
   assert.ok(source.includes("Best place to start"), "strong issue cards should be visually prioritized");
   assert.ok(source.includes("Lower priority: read cautiously"), "limited issue cards should be lower priority");

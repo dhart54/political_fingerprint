@@ -72,23 +72,24 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#f7f4ec] text-stone-900">
       <section className="mx-auto max-w-[1440px] px-4 py-4 sm:px-6 lg:py-5">
-        <div className="grid gap-4 lg:grid-cols-[minmax(0,0.85fr)_minmax(520px,1.15fr)] lg:items-start">
-          <div className="max-w-[720px] rounded-2xl border border-stone-200 bg-white/70 px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)]">
-            <p className="mb-2 text-xs uppercase tracking-[0.28em] text-cyan-800">
-              Political Fingerprint
-            </p>
-            <h1 className="font-serif text-3xl leading-[1] text-stone-950 sm:text-[3.4rem] lg:text-[3.9rem]">
-              See the strongest voting evidence first.
-            </h1>
-            <p className="mt-3 max-w-[640px] text-[15px] leading-7 text-stone-700">
-              Enter a ZIP, then inspect current officials by reviewed issue evidence. Substantive votes come before procedural context and limited rows.
-            </p>
-            <p className="mt-2 max-w-[640px] text-[13px] leading-6 text-stone-600">
-              {buildCoverageRead(coverageMetadata)}
-            </p>
-            <div className="mt-4 grid gap-2 sm:grid-cols-3">
-              <HeroStat value={formatNumber(coverageMetadata?.legislator_count, "548")} label="legislators loaded" />
-              <HeroStat value={formatNumber(coverageMetadata?.eligible_roll_call_count, "8")} label="eligible roll calls" />
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,0.72fr)_minmax(500px,1.28fr)] lg:items-start">
+          <div className="rounded-2xl border border-stone-200 bg-white/75 px-4 py-3 shadow-[0_8px_22px_rgba(15,23,42,0.05)]">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">
+                  Political Fingerprint
+                </p>
+                <h1 className="mt-1 font-serif text-[2rem] leading-[0.98] text-stone-950 sm:text-[2.7rem] lg:text-[3rem]">
+                  Strongest voting evidence first.
+                </h1>
+              </div>
+              <p className="max-w-[340px] text-sm leading-5 text-stone-700">
+                Current officials by reviewed issue evidence, with limited rows kept cautious.
+              </p>
+            </div>
+            <div className="mt-3 grid gap-2 sm:grid-cols-3">
+              <HeroStat value={formatNumber(coverageMetadata?.legislator_count, "548")} label="legislators" />
+              <HeroStat value={formatNumber(coverageMetadata?.eligible_roll_call_count, "8")} label="roll calls" />
               <HeroStat value={formatPercent(coverageMetadata?.source_url_share)} label="source links" />
             </div>
           </div>
@@ -101,24 +102,27 @@ export default function HomePage() {
           />
         </div>
 
-        <section className="mt-4 rounded-2xl border border-stone-200 bg-white px-4 py-4 shadow-[0_12px_34px_rgba(15,23,42,0.07)] lg:px-5">
-          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.24em] text-stone-500">
+        <section className="mt-3 rounded-2xl border border-stone-200 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)] lg:px-5">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div className="min-w-0">
+              <p className="text-xs uppercase tracking-[0.2em] text-stone-500">
                 Current Profile
               </p>
-              <h2 className="mt-1 font-serif text-[2rem] leading-none text-stone-950 sm:text-[2.4rem]">
+              <h2 className="mt-1 truncate font-serif text-[1.75rem] leading-none text-stone-950 sm:text-[2.15rem]">
                 {selectedLegislator.name_display}
               </h2>
-              <p className="mt-1 text-sm leading-6 text-stone-600">
-                {formatChamber(selectedLegislator.chamber)} - {selectedLegislator.party} - {selectedLegislator.state}
-                {selectedLegislator.district ? `-${selectedLegislator.district}` : " statewide"}
-              </p>
             </div>
-            <div className="grid gap-2 text-sm sm:grid-cols-3 lg:min-w-[520px]">
-              <MiniStep label="1" value="Best issue read" />
-              <MiniStep label="2" value="Compact evidence" />
-              <MiniStep label="3" value="Alignment after proof" />
+            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.14em] text-stone-700">
+              <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5">
+                {formatChamber(selectedLegislator.chamber)}
+              </span>
+              <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5">
+                {selectedLegislator.party} - {selectedLegislator.state}
+                {selectedLegislator.district ? `-${selectedLegislator.district}` : " statewide"}
+              </span>
+              <a className="rounded-full border border-cyan-900/20 bg-cyan-50 px-3 py-1.5 text-cyan-900" href="#position-by-issue">
+                Jump to evidence
+              </a>
             </div>
           </div>
         </section>
@@ -177,11 +181,13 @@ export default function HomePage() {
           </div>
         </details>
 
-        <UpcomingRacePanel
-          onSelectLegislator={setSelectedLegislator}
-          preferences={issuePreferences}
-          raceState={zipRaceState}
-        />
+        {zipRaceState.status === "ready" && (zipRaceState.payload?.races || []).length > 0 ? (
+          <UpcomingRacePanel
+            onSelectLegislator={setSelectedLegislator}
+            preferences={issuePreferences}
+            raceState={zipRaceState}
+          />
+        ) : null}
 
         <LegislatorPicker
           onSelect={setSelectedLegislator}
@@ -221,14 +227,6 @@ function HeroStat({ value, label }) {
   );
 }
 
-function buildCoverageRead(metadata) {
-  if (!metadata) {
-    return "Coverage context loads from the backend when available; local fallback data remains deterministic for development.";
-  }
-
-  return `Coverage window ${formatDate(metadata.window_start)} to ${formatDate(metadata.window_end)}. Procedural votes are excluded, and source links are tracked for evidence drilldowns.`;
-}
-
 function formatNumber(value, fallback) {
   if (typeof value !== "number") {
     return fallback;
@@ -251,15 +249,6 @@ function formatDate(value) {
   }
 
   return String(value).slice(0, 10);
-}
-
-function MiniStep({ label, value }) {
-  return (
-    <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2">
-      <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-800">Step {label}</p>
-      <p className="mt-1 text-sm leading-5 text-stone-800">{value}</p>
-    </div>
-  );
 }
 
 function TrustNote({ eyebrow, text }) {
