@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-import { fetchDrift, fetchFingerprint, fetchPositions } from "../lib/api";
+import { fetchDrift, fetchFingerprint, fetchPositionEvidence, fetchPositions } from "../lib/api";
 import { getBestIssueRead } from "../lib/issueReadiness.mjs";
 import { formatDomainLabel } from "../lib/issueDomains";
+import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
 
 export default function ProfileQuickRead({ legislator, onInspectDomain }) {
   const [state, setState] = useState({
@@ -28,11 +29,16 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
       });
 
       try {
-        const [fingerprint, positions, drift] = await Promise.all([
+        const [fingerprint, positionsPayload, drift] = await Promise.all([
           fetchFingerprint({ legislatorId: legislator.id }),
           fetchPositions({ legislatorId: legislator.id }),
           fetchDrift({ legislatorId: legislator.id }),
         ]);
+        const positions = await fillMissingInterpretedCounts({
+          payload: positionsPayload,
+          fetchEvidence: fetchPositionEvidence,
+          legislatorId: legislator.id,
+        });
 
         if (!active) {
           return;
@@ -82,13 +88,13 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
   });
 
   return (
-    <section className="mt-4 rounded-2xl border border-cyan-900/10 bg-[linear-gradient(135deg,#083344,#115e59)] px-4 py-4 text-white shadow-[0_14px_36px_rgba(15,23,42,0.14)] lg:px-5">
-      <div className="grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(340px,0.9fr)] lg:items-start">
-        <div>
-          <p className="text-xs uppercase tracking-[0.24em] text-cyan-100">
+    <section className="mt-3 rounded-2xl border border-cyan-900/10 bg-[linear-gradient(135deg,#083344,#115e59)] px-4 py-3 text-white shadow-[0_10px_28px_rgba(15,23,42,0.12)] lg:px-5">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+        <div className="min-w-0">
+          <p className="text-xs uppercase tracking-[0.2em] text-cyan-100">
             Quick Read
           </p>
-          <h3 className="mt-2 max-w-[780px] font-serif text-[1.85rem] leading-[1.05] text-white sm:text-[2.25rem]">
+          <h3 className="mt-1 max-w-[820px] font-serif text-[1.45rem] leading-[1.08] text-white sm:text-[1.85rem]">
             {buildHeadline({
               status: state.status,
               name: legislator.name_display,
@@ -96,7 +102,7 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
               topPosition,
             })}
           </h3>
-          <p className="mt-3 max-w-3xl text-[14px] leading-6 text-cyan-50">
+          <p className="mt-2 max-w-4xl text-[13px] leading-5 text-cyan-50">
             {state.status === "loading"
               ? "Loading the profile summary from the same deterministic data used below."
               : null}
@@ -106,70 +112,36 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
               : null}
           </p>
         </div>
-        <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-1">
-          <QuickCard
-            eyebrow="Best issue read"
-            label={state.status === "ready" ? topPosition.label : "Loading"}
-            onInspect={
-              state.status === "ready" && topPosition.domain !== "NONE"
-                ? () => onInspectDomain?.(topPosition.domain)
-                : null
-            }
-            value={state.status === "ready" ? topPosition.value : "--"}
-          />
-          <QuickCard
-            eyebrow="Coverage"
-            label={state.status === "ready" ? coverage.label : "Loading"}
-            value={state.status === "ready" ? coverage.value : "--"}
-          />
-          <QuickCard
-            eyebrow="Change context"
-            label={state.status === "ready" ? drift.label : "Loading"}
-            value={state.status === "ready" ? drift.value : "--"}
-          />
+        <div className="grid shrink-0 gap-2 sm:grid-cols-3 lg:min-w-[420px]">
+          <QuickMetric eyebrow="Best read" value={state.status === "ready" ? topPosition.value : "--"} />
+          <QuickMetric eyebrow="Coverage" value={state.status === "ready" ? coverage.value : "--"} />
+          <QuickMetric eyebrow="Change" value={state.status === "ready" ? drift.value : "--"} />
         </div>
       </div>
 
       {state.status === "ready" && topPosition.domain !== "NONE" ? (
-        <div className="mt-3 rounded-xl border border-white/10 bg-white/10 px-3 py-3">
-          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-cyan-100">
-                Start Here
-              </p>
-              <p className="mt-1 text-[15px] leading-6 text-white">
-                {buildStartHereCopy({ topFocus, topPosition })}
-              </p>
-            </div>
-            <button
-              className="w-fit rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.18em] text-cyan-950 transition hover:bg-cyan-50"
-              onClick={() => onInspectDomain?.(topPosition.domain)}
-              type="button"
-            >
-              Open Best Read
-            </button>
-          </div>
+        <div className="mt-3 flex flex-col gap-2 border-t border-white/10 pt-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm leading-5 text-cyan-50">
+            {buildStartHereCopy({ topFocus, topPosition })}
+          </p>
+          <button
+            className="w-fit rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.16em] text-cyan-950 transition hover:bg-cyan-50"
+            onClick={() => onInspectDomain?.(topPosition.domain)}
+            type="button"
+          >
+            Open Best Read
+          </button>
         </div>
       ) : null}
     </section>
   );
 }
 
-function QuickCard({ eyebrow, label, onInspect, value }) {
+function QuickMetric({ eyebrow, value }) {
   return (
-    <article className="rounded-xl border border-white/10 bg-white/10 px-3 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]">
+    <article className="rounded-xl border border-white/10 bg-white/10 px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)]">
       <p className="text-[11px] uppercase tracking-[0.18em] text-cyan-100">{eyebrow}</p>
-      <p className="mt-2 text-[1.35rem] leading-none text-white">{value}</p>
-      <p className="mt-2 text-xs leading-5 text-cyan-50">{label}</p>
-      {onInspect ? (
-        <button
-          className="mt-3 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-[11px] uppercase tracking-[0.16em] text-white transition hover:bg-white/20"
-          onClick={onInspect}
-          type="button"
-        >
-          Open Votes
-        </button>
-      ) : null}
+      <p className="mt-1 text-[1.15rem] leading-none text-white">{value}</p>
     </article>
   );
 }

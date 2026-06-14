@@ -75,16 +75,19 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
   const hiddenResultCount = Math.max(0, searchState.results.length - visibleResults.length);
 
   return (
-    <section className="mt-7 rounded-[2rem] border border-stone-300/70 bg-white/70 p-5 shadow-[0_14px_40px_rgba(72,52,24,0.07)] backdrop-blur">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+    <details className="mt-5 rounded-2xl border border-stone-300/70 bg-white/70 px-4 py-3 shadow-[0_8px_24px_rgba(72,52,24,0.05)] backdrop-blur">
+      <summary className="cursor-pointer text-sm font-semibold uppercase tracking-[0.16em] text-stone-700 marker:text-cyan-900">
+        Search or switch official
+      </summary>
+      <div className="mt-3 flex flex-col gap-3 border-t border-stone-200 pt-3 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
+          <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
             Switch Official
           </p>
-          <h3 className="mt-2 font-serif text-[2rem] leading-none text-stone-950">
+          <h3 className="mt-1 font-serif text-[1.55rem] leading-none text-stone-950">
             Search another record
           </h3>
-          <p className="mt-2 max-w-2xl text-[15px] leading-7 text-stone-700">
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-700">
             The current page is showing {selectedLegislator.name_display}. Search by name if you want to inspect a different official with the same issue checks.
           </p>
         </div>
@@ -107,24 +110,24 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
         value={query}
       />
 
-      <div className="mt-4 grid max-h-[360px] gap-3 overflow-y-auto pr-1 md:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-3 grid max-h-[320px] gap-2 overflow-y-auto pr-1 md:grid-cols-2 xl:grid-cols-4">
         {searchState.status === "idle" ? (
-          <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-600 md:col-span-2 xl:col-span-4">
+          <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-600 md:col-span-2 xl:col-span-4">
             Enter at least two characters to search the federal roster. The current representative record stays in view until you choose another official.
           </div>
         ) : null}
         {searchState.status === "error" ? (
-          <div className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700 md:col-span-2 xl:col-span-4">
+          <div className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-3 text-sm text-rose-700 md:col-span-2 xl:col-span-4">
             {searchState.error}
           </div>
         ) : null}
         {searchState.status === "ready" && searchState.results.length === 0 ? (
-          <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600 md:col-span-2 xl:col-span-4">
+          <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm text-stone-600 md:col-span-2 xl:col-span-4">
             No legislators match this search. Try a broader name.
           </div>
         ) : null}
         {searchState.status === "ready" && hiddenResultCount ? (
-          <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-600 md:col-span-2 xl:col-span-4">
+          <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3 text-sm leading-6 text-stone-600 md:col-span-2 xl:col-span-4">
             Showing the first {visibleResults.length} matches. Keep typing to narrow {hiddenResultCount} more.
           </div>
         ) : null}
@@ -132,7 +135,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
           const isSelected = legislator.id === selectedLegislator.id;
           return (
             <button
-              className={`rounded-[1.25rem] border px-4 py-4 text-left transition ${
+              className={`rounded-xl border px-3 py-3 text-left transition ${
                 isSelected
                   ? "border-stone-900 bg-stone-900 text-stone-100 shadow-[0_10px_24px_rgba(28,25,23,0.14)]"
                   : "border-stone-200 bg-stone-50 text-stone-900 hover:border-stone-400"
@@ -156,7 +159,7 @@ export default function LegislatorPicker({ selectedLegislator, onSelect }) {
           );
         })}
       </div>
-    </section>
+    </details>
   );
 }
 

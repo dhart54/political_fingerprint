@@ -53,6 +53,29 @@ def test_positions_endpoint_exposes_interpreted_coverage_counts() -> None:
     assert education["interpreted_total"] == 2
 
 
+def test_database_position_reads_do_not_hide_interpretations_by_classification_version() -> None:
+    """vote_interpretations is keyed by roll_call_id, not by active classification version."""
+    source = precomputed._get_db_position_rows.__code__.co_consts
+    position_sql = next(value for value in source if isinstance(value, str) and "vote_interpretations" in value)
+    evidence_sql = next(
+        value
+        for value in precomputed._get_db_position_evidence_rows.__code__.co_consts
+        if isinstance(value, str) and "vote_interpretations" in value
+    )
+    alignment_sql = next(
+        value
+        for value in precomputed._get_db_alignment_rows.__code__.co_consts
+        if isinstance(value, str) and "vote_interpretations" in value
+    )
+
+    assert "vi.roll_call_id = rc.id" in position_sql
+    assert "vi.roll_call_id = rc.id" in evidence_sql
+    assert "vi.roll_call_id = rc.id" in alignment_sql
+    assert "vi.classification_version = vcf.classification_version" not in position_sql
+    assert "vi.classification_version = vcf.classification_version" not in evidence_sql
+    assert "AND vi.classification_version = %s" not in alignment_sql
+
+
 def test_get_positions_endpoint_returns_404_for_unknown_legislator() -> None:
     with pytest.raises(HTTPException) as exc_info:
         get_legislator_positions("unknown")

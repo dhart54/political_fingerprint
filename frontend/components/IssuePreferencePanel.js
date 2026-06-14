@@ -116,16 +116,16 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
   }
 
   return (
-    <section className="mt-8 rounded-[2rem] border border-stone-200 bg-white px-5 py-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] lg:px-6">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+    <section className="mt-5 rounded-2xl border border-stone-200 bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)] lg:px-5">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-800">
+          <p className="text-xs uppercase tracking-[0.22em] text-cyan-800">
             Your Issues
           </p>
-          <h3 className="mt-2 max-w-[760px] font-serif text-[2rem] leading-[1] text-stone-950 sm:text-[2.65rem] sm:leading-[0.96]">
+          <h3 className="mt-1 max-w-[760px] font-serif text-[1.55rem] leading-[1.05] text-stone-950 sm:text-[2rem]">
             Choose issue areas to inspect.
           </h3>
-          <p className="mt-3 max-w-2xl text-[15px] leading-7 text-stone-700">
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-700">
             Your picks guide which reviewed records appear first. Choose a direction only when you want an alignment label.
           </p>
         </div>
@@ -145,48 +145,41 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
         </div>
       </div>
 
-      <div className="mt-5 grid gap-3 lg:grid-cols-3">
+      <div className="mt-4 flex flex-wrap gap-2">
         {STARTER_CHECKS.map((starterCheck) => {
           const isActive = starterCheck.domains.every((domain) => preferences[domain]);
 
           return (
             <button
               aria-pressed={isActive}
-              className={`rounded-[1.25rem] border px-4 py-4 text-left transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
+              className={`rounded-full border px-3 py-2 text-left text-sm transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
                 isActive
-                  ? "border-cyan-800 bg-cyan-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]"
-                  : "border-stone-200 bg-stone-50 hover:border-cyan-700/50 hover:bg-cyan-50"
+                  ? "border-cyan-800 bg-cyan-900 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]"
+                  : "border-stone-200 bg-stone-50 text-stone-800 hover:border-cyan-700/50 hover:bg-cyan-50"
               }`}
               key={starterCheck.id}
               onClick={() => applyStarterCheck(starterCheck)}
               type="button"
+              title={starterCheck.description}
             >
-              <span className={`text-xs uppercase tracking-[0.24em] ${isActive ? "text-cyan-900" : "text-cyan-800"}`}>
-                {isActive ? "Active Check" : "Starter Check"}
-              </span>
-              <span className="mt-2 block text-[18px] leading-6 text-stone-950">
-                {starterCheck.label}
-              </span>
-              <span className="mt-2 block text-sm leading-6 text-stone-600">
-                {starterCheck.description}
-              </span>
+              {starterCheck.label}
             </button>
           );
         })}
       </div>
 
-      <details className="mt-5 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4" open={selectedCount === 0}>
+      <details className="mt-4 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3" open={selectedCount === 0}>
         <summary className="cursor-pointer text-sm font-medium text-stone-900">
           Fine-tune individual issue domains
         </summary>
-        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-4">
           {ISSUE_OPTIONS.map((issue) => {
             const selectedStance = preferences[issue.domain];
             const isSelected = Boolean(selectedStance);
 
             return (
               <article
-                className={`rounded-[1.25rem] border px-4 py-4 transition ${
+                className={`rounded-xl border px-3 py-3 transition ${
                   isSelected
                     ? "border-cyan-800 bg-cyan-50"
                     : "border-stone-200 bg-white"
@@ -195,8 +188,8 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h4 className="text-[17px] leading-6 text-stone-950">{issue.label}</h4>
-                    <p className="mt-2 text-sm leading-6 text-stone-600">{issue.prompt}</p>
+                    <h4 className="text-sm font-medium leading-5 text-stone-950">{issue.label}</h4>
+                    <p className="mt-1 text-xs leading-5 text-stone-600">{issue.prompt}</p>
                   </div>
                   <button
                     className={`h-9 min-w-9 rounded-full border px-3 text-sm ${
@@ -213,7 +206,7 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
                 </div>
 
                 {isSelected ? (
-                  <div className="mt-4 grid gap-2">
+                  <div className="mt-3 grid gap-2">
                     {STANCE_OPTIONS.map((stance) => (
                       <button
                         className={`rounded-full px-3 py-2 text-left text-xs uppercase tracking-[0.16em] ${
@@ -237,7 +230,7 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
         </div>
       </details>
 
-      <div className="mt-4 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4 text-sm leading-6 text-stone-700">
+      <div className="mt-3 rounded-xl border border-stone-200 bg-stone-50 px-3 py-2 text-sm leading-5 text-stone-700">
         {selectedCount === 0
           ? "No issues selected yet. Pick one or more topics to add reviewed records below the ZIP lookup."
           : `${selectedCount} issue ${selectedCount === 1 ? "selection is" : "selections are"} active for the reviewed-record and comparison sections on this page.`}

@@ -1207,7 +1207,6 @@ def _get_db_position_rows(
         JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
         LEFT JOIN vote_interpretations vi
           ON vi.roll_call_id = rc.id
-         AND vi.classification_version = vcf.classification_version
         WHERE vc.legislator_id = %s
           AND vcf.is_eligible = TRUE
           AND vcf.primary_domain IS NOT NULL
@@ -1290,7 +1289,6 @@ def _get_db_position_evidence_rows(
         JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
         LEFT JOIN vote_interpretations vi
           ON vi.roll_call_id = rc.id
-         AND vi.classification_version = vcf.classification_version
         LEFT JOIN vote_contexts vctx
           ON vctx.roll_call_id = rc.id
          AND vctx.legislator_id = vc.legislator_id
@@ -1334,14 +1332,12 @@ def _get_db_alignment_rows(
           AND vcf.is_eligible = TRUE
           AND vcf.primary_domain IN ({placeholders})
           AND vcf.classification_version = %s
-          AND vi.classification_version = %s
           AND DATE(rc.vote_date) BETWEEN %s AND %s
         ORDER BY rc.vote_date, rc.rollcall_number
         """,
         (
             legislator_db_id,
             *domains,
-            classification_version,
             classification_version,
             window_start,
             window_end,
