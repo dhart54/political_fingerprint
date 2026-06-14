@@ -177,4 +177,3 @@ That milestone should:
 - produce a new top opportunity map after evidence readiness, then select a substantive package only if it is visible, source-grounded, and count-impact validated.
 
 Do not import the H.R. 1, Senate amendment, or other substantive packages until that classification/evidence-readiness step is complete.
-
