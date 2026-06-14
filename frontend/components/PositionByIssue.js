@@ -119,27 +119,27 @@ export default function PositionByIssue({
   }
 
   return (
-    <section id="position-by-issue" className="mt-8 rounded-[2rem] border border-stone-200 bg-white p-5 shadow-[0_18px_48px_rgba(15,23,42,0.1)] lg:p-6">
-      <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+    <section id="position-by-issue" className="mt-5 rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_14px_38px_rgba(15,23,42,0.08)] lg:p-5">
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,0.82fr)_minmax(520px,1.18fr)]">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-cyan-800">
+          <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">
             First Read
           </p>
-          <h3 className="mt-2 font-serif text-[2rem] leading-[1] text-stone-950 sm:text-[2.7rem] sm:leading-[0.95]">
+          <h3 className="mt-1 font-serif text-[1.85rem] leading-[1.05] text-stone-950 sm:text-[2.35rem]">
             {title}
           </h3>
-          <p className="mt-3 max-w-xl text-[18px] leading-8 text-stone-900">
+          <p className="mt-2 max-w-xl text-[16px] leading-7 text-stone-900">
             {state.status === "ready"
               ? takeaway
               : state.status === "loading"
                 ? "Reading where this legislator's reviewed issue evidence is strongest."
                 : "The site cannot read issue readiness for this legislator right now."}
           </p>
-          <div className="mt-4 rounded-[1.5rem] bg-stone-950 px-4 py-4 text-stone-100">
-            <p className="text-xs uppercase tracking-[0.28em] text-stone-400">
+          <div className="mt-3 rounded-xl bg-stone-950 px-3 py-3 text-stone-100">
+            <p className="text-xs uppercase tracking-[0.2em] text-stone-400">
               How To Read This
             </p>
-            <p className="mt-2 text-[15px] leading-7 text-stone-200">
+            <p className="mt-1 text-sm leading-6 text-stone-200">
               Issue areas are grouped by reviewed evidence strength. Strong and mixed sections come first; limited sections stay visible without being treated as confident summaries. It is descriptive, not a score.
             </p>
           </div>
@@ -194,17 +194,17 @@ function SixtySecondPath({ inspectDomain, plan }) {
   }
 
   return (
-    <div className="mt-4 rounded-[1.5rem] border border-cyan-900/10 bg-cyan-50 px-4 py-4">
-      <p className="text-xs uppercase tracking-[0.24em] text-cyan-900">
+    <div className="mt-3 rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-3">
+      <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
         What You Can Learn In 60 Seconds
       </p>
-      <p className="mt-2 text-[15px] leading-7 text-stone-800">
+      <p className="mt-1 text-sm leading-6 text-stone-800">
         {plan.summary}
       </p>
-      <div className="mt-4 grid gap-2">
+      <div className="mt-3 grid gap-2">
         {plan.steps.map((step, index) => (
           <button
-            className={`rounded-xl border px-3 py-3 text-left transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
+            className={`rounded-xl border px-3 py-2.5 text-left transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
               step.priority === "primary"
                 ? "border-cyan-800 bg-white hover:bg-cyan-50"
                 : "border-stone-200 bg-white/80 hover:border-cyan-700/50"
@@ -223,7 +223,7 @@ function SixtySecondPath({ inspectDomain, plan }) {
                 <p className="text-sm font-semibold leading-6 text-stone-950">
                   {step.title}
                 </p>
-                <p className="mt-1 text-sm leading-6 text-stone-700">
+                <p className="mt-1 text-sm leading-5 text-stone-700">
                   {step.detail}
                 </p>
               </div>
@@ -232,7 +232,7 @@ function SixtySecondPath({ inspectDomain, plan }) {
         ))}
       </div>
       {plan.limitedNote ? (
-        <p className="mt-3 rounded-xl bg-white/70 px-3 py-2 text-sm leading-6 text-stone-700">
+        <p className="mt-2 rounded-xl bg-white/70 px-3 py-2 text-sm leading-5 text-stone-700">
           {plan.limitedNote}
         </p>
       ) : null}
@@ -248,15 +248,15 @@ function IssueReadinessGroups({ groups, inspectDomain, selectedDomain }) {
   }
 
   return (
-    <div className="grid gap-3">
+    <div className="grid gap-2.5">
       {visibleGroups.map((group) => (
-        <section className={`rounded-[1.25rem] border px-3 py-3 ${getReadinessGroupContainerClass(group.key)}`} key={group.key}>
+        <section className={`rounded-xl border px-3 py-3 ${getReadinessGroupContainerClass(group.key)}`} key={group.key}>
           <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-cyan-900">
+              <p className="text-xs uppercase tracking-[0.16em] text-cyan-900">
                 {group.label}
               </p>
-              <p className="mt-1 text-sm leading-6 text-stone-600">
+              <p className="mt-1 text-sm leading-5 text-stone-600">
                 {formatReadinessGroupHelp(group.key)}
               </p>
             </div>
@@ -264,7 +264,7 @@ function IssueReadinessGroups({ groups, inspectDomain, selectedDomain }) {
               {group.rows.length} {group.rows.length === 1 ? "issue" : "issues"}
             </span>
           </div>
-          <div className="mt-3 grid gap-3 md:grid-cols-2">
+          <div className="mt-2 grid gap-2 md:grid-cols-2">
             {group.rows.map((row) => (
               <IssueReadinessTile
                 inspectDomain={inspectDomain}
@@ -287,7 +287,7 @@ function IssueReadinessTile({ inspectDomain, row, selectedDomain }) {
     <button
       aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
       aria-pressed={selectedDomain === row.domain}
-      className={`rounded-[1.1rem] border px-4 py-3 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition ${
+      className={`rounded-xl border px-3 py-2.5 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition ${
         selectedDomain === row.domain
           ? "border-cyan-800 bg-cyan-50"
           : readinessKey === "strong_evidence"
@@ -300,12 +300,12 @@ function IssueReadinessTile({ inspectDomain, row, selectedDomain }) {
       type="button"
     >
       <div className="flex items-start justify-between gap-3">
-        <p className="max-w-[220px] text-[15px] leading-6 text-stone-950">
+        <p className="max-w-[220px] text-sm leading-5 text-stone-950">
           {formatDomainLabel(row.domain)}
         </p>
         <p className="shrink-0 text-sm text-stone-500">{row.recorded_votes || 0} votes</p>
       </div>
-      <div className="mt-3 flex flex-col gap-2">
+      <div className="mt-2 flex flex-col gap-1.5">
         <span className={`w-fit max-w-full rounded-xl px-3 py-1 text-[11px] uppercase leading-4 tracking-[0.12em] ${getReadinessBadgeClass(row.readiness?.key)}`}>
           {row.readiness?.label || "Not enough to summarize"}
         </span>
@@ -315,11 +315,11 @@ function IssueReadinessTile({ inspectDomain, row, selectedDomain }) {
         <p className="text-[13px] leading-5 text-stone-600">
           {formatIssueCardReason(row)}
         </p>
-        <p className="text-[12px] uppercase leading-5 tracking-[0.14em] text-stone-500">
+        <p className="text-[11px] uppercase leading-4 tracking-[0.12em] text-stone-500">
           {formatIssueCardPriority(row.readiness?.key)}
         </p>
       </div>
-      <div className="mt-3 h-2 overflow-hidden rounded-full bg-stone-200">
+      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-stone-200">
         <div className="flex h-full w-full">
           <div
             className="bg-emerald-500"
@@ -414,18 +414,18 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
   const billGroups = groupEvidenceByBill(evidenceRows);
 
   return (
-    <div id="position-evidence" className="mt-5 scroll-mt-6 rounded-[1.5rem] border border-stone-200 bg-stone-50 px-3 py-4 sm:px-4 lg:px-5">
+    <div id="position-evidence" className="mt-4 scroll-mt-6 rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 sm:px-4 lg:px-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.28em] text-stone-500">
+          <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
             Evidence
           </p>
-          <h4 className="mt-2 font-serif text-[1.75rem] leading-none text-stone-950 sm:text-[2rem]">
+          <h4 className="mt-1 font-serif text-[1.6rem] leading-none text-stone-950 sm:text-[1.85rem]">
             {formatDomainLabel(selectedRow.domain)}
           </h4>
         </div>
         <button
-          className="rounded-full bg-stone-900 px-4 py-2 text-xs uppercase tracking-[0.22em] text-stone-100 transition hover:bg-cyan-900 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
+          className="rounded-full bg-stone-900 px-3 py-2 text-xs uppercase tracking-[0.16em] text-stone-100 transition hover:bg-cyan-900 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
           onClick={() => onInspectDomain(selectedRow.domain)}
           type="button"
         >
@@ -454,8 +454,8 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
         </p>
       ) : null}
       {evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (
-        <div className="mt-4 grid gap-3">
-          <div className="rounded-2xl border border-cyan-900/10 bg-cyan-50 px-4 py-4 text-sm leading-6 text-stone-700">
+        <div className="mt-3 grid gap-3">
+          <div className="rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-2.5 text-sm leading-6 text-stone-700">
             {formatBillGroupSummary(evidenceGrouping.summary)}
           </div>
           <EvidenceGroupingPreview evidenceGrouping={evidenceGrouping} />
@@ -465,69 +465,33 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
             rows={evidenceRows}
           />
           {billGroups.map((group) => (
-            <article className="rounded-[1.25rem] border border-stone-200 bg-white px-3 py-4 sm:px-4" key={group.key}>
+            <article className={`rounded-xl border px-3 py-3 sm:px-4 ${getBillGroupContainerClass(group)}`} key={group.key}>
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.24em] text-stone-500">
-                    Bill group
+                  <p className="text-xs uppercase tracking-[0.18em] text-stone-500">
+                    {formatEvidenceGroupCategory(group)}
                   </p>
-                  <h5 className="mt-2 break-words text-base leading-6 text-stone-950 sm:text-[18px] sm:leading-7">
+                  <h5 className="mt-1 break-words text-base leading-6 text-stone-950">
                     {group.title}
                   </h5>
-                  <p className="mt-2 text-sm leading-6 text-stone-600">
-                    {group.rows.length} {group.rows.length === 1 ? "roll call" : "roll calls"} shown for this bill or measure.
+                  <p className="mt-1 text-sm leading-5 text-stone-600">
+                    {formatBillGroupScanLine(group)}
                   </p>
                 </div>
-                <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-xs uppercase tracking-[0.2em] text-stone-700">
+                <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-xs uppercase tracking-[0.16em] text-stone-700">
                   {group.rows.length} rows
                 </span>
               </div>
 
-              <div className="mt-4 grid gap-3">
+              <div className="mt-3 grid gap-2">
                 {group.rows.map((row) => (
-                  <div
-                    className="rounded-[1.1rem] border border-stone-200 bg-stone-50 px-3 py-3 sm:px-4 sm:py-4"
+                  <VoteEvidenceRow
                     key={`${row.roll_call_id}-${row.position}`}
-                  >
-                    <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                      <div>
-                        <p className="break-words text-xs uppercase tracking-[0.18em] text-stone-500 sm:tracking-[0.24em]">
-                          {formatDate(row.vote_date)} - {formatChamber(row.chamber)} Roll {row.rollcall_number}
-                        </p>
-                        <p className="mt-2 text-[13px] leading-6 text-stone-700 sm:text-sm">
-                          {row.description || row.question}
-                        </p>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        <span className={`w-fit rounded-full px-3 py-1 text-xs uppercase tracking-[0.2em] ${getVoteBadgeClass(row.position)}`}>
-                          {formatVotePosition(row.position)}
-                        </span>
-                        <span className={`w-fit rounded-full px-3 py-1 text-xs uppercase tracking-[0.16em] ${getEvidenceConfidenceBadgeClass(row)}`}>
-                          {formatEvidenceConfidenceLabel(row)}
-                        </span>
-                      </div>
-                    </div>
-                    <InterpretationBreakdown
-                      representativeName={legislator?.name_display}
-                      row={row}
-                      selectedActionRow={selectedActionRow}
-                      setSelectedActionRow={setSelectedActionRow}
-                    />
-                    <div className="mt-3 flex justify-start border-t border-stone-200 pt-3 sm:justify-end">
-                      {row.source_url ? (
-                        <a
-                          className="w-fit rounded-full border border-cyan-800/20 bg-white px-3 py-2 text-xs uppercase tracking-[0.18em] text-cyan-800 underline-offset-4 transition hover:border-cyan-800 hover:bg-cyan-50 hover:underline"
-                          href={row.source_url}
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          Source
-                        </a>
-                      ) : (
-                        <p className="text-xs uppercase tracking-[0.18em] text-stone-500">No source URL</p>
-                      )}
-                    </div>
-                  </div>
+                    representativeName={legislator?.name_display}
+                    row={row}
+                    selectedActionRow={selectedActionRow}
+                    setSelectedActionRow={setSelectedActionRow}
+                  />
                 ))}
               </div>
             </article>
@@ -541,6 +505,80 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
         </div>
       ) : null}
     </div>
+  );
+}
+
+function VoteEvidenceRow({ representativeName, row, selectedActionRow, setSelectedActionRow }) {
+  const isProcedural = isProceduralContextRow(row);
+  const scanSummary =
+    buildVoteCardSummary(row, { representativeName }) ||
+    buildLimitedContextSummary(row) ||
+    row.plain_english_summary ||
+    row.description ||
+    row.question ||
+    "Recorded vote row.";
+  const voteType = row.vote_context?.vote_type || row.vote_type;
+  const typeLabel = voteType ? formatVoteType(voteType) : "";
+  const confidenceLabel = formatEvidenceConfidenceLabel(row);
+  const rowToneClass = isProcedural
+    ? "border-sky-100 bg-sky-50/70"
+    : row.interpretation_status === "interpreted" && row.position !== "not_voting"
+      ? "border-cyan-900/15 bg-white"
+      : "border-stone-200 bg-stone-50";
+
+  return (
+    <article className={`rounded-xl border px-3 py-2.5 ${rowToneClass}`}>
+      <div className="grid gap-2 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
+        <div>
+          <p className="break-words text-[11px] uppercase tracking-[0.16em] text-stone-500">
+            {formatDate(row.vote_date)} - {formatChamber(row.chamber)} Roll {row.rollcall_number}
+            {typeLabel ? ` - ${typeLabel}` : ""}
+          </p>
+          <p className="mt-1 break-words text-sm leading-5 text-stone-950">
+            {row.description || row.question}
+          </p>
+          <p className="mt-1 text-sm leading-6 text-stone-700">
+            {scanSummary}
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2 md:justify-end">
+          <span className={`w-fit rounded-full px-3 py-1 text-xs uppercase tracking-[0.16em] ${getVoteBadgeClass(row.position)}`}>
+            {formatVotePosition(row.position)}
+          </span>
+          <span className={`w-fit rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.14em] ${getEvidenceConfidenceBadgeClass(row)}`}>
+            {confidenceLabel}
+          </span>
+        </div>
+      </div>
+
+      <details className="mt-2 rounded-lg border border-stone-200 bg-white/80 px-3 py-2">
+        <summary className="cursor-pointer text-[11px] uppercase tracking-[0.16em] text-stone-600 marker:text-cyan-900">
+          Source, caveats, and full context
+        </summary>
+        <div className="mt-3 border-t border-stone-200 pt-3">
+          <InterpretationBreakdown
+            representativeName={representativeName}
+            row={row}
+            selectedActionRow={selectedActionRow}
+            setSelectedActionRow={setSelectedActionRow}
+          />
+          <div className="mt-3 flex justify-start border-t border-stone-200 pt-3 sm:justify-end">
+            {row.source_url ? (
+              <a
+                className="w-fit rounded-full border border-cyan-800/20 bg-white px-3 py-2 text-xs uppercase tracking-[0.16em] text-cyan-800 underline-offset-4 transition hover:border-cyan-800 hover:bg-cyan-50 hover:underline"
+                href={row.source_url}
+                rel="noreferrer"
+                target="_blank"
+              >
+                Source
+              </a>
+            ) : (
+              <p className="text-xs uppercase tracking-[0.16em] text-stone-500">No source URL</p>
+            )}
+          </div>
+        </div>
+      </details>
+    </article>
   );
 }
 
@@ -559,17 +597,17 @@ function EvidenceGroupingPreview({ evidenceGrouping }) {
   }
 
   return (
-    <div className="rounded-[1.25rem] border border-stone-200 bg-white px-4 py-4">
+    <div className="rounded-xl border border-stone-200 bg-white px-3 py-3">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.24em] text-cyan-900">
+          <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
             Grouped Evidence Preview
           </p>
-          <p className="mt-2 text-sm leading-6 text-stone-700">
+          <p className="mt-1 text-sm leading-5 text-stone-700">
             {formatEvidenceGroupingOverview(evidenceGrouping.summary)}
           </p>
-          <p className="mt-1 text-sm leading-6 text-stone-600">
-            Repeated bill groups help show when several rows are about the same package. Procedural-context, limited-context, and not-voting rows remain visible without being counted as support or opposition.
+          <p className="mt-1 text-xs leading-5 text-stone-600">
+            Procedural, limited, and not-voting rows remain visible but stay separate from support/opposition summaries.
           </p>
         </div>
         <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-xs uppercase tracking-[0.16em] text-stone-700">
@@ -579,14 +617,14 @@ function EvidenceGroupingPreview({ evidenceGrouping }) {
       {previewGroups.length ? (
         <div className="mt-3 grid gap-2">
           {previewGroups.map((group) => (
-            <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3" key={group.id}>
+            <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2.5" key={group.id}>
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                <p className="text-sm leading-6 text-stone-900">{group.label}</p>
+                <p className="text-sm leading-5 text-stone-900">{group.label}</p>
                 <span className="w-fit rounded-full bg-white px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-stone-600">
                   {formatEvidenceGroupCategory(group)}
                 </span>
               </div>
-              <p className="mt-2 text-sm leading-6 text-stone-600">
+              <p className="mt-1 text-sm leading-5 text-stone-600">
                 {group.scanSummary}
               </p>
             </div>
@@ -783,17 +821,16 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
     [`What ${overview.representativeLabel} did`, overview.copy.whatRepresentativeDid],
     ["What pattern that creates", overview.copy.whatPatternThatCreates],
     ["How a voter might read that", overview.copy.howVoterMightRead],
-    ["What not to infer", overview.copy.whatNotToInfer],
   ];
 
   return (
-    <div className="rounded-[1.25rem] border border-cyan-900/10 bg-white px-4 py-4">
+    <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3 sm:px-4">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.24em] text-cyan-900">
+          <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
             Issue Overview
           </p>
-          <p className="mt-2 max-w-4xl text-[18px] leading-8 text-stone-950">
+          <p className="mt-1 max-w-4xl text-[16px] leading-7 text-stone-950">
             {overview.copy.whatTheseVotesWereAbout}
           </p>
         </div>
@@ -801,17 +838,22 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
           {overview.votePattern.interpretedYesNoCount} interpreted votes
         </span>
       </div>
-      <div className="mt-3 grid gap-3">
+      <div className="mt-3 grid gap-2 lg:grid-cols-3">
         {sections.slice(1).map(([label, text]) => (
-          <div className="rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3" key={label}>
-            <p className="text-xs uppercase tracking-[0.2em] text-cyan-900">{label}</p>
-            <p className="mt-2 text-sm leading-6 text-stone-800">{text}</p>
+          <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2.5" key={label}>
+            <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-900">{label}</p>
+            <p className="mt-1 text-sm leading-5 text-stone-800">{text}</p>
           </div>
         ))}
       </div>
-      <p className="mt-3 text-xs leading-5 text-stone-500">
-        Rows below remain the source of truth for each claim; missing vote meanings are not guessed.
-      </p>
+      <details className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2">
+        <summary className="cursor-pointer text-[11px] uppercase tracking-[0.16em] text-stone-600 marker:text-cyan-900">
+          Evidence limits
+        </summary>
+        <p className="mt-2 border-t border-stone-200 pt-2 text-sm leading-5 text-stone-700">
+          {overview.copy.whatNotToInfer} Rows below remain the source of truth for each claim; missing vote meanings are not guessed.
+        </p>
+      </details>
     </div>
   );
 }
@@ -1111,7 +1153,113 @@ function groupEvidenceByBill(rows) {
     groups.set(key, current);
   });
 
-  return Array.from(groups.values());
+  return Array.from(groups.values())
+    .map((group) => {
+      const sortedRows = [...group.rows].sort(compareEvidenceRows);
+      return {
+        ...group,
+        rows: sortedRows,
+        category: categorizeBillEvidenceGroup(sortedRows),
+        countedRows: sortedRows.filter(isCountedSubstantiveEvidenceRow).length,
+        proceduralContextRows: sortedRows.filter(isProceduralContextRow).length,
+        limitedRows: sortedRows.filter(isLimitedEvidenceRow).length,
+        notVotingRows: sortedRows.filter((row) => row.position === "not_voting").length,
+        evidenceScore: Math.max(...sortedRows.map(scoreEvidenceRow), 0),
+      };
+    })
+    .sort((left, right) => (
+      right.evidenceScore - left.evidenceScore ||
+      right.countedRows - left.countedRows ||
+      right.rows.length - left.rows.length ||
+      String(left.title || "").localeCompare(String(right.title || ""))
+    ));
+}
+
+function compareEvidenceRows(left, right) {
+  return (
+    scoreEvidenceRow(right) - scoreEvidenceRow(left) ||
+    Number(left.rollcall_number || 0) - Number(right.rollcall_number || 0) ||
+    String(left.position || "").localeCompare(String(right.position || ""))
+  );
+}
+
+function scoreEvidenceRow(row) {
+  if (row?.interpretation_status === "interpreted" && row?.position !== "not_voting" && !isProceduralContextRow(row)) {
+    return 5;
+  }
+  if (row?.interpretation_status === "interpreted" && row?.position === "not_voting") {
+    return 3;
+  }
+  if (isProceduralContextRow(row)) {
+    return 2;
+  }
+  if (isLimitedEvidenceRow(row)) {
+    return 1;
+  }
+  return 0;
+}
+
+function isCountedSubstantiveEvidenceRow(row) {
+  return row?.interpretation_status === "interpreted" &&
+    row?.position !== "not_voting" &&
+    row?.support_position &&
+    row?.oppose_position &&
+    !isProceduralContextRow(row);
+}
+
+function isLimitedEvidenceRow(row) {
+  return row?.interpretation_status === "ambiguous" || row?.interpretation_status === "insufficient_evidence";
+}
+
+function categorizeBillEvidenceGroup(rows) {
+  if (!rows.length) {
+    return "primary_bill_or_measure";
+  }
+  if (rows.every(isProceduralContextRow)) {
+    return "procedural_context_rows";
+  }
+  if (rows.every((row) => row.position === "not_voting")) {
+    return "not_voting_rows";
+  }
+  if (rows.every(isLimitedEvidenceRow)) {
+    return "limited_context_rows";
+  }
+  if (rows.some((row) => row.vote_context?.vote_type === "amendment" || row.vote_type === "amendment")) {
+    return "related_amendments";
+  }
+  if (rows.some(isProceduralContextRow)) {
+    return "related_floor_or_procedural_votes";
+  }
+  return "primary_bill_or_measure";
+}
+
+function getBillGroupContainerClass(group) {
+  if (group.category === "procedural_context_rows") {
+    return "border-sky-100 bg-sky-50/60";
+  }
+  if (group.category === "limited_context_rows" || group.category === "not_voting_rows") {
+    return "border-stone-200 bg-stone-50";
+  }
+  return "border-stone-200 bg-white";
+}
+
+function formatBillGroupScanLine(group) {
+  const parts = [
+    `${group.rows.length} ${group.rows.length === 1 ? "roll call" : "roll calls"}`,
+  ];
+  if (group.countedRows) {
+    parts.push(`${group.countedRows} countable interpreted`);
+  }
+  if (group.proceduralContextRows) {
+    parts.push(`${group.proceduralContextRows} procedural context`);
+  }
+  if (group.limitedRows) {
+    parts.push(`${group.limitedRows} limited`);
+  }
+  if (group.notVotingRows) {
+    parts.push(`${group.notVotingRows} not voting`);
+  }
+  return `${parts.join(" - ")}.`;
 }
 
 function rowActionKey(row) {
@@ -1591,9 +1739,6 @@ function buildContextBadges(row) {
   if (voteType) {
     badges.push(formatVoteType(voteType));
   }
-  if (row.interpretation_status === "interpreted") {
-    badges.push("Plain-English interpretation available");
-  }
   if (row.interpretation_status === "ambiguous") {
     badges.push("Limited source context");
   }
@@ -1602,16 +1747,6 @@ function buildContextBadges(row) {
   }
   if (isProceduralContextRow(row)) {
     badges.push("Procedural context only");
-  }
-  if (row.vote_context?.member_voted_with_party_majority === true) {
-    badges.push("Voted with most of their party");
-  } else if (row.vote_context?.member_voted_with_party_majority === false) {
-    badges.push("Broke with most of their party");
-  }
-  if (row.vote_context?.member_voted_with_winning_side === true) {
-    badges.push("Voted with the winning side");
-  } else if (row.vote_context?.member_voted_with_winning_side === false) {
-    badges.push("Voted against the final outcome");
   }
 
   return Array.from(new Set(badges));

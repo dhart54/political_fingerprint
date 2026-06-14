@@ -9,8 +9,9 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   ].join("\n");
   const groupingPreviewStart = source.indexOf("function EvidenceGroupingPreview");
   const interpretationBreakdownStart = source.indexOf("function InterpretationBreakdown");
-  const sourceButtonStart = source.indexOf("{row.source_url ?");
-  const detailsStart = source.indexOf("<details", interpretationBreakdownStart);
+  const voteRowStart = source.indexOf("function VoteEvidenceRow");
+  const sourceButtonStart = source.indexOf("{row.source_url ?", voteRowStart);
+  const detailsStart = source.indexOf("<details", voteRowStart);
 
   assert.ok(source.includes("What You Can Learn In 60 Seconds"), "profile should provide a clear 60-second path");
   assert.ok(source.includes("Start Here"), "quick read should tell voters where to begin");
@@ -25,7 +26,8 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   assert.ok(source.includes("Needs source support"), "insufficient rows should get a confidence label");
   assert.ok(source.includes("Not counted"), "not-voting rows should get a confidence label");
   assert.ok(groupingPreviewStart > 0 && groupingPreviewStart < interpretationBreakdownStart, "grouped preview should be defined before card detail helpers");
-  assert.ok(sourceButtonStart > 0 && sourceButtonStart < detailsStart, "source link should remain outside collapsed details");
+  assert.ok(source.includes("Source, caveats, and full context"), "source and caveats should move into expandable detail");
+  assert.ok(detailsStart > 0 && sourceButtonStart > detailsStart, "source link should be available inside expanded details");
   assert.doesNotMatch(source, /you should vote|support this candidate|oppose this candidate|is corrupt|bought|radical|extreme|worst/i);
 });
 
@@ -51,7 +53,7 @@ test("representative page flow directs the voter without changing evidence logic
   assert.match(source, /limited issue sections are intentionally lower priority/);
   assert.match(source, /The clearest sections get summarized first/);
   assert.match(source, /without being forced into a confident pattern/);
-  assert.match(source, /Repeated bill groups help show when several rows are about the same package/);
+  assert.match(source, /Procedural, limited, and not-voting rows remain visible/);
   assert.doesNotMatch(source, /stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|Yes-pattern|No-pattern/);
 });
 
@@ -61,7 +63,7 @@ test("quick read separates high-volume issue focus from clearest reviewed issue 
   assert.match(source, /topFocus\.domain !== topPosition\.domain/);
   assert.match(source, /It has the clearest reviewed vote meaning in this profile/);
   assert.match(source, /has more recorded votes but is not the best first read/);
-  assert.match(source, /the best place to start is the issue with clearer reviewed evidence/);
+  assert.match(source, /the clearest evidence is elsewhere/);
 });
 
 test("no-preference record views avoid alignment framing in neutral summaries", () => {

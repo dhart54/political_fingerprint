@@ -71,22 +71,22 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ec] text-stone-900">
-      <section className="mx-auto max-w-[1440px] px-5 py-6 sm:px-6 lg:py-8">
-        <div className="grid gap-7 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-          <div className="max-w-[720px]">
-            <p className="mb-4 text-sm uppercase tracking-[0.35em] text-cyan-800">
+      <section className="mx-auto max-w-[1440px] px-4 py-4 sm:px-6 lg:py-5">
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,0.85fr)_minmax(520px,1.15fr)] lg:items-start">
+          <div className="max-w-[720px] rounded-2xl border border-stone-200 bg-white/70 px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)]">
+            <p className="mb-2 text-xs uppercase tracking-[0.28em] text-cyan-800">
               Political Fingerprint
             </p>
-            <h1 className="font-serif text-4xl leading-[0.98] text-stone-950 sm:text-[4.4rem] sm:leading-[0.95] lg:text-[5.45rem]">
-              In 60 seconds, see how your politicians vote.
+            <h1 className="font-serif text-3xl leading-[1] text-stone-950 sm:text-[3.4rem] lg:text-[3.9rem]">
+              See the strongest voting evidence first.
             </h1>
-            <p className="mt-5 max-w-[640px] text-[17px] leading-8 text-stone-700 sm:text-lg">
-              Enter a ZIP, pick issues, and inspect the votes behind the read. Everything here is deterministic, neutral, and built from categorized policy votes.
+            <p className="mt-3 max-w-[640px] text-[15px] leading-7 text-stone-700">
+              Enter a ZIP, then inspect current officials by reviewed issue evidence. Substantive votes come before procedural context and limited rows.
             </p>
-            <p className="mt-4 max-w-[640px] text-[14px] leading-7 text-stone-600">
+            <p className="mt-2 max-w-[640px] text-[13px] leading-6 text-stone-600">
               {buildCoverageRead(coverageMetadata)}
             </p>
-            <div className="mt-7 grid gap-3 sm:grid-cols-3">
+            <div className="mt-4 grid gap-2 sm:grid-cols-3">
               <HeroStat value={formatNumber(coverageMetadata?.legislator_count, "548")} label="legislators loaded" />
               <HeroStat value={formatNumber(coverageMetadata?.eligible_roll_call_count, "8")} label="eligible roll calls" />
               <HeroStat value={formatPercent(coverageMetadata?.source_url_share)} label="source links" />
@@ -101,24 +101,24 @@ export default function HomePage() {
           />
         </div>
 
-        <section className="mt-8 rounded-[2rem] border border-stone-200 bg-white px-5 py-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] lg:px-6">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <section className="mt-4 rounded-2xl border border-stone-200 bg-white px-4 py-4 shadow-[0_12px_34px_rgba(15,23,42,0.07)] lg:px-5">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-stone-500">
+              <p className="text-xs uppercase tracking-[0.24em] text-stone-500">
                 Current Profile
               </p>
-              <h2 className="mt-2 font-serif text-[2.2rem] leading-none text-stone-950 sm:text-[2.75rem]">
+              <h2 className="mt-1 font-serif text-[2rem] leading-none text-stone-950 sm:text-[2.4rem]">
                 {selectedLegislator.name_display}
               </h2>
-              <p className="mt-2 text-[15px] leading-6 text-stone-600">
+              <p className="mt-1 text-sm leading-6 text-stone-600">
                 {formatChamber(selectedLegislator.chamber)} - {selectedLegislator.party} - {selectedLegislator.state}
                 {selectedLegislator.district ? `-${selectedLegislator.district}` : " statewide"}
               </p>
             </div>
-            <div className="grid gap-2 sm:grid-cols-3 lg:min-w-[520px]">
-              <MiniStep label="1" value="Pick issues" />
-              <MiniStep label="2" value="Compare records" />
-              <MiniStep label="3" value="Inspect evidence" />
+            <div className="grid gap-2 text-sm sm:grid-cols-3 lg:min-w-[520px]">
+              <MiniStep label="1" value="Best issue read" />
+              <MiniStep label="2" value="Compact evidence" />
+              <MiniStep label="3" value="Alignment after proof" />
             </div>
           </div>
         </section>
@@ -131,6 +131,13 @@ export default function HomePage() {
               requestedAt: Date.now(),
             })
           }
+        />
+
+        <PositionByIssue
+          evidenceRequest={evidenceRequest}
+          legislator={selectedLegislator}
+          legislatorId={selectedLegislator.id}
+          title={`${selectedLegislator.name_display}'s strongest issue evidence`}
         />
 
         <IssuePreferencePanel
@@ -149,25 +156,26 @@ export default function HomePage() {
           }
         />
 
-        <PositionByIssue
-          evidenceRequest={evidenceRequest}
-          legislator={selectedLegislator}
-          legislatorId={selectedLegislator.id}
-          title={`${selectedLegislator.name_display}'s voting pattern by issue`}
-        />
-        <ComparisonPanel
-          defaultLeftLegislator={selectedLegislator}
-          defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
-          onInspectDomain={(legislator, domain) => {
-            setSelectedLegislator(legislator);
-            setEvidenceRequest({
-              domain,
-              requestedAt: Date.now(),
-            });
-          }}
-          preferences={issuePreferences}
-          seedPair={comparisonSeed}
-        />
+        <details className="mt-6 rounded-2xl border border-stone-200 bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)]">
+          <summary className="cursor-pointer text-sm font-semibold uppercase tracking-[0.18em] text-stone-700 marker:text-cyan-900">
+            Compare with another official
+          </summary>
+          <div className="mt-4 border-t border-stone-200 pt-4">
+            <ComparisonPanel
+              defaultLeftLegislator={selectedLegislator}
+              defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
+              onInspectDomain={(legislator, domain) => {
+                setSelectedLegislator(legislator);
+                setEvidenceRequest({
+                  domain,
+                  requestedAt: Date.now(),
+                });
+              }}
+              preferences={issuePreferences}
+              seedPair={comparisonSeed}
+            />
+          </div>
+        </details>
 
         <UpcomingRacePanel
           onSelectLegislator={setSelectedLegislator}
@@ -206,9 +214,9 @@ export default function HomePage() {
 
 function HeroStat({ value, label }) {
   return (
-    <div className="border-l border-cyan-700/30 pl-4">
-      <p className="font-serif text-[2rem] leading-none text-cyan-900 sm:text-[2.4rem]">{value}</p>
-      <p className="mt-2 text-xs uppercase tracking-[0.2em] text-stone-600">{label}</p>
+    <div className="border-l border-cyan-700/30 pl-3">
+      <p className="font-serif text-[1.5rem] leading-none text-cyan-900 sm:text-[1.8rem]">{value}</p>
+      <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-stone-600">{label}</p>
     </div>
   );
 }
@@ -247,9 +255,9 @@ function formatDate(value) {
 
 function MiniStep({ label, value }) {
   return (
-    <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-3">
-      <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">Step {label}</p>
-      <p className="mt-2 text-sm leading-5 text-stone-800">{value}</p>
+    <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2">
+      <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-800">Step {label}</p>
+      <p className="mt-1 text-sm leading-5 text-stone-800">{value}</p>
     </div>
   );
 }
