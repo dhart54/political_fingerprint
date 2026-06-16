@@ -108,14 +108,14 @@ The footer now says procedural votes may appear as context but do not count towa
 
 ## Production-Backed Profiles Reviewed
 
-The required production-backed public API review could not be rerun in this session because the network escalation layer rejected the bounded API command after the account usage limit was reached. The implementation remains tied to the same API fields validated in Phase 23/24:
+Bounded public API checks were run against the current Render read path:
 
-- Valerie P. Foushee: strong Economy, mixed National Security/Justice.
-- Thom Tillis: Senate amendment-heavy evidence.
-- Ted Budd: Senate substantive evidence.
-- Adam B. Schiff: mixed readiness profile.
-- Adelita S. Grijalva: relatively sparse profile example.
-- Aaron Bean: procedural-context visibility example.
+- Valerie P. Foushee: Economy remains the strongest reviewed pattern (`0` support / `6` oppose / `1` other interpreted), while National Security (`2` support / `17` oppose) and Justice (`2` support / `4` oppose) remain mixed but interpretable.
+- Thom Tillis: Senate Economy evidence returns 39 rows, 34 interpreted rows, and amendment evidence retains `senate_amendment_fact` identity with amendment references present.
+- Ted Budd: Senate Economy evidence returns 39 rows, 34 interpreted rows, and amendment evidence retains `senate_amendment_fact` identity with amendment references present.
+- Adam B. Schiff: mixed Senate profile returns interpreted totals and evidence fields.
+- Adelita S. Grijalva: relatively sparse/limited profile returns thin interpreted evidence and limited rows without forcing a confident broad read.
+- Aaron Bean: procedural/limited rows remain visible in evidence while interpreted support/opposition counts stay separate.
 
 ## Responsive Review
 
@@ -127,12 +127,15 @@ The code path was updated for desktop and mobile:
 - grouping preview uses compact chips and two columns on wide screens;
 - evidence cards keep full source details behind disclosure.
 
-Full browser-rendered validation could not be completed locally because the Playwright browser binary is not installed in the environment and the local `next start` smoke hit the known Windows `Start-Process` `Path`/`PATH` issue before starting a server. The production build did pass.
+Full browser-rendered validation could not be completed locally because the Playwright browser binary is not installed in the environment and the local `next start` smoke is unreliable in the Codex-managed Windows shell. The Vercel PR preview deployed successfully, but direct unauthenticated access returned Vercel Authentication and the Vercel CLI is not installed in this environment. Rendered validation should therefore be completed against the public production deployment after merge, or against the protected preview by a logged-in Vercel user.
 
 ## Tests And Build
 
 - Targeted frontend tests: 38 passed.
 - `npm run build`: passed.
+- `git diff --check`: passed.
+- Production-backed API checks: passed for Valerie Foushee, Thom Tillis, Ted Budd, Adam B. Schiff, Adelita S. Grijalva, and Aaron Bean.
+- Vercel PR checks: passed; preview is deployment-protected from unauthenticated automation.
 - Production data writes: none.
 
 ## Known Limitations
