@@ -1043,6 +1043,8 @@ The top-level record summary is deterministic. It is derived from interpreted su
 
 Reviewed issue patterns appear immediately under the top summary. Each pattern shows the issue name, readiness, interpreted support/opposition counts, and a concise policy-theme line. These pattern rows use stored interpretation counts only; procedural-context rows, not-voting rows, ambiguous rows, and insufficient-evidence rows do not become support/opposition evidence.
 
+Issue navigation and evidence grouping are presentation helpers. Large profiles may show a compact issue index, concise measure labels, grouped-evidence rows, and collapsed utility tools so voters can reach the strongest evidence faster. These helpers must preserve the underlying official measure identity in expanded details and must not change interpretation status, support/opposition counts, readiness labels, alignment logic, or whether procedural, limited, and not-voting rows remain non-counting.
+
 Guided alignment prompts are concrete prompts about reviewed measures, not broad questions about whether a user is "for" or "against" an issue domain. Prompt options are:
 
 - generally favored the reviewed measures

@@ -107,13 +107,13 @@ export default function IssuePreferencePanel({ positionRows = [], preferences, o
   }
 
   return (
-    <section className="mt-5 rounded-2xl border border-stone-200 bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)] lg:px-5">
+    <section className="rounded-xl border border-stone-200 bg-white px-3 py-3 lg:px-4">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.22em] text-cyan-800">
             Your Issues
           </p>
-          <h3 className="mt-1 max-w-[760px] font-serif text-[1.55rem] leading-[1.05] text-stone-950 sm:text-[2rem]">
+          <h3 className="mt-1 max-w-[760px] font-serif text-[1.35rem] leading-[1.05] text-stone-950 sm:text-[1.65rem]">
             Compare the record to concrete choices.
           </h3>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-700">
@@ -159,7 +159,7 @@ export default function IssuePreferencePanel({ positionRows = [], preferences, o
         })}
       </div>
 
-      <details className="mt-4 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3" open>
+      <details className="mt-4 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
         <summary className="cursor-pointer text-sm font-medium text-stone-900">
           Fine-tune individual issue domains
         </summary>

@@ -6,6 +6,7 @@ import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from ".
 import { deriveEvidenceGroups } from "../lib/evidenceGrouping.mjs";
 import { buildIssueOverview } from "../lib/issueOverview.mjs";
 import { groupIssueRowsByReadiness, sortIssueRowsByReadiness } from "../lib/issueReadiness.mjs";
+import { formatDisplayMeasureTitle } from "../lib/measureDisplay.mjs";
 import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
 import { isProceduralContextRow } from "../lib/proceduralContext.mjs";
 import { DOMAIN_LABELS, formatDomainLabel } from "../lib/issueDomains";
@@ -125,7 +126,7 @@ export default function PositionByIssue({
 
   return (
     <section id="position-by-issue" className="mt-4 rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.07)] lg:p-5">
-      <div className="grid gap-4 lg:grid-cols-[minmax(0,0.72fr)_minmax(520px,1.28fr)]">
+      <div className="grid gap-4 xl:grid-cols-[minmax(280px,0.52fr)_minmax(0,1.48fr)]">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">
             Issue Evidence
@@ -163,6 +164,13 @@ export default function PositionByIssue({
             </div>
           ) : null}
           {state.status === "ready" ? (
+            <IssueNavigation
+              inspectDomain={inspectDomain}
+              rows={rows}
+              selectedDomain={selectedDomain}
+            />
+          ) : null}
+          {state.status === "ready" ? (
             <IssueReadinessGroups
               groups={readinessGroups}
               inspectDomain={inspectDomain}
@@ -180,6 +188,43 @@ export default function PositionByIssue({
       />
 
     </section>
+  );
+}
+
+function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
+  const navRows = (rows || []).filter((row) => row.recorded_votes > 0 || getInterpretedCount(row) > 0);
+
+  if (!navRows.length) {
+    return null;
+  }
+
+  return (
+    <nav aria-label="Issue evidence navigation" className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2">
+      <div className="flex items-center justify-between gap-2">
+        <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">
+          Jump to issue
+        </p>
+        <span className="text-xs text-stone-500">{navRows.length} areas</span>
+      </div>
+      <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+        {navRows.map((row) => (
+          <button
+            aria-current={selectedDomain === row.domain ? "true" : undefined}
+            className={`shrink-0 rounded-full border px-3 py-1.5 text-xs transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
+              selectedDomain === row.domain
+                ? "border-cyan-800 bg-cyan-900 text-white"
+                : "border-stone-200 bg-white text-stone-700 hover:border-cyan-700/50"
+            }`}
+            key={row.domain}
+            onClick={() => inspectDomain(row.domain)}
+            type="button"
+          >
+            <span className="font-medium">{formatDomainLabel(row.domain)}</span>
+            <span className="ml-2 opacity-75">{getInterpretedCount(row)} reviewed</span>
+          </button>
+        ))}
+      </div>
+    </nav>
   );
 }
 
@@ -429,9 +474,6 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
       ) : null}
       {evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (
         <div className="mt-3 grid gap-3">
-          <div className="rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-2.5 text-sm leading-6 text-stone-700">
-            {formatBillGroupSummary(evidenceGrouping.summary)}
-          </div>
           <EvidenceGroupingPreview evidenceGrouping={evidenceGrouping} />
           <IssueEvidenceSummary
             domain={selectedRow.domain}
@@ -470,7 +512,7 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
               </div>
             </article>
           ))}
-          <CivicActionPanel
+          <EvidenceUtilityPanel
             domain={selectedRow.domain}
             evidenceRows={evidenceRows}
             legislator={legislator}
@@ -561,13 +603,10 @@ function VoteEvidenceRow({ representativeName, row, selectedActionRow, setSelect
 
 function EvidenceGroupingPreview({ evidenceGrouping }) {
   const groups = evidenceGrouping?.groups || [];
-  const repeatedGroups = groups.filter((group) => group.rowCount > 1);
-  const limitedGroups = groups.filter((group) => group.category === "limited_context_rows");
-  const proceduralContextGroups = groups.filter((group) => group.category === "procedural_context_rows");
-  const notVotingGroups = groups.filter((group) => group.category === "not_voting_rows");
-  const previewGroups = [...repeatedGroups, ...proceduralContextGroups, ...limitedGroups, ...notVotingGroups]
-    .filter((group, index, allGroups) => allGroups.findIndex((candidate) => candidate.id === group.id) === index)
-    .slice(0, 4);
+  const previewGroups = groups
+    .slice()
+    .sort((left, right) => scoreEvidenceGroup(right) - scoreEvidenceGroup(left) || String(left.label || "").localeCompare(String(right.label || "")))
+    .slice(0, 6);
 
   if (!groups.length) {
     return null;
@@ -578,13 +617,10 @@ function EvidenceGroupingPreview({ evidenceGrouping }) {
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
-            Grouped Evidence Preview
+            Evidence groups
           </p>
           <p className="mt-1 text-sm leading-5 text-stone-700">
-            {formatEvidenceGroupingOverview(evidenceGrouping.summary)}
-          </p>
-          <p className="mt-1 text-xs leading-5 text-stone-600">
-            Procedural, limited, and not-voting rows remain visible but stay separate from support/opposition summaries.
+            {formatCompactEvidenceGroupingOverview(evidenceGrouping.summary)}
           </p>
         </div>
         <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-xs uppercase tracking-[0.16em] text-stone-700">
@@ -592,18 +628,21 @@ function EvidenceGroupingPreview({ evidenceGrouping }) {
         </span>
       </div>
       {previewGroups.length ? (
-        <div className="mt-3 grid gap-2">
+        <div className="mt-3 grid gap-2 lg:grid-cols-2">
           {previewGroups.map((group) => (
             <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2.5" key={group.id}>
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                <p className="text-sm leading-5 text-stone-900">{group.label}</p>
+                <p className="text-sm leading-5 text-stone-900">{formatDisplayMeasureTitle(group.label)}</p>
                 <span className="w-fit rounded-full bg-white px-2.5 py-1 text-[11px] uppercase tracking-[0.14em] text-stone-600">
                   {formatEvidenceGroupCategory(group)}
                 </span>
               </div>
-              <p className="mt-1 text-sm leading-5 text-stone-600">
-                {group.scanSummary}
-              </p>
+              <div className="mt-2 flex flex-wrap gap-1.5 text-[11px] uppercase tracking-[0.1em] text-stone-600">
+                <span className="rounded-full bg-white px-2 py-1">{group.countedYesNoCount} countable</span>
+                {group.proceduralContextCount ? <span className="rounded-full bg-sky-50 px-2 py-1">{group.proceduralContextCount} procedural</span> : null}
+                {group.ambiguousOrInsufficientCount ? <span className="rounded-full bg-amber-50 px-2 py-1">{group.ambiguousOrInsufficientCount} limited</span> : null}
+                {group.notVotingCount ? <span className="rounded-full bg-stone-100 px-2 py-1">{group.notVotingCount} not voting</span> : null}
+              </div>
             </div>
           ))}
         </div>
@@ -616,7 +655,7 @@ function EvidenceGroupingPreview({ evidenceGrouping }) {
   );
 }
 
-function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRow }) {
+function EvidenceUtilityPanel({ domain, evidenceRows, legislator, selectedEvidenceRow }) {
   const [contactState, setContactState] = useState({
     status: "idle",
     payload: null,
@@ -681,25 +720,11 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
   }, [legislator?.id]);
 
   return (
-    <div className="rounded-[1.25rem] border border-stone-200 bg-white px-4 py-4">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-        <div>
-          <p className="text-xs uppercase tracking-[0.24em] text-cyan-900">
-            Contact This Office
-          </p>
-          <h5 className="mt-2 text-[1.35rem] leading-7 text-stone-950">
-            {representativeName}
-          </h5>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-stone-600">
-            Official contact paths for this representative, kept next to the evidence you are reviewing. The app has not sent or saved anything.
-          </p>
-        </div>
-        <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-stone-700">
-          User-directed
-        </span>
-      </div>
-
-      <div className="mt-4 rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4">
+    <details className="rounded-xl border border-stone-200 bg-white px-3 py-3">
+      <summary className="cursor-pointer text-sm font-medium text-stone-900 marker:text-cyan-900">
+        Evidence tools: contact and selected-vote context
+      </summary>
+      <div className="mt-3 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
         <ContactMetadataCard contactState={contactState} />
         <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">
           Evidence context
@@ -717,7 +742,7 @@ function CivicActionPanel({ domain, evidenceRows, legislator, selectedEvidenceRo
           </p>
         )}
       </div>
-    </div>
+    </details>
   );
 }
 
@@ -793,19 +818,13 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
   if (!overview) {
     return null;
   }
-  const sections = [
-    ["What these votes were about", overview.copy.whatTheseVotesWereAbout],
-    [`What ${overview.representativeLabel} did`, overview.copy.whatRepresentativeDid],
-    ["What pattern that creates", overview.copy.whatPatternThatCreates],
-    ["How a voter might read that", overview.copy.howVoterMightRead],
-  ];
 
   return (
     <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3 sm:px-4">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
-            Issue Overview
+            Issue summary
           </p>
           <p className="mt-1 max-w-4xl text-[16px] leading-7 text-stone-950">
             {overview.copy.whatTheseVotesWereAbout}
@@ -816,16 +835,20 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
         </span>
       </div>
       <div className="mt-3 grid gap-2 lg:grid-cols-3">
-        {sections.slice(1).map(([label, text]) => (
-          <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2.5" key={label}>
-            <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-900">{label}</p>
-            <p className="mt-1 text-sm leading-5 text-stone-800">{text}</p>
-          </div>
-        ))}
+        <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2.5 lg:col-span-2">
+          <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-900">Observed pattern</p>
+          <p className="mt-1 text-sm leading-5 text-stone-800">
+            {overview.copy.whatRepresentativeDid} {overview.copy.whatPatternThatCreates}
+          </p>
+        </div>
+        <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2.5">
+          <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-900">What that means</p>
+          <p className="mt-1 text-sm leading-5 text-stone-800">{overview.copy.howVoterMightRead}</p>
+        </div>
       </div>
       <details className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2">
         <summary className="cursor-pointer text-[11px] uppercase tracking-[0.16em] text-stone-600 marker:text-cyan-900">
-          Evidence limits
+          What not to infer
         </summary>
         <p className="mt-2 border-t border-stone-200 pt-2 text-sm leading-5 text-stone-700">
           {overview.copy.whatNotToInfer} Rows below remain the source of truth for each claim; missing vote meanings are not guessed.
@@ -1249,7 +1272,7 @@ function rowActionKey(row) {
 
 function formatBillGroupSummary(rollCallCount, billCount) {
   if (typeof rollCallCount === "object" && rollCallCount !== null) {
-    return formatEvidenceGroupingOverview(rollCallCount);
+    return formatCompactEvidenceGroupingOverview(rollCallCount);
   }
 
   return `${rollCallCount} ${rollCallCount === 1 ? "roll-call vote" : "roll-call votes"} shown across ${billCount} ${
@@ -1257,31 +1280,41 @@ function formatBillGroupSummary(rollCallCount, billCount) {
   }. Repeated rows can be amendments or related actions on the same bill.`;
 }
 
-function formatEvidenceGroupingOverview(summary) {
+function formatCompactEvidenceGroupingOverview(summary) {
   const totalRows = summary?.totalRows || 0;
   const totalGroups = summary?.totalGroups || 0;
-  const repeatedGroupCount = summary?.repeatedGroupCount || 0;
+  const countedCount = summary?.countedYesNoRows || 0;
   const limitedCount = summary?.ambiguousOrInsufficientRows || 0;
   const proceduralContextCount = summary?.proceduralContextRows || 0;
   const notVotingCount = summary?.notVotingRows || 0;
   const parts = [
-    `${totalRows} ${totalRows === 1 ? "evidence row" : "evidence rows"} shown across ${totalGroups} ${totalGroups === 1 ? "bill or measure group" : "bill or measure groups"}`,
+    `${countedCount} countable Yes/No`,
+    `${totalRows} ${totalRows === 1 ? "row" : "rows"}`,
+    `${totalGroups} ${totalGroups === 1 ? "group" : "groups"}`,
   ];
 
-  if (repeatedGroupCount) {
-    parts.push(`${repeatedGroupCount} repeated ${repeatedGroupCount === 1 ? "group" : "groups"} detected`);
-  }
   if (limitedCount) {
-    parts.push(`${limitedCount} limited-context ${limitedCount === 1 ? "row" : "rows"} kept separate`);
+    parts.push(`${limitedCount} limited`);
   }
   if (proceduralContextCount) {
-    parts.push(`${proceduralContextCount} procedural-context ${proceduralContextCount === 1 ? "row" : "rows"} shown for floor process only`);
+    parts.push(`${proceduralContextCount} procedural context`);
   }
   if (notVotingCount) {
-    parts.push(`${notVotingCount} not-voting ${notVotingCount === 1 ? "row" : "rows"} not counted as support or opposition`);
+    parts.push(`${notVotingCount} not voting`);
   }
 
-  return `${parts.join("; ")}.`;
+  return `${parts.join(" · ")}. Context rows remain visible but do not drive support/opposition summaries.`;
+}
+
+function scoreEvidenceGroup(group) {
+  return (
+    (group.countedYesNoCount || 0) * 8 +
+    (group.amendmentCount || 0) * 3 +
+    (group.proceduralContextCount || 0) * 2 +
+    (group.ambiguousOrInsufficientCount || 0) +
+    (group.notVotingCount || 0) +
+    (group.rowCount || 0)
+  );
 }
 
 function formatEvidenceGroupCategory(group) {
@@ -1422,6 +1455,10 @@ function formatIssueCardPriority(key) {
   return "Evidence visible, not ready to summarize";
 }
 
+function getInterpretedCount(row) {
+  return Number(row?.interpreted_support_count || 0) + Number(row?.interpreted_oppose_count || 0);
+}
+
 function formatIssueCardEvidenceLine(row) {
   const interpretedYeaNay = (row.interpreted_support_count || 0) + (row.interpreted_oppose_count || 0);
   const recordedVotes = row.recorded_votes || 0;
@@ -1497,35 +1534,6 @@ function formatEvidenceConfidenceLabel(row) {
     return "Needs source support";
   }
   return "Evidence only";
-}
-
-function formatDisplayMeasureTitle(value) {
-  const title = String(value || "").trim();
-  const normalized = title.toLowerCase();
-
-  if (!title) {
-    return "Recorded vote";
-  }
-  if (normalized.includes("concurrent resolution on the budget for fiscal year 2025")) {
-    return "FY2025 Congressional Budget Resolution";
-  }
-  if (normalized.includes("military construction") && normalized.includes("veterans affairs") && normalized.includes("appropriations act, 2026")) {
-    return "Military Construction and Veterans Affairs Appropriations Act, 2026";
-  }
-  if (normalized.includes("continuing appropriations") && normalized.includes("extensions act")) {
-    return "Temporary Government Funding Package";
-  }
-  if (normalized.includes("halt fentanyl")) {
-    return "HALT Fentanyl Act";
-  }
-  if (normalized.includes("lower health care premiums")) {
-    return "Lower Health Care Premiums Act";
-  }
-  if (title.length <= 92) {
-    return title;
-  }
-
-  return `${title.slice(0, 89).trim()}...`;
 }
 
 function getEvidenceConfidenceBadgeClass(row) {
