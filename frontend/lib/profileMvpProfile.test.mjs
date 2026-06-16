@@ -18,8 +18,9 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   assert.ok(source.includes("Open Best Read"), "quick read should provide a direct path to the strongest issue read");
   assert.ok(source.includes("Best place to start"), "strong issue cards should be visually prioritized");
   assert.ok(source.includes("Lower priority: read cautiously"), "limited issue cards should be lower priority");
-  assert.ok(source.includes("Grouped Evidence Preview"), "grouped evidence preview should be user-visible");
-  assert.ok(source.includes("formatEvidenceGroupingOverview"), "grouping summary should be rendered");
+  assert.ok(source.includes("Evidence groups"), "grouped evidence preview should be user-visible");
+  assert.ok(source.includes("formatCompactEvidenceGroupingOverview"), "compact grouping summary should be rendered");
+  assert.ok(source.includes("IssueNavigation"), "large profiles should expose compact issue navigation");
   assert.ok(source.includes("Reviewed meaning"), "interpreted rows should get a confidence label");
   assert.ok(source.includes("Procedural context"), "procedural rows should get a confidence label");
   assert.ok(source.includes("Limited context"), "ambiguous rows should get a confidence label");
@@ -37,9 +38,10 @@ test("grouped preview copy preserves limited and not-voting caveats", () => {
     readFileSync(new URL("./evidenceGrouping.mjs", import.meta.url), "utf8"),
   ].join("\n");
 
-  assert.match(source, /limited-context .* kept separate/);
-  assert.match(source, /procedural-context .* shown for floor process only/);
-  assert.match(source, /not-voting .* not counted as support or opposition/);
+  assert.match(source, /limited/);
+  assert.match(source, /procedural context/);
+  assert.match(source, /not voting/);
+  assert.match(source, /Context rows remain visible but do not drive support\/opposition summaries/);
   assert.match(source, /should not be treated as final policy votes/);
 });
 
@@ -52,9 +54,9 @@ test("representative page flow directs the voter without changing evidence logic
   assert.match(source, /clearest reviewed issue read/);
   assert.match(source, /Record Summary/);
   assert.match(source, /limited issue sections are intentionally lower priority/);
-  assert.match(source, /The clearest sections get summarized first/);
+  assert.match(source, /Jump to issue/);
   assert.match(source, /without being forced into a confident pattern/);
-  assert.match(source, /Procedural, limited, and not-voting rows remain visible/);
+  assert.match(source, /Context rows remain visible but do not drive support\/opposition summaries/);
   assert.doesNotMatch(source, /stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|Yes-pattern|No-pattern/);
 });
 
@@ -86,7 +88,7 @@ test("no-preference record views avoid alignment framing in neutral summaries", 
 
 test("issue cards use generalized readiness copy and contact follows vote cards", () => {
   const source = readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8");
-  const civicActionIndex = source.indexOf("<CivicActionPanel");
+  const civicActionIndex = source.indexOf("<EvidenceUtilityPanel");
   const billGroupIndex = source.indexOf("{billGroups.map");
 
   assert.match(source, /reviewed Yes\/No .* out of .* recorded/);
@@ -94,5 +96,14 @@ test("issue cards use generalized readiness copy and contact follows vote cards"
   assert.match(source, /Useful comparison read\./);
   assert.match(source, /Read cautiously\./);
   assert.match(source, /not ready for a confident summary/);
-  assert.ok(billGroupIndex > 0 && civicActionIndex > billGroupIndex, "contact panel should render after vote cards");
+  assert.ok(billGroupIndex > 0 && civicActionIndex > billGroupIndex, "utility panel should render after vote cards");
+});
+
+test("secondary profile tools are consolidated below the evidence path", () => {
+  const source = readFileSync(new URL("../app/page.js", import.meta.url), "utf8");
+
+  assert.match(source, /Tools: preferences, comparison, and switching officials/);
+  assert.match(source, /Search or switch official/);
+  assert.match(source, /Procedural votes may appear as context/);
+  assert.doesNotMatch(source, /Procedural votes are excluded before issue reads/);
 });

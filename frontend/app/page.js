@@ -150,62 +150,76 @@ export default function HomePage() {
           title={`${selectedLegislator.name_display}'s strongest issue evidence`}
         />
 
-        <IssuePreferencePanel
-          positionRows={profileRead?.positions?.positions || []}
-          preferences={issuePreferences}
-          onChange={setIssuePreferences}
-        />
-
-        <AlignmentPanel
-          legislator={selectedLegislator}
-          preferences={issuePreferences}
-          onInspectDomain={(domain) =>
-            setEvidenceRequest({
-              domain,
-              requestedAt: Date.now(),
-            })
-          }
-        />
-
-        <details className="mt-6 rounded-2xl border border-stone-200 bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)]">
+        <details className="mt-5 rounded-2xl border border-stone-200 bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)]" open={Object.keys(issuePreferences).length > 0}>
           <summary className="cursor-pointer text-sm font-semibold uppercase tracking-[0.18em] text-stone-700 marker:text-cyan-900">
-            Compare with another official
+            Tools: preferences, comparison, and switching officials
           </summary>
-          <div className="mt-4 border-t border-stone-200 pt-4">
-            <ComparisonPanel
-              defaultLeftLegislator={selectedLegislator}
-              defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
-              onInspectDomain={(legislator, domain) => {
-                setSelectedLegislator(legislator);
+          <div className="mt-4 grid gap-4 border-t border-stone-200 pt-4">
+            <IssuePreferencePanel
+              positionRows={profileRead?.positions?.positions || []}
+              preferences={issuePreferences}
+              onChange={setIssuePreferences}
+            />
+
+            <AlignmentPanel
+              legislator={selectedLegislator}
+              preferences={issuePreferences}
+              onInspectDomain={(domain) =>
                 setEvidenceRequest({
                   domain,
                   requestedAt: Date.now(),
-                });
-              }}
-              preferences={issuePreferences}
-              seedPair={comparisonSeed}
+                })
+              }
             />
+
+            <details className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
+              <summary className="cursor-pointer text-sm font-medium text-stone-900 marker:text-cyan-900">
+                Compare with another official
+              </summary>
+              <div className="mt-3 border-t border-stone-200 pt-3">
+                <ComparisonPanel
+                  defaultLeftLegislator={selectedLegislator}
+                  defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
+                  onInspectDomain={(legislator, domain) => {
+                    setSelectedLegislator(legislator);
+                    setEvidenceRequest({
+                      domain,
+                      requestedAt: Date.now(),
+                    });
+                  }}
+                  preferences={issuePreferences}
+                  seedPair={comparisonSeed}
+                />
+              </div>
+            </details>
+
+            {zipRaceState.status === "ready" && (zipRaceState.payload?.races || []).length > 0 ? (
+              <UpcomingRacePanel
+                onSelectLegislator={setSelectedLegislator}
+                preferences={issuePreferences}
+                raceState={zipRaceState}
+              />
+            ) : null}
+
+            <details className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
+              <summary className="cursor-pointer text-sm font-medium text-stone-900 marker:text-cyan-900">
+                Search or switch official
+              </summary>
+              <div className="mt-3 border-t border-stone-200 pt-3">
+                <LegislatorPicker
+                  onSelect={setSelectedLegislator}
+                  selectedLegislator={selectedLegislator}
+                />
+              </div>
+            </details>
           </div>
         </details>
-
-        {zipRaceState.status === "ready" && (zipRaceState.payload?.races || []).length > 0 ? (
-          <UpcomingRacePanel
-            onSelectLegislator={setSelectedLegislator}
-            preferences={issuePreferences}
-            raceState={zipRaceState}
-          />
-        ) : null}
-
-        <LegislatorPicker
-          onSelect={setSelectedLegislator}
-          selectedLegislator={selectedLegislator}
-        />
 
         <footer className="mt-8 border-t border-stone-300/80 py-6">
           <div className="grid gap-3 md:grid-cols-3">
             <TrustNote
               eyebrow="Method"
-              text="Uses categorized policy votes only. Procedural votes are excluded before issue reads or alignment labels are shown."
+              text="Procedural votes may appear as context, but they do not count toward issue reads or alignment labels."
             />
             <TrustNote
               eyebrow="Evidence"
@@ -213,7 +227,7 @@ export default function HomePage() {
             />
             <TrustNote
               eyebrow="Limits"
-              text="Alignment labels use interpreted vote meaning when available. Ambiguous votes stay out of the label instead of being guessed."
+              text="Limited, ambiguous, and not-voting rows remain inspectable but do not drive support or opposition conclusions."
             />
           </div>
           <p className="mt-4 text-sm leading-6 text-stone-600 md:text-right">
