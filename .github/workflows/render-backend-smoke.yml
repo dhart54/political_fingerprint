@@ -1,0 +1,51 @@
+name: Render backend smoke
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "backend/**"
+      - ".github/workflows/render-backend-smoke.yml"
+
+jobs:
+  deploy-and-smoke:
+    runs-on: ubuntu-latest
+    env:
+      RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+    steps:
+      - name: Note missing Render deploy hook
+        if: ${{ env.RENDER_DEPLOY_HOOK_URL == '' }}
+        run: |
+          echo "RENDER_DEPLOY_HOOK_URL is not configured; skipping deploy hook trigger and running public smoke checks only."
+
+      - name: Trigger Render deploy hook
+        if: ${{ env.RENDER_DEPLOY_HOOK_URL != '' }}
+        run: |
+          curl --fail --silent --show-error --max-time 30 -X POST "$RENDER_DEPLOY_HOOK_URL"
+
+      - name: Wait briefly for backend deployment
+        if: ${{ env.RENDER_DEPLOY_HOOK_URL != '' }}
+        run: sleep 90
+
+      - name: Smoke check public backend shape
+        env:
+          API_BASE_URL: ${{ vars.RENDER_API_BASE_URL || 'https://political-fingerprint.onrender.com' }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --max-time 20 "$API_BASE_URL/health" >/tmp/health.json
+          curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/positions" >/tmp/positions.json
+          curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence" >/tmp/evidence.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          positions = json.loads(Path("/tmp/positions.json").read_text())
+          evidence = json.loads(Path("/tmp/evidence.json").read_text())
+          position = next((row for row in positions.get("positions", []) if row.get("domain") == "NATIONAL_SECURITY_FOREIGN"), None)
+          if not position or "interpreted_total" not in position:
+              raise SystemExit("Valerie positions response is missing interpreted_total")
+          rows = evidence.get("evidence", [])
+          if not rows or "interpretation_status" not in rows[0]:
+              raise SystemExit("Valerie evidence response is missing interpretation_status")
+          PY

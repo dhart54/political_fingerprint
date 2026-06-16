@@ -95,7 +95,6 @@ export default function PositionByIssue({
   const issueRows = sortIssueRowsByReadiness(state.payload?.positions || []);
   const rows = issueRows.filter((row) => row.recorded_votes > 0 || row.readiness.key === "not_enough_to_summarize");
   const readinessGroups = groupIssueRowsByReadiness(state.payload?.positions || []);
-  const patternRows = buildPatternRows(state.payload?.positions || []);
   const takeaway = buildTakeaway(rows);
   const selectedRow = rows.find((row) => row.domain === selectedDomain) || rows[0] || null;
   const startPlan = buildSixtySecondPlan(readinessGroups);
@@ -180,11 +179,6 @@ export default function PositionByIssue({
         selectedRow={selectedRow}
       />
 
-      <IssuePatternCards
-        onInspectDomain={inspectDomain}
-        rows={patternRows}
-        status={state.status}
-      />
     </section>
   );
 }

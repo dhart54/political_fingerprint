@@ -1030,3 +1030,28 @@ Current UI behavior:
 - uses the same `ALL`, `D`, and `R` overlay context as the fingerprint comparison
 - shows top fingerprint emphasis, drift state, and summary preview for each side
 - labels both sides explicitly and avoids winner framing or ranked language
+
+## Profile Narrative And Guided Alignment
+
+The accountability profile uses a three-layer presentation model:
+
+1. The answer: one compact record summary near the top of the loaded profile.
+2. The explanation: reviewed issue patterns, concrete policy themes, and guided preference prompts.
+3. The proof: full roll-call evidence, official titles, source basis, procedural context, and caveats behind disclosure controls.
+
+The top-level record summary is deterministic. It is derived from interpreted support/opposition counts, readiness labels, recorded vote counts, chamber, and party metadata already returned by the read API. It may say that a reviewed sample is strong, mixed, limited, or not ready to summarize. It may use chamber and party context only as orientation when the profile has the supporting metadata. It must not infer motive, ideology, character, corruption, or voting recommendation.
+
+Reviewed issue patterns appear immediately under the top summary. Each pattern shows the issue name, readiness, interpreted support/opposition counts, and a concise policy-theme line. These pattern rows use stored interpretation counts only; procedural-context rows, not-voting rows, ambiguous rows, and insufficient-evidence rows do not become support/opposition evidence.
+
+Guided alignment prompts are concrete prompts about reviewed measures, not broad questions about whether a user is "for" or "against" an issue domain. Prompt options are:
+
+- generally favored the reviewed measures
+- generally favored opposing them
+- views differ by measure
+- not sure
+
+Only the first two options are directional and may call the existing alignment endpoint. `views differ by measure` and `not sure` are intentionally non-counting UI choices; they do not produce a personalized alignment label. The descriptive official-record summary remains unchanged regardless of user preference.
+
+Sparse profiles or issue areas with fewer than three reviewed Yes/No meanings do not receive a concrete alignment prompt. They remain inspectable as evidence, but the UI should not force a confident issue read or personalized alignment claim.
+
+For deployment drift protection, the repository includes a post-merge backend smoke workflow. When a Render deploy hook secret is configured, backend changes on `main` can trigger a Render deployment and verify that the public backend exposes `/health`, Valerie position `interpreted_total`, and evidence `interpretation_status`. The workflow must not store secrets in the repository.

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { fetchAlignment } from "../lib/api";
 import { formatDomainLabel } from "../lib/issueDomains";
+import { getDirectionalAlignmentPreferences } from "../lib/profileNarrative.mjs";
 
 export default function AlignmentPanel({ legislator, preferences, onInspectDomain }) {
   const [state, setState] = useState({
@@ -13,11 +14,13 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
   });
 
   const selectedCount = Object.keys(preferences).length;
+  const directionalPreferences = getDirectionalAlignmentPreferences(preferences);
+  const directionalCount = Object.keys(directionalPreferences).length;
 
   useEffect(() => {
     let active = true;
 
-    if (selectedCount === 0) {
+    if (directionalCount === 0) {
       setState({
         status: "idle",
         payload: null,
@@ -38,7 +41,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
       try {
         const payload = await fetchAlignment({
           legislatorId: legislator.id,
-          preferences,
+          preferences: directionalPreferences,
         });
         if (!active) {
           return;
@@ -56,7 +59,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
           status: "ready",
           payload: buildFallbackAlignmentPayload({
             legislatorId: legislator.id,
-            preferences,
+            preferences: directionalPreferences,
           }),
           error: null,
         });
@@ -68,11 +71,11 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
     return () => {
       active = false;
     };
-  }, [legislator.id, preferences, selectedCount]);
+  }, [legislator.id, preferences, directionalCount]);
 
   const rows = state.payload?.alignment || [];
 
-  if (selectedCount === 0) {
+  if (selectedCount === 0 || directionalCount === 0) {
     return null;
   }
 
@@ -84,13 +87,13 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
             Selected Issue Records
           </p>
           <h3 className="mt-1 max-w-[760px] font-serif text-[1.55rem] leading-[1.05] text-stone-950 sm:text-[2rem]">
-            {buildHeadline({ status: state.status, selectedCount, rows, name: legislator.name_display })}
+            {buildHeadline({ status: state.status, selectedCount: directionalCount, rows, name: legislator.name_display })}
           </h3>
         </div>
         <p className="max-w-md text-sm leading-6 text-stone-600">
-          {selectedCount === 0
+          {directionalCount === 0
             ? "Choose issue areas above to inspect reviewed records."
-            : "For neutral issue checks, the app shows reviewed records. Alignment labels appear only when you choose a direction."}
+            : "This section compares only your concrete for-or-against reviewed-measure choices with interpreted votes."}
         </p>
       </div>
 
