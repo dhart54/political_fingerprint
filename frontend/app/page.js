@@ -34,6 +34,7 @@ const DEFAULT_COMPARE_RIGHT = {
 export default function HomePage() {
   const [selectedLegislator, setSelectedLegislator] = useState(DEFAULT_LEGISLATOR);
   const [issuePreferences, setIssuePreferences] = useState({});
+  const [profileRead, setProfileRead] = useState(null);
   const [evidenceRequest, setEvidenceRequest] = useState(null);
   const [comparisonSeed, setComparisonSeed] = useState({
     left: DEFAULT_LEGISLATOR,
@@ -69,25 +70,29 @@ export default function HomePage() {
     };
   }, []);
 
+  useEffect(() => {
+    setProfileRead(null);
+  }, [selectedLegislator.id]);
+
   return (
     <main className="min-h-screen bg-[#f7f4ec] text-stone-900">
       <section className="mx-auto max-w-[1440px] px-4 py-4 sm:px-6 lg:py-5">
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,0.72fr)_minmax(500px,1.28fr)] lg:items-start">
-          <div className="rounded-2xl border border-stone-200 bg-white/75 px-4 py-3 shadow-[0_8px_22px_rgba(15,23,42,0.05)]">
+        <div className="grid gap-3 lg:grid-cols-[minmax(0,0.55fr)_minmax(520px,1.45fr)] lg:items-start">
+          <div className="rounded-2xl border border-stone-200 bg-white/75 px-4 py-2.5 shadow-[0_8px_22px_rgba(15,23,42,0.05)]">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">
                   Political Fingerprint
                 </p>
-                <h1 className="mt-1 font-serif text-[2rem] leading-[0.98] text-stone-950 sm:text-[2.7rem] lg:text-[3rem]">
-                  Strongest voting evidence first.
+                <h1 className="mt-1 font-serif text-[1.65rem] leading-[1] text-stone-950 sm:text-[2rem] lg:text-[2.25rem]">
+                  Voting record, explained.
                 </h1>
               </div>
-              <p className="max-w-[340px] text-sm leading-5 text-stone-700">
-                Current officials by reviewed issue evidence, with limited rows kept cautious.
+              <p className="max-w-[300px] text-sm leading-5 text-stone-700">
+                Start with the clearest reviewed patterns, then inspect the proof.
               </p>
             </div>
-            <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            <div className="mt-2 grid gap-2 sm:grid-cols-3">
               <HeroStat value={formatNumber(coverageMetadata?.legislator_count, "548")} label="legislators" />
               <HeroStat value={formatNumber(coverageMetadata?.eligible_roll_call_count, "8")} label="roll calls" />
               <HeroStat value={formatPercent(coverageMetadata?.source_url_share)} label="source links" />
@@ -135,6 +140,7 @@ export default function HomePage() {
               requestedAt: Date.now(),
             })
           }
+          onProfileRead={setProfileRead}
         />
 
         <PositionByIssue
@@ -145,6 +151,7 @@ export default function HomePage() {
         />
 
         <IssuePreferencePanel
+          positionRows={profileRead?.positions?.positions || []}
           preferences={issuePreferences}
           onChange={setIssuePreferences}
         />

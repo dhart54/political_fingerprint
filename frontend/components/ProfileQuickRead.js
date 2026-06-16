@@ -6,8 +6,9 @@ import { fetchDrift, fetchFingerprint, fetchPositionEvidence, fetchPositions } f
 import { getBestIssueRead } from "../lib/issueReadiness.mjs";
 import { formatDomainLabel } from "../lib/issueDomains";
 import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
+import { buildRecordNarrative } from "../lib/profileNarrative.mjs";
 
-export default function ProfileQuickRead({ legislator, onInspectDomain }) {
+export default function ProfileQuickRead({ legislator, onInspectDomain, onProfileRead }) {
   const [state, setState] = useState({
     status: "loading",
     fingerprint: null,
@@ -51,6 +52,11 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
           drift,
           error: null,
         });
+        onProfileRead?.({
+          fingerprint,
+          positions,
+          drift,
+        });
       } catch (error) {
         if (!active) {
           return;
@@ -79,28 +85,27 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
   const topPosition = buildTopPosition(positionRows);
   const coverage = buildCoverage(fingerprintRows);
   const drift = buildDriftRead(state.drift);
-  const sixtySecondRead = buildSixtySecondRead({
-    status: state.status,
-    topFocus,
-    topPosition,
-    coverage,
-    drift,
+  const narrative = buildRecordNarrative({
+    legislator,
+    positions: positionRows,
   });
 
   return (
     <section className="mt-3 rounded-2xl border border-cyan-900/10 bg-[linear-gradient(135deg,#083344,#115e59)] px-4 py-3 text-white shadow-[0_10px_28px_rgba(15,23,42,0.12)] lg:px-5">
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+      <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_minmax(420px,0.8fr)] xl:items-start">
         <div className="min-w-0">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100">
-            Quick Read
+            Record Summary
           </p>
           <h3 className="mt-1 max-w-[820px] font-serif text-[1.45rem] leading-[1.08] text-white sm:text-[1.85rem]">
-            {buildHeadline({
-              status: state.status,
-              name: legislator.name_display,
-              topFocus,
-              topPosition,
-            })}
+            {state.status === "ready"
+              ? narrative.headline
+              : buildHeadline({
+                  status: state.status,
+                  name: legislator.name_display,
+                  topFocus,
+                  topPosition,
+                })}
           </h3>
           <p className="mt-2 max-w-4xl text-[13px] leading-5 text-cyan-50">
             {state.status === "loading"
@@ -108,16 +113,44 @@ export default function ProfileQuickRead({ legislator, onInspectDomain }) {
               : null}
             {state.status === "error" ? state.error : null}
             {state.status === "ready"
-              ? sixtySecondRead
+              ? narrative.body
               : null}
           </p>
+          {state.status === "ready" ? (
+            <p className="mt-2 text-[12px] leading-5 text-cyan-100">
+              {narrative.evidenceLine}
+            </p>
+          ) : null}
         </div>
-        <div className="grid shrink-0 gap-2 sm:grid-cols-3 lg:min-w-[420px]">
+        <div className="grid shrink-0 gap-2 sm:grid-cols-3">
           <QuickMetric eyebrow="Best read" value={state.status === "ready" ? topPosition.value : "--"} />
           <QuickMetric eyebrow="Coverage" value={state.status === "ready" ? coverage.value : "--"} />
           <QuickMetric eyebrow="Change" value={state.status === "ready" ? drift.value : "--"} />
         </div>
       </div>
+
+      {state.status === "ready" && narrative.patternRows.length > 0 ? (
+        <div className="mt-3 grid gap-2 border-t border-white/10 pt-3 md:grid-cols-2 xl:grid-cols-4">
+          {narrative.patternRows.map((row) => (
+            <button
+              className="rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-left transition hover:bg-white/15"
+              key={row.domain}
+              onClick={() => onInspectDomain?.(row.domain)}
+              type="button"
+            >
+              <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-100">
+                {formatDomainLabel(row.domain)}
+              </p>
+              <p className="mt-1 text-sm font-medium leading-5 text-white">
+                {row.label} - {row.supportCount} for / {row.opposeCount} against
+              </p>
+              <p className="mt-1 text-xs leading-4 text-cyan-50">
+                {row.theme}
+              </p>
+            </button>
+          ))}
+        </div>
+      ) : null}
 
       {state.status === "ready" && topPosition.domain !== "NONE" ? (
         <div className="mt-3 flex flex-col gap-2 border-t border-white/10 pt-3 sm:flex-row sm:items-center sm:justify-between">

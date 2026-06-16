@@ -4,6 +4,7 @@ import { startTransition, useDeferredValue, useEffect, useState } from "react";
 
 import { fetchAlignment, fetchLegislatorComparison, fetchLegislatorSearch } from "../lib/api";
 import { formatDomainLabel } from "../lib/issueDomains";
+import { getDirectionalAlignmentPreferences } from "../lib/profileNarrative.mjs";
 
 export default function ComparisonPanel({
   defaultLeftLegislator,
@@ -35,6 +36,7 @@ export default function ComparisonPanel({
     right: null,
     error: null,
   });
+  const directionalPreferences = getDirectionalAlignmentPreferences(preferences);
 
   useEffect(() => {
     if (!seedPair?.left || !seedPair?.right) {
@@ -162,7 +164,7 @@ export default function ComparisonPanel({
 
   useEffect(() => {
     let active = true;
-    const preferenceCount = Object.keys(preferences).length;
+    const preferenceCount = Object.keys(directionalPreferences).length;
 
     if (preferenceCount === 0) {
       setAlignmentState({
@@ -186,8 +188,8 @@ export default function ComparisonPanel({
 
       try {
         const [left, right] = await Promise.all([
-          fetchAlignment({ legislatorId: selected.left.id, preferences }),
-          fetchAlignment({ legislatorId: selected.right.id, preferences }),
+          fetchAlignment({ legislatorId: selected.left.id, preferences: directionalPreferences }),
+          fetchAlignment({ legislatorId: selected.right.id, preferences: directionalPreferences }),
         ]);
         if (!active) {
           return;
@@ -206,11 +208,11 @@ export default function ComparisonPanel({
           status: "ready",
           left: buildFallbackAlignmentPayload({
             legislatorId: selected.left.id,
-            preferences,
+            preferences: directionalPreferences,
           }),
           right: buildFallbackAlignmentPayload({
             legislatorId: selected.right.id,
-            preferences,
+            preferences: directionalPreferences,
           }),
           error: null,
         });

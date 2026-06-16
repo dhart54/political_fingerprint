@@ -13,8 +13,8 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   const sourceButtonStart = source.indexOf("{row.source_url ?", voteRowStart);
   const detailsStart = source.indexOf("<details", voteRowStart);
 
-  assert.ok(source.includes("Start with {formatDomainLabel(startPlan.steps[0].domain)}"), "profile should provide a compact start path");
-  assert.ok(source.includes("Start with"), "quick read should tell voters where to begin");
+  assert.ok(source.includes("Record Summary"), "profile should provide one top-level record summary");
+  assert.ok(source.includes("narrative.patternRows"), "reviewed issue patterns should appear inside the top-level summary");
   assert.ok(source.includes("Open Best Read"), "quick read should provide a direct path to the strongest issue read");
   assert.ok(source.includes("Best place to start"), "strong issue cards should be visually prioritized");
   assert.ok(source.includes("Lower priority: read cautiously"), "limited issue cards should be lower priority");
@@ -50,6 +50,7 @@ test("representative page flow directs the voter without changing evidence logic
   ].join("\n");
 
   assert.match(source, /clearest reviewed issue read/);
+  assert.match(source, /Record Summary/);
   assert.match(source, /limited issue sections are intentionally lower priority/);
   assert.match(source, /The clearest sections get summarized first/);
   assert.match(source, /without being forced into a confident pattern/);
@@ -71,13 +72,15 @@ test("no-preference record views avoid alignment framing in neutral summaries", 
     readFileSync(new URL("../components/AlignmentPanel.js", import.meta.url), "utf8"),
     readFileSync(new URL("../components/ComparisonPanel.js", import.meta.url), "utf8"),
     readFileSync(new URL("../components/IssuePreferencePanel.js", import.meta.url), "utf8"),
+    readFileSync(new URL("./profileNarrative.mjs", import.meta.url), "utf8"),
   ].join("\n");
 
   assert.match(source, /Selected Issue Records/);
-  assert.match(source, /Choose issue areas to inspect/);
-  assert.match(source, /reviewed .*records.* shown/);
-  assert.match(source, /Evidence available/);
-  assert.match(source, /Alignment labels appear only when you choose a direction/);
+  assert.match(source, /Compare the record to concrete choices/);
+  assert.match(source, /I generally favored these measures/);
+  assert.match(source, /My views differ by measure/);
+  assert.match(source, /getDirectionalAlignmentPreferences/);
+  assert.match(source, /concrete for-or-against reviewed-measure choices/);
   assert.doesNotMatch(source, /Your Issues vs This Record|Pick what you want this record checked against|Record shown|record check/);
 });
 
@@ -91,6 +94,5 @@ test("issue cards use generalized readiness copy and contact follows vote cards"
   assert.match(source, /Useful comparison read\./);
   assert.match(source, /Read cautiously\./);
   assert.match(source, /not ready for a confident summary/);
-  assert.match(source, /Reviewed issue patterns/);
   assert.ok(billGroupIndex > 0 && civicActionIndex > billGroupIndex, "contact panel should render after vote cards");
 });

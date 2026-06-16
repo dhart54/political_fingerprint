@@ -1,5 +1,10 @@
 "use client";
 
+import {
+  GUIDED_PREFERENCE_OPTIONS,
+  buildConcretePreferencePrompt,
+} from "../lib/profileNarrative.mjs";
+
 const ISSUE_OPTIONS = [
   {
     domain: "ECONOMY_TAXES",
@@ -43,21 +48,6 @@ const ISSUE_OPTIONS = [
   },
 ];
 
-const STANCE_OPTIONS = [
-  {
-    value: "support_more_action",
-    label: "Support more action",
-  },
-  {
-    value: "oppose_more_action",
-    label: "Oppose more action",
-  },
-  {
-    value: "show_record",
-    label: "Just show record",
-  },
-];
-
 const STARTER_CHECKS = [
   {
     id: "costs",
@@ -79,8 +69,9 @@ const STARTER_CHECKS = [
   },
 ];
 
-export default function IssuePreferencePanel({ preferences, onChange }) {
+export default function IssuePreferencePanel({ positionRows = [], preferences, onChange }) {
   const selectedCount = Object.keys(preferences).length;
+  const positionByDomain = new Map((positionRows || []).map((row) => [row.domain, row]));
 
   function toggleIssue(domain) {
     if (preferences[domain]) {
@@ -92,7 +83,7 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
 
     onChange({
       ...preferences,
-      [domain]: "show_record",
+      [domain]: "not_sure",
     });
   }
 
@@ -106,7 +97,7 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
   function applyStarterCheck(starterCheck) {
     const nextPreferences = { ...preferences };
     starterCheck.domains.forEach((domain) => {
-      nextPreferences[domain] = preferences[domain] || "show_record";
+      nextPreferences[domain] = preferences[domain] || "not_sure";
     });
     onChange(nextPreferences);
   }
@@ -123,10 +114,10 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
             Your Issues
           </p>
           <h3 className="mt-1 max-w-[760px] font-serif text-[1.55rem] leading-[1.05] text-stone-950 sm:text-[2rem]">
-            Choose issue areas to inspect.
+            Compare the record to concrete choices.
           </h3>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-stone-700">
-            Your picks guide which reviewed records appear first. Choose a direction only when you want an alignment label.
+            Pick an issue, then say how you generally read the reviewed measures. Alignment appears only for a concrete for-or-against choice.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -168,7 +159,7 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
         })}
       </div>
 
-      <details className="mt-4 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3" open={selectedCount === 0}>
+      <details className="mt-4 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3" open>
         <summary className="cursor-pointer text-sm font-medium text-stone-900">
           Fine-tune individual issue domains
         </summary>
@@ -176,6 +167,7 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
           {ISSUE_OPTIONS.map((issue) => {
             const selectedStance = preferences[issue.domain];
             const isSelected = Boolean(selectedStance);
+            const prompt = buildConcretePreferencePrompt(positionByDomain.get(issue.domain));
 
             return (
               <article
@@ -189,7 +181,9 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <h4 className="text-sm font-medium leading-5 text-stone-950">{issue.label}</h4>
-                    <p className="mt-1 text-xs leading-5 text-stone-600">{issue.prompt}</p>
+                    <p className="mt-1 text-xs leading-5 text-stone-600">
+                      {prompt.canAsk ? prompt.prompt : issue.prompt}
+                    </p>
                   </div>
                   <button
                     className={`h-9 min-w-9 rounded-full border px-3 text-sm ${
@@ -207,7 +201,16 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
 
                 {isSelected ? (
                   <div className="mt-3 grid gap-2">
-                    {STANCE_OPTIONS.map((stance) => (
+                    {prompt.canAsk ? (
+                      <p className="rounded-lg border border-cyan-900/10 bg-white px-3 py-2 text-xs leading-5 text-stone-700">
+                        Choose the option closest to your view of these reviewed measures. If your view differs by measure, inspect the evidence instead of forcing one label.
+                      </p>
+                    ) : (
+                      <p className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-5 text-stone-700">
+                        Not enough reviewed Yes/No vote meaning is available for a safe alignment prompt yet.
+                      </p>
+                    )}
+                    {GUIDED_PREFERENCE_OPTIONS.map((stance) => (
                       <button
                         className={`rounded-full px-3 py-2 text-left text-xs uppercase tracking-[0.16em] ${
                           selectedStance === stance.value
@@ -232,8 +235,8 @@ export default function IssuePreferencePanel({ preferences, onChange }) {
 
       <div className="mt-3 rounded-xl border border-stone-200 bg-stone-50 px-3 py-2 text-sm leading-5 text-stone-700">
         {selectedCount === 0
-          ? "No issues selected yet. Pick one or more topics to add reviewed records below the ZIP lookup."
-          : `${selectedCount} issue ${selectedCount === 1 ? "selection is" : "selections are"} active for the reviewed-record and comparison sections on this page.`}
+          ? "No issue choices yet. Pick a concrete prompt when you want a personalized alignment check."
+          : `${selectedCount} issue ${selectedCount === 1 ? "choice is" : "choices are"} active. Not sure and views-differ choices do not create alignment labels.`}
       </div>
     </section>
   );
