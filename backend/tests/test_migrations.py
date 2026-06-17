@@ -12,6 +12,7 @@ LEGISLATOR_CONTACTS_MIGRATION_PATH = MIGRATIONS_DIR / "0007_legislator_contacts.
 VOTE_CONTEXTS_MIGRATION_PATH = MIGRATIONS_DIR / "0008_vote_contexts.sql"
 VOTE_INTERPRETATION_SO_WHAT_MIGRATION_PATH = MIGRATIONS_DIR / "0009_vote_interpretation_so_what_fields.sql"
 SENATE_AMENDMENT_REFERENCES_MIGRATION_PATH = MIGRATIONS_DIR / "0010_senate_amendment_references.sql"
+ROLL_CALL_SESSION_IDENTITY_MIGRATION_PATH = MIGRATIONS_DIR / "0012_roll_call_session_identity.sql"
 
 
 def test_initial_migration_defines_required_enums_and_tables() -> None:
@@ -194,3 +195,18 @@ def test_senate_amendment_references_migration_preserves_amendment_identity() ->
     assert "amendment_purpose text" in lowered
     assert "fact_only_uninterpreted" in lowered
     assert "idx_senate_amendment_references_parent_bill" in lowered
+
+
+def test_roll_call_session_identity_migration_makes_roll_numbers_session_aware() -> None:
+    migration_sql = ROLL_CALL_SESSION_IDENTITY_MIGRATION_PATH.read_text()
+    lowered = migration_sql.lower()
+
+    assert "alter table roll_calls" in lowered
+    assert "add column if not exists session integer" in lowered
+    assert "where session is null" in lowered
+    assert "alter column session set not null" in lowered
+    assert "roll_calls_session_valid" in lowered
+    assert "drop constraint if exists roll_calls_chamber_congress_rollcall_number_key" in lowered
+    assert "roll_calls_chamber_congress_session_rollcall_number_key" in lowered
+    assert "unique (chamber, congress, session, rollcall_number)" in lowered
+    assert "idx_roll_calls_session_identity" in lowered
