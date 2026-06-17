@@ -32,6 +32,8 @@ class SenateProductionState:
     existing_bill_keys: set[tuple[int, str, int]]
     legislator_bioguide_ids: set[str]
     roll_numbers_with_interpretations: set[int]
+    existing_roll_keys: set[tuple[int, int]] | None = None
+    roll_keys_with_interpretations: set[tuple[int, int]] | None = None
 
 
 @dataclass(frozen=True)
@@ -158,6 +160,7 @@ def run_senate_fact_dry_run(
 
         congress = int(candidate.get("congress") or 0)
         vote_date = str(candidate.get("date") or "")
+        roll_key = _candidate_roll_key(candidate)
         if congress != 119 or not vote_date.startswith("2025-"):
             unsupported_roll_numbers.append(roll_number)
             errors.append(f"Roll {roll_number} is outside the 119th Congress / 2025 scope.")
@@ -170,11 +173,11 @@ def run_senate_fact_dry_run(
             errors.append(f"Roll {roll_number} has unsupported fact-only bill type {manifest_bill_type!r}.")
             continue
 
-        if production_state and roll_number in production_state.roll_numbers_with_interpretations:
+        if production_state and roll_key in _roll_keys_with_interpretations(production_state):
             errors.append(f"Roll {roll_number} already has vote_interpretations rows; dry run fails closed.")
             continue
 
-        if production_state and roll_number in production_state.existing_roll_numbers:
+        if production_state and roll_key in _existing_roll_keys(production_state):
             if skip_existing:
                 skipped_existing.append(roll_number)
                 continue
@@ -311,12 +314,12 @@ def run_senate_fact_import(
             inserted_bills = _insert_bills(cursor, import_rows["bills"])
             bill_id_map = _fetch_bill_id_map(cursor, list(import_rows["bill_keys"]))
             inserted_roll_calls = _insert_roll_calls(cursor, import_rows["roll_calls"], bill_id_map)
-            roll_call_id_map = _fetch_roll_call_id_map(cursor, import_rows["roll_numbers"])
+            roll_call_id_map = _fetch_roll_call_id_map(cursor, import_rows["roll_keys"])
             legislator_id_map = _fetch_legislator_id_map(cursor)
             inserted_votes_cast = _insert_votes_cast(
                 cursor,
                 import_rows["votes_cast"],
-                import_rows["roll_numbers_by_internal_id"],
+                import_rows["roll_keys_by_internal_id"],
                 import_rows["bioguide_by_internal_legislator_id"],
                 roll_call_id_map,
                 legislator_id_map,
@@ -324,7 +327,7 @@ def run_senate_fact_import(
             inserted_vote_contexts = _insert_vote_contexts(
                 cursor,
                 import_rows["vote_contexts"],
-                import_rows["roll_numbers_by_internal_id"],
+                import_rows["roll_keys_by_internal_id"],
                 import_rows["bioguide_by_internal_legislator_id"],
                 roll_call_id_map,
                 legislator_id_map,
@@ -367,10 +370,16 @@ def load_production_state_for_manifest(*, manifest_path: Path) -> SenateProducti
     connection = get_connection()
     try:
         connection.execute("SET default_transaction_read_only = on")
-        existing_rolls = _fetch_existing_roll_numbers(connection, roll_numbers)
+        roll_keys = [
+            _candidate_roll_key(candidate)
+            for candidate in manifest.get("included_candidate_roll_calls", [])
+        ]
+        existing_roll_keys = _fetch_existing_roll_keys(connection, roll_keys)
+        existing_rolls = {roll_number for _, roll_number in existing_roll_keys}
         existing_bills = _fetch_existing_bill_keys(connection, bill_keys)
         legislator_ids = _fetch_legislator_bioguide_ids(connection)
-        interpreted_rolls = _fetch_roll_numbers_with_interpretations(connection, roll_numbers)
+        interpreted_roll_keys = _fetch_roll_keys_with_interpretations(connection, roll_keys)
+        interpreted_rolls = {roll_number for _, roll_number in interpreted_roll_keys}
     finally:
         connection.close()
 
@@ -379,6 +388,8 @@ def load_production_state_for_manifest(*, manifest_path: Path) -> SenateProducti
         existing_bill_keys=existing_bills,
         legislator_bioguide_ids=legislator_ids,
         roll_numbers_with_interpretations=interpreted_rolls,
+        existing_roll_keys=existing_roll_keys,
+        roll_keys_with_interpretations=interpreted_roll_keys,
     )
 
 
@@ -406,6 +417,7 @@ def _build_import_rows(
     parsed_votes: list[dict[str, object]] = []
     bills: dict[tuple[int, str, int], dict[str, object]] = {}
     roll_numbers_by_internal_id: dict[str, int] = {}
+    roll_keys_by_internal_id: dict[str, tuple[int, int]] = {}
     bioguide_by_internal_legislator_id: dict[str, str] = {
         str(legislator["id"]): str(legislator["bioguide_id"])
         for legislator in legislators_by_lis.values()
@@ -413,7 +425,8 @@ def _build_import_rows(
 
     for candidate in candidates:
         roll_number = int(candidate["roll_number"])
-        if roll_number in production_state.existing_roll_numbers:
+        roll_key = _candidate_roll_key(candidate)
+        if roll_key in _existing_roll_keys(production_state):
             if skip_existing:
                 continue
             raise ValueError(f"Roll {roll_number} is already present in production.")
@@ -435,6 +448,7 @@ def _build_import_rows(
         parsed_votes.extend(votes)
         bills[bill_key] = bill
         roll_numbers_by_internal_id[str(roll_call["id"])] = roll_number
+        roll_keys_by_internal_id[str(roll_call["id"])] = roll_key
         bioguide_by_internal_legislator_id.update(
             {
                 str(legislator["id"]): str(legislator["bioguide_id"])
@@ -464,7 +478,9 @@ def _build_import_rows(
         "bill_keys": set(bills),
         "roll_calls": parsed_roll_calls,
         "roll_numbers": sorted(roll_numbers_by_internal_id.values()),
+        "roll_keys": sorted(set(roll_keys_by_internal_id.values())),
         "roll_numbers_by_internal_id": roll_numbers_by_internal_id,
+        "roll_keys_by_internal_id": roll_keys_by_internal_id,
         "bioguide_by_internal_legislator_id": bioguide_by_internal_legislator_id,
         "votes_cast": parsed_votes,
         "vote_contexts": contexts,
@@ -511,7 +527,7 @@ def _insert_roll_calls(
                 question, description, bill_id, source_url
             )
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-            ON CONFLICT (chamber, congress, rollcall_number) DO NOTHING
+            ON CONFLICT (chamber, congress, session, rollcall_number) DO NOTHING
             RETURNING id
             """,
             (
@@ -534,14 +550,14 @@ def _insert_roll_calls(
 def _insert_votes_cast(
     cursor,
     votes: list[dict[str, object]],
-    roll_numbers_by_internal_id: dict[str, int],
+    roll_keys_by_internal_id: dict[str, tuple[int, int]],
     bioguide_by_internal_legislator_id: dict[str, str],
-    roll_call_id_map: dict[int, int],
+    roll_call_id_map: dict[tuple[int, int], int],
     legislator_id_map: dict[str, int],
 ) -> int:
     inserted = 0
     for vote in votes:
-        roll_number = roll_numbers_by_internal_id[str(vote["roll_call_id"])]
+        roll_key = roll_keys_by_internal_id[str(vote["roll_call_id"])]
         bioguide_id = bioguide_by_internal_legislator_id[str(vote["legislator_id"])]
         cursor.execute(
             """
@@ -551,7 +567,7 @@ def _insert_votes_cast(
             RETURNING id
             """,
             (
-                roll_call_id_map[roll_number],
+                roll_call_id_map[roll_key],
                 legislator_id_map[bioguide_id],
                 vote["position"],
             ),
@@ -564,14 +580,14 @@ def _insert_votes_cast(
 def _insert_vote_contexts(
     cursor,
     contexts: list[dict[str, object]],
-    roll_numbers_by_internal_id: dict[str, int],
+    roll_keys_by_internal_id: dict[str, tuple[int, int]],
     bioguide_by_internal_legislator_id: dict[str, str],
-    roll_call_id_map: dict[int, int],
+    roll_call_id_map: dict[tuple[int, int], int],
     legislator_id_map: dict[str, int],
 ) -> int:
     inserted = 0
     for row in contexts:
-        roll_number = roll_numbers_by_internal_id[str(row["roll_call_id"])]
+        roll_key = roll_keys_by_internal_id[str(row["roll_call_id"])]
         bioguide_id = bioguide_by_internal_legislator_id[str(row["legislator_id"])]
         cursor.execute(
             """
@@ -587,7 +603,7 @@ def _insert_vote_contexts(
             RETURNING roll_call_id
             """,
             (
-                roll_call_id_map[roll_number],
+                roll_call_id_map[roll_key],
                 legislator_id_map[bioguide_id],
                 row["chamber_session"],
                 row["vote_type"],
@@ -632,20 +648,23 @@ def _fetch_bill_id_map(cursor, bill_keys: list[tuple[int, str, int]]) -> dict[tu
     }
 
 
-def _fetch_roll_call_id_map(cursor, roll_numbers: list[int]) -> dict[int, int]:
-    if not roll_numbers:
+def _fetch_roll_call_id_map(cursor, roll_keys: list[tuple[int, int]]) -> dict[tuple[int, int], int]:
+    if not roll_keys:
         return {}
+    sessions = [key[0] for key in roll_keys]
+    roll_numbers = [key[1] for key in roll_keys]
     cursor.execute(
         """
-        SELECT id, rollcall_number
+        SELECT id, session, rollcall_number
         FROM roll_calls
         WHERE chamber = 'senate'
           AND congress = 119
-          AND rollcall_number = ANY(%s)
+          AND (session, rollcall_number)
+            IN (SELECT * FROM UNNEST(%s::int[], %s::int[]))
         """,
-        (roll_numbers,),
+        (sessions, roll_numbers),
     )
-    return {int(row[1]): int(row[0]) for row in cursor.fetchall()}
+    return {(int(row[1]), int(row[2])): int(row[0]) for row in cursor.fetchall()}
 
 
 def _fetch_legislator_id_map(cursor) -> dict[str, int]:
@@ -660,21 +679,24 @@ def _bill_key_from_ref(bill_ref: str) -> tuple[int, str, int]:
     return int(match[1]), match[2].lower(), int(match[3])
 
 
-def _fetch_existing_roll_numbers(connection, roll_numbers: list[int]) -> set[int]:
-    if not roll_numbers:
+def _fetch_existing_roll_keys(connection, roll_keys: list[tuple[int, int]]) -> set[tuple[int, int]]:
+    if not roll_keys:
         return set()
+    sessions = [key[0] for key in roll_keys]
+    roll_numbers = [key[1] for key in roll_keys]
     with connection.cursor() as cursor:
         cursor.execute(
             """
-            SELECT rollcall_number
+            SELECT session, rollcall_number
             FROM roll_calls
             WHERE chamber = 'senate'
               AND congress = 119
-              AND rollcall_number = ANY(%s)
+              AND (session, rollcall_number)
+                IN (SELECT * FROM UNNEST(%s::int[], %s::int[]))
             """,
-            (roll_numbers,),
+            (sessions, roll_numbers),
         )
-        return {int(row[0]) for row in cursor.fetchall()}
+        return {(int(row[0]), int(row[1])) for row in cursor.fetchall()}
 
 
 def _fetch_existing_bill_keys(connection, bill_keys: list[tuple[int, str, int]]) -> set[tuple[int, str, int]]:
@@ -702,23 +724,53 @@ def _fetch_legislator_bioguide_ids(connection) -> set[str]:
         return {str(row[0]) for row in cursor.fetchall()}
 
 
-def _fetch_roll_numbers_with_interpretations(connection, roll_numbers: list[int]) -> set[int]:
-    if not roll_numbers:
+def _fetch_roll_keys_with_interpretations(connection, roll_keys: list[tuple[int, int]]) -> set[tuple[int, int]]:
+    if not roll_keys:
         return set()
+    sessions = [key[0] for key in roll_keys]
+    roll_numbers = [key[1] for key in roll_keys]
     with connection.cursor() as cursor:
         cursor.execute(
             """
-            SELECT rc.rollcall_number
+            SELECT rc.session, rc.rollcall_number
             FROM roll_calls rc
             JOIN vote_interpretations vi
               ON vi.roll_call_id = rc.id
             WHERE rc.chamber = 'senate'
               AND rc.congress = 119
-              AND rc.rollcall_number = ANY(%s)
+              AND (rc.session, rc.rollcall_number)
+                IN (SELECT * FROM UNNEST(%s::int[], %s::int[]))
             """,
-            (roll_numbers,),
+            (sessions, roll_numbers),
         )
-        return {int(row[0]) for row in cursor.fetchall()}
+        return {(int(row[0]), int(row[1])) for row in cursor.fetchall()}
+
+
+def _candidate_roll_key(candidate: dict[str, object]) -> tuple[int, int]:
+    return (_candidate_session(candidate), int(candidate.get("roll_number") or 0))
+
+
+def _candidate_session(candidate: dict[str, object]) -> int:
+    if candidate.get("session") is not None:
+        return int(candidate["session"])
+    vote_date = str(candidate.get("date") or "")
+    if vote_date.startswith("2025-"):
+        return 1
+    if vote_date.startswith("2026-"):
+        return 2
+    raise ValueError(f"Cannot infer official Senate session for candidate date {vote_date!r}.")
+
+
+def _existing_roll_keys(production_state: SenateProductionState) -> set[tuple[int, int]]:
+    if production_state.existing_roll_keys is not None:
+        return set(production_state.existing_roll_keys)
+    return {(1, roll_number) for roll_number in production_state.existing_roll_numbers}
+
+
+def _roll_keys_with_interpretations(production_state: SenateProductionState) -> set[tuple[int, int]]:
+    if production_state.roll_keys_with_interpretations is not None:
+        return set(production_state.roll_keys_with_interpretations)
+    return {(1, roll_number) for roll_number in production_state.roll_numbers_with_interpretations}
 
 
 def _find_missing_production_legislators(

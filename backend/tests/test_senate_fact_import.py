@@ -86,6 +86,19 @@ def test_senate_fact_dry_run_skips_existing_roll_when_explicit() -> None:
     assert result.errors == []
 
 
+def test_senate_fact_dry_run_treats_same_roll_number_in_different_session_as_distinct() -> None:
+    result = run_senate_fact_dry_run(
+        manifest_path=MANIFEST_PATH,
+        senate_xml_dir=SENATE_XML_DIR,
+        production_state=_local_production_state(existing_roll_keys={(2, 97)}),
+        skip_existing=False,
+    )
+
+    assert 97 in result.candidate_roll_numbers
+    assert result.planned_roll_call_inserts == 23
+    assert result.errors == []
+
+
 def test_senate_fact_dry_run_fails_closed_if_target_has_interpretation() -> None:
     result = run_senate_fact_dry_run(
         manifest_path=MANIFEST_PATH,
@@ -135,6 +148,7 @@ def _local_production_state(
     *,
     existing_roll_numbers: set[int] | None = None,
     roll_numbers_with_interpretations: set[int] | None = None,
+    existing_roll_keys: set[tuple[int, int]] | None = None,
 ) -> SenateProductionState:
     member_tree = ElementTree.parse(SENATE_XML_DIR / "members.xml")
     bioguide_ids = {
@@ -146,4 +160,5 @@ def _local_production_state(
         existing_bill_keys=set(),
         legislator_bioguide_ids=bioguide_ids,
         roll_numbers_with_interpretations=roll_numbers_with_interpretations or set(),
+        existing_roll_keys=existing_roll_keys,
     )
