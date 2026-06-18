@@ -194,6 +194,36 @@ Post-import dry-run planned zero additional writes:
 | vote_classifications | 0 |
 | vote_interpretations | 0 |
 
+## Derived Precompute Refresh
+
+Public deployment validation found that the fact/classification rows were present in production but not visible in public position/evidence endpoints because the latest precomputed fingerprint window still ended before the new 2026 rows.
+
+The refresh workflow now supports a bounded derived-output stage:
+
+```powershell
+python -m app.etl.current_congress_refresh --house-latest-roll 222 --senate-latest-roll 178 --precompute-dry-run --as-of 2026-06-17
+python -m app.etl.current_congress_refresh --house-latest-roll 222 --senate-latest-roll 178 --write-precompute --as-of 2026-06-17 --approval-phrase "<approval phrase>"
+```
+
+Precompute dry-run found zero existing rows for the `2026-06-17` window and planned:
+
+| Table | Planned rows |
+| --- | ---: |
+| fingerprints | 4,416 |
+| chamber_medians | 48 |
+| drift_scores | 552 |
+| summaries | 552 |
+
+The bounded precompute write inserted/updated exactly those rows. A repeat run changed zero rows.
+
+Rollback artifact:
+
+```text
+docs/review_packets/current_congress_precompute_rollback.sql
+```
+
+The rollback is scoped only to the `2026-06-17` / `v1` precomputed output window and does not touch facts, classifications, or interpretations.
+
 ## Guardrails
 
 - No support/opposition methodology changed.
@@ -225,6 +255,7 @@ Final command results:
 - targeted backend suite: 32 passed;
 - production post-import invariant check: passed;
 - post-import idempotency dry-run: passed, zero planned writes;
+- derived precompute idempotency: passed, zero changed rows on rerun;
 - `git diff --check`: passed with normal Windows CRLF notices.
 
 ## Next Operating Cadence

@@ -5,6 +5,7 @@ import json
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
+from statistics import median
 
 from app.classification.classifier import classify_vote
 from app.classification.eligibility import evaluate_eligibility
@@ -22,6 +23,9 @@ from app.etl.interpret import interpret_roll_call
 from app.etl.senate_xml_adapter import SENATE_XML_SAMPLE_DIR, load_senate_xml_bundle
 from app.etl.types import FixtureBundle
 from app.etl.vote_context import build_vote_contexts
+from app.metrics.drift import compute_drift
+from app.metrics.fingerprint import build_eligible_vote, compute_fingerprint
+from app.summaries.cache import build_fallback_summary
 
 
 CURRENT_CONGRESS = 119
@@ -81,6 +85,32 @@ class RefreshPlan:
             "deferred_rows": self.deferred_rows,
             "errors": self.errors,
             "safe_to_write": not self.errors,
+        }
+
+
+@dataclass(frozen=True)
+class PrecomputePlan:
+    as_of: date
+    window_start: date
+    window_end: date
+    fingerprint_rows: int
+    chamber_median_rows: int
+    drift_rows: int
+    summary_rows: int
+    existing_window_rows: dict[str, int]
+
+    def to_dict(self) -> dict[str, object]:
+        return {
+            "as_of": self.as_of.isoformat(),
+            "window_start": self.window_start.isoformat(),
+            "window_end": self.window_end.isoformat(),
+            "planned_upserts": {
+                "fingerprints": self.fingerprint_rows,
+                "chamber_medians": self.chamber_median_rows,
+                "drift_scores": self.drift_rows,
+                "summaries": self.summary_rows,
+            },
+            "existing_window_rows": self.existing_window_rows,
         }
 
 
@@ -233,6 +263,96 @@ def write_refresh(
     }
 
 
+def build_precompute_plan(*, as_of: date) -> PrecomputePlan:
+    connection = get_connection()
+    try:
+        with connection.cursor() as cursor:
+            legislators = _fetch_production_legislators(cursor)
+            eligible_votes = _fetch_production_eligible_votes(cursor)
+            fingerprint_rows = _build_fingerprint_rows(
+                legislators=legislators,
+                eligible_votes=eligible_votes,
+                as_of=as_of,
+            )
+            chamber_median_rows = _build_chamber_median_rows(
+                legislators=legislators,
+                fingerprint_rows=fingerprint_rows,
+                as_of=as_of,
+            )
+            drift_rows = _build_drift_rows(
+                legislators=legislators,
+                eligible_votes=eligible_votes,
+                as_of=as_of,
+            )
+            summary_rows = _build_summary_rows(
+                legislators=legislators,
+                fingerprint_rows=fingerprint_rows,
+                drift_rows=drift_rows,
+                as_of=as_of,
+            )
+            existing_window_rows = _fetch_existing_precompute_window_counts(cursor, as_of=as_of)
+    finally:
+        connection.close()
+
+    window_start = fingerprint_rows[0]["window_start"] if fingerprint_rows else as_of
+    return PrecomputePlan(
+        as_of=as_of,
+        window_start=window_start,
+        window_end=as_of,
+        fingerprint_rows=len(fingerprint_rows),
+        chamber_median_rows=len(chamber_median_rows),
+        drift_rows=len(drift_rows),
+        summary_rows=len(summary_rows),
+        existing_window_rows=existing_window_rows,
+    )
+
+
+def write_precomputed_outputs(*, as_of: date, approval_phrase: str) -> dict[str, object]:
+    if approval_phrase != APPROVAL_PHRASE:
+        raise ValueError("Approval phrase does not match the current-Congress refresh gate.")
+
+    connection = get_connection()
+    try:
+        with connection.cursor() as cursor:
+            legislators = _fetch_production_legislators(cursor)
+            eligible_votes = _fetch_production_eligible_votes(cursor)
+            fingerprint_rows = _build_fingerprint_rows(
+                legislators=legislators,
+                eligible_votes=eligible_votes,
+                as_of=as_of,
+            )
+            chamber_median_rows = _build_chamber_median_rows(
+                legislators=legislators,
+                fingerprint_rows=fingerprint_rows,
+                as_of=as_of,
+            )
+            drift_rows = _build_drift_rows(
+                legislators=legislators,
+                eligible_votes=eligible_votes,
+                as_of=as_of,
+            )
+            summary_rows = _build_summary_rows(
+                legislators=legislators,
+                fingerprint_rows=fingerprint_rows,
+                drift_rows=drift_rows,
+                as_of=as_of,
+            )
+            updated = {
+                "fingerprints": _upsert_fingerprints(cursor, fingerprint_rows),
+                "chamber_medians": _upsert_chamber_medians(cursor, chamber_median_rows),
+                "drift_scores": _upsert_drift_scores(cursor, drift_rows),
+                "summaries": _upsert_summaries(cursor, summary_rows),
+            }
+        connection.commit()
+    except Exception:
+        connection.rollback()
+        raise
+    finally:
+        connection.close()
+
+    return {"as_of": as_of.isoformat(), "updated_or_inserted": updated}
+
+
 def load_production_state() -> ProductionState:
     connection = get_connection()
     try:
@@ -256,6 +376,224 @@ def load_production_state() -> ProductionState:
         existing_classification_roll_ids=classifications,
         existing_interpretation_roll_ids=interpretations,
     )
+
+
+def _fetch_production_legislators(cursor) -> list[dict[str, object]]:
+    cursor.execute(
+        """
+        SELECT id, bioguide_id, name_display, chamber, state, district, party, in_office
+        FROM legislators
+        ORDER BY id
+        """
+    )
+    return [
+        {
+            "id": int(row[0]),
+            "bioguide_id": str(row[1]),
+            "name_display": str(row[2]),
+            "chamber": str(row[3]),
+            "state": str(row[4]),
+            "district": row[5],
+            "party": str(row[6]),
+            "in_office": bool(row[7]),
+        }
+        for row in cursor.fetchall()
+    ]
+
+
+def _fetch_production_eligible_votes(cursor) -> list:
+    cursor.execute(
+        """
+        SELECT vc.legislator_id, rc.vote_date, vcf.primary_domain
+        FROM votes_cast vc
+        JOIN roll_calls rc ON rc.id = vc.roll_call_id
+        JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        WHERE vcf.is_eligible = TRUE
+          AND vcf.primary_domain IS NOT NULL
+          AND vcf.classification_version = %s
+        """,
+        (CLASSIFICATION_VERSION,),
+    )
+    return [
+        build_eligible_vote(
+            legislator_id=int(row[0]),
+            vote_date=row[1],
+            primary_domain=str(row[2]),
+        )
+        for row in cursor.fetchall()
+    ]
+
+
+def _build_fingerprint_rows(*, legislators: list[dict[str, object]], eligible_votes: list, as_of: date) -> list[dict[str, object]]:
+    rows = []
+    for legislator in legislators:
+        for record in compute_fingerprint(
+            legislator_id=int(legislator["id"]),
+            votes=eligible_votes,
+            as_of=as_of,
+            classification_version=CLASSIFICATION_VERSION,
+        ):
+            rows.append(
+                {
+                    "legislator_id": record.legislator_id,
+                    "window_start": record.window_start,
+                    "window_end": record.window_end,
+                    "classification_version": record.classification_version,
+                    "domain": record.domain,
+                    "vote_count": record.vote_count,
+                    "total_votes": record.total_votes,
+                    "vote_share": record.vote_share,
+                }
+            )
+    return rows
+
+
+def _build_chamber_median_rows(
+    *,
+    legislators: list[dict[str, object]],
+    fingerprint_rows: list[dict[str, object]],
+    as_of: date,
+) -> list[dict[str, object]]:
+    metadata = {int(row["id"]): row for row in legislators}
+    domains = sorted({str(row["domain"]) for row in fingerprint_rows})
+    window_start = fingerprint_rows[0]["window_start"] if fingerprint_rows else as_of
+    rows = []
+    for chamber in ("house", "senate"):
+        chamber_rows = [
+            row
+            for row in fingerprint_rows
+            if metadata[int(row["legislator_id"])]["chamber"] == chamber
+        ]
+        for party in ("ALL", "D", "R"):
+            party_rows = [
+                row
+                for row in chamber_rows
+                if party == "ALL" or metadata[int(row["legislator_id"])]["party"] == party
+            ]
+            for domain in domains:
+                shares = [float(row["vote_share"]) for row in party_rows if row["domain"] == domain]
+                rows.append(
+                    {
+                        "chamber": chamber,
+                        "party": party,
+                        "window_start": window_start,
+                        "window_end": as_of,
+                        "classification_version": CLASSIFICATION_VERSION,
+                        "domain": domain,
+                        "legislator_count": len(shares),
+                        "median_share": median(shares) if shares else 0.0,
+                    }
+                )
+    return rows
+
+
+def _build_drift_rows(*, legislators: list[dict[str, object]], eligible_votes: list, as_of: date) -> list[dict[str, object]]:
+    rows = []
+    for legislator in legislators:
+        record = compute_drift(
+            legislator_id=int(legislator["id"]),
+            votes=eligible_votes,
+            as_of=as_of,
+            classification_version=CLASSIFICATION_VERSION,
+        )
+        rows.append(
+            {
+                "legislator_id": record.legislator_id,
+                "window_start": record.window_start,
+                "window_end": record.window_end,
+                "early_window_start": record.early_window_start,
+                "early_window_end": record.early_window_end,
+                "recent_window_start": record.recent_window_start,
+                "recent_window_end": record.recent_window_end,
+                "classification_version": record.classification_version,
+                "total_votes": record.total_votes,
+                "early_total_votes": record.early_total_votes,
+                "recent_total_votes": record.recent_total_votes,
+                "insufficient_data": record.insufficient_data,
+                "drift_value": record.drift_value,
+            }
+        )
+    return rows
+
+
+def _build_summary_rows(
+    *,
+    legislators: list[dict[str, object]],
+    fingerprint_rows: list[dict[str, object]],
+    drift_rows: list[dict[str, object]],
+    as_of: date,
+) -> list[dict[str, object]]:
+    fingerprints_by_legislator: dict[int, list[dict[str, object]]] = {}
+    for row in fingerprint_rows:
+        fingerprints_by_legislator.setdefault(int(row["legislator_id"]), []).append(row)
+    drift_by_legislator = {int(row["legislator_id"]): row for row in drift_rows}
+
+    rows = []
+    for legislator in legislators:
+        legislator_id = int(legislator["id"])
+        fp_rows = fingerprints_by_legislator.get(legislator_id, [])
+        if not fp_rows:
+            continue
+        drift = drift_by_legislator[legislator_id]
+        summary_text = build_fallback_summary(
+            fingerprint={
+                "window_end": as_of.isoformat(),
+                "classification_version": CLASSIFICATION_VERSION,
+                "fingerprint": [
+                    {
+                        "domain": row["domain"],
+                        "vote_count": row["vote_count"],
+                        "total_votes": row["total_votes"],
+                        "vote_share": row["vote_share"],
+                    }
+                    for row in fp_rows
+                ],
+            },
+            drift={
+                "insufficient_data": drift["insufficient_data"],
+                "drift_value": drift["drift_value"],
+            },
+        )
+        rows.append(
+            {
+                "legislator_id": legislator_id,
+                "window_end": as_of,
+                "classification_version": CLASSIFICATION_VERSION,
+                "summary_text": summary_text,
+                "generation_method": "deterministic_fallback",
+                "created_at": f"{as_of.isoformat()}T00:00:00+00:00",
+            }
+        )
+    return rows
+
+
+def _fetch_existing_precompute_window_counts(cursor, *, as_of: date) -> dict[str, int]:
+    cursor.execute(
+        """
+        SELECT
+          (SELECT COUNT(*) FROM fingerprints WHERE window_end = %s AND classification_version = %s),
+          (SELECT COUNT(*) FROM chamber_medians WHERE window_end = %s AND classification_version = %s),
+          (SELECT COUNT(*) FROM drift_scores WHERE window_end = %s AND classification_version = %s),
+          (SELECT COUNT(*) FROM summaries WHERE window_end = %s AND classification_version = %s)
+        """,
+        (
+            as_of,
+            CLASSIFICATION_VERSION,
+            as_of,
+            CLASSIFICATION_VERSION,
+            as_of,
+            CLASSIFICATION_VERSION,
+            as_of,
+            CLASSIFICATION_VERSION,
+        ),
+    )
+    row = cursor.fetchone()
+    return {
+        "fingerprints": int(row[0]),
+        "chamber_medians": int(row[1]),
+        "drift_scores": int(row[2]),
+        "summaries": int(row[3]),
+    }
 
 
 def _build_import_rows(*, bundle: FixtureBundle, production_state: ProductionState) -> dict[str, object]:
@@ -573,6 +911,161 @@ def _insert_interpretations(cursor, interpretations, roll_keys_by_internal_id, r
     return max(cursor.rowcount, 0)
 
 
+def _upsert_fingerprints(cursor, rows: list[dict[str, object]]) -> int:
+    cursor.executemany(
+        """
+        INSERT INTO fingerprints (
+            legislator_id, window_start, window_end, classification_version,
+            domain, vote_count, total_votes, vote_share
+        )
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        ON CONFLICT (legislator_id, window_start, window_end, classification_version, domain)
+        DO UPDATE SET
+            vote_count = EXCLUDED.vote_count,
+            total_votes = EXCLUDED.total_votes,
+            vote_share = EXCLUDED.vote_share,
+            updated_at = NOW()
+        WHERE fingerprints.vote_count IS DISTINCT FROM EXCLUDED.vote_count
+           OR fingerprints.total_votes IS DISTINCT FROM EXCLUDED.total_votes
+           OR fingerprints.vote_share IS DISTINCT FROM EXCLUDED.vote_share
+        """,
+        [
+            (
+                row["legislator_id"],
+                row["window_start"],
+                row["window_end"],
+                row["classification_version"],
+                row["domain"],
+                row["vote_count"],
+                row["total_votes"],
+                row["vote_share"],
+            )
+            for row in rows
+        ],
+    )
+    return max(cursor.rowcount, 0)
+
+
+def _upsert_chamber_medians(cursor, rows: list[dict[str, object]]) -> int:
+    cursor.executemany(
+        """
+        INSERT INTO chamber_medians (
+            chamber, party, window_start, window_end, classification_version,
+            domain, legislator_count, median_share
+        )
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        ON CONFLICT (chamber, party, window_start, window_end, classification_version, domain)
+        DO UPDATE SET
+            legislator_count = EXCLUDED.legislator_count,
+            median_share = EXCLUDED.median_share,
+            updated_at = NOW()
+        WHERE chamber_medians.legislator_count IS DISTINCT FROM EXCLUDED.legislator_count
+           OR chamber_medians.median_share IS DISTINCT FROM EXCLUDED.median_share
+        """,
+        [
+            (
+                row["chamber"],
+                row["party"],
+                row["window_start"],
+                row["window_end"],
+                row["classification_version"],
+                row["domain"],
+                row["legislator_count"],
+                row["median_share"],
+            )
+            for row in rows
+        ],
+    )
+    return max(cursor.rowcount, 0)
+
+
+def _upsert_drift_scores(cursor, rows: list[dict[str, object]]) -> int:
+    cursor.executemany(
+        """
+        INSERT INTO drift_scores (
+            legislator_id, window_start, window_end, early_window_start,
+            early_window_end, recent_window_start, recent_window_end,
+            classification_version, total_votes, early_total_votes,
+            recent_total_votes, insufficient_data, drift_value
+        )
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        ON CONFLICT (legislator_id, window_start, window_end, classification_version)
+        DO UPDATE SET
+            early_window_start = EXCLUDED.early_window_start,
+            early_window_end = EXCLUDED.early_window_end,
+            recent_window_start = EXCLUDED.recent_window_start,
+            recent_window_end = EXCLUDED.recent_window_end,
+            total_votes = EXCLUDED.total_votes,
+            early_total_votes = EXCLUDED.early_total_votes,
+            recent_total_votes = EXCLUDED.recent_total_votes,
+            insufficient_data = EXCLUDED.insufficient_data,
+            drift_value = EXCLUDED.drift_value,
+            updated_at = NOW()
+        WHERE drift_scores.early_window_start IS DISTINCT FROM EXCLUDED.early_window_start
+           OR drift_scores.early_window_end IS DISTINCT FROM EXCLUDED.early_window_end
+           OR drift_scores.recent_window_start IS DISTINCT FROM EXCLUDED.recent_window_start
+           OR drift_scores.recent_window_end IS DISTINCT FROM EXCLUDED.recent_window_end
+           OR drift_scores.total_votes IS DISTINCT FROM EXCLUDED.total_votes
+           OR drift_scores.early_total_votes IS DISTINCT FROM EXCLUDED.early_total_votes
+           OR drift_scores.recent_total_votes IS DISTINCT FROM EXCLUDED.recent_total_votes
+           OR drift_scores.insufficient_data IS DISTINCT FROM EXCLUDED.insufficient_data
+           OR drift_scores.drift_value IS DISTINCT FROM EXCLUDED.drift_value
+        """,
+        [
+            (
+                row["legislator_id"],
+                row["window_start"],
+                row["window_end"],
+                row["early_window_start"],
+                row["early_window_end"],
+                row["recent_window_start"],
+                row["recent_window_end"],
+                row["classification_version"],
+                row["total_votes"],
+                row["early_total_votes"],
+                row["recent_total_votes"],
+                row["insufficient_data"],
+                row["drift_value"],
+            )
+            for row in rows
+        ],
+    )
+    return max(cursor.rowcount, 0)
+
+
+def _upsert_summaries(cursor, rows: list[dict[str, object]]) -> int:
+    cursor.executemany(
+        """
+        INSERT INTO summaries (
+            legislator_id, window_end, classification_version,
+            summary_text, generation_method, created_at
+        )
+        VALUES (%s, %s, %s, %s, %s, %s)
+        ON CONFLICT (legislator_id, window_end, classification_version)
+        DO UPDATE SET
+            summary_text = EXCLUDED.summary_text,
+            generation_method = EXCLUDED.generation_method,
+            created_at = EXCLUDED.created_at,
+            updated_at = NOW()
+        WHERE summaries.summary_text IS DISTINCT FROM EXCLUDED.summary_text
+           OR summaries.generation_method IS DISTINCT FROM EXCLUDED.generation_method
+           OR summaries.created_at IS DISTINCT FROM EXCLUDED.created_at
+        """,
+        [
+            (
+                row["legislator_id"],
+                row["window_end"],
+                row["classification_version"],
+                row["summary_text"],
+                row["generation_method"],
+                row["created_at"],
+            )
+            for row in rows
+        ],
+    )
+    return max(cursor.rowcount, 0)
+
+
 def _fetch_bill_id_map(cursor, bill_keys: set[tuple[int, str, int]]) -> dict[tuple[int, str, int], int]:
     if not bill_keys:
         return {}
@@ -676,11 +1169,15 @@ def main() -> None:
     parser.add_argument("--fetch", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--write-production", action="store_true")
+    parser.add_argument("--precompute-dry-run", action="store_true")
+    parser.add_argument("--write-precompute", action="store_true")
+    parser.add_argument("--as-of", default=date.today().isoformat())
     parser.add_argument("--approval-phrase")
     args = parser.parse_args()
 
     house_dir = session_cache_dir(chamber="house", session=2)
     senate_dir = session_cache_dir(chamber="senate", session=2)
+    as_of = date.fromisoformat(args.as_of)
     output: dict[str, object] = {}
     if args.fetch:
         output["fetch"] = fetch_current_congress_sources(
@@ -693,6 +1190,13 @@ def main() -> None:
         output["write"] = write_refresh(
             house_source_dir=house_dir,
             senate_source_dir=senate_dir,
+            approval_phrase=args.approval_phrase or "",
+        )
+    if args.precompute_dry_run:
+        output["precompute_dry_run"] = build_precompute_plan(as_of=as_of).to_dict()
+    if args.write_precompute:
+        output["write_precompute"] = write_precomputed_outputs(
+            as_of=as_of,
             approval_phrase=args.approval_phrase or "",
         )
     print(json.dumps(output, indent=2, sort_keys=True))

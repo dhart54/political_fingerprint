@@ -219,7 +219,7 @@ Roll-call identity is session-aware. The canonical roll-call key is:
 
 This is required because House and Senate roll-call numbers restart across sessions within the same Congress. For example, a 119th Congress roll number in 2026 must not collide with the same chamber's 2025 roll number. Import, lookup, rollback, classification, interpretation, source-packet, and API paths must preserve the session-aware identity and must not attach votes or interpretation records to a same-number roll from another session.
 
-Current-Congress refreshes use the bounded workflow in `backend/app/etl/current_congress_refresh.py`. The refresh may fetch/cache official House Clerk and Senate XML sources, plan supported fact rows, generate deterministic classification and conservative interpretation records where existing rules apply, and import only after the milestone's production-write gate is satisfied. Unsupported vote categories are deferred rather than guessed, procedural context remains non-counting, and not-voting remains excluded from support/opposition calculations.
+Current-Congress refreshes use the bounded workflow in `backend/app/etl/current_congress_refresh.py`. The refresh may fetch/cache official House Clerk and Senate XML sources, plan supported fact rows, generate deterministic classification and conservative interpretation records where existing rules apply, refresh derived precomputed output windows, and import only after the milestone's production-write gate is satisfied. Unsupported vote categories are deferred rather than guessed, procedural context remains non-counting, and not-voting remains excluded from support/opposition calculations.
 
 Initial rules:
 
