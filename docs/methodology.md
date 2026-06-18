@@ -1070,3 +1070,21 @@ Only the first two options are directional and may call the existing alignment e
 Sparse profiles or issue areas with fewer than three reviewed Yes/No meanings do not receive a concrete alignment prompt. They remain inspectable as evidence, but the UI should not force a confident issue read or personalized alignment claim.
 
 For deployment drift protection, the repository includes a post-merge backend smoke workflow. When a Render deploy hook secret is configured, backend changes on `main` can trigger a Render deployment and verify that the public backend exposes `/health`, Valerie position `interpreted_total`, and evidence `interpretation_status`. The workflow must not store secrets in the repository.
+
+## 2026 Session-2 Evidence Eligibility Expansion
+
+The 119th Congress session-2 evidence expansion is a bounded deterministic review layer for already-loaded 2026 vote facts. It may promote conservative placeholder classifications only when the official roll-call question and loaded measure context directly support a safe issue-domain assignment.
+
+Substantive interpretation candidates require a direct measure vote such as final passage, an appropriations passage/retention vote, or a direct resolution vote. The source must support one dominant issue domain. These interpretations may use `support_position = yea` and `oppose_position = nay` only when the official question directly establishes support or opposition to the named measure.
+
+Procedural-context candidates remain non-counting. They may be made visible when a focused procedural vote has a clear issue-domain connection, but `support_position` and `oppose_position` must stay null and the interpretation status remains `insufficient_evidence`.
+
+Rows remain deferred when:
+
+- amendment purpose or identity is missing;
+- a procedural vote is broad, multi-measure, or low-value for issue comprehension;
+- no single issue-domain signal is source-grounded;
+- loaded bill/context fields conflict with the chamber or roll-call question;
+- PN nomination, treaty, executive, or other unsupported semantics would require a new methodology decision.
+
+Session-2 expansion writes must be bounded, rollback-backed, post-validated, and idempotent. Rerunning the approved classification, interpretation, or derived-output refresh commands should plan or perform zero additional writes when production already matches the approved package.
