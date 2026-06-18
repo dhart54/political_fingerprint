@@ -9,6 +9,7 @@
 
 - Production roll-call identity is session-aware.
 - Supported 2026 House and Senate vote facts, contexts, classifications, and conservative interpretation placeholders are imported.
+- Derived precomputed output windows are refreshed so public position/evidence endpoints can include the new current-Congress rows.
 - Unsupported categories remain deferred rather than guessed.
 - A repeatable bounded refresh command exists for future current-Congress updates.
 
@@ -36,6 +37,7 @@
 - [x] Unsupported categories deferred explicitly.
 - [x] Repeatable command/workflow added.
 - [x] Idempotency proves zero additional writes on rerun.
+- [x] Derived precompute outputs refreshed and idempotency validated.
 - [x] Review packet documents baseline, writes, validation, cadence, and backlog.
 - [x] Tests/build/production validation pass.
 - [ ] PR opened, checks pass, merged, deployment verified.
@@ -68,6 +70,8 @@
 9. Fetched/cached 2026 House and Senate official sources.
 10. Ran dry-run, corrected member alias/missing-legislator handling, and imported the bounded supported package.
 11. Validated production counts, session overlap, support/opposition invariants, and idempotency.
+12. Found public API freshness still hidden by stale fingerprint windows.
+13. Added and ran a bounded derived precompute refresh for the latest window.
 
 ## Progress Checklist
 
@@ -133,6 +137,8 @@
   - Senate session 1 / 2025: 285 rolls, roll 1-618
   - Senate session 2 / 2026: 66 rolls, roll 4-175
 - Idempotency dry-run after import planned zero additional writes across all refresh tables.
+- Derived precompute refresh inserted/updated 4,416 fingerprints, 48 chamber medians, 552 drift rows, and 552 summaries.
+- Derived precompute idempotency rerun changed zero rows.
 - Final targeted backend tests passed: 32 passed.
 - Final post-import idempotency dry-run passed with zero planned writes.
 - Final production read-only invariant check passed.
@@ -155,17 +161,19 @@
   - vote_interpretations: 282
 - No support/opposition rows changed.
 - No readiness/alignment methodology changed.
+- Refreshed derived precomputed output rows for window end `2026-06-17`: 4,416 fingerprints, 48 chamber medians, 552 drift rows, and 552 summaries.
 
 ## Rollback Paths
 
 - Schema rollback: `docs/review_packets/current_congress_session_identity_rollback.sql`
 - Refresh rollback: `docs/review_packets/current_congress_refresh_rollback.sql`
+- Derived precompute rollback: `docs/review_packets/current_congress_precompute_rollback.sql`
 - Rollback artifacts were generated before the corresponding writes and scoped to the migration or exact session-aware refresh roll keys.
 
 ## Blockers
 
 - No current blocker after the session-aware identity migration and refresh import.
-- Remaining work is final validation, PR, merge, and deployment verification.
+- Remaining work is final validation, PR, merge, deployment verification, and public API freshness confirmation after network access is available.
 
 ## Final Reconciliation
 
