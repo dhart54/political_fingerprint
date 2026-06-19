@@ -20,8 +20,11 @@ Recommended log signals:
 - empty coverage metadata after a deployment
 - ZIP lookup 404 spikes after data refreshes
 - alignment endpoint errors
+- once fallback metadata exists, public API responses showing fixture fallback when production data should be available
 
 Keep backend error responses explicit and neutral. Do not hide API failures behind invented fallback claims on the client.
+
+Future hardening: make backend data source state visible in `/health` or `/coverage/metadata`. The response should distinguish live database reads from deterministic fixture fallback, ideally with fields such as `data_source`, `database_available`, and the active precompute `window_end`. This prevents deployment lag, stale Render instances, and database fallback from looking like product-data regressions.
 
 ## Frontend
 
@@ -62,7 +65,8 @@ Before sharing a deployment, run the fuller staging sequence in `docs/staging_re
 2. Run frontend build.
 3. Confirm Render `/health`.
 4. Confirm Render `/coverage/metadata`.
-5. Confirm Vercel can reach the Render API.
-6. Run one ZIP lookup.
-7. Open one evidence panel.
-8. Check logs for backend or frontend errors.
+5. Confirm Render reports the expected data source/window, not fixture fallback when production data is expected.
+6. Confirm Vercel can reach the Render API.
+7. Run one ZIP lookup.
+8. Open one evidence panel.
+9. Check logs for backend or frontend errors.

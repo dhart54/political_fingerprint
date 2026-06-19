@@ -49,6 +49,8 @@ Expected behavior:
 - `/coverage/metadata` returns window and source coverage metadata
 - `/lookup/zips` returns the loaded ZIP mappings from Supabase, or fixture fallback if the database is unavailable
 
+Operational hardening target: backend health or coverage metadata should make fixture fallback visible. When production data is expected, release checks should confirm the response reports the live database source and expected precompute window, not only that the endpoint shape is valid.
+
 ## Frontend - Vercel
 
 Create a Vercel project from the same repository.
