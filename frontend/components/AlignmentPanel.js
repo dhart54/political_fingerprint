@@ -6,7 +6,7 @@ import { fetchAlignment } from "../lib/api";
 import { formatDomainLabel } from "../lib/issueDomains";
 import { getDirectionalAlignmentPreferences } from "../lib/profileNarrative.mjs";
 
-export default function AlignmentPanel({ legislator, preferences, onInspectDomain }) {
+export default function AlignmentPanel({ legislator, preferences, onInspectDomain, scope = "all" }) {
   const [state, setState] = useState({
     status: "idle",
     payload: null,
@@ -42,6 +42,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
         const payload = await fetchAlignment({
           legislatorId: legislator.id,
           preferences: directionalPreferences,
+          scope,
         });
         if (!active) {
           return;
@@ -71,7 +72,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
     return () => {
       active = false;
     };
-  }, [legislator.id, preferences, directionalCount]);
+  }, [legislator.id, preferences, directionalCount, scope]);
 
   const rows = state.payload?.alignment || [];
 
@@ -93,7 +94,7 @@ export default function AlignmentPanel({ legislator, preferences, onInspectDomai
         <p className="max-w-md text-sm leading-6 text-stone-600">
           {directionalCount === 0
             ? "Choose issue areas above to inspect reviewed records."
-            : "This section compares only your concrete for-or-against reviewed-measure choices with interpreted votes."}
+            : `This section compares only your concrete for-or-against reviewed-measure choices with interpreted votes in the ${formatScopeLabel(state.payload?.scope_metadata, scope)} view.`}
         </p>
       </div>
 
@@ -169,6 +170,19 @@ function buildFallbackAlignmentPayload({ legislatorId, preferences }) {
       evidence_roll_call_ids: [],
     })),
   };
+}
+
+function formatScopeLabel(metadata, scope) {
+  if (metadata?.scope_label) {
+    return metadata.scope_label.toLowerCase();
+  }
+  if (scope === "119") {
+    return "recent Congress";
+  }
+  if (scope === "118") {
+    return "prior Congress";
+  }
+  return "full record";
 }
 
 function buildHeadline({ status, selectedCount, rows, name }) {

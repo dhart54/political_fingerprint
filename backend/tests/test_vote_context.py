@@ -66,3 +66,13 @@ def test_infer_vote_type_uses_question_and_description_text() -> None:
     assert infer_vote_type(question="On Motion to Suspend the Rules", description="") == "motion"
     assert infer_vote_type(question="On Passage", description="making appropriations") == "appropriations"
     assert infer_vote_type(question="On Agreeing to the Resolution", description="chapter 8 of title 5") == "cra_disapproval"
+
+
+def test_infer_vote_type_does_not_treat_confirmation_act_title_as_nomination() -> None:
+    assert (
+        infer_vote_type(
+            question="On Motion to Suspend the Rules and Pass",
+            description="Puyallup Tribe of Indians Land Into Trust Confirmation Act",
+        )
+        == "motion"
+    )

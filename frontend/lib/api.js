@@ -44,13 +44,15 @@ async function fetchWithFallback(paths, options) {
 export async function fetchFingerprint({
   legislatorId,
   comparisonParty = "ALL",
+  scope = "all",
 }) {
-  const response = await fetch(
-    `${API_BASE_URL}/legislators/${legislatorId}/fingerprint?comparison_party=${comparisonParty}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const searchParams = new URLSearchParams({
+    comparison_party: comparisonParty,
+    scope,
+  });
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/fingerprint?${searchParams.toString()}`, {
+    cache: "no-store",
+  });
 
   if (!response.ok) {
     throw new Error(`Fingerprint request failed with status ${response.status}`);
@@ -71,8 +73,9 @@ export async function fetchDrift({ legislatorId }) {
   return response.json();
 }
 
-export async function fetchPositions({ legislatorId }) {
-  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/positions`, {
+export async function fetchPositions({ legislatorId, scope = "all" }) {
+  const searchParams = new URLSearchParams({ scope });
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/positions?${searchParams.toString()}`, {
     cache: "no-store",
   });
 
@@ -83,8 +86,9 @@ export async function fetchPositions({ legislatorId }) {
   return response.json();
 }
 
-export async function fetchPositionEvidence({ legislatorId, domain }) {
-  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/positions/${domain}/evidence`, {
+export async function fetchPositionEvidence({ legislatorId, domain, scope = "all" }) {
+  const searchParams = new URLSearchParams({ scope });
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/positions/${domain}/evidence?${searchParams.toString()}`, {
     cache: "no-store",
   });
 
@@ -95,8 +99,9 @@ export async function fetchPositionEvidence({ legislatorId, domain }) {
   return response.json();
 }
 
-export async function fetchAlignment({ legislatorId, preferences }) {
-  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/alignment`, {
+export async function fetchAlignment({ legislatorId, preferences, scope = "all" }) {
+  const searchParams = new URLSearchParams({ scope });
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/alignment?${searchParams.toString()}`, {
     cache: "no-store",
     method: "POST",
     headers: {

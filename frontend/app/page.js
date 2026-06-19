@@ -33,6 +33,7 @@ const DEFAULT_COMPARE_RIGHT = {
 
 export default function HomePage() {
   const [selectedLegislator, setSelectedLegislator] = useState(DEFAULT_LEGISLATOR);
+  const [profileScope, setProfileScope] = useState("all");
   const [issuePreferences, setIssuePreferences] = useState({});
   const [profileRead, setProfileRead] = useState(null);
   const [evidenceRequest, setEvidenceRequest] = useState(null);
@@ -130,6 +131,7 @@ export default function HomePage() {
               </a>
             </div>
           </div>
+          <ProfileScopeControl scope={profileScope} onChange={setProfileScope} />
         </section>
 
         <ProfileQuickRead
@@ -141,12 +143,14 @@ export default function HomePage() {
             })
           }
           onProfileRead={setProfileRead}
+          scope={profileScope}
         />
 
         <PositionByIssue
           evidenceRequest={evidenceRequest}
           legislator={selectedLegislator}
           legislatorId={selectedLegislator.id}
+          scope={profileScope}
           title={`${selectedLegislator.name_display}'s strongest issue evidence`}
         />
 
@@ -164,6 +168,7 @@ export default function HomePage() {
             <AlignmentPanel
               legislator={selectedLegislator}
               preferences={issuePreferences}
+              scope={profileScope}
               onInspectDomain={(domain) =>
                 setEvidenceRequest({
                   domain,
@@ -236,6 +241,58 @@ export default function HomePage() {
         </footer>
       </section>
     </main>
+  );
+}
+
+const PROFILE_SCOPE_OPTIONS = [
+  {
+    value: "all",
+    label: "Full record",
+    detail: "118th + 119th",
+  },
+  {
+    value: "119",
+    label: "Recent Congress",
+    detail: "119th",
+  },
+  {
+    value: "118",
+    label: "Prior Congress",
+    detail: "118th",
+  },
+];
+
+function ProfileScopeControl({ scope, onChange }) {
+  return (
+    <div className="mt-3 flex flex-col gap-2 border-t border-stone-200 pt-3 sm:flex-row sm:items-center sm:justify-between">
+      <p className="text-sm leading-5 text-stone-600">
+        {scope === "all"
+          ? "Full available record is shown by default, with Congresses kept separate underneath."
+          : scope === "119"
+            ? "Showing the recent Congress view only."
+            : "Showing the prior Congress view only."}
+      </p>
+      <div className="flex w-full gap-1 rounded-xl border border-stone-200 bg-stone-50 p-1 sm:w-auto" role="group" aria-label="Profile record scope">
+        {PROFILE_SCOPE_OPTIONS.map((option) => (
+          <button
+            aria-pressed={scope === option.value}
+            className={`min-w-0 flex-1 rounded-lg px-3 py-2 text-left transition sm:min-w-[128px] ${
+              scope === option.value
+                ? "bg-cyan-900 text-white shadow-sm"
+                : "text-stone-700 hover:bg-white"
+            }`}
+            key={option.value}
+            onClick={() => onChange(option.value)}
+            type="button"
+          >
+            <span className="block text-xs font-semibold uppercase tracking-[0.12em]">{option.label}</span>
+            <span className={`mt-0.5 block text-[11px] ${scope === option.value ? "text-cyan-100" : "text-stone-500"}`}>
+              {option.detail}
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
   );
 }
 

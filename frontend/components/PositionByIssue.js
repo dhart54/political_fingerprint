@@ -19,6 +19,7 @@ export default function PositionByIssue({
   evidenceRequest = null,
   legislator = null,
   legislatorId = "leg_alex_morgan",
+  scope = "all",
   title = "How They Vote By Issue",
 }) {
   const [state, setState] = useState({
@@ -38,10 +39,10 @@ export default function PositionByIssue({
 
     async function loadPositions() {
       try {
-        const positionsPayload = await fetchPositions({ legislatorId });
+        const positionsPayload = await fetchPositions({ legislatorId, scope });
         const payload = await fillMissingInterpretedCounts({
           payload: positionsPayload,
-          fetchEvidence: fetchPositionEvidence,
+          fetchEvidence: (args) => fetchPositionEvidence({ ...args, scope }),
           legislatorId,
         });
         if (!active) {
@@ -69,7 +70,7 @@ export default function PositionByIssue({
     return () => {
       active = false;
     };
-  }, [legislatorId]);
+  }, [legislatorId, scope]);
 
   useEffect(() => {
     setSelectedDomain(null);
@@ -79,6 +80,13 @@ export default function PositionByIssue({
       error: null,
     });
   }, [legislatorId]);
+
+  useEffect(() => {
+    if (!selectedDomain) {
+      return;
+    }
+    inspectDomain(selectedDomain);
+  }, [scope]);
 
   useEffect(() => {
     if (!evidenceRequest?.domain) {
@@ -109,7 +117,7 @@ export default function PositionByIssue({
     });
 
     try {
-      const payload = await fetchPositionEvidence({ legislatorId, domain });
+      const payload = await fetchPositionEvidence({ legislatorId, domain, scope });
       setEvidenceState({
         status: "ready",
         payload,
@@ -126,8 +134,8 @@ export default function PositionByIssue({
 
   return (
     <section id="position-by-issue" className="mt-4 rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.07)] lg:p-5">
-      <div className="grid gap-4 xl:grid-cols-[minmax(280px,0.52fr)_minmax(0,1.48fr)]">
-        <div>
+      <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(280px,0.52fr)_minmax(0,1.48fr)]">
+        <div className="min-w-0">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">
             Issue Evidence
           </p>
@@ -141,6 +149,11 @@ export default function PositionByIssue({
                 ? "Reading where this legislator's reviewed issue evidence is strongest."
                 : "The site cannot read issue readiness for this legislator right now."}
           </p>
+          {state.status === "ready" ? (
+            <p className="mt-2 text-xs uppercase tracking-[0.14em] text-stone-500">
+              {formatScopeLine(state.payload?.scope_metadata)}
+            </p>
+          ) : null}
           {state.status === "ready" && startPlan?.steps?.[0] ? (
             <button
               className="mt-3 rounded-full border border-cyan-900/20 bg-cyan-50 px-4 py-2 text-left text-xs uppercase tracking-[0.15em] text-cyan-950 transition hover:bg-cyan-100"
@@ -152,7 +165,7 @@ export default function PositionByIssue({
           ) : null}
         </div>
 
-        <div className="grid gap-3">
+        <div className="grid min-w-0 gap-3">
           {state.status === "error" ? (
             <div className="rounded-[1.5rem] border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
               {state.error}
@@ -199,7 +212,7 @@ function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
   }
 
   return (
-    <nav aria-label="Issue evidence navigation" className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2">
+    <nav aria-label="Issue evidence navigation" className="min-w-0 rounded-xl border border-stone-200 bg-stone-50 px-3 py-2">
       <div className="flex items-center justify-between gap-2">
         <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">
           Jump to issue
@@ -1578,6 +1591,20 @@ function buildTakeaway(rows) {
   }
 
   return "The current issue sections are visible as evidence, but none have enough reviewed vote meaning for a confident summary yet.";
+}
+
+function formatScopeLine(metadata) {
+  if (!metadata) {
+    return "Selected record scope";
+  }
+  const label = metadata.scope_label || "Selected record";
+  const congresses = (metadata.congresses || metadata.requested_congresses || [])
+    .map((congress) => `${congress}th`)
+    .join(" + ");
+  const windowText = metadata.window_start && metadata.window_end
+    ? `votes from ${String(metadata.window_start).slice(0, 4)}-${String(metadata.window_end).slice(0, 4)}`
+    : "selected vote window";
+  return [label, congresses, windowText].filter(Boolean).join(" - ");
 }
 
 function buildPatternRows(rows) {

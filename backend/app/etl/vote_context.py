@@ -82,7 +82,7 @@ def build_vote_contexts(
 def infer_vote_type(*, question: str, description: str) -> str:
     text = f"{question} {description}".lower()
 
-    if "nomination" in text or "confirmation" in text:
+    if "nomination" in text or "confirmation:" in text or " on the nomination" in text:
         return "nomination"
     if "amendment" in text:
         return "amendment"

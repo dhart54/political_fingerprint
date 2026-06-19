@@ -24,6 +24,26 @@ DOMAIN_ORDER = [
     "JUSTICE_PUBLIC_SAFETY",
     "INFRASTRUCTURE_TECH_TRANSPORT",
 ]
+PROFILE_SCOPES = {
+    "all": {
+        "label": "Full record",
+        "description": "Eligible evidence from the 118th and 119th Congresses.",
+        "congresses": (118, 119),
+    },
+    "119": {
+        "label": "Recent Congress",
+        "description": "Eligible evidence from the 119th Congress.",
+        "congresses": (119,),
+    },
+    "118": {
+        "label": "Prior Congress",
+        "description": "Eligible evidence from the 118th Congress.",
+        "congresses": (118,),
+    },
+}
+DEFAULT_PROFILE_SCOPE = "all"
+CURRENT_PROFILE_SCOPE = "119"
+PRIOR_PROFILE_SCOPE = "118"
 
 FALLBACK_LEGISLATOR_CONTACTS = {
     "leg_valerie_p_foushee": {
@@ -226,10 +246,17 @@ def get_coverage_metadata() -> dict[str, object]:
     return _get_fallback_coverage_metadata()
 
 
-def get_fingerprint_response(*, legislator_id: str, comparison_party: str = "ALL") -> dict[str, object] | None:
+def get_fingerprint_response(
+    *,
+    legislator_id: str,
+    comparison_party: str = "ALL",
+    scope: str = DEFAULT_PROFILE_SCOPE,
+) -> dict[str, object] | None:
+    normalized_scope = _normalize_profile_scope(scope)
     db_response = _get_db_fingerprint_response(
         legislator_id=legislator_id,
         comparison_party=comparison_party,
+        scope=normalized_scope,
     )
     if db_response is not None:
         return db_response
@@ -248,22 +275,34 @@ def get_drift_response(*, legislator_id: str) -> dict[str, object] | None:
     return _get_fallback_drift_response(legislator_id=legislator_id)
 
 
-def get_position_response(*, legislator_id: str) -> dict[str, object] | None:
-    db_response = _get_db_position_response(legislator_id=legislator_id)
+def get_position_response(
+    *,
+    legislator_id: str,
+    scope: str = DEFAULT_PROFILE_SCOPE,
+) -> dict[str, object] | None:
+    normalized_scope = _normalize_profile_scope(scope)
+    db_response = _get_db_position_response(legislator_id=legislator_id, scope=normalized_scope)
     if db_response is not None:
         return db_response
 
     return _get_fallback_position_response(legislator_id=legislator_id)
 
 
-def get_position_evidence_response(*, legislator_id: str, domain: str) -> dict[str, object] | None:
+def get_position_evidence_response(
+    *,
+    legislator_id: str,
+    domain: str,
+    scope: str = DEFAULT_PROFILE_SCOPE,
+) -> dict[str, object] | None:
     normalized_domain = domain.strip().upper()
     if normalized_domain not in DOMAIN_ORDER:
         return None
 
+    normalized_scope = _normalize_profile_scope(scope)
     db_response = _get_db_position_evidence_response(
         legislator_id=legislator_id,
         domain=normalized_domain,
+        scope=normalized_scope,
     )
     if db_response is not None:
         return db_response
@@ -274,7 +313,13 @@ def get_position_evidence_response(*, legislator_id: str, domain: str) -> dict[s
     )
 
 
-def get_alignment_response(*, legislator_id: str, preferences: dict[str, str]) -> dict[str, object] | None:
+def get_alignment_response(
+    *,
+    legislator_id: str,
+    preferences: dict[str, str],
+    scope: str = DEFAULT_PROFILE_SCOPE,
+) -> dict[str, object] | None:
+    normalized_scope = _normalize_profile_scope(scope)
     normalized_preferences = {
         domain.strip().upper(): stance
         for domain, stance in preferences.items()
@@ -290,6 +335,7 @@ def get_alignment_response(*, legislator_id: str, preferences: dict[str, str]) -
     db_response = _get_db_alignment_response(
         legislator_id=legislator_id,
         preferences=normalized_preferences,
+        scope=normalized_scope,
     )
     if db_response is not None:
         return db_response
@@ -408,25 +454,109 @@ def get_supported_zip_responses(*, limit: int = 12) -> dict[str, object]:
     }
 
 
-def _get_db_fingerprint_response(*, legislator_id: str, comparison_party: str) -> dict[str, object] | None:
+def _normalize_profile_scope(scope: str | None) -> str:
+    normalized = str(scope or DEFAULT_PROFILE_SCOPE).strip().lower()
+    if normalized not in PROFILE_SCOPES:
+        return DEFAULT_PROFILE_SCOPE
+    return normalized
+
+
+def _profile_scope_clause(scope: str, *, column: str = "rc.congress") -> str:
+    congresses = PROFILE_SCOPES[_normalize_profile_scope(scope)]["congresses"]
+    values = ", ".join(str(congress) for congress in congresses)
+    return f"{column} IN ({values})"
+
+
+def _profile_scope_metadata(scope: str) -> dict[str, object]:
+    normalized_scope = _normalize_profile_scope(scope)
+    scope_config = PROFILE_SCOPES[normalized_scope]
+    congresses = tuple(int(value) for value in scope_config["congresses"])
+    return {
+        "scope": normalized_scope,
+        "scope_label": scope_config["label"],
+        "scope_description": scope_config["description"],
+        "requested_congresses": list(congresses),
+    }
+
+
+def _build_scope_payload(*, scope: str, coverage_row: dict[str, Any] | None = None) -> dict[str, object]:
+    payload = _profile_scope_metadata(scope)
+    payload.update(
+        {
+            "window_start": None if not coverage_row or coverage_row.get("window_start") is None else str(coverage_row["window_start"]),
+            "window_end": None if not coverage_row or coverage_row.get("window_end") is None else str(coverage_row["window_end"]),
+            "congresses": [] if not coverage_row or coverage_row.get("congresses") is None else list(coverage_row["congresses"]),
+            "eligible_roll_call_count": 0 if not coverage_row else int(coverage_row.get("eligible_roll_call_count", 0) or 0),
+        }
+    )
+    return payload
+
+
+def _get_db_scope_coverage(*, scope: str) -> dict[str, Any] | None:
+    return _query_one_dict(
+        f"""
+        SELECT
+            MIN(DATE(rc.vote_date)) AS window_start,
+            MAX(DATE(rc.vote_date)) AS window_end,
+            ARRAY_AGG(DISTINCT rc.congress ORDER BY rc.congress) AS congresses,
+            COUNT(DISTINCT rc.id) FILTER (WHERE vcf.is_eligible = TRUE) AS eligible_roll_call_count
+        FROM roll_calls rc
+        LEFT JOIN vote_classifications vcf
+          ON vcf.roll_call_id = rc.id
+        WHERE {_profile_scope_clause(scope)}
+        """,
+    )
+
+
+def _get_db_latest_classification_version() -> str:
+    row = _query_one_dict(
+        """
+        SELECT classification_version
+        FROM vote_classifications
+        ORDER BY created_at DESC, classification_version DESC
+        LIMIT 1
+        """,
+    )
+    if row is None:
+        return "v1"
+    return str(row["classification_version"])
+
+
+def _get_db_fingerprint_response(*, legislator_id: str, comparison_party: str, scope: str) -> dict[str, object] | None:
     legislator = _get_db_legislator_by_external_id(legislator_id)
     if legislator is None:
         return None
 
-    fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    normalized_scope = _normalize_profile_scope(scope)
+    if normalized_scope == CURRENT_PROFILE_SCOPE:
+        fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    else:
+        fingerprint_rows = _get_db_scoped_fingerprint_rows(
+            legislator_db_id=int(legislator["id"]),
+            scope=normalized_scope,
+            classification_version=_get_db_latest_classification_version(),
+        )
     if fingerprint_rows is None:
         return None
     if not fingerprint_rows:
         return None
 
     first_row = fingerprint_rows[0]
-    median_rows = _get_db_chamber_medians(
-        chamber=str(legislator["chamber"]),
-        comparison_party=comparison_party,
-        window_start=str(first_row["window_start"]),
-        window_end=str(first_row["window_end"]),
-        classification_version=str(first_row["classification_version"]),
-    )
+    if normalized_scope == CURRENT_PROFILE_SCOPE:
+        median_rows = _get_db_chamber_medians(
+            chamber=str(legislator["chamber"]),
+            comparison_party=comparison_party,
+            window_start=str(first_row["window_start"]),
+            window_end=str(first_row["window_end"]),
+            classification_version=str(first_row["classification_version"]),
+        )
+    else:
+        median_rows = _get_db_scoped_chamber_medians(
+            chamber=str(legislator["chamber"]),
+            comparison_party=comparison_party,
+            scope=normalized_scope,
+            classification_version=str(first_row["classification_version"]),
+        )
     if median_rows is None:
         return None
 
@@ -442,6 +572,11 @@ def _get_db_fingerprint_response(*, legislator_id: str, comparison_party: str) -
         "classification_version": str(first_row["classification_version"]),
         "last_updated": str(first_row["created_at"]),
         "comparison_party": comparison_party,
+        "scope": normalized_scope,
+        "scope_metadata": _build_scope_payload(
+            scope=normalized_scope,
+            coverage_row=_get_db_scope_coverage(scope=normalized_scope),
+        ),
         "fingerprint": [
             FingerprintResponseRow(
                 domain=str(row["domain"]),
@@ -502,28 +637,50 @@ def _get_db_summary_response(*, legislator_id: str) -> dict[str, object] | None:
     }
 
 
-def _get_db_position_response(*, legislator_id: str) -> dict[str, object] | None:
+def _get_db_position_response(*, legislator_id: str, scope: str) -> dict[str, object] | None:
     legislator = _get_db_legislator_by_external_id(legislator_id)
     if legislator is None:
         return None
 
-    fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    normalized_scope = _normalize_profile_scope(scope)
+    if normalized_scope == CURRENT_PROFILE_SCOPE:
+        fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    else:
+        fingerprint_rows = _get_db_scoped_fingerprint_rows(
+            legislator_db_id=int(legislator["id"]),
+            scope=normalized_scope,
+            classification_version=_get_db_latest_classification_version(),
+        )
     if fingerprint_rows is None:
         return None
     if not fingerprint_rows:
         return None
 
     first_row = fingerprint_rows[0]
-    position_rows = _get_db_position_rows(
-        legislator_db_id=int(legislator["id"]),
-        window_start=str(first_row["window_start"]),
-        window_end=str(first_row["window_end"]),
-        classification_version=str(first_row["classification_version"]),
-    )
+    if normalized_scope == CURRENT_PROFILE_SCOPE:
+        position_rows = _get_db_position_rows(
+            legislator_db_id=int(legislator["id"]),
+            window_start=str(first_row["window_start"]),
+            window_end=str(first_row["window_end"]),
+            classification_version=str(first_row["classification_version"]),
+        )
+    else:
+        position_rows = _get_db_scoped_position_rows(
+            legislator_db_id=int(legislator["id"]),
+            scope=normalized_scope,
+            classification_version=str(first_row["classification_version"]),
+        )
     if position_rows is None:
         return None
 
     position_map = {str(row["domain"]): row for row in position_rows}
+    comparison_rows = []
+    if normalized_scope == DEFAULT_PROFILE_SCOPE:
+        comparison_rows = _get_db_congress_breakdown_rows(
+            legislator_db_id=int(legislator["id"]),
+            classification_version=str(first_row["classification_version"]),
+        ) or []
+    comparison_by_domain = _build_comparison_by_domain(comparison_rows)
     serialized_rows = []
     for domain in DOMAIN_ORDER:
         row = position_map.get(domain, {})
@@ -552,35 +709,61 @@ def _get_db_position_response(*, legislator_id: str) -> dict[str, object] | None
                 interpreted_total=interpreted_total,
             ).__dict__
         )
+        serialized_rows[-1]["congress_breakdown"] = comparison_by_domain.get(domain, [])
+        serialized_rows[-1]["comparison"] = _build_domain_congress_comparison(
+            domain=domain,
+            breakdown=comparison_by_domain.get(domain, []),
+        )
 
     return {
         "legislator_id": legislator_id,
         "window_start": str(first_row["window_start"]),
         "window_end": str(first_row["window_end"]),
         "classification_version": str(first_row["classification_version"]),
+        "scope": normalized_scope,
+        "scope_metadata": _build_scope_payload(
+            scope=normalized_scope,
+            coverage_row=_get_db_scope_coverage(scope=normalized_scope),
+        ),
         "positions": serialized_rows,
     }
 
 
-def _get_db_position_evidence_response(*, legislator_id: str, domain: str) -> dict[str, object] | None:
+def _get_db_position_evidence_response(*, legislator_id: str, domain: str, scope: str) -> dict[str, object] | None:
     legislator = _get_db_legislator_by_external_id(legislator_id)
     if legislator is None:
         return None
 
-    fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    normalized_scope = _normalize_profile_scope(scope)
+    if normalized_scope == CURRENT_PROFILE_SCOPE:
+        fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    else:
+        fingerprint_rows = _get_db_scoped_fingerprint_rows(
+            legislator_db_id=int(legislator["id"]),
+            scope=normalized_scope,
+            classification_version=_get_db_latest_classification_version(),
+        )
     if fingerprint_rows is None:
         return None
     if not fingerprint_rows:
         return None
 
     first_row = fingerprint_rows[0]
-    evidence_rows = _get_db_position_evidence_rows(
-        legislator_db_id=int(legislator["id"]),
-        domain=domain,
-        window_start=str(first_row["window_start"]),
-        window_end=str(first_row["window_end"]),
-        classification_version=str(first_row["classification_version"]),
-    )
+    if normalized_scope == CURRENT_PROFILE_SCOPE:
+        evidence_rows = _get_db_position_evidence_rows(
+            legislator_db_id=int(legislator["id"]),
+            domain=domain,
+            window_start=str(first_row["window_start"]),
+            window_end=str(first_row["window_end"]),
+            classification_version=str(first_row["classification_version"]),
+        )
+    else:
+        evidence_rows = _get_db_scoped_position_evidence_rows(
+            legislator_db_id=int(legislator["id"]),
+            domain=domain,
+            scope=normalized_scope,
+            classification_version=str(first_row["classification_version"]),
+        )
     if evidence_rows is None:
         return None
 
@@ -590,29 +773,50 @@ def _get_db_position_evidence_response(*, legislator_id: str, domain: str) -> di
         "window_start": str(first_row["window_start"]),
         "window_end": str(first_row["window_end"]),
         "classification_version": str(first_row["classification_version"]),
+        "scope": normalized_scope,
+        "scope_metadata": _build_scope_payload(
+            scope=normalized_scope,
+            coverage_row=_get_db_scope_coverage(scope=normalized_scope),
+        ),
         "evidence": [_serialize_evidence_row(row) for row in evidence_rows],
     }
 
 
-def _get_db_alignment_response(*, legislator_id: str, preferences: dict[str, str]) -> dict[str, object] | None:
+def _get_db_alignment_response(*, legislator_id: str, preferences: dict[str, str], scope: str) -> dict[str, object] | None:
     legislator = _get_db_legislator_by_external_id(legislator_id)
     if legislator is None:
         return None
 
-    fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    normalized_scope = _normalize_profile_scope(scope)
+    if normalized_scope == CURRENT_PROFILE_SCOPE:
+        fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
+    else:
+        fingerprint_rows = _get_db_scoped_fingerprint_rows(
+            legislator_db_id=int(legislator["id"]),
+            scope=normalized_scope,
+            classification_version=_get_db_latest_classification_version(),
+        )
     if fingerprint_rows is None:
         return None
     if not fingerprint_rows:
         return None
 
     first_row = fingerprint_rows[0]
-    evidence_rows = _get_db_alignment_rows(
-        legislator_db_id=int(legislator["id"]),
-        domains=tuple(preferences.keys()),
-        window_start=str(first_row["window_start"]),
-        window_end=str(first_row["window_end"]),
-        classification_version=str(first_row["classification_version"]),
-    )
+    if normalized_scope == CURRENT_PROFILE_SCOPE:
+        evidence_rows = _get_db_alignment_rows(
+            legislator_db_id=int(legislator["id"]),
+            domains=tuple(preferences.keys()),
+            window_start=str(first_row["window_start"]),
+            window_end=str(first_row["window_end"]),
+            classification_version=str(first_row["classification_version"]),
+        )
+    else:
+        evidence_rows = _get_db_scoped_alignment_rows(
+            legislator_db_id=int(legislator["id"]),
+            domains=tuple(preferences.keys()),
+            scope=normalized_scope,
+            classification_version=str(first_row["classification_version"]),
+        )
     if evidence_rows is None:
         evidence_rows = []
 
@@ -623,6 +827,7 @@ def _get_db_alignment_response(*, legislator_id: str, preferences: dict[str, str
         window_start=str(first_row["window_start"]),
         window_end=str(first_row["window_end"]),
         classification_version=str(first_row["classification_version"]),
+        scope=normalized_scope,
     )
 
 
@@ -1121,6 +1326,54 @@ def _get_db_fingerprint_rows(*, legislator_db_id: int) -> list[dict[str, Any]] |
     )
 
 
+def _get_db_scoped_fingerprint_rows(
+    *,
+    legislator_db_id: int,
+    scope: str,
+    classification_version: str,
+) -> list[dict[str, Any]] | None:
+    coverage = _get_db_scope_coverage(scope=scope)
+    if coverage is None:
+        return None
+    rows = _query_all_dicts(
+        f"""
+        SELECT
+            vcf.primary_domain AS domain,
+            COUNT(*) AS vote_count
+        FROM votes_cast vc
+        JOIN roll_calls rc ON rc.id = vc.roll_call_id
+        JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        WHERE vc.legislator_id = %s
+          AND vcf.is_eligible = TRUE
+          AND vcf.primary_domain IS NOT NULL
+          AND vcf.classification_version = %s
+          AND {_profile_scope_clause(scope)}
+        GROUP BY vcf.primary_domain
+        """,
+        (legislator_db_id, classification_version),
+    )
+    if rows is None:
+        return None
+
+    vote_counts = {str(row["domain"]): int(row["vote_count"]) for row in rows}
+    total_votes = sum(vote_counts.values())
+    window_start = coverage.get("window_start") or ""
+    window_end = coverage.get("window_end") or ""
+    return [
+        {
+            "domain": domain,
+            "vote_count": vote_counts.get(domain, 0),
+            "total_votes": total_votes,
+            "vote_share": _safe_share(vote_counts.get(domain, 0), total_votes),
+            "window_start": window_start,
+            "window_end": window_end,
+            "classification_version": classification_version,
+            "created_at": window_end,
+        }
+        for domain in DOMAIN_ORDER
+    ]
+
+
 def _get_db_chamber_medians(
     *,
     chamber: str,
@@ -1145,6 +1398,58 @@ def _get_db_chamber_medians(
         """,
         (chamber, comparison_party, window_start, window_end, classification_version),
     )
+
+
+def _get_db_scoped_chamber_medians(
+    *,
+    chamber: str,
+    comparison_party: str,
+    scope: str,
+    classification_version: str,
+) -> list[dict[str, Any]] | None:
+    party_clause = "" if comparison_party == "ALL" else "AND l.party = %s"
+    params: tuple[Any, ...] = (chamber, classification_version)
+    if comparison_party != "ALL":
+        params = (chamber, classification_version, comparison_party)
+    rows = _query_all_dicts(
+        f"""
+        WITH legislator_domain_counts AS (
+            SELECT
+                l.id AS legislator_id,
+                vcf.primary_domain AS domain,
+                COUNT(*) AS vote_count
+            FROM legislators l
+            JOIN votes_cast vc ON vc.legislator_id = l.id
+            JOIN roll_calls rc ON rc.id = vc.roll_call_id
+            JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+            WHERE l.chamber = %s
+              AND vcf.is_eligible = TRUE
+              AND vcf.primary_domain IS NOT NULL
+              AND vcf.classification_version = %s
+              AND {_profile_scope_clause(scope)}
+              {party_clause}
+            GROUP BY l.id, vcf.primary_domain
+        ),
+        legislator_totals AS (
+            SELECT legislator_id, SUM(vote_count) AS total_votes
+            FROM legislator_domain_counts
+            GROUP BY legislator_id
+        )
+        SELECT
+            domain,
+            PERCENTILE_CONT(0.5) WITHIN GROUP (
+                ORDER BY vote_count::float / NULLIF(total_votes, 0)
+            ) AS median_share
+        FROM legislator_domain_counts
+        JOIN legislator_totals USING (legislator_id)
+        GROUP BY domain
+        """,
+        params,
+    )
+    if rows is None:
+        return None
+    median_by_domain = {str(row["domain"]): float(row["median_share"] or 0) for row in rows}
+    return [{"domain": domain, "median_share": median_by_domain.get(domain, 0.0)} for domain in DOMAIN_ORDER]
 
 
 def _get_db_latest_drift_row(*, legislator_db_id: int) -> dict[str, Any] | None:
@@ -1219,6 +1524,93 @@ def _get_db_position_rows(
           END
         """,
         (legislator_db_id, classification_version, window_start, window_end),
+    )
+
+
+def _get_db_scoped_position_rows(
+    *,
+    legislator_db_id: int,
+    scope: str,
+    classification_version: str,
+) -> list[dict[str, Any]] | None:
+    return _query_all_dicts(
+        f"""
+        SELECT
+            vcf.primary_domain AS domain,
+            COUNT(*) FILTER (WHERE vc.position = 'yea') AS yea_count,
+            COUNT(*) FILTER (WHERE vc.position = 'nay') AS nay_count,
+            COUNT(*) FILTER (WHERE vc.position NOT IN ('yea', 'nay')) AS other_count,
+            COUNT(*) FILTER (
+                WHERE vi.interpretation_status = 'interpreted'
+                  AND vc.position = vi.support_position
+            ) AS interpreted_support_count,
+            COUNT(*) FILTER (
+                WHERE vi.interpretation_status = 'interpreted'
+                  AND vc.position = vi.oppose_position
+            ) AS interpreted_oppose_count,
+            COUNT(*) FILTER (
+                WHERE vi.interpretation_status = 'interpreted'
+                  AND vc.position NOT IN (vi.support_position, vi.oppose_position)
+            ) AS interpreted_other_count
+        FROM votes_cast vc
+        JOIN roll_calls rc ON rc.id = vc.roll_call_id
+        JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        LEFT JOIN vote_interpretations vi
+          ON vi.roll_call_id = rc.id
+        WHERE vc.legislator_id = %s
+          AND vcf.is_eligible = TRUE
+          AND vcf.primary_domain IS NOT NULL
+          AND vcf.classification_version = %s
+          AND {_profile_scope_clause(scope)}
+        GROUP BY vcf.primary_domain
+        ORDER BY CASE vcf.primary_domain
+            {''.join(f" WHEN '{domain}' THEN {index}" for index, domain in enumerate(DOMAIN_ORDER, start=1))}
+            ELSE 999
+          END
+        """,
+        (legislator_db_id, classification_version),
+    )
+
+
+def _get_db_congress_breakdown_rows(
+    *,
+    legislator_db_id: int,
+    classification_version: str,
+) -> list[dict[str, Any]] | None:
+    return _query_all_dicts(
+        f"""
+        SELECT
+            rc.congress,
+            vcf.primary_domain AS domain,
+            COUNT(*) FILTER (WHERE vc.position = 'yea') AS yea_count,
+            COUNT(*) FILTER (WHERE vc.position = 'nay') AS nay_count,
+            COUNT(*) FILTER (WHERE vc.position NOT IN ('yea', 'nay')) AS other_count,
+            COUNT(*) FILTER (
+                WHERE vi.interpretation_status = 'interpreted'
+                  AND vc.position = vi.support_position
+            ) AS interpreted_support_count,
+            COUNT(*) FILTER (
+                WHERE vi.interpretation_status = 'interpreted'
+                  AND vc.position = vi.oppose_position
+            ) AS interpreted_oppose_count,
+            COUNT(*) FILTER (
+                WHERE vi.interpretation_status = 'interpreted'
+                  AND vc.position NOT IN (vi.support_position, vi.oppose_position)
+            ) AS interpreted_other_count
+        FROM votes_cast vc
+        JOIN roll_calls rc ON rc.id = vc.roll_call_id
+        JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        LEFT JOIN vote_interpretations vi
+          ON vi.roll_call_id = rc.id
+        WHERE vc.legislator_id = %s
+          AND vcf.is_eligible = TRUE
+          AND vcf.primary_domain IS NOT NULL
+          AND vcf.classification_version = %s
+          AND {_profile_scope_clause(DEFAULT_PROFILE_SCOPE)}
+        GROUP BY rc.congress, vcf.primary_domain
+        ORDER BY vcf.primary_domain, rc.congress
+        """,
+        (legislator_db_id, classification_version),
     )
 
 
@@ -1306,6 +1698,89 @@ def _get_db_position_evidence_rows(
     )
 
 
+def _get_db_scoped_position_evidence_rows(
+    *,
+    legislator_db_id: int,
+    domain: str,
+    scope: str,
+    classification_version: str,
+) -> list[dict[str, Any]] | None:
+    return _query_all_dicts(
+        f"""
+        SELECT
+            rc.id AS roll_call_id,
+            rc.vote_date,
+            rc.chamber,
+            rc.congress,
+            rc.rollcall_number,
+            vc.position,
+            rc.question,
+            rc.description,
+            b.title AS bill_title,
+            b.summary AS bill_summary,
+            vcf.eligibility_reason AS classification_reason,
+            vcf.score_breakdown,
+            rc.source_url,
+            vi.interpretation_status,
+            vi.support_position,
+            vi.oppose_position,
+            vi.interpretation_reason,
+            vi.plain_english_summary,
+            vi.yea_meaning,
+            vi.nay_meaning,
+            vi.policy_effect,
+            vi.issue_facet,
+            vi.confidence,
+            vi.what_happened,
+            vi.why_it_mattered,
+            vi.member_vote_context,
+            vi.what_not_to_infer,
+            vi.source_basis,
+            vi.uncertainty_note,
+            vctx.vote_type,
+            vctx.final_result,
+            vctx.vote_margin,
+            vctx.winning_position,
+            vctx.party_vote_totals,
+            vctx.member_party,
+            vctx.member_party_majority_position,
+            vctx.member_voted_with_party_majority,
+            vctx.member_voted_with_winning_side,
+            vctx.bipartisan_majority,
+            vctx.sponsor_party,
+            vctx.context_source_list,
+            vctx.context_version,
+            sar.amendment_number,
+            sar.amendment_type,
+            sar.amendment_to_amendment_number,
+            sar.parent_bill_type,
+            sar.parent_bill_number,
+            sar.parent_bill_display,
+            sar.amendment_purpose,
+            sar.fact_status AS amendment_fact_status,
+            sar.source_url AS amendment_source_url
+        FROM votes_cast vc
+        JOIN roll_calls rc ON rc.id = vc.roll_call_id
+        JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        LEFT JOIN vote_interpretations vi
+          ON vi.roll_call_id = rc.id
+        LEFT JOIN vote_contexts vctx
+          ON vctx.roll_call_id = rc.id
+         AND vctx.legislator_id = vc.legislator_id
+        LEFT JOIN senate_amendment_references sar
+          ON sar.roll_call_id = rc.id
+        LEFT JOIN bills b ON b.id = rc.bill_id
+        WHERE vc.legislator_id = %s
+          AND vcf.is_eligible = TRUE
+          AND vcf.primary_domain = %s
+          AND vcf.classification_version = %s
+          AND {_profile_scope_clause(scope)}
+        ORDER BY rc.vote_date, rc.rollcall_number
+        """,
+        (legislator_db_id, domain, classification_version),
+    )
+
+
 def _get_db_alignment_rows(
     *,
     legislator_db_id: int,
@@ -1341,6 +1816,42 @@ def _get_db_alignment_rows(
             classification_version,
             window_start,
             window_end,
+        ),
+    )
+
+
+def _get_db_scoped_alignment_rows(
+    *,
+    legislator_db_id: int,
+    domains: tuple[str, ...],
+    scope: str,
+    classification_version: str,
+) -> list[dict[str, Any]] | None:
+    placeholders = ", ".join(["%s"] * len(domains))
+    return _query_all_dicts(
+        f"""
+        SELECT
+            vcf.primary_domain AS domain,
+            rc.id AS roll_call_id,
+            vc.position,
+            vi.interpretation_status,
+            vi.support_position,
+            vi.oppose_position
+        FROM votes_cast vc
+        JOIN roll_calls rc ON rc.id = vc.roll_call_id
+        JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        JOIN vote_interpretations vi ON vi.roll_call_id = rc.id
+        WHERE vc.legislator_id = %s
+          AND vcf.is_eligible = TRUE
+          AND vcf.primary_domain IN ({placeholders})
+          AND vcf.classification_version = %s
+          AND {_profile_scope_clause(scope)}
+        ORDER BY rc.vote_date, rc.rollcall_number
+        """,
+        (
+            legislator_db_id,
+            *domains,
+            classification_version,
         ),
     )
 
@@ -1547,6 +2058,131 @@ def _safe_share(numerator: int, denominator: int) -> float:
     if denominator <= 0:
         return 0.0
     return numerator / denominator
+
+
+def _build_comparison_by_domain(rows: list[dict[str, Any]]) -> dict[str, list[dict[str, object]]]:
+    by_domain: dict[str, list[dict[str, object]]] = {domain: [] for domain in DOMAIN_ORDER}
+    for row in rows:
+        domain = str(row["domain"])
+        if domain not in by_domain:
+            continue
+        yea_count = int(row.get("yea_count", 0) or 0)
+        nay_count = int(row.get("nay_count", 0) or 0)
+        other_count = int(row.get("other_count", 0) or 0)
+        support_count = int(row.get("interpreted_support_count", 0) or 0)
+        oppose_count = int(row.get("interpreted_oppose_count", 0) or 0)
+        interpreted_other_count = int(row.get("interpreted_other_count", 0) or 0)
+        recorded_votes = yea_count + nay_count
+        by_domain[domain].append(
+            {
+                "congress": int(row["congress"]),
+                "scope": str(row["congress"]),
+                "yea_count": yea_count,
+                "nay_count": nay_count,
+                "other_count": other_count,
+                "recorded_votes": recorded_votes,
+                "total_votes": recorded_votes + other_count,
+                "interpreted_support_count": support_count,
+                "interpreted_oppose_count": oppose_count,
+                "interpreted_other_count": interpreted_other_count,
+                "interpreted_total": support_count + oppose_count + interpreted_other_count,
+                "interpreted_yes_no_count": support_count + oppose_count,
+                "pattern": _support_oppose_pattern(support_count=support_count, oppose_count=oppose_count),
+            }
+        )
+    return by_domain
+
+
+def _build_domain_congress_comparison(
+    *,
+    domain: str,
+    breakdown: list[dict[str, object]],
+) -> dict[str, object]:
+    by_congress = {int(row["congress"]): row for row in breakdown}
+    prior = by_congress.get(118)
+    recent = by_congress.get(119)
+    if prior is None and recent is None:
+        return {
+            "domain": domain,
+            "status": "no_reviewed_evidence",
+            "statement": "There is not enough reviewed evidence to compare the two Congresses confidently.",
+            "basis": "No reviewed Yes/No vote meanings are available in either Congress for this issue.",
+        }
+    if prior is None or recent is None:
+        available = recent or prior
+        congress = int(available["congress"])
+        return {
+            "domain": domain,
+            "status": "single_congress_only",
+            "statement": f"Reviewed evidence is available for the {congress}th Congress only.",
+            "basis": "The comparison stays unavailable because one Congress has no reviewed Yes/No evidence for this issue.",
+        }
+
+    prior_count = int(prior.get("interpreted_yes_no_count", 0) or 0)
+    recent_count = int(recent.get("interpreted_yes_no_count", 0) or 0)
+    if prior_count < 3 or recent_count < 3:
+        return {
+            "domain": domain,
+            "status": "insufficient_evidence",
+            "statement": "There is not enough reviewed evidence to compare the two Congresses confidently.",
+            "basis": f"Reviewed Yes/No evidence: 118th {prior_count}, 119th {recent_count}.",
+        }
+
+    prior_pattern = str(prior.get("pattern"))
+    recent_pattern = str(recent.get("pattern"))
+    prior_margin = _pattern_margin(prior)
+    recent_margin = _pattern_margin(recent)
+    if prior_pattern == recent_pattern:
+        status = "consistent"
+        strength_delta = abs(recent_margin) - abs(prior_margin)
+        if abs(strength_delta) >= 0.25:
+            status = "stronger" if strength_delta > 0 else "weaker"
+        return {
+            "domain": domain,
+            "status": status,
+            "statement": _comparison_statement(status=status, recent_pattern=recent_pattern),
+            "basis": f"Reviewed Yes/No evidence: 118th {prior_count}, 119th {recent_count}.",
+        }
+
+    return {
+        "domain": domain,
+        "status": "different",
+        "statement": "The reviewed voting pattern differs between the 118th and 119th Congresses.",
+        "basis": f"Reviewed Yes/No evidence: 118th {prior_count} ({prior_pattern}), 119th {recent_count} ({recent_pattern}).",
+    }
+
+
+def _support_oppose_pattern(*, support_count: int, oppose_count: int) -> str:
+    if support_count <= 0 and oppose_count <= 0:
+        return "insufficient"
+    if support_count > 0 and oppose_count > 0:
+        return "mixed"
+    if support_count > oppose_count:
+        return "mostly_supported"
+    if oppose_count > support_count:
+        return "mostly_opposed"
+    return "mixed"
+
+
+def _pattern_margin(row: dict[str, object]) -> float:
+    support_count = int(row.get("interpreted_support_count", 0) or 0)
+    oppose_count = int(row.get("interpreted_oppose_count", 0) or 0)
+    total = support_count + oppose_count
+    return _safe_share(support_count - oppose_count, total)
+
+
+def _comparison_statement(*, status: str, recent_pattern: str) -> str:
+    if status == "consistent":
+        return "The recent voting pattern is consistent with the prior Congress."
+    if status == "stronger":
+        if recent_pattern == "mostly_supported":
+            return "The recent voting pattern is consistent with the prior Congress and more strongly supports the reviewed measures."
+        if recent_pattern == "mostly_opposed":
+            return "The recent voting pattern is consistent with the prior Congress and more strongly opposes the reviewed measures."
+        return "The recent voting pattern is consistent with the prior Congress and more pronounced."
+    if status == "weaker":
+        return "The recent voting pattern is consistent with the prior Congress but less one-directional."
+    return "There is not enough reviewed evidence to compare the two Congresses confidently."
 
 
 def _query_all_dicts(query: str, params: tuple[Any, ...] = ()) -> list[dict[str, Any]] | None:
@@ -1919,6 +2555,7 @@ def _build_alignment_payload(
     window_start: str,
     window_end: str,
     classification_version: str,
+    scope: str = CURRENT_PROFILE_SCOPE,
 ) -> dict[str, object]:
     rows_by_domain = {
         domain: [
@@ -1934,6 +2571,11 @@ def _build_alignment_payload(
         "window_start": window_start,
         "window_end": window_end,
         "classification_version": classification_version,
+        "scope": _normalize_profile_scope(scope),
+        "scope_metadata": _build_scope_payload(
+            scope=_normalize_profile_scope(scope),
+            coverage_row=_get_db_scope_coverage(scope=_normalize_profile_scope(scope)),
+        ),
         "preferences": preferences,
         "alignment": [
             _build_domain_alignment(

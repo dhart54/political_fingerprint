@@ -8,7 +8,7 @@ import { formatDomainLabel } from "../lib/issueDomains";
 import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
 import { buildRecordNarrative } from "../lib/profileNarrative.mjs";
 
-export default function ProfileQuickRead({ legislator, onInspectDomain, onProfileRead }) {
+export default function ProfileQuickRead({ legislator, onInspectDomain, onProfileRead, scope = "all" }) {
   const [state, setState] = useState({
     status: "loading",
     fingerprint: null,
@@ -31,13 +31,13 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
 
       try {
         const [fingerprint, positionsPayload, drift] = await Promise.all([
-          fetchFingerprint({ legislatorId: legislator.id }),
-          fetchPositions({ legislatorId: legislator.id }),
+          fetchFingerprint({ legislatorId: legislator.id, scope }),
+          fetchPositions({ legislatorId: legislator.id, scope }),
           fetchDrift({ legislatorId: legislator.id }),
         ]);
         const positions = await fillMissingInterpretedCounts({
           payload: positionsPayload,
-          fetchEvidence: fetchPositionEvidence,
+          fetchEvidence: (args) => fetchPositionEvidence({ ...args, scope }),
           legislatorId: legislator.id,
         });
 
@@ -77,7 +77,7 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
     return () => {
       active = false;
     };
-  }, [legislator.id]);
+  }, [legislator.id, scope]);
 
   const fingerprintRows = state.fingerprint?.fingerprint || [];
   const positionRows = state.positions?.positions || [];
@@ -88,7 +88,9 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
   const narrative = buildRecordNarrative({
     legislator,
     positions: positionRows,
+    scope,
   });
+  const scopeRead = buildScopeRead({ scope, positions: state.positions });
 
   return (
     <section className="mt-3 rounded-2xl border border-cyan-900/10 bg-[linear-gradient(135deg,#083344,#115e59)] px-4 py-3 text-white shadow-[0_10px_28px_rgba(15,23,42,0.12)] lg:px-5">
@@ -119,6 +121,11 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
           {state.status === "ready" ? (
             <p className="mt-2 text-[12px] leading-5 text-cyan-100">
               {narrative.evidenceLine}
+            </p>
+          ) : null}
+          {state.status === "ready" && scopeRead ? (
+            <p className="mt-2 max-w-4xl rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-[12px] leading-5 text-cyan-50">
+              {scopeRead}
             </p>
           ) : null}
         </div>
@@ -280,9 +287,39 @@ function buildTopPosition(rows) {
 function buildCoverage(rows) {
   const totalVotes = rows[0]?.total_votes || 0;
   return {
-    label: `${totalVotes} eligible votes in the current two-year window.`,
+    label: `${totalVotes} eligible votes in the selected profile scope.`,
     value: `${totalVotes} votes`,
   };
+}
+
+function buildScopeRead({ scope, positions }) {
+  const metadata = positions?.scope_metadata;
+  const coverage = metadata?.congresses?.length
+    ? `Includes votes from ${formatYearRange(metadata.window_start, metadata.window_end)}.`
+    : "";
+  if (scope !== "all") {
+    return [metadata?.scope_label ? `${metadata.scope_label} (${metadata.requested_congresses?.join(", ")}th).` : "", coverage]
+      .filter(Boolean)
+      .join(" ");
+  }
+
+  const comparisons = (positions?.positions || [])
+    .map((row) => row.comparison)
+    .filter((comparison) => comparison && comparison.status && comparison.status !== "no_reviewed_evidence");
+  const comparable = comparisons.find((comparison) => ["consistent", "stronger", "weaker", "different"].includes(comparison.status));
+  if (comparable) {
+    return `${coverage} ${comparable.statement}`.trim();
+  }
+  return `${coverage} There is not enough reviewed evidence to compare the two Congresses confidently.`.trim();
+}
+
+function formatYearRange(start, end) {
+  const startYear = start ? String(start).slice(0, 4) : "";
+  const endYear = end ? String(end).slice(0, 4) : "";
+  if (startYear && endYear && startYear !== endYear) {
+    return `${startYear}-${endYear}`;
+  }
+  return startYear || endYear || "the selected period";
 }
 
 function buildDriftRead(drift) {

@@ -85,7 +85,7 @@ def test_get_fingerprint_response_uses_database_rows(monkeypatch) -> None:
         ],
     )
 
-    payload = get_fingerprint_response(legislator_id="leg_casey_rivera", comparison_party="ALL")
+    payload = get_fingerprint_response(legislator_id="leg_casey_rivera", comparison_party="ALL", scope="119")
 
     assert payload["classification_version"] == "db-v1"
     assert payload["window_end"] == "2026-03-12"
@@ -174,6 +174,7 @@ def test_get_alignment_response_returns_insufficient_when_db_interpretations_una
     payload = get_alignment_response(
         legislator_id="leg_casey_rivera",
         preferences={"ECONOMY_TAXES": "show_record"},
+        scope="119",
     )
 
     assert payload["legislator_id"] == "leg_casey_rivera"

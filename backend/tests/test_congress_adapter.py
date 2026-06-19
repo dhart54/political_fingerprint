@@ -3,6 +3,8 @@ import json
 
 from app.etl.compute import run_etl
 from app.etl.congress_adapter import load_congress_bill_cache, load_congress_sample_bundle
+from app.etl.house_clerk_adapter import load_house_clerk_bundle
+from app.etl.senate_xml_adapter import _parse_senate_bill_reference
 from app.etl.seed import build_seed_bundle
 
 
@@ -252,3 +254,62 @@ def test_load_congress_bill_cache_merges_amendment_companion_payload(tmp_path) -
     assert amendment["purpose"].startswith("Amendment repeals")
     assert amendment["latestAction"]["actionDate"] == "2025-09-10"
     assert cache[(119, "hr", 3838)]["source_subresources"]["amendments"]["count"] == 26
+
+
+def test_house_clerk_bundle_uses_congress_session_ids_and_historical_source_urls(tmp_path) -> None:
+    source_dir = tmp_path / "house"
+    source_dir.mkdir()
+    (source_dir / "members.xml").write_text(
+        """
+        <MemberData>
+          <members>
+            <member>
+              <member-info>
+                <bioguideID>A000001</bioguideID>
+                <official-name>Example Member</official-name>
+                <party>D</party>
+                <state postal-code="NC" />
+                <district>4</district>
+              </member-info>
+            </member>
+          </members>
+        </MemberData>
+        """,
+        encoding="utf-8",
+    )
+    (source_dir / "roll001.xml").write_text(
+        """
+        <rollcall-vote>
+          <vote-metadata>
+            <congress>118</congress>
+            <session>1st</session>
+            <rollcall-num>1</rollcall-num>
+            <legis-num>H R 1</legis-num>
+            <vote-question>On Passage</vote-question>
+            <vote-desc>Example Act</vote-desc>
+            <action-date>2023-01-09</action-date>
+          </vote-metadata>
+          <vote-data>
+            <recorded-vote>
+              <legislator bioguide-id="A000001">Example Member</legislator>
+              <vote>Yea</vote>
+            </recorded-vote>
+          </vote-data>
+        </rollcall-vote>
+        """,
+        encoding="utf-8",
+    )
+
+    bundle = load_house_clerk_bundle(source_dir=source_dir)
+
+    assert bundle.roll_calls[0]["id"] == "rc_house_118_1_001"
+    assert bundle.votes_cast[0]["roll_call_id"] == "rc_house_118_1_001"
+    assert bundle.roll_calls[0]["source_url"] == "https://clerk.house.gov/evs/2023/roll001.xml"
+
+
+def test_senate_bill_reference_supports_concurrent_resolutions() -> None:
+    assert _parse_senate_bill_reference(
+        document_type="S. Con. Res.",
+        document_number="41",
+        document_name=None,
+    ) == ("sconres", 41)
