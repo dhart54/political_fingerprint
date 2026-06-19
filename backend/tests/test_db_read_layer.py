@@ -52,9 +52,10 @@ def test_get_fingerprint_response_uses_database_rows(monkeypatch) -> None:
             "bioguide_id": "H009999",
         },
     )
+    monkeypatch.setattr("app.api.precomputed._get_db_latest_classification_version", lambda: "db-v1")
     monkeypatch.setattr(
-        "app.api.precomputed._get_db_fingerprint_rows",
-        lambda *, legislator_db_id: [
+        "app.api.precomputed._get_db_scoped_fingerprint_rows",
+        lambda *, legislator_db_id, scope, classification_version: [
             {
                 "domain": "ECONOMY_TAXES",
                 "vote_count": 3,
@@ -78,7 +79,7 @@ def test_get_fingerprint_response_uses_database_rows(monkeypatch) -> None:
         ],
     )
     monkeypatch.setattr(
-        "app.api.precomputed._get_db_chamber_medians",
+        "app.api.precomputed._get_db_scoped_chamber_medians",
         lambda **kwargs: [
             {"domain": "ECONOMY_TAXES", "median_share": 0.25},
             {"domain": "HEALTH_SOCIAL", "median_share": 0.15},
@@ -156,9 +157,10 @@ def test_get_alignment_response_returns_insufficient_when_db_interpretations_una
         "app.api.precomputed._get_db_legislator_by_external_id",
         lambda legislator_id: {"id": 11},
     )
+    monkeypatch.setattr("app.api.precomputed._get_db_latest_classification_version", lambda: "v1")
     monkeypatch.setattr(
-        "app.api.precomputed._get_db_fingerprint_rows",
-        lambda *, legislator_db_id: [
+        "app.api.precomputed._get_db_scoped_fingerprint_rows",
+        lambda *, legislator_db_id, scope, classification_version: [
             {
                 "window_start": "2024-03-13",
                 "window_end": "2026-03-12",
@@ -167,7 +169,7 @@ def test_get_alignment_response_returns_insufficient_when_db_interpretations_una
         ],
     )
     monkeypatch.setattr(
-        "app.api.precomputed._get_db_alignment_rows",
+        "app.api.precomputed._get_db_scoped_alignment_rows",
         lambda **kwargs: None,
     )
 
