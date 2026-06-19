@@ -42,8 +42,9 @@ def load_house_clerk_bundle(
         for legislator in legislators
     }
     supplemental_legislators: list[dict[str, object]] = []
+    bills_path = _resolve_optional_source_file(source_dir, "bills.json", fallback_dir)
     congress_bill_records = normalize_congress_bill_records(
-        json.loads(_resolve_source_file(source_dir, "bills.json", fallback_dir).read_text())
+        json.loads(bills_path.read_text()) if bills_path is not None else []
     )
     congress_bill_lookup = {
         (int(bill["congress"]), str(bill["bill_type"]), int(bill["bill_number"])): bill
@@ -77,9 +78,8 @@ def load_house_clerk_bundle(
 
     legislators.extend(supplemental_legislators)
 
-    zip_district_map = json.loads(
-        _resolve_source_file(source_dir, "zip_district_map.json", fallback_dir).read_text()
-    )
+    zip_path = _resolve_optional_source_file(source_dir, "zip_district_map.json", fallback_dir)
+    zip_district_map = json.loads(zip_path.read_text()) if zip_path is not None else []
 
     return FixtureBundle(
         legislators=legislators,
@@ -165,7 +165,7 @@ def _parse_roll_call(
     congress_bill = congress_bill_lookup.get(bill_key)
 
     roll_call = {
-        "id": f"rc_house_{roll_number:03d}",
+        "id": f"rc_house_{congress}_{session}_{roll_number:03d}",
         "chamber": "house",
         "congress": congress,
         "session": session,
@@ -174,7 +174,11 @@ def _parse_roll_call(
         "question": vote_question,
         "description": vote_description,
         "bill_ref": bill_id,
-        "source_url": _build_house_clerk_source_url(session=session, roll_number=roll_number),
+        "source_url": _build_house_clerk_source_url(
+            congress=congress,
+            session=session,
+            roll_number=roll_number,
+        ),
     }
     bill = {
         "id": bill_id,
@@ -217,10 +221,18 @@ def _parse_house_bill_reference(value: str) -> tuple[str, int]:
     normalized = re.sub(r"[^A-Z0-9]+", " ", value.upper()).strip()
     if normalized.startswith("H CON RES "):
         return "hconres", int(normalized.split()[-1])
+    if normalized.startswith("H J RES "):
+        return "hjres", int(normalized.split()[-1])
     if normalized.startswith("H RES "):
         return "hres", int(normalized.split()[-1])
     if normalized.startswith("H R "):
         return "hr", int(normalized.split()[-1])
+    if normalized.startswith("S CON RES "):
+        return "sconres", int(normalized.split()[-1])
+    if normalized.startswith("S J RES "):
+        return "sjres", int(normalized.split()[-1])
+    if normalized.startswith("S RES "):
+        return "sres", int(normalized.split()[-1])
     if normalized.startswith("S "):
         return "s", int(normalized.split()[-1])
     raise ValueError(f"Unsupported House bill reference: {value}")
@@ -269,8 +281,8 @@ def _extract_house_vote_description(metadata: ElementTree.Element) -> str:
     return _require_text(metadata.find("vote-question"))
 
 
-def _build_house_clerk_source_url(*, session: int, roll_number: int) -> str:
-    year = "2025" if session == 1 else "2026"
+def _build_house_clerk_source_url(*, congress: int, session: int, roll_number: int) -> str:
+    year = 1789 + ((congress - 1) * 2) + (session - 1)
     return f"https://clerk.house.gov/evs/{year}/roll{roll_number:03d}.xml"
 
 
@@ -354,6 +366,17 @@ def _resolve_source_file(source_dir: Path, filename: str, fallback_dir: Path | N
         if fallback_path.exists():
             return fallback_path
     raise FileNotFoundError(f"Missing required House Clerk source file: {filename}")
+
+
+def _resolve_optional_source_file(source_dir: Path, filename: str, fallback_dir: Path | None) -> Path | None:
+    primary_path = source_dir / filename
+    if primary_path.exists():
+        return primary_path
+    if fallback_dir is not None:
+        fallback_path = fallback_dir / filename
+        if fallback_path.exists():
+            return fallback_path
+    return None
 
 
 def _require_text(element: ElementTree.Element | None) -> str:

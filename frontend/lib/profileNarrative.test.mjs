@@ -3,6 +3,7 @@ import test from "node:test";
 
 import {
   buildConcretePreferencePrompt,
+  buildComparisonLine,
   buildIssuePatternRows,
   buildRecordNarrative,
   getDirectionalAlignmentPreferences,
@@ -57,6 +58,48 @@ test("record narrative names strongest and mixed reviewed patterns without ideol
   assert.doesNotMatch(
     `${narrative.headline} ${narrative.body}`,
     /liberal|conservative|extreme|always|corrupt|you should vote/i,
+  );
+});
+
+test("record narrative adds cautious cross-Congress comparison when available", () => {
+  const narrative = buildRecordNarrative({
+    legislator: {
+      name_display: "Casey Rivera",
+      chamber: "house",
+      party: "D",
+    },
+    scope: "all",
+    positions: [
+      {
+        domain: "ECONOMY_TAXES",
+        recorded_votes: 8,
+        interpreted_support_count: 4,
+        interpreted_oppose_count: 0,
+        interpreted_other_count: 0,
+        comparison: {
+          status: "consistent",
+          statement: "The recent voting pattern is consistent with the prior Congress.",
+        },
+      },
+    ],
+  });
+
+  assert.match(narrative.body, /consistent with the prior Congress/);
+  assert.doesNotMatch(narrative.body, /motive|ideology|score/i);
+});
+
+test("comparison line stays unavailable when one Congress lacks enough reviewed evidence", () => {
+  assert.equal(
+    buildComparisonLine([
+      {
+        domain: "ECONOMY_TAXES",
+        comparison: {
+          status: "insufficient_evidence",
+          statement: "There is not enough reviewed evidence to compare the two Congresses confidently.",
+        },
+      },
+    ]),
+    "There is not enough reviewed evidence to compare the two Congresses confidently.",
   );
 });
 

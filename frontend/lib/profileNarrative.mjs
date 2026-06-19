@@ -75,7 +75,7 @@ const DOMAIN_LABELS = {
   INFRASTRUCTURE_TECH_TRANSPORT: "Infrastructure, Tech & Transportation",
 };
 
-export function buildRecordNarrative({ legislator = {}, positions = [] } = {}) {
+export function buildRecordNarrative({ legislator = {}, positions = [], scope = "all" } = {}) {
   const rows = sortIssueRowsByReadiness(positions || []);
   const interpretedRows = rows.filter((row) => getInterpretedYesNoCount(row) > 0);
   const strongRows = rows.filter((row) => row.readiness?.key === "strong_evidence");
@@ -105,15 +105,33 @@ export function buildRecordNarrative({ legislator = {}, positions = [] } = {}) {
   const limitedLine = limitedRows.length || notReadyRows.length
     ? `${limitedRows.length + notReadyRows.length} issue ${limitedRows.length + notReadyRows.length === 1 ? "area remains" : "areas remain"} limited or not ready to summarize.`
     : "";
+  const comparisonLine = scope === "all" ? buildComparisonLine(rows) : "";
 
   return {
     headline: `${legislator.name_display || "This official"}'s clearest reviewed pattern is ${formatDomainLabel(strongest.domain)}.`,
-    body: [partyLine, strongestLine, mixedLine, limitedLine].filter(Boolean).join(" "),
+    body: [partyLine, strongestLine, mixedLine, comparisonLine, limitedLine].filter(Boolean).join(" "),
     evidenceLine: `${totalInterpreted} reviewed Yes/No meanings across ${totalRecorded} recorded issue rows.`,
     strongestDomain: strongest.domain,
     patternRows: buildIssuePatternRows(rows).slice(0, 4),
     limitedCount: limitedRows.length + notReadyRows.length,
   };
+}
+
+export function buildComparisonLine(rows = []) {
+  const comparisons = (rows || [])
+    .map((row) => row.comparison)
+    .filter(Boolean);
+  const confident = comparisons.find((comparison) =>
+    ["consistent", "stronger", "weaker", "different"].includes(comparison.status),
+  );
+  if (confident) {
+    return confident.statement;
+  }
+  const singleCongress = comparisons.find((comparison) => comparison.status === "single_congress_only");
+  if (singleCongress) {
+    return "Some issues have reviewed evidence in only one Congress, so the profile does not describe a cross-Congress change.";
+  }
+  return "There is not enough reviewed evidence to compare the two Congresses confidently.";
 }
 
 export function buildIssuePatternRows(positions = []) {

@@ -53,6 +53,55 @@ def test_positions_endpoint_exposes_interpreted_coverage_counts() -> None:
     assert education["interpreted_total"] == 2
 
 
+def test_scoped_comparison_requires_reviewed_evidence_in_both_congresses() -> None:
+    comparison = precomputed._build_domain_congress_comparison(
+        domain="ECONOMY_TAXES",
+        breakdown=[
+            {
+                "congress": 118,
+                "interpreted_yes_no_count": 2,
+                "interpreted_support_count": 2,
+                "interpreted_oppose_count": 0,
+            },
+            {
+                "congress": 119,
+                "interpreted_yes_no_count": 4,
+                "interpreted_support_count": 4,
+                "interpreted_oppose_count": 0,
+            },
+        ],
+    )
+
+    assert comparison["status"] == "insufficient_evidence"
+    assert "not enough reviewed evidence" in comparison["statement"].lower()
+
+
+def test_scoped_comparison_surfaces_different_patterns_without_change_score() -> None:
+    comparison = precomputed._build_domain_congress_comparison(
+        domain="ECONOMY_TAXES",
+        breakdown=[
+            {
+                "congress": 118,
+                "interpreted_yes_no_count": 3,
+                "interpreted_support_count": 3,
+                "interpreted_oppose_count": 0,
+                "pattern": "mostly_supported",
+            },
+            {
+                "congress": 119,
+                "interpreted_yes_no_count": 3,
+                "interpreted_support_count": 0,
+                "interpreted_oppose_count": 3,
+                "pattern": "mostly_opposed",
+            },
+        ],
+    )
+
+    assert comparison["status"] == "different"
+    assert "differs between the 118th and 119th" in comparison["statement"]
+    assert "score" not in comparison
+
+
 def test_database_position_reads_do_not_hide_interpretations_by_classification_version() -> None:
     """vote_interpretations is keyed by roll_call_id, not by active classification version."""
     source = precomputed._get_db_position_rows.__code__.co_consts

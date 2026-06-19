@@ -42,8 +42,9 @@ def load_senate_xml_bundle(
         for legislator in legislators
     }
     supplemental_legislators: list[dict[str, object]] = []
+    bills_path = _resolve_optional_source_file(source_dir, "bills.json", fallback_dir)
     congress_bill_records = normalize_congress_bill_records(
-        json.loads(_resolve_source_file(source_dir, "bills.json", fallback_dir).read_text())
+        json.loads(bills_path.read_text()) if bills_path is not None else []
     )
     congress_bill_lookup = {
         (int(bill["congress"]), str(bill["bill_type"]), int(bill["bill_number"])): bill
@@ -75,9 +76,8 @@ def load_senate_xml_bundle(
         roll_calls.append(roll_call)
         votes_cast.extend(votes)
 
-    zip_district_map = json.loads(
-        _resolve_source_file(source_dir, "zip_district_map.json", fallback_dir).read_text()
-    )
+    zip_path = _resolve_optional_source_file(source_dir, "zip_district_map.json", fallback_dir)
+    zip_district_map = json.loads(zip_path.read_text()) if zip_path is not None else []
 
     return FixtureBundle(
         legislators=[
@@ -161,7 +161,7 @@ def _parse_roll_call(
     congress_bill = congress_bill_lookup.get(bill_key)
 
     roll_call = {
-        "id": f"rc_senate_{roll_number:03d}",
+        "id": f"rc_senate_{congress}_{session}_{roll_number:03d}",
         "chamber": "senate",
         "congress": congress,
         "session": session,
@@ -219,6 +219,8 @@ def _parse_senate_bill_reference(
                 return "sres", int(normalized_number)
             if normalized_type == "S J RES":
                 return "sjres", int(normalized_number)
+            if normalized_type == "S CON RES":
+                return "sconres", int(normalized_number)
             if normalized_type == "H R":
                 return "hr", int(normalized_number)
             if normalized_type == "H RES":
@@ -234,6 +236,8 @@ def _parse_senate_bill_reference(
         return "sres", int(normalized.split()[-1])
     if normalized.startswith("S J RES "):
         return "sjres", int(normalized.split()[-1])
+    if normalized.startswith("S CON RES "):
+        return "sconres", int(normalized.split()[-1])
     if normalized.startswith("S "):
         return "s", int(normalized.split()[-1])
     if normalized.startswith("H RES "):
@@ -272,8 +276,7 @@ def _build_senate_vote_legislator(
     member_vote: ElementTree.Element,
 ) -> dict[str, object]:
     full_name = (
-        _optional_text(member_vote.find("member_full"))
-        or " ".join(
+        " ".join(
             part
             for part in (
                 _optional_text(member_vote.find("first_name")),
@@ -281,6 +284,7 @@ def _build_senate_vote_legislator(
             )
             if part
         )
+        or _optional_text(member_vote.find("member_full"))
         or lis_member_id
     )
     party = _optional_text(member_vote.find("party")) or "Unknown"
@@ -317,6 +321,17 @@ def _resolve_source_file(source_dir: Path, filename: str, fallback_dir: Path | N
         if fallback_path.exists():
             return fallback_path
     raise FileNotFoundError(f"Missing required Senate XML source file: {filename}")
+
+
+def _resolve_optional_source_file(source_dir: Path, filename: str, fallback_dir: Path | None) -> Path | None:
+    primary_path = source_dir / filename
+    if primary_path.exists():
+        return primary_path
+    if fallback_dir is not None:
+        fallback_path = fallback_dir / filename
+        if fallback_path.exists():
+            return fallback_path
+    return None
 
 
 def _require_text(element: ElementTree.Element | None) -> str:
