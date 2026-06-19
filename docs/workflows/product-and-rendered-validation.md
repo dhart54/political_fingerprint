@@ -44,6 +44,8 @@ Use screenshots or reproducible rendered output when possible.
 
 - Prefer local rendering when it is reliable.
 - If local rendering hits known Windows/Codex limitations, report the exact failing command and use Vercel/live preview when available.
+- When local rendered validation is unavailable, Codex may open a draft PR to obtain a hosted preview; PR creation for validation does not authorize merge.
+- Local browser or `next start` failure is not a product blocker when tests, build, API validation, and hosted validation pass.
 - If preview is deployment-protected, distinguish that access limitation from a product failure.
 - Do not repeatedly rerun a hanging local server command.
 

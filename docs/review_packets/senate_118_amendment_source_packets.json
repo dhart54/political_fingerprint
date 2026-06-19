@@ -1,0 +1,821 @@
+{
+  "classification_version": "v1",
+  "created_at": "2026-06-19T20:26:48.510550+00:00",
+  "deferred_amendment_audit": {
+    "bucket_distribution": {
+      "house:s1:amendment": 406,
+      "house:s2:amendment": 160,
+      "senate:s1:amendment": 7,
+      "senate:s2:amendment": 15
+    },
+    "deferred_amendment_bucket": 588,
+    "note": "The 588 deferred amendment bucket is the full 118th roll-call amendment bucket: 566 House amendment roll calls plus 22 Senate amendment roll calls.",
+    "senate_loaded_amendment_roll_calls": 22,
+    "senate_sessions": {
+      "s1": 7,
+      "s2": 15
+    }
+  },
+  "guardrails": [
+    "Direct amendment number and purpose are required for substantive interpretation.",
+    "Parent measure context is supporting context only.",
+    "Procedural motions remain non-counting.",
+    "Rows with generic or unavailable amendment purpose remain deferred.",
+    "No PN nominations or treaty/executive votes are included."
+  ],
+  "packets": [
+    {
+      "amendment_number": "S.Amdt. 11",
+      "amendment_purpose": "To require any convention, agreement, or other international instrument on pandemic prevention, preparedness, and response reached by the World Health Assembly to be subject to Senate ratification.",
+      "bill_title": "S. 316",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/11",
+      "defer_reason": null,
+      "description": "Johnson Amdt. No. 11",
+      "proposed_category": "substantive_interpretation",
+      "proposed_domain": "HEALTH_SOCIAL",
+      "proposed_facet": "health_social",
+      "question": "On the Amendment",
+      "roll_call_id": 2454,
+      "roll_number": 71,
+      "score_breakdown": {
+        "HEALTH_SOCIAL": {
+          "matched_terms": [
+            "health",
+            "pandemic"
+          ],
+          "senate_118_amendment_source_match": 4
+        }
+      },
+      "session": 1,
+      "source_basis": [
+        "Official Senate roll 1-071 question/title",
+        "Direct amendment identity: S.Amdt. 11",
+        "Direct amendment purpose from Congress.gov amendment record or Senate XML",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_available",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1181/vote_118_1_00071.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 30",
+      "amendment_purpose": "To require a certification.",
+      "bill_title": "S. 316",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/30",
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Ricketts Amdt. No. 30",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Amendment",
+      "roll_call_id": 2455,
+      "roll_number": 72,
+      "score_breakdown": {},
+      "session": 1,
+      "source_basis": [
+        "Official Senate roll 1-072 question/title",
+        "Direct amendment identity: S.Amdt. 30",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1181/vote_118_1_00072.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 9",
+      "amendment_purpose": "To provide findings related to the President's constitutional authority to use military force to protect the United States and United States interests.",
+      "bill_title": "S. 316",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/9",
+      "defer_reason": null,
+      "description": "Cruz Amdt. No. 9",
+      "proposed_category": "substantive_interpretation",
+      "proposed_domain": "NATIONAL_SECURITY_FOREIGN",
+      "proposed_facet": "national_security_foreign",
+      "question": "On the Amendment",
+      "roll_call_id": 2456,
+      "roll_number": 73,
+      "score_breakdown": {
+        "NATIONAL_SECURITY_FOREIGN": {
+          "matched_terms": [
+            "military"
+          ],
+          "senate_118_amendment_source_match": 2
+        }
+      },
+      "session": 1,
+      "source_basis": [
+        "Official Senate roll 1-073 question/title",
+        "Direct amendment identity: S.Amdt. 9",
+        "Direct amendment purpose from Congress.gov amendment record or Senate XML",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_available",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1181/vote_118_1_00073.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 33",
+      "amendment_purpose": "To provide that nothing shall be construed to hinder the ability of the United States to respond rapidly and decisively to any attacks by Iran or its proxy forces.",
+      "bill_title": "S. 316",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/33",
+      "defer_reason": null,
+      "description": "Sullivan Amdt. No. 33",
+      "proposed_category": "substantive_interpretation",
+      "proposed_domain": "NATIONAL_SECURITY_FOREIGN",
+      "proposed_facet": "national_security_foreign",
+      "question": "On the Amendment",
+      "roll_call_id": 2457,
+      "roll_number": 74,
+      "score_breakdown": {
+        "NATIONAL_SECURITY_FOREIGN": {
+          "matched_terms": [
+            "iran"
+          ],
+          "senate_118_amendment_source_match": 2
+        }
+      },
+      "session": 1,
+      "source_basis": [
+        "Official Senate roll 1-074 question/title",
+        "Direct amendment identity: S.Amdt. 33",
+        "Direct amendment purpose from Congress.gov amendment record or Senate XML",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_available",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1181/vote_118_1_00074.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 13",
+      "amendment_purpose": "To establish a Joint Select Committee on Afghanistan to conduct a full investigation and compile a joint report on the United States withdrawal from Afghanistan.",
+      "bill_title": "S. 316",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/13",
+      "defer_reason": "defer_no_safe_issue_domain",
+      "description": "Scott (FL) Amdt. No. 13",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Amendment",
+      "roll_call_id": 2458,
+      "roll_number": 75,
+      "score_breakdown": {},
+      "session": 1,
+      "source_basis": [
+        "Official Senate roll 1-075 question/title",
+        "Direct amendment identity: S.Amdt. 13",
+        "Direct amendment purpose from Congress.gov amendment record or Senate XML",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_available",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1181/vote_118_1_00075.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 40",
+      "amendment_purpose": "To establish the Office of the Special Inspector General for Ukraine Assistance.",
+      "bill_title": "S. 316",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/40",
+      "defer_reason": null,
+      "description": "Hawley Amdt. No. 40",
+      "proposed_category": "substantive_interpretation",
+      "proposed_domain": "NATIONAL_SECURITY_FOREIGN",
+      "proposed_facet": "national_security_foreign",
+      "question": "On the Amendment",
+      "roll_call_id": 2459,
+      "roll_number": 76,
+      "score_breakdown": {
+        "NATIONAL_SECURITY_FOREIGN": {
+          "matched_terms": [
+            "ukraine"
+          ],
+          "senate_118_amendment_source_match": 2
+        }
+      },
+      "session": 1,
+      "source_basis": [
+        "Official Senate roll 1-076 question/title",
+        "Direct amendment identity: S.Amdt. 40",
+        "Direct amendment purpose from Congress.gov amendment record or Senate XML",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_available",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1181/vote_118_1_00076.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": null,
+      "amendment_purpose": "No Statement of Purpose on File.",
+      "bill_title": "Conference Report to Accompany H.R. 2670",
+      "congressgov_url": null,
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Motion to Insist on the Senate Amendment to H.R. 2670, Agree to the Request for Conference, and Authorize the Chair to Appoint Conferees",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Motion",
+      "roll_call_id": 2500,
+      "roll_number": 313,
+      "score_breakdown": {},
+      "session": 1,
+      "source_basis": [
+        "Official Senate roll 1-313 question/title"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1181/vote_118_1_00313.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": null,
+      "amendment_purpose": "No Statement of Purpose on File.",
+      "bill_title": "Schumer Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366",
+      "congressgov_url": null,
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Motion to Invoke Cloture on the Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Cloture Motion",
+      "roll_call_id": 3045,
+      "roll_number": 79,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-079 question/title"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00079.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 1623",
+      "amendment_purpose": "To prohibit the use of funds to initiate or decline a Federal criminal charge based on impermissible considerations.",
+      "bill_title": "Schumer Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/1623",
+      "defer_reason": "defer_no_safe_issue_domain",
+      "description": "Lee Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366 with an Amendment No. 1623",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Motion",
+      "roll_call_id": 3046,
+      "roll_number": 80,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-080 question/title",
+        "Direct amendment identity: S.Amdt. 1623",
+        "Direct amendment purpose from Congress.gov amendment record or Senate XML",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_available",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00080.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 1626",
+      "amendment_purpose": "To strike the provision making amounts available to the National Telecommunications and Information Administration for salaries and expenses, administration, and oversight of programs administered by the Administration that were funded under the Infrastructure Investment and Jobs Act.",
+      "bill_title": "Schumer Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/1626",
+      "defer_reason": null,
+      "description": "Schmitt Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366 with an Amendment No. 1626",
+      "proposed_category": "procedural_context",
+      "proposed_domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+      "proposed_facet": "procedural_amendment_context",
+      "question": "On the Motion",
+      "roll_call_id": 3047,
+      "roll_number": 81,
+      "score_breakdown": {
+        "INFRASTRUCTURE_TECH_TRANSPORT": {
+          "matched_terms": [
+            "infrastructure"
+          ],
+          "senate_118_amendment_source_match": 2
+        }
+      },
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-081 question/title",
+        "Direct amendment identity: S.Amdt. 1626",
+        "Direct amendment purpose from Congress.gov amendment record or Senate XML",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_available",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00081.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 1634",
+      "amendment_purpose": "To place a restriction on the use of funds relating to the decennial census.",
+      "bill_title": "Schumer Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/1634",
+      "defer_reason": "defer_no_safe_issue_domain",
+      "description": "Hagerty Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366 with an Amendment No. 1634",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Motion",
+      "roll_call_id": 3049,
+      "roll_number": 83,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-083 question/title",
+        "Direct amendment identity: S.Amdt. 1634",
+        "Direct amendment purpose from Congress.gov amendment record or Senate XML",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_available",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00083.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": null,
+      "amendment_purpose": "No Statement of Purpose on File.",
+      "bill_title": "Schumer Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366",
+      "congressgov_url": null,
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Schumer Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Motion",
+      "roll_call_id": 3050,
+      "roll_number": 84,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-084 question/title"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00084.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 1804",
+      "amendment_purpose": "To prohibit the use of funds to waive certain sanctions with respect to Iran.",
+      "bill_title": "Motion to Concur in the House Amendment to the Senate Amendment to H.R. 2882",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/1804",
+      "defer_reason": null,
+      "description": "Motion to Table the Motion to Concur in the House Amendment to the Senate Amendment to H.R. 2882 with Cruz Amdt No. 1804",
+      "proposed_category": "procedural_context",
+      "proposed_domain": "NATIONAL_SECURITY_FOREIGN",
+      "proposed_facet": "procedural_amendment_context",
+      "question": "On the Motion to Table",
+      "roll_call_id": 3055,
+      "roll_number": 107,
+      "score_breakdown": {
+        "NATIONAL_SECURITY_FOREIGN": {
+          "matched_terms": [
+            "iran",
+            "sanctions"
+          ],
+          "senate_118_amendment_source_match": 4
+        }
+      },
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-107 question/title",
+        "Direct amendment identity: S.Amdt. 1804",
+        "Direct amendment purpose from Congress.gov amendment record or Senate XML",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_available",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00107.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 1781",
+      "amendment_purpose": "To prohibit funding for entities that permit certain students to participate in girls' or women's athletics.",
+      "bill_title": "Motion to Concur in the House Amendment to the Senate Amendment to H.R. 2882",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/1781",
+      "defer_reason": null,
+      "description": "Motion to Table the Motion to Concur in the House Amendment to the Senate Amendment to H.R. 2882 with Tuberville Amdt 1781",
+      "proposed_category": "procedural_context",
+      "proposed_domain": "EDUCATION_WORKFORCE",
+      "proposed_facet": "procedural_amendment_context",
+      "question": "On the Motion to Table",
+      "roll_call_id": 3056,
+      "roll_number": 108,
+      "score_breakdown": {
+        "EDUCATION_WORKFORCE": {
+          "matched_terms": [
+            "student"
+          ],
+          "senate_118_amendment_source_match": 2
+        }
+      },
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-108 question/title",
+        "Direct amendment identity: S.Amdt. 1781",
+        "Direct amendment purpose from Congress.gov amendment record or Senate XML",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_available",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00108.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": null,
+      "amendment_purpose": "No Statement of Purpose on File.",
+      "bill_title": "Motion to Concur in the House Amendment to the Senate Amendment to H.R. 2882",
+      "congressgov_url": null,
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Motion to Concur in the House Amendment to the Senate Amendment to H.R. 2882",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Motion",
+      "roll_call_id": 3062,
+      "roll_number": 114,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-114 question/title"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00114.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": null,
+      "amendment_purpose": "No Statement of Purpose on File.",
+      "bill_title": "Motion to Concur in the House Amendment to the Senate Amendment to H.R. 815",
+      "congressgov_url": null,
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Motion to Concur in the House Amendment to the Senate Amendment to H.R. 815",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Motion",
+      "roll_call_id": 3073,
+      "roll_number": 154,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-154 question/title"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00154.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": null,
+      "amendment_purpose": "No Statement of Purpose on File.",
+      "bill_title": "Motion to Concur in the House Amendments to S. 870",
+      "congressgov_url": null,
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Motion to Concur in the House Amendments to S. 870",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Motion",
+      "roll_call_id": 3085,
+      "roll_number": 200,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-200 question/title"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00200.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 3021",
+      "amendment_purpose": "In the nature of a substitute.",
+      "bill_title": "Motion to Concur in the House Amendment to S. 2073 with Amendment N. 3021",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/3021",
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Motion to Invoke Cloture on the Motion to Concur in the House Amendment to S. 2073 with an Amendment",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Cloture Motion",
+      "roll_call_id": 3088,
+      "roll_number": 219,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-219 question/title",
+        "Direct amendment identity: S.Amdt. 3021",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00219.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": "S.Amdt. 3021",
+      "amendment_purpose": "In the nature of a substitute.",
+      "bill_title": "Motion to Concur in the House Amendment to S. 2073 with Amendment N. 3021",
+      "congressgov_url": "https://www.congress.gov/amendment/118th-congress/senate-amendment/3021",
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Motion to Concur in the House Amendment to S. 2073 with Amendment N. 3021",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Motion",
+      "roll_call_id": 3089,
+      "roll_number": 221,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-221 question/title",
+        "Direct amendment identity: S.Amdt. 3021",
+        "Congress.gov latest amendment action"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00221.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": null,
+      "amendment_purpose": "No Statement of Purpose on File.",
+      "bill_title": "Motion to Concur in the House Amendment to the Senate Amendment to H.R. 5009",
+      "congressgov_url": null,
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Motion to Invoke Cloture: Motion to Concur in the House Amendment to the Senate Amendment to H.R. 5009",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Cloture Motion",
+      "roll_call_id": 3098,
+      "roll_number": 324,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-324 question/title"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00324.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": null,
+      "amendment_purpose": "No Statement of Purpose on File.",
+      "bill_title": "Motion to Concur in the House Amendment to the Senate Amendment to H.R. 5009",
+      "congressgov_url": null,
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Motion to Concur in the House Amendment to the Senate Amendment to H.R. 5009",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Motion",
+      "roll_call_id": 3099,
+      "roll_number": 325,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-325 question/title"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00325.xml",
+      "vote_type": "amendment"
+    },
+    {
+      "amendment_number": null,
+      "amendment_purpose": "No Statement of Purpose on File.",
+      "bill_title": "Motion to Concur in the House Amendment to S. 4367",
+      "congressgov_url": null,
+      "defer_reason": "defer_amendment_purpose_missing_or_generic",
+      "description": "Motion to Concur in the House Amendment to S. 4367",
+      "proposed_category": "defer",
+      "proposed_domain": null,
+      "proposed_facet": null,
+      "question": "On the Motion",
+      "roll_call_id": 3101,
+      "roll_number": 327,
+      "score_breakdown": {},
+      "session": 2,
+      "source_basis": [
+        "Official Senate roll 2-327 question/title"
+      ],
+      "source_status": "direct_purpose_missing_or_generic",
+      "source_url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00327.xml",
+      "vote_type": "amendment"
+    }
+  ],
+  "schema_version": "senate_118_amendment_source_packets_v1",
+  "summary": {
+    "defer_reasons": {
+      "defer_amendment_purpose_missing_or_generic": 12,
+      "defer_no_safe_issue_domain": 3
+    },
+    "loaded_118_senate_amendment_roll_calls": 22,
+    "proposed_category": {
+      "defer": 15,
+      "procedural_context": 3,
+      "substantive_interpretation": 4
+    },
+    "proposed_domain": {
+      "EDUCATION_WORKFORCE": 1,
+      "HEALTH_SOCIAL": 1,
+      "INFRASTRUCTURE_TECH_TRANSPORT": 1,
+      "NATIONAL_SECURITY_FOREIGN": 4
+    },
+    "source_status": {
+      "direct_purpose_available": 10,
+      "direct_purpose_missing_or_generic": 12
+    }
+  },
+  "top_opportunity_families": [
+    {
+      "decision": "substantive_interpretation",
+      "domain": "NATIONAL_SECURITY_FOREIGN",
+      "examples": [
+        {
+          "amendment_number": "S.Amdt. 9",
+          "amendment_purpose": "To provide findings related to the President's constitutional authority to use military force to protect the United States and United States interests.",
+          "description": "Cruz Amdt. No. 9",
+          "roll_call_id": 2456,
+          "roll_number": 73,
+          "session": 1
+        },
+        {
+          "amendment_number": "S.Amdt. 33",
+          "amendment_purpose": "To provide that nothing shall be construed to hinder the ability of the United States to respond rapidly and decisively to any attacks by Iran or its proxy forces.",
+          "description": "Sullivan Amdt. No. 33",
+          "roll_call_id": 2457,
+          "roll_number": 74,
+          "session": 1
+        },
+        {
+          "amendment_number": "S.Amdt. 40",
+          "amendment_purpose": "To establish the Office of the Special Inspector General for Ukraine Assistance.",
+          "description": "Hawley Amdt. No. 40",
+          "roll_call_id": 2459,
+          "roll_number": 76,
+          "session": 1
+        }
+      ],
+      "family": "substantive_interpretation:NATIONAL_SECURITY_FOREIGN:amendment",
+      "proposed_category": "substantive_interpretation",
+      "rows": 3,
+      "source_strength": "direct amendment purpose",
+      "trust_risk": "low"
+    },
+    {
+      "decision": "substantive_interpretation",
+      "domain": "HEALTH_SOCIAL",
+      "examples": [
+        {
+          "amendment_number": "S.Amdt. 11",
+          "amendment_purpose": "To require any convention, agreement, or other international instrument on pandemic prevention, preparedness, and response reached by the World Health Assembly to be subject to Senate ratification.",
+          "description": "Johnson Amdt. No. 11",
+          "roll_call_id": 2454,
+          "roll_number": 71,
+          "session": 1
+        }
+      ],
+      "family": "substantive_interpretation:HEALTH_SOCIAL:amendment",
+      "proposed_category": "substantive_interpretation",
+      "rows": 1,
+      "source_strength": "direct amendment purpose",
+      "trust_risk": "low"
+    },
+    {
+      "decision": "procedural_context",
+      "domain": "EDUCATION_WORKFORCE",
+      "examples": [
+        {
+          "amendment_number": "S.Amdt. 1781",
+          "amendment_purpose": "To prohibit funding for entities that permit certain students to participate in girls' or women's athletics.",
+          "description": "Motion to Table the Motion to Concur in the House Amendment to the Senate Amendment to H.R. 2882 with Tuberville Amdt 1781",
+          "roll_call_id": 3056,
+          "roll_number": 108,
+          "session": 2
+        }
+      ],
+      "family": "procedural_context:EDUCATION_WORKFORCE:amendment",
+      "proposed_category": "procedural_context",
+      "rows": 1,
+      "source_strength": "direct amendment purpose",
+      "trust_risk": "medium"
+    },
+    {
+      "decision": "procedural_context",
+      "domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+      "examples": [
+        {
+          "amendment_number": "S.Amdt. 1626",
+          "amendment_purpose": "To strike the provision making amounts available to the National Telecommunications and Information Administration for salaries and expenses, administration, and oversight of programs administered by the Administration that were funded under the Infrastructure Investment and Jobs Act.",
+          "description": "Schmitt Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366 with an Amendment No. 1626",
+          "roll_call_id": 3047,
+          "roll_number": 81,
+          "session": 2
+        }
+      ],
+      "family": "procedural_context:INFRASTRUCTURE_TECH_TRANSPORT:amendment",
+      "proposed_category": "procedural_context",
+      "rows": 1,
+      "source_strength": "direct amendment purpose",
+      "trust_risk": "medium"
+    },
+    {
+      "decision": "procedural_context",
+      "domain": "NATIONAL_SECURITY_FOREIGN",
+      "examples": [
+        {
+          "amendment_number": "S.Amdt. 1804",
+          "amendment_purpose": "To prohibit the use of funds to waive certain sanctions with respect to Iran.",
+          "description": "Motion to Table the Motion to Concur in the House Amendment to the Senate Amendment to H.R. 2882 with Cruz Amdt No. 1804",
+          "roll_call_id": 3055,
+          "roll_number": 107,
+          "session": 2
+        }
+      ],
+      "family": "procedural_context:NATIONAL_SECURITY_FOREIGN:amendment",
+      "proposed_category": "procedural_context",
+      "rows": 1,
+      "source_strength": "direct amendment purpose",
+      "trust_risk": "medium"
+    },
+    {
+      "decision": "defer",
+      "domain": null,
+      "examples": [
+        {
+          "amendment_number": "S.Amdt. 13",
+          "amendment_purpose": "To establish a Joint Select Committee on Afghanistan to conduct a full investigation and compile a joint report on the United States withdrawal from Afghanistan.",
+          "description": "Scott (FL) Amdt. No. 13",
+          "roll_call_id": 2458,
+          "roll_number": 75,
+          "session": 1
+        },
+        {
+          "amendment_number": "S.Amdt. 1623",
+          "amendment_purpose": "To prohibit the use of funds to initiate or decline a Federal criminal charge based on impermissible considerations.",
+          "description": "Lee Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366 with an Amendment No. 1623",
+          "roll_call_id": 3046,
+          "roll_number": 80,
+          "session": 2
+        },
+        {
+          "amendment_number": "S.Amdt. 1634",
+          "amendment_purpose": "To place a restriction on the use of funds relating to the decennial census.",
+          "description": "Hagerty Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366 with an Amendment No. 1634",
+          "roll_call_id": 3049,
+          "roll_number": 83,
+          "session": 2
+        }
+      ],
+      "family": "defer_no_safe_issue_domain:amendment",
+      "proposed_category": "defer",
+      "rows": 3,
+      "source_strength": "direct amendment purpose",
+      "trust_risk": "low"
+    },
+    {
+      "decision": "defer",
+      "domain": null,
+      "examples": [
+        {
+          "amendment_number": "S.Amdt. 30",
+          "amendment_purpose": "To require a certification.",
+          "description": "Ricketts Amdt. No. 30",
+          "roll_call_id": 2455,
+          "roll_number": 72,
+          "session": 1
+        },
+        {
+          "amendment_number": null,
+          "amendment_purpose": "No Statement of Purpose on File.",
+          "description": "Motion to Insist on the Senate Amendment to H.R. 2670, Agree to the Request for Conference, and Authorize the Chair to Appoint Conferees",
+          "roll_call_id": 2500,
+          "roll_number": 313,
+          "session": 1
+        },
+        {
+          "amendment_number": null,
+          "amendment_purpose": "No Statement of Purpose on File.",
+          "description": "Motion to Invoke Cloture on the Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366",
+          "roll_call_id": 3045,
+          "roll_number": 79,
+          "session": 2
+        },
+        {
+          "amendment_number": null,
+          "amendment_purpose": "No Statement of Purpose on File.",
+          "description": "Schumer Motion to Concur in the House Amendment to the Senate Amendment to H.R. 4366",
+          "roll_call_id": 3050,
+          "roll_number": 84,
+          "session": 2
+        },
+        {
+          "amendment_number": null,
+          "amendment_purpose": "No Statement of Purpose on File.",
+          "description": "Motion to Concur in the House Amendment to the Senate Amendment to H.R. 2882",
+          "roll_call_id": 3062,
+          "roll_number": 114,
+          "session": 2
+        }
+      ],
+      "family": "defer_amendment_purpose_missing_or_generic:amendment",
+      "proposed_category": "defer",
+      "rows": 12,
+      "source_strength": "insufficient direct purpose",
+      "trust_risk": "high"
+    }
+  ]
+}

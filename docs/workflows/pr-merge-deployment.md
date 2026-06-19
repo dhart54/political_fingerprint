@@ -14,6 +14,8 @@ Confirm:
 - production data changes, if any, are documented and authorized
 - review packet is present for substantial work
 
+If local rendered validation is unavailable because of local browser, OS, or process-launch limitations, a draft or normal PR may be opened to obtain hosted preview validation. Opening a PR for hosted preview is not merge authorization. Record the local rendering limitation and complete hosted preview checks before treating rendered validation as satisfied.
+
 ## PR Summary
 
 Summarize:
@@ -29,7 +31,7 @@ Include exact production-write results when applicable.
 
 ## Checks And Merge
 
-Merge autonomy applies only when the milestone includes it.
+Merge autonomy applies only when the milestone includes it. Treat PR creation for preview/review separately from merge authorization; a PR may exist while final merge readiness remains pending.
 
 Before merging:
 
