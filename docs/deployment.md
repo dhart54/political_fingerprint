@@ -2,8 +2,8 @@
 
 Political Fingerprint deploys as two services:
 
-- backend API on Render
-- frontend Next.js app on Vercel
+- backend API on Render: https://political-fingerprint.onrender.com
+- frontend Next.js app on Vercel: https://political-fingerprint.vercel.app
 
 Use `docs/staging_readiness.md` for the exact staging checklist before sharing a deployment.
 
@@ -38,9 +38,9 @@ Render provides `$PORT` at runtime. The backend start command must bind to `0.0.
 Post-deploy checks:
 
 ```text
-GET https://<render-service>.onrender.com/health
-GET https://<render-service>.onrender.com/coverage/metadata
-GET https://<render-service>.onrender.com/lookup/zips
+GET https://political-fingerprint.onrender.com/health
+GET https://political-fingerprint.onrender.com/coverage/metadata
+GET https://political-fingerprint.onrender.com/lookup/zips
 ```
 
 Expected behavior:
@@ -66,14 +66,14 @@ Recommended settings:
 Environment variables:
 
 ```text
-NEXT_PUBLIC_API_BASE_URL=https://<render-service>.onrender.com
+NEXT_PUBLIC_API_BASE_URL=https://political-fingerprint.onrender.com
 ```
 
 `NEXT_PUBLIC_API_BASE_URL` is read by client-side code, so it must be set for the Vercel environment before building the deployment.
 
 Post-deploy checks:
 
-1. Open the Vercel URL.
+1. Open https://political-fingerprint.vercel.app.
 2. Confirm the hero coverage line loads from the Render API.
 3. Run a ZIP lookup using one of the loaded ZIP suggestions.
 4. Open a House profile.
@@ -87,7 +87,7 @@ The backend always allows local frontend origins. For staging or production, set
 Example Render value:
 
 ```text
-FRONTEND_ORIGINS=https://<vercel-project>.vercel.app,https://<custom-domain>
+FRONTEND_ORIGINS=https://political-fingerprint.vercel.app,https://<custom-domain>
 ```
 
 Keep the list explicit. Do not use a wildcard origin for production.
