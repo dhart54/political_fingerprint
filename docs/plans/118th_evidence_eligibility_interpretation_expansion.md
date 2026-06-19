@@ -96,7 +96,7 @@
 - Local database-backed API health: `/health` returned `{"status":"ok"}` and `/coverage/metadata` returned database source with 392 eligible roll calls.
 - Patched local API scope validation: `scope=118` samples only 118 evidence, `scope=119` samples only 119 evidence, and `scope=all` samples combined 118/119 evidence. 118-only and sparse profiles show zero Recent Congress evidence after the API fix.
 - Public frontend validation: `https://political-fingerprint.vercel.app` returned 200 and rendered the Political Fingerprint page. Local Next.js rendering remains an environment limitation only and is not treated as a product blocker after passing tests/build.
-- Public backend validation: initial shell checks to `https://political-fingerprint.onrender.com/health` and `/coverage/metadata` timed out at 30 seconds. A longer cold-start check could not be completed because network escalation was rejected by the environment usage limit.
+- Public backend validation: `https://political-fingerprint.onrender.com/health` returned `{"status":"ok"}` and `/coverage/metadata` reported `data_source = database` with 392 eligible roll calls.
 
 ## Production Writes
 
@@ -116,7 +116,7 @@
 
 ## Blockers
 
-- Public Render backend verification and remote PR creation/push may require network access after the current environment usage limit resets. Merge remains unauthorized.
+- Merge remains unauthorized until the final pre-merge gate passes.
 
 ## Final Reconciliation
 

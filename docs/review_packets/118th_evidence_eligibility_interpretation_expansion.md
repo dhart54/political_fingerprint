@@ -166,7 +166,7 @@ The broad backend suite was attempted in database and fixture modes. It hit pre-
 
 Public frontend validation: `https://political-fingerprint.vercel.app` returned 200 and rendered the Political Fingerprint page. The local Next.js dev server could not be relaunched after clearing the stale `.next` cache because process launch failed with `spawn EPERM` or did not bind port 3000; this is treated as an environment limitation, not a product blocker, because tests and build passed.
 
-Public backend validation: shell checks to `https://political-fingerprint.onrender.com/health` and `/coverage/metadata` timed out at 30 seconds. A longer cold-start check could not be completed because network escalation was rejected by the environment usage limit. Render verification remains pending.
+Public backend validation: `https://political-fingerprint.onrender.com/health` returned `{"status":"ok"}`. `https://political-fingerprint.onrender.com/coverage/metadata` reported `data_source = database` and 392 eligible roll calls.
 
 ## Continuity And Change
 
