@@ -528,35 +528,23 @@ def _get_db_fingerprint_response(*, legislator_id: str, comparison_party: str, s
         return None
 
     normalized_scope = _normalize_profile_scope(scope)
-    if normalized_scope == CURRENT_PROFILE_SCOPE:
-        fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
-    else:
-        fingerprint_rows = _get_db_scoped_fingerprint_rows(
-            legislator_db_id=int(legislator["id"]),
-            scope=normalized_scope,
-            classification_version=_get_db_latest_classification_version(),
-        )
+    fingerprint_rows = _get_db_scoped_fingerprint_rows(
+        legislator_db_id=int(legislator["id"]),
+        scope=normalized_scope,
+        classification_version=_get_db_latest_classification_version(),
+    )
     if fingerprint_rows is None:
         return None
     if not fingerprint_rows:
         return None
 
     first_row = fingerprint_rows[0]
-    if normalized_scope == CURRENT_PROFILE_SCOPE:
-        median_rows = _get_db_chamber_medians(
-            chamber=str(legislator["chamber"]),
-            comparison_party=comparison_party,
-            window_start=str(first_row["window_start"]),
-            window_end=str(first_row["window_end"]),
-            classification_version=str(first_row["classification_version"]),
-        )
-    else:
-        median_rows = _get_db_scoped_chamber_medians(
-            chamber=str(legislator["chamber"]),
-            comparison_party=comparison_party,
-            scope=normalized_scope,
-            classification_version=str(first_row["classification_version"]),
-        )
+    median_rows = _get_db_scoped_chamber_medians(
+        chamber=str(legislator["chamber"]),
+        comparison_party=comparison_party,
+        scope=normalized_scope,
+        classification_version=str(first_row["classification_version"]),
+    )
     if median_rows is None:
         return None
 
@@ -643,33 +631,22 @@ def _get_db_position_response(*, legislator_id: str, scope: str) -> dict[str, ob
         return None
 
     normalized_scope = _normalize_profile_scope(scope)
-    if normalized_scope == CURRENT_PROFILE_SCOPE:
-        fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
-    else:
-        fingerprint_rows = _get_db_scoped_fingerprint_rows(
-            legislator_db_id=int(legislator["id"]),
-            scope=normalized_scope,
-            classification_version=_get_db_latest_classification_version(),
-        )
+    fingerprint_rows = _get_db_scoped_fingerprint_rows(
+        legislator_db_id=int(legislator["id"]),
+        scope=normalized_scope,
+        classification_version=_get_db_latest_classification_version(),
+    )
     if fingerprint_rows is None:
         return None
     if not fingerprint_rows:
         return None
 
     first_row = fingerprint_rows[0]
-    if normalized_scope == CURRENT_PROFILE_SCOPE:
-        position_rows = _get_db_position_rows(
-            legislator_db_id=int(legislator["id"]),
-            window_start=str(first_row["window_start"]),
-            window_end=str(first_row["window_end"]),
-            classification_version=str(first_row["classification_version"]),
-        )
-    else:
-        position_rows = _get_db_scoped_position_rows(
-            legislator_db_id=int(legislator["id"]),
-            scope=normalized_scope,
-            classification_version=str(first_row["classification_version"]),
-        )
+    position_rows = _get_db_scoped_position_rows(
+        legislator_db_id=int(legislator["id"]),
+        scope=normalized_scope,
+        classification_version=str(first_row["classification_version"]),
+    )
     if position_rows is None:
         return None
 
@@ -735,35 +712,23 @@ def _get_db_position_evidence_response(*, legislator_id: str, domain: str, scope
         return None
 
     normalized_scope = _normalize_profile_scope(scope)
-    if normalized_scope == CURRENT_PROFILE_SCOPE:
-        fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
-    else:
-        fingerprint_rows = _get_db_scoped_fingerprint_rows(
-            legislator_db_id=int(legislator["id"]),
-            scope=normalized_scope,
-            classification_version=_get_db_latest_classification_version(),
-        )
+    fingerprint_rows = _get_db_scoped_fingerprint_rows(
+        legislator_db_id=int(legislator["id"]),
+        scope=normalized_scope,
+        classification_version=_get_db_latest_classification_version(),
+    )
     if fingerprint_rows is None:
         return None
     if not fingerprint_rows:
         return None
 
     first_row = fingerprint_rows[0]
-    if normalized_scope == CURRENT_PROFILE_SCOPE:
-        evidence_rows = _get_db_position_evidence_rows(
-            legislator_db_id=int(legislator["id"]),
-            domain=domain,
-            window_start=str(first_row["window_start"]),
-            window_end=str(first_row["window_end"]),
-            classification_version=str(first_row["classification_version"]),
-        )
-    else:
-        evidence_rows = _get_db_scoped_position_evidence_rows(
-            legislator_db_id=int(legislator["id"]),
-            domain=domain,
-            scope=normalized_scope,
-            classification_version=str(first_row["classification_version"]),
-        )
+    evidence_rows = _get_db_scoped_position_evidence_rows(
+        legislator_db_id=int(legislator["id"]),
+        domain=domain,
+        scope=normalized_scope,
+        classification_version=str(first_row["classification_version"]),
+    )
     if evidence_rows is None:
         return None
 
@@ -788,35 +753,23 @@ def _get_db_alignment_response(*, legislator_id: str, preferences: dict[str, str
         return None
 
     normalized_scope = _normalize_profile_scope(scope)
-    if normalized_scope == CURRENT_PROFILE_SCOPE:
-        fingerprint_rows = _get_db_fingerprint_rows(legislator_db_id=int(legislator["id"]))
-    else:
-        fingerprint_rows = _get_db_scoped_fingerprint_rows(
-            legislator_db_id=int(legislator["id"]),
-            scope=normalized_scope,
-            classification_version=_get_db_latest_classification_version(),
-        )
+    fingerprint_rows = _get_db_scoped_fingerprint_rows(
+        legislator_db_id=int(legislator["id"]),
+        scope=normalized_scope,
+        classification_version=_get_db_latest_classification_version(),
+    )
     if fingerprint_rows is None:
         return None
     if not fingerprint_rows:
         return None
 
     first_row = fingerprint_rows[0]
-    if normalized_scope == CURRENT_PROFILE_SCOPE:
-        evidence_rows = _get_db_alignment_rows(
-            legislator_db_id=int(legislator["id"]),
-            domains=tuple(preferences.keys()),
-            window_start=str(first_row["window_start"]),
-            window_end=str(first_row["window_end"]),
-            classification_version=str(first_row["classification_version"]),
-        )
-    else:
-        evidence_rows = _get_db_scoped_alignment_rows(
-            legislator_db_id=int(legislator["id"]),
-            domains=tuple(preferences.keys()),
-            scope=normalized_scope,
-            classification_version=str(first_row["classification_version"]),
-        )
+    evidence_rows = _get_db_scoped_alignment_rows(
+        legislator_db_id=int(legislator["id"]),
+        domains=tuple(preferences.keys()),
+        scope=normalized_scope,
+        classification_version=str(first_row["classification_version"]),
+    )
     if evidence_rows is None:
         evidence_rows = []
 
