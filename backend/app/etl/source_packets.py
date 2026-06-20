@@ -2,6 +2,7 @@ import re
 from dataclasses import dataclass
 from typing import Any
 
+from app.etl.amendment_evidence import parse_house_amendment_identity
 from app.etl.fetch_sources import CONGRESS_BILL_CACHE_DIR
 from app.etl.congress_adapter import load_congress_bill_cache
 
@@ -179,20 +180,11 @@ def build_review_notes(packet: dict[str, Any]) -> list[str]:
 
 
 def parse_house_amendment_hint(description: str | None) -> dict[str, str | None]:
-    text = str(description or "").strip()
-    match = re.search(r"^(?P<sponsor>.+?)\s+Part\s+[A-Z]\s+Amendment\s+No\.\s*(?P<number>\d+)", text, re.IGNORECASE)
-    if not match:
-        return {
-            "amendment_number": None,
-            "amendment_label": None,
-            "sponsor_text": None,
-        }
-    number = match.group("number")
-    sponsor = " ".join(match.group("sponsor").split())
+    identity = parse_house_amendment_identity(description=description, congress=0)
     return {
-        "amendment_number": number,
-        "amendment_label": f"Part A Amendment No. {number}",
-        "sponsor_text": sponsor,
+        "amendment_number": identity.amendment_number,
+        "amendment_label": identity.label,
+        "sponsor_text": identity.sponsor_text,
     }
 
 

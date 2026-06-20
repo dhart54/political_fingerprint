@@ -321,7 +321,7 @@ def test_infer_house_bill_refs_from_cache_ignores_unsupported_entries(tmp_path: 
         <rollcall-vote>
           <vote-metadata>
             <congress>119</congress>
-            <legis-num>H J RES 1</legis-num>
+            <legis-num>PN 1</legis-num>
           </vote-metadata>
         </rollcall-vote>
         """.strip()

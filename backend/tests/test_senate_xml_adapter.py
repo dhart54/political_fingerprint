@@ -21,7 +21,7 @@ def test_load_senate_xml_sample_bundle_normalizes_senate_xml() -> None:
     assert bundle.roll_calls[0]["bill_ref"] == "bill_119_s_210"
     assert bundle.bills[0]["committee"] == "Homeland Security and Governmental Affairs"
     assert bundle.vote_subject_tags["bill_119_s_210"] == ["immigration", "border security", "visas"]
-    assert bundle.votes_cast[0]["roll_call_id"] == "rc_senate_001"
+    assert bundle.votes_cast[0]["roll_call_id"] == "rc_senate_119_1_001"
     assert bundle.votes_cast[1]["position"] == "nay"
 
 
@@ -174,7 +174,7 @@ def test_load_senate_xml_bundle_builds_fallback_legislator_for_unknown_lis_id(tm
 
     bundle = load_senate_xml_bundle(source_dir=source_dir, fallback_dir=SENATE_XML_SAMPLE_DIR)
 
-    fallback_legislator = next(item for item in bundle.legislators if item["id"] == "leg_alsobrooks_d_md")
-    assert fallback_legislator["name_display"] == "Alsobrooks (D-MD)"
+    fallback_legislator = next(item for item in bundle.legislators if item["id"] == "leg_angela_alsobrooks")
+    assert fallback_legislator["name_display"] == "Angela Alsobrooks"
     assert fallback_legislator["state"] == "MD"
-    assert bundle.votes_cast[0]["legislator_id"] == "leg_alsobrooks_d_md"
+    assert bundle.votes_cast[0]["legislator_id"] == "leg_angela_alsobrooks"

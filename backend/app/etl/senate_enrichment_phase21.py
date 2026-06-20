@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from app.db import get_connection
+from app.etl.amendment_evidence import WritePrecondition, require_write_precondition
 from app.etl.manual_interpretations import validate_manual_interpretations
 
 
@@ -249,6 +250,18 @@ def write_classifications(path: Path = MANIFEST_PATH, approval_phrase: str = "")
         raise ValueError(f"Classification dry-run failed: {result.errors}")
     manifest = _load_json(path)
     rows = [row for row in manifest["considered_roll_calls"] if row.get("eligible_for_write") is True]
+    require_write_precondition(
+        WritePrecondition(
+            scope="Phase 21 deterministic Senate evidence classifications",
+            approval_phrase=CLASSIFICATION_APPROVAL_PHRASE,
+            provided_approval_phrase=approval_phrase,
+            target_row_ids=tuple(int(row["roll_call_id"]) for row in rows),
+            rollback_path=CLASSIFICATION_ROLLBACK_PATH,
+            preflight_errors=tuple(result.errors),
+            planned_vote_interpretation_writes=0,
+            expected_vote_interpretation_writes=0,
+        )
+    )
     inserted: list[int] = []
     updated: list[int] = []
     connection = get_connection()
@@ -409,6 +422,18 @@ def import_batch(path: Path, approval_phrase: str) -> dict[str, Any]:
         raise ValueError("Approval phrase is missing or incorrect.")
     if len(records) > (50 if "batch_017" in path.name else 25):
         raise ValueError("Batch exceeds cap.")
+    require_write_precondition(
+        WritePrecondition(
+            scope=f"Phase 21 interpretation import for {path.name}",
+            approval_phrase=expected_phrase,
+            provided_approval_phrase=approval_phrase,
+            target_row_ids=tuple(int(row["roll_call_id"]) for row in records),
+            rollback_path=INTERPRETATION_ROLLBACK_PATH,
+            preflight_errors=tuple(validation["errors"]),
+            planned_vote_interpretation_writes=len(records),
+            expected_vote_interpretation_writes=len(records),
+        )
+    )
     prior = _existing_interpretation_rows([int(row["roll_call_id"]) for row in records])
     from app.etl.manual_interpretations import import_manual_interpretations
 
