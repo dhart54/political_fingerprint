@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from app.db import get_connection
+from app.etl.amendment_evidence import WritePrecondition, require_write_precondition
 from app.etl.session2_evidence_expansion import (
     _has_context_mismatch,
     _is_direct_substantive_question,
@@ -22,6 +23,10 @@ from app.etl.session2_evidence_expansion import (
     _sql_vote_position,
 )
 
+
+REPO_ROOT = Path(__file__).resolve().parents[3]
+DEFAULT_CLASSIFICATION_ROLLBACK_PATH = REPO_ROOT / "docs" / "review_packets" / "118th_evidence_classification_rollback.sql"
+DEFAULT_INTERPRETATION_ROLLBACK_PATH = REPO_ROOT / "docs" / "review_packets" / "118th_evidence_interpretation_rollback.sql"
 
 CLASSIFICATION_APPROVAL = (
     "Approve production classification update for 118th Congress evidence expansion, "
@@ -398,6 +403,17 @@ def write_classifications(*, approval_phrase: str) -> dict[str, object]:
     if approval_phrase != CLASSIFICATION_APPROVAL:
         raise ValueError("Classification approval phrase does not match.")
     candidates = build_candidates()
+    require_write_precondition(
+        WritePrecondition(
+            scope="118th Congress evidence expansion classifications",
+            approval_phrase=CLASSIFICATION_APPROVAL,
+            provided_approval_phrase=approval_phrase,
+            target_row_ids=tuple(candidate.roll_call_id for candidate in candidates),
+            rollback_path=DEFAULT_CLASSIFICATION_ROLLBACK_PATH,
+            planned_vote_interpretation_writes=0,
+            expected_vote_interpretation_writes=0,
+        )
+    )
     connection = get_connection()
     try:
         with connection.cursor() as cursor:
@@ -415,6 +431,17 @@ def write_interpretations(*, approval_phrase: str) -> dict[str, object]:
     if approval_phrase != INTERPRETATION_APPROVAL:
         raise ValueError("Interpretation approval phrase does not match.")
     candidates = build_candidates()
+    require_write_precondition(
+        WritePrecondition(
+            scope="118th Congress evidence expansion interpretations",
+            approval_phrase=INTERPRETATION_APPROVAL,
+            provided_approval_phrase=approval_phrase,
+            target_row_ids=tuple(candidate.roll_call_id for candidate in candidates),
+            rollback_path=DEFAULT_INTERPRETATION_ROLLBACK_PATH,
+            planned_vote_interpretation_writes=len(candidates),
+            expected_vote_interpretation_writes=len(candidates),
+        )
+    )
     connection = get_connection()
     try:
         with connection.cursor() as cursor:

@@ -13,6 +13,7 @@ from urllib.request import Request, urlopen
 from xml.etree import ElementTree
 
 from app.db import get_connection
+from app.etl.amendment_evidence import WritePrecondition, require_write_precondition
 from app.etl.evidence_118_expansion import DOMAIN_RULES_118, audit_118_rows
 from app.etl.fetch_sources import resolve_congress_api_key
 from app.etl.manual_interpretations import validate_manual_interpretations
@@ -192,6 +193,18 @@ def write_classifications(*, approval_phrase: str, packet_path: Path = PACKET_PA
     if result["errors"]:
         raise ValueError(f"Dry-run failed: {result['errors']}")
     packets = _write_packets(packet_path)
+    require_write_precondition(
+        WritePrecondition(
+            scope="118th Senate amendment source-enrichment classifications",
+            approval_phrase=CLASSIFICATION_APPROVAL,
+            provided_approval_phrase=approval_phrase,
+            target_row_ids=tuple(int(packet["roll_call_id"]) for packet in packets),
+            rollback_path=CLASSIFICATION_ROLLBACK_PATH,
+            preflight_errors=tuple(result["errors"]),
+            planned_vote_interpretation_writes=0,
+            expected_vote_interpretation_writes=0,
+        )
+    )
     connection = get_connection()
     try:
         with connection.cursor() as cursor:
@@ -215,6 +228,18 @@ def write_interpretations(*, approval_phrase: str, packet_path: Path = PACKET_PA
     validation = validate_manual_interpretations([_interpretation_record(packet) for packet in packets])
     if validation.errors:
         raise ValueError(f"Interpretation validation failed: {validation.errors}")
+    require_write_precondition(
+        WritePrecondition(
+            scope="118th Senate amendment source-enrichment interpretations",
+            approval_phrase=INTERPRETATION_APPROVAL,
+            provided_approval_phrase=approval_phrase,
+            target_row_ids=tuple(int(packet["roll_call_id"]) for packet in packets),
+            rollback_path=INTERPRETATION_ROLLBACK_PATH,
+            preflight_errors=tuple(result["errors"] + validation.errors),
+            planned_vote_interpretation_writes=len(packets),
+            expected_vote_interpretation_writes=len(packets),
+        )
+    )
     connection = get_connection()
     try:
         with connection.cursor() as cursor:

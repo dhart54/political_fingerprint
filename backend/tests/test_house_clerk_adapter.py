@@ -16,7 +16,7 @@ def test_load_house_clerk_sample_bundle_normalizes_house_clerk_xml() -> None:
     assert bundle.roll_calls[0]["bill_ref"] == "bill_119_hr_120"
     assert bundle.bills[0]["committee"] == "Transportation and Infrastructure"
     assert bundle.vote_subject_tags["bill_119_hr_120"] == ["transportation", "infrastructure", "broadband"]
-    assert bundle.votes_cast[0]["roll_call_id"] == "rc_house_001"
+    assert bundle.votes_cast[0]["roll_call_id"] == "rc_house_119_1_001"
     assert bundle.votes_cast[1]["position"] == "nay"
 
 
@@ -86,7 +86,7 @@ def test_load_house_clerk_bundle_skips_unsupported_house_reference(tmp_path: Pat
             <congress>119</congress>
             <session>1st</session>
             <rollcall-num>1</rollcall-num>
-            <legis-num>H J RES 1</legis-num>
+            <legis-num>PN 1</legis-num>
             <vote-question>On Passage</vote-question>
             <vote-desc>Unsupported test reference</vote-desc>
             <action-date>18-Dec-2025</action-date>

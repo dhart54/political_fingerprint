@@ -14,6 +14,7 @@ from app.classification.classifier import (
 )
 from app.classification.eligibility import evaluate_eligibility
 from app.db import get_connection
+from app.etl.amendment_evidence import WritePrecondition, require_write_precondition
 
 
 PHASE_20B_APPROVAL_PHRASE = (
@@ -297,6 +298,22 @@ def write_senate_evidence_classifications(
         for row in manifest["considered_roll_calls"]
         if row.get("eligible_for_write") is True and row.get("operation") in {"insert", "update"}
     ]
+    require_write_precondition(
+        WritePrecondition(
+            scope="Phase 20B deterministic Senate evidence classifications",
+            approval_phrase=PHASE_20B_APPROVAL_PHRASE,
+            provided_approval_phrase=approval_phrase,
+            target_row_ids=tuple(int(row["roll_call_id"]) for row in rows),
+            rollback_path=DEFAULT_ROLLBACK_PATH,
+            preflight_errors=tuple(dry_run.errors),
+            planned_vote_interpretation_writes=(
+                dry_run.planned_vote_interpretation_inserts
+                + dry_run.planned_vote_interpretation_updates
+                + dry_run.planned_vote_interpretation_deletes
+            ),
+            expected_vote_interpretation_writes=0,
+        )
+    )
 
     inserted_ids: list[int] = []
     updated_ids: list[int] = []

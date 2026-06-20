@@ -16,7 +16,7 @@ from app.etl.vote_context import build_vote_contexts
 
 
 SUPPORTED_FACT_CATEGORIES = {"bill-centered legislative vote"}
-SUPPORTED_FACT_BILL_TYPES = {"s", "sres", "sjres", "hr", "hres", "hjres", "hconres"}
+SUPPORTED_FACT_BILL_TYPES = {"s", "sres", "sjres", "sconres", "hr", "hres", "hjres", "hconres"}
 PHASE_14_APPROVAL_PHRASE = (
     "Approve production import of Phase 14 Senate fact-only package, capped at 75 roll calls "
     "and 7,500 votes_cast rows, with no vote_interpretations writes, no support/opposition "
