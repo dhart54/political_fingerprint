@@ -37,6 +37,7 @@ This milestone consolidated amendment-evidence architecture before the next 118t
 - Post-change selected backend suite: `98 passed in 68.67s` after elevated rerun due the same Windows pytest basetemp cleanup permission error.
 - Full backend suite after corrections: `293 passed in 266.37s`.
 - Full-suite cleanup/correction: updated stale tests to expect session-aware House/Senate roll-call ids and supported resolution references; added `sconres` to the Senate fact-only importer allowlist so Phase 14 dry-run matches its manifest.
+- PR backend workflow runs committed fixture-backed amendment/API contract tests. Cache-dependent `test_senate_amendment_facts.py` remains covered by the local full backend suite because its 112-row Senate XML cache is not committed into the GitHub runner checkout.
 
 ## Production Writes
 
