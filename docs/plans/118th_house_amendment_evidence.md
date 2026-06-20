@@ -35,7 +35,7 @@
 - [x] Validate required representative officials and public `scope=118`, `scope=119`, and `scope=all`.
 - [x] Tests/build/validation recorded.
 - [x] Review packet or final documentation updated.
-- [ ] PR, merge, and deployment verification completed.
+- [x] PR, merge, and deployment verification completed.
 - [x] Final reconciliation completed, including whether evidence is sufficient for future continuity/change summaries.
 
 ## Baseline
@@ -68,7 +68,7 @@
 - [x] Public validation
 - [x] Tests
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -104,6 +104,7 @@
 - Idempotency check passed: classification diffs `[]`, interpretation diffs `[]`, `idempotent: true`.
 - Public backend validation passed against `https://political-fingerprint.onrender.com`: health `ok`, metadata `eligible_roll_call_count: 627`, `window_end: 2026-06-19`, and scoped representative checks returned expected 118th/119th/all separation.
 - Rendered frontend validation passed against `https://political-fingerprint.vercel.app/`: page loaded with `627 ROLL CALLS`; Full Record, Recent Congress, and Prior Congress controls changed active state and scope helper text.
+- Post-merge verification passed after PR 41 merged: backend `/health` returned `ok`, `/metadata/coverage` returned `data_source=database`, `window_end=2026-06-19`, `eligible_roll_call_count=627`, and `classification_version=v1`; deployed frontend still rendered `Voting record, explained.` and `627 ROLL CALLS`.
 - Targeted backend tests passed: `python -m pytest tests\test_amendment_evidence.py tests\test_source_packets.py tests\test_amendment_companion_enrichment.py tests\test_supervised_enrichment.py` plus five non-temp manual-interpretation tests; 29 passed.
 - Test limitation: `tests\test_manual_interpretations.py::test_import_manual_interpretations_validates_before_persisting` could not complete in this Windows session because pytest raised `PermissionError: [WinError 5] Access is denied` while accessing its generated basetemp directory. The failure occurred at pytest temp-fixture/session cleanup, not in milestone production validation.
 
@@ -125,10 +126,10 @@
 
 ## Blockers
 
-- None currently. Remaining work is test execution, commit/PR, and final remote workflow if checks permit.
+- None.
 
 ## Final Reconciliation
 
-- Definition of done satisfied: not yet, pending tests and PR workflow.
+- Definition of done satisfied: yes.
 - Evidence sufficiency: sufficient to improve Prior Congress and Full Record profile coverage for the 228 target amendment rows. Not sufficient by itself to launch trustworthy continuity/change summaries, because 338 audited 118th House amendment rows remain limited/procedural and continuity/change still needs a separate product and methodology decision.
 - Remaining limitations: no schema or methodology changes were made; no new continuity/change summary semantics were introduced; limited rows remain non-counting.
