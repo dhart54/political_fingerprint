@@ -8,6 +8,7 @@ from app.api.compare import router as compare_router
 from app.api.contact import router as contact_router
 from app.api.drift import router as drift_router
 from app.api.fingerprint import router as fingerprint_router
+from app.api.internal_record_across import router as internal_record_across_router
 from app.api.lookup import router as lookup_router
 from app.api.metadata import router as metadata_router
 from app.api.positions import router as positions_router
@@ -47,6 +48,7 @@ app.include_router(metadata_router)
 app.include_router(search_router)
 app.include_router(compare_router)
 app.include_router(contact_router)
+app.include_router(internal_record_across_router)
 
 
 @app.get("/health")
