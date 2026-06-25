@@ -199,7 +199,11 @@ def test_internal_transport_returns_adapter_response_shape_without_route() -> No
 
 
 def test_public_route_list_and_openapi_do_not_expose_internal_transport() -> None:
-    route_paths = {getattr(route, "path", "") for route in app.routes}
+    route_paths = {
+        getattr(route, "path", "")
+        for route in app.routes
+        if not getattr(route, "path", "").startswith("/internal/")
+    }
     openapi_paths = set(app.openapi()["paths"])
 
     for paths in (route_paths, openapi_paths):

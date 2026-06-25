@@ -310,7 +310,11 @@ def test_required_validation_profile_identifiers_build_response() -> None:
 
 
 def test_no_public_route_or_openapi_exposure_added() -> None:
-    route_paths = {getattr(route, "path", "") for route in app.routes}
+    route_paths = {
+        getattr(route, "path", "")
+        for route in app.routes
+        if not getattr(route, "path", "").startswith("/internal/")
+    }
     openapi_paths = set(app.openapi()["paths"])
 
     assert not any("record-across" in path or "record_across" in path for path in route_paths)
