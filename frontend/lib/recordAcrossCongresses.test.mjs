@@ -5,8 +5,14 @@ import test from "node:test";
 import {
   RECORD_ACROSS_COPY,
   RECORD_ACROSS_COUNT_FIELDS,
+  buildFamilyRollCallDrilldown,
+  containsDisallowedCopy,
+  getApprovedFamilyEvidenceSummary,
+  getCountBucketLabel,
   getDisplayFamilies,
   getFamilyMatchLabel,
+  getFamilyRollCallIds,
+  getRollCallCountBucket,
   getSparseStateCopy,
   sanitizeRecordAcrossResponse,
 } from "./recordAcrossCongresses.mjs";
@@ -139,6 +145,93 @@ test("counts remain separated across Congresses and buckets", () => {
   );
 });
 
+test("family drilldown keeps 118th and 119th roll calls separated for selected family IDs", () => {
+  const selectedFamily = family({
+    family_id: "selected_family",
+    roll_call_ids_considered_by_congress: {
+      118: [101, 102],
+      119: [201],
+    },
+  });
+  const drilldown = buildFamilyRollCallDrilldown({
+    family: selectedFamily,
+    evidenceRows: [
+      evidenceRow({ roll_call_id: "101", congress: 118, question: "On Passage", source_url: "https://example.com/101" }),
+      evidenceRow({ roll_call_id: "102", congress: 118, position: "not_voting" }),
+      evidenceRow({ roll_call_id: "201", congress: 119, position: "present" }),
+      evidenceRow({ roll_call_id: "999", congress: 119, question: "Unrelated roll call" }),
+    ],
+  });
+
+  assert.deepEqual(getFamilyRollCallIds(selectedFamily), [101, 102, 201]);
+  assert.deepEqual(
+    drilldown.congresses["118"].map((row) => row.roll_call_id),
+    ["101", "102"],
+  );
+  assert.deepEqual(
+    drilldown.congresses["119"].map((row) => row.roll_call_id),
+    ["201"],
+  );
+  assert.doesNotMatch(JSON.stringify(drilldown), /999|Unrelated roll call/);
+});
+
+test("family drilldown preserves Yes No not-voting present and missing buckets", () => {
+  const selectedFamily = family({
+    roll_call_ids_considered_by_congress: {
+      118: [101, 102, 103],
+      119: [201, 202],
+    },
+  });
+  const drilldown = buildFamilyRollCallDrilldown({
+    family: selectedFamily,
+    evidenceRows: [
+      evidenceRow({ roll_call_id: "101", position: "yea", support_position: "yea", oppose_position: "nay" }),
+      evidenceRow({ roll_call_id: "102", position: "nay", support_position: "yea", oppose_position: "nay" }),
+      evidenceRow({ roll_call_id: "103", position: "not_voting" }),
+      evidenceRow({ roll_call_id: "201", congress: 119, position: "present" }),
+    ],
+  });
+  const rows = [...drilldown.congresses["118"], ...drilldown.congresses["119"]];
+
+  assert.deepEqual(
+    rows.map((row) => row.count_bucket),
+    [
+      "cast_substantive_yes_count",
+      "cast_substantive_no_count",
+      "not_voting_count",
+      "present_count",
+      "missing_no_record_count",
+    ],
+  );
+  assert.equal(getCountBucketLabel("cast_substantive_yes_count"), "Cast substantive Yes");
+  assert.equal(rows.filter((row) => row.counted_substantive_evidence).length, 2);
+});
+
+test("family drilldown row summaries fall back when source text uses disallowed wording", () => {
+  const safeRow = evidenceRow({ what_happened: "The House voted on final passage." });
+  const unsafeRow = evidenceRow({
+    what_happened: "The vote changed the bill text.",
+    plain_english_summary: "This was a change vote.",
+    member_vote_context: "This row described movement.",
+    description: "A changed measure",
+    question: "On a changed measure",
+  });
+
+  assert.equal(getApprovedFamilyEvidenceSummary(safeRow), "The House voted on final passage.");
+  assert.equal(getApprovedFamilyEvidenceSummary(unsafeRow), "Reviewed roll-call evidence row.");
+  assert.equal(containsDisallowedCopy(getApprovedFamilyEvidenceSummary(unsafeRow)), false);
+});
+
+test("unavailable families do not produce eligible drilldowns", () => {
+  assert.equal(
+    buildFamilyRollCallDrilldown({
+      family: family({ comparability_status: "related_but_not_comparable" }),
+      evidenceRows: [],
+    }),
+    null,
+  );
+});
+
 test("family caveat is preserved and related rows are not displayed", () => {
   const displayFamilies = getDisplayFamilies(sanitizeRecordAcrossResponse(response()));
   const serialized = JSON.stringify(displayFamilies);
@@ -222,6 +315,18 @@ test("panel is collapsed by default and placed below strongest issue evidence", 
   assert.ok(evidenceIndex > 0 && panelIndex > evidenceIndex);
 });
 
+test("family card button opens inline drilldown and source links render when available", () => {
+  const panelSource = readFileSync(new URL("../components/RecordAcrossCongressesPanel.js", import.meta.url), "utf8");
+
+  assert.match(panelSource, /async function toggleDrilldown/);
+  assert.match(panelSource, /onClick=\{toggleDrilldown\}/);
+  assert.match(panelSource, /<FamilyRollCallDrilldown state=\{drilldownState\}/);
+  assert.match(panelSource, /fetchPositionEvidence\(\{/);
+  assert.match(panelSource, /buildFamilyRollCallDrilldown\(\{/);
+  assert.match(panelSource, /href=\{row\.source_url\}/);
+  assert.doesNotMatch(panelSource, /onInspectDomain\(family\.issue_domain\)/);
+});
+
 test("server proxy is the only token boundary and client code calls the local route", () => {
   const routeSource = readFileSync(
     new URL("../app/api/record-across-congresses/house/[legislatorId]/route.js", import.meta.url),
@@ -237,3 +342,23 @@ test("server proxy is the only token boundary and client code calls the local ro
   assert.doesNotMatch(apiSource, /INTERNAL_API_TOKEN|\/internal\/record-across-congresses/);
   assert.doesNotMatch(componentSource, /INTERNAL_API_TOKEN|\/internal\/record-across-congresses/);
 });
+
+function evidenceRow(overrides = {}) {
+  return {
+    roll_call_id: "101",
+    vote_date: "2025-02-13",
+    chamber: "house",
+    congress: 118,
+    rollcall_number: 12,
+    position: "yea",
+    question: "On Passage",
+    description: "A reviewed measure",
+    source_url: "https://example.com/roll-call",
+    interpretation_status: "interpreted",
+    support_position: "yea",
+    oppose_position: "nay",
+    plain_english_summary: "The House voted on the reviewed measure.",
+    what_happened: "The House voted on the reviewed measure.",
+    ...overrides,
+  };
+}
