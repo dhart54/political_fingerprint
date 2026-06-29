@@ -8,6 +8,7 @@ import ComparisonPanel from "../components/ComparisonPanel";
 import LegislatorPicker from "../components/LegislatorPicker";
 import PositionByIssue from "../components/PositionByIssue";
 import ProfileQuickRead from "../components/ProfileQuickRead";
+import RecordAcrossCongressesPanel from "../components/RecordAcrossCongressesPanel";
 import ZipLookupPanel, { UpcomingRacePanel } from "../components/ZipLookupPanel";
 import { fetchCoverageMetadata } from "../lib/api";
 
@@ -152,6 +153,16 @@ export default function HomePage() {
           legislatorId={selectedLegislator.id}
           scope={profileScope}
           title={`${selectedLegislator.name_display}'s strongest issue evidence`}
+        />
+
+        <RecordAcrossCongressesPanel
+          legislator={selectedLegislator}
+          onInspectDomain={(domain) =>
+            setEvidenceRequest({
+              domain,
+              requestedAt: Date.now(),
+            })
+          }
         />
 
         <details className="mt-5 rounded-2xl border border-stone-200 bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)]" open={Object.keys(issuePreferences).length > 0}>

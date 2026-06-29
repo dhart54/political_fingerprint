@@ -228,3 +228,15 @@ export async function fetchLegislatorComparison({
 
   return response.json();
 }
+
+export async function fetchRecordAcrossCongresses({ legislatorId }) {
+  const response = await fetch(`/api/record-across-congresses/house/${encodeURIComponent(legislatorId)}`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Record Across Congresses request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
