@@ -48,6 +48,25 @@ export const RECORD_ACROSS_COUNT_FIELDS = [
 ];
 
 const ALLOWED_STATUSES = new Set(["directly_comparable", "conditionally_comparable"]);
+const SUPPORTED_CONGRESSES = ["118", "119"];
+const DISALLOWED_COPY_TERMS = [
+  "changed",
+  "change",
+  "trend",
+  "shifted",
+  "movement",
+  "more supportive",
+  "less supportive",
+  "consistent",
+  "flip",
+  "ideological",
+  "evolved",
+  "moderated",
+  "became",
+  "continuity",
+  "moved toward",
+  "moved away from",
+];
 
 export function sanitizeRecordAcrossResponse(payload) {
   if (!payload || payload.product_framing !== RECORD_ACROSS_PRODUCT_FRAMING) {
@@ -109,6 +128,104 @@ export function getSparseStateCopy(response) {
   return RECORD_ACROSS_COPY.noEligibleFamiliesState;
 }
 
+export function buildFamilyRollCallDrilldown({ family, evidenceRows = [] } = {}) {
+  if (!family || !ALLOWED_STATUSES.has(family.comparability_status)) {
+    return null;
+  }
+
+  const rowsByRollCallId = new Map(
+    (Array.isArray(evidenceRows) ? evidenceRows : []).map((row) => [String(row?.roll_call_id || ""), row]),
+  );
+
+  return {
+    family_id: family.family_id,
+    family_name: family.family_name,
+    issue_domain: family.issue_domain,
+    match_label: getFamilyMatchLabel(family.comparability_status),
+    governing_question: family.governing_question,
+    comparability_caveat: family.comparability_caveat,
+    congresses: Object.fromEntries(
+      SUPPORTED_CONGRESSES.map((congress) => [
+        congress,
+        buildCongressRollCallRows({
+          congress,
+          rollCallIds: family.roll_call_ids_considered_by_congress?.[congress] || [],
+          rowsByRollCallId,
+        }),
+      ]),
+    ),
+  };
+}
+
+export function getFamilyRollCallIds(family) {
+  return SUPPORTED_CONGRESSES.flatMap(
+    (congress) => family?.roll_call_ids_considered_by_congress?.[congress] || [],
+  );
+}
+
+export function getRollCallCountBucket(row) {
+  if (!row || row.missing_no_record === true) {
+    return "missing_no_record_count";
+  }
+  if (row.position === "not_voting") {
+    return "not_voting_count";
+  }
+  if (row.position === "present") {
+    return "present_count";
+  }
+  if (
+    row.interpretation_status === "interpreted" &&
+    row.position === "yea" &&
+    row.support_position &&
+    row.oppose_position
+  ) {
+    return "cast_substantive_yes_count";
+  }
+  if (
+    row.interpretation_status === "interpreted" &&
+    row.position === "nay" &&
+    row.support_position &&
+    row.oppose_position
+  ) {
+    return "cast_substantive_no_count";
+  }
+  return "";
+}
+
+export function isCountedSubstantiveFamilyEvidence(row) {
+  const bucket = getRollCallCountBucket(row);
+  return bucket === "cast_substantive_yes_count" || bucket === "cast_substantive_no_count";
+}
+
+export function getCountBucketLabel(bucket) {
+  return RECORD_ACROSS_COUNT_FIELDS.find((field) => field.key === bucket)?.label || "Not counted substantive evidence";
+}
+
+export function getApprovedFamilyEvidenceSummary(row) {
+  if (!row || row.missing_no_record === true) {
+    return RECORD_ACROSS_COPY.missingNoRecordCaveat;
+  }
+
+  const candidates = [
+    row.what_happened,
+    row.plain_english_summary,
+    row.member_vote_context,
+    row.description,
+    row.question,
+  ];
+  const safeCandidate = candidates.find((candidate) => {
+    const text = stringOrEmpty(candidate).trim();
+    return text && !containsDisallowedCopy(text);
+  });
+
+  return safeCandidate || "Reviewed roll-call evidence row.";
+}
+
+export function containsDisallowedCopy(value) {
+  const text = stringOrEmpty(value).toLowerCase();
+  return DISALLOWED_COPY_TERMS.some((term) => text.includes(term));
+}
+
 function sanitizeSummary(summary = {}) {
   return {
     record_across_congresses_available: summary.record_across_congresses_available === true,
@@ -159,9 +276,15 @@ function sanitizeFamily(family) {
 
 function sanitizeRollCallIds(idsByCongress = {}) {
   return {
-    118: Array.isArray(idsByCongress["118"]) ? idsByCongress["118"].filter(Number.isFinite) : [],
-    119: Array.isArray(idsByCongress["119"]) ? idsByCongress["119"].filter(Number.isFinite) : [],
+    118: sanitizeRollCallIdList(idsByCongress["118"]),
+    119: sanitizeRollCallIdList(idsByCongress["119"]),
   };
+}
+
+function sanitizeRollCallIdList(values) {
+  return Array.isArray(values)
+    ? values.map((value) => Number(value)).filter(Number.isFinite)
+    : [];
 }
 
 function sanitizeCountsByCongress(countsByCongress = {}) {
@@ -212,4 +335,29 @@ function numberOrZero(value) {
 
 function stringOrEmpty(value) {
   return typeof value === "string" ? value : "";
+}
+
+function buildCongressRollCallRows({ congress, rollCallIds, rowsByRollCallId }) {
+  return rollCallIds.map((rollCallId) => {
+    const row = rowsByRollCallId.get(String(rollCallId));
+    if (!row) {
+      return {
+        roll_call_id: String(rollCallId),
+        congress: Number(congress),
+        missing_no_record: true,
+        position: "",
+        count_bucket: "missing_no_record_count",
+        counted_substantive_evidence: false,
+      };
+    }
+
+    const countBucket = getRollCallCountBucket(row);
+    return {
+      ...row,
+      roll_call_id: String(row.roll_call_id || rollCallId),
+      congress: Number(row.congress || congress),
+      count_bucket: countBucket,
+      counted_substantive_evidence: isCountedSubstantiveFamilyEvidence(row),
+    };
+  });
 }
