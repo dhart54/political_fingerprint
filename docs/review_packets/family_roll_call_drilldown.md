@@ -89,6 +89,30 @@ Result: 25 passed.
 
 ## Rendered Validation
 
+### Hosted Preview Attempt
+
+Hosted preview URL checked for PR #54:
+
+```text
+https://political-fingerprint-git-codex-family-7f72f4-dhart54s-projects.vercel.app
+```
+
+Result: hosted live-data validation was unavailable from the Codex browser session. The preview URL redirected to Vercel login:
+
+```text
+https://vercel.com/login?next=/sso-api?url=...
+```
+
+The app-local preview API route was checked directly as well:
+
+```text
+https://political-fingerprint-git-codex-family-7f72f4-dhart54s-projects.vercel.app/api/record-across-congresses/house/leg_aaron_bean
+```
+
+Result: also redirected to Vercel login. Because the preview is deployment-protected, production-shaped hosted UI validation could not be completed. PR #54 should remain draft until a Vercel-authenticated session or unprotected preview URL is available.
+
+### Local Rendered Fallback
+
 Rendered validation used a local mock backend with the same proxy/token boundary:
 
 - `INTERNAL_API_TOKEN=expected-token`
@@ -123,25 +147,32 @@ Result: matches only in `DISALLOWED_COPY_TERMS`.
 node --test frontend\lib\recordAcrossCongresses.test.mjs
 ```
 
-Result: 15 passed.
+Result: 15 passed. Rerun during hosted-preview validation resume: 15 passed.
 
 ```text
 npm run build
 ```
 
-Result: passed.
+Result: passed. Rerun during hosted-preview validation resume: passed.
+
+```text
+rg -n "INTERNAL_API_TOKEN|X-Internal-API-Token|/internal/record-across-congresses" .next\static
+```
+
+Result: no matches. Rerun during hosted-preview validation resume: no matches.
 
 ```text
 npm run lint
 ```
 
-Result: blocked by the known interactive `next lint` migration prompt for Next 15. This was not treated as a feature failure.
+Result: blocked by the known interactive `next lint` migration prompt for Next 15. Rerun during hosted-preview validation resume produced the same prompt; this was not treated as a feature failure.
 
 ## Remaining Limitations
 
 - Rendered validation used a local mock backend rather than production data, because no production writes or secret/config changes were authorized.
+- Hosted preview live-data validation is still pending because the Vercel preview URL and preview app-local API route redirect to Vercel login from the Codex browser session.
 - The drilldown currently fetches public issue-domain evidence and filters it locally. If future performance or payload size becomes a concern, a sanitized server-side detail proxy could be considered.
 
 ## Recommended Next Milestone
 
-Add hosted preview validation against production-shaped data after the PR is opened, then consider whether a public-safe family roll-call detail adapter would reduce over-fetching without changing the token boundary.
+Complete hosted preview validation from a Vercel-authenticated browser session or an unprotected preview URL before marking PR #54 ready for review. After that, consider whether a public-safe family roll-call detail adapter would reduce over-fetching without changing the token boundary.
