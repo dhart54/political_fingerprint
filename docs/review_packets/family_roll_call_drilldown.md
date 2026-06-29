@@ -109,7 +109,35 @@ The app-local preview API route was checked directly as well:
 https://political-fingerprint-git-codex-family-7f72f4-dhart54s-projects.vercel.app/api/record-across-congresses/house/leg_aaron_bean
 ```
 
-Result: also redirected to Vercel login. Because the preview is deployment-protected, production-shaped hosted UI validation could not be completed. PR #54 should remain draft until a Vercel-authenticated session or unprotected preview URL is available.
+Result: also redirected to Vercel login. Because the preview is deployment-protected, production-shaped hosted UI validation could not be completed from the Codex browser session. Production redeploy validation below closed the deployed app-local proxy and rendered-panel validation gap before merge.
+
+### Production Redeploy Validation
+
+Production URL checked:
+
+```text
+https://political-fingerprint.vercel.app/
+```
+
+Root cause of the earlier missing `Record Across Congresses` panel: the previously running Vercel production deployment did not have the required server-side environment variables available. The production environment variables were added and production was redeployed. After redeploy, the app-local proxy and rendered panel worked in the deployed environment.
+
+Production app-local route checks:
+
+| Route | Result |
+| --- | --- |
+| `/api/record-across-congresses/house/leg_aaron_bean` | `200`; `product_framing = "Record Across Congresses"`; eligible family data present |
+| `/api/record-across-congresses/house/leg_valerie_p_foushee` | `200`; `product_framing = "Record Across Congresses"`; eligible family data present |
+
+Rendered production UI checks:
+
+- `Record Across Congresses` appears on `https://political-fingerprint.vercel.app/`.
+- Expanded panel shows the approved `Reviewed House vote evidence...` framing.
+- Direct/caveated family counts render as `4` closest and `7` caveated.
+- Family cards render, including a direct family card for `Hunting and fishing access`.
+- Scoped panel text had no disallowed continuity/change/movement terms.
+- Visible production panel text did not expose token, header, or internal-route text.
+
+Limitation: a production static asset network scan for token/internal-route strings could not be completed because the tool hit a usage-limit rejection. This packet does not claim that production asset network scan passed.
 
 ### Local Rendered Fallback
 
@@ -147,32 +175,32 @@ Result: matches only in `DISALLOWED_COPY_TERMS`.
 node --test frontend\lib\recordAcrossCongresses.test.mjs
 ```
 
-Result: 15 passed. Rerun during hosted-preview validation resume: 15 passed.
+Result: 15 passed. Rerun during production-validation finalization: 15 passed.
 
 ```text
 npm run build
 ```
 
-Result: passed. Rerun during hosted-preview validation resume: passed.
+Result: passed. Rerun during production-validation finalization: passed.
 
 ```text
 rg -n "INTERNAL_API_TOKEN|X-Internal-API-Token|/internal/record-across-congresses" .next\static
 ```
 
-Result: no matches. Rerun during hosted-preview validation resume: no matches.
+Result: no matches. Rerun during production-validation finalization: no matches.
 
 ```text
 npm run lint
 ```
 
-Result: blocked by the known interactive `next lint` migration prompt for Next 15. Rerun during hosted-preview validation resume produced the same prompt; this was not treated as a feature failure.
+Result: blocked by the known interactive `next lint` migration prompt for Next 15. Rerun during production-validation finalization produced the same prompt; this was not treated as a feature failure.
 
 ## Remaining Limitations
 
-- Rendered validation used a local mock backend rather than production data, because no production writes or secret/config changes were authorized.
-- Hosted preview live-data validation is still pending because the Vercel preview URL and preview app-local API route redirect to Vercel login from the Codex browser session.
+- Hosted preview live-data validation from the Codex browser session remained blocked by Vercel deployment protection, but production redeploy validation confirmed the deployed app-local proxy and rendered panel on the production URL.
+- A production static asset network scan for token/internal-route strings could not be completed because the tool hit a usage-limit rejection. Local built static asset scan remains the merge gate for bundled frontend assets.
 - The drilldown currently fetches public issue-domain evidence and filters it locally. If future performance or payload size becomes a concern, a sanitized server-side detail proxy could be considered.
 
 ## Recommended Next Milestone
 
-Complete hosted preview validation from a Vercel-authenticated browser session or an unprotected preview URL before marking PR #54 ready for review. After that, consider whether a public-safe family roll-call detail adapter would reduce over-fetching without changing the token boundary.
+Consider whether a public-safe family roll-call detail adapter would reduce over-fetching without changing the token boundary.
