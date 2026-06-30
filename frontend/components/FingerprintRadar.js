@@ -263,7 +263,7 @@ export default function FingerprintRadar({
                 What It Means
               </p>
               <p className="mt-3 text-[15px] leading-7 text-stone-700">
-                This does not show vote direction. It shows which issue domains absorbed the largest share of this legislator's eligible policy votes over the last two years.
+                This does not show vote direction. It shows which issue domains absorbed the largest share of this legislator&apos;s eligible policy votes over the last two years.
               </p>
             </article>
           </div>
