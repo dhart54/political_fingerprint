@@ -15,6 +15,8 @@ import {
   buildVoteCardSummary as buildGenericVoteCardSummary,
 } from "../lib/voteCardSummary.mjs";
 
+const REPRESENTATIVE_VOTE_LIMIT = 8;
+
 export default function PositionByIssue({
   evidenceRequest = null,
   legislator = null,
@@ -431,9 +433,11 @@ function IssuePatternCards({ onInspectDomain, rows, status }) {
 
 function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow }) {
   const [selectedActionRow, setSelectedActionRow] = useState(null);
+  const [showAllVotes, setShowAllVotes] = useState(false);
 
   useEffect(() => {
     setSelectedActionRow(null);
+    setShowAllVotes(false);
   }, [selectedRow?.domain]);
 
   if (!selectedRow) {
@@ -444,6 +448,7 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
   const isSelected = evidenceState.payload?.domain === selectedRow.domain;
   const evidenceGrouping = deriveEvidenceGroups(evidenceRows);
   const billGroups = groupEvidenceByBill(evidenceRows);
+  const proofView = buildProofView(evidenceRows);
 
   return (
     <div id="position-evidence" className="mt-4 scroll-mt-6 rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 sm:px-4 lg:px-5">
@@ -493,38 +498,21 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
             representativeName={legislator?.name_display}
             rows={evidenceRows}
           />
-          {billGroups.map((group) => (
-            <article className={`rounded-xl border px-3 py-3 sm:px-4 ${getBillGroupContainerClass(group)}`} key={group.key}>
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-stone-500">
-                    {formatEvidenceGroupCategory(group)}
-                  </p>
-                  <h5 className="mt-1 break-words text-base leading-6 text-stone-950">
-                    {formatDisplayMeasureTitle(group.title)}
-                  </h5>
-                  <p className="mt-1 text-sm leading-5 text-stone-600">
-                    {formatBillGroupScanLine(group)}
-                  </p>
-                </div>
-                <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-xs uppercase tracking-[0.16em] text-stone-700">
-                  {group.rows.length} rows
-                </span>
-              </div>
-
-              <div className="mt-3 grid gap-2">
-                {group.rows.map((row) => (
-                  <VoteEvidenceRow
-                    key={`${row.roll_call_id}-${row.position}`}
-                    representativeName={legislator?.name_display}
-                    row={row}
-                    selectedActionRow={selectedActionRow}
-                    setSelectedActionRow={setSelectedActionRow}
-                  />
-                ))}
-              </div>
-            </article>
-          ))}
+          <RepresentativeVotesSection
+            proofView={proofView}
+            representativeName={legislator?.name_display}
+            selectedActionRow={selectedActionRow}
+            setSelectedActionRow={setSelectedActionRow}
+          />
+          <ReviewedVoteList
+            billGroups={billGroups}
+            evidenceRows={evidenceRows}
+            representativeName={legislator?.name_display}
+            selectedActionRow={selectedActionRow}
+            setSelectedActionRow={setSelectedActionRow}
+            showAllVotes={showAllVotes}
+            setShowAllVotes={setShowAllVotes}
+          />
           <EvidenceUtilityPanel
             domain={selectedRow.domain}
             evidenceRows={evidenceRows}
@@ -534,6 +522,146 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
         </div>
       ) : null}
     </div>
+  );
+}
+
+function RepresentativeVotesSection({ proofView, representativeName, selectedActionRow, setSelectedActionRow }) {
+  const rows = proofView.representativeRows;
+
+  if (!rows.length) {
+    return (
+      <section className="rounded-xl border border-stone-200 bg-white px-3 py-3 sm:px-4">
+        <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
+          Representative votes
+        </p>
+        <p className="mt-1 text-sm leading-6 text-stone-700">
+          This issue does not have countable Yes/No votes ready for a first proof set. Open the full reviewed vote list to inspect the available context.
+        </p>
+      </section>
+    );
+  }
+
+  return (
+    <section className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3 sm:px-4">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
+            Representative votes
+          </p>
+          <p className="mt-1 text-sm leading-6 text-stone-700">
+            A first set of votes behind this read. Start here, then expand the full reviewed vote list.
+          </p>
+        </div>
+        <span className="w-fit rounded-full bg-cyan-50 px-3 py-1 text-xs uppercase tracking-[0.14em] text-cyan-950">
+          {rows.length} of {proofView.countableRows.length} countable Yes/No votes
+        </span>
+      </div>
+      <div className="mt-3 grid gap-2">
+        {rows.map((row) => (
+          <VoteEvidenceRow
+            key={`representative-${row.roll_call_id}-${row.position}`}
+            representativeName={representativeName}
+            row={row}
+            selectedActionRow={selectedActionRow}
+            setSelectedActionRow={setSelectedActionRow}
+          />
+        ))}
+      </div>
+      {proofView.contextRows.length ? (
+        <p className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2 text-sm leading-6 text-stone-700">
+          {formatContextRowSummary(proofView)} Full context rows remain available in the reviewed vote list.
+        </p>
+      ) : null}
+    </section>
+  );
+}
+
+function ReviewedVoteList({
+  billGroups,
+  evidenceRows,
+  representativeName,
+  selectedActionRow,
+  setSelectedActionRow,
+  showAllVotes,
+  setShowAllVotes,
+}) {
+  return (
+    <section className="rounded-xl border border-stone-200 bg-white px-3 py-3 sm:px-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
+            Full reviewed vote list
+          </p>
+          <p className="mt-1 text-sm leading-6 text-stone-700">
+            All receipts stay available, grouped by bill or measure, with countable and context labels preserved.
+          </p>
+        </div>
+        <button
+          aria-expanded={showAllVotes}
+          className="w-fit rounded-full border border-cyan-900/20 bg-cyan-50 px-3 py-2 text-xs uppercase tracking-[0.14em] text-cyan-950 transition hover:bg-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
+          onClick={() => setShowAllVotes((current) => !current)}
+          type="button"
+        >
+          {showAllVotes ? "Hide full list" : "Show all reviewed votes"}
+        </button>
+      </div>
+      <div className="mt-3 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.12em] text-stone-600">
+        <span className="rounded-full bg-stone-100 px-2.5 py-1">{evidenceRows.length} reviewed votes</span>
+        <span className="rounded-full bg-cyan-50 px-2.5 py-1">{billGroups.length} evidence groups</span>
+      </div>
+      {showAllVotes ? (
+        <div className="mt-3 grid gap-3">
+          {billGroups.map((group) => (
+            <BillEvidenceGroup
+              group={group}
+              key={group.key}
+              representativeName={representativeName}
+              selectedActionRow={selectedActionRow}
+              setSelectedActionRow={setSelectedActionRow}
+            />
+          ))}
+        </div>
+      ) : (
+        <p className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2 text-sm leading-6 text-stone-700">
+          Showing representative votes first. Use Show all reviewed votes for every grouped receipt in this issue.
+        </p>
+      )}
+    </section>
+  );
+}
+
+function BillEvidenceGroup({ group, representativeName, selectedActionRow, setSelectedActionRow }) {
+  return (
+    <article className={`rounded-xl border px-3 py-3 sm:px-4 ${getBillGroupContainerClass(group)}`}>
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.18em] text-stone-500">
+            {formatEvidenceGroupCategory(group)}
+          </p>
+          <h5 className="mt-1 break-words text-base leading-6 text-stone-950">
+            {formatDisplayMeasureTitle(group.title)}
+          </h5>
+          <p className="mt-1 text-sm leading-5 text-stone-600">
+            {formatBillGroupScanLine(group)}
+          </p>
+        </div>
+        <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-xs uppercase tracking-[0.16em] text-stone-700">
+          {group.rows.length} reviewed {group.rows.length === 1 ? "vote" : "votes"}
+        </span>
+      </div>
+
+      <div className="mt-3 grid gap-2">
+        {group.rows.map((row) => (
+          <VoteEvidenceRow
+            key={`${row.roll_call_id}-${row.position}`}
+            representativeName={representativeName}
+            row={row}
+            selectedActionRow={selectedActionRow}
+            setSelectedActionRow={setSelectedActionRow}
+          />
+        ))}
+      </div>
+    </article>
   );
 }
 
@@ -1194,6 +1322,46 @@ function compareEvidenceRows(left, right) {
     Number(left.rollcall_number || 0) - Number(right.rollcall_number || 0) ||
     String(left.position || "").localeCompare(String(right.position || ""))
   );
+}
+
+function buildProofView(rows) {
+  const sortedRows = [...(rows || [])].sort(compareEvidenceRows);
+  const countableRows = sortedRows.filter(isCountedSubstantiveEvidenceRow);
+  const contextRows = sortedRows.filter((row) => !isCountedSubstantiveEvidenceRow(row));
+  const representativeRows = (countableRows.length ? countableRows : sortedRows).slice(0, REPRESENTATIVE_VOTE_LIMIT);
+
+  return {
+    countableRows,
+    contextRows,
+    representativeRows,
+    limitedRows: sortedRows.filter(isLimitedEvidenceRow),
+    notVotingRows: sortedRows.filter((row) => row.position === "not_voting"),
+    proceduralContextRows: sortedRows.filter(isProceduralContextRow),
+  };
+}
+
+function formatContextRowSummary(proofView) {
+  const parts = [];
+  if (proofView.limitedRows.length) {
+    parts.push(`${proofView.limitedRows.length} limited or context ${proofView.limitedRows.length === 1 ? "vote" : "votes"}`);
+  }
+  if (proofView.proceduralContextRows.length) {
+    parts.push(`${proofView.proceduralContextRows.length} procedural context ${proofView.proceduralContextRows.length === 1 ? "vote" : "votes"}`);
+  }
+  if (proofView.notVotingRows.length) {
+    parts.push(`${proofView.notVotingRows.length} not voting / present ${proofView.notVotingRows.length === 1 ? "vote" : "votes"}`);
+  }
+
+  if (!parts.length) {
+    return "No limited, procedural, or not-voting context rows are included in this issue.";
+  }
+
+  return `${capitalizeSentence(parts.join(", "))} are not treated as countable Yes/No findings.`;
+}
+
+function capitalizeSentence(value) {
+  const text = String(value || "");
+  return text ? `${text[0].toUpperCase()}${text.slice(1)}` : "";
 }
 
 function scoreEvidenceRow(row) {

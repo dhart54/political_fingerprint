@@ -92,14 +92,36 @@ test("no-preference record views avoid alignment framing in neutral summaries", 
 test("issue cards use generalized readiness copy and contact follows vote cards", () => {
   const source = readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8");
   const civicActionIndex = source.indexOf("<EvidenceUtilityPanel");
-  const billGroupIndex = source.indexOf("{billGroups.map");
+  const reviewedVoteListIndex = source.indexOf("<ReviewedVoteList");
 
   assert.match(source, /reviewed Yes\/No .* out of .* recorded/);
   assert.match(source, /Best place to start\./);
   assert.match(source, /Useful comparison read\./);
   assert.match(source, /Read cautiously\./);
   assert.match(source, /not ready for a confident summary/);
-  assert.ok(billGroupIndex > 0 && civicActionIndex > billGroupIndex, "utility panel should render after vote cards");
+  assert.ok(reviewedVoteListIndex > 0 && civicActionIndex > reviewedVoteListIndex, "utility panel should render after reviewed vote list access");
+});
+
+test("show votes proof view starts bounded and keeps the full receipt list available", () => {
+  const source = readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8");
+  const representativeStart = source.indexOf("function RepresentativeVotesSection");
+  const fullListStart = source.indexOf("function ReviewedVoteList");
+  const billGroupStart = source.indexOf("function BillEvidenceGroup");
+  const voteRowStart = source.indexOf("function VoteEvidenceRow");
+  const sourceDrawerStart = source.indexOf("Source, caveats, and full context", voteRowStart);
+
+  assert.match(source, /const REPRESENTATIVE_VOTE_LIMIT = 8/);
+  assert.match(source, /Representative votes/);
+  assert.match(source, /A first set of votes behind this read/);
+  assert.match(source, /Show all reviewed votes/);
+  assert.match(source, /Full reviewed vote list/);
+  assert.match(source, /showAllVotes \?/);
+  assert.match(source, /buildProofView/);
+  assert.match(source, /countable Yes\/No votes/);
+  assert.ok(representativeStart > 0 && representativeStart < fullListStart, "representative votes should be defined before full list");
+  assert.ok(fullListStart > 0 && fullListStart < billGroupStart, "full list wrapper should gate grouped bill cards");
+  assert.ok(billGroupStart > 0 && billGroupStart < voteRowStart, "bill groups should reuse vote rows");
+  assert.ok(sourceDrawerStart > voteRowStart, "vote-level source and caveat drawers should remain inside vote rows");
 });
 
 test("secondary profile tools are consolidated below the evidence path", () => {
