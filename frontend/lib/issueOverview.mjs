@@ -338,19 +338,16 @@ export function formatRenderedIssueOverview(overview) {
   }
 
   return [
+    "Finding",
+    `${overview.copy.whatRepresentativeDid} ${overview.copy.whatPatternThatCreates}`,
+    "",
     "What these votes were about",
     overview.copy.whatTheseVotesWereAbout,
-    "",
-    "What Foushee did",
-    overview.copy.whatRepresentativeDid,
-    "",
-    "What pattern that creates",
-    overview.copy.whatPatternThatCreates,
     "",
     "How a voter might read that",
     overview.copy.howVoterMightRead,
     "",
-    "What not to infer",
+    "How to read this",
     overview.copy.whatNotToInfer,
   ].join("\n");
 }
@@ -453,10 +450,10 @@ function buildOverviewCopy({
 
   const howVoterMightRead =
     issueDomain === "ECONOMY_TAXES"
-      ? "If you generally favored these House Republican packages, this section may look misaligned with your views. If you generally wanted Democrats to oppose those packages or objected to their terms, this section may look aligned. The vote record alone does not show her motive."
-      : "If you generally favored these House Republican measures, this section may look misaligned with your views. If you generally wanted Democrats to oppose those measures or objected to their terms, this section may look aligned. The vote record alone does not show her motive.";
+      ? "If you generally favored these House Republican packages, this section may look misaligned with your views. If you generally wanted Democrats to oppose those packages or objected to their terms, this section may look aligned."
+      : "If you generally favored these House Republican measures, this section may look misaligned with your views. If you generally wanted Democrats to oppose those measures or objected to their terms, this section may look aligned.";
   const notInferParts = [
-    "Do not infer motive, ideology, character, corruption, or a voting recommendation from this section.",
+    "This read is limited to reviewed votes in this sample and does not assign motive, ideology, character, corruption, or a voting recommendation.",
     formatFullRecordBoundary(issueDomain),
   ];
   if (notVotingRows.length || ambiguousRows.length) {
@@ -575,9 +572,9 @@ function buildLimitedEvidenceOverviewCopy({
     whatRepresentativeDid: actionParts.join(" "),
     whatPatternThatCreates: `This section is best read as limited evidence, not a stable issue pattern, because ${limitedReason}.`,
     howVoterMightRead:
-      "A voter can use these rows as source-backed examples of what was reviewed, but should look at the individual evidence cards before drawing a broader issue-area conclusion. The vote record alone does not show her motive.",
+      "A voter can use these rows as source-backed examples of what was reviewed, then open the individual evidence cards before drawing a broader issue-area conclusion.",
     whatNotToInfer: [
-      "Do not infer motive, ideology, character, corruption, or a voting recommendation from this section.",
+      "This read is limited to reviewed votes in this sample and does not assign motive, ideology, character, corruption, or a voting recommendation.",
       formatFullRecordBoundary(issueDomain),
       proceduralContextRows.length
         ? "Not-voting, limited-context, and procedural-context rows remain visible below, but they are not forced into the pattern."

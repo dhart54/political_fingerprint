@@ -840,7 +840,7 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
             Issue summary
           </p>
           <p className="mt-1 max-w-4xl text-[16px] leading-7 text-stone-950">
-            {overview.copy.whatTheseVotesWereAbout}
+            {overview.copy.whatRepresentativeDid} {overview.copy.whatPatternThatCreates}
           </p>
         </div>
         <span className="w-fit rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-950">
@@ -849,9 +849,9 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
       </div>
       <div className="mt-3 grid gap-2 lg:grid-cols-3">
         <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2.5 lg:col-span-2">
-          <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-900">Observed pattern</p>
+          <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-900">What was reviewed</p>
           <p className="mt-1 text-sm leading-5 text-stone-800">
-            {overview.copy.whatRepresentativeDid} {overview.copy.whatPatternThatCreates}
+            {overview.copy.whatTheseVotesWereAbout}
           </p>
         </div>
         <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2.5">
@@ -861,10 +861,10 @@ function IssueEvidenceSummary({ domain, representativeName, rows }) {
       </div>
       <details className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2">
         <summary className="cursor-pointer text-[11px] uppercase tracking-[0.16em] text-stone-600 marker:text-cyan-900">
-          What not to infer
+          How to read this
         </summary>
         <p className="mt-2 border-t border-stone-200 pt-2 text-sm leading-5 text-stone-700">
-          {overview.copy.whatNotToInfer} Rows below remain the source of truth for each claim; missing vote meanings are not guessed.
+          {overview.copy.whatNotToInfer} Open the source and caveats on vote rows for vote-level context; missing vote meanings are not guessed.
         </p>
       </details>
     </div>

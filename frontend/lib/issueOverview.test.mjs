@@ -182,7 +182,9 @@ test("Valerie Foushee Economy & Taxes overview names required measure groups and
   }
 
   assert.match(rendered, /If you generally favored these House Republican packages/);
-  assert.match(rendered, /The vote record alone does not show her motive/);
+  assert.match(rendered, /^Finding\nFoushee voted No/m);
+  assert.match(rendered, /How to read this\nThis read is limited to reviewed votes in this sample/);
+  assert.doesNotMatch(rendered, /The vote record alone does not show her motive/);
   assert.doesNotMatch(rendered, /stored vote context|for-side|against-side|reviewed yes\/no|plus other reviewed measures|leans Nay|is corrupt|character judgment|you should vote|support this candidate|oppose this candidate/i);
 });
 
@@ -192,20 +194,17 @@ test("Valerie Foushee Economy & Taxes overview text remains approved copy", () =
     representativeName: "Valerie P. Foushee",
   });
 
-  assert.equal(formatRenderedIssueOverview(overview), `What these votes were about
+  assert.equal(formatRenderedIssueOverview(overview), `Finding
+Foushee voted No on all 6 reviewed votes where she cast a Yes or No. Each of those votes matched most House Democrats, and each was against the final House outcome. Foushee consistently opposed the House Republican fiscal, funding, and small-business measures reviewed in this sample. Her record here is best read as opposition to this specific set of Republican-led House measures, not as a simple statement that she is "for" or "against taxes."
+
+What these votes were about
 In this Economy & Taxes sample, the reviewed votes where Foushee cast a Yes or No covered several concrete fiscal questions: whether to advance a budget framework for later tax, spending, deficit, and debt-limit legislation; whether to restrict SBA 7(a) and 504 loan eligibility based on citizenship or lawful-residency status; whether to fund military construction, military housing, veterans benefits, and Veterans Affairs programs; whether to keep federal agencies operating through temporary government funding; and whether to accept a shutdown-ending funding package. A separate not-voting row concerned an SBA regulatory-cost cap bill, but Foushee was recorded as not voting, so it is explained below and not counted as support or opposition. Two ambiguous or limited-context rows remain visible for an appropriations amendment and a conference instruction, but they are not used to summarize the vote pattern.
 
-What Foushee did
-Foushee voted No on all 6 reviewed votes where she cast a Yes or No. Each of those votes matched most House Democrats, and each was against the final House outcome.
-
-What pattern that creates
-Foushee consistently opposed the House Republican fiscal, funding, and small-business measures reviewed in this sample. Her record here is best read as opposition to this specific set of Republican-led House measures, not as a simple statement that she is "for" or "against taxes."
-
 How a voter might read that
-If you generally favored these House Republican packages, this section may look misaligned with your views. If you generally wanted Democrats to oppose those packages or objected to their terms, this section may look aligned. The vote record alone does not show her motive.
+If you generally favored these House Republican packages, this section may look misaligned with your views. If you generally wanted Democrats to oppose those packages or objected to their terms, this section may look aligned.
 
-What not to infer
-Do not infer motive, ideology, character, corruption, or a voting recommendation from this section. The rows show recorded votes and reviewed bill meaning for this sample, not her full fiscal record. Not-voting and limited-context rows remain visible below, but they are not forced into the pattern.`);
+How to read this
+This read is limited to reviewed votes in this sample and does not assign motive, ideology, character, corruption, or a voting recommendation. The rows show recorded votes and reviewed bill meaning for this sample, not her full fiscal record. Not-voting and limited-context rows remain visible below, but they are not forced into the pattern.`);
 });
 
 test("evidence card disclosure keeps public summary visible and audit details collapsed", () => {
