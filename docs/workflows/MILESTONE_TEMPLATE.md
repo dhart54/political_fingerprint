@@ -83,6 +83,7 @@ Workflow references:
 
 - `docs/PLANS.md`
 - `docs/workflows/milestone-execution.md`
+- `docs/interpretation_principles.md` when the milestone touches product copy, summaries, evidence language, UI interpretation, party context, caveat placement, finding cards, or methodology-adjacent user-facing copy.
 - `docs/workflows/product-and-rendered-validation.md`
 
 Continue until definition of done or a true stop condition. Do not ask for repeated approval for proven workflow transitions. Do not open or merge a PR unless this brief explicitly grants that authority.

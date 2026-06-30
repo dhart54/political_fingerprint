@@ -12,6 +12,8 @@ North star: "Who represents me, how are they acting on the issues I care about, 
 
 The product maps observable legislative behavior. It must not rank politicians, infer motives, make corruption claims, predict behavior, tell users how to vote, or turn campaign statements into governing records.
 
+Before product copy, summary, evidence, or UI interpretation work, read `docs/interpretation_principles.md`. Political Fingerprint should make clear, evidence-backed interpretations with receipts while avoiding moral judgment, motive claims, unsupported ideology labels, and unsupported cross-time movement claims.
+
 ## Civic Integrity
 
 - Preserve amendment, final-passage, procedural, limited-context, and not-voting distinctions.
@@ -138,3 +140,4 @@ Maintain the repository structure:
 - Development workflow: `docs/development_workflow.md`
 - Deployment details: `docs/deployment.md`
 - Methodology and civic rules: `docs/methodology.md`
+- Interpretation principles: `docs/interpretation_principles.md`

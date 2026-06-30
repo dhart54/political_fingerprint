@@ -44,6 +44,8 @@ The active plan should include:
 16. blockers
 17. final reconciliation
 
+For milestones touching product copy, summaries, evidence language, UI interpretation, caveat placement, party-context language, finding-card language, or methodology-adjacent user-facing copy, read `docs/interpretation_principles.md` before implementation and note any relevant interpretation-boundary decisions in the plan.
+
 ## Plan Rules
 
 - Update the plan during execution.
