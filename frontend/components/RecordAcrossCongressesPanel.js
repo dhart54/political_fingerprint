@@ -73,17 +73,45 @@ export function RecordAcrossCongressesContent({ response, onInspectDomain }) {
 
   const displayFamilies = getDisplayFamilies(response);
   const sparseStateCopy = getSparseStateCopy(response);
+  const summary = response.summary || {};
+  const familyCount = summary.display_eligible_family_count || 0;
+  const directCount = summary.directly_comparable_display_eligible_family_count || 0;
+  const caveatedCount = summary.conditionally_comparable_display_eligible_family_count || 0;
 
   return (
-    <details className="mt-5 rounded-2xl border border-stone-200 bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)] lg:px-5" data-testid="record-across-congresses-panel">
-      <summary className="cursor-pointer text-sm font-semibold uppercase tracking-[0.18em] text-stone-700 marker:text-cyan-900">
-        {RECORD_ACROSS_COPY.panelTitle}
+    <details className="group mt-5 rounded-xl border border-cyan-900/20 bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)] lg:px-5" data-testid="record-across-congresses-panel">
+      <summary className="cursor-pointer list-none marker:text-cyan-900" data-testid="record-across-congresses-summary">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="min-w-0">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-900">
+              {RECORD_ACROSS_COPY.panelTitle}
+            </p>
+            <p className="mt-1 text-sm font-medium leading-5 text-stone-900">
+              {RECORD_ACROSS_COPY.collapsedSummaryLabel}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 text-xs text-stone-700" aria-label="Record Across Congresses summary counts">
+            <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5">
+              {familyCount} eligible
+            </span>
+            <span className="rounded-full border border-cyan-900/20 bg-cyan-50 px-3 py-1.5 text-cyan-900">
+              {directCount} closest
+            </span>
+            <span className="rounded-full border border-stone-200 bg-white px-3 py-1.5">
+              {caveatedCount} caveated
+            </span>
+            <span className="rounded-full border border-cyan-900/20 bg-white px-3 py-1.5 font-semibold uppercase tracking-[0.12em] text-cyan-900">
+              <span className="group-open:hidden">Open</span>
+              <span className="hidden group-open:inline">Close</span>
+            </span>
+          </div>
+        </div>
       </summary>
       <div className="mt-4 border-t border-stone-200 pt-4">
         <p className="max-w-3xl text-sm leading-6 text-stone-700">
           {RECORD_ACROSS_COPY.oneSentenceExplanation}
         </p>
-        <AvailabilitySummary summary={response.summary} />
+        <AvailabilitySummary summary={summary} />
         {displayFamilies.length > 0 ? (
           <div className="mt-4 grid gap-3">
             {displayFamilies.map((family) => (
@@ -115,25 +143,29 @@ export function RecordAcrossCongressesContent({ response, onInspectDomain }) {
 function AvailabilitySummary({ summary = {} }) {
   const items = [
     {
-      label: "Families with evidence in both Congresses",
+      label: RECORD_ACROSS_COPY.eligibleFamilyCountLabel,
       value: summary.display_eligible_family_count || 0,
+      helper: "Reviewed family evidence exists in both the 118th and 119th Congresses.",
     },
     {
       label: RECORD_ACROSS_COPY.directComparableFamilyLabel,
       value: summary.directly_comparable_display_eligible_family_count || 0,
+      helper: "Closest reviewed policy-question family matches.",
     },
     {
       label: RECORD_ACROSS_COPY.conditionalComparableFamilyLabel,
       value: summary.conditionally_comparable_display_eligible_family_count || 0,
+      helper: "Reviewed family matches with a caveat.",
     },
   ];
 
   return (
-    <div className="mt-4 grid gap-2 md:grid-cols-3">
+    <div className="mt-4 grid gap-2 md:grid-cols-3" data-testid="record-across-congresses-counts">
       {items.map((item) => (
-        <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3" key={item.label}>
+        <div className="rounded-lg border border-stone-200 bg-stone-50 px-3 py-3" key={item.label}>
           <p className="font-serif text-[1.6rem] leading-none text-cyan-900">{item.value}</p>
           <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-stone-600">{item.label}</p>
+          <p className="mt-1 text-xs leading-5 text-stone-600">{item.helper}</p>
         </div>
       ))}
     </div>
@@ -142,6 +174,7 @@ function AvailabilitySummary({ summary = {} }) {
 
 function FamilyEvidenceCard({ family, legislatorId }) {
   const matchLabel = getFamilyMatchLabel(family.comparability_status);
+  const drilldownId = `record-family-roll-call-${family.family_id}`;
   const [drilldownState, setDrilldownState] = useState({
     status: "closed",
     drilldown: null,
@@ -176,7 +209,7 @@ function FamilyEvidenceCard({ family, legislatorId }) {
   }
 
   return (
-    <article className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-4" data-testid={`record-family-card-${family.family_id}`}>
+    <article className="rounded-lg border border-stone-200 bg-stone-50 px-4 py-4" data-testid={`record-family-card-${family.family_id}`}>
       <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
@@ -196,13 +229,15 @@ function FamilyEvidenceCard({ family, legislatorId }) {
           </p>
         </div>
         <button
+          aria-controls={drilldownId}
           aria-expanded={drilldownState.status === "ready"}
-          className="w-fit rounded-full border border-cyan-900/20 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-900 transition hover:bg-cyan-50 disabled:cursor-not-allowed disabled:opacity-60"
+          className="w-full rounded-lg border border-cyan-900/20 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-900 transition hover:bg-cyan-50 disabled:cursor-not-allowed disabled:opacity-60 sm:w-fit"
+          data-testid={`record-family-drilldown-button-${family.family_id}`}
           disabled={!legislatorId || drilldownState.status === "loading"}
           onClick={toggleDrilldown}
           type="button"
         >
-          {drilldownState.status === "ready" ? "Close roll-call evidence." : RECORD_ACROSS_COPY.sourceEvidenceDrilldownPrompt}
+          {drilldownState.status === "ready" ? RECORD_ACROSS_COPY.closeEvidenceDrilldownPrompt : RECORD_ACROSS_COPY.sourceEvidenceDrilldownPrompt}
         </button>
       </div>
       <div className="mt-4 grid gap-3 md:grid-cols-2">
@@ -215,19 +250,19 @@ function FamilyEvidenceCard({ family, legislatorId }) {
           label="119th"
         />
       </div>
-      <FamilyRollCallDrilldown state={drilldownState} />
+      <FamilyRollCallDrilldown id={drilldownId} state={drilldownState} />
     </article>
   );
 }
 
-function FamilyRollCallDrilldown({ state }) {
+function FamilyRollCallDrilldown({ id, state }) {
   if (state.status === "closed") {
     return null;
   }
 
   if (state.status === "loading") {
     return (
-      <div className="mt-4 rounded-xl border border-stone-200 bg-white px-4 py-4 text-sm leading-6 text-stone-600">
+      <div className="mt-4 rounded-lg border border-stone-200 bg-white px-4 py-4 text-sm leading-6 text-stone-600" id={id} aria-live="polite">
         Loading roll-call evidence.
       </div>
     );
@@ -235,14 +270,17 @@ function FamilyRollCallDrilldown({ state }) {
 
   if (state.status === "error" || !state.drilldown) {
     return (
-      <div className="mt-4 rounded-xl border border-stone-200 bg-white px-4 py-4 text-sm leading-6 text-stone-600">
+      <div className="mt-4 rounded-lg border border-stone-200 bg-white px-4 py-4 text-sm leading-6 text-stone-600" id={id} aria-live="polite">
         Roll-call evidence is unavailable right now.
       </div>
     );
   }
 
   return (
-    <section className="mt-4 rounded-xl border border-cyan-900/15 bg-white px-4 py-4" data-testid="record-family-roll-call-drilldown">
+    <section className="mt-4 rounded-lg border border-cyan-900/15 bg-white px-4 py-4" data-testid="record-family-roll-call-drilldown" id={id}>
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-900">
+        {RECORD_ACROSS_COPY.drilldownHeading}
+      </p>
       <div className="flex flex-wrap items-center gap-2">
         <span className="rounded-full border border-cyan-900/20 bg-cyan-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-cyan-900">
           {state.drilldown.match_label}
@@ -273,8 +311,8 @@ function FamilyRollCallDrilldown({ state }) {
 
 function RollCallCongressSection({ label, rows = [] }) {
   return (
-    <div className="min-w-0 rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
-      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-600">{label}</p>
+    <div className="min-w-0 rounded-lg border border-stone-200 bg-stone-50 px-3 py-3" data-testid={`record-roll-call-section-${label}`}>
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-600">{label} Congress</p>
       <div className="mt-3 grid gap-3">
         {rows.length > 0 ? (
           rows.map((row) => <RollCallEvidenceRow key={`${label}-${row.roll_call_id}`} row={row} />)
@@ -339,13 +377,13 @@ function RollCallEvidenceRow({ row }) {
 
 function CongressCounts({ counts = {}, label }) {
   return (
-    <div className="rounded-xl border border-stone-200 bg-white px-3 py-3">
+    <div className="rounded-lg border border-stone-200 bg-white px-3 py-3">
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-600">
-        {label}
+        {label} Congress
       </p>
-      <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-5 md:grid-cols-2 xl:grid-cols-5">
+      <div className="mt-3 grid grid-cols-[repeat(auto-fit,minmax(92px,1fr))] gap-2">
         {RECORD_ACROSS_COUNT_FIELDS.map((field) => (
-          <div className="min-h-[72px] rounded-lg border border-stone-100 bg-stone-50 px-2 py-2" key={field.key}>
+          <div className="min-h-[76px] rounded-lg border border-stone-100 bg-stone-50 px-2 py-2" key={field.key}>
             <p className="font-serif text-[1.35rem] leading-none text-stone-950">
               {counts[field.key] || 0}
             </p>

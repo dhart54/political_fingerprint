@@ -104,7 +104,7 @@ test("sanitized response keeps approved framing and strips internal metadata", (
   const sanitized = sanitizeRecordAcrossResponse(response());
 
   assert.equal(sanitized.product_framing, RECORD_ACROSS_COPY.panelTitle);
-  assert.equal(RECORD_ACROSS_COPY.oneSentenceExplanation, "Reviewed House vote evidence exists in both the 118th and 119th Congresses for these policy-question families.");
+  assert.equal(RECORD_ACROSS_COPY.oneSentenceExplanation, "Reviewed House vote evidence exists in both the 118th and 119th Congresses for these policy-question families. Counts stay separated by Congress and vote-status bucket.");
   assert.equal(sanitized.non_authorization_metadata, undefined);
   assert.equal(sanitized.summary.display_eligible_family_count, 2);
 });
@@ -286,6 +286,8 @@ test("approved visible copy has no disallowed wording", () => {
   const renderedText = [
     RECORD_ACROSS_COPY.panelTitle,
     RECORD_ACROSS_COPY.oneSentenceExplanation,
+    RECORD_ACROSS_COPY.collapsedSummaryLabel,
+    RECORD_ACROSS_COPY.eligibleFamilyCountLabel,
     RECORD_ACROSS_COPY.directComparableFamilyLabel,
     RECORD_ACROSS_COPY.conditionalComparableFamilyLabel,
     RECORD_ACROSS_COPY.noEligibleFamiliesState,
@@ -296,6 +298,8 @@ test("approved visible copy has no disallowed wording", () => {
     RECORD_ACROSS_COPY.relatedUnavailableNote,
     RECORD_ACROSS_COPY.whyNotInferenceExplanation,
     RECORD_ACROSS_COPY.sourceEvidenceDrilldownPrompt,
+    RECORD_ACROSS_COPY.closeEvidenceDrilldownPrompt,
+    RECORD_ACROSS_COPY.drilldownHeading,
   ].join("\n");
 
   assert.deepEqual(
@@ -312,6 +316,8 @@ test("panel is collapsed by default and placed below strongest issue evidence", 
 
   assert.match(panelSource, /<details className=/);
   assert.doesNotMatch(panelSource, /<details[^>]*open=/);
+  assert.match(panelSource, /data-testid="record-across-congresses-summary"/);
+  assert.match(panelSource, /RECORD_ACROSS_COPY\.collapsedSummaryLabel/);
   assert.ok(evidenceIndex > 0 && panelIndex > evidenceIndex);
 });
 
@@ -320,10 +326,12 @@ test("family card button opens inline drilldown and source links render when ava
 
   assert.match(panelSource, /async function toggleDrilldown/);
   assert.match(panelSource, /onClick=\{toggleDrilldown\}/);
-  assert.match(panelSource, /<FamilyRollCallDrilldown state=\{drilldownState\}/);
+  assert.match(panelSource, /<FamilyRollCallDrilldown id=\{drilldownId\} state=\{drilldownState\}/);
   assert.match(panelSource, /fetchPositionEvidence\(\{/);
   assert.match(panelSource, /buildFamilyRollCallDrilldown\(\{/);
   assert.match(panelSource, /href=\{row\.source_url\}/);
+  assert.match(panelSource, /aria-controls=\{drilldownId\}/);
+  assert.match(panelSource, /aria-expanded=\{drilldownState\.status === "ready"\}/);
   assert.doesNotMatch(panelSource, /onInspectDomain\(family\.issue_domain\)/);
 });
 

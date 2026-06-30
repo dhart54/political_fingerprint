@@ -3,7 +3,9 @@ export const RECORD_ACROSS_PRODUCT_FRAMING = "Record Across Congresses";
 export const RECORD_ACROSS_COPY = {
   panelTitle: RECORD_ACROSS_PRODUCT_FRAMING,
   oneSentenceExplanation:
-    "Reviewed House vote evidence exists in both the 118th and 119th Congresses for these policy-question families.",
+    "Reviewed House vote evidence exists in both the 118th and 119th Congresses for these policy-question families. Counts stay separated by Congress and vote-status bucket.",
+  collapsedSummaryLabel: "Reviewed family evidence in both Congresses",
+  eligibleFamilyCountLabel: "Eligible families",
   directComparableFamilyLabel: "Closest family match",
   conditionalComparableFamilyLabel: "Caveated family match",
   noEligibleFamiliesState:
@@ -21,7 +23,9 @@ export const RECORD_ACROSS_COPY = {
   whyNotInferenceExplanation:
     "This panel places reviewed roll-call evidence from two Congresses side by side. It does not describe what that means about the official's views, behavior, or reasons.",
   sourceEvidenceDrilldownPrompt:
-    "Open the roll-call evidence used for this family.",
+    "View roll-call evidence",
+  closeEvidenceDrilldownPrompt: "Hide roll-call evidence",
+  drilldownHeading: "Roll-call evidence used for this family",
 };
 
 export const RECORD_ACROSS_COUNT_FIELDS = [
