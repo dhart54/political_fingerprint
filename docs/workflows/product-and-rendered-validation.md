@@ -2,6 +2,8 @@
 
 Use this runbook for UI, profile, evidence, narrative, accessibility, and product-flow changes.
 
+Before product copy, summary, evidence, or UI interpretation work, read `docs/interpretation_principles.md`; validate that findings lead with evidence-backed interpretation, receipts remain available, and limits are placed without excessive repetition.
+
 ## Evidence Integrity
 
 Validate production-shaped examples when the product depends on real evidence structure:

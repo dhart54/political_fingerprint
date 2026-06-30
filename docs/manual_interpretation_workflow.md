@@ -4,6 +4,8 @@ This workflow supports the first cached "DC-speak breakdown" pass without adding
 
 Core rule: interpret what the vote appears to do. Do not judge whether that outcome is good or bad.
 
+Before changing vote interpretation copy or methodology-adjacent user-facing copy, read `docs/interpretation_principles.md`; keep interpretations clear, evidence-backed, and receipt-oriented without motive claims, moral judgment, unsupported ideology labels, or unsupported cross-time movement claims.
+
 ## Shape
 
 The database stores manual/plain-language interpretation fields on `vote_interpretations`:

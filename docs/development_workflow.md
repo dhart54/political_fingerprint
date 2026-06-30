@@ -2,6 +2,8 @@
 
 This repo has two local verification modes. Use fixture mode for product and API behavior. Use Supabase mode only when validating migrations, persistence, ETL writes, or real-data reads.
 
+Before changing product copy, summaries, evidence language, UI interpretation, Record Across Congresses copy, party-context language, caveat/limit placement, finding-card language, or methodology-adjacent user-facing copy, read `docs/interpretation_principles.md`.
+
 ## Fixture Mode
 
 Fixture mode is the default low-cost development loop. It is deterministic and does not require a working database connection.
