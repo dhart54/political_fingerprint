@@ -108,7 +108,7 @@ export function buildRecordNarrative({ legislator = {}, positions = [], scope = 
   const comparisonLine = scope === "all" ? buildComparisonLine(rows) : "";
 
   return {
-    headline: `${legislator.name_display || "This official"}'s clearest reviewed pattern is ${formatDomainLabel(strongest.domain)}.`,
+    headline: `${legislator.name_display || "This official"}'s strongest reviewed evidence is in ${formatDomainLabel(strongest.domain)}.`,
     body: [partyLine, strongestLine, mixedLine, comparisonLine, limitedLine].filter(Boolean).join(" "),
     evidenceLine: `${totalInterpreted} reviewed Yes/No meanings across ${totalRecorded} recorded issue rows.`,
     strongestDomain: strongest.domain,
@@ -121,17 +121,17 @@ export function buildComparisonLine(rows = []) {
   const comparisons = (rows || [])
     .map((row) => row.comparison)
     .filter(Boolean);
-  const confident = comparisons.find((comparison) =>
-    ["consistent", "stronger", "weaker", "different"].includes(comparison.status),
+  const hasBothCongresses = comparisons.some((comparison) =>
+    ["consistent", "stronger", "weaker", "different", "not_comparable"].includes(comparison.status),
   );
-  if (confident) {
-    return confident.statement;
+  if (hasBothCongresses) {
+    return "Reviewed votes are available in both Congresses, with Congress-specific counts shown separately below.";
   }
   const singleCongress = comparisons.find((comparison) => comparison.status === "single_congress_only");
   if (singleCongress) {
-    return "Some issues have reviewed evidence in only one Congress, so the profile does not describe a cross-Congress change.";
+    return "Some issues have reviewed evidence in only one Congress, so Congress-specific counts are shown separately below.";
   }
-  return "There is not enough reviewed evidence to compare the two Congresses confidently.";
+  return "Congress-specific counts are shown separately below when reviewed votes are available.";
 }
 
 export function buildIssuePatternRows(positions = []) {
