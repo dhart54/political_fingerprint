@@ -50,18 +50,18 @@ test("record narrative names strongest and mixed reviewed patterns without ideol
     positions: valerieRows,
   });
 
-  assert.match(narrative.headline, /clearest reviewed pattern is Economy/);
+  assert.match(narrative.headline, /strongest reviewed evidence is in Economy/);
   assert.match(narrative.body, /Economy/);
   assert.match(narrative.body, /National Security/);
   assert.match(narrative.evidenceLine, /31 reviewed Yes\/No meanings/);
   assert.equal(narrative.patternRows.length, 3);
   assert.doesNotMatch(
     `${narrative.headline} ${narrative.body}`,
-    /liberal|conservative|extreme|always|corrupt|you should vote/i,
+    /liberal|conservative|extreme|always|corrupt|you should vote|consistent with the prior Congress|drift|shift|steady mix/i,
   );
 });
 
-test("record narrative adds cautious cross-Congress comparison when available", () => {
+test("record narrative avoids cross-Congress movement claims when both Congresses have evidence", () => {
   const narrative = buildRecordNarrative({
     legislator: {
       name_display: "Casey Rivera",
@@ -84,8 +84,9 @@ test("record narrative adds cautious cross-Congress comparison when available", 
     ],
   });
 
-  assert.match(narrative.body, /consistent with the prior Congress/);
-  assert.doesNotMatch(narrative.body, /motive|ideology|score/i);
+  assert.match(narrative.body, /Reviewed votes are available in both Congresses/);
+  assert.match(narrative.body, /Congress-specific counts shown separately below/);
+  assert.doesNotMatch(narrative.body, /motive|ideology|score|consistent with the prior Congress|drift|shift|steady/i);
 });
 
 test("comparison line stays unavailable when one Congress lacks enough reviewed evidence", () => {
@@ -99,7 +100,7 @@ test("comparison line stays unavailable when one Congress lacks enough reviewed 
         },
       },
     ]),
-    "There is not enough reviewed evidence to compare the two Congresses confidently.",
+    "Congress-specific counts are shown separately below when reviewed votes are available.",
   );
 });
 

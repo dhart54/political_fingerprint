@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { fetchDrift, fetchFingerprint, fetchPositionEvidence, fetchPositions } from "../lib/api";
+import { fetchFingerprint, fetchPositionEvidence, fetchPositions } from "../lib/api";
 import { getBestIssueRead } from "../lib/issueReadiness.mjs";
 import { formatDomainLabel } from "../lib/issueDomains";
 import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
@@ -13,7 +13,6 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
     status: "loading",
     fingerprint: null,
     positions: null,
-    drift: null,
     error: null,
   });
 
@@ -25,15 +24,13 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
         status: "loading",
         fingerprint: null,
         positions: null,
-        drift: null,
         error: null,
       });
 
       try {
-        const [fingerprint, positionsPayload, drift] = await Promise.all([
+        const [fingerprint, positionsPayload] = await Promise.all([
           fetchFingerprint({ legislatorId: legislator.id, scope }),
           fetchPositions({ legislatorId: legislator.id, scope }),
-          fetchDrift({ legislatorId: legislator.id }),
         ]);
         const positions = await fillMissingInterpretedCounts({
           payload: positionsPayload,
@@ -49,13 +46,11 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
           status: "ready",
           fingerprint,
           positions,
-          drift,
           error: null,
         });
         onProfileRead?.({
           fingerprint,
           positions,
-          drift,
         });
       } catch (error) {
         if (!active) {
@@ -66,7 +61,6 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
           status: "error",
           fingerprint: null,
           positions: null,
-          drift: null,
           error: "The quick read is unavailable right now.",
         });
       }
@@ -84,7 +78,6 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
   const topFocus = buildTopFocus(fingerprintRows);
   const topPosition = buildTopPosition(positionRows);
   const coverage = buildCoverage(fingerprintRows);
-  const drift = buildDriftRead(state.drift);
   const narrative = buildRecordNarrative({
     legislator,
     positions: positionRows,
@@ -130,9 +123,9 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
           ) : null}
         </div>
         <div className="grid shrink-0 gap-2 sm:grid-cols-3">
-          <QuickMetric eyebrow="Best read" value={state.status === "ready" ? topPosition.value : "--"} />
+          <QuickMetric eyebrow="Strongest evidence" value={state.status === "ready" ? topPosition.metricDomain : "--"} />
           <QuickMetric eyebrow="Coverage" value={state.status === "ready" ? coverage.value : "--"} />
-          <QuickMetric eyebrow="Change" value={state.status === "ready" ? drift.value : "--"} />
+          <QuickMetric eyebrow="Record read" value={state.status === "ready" ? topPosition.value : "--"} />
         </div>
       </div>
 
@@ -210,19 +203,6 @@ function buildHeadline({ status, name, topFocus, topPosition }) {
   return `Start with ${formatDomainLabel(topPosition.domain)}. It has both the clearest reviewed vote meaning and the largest recorded-vote footprint in this profile.`;
 }
 
-function buildSixtySecondRead({ status, topFocus, topPosition, coverage, drift }) {
-  if (status !== "ready") {
-    return "";
-  }
-  if (topPosition.domain === "NONE") {
-    return "In 60 seconds, you can see where evidence exists, where it is too limited, and why the page avoids a confident issue read.";
-  }
-  if (topFocus.domain !== topPosition.domain) {
-    return `In 60 seconds, start with ${formatDomainLabel(topPosition.domain)} for reviewed vote meaning. ${topFocus.label} has more recorded votes, but the clearest evidence is elsewhere. ${coverage.value}; ${drift.label}`;
-  }
-  return `In 60 seconds, start with ${formatDomainLabel(topPosition.domain)} because it has the clearest reviewed vote meaning. ${coverage.value}; ${drift.label}`;
-}
-
 function buildStartHereCopy({ topFocus, topPosition }) {
   const bestIssue = formatDomainLabel(topPosition.domain);
   if (topFocus.domain !== topPosition.domain && topFocus.domain !== "NONE") {
@@ -259,6 +239,7 @@ function buildTopPosition(rows) {
       shortLabel: "no confident issue read",
       domain: "NONE",
       label: "No issue has enough reviewed Yes/No vote meaning for a confident read in the current window.",
+      metricDomain: "--",
       value: "--",
     };
   }
@@ -275,12 +256,13 @@ function buildTopPosition(rows) {
     shortLabel: `${strongest.readiness?.label || direction} in ${formatDomainLabel(strongest.domain)}`,
     domain: strongest.domain,
     label: `${formatDomainLabel(strongest.domain)} has ${strongest.recorded_votes} recorded votes in this window; ${interpretedYeaNay} reviewed Yes/No votes can be summarized.`,
+    metricDomain: formatDomainLabel(strongest.domain),
     value:
       strongest.readiness?.key === "mixed_but_interpretable"
-        ? "Mixed"
+        ? "Mixed but interpretable"
         : strongest.readiness?.key === "limited_evidence"
-          ? "Limited"
-          : "Strong",
+          ? "Limited reviewed evidence"
+          : "Strong reviewed sample",
   };
 }
 
@@ -303,14 +285,10 @@ function buildScopeRead({ scope, positions }) {
       .join(" ");
   }
 
-  const comparisons = (positions?.positions || [])
-    .map((row) => row.comparison)
-    .filter((comparison) => comparison && comparison.status && comparison.status !== "no_reviewed_evidence");
-  const comparable = comparisons.find((comparison) => ["consistent", "stronger", "weaker", "different"].includes(comparison.status));
-  if (comparable) {
-    return `${coverage} ${comparable.statement}`.trim();
+  if (metadata?.congresses?.length > 1) {
+    return `${coverage} Congress-specific counts are shown separately below.`.trim();
   }
-  return `${coverage} There is not enough reviewed evidence to compare the two Congresses confidently.`.trim();
+  return coverage;
 }
 
 function formatYearRange(start, end) {
@@ -320,38 +298,4 @@ function formatYearRange(start, end) {
     return `${startYear}-${endYear}`;
   }
   return startYear || endYear || "the selected period";
-}
-
-function buildDriftRead(drift) {
-  if (!drift) {
-    return {
-      label: "Change-over-time data is not available.",
-      value: "--",
-    };
-  }
-
-  if (drift.insufficient_data) {
-    return {
-      label: "Not enough eligible votes to compare early and recent issue mix.",
-      value: "Insufficient",
-    };
-  }
-
-  const driftValue = drift.drift_value || 0;
-  if (driftValue >= 0.6) {
-    return {
-      label: `Issue mix changed noticeably across the two-year window (${driftValue.toFixed(2)}).`,
-      value: "Shifted mix",
-    };
-  }
-  if (driftValue >= 0.3) {
-    return {
-      label: `Issue mix changed somewhat across the two-year window (${driftValue.toFixed(2)}).`,
-      value: "Some shift",
-    };
-  }
-  return {
-    label: `Issue mix looks broadly steady across the two-year window (${driftValue.toFixed(2)}).`,
-    value: "Steady mix",
-  };
 }

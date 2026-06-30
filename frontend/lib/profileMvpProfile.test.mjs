@@ -54,6 +54,9 @@ test("representative page flow directs the voter without changing evidence logic
   assert.match(source, /clearest reviewed issue read/);
   assert.match(source, /Record Summary/);
   assert.match(source, /limited issue sections are intentionally lower priority/);
+  assert.match(source, /Strongest evidence/);
+  assert.match(source, /Record read/);
+  assert.doesNotMatch(source, /QuickMetric eyebrow="Change"|Steady mix|Issue mix changed|fetchDrift/);
   assert.match(source, /Jump to issue/);
   assert.match(source, /without being forced into a confident pattern/);
   assert.match(source, /Context rows remain visible but do not drive support\/opposition summaries/);
@@ -66,7 +69,6 @@ test("quick read separates high-volume issue focus from clearest reviewed issue 
   assert.match(source, /topFocus\.domain !== topPosition\.domain/);
   assert.match(source, /It has the clearest reviewed vote meaning in this profile/);
   assert.match(source, /has more recorded votes but is not the best first read/);
-  assert.match(source, /the clearest evidence is elsewhere/);
 });
 
 test("no-preference record views avoid alignment framing in neutral summaries", () => {
