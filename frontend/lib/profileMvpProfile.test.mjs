@@ -81,11 +81,12 @@ test("no-preference record views avoid alignment framing in neutral summaries", 
 
   assert.match(source, /Selected Issue Records/);
   assert.match(source, /Compare the record to concrete choices/);
+  assert.match(source, /Switch Comparison Pair/);
   assert.match(source, /I generally favored these measures/);
   assert.match(source, /My views differ by measure/);
   assert.match(source, /getDirectionalAlignmentPreferences/);
   assert.match(source, /concrete for-or-against reviewed-measure choices/);
-  assert.doesNotMatch(source, /Your Issues vs This Record|Pick what you want this record checked against|Record shown|record check/);
+  assert.doesNotMatch(source, /Your Issues vs This Record|Pick what you want this record checked against|Record shown|record check|Change Comparison Pair/);
 });
 
 test("issue cards use generalized readiness copy and contact follows vote cards", () => {
@@ -108,4 +109,17 @@ test("secondary profile tools are consolidated below the evidence path", () => {
   assert.match(source, /Search or switch official/);
   assert.match(source, /Procedural votes may appear as context/);
   assert.doesNotMatch(source, /Procedural votes are excluded before issue reads/);
+});
+
+test("first-render profile shell avoids stale fallback metrics and labels sample state", () => {
+  const source = readFileSync(new URL("../app/page.js", import.meta.url), "utf8");
+
+  assert.match(source, /Reviewed vote evidence with source receipts loads from the live coverage record/);
+  assert.match(source, /Sample profile shown until you search your ZIP/);
+  assert.match(source, /Sample profile/);
+  assert.match(source, /handleSelectLegislator/);
+  assert.doesNotMatch(source, /formatNumber\(coverageMetadata\?\.legislator_count, "548"\)/);
+  assert.doesNotMatch(source, /formatNumber\(coverageMetadata\?\.eligible_roll_call_count, "8"\)/);
+  assert.doesNotMatch(source, /formatPercent\(coverageMetadata\?\.source_url_share\)/);
+  assert.doesNotMatch(source, /QuickMetric eyebrow="Best read"|QuickMetric eyebrow="Change"|Steady mix/);
 });

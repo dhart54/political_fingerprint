@@ -34,6 +34,7 @@ const DEFAULT_COMPARE_RIGHT = {
 
 export default function HomePage() {
   const [selectedLegislator, setSelectedLegislator] = useState(DEFAULT_LEGISLATOR);
+  const [hasSelectedLegislator, setHasSelectedLegislator] = useState(false);
   const [profileScope, setProfileScope] = useState("all");
   const [issuePreferences, setIssuePreferences] = useState({});
   const [profileRead, setProfileRead] = useState(null);
@@ -76,6 +77,13 @@ export default function HomePage() {
     setProfileRead(null);
   }, [selectedLegislator.id]);
 
+  function handleSelectLegislator(legislator) {
+    setHasSelectedLegislator(true);
+    setSelectedLegislator(legislator);
+  }
+
+  const showingSampleProfile = selectedLegislator.id === DEFAULT_LEGISLATOR.id && !hasSelectedLegislator;
+
   return (
     <main className="min-h-screen bg-[#f7f4ec] text-stone-900">
       <section className="mx-auto max-w-[1440px] px-4 py-4 sm:px-6 lg:py-5">
@@ -94,16 +102,22 @@ export default function HomePage() {
                 Start with the clearest reviewed patterns, then inspect the proof.
               </p>
             </div>
-            <div className="mt-2 grid gap-2 sm:grid-cols-3">
-              <HeroStat value={formatNumber(coverageMetadata?.legislator_count, "548")} label="legislators" />
-              <HeroStat value={formatNumber(coverageMetadata?.eligible_roll_call_count, "8")} label="roll calls" />
-              <HeroStat value={formatPercent(coverageMetadata?.source_url_share)} label="source links" />
-            </div>
+            {coverageMetadata ? (
+              <div className="mt-2 grid gap-2 sm:grid-cols-3">
+                <HeroStat value={formatNumber(coverageMetadata.legislator_count)} label="legislators" />
+                <HeroStat value={formatNumber(coverageMetadata.eligible_roll_call_count)} label="reviewed votes" />
+                <HeroStat value={formatPercent(coverageMetadata.source_url_share)} label="source links" />
+              </div>
+            ) : (
+              <div className="mt-2 rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-3 text-sm font-medium leading-5 text-cyan-950">
+                Reviewed vote evidence with source receipts loads from the live coverage record.
+              </div>
+            )}
           </div>
           <ZipLookupPanel
             onComparePair={setComparisonSeed}
             onRaceStateChange={setZipRaceState}
-            onSelectLegislator={setSelectedLegislator}
+            onSelectLegislator={handleSelectLegislator}
             showElectionContext={false}
             variant="hero"
           />
@@ -118,8 +132,18 @@ export default function HomePage() {
               <h2 className="mt-1 truncate font-serif text-[1.75rem] leading-none text-stone-950 sm:text-[2.15rem]">
                 {selectedLegislator.name_display}
               </h2>
+              {showingSampleProfile ? (
+                <p className="mt-1 text-sm leading-5 text-stone-600">
+                  Sample profile shown until you search your ZIP.
+                </p>
+              ) : null}
             </div>
             <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.14em] text-stone-700">
+              {showingSampleProfile ? (
+                <span className="rounded-full border border-cyan-900/20 bg-cyan-50 px-3 py-1.5 text-cyan-900">
+                  Sample profile
+                </span>
+              ) : null}
               <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5">
                 {formatChamber(selectedLegislator.chamber)}
               </span>
@@ -197,7 +221,7 @@ export default function HomePage() {
                   defaultLeftLegislator={selectedLegislator}
                   defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
                   onInspectDomain={(legislator, domain) => {
-                    setSelectedLegislator(legislator);
+                    handleSelectLegislator(legislator);
                     setEvidenceRequest({
                       domain,
                       requestedAt: Date.now(),
@@ -211,7 +235,7 @@ export default function HomePage() {
 
             {zipRaceState.status === "ready" && (zipRaceState.payload?.races || []).length > 0 ? (
               <UpcomingRacePanel
-                onSelectLegislator={setSelectedLegislator}
+                onSelectLegislator={handleSelectLegislator}
                 preferences={issuePreferences}
                 raceState={zipRaceState}
               />
@@ -223,7 +247,7 @@ export default function HomePage() {
               </summary>
               <div className="mt-3 border-t border-stone-200 pt-3">
                 <LegislatorPicker
-                  onSelect={setSelectedLegislator}
+                  onSelect={handleSelectLegislator}
                   selectedLegislator={selectedLegislator}
                 />
               </div>
@@ -316,9 +340,9 @@ function HeroStat({ value, label }) {
   );
 }
 
-function formatNumber(value, fallback) {
+function formatNumber(value) {
   if (typeof value !== "number") {
-    return fallback;
+    return "Coverage loading";
   }
 
   return new Intl.NumberFormat("en-US").format(value);
@@ -326,7 +350,7 @@ function formatNumber(value, fallback) {
 
 function formatPercent(value) {
   if (typeof value !== "number") {
-    return "--";
+    return "Receipts loading";
   }
 
   return `${Math.round(value * 100)}%`;

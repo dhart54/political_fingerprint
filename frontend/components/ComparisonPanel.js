@@ -291,7 +291,7 @@ export default function ComparisonPanel({
 
       <details className="mt-5 rounded-[2rem] border border-stone-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(245,241,233,0.94))] px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.72)]">
         <summary className="cursor-pointer text-xs uppercase tracking-[0.26em] text-stone-600">
-          Change Comparison Pair
+          Switch Comparison Pair
         </summary>
         <p className="mt-3 max-w-2xl text-sm leading-6 text-stone-700">
           Keep the same selected issues, then set either side to another official for a focused side-by-side read.
