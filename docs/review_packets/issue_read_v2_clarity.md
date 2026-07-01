@@ -3,15 +3,16 @@
 ## Summary
 
 - Dominant interpreted Yes/No issue records now use mostly-supported/opposed framing at the two-thirds threshold instead of falling into mixed language merely because both sides have votes.
-- Issue overview finding copy now uses concrete reviewed measure categories when available.
+- Issue overview finding copy now keeps the direct finding/count short, then uses concrete reviewed measure categories once in the theme sentence.
 - Generic vote-card summaries strip audit-leading phrases before public display while preserving source/caveat drawers and the full reviewed vote list.
 
 ## User-Visible Copy Behavior
 
 - Dominant issue cards can show `Mostly opposed in reviewed sample` or `Mostly supported in reviewed sample`.
-- A 128 opposed / 22 supported National Security sample renders as mostly opposed, with concrete categories such as defense authorization legislation, foreign military sales, veterans cemetery administration, and motion-to-commit votes.
+- A 128 opposed / 22 supported National Security sample renders as mostly opposed, with the finding/count first, then side-specific themes: opposed measures centered on defense authorization legislation, foreign military sales, and veterans cemetery administration; supported votes centered on motions to commit.
 - Close split samples still render as split or mixed.
 - `What that means` continues to use concrete reviewed measures when available and falls back to broader issue-area wording only when concrete categories are absent.
+- All-opposed or all-supported samples use one combined concrete theme sentence instead of inventing an empty opposite-side theme.
 
 ## Scope Boundaries
 

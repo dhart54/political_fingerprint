@@ -71,7 +71,8 @@
 
 - Keep the existing two-thirds dominance threshold already used by issue overview copy.
 - Treat mixed support/opposition as a strong read when one side reaches that two-thirds threshold; reserve `mixed_but_interpretable` for close splits.
-- Use concrete reviewed measure categories in the issue finding line when available, with broad issue-area language only as fallback.
+- Keep the issue finding line short: direction, issue label, and counts. Put concrete reviewed measure categories in the next theme sentence so the category list appears once.
+- Derive opposed/support theme sentences from existing side-specific row groups when both sides have concrete groups; otherwise use one combined concrete theme sentence.
 - Strip audit-lead phrases from generic vote-card summaries while keeping source/caveat details in drawers.
 
 ## Deviations Or Corrections
@@ -105,6 +106,6 @@
 
 - Definition of done satisfied: yes.
 - Remaining limitations: local production shell rendered, but data-backed Valerie Foushee National Security issue cards were not locally renderable in this workspace. Source-level tests cover the 128 opposed / 22 supported National Security case, concrete categories, full-list access, and drawer preservation.
-- Commit: `26c723bb91a28792fbb2ca2d82c00dc7e8f8bef6`.
+- Commit: PR branch HEAD after final revision.
 - PR: #64, `https://github.com/dhart54/political_fingerprint/pull/64`.
 - Recommended next step: wait for PR checks and review.
