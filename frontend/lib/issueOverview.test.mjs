@@ -364,10 +364,10 @@ test("dominant National Security sample is mostly opposed, not mixed", () => {
 
   assert.match(finding, /In this reviewed sample, Foushee mostly opposed these reviewed National Security & Foreign Policy measures: 128 opposed and 22 supported across 150 interpreted Yes\/No votes\./);
   assert.match(finding, /The opposed measures centered on defense authorization legislation, foreign military sales, and veterans cemetery administration\./);
-  assert.match(finding, /The supported votes centered on other reviewed national-security measures\./);
+  assert.match(finding, /The supported votes centered on motions to commit\./);
   assert.equal(countOccurrences(finding, "defense authorization legislation, foreign military sales"), 1);
   assert.doesNotMatch(finding, /this was a direct vote|the vote is useful because|records a direct position/i);
-  assert.match(rendered, /If you favored the reviewed measures on defense authorization legislation, foreign military sales, veterans cemetery administration, and other reviewed national-security measures, Foushee's votes were mostly opposed/);
+  assert.match(rendered, /If you favored the reviewed measures on defense authorization legislation, foreign military sales, veterans cemetery administration, and motions to commit, Foushee's votes were mostly opposed/);
   assert.doesNotMatch(rendered, /split rather than mostly support|mixed but interpretable|broadly for or against National Security/i);
 });
 
@@ -1038,6 +1038,40 @@ test("defense authorization amendment labels reflect interpreted versus limited 
     formatRenderedIssueOverview(mixedOverview),
   ].join(" ");
   assert.doesNotMatch(publicCopy, /final passage of the full defense authorization bill|for or against national security|you should vote/i);
+});
+
+test("curated broad facets improve top-level themes without raw fallback text", () => {
+  const rows = [
+    row({
+      issue_facet: "national_security_foreign",
+      rollcall_number: 600,
+      what_happened: "This was a direct vote on a national-security measure.",
+      why_it_mattered: "The vote is useful because it records a direct position.",
+    }),
+    row({
+      issue_facet: "national_security_foreign",
+      rollcall_number: 601,
+      what_happened: "The House voted on whether to agree to an amendment.",
+      why_it_mattered: "The amendment decreases one account and redirects another.",
+    }),
+    row({
+      issue_facet: "Motion to commit",
+      rollcall_number: 602,
+      what_happened: "This was a direct vote on a motion to commit.",
+      why_it_mattered: "The vote records a direct position on floor procedure.",
+    }),
+  ];
+  const overview = buildIssueOverview(rows, {
+    domain: "NATIONAL_SECURITY_FOREIGN",
+    representativeName: "Valerie P. Foushee",
+  });
+  const rendered = formatRenderedIssueOverview(overview);
+
+  assert.equal(overview.readiness.status, "safe");
+  assert.match(rendered, /national-security and foreign-policy measures/);
+  assert.match(rendered, /motions to commit/);
+  assert.doesNotMatch(rendered, /national security foreign|other reviewed national-security measures/i);
+  assertTopPublicCopyIsSafe(rendered);
 });
 
 function row(overrides) {

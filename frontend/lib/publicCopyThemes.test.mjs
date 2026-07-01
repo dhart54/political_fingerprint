@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import {
@@ -9,6 +10,14 @@ import {
 } from "./publicCopyThemes.mjs";
 
 test("public theme helper prefers curated facet and domain-safe fallbacks", () => {
+  assert.equal(getPublicThemeForFacet("economy_taxes", { domain: "ECONOMY_TAXES" }), "fiscal and tax measures");
+  assert.equal(getPublicThemeForFacet("environment_energy", { domain: "ENVIRONMENT_ENERGY" }), "environment and energy measures");
+  assert.equal(getPublicThemeForFacet("justice_public_safety", { domain: "JUSTICE_PUBLIC_SAFETY" }), "public-safety and legal-policy measures");
+  assert.equal(
+    getPublicThemeForFacet("national_security_foreign", { domain: "NATIONAL_SECURITY_FOREIGN" }),
+    "national-security and foreign-policy measures",
+  );
+  assert.equal(getPublicThemeForFacet("Motion to commit", { domain: "NATIONAL_SECURITY_FOREIGN" }), "motions to commit");
   assert.equal(
     getPublicThemeForFacet("Defense authorization amendment", { domain: "NATIONAL_SECURITY_FOREIGN" }),
     "defense authorization amendments",
@@ -37,6 +46,24 @@ test("public theme helper prefers curated facet and domain-safe fallbacks", () =
   );
   assert.equal(getPublicThemeFallback("ECONOMY_TAXES"), "other reviewed fiscal measures");
   assert.equal(getPublicThemeFallback("JUSTICE_PUBLIC_SAFETY"), "other reviewed public-safety measures");
+});
+
+test("broad domain facets no longer surface awkward short-label fallbacks", () => {
+  const beforeAfterCases = [
+    ["environment_energy", "ENVIRONMENT_ENERGY", "environment energy"],
+    ["economy_taxes", "ECONOMY_TAXES", "economy taxes"],
+    ["justice_public_safety", "JUSTICE_PUBLIC_SAFETY", "justice public safety"],
+    ["national_security_foreign", "NATIONAL_SECURITY_FOREIGN", "national security foreign"],
+  ];
+
+  for (const [facet, domain, previousShortLabel] of beforeAfterCases) {
+    const theme = getPublicThemeForFacet(facet, { domain });
+    assert.notEqual(theme, previousShortLabel);
+    assert.notEqual(theme, getPublicThemeFallback(domain));
+    assert.equal(isSafePublicThemePhrase(theme, { curated: true }), true);
+  }
+
+  assert.equal(getPublicThemeForFacet("House amendment vote", { domain: "NATIONAL_SECURITY_FOREIGN" }), "House amendment vote");
 });
 
 test("public theme helper rejects audit and raw evidence phrases", () => {
@@ -76,5 +103,17 @@ test("public theme helper allows short public noun phrases", () => {
   ]) {
     assert.equal(isSafePublicThemePhrase(safe), true, safe);
     assert.equal(formatSafePublicThemePhrase(safe), safe);
+  }
+});
+
+test("curated public themes do not contain unsafe markers", () => {
+  const source = readFileSync(new URL("./publicCopyThemes.mjs", import.meta.url), "utf8");
+  const mapBlock = source.match(/const PUBLIC_THEME_BY_FACET = \{([\s\S]*?)\};/)?.[1] || "";
+  const curatedThemes = Array.from(mapBlock.matchAll(/:\s*"([^"]+)"/g)).map((match) => match[1]);
+
+  assert.ok(curatedThemes.length > 0, "expected curated theme mappings");
+
+  for (const theme of curatedThemes) {
+    assert.equal(isSafePublicThemePhrase(theme, { curated: true }), true, theme);
   }
 });
