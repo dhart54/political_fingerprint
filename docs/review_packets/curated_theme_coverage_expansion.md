@@ -15,7 +15,7 @@ The audit covered active frontend public-copy helpers/tests, `PositionByIssue` i
 | `justice_public_safety` | Justice & Public Safety | `justice public safety` | no | no | `public-safety and legal-policy measures` | high | add |
 | `national_security_foreign` | National Security & Foreign Policy | `national security foreign` | no | no | `national-security and foreign-policy measures` | high | add |
 | `Motion to commit` / `motion_to_commit` | National Security & Foreign Policy | `other reviewed national-security measures` | yes | yes | `motions to commit` | high | replace generic explicit mapping |
-| `House amendment vote` | Multiple | `House amendment vote` | no | no | keep generic / no mapping | skip | no substance without raw vote text |
+| `House amendment vote` | Multiple | `House amendment vote` | no | no | force domain fallback / no substance mapping | skip | no substance without raw vote text |
 | `administrative_law_and_regulatory_procedures` | Justice & Public Safety | `administrative law and regulatory procedures` | no | no | leave unchanged | medium | safe phrase, but current use is ambiguous amendment context |
 | `budget_reconciliation_and_debt_limit` | Economy & Taxes | `budget framework and reconciliation` | yes | no | keep existing | high | no change |
 | `small_business_loan_eligibility` | Economy & Taxes | `small-business loan eligibility` | yes | no | keep existing | high | no change |
@@ -59,7 +59,7 @@ The audit covered active frontend public-copy helpers/tests, `PositionByIssue` i
 
 ## Mappings Skipped
 
-- `House amendment vote`: skipped because the facet is only a vote type. Mapping it to a policy theme would require reading raw vote descriptions, which is outside this milestone and would weaken the boundary.
+- `House amendment vote`: skipped because the facet is only a vote type. Mapping it to a policy theme would require reading raw vote descriptions, which is outside this milestone and would weaken the boundary. It now forces the normal domain fallback instead of surfacing as a top-level short-label theme.
 - `administrative_law_and_regulatory_procedures`: left unchanged because the safe short label is acceptable and the current reviewed use is ambiguous amendment context.
 
 ## Before / After Examples
@@ -76,7 +76,7 @@ This pass does not change the PR #65 safety contract. Raw fields such as `what_h
 
 - Public theme helper tests for the new high-confidence mappings.
 - Regression coverage that broad domain facets no longer surface awkward short-label fallbacks.
-- Regression coverage that `House amendment vote` remains unmapped rather than being converted into a substance claim.
+- Regression coverage that `House amendment vote` remains unmapped and resolves to the domain fallback rather than being converted into a substance claim or public short-label theme.
 - Source-level check that every curated theme in `PUBLIC_THEME_BY_FACET` passes `isSafePublicThemePhrase`.
 - Issue-overview regression showing broad facet copy and `motions to commit` appear without raw evidence leakage.
 

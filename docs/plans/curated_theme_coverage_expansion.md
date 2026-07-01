@@ -60,7 +60,7 @@
 - Most specific facets visible in current frontend tests already have explicit curated public themes from PR #65.
 - The main quality gaps are broad domain facets that currently surface awkward safe short labels: `environment_energy`, `economy_taxes`, `justice_public_safety`, and `national_security_foreign`.
 - `Motion to commit` had an explicit mapping, but it pointed to the generic national-security fallback. The facet itself supports the clearer procedural theme `motions to commit`.
-- `House amendment vote` appears often in comparable reviewed evidence, but the facet only identifies vote type and does not identify policy substance. It should not receive a substance theme without raw vote-description inference.
+- `House amendment vote` appears often in comparable reviewed evidence, but the facet only identifies vote type and does not identify policy substance. It should force the normal domain fallback rather than receive a substance theme or short-label public theme.
 
 ## Decisions And Rationale
 
@@ -70,7 +70,7 @@
   - `justice_public_safety`: `public-safety and legal-policy measures`
   - `national_security_foreign`: `national-security and foreign-policy measures`
 - Change `Motion to commit` / `motion_to_commit` from a generic fallback to `motions to commit`.
-- Skip `House amendment vote` because it is ambiguous and procedural without policy substance.
+- Skip `House amendment vote` because it is ambiguous and procedural without policy substance; force it to the domain fallback so it does not surface as an awkward short-label theme.
 - Leave `administrative_law_and_regulatory_procedures` unchanged for now; it is a medium-confidence short-label fallback in ambiguous amendment context.
 
 ## Audit Table
@@ -81,7 +81,7 @@
 | `economy_taxes` | Economy & Taxes | `economy taxes` | no | no | `fiscal and tax measures` | high | Facet supports a safe domain-level noun phrase. |
 | `justice_public_safety` | Justice & Public Safety | `justice public safety` | no | no | `public-safety and legal-policy measures` | high | Facet supports the domain phrase used elsewhere. |
 | `national_security_foreign` | National Security & Foreign Policy | `national security foreign` | no | no | `national-security and foreign-policy measures` | high | Facet supports a safe grammatical domain phrase. |
-| `House amendment vote` | Multiple | `House amendment vote` | no | no | keep generic / no mapping | skip | Vote-type only; no policy substance without raw descriptions. |
+| `House amendment vote` | Multiple | `House amendment vote` | no | no | force domain fallback / no substance mapping | skip | Vote-type only; no policy substance without raw descriptions. |
 | `Motion to commit` | National Security & Foreign Policy | `other reviewed national-security measures` | yes | yes | `motions to commit` | high | Facet itself supports a procedural theme. |
 | Specific Economy facets | Economy & Taxes | curated strings | yes | no | keep existing | high/medium | Existing themes are facet-grounded. |
 | Specific Justice facets | Justice & Public Safety | curated strings | yes | no | keep existing | high | Existing themes are facet-grounded. |
@@ -103,6 +103,7 @@
 - Local rendered shell at `390x844`: no horizontal overflow.
 - Local Valerie Foushee National Security rendered validation remains unavailable because ZIP `27701` is not in the loaded local ZIP map; source-level tests cover the public-copy safety boundary and curated theme behavior.
 - The generic receipt explainer line still contains `classification reason`, consistent with the prior production smoke finding that this is receipt-affordance copy rather than top-level issue interpretation copy.
+- Revision before ready review: `House amendment vote` now uses a force-fallback path so skipped vote-type-only facets do not surface as top-level short-label themes.
 
 ## Production Writes
 

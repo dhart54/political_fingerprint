@@ -54,6 +54,10 @@ const PUBLIC_THEME_BY_DOMAIN = {
   INFRASTRUCTURE_TECH_TRANSPORT: "other reviewed infrastructure and technology measures",
 };
 
+const FORCE_PUBLIC_THEME_FALLBACK_FACETS = new Set([
+  "house_amendment_vote",
+]);
+
 const UNSAFE_PUBLIC_THEME_MARKERS = [
   "this was a direct vote",
   "this vote is useful",
@@ -82,6 +86,11 @@ const MAX_UNCURATED_THEME_LENGTH = 72;
 export function getPublicThemeForFacet(facet, { domain = "", curatedTheme = "" } = {}) {
   const exactFacet = String(facet || "").trim();
   const normalizedFacet = normalizeThemeKey(exactFacet);
+
+  if (FORCE_PUBLIC_THEME_FALLBACK_FACETS.has(normalizedFacet)) {
+    return getPublicThemeFallback(domain);
+  }
+
   const explicitTheme = PUBLIC_THEME_BY_FACET[exactFacet] || PUBLIC_THEME_BY_FACET[normalizedFacet] || "";
 
   if (explicitTheme && isSafePublicThemePhrase(explicitTheme, { curated: true })) {

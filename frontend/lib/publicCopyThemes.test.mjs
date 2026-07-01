@@ -44,6 +44,8 @@ test("public theme helper prefers curated facet and domain-safe fallbacks", () =
     }),
     "other reviewed national-security measures",
   );
+  assert.equal(getPublicThemeForFacet("House amendment vote", { domain: "NATIONAL_SECURITY_FOREIGN" }), "other reviewed national-security measures");
+  assert.equal(getPublicThemeForFacet("house_amendment_vote", { domain: "ECONOMY_TAXES" }), "other reviewed fiscal measures");
   assert.equal(getPublicThemeFallback("ECONOMY_TAXES"), "other reviewed fiscal measures");
   assert.equal(getPublicThemeFallback("JUSTICE_PUBLIC_SAFETY"), "other reviewed public-safety measures");
 });
@@ -63,7 +65,8 @@ test("broad domain facets no longer surface awkward short-label fallbacks", () =
     assert.equal(isSafePublicThemePhrase(theme, { curated: true }), true);
   }
 
-  assert.equal(getPublicThemeForFacet("House amendment vote", { domain: "NATIONAL_SECURITY_FOREIGN" }), "House amendment vote");
+  assert.notEqual(getPublicThemeForFacet("House amendment vote", { domain: "NATIONAL_SECURITY_FOREIGN" }), "House amendment vote");
+  assert.equal(getPublicThemeForFacet("House amendment vote", { domain: "NATIONAL_SECURITY_FOREIGN" }), getPublicThemeFallback("NATIONAL_SECURITY_FOREIGN"));
 });
 
 test("public theme helper rejects audit and raw evidence phrases", () => {
