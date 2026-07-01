@@ -30,7 +30,8 @@
 - [x] Required validation passes: `npm run lint`, `npm run build`, `node --test lib\*.test.mjs`, `.next\static` internal-token scan with no matches.
 - [x] Rendered desktop and 390x844 mobile validation completed or limitations documented.
 - [x] Review packet updated.
-- [ ] PR revised, committed, pushed, and ready for review unless a true stop condition is reached.
+- [x] PR revised and opened as follow-up PR #63 because PR #62 was already merged.
+- [x] Final concrete-measure cleanup committed for PR #63.
 
 ## Baseline
 
@@ -54,9 +55,9 @@
 
 - [x] Discovery
 - [x] Implementation
-- [ ] Validation
+- [x] Validation
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -75,6 +76,7 @@
 - Rename the visible grouping preview from `Evidence groups` to `Evidence group overview` and move it below the full-list access so it is secondary to receipts.
 - In issue-summary copy, treat interpreted Yes/No samples with at least a two-thirds support/opposition direction as `mostly supported` or `mostly opposed`; keep genuinely close records as `split`.
 - Enforce `Policy substance first. Party context second.` by leading findings and `What that means` with reviewed policy substance and counts, then placing party context as a supporting sentence.
+- Final cleanup: when concrete measure categories are available, the `What that means` voter-read line uses those categories before falling back to broader issue-area wording.
 - Move broader limitation copy into `How to read this`; top-level findings use the concise `In this reviewed sample...` boundary and receipt prompt.
 - If a selected issue has no countable Yes/No rows, fall back to the sorted available rows for the representative proof set and tell users to inspect the full reviewed list.
 - Summarize limited, procedural, and not-voting context rows without treating them as support/opposition evidence.
@@ -92,6 +94,7 @@
 - `cd frontend; npm run lint`: passed with 8 existing React hook dependency warnings.
 - `cd frontend; npm run build`: passed with the same 8 existing warnings.
 - `cd frontend; rg -n "INTERNAL_API_TOKEN|X-Internal-API-Token|/internal/record-across-congresses" .next\static`: no matches.
+- Final concrete-measure cleanup validation reran the same required commands with the same results: 58 node tests passed, lint/build passed with the same 8 existing warnings, and the `.next\static` scan returned no matches.
 - Rendered desktop production build at `http://localhost:3000`: passed for the local fixture proof path. After `Show Votes`, the order was `Issue summary`, `Representative votes`, `Full reviewed vote list`, `Evidence group overview`, then evidence tools. Full-list expansion, source/caveat drawers, and no page-level horizontal overflow were verified. No token/header/internal-route text was visible.
 - Rendered 390x844 production build: passed with the same order, full-list expansion, source/caveat drawer availability, no page-level horizontal overflow, and no token/header/internal-route text.
 - Record Across Congresses: source wiring and existing tests remained unchanged. The local fixture path still does not provide a ready internal-token-backed Record Across response, so rendered visibility remains limited by the local fixture/server-token setup rather than this revision.
@@ -113,6 +116,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: yes, except commit/push/PR creation remains.
+- Definition of done satisfied: yes. Final concrete-measure cleanup is committed for PR #63.
 - Remaining limitations: Valerie Foushee is still source-test covered rather than locally renderable from fixture search; local Record Across rendered visibility remains limited by the internal-token-backed fixture/server setup.
-- Recommended next step: commit and push the revision, then open a follow-up PR because PR #62 has already been merged.
+- Recommended next step: review PR #63 after the branch update.

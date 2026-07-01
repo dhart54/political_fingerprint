@@ -182,12 +182,12 @@ test("Valerie Foushee Economy & Taxes overview names required measure groups and
   }
 
   assert.match(rendered, /In this reviewed sample, Foushee mostly opposed fiscal, funding, and small-business measures: 6 opposed and 0 supported across 6 interpreted Yes\/No votes\./);
-  assert.match(rendered, /If you favored the reviewed fiscal, funding, and small-business measures in this sample/);
+  assert.match(rendered, /If you favored these reviewed measures — including a budget framework for later tax, spending, deficit, and debt-limit legislation/);
   assert.match(rendered, /All of those votes matched most Democrats\./);
   assert.ok(
-    rendered.indexOf("If you favored the reviewed fiscal, funding, and small-business measures") <
+    rendered.indexOf("If you favored these reviewed measures — including") <
       rendered.indexOf("How to read this"),
-    "policy-substance voter read should appear before broad scope limits",
+    "concrete policy-substance voter read should appear before broad scope limits",
   );
   assert.doesNotMatch(rendered, /If you generally favored these House Republican/);
   assert.match(rendered, /^Finding\nIn this reviewed sample, Foushee mostly opposed/m);
@@ -209,7 +209,7 @@ What these votes were about
 In this Economy & Taxes sample, the reviewed votes where Foushee cast a Yes or No covered several concrete fiscal questions: whether to advance a budget framework for later tax, spending, deficit, and debt-limit legislation; whether to restrict SBA 7(a) and 504 loan eligibility based on citizenship or lawful-residency status; whether to fund military construction, military housing, veterans benefits, and Veterans Affairs programs; whether to keep federal agencies operating through temporary government funding; and whether to accept a shutdown-ending funding package. A separate not-voting row concerned an SBA regulatory-cost cap bill, but Foushee was recorded as not voting, so it is explained below and not counted as support or opposition. Two ambiguous or limited-context rows remain visible for an appropriations amendment and a conference instruction, but they are not used to summarize the vote pattern.
 
 How a voter might read that
-If you favored the reviewed fiscal, funding, and small-business measures in this sample, Foushee's votes were mostly opposed. If you opposed those measures or objected to their terms, this record was mostly aligned with that view.
+If you favored these reviewed measures — including a budget framework for later tax, spending, deficit, and debt-limit legislation, restrictions on SBA loan eligibility tied to citizenship or lawful-residency status, military construction and Veterans Affairs funding, temporary government funding, and a shutdown-ending funding package — Foushee's votes were mostly opposed. If you opposed those measures or objected to their terms, this record was mostly aligned with that view.
 
 How to read this
 This read is based on the reviewed votes shown here. Vote records show actions, not motive, ideology, character, corruption, or a voting recommendation. The rows show recorded votes and reviewed bill meaning for this sample, not her full fiscal record. Not-voting and limited-context rows remain visible below, but they are not forced into the pattern.`);
@@ -290,7 +290,7 @@ test("Justice & Public Safety overview uses domain-aware generic language", () =
   assert.match(rendered, /whether to change D\.C\. police pursuit rules/);
   assert.match(rendered, /whether to repeal D\.C\.'s 2022 policing and justice reform act/);
   assert.match(rendered, /mostly opposed public-safety and legal-policy measures: 4 opposed and 1 supported across 5 interpreted Yes\/No votes/);
-  assert.match(rendered, /If you favored the reviewed public-safety and legal-policy measures in this sample/);
+  assert.match(rendered, /If you favored these reviewed measures — including fentanyl scheduling and penalty-threshold legislation/);
   assert.match(rendered, /Most opposed measures that passed the House\./);
   assert.match(rendered, /Two additional rows remain visible below, including one procedural-context row and one other limited-context row; they are not used to summarize support, opposition, or alignment\./);
   assert.doesNotMatch(rendered, /If you generally favored these House Republican measures|not as a simple statement that she is broadly for or against this issue area/);
@@ -336,6 +336,7 @@ test("issue overview keeps genuinely split interpreted samples out of mostly fra
 
   assert.equal(overview.votePattern.predominantPosition, "split interpreted vote pattern");
   assert.match(rendered, /interpreted Yes\/No votes were split across public-safety and legal-policy measures: 2 opposed and 2 supported across 4 interpreted Yes\/No votes/);
+  assert.match(rendered, /If your view depends on the specific terms of these reviewed measures — including fentanyl scheduling and penalty-threshold legislation/);
   assert.match(rendered, /this record is split rather than mostly support or mostly opposition/);
   assert.doesNotMatch(rendered, /mostly opposed public-safety|mostly supported public-safety|If you generally favored these House Republican/);
 });

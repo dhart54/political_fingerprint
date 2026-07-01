@@ -545,16 +545,21 @@ function formatMeasureCategoryList(groups, issueDomain) {
 }
 
 function buildPolicyFirstVoterRead({ measureCategoryText, policySubstanceText, representativeLabel, directionalPattern }) {
-  const reviewedMeasures = policySubstanceText || measureCategoryText;
+  const favoredMeasures = measureCategoryText
+    ? `these reviewed measures — including ${measureCategoryText} —`
+    : `the reviewed ${policySubstanceText} in this sample,`;
+  const specificMeasures = measureCategoryText
+    ? `these reviewed measures — including ${measureCategoryText} —`
+    : `the reviewed ${policySubstanceText} in this sample`;
 
   if (directionalPattern.direction === "opposed") {
-    return `If you favored the reviewed ${reviewedMeasures} in this sample, ${representativeLabel}'s votes were mostly opposed. If you opposed those measures or objected to their terms, this record was mostly aligned with that view.`;
+    return `If you favored ${favoredMeasures} ${representativeLabel}'s votes were mostly opposed. If you opposed those measures or objected to their terms, this record was mostly aligned with that view.`;
   }
   if (directionalPattern.direction === "supported") {
-    return `If you favored the reviewed ${reviewedMeasures} in this sample, ${representativeLabel}'s votes were mostly aligned with that view. If you opposed those measures or objected to their terms, this record was mostly opposed.`;
+    return `If you favored ${favoredMeasures} ${representativeLabel}'s votes were mostly aligned with that view. If you opposed those measures or objected to their terms, this record was mostly opposed.`;
   }
 
-  return `If your view depends on the specific terms of the reviewed ${reviewedMeasures} in this sample, inspect the representative votes below; this record is split rather than mostly support or mostly opposition.`;
+  return `If your view depends on the specific terms of ${specificMeasures}, inspect the representative votes below; this record is split rather than mostly support or mostly opposition.`;
 }
 
 function buildLimitedEvidenceOverviewCopy({
