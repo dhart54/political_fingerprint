@@ -18,7 +18,7 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   assert.ok(source.includes("Open Best Read"), "quick read should provide a direct path to the strongest issue read");
   assert.ok(source.includes("Best place to start"), "strong issue cards should be visually prioritized");
   assert.ok(source.includes("Lower priority: read cautiously"), "limited issue cards should be lower priority");
-  assert.ok(source.includes("Evidence groups"), "grouped evidence preview should be user-visible");
+  assert.ok(source.includes("Evidence group overview"), "grouped evidence preview should be user-visible as a secondary overview");
   assert.ok(source.includes("formatCompactEvidenceGroupingOverview"), "compact grouping summary should be rendered");
   assert.ok(source.includes("IssueNavigation"), "large profiles should expose compact issue navigation");
   assert.ok(source.includes("Reviewed meaning"), "interpreted rows should get a confidence label");
@@ -104,6 +104,14 @@ test("issue cards use generalized readiness copy and contact follows vote cards"
 
 test("show votes proof view starts bounded and keeps the full receipt list available", () => {
   const source = readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8");
+  const readyViewStart = source.indexOf('{evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (');
+  const readyViewEnd = source.indexOf("function RepresentativeVotesSection", readyViewStart);
+  const readyViewSource = source.slice(readyViewStart, readyViewEnd);
+  const summaryRenderStart = readyViewSource.indexOf("<IssueEvidenceSummary");
+  const representativeRenderStart = readyViewSource.indexOf("<RepresentativeVotesSection");
+  const fullListRenderStart = readyViewSource.indexOf("<ReviewedVoteList");
+  const groupingRenderStart = readyViewSource.indexOf("<EvidenceGroupingPreview");
+  const utilityRenderStart = readyViewSource.indexOf("<EvidenceUtilityPanel");
   const representativeStart = source.indexOf("function RepresentativeVotesSection");
   const fullListStart = source.indexOf("function ReviewedVoteList");
   const billGroupStart = source.indexOf("function BillEvidenceGroup");
@@ -115,9 +123,14 @@ test("show votes proof view starts bounded and keeps the full receipt list avail
   assert.match(source, /A first set of votes behind this read/);
   assert.match(source, /Show all reviewed votes/);
   assert.match(source, /Full reviewed vote list/);
+  assert.match(source, /Evidence group overview/);
   assert.match(source, /showAllVotes \?/);
   assert.match(source, /buildProofView/);
   assert.match(source, /countable Yes\/No votes/);
+  assert.ok(summaryRenderStart >= 0 && summaryRenderStart < representativeRenderStart, "issue summary should render before representative votes");
+  assert.ok(representativeRenderStart > 0 && representativeRenderStart < fullListRenderStart, "representative votes should render before full reviewed list");
+  assert.ok(fullListRenderStart > 0 && fullListRenderStart < groupingRenderStart, "full reviewed list should render before evidence group overview");
+  assert.ok(groupingRenderStart > 0 && groupingRenderStart < utilityRenderStart, "evidence group overview should stay secondary to receipts and before tools");
   assert.ok(representativeStart > 0 && representativeStart < fullListStart, "representative votes should be defined before full list");
   assert.ok(fullListStart > 0 && fullListStart < billGroupStart, "full list wrapper should gate grouped bill cards");
   assert.ok(billGroupStart > 0 && billGroupStart < voteRowStart, "bill groups should reuse vote rows");

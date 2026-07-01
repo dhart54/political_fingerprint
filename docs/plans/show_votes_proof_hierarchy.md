@@ -22,15 +22,15 @@
 
 ## Definition Of Done
 
-- [ ] Required audit completed and recorded.
-- [ ] Proof view opens as organized hierarchy rather than full undifferentiated list.
-- [ ] Full reviewed vote list remains accessible.
-- [ ] Vote-level source/caveat/full-context drawers remain available.
-- [ ] Focused tests cover default bounded list, full-list access, source/caveat drawers, and Valerie Foushee evidence rendering where practical.
-- [ ] Required validation passes: `npm run lint`, `npm run build`, `node --test lib\*.test.mjs`, `.next\static` internal-token scan with no matches.
-- [ ] Rendered desktop and 390x844 mobile validation completed or limitations documented.
-- [ ] Review packet updated.
-- [ ] PR opened and ready for review unless a true stop condition is reached.
+- [x] Required audit completed and recorded.
+- [x] Proof view opens as organized hierarchy rather than full undifferentiated list.
+- [x] Full reviewed vote list remains accessible.
+- [x] Vote-level source/caveat/full-context drawers remain available.
+- [x] Focused tests cover default bounded list, full-list access, source/caveat drawers, and Valerie Foushee evidence rendering where practical.
+- [x] Required validation passes: `npm run lint`, `npm run build`, `node --test lib\*.test.mjs`, `.next\static` internal-token scan with no matches.
+- [x] Rendered desktop and 390x844 mobile validation completed or limitations documented.
+- [x] Review packet updated.
+- [ ] PR revised, committed, pushed, and ready for review unless a true stop condition is reached.
 
 ## Baseline
 
@@ -54,9 +54,9 @@
 
 - [x] Discovery
 - [x] Implementation
-- [x] Validation
+- [ ] Validation
 - [x] Documentation
-- [x] Commit/PR readiness
+- [ ] Commit/PR readiness
 
 ## Discoveries
 
@@ -65,11 +65,17 @@
 - Existing client evidence rows already expose enough fields for a UI-only hierarchy: interpreted/countable status, vote position, procedural context, limited/context status, roll call metadata, measure labels, source URL, and classification/detail copy.
 - `VoteEvidenceRow` already owns the vote-level source/caveat/full-context drawer, so reusing it preserves receipt access without changing evidence semantics.
 - Valerie Foushee is covered by source-level issue overview tests, but the local fixture backend search does not return Valerie. Rendered validation therefore used the available local fixture profile.
+- Revision audit: `PositionByIssue.js` renders the issue evidence expansion and vote drawers; `issueOverview.mjs` generates `Issue summary`, `What was reviewed`, `What that means`, and `How to read this`; `profileMvpProfile.test.mjs` and `issueOverview.test.mjs` protect the proof hierarchy and copy behavior.
 
 ## Decisions And Rationale
 
 - Add a bounded `Representative votes` section before the full list. It uses the existing evidence ordering and shows up to 8 countable Yes/No rows by default.
 - Keep the full receipt list behind `Show all reviewed votes`, grouped by bill/measure as before, with countable/context labels preserved.
+- Revise expanded-section order to: `Issue summary`, `Representative votes`, `Full reviewed vote list`, `Evidence group overview`, `Evidence tools`.
+- Rename the visible grouping preview from `Evidence groups` to `Evidence group overview` and move it below the full-list access so it is secondary to receipts.
+- In issue-summary copy, treat interpreted Yes/No samples with at least a two-thirds support/opposition direction as `mostly supported` or `mostly opposed`; keep genuinely close records as `split`.
+- Enforce `Policy substance first. Party context second.` by leading findings and `What that means` with reviewed policy substance and counts, then placing party context as a supporting sentence.
+- Move broader limitation copy into `How to read this`; top-level findings use the concise `In this reviewed sample...` boundary and receipt prompt.
 - If a selected issue has no countable Yes/No rows, fall back to the sorted available rows for the representative proof set and tell users to inspect the full reviewed list.
 - Summarize limited, procedural, and not-voting context rows without treating them as support/opposition evidence.
 - Preserve `VoteEvidenceRow` and its `Source, caveats, and full context` disclosure rather than creating a new evidence-card format.
@@ -78,16 +84,17 @@
 
 - Rendered validation did not use Valerie Foushee because the local fixture search returned no Valerie/Foushee results. The Valerie-specific issue overview copy remains covered by `frontend/lib/issueOverview.test.mjs`.
 - Record Across Congresses did not render in the local fixture page because the server route returns no ready response without the internal token/backend data path. Record Across source and tests are unchanged, and the static bundle leakage scan remained clean.
+- Current revision rendered validation completed with the local fixture profile after reloading through the fallback ZIP path.
 
 ## Validation Results
 
-- `cd frontend; node --test lib\*.test.mjs`: passed, 57 tests.
+- `cd frontend; node --test lib\*.test.mjs`: passed, 58 tests.
 - `cd frontend; npm run lint`: passed with 8 existing React hook dependency warnings.
 - `cd frontend; npm run build`: passed with the same 8 existing warnings.
 - `cd frontend; rg -n "INTERNAL_API_TOKEN|X-Internal-API-Token|/internal/record-across-congresses" .next\static`: no matches.
-- Rendered desktop production build at `http://localhost:3000`: `Show Votes` opened an organized proof view with `Representative votes`, `Full reviewed vote list`, `Show all reviewed votes`, source/caveat disclosures, context guardrail copy, and no page-level horizontal overflow.
-- Rendered 390x844 production build: same proof hierarchy and full-list access verified; no page-level horizontal overflow.
-- Record Across Congresses: not locally renderable in the fixture path without the internal token response; source wiring and existing tests remained unchanged.
+- Rendered desktop production build at `http://localhost:3000`: passed for the local fixture proof path. After `Show Votes`, the order was `Issue summary`, `Representative votes`, `Full reviewed vote list`, `Evidence group overview`, then evidence tools. Full-list expansion, source/caveat drawers, and no page-level horizontal overflow were verified. No token/header/internal-route text was visible.
+- Rendered 390x844 production build: passed with the same order, full-list expansion, source/caveat drawer availability, no page-level horizontal overflow, and no token/header/internal-route text.
+- Record Across Congresses: source wiring and existing tests remained unchanged. The local fixture path still does not provide a ready internal-token-backed Record Across response, so rendered visibility remains limited by the local fixture/server-token setup rather than this revision.
 
 ## Production Writes
 
@@ -106,6 +113,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: yes. PR #62 is open, ready for review, and reported mergeable by GitHub.
-- Remaining limitations: rendered Valerie Foushee and local Record Across live data were not practical with the available fixture/token state; both are documented in the review packet.
-- Recommended next step: review PR #62.
+- Definition of done satisfied: yes, except commit/push/PR creation remains.
+- Remaining limitations: Valerie Foushee is still source-test covered rather than locally renderable from fixture search; local Record Across rendered visibility remains limited by the internal-token-backed fixture/server setup.
+- Recommended next step: commit and push the revision, then open a follow-up PR because PR #62 has already been merged.
