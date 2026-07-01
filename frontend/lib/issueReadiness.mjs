@@ -20,6 +20,7 @@ export const ISSUE_READINESS_GROUP_LABELS = {
 };
 
 const MIN_INTERPRETED_YES_NO_FOR_READ = 3;
+const DIRECTIONAL_DOMINANCE_SHARE = 2 / 3;
 
 export function deriveIssueReadiness(row) {
   const recordedVotes = Number(row?.recorded_votes || 0);
@@ -30,6 +31,9 @@ export function deriveIssueReadiness(row) {
   const interpretedTotal = interpretedYesNoCount + interpretedOtherCount;
   const coverageShare = recordedVotes ? interpretedYesNoCount / recordedVotes : 0;
   const mixed = supportCount > 0 && opposeCount > 0;
+  const dominant =
+    interpretedYesNoCount > 0 &&
+    Math.max(supportCount, opposeCount) / interpretedYesNoCount >= DIRECTIONAL_DOMINANCE_SHARE;
 
   if (!recordedVotes || !interpretedYesNoCount) {
     return {
@@ -55,7 +59,7 @@ export function deriveIssueReadiness(row) {
     };
   }
 
-  if (mixed) {
+  if (mixed && !dominant) {
     return {
       key: "mixed_but_interpretable",
       label: ISSUE_READINESS_LABELS.mixed_but_interpretable,
@@ -72,7 +76,9 @@ export function deriveIssueReadiness(row) {
     interpretedYesNoCount,
     interpretedTotal,
     coverageShare,
-    reason: "Enough reviewed Yes/No vote meaning is available for a clear issue read.",
+    reason: dominant
+      ? "Enough reviewed Yes/No vote meaning is available and one side predominates in this reviewed sample."
+      : "Enough reviewed Yes/No vote meaning is available for a clear issue read.",
   };
 }
 

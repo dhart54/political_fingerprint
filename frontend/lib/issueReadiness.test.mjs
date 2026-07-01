@@ -18,8 +18,8 @@ test("issue domains are grouped by readiness label", () => {
     }),
     positionRow({
       domain: "JUSTICE_PUBLIC_SAFETY",
-      interpreted_oppose_count: 4,
-      interpreted_support_count: 1,
+      interpreted_oppose_count: 3,
+      interpreted_support_count: 2,
       recorded_votes: 5,
     }),
     positionRow({
@@ -84,8 +84,8 @@ test("strong evidence sorts above limited and not-ready evidence", () => {
     }),
     positionRow({
       domain: "JUSTICE_PUBLIC_SAFETY",
-      interpreted_oppose_count: 4,
-      interpreted_support_count: 1,
+      interpreted_oppose_count: 3,
+      interpreted_support_count: 2,
       recorded_votes: 5,
     }),
   ]);
@@ -94,6 +94,29 @@ test("strong evidence sorts above limited and not-ready evidence", () => {
     sorted.map((row) => row.domain),
     ["ECONOMY_TAXES", "JUSTICE_PUBLIC_SAFETY", "NATIONAL_SECURITY_FOREIGN", "HEALTH_SOCIAL"],
   );
+});
+
+test("dominant support or opposition is not grouped as mixed", () => {
+  const nationalSecurity = deriveIssueReadiness(
+    positionRow({
+      domain: "NATIONAL_SECURITY_FOREIGN",
+      interpreted_oppose_count: 128,
+      interpreted_support_count: 22,
+      recorded_votes: 150,
+    }),
+  );
+  const closeSplit = deriveIssueReadiness(
+    positionRow({
+      domain: "JUSTICE_PUBLIC_SAFETY",
+      interpreted_oppose_count: 4,
+      interpreted_support_count: 3,
+      recorded_votes: 7,
+    }),
+  );
+
+  assert.equal(nationalSecurity.key, "strong_evidence");
+  assert.match(nationalSecurity.reason, /one side predominates/);
+  assert.equal(closeSplit.key, "mixed_but_interpretable");
 });
 
 test("limited and not-ready sections do not receive confident readiness labels", () => {

@@ -295,6 +295,8 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
       .filter(Boolean),
   );
   const concreteQuestions = uniqueStrings(overviewMeasureGroups.map((group) => group.concreteQuestion).filter(Boolean));
+  const supportMeasureGroups = selectOverviewMeasureGroups(groupRowsByFacet(supportRows, { allRows: rows }), readiness);
+  const opposeMeasureGroups = selectOverviewMeasureGroups(groupRowsByFacet(opposeRows, { allRows: rows }), readiness);
   const copy = buildOverviewCopy({
     additionalMeasureGroupCount,
     ambiguousMeasureGroups,
@@ -303,6 +305,7 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
     issueLabel,
     notVotingMeasureGroups,
     notVotingRows,
+    opposeMeasureGroups,
     proceduralContextMeasureGroups,
     proceduralContextRows,
     practicalPolicyLevers,
@@ -310,6 +313,7 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
     issueDomain,
     readiness,
     representativeLabel,
+    supportMeasureGroups,
     votePattern,
   });
 
@@ -361,6 +365,7 @@ function buildOverviewCopy({
   issueLabel,
   notVotingMeasureGroups,
   notVotingRows,
+  opposeMeasureGroups,
   proceduralContextMeasureGroups,
   proceduralContextRows,
   practicalPolicyLevers,
@@ -368,6 +373,7 @@ function buildOverviewCopy({
   issueDomain,
   readiness,
   representativeLabel,
+  supportMeasureGroups,
   votePattern,
 }) {
   if (readiness.status !== "safe") {
@@ -418,17 +424,24 @@ function buildOverviewCopy({
   const actionParts = [];
   if (directionalPattern.direction === "opposed" || directionalPattern.direction === "supported") {
     actionParts.push(
-      `In this reviewed sample, ${representativeLabel} mostly ${directionalPattern.direction} ${policySubstanceText}: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No ${votePattern.interpretedYesNoCount === 1 ? "vote" : "votes"}.`,
+      `In this reviewed sample, ${representativeLabel} mostly ${directionalPattern.direction} these reviewed ${issueLabel} measures: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No ${votePattern.interpretedYesNoCount === 1 ? "vote" : "votes"}.`,
     );
   } else if (votePattern.supportCount || votePattern.opposeCount) {
     actionParts.push(
-      `In this reviewed sample, ${representativeLabel}'s interpreted Yes/No votes were split across ${policySubstanceText}: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No votes.`,
+      `In this reviewed sample, ${representativeLabel}'s interpreted Yes/No votes were split across these reviewed ${issueLabel} measures: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No votes.`,
     );
   }
 
   const patternParts = [];
-  if (measureCategoryText) {
-    patternParts.push(`These reviewed measures included ${measureCategoryText}.`);
+  const themePattern = buildThemePatternSentence({
+    directionalPattern,
+    issueDomain,
+    measureCategoryText,
+    opposeMeasureGroups,
+    supportMeasureGroups,
+  });
+  if (themePattern) {
+    patternParts.push(themePattern);
   }
   if (votePattern.partyPattern) {
     patternParts.push(votePattern.partyPattern);
@@ -518,6 +531,32 @@ function summarizeDirectionalPattern(votePattern) {
   return { direction: "split", share: Math.max(opposeShare, supportShare) };
 }
 
+function buildThemePatternSentence({
+  directionalPattern,
+  issueDomain,
+  measureCategoryText,
+  opposeMeasureGroups,
+  supportMeasureGroups,
+}) {
+  const opposedThemeText = formatMeasureCategoryList(opposeMeasureGroups, issueDomain, { allowFallback: false });
+  const supportedThemeText = formatMeasureCategoryList(supportMeasureGroups, issueDomain, { allowFallback: false });
+  const canSeparateThemes =
+    (directionalPattern.direction === "opposed" || directionalPattern.direction === "supported") &&
+    opposedThemeText &&
+    supportedThemeText &&
+    opposedThemeText !== supportedThemeText;
+
+  if (canSeparateThemes) {
+    return `The opposed measures centered on ${opposedThemeText}. The supported votes centered on ${supportedThemeText}.`;
+  }
+
+  if (measureCategoryText) {
+    return `The reviewed measures included ${measureCategoryText}.`;
+  }
+
+  return "";
+}
+
 function formatPolicySubstanceDescription({ issueDomain, issueLabel }) {
   const issueMeasures = formatIssueAreaMeasures(issueDomain);
   if (issueMeasures !== "measures") {
@@ -528,10 +567,10 @@ function formatPolicySubstanceDescription({ issueDomain, issueLabel }) {
   return `${label} measures`;
 }
 
-function formatMeasureCategoryList(groups, issueDomain) {
+function formatMeasureCategoryList(groups, issueDomain, { allowFallback = true } = {}) {
   const labels = uniqueStrings(
     groups
-      .map((group) => group.overviewPhrase || group.label)
+      .map((group) => formatMeasureThemePhrase(group))
       .map((value) => cleanSentence(value))
       .filter(Boolean),
   );
@@ -540,8 +579,20 @@ function formatMeasureCategoryList(groups, issueDomain) {
     return formatList(labels.slice(0, MAX_MEASURE_GROUPS_IN_OVERVIEW));
   }
 
+  if (!allowFallback) {
+    return "";
+  }
+
   const fallback = formatIssueAreaMeasures(issueDomain);
   return fallback === "measures" ? "" : fallback;
+}
+
+function formatMeasureThemePhrase(group) {
+  const phrase = String(group?.overviewPhrase || group?.label || "").trim();
+  if (group?.rowCount > 1 && phrase === "a motion to commit") {
+    return "motions to commit";
+  }
+  return phrase;
 }
 
 function buildPolicyFirstVoterRead({ measureCategoryText, policySubstanceText, representativeLabel, directionalPattern }) {

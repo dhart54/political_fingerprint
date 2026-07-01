@@ -74,12 +74,13 @@ const DOMAIN_LABELS = {
   JUSTICE_PUBLIC_SAFETY: "Justice & Public Safety",
   INFRASTRUCTURE_TECH_TRANSPORT: "Infrastructure, Tech & Transportation",
 };
+const DIRECTIONAL_DOMINANCE_SHARE = 2 / 3;
 
 export function buildRecordNarrative({ legislator = {}, positions = [], scope = "all" } = {}) {
   const rows = sortIssueRowsByReadiness(positions || []);
   const interpretedRows = rows.filter((row) => getInterpretedYesNoCount(row) > 0);
   const strongRows = rows.filter((row) => row.readiness?.key === "strong_evidence");
-  const mixedRows = rows.filter((row) => row.readiness?.key === "mixed_but_interpretable");
+  const mixedRows = rows.filter((row) => row.readiness?.key === "mixed_but_interpretable" && !getDominantDirection(row));
   const limitedRows = rows.filter((row) => row.readiness?.key === "limited_evidence");
   const notReadyRows = rows.filter((row) => row.readiness?.key === "not_enough_to_summarize");
   const strongest = strongRows[0] || mixedRows[0] || limitedRows[0] || null;
@@ -210,6 +211,10 @@ function buildStrongestIssueLine(row) {
   const supportCount = Number(row.interpreted_support_count || 0);
   const opposeCount = Number(row.interpreted_oppose_count || 0);
   const countLine = `${supportCount} for / ${opposeCount} against interpreted measures`;
+  const dominantDirection = getDominantDirection(row);
+  if (dominantDirection) {
+    return `${formatDomainLabel(row.domain)} has the clearest pattern: mostly ${dominantDirection} in the reviewed sample (${countLine}).`;
+  }
   if (row.readiness?.key === "strong_evidence") {
     return `${formatDomainLabel(row.domain)} has the clearest pattern: ${countLine}.`;
   }
@@ -217,16 +222,33 @@ function buildStrongestIssueLine(row) {
 }
 
 function buildPatternLabel({ supportCount, opposeCount, readiness }) {
+  const dominantDirection = getDominantDirection({ interpreted_support_count: supportCount, interpreted_oppose_count: opposeCount });
+  if (dominantDirection === "supported") {
+    return "Mostly supported";
+  }
+  if (dominantDirection === "opposed") {
+    return "Mostly opposed";
+  }
   if (readiness?.key === "mixed_but_interpretable") {
     return "Mixed";
   }
-  if (supportCount > opposeCount) {
-    return "Mostly supported";
-  }
-  if (opposeCount > supportCount) {
-    return "Mostly opposed";
-  }
   return "Reviewed evidence";
+}
+
+function getDominantDirection(row) {
+  const supportCount = Number(row?.interpreted_support_count || 0);
+  const opposeCount = Number(row?.interpreted_oppose_count || 0);
+  const total = supportCount + opposeCount;
+  if (!total) {
+    return "";
+  }
+  if (supportCount / total >= DIRECTIONAL_DOMINANCE_SHARE) {
+    return "supported";
+  }
+  if (opposeCount / total >= DIRECTIONAL_DOMINANCE_SHARE) {
+    return "opposed";
+  }
+  return "";
 }
 
 function buildThemeLine(domain) {

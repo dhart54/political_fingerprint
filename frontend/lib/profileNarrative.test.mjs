@@ -27,7 +27,7 @@ const valerieRows = [
   {
     domain: "JUSTICE_PUBLIC_SAFETY",
     recorded_votes: 13,
-    interpreted_support_count: 2,
+    interpreted_support_count: 3,
     interpreted_oppose_count: 4,
     interpreted_other_count: 0,
   },
@@ -50,10 +50,10 @@ test("record narrative names strongest and mixed reviewed patterns without ideol
     positions: valerieRows,
   });
 
-  assert.match(narrative.headline, /strongest reviewed evidence is in Economy/);
-  assert.match(narrative.body, /Economy/);
+  assert.match(narrative.headline, /strongest reviewed evidence is in National Security/);
   assert.match(narrative.body, /National Security/);
-  assert.match(narrative.evidenceLine, /31 reviewed Yes\/No meanings/);
+  assert.equal(narrative.patternRows[1].domain, "ECONOMY_TAXES");
+  assert.match(narrative.evidenceLine, /32 reviewed Yes\/No meanings/);
   assert.equal(narrative.patternRows.length, 3);
   assert.doesNotMatch(
     `${narrative.headline} ${narrative.body}`,
@@ -110,9 +110,9 @@ test("issue pattern rows preserve support and opposition counts", () => {
   assert.deepEqual(
     rows.map((row) => [row.domain, row.supportCount, row.opposeCount, row.label]),
     [
+      ["NATIONAL_SECURITY_FOREIGN", 2, 17, "Mostly opposed"],
       ["ECONOMY_TAXES", 0, 6, "Mostly opposed"],
-      ["NATIONAL_SECURITY_FOREIGN", 2, 17, "Mixed"],
-      ["JUSTICE_PUBLIC_SAFETY", 2, 4, "Mixed"],
+      ["JUSTICE_PUBLIC_SAFETY", 3, 4, "Mixed"],
     ],
   );
 });

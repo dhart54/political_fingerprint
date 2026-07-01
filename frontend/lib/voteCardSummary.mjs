@@ -305,7 +305,7 @@ function formatPartyName(party) {
 }
 
 function cleanSummarySentence(value) {
-  return String(value || "")
+  return capitalizeSentence(stripAuditLead(String(value || "")))
     .replace(/\.$/, "")
     .trim();
 }
@@ -319,8 +319,22 @@ function ensurePeriod(value) {
 }
 
 function buildUsefulInterpretationText(value) {
-  return String(value || "")
+  return stripAuditLead(String(value || ""))
     .replace(/^This was a vote on (adopting|passing|agreeing to) (the|a) (resolution|bill|measure)\.?\s*/i, "")
     .replace(/^This was a vote on (adopting|passing|agreeing to) .+?\.\s*/i, "")
     .trim();
+}
+
+function stripAuditLead(value) {
+  return String(value || "")
+    .replace(/^The vote is useful because\s+/i, "")
+    .replace(/^This vote is useful because\s+/i, "")
+    .replace(/^This row is useful because\s+/i, "")
+    .replace(/^The vote records? a direct position (on|about)\s+/i, "")
+    .trim();
+}
+
+function capitalizeSentence(value) {
+  const text = String(value || "").trim();
+  return text ? text[0].toUpperCase() + text.slice(1) : "";
 }
