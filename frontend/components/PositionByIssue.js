@@ -347,7 +347,7 @@ function IssueReadinessTile({ inspectDomain, row, selectedDomain }) {
       </div>
       <div className="mt-2 flex flex-col gap-1.5">
         <span className={`w-fit max-w-full rounded-xl px-3 py-1 text-[11px] uppercase leading-4 tracking-[0.12em] ${getReadinessBadgeClass(row.readiness?.key)}`}>
-          {row.readiness?.label || "Not enough to summarize"}
+          {formatIssueCardStatusLabel(row)}
         </span>
         <p className="text-[13px] leading-5 text-stone-700">
           {formatIssueCardEvidenceLine(row)}
@@ -356,7 +356,7 @@ function IssueReadinessTile({ inspectDomain, row, selectedDomain }) {
           {formatIssueCardReason(row)}
         </p>
         <p className="text-[11px] uppercase leading-4 tracking-[0.12em] text-stone-500">
-          {formatIssueCardPriority(row.readiness?.key)}
+          {formatIssueCardPriority(row)}
         </p>
       </div>
       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-stone-200">
@@ -1561,7 +1561,7 @@ function buildSixtySecondPlan(groups) {
           ? `Start with ${formatDomainLabel(mixed.domain)}`
           : `Start with ${formatDomainLabel(firstStart.domain)}`,
       detail: strong
-        ? "This is the clearest reviewed issue read available for this representative."
+        ? formatDominantIssueCardReason(strong) || "This is the clearest reviewed issue read available for this representative."
         : mixed
           ? "This has enough reviewed vote meaning to inspect, but the pattern is mixed."
           : "Only limited evidence is available, so read the evidence before drawing a broader conclusion.",
@@ -1623,7 +1623,17 @@ function getReadinessGroupContainerClass(key) {
   return "border-stone-200 bg-stone-50";
 }
 
-function formatIssueCardPriority(key) {
+const DIRECTIONAL_DOMINANCE_SHARE = 2 / 3;
+
+function formatIssueCardPriority(row) {
+  const key = row?.readiness?.key;
+  const dominantDirection = getDominantIssueDirection(row);
+  if (dominantDirection === "supported") {
+    return "Mostly supported in reviewed sample";
+  }
+  if (dominantDirection === "opposed") {
+    return "Mostly opposed in reviewed sample";
+  }
   if (key === "strong_evidence") {
     return "Best place to start";
   }
@@ -1655,6 +1665,10 @@ function formatIssueCardEvidenceLine(row) {
 
 function formatIssueCardReason(row) {
   const key = row.readiness?.key;
+  const dominantReason = formatDominantIssueCardReason(row);
+  if (dominantReason) {
+    return dominantReason;
+  }
   if (key === "strong_evidence") {
     return "Best place to start.";
   }
@@ -1665,6 +1679,48 @@ function formatIssueCardReason(row) {
     return "Reviewed vote meaning is thin. Read cautiously.";
   }
   return "Evidence may still be visible, but this issue is not ready for a confident summary.";
+}
+
+function formatIssueCardStatusLabel(row) {
+  const dominantDirection = getDominantIssueDirection(row);
+  if (dominantDirection === "supported") {
+    return "Mostly supported in reviewed sample";
+  }
+  if (dominantDirection === "opposed") {
+    return "Mostly opposed in reviewed sample";
+  }
+  return row?.readiness?.label || "Not enough to summarize";
+}
+
+function formatDominantIssueCardReason(row) {
+  const direction = getDominantIssueDirection(row);
+  const supportCount = Number(row?.interpreted_support_count || 0);
+  const opposeCount = Number(row?.interpreted_oppose_count || 0);
+  const total = supportCount + opposeCount;
+
+  if (direction === "supported") {
+    return `Mostly supported in this reviewed sample: ${supportCount} supported and ${opposeCount} opposed across ${total} reviewed Yes/No ${total === 1 ? "vote" : "votes"}.`;
+  }
+  if (direction === "opposed") {
+    return `Mostly opposed in this reviewed sample: ${opposeCount} opposed and ${supportCount} supported across ${total} reviewed Yes/No ${total === 1 ? "vote" : "votes"}.`;
+  }
+  return "";
+}
+
+function getDominantIssueDirection(row) {
+  const supportCount = Number(row?.interpreted_support_count || 0);
+  const opposeCount = Number(row?.interpreted_oppose_count || 0);
+  const total = supportCount + opposeCount;
+  if (!total) {
+    return "";
+  }
+  if (supportCount / total >= DIRECTIONAL_DOMINANCE_SHARE) {
+    return "supported";
+  }
+  if (opposeCount / total >= DIRECTIONAL_DOMINANCE_SHARE) {
+    return "opposed";
+  }
+  return "";
 }
 
 function formatChamber(chamber) {
@@ -1794,13 +1850,10 @@ function buildPatternRows(rows) {
       const coverageText = `${interpretedRecordedVotes} of ${recordedVotes} recorded yes/no votes have reviewed meaning`;
       let label = "Mixed record in votes shown";
 
-      if (supportCount > opposeCount && opposeCount === 0) {
+      const dominantDirection = getDominantIssueDirection(row);
+      if (dominantDirection === "supported") {
         label = "Mostly for interpreted measures";
-      } else if (opposeCount > supportCount && supportCount === 0) {
-        label = "Mostly against interpreted measures";
-      } else if (supportCount > opposeCount) {
-        label = "Mostly for interpreted measures";
-      } else if (opposeCount > supportCount) {
+      } else if (dominantDirection === "opposed") {
         label = "Mostly against interpreted measures";
       }
 

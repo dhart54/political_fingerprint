@@ -391,6 +391,7 @@ function buildOverviewCopy({
   const concreteQuestionText = formatList(concreteQuestions, { semicolon: true });
   const measureCategoryText = formatMeasureCategoryList(countedMeasureGroups, issueDomain);
   const policySubstanceText = formatPolicySubstanceDescription({ issueDomain, issueLabel });
+  const publicMeasureText = measureCategoryText || policySubstanceText;
   const directionalPattern = summarizeDirectionalPattern(votePattern);
   const aboutParts = [];
 
@@ -418,11 +419,11 @@ function buildOverviewCopy({
   const actionParts = [];
   if (directionalPattern.direction === "opposed" || directionalPattern.direction === "supported") {
     actionParts.push(
-      `In this reviewed sample, ${representativeLabel} mostly ${directionalPattern.direction} ${policySubstanceText}: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No ${votePattern.interpretedYesNoCount === 1 ? "vote" : "votes"}.`,
+      `In this reviewed sample, ${representativeLabel} mostly ${directionalPattern.direction} the reviewed measures, including ${publicMeasureText}: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No ${votePattern.interpretedYesNoCount === 1 ? "vote" : "votes"}.`,
     );
   } else if (votePattern.supportCount || votePattern.opposeCount) {
     actionParts.push(
-      `In this reviewed sample, ${representativeLabel}'s interpreted Yes/No votes were split across ${policySubstanceText}: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No votes.`,
+      `In this reviewed sample, ${representativeLabel}'s interpreted Yes/No votes were split across the reviewed measures, including ${publicMeasureText}: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No votes.`,
     );
   }
 
