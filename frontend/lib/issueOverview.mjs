@@ -231,6 +231,7 @@ const ISSUE_FACET_GROUPS = {
 const MIN_COUNTED_ROWS_FOR_CONFIDENT_OVERVIEW = 3;
 const LIMITED_ROW_DOMINANCE_SHARE = 0.5;
 const MAX_MEASURE_GROUPS_IN_OVERVIEW = 5;
+const DIRECTIONAL_DOMINANCE_SHARE = 2 / 3;
 
 export function buildIssueOverview(rows, { domain = "", representativeName = "" } = {}) {
   if (!Array.isArray(rows) || rows.length === 0) {
@@ -388,6 +389,9 @@ function buildOverviewCopy({
 
   const notVotingGroupText = formatList(notVotingMeasureGroups.map((group) => group.overviewPhrase));
   const concreteQuestionText = formatList(concreteQuestions, { semicolon: true });
+  const measureCategoryText = formatMeasureCategoryList(countedMeasureGroups, issueDomain);
+  const policySubstanceText = formatPolicySubstanceDescription({ issueDomain, issueLabel });
+  const directionalPattern = summarizeDirectionalPattern(votePattern);
   const aboutParts = [];
 
   if (concreteQuestionText) {
@@ -412,48 +416,36 @@ function buildOverviewCopy({
   }
 
   const actionParts = [];
-  if (votePattern.opposeCount && !votePattern.supportCount) {
-    actionParts.push(`${representativeLabel} voted No on all ${votePattern.opposeCount} reviewed votes where she cast a Yes or No.`);
-  } else if (votePattern.supportCount && !votePattern.opposeCount) {
-    actionParts.push(`${representativeLabel} voted Yes on all ${votePattern.supportCount} reviewed votes where she cast a Yes or No.`);
+  if (directionalPattern.direction === "opposed" || directionalPattern.direction === "supported") {
+    actionParts.push(
+      `In this reviewed sample, ${representativeLabel} mostly ${directionalPattern.direction} ${policySubstanceText}: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No ${votePattern.interpretedYesNoCount === 1 ? "vote" : "votes"}.`,
+    );
   } else if (votePattern.supportCount || votePattern.opposeCount) {
     actionParts.push(
-      `Of the ${votePattern.interpretedYesNoCount} reviewed Yes/No votes that could be interpreted, ${votePattern.supportCount} supported the measures shown and ${votePattern.opposeCount} opposed them.`,
+      `In this reviewed sample, ${representativeLabel}'s interpreted Yes/No votes were split across ${policySubstanceText}: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No votes.`,
     );
-  }
-  if (votePattern.partyComparedCount === votePattern.opposeCount && votePattern.partyMatchCount === votePattern.opposeCount && votePattern.finalOutcomeAgainstCount === votePattern.opposeCount) {
-    actionParts.push("Each of those votes matched most House Democrats, and each was against the final House outcome.");
-  } else {
-    if (votePattern.partyPattern) {
-      actionParts.push(votePattern.partyPattern);
-    }
-    if (votePattern.finalOutcomePattern) {
-      actionParts.push(votePattern.finalOutcomePattern);
-    }
   }
 
   const patternParts = [];
-  if (votePattern.opposeCount && !votePattern.supportCount) {
-    patternParts.push(
-      `${representativeLabel} consistently opposed the House Republican ${formatIssueAreaMeasures(issueDomain)} reviewed in this sample.`,
-    );
-  } else if (votePattern.supportCount && !votePattern.opposeCount) {
-    patternParts.push(`${representativeLabel} consistently supported the measures reviewed in this sample.`);
-  } else if (votePattern.supportCount || votePattern.opposeCount) {
-    patternParts.push(`${representativeLabel}'s reviewed votes where she cast a Yes or No in this sample were mixed.`);
+  if (measureCategoryText) {
+    patternParts.push(`These reviewed measures included ${measureCategoryText}.`);
   }
-  if (concreteQuestionText) {
-    patternParts.push(
-      `Her record here is best read as ${formatPatternBoundary(votePattern)} this specific set of Republican-led House measures, ${formatSimpleStatementBoundary(issueDomain)}`,
-    );
+  if (votePattern.partyPattern) {
+    patternParts.push(votePattern.partyPattern);
   }
+  if (votePattern.finalOutcomePattern) {
+    patternParts.push(votePattern.finalOutcomePattern);
+  }
+  patternParts.push("Start with the representative votes below to inspect the record behind this read.");
 
-  const howVoterMightRead =
-    issueDomain === "ECONOMY_TAXES"
-      ? "If you generally favored these House Republican packages, this section may look misaligned with your views. If you generally wanted Democrats to oppose those packages or objected to their terms, this section may look aligned."
-      : "If you generally favored these House Republican measures, this section may look misaligned with your views. If you generally wanted Democrats to oppose those measures or objected to their terms, this section may look aligned.";
+  const howVoterMightRead = buildPolicyFirstVoterRead({
+    measureCategoryText,
+    policySubstanceText,
+    representativeLabel,
+    directionalPattern,
+  });
   const notInferParts = [
-    "This read is limited to reviewed votes in this sample and does not assign motive, ideology, character, corruption, or a voting recommendation.",
+    "This read is based on the reviewed votes shown here. Vote records show actions, not motive, ideology, character, corruption, or a voting recommendation.",
     formatFullRecordBoundary(issueDomain),
   ];
   if (notVotingRows.length || ambiguousRows.length) {
@@ -507,6 +499,67 @@ function selectOverviewMeasureGroups(groups, readiness) {
   return [...groups]
     .sort((left, right) => right.rowCount - left.rowCount || groups.indexOf(left) - groups.indexOf(right))
     .slice(0, readiness.maxMeasureGroupsShown);
+}
+
+function summarizeDirectionalPattern(votePattern) {
+  const total = votePattern.interpretedYesNoCount || 0;
+  if (!total) {
+    return { direction: "insufficient", share: 0 };
+  }
+
+  const opposeShare = votePattern.opposeCount / total;
+  const supportShare = votePattern.supportCount / total;
+  if (opposeShare >= DIRECTIONAL_DOMINANCE_SHARE) {
+    return { direction: "opposed", share: opposeShare };
+  }
+  if (supportShare >= DIRECTIONAL_DOMINANCE_SHARE) {
+    return { direction: "supported", share: supportShare };
+  }
+  return { direction: "split", share: Math.max(opposeShare, supportShare) };
+}
+
+function formatPolicySubstanceDescription({ issueDomain, issueLabel }) {
+  const issueMeasures = formatIssueAreaMeasures(issueDomain);
+  if (issueMeasures !== "measures") {
+    return issueMeasures;
+  }
+
+  const label = String(issueLabel || "policy").replace(/\s*&\s*/g, " and ").toLowerCase();
+  return `${label} measures`;
+}
+
+function formatMeasureCategoryList(groups, issueDomain) {
+  const labels = uniqueStrings(
+    groups
+      .map((group) => group.overviewPhrase || group.label)
+      .map((value) => cleanSentence(value))
+      .filter(Boolean),
+  );
+
+  if (labels.length) {
+    return formatList(labels.slice(0, MAX_MEASURE_GROUPS_IN_OVERVIEW));
+  }
+
+  const fallback = formatIssueAreaMeasures(issueDomain);
+  return fallback === "measures" ? "" : fallback;
+}
+
+function buildPolicyFirstVoterRead({ measureCategoryText, policySubstanceText, representativeLabel, directionalPattern }) {
+  const favoredMeasures = measureCategoryText
+    ? `these reviewed measures — including ${measureCategoryText} —`
+    : `the reviewed ${policySubstanceText} in this sample,`;
+  const specificMeasures = measureCategoryText
+    ? `these reviewed measures — including ${measureCategoryText} —`
+    : `the reviewed ${policySubstanceText} in this sample`;
+
+  if (directionalPattern.direction === "opposed") {
+    return `If you favored ${favoredMeasures} ${representativeLabel}'s votes were mostly opposed. If you opposed those measures or objected to their terms, this record was mostly aligned with that view.`;
+  }
+  if (directionalPattern.direction === "supported") {
+    return `If you favored ${favoredMeasures} ${representativeLabel}'s votes were mostly aligned with that view. If you opposed those measures or objected to their terms, this record was mostly opposed.`;
+  }
+
+  return `If your view depends on the specific terms of ${specificMeasures}, inspect the representative votes below; this record is split rather than mostly support or mostly opposition.`;
 }
 
 function buildLimitedEvidenceOverviewCopy({
@@ -705,16 +758,17 @@ function hasOutcomeContext(row) {
 }
 
 function summarizePredominantPosition({ opposeRows, supportRows }) {
-  if (opposeRows.length > supportRows.length && supportRows.length === 0) {
-    return "consistently opposed interpreted measures";
+  const total = opposeRows.length + supportRows.length;
+  if (!total) {
+    return "insufficient interpreted vote pattern";
   }
-  if (supportRows.length > opposeRows.length && opposeRows.length === 0) {
-    return "consistently supported interpreted measures";
+  if (opposeRows.length / total >= DIRECTIONAL_DOMINANCE_SHARE) {
+    return "mostly opposed interpreted measures";
   }
-  if (opposeRows.length || supportRows.length) {
-    return "mixed interpreted vote pattern";
+  if (supportRows.length / total >= DIRECTIONAL_DOMINANCE_SHARE) {
+    return "mostly supported interpreted measures";
   }
-  return "insufficient interpreted vote pattern";
+  return "split interpreted vote pattern";
 }
 
 function summarizePartyPattern({ partyLabel, partyMatchCount, total }) {
@@ -802,23 +856,6 @@ function formatIssueAreaMeasures(domain) {
     return "public-safety and legal-policy measures";
   }
   return "measures";
-}
-
-function formatPatternBoundary(votePattern) {
-  if (votePattern.opposeCount && !votePattern.supportCount) {
-    return "opposition to";
-  }
-  if (votePattern.supportCount && !votePattern.opposeCount) {
-    return "support for";
-  }
-  return "a mixed record on";
-}
-
-function formatSimpleStatementBoundary(domain) {
-  if (domain === "ECONOMY_TAXES") {
-    return 'not as a simple statement that she is "for" or "against taxes."';
-  }
-  return "not as a simple statement that she is broadly for or against this issue area.";
 }
 
 function formatFullRecordBoundary(domain) {

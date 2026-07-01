@@ -492,7 +492,6 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
       ) : null}
       {evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (
         <div className="mt-3 grid gap-3">
-          <EvidenceGroupingPreview evidenceGrouping={evidenceGrouping} />
           <IssueEvidenceSummary
             domain={selectedRow.domain}
             representativeName={legislator?.name_display}
@@ -513,6 +512,7 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
             showAllVotes={showAllVotes}
             setShowAllVotes={setShowAllVotes}
           />
+          <EvidenceGroupingPreview evidenceGrouping={evidenceGrouping} />
           <EvidenceUtilityPanel
             domain={selectedRow.domain}
             evidenceRows={evidenceRows}
@@ -758,7 +758,7 @@ function EvidenceGroupingPreview({ evidenceGrouping }) {
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
-            Evidence groups
+            Evidence group overview
           </p>
           <p className="mt-1 text-sm leading-5 text-stone-700">
             {formatCompactEvidenceGroupingOverview(evidenceGrouping.summary)}
