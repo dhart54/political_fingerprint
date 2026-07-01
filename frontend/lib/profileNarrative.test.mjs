@@ -61,6 +61,40 @@ test("record narrative names strongest and mixed reviewed patterns without ideol
   );
 });
 
+test("record narrative and pattern themes do not use raw evidence snippets", () => {
+  const narrative = buildRecordNarrative({
+    legislator: {
+      name_display: "Valerie P. Foushee",
+      chamber: "house",
+      party: "D",
+    },
+    positions: [
+      {
+        domain: "NATIONAL_SECURITY_FOREIGN",
+        recorded_votes: 150,
+        interpreted_support_count: 22,
+        interpreted_oppose_count: 128,
+        interpreted_other_count: 0,
+        what_happened: "this was a direct vote on Protecting America's Strategic Petroleum Reserve from China Act",
+        reason: "the vote is useful because it records a direct position",
+      },
+    ],
+  });
+  const publicCopy = [
+    narrative.headline,
+    narrative.body,
+    narrative.evidenceLine,
+    ...narrative.patternRows.map((row) => `${row.label} ${row.theme}`),
+  ].join(" ");
+
+  assert.match(publicCopy, /National Security & Foreign Policy/);
+  assert.match(publicCopy, /defense authorization, foreign military sales, and national-security amendments/);
+  assert.doesNotMatch(
+    publicCopy,
+    /this was a direct vote|the vote is useful because|records a direct position|Protecting America's Strategic Petroleum Reserve/i,
+  );
+});
+
 test("record narrative avoids cross-Congress movement claims when both Congresses have evidence", () => {
   const narrative = buildRecordNarrative({
     legislator: {

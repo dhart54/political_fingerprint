@@ -1,6 +1,11 @@
 import { deriveEvidenceGroups } from "./evidenceGrouping.mjs";
 import { formatDomainLabel } from "./issueDomains.js";
 import { isProceduralContextRow } from "./proceduralContext.mjs";
+import {
+  formatSafePublicThemePhrase,
+  getPublicThemeFallback,
+  getPublicThemeForFacet,
+} from "./publicCopyThemes.mjs";
 
 const ISSUE_FACET_GROUPS = {
   budget_reconciliation_and_debt_limit: {
@@ -249,10 +254,10 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
   const notVotingRows = interpretedRows.filter((row) => row.position === "not_voting");
   const ambiguousRows = rows.filter((row) => row.interpretation_status && row.interpretation_status !== "interpreted");
   const proceduralContextRows = ambiguousRows.filter(isProceduralContextRow);
-  const countedMeasureGroups = groupRowsByFacet(directionalRows, { allRows: rows });
-  const notVotingMeasureGroups = groupRowsByFacet(notVotingRows, { allRows: rows });
-  const ambiguousMeasureGroups = groupRowsByFacet(ambiguousRows, { allRows: rows });
-  const proceduralContextMeasureGroups = groupRowsByFacet(proceduralContextRows, { allRows: rows });
+  const countedMeasureGroups = groupRowsByFacet(directionalRows, { allRows: rows, issueDomain });
+  const notVotingMeasureGroups = groupRowsByFacet(notVotingRows, { allRows: rows, issueDomain });
+  const ambiguousMeasureGroups = groupRowsByFacet(ambiguousRows, { allRows: rows, issueDomain });
+  const proceduralContextMeasureGroups = groupRowsByFacet(proceduralContextRows, { allRows: rows, issueDomain });
   const partyRows = directionalRows.filter(hasPartyContext);
   const outcomeRows = directionalRows.filter(hasOutcomeContext);
   const partyMatchCount = partyRows.filter((row) => row.vote_context.member_voted_with_party_majority).length;
@@ -294,9 +299,8 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
       .map((group) => group.practicalLever)
       .filter(Boolean),
   );
-  const concreteQuestions = uniqueStrings(overviewMeasureGroups.map((group) => group.concreteQuestion).filter(Boolean));
-  const supportMeasureGroups = selectOverviewMeasureGroups(groupRowsByFacet(supportRows, { allRows: rows }), readiness);
-  const opposeMeasureGroups = selectOverviewMeasureGroups(groupRowsByFacet(opposeRows, { allRows: rows }), readiness);
+  const supportMeasureGroups = selectOverviewMeasureGroups(groupRowsByFacet(supportRows, { allRows: rows, issueDomain }), readiness);
+  const opposeMeasureGroups = selectOverviewMeasureGroups(groupRowsByFacet(opposeRows, { allRows: rows, issueDomain }), readiness);
   const copy = buildOverviewCopy({
     additionalMeasureGroupCount,
     ambiguousMeasureGroups,
@@ -309,7 +313,6 @@ export function buildIssueOverview(rows, { domain = "", representativeName = "" 
     proceduralContextMeasureGroups,
     proceduralContextRows,
     practicalPolicyLevers,
-    concreteQuestions,
     issueDomain,
     readiness,
     representativeLabel,
@@ -369,7 +372,6 @@ function buildOverviewCopy({
   proceduralContextMeasureGroups,
   proceduralContextRows,
   practicalPolicyLevers,
-  concreteQuestions,
   issueDomain,
   readiness,
   representativeLabel,
@@ -380,7 +382,7 @@ function buildOverviewCopy({
     return buildLimitedEvidenceOverviewCopy({
       ambiguousMeasureGroups,
       ambiguousRows,
-      concreteQuestions,
+      countedMeasureGroups,
       issueDomain,
       issueLabel,
       notVotingMeasureGroups,
@@ -393,19 +395,16 @@ function buildOverviewCopy({
     });
   }
 
-  const notVotingGroupText = formatList(notVotingMeasureGroups.map((group) => group.overviewPhrase));
-  const concreteQuestionText = formatList(concreteQuestions, { semicolon: true });
+  const notVotingGroupText = formatMeasureCategoryList(notVotingMeasureGroups, issueDomain, { allowFallback: false });
   const measureCategoryText = formatMeasureCategoryList(countedMeasureGroups, issueDomain);
   const policySubstanceText = formatPolicySubstanceDescription({ issueDomain, issueLabel });
   const directionalPattern = summarizeDirectionalPattern(votePattern);
   const aboutParts = [];
 
-  if (concreteQuestionText) {
-    aboutParts.push(
-      `In this ${issueLabel} sample, the reviewed votes where ${representativeLabel} cast a Yes or No covered several ${formatQuestionCategory(issueDomain)}: ${concreteQuestionText}.`,
-    );
+  if (measureCategoryText) {
+    aboutParts.push(`The reviewed Yes/No votes in this section covered ${measureCategoryText}.`);
   } else {
-    aboutParts.push(`In this ${issueLabel} sample, the reviewed rows did not create a clear Yes or No issue pattern.`);
+    aboutParts.push(`The reviewed Yes/No votes in this section covered ${getPublicThemeFallback(issueDomain)}.`);
   }
   if (notVotingRows.length && notVotingGroupText) {
     aboutParts.push(
@@ -588,19 +587,16 @@ function formatMeasureCategoryList(groups, issueDomain, { allowFallback = true }
 }
 
 function formatMeasureThemePhrase(group) {
-  const phrase = String(group?.overviewPhrase || group?.label || "").trim();
-  if (group?.rowCount > 1 && phrase === "a motion to commit") {
-    return "motions to commit";
-  }
+  const phrase = formatSafePublicThemePhrase(group?.publicTheme || group?.overviewPhrase || group?.label, { curated: true });
   return phrase;
 }
 
 function buildPolicyFirstVoterRead({ measureCategoryText, policySubstanceText, representativeLabel, directionalPattern }) {
   const favoredMeasures = measureCategoryText
-    ? `these reviewed measures — including ${measureCategoryText} —`
+    ? `the reviewed measures on ${measureCategoryText},`
     : `the reviewed ${policySubstanceText} in this sample,`;
   const specificMeasures = measureCategoryText
-    ? `these reviewed measures — including ${measureCategoryText} —`
+    ? `the reviewed measures on ${measureCategoryText}`
     : `the reviewed ${policySubstanceText} in this sample`;
 
   if (directionalPattern.direction === "opposed") {
@@ -616,7 +612,7 @@ function buildPolicyFirstVoterRead({ measureCategoryText, policySubstanceText, r
 function buildLimitedEvidenceOverviewCopy({
   ambiguousMeasureGroups,
   ambiguousRows,
-  concreteQuestions,
+  countedMeasureGroups,
   issueDomain,
   issueLabel,
   notVotingMeasureGroups,
@@ -627,13 +623,13 @@ function buildLimitedEvidenceOverviewCopy({
   representativeLabel,
   votePattern,
 }) {
-  const concreteQuestionText = formatList(concreteQuestions, { semicolon: true });
-  const notVotingGroupText = formatList(notVotingMeasureGroups.map((group) => group.overviewPhrase));
+  const countedThemeText = formatMeasureCategoryList(countedMeasureGroups, issueDomain);
+  const notVotingGroupText = formatMeasureCategoryList(notVotingMeasureGroups, issueDomain, { allowFallback: false });
   const aboutParts = [];
 
-  if (concreteQuestionText) {
+  if (votePattern.interpretedYesNoCount) {
     aboutParts.push(
-      `This ${issueLabel} sample has limited interpreted evidence. The rows that can be summarized concern ${concreteQuestionText}.`,
+      `This ${issueLabel} sample has limited interpreted evidence. The rows that can be summarized concern ${countedThemeText || getPublicThemeFallback(issueDomain)}.`,
     );
   } else {
     aboutParts.push(`This ${issueLabel} sample has limited interpreted evidence and does not yet support a clear issue overview.`);
@@ -687,7 +683,7 @@ function buildLimitedEvidenceOverviewCopy({
   };
 }
 
-function groupRowsByFacet(rows, { allRows = rows } = {}) {
+function groupRowsByFacet(rows, { allRows = rows, issueDomain = "" } = {}) {
   const groups = new Map();
   const allRowsByFacet = new Map();
 
@@ -703,16 +699,21 @@ function groupRowsByFacet(rows, { allRows = rows } = {}) {
 
   rows.forEach((row) => {
     const facet = String(row.issue_facet || "").trim();
+    const publicTheme = getPublicThemeForFacet(facet, { domain: issueDomain });
     const group = ISSUE_FACET_GROUPS[facet] || {
       id: facet || "unlabeled_measure",
-      label: facet ? formatIssueFacet(facet).toLowerCase() : "unlabeled measure",
-      overviewPhrase: buildFallbackMeasurePhrase(row, facet),
-      practicalLever: cleanSentence(row.policy_effect || row.why_it_mattered || row.what_happened),
-      plainAction: cleanSentence(row.why_it_mattered || row.what_happened || row.policy_effect),
-      concreteQuestion: cleanSentence(row.why_it_mattered || row.what_happened || row.policy_effect),
+      label: publicTheme,
+      overviewPhrase: publicTheme,
+      practicalLever: publicTheme,
+      plainAction: publicTheme,
+      concreteQuestion: "",
     };
     const current = groups.get(group.id) || {
       ...group,
+      publicTheme: getPublicThemeForFacet(group.id, {
+        domain: issueDomain,
+        curatedTheme: group.publicTheme || group.overviewPhrase || group.label,
+      }),
       rows: [],
       statusRows: allRowsByFacet.get(facet) || [],
       positions: {},
@@ -727,11 +728,15 @@ function groupRowsByFacet(rows, { allRows = rows } = {}) {
 
 function formatMeasureGroup(group) {
   const copy = buildDynamicMeasureGroupCopy(group);
+  const publicTheme = getPublicThemeForFacet(copy.id, {
+    curatedTheme: copy.publicTheme || copy.overviewPhrase || copy.label,
+  });
 
   return {
     id: group.id,
     label: copy.label,
     overviewPhrase: copy.overviewPhrase,
+    publicTheme,
     practicalLever: copy.practicalLever,
     plainAction: copy.plainAction,
     concreteQuestion: copy.concreteQuestion,
@@ -833,7 +838,7 @@ function summarizePartyPattern({ partyLabel, partyMatchCount, total }) {
 
 function formatLimitedContextOverviewSentence({ ambiguousMeasureGroups, ambiguousRows, issueDomain, proceduralContextMeasureGroups = [], proceduralContextRows = [] }) {
   if (proceduralContextRows.length === ambiguousRows.length && proceduralContextRows.length) {
-    const proceduralText = formatList(proceduralContextMeasureGroups.map((group) => group.overviewPhrase));
+    const proceduralText = formatMeasureCategoryList(proceduralContextMeasureGroups, issueDomain, { allowFallback: false });
     return proceduralText
       ? `${capitalize(formatNumber(proceduralContextRows.length))} procedural-context ${proceduralContextRows.length === 1 ? "row remains" : "rows remain"} visible for ${proceduralText}, but ${proceduralContextRows.length === 1 ? "it explains" : "they explain"} floor process and ${proceduralContextRows.length === 1 ? "is" : "are"} not used to summarize support, opposition, or alignment.`
       : `${capitalize(formatNumber(proceduralContextRows.length))} procedural-context ${proceduralContextRows.length === 1 ? "row remains" : "rows remain"} visible, but ${proceduralContextRows.length === 1 ? "it explains" : "they explain"} floor process and ${proceduralContextRows.length === 1 ? "is" : "are"} not used to summarize support, opposition, or alignment.`;
@@ -846,21 +851,10 @@ function formatLimitedContextOverviewSentence({ ambiguousMeasureGroups, ambiguou
     return `${capitalize(formatNumber(ambiguousRows.length))} additional ${ambiguousRows.length === 1 ? "row remains" : "rows remain"} visible below but ${ambiguousRows.length === 1 ? "is" : "are"} not counted because the available source text does not clearly explain the practical policy effect.`;
   }
 
-  const ambiguousText = formatList(ambiguousMeasureGroups.map((group) => group.overviewPhrase));
+  const ambiguousText = formatMeasureCategoryList(ambiguousMeasureGroups, issueDomain, { allowFallback: false });
   return ambiguousText
     ? `${capitalize(formatNumber(ambiguousRows.length))} ambiguous or limited-context ${ambiguousRows.length === 1 ? "row remains" : "rows remain"} visible for ${ambiguousText}, but ${ambiguousRows.length === 1 ? "it is" : "they are"} not used to summarize the vote pattern.`
     : `${capitalize(formatNumber(ambiguousRows.length))} ambiguous or limited-context ${ambiguousRows.length === 1 ? "row remains" : "rows remain"} visible, but ${ambiguousRows.length === 1 ? "it is" : "they are"} not used to summarize the vote pattern.`;
-}
-
-function buildFallbackMeasurePhrase(row, facet) {
-  const reviewedText = cleanSentence(row.what_happened || row.why_it_mattered || row.policy_effect);
-  if (reviewedText) {
-    return reviewedText[0].toLowerCase() + reviewedText.slice(1);
-  }
-  if (facet) {
-    return formatIssueFacet(facet).toLowerCase();
-  }
-  return "a reviewed measure";
 }
 
 function summarizeOutcomePattern({ matchCount, passedOpposedCount, total }) {
@@ -879,24 +873,6 @@ function summarizeOutcomePattern({ matchCount, passedOpposedCount, total }) {
     return `${capitalize(formatSharePhrase(matchCount, total))} were with the final House outcome.`;
   }
   return "Those votes split evenly between the final House outcome and the side that did not prevail.";
-}
-
-function formatIssueFacet(value) {
-  return String(value || "")
-    .split("_")
-    .filter(Boolean)
-    .map((segment) => segment[0].toUpperCase() + segment.slice(1))
-    .join(" ");
-}
-
-function formatQuestionCategory(domain) {
-  if (domain === "ECONOMY_TAXES") {
-    return "concrete fiscal questions";
-  }
-  if (domain === "JUSTICE_PUBLIC_SAFETY") {
-    return "public-safety and legal-policy questions";
-  }
-  return "policy questions";
 }
 
 function formatIssueAreaMeasures(domain) {
