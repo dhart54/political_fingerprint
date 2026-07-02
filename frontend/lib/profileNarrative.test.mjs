@@ -200,6 +200,62 @@ test("issue card previews align dominant and mixed labels with reviewed counts",
   assert.doesNotMatch(`${immigration.status} ${immigration.themeLine}`, /mostly opposed|mostly supported/i);
 });
 
+test("limited one-sided issue rows stay limited in profile and card previews", () => {
+  const oneOpposed = {
+    domain: "NATIONAL_SECURITY_FOREIGN",
+    recorded_votes: 10,
+    interpreted_support_count: 0,
+    interpreted_oppose_count: 1,
+  };
+  const twoSupported = {
+    domain: "ECONOMY_TAXES",
+    recorded_votes: 10,
+    interpreted_support_count: 2,
+    interpreted_oppose_count: 0,
+  };
+
+  const opposedPreview = buildIssueCardPreview(oneOpposed);
+  const supportedPreview = buildIssueCardPreview(twoSupported);
+  const patternRows = buildIssuePatternRows([oneOpposed, twoSupported]);
+  const narrative = buildRecordNarrative({
+    legislator: {
+      name_display: "Valerie P. Foushee",
+      chamber: "house",
+      party: "D",
+    },
+    positions: [oneOpposed, twoSupported],
+  });
+  const publicCopy = [
+    opposedPreview.status,
+    opposedPreview.countLine,
+    opposedPreview.themeLine,
+    supportedPreview.status,
+    supportedPreview.countLine,
+    supportedPreview.themeLine,
+    narrative.headline,
+    narrative.body,
+    ...patternRows.map((row) => `${row.label} ${row.preview.status} ${row.preview.countLine} ${row.preview.themeLine}`),
+  ].join(" ");
+
+  assert.equal(opposedPreview.status, "Limited reviewed evidence");
+  assert.equal(opposedPreview.countLine, "1 reviewed Yes/No vote is available out of 10 recorded votes.");
+  assert.doesNotMatch(`${opposedPreview.status} ${opposedPreview.themeLine}`, /Mostly opposed/i);
+
+  assert.equal(supportedPreview.status, "Limited reviewed evidence");
+  assert.equal(supportedPreview.countLine, "2 reviewed Yes/No votes are available out of 10 recorded votes.");
+  assert.doesNotMatch(`${supportedPreview.status} ${supportedPreview.themeLine}`, /Mostly supported/i);
+
+  assert.deepEqual(
+    patternRows.map((row) => [row.domain, row.label, row.preview.status]),
+    [
+      ["ECONOMY_TAXES", "Reviewed evidence", "Limited reviewed evidence"],
+      ["NATIONAL_SECURITY_FOREIGN", "Reviewed evidence", "Limited reviewed evidence"],
+    ],
+  );
+  assert.match(narrative.body, /Start with the issue cards below, then open representative votes/);
+  assert.doesNotMatch(publicCopy, /mostly opposed reads|mostly supported reads|Mostly opposed in reviewed sample|Mostly supported in reviewed sample/i);
+});
+
 test("concrete preference prompts require enough reviewed Yes/No evidence", () => {
   const economyPrompt = buildConcretePreferencePrompt(valerieRows[0]);
   const sparsePrompt = buildConcretePreferencePrompt(valerieRows[3]);

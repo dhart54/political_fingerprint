@@ -168,7 +168,7 @@ export function buildIssueCardPreview(row = {}) {
   const direction = getDominantDirection(row);
   const themeText = buildThemeLine(row.domain);
 
-  if (!interpretedYesNo) {
+  if (readiness.key === "not_enough_to_summarize" || !interpretedYesNo) {
     return {
       status: readiness.label || "Not enough to summarize",
       countLine: recordedVotes
@@ -176,6 +176,24 @@ export function buildIssueCardPreview(row = {}) {
         : "No recorded Yes/No votes are available in this issue yet.",
       themeLine: "Evidence may still be visible, but this issue is not ready for a confident summary.",
       receiptLine: "Open available rows and source details before drawing a broader issue-area conclusion.",
+    };
+  }
+
+  if (readiness.key === "limited_evidence") {
+    return {
+      status: "Limited reviewed evidence",
+      countLine: `${interpretedYesNo} reviewed Yes/No ${interpretedYesNo === 1 ? "vote is" : "votes are"} available out of ${recordedVotes} recorded ${recordedVotes === 1 ? "vote" : "votes"}.`,
+      themeLine: `The available rows concern ${themeText}.`,
+      receiptLine: "Open the receipts before treating this as a stable issue pattern.",
+    };
+  }
+
+  if (readiness.key === "mixed_but_interpretable") {
+    return {
+      status: "Mixed but interpretable",
+      countLine: `${opposeCount} opposed / ${supportCount} supported across ${interpretedYesNo} reviewed Yes/No ${interpretedYesNo === 1 ? "vote" : "votes"}.`,
+      themeLine: `Votes point in more than one direction across ${themeText}.`,
+      receiptLine: "Open representative votes before reading this as mostly support or mostly opposition.",
     };
   }
 
@@ -194,24 +212,6 @@ export function buildIssueCardPreview(row = {}) {
       countLine: `${supportCount} supported / ${opposeCount} opposed across ${interpretedYesNo} reviewed Yes/No ${interpretedYesNo === 1 ? "vote" : "votes"}.`,
       themeLine: `Support concentrated in ${themeText}.`,
       receiptLine: "Open for representative votes and the full reviewed list.",
-    };
-  }
-
-  if (readiness.key === "mixed_but_interpretable") {
-    return {
-      status: "Mixed but interpretable",
-      countLine: `${opposeCount} opposed / ${supportCount} supported across ${interpretedYesNo} reviewed Yes/No ${interpretedYesNo === 1 ? "vote" : "votes"}.`,
-      themeLine: `Votes point in more than one direction across ${themeText}.`,
-      receiptLine: "Open representative votes before reading this as mostly support or mostly opposition.",
-    };
-  }
-
-  if (readiness.key === "limited_evidence") {
-    return {
-      status: "Limited reviewed evidence",
-      countLine: `${interpretedYesNo} reviewed Yes/No ${interpretedYesNo === 1 ? "vote is" : "votes are"} available out of ${recordedVotes} recorded ${recordedVotes === 1 ? "vote" : "votes"}.`,
-      themeLine: `The available rows concern ${themeText}.`,
-      receiptLine: "Open the receipts before treating this as a stable issue pattern.",
     };
   }
 
@@ -275,7 +275,7 @@ function buildStrongestIssueLine(row) {
 }
 
 function buildDominantIssueLine(rows) {
-  const dominantRows = (rows || []).filter((row) => getDominantDirection(row));
+  const dominantRows = (rows || []).filter((row) => (row.readiness || deriveIssueReadiness(row)).key === "strong_evidence" && getDominantDirection(row));
   if (!dominantRows.length) {
     return "";
   }
@@ -298,15 +298,19 @@ function buildDominantIssueLine(rows) {
 }
 
 function buildPatternLabel({ supportCount, opposeCount, readiness }) {
+  if (readiness?.key === "limited_evidence" || readiness?.key === "not_enough_to_summarize") {
+    return "Reviewed evidence";
+  }
+  if (readiness?.key === "mixed_but_interpretable") {
+    return "Mixed";
+  }
+
   const dominantDirection = getDominantDirection({ interpreted_support_count: supportCount, interpreted_oppose_count: opposeCount });
   if (dominantDirection === "supported") {
     return "Mostly supported";
   }
   if (dominantDirection === "opposed") {
     return "Mostly opposed";
-  }
-  if (readiness?.key === "mixed_but_interpretable") {
-    return "Mixed";
   }
   return "Reviewed evidence";
 }
