@@ -28,8 +28,8 @@
 - [x] PR #65-#68 protections preserved
 - [x] Tests/build/validation recorded
 - [x] Review packet updated
-- [ ] Draft PR opened
-- [ ] Final reconciliation completed
+- [x] Draft PR opened
+- [x] Final reconciliation completed
 
 ## Baseline
 
@@ -54,7 +54,7 @@
 - [x] Implementation
 - [x] Validation
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -104,6 +104,8 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: pending draft PR creation.
+- Definition of done satisfied: yes.
 - Remaining limitations: local rendered validation could not load Valerie Foushee data.
-- Recommended next step: open a focused draft PR and use hosted preview for Valerie rendered validation.
+- PR: #69.
+- Commit: `3bdd8b8` plus final plan reconciliation.
+- Recommended next step: use hosted preview for Valerie rendered validation, then mark ready if checks pass.
