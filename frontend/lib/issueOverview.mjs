@@ -402,9 +402,9 @@ function buildOverviewCopy({
   const aboutParts = [];
 
   if (measureCategoryText) {
-    aboutParts.push(`The reviewed Yes/No votes in this section covered ${measureCategoryText}.`);
+    aboutParts.push(`The reviewed Yes/No votes covered ${measureCategoryText}.`);
   } else {
-    aboutParts.push(`The reviewed Yes/No votes in this section covered ${getPublicThemeFallback(issueDomain)}.`);
+    aboutParts.push(`The reviewed Yes/No votes covered ${getPublicThemeFallback(issueDomain)}.`);
   }
   if (notVotingRows.length && notVotingGroupText) {
     aboutParts.push(
@@ -423,11 +423,11 @@ function buildOverviewCopy({
   const actionParts = [];
   if (directionalPattern.direction === "opposed" || directionalPattern.direction === "supported") {
     actionParts.push(
-      `In this reviewed sample, ${representativeLabel} mostly ${directionalPattern.direction} these reviewed ${issueLabel} measures: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No ${votePattern.interpretedYesNoCount === 1 ? "vote" : "votes"}.`,
+      `In this reviewed sample, ${representativeLabel} mostly ${directionalPattern.direction} the reviewed ${issueLabel} measures: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No ${votePattern.interpretedYesNoCount === 1 ? "vote" : "votes"}.`,
     );
   } else if (votePattern.supportCount || votePattern.opposeCount) {
     actionParts.push(
-      `In this reviewed sample, ${representativeLabel}'s interpreted Yes/No votes were split across these reviewed ${issueLabel} measures: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No votes.`,
+      `In this reviewed sample, ${representativeLabel}'s interpreted ${issueLabel} votes were mixed rather than mostly support or mostly opposition: ${votePattern.opposeCount} opposed and ${votePattern.supportCount} supported across ${votePattern.interpretedYesNoCount} interpreted Yes/No votes.`,
     );
   }
 
@@ -448,7 +448,7 @@ function buildOverviewCopy({
   if (votePattern.finalOutcomePattern) {
     patternParts.push(votePattern.finalOutcomePattern);
   }
-  patternParts.push("Start with the representative votes below to inspect the record behind this read.");
+  patternParts.push("Open the representative votes below to inspect the record behind this read.");
 
   const howVoterMightRead = buildPolicyFirstVoterRead({
     measureCategoryText,
@@ -546,11 +546,11 @@ function buildThemePatternSentence({
     opposedThemeText !== supportedThemeText;
 
   if (canSeparateThemes) {
-    return `The opposed measures centered on ${opposedThemeText}. The supported votes centered on ${supportedThemeText}.`;
+    return `Opposition was concentrated in ${opposedThemeText}; support appeared in ${supportedThemeText}.`;
   }
 
   if (measureCategoryText) {
-    return `The reviewed measures included ${measureCategoryText}.`;
+    return `The reviewed votes centered on ${measureCategoryText}.`;
   }
 
   return "";
@@ -592,21 +592,18 @@ function formatMeasureThemePhrase(group) {
 }
 
 function buildPolicyFirstVoterRead({ measureCategoryText, policySubstanceText, representativeLabel, directionalPattern }) {
-  const favoredMeasures = measureCategoryText
-    ? `the reviewed measures on ${measureCategoryText},`
-    : `the reviewed ${policySubstanceText} in this sample,`;
   const specificMeasures = measureCategoryText
-    ? `the reviewed measures on ${measureCategoryText}`
+    ? "those measures"
     : `the reviewed ${policySubstanceText} in this sample`;
 
   if (directionalPattern.direction === "opposed") {
-    return `If you favored ${favoredMeasures} ${representativeLabel}'s votes were mostly opposed. If you opposed those measures or objected to their terms, this record was mostly aligned with that view.`;
+    return `A voter who favored ${specificMeasures} would read ${representativeLabel}'s votes as mostly opposition in this sample. A voter who opposed those measures or objected to their terms would read this record as mostly aligned with that view.`;
   }
   if (directionalPattern.direction === "supported") {
-    return `If you favored ${favoredMeasures} ${representativeLabel}'s votes were mostly aligned with that view. If you opposed those measures or objected to their terms, this record was mostly opposed.`;
+    return `A voter who favored ${specificMeasures} would read ${representativeLabel}'s votes as mostly aligned with that view in this sample. A voter who opposed those measures or objected to their terms would read this record as mostly opposition.`;
   }
 
-  return `If your view depends on the specific terms of ${specificMeasures}, inspect the representative votes below; this record is split rather than mostly support or mostly opposition.`;
+  return `Because the reviewed votes point in more than one direction, a voter should inspect the representative votes below instead of reading this as mostly support or mostly opposition.`;
 }
 
 function buildLimitedEvidenceOverviewCopy({
