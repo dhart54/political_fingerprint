@@ -1,4 +1,8 @@
 const PUBLIC_THEME_BY_FACET = {
+  economy_taxes: "fiscal and tax measures",
+  environment_energy: "environment and energy measures",
+  justice_public_safety: "public-safety and legal-policy measures",
+  national_security_foreign: "national-security and foreign-policy measures",
   budget_reconciliation_and_debt_limit: "budget framework and reconciliation",
   small_business_loan_eligibility: "small-business loan eligibility",
   military_construction_and_va_appropriations: "military and veterans appropriations",
@@ -18,8 +22,8 @@ const PUBLIC_THEME_BY_FACET = {
   defense_authorization_amendment: "defense authorization amendments",
   "House floor procedure": "procedural House floor action",
   house_of_representatives: "procedural House rule or motion",
-  "Motion to commit": "other reviewed national-security measures",
-  motion_to_commit: "other reviewed national-security measures",
+  "Motion to commit": "motions to commit",
+  motion_to_commit: "motions to commit",
   "Veterans cemetery administration": "veterans cemetery administration",
   veterans_cemetery_administration: "veterans cemetery administration",
   foreign_military_sales: "foreign military sales",
@@ -50,6 +54,10 @@ const PUBLIC_THEME_BY_DOMAIN = {
   INFRASTRUCTURE_TECH_TRANSPORT: "other reviewed infrastructure and technology measures",
 };
 
+const FORCE_PUBLIC_THEME_FALLBACK_FACETS = new Set([
+  "house_amendment_vote",
+]);
+
 const UNSAFE_PUBLIC_THEME_MARKERS = [
   "this was a direct vote",
   "this vote is useful",
@@ -78,6 +86,11 @@ const MAX_UNCURATED_THEME_LENGTH = 72;
 export function getPublicThemeForFacet(facet, { domain = "", curatedTheme = "" } = {}) {
   const exactFacet = String(facet || "").trim();
   const normalizedFacet = normalizeThemeKey(exactFacet);
+
+  if (FORCE_PUBLIC_THEME_FALLBACK_FACETS.has(normalizedFacet)) {
+    return getPublicThemeFallback(domain);
+  }
+
   const explicitTheme = PUBLIC_THEME_BY_FACET[exactFacet] || PUBLIC_THEME_BY_FACET[normalizedFacet] || "";
 
   if (explicitTheme && isSafePublicThemePhrase(explicitTheme, { curated: true })) {
