@@ -22,7 +22,7 @@
 
 ## Definition Of Done
 
-- [ ] Current National Security, Economy, and Justice overview shapes audited before implementation
+- [x] Current National Security, Economy, and Justice overview shapes audited before implementation
 - [x] Top-level copy uses safe public themes and avoids raw evidence fields
 - [x] Dominant and genuine mixed samples remain distinct
 - [x] Tests/build/validation recorded
