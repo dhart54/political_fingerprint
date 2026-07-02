@@ -710,6 +710,7 @@ function groupRowsByFacet(rows, { allRows = rows, issueDomain = "" } = {}) {
     };
     const current = groups.get(group.id) || {
       ...group,
+      issueDomain,
       publicTheme: getPublicThemeForFacet(group.id, {
         domain: issueDomain,
         curatedTheme: group.publicTheme || group.overviewPhrase || group.label,
@@ -729,6 +730,7 @@ function groupRowsByFacet(rows, { allRows = rows, issueDomain = "" } = {}) {
 function formatMeasureGroup(group) {
   const copy = buildDynamicMeasureGroupCopy(group);
   const publicTheme = getPublicThemeForFacet(copy.id, {
+    domain: copy.issueDomain || group.issueDomain,
     curatedTheme: copy.publicTheme || copy.overviewPhrase || copy.label,
   });
 

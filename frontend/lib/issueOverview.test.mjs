@@ -1060,6 +1060,12 @@ test("curated broad facets improve top-level themes without raw fallback text", 
       what_happened: "This was a direct vote on a motion to commit.",
       why_it_mattered: "The vote records a direct position on floor procedure.",
     }),
+    row({
+      issue_facet: "House amendment vote",
+      rollcall_number: 603,
+      what_happened: "The House voted on whether to agree to an amendment.",
+      why_it_mattered: "The amendment redirects funding.",
+    }),
   ];
   const overview = buildIssueOverview(rows, {
     domain: "NATIONAL_SECURITY_FOREIGN",
@@ -1070,7 +1076,8 @@ test("curated broad facets improve top-level themes without raw fallback text", 
   assert.equal(overview.readiness.status, "safe");
   assert.match(rendered, /national-security and foreign-policy measures/);
   assert.match(rendered, /motions to commit/);
-  assert.doesNotMatch(rendered, /national security foreign|other reviewed national-security measures/i);
+  assert.match(rendered, /other reviewed national-security measures/);
+  assert.doesNotMatch(rendered, /national security foreign|other reviewed policy measures|House amendment vote/i);
   assertTopPublicCopyIsSafe(rendered);
 });
 
