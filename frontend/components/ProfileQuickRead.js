@@ -142,10 +142,13 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
                 {formatDomainLabel(row.domain)}
               </p>
               <p className="mt-1 text-sm font-medium leading-5 text-white">
-                {row.label} - {row.supportCount} for / {row.opposeCount} against
+                {row.preview.status}
               </p>
               <p className="mt-1 text-xs leading-4 text-cyan-50">
-                {row.theme}
+                {row.preview.countLine}
+              </p>
+              <p className="mt-1 text-xs leading-4 text-cyan-50">
+                {row.preview.themeLine}
               </p>
             </button>
           ))}

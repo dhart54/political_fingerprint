@@ -16,8 +16,9 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   assert.ok(source.includes("Record Summary"), "profile should provide one top-level record summary");
   assert.ok(source.includes("narrative.patternRows"), "reviewed issue patterns should appear inside the top-level summary");
   assert.ok(source.includes("Open Best Read"), "quick read should provide a direct path to the strongest issue read");
-  assert.ok(source.includes("Best place to start"), "strong issue cards should be visually prioritized");
-  assert.ok(source.includes("Lower priority: read cautiously"), "limited issue cards should be lower priority");
+  assert.ok(source.includes("buildIssueCardPreview"), "issue cards should use the shared safe preview helper");
+  assert.ok(source.includes("row.preview.countLine"), "profile issue cards should render preview counts");
+  assert.ok(source.includes("row.preview.themeLine"), "profile issue cards should render preview themes");
   assert.ok(source.includes("Evidence group overview"), "grouped evidence preview should be user-visible as a secondary overview");
   assert.ok(source.includes("formatCompactEvidenceGroupingOverview"), "compact grouping summary should be rendered");
   assert.ok(source.includes("IssueNavigation"), "large profiles should expose compact issue navigation");
@@ -94,11 +95,11 @@ test("issue cards use generalized readiness copy and contact follows vote cards"
   const civicActionIndex = source.indexOf("<EvidenceUtilityPanel");
   const reviewedVoteListIndex = source.indexOf("<ReviewedVoteList");
 
-  assert.match(source, /reviewed Yes\/No .* out of .* recorded/);
-  assert.match(source, /Best place to start\./);
-  assert.match(source, /Useful comparison read\./);
-  assert.match(source, /Read cautiously\./);
-  assert.match(source, /not ready for a confident summary/);
+  assert.match(source, /buildIssueCardPreview/);
+  assert.match(source, /countLine/);
+  assert.match(source, /themeLine/);
+  assert.match(source, /receiptLine/);
+  assert.match(source, /formatIssueCardStatusLabel/);
   assert.ok(reviewedVoteListIndex > 0 && civicActionIndex > reviewedVoteListIndex, "utility panel should render after reviewed vote list access");
 });
 
