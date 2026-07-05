@@ -261,14 +261,23 @@ function getInterpretedTotal(row) {
 }
 
 function buildStrongestIssueLine(row) {
+  const readiness = row.readiness || deriveIssueReadiness(row);
   const supportCount = Number(row.interpreted_support_count || 0);
   const opposeCount = Number(row.interpreted_oppose_count || 0);
   const countLine = `${supportCount} for / ${opposeCount} against interpreted measures`;
+
+  if (readiness.key === "limited_evidence" || readiness.key === "not_enough_to_summarize") {
+    return `${formatDomainLabel(row.domain)} is the best available read, but it should stay cautious: ${countLine}.`;
+  }
+  if (readiness.key === "mixed_but_interpretable") {
+    return `${formatDomainLabel(row.domain)} is mixed but interpretable: ${countLine}.`;
+  }
+
   const dominantDirection = getDominantDirection(row);
-  if (dominantDirection) {
+  if (readiness.key === "strong_evidence" && dominantDirection) {
     return `${formatDomainLabel(row.domain)} has the clearest pattern: mostly ${dominantDirection} in the reviewed sample (${countLine}).`;
   }
-  if (row.readiness?.key === "strong_evidence") {
+  if (readiness.key === "strong_evidence") {
     return `${formatDomainLabel(row.domain)} has the clearest pattern: ${countLine}.`;
   }
   return `${formatDomainLabel(row.domain)} is the best available read, but it should stay cautious: ${countLine}.`;

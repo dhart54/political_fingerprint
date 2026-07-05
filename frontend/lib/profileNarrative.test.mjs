@@ -253,7 +253,10 @@ test("limited one-sided issue rows stay limited in profile and card previews", (
     ],
   );
   assert.match(narrative.body, /Start with the issue cards below, then open representative votes/);
+  assert.match(narrative.body, /should stay cautious|limited/i);
+  assert.equal(patternRows.length, 2);
   assert.doesNotMatch(publicCopy, /mostly opposed reads|mostly supported reads|Mostly opposed in reviewed sample|Mostly supported in reviewed sample/i);
+  assert.doesNotMatch(publicCopy, /mostly opposed in (?:the )?reviewed sample|mostly supported in (?:the )?reviewed sample|has the clearest pattern:\s*mostly/i);
 });
 
 test("concrete preference prompts require enough reviewed Yes/No evidence", () => {
