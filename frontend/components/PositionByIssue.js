@@ -20,6 +20,7 @@ const REPRESENTATIVE_VOTE_LIMIT = 8;
 
 export default function PositionByIssue({
   evidenceRequest = null,
+  fixtureData = null,
   legislator = null,
   legislatorId = "leg_alex_morgan",
   scope = "all",
@@ -42,6 +43,18 @@ export default function PositionByIssue({
 
     async function loadPositions() {
       try {
+        if (fixtureData?.positions) {
+          if (!active) {
+            return;
+          }
+          setState({
+            status: "ready",
+            payload: fixtureData.positions,
+            error: null,
+          });
+          return;
+        }
+
         const positionsPayload = await fetchPositions({ legislatorId, scope });
         const payload = await fillMissingInterpretedCounts({
           payload: positionsPayload,
@@ -73,7 +86,7 @@ export default function PositionByIssue({
     return () => {
       active = false;
     };
-  }, [legislatorId, scope]);
+  }, [fixtureData, legislatorId, scope]);
 
   useEffect(() => {
     setSelectedDomain(null);
@@ -120,6 +133,19 @@ export default function PositionByIssue({
     });
 
     try {
+      if (fixtureData?.evidenceByDomain) {
+        const payload = fixtureData.evidenceByDomain[domain];
+        if (!payload) {
+          throw new Error(`No fixture evidence for ${domain}`);
+        }
+        setEvidenceState({
+          status: "ready",
+          payload,
+          error: null,
+        });
+        return;
+      }
+
       const payload = await fetchPositionEvidence({ legislatorId, domain, scope });
       setEvidenceState({
         status: "ready",

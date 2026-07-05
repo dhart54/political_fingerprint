@@ -8,7 +8,7 @@ import { formatDomainLabel } from "../lib/issueDomains";
 import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
 import { buildRecordNarrative } from "../lib/profileNarrative.mjs";
 
-export default function ProfileQuickRead({ legislator, onInspectDomain, onProfileRead, scope = "all" }) {
+export default function ProfileQuickRead({ fixtureData = null, legislator, onInspectDomain, onProfileRead, scope = "all" }) {
   const [state, setState] = useState({
     status: "loading",
     fingerprint: null,
@@ -28,6 +28,24 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
       });
 
       try {
+        if (fixtureData) {
+          const fingerprint = fixtureData.fingerprint || { fingerprint: [] };
+          const positions = fixtureData.positions || { positions: [] };
+          if (active) {
+            setState({
+              status: "ready",
+              fingerprint,
+              positions,
+              error: null,
+            });
+            onProfileRead?.({
+              fingerprint,
+              positions,
+            });
+          }
+          return;
+        }
+
         const [fingerprint, positionsPayload] = await Promise.all([
           fetchFingerprint({ legislatorId: legislator.id, scope }),
           fetchPositions({ legislatorId: legislator.id, scope }),
@@ -71,7 +89,7 @@ export default function ProfileQuickRead({ legislator, onInspectDomain, onProfil
     return () => {
       active = false;
     };
-  }, [legislator.id, scope]);
+  }, [fixtureData, legislator.id, scope]);
 
   const fingerprintRows = state.fingerprint?.fingerprint || [];
   const positionRows = state.positions?.positions || [];
