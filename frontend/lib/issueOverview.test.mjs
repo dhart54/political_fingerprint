@@ -247,9 +247,9 @@ test("issue-card top copy helpers do not read raw evidence fields", () => {
     helperSource,
     /what_happened|why_it_mattered|plain_english_summary|description|question|uncertainty_note|interpretation_reason|classification_reason|source_basis|policy_effect/i,
   );
-  assert.match(helperSource, /interpreted_support_count/);
-  assert.match(helperSource, /interpreted_oppose_count/);
-  assert.match(helperSource, /readiness/);
+  assert.match(helperSource, /buildIssueCardPreview/);
+  assert.match(helperSource, /countLine/);
+  assert.match(helperSource, /themeLine/);
 });
 
 test("approved Valerie Economy vote summaries and limited-row caveats remain unchanged", () => {

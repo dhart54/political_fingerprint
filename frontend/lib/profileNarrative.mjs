@@ -98,7 +98,7 @@ export function buildRecordNarrative({ legislator = {}, positions = [], scope = 
     };
   }
 
-  const partyLine = buildPartyContextLine(legislator);
+  const dominantLine = buildDominantIssueLine(interpretedRows);
   const strongestLine = buildStrongestIssueLine(strongest);
   const mixedLine = mixedRows.length
     ? `${formatList(mixedRows.slice(0, 2).map((row) => formatDomainLabel(row.domain)))} ${mixedRows.length === 1 ? "is" : "are"} mixed but interpretable.`
@@ -107,10 +107,11 @@ export function buildRecordNarrative({ legislator = {}, positions = [], scope = 
     ? `${limitedRows.length + notReadyRows.length} issue ${limitedRows.length + notReadyRows.length === 1 ? "area remains" : "areas remain"} limited or not ready to summarize.`
     : "";
   const comparisonLine = scope === "all" ? buildComparisonLine(rows) : "";
+  const receiptLine = "Start with the issue cards below, then open representative votes to inspect the record behind each read.";
 
   return {
-    headline: `${legislator.name_display || "This official"}'s strongest reviewed evidence is in ${formatDomainLabel(strongest.domain)}.`,
-    body: [partyLine, strongestLine, mixedLine, comparisonLine, limitedLine].filter(Boolean).join(" "),
+    headline: `${legislator.name_display || "This official"}'s clearest reviewed issue read is ${formatDomainLabel(strongest.domain)}.`,
+    body: [dominantLine || strongestLine, mixedLine, limitedLine, receiptLine, comparisonLine].filter(Boolean).join(" "),
     evidenceLine: `${totalInterpreted} reviewed Yes/No meanings across ${totalRecorded} recorded issue rows.`,
     strongestDomain: strongest.domain,
     patternRows: buildIssuePatternRows(rows).slice(0, 4),
@@ -153,8 +154,73 @@ export function buildIssuePatternRows(positions = []) {
         recordedVotes: Number(row.recorded_votes || 0),
         label: buildPatternLabel({ supportCount, opposeCount, readiness }),
         theme: buildThemeLine(row.domain),
+        preview: buildIssueCardPreview({ ...row, readiness }),
       };
     });
+}
+
+export function buildIssueCardPreview(row = {}) {
+  const readiness = row.readiness || deriveIssueReadiness(row);
+  const supportCount = Number(row.interpreted_support_count || 0);
+  const opposeCount = Number(row.interpreted_oppose_count || 0);
+  const interpretedYesNo = supportCount + opposeCount;
+  const recordedVotes = Number(row.recorded_votes || 0);
+  const direction = getDominantDirection(row);
+  const themeText = buildThemeLine(row.domain);
+
+  if (readiness.key === "not_enough_to_summarize" || !interpretedYesNo) {
+    return {
+      status: readiness.label || "Not enough to summarize",
+      countLine: recordedVotes
+        ? `No reviewed Yes/No vote meaning is available yet out of ${recordedVotes} recorded ${recordedVotes === 1 ? "vote" : "votes"}.`
+        : "No recorded Yes/No votes are available in this issue yet.",
+      themeLine: "Evidence may still be visible, but this issue is not ready for a confident summary.",
+      receiptLine: "Open available rows and source details before drawing a broader issue-area conclusion.",
+    };
+  }
+
+  if (readiness.key === "limited_evidence") {
+    return {
+      status: "Limited reviewed evidence",
+      countLine: `${interpretedYesNo} reviewed Yes/No ${interpretedYesNo === 1 ? "vote is" : "votes are"} available out of ${recordedVotes} recorded ${recordedVotes === 1 ? "vote" : "votes"}.`,
+      themeLine: `The available rows concern ${themeText}.`,
+      receiptLine: "Open the receipts before treating this as a stable issue pattern.",
+    };
+  }
+
+  if (readiness.key === "mixed_but_interpretable") {
+    return {
+      status: "Mixed but interpretable",
+      countLine: `${opposeCount} opposed / ${supportCount} supported across ${interpretedYesNo} reviewed Yes/No ${interpretedYesNo === 1 ? "vote" : "votes"}.`,
+      themeLine: `Votes point in more than one direction across ${themeText}.`,
+      receiptLine: "Open representative votes before reading this as mostly support or mostly opposition.",
+    };
+  }
+
+  if (direction === "opposed") {
+    return {
+      status: "Mostly opposed in reviewed sample",
+      countLine: `${opposeCount} opposed / ${supportCount} supported across ${interpretedYesNo} reviewed Yes/No ${interpretedYesNo === 1 ? "vote" : "votes"}.`,
+      themeLine: `Opposition concentrated in ${themeText}.`,
+      receiptLine: "Open for representative votes and the full reviewed list.",
+    };
+  }
+
+  if (direction === "supported") {
+    return {
+      status: "Mostly supported in reviewed sample",
+      countLine: `${supportCount} supported / ${opposeCount} opposed across ${interpretedYesNo} reviewed Yes/No ${interpretedYesNo === 1 ? "vote" : "votes"}.`,
+      themeLine: `Support concentrated in ${themeText}.`,
+      receiptLine: "Open for representative votes and the full reviewed list.",
+    };
+  }
+
+  return {
+    status: readiness.label || "Reviewed evidence",
+    countLine: `${interpretedYesNo} reviewed Yes/No ${interpretedYesNo === 1 ? "vote" : "votes"} out of ${recordedVotes} recorded ${recordedVotes === 1 ? "vote" : "votes"}.`,
+    themeLine: `The reviewed rows concern ${themeText}.`,
+    receiptLine: "Open for representative votes and the full reviewed list.",
+  };
 }
 
 export function buildConcretePreferencePrompt(row) {
@@ -194,43 +260,66 @@ function getInterpretedTotal(row) {
   return getInterpretedYesNoCount(row) + Number(row?.interpreted_other_count || 0);
 }
 
-function buildPartyContextLine(legislator) {
-  const chamber = String(legislator?.chamber || "").toLowerCase();
-  const party = String(legislator?.party || "").toUpperCase();
-  const partyName = party === "D" ? "Democrats" : party === "R" ? "Republicans" : "";
-  const chamberName = chamber === "senate" ? "Senate" : chamber === "house" ? "House" : "";
-
-  if (!partyName || !chamberName) {
-    return "";
-  }
-
-  return `In this reviewed sample, the record is shown against ${chamberName} votes and party context where the source data supports it.`;
-}
-
 function buildStrongestIssueLine(row) {
+  const readiness = row.readiness || deriveIssueReadiness(row);
   const supportCount = Number(row.interpreted_support_count || 0);
   const opposeCount = Number(row.interpreted_oppose_count || 0);
   const countLine = `${supportCount} for / ${opposeCount} against interpreted measures`;
+
+  if (readiness.key === "limited_evidence" || readiness.key === "not_enough_to_summarize") {
+    return `${formatDomainLabel(row.domain)} is the best available read, but it should stay cautious: ${countLine}.`;
+  }
+  if (readiness.key === "mixed_but_interpretable") {
+    return `${formatDomainLabel(row.domain)} is mixed but interpretable: ${countLine}.`;
+  }
+
   const dominantDirection = getDominantDirection(row);
-  if (dominantDirection) {
+  if (readiness.key === "strong_evidence" && dominantDirection) {
     return `${formatDomainLabel(row.domain)} has the clearest pattern: mostly ${dominantDirection} in the reviewed sample (${countLine}).`;
   }
-  if (row.readiness?.key === "strong_evidence") {
+  if (readiness.key === "strong_evidence") {
     return `${formatDomainLabel(row.domain)} has the clearest pattern: ${countLine}.`;
   }
   return `${formatDomainLabel(row.domain)} is the best available read, but it should stay cautious: ${countLine}.`;
 }
 
+function buildDominantIssueLine(rows) {
+  const dominantRows = (rows || []).filter((row) => (row.readiness || deriveIssueReadiness(row)).key === "strong_evidence" && getDominantDirection(row));
+  if (!dominantRows.length) {
+    return "";
+  }
+
+  const opposedRows = dominantRows.filter((row) => getDominantDirection(row) === "opposed");
+  const supportedRows = dominantRows.filter((row) => getDominantDirection(row) === "supported");
+  const parts = [];
+
+  if (opposedRows.length) {
+    parts.push(`mostly opposed reads in ${formatList(opposedRows.slice(0, 3).map((row) => formatDomainLabel(row.domain)))}`);
+  }
+  if (supportedRows.length) {
+    parts.push(`mostly supported reads in ${formatList(supportedRows.slice(0, 3).map((row) => formatDomainLabel(row.domain)))}`);
+  }
+
+  const shownCount = Math.min(opposedRows.length, 3) + Math.min(supportedRows.length, 3);
+  const additionalCount = dominantRows.length - shownCount;
+  const additionalText = additionalCount > 0 ? `, plus ${additionalCount} additional dominant ${additionalCount === 1 ? "issue read" : "issue reads"}` : "";
+  return `This reviewed sample shows ${formatList(parts)}${additionalText}.`;
+}
+
 function buildPatternLabel({ supportCount, opposeCount, readiness }) {
+  if (readiness?.key === "limited_evidence" || readiness?.key === "not_enough_to_summarize") {
+    return "Reviewed evidence";
+  }
+  if (readiness?.key === "mixed_but_interpretable") {
+    return "Mixed";
+  }
+
   const dominantDirection = getDominantDirection({ interpreted_support_count: supportCount, interpreted_oppose_count: opposeCount });
   if (dominantDirection === "supported") {
     return "Mostly supported";
   }
   if (dominantDirection === "opposed") {
     return "Mostly opposed";
-  }
-  if (readiness?.key === "mixed_but_interpretable") {
-    return "Mixed";
   }
   return "Reviewed evidence";
 }
