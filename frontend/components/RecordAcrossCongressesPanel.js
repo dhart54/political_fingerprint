@@ -16,7 +16,7 @@ import {
   getSparseStateCopy,
 } from "../lib/recordAcrossCongresses.mjs";
 
-export default function RecordAcrossCongressesPanel({ legislator, onInspectDomain }) {
+export default function RecordAcrossCongressesPanel({ fixtureResponse = undefined, legislator, onInspectDomain }) {
   const [state, setState] = useState({
     status: "idle",
     response: null,
@@ -28,6 +28,10 @@ export default function RecordAcrossCongressesPanel({ legislator, onInspectDomai
     let active = true;
 
     async function loadRecordAcrossCongresses() {
+      if (fixtureResponse !== undefined) {
+        setState({ status: "ready", response: fixtureResponse });
+        return;
+      }
       if (!isHouse || !legislator?.id) {
         setState({ status: "idle", response: null });
         return;
@@ -52,7 +56,7 @@ export default function RecordAcrossCongressesPanel({ legislator, onInspectDomai
     return () => {
       active = false;
     };
-  }, [isHouse, legislator?.id]);
+  }, [fixtureResponse, isHouse, legislator?.id]);
 
   if (!isHouse || state.status !== "ready") {
     return null;
