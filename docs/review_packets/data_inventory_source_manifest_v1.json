@@ -1,0 +1,832 @@
+{
+  "derived_artifacts": {
+    "deferred_artifact_count": 0,
+    "house_only_record_across": true,
+    "manifest_json_artifact_count": 8,
+    "manifest_paths_sample": [
+      "docs/review_packets/data_inventory_source_manifest_v1.json",
+      "docs/review_packets/senate_amendment_fact_import_manifest_phase_18.json",
+      "docs/review_packets/senate_amendment_fact_model_manifest_phase_16.json",
+      "docs/review_packets/senate_amendment_reference_manifest_phase_17.json",
+      "docs/review_packets/senate_enrichment_classification_manifest_phase_21.json",
+      "docs/review_packets/senate_evidence_classification_manifest_phase_20b.json",
+      "docs/review_packets/senate_fact_only_expansion_manifest_phase_14.json",
+      "docs/review_packets/senate_vote_facts_expansion_manifest_phase_11.json"
+    ],
+    "record_across_and_comparable_family_artifacts": [
+      {
+        "exists": true,
+        "kind": "json",
+        "notes": "families=15",
+        "path": "docs/derived/house_comparable_policy_question_families_v1.json",
+        "record_count": 15
+      },
+      {
+        "exists": true,
+        "kind": "json",
+        "notes": "family_summaries=15, threshold_simulations=10",
+        "path": "docs/analysis/house_comparable_policy_question_families.json",
+        "record_count": 15
+      },
+      {
+        "exists": true,
+        "kind": "csv",
+        "notes": "",
+        "path": "docs/analysis/house_comparable_policy_question_profiles.csv",
+        "record_count": 9
+      },
+      {
+        "exists": true,
+        "kind": "csv",
+        "notes": "",
+        "path": "docs/analysis/house_comparable_policy_question_thresholds.csv",
+        "record_count": 10
+      },
+      {
+        "exists": true,
+        "kind": "json",
+        "notes": "threshold_simulations=6",
+        "path": "docs/analysis/house_continuity_readiness_analysis.json",
+        "record_count": 12
+      },
+      {
+        "exists": true,
+        "kind": "csv",
+        "notes": "",
+        "path": "docs/analysis/house_continuity_thresholds.csv",
+        "record_count": 6
+      },
+      {
+        "exists": true,
+        "kind": "mjs",
+        "notes": "golden fixture vote rows counted by constructor calls",
+        "path": "frontend/lib/goldenRenderFixture.mjs",
+        "record_count": 28
+      }
+    ],
+    "reviewed_interpretation_batch_artifact_count": 35,
+    "reviewed_interpretation_batch_paths_sample": [
+      "docs/interpretation_batches/118th_house_amendment_substantive_candidates.json",
+      "docs/interpretation_batches/batch_001_nc_starter_interpretations.json",
+      "docs/interpretation_batches/batch_001_nc_starter_interpretations_v2.json",
+      "docs/interpretation_batches/batch_001_nc_starter_packets.json",
+      "docs/interpretation_batches/batch_001_nc_starter_packets_enriched.json",
+      "docs/interpretation_batches/batch_001_nc_starter_packets_enriched_full.json",
+      "docs/interpretation_batches/batch_002_valerie_national_security_interpretations.json",
+      "docs/interpretation_batches/batch_002_valerie_national_security_packets.json"
+    ],
+    "rollback_paths_sample": [
+      "docs/review_packets/118th_congress_historical_expansion_precompute_rollback.sql",
+      "docs/review_packets/118th_congress_historical_expansion_rollback.sql",
+      "docs/review_packets/118th_evidence_expansion_classification_rollback.sql",
+      "docs/review_packets/118th_evidence_expansion_interpretation_rollback.sql",
+      "docs/review_packets/118th_evidence_expansion_precompute_rollback.sql",
+      "docs/review_packets/118th_house_amendment_classification_rollback.sql",
+      "docs/review_packets/118th_house_amendment_interpretation_rollback.sql",
+      "docs/review_packets/118th_house_amendment_precompute_rollback.sql"
+    ],
+    "rollback_sql_artifact_count": 27
+  },
+  "expansion_readiness_implications": [
+    "Local caches show useful House, Senate, Congress.gov, fixture, interpretation, and derived-artifact coverage, but they do not prove production load state.",
+    "The current manifest can identify gaps before expansion, but a production read-only companion should be added before broad rollout decisions.",
+    "House current-Congress expansion remains the nearest pilot path only after source URL, member metadata, ZIP ambiguity, and sparse-profile gates are explicit.",
+    "Senate public reads still need chamber-aware vote-type and interpretation rules before support/opposition claims scale."
+  ],
+  "fixture_inventory": {
+    "exists": true,
+    "file_count": 25,
+    "files": [
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/bills.json",
+        "record_count": 12
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/congress_sample/bills.json",
+        "record_count": 12
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/congress_sample/members.json",
+        "record_count": 3
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/congress_sample/roll_calls.json",
+        "record_count": 12
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/congress_sample/votes.json",
+        "record_count": 19
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/congress_sample/zip_district_map.json",
+        "record_count": 2
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/house_clerk_sample/bills.json",
+        "record_count": 4
+      },
+      {
+        "exists": true,
+        "extension": ".xml",
+        "path": "backend/fixtures/house_clerk_sample/members.xml",
+        "record_count": null
+      },
+      {
+        "exists": true,
+        "extension": ".xml",
+        "path": "backend/fixtures/house_clerk_sample/roll001.xml",
+        "record_count": null
+      },
+      {
+        "exists": true,
+        "extension": ".xml",
+        "path": "backend/fixtures/house_clerk_sample/roll002.xml",
+        "record_count": null
+      },
+      {
+        "exists": true,
+        "extension": ".xml",
+        "path": "backend/fixtures/house_clerk_sample/roll003.xml",
+        "record_count": null
+      },
+      {
+        "exists": true,
+        "extension": ".xml",
+        "path": "backend/fixtures/house_clerk_sample/roll004.xml",
+        "record_count": null
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/house_clerk_sample/zip_district_map.json",
+        "record_count": 3
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/legislators.json",
+        "record_count": 3
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/roll_calls.json",
+        "record_count": 14
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/senate_xml_sample/bills.json",
+        "record_count": 4
+      },
+      {
+        "exists": true,
+        "extension": ".xml",
+        "path": "backend/fixtures/senate_xml_sample/members.xml",
+        "record_count": null
+      },
+      {
+        "exists": true,
+        "extension": ".xml",
+        "path": "backend/fixtures/senate_xml_sample/vote_001.xml",
+        "record_count": null
+      },
+      {
+        "exists": true,
+        "extension": ".xml",
+        "path": "backend/fixtures/senate_xml_sample/vote_002.xml",
+        "record_count": null
+      },
+      {
+        "exists": true,
+        "extension": ".xml",
+        "path": "backend/fixtures/senate_xml_sample/vote_003.xml",
+        "record_count": null
+      },
+      {
+        "exists": true,
+        "extension": ".xml",
+        "path": "backend/fixtures/senate_xml_sample/vote_004.xml",
+        "record_count": null
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/senate_xml_sample/zip_district_map.json",
+        "record_count": 2
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/vote_subject_tags.json",
+        "record_count": 12
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/votes_cast.json",
+        "record_count": 21
+      },
+      {
+        "exists": true,
+        "extension": ".json",
+        "path": "backend/fixtures/zip_district_map.json",
+        "record_count": 2
+      }
+    ],
+    "json_file_count": 15,
+    "path": "backend/fixtures",
+    "xml_file_count": 10
+  },
+  "interpretation_coverage": {
+    "ambiguous_or_limited_context_rows": 437,
+    "files_with_interpretation_like_rows": [
+      {
+        "interpretation_like_rows": 239,
+        "path": "docs/interpretation_batches/118th_house_amendment_substantive_candidates.json"
+      },
+      {
+        "interpretation_like_rows": 48,
+        "path": "docs/interpretation_batches/batch_001_nc_starter_interpretations.json"
+      },
+      {
+        "interpretation_like_rows": 48,
+        "path": "docs/interpretation_batches/batch_001_nc_starter_interpretations_v2.json"
+      },
+      {
+        "interpretation_like_rows": 96,
+        "path": "docs/interpretation_batches/batch_001_nc_starter_packets.json"
+      },
+      {
+        "interpretation_like_rows": 14,
+        "path": "docs/interpretation_batches/batch_001_nc_starter_packets_enriched.json"
+      },
+      {
+        "interpretation_like_rows": 96,
+        "path": "docs/interpretation_batches/batch_001_nc_starter_packets_enriched_full.json"
+      },
+      {
+        "interpretation_like_rows": 12,
+        "path": "docs/interpretation_batches/batch_002_valerie_national_security_interpretations.json"
+      },
+      {
+        "interpretation_like_rows": 24,
+        "path": "docs/interpretation_batches/batch_002_valerie_national_security_packets.json"
+      },
+      {
+        "interpretation_like_rows": 24,
+        "path": "docs/interpretation_batches/batch_002_valerie_national_security_packets_enriched.json"
+      },
+      {
+        "interpretation_like_rows": 10,
+        "path": "docs/interpretation_batches/batch_003_valerie_national_security_remaining_interpretations.json"
+      },
+      {
+        "interpretation_like_rows": 20,
+        "path": "docs/interpretation_batches/batch_003_valerie_national_security_remaining_packets.json"
+      },
+      {
+        "interpretation_like_rows": 2,
+        "path": "docs/interpretation_batches/batch_004_budget_resolution_punchup.json"
+      },
+      {
+        "interpretation_like_rows": 7,
+        "path": "docs/interpretation_batches/batch_004_procedural_context_house_rules_justice.json"
+      },
+      {
+        "interpretation_like_rows": 4,
+        "path": "docs/interpretation_batches/batch_005_nc_senate_national_security_interpretations.json"
+      },
+      {
+        "interpretation_like_rows": 8,
+        "path": "docs/interpretation_batches/batch_005_nc_senate_national_security_packets.json"
+      },
+      {
+        "interpretation_like_rows": 9,
+        "path": "docs/interpretation_batches/batch_006_valerie_economy_gold_interpretations.json"
+      },
+      {
+        "interpretation_like_rows": 18,
+        "path": "docs/interpretation_batches/batch_006_valerie_economy_gold_packets.json"
+      },
+      {
+        "interpretation_like_rows": 18,
+        "path": "docs/interpretation_batches/batch_006_valerie_economy_gold_packets_so_what.json"
+      },
+      {
+        "interpretation_like_rows": 7,
+        "path": "docs/interpretation_batches/batch_007_thom_infra_interpretations.json"
+      },
+      {
+        "interpretation_like_rows": 14,
+        "path": "docs/interpretation_batches/batch_007_thom_infra_packets.json"
+      },
+      {
+        "interpretation_like_rows": 26,
+        "path": "docs/interpretation_batches/batch_008_valerie_justice_packets_so_what.json"
+      },
+      {
+        "interpretation_like_rows": 6,
+        "path": "docs/interpretation_batches/batch_008_valerie_justice_punchup_interpretations.json"
+      },
+      {
+        "interpretation_like_rows": 26,
+        "path": "docs/interpretation_batches/batch_008_valerie_justice_punchup_packets.json"
+      },
+      {
+        "interpretation_like_rows": 14,
+        "path": "docs/interpretation_batches/batch_009_valerie_visible_domain_interpretations.json"
+      },
+      {
+        "interpretation_like_rows": 28,
+        "path": "docs/interpretation_batches/batch_009_valerie_visible_domain_packets.json"
+      },
+      {
+        "interpretation_like_rows": 28,
+        "path": "docs/interpretation_batches/batch_009_valerie_visible_domains_packets_so_what.json"
+      },
+      {
+        "interpretation_like_rows": 2,
+        "path": "docs/interpretation_batches/batch_010_halt_fentanyl_trahan_amendment_candidate.json"
+      },
+      {
+        "interpretation_like_rows": 2,
+        "path": "docs/interpretation_batches/batch_011_lower_health_care_premiums_final_passage_candidate.json"
+      },
+      {
+        "interpretation_like_rows": 3,
+        "path": "docs/interpretation_batches/batch_012_health_rule_hres953_procedural_context_candidates.json"
+      },
+      {
+        "interpretation_like_rows": 3,
+        "path": "docs/interpretation_batches/batch_013_education_rule_hres916_procedural_context_candidates.json"
+      },
+      {
+        "interpretation_like_rows": 3,
+        "path": "docs/interpretation_batches/batch_014_energy_budget_rule_hres161_procedural_context_candidates.json"
+      },
+      {
+        "interpretation_like_rows": 7,
+        "path": "docs/interpretation_batches/batch_015_senate_sjres55_procedural_context_candidates.json"
+      },
+      {
+        "interpretation_like_rows": 10,
+        "path": "docs/interpretation_batches/batch_016_senate_amendment_value_substantive_candidates.json"
+      },
+      {
+        "interpretation_like_rows": 39,
+        "path": "docs/interpretation_batches/batch_017_senate_substantive_enrichment_candidates.json"
+      },
+      {
+        "interpretation_like_rows": 6,
+        "path": "docs/interpretation_batches/batch_018_senate_procedural_context_candidates.json"
+      },
+      {
+        "interpretation_like_rows": 1,
+        "path": "docs/review_packets/118th_house_amendment_evidence_prewrite_review.json"
+      }
+    ],
+    "interpretation_like_rows": 922,
+    "not_voting_rows_detected": 0,
+    "paths_inspected": [
+      "docs/interpretation_batches/*.json",
+      "docs/review_packets/*manifest*.json and selected prewrite/audit JSON"
+    ],
+    "rows_by_domain": {
+      "ECONOMY_TAXES": 30,
+      "EDUCATION_WORKFORCE": 4,
+      "ENVIRONMENT_ENERGY": 3,
+      "HEALTH_SOCIAL": 21,
+      "INFRASTRUCTURE_TECH_TRANSPORT": 13,
+      "JUSTICE_PUBLIC_SAFETY": 4,
+      "NATIONAL_SECURITY_FOREIGN": 1,
+      "unknown": 846
+    },
+    "rows_excluded_from_top_level_summary_candidate": 547,
+    "rows_missing_caveat_or_uncertainty_field": 485,
+    "rows_missing_interpretation_reason": 373,
+    "rows_missing_what_happened": 595,
+    "rows_missing_why_it_mattered": 595,
+    "rows_with_interpreted_support_opposition": 375,
+    "status_counts": {
+      "ambiguous": 42,
+      "insufficient_evidence": 92,
+      "interpreted": 416,
+      "interpreted | ambiguous | insufficient_evidence": 220,
+      "missing": 152
+    }
+  },
+  "legislator_metadata_inventory": {
+    "congress_member_files": [
+      {
+        "congress": 118,
+        "member_count": 554,
+        "path": "backend/data_sources/congress/members/118_members.json"
+      }
+    ],
+    "congress_member_metadata": {
+      "by_chamber": {
+        "House of Representatives": 444,
+        "Senate": 110
+      },
+      "by_currentness": {
+        "ended_before_2026": 91,
+        "ends_2026_or_later": 7,
+        "no_end_year_present": 456
+      },
+      "by_party": {
+        "Democratic": 270,
+        "Independent": 5,
+        "Republican": 279
+      },
+      "by_state": {
+        "Alabama": 9,
+        "Alaska": 3,
+        "American Samoa": 1,
+        "Arizona": 11,
+        "Arkansas": 6,
+        "California": 56,
+        "Colorado": 11,
+        "Connecticut": 7,
+        "Delaware": 3,
+        "District of Columbia": 1,
+        "Florida": 30,
+        "Georgia": 16,
+        "Guam": 1,
+        "Hawaii": 4,
+        "Idaho": 4,
+        "Illinois": 19,
+        "Indiana": 11,
+        "Iowa": 6,
+        "Kansas": 6,
+        "Kentucky": 8,
+        "Louisiana": 8,
+        "Maine": 4,
+        "Maryland": 10,
+        "Massachusetts": 11,
+        "Michigan": 15,
+        "Minnesota": 10,
+        "Mississippi": 6,
+        "Missouri": 10,
+        "Montana": 4,
+        "Nebraska": 6,
+        "Nevada": 6,
+        "New Hampshire": 4,
+        "New Jersey": 16,
+        "New Mexico": 5,
+        "New York": 30,
+        "North Carolina": 16,
+        "North Dakota": 3,
+        "Northern Mariana Islands": 1,
+        "Ohio": 18,
+        "Oklahoma": 7,
+        "Oregon": 8,
+        "Pennsylvania": 19,
+        "Puerto Rico": 1,
+        "Rhode Island": 5,
+        "South Carolina": 9,
+        "South Dakota": 3,
+        "Tennessee": 11,
+        "Texas": 41,
+        "Utah": 7,
+        "Vermont": 3,
+        "Virgin Islands": 1,
+        "Virginia": 13,
+        "Washington": 12,
+        "West Virginia": 4,
+        "Wisconsin": 11,
+        "Wyoming": 3
+      },
+      "missing_identity_fields": {
+        "bioguideId": 0,
+        "lisId": 554,
+        "name": 0,
+        "slug": 554
+      },
+      "total": 554
+    },
+    "fixture_legislators": {
+      "by_chamber": {
+        "house": 1,
+        "senate": 2
+      },
+      "by_in_office": {
+        "True": 3
+      },
+      "by_party": {
+        "D": 2,
+        "R": 1
+      },
+      "by_state": {
+        "NC": 3
+      },
+      "missing_identity_fields": {
+        "bioguide_id": 0,
+        "lis_id": 3,
+        "name_display": 0,
+        "slug": 3
+      },
+      "source": "fixtures",
+      "total": 3
+    },
+    "identity_field_notes": [
+      "Fixture legislators have Bioguide IDs but no LIS ID or persisted slug field.",
+      "Congress.gov member cache uses bioguideId/name/state/partyName/terms and does not provide app slugs.",
+      "This is local metadata coverage, not the loaded production legislators table."
+    ]
+  },
+  "no_go_gates": [
+    "Do not treat this local manifest as production truth.",
+    "Do not publish Senate reads using House assumptions.",
+    "Do not add broad member coverage without per-member source and interpretation coverage reporting.",
+    "Do not generate top-level reads for thin, unreviewed, ambiguous, procedural, or not-voting-heavy evidence.",
+    "Do not expand national ZIP lookup without split-ZIP/address ambiguity handling.",
+    "Do not use Record Across artifacts to claim change, consistency, trend, or movement."
+  ],
+  "recommended_next_milestone": "Legislator metadata hardening, with currentness, term-boundary, identity, state/district, Senate LIS/Bioguide, and stale-member checks.",
+  "schema_version": "data_inventory_source_manifest_v1",
+  "scope": {
+    "coverage_statement": "Repository/local-accessible data only. Counts are not production coverage unless a future read-only production manifest is generated with credentials.",
+    "read_only": true,
+    "requires_production_credentials": false
+  },
+  "source_cache_inventory": {
+    "congress_gov": [
+      {
+        "exists": true,
+        "json_count": 12,
+        "path": "backend/data_sources/congress/amendments",
+        "source_type": "amendments"
+      },
+      {
+        "exists": true,
+        "json_count": 304,
+        "path": "backend/data_sources/congress/bills",
+        "source_type": "bills"
+      },
+      {
+        "exists": true,
+        "json_count": 96,
+        "path": "backend/data_sources/congress/bill_actions",
+        "source_type": "bill_actions"
+      },
+      {
+        "exists": true,
+        "json_count": 97,
+        "path": "backend/data_sources/congress/bill_amendments",
+        "source_type": "bill_amendments"
+      },
+      {
+        "exists": true,
+        "json_count": 25,
+        "path": "backend/data_sources/congress/bill_committees",
+        "source_type": "bill_committees"
+      },
+      {
+        "exists": true,
+        "json_count": 35,
+        "path": "backend/data_sources/congress/bill_subjects",
+        "source_type": "bill_subjects"
+      },
+      {
+        "exists": true,
+        "json_count": 35,
+        "path": "backend/data_sources/congress/bill_summaries",
+        "source_type": "bill_summaries"
+      },
+      {
+        "exists": true,
+        "json_count": 25,
+        "path": "backend/data_sources/congress/bill_texts",
+        "source_type": "bill_texts"
+      },
+      {
+        "exists": true,
+        "json_count": 1,
+        "path": "backend/data_sources/congress/members",
+        "source_type": "members"
+      }
+    ],
+    "house_clerk": [
+      {
+        "exists": true,
+        "path": "backend/data_sources/house_clerk/2023",
+        "roll_xml_count": 724,
+        "year": "2023"
+      },
+      {
+        "exists": true,
+        "path": "backend/data_sources/house_clerk/2024",
+        "roll_xml_count": 517,
+        "year": "2024"
+      },
+      {
+        "exists": false,
+        "path": "backend/data_sources/house_clerk/2025",
+        "roll_xml_count": 0,
+        "year": "2025"
+      },
+      {
+        "exists": true,
+        "path": "backend/data_sources/house_clerk/2026",
+        "roll_xml_count": 222,
+        "year": "2026"
+      }
+    ],
+    "loose_senate_xml_count": 618,
+    "paths_inspected": [
+      "backend/data_sources/house_clerk",
+      "backend/data_sources/senate_xml",
+      "backend/data_sources/congress"
+    ],
+    "senate_xml": [
+      {
+        "congress_session": "118_1",
+        "exists": true,
+        "members_xml_exists": true,
+        "path": "backend/data_sources/senate_xml/118_1",
+        "vote_xml_count": 352
+      },
+      {
+        "congress_session": "118_2",
+        "exists": true,
+        "members_xml_exists": true,
+        "path": "backend/data_sources/senate_xml/118_2",
+        "vote_xml_count": 339
+      },
+      {
+        "congress_session": "119_1",
+        "exists": false,
+        "members_xml_exists": false,
+        "path": "backend/data_sources/senate_xml/119_1",
+        "vote_xml_count": 0
+      },
+      {
+        "congress_session": "119_2",
+        "exists": true,
+        "members_xml_exists": true,
+        "path": "backend/data_sources/senate_xml/119_2",
+        "vote_xml_count": 178
+      }
+    ]
+  },
+  "source_url_coverage": {
+    "missing_examples": [],
+    "non_official_examples": [
+      "https://example.com/rollcalls/house/1",
+      "https://example.com/rollcalls/house/2",
+      "https://example.com/rollcalls/house/3",
+      "https://example.com/rollcalls/house/4",
+      "https://example.com/rollcalls/house/5"
+    ],
+    "paths_inspected": [
+      "backend/fixtures/roll_calls.json",
+      "docs/interpretation_batches/*.json",
+      "docs/review_packets/senate_vote_facts_expansion_manifest_phase_11.json"
+    ],
+    "rows_missing_source_url": 0,
+    "rows_with_malformed_source_url": 0,
+    "rows_with_non_official_source_url": 14,
+    "rows_with_official_source_url": 1277,
+    "rows_with_source_url": 1291,
+    "rows_with_source_url_by_chamber_congress_domain": {
+      "house:118:unknown": 7,
+      "house:unknown:EDUCATION_WORKFORCE": 2,
+      "house:unknown:ENVIRONMENT_ENERGY": 2,
+      "house:unknown:HEALTH_SOCIAL": 3,
+      "house:unknown:JUSTICE_PUBLIC_SAFETY": 1,
+      "senate:118:unknown": 7,
+      "senate:unknown:ECONOMY_TAXES": 30,
+      "senate:unknown:EDUCATION_WORKFORCE": 1,
+      "senate:unknown:HEALTH_SOCIAL": 16,
+      "senate:unknown:INFRASTRUCTURE_TECH_TRANSPORT": 12,
+      "senate:unknown:JUSTICE_PUBLIC_SAFETY": 1,
+      "senate:unknown:NATIONAL_SECURITY_FOREIGN": 1,
+      "unknown:119:unknown": 374,
+      "unknown:unknown:unknown": 834
+    },
+    "total_rows_with_source_url_field": 1291
+  },
+  "vote_row_inventory": {
+    "fixture_member_vote_rows": 21,
+    "fixture_roll_call_rows": 14,
+    "fixture_subject_tag_counts": {
+      "Border Security": 1,
+      "Ceremonies": 1,
+      "Climate": 1,
+      "Commemorations": 1,
+      "Commerce": 1,
+      "Congress": 2,
+      "Criminal Justice": 1,
+      "Defense": 1,
+      "Education": 2,
+      "Energy": 1,
+      "Foreign Policy": 1,
+      "Health": 1,
+      "Immigration": 1,
+      "Infrastructure": 2,
+      "Public Health": 1,
+      "Public Safety": 1,
+      "Taxation": 1,
+      "Technology": 2,
+      "Workforce": 2
+    },
+    "interpretation_note": "Fixture vote rows have positions but do not encode reviewed support/opposition semantics.",
+    "member_vote_position_counts": {
+      "nay": 4,
+      "not_voting": 2,
+      "present": 2,
+      "yea": 13
+    },
+    "member_vote_rows_by_chamber_congress": {
+      "house:118": 7,
+      "senate:118": 14
+    },
+    "roll_call_source_url_missing": 0,
+    "roll_call_source_url_present": 14,
+    "roll_calls_by_chamber_congress_session": {
+      "house:118:session_2": 3,
+      "house:118:session_unknown": 4,
+      "senate:118:session_2": 3,
+      "senate:118:session_unknown": 4
+    },
+    "roll_calls_by_chamber_year": {
+      "house:2024": 3,
+      "house:2025": 4,
+      "senate:2024": 3,
+      "senate:2025": 4
+    }
+  },
+  "warnings": [
+    "This manifest describes repository/local-accessible files only; it is not production coverage truth.",
+    "The script does not use production credentials and cannot distinguish loaded production rows from local caches.",
+    "House Clerk cache gap: 2025 has 0 roll XML files at backend/data_sources/house_clerk/2025.",
+    "Senate XML cache gap: 119_1 has 0 vote XML files at backend/data_sources/senate_xml/119_1.",
+    "Fixture data is present and intentionally small; fallback coverage must not be presented as production coverage.",
+    "Fixture legislator metadata missing lis_id for 3 rows.",
+    "Fixture legislator metadata missing slug for 3 rows.",
+    "Source URL trust gap: 14 inspected rows have non-official source URLs.",
+    "Interpretation coverage gap: 547 interpretation-like rows are not interpreted support/opposition candidates.",
+    "Record Across artifacts are House-only and must not be used as Senate comparison support.",
+    "Senate-specific vote types, nominations, treaties, cloture, and amendment references still need separate public-read gates."
+  ],
+  "zip_district_inventory": {
+    "ambiguity_detection_limit": "Only multiple mappings present in local fixture files are detectable; address-level split ZIP coverage is not represented.",
+    "by_district": {
+      "CA-12": 1,
+      "NC-02": 1,
+      "NC-04": 6,
+      "TX-07": 1
+    },
+    "by_state": {
+      "CA": 1,
+      "NC": 7,
+      "TX": 1
+    },
+    "fixture_only_mapping_rows": 9,
+    "multi_district_zips_detected": {
+      "27601": [
+        "NC-02",
+        "NC-04"
+      ]
+    },
+    "paths": [
+      {
+        "fixture_only": true,
+        "mapping_count": 2,
+        "path": "backend/fixtures/congress_sample/zip_district_map.json"
+      },
+      {
+        "fixture_only": true,
+        "mapping_count": 3,
+        "path": "backend/fixtures/house_clerk_sample/zip_district_map.json"
+      },
+      {
+        "fixture_only": true,
+        "mapping_count": 2,
+        "path": "backend/fixtures/senate_xml_sample/zip_district_map.json"
+      },
+      {
+        "fixture_only": true,
+        "mapping_count": 2,
+        "path": "backend/fixtures/zip_district_map.json"
+      }
+    ],
+    "total_mapping_rows": 9,
+    "unique_zips": 4
+  }
+}
