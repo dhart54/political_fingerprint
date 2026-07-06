@@ -1,0 +1,900 @@
+{
+  "ambiguity_findings": {
+    "address_level_resolution_implemented": false,
+    "detection_limit": "Only multiple mappings present in repository/local-accessible files are detectable here; address-level split-ZIP coverage is not represented.",
+    "multi_district_zips": {
+      "27601": [
+        "NC-02",
+        "NC-04"
+      ]
+    },
+    "multi_state_zips": {},
+    "one_zip_one_district_assumption_detected": true,
+    "split_zip_rows": [
+      {
+        "district": "04",
+        "source_file": "backend/fixtures/congress_sample/zip_district_map.json",
+        "state": "NC",
+        "zip": "27601"
+      },
+      {
+        "district": "02",
+        "source_file": "backend/fixtures/senate_xml_sample/zip_district_map.json",
+        "state": "NC",
+        "zip": "27601"
+      },
+      {
+        "district": "04",
+        "source_file": "backend/fixtures/zip_district_map.json",
+        "state": "NC",
+        "zip": "27601"
+      }
+    ]
+  },
+  "current_lookup_assumption_map": {
+    "empty_search_exposes_loaded_legislators": {
+      "detected": true,
+      "evidence": "Empty q is allowed and DB query returns all legislators when q is empty."
+    },
+    "etl_zip_bundle_dedupes_by_zip": {
+      "detected": true,
+      "evidence": "Seed and refresh bundle merges dedupe zip_district_map rows by ZIP."
+    },
+    "fallback_sample_zip_risk": {
+      "detected": true,
+      "evidence": "Frontend displays loaded ZIP mappings from the returned data_source, including fixtures."
+    },
+    "frontend_auto_selects_house_profile": {
+      "detected": true,
+      "evidence": "Successful ZIP lookup auto-selects the returned House representative when present."
+    },
+    "frontend_default_zip": {
+      "detected": true,
+      "evidence": "ZipLookupPanel auto-runs default ZIP 27701 on mount."
+    },
+    "frontend_sample_profile_label": {
+      "detected": true,
+      "evidence": "Home page labels the initial default profile as sample before user lookup/search."
+    },
+    "frontend_single_mapping_copy": {
+      "detected": true,
+      "evidence": "ZipLookupPanel renders `ZIP ... maps to state-district`."
+    },
+    "house_member_selection_order_by_id_limit_1": {
+      "detected": true,
+      "evidence": "backend/app/api/precomputed.py selects one House row using ORDER BY id LIMIT 1."
+    },
+    "house_member_selection_uses_state_plus_district": {
+      "detected": true,
+      "evidence": "backend/app/api/precomputed.py filters House rows by chamber, state, and district."
+    },
+    "lookup_returns_single_district": {
+      "detected": true,
+      "evidence": "DB lookup uses one zip_record; fallback uses next(...) for first matching fixture ZIP row."
+    },
+    "route_file_contains_lookup_zip": true,
+    "search_implemented_in": [
+      "backend/app/api/search.py",
+      "backend/app/api/precomputed.py"
+    ],
+    "senators_selected_by_state_only": {
+      "detected": true,
+      "evidence": "Senate rows are selected by state only."
+    },
+    "supported_zips_fixture_or_sample_driven": {
+      "detected": true,
+      "evidence": "/lookup/zips returns fixture fallback mappings when DB rows are unavailable."
+    },
+    "zip_lookup_implemented_in": [
+      "backend/app/api/lookup.py",
+      "backend/app/api/precomputed.py",
+      "frontend/lib/api.js",
+      "frontend/components/ZipLookupPanel.js"
+    ],
+    "zip_treated_as_unique": {
+      "detected": true,
+      "evidence": "backend/migrations/0001_initial_schema.sql defines zip_district_map.zip as PRIMARY KEY."
+    }
+  },
+  "expansion_gates": [
+    "No auto-select House member when a ZIP maps to multiple districts.",
+    "No national ZIP dataset without source, retrieval date, coverage date, and version metadata.",
+    "No unsupported ZIP fallback that appears as production coverage.",
+    "No ambiguous ZIP result without user-facing ambiguity messaging.",
+    "No district match unless current House member metadata passes identity/currentness gates.",
+    "No Senate state selection without currentness, seat, or class metadata caveats."
+  ],
+  "house_member_match_findings": {
+    "local_house_rows_inspected": 2213,
+    "matching_limit": "Local House matches are repository/local-accessible rows only; this does not certify production currentness or loaded production seat coverage.",
+    "per_mapping_house_match_summary": [
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/congress_sample/zip_district_map.json",
+        "state": "NC",
+        "zip": "27701"
+      },
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/congress_sample/zip_district_map.json",
+        "state": "NC",
+        "zip": "27601"
+      },
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/house_clerk_sample/zip_district_map.json",
+        "state": "NC",
+        "zip": "27701"
+      },
+      {
+        "district": "07",
+        "matching_current_house_people": 2,
+        "matching_current_house_source_rows": 2,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000468",
+            "name_display": "Fletcher, Lizzie",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "T000007",
+            "name_display": "Blake Turner",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/house_clerk_sample/zip_district_map.json",
+        "state": "TX",
+        "zip": "77007"
+      },
+      {
+        "district": "12",
+        "matching_current_house_people": 2,
+        "matching_current_house_source_rows": 2,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "L000551",
+            "name_display": "Lee, Barbara",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "P000012",
+            "name_display": "Morgan Patel",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/house_clerk_sample/zip_district_map.json",
+        "state": "CA",
+        "zip": "94102"
+      },
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/senate_xml_sample/zip_district_map.json",
+        "state": "NC",
+        "zip": "27701"
+      },
+      {
+        "district": "02",
+        "matching_current_house_people": 1,
+        "matching_current_house_source_rows": 1,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "R000305",
+            "name_display": "Ross, Deborah K.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          }
+        ],
+        "source_file": "backend/fixtures/senate_xml_sample/zip_district_map.json",
+        "state": "NC",
+        "zip": "27601"
+      },
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/zip_district_map.json",
+        "state": "NC",
+        "zip": "27701"
+      },
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/zip_district_map.json",
+        "state": "NC",
+        "zip": "27601"
+      }
+    ],
+    "unique_current_house_seats_inspected": 864,
+    "zip_rows_with_multiple_matching_current_house_legislators": [
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/congress_sample/zip_district_map.json",
+        "state": "NC",
+        "zip": "27701"
+      },
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/congress_sample/zip_district_map.json",
+        "state": "NC",
+        "zip": "27601"
+      },
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/house_clerk_sample/zip_district_map.json",
+        "state": "NC",
+        "zip": "27701"
+      },
+      {
+        "district": "07",
+        "matching_current_house_people": 2,
+        "matching_current_house_source_rows": 2,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000468",
+            "name_display": "Fletcher, Lizzie",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "T000007",
+            "name_display": "Blake Turner",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/house_clerk_sample/zip_district_map.json",
+        "state": "TX",
+        "zip": "77007"
+      },
+      {
+        "district": "12",
+        "matching_current_house_people": 2,
+        "matching_current_house_source_rows": 2,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "L000551",
+            "name_display": "Lee, Barbara",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "P000012",
+            "name_display": "Morgan Patel",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/house_clerk_sample/zip_district_map.json",
+        "state": "CA",
+        "zip": "94102"
+      },
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/senate_xml_sample/zip_district_map.json",
+        "state": "NC",
+        "zip": "27701"
+      },
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/zip_district_map.json",
+        "state": "NC",
+        "zip": "27701"
+      },
+      {
+        "district": "04",
+        "matching_current_house_people": 3,
+        "matching_current_house_source_rows": 4,
+        "matching_house_examples": [
+          {
+            "bioguide_id": "F000477",
+            "name_display": "Foushee, Valerie P.",
+            "source_file": "backend/data_sources/congress/members/118_members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/congress_sample/members.json"
+          },
+          {
+            "bioguide_id": "H000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/legislators.json"
+          },
+          {
+            "bioguide_id": "M000001",
+            "name_display": "Alex Morgan",
+            "source_file": "backend/fixtures/house_clerk_sample/members.xml"
+          }
+        ],
+        "source_file": "backend/fixtures/zip_district_map.json",
+        "state": "NC",
+        "zip": "27601"
+      }
+    ],
+    "zip_rows_without_matching_local_house_legislator": []
+  },
+  "no_go_items": [
+    "Do not treat this local ZIP report as production coverage truth.",
+    "Do not download or ingest national ZIP data in this milestone.",
+    "Do not mutate local or production databases.",
+    "Do not change public lookup or frontend product behavior in this milestone.",
+    "Do not implement address-level district resolution here.",
+    "Do not auto-select a House member from split or ambiguous ZIP evidence."
+  ],
+  "public_lookup_risk_analysis": [
+    "ZIP-only lookup can be wrong for split ZIPs because a ZIP can contain addresses from multiple House districts.",
+    "A one-ZIP-one-district table cannot safely scale nationally without ambiguity detection and user-facing handling.",
+    "Address-level lookup or an ambiguity UI is needed before national ZIP rollout.",
+    "Fallback/sample ZIP mappings must be clearly labeled so fixture coverage is not mistaken for production coverage.",
+    "Current NC fixture behavior should not be generalized to national coverage or address-accurate representation.",
+    "Auto-selecting a House profile from an ambiguous ZIP would overstate what the ZIP evidence can prove."
+  ],
+  "recommended_next_milestone": "Address-level lookup or ambiguity UI design spike, followed by a read-only production ZIP coverage companion report before national ZIP rollout.",
+  "schema_version": "zip_district_ambiguity_hardening_v1",
+  "scope": {
+    "coverage_statement": "This is repository/local-accessible ZIP and district metadata only. It is not production coverage truth unless a future read-only production report is generated with credentials.",
+    "production_credentials_used": false,
+    "production_tables_queried": false,
+    "read_only": true,
+    "requires_production_credentials": false
+  },
+  "sources_inspected": [
+    {
+      "exists": true,
+      "notes": "ZIP lookup and supported ZIP route definitions.",
+      "path": "backend/app/api/lookup.py",
+      "source_kind": "backend_zip_lookup_routes"
+    },
+    {
+      "exists": true,
+      "notes": "Legislator search route and default empty query.",
+      "path": "backend/app/api/search.py",
+      "source_kind": "backend_search_routes"
+    },
+    {
+      "exists": true,
+      "notes": "DB and fallback ZIP lookup, House selection, Senate selection, and supported ZIP helpers.",
+      "path": "backend/app/api/precomputed.py",
+      "source_kind": "backend_lookup_helpers"
+    },
+    {
+      "exists": true,
+      "notes": "zip_district_map primary-key and state/district column constraints.",
+      "path": "backend/migrations/0001_initial_schema.sql",
+      "source_kind": "schema"
+    },
+    {
+      "exists": true,
+      "notes": "Default ZIP, result copy, supported ZIP copy, and auto-select behavior.",
+      "path": "frontend/components/ZipLookupPanel.js",
+      "source_kind": "frontend_zip_lookup"
+    },
+    {
+      "exists": true,
+      "notes": "Sample-profile copy around default profile state.",
+      "path": "frontend/app/page.js",
+      "source_kind": "frontend_home"
+    },
+    {
+      "exists": true,
+      "notes": "ZIP mapping insert/copy and bundle dedupe behavior.",
+      "path": "backend/app/etl/seed.py",
+      "source_kind": "etl_seed_import"
+    },
+    {
+      "exists": true,
+      "notes": "ZIP map loading from source directory.",
+      "path": "backend/app/etl/congress_adapter.py",
+      "source_kind": "etl_congress_adapter"
+    },
+    {
+      "exists": true,
+      "notes": "House member state/district parsing and ZIP map loading.",
+      "path": "backend/app/etl/house_clerk_adapter.py",
+      "source_kind": "etl_house_clerk_adapter"
+    },
+    {
+      "exists": true,
+      "notes": "Senate member state handling and ZIP map loading.",
+      "path": "backend/app/etl/senate_xml_adapter.py",
+      "source_kind": "etl_senate_xml_adapter"
+    },
+    {
+      "exists": true,
+      "notes": "Refresh bundle ZIP dedupe by ZIP.",
+      "path": "backend/app/etl/current_congress_refresh.py; backend/app/etl/historical_congress_refresh.py",
+      "source_kind": "etl_refresh_merge"
+    },
+    {
+      "exists": true,
+      "notes": "Repository/local ZIP mapping file.",
+      "path": "backend/fixtures/congress_sample/zip_district_map.json",
+      "row_count": 2,
+      "source_kind": "zip_district_map"
+    },
+    {
+      "exists": true,
+      "notes": "Repository/local ZIP mapping file.",
+      "path": "backend/fixtures/house_clerk_sample/zip_district_map.json",
+      "row_count": 3,
+      "source_kind": "zip_district_map"
+    },
+    {
+      "exists": true,
+      "notes": "Repository/local ZIP mapping file.",
+      "path": "backend/fixtures/senate_xml_sample/zip_district_map.json",
+      "row_count": 2,
+      "source_kind": "zip_district_map"
+    },
+    {
+      "exists": true,
+      "notes": "Repository/local ZIP mapping file.",
+      "path": "backend/fixtures/zip_district_map.json",
+      "row_count": 2,
+      "source_kind": "zip_district_map"
+    },
+    {
+      "exists": true,
+      "notes": "Local House metadata source used only for deterministic ZIP-to-House match checks.",
+      "path": "backend/data_sources/congress/members/118_members.json",
+      "row_count": 444,
+      "source_kind": "local_house_metadata"
+    },
+    {
+      "exists": true,
+      "notes": "Local House metadata source used only for deterministic ZIP-to-House match checks.",
+      "path": "backend/data_sources/house_clerk/2023/members.xml",
+      "row_count": 441,
+      "source_kind": "local_house_metadata"
+    },
+    {
+      "exists": true,
+      "notes": "Local House metadata source used only for deterministic ZIP-to-House match checks.",
+      "path": "backend/data_sources/house_clerk/2024/members.xml",
+      "row_count": 441,
+      "source_kind": "local_house_metadata"
+    },
+    {
+      "exists": true,
+      "notes": "Local House metadata source used only for deterministic ZIP-to-House match checks.",
+      "path": "backend/data_sources/house_clerk/2026/members.xml",
+      "row_count": 441,
+      "source_kind": "local_house_metadata"
+    },
+    {
+      "exists": true,
+      "notes": "Local House metadata source used only for deterministic ZIP-to-House match checks.",
+      "path": "backend/data_sources/house_clerk/members.xml",
+      "row_count": 441,
+      "source_kind": "local_house_metadata"
+    },
+    {
+      "exists": true,
+      "notes": "Local House metadata source used only for deterministic ZIP-to-House match checks.",
+      "path": "backend/fixtures/congress_sample/members.json",
+      "row_count": 1,
+      "source_kind": "local_house_metadata"
+    },
+    {
+      "exists": true,
+      "notes": "Local House metadata source used only for deterministic ZIP-to-House match checks.",
+      "path": "backend/fixtures/house_clerk_sample/members.xml",
+      "row_count": 3,
+      "source_kind": "local_house_metadata"
+    },
+    {
+      "exists": true,
+      "notes": "Local House metadata source used only for deterministic ZIP-to-House match checks.",
+      "path": "backend/fixtures/legislators.json",
+      "row_count": 1,
+      "source_kind": "local_house_metadata"
+    }
+  ],
+  "summary": {
+    "fixture_only_mapping_rows": 9,
+    "highest_findings": [
+      "Current lookup code and schema treat a ZIP as one state/district mapping.",
+      "Local ZIP mappings are fixture-only and should not be treated as production or national coverage.",
+      "Local fixtures detect split-ZIP ambiguity for ZIPs that map to more than one district.",
+      "ZIP-only lookup can auto-select a House member today, so national rollout needs ambiguity handling first."
+    ],
+    "non_fixture_mapping_rows": 0,
+    "unique_zips": 4,
+    "warnings_emitted": 8,
+    "zip_mapping_rows": 9
+  },
+  "warning_catalog": [
+    {
+      "active": true,
+      "message": "One-ZIP-one-district assumption is present in schema and lookup behavior.",
+      "warning_key": "one_zip_one_district_assumption"
+    },
+    {
+      "active": true,
+      "message": "Split ZIPs detected in local mappings: {\"27601\": [\"NC-02\", \"NC-04\"]}.",
+      "warning_key": "split_zips_detected"
+    },
+    {
+      "active": false,
+      "message": "Multi-state ZIPs detected in local mappings: {}.",
+      "warning_key": "multi_state_zips_detected"
+    },
+    {
+      "active": true,
+      "message": "Duplicate identical ZIP/state/district mappings are present across local source files.",
+      "warning_key": "duplicate_mappings"
+    },
+    {
+      "active": false,
+      "message": "ZIP rows missing state or district are present.",
+      "warning_key": "missing_state_or_district"
+    },
+    {
+      "active": false,
+      "message": "ZIP rows with invalid district values are present.",
+      "warning_key": "invalid_district_values"
+    },
+    {
+      "active": false,
+      "message": "ZIP rows without a matching local current House legislator are present.",
+      "warning_key": "no_matching_house_legislator"
+    },
+    {
+      "active": true,
+      "message": "ZIP rows with multiple matching current House legislators are present in local metadata.",
+      "warning_key": "multiple_matching_current_house_legislators"
+    },
+    {
+      "active": true,
+      "message": "All repository/local ZIP mappings are fixture-only and must not be treated as production coverage.",
+      "warning_key": "fixture_only_zip_mappings"
+    },
+    {
+      "active": true,
+      "message": "Fallback/sample ZIP behavior can be mistaken for production coverage without explicit labeling.",
+      "warning_key": "fallback_sample_zip_risk"
+    },
+    {
+      "active": true,
+      "message": "Production-vs-local ambiguity remains: this report does not query production credentials or production tables.",
+      "warning_key": "production_vs_local_ambiguity"
+    },
+    {
+      "active": true,
+      "message": "Address-level district resolution is not implemented in this milestone.",
+      "warning_key": "address_level_resolution_not_implemented"
+    }
+  ],
+  "warnings": [
+    "One-ZIP-one-district assumption is present in schema and lookup behavior.",
+    "Split ZIPs detected in local mappings: {\"27601\": [\"NC-02\", \"NC-04\"]}.",
+    "Duplicate identical ZIP/state/district mappings are present across local source files.",
+    "ZIP rows with multiple matching current House legislators are present in local metadata.",
+    "All repository/local ZIP mappings are fixture-only and must not be treated as production coverage.",
+    "Fallback/sample ZIP behavior can be mistaken for production coverage without explicit labeling.",
+    "Production-vs-local ambiguity remains: this report does not query production credentials or production tables.",
+    "Address-level district resolution is not implemented in this milestone."
+  ],
+  "zip_mapping_inventory": {
+    "counts_by_district": {
+      "CA-12": 1,
+      "NC-02": 1,
+      "NC-04": 6,
+      "TX-07": 1
+    },
+    "counts_by_source_file": {
+      "backend/fixtures/congress_sample/zip_district_map.json": 2,
+      "backend/fixtures/house_clerk_sample/zip_district_map.json": 3,
+      "backend/fixtures/senate_xml_sample/zip_district_map.json": 2,
+      "backend/fixtures/zip_district_map.json": 2
+    },
+    "counts_by_source_kind": {
+      "fixture": 9
+    },
+    "counts_by_state": {
+      "CA": 1,
+      "NC": 7,
+      "TX": 1
+    },
+    "counts_by_zip": {
+      "27601": 3,
+      "27701": 4,
+      "77007": 1,
+      "94102": 1
+    },
+    "duplicate_identical_mappings": [
+      {
+        "count": 2,
+        "mapping_key": "27601:NC:04",
+        "source_files": [
+          "backend/fixtures/congress_sample/zip_district_map.json",
+          "backend/fixtures/zip_district_map.json"
+        ]
+      },
+      {
+        "count": 4,
+        "mapping_key": "27701:NC:04",
+        "source_files": [
+          "backend/fixtures/congress_sample/zip_district_map.json",
+          "backend/fixtures/house_clerk_sample/zip_district_map.json",
+          "backend/fixtures/senate_xml_sample/zip_district_map.json",
+          "backend/fixtures/zip_district_map.json"
+        ]
+      }
+    ],
+    "fixture_only_mapping_rows": 9,
+    "fixture_vs_non_fixture_sources": {
+      "fixture_sources": [
+        "backend/fixtures/congress_sample/zip_district_map.json",
+        "backend/fixtures/house_clerk_sample/zip_district_map.json",
+        "backend/fixtures/senate_xml_sample/zip_district_map.json",
+        "backend/fixtures/zip_district_map.json"
+      ],
+      "non_fixture_sources": []
+    },
+    "invalid_district_rows": [],
+    "invalid_state_rows": [],
+    "invalid_zip_rows": [],
+    "missing_district_rows": [],
+    "missing_state_rows": [],
+    "non_fixture_mapping_rows": 0,
+    "total_mapping_rows": 9,
+    "unique_zips": 4
+  }
+}
