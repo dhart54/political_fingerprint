@@ -1,3 +1,5 @@
+from types import SimpleNamespace
+
 from app.api.precomputed import (
     get_drift_response,
     get_fingerprint_response,
@@ -229,8 +231,56 @@ def test_get_zip_lookup_response_uses_database_rows(monkeypatch) -> None:
     payload = get_zip_lookup_response(zip_code="85001")
 
     assert payload["zip"] == "85001"
+    assert payload["data_source"] == "database"
+    assert payload["lookup_metadata"]["stale_or_unknown_source"] is True
+    assert payload["district_mappings"] == [{"zip": "85001", "state": "AZ", "district": "02"}]
     assert payload["house_rep"]["id"] == "leg_casey_rivera"
     assert [senator["id"] for senator in payload["senators"]] == [
         "leg_morgan_patel",
         "leg_avery_brooks",
+    ]
+
+
+def test_get_zip_lookup_response_exposes_fixture_source_and_local_split_zip(monkeypatch) -> None:
+    monkeypatch.setattr("app.api.precomputed._get_db_zip_lookup_response", lambda *, zip_code: None)
+    monkeypatch.setattr(
+        "app.api.precomputed.FALLBACK_FIXTURE_DATA",
+        SimpleNamespace(
+            zip_district_map=[
+                {"zip": "27601", "state": "NC", "district": "04"},
+            ],
+            legislators=[
+                {
+                    "id": "leg_alex_morgan",
+                    "bioguide_id": "H000001",
+                    "name_display": "Alex Morgan",
+                    "chamber": "house",
+                    "state": "NC",
+                    "district": "04",
+                    "party": "D",
+                },
+                {
+                    "id": "leg_jordan_lee",
+                    "bioguide_id": "S000001",
+                    "name_display": "Jordan Lee",
+                    "chamber": "senate",
+                    "state": "NC",
+                    "district": None,
+                    "party": "R",
+                },
+            ],
+        ),
+    )
+    monkeypatch.setattr(
+        "app.api.precomputed._load_local_fixture_zip_mappings",
+        lambda: [{"zip": "27601", "state": "NC", "district": "02"}],
+    )
+
+    payload = get_zip_lookup_response(zip_code="27601")
+
+    assert payload["data_source"] == "fixtures"
+    assert payload["lookup_metadata"]["fixture_sample_only"] is True
+    assert payload["district_mappings"] == [
+        {"zip": "27601", "state": "NC", "district": "04"},
+        {"zip": "27601", "state": "NC", "district": "02"},
     ]

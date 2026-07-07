@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { fetchCandidateEvidence, fetchSupportedZips, fetchZipLookup, fetchZipRaces } from "../lib/api";
 import { formatDomainLabel } from "../lib/issueDomains";
+import { ZIP_LOOKUP_STATES, classifyZipLookupState } from "../lib/zipLookupState.mjs";
 
 const DEFAULT_ZIP = "27701";
 
@@ -18,6 +19,7 @@ export default function ZipLookupPanel({
   const [state, setState] = useState({
     status: "idle",
     payload: null,
+    lookupState: null,
     error: null,
   });
   const [supportedZips, setSupportedZips] = useState({
@@ -37,6 +39,7 @@ export default function ZipLookupPanel({
       setState({
         status: "error",
         payload: null,
+        lookupState: null,
         error: "Enter a valid 5-digit ZIP code.",
       });
       return;
@@ -46,46 +49,61 @@ export default function ZipLookupPanel({
       setState({
         status: "loading",
         payload: null,
+        lookupState: null,
         error: null,
       });
 
       const payload = await fetchZipLookup({ zipCode: nextZipCode });
-      loadZipRaces(nextZipCode);
+      const lookupState = classifyZipLookupState(payload);
+      if (lookupState.canAutoSelectHouse) {
+        loadZipRaces(nextZipCode);
+      } else {
+        resetRaceState();
+      }
       setSelectedComparisonPreset("house_first_senator");
       setState({
         status: "ready",
         payload,
+        lookupState,
         error: null,
       });
-      if (payload.house_rep) {
+      if (lookupState.canAutoSelectHouse && payload.house_rep) {
         onSelectLegislator?.(payload.house_rep);
       }
-      if (payload.house_rep && payload.senators?.[0]) {
+      if (lookupState.canAutoSelectHouse && lookupState.canAutoSelectSenate && payload.house_rep && payload.senators?.[0]) {
         onComparePair?.({
           left: payload.house_rep,
           right: payload.senators[0],
         });
       }
     } catch (error) {
-      const suggestions = buildZipSuggestion(supportedZips.zips);
+      const unsupportedPayload = {
+        zip: nextZipCode,
+        status: ZIP_LOOKUP_STATES.UNSUPPORTED_ZIP,
+        data_source: "none",
+        house_rep: null,
+        senators: [],
+        district_mappings: [],
+      };
+      const lookupState = classifyZipLookupState(unsupportedPayload);
       setState({
-        status: "error",
-        payload: null,
-        error: suggestions
-          ? `That ZIP code is not in the loaded map yet. Try ${suggestions}.`
-          : "That ZIP code is not in the loaded map yet.",
-      });
-      setRaceState({
-        status: "idle",
-        payload: null,
+        status: "ready",
+        payload: unsupportedPayload,
+        lookupState,
         error: null,
       });
-      onRaceStateChange?.({
-        status: "idle",
-        payload: null,
-        error: null,
-      });
+      resetRaceState();
     }
+  }
+
+  function resetRaceState() {
+    const idleState = {
+      status: "idle",
+      payload: null,
+      error: null,
+    };
+    setRaceState(idleState);
+    onRaceStateChange?.(idleState);
   }
 
   async function loadZipRaces(nextZipCode) {
@@ -169,6 +187,20 @@ export default function ZipLookupPanel({
     ? "rounded-2xl border border-cyan-900/15 bg-white p-3 shadow-[0_10px_28px_rgba(15,23,42,0.09)] lg:p-4"
     : "mt-8 rounded-[2rem] border border-stone-200 bg-white p-5 shadow-[0_16px_40px_rgba(15,23,42,0.08)] lg:p-6";
   const hasResult = state.status === "ready";
+  const lookupState = state.lookupState;
+  const payload = state.payload;
+  const showHouseCard =
+    hasResult &&
+    payload?.house_rep &&
+    lookupState?.state !== ZIP_LOOKUP_STATES.AMBIGUOUS_ZIP &&
+    lookupState?.state !== ZIP_LOOKUP_STATES.MULTI_STATE_ZIP &&
+    lookupState?.state !== ZIP_LOOKUP_STATES.UNSUPPORTED_ZIP;
+  const showSenateCards =
+    hasResult &&
+    payload?.senators?.length > 0 &&
+    lookupState?.state !== ZIP_LOOKUP_STATES.MULTI_STATE_ZIP &&
+    lookupState?.state !== ZIP_LOOKUP_STATES.UNSUPPORTED_ZIP;
+  const canAutoSelectHouse = Boolean(lookupState?.canAutoSelectHouse);
 
   return (
     <section className={sectionClassName}>
@@ -178,10 +210,10 @@ export default function ZipLookupPanel({
             Start Here
           </p>
           <h3 className="mt-1 font-serif text-[1.45rem] leading-[1] text-stone-950 sm:text-[1.85rem]">
-            {hasResult ? "Your officials" : "Start with your ZIP."}
+            {hasResult && canAutoSelectHouse ? "Your officials" : "Start with your ZIP."}
           </h3>
           <p className={`mt-2 max-w-2xl text-sm leading-5 text-stone-700 ${hasResult && isHero ? "sr-only" : ""}`}>
-            Load your House member and senators, then compare their records against the same issues.
+            Check whether the loaded ZIP map can safely identify a House district, then inspect voting records.
           </p>
         </div>
         <p className="text-xs uppercase tracking-[0.18em] text-stone-500">
@@ -222,7 +254,7 @@ export default function ZipLookupPanel({
             {state.status === "loading" ? "Looking up legislators..." : null}
             {state.status === "error" ? "Lookup unavailable" : null}
             {state.status === "ready"
-              ? `ZIP ${state.payload.zip} maps to ${state.payload.state}-${state.payload.district}.`
+              ? lookupState?.title || "Lookup result"
               : null}
           </p>
         </div>
@@ -231,36 +263,74 @@ export default function ZipLookupPanel({
           {state.status === "loading" ? "Loading House and Senate results." : null}
           {state.status === "error" ? state.error : null}
           {state.status === "ready"
-            ? `${state.payload.senators.length + (state.payload.house_rep ? 1 : 0)} officials ready to inspect.`
+            ? lookupState?.message
             : null}
         </p>
       </div>
+
+      {state.status === "ready" && lookupState ? (
+        <div className={`mt-3 rounded-xl border px-3 py-3 ${getLookupNoticeClass(lookupState.severity)}`}>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em]">
+                Lookup state: {formatLookupState(lookupState.state)}
+              </p>
+              {lookupState.caveats.length ? (
+                <div className="mt-2 grid gap-1.5">
+                  {lookupState.caveats.map((caveat) => (
+                    <p className="text-sm leading-5" key={caveat}>
+                      {caveat}
+                    </p>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+            <a
+              className="w-fit rounded-full border border-current px-3 py-2 text-xs uppercase tracking-[0.14em]"
+              href="#manual-representative-search"
+            >
+              Search by name
+            </a>
+          </div>
+          {lookupState.nextActions.length ? (
+            <ul className="mt-2 grid gap-1 text-sm leading-5">
+              {lookupState.nextActions.map((action) => (
+                <li key={action}>{action}</li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      ) : null}
 
       {state.status === "ready" ? (
         <div className="mt-2">
           {isHero ? (
             <div className="grid gap-2 sm:grid-cols-3">
-              <CompactOfficialButton
-                heading="House"
-                legislator={state.payload.house_rep}
-                onSelectLegislator={onSelectLegislator}
-              />
-              {state.payload.senators.map((senator) => (
+              {showHouseCard ? (
+                <CompactOfficialButton
+                  heading={canAutoSelectHouse ? "House" : "Loaded House"}
+                  legislator={state.payload.house_rep}
+                  onSelectLegislator={onSelectLegislator}
+                />
+              ) : null}
+              {showSenateCards ? state.payload.senators.map((senator) => (
                 <CompactOfficialButton
                   heading="Senate"
                   key={senator.id}
                   legislator={senator}
                   onSelectLegislator={onSelectLegislator}
                 />
-              ))}
+              )) : null}
             </div>
           ) : (
             <>
               <div className="mb-3 flex flex-wrap gap-2 rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-3">
                 <p className="w-full text-sm leading-5 text-stone-700">
-                  Your House profile opened below. Use these buttons to change the comparison pair.
+                  {canAutoSelectHouse
+                    ? "Your House profile opened below. Use these buttons to change the comparison pair."
+                    : "ZIP lookup did not auto-open a House profile. Use manual search or inspect clearly labeled loaded records."}
                 </p>
-                {state.payload.house_rep && state.payload.senators[0] ? (
+                {canAutoSelectHouse && state.payload.house_rep && state.payload.senators[0] ? (
                   <button
                     className={getComparePresetClass(selectedComparisonPreset === "house_first_senator")}
                     aria-label={`Compare ${state.payload.house_rep.name_display} with ${state.payload.senators[0].name_display}`}
@@ -276,7 +346,7 @@ export default function ZipLookupPanel({
                     House vs Senator
                   </button>
                 ) : null}
-                {state.payload.house_rep && state.payload.senators[1] ? (
+                {canAutoSelectHouse && state.payload.house_rep && state.payload.senators[1] ? (
                   <button
                     className={getComparePresetClass(selectedComparisonPreset === "house_second_senator")}
                     aria-label={`Compare ${state.payload.house_rep.name_display} with ${state.payload.senators[1].name_display}`}
@@ -292,7 +362,7 @@ export default function ZipLookupPanel({
                     House vs Other Senator
                   </button>
                 ) : null}
-                {state.payload.senators[0] && state.payload.senators[1] ? (
+                {lookupState.canAutoSelectSenate && state.payload.senators[0] && state.payload.senators[1] ? (
                   <button
                     className={getComparePresetClass(selectedComparisonPreset === "senators")}
                     aria-label={`Compare ${state.payload.senators[0].name_display} with ${state.payload.senators[1].name_display}`}
@@ -315,14 +385,17 @@ export default function ZipLookupPanel({
               </div>
 
               <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
-                <LegislatorCard
-                  accent="bg-cyan-100 text-cyan-900"
-                  heading="House Representative"
-                  legislator={state.payload.house_rep}
-                  onSelectLegislator={onSelectLegislator}
-                />
-                <div className="grid gap-4">
-                  {state.payload.senators.map((senator) => (
+                {showHouseCard ? (
+                  <LegislatorCard
+                    accent="bg-cyan-100 text-cyan-900"
+                    heading={canAutoSelectHouse ? "House Representative" : "Loaded House Record"}
+                    legislator={state.payload.house_rep}
+                    onSelectLegislator={onSelectLegislator}
+                  />
+                ) : null}
+                {showSenateCards ? (
+                  <div className="grid gap-4">
+                    {state.payload.senators.map((senator) => (
                     <LegislatorCard
                       accent="bg-emerald-100 text-emerald-900"
                       key={senator.id}
@@ -330,8 +403,9 @@ export default function ZipLookupPanel({
                       legislator={senator}
                       onSelectLegislator={onSelectLegislator}
                     />
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                ) : null}
               </div>
 
               {showElectionContext ? (
@@ -348,11 +422,14 @@ export default function ZipLookupPanel({
       {!isHero && supportedZips.status === "ready" && supportedZips.zips.length > 0 ? (
         <div className="mt-5 rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4">
           <p className="text-xs uppercase tracking-[0.24em] text-stone-500">
-            Loaded ZIP Coverage
+            Loaded ZIP Map
           </p>
           <p className="mt-2 text-sm leading-6 text-stone-700">
             Showing {supportedZips.zips.length} loaded ZIP {supportedZips.zips.length === 1 ? "mapping" : "mappings"}
-            {supportedZips.dataSource ? ` from ${supportedZips.dataSource}.` : "."}
+            {supportedZips.dataSource ? ` from ${supportedZips.dataSource}.` : "."}{" "}
+            {supportedZips.dataSource === "fixtures"
+              ? "This is sample coverage, not national coverage yet."
+              : "ZIPs are not always precise; ambiguous results stay gated."}
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
             {supportedZips.zips.slice(0, 8).map((row) => (
@@ -862,6 +939,23 @@ function getComparePresetClass(isSelected) {
   }
 
   return `${base} border-white bg-white text-cyan-900 hover:border-cyan-800/30 hover:bg-cyan-100 hover:text-cyan-950`;
+}
+
+function getLookupNoticeClass(severity) {
+  if (severity === "warning") {
+    return "border-amber-200 bg-amber-50 text-amber-950";
+  }
+  if (severity === "info") {
+    return "border-cyan-900/15 bg-cyan-50 text-cyan-950";
+  }
+  return "border-stone-200 bg-stone-50 text-stone-800";
+}
+
+function formatLookupState(value) {
+  return String(value || "unknown")
+    .split("_")
+    .map((segment) => segment[0].toUpperCase() + segment.slice(1))
+    .join(" ");
 }
 
 function formatChamber(chamber) {

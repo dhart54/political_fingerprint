@@ -1,6 +1,8 @@
+import json
 import re
 from dataclasses import dataclass
 from datetime import date
+from pathlib import Path
 from typing import Any
 
 from app.db import get_connection
@@ -358,7 +360,8 @@ def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
     if db_response is not None:
         return db_response
 
-    zip_record = next((row for row in FALLBACK_FIXTURE_DATA.zip_district_map if row["zip"] == zip_code), None)
+    zip_mappings = _get_fallback_zip_mappings(zip_code=zip_code)
+    zip_record = zip_mappings[0] if zip_mappings else None
     if zip_record is None:
         return None
 
@@ -382,6 +385,16 @@ def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
         "zip": zip_record["zip"],
         "state": zip_record["state"],
         "district": zip_record["district"],
+        "data_source": "fixtures",
+        "lookup_metadata": {
+            "source_type": "fixture_sample",
+            "source_retrieved_at": None,
+            "source_version": None,
+            "fixture_sample_only": True,
+            "stale_or_unknown_source": True,
+            "member_metadata_uncertain": False,
+        },
+        "district_mappings": [_serialize_zip_row(row) for row in zip_mappings],
         "house_rep": _serialize_legislator(house_rep) if house_rep is not None else None,
         "senators": [_serialize_legislator(legislator) for legislator in senators],
     }
@@ -452,6 +465,51 @@ def get_supported_zip_responses(*, limit: int = 12) -> dict[str, object]:
             for row in sorted(FALLBACK_FIXTURE_DATA.zip_district_map, key=lambda item: str(item["zip"]))[:limit]
         ],
     }
+
+
+def _get_fallback_zip_mappings(*, zip_code: str) -> list[dict[str, object]]:
+    rows = [
+        row
+        for row in FALLBACK_FIXTURE_DATA.zip_district_map
+        if str(row.get("zip")) == zip_code
+    ]
+    rows.extend(
+        row
+        for row in _load_local_fixture_zip_mappings()
+        if str(row.get("zip")) == zip_code
+    )
+
+    deduped: list[dict[str, object]] = []
+    seen: set[tuple[str, str, str]] = set()
+    for row in rows:
+        zip_value = row.get("zip")
+        state = row.get("state")
+        district = row.get("district")
+        if zip_value is None or state is None or district is None:
+            continue
+        key = (str(zip_value), str(state), str(district))
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append({
+            "zip": str(zip_value),
+            "state": str(state),
+            "district": str(district),
+        })
+    return deduped
+
+
+def _load_local_fixture_zip_mappings() -> list[dict[str, object]]:
+    fixtures_root = Path(__file__).resolve().parents[2] / "fixtures"
+    rows: list[dict[str, object]] = []
+    for path in sorted(fixtures_root.glob("**/zip_district_map.json")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(payload, list):
+            rows.extend(row for row in payload if isinstance(row, dict))
+    return rows
 
 
 def _normalize_profile_scope(scope: str | None) -> str:
@@ -801,6 +859,16 @@ def _get_db_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
         "zip": str(zip_record["zip"]),
         "state": str(zip_record["state"]),
         "district": str(zip_record["district"]),
+        "data_source": "database",
+        "lookup_metadata": {
+            "source_type": "database_zip_district_map",
+            "source_retrieved_at": None,
+            "source_version": None,
+            "fixture_sample_only": False,
+            "stale_or_unknown_source": True,
+            "member_metadata_uncertain": False,
+        },
+        "district_mappings": [_serialize_zip_row(zip_record)],
         "house_rep": _serialize_legislator(house_rep) if house_rep is not None else None,
         "senators": [_serialize_legislator(legislator) for legislator in senators],
     }

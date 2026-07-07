@@ -15,6 +15,7 @@ export default defineConfig({
     env: {
       ...process.env,
       ENABLE_GOLDEN_RENDER_FIXTURE: "1",
+      ENABLE_ZIP_LOOKUP_STATE_FIXTURE: "1",
     },
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

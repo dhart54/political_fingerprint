@@ -241,7 +241,10 @@ export default function HomePage() {
               />
             ) : null}
 
-            <details className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
+            <details
+              className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3"
+              id="manual-representative-search"
+            >
               <summary className="cursor-pointer text-sm font-medium text-stone-900 marker:text-cyan-900">
                 Search or switch official
               </summary>
