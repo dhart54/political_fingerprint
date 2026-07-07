@@ -87,10 +87,12 @@ export function classifyZipLookupState(payload = null) {
     payload?.data_source === "fixtures" ||
     payload?.dataSource === "fixtures" ||
     metadata.fixture_sample_only === true ||
-    metadata.source_type === "fixture_sample";
+    metadata.source_type === "fixture_sample" ||
+    metadata.source_currentness === "fixture_sample";
   const sourceKnown = hasKnownSourceMetadata(metadata);
   const sourceIsStaleOrUnknown =
     metadata.stale_or_unknown_source === true ||
+    metadata.source_currentness === "stale_or_unknown" ||
     metadata.currentness === "stale_or_unknown" ||
     (!isFixtureSample && !sourceKnown);
   const memberMetadataUncertain =
@@ -198,10 +200,15 @@ function uniqueValues(values) {
 }
 
 function hasKnownSourceMetadata(metadata) {
+  if (metadata.source_currentness === "current" || metadata.currentness === "current") {
+    return true;
+  }
   return Boolean(
     metadata.source_retrieved_at ||
       metadata.sourceRetrievedAt ||
       metadata.retrieved_at ||
+      metadata.source_effective_date ||
+      metadata.sourceEffectiveDate ||
       metadata.source_version ||
       metadata.sourceVersion ||
       metadata.version,

@@ -232,8 +232,29 @@ def test_get_zip_lookup_response_uses_database_rows(monkeypatch) -> None:
 
     assert payload["zip"] == "85001"
     assert payload["data_source"] == "database"
-    assert payload["lookup_metadata"]["stale_or_unknown_source"] is True
-    assert payload["district_mappings"] == [{"zip": "85001", "state": "AZ", "district": "02"}]
+    assert payload["lookup_metadata"] == {
+        "source_type": "database_zip_district_map",
+        "source_name": "zip_district_map",
+        "source_retrieved_at": None,
+        "source_effective_date": None,
+        "source_version": None,
+        "source_currentness": "stale_or_unknown",
+        "fixture_sample_only": False,
+        "stale_or_unknown_source": True,
+        "member_metadata_uncertain": False,
+        "can_represent_multiple_districts": False,
+        "ambiguity_detection_level": "single_row",
+    }
+    assert payload["district_mappings"] == [
+        {
+            "zip": "85001",
+            "state": "AZ",
+            "district": "02",
+            "source_type": "database_zip_district_map",
+            "source_name": "zip_district_map",
+            "source_version": None,
+        }
+    ]
     assert payload["house_rep"]["id"] == "leg_casey_rivera"
     assert [senator["id"] for senator in payload["senators"]] == [
         "leg_morgan_patel",
@@ -279,8 +300,34 @@ def test_get_zip_lookup_response_exposes_fixture_source_and_local_split_zip(monk
     payload = get_zip_lookup_response(zip_code="27601")
 
     assert payload["data_source"] == "fixtures"
-    assert payload["lookup_metadata"]["fixture_sample_only"] is True
+    assert payload["lookup_metadata"] == {
+        "source_type": "fixture_sample",
+        "source_name": "repository_fixture_zip_district_map",
+        "source_retrieved_at": None,
+        "source_effective_date": None,
+        "source_version": None,
+        "source_currentness": "fixture_sample",
+        "fixture_sample_only": True,
+        "stale_or_unknown_source": True,
+        "member_metadata_uncertain": False,
+        "can_represent_multiple_districts": True,
+        "ambiguity_detection_level": "local_fixture_scan",
+    }
     assert payload["district_mappings"] == [
-        {"zip": "27601", "state": "NC", "district": "04"},
-        {"zip": "27601", "state": "NC", "district": "02"},
+        {
+            "zip": "27601",
+            "state": "NC",
+            "district": "04",
+            "source_type": "fixture_sample",
+            "source_name": "repository_fixture_zip_district_map",
+            "source_version": None,
+        },
+        {
+            "zip": "27601",
+            "state": "NC",
+            "district": "02",
+            "source_type": "fixture_sample",
+            "source_name": "repository_fixture_zip_district_map",
+            "source_version": None,
+        },
     ]

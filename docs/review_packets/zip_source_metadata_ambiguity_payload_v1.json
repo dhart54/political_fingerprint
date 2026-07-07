@@ -1,0 +1,240 @@
+{
+  "ambiguity_capability_by_source": {
+    "database": {
+      "ambiguity_detection_level": "single_row",
+      "auto_select_house_allowed_today": false,
+      "can_represent_multiple_districts": false,
+      "data_source": "database",
+      "notes": "Current DB schema stores one row per ZIP and has no source metadata columns.",
+      "source_currentness": "stale_or_unknown"
+    },
+    "fixtures": {
+      "ambiguity_detection_level": "local_fixture_scan",
+      "auto_select_house_allowed_today": false,
+      "can_represent_multiple_districts": true,
+      "data_source": "fixtures",
+      "notes": "Local fixture scan can expose split ZIP rows but is sample coverage only.",
+      "source_currentness": "fixture_sample"
+    },
+    "none": {
+      "ambiguity_detection_level": "none",
+      "auto_select_house_allowed_today": false,
+      "can_represent_multiple_districts": false,
+      "data_source": "none",
+      "notes": "Unsupported ZIPs have no district mappings and no officials.",
+      "source_currentness": "unsupported"
+    }
+  },
+  "api_response_contract": {
+    "api_responses_include_standard_metadata_fields": true,
+    "backend_lookup_file": "backend/app/api/precomputed.py",
+    "db_path_ambiguity_detection_level": "single_row",
+    "db_path_declares_stale_or_unknown": true,
+    "district_mapping_source_fields_present": true,
+    "district_mappings_field_present": true,
+    "fixture_path_ambiguity_detection_level": "local_fixture_scan",
+    "fixture_path_declares_fixture_sample": true,
+    "standard_metadata_fields_present": {
+      "ambiguity_detection_level": true,
+      "can_represent_multiple_districts": true,
+      "fixture_sample_only": true,
+      "member_metadata_uncertain": true,
+      "source_currentness": true,
+      "source_effective_date": true,
+      "source_name": true,
+      "source_retrieved_at": true,
+      "source_type": true,
+      "source_version": true,
+      "stale_or_unknown_source": true
+    },
+    "unsupported_limitation": "The backend route still returns 404 for unsupported ZIPs; the frontend converts that failure into a local unsupported payload with data_source none, empty district_mappings, and null officials.",
+    "unsupported_payload_backend_owned": false,
+    "unsupported_payload_frontend_normalized": true,
+    "unsupported_route_still_404": true
+  },
+  "coverage_checks": [
+    {
+      "check": "db_schema_can_store_multiple_districts_per_zip",
+      "passed": false
+    },
+    {
+      "check": "db_schema_can_store_source_name",
+      "passed": false
+    },
+    {
+      "check": "db_schema_can_store_source_retrieved_at",
+      "passed": false
+    },
+    {
+      "check": "db_schema_can_store_source_effective_date",
+      "passed": false
+    },
+    {
+      "check": "db_schema_can_store_source_version",
+      "passed": false
+    },
+    {
+      "check": "fixture_zip_files_include_source_metadata",
+      "passed": false
+    },
+    {
+      "check": "api_responses_include_standard_metadata_fields",
+      "passed": true
+    },
+    {
+      "check": "frontend_classifier_gates_missing_metadata",
+      "passed": true
+    },
+    {
+      "check": "current_db_path_remains_blocked_from_auto_select",
+      "passed": true
+    }
+  ],
+  "db_zip_metadata_coverage": {
+    "can_store_multiple_districts_per_zip": false,
+    "can_store_source_effective_date": false,
+    "can_store_source_metadata": false,
+    "can_store_source_name": false,
+    "can_store_source_retrieved_at": false,
+    "can_store_source_version": false,
+    "current_db_ambiguity_detection_level": "single_row",
+    "current_db_lookup_source_currentness": "stale_or_unknown",
+    "current_db_lookup_stale_or_unknown_source": true,
+    "evidence": "zip_district_map.zip is the primary key and the table has zip, state, district, created_at, and updated_at columns only.",
+    "schema_file": "backend/migrations/0001_initial_schema.sql",
+    "zip_primary_key": true,
+    "zip_table_found": true
+  },
+  "fixture_zip_metadata_coverage": {
+    "ambiguity_detection_level": "local_fixture_scan",
+    "can_represent_multiple_districts": true,
+    "counts_by_zip": {
+      "27601": 3,
+      "27701": 4,
+      "77007": 1,
+      "94102": 1
+    },
+    "fixture_files": [
+      "backend/fixtures/congress_sample/zip_district_map.json",
+      "backend/fixtures/house_clerk_sample/zip_district_map.json",
+      "backend/fixtures/senate_xml_sample/zip_district_map.json",
+      "backend/fixtures/zip_district_map.json"
+    ],
+    "fixture_row_count": 9,
+    "fixture_sample_only": true,
+    "fixture_zip_files_include_source_metadata": false,
+    "multi_district_zips": {
+      "27601": [
+        "NC-02",
+        "NC-04"
+      ]
+    },
+    "multi_state_zips": {},
+    "rows_with_all_source_metadata": 0,
+    "rows_with_source_effective_date": 0,
+    "rows_with_source_name": 0,
+    "rows_with_source_retrieved_at": 0,
+    "rows_with_source_version": 0,
+    "source_currentness": "fixture_sample",
+    "stale_or_unknown_source": true,
+    "unique_zips": 4
+  },
+  "frontend_gating_implications": {
+    "auto_select_only_single_district_ready": true,
+    "classifier_file": "frontend/lib/zipLookupState.mjs",
+    "current_db_path_remains_blocked_from_auto_select": true,
+    "current_source_metadata_can_be_ready": true,
+    "db_path_blocked_reason": "Backend DB payloads currently set source_currentness to stale_or_unknown and stale_or_unknown_source to true because the schema lacks source metadata fields.",
+    "gates_fixture_sample": true,
+    "gates_missing_metadata": true,
+    "gates_multiple_districts": true,
+    "gates_multiple_states": true,
+    "gates_unsupported": true
+  },
+  "known_limitations": [
+    "This report is repository/local-accessible only and does not certify production coverage truth.",
+    "Current DB ZIP schema cannot store multiple districts for one ZIP.",
+    "Current DB ZIP schema cannot store source name, retrieval date, effective date, or version.",
+    "Fixture ZIP files are sample coverage and do not include source metadata.",
+    "No provider or national ZIP data source has been selected or ingested.",
+    "The backend route still returns 404 for unsupported ZIPs; the frontend converts that failure into a local unsupported payload with data_source none, empty district_mappings, and null officials."
+  ],
+  "no_go_items": [
+    "No address lookup.",
+    "No Census, Google, Smarty, Cicero, or other provider integration.",
+    "No national ZIP data ingestion.",
+    "No local or production database mutation.",
+    "No fake DB source metadata.",
+    "No House auto-select for stale/unknown, fixture/sample, ambiguous, multi-state, unsupported, or uncertain-member states.",
+    "No vote interpretation, Record Across, issue read, or profile copy changes."
+  ],
+  "payload_contract": {
+    "data_source_values": [
+      "database",
+      "fixtures",
+      "none"
+    ],
+    "district": "04",
+    "district_mappings_item": {
+      "district": "04",
+      "source_name": "zip_district_map",
+      "source_type": "database_zip_district_map",
+      "source_version": null,
+      "state": "NC",
+      "zip": "27701"
+    },
+    "house_rep": "object or null",
+    "lookup_metadata": {
+      "ambiguity_detection_level_values": [
+        "single_row",
+        "local_fixture_scan",
+        "multi_row_source",
+        "none"
+      ],
+      "can_represent_multiple_districts": false,
+      "fixture_sample_only": false,
+      "member_metadata_uncertain": false,
+      "source_currentness_values": [
+        "current",
+        "stale_or_unknown",
+        "fixture_sample",
+        "unsupported"
+      ],
+      "source_effective_date": null,
+      "source_name": "zip_district_map",
+      "source_retrieved_at": null,
+      "source_type": "database_zip_district_map",
+      "source_version": null,
+      "stale_or_unknown_source": true
+    },
+    "senators": "array",
+    "state": "NC",
+    "zip": "27701"
+  },
+  "recommended_next_milestone": "ZIP Schema And Source Metadata Design V1: decide the DB shape for multi-district ZIP mappings, source name/retrieval/effective/version metadata, and production read-only coverage reporting before any national ZIP ingestion or address lookup.",
+  "schema_version": "zip_source_metadata_ambiguity_payload_v1",
+  "scope": {
+    "coverage_statement": "This is repository/local-accessible ZIP metadata only. It is not production coverage truth unless a future read-only production report is generated with credentials.",
+    "production_credentials_used": false,
+    "production_data_mutated": false,
+    "production_tables_queried": false,
+    "read_only": true,
+    "requires_production_credentials": false
+  },
+  "summary": {
+    "db_path_auto_select_blocked": true,
+    "db_path_source_currentness": "stale_or_unknown",
+    "fixture_path_source_currentness": "fixture_sample",
+    "fixture_unique_zips": 4,
+    "fixture_zip_rows": 9,
+    "highest_findings": [
+      "Database ZIP rows cannot yet store source name, retrieval date, effective date, or version metadata.",
+      "Database ZIP lookup remains conservatively gated as stale_or_unknown_source.",
+      "Fixture ZIP files do not include source metadata and remain fixture_sample_only.",
+      "The current schema cannot store multiple districts per ZIP because zip is the primary key.",
+      "Frontend auto-select remains blocked unless a payload classifies as single_district_ready."
+    ],
+    "recommended_next_milestone": "ZIP Schema And Source Metadata Design V1: decide the DB shape for multi-district ZIP mappings, source name/retrieval/effective/version metadata, and production read-only coverage reporting before any national ZIP ingestion or address lookup.",
+    "unsupported_payload_backend_owned": false
+  }
+}
