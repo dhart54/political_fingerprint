@@ -33,11 +33,29 @@ test("single district ready allows House auto-select", () => {
     state: "NC",
     district: "04",
     data_source: "database",
-    source_metadata: {
+    lookup_metadata: {
       source_type: "reviewed_zip_map",
+      source_name: "reviewed_zip_district_source",
       source_retrieved_at: "2026-07-01",
+      source_effective_date: "2026-01-03",
       source_version: "reviewed-v1",
+      source_currentness: "current",
+      fixture_sample_only: false,
+      stale_or_unknown_source: false,
+      member_metadata_uncertain: false,
+      can_represent_multiple_districts: true,
+      ambiguity_detection_level: "multi_row_source",
     },
+    district_mappings: [
+      {
+        zip: "27701",
+        state: "NC",
+        district: "04",
+        source_type: "reviewed_zip_map",
+        source_name: "reviewed_zip_district_source",
+        source_version: "reviewed-v1",
+      },
+    ],
     house_rep: houseRep,
     senators,
   });
@@ -93,6 +111,20 @@ test("unsupported ZIP blocks auto-select", () => {
   const result = classifyZipLookupState({
     zip: "99999",
     status: "unsupported_zip",
+    data_source: "none",
+    lookup_metadata: {
+      source_type: "none",
+      source_name: null,
+      source_retrieved_at: null,
+      source_effective_date: null,
+      source_version: null,
+      source_currentness: "unsupported",
+      fixture_sample_only: false,
+      stale_or_unknown_source: false,
+      member_metadata_uncertain: false,
+      can_represent_multiple_districts: false,
+      ambiguity_detection_level: "none",
+    },
     house_rep: null,
     senators: [],
     district_mappings: [],
@@ -112,6 +144,7 @@ test("fixture sample-only blocks production-style auto-select", () => {
     lookup_metadata: {
       fixture_sample_only: true,
       source_type: "fixture_sample",
+      source_currentness: "fixture_sample",
     },
     house_rep: houseRep,
     senators,
@@ -131,6 +164,43 @@ test("stale or unknown source blocks auto-select when modeled", () => {
     lookup_metadata: {
       stale_or_unknown_source: true,
     },
+    house_rep: houseRep,
+    senators,
+  });
+
+  assert.equal(result.state, ZIP_LOOKUP_STATES.STALE_OR_UNKNOWN_SOURCE);
+  assert.equal(result.canAutoSelectHouse, false);
+});
+
+test("standardized DB payload with missing source metadata stays stale or unknown", () => {
+  const result = classifyZipLookupState({
+    zip: "27701",
+    state: "NC",
+    district: "04",
+    data_source: "database",
+    lookup_metadata: {
+      source_type: "database_zip_district_map",
+      source_name: "zip_district_map",
+      source_retrieved_at: null,
+      source_effective_date: null,
+      source_version: null,
+      source_currentness: "stale_or_unknown",
+      fixture_sample_only: false,
+      stale_or_unknown_source: true,
+      member_metadata_uncertain: false,
+      can_represent_multiple_districts: false,
+      ambiguity_detection_level: "single_row",
+    },
+    district_mappings: [
+      {
+        zip: "27701",
+        state: "NC",
+        district: "04",
+        source_type: "database_zip_district_map",
+        source_name: "zip_district_map",
+        source_version: null,
+      },
+    ],
     house_rep: houseRep,
     senators,
   });

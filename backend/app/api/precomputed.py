@@ -386,15 +386,24 @@ def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
         "state": zip_record["state"],
         "district": zip_record["district"],
         "data_source": "fixtures",
-        "lookup_metadata": {
-            "source_type": "fixture_sample",
-            "source_retrieved_at": None,
-            "source_version": None,
-            "fixture_sample_only": True,
-            "stale_or_unknown_source": True,
-            "member_metadata_uncertain": False,
-        },
-        "district_mappings": [_serialize_zip_row(row) for row in zip_mappings],
+        "lookup_metadata": _build_zip_lookup_metadata(
+            source_type="fixture_sample",
+            source_name="repository_fixture_zip_district_map",
+            source_currentness="fixture_sample",
+            fixture_sample_only=True,
+            stale_or_unknown_source=True,
+            can_represent_multiple_districts=True,
+            ambiguity_detection_level="local_fixture_scan",
+        ),
+        "district_mappings": [
+            _serialize_zip_mapping(
+                row,
+                source_type="fixture_sample",
+                source_name="repository_fixture_zip_district_map",
+                source_version=None,
+            )
+            for row in zip_mappings
+        ],
         "house_rep": _serialize_legislator(house_rep) if house_rep is not None else None,
         "senators": [_serialize_legislator(legislator) for legislator in senators],
     }
@@ -510,6 +519,35 @@ def _load_local_fixture_zip_mappings() -> list[dict[str, object]]:
         if isinstance(payload, list):
             rows.extend(row for row in payload if isinstance(row, dict))
     return rows
+
+
+def _build_zip_lookup_metadata(
+    *,
+    source_type: str,
+    source_name: str | None,
+    source_currentness: str,
+    fixture_sample_only: bool,
+    stale_or_unknown_source: bool,
+    can_represent_multiple_districts: bool,
+    ambiguity_detection_level: str,
+    source_retrieved_at: str | None = None,
+    source_effective_date: str | None = None,
+    source_version: str | None = None,
+    member_metadata_uncertain: bool = False,
+) -> dict[str, object]:
+    return {
+        "source_type": source_type,
+        "source_name": source_name,
+        "source_retrieved_at": source_retrieved_at,
+        "source_effective_date": source_effective_date,
+        "source_version": source_version,
+        "source_currentness": source_currentness,
+        "fixture_sample_only": fixture_sample_only,
+        "stale_or_unknown_source": stale_or_unknown_source,
+        "member_metadata_uncertain": member_metadata_uncertain,
+        "can_represent_multiple_districts": can_represent_multiple_districts,
+        "ambiguity_detection_level": ambiguity_detection_level,
+    }
 
 
 def _normalize_profile_scope(scope: str | None) -> str:
@@ -860,15 +898,23 @@ def _get_db_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
         "state": str(zip_record["state"]),
         "district": str(zip_record["district"]),
         "data_source": "database",
-        "lookup_metadata": {
-            "source_type": "database_zip_district_map",
-            "source_retrieved_at": None,
-            "source_version": None,
-            "fixture_sample_only": False,
-            "stale_or_unknown_source": True,
-            "member_metadata_uncertain": False,
-        },
-        "district_mappings": [_serialize_zip_row(zip_record)],
+        "lookup_metadata": _build_zip_lookup_metadata(
+            source_type="database_zip_district_map",
+            source_name="zip_district_map",
+            source_currentness="stale_or_unknown",
+            fixture_sample_only=False,
+            stale_or_unknown_source=True,
+            can_represent_multiple_districts=False,
+            ambiguity_detection_level="single_row",
+        ),
+        "district_mappings": [
+            _serialize_zip_mapping(
+                zip_record,
+                source_type="database_zip_district_map",
+                source_name="zip_district_map",
+                source_version=None,
+            )
+        ],
         "house_rep": _serialize_legislator(house_rep) if house_rep is not None else None,
         "senators": [_serialize_legislator(legislator) for legislator in senators],
     }
@@ -2322,6 +2368,21 @@ def _serialize_zip_row(row: dict[str, Any]) -> dict[str, object]:
         "zip": str(row["zip"]),
         "state": str(row["state"]),
         "district": str(row["district"]),
+    }
+
+
+def _serialize_zip_mapping(
+    row: dict[str, Any],
+    *,
+    source_type: str | None,
+    source_name: str | None,
+    source_version: str | None,
+) -> dict[str, object]:
+    return {
+        **_serialize_zip_row(row),
+        "source_type": source_type,
+        "source_name": source_name,
+        "source_version": source_version,
     }
 
 
