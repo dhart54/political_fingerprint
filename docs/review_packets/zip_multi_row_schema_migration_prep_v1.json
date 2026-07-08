@@ -1,0 +1,128 @@
+{
+  "schema_version": "zip_multi_row_schema_migration_prep_v1",
+  "summary": {
+    "migration_file": "backend/migrations/0013_zip_district_mappings.sql",
+    "migration_applied": false,
+    "public_lookup_route_switched": false,
+    "national_zip_data_ingested": false,
+    "address_lookup_added": false,
+    "frontend_behavior_changed": false
+  },
+  "migration_file_status": {
+    "additive_table": "zip_district_mappings",
+    "old_table_preserved": true,
+    "surrogate_id_primary_key": true,
+    "zip_not_primary_key": true,
+    "source_metadata_columns": [
+      "source_name",
+      "source_type",
+      "source_retrieved_at",
+      "source_effective_date",
+      "source_version",
+      "source_currentness",
+      "confidence"
+    ],
+    "controlled_checks": [
+      "source_currentness",
+      "confidence"
+    ],
+    "indexes": [
+      "zip",
+      "zip_state_district",
+      "source_currentness",
+      "source_name",
+      "source_version"
+    ],
+    "unique_active_source_period_rule": true
+  },
+  "synthetic_fixtures": {
+    "fixture_file": "backend/fixtures/zip_multi_row_schema_sample/zip_district_mappings.json",
+    "cases": [
+      "single_district_current_source_backed",
+      "same_state_multi_district",
+      "multi_state_zip",
+      "fixture_sample_row",
+      "stale_unknown_missing_metadata",
+      "duplicate_active_row"
+    ],
+    "duplicate_detection_case_included": true
+  },
+  "payload_parity": {
+    "single_current_source_backed": "single_district_ready",
+    "same_state_multi_district": "ambiguous_zip",
+    "multi_state": "multi_state_zip",
+    "missing_source_metadata": "stale_or_unknown_source",
+    "fixture_sample": "fixture_sample_only",
+    "unsupported": "unsupported_zip",
+    "old_db_path": "stale_or_unknown_source"
+  },
+  "route_status": {
+    "current_lookup_route_uses_old_gated_path": true,
+    "new_table_route_switch_absent": true,
+    "db_path_source_currentness": "stale_or_unknown",
+    "db_path_auto_select_blocked": true
+  },
+  "validation": [
+    {
+      "command": "python -m pytest backend\\tests\\test_zip_source_metadata_report.py -p no:cacheprovider",
+      "status": "passed",
+      "result": "4 passed"
+    },
+    {
+      "command": "python -m pytest backend\\tests\\test_zip_multi_row_schema_contract.py backend\\tests\\test_zip_lookup_payload_parity.py -p no:cacheprovider",
+      "status": "passed",
+      "result": "11 passed"
+    },
+    {
+      "command": "python backend\\scripts\\generate_zip_source_metadata_report.py",
+      "status": "passed",
+      "result": "wrote Markdown and JSON review packets"
+    },
+    {
+      "command": "python -m json.tool docs\\review_packets\\zip_source_metadata_ambiguity_payload_v1.json",
+      "status": "passed",
+      "result": "valid JSON"
+    },
+    {
+      "command": "python -m json.tool docs\\review_packets\\zip_multi_row_schema_migration_prep_v1.json",
+      "status": "passed",
+      "result": "valid JSON"
+    },
+    {
+      "command": "node --test lib\\zipLookupState.test.mjs",
+      "status": "passed",
+      "result": "9 passed"
+    },
+    {
+      "command": "node --test lib\\*.test.mjs",
+      "status": "passed",
+      "result": "84 passed with existing module-type warnings"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed",
+      "result": "0 errors, 8 existing React hook dependency warnings"
+    },
+    {
+      "command": "npm run build",
+      "status": "passed",
+      "result": "build passed with the same 8 hook dependency warnings"
+    }
+  ],
+  "known_limitations": [
+    "Migration is drafted only and has not been applied.",
+    "New table is not populated.",
+    "ETL paths still dedupe old ZIP fixture bundles by zip.",
+    "Public lookup route still reads zip_district_map.",
+    "Report is repository/local-only, not production coverage truth."
+  ],
+  "no_go_items_honored": [
+    "No production or local DB mutation.",
+    "No public lookup route switch.",
+    "No national ZIP ingestion.",
+    "No address lookup.",
+    "No provider integration.",
+    "No frontend behavior change."
+  ],
+  "recommended_next_milestone": "ZIP Multi-Row Schema Migration Application And Read-Only Coverage V1"
+}

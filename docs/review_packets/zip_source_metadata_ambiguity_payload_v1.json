@@ -88,6 +88,50 @@
     {
       "check": "current_db_path_remains_blocked_from_auto_select",
       "passed": true
+    },
+    {
+      "check": "multi_row_migration_exists",
+      "passed": true
+    },
+    {
+      "check": "multi_row_schema_can_represent_multiple_districts",
+      "passed": true
+    },
+    {
+      "check": "multi_row_source_metadata_columns_exist",
+      "passed": true
+    },
+    {
+      "check": "multi_row_currentness_check_controlled",
+      "passed": true
+    },
+    {
+      "check": "multi_row_confidence_check_controlled",
+      "passed": true
+    },
+    {
+      "check": "multi_row_indexes_exist",
+      "passed": true
+    },
+    {
+      "check": "old_table_remains_compatibility_only",
+      "passed": true
+    },
+    {
+      "check": "synthetic_fixtures_cover_split_and_multistate_zip",
+      "passed": true
+    },
+    {
+      "check": "synthetic_duplicate_case_detected",
+      "passed": true
+    },
+    {
+      "check": "current_lookup_route_still_uses_old_gated_path",
+      "passed": true
+    },
+    {
+      "check": "new_table_route_switch_absent",
+      "passed": true
     }
   ],
   "db_zip_metadata_coverage": {
@@ -157,8 +201,124 @@
     "Current DB ZIP schema cannot store source name, retrieval date, effective date, or version.",
     "Fixture ZIP files are sample coverage and do not include source metadata.",
     "No provider or national ZIP data source has been selected or ingested.",
+    "The new multi-row table is drafted locally but is not applied to production.",
+    "The public lookup route still reads the compatibility zip_district_map path.",
     "The backend route still returns 404 for unsupported ZIPs; the frontend converts that failure into a local unsupported payload with data_source none, empty district_mappings, and null officials."
   ],
+  "multi_row_schema_contract": {
+    "all_required_columns_present": true,
+    "all_required_indexes_present": true,
+    "all_source_metadata_columns_present": true,
+    "can_represent_multiple_districts_per_zip": true,
+    "confidence_check_values_present": {
+      "inferred": true,
+      "low": true,
+      "reviewed": true,
+      "source_backed": true,
+      "unknown": true
+    },
+    "controlled_confidence_check_present": true,
+    "controlled_source_currentness_check_present": true,
+    "indexes_present": {
+      "source_currentness": true,
+      "source_name": true,
+      "source_version": true,
+      "zip": true,
+      "zip_state_district": true
+    },
+    "migration_exists": true,
+    "migration_file": "backend/migrations/0013_zip_district_mappings.sql",
+    "old_table_compatibility_only": true,
+    "old_table_untouched": true,
+    "required_columns_present": {
+      "confidence": true,
+      "congress": true,
+      "created_at": true,
+      "cycle": true,
+      "district": true,
+      "district_type": true,
+      "id": true,
+      "is_primary": true,
+      "notes": true,
+      "provider_record_id": true,
+      "source_currentness": true,
+      "source_effective_date": true,
+      "source_name": true,
+      "source_retrieved_at": true,
+      "source_type": true,
+      "source_version": true,
+      "state": true,
+      "updated_at": true,
+      "valid_from": true,
+      "valid_to": true,
+      "zip": true
+    },
+    "source_currentness_check_values_present": {
+      "current": true,
+      "expired": true,
+      "fixture_sample": true,
+      "stale_or_unknown": true,
+      "unsupported": true
+    },
+    "source_metadata_columns_present": {
+      "confidence": true,
+      "source_currentness": true,
+      "source_effective_date": true,
+      "source_name": true,
+      "source_retrieved_at": true,
+      "source_type": true,
+      "source_version": true
+    },
+    "surrogate_id_primary_key": true,
+    "table_found": true,
+    "unique_active_source_period_rule": true,
+    "zip_format_check": true,
+    "zip_not_primary_key": true
+  },
+  "multi_row_synthetic_fixture_coverage": {
+    "cases_present": [
+      "duplicate_active_row",
+      "fixture_sample_row",
+      "multi_state_zip",
+      "same_state_multi_district",
+      "single_district_current_source_backed",
+      "stale_unknown_missing_metadata"
+    ],
+    "duplicate_active_source_key_count": 1,
+    "duplicate_active_source_keys": [
+      "09990|NC|04|synthetic_zip_schema_fixture|synthetic-2026-v1|2026-01-03|9999-12-31"
+    ],
+    "fixture_exists": true,
+    "fixture_file": "backend/fixtures/zip_multi_row_schema_sample/zip_district_mappings.json",
+    "has_current_source_backed_case": true,
+    "has_duplicate_detection_case": true,
+    "has_fixture_sample_case": true,
+    "has_multi_state_case": true,
+    "has_same_state_multi_district_case": true,
+    "has_single_district_case": true,
+    "has_stale_unknown_case": true,
+    "missing_source_metadata_row_count": 1,
+    "missing_source_metadata_rows": [
+      "stale_unknown_missing_metadata"
+    ],
+    "multi_district_zips": {
+      "09991": [
+        "NC-02",
+        "NC-04"
+      ],
+      "09992": [
+        "NC-04",
+        "SC-01"
+      ]
+    },
+    "multi_state_zips": {
+      "09992": [
+        "NC",
+        "SC"
+      ]
+    },
+    "row_count": 8
+  },
   "no_go_items": [
     "No address lookup.",
     "No Census, Google, Smarty, Cicero, or other provider integration.",
@@ -211,7 +371,17 @@
     "state": "NC",
     "zip": "27701"
   },
-  "recommended_next_milestone": "ZIP Schema And Source Metadata Design V1: decide the DB shape for multi-district ZIP mappings, source name/retrieval/effective/version metadata, and production read-only coverage reporting before any national ZIP ingestion or address lookup.",
+  "recommended_next_milestone": "ZIP Multi-Row Schema Migration Application And Read-Only Coverage V1: explicitly approve and apply the additive zip_district_mappings migration, verify the empty/new-table contract with read-only coverage checks, keep the old lookup path gated, and still avoid national ZIP ingestion or address lookup.",
+  "route_switch_status": {
+    "current_lookup_route_uses_old_gated_path": true,
+    "db_path_auto_select_blocked": true,
+    "db_path_source_currentness": "stale_or_unknown",
+    "lookup_route_file": "backend/app/api/lookup.py",
+    "new_table_query_present": false,
+    "new_table_route_switch_absent": true,
+    "old_table_query_present": true,
+    "read_layer_file": "backend/app/api/precomputed.py"
+  },
   "schema_version": "zip_source_metadata_ambiguity_payload_v1",
   "scope": {
     "coverage_statement": "This is repository/local-accessible ZIP metadata only. It is not production coverage truth unless a future read-only production report is generated with credentials.",
@@ -231,10 +401,11 @@
       "Database ZIP rows cannot yet store source name, retrieval date, effective date, or version metadata.",
       "Database ZIP lookup remains conservatively gated as stale_or_unknown_source.",
       "Fixture ZIP files do not include source metadata and remain fixture_sample_only.",
-      "The current schema cannot store multiple districts per ZIP because zip is the primary key.",
+      "The compatibility schema cannot store multiple districts per ZIP because zip is the primary key.",
+      "The drafted zip_district_mappings schema can represent multiple rows per ZIP without changing the live route.",
       "Frontend auto-select remains blocked unless a payload classifies as single_district_ready."
     ],
-    "recommended_next_milestone": "ZIP Schema And Source Metadata Design V1: decide the DB shape for multi-district ZIP mappings, source name/retrieval/effective/version metadata, and production read-only coverage reporting before any national ZIP ingestion or address lookup.",
+    "recommended_next_milestone": "ZIP Multi-Row Schema Migration Application And Read-Only Coverage V1: explicitly approve and apply the additive zip_district_mappings migration, verify the empty/new-table contract with read-only coverage checks, keep the old lookup path gated, and still avoid national ZIP ingestion or address lookup.",
     "unsupported_payload_backend_owned": false
   }
 }

@@ -17,7 +17,8 @@ Highest findings:
 - Database ZIP rows cannot yet store source name, retrieval date, effective date, or version metadata.
 - Database ZIP lookup remains conservatively gated as stale_or_unknown_source.
 - Fixture ZIP files do not include source metadata and remain fixture_sample_only.
-- The current schema cannot store multiple districts per ZIP because zip is the primary key.
+- The compatibility schema cannot store multiple districts per ZIP because zip is the primary key.
+- The drafted zip_district_mappings schema can represent multiple rows per ZIP without changing the live route.
 - Frontend auto-select remains blocked unless a payload classifies as single_district_ready.
 
 ## Payload Contract
@@ -47,6 +48,53 @@ Highest findings:
 | current_db_lookup_stale_or_unknown_source | yes |
 | current_db_ambiguity_detection_level | single_row |
 | evidence | zip_district_map.zip is the primary key and the table has zip, state, district, created_at, and updated_at columns only. |
+
+## Multi-Row Schema Contract
+
+| check | value |
+| --- | --- |
+| migration_file | backend/migrations/0013_zip_district_mappings.sql |
+| migration_exists | yes |
+| table_found | yes |
+| surrogate_id_primary_key | yes |
+| zip_not_primary_key | yes |
+| zip_format_check | yes |
+| required_columns_present | `{"confidence": true, "congress": true, "created_at": true, "cycle": true, "district": true, "district_type": true, "id": true, "is_primary": true, "notes": true, "provider_record_id": true, "source_currentness": true, "source_effective_date": true, "source_name": true, "source_retrieved_at": true, "source_type": true, "source_version": true, "state": true, "updated_at": true, "valid_from": true, "valid_to": true, "zip": true}` |
+| all_required_columns_present | yes |
+| source_metadata_columns_present | `{"confidence": true, "source_currentness": true, "source_effective_date": true, "source_name": true, "source_retrieved_at": true, "source_type": true, "source_version": true}` |
+| all_source_metadata_columns_present | yes |
+| source_currentness_check_values_present | `{"current": true, "expired": true, "fixture_sample": true, "stale_or_unknown": true, "unsupported": true}` |
+| controlled_source_currentness_check_present | yes |
+| confidence_check_values_present | `{"inferred": true, "low": true, "reviewed": true, "source_backed": true, "unknown": true}` |
+| controlled_confidence_check_present | yes |
+| indexes_present | `{"source_currentness": true, "source_name": true, "source_version": true, "zip": true, "zip_state_district": true}` |
+| all_required_indexes_present | yes |
+| unique_active_source_period_rule | yes |
+| can_represent_multiple_districts_per_zip | yes |
+| old_table_untouched | yes |
+| old_table_compatibility_only | yes |
+
+## Multi-Row Synthetic Fixture Coverage
+
+| check | value |
+| --- | --- |
+| fixture_file | backend/fixtures/zip_multi_row_schema_sample/zip_district_mappings.json |
+| fixture_exists | yes |
+| row_count | 8 |
+| cases_present | `["duplicate_active_row", "fixture_sample_row", "multi_state_zip", "same_state_multi_district", "single_district_current_source_backed", "stale_unknown_missing_metadata"]` |
+| has_single_district_case | yes |
+| has_same_state_multi_district_case | yes |
+| has_multi_state_case | yes |
+| has_fixture_sample_case | yes |
+| has_stale_unknown_case | yes |
+| has_current_source_backed_case | yes |
+| has_duplicate_detection_case | yes |
+| duplicate_active_source_keys | `["09990|NC|04|synthetic_zip_schema_fixture|synthetic-2026-v1|2026-01-03|9999-12-31"]` |
+| duplicate_active_source_key_count | 1 |
+| missing_source_metadata_rows | `["stale_unknown_missing_metadata"]` |
+| missing_source_metadata_row_count | 1 |
+| multi_district_zips | `{"09991": ["NC-02", "NC-04"], "09992": ["NC-04", "SC-01"]}` |
+| multi_state_zips | `{"09992": ["NC", "SC"]}` |
 
 ## Fixture ZIP Metadata Coverage
 
@@ -103,6 +151,19 @@ Highest findings:
 | current_db_path_remains_blocked_from_auto_select | yes |
 | db_path_blocked_reason | Backend DB payloads currently set source_currentness to stale_or_unknown and stale_or_unknown_source to true because the schema lacks source metadata fields. |
 
+## Route Switch Status
+
+| check | value |
+| --- | --- |
+| lookup_route_file | backend/app/api/lookup.py |
+| read_layer_file | backend/app/api/precomputed.py |
+| current_lookup_route_uses_old_gated_path | yes |
+| new_table_route_switch_absent | yes |
+| old_table_query_present | yes |
+| new_table_query_present | no |
+| db_path_source_currentness | stale_or_unknown |
+| db_path_auto_select_blocked | yes |
+
 ## Ambiguity Capability By Source
 
 | source | data_source | can_represent_multiple_districts | ambiguity_detection_level | source_currentness | auto_select_house_allowed_today | notes |
@@ -124,6 +185,17 @@ Highest findings:
 | api_responses_include_standard_metadata_fields | yes |
 | frontend_classifier_gates_missing_metadata | yes |
 | current_db_path_remains_blocked_from_auto_select | yes |
+| multi_row_migration_exists | yes |
+| multi_row_schema_can_represent_multiple_districts | yes |
+| multi_row_source_metadata_columns_exist | yes |
+| multi_row_currentness_check_controlled | yes |
+| multi_row_confidence_check_controlled | yes |
+| multi_row_indexes_exist | yes |
+| old_table_remains_compatibility_only | yes |
+| synthetic_fixtures_cover_split_and_multistate_zip | yes |
+| synthetic_duplicate_case_detected | yes |
+| current_lookup_route_still_uses_old_gated_path | yes |
+| new_table_route_switch_absent | yes |
 
 ## No-Go Items
 
@@ -142,8 +214,10 @@ Highest findings:
 - Current DB ZIP schema cannot store source name, retrieval date, effective date, or version.
 - Fixture ZIP files are sample coverage and do not include source metadata.
 - No provider or national ZIP data source has been selected or ingested.
+- The new multi-row table is drafted locally but is not applied to production.
+- The public lookup route still reads the compatibility zip_district_map path.
 - The backend route still returns 404 for unsupported ZIPs; the frontend converts that failure into a local unsupported payload with data_source none, empty district_mappings, and null officials.
 
 ## Recommended Next Milestone
 
-ZIP Schema And Source Metadata Design V1: decide the DB shape for multi-district ZIP mappings, source name/retrieval/effective/version metadata, and production read-only coverage reporting before any national ZIP ingestion or address lookup.
+ZIP Multi-Row Schema Migration Application And Read-Only Coverage V1: explicitly approve and apply the additive zip_district_mappings migration, verify the empty/new-table contract with read-only coverage checks, keep the old lookup path gated, and still avoid national ZIP ingestion or address lookup.
