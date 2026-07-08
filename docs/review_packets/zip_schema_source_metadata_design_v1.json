@@ -1,0 +1,160 @@
+{
+  "schema_version": "zip_schema_source_metadata_design_v1",
+  "scope": {
+    "docs_only": true,
+    "schema_migration_performed": false,
+    "national_zip_ingestion_performed": false,
+    "address_lookup_added": false,
+    "provider_integration_added": false,
+    "production_write_performed": false
+  },
+  "summary_recommendation": {
+    "recommended_option": "Option B",
+    "recommended_table": "zip_district_mappings",
+    "compatibility_table": "zip_district_map",
+    "rationale": [
+      "Supports multiple districts and states per ZIP without rewriting the current primary-key table in place.",
+      "Stores source metadata and currentness per mapping row.",
+      "Provides the safest rollback path by preserving the old lookup path while the new path is validated.",
+      "Keeps PR #76 and PR #77 auto-select gates intact."
+    ]
+  },
+  "current_limitations": {
+    "zip_district_map_zip_primary_key": true,
+    "can_store_multiple_districts_per_zip": false,
+    "can_store_multi_state_zip": false,
+    "can_store_source_metadata": false,
+    "etl_dedupes_by_zip": true,
+    "db_path_currentness": "stale_or_unknown"
+  },
+  "schema_options": [
+    {
+      "option": "A",
+      "label": "Alter zip_district_map",
+      "supports_multi_district_zip": true,
+      "supports_multi_state_zip": true,
+      "migration_risk": "high",
+      "rollback_strength": "weak",
+      "recommended": false
+    },
+    {
+      "option": "B",
+      "label": "Add zip_district_mappings and keep zip_district_map as compatibility/deprecated",
+      "supports_multi_district_zip": true,
+      "supports_multi_state_zip": true,
+      "migration_risk": "low_to_medium",
+      "rollback_strength": "strong",
+      "recommended": true
+    },
+    {
+      "option": "C",
+      "label": "Keep single-row canonical table plus ambiguity/source side tables",
+      "supports_multi_district_zip": "partial",
+      "supports_multi_state_zip": "partial",
+      "migration_risk": "medium",
+      "rollback_strength": "medium",
+      "recommended": false
+    }
+  ],
+  "recommended_required_fields": [
+    "id",
+    "zip",
+    "state",
+    "district",
+    "source_name",
+    "source_type",
+    "source_retrieved_at",
+    "source_effective_date",
+    "source_version",
+    "source_currentness",
+    "confidence",
+    "is_primary",
+    "created_at",
+    "updated_at"
+  ],
+  "recommended_optional_fields": [
+    "district_type",
+    "congress",
+    "cycle",
+    "valid_from",
+    "valid_to",
+    "provider_record_id",
+    "notes"
+  ],
+  "payload_states": {
+    "single_district": {
+      "district_mappings": "exactly_one_state_district",
+      "source_currentness": "current",
+      "ambiguity_detection_level": "multi_row_source",
+      "auto_select_house": "allowed_only_if_member_metadata_gates_pass"
+    },
+    "multiple_districts": {
+      "district_mappings": "multiple_district_keys",
+      "auto_select_house": false
+    },
+    "multiple_states": {
+      "district_mappings": "multiple_states",
+      "auto_select_house": false,
+      "auto_select_senate": false
+    },
+    "unsupported_zip": {
+      "data_source": "none",
+      "source_currentness": "unsupported",
+      "district_mappings": [],
+      "auto_select_house": false
+    },
+    "stale_or_unknown_source": {
+      "source_currentness": "stale_or_unknown",
+      "stale_or_unknown_source": true,
+      "auto_select_house": false
+    },
+    "fixture_sample": {
+      "data_source": "fixtures",
+      "source_currentness": "fixture_sample",
+      "fixture_sample_only": true,
+      "auto_select_house": false
+    },
+    "future_address_resolved": {
+      "raw_address_storage_default": false,
+      "requires_source_metadata": true,
+      "requires_member_metadata_gates": true
+    }
+  },
+  "auto_select_rule": "No ZIP lookup result should auto-select a House member unless source metadata and current House member metadata both pass gates.",
+  "migration_backfill_sequence": [
+    "Create additive zip_district_mappings table.",
+    "Keep current lookup behavior gated.",
+    "Build read-only local validation.",
+    "Load limited reviewed seed data only after approval.",
+    "Run production read-only coverage report with explicit credential approval.",
+    "Compare old vs new payloads.",
+    "Switch lookup route behind flag or controlled gate.",
+    "Deprecate old table only after confidence."
+  ],
+  "production_coverage_report_requirements": [
+    "total_zip_mapping_rows",
+    "unique_zips",
+    "zips_with_multiple_districts",
+    "zips_with_multiple_states",
+    "rows_missing_source_metadata",
+    "rows_missing_effective_or_version_metadata",
+    "unsupported_zip_behavior",
+    "source_distribution",
+    "stale_or_unknown_rows",
+    "house_match_success_failure",
+    "multiple_house_matches",
+    "senate_state_coverage",
+    "sample_fixture_leakage_risk",
+    "auto_select_eligibility_counts"
+  ],
+  "future_acceptance_criteria": [
+    "Schema can represent multiple districts per ZIP.",
+    "Source metadata fields exist and are required for auto-select eligibility.",
+    "Payload preserves district_mappings.",
+    "Ambiguous ZIP never auto-selects House.",
+    "Missing metadata remains gated.",
+    "Tests cover DB, fixture, unsupported, ambiguous, multi-state, and current-source cases.",
+    "Rollback path exists."
+  ],
+  "recommended_next_milestone": "ZIP Multi-Row Schema Migration Prep V1"
+}
