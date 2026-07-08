@@ -41,6 +41,42 @@ STANDARD_LOOKUP_METADATA_FIELDS = [
     "can_represent_multiple_districts",
     "ambiguity_detection_level",
 ]
+MULTI_ROW_MIGRATION_FILE = "backend/migrations/0013_zip_district_mappings.sql"
+MULTI_ROW_FIXTURE_FILE = "backend/fixtures/zip_multi_row_schema_sample/zip_district_mappings.json"
+MULTI_ROW_REQUIRED_COLUMNS = [
+    "id",
+    "zip",
+    "state",
+    "district",
+    "source_name",
+    "source_type",
+    "source_retrieved_at",
+    "source_effective_date",
+    "source_version",
+    "source_currentness",
+    "confidence",
+    "is_primary",
+    "district_type",
+    "congress",
+    "cycle",
+    "valid_from",
+    "valid_to",
+    "provider_record_id",
+    "notes",
+    "created_at",
+    "updated_at",
+]
+MULTI_ROW_SOURCE_METADATA_COLUMNS = [
+    "source_name",
+    "source_type",
+    "source_retrieved_at",
+    "source_effective_date",
+    "source_version",
+    "source_currentness",
+    "confidence",
+]
+SOURCE_CURRENTNESS_VALUES = ["current", "stale_or_unknown", "fixture_sample", "unsupported", "expired"]
+CONFIDENCE_VALUES = ["source_backed", "reviewed", "inferred", "low", "unknown"]
 
 
 def main() -> int:
@@ -61,15 +97,21 @@ def main() -> int:
 def build_report(repo_root: Path) -> dict[str, Any]:
     zip_rows = collect_fixture_zip_rows(repo_root)
     db_schema = inspect_db_schema(repo_root)
+    multi_row_schema = inspect_multi_row_schema_contract(repo_root)
+    multi_row_fixtures = inspect_multi_row_fixture_contract(repo_root)
     fixture_metadata = inspect_fixture_metadata(zip_rows)
     api_contract = inspect_api_contract(repo_root)
     frontend_gates = inspect_frontend_gates(repo_root)
+    route_switch = inspect_route_switch_status(repo_root)
     ambiguity_capability = build_ambiguity_capability(db_schema=db_schema, fixture_metadata=fixture_metadata)
     coverage_checks = build_coverage_checks(
         db_schema=db_schema,
+        multi_row_schema=multi_row_schema,
+        multi_row_fixtures=multi_row_fixtures,
         fixture_metadata=fixture_metadata,
         api_contract=api_contract,
         frontend_gates=frontend_gates,
+        route_switch=route_switch,
     )
 
     return {
@@ -94,15 +136,19 @@ def build_report(repo_root: Path) -> dict[str, Any]:
                 "Database ZIP rows cannot yet store source name, retrieval date, effective date, or version metadata.",
                 "Database ZIP lookup remains conservatively gated as stale_or_unknown_source.",
                 "Fixture ZIP files do not include source metadata and remain fixture_sample_only.",
-                "The current schema cannot store multiple districts per ZIP because zip is the primary key.",
+                "The compatibility schema cannot store multiple districts per ZIP because zip is the primary key.",
+                "The drafted zip_district_mappings schema can represent multiple rows per ZIP without changing the live route.",
                 "Frontend auto-select remains blocked unless a payload classifies as single_district_ready.",
             ],
         },
         "payload_contract": payload_contract(),
         "db_zip_metadata_coverage": db_schema,
+        "multi_row_schema_contract": multi_row_schema,
+        "multi_row_synthetic_fixture_coverage": multi_row_fixtures,
         "fixture_zip_metadata_coverage": fixture_metadata,
         "api_response_contract": api_contract,
         "frontend_gating_implications": frontend_gates,
+        "route_switch_status": route_switch,
         "ambiguity_capability_by_source": ambiguity_capability,
         "coverage_checks": coverage_checks,
         "no_go_items": no_go_items(),
@@ -164,6 +210,147 @@ def inspect_db_schema(repo_root: Path) -> dict[str, Any]:
             "zip_district_map.zip is the primary key and the table has zip, state, district, "
             "created_at, and updated_at columns only."
         ),
+    }
+
+
+def inspect_multi_row_schema_contract(repo_root: Path) -> dict[str, Any]:
+    migration_path = find_multi_row_migration(repo_root)
+    migration_text = _safe_read_text(migration_path) if migration_path else ""
+    table_sql = extract_table_sql(migration_text, "zip_district_mappings")
+    table_sql_lower = table_sql.lower()
+    migration_lower = migration_text.lower()
+    columns_present = {
+        column: bool(re.search(rf"\b{re.escape(column)}\b", table_sql_lower))
+        for column in MULTI_ROW_REQUIRED_COLUMNS
+    }
+    source_currentness_values_present = {
+        value: f"'{value}'" in table_sql_lower
+        for value in SOURCE_CURRENTNESS_VALUES
+    }
+    confidence_values_present = {
+        value: f"'{value}'" in table_sql_lower
+        for value in CONFIDENCE_VALUES
+    }
+    indexes_present = {
+        "zip": "idx_zip_district_mappings_zip" in migration_lower,
+        "zip_state_district": "idx_zip_district_mappings_zip_state_district" in migration_lower,
+        "source_currentness": "idx_zip_district_mappings_source_currentness" in migration_lower,
+        "source_name": "idx_zip_district_mappings_source_name" in migration_lower,
+        "source_version": "idx_zip_district_mappings_source_version" in migration_lower,
+    }
+    old_table_untouched = not bool(
+        re.search(r"\b(drop|alter)\s+table\s+(if\s+exists\s+)?zip_district_map\b", migration_lower)
+    )
+    unique_active_source_period_rule = (
+        "unique" in migration_lower
+        and "coalesce(valid_from, source_effective_date)" in migration_lower
+        and "coalesce(valid_to, date '9999-12-31')" in migration_lower
+    )
+    zip_primary_key = bool(re.search(r"\bzip\s+text\s+primary\s+key\b", table_sql_lower))
+    surrogate_id_primary_key = bool(re.search(r"\bid\s+bigserial\s+primary\s+key\b", table_sql_lower))
+    can_represent_multiple_districts = (
+        bool(table_sql)
+        and surrogate_id_primary_key
+        and not zip_primary_key
+        and unique_active_source_period_rule
+    )
+    return {
+        "migration_file": _rel(repo_root, migration_path) if migration_path else MULTI_ROW_MIGRATION_FILE,
+        "migration_exists": migration_path is not None and migration_path.exists(),
+        "table_found": bool(table_sql),
+        "surrogate_id_primary_key": surrogate_id_primary_key,
+        "zip_not_primary_key": bool(table_sql) and not zip_primary_key,
+        "zip_format_check": "zip ~ '^[0-9]{5}$'" in table_sql_lower,
+        "required_columns_present": columns_present,
+        "all_required_columns_present": all(columns_present.values()),
+        "source_metadata_columns_present": {
+            column: columns_present[column]
+            for column in MULTI_ROW_SOURCE_METADATA_COLUMNS
+        },
+        "all_source_metadata_columns_present": all(columns_present[column] for column in MULTI_ROW_SOURCE_METADATA_COLUMNS),
+        "source_currentness_check_values_present": source_currentness_values_present,
+        "controlled_source_currentness_check_present": all(source_currentness_values_present.values()),
+        "confidence_check_values_present": confidence_values_present,
+        "controlled_confidence_check_present": all(confidence_values_present.values()),
+        "indexes_present": indexes_present,
+        "all_required_indexes_present": all(indexes_present.values()),
+        "unique_active_source_period_rule": unique_active_source_period_rule,
+        "can_represent_multiple_districts_per_zip": can_represent_multiple_districts,
+        "old_table_untouched": old_table_untouched,
+        "old_table_compatibility_only": old_table_untouched,
+    }
+
+
+def inspect_multi_row_fixture_contract(repo_root: Path) -> dict[str, Any]:
+    fixture_path = repo_root / MULTI_ROW_FIXTURE_FILE
+    rows = _as_list(_load_json(fixture_path))
+    normalized = [normalize_multi_row_fixture_row(row, index) for index, row in enumerate(rows) if isinstance(row, dict)]
+    rows_by_zip: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in normalized:
+        if row["zip"]:
+            rows_by_zip[row["zip"]].append(row)
+
+    multi_district_zips = {}
+    multi_state_zips = {}
+    for zip_code, zip_rows in sorted(rows_by_zip.items()):
+        districts = sorted({f"{row['state']}-{row['district']}" for row in zip_rows if row["state"] and row["district"]})
+        states = sorted({row["state"] for row in zip_rows if row["state"]})
+        if len(districts) > 1:
+            multi_district_zips[zip_code] = districts
+        if len(states) > 1:
+            multi_state_zips[zip_code] = states
+
+    duplicate_keys = [
+        key
+        for key, count in sorted(Counter(active_source_key(row) for row in normalized).items())
+        if key and count > 1
+    ]
+    missing_source_metadata_rows = [
+        row["row_id"]
+        for row in normalized
+        if row["source_currentness"] == "stale_or_unknown" or not row["has_all_source_metadata"]
+    ]
+    cases = sorted({row["case"] for row in normalized if row["case"]})
+    return {
+        "fixture_file": _rel(repo_root, fixture_path),
+        "fixture_exists": fixture_path.exists(),
+        "row_count": len(normalized),
+        "cases_present": cases,
+        "has_single_district_case": "single_district_current_source_backed" in cases,
+        "has_same_state_multi_district_case": "same_state_multi_district" in cases,
+        "has_multi_state_case": "multi_state_zip" in cases,
+        "has_fixture_sample_case": "fixture_sample_row" in cases,
+        "has_stale_unknown_case": "stale_unknown_missing_metadata" in cases,
+        "has_current_source_backed_case": any(
+            row["source_currentness"] == "current" and row["confidence"] == "source_backed"
+            for row in normalized
+        ),
+        "has_duplicate_detection_case": "duplicate_active_row" in cases and bool(duplicate_keys),
+        "duplicate_active_source_keys": duplicate_keys,
+        "duplicate_active_source_key_count": len(duplicate_keys),
+        "missing_source_metadata_rows": missing_source_metadata_rows,
+        "missing_source_metadata_row_count": len(missing_source_metadata_rows),
+        "multi_district_zips": multi_district_zips,
+        "multi_state_zips": multi_state_zips,
+    }
+
+
+def inspect_route_switch_status(repo_root: Path) -> dict[str, Any]:
+    precomputed = _safe_read_text(repo_root / "backend/app/api/precomputed.py")
+    lookup = _safe_read_text(repo_root / "backend/app/api/lookup.py")
+    precomputed_lower = precomputed.lower()
+    lookup_lower = lookup.lower()
+    old_table_read_present = "from zip_district_map" in precomputed_lower
+    new_table_read_present = "from zip_district_mappings" in precomputed_lower
+    return {
+        "lookup_route_file": "backend/app/api/lookup.py",
+        "read_layer_file": "backend/app/api/precomputed.py",
+        "current_lookup_route_uses_old_gated_path": old_table_read_present and not new_table_read_present,
+        "new_table_route_switch_absent": "zip_district_mappings" not in precomputed_lower and "zip_district_mappings" not in lookup_lower,
+        "old_table_query_present": old_table_read_present,
+        "new_table_query_present": new_table_read_present,
+        "db_path_source_currentness": "stale_or_unknown",
+        "db_path_auto_select_blocked": True,
     }
 
 
@@ -310,9 +497,12 @@ def build_ambiguity_capability(*, db_schema: dict[str, Any], fixture_metadata: d
 def build_coverage_checks(
     *,
     db_schema: dict[str, Any],
+    multi_row_schema: dict[str, Any],
+    multi_row_fixtures: dict[str, Any],
     fixture_metadata: dict[str, Any],
     api_contract: dict[str, Any],
     frontend_gates: dict[str, Any],
+    route_switch: dict[str, Any],
 ) -> list[dict[str, Any]]:
     return [
         check("db_schema_can_store_multiple_districts_per_zip", db_schema["can_store_multiple_districts_per_zip"]),
@@ -324,6 +514,17 @@ def build_coverage_checks(
         check("api_responses_include_standard_metadata_fields", api_contract["api_responses_include_standard_metadata_fields"]),
         check("frontend_classifier_gates_missing_metadata", frontend_gates["gates_missing_metadata"]),
         check("current_db_path_remains_blocked_from_auto_select", frontend_gates["current_db_path_remains_blocked_from_auto_select"]),
+        check("multi_row_migration_exists", multi_row_schema["migration_exists"]),
+        check("multi_row_schema_can_represent_multiple_districts", multi_row_schema["can_represent_multiple_districts_per_zip"]),
+        check("multi_row_source_metadata_columns_exist", multi_row_schema["all_source_metadata_columns_present"]),
+        check("multi_row_currentness_check_controlled", multi_row_schema["controlled_source_currentness_check_present"]),
+        check("multi_row_confidence_check_controlled", multi_row_schema["controlled_confidence_check_present"]),
+        check("multi_row_indexes_exist", multi_row_schema["all_required_indexes_present"]),
+        check("old_table_remains_compatibility_only", multi_row_schema["old_table_compatibility_only"]),
+        check("synthetic_fixtures_cover_split_and_multistate_zip", multi_row_fixtures["has_same_state_multi_district_case"] and multi_row_fixtures["has_multi_state_case"]),
+        check("synthetic_duplicate_case_detected", multi_row_fixtures["has_duplicate_detection_case"]),
+        check("current_lookup_route_still_uses_old_gated_path", route_switch["current_lookup_route_uses_old_gated_path"]),
+        check("new_table_route_switch_absent", route_switch["new_table_route_switch_absent"]),
     ]
 
 
@@ -378,6 +579,8 @@ def known_limitations(api_contract: dict[str, Any]) -> list[str]:
         "Current DB ZIP schema cannot store source name, retrieval date, effective date, or version.",
         "Fixture ZIP files are sample coverage and do not include source metadata.",
         "No provider or national ZIP data source has been selected or ingested.",
+        "The new multi-row table is drafted locally but is not applied to production.",
+        "The public lookup route still reads the compatibility zip_district_map path.",
     ]
     if api_contract["unsupported_route_still_404"]:
         limitations.append(api_contract["unsupported_limitation"])
@@ -386,9 +589,9 @@ def known_limitations(api_contract: dict[str, Any]) -> list[str]:
 
 def recommended_next_milestone() -> str:
     return (
-        "ZIP Schema And Source Metadata Design V1: decide the DB shape for multi-district ZIP mappings, "
-        "source name/retrieval/effective/version metadata, and production read-only coverage reporting before "
-        "any national ZIP ingestion or address lookup."
+        "ZIP Multi-Row Schema Migration Application And Read-Only Coverage V1: explicitly approve and apply "
+        "the additive zip_district_mappings migration, verify the empty/new-table contract with read-only "
+        "coverage checks, keep the old lookup path gated, and still avoid national ZIP ingestion or address lookup."
     )
 
 
@@ -431,6 +634,14 @@ def render_markdown(report: dict[str, Any]) -> str:
     db_rows = [{"check": key, "value": value} for key, value in report["db_zip_metadata_coverage"].items()]
     lines.extend(markdown_table(["check", "value"], db_rows))
 
+    lines.extend(["", "## Multi-Row Schema Contract", ""])
+    multi_row_schema_rows = [{"check": key, "value": value} for key, value in report["multi_row_schema_contract"].items()]
+    lines.extend(markdown_table(["check", "value"], multi_row_schema_rows))
+
+    lines.extend(["", "## Multi-Row Synthetic Fixture Coverage", ""])
+    multi_row_fixture_rows = [{"check": key, "value": value} for key, value in report["multi_row_synthetic_fixture_coverage"].items()]
+    lines.extend(markdown_table(["check", "value"], multi_row_fixture_rows))
+
     lines.extend(["", "## Fixture ZIP Metadata Coverage", ""])
     fixture_rows = [{"check": key, "value": value} for key, value in report["fixture_zip_metadata_coverage"].items()]
     lines.extend(markdown_table(["check", "value"], fixture_rows))
@@ -442,6 +653,10 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines.extend(["", "## Frontend Gating Implications", ""])
     frontend_rows = [{"check": key, "value": value} for key, value in report["frontend_gating_implications"].items()]
     lines.extend(markdown_table(["check", "value"], frontend_rows))
+
+    lines.extend(["", "## Route Switch Status", ""])
+    route_rows = [{"check": key, "value": value} for key, value in report["route_switch_status"].items()]
+    lines.extend(markdown_table(["check", "value"], route_rows))
 
     lines.extend(["", "## Ambiguity Capability By Source", ""])
     capability_rows = [
@@ -484,11 +699,60 @@ def write_outputs(report: dict[str, Any], *, repo_root: Path, markdown_out: Path
 
 def extract_table_sql(schema_text: str, table_name: str) -> str:
     match = re.search(
-        rf"create\s+table\s+{re.escape(table_name)}\s*\((.*?)\);",
+        rf"create\s+table\s+(?:if\s+not\s+exists\s+)?{re.escape(table_name)}\s*\((.*?)\);",
         schema_text,
         flags=re.IGNORECASE | re.DOTALL,
     )
     return match.group(1) if match else ""
+
+
+def find_multi_row_migration(repo_root: Path) -> Path | None:
+    expected = repo_root / MULTI_ROW_MIGRATION_FILE
+    if expected.exists():
+        return expected
+    migrations_root = repo_root / "backend/migrations"
+    matches = sorted(migrations_root.glob("*zip_district_mappings.sql")) if migrations_root.exists() else []
+    return matches[0] if matches else None
+
+
+def normalize_multi_row_fixture_row(row: dict[str, Any], index: int) -> dict[str, Any]:
+    normalized = {
+        "row_id": str(row.get("case") or index),
+        "case": _clean(row.get("case")),
+        "zip": _clean(row.get("zip")),
+        "state": _clean(row.get("state")),
+        "district": normalize_district(row.get("district")),
+        "source_name": _clean(row.get("source_name")),
+        "source_type": _clean(row.get("source_type")),
+        "source_retrieved_at": _clean(row.get("source_retrieved_at")),
+        "source_effective_date": _clean(row.get("source_effective_date")),
+        "source_version": _clean(row.get("source_version")),
+        "source_currentness": _clean(row.get("source_currentness")),
+        "confidence": _clean(row.get("confidence")),
+        "valid_from": _clean(row.get("valid_from")),
+        "valid_to": _clean(row.get("valid_to")),
+    }
+    normalized["has_all_source_metadata"] = all(
+        normalized[field]
+        for field in ["source_name", "source_type", "source_retrieved_at", "source_effective_date", "source_version"]
+    )
+    return normalized
+
+
+def active_source_key(row: dict[str, Any]) -> str:
+    if not row.get("zip") or not row.get("state") or not row.get("district"):
+        return ""
+    return "|".join(
+        [
+            row["zip"],
+            row["state"],
+            row["district"],
+            row["source_name"],
+            row["source_version"],
+            row["valid_from"] or row["source_effective_date"],
+            row["valid_to"] or "9999-12-31",
+        ]
+    )
 
 
 def check(name: str, passed: bool) -> dict[str, Any]:
