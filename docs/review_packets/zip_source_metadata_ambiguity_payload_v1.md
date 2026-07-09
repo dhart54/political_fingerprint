@@ -5,7 +5,12 @@
 This is repository/local-accessible ZIP metadata only. It is not production coverage truth unless a future read-only production report is generated with credentials.
 
 - Read-only: yes
+- Report mode: `repository/static only`
 - Requires production credentials: no
+- Migration auto-apply detected: no
+- `zip_district_mappings` DB table status: `not_inspected`
+- Reviewed seed sample valid: yes
+- Reviewed seed auto-select eligible ZIPs: 0
 - Fixture ZIP rows inspected: 9
 - Fixture unique ZIPs: 4
 - DB path source currentness: `stale_or_unknown`
@@ -30,6 +35,18 @@ Highest findings:
 - `district_mappings`: array of ZIP/state/district mapping rows plus source type/name/version.
 - `house_rep`: object or null.
 - `senators`: array.
+
+## Migration Application Conventions
+
+| check | value |
+| --- | --- |
+| auto_apply_detected | no |
+| deployment_start_command | uvicorn app.main:app --host 0.0.0.0 --port $PORT |
+| backend_startup_migration_runner_found | no |
+| migration_file_declares_manual_application | yes |
+| production_migration_future_manual_approval_required | yes |
+| finding | No deployment/startup auto-apply migration runner was found; production migration remains a future manual approval step. |
+| evidence | `["docs/deployment.md uses the Render start command `uvicorn app.main:app --host 0.0.0.0 --port $PORT`.", "backend/app/main.py creates the FastAPI app and includes routers; it does not run migrations on startup.", "backend/migrations/0013_zip_district_mappings.sql states the migration is not applied by application startup."]` |
 
 ## DB ZIP Metadata Coverage
 
@@ -74,6 +91,31 @@ Highest findings:
 | old_table_untouched | yes |
 | old_table_compatibility_only | yes |
 
+## ZIP District Mappings DB Coverage
+
+| check | value |
+| --- | --- |
+| mode | repository/static only |
+| db_inspected | no |
+| read_only | yes |
+| production_credentials_used | no |
+| table_name | zip_district_mappings |
+| table_status | not_inspected |
+| db_has_zip_district_mappings | None |
+| table_absent | None |
+| table_empty | None |
+| row_count | None |
+| unique_zip_count | None |
+| multi_district_zip_count | None |
+| multi_state_zip_count | None |
+| missing_metadata_count | None |
+| stale_or_unknown_count | None |
+| fixture_sample_count | None |
+| current_source_backed_count | None |
+| auto_select_eligible_count | None |
+| ineligible_counts_by_reason | `{}` |
+| error | None |
+
 ## Multi-Row Synthetic Fixture Coverage
 
 | check | value |
@@ -95,6 +137,41 @@ Highest findings:
 | missing_source_metadata_row_count | 1 |
 | multi_district_zips | `{"09991": ["NC-02", "NC-04"], "09992": ["NC-04", "SC-01"]}` |
 | multi_state_zips | `{"09992": ["NC", "SC"]}` |
+
+## Reviewed Seed Readiness
+
+| check | value |
+| --- | --- |
+| row_count | 3 |
+| unique_zip_count | 2 |
+| required_fields | `["zip", "state", "district", "source_name", "source_type", "source_retrieved_at", "source_effective_date", "source_version", "source_currentness", "confidence", "is_primary", "district_type", "congress", "cycle", "valid_from", "valid_to", "provider_record_id", "notes"]` |
+| all_rows_have_required_fields | yes |
+| errors | `[]` |
+| error_count | 0 |
+| warnings | `[]` |
+| warning_count | 0 |
+| valid | yes |
+| multi_district_zips | `{"09996": ["NC-02", "NC-04"]}` |
+| multi_state_zips | `{}` |
+| duplicate_active_source_period_keys | `[]` |
+| duplicate_active_source_period_key_count | 0 |
+| missing_metadata_rows | `[]` |
+| missing_metadata_count | 0 |
+| stale_or_unknown_rows | `[]` |
+| stale_or_unknown_count | 0 |
+| fixture_sample_rows | `["non-production-seed-sample-nc04", "non-production-seed-sample-split-nc02", "non-production-seed-sample-split-nc04"]` |
+| fixture_sample_count | 3 |
+| current_source_backed_rows | `[]` |
+| current_source_backed_count | 0 |
+| auto_select_eligible_count | 0 |
+| ineligible_counts_by_reason | `{"ambiguous_zip": 1, "fixture_sample": 2, "fixture_sample_only": 1, "low_or_unknown_confidence": 2}` |
+| payload_classification_by_zip | `{"09995": "fixture_sample_only", "09996": "ambiguous_zip"}` |
+| production_coverage_claimed | no |
+| production_coverage_statement | Seed rows are readiness inputs only; they are not production coverage unless a later approved milestone loads reviewed/source-backed rows and verifies coverage read-only. |
+| seed_file | backend/fixtures/zip_reviewed_seed_sample/zip_district_mappings.json |
+| seed_file_exists | yes |
+| seed_file_label | non-production reviewed seed sample |
+| loaded_into_production | no |
 
 ## Fixture ZIP Metadata Coverage
 
@@ -157,8 +234,10 @@ Highest findings:
 | --- | --- |
 | lookup_route_file | backend/app/api/lookup.py |
 | read_layer_file | backend/app/api/precomputed.py |
+| lookup_route_calls_get_zip_lookup_response | yes |
 | current_lookup_route_uses_old_gated_path | yes |
 | new_table_route_switch_absent | yes |
+| production_api_new_table_read_references | `[]` |
 | old_table_query_present | yes |
 | new_table_query_present | no |
 | db_path_source_currentness | stale_or_unknown |
@@ -194,8 +273,12 @@ Highest findings:
 | old_table_remains_compatibility_only | yes |
 | synthetic_fixtures_cover_split_and_multistate_zip | yes |
 | synthetic_duplicate_case_detected | yes |
+| reviewed_seed_sample_exists | yes |
+| reviewed_seed_sample_validates | yes |
+| reviewed_seed_sample_not_auto_select_eligible | yes |
 | current_lookup_route_still_uses_old_gated_path | yes |
 | new_table_route_switch_absent | yes |
+| lookup_route_calls_get_zip_lookup_response | yes |
 
 ## No-Go Items
 
@@ -203,6 +286,9 @@ Highest findings:
 - No Census, Google, Smarty, Cicero, or other provider integration.
 - No national ZIP data ingestion.
 - No local or production database mutation.
+- No production migration application.
+- No /lookup/zip/{zip} route switch to zip_district_mappings.
+- No production seed load.
 - No fake DB source metadata.
 - No House auto-select for stale/unknown, fixture/sample, ambiguous, multi-state, unsupported, or uncertain-member states.
 - No vote interpretation, Record Across, issue read, or profile copy changes.
@@ -215,6 +301,9 @@ Highest findings:
 - Fixture ZIP files are sample coverage and do not include source metadata.
 - No provider or national ZIP data source has been selected or ingested.
 - The new multi-row table is drafted locally but is not applied to production.
+- Default report mode is repository/static only; DB table presence and row counts require an explicit read-only DB URL.
+- No reliable temporary Postgres fixture is present in the repository, so local migration application remains statically verified.
+- The reviewed seed sample is non-production and is not loaded into any database.
 - The public lookup route still reads the compatibility zip_district_map path.
 - The backend route still returns 404 for unsupported ZIPs; the frontend converts that failure into a local unsupported payload with data_source none, empty district_mappings, and null officials.
 

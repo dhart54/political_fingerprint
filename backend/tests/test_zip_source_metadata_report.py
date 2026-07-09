@@ -90,6 +90,8 @@ def test_report_outputs_are_deterministic_and_include_coverage_statement() -> No
     assert zip_report.COVERAGE_STATEMENT in markdown_out.read_text(encoding="utf-8")
     assert first["api_response_contract"]["api_responses_include_standard_metadata_fields"] is True
     assert first["frontend_gating_implications"]["gates_missing_metadata"] is True
+    assert first["scope"]["report_mode"] == "repository/static only"
+    assert first["zip_district_mappings_db_coverage"]["table_status"] == "not_inspected"
 
 
 def test_multi_row_schema_and_route_switch_checks_are_reported() -> None:
@@ -119,6 +121,51 @@ def test_multi_row_schema_and_route_switch_checks_are_reported() -> None:
     assert checks["synthetic_duplicate_case_detected"] is True
 
 
+def test_migration_auto_apply_and_seed_readiness_are_reported() -> None:
+    repo_root = make_case(
+        "application_readiness",
+        zip_rows=[{"zip": "88888", "state": "NC", "district": "04"}],
+        multi_row_migration_sql=multi_row_migration_sql(),
+        multi_row_fixture_rows=multi_row_fixture_rows(),
+        reviewed_seed_rows=[
+            {
+                "zip": "09995",
+                "state": "NC",
+                "district": "04",
+                "source_name": "non_production_reviewed_seed_sample",
+                "source_type": "fixture_sample",
+                "source_retrieved_at": "2026-07-01",
+                "source_effective_date": "2026-01-03",
+                "source_version": "sample-v1",
+                "source_currentness": "fixture_sample",
+                "confidence": "unknown",
+                "is_primary": True,
+                "district_type": "house",
+                "congress": 119,
+                "cycle": "2026",
+                "valid_from": "2026-01-03",
+                "valid_to": None,
+                "provider_record_id": "sample",
+                "notes": "Non-production sample.",
+            }
+        ],
+        precomputed_text=precomputed_contract_text() + "\n# SELECT zip, state, district FROM zip_district_map\n",
+    )
+
+    report = zip_report.build_report(repo_root)
+    checks = {item["check"]: item["passed"] for item in report["coverage_checks"]}
+    packet = zip_report.build_application_readiness_packet(report)
+
+    assert report["migration_application_conventions"]["auto_apply_detected"] is False
+    assert report["reviewed_seed_readiness"]["valid"] is True
+    assert report["reviewed_seed_readiness"]["auto_select_eligible_count"] == 0
+    assert checks["reviewed_seed_sample_validates"] is True
+    assert checks["reviewed_seed_sample_not_auto_select_eligible"] is True
+    assert packet["schema_version"] == zip_report.APPLICATION_READINESS_SCHEMA_VERSION
+    assert packet["migration_application_status"]["migration_applied_production"] is False
+    assert packet["route_behavior_unchanged_confirmation"]["lookup_route_calls_get_zip_lookup_response"] is True
+
+
 def make_case(
     name: str,
     *,
@@ -126,6 +173,7 @@ def make_case(
     zip_table_sql: str | None = None,
     multi_row_migration_sql: str | None = None,
     multi_row_fixture_rows: list[dict[str, object]] | None = None,
+    reviewed_seed_rows: list[dict[str, object]] | None = None,
     precomputed_text: str | None = None,
 ) -> Path:
     repo_root = CASES_ROOT / name
@@ -136,7 +184,8 @@ def make_case(
     frontend_components = repo_root / "frontend/components"
     docs = repo_root / "docs/review_packets"
     multi_row_fixtures = fixtures / "zip_multi_row_schema_sample"
-    for path in [fixtures, multi_row_fixtures, migrations, api_dir, frontend_lib, frontend_components, docs]:
+    reviewed_seed_fixtures = fixtures / "zip_reviewed_seed_sample"
+    for path in [fixtures, multi_row_fixtures, reviewed_seed_fixtures, migrations, api_dir, frontend_lib, frontend_components, docs]:
         path.mkdir(parents=True, exist_ok=True)
 
     (fixtures / "zip_district_map.json").write_text(json.dumps(zip_rows, indent=2), encoding="utf-8")
@@ -148,8 +197,16 @@ def make_case(
             json.dumps(multi_row_fixture_rows, indent=2),
             encoding="utf-8",
         )
+    if reviewed_seed_rows is not None:
+        (reviewed_seed_fixtures / "zip_district_mappings.json").write_text(
+            json.dumps(reviewed_seed_rows, indent=2),
+            encoding="utf-8",
+        )
     (api_dir / "precomputed.py").write_text(precomputed_text or precomputed_contract_text(), encoding="utf-8")
-    (api_dir / "lookup.py").write_text("raise HTTPException(status_code=404, detail=\"ZIP not loaded\")\n", encoding="utf-8")
+    (api_dir / "lookup.py").write_text(
+        "def lookup_zip(zip_code):\n    response = get_zip_lookup_response(zip_code=zip_code)\n    raise HTTPException(status_code=404, detail=\"ZIP not loaded\")\n",
+        encoding="utf-8",
+    )
     (frontend_lib / "zipLookupState.mjs").write_text(frontend_classifier_text(), encoding="utf-8")
     (frontend_components / "ZipLookupPanel.js").write_text(
         '{"data_source": "none", "district_mappings": [], "source_currentness": "unsupported", "ambiguity_detection_level": "none"}',
