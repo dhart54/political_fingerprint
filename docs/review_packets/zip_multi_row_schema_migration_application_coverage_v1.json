@@ -1,0 +1,145 @@
+{
+  "confirmations": {
+    "no_migration_beyond_0013_applied_by_this_script": true,
+    "no_seed_data_loaded": true,
+    "old_zip_district_map_path_gated": true,
+    "production_lookup_behavior_remains_unchanged": true,
+    "zip_district_mappings_empty_after_apply": true
+  },
+  "contract_checks": {
+    "all_required_columns_present": true,
+    "all_required_indexes_present": true,
+    "all_source_metadata_columns_present": true,
+    "auto_select_eligible_count_zero": true,
+    "controlled_confidence_check_present": true,
+    "controlled_currentness_check_present": true,
+    "duplicate_active_source_period_rule_present": true,
+    "new_table_route_switch_absent": true,
+    "public_lookup_still_reads_old_path": true,
+    "row_count_zero": true,
+    "unique_zip_count_zero": true,
+    "zip_district_map_still_exists": true,
+    "zip_district_mappings_exists": true
+  },
+  "generated_at": "2026-07-09T02:54:22.411267+00:00",
+  "migration_application": {
+    "address_lookup_added": false,
+    "migration_applied": true,
+    "migration_file": "backend\\migrations\\0013_zip_district_mappings.sql",
+    "national_zip_data_ingested": false,
+    "production_like_migration_applied": true,
+    "public_route_switched": false,
+    "seed_data_loaded": false
+  },
+  "mode": "apply",
+  "postcheck": {
+    "auto_select_eligible_count": 0,
+    "columns": [
+      "id",
+      "zip",
+      "state",
+      "district",
+      "source_name",
+      "source_type",
+      "source_retrieved_at",
+      "source_effective_date",
+      "source_version",
+      "source_currentness",
+      "confidence",
+      "is_primary",
+      "district_type",
+      "congress",
+      "cycle",
+      "valid_from",
+      "valid_to",
+      "provider_record_id",
+      "notes",
+      "created_at",
+      "updated_at"
+    ],
+    "constraints": {
+      "zip_district_mappings_check": "CHECK (((valid_to IS NULL) OR (valid_from IS NULL) OR (valid_to >= valid_from)))",
+      "zip_district_mappings_confidence_check": "CHECK ((confidence = ANY (ARRAY['source_backed'::text, 'reviewed'::text, 'inferred'::text, 'low'::text, 'unknown'::text])))",
+      "zip_district_mappings_district_type_check": "CHECK ((district_type = ANY (ARRAY['house'::text, 'delegate'::text, 'resident_commissioner'::text, 'at_large'::text])))",
+      "zip_district_mappings_pkey": "PRIMARY KEY (id)",
+      "zip_district_mappings_source_currentness_check": "CHECK ((source_currentness = ANY (ARRAY['current'::text, 'stale_or_unknown'::text, 'fixture_sample'::text, 'unsupported'::text, 'expired'::text])))",
+      "zip_district_mappings_state_check": "CHECK ((state ~ '^[A-Z]{2}$'::text))",
+      "zip_district_mappings_zip_check": "CHECK ((zip ~ '^[0-9]{5}$'::text))"
+    },
+    "current_source_backed_count": 0,
+    "db_inspected": true,
+    "fixture_sample_count": 0,
+    "indexes": {
+      "idx_zip_district_mappings_active_source_period_unique": "CREATE UNIQUE INDEX idx_zip_district_mappings_active_source_period_unique ON public.zip_district_mappings USING btree (zip, state, district, source_name, source_version, COALESCE(valid_from, source_effective_date), COALESCE(valid_to, '9999-12-31'::date))",
+      "idx_zip_district_mappings_source_currentness": "CREATE INDEX idx_zip_district_mappings_source_currentness ON public.zip_district_mappings USING btree (source_currentness)",
+      "idx_zip_district_mappings_source_name": "CREATE INDEX idx_zip_district_mappings_source_name ON public.zip_district_mappings USING btree (source_name)",
+      "idx_zip_district_mappings_source_version": "CREATE INDEX idx_zip_district_mappings_source_version ON public.zip_district_mappings USING btree (source_version)",
+      "idx_zip_district_mappings_zip": "CREATE INDEX idx_zip_district_mappings_zip ON public.zip_district_mappings USING btree (zip)",
+      "idx_zip_district_mappings_zip_state_district": "CREATE INDEX idx_zip_district_mappings_zip_state_district ON public.zip_district_mappings USING btree (zip, state, district)",
+      "zip_district_mappings_pkey": "CREATE UNIQUE INDEX zip_district_mappings_pkey ON public.zip_district_mappings USING btree (id)"
+    },
+    "read_only": true,
+    "row_count": 0,
+    "unique_zip_count": 0,
+    "zip_district_map_exists": true,
+    "zip_district_mappings_exists": true
+  },
+  "preflight": {
+    "auto_select_eligible_count": null,
+    "columns": [],
+    "constraints": {},
+    "current_source_backed_count": null,
+    "db_inspected": true,
+    "fixture_sample_count": null,
+    "indexes": {},
+    "read_only": true,
+    "row_count": null,
+    "unique_zip_count": null,
+    "zip_district_map_exists": true,
+    "zip_district_mappings_exists": false
+  },
+  "recommended_next_milestone": "ZIP Multi-Row Read-Only Coverage And Route-Path Evaluation V1: keep the old lookup path gated, verify production remains empty/read-only, and only design a future route switch after source-backed data approval.",
+  "rollback_posture": {
+    "reason": "The public lookup route remains on zip_district_map and no rows were loaded into zip_district_mappings.",
+    "route_rollback_needed": false,
+    "schema_rollback": "Requires a separate explicit approval before any DROP TABLE action."
+  },
+  "route_behavior": {
+    "lookup_behavior_changed_by_this_script": false,
+    "lookup_route_calls_get_zip_lookup_response": true,
+    "new_table_route_switch_absent": true,
+    "public_lookup_still_reads_old_path": true
+  },
+  "safety": {
+    "additive_table_only": true,
+    "banned_statement_matches": {
+      "alter_old_zip_table": false,
+      "data_delete": false,
+      "data_load_copy": false,
+      "data_load_insert": false,
+      "data_update": false,
+      "drop": false,
+      "truncate": false
+    },
+    "migration_file": "backend\\migrations\\0013_zip_district_mappings.sql",
+    "required_checks": {
+      "creates_new_table": true,
+      "creates_unique_active_source_period_index": true,
+      "old_table_not_referenced_by_ddl": true
+    },
+    "seed_or_national_data_load_detected": false
+  },
+  "schema_version": "zip_multi_row_schema_migration_application_coverage_v1",
+  "target": {
+    "database": "postgres",
+    "env_path": "backend\\.env",
+    "host": "aws-1-us-east-1.pooler.supabase.com",
+    "password_present": true,
+    "port": 5432,
+    "production_like_target": true,
+    "raw_url_recorded": false,
+    "scheme": "postgresql",
+    "supabase_host": true,
+    "username_present": true
+  }
+}
