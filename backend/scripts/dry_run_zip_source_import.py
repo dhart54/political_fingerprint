@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import re
 import sys
@@ -16,13 +17,31 @@ DEFAULT_INPUT = REPO_ROOT / "backend/fixtures/zip_source_dry_run_sample/census_1
 DEFAULT_JSON_OUTPUT = REPO_ROOT / "docs/review_packets/zip_source_approval_dry_run_harness_v1.json"
 DEFAULT_MARKDOWN_OUTPUT = REPO_ROOT / "docs/review_packets/zip_source_approval_dry_run_harness_v1.md"
 
-SCHEMA_VERSION = "zip_source_approval_dry_run_harness_v1"
+SCHEMA_VERSION = "zip_source_retrieval_official_file_dry_run_v1"
 REPORT_DATE = "2026-07-10"
 SOURCE_CANDIDATE_NAME = "U.S. Census Bureau 119th Congressional District to 2020 ZCTA Relationship File"
 SOURCE_TYPE = "official_government_relationship_file"
 SOURCE_URL = "https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html"
 SOURCE_VERSION = "119th-congressional-district-to-2020-zcta-relationship-file"
 SOURCE_EFFECTIVE_DATE = "119th Congress / 2020 ZCTA vintage; exact production effective date not approved"
+OFFICIAL_FILE_NAME = "tab20_cd11920_zcta520_natl.txt"
+OFFICIAL_FILE_URL = "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_zcta520_natl.txt"
+OFFICIAL_LAYOUT_URL = "https://www.census.gov/programs-surveys/geography/technical-documentation/records-layout/2020-CD-SLD-record-layout.html"
+OFFICIAL_COLUMNS = [
+    "OID_CD119_20", "GEOID_CD119_20", "NAMELSAD_CD119_20", "AREALAND_CD119_20",
+    "AREAWATER_CD119_20", "MTFCC_CD119_20", "FUNCSTAT_CD119_20", "OID_ZCTA5_20",
+    "GEOID_ZCTA5_20", "NAMELSAD_ZCTA5_20", "AREALAND_ZCTA5_20", "AREAWATER_ZCTA5_20",
+    "MTFCC_ZCTA5_20", "CLASSFP_ZCTA5_20", "FUNCSTAT_ZCTA5_20", "AREALAND_PART", "AREAWATER_PART",
+]
+STATE_FIPS_TO_ABBR = {
+    "01":"AL","02":"AK","04":"AZ","05":"AR","06":"CA","08":"CO","09":"CT","10":"DE",
+    "11":"DC","12":"FL","13":"GA","15":"HI","16":"ID","17":"IL","18":"IN","19":"IA",
+    "20":"KS","21":"KY","22":"LA","23":"ME","24":"MD","25":"MA","26":"MI","27":"MN",
+    "28":"MS","29":"MO","30":"MT","31":"NE","32":"NV","33":"NH","34":"NJ","35":"NM",
+    "36":"NY","37":"NC","38":"ND","39":"OH","40":"OK","41":"OR","42":"PA","44":"RI",
+    "45":"SC","46":"SD","47":"TN","48":"TX","49":"UT","50":"VT","51":"VA","53":"WA",
+    "54":"WV","55":"WI","56":"WY",
+}
 
 ZIP_RE = re.compile(r"^\d{5}$")
 DISTRICT_RE = re.compile(r"^\d{1,2}$")
@@ -162,9 +181,11 @@ def build_report(*, input_path: Path) -> dict[str, Any]:
         "state_count": len({row["state"] for row in accepted_rows}),
         "unique_state_district_pair_count": len({(row["state"], row["district"]) for row in accepted_rows}),
         "same_state_multi_district_count": len(same_state_multi_district),
-        "same_state_multi_district_zips": same_state_multi_district,
+        "same_state_multi_district_zips": dict(list(same_state_multi_district.items())[:100]),
+        "same_state_multi_district_zips_truncated": len(same_state_multi_district) > 100,
         "multi_state_count": len(multi_state),
-        "multi_state_zips": multi_state,
+        "multi_state_zips": dict(list(multi_state.items())[:100]),
+        "multi_state_zips_truncated": len(multi_state) > 100,
         "duplicate_active_row_count": duplicate_active_row_count,
         "missing_required_metadata_count": sum("missing_required_metadata" in row["rejection_reasons"] for row in normalized_rows),
         "invalid_zip_zcta_format_count": sum("invalid_zip_zcta_format" in row["rejection_reasons"] for row in normalized_rows),
@@ -188,10 +209,10 @@ def build_report(*, input_path: Path) -> dict[str, Any]:
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_at": REPORT_DATE,
-        "branch": "codex/zip-source-approval-dry-run-harness-v1",
+        "branch": "codex/zip-source-retrieval-official-file-dry-run-v1",
         "base": {
-            "source": "latest main after PR #83",
-            "merge_commit": "7014777fdfa28875a7b9f852f1483356c0148d51",
+            "source": "latest main after PR #84",
+            "merge_commit": "b7f4fb1e61157a7bcd97470487bec30ef73161d1",
         },
         "scope": {
             "dry_run_only": True,
@@ -209,9 +230,12 @@ def build_report(*, input_path: Path) -> dict[str, Any]:
         "input": {
             "path": repo_relative(input_path),
             "format": input_path.suffix.lower().lstrip("."),
-            "local_fixture_or_sample_only": True,
-            "network_used": False,
+            "local_fixture_or_sample_only": input_path.name != OFFICIAL_FILE_NAME,
+            "network_used_during_harness": False,
+            "official_file_previously_retrieved": input_path.name == OFFICIAL_FILE_NAME,
             "credentials_required": False,
+            "file_size_bytes": input_path.stat().st_size,
+            "sha256": sha256_file(input_path),
         },
         "postcheck": {
             "script": "backend/scripts/apply_zip_district_mappings_migration.py --postcheck-only --env-path backend/.env",
@@ -252,30 +276,30 @@ def build_report(*, input_path: Path) -> dict[str, Any]:
                 "notes": "Read-only; migration_applied false; row count 0; unique ZIP count 0; auto-select eligible count 0.",
             },
             {
-                "command": "python backend\\scripts\\dry_run_zip_source_import.py --dry-run --input backend\\fixtures\\zip_source_dry_run_sample\\census_119_cd_zcta_sample.csv --output docs\\review_packets\\zip_source_approval_dry_run_harness_v1.json --markdown-output docs\\review_packets\\zip_source_approval_dry_run_harness_v1.md",
+                "command": "python backend\\scripts\\dry_run_zip_source_import.py --dry-run --input .local\\zip_source_official\\tab20_cd11920_zcta520_natl.txt --output docs\\review_packets\\zip_source_retrieval_official_file_dry_run_v1.json --markdown-output docs\\review_packets\\zip_source_retrieval_official_file_dry_run_v1.md",
                 "result": "passed",
-                "notes": "Generated no-write dry-run JSON and Markdown packets.",
+                "notes": "Parsed the ignored local official file and generated no-write JSON and Markdown packets.",
             },
             {
                 "command": "$env:DATABASE_URL='postgresql://invalid'; python -m pytest backend\\tests\\test_api_lookup.py backend\\tests\\test_zip_source_metadata_report.py backend\\tests\\test_zip_multi_row_schema_contract.py backend\\tests\\test_zip_lookup_payload_parity.py backend\\tests\\test_zip_seed_readiness.py backend\\tests\\test_zip_multi_row_readonly_route_eval.py backend\\tests\\test_zip_source_dry_run_import.py -p no:cacheprovider",
                 "result": "passed",
-                "notes": "33 passed.",
+                "notes": "34 passed.",
+            },
+            {
+                "command": "python -m json.tool docs\\review_packets\\zip_source_retrieval_official_file_dry_run_v1.json",
+                "result": "passed",
+                "notes": "Valid JSON.",
             },
             {
                 "command": "python -m json.tool docs\\review_packets\\zip_source_approval_dry_run_harness_v1.json",
                 "result": "passed",
                 "notes": "Valid JSON.",
             },
-            {
-                "command": "python -m json.tool docs\\review_packets\\zip_source_backed_ingestion_preflight_v1.json",
-                "result": "passed",
-                "notes": "Valid JSON.",
-            },
         ],
         "recommended_next_milestone": (
-            "ZIP Source Retrieval Approval And Bounded Dry-Run With Official File V1: pin the exact Census file, "
-            "terms/license, version, and effective date; run the harness against a reviewed local official file; "
-            "keep the database empty and the public route unchanged."
+            "ZIP Source-to-Member Readiness Gate V1: design and validate current House member matching, duplicate-member "
+            "blocking, stale-member blocking, territory handling, and bounded rollback/preflight artifacts without "
+            "loading national mappings or switching public routes."
         ),
     }
 
@@ -284,16 +308,32 @@ def source_approval_record() -> dict[str, Any]:
     return {
         "candidate_name": SOURCE_CANDIDATE_NAME,
         "source_type": SOURCE_TYPE,
-        "source_url_or_retrieval_path": SOURCE_URL,
+        "source_page": SOURCE_URL,
+        "source_url_or_retrieval_path": OFFICIAL_FILE_URL,
+        "file_name": OFFICIAL_FILE_NAME,
         "retrieval_date": REPORT_DATE,
         "effective_date": SOURCE_EFFECTIVE_DATE,
         "source_version": SOURCE_VERSION,
-        "decision": "approved_for_local_dry_run_only",
+        "decision": "approved_for_bounded_dry_run_only",
         "production_ingestion_approved": False,
+        "license_or_terms_basis": (
+            "Official U.S. Census Bureau public data published as open government data; Census Bureau works "
+            "created by employees generally are not subject to U.S. copyright. No credential or terms-acceptance gate was present."
+        ),
+        "technical_layout": {
+            "format": "pipe-delimited text with header",
+            "record_layout_url": OFFICIAL_LAYOUT_URL,
+            "columns": OFFICIAL_COLUMNS,
+            "mapping": {
+                "zip_zcta": "GEOID_ZCTA5_20",
+                "state": "first two characters of GEOID_CD119_20 interpreted as state FIPS",
+                "district": "last two characters of GEOID_CD119_20",
+            },
+        },
         "rationale": [
             "The Census relationship file candidate is official and can represent many-to-many geography relationships.",
             "The candidate is appropriate for parser and ambiguity-report dry runs using local sample data.",
-            "Production ingestion is not approved until exact license/terms, effective date, file version, and technical layout are recorded without inference.",
+            "Production ingestion remains outside this no-write milestone even though the exact file and layout are now pinned.",
         ],
         "limitations": [
             "ZIP Codes are delivery routes, not exact boundaries.",
@@ -316,10 +356,10 @@ def source_approval_record() -> dict[str, Any]:
             },
         ],
         "approval_blockers_before_production": [
-            "exact_license_or_terms_not_recorded",
-            "exact_effective_date_not_recorded",
-            "exact_download_file_and_checksum_not_recorded",
-            "technical_record_layout_not_bound_to_parser",
+            "bounded_production_write_plan_not_approved",
+            "current_house_member_metadata_gate_not_implemented",
+            "duplicate_current_house_member_match_gate_not_implemented",
+            "zcta_does_not_cover_all_usps_zip_codes_or_provide_address_level_precision",
         ],
     }
 
@@ -351,8 +391,43 @@ def read_source_rows(input_path: Path) -> list[dict[str, Any]]:
         if not isinstance(payload, list):
             raise ValueError("JSON input must be a list of rows or an object with a rows list.")
         return [dict(row) for row in payload]
-    with input_path.open("r", encoding="utf-8", newline="") as handle:
-        return [dict(row) for row in csv.DictReader(handle)]
+    with input_path.open("r", encoding="utf-8-sig", newline="") as handle:
+        first_line = handle.readline()
+        handle.seek(0)
+        delimiter = "|" if "|" in first_line else ","
+        rows = [dict(row) for row in csv.DictReader(handle, delimiter=delimiter)]
+    if rows and set(OFFICIAL_COLUMNS).issubset(rows[0]):
+        return [adapt_official_census_row(row) for row in rows]
+    return rows
+
+
+def adapt_official_census_row(raw: dict[str, Any]) -> dict[str, Any]:
+    cd_geoid = first_present(raw, ["GEOID_CD119_20"])
+    return {
+        **raw,
+        "zcta": first_present(raw, ["GEOID_ZCTA5_20"]),
+        "state": STATE_FIPS_TO_ABBR.get(cd_geoid[:2], ""),
+        "district": cd_geoid[2:],
+        "source_name": SOURCE_CANDIDATE_NAME,
+        "source_type": SOURCE_TYPE,
+        "source_url": OFFICIAL_FILE_URL,
+        "source_retrieved_at": REPORT_DATE,
+        "source_effective_date": SOURCE_EFFECTIVE_DATE,
+        "source_version": SOURCE_VERSION,
+        "source_currentness": "current",
+        "confidence": "source_backed",
+        "ambiguity_detection_level": "multi_row_source",
+        "fixture_sample_only": "false",
+        "stale_or_unknown_source": "false",
+    }
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def normalize_row(raw: dict[str, Any], *, line_number: int) -> dict[str, Any]:
@@ -539,11 +614,11 @@ def render_markdown(report: dict[str, Any]) -> str:
     summary = report["dry_run_summary"]
     safety = report["safety_confirmations"]
     lines = [
-        "# ZIP Source Approval And Dry-Run Import Harness V1",
+        "# ZIP Source Retrieval Official-File Dry-Run V1",
         "",
         "## Summary",
         "",
-        "- Added a no-write dry-run parser/report harness for local ZIP/ZCTA source-like files.",
+        "- Pinned and parsed the exact official Census national 119th Congressional District-to-2020 ZCTA relationship file.",
         f"- Source decision: `{approval['decision']}`.",
         "- Production ingestion is not approved by this packet.",
         "- Public lookup behavior remains unchanged and `ZIP_MULTI_ROW_LOOKUP_ENABLED` remains false.",
@@ -552,10 +627,14 @@ def render_markdown(report: dict[str, Any]) -> str:
         "",
         f"- Candidate: {approval['candidate_name']}",
         f"- Type: `{approval['source_type']}`",
+        f"- Source page: {approval['source_page']}",
         f"- URL/retrieval path: {approval['source_url_or_retrieval_path']}",
+        f"- File name: `{approval['file_name']}`",
         f"- Retrieval date: `{approval['retrieval_date']}`",
         f"- Effective date: `{approval['effective_date']}`",
         f"- Source version: `{approval['source_version']}`",
+        f"- License/terms basis: {approval['license_or_terms_basis']}",
+        f"- Record layout: {approval['technical_layout']['record_layout_url']}",
         f"- Production ingestion approved: `{approval['production_ingestion_approved']}`",
         "",
         "Rationale:",
@@ -571,6 +650,9 @@ def render_markdown(report: dict[str, Any]) -> str:
             "## Dry-Run Report Summary",
             "",
             f"- Input: `{report['input']['path']}`",
+            f"- Local official file committed: `{not report['input']['path'].startswith('.local/')}`",
+            f"- File size: `{report['input']['file_size_bytes']}` bytes",
+            f"- SHA-256: `{report['input']['sha256']}`",
             f"- Row count: `{summary['row_count']}`",
             f"- Accepted row count: `{summary['accepted_row_count']}`",
             f"- Rejected row count: `{summary['rejected_row_count']}`",
@@ -584,9 +666,12 @@ def render_markdown(report: dict[str, Any]) -> str:
             f"- Invalid ZIP/ZCTA format count: `{summary['invalid_zip_zcta_format_count']}`",
             f"- Invalid state count: `{summary['invalid_state_count']}`",
             f"- Invalid district count: `{summary['invalid_district_count']}`",
+            f"- Source-only future auto-select candidate count: `{summary['source_only_future_auto_select_candidate_zip_count']}`",
             f"- Future auto-select eligible ZIP count: `{summary['future_auto_select_eligible_zip_count']}`",
             f"- Any row auto-select eligible under strict gates: `{summary['would_any_row_be_auto_select_eligible_under_strict_gates']}`",
             f"- Explicit no DB write: `{summary['explicit_no_db_write']}`",
+            f"- `zip_district_mappings` remains empty: `{report['postcheck']['zip_district_mappings_row_count'] == 0}`",
+            f"- Public routes still read `zip_district_map`: `{not report['current_route_behavior']['public_api_reads_zip_district_mappings']}`",
             "",
             "Confidence distribution:",
         ]

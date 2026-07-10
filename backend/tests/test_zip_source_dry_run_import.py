@@ -9,6 +9,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPT_PATH = REPO_ROOT / "backend/scripts/dry_run_zip_source_import.py"
 FIXTURE_PATH = REPO_ROOT / "backend/fixtures/zip_source_dry_run_sample/census_119_cd_zcta_sample.csv"
+OFFICIAL_EXCERPT_PATH = REPO_ROOT / "backend/fixtures/zip_source_dry_run_sample/census_119_cd_zcta_official_layout_excerpt.txt"
 CASES_ROOT = REPO_ROOT / "backend/tests/_zip_source_dry_run_cases"
 
 
@@ -31,7 +32,7 @@ def test_dry_run_report_detects_ambiguity_and_rejections() -> None:
     summary = report["dry_run_summary"]
 
     assert report["schema_version"] == zip_dry_run.SCHEMA_VERSION
-    assert report["source_approval"]["decision"] == "approved_for_local_dry_run_only"
+    assert report["source_approval"]["decision"] == "approved_for_bounded_dry_run_only"
     assert report["source_approval"]["production_ingestion_approved"] is False
     assert summary["row_count"] == 11
     assert summary["accepted_row_count"] == 7
@@ -63,6 +64,26 @@ def test_dry_run_fail_closed_without_flag() -> None:
 
     assert result == 2
     assert not output_path.exists()
+
+
+def test_official_census_pipe_layout_is_adapted_without_guessing_columns() -> None:
+    report = zip_dry_run.build_report(input_path=OFFICIAL_EXCERPT_PATH)
+    summary = report["dry_run_summary"]
+
+    assert summary["row_count"] == 2
+    assert summary["accepted_row_count"] == 2
+    assert summary["rejected_row_count"] == 0
+    assert summary["unique_zip_zcta_count"] == 2
+    assert summary["state_count"] == 1
+    assert report["sample_rows"][0] == {
+        "zip": "36009",
+        "state": "AL",
+        "district": "01",
+        "source_currentness": "current",
+        "confidence": "source_backed",
+        "ambiguity_detection_level": "multi_row_source",
+    }
+    assert report["input"]["sha256"]
 
 
 def test_dry_run_writes_review_packet_outputs() -> None:
