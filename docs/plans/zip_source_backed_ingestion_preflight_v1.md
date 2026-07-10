@@ -34,7 +34,7 @@
 - [x] Define future ingestion caps, dry-run, duplicate/ambiguity detection, rollback, and confirmation phrase.
 - [x] Define future route-switch acceptance criteria with `ZIP_MULTI_ROW_LOOKUP_ENABLED=false` by default.
 - [x] Generate Markdown and JSON review packets.
-- [ ] Run focused validation.
+- [x] Run focused validation.
 - [x] Prepare for commit, push, and draft PR.
 
 ## Baseline
@@ -104,7 +104,7 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: yes, pending commit/push/PR execution.
+- Definition of done satisfied: yes.
 - Production writes performed: no.
 - Route behavior changed: no.
 - Frontend runtime changed: no.
