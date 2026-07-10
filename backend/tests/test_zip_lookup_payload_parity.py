@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from app.api.precomputed import get_zip_lookup_response
+from app.api.precomputed import build_unsupported_zip_lookup_response, get_zip_lookup_response
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -57,6 +57,36 @@ def test_new_table_unsupported_payload_uses_pr77_contract_shape() -> None:
     assert payload["house_rep"] is None
     assert payload["senators"] == []
     assert payload["district_mappings"] == []
+
+
+def test_backend_owned_unsupported_zip_payload_contract_is_standardized() -> None:
+    payload = build_unsupported_zip_lookup_response(zip_code="99999")
+
+    assert payload["zip"] == "99999"
+    assert payload["status"] == "unsupported_zip"
+    assert payload["lookup_state"] == "unsupported_zip"
+    assert payload["data_source"] == "none"
+    assert payload["state"] is None
+    assert payload["district"] is None
+    assert payload["house_rep"] is None
+    assert payload["senators"] == []
+    assert payload["district_mappings"] == []
+    assert payload["lookup_metadata"] == {
+        "source_type": "none",
+        "source_name": None,
+        "source_retrieved_at": None,
+        "source_effective_date": None,
+        "source_version": None,
+        "source_currentness": "unsupported",
+        "fixture_sample_only": False,
+        "stale_or_unknown_source": False,
+        "member_metadata_uncertain": False,
+        "can_represent_multiple_districts": False,
+        "ambiguity_detection_level": "none",
+        "confidence": "unknown",
+    }
+    assert "invalid" not in json.dumps(payload).lower()
+    assert classify_payload(payload) == "unsupported_zip"
 
 
 def test_existing_old_table_zip_lookup_path_remains_stale_unknown_and_gated(monkeypatch) -> None:

@@ -1,0 +1,208 @@
+{
+  "schema_version": "zip_source_backed_ingestion_preflight_v1",
+  "branch": "codex/zip-source-backed-ingestion-preflight-v1",
+  "base": {
+    "source": "latest main after PR #82",
+    "merge_commit": "404753a7d772cef3d824c755dba0ba2cec742e77"
+  },
+  "scope": {
+    "production_data_mutated": false,
+    "migration_rerun": false,
+    "seed_data_loaded": false,
+    "national_zip_data_ingested": false,
+    "route_switch_made": false,
+    "zip_multi_row_lookup_enabled": false,
+    "address_lookup_added": false,
+    "provider_integration_added": false,
+    "frontend_runtime_changed": false
+  },
+  "postcheck": {
+    "script": "backend/scripts/apply_zip_district_mappings_migration.py --postcheck-only --env-path backend/.env",
+    "mode": "postcheck",
+    "migration_applied_by_postcheck": false,
+    "contract_checks_passed": true,
+    "zip_district_map_exists": true,
+    "zip_district_mappings_exists": true,
+    "zip_district_mappings_row_count": 0,
+    "zip_district_mappings_unique_zip_count": 0,
+    "zip_district_mappings_auto_select_eligible_count": 0,
+    "raw_database_url_recorded": false
+  },
+  "current_route_behavior": {
+    "lookup_zip_route_reads": "zip_district_map",
+    "lookup_zip_races_route_reads": "zip_district_map",
+    "public_api_reads_zip_district_mappings": false,
+    "successful_lookup_behavior_changed": false,
+    "old_table_stale_unknown_payload_changed": false,
+    "unsupported_public_route_behavior_changed": false,
+    "unsupported_current_route_status": 404
+  },
+  "backend_unsupported_zip_payload_contract": {
+    "implemented_as": "backend helper only",
+    "helper": "app.api.precomputed.build_unsupported_zip_lookup_response",
+    "route_wired": false,
+    "reason_not_wired": "Returning this payload from /lookup/zip/{zip} would change current public 404 behavior.",
+    "shape": {
+      "zip": "requested ZIP string",
+      "state": null,
+      "district": null,
+      "status": "unsupported_zip",
+      "lookup_state": "unsupported_zip",
+      "data_source": "none",
+      "lookup_metadata": {
+        "source_type": "none",
+        "source_name": null,
+        "source_retrieved_at": null,
+        "source_effective_date": null,
+        "source_version": null,
+        "source_currentness": "unsupported",
+        "fixture_sample_only": false,
+        "stale_or_unknown_source": false,
+        "member_metadata_uncertain": false,
+        "can_represent_multiple_districts": false,
+        "ambiguity_detection_level": "none",
+        "confidence": "unknown"
+      },
+      "district_mappings": [],
+      "house_rep": null,
+      "senators": []
+    },
+    "does_not_claim_invalid_zip": true
+  },
+  "source_approval_contract": {
+    "provider_selected_this_milestone": false,
+    "approval_record_required_fields": [
+      "source_name",
+      "source_type",
+      "source_url_or_retrieval_location",
+      "retrieval_date",
+      "effective_date",
+      "source_version",
+      "confidence_mapping",
+      "currentness_mapping",
+      "multi_district_zip_capability",
+      "multi_state_zip_capability",
+      "po_box_unique_military_zip_treatment",
+      "known_limitations"
+    ],
+    "minimum_acceptance": {
+      "source_name_present": true,
+      "source_type_present": true,
+      "retrieval_location_documented": true,
+      "retrieval_date_present": true,
+      "effective_date_present": true,
+      "source_version_present": true,
+      "confidence_mapping_reviewed": true,
+      "currentness_mapping_reviewed": true,
+      "can_represent_multi_district_zips": true,
+      "can_represent_multi_state_zips": true,
+      "limitations_documented": true
+    },
+    "confidence_mapping_allowed_values": [
+      "source_backed",
+      "reviewed",
+      "inferred",
+      "low",
+      "unknown"
+    ],
+    "currentness_mapping_allowed_values": [
+      "current",
+      "stale_or_unknown",
+      "fixture_sample",
+      "unsupported",
+      "expired"
+    ]
+  },
+  "future_ingestion_caps": {
+    "dry_run_required_first": true,
+    "row_count_cap": "must be explicitly set in the future write milestone",
+    "unique_zip_cap": "must be explicitly set in the future write milestone",
+    "state_or_pilot_state_cap": "must be explicitly set in the future write milestone",
+    "duplicate_detection_required": true,
+    "ambiguity_detection_required": true,
+    "rollback_required_before_write": true,
+    "production_write_confirmation_phrase": "APPLY ZIP SOURCE-BACKED INGESTION TO APPROVED SUPABASE TARGET",
+    "write_allowed_this_milestone": false
+  },
+  "future_route_switch_acceptance_criteria": [
+    "ZIP_MULTI_ROW_LOOKUP_ENABLED remains false by default.",
+    "Source-backed rows are loaded and reviewed in a separate bounded write milestone.",
+    "Backend emits confidence for lookup metadata and mapping rows.",
+    "Backend emits source_currentness and all required source metadata.",
+    "Ambiguous and multi-state ZIPs are represented explicitly.",
+    "Unsupported ZIP payload is standardized by backend before broad rollout.",
+    "Current House member metadata gate exists.",
+    "Duplicate current House member matches block auto-select.",
+    "Stale member metadata blocks auto-select.",
+    "Frontend classifier requires strict currentness and confidence before auto-select."
+  ],
+  "strict_future_auto_select_gate": {
+    "source_currentness": "current",
+    "confidence_allowed": [
+      "source_backed",
+      "reviewed"
+    ],
+    "fixture_sample_only": false,
+    "stale_or_unknown_source": false,
+    "required_metadata": [
+      "source_name",
+      "source_type",
+      "source_retrieved_at",
+      "source_effective_date",
+      "source_version"
+    ],
+    "exactly_one_state": true,
+    "exactly_one_district": true,
+    "ambiguity_detection_level": "multi_row_source",
+    "current_house_member_metadata_gate_passes": true,
+    "duplicate_current_house_member_match_blocks": true
+  },
+  "stop_conditions_checked": {
+    "zip_district_mappings_contains_rows": false,
+    "public_route_reads_zip_district_mappings": false,
+    "unsupported_payload_work_requires_breaking_frontend_change": false,
+    "production_write_required": false,
+    "source_selection_requires_uncertain_assumptions": false,
+    "old_table_supported_zip_behavior_changed": false
+  },
+  "validation": [
+    {
+      "command": "python backend\\scripts\\apply_zip_district_mappings_migration.py --postcheck-only --env-path backend\\.env",
+      "result": "passed",
+      "notes": "Read-only; migration_applied false; row count 0; unique ZIP count 0; auto-select eligible count 0."
+    },
+    {
+      "command": "python -m pytest backend\\tests\\test_api_lookup.py backend\\tests\\test_zip_source_metadata_report.py backend\\tests\\test_zip_multi_row_schema_contract.py backend\\tests\\test_zip_lookup_payload_parity.py backend\\tests\\test_zip_seed_readiness.py backend\\tests\\test_zip_multi_row_readonly_route_eval.py -p no:cacheprovider",
+      "result": "failed_then_rerun_with_fixture_db_override",
+      "notes": "Initial run picked up live DB rows for fixture-specific test_api_lookup expectations."
+    },
+    {
+      "command": "$env:DATABASE_URL='postgresql://invalid'; python -m pytest backend\\tests\\test_api_lookup.py backend\\tests\\test_zip_source_metadata_report.py backend\\tests\\test_zip_multi_row_schema_contract.py backend\\tests\\test_zip_lookup_payload_parity.py backend\\tests\\test_zip_seed_readiness.py backend\\tests\\test_zip_multi_row_readonly_route_eval.py -p no:cacheprovider",
+      "result": "passed",
+      "notes": "29 passed."
+    },
+    {
+      "command": "node --test lib\\zipLookupState.test.mjs",
+      "result": "passed",
+      "notes": "9 passed."
+    },
+    {
+      "command": "python -m json.tool docs\\review_packets\\zip_source_backed_ingestion_preflight_v1.json",
+      "result": "passed",
+      "notes": "Valid JSON."
+    },
+    {
+      "command": "python -m json.tool docs\\review_packets\\zip_multi_row_readonly_route_eval_v1.json",
+      "result": "passed",
+      "notes": "Valid JSON."
+    }
+  ],
+  "changed_files_expected": [
+    "backend/app/api/precomputed.py",
+    "backend/tests/test_zip_lookup_payload_parity.py",
+    "docs/plans/zip_source_backed_ingestion_preflight_v1.md",
+    "docs/review_packets/zip_source_backed_ingestion_preflight_v1.md",
+    "docs/review_packets/zip_source_backed_ingestion_preflight_v1.json"
+  ],
+  "recommended_next_milestone": "ZIP Source Approval And Dry-Run Import Harness V1: explicitly approve a concrete ZIP source, add a no-write parser/dry-run report with exact caps, and keep ZIP_MULTI_ROW_LOOKUP_ENABLED=false."
+}
