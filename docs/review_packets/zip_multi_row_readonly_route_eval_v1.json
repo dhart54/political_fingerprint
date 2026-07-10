@@ -1,0 +1,123 @@
+{
+  "schema_version": "zip_multi_row_readonly_route_eval_v1",
+  "branch": "codex/zip-multi-row-readonly-route-eval-v1",
+  "base": {
+    "source": "latest main after PR #81",
+    "merge_commit": "ed6b37ed9324008513d5b25e07d7307ad9fcdbc0"
+  },
+  "scope": {
+    "read_only": true,
+    "production_data_mutated": false,
+    "migration_rerun": false,
+    "seed_data_loaded": false,
+    "national_zip_data_ingested": false,
+    "route_switch_made": false,
+    "frontend_runtime_changed": false,
+    "provider_integration_added": false,
+    "address_lookup_added": false
+  },
+  "postcheck": {
+    "script": "backend/scripts/apply_zip_district_mappings_migration.py --postcheck-only --env-path backend/.env",
+    "mode": "postcheck",
+    "migration_applied_by_postcheck": false,
+    "contract_checks_passed": true,
+    "zip_district_map_exists": true,
+    "zip_district_mappings_exists": true,
+    "zip_district_mappings_row_count": 0,
+    "zip_district_mappings_unique_zip_count": 0,
+    "zip_district_mappings_auto_select_eligible_count": 0,
+    "raw_database_url_recorded": false
+  },
+  "current_route_behavior": {
+    "lookup_zip_route": {
+      "file": "backend/app/api/lookup.py",
+      "route": "/lookup/zip/{zip_code}",
+      "delegates_to": "get_zip_lookup_response",
+      "database_read_function": "_get_db_zip_lookup_response",
+      "zip_record_function": "_get_db_zip_record",
+      "current_table": "zip_district_map",
+      "new_table_read": false,
+      "source_currentness": "stale_or_unknown",
+      "ambiguity_detection_level": "single_row",
+      "can_represent_multiple_districts": false
+    },
+    "lookup_zip_races_route": {
+      "file": "backend/app/api/lookup.py",
+      "route": "/lookup/zip/{zip_code}/races",
+      "delegates_to": "get_zip_race_response",
+      "database_read_function": "_get_db_zip_race_response",
+      "zip_record_function": "_get_db_zip_record",
+      "current_table": "zip_district_map",
+      "new_table_read": false,
+      "future_switch_implication": "Race lookup must switch in lockstep with the canonical multi-row ZIP resolver or stay explicitly compatibility-only, because it also needs one safe state/district before querying races."
+    },
+    "public_api_new_table_queries": {
+      "from_zip_district_mappings": false,
+      "join_zip_district_mappings": false
+    }
+  },
+  "future_route_switch_design": {
+    "flag": "ZIP_MULTI_ROW_LOOKUP_ENABLED",
+    "default": false,
+    "default_behavior": "Continue using zip_district_map for /lookup/zip/{zip} and /lookup/zip/{zip}/races.",
+    "enabled_behavior": "Only after a later milestone, route ZIP resolution through zip_district_mappings while preserving ambiguity, multi-state, stale/currentness, confidence, and current-member gates.",
+    "rollout_preconditions": [
+      "Source-backed ZIP rows are approved and loaded by a bounded ingestion milestone.",
+      "Read-only production coverage confirms current rows and expected source metadata.",
+      "Backend emits standardized unsupported ZIP payloads instead of relying on frontend 404 normalization.",
+      "Frontend and backend agree on a strict lookup_state contract.",
+      "Old zip_district_map path remains available for rollback until parity and monitoring pass."
+    ]
+  },
+  "future_single_district_ready_requirements": {
+    "source_currentness": "current",
+    "confidence_allowed": [
+      "source_backed",
+      "reviewed"
+    ],
+    "required_source_metadata": [
+      "source_name",
+      "source_type",
+      "source_retrieved_at",
+      "source_effective_date",
+      "source_version"
+    ],
+    "fixture_sample_only": false,
+    "stale_or_unknown_source": false,
+    "exactly_one_state": true,
+    "exactly_one_district": true,
+    "source_can_represent_multi_district_zips": true,
+    "source_can_represent_multi_state_zips": true,
+    "ambiguity_detection_level": "multi_row_source",
+    "current_house_member_metadata_gate_passes": true,
+    "no_duplicate_current_house_member_match": true,
+    "frontend_classifier_state": "single_district_ready",
+    "design_gap": "The current frontend classifier is sufficient for current stale/fixture production payloads but should not be the only gate for a future source-backed route switch because its source-known heuristic does not require confidence."
+  },
+  "current_member_metadata_gaps": [
+    "Term/currentness checks must be explicit before a ZIP can auto-select a House member.",
+    "Vacancies must produce a non-ready or manual-search state.",
+    "Duplicate current House matches for one state/district must block auto-select.",
+    "Stale legislator metadata must block auto-select even when ZIP source metadata is current.",
+    "Senate results remain state-level and should keep the Senate state-level caveat."
+  ],
+  "ui_behavior_gaps": [
+    "Stale or fixture/sample ZIP results may still show labeled loaded official cards even when auto-select is blocked.",
+    "A later UI milestone should decide whether stale/sample results hide official cards entirely or require manual search only."
+  ],
+  "unsupported_zip_payload_gaps": [
+    "The frontend currently normalizes a 404 into an unsupported shape.",
+    "The backend should own a standardized unsupported ZIP payload contract before broad rollout."
+  ],
+  "contract_tests_added": [
+    "backend/tests/test_zip_multi_row_readonly_route_eval.py"
+  ],
+  "stop_conditions_checked": {
+    "public_route_already_reads_zip_district_mappings": false,
+    "zip_district_mappings_contains_rows": false,
+    "postcheck_suggested_migration_rerun": false,
+    "production_write_required": false,
+    "production_auto_select_from_stale_fixture_or_missing_currentness": false
+  },
+  "recommended_next_milestone": "ZIP Multi-Row Source-Backed Ingestion Preflight V1: select and approve a source, define bounded seed/ingestion caps and rollback, implement backend-owned unsupported payload contract, and keep ZIP_MULTI_ROW_LOOKUP_ENABLED=false."
+}
