@@ -27,7 +27,7 @@
 - [x] JSON and Markdown review packets are generated from the ignored local official file.
 - [x] Read-only postcheck confirms `zip_district_mappings` is empty and routes remain on `zip_district_map`.
 - [x] Focused tests and JSON validation pass.
-- [ ] Commit, push, and draft PR are complete.
+- [x] Commit, push, and draft PR are complete (PR #85).
 
 ## Baseline
 
@@ -50,7 +50,7 @@
 - [x] Implementation
 - [x] Validation
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -92,6 +92,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: implementation and validation complete; commit/PR delivery pending.
+- Definition of done satisfied: yes; implementation, validation, commit, push, and draft PR #85 are complete.
 - Remaining limitations: production ingestion and member metadata gates remain unapproved.
 - Recommended next step: ZIP Source-to-Member Readiness Gate V1, covering current-member matching, duplicate/stale member blockers, territory handling, and bounded rollback/preflight design without ingestion or a route switch.
