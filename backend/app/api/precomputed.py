@@ -550,6 +550,31 @@ def _build_zip_lookup_metadata(
     }
 
 
+def build_unsupported_zip_lookup_response(*, zip_code: str) -> dict[str, object]:
+    metadata = _build_zip_lookup_metadata(
+        source_type="none",
+        source_name=None,
+        source_currentness="unsupported",
+        fixture_sample_only=False,
+        stale_or_unknown_source=False,
+        can_represent_multiple_districts=False,
+        ambiguity_detection_level="none",
+    )
+    metadata["confidence"] = "unknown"
+    return {
+        "zip": zip_code,
+        "state": None,
+        "district": None,
+        "status": "unsupported_zip",
+        "lookup_state": "unsupported_zip",
+        "data_source": "none",
+        "lookup_metadata": metadata,
+        "district_mappings": [],
+        "house_rep": None,
+        "senators": [],
+    }
+
+
 def _normalize_profile_scope(scope: str | None) -> str:
     normalized = str(scope or DEFAULT_PROFILE_SCOPE).strip().lower()
     if normalized not in PROFILE_SCOPES:
