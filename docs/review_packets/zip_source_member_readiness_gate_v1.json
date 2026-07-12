@@ -1,0 +1,193 @@
+{
+  "base_commit": "ae9a4fa5def263f9df12ac6c5a67814412e7702f",
+  "branch": "codex/zip-source-member-readiness-gate-v1",
+  "database": {
+    "credentials_recorded": false,
+    "raw_database_url_recorded": false,
+    "session_read_only": true,
+    "statement_timeout_ms": 15000,
+    "target": {
+      "database": "postgres",
+      "env_path": "backend\\.env",
+      "host": "aws-1-us-east-1.pooler.supabase.com",
+      "password_present": true,
+      "port": 5432,
+      "supabase_host": true,
+      "username_present": true
+    },
+    "transaction_read_only": true
+  },
+  "evaluation_date": "2026-07-12",
+  "member_schema": {
+    "columns": [
+      "id",
+      "bioguide_id",
+      "name_display",
+      "chamber",
+      "state",
+      "district",
+      "party",
+      "in_office",
+      "created_at",
+      "updated_at"
+    ],
+    "lookup_first_row_without_duplicate_detection": true,
+    "lookup_requires_in_office": false,
+    "missing_currentness_fields": [
+      "congress",
+      "member_type",
+      "metadata_currentness",
+      "metadata_retrieved_at",
+      "metadata_source_url",
+      "seat_status",
+      "term_end",
+      "term_start"
+    ],
+    "required_currentness_fields": [
+      "congress",
+      "in_office",
+      "member_type",
+      "metadata_currentness",
+      "metadata_retrieved_at",
+      "metadata_source_url",
+      "seat_status",
+      "term_end",
+      "term_start"
+    ],
+    "sufficient_for_currentness_gate": false,
+    "table": "public.legislators"
+  },
+  "recommendation_reason": "Stored member metadata lacks term, vacancy, member-type, source, and retrieval evidence required to prove currentness safely.",
+  "recommended_next_milestone": "Current House member metadata hardening V1",
+  "safety_confirmations": {
+    "both_public_zip_endpoints_use_zip_district_map": true,
+    "database_session_read_only": true,
+    "database_write_occurred": false,
+    "member_metadata_mutated": false,
+    "migration_applied": false,
+    "production_auto_select_enabled": false,
+    "zip_district_mappings_remains_empty": true,
+    "zip_multi_row_lookup_enabled": false
+  },
+  "sample_pair_results_by_status": {
+    "nonvoting_delegate_review_required": [
+      {
+        "at_large_type": "dc_delegate",
+        "blockers": [
+          "nonvoting_delegate_review_required"
+        ],
+        "current_matching_member_count": 0,
+        "district": "98",
+        "matching_member_count": 0,
+        "member_ids": [],
+        "production_auto_select_eligible": false,
+        "state": "DC",
+        "status": "nonvoting_delegate_review_required"
+      }
+    ],
+    "schema_insufficient_for_currentness_gate": [
+      {
+        "at_large_type": "voting_at_large_state",
+        "blockers": [
+          "schema_insufficient_for_currentness_gate"
+        ],
+        "current_matching_member_count": 1,
+        "district": "00",
+        "matching_member_count": 2,
+        "member_ids": [
+          "B001323"
+        ],
+        "production_auto_select_eligible": false,
+        "state": "AK",
+        "status": "schema_insufficient_for_currentness_gate"
+      },
+      {
+        "at_large_type": null,
+        "blockers": [
+          "schema_insufficient_for_currentness_gate"
+        ],
+        "current_matching_member_count": 1,
+        "district": "01",
+        "matching_member_count": 1,
+        "member_ids": [
+          "M001212"
+        ],
+        "production_auto_select_eligible": false,
+        "state": "AL",
+        "status": "schema_insufficient_for_currentness_gate"
+      },
+      {
+        "at_large_type": null,
+        "blockers": [
+          "schema_insufficient_for_currentness_gate"
+        ],
+        "current_matching_member_count": 1,
+        "district": "02",
+        "matching_member_count": 1,
+        "member_ids": [
+          "F000481"
+        ],
+        "production_auto_select_eligible": false,
+        "state": "AL",
+        "status": "schema_insufficient_for_currentness_gate"
+      }
+    ]
+  },
+  "schema_version": "zip_source_member_readiness_gate_v1",
+  "source": {
+    "accepted_source_row_count": 39967,
+    "actual_file_name": "tab20_cd11920_zcta520_natl.txt",
+    "actual_file_size_bytes": 6195997,
+    "actual_sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+    "expected_file_name": "tab20_cd11920_zcta520_natl.txt",
+    "expected_file_size_bytes": 6195997,
+    "expected_sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+    "file_name_matches_expected": true,
+    "file_size_matches_expected": true,
+    "official_file_identity_verified": true,
+    "path": ".local/zip_source_official/tab20_cd11920_zcta520_natl.txt",
+    "rejected_source_row_count": 430,
+    "sha256_matches_expected": true,
+    "source_only_unambiguous_zcta_count": 27780,
+    "source_row_count": 40397,
+    "territory_rows_rejected_during_source_parsing": {
+      "AS": 2,
+      "GU": 8,
+      "MP": 4,
+      "PR": 133,
+      "VI": 7
+    },
+    "unique_source_state_district_pair_count": 436,
+    "unique_zcta_count": 33642
+  },
+  "summary": {
+    "chamber_mismatch_count": 0,
+    "current_house_member_rows_inspected": 441,
+    "dc_delegate_count": 1,
+    "district_mismatch_count": 0,
+    "duplicate_current_member_pair_count": 0,
+    "exact_single_current_member_pair_count": 435,
+    "missing_stable_identifier_count": 0,
+    "no_current_member_pair_count": 0,
+    "production_auto_select_eligible_count": 0,
+    "readiness_status_distribution": {
+      "nonvoting_delegate_review_required": 1,
+      "schema_insufficient_for_currentness_gate": 435
+    },
+    "resident_commissioner_count": 0,
+    "schema_insufficient_pair_count": 435,
+    "source_candidate_zcta_counts_by_member_readiness_status": {
+      "nonvoting_delegate_review_required": 57,
+      "schema_insufficient_for_currentness_gate": 27723
+    },
+    "source_to_member_ready_candidate_zcta_count": 0,
+    "source_to_member_ready_pair_count": 0,
+    "stale_or_unknown_currentness_pair_count": 0,
+    "state_mismatch_count": 0,
+    "territorial_delegate_count": 0,
+    "total_member_rows_inspected": 637,
+    "unsupported_territory_count": 0,
+    "vacancy_or_unfilled_pair_count": 0,
+    "voting_at_large_pair_count": 6
+  }
+}
