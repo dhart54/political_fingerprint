@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import importlib.util
 import json
+import os
+import re
 import sys
 from collections import Counter, defaultdict
 from datetime import date
@@ -84,6 +87,8 @@ def evaluate(*, input_path: Path, env_path: Path) -> dict[str, Any]:
 
     db_url = load_database_url(env_path)
     database = inspect_members_read_only(db_url)
+    repository = inspect_repository_state(REPO_ROOT)
+    ensure_repository_state_safe(repository)
     schema_fields = set(database["schema"]["columns"])
     pair_results = [
         readiness.evaluate_pair(state=state, district=district, members=database["member_rows"], schema_fields=schema_fields)
@@ -140,8 +145,15 @@ def evaluate(*, input_path: Path, env_path: Path) -> dict[str, Any]:
             "required_currentness_fields": sorted(readiness.REQUIRED_CURRENTNESS_FIELDS),
             "missing_currentness_fields": schema_missing,
             "sufficient_for_currentness_gate": not schema_missing,
-            "lookup_first_row_without_duplicate_detection": True,
-            "lookup_requires_in_office": False,
+            "lookup_audit": repository["lookup_audit"],
+        },
+        "verification": {
+            "database_table_check": database["zip_district_mappings"],
+            "route_state": repository["route_state"],
+            "feature_flag": repository["feature_flag"],
+            "current_lookup_audit": repository["lookup_audit"],
+            "migration_rerun_by_evaluator": False,
+            "migration_rerun_in_this_milestone": False,
         },
         "summary": {
             "total_member_rows_inspected": len(database["member_rows"]),
@@ -170,15 +182,10 @@ def evaluate(*, input_path: Path, env_path: Path) -> dict[str, Any]:
             "production_auto_select_eligible_count": 0,
         },
         "sample_pair_results_by_status": dict(samples),
-        "safety_confirmations": {
-            "database_write_occurred": False,
-            "database_session_read_only": database["session_read_only"],
-            "zip_district_mappings_remains_empty": True,
-            "both_public_zip_endpoints_use_zip_district_map": True,
-            "zip_multi_row_lookup_enabled": False,
-            "migration_applied": False,
-            "member_metadata_mutated": False,
-            "production_auto_select_enabled": False,
+        "safety_confirmations": build_safety_confirmations(database=database, repository=repository),
+        "external_manual_validations": {
+            "no_frontend_runtime_change_in_milestone_diff": "validated separately with git diff scope",
+            "no_production_data_mutation_outside_evaluator": "validated by milestone command log and read-only postcheck",
         },
         "recommended_next_milestone": recommendation,
         "recommendation_reason": (
@@ -221,6 +228,15 @@ def inspect_members_read_only(db_url: str) -> dict[str, Any]:
             required = {"id", "bioguide_id", "name_display", "chamber", "state", "district", "party", "in_office"}
             if not required.issubset(columns):
                 raise ReadinessSafetyError("legislators schema is missing required identity/location fields")
+            mapping_table_exists = bool(
+                conn.execute(
+                    "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'zip_district_mappings') AS exists"
+                ).fetchone()["exists"]
+            )
+            mapping_row_count = None
+            if mapping_table_exists:
+                mapping_row_count = int(conn.execute("SELECT COUNT(*) AS row_count FROM zip_district_mappings").fetchone()["row_count"])
+            mapping_state = validate_mapping_table_state(table_exists=mapping_table_exists, row_count=mapping_row_count)
             rows = [
                 dict(row)
                 for row in conn.execute(
@@ -232,7 +248,152 @@ def inspect_members_read_only(db_url: str) -> dict[str, Any]:
                 "transaction_read_only": read_only,
                 "schema": {"columns": columns, "table": "public.legislators"},
                 "member_rows": rows,
+                "zip_district_mappings": mapping_state,
             }
+
+
+def validate_mapping_table_state(*, table_exists: bool, row_count: int | None) -> dict[str, Any]:
+    if table_exists and row_count is None:
+        raise ReadinessSafetyError("zip_district_mappings exists but its row count was not inspected")
+    empty = bool(table_exists and row_count == 0)
+    result = {
+        "table_name": "public.zip_district_mappings",
+        "table_exists": table_exists,
+        "actual_row_count": row_count,
+        "empty": empty,
+        "verification_method": "information_schema existence SELECT followed by bounded SELECT COUNT(*) in the verified read-only transaction",
+        "count_query": "SELECT COUNT(*) AS row_count FROM zip_district_mappings" if table_exists else None,
+    }
+    if table_exists and row_count != 0:
+        raise ReadinessSafetyError(f"zip_district_mappings contains {row_count} rows; refusing to generate reports")
+    return result
+
+
+def inspect_repository_state(repo_root: Path) -> dict[str, Any]:
+    lookup_path = repo_root / "backend/app/api/lookup.py"
+    precomputed_path = repo_root / "backend/app/api/precomputed.py"
+    lookup_text = lookup_path.read_text(encoding="utf-8")
+    precomputed_text = precomputed_path.read_text(encoding="utf-8")
+    lookup_route = extract_function_source(lookup_text, "lookup_zip")
+    races_route = extract_function_source(lookup_text, "lookup_zip_races")
+    lookup_response = extract_function_source(precomputed_text, "get_zip_lookup_response") + extract_function_source(precomputed_text, "_get_db_zip_lookup_response")
+    races_response = extract_function_source(precomputed_text, "get_zip_race_response") + extract_function_source(precomputed_text, "_get_db_zip_race_response")
+    zip_reader = extract_function_source(precomputed_text, "_get_db_zip_record")
+    house_reader = extract_function_source(precomputed_text, "_get_db_house_rep")
+    old_read = bool(re.search(r"\bFROM\s+zip_district_map\b", zip_reader, re.IGNORECASE))
+    relevant_lookup = "\n".join([lookup_route, races_route, lookup_response, races_response, zip_reader])
+    new_read = bool(re.search(r"\b(?:FROM|JOIN)\s+zip_district_mappings\b", relevant_lookup, re.IGNORECASE))
+    lookup_verified = "get_zip_lookup_response" in lookup_route and "_get_db_zip_record" in lookup_response and old_read and not new_read
+    races_verified = "get_zip_race_response" in races_route and "_get_db_zip_record" in races_response and old_read and not new_read
+    flag = inspect_feature_flag(repo_root)
+    return {
+        "route_state": {
+            "files_inspected": ["backend/app/api/lookup.py", "backend/app/api/precomputed.py"],
+            "routes_inspected": ["/lookup/zip/{zip_code}", "/lookup/zip/{zip_code}/races"],
+            "functions_inspected": ["lookup_zip", "lookup_zip_races", "get_zip_lookup_response", "get_zip_race_response", "_get_db_zip_lookup_response", "_get_db_zip_race_response", "_get_db_zip_record"],
+            "verification_method": "AST-bounded function extraction plus SQL table-reference checks",
+            "lookup_zip_reads_zip_district_map": lookup_verified,
+            "lookup_zip_races_reads_zip_district_map": races_verified,
+            "either_public_endpoint_reads_zip_district_mappings": new_read,
+        },
+        "feature_flag": flag,
+        "lookup_audit": {
+            "file_inspected": "backend/app/api/precomputed.py",
+            "function_inspected": "_get_db_house_rep",
+            "verification_method": "AST-bounded function extraction and SQL predicate/order/limit inspection",
+            "selects_first_row_without_duplicate_detection": "ORDER BY id" in house_reader and "LIMIT 1" in house_reader,
+            "requires_in_office": bool(re.search(r"\bin_office\b", house_reader, re.IGNORECASE)),
+            "evidence": "Query orders by id with LIMIT 1 and contains no in_office predicate.",
+        },
+    }
+
+
+def extract_function_source(text: str, function_name: str) -> str:
+    tree = ast.parse(text)
+    lines = text.splitlines()
+    for node in ast.walk(tree):
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name == function_name:
+            return "\n".join(lines[node.lineno - 1 : node.end_lineno])
+    raise ReadinessSafetyError(f"required function {function_name} was not found during route inspection")
+
+
+def inspect_feature_flag(repo_root: Path) -> dict[str, Any]:
+    roots = [repo_root / "backend/app", repo_root / "frontend"]
+    files = [repo_root / "backend/.env", repo_root / "backend/.env.example", repo_root / "frontend/.env", repo_root / "frontend/.env.example"]
+    for root in roots:
+        if root.exists():
+            for current, directories, names in os.walk(root):
+                directories[:] = [name for name in directories if name not in {"node_modules", ".next", "dist", "build", "coverage"}]
+                files.extend(
+                    Path(current) / name
+                    for name in names
+                    if Path(name).suffix.lower() in {".py", ".js", ".mjs", ".ts", ".tsx"}
+                )
+    assignments: list[dict[str, str]] = []
+    references: list[str] = []
+    pattern = re.compile(r"ZIP_MULTI_ROW_LOOKUP_ENABLED\s*(?:=|:)\s*[\"']?([A-Za-z0-9_]+)", re.IGNORECASE)
+    for path in sorted(set(files)):
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        if "ZIP_MULTI_ROW_LOOKUP_ENABLED" in text:
+            references.append(str(path.relative_to(repo_root)).replace("\\", "/"))
+        for match in pattern.finditer(text):
+            assignments.append({"file": str(path.relative_to(repo_root)).replace("\\", "/"), "value": match.group(1)})
+    normalized = [item["value"].lower() for item in assignments]
+    enabled = any(value in {"true", "1", "yes", "on", "enabled"} for value in normalized)
+    explicitly_false = bool(assignments) and all(value in {"false", "0", "no", "off", "disabled"} for value in normalized)
+    status = "enabled" if enabled else "explicitly_false" if explicitly_false else "absent_not_configured" if not assignments else "unable_to_verify"
+    return {
+        "status": status,
+        "enabled": enabled,
+        "verification_method": "bounded repository configuration/code scan for ZIP_MULTI_ROW_LOOKUP_ENABLED assignments",
+        "files_with_references": sorted(set(references)),
+        "assignments": assignments,
+    }
+
+
+def ensure_repository_state_safe(repository: dict[str, Any]) -> None:
+    routes = repository["route_state"]
+    if routes["either_public_endpoint_reads_zip_district_mappings"]:
+        raise ReadinessSafetyError("a public ZIP endpoint reads zip_district_mappings")
+    if not routes["lookup_zip_reads_zip_district_map"] or not routes["lookup_zip_races_reads_zip_district_map"]:
+        raise ReadinessSafetyError("public ZIP compatibility-path verification failed")
+    if repository["feature_flag"]["enabled"]:
+        raise ReadinessSafetyError("ZIP_MULTI_ROW_LOOKUP_ENABLED is enabled")
+
+
+def build_safety_confirmations(*, database: dict[str, Any], repository: dict[str, Any]) -> dict[str, Any]:
+    table = database["zip_district_mappings"]
+    routes = repository["route_state"]
+    flag = repository["feature_flag"]
+    values = {
+        "database_write_occurred": False,
+        "database_session_read_only": database["session_read_only"] and database["transaction_read_only"],
+        "zip_district_mappings_remains_empty": table["empty"],
+        "both_public_zip_endpoints_use_zip_district_map": routes["lookup_zip_reads_zip_district_map"] and routes["lookup_zip_races_reads_zip_district_map"],
+        "public_endpoints_read_zip_district_mappings": routes["either_public_endpoint_reads_zip_district_mappings"],
+        "zip_multi_row_lookup_flag_status": flag["status"],
+        "zip_multi_row_lookup_enabled": flag["enabled"],
+        "migration_rerun_by_evaluator": False,
+        "member_metadata_mutated": False,
+        "production_auto_select_enabled": False,
+    }
+    return {
+        "values": values,
+        "evidence": {
+            "database_write_occurred": "Connection default and active transaction were verified read-only; evaluator SQL is limited to SET/SHOW/SELECT.",
+            "database_session_read_only": "Derived from verified default_transaction_read_only and transaction_read_only server settings.",
+            "zip_district_mappings_remains_empty": "Derived from the inspected zip_district_mappings actual_row_count.",
+            "both_public_zip_endpoints_use_zip_district_map": "Derived from AST-bounded inspection of the recorded route/read functions.",
+            "public_endpoints_read_zip_district_mappings": "Derived from SQL table-reference checks in the bounded public lookup function set.",
+            "zip_multi_row_lookup_flag_status": "Derived from the bounded repository configuration/code scan.",
+            "zip_multi_row_lookup_enabled": "Derived from parsed flag assignments; enabled state is a hard failure.",
+            "migration_rerun_by_evaluator": "Evaluator contains no migration invocation or DDL path; runtime database transaction is read-only.",
+            "member_metadata_mutated": "Evaluator issues only bounded member SELECT and schema SELECT queries in the verified read-only transaction.",
+            "production_auto_select_enabled": "Evaluator report contract fixes production_auto_select_eligible_count to zero and changes no runtime route/config files.",
+        },
+    }
 
 
 def describe_database_url(db_url: str, env_path: Path) -> dict[str, Any]:
@@ -261,6 +422,12 @@ def render_markdown(report: dict[str, Any]) -> str:
     source = report["source"]
     summary = report["summary"]
     schema = report["member_schema"]
+    verification = report["verification"]
+    table_check = verification["database_table_check"]
+    routes = verification["route_state"]
+    flag = verification["feature_flag"]
+    lookup_audit = verification["current_lookup_audit"]
+    safety = report["safety_confirmations"]
     lines = [
         "# ZIP Source-to-Member Readiness Gate V1",
         "",
@@ -286,7 +453,25 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"- Current House rows inspected: `{summary['current_house_member_rows_inspected']}`",
         f"- Schema sufficient for currentness gate: `{schema['sufficient_for_currentness_gate']}`",
         f"- Missing fields: `{', '.join(schema['missing_currentness_fields'])}`",
-        "- Existing public House lookup does not require `in_office` and selects the first matching row without duplicate detection.",
+        f"- Existing public House lookup does not require `in_office`: `{not lookup_audit['requires_in_office']}`.",
+        f"- Existing public House lookup selects the first row without duplicate detection: `{lookup_audit['selects_first_row_without_duplicate_detection']}`.",
+        f"- Lookup audit evidence: `{lookup_audit['file_inspected']}::{lookup_audit['function_inspected']}`; {lookup_audit['evidence']}",
+        "",
+        "## Verification",
+        "",
+        f"- `zip_district_mappings` exists: `{table_check['table_exists']}`",
+        f"- Actual `zip_district_mappings` row count: `{table_check['actual_row_count']}`",
+        f"- Empty status derived from count: `{table_check['empty']}`",
+        f"- Database verification method: {table_check['verification_method']}",
+        f"- Route files inspected: `{', '.join(routes['files_inspected'])}`",
+        f"- Route functions inspected: `{', '.join(routes['functions_inspected'])}`",
+        f"- `/lookup/zip/{{zip_code}}` reads `zip_district_map`: `{routes['lookup_zip_reads_zip_district_map']}`",
+        f"- `/lookup/zip/{{zip_code}}/races` reads `zip_district_map`: `{routes['lookup_zip_races_reads_zip_district_map']}`",
+        f"- Either public endpoint reads `zip_district_mappings`: `{routes['either_public_endpoint_reads_zip_district_mappings']}`",
+        f"- Feature flag status: `{flag['status']}`; enabled: `{flag['enabled']}`",
+        f"- Feature flag verification method: {flag['verification_method']}",
+        f"- Migration rerun by evaluator: `{verification['migration_rerun_by_evaluator']}`",
+        f"- Migration rerun in this milestone: `{verification['migration_rerun_in_this_milestone']}`",
         "",
         "## Readiness Status Distribution",
         "",
@@ -298,6 +483,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         "",
         f"- Voting at-large source pairs: `{summary['voting_at_large_pair_count']}`",
         f"- DC delegate source pairs: `{summary['dc_delegate_count']}` (review required)",
+        "- DC source district code is `98`. Any future conversion to the internal district `00` convention requires a documented normalization rule; this milestone does not perform that conversion.",
         f"- Territorial delegate source pairs accepted: `{summary['territorial_delegate_count']}`",
         f"- Resident commissioner source pairs accepted: `{summary['resident_commissioner_count']}`",
         f"- Territory rows rejected during source parsing: `{json.dumps(source['territory_rows_rejected_during_source_parsing'], sort_keys=True)}`",
@@ -305,7 +491,10 @@ def render_markdown(report: dict[str, Any]) -> str:
         "## Safety",
         "",
     ])
-    lines.extend(f"- {key}: `{value}`" for key, value in report["safety_confirmations"].items())
+    lines.extend(
+        f"- {key}: `{value}` - {safety['evidence'][key]}"
+        for key, value in safety["values"].items()
+    )
     lines.extend([
         "",
         "## Recommended Next Milestone",

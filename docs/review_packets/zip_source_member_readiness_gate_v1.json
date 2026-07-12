@@ -18,6 +18,10 @@
     "transaction_read_only": true
   },
   "evaluation_date": "2026-07-12",
+  "external_manual_validations": {
+    "no_frontend_runtime_change_in_milestone_diff": "validated separately with git diff scope",
+    "no_production_data_mutation_outside_evaluator": "validated by milestone command log and read-only postcheck"
+  },
   "member_schema": {
     "columns": [
       "id",
@@ -31,8 +35,14 @@
       "created_at",
       "updated_at"
     ],
-    "lookup_first_row_without_duplicate_detection": true,
-    "lookup_requires_in_office": false,
+    "lookup_audit": {
+      "evidence": "Query orders by id with LIMIT 1 and contains no in_office predicate.",
+      "file_inspected": "backend/app/api/precomputed.py",
+      "function_inspected": "_get_db_house_rep",
+      "requires_in_office": false,
+      "selects_first_row_without_duplicate_detection": true,
+      "verification_method": "AST-bounded function extraction and SQL predicate/order/limit inspection"
+    },
     "missing_currentness_fields": [
       "congress",
       "member_type",
@@ -60,14 +70,30 @@
   "recommendation_reason": "Stored member metadata lacks term, vacancy, member-type, source, and retrieval evidence required to prove currentness safely.",
   "recommended_next_milestone": "Current House member metadata hardening V1",
   "safety_confirmations": {
-    "both_public_zip_endpoints_use_zip_district_map": true,
-    "database_session_read_only": true,
-    "database_write_occurred": false,
-    "member_metadata_mutated": false,
-    "migration_applied": false,
-    "production_auto_select_enabled": false,
-    "zip_district_mappings_remains_empty": true,
-    "zip_multi_row_lookup_enabled": false
+    "evidence": {
+      "both_public_zip_endpoints_use_zip_district_map": "Derived from AST-bounded inspection of the recorded route/read functions.",
+      "database_session_read_only": "Derived from verified default_transaction_read_only and transaction_read_only server settings.",
+      "database_write_occurred": "Connection default and active transaction were verified read-only; evaluator SQL is limited to SET/SHOW/SELECT.",
+      "member_metadata_mutated": "Evaluator issues only bounded member SELECT and schema SELECT queries in the verified read-only transaction.",
+      "migration_rerun_by_evaluator": "Evaluator contains no migration invocation or DDL path; runtime database transaction is read-only.",
+      "production_auto_select_enabled": "Evaluator report contract fixes production_auto_select_eligible_count to zero and changes no runtime route/config files.",
+      "public_endpoints_read_zip_district_mappings": "Derived from SQL table-reference checks in the bounded public lookup function set.",
+      "zip_district_mappings_remains_empty": "Derived from the inspected zip_district_mappings actual_row_count.",
+      "zip_multi_row_lookup_enabled": "Derived from parsed flag assignments; enabled state is a hard failure.",
+      "zip_multi_row_lookup_flag_status": "Derived from the bounded repository configuration/code scan."
+    },
+    "values": {
+      "both_public_zip_endpoints_use_zip_district_map": true,
+      "database_session_read_only": true,
+      "database_write_occurred": false,
+      "member_metadata_mutated": false,
+      "migration_rerun_by_evaluator": false,
+      "production_auto_select_enabled": false,
+      "public_endpoints_read_zip_district_mappings": false,
+      "zip_district_mappings_remains_empty": true,
+      "zip_multi_row_lookup_enabled": false,
+      "zip_multi_row_lookup_flag_status": "absent_not_configured"
+    }
   },
   "sample_pair_results_by_status": {
     "nonvoting_delegate_review_required": [
@@ -189,5 +215,55 @@
     "unsupported_territory_count": 0,
     "vacancy_or_unfilled_pair_count": 0,
     "voting_at_large_pair_count": 6
+  },
+  "verification": {
+    "current_lookup_audit": {
+      "evidence": "Query orders by id with LIMIT 1 and contains no in_office predicate.",
+      "file_inspected": "backend/app/api/precomputed.py",
+      "function_inspected": "_get_db_house_rep",
+      "requires_in_office": false,
+      "selects_first_row_without_duplicate_detection": true,
+      "verification_method": "AST-bounded function extraction and SQL predicate/order/limit inspection"
+    },
+    "database_table_check": {
+      "actual_row_count": 0,
+      "count_query": "SELECT COUNT(*) AS row_count FROM zip_district_mappings",
+      "empty": true,
+      "table_exists": true,
+      "table_name": "public.zip_district_mappings",
+      "verification_method": "information_schema existence SELECT followed by bounded SELECT COUNT(*) in the verified read-only transaction"
+    },
+    "feature_flag": {
+      "assignments": [],
+      "enabled": false,
+      "files_with_references": [],
+      "status": "absent_not_configured",
+      "verification_method": "bounded repository configuration/code scan for ZIP_MULTI_ROW_LOOKUP_ENABLED assignments"
+    },
+    "migration_rerun_by_evaluator": false,
+    "migration_rerun_in_this_milestone": false,
+    "route_state": {
+      "either_public_endpoint_reads_zip_district_mappings": false,
+      "files_inspected": [
+        "backend/app/api/lookup.py",
+        "backend/app/api/precomputed.py"
+      ],
+      "functions_inspected": [
+        "lookup_zip",
+        "lookup_zip_races",
+        "get_zip_lookup_response",
+        "get_zip_race_response",
+        "_get_db_zip_lookup_response",
+        "_get_db_zip_race_response",
+        "_get_db_zip_record"
+      ],
+      "lookup_zip_races_reads_zip_district_map": true,
+      "lookup_zip_reads_zip_district_map": true,
+      "routes_inspected": [
+        "/lookup/zip/{zip_code}",
+        "/lookup/zip/{zip_code}/races"
+      ],
+      "verification_method": "AST-bounded function extraction plus SQL table-reference checks"
+    }
   }
 }

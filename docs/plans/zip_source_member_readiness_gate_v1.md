@@ -58,7 +58,8 @@
 - Stored `legislators` schema has `bioguide_id`, `chamber`, `state`, `district`, and `in_office`, but no Congress, term dates, vacancy, voting/delegate type, metadata source, retrieval date, or source-currentness fields.
 - Current public House lookup selects the first state/district House row by ID and does not require `in_office` or detect duplicates.
 - Production read inspected 637 member rows, including 441 rows marked `in_office=true` and `chamber=house`.
-- Of 436 accepted source pairs, 435 had exactly one matching row marked current; all 435 remain blocked because stored metadata cannot prove term/currentness, vacancy, or voting-member type. DC-00 is separately delegate-review-required.
+- Of 436 accepted source pairs, 435 had exactly one matching row marked current; all 435 remain blocked because stored metadata cannot prove term/currentness, vacancy, or voting-member type. Census source pair `DC-98` is separately delegate-review-required.
+- The official source district code for DC is `98`. Any future conversion to the repository's internal `00` convention requires a documented normalization rule; this milestone preserves `98` and performs no conversion.
 - The source rejected territory rows before member matching: AS 2, GU 8, MP 4, PR 133, and VI 7. They remain explicitly reported rather than silently discarded.
 
 ## Decisions And Rationale
@@ -69,16 +70,20 @@
 
 ## Deviations Or Corrections
 
-- None yet.
+- PR #86 correction: generated safety claims are now derived from read-only database inspection or bounded repository-source checks, with evidence recorded in the packet.
+- Corrected the prior `DC-00` description to source-accurate `DC-98` without altering source data or delegate-review behavior.
 
 ## Validation Results
 
-- Initial read-only postcheck passed: target row count `0`, migration not applied, seed not loaded.
+- Initial read-only postcheck passed: target row count `0`, migration not rerun by this milestone, seed not loaded.
 - Verified source: filename, 6,195,997-byte size, and SHA-256 `57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77` all matched.
 - Evaluator: passed in explicit dry-run/read-only mode; source-to-member-ready pairs `0`, ready candidate ZCTAs `0`, production eligibility `0`.
-- Focused ZIP/member suite: `51 passed` in 9.93 seconds.
+- Focused ZIP/member suite after safety-derivation corrections: `55 passed` in 9.71 seconds.
 - New packet, PR #85 packet, and PR #85 source manifest: valid JSON.
-- Final read-only postcheck: row count `0`; migration not applied; seed not loaded.
+- Evaluator table check: `zip_district_mappings` exists with actual row count `0`; empty status is derived from the inspected count.
+- Evaluator route check: both public ZIP endpoints use `zip_district_map`; neither reads `zip_district_mappings`.
+- Feature flag check: `ZIP_MULTI_ROW_LOOKUP_ENABLED` is absent/not configured and therefore not enabled.
+- Final read-only postcheck: row count `0`; migration not rerun; seed not loaded.
 - Static checks: no public `zip_district_mappings` read and no enabled `ZIP_MULTI_ROW_LOOKUP_ENABLED` assignment.
 - `git diff --check`: passed.
 
