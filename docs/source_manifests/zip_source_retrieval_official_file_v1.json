@@ -1,0 +1,33 @@
+{
+  "decision": "approved_for_bounded_dry_run_only",
+  "production_ingestion_approved": false,
+  "source_name": "U.S. Census Bureau 119th Congressional District to 2020 ZCTA Relationship File",
+  "source_page": "https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html",
+  "download_url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_zcta520_natl.txt",
+  "file_name": "tab20_cd11920_zcta520_natl.txt",
+  "file_size_bytes": 6195997,
+  "sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+  "identity_verification": {
+    "required_matches": ["file_name", "file_size_bytes", "sha256"],
+    "fail_closed_on_official_filename_mismatch": true,
+    "verified_for_reviewed_local_file": true
+  },
+  "retrieval_date": "2026-07-10",
+  "source_version": "119th-congressional-district-to-2020-zcta-relationship-file",
+  "vintage": "119th Congress districts related to 2020 Census ZCTAs",
+  "effective_date_or_limitation": "119th Congress / 2020 ZCTA vintage; Census presents a congressional-session and geography vintage, not one exact address-lookup effective date.",
+  "license_or_terms_basis": "Official U.S. Census Bureau public data published as open government data; Census Bureau works created by employees generally are not subject to U.S. copyright. Retrieval required no credentials or terms acceptance.",
+  "record_layout_url": "https://www.census.gov/programs-surveys/geography/technical-documentation/records-layout/2020-CD-SLD-record-layout.html",
+  "format": "pipe-delimited text with header",
+  "columns": [
+    "OID_CD119_20", "GEOID_CD119_20", "NAMELSAD_CD119_20", "AREALAND_CD119_20", "AREAWATER_CD119_20", "MTFCC_CD119_20", "FUNCSTAT_CD119_20", "OID_ZCTA5_20", "GEOID_ZCTA5_20", "NAMELSAD_ZCTA5_20", "AREALAND_ZCTA5_20", "AREAWATER_ZCTA5_20", "MTFCC_ZCTA5_20", "CLASSFP_ZCTA5_20", "FUNCSTAT_ZCTA5_20", "AREALAND_PART", "AREAWATER_PART"
+  ],
+  "local_official_file": ".local/zip_source_official/tab20_cd11920_zcta520_natl.txt (ignored; not committed)",
+  "known_limitations": [
+    "ZIP Codes are USPS delivery-route constructs, while ZCTAs are Census-created areal approximations.",
+    "ZCTAs do not represent every valid USPS ZIP Code.",
+    "A ZCTA can overlap more than one district and the file can contain non-ZCTA remainder rows.",
+    "ZIP/ZCTA-only results can surface possible districts but cannot establish address-level representation.",
+    "Current House member metadata and duplicate-member gates are not evaluated by this source file."
+  ]
+}

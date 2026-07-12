@@ -1,0 +1,1262 @@
+{
+  "base": {
+    "merge_commit": "b7f4fb1e61157a7bcd97470487bec30ef73161d1",
+    "source": "latest main after PR #84"
+  },
+  "branch": "codex/zip-source-retrieval-official-file-dry-run-v1",
+  "current_route_behavior": {
+    "lookup_zip_races_route_reads": "zip_district_map",
+    "lookup_zip_route_reads": "zip_district_map",
+    "public_api_reads_zip_district_mappings": false,
+    "successful_lookup_behavior_changed": false,
+    "unsupported_public_route_behavior_changed": false,
+    "zip_multi_row_lookup_enabled": false
+  },
+  "dry_run_summary": {
+    "accepted_row_count": 39967,
+    "confidence_distribution": {
+      "source_backed": 40397
+    },
+    "currentness_distribution": {
+      "current": 40397
+    },
+    "database_write_occurred": false,
+    "duplicate_active_row_count": 0,
+    "explicit_no_db_write": true,
+    "future_auto_select_blockers": [
+      "dry_run_does_not_validate_current_house_member_metadata",
+      "dry_run_does_not_validate_duplicate_current_house_member_matches",
+      "production_source_not_approved_for_ingestion"
+    ],
+    "future_auto_select_eligible_zip_count": 0,
+    "invalid_district_count": 34,
+    "invalid_state_count": 154,
+    "invalid_zip_zcta_format_count": 250,
+    "missing_required_metadata_count": 0,
+    "multi_state_count": 137,
+    "multi_state_zips": {
+      "02861": [
+        "MA-04",
+        "RI-01"
+      ],
+      "03579": [
+        "ME-02",
+        "NH-02"
+      ],
+      "19973": [
+        "DE-00",
+        "MD-01"
+      ],
+      "21874": [
+        "DE-00",
+        "MD-01"
+      ],
+      "21912": [
+        "DE-00",
+        "MD-01"
+      ],
+      "30165": [
+        "AL-03",
+        "GA-14"
+      ],
+      "30741": [
+        "GA-14",
+        "TN-03"
+      ],
+      "36855": [
+        "AL-03",
+        "GA-03"
+      ],
+      "38079": [
+        "KY-01",
+        "TN-08"
+      ],
+      "38326": [
+        "MS-01",
+        "TN-08"
+      ],
+      "38549": [
+        "KY-01",
+        "TN-06"
+      ],
+      "38769": [
+        "AR-01",
+        "MS-02"
+      ],
+      "38852": [
+        "AL-04",
+        "MS-01"
+      ],
+      "40965": [
+        "KY-05",
+        "TN-02"
+      ],
+      "42223": [
+        "KY-01",
+        "TN-07"
+      ],
+      "42602": [
+        "KY-01",
+        "KY-05",
+        "TN-06"
+      ],
+      "51001": [
+        "IA-04",
+        "SD-00"
+      ],
+      "51023": [
+        "IA-04",
+        "SD-00"
+      ],
+      "51360": [
+        "IA-04",
+        "MN-01"
+      ],
+      "51557": [
+        "IA-04",
+        "NE-03"
+      ],
+      "51640": [
+        "IA-04",
+        "MO-06"
+      ],
+      "52542": [
+        "IA-01",
+        "MO-06"
+      ],
+      "52573": [
+        "IA-01",
+        "MO-06"
+      ],
+      "52626": [
+        "IA-01",
+        "MO-06"
+      ],
+      "54540": [
+        "MI-01",
+        "WI-07"
+      ],
+      "56027": [
+        "IA-04",
+        "MN-01"
+      ],
+      "56136": [
+        "MN-07",
+        "SD-00"
+      ],
+      "56144": [
+        "MN-01",
+        "MN-07",
+        "SD-00"
+      ],
+      "56164": [
+        "MN-07",
+        "SD-00"
+      ],
+      "56219": [
+        "MN-07",
+        "SD-00"
+      ],
+      "56220": [
+        "MN-07",
+        "SD-00"
+      ],
+      "56257": [
+        "MN-07",
+        "SD-00"
+      ],
+      "56744": [
+        "MN-07",
+        "ND-00"
+      ],
+      "57026": [
+        "MN-07",
+        "SD-00"
+      ],
+      "57030": [
+        "MN-01",
+        "SD-00"
+      ],
+      "57034": [
+        "IA-04",
+        "SD-00"
+      ],
+      "57068": [
+        "MN-01",
+        "SD-00"
+      ],
+      "57717": [
+        "MT-02",
+        "SD-00",
+        "WY-00"
+      ],
+      "57724": [
+        "MT-02",
+        "SD-00"
+      ],
+      "57735": [
+        "NE-03",
+        "SD-00"
+      ],
+      "58030": [
+        "MN-07",
+        "ND-00"
+      ],
+      "58225": [
+        "MN-07",
+        "ND-00"
+      ],
+      "58621": [
+        "MT-02",
+        "ND-00"
+      ],
+      "59221": [
+        "MT-02",
+        "ND-00"
+      ],
+      "59270": [
+        "MT-02",
+        "ND-00"
+      ],
+      "59275": [
+        "MT-02",
+        "ND-00"
+      ],
+      "59847": [
+        "ID-01",
+        "MT-01"
+      ],
+      "63673": [
+        "IL-12",
+        "MO-08"
+      ],
+      "65729": [
+        "AR-01",
+        "MO-08"
+      ],
+      "65733": [
+        "AR-01",
+        "MO-07",
+        "MO-08"
+      ],
+      "65761": [
+        "AR-01",
+        "MO-07",
+        "MO-08"
+      ],
+      "66541": [
+        "KS-01",
+        "NE-03"
+      ],
+      "66955": [
+        "KS-01",
+        "NE-03"
+      ],
+      "68325": [
+        "KS-01",
+        "NE-03"
+      ],
+      "68327": [
+        "KS-01",
+        "NE-03"
+      ],
+      "68420": [
+        "KS-02",
+        "NE-03"
+      ],
+      "68719": [
+        "NE-03",
+        "SD-00"
+      ],
+      "68755": [
+        "NE-03",
+        "SD-00"
+      ],
+      "68943": [
+        "KS-01",
+        "NE-03"
+      ],
+      "68978": [
+        "KS-01",
+        "NE-03"
+      ],
+      "69026": [
+        "KS-01",
+        "NE-03"
+      ],
+      "69168": [
+        "CO-04",
+        "NE-03"
+      ],
+      "69201": [
+        "NE-03",
+        "SD-00"
+      ],
+      "69212": [
+        "NE-03",
+        "SD-00"
+      ],
+      "69216": [
+        "NE-03",
+        "SD-00"
+      ],
+      "71749": [
+        "AR-04",
+        "LA-04"
+      ],
+      "71937": [
+        "AR-04",
+        "OK-02"
+      ],
+      "71953": [
+        "AR-04",
+        "OK-02"
+      ],
+      "72338": [
+        "AR-01",
+        "TN-09"
+      ],
+      "72644": [
+        "AR-01",
+        "MO-07"
+      ],
+      "75556": [
+        "AR-04",
+        "TX-01"
+      ],
+      "80737": [
+        "CO-04",
+        "NE-03"
+      ],
+      "81120": [
+        "CO-03",
+        "NM-03"
+      ],
+      "81137": [
+        "CO-03",
+        "NM-03"
+      ],
+      "81324": [
+        "CO-03",
+        "UT-03"
+      ],
+      "82063": [
+        "CO-02",
+        "WY-00"
+      ],
+      "82082": [
+        "CO-04",
+        "NE-03",
+        "WY-00"
+      ],
+      "82801": [
+        "MT-02",
+        "WY-00"
+      ],
+      "83120": [
+        "ID-02",
+        "WY-00"
+      ],
+      "83127": [
+        "ID-02",
+        "WY-00"
+      ],
+      "83342": [
+        "ID-02",
+        "UT-01"
+      ],
+      "83856": [
+        "ID-01",
+        "WA-05"
+      ],
+      "84531": [
+        "AZ-02",
+        "UT-03"
+      ],
+      "84536": [
+        "AZ-02",
+        "UT-03"
+      ],
+      "86044": [
+        "AZ-02",
+        "UT-03"
+      ],
+      "86504": [
+        "AZ-02",
+        "NM-03"
+      ],
+      "86514": [
+        "AZ-02",
+        "NM-03",
+        "UT-03"
+      ],
+      "86515": [
+        "AZ-02",
+        "NM-03"
+      ],
+      "87328": [
+        "AZ-02",
+        "NM-03"
+      ],
+      "89010": [
+        "CA-03",
+        "NV-04"
+      ],
+      "89019": [
+        "CA-03",
+        "CA-23",
+        "NV-01",
+        "NV-03"
+      ],
+      "89060": [
+        "CA-03",
+        "NV-04"
+      ],
+      "89061": [
+        "CA-03",
+        "NV-04"
+      ],
+      "89439": [
+        "CA-03",
+        "NV-02"
+      ],
+      "89832": [
+        "ID-01",
+        "NV-02"
+      ],
+      "97635": [
+        "CA-01",
+        "OR-02"
+      ],
+      "97910": [
+        "ID-01",
+        "OR-02"
+      ],
+      "97913": [
+        "ID-01",
+        "OR-02"
+      ],
+      "99033": [
+        "ID-01",
+        "WA-05"
+      ],
+      "99128": [
+        "ID-01",
+        "WA-05"
+      ]
+    },
+    "multi_state_zips_truncated": true,
+    "rejected_row_count": 430,
+    "row_count": 40397,
+    "same_state_multi_district_count": 5725,
+    "same_state_multi_district_zips": {
+      "35006": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35010": [
+        "AL-03",
+        "AL-06"
+      ],
+      "35016": [
+        "AL-04",
+        "AL-05"
+      ],
+      "35019": [
+        "AL-04",
+        "AL-05"
+      ],
+      "35044": [
+        "AL-03",
+        "AL-06"
+      ],
+      "35062": [
+        "AL-04",
+        "AL-06",
+        "AL-07"
+      ],
+      "35063": [
+        "AL-04",
+        "AL-06"
+      ],
+      "35072": [
+        "AL-03",
+        "AL-06"
+      ],
+      "35079": [
+        "AL-04",
+        "AL-06"
+      ],
+      "35087": [
+        "AL-04",
+        "AL-05"
+      ],
+      "35089": [
+        "AL-03",
+        "AL-06"
+      ],
+      "35094": [
+        "AL-03",
+        "AL-06"
+      ],
+      "35121": [
+        "AL-03",
+        "AL-04"
+      ],
+      "35126": [
+        "AL-04",
+        "AL-06"
+      ],
+      "35128": [
+        "AL-03",
+        "AL-06"
+      ],
+      "35130": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35133": [
+        "AL-03",
+        "AL-04"
+      ],
+      "35146": [
+        "AL-03",
+        "AL-04",
+        "AL-06"
+      ],
+      "35148": [
+        "AL-04",
+        "AL-06"
+      ],
+      "35150": [
+        "AL-03",
+        "AL-06"
+      ],
+      "35151": [
+        "AL-03",
+        "AL-06"
+      ],
+      "35172": [
+        "AL-04",
+        "AL-06"
+      ],
+      "35173": [
+        "AL-03",
+        "AL-06"
+      ],
+      "35175": [
+        "AL-04",
+        "AL-05"
+      ],
+      "35178": [
+        "AL-03",
+        "AL-06"
+      ],
+      "35179": [
+        "AL-04",
+        "AL-05"
+      ],
+      "35180": [
+        "AL-04",
+        "AL-06"
+      ],
+      "35401": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35404": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35405": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35463": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35466": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35469": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35480": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35555": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35565": [
+        "AL-04",
+        "AL-05"
+      ],
+      "35574": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35576": [
+        "AL-04",
+        "AL-07"
+      ],
+      "35619": [
+        "AL-04",
+        "AL-05"
+      ],
+      "35952": [
+        "AL-03",
+        "AL-04"
+      ],
+      "35954": [
+        "AL-03",
+        "AL-04"
+      ],
+      "35956": [
+        "AL-03",
+        "AL-04"
+      ],
+      "35959": [
+        "AL-03",
+        "AL-04"
+      ],
+      "35961": [
+        "AL-03",
+        "AL-04"
+      ],
+      "35967": [
+        "AL-03",
+        "AL-04"
+      ],
+      "35983": [
+        "AL-03",
+        "AL-04"
+      ],
+      "35984": [
+        "AL-03",
+        "AL-04"
+      ],
+      "36009": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36010": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36016": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36027": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36028": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36032": [
+        "AL-02",
+        "AL-07"
+      ],
+      "36034": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36043": [
+        "AL-02",
+        "AL-07"
+      ],
+      "36047": [
+        "AL-02",
+        "AL-07"
+      ],
+      "36054": [
+        "AL-02",
+        "AL-06"
+      ],
+      "36078": [
+        "AL-02",
+        "AL-03",
+        "AL-06"
+      ],
+      "36079": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36311": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36317": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36374": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36401": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36421": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36426": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36432": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36451": [
+        "AL-02",
+        "AL-07"
+      ],
+      "36456": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36474": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36482": [
+        "AL-02",
+        "AL-07"
+      ],
+      "36502": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36513": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36521": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36522": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36545": [
+        "AL-02",
+        "AL-07"
+      ],
+      "36558": [
+        "AL-02",
+        "AL-07"
+      ],
+      "36571": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36575": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36582": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36587": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36602": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36603": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36605": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36608": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36613": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36619": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36693": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36695": [
+        "AL-01",
+        "AL-02"
+      ],
+      "36726": [
+        "AL-02",
+        "AL-07"
+      ],
+      "36751": [
+        "AL-02",
+        "AL-07"
+      ],
+      "36768": [
+        "AL-02",
+        "AL-07"
+      ],
+      "36804": [
+        "AL-02",
+        "AL-03"
+      ],
+      "36830": [
+        "AL-02",
+        "AL-03"
+      ],
+      "36832": [
+        "AL-02",
+        "AL-03"
+      ],
+      "36866": [
+        "AL-02",
+        "AL-03"
+      ],
+      "36867": [
+        "AL-02",
+        "AL-03"
+      ],
+      "36870": [
+        "AL-02",
+        "AL-03"
+      ],
+      "36874": [
+        "AL-02",
+        "AL-03"
+      ],
+      "36877": [
+        "AL-02",
+        "AL-03"
+      ],
+      "36919": [
+        "AL-02",
+        "AL-07"
+      ]
+    },
+    "same_state_multi_district_zips_truncated": true,
+    "source_only_future_auto_select_candidate_zip_count": 27780,
+    "state_count": 51,
+    "supabase_connection_opened": false,
+    "unique_state_district_pair_count": 436,
+    "unique_zip_count": 33642,
+    "unique_zip_zcta_count": 33642,
+    "would_any_row_be_auto_select_eligible_under_strict_gates": false
+  },
+  "generated_at": "2026-07-10",
+  "input": {
+    "actual_file_name": "tab20_cd11920_zcta520_natl.txt",
+    "actual_file_size_bytes": 6195997,
+    "actual_sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+    "credentials_required": false,
+    "expected_file_name": "tab20_cd11920_zcta520_natl.txt",
+    "expected_file_size_bytes": 6195997,
+    "expected_sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+    "file_name_matches_expected": true,
+    "file_size_bytes": 6195997,
+    "file_size_matches_expected": true,
+    "format": "txt",
+    "input_classification": "verified_official_file",
+    "local_fixture_or_sample_only": false,
+    "network_used_during_harness": false,
+    "official_file_identity_verified": true,
+    "official_file_previously_retrieved": true,
+    "path": ".local/zip_source_official/tab20_cd11920_zcta520_natl.txt",
+    "sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+    "sha256_matches_expected": true
+  },
+  "postcheck": {
+    "contract_checks_passed": true,
+    "migration_applied_by_postcheck": false,
+    "mode": "postcheck",
+    "raw_database_url_recorded": false,
+    "script": "backend/scripts/apply_zip_district_mappings_migration.py --postcheck-only --env-path backend/.env",
+    "zip_district_map_exists": true,
+    "zip_district_mappings_auto_select_eligible_count": 0,
+    "zip_district_mappings_exists": true,
+    "zip_district_mappings_row_count": 0,
+    "zip_district_mappings_unique_zip_count": 0
+  },
+  "recommended_next_milestone": "ZIP Source-to-Member Readiness Gate V1: design and validate current House member matching, duplicate-member blocking, stale-member blocking, territory handling, and bounded rollback/preflight artifacts without loading national mappings or switching public routes.",
+  "rejected_rows": [
+    {
+      "district": "01",
+      "line_number": 2,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AL",
+      "zip": ""
+    },
+    {
+      "district": "02",
+      "line_number": 113,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AL",
+      "zip": ""
+    },
+    {
+      "district": "03",
+      "line_number": 255,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AL",
+      "zip": ""
+    },
+    {
+      "district": "06",
+      "line_number": 571,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AL",
+      "zip": ""
+    },
+    {
+      "district": "07",
+      "line_number": 662,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AL",
+      "zip": ""
+    },
+    {
+      "district": "00",
+      "line_number": 809,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AK",
+      "zip": ""
+    },
+    {
+      "district": "01",
+      "line_number": 1055,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AZ",
+      "zip": ""
+    },
+    {
+      "district": "02",
+      "line_number": 1099,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AZ",
+      "zip": ""
+    },
+    {
+      "district": "06",
+      "line_number": 1343,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AZ",
+      "zip": ""
+    },
+    {
+      "district": "07",
+      "line_number": 1423,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AZ",
+      "zip": ""
+    },
+    {
+      "district": "08",
+      "line_number": 1498,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AZ",
+      "zip": ""
+    },
+    {
+      "district": "09",
+      "line_number": 1534,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AZ",
+      "zip": ""
+    },
+    {
+      "district": "01",
+      "line_number": 1608,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AR",
+      "zip": ""
+    },
+    {
+      "district": "02",
+      "line_number": 1892,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AR",
+      "zip": ""
+    },
+    {
+      "district": "03",
+      "line_number": 1998,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AR",
+      "zip": ""
+    },
+    {
+      "district": "04",
+      "line_number": 2073,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "AR",
+      "zip": ""
+    },
+    {
+      "district": "01",
+      "line_number": 2308,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "CA",
+      "zip": ""
+    },
+    {
+      "district": "02",
+      "line_number": 2449,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "CA",
+      "zip": ""
+    },
+    {
+      "district": "03",
+      "line_number": 2591,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "CA",
+      "zip": ""
+    },
+    {
+      "district": "04",
+      "line_number": 2720,
+      "reasons": [
+        "invalid_zip_zcta_format"
+      ],
+      "state": "CA",
+      "zip": ""
+    }
+  ],
+  "safety_confirmations": {
+    "no_insert_update_delete_truncate_drop_or_copy_executed": true,
+    "public_lookup_behavior_expected_unchanged": true,
+    "report_only_output": true,
+    "script_fail_closed_without_dry_run_flag": true,
+    "script_has_no_database_dependency": true,
+    "zip_district_mappings_expected_to_remain_empty": true
+  },
+  "sample_rows": [
+    {
+      "ambiguity_detection_level": "multi_row_source",
+      "confidence": "source_backed",
+      "district": "01",
+      "source_currentness": "current",
+      "state": "AL",
+      "zip": "36009"
+    },
+    {
+      "ambiguity_detection_level": "multi_row_source",
+      "confidence": "source_backed",
+      "district": "01",
+      "source_currentness": "current",
+      "state": "AL",
+      "zip": "36010"
+    },
+    {
+      "ambiguity_detection_level": "multi_row_source",
+      "confidence": "source_backed",
+      "district": "01",
+      "source_currentness": "current",
+      "state": "AL",
+      "zip": "36016"
+    },
+    {
+      "ambiguity_detection_level": "multi_row_source",
+      "confidence": "source_backed",
+      "district": "01",
+      "source_currentness": "current",
+      "state": "AL",
+      "zip": "36027"
+    },
+    {
+      "ambiguity_detection_level": "multi_row_source",
+      "confidence": "source_backed",
+      "district": "01",
+      "source_currentness": "current",
+      "state": "AL",
+      "zip": "36028"
+    }
+  ],
+  "schema_version": "zip_source_retrieval_official_file_dry_run_v1",
+  "scope": {
+    "address_lookup_added": false,
+    "dry_run_only": true,
+    "frontend_runtime_changed": false,
+    "migration_rerun": false,
+    "national_zip_data_ingested": false,
+    "production_data_mutated": false,
+    "provider_integration_added": false,
+    "route_switch_made": false,
+    "seed_data_loaded": false,
+    "zip_multi_row_lookup_enabled": false
+  },
+  "source_approval": {
+    "approval_blockers_before_production": [
+      "bounded_production_write_plan_not_approved",
+      "current_house_member_metadata_gate_not_implemented",
+      "duplicate_current_house_member_match_gate_not_implemented",
+      "zcta_does_not_cover_all_usps_zip_codes_or_provide_address_level_precision"
+    ],
+    "candidate_name": "U.S. Census Bureau 119th Congressional District to 2020 ZCTA Relationship File",
+    "decision": "approved_for_bounded_dry_run_only",
+    "effective_date": "119th Congress / 2020 ZCTA vintage; exact production effective date not approved",
+    "file_name": "tab20_cd11920_zcta520_natl.txt",
+    "license_or_terms_basis": "Official U.S. Census Bureau public data published as open government data; Census Bureau works created by employees generally are not subject to U.S. copyright. No credential or terms-acceptance gate was present.",
+    "limitations": [
+      "ZIP Codes are delivery routes, not exact boundaries.",
+      "ZCTAs are Census-created approximations and do not represent every valid USPS ZIP Code.",
+      "ZIP-only lookup can at most surface possible district mappings, not a definitive address-level representative.",
+      "Auto-select must remain blocked for ambiguous, multi-state, stale, fixture, or metadata-incomplete rows."
+    ],
+    "official_source_citations": [
+      {
+        "label": "Census Relationship Files",
+        "url": "https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.html"
+      },
+      {
+        "label": "2020 Census Relationship Files, 119th Congressional District to 2020 ZCTA",
+        "url": "https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html"
+      },
+      {
+        "label": "Census ZCTA guidance",
+        "url": "https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html"
+      }
+    ],
+    "production_ingestion_approved": false,
+    "rationale": [
+      "The Census relationship file candidate is official and can represent many-to-many geography relationships.",
+      "The candidate is appropriate for parser and ambiguity-report dry runs using local sample data.",
+      "Production ingestion remains outside this no-write milestone even though the exact file and layout are now pinned."
+    ],
+    "retrieval_date": "2026-07-10",
+    "source_page": "https://www.census.gov/geographies/reference-files/time-series/geo/relationship-files.2020.html",
+    "source_type": "official_government_relationship_file",
+    "source_url_or_retrieval_path": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_zcta520_natl.txt",
+    "source_version": "119th-congressional-district-to-2020-zcta-relationship-file",
+    "technical_layout": {
+      "columns": [
+        "OID_CD119_20",
+        "GEOID_CD119_20",
+        "NAMELSAD_CD119_20",
+        "AREALAND_CD119_20",
+        "AREAWATER_CD119_20",
+        "MTFCC_CD119_20",
+        "FUNCSTAT_CD119_20",
+        "OID_ZCTA5_20",
+        "GEOID_ZCTA5_20",
+        "NAMELSAD_ZCTA5_20",
+        "AREALAND_ZCTA5_20",
+        "AREAWATER_ZCTA5_20",
+        "MTFCC_ZCTA5_20",
+        "CLASSFP_ZCTA5_20",
+        "FUNCSTAT_ZCTA5_20",
+        "AREALAND_PART",
+        "AREAWATER_PART"
+      ],
+      "format": "pipe-delimited text with header",
+      "mapping": {
+        "district": "last two characters of GEOID_CD119_20",
+        "state": "first two characters of GEOID_CD119_20 interpreted as state FIPS",
+        "zip_zcta": "GEOID_ZCTA5_20"
+      },
+      "record_layout_url": "https://www.census.gov/programs-surveys/geography/technical-documentation/records-layout/2020-CD-SLD-record-layout.html"
+    }
+  },
+  "strict_future_auto_select_requirements": {
+    "all_source_metadata_required": true,
+    "ambiguity_detection_level": "multi_row_source",
+    "confidence_allowed": [
+      "source_backed",
+      "reviewed"
+    ],
+    "current_house_member_metadata_gate_required": true,
+    "duplicate_current_house_member_match_blocks_auto_select": true,
+    "exactly_one_district": true,
+    "exactly_one_state": true,
+    "fixture_sample_only": false,
+    "source_can_represent_multi_district_and_multi_state": true,
+    "source_currentness": "current",
+    "stale_member_metadata_blocks_auto_select": true,
+    "stale_or_unknown_source": false
+  },
+  "validation": [
+    {
+      "command": "python backend\\scripts\\apply_zip_district_mappings_migration.py --postcheck-only --env-path backend\\.env",
+      "notes": "Read-only; migration_applied false; row count 0; unique ZIP count 0; auto-select eligible count 0.",
+      "result": "passed"
+    },
+    {
+      "command": "python backend\\scripts\\dry_run_zip_source_import.py --dry-run --input .local\\zip_source_official\\tab20_cd11920_zcta520_natl.txt --output docs\\review_packets\\zip_source_retrieval_official_file_dry_run_v1.json --markdown-output docs\\review_packets\\zip_source_retrieval_official_file_dry_run_v1.md",
+      "notes": "Parsed the ignored local official file and generated no-write JSON and Markdown packets.",
+      "result": "passed"
+    },
+    {
+      "command": "$env:DATABASE_URL='postgresql://invalid'; python -m pytest backend\\tests\\test_api_lookup.py backend\\tests\\test_zip_source_metadata_report.py backend\\tests\\test_zip_multi_row_schema_contract.py backend\\tests\\test_zip_lookup_payload_parity.py backend\\tests\\test_zip_seed_readiness.py backend\\tests\\test_zip_multi_row_readonly_route_eval.py backend\\tests\\test_zip_source_dry_run_import.py -p no:cacheprovider",
+      "notes": "36 passed, including pinned identity, spoofed-filename fail-closed, and PR #85 default-path coverage.",
+      "result": "passed"
+    },
+    {
+      "command": "python -m json.tool docs\\review_packets\\zip_source_retrieval_official_file_dry_run_v1.json",
+      "notes": "Valid JSON.",
+      "result": "passed"
+    },
+    {
+      "command": "python -m json.tool docs\\review_packets\\zip_source_approval_dry_run_harness_v1.json",
+      "notes": "Valid JSON.",
+      "result": "passed"
+    }
+  ]
+}
