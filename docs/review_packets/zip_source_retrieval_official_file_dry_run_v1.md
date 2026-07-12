@@ -2,7 +2,7 @@
 
 ## Summary
 
-- Pinned and parsed the exact official Census national 119th Congressional District-to-2020 ZCTA relationship file.
+- Parsed the exact pinned official Census national 119th Congressional District-to-2020 ZCTA relationship file.
 - Source decision: `approved_for_bounded_dry_run_only`.
 - Production ingestion is not approved by this packet.
 - Public lookup behavior remains unchanged and `ZIP_MULTI_ROW_LOOKUP_ENABLED` remains false.
@@ -41,7 +41,17 @@ Production approval blockers:
 ## Dry-Run Report Summary
 
 - Input: `.local/zip_source_official/tab20_cd11920_zcta520_natl.txt`
-- Local official file committed: `False`
+- Input classification: `verified_official_file`
+- Official-file identity verified: `True`
+- Expected file name: `tab20_cd11920_zcta520_natl.txt`
+- Actual file name: `tab20_cd11920_zcta520_natl.txt`
+- File name matches: `True`
+- Expected file size: `6195997` bytes
+- Actual file size: `6195997` bytes
+- File size matches: `True`
+- Expected SHA-256: `57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77`
+- Actual SHA-256: `57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77`
+- SHA-256 matches: `True`
 - File size: `6195997` bytes
 - SHA-256: `57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77`
 - Row count: `40397`
@@ -103,7 +113,7 @@ Currentness distribution:
 ## Validation
 - `python backend\scripts\apply_zip_district_mappings_migration.py --postcheck-only --env-path backend\.env`: passed; Read-only; migration_applied false; row count 0; unique ZIP count 0; auto-select eligible count 0.
 - `python backend\scripts\dry_run_zip_source_import.py --dry-run --input .local\zip_source_official\tab20_cd11920_zcta520_natl.txt --output docs\review_packets\zip_source_retrieval_official_file_dry_run_v1.json --markdown-output docs\review_packets\zip_source_retrieval_official_file_dry_run_v1.md`: passed; Parsed the ignored local official file and generated no-write JSON and Markdown packets.
-- `$env:DATABASE_URL='postgresql://invalid'; python -m pytest backend\tests\test_api_lookup.py backend\tests\test_zip_source_metadata_report.py backend\tests\test_zip_multi_row_schema_contract.py backend\tests\test_zip_lookup_payload_parity.py backend\tests\test_zip_seed_readiness.py backend\tests\test_zip_multi_row_readonly_route_eval.py backend\tests\test_zip_source_dry_run_import.py -p no:cacheprovider`: passed; 34 passed.
+- `$env:DATABASE_URL='postgresql://invalid'; python -m pytest backend\tests\test_api_lookup.py backend\tests\test_zip_source_metadata_report.py backend\tests\test_zip_multi_row_schema_contract.py backend\tests\test_zip_lookup_payload_parity.py backend\tests\test_zip_seed_readiness.py backend\tests\test_zip_multi_row_readonly_route_eval.py backend\tests\test_zip_source_dry_run_import.py -p no:cacheprovider`: passed; 36 passed, including pinned identity, spoofed-filename fail-closed, and PR #85 default-path coverage.
 - `python -m json.tool docs\review_packets\zip_source_retrieval_official_file_dry_run_v1.json`: passed; Valid JSON.
 - `python -m json.tool docs\review_packets\zip_source_approval_dry_run_harness_v1.json`: passed; Valid JSON.
 

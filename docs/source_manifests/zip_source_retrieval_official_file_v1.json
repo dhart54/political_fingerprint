@@ -7,6 +7,11 @@
   "file_name": "tab20_cd11920_zcta520_natl.txt",
   "file_size_bytes": 6195997,
   "sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+  "identity_verification": {
+    "required_matches": ["file_name", "file_size_bytes", "sha256"],
+    "fail_closed_on_official_filename_mismatch": true,
+    "verified_for_reviewed_local_file": true
+  },
   "retrieval_date": "2026-07-10",
   "source_version": "119th-congressional-district-to-2020-zcta-relationship-file",
   "vintage": "119th Congress districts related to 2020 Census ZCTAs",

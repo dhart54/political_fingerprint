@@ -13,9 +13,8 @@ from typing import Any
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_INPUT = REPO_ROOT / "backend/fixtures/zip_source_dry_run_sample/census_119_cd_zcta_sample.csv"
-DEFAULT_JSON_OUTPUT = REPO_ROOT / "docs/review_packets/zip_source_approval_dry_run_harness_v1.json"
-DEFAULT_MARKDOWN_OUTPUT = REPO_ROOT / "docs/review_packets/zip_source_approval_dry_run_harness_v1.md"
+DEFAULT_JSON_OUTPUT = REPO_ROOT / "docs/review_packets/zip_source_retrieval_official_file_dry_run_v1.json"
+DEFAULT_MARKDOWN_OUTPUT = REPO_ROOT / "docs/review_packets/zip_source_retrieval_official_file_dry_run_v1.md"
 
 SCHEMA_VERSION = "zip_source_retrieval_official_file_dry_run_v1"
 REPORT_DATE = "2026-07-10"
@@ -25,6 +24,9 @@ SOURCE_URL = "https://www.census.gov/geographies/reference-files/time-series/geo
 SOURCE_VERSION = "119th-congressional-district-to-2020-zcta-relationship-file"
 SOURCE_EFFECTIVE_DATE = "119th Congress / 2020 ZCTA vintage; exact production effective date not approved"
 OFFICIAL_FILE_NAME = "tab20_cd11920_zcta520_natl.txt"
+EXPECTED_OFFICIAL_FILE_NAME = OFFICIAL_FILE_NAME
+EXPECTED_OFFICIAL_FILE_SIZE_BYTES = 6_195_997
+EXPECTED_OFFICIAL_FILE_SHA256 = "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77"
 OFFICIAL_FILE_URL = "https://www2.census.gov/geo/docs/maps-data/data/rel2020/cd-sld/tab20_cd11920_zcta520_natl.txt"
 OFFICIAL_LAYOUT_URL = "https://www.census.gov/programs-surveys/geography/technical-documentation/records-layout/2020-CD-SLD-record-layout.html"
 OFFICIAL_COLUMNS = [
@@ -117,7 +119,7 @@ WRITE_VERBS = ("insert", "update", "delete", "truncate", "drop", "alter", "copy"
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Dry-run a local ZIP/ZCTA source import without database writes.")
     parser.add_argument("--dry-run", action="store_true", help="Required. Refuses to run without this flag.")
-    parser.add_argument("--input", type=Path, default=DEFAULT_INPUT, help="Local CSV or JSON source-like input file.")
+    parser.add_argument("--input", type=Path, required=True, help="Required local CSV, JSON, or official text input file.")
     parser.add_argument("--output", type=Path, default=DEFAULT_JSON_OUTPUT, help="JSON report output path.")
     parser.add_argument(
         "--markdown-output",
@@ -131,7 +133,11 @@ def main(argv: list[str] | None = None) -> int:
         print("ERROR: refusing to run without --dry-run; this harness is report-only.", file=sys.stderr)
         return 2
 
-    report = build_report(input_path=args.input)
+    try:
+        report = build_report(input_path=args.input)
+    except (FileNotFoundError, ValueError) as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 2
     write_json_report(report, args.output)
     write_markdown_report(report, args.markdown_output)
     print(
@@ -151,6 +157,7 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def build_report(*, input_path: Path) -> dict[str, Any]:
+    identity = inspect_official_file_identity(input_path)
     raw_rows = read_source_rows(input_path)
     normalized_rows = [normalize_row(row, line_number=index + 2) for index, row in enumerate(raw_rows)]
     accepted_rows = [row for row in normalized_rows if not row["rejected"]]
@@ -230,12 +237,14 @@ def build_report(*, input_path: Path) -> dict[str, Any]:
         "input": {
             "path": repo_relative(input_path),
             "format": input_path.suffix.lower().lstrip("."),
-            "local_fixture_or_sample_only": input_path.name != OFFICIAL_FILE_NAME,
+            "input_classification": "verified_official_file" if identity["official_file_identity_verified"] else "test_or_sample_input",
+            "local_fixture_or_sample_only": not identity["official_file_identity_verified"],
             "network_used_during_harness": False,
-            "official_file_previously_retrieved": input_path.name == OFFICIAL_FILE_NAME,
+            "official_file_previously_retrieved": identity["official_file_identity_verified"],
+            **identity,
             "credentials_required": False,
-            "file_size_bytes": input_path.stat().st_size,
-            "sha256": sha256_file(input_path),
+            "file_size_bytes": identity["actual_file_size_bytes"],
+            "sha256": identity["actual_sha256"],
         },
         "postcheck": {
             "script": "backend/scripts/apply_zip_district_mappings_migration.py --postcheck-only --env-path backend/.env",
@@ -283,7 +292,7 @@ def build_report(*, input_path: Path) -> dict[str, Any]:
             {
                 "command": "$env:DATABASE_URL='postgresql://invalid'; python -m pytest backend\\tests\\test_api_lookup.py backend\\tests\\test_zip_source_metadata_report.py backend\\tests\\test_zip_multi_row_schema_contract.py backend\\tests\\test_zip_lookup_payload_parity.py backend\\tests\\test_zip_seed_readiness.py backend\\tests\\test_zip_multi_row_readonly_route_eval.py backend\\tests\\test_zip_source_dry_run_import.py -p no:cacheprovider",
                 "result": "passed",
-                "notes": "34 passed.",
+                "notes": "36 passed, including pinned identity, spoofed-filename fail-closed, and PR #85 default-path coverage.",
             },
             {
                 "command": "python -m json.tool docs\\review_packets\\zip_source_retrieval_official_file_dry_run_v1.json",
@@ -428,6 +437,36 @@ def sha256_file(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def inspect_official_file_identity(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        raise FileNotFoundError(f"Input file not found: {path}")
+    actual_name = path.name
+    actual_size = path.stat().st_size
+    actual_sha256 = sha256_file(path)
+    name_matches = actual_name == EXPECTED_OFFICIAL_FILE_NAME
+    size_matches = actual_size == EXPECTED_OFFICIAL_FILE_SIZE_BYTES
+    sha256_matches = actual_sha256 == EXPECTED_OFFICIAL_FILE_SHA256
+    verified = name_matches and size_matches and sha256_matches
+    if name_matches and not verified:
+        raise ValueError(
+            "official filename was supplied but pinned identity verification failed: "
+            f"expected size {EXPECTED_OFFICIAL_FILE_SIZE_BYTES} and SHA-256 {EXPECTED_OFFICIAL_FILE_SHA256}; "
+            f"got size {actual_size} and SHA-256 {actual_sha256}"
+        )
+    return {
+        "expected_file_name": EXPECTED_OFFICIAL_FILE_NAME,
+        "actual_file_name": actual_name,
+        "file_name_matches_expected": name_matches,
+        "expected_file_size_bytes": EXPECTED_OFFICIAL_FILE_SIZE_BYTES,
+        "actual_file_size_bytes": actual_size,
+        "file_size_matches_expected": size_matches,
+        "expected_sha256": EXPECTED_OFFICIAL_FILE_SHA256,
+        "actual_sha256": actual_sha256,
+        "sha256_matches_expected": sha256_matches,
+        "official_file_identity_verified": verified,
+    }
 
 
 def normalize_row(raw: dict[str, Any], *, line_number: int) -> dict[str, Any]:
@@ -613,12 +652,18 @@ def render_markdown(report: dict[str, Any]) -> str:
     approval = report["source_approval"]
     summary = report["dry_run_summary"]
     safety = report["safety_confirmations"]
+    verified_official = report["input"]["official_file_identity_verified"]
+    parsed_summary = (
+        "Parsed the exact pinned official Census national 119th Congressional District-to-2020 ZCTA relationship file."
+        if verified_official
+        else "Parsed an official-layout test/sample input; this was not the verified full official Census file."
+    )
     lines = [
         "# ZIP Source Retrieval Official-File Dry-Run V1",
         "",
         "## Summary",
         "",
-        "- Pinned and parsed the exact official Census national 119th Congressional District-to-2020 ZCTA relationship file.",
+        f"- {parsed_summary}",
         f"- Source decision: `{approval['decision']}`.",
         "- Production ingestion is not approved by this packet.",
         "- Public lookup behavior remains unchanged and `ZIP_MULTI_ROW_LOOKUP_ENABLED` remains false.",
@@ -650,7 +695,17 @@ def render_markdown(report: dict[str, Any]) -> str:
             "## Dry-Run Report Summary",
             "",
             f"- Input: `{report['input']['path']}`",
-            f"- Local official file committed: `{not report['input']['path'].startswith('.local/')}`",
+            f"- Input classification: `{report['input']['input_classification']}`",
+            f"- Official-file identity verified: `{verified_official}`",
+            f"- Expected file name: `{report['input']['expected_file_name']}`",
+            f"- Actual file name: `{report['input']['actual_file_name']}`",
+            f"- File name matches: `{report['input']['file_name_matches_expected']}`",
+            f"- Expected file size: `{report['input']['expected_file_size_bytes']}` bytes",
+            f"- Actual file size: `{report['input']['actual_file_size_bytes']}` bytes",
+            f"- File size matches: `{report['input']['file_size_matches_expected']}`",
+            f"- Expected SHA-256: `{report['input']['expected_sha256']}`",
+            f"- Actual SHA-256: `{report['input']['actual_sha256']}`",
+            f"- SHA-256 matches: `{report['input']['sha256_matches_expected']}`",
             f"- File size: `{report['input']['file_size_bytes']}` bytes",
             f"- SHA-256: `{report['input']['sha256']}`",
             f"- Row count: `{summary['row_count']}`",

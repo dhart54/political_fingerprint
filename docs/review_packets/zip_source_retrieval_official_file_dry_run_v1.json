@@ -865,14 +865,25 @@
   },
   "generated_at": "2026-07-10",
   "input": {
+    "actual_file_name": "tab20_cd11920_zcta520_natl.txt",
+    "actual_file_size_bytes": 6195997,
+    "actual_sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
     "credentials_required": false,
+    "expected_file_name": "tab20_cd11920_zcta520_natl.txt",
+    "expected_file_size_bytes": 6195997,
+    "expected_sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+    "file_name_matches_expected": true,
     "file_size_bytes": 6195997,
+    "file_size_matches_expected": true,
     "format": "txt",
+    "input_classification": "verified_official_file",
     "local_fixture_or_sample_only": false,
     "network_used_during_harness": false,
+    "official_file_identity_verified": true,
     "official_file_previously_retrieved": true,
     "path": ".local/zip_source_official/tab20_cd11920_zcta520_natl.txt",
-    "sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77"
+    "sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+    "sha256_matches_expected": true
   },
   "postcheck": {
     "contract_checks_passed": true,
@@ -1234,7 +1245,7 @@
     },
     {
       "command": "$env:DATABASE_URL='postgresql://invalid'; python -m pytest backend\\tests\\test_api_lookup.py backend\\tests\\test_zip_source_metadata_report.py backend\\tests\\test_zip_multi_row_schema_contract.py backend\\tests\\test_zip_lookup_payload_parity.py backend\\tests\\test_zip_seed_readiness.py backend\\tests\\test_zip_multi_row_readonly_route_eval.py backend\\tests\\test_zip_source_dry_run_import.py -p no:cacheprovider",
-      "notes": "34 passed.",
+      "notes": "36 passed, including pinned identity, spoofed-filename fail-closed, and PR #85 default-path coverage.",
       "result": "passed"
     },
     {

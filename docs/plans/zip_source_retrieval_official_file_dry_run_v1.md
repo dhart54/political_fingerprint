@@ -28,6 +28,7 @@
 - [x] Read-only postcheck confirms `zip_district_mappings` is empty and routes remain on `zip_district_map`.
 - [x] Focused tests and JSON validation pass.
 - [x] Commit, push, and draft PR are complete (PR #85).
+- [x] Harden PR #85 so verified-official status requires exact filename, size, and SHA-256; remove stale PR #84 defaults.
 
 ## Baseline
 
@@ -67,12 +68,15 @@
 ## Deviations Or Corrections
 
 - The report initially carried every ambiguous ZCTA identifier. It was bounded to the first 100 examples per ambiguity class while preserving complete counts, reducing the committed review packet to about 27 KB.
+- Hardening follow-up: filename-only official-file detection and PR #84 output/input defaults were unsafe. The harness now requires an explicit input, binds verified status to all three pinned identity fields, and fails before report writes when the official filename has mismatched bytes.
 
 ## Validation Results
 
 - `python backend\scripts\apply_zip_district_mappings_migration.py --postcheck-only --env-path backend\.env`: passed; migration not applied, target row count `0`, unique ZIP count `0`, auto-select eligible count `0`.
 - Official-file harness command: passed; 40,397 rows, 39,967 accepted, 430 rejected, 33,642 unique ZCTAs, 51 states/DC, 436 state-district pairs, 5,725 same-state multi-district ZCTAs, 137 multi-state ZCTAs, and zero final auto-select-eligible ZCTAs.
-- Focused ZIP suite: `34 passed` in 9.76 seconds.
+- Focused ZIP suite after identity hardening: `36 passed` in 9.96 seconds.
+- Full-file identity gate: filename, `6,195,997`-byte size, and SHA-256 `57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77` all matched; `official_file_identity_verified=true`.
+- Spoofed official-filename test: passed; mismatched bytes returned exit code `2` and wrote no JSON or Markdown report.
 - New packet, PR #84 packet, and source manifest: valid JSON.
 - Static route/flag checks: no `zip_district_mappings` read in public API modules; no enabled `ZIP_MULTI_ROW_LOOKUP_ENABLED` assignment.
 - `git diff --check`: passed (line-ending notices only).

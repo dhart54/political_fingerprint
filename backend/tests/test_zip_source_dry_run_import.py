@@ -84,6 +84,46 @@ def test_official_census_pipe_layout_is_adapted_without_guessing_columns() -> No
         "ambiguity_detection_level": "multi_row_source",
     }
     assert report["input"]["sha256"]
+    assert report["input"]["input_classification"] == "test_or_sample_input"
+    assert report["input"]["official_file_identity_verified"] is False
+    assert report["input"]["expected_file_name"] == "tab20_cd11920_zcta520_natl.txt"
+    assert report["input"]["expected_file_size_bytes"] == 6195997
+    assert report["input"]["expected_sha256"] == "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77"
+    assert report["input"]["file_name_matches_expected"] is False
+    assert report["input"]["file_size_matches_expected"] is False
+    assert report["input"]["sha256_matches_expected"] is False
+
+
+def test_spoofed_official_filename_fails_closed_without_reports() -> None:
+    spoof_dir = CASES_ROOT / "spoof"
+    spoof_dir.mkdir(parents=True, exist_ok=True)
+    spoof_path = spoof_dir / zip_dry_run.EXPECTED_OFFICIAL_FILE_NAME
+    spoof_path.write_text("not the pinned Census file\n", encoding="utf-8")
+    json_output = CASES_ROOT / "spoof_dry_run.json"
+    markdown_output = CASES_ROOT / "spoof_dry_run.md"
+
+    result = zip_dry_run.main(
+        [
+            "--dry-run",
+            "--input",
+            str(spoof_path),
+            "--output",
+            str(json_output),
+            "--markdown-output",
+            str(markdown_output),
+        ]
+    )
+
+    assert result == 2
+    assert not json_output.exists()
+    assert not markdown_output.exists()
+
+
+def test_pr85_output_defaults_do_not_target_pr84_packets() -> None:
+    assert zip_dry_run.DEFAULT_JSON_OUTPUT.name == "zip_source_retrieval_official_file_dry_run_v1.json"
+    assert zip_dry_run.DEFAULT_MARKDOWN_OUTPUT.name == "zip_source_retrieval_official_file_dry_run_v1.md"
+    assert "zip_source_approval_dry_run_harness_v1" not in str(zip_dry_run.DEFAULT_JSON_OUTPUT)
+    assert "zip_source_approval_dry_run_harness_v1" not in str(zip_dry_run.DEFAULT_MARKDOWN_OUTPUT)
 
 
 def test_dry_run_writes_review_packet_outputs() -> None:
@@ -109,6 +149,8 @@ def test_dry_run_writes_review_packet_outputs() -> None:
     assert payload["dry_run_summary"]["explicit_no_db_write"] is True
     assert payload["scope"]["route_switch_made"] is False
     assert "Production ingestion is not approved" in markdown
+    assert "official-layout test/sample input" in markdown
+    assert "not the verified full official Census file" in markdown
 
 
 def test_script_does_not_import_database_clients_or_write_sql() -> None:
