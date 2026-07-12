@@ -28,7 +28,7 @@
 - [x] JSON/Markdown packets report source/member/status/candidate-ZCTA counts and final production eligibility zero.
 - [x] Target table remains empty; public routes and flag remain unchanged.
 - [x] Tests, JSON checks, postcheck, static checks, and diff hygiene pass.
-- [ ] Commit, push, and draft PR are complete.
+- [x] Commit, push, and draft PR are complete (PR #86).
 
 ## Baseline
 
@@ -51,7 +51,7 @@
 - [x] Implementation
 - [x] Validation
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -97,6 +97,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: implementation and validation complete; commit/PR pending.
+- Definition of done satisfied: yes; implementation, validation, commit, push, and draft PR #86 are complete.
 - Remaining limitations: member terms, vacancy, member type, metadata source/retrieval evidence, and explicit currentness are not stored.
 - Recommended next step: Current House member metadata hardening V1; do not proceed to staging ingestion or a route switch until those gates are represented and source-backed.
