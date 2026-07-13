@@ -77,6 +77,9 @@
 ## Deviations Or Corrections
 
 - Live Congress.gov JSON required the documented narrow `terms` container adapter noted above; no field meaning or year precision was inferred.
+- PR #87 hardening replaced the shared local directory with immutable manifest-authoritative snapshot batches, checksum/allowlist replay, UTC freshness enforcement, and deterministic normalized seed previews.
+- Cross-source confirmation now requires exact normalized name or official House-domain equivalence plus seat-role agreement; seat occupancy alone is insufficient.
+- Clerk parsing is vacancy-record scoped and records structured official dates. The current four active records are GA-13 (passed away 2026-04-22; special election 2026-07-28), FL-20 (resigned 2026-04-21), TX-23 (resigned 2026-04-14), and CA-14 (resigned 2026-04-14).
 
 ## Validation Results
 
@@ -90,6 +93,12 @@
 - Final ZIP postcheck: target row count zero, no migration rerun, no seed load.
 - Static route/flag checks: both public endpoints remain on `zip_district_map`; feature flag is not enabled.
 - `git diff --check`: passed.
+- Fresh immutable batch: `house-119-20260713T011722Z`, completed `2026-07-13T01:17:45.485100+00:00`, age zero days and fresh under the seven-day policy.
+- Exact House universe: 435 voting seats, five delegates, one resident commissioner, 441 total, zero unknown roles.
+- Identity reconciliation: 437 cross-source-confirmed members, zero primary-only, zero source conflicts, zero official or production duplicate Bioguide IDs.
+- Manifest/checksum/orphan/stale/currentMember disagreement and identity-conflict failure paths have deterministic coverage.
+- Snapshot/rollback schema now includes snapshot and artifact tables; service/seat evidence is unique within snapshot and deletable by snapshot ID without blocking later historical snapshots.
+- Final corrected combined suite: 74 passed in 9.75 seconds.
 
 ## Production Writes
 

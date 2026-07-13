@@ -67,11 +67,12 @@ def test_clerk_active_vacancy_and_later_oath_resolution():
     active='<h1>Vacancies of the 119th Congress</h1><li class="vacancy_release"><a href="/members/TX23/vacancy">Office</a><p>Resigned April 14, 2026</p></li>'
     assert metadata.parse_clerk_vacancies(active)[0]["canonical_district"]=="23"
     resolved=active.replace("</li>","Took the Oath of Office</li>")
-    assert metadata.parse_clerk_vacancies(resolved)==[]
+    resolved_row=metadata.parse_clerk_vacancies(resolved)[0]
+    assert resolved_row["active"] is False and resolved_row["seat_status"]=="filled"
 
 
 def test_seat_reconciliation_single_duplicate_conflict_and_vacancy():
-    member={"canonical_state":"NC","canonical_district":"04"}; house=[{"canonical_state":"NC","canonical_district":"04","vacant":False}]
+    member={"canonical_state":"NC","canonical_district":"04","member_type":"voting_representative","name":"Sample Member","official_url":"https://sample.house.gov"}; house=[{"canonical_state":"NC","canonical_district":"04","vacant":False,"seat_type":"voting_district","displayed_member_name":"Sample Member","member_domain":"sample.house.gov"}]
     assert metadata.reconcile_seats([member],house,[])[("NC","04")]=="current_cross_source_confirmed"
     assert metadata.reconcile_seats([member,member],house,[])[("NC","04")]=="source_conflict"
     assert metadata.reconcile_seats([],house,[{"canonical_state":"NC","canonical_district":"04"}])[("NC","04")]=="vacant_officially_confirmed"
@@ -100,8 +101,9 @@ def test_migration_is_additive_separates_service_and_seat_and_is_not_executed():
     assert not re.search(r"\b(drop|truncate|alter)\b|\bdelete\s+from\b|\bupdate\s+\w+\s+set\b",sql)
     assert "0014_house_member_service_and_seat_status.sql" in script
     compact=script.replace(" ","").lower()
-    assert "migration_applied=any(proposed_tables.values())" in compact
-    assert "ifmigration_applied:raise" in compact
+    assert "ifany(proposed.values()):raise" in compact
+    assert "house_member_metadata_snapshots" in sql and "house_member_metadata_snapshot_artifacts" in sql
+    assert "unique (snapshot_id, congress, canonical_state, canonical_district)" in sql
 
 
 def test_database_paths_are_read_only_and_final_production_eligibility_zero():
@@ -112,3 +114,43 @@ def test_database_paths_are_read_only_and_final_production_eligibility_zero():
     for statement in ("insert into","delete from","truncate ","drop table","copy ",".commit("):
         assert statement not in script
     assert '"production_auto_select_eligible_count":0' in script
+
+
+def test_current_member_false_detail_is_rejected():
+    payload=json.loads(FIXTURE.read_text(encoding="utf-8")); payload["member"]["currentMember"]=False
+    with pytest.raises(metadata.SourceContractError,match="current-list/detail disagreement"):parse_detail(payload)
+
+
+def test_manifest_replay_checksum_orphan_and_stale_failures():
+    batch=CASES/"batch"; batch.mkdir(parents=True); artifact=batch/"page.json"; artifact.write_text("{}",encoding="utf-8")
+    row={"source":"https://example.gov","path":"page.json","response_status":200,"sha256":metadata.sha256_file(artifact),"size_bytes":2,"retrieved_at":"2026-07-12T00:00:00+00:00","retry_count":0}
+    manifest={"snapshot_id":"s1","retrieval_started_at":"2026-07-12T00:00:00+00:00","retrieval_completed_at":"2026-07-12T01:00:00+00:00","congress":119,"parser_version":metadata.PARSER_VERSION,"artifacts":[row],"artifact_allowlist":["page.json"],"batch_completion_status":"complete"}
+    (batch/"retrieval_manifest.json").write_text(json.dumps(manifest),encoding="utf-8")
+    assert metadata.load_retrieval_batch(batch,today=date(2026,7,12))[0]["snapshot_id"]=="s1"
+    (batch/"orphan.json").write_text("{}",encoding="utf-8")
+    with pytest.raises(metadata.SourceContractError,match="orphan"):metadata.load_retrieval_batch(batch,today=date(2026,7,12))
+    (batch/"orphan.json").unlink(); artifact.write_text("tampered",encoding="utf-8")
+    with pytest.raises(metadata.SourceContractError,match="integrity"):metadata.load_retrieval_batch(batch,today=date(2026,7,12))
+    artifact.write_text("{}",encoding="utf-8")
+    with pytest.raises(metadata.SourceContractError,match="stale"):metadata.load_retrieval_batch(batch,today=date(2026,7,25))
+
+
+def test_house_same_seat_wrong_member_is_primary_only():
+    member={"canonical_state":"NC","canonical_district":"04","member_type":"voting_representative","name":"Alice One","official_url":"https://alice.house.gov"}
+    house={"canonical_state":"NC","canonical_district":"04","vacant":False,"seat_type":"voting_district","displayed_member_name":"Bob Two","member_domain":"bob.house.gov"}
+    assert metadata.reconcile_seats([member],[house],[])[("NC","04")]=="current_primary_source_only"
+
+
+def test_exact_house_seat_universe_and_missing_delegate_failure():
+    records=[]
+    for i in range(435):records.append({"seat_type":"voting_district"})
+    records += [{"seat_type":"delegate"} for _ in range(5)] + [{"seat_type":"resident_commissioner"}]
+    assert metadata.validate_house_seat_universe(records)["total"]==441
+    with pytest.raises(metadata.SourceContractError):metadata.validate_house_seat_universe(records[:-1])
+
+
+def test_clerk_entry_scoping_prevents_later_oath_from_resolving_prior_entry():
+    html='<h1>Vacancies of the 119th Congress</h1><li class="vacancy_release"><a href="/members/TX23/vacancy">TX</a> Resigned April 14, 2026 <a href="/members/NC04/vacancy">NC</a> Sworn in May 1, 2026'
+    rows=metadata.parse_clerk_vacancies(html)
+    assert rows[0]["active"] is True and rows[0]["vacancy_effective_date"]=="2026-04-14"
+    assert rows[1]["active"] is False and rows[1]["oath_date"]=="2026-05-01"

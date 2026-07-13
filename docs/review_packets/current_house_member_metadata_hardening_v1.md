@@ -1,46 +1,14 @@
 # Current House Member Metadata Hardening V1
 
-## Summary
-
-- Retrieval/replay mode: `local_replay`
-- API key present: `True`
-- Voting representatives: `431`
-- Vacant voting seats: `4`
-- Delegates: `5`
-- Resident commissioners: `1`
-- Source conflicts: `0`
-
-## Proposed Schema
-
-- Additive `house_member_service_evidence` and `house_seat_status_evidence` tables.
-- Member service and seat vacancy are separate evidence objects.
-- Migration prepared but not applied.
-
-## Production Reconciliation
-
-- Exact Bioguide matches: `437`
-- Official members unmatched: `0`
-- Existing in-office House rows unmatched: `4`
-- Former House rows preserved: `77`
-
-## DC Normalization
-
-- Census `DC-98` is associated only for reconciliation with canonical House delegate seat `DC-00` under `dc_census_98_to_house_delegate_00_v1`.
-- Raw and canonical values remain separate; delegate auto-select stays blocked.
-
-## Readiness Impact
-
-- Source-to-member-ready pairs: `431`
-- Source-to-member-ready candidate ZCTAs: `27617`
-- Production auto-select eligible: `0`
-
-## Safety
-
-- Database transaction read-only: `True`
+- Snapshot: `house-119-20260713T011722Z`
+- Retrieval timestamp: `2026-07-13T01:17:45.485100+00:00`
+- Fresh: `True`
+- Seat universe: `{"delegates": 5, "resident_commissioners": 1, "total": 441, "unknown_roles": 0, "voting": 435}`
+- Identity confirmed: `437`
+- Primary source only: `0`
+- Active/resolved vacancies: `4` / `0`
+- Vacancy records: `[{"active": true, "canonical_district": "13", "canonical_state": "GA", "former_member_name": "David Scott", "oath_date": null, "raw_source_text": "href=\"/members/GA13/vacancy\" title=\"View Vacancy Announcement\" style=\"color:#17518b !important; text-decoration: underline;\"> Office of the Thirteenth Congressional District of Georgia Passed Away April 22, 2026 Rep. David Scott Special Election July 28, 2026 Georgia Secretary of State", "seat_status": "vacant", "special_election_date": "2026-07-28", "succession_date": null, "successor_name": null, "vacancy_effective_date": "2026-04-22", "vacancy_reason": "passed away"}, {"active": true, "canonical_district": "20", "canonical_state": "FL", "former_member_name": "Sheila Cherfilus-McCormick", "oath_date": null, "raw_source_text": "href=\"/members/FL20/vacancy\" title=\"View Vacancy Announcement\" style=\"color:#17518b !important; text-decoration: underline;\"> Office of the Twentieth Congressional District of Florida Resigned April 21, 2026 Rep. Sheila Cherfilus-McCormick Special Election Date TBD Florida Secretary of State", "seat_status": "vacant", "special_election_date": null, "succession_date": null, "successor_name": null, "vacancy_effective_date": "2026-04-21", "vacancy_reason": "resigned"}, {"active": true, "canonical_district": "23", "canonical_state": "TX", "former_member_name": "Tony Gonzales", "oath_date": null, "raw_source_text": "href=\"/members/TX23/vacancy\" title=\"View Vacancy Announcement\" style=\"color:#17518b !important; text-decoration: underline;\"> Office of the Twenty-Third Congressional District of Texas Resigned April 14, 2026 Rep. Tony Gonzales Special Election Date TBD Texas Secretary of State", "seat_status": "vacant", "special_election_date": null, "succession_date": null, "successor_name": null, "vacancy_effective_date": "2026-04-14", "vacancy_reason": "resigned"}, {"active": true, "canonical_district": "14", "canonical_state": "CA", "former_member_name": "Eric Swalwell Special General Election August 18, 2026 California Secretary of State", "oath_date": null, "raw_source_text": "href=\"/members/CA14/vacancy\" title=\"View Vacancy Announcement\" style=\"color:#17518b !important; text-decoration: underline;\"> Office of the Fourteenth Congressional District of California Resigned April 14, 2026 Rep. Eric Swalwell Special General Election August 18, 2026 California Secretary of State", "seat_status": "vacant", "special_election_date": null, "succession_date": null, "successor_name": null, "vacancy_effective_date": "2026-04-14", "vacancy_reason": "resigned"}]`
+- Vacancy contradictions: `[{"bioguide_id": "S001193", "seat": "CA-14"}, {"bioguide_id": "C001127", "seat": "FL-20"}, {"bioguide_id": "S001157", "seat": "GA-13"}, {"bioguide_id": "G000594", "seat": "TX-23"}]`
+- Ready pairs/ZCTAs: `431` / `27617`
+- Production auto-select: `0`
 - Migration applied: `False`
-- Database/member/ZIP writes: `False`
-- Public routes and feature flag unchanged.
-
-## Recommended Next Milestone
-
-Current House member metadata schema application and bounded seed V1
