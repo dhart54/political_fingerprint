@@ -29,7 +29,7 @@
 - [x] Vacancies, voting members, delegates, resident commissioner, conflicts, and DC-98-to-00 reconciliation are explicit.
 - [x] Readiness is re-evaluated while production auto-select remains zero.
 - [x] Required tests, JSON checks, postchecks, static checks, and diff hygiene pass.
-- [ ] Scoped commits, push, and draft PR are complete.
+- [x] Scoped commits, push, and draft PR are complete (PR #87).
 
 ## Baseline
 
@@ -55,7 +55,7 @@
 - [x] Implementation
 - [x] Validation
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -106,6 +106,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: implementation/validation complete; commit and draft PR pending.
+- Definition of done satisfied: yes; implementation, validation, commit, push, and draft PR #87 are complete.
 - Remaining limitations: Congress service dates are year precision; exact vacancy dates exist only where explicitly displayed; four production rows remain stale until an authorized later write.
 - Recommended next step: Current House member metadata schema application and bounded seed V1 because official sources reconcile with zero seat conflicts and the additive schema contract passes; do not switch ZIP routes.
