@@ -142,7 +142,7 @@ def test_exact_postcheck_success_and_missing_schema_failure(monkeypatch, preview
     db = FakeDB(previews, schema=True); install(monkeypatch, db); before = seed.fingerprint(db.legislators)
     assert seed.postcheck("unused", previews, before)["schema_contract"]["schema_contract_exact"]
     db.schema.remove(seed.TABLES[-1])
-    with pytest.raises(seed.SeedSafetyError, match="table set mismatch"): seed.postcheck("unused", previews, before)
+    with pytest.raises(seed.SeedSafetyError, match="schema table set mismatch"): seed.postcheck("unused", previews, before)
 
 
 def test_snapshot_scoped_rollback_preserves_unrelated_rows(monkeypatch, previews):
@@ -153,6 +153,26 @@ def test_snapshot_scoped_rollback_preserves_unrelated_rows(monkeypatch, previews
     result = seed.rollback("unused", previews, before)
     assert result["unrelated_rows_preserved"] and "lock" in db.events and "delete-target" in db.events
     assert all([r["snapshot_id"] for r in db.rows[t]] == ["unrelated-snapshot"] for t in seed.TABLES)
+
+
+@pytest.mark.parametrize("drift", ["cascade", "fk_target", "check", "unique", "type", "default", "nullability", "index"])
+def test_schema_drift_blocks_rollback_before_delete(monkeypatch, previews, drift):
+    db = FakeDB(previews, schema=True)
+    if drift == "cascade":
+        row = next(r for r in db.constraints if "on delete cascade" in r["definition"]); row["definition"] = row["definition"].replace(" on delete cascade", "")
+    elif drift == "fk_target":
+        row = next(r for r in db.constraints if "references legislators id" in r["definition"]); row["definition"] = row["definition"].replace("references legislators id", "references other_table id")
+    elif drift in {"check", "unique"}:
+        row = next(r for r in db.constraints if r["definition"].startswith(drift)); row["definition"] = row["definition"].replace(drift, f"changed_{drift}", 1)
+    elif drift == "type": db.columns[0]["data_type"] = "smallint"
+    elif drift == "default":
+        row = next(r for r in db.columns if r["column_default"] == "0"); row["column_default"] = "1"
+    elif drift == "nullability": db.columns[0]["is_nullable"] = "YES"
+    else: db.indexes = []
+    install(monkeypatch, db)
+    with pytest.raises(seed.SeedSafetyError, match="live schema contract mismatch"):
+        seed.rollback("unused", previews, seed.fingerprint(db.legislators))
+    assert "delete-target" not in db.events and db.events[-1] == "rollback"
 
 
 def test_schema_contract_mutations_fail_closed():

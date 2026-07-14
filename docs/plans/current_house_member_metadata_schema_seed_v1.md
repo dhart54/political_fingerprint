@@ -103,3 +103,28 @@
 
 - Migration not reapplied; seed not rerun; rollback not executed.
 - No production or runtime mutation occurred during this correction.
+
+## PR #88 Durable Postcheck And Rollback Correction
+
+### Durable Freshness Contract
+
+- [x] `--preflight-only` and `--apply-and-seed` enforce the seven-day application authorization window.
+- [x] `--postcheck-only` and `--rollback-snapshot` always verify snapshot ID, preview pins/counts, migration hash, and exact target, but treat age as informational.
+- [x] Durable modes report snapshot age, application-window status, whether the mode enforces freshness, and continued postcheck/rollback availability outside the window.
+- [x] Eight-day executable tests prove both application modes reject and both durable modes accept without calling production.
+
+### Rollback Live-Schema Gate
+
+- [x] Postcheck and rollback share the same exact live-schema inspector.
+- [x] Rollback takes the advisory lock and validates all six tables, types, nullability, defaults, complete constraint set, foreign keys, delete actions, and required index before the sole approved snapshot DELETE.
+- [x] Eight schema-drift tests prove missing cascade, changed FK target/check/unique/type/default/nullability/index all abort before DELETE.
+- [x] Snapshot-scoped rollback with an unrelated snapshot remains executable in the fake database and preserves unrelated rows.
+
+### Durable Correction Validation
+
+- [x] Dedicated application/postcheck/rollback suite: 58 passed.
+- [x] Combined metadata/readiness/ZIP suite: 119 passed.
+- [x] Read-only production postcheck: snapshot age 1 day, within original application window, freshness informational for postcheck, and durable postcheck/rollback availability true.
+- [x] Production counts and canonical checksums remain exact at `1 / 486 / 437 / 441 / 874 / 882`.
+- [x] Legislators fingerprint remains `637 / 87c12b1054b5390af3a4bc16a1234ecb71ef10edd52b6ad700441e122f1ae7b7`; ZIP rows and production auto-select remain zero.
+- [x] Migration not reapplied, seed not rerun, rollback not executed, and all correction database inspection was read-only.

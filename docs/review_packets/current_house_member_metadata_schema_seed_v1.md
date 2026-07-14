@@ -30,8 +30,17 @@
   },
   "base_commit": "12e0bbf9c22d2083e78433951858f6b5ea2f071d",
   "branch": "codex/current-house-member-metadata-schema-seed-v1",
+  "correction_safety": {
+    "interaction_read_only": true,
+    "migration_reapplied": false,
+    "postcheck_valid_outside_freshness_window": true,
+    "rollback_available_outside_freshness_window": true,
+    "rollback_executed": false,
+    "rollback_schema_gate_passed_in_tests": true,
+    "seed_rerun": false
+  },
   "current_correction_production_write_performed": false,
-  "generated_at": "2026-07-14T02:56:48.179714+00:00",
+  "generated_at": "2026-07-14T03:12:46.618710+00:00",
   "historical_application": {
     "application_result": "committed_atomically",
     "deviations": [
@@ -1239,7 +1248,9 @@
       "zip_district_mappings_row_count": 0
     },
     "freshness": {
-      "fresh": true,
+      "freshness_enforced_for_mode": false,
+      "freshness_role": "informational_only",
+      "postcheck_valid_outside_freshness_window": true,
       "previews": [
         {
           "canonical_content_sha256": "2ca9f9c8b2d49666f2b741cc5ad05d55d0c27b201dae004ba8b57b64b7027b44",
@@ -1278,7 +1289,9 @@
           "sha256": "f7695cf830143c6f89c751d27f7a5b0d18535c90656d9f73cf942049d86f916e"
         }
       ],
-      "snapshot_age_days": 1
+      "rollback_available_outside_freshness_window": true,
+      "snapshot_age_days": 1,
+      "within_application_freshness_window": true
     },
     "identity_checks": {
       "delegates": 5,

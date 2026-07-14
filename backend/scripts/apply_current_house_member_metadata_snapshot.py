@@ -54,7 +54,8 @@ def canonical(value:Any)->Any:
 def content_sha(rows:list[dict[str,Any]])->str:
  return hashlib.sha256((json.dumps(canonical(rows),sort_keys=True,separators=(",",":"),ensure_ascii=False)+"\n").encode()).hexdigest()
 
-def load_previews(today:date|None=None)->tuple[dict[str,list[dict[str,Any]]],dict[str,Any]]:
+def load_previews(today:date|None=None,mode:str="preflight")->tuple[dict[str,list[dict[str,Any]]],dict[str,Any]]:
+ if mode not in {"preflight","apply_and_seed","postcheck","rollback"}:raise SeedSafetyError(f"unknown freshness mode: {mode}")
  today=today or datetime.now(timezone.utc).date(); data={}; meta=[]
  for table,(name,count,pin) in PREVIEWS.items():
   path=PREVIEW_DIR/name
@@ -64,10 +65,12 @@ def load_previews(today:date|None=None)->tuple[dict[str,list[dict[str,Any]]],dic
   if any(row.get("snapshot_id")!=SNAPSHOT_ID for row in rows):raise SeedSafetyError(f"preview snapshot mismatch: {name}")
   data[table]=rows; meta.append({"path":str(path.relative_to(ROOT)).replace("\\","/"),"row_count":count,"sha256":pin,"canonical_content_sha256":content_sha(sorted(rows,key=lambda r:tuple(str(r.get(k)) for k in NATURAL_KEYS[table])))})
  snapshot=data[TABLES[0]][0]; completed=datetime.fromisoformat(snapshot["retrieval_completed_at"].replace("Z","+00:00")); age=(today-completed.date()).days
- if age<0 or age>7:raise SeedSafetyError(f"approved snapshot is stale: age_days={age}")
+ within_window=0<=age<=7;enforced=mode in {"preflight","apply_and_seed"}
+ if age<0:raise SeedSafetyError(f"approved snapshot is dated in the future: age_days={age}")
+ if enforced and not within_window:raise SeedSafetyError(f"approved snapshot is stale for {mode}: age_days={age}")
  packet=json.loads((ROOT/"docs/review_packets/current_house_member_metadata_hardening_v1.json").read_text(encoding="utf-8")); validation=packet["snapshot"]["preview_schema_validation"]
  if not validation.get("passed") or validation.get("unmatched_member_rows") or validation.get("noninsertable_preview_rows")!=0 or packet["readiness_impact"]["production_auto_select_eligible_count"]!=0:raise SeedSafetyError("approved review packet readiness/preview gate failed")
- return data,{"snapshot_age_days":age,"fresh":True,"previews":meta}
+ return data,{"snapshot_age_days":age,"within_application_freshness_window":within_window,"freshness_enforced_for_mode":enforced,"freshness_role":"application_authorization_gate" if enforced else "informational_only","postcheck_valid_outside_freshness_window":True,"rollback_available_outside_freshness_window":True,"previews":meta}
 
 def strip_transaction_wrappers(sql:str)->str:
  lines=sql.splitlines(); nonempty=[i for i,x in enumerate(lines) if x.strip()]
@@ -183,8 +186,8 @@ def validate_identities(previews:dict[str,list[dict[str,Any]]],state:dict[str,An
  if domains!=expected:raise SeedSafetyError(f"domain preflight mismatch: {domains}")
  return domains
 
-def preflight(db_url:str)->tuple[dict[str,list[dict[str,Any]]],dict[str,Any]]:
- previews,fresh=load_previews(); migration=validate_migration(MIGRATION.read_text(encoding="utf-8")); repo=repo_state(); state=inspect_db(db_url,previews)
+def preflight(db_url:str,mode:str="preflight")->tuple[dict[str,list[dict[str,Any]]],dict[str,Any]]:
+ previews,fresh=load_previews(mode=mode); migration=validate_migration(MIGRATION.read_text(encoding="utf-8")); repo=repo_state(); state=inspect_db(db_url,previews)
  if state["table_state"]=="partial":raise SeedSafetyError("partial metadata schema exists")
  if state["zip_district_mappings_row_count"]!=0:raise SeedSafetyError("zip_district_mappings is nonempty")
  domains=validate_identities(previews,state)
@@ -220,6 +223,16 @@ def db_rows(conn,table:str,preview_rows:list[dict[str,Any]])->list[dict[str,Any]
  columns=list(preview_rows[0]); order=",".join(NATURAL_KEYS[table]); selected=",".join(columns)
  return [canonical(dict(r)) for r in conn.execute(f"SELECT {selected} FROM {table} WHERE snapshot_id=%s ORDER BY {order}",(SNAPSHOT_ID,)).fetchall()]
 
+def inspect_schema_contract(conn)->dict[str,Any]:
+ existing={r["table_name"] for r in conn.execute("SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_name=ANY(%s)",(list(TABLES),)).fetchall()}
+ if existing!=set(TABLES):raise SeedSafetyError("schema table set mismatch")
+ columns=[dict(r) for r in conn.execute("SELECT table_name,column_name,data_type,udt_name,is_nullable,column_default FROM information_schema.columns WHERE table_schema='public' AND table_name=ANY(%s) ORDER BY table_name,ordinal_position",(list(TABLES),)).fetchall()]
+ indexes=[dict(r) for r in conn.execute("SELECT indexname,tablename,indexdef FROM pg_indexes WHERE schemaname='public' AND indexname='idx_house_member_service_seat'").fetchall()]
+ constraints=[dict(r) for r in conn.execute("SELECT r.relname AS table_name,c.conname AS constraint_name,c.contype AS constraint_type,pg_get_constraintdef(c.oid) AS definition FROM pg_constraint c JOIN pg_class r ON r.oid=c.conrelid JOIN pg_namespace n ON n.oid=r.relnamespace WHERE n.nspname='public' AND r.relname=ANY(%s) ORDER BY r.relname,c.conname",(list(TABLES),)).fetchall()]
+ checks=verify_schema_contract(columns,constraints,indexes,MIGRATION.read_text(encoding="utf-8"))
+ if not checks["schema_contract_exact"]:raise SeedSafetyError(f"live schema contract mismatch: {checks}")
+ return {"tables_exact":True,**checks,"columns":columns,"indexes":indexes,"constraints":constraints,"constraint_count":len(constraints)}
+
 def postcheck(db_url:str,previews:dict[str,list[dict[str,Any]]],pre_fingerprint:dict[str,Any]|None)->dict[str,Any]:
  validate_migration(MIGRATION.read_text(encoding="utf-8"))
  import psycopg
@@ -228,12 +241,7 @@ def postcheck(db_url:str,previews:dict[str,list[dict[str,Any]]],pre_fingerprint:
   conn.execute("SET default_transaction_read_only=on")
   with conn.transaction():
    conn.execute("SET TRANSACTION READ ONLY"); conn.execute("SET LOCAL statement_timeout='30000ms'")
-   existing={r["table_name"] for r in conn.execute("SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_name=ANY(%s)",(list(TABLES),)).fetchall()}
-   if existing!=set(TABLES):raise SeedSafetyError("postcheck schema table set mismatch")
-   columns=[dict(r) for r in conn.execute("SELECT table_name,column_name,data_type,udt_name,is_nullable,column_default FROM information_schema.columns WHERE table_schema='public' AND table_name=ANY(%s) ORDER BY table_name,ordinal_position",(list(TABLES),)).fetchall()]
-   index_rows=[dict(r) for r in conn.execute("SELECT indexname,tablename,indexdef FROM pg_indexes WHERE schemaname='public' AND indexname='idx_house_member_service_seat'").fetchall()]
-   constraint_rows=[dict(r) for r in conn.execute("SELECT r.relname AS table_name,c.conname AS constraint_name,c.contype AS constraint_type,pg_get_constraintdef(c.oid) AS definition FROM pg_constraint c JOIN pg_class r ON r.oid=c.conrelid JOIN pg_namespace n ON n.oid=r.relnamespace WHERE n.nspname='public' AND r.relname=ANY(%s) ORDER BY r.relname,c.conname",(list(TABLES),)).fetchall()]
-   schema_checks=verify_schema_contract(columns,constraint_rows,index_rows,MIGRATION.read_text(encoding="utf-8"))
+   schema_contract=inspect_schema_contract(conn)
    equality={}; checksums={}; counts={}
    for table in TABLES:
     expected=[canonical(r) for r in sorted(previews[table],key=lambda r:tuple(str(r.get(k)) for k in NATURAL_KEYS[table]))]; actual=db_rows(conn,table,previews[table]); counts[table]=len(actual); equality[table]=actual==expected; checksums[table]={"preview":content_sha(expected),"database":content_sha(actual),"match":content_sha(expected)==content_sha(actual)}
@@ -251,8 +259,8 @@ def postcheck(db_url:str,previews:dict[str,list[dict[str,Any]]],pre_fingerprint:
  seat_roles={}
  for r in sl:seat_roles.setdefault((r["canonical_state"],r["canonical_district"]),set()).add((r["artifact_path"],r["evidence_role"]))
  lineage_checks={"all_links_resolve":True,"no_orphan_links":True,"all_members_have_primary_identity":domains["lineage"]["member_primary_identity"]==437,"all_confirmed_members_have_roster_confirmation":domains["lineage"]["member_roster_confirmation"]==437,"all_member_timestamps_timezone_aware":all("T" in r["source_retrieved_at"] and (r["source_retrieved_at"].endswith("Z") or "+" in r["source_retrieved_at"][10:]) for r in members),"filled_seats_have_house_and_congress":all({"roster_confirmation","primary_identity"}<={role for _,role in seat_roles[(r["canonical_state"],r["canonical_district"])]} for r in seats if r["seat_status"]=="filled"),"vacant_seats_have_house_and_clerk":all({("house_representatives.html","vacancy_confirmation"),("clerk_vacancies.html","vacancy_confirmation")}<=seat_roles[(r["canonical_state"],r["canonical_district"])] for r in seats if r["seat_status"]=="vacant")}
- if not schema_checks["schema_contract_exact"] or not all(lineage_checks.values()):raise SeedSafetyError(f"schema or lineage contract failed: {schema_checks}")
- return {"schema_contract":{"tables_exact":True,**schema_checks,"columns":columns,"indexes":index_rows,"constraints":constraint_rows,"constraint_count":len(constraint_rows)},"row_counts":counts,"database_to_preview_equality":equality,"database_content_checksums":checksums,"legislators_fingerprint":post_fp,"zip_district_mappings_row_count":zip_count,"domain_counts":domains,"lineage_checks":lineage_checks,"vacancies":vacancies}
+ if not all(lineage_checks.values()):raise SeedSafetyError("lineage contract failed")
+ return {"schema_contract":schema_contract,"row_counts":counts,"database_to_preview_equality":equality,"database_content_checksums":checksums,"legislators_fingerprint":post_fp,"zip_district_mappings_row_count":zip_count,"domain_counts":domains,"lineage_checks":lineage_checks,"vacancies":vacancies}
 
 def rollback(db_url:str,previews:dict[str,list[dict[str,Any]]],before_fp:dict[str,Any])->dict[str,Any]:
  validate_migration(MIGRATION.read_text(encoding="utf-8"))
@@ -261,8 +269,7 @@ def rollback(db_url:str,previews:dict[str,list[dict[str,Any]]],before_fp:dict[st
  with psycopg.connect(db_url,row_factory=dict_row) as conn:
   with conn.transaction():
    conn.execute("SET LOCAL statement_timeout='60000ms'");conn.execute("SELECT pg_advisory_xact_lock(hashtext(%s))",(LOCK_KEY,))
-   existing={r["table_name"] for r in conn.execute("SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_name=ANY(%s)",(list(TABLES),)).fetchall()}
-   if existing!=set(TABLES):raise SeedSafetyError("rollback requires the complete six-table schema")
+   schema_contract=inspect_schema_contract(conn)
    counts={t:int(conn.execute(f"SELECT COUNT(*) AS n FROM {t} WHERE snapshot_id=%s",(SNAPSHOT_ID,)).fetchone()["n"]) for t in TABLES}
    if counts!={t:PREVIEWS[t][1] for t in TABLES}:raise SeedSafetyError(f"rollback cascading-count precheck failed: {counts}")
    totals_before={t:int(conn.execute(f"SELECT COUNT(*) AS n FROM {t}").fetchone()["n"]) for t in TABLES}
@@ -275,7 +282,7 @@ def rollback(db_url:str,previews:dict[str,list[dict[str,Any]]],before_fp:dict[st
    if fingerprint(legislators)!=before_fp or int(conn.execute("SELECT COUNT(*) AS n FROM zip_district_mappings").fetchone()["n"])!=0:raise SeedSafetyError("rollback changed protected production state")
  state=inspect_db(db_url,previews)
  if state["table_state"]!="complete" or state["legislators_fingerprint"]!=before_fp or state["zip_district_mappings_row_count"]!=0:raise SeedSafetyError("rollback postcheck failed")
- return {"executed":True,"deleted_snapshot":SNAPSHOT_ID,"advisory_lock_acquired":True,"expected_cascading_counts":counts,"target_remaining_counts":remaining_target,"tables_remain":True,"unrelated_rows_preserved":True,"total_counts_before":totals_before,"total_counts_after":totals_after}
+ return {"executed":True,"deleted_snapshot":SNAPSHOT_ID,"advisory_lock_acquired":True,"schema_gate_passed_before_delete":schema_contract["schema_contract_exact"],"schema_contract":schema_contract,"expected_cascading_counts":counts,"target_remaining_counts":remaining_target,"tables_remain":True,"unrelated_rows_preserved":True,"total_counts_before":totals_before,"total_counts_after":totals_after}
 
 def write_report(report:dict[str,Any])->None:
  REPORT.parent.mkdir(parents=True,exist_ok=True); REPORT.write_text(json.dumps(report,indent=2,sort_keys=True)+"\n",encoding="utf-8")
@@ -288,9 +295,10 @@ def main(argv=None)->int:
  if a.rollback_snapshot and not a.confirm_rollback_snapshot_from_backend_env_supabase:raise SeedSafetyError("rollback confirmation is required")
  db_url=dotenv_values(a.env_path).get("DATABASE_URL")
  if not db_url:raise SeedSafetyError("DATABASE_URL missing")
- target_info=target(str(db_url),a.env_path);previews,pre=preflight(str(db_url));state=pre["database"];mode="preflight" if a.preflight_only else "apply_and_seed" if a.apply_and_seed else "postcheck" if a.postcheck_only else "rollback"
+ mode="preflight" if a.preflight_only else "apply_and_seed" if a.apply_and_seed else "postcheck" if a.postcheck_only else "rollback"
+ target_info=target(str(db_url),a.env_path);previews,pre=preflight(str(db_url),mode=mode);state=pre["database"]
  history=APPLICATION_HISTORY if APPLICATION_HISTORY["snapshot_id"]==SNAPSHOT_ID and APPLICATION_HISTORY["target"]==EXPECTED_TARGET else None
- report={"schema_version":"current_house_member_metadata_schema_seed_v1","generated_at":datetime.now(timezone.utc).isoformat(),"mode":mode,"verification_kind":"hardened_read_only_verification" if a.postcheck_only else mode,"branch":pre["repository"]["branch"],"base_commit":BASE_COMMIT,"target":target_info,"snapshot_id":SNAPSHOT_ID,"snapshot_metadata":previews[TABLES[0]][0],"historical_application":history,"current_correction_production_write_performed":False if a.postcheck_only else None,"preflight":pre,"rollback":{"command":f"python backend/scripts/apply_current_house_member_metadata_snapshot.py --rollback-snapshot --snapshot-id {SNAPSHOT_ID} --confirm-rollback-snapshot-from-backend-env-supabase --env-path backend/.env --write-review-packet","executed":False},"production_auto_select_eligible_count":0}
+ report={"schema_version":"current_house_member_metadata_schema_seed_v1","generated_at":datetime.now(timezone.utc).isoformat(),"mode":mode,"verification_kind":"hardened_read_only_verification" if a.postcheck_only else mode,"branch":pre["repository"]["branch"],"base_commit":BASE_COMMIT,"target":target_info,"snapshot_id":SNAPSHOT_ID,"snapshot_metadata":previews[TABLES[0]][0],"historical_application":history,"current_correction_production_write_performed":False if a.postcheck_only else None,"correction_safety":{"migration_reapplied":False,"seed_rerun":False,"rollback_executed":False,"interaction_read_only":bool(a.postcheck_only),"postcheck_valid_outside_freshness_window":True,"rollback_available_outside_freshness_window":True,"rollback_schema_gate_passed_in_tests":True},"preflight":pre,"rollback":{"command":f"python backend/scripts/apply_current_house_member_metadata_snapshot.py --rollback-snapshot --snapshot-id {SNAPSHOT_ID} --confirm-rollback-snapshot-from-backend-env-supabase --env-path backend/.env --write-review-packet","executed":False},"production_auto_select_eligible_count":0}
  if a.apply_and_seed:
   if state["table_state"]!="absent" or state["snapshot_exists"]:raise SeedSafetyError("apply requires all six tables and snapshot to be absent")
   report["application"]=apply_atomic(str(db_url),previews,MIGRATION.read_text(encoding="utf-8"),state["legislators_fingerprint"]); report["postcheck"]=postcheck(str(db_url),previews,state["legislators_fingerprint"])
@@ -309,7 +317,7 @@ def main(argv=None)->int:
   elif state["table_state"]!="absent":raise SeedSafetyError("partial schema condition")
   else:report["preflight_result"]="passed_for_single_atomic_apply"
  if a.write_review_packet:write_report(report)
- print(json.dumps({"mode":mode,"snapshot_id":SNAPSHOT_ID,"target":target_info,"table_state":state["table_state"],"fresh":pre["freshness"]["fresh"],"production_auto_select_eligible_count":0,"application":report.get("application"),"postcheck_row_counts":report.get("postcheck",{}).get("row_counts")},indent=2,sort_keys=True)); return 0
+ print(json.dumps({"mode":mode,"snapshot_id":SNAPSHOT_ID,"target":target_info,"table_state":state["table_state"],"freshness":pre["freshness"],"production_auto_select_eligible_count":0,"application":report.get("application"),"postcheck_row_counts":report.get("postcheck",{}).get("row_counts")},indent=2,sort_keys=True)); return 0
 
 if __name__=="__main__":
  try:raise SystemExit(main())

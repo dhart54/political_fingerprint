@@ -13,7 +13,7 @@ def test_pinned_snapshot_id_enforced():
 def test_pinned_previews_counts_checksums_and_freshness():
     previews,meta=seed.load_previews(today=date(2026,7,13))
     assert [len(previews[t]) for t in seed.TABLES]==[1,486,437,441,874,882]
-    assert meta["fresh"] is True and meta["snapshot_age_days"]==0
+    assert meta["within_application_freshness_window"] is True and meta["freshness_enforced_for_mode"] is True and meta["snapshot_age_days"]==0
 
 CASES=seed.ROOT/"backend/tests/_house_metadata_seed_cases"
 
@@ -37,6 +37,19 @@ def test_preview_count_mismatch(monkeypatch):
 
 def test_stale_snapshot_rejected():
     with pytest.raises(seed.SeedSafetyError,match="stale"):seed.load_previews(today=date(2026,7,25))
+
+@pytest.mark.parametrize("mode",["preflight","apply_and_seed"])
+def test_eight_day_snapshot_blocks_application_authorization_modes(mode):
+    with pytest.raises(seed.SeedSafetyError,match=f"stale for {mode}"):seed.load_previews(today=date(2026,7,21),mode=mode)
+
+@pytest.mark.parametrize("mode",["postcheck","rollback"])
+def test_eight_day_snapshot_is_informational_for_durable_modes(mode):
+    _,meta=seed.load_previews(today=date(2026,7,21),mode=mode)
+    assert meta["snapshot_age_days"]==8
+    assert meta["within_application_freshness_window"] is False
+    assert meta["freshness_enforced_for_mode"] is False
+    assert meta["freshness_role"]=="informational_only"
+    assert meta[f"{mode}_valid_outside_freshness_window" if mode=="postcheck" else "rollback_available_outside_freshness_window"] is True
 
 @pytest.mark.parametrize("sql",["ALTER TABLE legislators ADD x int;","DROP TABLE x;","TRUNCATE legislators;","UPDATE legislators SET in_office=false;","DELETE FROM legislators;","INSERT INTO legislators(id) VALUES(1);","COPY legislators FROM STDIN;","CREATE FUNCTION x() RETURNS void AS $$ $$ LANGUAGE sql;"])
 def test_banned_migration_sql(sql):
