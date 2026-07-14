@@ -11,7 +11,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 from urllib.request import Request, urlopen
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
 
 
 PARSER_VERSION = "current_house_member_metadata_v1"
@@ -24,6 +24,9 @@ MAX_CURRENT_MEMBERS = 700
 MAX_DETAIL_REQUESTS = 600
 SNAPSHOT_MAX_AGE_DAYS = 7
 VOTING_AT_LARGE_STATES = {"AK","DE","ND","SD","VT","WY"}
+LIST_ARTIFACT_RE = re.compile(r"congress_119_current_(\d{3})\.json$")
+DETAIL_ARTIFACT_RE = re.compile(r"member_details/([A-Z]\d{6})\.json$")
+EVIDENCE_ROLES = {"primary_identity", "roster_confirmation", "vacancy_confirmation", "vacancy_resolution", "normalization_source"}
 
 STATE_NAMES = {
     "Alabama":"AL","Alaska":"AK","Arizona":"AZ","Arkansas":"AR","California":"CA","Colorado":"CO","Connecticut":"CT","Delaware":"DE","District of Columbia":"DC","Florida":"FL","Georgia":"GA","Hawaii":"HI","Idaho":"ID","Illinois":"IL","Indiana":"IN","Iowa":"IA","Kansas":"KS","Kentucky":"KY","Louisiana":"LA","Maine":"ME","Maryland":"MD","Massachusetts":"MA","Michigan":"MI","Minnesota":"MN","Mississippi":"MS","Missouri":"MO","Montana":"MT","Nebraska":"NE","Nevada":"NV","New Hampshire":"NH","New Jersey":"NJ","New Mexico":"NM","New York":"NY","North Carolina":"NC","North Dakota":"ND","Ohio":"OH","Oklahoma":"OK","Oregon":"OR","Pennsylvania":"PA","Rhode Island":"RI","South Carolina":"SC","South Dakota":"SD","Tennessee":"TN","Texas":"TX","Utah":"UT","Vermont":"VT","Virginia":"VA","Washington":"WA","West Virginia":"WV","Wisconsin":"WI","Wyoming":"WY","American Samoa":"AS","Guam":"GU","Northern Mariana Islands":"MP","Puerto Rico":"PR","Virgin Islands":"VI"
@@ -111,9 +114,91 @@ def load_retrieval_batch(batch_dir: Path, *, today: date) -> tuple[dict[str,Any]
     for rel,row in recorded.items():
         path=batch_dir/rel
         if path.stat().st_size!=row["size_bytes"] or sha256_file(path)!=row["sha256"]:raise SourceContractError(f"artifact integrity mismatch: {rel}")
+    manifest["replay_completeness"] = validate_replay_completeness(batch_dir, recorded)
     completed=datetime.fromisoformat(manifest["retrieval_completed_at"].replace("Z","+00:00")); retrieved_on=completed.date(); age=(today-retrieved_on).days
     if age<0 or age>SNAPSHOT_MAX_AGE_DAYS:raise SourceContractError(f"stale replay batch: age_days={age}")
     return manifest,retrieved_on
+
+
+def validate_replay_completeness(batch_dir: Path, recorded: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    for rel, row in recorded.items():
+        status = row.get("response_status")
+        if not isinstance(status, int) or not 200 <= status < 300:
+            raise SourceContractError(f"non-success HTTP status: {rel}={status}")
+
+    list_paths = {rel for rel in recorded if LIST_ARTIFACT_RE.fullmatch(rel)}
+    expected_list_paths: list[str] = []
+    list_records: list[dict[str, Any]] = []
+    expected_offset = 0
+    terminated = False
+    while len(expected_list_paths) < MAX_LIST_PAGES:
+        rel = f"congress_119_current_{expected_offset:03d}.json"
+        if rel not in recorded:
+            raise SourceContractError(f"missing Congress list page before pagination termination: {rel}")
+        row = recorded[rel]
+        if row.get("source") != list_url(expected_offset):
+            raise SourceContractError(f"Congress list URL/offset/path disagreement: {rel}")
+        payload = json.loads((batch_dir / rel).read_text(encoding="utf-8"))
+        page_rows = payload.get("members")
+        if not isinstance(page_rows, list):
+            raise SourceContractError(f"Congress list layout missing members array: {rel}")
+        list_records.extend(page_rows)
+        expected_list_paths.append(rel)
+        next_url = payload.get("pagination", {}).get("next")
+        if not next_url:
+            terminated = True
+            break
+        query = parse_qs(urlsplit(str(next_url)).query)
+        try:
+            next_offset = int(query["offset"][0])
+        except (KeyError, IndexError, TypeError, ValueError) as exc:
+            raise SourceContractError(f"Congress pagination next URL missing valid offset: {rel}") from exc
+        if next_offset != expected_offset + 250:
+            raise SourceContractError(f"incorrect Congress pagination offset: {rel} -> {next_offset}")
+        expected_offset = next_offset
+    if not terminated:
+        raise SourceContractError("Congress pagination did not terminate within the three-page ceiling")
+    if list_paths != set(expected_list_paths):
+        raise SourceContractError(f"Congress list page sequence mismatch: expected={expected_list_paths} actual={sorted(list_paths)}")
+
+    pagination_counts = {payload_count for rel in expected_list_paths if isinstance((payload_count := json.loads((batch_dir / rel).read_text(encoding="utf-8")).get("pagination", {}).get("count")), int)}
+    if pagination_counts and pagination_counts != {len(list_records)}:
+        raise SourceContractError(f"Congress pagination count disagrees with parsed records: {sorted(pagination_counts)} != {len(list_records)}")
+    house_ids = sorted({str(row.get("bioguideId")) for row in list_records if is_house_list_row(row) and row.get("bioguideId")})
+    expected_details = {f"member_details/{identifier}.json" for identifier in house_ids}
+    actual_details = {rel for rel in recorded if rel.startswith("member_details/")}
+    if actual_details != expected_details:
+        raise SourceContractError(f"Congress detail artifact set mismatch; missing={sorted(expected_details-actual_details)[:3]} extra={sorted(actual_details-expected_details)[:3]}")
+    for rel in sorted(actual_details):
+        match = DETAIL_ARTIFACT_RE.fullmatch(rel)
+        if not match:
+            raise SourceContractError(f"invalid Congress detail artifact filename: {rel}")
+        identifier = match.group(1)
+        if recorded[rel].get("source") != detail_url(identifier):
+            raise SourceContractError(f"Congress detail source URL disagrees with filename: {rel}")
+        payload = json.loads((batch_dir / rel).read_text(encoding="utf-8"))
+        if payload.get("member", {}).get("bioguideId") != identifier:
+            raise SourceContractError(f"Congress detail Bioguide ID disagrees with filename: {rel}")
+
+    fixed = {"house_representatives.html": HOUSE_DIRECTORY_URL, "clerk_vacancies.html": CLERK_VACANCIES_URL}
+    for rel, source in fixed.items():
+        if rel not in recorded or recorded[rel].get("source") != source:
+            raise SourceContractError(f"missing or invalid required official artifact: {rel}")
+    expected_all = set(expected_list_paths) | expected_details | set(fixed)
+    if set(recorded) != expected_all:
+        raise SourceContractError(f"unexpected source URL or artifact type: {sorted(set(recorded)-expected_all)[:3]}")
+    return {
+        "page_offsets": [int(LIST_ARTIFACT_RE.fullmatch(rel).group(1)) for rel in expected_list_paths],
+        "pagination_terminated": True,
+        "list_record_count": len(list_records),
+        "current_house_bioguide_count": len(house_ids),
+        "expected_detail_count": len(expected_details),
+        "detail_set_exact": True,
+        "successful_http_statuses": True,
+        "source_url_and_artifact_type_exact": True,
+        "house_directory_artifact_count": 1,
+        "clerk_vacancy_artifact_count": 1,
+    }
 
 
 def fetch(url: str, path: Path, *, api_key: str | None = None, timeout: int = 30) -> Artifact:
@@ -214,7 +299,7 @@ def parse_house_directory(html: str) -> list[dict[str, Any]]:
         state,district,seat_type=parse_house_location(location)
         links=re.findall(r'<a\b[^>]*href="([^"]+)"[^>]*>(.*?)</a>',row_html,flags=re.IGNORECASE|re.DOTALL)
         member_link=next(((href," ".join(html_lib.unescape(re.sub(r"<[^>]+>"," ",label)).split())) for href,label in links if "house.gov" in href or "clerk.house.gov/members" in href),("", ""))
-        records.append({"canonical_state":state,"canonical_district":district,"seat_type":seat_type,"vacant":"Vacancy" in joined,"displayed_member_name":member_link[1].replace("- Vacancy","").strip(),"member_href":member_link[0],"member_domain":urlsplit(member_link[0]).hostname or "","raw_display_text":joined,"parser_evidence":"table row with recognized official seat label"})
+        records.append({"canonical_state":state,"canonical_district":district,"source_state":state,"source_district":district,"seat_type":seat_type,"vacant":"Vacancy" in joined,"displayed_member_name":member_link[1].replace("- Vacancy","").strip(),"member_href":member_link[0],"member_domain":urlsplit(member_link[0]).hostname or "","raw_display_text":joined,"parser_evidence":"table row with recognized official seat label"})
     grouped:dict[tuple[str,str],list[dict[str,Any]]]={}
     for record in records:grouped.setdefault((record["canonical_state"],record["canonical_district"]),[]).append(record)
     unique=[]
@@ -275,10 +360,13 @@ def parse_clerk_vacancies(html: str) -> list[dict[str, Any]]:
         state,district=match.group(1),match.group(2).zfill(2)
         raw=" ".join(html_lib.unescape(re.sub(r"<[^>]+>"," ",block)).split())
         effective=re.search(r"(Resigned|Died|Passed Away) ([A-Z][a-z]+ \d{1,2}, \d{4})",raw)
-        special=re.search(r"Special Election\s+([A-Z][a-z]+ \d{1,2}, \d{4})",raw)
+        special=re.search(r"(Special General Election|Special Primary Election|Special Election)(?:\s+(Date TBD|[A-Z][a-z]+ \d{1,2}, \d{4}))?",raw,re.IGNORECASE)
         oath=re.search(r"(?:Took the Oath|Oath of Office|Sworn in)(?:\s+([A-Z][a-z]+ \d{1,2}, \d{4}))?",raw,re.IGNORECASE)
-        former=re.search(r"(?:Rep\.|Representative)\s+([^|]+?)(?:\s+Special Election|$)",raw)
-        events.append({"canonical_state":state,"canonical_district":district,"former_member_name":former.group(1).strip() if former else None,"vacancy_reason":effective.group(1).lower() if effective else None,"vacancy_effective_date":parse_display_date(effective.group(2)) if effective else None,"special_election_date":parse_display_date(special.group(1)) if special else None,"successor_name":None,"succession_date":None,"oath_date":parse_display_date(oath.group(1)) if oath and oath.group(1) else None,"active":oath is None,"seat_status":"vacant" if oath is None else "filled","raw_source_text":raw})
+        former=re.search(r"(?:Rep\.|Representative)\s+(.+?)(?=\s+(?:Special (?:General |Primary )?Election|[A-Z][a-z]+ Secretary of State)|$)",raw,re.IGNORECASE)
+        special_label=special.group(1).lower() if special else None
+        special_type={"special election":"special_general","special general election":"special_general","special primary election":"special_primary"}.get(special_label)
+        special_date=special.group(2) if special and special.group(2) and special.group(2).lower()!="date tbd" else None
+        events.append({"canonical_state":state,"canonical_district":district,"former_member_name":former.group(1).strip() if former else None,"vacancy_reason":effective.group(1).lower() if effective else None,"vacancy_effective_date":parse_display_date(effective.group(2)) if effective else None,"special_election_type":special_type,"special_election_date":parse_display_date(special_date) if special_date else None,"successor_name":None,"succession_date":None,"oath_date":parse_display_date(oath.group(1)) if oath and oath.group(1) else None,"active":oath is None,"seat_status":"vacant" if oath is None else "filled","raw_source_text":raw})
     unique={(e["canonical_state"],e["canonical_district"]):e for e in events}
     return list(unique.values())
 
@@ -309,6 +397,212 @@ def reconcile_seats(members: list[dict[str, Any]], house_records: list[dict[str,
 def metadata_currentness(*, retrieved_on: date, today: date, cross_source_confirmed: bool) -> str:
     if (today-retrieved_on).days > SNAPSHOT_MAX_AGE_DAYS:return "stale_snapshot"
     return "current_cross_source_confirmed" if cross_source_confirmed else "current_primary_source_only"
+
+
+SNAPSHOT_PREVIEW_COLUMNS = {
+    "snapshot_id", "congress", "retrieval_started_at", "retrieval_completed_at", "parser_version",
+    "snapshot_status", "manifest_checksum", "source_decision",
+}
+ARTIFACT_PREVIEW_COLUMNS = {
+    "snapshot_id", "source_name", "source_type", "source_url", "artifact_path", "http_status",
+    "retrieved_at", "size_bytes", "sha256", "retry_count",
+}
+MEMBER_PREVIEW_COLUMNS = {
+    "snapshot_id", "legislator_id", "bioguide_id", "congress", "chamber", "canonical_state",
+    "canonical_district", "source_state", "source_district", "normalization_rule", "member_type",
+    "current_member", "service_start_year", "service_end_year", "service_date_precision", "party",
+    "official_url", "source_name", "source_type", "source_url", "source_update_date",
+    "source_retrieved_at", "source_checksum", "parser_version", "metadata_currentness",
+}
+SEAT_PREVIEW_COLUMNS = {
+    "snapshot_id", "congress", "canonical_state", "canonical_district", "source_state",
+    "source_district", "normalization_rule", "seat_type", "seat_status", "current_legislator_id",
+    "current_bioguide_id", "vacancy_reason", "vacancy_effective_date", "special_election_date",
+    "special_election_type", "successor_name", "succession_date", "oath_date", "source_name",
+    "source_type", "source_url", "source_retrieved_at", "source_checksum", "parser_version",
+    "metadata_currentness",
+}
+MEMBER_LINK_PREVIEW_COLUMNS = {
+    "snapshot_id", "bioguide_id", "congress", "canonical_state", "canonical_district", "artifact_path", "evidence_role",
+}
+SEAT_LINK_PREVIEW_COLUMNS = {
+    "snapshot_id", "congress", "canonical_state", "canonical_district", "artifact_path", "evidence_role",
+}
+
+
+def artifact_source_metadata(url: str) -> tuple[str, str]:
+    if url.startswith(API_ROOT + "/"):
+        return "Congress.gov API", "official_api"
+    if url == HOUSE_DIRECTORY_URL:
+        return "U.S. House directory", "official_html"
+    if url == CLERK_VACANCIES_URL:
+        return "Clerk of the U.S. House", "official_html"
+    raise SourceContractError(f"unsupported artifact source URL: {url}")
+
+
+def build_seed_previews(
+    *, manifest: dict[str, Any], manifest_checksum: str, members: list[dict[str, Any]],
+    house_records: list[dict[str, Any]], clerk_events: list[dict[str, Any]],
+    statuses: dict[tuple[str, str], str], production_rows: list[dict[str, Any]],
+) -> dict[str, list[dict[str, Any]]]:
+    sid = str(manifest["snapshot_id"])
+    artifacts = []
+    artifact_by_path = {row["path"]: row for row in manifest["artifacts"]}
+    for row in sorted(manifest["artifacts"], key=lambda item: item["path"]):
+        source_name, source_type = artifact_source_metadata(str(row["source"]))
+        artifacts.append({
+            "snapshot_id": sid, "source_name": source_name, "source_type": source_type,
+            "source_url": row["source"], "artifact_path": row["path"], "http_status": row["response_status"],
+            "retrieved_at": row["retrieved_at"], "size_bytes": row["size_bytes"], "sha256": row["sha256"],
+            "retry_count": row["retry_count"],
+        })
+    snapshot = [{
+        "snapshot_id": sid, "congress": CONGRESS, "retrieval_started_at": manifest["retrieval_started_at"],
+        "retrieval_completed_at": manifest["retrieval_completed_at"], "parser_version": manifest["parser_version"],
+        "snapshot_status": "complete", "manifest_checksum": manifest_checksum,
+        "source_decision": "approved_for_bounded_dry_run_only",
+    }]
+    production_by_bioguide = {str(row["bioguide_id"]): row for row in production_rows if row.get("bioguide_id")}
+    member_rows = []
+    member_links = []
+    for member in sorted(members, key=lambda item: item["bioguide_id"]):
+        key = (member["canonical_state"], member["canonical_district"])
+        currentness = statuses.get(key, "unknown")
+        row = {column: member.get(column) for column in MEMBER_PREVIEW_COLUMNS if column not in {"snapshot_id", "legislator_id", "metadata_currentness"}}
+        row.update({"snapshot_id": sid, "legislator_id": production_by_bioguide.get(str(member["bioguide_id"]), {}).get("id"), "metadata_currentness": currentness})
+        member_rows.append(row)
+        detail_path = f"member_details/{member['bioguide_id']}.json"
+        member_links.append({"snapshot_id": sid, "bioguide_id": member["bioguide_id"], "congress": CONGRESS, "canonical_state": key[0], "canonical_district": key[1], "artifact_path": detail_path, "evidence_role": "primary_identity"})
+        if currentness == "current_cross_source_confirmed":
+            member_links.append({"snapshot_id": sid, "bioguide_id": member["bioguide_id"], "congress": CONGRESS, "canonical_state": key[0], "canonical_district": key[1], "artifact_path": "house_representatives.html", "evidence_role": "roster_confirmation"})
+
+    members_by_seat = {(row["canonical_state"], row["canonical_district"]): row for row in members}
+    clerk_by_seat = {(row["canonical_state"], row["canonical_district"]): row for row in clerk_events}
+    house_artifact = artifact_by_path["house_representatives.html"]
+    seat_rows = []
+    seat_links = []
+    status_mapping = {"current_cross_source_confirmed": "filled", "current_primary_source_only": "filled", "vacant_officially_confirmed": "vacant", "source_conflict": "source_conflict", "unknown": "unknown"}
+    for house in sorted(house_records, key=lambda item: (item["canonical_state"], item["canonical_district"])):
+        key = (house["canonical_state"], house["canonical_district"])
+        currentness = statuses.get(key, "unknown")
+        member = members_by_seat.get(key)
+        event = clerk_by_seat.get(key, {})
+        production = production_by_bioguide.get(str(member.get("bioguide_id")), {}) if member else {}
+        seat_status = status_mapping[currentness]
+        current_identity_allowed = seat_status == "filled"
+        seat_rows.append({
+            "snapshot_id": sid, "congress": CONGRESS, "canonical_state": key[0], "canonical_district": key[1],
+            "source_state": house.get("source_state", key[0]), "source_district": house.get("source_district", key[1]),
+            "normalization_rule": "house_seat_district_v1", "seat_type": house["seat_type"], "seat_status": seat_status,
+            "current_legislator_id": production.get("id") if current_identity_allowed else None,
+            "current_bioguide_id": member.get("bioguide_id") if member and current_identity_allowed else None,
+            "vacancy_reason": event.get("vacancy_reason"), "vacancy_effective_date": event.get("vacancy_effective_date"),
+            "special_election_date": event.get("special_election_date"), "special_election_type": event.get("special_election_type"),
+            "successor_name": event.get("successor_name"), "succession_date": event.get("succession_date"), "oath_date": event.get("oath_date"),
+            "source_name": "U.S. House directory", "source_type": "official_html", "source_url": HOUSE_DIRECTORY_URL,
+            "source_retrieved_at": house_artifact["retrieved_at"], "source_checksum": house_artifact["sha256"],
+            "parser_version": PARSER_VERSION, "metadata_currentness": currentness,
+        })
+        house_role = "vacancy_confirmation" if seat_status == "vacant" else "roster_confirmation"
+        seat_links.append({"snapshot_id": sid, "congress": CONGRESS, "canonical_state": key[0], "canonical_district": key[1], "artifact_path": "house_representatives.html", "evidence_role": house_role})
+        if seat_status == "vacant":
+            seat_links.append({"snapshot_id": sid, "congress": CONGRESS, "canonical_state": key[0], "canonical_district": key[1], "artifact_path": "clerk_vacancies.html", "evidence_role": "vacancy_confirmation"})
+        elif member:
+            seat_links.append({"snapshot_id": sid, "congress": CONGRESS, "canonical_state": key[0], "canonical_district": key[1], "artifact_path": f"member_details/{member['bioguide_id']}.json", "evidence_role": "primary_identity"})
+    return {
+        "normalized_snapshot.json": snapshot,
+        "normalized_snapshot_artifacts.json": artifacts,
+        "normalized_member_service.json": member_rows,
+        "normalized_seat_status.json": seat_rows,
+        "normalized_member_service_evidence_artifacts.json": member_links,
+        "normalized_seat_status_evidence_artifacts.json": seat_links,
+    }
+
+
+def migration_insert_columns(sql: str, table: str) -> set[str]:
+    match = re.search(rf"CREATE TABLE IF NOT EXISTS {re.escape(table)}\s*\((.*?)\n\);", sql, flags=re.IGNORECASE | re.DOTALL)
+    if not match:
+        raise SourceContractError(f"migration table definition not found: {table}")
+    columns = set()
+    for raw_line in match.group(1).splitlines():
+        if len(raw_line) - len(raw_line.lstrip()) != 4:
+            continue
+        line = raw_line.strip().rstrip(",")
+        if not line or line.upper().startswith(("PRIMARY KEY", "FOREIGN KEY", "UNIQUE", "CHECK")):
+            continue
+        columns.add(line.split()[0])
+    return columns - {"id", "created_at", "updated_at"}
+
+
+def validate_seed_previews(previews: dict[str, list[dict[str, Any]]], *, migration_sql: str) -> dict[str, Any]:
+    schemas = {
+        "normalized_snapshot.json": SNAPSHOT_PREVIEW_COLUMNS,
+        "normalized_snapshot_artifacts.json": ARTIFACT_PREVIEW_COLUMNS,
+        "normalized_member_service.json": MEMBER_PREVIEW_COLUMNS,
+        "normalized_seat_status.json": SEAT_PREVIEW_COLUMNS,
+        "normalized_member_service_evidence_artifacts.json": MEMBER_LINK_PREVIEW_COLUMNS,
+        "normalized_seat_status_evidence_artifacts.json": SEAT_LINK_PREVIEW_COLUMNS,
+    }
+    tables = {
+        "normalized_snapshot.json": "house_member_metadata_snapshots",
+        "normalized_snapshot_artifacts.json": "house_member_metadata_snapshot_artifacts",
+        "normalized_member_service.json": "house_member_service_evidence",
+        "normalized_seat_status.json": "house_seat_status_evidence",
+        "normalized_member_service_evidence_artifacts.json": "house_member_service_evidence_artifacts",
+        "normalized_seat_status_evidence_artifacts.json": "house_seat_status_evidence_artifacts",
+    }
+    errors = []
+    required_values = {
+        "normalized_snapshot.json": SNAPSHOT_PREVIEW_COLUMNS,
+        "normalized_snapshot_artifacts.json": ARTIFACT_PREVIEW_COLUMNS,
+        "normalized_member_service.json": MEMBER_PREVIEW_COLUMNS - {"legislator_id", "service_start_year", "service_end_year", "party", "official_url", "source_update_date"},
+        "normalized_seat_status.json": SEAT_PREVIEW_COLUMNS - {"current_legislator_id", "current_bioguide_id", "vacancy_reason", "vacancy_effective_date", "special_election_date", "special_election_type", "successor_name", "succession_date", "oath_date"},
+        "normalized_member_service_evidence_artifacts.json": MEMBER_LINK_PREVIEW_COLUMNS,
+        "normalized_seat_status_evidence_artifacts.json": SEAT_LINK_PREVIEW_COLUMNS,
+    }
+    for name, columns in schemas.items():
+        migration_columns = migration_insert_columns(migration_sql, tables[name])
+        if columns != migration_columns: errors.append(f"{name} does not map exactly to migration table {tables[name]}: missing={sorted(migration_columns-columns)} extra={sorted(columns-migration_columns)}")
+        if not previews.get(name): errors.append(f"{name} has no rows")
+        for index, row in enumerate(previews.get(name, [])):
+            if set(row) != columns:
+                errors.append(f"{name}[{index}] columns differ: missing={sorted(columns-set(row))} extra={sorted(set(row)-columns)}")
+            missing_values = sorted(column for column in required_values[name] if row.get(column) is None)
+            if missing_values: errors.append(f"{name}[{index}] required values are null: {missing_values}")
+    artifact_keys = {(row["snapshot_id"], row["artifact_path"]) for row in previews["normalized_snapshot_artifacts.json"]}
+    member_keys = {(row["snapshot_id"], row["bioguide_id"], row["congress"], row["canonical_state"], row["canonical_district"]) for row in previews["normalized_member_service.json"]}
+    seat_keys = {(row["snapshot_id"], row["congress"], row["canonical_state"], row["canonical_district"]) for row in previews["normalized_seat_status.json"]}
+    for name in ("normalized_member_service_evidence_artifacts.json", "normalized_seat_status_evidence_artifacts.json"):
+        seen_links = set()
+        for index, row in enumerate(previews[name]):
+            link_key = tuple(row[column] for column in sorted(row))
+            if link_key in seen_links: errors.append(f"{name}[{index}] duplicates an evidence link")
+            seen_links.add(link_key)
+            if row["evidence_role"] not in EVIDENCE_ROLES: errors.append(f"{name}[{index}] invalid evidence role")
+            if (row["snapshot_id"], row["artifact_path"]) not in artifact_keys: errors.append(f"{name}[{index}] missing artifact target")
+            if name.startswith("normalized_member") and (row["snapshot_id"], row["bioguide_id"], row["congress"], row["canonical_state"], row["canonical_district"]) not in member_keys: errors.append(f"{name}[{index}] missing member evidence target")
+            if name.startswith("normalized_seat") and (row["snapshot_id"], row["congress"], row["canonical_state"], row["canonical_district"]) not in seat_keys: errors.append(f"{name}[{index}] missing seat evidence target")
+    for index, row in enumerate(previews["normalized_seat_status.json"]):
+        if row["seat_status"] not in {"filled", "vacant", "source_conflict", "unknown"}: errors.append(f"normalized_seat_status.json[{index}] invalid seat_status")
+        if row["seat_status"] == "vacant" and (row["current_legislator_id"] is not None or row["current_bioguide_id"] is not None): errors.append(f"normalized_seat_status.json[{index}] vacant identity must be null")
+        if row["seat_status"] == "filled" and (row["current_legislator_id"] is None or row["current_bioguide_id"] is None): errors.append(f"normalized_seat_status.json[{index}] filled identity must be present")
+    noninsertable_members = [row["bioguide_id"] for row in previews["normalized_member_service.json"] if row["legislator_id"] is None]
+    member_link_roles: dict[tuple[Any, ...], set[tuple[str, str]]] = {}
+    for row in previews["normalized_member_service_evidence_artifacts.json"]:
+        key=(row["snapshot_id"],row["bioguide_id"],row["congress"],row["canonical_state"],row["canonical_district"]); member_link_roles.setdefault(key,set()).add((row["artifact_path"],row["evidence_role"]))
+    for row in previews["normalized_member_service.json"]:
+        key=(row["snapshot_id"],row["bioguide_id"],row["congress"],row["canonical_state"],row["canonical_district"]); roles=member_link_roles.get(key,set())
+        if (f"member_details/{row['bioguide_id']}.json","primary_identity") not in roles: errors.append(f"member {row['bioguide_id']} lacks detail lineage")
+        if row["metadata_currentness"]=="current_cross_source_confirmed" and ("house_representatives.html","roster_confirmation") not in roles: errors.append(f"member {row['bioguide_id']} lacks roster lineage")
+    seat_link_roles: dict[tuple[Any, ...], set[tuple[str, str]]] = {}
+    for row in previews["normalized_seat_status_evidence_artifacts.json"]:
+        key=(row["snapshot_id"],row["congress"],row["canonical_state"],row["canonical_district"]); seat_link_roles.setdefault(key,set()).add((row["artifact_path"],row["evidence_role"]))
+    for row in previews["normalized_seat_status.json"]:
+        key=(row["snapshot_id"],row["congress"],row["canonical_state"],row["canonical_district"]); roles=seat_link_roles.get(key,set())
+        if row["metadata_currentness"]=="current_cross_source_confirmed" and not ({"roster_confirmation","primary_identity"} <= {role for _,role in roles}): errors.append(f"filled seat {row['canonical_state']}-{row['canonical_district']} lacks cross-source lineage")
+        if row["seat_status"]=="vacant" and not ({("house_representatives.html","vacancy_confirmation"),("clerk_vacancies.html","vacancy_confirmation")} <= roles): errors.append(f"vacant seat {row['canonical_state']}-{row['canonical_district']} lacks House/Clerk lineage")
+    if errors: raise SourceContractError("normalized preview schema validation failed: " + "; ".join(errors[:5]))
+    return {"passed": True, "errors": [], "unmatched_member_rows": noninsertable_members, "noninsertable_preview_rows": 0}
 
 
 def sha256_file(path: Path) -> str:

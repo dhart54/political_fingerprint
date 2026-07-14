@@ -76,7 +76,10 @@ CREATE TABLE IF NOT EXISTS house_seat_status_evidence (
     current_bioguide_id TEXT,
     vacancy_reason TEXT,
     vacancy_effective_date DATE,
-    successor_election_date DATE,
+    special_election_date DATE,
+    special_election_type TEXT CHECK (special_election_type IN ('special_general', 'special_primary')),
+    successor_name TEXT,
+    succession_date DATE,
     oath_date DATE,
     source_name TEXT NOT NULL,
     source_type TEXT NOT NULL,
@@ -89,6 +92,41 @@ CREATE TABLE IF NOT EXISTS house_seat_status_evidence (
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     UNIQUE (snapshot_id, congress, canonical_state, canonical_district),
     CHECK ((seat_status <> 'vacant') OR (current_legislator_id IS NULL AND current_bioguide_id IS NULL))
+);
+
+CREATE TABLE IF NOT EXISTS house_member_service_evidence_artifacts (
+    snapshot_id TEXT NOT NULL,
+    bioguide_id TEXT NOT NULL,
+    congress INTEGER NOT NULL,
+    canonical_state TEXT NOT NULL,
+    canonical_district TEXT NOT NULL,
+    artifact_path TEXT NOT NULL,
+    evidence_role TEXT NOT NULL CHECK (evidence_role IN ('primary_identity', 'roster_confirmation', 'vacancy_confirmation', 'vacancy_resolution', 'normalization_source')),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    PRIMARY KEY (snapshot_id, bioguide_id, congress, canonical_state, canonical_district, artifact_path, evidence_role),
+    FOREIGN KEY (snapshot_id, bioguide_id, congress, canonical_state, canonical_district)
+        REFERENCES house_member_service_evidence (snapshot_id, bioguide_id, congress, canonical_state, canonical_district)
+        ON DELETE CASCADE,
+    FOREIGN KEY (snapshot_id, artifact_path)
+        REFERENCES house_member_metadata_snapshot_artifacts (snapshot_id, artifact_path)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS house_seat_status_evidence_artifacts (
+    snapshot_id TEXT NOT NULL,
+    congress INTEGER NOT NULL,
+    canonical_state TEXT NOT NULL,
+    canonical_district TEXT NOT NULL,
+    artifact_path TEXT NOT NULL,
+    evidence_role TEXT NOT NULL CHECK (evidence_role IN ('primary_identity', 'roster_confirmation', 'vacancy_confirmation', 'vacancy_resolution', 'normalization_source')),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    PRIMARY KEY (snapshot_id, congress, canonical_state, canonical_district, artifact_path, evidence_role),
+    FOREIGN KEY (snapshot_id, congress, canonical_state, canonical_district)
+        REFERENCES house_seat_status_evidence (snapshot_id, congress, canonical_state, canonical_district)
+        ON DELETE CASCADE,
+    FOREIGN KEY (snapshot_id, artifact_path)
+        REFERENCES house_member_metadata_snapshot_artifacts (snapshot_id, artifact_path)
+        ON DELETE CASCADE
 );
 
 CREATE INDEX IF NOT EXISTS idx_house_member_service_seat
