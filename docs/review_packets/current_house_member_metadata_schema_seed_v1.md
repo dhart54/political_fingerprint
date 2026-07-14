@@ -40,7 +40,7 @@
     "seed_rerun": false
   },
   "current_correction_production_write_performed": false,
-  "generated_at": "2026-07-14T03:12:46.618710+00:00",
+  "generated_at": "2026-07-14T03:28:14.587970+00:00",
   "historical_application": {
     "application_result": "committed_atomically",
     "deviations": [
@@ -1386,7 +1386,9 @@
     "port": 5432,
     "raw_url_recorded": false,
     "scheme": "postgresql",
-    "username_present": true
+    "username_identity_pinned": true,
+    "username_present": true,
+    "username_sha256_matches": true
   },
   "verification_kind": "hardened_read_only_verification"
 }

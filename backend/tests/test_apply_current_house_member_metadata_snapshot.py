@@ -72,9 +72,31 @@ def test_any_nonreviewed_migration_bytes_fail_before_structure(mutation):
     changed={"comment":sql.replace("BEGIN;","BEGIN;\n-- changed",1),"character":sql.replace("Additive","additive",1),"substitute":"BEGIN;\nCREATE TABLE IF NOT EXISTS x(a INTEGER);\nCOMMIT;\n","stripped":seed.strip_transaction_wrappers(sql)}[mutation]
     with pytest.raises(seed.SeedSafetyError,match="checksum mismatch"):seed.validate_migration(changed)
 
-def test_exact_target_is_pinned_and_credentials_masked():
-    result=seed.target("postgresql://user:secret@aws-1-us-east-1.pooler.supabase.com:5432/postgres",Path("backend/.env"))
-    assert result["exact_approved_target"] and result["raw_url_recorded"] is False and "secret" not in repr(result)
+def approved_username_hash(value):return seed.hashlib.sha256(seed.unicodedata.normalize("NFC",value).encode("utf-8")).hexdigest()
+
+def test_exact_target_username_identity_is_pinned_and_credentials_masked(monkeypatch):
+    monkeypatch.setattr(seed,"EXPECTED_DATABASE_USERNAME_SHA256",approved_username_hash("approved-user"))
+    result=seed.target("postgresql://approved-user:secret@aws-1-us-east-1.pooler.supabase.com:5432/postgres",Path("backend/.env"))
+    rendered=json.dumps({"target":result})
+    assert result["exact_approved_target"] and result["username_identity_pinned"] and result["username_sha256_matches"]
+    assert result["raw_url_recorded"] is False and "approved-user" not in rendered and "secret" not in rendered
+
+def test_different_or_case_altered_username_fails_on_same_database(monkeypatch):
+    monkeypatch.setattr(seed,"EXPECTED_DATABASE_USERNAME_SHA256",approved_username_hash("approved-user"))
+    for username in ("different-user","Approved-user"):
+        with pytest.raises(seed.SeedSafetyError,match="exact approved target"):
+            seed.target(f"postgresql://{username}:secret@aws-1-us-east-1.pooler.supabase.com:5432/postgres",Path("backend/.env"))
+
+def test_url_encoded_equivalent_username_passes_strict_nfc_rule(monkeypatch):
+    monkeypatch.setattr(seed,"EXPECTED_DATABASE_USERNAME_SHA256",approved_username_hash("approved user"))
+    result=seed.target("postgresql://approved%20user:secret@aws-1-us-east-1.pooler.supabase.com:5432/postgres",Path("backend/.env"))
+    assert result["username_sha256_matches"] is True
+
+@pytest.mark.parametrize("username",["bad%ZZname","bad%FFname"])
+def test_username_decoding_failure_is_closed(monkeypatch,username):
+    monkeypatch.setattr(seed,"EXPECTED_DATABASE_USERNAME_SHA256",approved_username_hash("approved-user"))
+    with pytest.raises(seed.SeedSafetyError,match="percent encoding|decoding failed"):
+        seed.target(f"postgresql://{username}:secret@aws-1-us-east-1.pooler.supabase.com:5432/postgres",Path("backend/.env"))
 
 @pytest.mark.parametrize("url",[
     "postgresql://user:secret@other.supabase.com:5432/postgres",
@@ -85,7 +107,7 @@ def test_exact_target_is_pinned_and_credentials_masked():
     "postgresql://user@aws-1-us-east-1.pooler.supabase.com:5432/postgres",
 ])
 def test_target_mismatches_fail_closed(url):
-    with pytest.raises(seed.SeedSafetyError,match="exact approved target"):seed.target(url,Path("backend/.env"))
+    with pytest.raises(seed.SeedSafetyError,match="exact approved target|database username"):seed.target(url,Path("backend/.env"))
 
 def test_plain_insert_has_no_upsert_or_conflict_ignore():
     sql=seed.insert_sql(seed.TABLES[2],["snapshot_id","bioguide_id"])

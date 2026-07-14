@@ -128,3 +128,21 @@
 - [x] Production counts and canonical checksums remain exact at `1 / 486 / 437 / 441 / 874 / 882`.
 - [x] Legislators fingerprint remains `637 / 87c12b1054b5390af3a4bc16a1234ecb71ef10edd52b6ad700441e122f1ae7b7`; ZIP rows and production auto-select remain zero.
 - [x] Migration not reapplied, seed not rerun, rollback not executed, and all correction database inspection was read-only.
+
+## PR #88 Project-Specific Target Identity Correction
+
+### Username Identity Contract
+
+- [x] The exact approved normalized database username is pinned only by SHA-256; plaintext username, password, and raw URL remain uncommitted and unreported.
+- [x] Normalization strictly validates percent escapes, URL-decodes as strict UTF-8, applies Unicode NFC, and preserves case.
+- [x] Same-database different usernames and case changes fail closed; a correctly percent-encoded equivalent normalizes to the same identity.
+- [x] Missing usernames, malformed percent escapes, and invalid UTF-8 fail before any database inspection.
+- [x] Masked metadata reports only `username_present`, `username_identity_pinned`, and `username_sha256_matches` booleans.
+
+### Target Identity Validation
+
+- [x] Dedicated application/postcheck/rollback/target suite: 62 passed.
+- [x] Combined metadata/readiness/ZIP suite: 123 passed.
+- [x] Read-only production postcheck confirmed the exact username identity, migration pin, target tuple, and full schema contract.
+- [x] Counts and checksums remain exact at `1 / 486 / 437 / 441 / 874 / 882`; legislators remain `637 / 87c12b1054b5390af3a4bc16a1234ecb71ef10edd52b6ad700441e122f1ae7b7`; ZIP rows and production eligibility remain zero.
+- [x] Routes and feature flag remain unchanged; migration was not reapplied, seed was not rerun, rollback was not executed, and the correction interaction was read-only.

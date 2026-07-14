@@ -1,11 +1,11 @@
 """Atomically apply migration 0014 and seed one approved House metadata snapshot."""
 from __future__ import annotations
 
-import argparse, hashlib, json, re, subprocess, sys
+import argparse, hashlib, json, re, subprocess, sys, unicodedata
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlsplit
+from urllib.parse import unquote_to_bytes, urlsplit
 
 from dotenv import dotenv_values
 
@@ -21,6 +21,7 @@ MANIFEST_CHECKSUM="d5ab3394db24a6edecc8dedf3167a24f90d6a2df46b0790f5cfe7e48b583c
 LOCK_KEY="political_fingerprint:house_metadata_schema_seed_v1"
 EXPECTED_MIGRATION_SHA256="b80484c2555562033657f6838d3645b1d41ff24d13310a5e72278370bc570ae6"
 EXPECTED_TARGET={"scheme":"postgresql","host":"aws-1-us-east-1.pooler.supabase.com","port":5432,"database":"postgres"}
+EXPECTED_DATABASE_USERNAME_SHA256="5c6d4369c3ac8d639153290471b0f185e5bbae0465c1d9f275e114b016be0f76"
 APPLICATION_HISTORY={"snapshot_id":"house-119-20260713T011722Z","target":EXPECTED_TARGET,"application_result":"committed_atomically","deviations":[{"phase":"repeat absence check before DDL","result":"transaction aborted before DDL due dict-row indexing defect; verified all six tables remained absent"},{"phase":"first insert after transactional DDL","result":"transaction aborted due cursor API defect; DDL and seed rolled back atomically; verified all six tables remained absent"}]}
 PREVIEW_DIR=ROOT/"docs/review_packets/current_house_member_metadata_hardening_v1"
 TABLES=("house_member_metadata_snapshots","house_member_metadata_snapshot_artifacts","house_member_service_evidence","house_seat_status_evidence","house_member_service_evidence_artifacts","house_seat_status_evidence_artifacts")
@@ -86,9 +87,19 @@ def validate_migration(sql:str)->dict[str,Any]:
  if re.search(r"(?:create|alter|drop|truncate|update|insert|delete).*zip_district",body):raise SeedSafetyError("migration targets ZIP schema")
  return {"file":str(MIGRATION.relative_to(ROOT)).replace("\\","/"),"sha256":sha(MIGRATION),"banned_matches":banned,"wrapper_stripped_exactly":bool(strip_transaction_wrappers(sql))}
 
+def normalized_database_username(encoded_username:str|None)->str:
+ """Strict percent-decoded UTF-8, normalized to NFC with case preserved."""
+ if not encoded_username:raise SeedSafetyError("configured database username is missing")
+ if re.search(r"%(?![0-9A-Fa-f]{2})",encoded_username):raise SeedSafetyError("configured database username has invalid percent encoding")
+ try:return unicodedata.normalize("NFC",unquote_to_bytes(encoded_username).decode("utf-8","strict"))
+ except (UnicodeDecodeError,ValueError) as exc:raise SeedSafetyError("configured database username decoding failed") from exc
+
 def target(db_url:str,env:Path)->dict[str,Any]:
- p=urlsplit(db_url); result={"environment_file":str(env.relative_to(ROOT) if env.is_absolute() else env),"scheme":p.scheme,"host":p.hostname or "","port":p.port,"database":p.path.lstrip("/"),"username_present":bool(p.username),"password_present":bool(p.password),"raw_url_recorded":False}
- if {k:result[k] for k in EXPECTED_TARGET}!=EXPECTED_TARGET or not result["username_present"] or not result["password_present"]:raise SeedSafetyError("configured database target does not match the exact approved target contract")
+ try:p=urlsplit(db_url);username=normalized_database_username(p.username)
+ except (TypeError,ValueError) as exc:raise SeedSafetyError("configured database target URL is invalid") from exc
+ username_matches=hashlib.sha256(username.encode("utf-8")).hexdigest()==EXPECTED_DATABASE_USERNAME_SHA256
+ result={"environment_file":str(env.relative_to(ROOT) if env.is_absolute() else env),"scheme":p.scheme,"host":p.hostname or "","port":p.port,"database":p.path.lstrip("/"),"username_present":True,"username_identity_pinned":True,"username_sha256_matches":username_matches,"password_present":bool(p.password),"raw_url_recorded":False}
+ if {k:result[k] for k in EXPECTED_TARGET}!=EXPECTED_TARGET or not result["password_present"] or not username_matches:raise SeedSafetyError("configured database target does not match the exact approved target contract")
  result["exact_approved_target"]=True
  return result
 
