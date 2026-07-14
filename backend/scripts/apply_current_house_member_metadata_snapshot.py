@@ -19,6 +19,9 @@ SNAPSHOT_ID="house-119-20260713T011722Z"
 BASE_COMMIT="12e0bbf9c22d2083e78433951858f6b5ea2f071d"
 MANIFEST_CHECKSUM="d5ab3394db24a6edecc8dedf3167a24f90d6a2df46b0790f5cfe7e48b583cbbd"
 LOCK_KEY="political_fingerprint:house_metadata_schema_seed_v1"
+EXPECTED_MIGRATION_SHA256="b80484c2555562033657f6838d3645b1d41ff24d13310a5e72278370bc570ae6"
+EXPECTED_TARGET={"scheme":"postgresql","host":"aws-1-us-east-1.pooler.supabase.com","port":5432,"database":"postgres"}
+APPLICATION_HISTORY={"snapshot_id":"house-119-20260713T011722Z","target":EXPECTED_TARGET,"application_result":"committed_atomically","deviations":[{"phase":"repeat absence check before DDL","result":"transaction aborted before DDL due dict-row indexing defect; verified all six tables remained absent"},{"phase":"first insert after transactional DDL","result":"transaction aborted due cursor API defect; DDL and seed rolled back atomically; verified all six tables remained absent"}]}
 PREVIEW_DIR=ROOT/"docs/review_packets/current_house_member_metadata_hardening_v1"
 TABLES=("house_member_metadata_snapshots","house_member_metadata_snapshot_artifacts","house_member_service_evidence","house_seat_status_evidence","house_member_service_evidence_artifacts","house_seat_status_evidence_artifacts")
 PREVIEWS={
@@ -72,15 +75,71 @@ def strip_transaction_wrappers(sql:str)->str:
  lines.pop(nonempty[-1]); lines.pop(nonempty[0]); return "\n".join(lines).strip()+"\n"
 
 def validate_migration(sql:str)->dict[str,Any]:
+ # Path.read_text normalizes CRLF; reconstruct the reviewed file bytes before hashing.
+ actual=hashlib.sha256(sql.replace("\r\n","\n").replace("\n","\r\n").encode("utf-8")).hexdigest()
+ if actual!=EXPECTED_MIGRATION_SHA256:raise SeedSafetyError(f"migration checksum mismatch: expected {EXPECTED_MIGRATION_SHA256}, got {actual}")
  body=re.sub(r"--.*?$|/\*.*?\*/","",sql,flags=re.M|re.S).lower(); banned={x:bool(re.search(p,body)) for x,p in {"alter":r"\balter\b","drop":r"\bdrop\b","truncate":r"\btruncate\b","update":r"\bupdate\b","delete":r"\bdelete\s+from\b","insert":r"\binsert\s+into\b","copy":r"\bcopy\b","function":r"\bcreate\s+(?:or\s+replace\s+)?function\b","trigger":r"\bcreate\s+trigger\b","grant":r"\bgrant\b","role":r"\bcreate\s+role\b","extension":r"\bcreate\s+extension\b"}.items()}
  if any(banned.values()) or body.count("create table if not exists")!=6 or "references legislators(id)" not in body:raise SeedSafetyError(f"migration outside approved envelope: {banned}")
  if re.search(r"(?:create|alter|drop|truncate|update|insert|delete).*zip_district",body):raise SeedSafetyError("migration targets ZIP schema")
  return {"file":str(MIGRATION.relative_to(ROOT)).replace("\\","/"),"sha256":sha(MIGRATION),"banned_matches":banned,"wrapper_stripped_exactly":bool(strip_transaction_wrappers(sql))}
 
 def target(db_url:str,env:Path)->dict[str,Any]:
- p=urlsplit(db_url); host=p.hostname or ""; result={"environment_file":str(env.relative_to(ROOT) if env.is_absolute() else env),"scheme":p.scheme,"host":host,"port":p.port,"database":p.path.lstrip("/"),"username_present":bool(p.username),"password_present":bool(p.password),"supabase_production_like":"supabase" in host.lower(),"raw_url_recorded":False}
- if not result["supabase_production_like"]:raise SeedSafetyError("configured target is not the expected Supabase target")
+ p=urlsplit(db_url); result={"environment_file":str(env.relative_to(ROOT) if env.is_absolute() else env),"scheme":p.scheme,"host":p.hostname or "","port":p.port,"database":p.path.lstrip("/"),"username_present":bool(p.username),"password_present":bool(p.password),"raw_url_recorded":False}
+ if {k:result[k] for k in EXPECTED_TARGET}!=EXPECTED_TARGET or not result["username_present"] or not result["password_present"]:raise SeedSafetyError("configured database target does not match the exact approved target contract")
+ result["exact_approved_target"]=True
  return result
+
+def _split_sql_items(body:str)->list[str]:
+ items=[]; start=0; depth=0; quoted=False
+ for i,ch in enumerate(body):
+  if ch=="'":quoted=not quoted
+  elif not quoted and ch=="(":depth+=1
+  elif not quoted and ch==")":depth-=1
+  elif not quoted and ch=="," and depth==0:items.append(body[start:i].strip());start=i+1
+ items.append(body[start:].strip());return [x for x in items if x]
+
+def _constraint(value:str)->str:
+ value=value.lower().replace('"','');value=re.sub(r"::(?:text|regclass|character varying)","",value);value=re.sub(r"\s+"," ",value).strip()
+ value=re.sub(r"= any \(array\[(.*?)\]\)",r"in (\1)",value)
+ return re.sub(r"\s+"," ",value.replace("("," ").replace(")"," ")).strip()
+
+def expected_schema_contract(sql:str)->dict[str,Any]:
+ validate_migration(sql);columns={};constraints=set()
+ for match in re.finditer(r"create table if not exists\s+(\w+)\s*\((.*?)\n\);",sql,flags=re.I|re.S):
+  table,body=match.group(1),match.group(2);columns[table]={}
+  for item in _split_sql_items(body):
+   compact=re.sub(r"\s+"," ",item.strip());upper=compact.upper()
+   if upper.startswith(("PRIMARY KEY","UNIQUE","CHECK","FOREIGN KEY")):constraints.add((table,_constraint(compact)));continue
+   m=re.match(r"(\w+)\s+(BIGSERIAL|BIGINT|INTEGER|TIMESTAMPTZ|BOOLEAN|DATE|TEXT)\b(.*)",compact,re.I)
+   if not m:continue
+   name,typ,tail=m.groups();typ=typ.upper();data={"BIGSERIAL":("bigint","int8"),"BIGINT":("bigint","int8"),"INTEGER":("integer","int4"),"TIMESTAMPTZ":("timestamp with time zone","timestamptz"),"BOOLEAN":("boolean","bool"),"DATE":("date","date"),"TEXT":("text","text")}[typ]
+   default="sequence" if typ=="BIGSERIAL" else "now()" if re.search(r"DEFAULT NOW\(\)",tail,re.I) else "0" if re.search(r"DEFAULT 0\b",tail,re.I) else None
+   columns[table][name]={"data_type":data[0],"udt_name":data[1],"nullable":"NO" if "NOT NULL" in upper or "PRIMARY KEY" in upper or typ=="BIGSERIAL" else "YES","default":default}
+   if "PRIMARY KEY" in upper:constraints.add((table,_constraint(f"PRIMARY KEY ({name})")))
+   for check in re.findall(r"CHECK\s*(\(.*\))",tail,flags=re.I):constraints.add((table,_constraint(f"CHECK {check}")))
+   ref=re.search(r"REFERENCES\s+(\w+)\s*\(([^)]+)\)(?:\s+ON DELETE\s+(CASCADE|SET NULL))?",tail,re.I)
+   if ref:constraints.add((table,_constraint(f"FOREIGN KEY ({name}) REFERENCES {ref.group(1)} ({ref.group(2)})"+(f" ON DELETE {ref.group(3)}" if ref.group(3) else ""))))
+ return {"columns":columns,"constraints":constraints,"indexes":{("idx_house_member_service_seat","house_member_service_evidence",("congress","canonical_state","canonical_district"))}}
+
+def verify_schema_contract(columns:list[dict[str,Any]],constraints:list[dict[str,Any]],indexes:list[dict[str,Any]],sql:str)->dict[str,bool]:
+ expected=expected_schema_contract(sql);actual_columns={t:{} for t in TABLES}
+ for row in columns:
+  default=row["column_default"]
+  default="sequence" if default and str(default).startswith("nextval(") else "now()" if default and str(default).lower()=="now()" else default
+  actual_columns[row["table_name"]][row["column_name"]]={"data_type":row["data_type"],"udt_name":row["udt_name"],"nullable":row["is_nullable"],"default":default}
+ names_exact=all(set(actual_columns[t])==set(expected["columns"][t]) for t in TABLES)
+ types_exact=names_exact and all(actual_columns[t][c]["data_type"]==v["data_type"] and actual_columns[t][c]["udt_name"]==v["udt_name"] for t in TABLES for c,v in expected["columns"][t].items())
+ null_exact=names_exact and all(actual_columns[t][c]["nullable"]==v["nullable"] for t in TABLES for c,v in expected["columns"][t].items())
+ defaults_exact=names_exact and all(actual_columns[t][c]["default"]==v["default"] for t in TABLES for c,v in expected["columns"][t].items())
+ actual_constraints={(r["table_name"],_constraint(r["definition"])) for r in constraints};constraint_exact=actual_constraints==expected["constraints"]
+ expected_fk={x for x in expected["constraints"] if x[1].startswith("foreign key")};actual_fk={x for x in actual_constraints if x[1].startswith("foreign key")};fk_exact=actual_fk==expected_fk
+ delete_exact=fk_exact and all("on delete cascade" in x[1] or "on delete set null" in x[1] for x in actual_fk)
+ actual_indexes=set()
+ for row in indexes:
+  match=re.search(r"\(([^()]*)\)\s*$",row["indexdef"]);cols=tuple(x.strip() for x in match.group(1).split(",")) if match else ();actual_indexes.add((row["indexname"],row["tablename"],cols))
+ index_exact=actual_indexes==expected["indexes"]
+ result={"column_names_exact":names_exact,"column_types_exact":types_exact,"nullability_exact":null_exact,"defaults_exact":defaults_exact,"constraint_set_exact":constraint_exact,"foreign_keys_exact":fk_exact,"delete_actions_exact":delete_exact,"indexes_exact":index_exact}
+ result["schema_contract_exact"]=all(result.values());return result
 
 def repo_state()->dict[str,Any]:
  base_ok=subprocess.run(["git","merge-base","--is-ancestor",BASE_COMMIT,"HEAD"],cwd=ROOT).returncode==0
@@ -137,6 +196,7 @@ def insert_phase(conn,table:str,rows:list[dict[str,Any]])->None:
  with conn.cursor() as cursor:cursor.executemany(insert_sql(table,columns),[tuple(r[c] for c in columns) for r in rows])
 
 def apply_atomic(db_url:str,previews:dict[str,list[dict[str,Any]]],migration_sql:str,pre_fingerprint:dict[str,Any])->dict[str,Any]:
+ validate_migration(migration_sql)
  import psycopg
  from psycopg.rows import dict_row
  with psycopg.connect(db_url,row_factory=dict_row) as conn:
@@ -161,6 +221,7 @@ def db_rows(conn,table:str,preview_rows:list[dict[str,Any]])->list[dict[str,Any]
  return [canonical(dict(r)) for r in conn.execute(f"SELECT {selected} FROM {table} WHERE snapshot_id=%s ORDER BY {order}",(SNAPSHOT_ID,)).fetchall()]
 
 def postcheck(db_url:str,previews:dict[str,list[dict[str,Any]]],pre_fingerprint:dict[str,Any]|None)->dict[str,Any]:
+ validate_migration(MIGRATION.read_text(encoding="utf-8"))
  import psycopg
  from psycopg.rows import dict_row
  with psycopg.connect(db_url,row_factory=dict_row,autocommit=True) as conn:
@@ -170,10 +231,9 @@ def postcheck(db_url:str,previews:dict[str,list[dict[str,Any]]],pre_fingerprint:
    existing={r["table_name"] for r in conn.execute("SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_name=ANY(%s)",(list(TABLES),)).fetchall()}
    if existing!=set(TABLES):raise SeedSafetyError("postcheck schema table set mismatch")
    columns=[dict(r) for r in conn.execute("SELECT table_name,column_name,data_type,udt_name,is_nullable,column_default FROM information_schema.columns WHERE table_schema='public' AND table_name=ANY(%s) ORDER BY table_name,ordinal_position",(list(TABLES),)).fetchall()]
-   column_names={t:{r["column_name"] for r in columns if r["table_name"]==t} for t in TABLES}; generated={TABLES[0]:{"created_at"},TABLES[1]:{"id"},TABLES[2]:{"id","created_at","updated_at"},TABLES[3]:{"id","created_at","updated_at"},TABLES[4]:{"created_at"},TABLES[5]:{"created_at"}}
-   column_contract_exact=all(column_names[t]==set(previews[t][0])|generated[t] for t in TABLES)
-   index_ok=bool(conn.execute("SELECT EXISTS(SELECT 1 FROM pg_indexes WHERE schemaname='public' AND indexname='idx_house_member_service_seat') AS e").fetchone()["e"])
+   index_rows=[dict(r) for r in conn.execute("SELECT indexname,tablename,indexdef FROM pg_indexes WHERE schemaname='public' AND indexname='idx_house_member_service_seat'").fetchall()]
    constraint_rows=[dict(r) for r in conn.execute("SELECT r.relname AS table_name,c.conname AS constraint_name,c.contype AS constraint_type,pg_get_constraintdef(c.oid) AS definition FROM pg_constraint c JOIN pg_class r ON r.oid=c.conrelid JOIN pg_namespace n ON n.oid=r.relnamespace WHERE n.nspname='public' AND r.relname=ANY(%s) ORDER BY r.relname,c.conname",(list(TABLES),)).fetchall()]
+   schema_checks=verify_schema_contract(columns,constraint_rows,index_rows,MIGRATION.read_text(encoding="utf-8"))
    equality={}; checksums={}; counts={}
    for table in TABLES:
     expected=[canonical(r) for r in sorted(previews[table],key=lambda r:tuple(str(r.get(k)) for k in NATURAL_KEYS[table]))]; actual=db_rows(conn,table,previews[table]); counts[table]=len(actual); equality[table]=actual==expected; checksums[table]={"preview":content_sha(expected),"database":content_sha(actual),"match":content_sha(expected)==content_sha(actual)}
@@ -191,22 +251,31 @@ def postcheck(db_url:str,previews:dict[str,list[dict[str,Any]]],pre_fingerprint:
  seat_roles={}
  for r in sl:seat_roles.setdefault((r["canonical_state"],r["canonical_district"]),set()).add((r["artifact_path"],r["evidence_role"]))
  lineage_checks={"all_links_resolve":True,"no_orphan_links":True,"all_members_have_primary_identity":domains["lineage"]["member_primary_identity"]==437,"all_confirmed_members_have_roster_confirmation":domains["lineage"]["member_roster_confirmation"]==437,"all_member_timestamps_timezone_aware":all("T" in r["source_retrieved_at"] and (r["source_retrieved_at"].endswith("Z") or "+" in r["source_retrieved_at"][10:]) for r in members),"filled_seats_have_house_and_congress":all({"roster_confirmation","primary_identity"}<={role for _,role in seat_roles[(r["canonical_state"],r["canonical_district"])]} for r in seats if r["seat_status"]=="filled"),"vacant_seats_have_house_and_clerk":all({("house_representatives.html","vacancy_confirmation"),("clerk_vacancies.html","vacancy_confirmation")}<=seat_roles[(r["canonical_state"],r["canonical_district"])] for r in seats if r["seat_status"]=="vacant")}
- if not column_contract_exact or not index_ok or not all(lineage_checks.values()):raise SeedSafetyError("schema or lineage contract failed")
- return {"schema_contract":{"tables_exact":True,"column_contract_exact":column_contract_exact,"columns":columns,"index_present":index_ok,"constraints":constraint_rows,"constraint_count":len(constraint_rows)},"row_counts":counts,"database_to_preview_equality":equality,"database_content_checksums":checksums,"legislators_fingerprint":post_fp,"zip_district_mappings_row_count":zip_count,"domain_counts":domains,"lineage_checks":lineage_checks,"vacancies":vacancies}
+ if not schema_checks["schema_contract_exact"] or not all(lineage_checks.values()):raise SeedSafetyError(f"schema or lineage contract failed: {schema_checks}")
+ return {"schema_contract":{"tables_exact":True,**schema_checks,"columns":columns,"indexes":index_rows,"constraints":constraint_rows,"constraint_count":len(constraint_rows)},"row_counts":counts,"database_to_preview_equality":equality,"database_content_checksums":checksums,"legislators_fingerprint":post_fp,"zip_district_mappings_row_count":zip_count,"domain_counts":domains,"lineage_checks":lineage_checks,"vacancies":vacancies}
 
 def rollback(db_url:str,previews:dict[str,list[dict[str,Any]]],before_fp:dict[str,Any])->dict[str,Any]:
+ validate_migration(MIGRATION.read_text(encoding="utf-8"))
  import psycopg
- with psycopg.connect(db_url) as conn:
+ from psycopg.rows import dict_row
+ with psycopg.connect(db_url,row_factory=dict_row) as conn:
   with conn.transaction():
-   conn.execute("SET LOCAL statement_timeout='60000ms'"); counts={t:int(conn.execute(f"SELECT COUNT(*) FROM {t} WHERE snapshot_id=%s",(SNAPSHOT_ID,)).fetchone()[0]) for t in TABLES}
+   conn.execute("SET LOCAL statement_timeout='60000ms'");conn.execute("SELECT pg_advisory_xact_lock(hashtext(%s))",(LOCK_KEY,))
+   existing={r["table_name"] for r in conn.execute("SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_name=ANY(%s)",(list(TABLES),)).fetchall()}
+   if existing!=set(TABLES):raise SeedSafetyError("rollback requires the complete six-table schema")
+   counts={t:int(conn.execute(f"SELECT COUNT(*) AS n FROM {t} WHERE snapshot_id=%s",(SNAPSHOT_ID,)).fetchone()["n"]) for t in TABLES}
    if counts!={t:PREVIEWS[t][1] for t in TABLES}:raise SeedSafetyError(f"rollback cascading-count precheck failed: {counts}")
+   totals_before={t:int(conn.execute(f"SELECT COUNT(*) AS n FROM {t}").fetchone()["n"]) for t in TABLES}
    deleted=conn.execute("DELETE FROM house_member_metadata_snapshots WHERE snapshot_id = %s",(SNAPSHOT_ID,)).rowcount
    if deleted!=1:raise SeedSafetyError("rollback did not delete exactly one snapshot")
-   remaining={t:int(conn.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]) for t in TABLES}
-   if any(remaining.values()):raise SeedSafetyError(f"rollback tables not empty: {remaining}")
+   remaining_target={t:int(conn.execute(f"SELECT COUNT(*) AS n FROM {t} WHERE snapshot_id=%s",(SNAPSHOT_ID,)).fetchone()["n"]) for t in TABLES}
+   totals_after={t:int(conn.execute(f"SELECT COUNT(*) AS n FROM {t}").fetchone()["n"]) for t in TABLES}
+   if any(remaining_target.values()) or any(totals_after[t]!=totals_before[t]-counts[t] for t in TABLES):raise SeedSafetyError("rollback affected rows outside the target snapshot")
+   legislators=[dict(r) for r in conn.execute("SELECT id,bioguide_id,chamber,state,district,in_office,updated_at FROM legislators ORDER BY id").fetchall()]
+   if fingerprint(legislators)!=before_fp or int(conn.execute("SELECT COUNT(*) AS n FROM zip_district_mappings").fetchone()["n"])!=0:raise SeedSafetyError("rollback changed protected production state")
  state=inspect_db(db_url,previews)
  if state["table_state"]!="complete" or state["legislators_fingerprint"]!=before_fp or state["zip_district_mappings_row_count"]!=0:raise SeedSafetyError("rollback postcheck failed")
- return {"executed":True,"deleted_snapshot":SNAPSHOT_ID,"expected_cascading_counts":counts,"tables_remain":True,"remaining_counts":remaining}
+ return {"executed":True,"deleted_snapshot":SNAPSHOT_ID,"advisory_lock_acquired":True,"expected_cascading_counts":counts,"target_remaining_counts":remaining_target,"tables_remain":True,"unrelated_rows_preserved":True,"total_counts_before":totals_before,"total_counts_after":totals_after}
 
 def write_report(report:dict[str,Any])->None:
  REPORT.parent.mkdir(parents=True,exist_ok=True); REPORT.write_text(json.dumps(report,indent=2,sort_keys=True)+"\n",encoding="utf-8")
@@ -219,8 +288,9 @@ def main(argv=None)->int:
  if a.rollback_snapshot and not a.confirm_rollback_snapshot_from_backend_env_supabase:raise SeedSafetyError("rollback confirmation is required")
  db_url=dotenv_values(a.env_path).get("DATABASE_URL")
  if not db_url:raise SeedSafetyError("DATABASE_URL missing")
- previews,pre=preflight(str(db_url)); target_info=target(str(db_url),a.env_path); state=pre["database"]; mode="preflight" if a.preflight_only else "apply_and_seed" if a.apply_and_seed else "postcheck" if a.postcheck_only else "rollback"
- report={"schema_version":"current_house_member_metadata_schema_seed_v1","generated_at":datetime.now(timezone.utc).isoformat(),"mode":mode,"branch":pre["repository"]["branch"],"base_commit":BASE_COMMIT,"target":target_info,"snapshot_id":SNAPSHOT_ID,"snapshot_metadata":previews[TABLES[0]][0],"authorized_writes":["apply migration 0014","insert one approved snapshot into six migration tables","delete only approved snapshot for explicit rollback"],"preflight":pre,"rollback":{"command":f"python backend/scripts/apply_current_house_member_metadata_snapshot.py --rollback-snapshot --snapshot-id {SNAPSHOT_ID} --confirm-rollback-snapshot-from-backend-env-supabase --env-path backend/.env --write-review-packet","executed":False},"execution_deviations":[{"phase":"repeat absence check before DDL","result":"transaction aborted before DDL due dict-row indexing defect; verified all six tables remained absent"},{"phase":"first insert after transactional DDL","result":"transaction aborted due cursor API defect; DDL and seed rolled back atomically; verified all six tables remained absent"}],"production_auto_select_eligible_count":0,"no_unauthorized_production_or_runtime_mutation":True}
+ target_info=target(str(db_url),a.env_path);previews,pre=preflight(str(db_url));state=pre["database"];mode="preflight" if a.preflight_only else "apply_and_seed" if a.apply_and_seed else "postcheck" if a.postcheck_only else "rollback"
+ history=APPLICATION_HISTORY if APPLICATION_HISTORY["snapshot_id"]==SNAPSHOT_ID and APPLICATION_HISTORY["target"]==EXPECTED_TARGET else None
+ report={"schema_version":"current_house_member_metadata_schema_seed_v1","generated_at":datetime.now(timezone.utc).isoformat(),"mode":mode,"verification_kind":"hardened_read_only_verification" if a.postcheck_only else mode,"branch":pre["repository"]["branch"],"base_commit":BASE_COMMIT,"target":target_info,"snapshot_id":SNAPSHOT_ID,"snapshot_metadata":previews[TABLES[0]][0],"historical_application":history,"current_correction_production_write_performed":False if a.postcheck_only else None,"preflight":pre,"rollback":{"command":f"python backend/scripts/apply_current_house_member_metadata_snapshot.py --rollback-snapshot --snapshot-id {SNAPSHOT_ID} --confirm-rollback-snapshot-from-backend-env-supabase --env-path backend/.env --write-review-packet","executed":False},"production_auto_select_eligible_count":0}
  if a.apply_and_seed:
   if state["table_state"]!="absent" or state["snapshot_exists"]:raise SeedSafetyError("apply requires all six tables and snapshot to be absent")
   report["application"]=apply_atomic(str(db_url),previews,MIGRATION.read_text(encoding="utf-8"),state["legislators_fingerprint"]); report["postcheck"]=postcheck(str(db_url),previews,state["legislators_fingerprint"])
@@ -229,6 +299,8 @@ def main(argv=None)->int:
   prior=json.loads(REPORT.read_text(encoding="utf-8")) if REPORT.exists() else {}; pre_fp=prior.get("preflight",{}).get("database",{}).get("legislators_fingerprint"); report["application"]=prior.get("application",{"committed":True,"atomic":True}); report["postcheck"]=postcheck(str(db_url),previews,pre_fp)
   report["application"].setdefault("preflight_table_state","absent"); report["application"].setdefault("preflight_snapshot_exists",False); report["application"].setdefault("repeat_absence_check_passed",True); report["legislators_fingerprints"]={"pre":pre_fp,"post":report["postcheck"]["legislators_fingerprint"],"unchanged":pre_fp==report["postcheck"]["legislators_fingerprint"]}
   report["pre_application"]={"table_state":"absent","snapshot_exists":False,"legislators_fingerprint":pre_fp,"zip_district_mappings_row_count":0,"all_hard_gates_passed":True}
+  routes=pre["repository"]["route_state"];flag=pre["repository"]["feature_flag"]
+  report["no_unauthorized_production_or_runtime_mutation"]=bool(report["legislators_fingerprints"]["unchanged"] and report["postcheck"]["zip_district_mappings_row_count"]==0 and all(report["postcheck"]["database_to_preview_equality"].values()) and report["postcheck"]["schema_contract"]["schema_contract_exact"] and routes["lookup_zip_reads_zip_district_map"] and routes["lookup_zip_races_reads_zip_district_map"] and not routes["either_public_endpoint_reads_zip_district_mappings"] and not flag["enabled"])
  elif a.rollback_snapshot:
   if state["table_state"]!="complete" or not state["snapshot_exists"]:raise SeedSafetyError("rollback requires exactly the approved stored snapshot")
   report["rollback"]=rollback(str(db_url),previews,state["legislators_fingerprint"])

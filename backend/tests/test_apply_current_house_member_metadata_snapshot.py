@@ -50,8 +50,29 @@ def test_migration_wrapper_stripping_is_exact():
 
 def test_reviewed_migration_is_additive_and_pinned():
     result=seed.validate_migration(seed.MIGRATION.read_text(encoding="utf-8"))
-    assert result["sha256"]==seed.sha(seed.MIGRATION)
+    assert result["sha256"]==seed.EXPECTED_MIGRATION_SHA256==seed.sha(seed.MIGRATION)
     assert not any(result["banned_matches"].values())
+
+@pytest.mark.parametrize("mutation", ["comment", "character", "substitute", "stripped"])
+def test_any_nonreviewed_migration_bytes_fail_before_structure(mutation):
+    sql=seed.MIGRATION.read_text(encoding="utf-8")
+    changed={"comment":sql.replace("BEGIN;","BEGIN;\n-- changed",1),"character":sql.replace("Additive","additive",1),"substitute":"BEGIN;\nCREATE TABLE IF NOT EXISTS x(a INTEGER);\nCOMMIT;\n","stripped":seed.strip_transaction_wrappers(sql)}[mutation]
+    with pytest.raises(seed.SeedSafetyError,match="checksum mismatch"):seed.validate_migration(changed)
+
+def test_exact_target_is_pinned_and_credentials_masked():
+    result=seed.target("postgresql://user:secret@aws-1-us-east-1.pooler.supabase.com:5432/postgres",Path("backend/.env"))
+    assert result["exact_approved_target"] and result["raw_url_recorded"] is False and "secret" not in repr(result)
+
+@pytest.mark.parametrize("url",[
+    "postgresql://user:secret@other.supabase.com:5432/postgres",
+    "postgresql://user:secret@aws-1-us-east-1.pooler.supabase.com:6543/postgres",
+    "postgresql://user:secret@aws-1-us-east-1.pooler.supabase.com:5432/other",
+    "postgresql://user:secret@localhost:5432/postgres",
+    "postgresql://aws-1-us-east-1.pooler.supabase.com:5432/postgres",
+    "postgresql://user@aws-1-us-east-1.pooler.supabase.com:5432/postgres",
+])
+def test_target_mismatches_fail_closed(url):
+    with pytest.raises(seed.SeedSafetyError,match="exact approved target"):seed.target(url,Path("backend/.env"))
 
 def test_plain_insert_has_no_upsert_or_conflict_ignore():
     sql=seed.insert_sql(seed.TABLES[2],["snapshot_id","bioguide_id"])

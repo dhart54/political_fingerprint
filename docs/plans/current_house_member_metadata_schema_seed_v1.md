@@ -74,3 +74,32 @@
 
 - Definition of done satisfied. Schema and seed are present exactly once, postchecks are clean, rollback is available but unexecuted, and no unauthorized state changed.
 - Recommended next milestone: ZIP overlap sensitivity and bounded mapping-stage design V1.
+
+## PR #88 Retained-Tool Hardening Correction
+
+### Correction Boundary
+
+- [x] No migration application, seed rerun, rollback, or production DML/DDL.
+- [x] The only production interaction was the approved `--postcheck-only` inspection with transaction-level read-only enforcement.
+- [x] Historical application outcomes remain distinct from the current verification.
+
+### Hardened Contracts
+
+- [x] Migration `0014` is byte-pinned to SHA-256 `b80484c2555562033657f6838d3645b1d41ff24d13310a5e72278370bc570ae6` before every operational mode.
+- [x] The production target is pinned to `postgresql://[masked]@aws-1-us-east-1.pooler.supabase.com:5432/postgres`; username and password are required and the raw URL is never reported.
+- [x] The complete migration-derived schema signature fails closed on exact columns, PostgreSQL types, nullability, defaults, primary/unique/check constraints, foreign keys, delete actions, composite keys, and the reviewed index.
+- [x] Rollback acquires the application advisory lock, verifies exact target counts, deletes only the approved snapshot parent row, and proves unrelated rows plus protected tables remain unchanged.
+
+### Correction Validation
+
+- [x] Dedicated hardening suite: 46 passed, including executable fake-database apply/postcheck/rollback behavior and every insert-phase rollback.
+- [x] Combined metadata/readiness/ZIP suite: 107 passed.
+- [x] Read-only production postcheck: counts `1 / 486 / 437 / 441 / 874 / 882`; all database-to-preview equality and canonical checksum checks passed.
+- [x] Exact schema contract: all eight fail-closed verification fields true.
+- [x] Legislators fingerprint unchanged at `637 / 87c12b1054b5390af3a4bc16a1234ecb71ef10edd52b6ad700441e122f1ae7b7`; ZIP rows remain zero; production auto-select remains zero.
+- [x] Route and feature-flag safety checks remain unchanged; JSON validation and diff hygiene passed.
+
+### Correction Reconciliation
+
+- Migration not reapplied; seed not rerun; rollback not executed.
+- No production or runtime mutation occurred during this correction.

@@ -25,24 +25,30 @@
     "preflight_table_state": "absent",
     "repeat_absence_check_passed": true
   },
-  "authorized_writes": [
-    "apply migration 0014",
-    "insert one approved snapshot into six migration tables",
-    "delete only approved snapshot for explicit rollback"
-  ],
   "base_commit": "12e0bbf9c22d2083e78433951858f6b5ea2f071d",
   "branch": "codex/current-house-member-metadata-schema-seed-v1",
-  "execution_deviations": [
-    {
-      "phase": "repeat absence check before DDL",
-      "result": "transaction aborted before DDL due dict-row indexing defect; verified all six tables remained absent"
-    },
-    {
-      "phase": "first insert after transactional DDL",
-      "result": "transaction aborted due cursor API defect; DDL and seed rolled back atomically; verified all six tables remained absent"
+  "current_correction_production_write_performed": false,
+  "generated_at": "2026-07-14T02:56:48.179714+00:00",
+  "historical_application": {
+    "application_result": "committed_atomically",
+    "deviations": [
+      {
+        "phase": "repeat absence check before DDL",
+        "result": "transaction aborted before DDL due dict-row indexing defect; verified all six tables remained absent"
+      },
+      {
+        "phase": "first insert after transactional DDL",
+        "result": "transaction aborted due cursor API defect; DDL and seed rolled back atomically; verified all six tables remained absent"
+      }
+    ],
+    "snapshot_id": "house-119-20260713T011722Z",
+    "target": {
+      "database": "postgres",
+      "host": "aws-1-us-east-1.pooler.supabase.com",
+      "port": 5432,
+      "scheme": "postgresql"
     }
-  ],
-  "generated_at": "2026-07-14T02:33:47.874884+00:00",
+  },
   "legislators_fingerprints": {
     "post": {
       "row_count": 637,
@@ -145,7 +151,8 @@
       "house_seat_status_evidence_artifacts": 882
     },
     "schema_contract": {
-      "column_contract_exact": true,
+      "column_names_exact": true,
+      "column_types_exact": true,
       "columns": [
         {
           "column_default": "nextval('house_member_metadata_snapshot_artifacts_id_seq'::regclass)",
@@ -877,6 +884,7 @@
         }
       ],
       "constraint_count": 44,
+      "constraint_set_exact": true,
       "constraints": [
         {
           "constraint_name": "house_member_metadata_snapshot_ar_snapshot_id_artifact_path_key",
@@ -1143,7 +1151,19 @@
           "table_name": "house_seat_status_evidence_artifacts"
         }
       ],
-      "index_present": true,
+      "defaults_exact": true,
+      "delete_actions_exact": true,
+      "foreign_keys_exact": true,
+      "indexes": [
+        {
+          "indexdef": "CREATE INDEX idx_house_member_service_seat ON public.house_member_service_evidence USING btree (congress, canonical_state, canonical_district)",
+          "indexname": "idx_house_member_service_seat",
+          "tablename": "house_member_service_evidence"
+        }
+      ],
+      "indexes_exact": true,
+      "nullability_exact": true,
+      "schema_contract_exact": true,
       "tables_exact": true
     },
     "vacancies": [
@@ -1344,12 +1364,13 @@
   "target": {
     "database": "postgres",
     "environment_file": "backend\\.env",
+    "exact_approved_target": true,
     "host": "aws-1-us-east-1.pooler.supabase.com",
     "password_present": true,
     "port": 5432,
     "raw_url_recorded": false,
     "scheme": "postgresql",
-    "supabase_production_like": true,
     "username_present": true
-  }
+  },
+  "verification_kind": "hardened_read_only_verification"
 }
