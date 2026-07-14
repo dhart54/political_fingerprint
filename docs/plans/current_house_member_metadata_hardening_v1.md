@@ -35,6 +35,10 @@
 - [x] Member/seat evidence has explicit snapshot-scoped artifact lineage with duplicate prevention and cascade rollback.
 - [x] Replay independently proves list pagination, detail completeness/identity, statuses, URLs, and exact artifact types.
 - [x] Packets/manifests are regenerated, the full requested validation matrix passes, and PR #87 is updated without applying the migration.
+- [x] Member-service previews copy exact URL, checksum, retrieval timestamp, and source labels from their allowlisted detail artifact.
+- [x] Preview validation fails on date-only or mismatched member/artifact provenance.
+- [x] Replay reports 481 detail candidates, 437 normalized current-119th-House members, and 44 skipped historical-House candidates without changing the roster.
+- [x] Regenerated artifacts, no-write validation, corrective commit/push, and draft PR #87 description update are complete.
 
 ## Baseline
 
@@ -69,6 +73,10 @@
 - [x] Seed-preview and evidence-lineage implementation
 - [x] Full no-write validation and artifact regeneration
 - [x] Corrective commit, push, and existing-PR description update
+- [x] Exact-provenance correction baseline
+- [x] Member row/artifact provenance implementation and failure coverage
+- [x] Artifact regeneration and full no-write validation
+- [x] Corrective commit, push, and existing-PR description update
 
 ## Discoveries
 
@@ -96,6 +104,8 @@
 - Post-review correction reopened the milestone: the Clerk parser recognized `Special Election` but not `Special General Election`, causing CA-14 former-member overcapture and loss of the scheduled election date/type.
 - Existing normalized previews are descriptive rather than directly insertable, and multi-source conclusions require normalized evidence-to-artifact junctions instead of one arbitrary source field.
 - Replay must derive its expected detail set and pagination from the Congress list artifacts so a self-consistently edited manifest cannot hide an omitted required detail.
+- A follow-up review found member previews retained the parser's date-only batch value instead of the exact detail artifact retrieval timestamp; the seed preview must replace all member source provenance from the matching snapshot-artifact row.
+- The 481 replay details are House-term candidates from the list response, not all current 119th-House members; 437 normalize into the current roster and 44 lack a 119th-House term.
 
 ## Validation Results
 
@@ -116,12 +126,16 @@
 - Snapshot/rollback schema now includes snapshot and artifact tables; service/seat evidence is unique within snapshot and deletable by snapshot ID without blocking later historical snapshots.
 - Final corrected combined suite: 74 passed in 9.75 seconds.
 - Corrected Clerk contract: CA-14 now parses Eric Swalwell, resigned 2026-04-14, `special_general`, election 2026-08-18; GA-13, FL-20, and TX-23 effective dates remain unchanged.
-- Manifest-authoritative replay independently derived offsets 0/250/500, termination, 537 list records, 481 current-House Bioguide IDs/detail files, successful statuses, exact URL/path agreement, and exactly one House plus one Clerk artifact.
+- Manifest-authoritative replay independently derived offsets 0/250/500, termination, 537 list records, 481 House-term candidate detail files, successful statuses, exact URL/path agreement, and exactly one House plus one Clerk artifact; 437 details normalized into the current 119th-House roster and 44 were skipped for lacking that term.
 - Committed normalized seed previews: one snapshot, 486 artifacts, 437 member-service rows, 441 seat-status rows, 874 member-artifact links, and 882 seat-artifact links; zero unmatched or noninsertable rows.
 - Preview validation passed by comparing exact insertable columns to migration `0014`, checking required values and enums, and resolving every evidence/artifact target without reading raw sources.
 - Final combined metadata/readiness/ZIP suite: 82 passed; eight milestone JSON files validated; Python compilation and `git diff --check` passed.
 - Final read-only ZIP postcheck: zero mapping rows, zero unique ZIPs, zero auto-select eligibility, migration not applied, and seed not loaded.
 - All six proposed tables (the four core tables plus two evidence-artifact junctions) remain absent; both public ZIP routes still read `zip_district_map`; the multi-row flag remains absent/not enabled.
+- Exact member-artifact provenance correction: all 437 member rows now copy source name/type/URL, SHA-256, and full timezone-aware retrieval timestamp from their own allowlisted detail artifact; A000055 is `2026-07-13T01:17:24.356968+00:00` in both rows.
+- Provenance validation passed for all rows and deterministically rejected both a changed timestamp and a date-only value.
+- Corrected replay terminology reports 481 House-term candidate detail artifacts, 437 normalized current-119th-House members, and 44 skipped details without that term; the normalized roster and all readiness counts are unchanged.
+- Final provenance-correction validation: 82 combined tests passed, eight JSON files validated, read-only ZIP postcheck passed with zero rows/eligibility, all six proposed tables remained absent, routes/flag remained unchanged, and `git diff --check` passed.
 
 ## Production Writes
 
@@ -138,6 +152,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: yes; seed-readiness corrections, normalized artifacts, lineage, replay completeness, validation, and existing draft PR #87 delivery are complete.
+- Definition of done satisfied: yes; exact detail-artifact provenance, failure validation, corrected replay terminology, regenerated artifacts, no-write checks, and existing draft PR #87 delivery are complete.
 - Remaining limitations: Congress service dates are year precision; exact vacancy dates exist only where explicitly displayed; four production rows remain stale until an authorized later write.
 - Recommended next step: Current House member metadata schema application and bounded seed V1 because official sources reconcile with zero seat conflicts and the additive schema contract passes; do not switch ZIP routes.

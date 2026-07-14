@@ -30,6 +30,9 @@ def build(a):
     if not db_url:raise SourceContractError("DATABASE_URL missing")
     utc_today=datetime.now(timezone.utc).date(); rm,retrieved_on=load_retrieval_batch(batch,today=utc_today); sid=rm["snapshot_id"]; allowed={Path(x).name for x in rm["artifact_allowlist"] if x.startswith("member_details/")}
     members=parse_congress_details(batch/"member_details",retrieved_on=retrieved_on,allowed_files=allowed); house=parse_house_directory((batch/"house_representatives.html").read_text(encoding="utf-8")); clerk=parse_clerk_vacancies((batch/"clerk_vacancies.html").read_text(encoding="utf-8")); universe=validate_house_seat_universe(house)
+    detail_count=rm["replay_completeness"]["house_term_candidate_detail_count"]; normalized_count=len(members); skipped_count=detail_count-normalized_count
+    if skipped_count<0:raise SourceContractError("normalized 119th-House member count exceeds retrieved detail candidates")
+    rm["replay_completeness"].update({"congress_detail_artifacts_retrieved":detail_count,"normalized_current_119th_house_member_count":normalized_count,"detail_records_skipped_without_119th_house_term":skipped_count})
     db=readiness.inspect_members_read_only(str(db_url)); proposed=inspect_proposed_tables(str(db_url)); repo=readiness.inspect_repository_state(ROOT); readiness.ensure_repository_state_safe(repo)
     if any(proposed.values()):raise SourceContractError("proposed migration tables already exist")
     by_seat={}

@@ -191,7 +191,7 @@ def validate_replay_completeness(batch_dir: Path, recorded: dict[str, dict[str, 
         "page_offsets": [int(LIST_ARTIFACT_RE.fullmatch(rel).group(1)) for rel in expected_list_paths],
         "pagination_terminated": True,
         "list_record_count": len(list_records),
-        "current_house_bioguide_count": len(house_ids),
+        "house_term_candidate_detail_count": len(house_ids),
         "expected_detail_count": len(expected_details),
         "detail_set_exact": True,
         "successful_http_statuses": True,
@@ -456,6 +456,7 @@ def build_seed_previews(
             "retrieved_at": row["retrieved_at"], "size_bytes": row["size_bytes"], "sha256": row["sha256"],
             "retry_count": row["retry_count"],
         })
+    artifact_preview_by_path = {row["artifact_path"]: row for row in artifacts}
     snapshot = [{
         "snapshot_id": sid, "congress": CONGRESS, "retrieval_started_at": manifest["retrieval_started_at"],
         "retrieval_completed_at": manifest["retrieval_completed_at"], "parser_version": manifest["parser_version"],
@@ -468,10 +469,22 @@ def build_seed_previews(
     for member in sorted(members, key=lambda item: item["bioguide_id"]):
         key = (member["canonical_state"], member["canonical_district"])
         currentness = statuses.get(key, "unknown")
-        row = {column: member.get(column) for column in MEMBER_PREVIEW_COLUMNS if column not in {"snapshot_id", "legislator_id", "metadata_currentness"}}
-        row.update({"snapshot_id": sid, "legislator_id": production_by_bioguide.get(str(member["bioguide_id"]), {}).get("id"), "metadata_currentness": currentness})
-        member_rows.append(row)
         detail_path = f"member_details/{member['bioguide_id']}.json"
+        detail_artifact = artifact_preview_by_path.get(detail_path)
+        if detail_artifact is None:
+            raise SourceContractError(f"member preview detail artifact missing: {detail_path}")
+        row = {column: member.get(column) for column in MEMBER_PREVIEW_COLUMNS if column not in {"snapshot_id", "legislator_id", "metadata_currentness"}}
+        row.update({
+            "snapshot_id": sid,
+            "legislator_id": production_by_bioguide.get(str(member["bioguide_id"]), {}).get("id"),
+            "source_name": detail_artifact["source_name"],
+            "source_type": detail_artifact["source_type"],
+            "source_url": detail_artifact["source_url"],
+            "source_retrieved_at": detail_artifact["retrieved_at"],
+            "source_checksum": detail_artifact["sha256"],
+            "metadata_currentness": currentness,
+        })
+        member_rows.append(row)
         member_links.append({"snapshot_id": sid, "bioguide_id": member["bioguide_id"], "congress": CONGRESS, "canonical_state": key[0], "canonical_district": key[1], "artifact_path": detail_path, "evidence_role": "primary_identity"})
         if currentness == "current_cross_source_confirmed":
             member_links.append({"snapshot_id": sid, "bioguide_id": member["bioguide_id"], "congress": CONGRESS, "canonical_state": key[0], "canonical_district": key[1], "artifact_path": "house_representatives.html", "evidence_role": "roster_confirmation"})
@@ -569,7 +582,8 @@ def validate_seed_previews(previews: dict[str, list[dict[str, Any]]], *, migrati
                 errors.append(f"{name}[{index}] columns differ: missing={sorted(columns-set(row))} extra={sorted(set(row)-columns)}")
             missing_values = sorted(column for column in required_values[name] if row.get(column) is None)
             if missing_values: errors.append(f"{name}[{index}] required values are null: {missing_values}")
-    artifact_keys = {(row["snapshot_id"], row["artifact_path"]) for row in previews["normalized_snapshot_artifacts.json"]}
+    artifacts_by_key = {(row["snapshot_id"], row["artifact_path"]): row for row in previews["normalized_snapshot_artifacts.json"]}
+    artifact_keys = set(artifacts_by_key)
     member_keys = {(row["snapshot_id"], row["bioguide_id"], row["congress"], row["canonical_state"], row["canonical_district"]) for row in previews["normalized_member_service.json"]}
     seat_keys = {(row["snapshot_id"], row["congress"], row["canonical_state"], row["canonical_district"]) for row in previews["normalized_seat_status.json"]}
     for name in ("normalized_member_service_evidence_artifacts.json", "normalized_seat_status_evidence_artifacts.json"):
@@ -592,7 +606,22 @@ def validate_seed_previews(previews: dict[str, list[dict[str, Any]]], *, migrati
         key=(row["snapshot_id"],row["bioguide_id"],row["congress"],row["canonical_state"],row["canonical_district"]); member_link_roles.setdefault(key,set()).add((row["artifact_path"],row["evidence_role"]))
     for row in previews["normalized_member_service.json"]:
         key=(row["snapshot_id"],row["bioguide_id"],row["congress"],row["canonical_state"],row["canonical_district"]); roles=member_link_roles.get(key,set())
-        if (f"member_details/{row['bioguide_id']}.json","primary_identity") not in roles: errors.append(f"member {row['bioguide_id']} lacks detail lineage")
+        detail_path=f"member_details/{row['bioguide_id']}.json"
+        if (detail_path,"primary_identity") not in roles: errors.append(f"member {row['bioguide_id']} lacks detail lineage")
+        artifact=artifacts_by_key.get((row["snapshot_id"],detail_path))
+        if artifact is None:
+            errors.append(f"member {row['bioguide_id']} lacks expected detail artifact")
+        else:
+            expected={"source_name":artifact["source_name"],"source_type":artifact["source_type"],"source_url":artifact["source_url"],"source_retrieved_at":artifact["retrieved_at"],"source_checksum":artifact["sha256"]}
+            mismatched=sorted(field for field,value in expected.items() if row.get(field)!=value)
+            if mismatched: errors.append(f"member {row['bioguide_id']} detail artifact provenance mismatch: {mismatched}")
+        retrieved_at=str(row.get("source_retrieved_at") or "")
+        try:
+            parsed_retrieved_at=datetime.fromisoformat(retrieved_at.replace("Z","+00:00"))
+        except ValueError:
+            parsed_retrieved_at=None
+        if "T" not in retrieved_at or parsed_retrieved_at is None or parsed_retrieved_at.tzinfo is None:
+            errors.append(f"member {row['bioguide_id']} source_retrieved_at must be an exact timezone-aware ISO-8601 timestamp")
         if row["metadata_currentness"]=="current_cross_source_confirmed" and ("house_representatives.html","roster_confirmation") not in roles: errors.append(f"member {row['bioguide_id']} lacks roster lineage")
     seat_link_roles: dict[tuple[Any, ...], set[tuple[str, str]]] = {}
     for row in previews["normalized_seat_status_evidence_artifacts.json"]:
@@ -602,7 +631,7 @@ def validate_seed_previews(previews: dict[str, list[dict[str, Any]]], *, migrati
         if row["metadata_currentness"]=="current_cross_source_confirmed" and not ({"roster_confirmation","primary_identity"} <= {role for _,role in roles}): errors.append(f"filled seat {row['canonical_state']}-{row['canonical_district']} lacks cross-source lineage")
         if row["seat_status"]=="vacant" and not ({("house_representatives.html","vacancy_confirmation"),("clerk_vacancies.html","vacancy_confirmation")} <= roles): errors.append(f"vacant seat {row['canonical_state']}-{row['canonical_district']} lacks House/Clerk lineage")
     if errors: raise SourceContractError("normalized preview schema validation failed: " + "; ".join(errors[:5]))
-    return {"passed": True, "errors": [], "unmatched_member_rows": noninsertable_members, "noninsertable_preview_rows": 0}
+    return {"passed": True, "errors": [], "member_row_artifact_provenance_passed": True, "exact_member_retrieval_timestamp_required": True, "unmatched_member_rows": noninsertable_members, "noninsertable_preview_rows": 0}
 
 
 def sha256_file(path: Path) -> str:

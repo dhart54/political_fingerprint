@@ -172,7 +172,9 @@ def test_current_member_false_detail_is_rejected():
 
 def test_manifest_replay_checksum_orphan_and_stale_failures():
     batch,rows=make_valid_replay_batch()
-    assert metadata.load_retrieval_batch(batch,today=date(2026,7,12))[0]["replay_completeness"]["detail_set_exact"] is True
+    replay=metadata.load_retrieval_batch(batch,today=date(2026,7,12))[0]["replay_completeness"]
+    assert replay["detail_set_exact"] is True and replay["house_term_candidate_detail_count"]==1
+    assert "current_house_bioguide_count" not in replay
     (batch/"orphan.json").write_text("{}",encoding="utf-8")
     with pytest.raises(metadata.SourceContractError,match="orphan"):metadata.load_retrieval_batch(batch,today=date(2026,7,12))
     (batch/"orphan.json").unlink(); artifact=batch/"congress_119_current_000.json"; artifact.write_text("tampered",encoding="utf-8")
@@ -236,13 +238,23 @@ def test_normalized_previews_map_exactly_to_schema_and_lineage_targets():
     statuses={("NC","04"):"current_cross_source_confirmed",("CA","14"):"vacant_officially_confirmed"}
     previews=metadata.build_seed_previews(manifest=manifest,manifest_checksum="c"*64,members=[member],house_records=house,clerk_events=clerk,statuses=statuses,production_rows=[{"id":42,"bioguide_id":"A000001"}])
     result=metadata.validate_seed_previews(previews,migration_sql=MIGRATION.read_text(encoding="utf-8"))
-    assert result=={"passed":True,"errors":[],"unmatched_member_rows":[],"noninsertable_preview_rows":0}
+    assert result=={"passed":True,"errors":[],"member_row_artifact_provenance_passed":True,"exact_member_retrieval_timestamp_required":True,"unmatched_member_rows":[],"noninsertable_preview_rows":0}
     assert set(previews["normalized_member_service.json"][0])==metadata.MEMBER_PREVIEW_COLUMNS
     ca=next(row for row in previews["normalized_seat_status.json"] if row["canonical_state"]=="CA")
     assert ca["seat_status"]=="vacant" and ca["metadata_currentness"]=="vacant_officially_confirmed"
     assert ca["current_legislator_id"] is None and ca["special_election_date"]=="2026-08-18"
     assert len(previews["normalized_member_service_evidence_artifacts.json"])==2
     assert len(previews["normalized_seat_status_evidence_artifacts.json"])==4
+    artifact=next(row for row in previews["normalized_snapshot_artifacts.json"] if row["artifact_path"]=="member_details/A000001.json")
+    normalized_member=previews["normalized_member_service.json"][0]
+    assert normalized_member["source_retrieved_at"]==artifact["retrieved_at"]=="2026-07-12T01:00:00+00:00"
+    normalized_member["source_retrieved_at"]="2026-07-12T01:00:01+00:00"
+    with pytest.raises(metadata.SourceContractError,match="detail artifact provenance mismatch"):
+        metadata.validate_seed_previews(previews,migration_sql=MIGRATION.read_text(encoding="utf-8"))
+    normalized_member["source_retrieved_at"]="2026-07-12"
+    with pytest.raises(metadata.SourceContractError,match="timezone-aware ISO-8601 timestamp"):
+        metadata.validate_seed_previews(previews,migration_sql=MIGRATION.read_text(encoding="utf-8"))
+    normalized_member["source_retrieved_at"]=artifact["retrieved_at"]
     changed_sql=MIGRATION.read_text(encoding="utf-8").replace("special_election_date DATE","successor_election_date DATE")
     with pytest.raises(metadata.SourceContractError,match="does not map exactly to migration table"):
         metadata.validate_seed_previews(previews,migration_sql=changed_sql)

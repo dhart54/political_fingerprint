@@ -4401,8 +4401,8 @@
     {
       "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service.json",
       "row_count": 437,
-      "sha256": "f2b7d9c145722a340dfdef3dad1313b5b0c20b75dc7b88081d31edc511517ef3",
-      "size_bytes": 456947
+      "sha256": "9533e72fccce9640e6f58749f4f052990bf2d11bc5aea143be59109e38e66d09",
+      "size_bytes": 466561
     },
     {
       "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_seat_status.json",
@@ -4425,6 +4425,8 @@
   ],
   "preview_schema_validation": {
     "errors": [],
+    "exact_member_retrieval_timestamp_required": true,
+    "member_row_artifact_provenance_passed": true,
     "noninsertable_preview_rows": 0,
     "passed": true,
     "unmatched_member_rows": []
@@ -4944,11 +4946,14 @@
     "parser_version": "current_house_member_metadata_v1",
     "replay_completeness": {
       "clerk_vacancy_artifact_count": 1,
-      "current_house_bioguide_count": 481,
+      "congress_detail_artifacts_retrieved": 481,
+      "detail_records_skipped_without_119th_house_term": 44,
       "detail_set_exact": true,
       "expected_detail_count": 481,
       "house_directory_artifact_count": 1,
+      "house_term_candidate_detail_count": 481,
       "list_record_count": 537,
+      "normalized_current_119th_house_member_count": 437,
       "page_offsets": [
         0,
         250,
@@ -4983,8 +4988,8 @@
       {
         "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service.json",
         "row_count": 437,
-        "sha256": "f2b7d9c145722a340dfdef3dad1313b5b0c20b75dc7b88081d31edc511517ef3",
-        "size_bytes": 456947
+        "sha256": "9533e72fccce9640e6f58749f4f052990bf2d11bc5aea143be59109e38e66d09",
+        "size_bytes": 466561
       },
       {
         "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_seat_status.json",
@@ -5007,6 +5012,8 @@
     ],
     "preview_schema_validation": {
       "errors": [],
+      "exact_member_retrieval_timestamp_required": true,
+      "member_row_artifact_provenance_passed": true,
       "noninsertable_preview_rows": 0,
       "passed": true,
       "unmatched_member_rows": []
