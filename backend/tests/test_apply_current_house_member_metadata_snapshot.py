@@ -1,0 +1,106 @@
+from __future__ import annotations
+import copy, json
+from datetime import date
+from pathlib import Path
+import shutil
+import pytest
+from backend.scripts import apply_current_house_member_metadata_snapshot as seed
+
+def test_pinned_snapshot_id_enforced():
+    with pytest.raises(seed.SeedSafetyError,match="exact approved snapshot"):
+        seed.main(["--preflight-only","--snapshot-id","wrong"])
+
+def test_pinned_previews_counts_checksums_and_freshness():
+    previews,meta=seed.load_previews(today=date(2026,7,13))
+    assert [len(previews[t]) for t in seed.TABLES]==[1,486,437,441,874,882]
+    assert meta["fresh"] is True and meta["snapshot_age_days"]==0
+
+CASES=seed.ROOT/"backend/tests/_house_metadata_seed_cases"
+
+def setup_function():
+    if CASES.exists():shutil.rmtree(CASES)
+    CASES.mkdir(parents=True)
+
+def teardown_function():
+    if CASES.exists():shutil.rmtree(CASES)
+
+def test_preview_checksum_mismatch(monkeypatch):
+    tmp_path=CASES
+    monkeypatch.setattr(seed,"PREVIEW_DIR",tmp_path)
+    with pytest.raises(seed.SeedSafetyError,match="checksum mismatch"):seed.load_previews(today=date(2026,7,13))
+
+def test_preview_count_mismatch(monkeypatch):
+    tmp_path=CASES
+    source=seed.PREVIEW_DIR/"normalized_snapshot.json"; target=tmp_path/source.name; target.write_text("[]",encoding="utf-8")
+    changed=dict(seed.PREVIEWS); changed[seed.TABLES[0]]=(source.name,1,seed.sha(target)); monkeypatch.setattr(seed,"PREVIEWS",changed); monkeypatch.setattr(seed,"PREVIEW_DIR",tmp_path)
+    with pytest.raises(seed.SeedSafetyError,match="count mismatch"):seed.load_previews(today=date(2026,7,13))
+
+def test_stale_snapshot_rejected():
+    with pytest.raises(seed.SeedSafetyError,match="stale"):seed.load_previews(today=date(2026,7,25))
+
+@pytest.mark.parametrize("sql",["ALTER TABLE legislators ADD x int;","DROP TABLE x;","TRUNCATE legislators;","UPDATE legislators SET in_office=false;","DELETE FROM legislators;","INSERT INTO legislators(id) VALUES(1);","COPY legislators FROM STDIN;","CREATE FUNCTION x() RETURNS void AS $$ $$ LANGUAGE sql;"])
+def test_banned_migration_sql(sql):
+    wrapped=f"BEGIN;\n{sql}\nCOMMIT;\n"
+    with pytest.raises(seed.SeedSafetyError):seed.validate_migration(wrapped)
+
+def test_migration_wrapper_stripping_is_exact():
+    body=seed.strip_transaction_wrappers("BEGIN;\n-- c\nCREATE TABLE x(a int);\nCOMMIT;\n")
+    assert body=="-- c\nCREATE TABLE x(a int);\n"
+    with pytest.raises(seed.SeedSafetyError):seed.strip_transaction_wrappers("BEGIN TRANSACTION;\nSELECT 1;\nCOMMIT;")
+
+def test_reviewed_migration_is_additive_and_pinned():
+    result=seed.validate_migration(seed.MIGRATION.read_text(encoding="utf-8"))
+    assert result["sha256"]==seed.sha(seed.MIGRATION)
+    assert not any(result["banned_matches"].values())
+
+def test_plain_insert_has_no_upsert_or_conflict_ignore():
+    sql=seed.insert_sql(seed.TABLES[2],["snapshot_id","bioguide_id"])
+    assert sql=="INSERT INTO house_member_service_evidence (snapshot_id,bioguide_id) VALUES (%s,%s)"
+    assert "conflict" not in sql.lower() and "update" not in sql.lower()
+    assert "with conn.cursor() as cursor:cursor.executemany" in Path(seed.__file__).read_text(encoding="utf-8")
+
+def test_exact_insertion_order_is_dependency_order():
+    assert seed.TABLES==("house_member_metadata_snapshots","house_member_metadata_snapshot_artifacts","house_member_service_evidence","house_seat_status_evidence","house_member_service_evidence_artifacts","house_seat_status_evidence_artifacts")
+
+def test_timestamp_normalization_and_exact_row_mismatch():
+    assert seed.canonical("2026-07-12T07:40:20Z")=="2026-07-12T07:40:20+00:00"
+    rows=[{"snapshot_id":seed.SNAPSHOT_ID,"source_retrieved_at":"2026-07-12T07:40:20Z"}]
+    changed=copy.deepcopy(rows); changed[0]["source_retrieved_at"]="2026-07-12T07:40:21Z"
+    assert seed.content_sha(rows)!=seed.content_sha(changed)
+
+def test_identity_requirements_and_production_mapping():
+    previews,_=seed.load_previews(today=date(2026,7,13)); ids={r["legislator_id"]:r["bioguide_id"] for r in previews[seed.TABLES[2]]}
+    legislators=[{"id":i,"bioguide_id":b,"chamber":"house","state":"NC","district":"01","in_office":True,"updated_at":None} for i,b in ids.items()]
+    state={"legislators":legislators}
+    assert seed.validate_identities(previews,state)["unmatched_production_identities"]==0
+    bad=copy.deepcopy(previews); bad[seed.TABLES[2]][0]["legislator_id"]=-1
+    with pytest.raises(seed.SeedSafetyError,match="identity mismatch"):seed.validate_identities(bad,state)
+
+def test_filled_and_vacant_seat_identity_rules():
+    previews,_=seed.load_previews(today=date(2026,7,13)); member_ids={r["legislator_id"]:r["bioguide_id"] for r in previews[seed.TABLES[2]]}; legislators=[{"id":i,"bioguide_id":b} for i,b in member_ids.items()]; state={"legislators":legislators}
+    filled=next(r for r in previews[seed.TABLES[3]] if r["seat_status"]=="filled"); filled["current_legislator_id"]=None
+    with pytest.raises(seed.SeedSafetyError,match="filled-seat"):seed.validate_identities(previews,state)
+    previews,_=seed.load_previews(today=date(2026,7,13)); vacant=next(r for r in previews[seed.TABLES[3]] if r["seat_status"]=="vacant"); vacant["current_legislator_id"]=1
+    with pytest.raises(seed.SeedSafetyError,match="vacant seat"):seed.validate_identities(previews,state)
+
+def test_advisory_lock_and_rollback_are_narrow_static_contracts():
+    text=Path(seed.__file__).read_text(encoding="utf-8").lower()
+    assert "pg_advisory_xact_lock" in text and "delete from house_member_metadata_snapshots where snapshot_id = %s" in text
+    assert "--rollback-snapshot" in text and "--confirm-rollback-snapshot-from-backend-env-supabase" in text
+    assert "production_auto_select_eligible_count\":0" in text.replace(" ","")
+
+def test_transaction_rollback_structure_covers_all_insert_phases():
+    text=Path(seed.__file__).read_text(encoding="utf-8")
+    assert "with conn.transaction():" in text
+    assert "for table in TABLES:insert_phase" in text
+    apply_body=text[text.index("def apply_atomic"):text.index("def db_rows")]
+    assert apply_body.index("pg_advisory_xact_lock")<apply_body.index("strip_transaction_wrappers")<apply_body.index("for table in TABLES:insert_phase")
+    assert 'SELECT COUNT(*) AS n FROM information_schema.tables' in apply_body and 'fetchone()["n"]' in apply_body
+
+def test_fingerprint_changes_on_legislator_or_zip_safety_input():
+    rows=[{"id":1,"bioguide_id":"A000001","chamber":"house","state":"NC","district":"01","in_office":True,"updated_at":None}]
+    before=seed.fingerprint(rows); rows[0]["in_office"]=False
+    assert seed.fingerprint(rows)!=before
+
+def test_expected_postcheck_counts_are_pinned():
+    assert {t:seed.PREVIEWS[t][1] for t in seed.TABLES}==dict(zip(seed.TABLES,[1,486,437,441,874,882]))

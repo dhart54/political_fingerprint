@@ -1,0 +1,1355 @@
+{
+  "application": {
+    "advisory_lock_acquired": true,
+    "atomic": true,
+    "committed": true,
+    "in_transaction_exact_preview_equality": true,
+    "in_transaction_existing_state_unchanged": true,
+    "inserted_counts": {
+      "house_member_metadata_snapshot_artifacts": 486,
+      "house_member_metadata_snapshots": 1,
+      "house_member_service_evidence": 437,
+      "house_member_service_evidence_artifacts": 874,
+      "house_seat_status_evidence": 441,
+      "house_seat_status_evidence_artifacts": 882
+    },
+    "insertion_order": [
+      "house_member_metadata_snapshots",
+      "house_member_metadata_snapshot_artifacts",
+      "house_member_service_evidence",
+      "house_seat_status_evidence",
+      "house_member_service_evidence_artifacts",
+      "house_seat_status_evidence_artifacts"
+    ],
+    "preflight_snapshot_exists": false,
+    "preflight_table_state": "absent",
+    "repeat_absence_check_passed": true
+  },
+  "authorized_writes": [
+    "apply migration 0014",
+    "insert one approved snapshot into six migration tables",
+    "delete only approved snapshot for explicit rollback"
+  ],
+  "base_commit": "12e0bbf9c22d2083e78433951858f6b5ea2f071d",
+  "branch": "codex/current-house-member-metadata-schema-seed-v1",
+  "execution_deviations": [
+    {
+      "phase": "repeat absence check before DDL",
+      "result": "transaction aborted before DDL due dict-row indexing defect; verified all six tables remained absent"
+    },
+    {
+      "phase": "first insert after transactional DDL",
+      "result": "transaction aborted due cursor API defect; DDL and seed rolled back atomically; verified all six tables remained absent"
+    }
+  ],
+  "generated_at": "2026-07-14T02:33:47.874884+00:00",
+  "legislators_fingerprints": {
+    "post": {
+      "row_count": 637,
+      "sha256": "87c12b1054b5390af3a4bc16a1234ecb71ef10edd52b6ad700441e122f1ae7b7"
+    },
+    "pre": {
+      "row_count": 637,
+      "sha256": "87c12b1054b5390af3a4bc16a1234ecb71ef10edd52b6ad700441e122f1ae7b7"
+    },
+    "unchanged": true
+  },
+  "mode": "postcheck",
+  "no_unauthorized_production_or_runtime_mutation": true,
+  "postcheck": {
+    "database_content_checksums": {
+      "house_member_metadata_snapshot_artifacts": {
+        "database": "a6974bc80781f9b0a8fb656eabfafcff1fece97b7eeaac23332320d5f406a0cf",
+        "match": true,
+        "preview": "a6974bc80781f9b0a8fb656eabfafcff1fece97b7eeaac23332320d5f406a0cf"
+      },
+      "house_member_metadata_snapshots": {
+        "database": "2ca9f9c8b2d49666f2b741cc5ad05d55d0c27b201dae004ba8b57b64b7027b44",
+        "match": true,
+        "preview": "2ca9f9c8b2d49666f2b741cc5ad05d55d0c27b201dae004ba8b57b64b7027b44"
+      },
+      "house_member_service_evidence": {
+        "database": "bd7f870b2e6a9a06331782d1e536369ed1a6859c293b4a6e890ee3ecc4b878e8",
+        "match": true,
+        "preview": "bd7f870b2e6a9a06331782d1e536369ed1a6859c293b4a6e890ee3ecc4b878e8"
+      },
+      "house_member_service_evidence_artifacts": {
+        "database": "8a1e359844b5d6c7b81efff4174275f02d41d7af14a452f3516f84c9266ee5f3",
+        "match": true,
+        "preview": "8a1e359844b5d6c7b81efff4174275f02d41d7af14a452f3516f84c9266ee5f3"
+      },
+      "house_seat_status_evidence": {
+        "database": "4e984567df929a20bb72e64892045fdbda886b1e9d5be7f2952f11505187c0ea",
+        "match": true,
+        "preview": "4e984567df929a20bb72e64892045fdbda886b1e9d5be7f2952f11505187c0ea"
+      },
+      "house_seat_status_evidence_artifacts": {
+        "database": "2beeb4f8eae80703215656035840bda35c90ee603e184adf52ddab73890befae",
+        "match": true,
+        "preview": "2beeb4f8eae80703215656035840bda35c90ee603e184adf52ddab73890befae"
+      }
+    },
+    "database_to_preview_equality": {
+      "house_member_metadata_snapshot_artifacts": true,
+      "house_member_metadata_snapshots": true,
+      "house_member_service_evidence": true,
+      "house_member_service_evidence_artifacts": true,
+      "house_seat_status_evidence": true,
+      "house_seat_status_evidence_artifacts": true
+    },
+    "domain_counts": {
+      "lineage": {
+        "member_links": 874,
+        "member_primary_identity": 437,
+        "member_roster_confirmation": 437,
+        "seat_links": 882
+      },
+      "members": {
+        "cross_source_confirmed": 437,
+        "delegates": 5,
+        "resident_commissioner": 1,
+        "total": 437,
+        "voting_representatives": 431
+      },
+      "seats": {
+        "delegates": 5,
+        "filled": 437,
+        "primary_source_only": 0,
+        "resident_commissioner": 1,
+        "source_conflict": 0,
+        "total": 441,
+        "unknown": 0,
+        "vacant": 4,
+        "voting": 435
+      }
+    },
+    "legislators_fingerprint": {
+      "row_count": 637,
+      "sha256": "87c12b1054b5390af3a4bc16a1234ecb71ef10edd52b6ad700441e122f1ae7b7"
+    },
+    "lineage_checks": {
+      "all_confirmed_members_have_roster_confirmation": true,
+      "all_links_resolve": true,
+      "all_member_timestamps_timezone_aware": true,
+      "all_members_have_primary_identity": true,
+      "filled_seats_have_house_and_congress": true,
+      "no_orphan_links": true,
+      "vacant_seats_have_house_and_clerk": true
+    },
+    "row_counts": {
+      "house_member_metadata_snapshot_artifacts": 486,
+      "house_member_metadata_snapshots": 1,
+      "house_member_service_evidence": 437,
+      "house_member_service_evidence_artifacts": 874,
+      "house_seat_status_evidence": 441,
+      "house_seat_status_evidence_artifacts": 882
+    },
+    "schema_contract": {
+      "column_contract_exact": true,
+      "columns": [
+        {
+          "column_default": "nextval('house_member_metadata_snapshot_artifacts_id_seq'::regclass)",
+          "column_name": "id",
+          "data_type": "bigint",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshot_artifacts",
+          "udt_name": "int8"
+        },
+        {
+          "column_default": null,
+          "column_name": "snapshot_id",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshot_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_name",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshot_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_type",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshot_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_url",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshot_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "artifact_path",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshot_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "http_status",
+          "data_type": "integer",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshot_artifacts",
+          "udt_name": "int4"
+        },
+        {
+          "column_default": null,
+          "column_name": "retrieved_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshot_artifacts",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": null,
+          "column_name": "size_bytes",
+          "data_type": "bigint",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshot_artifacts",
+          "udt_name": "int8"
+        },
+        {
+          "column_default": null,
+          "column_name": "sha256",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshot_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": "0",
+          "column_name": "retry_count",
+          "data_type": "integer",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshot_artifacts",
+          "udt_name": "int4"
+        },
+        {
+          "column_default": null,
+          "column_name": "snapshot_id",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshots",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "congress",
+          "data_type": "integer",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshots",
+          "udt_name": "int4"
+        },
+        {
+          "column_default": null,
+          "column_name": "retrieval_started_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshots",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": null,
+          "column_name": "retrieval_completed_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshots",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": null,
+          "column_name": "parser_version",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshots",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "snapshot_status",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshots",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "manifest_checksum",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshots",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_decision",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshots",
+          "udt_name": "text"
+        },
+        {
+          "column_default": "now()",
+          "column_name": "created_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_member_metadata_snapshots",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": "nextval('house_member_service_evidence_id_seq'::regclass)",
+          "column_name": "id",
+          "data_type": "bigint",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "int8"
+        },
+        {
+          "column_default": null,
+          "column_name": "snapshot_id",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "legislator_id",
+          "data_type": "bigint",
+          "is_nullable": "YES",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "int8"
+        },
+        {
+          "column_default": null,
+          "column_name": "bioguide_id",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "congress",
+          "data_type": "integer",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "int4"
+        },
+        {
+          "column_default": null,
+          "column_name": "chamber",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "canonical_state",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "canonical_district",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_state",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_district",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "normalization_rule",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "member_type",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "current_member",
+          "data_type": "boolean",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "bool"
+        },
+        {
+          "column_default": null,
+          "column_name": "service_start_year",
+          "data_type": "integer",
+          "is_nullable": "YES",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "int4"
+        },
+        {
+          "column_default": null,
+          "column_name": "service_end_year",
+          "data_type": "integer",
+          "is_nullable": "YES",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "int4"
+        },
+        {
+          "column_default": null,
+          "column_name": "service_date_precision",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "party",
+          "data_type": "text",
+          "is_nullable": "YES",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "official_url",
+          "data_type": "text",
+          "is_nullable": "YES",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_name",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_type",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_url",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_update_date",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "YES",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_retrieved_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_checksum",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "parser_version",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "metadata_currentness",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": "now()",
+          "column_name": "created_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": "now()",
+          "column_name": "updated_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": null,
+          "column_name": "snapshot_id",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "bioguide_id",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "congress",
+          "data_type": "integer",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence_artifacts",
+          "udt_name": "int4"
+        },
+        {
+          "column_default": null,
+          "column_name": "canonical_state",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "canonical_district",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "artifact_path",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "evidence_role",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": "now()",
+          "column_name": "created_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_member_service_evidence_artifacts",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": "nextval('house_seat_status_evidence_id_seq'::regclass)",
+          "column_name": "id",
+          "data_type": "bigint",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "int8"
+        },
+        {
+          "column_default": null,
+          "column_name": "snapshot_id",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "congress",
+          "data_type": "integer",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "int4"
+        },
+        {
+          "column_default": null,
+          "column_name": "canonical_state",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "canonical_district",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_state",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_district",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "normalization_rule",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "seat_type",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "seat_status",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "current_legislator_id",
+          "data_type": "bigint",
+          "is_nullable": "YES",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "int8"
+        },
+        {
+          "column_default": null,
+          "column_name": "current_bioguide_id",
+          "data_type": "text",
+          "is_nullable": "YES",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "vacancy_reason",
+          "data_type": "text",
+          "is_nullable": "YES",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "vacancy_effective_date",
+          "data_type": "date",
+          "is_nullable": "YES",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "date"
+        },
+        {
+          "column_default": null,
+          "column_name": "special_election_date",
+          "data_type": "date",
+          "is_nullable": "YES",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "date"
+        },
+        {
+          "column_default": null,
+          "column_name": "special_election_type",
+          "data_type": "text",
+          "is_nullable": "YES",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "successor_name",
+          "data_type": "text",
+          "is_nullable": "YES",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "succession_date",
+          "data_type": "date",
+          "is_nullable": "YES",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "date"
+        },
+        {
+          "column_default": null,
+          "column_name": "oath_date",
+          "data_type": "date",
+          "is_nullable": "YES",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "date"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_name",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_type",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_url",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_retrieved_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": null,
+          "column_name": "source_checksum",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "parser_version",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "metadata_currentness",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "text"
+        },
+        {
+          "column_default": "now()",
+          "column_name": "created_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": "now()",
+          "column_name": "updated_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence",
+          "udt_name": "timestamptz"
+        },
+        {
+          "column_default": null,
+          "column_name": "snapshot_id",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "congress",
+          "data_type": "integer",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence_artifacts",
+          "udt_name": "int4"
+        },
+        {
+          "column_default": null,
+          "column_name": "canonical_state",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "canonical_district",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "artifact_path",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": null,
+          "column_name": "evidence_role",
+          "data_type": "text",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence_artifacts",
+          "udt_name": "text"
+        },
+        {
+          "column_default": "now()",
+          "column_name": "created_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO",
+          "table_name": "house_seat_status_evidence_artifacts",
+          "udt_name": "timestamptz"
+        }
+      ],
+      "constraint_count": 44,
+      "constraints": [
+        {
+          "constraint_name": "house_member_metadata_snapshot_ar_snapshot_id_artifact_path_key",
+          "constraint_type": "u",
+          "definition": "UNIQUE (snapshot_id, artifact_path)",
+          "table_name": "house_member_metadata_snapshot_artifacts"
+        },
+        {
+          "constraint_name": "house_member_metadata_snapshot_artifacts_pkey",
+          "constraint_type": "p",
+          "definition": "PRIMARY KEY (id)",
+          "table_name": "house_member_metadata_snapshot_artifacts"
+        },
+        {
+          "constraint_name": "house_member_metadata_snapshot_artifacts_retry_count_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((retry_count >= 0))",
+          "table_name": "house_member_metadata_snapshot_artifacts"
+        },
+        {
+          "constraint_name": "house_member_metadata_snapshot_artifacts_sha256_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((sha256 ~ '^[0-9a-f]{64}$'::text))",
+          "table_name": "house_member_metadata_snapshot_artifacts"
+        },
+        {
+          "constraint_name": "house_member_metadata_snapshot_artifacts_size_bytes_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((size_bytes >= 0))",
+          "table_name": "house_member_metadata_snapshot_artifacts"
+        },
+        {
+          "constraint_name": "house_member_metadata_snapshot_artifacts_snapshot_id_fkey",
+          "constraint_type": "f",
+          "definition": "FOREIGN KEY (snapshot_id) REFERENCES house_member_metadata_snapshots(snapshot_id) ON DELETE CASCADE",
+          "table_name": "house_member_metadata_snapshot_artifacts"
+        },
+        {
+          "constraint_name": "house_member_metadata_snapshots_congress_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((congress > 0))",
+          "table_name": "house_member_metadata_snapshots"
+        },
+        {
+          "constraint_name": "house_member_metadata_snapshots_manifest_checksum_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((manifest_checksum ~ '^[0-9a-f]{64}$'::text))",
+          "table_name": "house_member_metadata_snapshots"
+        },
+        {
+          "constraint_name": "house_member_metadata_snapshots_pkey",
+          "constraint_type": "p",
+          "definition": "PRIMARY KEY (snapshot_id)",
+          "table_name": "house_member_metadata_snapshots"
+        },
+        {
+          "constraint_name": "house_member_metadata_snapshots_snapshot_status_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((snapshot_status = ANY (ARRAY['complete'::text, 'stale'::text, 'source_conflict'::text, 'rejected'::text])))",
+          "table_name": "house_member_metadata_snapshots"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_canonical_district_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((canonical_district ~ '^[0-9]{2}$'::text))",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_canonical_state_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((canonical_state ~ '^[A-Z]{2}$'::text))",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_chamber_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((chamber = 'house'::text))",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_check",
+          "constraint_type": "c",
+          "definition": "CHECK (((service_end_year IS NULL) OR (service_start_year IS NULL) OR (service_end_year >= service_start_year)))",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_congress_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((congress > 0))",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_legislator_id_fkey",
+          "constraint_type": "f",
+          "definition": "FOREIGN KEY (legislator_id) REFERENCES legislators(id) ON DELETE SET NULL",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_member_type_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((member_type = ANY (ARRAY['voting_representative'::text, 'delegate'::text, 'resident_commissioner'::text])))",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_metadata_currentness_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((metadata_currentness = ANY (ARRAY['current_cross_source_confirmed'::text, 'current_primary_source_only'::text, 'vacant_officially_confirmed'::text, 'source_conflict'::text, 'stale_snapshot'::text, 'unknown'::text, 'parser_or_layout_unverified'::text])))",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_pkey",
+          "constraint_type": "p",
+          "definition": "PRIMARY KEY (id)",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_service_date_precision_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((service_date_precision = 'year'::text))",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_snapshot_id_bioguide_id_congr_key",
+          "constraint_type": "u",
+          "definition": "UNIQUE (snapshot_id, bioguide_id, congress, canonical_state, canonical_district)",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_snapshot_id_fkey",
+          "constraint_type": "f",
+          "definition": "FOREIGN KEY (snapshot_id) REFERENCES house_member_metadata_snapshots(snapshot_id) ON DELETE CASCADE",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_source_checksum_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((source_checksum ~ '^[0-9a-f]{64}$'::text))",
+          "table_name": "house_member_service_evidence"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_ar_snapshot_id_artifact_path_fkey",
+          "constraint_type": "f",
+          "definition": "FOREIGN KEY (snapshot_id, artifact_path) REFERENCES house_member_metadata_snapshot_artifacts(snapshot_id, artifact_path) ON DELETE CASCADE",
+          "table_name": "house_member_service_evidence_artifacts"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_artifacts_evidence_role_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((evidence_role = ANY (ARRAY['primary_identity'::text, 'roster_confirmation'::text, 'vacancy_confirmation'::text, 'vacancy_resolution'::text, 'normalization_source'::text])))",
+          "table_name": "house_member_service_evidence_artifacts"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_artifacts_pkey",
+          "constraint_type": "p",
+          "definition": "PRIMARY KEY (snapshot_id, bioguide_id, congress, canonical_state, canonical_district, artifact_path, evidence_role)",
+          "table_name": "house_member_service_evidence_artifacts"
+        },
+        {
+          "constraint_name": "house_member_service_evidence_snapshot_id_bioguide_id_cong_fkey",
+          "constraint_type": "f",
+          "definition": "FOREIGN KEY (snapshot_id, bioguide_id, congress, canonical_state, canonical_district) REFERENCES house_member_service_evidence(snapshot_id, bioguide_id, congress, canonical_state, canonical_district) ON DELETE CASCADE",
+          "table_name": "house_member_service_evidence_artifacts"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_canonical_district_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((canonical_district ~ '^[0-9]{2}$'::text))",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_canonical_state_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((canonical_state ~ '^[A-Z]{2}$'::text))",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_check",
+          "constraint_type": "c",
+          "definition": "CHECK (((seat_status <> 'vacant'::text) OR ((current_legislator_id IS NULL) AND (current_bioguide_id IS NULL))))",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_congress_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((congress > 0))",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_current_legislator_id_fkey",
+          "constraint_type": "f",
+          "definition": "FOREIGN KEY (current_legislator_id) REFERENCES legislators(id) ON DELETE SET NULL",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_metadata_currentness_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((metadata_currentness = ANY (ARRAY['current_cross_source_confirmed'::text, 'current_primary_source_only'::text, 'vacant_officially_confirmed'::text, 'source_conflict'::text, 'stale_snapshot'::text, 'unknown'::text, 'parser_or_layout_unverified'::text])))",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_pkey",
+          "constraint_type": "p",
+          "definition": "PRIMARY KEY (id)",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_seat_status_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((seat_status = ANY (ARRAY['filled'::text, 'vacant'::text, 'source_conflict'::text, 'unknown'::text])))",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_seat_type_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((seat_type = ANY (ARRAY['voting_district'::text, 'voting_at_large'::text, 'delegate'::text, 'resident_commissioner'::text])))",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_snapshot_id_congress_canonical_s_key",
+          "constraint_type": "u",
+          "definition": "UNIQUE (snapshot_id, congress, canonical_state, canonical_district)",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_snapshot_id_fkey",
+          "constraint_type": "f",
+          "definition": "FOREIGN KEY (snapshot_id) REFERENCES house_member_metadata_snapshots(snapshot_id) ON DELETE CASCADE",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_source_checksum_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((source_checksum ~ '^[0-9a-f]{64}$'::text))",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_special_election_type_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((special_election_type = ANY (ARRAY['special_general'::text, 'special_primary'::text])))",
+          "table_name": "house_seat_status_evidence"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_ar_snapshot_id_congress_canonic_fkey",
+          "constraint_type": "f",
+          "definition": "FOREIGN KEY (snapshot_id, congress, canonical_state, canonical_district) REFERENCES house_seat_status_evidence(snapshot_id, congress, canonical_state, canonical_district) ON DELETE CASCADE",
+          "table_name": "house_seat_status_evidence_artifacts"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_artif_snapshot_id_artifact_path_fkey",
+          "constraint_type": "f",
+          "definition": "FOREIGN KEY (snapshot_id, artifact_path) REFERENCES house_member_metadata_snapshot_artifacts(snapshot_id, artifact_path) ON DELETE CASCADE",
+          "table_name": "house_seat_status_evidence_artifacts"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_artifacts_evidence_role_check",
+          "constraint_type": "c",
+          "definition": "CHECK ((evidence_role = ANY (ARRAY['primary_identity'::text, 'roster_confirmation'::text, 'vacancy_confirmation'::text, 'vacancy_resolution'::text, 'normalization_source'::text])))",
+          "table_name": "house_seat_status_evidence_artifacts"
+        },
+        {
+          "constraint_name": "house_seat_status_evidence_artifacts_pkey",
+          "constraint_type": "p",
+          "definition": "PRIMARY KEY (snapshot_id, congress, canonical_state, canonical_district, artifact_path, evidence_role)",
+          "table_name": "house_seat_status_evidence_artifacts"
+        }
+      ],
+      "index_present": true,
+      "tables_exact": true
+    },
+    "vacancies": [
+      {
+        "canonical_district": "14",
+        "canonical_state": "CA",
+        "former_member_name": "Eric Swalwell",
+        "special_election_date": "2026-08-18",
+        "special_election_type": "special_general",
+        "vacancy_effective_date": "2026-04-14",
+        "vacancy_reason": "resigned"
+      },
+      {
+        "canonical_district": "20",
+        "canonical_state": "FL",
+        "former_member_name": "Sheila Cherfilus-McCormick",
+        "special_election_date": null,
+        "special_election_type": "special_general",
+        "vacancy_effective_date": "2026-04-21",
+        "vacancy_reason": "resigned"
+      },
+      {
+        "canonical_district": "13",
+        "canonical_state": "GA",
+        "former_member_name": "David Scott",
+        "special_election_date": "2026-07-28",
+        "special_election_type": "special_general",
+        "vacancy_effective_date": "2026-04-22",
+        "vacancy_reason": "passed away"
+      },
+      {
+        "canonical_district": "23",
+        "canonical_state": "TX",
+        "former_member_name": "Tony Gonzales",
+        "special_election_date": null,
+        "special_election_type": "special_general",
+        "vacancy_effective_date": "2026-04-14",
+        "vacancy_reason": "resigned"
+      }
+    ],
+    "zip_district_mappings_row_count": 0
+  },
+  "pre_application": {
+    "all_hard_gates_passed": true,
+    "legislators_fingerprint": {
+      "row_count": 637,
+      "sha256": "87c12b1054b5390af3a4bc16a1234ecb71ef10edd52b6ad700441e122f1ae7b7"
+    },
+    "snapshot_exists": false,
+    "table_state": "absent",
+    "zip_district_mappings_row_count": 0
+  },
+  "preflight": {
+    "database": {
+      "existing_tables": [
+        "house_member_metadata_snapshot_artifacts",
+        "house_member_metadata_snapshots",
+        "house_member_service_evidence",
+        "house_member_service_evidence_artifacts",
+        "house_seat_status_evidence",
+        "house_seat_status_evidence_artifacts"
+      ],
+      "legislators_fingerprint": {
+        "row_count": 637,
+        "sha256": "87c12b1054b5390af3a4bc16a1234ecb71ef10edd52b6ad700441e122f1ae7b7"
+      },
+      "read_only": true,
+      "snapshot_exists": true,
+      "table_state": "complete",
+      "zip_district_mappings_row_count": 0
+    },
+    "freshness": {
+      "fresh": true,
+      "previews": [
+        {
+          "canonical_content_sha256": "2ca9f9c8b2d49666f2b741cc5ad05d55d0c27b201dae004ba8b57b64b7027b44",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_snapshot.json",
+          "row_count": 1,
+          "sha256": "5c529183a83efb00275d51a57b67d74ccc66738d8074e90c511e8c2be086f50c"
+        },
+        {
+          "canonical_content_sha256": "a6974bc80781f9b0a8fb656eabfafcff1fece97b7eeaac23332320d5f406a0cf",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_snapshot_artifacts.json",
+          "row_count": 486,
+          "sha256": "ef543d91802d5f8bf858dd8fe766ee42c3b1f61fcf30bfb1053b4400456edec3"
+        },
+        {
+          "canonical_content_sha256": "bd7f870b2e6a9a06331782d1e536369ed1a6859c293b4a6e890ee3ecc4b878e8",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service.json",
+          "row_count": 437,
+          "sha256": "9533e72fccce9640e6f58749f4f052990bf2d11bc5aea143be59109e38e66d09"
+        },
+        {
+          "canonical_content_sha256": "4e984567df929a20bb72e64892045fdbda886b1e9d5be7f2952f11505187c0ea",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_seat_status.json",
+          "row_count": 441,
+          "sha256": "0b2c332e1a88d3b97ea587447c22be89917444825de88d29c824fadb2af53ff7"
+        },
+        {
+          "canonical_content_sha256": "8a1e359844b5d6c7b81efff4174275f02d41d7af14a452f3516f84c9266ee5f3",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service_evidence_artifacts.json",
+          "row_count": 874,
+          "sha256": "b6fb02bcabe266949eec5551cb8214b55182d0406e042e026455bafa91316448"
+        },
+        {
+          "canonical_content_sha256": "2beeb4f8eae80703215656035840bda35c90ee603e184adf52ddab73890befae",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_seat_status_evidence_artifacts.json",
+          "row_count": 882,
+          "sha256": "f7695cf830143c6f89c751d27f7a5b0d18535c90656d9f73cf942049d86f916e"
+        }
+      ],
+      "snapshot_age_days": 1
+    },
+    "identity_checks": {
+      "delegates": 5,
+      "filled_voting_representative_seats": 431,
+      "member_rows": 437,
+      "primary_source_only": 0,
+      "resident_commissioners": 1,
+      "seat_rows": 441,
+      "source_conflicts": 0,
+      "unmatched_production_identities": 0,
+      "vacant_voting_seats": 4
+    },
+    "migration": {
+      "banned_matches": {
+        "alter": false,
+        "copy": false,
+        "delete": false,
+        "drop": false,
+        "extension": false,
+        "function": false,
+        "grant": false,
+        "insert": false,
+        "role": false,
+        "trigger": false,
+        "truncate": false,
+        "update": false
+      },
+      "file": "backend/migrations/0014_house_member_service_and_seat_status.sql",
+      "sha256": "b80484c2555562033657f6838d3645b1d41ff24d13310a5e72278370bc570ae6",
+      "wrapper_stripped_exactly": true
+    },
+    "production_auto_select_eligible_count": 0,
+    "repository": {
+      "base_commit": "12e0bbf9c22d2083e78433951858f6b5ea2f071d",
+      "base_is_ancestor": true,
+      "branch": "codex/current-house-member-metadata-schema-seed-v1",
+      "feature_flag": {
+        "assignments": [],
+        "enabled": false,
+        "files_with_references": [],
+        "status": "absent_not_configured",
+        "verification_method": "bounded repository configuration/code scan for ZIP_MULTI_ROW_LOOKUP_ENABLED assignments"
+      },
+      "route_state": {
+        "either_public_endpoint_reads_zip_district_mappings": false,
+        "files_inspected": [
+          "backend/app/api/lookup.py",
+          "backend/app/api/precomputed.py"
+        ],
+        "functions_inspected": [
+          "lookup_zip",
+          "lookup_zip_races",
+          "get_zip_lookup_response",
+          "get_zip_race_response",
+          "_get_db_zip_lookup_response",
+          "_get_db_zip_race_response",
+          "_get_db_zip_record"
+        ],
+        "lookup_zip_races_reads_zip_district_map": true,
+        "lookup_zip_reads_zip_district_map": true,
+        "routes_inspected": [
+          "/lookup/zip/{zip_code}",
+          "/lookup/zip/{zip_code}/races"
+        ],
+        "verification_method": "AST-bounded function extraction plus SQL table-reference checks"
+      }
+    }
+  },
+  "production_auto_select_eligible_count": 0,
+  "rollback": {
+    "command": "python backend/scripts/apply_current_house_member_metadata_snapshot.py --rollback-snapshot --snapshot-id house-119-20260713T011722Z --confirm-rollback-snapshot-from-backend-env-supabase --env-path backend/.env --write-review-packet",
+    "executed": false
+  },
+  "schema_version": "current_house_member_metadata_schema_seed_v1",
+  "snapshot_id": "house-119-20260713T011722Z",
+  "snapshot_metadata": {
+    "congress": 119,
+    "manifest_checksum": "d5ab3394db24a6edecc8dedf3167a24f90d6a2df46b0790f5cfe7e48b583cbbd",
+    "parser_version": "current_house_member_metadata_v1",
+    "retrieval_completed_at": "2026-07-13T01:17:45.485100+00:00",
+    "retrieval_started_at": "2026-07-13T01:17:22.354882+00:00",
+    "snapshot_id": "house-119-20260713T011722Z",
+    "snapshot_status": "complete",
+    "source_decision": "approved_for_bounded_dry_run_only"
+  },
+  "target": {
+    "database": "postgres",
+    "environment_file": "backend\\.env",
+    "host": "aws-1-us-east-1.pooler.supabase.com",
+    "password_present": true,
+    "port": 5432,
+    "raw_url_recorded": false,
+    "scheme": "postgresql",
+    "supabase_production_like": true,
+    "username_present": true
+  }
+}
