@@ -1,0 +1,1798 @@
+{
+  "analysis_id": "zip-overlap-sensitivity-v1-57fad59f",
+  "candidate_migration_validation": {
+    "additive_only": true,
+    "applied": false,
+    "contains_dml": false,
+    "exact_share_contract": "raw_area_only",
+    "path": "backend/migrations/0015_zip_mapping_source_evidence.sql",
+    "policy_definition_identity": "JSONB sole database source of truth; deterministic SHA-256 reported in analysis artifacts",
+    "required_contracts": [
+      "artifact_composite_identity",
+      "artifact_retrieval_precision",
+      "artifact_snapshot_fk",
+      "auto_select_false",
+      "evaluation_policy_run_fk",
+      "evaluation_relationship_fk",
+      "land_part_within_zcta",
+      "normalization_all_or_none",
+      "normalization_district_format",
+      "normalization_rule_nonblank",
+      "normalization_state_format",
+      "policy_definition",
+      "policy_run_composite_identity",
+      "policy_run_house_fk",
+      "policy_run_identity_unique",
+      "policy_run_relationship_unique",
+      "policy_run_source_fk",
+      "rank_survivor_check",
+      "rank_unique",
+      "relationship_artifact_fk",
+      "relationship_source_geoid_unique",
+      "relationship_source_line_unique",
+      "relationship_zcta_unique",
+      "total_part_within_zcta",
+      "water_part_within_zcta"
+    ],
+    "required_indexes": [
+      "idx_zip_mapping_policy_runs_house_snapshot",
+      "idx_zip_mapping_policy_runs_source",
+      "idx_zip_mapping_source_artifacts_snapshot",
+      "idx_zip_policy_evaluations_run_zcta",
+      "idx_zip_policy_evaluations_survival",
+      "idx_zip_relationship_evidence_pair",
+      "idx_zip_relationship_evidence_zcta"
+    ],
+    "retrieval_precision": "date",
+    "sha256": "e2b8d526d7e0fac31a0368e04ffc11e59cabc8613ed0afb6a478276f46c636c3",
+    "tables": [
+      "zip_district_relationship_evidence",
+      "zip_mapping_policy_evaluations",
+      "zip_mapping_policy_runs",
+      "zip_mapping_source_artifacts",
+      "zip_mapping_source_snapshots"
+    ],
+    "top_level_statement_count": 14
+  },
+  "conclusions": {
+    "auto_select_mapping": "not supported by area evidence; disabled",
+    "candidate_migration": "backend/migrations/0015_zip_mapping_source_evidence.sql",
+    "candidate_migration_applied": false,
+    "existing_zip_district_mappings_schema_sufficient": false,
+    "possible_mapping": "supported as source-backed geographic evidence, including retained water-only and tiny-overlap rows",
+    "preferred_or_ranked_mapping": "supported only as an explicitly versioned and caveated presentation aid",
+    "production_auto_select_eligible_count": 0,
+    "recommended_next_accuracy_source": "both Census block-level population allocation and full-address congressional-district lookup"
+  },
+  "current_seat_reconciliation": {
+    "dc_candidate_normalization": {
+      "candidate_pair": "DC-00",
+      "runtime_approved": false,
+      "seeded_delegate_match_proved": true,
+      "source_pair": "DC-98",
+      "source_row_altered": false,
+      "status": "candidate_normalization_only"
+    },
+    "production_auto_select_eligible_count": 0,
+    "relationship_row_classifications": {
+      "candidate_dc_normalization": 57,
+      "filled_current_voting_seat": 39659,
+      "officially_vacant": 251
+    },
+    "unique_source_pair_classifications": {
+      "candidate_dc_normalization": 1,
+      "filled_current_voting_seat": 431,
+      "officially_vacant": 4
+    },
+    "vacant_source_pairs": [
+      "CA-14",
+      "FL-20",
+      "GA-13",
+      "TX-23"
+    ]
+  },
+  "generated_at": "2026-07-15T02:02:23.453574+00:00",
+  "geographic_code_handling": {
+    "dc_98_relationship_rows": 57,
+    "dc_internal_delegate_convention": "DC-00",
+    "dc_status": "candidate_normalization_only",
+    "official_source_codes_altered": false,
+    "standard_numbered_relationship_rows": 38349,
+    "state_at_large_00_relationship_rows": 1561,
+    "territory_rows_rejected_by_existing_parser": {
+      "AS": 2,
+      "GU": 8,
+      "MP": 4,
+      "PR": 133,
+      "VI": 7
+    }
+  },
+  "geographic_integrity": {
+    "anomaly_counts": {
+      "duplicate_source_relationships": 0,
+      "inconsistent_land_denominator": 0,
+      "inconsistent_water_denominator": 0,
+      "positive_land_sliver_relationships_lt_0_01_percent": 32,
+      "total_under_allocation": 31,
+      "water_only_relationships": 37,
+      "water_under_allocation": 31,
+      "zero_area_relationships": 0
+    },
+    "bounded_examples": {
+      "duplicate_source_relationships": [],
+      "inconsistent_land_denominator": [],
+      "inconsistent_water_denominator": [],
+      "positive_land_sliver_relationships_lt_0_01_percent": [
+        {
+          "land_part": 1043,
+          "line": 25064,
+          "mapping": "NY-26",
+          "water_part": 0,
+          "zcta": "14059"
+        },
+        {
+          "land_part": 12293,
+          "line": 28124,
+          "mapping": "OK-01",
+          "water_part": 0,
+          "zcta": "74039"
+        },
+        {
+          "land_part": 1511,
+          "line": 4581,
+          "mapping": "CA-47",
+          "water_part": 0,
+          "zcta": "92630"
+        },
+        {
+          "land_part": 1696,
+          "line": 4671,
+          "mapping": "CA-49",
+          "water_part": 0,
+          "zcta": "92069"
+        },
+        {
+          "land_part": 1796,
+          "line": 35596,
+          "mapping": "TX-30",
+          "water_part": 0,
+          "zcta": "76002"
+        },
+        {
+          "land_part": 189,
+          "line": 30884,
+          "mapping": "PA-14",
+          "water_part": 83812,
+          "zcta": "15904"
+        },
+        {
+          "land_part": 2004,
+          "line": 24386,
+          "mapping": "NY-21",
+          "water_part": 0,
+          "zcta": "13501"
+        },
+        {
+          "land_part": 2359,
+          "line": 36839,
+          "mapping": "VA-03",
+          "water_part": 0,
+          "zcta": "23462"
+        },
+        {
+          "land_part": 273,
+          "line": 26038,
+          "mapping": "NC-12",
+          "water_part": 0,
+          "zcta": "28278"
+        },
+        {
+          "land_part": 2779,
+          "line": 17164,
+          "mapping": "MI-06",
+          "water_part": 0,
+          "zcta": "48393"
+        }
+      ],
+      "total_under_allocation": [
+        {
+          "difference_square_meters": -1287668,
+          "zcta": "60611"
+        },
+        {
+          "difference_square_meters": -1312347,
+          "zcta": "60657"
+        },
+        {
+          "difference_square_meters": -1325500,
+          "zcta": "60614"
+        },
+        {
+          "difference_square_meters": -1422820,
+          "zcta": "60202"
+        },
+        {
+          "difference_square_meters": -1424265,
+          "zcta": "60087"
+        },
+        {
+          "difference_square_meters": -1452875,
+          "zcta": "06437"
+        },
+        {
+          "difference_square_meters": -1506347,
+          "zcta": "60613"
+        },
+        {
+          "difference_square_meters": -1652909,
+          "zcta": "60615"
+        },
+        {
+          "difference_square_meters": -2281231,
+          "zcta": "06460"
+        },
+        {
+          "difference_square_meters": -2312114,
+          "zcta": "06512"
+        }
+      ],
+      "water_only_relationships": [
+        {
+          "land_part": 0,
+          "line": 14167,
+          "mapping": "LA-01",
+          "water_part": 6901750,
+          "zcta": "70126"
+        },
+        {
+          "land_part": 0,
+          "line": 14168,
+          "mapping": "LA-01",
+          "water_part": 598929,
+          "zcta": "70127"
+        },
+        {
+          "land_part": 0,
+          "line": 14169,
+          "mapping": "LA-01",
+          "water_part": 793799,
+          "zcta": "70128"
+        },
+        {
+          "land_part": 0,
+          "line": 16341,
+          "mapping": "MA-09",
+          "water_part": 406,
+          "zcta": "02347"
+        },
+        {
+          "land_part": 0,
+          "line": 1661,
+          "mapping": "AR-01",
+          "water_part": 387774,
+          "zcta": "72065"
+        },
+        {
+          "land_part": 0,
+          "line": 16817,
+          "mapping": "MI-02",
+          "water_part": 27556694,
+          "zcta": "49441"
+        },
+        {
+          "land_part": 0,
+          "line": 16878,
+          "mapping": "MI-03",
+          "water_part": 13507610,
+          "zcta": "49424"
+        },
+        {
+          "land_part": 0,
+          "line": 17021,
+          "mapping": "MI-05",
+          "water_part": 2667100,
+          "zcta": "49038"
+        },
+        {
+          "land_part": 0,
+          "line": 17848,
+          "mapping": "MN-03",
+          "water_part": 301022,
+          "zcta": "55313"
+        },
+        {
+          "land_part": 0,
+          "line": 18951,
+          "mapping": "MS-03",
+          "water_part": 150181,
+          "zcta": "39212"
+        }
+      ],
+      "water_under_allocation": [
+        {
+          "difference_square_meters": -1287668,
+          "zcta": "60611"
+        },
+        {
+          "difference_square_meters": -1312347,
+          "zcta": "60657"
+        },
+        {
+          "difference_square_meters": -1325500,
+          "zcta": "60614"
+        },
+        {
+          "difference_square_meters": -1422820,
+          "zcta": "60202"
+        },
+        {
+          "difference_square_meters": -1424265,
+          "zcta": "60087"
+        },
+        {
+          "difference_square_meters": -1452875,
+          "zcta": "06437"
+        },
+        {
+          "difference_square_meters": -1506347,
+          "zcta": "60613"
+        },
+        {
+          "difference_square_meters": -1652909,
+          "zcta": "60615"
+        },
+        {
+          "difference_square_meters": -2281231,
+          "zcta": "06460"
+        },
+        {
+          "difference_square_meters": -2312114,
+          "zcta": "06512"
+        }
+      ],
+      "zero_area_relationships": []
+    },
+    "denominator_conditions": {
+      "share_policy_behavior": "undefined shares are preserved as null and fail closed for policies requiring that share",
+      "zero_land_denominator_zctas": 0,
+      "zero_total_denominator_zctas": 0,
+      "zero_water_denominator_zctas": 5079
+    },
+    "full_list_checksum": "5588ed9c1d8c67b3ee169f0aa193d543e6f33ce780edbb60a5e54572c90c5223",
+    "partition_discrepancy_explanation": {
+      "accepted_partition_water_shortfall_square_meters": 66153060,
+      "affected_zctas": 31,
+      "aggregate_totals_equal": true,
+      "explanation": "Accepted district rows reconcile all ZCTA land exactly. The water/total under-allocation for these ZCTAs equals the official file's state-ZZ water partition, which the existing parser rejects because ZZ is not a House district.",
+      "full_partition_maps_equal": true,
+      "partition_map_checksum": "44dff8f085eeb1a79dfdf12e4b68c1073c6bb8267520bbd032c5c369e0c75642",
+      "rejected_non_district_zz_water_square_meters": 66153060,
+      "rejected_positive_water_zz_row_count": 31,
+      "status": "bounded_and_explained"
+    },
+    "reconciliation_counts": {
+      "land_exact": 33642,
+      "land_over": 0,
+      "land_under": 0,
+      "total_exact": 33611,
+      "total_over": 0,
+      "total_under": 31,
+      "water_exact": 33611,
+      "water_over": 0,
+      "water_under": 31
+    },
+    "zcta_count": 33642
+  },
+  "local_artifacts": {
+    "analysis_id": "zip-overlap-sensitivity-v1-57fad59f",
+    "files": [
+      {
+        "path": ".local/zip_overlap_sensitivity/zip-overlap-sensitivity-v1-57fad59f/normalized_relationship_evidence.jsonl",
+        "row_count": 39967,
+        "sha256": "b78117536e5383da0cef64b8a1e715c1b7ee51a4eb49f382e0abeda1d386f69a",
+        "size_bytes": 31856598
+      },
+      {
+        "path": ".local/zip_overlap_sensitivity/zip-overlap-sensitivity-v1-57fad59f/per_zcta_rankings.jsonl",
+        "row_count": 33642,
+        "sha256": "eee7cecc327157e3d5479513711589466695e851c451d38272b4f70a188345e2",
+        "size_bytes": 24164063
+      },
+      {
+        "path": ".local/zip_overlap_sensitivity/zip-overlap-sensitivity-v1-57fad59f/changed_classifications.json",
+        "row_count": null,
+        "sha256": "edac97eacbe3c90c1b8fe1603649fa2153909051d505dc9401fa9dd699b6d8f0",
+        "size_bytes": 235701
+      },
+      {
+        "path": ".local/zip_overlap_sensitivity/zip-overlap-sensitivity-v1-57fad59f/anomaly_lists.json",
+        "row_count": null,
+        "sha256": "1674feaccea9075a44df6e23c32f56cfb9344ce3773939f1ac8280258dbae6e8",
+        "size_bytes": 14974
+      }
+    ]
+  },
+  "policies": [
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33334,
+      "ambiguity_eliminated_from_policy_a": 0,
+      "ambiguity_eliminated_from_policy_c": 0,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5717,
+      "changed_classification_checksum": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "classification_changed_from_policy_a": 0,
+      "classification_changed_from_policy_c": 33,
+      "definition": "every relationship accepted by the existing parser",
+      "equality_included": null,
+      "exactly_one_district_zctas": 27780,
+      "exactly_one_state_zctas": 33505,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 39659,
+        "officially_vacant": 251
+      },
+      "multi_state_zctas": 137,
+      "policy_definition_sha256": "1a14cbc8ba9ef8ac15b83432bf7ee36a5cc9734a7a839ba103339a76f93bd5eb",
+      "policy_id": "policy_a_any_accepted",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 0,
+      "removed_relationship_rows": 0,
+      "removed_water_only_relationships": 0,
+      "retained_relationship_rows": 39967,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 5725,
+      "second_largest_land_share_distribution": {
+        "0": 33,
+        "lt_0_01": 25,
+        "lt_0_1": 146,
+        "lt_1": 537,
+        "lt_10": 1725,
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 27780
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27617,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
+      "top_minus_second_margin_distribution": {
+        "gte_100": 33,
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 2702,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1169,
+        "undefined": 27780
+      },
+      "total_ambiguous_zctas": 5862,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33334,
+      "ambiguity_eliminated_from_policy_a": 0,
+      "ambiguity_eliminated_from_policy_c": 0,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5717,
+      "changed_classification_checksum": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "classification_changed_from_policy_a": 0,
+      "classification_changed_from_policy_c": 33,
+      "definition": "AREALAND_PART + AREAWATER_PART > 0",
+      "equality_included": null,
+      "exactly_one_district_zctas": 27780,
+      "exactly_one_state_zctas": 33505,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 39659,
+        "officially_vacant": 251
+      },
+      "multi_state_zctas": 137,
+      "policy_definition_sha256": "6d029b4d88e1da522c1ead486fe75f0c48a906cd9a64b70057fd8168e1ef64bb",
+      "policy_id": "policy_b_positive_total",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 0,
+      "removed_relationship_rows": 0,
+      "removed_water_only_relationships": 0,
+      "retained_relationship_rows": 39967,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 5725,
+      "second_largest_land_share_distribution": {
+        "0": 33,
+        "lt_0_01": 25,
+        "lt_0_1": 146,
+        "lt_1": 537,
+        "lt_10": 1725,
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 27780
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27617,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
+      "top_minus_second_margin_distribution": {
+        "gte_100": 33,
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 2702,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1169,
+        "undefined": 27780
+      },
+      "total_ambiguous_zctas": 5862,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33334,
+      "ambiguity_eliminated_from_policy_a": 33,
+      "ambiguity_eliminated_from_policy_c": 0,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5684,
+      "changed_classification_checksum": "ff53c45c1dd122f166e166d221273cde0f43024a7c0376190c443bf26f30a6ee",
+      "classification_changed_from_policy_a": 33,
+      "classification_changed_from_policy_c": 0,
+      "definition": "AREALAND_PART > 0",
+      "equality_included": null,
+      "exactly_one_district_zctas": 27813,
+      "exactly_one_state_zctas": 33505,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 39622,
+        "officially_vacant": 251
+      },
+      "multi_state_zctas": 137,
+      "policy_definition_sha256": "6347adaa0338727ddffacd621c571761e66484abb1956221c5b52855262962ef",
+      "policy_id": "policy_c_positive_land",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 0,
+      "removed_relationship_rows": 37,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 39930,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 5692,
+      "second_largest_land_share_distribution": {
+        "lt_0_01": 25,
+        "lt_0_1": 146,
+        "lt_1": 537,
+        "lt_10": 1725,
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 27813
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27650,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
+      "top_minus_second_margin_distribution": {
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 2702,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1169,
+        "undefined": 27813
+      },
+      "total_ambiguous_zctas": 5829,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33334,
+      "ambiguity_eliminated_from_policy_a": 33,
+      "ambiguity_eliminated_from_policy_c": 0,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5684,
+      "changed_classification_checksum": "ff53c45c1dd122f166e166d221273cde0f43024a7c0376190c443bf26f30a6ee",
+      "classification_changed_from_policy_a": 33,
+      "classification_changed_from_policy_c": 0,
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 > 0%",
+      "equality_included": false,
+      "exactly_one_district_zctas": 27813,
+      "exactly_one_state_zctas": 33505,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 39622,
+        "officially_vacant": 251
+      },
+      "multi_state_zctas": 137,
+      "policy_definition_sha256": "8d78b2f870b4209393e774bcdc0dea53b2e04490445d9b86149309d493a30039",
+      "policy_id": "policy_d_gt_0_percent",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 0,
+      "removed_relationship_rows": 37,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 39930,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 5692,
+      "second_largest_land_share_distribution": {
+        "lt_0_01": 25,
+        "lt_0_1": 146,
+        "lt_1": 537,
+        "lt_10": 1725,
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 27813
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27650,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
+      "top_minus_second_margin_distribution": {
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 2702,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1169,
+        "undefined": 27813
+      },
+      "total_ambiguous_zctas": 5829,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33334,
+      "ambiguity_eliminated_from_policy_a": 58,
+      "ambiguity_eliminated_from_policy_c": 25,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5659,
+      "changed_classification_checksum": "181ddfa5af55b28dbe8906e1452bd48315d25f591c2c51c992460a359a52d2e4",
+      "classification_changed_from_policy_a": 58,
+      "classification_changed_from_policy_c": 25,
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.01%",
+      "equality_included": true,
+      "exactly_one_district_zctas": 27838,
+      "exactly_one_state_zctas": 33505,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 39590,
+        "officially_vacant": 251
+      },
+      "multi_state_zctas": 137,
+      "policy_definition_sha256": "1910bdb10779677d38cec34c8c2c5cbfcab2ac062f5406b58a7fab5a9be2cf08",
+      "policy_id": "policy_d_gte_0_01_percent",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 32,
+      "removed_relationship_rows": 69,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 39898,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 5667,
+      "second_largest_land_share_distribution": {
+        "lt_0_1": 146,
+        "lt_1": 537,
+        "lt_10": 1725,
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 27838
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27675,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
+      "top_minus_second_margin_distribution": {
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 2677,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1169,
+        "undefined": 27838
+      },
+      "total_ambiguous_zctas": 5804,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33336,
+      "ambiguity_eliminated_from_policy_a": 139,
+      "ambiguity_eliminated_from_policy_c": 106,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5580,
+      "changed_classification_checksum": "ec79f7d115d0193c414dc293d6fc0cecaf90f3b7626dcbbb0ae9fa5a12652a9c",
+      "classification_changed_from_policy_a": 139,
+      "classification_changed_from_policy_c": 106,
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.05%",
+      "equality_included": true,
+      "exactly_one_district_zctas": 27919,
+      "exactly_one_state_zctas": 33505,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 39494,
+        "officially_vacant": 249
+      },
+      "multi_state_zctas": 137,
+      "policy_definition_sha256": "e283a5b6f5dec14a7e1f9494f8db88ab66513319d5e3249bb219091ab13d6909",
+      "policy_id": "policy_d_gte_0_05_percent",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 130,
+      "removed_relationship_rows": 167,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 39800,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 5586,
+      "second_largest_land_share_distribution": {
+        "lt_0_1": 65,
+        "lt_1": 537,
+        "lt_10": 1725,
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 27919
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27756,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
+      "top_minus_second_margin_distribution": {
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 2596,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1169,
+        "undefined": 27919
+      },
+      "total_ambiguous_zctas": 5723,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33337,
+      "ambiguity_eliminated_from_policy_a": 204,
+      "ambiguity_eliminated_from_policy_c": 171,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5516,
+      "changed_classification_checksum": "b81d060ad14fd4b1a4840ce212f54eca37e3e7a8b80ad1466e15196e40079de5",
+      "classification_changed_from_policy_a": 204,
+      "classification_changed_from_policy_c": 171,
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.1%",
+      "equality_included": true,
+      "exactly_one_district_zctas": 27984,
+      "exactly_one_state_zctas": 33506,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 39414,
+        "officially_vacant": 248
+      },
+      "multi_state_zctas": 136,
+      "policy_definition_sha256": "f23f7d19dc52a662bb1393345eb5ae279b2f84afa6db04a6947266180ee6c895",
+      "policy_id": "policy_d_gte_0_1_percent",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 211,
+      "removed_relationship_rows": 248,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 39719,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 5522,
+      "second_largest_land_share_distribution": {
+        "lt_1": 537,
+        "lt_10": 1725,
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 27984
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27821,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
+      "top_minus_second_margin_distribution": {
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 2531,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1169,
+        "undefined": 27984
+      },
+      "total_ambiguous_zctas": 5658,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33346,
+      "ambiguity_eliminated_from_policy_a": 516,
+      "ambiguity_eliminated_from_policy_c": 483,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5216,
+      "changed_classification_checksum": "a97b9130895ca3b2a37165adf4bc1d72cf5431c43e646f289d972d8849aefce3",
+      "classification_changed_from_policy_a": 517,
+      "classification_changed_from_policy_c": 484,
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.5%",
+      "equality_included": true,
+      "exactly_one_district_zctas": 28296,
+      "exactly_one_state_zctas": 33515,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 39047,
+        "officially_vacant": 239
+      },
+      "multi_state_zctas": 127,
+      "policy_definition_sha256": "b6c559328accc9903c45a32f3779648c43c79ff3c458b46d7b84794e85877f17",
+      "policy_id": "policy_d_gte_0_5_percent",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 587,
+      "removed_relationship_rows": 624,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 39343,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 5219,
+      "second_largest_land_share_distribution": {
+        "lt_1": 225,
+        "lt_10": 1725,
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 28296
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 28130,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 109,
+      "top_minus_second_margin_distribution": {
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 2219,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1169,
+        "undefined": 28296
+      },
+      "total_ambiguous_zctas": 5346,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33347,
+      "ambiguity_eliminated_from_policy_a": 741,
+      "ambiguity_eliminated_from_policy_c": 708,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 4994,
+      "changed_classification_checksum": "74bed04f968e1543b2ba9491baa565c9a75d37924e97724815299409b4bf90d8",
+      "classification_changed_from_policy_a": 742,
+      "classification_changed_from_policy_c": 709,
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 1%",
+      "equality_included": true,
+      "exactly_one_district_zctas": 28521,
+      "exactly_one_state_zctas": 33525,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 38782,
+        "officially_vacant": 238
+      },
+      "multi_state_zctas": 117,
+      "policy_definition_sha256": "c3d53de90abf1f11be2ab5fcb59fff0a3fcee3f0be82fbb9f8b0fb547204fa46",
+      "policy_id": "policy_d_gte_1_percent",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 853,
+      "removed_relationship_rows": 890,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 39077,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 5004,
+      "second_largest_land_share_distribution": {
+        "lt_10": 1725,
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 28521
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 28353,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 111,
+      "top_minus_second_margin_distribution": {
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 1994,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1169,
+        "undefined": 28521
+      },
+      "total_ambiguous_zctas": 5121,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33354,
+      "ambiguity_eliminated_from_policy_a": 1074,
+      "ambiguity_eliminated_from_policy_c": 1041,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 4671,
+      "changed_classification_checksum": "0481420266c833ebab91bf84301370ecc64861665379b902733f277d6e8e0c3b",
+      "classification_changed_from_policy_a": 1075,
+      "classification_changed_from_policy_c": 1042,
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 2%",
+      "equality_included": true,
+      "exactly_one_district_zctas": 28854,
+      "exactly_one_state_zctas": 33537,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 38398,
+        "officially_vacant": 231
+      },
+      "multi_state_zctas": 105,
+      "policy_definition_sha256": "1f0ffd3f73ab4feff1ddba101eed9f2781286c82e1183e2479d1c3c2f730ef5d",
+      "policy_id": "policy_d_gte_2_percent",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 1244,
+      "removed_relationship_rows": 1281,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 38686,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 4683,
+      "second_largest_land_share_distribution": {
+        "lt_10": 1392,
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 28854
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 28683,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 114,
+      "top_minus_second_margin_distribution": {
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 1661,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1169,
+        "undefined": 28854
+      },
+      "total_ambiguous_zctas": 4788,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33362,
+      "ambiguity_eliminated_from_policy_a": 1729,
+      "ambiguity_eliminated_from_policy_c": 1696,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 4031,
+      "changed_classification_checksum": "8f2b0f88b31c83301de3b105bfbad21d19caf31eac74981ded8f843c0c1ee5d8",
+      "classification_changed_from_policy_a": 1730,
+      "classification_changed_from_policy_c": 1697,
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 5%",
+      "equality_included": true,
+      "exactly_one_district_zctas": 29509,
+      "exactly_one_state_zctas": 33552,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 37673,
+        "officially_vacant": 223
+      },
+      "multi_state_zctas": 90,
+      "policy_definition_sha256": "4bcbfa21700f390c76649b5d24c12c7e39c5be8783c19c16849a01def9f39c74",
+      "policy_id": "policy_d_gte_5_percent",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 1977,
+      "removed_relationship_rows": 2014,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 37953,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 4043,
+      "second_largest_land_share_distribution": {
+        "lt_10": 737,
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 29509
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 29331,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 121,
+      "top_minus_second_margin_distribution": {
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 1006,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1169,
+        "undefined": 29509
+      },
+      "total_ambiguous_zctas": 4133,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33369,
+      "ambiguity_eliminated_from_policy_a": 2466,
+      "ambiguity_eliminated_from_policy_c": 2433,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 3306,
+      "changed_classification_checksum": "6486ade8255a288b21abf59a39d44a8efdd334f256154e34b0c0c427edbfbb37",
+      "classification_changed_from_policy_a": 2467,
+      "classification_changed_from_policy_c": 2434,
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 10%",
+      "equality_included": true,
+      "exactly_one_district_zctas": 30246,
+      "exactly_one_state_zctas": 33571,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 36867,
+        "officially_vacant": 216
+      },
+      "multi_state_zctas": 71,
+      "policy_definition_sha256": "1e14162b8f687a1073fd0f497a23b4f198e7f04db43f946119180cf7cd53439a",
+      "policy_id": "policy_d_gte_10_percent",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 2790,
+      "removed_relationship_rows": 2827,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 37140,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 3325,
+      "second_largest_land_share_distribution": {
+        "lt_25": 1471,
+        "lt_50": 1925,
+        "undefined": 30246
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 30063,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 126,
+      "top_minus_second_margin_distribution": {
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_100": 270,
+        "lt_25": 555,
+        "lt_50": 1026,
+        "lt_75": 1168,
+        "undefined": 30246
+      },
+      "total_ambiguous_zctas": 3396,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 3396,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33392,
+      "ambiguity_eliminated_from_policy_a": 3937,
+      "ambiguity_eliminated_from_policy_c": 3904,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 1871,
+      "changed_classification_checksum": "e0a3392c087b15ca1c708d815bd28b542b5ec783ec11ffad99f0e2d9a7a36c30",
+      "classification_changed_from_policy_a": 3939,
+      "classification_changed_from_policy_c": 3906,
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 25%",
+      "equality_included": true,
+      "exactly_one_district_zctas": 31717,
+      "exactly_one_state_zctas": 33611,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_50": 42,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 42,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 35322,
+        "officially_vacant": 193
+      },
+      "multi_state_zctas": 31,
+      "policy_definition_sha256": "765b76bfa4272a536f6ebd339e30e921dc9b05323a39a16e975e54e0a570dcfa",
+      "policy_id": "policy_d_gte_25_percent",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 4358,
+      "removed_relationship_rows": 4395,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 35572,
+      "retained_unique_zctas": 33642,
+      "same_state_multi_district_zctas": 1894,
+      "second_largest_land_share_distribution": {
+        "lt_50": 1925,
+        "undefined": 31717
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 31521,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 139,
+      "top_minus_second_margin_distribution": {
+        "lt_0_01": 1,
+        "lt_0_1": 2,
+        "lt_1": 46,
+        "lt_10": 328,
+        "lt_25": 555,
+        "lt_50": 993,
+        "undefined": 31717
+      },
+      "total_ambiguous_zctas": 1925,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 1925,
+      "zctas_with_no_surviving_relationship": 0
+    },
+    {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33376,
+      "ambiguity_eliminated_from_policy_a": 5862,
+      "ambiguity_eliminated_from_policy_c": 5829,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 0,
+      "changed_classification_checksum": "d9bf097594ad5deb1cf6cf907a1906b6d6c261d9def09afe1d1eec800d2f2e51",
+      "classification_changed_from_policy_a": 5862,
+      "classification_changed_from_policy_c": 5829,
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 50%",
+      "equality_included": true,
+      "exactly_one_district_zctas": 33600,
+      "exactly_one_state_zctas": 33600,
+      "largest_land_share_distribution": {
+        "gte_100": 27813,
+        "lt_100": 3850,
+        "lt_75": 1937
+      },
+      "largest_share_below_50_percent_zctas": 0,
+      "mapping_seat_classifications": {
+        "candidate_dc_normalization": 57,
+        "filled_current_voting_seat": 33376,
+        "officially_vacant": 167
+      },
+      "multi_state_zctas": 0,
+      "policy_definition_sha256": "8805056c901085eb98fefec000cf4ea3935f9081328399cd948b11cfaf462764",
+      "policy_id": "policy_d_gte_50_percent",
+      "production_auto_select_eligible_zctas": 0,
+      "removed_positive_land_relationships": 6330,
+      "removed_relationship_rows": 6367,
+      "removed_water_only_relationships": 37,
+      "retained_relationship_rows": 33600,
+      "retained_unique_zctas": 33600,
+      "same_state_multi_district_zctas": 0,
+      "second_largest_land_share_distribution": {
+        "undefined": 33600
+      },
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 33376,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 167,
+      "top_minus_second_margin_distribution": {
+        "undefined": 33600
+      },
+      "total_ambiguous_zctas": 0,
+      "two_or_more_districts_each_exceed_10_percent_zctas": 0,
+      "zctas_with_no_surviving_relationship": 42
+    }
+  ],
+  "production_postcheck": {
+    "canonical_database_checksums": {
+      "house_member_metadata_snapshot_artifacts": {
+        "database": "a6974bc80781f9b0a8fb656eabfafcff1fece97b7eeaac23332320d5f406a0cf",
+        "expected": "a6974bc80781f9b0a8fb656eabfafcff1fece97b7eeaac23332320d5f406a0cf",
+        "match": true
+      },
+      "house_member_metadata_snapshots": {
+        "database": "2ca9f9c8b2d49666f2b741cc5ad05d55d0c27b201dae004ba8b57b64b7027b44",
+        "expected": "2ca9f9c8b2d49666f2b741cc5ad05d55d0c27b201dae004ba8b57b64b7027b44",
+        "match": true
+      },
+      "house_member_service_evidence": {
+        "database": "bd7f870b2e6a9a06331782d1e536369ed1a6859c293b4a6e890ee3ecc4b878e8",
+        "expected": "bd7f870b2e6a9a06331782d1e536369ed1a6859c293b4a6e890ee3ecc4b878e8",
+        "match": true
+      },
+      "house_member_service_evidence_artifacts": {
+        "database": "8a1e359844b5d6c7b81efff4174275f02d41d7af14a452f3516f84c9266ee5f3",
+        "expected": "8a1e359844b5d6c7b81efff4174275f02d41d7af14a452f3516f84c9266ee5f3",
+        "match": true
+      },
+      "house_seat_status_evidence": {
+        "database": "4e984567df929a20bb72e64892045fdbda886b1e9d5be7f2952f11505187c0ea",
+        "expected": "4e984567df929a20bb72e64892045fdbda886b1e9d5be7f2952f11505187c0ea",
+        "match": true
+      },
+      "house_seat_status_evidence_artifacts": {
+        "database": "2beeb4f8eae80703215656035840bda35c90ee603e184adf52ddab73890befae",
+        "expected": "2beeb4f8eae80703215656035840bda35c90ee603e184adf52ddab73890befae",
+        "match": true
+      }
+    },
+    "feature_flag": {
+      "assignments": [],
+      "enabled": false,
+      "files_with_references": [],
+      "status": "absent_not_configured",
+      "verification_method": "bounded repository configuration/code scan for ZIP_MULTI_ROW_LOOKUP_ENABLED assignments"
+    },
+    "house_snapshot_domain_counts": {
+      "delegates": 5,
+      "filled_seats": 437,
+      "resident_commissioner": 1,
+      "source_conflicts": 0,
+      "unknown_seats": 0,
+      "vacant_seats": 4,
+      "voting_representatives": 431
+    },
+    "legislators_fingerprint": {
+      "row_count": 637,
+      "sha256": "87c12b1054b5390af3a4bc16a1234ecb71ef10edd52b6ad700441e122f1ae7b7"
+    },
+    "production_auto_select_eligible_count": 0,
+    "route_state": {
+      "either_public_endpoint_reads_zip_district_mappings": false,
+      "files_inspected": [
+        "backend/app/api/lookup.py",
+        "backend/app/api/precomputed.py"
+      ],
+      "functions_inspected": [
+        "lookup_zip",
+        "lookup_zip_races",
+        "get_zip_lookup_response",
+        "get_zip_race_response",
+        "_get_db_zip_lookup_response",
+        "_get_db_zip_race_response",
+        "_get_db_zip_record"
+      ],
+      "lookup_zip_races_reads_zip_district_map": true,
+      "lookup_zip_reads_zip_district_map": true,
+      "routes_inspected": [
+        "/lookup/zip/{zip_code}",
+        "/lookup/zip/{zip_code}/races"
+      ],
+      "verification_method": "AST-bounded function extraction plus SQL table-reference checks"
+    },
+    "session_default_transaction_read_only": true,
+    "snapshot_freshness": {
+      "freshness_enforced_for_mode": false,
+      "freshness_role": "informational_only",
+      "postcheck_valid_outside_freshness_window": true,
+      "previews": [
+        {
+          "canonical_content_sha256": "2ca9f9c8b2d49666f2b741cc5ad05d55d0c27b201dae004ba8b57b64b7027b44",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_snapshot.json",
+          "row_count": 1,
+          "sha256": "5c529183a83efb00275d51a57b67d74ccc66738d8074e90c511e8c2be086f50c"
+        },
+        {
+          "canonical_content_sha256": "a6974bc80781f9b0a8fb656eabfafcff1fece97b7eeaac23332320d5f406a0cf",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_snapshot_artifacts.json",
+          "row_count": 486,
+          "sha256": "ef543d91802d5f8bf858dd8fe766ee42c3b1f61fcf30bfb1053b4400456edec3"
+        },
+        {
+          "canonical_content_sha256": "bd7f870b2e6a9a06331782d1e536369ed1a6859c293b4a6e890ee3ecc4b878e8",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service.json",
+          "row_count": 437,
+          "sha256": "9533e72fccce9640e6f58749f4f052990bf2d11bc5aea143be59109e38e66d09"
+        },
+        {
+          "canonical_content_sha256": "4e984567df929a20bb72e64892045fdbda886b1e9d5be7f2952f11505187c0ea",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_seat_status.json",
+          "row_count": 441,
+          "sha256": "0b2c332e1a88d3b97ea587447c22be89917444825de88d29c824fadb2af53ff7"
+        },
+        {
+          "canonical_content_sha256": "8a1e359844b5d6c7b81efff4174275f02d41d7af14a452f3516f84c9266ee5f3",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service_evidence_artifacts.json",
+          "row_count": 874,
+          "sha256": "b6fb02bcabe266949eec5551cb8214b55182d0406e042e026455bafa91316448"
+        },
+        {
+          "canonical_content_sha256": "2beeb4f8eae80703215656035840bda35c90ee603e184adf52ddab73890befae",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_seat_status_evidence_artifacts.json",
+          "row_count": 882,
+          "sha256": "f7695cf830143c6f89c751d27f7a5b0d18535c90656d9f73cf942049d86f916e"
+        }
+      ],
+      "rollback_available_outside_freshness_window": true,
+      "snapshot_age_days": 2,
+      "within_application_freshness_window": true
+    },
+    "snapshot_id": "house-119-20260713T011722Z",
+    "statement_timeout": "30s",
+    "table_counts": {
+      "house_member_metadata_snapshot_artifacts": 486,
+      "house_member_metadata_snapshots": 1,
+      "house_member_service_evidence": 437,
+      "house_member_service_evidence_artifacts": 874,
+      "house_seat_status_evidence": 441,
+      "house_seat_status_evidence_artifacts": 882
+    },
+    "target": {
+      "database": "postgres",
+      "environment_file": "backend\\.env",
+      "exact_approved_target": true,
+      "host": "aws-1-us-east-1.pooler.supabase.com",
+      "password_present": true,
+      "port": 5432,
+      "raw_url_recorded": false,
+      "scheme": "postgresql",
+      "username_identity_pinned": true,
+      "username_present": true,
+      "username_sha256_matches": true
+    },
+    "transaction_read_only": true,
+    "zip_district_mappings_row_count": 0
+  },
+  "production_precheck": {
+    "canonical_database_checksums": {
+      "house_member_metadata_snapshot_artifacts": {
+        "database": "a6974bc80781f9b0a8fb656eabfafcff1fece97b7eeaac23332320d5f406a0cf",
+        "expected": "a6974bc80781f9b0a8fb656eabfafcff1fece97b7eeaac23332320d5f406a0cf",
+        "match": true
+      },
+      "house_member_metadata_snapshots": {
+        "database": "2ca9f9c8b2d49666f2b741cc5ad05d55d0c27b201dae004ba8b57b64b7027b44",
+        "expected": "2ca9f9c8b2d49666f2b741cc5ad05d55d0c27b201dae004ba8b57b64b7027b44",
+        "match": true
+      },
+      "house_member_service_evidence": {
+        "database": "bd7f870b2e6a9a06331782d1e536369ed1a6859c293b4a6e890ee3ecc4b878e8",
+        "expected": "bd7f870b2e6a9a06331782d1e536369ed1a6859c293b4a6e890ee3ecc4b878e8",
+        "match": true
+      },
+      "house_member_service_evidence_artifacts": {
+        "database": "8a1e359844b5d6c7b81efff4174275f02d41d7af14a452f3516f84c9266ee5f3",
+        "expected": "8a1e359844b5d6c7b81efff4174275f02d41d7af14a452f3516f84c9266ee5f3",
+        "match": true
+      },
+      "house_seat_status_evidence": {
+        "database": "4e984567df929a20bb72e64892045fdbda886b1e9d5be7f2952f11505187c0ea",
+        "expected": "4e984567df929a20bb72e64892045fdbda886b1e9d5be7f2952f11505187c0ea",
+        "match": true
+      },
+      "house_seat_status_evidence_artifacts": {
+        "database": "2beeb4f8eae80703215656035840bda35c90ee603e184adf52ddab73890befae",
+        "expected": "2beeb4f8eae80703215656035840bda35c90ee603e184adf52ddab73890befae",
+        "match": true
+      }
+    },
+    "feature_flag": {
+      "assignments": [],
+      "enabled": false,
+      "files_with_references": [],
+      "status": "absent_not_configured",
+      "verification_method": "bounded repository configuration/code scan for ZIP_MULTI_ROW_LOOKUP_ENABLED assignments"
+    },
+    "house_snapshot_domain_counts": {
+      "delegates": 5,
+      "filled_seats": 437,
+      "resident_commissioner": 1,
+      "source_conflicts": 0,
+      "unknown_seats": 0,
+      "vacant_seats": 4,
+      "voting_representatives": 431
+    },
+    "legislators_fingerprint": {
+      "row_count": 637,
+      "sha256": "87c12b1054b5390af3a4bc16a1234ecb71ef10edd52b6ad700441e122f1ae7b7"
+    },
+    "production_auto_select_eligible_count": 0,
+    "route_state": {
+      "either_public_endpoint_reads_zip_district_mappings": false,
+      "files_inspected": [
+        "backend/app/api/lookup.py",
+        "backend/app/api/precomputed.py"
+      ],
+      "functions_inspected": [
+        "lookup_zip",
+        "lookup_zip_races",
+        "get_zip_lookup_response",
+        "get_zip_race_response",
+        "_get_db_zip_lookup_response",
+        "_get_db_zip_race_response",
+        "_get_db_zip_record"
+      ],
+      "lookup_zip_races_reads_zip_district_map": true,
+      "lookup_zip_reads_zip_district_map": true,
+      "routes_inspected": [
+        "/lookup/zip/{zip_code}",
+        "/lookup/zip/{zip_code}/races"
+      ],
+      "verification_method": "AST-bounded function extraction plus SQL table-reference checks"
+    },
+    "session_default_transaction_read_only": true,
+    "snapshot_freshness": {
+      "freshness_enforced_for_mode": false,
+      "freshness_role": "informational_only",
+      "postcheck_valid_outside_freshness_window": true,
+      "previews": [
+        {
+          "canonical_content_sha256": "2ca9f9c8b2d49666f2b741cc5ad05d55d0c27b201dae004ba8b57b64b7027b44",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_snapshot.json",
+          "row_count": 1,
+          "sha256": "5c529183a83efb00275d51a57b67d74ccc66738d8074e90c511e8c2be086f50c"
+        },
+        {
+          "canonical_content_sha256": "a6974bc80781f9b0a8fb656eabfafcff1fece97b7eeaac23332320d5f406a0cf",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_snapshot_artifacts.json",
+          "row_count": 486,
+          "sha256": "ef543d91802d5f8bf858dd8fe766ee42c3b1f61fcf30bfb1053b4400456edec3"
+        },
+        {
+          "canonical_content_sha256": "bd7f870b2e6a9a06331782d1e536369ed1a6859c293b4a6e890ee3ecc4b878e8",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service.json",
+          "row_count": 437,
+          "sha256": "9533e72fccce9640e6f58749f4f052990bf2d11bc5aea143be59109e38e66d09"
+        },
+        {
+          "canonical_content_sha256": "4e984567df929a20bb72e64892045fdbda886b1e9d5be7f2952f11505187c0ea",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_seat_status.json",
+          "row_count": 441,
+          "sha256": "0b2c332e1a88d3b97ea587447c22be89917444825de88d29c824fadb2af53ff7"
+        },
+        {
+          "canonical_content_sha256": "8a1e359844b5d6c7b81efff4174275f02d41d7af14a452f3516f84c9266ee5f3",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service_evidence_artifacts.json",
+          "row_count": 874,
+          "sha256": "b6fb02bcabe266949eec5551cb8214b55182d0406e042e026455bafa91316448"
+        },
+        {
+          "canonical_content_sha256": "2beeb4f8eae80703215656035840bda35c90ee603e184adf52ddab73890befae",
+          "path": "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_seat_status_evidence_artifacts.json",
+          "row_count": 882,
+          "sha256": "f7695cf830143c6f89c751d27f7a5b0d18535c90656d9f73cf942049d86f916e"
+        }
+      ],
+      "rollback_available_outside_freshness_window": true,
+      "snapshot_age_days": 2,
+      "within_application_freshness_window": true
+    },
+    "snapshot_id": "house-119-20260713T011722Z",
+    "statement_timeout": "30s",
+    "table_counts": {
+      "house_member_metadata_snapshot_artifacts": 486,
+      "house_member_metadata_snapshots": 1,
+      "house_member_service_evidence": 437,
+      "house_member_service_evidence_artifacts": 874,
+      "house_seat_status_evidence": 441,
+      "house_seat_status_evidence_artifacts": 882
+    },
+    "target": {
+      "database": "postgres",
+      "environment_file": "backend\\.env",
+      "exact_approved_target": true,
+      "host": "aws-1-us-east-1.pooler.supabase.com",
+      "password_present": true,
+      "port": 5432,
+      "raw_url_recorded": false,
+      "scheme": "postgresql",
+      "username_identity_pinned": true,
+      "username_present": true,
+      "username_sha256_matches": true
+    },
+    "transaction_read_only": true,
+    "zip_district_mappings_row_count": 0
+  },
+  "schema_version": "zip_overlap_sensitivity_bounded_staging_design_v1",
+  "scope": {
+    "auto_select_enabled": false,
+    "dry_run": true,
+    "production_mutation": false,
+    "read_only": true,
+    "runtime_mutation": false
+  },
+  "sensitivity_summary": {
+    "ambiguity_eliminated_by_removing_water_only_relationships": {
+      "multi_state": 0,
+      "same_state_multi_district": 33,
+      "total": 33
+    },
+    "examples": {
+      "affected_by_dc_delegate_candidate_normalization": [
+        "20001",
+        "20002",
+        "20003",
+        "20004",
+        "20005",
+        "20006",
+        "20007",
+        "20008",
+        "20009",
+        "20010"
+      ],
+      "ambiguity_eliminated_by_removing_positive_land_below_0_01_percent": [
+        "07722",
+        "13501",
+        "14059",
+        "15904",
+        "23462",
+        "24014",
+        "28278",
+        "33178",
+        "55416",
+        "74039"
+      ],
+      "ambiguity_eliminated_solely_by_removing_water_only_rows": [
+        "02347",
+        "08065",
+        "08735",
+        "08738",
+        "08740",
+        "08742",
+        "08751",
+        "11768",
+        "23192",
+        "24104"
+      ],
+      "ambiguity_persists_at_25_percent": [
+        "01027",
+        "01082",
+        "01731",
+        "01821",
+        "02116",
+        "02122",
+        "02124",
+        "02125",
+        "02130",
+        "02131"
+      ],
+      "largest_mapping_not_dominant": [
+        "11377",
+        "27302",
+        "28334",
+        "30064",
+        "30134",
+        "30319",
+        "31016",
+        "33172",
+        "33411",
+        "33470"
+      ],
+      "linked_to_currently_vacant_seat": [
+        "30012",
+        "30013",
+        "30014",
+        "30016",
+        "30017",
+        "30034",
+        "30038",
+        "30039",
+        "30044",
+        "30045"
+      ],
+      "multi_state_ambiguity": [
+        "02861",
+        "03579",
+        "19973",
+        "20135",
+        "21874",
+        "21912",
+        "24604",
+        "24622",
+        "27048",
+        "28675"
+      ]
+    },
+    "positive_land_sliver_counts_strictly_below_threshold": {
+      "gte_0_01_percent": 32,
+      "gte_0_05_percent": 130,
+      "gte_0_1_percent": 211,
+      "gte_0_5_percent": 587,
+      "gte_10_percent": 2790,
+      "gte_1_percent": 853,
+      "gte_25_percent": 4358,
+      "gte_2_percent": 1244,
+      "gte_50_percent": 6330,
+      "gte_5_percent": 1977
+    },
+    "water_only_affected_zcta_count": 37,
+    "water_only_relationship_count": 37,
+    "zero_area_relationship_count": 0
+  },
+  "source": {
+    "baseline": {
+      "accepted_rows": 39967,
+      "multi_state_zctas": 137,
+      "raw_rows": 40397,
+      "rejected_rows": 430,
+      "same_state_multi_district_zctas": 5725,
+      "source_state_district_pairs": 436,
+      "states_dc": 51,
+      "unique_zctas": 33642
+    },
+    "identity": {
+      "actual_file_name": "tab20_cd11920_zcta520_natl.txt",
+      "actual_file_size_bytes": 6195997,
+      "actual_sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+      "expected_file_name": "tab20_cd11920_zcta520_natl.txt",
+      "expected_file_size_bytes": 6195997,
+      "expected_sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+      "file_name_matches_expected": true,
+      "file_size_matches_expected": true,
+      "official_file_identity_verified": true,
+      "sha256_matches_expected": true
+    },
+    "rejected_row_examples": [
+      {
+        "arealand_part": 558858619,
+        "areawater_part": 1794806659,
+        "line_number": 2,
+        "reasons": [
+          "invalid_zip_zcta_format"
+        ],
+        "source_congressional_geoid": "0101",
+        "zcta": ""
+      },
+      {
+        "arealand_part": 46867832,
+        "areawater_part": 18606666,
+        "line_number": 113,
+        "reasons": [
+          "invalid_zip_zcta_format"
+        ],
+        "source_congressional_geoid": "0102",
+        "zcta": ""
+      },
+      {
+        "arealand_part": 242786029,
+        "areawater_part": 518149,
+        "line_number": 255,
+        "reasons": [
+          "invalid_zip_zcta_format"
+        ],
+        "source_congressional_geoid": "0103",
+        "zcta": ""
+      },
+      {
+        "arealand_part": 159808490,
+        "areawater_part": 16283,
+        "line_number": 571,
+        "reasons": [
+          "invalid_zip_zcta_format"
+        ],
+        "source_congressional_geoid": "0106",
+        "zcta": ""
+      },
+      {
+        "arealand_part": 15231028,
+        "areawater_part": 0,
+        "line_number": 662,
+        "reasons": [
+          "invalid_zip_zcta_format"
+        ],
+        "source_congressional_geoid": "0107",
+        "zcta": ""
+      },
+      {
+        "arealand_part": 950464808699,
+        "areawater_part": 219137428253,
+        "line_number": 809,
+        "reasons": [
+          "invalid_zip_zcta_format"
+        ],
+        "source_congressional_geoid": "0200",
+        "zcta": ""
+      },
+      {
+        "arealand_part": 89959515,
+        "areawater_part": 2009971,
+        "line_number": 1055,
+        "reasons": [
+          "invalid_zip_zcta_format"
+        ],
+        "source_congressional_geoid": "0401",
+        "zcta": ""
+      },
+      {
+        "arealand_part": 28724682361,
+        "areawater_part": 47637861,
+        "line_number": 1099,
+        "reasons": [
+          "invalid_zip_zcta_format"
+        ],
+        "source_congressional_geoid": "0402",
+        "zcta": ""
+      },
+      {
+        "arealand_part": 2023702891,
+        "areawater_part": 3072578,
+        "line_number": 1343,
+        "reasons": [
+          "invalid_zip_zcta_format"
+        ],
+        "source_congressional_geoid": "0406",
+        "zcta": ""
+      },
+      {
+        "arealand_part": 14113763689,
+        "areawater_part": 325805,
+        "line_number": 1423,
+        "reasons": [
+          "invalid_zip_zcta_format"
+        ],
+        "source_congressional_geoid": "0407",
+        "zcta": ""
+      }
+    ],
+    "rejected_rows_checksum": "6c1afba8b64218144c053d697dc599f47e2efb1f40845ec068e76a9146f5be7e",
+    "territory_rejections": {
+      "AS": 2,
+      "GU": 8,
+      "MP": 4,
+      "PR": 133,
+      "VI": 7
+    }
+  }
+}
