@@ -1,0 +1,206 @@
+{
+  "analysis_id": "zip-overlap-sensitivity-v1-57fad59f",
+  "deterministic_ordering": {
+    "anomaly_lists": "anomaly class then canonical JSON value",
+    "changed_classifications": "policy ID keys and ZCTA values ascending",
+    "normalized_relationship_evidence": "source_line_number ascending",
+    "per_zcta_rankings": "ZCTA ascending; land share descending with canonical pair tie-break"
+  },
+  "local_artifacts": {
+    "analysis_id": "zip-overlap-sensitivity-v1-57fad59f",
+    "files": [
+      {
+        "path": ".local/zip_overlap_sensitivity/zip-overlap-sensitivity-v1-57fad59f/normalized_relationship_evidence.jsonl",
+        "row_count": 39967,
+        "sha256": "b78117536e5383da0cef64b8a1e715c1b7ee51a4eb49f382e0abeda1d386f69a",
+        "size_bytes": 31856598
+      },
+      {
+        "path": ".local/zip_overlap_sensitivity/zip-overlap-sensitivity-v1-57fad59f/per_zcta_rankings.jsonl",
+        "row_count": 33642,
+        "sha256": "eee7cecc327157e3d5479513711589466695e851c451d38272b4f70a188345e2",
+        "size_bytes": 24164063
+      },
+      {
+        "path": ".local/zip_overlap_sensitivity/zip-overlap-sensitivity-v1-57fad59f/changed_classifications.json",
+        "row_count": null,
+        "sha256": "edac97eacbe3c90c1b8fe1603649fa2153909051d505dc9401fa9dd699b6d8f0",
+        "size_bytes": 235701
+      },
+      {
+        "path": ".local/zip_overlap_sensitivity/zip-overlap-sensitivity-v1-57fad59f/anomaly_lists.json",
+        "row_count": null,
+        "sha256": "1674feaccea9075a44df6e23c32f56cfb9344ce3773939f1ac8280258dbae6e8",
+        "size_bytes": 14974
+      }
+    ]
+  },
+  "parser_version": "zip_overlap_area_parser_v1",
+  "policy_definitions": [
+    {
+      "definition": "every relationship accepted by the existing parser",
+      "id": "policy_a_any_accepted",
+      "kind": "any"
+    },
+    {
+      "definition": "AREALAND_PART + AREAWATER_PART > 0",
+      "id": "policy_b_positive_total",
+      "kind": "positive_total"
+    },
+    {
+      "definition": "AREALAND_PART > 0",
+      "id": "policy_c_positive_land",
+      "kind": "positive_land"
+    },
+    {
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 > 0%",
+      "id": "policy_d_gt_0_percent",
+      "inclusive": false,
+      "kind": "land_share",
+      "threshold": {
+        "decimal": "0",
+        "denominator": 1,
+        "numerator": 0,
+        "percent_decimal": "0"
+      }
+    },
+    {
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.01%",
+      "id": "policy_d_gte_0_01_percent",
+      "inclusive": true,
+      "kind": "land_share",
+      "threshold": {
+        "decimal": "0.0001",
+        "denominator": 10000,
+        "numerator": 1,
+        "percent_decimal": "0.01"
+      }
+    },
+    {
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.05%",
+      "id": "policy_d_gte_0_05_percent",
+      "inclusive": true,
+      "kind": "land_share",
+      "threshold": {
+        "decimal": "0.0005",
+        "denominator": 2000,
+        "numerator": 1,
+        "percent_decimal": "0.05"
+      }
+    },
+    {
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.1%",
+      "id": "policy_d_gte_0_1_percent",
+      "inclusive": true,
+      "kind": "land_share",
+      "threshold": {
+        "decimal": "0.001",
+        "denominator": 1000,
+        "numerator": 1,
+        "percent_decimal": "0.1"
+      }
+    },
+    {
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.5%",
+      "id": "policy_d_gte_0_5_percent",
+      "inclusive": true,
+      "kind": "land_share",
+      "threshold": {
+        "decimal": "0.005",
+        "denominator": 200,
+        "numerator": 1,
+        "percent_decimal": "0.5"
+      }
+    },
+    {
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 1%",
+      "id": "policy_d_gte_1_percent",
+      "inclusive": true,
+      "kind": "land_share",
+      "threshold": {
+        "decimal": "0.01",
+        "denominator": 100,
+        "numerator": 1,
+        "percent_decimal": "1"
+      }
+    },
+    {
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 2%",
+      "id": "policy_d_gte_2_percent",
+      "inclusive": true,
+      "kind": "land_share",
+      "threshold": {
+        "decimal": "0.02",
+        "denominator": 50,
+        "numerator": 1,
+        "percent_decimal": "2"
+      }
+    },
+    {
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 5%",
+      "id": "policy_d_gte_5_percent",
+      "inclusive": true,
+      "kind": "land_share",
+      "threshold": {
+        "decimal": "0.05",
+        "denominator": 20,
+        "numerator": 1,
+        "percent_decimal": "5"
+      }
+    },
+    {
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 10%",
+      "id": "policy_d_gte_10_percent",
+      "inclusive": true,
+      "kind": "land_share",
+      "threshold": {
+        "decimal": "0.1",
+        "denominator": 10,
+        "numerator": 1,
+        "percent_decimal": "10"
+      }
+    },
+    {
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 25%",
+      "id": "policy_d_gte_25_percent",
+      "inclusive": true,
+      "kind": "land_share",
+      "threshold": {
+        "decimal": "0.25",
+        "denominator": 4,
+        "numerator": 1,
+        "percent_decimal": "25"
+      }
+    },
+    {
+      "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 50%",
+      "id": "policy_d_gte_50_percent",
+      "inclusive": true,
+      "kind": "land_share",
+      "threshold": {
+        "decimal": "0.5",
+        "denominator": 2,
+        "numerator": 1,
+        "percent_decimal": "50"
+      }
+    }
+  ],
+  "production_write_performed": false,
+  "reproduction_command": "python backend/scripts/analyze_zip_overlap_sensitivity.py --dry-run --read-only --input .local/zip_source_official/tab20_cd11920_zcta520_natl.txt --env-path backend/.env --output docs/review_packets/zip_overlap_sensitivity_bounded_staging_design_v1.json --markdown-output docs/review_packets/zip_overlap_sensitivity_bounded_staging_design_v1.md",
+  "row_counts": {
+    "accepted_rows": 39967,
+    "multi_state_zctas": 137,
+    "raw_rows": 40397,
+    "rejected_rows": 430,
+    "same_state_multi_district_zctas": 5725,
+    "source_state_district_pairs": 436,
+    "states_dc": 51,
+    "unique_zctas": 33642
+  },
+  "schema_version": "zip_overlap_sensitivity_source_manifest_v1",
+  "source": {
+    "filename": "tab20_cd11920_zcta520_natl.txt",
+    "sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77",
+    "size_bytes": 6195997
+  }
+}
