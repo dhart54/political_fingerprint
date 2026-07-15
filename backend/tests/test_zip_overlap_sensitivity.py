@@ -124,6 +124,33 @@ def test_vacant_conflict_stale_and_wrong_snapshot_classification():
     assert analysis.seat_classification(mapping, {("NC", "01"): wrong}) == "no_seeded_seat_match"
 
 
+def test_readiness_metrics_separate_complete_ambiguous_from_strict_ready():
+    mappings = [
+        row(zcta="00001", district="01"),
+        row(zcta="00001", district="02", line=3),
+        row(zcta="00002", district="01", line=4),
+        row(zcta="00003", district="03", line=5),
+        row(zcta="00004", state="DC", district="98", line=6),
+    ]
+    seats = {
+        ("NC", "01"): seat(district="01"),
+        ("NC", "02"): seat(district="02"),
+        ("NC", "03"): seat(district="03", status="vacant"),
+        ("DC", "00"): seat(state="DC", district="00", seat_type="delegate"),
+    }
+    metrics = analysis.readiness_metrics(
+        ["00001", "00002", "00003", "00004", "00005"],
+        analysis.group_rows(mappings),
+        seats,
+    )
+    assert metrics["all_surviving_mappings_have_supported_current_seat_evidence_zctas"] == 2
+    assert metrics["ambiguous_zctas_with_complete_current_seat_evidence"] == 1
+    assert metrics["single_mapping_current_seat_ready_zctas"] == 1
+    assert metrics["single_mapping_officially_vacant_zctas"] == 1
+    assert metrics["single_mapping_candidate_dc_normalization_zctas"] == 1
+    assert metrics["single_mapping_no_seeded_seat_match_zctas"] == 0
+
+
 def test_seeded_seat_duplicate_blocks_reconciliation():
     with pytest.raises(analysis.AnalysisSafetyError, match="duplicate seeded seat"):
         analysis.reconcile_seats([row()], [seat(), seat()])
@@ -167,7 +194,9 @@ def test_zip_nonempty_route_flag_and_production_eligibility_guards_are_static():
 def test_candidate_migration_is_additive_and_unapplied():
     result = analysis.validate_candidate_migration(analysis.CANDIDATE_MIGRATION.read_text(encoding="utf-8"))
     assert result["additive_only"] is True and result["contains_dml"] is False and result["applied"] is False
-    assert len(result["tables"]) == 4
+    assert len(result["tables"]) == 5
+    assert result["exact_share_contract"] == "raw_area_only"
+    assert result["retrieval_precision"] == "date"
 
 
 @pytest.mark.parametrize("sql", ["ALTER TABLE x ADD y int", "INSERT INTO x VALUES (1)", "DROP TABLE x"])
@@ -176,8 +205,49 @@ def test_candidate_migration_rejects_out_of_envelope_sql(sql):
         analysis.validate_candidate_migration(sql)
 
 
+@pytest.mark.parametrize(
+    ("old", "new"),
+    [
+        ("FOREIGN KEY (snapshot_id, policy_run_id)", "FOREIGN KEY (policy_run_id)"),
+        ("REFERENCES zip_mapping_source_artifacts(snapshot_id, artifact_id)\n        ON DELETE CASCADE", "REFERENCES zip_mapping_source_artifacts(snapshot_id, artifact_id)\n        ON DELETE RESTRICT"),
+        ("REFERENCES house_member_metadata_snapshots(snapshot_id) ON DELETE RESTRICT", "REFERENCES house_member_metadata_snapshots(snapshot_id) ON DELETE CASCADE"),
+        ("UNIQUE (policy_run_id, relationship_id)", "UNIQUE (relationship_id)"),
+        ("UNIQUE (policy_run_id, zcta, presentation_rank)", "UNIQUE (policy_run_id, presentation_rank)"),
+        ("CHECK (relationship_survives OR presentation_rank IS NULL)", "CHECK (presentation_rank IS NULL)"),
+        ("arealand_part BIGINT NOT NULL", "arealand_part BIGINT NOT NULL,\n    land_share_numerator BIGINT"),
+        ("CREATE INDEX IF NOT EXISTS idx_zip_policy_evaluations_run_zcta", "CREATE INDEX IF NOT EXISTS removed_zip_policy_evaluations_run_zcta"),
+    ],
+)
+def test_candidate_migration_required_contract_mutations_fail(old, new):
+    sql = analysis.CANDIDATE_MIGRATION.read_text(encoding="utf-8")
+    assert old in sql
+    with pytest.raises(analysis.AnalysisSafetyError):
+        analysis.validate_candidate_migration(sql.replace(old, new, 1))
+
+
+def test_candidate_migration_requires_exact_outer_wrappers():
+    sql = analysis.CANDIDATE_MIGRATION.read_text(encoding="utf-8")
+    with pytest.raises(analysis.AnalysisSafetyError, match="outer BEGIN/COMMIT"):
+        analysis.validate_candidate_migration(sql.replace("BEGIN;", "BEGIN TRANSACTION;", 1))
+
+
 def test_partition_shortfall_must_match_rejected_zz_water():
     integrity = analysis.validate_geographic_integrity([row(land=100, water=5, zwater=10)])
     rejected = [{"zcta": "00001", "source_congressional_geoid": "37ZZ", "areawater_part": 5}]
     result = analysis.explain_partition_discrepancies(integrity, rejected)
     assert result["status"] == "bounded_and_explained"
+    assert result["full_partition_maps_equal"] is True
+    assert result["rejected_positive_water_zz_row_count"] == 1
+
+
+@pytest.mark.parametrize("rejected", [
+    [
+        {"zcta": "00001", "source_congressional_geoid": "37ZZ", "areawater_part": 5},
+        {"zcta": "99999", "source_congressional_geoid": "37ZZ", "areawater_part": 1},
+    ],
+    [{"zcta": "00001", "source_congressional_geoid": "37ZZ", "areawater_part": 4}],
+])
+def test_partition_shortfall_rejects_extra_or_mismatched_zz_water(rejected):
+    integrity = analysis.validate_geographic_integrity([row(land=100, water=5, zwater=10)])
+    with pytest.raises(analysis.AnalysisSafetyError, match="could not be bounded"):
+        analysis.explain_partition_discrepancies(integrity, rejected)

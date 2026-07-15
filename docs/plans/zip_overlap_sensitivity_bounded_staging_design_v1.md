@@ -29,7 +29,7 @@
 - [x] Tests/build/validation recorded.
 - [x] Review packet or final documentation updated.
 - [x] Final reconciliation completed.
-- [ ] Intended files committed, pushed, and opened as a draft PR against `main`.
+- [x] Intended files committed, pushed, and opened as draft PR #89 against `main`; correction commit pending.
 
 ## Baseline
 
@@ -64,6 +64,8 @@
 - There are 37 water-only relationships across 37 ZCTAs, 32 positive-land relationships below 0.01%, and no accepted zero-area rows.
 - Ambiguity is 5,862 ZCTAs under any/positive-total overlap, 5,829 under positive-land overlap, 1,925 at the inclusive 25% sensitivity point, and zero at 50%; the 50% policy leaves 42 ZCTAs without a mapping.
 - The immutable House snapshot matches all six approved canonical checksums. Source pairs reconcile to 431 filled voting seats, four official vacancies, and the DC candidate-normalization pair.
+- Correction audit: the prior broad 33,334-style metric counted ZCTAs whose surviving mappings all had supported current-seat evidence, including ambiguous ZCTAs. It is retained under an accurate name, with strict single-mapping readiness reported separately.
+- The positive-water state-`ZZ` proof now requires exact full-map and aggregate equality: 31 rows/ZCTAs and 66,153,060 square meters, with no extra or mismatched partition.
 
 ## Decisions And Rationale
 
@@ -71,20 +73,23 @@
 - All policy threshold decisions will use integer/rational comparisons rather than binary floating point.
 - Area evidence supports preserving possible mappings and an explicitly caveated/versioned presentation rank. It does not support automatic representative selection.
 - The next accuracy step should use both block-level population allocation and full-address district lookup: the first evaluates ZIP-level ranking quality; the second is necessary for address-level automatic selection.
-- The existing runtime candidate table is insufficient as the evidence ledger. Candidate migration `0015` adds separate immutable snapshot/artifact/relationship tables and versioned policy evaluations and remains unapplied.
+- The existing runtime candidate table is insufficient as the evidence ledger. Candidate migration `0015` adds separate immutable snapshot/artifact/relationship tables, immutable policy-run parents, and run-scoped evaluations and remains unapplied.
+- Exact shares use raw integer area fields only; redundant manually insertable share fields were removed. Artifact retrieval provenance is date-precision only.
 
 ## Deviations Or Corrections
 
 - Local pytest temp-root permissions required explicit repository-local `--basetemp` paths; this was a local tooling condition, not a product/test failure.
+- Corrected readiness terminology without changing the measured overlap findings or production eligibility.
 
 ## Validation Results
 
-- Focused overlap suite: 25 passed.
-- Combined current-House, ZIP-readiness, route/parity, and overlap suite: 141 passed.
+- Focused overlap correction suite: 38 passed.
+- Combined current-House, ZIP-readiness, route/parity, and overlap suite: 153 passed.
 - Full official-file analysis: passed with exact identity and baseline gates.
 - Production read-only pre/postchecks: passed; session and transaction read-only confirmed with 30-second statement timeout; protected checksums and legislators fingerprint unchanged; ZIP production rows remained zero.
 - JSON validation: review packet and source manifest passed `json.tool`.
 - `git diff --check`: passed.
+- Candidate migration validator: passed with five exact tables, policy-run parent, composite lineage, restrictive House deletion, rank constraints, raw-area-only shares, date-only retrieval precision, and required indexes; migration remains unapplied.
 
 ## Production Writes
 

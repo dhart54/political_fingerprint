@@ -4,11 +4,43 @@
     "additive_only": true,
     "applied": false,
     "contains_dml": false,
+    "exact_share_contract": "raw_area_only",
     "path": "backend/migrations/0015_zip_mapping_source_evidence.sql",
-    "sha256": "306557d890a83102775ad04aace93ee592e8649925433b340ff676d356fee04e",
+    "required_contracts": [
+      "artifact_composite_identity",
+      "artifact_retrieval_precision",
+      "artifact_snapshot_fk",
+      "auto_select_false",
+      "evaluation_policy_run_fk",
+      "evaluation_relationship_fk",
+      "policy_definition",
+      "policy_run_composite_identity",
+      "policy_run_house_fk",
+      "policy_run_identity_unique",
+      "policy_run_relationship_unique",
+      "policy_run_source_fk",
+      "rank_survivor_check",
+      "rank_unique",
+      "relationship_artifact_fk",
+      "relationship_source_geoid_unique",
+      "relationship_source_line_unique",
+      "relationship_zcta_unique"
+    ],
+    "required_indexes": [
+      "idx_zip_mapping_policy_runs_house_snapshot",
+      "idx_zip_mapping_policy_runs_source",
+      "idx_zip_mapping_source_artifacts_snapshot",
+      "idx_zip_policy_evaluations_run_zcta",
+      "idx_zip_policy_evaluations_survival",
+      "idx_zip_relationship_evidence_pair",
+      "idx_zip_relationship_evidence_zcta"
+    ],
+    "retrieval_precision": "date",
+    "sha256": "005b5db1452dc41a367fb2cb5110a9281e1bc174f0f7ffbe00704b0dad6c6387",
     "tables": [
       "zip_district_relationship_evidence",
       "zip_mapping_policy_evaluations",
+      "zip_mapping_policy_runs",
       "zip_mapping_source_artifacts",
       "zip_mapping_source_snapshots"
     ]
@@ -50,7 +82,7 @@
       "TX-23"
     ]
   },
-  "generated_at": "2026-07-15T00:30:46.041414+00:00",
+  "generated_at": "2026-07-15T01:25:35.504011+00:00",
   "geographic_code_handling": {
     "dc_98_relationship_rows": 57,
     "dc_internal_delegate_convention": "DC-00",
@@ -320,10 +352,13 @@
     "full_list_checksum": "5588ed9c1d8c67b3ee169f0aa193d543e6f33ce780edbb60a5e54572c90c5223",
     "partition_discrepancy_explanation": {
       "accepted_partition_water_shortfall_square_meters": 66153060,
-      "affected_zcta_checksum": "3f802470505b9c53282c3374c2599e504942a5d1e2fff854473bbfc635127385",
       "affected_zctas": 31,
+      "aggregate_totals_equal": true,
       "explanation": "Accepted district rows reconcile all ZCTA land exactly. The water/total under-allocation for these ZCTAs equals the official file's state-ZZ water partition, which the existing parser rejects because ZZ is not a House district.",
+      "full_partition_maps_equal": true,
+      "partition_map_checksum": "44dff8f085eeb1a79dfdf12e4b68c1073c6bb8267520bbd032c5c369e0c75642",
       "rejected_non_district_zz_water_square_meters": 66153060,
+      "rejected_positive_water_zz_row_count": 31,
       "status": "bounded_and_explained"
     },
     "reconciliation_counts": {
@@ -370,8 +405,10 @@
   },
   "policies": [
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33334,
       "ambiguity_eliminated_from_policy_a": 0,
       "ambiguity_eliminated_from_policy_c": 0,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5717,
       "changed_classification_checksum": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
       "classification_changed_from_policy_a": 0,
       "classification_changed_from_policy_c": 33,
@@ -410,7 +447,10 @@
         "lt_50": 1925,
         "undefined": 27780
       },
-      "source_to_current_seat_ready_zctas": 33334,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27617,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
       "top_minus_second_margin_distribution": {
         "gte_100": 33,
         "lt_0_01": 1,
@@ -428,8 +468,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33334,
       "ambiguity_eliminated_from_policy_a": 0,
       "ambiguity_eliminated_from_policy_c": 0,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5717,
       "changed_classification_checksum": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
       "classification_changed_from_policy_a": 0,
       "classification_changed_from_policy_c": 33,
@@ -468,7 +510,10 @@
         "lt_50": 1925,
         "undefined": 27780
       },
-      "source_to_current_seat_ready_zctas": 33334,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27617,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
       "top_minus_second_margin_distribution": {
         "gte_100": 33,
         "lt_0_01": 1,
@@ -486,8 +531,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33334,
       "ambiguity_eliminated_from_policy_a": 33,
       "ambiguity_eliminated_from_policy_c": 0,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5684,
       "changed_classification_checksum": "ff53c45c1dd122f166e166d221273cde0f43024a7c0376190c443bf26f30a6ee",
       "classification_changed_from_policy_a": 33,
       "classification_changed_from_policy_c": 0,
@@ -525,7 +572,10 @@
         "lt_50": 1925,
         "undefined": 27813
       },
-      "source_to_current_seat_ready_zctas": 33334,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27650,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
       "top_minus_second_margin_distribution": {
         "lt_0_01": 1,
         "lt_0_1": 2,
@@ -542,8 +592,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33334,
       "ambiguity_eliminated_from_policy_a": 33,
       "ambiguity_eliminated_from_policy_c": 0,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5684,
       "changed_classification_checksum": "ff53c45c1dd122f166e166d221273cde0f43024a7c0376190c443bf26f30a6ee",
       "classification_changed_from_policy_a": 33,
       "classification_changed_from_policy_c": 0,
@@ -581,7 +633,10 @@
         "lt_50": 1925,
         "undefined": 27813
       },
-      "source_to_current_seat_ready_zctas": 33334,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27650,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
       "top_minus_second_margin_distribution": {
         "lt_0_01": 1,
         "lt_0_1": 2,
@@ -598,8 +653,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33334,
       "ambiguity_eliminated_from_policy_a": 58,
       "ambiguity_eliminated_from_policy_c": 25,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5659,
       "changed_classification_checksum": "181ddfa5af55b28dbe8906e1452bd48315d25f591c2c51c992460a359a52d2e4",
       "classification_changed_from_policy_a": 58,
       "classification_changed_from_policy_c": 25,
@@ -636,7 +693,10 @@
         "lt_50": 1925,
         "undefined": 27838
       },
-      "source_to_current_seat_ready_zctas": 33334,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27675,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
       "top_minus_second_margin_distribution": {
         "lt_0_01": 1,
         "lt_0_1": 2,
@@ -653,8 +713,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33336,
       "ambiguity_eliminated_from_policy_a": 139,
       "ambiguity_eliminated_from_policy_c": 106,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5580,
       "changed_classification_checksum": "ec79f7d115d0193c414dc293d6fc0cecaf90f3b7626dcbbb0ae9fa5a12652a9c",
       "classification_changed_from_policy_a": 139,
       "classification_changed_from_policy_c": 106,
@@ -691,7 +753,10 @@
         "lt_50": 1925,
         "undefined": 27919
       },
-      "source_to_current_seat_ready_zctas": 33336,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27756,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
       "top_minus_second_margin_distribution": {
         "lt_0_01": 1,
         "lt_0_1": 2,
@@ -708,8 +773,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33337,
       "ambiguity_eliminated_from_policy_a": 204,
       "ambiguity_eliminated_from_policy_c": 171,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5516,
       "changed_classification_checksum": "b81d060ad14fd4b1a4840ce212f54eca37e3e7a8b80ad1466e15196e40079de5",
       "classification_changed_from_policy_a": 204,
       "classification_changed_from_policy_c": 171,
@@ -745,7 +812,10 @@
         "lt_50": 1925,
         "undefined": 27984
       },
-      "source_to_current_seat_ready_zctas": 33337,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 27821,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 106,
       "top_minus_second_margin_distribution": {
         "lt_0_01": 1,
         "lt_0_1": 2,
@@ -762,8 +832,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33346,
       "ambiguity_eliminated_from_policy_a": 516,
       "ambiguity_eliminated_from_policy_c": 483,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 5216,
       "changed_classification_checksum": "a97b9130895ca3b2a37165adf4bc1d72cf5431c43e646f289d972d8849aefce3",
       "classification_changed_from_policy_a": 517,
       "classification_changed_from_policy_c": 484,
@@ -799,7 +871,10 @@
         "lt_50": 1925,
         "undefined": 28296
       },
-      "source_to_current_seat_ready_zctas": 33346,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 28130,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 109,
       "top_minus_second_margin_distribution": {
         "lt_0_01": 1,
         "lt_0_1": 2,
@@ -816,8 +891,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33347,
       "ambiguity_eliminated_from_policy_a": 741,
       "ambiguity_eliminated_from_policy_c": 708,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 4994,
       "changed_classification_checksum": "74bed04f968e1543b2ba9491baa565c9a75d37924e97724815299409b4bf90d8",
       "classification_changed_from_policy_a": 742,
       "classification_changed_from_policy_c": 709,
@@ -852,7 +929,10 @@
         "lt_50": 1925,
         "undefined": 28521
       },
-      "source_to_current_seat_ready_zctas": 33347,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 28353,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 111,
       "top_minus_second_margin_distribution": {
         "lt_0_01": 1,
         "lt_0_1": 2,
@@ -869,8 +949,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33354,
       "ambiguity_eliminated_from_policy_a": 1074,
       "ambiguity_eliminated_from_policy_c": 1041,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 4671,
       "changed_classification_checksum": "0481420266c833ebab91bf84301370ecc64861665379b902733f277d6e8e0c3b",
       "classification_changed_from_policy_a": 1075,
       "classification_changed_from_policy_c": 1042,
@@ -905,7 +987,10 @@
         "lt_50": 1925,
         "undefined": 28854
       },
-      "source_to_current_seat_ready_zctas": 33354,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 28683,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 114,
       "top_minus_second_margin_distribution": {
         "lt_0_01": 1,
         "lt_0_1": 2,
@@ -922,8 +1007,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33362,
       "ambiguity_eliminated_from_policy_a": 1729,
       "ambiguity_eliminated_from_policy_c": 1696,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 4031,
       "changed_classification_checksum": "8f2b0f88b31c83301de3b105bfbad21d19caf31eac74981ded8f843c0c1ee5d8",
       "classification_changed_from_policy_a": 1730,
       "classification_changed_from_policy_c": 1697,
@@ -958,7 +1045,10 @@
         "lt_50": 1925,
         "undefined": 29509
       },
-      "source_to_current_seat_ready_zctas": 33362,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 29331,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 121,
       "top_minus_second_margin_distribution": {
         "lt_0_01": 1,
         "lt_0_1": 2,
@@ -975,8 +1065,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33369,
       "ambiguity_eliminated_from_policy_a": 2466,
       "ambiguity_eliminated_from_policy_c": 2433,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 3306,
       "changed_classification_checksum": "6486ade8255a288b21abf59a39d44a8efdd334f256154e34b0c0c427edbfbb37",
       "classification_changed_from_policy_a": 2467,
       "classification_changed_from_policy_c": 2434,
@@ -1010,7 +1102,10 @@
         "lt_50": 1925,
         "undefined": 30246
       },
-      "source_to_current_seat_ready_zctas": 33369,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 30063,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 126,
       "top_minus_second_margin_distribution": {
         "lt_0_01": 1,
         "lt_0_1": 2,
@@ -1027,8 +1122,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33392,
       "ambiguity_eliminated_from_policy_a": 3937,
       "ambiguity_eliminated_from_policy_c": 3904,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 1871,
       "changed_classification_checksum": "e0a3392c087b15ca1c708d815bd28b542b5ec783ec11ffad99f0e2d9a7a36c30",
       "classification_changed_from_policy_a": 3939,
       "classification_changed_from_policy_c": 3906,
@@ -1061,7 +1158,10 @@
         "lt_50": 1925,
         "undefined": 31717
       },
-      "source_to_current_seat_ready_zctas": 33392,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 31521,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 139,
       "top_minus_second_margin_distribution": {
         "lt_0_01": 1,
         "lt_0_1": 2,
@@ -1076,8 +1176,10 @@
       "zctas_with_no_surviving_relationship": 0
     },
     {
+      "all_surviving_mappings_have_supported_current_seat_evidence_zctas": 33376,
       "ambiguity_eliminated_from_policy_a": 5862,
       "ambiguity_eliminated_from_policy_c": 5829,
+      "ambiguous_zctas_with_complete_current_seat_evidence": 0,
       "changed_classification_checksum": "d9bf097594ad5deb1cf6cf907a1906b6d6c261d9def09afe1d1eec800d2f2e51",
       "classification_changed_from_policy_a": 5862,
       "classification_changed_from_policy_c": 5829,
@@ -1108,7 +1210,10 @@
       "second_largest_land_share_distribution": {
         "undefined": 33600
       },
-      "source_to_current_seat_ready_zctas": 33376,
+      "single_mapping_candidate_dc_normalization_zctas": 57,
+      "single_mapping_current_seat_ready_zctas": 33376,
+      "single_mapping_no_seeded_seat_match_zctas": 0,
+      "single_mapping_officially_vacant_zctas": 167,
       "top_minus_second_margin_distribution": {
         "undefined": 33600
       },

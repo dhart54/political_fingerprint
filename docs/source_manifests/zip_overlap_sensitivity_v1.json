@@ -1,5 +1,50 @@
 {
   "analysis_id": "zip-overlap-sensitivity-v1-57fad59f",
+  "candidate_migration": {
+    "additive_only": true,
+    "applied": false,
+    "contains_dml": false,
+    "exact_share_contract": "raw_area_only",
+    "path": "backend/migrations/0015_zip_mapping_source_evidence.sql",
+    "required_contracts": [
+      "artifact_composite_identity",
+      "artifact_retrieval_precision",
+      "artifact_snapshot_fk",
+      "auto_select_false",
+      "evaluation_policy_run_fk",
+      "evaluation_relationship_fk",
+      "policy_definition",
+      "policy_run_composite_identity",
+      "policy_run_house_fk",
+      "policy_run_identity_unique",
+      "policy_run_relationship_unique",
+      "policy_run_source_fk",
+      "rank_survivor_check",
+      "rank_unique",
+      "relationship_artifact_fk",
+      "relationship_source_geoid_unique",
+      "relationship_source_line_unique",
+      "relationship_zcta_unique"
+    ],
+    "required_indexes": [
+      "idx_zip_mapping_policy_runs_house_snapshot",
+      "idx_zip_mapping_policy_runs_source",
+      "idx_zip_mapping_source_artifacts_snapshot",
+      "idx_zip_policy_evaluations_run_zcta",
+      "idx_zip_policy_evaluations_survival",
+      "idx_zip_relationship_evidence_pair",
+      "idx_zip_relationship_evidence_zcta"
+    ],
+    "retrieval_precision": "date",
+    "sha256": "005b5db1452dc41a367fb2cb5110a9281e1bc174f0f7ffbe00704b0dad6c6387",
+    "tables": [
+      "zip_district_relationship_evidence",
+      "zip_mapping_policy_evaluations",
+      "zip_mapping_policy_runs",
+      "zip_mapping_source_artifacts",
+      "zip_mapping_source_snapshots"
+    ]
+  },
   "deterministic_ordering": {
     "anomaly_lists": "anomaly class then canonical JSON value",
     "changed_classifications": "policy ID keys and ZCTA values ascending",
@@ -186,6 +231,11 @@
     }
   ],
   "production_write_performed": false,
+  "readiness_metric_definitions": {
+    "all_surviving_mappings_have_supported_current_seat_evidence_zctas": "one or more surviving mappings and every distinct pair has supported filled current-seat evidence; ambiguity is allowed",
+    "production_auto_select_eligible_zctas": "fixed at zero",
+    "single_mapping_current_seat_ready_zctas": "exactly one distinct surviving pair classified as a filled current voting seat, delegate, or resident commissioner"
+  },
   "reproduction_command": "python backend/scripts/analyze_zip_overlap_sensitivity.py --dry-run --read-only --input .local/zip_source_official/tab20_cd11920_zcta520_natl.txt --env-path backend/.env --output docs/review_packets/zip_overlap_sensitivity_bounded_staging_design_v1.json --markdown-output docs/review_packets/zip_overlap_sensitivity_bounded_staging_design_v1.md",
   "row_counts": {
     "accepted_rows": 39967,

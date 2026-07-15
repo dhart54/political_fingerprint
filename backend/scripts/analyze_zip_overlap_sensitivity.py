@@ -258,21 +258,29 @@ def validate_geographic_integrity(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def explain_partition_discrepancies(integrity: dict[str, Any], rejected: list[dict[str, Any]]) -> dict[str, Any]:
-    under = {item["zcta"]: item["difference_square_meters"] for item in integrity["full_lists"].get("water_under_allocation", [])}
+    under = {item["zcta"]: -item["difference_square_meters"] for item in integrity["full_lists"].get("water_under_allocation", [])}
     zz_water = Counter()
+    positive_zz_rows = 0
     for row in rejected:
-        if row["zcta"] and row["source_congressional_geoid"].endswith("ZZ") and row["areawater_part"] is not None:
+        if row["zcta"] and row["source_congressional_geoid"].endswith("ZZ") and (row["areawater_part"] or 0) > 0:
             zz_water[row["zcta"]] += row["areawater_part"]
-    explained = {z: amount for z, amount in zz_water.items() if under.get(z) == -amount}
-    if set(explained) != set(under):
+            positive_zz_rows += 1
+    zz_map = dict(sorted(zz_water.items()))
+    under_map = dict(sorted(under.items()))
+    maps_equal = zz_map == under_map
+    totals_equal = sum(zz_map.values()) == sum(under_map.values())
+    if not maps_equal or not totals_equal:
         raise AnalysisSafetyError("partition discrepancies could not be bounded to rejected non-district ZZ water rows")
     return {
         "status": "bounded_and_explained",
-        "affected_zctas": len(under),
+        "rejected_positive_water_zz_row_count": positive_zz_rows,
+        "affected_zctas": len(under_map),
         "explanation": "Accepted district rows reconcile all ZCTA land exactly. The water/total under-allocation for these ZCTAs equals the official file's state-ZZ water partition, which the existing parser rejects because ZZ is not a House district.",
-        "rejected_non_district_zz_water_square_meters": sum(explained.values()),
-        "accepted_partition_water_shortfall_square_meters": -sum(under.values()),
-        "affected_zcta_checksum": deterministic_checksum(sorted(under)),
+        "rejected_non_district_zz_water_square_meters": sum(zz_map.values()),
+        "accepted_partition_water_shortfall_square_meters": sum(under_map.values()),
+        "full_partition_maps_equal": maps_equal,
+        "aggregate_totals_equal": totals_equal,
+        "partition_map_checksum": deterministic_checksum(sorted(zz_map.items())),
     }
 
 
@@ -386,11 +394,7 @@ def policy_result(
     changed_a = [z for z in all_zctas if classes[z] != baseline_classes[z]]
     changed_c = [z for z in all_zctas if classes[z] != positive_land_classes[z]]
     ambiguous = {"multi_state", "same_state_multi_district"}
-    ready = 0
-    for zcta, items in groups.items():
-        classifications = {seat_classification(r, seats) for r in items}
-        if classifications and classifications <= {"filled_current_voting_seat", "filled_current_delegate"}:
-            ready += 1
+    readiness = readiness_metrics(all_zctas, groups, seats)
     removed = [r for r in all_rows if not survives(r, policy)]
     result = {
         "policy_id": policy["id"],
@@ -410,7 +414,7 @@ def policy_result(
         "ambiguity_eliminated_from_policy_a": sum(baseline_classes[z] in ambiguous and classes[z] not in ambiguous for z in all_zctas),
         "ambiguity_eliminated_from_policy_c": sum(positive_land_classes[z] in ambiguous and classes[z] not in ambiguous for z in all_zctas),
         "mapping_seat_classifications": dict(sorted(seat_counts.items())),
-        "source_to_current_seat_ready_zctas": ready,
+        **readiness,
         "production_auto_select_eligible_zctas": 0,
         "largest_land_share_distribution": dict(sorted(top_distribution.items())),
         "second_largest_land_share_distribution": dict(sorted(second_distribution.items())),
@@ -426,6 +430,48 @@ def policy_result(
         "classes": classes,
     }
     return result, changed_a
+
+
+def readiness_metrics(
+    all_zctas: list[str],
+    groups: dict[str, list[dict[str, Any]]],
+    seats: dict[tuple[str, str], dict[str, Any]],
+) -> dict[str, int]:
+    supported = {"filled_current_voting_seat", "filled_current_delegate", "current_resident_commissioner"}
+    metrics = Counter()
+    for zcta in all_zctas:
+        items = groups.get(zcta, [])
+        pair_classes: dict[tuple[str, str], str] = {}
+        for item in items:
+            key = pair(item)
+            classification = seat_classification(item, seats)
+            prior = pair_classes.setdefault(key, classification)
+            if prior != classification:
+                raise AnalysisSafetyError(f"inconsistent seat classification for surviving pair {key[0]}-{key[1]}")
+        classifications = set(pair_classes.values())
+        complete = bool(pair_classes) and classifications <= supported
+        if complete:
+            metrics["all_surviving_mappings_have_supported_current_seat_evidence_zctas"] += 1
+            if len(pair_classes) > 1:
+                metrics["ambiguous_zctas_with_complete_current_seat_evidence"] += 1
+        if len(pair_classes) == 1:
+            classification = next(iter(classifications))
+            if classification in supported:
+                metrics["single_mapping_current_seat_ready_zctas"] += 1
+            elif classification == "officially_vacant":
+                metrics["single_mapping_officially_vacant_zctas"] += 1
+            elif classification == "candidate_dc_normalization":
+                metrics["single_mapping_candidate_dc_normalization_zctas"] += 1
+            elif classification == "no_seeded_seat_match":
+                metrics["single_mapping_no_seeded_seat_match_zctas"] += 1
+    return {name: metrics[name] for name in (
+        "all_surviving_mappings_have_supported_current_seat_evidence_zctas",
+        "single_mapping_current_seat_ready_zctas",
+        "ambiguous_zctas_with_complete_current_seat_evidence",
+        "single_mapping_officially_vacant_zctas",
+        "single_mapping_candidate_dc_normalization_zctas",
+        "single_mapping_no_seeded_seat_match_zctas",
+    )}
 
 
 def analyze_policies(rows: list[dict[str, Any]], seats: dict[tuple[str, str], dict[str, Any]]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
@@ -490,7 +536,12 @@ def execute_select(conn: Any, sql: str, params: tuple[Any, ...] = ()) -> list[di
 
 
 def validate_candidate_migration(sql: str) -> dict[str, Any]:
+    lines = sql.splitlines()
+    nonempty = [line.strip() for line in lines if line.strip()]
+    if not nonempty or nonempty[0].upper() != "BEGIN;" or nonempty[-1].upper() != "COMMIT;" or sum(line.upper() == "BEGIN;" for line in nonempty) != 1 or sum(line.upper() == "COMMIT;" for line in nonempty) != 1:
+        raise AnalysisSafetyError("candidate migration must have exact outer BEGIN/COMMIT wrappers")
     body = re.sub(r"--.*?$|/\*.*?\*/", "", sql, flags=re.M | re.S).lower()
+    compact = re.sub(r"\s+", " ", body).strip()
     banned = {
         name: bool(re.search(pattern, body))
         for name, pattern in {
@@ -501,23 +552,78 @@ def validate_candidate_migration(sql: str) -> dict[str, Any]:
             "update": r"\bupdate\b",
             "delete": r"\bdelete\s+from\b",
             "copy": r"\bcopy\b",
+            "function": r"\bcreate\s+(?:or\s+replace\s+)?function\b",
+            "trigger": r"\bcreate\s+trigger\b",
+            "grant": r"\bgrant\b",
+            "role": r"\bcreate\s+role\b",
+            "extension": r"\bcreate\s+extension\b",
             "route_reference": r"zip_district_map\b",
             "feature_flag": r"zip_multi_row_lookup_enabled",
+            "frontend": r"\bfrontend\b",
         }.items()
     }
     expected_tables = {
         "zip_mapping_source_snapshots",
         "zip_mapping_source_artifacts",
         "zip_district_relationship_evidence",
+        "zip_mapping_policy_runs",
         "zip_mapping_policy_evaluations",
     }
     actual_tables = set(re.findall(r"create table if not exists\s+(\w+)", body))
-    if any(banned.values()) or actual_tables != expected_tables or "on delete cascade" not in body:
-        raise AnalysisSafetyError(f"candidate migration is outside the additive evidence envelope: {banned}")
+    table_bodies = {
+        table: re.sub(r"\s+", " ", match.group(1)).strip()
+        for table in expected_tables
+        if (match := re.search(rf"create table if not exists {table}\s*\((.*?)\n\);", body, flags=re.S))
+    }
+    required_fragments = {
+        "artifact_snapshot_fk": ("zip_mapping_source_artifacts", "snapshot_id text not null references zip_mapping_source_snapshots(snapshot_id) on delete cascade"),
+        "relationship_artifact_fk": ("zip_district_relationship_evidence", "foreign key (snapshot_id, artifact_id) references zip_mapping_source_artifacts(snapshot_id, artifact_id) on delete cascade"),
+        "policy_run_source_fk": ("zip_mapping_policy_runs", "snapshot_id text not null references zip_mapping_source_snapshots(snapshot_id) on delete cascade"),
+        "policy_run_house_fk": ("zip_mapping_policy_runs", "seat_snapshot_id text not null references house_member_metadata_snapshots(snapshot_id) on delete restrict"),
+        "evaluation_policy_run_fk": ("zip_mapping_policy_evaluations", "foreign key (snapshot_id, policy_run_id) references zip_mapping_policy_runs(snapshot_id, policy_run_id) on delete cascade"),
+        "evaluation_relationship_fk": ("zip_mapping_policy_evaluations", "foreign key (snapshot_id, relationship_id, zcta) references zip_district_relationship_evidence(snapshot_id, relationship_id, zcta) on delete cascade"),
+        "policy_run_relationship_unique": ("zip_mapping_policy_evaluations", "unique (policy_run_id, relationship_id)"),
+        "rank_unique": ("zip_mapping_policy_evaluations", "unique (policy_run_id, zcta, presentation_rank)"),
+        "rank_survivor_check": ("zip_mapping_policy_evaluations", "check (relationship_survives or presentation_rank is null)"),
+        "auto_select_false": ("zip_mapping_policy_evaluations", "auto_select_eligible boolean not null default false check (auto_select_eligible = false)"),
+        "artifact_retrieval_precision": ("zip_mapping_source_artifacts", "retrieved_on date not null, retrieval_precision text not null default 'date' check (retrieval_precision = 'date')"),
+        "policy_definition": ("zip_mapping_policy_runs", "policy_definition jsonb not null"),
+        "policy_run_identity_unique": ("zip_mapping_policy_runs", "unique (snapshot_id, seat_snapshot_id, policy_version, policy_definition_sha256)"),
+        "relationship_zcta_unique": ("zip_district_relationship_evidence", "unique (snapshot_id, relationship_id, zcta)"),
+        "artifact_composite_identity": ("zip_mapping_source_artifacts", "unique (snapshot_id, artifact_id)"),
+        "policy_run_composite_identity": ("zip_mapping_policy_runs", "unique (snapshot_id, policy_run_id)"),
+        "relationship_source_line_unique": ("zip_district_relationship_evidence", "unique (snapshot_id, source_line_number)"),
+        "relationship_source_geoid_unique": ("zip_district_relationship_evidence", "unique (snapshot_id, zcta, source_congressional_geoid)"),
+    }
+    required_indexes = {
+        "idx_zip_mapping_source_artifacts_snapshot": "on zip_mapping_source_artifacts (snapshot_id)",
+        "idx_zip_relationship_evidence_zcta": "on zip_district_relationship_evidence (snapshot_id, zcta)",
+        "idx_zip_relationship_evidence_pair": "on zip_district_relationship_evidence (snapshot_id, canonical_source_state, source_district)",
+        "idx_zip_mapping_policy_runs_source": "on zip_mapping_policy_runs (snapshot_id, policy_version, run_status)",
+        "idx_zip_mapping_policy_runs_house_snapshot": "on zip_mapping_policy_runs (seat_snapshot_id)",
+        "idx_zip_policy_evaluations_run_zcta": "on zip_mapping_policy_evaluations (policy_run_id, zcta)",
+        "idx_zip_policy_evaluations_survival": "on zip_mapping_policy_evaluations (policy_run_id, relationship_survives)",
+    }
+    missing = [name for name, (table, fragment) in required_fragments.items() if fragment not in table_bodies.get(table, "")]
+    for index_name, definition in required_indexes.items():
+        if f"create index if not exists {index_name} {definition}" not in compact:
+            missing.append(index_name)
+    share_columns = re.findall(r"\b(?:land|water|total)_share_(?:numerator|denominator)\b", body)
+    raw_area_columns = {"arealand_zcta5_20", "areawater_zcta5_20", "arealand_part", "areawater_part"}
+    relationship_body = table_bodies.get("zip_district_relationship_evidence", "")
+    raw_area_only = not share_columns and all(re.search(rf"\b{name}\s+bigint\s+not null", relationship_body) for name in raw_area_columns)
+    if not raw_area_only:
+        missing.append("raw_area_only_exact_share_contract")
+    if any(banned.values()) or actual_tables != expected_tables or missing:
+        raise AnalysisSafetyError(f"candidate migration is outside the reviewed additive evidence envelope: banned={banned}, missing={missing}, tables={sorted(actual_tables)}")
     return {
         "path": str(CANDIDATE_MIGRATION.relative_to(ROOT)).replace("\\", "/"),
         "sha256": sha256_bytes(CANDIDATE_MIGRATION.read_bytes()),
         "tables": sorted(actual_tables),
+        "required_contracts": sorted(required_fragments),
+        "required_indexes": sorted(required_indexes),
+        "exact_share_contract": "raw_area_only",
+        "retrieval_precision": "date",
         "additive_only": True,
         "contains_dml": False,
         "applied": False,
@@ -711,11 +817,27 @@ def render_markdown(report: dict[str, Any]) -> str:
         )
     lines += [
         "",
+        "## Current-seat evidence metrics",
+        "",
+        "The prior broad readiness metric is preserved as `all_surviving_mappings_have_supported_current_seat_evidence_zctas`. It may include ambiguous ZCTAs. `single_mapping_current_seat_ready_zctas` requires exactly one supported surviving canonical pair. Neither metric is production auto-select eligibility.",
+        "",
+        "| Policy | All mappings supported | Strict single mapping | Ambiguous, complete evidence | Single vacant | Single DC candidate | Single unmatched |",
+        "|---|---:|---:|---:|---:|---:|---:|",
+    ]
+    for p in report["policies"]:
+        lines.append(
+            f"| `{p['policy_id']}` | {p['all_surviving_mappings_have_supported_current_seat_evidence_zctas']} | {p['single_mapping_current_seat_ready_zctas']} | {p['ambiguous_zctas_with_complete_current_seat_evidence']} | {p['single_mapping_officially_vacant_zctas']} | {p['single_mapping_candidate_dc_normalization_zctas']} | {p['single_mapping_no_seeded_seat_match_zctas']} |"
+        )
+    zz = report["geographic_integrity"]["partition_discrepancy_explanation"]
+    lines += [
+        "",
         "## Measured overlap findings",
         "",
         f"- Water-only relationships: `{report['sensitivity_summary']['water_only_relationship_count']}` across `{report['sensitivity_summary']['water_only_affected_zcta_count']}` ZCTAs.",
         f"- Zero-area relationships: `{report['sensitivity_summary']['zero_area_relationship_count']}`.",
         f"- Integrity anomaly full-list checksum: `{report['geographic_integrity']['full_list_checksum']}`.",
+        f"- Rejected positive-water state-`ZZ` rows: `{zz['rejected_positive_water_zz_row_count']}` across `{zz['affected_zctas']}` ZCTAs, totaling `{zz['rejected_non_district_zz_water_square_meters']}` square meters.",
+        f"- Complete `ZZ` partition map equals the accepted-row under-allocation map: `{zz['full_partition_maps_equal']}`; checksum `{zz['partition_map_checksum']}`.",
         "",
         "## Decision boundary",
         "",
@@ -727,7 +849,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         "",
         "## Staging decision",
         "",
-        "The existing `zip_district_mappings` table cannot reproduce raw area evidence or policy decisions. The candidate additive migration separates immutable snapshots/artifacts/relationship evidence from versioned policy evaluations. It remains unapplied.",
+        "The existing `zip_district_mappings` table cannot reproduce raw area evidence or policy decisions. The candidate additive migration separates immutable snapshots/artifacts/relationship evidence, immutable policy runs, and relationship evaluations. Exact shares are derived from raw integer areas only. Artifact retrieval precision is an honest date. It remains unapplied.",
         "",
         "## Product-use decision table",
         "",
@@ -757,6 +879,12 @@ def build_manifest(report: dict[str, Any]) -> dict[str, Any]:
         },
         "parser_version": PARSER_VERSION,
         "policy_definitions": [{k: (fraction_record(v) if isinstance(v, Fraction) else v) for k, v in p.items()} for p in policies()],
+        "readiness_metric_definitions": {
+            "all_surviving_mappings_have_supported_current_seat_evidence_zctas": "one or more surviving mappings and every distinct pair has supported filled current-seat evidence; ambiguity is allowed",
+            "single_mapping_current_seat_ready_zctas": "exactly one distinct surviving pair classified as a filled current voting seat, delegate, or resident commissioner",
+            "production_auto_select_eligible_zctas": "fixed at zero",
+        },
+        "candidate_migration": report["candidate_migration_validation"],
         "local_artifacts": report["local_artifacts"],
         "row_counts": report["source"]["baseline"],
         "deterministic_ordering": {
