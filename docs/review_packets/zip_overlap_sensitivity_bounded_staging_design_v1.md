@@ -67,7 +67,11 @@ The prior broad readiness metric is preserved as `all_surviving_mappings_have_su
 
 ## Staging decision
 
-The existing `zip_district_mappings` table cannot reproduce raw area evidence or policy decisions. The candidate additive migration separates immutable snapshots/artifacts/relationship evidence, immutable policy runs, and relationship evaluations. Exact shares are derived from raw integer areas only. Artifact retrieval precision is an honest date. It remains unapplied.
+The existing `zip_district_mappings` table cannot reproduce raw area evidence or policy decisions. The candidate additive migration separates immutable snapshots/artifacts/relationship evidence, immutable policy runs, and relationship evaluations. Relationship parts are constrained within ZCTA totals; candidate normalization is all-or-none and format-safe. Exact shares are derived from raw integer areas only. Artifact retrieval precision is an honest date.
+
+`policy_definition JSONB` is the sole database definition truth; `(snapshot_id, seat_snapshot_id, policy_version)` identifies one definition, while deterministic hashes live in analysis artifacts. Migration bytes and the exact five-table/seven-index statement inventory are pinned before structural checks.
+
+Candidate migration SHA-256: `e2b8d526d7e0fac31a0368e04ffc11e59cabc8613ed0afb6a478276f46c636c3`. Applied: `False`.
 
 ## Product-use decision table
 

@@ -6,6 +6,7 @@
     "contains_dml": false,
     "exact_share_contract": "raw_area_only",
     "path": "backend/migrations/0015_zip_mapping_source_evidence.sql",
+    "policy_definition_identity": "JSONB sole database source of truth; deterministic SHA-256 reported in analysis artifacts",
     "required_contracts": [
       "artifact_composite_identity",
       "artifact_retrieval_precision",
@@ -13,6 +14,11 @@
       "auto_select_false",
       "evaluation_policy_run_fk",
       "evaluation_relationship_fk",
+      "land_part_within_zcta",
+      "normalization_all_or_none",
+      "normalization_district_format",
+      "normalization_rule_nonblank",
+      "normalization_state_format",
       "policy_definition",
       "policy_run_composite_identity",
       "policy_run_house_fk",
@@ -24,7 +30,9 @@
       "relationship_artifact_fk",
       "relationship_source_geoid_unique",
       "relationship_source_line_unique",
-      "relationship_zcta_unique"
+      "relationship_zcta_unique",
+      "total_part_within_zcta",
+      "water_part_within_zcta"
     ],
     "required_indexes": [
       "idx_zip_mapping_policy_runs_house_snapshot",
@@ -36,14 +44,15 @@
       "idx_zip_relationship_evidence_zcta"
     ],
     "retrieval_precision": "date",
-    "sha256": "005b5db1452dc41a367fb2cb5110a9281e1bc174f0f7ffbe00704b0dad6c6387",
+    "sha256": "e2b8d526d7e0fac31a0368e04ffc11e59cabc8613ed0afb6a478276f46c636c3",
     "tables": [
       "zip_district_relationship_evidence",
       "zip_mapping_policy_evaluations",
       "zip_mapping_policy_runs",
       "zip_mapping_source_artifacts",
       "zip_mapping_source_snapshots"
-    ]
+    ],
+    "top_level_statement_count": 14
   },
   "conclusions": {
     "auto_select_mapping": "not supported by area evidence; disabled",
@@ -82,7 +91,7 @@
       "TX-23"
     ]
   },
-  "generated_at": "2026-07-15T01:25:35.504011+00:00",
+  "generated_at": "2026-07-15T02:02:23.453574+00:00",
   "geographic_code_handling": {
     "dc_98_relationship_rows": 57,
     "dc_internal_delegate_convention": "DC-00",
@@ -429,6 +438,7 @@
         "officially_vacant": 251
       },
       "multi_state_zctas": 137,
+      "policy_definition_sha256": "1a14cbc8ba9ef8ac15b83432bf7ee36a5cc9734a7a839ba103339a76f93bd5eb",
       "policy_id": "policy_a_any_accepted",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 0,
@@ -492,6 +502,7 @@
         "officially_vacant": 251
       },
       "multi_state_zctas": 137,
+      "policy_definition_sha256": "6d029b4d88e1da522c1ead486fe75f0c48a906cd9a64b70057fd8168e1ef64bb",
       "policy_id": "policy_b_positive_total",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 0,
@@ -555,6 +566,7 @@
         "officially_vacant": 251
       },
       "multi_state_zctas": 137,
+      "policy_definition_sha256": "6347adaa0338727ddffacd621c571761e66484abb1956221c5b52855262962ef",
       "policy_id": "policy_c_positive_land",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 0,
@@ -616,6 +628,7 @@
         "officially_vacant": 251
       },
       "multi_state_zctas": 137,
+      "policy_definition_sha256": "8d78b2f870b4209393e774bcdc0dea53b2e04490445d9b86149309d493a30039",
       "policy_id": "policy_d_gt_0_percent",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 0,
@@ -677,6 +690,7 @@
         "officially_vacant": 251
       },
       "multi_state_zctas": 137,
+      "policy_definition_sha256": "1910bdb10779677d38cec34c8c2c5cbfcab2ac062f5406b58a7fab5a9be2cf08",
       "policy_id": "policy_d_gte_0_01_percent",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 32,
@@ -737,6 +751,7 @@
         "officially_vacant": 249
       },
       "multi_state_zctas": 137,
+      "policy_definition_sha256": "e283a5b6f5dec14a7e1f9494f8db88ab66513319d5e3249bb219091ab13d6909",
       "policy_id": "policy_d_gte_0_05_percent",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 130,
@@ -797,6 +812,7 @@
         "officially_vacant": 248
       },
       "multi_state_zctas": 136,
+      "policy_definition_sha256": "f23f7d19dc52a662bb1393345eb5ae279b2f84afa6db04a6947266180ee6c895",
       "policy_id": "policy_d_gte_0_1_percent",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 211,
@@ -856,6 +872,7 @@
         "officially_vacant": 239
       },
       "multi_state_zctas": 127,
+      "policy_definition_sha256": "b6c559328accc9903c45a32f3779648c43c79ff3c458b46d7b84794e85877f17",
       "policy_id": "policy_d_gte_0_5_percent",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 587,
@@ -915,6 +932,7 @@
         "officially_vacant": 238
       },
       "multi_state_zctas": 117,
+      "policy_definition_sha256": "c3d53de90abf1f11be2ab5fcb59fff0a3fcee3f0be82fbb9f8b0fb547204fa46",
       "policy_id": "policy_d_gte_1_percent",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 853,
@@ -973,6 +991,7 @@
         "officially_vacant": 231
       },
       "multi_state_zctas": 105,
+      "policy_definition_sha256": "1f0ffd3f73ab4feff1ddba101eed9f2781286c82e1183e2479d1c3c2f730ef5d",
       "policy_id": "policy_d_gte_2_percent",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 1244,
@@ -1031,6 +1050,7 @@
         "officially_vacant": 223
       },
       "multi_state_zctas": 90,
+      "policy_definition_sha256": "4bcbfa21700f390c76649b5d24c12c7e39c5be8783c19c16849a01def9f39c74",
       "policy_id": "policy_d_gte_5_percent",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 1977,
@@ -1089,6 +1109,7 @@
         "officially_vacant": 216
       },
       "multi_state_zctas": 71,
+      "policy_definition_sha256": "1e14162b8f687a1073fd0f497a23b4f198e7f04db43f946119180cf7cd53439a",
       "policy_id": "policy_d_gte_10_percent",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 2790,
@@ -1146,6 +1167,7 @@
         "officially_vacant": 193
       },
       "multi_state_zctas": 31,
+      "policy_definition_sha256": "765b76bfa4272a536f6ebd339e30e921dc9b05323a39a16e975e54e0a570dcfa",
       "policy_id": "policy_d_gte_25_percent",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 4358,
@@ -1199,6 +1221,7 @@
         "officially_vacant": 167
       },
       "multi_state_zctas": 0,
+      "policy_definition_sha256": "8805056c901085eb98fefec000cf4ea3935f9081328399cd948b11cfaf462764",
       "policy_id": "policy_d_gte_50_percent",
       "production_auto_select_eligible_zctas": 0,
       "removed_positive_land_relationships": 6330,

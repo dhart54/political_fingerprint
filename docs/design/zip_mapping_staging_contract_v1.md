@@ -40,9 +40,13 @@ Preserves the raw source row identity and geography without changing official co
 
 No manually insertable share columns are retained, so stored fractions cannot contradict the official raw areas. Consumers must preserve a null/undefined share when its raw denominator is zero.
 
+Each relationship also enforces that land part does not exceed ZCTA land, water part does not exceed ZCTA water, and the `NUMERIC`-cast total part does not exceed total ZCTA area. Candidate normalization is either wholly absent or has all three fields present; when present, its rule is nonblank and its state/district match exact two-character formats.
+
 ### `zip_mapping_policy_runs`
 
-One immutable parent records a source snapshot, one exact House seat snapshot, a policy version, the exact policy definition as `JSONB`, its checksum, evaluation time, and a complete/rejected status. A new definition, version, or House snapshot creates a new run. Previous source evidence and policy runs are never rewritten.
+One immutable parent records a source snapshot, one exact House seat snapshot, a policy version, the exact policy definition as `JSONB`, evaluation time, and a complete/rejected status. `policy_definition` is the sole database source of truth; no independently writable checksum is stored. The analysis and manifest report a deterministic SHA-256 of each exact definition for review/reproduction.
+
+`UNIQUE (snapshot_id, seat_snapshot_id, policy_version)` requires a version to identify one definition for a given source and House snapshot. A changed definition must use a new version. Previous source evidence and policy runs are never rewritten.
 
 ### `zip_mapping_policy_evaluations`
 
@@ -87,4 +91,4 @@ Use both Census block-level population allocation and a full-address congression
 
 ## Candidate migration status
 
-`backend/migrations/0015_zip_mapping_source_evidence.sql` is additive: five new tables and supporting indexes, no DML, no existing-table alteration, no route or feature-flag reference. Its validator pins exact wrappers, tables, foreign keys and delete actions, uniqueness/rank checks, raw-area-only share contract, retrieval precision, and required indexes. It is a review candidate only and is unapplied.
+`backend/migrations/0015_zip_mapping_source_evidence.sql` is additive: five new tables and supporting indexes, no DML, no existing-table alteration, no route or feature-flag reference. Its canonical UTF-8/LF repository bytes are pinned before structural inspection. The validator then permits only one `BEGIN`, the five exact `CREATE TABLE IF NOT EXISTS` statements, the seven exact `CREATE INDEX IF NOT EXISTS` statements, and one `COMMIT`; all unrecognized top-level SQL fails closed. It also pins foreign keys/delete actions, uniqueness/rank checks, raw-area bounds, normalization integrity, raw-area-only shares, retrieval precision, and indexes. It is a review candidate only and is unapplied.

@@ -75,6 +75,9 @@
 - The next accuracy step should use both block-level population allocation and full-address district lookup: the first evaluates ZIP-level ranking quality; the second is necessary for address-level automatic selection.
 - The existing runtime candidate table is insufficient as the evidence ledger. Candidate migration `0015` adds separate immutable snapshot/artifact/relationship tables, immutable policy-run parents, and run-scoped evaluations and remains unapplied.
 - Exact shares use raw integer area fields only; redundant manually insertable share fields were removed. Artifact retrieval provenance is date-precision only.
+- Relationship evidence now enforces land, water, and overflow-safe total parts within ZCTA totals, plus all-or-none and format-safe candidate normalization.
+- `policy_definition JSONB` is the sole database definition truth. Review artifacts carry its deterministic hash, and `(snapshot_id, seat_snapshot_id, policy_version)` uniquely identifies one definition.
+- Candidate migration bytes are pinned before structural checks; the only allowed top-level statements are the exact transaction wrappers, five reviewed tables, and seven reviewed indexes.
 
 ## Deviations Or Corrections
 
@@ -83,13 +86,13 @@
 
 ## Validation Results
 
-- Focused overlap correction suite: 38 passed.
-- Combined current-House, ZIP-readiness, route/parity, and overlap suite: 153 passed.
+- Focused overlap and final migration-contract suite: 66 passed.
+- Combined current-House, ZIP-readiness, route/parity, and overlap suite: 181 passed.
 - Full official-file analysis: passed with exact identity and baseline gates.
 - Production read-only pre/postchecks: passed; session and transaction read-only confirmed with 30-second statement timeout; protected checksums and legislators fingerprint unchanged; ZIP production rows remained zero.
 - JSON validation: review packet and source manifest passed `json.tool`.
 - `git diff --check`: passed.
-- Candidate migration validator: passed with five exact tables, policy-run parent, composite lineage, restrictive House deletion, rank constraints, raw-area-only shares, date-only retrieval precision, and required indexes; migration remains unapplied.
+- Candidate migration validator: passed with pinned SHA-256 `e2b8d526d7e0fac31a0368e04ffc11e59cabc8613ed0afb6a478276f46c636c3`, an exact 14-statement inventory, five tables, composite lineage, restrictive House deletion, rank and raw-area constraints, normalization integrity, raw-area-only shares, date-only retrieval precision, and seven indexes; migration remains unapplied.
 
 ## Production Writes
 

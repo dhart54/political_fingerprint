@@ -47,6 +47,7 @@ DEFAULT_MD = ROOT / "docs/review_packets/zip_overlap_sensitivity_bounded_staging
 LOCAL_ROOT = ROOT / ".local/zip_overlap_sensitivity" / ANALYSIS_ID
 MANIFEST_PATH = ROOT / "docs/source_manifests/zip_overlap_sensitivity_v1.json"
 CANDIDATE_MIGRATION = ROOT / "backend/migrations/0015_zip_mapping_source_evidence.sql"
+EXPECTED_CANDIDATE_MIGRATION_SHA256 = "e2b8d526d7e0fac31a0368e04ffc11e59cabc8613ed0afb6a478276f46c636c3"
 THRESHOLDS = (
     ("gt_0_percent", Fraction(0), False),
     ("gte_0_01_percent", Fraction(1, 10_000), True),
@@ -324,6 +325,12 @@ def policies() -> list[dict[str, Any]]:
             "inclusive": inclusive,
             "definition": f"AREALAND_PART / AREALAND_ZCTA5_20 {op} {fraction_record(threshold)['percent_decimal']}%",
         })
+    for policy in result:
+        definition_payload = {
+            key: ({"numerator": value.numerator, "denominator": value.denominator} if isinstance(value, Fraction) else value)
+            for key, value in policy.items()
+        }
+        policy["definition_sha256"] = deterministic_checksum(definition_payload)
     return result
 
 
@@ -399,6 +406,7 @@ def policy_result(
     result = {
         "policy_id": policy["id"],
         "definition": policy["definition"],
+        "policy_definition_sha256": policy["definition_sha256"],
         "equality_included": policy.get("inclusive"),
         "retained_relationship_rows": len(retained),
         "removed_relationship_rows": len(removed),
@@ -535,7 +543,62 @@ def execute_select(conn: Any, sql: str, params: tuple[Any, ...] = ()) -> list[di
     return [dict(r) for r in conn.execute(sql, params).fetchall()]
 
 
+def candidate_migration_sha256(sql: str) -> str:
+    """Hash the exact reviewed repository text as UTF-8 with canonical LF bytes."""
+    return sha256_bytes(sql.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8"))
+
+
+def split_top_level_sql_statements(sql: str) -> list[str]:
+    text = re.sub(r"--.*?$|/\*.*?\*/", "", sql, flags=re.M | re.S)
+    statements: list[str] = []
+    start = 0
+    depth = 0
+    single_quoted = False
+    double_quoted = False
+    index = 0
+    while index < len(text):
+        char = text[index]
+        next_char = text[index + 1] if index + 1 < len(text) else ""
+        if single_quoted:
+            if char == "'" and next_char == "'":
+                index += 2
+                continue
+            if char == "'":
+                single_quoted = False
+        elif double_quoted:
+            if char == '"' and next_char == '"':
+                index += 2
+                continue
+            if char == '"':
+                double_quoted = False
+        elif char == "'":
+            single_quoted = True
+        elif char == '"':
+            double_quoted = True
+        elif char == "(":
+            depth += 1
+        elif char == ")":
+            depth -= 1
+            if depth < 0:
+                raise AnalysisSafetyError("candidate migration has unbalanced SQL parentheses")
+        elif char == ";" and depth == 0:
+            statement = text[start:index].strip()
+            if statement:
+                statements.append(statement)
+            start = index + 1
+        index += 1
+    if single_quoted or double_quoted or depth != 0 or text[start:].strip():
+        raise AnalysisSafetyError("candidate migration has unterminated or unbalanced top-level SQL")
+    return statements
+
+
 def validate_candidate_migration(sql: str) -> dict[str, Any]:
+    actual_sha256 = candidate_migration_sha256(sql)
+    if actual_sha256 != EXPECTED_CANDIDATE_MIGRATION_SHA256:
+        raise AnalysisSafetyError(
+            f"candidate migration checksum mismatch: expected {EXPECTED_CANDIDATE_MIGRATION_SHA256}, got {actual_sha256}"
+        )
+    statements = split_top_level_sql_statements(sql)
     lines = sql.splitlines()
     nonempty = [line.strip() for line in lines if line.strip()]
     if not nonempty or nonempty[0].upper() != "BEGIN;" or nonempty[-1].upper() != "COMMIT;" or sum(line.upper() == "BEGIN;" for line in nonempty) != 1 or sum(line.upper() == "COMMIT;" for line in nonempty) != 1:
@@ -557,6 +620,10 @@ def validate_candidate_migration(sql: str) -> dict[str, Any]:
             "grant": r"\bgrant\b",
             "role": r"\bcreate\s+role\b",
             "extension": r"\bcreate\s+extension\b",
+            "procedure": r"\bcreate\s+(?:or\s+replace\s+)?procedure\b",
+            "view": r"\bcreate\s+(?:materialized\s+)?view\b",
+            "sequence": r"\bcreate\s+sequence\b",
+            "schema": r"\bcreate\s+schema\b",
             "route_reference": r"zip_district_map\b",
             "feature_flag": r"zip_multi_row_lookup_enabled",
             "frontend": r"\bfrontend\b",
@@ -588,12 +655,19 @@ def validate_candidate_migration(sql: str) -> dict[str, Any]:
         "auto_select_false": ("zip_mapping_policy_evaluations", "auto_select_eligible boolean not null default false check (auto_select_eligible = false)"),
         "artifact_retrieval_precision": ("zip_mapping_source_artifacts", "retrieved_on date not null, retrieval_precision text not null default 'date' check (retrieval_precision = 'date')"),
         "policy_definition": ("zip_mapping_policy_runs", "policy_definition jsonb not null"),
-        "policy_run_identity_unique": ("zip_mapping_policy_runs", "unique (snapshot_id, seat_snapshot_id, policy_version, policy_definition_sha256)"),
+        "policy_run_identity_unique": ("zip_mapping_policy_runs", "unique (snapshot_id, seat_snapshot_id, policy_version)"),
         "relationship_zcta_unique": ("zip_district_relationship_evidence", "unique (snapshot_id, relationship_id, zcta)"),
         "artifact_composite_identity": ("zip_mapping_source_artifacts", "unique (snapshot_id, artifact_id)"),
         "policy_run_composite_identity": ("zip_mapping_policy_runs", "unique (snapshot_id, policy_run_id)"),
         "relationship_source_line_unique": ("zip_district_relationship_evidence", "unique (snapshot_id, source_line_number)"),
         "relationship_source_geoid_unique": ("zip_district_relationship_evidence", "unique (snapshot_id, zcta, source_congressional_geoid)"),
+        "land_part_within_zcta": ("zip_district_relationship_evidence", "check (arealand_part <= arealand_zcta5_20)"),
+        "water_part_within_zcta": ("zip_district_relationship_evidence", "check (areawater_part <= areawater_zcta5_20)"),
+        "total_part_within_zcta": ("zip_district_relationship_evidence", "check ( (arealand_part::numeric + areawater_part::numeric) <= (arealand_zcta5_20::numeric + areawater_zcta5_20::numeric) )"),
+        "normalization_all_or_none": ("zip_district_relationship_evidence", "check ( (candidate_normalization_rule is null and candidate_canonical_state is null and candidate_canonical_district is null) or (candidate_normalization_rule is not null and candidate_canonical_state is not null and candidate_canonical_district is not null) )"),
+        "normalization_rule_nonblank": ("zip_district_relationship_evidence", "check (candidate_normalization_rule is null or btrim(candidate_normalization_rule) <> '')"),
+        "normalization_state_format": ("zip_district_relationship_evidence", "check (candidate_canonical_state is null or candidate_canonical_state ~ '^[a-z]{2}$')"),
+        "normalization_district_format": ("zip_district_relationship_evidence", "check (candidate_canonical_district is null or candidate_canonical_district ~ '^[0-9]{2}$')"),
     }
     required_indexes = {
         "idx_zip_mapping_source_artifacts_snapshot": "on zip_mapping_source_artifacts (snapshot_id)",
@@ -614,16 +688,40 @@ def validate_candidate_migration(sql: str) -> dict[str, Any]:
     raw_area_only = not share_columns and all(re.search(rf"\b{name}\s+bigint\s+not null", relationship_body) for name in raw_area_columns)
     if not raw_area_only:
         missing.append("raw_area_only_exact_share_contract")
+    if "policy_definition_sha256" in body:
+        missing.append("jsonb_is_sole_policy_definition_truth")
+    expected_statement_count = 2 + len(expected_tables) + len(required_indexes)
+    table_statement_names = []
+    index_statement_names = []
+    unapproved_statements = []
+    for position, statement in enumerate(statements):
+        normalized = re.sub(r"\s+", " ", statement).strip()
+        if position == 0 and normalized.upper() == "BEGIN":
+            continue
+        if position == len(statements) - 1 and normalized.upper() == "COMMIT":
+            continue
+        table_match = re.fullmatch(r"create table if not exists\s+(\w+)\s*\(.*\)", statement.strip(), flags=re.I | re.S)
+        index_match = re.fullmatch(r"create index if not exists\s+(\w+)\s+on\s+.*", statement.strip(), flags=re.I | re.S)
+        if table_match:
+            table_statement_names.append(table_match.group(1).lower())
+        elif index_match:
+            index_statement_names.append(index_match.group(1).lower())
+        else:
+            unapproved_statements.append(normalized[:120])
+    if len(statements) != expected_statement_count or set(table_statement_names) != expected_tables or len(table_statement_names) != len(expected_tables) or set(index_statement_names) != set(required_indexes) or len(index_statement_names) != len(required_indexes) or unapproved_statements:
+        missing.append("exact_top_level_statement_inventory")
     if any(banned.values()) or actual_tables != expected_tables or missing:
         raise AnalysisSafetyError(f"candidate migration is outside the reviewed additive evidence envelope: banned={banned}, missing={missing}, tables={sorted(actual_tables)}")
     return {
         "path": str(CANDIDATE_MIGRATION.relative_to(ROOT)).replace("\\", "/"),
-        "sha256": sha256_bytes(CANDIDATE_MIGRATION.read_bytes()),
+        "sha256": actual_sha256,
         "tables": sorted(actual_tables),
         "required_contracts": sorted(required_fragments),
         "required_indexes": sorted(required_indexes),
         "exact_share_contract": "raw_area_only",
         "retrieval_precision": "date",
+        "policy_definition_identity": "JSONB sole database source of truth; deterministic SHA-256 reported in analysis artifacts",
+        "top_level_statement_count": len(statements),
         "additive_only": True,
         "contains_dml": False,
         "applied": False,
@@ -849,7 +947,11 @@ def render_markdown(report: dict[str, Any]) -> str:
         "",
         "## Staging decision",
         "",
-        "The existing `zip_district_mappings` table cannot reproduce raw area evidence or policy decisions. The candidate additive migration separates immutable snapshots/artifacts/relationship evidence, immutable policy runs, and relationship evaluations. Exact shares are derived from raw integer areas only. Artifact retrieval precision is an honest date. It remains unapplied.",
+        "The existing `zip_district_mappings` table cannot reproduce raw area evidence or policy decisions. The candidate additive migration separates immutable snapshots/artifacts/relationship evidence, immutable policy runs, and relationship evaluations. Relationship parts are constrained within ZCTA totals; candidate normalization is all-or-none and format-safe. Exact shares are derived from raw integer areas only. Artifact retrieval precision is an honest date.",
+        "",
+        "`policy_definition JSONB` is the sole database definition truth; `(snapshot_id, seat_snapshot_id, policy_version)` identifies one definition, while deterministic hashes live in analysis artifacts. Migration bytes and the exact five-table/seven-index statement inventory are pinned before structural checks.",
+        "",
+        f"Candidate migration SHA-256: `{report['candidate_migration_validation']['sha256']}`. Applied: `{report['candidate_migration_validation']['applied']}`.",
         "",
         "## Product-use decision table",
         "",

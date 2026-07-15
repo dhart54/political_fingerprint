@@ -6,6 +6,7 @@
     "contains_dml": false,
     "exact_share_contract": "raw_area_only",
     "path": "backend/migrations/0015_zip_mapping_source_evidence.sql",
+    "policy_definition_identity": "JSONB sole database source of truth; deterministic SHA-256 reported in analysis artifacts",
     "required_contracts": [
       "artifact_composite_identity",
       "artifact_retrieval_precision",
@@ -13,6 +14,11 @@
       "auto_select_false",
       "evaluation_policy_run_fk",
       "evaluation_relationship_fk",
+      "land_part_within_zcta",
+      "normalization_all_or_none",
+      "normalization_district_format",
+      "normalization_rule_nonblank",
+      "normalization_state_format",
       "policy_definition",
       "policy_run_composite_identity",
       "policy_run_house_fk",
@@ -24,7 +30,9 @@
       "relationship_artifact_fk",
       "relationship_source_geoid_unique",
       "relationship_source_line_unique",
-      "relationship_zcta_unique"
+      "relationship_zcta_unique",
+      "total_part_within_zcta",
+      "water_part_within_zcta"
     ],
     "required_indexes": [
       "idx_zip_mapping_policy_runs_house_snapshot",
@@ -36,14 +44,15 @@
       "idx_zip_relationship_evidence_zcta"
     ],
     "retrieval_precision": "date",
-    "sha256": "005b5db1452dc41a367fb2cb5110a9281e1bc174f0f7ffbe00704b0dad6c6387",
+    "sha256": "e2b8d526d7e0fac31a0368e04ffc11e59cabc8613ed0afb6a478276f46c636c3",
     "tables": [
       "zip_district_relationship_evidence",
       "zip_mapping_policy_evaluations",
       "zip_mapping_policy_runs",
       "zip_mapping_source_artifacts",
       "zip_mapping_source_snapshots"
-    ]
+    ],
+    "top_level_statement_count": 14
   },
   "deterministic_ordering": {
     "anomaly_lists": "anomaly class then canonical JSON value",
@@ -84,21 +93,25 @@
   "policy_definitions": [
     {
       "definition": "every relationship accepted by the existing parser",
+      "definition_sha256": "1a14cbc8ba9ef8ac15b83432bf7ee36a5cc9734a7a839ba103339a76f93bd5eb",
       "id": "policy_a_any_accepted",
       "kind": "any"
     },
     {
       "definition": "AREALAND_PART + AREAWATER_PART > 0",
+      "definition_sha256": "6d029b4d88e1da522c1ead486fe75f0c48a906cd9a64b70057fd8168e1ef64bb",
       "id": "policy_b_positive_total",
       "kind": "positive_total"
     },
     {
       "definition": "AREALAND_PART > 0",
+      "definition_sha256": "6347adaa0338727ddffacd621c571761e66484abb1956221c5b52855262962ef",
       "id": "policy_c_positive_land",
       "kind": "positive_land"
     },
     {
       "definition": "AREALAND_PART / AREALAND_ZCTA5_20 > 0%",
+      "definition_sha256": "8d78b2f870b4209393e774bcdc0dea53b2e04490445d9b86149309d493a30039",
       "id": "policy_d_gt_0_percent",
       "inclusive": false,
       "kind": "land_share",
@@ -111,6 +124,7 @@
     },
     {
       "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.01%",
+      "definition_sha256": "1910bdb10779677d38cec34c8c2c5cbfcab2ac062f5406b58a7fab5a9be2cf08",
       "id": "policy_d_gte_0_01_percent",
       "inclusive": true,
       "kind": "land_share",
@@ -123,6 +137,7 @@
     },
     {
       "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.05%",
+      "definition_sha256": "e283a5b6f5dec14a7e1f9494f8db88ab66513319d5e3249bb219091ab13d6909",
       "id": "policy_d_gte_0_05_percent",
       "inclusive": true,
       "kind": "land_share",
@@ -135,6 +150,7 @@
     },
     {
       "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.1%",
+      "definition_sha256": "f23f7d19dc52a662bb1393345eb5ae279b2f84afa6db04a6947266180ee6c895",
       "id": "policy_d_gte_0_1_percent",
       "inclusive": true,
       "kind": "land_share",
@@ -147,6 +163,7 @@
     },
     {
       "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 0.5%",
+      "definition_sha256": "b6c559328accc9903c45a32f3779648c43c79ff3c458b46d7b84794e85877f17",
       "id": "policy_d_gte_0_5_percent",
       "inclusive": true,
       "kind": "land_share",
@@ -159,6 +176,7 @@
     },
     {
       "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 1%",
+      "definition_sha256": "c3d53de90abf1f11be2ab5fcb59fff0a3fcee3f0be82fbb9f8b0fb547204fa46",
       "id": "policy_d_gte_1_percent",
       "inclusive": true,
       "kind": "land_share",
@@ -171,6 +189,7 @@
     },
     {
       "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 2%",
+      "definition_sha256": "1f0ffd3f73ab4feff1ddba101eed9f2781286c82e1183e2479d1c3c2f730ef5d",
       "id": "policy_d_gte_2_percent",
       "inclusive": true,
       "kind": "land_share",
@@ -183,6 +202,7 @@
     },
     {
       "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 5%",
+      "definition_sha256": "4bcbfa21700f390c76649b5d24c12c7e39c5be8783c19c16849a01def9f39c74",
       "id": "policy_d_gte_5_percent",
       "inclusive": true,
       "kind": "land_share",
@@ -195,6 +215,7 @@
     },
     {
       "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 10%",
+      "definition_sha256": "1e14162b8f687a1073fd0f497a23b4f198e7f04db43f946119180cf7cd53439a",
       "id": "policy_d_gte_10_percent",
       "inclusive": true,
       "kind": "land_share",
@@ -207,6 +228,7 @@
     },
     {
       "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 25%",
+      "definition_sha256": "765b76bfa4272a536f6ebd339e30e921dc9b05323a39a16e975e54e0a570dcfa",
       "id": "policy_d_gte_25_percent",
       "inclusive": true,
       "kind": "land_share",
@@ -219,6 +241,7 @@
     },
     {
       "definition": "AREALAND_PART / AREALAND_ZCTA5_20 >= 50%",
+      "definition_sha256": "8805056c901085eb98fefec000cf4ea3935f9081328399cd948b11cfaf462764",
       "id": "policy_d_gte_50_percent",
       "inclusive": true,
       "kind": "land_share",

@@ -197,12 +197,27 @@ def test_candidate_migration_is_additive_and_unapplied():
     assert len(result["tables"]) == 5
     assert result["exact_share_contract"] == "raw_area_only"
     assert result["retrieval_precision"] == "date"
+    assert result["sha256"] == analysis.EXPECTED_CANDIDATE_MIGRATION_SHA256
+    assert result["top_level_statement_count"] == 14
 
 
 @pytest.mark.parametrize("sql", ["ALTER TABLE x ADD y int", "INSERT INTO x VALUES (1)", "DROP TABLE x"])
 def test_candidate_migration_rejects_out_of_envelope_sql(sql):
     with pytest.raises(analysis.AnalysisSafetyError):
         analysis.validate_candidate_migration(sql)
+
+
+@pytest.mark.parametrize("mutation", ["comment", "whitespace", "character", "substitute"])
+def test_candidate_migration_exact_reviewed_bytes_are_pinned(mutation):
+    sql = analysis.CANDIDATE_MIGRATION.read_text(encoding="utf-8")
+    changed = {
+        "comment": sql.replace("BEGIN;", "BEGIN;\n-- comment-only change", 1),
+        "whitespace": sql.replace("BEGIN;", "BEGIN; ", 1),
+        "character": sql.replace("Unapplied", "unapplied", 1),
+        "substitute": sql.replace("zip_mapping_policy_runs", "zip_mapping_policy_runz"),
+    }[mutation]
+    with pytest.raises(analysis.AnalysisSafetyError, match="checksum mismatch"):
+        analysis.validate_candidate_migration(changed)
 
 
 @pytest.mark.parametrize(
@@ -216,19 +231,57 @@ def test_candidate_migration_rejects_out_of_envelope_sql(sql):
         ("CHECK (relationship_survives OR presentation_rank IS NULL)", "CHECK (presentation_rank IS NULL)"),
         ("arealand_part BIGINT NOT NULL", "arealand_part BIGINT NOT NULL,\n    land_share_numerator BIGINT"),
         ("CREATE INDEX IF NOT EXISTS idx_zip_policy_evaluations_run_zcta", "CREATE INDEX IF NOT EXISTS removed_zip_policy_evaluations_run_zcta"),
+        ("CHECK (arealand_part <= arealand_zcta5_20)", "CHECK (arealand_part >= 0)"),
+        ("CHECK (areawater_part <= areawater_zcta5_20)", "CHECK (areawater_part >= 0)"),
+        ("(arealand_part::NUMERIC + areawater_part::NUMERIC)", "(arealand_part + areawater_part)"),
+        ("candidate_normalization_rule IS NULL\n         AND candidate_canonical_state IS NULL", "candidate_normalization_rule IS NULL\n         OR candidate_canonical_state IS NULL"),
+        ("BTRIM(candidate_normalization_rule) <> ''", "candidate_normalization_rule <> ''"),
+        ("candidate_canonical_state ~ '^[A-Z]{2}$'", "candidate_canonical_state ~ '^[A-Z]+$'"),
+        ("candidate_canonical_district ~ '^[0-9]{2}$'", "candidate_canonical_district ~ '^[0-9]+$'"),
+        ("UNIQUE (snapshot_id, seat_snapshot_id, policy_version)", "UNIQUE (snapshot_id, policy_version)"),
+        ("policy_definition JSONB NOT NULL", "policy_definition JSONB NOT NULL,\n    policy_definition_sha256 TEXT"),
     ],
 )
-def test_candidate_migration_required_contract_mutations_fail(old, new):
+def test_candidate_migration_required_contract_mutations_fail(monkeypatch, old, new):
     sql = analysis.CANDIDATE_MIGRATION.read_text(encoding="utf-8")
     assert old in sql
+    changed = sql.replace(old, new, 1)
+    monkeypatch.setattr(analysis, "EXPECTED_CANDIDATE_MIGRATION_SHA256", analysis.candidate_migration_sha256(changed))
     with pytest.raises(analysis.AnalysisSafetyError):
-        analysis.validate_candidate_migration(sql.replace(old, new, 1))
+        analysis.validate_candidate_migration(changed)
 
 
-def test_candidate_migration_requires_exact_outer_wrappers():
+def test_candidate_migration_requires_exact_outer_wrappers(monkeypatch):
     sql = analysis.CANDIDATE_MIGRATION.read_text(encoding="utf-8")
+    changed = sql.replace("BEGIN;", "BEGIN TRANSACTION;", 1)
+    monkeypatch.setattr(analysis, "EXPECTED_CANDIDATE_MIGRATION_SHA256", analysis.candidate_migration_sha256(changed))
     with pytest.raises(analysis.AnalysisSafetyError, match="outer BEGIN/COMMIT"):
-        analysis.validate_candidate_migration(sql.replace("BEGIN;", "BEGIN TRANSACTION;", 1))
+        analysis.validate_candidate_migration(changed)
+
+
+@pytest.mark.parametrize("statement", [
+    "CREATE TABLE unapproved_table (id INTEGER);",
+    "CREATE VIEW unapproved_view AS SELECT 1 AS id;",
+    "CREATE MATERIALIZED VIEW unapproved_materialized_view AS SELECT 1 AS id;",
+    "CREATE SEQUENCE unapproved_sequence;",
+    "CREATE INDEX IF NOT EXISTS idx_unapproved_extra ON zip_mapping_source_snapshots (congress);",
+    "CREATE SCHEMA unapproved_schema;",
+    "CREATE FUNCTION unapproved_function() RETURNS INTEGER LANGUAGE SQL AS 'SELECT 1';",
+    "CREATE PROCEDURE unapproved_procedure() LANGUAGE SQL AS 'SELECT 1';",
+    "CREATE TRIGGER unapproved_trigger BEFORE INSERT ON zip_mapping_source_snapshots EXECUTE FUNCTION unapproved_function();",
+    "GRANT SELECT ON zip_mapping_source_snapshots TO PUBLIC;",
+    "CREATE ROLE unapproved_role;",
+    "CREATE EXTENSION pgcrypto;",
+    "SELECT 1;",
+    "TRUNCATE zip_mapping_source_snapshots;",
+    "COPY zip_mapping_source_snapshots FROM STDIN;",
+])
+def test_candidate_migration_rejects_every_extra_top_level_statement(monkeypatch, statement):
+    sql = analysis.CANDIDATE_MIGRATION.read_text(encoding="utf-8")
+    changed = sql.replace("COMMIT;", f"{statement}\n\nCOMMIT;", 1)
+    monkeypatch.setattr(analysis, "EXPECTED_CANDIDATE_MIGRATION_SHA256", analysis.candidate_migration_sha256(changed))
+    with pytest.raises(analysis.AnalysisSafetyError):
+        analysis.validate_candidate_migration(changed)
 
 
 def test_partition_shortfall_must_match_rejected_zz_water():

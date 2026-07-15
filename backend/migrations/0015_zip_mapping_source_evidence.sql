@@ -51,8 +51,24 @@ CREATE TABLE IF NOT EXISTS zip_district_relationship_evidence (
     FOREIGN KEY (snapshot_id, artifact_id)
         REFERENCES zip_mapping_source_artifacts(snapshot_id, artifact_id)
         ON DELETE CASCADE,
-    CHECK ((candidate_normalization_rule IS NULL) = (candidate_canonical_state IS NULL)),
-    CHECK ((candidate_normalization_rule IS NULL) = (candidate_canonical_district IS NULL))
+    CHECK (arealand_part <= arealand_zcta5_20),
+    CHECK (areawater_part <= areawater_zcta5_20),
+    CHECK (
+        (arealand_part::NUMERIC + areawater_part::NUMERIC)
+        <= (arealand_zcta5_20::NUMERIC + areawater_zcta5_20::NUMERIC)
+    ),
+    CHECK (
+        (candidate_normalization_rule IS NULL
+         AND candidate_canonical_state IS NULL
+         AND candidate_canonical_district IS NULL)
+        OR
+        (candidate_normalization_rule IS NOT NULL
+         AND candidate_canonical_state IS NOT NULL
+         AND candidate_canonical_district IS NOT NULL)
+    ),
+    CHECK (candidate_normalization_rule IS NULL OR BTRIM(candidate_normalization_rule) <> ''),
+    CHECK (candidate_canonical_state IS NULL OR candidate_canonical_state ~ '^[A-Z]{2}$'),
+    CHECK (candidate_canonical_district IS NULL OR candidate_canonical_district ~ '^[0-9]{2}$')
 );
 
 CREATE TABLE IF NOT EXISTS zip_mapping_policy_runs (
@@ -61,12 +77,11 @@ CREATE TABLE IF NOT EXISTS zip_mapping_policy_runs (
     seat_snapshot_id TEXT NOT NULL REFERENCES house_member_metadata_snapshots(snapshot_id) ON DELETE RESTRICT,
     policy_version TEXT NOT NULL,
     policy_definition JSONB NOT NULL,
-    policy_definition_sha256 TEXT NOT NULL CHECK (policy_definition_sha256 ~ '^[0-9a-f]{64}$'),
     evaluated_at TIMESTAMPTZ NOT NULL,
     run_status TEXT NOT NULL CHECK (run_status IN ('complete', 'rejected')),
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     UNIQUE (snapshot_id, policy_run_id),
-    UNIQUE (snapshot_id, seat_snapshot_id, policy_version, policy_definition_sha256)
+    UNIQUE (snapshot_id, seat_snapshot_id, policy_version)
 );
 
 CREATE TABLE IF NOT EXISTS zip_mapping_policy_evaluations (
