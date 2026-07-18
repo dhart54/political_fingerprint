@@ -1,0 +1,19 @@
+{
+  "schema_version":"policy_episode_map_v1",
+  "member":"Valerie Foushee",
+  "domain":"Economy & Taxes",
+  "counts":{"substantive_yea_nay_rolls":6,"distinct_policy_episodes":4,"not_voting_records":1,"controls":2},
+  "episodes":[
+    {"episode_id":"government_funding_hr5371","label":"Government funding","rolls":[281,285],"member_actions":["Nay","Nay"],"stage_note":"Initial House temporary-funding proposal and later Senate-revised enacted package are distinct actions within one episode.","synthesis_weight":"one_episode","claim_ids":["hr5371_initial_stage","hr5371_final_status"]},
+    {"episode_id":"budget_framework_hconres14","label":"Budget framework","rolls":[50,100],"member_actions":["Nay","Nay"],"stage_note":"Initial House framework and later Senate-revised framework are distinct actions within one episode; neither roll directly enacted later tax or program changes.","synthesis_weight":"one_episode","claim_ids":["hconres14_initial_stage","hconres14_senate_stage","hconres14_not_law"]},
+    {"episode_id":"milcon_va_hr3944","label":"Military construction and veterans funding","rolls":[182],"member_actions":["Nay"],"stage_note":"House passage only; related programs later moved through another bill.","synthesis_weight":"one_episode","claim_ids":["hr3944_house_stage","hr3944_later_history"]},
+    {"episode_id":"sba_loan_eligibility_hr2966","label":"SBA loan eligibility","rolls":[156],"member_actions":["Nay"],"stage_note":"House passage of proposed immigration-status eligibility restrictions.","synthesis_weight":"one_episode","claim_ids":["hr2966_mechanism","hr2966_status"]}
+  ],
+  "excluded_records":[
+    {"roll":310,"reason":"not_voting","member_action":"Not Voting","measure_id":"119-hr-2965","synthesis_effect":"Explained as a measure, but supplies no Foushee support-or-opposition evidence."},
+    {"roll":263,"reason":"procedural_control","member_action":"Yea","measure_id":"119-hr-3944","synthesis_effect":"Nonbinding negotiating instruction; retained for verification but excluded from the four-episode pattern."},
+    {"roll":180,"reason":"mixed_en_bloc_control","member_action":"No","measure_id":"119-hr-3944","synthesis_effect":"Seven-part bundle has no safe single policy-position translation; excluded."}
+  ],
+  "deduplication_rule":"Count a bounded policy episode once in synthesis even when multiple roll-call stages provide corroborating evidence. Preserve each roll's action and lifecycle meaning in its own interpretation.",
+  "integrity_assertion":"No roll is assigned to Valerie Foushee without a checked-in House Clerk member record for bioguide F000477. Not Voting and controls are never converted to substantive Yea/Nay pattern evidence."
+}
