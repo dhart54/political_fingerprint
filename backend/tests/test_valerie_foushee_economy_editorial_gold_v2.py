@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import re
 from pathlib import Path
 
 
@@ -108,15 +109,21 @@ def test_every_material_claim_maps_to_official_sources() -> None:
 def test_competing_arguments_are_attributed_supported_and_reviewable() -> None:
     for dossier_path in (BUNDLE / "measures").glob("*.json"):
         dossier = json.loads(dossier_path.read_text(encoding="utf-8"))
-        assert dossier["argument_review_status"] == "complete_supported_pair"
+        assert dossier["argument_review_status"] in {
+            "complete_supported_pair",
+            "complete_stage_specific_supported_pairs",
+        }
         for key in ("documented_supporter_argument", "documented_opponent_argument"):
-            argument = dossier[key]
-            assert argument["argument"]
-            assert argument["attribution"]
-            assert argument["source_ids"]
-            assert argument["claim_ids"]
-            assert argument["support_status"] == "supported_official_attributed"
-            assert argument["uncertainty_and_evidence_limits"]
+            documented = dossier[key]
+            arguments = documented.get("stage_specific", {"all_reviewed_stages": documented})
+            assert arguments
+            for argument in arguments.values():
+                assert argument["argument"]
+                assert argument["attribution"]
+                assert argument["source_ids"]
+                assert argument["claim_ids"]
+                assert argument["support_status"] == "supported_official_attributed"
+                assert argument["uncertainty_and_evidence_limits"]
 
     packet = load("review_packet.json")
     for item in packet["interpretations"]:
@@ -126,6 +133,51 @@ def test_competing_arguments_are_attributed_supported_and_reviewable() -> None:
             assert two_minute[key]["attribution"]
             assert two_minute[key]["claim_id"] in two_minute["claim_ids"]
         assert two_minute["argument_boundary"]
+
+
+def test_argument_sources_do_not_cross_manifest_stage_exclusions() -> None:
+    sources = {source["source_id"]: source for source in load("source_manifest.json")["sources"]}
+    claims = {claim["claim_id"]: claim for claim in load("claim_source_map.json")["claims"]}
+    rows = packet_by_roll()
+    dossier = json.loads((BUNDLE / "measures" / "hconres14.json").read_text(encoding="utf-8"))
+
+    assert set(claims["hconres14_initial_supporter_argument"]["source_ids"]) == {
+        "hrpt_119_004",
+        "record_hconres14_initial_debate",
+    }
+    assert set(claims["hconres14_initial_opponent_argument"]["source_ids"]) == {
+        "hrpt_119_004",
+        "record_hconres14_initial_debate",
+    }
+    assert claims["hconres14_revised_supporter_argument"]["source_ids"] == [
+        "record_hconres14_concurrence_debate"
+    ]
+    assert claims["hconres14_revised_opponent_argument"]["source_ids"] == [
+        "record_hconres14_concurrence_debate"
+    ]
+    for argument_key in ("documented_supporter_argument", "documented_opponent_argument"):
+        stage_arguments = dossier[argument_key]["stage_specific"]
+        assert set(stage_arguments["roll_50_initial_house_framework"]["source_ids"]) == {
+            "hrpt_119_004",
+            "record_hconres14_initial_debate",
+        }
+        assert stage_arguments["roll_100_senate_revised_framework"]["source_ids"] == [
+            "record_hconres14_concurrence_debate"
+        ]
+
+    for roll in (50, 100):
+        two_minute = rows[roll]["proposed"]["two_minute"]
+        for argument_key in ("supporter_argument", "opponent_argument"):
+            claim = claims[two_minute[argument_key]["claim_id"]]
+            for source_id in claim["source_ids"]:
+                uncertainty = sources[source_id].get("uncertainty") or ""
+                excluded_rolls = {
+                    int(value)
+                    for value in re.findall(
+                        r"materially different stage excluded: roll (\d+)", uncertainty, re.IGNORECASE
+                    )
+                }
+                assert roll not in excluded_rolls, f"roll {roll} uses stage-excluded source {source_id}"
 
 
 def test_unreviewed_official_evidence_is_distinct_from_insufficient_after_review() -> None:
