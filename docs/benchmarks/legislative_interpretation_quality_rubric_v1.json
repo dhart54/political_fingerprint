@@ -1,0 +1,155 @@
+{
+  "schema_version": "legislative_interpretation_quality_rubric_v1",
+  "rubric_kind": "automated_structural_heuristic_diagnostic",
+  "editorial_quality_status": "unverified_human_editorial_scoring_pending",
+  "source_map_caveat": "Source-map presence proves only that a mapping entry exists; it does not prove that the cited source factually supports the claim.",
+  "dimensions": [
+    {
+      "name": "factual_support_structure",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    },
+    {
+      "name": "procedural_description_structure",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    },
+    {
+      "name": "policy_mechanism_specificity",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    },
+    {
+      "name": "practical_effect_clarity",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    },
+    {
+      "name": "affected_entity_specificity",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    },
+    {
+      "name": "member_vote_meaning",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    },
+    {
+      "name": "credible_argument_framing",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    },
+    {
+      "name": "outcome_and_later_status_clarity",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    },
+    {
+      "name": "source_map_presence",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    },
+    {
+      "name": "calibration_and_non_overclaiming",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    },
+    {
+      "name": "plain_language_comprehension",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    },
+    {
+      "name": "distinctiveness_from_title_or_summary",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+      "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+      "anchor_4": "expected structural signals are present; factual and editorial verification remains pending"
+    }
+  ],
+  "maximum_score": 48,
+  "fatal_defects": [
+    "yea_nay_reversal",
+    "procedural_final_passage_confusion",
+    "false_enactment_claim",
+    "invented_effect",
+    "unsupported_affected_group",
+    "motive_attribution",
+    "advocacy_as_neutral_fact",
+    "insufficient_issue_pattern_evidence",
+    "title_restatement_as_practical_explanation",
+    "unmapped_material_claim"
+  ],
+  "tiers": {
+    "unacceptable": "automated diagnostic: fatal defect or score below 24",
+    "generic_but_structurally_adequate": "automated diagnostic only: 24-32; factual accuracy is not verified",
+    "useful": "automated diagnostic only: 33-39",
+    "strong": "strong under the automated diagnostic rubric only: 40-44",
+    "exceptional": "exceptional under the automated diagnostic rubric only: 45-48"
+  },
+  "threshold_status": "benchmark hypothesis; not an approved production threshold",
+  "strong_comprehension_gate": [
+    "What was Congress deciding?",
+    "What would have changed?",
+    "What did this member's vote mean?"
+  ],
+  "human_review_override": "Automated scores and tiers are structural/heuristic diagnostics, not verified editorial-quality judgments. Human editorial scoring is pending."
+}

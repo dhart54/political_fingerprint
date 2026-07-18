@@ -1,0 +1,4307 @@
+{
+  "schema_version": "legislative_interpretation_quality_structural_diagnostic_scorecard_v1",
+  "diagnostic_scope": {
+    "kind": "automated_structural_heuristic_only",
+    "verified_editorial_quality_judgment": false,
+    "human_editorial_scoring_status": "pending",
+    "strong_label_meaning": "strong under the automated diagnostic rubric only",
+    "source_map_presence_proves_factual_support": false,
+    "candidate_drafts_remain_machine_drafts": true
+  },
+  "benchmark_composition": {
+    "total": 48,
+    "cohorts": {
+      "house_substantive": 32,
+      "senate_substantive": 8,
+      "control": 8
+    },
+    "chambers": {
+      "house": 36,
+      "senate": 12
+    },
+    "domains": {
+      "ECONOMY_TAXES": 4,
+      "HEALTH_SOCIAL": 14,
+      "NATIONAL_SECURITY_FOREIGN": 12,
+      "JUSTICE_PUBLIC_SAFETY": 6,
+      "ENVIRONMENT_ENERGY": 1,
+      "UNRESOLVED": 1,
+      "EDUCATION_WORKFORCE": 5,
+      "IMMIGRATION_BORDER": 1,
+      "INFRASTRUCTURE_TECH_TRANSPORT": 4
+    },
+    "vote_types": {
+      "final_passage": 18,
+      "appropriations": 1,
+      "other": 3,
+      "amendment": 20,
+      "rule_or_procedural_control": 2,
+      "motion": 4
+    }
+  },
+  "aggregate_scores": {
+    "current_stored_structural_diagnostic": {
+      "distribution": {
+        "strong": 34,
+        "useful": 14
+      },
+      "automated_diagnostic_mean_score": 39.6,
+      "fatal_defect_count": 0,
+      "generic_structural_diagnostic_rate_percent": 0.0,
+      "useful_or_better_diagnostic_rate_percent": 100.0,
+      "strong_or_better_diagnostic_rate_percent": 70.8,
+      "diagnostic_label_caveat": "Tiers are automated structural/heuristic diagnostics only; human editorial scoring is pending."
+    },
+    "public_field_availability_proxy": {
+      "distribution": {
+        "strong": 34,
+        "unacceptable": 14
+      },
+      "automated_diagnostic_mean_score": 33.8,
+      "fatal_defect_count": 0,
+      "generic_structural_diagnostic_rate_percent": 0.0,
+      "useful_or_better_diagnostic_rate_percent": 70.8,
+      "strong_or_better_diagnostic_rate_percent": 70.8,
+      "diagnostic_label_caveat": "Tiers are automated structural/heuristic diagnostics only; human editorial scoring is pending."
+    },
+    "candidate_draft_structural_diagnostic": {
+      "distribution": {
+        "strong": 39,
+        "useful": 1,
+        "generic_but_structurally_adequate": 8
+      },
+      "automated_diagnostic_mean_score": 40,
+      "fatal_defect_count": 0,
+      "generic_structural_diagnostic_rate_percent": 16.7,
+      "useful_or_better_diagnostic_rate_percent": 83.3,
+      "strong_or_better_diagnostic_rate_percent": 81.2,
+      "diagnostic_label_caveat": "Tiers are automated structural/heuristic diagnostics only; human editorial scoring is pending."
+    }
+  },
+  "genericity_counts": {
+    "official_title_restatement": 0,
+    "procedural_paraphrase_without_policy_effect": 6,
+    "generic_funding_provisions_language": 0,
+    "generic_supported_or_opposed_measure_language": 0,
+    "missing_policy_baseline": 48,
+    "missing_implementation_mechanism": 8,
+    "missing_affected_group": 48,
+    "missing_magnitude_or_timeline": 37,
+    "missing_credible_alternative": 48,
+    "missing_outcome": 29,
+    "generic_caveat_overwhelms_explanation": 1,
+    "issue_domain_substituted_for_substantive_theme": 0,
+    "long_evidence_list_without_synthesis": 0,
+    "repetitive_count_language": 0,
+    "safe_but_content_free_fallback": 0,
+    "unsupported_specificity": 0,
+    "overbroad_pattern_claim": 0
+  },
+  "genericity_examples": {
+    "official_title_restatement": [],
+    "procedural_paraphrase_without_policy_effect": [
+      "house-2025-343",
+      "house-2025-308",
+      "senate-119-1-266"
+    ],
+    "generic_funding_provisions_language": [],
+    "generic_supported_or_opposed_measure_language": [],
+    "missing_policy_baseline": [
+      "house-2025-310",
+      "house-2025-285",
+      "house-2025-281"
+    ],
+    "missing_implementation_mechanism": [
+      "house-2025-343",
+      "house-2025-344",
+      "house-2025-308"
+    ],
+    "missing_affected_group": [
+      "house-2025-310",
+      "house-2025-285",
+      "house-2025-281"
+    ],
+    "missing_magnitude_or_timeline": [
+      "house-2025-310",
+      "house-2025-182",
+      "house-2025-156"
+    ],
+    "missing_credible_alternative": [
+      "house-2025-310",
+      "house-2025-285",
+      "house-2025-281"
+    ],
+    "missing_outcome": [
+      "house-2025-320",
+      "house-2025-262",
+      "house-2025-260"
+    ],
+    "generic_caveat_overwhelms_explanation": [
+      "house-2025-344"
+    ],
+    "issue_domain_substituted_for_substantive_theme": [],
+    "long_evidence_list_without_synthesis": [],
+    "repetitive_count_language": [],
+    "safe_but_content_free_fallback": [],
+    "unsupported_specificity": [],
+    "overbroad_pattern_claim": []
+  },
+  "completeness": {
+    "field_completeness_percent": 40.0,
+    "claim_map_presence_rate_percent": 100.0,
+    "claim_map_support_verified_percent": 0.0,
+    "claim_map_support_verification_status": "pending_human_source_verification",
+    "comprehension_answerability_percent": 70.8
+  },
+  "findings_by_vote_type": {
+    "amendment": {
+      "cases": 20,
+      "current_stored_structural_diagnostic_mean": 41.2,
+      "public_field_availability_proxy_mean": 40.3,
+      "candidate_draft_structural_diagnostic_mean": 41.8
+    },
+    "appropriations": {
+      "cases": 1,
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 42
+    },
+    "final_passage": {
+      "cases": 18,
+      "current_stored_structural_diagnostic_mean": 37.1,
+      "public_field_availability_proxy_mean": 22.4,
+      "candidate_draft_structural_diagnostic_mean": 41.8
+    },
+    "motion": {
+      "cases": 4,
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 31
+    },
+    "other": {
+      "cases": 3,
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 34.7
+    },
+    "rule_or_procedural_control": {
+      "cases": 2,
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 31
+    }
+  },
+  "findings_by_domain": {
+    "ECONOMY_TAXES": {
+      "cases": 4,
+      "current_stored_structural_diagnostic_mean": 42,
+      "public_field_availability_proxy_mean": 41.5,
+      "candidate_draft_structural_diagnostic_mean": 43.5
+    },
+    "EDUCATION_WORKFORCE": {
+      "cases": 5,
+      "current_stored_structural_diagnostic_mean": 38.2,
+      "public_field_availability_proxy_mean": 30.6,
+      "candidate_draft_structural_diagnostic_mean": 37.2
+    },
+    "ENVIRONMENT_ENERGY": {
+      "cases": 1,
+      "current_stored_structural_diagnostic_mean": 34,
+      "public_field_availability_proxy_mean": 15,
+      "candidate_draft_structural_diagnostic_mean": 41
+    },
+    "HEALTH_SOCIAL": {
+      "cases": 14,
+      "current_stored_structural_diagnostic_mean": 40.1,
+      "public_field_availability_proxy_mean": 35.6,
+      "candidate_draft_structural_diagnostic_mean": 40.5
+    },
+    "IMMIGRATION_BORDER": {
+      "cases": 1,
+      "current_stored_structural_diagnostic_mean": 34,
+      "public_field_availability_proxy_mean": 15,
+      "candidate_draft_structural_diagnostic_mean": 41
+    },
+    "INFRASTRUCTURE_TECH_TRANSPORT": {
+      "cases": 4,
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 31
+    },
+    "JUSTICE_PUBLIC_SAFETY": {
+      "cases": 6,
+      "current_stored_structural_diagnostic_mean": 36.8,
+      "public_field_availability_proxy_mean": 19.3,
+      "candidate_draft_structural_diagnostic_mean": 40.8
+    },
+    "NATIONAL_SECURITY_FOREIGN": {
+      "cases": 12,
+      "current_stored_structural_diagnostic_mean": 41.2,
+      "public_field_availability_proxy_mean": 39.8,
+      "candidate_draft_structural_diagnostic_mean": 41.8
+    },
+    "UNRESOLVED": {
+      "cases": 1,
+      "current_stored_structural_diagnostic_mean": 34,
+      "public_field_availability_proxy_mean": 15,
+      "candidate_draft_structural_diagnostic_mean": 41
+    }
+  },
+  "findings_by_chamber": {
+    "house": {
+      "cases": 36,
+      "current_stored_structural_diagnostic_mean": 39.2,
+      "public_field_availability_proxy_mean": 31.3,
+      "candidate_draft_structural_diagnostic_mean": 40.6
+    },
+    "senate": {
+      "cases": 12,
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 38.3
+    }
+  },
+  "findings_by_review_mode": {
+    "deterministic_control": {
+      "cases": 8,
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 31
+    },
+    "reviewed": {
+      "cases": 40,
+      "current_stored_structural_diagnostic_mean": 39.4,
+      "public_field_availability_proxy_mean": 32.3,
+      "candidate_draft_structural_diagnostic_mean": 41.8
+    }
+  },
+  "issue_synthesis": {
+    "slice_count": 8,
+    "minimum_evidence_gate": 3,
+    "procedural_votes_excluded": 6,
+    "all_claims_mapped": true,
+    "human_review_required": true,
+    "current_automated_diagnostic_distribution": {
+      "generic_but_structurally_adequate": 8
+    },
+    "candidate_automated_diagnostic_distribution": {
+      "strong": 5,
+      "generic_but_structurally_adequate": 3
+    },
+    "slice_scores": [
+      {
+        "slice_id": "synthetic-economy_taxes",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": []
+        },
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": []
+        }
+      },
+      {
+        "slice_id": "synthetic-national_security_foreign",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": []
+        },
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": []
+        }
+      },
+      {
+        "slice_id": "synthetic-justice_public_safety",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": []
+        },
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": []
+        }
+      },
+      {
+        "slice_id": "synthetic-infrastructure_tech_transport",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": []
+        },
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 32,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": []
+        }
+      },
+      {
+        "slice_id": "synthetic-health_social",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": []
+        },
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": []
+        }
+      },
+      {
+        "slice_id": "synthetic-immigration_border",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": []
+        },
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 32,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": []
+        }
+      },
+      {
+        "slice_id": "synthetic-education_workforce",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": []
+        },
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": []
+        }
+      },
+      {
+        "slice_id": "synthetic-environment_energy",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": []
+        },
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 32,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": []
+        }
+      }
+    ]
+  },
+  "public_copy_information_loss": {
+    "blocked_from_top_level": [
+      "what_happened",
+      "why_it_mattered",
+      "plain_english_summary",
+      "policy_effect",
+      "source_basis",
+      "official vote question",
+      "long measure titles"
+    ],
+    "allowed_top_level": [
+      "curated facet theme",
+      "curated domain fallback",
+      "counts",
+      "direction",
+      "party/outcome context"
+    ],
+    "information_loss_hypothesis": "Mechanism, affected entities, magnitude, lifecycle, and exact member-vote meaning can exist in storage while top-level synthesis retains only an abstract curated theme."
+  },
+  "measure_reuse": {
+    "benchmark_roll_calls": 48,
+    "estimate_kind": "heuristic_noncanonical_grouping_estimate",
+    "grouping_method": "source artifact + issue domain + amendment/non-amendment flag",
+    "canonical_measure_dossier_count": null,
+    "heuristic_group_count": 20,
+    "amendments_requiring_separate_dossiers": 20,
+    "procedural_votes_that_can_reference_parent": 8,
+    "heuristic_workload_reduction_estimate_percent": 58.3,
+    "canonical_identity_resolution_pending": true
+  },
+  "human_review": {
+    "statuses": [
+      "machine_draft",
+      "structurally_validated",
+      "source_verified",
+      "human_reviewed",
+      "gold_benchmark",
+      "rejected"
+    ],
+    "must_verify": [
+      "policy mechanism",
+      "affected entities",
+      "yea/nay meaning",
+      "argument attribution",
+      "outcome/status",
+      "issue-pattern conclusion"
+    ],
+    "automated_scoring_replaces_editorial_judgment": false
+  },
+  "recommended_next_milestone": "Valerie Foushee Economy & Taxes Interpretation Quality V2",
+  "case_scores": [
+    {
+      "benchmark_id": "house-2025-310",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "ECONOMY_TAXES",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 44,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-285",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "appropriations",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-281",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 44,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-182",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 44,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-156",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "ECONOMY_TAXES",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 44,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-100",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "other",
+      "issue_domain": "ECONOMY_TAXES",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-50",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "ECONOMY_TAXES",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 44,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-320",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-262",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-260",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-259",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-258",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-257",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-256",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-255",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 2,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 40,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 2,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-254",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-253",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-252",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-33",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "JUSTICE_PUBLIC_SAFETY",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-130",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "JUSTICE_PUBLIC_SAFETY",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-131",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-166",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "JUSTICE_PUBLIC_SAFETY",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-275",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "JUSTICE_PUBLIC_SAFETY",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-299",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "JUSTICE_PUBLIC_SAFETY",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 39,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-362",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-334",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "ENVIRONMENT_ENERGY",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-332",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "UNRESOLVED",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-314",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "EDUCATION_WORKFORCE",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-312",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "EDUCATION_WORKFORCE",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-171",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "final_passage",
+      "issue_domain": "IMMIGRATION_BORDER",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
+          "maximum": 48,
+          "automated_diagnostic_tier": "useful",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
+          "maximum": 48,
+          "automated_diagnostic_tier": "unacceptable",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 0,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 0,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 0,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": false
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 1,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-251",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-250",
+      "cohort": "house_substantive",
+      "chamber": "house",
+      "vote_type": "amendment",
+      "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 4,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-70",
+      "cohort": "senate_substantive",
+      "chamber": "senate",
+      "vote_type": "amendment",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-72",
+      "cohort": "senate_substantive",
+      "chamber": "senate",
+      "vote_type": "amendment",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-81",
+      "cohort": "senate_substantive",
+      "chamber": "senate",
+      "vote_type": "amendment",
+      "issue_domain": "JUSTICE_PUBLIC_SAFETY",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-170",
+      "cohort": "senate_substantive",
+      "chamber": "senate",
+      "vote_type": "amendment",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-186",
+      "cohort": "senate_substantive",
+      "chamber": "senate",
+      "vote_type": "amendment",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-188",
+      "cohort": "senate_substantive",
+      "chamber": "senate",
+      "vote_type": "amendment",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-358",
+      "cohort": "senate_substantive",
+      "chamber": "senate",
+      "vote_type": "amendment",
+      "issue_domain": "EDUCATION_WORKFORCE",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-362",
+      "cohort": "senate_substantive",
+      "chamber": "senate",
+      "vote_type": "amendment",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 2,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": true,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": true
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-343",
+      "cohort": "control",
+      "chamber": "house",
+      "vote_type": "rule_or_procedural_control",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 4,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 2,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": false,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": false
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-344",
+      "cohort": "control",
+      "chamber": "house",
+      "vote_type": "other",
+      "issue_domain": "HEALTH_SOCIAL",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 4,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 2,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": false,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": false
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-308",
+      "cohort": "control",
+      "chamber": "house",
+      "vote_type": "rule_or_procedural_control",
+      "issue_domain": "EDUCATION_WORKFORCE",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 4,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 2,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": false,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": false
+        }
+      }
+    },
+    {
+      "benchmark_id": "house-2025-309",
+      "cohort": "control",
+      "chamber": "house",
+      "vote_type": "other",
+      "issue_domain": "EDUCATION_WORKFORCE",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 4,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 2,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": false,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": false
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-266",
+      "cohort": "control",
+      "chamber": "senate",
+      "vote_type": "motion",
+      "issue_domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 4,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 2,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": false,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": false
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-267",
+      "cohort": "control",
+      "chamber": "senate",
+      "vote_type": "motion",
+      "issue_domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 4,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 2,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": false,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": false
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-268",
+      "cohort": "control",
+      "chamber": "senate",
+      "vote_type": "motion",
+      "issue_domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 4,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 2,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": false,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": false
+        }
+      }
+    },
+    {
+      "benchmark_id": "senate-119-1-269",
+      "cohort": "control",
+      "chamber": "senate",
+      "vote_type": "motion",
+      "issue_domain": "INFRASTRUCTURE_TECH_TRANSPORT",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
+          "maximum": 48,
+          "automated_diagnostic_tier": "strong",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 4,
+            "practical_effect_clarity": 4,
+            "affected_entity_specificity": 2,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 1,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 4,
+            "distinctiveness_from_title_or_summary": 4
+          },
+          "comprehension_answerable": {},
+          "strong_comprehension_gate": true
+        },
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
+          "maximum": 48,
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
+          "fatal_defects": [],
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
+            "policy_mechanism_specificity": 0,
+            "practical_effect_clarity": 0,
+            "affected_entity_specificity": 1,
+            "member_vote_meaning": 4,
+            "credible_argument_framing": 4,
+            "outcome_and_later_status_clarity": 2,
+            "source_map_presence": 4,
+            "calibration_and_non_overclaiming": 4,
+            "plain_language_comprehension": 2,
+            "distinctiveness_from_title_or_summary": 2
+          },
+          "comprehension_answerable": {
+            "What was Congress deciding?": true,
+            "What would have changed?": false,
+            "Who or what was affected?": false,
+            "What did this member's vote mean?": true
+          },
+          "strong_comprehension_gate": false
+        }
+      }
+    }
+  ],
+  "production_or_runtime_mutation": false
+}
