@@ -74,7 +74,7 @@ Use the narrowest source that proves the claim. The official roll call proves th
 
 Suggested identifiers are `measure_dossier_id`, `amendment_dossier_id`, `roll_call_interpretation_id`, and `member_vote_context_id`. Each object carries `schema_version`, `content_version`, `source_retrieved_at`, and review status. A changed source or corrected claim increments content version; downstream interpretations retain the version they used.
 
-The V1 benchmark conservatively estimates reuse from shared reviewed artifacts and facets. The next milestone should calculate reuse from canonical measure/amendment identities, which will be more accurate.
+The V1 benchmark reports only a noncanonical heuristic reuse estimate based on source artifact, issue domain, and amendment/non-amendment grouping. Its provisional group count and workload-reduction percentage are not canonical measure-dossier counts. The next milestone must resolve canonical measure and amendment identities before using reuse results for planning.
 
 ## Review Statuses
 

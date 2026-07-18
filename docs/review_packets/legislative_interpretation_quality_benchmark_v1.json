@@ -1,5 +1,13 @@
 {
-  "schema_version": "legislative_interpretation_quality_scorecard_v1",
+  "schema_version": "legislative_interpretation_quality_structural_diagnostic_scorecard_v1",
+  "diagnostic_scope": {
+    "kind": "automated_structural_heuristic_only",
+    "verified_editorial_quality_judgment": false,
+    "human_editorial_scoring_status": "pending",
+    "strong_label_meaning": "strong under the automated diagnostic rubric only",
+    "source_map_presence_proves_factual_support": false,
+    "candidate_drafts_remain_machine_drafts": true
+  },
   "benchmark_composition": {
     "total": 48,
     "cohorts": {
@@ -17,7 +25,8 @@
       "NATIONAL_SECURITY_FOREIGN": 12,
       "JUSTICE_PUBLIC_SAFETY": 6,
       "ENVIRONMENT_ENERGY": 1,
-      "EDUCATION_WORKFORCE": 6,
+      "UNRESOLVED": 1,
+      "EDUCATION_WORKFORCE": 5,
       "IMMIGRATION_BORDER": 1,
       "INFRASTRUCTURE_TECH_TRANSPORT": 4
     },
@@ -31,39 +40,42 @@
     }
   },
   "aggregate_scores": {
-    "current_stored": {
+    "current_stored_structural_diagnostic": {
       "distribution": {
         "strong": 34,
         "useful": 14
       },
-      "mean_score": 39.6,
+      "automated_diagnostic_mean_score": 39.6,
       "fatal_defect_count": 0,
-      "generic_but_accurate_rate_percent": 0.0,
-      "useful_or_better_rate_percent": 100.0,
-      "strong_or_better_rate_percent": 70.8
+      "generic_structural_diagnostic_rate_percent": 0.0,
+      "useful_or_better_diagnostic_rate_percent": 100.0,
+      "strong_or_better_diagnostic_rate_percent": 70.8,
+      "diagnostic_label_caveat": "Tiers are automated structural/heuristic diagnostics only; human editorial scoring is pending."
     },
-    "current_public": {
+    "public_field_availability_proxy": {
       "distribution": {
         "strong": 34,
         "unacceptable": 14
       },
-      "mean_score": 33.8,
+      "automated_diagnostic_mean_score": 33.8,
       "fatal_defect_count": 0,
-      "generic_but_accurate_rate_percent": 0.0,
-      "useful_or_better_rate_percent": 70.8,
-      "strong_or_better_rate_percent": 70.8
+      "generic_structural_diagnostic_rate_percent": 0.0,
+      "useful_or_better_diagnostic_rate_percent": 70.8,
+      "strong_or_better_diagnostic_rate_percent": 70.8,
+      "diagnostic_label_caveat": "Tiers are automated structural/heuristic diagnostics only; human editorial scoring is pending."
     },
-    "candidate_gold": {
+    "candidate_draft_structural_diagnostic": {
       "distribution": {
         "strong": 39,
         "useful": 1,
-        "generic_but_accurate": 8
+        "generic_but_structurally_adequate": 8
       },
-      "mean_score": 40,
+      "automated_diagnostic_mean_score": 40,
       "fatal_defect_count": 0,
-      "generic_but_accurate_rate_percent": 16.7,
-      "useful_or_better_rate_percent": 83.3,
-      "strong_or_better_rate_percent": 81.2
+      "generic_structural_diagnostic_rate_percent": 16.7,
+      "useful_or_better_diagnostic_rate_percent": 83.3,
+      "strong_or_better_diagnostic_rate_percent": 81.2,
+      "diagnostic_label_caveat": "Tiers are automated structural/heuristic diagnostics only; human editorial scoring is pending."
     }
   },
   "genericity_counts": {
@@ -136,123 +148,131 @@
   },
   "completeness": {
     "field_completeness_percent": 40.0,
-    "source_completeness_percent": 100.0,
+    "claim_map_presence_rate_percent": 100.0,
+    "claim_map_support_verified_percent": 0.0,
+    "claim_map_support_verification_status": "pending_human_source_verification",
     "comprehension_answerability_percent": 70.8
   },
   "findings_by_vote_type": {
     "amendment": {
       "cases": 20,
-      "current_stored_mean": 41.2,
-      "current_public_mean": 40.3,
-      "candidate_gold_mean": 41.8
+      "current_stored_structural_diagnostic_mean": 41.2,
+      "public_field_availability_proxy_mean": 40.3,
+      "candidate_draft_structural_diagnostic_mean": 41.8
     },
     "appropriations": {
       "cases": 1,
-      "current_stored_mean": 41,
-      "current_public_mean": 41,
-      "candidate_gold_mean": 42
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 42
     },
     "final_passage": {
       "cases": 18,
-      "current_stored_mean": 37.1,
-      "current_public_mean": 22.4,
-      "candidate_gold_mean": 41.8
+      "current_stored_structural_diagnostic_mean": 37.1,
+      "public_field_availability_proxy_mean": 22.4,
+      "candidate_draft_structural_diagnostic_mean": 41.8
     },
     "motion": {
       "cases": 4,
-      "current_stored_mean": 41,
-      "current_public_mean": 41,
-      "candidate_gold_mean": 31
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 31
     },
     "other": {
       "cases": 3,
-      "current_stored_mean": 41,
-      "current_public_mean": 41,
-      "candidate_gold_mean": 34.7
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 34.7
     },
     "rule_or_procedural_control": {
       "cases": 2,
-      "current_stored_mean": 41,
-      "current_public_mean": 41,
-      "candidate_gold_mean": 31
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 31
     }
   },
   "findings_by_domain": {
     "ECONOMY_TAXES": {
       "cases": 4,
-      "current_stored_mean": 42,
-      "current_public_mean": 41.5,
-      "candidate_gold_mean": 43.5
+      "current_stored_structural_diagnostic_mean": 42,
+      "public_field_availability_proxy_mean": 41.5,
+      "candidate_draft_structural_diagnostic_mean": 43.5
     },
     "EDUCATION_WORKFORCE": {
-      "cases": 6,
-      "current_stored_mean": 37.5,
-      "current_public_mean": 28,
-      "candidate_gold_mean": 37.8
+      "cases": 5,
+      "current_stored_structural_diagnostic_mean": 38.2,
+      "public_field_availability_proxy_mean": 30.6,
+      "candidate_draft_structural_diagnostic_mean": 37.2
     },
     "ENVIRONMENT_ENERGY": {
       "cases": 1,
-      "current_stored_mean": 34,
-      "current_public_mean": 15,
-      "candidate_gold_mean": 41
+      "current_stored_structural_diagnostic_mean": 34,
+      "public_field_availability_proxy_mean": 15,
+      "candidate_draft_structural_diagnostic_mean": 41
     },
     "HEALTH_SOCIAL": {
       "cases": 14,
-      "current_stored_mean": 40.1,
-      "current_public_mean": 35.6,
-      "candidate_gold_mean": 40.5
+      "current_stored_structural_diagnostic_mean": 40.1,
+      "public_field_availability_proxy_mean": 35.6,
+      "candidate_draft_structural_diagnostic_mean": 40.5
     },
     "IMMIGRATION_BORDER": {
       "cases": 1,
-      "current_stored_mean": 34,
-      "current_public_mean": 15,
-      "candidate_gold_mean": 41
+      "current_stored_structural_diagnostic_mean": 34,
+      "public_field_availability_proxy_mean": 15,
+      "candidate_draft_structural_diagnostic_mean": 41
     },
     "INFRASTRUCTURE_TECH_TRANSPORT": {
       "cases": 4,
-      "current_stored_mean": 41,
-      "current_public_mean": 41,
-      "candidate_gold_mean": 31
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 31
     },
     "JUSTICE_PUBLIC_SAFETY": {
       "cases": 6,
-      "current_stored_mean": 36.8,
-      "current_public_mean": 19.3,
-      "candidate_gold_mean": 40.8
+      "current_stored_structural_diagnostic_mean": 36.8,
+      "public_field_availability_proxy_mean": 19.3,
+      "candidate_draft_structural_diagnostic_mean": 40.8
     },
     "NATIONAL_SECURITY_FOREIGN": {
       "cases": 12,
-      "current_stored_mean": 41.2,
-      "current_public_mean": 39.8,
-      "candidate_gold_mean": 41.8
+      "current_stored_structural_diagnostic_mean": 41.2,
+      "public_field_availability_proxy_mean": 39.8,
+      "candidate_draft_structural_diagnostic_mean": 41.8
+    },
+    "UNRESOLVED": {
+      "cases": 1,
+      "current_stored_structural_diagnostic_mean": 34,
+      "public_field_availability_proxy_mean": 15,
+      "candidate_draft_structural_diagnostic_mean": 41
     }
   },
   "findings_by_chamber": {
     "house": {
       "cases": 36,
-      "current_stored_mean": 39.2,
-      "current_public_mean": 31.3,
-      "candidate_gold_mean": 40.6
+      "current_stored_structural_diagnostic_mean": 39.2,
+      "public_field_availability_proxy_mean": 31.3,
+      "candidate_draft_structural_diagnostic_mean": 40.6
     },
     "senate": {
       "cases": 12,
-      "current_stored_mean": 41,
-      "current_public_mean": 41,
-      "candidate_gold_mean": 38.3
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 38.3
     }
   },
   "findings_by_review_mode": {
     "deterministic_control": {
       "cases": 8,
-      "current_stored_mean": 41,
-      "current_public_mean": 41,
-      "candidate_gold_mean": 31
+      "current_stored_structural_diagnostic_mean": 41,
+      "public_field_availability_proxy_mean": 41,
+      "candidate_draft_structural_diagnostic_mean": 31
     },
     "reviewed": {
       "cases": 40,
-      "current_stored_mean": 39.4,
-      "current_public_mean": 32.3,
-      "candidate_gold_mean": 41.8
+      "current_stored_structural_diagnostic_mean": 39.4,
+      "public_field_availability_proxy_mean": 32.3,
+      "candidate_draft_structural_diagnostic_mean": 41.8
     }
   },
   "issue_synthesis": {
@@ -261,131 +281,131 @@
     "procedural_votes_excluded": 6,
     "all_claims_mapped": true,
     "human_review_required": true,
-    "current_distribution": {
-      "generic_but_accurate": 8
+    "current_automated_diagnostic_distribution": {
+      "generic_but_structurally_adequate": 8
     },
-    "candidate_distribution": {
-      "strong": 7,
-      "generic_but_accurate": 1
+    "candidate_automated_diagnostic_distribution": {
+      "strong": 5,
+      "generic_but_structurally_adequate": 3
     },
     "slice_scores": [
       {
-        "slice_id": "valerie_foushee-economy_taxes",
-        "current_public_synthesis": {
-          "score": 24,
+        "slice_id": "synthetic-economy_taxes",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": []
         },
-        "candidate_gold_synthesis": {
-          "score": 42,
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": []
         }
       },
       {
-        "slice_id": "valerie_foushee-national_security_foreign",
-        "current_public_synthesis": {
-          "score": 24,
+        "slice_id": "synthetic-national_security_foreign",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": []
         },
-        "candidate_gold_synthesis": {
-          "score": 42,
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": []
         }
       },
       {
-        "slice_id": "valerie_foushee-justice_public_safety",
-        "current_public_synthesis": {
-          "score": 24,
+        "slice_id": "synthetic-justice_public_safety",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": []
         },
-        "candidate_gold_synthesis": {
-          "score": 42,
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": []
         }
       },
       {
-        "slice_id": "thom_tillis-infrastructure_tech_transport",
-        "current_public_synthesis": {
-          "score": 24,
+        "slice_id": "synthetic-infrastructure_tech_transport",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": []
         },
-        "candidate_gold_synthesis": {
-          "score": 32,
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 32,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": []
         }
       },
       {
-        "slice_id": "ted_budd-health_social",
-        "current_public_synthesis": {
-          "score": 24,
+        "slice_id": "synthetic-health_social",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": []
         },
-        "candidate_gold_synthesis": {
-          "score": 42,
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": []
         }
       },
       {
-        "slice_id": "valerie_foushee-immigration_border",
-        "current_public_synthesis": {
-          "score": 24,
+        "slice_id": "synthetic-immigration_border",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": []
         },
-        "candidate_gold_synthesis": {
-          "score": 42,
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 32,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": []
         }
       },
       {
-        "slice_id": "valerie_foushee-education_workforce",
-        "current_public_synthesis": {
-          "score": 24,
+        "slice_id": "synthetic-education_workforce",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": []
         },
-        "candidate_gold_synthesis": {
-          "score": 42,
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": []
         }
       },
       {
-        "slice_id": "thom_tillis-environment_energy",
-        "current_public_synthesis": {
-          "score": 24,
+        "slice_id": "synthetic-environment_energy",
+        "current_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 24,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": []
         },
-        "candidate_gold_synthesis": {
-          "score": 42,
+        "candidate_synthesis_structural_diagnostic": {
+          "automated_diagnostic_score": 32,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": []
         }
       }
@@ -412,10 +432,14 @@
   },
   "measure_reuse": {
     "benchmark_roll_calls": 48,
-    "estimated_unique_measure_level_research_units": 19,
+    "estimate_kind": "heuristic_noncanonical_grouping_estimate",
+    "grouping_method": "source artifact + issue domain + amendment/non-amendment flag",
+    "canonical_measure_dossier_count": null,
+    "heuristic_group_count": 20,
     "amendments_requiring_separate_dossiers": 20,
     "procedural_votes_that_can_reference_parent": 8,
-    "estimated_workload_reduction_percent": 60.4
+    "heuristic_workload_reduction_estimate_percent": 58.3,
+    "canonical_identity_resolution_pending": true
   },
   "human_review": {
     "statuses": [
@@ -444,22 +468,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "ECONOMY_TAXES",
-      "scores": {
-        "current_stored": {
-          "score": 43,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -467,21 +491,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 43,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -489,21 +513,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 44,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 44,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -524,22 +548,22 @@
       "chamber": "house",
       "vote_type": "appropriations",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -547,21 +571,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -569,21 +593,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -604,22 +628,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 43,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -627,21 +651,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -649,21 +673,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 44,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 44,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -684,22 +708,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 43,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -707,21 +731,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 43,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -729,21 +753,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 44,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 44,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -764,22 +788,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "ECONOMY_TAXES",
-      "scores": {
-        "current_stored": {
-          "score": 43,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -787,21 +811,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -809,21 +833,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 44,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 44,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -844,22 +868,22 @@
       "chamber": "house",
       "vote_type": "other",
       "issue_domain": "ECONOMY_TAXES",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -867,21 +891,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -889,21 +913,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -924,22 +948,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "ECONOMY_TAXES",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -947,21 +971,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -969,21 +993,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 44,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 44,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1004,22 +1028,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 34,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1027,21 +1051,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -1049,21 +1073,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1084,22 +1108,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 34,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1107,21 +1131,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -1129,21 +1153,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1164,22 +1188,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1187,21 +1211,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1209,21 +1233,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1244,22 +1268,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 43,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1267,21 +1291,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 43,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1289,21 +1313,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1324,22 +1348,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1347,21 +1371,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1369,21 +1393,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1404,22 +1428,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 43,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1427,21 +1451,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 43,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1449,21 +1473,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1484,22 +1508,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 43,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1507,21 +1531,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 43,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1529,21 +1553,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1564,22 +1588,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 2,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1587,21 +1611,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 43,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1609,21 +1633,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 40,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 40,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 2,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1644,22 +1668,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 43,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1667,21 +1691,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 43,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1689,21 +1713,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1724,22 +1748,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1747,21 +1771,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1769,21 +1793,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1804,22 +1828,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1827,21 +1851,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1849,21 +1873,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1884,22 +1908,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "JUSTICE_PUBLIC_SAFETY",
-      "scores": {
-        "current_stored": {
-          "score": 36,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1907,21 +1931,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -1929,21 +1953,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1964,22 +1988,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "JUSTICE_PUBLIC_SAFETY",
-      "scores": {
-        "current_stored": {
-          "score": 36,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -1987,21 +2011,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -2009,21 +2033,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2044,22 +2068,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 36,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2067,21 +2091,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -2089,21 +2113,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2124,22 +2148,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "JUSTICE_PUBLIC_SAFETY",
-      "scores": {
-        "current_stored": {
-          "score": 36,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2147,21 +2171,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -2169,21 +2193,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2204,22 +2228,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "JUSTICE_PUBLIC_SAFETY",
-      "scores": {
-        "current_stored": {
-          "score": 36,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2227,21 +2251,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -2249,21 +2273,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2284,22 +2308,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "JUSTICE_PUBLIC_SAFETY",
-      "scores": {
-        "current_stored": {
-          "score": 36,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2307,21 +2331,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -2329,21 +2353,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 39,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 39,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2364,22 +2388,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 36,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 36,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2387,21 +2411,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -2409,21 +2433,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2444,22 +2468,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "ENVIRONMENT_ENERGY",
-      "scores": {
-        "current_stored": {
-          "score": 34,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2467,21 +2491,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -2489,21 +2513,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2523,23 +2547,23 @@
       "cohort": "house_substantive",
       "chamber": "house",
       "vote_type": "final_passage",
-      "issue_domain": "EDUCATION_WORKFORCE",
-      "scores": {
-        "current_stored": {
-          "score": 34,
+      "issue_domain": "UNRESOLVED",
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2547,21 +2571,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -2569,21 +2593,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2604,22 +2628,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "EDUCATION_WORKFORCE",
-      "scores": {
-        "current_stored": {
-          "score": 34,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2627,21 +2651,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -2649,21 +2673,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2684,22 +2708,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "EDUCATION_WORKFORCE",
-      "scores": {
-        "current_stored": {
-          "score": 34,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2707,21 +2731,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -2729,21 +2753,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2764,22 +2788,22 @@
       "chamber": "house",
       "vote_type": "final_passage",
       "issue_domain": "IMMIGRATION_BORDER",
-      "scores": {
-        "current_stored": {
-          "score": 34,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 34,
           "maximum": 48,
-          "tier": "useful",
+          "automated_diagnostic_tier": "useful",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2787,21 +2811,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 15,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 15,
           "maximum": 48,
-          "tier": "unacceptable",
+          "automated_diagnostic_tier": "unacceptable",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 2,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 2,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 0,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 0,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 0,
             "distinctiveness_from_title_or_summary": 2
@@ -2809,21 +2833,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": false
         },
-        "candidate_gold": {
-          "score": 41,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 1,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2844,22 +2868,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2867,21 +2891,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2889,21 +2913,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2924,22 +2948,22 @@
       "chamber": "house",
       "vote_type": "amendment",
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "scores": {
-        "current_stored": {
-          "score": 43,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2947,21 +2971,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 43,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 43,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 4,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -2969,21 +2993,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3004,22 +3028,22 @@
       "chamber": "senate",
       "vote_type": "amendment",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3027,21 +3051,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3049,21 +3073,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3084,22 +3108,22 @@
       "chamber": "senate",
       "vote_type": "amendment",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3107,21 +3131,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3129,21 +3153,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3164,22 +3188,22 @@
       "chamber": "senate",
       "vote_type": "amendment",
       "issue_domain": "JUSTICE_PUBLIC_SAFETY",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3187,21 +3211,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3209,21 +3233,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3244,22 +3268,22 @@
       "chamber": "senate",
       "vote_type": "amendment",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3267,21 +3291,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3289,21 +3313,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3324,22 +3348,22 @@
       "chamber": "senate",
       "vote_type": "amendment",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3347,21 +3371,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3369,21 +3393,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3404,22 +3428,22 @@
       "chamber": "senate",
       "vote_type": "amendment",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3427,21 +3451,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3449,21 +3473,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3484,22 +3508,22 @@
       "chamber": "senate",
       "vote_type": "amendment",
       "issue_domain": "EDUCATION_WORKFORCE",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3507,21 +3531,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3529,21 +3553,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3564,22 +3588,22 @@
       "chamber": "senate",
       "vote_type": "amendment",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3587,21 +3611,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3609,21 +3633,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 42,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 42,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 2,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3644,22 +3668,22 @@
       "chamber": "house",
       "vote_type": "rule_or_procedural_control",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3667,21 +3691,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3689,21 +3713,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 31,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 4,
             "credible_argument_framing": 4,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 2,
             "distinctiveness_from_title_or_summary": 2
@@ -3724,22 +3748,22 @@
       "chamber": "house",
       "vote_type": "other",
       "issue_domain": "HEALTH_SOCIAL",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3747,21 +3771,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3769,21 +3793,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 31,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 4,
             "credible_argument_framing": 4,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 2,
             "distinctiveness_from_title_or_summary": 2
@@ -3804,22 +3828,22 @@
       "chamber": "house",
       "vote_type": "rule_or_procedural_control",
       "issue_domain": "EDUCATION_WORKFORCE",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3827,21 +3851,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3849,21 +3873,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 31,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 4,
             "credible_argument_framing": 4,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 2,
             "distinctiveness_from_title_or_summary": 2
@@ -3884,22 +3908,22 @@
       "chamber": "house",
       "vote_type": "other",
       "issue_domain": "EDUCATION_WORKFORCE",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3907,21 +3931,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3929,21 +3953,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 31,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 4,
             "credible_argument_framing": 4,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 2,
             "distinctiveness_from_title_or_summary": 2
@@ -3964,22 +3988,22 @@
       "chamber": "senate",
       "vote_type": "motion",
       "issue_domain": "INFRASTRUCTURE_TECH_TRANSPORT",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -3987,21 +4011,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -4009,21 +4033,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 31,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 4,
             "credible_argument_framing": 4,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 2,
             "distinctiveness_from_title_or_summary": 2
@@ -4044,22 +4068,22 @@
       "chamber": "senate",
       "vote_type": "motion",
       "issue_domain": "INFRASTRUCTURE_TECH_TRANSPORT",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -4067,21 +4091,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -4089,21 +4113,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 31,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 4,
             "credible_argument_framing": 4,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 2,
             "distinctiveness_from_title_or_summary": 2
@@ -4124,22 +4148,22 @@
       "chamber": "senate",
       "vote_type": "motion",
       "issue_domain": "INFRASTRUCTURE_TECH_TRANSPORT",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -4147,21 +4171,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -4169,21 +4193,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 31,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 4,
             "credible_argument_framing": 4,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 2,
             "distinctiveness_from_title_or_summary": 2
@@ -4204,22 +4228,22 @@
       "chamber": "senate",
       "vote_type": "motion",
       "issue_domain": "INFRASTRUCTURE_TECH_TRANSPORT",
-      "scores": {
-        "current_stored": {
-          "score": 41,
+      "diagnostics": {
+        "current_stored_structural_diagnostic": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -4227,21 +4251,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "current_public": {
-          "score": 41,
+        "public_field_availability_proxy": {
+          "automated_diagnostic_score": 41,
           "maximum": 48,
-          "tier": "strong",
+          "automated_diagnostic_tier": "strong",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 4,
             "practical_effect_clarity": 4,
             "affected_entity_specificity": 2,
             "member_vote_meaning": 4,
             "credible_argument_framing": 1,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 4,
             "distinctiveness_from_title_or_summary": 4
@@ -4249,21 +4273,21 @@
           "comprehension_answerable": {},
           "strong_comprehension_gate": true
         },
-        "candidate_gold": {
-          "score": 31,
+        "candidate_draft_structural_diagnostic": {
+          "automated_diagnostic_score": 31,
           "maximum": 48,
-          "tier": "generic_but_accurate",
+          "automated_diagnostic_tier": "generic_but_structurally_adequate",
           "fatal_defects": [],
-          "dimension_scores": {
-            "factual_accuracy": 4,
-            "procedural_accuracy": 4,
+          "automated_dimension_diagnostics": {
+            "factual_support_structure": 4,
+            "procedural_description_structure": 4,
             "policy_mechanism_specificity": 0,
             "practical_effect_clarity": 0,
             "affected_entity_specificity": 1,
             "member_vote_meaning": 4,
             "credible_argument_framing": 4,
             "outcome_and_later_status_clarity": 2,
-            "source_traceability": 4,
+            "source_map_presence": 4,
             "calibration_and_non_overclaiming": 4,
             "plain_language_comprehension": 2,
             "distinctiveness_from_title_or_summary": 2

@@ -2,7 +2,7 @@
   "schema_version": "legislative_interpretation_quality_benchmark_v1",
   "generated_from_commit": "6b218070a7c93a1f979eacc863766887e40151e4",
   "production_access": false,
-  "candidate_status_notice": "Candidates are machine drafts and are not gold_benchmark until human source verification.",
+  "candidate_status_notice": "Candidates are machine drafts. Automated structural diagnostics are not verified editorial-quality judgments; human editorial scoring and source verification are pending.",
   "composition": {
     "total": 48,
     "cohorts": {
@@ -20,7 +20,8 @@
       "NATIONAL_SECURITY_FOREIGN": 12,
       "JUSTICE_PUBLIC_SAFETY": 6,
       "ENVIRONMENT_ENERGY": 1,
-      "EDUCATION_WORKFORCE": 6,
+      "UNRESOLVED": 1,
+      "EDUCATION_WORKFORCE": 5,
       "IMMIGRATION_BORDER": 1,
       "INFRASTRUCTURE_TECH_TRANSPORT": 4
     },
@@ -131,7 +132,7 @@
         "member_vote_context": "Foushee was recorded as not voting on this roll call, so this row shows the bill's meaning but does not record a yea or nay position from her.",
         "what_not_to_infer": "This row should not be counted as support or opposition by Foushee, and it does not show her motive or full record on small-business regulation."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote concerned how much new regulatory cost the SBA could impose on small businesses through its own rulemaking.",
         "what_happened": "The House passed a bill that would require the Small Business Administration to keep its annual small-business regulatory budget at zero or below.",
         "member_vote_context": "Foushee was recorded as not voting on this roll call, so this row shows the bill's meaning but does not record a yea or nay position from her.",
@@ -323,7 +324,7 @@
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
         "what_not_to_infer": "This vote does not by itself explain why she opposed the package or describe her whole position on every program included in the funding measure."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote affected whether federal operations would reopen or continue, whether unpaid federal workers would receive back pay, and whether several full-year appropriations packages would move forward.",
         "what_happened": "The House agreed to the Senate-amended funding package that ended the 2025 shutdown and sent the measure to the President.",
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
@@ -514,7 +515,7 @@
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
         "what_not_to_infer": "This vote was on the House-passed version, not the final enacted package, and it does not alone explain her motive or full position on federal spending."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote concerned whether to keep most federal agencies operating temporarily while regular appropriations bills were still unfinished.",
         "what_happened": "The House passed an initial short-term FY2026 funding bill before later Senate changes.",
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
@@ -700,7 +701,7 @@
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
         "what_not_to_infer": "This was House passage rather than final enactment, and the vote alone does not explain her motive or her full position on veterans or military construction funding."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote concerned House approval of funding for military construction, military housing, veterans benefits, veterans health programs, and related agencies.",
         "what_happened": "The House passed an FY2026 appropriations bill for military construction, Veterans Affairs, and related agencies.",
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
@@ -887,7 +888,7 @@
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
         "what_not_to_infer": "This vote does not by itself show her motive, her broader immigration position, or whether the bill became law."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote concerned whether certain SBA-backed business loans should be limited to applicants or beneficial owners who are U.S. citizens, nationals, or lawful permanent residents.",
         "what_happened": "The House passed a bill changing eligibility requirements for SBA 7(a) and 504 small-business loans.",
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
@@ -1079,7 +1080,7 @@
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
         "what_not_to_infer": "This vote was on a budget framework, not final tax or spending law, and it does not by itself show her motive or full fiscal policy record."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote kept the reconciliation process moving for later tax, spending, deficit, and debt-limit legislation, while not itself changing taxes or program funding.",
         "what_happened": "The House agreed to the Senate-amended budget framework for FY2025-FY2034 reconciliation instructions.",
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
@@ -1270,7 +1271,7 @@
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
         "what_not_to_infer": "This vote was a budget-framework vote rather than final program legislation, and it does not by itself show her motive or full fiscal policy record."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote opened a fast-track process for later tax, spending, deficit, and debt-limit legislation, but did not itself enact those later policy changes.",
         "what_happened": "The House adopted a budget blueprint that started reconciliation instructions for later budget legislation.",
         "member_vote_context": "Foushee voted Nay. In the stored vote context, that matched most Democrats and was against the winning side, which was Yea.",
@@ -1445,7 +1446,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -1622,7 +1623,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -1803,7 +1804,7 @@
         "member_vote_context": "Foushee voted Yea, meaning she supported agreeing to this amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on national security from this amendment vote. This was an amendment vote, not final passage of H.R. 3838."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether that amendment would be adopted into the House's FY2026 defense authorization bill. It was not final passage of the full NDAA.",
         "what_happened": "The House voted on whether to agree to Rose of Tennessee Part A Amendment No. 253. The amendment would require the Secretary of Defense to submit a report to the House and Senate Committees on Armed Services on the fraud scheme perpetrated by Janet Yamanaka Mello, a civilian employee of the Department of the Army who was indicted and pleaded guilty to stealing over $100 million in 4-H Military Partnership Grant program funds. The amendment was agreed to.",
         "member_vote_context": "Foushee voted Yea, meaning she supported agreeing to this amendment.",
@@ -1984,7 +1985,7 @@
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on national security from this amendment vote. This was an amendment vote, not final passage of H.R. 3838."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether that amendment would be adopted into the House's FY2026 defense authorization bill. It was not final passage of the full NDAA.",
         "what_happened": "The House voted on whether to agree to Biggs of Arizona Part A Amendment No. 29. The amendment would prohibit the designation of military and certain National Guard lands as critical habitats under the Endangered Species Act when deemed necessary by the Department of Defense, and to exempt military personnel from Endangered Species Act prohibitions during national defense-related operations, including incidental harm to protected species. The amendment failed.",
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
@@ -2165,7 +2166,7 @@
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on national security from this amendment vote. This was an amendment vote, not final passage of H.R. 3838."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether that amendment would be adopted into the House's FY2026 defense authorization bill. It was not final passage of the full NDAA.",
         "what_happened": "The House voted on whether to agree to McCormick of Georgia Part A Amendment No. 25. The amendment would modify section 1555 of the National Defense Authorization Act, FY 2024, regarding contracting for military recruitment to prohibit the Department of Defense from contracting with certain entities that perform fact-checking and information-grading services. The amendment was agreed to.",
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
@@ -2346,7 +2347,7 @@
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on national security from this amendment vote. This was an amendment vote, not final passage of H.R. 3838."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether that amendment would be adopted into the House's FY2026 defense authorization bill. It was not final passage of the full NDAA.",
         "what_happened": "The House voted on whether to agree to Greene of Georgia Part A Amendment No. 24. The amendment would strike foreign aid funding for the Taiwan Security Cooperation Initiative. The amendment failed.",
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
@@ -2527,7 +2528,7 @@
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on national security from this amendment vote. This was an amendment vote, not final passage of H.R. 3838."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether that amendment would be adopted into the House's FY2026 defense authorization bill. It was not final passage of the full NDAA.",
         "what_happened": "The House voted on whether to agree to Greene of Georgia Part A Amendment No. 23. The amendment would strike funding for the Overseas Humanitarian, Disaster, and Civic Aid program. The amendment failed.",
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
@@ -2708,7 +2709,7 @@
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on national security from this amendment vote. This was an amendment vote, not final passage of H.R. 3838."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether that amendment would be adopted into the House's FY2026 defense authorization bill. It was not final passage of the full NDAA.",
         "what_happened": "The House voted on whether to agree to Greene of Georgia Part A Amendment No. 22. The amendment would prohibit assistance to Ukraine. The amendment failed.",
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
@@ -2889,7 +2890,7 @@
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on national security from this amendment vote. This was an amendment vote, not final passage of H.R. 3838."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether that amendment would be adopted into the House's FY2026 defense authorization bill. It was not final passage of the full NDAA.",
         "what_happened": "The House voted on whether to agree to Greene of Georgia Part A Amendment No. 20. The amendment would ban the research, development, procurement and promotion of cell cultured meat by the DOD. The amendment failed.",
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
@@ -3070,7 +3071,7 @@
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on national security from this amendment vote. This was an amendment vote, not final passage of H.R. 3838."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether that amendment would be adopted into the House's FY2026 defense authorization bill. It was not final passage of the full NDAA.",
         "what_happened": "The House voted on whether to agree to Mills of Florida Part A Amendment No. 18. The amendment would restrict base commanders' ability to fly unauthorized flags at their discretion. The amendment was agreed to.",
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
@@ -3252,7 +3253,7 @@
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on national security from this amendment vote. This was an amendment vote, not final passage of H.R. 3838."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether that amendment would be adopted into the House's FY2026 defense authorization bill. It was not final passage of the full NDAA.",
         "what_happened": "The House voted on whether to agree to Wilson of South Carolina Part A Amendment No. 11. The amendment would increase penalties for entering a military installation or violating national defense area security regulations. The amendment was agreed to.",
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
@@ -3430,7 +3431,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -3608,7 +3609,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -3786,7 +3787,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -3964,7 +3965,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -4142,7 +4143,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -4320,7 +4321,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -4497,7 +4498,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -4673,7 +4674,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -4772,7 +4773,7 @@
       "benchmark_id": "house-2025-332",
       "cohort": "house_substantive",
       "source_artifact": "docs/interpretation_batches/batch_009_valerie_visible_domain_interpretations.json",
-      "issue_domain": "EDUCATION_WORKFORCE",
+      "issue_domain": "UNRESOLVED",
       "dossier": {
         "chamber": "house",
         "congress": 119,
@@ -4849,7 +4850,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -5025,7 +5026,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -5201,7 +5202,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -5377,7 +5378,7 @@
         "member_vote_context": null,
         "what_not_to_infer": null
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": null,
         "what_happened": null,
         "member_vote_context": null,
@@ -5558,7 +5559,7 @@
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on national security from this amendment vote. This was an amendment vote, not final passage of H.R. 3838."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether that amendment would be adopted into the House's FY2026 defense authorization bill. It was not final passage of the full NDAA.",
         "what_happened": "The House voted on whether to agree to Patronis of Florida Part A Amendment No. 9. The amendment would eliminate the preference for motor vehicles using electric or hybrid propulsion systems and related requirements of the Department of Defense. The amendment was agreed to.",
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
@@ -5740,7 +5741,7 @@
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad position on national security from this amendment vote. This was an amendment vote, not final passage of H.R. 3838."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether that amendment would be adopted into the House's FY2026 defense authorization bill. It was not final passage of the full NDAA.",
         "what_happened": "The House voted on whether to agree to Smith of New Jersey Part A Amendment No. 7. The amendment would require the Secretary of Defense to certify that offshore wind projects in the North Atlantic and Mid-Atlantic Planning Areas will not interfere with radar capabilities. The amendment failed.",
         "member_vote_context": "Foushee voted Nay, meaning she opposed agreeing to this amendment.",
@@ -5926,7 +5927,7 @@
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad health-policy position beyond this amendment vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The amendment text identifies Medicare and Medicaid protection as the practical subject of the vote.",
         "what_happened": "The vote was on agreeing to S.Amdt. 1029 during consideration of S.Con.Res. 7.",
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
@@ -6113,7 +6114,7 @@
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad health-policy position beyond this amendment vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The amendment purpose identifies Medicaid-linked maternal and pediatric health care access as the practical subject of the vote.",
         "what_happened": "The vote was on agreeing to S.Amdt. 407 during consideration of S.Con.Res. 7.",
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
@@ -6300,7 +6301,7 @@
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad policing position beyond this amendment vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The amendment purpose identifies law-enforcement staffing and community policing capacity as the practical subject of the vote.",
         "what_happened": "The vote was on agreeing to S.Amdt. 699 during consideration of S.Con.Res. 7.",
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
@@ -6487,7 +6488,7 @@
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad health-policy position beyond this amendment vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The amendment purpose identifies Medicare and Medicaid protection as the practical subject of the vote.",
         "what_happened": "The vote was on agreeing to S.Amdt. 2035 during consideration of H.Con.Res. 14.",
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
@@ -6674,7 +6675,7 @@
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad health-policy position beyond this amendment vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The amendment purpose identifies Medicaid funding and rural-hospital effects as the practical subject of the vote.",
         "what_happened": "The vote was on agreeing to S.Amdt. 1693 during consideration of H.Con.Res. 14.",
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
@@ -6861,7 +6862,7 @@
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad health-policy position beyond this amendment vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The amendment purpose identifies Medicaid funding, health care access, benefits, coverage, and provider payments as the practical subject of the vote.",
         "what_happened": "The vote was on agreeing to S.Amdt. 2177 during consideration of H.Con.Res. 14.",
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
@@ -7048,7 +7049,7 @@
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad education-policy position beyond this amendment vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The amendment purpose identifies elementary and secondary education scholarships as the practical subject of the vote.",
         "what_happened": "The vote was on agreeing to S.Amdt. 2382 during consideration of H.R. 1.",
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
@@ -7235,7 +7236,7 @@
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
         "what_not_to_infer": "Do not infer motive, ideology, character, a voting recommendation, or a broad health-policy position beyond this amendment vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The amendment purpose identifies prescription drug prices and Medicare dental, vision, and hearing coverage as the practical subject of the vote.",
         "what_happened": "The vote was on agreeing to S.Amdt. 2435 during consideration of H.R. 1.",
         "member_vote_context": "A Yea vote supported agreeing to the amendment. A Nay vote opposed agreeing to the amendment.",
@@ -7402,7 +7403,7 @@
         "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
         "what_not_to_infer": "Do not treat this as final passage of H.R. 6703, H.R. 498, H.R. 3492, or H.R. 4776, or as a direct policy position on every measure included in the rule."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote affected whether the House moved forward procedurally toward adopting the rule for considering the listed measures.",
         "what_happened": "The House voted on whether to order the previous question for H. Res. 953.",
         "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
@@ -7571,7 +7572,7 @@
         "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
         "what_not_to_infer": "Do not treat this as final passage of H.R. 6703, H.R. 498, H.R. 3492, or H.R. 4776, or as a direct policy position on every measure included in the rule."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether the House would adopt that floor rule for considering the listed measures.",
         "what_happened": "The House voted on whether to agree to H. Res. 953.",
         "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
@@ -7740,7 +7741,7 @@
         "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
         "what_not_to_infer": "Do not treat this as final passage of any listed bill, or as a direct policy position on every education or small-business measure included in the rule."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote affected whether the House moved forward procedurally toward adopting the rule for considering the listed measures.",
         "what_happened": "The House voted on whether to order the previous question for H. Res. 916.",
         "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
@@ -7909,7 +7910,7 @@
         "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
         "what_not_to_infer": "Do not treat this as final passage of any listed bill, or as a direct policy position on every education or small-business measure included in the rule."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote decided whether the House would adopt that floor rule for considering the listed measures.",
         "what_happened": "The House voted on whether to agree to H. Res. 916.",
         "member_vote_context": "This candidate explains the procedural vote only. It does not map a member's Yea or Nay to support or opposition on the underlying bills.",
@@ -8077,7 +8078,7 @@
         "member_vote_context": "A Yea vote supported tabling the appeal. A Nay vote opposed tabling the appeal.",
         "what_not_to_infer": "Do not infer support or opposition to the underlying rule, broad transportation policy, motive, ideology, or a voting recommendation from this procedural vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote helps explain the floor process around the resolution, but it was not final passage of S.J.Res. 55 and should not be summarized as a substantive position on the underlying vehicle-safety rule.",
         "what_happened": "This was a procedural floor vote connected to consideration of S.J.Res. 55, a Congressional Review Act disapproval resolution related to hydrogen-vehicle fuel-system and compressed-hydrogen storage safety standards.",
         "member_vote_context": "A Yea vote supported tabling the appeal. A Nay vote opposed tabling the appeal.",
@@ -8245,7 +8246,7 @@
         "member_vote_context": "A Yea vote supported the recess motion. A Nay vote opposed the recess motion.",
         "what_not_to_infer": "Do not infer support or opposition to the underlying rule, broad transportation policy, motive, ideology, or a voting recommendation from this procedural vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote helps explain floor timing and process, but it was not final passage of S.J.Res. 55 and should not be summarized as a substantive position on the underlying vehicle-safety rule.",
         "what_happened": "This was a procedural timing vote connected to consideration of S.J.Res. 55, a Congressional Review Act disapproval resolution related to hydrogen-vehicle fuel-system and compressed-hydrogen storage safety standards.",
         "member_vote_context": "A Yea vote supported the recess motion. A Nay vote opposed the recess motion.",
@@ -8413,7 +8414,7 @@
         "member_vote_context": "A Yea vote supported the recess motion. A Nay vote opposed the recess motion.",
         "what_not_to_infer": "Do not infer support or opposition to the underlying rule, broad transportation policy, motive, ideology, or a voting recommendation from this procedural vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote helps explain floor timing and process, but it was not final passage of S.J.Res. 55 and should not be summarized as a substantive position on the underlying vehicle-safety rule.",
         "what_happened": "This was a procedural timing vote connected to consideration of S.J.Res. 55, a Congressional Review Act disapproval resolution related to hydrogen-vehicle fuel-system and compressed-hydrogen storage safety standards.",
         "member_vote_context": "A Yea vote supported the recess motion. A Nay vote opposed the recess motion.",
@@ -8581,7 +8582,7 @@
         "member_vote_context": "A Yea vote supported the recess motion. A Nay vote opposed the recess motion.",
         "what_not_to_infer": "Do not infer support or opposition to the underlying rule, broad transportation policy, motive, ideology, or a voting recommendation from this procedural vote."
       },
-      "current_public_evidence_card": {
+      "public_field_availability_proxy": {
         "why_it_mattered": "The vote helps explain floor timing and process, but it was not final passage of S.J.Res. 55 and should not be summarized as a substantive position on the underlying vehicle-safety rule.",
         "what_happened": "This was a procedural timing vote connected to consideration of S.J.Res. 55, a Congressional Review Act disapproval resolution related to hydrogen-vehicle fuel-system and compressed-hydrogen storage safety standards.",
         "member_vote_context": "A Yea vote supported the recess motion. A Nay vote opposed the recess motion.",
@@ -8681,10 +8682,12 @@
   ],
   "issue_synthesis_slices": [
     {
-      "slice_id": "valerie_foushee-economy_taxes",
-      "representative": "Valerie Foushee",
+      "slice_id": "synthetic-economy_taxes",
+      "fixture_type": "synthetic_issue_synthesis_fixture",
+      "representative": null,
+      "real_person_attribution": false,
       "issue_domain": "ECONOMY_TAXES",
-      "characteristic": "dominant_with_exception",
+      "characteristic": "dense_substantive_fixture",
       "included_roll_calls": [
         "house-2025-310",
         "house-2025-156",
@@ -8695,7 +8698,7 @@
       "interpreted_vote_count": 4,
       "ambiguous_or_insufficient_count": 0,
       "current_public_synthesis": "Reviewed evidence is available for this issue area.",
-      "candidate_gold_synthesis": "In this benchmark slice, Valerie Foushee's reviewed record contains 4 interpretable economy taxes votes; the receipts should be read as a bounded sample, not an ideology score.",
+      "candidate_gold_synthesis": "This synthetic benchmark fixture contains 4 interpretable economy taxes votes. It tests issue-synthesis structure only; it is not attributed to a real representative and is not a claim about any person's record.",
       "claim_to_vote_support": {
         "bounded_pattern": [
           "house-2025-310",
@@ -8705,18 +8708,21 @@
         ]
       },
       "must_not_imply": [
+        "a real person's voting record",
         "motive",
         "ideology score",
         "voting recommendation",
-        "coverage beyond the named sample"
+        "coverage beyond the synthetic fixture"
       ],
       "review_status": "machine_draft"
     },
     {
-      "slice_id": "valerie_foushee-national_security_foreign",
-      "representative": "Valerie Foushee",
+      "slice_id": "synthetic-national_security_foreign",
+      "fixture_type": "synthetic_issue_synthesis_fixture",
+      "representative": null,
+      "real_person_attribution": false,
       "issue_domain": "NATIONAL_SECURITY_FOREIGN",
-      "characteristic": "dense",
+      "characteristic": "dense_substantive_fixture",
       "included_roll_calls": [
         "house-2025-320",
         "house-2025-260",
@@ -8727,7 +8733,7 @@
       "interpreted_vote_count": 4,
       "ambiguous_or_insufficient_count": 0,
       "current_public_synthesis": "Reviewed evidence is available for this issue area.",
-      "candidate_gold_synthesis": "In this benchmark slice, Valerie Foushee's reviewed record contains 4 interpretable national security foreign votes; the receipts should be read as a bounded sample, not an ideology score.",
+      "candidate_gold_synthesis": "This synthetic benchmark fixture contains 4 interpretable national security foreign votes. It tests issue-synthesis structure only; it is not attributed to a real representative and is not a claim about any person's record.",
       "claim_to_vote_support": {
         "bounded_pattern": [
           "house-2025-320",
@@ -8737,18 +8743,21 @@
         ]
       },
       "must_not_imply": [
+        "a real person's voting record",
         "motive",
         "ideology score",
         "voting recommendation",
-        "coverage beyond the named sample"
+        "coverage beyond the synthetic fixture"
       ],
       "review_status": "machine_draft"
     },
     {
-      "slice_id": "valerie_foushee-justice_public_safety",
-      "representative": "Valerie Foushee",
+      "slice_id": "synthetic-justice_public_safety",
+      "fixture_type": "synthetic_issue_synthesis_fixture",
+      "representative": null,
+      "real_person_attribution": false,
       "issue_domain": "JUSTICE_PUBLIC_SAFETY",
-      "characteristic": "mixed",
+      "characteristic": "mixed_vote_type_fixture",
       "included_roll_calls": [
         "house-2025-33",
         "house-2025-130",
@@ -8759,7 +8768,7 @@
       "interpreted_vote_count": 4,
       "ambiguous_or_insufficient_count": 0,
       "current_public_synthesis": "Reviewed evidence is available for this issue area.",
-      "candidate_gold_synthesis": "In this benchmark slice, Valerie Foushee's reviewed record contains 4 interpretable justice public safety votes; the receipts should be read as a bounded sample, not an ideology score.",
+      "candidate_gold_synthesis": "This synthetic benchmark fixture contains 4 interpretable justice public safety votes. It tests issue-synthesis structure only; it is not attributed to a real representative and is not a claim about any person's record.",
       "claim_to_vote_support": {
         "bounded_pattern": [
           "house-2025-33",
@@ -8769,22 +8778,22 @@
         ]
       },
       "must_not_imply": [
+        "a real person's voting record",
         "motive",
         "ideology score",
         "voting recommendation",
-        "coverage beyond the named sample"
+        "coverage beyond the synthetic fixture"
       ],
       "review_status": "machine_draft"
     },
     {
-      "slice_id": "thom_tillis-infrastructure_tech_transport",
-      "representative": "Thom Tillis",
+      "slice_id": "synthetic-infrastructure_tech_transport",
+      "fixture_type": "synthetic_issue_synthesis_fixture",
+      "representative": null,
+      "real_person_attribution": false,
       "issue_domain": "INFRASTRUCTURE_TECH_TRANSPORT",
-      "characteristic": "nc_senator",
-      "included_roll_calls": [
-        "house-2025-182",
-        "house-2025-156"
-      ],
+      "characteristic": "procedural_dominated_fixture",
+      "included_roll_calls": [],
       "excluded_roll_calls": [
         {
           "roll_call": "senate-119-1-266",
@@ -8803,29 +8812,29 @@
           "reason": "procedural_or_insufficient_evidence"
         }
       ],
-      "interpreted_vote_count": 2,
+      "interpreted_vote_count": 0,
       "ambiguous_or_insufficient_count": 4,
       "current_public_synthesis": "Reviewed evidence is available for this issue area.",
-      "candidate_gold_synthesis": "In this benchmark slice, Thom Tillis's reviewed record contains 2 interpretable infrastructure tech transport votes; the receipts should be read as a bounded sample, not an ideology score.",
+      "candidate_gold_synthesis": "This synthetic benchmark fixture contains 0 interpretable infrastructure tech transport votes. It tests issue-synthesis structure only; it is not attributed to a real representative and is not a claim about any person's record.",
       "claim_to_vote_support": {
-        "bounded_pattern": [
-          "house-2025-182",
-          "house-2025-156"
-        ]
+        "bounded_pattern": []
       },
       "must_not_imply": [
+        "a real person's voting record",
         "motive",
         "ideology score",
         "voting recommendation",
-        "coverage beyond the named sample"
+        "coverage beyond the synthetic fixture"
       ],
       "review_status": "machine_draft"
     },
     {
-      "slice_id": "ted_budd-health_social",
-      "representative": "Ted Budd",
+      "slice_id": "synthetic-health_social",
+      "fixture_type": "synthetic_issue_synthesis_fixture",
+      "representative": null,
+      "real_person_attribution": false,
       "issue_domain": "HEALTH_SOCIAL",
-      "characteristic": "mixed",
+      "characteristic": "dense_substantive_fixture",
       "included_roll_calls": [
         "house-2025-285",
         "house-2025-281",
@@ -8836,7 +8845,7 @@
       "interpreted_vote_count": 4,
       "ambiguous_or_insufficient_count": 0,
       "current_public_synthesis": "Reviewed evidence is available for this issue area.",
-      "candidate_gold_synthesis": "In this benchmark slice, Ted Budd's reviewed record contains 4 interpretable health social votes; the receipts should be read as a bounded sample, not an ideology score.",
+      "candidate_gold_synthesis": "This synthetic benchmark fixture contains 4 interpretable health social votes. It tests issue-synthesis structure only; it is not attributed to a real representative and is not a claim about any person's record.",
       "claim_to_vote_support": {
         "bounded_pattern": [
           "house-2025-285",
@@ -8846,52 +8855,51 @@
         ]
       },
       "must_not_imply": [
+        "a real person's voting record",
         "motive",
         "ideology score",
         "voting recommendation",
-        "coverage beyond the named sample"
+        "coverage beyond the synthetic fixture"
       ],
       "review_status": "machine_draft"
     },
     {
-      "slice_id": "valerie_foushee-immigration_border",
-      "representative": "Valerie Foushee",
+      "slice_id": "synthetic-immigration_border",
+      "fixture_type": "synthetic_issue_synthesis_fixture",
+      "representative": null,
+      "real_person_attribution": false,
       "issue_domain": "IMMIGRATION_BORDER",
       "characteristic": "sparse",
       "included_roll_calls": [
-        "house-2025-171",
-        "house-2025-100",
-        "house-2025-50",
-        "house-2025-320"
+        "house-2025-171"
       ],
       "excluded_roll_calls": [],
-      "interpreted_vote_count": 4,
+      "interpreted_vote_count": 1,
       "ambiguous_or_insufficient_count": 0,
       "current_public_synthesis": "Reviewed evidence is available for this issue area.",
-      "candidate_gold_synthesis": "In this benchmark slice, Valerie Foushee's reviewed record contains 4 interpretable immigration border votes; the receipts should be read as a bounded sample, not an ideology score.",
+      "candidate_gold_synthesis": "This synthetic benchmark fixture contains 1 interpretable immigration border votes. It tests issue-synthesis structure only; it is not attributed to a real representative and is not a claim about any person's record.",
       "claim_to_vote_support": {
         "bounded_pattern": [
-          "house-2025-171",
-          "house-2025-100",
-          "house-2025-50",
-          "house-2025-320"
+          "house-2025-171"
         ]
       },
       "must_not_imply": [
+        "a real person's voting record",
         "motive",
         "ideology score",
         "voting recommendation",
-        "coverage beyond the named sample"
+        "coverage beyond the synthetic fixture"
       ],
       "review_status": "machine_draft"
     },
     {
-      "slice_id": "valerie_foushee-education_workforce",
-      "representative": "Valerie Foushee",
+      "slice_id": "synthetic-education_workforce",
+      "fixture_type": "synthetic_issue_synthesis_fixture",
+      "representative": null,
+      "real_person_attribution": false,
       "issue_domain": "EDUCATION_WORKFORCE",
-      "characteristic": "procedural_dominated",
+      "characteristic": "mixed_substantive_and_procedural_fixture",
       "included_roll_calls": [
-        "house-2025-332",
         "house-2025-314",
         "house-2025-312",
         "senate-119-1-358"
@@ -8906,55 +8914,52 @@
           "reason": "procedural_or_insufficient_evidence"
         }
       ],
-      "interpreted_vote_count": 4,
+      "interpreted_vote_count": 3,
       "ambiguous_or_insufficient_count": 2,
       "current_public_synthesis": "Reviewed evidence is available for this issue area.",
-      "candidate_gold_synthesis": "In this benchmark slice, Valerie Foushee's reviewed record contains 4 interpretable education workforce votes; the receipts should be read as a bounded sample, not an ideology score.",
+      "candidate_gold_synthesis": "This synthetic benchmark fixture contains 3 interpretable education workforce votes. It tests issue-synthesis structure only; it is not attributed to a real representative and is not a claim about any person's record.",
       "claim_to_vote_support": {
         "bounded_pattern": [
-          "house-2025-332",
           "house-2025-314",
           "house-2025-312",
           "senate-119-1-358"
         ]
       },
       "must_not_imply": [
+        "a real person's voting record",
         "motive",
         "ideology score",
         "voting recommendation",
-        "coverage beyond the named sample"
+        "coverage beyond the synthetic fixture"
       ],
       "review_status": "machine_draft"
     },
     {
-      "slice_id": "thom_tillis-environment_energy",
-      "representative": "Thom Tillis",
+      "slice_id": "synthetic-environment_energy",
+      "fixture_type": "synthetic_issue_synthesis_fixture",
+      "representative": null,
+      "real_person_attribution": false,
       "issue_domain": "ENVIRONMENT_ENERGY",
-      "characteristic": "meaningful_exception",
+      "characteristic": "sparse",
       "included_roll_calls": [
-        "house-2025-334",
-        "house-2025-320",
-        "house-2025-262",
-        "house-2025-260"
+        "house-2025-334"
       ],
       "excluded_roll_calls": [],
-      "interpreted_vote_count": 4,
+      "interpreted_vote_count": 1,
       "ambiguous_or_insufficient_count": 0,
       "current_public_synthesis": "Reviewed evidence is available for this issue area.",
-      "candidate_gold_synthesis": "In this benchmark slice, Thom Tillis's reviewed record contains 4 interpretable environment energy votes; the receipts should be read as a bounded sample, not an ideology score.",
+      "candidate_gold_synthesis": "This synthetic benchmark fixture contains 1 interpretable environment energy votes. It tests issue-synthesis structure only; it is not attributed to a real representative and is not a claim about any person's record.",
       "claim_to_vote_support": {
         "bounded_pattern": [
-          "house-2025-334",
-          "house-2025-320",
-          "house-2025-262",
-          "house-2025-260"
+          "house-2025-334"
         ]
       },
       "must_not_imply": [
+        "a real person's voting record",
         "motive",
         "ideology score",
         "voting recommendation",
-        "coverage beyond the named sample"
+        "coverage beyond the synthetic fixture"
       ],
       "review_status": "machine_draft"
     }

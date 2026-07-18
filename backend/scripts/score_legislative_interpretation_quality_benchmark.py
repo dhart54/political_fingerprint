@@ -24,15 +24,15 @@ DEFAULT_MD = ROOT / "docs/review_packets/legislative_interpretation_quality_benc
 MISSING = {None, "", "insufficient_official_evidence", "not_applicable"}
 
 DIMENSIONS = (
-    "factual_accuracy",
-    "procedural_accuracy",
+    "factual_support_structure",
+    "procedural_description_structure",
     "policy_mechanism_specificity",
     "practical_effect_clarity",
     "affected_entity_specificity",
     "member_vote_meaning",
     "credible_argument_framing",
     "outcome_and_later_status_clarity",
-    "source_traceability",
+    "source_map_presence",
     "calibration_and_non_overclaiming",
     "plain_language_comprehension",
     "distinctiveness_from_title_or_summary",
@@ -53,24 +53,27 @@ FATAL_DEFINITIONS = (
 
 RUBRIC = {
     "schema_version": "legislative_interpretation_quality_rubric_v1",
+    "rubric_kind": "automated_structural_heuristic_diagnostic",
+    "editorial_quality_status": "unverified_human_editorial_scoring_pending",
+    "source_map_caveat": "Source-map presence proves only that a mapping entry exists; it does not prove that the cited source factually supports the claim.",
     "dimensions": [
         {
             "name": name,
             "range": [0, 4],
-            "anchor_0": "missing, materially wrong, or unsupported",
-            "anchor_2": "partly useful but generic, incomplete, or weakly traced",
-            "anchor_4": "specific, accurate, plain-language, and claim-traceable",
+            "anchor_0": "expected structural signal is missing or a fatal heuristic is triggered",
+            "anchor_2": "structurally partial, generic, incomplete, or weakly mapped",
+            "anchor_4": "expected structural signals are present; factual and editorial verification remains pending",
         }
         for name in DIMENSIONS
     ],
     "maximum_score": 48,
     "fatal_defects": list(FATAL_DEFINITIONS),
     "tiers": {
-        "unacceptable": "fatal defect or score below 24",
-        "generic_but_accurate": "24-32",
-        "useful": "33-39",
-        "strong": "40-44",
-        "exceptional": "45-48",
+        "unacceptable": "automated diagnostic: fatal defect or score below 24",
+        "generic_but_structurally_adequate": "automated diagnostic only: 24-32; factual accuracy is not verified",
+        "useful": "automated diagnostic only: 33-39",
+        "strong": "strong under the automated diagnostic rubric only: 40-44",
+        "exceptional": "exceptional under the automated diagnostic rubric only: 45-48",
     },
     "threshold_status": "benchmark hypothesis; not an approved production threshold",
     "strong_comprehension_gate": [
@@ -78,7 +81,7 @@ RUBRIC = {
         "What would have changed?",
         "What did this member's vote mean?",
     ],
-    "human_review_override": "Automated scoring is diagnostic and never replaces editorial judgment.",
+    "human_review_override": "Automated scores and tiers are structural/heuristic diagnostics, not verified editorial-quality judgments. Human editorial scoring is pending.",
 }
 
 
@@ -177,8 +180,8 @@ def score_interpretation(
     member, arguments, outcome = value["member"], value["arguments"], value["outcome"]
     generic = any(marker in lower for marker in ("measure titled", "supported the measure", "opposed the measure", "official title"))
     scores = {
-        "factual_accuracy": 4 if source_mapped else 1,
-        "procedural_accuracy": 4 if vote_type.replace("_", " ") in lower or any(
+        "factual_support_structure": 4 if source_mapped else 1,
+        "procedural_description_structure": 4 if vote_type.replace("_", " ") in lower or any(
             token in lower for token in ("passage", "amendment", "motion", "rule", "procedural", "agreed")
         ) else 2,
         "policy_mechanism_specificity": 4 if _present(practical) and len(_text(practical).split()) >= 12 and not generic else (2 if _present(practical) else 0),
@@ -190,7 +193,7 @@ def score_interpretation(
             for k in ("supporter_rationale", "opponent_rationale")
         ) else (2 if isinstance(arguments, dict) else 1),
         "outcome_and_later_status_clarity": 4 if any(token in _text(outcome).lower() for token in ("passed", "failed", "became law", "later", "final")) else (2 if _present(outcome) else 0),
-        "source_traceability": 4 if source_mapped else 0,
+        "source_map_presence": 4 if source_mapped else 0,
         "calibration_and_non_overclaiming": 4 if _present(value["boundary"]) else 1,
         "plain_language_comprehension": 4 if _present(decision) and _present(practical) else (2 if _present(decision) else 0),
         "distinctiveness_from_title_or_summary": 4 if _present(practical) and not generic else (1 if generic else 2),
@@ -208,7 +211,7 @@ def score_interpretation(
     if fatal or total < 24:
         tier = "unacceptable"
     elif total <= 32:
-        tier = "generic_but_accurate"
+        tier = "generic_but_structurally_adequate"
     elif total <= 39 or not strong_gate:
         tier = "useful"
     elif total <= 44:
@@ -216,11 +219,11 @@ def score_interpretation(
     else:
         tier = "exceptional"
     return {
-        "score": total,
+        "automated_diagnostic_score": total,
         "maximum": 48,
-        "tier": tier,
+        "automated_diagnostic_tier": tier,
         "fatal_defects": fatal,
-        "dimension_scores": scores,
+        "automated_dimension_diagnostics": scores,
         "comprehension_answerable": answerable,
         "strong_comprehension_gate": strong_gate,
     }
@@ -287,14 +290,19 @@ def score_issue_synthesis(slice_: dict[str, Any], *, surface: str) -> dict[str, 
     if fatal or score < 24:
         tier = "unacceptable"
     elif score <= 32:
-        tier = "generic_but_accurate"
+        tier = "generic_but_structurally_adequate"
     elif score <= 39:
         tier = "useful"
     elif score <= 44:
         tier = "strong"
     else:
         tier = "exceptional"
-    return {"score": score, "maximum": 48, "tier": tier, "fatal_defects": fatal}
+    return {
+        "automated_diagnostic_score": score,
+        "maximum": 48,
+        "automated_diagnostic_tier": tier,
+        "fatal_defects": fatal,
+    }
 
 
 def validate_benchmark(payload: dict[str, Any]) -> list[str]:
@@ -314,7 +322,7 @@ def validate_benchmark(payload: dict[str, Any]) -> list[str]:
         "NATIONAL_SECURITY_FOREIGN", "IMMIGRATION_BORDER", "JUSTICE_PUBLIC_SAFETY",
         "INFRASTRUCTURE_TECH_TRANSPORT",
     }
-    if domains != expected_domains:
+    if not expected_domains.issubset(domains) or domains - expected_domains - {"UNRESOLVED"}:
         errors.append(f"domain coverage mismatch: {sorted(domains)}")
     for case in cases:
         errors.extend(validate_claim_map(case))
@@ -325,13 +333,15 @@ def validate_benchmark(payload: dict[str, Any]) -> list[str]:
         errors.append("need at least eight issue-synthesis slices")
     for slice_ in payload.get("issue_synthesis_slices") or []:
         errors.extend(validate_issue_slice(slice_))
+        if slice_.get("representative") is not None or slice_.get("real_person_attribution") is not False:
+            errors.append(f"{slice_.get('slice_id')}: unsupported real-person attribution")
     if payload.get("production_access") is not False:
         errors.append("benchmark must explicitly disable production access")
     return errors
 
 
 def _distribution(rows: list[dict[str, Any]]) -> dict[str, int]:
-    return dict(Counter(row["tier"] for row in rows))
+    return dict(Counter(row["automated_diagnostic_tier"] for row in rows))
 
 
 def _rates(cases: list[dict[str, Any]]) -> dict[str, float]:
@@ -348,7 +358,9 @@ def _rates(cases: list[dict[str, Any]]) -> dict[str, float]:
     questions = [q for case in cases for q in case["comprehension_test"]]
     return {
         "field_completeness_percent": round(100 * field_present / field_total, 1),
-        "source_completeness_percent": round(100 * source_complete / len(cases), 1),
+        "claim_map_presence_rate_percent": round(100 * source_complete / len(cases), 1),
+        "claim_map_support_verified_percent": 0.0,
+        "claim_map_support_verification_status": "pending_human_source_verification",
         "comprehension_answerability_percent": round(100 * sum(_present(q["answer_key"]) for q in questions) / len(questions), 1),
     }
 
@@ -372,9 +384,9 @@ def _group_findings(scored_cases: list[dict[str, Any]], key_fn) -> dict[str, Any
     return {
         key: {
             "cases": len(rows),
-            "current_stored_mean": round(mean(r["scores"]["current_stored"]["score"] for r in rows), 1),
-            "current_public_mean": round(mean(r["scores"]["current_public"]["score"] for r in rows), 1),
-            "candidate_gold_mean": round(mean(r["scores"]["candidate_gold"]["score"] for r in rows), 1),
+            "current_stored_structural_diagnostic_mean": round(mean(r["diagnostics"]["current_stored_structural_diagnostic"]["automated_diagnostic_score"] for r in rows), 1),
+            "public_field_availability_proxy_mean": round(mean(r["diagnostics"]["public_field_availability_proxy"]["automated_diagnostic_score"] for r in rows), 1),
+            "candidate_draft_structural_diagnostic_mean": round(mean(r["diagnostics"]["candidate_draft_structural_diagnostic"]["automated_diagnostic_score"] for r in rows), 1),
         }
         for key, rows in sorted(groups.items())
     }
@@ -387,16 +399,16 @@ def analyze(payload: dict[str, Any]) -> dict[str, Any]:
     scored_cases = []
     for case in payload["cases"]:
         mapped = not validate_claim_map(case)
-        scores = {
-            "current_stored": score_interpretation(
+        diagnostics = {
+            "current_stored_structural_diagnostic": score_interpretation(
                 case["current_stored_interpretation"], surface="current_stored",
                 vote_type=case["dossier"]["vote_stage_type"], source_mapped=mapped,
             ),
-            "current_public": score_interpretation(
-                case["current_public_evidence_card"], surface="current_public",
+            "public_field_availability_proxy": score_interpretation(
+                case["public_field_availability_proxy"], surface="public_field_availability_proxy",
                 vote_type=case["dossier"]["vote_stage_type"], source_mapped=mapped,
             ),
-            "candidate_gold": score_interpretation(
+            "candidate_draft_structural_diagnostic": score_interpretation(
                 case["candidate_gold_interpretation"], surface="candidate_gold",
                 vote_type=case["dossier"]["vote_stage_type"], source_mapped=mapped,
                 comprehension=case["comprehension_test"],
@@ -405,19 +417,24 @@ def analyze(payload: dict[str, Any]) -> dict[str, Any]:
         scored_cases.append({
             "benchmark_id": case["benchmark_id"], "cohort": case["cohort"],
             "chamber": case["dossier"]["chamber"], "vote_type": case["dossier"]["vote_stage_type"],
-            "issue_domain": case["issue_domain"], "scores": scores,
+            "issue_domain": case["issue_domain"], "diagnostics": diagnostics,
         })
-    surfaces = ("current_stored", "current_public", "candidate_gold")
+    surfaces = (
+        "current_stored_structural_diagnostic",
+        "public_field_availability_proxy",
+        "candidate_draft_structural_diagnostic",
+    )
     aggregate = {}
     for surface in surfaces:
-        rows = [case["scores"][surface] for case in scored_cases]
+        rows = [case["diagnostics"][surface] for case in scored_cases]
         aggregate[surface] = {
             "distribution": _distribution(rows),
-            "mean_score": round(mean(row["score"] for row in rows), 1),
+            "automated_diagnostic_mean_score": round(mean(row["automated_diagnostic_score"] for row in rows), 1),
             "fatal_defect_count": sum(bool(row["fatal_defects"]) for row in rows),
-            "generic_but_accurate_rate_percent": round(100 * sum(row["tier"] == "generic_but_accurate" for row in rows) / len(rows), 1),
-            "useful_or_better_rate_percent": round(100 * sum(row["tier"] in {"useful", "strong", "exceptional"} for row in rows) / len(rows), 1),
-            "strong_or_better_rate_percent": round(100 * sum(row["tier"] in {"strong", "exceptional"} for row in rows) / len(rows), 1),
+            "generic_structural_diagnostic_rate_percent": round(100 * sum(row["automated_diagnostic_tier"] == "generic_but_structurally_adequate" for row in rows) / len(rows), 1),
+            "useful_or_better_diagnostic_rate_percent": round(100 * sum(row["automated_diagnostic_tier"] in {"useful", "strong", "exceptional"} for row in rows) / len(rows), 1),
+            "strong_or_better_diagnostic_rate_percent": round(100 * sum(row["automated_diagnostic_tier"] in {"strong", "exceptional"} for row in rows) / len(rows), 1),
+            "diagnostic_label_caveat": "Tiers are automated structural/heuristic diagnostics only; human editorial scoring is pending.",
         }
     # Conservative parent-measure grouping: same source artifact + normalized facet can share
     # baseline research, but amendments retain their own amendment dossier.
@@ -425,17 +442,25 @@ def analyze(payload: dict[str, Any]) -> dict[str, Any]:
         (case["source_artifact"], case["issue_domain"], case["dossier"]["vote_stage_type"] != "amendment")
         for case in payload["cases"]
     }
-    unique_measures = len(reuse_keys)
+    heuristic_group_count = len(reuse_keys)
     issue_results = [
         {
             "slice_id": slice_["slice_id"],
-            "current_public_synthesis": score_issue_synthesis(slice_, surface="current"),
-            "candidate_gold_synthesis": score_issue_synthesis(slice_, surface="candidate"),
+            "current_synthesis_structural_diagnostic": score_issue_synthesis(slice_, surface="current"),
+            "candidate_synthesis_structural_diagnostic": score_issue_synthesis(slice_, surface="candidate"),
         }
         for slice_ in payload["issue_synthesis_slices"]
     ]
     return {
-        "schema_version": "legislative_interpretation_quality_scorecard_v1",
+        "schema_version": "legislative_interpretation_quality_structural_diagnostic_scorecard_v1",
+        "diagnostic_scope": {
+            "kind": "automated_structural_heuristic_only",
+            "verified_editorial_quality_judgment": False,
+            "human_editorial_scoring_status": "pending",
+            "strong_label_meaning": "strong under the automated diagnostic rubric only",
+            "source_map_presence_proves_factual_support": False,
+            "candidate_drafts_remain_machine_drafts": True,
+        },
         "benchmark_composition": payload["composition"],
         "aggregate_scores": aggregate,
         "genericity_counts": _genericity(payload["cases"]),
@@ -451,17 +476,21 @@ def analyze(payload: dict[str, Any]) -> dict[str, Any]:
             "procedural_votes_excluded": sum(len(s["excluded_roll_calls"]) for s in payload["issue_synthesis_slices"]),
             "all_claims_mapped": all(not validate_issue_slice(s) for s in payload["issue_synthesis_slices"]),
             "human_review_required": True,
-            "current_distribution": dict(Counter(row["current_public_synthesis"]["tier"] for row in issue_results)),
-            "candidate_distribution": dict(Counter(row["candidate_gold_synthesis"]["tier"] for row in issue_results)),
+            "current_automated_diagnostic_distribution": dict(Counter(row["current_synthesis_structural_diagnostic"]["automated_diagnostic_tier"] for row in issue_results)),
+            "candidate_automated_diagnostic_distribution": dict(Counter(row["candidate_synthesis_structural_diagnostic"]["automated_diagnostic_tier"] for row in issue_results)),
             "slice_scores": issue_results,
         },
         "public_copy_information_loss": payload["public_copy_boundary_inventory"],
         "measure_reuse": {
             "benchmark_roll_calls": len(payload["cases"]),
-            "estimated_unique_measure_level_research_units": unique_measures,
+            "estimate_kind": "heuristic_noncanonical_grouping_estimate",
+            "grouping_method": "source artifact + issue domain + amendment/non-amendment flag",
+            "canonical_measure_dossier_count": None,
+            "heuristic_group_count": heuristic_group_count,
             "amendments_requiring_separate_dossiers": sum(c["dossier"]["vote_stage_type"] == "amendment" for c in payload["cases"]),
             "procedural_votes_that_can_reference_parent": sum(c["cohort"] == "control" for c in payload["cases"]),
-            "estimated_workload_reduction_percent": round(100 * (len(payload["cases"]) - unique_measures) / len(payload["cases"]), 1),
+            "heuristic_workload_reduction_estimate_percent": round(100 * (len(payload["cases"]) - heuristic_group_count) / len(payload["cases"]), 1),
+            "canonical_identity_resolution_pending": True,
         },
         "human_review": {
             "statuses": ["machine_draft", "structurally_validated", "source_verified", "human_reviewed", "gold_benchmark", "rejected"],
@@ -484,7 +513,7 @@ def _markdown(report: dict[str, Any]) -> str:
         f"{composition['cohorts']['house_substantive']} House substantive cases, "
         f"{composition['cohorts']['senate_substantive']} Senate substantive cases, and "
         f"{composition['cohorts']['control']} explicit ambiguity/procedure controls. "
-        "All gold interpretations and issue syntheses remain machine-draft candidates pending human source verification.", "",
+        "All candidate interpretations remain machine drafts. All scores and tiers are automated structural/heuristic diagnostics, not verified editorial-quality judgments; human editorial scoring and source verification are pending.", "",
         "## Why Current Interpretations Feel Generic", "",
         "The failure is usually not a false topic label. It is the absence of the policy baseline, concrete government lever, affected entity, magnitude/timing, attributed dispute, and lifecycle. Older rows often restate an official title; newer reviewed rows contain useful mechanism and status detail. The public-copy safety boundary then deliberately removes raw row fields from top-level synthesis, so even strong stored detail can collapse to a short curated facet or generic domain theme.", "",
         "## Existing Pipeline Map", "",
@@ -506,15 +535,20 @@ def _markdown(report: dict[str, Any]) -> str:
         "The reusable hierarchy is measure dossier → amendment dossier → roll-call interpretation → member-specific vote context → issue-synthesis evidence unit. Unknown facts remain `insufficient_official_evidence`; genuinely inapplicable fields use `not_applicable`. Structural claim maps are mandatory, and human source verification remains a separate status.", "",
         "## Quality Rubric And Fatal Defects", "",
         "Twelve dimensions score 0–4 (48 maximum). Fatal overrides cover reversed Yea/Nay mechanics, procedural/final confusion, false enactment, invented effects or affected groups, motive, neutralized advocacy, under-evidenced patterns, title restatements used as explanation, and unmapped material claims.", "",
-        "## Current-Quality Scorecard", "",
-        "| Surface | Mean / 48 | Tier distribution | Fatal cases | Strong+ |",
+        "## Automated Structural/Heuristic Diagnostic Scorecard", "",
+        "`strong` means strong under the automated diagnostic rubric only. It does not mean human-reviewed, source-verified, or editorially approved. Source-map presence does not prove that a cited source supports a claim.", "",
+        "| Diagnostic target | Mean / 48 | Automated diagnostic tier distribution | Fatal flags | Diagnostic strong+ |",
         "|---|---:|---|---:|---:|",
     ]
-    for surface, label in (("current_stored", "Stored interpretation"), ("current_public", "Public evidence card"), ("candidate_gold", "Candidate gold")):
+    for surface, label in (
+        ("current_stored_structural_diagnostic", "Stored-field structure"),
+        ("public_field_availability_proxy", "Public field availability proxy"),
+        ("candidate_draft_structural_diagnostic", "Candidate machine-draft structure"),
+    ):
         row = agg[surface]
-        lines.append(f"| {label} | {row['mean_score']} | `{json.dumps(row['distribution'], sort_keys=True)}` | {row['fatal_defect_count']} | {row['strong_or_better_rate_percent']}% |")
+        lines.append(f"| {label} | {row['automated_diagnostic_mean_score']} | `{json.dumps(row['distribution'], sort_keys=True)}` | {row['fatal_defect_count']} | {row['strong_or_better_diagnostic_rate_percent']}% |")
     lines += [
-        "", "Thresholds are benchmark hypotheses, not production acceptance rules. Fatal defects override the numeric score. Candidate scores are diagnostic and do not confer editorial approval.", "",
+        "", "Thresholds are benchmark hypotheses, not production acceptance rules. Fatal flags override the automated diagnostic score. Human editorial scoring is pending.", "",
         "## Genericity Taxonomy", "",
     ]
     for key, value in report["genericity_counts"].items():
@@ -523,20 +557,22 @@ def _markdown(report: dict[str, Any]) -> str:
     lines += [
         "", "## Field, Source, And Comprehension Completeness", "",
         f"- Dossier field completeness: {report['completeness']['field_completeness_percent']}%.",
-        f"- Claim/source-map structural completeness: {report['completeness']['source_completeness_percent']}%.",
+        f"- Claim-map presence rate: {report['completeness']['claim_map_presence_rate_percent']}%.",
+        f"- Human-verified claim support recorded by this automated milestone: {report['completeness']['claim_map_support_verified_percent']}%; status `{report['completeness']['claim_map_support_verification_status']}`.",
+        "- A mapping entry's presence does not establish that its cited source factually supports the claim.",
         f"- Four-question answerability: {report['completeness']['comprehension_answerability_percent']}%.",
         "- `insufficient_official_evidence` is counted as incomplete, not silently converted into a claim.", "",
         "## Public-Rendering Information Loss", "",
-        "Raw reviewed evidence fields are correctly blocked from uncontrolled top-level use. Evidence cards retain some reviewed meaning, but issue synthesis uses curated themes. The lost information is typically the baseline, mechanism, affected entities, amounts/timing, arguments, later status, and exact yea/nay translation. The future contract should allow human-approved claim objects—not arbitrary raw text—to flow to top-level copy.", "",
+        "Raw reviewed evidence fields are correctly blocked from uncontrolled top-level use. This benchmark measures a `public_field_availability_proxy`; it does not execute the exact runtime rendering path. The proxy shows that baseline, mechanism, affected entities, amounts/timing, arguments, later status, and exact yea/nay translation may be unavailable to public-copy helpers. The future contract should allow human-approved claim objects—not arbitrary raw text—to flow to top-level copy.", "",
         "## Issue-Synthesis Findings", "",
-        f"Eight representative/domain slices are included. Current synthesis distribution: `{json.dumps(report['issue_synthesis']['current_distribution'], sort_keys=True)}`. Candidate distribution: `{json.dumps(report['issue_synthesis']['candidate_distribution'], sort_keys=True)}`. The deterministic minimum is {report['issue_synthesis']['minimum_evidence_gate']} substantive interpreted votes; {report['issue_synthesis']['procedural_votes_excluded']} procedural/control appearances are explicitly excluded. Each candidate claim maps to included votes and remains subject to human review. Sparse slices must say evidence is limited rather than assert a pattern.", "",
+        f"Eight synthetic, non-person-attributed domain fixtures are included. Current automated diagnostic distribution: `{json.dumps(report['issue_synthesis']['current_automated_diagnostic_distribution'], sort_keys=True)}`. Candidate automated diagnostic distribution: `{json.dumps(report['issue_synthesis']['candidate_automated_diagnostic_distribution'], sort_keys=True)}`. The deterministic minimum is {report['issue_synthesis']['minimum_evidence_gate']} substantive interpreted votes; {report['issue_synthesis']['procedural_votes_excluded']} procedural/control appearances are explicitly excluded. Each candidate claim maps to included votes and remains subject to human review. Sparse fixtures must say evidence is limited rather than assert a pattern.", "",
         "## Measure Reuse Findings", "",
-        f"The {report['measure_reuse']['benchmark_roll_calls']} roll calls reduce to an estimated {report['measure_reuse']['estimated_unique_measure_level_research_units']} reusable research units under a conservative grouping. {report['measure_reuse']['amendments_requiring_separate_dossiers']} amendments still require amendment dossiers; {report['measure_reuse']['procedural_votes_that_can_reference_parent']} controls can reference a parent dossier without inheriting its substantive meaning. Estimated research/review reduction: {report['measure_reuse']['estimated_workload_reduction_percent']}%.", "",
+        f"A noncanonical heuristic groups the {report['measure_reuse']['benchmark_roll_calls']} roll calls into {report['measure_reuse']['heuristic_group_count']} provisional research groups using `{report['measure_reuse']['grouping_method']}`. It yields a {report['measure_reuse']['heuristic_workload_reduction_estimate_percent']}% heuristic workload-reduction estimate. This is not a canonical measure-dossier count; canonical identity resolution is pending. {report['measure_reuse']['amendments_requiring_separate_dossiers']} amendments still require amendment dossiers, and {report['measure_reuse']['procedural_votes_that_can_reference_parent']} controls can reference parent context without inheriting substantive meaning.", "",
         "Recommended hierarchy: measure dossier → amendment dossier → roll-call interpretation → member-specific vote context → issue-synthesis evidence unit.", "",
         "## Human Review Requirements", "",
-        "Machine generation may draft paraphrases, propose claim links, identify missing fields, and calculate rubric diagnostics. Human reviewers must verify policy mechanism, affected entities, yea/nay mechanics, advocacy attribution, outcome/later status, and every issue-pattern conclusion before `gold_benchmark` status. Automated scoring does not replace editorial judgment.", "",
+        "Machine generation may draft paraphrases, propose claim links, identify missing fields, and calculate structural/heuristic diagnostics. Human reviewers must verify policy mechanism, affected entities, yea/nay mechanics, advocacy attribution, outcome/later status, and every issue-pattern conclusion before `gold_benchmark` status. Candidate drafts remain machine drafts, and human editorial scoring is pending.", "",
         "## Comprehension Protocol", "",
-        "Each case asks what Congress was deciding, what would change, who/what was affected, and what the member's vote meant. A candidate cannot be strong unless questions 1, 2, and 4 are answerable. Later user testing should randomize current versus candidate copy, prohibit source lookup during the first pass, code critical misconceptions, and then test whether receipts correct misunderstandings.", "",
+        "Each case asks what Congress was deciding, what would change, who/what was affected, and what the member's vote meant. A candidate cannot receive a `strong` automated diagnostic tier unless questions 1, 2, and 4 are structurally answerable. Later human testing must evaluate factual and editorial quality.", "",
         "## Recommended Next Implementation Milestone", "",
         "**Valerie Foushee Economy & Taxes Interpretation Quality V2**: add the dossier and claim-map objects for one existing golden slice; source-verify the vote mechanics; expose only human-approved public claims; update vote cards and one issue synthesis; then run rendered comprehension checks before scaling coverage.", "",
         "## Production Safety", "",
@@ -544,14 +580,14 @@ def _markdown(report: dict[str, Any]) -> str:
         "## Stop Conditions And Limitations", "",
         "- Machine-draft candidates are not approved gold.",
         "- Missing official evidence remains explicit.",
-        "- Source-map completeness here is structural; editorial source verification remains required.",
+        "- Claim-map presence here is structural and does not prove factual source support.",
         "- Publication must stop if unrelated artifacts would be staged.", "",
         "## Detailed Breakdowns", "",
     ]
     for heading, key in (("Vote type", "findings_by_vote_type"), ("Issue domain", "findings_by_domain"), ("Chamber", "findings_by_chamber"), ("Review mode", "findings_by_review_mode")):
-        lines += [f"### {heading}", "", "| Group | Cases | Stored mean | Public mean | Candidate mean |", "|---|---:|---:|---:|---:|"]
+        lines += [f"### {heading}", "", "| Group | Cases | Stored-field diagnostic | Public availability proxy | Candidate-draft diagnostic |", "|---|---:|---:|---:|---:|"]
         for name, row in report[key].items():
-            lines.append(f"| {name} | {row['cases']} | {row['current_stored_mean']} | {row['current_public_mean']} | {row['candidate_gold_mean']} |")
+            lines.append(f"| {name} | {row['cases']} | {row['current_stored_structural_diagnostic_mean']} | {row['public_field_availability_proxy_mean']} | {row['candidate_draft_structural_diagnostic_mean']} |")
         lines.append("")
     lines += [
         "## Tests", "",

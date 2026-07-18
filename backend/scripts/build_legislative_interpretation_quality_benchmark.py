@@ -117,7 +117,7 @@ def _official_identity(url: str) -> tuple[str, int, int, str]:
     raise ValueError(f"unsupported official roll-call URL: {url}")
 
 
-def _domain(row: dict[str, Any], index: int) -> str:
+def _domain(row: dict[str, Any]) -> str:
     explicit = row.get("issue_domain") or row.get("domain")
     if explicit in DOMAINS:
         return explicit
@@ -128,9 +128,7 @@ def _domain(row: dict[str, Any], index: int) -> str:
     for hint, domain in DOMAIN_HINTS.items():
         if hint in haystack:
             return domain
-    # A deterministic fallback prevents the sample from silently collapsing into
-    # an "unknown" domain while preserving the original facet for human review.
-    return DOMAINS[index % len(DOMAINS)]
+    return "UNRESOLVED"
 
 
 def _vote_type(row: dict[str, Any]) -> str:
@@ -277,7 +275,7 @@ def _comprehension(gold: dict[str, Any]) -> list[dict[str, Any]]:
     ]
 
 
-def _build_case(row: dict[str, Any], cohort: str, index: int, origin: str) -> dict[str, Any]:
+def _build_case(row: dict[str, Any], cohort: str, origin: str) -> dict[str, Any]:
     source_url = str(row.get("source_url") or "")
     chamber, congress, roll, identity = _official_identity(source_url)
     control = cohort == "control"
@@ -301,7 +299,7 @@ def _build_case(row: dict[str, Any], cohort: str, index: int, origin: str) -> di
         "benchmark_id": identity,
         "cohort": cohort,
         "source_artifact": f"docs/interpretation_batches/{origin}",
-        "issue_domain": _domain(row, index),
+        "issue_domain": _domain(row),
         "dossier": {
             "chamber": chamber,
             "congress": congress,
@@ -333,7 +331,7 @@ def _build_case(row: dict[str, Any], cohort: str, index: int, origin: str) -> di
             "retrieval_date": str(date(2026, 7, 18)),
         },
         "current_stored_interpretation": _surface_payload(row, "current_stored"),
-        "current_public_evidence_card": _surface_payload(row, "current_public"),
+        "public_field_availability_proxy": _surface_payload(row, "current_public"),
         "candidate_gold_interpretation": gold,
         "comprehension_test": _comprehension(gold),
         "genericity_labels": _genericity_labels(row),
@@ -383,33 +381,35 @@ def _genericity_labels(row: dict[str, Any]) -> list[str]:
 
 def _issue_slices(cases: list[dict[str, Any]]) -> list[dict[str, Any]]:
     templates = (
-        ("Valerie Foushee", "ECONOMY_TAXES", "dominant_with_exception"),
-        ("Valerie Foushee", "NATIONAL_SECURITY_FOREIGN", "dense"),
-        ("Valerie Foushee", "JUSTICE_PUBLIC_SAFETY", "mixed"),
-        ("Thom Tillis", "INFRASTRUCTURE_TECH_TRANSPORT", "nc_senator"),
-        ("Ted Budd", "HEALTH_SOCIAL", "mixed"),
-        ("Valerie Foushee", "IMMIGRATION_BORDER", "sparse"),
-        ("Valerie Foushee", "EDUCATION_WORKFORCE", "procedural_dominated"),
-        ("Thom Tillis", "ENVIRONMENT_ENERGY", "meaningful_exception"),
+        ("ECONOMY_TAXES", "dense_substantive_fixture"),
+        ("NATIONAL_SECURITY_FOREIGN", "dense_substantive_fixture"),
+        ("JUSTICE_PUBLIC_SAFETY", "mixed_vote_type_fixture"),
+        ("INFRASTRUCTURE_TECH_TRANSPORT", "procedural_dominated_fixture"),
+        ("HEALTH_SOCIAL", "dense_substantive_fixture"),
+        ("IMMIGRATION_BORDER", "sparse"),
+        ("EDUCATION_WORKFORCE", "mixed_substantive_and_procedural_fixture"),
+        ("ENVIRONMENT_ENERGY", "sparse"),
     )
     slices = []
-    for offset, (representative, domain, characteristic) in enumerate(templates):
+    for domain, characteristic in templates:
         domain_cases = [case for case in cases if case["issue_domain"] == domain]
-        chosen = (domain_cases + cases[offset:] + cases[:offset])[:6]
+        chosen = domain_cases[:6]
         included = [c["benchmark_id"] for c in chosen if c["cohort"] != "control"][:4]
         excluded = [
             {"roll_call": c["benchmark_id"], "reason": "procedural_or_insufficient_evidence"}
             for c in chosen if c["cohort"] == "control"
         ]
         claim = (
-            f"In this benchmark slice, {representative}'s reviewed record contains "
-            f"{len(included)} interpretable {domain.replace('_', ' ').lower()} votes; "
-            "the receipts should be read as a bounded sample, not an ideology score."
+            f"This synthetic benchmark fixture contains {len(included)} interpretable "
+            f"{domain.replace('_', ' ').lower()} votes. It tests issue-synthesis structure only; "
+            "it is not attributed to a real representative and is not a claim about any person's record."
         )
         slices.append(
             {
-                "slice_id": f"{representative.lower().replace(' ', '_')}-{domain.lower()}",
-                "representative": representative,
+                "slice_id": f"synthetic-{domain.lower()}",
+                "fixture_type": "synthetic_issue_synthesis_fixture",
+                "representative": None,
+                "real_person_attribution": False,
                 "issue_domain": domain,
                 "characteristic": characteristic,
                 "included_roll_calls": included,
@@ -419,7 +419,10 @@ def _issue_slices(cases: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "current_public_synthesis": "Reviewed evidence is available for this issue area.",
                 "candidate_gold_synthesis": claim,
                 "claim_to_vote_support": {"bounded_pattern": included},
-                "must_not_imply": ["motive", "ideology score", "voting recommendation", "coverage beyond the named sample"],
+                "must_not_imply": [
+                    "a real person's voting record", "motive", "ideology score",
+                    "voting recommendation", "coverage beyond the synthetic fixture",
+                ],
                 "review_status": "machine_draft",
             }
         )
@@ -435,7 +438,7 @@ def build_benchmark() -> dict[str, Any]:
         if len(rows) < count:
             raise ValueError(f"{filename}: need {count} eligible rows, found {len(rows)}")
         for row in rows[:count]:
-            cases.append(_build_case(row, cohort, len(cases), filename))
+            cases.append(_build_case(row, cohort, filename))
     identities = [case["benchmark_id"] for case in cases]
     if len(identities) != len(set(identities)):
         duplicates = [key for key, value in Counter(identities).items() if value > 1]
@@ -444,7 +447,7 @@ def build_benchmark() -> dict[str, Any]:
         "schema_version": "legislative_interpretation_quality_benchmark_v1",
         "generated_from_commit": "6b218070a7c93a1f979eacc863766887e40151e4",
         "production_access": False,
-        "candidate_status_notice": "Candidates are machine drafts and are not gold_benchmark until human source verification.",
+        "candidate_status_notice": "Candidates are machine drafts. Automated structural diagnostics are not verified editorial-quality judgments; human editorial scoring and source verification are pending.",
         "composition": {
             "total": len(cases),
             "cohorts": dict(Counter(case["cohort"] for case in cases)),

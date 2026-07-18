@@ -62,7 +62,8 @@
 - The safety boundary correctly prevents uncontrolled leakage but can replace distinct policy choices with abstract domain/facet language.
 - GitHub CLI is installed, but its stored credential is expired; publication will require reauthentication if no connected-app path is available.
 - The final corpus has 32 House substantive, 8 Senate substantive, and 8 explicit control cases (36 House and 12 Senate after controls), with 20 amendments, 18 final-passage votes, and all eight domains represented.
-- Current stored copy averages 39.6/48; reconstructed public evidence-card copy averages 33.8; candidate gold copy averages 40.0. Candidates remain unapproved machine drafts.
+- Corrected domain composition preserves all eight grounded domains and reports one additional `UNRESOLVED` case rather than assigning it by index.
+- Automated structural diagnostics average 39.6/48 for stored fields, 33.8 for the `public_field_availability_proxy`, and 40.0 for candidate machine drafts. These are not verified editorial-quality judgments; human editorial scoring is pending.
 - Dossier field completeness is 40.0%, claim-map structural completeness is 100.0%, and four-question comprehension answerability is 70.8%.
 - The broadest deterministic gaps are policy baseline (48/48), affected entities (48/48), and documented credible alternatives (48/48); this explains why even otherwise strong reviewed prose remains generic.
 
@@ -71,17 +72,22 @@
 - Benchmark candidates remain explicitly `candidate`, not editorially approved gold.
 - Ambiguous controls use explicit insufficiency markers instead of fabricated policy effects.
 - Cohort counts are independent from chamber counts: 32 House substantive cases, 8 Senate substantive cases, and 8 ambiguity controls split across chambers.
-- Current stored copy, reconstructed public-card copy, and candidate gold copy receive separate scores.
+- Stored fields, the `public_field_availability_proxy`, and candidate machine drafts receive separate automated structural/heuristic diagnostics. `strong` means strong under that automated rubric only.
+- Source-map presence is reported separately from human-verified factual support and never treated as proof that a source supports a claim.
+- Domain assignment uses only explicit or deterministically grounded signals; otherwise the case is `UNRESOLVED`.
+- V1 issue-synthesis slices are synthetic fixtures with no real-person attribution because the selected checked-in rows do not establish one named member's position across every slice.
+- Measure reuse remains a noncanonical grouping heuristic, not a canonical dossier count.
 
 ## Deviations Or Corrections
 
 - Initial fatal-defect detection treated negated caveats such as “not final passage” as positive confusion. The detector now evaluates asserted decision/effect/outcome text and has an adversarial regression test.
 - Sandbox pytest runs could execute assertions but could not create/clean `tmp_path` directories. The combined suite was rerun outside the sandbox and passed.
+- Integrity correction removed index-based domain assignment, replaced unsupported named slices, relabeled automated diagnostics and the public-field proxy, and qualified reuse as heuristic. The 48-case sample and substantive recommendation remain unchanged.
 
 ## Validation Results
 
-- Focused benchmark suite: `26 passed`.
-- Combined relevant backend suite (benchmark, interpretation, manual import validation, positions/fingerprint/summary reads, summary cache, source packets): `77 passed`.
+- Focused benchmark suite after integrity corrections: `29 passed`.
+- Combined relevant backend suite (benchmark, interpretation, manual import validation, positions/fingerprint/summary reads, summary cache, source packets): `80 passed`.
 - Full frontend helper suite including issue overview, public-copy themes, issue readiness, evidence grouping, and golden fixture: `84 passed`.
 - Python compilation: passed for both scripts and the focused test module.
 - JSON parsing: passed for benchmark, rubric, and scorecard.

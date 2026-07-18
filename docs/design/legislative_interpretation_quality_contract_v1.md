@@ -49,9 +49,9 @@ Every candidate contains:
 
 ## Rubric And Fatal Override
 
-The machine-readable rubric scores twelve dimensions 0–4 for a maximum of 48: factual and procedural accuracy; mechanism, practical effect, and affected-entity specificity; member-vote meaning; credible argument framing; outcome/status; source traceability; calibration; plain language; and distinctiveness.
+The machine-readable rubric computes automated structural/heuristic diagnostics across twelve dimensions 0–4 for a maximum of 48: apparent factual and procedural structure; mechanism, practical effect, and affected-entity specificity; member-vote meaning; credible argument framing; outcome/status; source-map presence; calibration; plain language; and distinctiveness.
 
-Hypothesis tiers are: unacceptable below 24 or with any fatal defect; generic-but-accurate 24–32; useful 33–39; strong 40–44; exceptional 45–48. A strong result also requires comprehension questions 1, 2, and 4 to be answerable. Thresholds are not approved production gates.
+Hypothesis tiers are: unacceptable below 24 or with any fatal flag; generic-but-structurally-adequate 24–32; useful 33–39; strong 40–44; exceptional 45–48. These are automated diagnostic labels only. `strong` means strong under the automated diagnostic rubric, not verified factual or editorial quality. Human editorial scoring is pending. Source-map presence proves only that a mapping entry exists; it does not prove that the cited source supports the claim. Candidate drafts remain `machine_draft`.
 
 Fatal defects include reversed Yea/Nay mechanics; procedure described as final passage; false enactment; invented effects, amounts, or affected groups; motive attribution; advocacy presented as fact; insufficient-evidence pattern claims; title restatement as practical explanation; and a material claim without a source map.
 
@@ -59,7 +59,7 @@ Fatal defects include reversed Yea/Nay mechanics; procedure described as final p
 
 The audit labels official-title restatement; procedural paraphrase without policy effect; generic funding language; generic supported/opposed language; missing baseline, mechanism, affected group, magnitude/timeline, credible alternative, or outcome; caveat-dominated copy; domain label substituted for theme; evidence list without synthesis; repetitive counts; safe but content-free fallback; unsupported specificity; and overbroad pattern claims.
 
-Counts are deterministic. A label may coexist with factual accuracy; “generic” is not a euphemism for false.
+Counts are deterministic. A label may coexist with factual accuracy; “generic” is not a euphemism for false. Automated diagnostics must not be represented as human editorial judgments.
 
 ## Comprehension Contract
 
@@ -70,7 +70,11 @@ For every roll call, ask:
 3. Who or what was affected?
 4. What did this member's vote mean?
 
-Store the answer key, allowed equivalents, critical misconceptions, and fields needed. Later testing should compare current and candidate copy without initial source lookup, code misconceptions independently, then expose receipts and measure correction. This milestone performs no external-user research.
+Store the answer key, allowed equivalents, critical misconceptions, and fields needed. Structural answerability is not comprehension evidence. Later testing should compare current and candidate copy without initial source lookup, code misconceptions independently, then expose receipts and measure correction. This milestone performs no external-user research.
+
+The benchmark's `public_field_availability_proxy` inventories which reviewed fields would be available to a simplified card preference order. It does not execute the exact frontend runtime rendering path and must not be labeled as a reconstructed public render.
+
+Issue-synthesis benchmark slices are synthetic, non-person-attributed fixtures unless a checked-in source record establishes a named member's actual vote or not-voting status for every included roll call. V1 uses only synthetic fixtures.
 
 ## Human Review
 

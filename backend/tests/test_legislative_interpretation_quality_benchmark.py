@@ -37,7 +37,8 @@ def test_benchmark_sample_size_strata_and_domain_coverage(benchmark):
         "senate_substantive": 8,
         "control": 8,
     }
-    assert set(benchmark["composition"]["domains"]) == set(DOMAINS)
+    assert set(DOMAINS).issubset(benchmark["composition"]["domains"])
+    assert set(benchmark["composition"]["domains"]) <= set(DOMAINS) | {"UNRESOLVED"}
 
 
 def test_duplicate_roll_calls_are_rejected(benchmark):
@@ -88,8 +89,8 @@ def test_missing_practical_effect_cannot_score_strong():
         vote_type="amendment",
         source_mapped=True,
     )
-    assert result["dimension_scores"]["practical_effect_clarity"] == 0
-    assert result["tier"] != "strong"
+    assert result["automated_dimension_diagnostics"]["practical_effect_clarity"] == 0
+    assert result["automated_diagnostic_tier"] != "strong"
 
 
 def test_missing_member_vote_meaning_cannot_pass_comprehension_gate():
@@ -99,7 +100,7 @@ def test_missing_member_vote_meaning_cannot_pass_comprehension_gate():
         vote_type="final_passage",
         source_mapped=True,
     )
-    assert result["dimension_scores"]["member_vote_meaning"] == 0
+    assert result["automated_dimension_diagnostics"]["member_vote_meaning"] == 0
     assert not result["strong_comprehension_gate"]
 
 
@@ -130,7 +131,7 @@ def test_title_restatement_fatal_override():
     }
     result = score_interpretation(payload, surface="candidate_gold", vote_type="final_passage", source_mapped=True)
     assert "title_restatement_as_practical_explanation" in result["fatal_defects"]
-    assert result["tier"] == "unacceptable"
+    assert result["automated_diagnostic_tier"] == "unacceptable"
 
 
 def test_attributed_arguments_score_higher_than_missing_arguments():
@@ -147,7 +148,7 @@ def test_attributed_arguments_score_higher_than_missing_arguments():
         "opponent_rationale": "Opponents argued the deadline burdened implementation.",
     }
     attributed = score_interpretation(attributed_payload, surface="candidate_gold", vote_type="amendment", source_mapped=True)
-    assert attributed["dimension_scores"]["credible_argument_framing"] > missing["dimension_scores"]["credible_argument_framing"]
+    assert attributed["automated_dimension_diagnostics"]["credible_argument_framing"] > missing["automated_dimension_diagnostics"]["credible_argument_framing"]
 
 
 def test_insufficient_evidence_controls_do_not_fabricate_substantive_effect(benchmark):
@@ -176,8 +177,8 @@ def test_issue_synthesis_scores_current_and_candidate_separately(benchmark):
     slice_ = benchmark["issue_synthesis_slices"][0]
     current = score_issue_synthesis(slice_, surface="current")
     candidate = score_issue_synthesis(slice_, surface="candidate")
-    assert current["tier"] == "generic_but_accurate"
-    assert candidate["score"] > current["score"]
+    assert current["automated_diagnostic_tier"] == "generic_but_structurally_adequate"
+    assert candidate["automated_diagnostic_score"] > current["automated_diagnostic_score"]
 
 
 def test_procedural_votes_are_excluded_from_substantive_synthesis(benchmark):
@@ -218,8 +219,34 @@ def test_raw_field_public_copy_boundary_inventory(benchmark):
 
 def test_public_surface_does_not_silently_gain_blocked_storage_fields(benchmark):
     for case in benchmark["cases"]:
-        assert "policy_effect" not in case["current_public_evidence_card"]
-        assert "source_basis" not in case["current_public_evidence_card"]
+        assert "policy_effect" not in case["public_field_availability_proxy"]
+        assert "source_basis" not in case["public_field_availability_proxy"]
+
+
+def test_domain_assignment_has_no_index_fallback(benchmark):
+    builder = (ROOT / "backend/scripts/build_legislative_interpretation_quality_benchmark.py").read_text(encoding="utf-8")
+    assert "DOMAINS[index %" not in builder
+    assert "return \"UNRESOLVED\"" in builder
+
+
+def test_issue_synthesis_fixtures_have_no_real_person_attribution(benchmark):
+    domains_by_id = {case["benchmark_id"]: case["issue_domain"] for case in benchmark["cases"]}
+    for slice_ in benchmark["issue_synthesis_slices"]:
+        assert slice_["fixture_type"] == "synthetic_issue_synthesis_fixture"
+        assert slice_["representative"] is None
+        assert slice_["real_person_attribution"] is False
+        assert "not attributed to a real representative" in slice_["candidate_gold_synthesis"]
+        assert all(domains_by_id[roll_call] == slice_["issue_domain"] for roll_call in slice_["included_roll_calls"])
+
+
+def test_scorecard_labels_are_explicitly_diagnostic(benchmark):
+    report = analyze(benchmark)
+    assert report["diagnostic_scope"]["verified_editorial_quality_judgment"] is False
+    assert report["diagnostic_scope"]["human_editorial_scoring_status"] == "pending"
+    assert report["diagnostic_scope"]["source_map_presence_proves_factual_support"] is False
+    assert "public_field_availability_proxy" in report["aggregate_scores"]
+    assert report["measure_reuse"]["estimate_kind"] == "heuristic_noncanonical_grouping_estimate"
+    assert report["measure_reuse"]["canonical_measure_dossier_count"] is None
 
 
 def test_scripts_have_no_production_credentials_or_database_writes():
