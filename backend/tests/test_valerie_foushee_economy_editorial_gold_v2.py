@@ -105,17 +105,40 @@ def test_every_material_claim_maps_to_official_sources() -> None:
         assert dossier["directly_affected"]
 
 
-def test_advocacy_is_attributed_or_withheld() -> None:
+def test_competing_arguments_are_attributed_supported_and_reviewable() -> None:
     for dossier_path in (BUNDLE / "measures").glob("*.json"):
         dossier = json.loads(dossier_path.read_text(encoding="utf-8"))
-        for key in ("documented_supporter_rationale", "documented_opponent_rationale"):
-            rationale = dossier[key]
-            assert rationale["status"] in {"attributed", "insufficient_official_evidence"}
-            if rationale["status"] == "attributed":
-                assert rationale["summary"]
-                assert rationale["source_ids"]
-            else:
-                assert rationale["summary"] is None
+        assert dossier["argument_review_status"] == "complete_supported_pair"
+        for key in ("documented_supporter_argument", "documented_opponent_argument"):
+            argument = dossier[key]
+            assert argument["argument"]
+            assert argument["attribution"]
+            assert argument["source_ids"]
+            assert argument["claim_ids"]
+            assert argument["support_status"] == "supported_official_attributed"
+            assert argument["uncertainty_and_evidence_limits"]
+
+    packet = load("review_packet.json")
+    for item in packet["interpretations"]:
+        two_minute = item["proposed"]["two_minute"]
+        for key in ("supporter_argument", "opponent_argument"):
+            assert two_minute[key]["argument"]
+            assert two_minute[key]["attribution"]
+            assert two_minute[key]["claim_id"] in two_minute["claim_ids"]
+        assert two_minute["argument_boundary"]
+
+
+def test_unreviewed_official_evidence_is_distinct_from_insufficient_after_review() -> None:
+    contract = load("review_packet.json")["argument_evidence_status_contract"]
+    unreviewed = contract["official_evidence_not_yet_reviewed"]
+    insufficient = contract["insufficient_official_evidence_after_review"]
+    assert unreviewed["editorial_complete"] is False
+    assert unreviewed["blocking"] is True
+    assert insufficient["editorial_complete"] == "human_exception_only"
+    assert {"search_log", "sources_reviewed", "limitation", "human_factual_reviewer_acceptance"} <= set(
+        insufficient["requires"]
+    )
+    assert "insufficient_official_evidence" not in contract
 
 
 def test_reader_layers_comprehension_and_pending_human_review() -> None:
@@ -135,6 +158,56 @@ def test_reader_layers_comprehension_and_pending_human_review() -> None:
         assert item["human_approval_status"] == "human_approval_pending"
         assert item["material_improvement"]
         assert item["public_field_availability_proxy"]["exact_runtime_render"] is False
+
+
+def test_headlines_and_progressive_disclosure_remove_action_status_ambiguity() -> None:
+    rows = packet_by_roll()
+    assert rows[310]["proposed"]["ten_second"]["headline"].startswith("Did not vote")
+    for roll in (285, 281, 182, 156, 100, 50):
+        assert rows[roll]["proposed"]["ten_second"]["headline"].startswith("Voted against")
+
+    roll_281_top = json.dumps(rows[281]["proposed"]["ten_second"])
+    assert "short-term" in roll_281_top
+    assert "November 21" in roll_281_top
+
+    roll_100_thirty = json.dumps(rows[100]["proposed"]["thirty_second"])
+    assert "$4.5 trillion" not in roll_100_thirty
+    assert "$2 trillion" not in roll_100_thirty
+    assert "$4.5 trillion" in rows[100]["proposed"]["two_minute"]["detail"]
+    assert "$2 trillion" in rows[100]["proposed"]["two_minute"]["detail"]
+
+    roll_182 = rows[182]["proposed"]
+    assert "$17.509 billion" in roll_182["thirty_second"]["prior_baseline"]
+    assert "$480 million above FY2025" in roll_182["thirty_second"]["scale_or_timing"]
+    assert "$29.768 million above the FY2025 enacted level" in roll_182["two_minute"]["detail"]
+    assert "above the request" not in json.dumps(roll_182)
+    assert "H.R. 3944 did not itself become law" in roll_182["ten_second"]["member_action_and_result"]
+    assert "Roll 180" in json.dumps(roll_182["two_minute"])
+
+
+def test_synthesis_and_workflow_encode_human_review_gates() -> None:
+    synthesis = (BUNDLE / "issue_synthesis.md").read_text(encoding="utf-8")
+    ten_second = synthesis.split("## Proposed 10-second synthesis", 1)[1].split(
+        "## Proposed 30-second synthesis", 1
+    )[0]
+    assert "six substantive" not in ten_second.lower()
+    assert "fund federal operations" in ten_second
+    assert "six substantive" in synthesis.lower()
+    assert "roll 263" not in ten_second.lower()
+
+    workflow = (BUNDLE / "editorial_workflow_contract.md").read_text(encoding="utf-8")
+    required = [
+        "official_evidence_not_yet_reviewed",
+        "insufficient_official_evidence_after_review",
+        "Full gold review",
+        "Routine lower-risk review",
+        "at least five nonexpert participants",
+        "at least three nonexpert participants",
+        "Disagreement and escalation",
+        "Lifecycle ownership and service levels",
+        "Automated monitoring may create alerts but cannot change approval status",
+    ]
+    assert all(text in workflow for text in required)
 
 
 def test_candidate_copy_avoids_motive_ideology_and_recommendation_claims() -> None:
@@ -170,6 +243,9 @@ def test_generated_markdown_is_current_and_reviewable() -> None:
     assert expected.count("Roll decision:") == 7
     assert expected.count("#### Material claim receipts") == 9
     assert expected.count("| `ten_second.headline` | [ ] | [ ] | [ ] | |") == 7
+    assert expected.count("| `two_minute.supporter_argument` | [ ] | [ ] | [ ] | |") == 7
+    assert expected.count("| Documented supporter argument |") == 7
+    assert expected.count("| Documented opponent argument |") == 7
     assert "public_field_availability_proxy" in expected
 
 

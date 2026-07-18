@@ -45,6 +45,7 @@
 2. Author the reusable dossiers, policy-episode map, layered interpretations, synthesis, workflow, source map, and comprehension protocol.
 3. Generate and test deterministic JSON/review artifacts; run focused backend and frontend validation.
 4. Reconcile the plan, commit only milestone files, push the branch, and open the requested draft PR without merging.
+5. Address the independent editorial review locally: promote attributed competing arguments, strengthen the H.R. 3944 layers, remove headline ambiguity, simplify the H.Con.Res. 14 top layer, and make workflow gates operational.
 
 ## Progress Checklist
 
@@ -53,6 +54,7 @@
 - [x] Validation
 - [x] Documentation
 - [x] Commit/PR readiness
+- [x] Independent editorial correction pass
 
 ## Discoveries
 
@@ -60,6 +62,8 @@
 - H.R. 5371 and H.Con.Res. 14 each require separate treatment of two materially different House actions on the same measure.
 - The Congressional Record supplies the exact roll 263 instruction: accept the Senate's $8.2 billion WIC level. It is source-grounded but remains nonbinding, procedural, non-counting, and distinct from final funding.
 - The Congressional Record identifies all seven roll 180 component amendments. Their mixed effects make one compressed policy-position label unsafe, so the roll remains an ambiguity control.
+- H. Repts. 119-111, 119-112, 119-161, and 119-4 and the reviewed House debates contain attributable competing arguments. Those arguments can be promoted without treating them as Foushee's rationale.
+- H. Rept. 119-161 supports a reader-useful H.R. 3944 comparison: $17.989 billion for military construction and family housing was $480 million above FY2025, alongside a 13 percent VA discretionary increase, housing oversight, and disputed VA riders.
 
 ## Decisions And Rationale
 
@@ -67,10 +71,12 @@
 - Treat automated output only as machine drafts; this milestone produces an agent-source-checked proposal with human editorial scoring and approval still pending.
 - Check in a bounded House Clerk field snapshot keyed by Foushee's bioguide ID, while retaining each canonical XML URL, so every named action is directly reviewable without committing large source documents.
 - Count six substantive Nay rolls as four episodes; exclude the Not Voting record and both controls.
+- Treat `official_evidence_not_yet_reviewed` as blocking and distinguish it from a documented, human-accepted `insufficient_official_evidence_after_review` exception.
+- Require full-gold human review for this packet because it contains multi-stage measures, a budget framework, a Not Voting record, an appropriations package, and controls.
 
 ## Deviations Or Corrections
 
-- None.
+- Independent review found that the first draft withheld readily available committee-minority arguments, left H.R. 3944 too generic, and did not specify operational human-review gates. The correction pass keeps the same rolls, controls, episode mapping, and documentation-only boundary while repairing those editorial weaknesses.
 
 ## Validation Results
 
@@ -82,6 +88,17 @@
 - Full backend fixture suite: 667 passed and 1 unrelated platform failure. The failure is `test_exact_approved_manifest_bytes_pass`: the clean Windows CRLF checkout hashes differently, while the raw `HEAD` Git object exactly matches the expected SHA-256. No unrelated manifest file was changed.
 - Frontend production build: passed. Existing React hook dependency warnings remain in unchanged frontend files.
 - `git diff --check`: passed before staging; repeated on the staged milestone diff before commit.
+
+### Independent editorial correction pass
+
+- Final focused editorial plus existing interpretation regressions: 49 passed.
+- Focused bundle alone: 14 passed.
+- Deterministic Markdown regeneration and `--check`: passed.
+- Bundle JSON parsing: passed through the focused loader and an explicit parse pass.
+- Python compilation for the generator and focused tests: passed.
+- `git diff --check`: passed; only line-ending notices were emitted.
+- Full backend suite with the ignored local `.env` active: 664 passed, 7 failures. Six API tests connected to the expanded database instead of using their intended fixtures; all six passed at the base commit, the pre-correction branch commit, and the corrected working tree when database access was explicitly disabled. This is a separate fixture-isolation weakness. The isolated corrected-tree suite passed 670 tests; its only failure was the base-reproducing Windows exact-byte source-manifest hash mismatch.
+- Frontend build: not run because no frontend, runtime, API, rendering-contract, or dependency file changed.
 
 ## Production Writes
 
@@ -101,5 +118,6 @@
 ## Final Reconciliation
 
 - Definition of done satisfied: Yes for the source-checked candidate milestone and draft-PR delivery boundary.
-- Remaining limitations: Human comprehension sessions, editorial scoring, approval, and gold-benchmark designation remain outside Codex authority. Roll 180 remains intentionally unsynthesized; roll 263 remains a non-counting procedural control. One unrelated Windows exact-byte backend test remains platform-limited as documented above.
+- Remaining limitations: Human comprehension sessions, editorial scoring, approval, and gold-benchmark designation remain outside Codex authority. Roll 180 remains intentionally unsynthesized; roll 263 remains a non-counting procedural control. The six API tests need separate fixture isolation from an ignored local `.env`; the Windows working-tree exact-byte hash mismatch also remains a separate cross-platform test issue.
+- Correction-pass reconciliation: The independent review findings are addressed locally. Competing arguments remain institutional attributions rather than member motives; the bundle remains `human_approval_pending`; no production or GitHub state changed.
 - Recommended next step: Human factual, editorial, and reader-comprehension review of the draft bundle before any runtime schema, import, or rendering milestone.

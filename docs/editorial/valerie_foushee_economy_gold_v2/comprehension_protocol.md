@@ -44,6 +44,12 @@ Also record whether the reader:
 
 Request changes when a repeatable misconception appears, when the affected group or lifecycle status cannot be recalled, or when the reader can repeat the title but cannot explain the choice. Additional length alone is not an acceptable fix. Re-test any changed top-layer field.
 
+For full-gold candidates, use at least five participants. Every participant must identify the member action and lifecycle status without a substantive error, and at least four of five must answer each of the other standard questions correctly without prompting or after one neutral probe. A critical misconception repeated by two participants fails the candidate.
+
+For routine lower-risk candidates, use at least three participants. Every participant must identify the member action and lifecycle; at least two of three must answer each remaining question correctly. A repeated critical misconception elevates the record to full-gold revision and retesting with a fresh participant set.
+
+Critical misconceptions are: Not Voting treated as No; House passage treated as enactment; two stages merged; a budget framework treated as the later law; a procedural or mixed control treated as a substantive outcome; or an advocate's attributed argument treated as Foushee's motive.
+
 ## Completion boundary
 
 The packet remains `human_approval_pending` until sessions are conducted and reviewed. A readability score or automated diagnostic cannot substitute for this protocol.

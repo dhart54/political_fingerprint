@@ -21,6 +21,7 @@ This bundle is the first reader-first, source-checked editorial gold-slice propo
 - Roll 180 remains a mixed en-bloc control rather than a forced single policy position.
 - H.R. 5371 stages and H.Con.Res. 14 stages remain separate.
 - Later legislation is labeled context; it never replaces what was voted on.
+- Every dossier includes source-grounded, attributed supporter and opponent arguments; those institutional arguments are never assigned to Foushee as her motive.
 - `public_field_availability_proxy` is not the exact runtime renderer.
 - Automated checks are structural and heuristic diagnostics only. Human factual review, editorial scoring, comprehension testing, and approval are pending.
 
@@ -30,7 +31,7 @@ This bundle is the first reader-first, source-checked editorial gold-slice propo
 
 Before: “This was initial House passage of a short-term FY2026 funding bill.”
 
-After: **Opposed the House plan to fund agencies through November 21.** Before FY2026 began, the House considered temporarily continuing the prior year's funding and operating rules for federal agencies. Foushee voted No. The House passed this version, but it did not become the final law.
+After: **Voted against this short-term funding proposal through November 21.** Before FY2026 began, the House considered temporarily continuing the prior year's funding and operating rules for federal agencies through November 21. Foushee voted No on this short-term proposal. The House passed it, but it did not become the final law.
 
 Why better: the deadline, baseline, member action, and version boundary are visible without knowing what “continuing appropriations” means.
 
@@ -38,7 +39,7 @@ Why better: the deadline, baseline, member action, and version boundary are visi
 
 Before: “This was the House vote to agree to the Senate-amended budget blueprint.”
 
-After: **Opposed the revised framework for a later tax-and-spending bill.** The House decided whether to accept the Senate's revised budget instructions for committees to write later legislation on taxes, spending, deficits, and the debt limit. Foushee voted No. Congress adopted the framework, but this vote did not itself change taxes or benefits.
+After: **Voted against the revised framework for later budget legislation.** The House decided whether to accept revised instructions for committees to write later legislation on taxes, spending, deficits, and the debt limit. Foushee voted No. Congress adopted the framework, but this vote did not itself change taxes, benefits, annual funding, or the debt limit.
 
 Why better: it translates both concurrence and reconciliation, while placing the framework-versus-law boundary in the collapsed layer.
 
@@ -46,14 +47,14 @@ Why better: it translates both concurrence and reconciliation, while placing the
 
 Before: “This was final House passage of a bill changing who could qualify for SBA 7(a) and 504 small-business loans.”
 
-After: **Opposed new immigration-status limits on SBA business loans.** The House considered limiting SBA 7(a) and 504 loans to applicants whose required owners were citizens, U.S. nationals, or lawful permanent residents. Foushee voted No. The bill passed the House but had not become law.
+After: **Voted against immigration-status limits on SBA business loans.** The House considered limiting SBA 7(a) and 504 loans to applicants whose required owners were citizens, U.S. nationals, or lawful permanent residents. Foushee voted No. The bill passed the House but had not become law.
 
 Why better: it names the eligibility rule and affected applicants immediately, then separates the House proposal from current law.
 
 ## Human-review queue
 
 1. Verify every claim/source pair and locator.
-2. Score each field for factual accuracy, clarity, specificity, civic neutrality, and lifecycle correctness.
+2. Score each field and both attributed arguments for factual accuracy, clarity, specificity, civic neutrality, and lifecycle correctness.
 3. Run the five-question comprehension protocol with nonexpert readers.
 4. Resolve the few field-level questions recorded in `review_packet.json`.
 5. Approve, reject, or request changes per field and per roll.

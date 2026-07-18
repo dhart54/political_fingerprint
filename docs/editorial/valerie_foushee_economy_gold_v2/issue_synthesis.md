@@ -4,11 +4,11 @@ Status: `human_approval_pending`. This is an agent-source-checked candidate mach
 
 ## Proposed 10-second synthesis
 
-Across the reviewed records, Foushee voted No in four distinct policy episodes: two stages of a government-funding package, two stages of a budget framework for later legislation, a military-and-veterans funding bill, and an SBA loan-eligibility bill. She did not vote on a separate SBA regulatory-cost bill.
+Foushee voted against the reviewed proposals to fund federal operations, set a framework for later tax-and-spending legislation, fund military construction and veterans programs, and narrow SBA loan eligibility. She did not vote on a separate SBA rule-cost proposal.
 
 ## Proposed 30-second synthesis
 
-The six substantive Yes-or-No roll calls reduce to four episodes because two measures were voted on twice at different stages. Foushee opposed both reviewed versions of H.R. 5371, both reviewed versions of H.Con.Res. 14, the House military construction and veterans funding bill, and a bill restricting SBA 7(a) and 504 loan eligibility by immigration status. Those votes concern different mechanisms and do not establish that the same reason explains each No vote.
+The six substantive Yes-or-No roll calls reduce to four episodes because H.R. 5371 and H.Con.Res. 14 were each voted on at two materially different stages. Foushee voted against both reviewed government-funding stages, both reviewed budget-framework stages, the House military-construction and veterans proposal, and the SBA loan-eligibility proposal. Those votes concern different mechanisms and do not establish that the same reason explains each No vote.
 
 ## Proposed verification layer
 

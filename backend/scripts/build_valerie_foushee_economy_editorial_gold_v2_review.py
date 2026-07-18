@@ -62,6 +62,9 @@ def _append_field_decisions(lines: list[str], item: dict) -> None:
         "thirty_second.scale_or_timing",
         "thirty_second.what_happened_next",
         "two_minute.detail",
+        "two_minute.supporter_argument",
+        "two_minute.opponent_argument",
+        "two_minute.argument_boundary",
         "two_minute.later_history",
         "two_minute.caveats",
         "member_action",
@@ -96,6 +99,9 @@ def render(packet: dict, claim_map: dict, source_manifest: dict) -> str:
     ]
     for item in packet["interpretations"]:
         proposed = item["proposed"]
+        two_minute = proposed["two_minute"]
+        supporter = two_minute["supporter_argument"]
+        opponent = two_minute["opponent_argument"]
         lines.extend(
             [
                 f"### House roll {item['roll']} — {item['measure_id']} — {item['stage']}",
@@ -113,6 +119,9 @@ def render(packet: dict, claim_map: dict, source_manifest: dict) -> str:
                 f"| 30-second scale/timing | {_cell(proposed['thirty_second']['scale_or_timing'])} |",
                 f"| What happened next | {_cell(proposed['thirty_second']['what_happened_next'])} |",
                 f"| Two-minute detail | {_cell(proposed['two_minute']['detail'])} |",
+                f"| Documented supporter argument | **{_cell(supporter['attribution'])}:** {_cell(supporter['argument'])} (`{_cell(supporter['claim_id'])}`) |",
+                f"| Documented opponent argument | **{_cell(opponent['attribution'])}:** {_cell(opponent['argument'])} (`{_cell(opponent['claim_id'])}`) |",
+                f"| Argument evidence boundary | {_cell(two_minute['argument_boundary'])} |",
                 f"| Later history | {_cell(proposed['two_minute']['later_history'])} |",
                 f"| Caveats | {_cell('; '.join(proposed['two_minute']['caveats']))} |",
                 f"| Verified Foushee action | `{_cell(item['member_action']['recorded'])}` — {_cell(item['member_action']['plain_language'])} |",
