@@ -24,7 +24,9 @@ The exact primary derivation requires all of:
 4. The CD119 split-block listing, which records the one Colorado block split by the legal boundary and its authoritative whole-block tabulation assignment to CD08.
 5. The pinned PR #89 ZCTA/CD119 area relationship and House snapshot `house-119-20260713T011722Z`.
 
-Only `exact_official_common_block` and `exact_official_assignment` enter the primary aggregation. Spatially apportioned block population is excluded.
+Only `exact_official_common_block` and `exact_official_assignment` enter the primary aggregation. An accepted geographic relationship with no common block must instead use `no_common_block_relationship`; its official tabulation result may be zero without implying that the geographic overlap contains no residents. Spatially apportioned block population is excluded.
+
+The approved manifest is an exact-byte authority, pinned at SHA-256 `df3201bad66134eee6be59f53cd72e19c9d39c286fe5ce1389a1021412c9a851`. The analyzer verifies this before replay or source parsing. The manifest distinguishes 20 artifacts with retained direct-HTTP provenance from 36 files accepted through validated local resume; a validation timestamp is not represented as a retrieval timestamp.
 
 ## Required aggregate evidence
 
@@ -35,15 +37,19 @@ One aggregate row per accepted ZCTA/CD119 relationship should preserve:
 - House snapshot identity;
 - ZCTA, source CD119 GEOID, canonical state, and source district;
 - exact relationship-population numerator and ZCTA-population denominator;
-- contributing, populated, and zero-population block counts;
-- excluded or unresolved block and population counts;
+- contributing common, populated, and zero-population block counts;
+- relationship-excluded and ZCTA-level unassigned-district block and population counts;
+- independent `population_coverage_exact` and `block_assignment_complete` statuses;
 - constrained assignment quality;
 - derivation-manifest checksum and parser version;
-- deterministic population and land ranks;
+- deterministic population and land ranks for positive-population ZCTAs;
+- `population_rank = null`, `population_rank_tied = null`, and `population_rank_status = undefined_zero_population_zcta` when the ZCTA population is zero, with a separately named deterministic evidence order;
 - current-seat evidence classification;
 - `auto_select_eligible = false`.
 
 Zero-population rows remain in the evidence ledger. Whether a product hides them by default requires a separate product decision and must preserve a way to inspect the official possible mapping.
+
+The observed 89 `ZZ` district-unassigned blocks contain zero people. Therefore all 39,967 relationship rows retain exact population coverage, while block assignment is incomplete for 31 ZCTAs and 44 relationship rows. These concepts must never be collapsed into one “complete” claim.
 
 ## Model comparison
 

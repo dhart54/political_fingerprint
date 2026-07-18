@@ -1,9 +1,9 @@
 {
-  "schema_version": "zip_population_weighting_source_manifest_v1",
+  "schema_version": "zip_population_weighting_source_manifest_v2",
   "batch_id": "zip-population-weighting-v1-20260718",
-  "retrieved_at": "2026-07-18T19:47:59.826035+00:00",
-  "retrieval_precision": "timestamp",
-  "parser_version": "zip_population_source_retrieval_v1",
+  "batch_completed_at": "2026-07-18T20:32:14.086282+00:00",
+  "batch_completion_precision": "timestamp",
+  "parser_version": "zip_population_source_retrieval_v2",
   "source_vintage": "2020 Census tabulation blocks and resident population; 2020 ZCTAs; 119th Congressional District whole-block tabulation plan",
   "allowed_hosts": [
     "api.census.gov",
@@ -32,8 +32,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Alaska/ak2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ak2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:51.604313+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 4741817,
       "sha256": "c90837c12ab2f5fe99132c558705e8d0b5174afdf2a0d28b71927f535fe63487",
       "retry_history": [
@@ -49,8 +56,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Alabama/al2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "al2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:52.081919+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 23974872,
       "sha256": "bd3fbbf22615b166869f9119aa12017b9a7b82baf0f22a9170e92a88a397cd77",
       "retry_history": [
@@ -66,8 +80,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Arkansas/ar2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ar2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:52.476502+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 20179961,
       "sha256": "940ad2916676e443dfdab98c3e145fcf62ef9dcd9f10c763ccdb195f4d5f132e",
       "retry_history": [
@@ -83,8 +104,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Arizona/az2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "az2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:52.894387+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 23082436,
       "sha256": "56997e8b1b5175148fd3e1157ab57eee7c1722221cafebfd5d12fe2e687b2aff",
       "retry_history": [
@@ -100,8 +128,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/California/ca2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ca2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:54.155888+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 79627235,
       "sha256": "e02c83c85a9a5d69ded4bf0d4c8ebe3f4bcd2d8e5911db765e9e42915ad1f753",
       "retry_history": [
@@ -117,8 +152,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Colorado/co2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "co2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:54.648479+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 24215854,
       "sha256": "fce76008aedd10681bf0e57fa366ca788d280264edfe91e7d80a9b33ae86ab2c",
       "retry_history": [
@@ -134,8 +176,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Connecticut/ct2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ct2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:54.809343+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 10254583,
       "sha256": "c4a2d42a79c52de10ea9397cca43db59c2df38e6d6e66b4396a0de8bd3f66780",
       "retry_history": [
@@ -151,8 +200,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/District_of_Columbia/dc2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "dc2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:54.833240+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 1366469,
       "sha256": "21b5189f45ce260c4607c9579f4ad52d11920133af827b14b183121b48d40ce4",
       "retry_history": [
@@ -168,8 +224,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Delaware/de2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "de2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:54.893768+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 3720859,
       "sha256": "2d7743cc442574dc785c728e9637c5d4648bef518beef41b5f03756eb56ea78a",
       "retry_history": [
@@ -185,8 +248,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Florida/fl2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "fl2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:55.840535+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 65962055,
       "sha256": "fdcc98180f634b69c40ed1d71a63fe00fdda4cda3e35fbaa6382336501f4b0cf",
       "retry_history": [
@@ -202,8 +272,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Georgia/ga2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ga2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:56.410978+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 35831859,
       "sha256": "26434588ceab435fa33a138ff999e4187c923a74732fcc488c3a0597b4adebcb",
       "retry_history": [
@@ -219,8 +296,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Hawaii/hi2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "hi2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:56.478486+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 3817508,
       "sha256": "b7e1ba6350c5d75267b688504052af001ad227763995f6bb26ccdd92fc45261f",
       "retry_history": [
@@ -236,8 +320,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Iowa/ia2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ia2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:56.833674+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 21713685,
       "sha256": "c55e8276080b684431b8629269d4225c31080ea17257a737f9d99e3cf2ac6822",
       "retry_history": [
@@ -253,8 +344,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Idaho/id2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "id2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:57.009634+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 10025551,
       "sha256": "89345b6d5d12ccdec8af4039b0a6f1f5ba4cd7ca86c8f73ad6250b5713e3df47",
       "retry_history": [
@@ -270,8 +368,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Illinois/il2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "il2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:57.997062+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 64763317,
       "sha256": "e73f82d6aea0b9b372e9f8572c6edbedfa72ae9fc2039da84faf0cdf0c478a32",
       "retry_history": [
@@ -287,8 +392,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Indiana/in2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "in2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:58.549114+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 32611077,
       "sha256": "5f4999237a9bf3b3337865494d0d62c0a1dc620cad7e48caebaa83811f95901a",
       "retry_history": [
@@ -304,8 +416,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Kansas/ks2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ks2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:58.970783+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 23446925,
       "sha256": "ac6b4ae5e2af4c8d639b46748d55927ee7821756f6073cc4f8238c1fb00498ee",
       "retry_history": [
@@ -321,8 +440,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Kentucky/ky2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ky2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:59.324839+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 22595797,
       "sha256": "252a04b760e4da69665d5654108be2b63d55d294c1c0c608bfc7e7fcf2360ac4",
       "retry_history": [
@@ -338,8 +464,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Louisiana/la2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "la2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:31:59.700829+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 23768295,
       "sha256": "d8d9ea96195f2b848be70ef33dcb224d433d8d58025e11aaa0432c5211e5345c",
       "retry_history": [
@@ -355,8 +488,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Massachusetts/ma2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ma2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:00.003994+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 21002060,
       "sha256": "9857362fbc1162d3943685134a77a91542a70eb667f3477559d07fd0a81e4889",
       "retry_history": [
@@ -372,8 +512,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Maryland/md2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "md2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:00.280210+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 18262586,
       "sha256": "9af1e1f0185b6219a9432132ef78e47c2d74c474948d2ed6004c7061412393f3",
       "retry_history": [
@@ -389,8 +536,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Maine/me2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "me2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:00.382232+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 6098405,
       "sha256": "f9bb6fe4cf13bb28b44e4d6a8d5d3e5209f9249ebc402db7ea5c24f8a673ac07",
       "retry_history": [
@@ -406,8 +560,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Michigan/mi2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "mi2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:00.973948+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 39966651,
       "sha256": "971bd53abeb1d905bb9b09bfe4dc1afe8514a916f24d285b289e0f66ec5cfb62",
       "retry_history": [
@@ -423,8 +584,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Minnesota/mn2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "mn2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:01.480908+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 29625918,
       "sha256": "7d30974597e73893d25ffef0975c8e673afcc1166f9919d5ff2a466a2e0e188f",
       "retry_history": [
@@ -440,8 +608,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Missouri/mo2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "mo2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:02.107041+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 35967209,
       "sha256": "900d8a3bcc59e2cc3c174730e2a8704bd653af1fc043c9fbd73196e1c0d7fba5",
       "retry_history": [
@@ -457,8 +632,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Mississippi/ms2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ms2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:02.375912+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 16282867,
       "sha256": "cb64e3465cee9623dc574605f4dfcada33eaea6833062d31f769811fd20a5f26",
       "retry_history": [
@@ -474,8 +656,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Montana/mt2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "mt2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:02.547707+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 9835205,
       "sha256": "e01288ce3ae37ae732eb61d40268c6ac3ec8f9772c8609c6e9ca538bdd0bc130",
       "retry_history": [
@@ -491,8 +680,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/North_Carolina/nc2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "nc2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:03.118786+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 37553822,
       "sha256": "04f2f250dad877d237d94f553f9cb2209594c2a021d15f9fdeedd4404db538db",
       "retry_history": [
@@ -508,8 +704,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/North_Dakota/nd2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "nd2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:03.292589+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 8780598,
       "sha256": "a37d18e05a73b311a8fd7ade36dd5b17cac16ff125318c9ec6d2edd7f6968b71",
       "retry_history": [
@@ -525,8 +728,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Nebraska/ne2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ne2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:03.524578+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 13595569,
       "sha256": "29298d68a5905cf9cb14cd64e35750d14727a330c5940ccf5238a8ae6e110300",
       "retry_history": [
@@ -542,8 +752,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/New_Hampshire/nh2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "nh2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:03.600430+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 4807476,
       "sha256": "31852c0cfa871ea81f933bb1df904f0d45997097e38ade83db87ba58255d4468",
       "retry_history": [
@@ -559,8 +776,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/New_Jersey/nj2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "nj2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:04.077068+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 34066393,
       "sha256": "caf0da4a9e9d46ced3f8020a7a2bf5240cd8805ed0679716f0cb2b8fcc65e811",
       "retry_history": [
@@ -576,8 +800,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/New_Mexico/nm2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "nm2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:04.335662+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 15295141,
       "sha256": "77133ba4bb2fb2c28d39993bb4cff5f1c42823c9d13b75e51e8ecf986354c259",
       "retry_history": [
@@ -593,8 +824,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Nevada/nv2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "nv2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:04.506589+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 11597053,
       "sha256": "ac7e792e0a1d6248ff1700159f4ec6a3a7b3330ebe10899bb4f47ab97c19952d",
       "retry_history": [
@@ -610,8 +848,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/New_York/ny2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ny2020.pl.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:05.478233+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 72608321,
       "sha256": "9d046014bee6b61afa808c5dfe841a6d036c77bff70197472fbdd291a40b8ce2",
       "retry_history": [
@@ -627,17 +872,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Ohio/oh2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "oh2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 51648259,
-      "sha256": "ceef338247ad2dccc267885f2879e167ab6730c7a332d3ceb5aef9d6e2338aa0",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:06.285634+00:00"
+      },
+      "size_bytes": 51648259,
+      "sha256": "ceef338247ad2dccc267885f2879e167ab6730c7a332d3ceb5aef9d6e2338aa0"
     },
     {
       "role": "block_population",
@@ -645,17 +898,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Oklahoma/ok2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ok2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 24870369,
-      "sha256": "e95c99e6385f4ed3a5ea67962444a53ad7a731f26d1dd88df2efde504f101dff",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:06.701299+00:00"
+      },
+      "size_bytes": 24870369,
+      "sha256": "e95c99e6385f4ed3a5ea67962444a53ad7a731f26d1dd88df2efde504f101dff"
     },
     {
       "role": "block_population",
@@ -663,17 +924,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Oregon/or2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "or2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 14707780,
-      "sha256": "f8e7fa8c331446850b1bf545e6c4aa63733373f582b11edd6b3cf31016bc4509",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:06.950365+00:00"
+      },
+      "size_bytes": 14707780,
+      "sha256": "f8e7fa8c331446850b1bf545e6c4aa63733373f582b11edd6b3cf31016bc4509"
     },
     {
       "role": "block_population",
@@ -681,17 +950,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Pennsylvania/pa2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "pa2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 57240396,
-      "sha256": "2d33a7dab29c8dd5692bbde203d253e06eebbc44fcbaa96b1caa958d454026ae",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:07.835996+00:00"
+      },
+      "size_bytes": 57240396,
+      "sha256": "2d33a7dab29c8dd5692bbde203d253e06eebbc44fcbaa96b1caa958d454026ae"
     },
     {
       "role": "block_population",
@@ -699,17 +976,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Rhode_Island/ri2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ri2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 4269011,
-      "sha256": "a2a6de20d0bac0dfe91aef66d3c2dde0eb768863884fbc45d4f3df5c49f5dcd0",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:07.933278+00:00"
+      },
+      "size_bytes": 4269011,
+      "sha256": "a2a6de20d0bac0dfe91aef66d3c2dde0eb768863884fbc45d4f3df5c49f5dcd0"
     },
     {
       "role": "block_population",
@@ -717,17 +1002,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/South_Carolina/sc2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "sc2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 22200586,
-      "sha256": "e8996f6873405d6c048c42e8878231fc7f152564295498ff586a041648a46bb5",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:08.274772+00:00"
+      },
+      "size_bytes": 22200586,
+      "sha256": "e8996f6873405d6c048c42e8878231fc7f152564295498ff586a041648a46bb5"
     },
     {
       "role": "block_population",
@@ -735,17 +1028,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/South_Dakota/sd2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "sd2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 8729143,
-      "sha256": "30d4edc3ccc86ad76a2a388c763ecdaebe23f43a5dcb92658587c04ca5cfa1a5",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:08.433133+00:00"
+      },
+      "size_bytes": 8729143,
+      "sha256": "30d4edc3ccc86ad76a2a388c763ecdaebe23f43a5dcb92658587c04ca5cfa1a5"
     },
     {
       "role": "block_population",
@@ -753,17 +1054,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Tennessee/tn2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "tn2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 25279315,
-      "sha256": "89f843dbc717409169fef44df2682548c308c06c0d825451bf2e78340234daf2",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:08.865646+00:00"
+      },
+      "size_bytes": 25279315,
+      "sha256": "89f843dbc717409169fef44df2682548c308c06c0d825451bf2e78340234daf2"
     },
     {
       "role": "block_population",
@@ -771,17 +1080,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Texas/tx2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "tx2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 99593751,
-      "sha256": "6fee8ca5759eb4942db25a59b8cbd3439ad4188279fccff87dac70a89ceca6ff",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:10.399007+00:00"
+      },
+      "size_bytes": 99593751,
+      "sha256": "6fee8ca5759eb4942db25a59b8cbd3439ad4188279fccff87dac70a89ceca6ff"
     },
     {
       "role": "block_population",
@@ -789,17 +1106,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Utah/ut2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "ut2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 13713435,
-      "sha256": "4e6de13cd7b5307bfdd327446dd7107e2fdb790903f59186bb8285881531d0f0",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:10.655327+00:00"
+      },
+      "size_bytes": 13713435,
+      "sha256": "4e6de13cd7b5307bfdd327446dd7107e2fdb790903f59186bb8285881531d0f0"
     },
     {
       "role": "block_population",
@@ -807,17 +1132,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Virginia/va2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "va2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 28074582,
-      "sha256": "e33c7c1ac0aa84b5fe5ba20188d2e562c5c96b1c02f59e766e18d037b23df9e8",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:11.051068+00:00"
+      },
+      "size_bytes": 28074582,
+      "sha256": "e33c7c1ac0aa84b5fe5ba20188d2e562c5c96b1c02f59e766e18d037b23df9e8"
     },
     {
       "role": "block_population",
@@ -825,17 +1158,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Vermont/vt2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "vt2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 3474558,
-      "sha256": "6a18a3364dff5e0432b25f4b4972eaf22ac0699ea0273430509a9b6a763638e9",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:11.123539+00:00"
+      },
+      "size_bytes": 3474558,
+      "sha256": "6a18a3364dff5e0432b25f4b4972eaf22ac0699ea0273430509a9b6a763638e9"
     },
     {
       "role": "block_population",
@@ -843,17 +1184,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Washington/wa2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "wa2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 36824364,
-      "sha256": "dde77f2db632a4af274a968c39a7ab58fac6cfd90718e4a72ec239b84980db5b",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:11.618859+00:00"
+      },
+      "size_bytes": 36824364,
+      "sha256": "dde77f2db632a4af274a968c39a7ab58fac6cfd90718e4a72ec239b84980db5b"
     },
     {
       "role": "block_population",
@@ -861,17 +1210,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Wisconsin/wi2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "wi2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 34725175,
-      "sha256": "e70f80ef4a803cdeb1e1767fc42e13f7d01ce9f98566c82ca4c2379aa9809f7f",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:12.165758+00:00"
+      },
+      "size_bytes": 34725175,
+      "sha256": "e70f80ef4a803cdeb1e1767fc42e13f7d01ce9f98566c82ca4c2379aa9809f7f"
     },
     {
       "role": "block_population",
@@ -879,17 +1236,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/West_Virginia/wv2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "wv2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 9611980,
-      "sha256": "8356c49f300e9c18658de56c06e551f5e8cb591c395fc3d1748077d46322889b",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:12.343311+00:00"
+      },
+      "size_bytes": 9611980,
+      "sha256": "8356c49f300e9c18658de56c06e551f5e8cb591c395fc3d1748077d46322889b"
     },
     {
       "role": "block_population",
@@ -897,17 +1262,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Wyoming/wy2020.pl.zip",
       "release_vintage": "2020 Census PL 94-171 state redistricting file, released 2021-08-12",
       "actual_filename": "wy2020.pl.zip",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/zip",
-      "size_bytes": 5554716,
-      "sha256": "98dd7d035942fea2758e0fcabe71efa0588a7ec7c9c33110bcde493fe8e8b942",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:12.442771+00:00"
+      },
+      "size_bytes": 5554716,
+      "sha256": "98dd7d035942fea2758e0fcabe71efa0588a7ec7c9c33110bcde493fe8e8b942"
     },
     {
       "role": "block_to_cd119",
@@ -915,8 +1288,15 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/rdo/mapping-files/2025/119-congressional-district-befs/cd119.zip",
       "release_vintage": "119th Congress whole 2020 Census block tabulation plan, 2024 election cycle",
       "actual_filename": "cd119.zip",
-      "http_status": 200,
-      "content_type": "application/zip",
+      "retrieval_mode": "validated_local_resume",
+      "validated_at": "2026-07-18T20:32:12.684568+00:00",
+      "validation": {
+        "method": "zip_crc_and_member_inventory",
+        "result": "passed"
+      },
+      "original_http_status": null,
+      "original_content_type": null,
+      "original_retrieved_at": null,
       "size_bytes": 22959130,
       "sha256": "1433feb5178dc7b4188ee30f5f7f715851f4400740b8fe1ce606a876c6294bd6",
       "retry_history": [
@@ -932,17 +1312,25 @@
       "url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_tabblock20_natl.txt",
       "release_vintage": "2020 ZCTA to 2020 tabulation block relationship file, posted 2021-12-09",
       "actual_filename": "tab20_zcta520_tabblock20_natl.txt",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "text/plain",
-      "size_bytes": 1057697144,
-      "sha256": "7f077624d252fc1cc5a2d1100be07cfe038ffc152bfe193561d068b4def6bbbf",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "required_text_header",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:13.375933+00:00"
+      },
+      "size_bytes": 1057697144,
+      "sha256": "7f077624d252fc1cc5a2d1100be07cfe038ffc152bfe193561d068b4def6bbbf"
     },
     {
       "role": "technical_documentation",
@@ -950,17 +1338,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/2020/technical-documentation/complete-tech-docs/summary-file/2020Census_PL94_171Redistricting_StatesTechDoc_English.pdf",
       "release_vintage": "2020 Census PL 94-171 states technical documentation",
       "actual_filename": "2020Census_PL94_171Redistricting_StatesTechDoc_English.pdf",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/pdf",
-      "size_bytes": 1829750,
-      "sha256": "5ceb388b1cb99375136773c0e0bf10f885619e1a01828f9251d0d7e041975c51",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "pdf_signature",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:14.083047+00:00"
+      },
+      "size_bytes": 1829750,
+      "sha256": "5ceb388b1cb99375136773c0e0bf10f885619e1a01828f9251d0d7e041975c51"
     },
     {
       "role": "technical_documentation",
@@ -968,17 +1364,25 @@
       "url": "https://www2.census.gov/programs-surveys/decennial/rdo/mapping-files/2025/119-congressional-district-befs/CD119_BlockSplits.pdf",
       "release_vintage": "119th Congress split-block listing",
       "actual_filename": "CD119_BlockSplits.pdf",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/pdf",
-      "size_bytes": 316267,
-      "sha256": "f0b70f2bde47285f63367ef667a6080ec5c2042842af1e2457c0fb4b739dadcc",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "pdf_signature",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:14.084899+00:00"
+      },
+      "size_bytes": 316267,
+      "sha256": "f0b70f2bde47285f63367ef667a6080ec5c2042842af1e2457c0fb4b739dadcc"
     },
     {
       "role": "technical_documentation",
@@ -986,17 +1390,25 @@
       "url": "https://www2.census.gov/geo/pdfs/maps-data/data/rel2020/zcta520/explanation_tab20_zcta520_tabblock20_natl.pdf",
       "release_vintage": "2020 ZCTA/tabulation-block relationship explanation",
       "actual_filename": "explanation_tab20_zcta520_tabblock20_natl.pdf",
+      "retrieval_mode": "direct_http",
       "http_status": 200,
       "content_type": "application/pdf",
-      "size_bytes": 127042,
-      "sha256": "171ea8244b73b01b0801f65cd2bae44064d08a246eb761d0a0480610a1546faa",
+      "retrieved_at": null,
+      "retrieval_timestamp_status": "unavailable_not_persisted",
       "retry_history": [
         {
           "attempt": 1,
           "status": 200,
           "result": "success"
         }
-      ]
+      ],
+      "local_validation": {
+        "method": "pdf_signature",
+        "result": "passed",
+        "validated_at": "2026-07-18T20:32:14.085863+00:00"
+      },
+      "size_bytes": 127042,
+      "sha256": "171ea8244b73b01b0801f65cd2bae44064d08a246eb761d0a0480610a1546faa"
     }
   ]
 }

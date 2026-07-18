@@ -13,7 +13,7 @@
 
 - In scope: official Census source discovery/retrieval/replay, compatibility proof, exact block aggregation if supported, read-only House reconciliation, policy sensitivity, staging design, tests, draft PR.
 - Out of scope: production writes, migrations, ZIP seeds, route/frontend/flag changes, address collection/provider integration, representative auto-selection, merge.
-- Files/systems likely touched: two backend scripts, focused tests, plan/review/design/source-manifest documents, ignored local source batch, and optional unapplied `0016` only if the evidence contract is stable.
+- Files/systems likely touched: two backend scripts, focused tests, plan/review/design/source-manifest documents, and the ignored local source batch. No `0016` is authorized.
 
 ## Decision Envelope
 
@@ -29,7 +29,7 @@
 - [x] Production read-only pre/postchecks completed without mutation.
 - [x] Focused and combined validation recorded; JSON and diff checks pass.
 - [x] Documentation and final reconciliation completed.
-- [ ] Intended files committed/pushed and a draft PR opened against `main`.
+- [x] Intended files committed and pushed to existing draft PR #90.
 
 ## Baseline
 
@@ -56,7 +56,7 @@
 - [x] Analysis or feasibility stop
 - [x] Validation
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -65,7 +65,11 @@
 - The Census Bureau documents one legally split Colorado block, `080010096072000`; it contains 90 people and has an authoritative whole-block tabulation assignment to CD08.
 - The 50-state/DC PL population reconciles to 331,449,281. ZCTA-assigned population is 331,440,751; 8,530 people are in 144,187 official blocks without a ZCTA. The 89 unassigned-district blocks contain zero people.
 - All 39,967 accepted PR #89 relationships are preserved. There are 589 zero-population relationships, including 552 positive-land and all 37 water-only relationships.
-- Population and land top rankings differ for 627 ZCTAs. Among 5,862 ambiguous ZCTAs, 5,836 have a top population share at or above 50%; this is presentation evidence only.
+- The exact-byte manifest SHA-256 is `df3201bad66134eee6be59f53cd72e19c9d39c286fe5ce1389a1021412c9a851`; all 56 artifact hashes are unchanged. Provenance records 20 direct HTTP retrievals and 36 validated local resumes without fabricated HTTP responses.
+- Population ranking is defined for 33,499 positive-population ZCTAs and undefined for 143 zero-population ZCTAs. Positive-population unique tops agree with land for 32,872 ZCTAs, disagree for 626, and tie for 1.
+- Among 5,861 positive-population ambiguous ZCTAs, 5,234 unique population tops agree with land, 626 disagree, and 1 is tied. The inclusive `>=50%` sensitivity policy remains distinct from strict majority.
+- Strict population majority without strict land majority occurs in 32 ZCTAs; strict land majority without strict population majority occurs in 16. One population top is exactly half and is not called a majority.
+- All 39,967 relationships have common blocks and exact population coverage. The 89 zero-person `ZZ` blocks affect 31 ZCTAs and make block assignment incomplete for 44 relationship rows.
 
 ## Decisions And Rationale
 
@@ -81,11 +85,11 @@
 
 ## Validation Results
 
-- Official source retrieval: 56 artifacts, about 2.23 GB; manifest replay verified exact inventory, host, size, checksum, vintage, and documentation.
-- Focused suite: 31 passed.
+- Official source validation: 56 unchanged artifacts, about 2.23 GB; exact-byte manifest pin and replay verified exact inventory, landing pages, ordering rules, host, size, checksum, vintage, documentation, and mode-specific provenance.
+- Focused suite: 51 passed.
 - Exact common-block analysis: 8,132,968 blocks; 331,449,281 source population; 39,967 aggregate relationship rows.
 - Production pre/post: session and transaction read-only confirmed; 30-second statement timeout; House canonical checksums and legislators fingerprint unchanged; ZIP row count remained zero.
-- JSON parsing, Python compilation, `git diff --check`, and the 161-test combined House/ZIP/route/parity/land/population suite passed.
+- JSON parsing, Python compilation, `git diff --check`, manifest-authoritative replay, and the 181-test combined House/ZIP/route/parity/land/population suite passed.
 
 ## Production Writes
 
@@ -104,6 +108,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: pending commit/push and draft PR publication only.
+- Definition of done satisfied; changes were committed and pushed to existing draft PR #90, whose description was updated without merging.
 - Remaining limitations: population is from 2020, does not resolve a current address, and no production threshold or schema application is authorized.
 - Recommended next step: likely full-address congressional-district resolver evaluation after independent review.

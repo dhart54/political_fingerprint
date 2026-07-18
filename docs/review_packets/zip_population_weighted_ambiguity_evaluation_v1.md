@@ -8,7 +8,8 @@ Official Census sources support an exact common-2020-block population allocation
 
 ## Official sources
 
-The committed manifest pins all 51 PL 94-171 state/DC artifacts individually. Batch: `zip-population-weighting-v1-20260718`; manifest SHA-256: `9846e3d5333b887aeccfda16adce65989c2e5386cdff364fcd088a56f59a3db9`.
+The committed manifest pins all 51 PL 94-171 state/DC artifacts individually. Batch: `zip-population-weighting-v1-20260718`; completion: `2026-07-18T20:32:14.086282+00:00`; manifest SHA-256: `df3201bad66134eee6be59f53cd72e19c9d39c286fe5ce1389a1021412c9a851`.
+Provenance modes: `{"direct_http":20,"validated_local_resume":36}`. Local resume timestamps describe validation, not retrieval.
 
 - `cd119.zip` — 22,959,130 bytes — SHA-256 `1433feb5178dc7b4188ee30f5f7f715851f4400740b8fe1ce606a876c6294bd6` — https://www2.census.gov/programs-surveys/decennial/rdo/mapping-files/2025/119-congressional-district-befs/cd119.zip
 - `tab20_zcta520_tabblock20_natl.txt` — 1,057,697,144 bytes — SHA-256 `7f077624d252fc1cc5a2d1100be07cfe038ffc152bfe193561d068b4def6bbbf` — https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_tabblock20_natl.txt
@@ -31,9 +32,12 @@ The committed manifest pins all 51 PL 94-171 state/DC artifacts individually. Ba
 - Population assigned to ZCTAs and reconciled through relationship/ZCTA aggregates: `331,440,751`.
 - Official blocks without a ZCTA contain `8,530` people across `144,187` blocks.
 - Unassigned-district blocks: `89`; affected population: `0`.
+- Unassigned-district blocks affect `31` ZCTAs; affected-ZCTA checksum: `8e0ce11c87f51eefd513473298ba1ebd202384fb6e0d5509e5f54064c9288669`. Their zero population preserves exact population coverage, but block assignment is incomplete.
 - Aggregate rows: `39,967`; ZCTAs: `33,642`; district pairs: `436`.
+- Relationships with common blocks: `39,967`; with zero common blocks: `0` (checksum `37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570`).
+- Exact-population-coverage relationships: `39,967`; relationships/ZCTAs with incomplete block assignment: `44` / `31`.
 - Zero-population ZCTAs: `143`; zero-population relationships: `589`.
-- ZCTA totals checksum: `85b4f6bea0a4fcfa950b2d4138d633392a8ea254bfd42a29cf3916209f64982d`; district totals checksum: `59b1f471ab64771ee1697bba201b16f90db580dd87ef6c45a82d5d6b1e851f32`.
+- ZCTA totals checksum: `85b4f6bea0a4fcfa950b2d4138d633392a8ea254bfd42a29cf3916209f64982d`; district totals checksum: `59b1f471ab64771ee1697bba201b16f90db580dd87ef6c45a82d5d6b1e851f32`; state parser totals checksum: `624c188080e4a00878785d95a1d9bf2ff53f16bdd0ab06bc3824e8bad5b7ad2f`.
 
 ## Population policy grid
 
@@ -54,9 +58,11 @@ The committed manifest pins all 51 PL 94-171 state/DC artifacts individually. Ba
 
 ## Population versus land
 
-- National top ranking agrees for `33,015` ZCTAs and differs for `627`; among 5,862 ambiguous ZCTAs, agreement is `5,235` and disagreement is `627`.
-- Tied population winners: `2`; tied land winners: `0`.
-- Population majority exists while land majority does not: `32`; land majority exists while population majority does not: `158`.
+- Accepted ZCTAs: `33,642`; positive-population: `33,499`; zero-population excluded from ranking: `143`.
+- Positive-population unique top agrees for `32,872` ZCTAs and differs for `626`; tied population tops: `1`.
+- Positive-population ambiguous ZCTAs: `5,861`; unique-top agreement/disagreement within them: `5,234` / `626`.
+- Strict population majority exists while strict land majority does not: `32`; strict land majority exists while strict population majority does not: `16`.
+- Exact-half population/land cases: `1` / `0`. The separate `>=50%` sensitivity row remains inclusive.
 - Positive-land relationships with zero population: `552`; water-only relationships with nonzero population: `0`.
 - Tiny positive-land relationships at or below 0.01% include `3` with at least one person and `1` with at least ten people.
 
@@ -64,23 +70,23 @@ The committed manifest pins all 51 PL 94-171 state/DC artifacts individually. Ba
 
 | Top population share | Qualifying ambiguous ZCTAs | Nonqualifying | Land top differs |
 |---|---:|---:|---:|
-| gte_50_percent | 5,836 | 26 | 619 |
-| gte_60_percent | 5,326 | 536 | 419 |
-| gte_70_percent | 4,815 | 1,047 | 293 |
-| gte_75_percent | 4,505 | 1,357 | 218 |
-| gte_80_percent | 4,190 | 1,672 | 186 |
-| gte_90_percent | 3,338 | 2,524 | 107 |
-| gte_95_percent | 2,540 | 3,322 | 57 |
+| gte_50_percent | 5,836 | 25 | 619 |
+| gte_60_percent | 5,326 | 535 | 419 |
+| gte_70_percent | 4,815 | 1,046 | 293 |
+| gte_75_percent | 4,505 | 1,356 | 218 |
+| gte_80_percent | 4,190 | 1,671 | 186 |
+| gte_90_percent | 3,338 | 2,523 | 107 |
+| gte_95_percent | 2,540 | 3,321 | 57 |
 
 | Top-minus-second margin | Qualifying ambiguous ZCTAs | Nonqualifying | Zero-population undefined |
 |---|---:|---:|---:|
-| gte_1_points | 5,840 | 22 | 1 |
-| gte_5_points | 5,742 | 120 | 1 |
-| gte_10_points | 5,612 | 250 | 1 |
-| gte_20_points | 5,354 | 508 | 1 |
-| gte_25_points | 5,215 | 647 | 1 |
-| gte_33_points | 5,013 | 849 | 1 |
-| gte_50_points | 4,518 | 1,344 | 1 |
+| gte_1_points | 5,840 | 21 | 1 |
+| gte_5_points | 5,742 | 119 | 1 |
+| gte_10_points | 5,612 | 249 | 1 |
+| gte_20_points | 5,354 | 507 | 1 |
+| gte_25_points | 5,215 | 646 | 1 |
+| gte_33_points | 5,013 | 848 | 1 |
+| gte_50_points | 4,518 | 1,343 | 1 |
 
 ## Deterministic case studies
 

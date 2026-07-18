@@ -31,6 +31,18 @@ PARSER_VERSION = "zip_population_common_block_parser_v1"
 SCHEMA_VERSION = "zip_population_weighted_ambiguity_evaluation_v1"
 SNAPSHOT_ID = land.SNAPSHOT_ID
 EXPECTED_0015_SHA256 = land.EXPECTED_CANDIDATE_MIGRATION_SHA256
+EXPECTED_SOURCE_MANIFEST_SHA256 = "df3201bad66134eee6be59f53cd72e19c9d39c286fe5ce1389a1021412c9a851"
+EXPECTED_NATIONAL_INVARIANTS = {
+    "block_count": 8_132_968,
+    "source_population": 331_449_281,
+    "population_bearing_blocks": 5_769_942,
+    "zero_population_blocks": 2_363_026,
+    "assigned_zcta_population": 331_440_751,
+    "outside_zcta_population": 8_530,
+    "unassigned_district_blocks": 89,
+    "unassigned_district_population": 0,
+}
+EXPECTED_STATE_TOTALS_SHA256 = "624c188080e4a00878785d95a1d9bf2ff53f16bdd0ab06bc3824e8bad5b7ad2f"
 EXPECTED_LAND_SOURCE = {"filename": "tab20_cd11920_zcta520_natl.txt", "size_bytes": 6_195_997, "sha256": "57fad59f65af5179ddd18dcfb8f72482dc0cf04fe26e2b9b2b34c51c04405f77"}
 EXPECTED_LAND_BASELINE = {
     "raw_rows": 40_397, "accepted_rows": 39_967, "rejected_rows": 430,
@@ -60,6 +72,15 @@ def canonical_json(value: Any) -> str:
 
 def checksum(value: Any) -> str:
     return hashlib.sha256((canonical_json(value) + "\n").encode("utf-8")).hexdigest()
+
+
+def verify_approved_source_manifest(path: Path) -> str:
+    actual = retrieval.sha256_file(path)
+    if actual != EXPECTED_SOURCE_MANIFEST_SHA256:
+        raise PopulationAnalysisError(
+            f"approved source manifest exact-byte SHA-256 differs: expected {EXPECTED_SOURCE_MANIFEST_SHA256}, got {actual}"
+        )
+    return actual
 
 
 def parse_block_geoid(value: str, line_number: int) -> str:
@@ -102,6 +123,23 @@ def exact_threshold(numerator: int, denominator: int, threshold: Fraction, *, po
     return numerator * threshold.denominator >= denominator * threshold.numerator
 
 
+def majority_status(numerator: int, denominator: int) -> dict[str, bool]:
+    if denominator <= 0:
+        return {
+            "inclusive_gte_50_percent": False,
+            "strict_majority": False,
+            "exactly_half": False,
+            "no_strict_majority": True,
+        }
+    doubled = numerator * 2
+    return {
+        "inclusive_gte_50_percent": doubled >= denominator,
+        "strict_majority": doubled > denominator,
+        "exactly_half": doubled == denominator,
+        "no_strict_majority": doubled <= denominator,
+    }
+
+
 def population_rank_key(row: dict[str, Any]) -> tuple[Any, ...]:
     denominator = int(row["zcta_population"])
     population = int(row["relationship_population"])
@@ -111,9 +149,18 @@ def population_rank_key(row: dict[str, Any]) -> tuple[Any, ...]:
 
 def rank_population_rows(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     ranked = sorted((dict(row) for row in rows), key=population_rank_key)
+    if not ranked:
+        return ranked
+    zero_population = all(int(row["zcta_population"]) == 0 for row in ranked)
     previous: tuple[int, int] | None = None
     rank = 0
     for index, row in enumerate(ranked, 1):
+        row["deterministic_relationship_order"] = index
+        if zero_population:
+            row["population_rank"] = None
+            row["population_rank_tied"] = None
+            row["population_rank_status"] = "undefined_zero_population_zcta"
+            continue
         signature = (int(row["relationship_population"]), int(row["zcta_population"]))
         if signature != previous:
             rank = index
@@ -123,6 +170,7 @@ def rank_population_rows(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]
             == int(row["relationship_population"]) * int(other["zcta_population"])
             for other in ranked
         ) > 1
+        row["population_rank_status"] = "ranked_positive_population"
         previous = signature
     return ranked
 
@@ -290,11 +338,38 @@ def pl_block_rows(path: Path, abbreviation: str) -> Iterator[tuple[str, int, int
                 yield geoid, parse_population(p[5], line_number), line_number
 
 
-def join_common_blocks(raw: Path, derived: Path, batch_id: str) -> tuple[dict[tuple[str, str, str], dict[str, Any]], dict[str, Any], dict[str, Any]]:
+def merge_state_blocks(
+    population_rows: Iterable[tuple[str, int, int]],
+    zcta_rows: Iterable[tuple[str, str, int]],
+    district_rows: Iterable[tuple[str, str, int]],
+) -> Iterator[tuple[str, int, int, str, int, str, int]]:
+    z_iter = iter(zcta_rows)
+    c_iter = iter(district_rows)
+    zrow = _next_or_none(z_iter)
+    crow = _next_or_none(c_iter)
+    previous = ""
+    for block, population, pl_line in population_rows:
+        if block <= previous:
+            raise PopulationAnalysisError(f"duplicate or unsorted population block GEOID: {block}")
+        previous = block
+        if zrow is None or zrow[0] != block:
+            raise PopulationAnalysisError(f"block population cannot join exact ZCTA GEOID: {block}")
+        if crow is None or crow[0] != block:
+            raise PopulationAnalysisError(f"block population cannot join exact CD119 GEOID: {block}")
+        yield block, population, pl_line, zrow[1], zrow[2], crow[1], crow[2]
+        zrow = _next_or_none(z_iter)
+        crow = _next_or_none(c_iter)
+    if zrow is not None or crow is not None:
+        raise PopulationAnalysisError("population source does not cover every official block assignment")
+
+
+def join_common_blocks(raw: Path, derived: Path, batch_id: str) -> tuple[dict[tuple[str, str, str], dict[str, Any]], dict[str, Any], dict[str, Any], dict[str, dict[str, int]]]:
     aggregates: dict[tuple[str, str, str], dict[str, Any]] = {}
+    zcta_unassigned: dict[str, Counter[str]] = defaultdict(Counter)
     anomalies = Counter()
     totals = Counter()
     affected_population = Counter()
+    state_totals: list[dict[str, Any]] = []
     split_record: dict[str, Any] | None = None
     ledger_path = derived / "normalized_block_population_evidence.jsonl.gz"
     ledger_path.parent.mkdir(parents=True, exist_ok=True)
@@ -308,23 +383,17 @@ def join_common_blocks(raw: Path, derived: Path, batch_id: str) -> tuple[dict[tu
             state = source_import.STATE_FIPS_TO_ABBR[fips]
             z_iter = _derived_rows(derived / "zcta_by_state" / f"{fips}.txt")
             c_iter = _derived_rows(derived / "cd_by_state" / f"{fips}.txt")
-            zrow = _next_or_none(z_iter)
-            crow = _next_or_none(c_iter)
-            for block, population, pl_line in pl_block_rows(raw / f"{abbreviation}2020.pl.zip", abbreviation):
+            state_total = Counter()
+            merged = merge_state_blocks(pl_block_rows(raw / f"{abbreviation}2020.pl.zip", abbreviation), z_iter, c_iter)
+            for block, population, pl_line, zcta, zcta_line, district, cd_line in merged:
                 totals["blocks"] += 1
                 totals["source_population"] += population
                 totals["population_bearing_blocks"] += population > 0
                 totals["zero_population_blocks"] += population == 0
-                if zrow is None or zrow[0] != block:
-                    anomalies["blocks_without_zcta_record"] += 1
-                    affected_population["blocks_without_zcta_record"] += population
-                    raise PopulationAnalysisError(f"block population cannot join exact ZCTA GEOID: {block}")
-                if crow is None or crow[0] != block:
-                    anomalies["blocks_without_district_record"] += 1
-                    affected_population["blocks_without_district_record"] += population
-                    raise PopulationAnalysisError(f"block population cannot join exact CD119 GEOID: {block}")
-                zcta, zcta_line = zrow[1], zrow[2]
-                district, cd_line = crow[1], crow[2]
+                state_total["block_count"] += 1
+                state_total["population"] += population
+                state_total["population_bearing_blocks"] += population > 0
+                state_total["zero_population_blocks"] += population == 0
                 base_quality = validate_assignment(block, population, [zcta], [district])
                 quality = "unassigned_zcta" if not zcta else "unassigned_district" if district == "ZZ" else base_quality
                 if base_quality == "exact_official_assignment":
@@ -350,6 +419,8 @@ def join_common_blocks(raw: Path, derived: Path, batch_id: str) -> tuple[dict[tu
                 elif district == "ZZ":
                     anomalies["unassigned_district"] += 1
                     affected_population["unassigned_district"] += population
+                    zcta_unassigned[zcta]["block_count"] += 1
+                    zcta_unassigned[zcta]["population"] += population
                     if population:
                         raise PopulationAnalysisError(f"population-bearing block without district: {block}")
                 else:
@@ -367,10 +438,7 @@ def join_common_blocks(raw: Path, derived: Path, batch_id: str) -> tuple[dict[tu
                     row["zero_population_contributing_blocks"] += population == 0
                     row["assignment_quality_counts"][base_quality] += 1
                     totals["assigned_zcta_population"] += population
-                zrow = _next_or_none(z_iter)
-                crow = _next_or_none(c_iter)
-            if zrow is not None or crow is not None:
-                raise PopulationAnalysisError(f"population source does not cover every official block assignment in state {fips}")
+            state_totals.append({"fips": fips, "state": state, **dict(state_total)})
     finally:
         ledger.flush()
         ledger.close()
@@ -381,6 +449,12 @@ def join_common_blocks(raw: Path, derived: Path, batch_id: str) -> tuple[dict[tu
         quality_counts.update(row["assignment_quality_counts"])
         row["assignment_quality_counts"] = dict(sorted(row["assignment_quality_counts"].items()))
         row["assignment_quality"] = "exact_official_assignment" if "exact_official_assignment" in row["assignment_quality_counts"] else "exact_official_common_block"
+    state_totals = sorted(state_totals, key=lambda row: row["fips"])
+    affected_zctas = [
+        {"zcta": zcta, "block_count": values["block_count"], "population": values["population"]}
+        for zcta, values in sorted(zcta_unassigned.items()) if zcta
+    ]
+    state_totals_sha256 = checksum(state_totals)
     integrity = {
         "block_count": totals["blocks"], "source_population": totals["source_population"],
         "population_bearing_blocks": totals["population_bearing_blocks"], "zero_population_blocks": totals["zero_population_blocks"],
@@ -388,10 +462,18 @@ def join_common_blocks(raw: Path, derived: Path, batch_id: str) -> tuple[dict[tu
         "anomaly_counts": dict(sorted(anomalies.items())),
         "affected_population": dict(sorted(affected_population.items())),
         "assignment_quality_counts": dict(sorted(quality_counts.items())),
+        "state_totals": state_totals,
+        "state_totals_sha256": state_totals_sha256,
+        "unassigned_district_coverage": {
+            "affected_zcta_count": len(affected_zctas),
+            "block_count": anomalies["unassigned_district"],
+            "population": affected_population["unassigned_district"],
+            "affected_zctas_sha256": checksum(affected_zctas),
+        },
         "split_block": split_record,
     }
     block_artifact = {"path": str(ledger_path.relative_to(ROOT)).replace("\\", "/"), "row_count": totals["blocks"], "size_bytes": ledger_path.stat().st_size, "sha256": retrieval.sha256_file(ledger_path), "compression": "gzip_mtime_0"}
-    return aggregates, integrity, block_artifact
+    return aggregates, integrity, block_artifact, {zcta: dict(values) for zcta, values in zcta_unassigned.items()}
 
 
 def load_land_relationships() -> list[dict[str, Any]]:
@@ -414,7 +496,21 @@ def load_land_relationships() -> list[dict[str, Any]]:
     return rows
 
 
-def combine_relationships(land_rows: list[dict[str, Any]], aggregates: dict[tuple[str, str, str], dict[str, Any]]) -> list[dict[str, Any]]:
+def coverage_status(unassigned_block_count: int, unassigned_population: int) -> dict[str, bool]:
+    if unassigned_population:
+        raise PopulationAnalysisError("population-bearing unassigned-district block prevents exact population coverage")
+    return {
+        "population_coverage_exact": True,
+        "block_assignment_complete": unassigned_block_count == 0,
+    }
+
+
+def combine_relationships(
+    land_rows: list[dict[str, Any]],
+    aggregates: dict[tuple[str, str, str], dict[str, Any]],
+    zcta_unassigned: dict[str, dict[str, int]] | None = None,
+) -> list[dict[str, Any]]:
+    zcta_unassigned = zcta_unassigned or {}
     zcta_pop = Counter()
     for (zcta, _, _), row in aggregates.items():
         zcta_pop[zcta] += row["relationship_population"]
@@ -428,17 +524,25 @@ def combine_relationships(land_rows: list[dict[str, Any]], aggregates: dict[tupl
         pop = aggregates.get(key)
         population = int(pop["relationship_population"]) if pop else 0
         denominator = int(zcta_pop[land_row["zcta"]])
+        excluded = zcta_unassigned.get(land_row["zcta"], {})
+        excluded_blocks = int(excluded.get("block_count", 0))
+        excluded_population = int(excluded.get("population", 0))
+        coverage = coverage_status(excluded_blocks, excluded_population)
         row = {
             "zcta": land_row["zcta"], "canonical_state": land_row["canonical_source_state"],
             "source_district": land_row["source_district"],
             "source_relationship_identity": f"{land_row['source_artifact_sha256']}:{land_row['source_line_number']}",
             "relationship_population": population, "zcta_population": denominator,
             "population_share_numerator": population, "population_share_denominator": denominator,
-            "contributing_blocks": int(pop["contributing_blocks"]) if pop else 0,
-            "populated_contributing_blocks": int(pop["populated_contributing_blocks"]) if pop else 0,
-            "zero_population_contributing_blocks": int(pop["zero_population_contributing_blocks"]) if pop else 0,
-            "excluded_block_count": 0, "excluded_population": 0,
-            "assignment_quality": pop["assignment_quality"] if pop else "exact_official_common_block",
+            "contributing_common_blocks": int(pop["contributing_blocks"]) if pop else 0,
+            "contributing_populated_blocks": int(pop["populated_contributing_blocks"]) if pop else 0,
+            "contributing_zero_population_blocks": int(pop["zero_population_contributing_blocks"]) if pop else 0,
+            "relationship_excluded_block_count": 0,
+            "relationship_excluded_population": 0,
+            "zcta_unassigned_district_block_count": excluded_blocks,
+            "zcta_unassigned_district_population": excluded_population,
+            **coverage,
+            "assignment_quality": pop["assignment_quality"] if pop else "no_common_block_relationship",
             "land_share_numerator": int(land_row["arealand_part"]),
             "land_share_denominator": int(land_row["arealand_zcta5_20"]),
             "water_only_overlap": bool(land_row["water_only_overlap"]),
@@ -456,7 +560,7 @@ def combine_relationships(land_rows: list[dict[str, Any]], aggregates: dict[tupl
         land_ranks = {r["source_relationship_identity"]: i for i, r in enumerate(land_ranked, 1)}
         for row in pop_ranked:
             row["land_rank"] = land_ranks[row["source_relationship_identity"]]
-            row["population_minus_land_rank_difference"] = row["population_rank"] - row["land_rank"]
+            row["population_minus_land_rank_difference"] = None if row["population_rank"] is None else row["population_rank"] - row["land_rank"]
             if row["zcta_population"] and row["land_share_denominator"]:
                 difference = Fraction(row["relationship_population"], row["zcta_population"]) - Fraction(row["land_share_numerator"], row["land_share_denominator"])
                 row["population_share_minus_land_share"] = {"numerator": difference.numerator, "denominator": difference.denominator}
@@ -506,30 +610,44 @@ def compare_land_population(rows: list[dict[str, Any]]) -> dict[str, Any]:
     concentration = Counter()
     meaningful = Counter()
     case_studies: dict[str, Any] = {}
+    counts["all_accepted_zctas"] = len(by_zcta)
     for zcta, items in sorted(by_zcta.items()):
+        counts["positive_land_zero_population"] += sum(x["land_share_numerator"] > 0 and x["relationship_population"] == 0 for x in items)
+        counts["water_only_nonzero_population"] += sum(x["water_only_overlap"] and x["relationship_population"] > 0 for x in items)
+        concentration[str(len(items))] += 1
+        if not items[0]["zcta_population"]:
+            counts["zero_population_zctas_excluded_from_ranking"] += 1
+            counts["undefined_zero_population_cases"] += 1
+            continue
+        counts["positive_population_zctas"] += 1
+        counts["positive_population_ambiguous_zctas"] += len(items) > 1
         pop = sorted(items, key=population_rank_key)
         land_order = sorted(items, key=lambda r: (-Fraction(r["land_share_numerator"], r["land_share_denominator"]), r["canonical_state"], r["source_district"], r["source_relationship_identity"]))
         top_pop_tied = len(pop) > 1 and pop[0]["relationship_population"] * pop[1]["zcta_population"] == pop[1]["relationship_population"] * pop[0]["zcta_population"]
         top_land_tied = len(land_order) > 1 and land_order[0]["land_share_numerator"] * land_order[1]["land_share_denominator"] == land_order[1]["land_share_numerator"] * land_order[0]["land_share_denominator"]
         counts["tied_population_winner"] += top_pop_tied
         counts["tied_land_winner"] += top_land_tied
+        counts["positive_population_tied_top"] += top_pop_tied
         pop_pair = (pop[0]["canonical_state"], pop[0]["source_district"])
         land_pair = (land_order[0]["canonical_state"], land_order[0]["source_district"])
-        if pop_pair == land_pair:
-            counts["top_agrees"] += 1
-            counts["ambiguous_top_agrees"] += len(items) > 1
+        if top_pop_tied:
+            counts["positive_population_nonunique_top"] += 1
+        elif pop_pair == land_pair:
+            counts["positive_population_unique_top_agreement"] += 1
+            counts["positive_population_ambiguous_unique_top_agreement"] += len(items) > 1
         else:
-            counts["top_disagrees"] += 1
-            counts["ambiguous_top_disagrees"] += len(items) > 1
+            counts["positive_population_unique_top_disagreement"] += 1
+            counts["positive_population_ambiguous_unique_top_disagreement"] += len(items) > 1
             if len(examples["top_disagrees"]) < 10: examples["top_disagrees"].append({"zcta": zcta, "population_top": "-".join(pop_pair), "land_top": "-".join(land_pair)})
             case_studies.setdefault("top_population_differs_from_top_land", examples["top_disagrees"][-1])
-        pop_majority = pop[0]["relationship_population"] * 2 >= pop[0]["zcta_population"] if pop[0]["zcta_population"] else False
-        land_majority = land_order[0]["land_share_numerator"] * 2 >= land_order[0]["land_share_denominator"]
-        counts["population_majority_land_not"] += pop_majority and not land_majority
-        counts["land_majority_population_not"] += land_majority and not pop_majority
-        counts["positive_land_zero_population"] += sum(x["land_share_numerator"] > 0 and x["relationship_population"] == 0 for x in items)
-        counts["water_only_nonzero_population"] += sum(x["water_only_overlap"] and x["relationship_population"] > 0 for x in items)
-        concentration[str(len(items))] += 1
+        pop_majority = majority_status(pop[0]["relationship_population"], pop[0]["zcta_population"])
+        land_majority = majority_status(land_order[0]["land_share_numerator"], land_order[0]["land_share_denominator"])
+        counts["strict_population_majority_land_not"] += pop_majority["strict_majority"] and not land_majority["strict_majority"]
+        counts["strict_land_majority_population_not"] += land_majority["strict_majority"] and not pop_majority["strict_majority"]
+        counts["exactly_half_population"] += pop_majority["exactly_half"]
+        counts["exactly_half_land"] += land_majority["exactly_half"]
+        counts["no_strict_population_majority"] += pop_majority["no_strict_majority"]
+        counts["no_strict_land_majority"] += land_majority["no_strict_majority"]
         for item in items:
             if item["zcta_population"] and item["land_share_denominator"]:
                 pop_share = Fraction(item["relationship_population"], item["zcta_population"])
@@ -557,7 +675,7 @@ def compare_land_population(rows: list[dict[str, Any]]) -> dict[str, Any]:
                 case_studies.setdefault("population_weighting_resolves_land_ambiguity", {"zcta": zcta, "population_top": "-".join(pop_pair), "population_share": {"numerator": top_share.numerator, "denominator": top_share.denominator}, "land_top": "-".join(land_pair), "land_top_share": {"numerator": top_land_share.numerator, "denominator": top_land_share.denominator}})
             if top_share < Fraction(3, 5):
                 case_studies.setdefault("population_ambiguity_remains_severe", {"zcta": zcta, "top_mapping": "-".join(pop_pair), "top_share": {"numerator": top_share.numerator, "denominator": top_share.denominator}, "margin": {"numerator": margin.numerator, "denominator": margin.denominator}})
-            if top_share < Fraction(1, 2):
+            if top_share <= Fraction(1, 2):
                 case_studies.setdefault("no_population_majority", {"zcta": zcta, "top_mapping": "-".join(pop_pair), "top_share": {"numerator": top_share.numerator, "denominator": top_share.denominator}})
             if margin <= Fraction(1, 100):
                 case_studies.setdefault("nearly_tied_population_shares", {"zcta": zcta, "top_mapping": "-".join(pop_pair), "second_mapping": f"{pop[1]['canonical_state']}-{pop[1]['source_district']}", "margin": {"numerator": margin.numerator, "denominator": margin.denominator}})
@@ -571,7 +689,8 @@ def compare_land_population(rows: list[dict[str, Any]]) -> dict[str, Any]:
         raise PopulationAnalysisError("water-only relationship has nonzero assigned population")
     dominance = {}
     margin_results = {}
-    ambiguous_groups = [items for items in by_zcta.values() if len(items) > 1]
+    all_ambiguous_groups = [items for items in by_zcta.values() if len(items) > 1]
+    ambiguous_groups = [items for items in all_ambiguous_groups if items[0]["zcta_population"] > 0]
     for threshold in DOMINANCE_THRESHOLDS:
         qualifying = [sorted(group, key=population_rank_key) for group in ambiguous_groups]
         qualifying = [items for items in qualifying if items[0]["zcta_population"] and exact_threshold(items[0]["relationship_population"], items[0]["zcta_population"], threshold)]
@@ -581,15 +700,35 @@ def compare_land_population(rows: list[dict[str, Any]]) -> dict[str, Any]:
             "ties": sum(len(items) > 1 and items[0]["relationship_population"] * items[1]["zcta_population"] == items[1]["relationship_population"] * items[0]["zcta_population"] for items in qualifying),
             "vacancies": sum(any(x.get("current_seat_classification") == "officially_vacant" for x in items) for items in qualifying),
             "dc_candidate_normalization_cases": sum(any(x.get("current_seat_classification") == "candidate_dc_normalization" for x in items) for items in qualifying),
-            "mappings_without_exact_population_coverage": 0,
+            "mappings_without_exact_population_coverage": sum(not item["population_coverage_exact"] for items in qualifying for item in items),
+            "mappings_without_complete_block_assignment": sum(not item["block_assignment_complete"] for items in qualifying for item in items),
             "top_district_changed_from_land": sum((items[0]["canonical_state"], items[0]["source_district"]) != (sorted(items, key=lambda r: (-Fraction(r["land_share_numerator"], r["land_share_denominator"]), r["canonical_state"], r["source_district"]))[0]["canonical_state"], sorted(items, key=lambda r: (-Fraction(r["land_share_numerator"], r["land_share_denominator"]), r["canonical_state"], r["source_district"]))[0]["source_district"]) for items in qualifying),
         }
         dominance[f"gte_{threshold.numerator * 100 // threshold.denominator}_percent"]["top_district_agrees_with_land"] = len(qualifying) - dominance[f"gte_{threshold.numerator * 100 // threshold.denominator}_percent"]["top_district_changed_from_land"]
     for threshold in MARGIN_THRESHOLDS:
         qualifying_count = sum(value >= threshold for value in margins)
-        margin_results[f"gte_{threshold.numerator * 100 // threshold.denominator}_points"] = {"qualifying_ambiguous_zctas": qualifying_count, "nonqualifying_ambiguous_zctas": len(ambiguous_groups) - qualifying_count, "undefined_zero_population_zctas": len(ambiguous_groups) - len(margins)}
+        margin_results[f"gte_{threshold.numerator * 100 // threshold.denominator}_points"] = {"qualifying_ambiguous_zctas": qualifying_count, "nonqualifying_positive_population_ambiguous_zctas": len(ambiguous_groups) - qualifying_count, "undefined_zero_population_zctas": len(all_ambiguous_groups) - len(ambiguous_groups)}
     difference_distribution = {f"gte_{points}_points": sum(value >= Fraction(points, 100) for value in absolute_differences) for points in (1, 5, 10, 20, 25, 50)}
-    return {"counts": dict(sorted(counts.items())), "ambiguous_zctas": len(ambiguous_groups), "dominance": dominance, "margins": margin_results, "meaningful_population_for_land_slivers_lte_0_01_percent": dict(sorted(meaningful.items())), "absolute_population_vs_land_share_difference": difference_distribution, "population_concentration_by_relationship_count": dict(sorted(concentration.items(), key=lambda x: int(x[0]))), "bounded_examples": dict(examples), "case_studies": case_studies}
+    return {"counts": dict(sorted(counts.items())), "all_ambiguous_zctas": len(all_ambiguous_groups), "positive_population_ambiguous_zctas": len(ambiguous_groups), "dominance": dominance, "margins": margin_results, "meaningful_population_for_land_slivers_lte_0_01_percent": dict(sorted(meaningful.items())), "absolute_population_vs_land_share_difference": difference_distribution, "population_concentration_by_relationship_count": dict(sorted(concentration.items(), key=lambda x: int(x[0]))), "bounded_examples": dict(examples), "case_studies": case_studies}
+
+
+def validate_national_invariants(integrity: dict[str, Any]) -> None:
+    actual = {
+        "block_count": integrity["block_count"],
+        "source_population": integrity["source_population"],
+        "population_bearing_blocks": integrity["population_bearing_blocks"],
+        "zero_population_blocks": integrity["zero_population_blocks"],
+        "assigned_zcta_population": integrity["assigned_zcta_population"],
+        "outside_zcta_population": integrity["source_population"] - integrity["assigned_zcta_population"],
+        "unassigned_district_blocks": integrity["anomaly_counts"].get("unassigned_district", 0),
+        "unassigned_district_population": integrity["affected_population"].get("unassigned_district", 0),
+    }
+    if actual != EXPECTED_NATIONAL_INVARIANTS:
+        raise PopulationAnalysisError(f"approved national parser invariants differ: {actual}")
+    if integrity["state_totals_sha256"] != EXPECTED_STATE_TOTALS_SHA256:
+        raise PopulationAnalysisError(
+            f"approved state totals checksum differs: expected {EXPECTED_STATE_TOTALS_SHA256}, got {integrity['state_totals_sha256']}"
+        )
 
 
 def population_reconciliation(rows: list[dict[str, Any]], integrity: dict[str, Any]) -> dict[str, Any]:
@@ -607,6 +746,17 @@ def population_reconciliation(rows: list[dict[str, Any]], integrity: dict[str, A
         raise PopulationAnalysisError("aggregate population does not reconcile to normalized blocks")
     district_rows = [{"mapping": key, "population": value} for key, value in sorted(district_totals.items())]
     zcta_rows = [{"zcta": key, "population": value} for key, value in sorted(zcta_totals.items())]
+    no_common = [
+        {"zcta": row["zcta"], "state": row["canonical_state"], "district": row["source_district"], "identity": row["source_relationship_identity"]}
+        for row in rows if row["contributing_common_blocks"] == 0
+    ]
+    incomplete_zctas = sorted({row["zcta"] for row in rows if not row["block_assignment_complete"]})
+    zcta_excluded_blocks = {
+        zcta: next(row["zcta_unassigned_district_block_count"] for row in rows if row["zcta"] == zcta)
+        for zcta in incomplete_zctas
+    }
+    if sum(zcta_excluded_blocks.values()) != integrity["unassigned_district_coverage"]["block_count"]:
+        raise PopulationAnalysisError("per-ZCTA unassigned-district block counts do not reconcile nationally")
     return {
         "source_population": integrity["source_population"], "assigned_zcta_population": integrity["assigned_zcta_population"],
         "unassigned_zcta_population": integrity["source_population"] - integrity["assigned_zcta_population"],
@@ -615,6 +765,15 @@ def population_reconciliation(rows: list[dict[str, Any]], integrity: dict[str, A
         "zcta_count": len(zcta_rows), "zcta_totals_sha256": checksum(zcta_rows),
         "zero_population_zctas": sum(value == 0 for value in zcta_totals.values()),
         "zero_population_relationships": sum(row["relationship_population"] == 0 for row in rows),
+        "relationships_with_common_blocks": sum(row["contributing_common_blocks"] > 0 for row in rows),
+        "relationships_with_zero_common_blocks": len(no_common),
+        "zero_common_block_relationships_sha256": checksum(no_common),
+        "relationships_with_exact_population_coverage": sum(row["population_coverage_exact"] for row in rows),
+        "relationships_without_exact_population_coverage": sum(not row["population_coverage_exact"] for row in rows),
+        "relationships_without_complete_block_assignment": sum(not row["block_assignment_complete"] for row in rows),
+        "zctas_without_complete_block_assignment": len(incomplete_zctas),
+        "zctas_without_complete_block_assignment_sha256": checksum(incomplete_zctas),
+        "per_zcta_unassigned_district_block_count": zcta_excluded_blocks,
         "full_relationship_population_checksum": checksum([{"zcta": r["zcta"], "state": r["canonical_state"], "district": r["source_district"], "population": r["relationship_population"], "denominator": r["zcta_population"]} for r in rows]),
     }
 
@@ -638,7 +797,8 @@ def markdown(report: dict[str, Any]) -> str:
         "## Result", "",
         "Official Census sources support an exact common-2020-block population allocation to the Census Bureau's whole-block CD119 tabulation plan. Population weighting changes presentation ordering in a bounded minority of ZCTAs and sharply distinguishes zero/low-population relationships, but it does not justify representative auto-selection.", "",
         "## Official sources", "",
-        f"The committed manifest pins all 51 PL 94-171 state/DC artifacts individually. Batch: `{report['source_manifest']['batch_id']}`; manifest SHA-256: `{report['source_manifest']['manifest_sha256']}`.", "",
+        f"The committed manifest pins all 51 PL 94-171 state/DC artifacts individually. Batch: `{report['source_manifest']['batch_id']}`; completion: `{report['source_manifest']['batch_completed_at']}`; manifest SHA-256: `{report['source_manifest']['manifest_sha256']}`.",
+        f"Provenance modes: `{canonical_json(report['source_manifest']['retrieval_mode_counts'])}`. Local resume timestamps describe validation, not retrieval.", "",
     ]
     for item in report["source_manifest"]["artifacts"]:
         if item["role"] != "block_population":
@@ -655,9 +815,12 @@ def markdown(report: dict[str, Any]) -> str:
         f"- Population assigned to ZCTAs and reconciled through relationship/ZCTA aggregates: `{reconciliation['assigned_zcta_population']:,}`.",
         f"- Official blocks without a ZCTA contain `{reconciliation['unassigned_zcta_population']:,}` people across `{integrity['anomaly_counts']['unassigned_zcta']:,}` blocks.",
         f"- Unassigned-district blocks: `{integrity['anomaly_counts']['unassigned_district']:,}`; affected population: `{integrity['affected_population']['unassigned_district']:,}`.",
+        f"- Unassigned-district blocks affect `{integrity['unassigned_district_coverage']['affected_zcta_count']:,}` ZCTAs; affected-ZCTA checksum: `{integrity['unassigned_district_coverage']['affected_zctas_sha256']}`. Their zero population preserves exact population coverage, but block assignment is incomplete.",
         f"- Aggregate rows: `{report['zcta_district_population_row_count']:,}`; ZCTAs: `{reconciliation['zcta_count']:,}`; district pairs: `{reconciliation['district_count']:,}`.",
+        f"- Relationships with common blocks: `{reconciliation['relationships_with_common_blocks']:,}`; with zero common blocks: `{reconciliation['relationships_with_zero_common_blocks']:,}` (checksum `{reconciliation['zero_common_block_relationships_sha256']}`).",
+        f"- Exact-population-coverage relationships: `{reconciliation['relationships_with_exact_population_coverage']:,}`; relationships/ZCTAs with incomplete block assignment: `{reconciliation['relationships_without_complete_block_assignment']:,}` / `{reconciliation['zctas_without_complete_block_assignment']:,}`.",
         f"- Zero-population ZCTAs: `{reconciliation['zero_population_zctas']:,}`; zero-population relationships: `{reconciliation['zero_population_relationships']:,}`.",
-        f"- ZCTA totals checksum: `{reconciliation['zcta_totals_sha256']}`; district totals checksum: `{reconciliation['district_totals_sha256']}`.", "",
+        f"- ZCTA totals checksum: `{reconciliation['zcta_totals_sha256']}`; district totals checksum: `{reconciliation['district_totals_sha256']}`; state parser totals checksum: `{integrity['state_totals_sha256']}`.", "",
         "## Population policy grid", "",
         "| Policy | Relationships | ZCTAs | Ambiguous | Single | No survivor | Auto-select |", "|---|---:|---:|---:|---:|---:|---:|",
     ])
@@ -665,9 +828,11 @@ def markdown(report: dict[str, Any]) -> str:
         lines.append(f"| {row['policy_id']} | {row['retained_relationships']:,} | {row['retained_zctas']:,} | {row['total_ambiguous_zctas']:,} | {row['exactly_one_district_zctas']:,} | {row['no_survivor_zctas']:,} | 0 |")
     tiny = comparison["meaningful_population_for_land_slivers_lte_0_01_percent"]
     lines.extend(["", "## Population versus land", "",
-        f"- National top ranking agrees for `{counts['top_agrees']:,}` ZCTAs and differs for `{counts['top_disagrees']:,}`; among 5,862 ambiguous ZCTAs, agreement is `{counts['ambiguous_top_agrees']:,}` and disagreement is `{counts['ambiguous_top_disagrees']:,}`.",
-        f"- Tied population winners: `{counts['tied_population_winner']:,}`; tied land winners: `{counts['tied_land_winner']:,}`.",
-        f"- Population majority exists while land majority does not: `{counts['population_majority_land_not']:,}`; land majority exists while population majority does not: `{counts['land_majority_population_not']:,}`.",
+        f"- Accepted ZCTAs: `{counts['all_accepted_zctas']:,}`; positive-population: `{counts['positive_population_zctas']:,}`; zero-population excluded from ranking: `{counts['zero_population_zctas_excluded_from_ranking']:,}`.",
+        f"- Positive-population unique top agrees for `{counts['positive_population_unique_top_agreement']:,}` ZCTAs and differs for `{counts['positive_population_unique_top_disagreement']:,}`; tied population tops: `{counts['positive_population_tied_top']:,}`.",
+        f"- Positive-population ambiguous ZCTAs: `{counts['positive_population_ambiguous_zctas']:,}`; unique-top agreement/disagreement within them: `{counts['positive_population_ambiguous_unique_top_agreement']:,}` / `{counts['positive_population_ambiguous_unique_top_disagreement']:,}`.",
+        f"- Strict population majority exists while strict land majority does not: `{counts['strict_population_majority_land_not']:,}`; strict land majority exists while strict population majority does not: `{counts['strict_land_majority_population_not']:,}`.",
+        f"- Exact-half population/land cases: `{counts['exactly_half_population']:,}` / `{counts['exactly_half_land']:,}`. The separate `>=50%` sensitivity row remains inclusive.",
         f"- Positive-land relationships with zero population: `{counts['positive_land_zero_population']:,}`; water-only relationships with nonzero population: `{counts['water_only_nonzero_population']:,}`.",
         f"- Tiny positive-land relationships at or below 0.01% include `{tiny.get('gte_1_person', 0):,}` with at least one person and `{tiny.get('gte_10_people', 0):,}` with at least ten people.", "",
         "## Dominance and margins", "",
@@ -677,7 +842,7 @@ def markdown(report: dict[str, Any]) -> str:
         lines.append(f"| {label} | {item['qualifying_zctas']:,} | {item['nonqualifying_ambiguous_zctas']:,} | {item['top_district_changed_from_land']:,} |")
     lines.extend(["", "| Top-minus-second margin | Qualifying ambiguous ZCTAs | Nonqualifying | Zero-population undefined |", "|---|---:|---:|---:|"])
     for label, item in comparison["margins"].items():
-        lines.append(f"| {label} | {item['qualifying_ambiguous_zctas']:,} | {item['nonqualifying_ambiguous_zctas']:,} | {item['undefined_zero_population_zctas']:,} |")
+        lines.append(f"| {label} | {item['qualifying_ambiguous_zctas']:,} | {item['nonqualifying_positive_population_ambiguous_zctas']:,} | {item['undefined_zero_population_zctas']:,} |")
     lines.extend(["", "## Deterministic case studies", ""])
     for label, value in comparison["case_studies"].items():
         lines.append(f"- `{label}`: `{canonical_json(value)}`")
@@ -715,6 +880,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+    manifest_sha256 = verify_approved_source_manifest(args.manifest)
     replay = retrieval.replay_manifest(args.manifest, args.batch_root)
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
     root = args.batch_root or retrieval.LOCAL_ROOT / manifest["batch_id"]
@@ -723,8 +889,9 @@ def main() -> int:
     land_rows = load_land_relationships()
     cd_split = split_cd119(raw / "cd119.zip", derived)
     zcta_split = split_zcta_blocks(raw / "tab20_zcta520_tabblock20_natl.txt", derived)
-    aggregates, integrity, block_artifact = join_common_blocks(raw, derived, manifest["batch_id"])
-    rows = combine_relationships(land_rows, aggregates)
+    aggregates, integrity, block_artifact, zcta_unassigned = join_common_blocks(raw, derived, manifest["batch_id"])
+    validate_national_invariants(integrity)
+    rows = combine_relationships(land_rows, aggregates, zcta_unassigned)
     seat_input = [dict(row, canonical_source_state=row["canonical_state"]) for row in rows]
     seat_reconciliation, seat_map = land.reconcile_seats(seat_input, seats)
     for row in rows:
@@ -739,8 +906,15 @@ def main() -> int:
         raise PopulationAnalysisError("production read-only pre/post state differs")
     report = {
         "schema_version": SCHEMA_VERSION, "parser_version": PARSER_VERSION,
-        "analysis_id": f"zip-population-weighting-v1-{manifest['artifacts'][0]['sha256'][:8]}",
-        "source_manifest": {"batch_id": manifest["batch_id"], "replay": replay, "manifest_sha256": retrieval.sha256_file(args.manifest), "artifacts": manifest["artifacts"]},
+        "analysis_id": f"zip-population-weighting-v1-{manifest_sha256[:12]}",
+        "source_manifest": {
+            "batch_id": manifest["batch_id"],
+            "batch_completed_at": manifest["batch_completed_at"],
+            "replay": replay,
+            "manifest_sha256": manifest_sha256,
+            "retrieval_mode_counts": dict(sorted(Counter(item["retrieval_mode"] for item in manifest["artifacts"]).items())),
+            "artifacts": manifest["artifacts"],
+        },
         "compatibility": {"compatible": True, "method": "method_a_exact_common_block_assignment", "population_vintage": "2020 Census", "zcta_vintage": "2020", "block_vintage": "2020 Census tabulation block", "district_vintage": "119th Congress whole-block tabulation plan for 2024 election cycle", "spatial_apportionment_used": False},
         "source_split_results": {"cd119": cd_split, "zcta": zcta_split},
         "block_integrity": integrity,
@@ -751,13 +925,13 @@ def main() -> int:
         "current_seat_reconciliation": seat_reconciliation,
         "local_artifacts": [block_artifact, relationship_artifact],
         "candidate_migration": {"0015_sha256": EXPECTED_0015_SHA256, "0015_modified": False, "0015_applied": False, "0016_created": False, "decision": "defer_schema_until_independent_review; prefer aggregate evidence over full block ledger"},
-        "product_use": {"preserve_possible_mappings": True, "population_rank_for_presentation": True, "hide_zero_population_by_default": "potentially_after_product_decision", "automatic_representative_selection": False, "production_auto_select_eligible_count": 0, "full_address_lookup": "still required for address-resolved representative selection"},
+        "product_use": {"preserve_possible_mappings": True, "population_rank_for_positive_population_presentation": True, "zero_population_rank_status": "undefined_zero_population_zcta", "hide_zero_population_by_default": "potentially_after_product_decision", "automatic_representative_selection": False, "production_auto_select_eligible_count": 0, "full_address_lookup": "still required for address-resolved representative selection"},
         "production_precheck": precheck, "production_postcheck": postcheck,
         "safety": {"production_write_performed": False, "runtime_mutation_performed": False, "migration_applied": False, "production_auto_select_eligible_count": 0},
     }
     args.output.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     args.markdown_output.write_text(markdown(report), encoding="utf-8")
-    print(json.dumps({"output": str(args.output), "relationships": len(rows), "population": integrity["source_population"], "top_disagrees": comparison["counts"].get("top_disagrees", 0)}))
+    print(json.dumps({"output": str(args.output), "relationships": len(rows), "population": integrity["source_population"], "positive_population_unique_top_disagreements": comparison["counts"].get("positive_population_unique_top_disagreement", 0)}))
     return 0
 
 
