@@ -1,0 +1,152 @@
+{
+  "schema_version": "legislative_interpretation_quality_rubric_v1",
+  "dimensions": [
+    {
+      "name": "factual_accuracy",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    },
+    {
+      "name": "procedural_accuracy",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    },
+    {
+      "name": "policy_mechanism_specificity",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    },
+    {
+      "name": "practical_effect_clarity",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    },
+    {
+      "name": "affected_entity_specificity",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    },
+    {
+      "name": "member_vote_meaning",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    },
+    {
+      "name": "credible_argument_framing",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    },
+    {
+      "name": "outcome_and_later_status_clarity",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    },
+    {
+      "name": "source_traceability",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    },
+    {
+      "name": "calibration_and_non_overclaiming",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    },
+    {
+      "name": "plain_language_comprehension",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    },
+    {
+      "name": "distinctiveness_from_title_or_summary",
+      "range": [
+        0,
+        4
+      ],
+      "anchor_0": "missing, materially wrong, or unsupported",
+      "anchor_2": "partly useful but generic, incomplete, or weakly traced",
+      "anchor_4": "specific, accurate, plain-language, and claim-traceable"
+    }
+  ],
+  "maximum_score": 48,
+  "fatal_defects": [
+    "yea_nay_reversal",
+    "procedural_final_passage_confusion",
+    "false_enactment_claim",
+    "invented_effect",
+    "unsupported_affected_group",
+    "motive_attribution",
+    "advocacy_as_neutral_fact",
+    "insufficient_issue_pattern_evidence",
+    "title_restatement_as_practical_explanation",
+    "unmapped_material_claim"
+  ],
+  "tiers": {
+    "unacceptable": "fatal defect or score below 24",
+    "generic_but_accurate": "24-32",
+    "useful": "33-39",
+    "strong": "40-44",
+    "exceptional": "45-48"
+  },
+  "threshold_status": "benchmark hypothesis; not an approved production threshold",
+  "strong_comprehension_gate": [
+    "What was Congress deciding?",
+    "What would have changed?",
+    "What did this member's vote mean?"
+  ],
+  "human_review_override": "Automated scoring is diagnostic and never replaces editorial judgment."
+}
