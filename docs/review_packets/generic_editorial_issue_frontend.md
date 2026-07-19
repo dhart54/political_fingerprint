@@ -9,7 +9,8 @@ The staged Foushee Economy & Taxes experience now uses a generic presentation ad
 - Real route: `frontend/app/page.js` -> `PositionByIssue` -> `EvidencePanel`.
 - Existing evidence source: `/legislators/{legislatorId}/positions/{domain}/evidence` through `fetchPositionEvidence`.
 - Selector/adapter: `frontend/lib/editorialIssueExperience.mjs`.
-- Registry data: `frontend/lib/editorialIssueSlices.mjs`.
+- Production registry: `frontend/lib/editorialIssueProductionSlices.mjs` (empty at this milestone).
+- Review registry: `frontend/lib/editorialIssueReviewSlices.mjs`, passed explicitly by the review harness.
 - Generic renderer: `frontend/components/EditorialIssueExperience.js`.
 - Review harness: `/golden-render-fixture`, which passes explicit review mode to the same `PositionByIssue` path.
 - Fallback: unchanged basic `IssueEvidenceSummary` and `RepresentativeVotesSection` path when selection returns `null`.
@@ -21,7 +22,8 @@ The view model carries supplied identity, synthesis, indicators, optional contex
 - Pending Foushee slice + review mode: rich renderer, with an `Editorial review preview - not published` label.
 - Pending Foushee slice + production mode: selector returns `null`; basic experience remains.
 - No/mismatched/incomplete slice: selector returns `null`.
-- Synthetic `human_approved` + `gold_benchmark` + explicit production eligibility: rich renderer in a production-mode unit test.
+- Synthetic registry `human_approved` + `gold_benchmark` + explicit production eligibility, with source and included records approved: rich renderer in a production-mode unit test.
+- Any registry/source mismatch, missing top-level source approval, or pending included record: selector returns `null` in production.
 
 No current candidate status changed. No database, API, persistence, source mapping, legislative claim, vote interpretation, episode count, alignment, or readiness semantics changed.
 
@@ -29,16 +31,18 @@ No current candidate status changed. No database, API, persistence, source mappi
 
 The review-only fixture uses fictional Jordan Example / Synthetic Energy Choices data. It has four records rather than nine, two policy episodes, mixed Yes/No actions, one Not Voting row, one context-only row, variable source groups with a duplicate URL, an omitted opponent argument, an omitted fact, and no Voting context or How to read panel. It makes no real political claim and is unavailable as ordinary production content.
 
+The pre-merge correction also proves that two records can share a measure while carrying distinct explicit episode IDs, and that a record without an explicit episode identity adapts to `null`. The additional reviewed-vote section is absent when all evidence is covered and remains dynamically counted when uncovered rows exist.
+
 ## Validation
 
 - Focused backend/content/interpretation tests: 52 passed.
-- Frontend Node tests: 91 passed.
-- Responsive Playwright suite: 8 passed across 1440, 1024, 768, and 390 pixel widths, including the production-mode pending-slice fallback.
+- Frontend Node tests: 93 passed.
+- Responsive Playwright suite: 9 passed across 1440, 1024, 768, and 390 pixel widths, including the production-mode pending-slice fallback and empty/additional list cases.
 - Deterministic staged-content generator `--check`: passed.
 - ESLint: zero errors; eight pre-existing React hook warnings.
 - Production Next.js build and type validation: passed.
 - `git diff --check`: passed before final publication.
-- Generic selector/adapter/renderer search: no Foushee ID/name, Economy label, current roll, or fixed six/four count references. Existing Foushee-specific basic-fallback copy remains untouched outside the generic path.
+- Generic selector/adapter/renderer search: no Foushee ID/name, Economy label, current roll, fixed nine-record copy, or fixed six/four count references. The production selector imports only the empty production registry; only the explicit review registry and fixture import the pending Foushee bundle.
 
 The first sandboxed pytest attempt was invalidated by Windows temp-directory permissions; the identical bounded suite passed outside the sandbox.
 

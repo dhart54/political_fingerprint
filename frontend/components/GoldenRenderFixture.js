@@ -19,6 +19,7 @@ import {
   editorialGoldLegislator,
 } from "../lib/editorialGoldRenderFixture.mjs";
 import { EDITORIAL_EXPERIENCE_MODE } from "../lib/editorialIssueExperience.mjs";
+import { reviewEditorialIssueSlices } from "../lib/editorialIssueReviewSlices.mjs";
 import {
   syntheticEditorialCandidate,
   syntheticEditorialIssueFixtureData,
@@ -67,10 +68,11 @@ export default function GoldenRenderFixture() {
               Valerie P. Foushee — Economy &amp; Taxes
             </h2>
             <p className="mt-1 text-sm leading-6 text-stone-600">
-              Episode-aware issue synthesis and a focused nine-record review.
+              Episode-aware issue synthesis and a focused record review.
             </p>
           </div>
           <PositionByIssue
+            editorialCandidates={reviewEditorialIssueSlices}
             editorialMode={EDITORIAL_EXPERIENCE_MODE.review}
             evidenceRequest={editorialGoldRequest}
             fixtureData={editorialGoldIssueFixtureData}

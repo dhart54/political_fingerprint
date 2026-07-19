@@ -12,7 +12,7 @@ The view model supports:
 - supplied synthesis, indicators, patterns, voting context, reading guidance, and evidence-strength wording;
 - variable vote/context record counts with optional stage, date, lifecycle, practical-choice, change, impact, argument, context, and source fields;
 - explicit `substantive`, `not_voting`, and `context_only` inclusion classes;
-- grouped, URL/stable-ID-deduplicated official sources without internal claim or source IDs.
+- grouped official sources with valid HTTP(S) URLs, independently deduplicated by stable ID and canonical URL, without internal claim or source IDs.
 
 Optional fields are omitted rather than replaced with invented content. Missing panels, facts, arguments, context, or source groups must not leave empty cards or headings.
 
@@ -30,7 +30,8 @@ The fallback is intentionally temporary while editorial coverage is sparse. Do n
 Publication gates are deliberately separate:
 
 - Explicit review mode may render pending content on the server-gated golden-render route and labels it as unpublished review content.
-- Production mode requires `human_approved`, `gold_benchmark`, and a separate explicit `productionEligible: true` flag.
+- Production mode reads only `frontend/lib/editorialIssueProductionSlices.mjs`; pending bundles live in the separate review registry and are passed explicitly by the review fixture.
+- Production mode requires registry `human_approved`, `gold_benchmark`, and a separate explicit `productionEligible: true` flag, plus source-level `human_approved` and `human_approved` on every included record where that field exists.
 - `human_approved` alone is not public-production authorization.
 - Pending content may exist on `main` while remaining ineligible for production representative pages.
 
@@ -39,8 +40,8 @@ The golden-render route is unlinked and enabled only by `ENABLE_GOLDEN_RENDER_FI
 ## Adding a future slice
 
 1. Complete the source-grounded editorial workflow without changing frontend semantics.
-2. Add the static source bundle and identity/synthesis/publication metadata to the editorial slice registry.
-3. Keep it pending and production-ineligible while review is incomplete.
+2. Add the static source bundle and identity/synthesis/publication metadata to the review registry.
+3. Keep it pending and production-ineligible while review is incomplete; promotion to the production registry is a separate publication action.
 4. Validate matching, optional fields, non-counting classes, source deduplication, fallback, accessibility, and responsive behavior.
 5. Promote human approval, benchmark status, and public-production eligibility only through their separate authorized governance decisions.
 

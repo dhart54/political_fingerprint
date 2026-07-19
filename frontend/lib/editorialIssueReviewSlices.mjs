@@ -1,6 +1,6 @@
 import { valerieFousheeEconomyEditorialGold } from "./valerieFousheeEconomyEditorialGold.mjs";
 
-export const editorialIssueSlices = Object.freeze([
+export const reviewEditorialIssueSlices = Object.freeze([
   Object.freeze({
     source: valerieFousheeEconomyEditorialGold,
     identity: Object.freeze({

@@ -12,8 +12,8 @@ const domain = "ENVIRONMENT_ENERGY";
 const congress = 120;
 
 const interpretations = [
-  interpretation({ roll: 41, action: "Yes", position: "yea", headline: "Supported a fictional grid-resilience pilot", result: "The synthetic measure passed." }),
-  interpretation({ roll: 57, action: "No", position: "nay", headline: "Opposed a fictional permitting deadline", result: "The synthetic measure failed." }),
+  interpretation({ roll: 41, action: "Yes", episodeId: "synthetic-grid-pilot", measureId: "synthetic-shared-measure", position: "yea", headline: "Supported a fictional grid-resilience pilot", result: "The synthetic measure passed." }),
+  interpretation({ roll: 57, action: "No", episodeId: "synthetic-permit-deadline", measureId: "synthetic-shared-measure", position: "nay", headline: "Opposed a fictional permitting deadline", result: "The synthetic measure failed." }),
   interpretation({ roll: 63, action: "Not Voting", position: "not_voting", headline: "Did not vote on a fictional reporting proposal", result: "The synthetic measure passed." }),
 ];
 
@@ -21,7 +21,7 @@ const controls = [{
   roll: 72,
   measure_id: "synthetic-context",
   member_action: "Yes",
-  human_approval_status: "synthetic_test_only",
+  human_approval_status: "human_approved",
   context_summary: "Fictional procedural context bundled several unrelated actions",
   why_not_counted: "This synthetic row is context-only and does not count as support or opposition.",
   sources: [source("Synthetic context record", "https://example.test/context/72", "Vote and legislative status")],
@@ -31,7 +31,7 @@ export const syntheticEditorialCandidate = Object.freeze({
   source: Object.freeze({
     member: { bioguide_id: syntheticEditorialLegislator.bioguide_id, name: syntheticEditorialLegislator.name_display },
     domain,
-    human_approval_status: "synthetic_test_only",
+    human_approval_status: "human_approved",
     slice_counts: { substantive_rolls: 2, policy_episodes: 2, not_voting_records: 1, context_controls: 1 },
     interpretations,
     controls,
@@ -72,13 +72,14 @@ export const syntheticEditorialIssueFixtureData = Object.freeze({
   evidenceByDomain: { [domain]: { domain, evidence: syntheticRows } },
 });
 
-function interpretation({ roll, action, position, headline, result }) {
+function interpretation({ roll, action, episodeId, measureId, position, headline, result }) {
   return {
     roll,
-    measure_id: `synthetic-episode-${roll}`,
+    measure_id: measureId || `synthetic-measure-${roll}`,
+    ...(episodeId ? { episode_id: episodeId } : {}),
     stage: "Synthetic House action",
     member_action: action,
-    human_approval_status: "synthetic_test_only",
+    human_approval_status: "human_approved",
     ten_second: {
       headline,
       practical_choice: "This is a fictional practical choice used only to exercise the generic renderer.",

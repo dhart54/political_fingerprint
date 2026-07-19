@@ -203,6 +203,8 @@ test("pending editorial slice uses the basic representative fallback in producti
   await expect(fixture.getByTestId("editorial-issue-experience")).toHaveCount(0);
   await expect(fixture.getByText("Issue summary", { exact: true })).toBeVisible();
   await expect(fixture.getByText("Representative votes", { exact: true })).toBeVisible();
+  await expect(fixture.getByText("Full reviewed vote list", { exact: true })).toBeVisible();
+  await expect(fixture.getByRole("button", { name: "Show all reviewed votes" })).toBeVisible();
 });
 
 test("synthetic fixture proves generic identity, mixed actions, optional omission, source counts, and accessibility", async ({ page }) => {
@@ -217,6 +219,9 @@ test("synthetic fixture proves generic identity, mixed actions, optional omissio
   }
   await expect(slice.getByText("Voting context", { exact: true })).toHaveCount(0);
   await expect(slice.getByText("How to read this record", { exact: true })).toHaveCount(0);
+  await expect(fixture.getByText("Additional reviewed vote list", { exact: true })).toHaveCount(0);
+  await expect(fixture.getByText("0 reviewed votes", { exact: true })).toHaveCount(0);
+  await expect(fixture.getByText("0 evidence groups", { exact: true })).toHaveCount(0);
 
   const supported = slice.getByTestId("editorial-record-roll-41");
   const opposed = slice.getByTestId("editorial-record-roll-57");
@@ -242,6 +247,16 @@ test("synthetic fixture proves generic identity, mixed actions, optional omissio
   await supportedButton.click();
   await expect(supported.getByText("Supporters argued", { exact: true })).not.toBeVisible();
   await assertNoHorizontalOverflow(page);
+});
+
+test("Foushee review renders a generic additional list only for uncovered evidence", async ({ page }) => {
+  await page.goto("/golden-render-fixture#foushee-economy-editorial-gold");
+  const fixture = page.getByTestId("foushee-economy-editorial-gold");
+  await expect(fixture.getByText("Additional reviewed vote list", { exact: true })).toBeVisible();
+  await expect(fixture.getByText("1 reviewed votes", { exact: true })).toBeVisible();
+  await expect(fixture.getByText("1 evidence groups", { exact: true })).toBeVisible();
+  await expect(fixture.getByText(/remaining receipts stay available here/i)).toBeVisible();
+  await expect(fixture).not.toContainText("nine records");
 });
 
 test("synthetic generic fixture renders without overflow on mobile and tablet", async ({ page }) => {

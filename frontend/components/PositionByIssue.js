@@ -556,16 +556,18 @@ function EvidencePanel({ editorialCandidates, editorialMode, evidenceState, legi
               />
             </>
           )}
-          <ReviewedVoteList
-            billGroups={billGroups}
-            evidenceRows={additionalEvidenceRows}
-            hasEditorialSlice={Boolean(editorialExperience)}
-            representativeName={legislator?.name_display}
-            selectedActionRow={selectedActionRow}
-            setSelectedActionRow={setSelectedActionRow}
-            showAllVotes={showAllVotes}
-            setShowAllVotes={setShowAllVotes}
-          />
+          {additionalEvidenceRows.length > 0 ? (
+            <ReviewedVoteList
+              billGroups={billGroups}
+              evidenceRows={additionalEvidenceRows}
+              hasEditorialSlice={Boolean(editorialExperience)}
+              representativeName={legislator?.name_display}
+              selectedActionRow={selectedActionRow}
+              setSelectedActionRow={setSelectedActionRow}
+              showAllVotes={showAllVotes}
+              setShowAllVotes={setShowAllVotes}
+            />
+          ) : null}
           <EvidenceGroupingPreview evidenceGrouping={evidenceGrouping} />
           <EvidenceUtilityPanel
             domain={selectedRow.domain}
@@ -649,7 +651,7 @@ function ReviewedVoteList({
           </p>
           <p className="mt-1 text-sm leading-6 text-stone-700">
             {hasEditorialSlice
-              ? "The focused explanations above cover nine records. The remaining receipts stay available here, grouped by bill or measure."
+              ? "The remaining receipts stay available here, grouped by bill or measure, with context and counting labels preserved."
               : "All receipts stay available, grouped by bill or measure, with countable and context labels preserved."}
           </p>
         </div>

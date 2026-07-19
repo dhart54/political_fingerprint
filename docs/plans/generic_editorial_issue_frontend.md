@@ -100,3 +100,14 @@
 - Definition of done satisfied: yes; intended files are staged after all gates passed, with draft PR publication remaining as the final authorized handoff action.
 - Remaining limitations: second real issue-domain validation is explicitly deferred to the next milestone.
 - Recommended next step: validate the refined generic contract with a second researched issue domain after this PR.
+
+## Pre-Merge Correction Pass
+
+- Intent: harden PR #94's publication boundary and correct narrowly scoped genericity/optional-content defects without changing the approved renderer hierarchy or Foushee editorial content.
+- Scope: split production/review registries; reconcile registry and source approval status; remove fixed record-count copy; omit empty additional lists; condition argument boundaries; strengthen source deduplication; require explicit episode identity.
+- Boundaries: no redesign, source edits, status promotion, count changes, merge, or manual deployment.
+- Progress: implementation and local validation complete; final reconciliation, commit, and normal push remain pending.
+- Interpretation decision: no new synthesis is generated; the correction only prevents unsupported publication or presentation implications.
+- Reconciliation: the production registry is empty and has no dependency on pending content; the review fixture explicitly supplies the pending registry through the shared selector/adapter/renderer. Production eligibility now reconciles registry, source, and included-record approval status. Fixed-count copy is removed, empty additional evidence is omitted, argument boundaries are conditional, official sources require valid HTTP(S) URLs and deduplicate by stable ID or canonical URL, and episode identity is explicit-only.
+- Validation: 93 frontend Node tests, 52 focused backend/content/interpretation tests, 9 responsive Playwright tests, deterministic staged-content generation check, ESLint, production build/type validation, and `git diff --check` passed. ESLint/build retain eight pre-existing hook warnings and no errors.
+- Source/content preservation: Foushee top-level and record statuses remain `human_approval_pending`; no Foushee source claims, mappings, copy, vote counts, episode counts, or inclusion semantics changed.

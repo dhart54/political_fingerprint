@@ -23,28 +23,34 @@ export function buildImportantContext(record) {
       ? "The record does not reveal why the member did not vote."
       : "The vote record does not reveal why the member voted this way.",
   );
-  appendUnique(
-    context,
-    seen,
-    "Supporter and opponent arguments are attributed advocacy, not evidence of the member's motive.",
-  );
+  if (record.arguments?.supporters || record.arguments?.opponents || record.institutionalAttribution) {
+    appendUnique(
+      context,
+      seen,
+      "Supporter and opponent arguments are attributed advocacy, not evidence of the member's motive.",
+    );
+  }
   return context;
 }
 
 export function groupOfficialSources(sources = []) {
   const groups = new Map();
-  const seen = new Set();
+  const seenStableIds = new Set();
+  const seenUrls = new Set();
 
   for (const source of sources) {
-    const stableKey = source.stableId || canonicalizeUrl(source.url);
-    if (!stableKey || seen.has(stableKey)) continue;
-    seen.add(stableKey);
+    const canonicalUrl = canonicalizeUrl(source?.url);
+    if (!canonicalUrl) continue;
+    const stableId = String(source?.stableId || "").trim();
+    if ((stableId && seenStableIds.has(stableId)) || seenUrls.has(canonicalUrl)) continue;
+    if (stableId) seenStableIds.add(stableId);
+    seenUrls.add(canonicalUrl);
     const groupName = source.group || "Additional official evidence";
     if (!groups.has(groupName)) groups.set(groupName, []);
     groups.get(groupName).push({
       name: source.name,
       locator: source.locator,
-      url: source.url,
+      url: canonicalUrl,
     });
   }
 
@@ -80,10 +86,11 @@ function isArgumentBoundary(value) {
 function canonicalizeUrl(value) {
   try {
     const url = new URL(value);
+    if (!/^https?:$/.test(url.protocol)) return null;
     url.hash = "";
     url.pathname = url.pathname.replace(/\/$/, "") || "/";
     return url.toString();
   } catch {
-    return String(value || "").trim().replace(/\/$/, "");
+    return null;
   }
 }

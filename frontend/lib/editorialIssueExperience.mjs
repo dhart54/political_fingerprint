@@ -1,4 +1,4 @@
-import { editorialIssueSlices } from "./editorialIssueSlices.mjs";
+import { productionEditorialIssueSlices } from "./editorialIssueProductionSlices.mjs";
 
 export const EDITORIAL_EXPERIENCE_MODE = Object.freeze({
   production: "production",
@@ -10,11 +10,12 @@ export function isEditorialSliceEligible({ candidate, mode = EDITORIAL_EXPERIENC
   if (mode === EDITORIAL_EXPERIENCE_MODE.review) return true;
   return candidate.publication.editorialStatus === "human_approved"
     && candidate.publication.benchmarkStatus === "gold_benchmark"
-    && candidate.publication.productionEligible === true;
+    && candidate.publication.productionEligible === true
+    && sourceContentIsApproved(candidate.source);
 }
 
 export function selectEditorialIssueExperience({
-  candidates = editorialIssueSlices,
+  candidates = productionEditorialIssueSlices,
   domain,
   evidenceRows = [],
   legislator = null,
@@ -43,8 +44,8 @@ export function adaptEditorialIssueSlice(candidate, evidenceRows = [], mode = ED
     synthesis: { ...candidate.synthesis },
     indicators: buildIndicators(candidate.source.slice_counts),
     records: [
-      ...interpretations.map((entry) => adaptInterpretation(entry, rowsByRoll.get(Number(entry.roll)))),
-      ...controls.map((entry) => adaptControl(entry, rowsByRoll.get(Number(entry.roll)))),
+      ...interpretations.map((entry) => adaptInterpretation(candidate, entry, rowsByRoll.get(Number(entry.roll)))),
+      ...controls.map((entry) => adaptControl(candidate, entry, rowsByRoll.get(Number(entry.roll)))),
     ],
     sourceRowKeys: [...interpretations, ...controls].map((entry) => `${candidate.identity.congress}:${entry.roll}`),
   };
@@ -56,11 +57,11 @@ function candidateMatches({ candidate, domain, evidenceRows, legislator }) {
   return expected.every((entry) => evidenceRows.some((row) => rowKey(row) === `${candidate.identity.congress}:${entry.roll}`));
 }
 
-function adaptInterpretation(entry, row = {}) {
+function adaptInterpretation(candidate, entry, row = {}) {
   return {
     id: `roll-${entry.roll}`,
     actionIdentity: `House roll call ${entry.roll}`,
-    episodeId: entry.measure_id,
+    episodeId: explicitEpisodeId(candidate, entry),
     measure: row.description || row.question || entry.measure_id,
     legislativeStage: entry.stage,
     date: row.vote_date,
@@ -94,11 +95,11 @@ function adaptInterpretation(entry, row = {}) {
   };
 }
 
-function adaptControl(entry, row = {}) {
+function adaptControl(candidate, entry, row = {}) {
   return {
     id: `context-${entry.roll}`,
     actionIdentity: `House roll call ${entry.roll}`,
-    episodeId: entry.measure_id,
+    episodeId: explicitEpisodeId(candidate, entry),
     measure: row.description || row.question || entry.measure_id,
     legislativeStage: row.vote_type,
     date: row.vote_date,
@@ -121,6 +122,16 @@ function buildIndicators(counts = {}) {
 
 function indicator(value, singular, plural) {
   return Number.isFinite(value) ? { key: singular, label: `${value} ${value === 1 ? singular : plural}` } : null;
+}
+
+function sourceContentIsApproved(source) {
+  if (source?.human_approval_status !== "human_approved") return false;
+  const records = [...(source.interpretations || []), ...(source.controls || [])];
+  return records.every((record) => record.human_approval_status === undefined || record.human_approval_status === "human_approved");
+}
+
+function explicitEpisodeId(candidate, entry) {
+  return entry.episode_id ?? candidate.episodeByRoll?.[entry.roll] ?? null;
 }
 
 function rowKey(row) {
