@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 
+import ApprovedEditorialSlice from "./ApprovedEditorialSlice";
 import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
+import { getApprovedEditorialSlice, isEditorialSliceRow } from "../lib/editorialGold.mjs";
 import { deriveEvidenceGroups } from "../lib/evidenceGrouping.mjs";
 import { buildIssueOverview } from "../lib/issueOverview.mjs";
 import { groupIssueRowsByReadiness, sortIssueRowsByReadiness } from "../lib/issueReadiness.mjs";
@@ -473,8 +475,16 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
 
   const evidenceRows = evidenceState.payload?.evidence || [];
   const isSelected = evidenceState.payload?.domain === selectedRow.domain;
+  const editorialSlice = getApprovedEditorialSlice({
+    domain: selectedRow.domain,
+    evidenceRows,
+    legislator,
+  });
+  const additionalEvidenceRows = editorialSlice
+    ? evidenceRows.filter((row) => !isEditorialSliceRow(row, editorialSlice))
+    : evidenceRows;
   const evidenceGrouping = deriveEvidenceGroups(evidenceRows);
-  const billGroups = groupEvidenceByBill(evidenceRows);
+  const billGroups = groupEvidenceByBill(additionalEvidenceRows);
   const proofView = buildProofView(evidenceRows);
 
   return (
@@ -524,15 +534,20 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
             representativeName={legislator?.name_display}
             rows={evidenceRows}
           />
-          <RepresentativeVotesSection
-            proofView={proofView}
-            representativeName={legislator?.name_display}
-            selectedActionRow={selectedActionRow}
-            setSelectedActionRow={setSelectedActionRow}
-          />
+          {editorialSlice ? (
+            <ApprovedEditorialSlice editorialSlice={editorialSlice} />
+          ) : (
+            <RepresentativeVotesSection
+              proofView={proofView}
+              representativeName={legislator?.name_display}
+              selectedActionRow={selectedActionRow}
+              setSelectedActionRow={setSelectedActionRow}
+            />
+          )}
           <ReviewedVoteList
             billGroups={billGroups}
-            evidenceRows={evidenceRows}
+            evidenceRows={additionalEvidenceRows}
+            hasEditorialSlice={Boolean(editorialSlice)}
             representativeName={legislator?.name_display}
             selectedActionRow={selectedActionRow}
             setSelectedActionRow={setSelectedActionRow}
@@ -606,6 +621,7 @@ function RepresentativeVotesSection({ proofView, representativeName, selectedAct
 function ReviewedVoteList({
   billGroups,
   evidenceRows,
+  hasEditorialSlice = false,
   representativeName,
   selectedActionRow,
   setSelectedActionRow,
@@ -617,10 +633,12 @@ function ReviewedVoteList({
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
-            Full reviewed vote list
+            {hasEditorialSlice ? "Additional reviewed vote list" : "Full reviewed vote list"}
           </p>
           <p className="mt-1 text-sm leading-6 text-stone-700">
-            All receipts stay available, grouped by bill or measure, with countable and context labels preserved.
+            {hasEditorialSlice
+              ? "The focused explanations above cover nine records. The remaining receipts stay available here, grouped by bill or measure."
+              : "All receipts stay available, grouped by bill or measure, with countable and context labels preserved."}
           </p>
         </div>
         <button

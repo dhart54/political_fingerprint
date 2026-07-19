@@ -14,6 +14,10 @@ import {
   limitedEvidenceIssueFixtureData,
   limitedEvidenceLegislator,
 } from "../lib/goldenRenderFixture.mjs";
+import {
+  editorialGoldIssueFixtureData,
+  editorialGoldLegislator,
+} from "../lib/editorialGoldRenderFixture.mjs";
 
 export default function GoldenRenderFixture() {
   const [evidenceRequest, setEvidenceRequest] = useState({
@@ -22,6 +26,10 @@ export default function GoldenRenderFixture() {
   });
   const [limitedEvidenceRequest, setLimitedEvidenceRequest] = useState({
     domain: "NATIONAL_SECURITY_FOREIGN",
+    requestedAt: 1,
+  });
+  const [editorialGoldRequest] = useState({
+    domain: "ECONOMY_TAXES",
     requestedAt: 1,
   });
 
@@ -87,6 +95,26 @@ export default function GoldenRenderFixture() {
             legislatorId={limitedEvidenceLegislator.id}
             scope="all"
             title={`${limitedEvidenceLegislator.name_display}'s limited issue evidence`}
+          />
+        </section>
+
+        <section className="mt-5" data-testid="foushee-economy-editorial-gold">
+          <div className="rounded-2xl border border-cyan-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+            <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">Staged content preview</p>
+            <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">
+              Valerie P. Foushee — Economy &amp; Taxes
+            </h2>
+            <p className="mt-1 text-sm leading-6 text-stone-600">
+              Progressive disclosure for the focused nine-record review.
+            </p>
+          </div>
+          <PositionByIssue
+            evidenceRequest={editorialGoldRequest}
+            fixtureData={editorialGoldIssueFixtureData}
+            legislator={editorialGoldLegislator}
+            legislatorId={editorialGoldLegislator.id}
+            scope="all"
+            title="Valerie P. Foushee's Economy & Taxes evidence"
           />
         </section>
       </section>
