@@ -12,13 +12,13 @@
 ## Scope And Boundaries
 
 - In scope: a deterministic public-content bundle derived from the approved packet; narrowly keyed frontend rendering for F000477 / Economy & Taxes / the nine reviewed 119th-Congress rolls; fixtures, tests, build, desktop/mobile rendered review, draft PR.
-- Out of scope: production deployment, merge, schema or persistence changes, changes to other members/issues, automated approval, issue-counting changes, or editorial rewrites.
+- Out of scope: production deployment, schema or persistence changes, changes to other members/issues, automated approval, issue-counting changes, or editorial rewrites. Merge was initially outside the milestone and was separately authorized for the stacked-PR integration.
 - Files/systems likely touched: frontend interpretation components and fixtures, deterministic content generation/checks, focused tests, this plan, and a rendered-review packet.
 
 ## Decision Envelope
 
 - Codex may decide and execute: component composition, responsive layout, accessible disclosure controls, deterministic public-source labels, focused fixtures/tests, feature branch/commit/push, and a draft PR.
-- Explicit approval required for: merge, production deployment, status promotion, broader content rollout, wording changes to approved fields, or product-semantics changes.
+- Explicit approval required for: merge, production deployment, status promotion, broader content rollout, wording changes to approved fields, or product-semantics changes. Repository-owner approval for integration was granted after staged review; the other gates remain unchanged.
 
 ## Definition Of Done
 
@@ -119,3 +119,12 @@
 - Validation: 88 frontend unit tests, 52 focused content/interpretation regressions, 5 responsive Playwright tests, deterministic generation, lint, type validation, production build, and `git diff --check` passed.
 - Rendered review: final terminology verified at 1280 x 720 and 390 x 844 in addition to the automated wide/laptop/tablet/mobile viewport matrix.
 - Publication state: focused polish is ready for one normal commit and push to the existing draft implementation branch.
+
+## Stacked PR Integration
+
+- PR #92 merged into `main` at `8beee9101d4f821c5cd5ba2884044fdd3ad13018` after its head, checks, file scope, pending statuses, and non-production boundary were reverified.
+- PR #93 was retargeted to `main` and reconciled by merging updated `main` into the feature branch; no force push was required.
+- Integration governance now distinguishes repository merge eligibility from human editorial approval, gold-benchmark promotion, and public-production eligibility.
+- Every candidate remains `human_approval_pending`; the staged slice remains isolated from approved public content and no production deployment is authorized.
+- Reconciliation validation passed: 52 backend/content regressions, 88 frontend unit tests, 5 responsive Playwright tests, deterministic generation, lint, type validation, production build, and `git diff --check`.
+- Final pre-push diff scope is 16 files: the 15 staged implementation/documentation/test files plus the narrow merge-governance workflow update; no PR #92 editorial-source file is duplicated.

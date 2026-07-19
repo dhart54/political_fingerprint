@@ -40,6 +40,17 @@ Before merging:
 - PR diff still contains only intended files
 - no unexpected API-breaking, security, or deployment issue appears
 
+### Editorial Integration And Publication Gates
+
+Keep repository integration separate from editorial promotion and public publication:
+
+- **Merge/integration eligibility:** Pending editorial artifacts, review tooling, schemas, tests, and staged rendering may merge when validation passes, the artifacts remain explicitly non-production, and pending content cannot be mistaken for approved public content.
+- **Human editorial approval:** Merging does not assign `human_approved` or establish that formal per-field factual review, editorial scoring, or reader-comprehension testing is complete.
+- **Gold-benchmark promotion:** Assigning `gold_benchmark` is a separate human-governed decision and must not follow automatically from merge, checks, or preview validation.
+- **Public-production eligibility:** Enabling candidate interpretations in the approved public experience requires separate authorization after the applicable editorial and comprehension gates. A merge must not change production readiness, persistence, or public approval state unless the milestone explicitly authorizes those changes.
+
+`human_approval_pending` is therefore not a categorical merge prohibition. It is a publication and promotion boundary: pending artifacts may merge only when they remain safely isolated, clearly labeled, and non-production.
+
 After merging:
 
 1. Check out `main`.
