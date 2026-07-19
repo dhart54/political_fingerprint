@@ -2,9 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-import ApprovedEditorialSlice from "./ApprovedEditorialSlice";
+import EditorialIssueExperience from "./EditorialIssueExperience";
 import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
-import { getApprovedEditorialSlice, isEditorialSliceRow } from "../lib/editorialGold.mjs";
+import {
+  EDITORIAL_EXPERIENCE_MODE,
+  isEditorialExperienceRow,
+  selectEditorialIssueExperience,
+} from "../lib/editorialIssueExperience.mjs";
 import { deriveEvidenceGroups } from "../lib/evidenceGrouping.mjs";
 import { buildIssueOverview } from "../lib/issueOverview.mjs";
 import { groupIssueRowsByReadiness, sortIssueRowsByReadiness } from "../lib/issueReadiness.mjs";
@@ -21,6 +25,8 @@ import {
 const REPRESENTATIVE_VOTE_LIMIT = 8;
 
 export default function PositionByIssue({
+  editorialCandidates,
+  editorialMode = EDITORIAL_EXPERIENCE_MODE.production,
   evidenceRequest = null,
   fixtureData = null,
   legislator = null,
@@ -225,6 +231,8 @@ export default function PositionByIssue({
       </div>
 
       <EvidencePanel
+        editorialCandidates={editorialCandidates}
+        editorialMode={editorialMode}
         evidenceState={evidenceState}
         legislator={legislator}
         onInspectDomain={inspectDomain}
@@ -460,7 +468,7 @@ function IssuePatternCards({ onInspectDomain, rows, status }) {
   );
 }
 
-function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow }) {
+function EvidencePanel({ editorialCandidates, editorialMode, evidenceState, legislator, onInspectDomain, selectedRow }) {
   const [selectedActionRow, setSelectedActionRow] = useState(null);
   const [showAllVotes, setShowAllVotes] = useState(false);
 
@@ -475,13 +483,15 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
 
   const evidenceRows = evidenceState.payload?.evidence || [];
   const isSelected = evidenceState.payload?.domain === selectedRow.domain;
-  const editorialSlice = getApprovedEditorialSlice({
+  const editorialExperience = selectEditorialIssueExperience({
+    candidates: editorialCandidates,
     domain: selectedRow.domain,
     evidenceRows,
     legislator,
+    mode: editorialMode,
   });
-  const additionalEvidenceRows = editorialSlice
-    ? evidenceRows.filter((row) => !isEditorialSliceRow(row, editorialSlice))
+  const additionalEvidenceRows = editorialExperience
+    ? evidenceRows.filter((row) => !isEditorialExperienceRow(row, editorialExperience))
     : evidenceRows;
   const evidenceGrouping = deriveEvidenceGroups(evidenceRows);
   const billGroups = groupEvidenceByBill(additionalEvidenceRows);
@@ -529,8 +539,8 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
       ) : null}
       {evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (
         <div className="mt-3 grid gap-3">
-          {editorialSlice ? (
-            <ApprovedEditorialSlice editorialSlice={editorialSlice} />
+          {editorialExperience ? (
+            <EditorialIssueExperience experience={editorialExperience} />
           ) : (
             <>
               <IssueEvidenceSummary
@@ -546,16 +556,18 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
               />
             </>
           )}
-          <ReviewedVoteList
-            billGroups={billGroups}
-            evidenceRows={additionalEvidenceRows}
-            hasEditorialSlice={Boolean(editorialSlice)}
-            representativeName={legislator?.name_display}
-            selectedActionRow={selectedActionRow}
-            setSelectedActionRow={setSelectedActionRow}
-            showAllVotes={showAllVotes}
-            setShowAllVotes={setShowAllVotes}
-          />
+          {additionalEvidenceRows.length > 0 ? (
+            <ReviewedVoteList
+              billGroups={billGroups}
+              evidenceRows={additionalEvidenceRows}
+              hasEditorialSlice={Boolean(editorialExperience)}
+              representativeName={legislator?.name_display}
+              selectedActionRow={selectedActionRow}
+              setSelectedActionRow={setSelectedActionRow}
+              showAllVotes={showAllVotes}
+              setShowAllVotes={setShowAllVotes}
+            />
+          ) : null}
           <EvidenceGroupingPreview evidenceGrouping={evidenceGrouping} />
           <EvidenceUtilityPanel
             domain={selectedRow.domain}
@@ -639,7 +651,7 @@ function ReviewedVoteList({
           </p>
           <p className="mt-1 text-sm leading-6 text-stone-700">
             {hasEditorialSlice
-              ? "The focused explanations above cover nine records. The remaining receipts stay available here, grouped by bill or measure."
+              ? "The remaining receipts stay available here, grouped by bill or measure, with context and counting labels preserved."
               : "All receipts stay available, grouped by bill or measure, with countable and context labels preserved."}
           </p>
         </div>

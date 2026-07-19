@@ -51,6 +51,8 @@ Keep repository integration separate from editorial promotion and public publica
 
 `human_approval_pending` is therefore not a categorical merge prohibition. It is a publication and promotion boundary: pending artifacts may merge only when they remain safely isolated, clearly labeled, and non-production.
 
+For the frontend selection contract, review routing, fallback behavior, and the separate approval/benchmark/production gates, use `docs/workflows/editorial-issue-frontend.md`.
+
 After merging:
 
 1. Check out `main`.

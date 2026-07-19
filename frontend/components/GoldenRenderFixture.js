@@ -18,6 +18,13 @@ import {
   editorialGoldIssueFixtureData,
   editorialGoldLegislator,
 } from "../lib/editorialGoldRenderFixture.mjs";
+import { EDITORIAL_EXPERIENCE_MODE } from "../lib/editorialIssueExperience.mjs";
+import { reviewEditorialIssueSlices } from "../lib/editorialIssueReviewSlices.mjs";
+import {
+  syntheticEditorialCandidate,
+  syntheticEditorialIssueFixtureData,
+  syntheticEditorialLegislator,
+} from "../lib/editorialIssueTestFixtures.mjs";
 
 export default function GoldenRenderFixture() {
   const [evidenceRequest, setEvidenceRequest] = useState({
@@ -30,6 +37,10 @@ export default function GoldenRenderFixture() {
   });
   const [editorialGoldRequest] = useState({
     domain: "ECONOMY_TAXES",
+    requestedAt: 1,
+  });
+  const [syntheticEditorialRequest] = useState({
+    domain: "ENVIRONMENT_ENERGY",
     requestedAt: 1,
   });
 
@@ -57,8 +68,44 @@ export default function GoldenRenderFixture() {
               Valerie P. Foushee — Economy &amp; Taxes
             </h2>
             <p className="mt-1 text-sm leading-6 text-stone-600">
-              Episode-aware issue synthesis and a focused nine-record review.
+              Episode-aware issue synthesis and a focused record review.
             </p>
+          </div>
+          <PositionByIssue
+            editorialCandidates={reviewEditorialIssueSlices}
+            editorialMode={EDITORIAL_EXPERIENCE_MODE.review}
+            evidenceRequest={editorialGoldRequest}
+            fixtureData={editorialGoldIssueFixtureData}
+            legislator={editorialGoldLegislator}
+            legislatorId={editorialGoldLegislator.id}
+            scope="all"
+            title="Valerie P. Foushee's Economy & Taxes evidence"
+          />
+        </section>
+
+        <section className="mt-5 scroll-mt-4" data-testid="synthetic-editorial-fixture" id="synthetic-editorial-fixture">
+          <div className="rounded-2xl border border-violet-300 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+            <p className="text-xs uppercase tracking-[0.2em] text-violet-800">Synthetic genericity fixture</p>
+            <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">Jordan Example {"\u2014"} Synthetic Energy Choices</h2>
+            <p className="mt-1 text-sm leading-6 text-stone-600">Test-only content; it makes no researched claim about a real person or measure.</p>
+          </div>
+          <PositionByIssue
+            editorialCandidates={[syntheticEditorialCandidate]}
+            editorialMode={EDITORIAL_EXPERIENCE_MODE.review}
+            evidenceRequest={syntheticEditorialRequest}
+            fixtureData={syntheticEditorialIssueFixtureData}
+            legislator={syntheticEditorialLegislator}
+            legislatorId={syntheticEditorialLegislator.id}
+            scope="all"
+            title="Synthetic generic editorial evidence"
+          />
+        </section>
+
+        <section className="mt-5 scroll-mt-4" data-testid="foushee-production-gate-fixture" id="foushee-production-gate-fixture">
+          <div className="rounded-2xl border border-stone-300 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+            <p className="text-xs uppercase tracking-[0.2em] text-stone-600">Production-gate fallback proof</p>
+            <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">Pending editorial content stays unpublished</h2>
+            <p className="mt-1 text-sm leading-6 text-stone-600">The same pending source data runs in default production mode and keeps the basic evidence experience.</p>
           </div>
           <PositionByIssue
             evidenceRequest={editorialGoldRequest}
@@ -66,7 +113,7 @@ export default function GoldenRenderFixture() {
             legislator={editorialGoldLegislator}
             legislatorId={editorialGoldLegislator.id}
             scope="all"
-            title="Valerie P. Foushee's Economy & Taxes evidence"
+            title="Production-mode representative issue evidence"
           />
         </section>
 

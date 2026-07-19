@@ -85,7 +85,8 @@ test("golden fixture has no horizontal overflow at 390x844", async ({ page }) =>
 test("Foushee economy issue read is episode-aware and keeps secondary context bounded", async ({ page }) => {
   await page.goto("/golden-render-fixture");
 
-  const slice = page.getByTestId("approved-editorial-slice");
+  const slice = page.getByTestId("foushee-economy-editorial-gold").getByTestId("editorial-issue-experience");
+  await expect(slice.getByTestId("editorial-review-label")).toContainText("not published");
   await expect(slice.getByText(/In this sample, Foushee voted against specific proposals involving government funding/)).toBeVisible();
   await expect(slice.getByText(/six substantive votes represent four policy episodes/i)).toBeVisible();
   await expect(slice.getByText(/not yet broad enough to establish one overarching Economy & Taxes philosophy/i)).toBeVisible();
@@ -111,18 +112,18 @@ test("Foushee economy issue read is episode-aware and keeps secondary context bo
 test("Foushee economy vote accordion preserves approved copy and compact disclosure", async ({ page }) => {
   await page.goto("/golden-render-fixture");
 
-  const slice = page.getByTestId("approved-editorial-slice");
-  const notVoting = slice.getByTestId("approved-editorial-roll-310");
+  const slice = page.getByTestId("foushee-economy-editorial-gold").getByTestId("editorial-issue-experience");
+  const notVoting = slice.getByTestId("editorial-record-roll-310");
   await expect(notVoting.getByText("Did not vote on proposed cap on net costs from SBA rules")).toBeVisible();
   await expect(notVoting.getByText("Foushee did not vote. The bill passed the House but had not become law.")).toBeVisible();
 
-  const parentButtons = slice.locator('[data-testid^="approved-editorial-roll-"] > h6 > button, [data-testid^="approved-editorial-control-"] > h6 > button');
+  const parentButtons = slice.locator('[data-testid^="editorial-record-"] > h6 > button');
   await expect(parentButtons).toHaveCount(9);
   for (let index = 0; index < 9; index += 1) {
     await expect(parentButtons.nth(index)).toHaveAttribute("aria-expanded", "false");
   }
 
-  const houseProposal = slice.getByTestId("approved-editorial-roll-182");
+  const houseProposal = slice.getByTestId("editorial-record-roll-182");
   const collapsedText = await houseProposal.innerText();
   expect(collapsedText).not.toContain("$17.509 billion");
   const houseButton = houseProposal.locator(":scope > h6 > button");
@@ -151,7 +152,7 @@ test("Foushee economy vote accordion preserves approved copy and compact disclos
   await expect(houseProposal.getByText("Vote and legislative status", { exact: true })).toBeVisible();
   await expect(houseProposal.getByText("Competing arguments", { exact: true })).toBeVisible();
 
-  const revisedFramework = slice.getByTestId("approved-editorial-roll-100");
+  const revisedFramework = slice.getByTestId("editorial-record-roll-100");
   await expect(revisedFramework.getByText(/did not itself change taxes, benefits, annual funding, or the debt limit/)).toBeVisible();
   const revisedFrameworkButton = revisedFramework.locator(":scope > h6 > button");
   await revisedFrameworkButton.click();
@@ -159,16 +160,16 @@ test("Foushee economy vote accordion preserves approved copy and compact disclos
   await expect(houseButton).toHaveAttribute("aria-expanded", "false");
   await expect(houseProposal.getByText("What changed", { exact: true })).not.toBeVisible();
 
-  const initialFramework = slice.getByTestId("approved-editorial-roll-50");
+  const initialFramework = slice.getByTestId("editorial-record-roll-50");
   await expect(initialFramework.getByText(/did not itself change taxes, benefits, annual funding, or the debt limit/)).toBeVisible();
 
-  const control = slice.getByTestId("approved-editorial-control-263");
+  const control = slice.getByTestId("editorial-record-context-263");
   await expect(control).toContainText("nonbinding request");
   await control.locator(":scope > h6 > button").focus();
   await page.keyboard.press("Enter");
   await expect(control.locator(":scope > h6 > button")).toHaveAttribute("aria-expanded", "true");
   await expect(revisedFrameworkButton).toHaveAttribute("aria-expanded", "false");
-  await expect(slice.getByTestId("approved-editorial-control-180")).toContainText("package of seven different amendments");
+  await expect(slice.getByTestId("editorial-record-context-180")).toContainText("package of seven different amendments");
 
   const publicText = await slice.innerText();
   expect(publicText).not.toMatch(/claim_id|source_id|human_approval_pending|gold_benchmark|agent_confidence|review question/i);
@@ -185,12 +186,87 @@ test("Foushee economy read remains usable across wide, laptop, tablet, and mobil
     await page.setViewportSize(viewport);
     await page.goto("/golden-render-fixture");
 
-    const slice = page.getByTestId("approved-editorial-slice");
+    const slice = page.getByTestId("foushee-economy-editorial-gold").getByTestId("editorial-issue-experience");
     await expect(slice.getByText("Patterns in this sample", { exact: true })).toBeVisible();
-    const revisedFramework = slice.getByTestId("approved-editorial-roll-100");
+    const revisedFramework = slice.getByTestId("editorial-record-roll-100");
     await revisedFramework.locator(":scope > h6 > button").click();
     await expect(revisedFramework.getByText("What changed", { exact: true })).toBeVisible();
     await expect(revisedFramework.getByText("Impact and outcome", { exact: true })).toBeVisible();
+    await assertNoHorizontalOverflow(page);
+  }
+});
+
+test("pending editorial slice uses the basic representative fallback in production mode", async ({ page }) => {
+  await page.goto("/golden-render-fixture#foushee-production-gate-fixture");
+  const fixture = page.getByTestId("foushee-production-gate-fixture");
+  await expect(fixture.getByRole("heading", { name: "Production-mode representative issue evidence" })).toBeVisible();
+  await expect(fixture.getByTestId("editorial-issue-experience")).toHaveCount(0);
+  await expect(fixture.getByText("Issue summary", { exact: true })).toBeVisible();
+  await expect(fixture.getByText("Representative votes", { exact: true })).toBeVisible();
+  await expect(fixture.getByText("Full reviewed vote list", { exact: true })).toBeVisible();
+  await expect(fixture.getByRole("button", { name: "Show all reviewed votes" })).toBeVisible();
+});
+
+test("synthetic fixture proves generic identity, mixed actions, optional omission, source counts, and accessibility", async ({ page }) => {
+  await page.goto("/golden-render-fixture#synthetic-editorial-fixture");
+
+  const fixture = page.getByTestId("synthetic-editorial-fixture");
+  const slice = fixture.getByTestId("editorial-issue-experience");
+  await expect(slice.getByRole("heading", { name: "Jordan Example \u2014 Synthetic Energy Choices" })).toBeVisible();
+  await expect(slice.getByText(/deliberately mixed/i)).toBeVisible();
+  for (const indicator of ["2 substantive votes", "2 policy episodes", "1 Not Voting", "1 context-only record"]) {
+    await expect(slice.getByText(indicator, { exact: true })).toBeVisible();
+  }
+  await expect(slice.getByText("Voting context", { exact: true })).toHaveCount(0);
+  await expect(slice.getByText("How to read this record", { exact: true })).toHaveCount(0);
+  await expect(fixture.getByText("Additional reviewed vote list", { exact: true })).toHaveCount(0);
+  await expect(fixture.getByText("0 reviewed votes", { exact: true })).toHaveCount(0);
+  await expect(fixture.getByText("0 evidence groups", { exact: true })).toHaveCount(0);
+
+  const supported = slice.getByTestId("editorial-record-roll-41");
+  const opposed = slice.getByTestId("editorial-record-roll-57");
+  const notVoting = slice.getByTestId("editorial-record-roll-63");
+  const context = slice.getByTestId("editorial-record-context-72");
+  await expect(notVoting).toHaveAttribute("data-inclusion-class", "not_voting");
+  await expect(context).toHaveAttribute("data-inclusion-class", "context_only");
+
+  const supportedButton = supported.locator(":scope > h6 > button");
+  const opposedButton = opposed.locator(":scope > h6 > button");
+  await supportedButton.focus();
+  await page.keyboard.press("Enter");
+  await expect(supportedButton).toHaveAttribute("aria-expanded", "true");
+  await supported.getByText("Arguments, context, and sources", { exact: true }).click();
+  await supported.getByText("Official sources (2)", { exact: true }).click();
+  await expect(supported.getByText("Vote and legislative status", { exact: true })).toBeVisible();
+  await expect(supported.getByText("Bill or resolution text", { exact: true })).toBeVisible();
+
+  await opposedButton.click();
+  await expect(opposedButton).toHaveAttribute("aria-expanded", "true");
+  await expect(supportedButton).toHaveAttribute("aria-expanded", "false");
+  await opposedButton.click();
+  await supportedButton.click();
+  await expect(supported.getByText("Supporters argued", { exact: true })).not.toBeVisible();
+  await assertNoHorizontalOverflow(page);
+});
+
+test("Foushee review renders a generic additional list only for uncovered evidence", async ({ page }) => {
+  await page.goto("/golden-render-fixture#foushee-economy-editorial-gold");
+  const fixture = page.getByTestId("foushee-economy-editorial-gold");
+  await expect(fixture.getByText("Additional reviewed vote list", { exact: true })).toBeVisible();
+  await expect(fixture.getByText("1 reviewed votes", { exact: true })).toBeVisible();
+  await expect(fixture.getByText("1 evidence groups", { exact: true })).toBeVisible();
+  await expect(fixture.getByText(/remaining receipts stay available here/i)).toBeVisible();
+  await expect(fixture).not.toContainText("nine records");
+});
+
+test("synthetic generic fixture renders without overflow on mobile and tablet", async ({ page }) => {
+  for (const viewport of [{ width: 768, height: 1024 }, { width: 390, height: 844 }]) {
+    await page.setViewportSize(viewport);
+    await page.goto(`/golden-render-fixture?viewport=${viewport.width}#synthetic-editorial-fixture`);
+    const fixture = page.getByTestId("synthetic-editorial-fixture");
+    await expect(fixture.getByText("Synthetic mixed pattern", { exact: true })).toBeVisible();
+    await fixture.getByTestId("editorial-record-roll-57").locator(":scope > h6 > button").click();
+    await expect(fixture.getByText("What changed", { exact: true })).toBeVisible();
     await assertNoHorizontalOverflow(page);
   }
 });
