@@ -18,6 +18,7 @@ test("golden render fixture route is server-gated and unlinked from normal UI", 
   const homeSource = readFileSync(new URL("../app/page.js", import.meta.url), "utf8");
 
   assert.match(routeSource, /ENABLE_GOLDEN_RENDER_FIXTURE/);
+  assert.match(routeSource, /VERCEL_ENV === "preview"/);
   assert.match(routeSource, /notFound\(\)/);
   assert.doesNotMatch(homeSource, /golden-render-fixture|ENABLE_GOLDEN_RENDER_FIXTURE/);
 });

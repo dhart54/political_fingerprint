@@ -82,6 +82,119 @@ test("golden fixture has no horizontal overflow at 390x844", async ({ page }) =>
   await assertNoHorizontalOverflow(page);
 });
 
+test("Foushee economy issue read is episode-aware and keeps secondary context bounded", async ({ page }) => {
+  await page.goto("/golden-render-fixture");
+
+  const slice = page.getByTestId("approved-editorial-slice");
+  await expect(slice.getByText(/In this sample, Foushee voted against specific proposals involving government funding/)).toBeVisible();
+  await expect(slice.getByText(/six substantive votes represent four policy episodes/i)).toBeVisible();
+  await expect(slice.getByText(/not yet broad enough to establish one overarching Economy & Taxes philosophy/i)).toBeVisible();
+
+  await expect(slice.getByText("Patterns in this sample", { exact: true })).toBeVisible();
+  await expect(slice.getByText("Opposed both stages of the 2025 government-funding episode.")).toBeVisible();
+  await expect(slice.getByText("Opposed both stages of the FY2025–FY2034 budget-framework episode.")).toBeVisible();
+  await expect(slice.getByText("Opposed the House military-construction and veterans funding proposal.")).toBeVisible();
+  await expect(slice.getByText("Opposed immigration-status restrictions on SBA-backed business loans.")).toBeVisible();
+
+  for (const indicator of ["6 substantive votes", "4 policy episodes", "1 Not Voting", "2 context-only records"]) {
+    await expect(slice.getByText(indicator, { exact: true })).toBeVisible();
+  }
+  await expect(slice.getByText("Voting context", { exact: true })).toBeVisible();
+  await expect(slice.getByText(/with the majority of House Democrats on all 6 substantive roll calls in this sample/)).toBeVisible();
+  await expect(slice.getByText(/does not explain why Foushee voted that way/)).toBeVisible();
+  await expect(slice.getByText(/repeated stages are not separate policy positions/)).toBeVisible();
+  await expect(slice.getByText("How to read this record", { exact: true })).toBeVisible();
+  await expect(slice.getByText(/Repeated votes across independent policy episodes may support broader voting themes/)).toBeVisible();
+  await expect(slice.getByText(/A voter who favored|A voter who opposed/)).toHaveCount(0);
+});
+
+test("Foushee economy vote accordion preserves approved copy and compact disclosure", async ({ page }) => {
+  await page.goto("/golden-render-fixture");
+
+  const slice = page.getByTestId("approved-editorial-slice");
+  const notVoting = slice.getByTestId("approved-editorial-roll-310");
+  await expect(notVoting.getByText("Did not vote on proposed cap on net costs from SBA rules")).toBeVisible();
+  await expect(notVoting.getByText("Foushee did not vote. The bill passed the House but had not become law.")).toBeVisible();
+
+  const parentButtons = slice.locator('[data-testid^="approved-editorial-roll-"] > h6 > button, [data-testid^="approved-editorial-control-"] > h6 > button');
+  await expect(parentButtons).toHaveCount(9);
+  for (let index = 0; index < 9; index += 1) {
+    await expect(parentButtons.nth(index)).toHaveAttribute("aria-expanded", "false");
+  }
+
+  const houseProposal = slice.getByTestId("approved-editorial-roll-182");
+  const collapsedText = await houseProposal.innerText();
+  expect(collapsedText).not.toContain("$17.509 billion");
+  const houseButton = houseProposal.locator(":scope > h6 > button");
+  await houseButton.click();
+  await expect(houseButton).toHaveAttribute("aria-expanded", "true");
+  await expect(houseProposal.getByText("What changed", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Before this vote", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Change at stake", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Impact and outcome", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Who it affected", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Scale and timing", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Outcome", { exact: true })).toBeVisible();
+  for (const oldLabel of ["Prior baseline", "Mechanism", "Affected", "Scale or timing", "Next"]) {
+    await expect(houseProposal.getByText(oldLabel, { exact: true })).toHaveCount(0);
+  }
+  await expect(houseProposal.getByText(/\$17\.509 billion/)).toBeVisible();
+
+  const deeperSummary = houseProposal.getByText("Arguments, context, and sources", { exact: true });
+  await expect(houseProposal.getByText("Supporters argued", { exact: true })).not.toBeVisible();
+  await deeperSummary.click();
+  await expect(houseProposal.getByText("Supporters argued", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Opponents argued", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Important context", { exact: true })).toBeVisible();
+  const sourceDisclosure = houseProposal.getByText(/Official sources \(\d+\)/);
+  await sourceDisclosure.click();
+  await expect(houseProposal.getByText("Vote and legislative status", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Competing arguments", { exact: true })).toBeVisible();
+
+  const revisedFramework = slice.getByTestId("approved-editorial-roll-100");
+  await expect(revisedFramework.getByText(/did not itself change taxes, benefits, annual funding, or the debt limit/)).toBeVisible();
+  const revisedFrameworkButton = revisedFramework.locator(":scope > h6 > button");
+  await revisedFrameworkButton.click();
+  await expect(revisedFrameworkButton).toHaveAttribute("aria-expanded", "true");
+  await expect(houseButton).toHaveAttribute("aria-expanded", "false");
+  await expect(houseProposal.getByText("What changed", { exact: true })).not.toBeVisible();
+
+  const initialFramework = slice.getByTestId("approved-editorial-roll-50");
+  await expect(initialFramework.getByText(/did not itself change taxes, benefits, annual funding, or the debt limit/)).toBeVisible();
+
+  const control = slice.getByTestId("approved-editorial-control-263");
+  await expect(control).toContainText("nonbinding request");
+  await control.locator(":scope > h6 > button").focus();
+  await page.keyboard.press("Enter");
+  await expect(control.locator(":scope > h6 > button")).toHaveAttribute("aria-expanded", "true");
+  await expect(revisedFrameworkButton).toHaveAttribute("aria-expanded", "false");
+  await expect(slice.getByTestId("approved-editorial-control-180")).toContainText("package of seven different amendments");
+
+  const publicText = await slice.innerText();
+  expect(publicText).not.toMatch(/claim_id|source_id|human_approval_pending|gold_benchmark|agent_confidence|review question/i);
+  await assertNoHorizontalOverflow(page);
+});
+
+test("Foushee economy read remains usable across wide, laptop, tablet, and mobile widths", async ({ page }) => {
+  for (const viewport of [
+    { width: 1440, height: 1000 },
+    { width: 1024, height: 768 },
+    { width: 768, height: 1024 },
+    { width: 390, height: 844 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto("/golden-render-fixture");
+
+    const slice = page.getByTestId("approved-editorial-slice");
+    await expect(slice.getByText("Patterns in this sample", { exact: true })).toBeVisible();
+    const revisedFramework = slice.getByTestId("approved-editorial-roll-100");
+    await revisedFramework.locator(":scope > h6 > button").click();
+    await expect(revisedFramework.getByText("What changed", { exact: true })).toBeVisible();
+    await expect(revisedFramework.getByText("Impact and outcome", { exact: true })).toBeVisible();
+    await assertNoHorizontalOverflow(page);
+  }
+});
+
 async function assertTopLevelCopyIsSafe(profile) {
   const text = await profile.innerText();
   const receiptHeading = text.match(/\nRepresentative votes\n/i);
