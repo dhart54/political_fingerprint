@@ -53,27 +53,39 @@ export const valerieFousheeEconomyEditorialGold = {
         ],
         "sources": [
           {
-            "label": "Congress.gov summary — Summary, reported to House 2025-05-21",
+            "name": "H.R. 2965 summary",
+            "locator": "Summary, reported to House 2025-05-21",
+            "group": "Nonpartisan analysis",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/2965"
           },
           {
-            "label": "Congress.gov measure text — Referred in Senate text, sections 2-3",
+            "name": "H.R. 2965 measure text",
+            "locator": "Referred in Senate text, sections 2-3",
+            "group": "Bill or resolution text",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/2965/text"
           },
           {
-            "label": "Congressional Budget Office — Summary and 2025-2030 estimate, published 2025-08-18",
+            "name": "CBO analysis of H.R. 2965",
+            "locator": "Summary and 2025-2030 estimate, published 2025-08-18",
+            "group": "Nonpartisan analysis",
             "url": "https://www.cbo.gov/publication/61688"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 310",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll310.xml"
           },
           {
-            "label": "Congress.gov actions — Actions overview, 2025-12-03 and 2025-12-04",
+            "name": "H.R. 2965 actions",
+            "locator": "Actions overview, 2025-12-03 and 2025-12-04",
+            "group": "Vote and legislative status",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/2965/actions"
           },
           {
-            "label": "House committee report — Purpose and Bill Summary; Need for Legislation; Minority Views",
+            "name": "H. Rept. 119-111",
+            "locator": "Purpose and Bill Summary; Need for Legislation; Minority Views",
+            "group": "Competing arguments",
             "url": "https://www.congress.gov/committee-report/119th-congress/house-report/111/1"
           }
         ]
@@ -116,55 +128,81 @@ export const valerieFousheeEconomyEditorialGold = {
         ],
         "sources": [
           {
-            "label": "Congress.gov summary — Public Law 119-37 summary; Division A overview",
+            "name": "H.R. 5371 summary",
+            "locator": "Public Law 119-37 summary; Division A overview",
+            "group": "Nonpartisan analysis",
             "url": "https://www.congress.gov/bill/119/hr/5371"
           },
           {
-            "label": "Congressional Research Service — Summary; General Funding Provisions; Federal Workforce Provisions",
+            "name": "CRS Report R48765",
+            "locator": "Summary; General Funding Provisions; Federal Workforce Provisions",
+            "group": "Nonpartisan analysis",
             "url": "https://www.congress.gov/crs-product/R48765"
           },
           {
-            "label": "Congressional Budget Office — Senate Amendment 3937, published 2025-11-10",
+            "name": "CBO analysis of H.R. 5371 — senate amendment",
+            "locator": "Senate Amendment 3937, published 2025-11-10",
+            "group": "Nonpartisan analysis",
             "url": "https://www.cbo.gov/publication/61747"
           },
           {
-            "label": "Official source — Public Law 119-37, approved 2025-11-12",
+            "name": "Public Law 119-37",
+            "locator": "Public Law 119-37, approved 2025-11-12",
+            "group": "Bill or resolution text",
             "url": "https://www.govinfo.gov/app/details/PLAW-119publ37"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 285",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll285.xml"
           },
           {
-            "label": "Congress.gov actions — Actions overview, 2025-09-19 through 2025-11-12",
+            "name": "H.R. 5371 actions",
+            "locator": "Actions overview, 2025-09-19 through 2025-11-12",
+            "group": "Vote and legislative status",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/5371/all-actions"
           },
           {
-            "label": "Congressional Record — House debate, pages H4461-H4476",
+            "name": "September H.R. 5371 House debate",
+            "locator": "House debate, pages H4461-H4476",
+            "group": "Competing arguments",
             "url": "https://www.congress.gov/congressional-record/volume-171/issue-154/house-section/article/H4461-6"
           },
           {
-            "label": "Congressional Record — House debate, pages H4609-H4664",
+            "name": "November H.R. 5371 House debate",
+            "locator": "House debate, pages H4609-H4664",
+            "group": "Competing arguments",
             "url": "https://www.congress.gov/congressional-record/volume-171/issue-191/house-section/article/H4609-2"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 281",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll281.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 182",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll182.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 156",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll156.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 100",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll100.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 50",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll050.xml"
           }
         ]
@@ -206,59 +244,87 @@ export const valerieFousheeEconomyEditorialGold = {
         ],
         "sources": [
           {
-            "label": "Congressional Budget Office — Summary, posted House Rules text dated 2025-09-16",
+            "name": "CBO analysis of H.R. 5371 — initial",
+            "locator": "Summary, posted House Rules text dated 2025-09-16",
+            "group": "Nonpartisan analysis",
             "url": "https://www.cbo.gov/publication/61750"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 281",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll281.xml"
           },
           {
-            "label": "Congress.gov actions — Actions overview, 2025-09-19 through 2025-11-12",
+            "name": "H.R. 5371 actions",
+            "locator": "Actions overview, 2025-09-19 through 2025-11-12",
+            "group": "Vote and legislative status",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/5371/all-actions"
           },
           {
-            "label": "Congress.gov summary — Public Law 119-37 summary; Division A overview",
+            "name": "H.R. 5371 summary",
+            "locator": "Public Law 119-37 summary; Division A overview",
+            "group": "Nonpartisan analysis",
             "url": "https://www.congress.gov/bill/119/hr/5371"
           },
           {
-            "label": "Congressional Research Service — Summary; General Funding Provisions; Federal Workforce Provisions",
+            "name": "CRS Report R48765",
+            "locator": "Summary; General Funding Provisions; Federal Workforce Provisions",
+            "group": "Nonpartisan analysis",
             "url": "https://www.congress.gov/crs-product/R48765"
           },
           {
-            "label": "Congressional Budget Office — Senate Amendment 3937, published 2025-11-10",
+            "name": "CBO analysis of H.R. 5371 — senate amendment",
+            "locator": "Senate Amendment 3937, published 2025-11-10",
+            "group": "Nonpartisan analysis",
             "url": "https://www.cbo.gov/publication/61747"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 285",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll285.xml"
           },
           {
-            "label": "Official source — Public Law 119-37, approved 2025-11-12",
+            "name": "Public Law 119-37",
+            "locator": "Public Law 119-37, approved 2025-11-12",
+            "group": "Bill or resolution text",
             "url": "https://www.govinfo.gov/app/details/PLAW-119publ37"
           },
           {
-            "label": "Congressional Record — House debate, pages H4461-H4476",
+            "name": "September H.R. 5371 House debate",
+            "locator": "House debate, pages H4461-H4476",
+            "group": "Competing arguments",
             "url": "https://www.congress.gov/congressional-record/volume-171/issue-154/house-section/article/H4461-6"
           },
           {
-            "label": "Congressional Record — House debate, pages H4609-H4664",
+            "name": "November H.R. 5371 House debate",
+            "locator": "House debate, pages H4609-H4664",
+            "group": "Competing arguments",
             "url": "https://www.congress.gov/congressional-record/volume-171/issue-191/house-section/article/H4609-2"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 182",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll182.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 156",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll156.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 100",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll100.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 50",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll050.xml"
           }
         ]
@@ -302,59 +368,87 @@ export const valerieFousheeEconomyEditorialGold = {
         ],
         "sources": [
           {
-            "label": "Congress.gov summary — House-reported summary; related bills",
+            "name": "H.R. 3944 summary",
+            "locator": "House-reported summary; related bills",
+            "group": "Nonpartisan analysis",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/3944/all-info"
           },
           {
-            "label": "Congress.gov measure text — Reported in House text; titles I-IV",
+            "name": "H.R. 3944 House text",
+            "locator": "Reported in House text; titles I-IV",
+            "group": "Bill or resolution text",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/3944/text/rh"
           },
           {
-            "label": "House committee report — Summary of Committee Recommendation; titles I-IV; minority views",
+            "name": "H. Rept. 119-161",
+            "locator": "Summary of Committee Recommendation; titles I-IV; minority views",
+            "group": "Competing arguments",
             "url": "https://www.congress.gov/119/crpt/hrpt161/CRPT-119hrpt161.pdf"
           },
           {
-            "label": "Congress.gov measure text — Engrossed in House text, sections 255 and 260",
+            "name": "H.R. 3944 House-passed text",
+            "locator": "Engrossed in House text, sections 255 and 260",
+            "group": "Bill or resolution text",
             "url": "https://www.congress.gov/119/bills/hr3944/BILLS-119hr3944eh.pdf"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 182",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll182.xml"
           },
           {
-            "label": "Congress.gov actions — 2025-06-25 passage; 2025-09-10/11 conference actions",
+            "name": "H.R. 3944 actions",
+            "locator": "2025-06-25 passage; 2025-09-10/11 conference actions",
+            "group": "Vote and legislative status",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/3944/all-actions"
           },
           {
-            "label": "Congressional Research Service — Summary; General Funding Provisions; Federal Workforce Provisions",
+            "name": "CRS Report R48765",
+            "locator": "Summary; General Funding Provisions; Federal Workforce Provisions",
+            "group": "Nonpartisan analysis",
             "url": "https://www.congress.gov/crs-product/R48765"
           },
           {
-            "label": "Congressional Research Service — House, Senate, and enacted FY2026 MILCON comparison",
+            "name": "CRS Insight IN12622",
+            "locator": "House, Senate, and enacted FY2026 MILCON comparison",
+            "group": "Nonpartisan analysis",
             "url": "https://www.congress.gov/crs-product/IN12622"
           },
           {
-            "label": "Congress.gov actions — Actions overview, 2025-09-19 through 2025-11-12",
+            "name": "H.R. 5371 actions",
+            "locator": "Actions overview, 2025-09-19 through 2025-11-12",
+            "group": "Vote and legislative status",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/5371/all-actions"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 285",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll285.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 281",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll281.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 156",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll156.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 100",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll100.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 50",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll050.xml"
           }
         ]
@@ -397,43 +491,63 @@ export const valerieFousheeEconomyEditorialGold = {
         ],
         "sources": [
           {
-            "label": "Congress.gov summary — Summary, introduced in House 2025-04-17",
+            "name": "H.R. 2966 summary",
+            "locator": "Summary, introduced in House 2025-04-17",
+            "group": "Nonpartisan analysis",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/2966"
           },
           {
-            "label": "Congress.gov measure text — Passed House text, section 2",
+            "name": "H.R. 2966 measure text",
+            "locator": "Passed House text, section 2",
+            "group": "Bill or resolution text",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/2966/text"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 156",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll156.xml"
           },
           {
-            "label": "Congress.gov actions — Actions overview, 2025-06-06 and 2025-06-09",
+            "name": "H.R. 2966 actions",
+            "locator": "Actions overview, 2025-06-06 and 2025-06-09",
+            "group": "Vote and legislative status",
             "url": "https://www.congress.gov/bill/119th-congress/house-bill/2966/actions"
           },
           {
-            "label": "House committee report — Purpose and Bill Summary; Need for Legislation; Minority Views",
+            "name": "H. Rept. 119-112",
+            "locator": "Purpose and Bill Summary; Need for Legislation; Minority Views",
+            "group": "Competing arguments",
             "url": "https://www.congress.gov/committee-report/119th-congress/house-report/112/1"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 285",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll285.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 281",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll281.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 182",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll182.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 100",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll100.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 50",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll050.xml"
           }
         ]
@@ -476,51 +590,75 @@ export const valerieFousheeEconomyEditorialGold = {
         ],
         "sources": [
           {
-            "label": "Congress.gov summary — Summary, introduced in House 2025-02-18",
+            "name": "H.Con.Res. 14 summary",
+            "locator": "Summary, introduced in House 2025-02-18",
+            "group": "Nonpartisan analysis",
             "url": "https://www.congress.gov/index.php/bill/119th-congress/house-concurrent-resolution/14"
           },
           {
-            "label": "Congress.gov measure text — Engrossed in House text, titles I-IV",
+            "name": "H.Con.Res. 14 House text",
+            "locator": "Engrossed in House text, titles I-IV",
+            "group": "Bill or resolution text",
             "url": "https://www.congress.gov/119/bills/hconres14/BILLS-119hconres14eh.pdf"
           },
           {
-            "label": "Congress.gov measure text — Enrolled text, title II and section 4001",
+            "name": "H.Con.Res. 14 enrolled text",
+            "locator": "Enrolled text, title II and section 4001",
+            "group": "Bill or resolution text",
             "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/14/text/enr"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 100",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll100.xml"
           },
           {
-            "label": "Congress.gov actions — 2025-02-25 House adoption; 2025-04-10 House agreement to Senate amendment",
+            "name": "H.Con.Res. 14 actions",
+            "locator": "2025-02-25 House adoption; 2025-04-10 House agreement to Senate amendment",
+            "group": "Vote and legislative status",
             "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/14/all-actions"
           },
           {
-            "label": "Congress.gov actions — Actions overview; Public Law 119-21 on 2025-07-04",
+            "name": "H.R. 1 actions",
+            "locator": "Actions overview; Public Law 119-21 on 2025-07-04",
+            "group": "Vote and legislative status",
             "url": "https://www.congress.gov/index.php/bill/119th-congress/house-bill/1/all-actions"
           },
           {
-            "label": "Congressional Record — House debate on concurrence in the Senate amendment, pages H1533-H1550",
+            "name": "April H.Con.Res. 14 concurrence debate",
+            "locator": "House debate on concurrence in the Senate amendment, pages H1533-H1550",
+            "group": "Competing arguments",
             "url": "https://www.congress.gov/congressional-record/volume-171/issue-64/house-section/article/H1533-2"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 285",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll285.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 281",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll281.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 182",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll182.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 156",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll156.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 50",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll050.xml"
           }
         ]
@@ -563,55 +701,81 @@ export const valerieFousheeEconomyEditorialGold = {
         ],
         "sources": [
           {
-            "label": "Congress.gov summary — Summary, introduced in House 2025-02-18",
+            "name": "H.Con.Res. 14 summary",
+            "locator": "Summary, introduced in House 2025-02-18",
+            "group": "Nonpartisan analysis",
             "url": "https://www.congress.gov/index.php/bill/119th-congress/house-concurrent-resolution/14"
           },
           {
-            "label": "Congress.gov measure text — Engrossed in House text, titles I-IV",
+            "name": "H.Con.Res. 14 House text",
+            "locator": "Engrossed in House text, titles I-IV",
+            "group": "Bill or resolution text",
             "url": "https://www.congress.gov/119/bills/hconres14/BILLS-119hconres14eh.pdf"
           },
           {
-            "label": "Congress.gov measure text — Enrolled text, title II and section 4001",
+            "name": "H.Con.Res. 14 enrolled text",
+            "locator": "Enrolled text, title II and section 4001",
+            "group": "Bill or resolution text",
             "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/14/text/enr"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 50",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll050.xml"
           },
           {
-            "label": "Congress.gov actions — 2025-02-25 House adoption; 2025-04-10 House agreement to Senate amendment",
+            "name": "H.Con.Res. 14 actions",
+            "locator": "2025-02-25 House adoption; 2025-04-10 House agreement to Senate amendment",
+            "group": "Vote and legislative status",
             "url": "https://www.congress.gov/bill/119th-congress/house-concurrent-resolution/14/all-actions"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 100",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll100.xml"
           },
           {
-            "label": "Congress.gov actions — Actions overview; Public Law 119-21 on 2025-07-04",
+            "name": "H.R. 1 actions",
+            "locator": "Actions overview; Public Law 119-21 on 2025-07-04",
+            "group": "Vote and legislative status",
             "url": "https://www.congress.gov/index.php/bill/119th-congress/house-bill/1/all-actions"
           },
           {
-            "label": "House committee report — Committee narrative; reconciliation explanation; Minority Views",
+            "name": "H. Rept. 119-4",
+            "locator": "Committee narrative; reconciliation explanation; Minority Views",
+            "group": "Competing arguments",
             "url": "https://www.congress.gov/119/crpt/hrpt4/CRPT-119hrpt4.pdf"
           },
           {
-            "label": "Congressional Record — Initial House framework debate, pages H791-H823",
+            "name": "February H.Con.Res. 14 House debate",
+            "locator": "Initial House framework debate, pages H791-H823",
+            "group": "Competing arguments",
             "url": "https://www.congress.gov/congressional-record/volume-171/issue-37/house-section/article/H791-3"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 285",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll285.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 281",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll281.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 182",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll182.xml"
           },
           {
-            "label": "House Clerk roll call — member vote and roll-call totals",
+            "name": "House Clerk roll call 156",
+            "locator": "member vote and roll-call totals",
+            "group": "Vote and legislative status",
             "url": "https://clerk.house.gov/evs/2025/roll156.xml"
           }
         ]
@@ -628,15 +792,21 @@ export const valerieFousheeEconomyEditorialGold = {
       "why_not_counted": "It records support for a negotiating instruction at one stage, not a final funding vote. Counting it as an independent Economy & Taxes position would overstate a nonbinding procedural action.",
       "sources": [
         {
-          "label": "Congressional Record — Page H4228, Clerk-read DeLauro motion",
+          "name": "Roll 263 House debate",
+          "locator": "Page H4228, Clerk-read DeLauro motion",
+          "group": "Competing arguments",
           "url": "https://www.congress.gov/119/crec/2025/09/10/171/148/CREC-2025-09-10-pt1-PgH4228-3.pdf"
         },
         {
-          "label": "House Clerk roll call — member vote and roll-call totals",
+          "name": "House Clerk roll call 263",
+          "locator": "member vote and roll-call totals",
+          "group": "Vote and legislative status",
           "url": "https://clerk.house.gov/evs/2025/roll263.xml"
         },
         {
-          "label": "House Clerk roll call — member vote and roll-call totals",
+          "name": "House Clerk roll call 180",
+          "locator": "member vote and roll-call totals",
+          "group": "Vote and legislative status",
           "url": "https://clerk.house.gov/evs/2025/roll180.xml"
         }
       ]
@@ -650,15 +820,21 @@ export const valerieFousheeEconomyEditorialGold = {
       "why_not_counted": "A headline selecting one component would falsely make that component the meaning of Foushee's vote; a generic 'veterans amendment' label would erase the package's heterogeneity.",
       "sources": [
         {
-          "label": "Congressional Record — Amendments En Bloc No. 2, amendment numbers 1, 14, 15, 19, 25, 28, and 32",
+          "name": "Roll 180 House debate",
+          "locator": "Amendments En Bloc No. 2, amendment numbers 1, 14, 15, 19, 25, 28, and 32",
+          "group": "Competing arguments",
           "url": "https://www.congress.gov/congressional-record/volume-171/issue-109/house-section/article/H2937-1"
         },
         {
-          "label": "House Clerk roll call — member vote and roll-call totals",
+          "name": "House Clerk roll call 180",
+          "locator": "member vote and roll-call totals",
+          "group": "Vote and legislative status",
           "url": "https://clerk.house.gov/evs/2025/roll180.xml"
         },
         {
-          "label": "House Clerk roll call — member vote and roll-call totals",
+          "name": "House Clerk roll call 263",
+          "locator": "member vote and roll-call totals",
+          "group": "Vote and legislative status",
           "url": "https://clerk.house.gov/evs/2025/roll263.xml"
         }
       ]

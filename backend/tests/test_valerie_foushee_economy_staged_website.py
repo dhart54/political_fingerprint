@@ -67,5 +67,16 @@ def test_public_projection_preserves_status_counting_and_source_boundaries() -> 
 
     roll_50 = next(item for item in projected["interpretations"] if item["roll"] == 50)
     roll_100 = next(item for item in projected["interpretations"] if item["roll"] == 100)
-    assert not any("concurrence in the Senate amendment" in source["label"] for source in roll_50["two_minute"]["sources"])
-    assert any("concurrence in the Senate amendment" in source["label"] for source in roll_100["two_minute"]["sources"])
+    assert not any(
+        "concurrence in the Senate amendment" in source["locator"]
+        for source in roll_50["two_minute"]["sources"]
+    )
+    assert any(
+        "concurrence in the Senate amendment" in source["locator"]
+        for source in roll_100["two_minute"]["sources"]
+    )
+    for item in projected["interpretations"] + projected["controls"]:
+        item_sources = item["two_minute"]["sources"] if "two_minute" in item else item["sources"]
+        assert all(set(source) == {"name", "locator", "group", "url"} for source in item_sources)
+        canonical_urls = [source["url"].rstrip("/") for source in item_sources]
+        assert len(canonical_urls) == len(set(canonical_urls))

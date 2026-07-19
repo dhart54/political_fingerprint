@@ -46,6 +46,30 @@ export default function GoldenRenderFixture() {
           </p>
         </div>
 
+        <section
+          className="mt-5 scroll-mt-4"
+          data-testid="foushee-economy-editorial-gold"
+          id="foushee-economy-editorial-gold"
+        >
+          <div className="rounded-2xl border border-cyan-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+            <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">Staged content preview</p>
+            <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">
+              Valerie P. Foushee — Economy &amp; Taxes
+            </h2>
+            <p className="mt-1 text-sm leading-6 text-stone-600">
+              Episode-aware issue synthesis and a focused nine-record review.
+            </p>
+          </div>
+          <PositionByIssue
+            evidenceRequest={editorialGoldRequest}
+            fixtureData={editorialGoldIssueFixtureData}
+            legislator={editorialGoldLegislator}
+            legislatorId={editorialGoldLegislator.id}
+            scope="all"
+            title="Valerie P. Foushee's Economy & Taxes evidence"
+          />
+        </section>
+
         <section data-testid="golden-valerie-profile">
           <div className="mt-4 rounded-2xl border border-stone-200 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
             <p className="text-xs uppercase tracking-[0.2em] text-stone-500">Current Profile</p>
@@ -98,25 +122,6 @@ export default function GoldenRenderFixture() {
           />
         </section>
 
-        <section className="mt-5" data-testid="foushee-economy-editorial-gold">
-          <div className="rounded-2xl border border-cyan-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
-            <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">Staged content preview</p>
-            <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">
-              Valerie P. Foushee — Economy &amp; Taxes
-            </h2>
-            <p className="mt-1 text-sm leading-6 text-stone-600">
-              Progressive disclosure for the focused nine-record review.
-            </p>
-          </div>
-          <PositionByIssue
-            evidenceRequest={editorialGoldRequest}
-            fixtureData={editorialGoldIssueFixtureData}
-            legislator={editorialGoldLegislator}
-            legislatorId={editorialGoldLegislator.id}
-            scope="all"
-            title="Valerie P. Foushee's Economy & Taxes evidence"
-          />
-        </section>
       </section>
     </main>
   );

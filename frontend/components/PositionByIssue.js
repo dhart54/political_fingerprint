@@ -529,20 +529,22 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
       ) : null}
       {evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (
         <div className="mt-3 grid gap-3">
-          <IssueEvidenceSummary
-            domain={selectedRow.domain}
-            representativeName={legislator?.name_display}
-            rows={evidenceRows}
-          />
           {editorialSlice ? (
             <ApprovedEditorialSlice editorialSlice={editorialSlice} />
           ) : (
-            <RepresentativeVotesSection
-              proofView={proofView}
-              representativeName={legislator?.name_display}
-              selectedActionRow={selectedActionRow}
-              setSelectedActionRow={setSelectedActionRow}
-            />
+            <>
+              <IssueEvidenceSummary
+                domain={selectedRow.domain}
+                representativeName={legislator?.name_display}
+                rows={evidenceRows}
+              />
+              <RepresentativeVotesSection
+                proofView={proofView}
+                representativeName={legislator?.name_display}
+                selectedActionRow={selectedActionRow}
+                setSelectedActionRow={setSelectedActionRow}
+              />
+            </>
           )}
           <ReviewedVoteList
             billGroups={billGroups}

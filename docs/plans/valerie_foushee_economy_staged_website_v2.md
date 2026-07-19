@@ -99,3 +99,14 @@
 - Definition of done satisfied: yes, for draft rendered review.
 - Remaining limitations: rendered comprehension review and status promotion remain human decisions.
 - Recommended next step: review the draft preview at desktop and mobile widths before any merge decision.
+
+## Rendered Refinement Pass
+
+- Review trigger: staged information-architecture review after commit `c03ccb7`.
+- Scope: replace vote-arithmetic-first summary, expose bounded episode patterns, keep party alignment secondary, compact the two disclosure layers, enforce a single-open parent accordion, consolidate public boundaries, and group/deduplicate sources.
+- Inference level: Level 2, bounded voting pattern. Level 3 broader philosophy remains allowed when earned by independent episodes, mechanisms, time coverage, contrary evidence, a published theme definition, and visible receipts.
+- Stable preview: expose the otherwise-unlinked golden fixture automatically only when `VERCEL_ENV=preview`; production remains gated unless explicitly enabled.
+- Editorial-source boundary: no file under `docs/editorial/valerie_foushee_economy_gold_v2/` is modified.
+- Validation: 52 focused backend/interpretation tests, 88 frontend unit tests, 5 responsive Playwright tests, deterministic generation, lint, type validation, and production build passed.
+- Rendered review: passed at 1440 x 1000, 1280 x 720, 1024 x 768, 768 x 1024, and 390 x 844; eight scoped review captures generated.
+- Final reconciliation: implementation complete; commit/push and draft-preview verification remain.

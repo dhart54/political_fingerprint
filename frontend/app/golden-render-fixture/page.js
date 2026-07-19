@@ -5,7 +5,10 @@ import GoldenRenderFixture from "../../components/GoldenRenderFixture";
 export const dynamic = "force-dynamic";
 
 export default function GoldenRenderFixturePage() {
-  if (process.env.ENABLE_GOLDEN_RENDER_FIXTURE !== "1") {
+  const isFixtureEnabled =
+    process.env.ENABLE_GOLDEN_RENDER_FIXTURE === "1" || process.env.VERCEL_ENV === "preview";
+
+  if (!isFixtureEnabled) {
     notFound();
   }
 

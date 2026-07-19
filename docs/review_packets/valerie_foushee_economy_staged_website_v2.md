@@ -15,8 +15,12 @@ production data.
 ## Progressive disclosure
 
 - Collapsed: approved 10-second headline, practical choice, and member action/result.
-- First expansion: prior baseline, mechanism, affected people/programs/businesses/agencies, scale or timing, and what happened next.
-- Deeper detail: approved two-minute detail, attributed institutional supporter and opponent arguments, argument-evidence boundary, later history, caveats, and human-readable official-source links.
+- First expansion: two compact groups, "What changed" and "Who, when, and what happened."
+- Deeper detail: side-by-side attributed arguments, approved two-minute detail, consolidated important context, and a grouped `Official sources (N)` disclosure.
+
+Only one parent record opens at a time. Closing a parent also resets its deeper
+disclosures. The same two first-level groups and competing arguments stack on
+mobile.
 
 The two controls (rolls 263 and 180) use a separate context-only presentation
 and remain excluded from substantive pattern counting. Roll 310 remains `Not
@@ -24,28 +28,63 @@ Voting`. The six substantive votes continue to represent four policy episodes.
 
 ## Rendered review
 
-- Desktop: reviewed at 1280 x 900.
+- Wide desktop: reviewed at 1440 x 1000.
+- Desktop/laptop: reviewed at 1280 x 720 and 1024 x 768.
+- Tablet: reviewed at 768 x 1024.
 - Mobile: reviewed at 390 x 844 with no horizontal overflow.
 - H.R. 3944 dollar figures remain absent from collapsed cards and appear only after expansion.
 - H.Con.Res. 14 states that the resolution created a framework for later legislation and did not itself change taxes or benefits.
 - Roll 310 reads as a non-vote, and rolls 281/285 and 50/100 remain separate stage-specific cards.
 - The deeper layer attributes arguments to institutional advocates and does not present them as Foushee's motive.
 
+## Issue-level synthesis
+
+The primary issue read leads with the four substantive policy categories, says
+that six substantive votes represent four policy episodes, identifies bounded
+patterns, and explains that this sample is not yet broad enough for one
+overarching Economy & Taxes philosophy.
+
+The visible patterns are:
+
+- opposition at both reviewed stages of the 2025 government-funding episode;
+- opposition at both reviewed stages of the FY2025-FY2034 budget-framework episode;
+- opposition to the reviewed House military-construction and veterans funding proposal;
+- opposition to the reviewed immigration-status restrictions on SBA-backed business loans.
+
+Party alignment appears only afterward as secondary `Voting context`, with an
+adjacent motive and repeated-stage boundary.
+
+The presentation helper encodes three inference levels: recorded action,
+bounded voting pattern, and broader political philosophy. The third level is
+permitted when supported by enough independent episodes, mechanisms, time,
+contrary evidence, and a published theme definition. This slice remains at the
+bounded-pattern level.
+
 ## Wording reconciliation
 
-No approved interpretation field was altered. The implementation adds only
-presentation labels and introductory navigation copy. Internal source locators
-for the House Clerk are normalized to the reader-facing phrase "member vote and
-roll-call totals"; source URLs and claim/source mappings are unchanged.
+No approved vote-interpretation field was altered. The issue-level synthesis,
+pattern statements, voting-context boundary, and inference-ladder contract are
+new presentation copy authorized by the rendered-review brief. Existing
+argument, detail, lifecycle, and caveat fields remain unchanged internally;
+the public UI consolidates overlapping boundaries into `Important context`.
+
+Source URLs and claim/source mappings are unchanged. Public source records now
+carry a human-readable name, locator, and purpose group; canonical URLs are
+deduplicated, and internal source IDs remain excluded.
 
 ## Validation
 
 - Backend staged-content, editorial-gold, manual-interpretation, and benchmark regressions: 52 passed.
-- Frontend Node tests: 86 passed.
-- Playwright desktop/mobile rendered regressions: 4 passed.
+- Frontend Node tests: 88 passed.
+- Playwright desktop/laptop/tablet/mobile rendered regressions: 5 passed in the focused run.
 - Deterministic content generator `--check`: passed.
 - ESLint: passed with eight pre-existing React hook warnings and zero errors.
 - Production frontend build, including type validation: passed.
+
+Eight local review captures cover the issue summary, bounded patterns, voting
+context, collapsed record, first expansion, competing arguments, important
+context, grouped sources, a context-only record, and mobile rendering. They are
+stored outside the repository in the scoped Codex visualization folder.
 
 ## Human review gates
 

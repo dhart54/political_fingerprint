@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from pathlib import Path
 
 
@@ -26,7 +27,22 @@ SOURCE_TYPE_LABELS = {
     "house_clerk_roll_call_xml": "House Clerk roll call",
     "house_committee_report": "House committee report",
     "house_floor_document": "House floor document",
+    "govinfo_public_law": "Public law text",
     "public_law_text": "Public law text",
+}
+
+SOURCE_GROUPS = {
+    "house_clerk_roll_call_xml": "Vote and legislative status",
+    "congress_gov_actions": "Vote and legislative status",
+    "congress_gov_measure_text": "Bill or resolution text",
+    "govinfo_public_law": "Bill or resolution text",
+    "public_law_text": "Bill or resolution text",
+    "cbo_cost_estimate": "Nonpartisan analysis",
+    "congress_gov_crs_summary": "Nonpartisan analysis",
+    "crs_report": "Nonpartisan analysis",
+    "house_committee_report": "Competing arguments",
+    "congressional_record": "Competing arguments",
+    "house_floor_document": "Competing arguments",
 }
 
 
@@ -34,8 +50,48 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def source_label(source: dict) -> str:
-    source_type = SOURCE_TYPE_LABELS.get(source["source_type"], "Official source")
+SOURCE_NAME_OVERRIDES = {
+    "crs_r48765": "CRS Report R48765",
+    "crs_in12622": "CRS Insight IN12622",
+    "govinfo_pl119_37": "Public Law 119-37",
+    "record_hr5371_initial_debate": "September H.R. 5371 House debate",
+    "record_hr5371_final_debate": "November H.R. 5371 House debate",
+    "record_roll263_instruction": "Roll 263 House debate",
+    "record_roll180_en_bloc": "Roll 180 House debate",
+    "record_hconres14_initial_debate": "February H.Con.Res. 14 House debate",
+    "record_hconres14_concurrence_debate": "April H.Con.Res. 14 concurrence debate",
+}
+
+
+def public_source_name(source_id: str, source_type: str) -> str:
+    if source_id in SOURCE_NAME_OVERRIDES:
+        return SOURCE_NAME_OVERRIDES[source_id]
+    if match := re.fullmatch(r"clerk_roll_0*(\d+)", source_id):
+        return f"House Clerk roll call {match.group(1)}"
+    if match := re.fullmatch(r"hrpt_(\d+)_(\d+)", source_id):
+        return f"H. Rept. {match.group(1)}-{int(match.group(2))}"
+    if match := re.fullmatch(r"congress_(hr|hconres)(\d+)_(.+)", source_id):
+        measure_type, number, suffix = match.groups()
+        measure = f"H.R. {number}" if measure_type == "hr" else f"H.Con.Res. {number}"
+        suffix_label = {
+            "actions": "actions",
+            "summary": "summary",
+            "text": "measure text",
+            "house_text": "House text",
+            "house_passed_text": "House-passed text",
+            "enrolled_text": "enrolled text",
+        }.get(suffix, suffix.replace("_", " "))
+        return f"{measure} {suffix_label}"
+    if match := re.fullmatch(r"cbo_(hr)(\d+)(?:_(.+))?", source_id):
+        _, number, suffix = match.groups()
+        suffix_label = f" — {suffix.replace('_', ' ')}" if suffix else ""
+        return f"CBO analysis of H.R. {number}{suffix_label}"
+    return SOURCE_TYPE_LABELS.get(source_type, "Official source")
+
+
+def public_source(source_id: str, source: dict) -> dict:
+    source_type = source["source_type"]
+    name = public_source_name(source_id, source_type)
     locator = str(source["locator"])
     locator = locator.replace(
         "vote-metadata; recorded-vote for bioguide F000477",
@@ -44,19 +100,29 @@ def source_label(source: dict) -> str:
         "recorded-vote for bioguide F000477",
         "member vote and roll-call totals",
     )
-    return f"{source_type} — {locator}"
+    return {
+        "name": name,
+        "locator": locator,
+        "group": SOURCE_GROUPS.get(source_type, "Additional official evidence"),
+        "url": source["url"],
+    }
 
 
 def public_sources(claim_ids: list[str], claims: dict[str, dict], sources: dict[str, dict]) -> list[dict]:
     result: list[dict] = []
-    seen: set[str] = set()
+    seen_source_ids: set[str] = set()
+    seen_urls: set[str] = set()
     for claim_id in claim_ids:
         for source_id in claims[claim_id]["source_ids"]:
-            if source_id in seen:
+            if source_id in seen_source_ids:
                 continue
-            seen.add(source_id)
+            seen_source_ids.add(source_id)
             source = sources[source_id]
-            result.append({"label": source_label(source), "url": source["url"]})
+            canonical_url = str(source["url"]).rstrip("/")
+            if canonical_url in seen_urls:
+                continue
+            seen_urls.add(canonical_url)
+            result.append(public_source(source_id, source))
     return result
 
 
