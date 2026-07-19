@@ -29,8 +29,8 @@
 - [x] Complete fresh-pass stage/source and editorial audits; resolve or flag every material issue.
 - [x] Tests/build/validation recorded.
 - [x] Review packet and final contract-validation documentation updated.
-- [ ] Commit, push, draft PR, local screenshots, and preview handoff completed without merge or manual production deploy.
-- [ ] Final reconciliation completed.
+- [x] Commit, push, draft PR, local screenshots, and preview handoff completed without merge or manual production deploy.
+- [x] Final reconciliation completed.
 
 ## Baseline
 
@@ -118,7 +118,7 @@ All currently available rows are 119th Congress; a cross-Congress contract chang
 - Performed: no.
 - Scope: none authorized.
 - Expected effects: review-only repository artifacts and automatic PR preview only.
-- Actual effects: review-only files and local screenshots; no production write or manual deployment.
+- Actual effects: review-only files, local screenshots, draft PR #95, and its automatic Vercel preview; no production write or manual deployment.
 
 ## Rollback Paths
 
@@ -130,6 +130,6 @@ All currently available rows are 119th Congress; a cross-Congress contract chang
 
 ## Final Reconciliation
 
-- Definition of done satisfied: yes, subject to commit, push, draft PR, and preview/check reporting.
+- Definition of done satisfied: yes. Draft PR #95 is open and the automatic Vercel check is Ready.
 - Remaining limitations: human factual review, scoring, comprehension testing, approval, benchmark promotion, and production eligibility remain pending.
 - Recommended next step: after this milestone, validate shared dossiers across another representative without promoting this slice.
