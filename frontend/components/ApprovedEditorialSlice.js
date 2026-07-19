@@ -33,7 +33,7 @@ export default function ApprovedEditorialSlice({ editorialSlice }) {
         <h5 className="mt-1 font-serif text-[1.35rem] leading-tight text-stone-950 sm:text-[1.55rem]">
           Valerie P. Foushee — Economy &amp; Taxes
         </h5>
-        <p className="mt-2 max-w-5xl text-base leading-7 text-stone-800">
+        <p className="mt-2 max-w-4xl text-base leading-7 text-stone-800">
           {fousheeEconomyIssueRead.primarySummary}
         </p>
       </div>
@@ -162,13 +162,13 @@ function ApprovedInterpretationCard({ entry, isOpen, onToggle }) {
         <div className="border-t border-stone-200 px-3 pb-3 pt-3 sm:px-4 sm:pb-4" id={panelId}>
           <div className="grid gap-3 md:grid-cols-2">
             <CompactGroup title="What changed">
-              <CompactFact label="Prior baseline" text={entry.thirty_second.prior_baseline} />
-              <CompactFact label="Mechanism" text={entry.thirty_second.mechanism} />
+              <CompactFact label="Before this vote" text={entry.thirty_second.prior_baseline} />
+              <CompactFact label="Change at stake" text={entry.thirty_second.mechanism} />
             </CompactGroup>
-            <CompactGroup title="Who, when, and what happened">
-              <CompactFact label="Affected" text={entry.thirty_second.affected} />
-              <CompactFact label="Scale or timing" text={entry.thirty_second.scale_or_timing} />
-              <CompactFact label="Next" text={entry.thirty_second.what_happened_next} />
+            <CompactGroup title="Impact and outcome">
+              <CompactFact label="Who it affected" text={entry.thirty_second.affected} />
+              <CompactFact label="Scale and timing" text={entry.thirty_second.scale_or_timing} />
+              <CompactFact label="Outcome" text={entry.thirty_second.what_happened_next} />
             </CompactGroup>
           </div>
 

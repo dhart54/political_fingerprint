@@ -1,14 +1,14 @@
 export const fousheeEconomyIssueRead = Object.freeze({
   primarySummary:
-    "Foushee voted against the reviewed proposals to fund federal operations, establish frameworks for later tax-and-spending legislation, fund military construction and veterans programs, and narrow SBA loan eligibility. The six substantive votes represent four policy episodes. They reveal several specific voting patterns, but this sample is not yet broad enough to establish one overarching Economy & Taxes philosophy.",
+    "In this sample, Foushee voted against specific proposals involving government funding, frameworks for later tax-and-spending legislation, military construction and veterans programs, and SBA loan eligibility. The six substantive votes represent four policy episodes. They reveal several specific voting patterns, but this sample is not yet broad enough to establish one overarching Economy & Taxes philosophy.",
   patterns: Object.freeze([
-    "Opposed both reviewed stages of the 2025 government-funding episode.",
-    "Opposed both reviewed stages of the FY2025–FY2034 budget-framework episode.",
-    "Opposed the reviewed House military-construction and veterans funding proposal.",
-    "Opposed the reviewed immigration-status restrictions on SBA-backed business loans.",
+    "Opposed both stages of the 2025 government-funding episode.",
+    "Opposed both stages of the FY2025–FY2034 budget-framework episode.",
+    "Opposed the House military-construction and veterans funding proposal.",
+    "Opposed immigration-status restrictions on SBA-backed business loans.",
   ]),
   votingContext:
-    "Foushee voted with the majority of House Democrats on all 6 substantive roll calls in this reviewed sample, covering 4 policy episodes.",
+    "Foushee voted with the majority of House Democrats on all 6 substantive roll calls in this sample, covering 4 policy episodes.",
   votingContextBoundary:
     "Party alignment describes how these votes compared with other Democrats. It does not explain why Foushee voted that way, and repeated stages are not separate policy positions.",
   howToRead:

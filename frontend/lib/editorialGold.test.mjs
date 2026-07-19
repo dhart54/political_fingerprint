@@ -71,10 +71,11 @@ test("public staged bundle excludes internal review fields and claim IDs", () =>
 
 test("episode-aware synthesis stays at the bounded-pattern level without prohibiting earned philosophy reads", () => {
   assert.match(fousheeEconomyIssueRead.primarySummary, /six substantive votes represent four policy episodes/i);
+  assert.match(fousheeEconomyIssueRead.primarySummary, /specific proposals involving government funding/i);
   assert.match(fousheeEconomyIssueRead.primarySummary, /several specific voting patterns/i);
   assert.match(fousheeEconomyIssueRead.primarySummary, /not yet broad enough to establish one overarching/i);
   assert.equal(fousheeEconomyIssueRead.patterns.length, 4);
-  assert.equal(fousheeEconomyIssueRead.patterns.filter((pattern) => /both reviewed stages/i.test(pattern)).length, 2);
+  assert.equal(fousheeEconomyIssueRead.patterns.filter((pattern) => /both stages/i.test(pattern)).length, 2);
   assert.equal(fousheeEconomyInferenceLevel, "boundedVotingPattern");
   assert.equal(editorialInferenceLadder.recordedAction.level, 1);
   assert.equal(editorialInferenceLadder.boundedVotingPattern.level, 2);

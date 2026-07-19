@@ -109,4 +109,13 @@
 - Editorial-source boundary: no file under `docs/editorial/valerie_foushee_economy_gold_v2/` is modified.
 - Validation: 52 focused backend/interpretation tests, 88 frontend unit tests, 5 responsive Playwright tests, deterministic generation, lint, type validation, and production build passed.
 - Rendered review: passed at 1440 x 1000, 1280 x 720, 1024 x 768, 768 x 1024, and 390 x 844; eight scoped review captures generated.
-- Final reconciliation: implementation complete; commit/push and draft-preview verification remain.
+- Prior refinement publication: commit `a085b17` is on draft PR #93; the final terminology polish is the only active follow-up.
+
+## Final Terminology Polish
+
+- Scope: reader-facing summary qualification, reduced repetition of "reviewed," six plain-language first-layer labels, and a narrower readable summary measure.
+- Preserved: architecture, collapsed vote copy, episode/counting model, inference ladder, arguments, Important context, source mappings, single-open accordion, and all `human_approval_pending` statuses.
+- Editorial-source boundary: no approved legislative claim or file under `docs/editorial/valerie_foushee_economy_gold_v2/` changes.
+- Validation: 88 frontend unit tests, 52 focused content/interpretation regressions, 5 responsive Playwright tests, deterministic generation, lint, type validation, production build, and `git diff --check` passed.
+- Rendered review: final terminology verified at 1280 x 720 and 390 x 844 in addition to the automated wide/laptop/tablet/mobile viewport matrix.
+- Publication state: focused polish is ready for one normal commit and push to the existing draft implementation branch.

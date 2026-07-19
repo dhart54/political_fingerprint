@@ -86,21 +86,21 @@ test("Foushee economy issue read is episode-aware and keeps secondary context bo
   await page.goto("/golden-render-fixture");
 
   const slice = page.getByTestId("approved-editorial-slice");
-  await expect(slice.getByText(/Foushee voted against the reviewed proposals to fund federal operations/)).toBeVisible();
+  await expect(slice.getByText(/In this sample, Foushee voted against specific proposals involving government funding/)).toBeVisible();
   await expect(slice.getByText(/six substantive votes represent four policy episodes/i)).toBeVisible();
   await expect(slice.getByText(/not yet broad enough to establish one overarching Economy & Taxes philosophy/i)).toBeVisible();
 
   await expect(slice.getByText("Patterns in this sample", { exact: true })).toBeVisible();
-  await expect(slice.getByText("Opposed both reviewed stages of the 2025 government-funding episode.")).toBeVisible();
-  await expect(slice.getByText("Opposed both reviewed stages of the FY2025–FY2034 budget-framework episode.")).toBeVisible();
-  await expect(slice.getByText("Opposed the reviewed House military-construction and veterans funding proposal.")).toBeVisible();
-  await expect(slice.getByText("Opposed the reviewed immigration-status restrictions on SBA-backed business loans.")).toBeVisible();
+  await expect(slice.getByText("Opposed both stages of the 2025 government-funding episode.")).toBeVisible();
+  await expect(slice.getByText("Opposed both stages of the FY2025–FY2034 budget-framework episode.")).toBeVisible();
+  await expect(slice.getByText("Opposed the House military-construction and veterans funding proposal.")).toBeVisible();
+  await expect(slice.getByText("Opposed immigration-status restrictions on SBA-backed business loans.")).toBeVisible();
 
   for (const indicator of ["6 substantive votes", "4 policy episodes", "1 Not Voting", "2 context-only records"]) {
     await expect(slice.getByText(indicator, { exact: true })).toBeVisible();
   }
   await expect(slice.getByText("Voting context", { exact: true })).toBeVisible();
-  await expect(slice.getByText(/with the majority of House Democrats on all 6 substantive roll calls/)).toBeVisible();
+  await expect(slice.getByText(/with the majority of House Democrats on all 6 substantive roll calls in this sample/)).toBeVisible();
   await expect(slice.getByText(/does not explain why Foushee voted that way/)).toBeVisible();
   await expect(slice.getByText(/repeated stages are not separate policy positions/)).toBeVisible();
   await expect(slice.getByText("How to read this record", { exact: true })).toBeVisible();
@@ -129,7 +129,15 @@ test("Foushee economy vote accordion preserves approved copy and compact disclos
   await houseButton.click();
   await expect(houseButton).toHaveAttribute("aria-expanded", "true");
   await expect(houseProposal.getByText("What changed", { exact: true })).toBeVisible();
-  await expect(houseProposal.getByText("Who, when, and what happened", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Before this vote", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Change at stake", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Impact and outcome", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Who it affected", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Scale and timing", { exact: true })).toBeVisible();
+  await expect(houseProposal.getByText("Outcome", { exact: true })).toBeVisible();
+  for (const oldLabel of ["Prior baseline", "Mechanism", "Affected", "Scale or timing", "Next"]) {
+    await expect(houseProposal.getByText(oldLabel, { exact: true })).toHaveCount(0);
+  }
   await expect(houseProposal.getByText(/\$17\.509 billion/)).toBeVisible();
 
   const deeperSummary = houseProposal.getByText("Arguments, context, and sources", { exact: true });
@@ -182,7 +190,7 @@ test("Foushee economy read remains usable across wide, laptop, tablet, and mobil
     const revisedFramework = slice.getByTestId("approved-editorial-roll-100");
     await revisedFramework.locator(":scope > h6 > button").click();
     await expect(revisedFramework.getByText("What changed", { exact: true })).toBeVisible();
-    await expect(revisedFramework.getByText("Who, when, and what happened", { exact: true })).toBeVisible();
+    await expect(revisedFramework.getByText("Impact and outcome", { exact: true })).toBeVisible();
     await assertNoHorizontalOverflow(page);
   }
 });

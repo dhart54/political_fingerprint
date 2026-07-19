@@ -15,7 +15,7 @@ production data.
 ## Progressive disclosure
 
 - Collapsed: approved 10-second headline, practical choice, and member action/result.
-- First expansion: two compact groups, "What changed" and "Who, when, and what happened."
+- First expansion: two compact groups, "What changed" and "Impact and outcome."
 - Deeper detail: side-by-side attributed arguments, approved two-minute detail, consolidated important context, and a grouped `Official sources (N)` disclosure.
 
 Only one parent record opens at a time. Closing a parent also resets its deeper
@@ -39,17 +39,21 @@ Voting`. The six substantive votes continue to represent four policy episodes.
 
 ## Issue-level synthesis
 
-The primary issue read leads with the four substantive policy categories, says
-that six substantive votes represent four policy episodes, identifies bounded
-patterns, and explains that this sample is not yet broad enough for one
-overarching Economy & Taxes philosophy.
+The final primary issue read is:
+
+> In this sample, Foushee voted against specific proposals involving government
+> funding, frameworks for later tax-and-spending legislation, military
+> construction and veterans programs, and SBA loan eligibility. The six
+> substantive votes represent four policy episodes. They reveal several
+> specific voting patterns, but this sample is not yet broad enough to establish
+> one overarching Economy & Taxes philosophy.
 
 The visible patterns are:
 
-- opposition at both reviewed stages of the 2025 government-funding episode;
-- opposition at both reviewed stages of the FY2025-FY2034 budget-framework episode;
-- opposition to the reviewed House military-construction and veterans funding proposal;
-- opposition to the reviewed immigration-status restrictions on SBA-backed business loans.
+- opposition at both stages of the 2025 government-funding episode;
+- opposition at both stages of the FY2025-FY2034 budget-framework episode;
+- opposition to the House military-construction and veterans funding proposal;
+- opposition to immigration-status restrictions on SBA-backed business loans.
 
 Party alignment appears only afterward as secondary `Voting context`, with an
 adjacent motive and repeated-stage boundary.
@@ -71,6 +75,11 @@ the public UI consolidates overlapping boundaries into `Important context`.
 Source URLs and claim/source mappings are unchanged. Public source records now
 carry a human-readable name, locator, and purpose group; canonical URLs are
 deduplicated, and internal source IDs remain excluded.
+
+The final terminology pass changes only public labels: `Prior baseline` becomes
+`Before this vote`; `Mechanism` becomes `Change at stake`; `Affected` becomes
+`Who it affected`; `Scale or timing` becomes `Scale and timing`; `Next` becomes
+`Outcome`; and `Who, when, and what happened` becomes `Impact and outcome`.
 
 ## Validation
 
