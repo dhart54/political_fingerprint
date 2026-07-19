@@ -1,0 +1,22 @@
+{
+  "schema_version":"editorial_policy_episode_map_v1",
+  "human_approval_status":"human_approval_pending",
+  "counts":{"substantive_rolls":7,"distinct_policy_episodes":5,"not_voting_records":0,"context_controls":6},
+  "episodes":[
+    {"episode_id":"halt-fentanyl-legislative-path","rolls":[32,33,166],"measures":["119-hr-27-amdt-5","119-hr-27","119-s-331"],"relationship":"one policy episode with a certification amendment, an earlier House bill, and later passage of a related Senate-amended bill","independent_evidence":true,"counted_episode":true,"practical_question":"Whether and under what condition to make classwide Schedule I treatment and associated penalty/research rules permanent.","human_approval_status":"human_approval_pending"},
+    {"episode_id":"retired-service-weapon-purchases","rolls":[130],"measures":["119-hr-2255"],"relationship":"single House-passage action","independent_evidence":true,"counted_episode":true,"practical_question":"Whether to create a federal program for eligible officers to buy retired agency-issued firearms.","human_approval_status":"human_approval_pending"},
+    {"episode_id":"officer-safety-data-reporting","rolls":[131],"measures":["119-hr-2240"],"relationship":"single House-passage action","independent_evidence":true,"counted_episode":true,"practical_question":"Whether to require DOJ reports on attacks, reporting systems, and officer mental-health resources.","human_approval_status":"human_approval_pending"},
+    {"episode_id":"dc-police-pursuit-rules","rolls":[275],"measures":["119-hr-5143"],"relationship":"single House-passage action on the Rules Committee substitute","independent_evidence":true,"counted_episode":true,"practical_question":"Whether Congress should replace D.C.'s pursuit restrictions with a broader pursuit requirement and exceptions.","human_approval_status":"human_approval_pending"},
+    {"episode_id":"dc-policing-reform-repeal","rolls":[299],"measures":["119-hr-5107"],"relationship":"single House-passage action on the committee substitute","independent_evidence":true,"counted_episode":true,"practical_question":"Whether Congress should repeal most of D.C.'s 2022 policing reform law and restore prior provisions.","human_approval_status":"human_approval_pending"}
+  ],
+  "excluded_records":[
+    {"roll":160,"class":"context_only","reason":"previous-question vote on a multi-measure rule; indirect and non-counting","human_approval_status":"human_approval_pending"},
+    {"roll":161,"class":"context_only","reason":"rule adoption covering multiple bills; no single Justice policy position","human_approval_status":"human_approval_pending"},
+    {"roll":267,"class":"context_only","reason":"previous-question vote on a seven-bill rule; indirect and non-counting","human_approval_status":"human_approval_pending"},
+    {"roll":268,"class":"context_only","reason":"rule adoption covering Justice and non-Justice measures; no single policy position","human_approval_status":"human_approval_pending"},
+    {"roll":290,"class":"context_only","reason":"previous-question vote on a multi-measure rule; indirect and non-counting","human_approval_status":"human_approval_pending"},
+    {"roll":291,"class":"context_only","reason":"rule adoption covering multiple unrelated measures; no single policy position","human_approval_status":"human_approval_pending"}
+  ],
+  "not_voting_records":[],
+  "counting_boundary":"Procedural controls remain visible but do not contribute to substantive-roll, episode, pattern, party-alignment, or philosophy counts."
+}

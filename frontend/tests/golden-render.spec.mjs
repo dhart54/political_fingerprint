@@ -196,6 +196,48 @@ test("Foushee economy read remains usable across wide, laptop, tablet, and mobil
   }
 });
 
+test("Foushee Justice read preserves episodes, optional arguments, controls, and empty additional list", async ({ page }) => {
+  await page.goto("/golden-render-fixture#foushee-justice-editorial-gold");
+  const fixture = page.getByTestId("foushee-justice-editorial-gold");
+  const slice = fixture.getByTestId("editorial-issue-experience");
+  await expect(slice.getByTestId("editorial-review-label")).toContainText("not published");
+  for (const indicator of ["7 substantive votes", "5 policy episodes", "0 Not Voting", "6 context-only records"]) {
+    await expect(slice.getByText(indicator, { exact: true })).toBeVisible();
+  }
+  await expect(slice.getByText(/not one overarching Justice philosophy/i)).toBeVisible();
+  await expect(fixture.getByText("Additional reviewed vote list", { exact: true })).toHaveCount(0);
+
+  const reporting = slice.getByTestId("editorial-record-roll-131");
+  await reporting.locator(":scope > h6 > button").click();
+  await reporting.getByText("Arguments, context, and sources", { exact: true }).click();
+  await expect(reporting.getByText("Supporters argued", { exact: true })).toBeVisible();
+  await expect(reporting.getByText("Opponents argued", { exact: true })).toHaveCount(0);
+  await expect(reporting.getByText(/did not provide a fair stage-specific opposing case/)).toBeVisible();
+
+  const dc = slice.getByTestId("editorial-record-roll-299");
+  await dc.locator(":scope > h6 > button").click();
+  await expect(dc.locator(":scope > h6 > button")).toHaveAttribute("aria-expanded", "true");
+  await expect(reporting.locator(":scope > h6 > button")).toHaveAttribute("aria-expanded", "false");
+  await expect(dc).toContainText("most of D.C.'s 2022 policing reform law");
+  await expect(slice.getByTestId("editorial-record-context-160")).toHaveAttribute("data-inclusion-class", "context_only");
+  await assertNoHorizontalOverflow(page);
+});
+
+test("Foushee Justice read is responsive and falls back in production mode", async ({ page }) => {
+  for (const viewport of [{ width: 1440, height: 1000 }, { width: 1024, height: 768 }, { width: 768, height: 1024 }, { width: 390, height: 844 }]) {
+    await page.setViewportSize(viewport);
+    await page.goto(`/golden-render-fixture?justiceViewport=${viewport.width}#foushee-justice-editorial-gold`);
+    const slice = page.getByTestId("foushee-justice-editorial-gold").getByTestId("editorial-issue-experience");
+    await expect(slice.getByText("Patterns in this sample", { exact: true })).toBeVisible();
+    await slice.getByTestId("editorial-record-roll-275").locator(":scope > h6 > button").click();
+    await expect(slice.getByTestId("editorial-record-roll-275").getByText("What changed", { exact: true })).toBeVisible();
+    await assertNoHorizontalOverflow(page);
+  }
+  const fallback = page.getByTestId("foushee-justice-production-gate-fixture");
+  await expect(fallback.getByTestId("editorial-issue-experience")).toHaveCount(0);
+  await expect(fallback.getByText("Issue summary", { exact: true })).toBeVisible();
+});
+
 test("pending editorial slice uses the basic representative fallback in production mode", async ({ page }) => {
   await page.goto("/golden-render-fixture#foushee-production-gate-fixture");
   const fixture = page.getByTestId("foushee-production-gate-fixture");

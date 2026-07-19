@@ -12,6 +12,7 @@ import {
 import { buildImportantContext, groupOfficialSources } from "./editorialIssuePresentation.mjs";
 import { productionEditorialIssueSlices } from "./editorialIssueProductionSlices.mjs";
 import { reviewEditorialIssueSlices } from "./editorialIssueReviewSlices.mjs";
+import { justiceEditorialIssueFixtureData } from "./justiceEditorialRenderFixture.mjs";
 import {
   syntheticEditorialCandidate,
   syntheticEditorialIssueFixtureData,
@@ -21,6 +22,25 @@ import { valerieFousheeEconomyEditorialGold } from "./valerieFousheeEconomyEdito
 
 const fousheeRows = editorialGoldIssueFixtureData.evidenceByDomain.ECONOMY_TAXES.evidence;
 const fousheeCandidate = reviewEditorialIssueSlices[0];
+const justiceCandidate = reviewEditorialIssueSlices.find((candidate) => candidate.identity.issueId === "JUSTICE_PUBLIC_SAFETY");
+const justiceRows = justiceEditorialIssueFixtureData.evidenceByDomain.JUSTICE_PUBLIC_SAFETY.evidence;
+
+test("Justice review candidate uses the generic contract with explicit episodes", () => {
+  const experience = selectEditorialIssueExperience({ candidates: reviewEditorialIssueSlices, domain: "JUSTICE_PUBLIC_SAFETY", evidenceRows: justiceRows, legislator: editorialGoldLegislator, mode: "review" });
+  assert.ok(experience);
+  assert.equal(justiceCandidate.publication.editorialStatus, "human_approval_pending");
+  assert.equal(justiceCandidate.publication.productionEligible, false);
+  assert.deepEqual(experience.indicators.map((item) => item.label), ["7 substantive votes", "5 policy episodes", "0 Not Voting", "6 context-only records"]);
+  assert.equal(experience.records.length, 13);
+  assert.equal(experience.records.filter((item) => item.inclusionClass === "substantive").length, 7);
+  assert.equal(experience.records.filter((item) => item.inclusionClass === "context_only").length, 6);
+  assert.equal(new Set(experience.records.filter((item) => item.inclusionClass === "substantive").map((item) => item.episodeId)).size, 5);
+  assert.equal(experience.records.find((item) => item.id === "roll-131").arguments.opponents, undefined);
+});
+
+test("Justice candidate is excluded from ordinary production selection", () => {
+  assert.equal(selectEditorialIssueExperience({ candidates: reviewEditorialIssueSlices, domain: "JUSTICE_PUBLIC_SAFETY", evidenceRows: justiceRows, legislator: editorialGoldLegislator }), null);
+});
 
 test("pending editorial content is review-only and production requires all publication gates", () => {
   const review = selectEditorialIssueExperience({

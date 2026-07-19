@@ -18,6 +18,7 @@ import {
   editorialGoldIssueFixtureData,
   editorialGoldLegislator,
 } from "../lib/editorialGoldRenderFixture.mjs";
+import { justiceEditorialIssueFixtureData } from "../lib/justiceEditorialRenderFixture.mjs";
 import { EDITORIAL_EXPERIENCE_MODE } from "../lib/editorialIssueExperience.mjs";
 import { reviewEditorialIssueSlices } from "../lib/editorialIssueReviewSlices.mjs";
 import {
@@ -39,6 +40,7 @@ export default function GoldenRenderFixture() {
     domain: "ECONOMY_TAXES",
     requestedAt: 1,
   });
+  const [justiceEditorialRequest] = useState({ domain: "JUSTICE_PUBLIC_SAFETY", requestedAt: 1 });
   const [syntheticEditorialRequest] = useState({
     domain: "ENVIRONMENT_ENERGY",
     requestedAt: 1,
@@ -81,6 +83,20 @@ export default function GoldenRenderFixture() {
             scope="all"
             title="Valerie P. Foushee's Economy & Taxes evidence"
           />
+        </section>
+
+        <section className="mt-5 scroll-mt-4" data-testid="foushee-justice-editorial-gold" id="foushee-justice-editorial-gold">
+          <div className="rounded-2xl border border-cyan-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+            <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">Staged content preview</p>
+            <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">Valerie P. Foushee {"—"} Justice &amp; Public Safety</h2>
+            <p className="mt-1 text-sm leading-6 text-stone-600">Pending, episode-aware editorial review through the generic issue renderer.</p>
+          </div>
+          <PositionByIssue editorialCandidates={reviewEditorialIssueSlices} editorialMode={EDITORIAL_EXPERIENCE_MODE.review} evidenceRequest={justiceEditorialRequest} fixtureData={justiceEditorialIssueFixtureData} legislator={editorialGoldLegislator} legislatorId={editorialGoldLegislator.id} scope="all" title="Valerie P. Foushee's Justice & Public Safety evidence" />
+        </section>
+
+        <section className="mt-5 scroll-mt-4" data-testid="foushee-justice-production-gate-fixture" id="foushee-justice-production-gate-fixture">
+          <div className="rounded-2xl border border-stone-300 bg-white px-4 py-3"><p className="text-xs uppercase tracking-[0.2em] text-stone-600">Production-gate fallback proof</p><h2 className="mt-1 font-serif text-[1.8rem]">Pending Justice content stays unpublished</h2></div>
+          <PositionByIssue evidenceRequest={justiceEditorialRequest} fixtureData={justiceEditorialIssueFixtureData} legislator={editorialGoldLegislator} legislatorId={editorialGoldLegislator.id} scope="all" title="Production-mode Justice evidence" />
         </section>
 
         <section className="mt-5 scroll-mt-4" data-testid="synthetic-editorial-fixture" id="synthetic-editorial-fixture">

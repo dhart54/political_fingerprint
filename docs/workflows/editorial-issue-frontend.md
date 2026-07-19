@@ -45,4 +45,4 @@ The golden-render route is unlinked and enabled only by `ENABLE_GOLDEN_RENDER_FI
 4. Validate matching, optional fields, non-counting classes, source deduplication, fallback, accessibility, and responsive behavior.
 5. Promote human approval, benchmark status, and public-production eligibility only through their separate authorized governance decisions.
 
-The next contract-validation milestone should use a substantively different second real issue domain. Synthetic fixtures are only genericity tests and are never editorial evidence.
+The second real-domain validation (Foushee Justice & Public Safety) confirmed that explicit episodes, optional one-sided arguments, variable counts, empty additional lists, and production fallback work without domain-specific runtime branching. The next contract-validation milestone should reuse a measure dossier across another representative. Synthetic fixtures are only genericity tests and are never editorial evidence.
