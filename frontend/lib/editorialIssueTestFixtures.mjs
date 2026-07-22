@@ -12,9 +12,9 @@ const domain = "ENVIRONMENT_ENERGY";
 const congress = 120;
 
 const interpretations = [
-  interpretation({ roll: 41, action: "Yes", episodeId: "synthetic-grid-pilot", measureId: "synthetic-shared-measure", position: "yea", headline: "Supported a fictional grid-resilience pilot", result: "The synthetic measure passed." }),
-  interpretation({ roll: 57, action: "No", episodeId: "synthetic-permit-deadline", measureId: "synthetic-shared-measure", position: "nay", headline: "Opposed a fictional permitting deadline", result: "The synthetic measure failed." }),
-  interpretation({ roll: 63, action: "Not Voting", position: "not_voting", headline: "Did not vote on a fictional reporting proposal", result: "The synthetic measure passed." }),
+  interpretation({ roll: 41, action: "Yes", episodeId: "synthetic-grid-pilot", measureId: "synthetic-shared-measure", position: "yea", headline: "Supported a fictional grid-resilience pilot", result: "The proposal passed." }),
+  interpretation({ roll: 57, action: "No", episodeId: "synthetic-permit-deadline", measureId: "synthetic-shared-measure", position: "nay", headline: "Opposed a fictional permitting deadline", result: "The proposal failed." }),
+  interpretation({ roll: 63, action: "Not Voting", position: "not_voting", headline: "Did not vote on a fictional reporting proposal", result: "The proposal passed." }),
 ];
 
 const controls = [{
@@ -22,9 +22,9 @@ const controls = [{
   measure_id: "synthetic-context",
   member_action: "Yes",
   human_approval_status: "human_approved",
-  context_summary: "Fictional procedural context bundled several unrelated actions",
-  why_not_counted: "This synthetic row is context-only and does not count as support or opposition.",
-  sources: [source("Synthetic context record", "https://example.test/context/72", "Vote and legislative status")],
+  context_summary: "A procedural record bundled several unrelated actions",
+  why_not_counted: "This row concerns floor process and does not count as support or opposition.",
+  sources: [source("Procedural record", "https://example.test/context/72", "Vote and legislative status")],
 }];
 
 export const syntheticEditorialCandidate = Object.freeze({
@@ -40,9 +40,9 @@ export const syntheticEditorialCandidate = Object.freeze({
     memberId: syntheticEditorialLegislator.bioguide_id,
     memberDisplayName: syntheticEditorialLegislator.name_display,
     issueId: domain,
-    issueDisplayName: "Synthetic Energy Choices",
+    issueDisplayName: "Energy & Infrastructure",
     congress,
-    reviewedPeriod: "Synthetic test period",
+    reviewedPeriod: "January–March 2027",
   }),
   publication: Object.freeze({
     editorialStatus: "human_approved",
@@ -51,9 +51,45 @@ export const syntheticEditorialCandidate = Object.freeze({
     reviewLabel: "Synthetic test content \u2014 never a researched political claim",
   }),
   synthesis: Object.freeze({
-    primary: "This synthetic sample is deliberately mixed: one fictional proposal was supported, one was opposed, and one was Not Voting.",
-    patterns: Object.freeze(["Mixed actions across two independent fictional policy episodes."]),
-    evidenceBreadth: "Synthetic mixed pattern",
+    primary: "In the reviewed record, one infrastructure proposal was supported, one was opposed, and one action was Not Voting.",
+    patterns: Object.freeze(["The reviewed actions point in more than one direction across two independent policy episodes."]),
+    evidenceBreadth: "Mixed but interpretable",
+  }),
+});
+
+export const syntheticDevelopingEditorialCandidate = Object.freeze({
+  ...syntheticEditorialCandidate,
+  source: Object.freeze({
+    ...syntheticEditorialCandidate.source,
+    inference_candidate: Object.freeze({
+      inference_level: "contested_candidate",
+      independent_episode_count: 2,
+      contrary_or_limiting_evidence: Object.freeze([
+        Object.freeze({ text: "The two reviewed episodes point in different directions." }),
+      ]),
+    }),
+  }),
+  synthesis: Object.freeze({
+    ...syntheticEditorialCandidate.synthesis,
+    primary: "The reviewed record does not yet support a stable cross-episode conclusion.",
+  }),
+});
+
+export const syntheticLimitedEditorialCandidate = Object.freeze({
+  ...syntheticEditorialCandidate,
+  source: Object.freeze({
+    ...syntheticEditorialCandidate.source,
+    slice_counts: Object.freeze({ substantive_rolls: 1, policy_episodes: 1, not_voting_records: 0, context_controls: 0 }),
+    interpretations: Object.freeze(interpretations.slice(0, 1)),
+    controls: Object.freeze([]),
+    inference_candidate: Object.freeze({
+      inference_level: "insufficient_evidence",
+      independent_episode_count: 1,
+    }),
+  }),
+  synthesis: Object.freeze({
+    primary: "A single reviewed episode is available.",
+    evidenceBreadth: "Insufficient evidence",
   }),
 });
 
@@ -66,10 +102,56 @@ const syntheticRows = [
 
 export const syntheticEditorialIssueFixtureData = Object.freeze({
   positions: {
-    scope_metadata: { congresses: [congress], requested_congresses: [congress], scope_label: "Synthetic test period" },
+    scope_metadata: { congresses: [congress], requested_congresses: [congress], scope_label: "January–March 2027" },
     positions: [{ domain, recorded_votes: 4, interpreted_support_count: 1, interpreted_oppose_count: 1, interpreted_other_count: 2, yea_share: 0.5, nay_share: 0.5 }],
   },
   evidenceByDomain: { [domain]: { domain, evidence: syntheticRows } },
+});
+
+export const syntheticLimitedEditorialIssueFixtureData = Object.freeze({
+  positions: {
+    scope_metadata: { congresses: [congress], requested_congresses: [congress], scope_label: "January–March 2027" },
+    positions: [{ domain, recorded_votes: 1, interpreted_support_count: 1, interpreted_oppose_count: 0, interpreted_other_count: 0, yea_share: 1, nay_share: 0 }],
+  },
+  evidenceByDomain: { [domain]: { domain, evidence: syntheticRows.slice(0, 1) } },
+});
+
+export const proceduralOnlyIssueFixtureData = Object.freeze({
+  positions: {
+    scope_metadata: { congresses: [congress], requested_congresses: [congress], scope_label: "January–March 2027" },
+    positions: [{ domain, recorded_votes: 1, interpreted_support_count: 0, interpreted_oppose_count: 0, interpreted_other_count: 1, yea_share: 0, nay_share: 0 }],
+  },
+  evidenceByDomain: {
+    [domain]: {
+      domain,
+      evidence: [evidenceRow({ roll: 72, position: "yea", status: "ambiguous", title: "Rule for floor consideration", voteType: "procedural" })],
+    },
+  },
+});
+
+const limitedHealthRow = Object.freeze({
+  ...evidenceRow({ roll: 81, position: "yea", title: "Community clinic pilot" }),
+  issue_domain: "HEALTH_SOCIAL",
+});
+const proceduralEducationRow = Object.freeze({
+  ...evidenceRow({ roll: 82, position: "yea", status: "ambiguous", title: "Rule for floor consideration", voteType: "procedural" }),
+  issue_domain: "EDUCATION",
+});
+
+export const mixedAvailabilityIssueFixtureData = Object.freeze({
+  positions: {
+    scope_metadata: { congresses: [congress], requested_congresses: [congress], scope_label: "January–March 2027" },
+    positions: [
+      { domain, recorded_votes: 4, interpreted_support_count: 1, interpreted_oppose_count: 1, interpreted_other_count: 2, yea_share: 0.5, nay_share: 0.5 },
+      { domain: "HEALTH_SOCIAL", recorded_votes: 1, interpreted_support_count: 1, interpreted_oppose_count: 0, interpreted_other_count: 0, yea_share: 1, nay_share: 0 },
+      { domain: "EDUCATION", recorded_votes: 1, interpreted_support_count: 0, interpreted_oppose_count: 0, interpreted_other_count: 1, yea_share: 0, nay_share: 0 },
+    ],
+  },
+  evidenceByDomain: {
+    [domain]: { domain, evidence: syntheticRows },
+    HEALTH_SOCIAL: { domain: "HEALTH_SOCIAL", evidence: [limitedHealthRow] },
+    EDUCATION: { domain: "EDUCATION", evidence: [proceduralEducationRow] },
+  },
 });
 
 function interpretation({ roll, action, episodeId, measureId, position, headline, result }) {
@@ -77,34 +159,34 @@ function interpretation({ roll, action, episodeId, measureId, position, headline
     roll,
     measure_id: measureId || `synthetic-measure-${roll}`,
     ...(episodeId ? { episode_id: episodeId } : {}),
-    stage: "Synthetic House action",
+    stage: "House action",
     member_action: action,
     human_approval_status: "human_approved",
     ten_second: {
       headline,
-      practical_choice: "This is a fictional practical choice used only to exercise the generic renderer.",
+      practical_choice: "The proposal presented a concrete choice about a fictional public program.",
       member_action_and_result: `Jordan Example recorded ${action}. ${result}`,
     },
     thirty_second: {
-      prior_baseline: "A fictional baseline existed before this synthetic vote.",
+      prior_baseline: "A fictional baseline existed before this vote.",
       mechanism: "The fictional proposal would change a test-only rule.",
       affected: "Imaginary agencies and example residents.",
       scale_or_timing: roll === 57 ? undefined : "A fictional two-year test window.",
       what_happened_next: result,
     },
     two_minute: {
-      detail: "No real person, bill, jurisdiction, or political claim is represented by this fixture.",
-      supporter_argument: { attribution: "Synthetic supporters", argument: "Supporters offered a fictional benefit argument." },
-      opponent_argument: roll === 57 ? undefined : { attribution: "Synthetic opponents", argument: "Opponents offered a fictional implementation concern." },
+      detail: "The record explains the proposal's practical mechanism and outcome.",
+      supporter_argument: { attribution: "Proposal supporters", argument: "Supporters offered a benefit argument." },
+      opponent_argument: roll === 57 ? undefined : { attribution: "Proposal opponents", argument: "Opponents raised an implementation concern." },
       later_history: "No real legislative history exists.",
-      caveats: [action === "Not Voting" ? "Not Voting is neither support nor opposition." : "This is synthetic test content."],
+      caveats: [action === "Not Voting" ? "Not Voting is neither support nor opposition." : "The vote record does not reveal why the member voted this way."],
       sources: roll === 41
         ? [
-            source("Synthetic roll source", "https://example.test/roll/41", "Vote and legislative status"),
-            source("Duplicate synthetic roll source", "https://example.test/roll/41/", "Vote and legislative status"),
-            source("Synthetic text", "https://example.test/text/41", "Bill or resolution text"),
+            source("Roll-call record", "https://example.test/roll/41", "Vote and legislative status"),
+            source("Duplicate roll-call record", "https://example.test/roll/41/", "Vote and legislative status"),
+            source("Proposal text", "https://example.test/text/41", "Bill or resolution text"),
           ]
-        : [source(`Synthetic roll ${roll}`, `https://example.test/roll/${roll}`, "Vote and legislative status")],
+        : [source(`Roll-call record ${roll}`, `https://example.test/roll/${roll}`, "Vote and legislative status")],
     },
     _position: position,
   };
@@ -117,7 +199,7 @@ function evidenceRow({ roll, position, status = "interpreted", title, voteType =
     rollcall_number: roll,
     vote_date: `2027-02-${String(roll % 20 + 1).padStart(2, "0")}`,
     chamber: "house",
-    description: title,
+    description: title.replace(/^Synthetic /, ""),
     question: title,
     issue_domain: domain,
     interpretation_status: status,
@@ -131,5 +213,5 @@ function evidenceRow({ roll, position, status = "interpreted", title, voteType =
 }
 
 function source(name, url, group) {
-  return { name, locator: "Synthetic locator", group, url };
+  return { name, locator: "Record locator", group, url };
 }

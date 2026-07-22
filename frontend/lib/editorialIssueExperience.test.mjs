@@ -10,6 +10,12 @@ import {
   selectEditorialIssueExperience,
 } from "./editorialIssueExperience.mjs";
 import { buildImportantContext, groupOfficialSources } from "./editorialIssuePresentation.mjs";
+import {
+  buildBasicEvidencePresentation,
+  buildEditorialCoverage,
+  buildPublicEditorialPresentation,
+  PUBLIC_COVERAGE_STATE,
+} from "./editorialIssuePublicPresentation.mjs";
 import { productionEditorialIssueSlices } from "./editorialIssueProductionSlices.mjs";
 import { reviewEditorialIssueSlices } from "./editorialIssueReviewSlices.mjs";
 import { justiceEditorialIssueFixtureData } from "./justiceEditorialRenderFixture.mjs";
@@ -36,10 +42,11 @@ test("Justice review candidate uses the generic contract with explicit episodes"
   assert.equal(experience.records.filter((item) => item.inclusionClass === "context_only").length, 6);
   assert.equal(new Set(experience.records.filter((item) => item.inclusionClass === "substantive").map((item) => item.episodeId)).size, 5);
   assert.equal(experience.records.find((item) => item.id === "roll-131").arguments.opponents, undefined);
-  assert.match(experience.synthesis.primary, /selective, guardrail-oriented approach/i);
-  assert.equal(experience.synthesis.evidenceBreadth, "Bounded selective pattern");
-  assert.equal(experience.synthesis.patterns.filter((item) => item.startsWith("Across independent episodes:")).length, 2);
-  assert.match(experience.synthesis.howToRead, /strengthen, narrow, contradict, or replace/i);
+  assert.match(experience.publicPresentation.conclusion, /selective, guardrail-oriented approach/i);
+  assert.equal(experience.publicPresentation.strengthLabel, "A selective pattern in the reviewed record");
+  assert.equal(experience.publicPresentation.patterns.filter((item) => item.startsWith("Across independent episodes:")).length, 0);
+  assert.match(experience.publicPresentation.limits.join(" "), /may be refined as additional policy episodes are added/i);
+  assert.equal(experience.publicPresentation.coverage.state, PUBLIC_COVERAGE_STATE.reviewedConclusion);
 });
 
 test("Justice public sources use reader-facing groups and retain stable URLs", () => {
@@ -66,7 +73,7 @@ test("pending editorial content is review-only and production requires all publi
     mode: EDITORIAL_EXPERIENCE_MODE.review,
   });
   assert.ok(review);
-  assert.equal(review.publication.isReview, true);
+  assert.equal(review.reviewContext.isReview, true);
   assert.equal(selectEditorialIssueExperience({ candidates: reviewEditorialIssueSlices, domain: "ECONOMY_TAXES", evidenceRows: fousheeRows, legislator: editorialGoldLegislator }), null);
 
   for (const publication of [
@@ -118,15 +125,14 @@ test("generic adapter supports different identities, counts, mixed actions, omit
   });
   assert.ok(experience);
   assert.equal(experience.identity.memberDisplayName, "Jordan Example");
-  assert.equal(experience.identity.issueDisplayName, "Synthetic Energy Choices");
+  assert.equal(experience.identity.issueDisplayName, "Energy & Infrastructure");
   assert.deepEqual(experience.indicators.map((item) => item.label), ["2 substantive votes", "2 policy episodes", "1 Not Voting", "1 context-only record"]);
   assert.equal(experience.records.length, 4);
   assert.deepEqual(experience.records.map((record) => record.inclusionClass), ["substantive", "substantive", "not_voting", "context_only"]);
-  assert.equal(experience.synthesis.votingContext, undefined);
-  assert.equal(experience.synthesis.howToRead, undefined);
-  assert.match(experience.synthesis.primary, /deliberately mixed/i);
+  assert.equal(experience.publicPresentation.votingContext, undefined);
+  assert.match(experience.publicPresentation.conclusion, /one infrastructure proposal was supported/i);
   assert.equal(isEditorialExperienceRow(rows[0], experience), true);
-  assert.equal(experience.records[0].measure, "Synthetic Grid Pilot Act");
+  assert.equal(experience.records[0].measure, "Grid Pilot Act");
   assert.equal(syntheticEditorialCandidate.source.interpretations[0].measure_id, syntheticEditorialCandidate.source.interpretations[1].measure_id);
   assert.deepEqual(experience.records.slice(0, 2).map((record) => record.episodeId), ["synthetic-grid-pilot", "synthetic-permit-deadline"]);
   assert.equal(experience.records[2].episodeId, null);
@@ -205,7 +211,7 @@ test("Foushee Economy regression preserves counts, ordering, non-counting classe
   assert.equal(experience.records.filter((record) => record.inclusionClass === "substantive").length, 6);
   assert.equal(experience.records.filter((record) => record.inclusionClass === "not_voting").length, 1);
   assert.equal(experience.records.filter((record) => record.inclusionClass === "context_only").length, 2);
-  assert.match(experience.synthesis.primary, /six substantive votes represent four policy episodes/i);
+  assert.match(experience.publicPresentation.conclusion, /six substantive votes represent four policy episodes/i);
   assert.ok(valerieFousheeEconomyEditorialGold.interpretations.every((entry) => entry.human_approval_status === "human_approval_pending"));
   assert.ok(valerieFousheeEconomyEditorialGold.controls.every((entry) => entry.human_approval_status === "human_approval_pending"));
   assert.equal(fousheeCandidate.publication.productionEligible, false);
@@ -242,4 +248,39 @@ test("public bundle still excludes internal review fields and claim IDs", () => 
     assert.equal(serialized.includes(forbidden), false, forbidden);
   }
   assert.equal(valerieFousheeEconomyEditorialGold.human_approval_status, "human_approval_pending");
+});
+
+test("public presentation maps internal inference levels without exposing workflow language", () => {
+  const publicView = buildPublicEditorialPresentation(justiceCandidate, justiceRows);
+  const serialized = JSON.stringify(publicView);
+  assert.equal(publicView.strengthLabel, "A selective pattern in the reviewed record");
+  assert.doesNotMatch(serialized, /bounded_selective_pattern|candidate_id|support_balance|rerun this inference|annotations|human_approval_pending|not_promoted|productionEligible/i);
+  assert.ok(publicView.exceptions.length > 0);
+  assert.ok(publicView.patterns.every((item) => !/Within one episode:|Across independent episodes:/i.test(item)));
+});
+
+test("coverage model distinguishes reviewed, developing, limited, unavailable, and procedural-only records", () => {
+  const reviewed = buildEditorialCoverage(justiceCandidate, justiceRows);
+  assert.equal(reviewed.state, PUBLIC_COVERAGE_STATE.reviewedConclusion);
+  assert.equal(reviewed.yesNoVotes, 7);
+  assert.equal(reviewed.expectedEpisodes, 5);
+  assert.equal(reviewed.completeForSelectedSet, true);
+
+  const developingCandidate = cloneCandidate(justiceCandidate);
+  developingCandidate.source.inference_candidate.inference_level = "contested_candidate";
+  assert.equal(buildEditorialCoverage(developingCandidate, justiceRows).state, PUBLIC_COVERAGE_STATE.developingRecord);
+
+  const limitedCandidate = cloneCandidate(syntheticEditorialCandidate);
+  limitedCandidate.source.inference_candidate = { inference_level: "insufficient_evidence", independent_episode_count: 1 };
+  limitedCandidate.source.slice_counts.policy_episodes = 1;
+  limitedCandidate.source.interpretations = limitedCandidate.source.interpretations.slice(0, 1);
+  const limitedRows = syntheticEditorialIssueFixtureData.evidenceByDomain.ENVIRONMENT_ENERGY.evidence.slice(0, 1);
+  assert.equal(buildEditorialCoverage(limitedCandidate, limitedRows).state, PUBLIC_COVERAGE_STATE.limitedEvidence);
+
+  const noSlice = buildBasicEvidencePresentation(limitedRows);
+  assert.equal(noSlice.state, PUBLIC_COVERAGE_STATE.noEditorialCoverage);
+  const procedural = buildBasicEvidencePresentation([
+    { interpretation_status: "ambiguous", position: "yea", vote_type: "procedural", description: "Rule resolution" },
+  ]);
+  assert.equal(procedural.state, PUBLIC_COVERAGE_STATE.proceduralContextOnly);
 });

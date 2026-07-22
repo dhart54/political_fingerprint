@@ -6,11 +6,15 @@ import EditorialIssueExperience from "./EditorialIssueExperience";
 import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
 import {
   EDITORIAL_EXPERIENCE_MODE,
+  hasEligibleEditorialSlice,
   isEditorialExperienceRow,
   selectEditorialIssueExperience,
 } from "../lib/editorialIssueExperience.mjs";
+import {
+  buildBasicEvidencePresentation,
+  issueAvailabilityLabel,
+} from "../lib/editorialIssuePublicPresentation.mjs";
 import { deriveEvidenceGroups } from "../lib/evidenceGrouping.mjs";
-import { buildIssueOverview } from "../lib/issueOverview.mjs";
 import { groupIssueRowsByReadiness, sortIssueRowsByReadiness } from "../lib/issueReadiness.mjs";
 import { formatDisplayMeasureTitle } from "../lib/measureDisplay.mjs";
 import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
@@ -171,7 +175,7 @@ export default function PositionByIssue({
 
   return (
     <section id="position-by-issue" className="mt-4 rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.07)] lg:p-5">
-      <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(280px,0.52fr)_minmax(0,1.48fr)]">
+      <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(360px,0.72fr)_minmax(0,1.28fr)]">
         <div className="min-w-0">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">
             Issue Evidence
@@ -191,7 +195,7 @@ export default function PositionByIssue({
               {formatScopeLine(state.payload?.scope_metadata)}
             </p>
           ) : null}
-          {state.status === "ready" && startPlan?.steps?.[0] ? (
+          {state.status === "ready" && !selectedDomain && startPlan?.steps?.[0] ? (
             <button
               className="mt-3 rounded-full border border-cyan-900/20 bg-cyan-50 px-4 py-2 text-left text-xs uppercase tracking-[0.15em] text-cyan-950 transition hover:bg-cyan-100"
               onClick={() => inspectDomain(startPlan.steps[0].domain)}
@@ -202,7 +206,7 @@ export default function PositionByIssue({
           ) : null}
         </div>
 
-        <div className="grid min-w-0 gap-3">
+        <div className="grid min-w-0 content-start gap-3">
           {state.status === "error" ? (
             <div className="rounded-[1.5rem] border border-rose-200 bg-rose-50 px-4 py-4 text-sm text-rose-700">
               {state.error}
@@ -215,15 +219,11 @@ export default function PositionByIssue({
           ) : null}
           {state.status === "ready" ? (
             <IssueNavigation
+              editorialCandidates={editorialCandidates}
+              editorialMode={editorialMode}
               inspectDomain={inspectDomain}
+              legislator={legislator}
               rows={rows}
-              selectedDomain={selectedDomain}
-            />
-          ) : null}
-          {state.status === "ready" ? (
-            <IssueReadinessGroups
-              groups={readinessGroups}
-              inspectDomain={inspectDomain}
               selectedDomain={selectedDomain}
             />
           ) : null}
@@ -239,11 +239,25 @@ export default function PositionByIssue({
         selectedRow={selectedRow}
       />
 
+      {state.status === "ready" ? (
+        <section className="mt-4 border-t border-stone-200 pt-4" aria-label="Explore all issue evidence">
+          <div className="mb-3">
+            <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">Explore other issues</p>
+            <p className="mt-1 text-sm leading-6 text-stone-600">Compare where reviewed analysis, vote receipts, or only a limited record is currently available.</p>
+          </div>
+          <IssueReadinessGroups
+            groups={readinessGroups}
+            inspectDomain={inspectDomain}
+            selectedDomain={selectedDomain}
+          />
+        </section>
+      ) : null}
+
     </section>
   );
 }
 
-function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
+function IssueNavigation({ editorialCandidates, editorialMode, inspectDomain, legislator, rows, selectedDomain }) {
   const navRows = (rows || []).filter((row) => row.recorded_votes > 0 || getInterpretedCount(row) > 0);
 
   if (!navRows.length) {
@@ -251,7 +265,7 @@ function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
   }
 
   return (
-    <nav aria-label="Issue evidence navigation" className="min-w-0 rounded-xl border border-stone-200 bg-stone-50 px-3 py-2">
+    <nav aria-label="Issue evidence navigation" className="min-w-0 self-start rounded-xl border border-stone-200 bg-stone-50 px-3 py-2">
       <div className="flex items-center justify-between gap-2">
         <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">
           Jump to issue
@@ -259,7 +273,14 @@ function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
         <span className="text-xs text-stone-500">{navRows.length} areas</span>
       </div>
       <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
-        {navRows.map((row) => (
+        {navRows.map((row) => {
+          const hasEditorialSlice = hasEligibleEditorialSlice({
+            candidates: editorialCandidates,
+            domain: row.domain,
+            legislator,
+            mode: editorialMode,
+          });
+          return (
           <button
             aria-current={selectedDomain === row.domain ? "true" : undefined}
             className={`shrink-0 rounded-full border px-3 py-1.5 text-xs transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
@@ -272,9 +293,10 @@ function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
             type="button"
           >
             <span className="font-medium">{formatDomainLabel(row.domain)}</span>
-            <span className="ml-2 opacity-75">{getInterpretedCount(row)} reviewed</span>
+            <span className="ml-2 opacity-75">{issueAvailabilityLabel({ hasEditorialSlice, row })}</span>
           </button>
-        ))}
+          );
+        })}
       </div>
     </nav>
   );
@@ -1013,47 +1035,40 @@ function ContactMetadataCard({ contactState }) {
   );
 }
 
-function IssueEvidenceSummary({ domain, representativeName, rows }) {
-  const overview = buildIssueOverview(rows, { domain, representativeName });
-  if (!overview) {
-    return null;
-  }
+function IssueEvidenceSummary({ rows }) {
+  const presentation = buildBasicEvidencePresentation(rows);
+  const details = [
+    presentation.substantiveVotes ? `${presentation.substantiveVotes} substantive Yes/No ${presentation.substantiveVotes === 1 ? "vote" : "votes"}` : null,
+    presentation.notVoting ? `${presentation.notVoting} Not Voting` : null,
+    presentation.proceduralRecords ? `${presentation.proceduralRecords} procedural ${presentation.proceduralRecords === 1 ? "record" : "records"}` : null,
+    presentation.limitedRecords ? `${presentation.limitedRecords} limited-context ${presentation.limitedRecords === 1 ? "record" : "records"}` : null,
+  ].filter(Boolean);
 
   return (
-    <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3 sm:px-4">
+    <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3 sm:px-4" data-coverage-state={presentation.state} data-public-surface="basic-evidence" data-testid="basic-evidence-summary">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
-            Issue summary
+            {presentation.label}
           </p>
           <p className="mt-1 max-w-4xl text-[16px] leading-7 text-stone-950">
-            {overview.copy.whatRepresentativeDid} {overview.copy.whatPatternThatCreates}
+            {presentation.message}
           </p>
         </div>
-        <span className="w-fit rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-cyan-950">
-          {overview.votePattern.interpretedYesNoCount} interpreted votes
-        </span>
+        {details.length ? (
+          <span className="w-fit rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-cyan-950">
+            {rows.length} available {rows.length === 1 ? "record" : "records"}
+          </span>
+        ) : null}
       </div>
-      <div className="mt-3 grid gap-2 lg:grid-cols-3">
-        <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2.5 lg:col-span-2">
-          <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-900">What was reviewed</p>
-          <p className="mt-1 text-sm leading-5 text-stone-800">
-            {overview.copy.whatTheseVotesWereAbout}
-          </p>
+      {details.length ? (
+        <div aria-label="Available record details" className="mt-3 flex flex-wrap gap-2">
+          {details.map((detail) => <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5 text-xs text-stone-700" key={detail}>{detail}</span>)}
         </div>
-        <div className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2.5">
-          <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-900">What that means</p>
-          <p className="mt-1 text-sm leading-5 text-stone-800">{overview.copy.howVoterMightRead}</p>
-        </div>
-      </div>
-      <details className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2">
-        <summary className="cursor-pointer text-[11px] uppercase tracking-[0.16em] text-stone-600 marker:text-cyan-900">
-          How to read this
-        </summary>
-        <p className="mt-2 border-t border-stone-200 pt-2 text-sm leading-5 text-stone-700">
-          {overview.copy.whatNotToInfer} Open the source and caveats on vote rows for vote-level context; missing vote meanings are not guessed.
-        </p>
-      </details>
+      ) : null}
+      <p className="mt-3 border-t border-stone-200 pt-3 text-sm leading-6 text-stone-600">
+        Open the votes below for practical explanations and official receipts. A fully researched issue interpretation is a separate layer and is not inferred from these counts alone.
+      </p>
     </div>
   );
 }
@@ -1147,9 +1162,6 @@ function InterpretationBreakdown({ representativeName, row, selectedActionRow, s
             </>
           ) : null}
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs uppercase leading-5 tracking-[0.16em] text-stone-500 sm:tracking-[0.18em]">
-              Included as {formatClassificationReason(row.classification_reason)}
-            </p>
             <button
               aria-pressed={rowActionKey(selectedActionRow) === rowActionKey(row)}
               className={`w-fit rounded-full border px-3 py-2 text-xs uppercase tracking-[0.18em] transition focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2 ${
@@ -1163,31 +1175,8 @@ function InterpretationBreakdown({ representativeName, row, selectedActionRow, s
               Official Vote Record
             </button>
           </div>
-          <SourceBasisList sourceBasis={row.source_basis} />
         </div>
       </details>
-    </div>
-  );
-}
-
-function SourceBasisList({ sourceBasis }) {
-  if (!Array.isArray(sourceBasis) || sourceBasis.length === 0) {
-    return null;
-  }
-
-  return (
-    <div className="mt-3 border-t border-stone-200 pt-3">
-      <p className="text-[11px] uppercase tracking-[0.18em] text-stone-500">Source basis</p>
-      <div className="mt-2 flex flex-wrap gap-2">
-        {sourceBasis.map((item, index) => (
-          <span
-            className="rounded-full bg-stone-100 px-3 py-1 text-[11px] leading-5 text-stone-700"
-            key={`${item.field || "source"}-${index}`}
-          >
-            {formatSourceBasis(item)}
-          </span>
-        ))}
-      </div>
     </div>
   );
 }
@@ -1232,69 +1221,11 @@ function buildInterpretedVoteRead(row) {
 }
 
 function buildVoteCardSummary(row, options = {}) {
-  const exactSummary = buildKnownVoteCardSummary(row);
-  if (exactSummary) {
-    return exactSummary;
-  }
-
   return buildGenericVoteCardSummary(row, options);
 }
 
-function buildKnownVoteCardSummary(row) {
-  if (extractMemberLabel(row) !== "Foushee") {
-    return "";
-  }
-
-  const rollNumber = Number(row.rollcall_number);
-
-  if (rollNumber === 50) {
-    return "Nay. The House adopted a budget blueprint that helped start a fast-track reconciliation process for later tax, spending, deficit, and debt-limit legislation. Foushee voted against adopting that framework, matching most Democrats. The measure passed narrowly.";
-  }
-  if (rollNumber === 100) {
-    return "Nay. The House agreed to the Senate-amended budget framework, keeping the reconciliation process moving for later tax, spending, deficit, and debt-limit legislation. Foushee voted against agreeing to that framework, matching most Democrats. The measure passed narrowly.";
-  }
-  if (rollNumber === 156) {
-    return "Nay. The House passed a bill that would restrict SBA 7(a) and 504 loan eligibility based on citizenship or lawful-permanent-residency status. Foushee voted against adding those eligibility restrictions, matching most Democrats. The bill passed the House.";
-  }
-  if (rollNumber === 182) {
-    return "Nay. The House passed an FY2026 funding bill for military construction, military housing, veterans benefits, Veterans Affairs programs, and related agencies. Foushee voted against passing that funding bill, matching most Democrats. The measure passed the House.";
-  }
-  if (rollNumber === 281) {
-    return "Nay. The House passed a temporary funding bill to keep most federal agencies operating while regular appropriations bills were unfinished. Foushee voted against passing that temporary funding bill, matching most Democrats. The measure passed narrowly.";
-  }
-  if (rollNumber === 285) {
-    return "Nay. The House agreed to a Senate-amended funding package that ended the 2025 shutdown and sent the measure to the President. Foushee voted against accepting that shutdown-ending package, matching most Democrats. The measure passed and became law.";
-  }
-  if (rollNumber === 310) {
-    return "Not Voting. The House passed a bill that would require the Small Business Administration to keep its annual small-business regulatory budget at zero or below. Foushee was recorded as not voting, so this row explains the bill's meaning but does not count as support or opposition. The bill passed the House.";
-  }
-
-  return "";
-}
-
 function buildLimitedContextSummary(row) {
-  const rollNumber = Number(row?.rollcall_number);
-  const position = formatVotePosition(row?.position);
-  const genericSummary = buildGenericLimitedContextSummary(row);
-
-  if (isProceduralContextRow(row) && genericSummary) {
-    return genericSummary;
-  }
-
-  if (rollNumber === 180) {
-    return `${position}. Limited-context row. This was an en bloc appropriations amendment, but the available source text does not explain the full practical change. It remains visible below but is not counted in the summarized vote pattern.`;
-  }
-  if (rollNumber === 263) {
-    return `${position}. Limited-context row. This was a motion to instruct conferees, not final passage of the underlying appropriations bill. It remains visible below but is not counted in the summarized vote pattern.`;
-  }
-
-  return genericSummary;
-}
-
-function extractMemberLabel(row) {
-  const memberContext = String(row?.member_vote_context || "");
-  const match = memberContext.match(/^([A-Z][A-Za-z.'-]+)/);
-  return match?.[1] || "This representative";
+  return buildGenericLimitedContextSummary(row);
 }
 
 function buildPlainTakeaway(row) {
@@ -1919,26 +1850,10 @@ function formatOtherInterpretedCount(count) {
   return `${count} additional interpreted ${count === 1 ? "roll call used" : "roll calls used"} another recorded position, such as not voting.`;
 }
 
-function formatSourceBasis(item) {
-  if (!item || typeof item !== "object") {
-    return "Source basis recorded";
-  }
-
-  return item.source || item.field || "Source basis recorded";
-}
-
 function formatContactSource(contact) {
   const sourceType = String(contact?.source_type || "official source").replaceAll("_", " ");
   const retrievedAt = contact?.source_retrieved_at ? `retrieved ${String(contact.source_retrieved_at).slice(0, 10)}` : "retrieval date not loaded";
   return `${sourceType}, ${retrievedAt}`;
-}
-
-function formatClassificationReason(reason) {
-  if (reason === "policy_vote") {
-    return "eligible policy vote";
-  }
-
-  return String(reason || "eligible vote").replaceAll("_", " ");
 }
 
 function hasInterpretationDetail(row) {

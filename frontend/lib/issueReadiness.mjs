@@ -6,17 +6,17 @@ export const ISSUE_READINESS_ORDER = [
 ];
 
 export const ISSUE_READINESS_LABELS = {
-  strong_evidence: "Strong evidence",
-  mixed_but_interpretable: "Mixed but interpretable",
-  limited_evidence: "Limited evidence",
-  not_enough_to_summarize: "Not enough to summarize",
+  strong_evidence: "Clear vote pattern",
+  mixed_but_interpretable: "Evidence in more than one direction",
+  limited_evidence: "Limited vote evidence",
+  not_enough_to_summarize: "Receipts only",
 };
 
 export const ISSUE_READINESS_GROUP_LABELS = {
-  strong_evidence: "Best issue reads",
-  mixed_but_interpretable: "Mixed but interpretable",
-  limited_evidence: "Limited evidence",
-  not_enough_to_summarize: "Not enough to summarize",
+  strong_evidence: "Clearest vote evidence",
+  mixed_but_interpretable: "Evidence in more than one direction",
+  limited_evidence: "Limited vote evidence",
+  not_enough_to_summarize: "Receipts only",
 };
 
 const MIN_INTERPRETED_YES_NO_FOR_READ = 3;

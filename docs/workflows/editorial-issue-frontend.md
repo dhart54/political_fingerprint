@@ -6,6 +6,8 @@ Use this workflow when adding or reviewing a reader-facing editorial slice for o
 
 The generic frontend contract is adapted in `frontend/lib/editorialIssueExperience.mjs` and rendered by `frontend/components/EditorialIssueExperience.js`. React receives a reader-facing view model; it does not read an editorial review packet directly and does not calculate support, opposition, episodes, patterns, or philosophy from raw rolls.
 
+The normative reader-facing terminology, coverage states, runtime path, and review/public boundary are documented in `docs/public_editorial_frontend_contract.md`.
+
 The view model supports:
 
 - member, issue, Congress/review-period, editorial status, and publication identity;
@@ -25,9 +27,9 @@ Reader-facing source groups are a presentation layer over the source manifest's 
 `frontend/app/page.js` supplies the selected member to `PositionByIssue`. `PositionByIssue` loads the existing issue evidence response and asks the pure selector for a matching editorial experience at the `EvidencePanel` boundary.
 
 - Eligible matching slice: render `EditorialIssueExperience`.
-- No slice, incomplete evidence match, or ineligible slice: render the existing basic issue summary and vote evidence.
+- No slice, incomplete evidence match, or ineligible slice: render a basic evidence presentation and the existing vote receipts. It may describe available substantive, Not Voting, procedural, and limited-context records, but it must not combine those counts into a broader issue conclusion.
 
-The fallback is intentionally temporary while editorial coverage is sparse. Do not duplicate new product features across both paths unless they are truly shared low-level primitives.
+Issue navigation labels availability as `Reviewed analysis`, `Vote evidence`, or `Limited record`. The fallback remains intentionally bounded while editorial coverage is sparse. Do not duplicate new product features across both paths unless they are truly shared low-level primitives.
 
 ## Review versus production eligibility
 
@@ -39,7 +41,7 @@ Publication gates are deliberately separate:
 - `human_approved` alone is not public-production authorization.
 - Pending content may exist on `main` while remaining ineligible for production representative pages.
 
-The golden-render route is unlinked and enabled only by `ENABLE_GOLDEN_RENDER_FIXTURE=1` or Vercel preview. It passes review mode through the same `PositionByIssue` selector, adapter, and renderer used by the real representative flow; it must not fork the renderer.
+The golden-render route is unlinked and enabled only by `ENABLE_GOLDEN_RENDER_FIXTURE=1` or Vercel preview. It passes review mode through the same `PositionByIssue` selector, adapter, and renderer used by the real representative flow; it must not fork the renderer. Review labels and fixture controls stay in outer harness chrome and must not appear inside elements marked as public surfaces.
 
 ## Adding a future slice
 

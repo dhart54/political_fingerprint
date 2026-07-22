@@ -217,12 +217,10 @@ test("evidence card disclosure keeps public summary visible and audit details co
   const sourceButtonStart = source.indexOf("{row.source_url ?", cardStart);
   const cardEnd = source.indexOf("</div>", sourceButtonStart);
   const breakdownStart = source.indexOf("function InterpretationBreakdown");
-  const breakdownEnd = source.indexOf("function SourceBasisList", breakdownStart);
+  const breakdownEnd = source.indexOf("function InsightCard", breakdownStart);
   const breakdownSource = source.slice(breakdownStart, breakdownEnd);
   const detailsStart = breakdownSource.indexOf("<details");
   const detailsEnd = breakdownSource.indexOf("</details>", detailsStart);
-  const sourceBasisStart = breakdownSource.indexOf("<SourceBasisList sourceBasis={row.source_basis} />");
-  const eligibilityStart = breakdownSource.indexOf("Included as {formatClassificationReason(row.classification_reason)}");
   const officialVoteRecordStart = breakdownSource.indexOf("Official Vote Record");
   const voteSummaryStart = breakdownSource.indexOf('label="Vote summary"');
   const whyThisMatteredStart = breakdownSource.indexOf('label="Why this mattered"');
@@ -231,8 +229,7 @@ test("evidence card disclosure keeps public summary visible and audit details co
   assert.ok(whyThisMatteredStart > voteSummaryStart, "why-it-mattered should follow the vote summary");
   assert.ok(detailsStart > whyThisMatteredStart, "details should come after the public summary layer");
   assert.ok(sourceButtonStart > cardStart && sourceButtonStart < cardEnd, "source link should stay in the default-visible card layer");
-  assert.ok(sourceBasisStart > detailsStart && sourceBasisStart < detailsEnd, "source basis should stay inside details");
-  assert.ok(eligibilityStart > detailsStart && eligibilityStart < detailsEnd, "eligibility/methodology note should stay inside details");
+  assert.doesNotMatch(breakdownSource, /Source basis|source_basis|Included as|classification reason/i);
   assert.ok(officialVoteRecordStart > detailsStart && officialVoteRecordStart < detailsEnd, "official vote record action should stay inside details");
 });
 
@@ -252,23 +249,11 @@ test("issue-card top copy helpers do not read raw evidence fields", () => {
   assert.match(helperSource, /themeLine/);
 });
 
-test("approved Valerie Economy vote summaries and limited-row caveats remain unchanged", () => {
+test("public vote-card runtime has no member or roll-number presentation branches", () => {
   const source = readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8");
-
-  for (const expected of [
-    "Nay. The House adopted a budget blueprint that helped start a fast-track reconciliation process for later tax, spending, deficit, and debt-limit legislation. Foushee voted against adopting that framework, matching most Democrats. The measure passed narrowly.",
-    "Nay. The House agreed to the Senate-amended budget framework, keeping the reconciliation process moving for later tax, spending, deficit, and debt-limit legislation. Foushee voted against agreeing to that framework, matching most Democrats. The measure passed narrowly.",
-    "Nay. The House passed a bill that would restrict SBA 7(a) and 504 loan eligibility based on citizenship or lawful-permanent-residency status. Foushee voted against adding those eligibility restrictions, matching most Democrats. The bill passed the House.",
-    "Nay. The House passed an FY2026 funding bill for military construction, military housing, veterans benefits, Veterans Affairs programs, and related agencies. Foushee voted against passing that funding bill, matching most Democrats. The measure passed the House.",
-    "Nay. The House passed a temporary funding bill to keep most federal agencies operating while regular appropriations bills were unfinished. Foushee voted against passing that temporary funding bill, matching most Democrats. The measure passed narrowly.",
-    "Nay. The House agreed to a Senate-amended funding package that ended the 2025 shutdown and sent the measure to the President. Foushee voted against accepting that shutdown-ending package, matching most Democrats. The measure passed and became law.",
-    "Not Voting. The House passed a bill that would require the Small Business Administration to keep its annual small-business regulatory budget at zero or below. Foushee was recorded as not voting, so this row explains the bill's meaning but does not count as support or opposition. The bill passed the House.",
-    "Limited-context row. This was an en bloc appropriations amendment, but the available source text does not explain the full practical change. It remains visible below but is not counted in the summarized vote pattern.",
-    "Limited-context row. This was a motion to instruct conferees, not final passage of the underlying appropriations bill. It remains visible below but is not counted in the summarized vote pattern.",
-  ]) {
-    assert.ok(source.includes(expected), `expected approved copy to remain: ${expected}`);
-  }
-
+  assert.doesNotMatch(source, /Foushee|buildKnownVoteCardSummary|rollNumber\s*===|rollcall_number\s*===/);
+  assert.match(source, /buildGenericVoteCardSummary/);
+  assert.match(source, /buildGenericLimitedContextSummary/);
   assert.ok(source.includes("Plain-English"));
   assert.ok(source.includes("Official Vote Record"));
 });

@@ -1,4 +1,5 @@
 import { productionEditorialIssueSlices } from "./editorialIssueProductionSlices.mjs";
+import { buildPublicEditorialPresentation } from "./editorialIssuePublicPresentation.mjs";
 
 export const EDITORIAL_EXPERIENCE_MODE = Object.freeze({
   production: "production",
@@ -37,11 +38,10 @@ export function adaptEditorialIssueSlice(candidate, evidenceRows = [], mode = ED
 
   return {
     identity: { ...candidate.identity },
-    publication: {
-      ...candidate.publication,
-      isReview: mode === EDITORIAL_EXPERIENCE_MODE.review,
-    },
-    synthesis: { ...candidate.synthesis },
+    publicPresentation: buildPublicEditorialPresentation(candidate, evidenceRows),
+    reviewContext: mode === EDITORIAL_EXPERIENCE_MODE.review
+      ? { isReview: true, label: candidate.publication.reviewLabel }
+      : null,
     indicators: buildIndicators(candidate.source.slice_counts),
     records: [
       ...interpretations.map((entry) => adaptInterpretation(candidate, entry, rowsByRoll.get(Number(entry.roll)))),
@@ -49,6 +49,14 @@ export function adaptEditorialIssueSlice(candidate, evidenceRows = [], mode = ED
     ],
     sourceRowKeys: [...interpretations, ...controls].map((entry) => `${candidate.identity.congress}:${entry.roll}`),
   };
+}
+
+export function hasEligibleEditorialSlice({ candidates = productionEditorialIssueSlices, domain, legislator, mode = EDITORIAL_EXPERIENCE_MODE.production }) {
+  return candidates.some((candidate) => (
+    candidate?.identity?.memberId === legislator?.bioguide_id
+    && candidate?.identity?.issueId === domain
+    && isEditorialSliceEligible({ candidate, mode })
+  ));
 }
 
 function candidateMatches({ candidate, domain, evidenceRows, legislator }) {
