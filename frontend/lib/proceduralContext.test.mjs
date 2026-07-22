@@ -4,6 +4,7 @@ import test from "node:test";
 import { buildLimitedContextSummary } from "./voteCardSummary.mjs";
 import { buildIssueOverview, formatRenderedIssueOverview } from "./issueOverview.mjs";
 import { isProceduralContextRow } from "./proceduralContext.mjs";
+import { justiceEditorialIssueFixtureData } from "./justiceEditorialRenderFixture.mjs";
 
 test("procedural-context vote cards explain floor process without support or opposition claims", () => {
   const row = proceduralRow({
@@ -58,6 +59,37 @@ test("procedural-context rows do not over-promote issue readiness", () => {
   assert.match(rendered, /limited interpreted evidence/);
   assert.match(rendered, /procedural-context/);
   assert.doesNotMatch(rendered, /consistently supported the measures|broadly supports|direct position on the underlying/i);
+});
+
+test("explicit non-interpreted procedural type classifies without phrase matching", () => {
+  assert.equal(isProceduralContextRow({
+    interpretation_status: "ambiguous",
+    vote_type: "procedural",
+    description: "Floor action 12",
+  }), true);
+});
+
+test("interpreted substantive row is never overridden by procedural metadata or title", () => {
+  assert.equal(isProceduralContextRow({
+    interpretation_status: "interpreted",
+    vote_type: "procedural",
+    description: "Motion with procedural language but reviewed substantive meaning",
+  }), false);
+});
+
+test("all six Justice controls classify as floor-process context in production fallback", () => {
+  const rows = justiceEditorialIssueFixtureData.evidenceByDomain.JUSTICE_PUBLIC_SAFETY.evidence;
+  const controls = rows.filter((row) => row.interpretation_status !== "interpreted");
+  assert.deepEqual(controls.map((row) => row.rollcall_number), [160, 161, 267, 268, 290, 291]);
+  assert.ok(controls.every(isProceduralContextRow));
+  assert.ok(controls.every((row) => row.classification_reason === "procedural_context"));
+
+  const overview = buildIssueOverview(rows, { domain: "JUSTICE_PUBLIC_SAFETY", representativeName: "Example Member" });
+  const rendered = formatRenderedIssueOverview(overview);
+  assert.equal(overview.votePattern.proceduralContextCount, 6);
+  assert.match(rendered, /Six procedural-context rows remain visible/i);
+  assert.match(rendered, /explain floor process/i);
+  assert.doesNotMatch(rendered, /source text does not clearly explain|failed to explain/i);
 });
 
 function proceduralRow(overrides = {}) {

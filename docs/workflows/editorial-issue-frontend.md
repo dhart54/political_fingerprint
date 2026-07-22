@@ -16,6 +16,10 @@ The view model supports:
 
 Optional fields are omitted rather than replaced with invented content. Missing panels, facts, arguments, context, or source groups must not leave empty cards or headings.
 
+Argument boundaries are cardinality-aware: no generic advocacy boundary is shown when no argument is present, singular wording is used for one-sided evidence, and plural wording is used only when both sides are present. A supplied source-review or institutional boundary takes precedence and must not be duplicated.
+
+Reader-facing source groups are a presentation layer over the source manifest's internal taxonomy. Preserve source URLs and claim mappings; translate internal source types into plain-language headings before rendering.
+
 ## Real representative selection
 
 `frontend/app/page.js` supplies the selected member to `PositionByIssue`. `PositionByIssue` loads the existing issue evidence response and asks the pure selector for a matching editorial experience at the `EvidencePanel` boundary.
@@ -45,4 +49,4 @@ The golden-render route is unlinked and enabled only by `ENABLE_GOLDEN_RENDER_FI
 4. Validate matching, optional fields, non-counting classes, source deduplication, fallback, accessibility, and responsive behavior.
 5. Promote human approval, benchmark status, and public-production eligibility only through their separate authorized governance decisions.
 
-The second real-domain validation (Foushee Justice & Public Safety) confirmed that explicit episodes, optional one-sided arguments, variable counts, empty additional lists, and production fallback work without domain-specific runtime branching. The next contract-validation milestone should reuse a measure dossier across another representative. Synthetic fixtures are only genericity tests and are never editorial evidence.
+The second real-domain validation (Foushee Justice & Public Safety) confirmed that explicit episodes, rerunnable episode-level inference, optional one-sided arguments, reader-facing source groups, variable counts, empty additional lists, and structured procedural fallback work without domain-specific runtime branching. The next contract-validation milestone should reuse a measure dossier across another representative. Synthetic fixtures are only genericity tests and are never editorial evidence.

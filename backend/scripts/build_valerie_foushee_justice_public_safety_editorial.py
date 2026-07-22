@@ -4,18 +4,40 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from backend.app.summaries.editorial_inference import build_editorial_inference
+
 OUT = ROOT / "docs/editorial/valerie_foushee_justice_public_safety_gold_v1"
 PUBLIC = ROOT / "frontend/lib/valerieFousheeJusticePublicSafetyEditorialGold.mjs"
 STATUS = "human_approval_pending"
+PUBLIC_SOURCE_GROUPS = {
+    "house_clerk_roll_call": "Vote and legislative status",
+    "congress_gov_bill": "Vote and legislative status",
+    "congress_gov_amendment": "Bill or resolution text",
+    "congress_gov_measure_text": "Bill or resolution text",
+    "house_floor_document": "Bill or resolution text",
+    "public_law_text": "Bill or resolution text",
+    "cbo_cost_estimate": "Nonpartisan analysis",
+    "congressional_record": "Competing arguments",
+    "house_committee_report": "Competing arguments",
+}
 
 
 def source(source_id: str) -> dict:
     manifest = json.loads((OUT / "source_manifest.json").read_text(encoding="utf-8"))
     item = next(value for value in manifest["sources"] if value["source_id"] == source_id)
-    return {"name": item["name"], "locator": item["locator"], "group": item["source_type"], "url": item["url"]}
+    return {
+        "name": item["name"],
+        "locator": item["locator"],
+        "group": PUBLIC_SOURCE_GROUPS.get(item["source_type"], "Additional official evidence"),
+        "url": item["url"],
+    }
 
 
 def argument(attribution: str, text: str) -> dict:
@@ -46,6 +68,165 @@ def entry(roll, measure, stage, action, episode, headline, choice, result, basel
             {"question": "What did Foushee do?", "expected": action, "field": "ten_second.member_action_and_result"},
             {"question": "What was the status?", "expected": next_step, "field": "thirty_second.what_happened_next"},
         ],
+    }
+
+
+def build_episode_annotations() -> list[dict]:
+    common = {
+        "independent": True,
+        "source_confidence": "high",
+        "reviewed_period": "119th Congress, February 6-November 19, 2025",
+    }
+    return [
+        {
+            **common,
+            "episode_id": "halt-fentanyl-legislative-path",
+            "rolls": [32, 33, 166],
+            "measures": ["119-hr-27-amdt-5", "119-hr-27", "119-s-331"],
+            "relationship": "one policy episode with a certification amendment, an earlier House bill, and later passage of a related Senate-amended bill",
+            "relationship_to_repeated_stages": "Three related actions establish a within-episode trajectory but count as one episode for breadth.",
+            "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+            "member_trajectory": "Across one fentanyl episode, supported an overdose-reduction certification condition, opposed the earlier House version, and later supported the related permanent framework with research provisions.",
+            "practical_policy_direction": "Conditional and later support for permanent enforcement rules alongside evidence and research provisions.",
+            "practical_question": "Whether and under what condition to make classwide Schedule I treatment and associated penalty and research rules permanent.",
+            "candidate_theme_tags": ["evidence requirement", "research access", "enforcement authority", "implementation guardrail"],
+            "theme_evidence": [{
+                "theme_id": "information-research-and-implementation-guardrails",
+                "rationale": "The certification amendment and later research provisions supply reviewed evidence of attention to evidence, research, or implementation conditions within an enforcement episode.",
+            }],
+            "contrary_or_limiting_evidence": [
+                "Later support for a permanent enforcement framework means the record is not blanket opposition to fentanyl enforcement.",
+                "H.R. 27 and S. 331 were related but not identical, so the votes do not prove a change in position or identify why the actions differed.",
+            ],
+            "package_vote_limitations": ["The later bill combined scheduling, penalty, registration, research, and rulemaking provisions."],
+            "conclusion_effect": {
+                "candidate_id": "selective-guardrail-oriented-public-safety",
+                "direction": "strengthens", "weight": 2,
+                "rationale": "The episode combines willingness to support enforcement with support for evidence or research conditions rather than one-directional support or opposition.",
+            },
+        },
+        {
+            **common,
+            "episode_id": "retired-service-weapon-purchases",
+            "rolls": [130], "measures": ["119-hr-2255"],
+            "relationship": "single House-passage action", "relationship_to_repeated_stages": "",
+            "mechanism_family": "access to retired federal service firearms",
+            "member_trajectory": "Opposed the House proposal at passage.",
+            "practical_policy_direction": "Opposed creating the reviewed purchase program for eligible officers and qualifying retired agency firearms.",
+            "practical_question": "Whether to create a federal program for eligible officers to buy retired agency-issued firearms.",
+            "candidate_theme_tags": ["firearm access", "police tools"],
+            "theme_evidence": [{
+                "theme_id": "limits-on-police-tools-authority-or-safeguard-rollbacks",
+                "rationale": "Opposition to the purchase program is evidence in this sample against expanding access to one category of law-enforcement tool.",
+            }],
+            "contrary_or_limiting_evidence": ["This firearm-transfer choice is not itself evidence about police operational discretion or every form of law-enforcement equipment."],
+            "package_vote_limitations": [], "notable_one_off": True,
+            "conclusion_effect": {
+                "candidate_id": "selective-guardrail-oriented-public-safety",
+                "direction": "strengthens", "weight": 1,
+                "rationale": "The opposition is consistent with selectivity toward expanding access to a police tool, but remains a mechanism-specific choice.",
+            },
+        },
+        {
+            **common,
+            "episode_id": "officer-safety-data-reporting",
+            "rolls": [131], "measures": ["119-hr-2240"],
+            "relationship": "single House-passage action", "relationship_to_repeated_stages": "",
+            "mechanism_family": "reporting and information gathering",
+            "member_trajectory": "Supported the House reporting bill at passage.",
+            "practical_policy_direction": "Supported collecting and reporting information about attacks, reporting systems, and officer wellness resources.",
+            "practical_question": "Whether to require DOJ reports on attacks, reporting systems, and officer mental-health resources.",
+            "candidate_theme_tags": ["reporting and information gathering", "oversight and accountability"],
+            "theme_evidence": [{
+                "theme_id": "information-research-and-implementation-guardrails",
+                "rationale": "Support for the reporting bill supplies independent evidence for information gathering as a public-safety mechanism.",
+            }],
+            "contrary_or_limiting_evidence": ["The reporting vote does not establish support for policies Congress might later develop from the reports."],
+            "package_vote_limitations": [],
+            "conclusion_effect": {
+                "candidate_id": "selective-guardrail-oriented-public-safety",
+                "direction": "strengthens", "weight": 2,
+                "rationale": "The episode independently supports a public-safety action centered on information gathering rather than expanded coercive authority.",
+            },
+        },
+        {
+            **common,
+            "episode_id": "dc-police-pursuit-rules",
+            "rolls": [275], "measures": ["119-hr-5143"],
+            "relationship": "single House-passage action on the Rules Committee substitute", "relationship_to_repeated_stages": "",
+            "mechanism_family": "police operational discretion",
+            "member_trajectory": "Opposed the Rules Committee substitute at House passage.",
+            "practical_policy_direction": "Opposed replacing D.C. pursuit restrictions with broader pursuit authority subject to exceptions.",
+            "practical_question": "Whether Congress should replace D.C.'s pursuit restrictions with a broader pursuit requirement and exceptions.",
+            "candidate_theme_tags": ["police operational discretion", "local self-government", "procedural protection"],
+            "theme_evidence": [{
+                "theme_id": "limits-on-police-tools-authority-or-safeguard-rollbacks",
+                "rationale": "Opposition to the substitute supplies direct evidence against this reviewed expansion of police pursuit authority.",
+            }],
+            "contrary_or_limiting_evidence": ["The substitute included risk and effectiveness exceptions, so it was not an unconditional pursuit mandate."],
+            "package_vote_limitations": [],
+            "conclusion_effect": {
+                "candidate_id": "selective-guardrail-oriented-public-safety",
+                "direction": "strengthens", "weight": 2,
+                "rationale": "The episode supports the candidate through opposition to a specific expansion of police operational authority.",
+            },
+        },
+        {
+            **common,
+            "episode_id": "dc-policing-reform-repeal",
+            "rolls": [299], "measures": ["119-hr-5107"],
+            "relationship": "single House-passage action on the committee substitute", "relationship_to_repeated_stages": "",
+            "mechanism_family": "police oversight and accountability safeguards",
+            "member_trajectory": "Opposed the committee substitute at House passage.",
+            "practical_policy_direction": "Opposed repealing most of D.C.'s reviewed policing safeguards and restoring prior provisions.",
+            "practical_question": "Whether Congress should repeal most of D.C.'s 2022 policing reform law and restore prior provisions.",
+            "candidate_theme_tags": ["oversight and accountability", "local self-government", "procedural protection"],
+            "theme_evidence": [{
+                "theme_id": "limits-on-police-tools-authority-or-safeguard-rollbacks",
+                "rationale": "Opposition to repealing most of the D.C. law supplies direct evidence against this reviewed rollback of policing safeguards.",
+            }],
+            "contrary_or_limiting_evidence": ["The substitute retained exceptions and did not repeal every provision of the D.C. law."],
+            "package_vote_limitations": ["The vote covered multiple policing, disclosure, discipline, and oversight provisions."],
+            "conclusion_effect": {
+                "candidate_id": "selective-guardrail-oriented-public-safety",
+                "direction": "strengthens", "weight": 2,
+                "rationale": "The episode supports the candidate through opposition to rolling back the reviewed oversight and accountability safeguards.",
+            },
+        },
+    ]
+
+
+def build_conclusion_input() -> dict:
+    return {
+        "candidate_id": "selective-guardrail-oriented-public-safety",
+        "inference_level": "bounded_selective_pattern",
+        "evidence_strength_label": "Bounded selective pattern",
+        "primary_conclusion": "In this reviewed sample, Foushee took a selective, guardrail-oriented approach to public safety. She supported reporting, an overdose-reduction certification condition, and a later permanent fentanyl framework with research provisions, while opposing proposals that expanded access to retired law-enforcement firearms, broadened D.C. pursuit authority, or rolled back D.C. policing safeguards. The record suggests support for targeted public-safety action when paired with evidence, research, oversight, or implementation constraints rather than blanket support for or opposition to enforcement.",
+        "theme_candidates": [
+            {
+                "theme_id": "information-research-and-implementation-guardrails",
+                "label": "Information, research, and implementation guardrails",
+                "finding": "Across independent reporting and fentanyl episodes, supported information gathering, research access, or implementation guardrails alongside public-safety action.",
+                "editorially_defensible": True,
+                "minimum_mechanism_diversity": 2,
+            },
+            {
+                "theme_id": "limits-on-police-tools-authority-or-safeguard-rollbacks",
+                "label": "Police tools, authority, and safeguards",
+                "finding": "Opposed three reviewed proposals across distinct mechanisms that would expand access to a law-enforcement tool, broaden police operational authority, or roll back policing safeguards.",
+                "editorially_defensible": True,
+                "minimum_mechanism_diversity": 2,
+            },
+        ],
+        "global_limitations": [
+            "Five independent episodes are not Foushee's complete Justice & Public Safety record.",
+            "Party alignment describes context and is not evidence of philosophy or motive.",
+            "The record does not reveal private motive.",
+        ],
+        "why_conclusion_does_not_go_further": "Five reviewed episodes support bounded conditional patterns but not a final, immutable Justice philosophy or ideological label.",
+        "future_expansion_rule": "When additional episodes are reviewed, rerun this inference from the expanded annotations; new evidence may strengthen, narrow, contradict, or replace the current conclusion.",
+        "reviewed_period": "119th Congress, February 6-November 19, 2025",
+        "human_review_status": STATUS,
     }
 
 
@@ -175,6 +356,7 @@ def build_packet() -> dict:
         controls.append({"roll": roll, "measure_id": measure, "member_action": "No", "episode_id": f"context-roll-{roll}",
                          "context_summary": summary, "why_not_counted": "Indirect procedural action; retained as context and excluded from substantive and episode counts.",
                          "human_approval_status": STATUS, "sources": [source(f"clerk_roll_{roll:03d}"), source(resolution_source)]})
+    inference = build_editorial_inference(build_episode_annotations(), build_conclusion_input())
     return {
         "schema_version": "editorial_gold_review_packet_v2", "packet_id": "valerie_foushee_justice_public_safety_gold_v1",
         "member": {"name": "Valerie P. Foushee", "bioguide_id": "F000477"}, "domain": "Justice & Public Safety",
@@ -182,10 +364,86 @@ def build_packet() -> dict:
         "review_tier": "full_gold", "public_copy_disclaimer": "Candidate source-checked draft. Human factual review, comprehension testing, and approval remain pending.",
         "slice_counts": {"substantive_rolls": 7, "policy_episodes": 5, "not_voting_records": 0, "context_controls": 6},
         "interpretations": records, "controls": controls,
+        "inference_candidate": inference,
         "argument_evidence_review": {"roll_131": {"status": "insufficient_official_evidence_after_review", "opponent_argument_omitted": True,
             "sources_reviewed": ["congress_hr2240", "hrpt_119_079", "record_hr2240_debate"],
             "limitation": "No adequate stage-specific opposing case appeared in the reviewed official materials."}},
         "human_approval_status": STATUS,
+    }
+
+
+def build_policy_episode_map(packet: dict) -> dict:
+    episodes = []
+    for annotation in packet["inference_candidate"]["episode_annotations"]:
+        episodes.append({
+            "episode_id": annotation["episode_id"],
+            "rolls": annotation["rolls"],
+            "measures": annotation["measures"],
+            "relationship": annotation["relationship"],
+            "independent_evidence": annotation["independent"],
+            "counted_episode": True,
+            "practical_question": annotation["practical_question"],
+            "mechanism_family": annotation["mechanism_family"],
+            "member_trajectory": annotation["member_trajectory"],
+            "practical_policy_direction": annotation["practical_policy_direction"],
+            "candidate_theme_tags": annotation["candidate_theme_tags"],
+            "theme_evidence": annotation["theme_evidence"],
+            "contrary_or_limiting_evidence": annotation["contrary_or_limiting_evidence"],
+            "package_vote_limitations": annotation["package_vote_limitations"],
+            "source_confidence": annotation["source_confidence"],
+            "reviewed_period": annotation["reviewed_period"],
+            "conclusion_effect": annotation["conclusion_effect"],
+            "human_approval_status": STATUS,
+        })
+    return {
+        "schema_version": "editorial_policy_episode_map_v2",
+        "human_approval_status": STATUS,
+        "counts": {"substantive_rolls": 7, "distinct_policy_episodes": 5, "not_voting_records": 0, "context_controls": 6},
+        "episodes": episodes,
+        "excluded_records": [
+            {"roll": 160, "class": "context_only", "reason": "previous-question vote on a multi-measure rule; indirect and non-counting", "human_approval_status": STATUS},
+            {"roll": 161, "class": "context_only", "reason": "rule adoption covering multiple bills; no single Justice policy position", "human_approval_status": STATUS},
+            {"roll": 267, "class": "context_only", "reason": "previous-question vote on a seven-bill rule; indirect and non-counting", "human_approval_status": STATUS},
+            {"roll": 268, "class": "context_only", "reason": "rule adoption covering Justice and non-Justice measures; no single policy position", "human_approval_status": STATUS},
+            {"roll": 290, "class": "context_only", "reason": "previous-question vote on a multi-measure rule; indirect and non-counting", "human_approval_status": STATUS},
+            {"roll": 291, "class": "context_only", "reason": "rule adoption covering multiple unrelated measures; no single policy position", "human_approval_status": STATUS},
+        ],
+        "not_voting_records": [],
+        "counting_boundary": "Procedural controls remain visible but do not contribute to substantive-roll, episode, pattern, party-alignment, or philosophy counts.",
+        "future_expansion_rule": packet["inference_candidate"]["future_expansion_rule"],
+    }
+
+
+def build_generated_docs(inference: dict) -> dict[str, str]:
+    return {
+        "README.md": (
+            "# Valerie P. Foushee — Justice & Public Safety gold v1\n\n"
+            "Pending, review-only editorial slice built from official sources. It contains 7 substantive actions in 5 episodes and 6 non-counting procedural controls. Nothing here is production eligible.\n\n"
+            "The generated inference is a candidate derived from the currently reviewed five episodes, not a permanent label. Future episode expansion must rerun the domain-neutral inference helper and may strengthen, narrow, contradict, or replace the current conclusion.\n"
+        ),
+        "issue_synthesis.md": (
+            "# Issue synthesis\n\n## Current inference candidate\n\n"
+            f"{inference['primary_conclusion']}\n\n"
+            f"Evidence strength: **{inference['evidence_strength_label']}**. Assessment: `{inference['assessment']}`.\n\n"
+            "## Within-episode trajectory\n\n- " + inference["within_episode_trajectories"][0]["member_trajectory"] + "\n\n"
+            "## Repeated cross-episode themes\n\n"
+            + "\n".join(f"- {item['finding']}" for item in inference["repeated_cross_episode_themes"])
+            + "\n\n## Limits and future expansion\n\n"
+            f"{inference['why_conclusion_does_not_go_further']} {inference['future_expansion_rule']} The record does not reveal motive. Party alignment remains context rather than evidence of philosophy.\n"
+        ),
+        "comprehension_protocol.md": (
+            "# Comprehension protocol\n\nFor every substantive action, ask what Congress decided, what Foushee did, and what happened next. A response fails if it merges the three fentanyl actions, counts a procedural control, treats a Nay as motive, says H.R. 5107 repealed every provision, or invents an opposing case for H.R. 2240.\n\n"
+            "At issue level, test whether the reader can distinguish a within-episode trajectory, a repeated cross-episode theme, and a mechanism-specific one-off. The reader should understand that mixed voting can reveal conditionality and that later episodes may revise the current candidate. Human comprehension testing remains pending.\n"
+        ),
+        "editorial_workflow_contract.md": (
+            "# Editorial workflow contract\n\nThe reusable contract accepts explicit episode identity, optional argument sides, generic count indicators, source deduplication, and an empty additional-record list. The episode inference helper aggregates researched annotations; it does not infer themes from bill titles, party labels, or raw Yes/No counts.\n\n"
+            "Independent episodes establish breadth. Repeated stages establish trajectory, not extra breadth. Cross-episode themes require explicit editorial defensibility and mechanism-diverse independent evidence. Contrary evidence changes the assessment instead of disappearing. New episodes must rerun the inference. Multi-member scaling should reuse measure dossiers and supply member-specific episode annotations.\n\n"
+            "This slice adds no Justice-specific condition to generic inference or rendering code. Registry status, source status, and record status remain `human_approval_pending`; production eligibility remains false.\n"
+        ),
+        "side_by_side_review.md": (
+            "# Side-by-side review\n\nGenerated from `review_packet.json` and `episode_inference.json`. Review the current conclusion beside its supporting episodes, within-episode trajectory, repeated themes, notable one-off choice, contrary evidence, and future-expansion rule. The candidate is neither a permanent political label nor a motive claim.\n\n"
+            "At record level, review the 10-second choice and action, 30-second mechanism and affected groups, then the 2-minute attributed arguments and caveats. Roll 131 intentionally shows its supplied one-sided-evidence boundary and omits an opponent card. Public source headings use reader-facing categories while manifest source types and claim mappings remain unchanged.\n"
+        ),
     }
 
 
@@ -196,7 +454,7 @@ def outputs() -> dict[Path, str]:
               "claims": [{"claim_id": f"roll_{item['roll']}_editorial", "roll": item["roll"],
                           "source_ids": [next(src["source_id"] for src in manifest["sources"] if src["url"] == value["url"]) for value in item["two_minute"]["sources"]],
                           "human_approval_status": STATUS} for item in packet["interpretations"]]}
-    public = {key: packet[key] for key in ("schema_version", "member", "content_version", "slice_counts", "interpretations", "controls", "human_approval_status")}
+    public = {key: packet[key] for key in ("schema_version", "member", "content_version", "slice_counts", "interpretations", "controls", "inference_candidate", "human_approval_status")}
     for item in public["interpretations"]:
         item.pop("comprehension", None)
     module = "// Generated review-only candidate; do not edit directly.\nexport const valerieFousheeJusticePublicSafetyEditorialGold = " + json.dumps(public, indent=2, ensure_ascii=False) + ";\n"
@@ -207,6 +465,8 @@ def outputs() -> dict[Path, str]:
         "editorial_workflow_contract.md": "# Editorial workflow contract\n\nThe reusable contract accepted all records through explicit episode identity, optional argument sides, generic count indicators, source deduplication, and an empty additional-record list. This slice adds no domain-specific runtime branch. Registry status, source status, and record status remain `human_approval_pending`; production eligibility remains false.\n",
         "side_by_side_review.md": "# Side-by-side review\n\nGenerated from `review_packet.json`. Review the 10-second choice and action, 30-second mechanism and affected groups, then the 2-minute attributed arguments and caveats. Roll 131 intentionally omits an opponent argument after an official-source search found no adequate stage-specific case.\n",
     }
+    inference = packet["inference_candidate"]
+    docs = build_generated_docs(inference)
     dossier_data = {
         "halt_fentanyl.json": ("halt-fentanyl-legislative-path", [32, 33, 166], "Permanent classwide fentanyl scheduling, penalties, and research pathways across related House and Senate measures."),
         "hr2255.json": ("retired-service-weapon-purchases", [130], "A purchase program for eligible officers and qualifying retired agency firearms."),
@@ -214,8 +474,13 @@ def outputs() -> dict[Path, str]:
         "hr5143.json": ("dc-police-pursuit-rules", [275], "A substitute replacing D.C. pursuit restrictions with a broader rule and exceptions."),
         "hr5107.json": ("dc-policing-reform-repeal", [299], "A substitute repealing most of D.C.'s 2022 policing reform law, with exceptions."),
     }
-    result = {OUT / "review_packet.json": json.dumps(packet, indent=2, ensure_ascii=False) + "\n",
-              OUT / "claim_source_map.json": json.dumps(claims, indent=2, ensure_ascii=False) + "\n", PUBLIC: module}
+    result = {
+        OUT / "review_packet.json": json.dumps(packet, indent=2, ensure_ascii=False) + "\n",
+        OUT / "claim_source_map.json": json.dumps(claims, indent=2, ensure_ascii=False) + "\n",
+        OUT / "policy_episode_map.json": json.dumps(build_policy_episode_map(packet), indent=2, ensure_ascii=False) + "\n",
+        OUT / "episode_inference.json": json.dumps(inference, indent=2, ensure_ascii=False) + "\n",
+        PUBLIC: module,
+    }
     result.update({OUT / name: text for name, text in docs.items()})
     for name, (episode, rolls, core) in dossier_data.items():
         dossier = {"schema_version": "editorial_measure_dossier_v1", "episode_id": episode, "rolls": rolls,

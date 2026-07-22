@@ -97,7 +97,7 @@ All currently available rows are 119th Congress; a cross-Congress contract chang
 
 - Use a coherent 119th-Congress slice with five independent policy episodes and no cross-Congress schema work.
 - Treat rolls 160, 161, 267, 268, 290, and 291 as context-only controls; roll 32 is a substantive certification amendment.
-- Do not infer a broader philosophy; the evidence supports a bounded, mixed Level 2 finding only.
+- Do not infer a fixed broader philosophy; the structured evidence supports a bounded selective, guardrail-oriented pattern candidate that must be rerun as episodes are added.
 
 ## Deviations Or Corrections
 
@@ -133,3 +133,19 @@ All currently available rows are 119th Congress; a cross-Congress contract chang
 - Definition of done satisfied: yes. Draft PR #95 is open and the automatic Vercel check is Ready.
 - Remaining limitations: human factual review, scoring, comprehension testing, approval, benchmark promotion, and production eligibility remain pending.
 - Recommended next step: after this milestone, validate shared dossiers across another representative without promoting this slice.
+
+## PR #95 Final Correction Pass (2026-07-21)
+
+Intent: strengthen the reusable episode-level inference method and correct reader-facing boundaries without reopening the approved seven-roll, five-episode inventory.
+
+- [x] Add a domain-neutral episode inference helper and synthetic future-change tests.
+- [x] Generate reviewer-visible Justice inference inputs/results from episode annotations.
+- [x] Map generated public source groups while preserving manifest types, URLs, and claim mappings.
+- [x] Correct generic explicit/one-sided argument-boundary behavior.
+- [x] Correct explicit procedural classification and the six-control production fallback.
+- [x] Regenerate documentation and public artifacts; run drift checks.
+- [x] Run backend, Node, Playwright, lint, build, and genericity/regression audits.
+- [x] Re-capture required review screenshots.
+- [ ] Commit, push, update draft PR #95, and confirm automatic preview without merge or manual deployment.
+
+Correction-pass validation: 75 focused backend/content/interpretation tests passed; 100 frontend Node tests passed; 11 responsive Playwright tests passed; deterministic generation, six JSON parses, Python compilation, ESLint (zero errors, eight pre-existing warnings), type validation, production build, genericity search, and `git diff --check` passed. Ten final-correction screenshots were captured under the Codex visualization output directory.

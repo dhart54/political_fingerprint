@@ -52,17 +52,27 @@ export const reviewEditorialIssueSlices = Object.freeze([
       productionEligible: false,
       reviewLabel: "Editorial review preview — not published",
     }),
-    synthesis: Object.freeze({
-      primary: "In this reviewed sample, Foushee took a mixed approach across five Justice & Public Safety policy episodes. She supported delaying an earlier fentanyl bill pending agency certification, opposed that House version, and later supported a related Senate bill that became law. She supported a bipartisan officer-safety reporting bill and opposed proposals for retired federal officers to buy agency firearms, to replace D.C. pursuit restrictions, and to repeal most of a broader D.C. policing reform law. These seven substantive votes show bounded choices across distinct mechanisms, not one overarching Justice philosophy.",
-      patterns: Object.freeze([
-        "Took mixed actions across three related fentanyl votes in one policy episode.",
-        "Supported officer-safety reporting and opposed a service-weapon purchase program.",
-        "Opposed both reviewed House bills changing D.C.-enacted policing rules.",
-      ]),
+    synthesis: inferenceSynthesis(valerieFousheeJusticePublicSafetyEditorialGold, {
       votingContext: "Foushee voted with the majority of House Democrats on all 7 substantive roll calls in this sample, covering 5 policy episodes.",
       votingContextBoundary: "Party alignment is descriptive, not an explanation. Democratic splits on the two fentanyl passage votes were close, and repeated stages are not separate policy positions.",
-      howToRead: "These votes concern distinct enforcement, research, officer-safety, firearm-transfer, local-governance, and policing-rule choices. A recorded vote establishes the action at that stage, not motive or a view on every provision.",
-      evidenceBreadth: "Mixed but interpretable bounded pattern",
     }),
   }),
 ]);
+
+function inferenceSynthesis(source, context = {}) {
+  const inference = source.inference_candidate || {};
+  const trajectories = (inference.within_episode_trajectories || []).map(
+    (item) => `Within one episode: ${item.member_trajectory}`,
+  );
+  const themes = (inference.repeated_cross_episode_themes || []).map(
+    (item) => `Across independent episodes: ${item.finding}`,
+  );
+  return Object.freeze({
+    primary: inference.primary_conclusion,
+    patterns: Object.freeze([...trajectories, ...themes]),
+    votingContext: context.votingContext,
+    votingContextBoundary: context.votingContextBoundary,
+    howToRead: [inference.why_conclusion_does_not_go_further, inference.future_expansion_rule].filter(Boolean).join(" "),
+    evidenceBreadth: inference.evidence_strength_label,
+  });
+}

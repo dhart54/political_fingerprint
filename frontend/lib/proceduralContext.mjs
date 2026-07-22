@@ -36,6 +36,7 @@ export function isProceduralContextRow(row) {
   const isRuleVote = voteType === "rule" || /\b(ordering the previous question|agreeing to the resolution|providing for consideration|rule resolution)\b/.test(text);
 
   return (
+    voteType === "procedural" ||
     isRuleVote ||
     (
       isHouseRuleFacet &&

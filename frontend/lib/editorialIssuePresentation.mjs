@@ -9,6 +9,7 @@ const SOURCE_GROUP_ORDER = [
 export function buildImportantContext(record) {
   const context = [];
   const seen = new Set();
+  const suppliedContext = [record.institutionalAttribution, ...(record.importantContext || [])].filter(Boolean);
 
   appendUnique(context, seen, record.additionalDetail?.laterHistory);
   for (const caveat of record.importantContext || []) {
@@ -16,18 +17,30 @@ export function buildImportantContext(record) {
     appendUnique(context, seen, caveat);
   }
 
-  appendUnique(
-    context,
-    seen,
-    record.inclusionClass === "not_voting"
-      ? "The record does not reveal why the member did not vote."
-      : "The vote record does not reveal why the member voted this way.",
-  );
-  if (record.arguments?.supporters || record.arguments?.opponents || record.institutionalAttribution) {
+  const hasSupporterArgument = Boolean(record.arguments?.supporters);
+  const hasOpponentArgument = Boolean(record.arguments?.opponents);
+  if (record.institutionalAttribution) {
+    appendUnique(context, seen, record.institutionalAttribution);
+  } else if (hasSupporterArgument && hasOpponentArgument) {
     appendUnique(
       context,
       seen,
       "Supporter and opponent arguments are attributed advocacy, not evidence of the member's motive.",
+    );
+  } else if (hasSupporterArgument || hasOpponentArgument) {
+    appendUnique(
+      context,
+      seen,
+      "The argument shown is attributed advocacy, not evidence of the member's motive.",
+    );
+  }
+  if (!suppliedContext.some(isMotiveBoundary)) {
+    appendUnique(
+      context,
+      seen,
+      record.inclusionClass === "not_voting"
+        ? "The record does not reveal why the member did not vote."
+        : "The vote record does not reveal why the member voted this way.",
     );
   }
   return context;
@@ -80,7 +93,7 @@ function isMotiveBoundary(value) {
 }
 
 function isArgumentBoundary(value) {
-  return /attributed|argument|advocacy|debate documents competing/i.test(value);
+  return /attributed|argument|advocacy|opposing case|debate documents competing/i.test(value);
 }
 
 function canonicalizeUrl(value) {

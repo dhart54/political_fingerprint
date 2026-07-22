@@ -1,0 +1,363 @@
+{
+  "schema_version": "editorial_episode_inference_v1",
+  "candidate_id": "selective-guardrail-oriented-public-safety",
+  "inference_level": "bounded_selective_pattern",
+  "evidence_strength_label": "Bounded selective pattern",
+  "primary_conclusion": "In this reviewed sample, Foushee took a selective, guardrail-oriented approach to public safety. She supported reporting, an overdose-reduction certification condition, and a later permanent fentanyl framework with research provisions, while opposing proposals that expanded access to retired law-enforcement firearms, broadened D.C. pursuit authority, or rolled back D.C. policing safeguards. The record suggests support for targeted public-safety action when paired with evidence, research, oversight, or implementation constraints rather than blanket support for or opposition to enforcement.",
+  "assessment": "candidate_supported_by_current_sample",
+  "support_balance": 9,
+  "supporting_independent_episodes": [
+    {
+      "episode_id": "halt-fentanyl-legislative-path",
+      "weight": 2,
+      "rationale": "The episode combines willingness to support enforcement with support for evidence or research conditions rather than one-directional support or opposition."
+    },
+    {
+      "episode_id": "retired-service-weapon-purchases",
+      "weight": 1,
+      "rationale": "The opposition is consistent with selectivity toward expanding access to a police tool, but remains a mechanism-specific choice."
+    },
+    {
+      "episode_id": "officer-safety-data-reporting",
+      "weight": 2,
+      "rationale": "The episode independently supports a public-safety action centered on information gathering rather than expanded coercive authority."
+    },
+    {
+      "episode_id": "dc-police-pursuit-rules",
+      "weight": 2,
+      "rationale": "The episode supports the candidate through opposition to a specific expansion of police operational authority."
+    },
+    {
+      "episode_id": "dc-policing-reform-repeal",
+      "weight": 2,
+      "rationale": "The episode supports the candidate through opposition to rolling back the reviewed oversight and accountability safeguards."
+    }
+  ],
+  "weakening_independent_episodes": [],
+  "neutral_independent_episodes": [],
+  "independent_episode_count": 5,
+  "within_episode_trajectories": [
+    {
+      "episode_id": "halt-fentanyl-legislative-path",
+      "relationship_to_repeated_stages": "Three related actions establish a within-episode trajectory but count as one episode for breadth.",
+      "member_trajectory": "Across one fentanyl episode, supported an overdose-reduction certification condition, opposed the earlier House version, and later supported the related permanent framework with research provisions.",
+      "practical_policy_direction": "Conditional and later support for permanent enforcement rules alongside evidence and research provisions."
+    }
+  ],
+  "repeated_cross_episode_themes": [
+    {
+      "theme_id": "information-research-and-implementation-guardrails",
+      "label": "Information, research, and implementation guardrails",
+      "finding": "Across independent reporting and fentanyl episodes, supported information gathering, research access, or implementation guardrails alongside public-safety action.",
+      "supporting_episodes": [
+        {
+          "episode_id": "halt-fentanyl-legislative-path",
+          "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+          "rationale": "The certification amendment and later research provisions supply reviewed evidence of attention to evidence, research, or implementation conditions within an enforcement episode."
+        },
+        {
+          "episode_id": "officer-safety-data-reporting",
+          "mechanism_family": "reporting and information gathering",
+          "rationale": "Support for the reporting bill supplies independent evidence for information gathering as a public-safety mechanism."
+        }
+      ],
+      "mechanism_families": [
+        "controlled-substance scheduling, enforcement, and research access",
+        "reporting and information gathering"
+      ],
+      "editorially_defensible": true
+    },
+    {
+      "theme_id": "limits-on-police-tools-authority-or-safeguard-rollbacks",
+      "label": "Police tools, authority, and safeguards",
+      "finding": "Opposed three reviewed proposals across distinct mechanisms that would expand access to a law-enforcement tool, broaden police operational authority, or roll back policing safeguards.",
+      "supporting_episodes": [
+        {
+          "episode_id": "retired-service-weapon-purchases",
+          "mechanism_family": "access to retired federal service firearms",
+          "rationale": "Opposition to the purchase program is evidence in this sample against expanding access to one category of law-enforcement tool."
+        },
+        {
+          "episode_id": "dc-police-pursuit-rules",
+          "mechanism_family": "police operational discretion",
+          "rationale": "Opposition to the substitute supplies direct evidence against this reviewed expansion of police pursuit authority."
+        },
+        {
+          "episode_id": "dc-policing-reform-repeal",
+          "mechanism_family": "police oversight and accountability safeguards",
+          "rationale": "Opposition to repealing most of the D.C. law supplies direct evidence against this reviewed rollback of policing safeguards."
+        }
+      ],
+      "mechanism_families": [
+        "access to retired federal service firearms",
+        "police operational discretion",
+        "police oversight and accountability safeguards"
+      ],
+      "editorially_defensible": true
+    }
+  ],
+  "notable_one_off_choices": [
+    {
+      "episode_id": "retired-service-weapon-purchases",
+      "mechanism_family": "access to retired federal service firearms",
+      "practical_policy_direction": "Opposed creating the reviewed purchase program for eligible officers and qualifying retired agency firearms."
+    }
+  ],
+  "one_off_or_unproven_themes": [],
+  "contrary_or_limiting_evidence": [
+    {
+      "episode_id": "halt-fentanyl-legislative-path",
+      "text": "Later support for a permanent enforcement framework means the record is not blanket opposition to fentanyl enforcement."
+    },
+    {
+      "episode_id": "halt-fentanyl-legislative-path",
+      "text": "H.R. 27 and S. 331 were related but not identical, so the votes do not prove a change in position or identify why the actions differed."
+    },
+    {
+      "episode_id": "halt-fentanyl-legislative-path",
+      "text": "The later bill combined scheduling, penalty, registration, research, and rulemaking provisions."
+    },
+    {
+      "episode_id": "retired-service-weapon-purchases",
+      "text": "This firearm-transfer choice is not itself evidence about police operational discretion or every form of law-enforcement equipment."
+    },
+    {
+      "episode_id": "officer-safety-data-reporting",
+      "text": "The reporting vote does not establish support for policies Congress might later develop from the reports."
+    },
+    {
+      "episode_id": "dc-police-pursuit-rules",
+      "text": "The substitute included risk and effectiveness exceptions, so it was not an unconditional pursuit mandate."
+    },
+    {
+      "episode_id": "dc-policing-reform-repeal",
+      "text": "The substitute retained exceptions and did not repeal every provision of the D.C. law."
+    },
+    {
+      "episode_id": "dc-policing-reform-repeal",
+      "text": "The vote covered multiple policing, disclosure, discipline, and oversight provisions."
+    },
+    {
+      "episode_id": null,
+      "text": "Five independent episodes are not Foushee's complete Justice & Public Safety record."
+    },
+    {
+      "episode_id": null,
+      "text": "Party alignment describes context and is not evidence of philosophy or motive."
+    },
+    {
+      "episode_id": null,
+      "text": "The record does not reveal private motive."
+    }
+  ],
+  "why_conclusion_does_not_go_further": "Five reviewed episodes support bounded conditional patterns but not a final, immutable Justice philosophy or ideological label.",
+  "future_expansion_rule": "When additional episodes are reviewed, rerun this inference from the expanded annotations; new evidence may strengthen, narrow, contradict, or replace the current conclusion.",
+  "reviewed_period": "119th Congress, February 6-November 19, 2025",
+  "human_review_status": "human_approval_pending",
+  "episode_annotations": [
+    {
+      "independent": true,
+      "source_confidence": "high",
+      "reviewed_period": "119th Congress, February 6-November 19, 2025",
+      "episode_id": "halt-fentanyl-legislative-path",
+      "rolls": [
+        32,
+        33,
+        166
+      ],
+      "measures": [
+        "119-hr-27-amdt-5",
+        "119-hr-27",
+        "119-s-331"
+      ],
+      "relationship": "one policy episode with a certification amendment, an earlier House bill, and later passage of a related Senate-amended bill",
+      "relationship_to_repeated_stages": "Three related actions establish a within-episode trajectory but count as one episode for breadth.",
+      "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+      "member_trajectory": "Across one fentanyl episode, supported an overdose-reduction certification condition, opposed the earlier House version, and later supported the related permanent framework with research provisions.",
+      "practical_policy_direction": "Conditional and later support for permanent enforcement rules alongside evidence and research provisions.",
+      "practical_question": "Whether and under what condition to make classwide Schedule I treatment and associated penalty and research rules permanent.",
+      "candidate_theme_tags": [
+        "evidence requirement",
+        "research access",
+        "enforcement authority",
+        "implementation guardrail"
+      ],
+      "theme_evidence": [
+        {
+          "theme_id": "information-research-and-implementation-guardrails",
+          "rationale": "The certification amendment and later research provisions supply reviewed evidence of attention to evidence, research, or implementation conditions within an enforcement episode."
+        }
+      ],
+      "contrary_or_limiting_evidence": [
+        "Later support for a permanent enforcement framework means the record is not blanket opposition to fentanyl enforcement.",
+        "H.R. 27 and S. 331 were related but not identical, so the votes do not prove a change in position or identify why the actions differed."
+      ],
+      "package_vote_limitations": [
+        "The later bill combined scheduling, penalty, registration, research, and rulemaking provisions."
+      ],
+      "conclusion_effect": {
+        "candidate_id": "selective-guardrail-oriented-public-safety",
+        "direction": "strengthens",
+        "weight": 2,
+        "rationale": "The episode combines willingness to support enforcement with support for evidence or research conditions rather than one-directional support or opposition."
+      }
+    },
+    {
+      "independent": true,
+      "source_confidence": "high",
+      "reviewed_period": "119th Congress, February 6-November 19, 2025",
+      "episode_id": "retired-service-weapon-purchases",
+      "rolls": [
+        130
+      ],
+      "measures": [
+        "119-hr-2255"
+      ],
+      "relationship": "single House-passage action",
+      "relationship_to_repeated_stages": "",
+      "mechanism_family": "access to retired federal service firearms",
+      "member_trajectory": "Opposed the House proposal at passage.",
+      "practical_policy_direction": "Opposed creating the reviewed purchase program for eligible officers and qualifying retired agency firearms.",
+      "practical_question": "Whether to create a federal program for eligible officers to buy retired agency-issued firearms.",
+      "candidate_theme_tags": [
+        "firearm access",
+        "police tools"
+      ],
+      "theme_evidence": [
+        {
+          "theme_id": "limits-on-police-tools-authority-or-safeguard-rollbacks",
+          "rationale": "Opposition to the purchase program is evidence in this sample against expanding access to one category of law-enforcement tool."
+        }
+      ],
+      "contrary_or_limiting_evidence": [
+        "This firearm-transfer choice is not itself evidence about police operational discretion or every form of law-enforcement equipment."
+      ],
+      "package_vote_limitations": [],
+      "notable_one_off": true,
+      "conclusion_effect": {
+        "candidate_id": "selective-guardrail-oriented-public-safety",
+        "direction": "strengthens",
+        "weight": 1,
+        "rationale": "The opposition is consistent with selectivity toward expanding access to a police tool, but remains a mechanism-specific choice."
+      }
+    },
+    {
+      "independent": true,
+      "source_confidence": "high",
+      "reviewed_period": "119th Congress, February 6-November 19, 2025",
+      "episode_id": "officer-safety-data-reporting",
+      "rolls": [
+        131
+      ],
+      "measures": [
+        "119-hr-2240"
+      ],
+      "relationship": "single House-passage action",
+      "relationship_to_repeated_stages": "",
+      "mechanism_family": "reporting and information gathering",
+      "member_trajectory": "Supported the House reporting bill at passage.",
+      "practical_policy_direction": "Supported collecting and reporting information about attacks, reporting systems, and officer wellness resources.",
+      "practical_question": "Whether to require DOJ reports on attacks, reporting systems, and officer mental-health resources.",
+      "candidate_theme_tags": [
+        "reporting and information gathering",
+        "oversight and accountability"
+      ],
+      "theme_evidence": [
+        {
+          "theme_id": "information-research-and-implementation-guardrails",
+          "rationale": "Support for the reporting bill supplies independent evidence for information gathering as a public-safety mechanism."
+        }
+      ],
+      "contrary_or_limiting_evidence": [
+        "The reporting vote does not establish support for policies Congress might later develop from the reports."
+      ],
+      "package_vote_limitations": [],
+      "conclusion_effect": {
+        "candidate_id": "selective-guardrail-oriented-public-safety",
+        "direction": "strengthens",
+        "weight": 2,
+        "rationale": "The episode independently supports a public-safety action centered on information gathering rather than expanded coercive authority."
+      }
+    },
+    {
+      "independent": true,
+      "source_confidence": "high",
+      "reviewed_period": "119th Congress, February 6-November 19, 2025",
+      "episode_id": "dc-police-pursuit-rules",
+      "rolls": [
+        275
+      ],
+      "measures": [
+        "119-hr-5143"
+      ],
+      "relationship": "single House-passage action on the Rules Committee substitute",
+      "relationship_to_repeated_stages": "",
+      "mechanism_family": "police operational discretion",
+      "member_trajectory": "Opposed the Rules Committee substitute at House passage.",
+      "practical_policy_direction": "Opposed replacing D.C. pursuit restrictions with broader pursuit authority subject to exceptions.",
+      "practical_question": "Whether Congress should replace D.C.'s pursuit restrictions with a broader pursuit requirement and exceptions.",
+      "candidate_theme_tags": [
+        "police operational discretion",
+        "local self-government",
+        "procedural protection"
+      ],
+      "theme_evidence": [
+        {
+          "theme_id": "limits-on-police-tools-authority-or-safeguard-rollbacks",
+          "rationale": "Opposition to the substitute supplies direct evidence against this reviewed expansion of police pursuit authority."
+        }
+      ],
+      "contrary_or_limiting_evidence": [
+        "The substitute included risk and effectiveness exceptions, so it was not an unconditional pursuit mandate."
+      ],
+      "package_vote_limitations": [],
+      "conclusion_effect": {
+        "candidate_id": "selective-guardrail-oriented-public-safety",
+        "direction": "strengthens",
+        "weight": 2,
+        "rationale": "The episode supports the candidate through opposition to a specific expansion of police operational authority."
+      }
+    },
+    {
+      "independent": true,
+      "source_confidence": "high",
+      "reviewed_period": "119th Congress, February 6-November 19, 2025",
+      "episode_id": "dc-policing-reform-repeal",
+      "rolls": [
+        299
+      ],
+      "measures": [
+        "119-hr-5107"
+      ],
+      "relationship": "single House-passage action on the committee substitute",
+      "relationship_to_repeated_stages": "",
+      "mechanism_family": "police oversight and accountability safeguards",
+      "member_trajectory": "Opposed the committee substitute at House passage.",
+      "practical_policy_direction": "Opposed repealing most of D.C.'s reviewed policing safeguards and restoring prior provisions.",
+      "practical_question": "Whether Congress should repeal most of D.C.'s 2022 policing reform law and restore prior provisions.",
+      "candidate_theme_tags": [
+        "oversight and accountability",
+        "local self-government",
+        "procedural protection"
+      ],
+      "theme_evidence": [
+        {
+          "theme_id": "limits-on-police-tools-authority-or-safeguard-rollbacks",
+          "rationale": "Opposition to repealing most of the D.C. law supplies direct evidence against this reviewed rollback of policing safeguards."
+        }
+      ],
+      "contrary_or_limiting_evidence": [
+        "The substitute retained exceptions and did not repeal every provision of the D.C. law."
+      ],
+      "package_vote_limitations": [
+        "The vote covered multiple policing, disclosure, discipline, and oversight provisions."
+      ],
+      "conclusion_effect": {
+        "candidate_id": "selective-guardrail-oriented-public-safety",
+        "direction": "strengthens",
+        "weight": 2,
+        "rationale": "The episode supports the candidate through opposition to rolling back the reviewed oversight and accountability safeguards."
+      }
+    }
+  ]
+}

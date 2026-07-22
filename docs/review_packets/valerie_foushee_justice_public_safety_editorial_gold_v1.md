@@ -18,7 +18,9 @@ The reviewed 119th-Congress inventory contains 7 substantive roll calls across 5
 
 ## Bounded synthesis
 
-The sample is mixed but interpretable. Foushee took different actions across the fentanyl episode, supported officer-safety reporting, opposed the retired-service-weapon purchase proposal, and opposed both reviewed House proposals changing D.C.-enacted policing rules. These actions do not establish one overarching Justice philosophy or explain motive.
+The reusable episode-level inference produces a bounded candidate rather than treating each roll as an independent signal. In this reviewed sample, Foushee took a selective, guardrail-oriented approach to public safety: she supported reporting, an overdose-reduction certification condition, and a later permanent fentanyl framework with research provisions, while opposing reviewed expansions of a law-enforcement firearm program, D.C. pursuit authority, and rollbacks of D.C. policing safeguards.
+
+Two cross-episode themes meet the explicit independence and mechanism-diversity gates: information, research, and implementation guardrails; and limits on reviewed police tools, authority, or safeguard rollbacks. The three fentanyl actions remain one within-episode trajectory. The conclusion does not establish motive, ideology, or a final Justice philosophy. When new episodes are reviewed, the same generic inference must be rerun so the candidate can strengthen, narrow, contradict, or be replaced.
 
 Foushee matched the majority of House Democrats on all seven substantive rolls. That context is descriptive only; the two fentanyl passage votes had close Democratic splits and party alignment is not a reason for a vote.
 
@@ -26,9 +28,12 @@ Foushee matched the majority of House Democrats on all seven substantive rolls. 
 
 - Explicit episode identity yields 7 substantive actions and 5 episodes.
 - Optional opponent content omits cleanly for roll 131.
+- Roll 131 retains its explicit source-review limitation; the generic one-sided-argument boundary does not invent an opponent or duplicate the supplied boundary.
+- Public source headings use reader-facing groups while the source manifest retains its internal taxonomy and mappings.
 - All 13 covered rows leave no generic additional-record list.
 - Review and production registries remain separate.
 - Default production mode rejects the pending slice and renders the basic evidence fallback.
+- The fallback recognizes all six controls from structured procedural metadata and describes their floor-process role.
 - The production registry has no dependency on the Justice bundle.
 - No production write or manual deployment was performed.
 

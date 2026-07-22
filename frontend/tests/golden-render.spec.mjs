@@ -204,7 +204,10 @@ test("Foushee Justice read preserves episodes, optional arguments, controls, and
   for (const indicator of ["7 substantive votes", "5 policy episodes", "0 Not Voting", "6 context-only records"]) {
     await expect(slice.getByText(indicator, { exact: true })).toBeVisible();
   }
-  await expect(slice.getByText(/not one overarching Justice philosophy/i)).toBeVisible();
+  await expect(slice.getByText(/selective, guardrail-oriented approach/i)).toBeVisible();
+  await expect(slice.getByText("Bounded selective pattern", { exact: true })).toBeVisible();
+  await expect(slice.getByText(/Within one episode: Across one fentanyl episode/i)).toBeVisible();
+  await expect(slice.getByText(/Across independent episodes: Across independent reporting and fentanyl episodes/i)).toBeVisible();
   await expect(fixture.getByText("Additional reviewed vote list", { exact: true })).toHaveCount(0);
 
   const reporting = slice.getByTestId("editorial-record-roll-131");
@@ -212,7 +215,10 @@ test("Foushee Justice read preserves episodes, optional arguments, controls, and
   await reporting.getByText("Arguments, context, and sources", { exact: true }).click();
   await expect(reporting.getByText("Supporters argued", { exact: true })).toBeVisible();
   await expect(reporting.getByText("Opponents argued", { exact: true })).toHaveCount(0);
-  await expect(reporting.getByText(/did not provide a fair stage-specific opposing case/)).toBeVisible();
+  await expect(reporting.getByText(/No adequate stage-specific opposing argument/)).toBeVisible();
+  await reporting.getByText(/Official sources \(4\)/).click();
+  await expect(reporting.getByText("Vote and legislative status", { exact: true })).toBeVisible();
+  await expect(reporting.getByText("Competing arguments", { exact: true })).toBeVisible();
 
   const dc = slice.getByTestId("editorial-record-roll-299");
   await dc.locator(":scope > h6 > button").click();
@@ -236,6 +242,8 @@ test("Foushee Justice read is responsive and falls back in production mode", asy
   const fallback = page.getByTestId("foushee-justice-production-gate-fixture");
   await expect(fallback.getByTestId("editorial-issue-experience")).toHaveCount(0);
   await expect(fallback.getByText("Issue summary", { exact: true })).toBeVisible();
+  await expect(fallback.getByText(/Six procedural-context rows remain visible/i)).toBeVisible();
+  await expect(fallback.getByText(/explain floor process/i)).toBeVisible();
 });
 
 test("pending editorial slice uses the basic representative fallback in production mode", async ({ page }) => {
