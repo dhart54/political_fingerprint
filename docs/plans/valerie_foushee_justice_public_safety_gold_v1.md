@@ -146,6 +146,6 @@ Intent: strengthen the reusable episode-level inference method and correct reade
 - [x] Regenerate documentation and public artifacts; run drift checks.
 - [x] Run backend, Node, Playwright, lint, build, and genericity/regression audits.
 - [x] Re-capture required review screenshots.
-- [ ] Commit, push, update draft PR #95, and confirm automatic preview without merge or manual deployment.
+- [x] Commit, push, update draft PR #95, and confirm automatic preview without merge or manual deployment.
 
 Correction-pass validation: 75 focused backend/content/interpretation tests passed; 100 frontend Node tests passed; 11 responsive Playwright tests passed; deterministic generation, six JSON parses, Python compilation, ESLint (zero errors, eight pre-existing warnings), type validation, production build, genericity search, and `git diff --check` passed. Ten final-correction screenshots were captured under the Codex visualization output directory.
