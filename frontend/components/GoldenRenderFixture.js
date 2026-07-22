@@ -19,6 +19,7 @@ import {
   editorialGoldLegislator,
 } from "../lib/editorialGoldRenderFixture.mjs";
 import { justiceEditorialIssueFixtureData } from "../lib/justiceEditorialRenderFixture.mjs";
+import { justiceCrossMemberRenderProfiles } from "../lib/justiceCrossMemberReviewSlices.mjs";
 import { EDITORIAL_EXPERIENCE_MODE } from "../lib/editorialIssueExperience.mjs";
 import { reviewEditorialIssueSlices } from "../lib/editorialIssueReviewSlices.mjs";
 import {
@@ -93,6 +94,35 @@ export default function GoldenRenderFixture() {
           </div>
           <PositionByIssue editorialCandidates={reviewEditorialIssueSlices} editorialMode={EDITORIAL_EXPERIENCE_MODE.review} evidenceRequest={justiceEditorialRequest} fixtureData={justiceEditorialIssueFixtureData} legislator={editorialGoldLegislator} legislatorId={editorialGoldLegislator.id} scope="all" title="Valerie P. Foushee's Justice & Public Safety evidence" />
         </section>
+
+        {justiceCrossMemberRenderProfiles.map((profile) => (
+          <section
+            className="mt-5 scroll-mt-4"
+            data-testid={`justice-cross-member-${profile.memberId}`}
+            id={`justice-cross-member-${profile.memberId}`}
+            key={profile.memberId}
+          >
+            <div className="rounded-2xl border border-indigo-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+              <p className="text-xs uppercase tracking-[0.2em] text-indigo-800">Cross-member validation — review only</p>
+              <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">
+                {profile.legislator.name_display} — Justice &amp; Public Safety
+              </h2>
+              <p className="mt-1 text-sm leading-6 text-stone-600">
+                Shared PR #95 episode research with a member-specific recorded-action overlay.
+              </p>
+            </div>
+            <PositionByIssue
+              editorialCandidates={[profile.candidate]}
+              editorialMode={EDITORIAL_EXPERIENCE_MODE.review}
+              evidenceRequest={justiceEditorialRequest}
+              fixtureData={profile.fixtureData}
+              legislator={profile.legislator}
+              legislatorId={profile.legislator.id}
+              scope="all"
+              title={`${profile.legislator.name_display}'s Justice & Public Safety evidence`}
+            />
+          </section>
+        ))}
 
         <section className="mt-5 scroll-mt-4" data-testid="foushee-justice-production-gate-fixture" id="foushee-justice-production-gate-fixture">
           <div className="rounded-2xl border border-stone-300 bg-white px-4 py-3"><p className="text-xs uppercase tracking-[0.2em] text-stone-600">Production-gate fallback proof</p><h2 className="mt-1 font-serif text-[1.8rem]">Pending Justice content stays unpublished</h2></div>
