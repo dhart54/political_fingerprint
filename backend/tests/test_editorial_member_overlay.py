@@ -43,6 +43,24 @@ def test_shared_contract_keeps_denominators_when_roll_is_omitted():
     assert next(item for item in value["episode_trajectories"] if item["episode_id"] == "multi")["action_signature"] == ["Yea", "missing"]
 
 
+def test_entirely_omitted_episode_stays_in_denominator_as_missing():
+    value = build([action(3, "Yea", "single")])
+    assert value["coverage"]["substantive_rolls_expected"] == 3
+    assert value["coverage"]["independent_episodes_expected"] == 2
+    assert value["coverage"]["independent_episodes_missing"] == 1
+    multi = next(item for item in value["episode_trajectories"] if item["episode_id"] == "multi")
+    assert multi["coverage_status"] == "missing"
+    assert multi["action_signature"] == ["missing", "missing"]
+
+
+def test_not_voting_inside_multi_roll_episode_makes_trajectory_partial_and_non_counting():
+    value = build([action(1, "Yea", "multi"), action(2, "Not Voting", "multi"), action(3, "Yea", "single")])
+    multi = next(item for item in value["episode_trajectories"] if item["episode_id"] == "multi")
+    assert multi["coverage_status"] == "partial"
+    assert multi["action_signature"] == ["Yea", "Not Voting"]
+    assert multi["theme_evidence"] == []
+
+
 def test_present_not_voting_and_missing_never_emit_counting_themes():
     for value in ("Present", "Not Voting"):
         overlay = build([action(1, "Yea", "multi"), action(2, "Nay", "multi"), action(3, value, "single")])

@@ -86,7 +86,7 @@
 ## Validation Results
 
 - Deterministic artifact generation: pass (`build_justice_cross_member_validation.py --check`).
-- Corrected generic inference, overlay, and cross-member Python regressions: 27 passed.
+- Corrected generic inference, overlay, and cross-member Python regressions: 29 passed.
 - Python compilation: pass for backend app and the new builder.
 - JSON parsing: all 7 generated milestone artifacts parsed.
 - Frontend Node tests: 106 passed, run directly because the sandbox intermittently blocked Node test-worker spawning.
