@@ -1,4 +1,5 @@
 import { valerieFousheeEconomyEditorialGold } from "./valerieFousheeEconomyEditorialGold.mjs";
+import { valerieFousheeJusticePublicSafetyEditorialGold } from "./valerieFousheeJusticePublicSafetyEditorialGold.mjs";
 
 export const reviewEditorialIssueSlices = Object.freeze([
   Object.freeze({
@@ -35,4 +36,43 @@ export const reviewEditorialIssueSlices = Object.freeze([
       evidenceBreadth: "Bounded voting pattern",
     }),
   }),
+  Object.freeze({
+    source: valerieFousheeJusticePublicSafetyEditorialGold,
+    identity: Object.freeze({
+      memberId: "F000477",
+      memberDisplayName: "Valerie P. Foushee",
+      issueId: "JUSTICE_PUBLIC_SAFETY",
+      issueDisplayName: "Justice & Public Safety",
+      congress: 119,
+      reviewedPeriod: "119th Congress",
+    }),
+    publication: Object.freeze({
+      editorialStatus: "human_approval_pending",
+      benchmarkStatus: "not_promoted",
+      productionEligible: false,
+      reviewLabel: "Editorial review preview — not published",
+    }),
+    synthesis: inferenceSynthesis(valerieFousheeJusticePublicSafetyEditorialGold, {
+      votingContext: "Foushee voted with the majority of House Democrats on all 7 substantive roll calls in this sample, covering 5 policy episodes.",
+      votingContextBoundary: "Party alignment is descriptive, not an explanation. Democratic splits on the two fentanyl passage votes were close, and repeated stages are not separate policy positions.",
+    }),
+  }),
 ]);
+
+function inferenceSynthesis(source, context = {}) {
+  const inference = source.inference_candidate || {};
+  const trajectories = (inference.within_episode_trajectories || []).map(
+    (item) => `Within one episode: ${item.member_trajectory}`,
+  );
+  const themes = (inference.repeated_cross_episode_themes || []).map(
+    (item) => `Across independent episodes: ${item.finding}`,
+  );
+  return Object.freeze({
+    primary: inference.primary_conclusion,
+    patterns: Object.freeze([...trajectories, ...themes]),
+    votingContext: context.votingContext,
+    votingContextBoundary: context.votingContextBoundary,
+    howToRead: [inference.why_conclusion_does_not_go_further, inference.future_expansion_rule].filter(Boolean).join(" "),
+    evidenceBreadth: inference.evidence_strength_label,
+  });
+}

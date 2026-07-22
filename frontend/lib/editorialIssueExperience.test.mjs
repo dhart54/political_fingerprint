@@ -12,6 +12,7 @@ import {
 import { buildImportantContext, groupOfficialSources } from "./editorialIssuePresentation.mjs";
 import { productionEditorialIssueSlices } from "./editorialIssueProductionSlices.mjs";
 import { reviewEditorialIssueSlices } from "./editorialIssueReviewSlices.mjs";
+import { justiceEditorialIssueFixtureData } from "./justiceEditorialRenderFixture.mjs";
 import {
   syntheticEditorialCandidate,
   syntheticEditorialIssueFixtureData,
@@ -21,6 +22,40 @@ import { valerieFousheeEconomyEditorialGold } from "./valerieFousheeEconomyEdito
 
 const fousheeRows = editorialGoldIssueFixtureData.evidenceByDomain.ECONOMY_TAXES.evidence;
 const fousheeCandidate = reviewEditorialIssueSlices[0];
+const justiceCandidate = reviewEditorialIssueSlices.find((candidate) => candidate.identity.issueId === "JUSTICE_PUBLIC_SAFETY");
+const justiceRows = justiceEditorialIssueFixtureData.evidenceByDomain.JUSTICE_PUBLIC_SAFETY.evidence;
+
+test("Justice review candidate uses the generic contract with explicit episodes", () => {
+  const experience = selectEditorialIssueExperience({ candidates: reviewEditorialIssueSlices, domain: "JUSTICE_PUBLIC_SAFETY", evidenceRows: justiceRows, legislator: editorialGoldLegislator, mode: "review" });
+  assert.ok(experience);
+  assert.equal(justiceCandidate.publication.editorialStatus, "human_approval_pending");
+  assert.equal(justiceCandidate.publication.productionEligible, false);
+  assert.deepEqual(experience.indicators.map((item) => item.label), ["7 substantive votes", "5 policy episodes", "0 Not Voting", "6 context-only records"]);
+  assert.equal(experience.records.length, 13);
+  assert.equal(experience.records.filter((item) => item.inclusionClass === "substantive").length, 7);
+  assert.equal(experience.records.filter((item) => item.inclusionClass === "context_only").length, 6);
+  assert.equal(new Set(experience.records.filter((item) => item.inclusionClass === "substantive").map((item) => item.episodeId)).size, 5);
+  assert.equal(experience.records.find((item) => item.id === "roll-131").arguments.opponents, undefined);
+  assert.match(experience.synthesis.primary, /selective, guardrail-oriented approach/i);
+  assert.equal(experience.synthesis.evidenceBreadth, "Bounded selective pattern");
+  assert.equal(experience.synthesis.patterns.filter((item) => item.startsWith("Across independent episodes:")).length, 2);
+  assert.match(experience.synthesis.howToRead, /strengthen, narrow, contradict, or replace/i);
+});
+
+test("Justice public sources use reader-facing groups and retain stable URLs", () => {
+  const publicSources = justiceCandidate.source.interpretations.flatMap((row) => row.two_minute.sources)
+    .concat(justiceCandidate.source.controls.flatMap((row) => row.sources));
+  const allowed = new Set(["Vote and legislative status", "Bill or resolution text", "Nonpartisan analysis", "Competing arguments", "Additional official evidence"]);
+  assert.ok(publicSources.every((source) => allowed.has(source.group)));
+  assert.ok(publicSources.every((source) => !source.group.includes("_")));
+  const experience = selectEditorialIssueExperience({ candidates: reviewEditorialIssueSlices, domain: "JUSTICE_PUBLIC_SAFETY", evidenceRows: justiceRows, legislator: editorialGoldLegislator, mode: "review" });
+  const adaptedUrls = new Set(experience.records.flatMap((record) => record.sources || []).map((source) => source.url));
+  assert.deepEqual(adaptedUrls, new Set(publicSources.map((source) => source.url)));
+});
+
+test("Justice candidate is excluded from ordinary production selection", () => {
+  assert.equal(selectEditorialIssueExperience({ candidates: reviewEditorialIssueSlices, domain: "JUSTICE_PUBLIC_SAFETY", evidenceRows: justiceRows, legislator: editorialGoldLegislator }), null);
+});
 
 test("pending editorial content is review-only and production requires all publication gates", () => {
   const review = selectEditorialIssueExperience({
@@ -122,7 +157,7 @@ test("source grouping is optional, stable, deduplicated, and hides internal iden
   assert.doesNotMatch(JSON.stringify(experience), /claim_id|source_id|agent_confidence|review_question/i);
 });
 
-test("argument advocacy boundary appears only when argument content exists", () => {
+test("argument advocacy boundary handles both, one, neither, and explicit supplied boundaries", () => {
   const record = {
     inclusionClass: "substantive",
     additionalDetail: {},
@@ -134,9 +169,34 @@ test("argument advocacy boundary appears only when argument content exists", () 
   assert.equal(withoutArguments.some((item) => /attributed advocacy/i.test(item)), false);
 
   const withArgument = buildImportantContext({ ...record, arguments: { supporters: { argument: "A supplied argument." } } });
-  assert.ok(withArgument.some((item) => /attributed advocacy/i.test(item)));
-  const withExplicitBoundary = buildImportantContext({ ...record, institutionalAttribution: "Explicit argument boundary." });
-  assert.ok(withExplicitBoundary.some((item) => /attributed advocacy/i.test(item)));
+  assert.ok(withArgument.includes("The argument shown is attributed advocacy, not evidence of the member's motive."));
+  assert.equal(withArgument.some((item) => /supporter and opponent/i.test(item)), false);
+
+  const opponentOnly = buildImportantContext({ ...record, arguments: { opponents: { argument: "A supplied argument." } } });
+  assert.ok(opponentOnly.includes("The argument shown is attributed advocacy, not evidence of the member's motive."));
+
+  const both = buildImportantContext({ ...record, arguments: { supporters: { argument: "Support." }, opponents: { argument: "Oppose." } } });
+  assert.ok(both.includes("Supporter and opponent arguments are attributed advocacy, not evidence of the member's motive."));
+
+  const explicit = "The reviewed materials did not provide a fair stage-specific opposing case.";
+  const withExplicitBoundary = buildImportantContext({ ...record, arguments: { supporters: { argument: "Support." } }, institutionalAttribution: explicit });
+  assert.ok(withExplicitBoundary.includes(explicit));
+  assert.equal(withExplicitBoundary.some((item) => /argument shown is attributed advocacy/i.test(item)), false);
+
+  const motiveSpecific = buildImportantContext({ ...record, arguments: { supporters: { argument: "Support." } }, institutionalAttribution: "This attributed argument does not explain why the member voted this way." });
+  assert.equal(motiveSpecific.filter((item) => /why the member voted/i.test(item)).length, 1);
+});
+
+test("roll 131 keeps its explicit one-sided argument boundary without generic duplication", () => {
+  const experience = selectEditorialIssueExperience({ candidates: reviewEditorialIssueSlices, domain: "JUSTICE_PUBLIC_SAFETY", evidenceRows: justiceRows, legislator: editorialGoldLegislator, mode: "review" });
+  const record = experience.records.find((item) => item.id === "roll-131");
+  const context = buildImportantContext(record);
+  assert.ok(record.arguments.supporters);
+  assert.equal(record.arguments.opponents, undefined);
+  assert.equal(context.filter((item) => /No adequate stage-specific opposing argument/i.test(item)).length, 1);
+  assert.equal(context.some((item) => /fair stage-specific opposing case/i.test(item)), false);
+  assert.equal(context.some((item) => /Supporter and opponent arguments/i.test(item)), false);
+  assert.equal(context.filter((item) => /does not reveal why|member's motive/i.test(item)).length, 1);
 });
 
 test("Foushee Economy regression preserves counts, ordering, non-counting classes, copy, and pending statuses", () => {
