@@ -246,6 +246,43 @@ test("Foushee Justice read is responsive and falls back in production mode", asy
   await expect(fallback.getByText(/explain floor process/i)).toBeVisible();
 });
 
+test("Justice cross-member profiles render distinct conclusions through the generic harness", async ({ page }) => {
+  await page.goto("/golden-render-fixture#justice-cross-member-A000370");
+
+  const adams = page.getByTestId("justice-cross-member-A000370").getByTestId("editorial-issue-experience");
+  await expect(adams.getByTestId("editorial-review-label")).toContainText("not published");
+  await expect(adams.getByText(/selective boundary: support for evidence or reporting conditions/i)).toBeVisible();
+  await expect(adams.getByText(/matched the majority of House Democrats/i)).toBeVisible();
+
+  const aderholt = page.getByTestId("justice-cross-member-A000055").getByTestId("editorial-issue-experience");
+  await expect(aderholt.getByText(/repeated support for the reviewed enforcement, police-tool, and authority expansions/i)).toBeVisible();
+  await expect(aderholt.getByText(/selective boundary: support for evidence or reporting conditions/i)).toHaveCount(0);
+  const aderholtCondition = aderholt.getByTestId("editorial-record-roll-32");
+  await expect(aderholtCondition.getByText(/Opposed a certification condition/i)).toBeVisible();
+  await aderholtCondition.locator(":scope > h6 > button").click();
+  await expect(aderholtCondition.getByText(/Aderholt voted Nay/i)).toBeVisible();
+
+  const massie = page.getByTestId("justice-cross-member-M001184").getByTestId("editorial-issue-experience");
+  await expect(massie.getByText("Mixed but interpretable", { exact: true })).toBeVisible();
+  await expect(massie.getByText(/policy-specific divide between support for reviewed police tools or authority and opposition within the fentanyl scheduling episode/i)).toBeVisible();
+  for (const indicator of ["7 substantive votes", "5 policy episodes", "0 Not Voting", "6 context-only records"]) {
+    await expect(massie.getByText(indicator, { exact: true })).toBeVisible();
+  }
+  await assertNoHorizontalOverflow(page);
+});
+
+test("selected Justice cross-member profiles remain usable on mobile", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/golden-render-fixture#justice-cross-member-M001184");
+  for (const memberId of ["A000370", "A000055", "M001184"]) {
+    const profile = page.getByTestId(`justice-cross-member-${memberId}`).getByTestId("editorial-issue-experience");
+    await expect(profile.getByText("Patterns in this sample", { exact: true })).toBeVisible();
+    await profile.getByTestId("editorial-record-roll-275").locator(":scope > h6 > button").click();
+    await expect(profile.getByTestId("editorial-record-roll-275").getByText("What changed", { exact: true })).toBeVisible();
+    await assertNoHorizontalOverflow(page);
+  }
+});
+
 test("pending editorial slice uses the basic representative fallback in production mode", async ({ page }) => {
   await page.goto("/golden-render-fixture#foushee-production-gate-fixture");
   const fixture = page.getByTestId("foushee-production-gate-fixture");

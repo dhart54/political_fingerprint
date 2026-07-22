@@ -1,0 +1,161 @@
+{
+  "schema_version": "justice_candidate_catalog_v1",
+  "themes": {
+    "evidence-and-reporting-conditions": {
+      "label": "Evidence and reporting conditions",
+      "finding": "Supported evidence, certification, or reporting conditions across distinct episodes."
+    },
+    "limits-on-tools-authority-and-rollbacks": {
+      "label": "Limits on tools, authority, and safeguard rollbacks",
+      "finding": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+    },
+    "reviewed-enforcement-expansion": {
+      "label": "Reviewed enforcement expansion",
+      "finding": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+    },
+    "police-tools-and-authority": {
+      "label": "Police tools and authority",
+      "finding": "Supported reviewed police-tool and authority proposals."
+    },
+    "fentanyl-episode-opposition": {
+      "label": "Fentanyl episode opposition",
+      "finding": "Opposed all three actions within the single fentanyl episode."
+    },
+    "national-public-safety-mechanisms": {
+      "label": "National public-safety mechanisms",
+      "finding": "Supported reviewed national mechanisms across distinct policy tools."
+    },
+    "dc-policing-change-opposition": {
+      "label": "D.C. policing change opposition",
+      "finding": "Opposed both reviewed D.C. policing changes."
+    },
+    "cross-mechanism-opposition": {
+      "label": "Cross-mechanism opposition",
+      "finding": "Opposed reviewed actions across distinct mechanisms."
+    },
+    "cross-mechanism-support": {
+      "label": "Cross-mechanism support",
+      "finding": "Supported reviewed actions across distinct mechanisms."
+    },
+    "safeguard-repeal-opposition": {
+      "label": "Safeguard-repeal opposition",
+      "finding": "Opposed the reviewed repeal of most D.C. policing safeguards."
+    }
+  },
+  "candidates": [
+    {
+      "candidate_id": "conditional-guardrail-boundary",
+      "inference_level": "bounded_selective_pattern",
+      "evidence_strength_label": "Bounded selective pattern",
+      "conclusion": "a selective boundary: support for evidence or reporting conditions alongside repeated limits on reviewed tool, authority, and safeguard changes",
+      "why": "Five episodes establish a bounded pattern but do not explain motive or a comprehensive Justice philosophy.",
+      "required_themes": [
+        {
+          "theme_id": "evidence-and-reporting-conditions",
+          "minimum_episodes": 2,
+          "minimum_mechanisms": 2
+        },
+        {
+          "theme_id": "limits-on-tools-authority-and-rollbacks",
+          "minimum_episodes": 3,
+          "minimum_mechanisms": 3
+        }
+      ],
+      "conflicting_themes": []
+    },
+    {
+      "candidate_id": "reviewed-enforcement-expansion",
+      "inference_level": "bounded_repeated_pattern",
+      "evidence_strength_label": "Strong reviewed sample",
+      "conclusion": "repeated support for the reviewed enforcement, police-tool, and authority expansions",
+      "why": "The finding is limited to concrete mechanisms in five episodes and does not establish ideology or motive.",
+      "required_themes": [
+        {
+          "theme_id": "reviewed-enforcement-expansion",
+          "minimum_episodes": 4,
+          "minimum_mechanisms": 4
+        }
+      ],
+      "conflicting_themes": [
+        "limits-on-tools-authority-and-rollbacks"
+      ]
+    },
+    {
+      "candidate_id": "police-authority-fentanyl-divide",
+      "inference_level": "bounded_conditional_boundary",
+      "evidence_strength_label": "Mixed but interpretable",
+      "conclusion": "a policy-specific divide between support for reviewed police tools or authority and opposition within the fentanyl scheduling episode",
+      "why": "The three fentanyl actions are one independent episode, so they cannot establish a broader drug-enforcement pattern.",
+      "required_themes": [
+        {
+          "theme_id": "police-tools-and-authority",
+          "minimum_episodes": 3,
+          "minimum_mechanisms": 3
+        },
+        {
+          "theme_id": "fentanyl-episode-opposition",
+          "minimum_episodes": 1,
+          "minimum_mechanisms": 1
+        }
+      ],
+      "conflicting_themes": []
+    },
+    {
+      "candidate_id": "national-action-dc-boundary",
+      "inference_level": "bounded_conditional_boundary",
+      "evidence_strength_label": "Mixed but interpretable",
+      "conclusion": "support for several reviewed national public-safety mechanisms with a repeated boundary at the two reviewed D.C. policing changes",
+      "why": "The two D.C. votes cover different mechanisms but one jurisdictional setting.",
+      "required_themes": [
+        {
+          "theme_id": "national-public-safety-mechanisms",
+          "minimum_episodes": 3,
+          "minimum_mechanisms": 3
+        },
+        {
+          "theme_id": "dc-policing-change-opposition",
+          "minimum_episodes": 2,
+          "minimum_mechanisms": 2
+        }
+      ],
+      "conflicting_themes": []
+    },
+    {
+      "candidate_id": "cross-mechanism-opposition",
+      "inference_level": "bounded_repeated_pattern",
+      "evidence_strength_label": "Strong reviewed sample",
+      "conclusion": "a repeated cross-mechanism pattern of opposition in this sample",
+      "why": "One-directional actions do not identify a common rationale, ideology, or motive.",
+      "required_themes": [
+        {
+          "theme_id": "cross-mechanism-opposition",
+          "minimum_episodes": 5,
+          "minimum_mechanisms": 5
+        }
+      ],
+      "conflicting_themes": []
+    },
+    {
+      "candidate_id": "broad-support-safeguard-exception",
+      "inference_level": "bounded_repeated_pattern",
+      "evidence_strength_label": "Strong reviewed sample with contrary evidence",
+      "conclusion": "broad support for the reviewed public-safety actions with a specific boundary around the safeguard-repeal proposal",
+      "why": "The contrary episode is material, and five episodes cannot establish blanket support or a comprehensive Justice philosophy.",
+      "required_themes": [
+        {
+          "theme_id": "cross-mechanism-support",
+          "minimum_episodes": 4,
+          "minimum_mechanisms": 4
+        },
+        {
+          "theme_id": "evidence-and-reporting-conditions",
+          "minimum_episodes": 2,
+          "minimum_mechanisms": 2
+        }
+      ],
+      "conflicting_themes": [
+        "safeguard-repeal-opposition"
+      ]
+    }
+  ]
+}

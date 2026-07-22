@@ -59,7 +59,7 @@ export const reviewEditorialIssueSlices = Object.freeze([
   }),
 ]);
 
-function inferenceSynthesis(source, context = {}) {
+export function inferenceSynthesis(source, context = {}) {
   const inference = source.inference_candidate || {};
   const trajectories = (inference.within_episode_trajectories || []).map(
     (item) => `Within one episode: ${item.member_trajectory}`,
