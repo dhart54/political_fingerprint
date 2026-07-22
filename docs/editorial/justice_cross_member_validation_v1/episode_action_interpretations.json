@@ -1,0 +1,398 @@
+{
+  "schema_version": "justice_episode_action_interpretations_v1",
+  "shared_episode_set": {
+    "episode_set_id": "justice-public-safety-pr95-five-episodes",
+    "version": "1.1.0",
+    "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+    "expected_substantive_roll_ids": [
+      32,
+      33,
+      130,
+      131,
+      166,
+      275,
+      299
+    ],
+    "expected_control_roll_ids": [
+      160,
+      161,
+      267,
+      268,
+      290,
+      291
+    ],
+    "expected_independent_episode_ids": [
+      "halt-fentanyl-legislative-path",
+      "retired-service-weapon-purchases",
+      "officer-safety-data-reporting",
+      "dc-police-pursuit-rules",
+      "dc-policing-reform-repeal"
+    ],
+    "episode_rolls": {
+      "halt-fentanyl-legislative-path": [
+        32,
+        33,
+        166
+      ],
+      "retired-service-weapon-purchases": [
+        130
+      ],
+      "officer-safety-data-reporting": [
+        131
+      ],
+      "dc-police-pursuit-rules": [
+        275
+      ],
+      "dc-policing-reform-repeal": [
+        299
+      ]
+    }
+  },
+  "interpretations": {
+    "retired-service-weapon-purchases": {
+      "mechanism_family": "firearm-access",
+      "signatures": {
+        "Yea": {
+          "member_trajectory": "Supported the reviewed retired-service-firearm purchase program.",
+          "practical_policy_direction": "Supported the reviewed retired-service-firearm purchase program.",
+          "theme_evidence": [
+            {
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ]
+        },
+        "Nay": {
+          "member_trajectory": "Opposed the reviewed retired-service-firearm purchase program.",
+          "practical_policy_direction": "Opposed the reviewed retired-service-firearm purchase program.",
+          "theme_evidence": [
+            {
+              "theme_id": "limits-on-tools-authority-and-rollbacks",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            }
+          ]
+        },
+        "Present": {
+          "member_trajectory": "Voted Present on the reviewed retired-service-firearm purchase program.",
+          "practical_policy_direction": "Voted Present on the reviewed retired-service-firearm purchase program.",
+          "theme_evidence": []
+        },
+        "Not Voting": {
+          "member_trajectory": "Did not vote on the reviewed retired-service-firearm purchase program.",
+          "practical_policy_direction": "Did not vote on the reviewed retired-service-firearm purchase program.",
+          "theme_evidence": []
+        },
+        "missing": {
+          "member_trajectory": "No recorded action was supplied for the reviewed retired-service-firearm purchase program.",
+          "practical_policy_direction": "No recorded action was supplied for the reviewed retired-service-firearm purchase program.",
+          "theme_evidence": []
+        }
+      },
+      "non_counting": {
+        "member_trajectory": "No recorded action was supplied for the reviewed retired-service-firearm purchase program.",
+        "practical_policy_direction": "No recorded action was supplied for the reviewed retired-service-firearm purchase program.",
+        "theme_evidence": []
+      }
+    },
+    "officer-safety-data-reporting": {
+      "mechanism_family": "data-reporting",
+      "signatures": {
+        "Yea": {
+          "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
+          "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill.",
+          "theme_evidence": [
+            {
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ]
+        },
+        "Nay": {
+          "member_trajectory": "Opposed the reviewed officer-safety and wellness reporting bill.",
+          "practical_policy_direction": "Opposed the reviewed officer-safety and wellness reporting bill.",
+          "theme_evidence": [
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            }
+          ]
+        },
+        "Present": {
+          "member_trajectory": "Voted Present on the reviewed officer-safety and wellness reporting bill.",
+          "practical_policy_direction": "Voted Present on the reviewed officer-safety and wellness reporting bill.",
+          "theme_evidence": []
+        },
+        "Not Voting": {
+          "member_trajectory": "Did not vote on the reviewed officer-safety and wellness reporting bill.",
+          "practical_policy_direction": "Did not vote on the reviewed officer-safety and wellness reporting bill.",
+          "theme_evidence": []
+        },
+        "missing": {
+          "member_trajectory": "No recorded action was supplied for the reviewed officer-safety and wellness reporting bill.",
+          "practical_policy_direction": "No recorded action was supplied for the reviewed officer-safety and wellness reporting bill.",
+          "theme_evidence": []
+        }
+      },
+      "non_counting": {
+        "member_trajectory": "No recorded action was supplied for the reviewed officer-safety and wellness reporting bill.",
+        "practical_policy_direction": "No recorded action was supplied for the reviewed officer-safety and wellness reporting bill.",
+        "theme_evidence": []
+      }
+    },
+    "dc-police-pursuit-rules": {
+      "mechanism_family": "pursuit-authority",
+      "signatures": {
+        "Yea": {
+          "member_trajectory": "Supported the reviewed expansion of D.C. police-pursuit authority.",
+          "practical_policy_direction": "Supported the reviewed expansion of D.C. police-pursuit authority.",
+          "theme_evidence": [
+            {
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ]
+        },
+        "Nay": {
+          "member_trajectory": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
+          "practical_policy_direction": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
+          "theme_evidence": [
+            {
+              "theme_id": "limits-on-tools-authority-and-rollbacks",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "dc-policing-change-opposition",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            }
+          ]
+        },
+        "Present": {
+          "member_trajectory": "Voted Present on the reviewed expansion of D.C. police-pursuit authority.",
+          "practical_policy_direction": "Voted Present on the reviewed expansion of D.C. police-pursuit authority.",
+          "theme_evidence": []
+        },
+        "Not Voting": {
+          "member_trajectory": "Did not vote on the reviewed expansion of D.C. police-pursuit authority.",
+          "practical_policy_direction": "Did not vote on the reviewed expansion of D.C. police-pursuit authority.",
+          "theme_evidence": []
+        },
+        "missing": {
+          "member_trajectory": "No recorded action was supplied for the reviewed expansion of D.C. police-pursuit authority.",
+          "practical_policy_direction": "No recorded action was supplied for the reviewed expansion of D.C. police-pursuit authority.",
+          "theme_evidence": []
+        }
+      },
+      "non_counting": {
+        "member_trajectory": "No recorded action was supplied for the reviewed expansion of D.C. police-pursuit authority.",
+        "practical_policy_direction": "No recorded action was supplied for the reviewed expansion of D.C. police-pursuit authority.",
+        "theme_evidence": []
+      }
+    },
+    "dc-policing-reform-repeal": {
+      "mechanism_family": "safeguard-repeal",
+      "signatures": {
+        "Yea": {
+          "member_trajectory": "Supported the reviewed repeal of most D.C. policing safeguards.",
+          "practical_policy_direction": "Supported the reviewed repeal of most D.C. policing safeguards.",
+          "theme_evidence": [
+            {
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ]
+        },
+        "Nay": {
+          "member_trajectory": "Opposed the reviewed repeal of most D.C. policing safeguards.",
+          "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards.",
+          "theme_evidence": [
+            {
+              "theme_id": "limits-on-tools-authority-and-rollbacks",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "dc-policing-change-opposition",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "theme_id": "safeguard-repeal-opposition",
+              "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
+            }
+          ]
+        },
+        "Present": {
+          "member_trajectory": "Voted Present on the reviewed repeal of most D.C. policing safeguards.",
+          "practical_policy_direction": "Voted Present on the reviewed repeal of most D.C. policing safeguards.",
+          "theme_evidence": []
+        },
+        "Not Voting": {
+          "member_trajectory": "Did not vote on the reviewed repeal of most D.C. policing safeguards.",
+          "practical_policy_direction": "Did not vote on the reviewed repeal of most D.C. policing safeguards.",
+          "theme_evidence": []
+        },
+        "missing": {
+          "member_trajectory": "No recorded action was supplied for the reviewed repeal of most D.C. policing safeguards.",
+          "practical_policy_direction": "No recorded action was supplied for the reviewed repeal of most D.C. policing safeguards.",
+          "theme_evidence": []
+        }
+      },
+      "non_counting": {
+        "member_trajectory": "No recorded action was supplied for the reviewed repeal of most D.C. policing safeguards.",
+        "practical_policy_direction": "No recorded action was supplied for the reviewed repeal of most D.C. policing safeguards.",
+        "theme_evidence": []
+      }
+    },
+    "halt-fentanyl-legislative-path": {
+      "mechanism_family": "controlled-substance-scheduling",
+      "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
+      "signatures": {
+        "Yea|Yea|Yea": {
+          "member_trajectory": "Supported the certification condition, supported the earlier House framework, and supported the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Yea/Yea/Yea.",
+          "theme_evidence": [
+            {
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            },
+            {
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ]
+        },
+        "Yea|Yea|Nay": {
+          "member_trajectory": "Supported the certification condition, supported the earlier House framework, and opposed the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Yea/Yea/Nay.",
+          "theme_evidence": [
+            {
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            }
+          ]
+        },
+        "Yea|Nay|Yea": {
+          "member_trajectory": "Supported the certification condition, opposed the earlier House framework, and supported the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Yea/Nay/Yea.",
+          "theme_evidence": [
+            {
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            }
+          ]
+        },
+        "Yea|Nay|Nay": {
+          "member_trajectory": "Supported the certification condition, opposed the earlier House framework, and opposed the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Yea/Nay/Nay.",
+          "theme_evidence": [
+            {
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            }
+          ]
+        },
+        "Nay|Yea|Yea": {
+          "member_trajectory": "Opposed the certification condition, supported the earlier House framework, and supported the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Yea/Yea.",
+          "theme_evidence": [
+            {
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ]
+        },
+        "Nay|Yea|Nay": {
+          "member_trajectory": "Opposed the certification condition, supported the earlier House framework, and opposed the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Yea/Nay.",
+          "theme_evidence": []
+        },
+        "Nay|Nay|Yea": {
+          "member_trajectory": "Opposed the certification condition, opposed the earlier House framework, and supported the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Nay/Yea.",
+          "theme_evidence": []
+        },
+        "Nay|Nay|Nay": {
+          "member_trajectory": "Opposed the certification condition, opposed the earlier House framework, and opposed the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Nay/Nay.",
+          "theme_evidence": [
+            {
+              "theme_id": "fentanyl-episode-opposition",
+              "rationale": "Opposed all three actions within the single fentanyl episode."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            }
+          ]
+        }
+      },
+      "non_counting": {
+        "member_trajectory": "The fentanyl trajectory is incomplete because at least one stage is Present, Not Voting, or missing.",
+        "practical_policy_direction": "No support or opposition theme is inferred from an incomplete fentanyl signature.",
+        "theme_evidence": []
+      }
+    }
+  }
+}

@@ -251,12 +251,12 @@ test("Justice cross-member profiles render distinct conclusions through the gene
 
   const adams = page.getByTestId("justice-cross-member-A000370").getByTestId("editorial-issue-experience");
   await expect(adams.getByTestId("editorial-review-label")).toContainText("not published");
-  await expect(adams.getByText(/record supports a selective boundary around enforcement expansion/i)).toBeVisible();
+  await expect(adams.getByText(/selective boundary: support for evidence or reporting conditions/i)).toBeVisible();
   await expect(adams.getByText(/matched the majority of House Democrats/i)).toBeVisible();
 
   const aderholt = page.getByTestId("justice-cross-member-A000055").getByTestId("editorial-issue-experience");
-  await expect(aderholt.getByText(/favors the reviewed expansions and permanent enforcement mechanisms/i)).toBeVisible();
-  await expect(aderholt.getByText(/selective boundary around enforcement expansion/i)).toHaveCount(0);
+  await expect(aderholt.getByText(/repeated support for the reviewed enforcement, police-tool, and authority expansions/i)).toBeVisible();
+  await expect(aderholt.getByText(/selective boundary: support for evidence or reporting conditions/i)).toHaveCount(0);
   const aderholtCondition = aderholt.getByTestId("editorial-record-roll-32");
   await expect(aderholtCondition.getByText(/Opposed a certification condition/i)).toBeVisible();
   await aderholtCondition.locator(":scope > h6 > button").click();
@@ -264,7 +264,7 @@ test("Justice cross-member profiles render distinct conclusions through the gene
 
   const massie = page.getByTestId("justice-cross-member-M001184").getByTestId("editorial-issue-experience");
   await expect(massie.getByText("Mixed but interpretable", { exact: true })).toBeVisible();
-  await expect(massie.getByText(/policy-specific divide between the reviewed police tool and authority proposals and the fentanyl scheduling episode/i)).toBeVisible();
+  await expect(massie.getByText(/policy-specific divide between support for reviewed police tools or authority and opposition within the fentanyl scheduling episode/i)).toBeVisible();
   for (const indicator of ["7 substantive votes", "5 policy episodes", "0 Not Voting", "6 context-only records"]) {
     await expect(massie.getByText(indicator, { exact: true })).toBeVisible();
   }

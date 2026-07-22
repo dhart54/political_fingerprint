@@ -4,6 +4,7 @@
 
 - Immediate task: Validate whether the five Justice & Public Safety policy episodes merged in PR #95 can support distinct, evidence-grounded conclusions for a small vote-selected House cohort without duplicating measure research.
 - Larger-goal alignment: Test the reusable editorial architecture before any broader member scaling while preserving civic-integrity and publication gates.
+- Pre-merge correction: Remove full-vector template lookup, derive evidence from shared episode-action interpretations, and make expected coverage fail closed against the shared episode-set definition.
 
 ## Outcome
 
@@ -50,42 +51,48 @@
 ## Progress Checklist
 
 - [x] Discovery
-- [x] Implementation
-- [x] Validation
-- [x] Documentation
-- [x] Commit/PR readiness
+- [x] Pre-merge architecture correction
+- [x] Corrected validation
+- [x] Corrected documentation
+- [x] Correction commit/PR update
 
 ## Discoveries
 
 - PR #95 stores Foushee's extracted actions but not chamber-wide rows, so official House Clerk XML was retrieved read-only for the seven substantive rolls.
 - Across members appearing in the reviewed rolls, 370 have seven Yes/No actions; 31 have six; the remaining rows have five or fewer.
-- The complete cohort contains meaningful vector diversity, including an exact Foushee match and a unique Republican outlier, without using party as an inference input.
+- The complete cohort contains meaningful action-structure diversity, including an exact Foushee match and a fentanyl-versus-police-action split, without using party as an inference input.
 - The official union contains 437 members appearing on at least one substantive roll; 370 have complete seven-roll Yes/No coverage.
-- Real contrary evidence required an explicit `weakens` annotation: Moskowitz's safeguard-repeal opposition weakens the broad-support candidate rather than disappearing into a raw vote total.
+- Real contrary evidence remains atomic episode evidence: Moskowitz's safeguard-repeal opposition weakens the broad-support candidate rather than disappearing into a raw vote total.
+- Pre-merge review found that `_select_pattern` still keyed conclusions from exact seven-action tuples and that overlay denominators shrank with omitted caller data. Both are blockers despite the valid cohort and evidence boundaries.
 
 ## Decisions And Rationale
 
-- Selected additions: Alma S. Adams (`Y/N/N/Y/Y/N/N`, exact Foushee match); Robert B. Aderholt (`N/Y/Y/Y/Y/Y/Y`, dominant contrasting vector); Thomas Massie (`N/N/Y/Y/N/Y/Y`, Republican outlier); Sanford D. Bishop, Jr. (`N/Y/Y/Y/Y/N/N`, different fentanyl trajectory); Jesús G. "Chuy" García (`N/N/N/N/N/N/N`, all-Nay but policy-mechanism-specific record); Jared Moskowitz (`Y/Y/Y/Y/Y/Y/N`, mostly-Yea with opposition to the policing-reform repeal).
+- Selected additions: Alma S. Adams (`Y/N/N/Y/Y/N/N`, exact Foushee match); Robert B. Aderholt (`N/Y/Y/Y/Y/Y/Y`, dominant action contrast); Thomas Massie (`N/N/Y/Y/N/Y/Y`, fentanyl-versus-police-action split); Sanford D. Bishop, Jr. (`N/Y/Y/Y/Y/N/N`, different fentanyl trajectory); Jesús G. "Chuy" García (`N/N/N/N/N/N/N`, all-Nay but policy-mechanism-specific record); Jared Moskowitz (`Y/Y/Y/Y/Y/Y/N`, mostly-Yea with opposition to the policing-reform repeal).
 - Within-vector tie-breaking uses the smallest Bioguide ID after a vector is chosen for methodological value; identity, fame, reputation, caucus, ratings, and party are not selection scores.
 - Party remains descriptive overlay metadata and is excluded from candidate derivation.
 - Interpretation boundary: conclusions describe only the five reviewed episodes and concrete mechanisms; no motive, ideology, moral ranking, prediction, or cross-time movement is inferred.
+- Correction architecture: shared episode-action interpretations emit member-independent semantic themes; a generic evaluator scores bounded candidates from independent-episode support, competing themes, mechanism diversity, and coverage; member identity is inserted only after selection.
+- Coverage source of truth: expected substantive rolls, controls, episodes, and episode-to-roll relationships live in the shared episode-set contract. Missing caller data cannot reduce a denominator.
+- Cohort role labels will describe action structure only. Party remains post-selection descriptive metadata.
 
 ## Deviations Or Corrections
 
 - House procedural controls use `Aye/No` while substantive rolls use `Yea/Nay`; ingestion normalizes only these equivalent Clerk labels before the controls remain non-counting.
 - The first Playwright run reused a stale port-3100 server from another checkout. After stopping only the verified listener and forcing a fresh worktree-local server, the complete suite passed. No product code changed in response to the stale render.
-- The generic episode inference aggregator required no semantic correction. A new domain-neutral coverage and overlay-validation wrapper was added without changing existing Foushee output.
+- The old candidate-preselection join was replaced by a domain-neutral theme evaluator; the existing PR #95 Foushee output remains unchanged.
+- The initial concurrent Node test command hit a Windows `spawn EPERM`; the identical 106-test suite passed with `--test-concurrency=1`.
+- A broad backend run reached 653 passes but also reported unrelated missing local source caches, global pytest-temp permissions, and a pre-existing manifest-pin mismatch. The focused milestone backend suite is the hard gate.
 
 ## Validation Results
 
 - Deterministic artifact generation: pass (`build_justice_cross_member_validation.py --check`).
-- Existing Economy, Foushee Justice, generic inference, overlay, and cross-member Python regressions: 46 passed.
+- Corrected generic inference, overlay, and cross-member Python regressions: 27 passed.
 - Python compilation: pass for backend app and the new builder.
-- JSON parsing: 133 repository JSON files parsed.
+- JSON parsing: all 7 generated milestone artifacts parsed.
 - Frontend Node tests: 106 passed, run directly because the sandbox intermittently blocked Node test-worker spawning.
 - ESLint: pass with 8 pre-existing React Hook warnings and zero errors.
 - Next production build and validity-of-types check: pass.
-- Responsive Playwright: 13 passed, including four Justice profiles and mobile receipt interactions.
+- Responsive Playwright: 13 passed, including the selected Justice cross-member profiles and mobile receipt interactions.
 - Generic runtime scan: no selected IDs/names, party decision branches, Justice conclusions, current rolls, or fixed seven-roll/five-episode assumptions.
 - `git diff --check`: pass.
 - Shared Foushee dossier/interview artifacts and production registry: unchanged.

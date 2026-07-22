@@ -1,69 +1,91 @@
-"""Generic review-only member overlays for shared editorial episode research.
-
-The overlay carries only member-varying recorded actions, trajectories, candidate
-evidence, coverage, and review metadata. Shared measure and roll-stage facts stay
-in the referenced episode set and are joined only while computing an inference.
-Party metadata is deliberately never passed into inference computation.
-"""
+"""Domain-neutral member overlays for a declared shared episode set."""
 
 from __future__ import annotations
 
 from copy import deepcopy
 
-from backend.app.summaries.editorial_inference import build_editorial_inference
-
 
 VALID_ACTIONS = {"Yea", "Nay", "Present", "Not Voting"}
-VALID_COVERAGE = {"complete", "partial", "missing"}
 FORBIDDEN_OVERLAY_FACT_KEYS = {
-    "bill_title",
-    "measure_summary",
-    "primary_purpose",
-    "source_url",
-    "supporter_argument",
-    "opponent_argument",
-    "legislative_history",
+    "bill_title", "measure_summary", "primary_purpose", "source_url",
+    "supporter_argument", "opponent_argument", "legislative_history",
 }
 
 
-def build_member_overlay(
-    *,
-    member: dict,
-    reviewed_period: str,
-    shared_episode_set: dict,
-    roll_actions: list[dict],
-    episode_trajectories: list[dict],
-    publication: dict,
-) -> dict:
-    """Validate and normalize one member's overlay on a shared episode set."""
+def build_member_overlay(*, member: dict, reviewed_period: str, shared_episode_set: dict,
+                         roll_actions: list[dict], episode_action_interpretations: dict,
+                         publication: dict) -> dict:
+    """Validate actions against the shared contract and derive coverage/trajectories."""
+    _reject_duplicated_facts(episode_action_interpretations)
+    contract = _normalize_contract(shared_episode_set)
+    expected_substantive = contract["expected_substantive_roll_ids"]
+    expected_controls = contract["expected_control_roll_ids"]
+    expected_rolls = set(expected_substantive + expected_controls)
+    roll_to_episode = {
+        roll: episode_id
+        for episode_id, rolls in contract["episode_rolls"].items()
+        for roll in rolls
+    }
     normalized_actions = [_normalize_action(item) for item in roll_actions]
-    rolls = [item["roll"] for item in normalized_actions]
-    if len(rolls) != len(set(rolls)):
+    supplied_rolls = [item["roll"] for item in normalized_actions]
+    if len(supplied_rolls) != len(set(supplied_rolls)):
         raise ValueError("member overlay contains duplicate roll actions")
+    unknown = sorted(set(supplied_rolls) - expected_rolls)
+    if unknown:
+        raise ValueError(f"member overlay contains unknown rolls: {unknown}")
+    for item in normalized_actions:
+        expected_episode = roll_to_episode.get(item["roll"])
+        if item.get("episode_id") != expected_episode:
+            raise ValueError(f"roll {item['roll']} episode_id does not match shared episode set")
+        if item["counting"] != (item["roll"] in expected_substantive):
+            raise ValueError(f"roll {item['roll']} counting status does not match shared episode set")
 
-    normalized_trajectories = [_normalize_trajectory(item) for item in episode_trajectories]
-    episode_ids = [item["episode_id"] for item in normalized_trajectories]
-    if len(episode_ids) != len(set(episode_ids)):
-        raise ValueError("member overlay contains duplicate episode trajectories")
+    by_roll = {item["roll"]: item for item in normalized_actions}
+    trajectories = []
+    for episode_id in contract["expected_independent_episode_ids"]:
+        if episode_id not in episode_action_interpretations:
+            raise ValueError(f"missing action interpretation for episode: {episode_id}")
+        rolls = contract["episode_rolls"][episode_id]
+        signature = [by_roll[roll]["action"] if roll in by_roll else "missing" for roll in rolls]
+        yes_no = sum(action in {"Yea", "Nay"} for action in signature)
+        coverage = "complete" if yes_no == len(rolls) else "partial" if any(action != "missing" for action in signature) else "missing"
+        catalog = episode_action_interpretations[episode_id]
+        interpretation = deepcopy(catalog.get("signatures", {}).get("|".join(signature), catalog.get("non_counting")))
+        if not interpretation:
+            raise ValueError(f"episode {episode_id} has no interpretation for action signature {signature}")
+        trajectories.append({
+            "episode_id": episode_id,
+            "rolls": list(rolls),
+            "action_signature": signature,
+            "coverage_status": coverage,
+            "mechanism_family": _required_text(catalog.get("mechanism_family"), "mechanism_family"),
+            "relationship_to_repeated_stages": catalog.get("relationship_to_repeated_stages", ""),
+            "member_trajectory": _required_text(interpretation.get("member_trajectory"), "member_trajectory"),
+            "practical_policy_direction": _required_text(interpretation.get("practical_policy_direction"), "practical_policy_direction"),
+            "theme_evidence": deepcopy(interpretation.get("theme_evidence", [])) if coverage == "complete" else [],
+            "contrary_or_limiting_evidence": deepcopy(interpretation.get("contrary_or_limiting_evidence", [])),
+            "package_vote_limitations": deepcopy(interpretation.get("package_vote_limitations", [])),
+        })
 
-    substantive = [item for item in normalized_actions if item["counting"]]
-    yes_no = [item for item in substantive if item["action"] in {"Yea", "Nay"}]
-    not_voting = [item for item in substantive if item["action"] == "Not Voting"]
-    complete_episodes = [item for item in normalized_trajectories if item["coverage_status"] == "complete"]
-
+    substantive_actions = [by_roll[roll]["action"] for roll in expected_substantive if roll in by_roll]
     result = {
-        "schema_version": "editorial_member_overlay_v1",
+        "schema_version": "editorial_member_overlay_v2",
         "member": _required_mapping(member, ("bioguide_id", "display_name")),
         "reviewed_period": _required_text(reviewed_period, "reviewed_period"),
-        "shared_episode_set": _required_mapping(shared_episode_set, ("episode_set_id", "version", "episode_map_path")),
+        "shared_episode_set": contract,
         "roll_actions": normalized_actions,
-        "episode_trajectories": normalized_trajectories,
+        "episode_trajectories": trajectories,
         "coverage": {
-            "substantive_rolls_expected": len(substantive),
-            "substantive_yes_no_actions": len(yes_no),
-            "not_voting_actions": len(not_voting),
-            "independent_episodes_expected": len(normalized_trajectories),
-            "independent_episodes_complete": len(complete_episodes),
+            "substantive_rolls_expected": len(expected_substantive),
+            "substantive_rolls_observed": sum(roll in by_roll for roll in expected_substantive),
+            "substantive_yes_no_actions": sum(action in {"Yea", "Nay"} for action in substantive_actions),
+            "present_actions": substantive_actions.count("Present"),
+            "not_voting_actions": substantive_actions.count("Not Voting"),
+            "missing_actions": sum(roll not in by_roll for roll in expected_substantive),
+            "independent_episodes_expected": len(contract["expected_independent_episode_ids"]),
+            "independent_episodes_complete": sum(item["coverage_status"] == "complete" for item in trajectories),
+            "independent_episodes_partial": sum(item["coverage_status"] == "partial" for item in trajectories),
+            "independent_episodes_missing": sum(item["coverage_status"] == "missing" for item in trajectories),
         },
         "publication": _normalize_publication(publication),
     }
@@ -71,125 +93,49 @@ def build_member_overlay(
     return result
 
 
-def build_member_inference(
-    *,
-    overlay: dict,
-    shared_episodes: list[dict],
-    conclusion: dict,
-) -> dict:
-    """Join shared annotations to member evidence and build a coverage-aware candidate."""
-    minimum = int(conclusion.get("minimum_independent_episodes", 2))
-    trajectories = {
-        item["episode_id"]: item
-        for item in overlay["episode_trajectories"]
-        if item["coverage_status"] == "complete"
-    }
-    if len(trajectories) < minimum:
-        return {
-            "schema_version": "editorial_member_inference_v1",
-            "member": deepcopy(overlay["member"]),
-            "candidate_id": conclusion["candidate_id"],
-            "inference_level": "insufficient_evidence",
-            "evidence_strength_label": "Not enough reviewed evidence",
-            "primary_conclusion": _required_text(
-                conclusion.get("insufficient_evidence_conclusion"),
-                "insufficient_evidence_conclusion",
-            ),
-            "assessment": "insufficient_coverage",
-            "independent_episode_count": len(trajectories),
-            "coverage": deepcopy(overlay["coverage"]),
-            "episode_references": sorted(trajectories),
-            "why_conclusion_does_not_go_further": _required_text(
-                conclusion.get("insufficient_evidence_reason"),
-                "insufficient_evidence_reason",
-            ),
-            "future_expansion_rule": _required_text(conclusion.get("future_expansion_rule"), "future_expansion_rule"),
-            "reviewed_period": overlay["reviewed_period"],
-            "human_review_status": "human_approval_pending",
-        }
-
-    shared_by_id = {item["episode_id"]: item for item in shared_episodes}
-    annotations = []
-    for episode_id, trajectory in trajectories.items():
-        if episode_id not in shared_by_id:
-            raise ValueError(f"overlay references unknown shared episode: {episode_id}")
-        shared = shared_by_id[episode_id]
-        annotations.append({
-            "episode_id": episode_id,
-            "independent": bool(shared.get("independent_evidence", True)),
-            "relationship_to_repeated_stages": shared.get("relationship", ""),
-            "mechanism_family": shared["mechanism_family"],
-            "member_trajectory": trajectory["member_trajectory"],
-            "practical_policy_direction": trajectory["practical_policy_direction"],
-            "candidate_theme_tags": trajectory.get("candidate_theme_tags", []),
-            "theme_evidence": trajectory.get("theme_evidence", []),
-            "contrary_or_limiting_evidence": trajectory.get("contrary_or_limiting_evidence", []),
-            "package_vote_limitations": trajectory.get("package_vote_limitations", []),
-            "notable_one_off": bool(trajectory.get("notable_one_off")),
-            "source_confidence": shared.get("source_confidence", "high"),
-            "reviewed_period": overlay["reviewed_period"],
-            "conclusion_effect": trajectory["conclusion_effect"],
-        })
-
-    generic_conclusion = {
-        key: deepcopy(value)
-        for key, value in conclusion.items()
-        if key not in {"minimum_independent_episodes", "insufficient_evidence_conclusion", "insufficient_evidence_reason"}
-    }
-    result = build_editorial_inference(annotations, generic_conclusion)
-    result["schema_version"] = "editorial_member_inference_v1"
-    result["member"] = deepcopy(overlay["member"])
-    result["coverage"] = deepcopy(overlay["coverage"])
-    result["episode_references"] = [item["episode_id"] for item in annotations]
-    # Avoid serializing joined shared facts once per member. They can be recomputed
-    # from the stable episode-set reference and the member overlay.
-    result.pop("episode_annotations", None)
-    return result
-
-
 def inference_evidence_view(inference: dict) -> dict:
-    """Return the decision-relevant inference fields, excluding identity/context metadata."""
     excluded = {"member", "coverage", "reviewed_period", "human_review_status"}
     return {key: deepcopy(value) for key, value in inference.items() if key not in excluded}
 
 
-def _normalize_action(item: dict) -> dict:
-    result = deepcopy(item)
-    roll = result.get("roll")
-    if not isinstance(roll, int) or roll <= 0:
-        raise ValueError("roll action requires a positive integer roll")
-    if result.get("action") not in VALID_ACTIONS:
-        raise ValueError(f"roll {roll} has unsupported member action")
-    result["counting"] = bool(result.get("counting"))
-    if "aligned_with_party_majority" in result and result["aligned_with_party_majority"] not in {True, False, None}:
-        raise ValueError(f"roll {roll} has invalid descriptive party alignment")
+def _normalize_contract(value: dict) -> dict:
+    result = _required_mapping(value, (
+        "episode_set_id", "version", "episode_map_path", "expected_substantive_roll_ids",
+        "expected_control_roll_ids", "expected_independent_episode_ids", "episode_rolls",
+    ))
+    for key in ("expected_substantive_roll_ids", "expected_control_roll_ids", "expected_independent_episode_ids"):
+        result[key] = list(result[key])
+        if len(result[key]) != len(set(result[key])):
+            raise ValueError(f"shared episode set contains duplicate {key}")
+    result["episode_rolls"] = {key: list(rolls) for key, rolls in result["episode_rolls"].items()}
+    if set(result["episode_rolls"]) != set(result["expected_independent_episode_ids"]):
+        raise ValueError("shared episode set episode identifiers do not match episode_rolls")
+    mapped = [roll for rolls in result["episode_rolls"].values() for roll in rolls]
+    if len(mapped) != len(set(mapped)) or set(mapped) != set(result["expected_substantive_roll_ids"]):
+        raise ValueError("shared episode set substantive rolls must map to exactly one episode")
+    if set(result["expected_substantive_roll_ids"]) & set(result["expected_control_roll_ids"]):
+        raise ValueError("shared episode set substantive and control rolls overlap")
     return result
 
 
-def _normalize_trajectory(item: dict) -> dict:
+def _normalize_action(item: dict) -> dict:
     result = deepcopy(item)
-    _required_mapping(result, ("episode_id", "member_trajectory", "practical_policy_direction", "coverage_status"))
-    if result["coverage_status"] not in VALID_COVERAGE:
-        raise ValueError(f"episode {result['episode_id']} has invalid coverage status")
-    result["rolls"] = list(result.get("rolls", []))
-    result["action_signature"] = list(result.get("action_signature", []))
-    result["candidate_theme_tags"] = list(result.get("candidate_theme_tags", []))
-    result["theme_evidence"] = list(result.get("theme_evidence", []))
-    result["contrary_or_limiting_evidence"] = list(result.get("contrary_or_limiting_evidence", []))
-    result["package_vote_limitations"] = list(result.get("package_vote_limitations", []))
+    if not isinstance(result.get("roll"), int) or result["roll"] <= 0:
+        raise ValueError("roll action requires a positive integer roll")
+    if result.get("action") not in VALID_ACTIONS:
+        raise ValueError(f"roll {result['roll']} has unsupported member action")
+    result["counting"] = bool(result.get("counting"))
+    if "aligned_with_party_majority" in result and result["aligned_with_party_majority"] not in {True, False, None}:
+        raise ValueError(f"roll {result['roll']} has invalid descriptive party alignment")
     return result
 
 
 def _normalize_publication(publication: dict) -> dict:
     result = deepcopy(publication)
-    expected = {
-        "editorial_status": "human_approval_pending",
-        "benchmark_status": "not_promoted",
-        "production_eligible": False,
-    }
-    for key, value in expected.items():
-        if result.get(key) != value:
-            raise ValueError(f"member overlay publication {key} must remain {value!r}")
+    expected = {"editorial_status": "human_approval_pending", "benchmark_status": "not_promoted", "production_eligible": False}
+    for key, expected_value in expected.items():
+        if result.get(key) != expected_value:
+            raise ValueError(f"member overlay publication {key} must remain {expected_value!r}")
     return result
 
 

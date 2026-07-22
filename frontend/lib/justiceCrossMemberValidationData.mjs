@@ -3,7 +3,7 @@
 export const justiceCrossMemberValidationData = Object.freeze({
   "overlays": [
     {
-      "schema_version": "editorial_member_overlay_v1",
+      "schema_version": "editorial_member_overlay_v2",
       "member": {
         "bioguide_id": "F000477",
         "display_name": "Valerie P. Foushee",
@@ -15,8 +15,51 @@ export const justiceCrossMemberValidationData = Object.freeze({
       "reviewed_period": "119th Congress, February 6-November 19, 2025",
       "shared_episode_set": {
         "episode_set_id": "justice-public-safety-pr95-five-episodes",
-        "version": "1.0.0",
-        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json"
+        "version": "1.1.0",
+        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+        "expected_substantive_roll_ids": [
+          32,
+          33,
+          130,
+          131,
+          166,
+          275,
+          299
+        ],
+        "expected_control_roll_ids": [
+          160,
+          161,
+          267,
+          268,
+          290,
+          291
+        ],
+        "expected_independent_episode_ids": [
+          "halt-fentanyl-legislative-path",
+          "retired-service-weapon-purchases",
+          "officer-safety-data-reporting",
+          "dc-police-pursuit-rules",
+          "dc-policing-reform-repeal"
+        ],
+        "episode_rolls": {
+          "halt-fentanyl-legislative-path": [
+            32,
+            33,
+            166
+          ],
+          "retired-service-weapon-purchases": [
+            130
+          ],
+          "officer-safety-data-reporting": [
+            131
+          ],
+          "dc-police-pursuit-rules": [
+            275
+          ],
+          "dc-policing-reform-repeal": [
+            299
+          ]
+        }
       },
       "roll_actions": [
         {
@@ -151,26 +194,18 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "controlled-substance-scheduling",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
           "member_trajectory": "Supported the certification condition, opposed the earlier House framework, and supported the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Yea/Nay/Yea.",
-          "candidate_theme_tags": [
-            "guardrail-and-information-actions"
-          ],
+          "practical_policy_direction": "One fentanyl trajectory with action signature Yea/Nay/Yea.",
           "theme_evidence": [
             {
-              "theme_id": "guardrail-and-information-actions",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for evidence and information conditions."
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "conditional-guardrail-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "retired-service-weapon-purchases",
@@ -181,26 +216,22 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "firearm-access",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed retired-service-firearm purchase program.",
           "practical_policy_direction": "Opposed the reviewed retired-service-firearm purchase program.",
-          "candidate_theme_tags": [
-            "limits-on-tools-authority-and-rollbacks"
-          ],
           "theme_evidence": [
             {
               "theme_id": "limits-on-tools-authority-and-rollbacks",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "conditional-guardrail-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "officer-safety-data-reporting",
@@ -211,26 +242,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "data-reporting",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
           "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "candidate_theme_tags": [
-            "guardrail-and-information-actions"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "guardrail-and-information-actions",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for evidence and information conditions."
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "conditional-guardrail-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-police-pursuit-rules",
@@ -241,26 +272,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "pursuit-authority",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
           "practical_policy_direction": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
-          "candidate_theme_tags": [
-            "limits-on-tools-authority-and-rollbacks"
-          ],
           "theme_evidence": [
             {
               "theme_id": "limits-on-tools-authority-and-rollbacks",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "dc-policing-change-opposition",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "conditional-guardrail-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-policing-reform-repeal",
@@ -271,46 +302,54 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "safeguard-repeal",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed repeal of most D.C. policing safeguards.",
           "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards.",
-          "candidate_theme_tags": [
-            "limits-on-tools-authority-and-rollbacks"
-          ],
           "theme_evidence": [
             {
               "theme_id": "limits-on-tools-authority-and-rollbacks",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "dc-policing-change-opposition",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "theme_id": "safeguard-repeal-opposition",
+              "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "conditional-guardrail-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         }
       ],
       "coverage": {
         "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
         "substantive_yes_no_actions": 7,
+        "present_actions": 0,
         "not_voting_actions": 0,
+        "missing_actions": 0,
         "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
       },
       "publication": {
         "editorial_status": "human_approval_pending",
         "benchmark_status": "not_promoted",
         "production_eligible": false
       },
-      "validation_case": "reference_member",
-      "selection_rationale": "Reference record researched in PR #95.",
-      "candidate_pattern": "conditional_guardrail_boundary"
+      "validation_case": "reference_action_structure",
+      "selection_rationale": "Reference action structure researched in PR #95."
     },
     {
-      "schema_version": "editorial_member_overlay_v1",
+      "schema_version": "editorial_member_overlay_v2",
       "member": {
         "bioguide_id": "A000370",
         "display_name": "Alma S. Adams",
@@ -322,8 +361,51 @@ export const justiceCrossMemberValidationData = Object.freeze({
       "reviewed_period": "119th Congress, February 6-November 19, 2025",
       "shared_episode_set": {
         "episode_set_id": "justice-public-safety-pr95-five-episodes",
-        "version": "1.0.0",
-        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json"
+        "version": "1.1.0",
+        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+        "expected_substantive_roll_ids": [
+          32,
+          33,
+          130,
+          131,
+          166,
+          275,
+          299
+        ],
+        "expected_control_roll_ids": [
+          160,
+          161,
+          267,
+          268,
+          290,
+          291
+        ],
+        "expected_independent_episode_ids": [
+          "halt-fentanyl-legislative-path",
+          "retired-service-weapon-purchases",
+          "officer-safety-data-reporting",
+          "dc-police-pursuit-rules",
+          "dc-policing-reform-repeal"
+        ],
+        "episode_rolls": {
+          "halt-fentanyl-legislative-path": [
+            32,
+            33,
+            166
+          ],
+          "retired-service-weapon-purchases": [
+            130
+          ],
+          "officer-safety-data-reporting": [
+            131
+          ],
+          "dc-police-pursuit-rules": [
+            275
+          ],
+          "dc-policing-reform-repeal": [
+            299
+          ]
+        }
       },
       "roll_actions": [
         {
@@ -458,26 +540,18 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "controlled-substance-scheduling",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
           "member_trajectory": "Supported the certification condition, opposed the earlier House framework, and supported the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Yea/Nay/Yea.",
-          "candidate_theme_tags": [
-            "guardrail-and-information-actions"
-          ],
+          "practical_policy_direction": "One fentanyl trajectory with action signature Yea/Nay/Yea.",
           "theme_evidence": [
             {
-              "theme_id": "guardrail-and-information-actions",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for evidence and information conditions."
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "conditional-guardrail-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "retired-service-weapon-purchases",
@@ -488,26 +562,22 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "firearm-access",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed retired-service-firearm purchase program.",
           "practical_policy_direction": "Opposed the reviewed retired-service-firearm purchase program.",
-          "candidate_theme_tags": [
-            "limits-on-tools-authority-and-rollbacks"
-          ],
           "theme_evidence": [
             {
               "theme_id": "limits-on-tools-authority-and-rollbacks",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "conditional-guardrail-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "officer-safety-data-reporting",
@@ -518,26 +588,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "data-reporting",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
           "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "candidate_theme_tags": [
-            "guardrail-and-information-actions"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "guardrail-and-information-actions",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for evidence and information conditions."
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "conditional-guardrail-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-police-pursuit-rules",
@@ -548,26 +618,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "pursuit-authority",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
           "practical_policy_direction": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
-          "candidate_theme_tags": [
-            "limits-on-tools-authority-and-rollbacks"
-          ],
           "theme_evidence": [
             {
               "theme_id": "limits-on-tools-authority-and-rollbacks",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "dc-policing-change-opposition",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "conditional-guardrail-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-policing-reform-repeal",
@@ -578,46 +648,54 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "safeguard-repeal",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed repeal of most D.C. policing safeguards.",
           "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards.",
-          "candidate_theme_tags": [
-            "limits-on-tools-authority-and-rollbacks"
-          ],
           "theme_evidence": [
             {
               "theme_id": "limits-on-tools-authority-and-rollbacks",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "dc-policing-change-opposition",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "theme_id": "safeguard-repeal-opposition",
+              "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "conditional-guardrail-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         }
       ],
       "coverage": {
         "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
         "substantive_yes_no_actions": 7,
+        "present_actions": 0,
         "not_voting_actions": 0,
+        "missing_actions": 0,
         "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
       },
       "publication": {
         "editorial_status": "human_approval_pending",
         "benchmark_status": "not_promoted",
         "production_eligible": false
       },
-      "validation_case": "equivalent_vector",
-      "selection_rationale": "Exact substantive vector match tests structurally equivalent treatment.",
-      "candidate_pattern": "conditional_guardrail_boundary"
+      "validation_case": "equivalent_action_structure",
+      "selection_rationale": "Exact substantive action match tests structurally equivalent treatment."
     },
     {
-      "schema_version": "editorial_member_overlay_v1",
+      "schema_version": "editorial_member_overlay_v2",
       "member": {
         "bioguide_id": "A000055",
         "display_name": "Robert B. Aderholt",
@@ -629,8 +707,51 @@ export const justiceCrossMemberValidationData = Object.freeze({
       "reviewed_period": "119th Congress, February 6-November 19, 2025",
       "shared_episode_set": {
         "episode_set_id": "justice-public-safety-pr95-five-episodes",
-        "version": "1.0.0",
-        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json"
+        "version": "1.1.0",
+        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+        "expected_substantive_roll_ids": [
+          32,
+          33,
+          130,
+          131,
+          166,
+          275,
+          299
+        ],
+        "expected_control_roll_ids": [
+          160,
+          161,
+          267,
+          268,
+          290,
+          291
+        ],
+        "expected_independent_episode_ids": [
+          "halt-fentanyl-legislative-path",
+          "retired-service-weapon-purchases",
+          "officer-safety-data-reporting",
+          "dc-police-pursuit-rules",
+          "dc-policing-reform-repeal"
+        ],
+        "episode_rolls": {
+          "halt-fentanyl-legislative-path": [
+            32,
+            33,
+            166
+          ],
+          "retired-service-weapon-purchases": [
+            130
+          ],
+          "officer-safety-data-reporting": [
+            131
+          ],
+          "dc-police-pursuit-rules": [
+            275
+          ],
+          "dc-policing-reform-repeal": [
+            299
+          ]
+        }
       },
       "roll_actions": [
         {
@@ -765,26 +886,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "controlled-substance-scheduling",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
           "member_trajectory": "Opposed the certification condition, supported the earlier House framework, and supported the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Nay/Yea/Yea.",
-          "candidate_theme_tags": [
-            "support-for-reviewed-enforcement-mechanisms"
-          ],
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Yea/Yea.",
           "theme_evidence": [
             {
-              "theme_id": "support-for-reviewed-enforcement-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed enforcement mechanisms."
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "reviewed-enforcement-expansion",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "retired-service-weapon-purchases",
@@ -795,26 +916,30 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "firearm-access",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed retired-service-firearm purchase program.",
           "practical_policy_direction": "Supported the reviewed retired-service-firearm purchase program.",
-          "candidate_theme_tags": [
-            "support-for-reviewed-enforcement-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "support-for-reviewed-enforcement-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed enforcement mechanisms."
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "reviewed-enforcement-expansion",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "officer-safety-data-reporting",
@@ -825,19 +950,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "data-reporting",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
           "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "candidate_theme_tags": [],
-          "theme_evidence": [],
+          "theme_evidence": [
+            {
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "reviewed-enforcement-expansion",
-            "direction": "neutral",
-            "weight": 0,
-            "rationale": "This episode is retained as relevant context but is not load-bearing for this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-police-pursuit-rules",
@@ -848,26 +980,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "pursuit-authority",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed expansion of D.C. police-pursuit authority.",
           "practical_policy_direction": "Supported the reviewed expansion of D.C. police-pursuit authority.",
-          "candidate_theme_tags": [
-            "support-for-reviewed-enforcement-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "support-for-reviewed-enforcement-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed enforcement mechanisms."
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "reviewed-enforcement-expansion",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-policing-reform-repeal",
@@ -878,46 +1010,50 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "safeguard-repeal",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed repeal of most D.C. policing safeguards.",
           "practical_policy_direction": "Supported the reviewed repeal of most D.C. policing safeguards.",
-          "candidate_theme_tags": [
-            "support-for-reviewed-enforcement-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "support-for-reviewed-enforcement-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed enforcement mechanisms."
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "reviewed-enforcement-expansion",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         }
       ],
       "coverage": {
         "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
         "substantive_yes_no_actions": 7,
+        "present_actions": 0,
         "not_voting_actions": 0,
+        "missing_actions": 0,
         "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
       },
       "publication": {
         "editorial_status": "human_approval_pending",
         "benchmark_status": "not_promoted",
         "production_eligible": false
       },
-      "validation_case": "dominant_contrast",
-      "selection_rationale": "Complete vector contrasts with the reference vector on six of seven rolls and represents the most common complete vector.",
-      "candidate_pattern": "enforcement_expansion"
+      "validation_case": "dominant_action_contrast",
+      "selection_rationale": "Complete actions contrast with the reference on six of seven rolls and represent the most common complete action structure."
     },
     {
-      "schema_version": "editorial_member_overlay_v1",
+      "schema_version": "editorial_member_overlay_v2",
       "member": {
         "bioguide_id": "M001184",
         "display_name": "Thomas Massie",
@@ -929,8 +1065,51 @@ export const justiceCrossMemberValidationData = Object.freeze({
       "reviewed_period": "119th Congress, February 6-November 19, 2025",
       "shared_episode_set": {
         "episode_set_id": "justice-public-safety-pr95-five-episodes",
-        "version": "1.0.0",
-        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json"
+        "version": "1.1.0",
+        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+        "expected_substantive_roll_ids": [
+          32,
+          33,
+          130,
+          131,
+          166,
+          275,
+          299
+        ],
+        "expected_control_roll_ids": [
+          160,
+          161,
+          267,
+          268,
+          290,
+          291
+        ],
+        "expected_independent_episode_ids": [
+          "halt-fentanyl-legislative-path",
+          "retired-service-weapon-purchases",
+          "officer-safety-data-reporting",
+          "dc-police-pursuit-rules",
+          "dc-policing-reform-repeal"
+        ],
+        "episode_rolls": {
+          "halt-fentanyl-legislative-path": [
+            32,
+            33,
+            166
+          ],
+          "retired-service-weapon-purchases": [
+            130
+          ],
+          "officer-safety-data-reporting": [
+            131
+          ],
+          "dc-police-pursuit-rules": [
+            275
+          ],
+          "dc-policing-reform-repeal": [
+            299
+          ]
+        }
       },
       "roll_actions": [
         {
@@ -1065,26 +1244,22 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "controlled-substance-scheduling",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
           "member_trajectory": "Opposed the certification condition, opposed the earlier House framework, and opposed the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Nay/Nay/Nay.",
-          "candidate_theme_tags": [
-            "opposition-within-fentanyl-episode"
-          ],
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Nay/Nay.",
           "theme_evidence": [
             {
-              "theme_id": "opposition-within-fentanyl-episode",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition within the fentanyl episode."
+              "theme_id": "fentanyl-episode-opposition",
+              "rationale": "Opposed all three actions within the single fentanyl episode."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "police-authority-fentanyl-divide",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "retired-service-weapon-purchases",
@@ -1095,26 +1270,30 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "firearm-access",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed retired-service-firearm purchase program.",
           "practical_policy_direction": "Supported the reviewed retired-service-firearm purchase program.",
-          "candidate_theme_tags": [
-            "support-for-police-tools-and-authority"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "support-for-police-tools-and-authority",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed police tools and authority."
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "police-authority-fentanyl-divide",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "officer-safety-data-reporting",
@@ -1125,19 +1304,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "data-reporting",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
           "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "candidate_theme_tags": [],
-          "theme_evidence": [],
+          "theme_evidence": [
+            {
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": true,
-          "conclusion_effect": {
-            "candidate_id": "police-authority-fentanyl-divide",
-            "direction": "neutral",
-            "weight": 0,
-            "rationale": "This episode is retained as relevant context but is not load-bearing for this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-police-pursuit-rules",
@@ -1148,26 +1334,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "pursuit-authority",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed expansion of D.C. police-pursuit authority.",
           "practical_policy_direction": "Supported the reviewed expansion of D.C. police-pursuit authority.",
-          "candidate_theme_tags": [
-            "support-for-police-tools-and-authority"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "support-for-police-tools-and-authority",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed police tools and authority."
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "police-authority-fentanyl-divide",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-policing-reform-repeal",
@@ -1178,46 +1364,50 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "safeguard-repeal",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed repeal of most D.C. policing safeguards.",
           "practical_policy_direction": "Supported the reviewed repeal of most D.C. policing safeguards.",
-          "candidate_theme_tags": [
-            "support-for-police-tools-and-authority"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "support-for-police-tools-and-authority",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed police tools and authority."
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "police-authority-fentanyl-divide",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         }
       ],
       "coverage": {
         "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
         "substantive_yes_no_actions": 7,
+        "present_actions": 0,
         "not_voting_actions": 0,
+        "missing_actions": 0,
         "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
       },
       "publication": {
         "editorial_status": "human_approval_pending",
         "benchmark_status": "not_promoted",
         "production_eligible": false
       },
-      "validation_case": "republican_outlier",
-      "selection_rationale": "Unique complete Republican vector separates the fentanyl episode from police-tool and authority episodes.",
-      "candidate_pattern": "police_authority_fentanyl_divide"
+      "validation_case": "fentanyl_police_action_split",
+      "selection_rationale": "A distinct complete action structure separates the fentanyl episode from police-tool and authority episodes."
     },
     {
-      "schema_version": "editorial_member_overlay_v1",
+      "schema_version": "editorial_member_overlay_v2",
       "member": {
         "bioguide_id": "B000490",
         "display_name": "Sanford D. Bishop, Jr.",
@@ -1229,8 +1419,51 @@ export const justiceCrossMemberValidationData = Object.freeze({
       "reviewed_period": "119th Congress, February 6-November 19, 2025",
       "shared_episode_set": {
         "episode_set_id": "justice-public-safety-pr95-five-episodes",
-        "version": "1.0.0",
-        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json"
+        "version": "1.1.0",
+        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+        "expected_substantive_roll_ids": [
+          32,
+          33,
+          130,
+          131,
+          166,
+          275,
+          299
+        ],
+        "expected_control_roll_ids": [
+          160,
+          161,
+          267,
+          268,
+          290,
+          291
+        ],
+        "expected_independent_episode_ids": [
+          "halt-fentanyl-legislative-path",
+          "retired-service-weapon-purchases",
+          "officer-safety-data-reporting",
+          "dc-police-pursuit-rules",
+          "dc-policing-reform-repeal"
+        ],
+        "episode_rolls": {
+          "halt-fentanyl-legislative-path": [
+            32,
+            33,
+            166
+          ],
+          "retired-service-weapon-purchases": [
+            130
+          ],
+          "officer-safety-data-reporting": [
+            131
+          ],
+          "dc-police-pursuit-rules": [
+            275
+          ],
+          "dc-policing-reform-repeal": [
+            299
+          ]
+        }
       },
       "roll_actions": [
         {
@@ -1365,26 +1598,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "controlled-substance-scheduling",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
           "member_trajectory": "Opposed the certification condition, supported the earlier House framework, and supported the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Nay/Yea/Yea.",
-          "candidate_theme_tags": [
-            "support-for-national-mechanisms"
-          ],
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Yea/Yea.",
           "theme_evidence": [
             {
-              "theme_id": "support-for-national-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed national mechanisms."
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "national-action-dc-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "retired-service-weapon-purchases",
@@ -1395,26 +1628,30 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "firearm-access",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed retired-service-firearm purchase program.",
           "practical_policy_direction": "Supported the reviewed retired-service-firearm purchase program.",
-          "candidate_theme_tags": [
-            "support-for-national-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "support-for-national-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed national mechanisms."
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "national-action-dc-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "officer-safety-data-reporting",
@@ -1425,26 +1662,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "data-reporting",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
           "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "candidate_theme_tags": [
-            "support-for-national-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "support-for-national-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed national mechanisms."
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "national-action-dc-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-police-pursuit-rules",
@@ -1455,26 +1692,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "pursuit-authority",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
           "practical_policy_direction": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
-          "candidate_theme_tags": [
-            "opposition-to-reviewed-dc-changes"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "opposition-to-reviewed-dc-changes",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition to reviewed d.c. policing changes."
+              "theme_id": "limits-on-tools-authority-and-rollbacks",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "dc-policing-change-opposition",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "national-action-dc-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-policing-reform-repeal",
@@ -1485,46 +1722,54 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "safeguard-repeal",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed repeal of most D.C. policing safeguards.",
           "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards.",
-          "candidate_theme_tags": [
-            "opposition-to-reviewed-dc-changes"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "opposition-to-reviewed-dc-changes",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition to reviewed d.c. policing changes."
+              "theme_id": "limits-on-tools-authority-and-rollbacks",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "dc-policing-change-opposition",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "theme_id": "safeguard-repeal-opposition",
+              "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "national-action-dc-boundary",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         }
       ],
       "coverage": {
         "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
         "substantive_yes_no_actions": 7,
+        "present_actions": 0,
         "not_voting_actions": 0,
+        "missing_actions": 0,
         "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
       },
       "publication": {
         "editorial_status": "human_approval_pending",
         "benchmark_status": "not_promoted",
         "production_eligible": false
       },
-      "validation_case": "different_fentanyl_and_dc_boundary",
-      "selection_rationale": "Complete Democratic vector supports both permanent fentanyl stages while opposing both D.C. proposals.",
-      "candidate_pattern": "national_action_dc_boundary"
+      "validation_case": "national_dc_action_boundary",
+      "selection_rationale": "Complete actions support both permanent fentanyl stages while opposing both D.C. proposals."
     },
     {
-      "schema_version": "editorial_member_overlay_v1",
+      "schema_version": "editorial_member_overlay_v2",
       "member": {
         "bioguide_id": "G000586",
         "display_name": "Jesús G. \"Chuy\" García",
@@ -1536,8 +1781,51 @@ export const justiceCrossMemberValidationData = Object.freeze({
       "reviewed_period": "119th Congress, February 6-November 19, 2025",
       "shared_episode_set": {
         "episode_set_id": "justice-public-safety-pr95-five-episodes",
-        "version": "1.0.0",
-        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json"
+        "version": "1.1.0",
+        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+        "expected_substantive_roll_ids": [
+          32,
+          33,
+          130,
+          131,
+          166,
+          275,
+          299
+        ],
+        "expected_control_roll_ids": [
+          160,
+          161,
+          267,
+          268,
+          290,
+          291
+        ],
+        "expected_independent_episode_ids": [
+          "halt-fentanyl-legislative-path",
+          "retired-service-weapon-purchases",
+          "officer-safety-data-reporting",
+          "dc-police-pursuit-rules",
+          "dc-policing-reform-repeal"
+        ],
+        "episode_rolls": {
+          "halt-fentanyl-legislative-path": [
+            32,
+            33,
+            166
+          ],
+          "retired-service-weapon-purchases": [
+            130
+          ],
+          "officer-safety-data-reporting": [
+            131
+          ],
+          "dc-police-pursuit-rules": [
+            275
+          ],
+          "dc-policing-reform-repeal": [
+            299
+          ]
+        }
       },
       "roll_actions": [
         {
@@ -1672,26 +1960,22 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "controlled-substance-scheduling",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
           "member_trajectory": "Opposed the certification condition, opposed the earlier House framework, and opposed the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Nay/Nay/Nay.",
-          "candidate_theme_tags": [
-            "opposition-across-reviewed-mechanisms"
-          ],
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Nay/Nay.",
           "theme_evidence": [
             {
-              "theme_id": "opposition-across-reviewed-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition across reviewed mechanisms."
+              "theme_id": "fentanyl-episode-opposition",
+              "rationale": "Opposed all three actions within the single fentanyl episode."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "cross-mechanism-opposition",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "retired-service-weapon-purchases",
@@ -1702,26 +1986,22 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "firearm-access",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed retired-service-firearm purchase program.",
           "practical_policy_direction": "Opposed the reviewed retired-service-firearm purchase program.",
-          "candidate_theme_tags": [
-            "opposition-across-reviewed-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "opposition-across-reviewed-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition across reviewed mechanisms."
+              "theme_id": "limits-on-tools-authority-and-rollbacks",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "cross-mechanism-opposition",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "officer-safety-data-reporting",
@@ -1732,26 +2012,18 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "data-reporting",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed officer-safety and wellness reporting bill.",
           "practical_policy_direction": "Opposed the reviewed officer-safety and wellness reporting bill.",
-          "candidate_theme_tags": [
-            "opposition-across-reviewed-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "opposition-across-reviewed-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition across reviewed mechanisms."
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "cross-mechanism-opposition",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-police-pursuit-rules",
@@ -1762,26 +2034,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "pursuit-authority",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
           "practical_policy_direction": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
-          "candidate_theme_tags": [
-            "opposition-across-reviewed-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "opposition-across-reviewed-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition across reviewed mechanisms."
+              "theme_id": "limits-on-tools-authority-and-rollbacks",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "dc-policing-change-opposition",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "cross-mechanism-opposition",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-policing-reform-repeal",
@@ -1792,34 +2064,43 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "safeguard-repeal",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed repeal of most D.C. policing safeguards.",
           "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards.",
-          "candidate_theme_tags": [
-            "opposition-across-reviewed-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "opposition-across-reviewed-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition across reviewed mechanisms."
+              "theme_id": "limits-on-tools-authority-and-rollbacks",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "dc-policing-change-opposition",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "theme_id": "safeguard-repeal-opposition",
+              "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "cross-mechanism-opposition",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         }
       ],
       "coverage": {
         "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
         "substantive_yes_no_actions": 7,
+        "present_actions": 0,
         "not_voting_actions": 0,
+        "missing_actions": 0,
         "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
       },
       "publication": {
         "editorial_status": "human_approval_pending",
@@ -1827,11 +2108,10 @@ export const justiceCrossMemberValidationData = Object.freeze({
         "production_eligible": false
       },
       "validation_case": "cross_mechanism_opposition",
-      "selection_rationale": "Unique all-Nay complete vector tests one-directional actions without turning them into an ideology label.",
-      "candidate_pattern": "cross_mechanism_opposition"
+      "selection_rationale": "The all-Nay complete action structure tests one-directional actions without turning them into an ideology label."
     },
     {
-      "schema_version": "editorial_member_overlay_v1",
+      "schema_version": "editorial_member_overlay_v2",
       "member": {
         "bioguide_id": "M001217",
         "display_name": "Jared Moskowitz",
@@ -1843,8 +2123,51 @@ export const justiceCrossMemberValidationData = Object.freeze({
       "reviewed_period": "119th Congress, February 6-November 19, 2025",
       "shared_episode_set": {
         "episode_set_id": "justice-public-safety-pr95-five-episodes",
-        "version": "1.0.0",
-        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json"
+        "version": "1.1.0",
+        "episode_map_path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+        "expected_substantive_roll_ids": [
+          32,
+          33,
+          130,
+          131,
+          166,
+          275,
+          299
+        ],
+        "expected_control_roll_ids": [
+          160,
+          161,
+          267,
+          268,
+          290,
+          291
+        ],
+        "expected_independent_episode_ids": [
+          "halt-fentanyl-legislative-path",
+          "retired-service-weapon-purchases",
+          "officer-safety-data-reporting",
+          "dc-police-pursuit-rules",
+          "dc-policing-reform-repeal"
+        ],
+        "episode_rolls": {
+          "halt-fentanyl-legislative-path": [
+            32,
+            33,
+            166
+          ],
+          "retired-service-weapon-purchases": [
+            130
+          ],
+          "officer-safety-data-reporting": [
+            131
+          ],
+          "dc-police-pursuit-rules": [
+            275
+          ],
+          "dc-policing-reform-repeal": [
+            299
+          ]
+        }
       },
       "roll_actions": [
         {
@@ -1979,26 +2302,30 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "controlled-substance-scheduling",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
           "member_trajectory": "Supported the certification condition, supported the earlier House framework, and supported the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Yea/Yea/Yea.",
-          "candidate_theme_tags": [
-            "support-across-reviewed-mechanisms"
-          ],
+          "practical_policy_direction": "One fentanyl trajectory with action signature Yea/Yea/Yea.",
           "theme_evidence": [
             {
-              "theme_id": "support-across-reviewed-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support across reviewed mechanisms."
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            },
+            {
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "broad-support-safeguard-exception",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "retired-service-weapon-purchases",
@@ -2009,26 +2336,30 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "firearm-access",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed retired-service-firearm purchase program.",
           "practical_policy_direction": "Supported the reviewed retired-service-firearm purchase program.",
-          "candidate_theme_tags": [
-            "support-across-reviewed-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "support-across-reviewed-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support across reviewed mechanisms."
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "broad-support-safeguard-exception",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "officer-safety-data-reporting",
@@ -2039,26 +2370,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "data-reporting",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
           "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "candidate_theme_tags": [
-            "support-across-reviewed-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "support-across-reviewed-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support across reviewed mechanisms."
+              "theme_id": "evidence-and-reporting-conditions",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            },
+            {
+              "theme_id": "national-public-safety-mechanisms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "broad-support-safeguard-exception",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-police-pursuit-rules",
@@ -2069,26 +2400,26 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Yea"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "pursuit-authority",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Supported the reviewed expansion of D.C. police-pursuit authority.",
           "practical_policy_direction": "Supported the reviewed expansion of D.C. police-pursuit authority.",
-          "candidate_theme_tags": [
-            "support-across-reviewed-mechanisms"
-          ],
           "theme_evidence": [
             {
-              "theme_id": "support-across-reviewed-mechanisms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support across reviewed mechanisms."
+              "theme_id": "reviewed-enforcement-expansion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "theme_id": "police-tools-and-authority",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "theme_id": "cross-mechanism-support",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "contrary_or_limiting_evidence": [],
-          "package_vote_limitations": [],
-          "notable_one_off": false,
-          "conclusion_effect": {
-            "candidate_id": "broad-support-safeguard-exception",
-            "direction": "strengthens",
-            "weight": 2,
-            "rationale": "The member-specific episode trajectory supports this candidate."
-          }
+          "package_vote_limitations": []
         },
         {
           "episode_id": "dc-policing-reform-repeal",
@@ -2099,29 +2430,43 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "Nay"
           ],
           "coverage_status": "complete",
+          "mechanism_family": "safeguard-repeal",
+          "relationship_to_repeated_stages": "",
           "member_trajectory": "Opposed the reviewed repeal of most D.C. policing safeguards.",
           "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards.",
-          "candidate_theme_tags": [],
-          "theme_evidence": [],
-          "contrary_or_limiting_evidence": [
-            "Opposition to repealing most reviewed D.C. policing safeguards is material contrary evidence against blanket support across the sample."
+          "theme_evidence": [
+            {
+              "theme_id": "limits-on-tools-authority-and-rollbacks",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "theme_id": "dc-policing-change-opposition",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "theme_id": "cross-mechanism-opposition",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "theme_id": "safeguard-repeal-opposition",
+              "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
+            }
           ],
-          "package_vote_limitations": [],
-          "notable_one_off": true,
-          "conclusion_effect": {
-            "candidate_id": "broad-support-safeguard-exception",
-            "direction": "weakens",
-            "weight": 2,
-            "rationale": "Opposition to repealing most reviewed D.C. policing safeguards is material contrary evidence against blanket support across the sample."
-          }
+          "contrary_or_limiting_evidence": [],
+          "package_vote_limitations": []
         }
       ],
       "coverage": {
         "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
         "substantive_yes_no_actions": 7,
+        "present_actions": 0,
         "not_voting_actions": 0,
+        "missing_actions": 0,
         "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
       },
       "publication": {
         "editorial_status": "human_approval_pending",
@@ -2129,145 +2474,12 @@ export const justiceCrossMemberValidationData = Object.freeze({
         "production_eligible": false
       },
       "validation_case": "broad_support_with_exception",
-      "selection_rationale": "Unique mostly-Yea complete vector tests whether one safeguard-repeal opposition remains visible as contrary evidence.",
-      "candidate_pattern": "broad_support_safeguard_exception"
+      "selection_rationale": "The mostly-Yea complete action structure tests whether one safeguard-repeal opposition remains visible as contrary evidence."
     }
   ],
   "inferences": [
     {
-      "schema_version": "editorial_member_inference_v1",
-      "candidate_id": "conditional-guardrail-boundary",
-      "inference_level": "bounded_selective_pattern",
-      "evidence_strength_label": "Bounded selective pattern",
-      "primary_conclusion": "In this reviewed sample, Foushee supported reporting, a fentanyl certification condition, and the later permanent fentanyl framework while opposing the earlier framework and three proposals involving police tools, operational authority, or safeguard rollbacks. Across these episodes, the record supports a selective boundary around enforcement expansion rather than blanket support or opposition.",
-      "assessment": "candidate_supported_by_current_sample",
-      "support_balance": 10,
-      "supporting_independent_episodes": [
-        {
-          "episode_id": "halt-fentanyl-legislative-path",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "dc-police-pursuit-rules",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "dc-policing-reform-repeal",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        }
-      ],
-      "weakening_independent_episodes": [],
-      "neutral_independent_episodes": [],
-      "independent_episode_count": 5,
-      "within_episode_trajectories": [
-        {
-          "episode_id": "halt-fentanyl-legislative-path",
-          "relationship_to_repeated_stages": "one policy episode with a certification amendment, an earlier House bill, and later passage of a related Senate-amended bill",
-          "member_trajectory": "Supported the certification condition, opposed the earlier House framework, and supported the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Yea/Nay/Yea."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Opposed the reviewed retired-service-firearm purchase program.",
-          "practical_policy_direction": "Opposed the reviewed retired-service-firearm purchase program."
-        },
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill."
-        },
-        {
-          "episode_id": "dc-police-pursuit-rules",
-          "relationship_to_repeated_stages": "single House-passage action on the Rules Committee substitute",
-          "member_trajectory": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
-          "practical_policy_direction": "Opposed the reviewed expansion of D.C. police-pursuit authority."
-        },
-        {
-          "episode_id": "dc-policing-reform-repeal",
-          "relationship_to_repeated_stages": "single House-passage action on the committee substitute",
-          "member_trajectory": "Opposed the reviewed repeal of most D.C. policing safeguards.",
-          "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards."
-        }
-      ],
-      "repeated_cross_episode_themes": [
-        {
-          "theme_id": "guardrail-and-information-actions",
-          "label": "Evidence and information conditions",
-          "finding": "Supported evidence, research, or reporting mechanisms across the fentanyl and officer-reporting episodes.",
-          "supporting_episodes": [
-            {
-              "episode_id": "halt-fentanyl-legislative-path",
-              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for evidence and information conditions."
-            },
-            {
-              "episode_id": "officer-safety-data-reporting",
-              "mechanism_family": "reporting and information gathering",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for evidence and information conditions."
-            }
-          ],
-          "mechanism_families": [
-            "controlled-substance scheduling, enforcement, and research access",
-            "reporting and information gathering"
-          ],
-          "editorially_defensible": true
-        },
-        {
-          "theme_id": "limits-on-tools-authority-and-rollbacks",
-          "label": "Limits on tools, authority, and safeguard rollbacks",
-          "finding": "Opposed reviewed expansions or rollbacks across the firearm, pursuit, and policing-safeguard episodes.",
-          "supporting_episodes": [
-            {
-              "episode_id": "retired-service-weapon-purchases",
-              "mechanism_family": "access to retired federal service firearms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
-            },
-            {
-              "episode_id": "dc-police-pursuit-rules",
-              "mechanism_family": "police operational discretion",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
-            },
-            {
-              "episode_id": "dc-policing-reform-repeal",
-              "mechanism_family": "police oversight and accountability safeguards",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
-            }
-          ],
-          "mechanism_families": [
-            "access to retired federal service firearms",
-            "police operational discretion",
-            "police oversight and accountability safeguards"
-          ],
-          "editorially_defensible": true
-        }
-      ],
-      "notable_one_off_choices": [],
-      "one_off_or_unproven_themes": [],
-      "contrary_or_limiting_evidence": [
-        {
-          "episode_id": null,
-          "text": "This conclusion is bounded to five researched episodes and does not infer motive, ideology, or future behavior."
-        }
-      ],
-      "why_conclusion_does_not_go_further": "The five episodes show a repeated boundary, but they do not establish a comprehensive Justice philosophy or explain why the actions differed.",
-      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
-      "reviewed_period": "119th Congress, February 6-November 19, 2025",
-      "human_review_status": "human_approval_pending",
+      "schema_version": "editorial_member_inference_v2",
       "member": {
         "bioguide_id": "F000477",
         "display_name": "Valerie P. Foushee",
@@ -2276,59 +2488,37 @@ export const justiceCrossMemberValidationData = Object.freeze({
         "state": "NC",
         "district": "4th"
       },
-      "coverage": {
-        "substantive_rolls_expected": 7,
-        "substantive_yes_no_actions": 7,
-        "not_voting_actions": 0,
-        "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
-      },
-      "episode_references": [
-        "halt-fentanyl-legislative-path",
-        "retired-service-weapon-purchases",
-        "officer-safety-data-reporting",
-        "dc-police-pursuit-rules",
-        "dc-policing-reform-repeal"
-      ],
-      "publication": {
-        "editorial_status": "human_approval_pending",
-        "benchmark_status": "not_promoted",
-        "production_eligible": false
-      }
-    },
-    {
-      "schema_version": "editorial_member_inference_v1",
       "candidate_id": "conditional-guardrail-boundary",
       "inference_level": "bounded_selective_pattern",
       "evidence_strength_label": "Bounded selective pattern",
-      "primary_conclusion": "In this reviewed sample, Adams supported reporting, a fentanyl certification condition, and the later permanent fentanyl framework while opposing the earlier framework and three proposals involving police tools, operational authority, or safeguard rollbacks. Across these episodes, the record supports a selective boundary around enforcement expansion rather than blanket support or opposition.",
+      "primary_conclusion": "In this reviewed sample, Foushee's recorded actions indicate a selective boundary: support for evidence or reporting conditions alongside repeated limits on reviewed tool, authority, and safeguard changes.",
       "assessment": "candidate_supported_by_current_sample",
-      "support_balance": 10,
+      "support_balance": 5,
       "supporting_independent_episodes": [
-        {
-          "episode_id": "halt-fentanyl-legislative-path",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
         {
           "episode_id": "dc-police-pursuit-rules",
           "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
+          "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
         },
         {
           "episode_id": "dc-policing-reform-repeal",
           "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
+          "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+        },
+        {
+          "episode_id": "halt-fentanyl-legislative-path",
+          "weight": 2,
+          "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+        },
+        {
+          "episode_id": "officer-safety-data-reporting",
+          "weight": 2,
+          "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+        },
+        {
+          "episode_id": "retired-service-weapon-purchases",
+          "weight": 2,
+          "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
         }
       ],
       "weakening_independent_episodes": [],
@@ -2337,50 +2527,76 @@ export const justiceCrossMemberValidationData = Object.freeze({
       "within_episode_trajectories": [
         {
           "episode_id": "halt-fentanyl-legislative-path",
-          "relationship_to_repeated_stages": "one policy episode with a certification amendment, an earlier House bill, and later passage of a related Senate-amended bill",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
           "member_trajectory": "Supported the certification condition, opposed the earlier House framework, and supported the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Yea/Nay/Yea."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Opposed the reviewed retired-service-firearm purchase program.",
-          "practical_policy_direction": "Opposed the reviewed retired-service-firearm purchase program."
-        },
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill."
-        },
-        {
-          "episode_id": "dc-police-pursuit-rules",
-          "relationship_to_repeated_stages": "single House-passage action on the Rules Committee substitute",
-          "member_trajectory": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
-          "practical_policy_direction": "Opposed the reviewed expansion of D.C. police-pursuit authority."
-        },
-        {
-          "episode_id": "dc-policing-reform-repeal",
-          "relationship_to_repeated_stages": "single House-passage action on the committee substitute",
-          "member_trajectory": "Opposed the reviewed repeal of most D.C. policing safeguards.",
-          "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards."
+          "practical_policy_direction": "One fentanyl trajectory with action signature Yea/Nay/Yea."
         }
       ],
       "repeated_cross_episode_themes": [
         {
-          "theme_id": "guardrail-and-information-actions",
-          "label": "Evidence and information conditions",
-          "finding": "Supported evidence, research, or reporting mechanisms across the fentanyl and officer-reporting episodes.",
+          "theme_id": "cross-mechanism-opposition",
+          "label": "Cross-mechanism opposition",
+          "finding": "Opposed reviewed actions across distinct mechanisms.",
+          "supporting_episodes": [
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "dc-policing-change-opposition",
+          "label": "D.C. policing change opposition",
+          "finding": "Opposed both reviewed D.C. policing changes.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            }
+          ],
+          "mechanism_families": [
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "evidence-and-reporting-conditions",
+          "label": "Evidence and reporting conditions",
+          "finding": "Supported evidence, certification, or reporting conditions across distinct episodes.",
           "supporting_episodes": [
             {
               "episode_id": "halt-fentanyl-legislative-path",
               "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for evidence and information conditions."
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
             },
             {
               "episode_id": "officer-safety-data-reporting",
               "mechanism_family": "reporting and information gathering",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for evidence and information conditions."
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
             }
           ],
           "mechanism_families": [
@@ -2392,22 +2608,22 @@ export const justiceCrossMemberValidationData = Object.freeze({
         {
           "theme_id": "limits-on-tools-authority-and-rollbacks",
           "label": "Limits on tools, authority, and safeguard rollbacks",
-          "finding": "Opposed reviewed expansions or rollbacks across the firearm, pursuit, and policing-safeguard episodes.",
+          "finding": "Opposed reviewed tool or authority expansions and safeguard rollbacks.",
           "supporting_episodes": [
             {
               "episode_id": "retired-service-weapon-purchases",
               "mechanism_family": "access to retired federal service firearms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
             },
             {
               "episode_id": "dc-police-pursuit-rules",
               "mechanism_family": "police operational discretion",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
             },
             {
               "episode_id": "dc-policing-reform-repeal",
               "mechanism_family": "police oversight and accountability safeguards",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for limits on tools, authority, and safeguard rollbacks."
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
             }
           ],
           "mechanism_families": [
@@ -2419,17 +2635,152 @@ export const justiceCrossMemberValidationData = Object.freeze({
         }
       ],
       "notable_one_off_choices": [],
-      "one_off_or_unproven_themes": [],
-      "contrary_or_limiting_evidence": [
+      "one_off_or_unproven_themes": [
         {
-          "episode_id": null,
-          "text": "This conclusion is bounded to five researched episodes and does not infer motive, ideology, or future behavior."
+          "theme_id": "cross-mechanism-support",
+          "label": "Cross-mechanism support",
+          "finding": "Supported reviewed actions across distinct mechanisms.",
+          "supporting_episodes": [
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ],
+          "mechanism_families": [
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "national-public-safety-mechanisms",
+          "label": "National public-safety mechanisms",
+          "finding": "Supported reviewed national mechanisms across distinct policy tools.",
+          "supporting_episodes": [
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            }
+          ],
+          "mechanism_families": [
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "safeguard-repeal-opposition",
+          "label": "Safeguard-repeal opposition",
+          "finding": "Opposed the reviewed repeal of most D.C. policing safeguards.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
+            }
+          ],
+          "mechanism_families": [
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
         }
       ],
-      "why_conclusion_does_not_go_further": "The five episodes show a repeated boundary, but they do not establish a comprehensive Justice philosophy or explain why the actions differed.",
+      "contrary_or_limiting_evidence": [],
+      "why_conclusion_does_not_go_further": "Five episodes establish a bounded pattern but do not explain motive or a comprehensive Justice philosophy.",
       "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
       "reviewed_period": "119th Congress, February 6-November 19, 2025",
       "human_review_status": "human_approval_pending",
+      "coverage": {
+        "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
+        "substantive_yes_no_actions": 7,
+        "present_actions": 0,
+        "not_voting_actions": 0,
+        "missing_actions": 0,
+        "independent_episodes_expected": 5,
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
+      },
+      "episode_references": [
+        "halt-fentanyl-legislative-path",
+        "retired-service-weapon-purchases",
+        "officer-safety-data-reporting",
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal"
+      ],
+      "candidate_evaluation": [
+        {
+          "candidate_id": "conditional-guardrail-boundary",
+          "eligible": true,
+          "score": 5,
+          "specificity": 10,
+          "supporting_themes": [
+            "evidence-and-reporting-conditions",
+            "limits-on-tools-authority-and-rollbacks"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "reviewed-enforcement-expansion",
+          "eligible": false,
+          "score": -1,
+          "specificity": 8,
+          "supporting_themes": [],
+          "conflicting_themes": [
+            "limits-on-tools-authority-and-rollbacks"
+          ]
+        },
+        {
+          "candidate_id": "police-authority-fentanyl-divide",
+          "eligible": false,
+          "score": 0,
+          "specificity": 8,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "national-action-dc-boundary",
+          "eligible": false,
+          "score": 2,
+          "specificity": 10,
+          "supporting_themes": [
+            "dc-policing-change-opposition"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "cross-mechanism-opposition",
+          "eligible": false,
+          "score": 0,
+          "specificity": 10,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "broad-support-safeguard-exception",
+          "eligible": false,
+          "score": 1,
+          "specificity": 12,
+          "supporting_themes": [
+            "evidence-and-reporting-conditions"
+          ],
+          "conflicting_themes": [
+            "safeguard-repeal-opposition"
+          ]
+        }
+      ],
+      "publication": {
+        "editorial_status": "human_approval_pending",
+        "benchmark_status": "not_promoted",
+        "production_eligible": false
+      }
+    },
+    {
+      "schema_version": "editorial_member_inference_v2",
       "member": {
         "bioguide_id": "A000370",
         "display_name": "Alma S. Adams",
@@ -2438,12 +2789,222 @@ export const justiceCrossMemberValidationData = Object.freeze({
         "state": "NC",
         "district": "12th"
       },
+      "candidate_id": "conditional-guardrail-boundary",
+      "inference_level": "bounded_selective_pattern",
+      "evidence_strength_label": "Bounded selective pattern",
+      "primary_conclusion": "In this reviewed sample, Adams's recorded actions indicate a selective boundary: support for evidence or reporting conditions alongside repeated limits on reviewed tool, authority, and safeguard changes.",
+      "assessment": "candidate_supported_by_current_sample",
+      "support_balance": 5,
+      "supporting_independent_episodes": [
+        {
+          "episode_id": "dc-police-pursuit-rules",
+          "weight": 2,
+          "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+        },
+        {
+          "episode_id": "dc-policing-reform-repeal",
+          "weight": 2,
+          "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+        },
+        {
+          "episode_id": "halt-fentanyl-legislative-path",
+          "weight": 2,
+          "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+        },
+        {
+          "episode_id": "officer-safety-data-reporting",
+          "weight": 2,
+          "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+        },
+        {
+          "episode_id": "retired-service-weapon-purchases",
+          "weight": 2,
+          "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+        }
+      ],
+      "weakening_independent_episodes": [],
+      "neutral_independent_episodes": [],
+      "independent_episode_count": 5,
+      "within_episode_trajectories": [
+        {
+          "episode_id": "halt-fentanyl-legislative-path",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
+          "member_trajectory": "Supported the certification condition, opposed the earlier House framework, and supported the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Yea/Nay/Yea."
+        }
+      ],
+      "repeated_cross_episode_themes": [
+        {
+          "theme_id": "cross-mechanism-opposition",
+          "label": "Cross-mechanism opposition",
+          "finding": "Opposed reviewed actions across distinct mechanisms.",
+          "supporting_episodes": [
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "dc-policing-change-opposition",
+          "label": "D.C. policing change opposition",
+          "finding": "Opposed both reviewed D.C. policing changes.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            }
+          ],
+          "mechanism_families": [
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "evidence-and-reporting-conditions",
+          "label": "Evidence and reporting conditions",
+          "finding": "Supported evidence, certification, or reporting conditions across distinct episodes.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            },
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            }
+          ],
+          "mechanism_families": [
+            "controlled-substance scheduling, enforcement, and research access",
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "limits-on-tools-authority-and-rollbacks",
+          "label": "Limits on tools, authority, and safeguard rollbacks",
+          "finding": "Opposed reviewed tool or authority expansions and safeguard rollbacks.",
+          "supporting_episodes": [
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        }
+      ],
+      "notable_one_off_choices": [],
+      "one_off_or_unproven_themes": [
+        {
+          "theme_id": "cross-mechanism-support",
+          "label": "Cross-mechanism support",
+          "finding": "Supported reviewed actions across distinct mechanisms.",
+          "supporting_episodes": [
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ],
+          "mechanism_families": [
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "national-public-safety-mechanisms",
+          "label": "National public-safety mechanisms",
+          "finding": "Supported reviewed national mechanisms across distinct policy tools.",
+          "supporting_episodes": [
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            }
+          ],
+          "mechanism_families": [
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "safeguard-repeal-opposition",
+          "label": "Safeguard-repeal opposition",
+          "finding": "Opposed the reviewed repeal of most D.C. policing safeguards.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
+            }
+          ],
+          "mechanism_families": [
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        }
+      ],
+      "contrary_or_limiting_evidence": [],
+      "why_conclusion_does_not_go_further": "Five episodes establish a bounded pattern but do not explain motive or a comprehensive Justice philosophy.",
+      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
+      "reviewed_period": "119th Congress, February 6-November 19, 2025",
+      "human_review_status": "human_approval_pending",
       "coverage": {
         "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
         "substantive_yes_no_actions": 7,
+        "present_actions": 0,
         "not_voting_actions": 0,
+        "missing_actions": 0,
         "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
       },
       "episode_references": [
         "halt-fentanyl-legislative-path",
@@ -2452,6 +3013,67 @@ export const justiceCrossMemberValidationData = Object.freeze({
         "dc-police-pursuit-rules",
         "dc-policing-reform-repeal"
       ],
+      "candidate_evaluation": [
+        {
+          "candidate_id": "conditional-guardrail-boundary",
+          "eligible": true,
+          "score": 5,
+          "specificity": 10,
+          "supporting_themes": [
+            "evidence-and-reporting-conditions",
+            "limits-on-tools-authority-and-rollbacks"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "reviewed-enforcement-expansion",
+          "eligible": false,
+          "score": -1,
+          "specificity": 8,
+          "supporting_themes": [],
+          "conflicting_themes": [
+            "limits-on-tools-authority-and-rollbacks"
+          ]
+        },
+        {
+          "candidate_id": "police-authority-fentanyl-divide",
+          "eligible": false,
+          "score": 0,
+          "specificity": 8,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "national-action-dc-boundary",
+          "eligible": false,
+          "score": 2,
+          "specificity": 10,
+          "supporting_themes": [
+            "dc-policing-change-opposition"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "cross-mechanism-opposition",
+          "eligible": false,
+          "score": 0,
+          "specificity": 10,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "broad-support-safeguard-exception",
+          "eligible": false,
+          "score": 1,
+          "specificity": 12,
+          "supporting_themes": [
+            "evidence-and-reporting-conditions"
+          ],
+          "conflicting_themes": [
+            "safeguard-repeal-opposition"
+          ]
+        }
+      ],
       "publication": {
         "editorial_status": "human_approval_pending",
         "benchmark_status": "not_promoted",
@@ -2459,124 +3081,7 @@ export const justiceCrossMemberValidationData = Object.freeze({
       }
     },
     {
-      "schema_version": "editorial_member_inference_v1",
-      "candidate_id": "reviewed-enforcement-expansion",
-      "inference_level": "bounded_repeated_pattern",
-      "evidence_strength_label": "Strong reviewed sample",
-      "primary_conclusion": "In this reviewed sample, Aderholt supported both permanent fentanyl frameworks, the retired-service-firearm program, broader D.C. pursuit authority, repeal of most reviewed D.C. policing safeguards, and officer-safety reporting, while opposing the fentanyl certification condition. The repeated record favors the reviewed expansions and permanent enforcement mechanisms, with reporting support but no opposing final-passage action in these five episodes.",
-      "assessment": "candidate_supported_by_current_sample",
-      "support_balance": 8,
-      "supporting_independent_episodes": [
-        {
-          "episode_id": "halt-fentanyl-legislative-path",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "dc-police-pursuit-rules",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "dc-policing-reform-repeal",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        }
-      ],
-      "weakening_independent_episodes": [],
-      "neutral_independent_episodes": [
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "weight": 0,
-          "rationale": "This episode is retained as relevant context but is not load-bearing for this candidate."
-        }
-      ],
-      "independent_episode_count": 5,
-      "within_episode_trajectories": [
-        {
-          "episode_id": "halt-fentanyl-legislative-path",
-          "relationship_to_repeated_stages": "one policy episode with a certification amendment, an earlier House bill, and later passage of a related Senate-amended bill",
-          "member_trajectory": "Opposed the certification condition, supported the earlier House framework, and supported the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Nay/Yea/Yea."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Supported the reviewed retired-service-firearm purchase program.",
-          "practical_policy_direction": "Supported the reviewed retired-service-firearm purchase program."
-        },
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill."
-        },
-        {
-          "episode_id": "dc-police-pursuit-rules",
-          "relationship_to_repeated_stages": "single House-passage action on the Rules Committee substitute",
-          "member_trajectory": "Supported the reviewed expansion of D.C. police-pursuit authority.",
-          "practical_policy_direction": "Supported the reviewed expansion of D.C. police-pursuit authority."
-        },
-        {
-          "episode_id": "dc-policing-reform-repeal",
-          "relationship_to_repeated_stages": "single House-passage action on the committee substitute",
-          "member_trajectory": "Supported the reviewed repeal of most D.C. policing safeguards.",
-          "practical_policy_direction": "Supported the reviewed repeal of most D.C. policing safeguards."
-        }
-      ],
-      "repeated_cross_episode_themes": [
-        {
-          "theme_id": "support-for-reviewed-enforcement-mechanisms",
-          "label": "Support for reviewed enforcement mechanisms",
-          "finding": "Supported permanent fentanyl rules and reviewed police-tool or authority expansions across distinct mechanisms.",
-          "supporting_episodes": [
-            {
-              "episode_id": "halt-fentanyl-legislative-path",
-              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed enforcement mechanisms."
-            },
-            {
-              "episode_id": "retired-service-weapon-purchases",
-              "mechanism_family": "access to retired federal service firearms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed enforcement mechanisms."
-            },
-            {
-              "episode_id": "dc-police-pursuit-rules",
-              "mechanism_family": "police operational discretion",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed enforcement mechanisms."
-            },
-            {
-              "episode_id": "dc-policing-reform-repeal",
-              "mechanism_family": "police oversight and accountability safeguards",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed enforcement mechanisms."
-            }
-          ],
-          "mechanism_families": [
-            "access to retired federal service firearms",
-            "controlled-substance scheduling, enforcement, and research access",
-            "police operational discretion",
-            "police oversight and accountability safeguards"
-          ],
-          "editorially_defensible": true
-        }
-      ],
-      "notable_one_off_choices": [],
-      "one_off_or_unproven_themes": [],
-      "contrary_or_limiting_evidence": [
-        {
-          "episode_id": null,
-          "text": "This conclusion is bounded to five researched episodes and does not infer motive, ideology, or future behavior."
-        }
-      ],
-      "why_conclusion_does_not_go_further": "This describes concrete mechanisms in five episodes; it does not establish a broad ideology, motive, or position on every public-safety policy.",
-      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
-      "reviewed_period": "119th Congress, February 6-November 19, 2025",
-      "human_review_status": "human_approval_pending",
+      "schema_version": "editorial_member_inference_v2",
       "member": {
         "bioguide_id": "A000055",
         "display_name": "Robert B. Aderholt",
@@ -2585,386 +3090,32 @@ export const justiceCrossMemberValidationData = Object.freeze({
         "state": "AL",
         "district": "4th"
       },
-      "coverage": {
-        "substantive_rolls_expected": 7,
-        "substantive_yes_no_actions": 7,
-        "not_voting_actions": 0,
-        "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
-      },
-      "episode_references": [
-        "halt-fentanyl-legislative-path",
-        "retired-service-weapon-purchases",
-        "officer-safety-data-reporting",
-        "dc-police-pursuit-rules",
-        "dc-policing-reform-repeal"
-      ],
-      "publication": {
-        "editorial_status": "human_approval_pending",
-        "benchmark_status": "not_promoted",
-        "production_eligible": false
-      }
-    },
-    {
-      "schema_version": "editorial_member_inference_v1",
-      "candidate_id": "police-authority-fentanyl-divide",
-      "inference_level": "bounded_conditional_boundary",
-      "evidence_strength_label": "Mixed but interpretable",
-      "primary_conclusion": "In this reviewed sample, Massie supported the retired-service-firearm program, broader D.C. pursuit authority, repeal of most reviewed D.C. policing safeguards, and officer-safety reporting, while opposing the certification condition and both permanent fentanyl frameworks. The record draws a policy-specific divide between the reviewed police tool and authority proposals and the fentanyl scheduling episode.",
-      "assessment": "candidate_supported_by_current_sample",
-      "support_balance": 8,
-      "supporting_independent_episodes": [
-        {
-          "episode_id": "halt-fentanyl-legislative-path",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "dc-police-pursuit-rules",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "dc-policing-reform-repeal",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        }
-      ],
-      "weakening_independent_episodes": [],
-      "neutral_independent_episodes": [
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "weight": 0,
-          "rationale": "This episode is retained as relevant context but is not load-bearing for this candidate."
-        }
-      ],
-      "independent_episode_count": 5,
-      "within_episode_trajectories": [
-        {
-          "episode_id": "halt-fentanyl-legislative-path",
-          "relationship_to_repeated_stages": "one policy episode with a certification amendment, an earlier House bill, and later passage of a related Senate-amended bill",
-          "member_trajectory": "Opposed the certification condition, opposed the earlier House framework, and opposed the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Nay/Nay/Nay."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Supported the reviewed retired-service-firearm purchase program.",
-          "practical_policy_direction": "Supported the reviewed retired-service-firearm purchase program."
-        },
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill."
-        },
-        {
-          "episode_id": "dc-police-pursuit-rules",
-          "relationship_to_repeated_stages": "single House-passage action on the Rules Committee substitute",
-          "member_trajectory": "Supported the reviewed expansion of D.C. police-pursuit authority.",
-          "practical_policy_direction": "Supported the reviewed expansion of D.C. police-pursuit authority."
-        },
-        {
-          "episode_id": "dc-policing-reform-repeal",
-          "relationship_to_repeated_stages": "single House-passage action on the committee substitute",
-          "member_trajectory": "Supported the reviewed repeal of most D.C. policing safeguards.",
-          "practical_policy_direction": "Supported the reviewed repeal of most D.C. policing safeguards."
-        }
-      ],
-      "repeated_cross_episode_themes": [
-        {
-          "theme_id": "support-for-police-tools-and-authority",
-          "label": "Support for reviewed police tools and authority",
-          "finding": "Supported reviewed police-tool, pursuit-authority, and safeguard-repeal proposals across three distinct mechanisms.",
-          "supporting_episodes": [
-            {
-              "episode_id": "retired-service-weapon-purchases",
-              "mechanism_family": "access to retired federal service firearms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed police tools and authority."
-            },
-            {
-              "episode_id": "dc-police-pursuit-rules",
-              "mechanism_family": "police operational discretion",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed police tools and authority."
-            },
-            {
-              "episode_id": "dc-policing-reform-repeal",
-              "mechanism_family": "police oversight and accountability safeguards",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed police tools and authority."
-            }
-          ],
-          "mechanism_families": [
-            "access to retired federal service firearms",
-            "police operational discretion",
-            "police oversight and accountability safeguards"
-          ],
-          "editorially_defensible": true
-        }
-      ],
-      "notable_one_off_choices": [
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "mechanism_family": "reporting and information gathering",
-          "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill."
-        }
-      ],
-      "one_off_or_unproven_themes": [
-        {
-          "theme_id": "opposition-within-fentanyl-episode",
-          "label": "Opposition within the fentanyl episode",
-          "finding": "Opposed the certification condition and both permanent frameworks within the single reviewed fentanyl episode.",
-          "supporting_episodes": [
-            {
-              "episode_id": "halt-fentanyl-legislative-path",
-              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition within the fentanyl episode."
-            }
-          ],
-          "mechanism_families": [
-            "controlled-substance scheduling, enforcement, and research access"
-          ],
-          "editorially_defensible": true,
-          "not_repeated_reason": "The reviewed annotations do not yet establish a defensible cross-episode theme with sufficient independent and mechanism-diverse evidence."
-        }
-      ],
-      "contrary_or_limiting_evidence": [
-        {
-          "episode_id": null,
-          "text": "This conclusion is bounded to five researched episodes and does not infer motive, ideology, or future behavior."
-        }
-      ],
-      "why_conclusion_does_not_go_further": "The fentanyl opposition is one independent episode despite three stages, so the sample does not support a broader claim about drug enforcement or public safety overall.",
-      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
-      "reviewed_period": "119th Congress, February 6-November 19, 2025",
-      "human_review_status": "human_approval_pending",
-      "member": {
-        "bioguide_id": "M001184",
-        "display_name": "Thomas Massie",
-        "formal_name": "Mr. Massie",
-        "party": "R",
-        "state": "KY",
-        "district": "4th"
-      },
-      "coverage": {
-        "substantive_rolls_expected": 7,
-        "substantive_yes_no_actions": 7,
-        "not_voting_actions": 0,
-        "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
-      },
-      "episode_references": [
-        "halt-fentanyl-legislative-path",
-        "retired-service-weapon-purchases",
-        "officer-safety-data-reporting",
-        "dc-police-pursuit-rules",
-        "dc-policing-reform-repeal"
-      ],
-      "publication": {
-        "editorial_status": "human_approval_pending",
-        "benchmark_status": "not_promoted",
-        "production_eligible": false
-      }
-    },
-    {
-      "schema_version": "editorial_member_inference_v1",
-      "candidate_id": "national-action-dc-boundary",
-      "inference_level": "bounded_conditional_boundary",
-      "evidence_strength_label": "Mixed but interpretable",
-      "primary_conclusion": "In this reviewed sample, Bishop supported both permanent fentanyl frameworks, the retired-service-firearm program, and officer-safety reporting while opposing broader D.C. pursuit authority and repeal of most reviewed D.C. policing safeguards. The record supports several national public-safety mechanisms but sets a repeated boundary at the two reviewed D.C. policing changes.",
-      "assessment": "candidate_supported_by_current_sample",
-      "support_balance": 10,
-      "supporting_independent_episodes": [
-        {
-          "episode_id": "halt-fentanyl-legislative-path",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "dc-police-pursuit-rules",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "dc-policing-reform-repeal",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        }
-      ],
-      "weakening_independent_episodes": [],
-      "neutral_independent_episodes": [],
-      "independent_episode_count": 5,
-      "within_episode_trajectories": [
-        {
-          "episode_id": "halt-fentanyl-legislative-path",
-          "relationship_to_repeated_stages": "one policy episode with a certification amendment, an earlier House bill, and later passage of a related Senate-amended bill",
-          "member_trajectory": "Opposed the certification condition, supported the earlier House framework, and supported the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Nay/Yea/Yea."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Supported the reviewed retired-service-firearm purchase program.",
-          "practical_policy_direction": "Supported the reviewed retired-service-firearm purchase program."
-        },
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill."
-        },
-        {
-          "episode_id": "dc-police-pursuit-rules",
-          "relationship_to_repeated_stages": "single House-passage action on the Rules Committee substitute",
-          "member_trajectory": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
-          "practical_policy_direction": "Opposed the reviewed expansion of D.C. police-pursuit authority."
-        },
-        {
-          "episode_id": "dc-policing-reform-repeal",
-          "relationship_to_repeated_stages": "single House-passage action on the committee substitute",
-          "member_trajectory": "Opposed the reviewed repeal of most D.C. policing safeguards.",
-          "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards."
-        }
-      ],
-      "repeated_cross_episode_themes": [
-        {
-          "theme_id": "support-for-national-mechanisms",
-          "label": "Support for reviewed national mechanisms",
-          "finding": "Supported permanent fentanyl rules, reporting, and a retired-service-firearm program across distinct mechanisms.",
-          "supporting_episodes": [
-            {
-              "episode_id": "halt-fentanyl-legislative-path",
-              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed national mechanisms."
-            },
-            {
-              "episode_id": "retired-service-weapon-purchases",
-              "mechanism_family": "access to retired federal service firearms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed national mechanisms."
-            },
-            {
-              "episode_id": "officer-safety-data-reporting",
-              "mechanism_family": "reporting and information gathering",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support for reviewed national mechanisms."
-            }
-          ],
-          "mechanism_families": [
-            "access to retired federal service firearms",
-            "controlled-substance scheduling, enforcement, and research access",
-            "reporting and information gathering"
-          ],
-          "editorially_defensible": true
-        },
-        {
-          "theme_id": "opposition-to-reviewed-dc-changes",
-          "label": "Opposition to reviewed D.C. policing changes",
-          "finding": "Opposed both broader pursuit authority and repeal of most reviewed policing safeguards in D.C.",
-          "supporting_episodes": [
-            {
-              "episode_id": "dc-police-pursuit-rules",
-              "mechanism_family": "police operational discretion",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition to reviewed d.c. policing changes."
-            },
-            {
-              "episode_id": "dc-policing-reform-repeal",
-              "mechanism_family": "police oversight and accountability safeguards",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition to reviewed d.c. policing changes."
-            }
-          ],
-          "mechanism_families": [
-            "police operational discretion",
-            "police oversight and accountability safeguards"
-          ],
-          "editorially_defensible": true
-        }
-      ],
-      "notable_one_off_choices": [],
-      "one_off_or_unproven_themes": [],
-      "contrary_or_limiting_evidence": [
-        {
-          "episode_id": null,
-          "text": "This conclusion is bounded to five researched episodes and does not infer motive, ideology, or future behavior."
-        }
-      ],
-      "why_conclusion_does_not_go_further": "The two D.C. votes cover different mechanisms but one jurisdictional setting, so the record does not establish opposition to police authority generally.",
-      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
-      "reviewed_period": "119th Congress, February 6-November 19, 2025",
-      "human_review_status": "human_approval_pending",
-      "member": {
-        "bioguide_id": "B000490",
-        "display_name": "Sanford D. Bishop, Jr.",
-        "formal_name": "Mr. Bishop",
-        "party": "D",
-        "state": "GA",
-        "district": "2nd"
-      },
-      "coverage": {
-        "substantive_rolls_expected": 7,
-        "substantive_yes_no_actions": 7,
-        "not_voting_actions": 0,
-        "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
-      },
-      "episode_references": [
-        "halt-fentanyl-legislative-path",
-        "retired-service-weapon-purchases",
-        "officer-safety-data-reporting",
-        "dc-police-pursuit-rules",
-        "dc-policing-reform-repeal"
-      ],
-      "publication": {
-        "editorial_status": "human_approval_pending",
-        "benchmark_status": "not_promoted",
-        "production_eligible": false
-      }
-    },
-    {
-      "schema_version": "editorial_member_inference_v1",
-      "candidate_id": "cross-mechanism-opposition",
+      "candidate_id": "reviewed-enforcement-expansion",
       "inference_level": "bounded_repeated_pattern",
       "evidence_strength_label": "Strong reviewed sample",
-      "primary_conclusion": "In this reviewed sample, García of Illinois opposed every reviewed action: the fentanyl certification condition and both permanent frameworks, the retired-service-firearm program, officer-safety reporting, broader D.C. pursuit authority, and repeal of most reviewed D.C. policing safeguards. The actions form a repeated cross-mechanism pattern of opposition in this sample, but the vote record alone does not identify a common rationale.",
+      "primary_conclusion": "In this reviewed sample, Aderholt's recorded actions indicate repeated support for the reviewed enforcement, police-tool, and authority expansions.",
       "assessment": "candidate_supported_by_current_sample",
-      "support_balance": 10,
+      "support_balance": 4,
       "supporting_independent_episodes": [
-        {
-          "episode_id": "halt-fentanyl-legislative-path",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
-        },
         {
           "episode_id": "dc-police-pursuit-rules",
           "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
+          "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
         },
         {
           "episode_id": "dc-policing-reform-repeal",
           "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
+          "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+        },
+        {
+          "episode_id": "halt-fentanyl-legislative-path",
+          "weight": 2,
+          "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+        },
+        {
+          "episode_id": "retired-service-weapon-purchases",
+          "weight": 2,
+          "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
         }
       ],
       "weakening_independent_episodes": [],
@@ -2973,65 +3124,41 @@ export const justiceCrossMemberValidationData = Object.freeze({
       "within_episode_trajectories": [
         {
           "episode_id": "halt-fentanyl-legislative-path",
-          "relationship_to_repeated_stages": "one policy episode with a certification amendment, an earlier House bill, and later passage of a related Senate-amended bill",
-          "member_trajectory": "Opposed the certification condition, opposed the earlier House framework, and opposed the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Nay/Nay/Nay."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Opposed the reviewed retired-service-firearm purchase program.",
-          "practical_policy_direction": "Opposed the reviewed retired-service-firearm purchase program."
-        },
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Opposed the reviewed officer-safety and wellness reporting bill.",
-          "practical_policy_direction": "Opposed the reviewed officer-safety and wellness reporting bill."
-        },
-        {
-          "episode_id": "dc-police-pursuit-rules",
-          "relationship_to_repeated_stages": "single House-passage action on the Rules Committee substitute",
-          "member_trajectory": "Opposed the reviewed expansion of D.C. police-pursuit authority.",
-          "practical_policy_direction": "Opposed the reviewed expansion of D.C. police-pursuit authority."
-        },
-        {
-          "episode_id": "dc-policing-reform-repeal",
-          "relationship_to_repeated_stages": "single House-passage action on the committee substitute",
-          "member_trajectory": "Opposed the reviewed repeal of most D.C. policing safeguards.",
-          "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards."
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
+          "member_trajectory": "Opposed the certification condition, supported the earlier House framework, and supported the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Yea/Yea."
         }
       ],
       "repeated_cross_episode_themes": [
         {
-          "theme_id": "opposition-across-reviewed-mechanisms",
-          "label": "Opposition across reviewed mechanisms",
-          "finding": "Opposed reviewed proposals across scheduling, firearm access, reporting, pursuit authority, and safeguard repeal mechanisms.",
+          "theme_id": "cross-mechanism-support",
+          "label": "Cross-mechanism support",
+          "finding": "Supported reviewed actions across distinct mechanisms.",
           "supporting_episodes": [
             {
               "episode_id": "halt-fentanyl-legislative-path",
               "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition across reviewed mechanisms."
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             },
             {
               "episode_id": "retired-service-weapon-purchases",
               "mechanism_family": "access to retired federal service firearms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition across reviewed mechanisms."
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             },
             {
               "episode_id": "officer-safety-data-reporting",
               "mechanism_family": "reporting and information gathering",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition across reviewed mechanisms."
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             },
             {
               "episode_id": "dc-police-pursuit-rules",
               "mechanism_family": "police operational discretion",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition across reviewed mechanisms."
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             },
             {
               "episode_id": "dc-policing-reform-repeal",
               "mechanism_family": "police oversight and accountability safeguards",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for opposition across reviewed mechanisms."
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "mechanism_families": [
@@ -3042,34 +3169,134 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "reporting and information gathering"
           ],
           "editorially_defensible": true
+        },
+        {
+          "theme_id": "national-public-safety-mechanisms",
+          "label": "National public-safety mechanisms",
+          "finding": "Supported reviewed national mechanisms across distinct policy tools.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "controlled-substance scheduling, enforcement, and research access",
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "police-tools-and-authority",
+          "label": "Police tools and authority",
+          "finding": "Supported reviewed police-tool and authority proposals.",
+          "supporting_episodes": [
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "reviewed-enforcement-expansion",
+          "label": "Reviewed enforcement expansion",
+          "finding": "Supported reviewed permanent enforcement, police-tool, or authority expansions.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "controlled-substance scheduling, enforcement, and research access",
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
         }
       ],
       "notable_one_off_choices": [],
-      "one_off_or_unproven_themes": [],
-      "contrary_or_limiting_evidence": [
+      "one_off_or_unproven_themes": [
         {
-          "episode_id": null,
-          "text": "This conclusion is bounded to five researched episodes and does not infer motive, ideology, or future behavior."
+          "theme_id": "evidence-and-reporting-conditions",
+          "label": "Evidence and reporting conditions",
+          "finding": "Supported evidence, certification, or reporting conditions across distinct episodes.",
+          "supporting_episodes": [
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            }
+          ],
+          "mechanism_families": [
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
         }
       ],
-      "why_conclusion_does_not_go_further": "One-directional actions across five episodes do not by themselves establish an ideology, motive, or opposition to the policy goals named in the measures.",
+      "contrary_or_limiting_evidence": [],
+      "why_conclusion_does_not_go_further": "The finding is limited to concrete mechanisms in five episodes and does not establish ideology or motive.",
       "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
       "reviewed_period": "119th Congress, February 6-November 19, 2025",
       "human_review_status": "human_approval_pending",
-      "member": {
-        "bioguide_id": "G000586",
-        "display_name": "Jesús G. \"Chuy\" García",
-        "formal_name": "Mr. García of Illinois",
-        "party": "D",
-        "state": "IL",
-        "district": "4th"
-      },
       "coverage": {
         "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
         "substantive_yes_no_actions": 7,
+        "present_actions": 0,
         "not_voting_actions": 0,
+        "missing_actions": 0,
         "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
       },
       "episode_references": [
         "halt-fentanyl-legislative-path",
@@ -3078,6 +3305,64 @@ export const justiceCrossMemberValidationData = Object.freeze({
         "dc-police-pursuit-rules",
         "dc-policing-reform-repeal"
       ],
+      "candidate_evaluation": [
+        {
+          "candidate_id": "conditional-guardrail-boundary",
+          "eligible": false,
+          "score": 0,
+          "specificity": 10,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "reviewed-enforcement-expansion",
+          "eligible": true,
+          "score": 4,
+          "specificity": 8,
+          "supporting_themes": [
+            "reviewed-enforcement-expansion"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "police-authority-fentanyl-divide",
+          "eligible": false,
+          "score": 3,
+          "specificity": 8,
+          "supporting_themes": [
+            "police-tools-and-authority"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "national-action-dc-boundary",
+          "eligible": false,
+          "score": 3,
+          "specificity": 10,
+          "supporting_themes": [
+            "national-public-safety-mechanisms"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "cross-mechanism-opposition",
+          "eligible": false,
+          "score": 0,
+          "specificity": 10,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "broad-support-safeguard-exception",
+          "eligible": false,
+          "score": 5,
+          "specificity": 12,
+          "supporting_themes": [
+            "cross-mechanism-support"
+          ],
+          "conflicting_themes": []
+        }
+      ],
       "publication": {
         "editorial_status": "human_approval_pending",
         "benchmark_status": "not_promoted",
@@ -3085,40 +3370,966 @@ export const justiceCrossMemberValidationData = Object.freeze({
       }
     },
     {
-      "schema_version": "editorial_member_inference_v1",
-      "candidate_id": "broad-support-safeguard-exception",
-      "inference_level": "bounded_repeated_pattern",
-      "evidence_strength_label": "Strong reviewed sample with contrary evidence",
-      "primary_conclusion": "In this reviewed sample, Moskowitz supported the fentanyl certification condition and both permanent frameworks, the retired-service-firearm program, officer-safety reporting, and broader D.C. pursuit authority, while opposing repeal of most reviewed D.C. policing safeguards. The record mostly supports the reviewed public-safety actions but preserves a specific boundary around the safeguard-repeal proposal.",
+      "schema_version": "editorial_member_inference_v2",
+      "member": {
+        "bioguide_id": "M001184",
+        "display_name": "Thomas Massie",
+        "formal_name": "Mr. Massie",
+        "party": "R",
+        "state": "KY",
+        "district": "4th"
+      },
+      "candidate_id": "police-authority-fentanyl-divide",
+      "inference_level": "bounded_conditional_boundary",
+      "evidence_strength_label": "Mixed but interpretable",
+      "primary_conclusion": "In this reviewed sample, Massie's recorded actions indicate a policy-specific divide between support for reviewed police tools or authority and opposition within the fentanyl scheduling episode.",
       "assessment": "candidate_supported_by_current_sample",
-      "support_balance": 6,
+      "support_balance": 4,
       "supporting_independent_episodes": [
+        {
+          "episode_id": "dc-police-pursuit-rules",
+          "weight": 2,
+          "rationale": "Supported reviewed police-tool and authority proposals."
+        },
+        {
+          "episode_id": "dc-policing-reform-repeal",
+          "weight": 2,
+          "rationale": "Supported reviewed police-tool and authority proposals."
+        },
         {
           "episode_id": "halt-fentanyl-legislative-path",
           "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
+          "rationale": "Opposed all three actions within the single fentanyl episode."
         },
         {
           "episode_id": "retired-service-weapon-purchases",
           "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
+          "rationale": "Supported reviewed police-tool and authority proposals."
+        }
+      ],
+      "weakening_independent_episodes": [],
+      "neutral_independent_episodes": [],
+      "independent_episode_count": 5,
+      "within_episode_trajectories": [
+        {
+          "episode_id": "halt-fentanyl-legislative-path",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
+          "member_trajectory": "Opposed the certification condition, opposed the earlier House framework, and opposed the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Nay/Nay."
+        }
+      ],
+      "repeated_cross_episode_themes": [
+        {
+          "theme_id": "cross-mechanism-support",
+          "label": "Cross-mechanism support",
+          "finding": "Supported reviewed actions across distinct mechanisms.",
+          "supporting_episodes": [
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "police operational discretion",
+            "police oversight and accountability safeguards",
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "national-public-safety-mechanisms",
+          "label": "National public-safety mechanisms",
+          "finding": "Supported reviewed national mechanisms across distinct policy tools.",
+          "supporting_episodes": [
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "police-tools-and-authority",
+          "label": "Police tools and authority",
+          "finding": "Supported reviewed police-tool and authority proposals.",
+          "supporting_episodes": [
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "reviewed-enforcement-expansion",
+          "label": "Reviewed enforcement expansion",
+          "finding": "Supported reviewed permanent enforcement, police-tool, or authority expansions.",
+          "supporting_episodes": [
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        }
+      ],
+      "notable_one_off_choices": [],
+      "one_off_or_unproven_themes": [
+        {
+          "theme_id": "cross-mechanism-opposition",
+          "label": "Cross-mechanism opposition",
+          "finding": "Opposed reviewed actions across distinct mechanisms.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            }
+          ],
+          "mechanism_families": [
+            "controlled-substance scheduling, enforcement, and research access"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "evidence-and-reporting-conditions",
+          "label": "Evidence and reporting conditions",
+          "finding": "Supported evidence, certification, or reporting conditions across distinct episodes.",
+          "supporting_episodes": [
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            }
+          ],
+          "mechanism_families": [
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "fentanyl-episode-opposition",
+          "label": "Fentanyl episode opposition",
+          "finding": "Opposed all three actions within the single fentanyl episode.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Opposed all three actions within the single fentanyl episode."
+            }
+          ],
+          "mechanism_families": [
+            "controlled-substance scheduling, enforcement, and research access"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        }
+      ],
+      "contrary_or_limiting_evidence": [],
+      "why_conclusion_does_not_go_further": "The three fentanyl actions are one independent episode, so they cannot establish a broader drug-enforcement pattern.",
+      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
+      "reviewed_period": "119th Congress, February 6-November 19, 2025",
+      "human_review_status": "human_approval_pending",
+      "coverage": {
+        "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
+        "substantive_yes_no_actions": 7,
+        "present_actions": 0,
+        "not_voting_actions": 0,
+        "missing_actions": 0,
+        "independent_episodes_expected": 5,
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
+      },
+      "episode_references": [
+        "halt-fentanyl-legislative-path",
+        "retired-service-weapon-purchases",
+        "officer-safety-data-reporting",
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal"
+      ],
+      "candidate_evaluation": [
+        {
+          "candidate_id": "conditional-guardrail-boundary",
+          "eligible": false,
+          "score": 0,
+          "specificity": 10,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "reviewed-enforcement-expansion",
+          "eligible": false,
+          "score": 0,
+          "specificity": 8,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "police-authority-fentanyl-divide",
+          "eligible": true,
+          "score": 4,
+          "specificity": 8,
+          "supporting_themes": [
+            "police-tools-and-authority",
+            "fentanyl-episode-opposition"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "national-action-dc-boundary",
+          "eligible": false,
+          "score": 0,
+          "specificity": 10,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "cross-mechanism-opposition",
+          "eligible": false,
+          "score": 0,
+          "specificity": 10,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "broad-support-safeguard-exception",
+          "eligible": false,
+          "score": 4,
+          "specificity": 12,
+          "supporting_themes": [
+            "cross-mechanism-support"
+          ],
+          "conflicting_themes": []
+        }
+      ],
+      "publication": {
+        "editorial_status": "human_approval_pending",
+        "benchmark_status": "not_promoted",
+        "production_eligible": false
+      }
+    },
+    {
+      "schema_version": "editorial_member_inference_v2",
+      "member": {
+        "bioguide_id": "B000490",
+        "display_name": "Sanford D. Bishop, Jr.",
+        "formal_name": "Mr. Bishop",
+        "party": "D",
+        "state": "GA",
+        "district": "2nd"
+      },
+      "candidate_id": "national-action-dc-boundary",
+      "inference_level": "bounded_conditional_boundary",
+      "evidence_strength_label": "Mixed but interpretable",
+      "primary_conclusion": "In this reviewed sample, Bishop's recorded actions indicate support for several reviewed national public-safety mechanisms with a repeated boundary at the two reviewed D.C. policing changes.",
+      "assessment": "candidate_supported_by_current_sample",
+      "support_balance": 5,
+      "supporting_independent_episodes": [
+        {
+          "episode_id": "dc-police-pursuit-rules",
+          "weight": 2,
+          "rationale": "Opposed both reviewed D.C. policing changes."
+        },
+        {
+          "episode_id": "dc-policing-reform-repeal",
+          "weight": 2,
+          "rationale": "Opposed both reviewed D.C. policing changes."
+        },
+        {
+          "episode_id": "halt-fentanyl-legislative-path",
+          "weight": 2,
+          "rationale": "Supported reviewed national mechanisms across distinct policy tools."
         },
         {
           "episode_id": "officer-safety-data-reporting",
           "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
+          "rationale": "Supported reviewed national mechanisms across distinct policy tools."
         },
+        {
+          "episode_id": "retired-service-weapon-purchases",
+          "weight": 2,
+          "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+        }
+      ],
+      "weakening_independent_episodes": [],
+      "neutral_independent_episodes": [],
+      "independent_episode_count": 5,
+      "within_episode_trajectories": [
+        {
+          "episode_id": "halt-fentanyl-legislative-path",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
+          "member_trajectory": "Opposed the certification condition, supported the earlier House framework, and supported the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Yea/Yea."
+        }
+      ],
+      "repeated_cross_episode_themes": [
+        {
+          "theme_id": "cross-mechanism-opposition",
+          "label": "Cross-mechanism opposition",
+          "finding": "Opposed reviewed actions across distinct mechanisms.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            }
+          ],
+          "mechanism_families": [
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "cross-mechanism-support",
+          "label": "Cross-mechanism support",
+          "finding": "Supported reviewed actions across distinct mechanisms.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported reviewed actions across distinct mechanisms."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "controlled-substance scheduling, enforcement, and research access",
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "dc-policing-change-opposition",
+          "label": "D.C. policing change opposition",
+          "finding": "Opposed both reviewed D.C. policing changes.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            }
+          ],
+          "mechanism_families": [
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "limits-on-tools-authority-and-rollbacks",
+          "label": "Limits on tools, authority, and safeguard rollbacks",
+          "finding": "Opposed reviewed tool or authority expansions and safeguard rollbacks.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            }
+          ],
+          "mechanism_families": [
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "national-public-safety-mechanisms",
+          "label": "National public-safety mechanisms",
+          "finding": "Supported reviewed national mechanisms across distinct policy tools.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "controlled-substance scheduling, enforcement, and research access",
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "reviewed-enforcement-expansion",
+          "label": "Reviewed enforcement expansion",
+          "finding": "Supported reviewed permanent enforcement, police-tool, or authority expansions.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "controlled-substance scheduling, enforcement, and research access"
+          ],
+          "editorially_defensible": true
+        }
+      ],
+      "notable_one_off_choices": [],
+      "one_off_or_unproven_themes": [
+        {
+          "theme_id": "evidence-and-reporting-conditions",
+          "label": "Evidence and reporting conditions",
+          "finding": "Supported evidence, certification, or reporting conditions across distinct episodes.",
+          "supporting_episodes": [
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            }
+          ],
+          "mechanism_families": [
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "police-tools-and-authority",
+          "label": "Police tools and authority",
+          "finding": "Supported reviewed police-tool and authority proposals.",
+          "supporting_episodes": [
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "safeguard-repeal-opposition",
+          "label": "Safeguard-repeal opposition",
+          "finding": "Opposed the reviewed repeal of most D.C. policing safeguards.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
+            }
+          ],
+          "mechanism_families": [
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        }
+      ],
+      "contrary_or_limiting_evidence": [],
+      "why_conclusion_does_not_go_further": "The two D.C. votes cover different mechanisms but one jurisdictional setting.",
+      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
+      "reviewed_period": "119th Congress, February 6-November 19, 2025",
+      "human_review_status": "human_approval_pending",
+      "coverage": {
+        "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
+        "substantive_yes_no_actions": 7,
+        "present_actions": 0,
+        "not_voting_actions": 0,
+        "missing_actions": 0,
+        "independent_episodes_expected": 5,
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
+      },
+      "episode_references": [
+        "halt-fentanyl-legislative-path",
+        "retired-service-weapon-purchases",
+        "officer-safety-data-reporting",
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal"
+      ],
+      "candidate_evaluation": [
+        {
+          "candidate_id": "conditional-guardrail-boundary",
+          "eligible": false,
+          "score": 0,
+          "specificity": 10,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "reviewed-enforcement-expansion",
+          "eligible": false,
+          "score": -1,
+          "specificity": 8,
+          "supporting_themes": [],
+          "conflicting_themes": [
+            "limits-on-tools-authority-and-rollbacks"
+          ]
+        },
+        {
+          "candidate_id": "police-authority-fentanyl-divide",
+          "eligible": false,
+          "score": 0,
+          "specificity": 8,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "national-action-dc-boundary",
+          "eligible": true,
+          "score": 5,
+          "specificity": 10,
+          "supporting_themes": [
+            "national-public-safety-mechanisms",
+            "dc-policing-change-opposition"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "cross-mechanism-opposition",
+          "eligible": false,
+          "score": 0,
+          "specificity": 10,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "broad-support-safeguard-exception",
+          "eligible": false,
+          "score": -1,
+          "specificity": 12,
+          "supporting_themes": [],
+          "conflicting_themes": [
+            "safeguard-repeal-opposition"
+          ]
+        }
+      ],
+      "publication": {
+        "editorial_status": "human_approval_pending",
+        "benchmark_status": "not_promoted",
+        "production_eligible": false
+      }
+    },
+    {
+      "schema_version": "editorial_member_inference_v2",
+      "member": {
+        "bioguide_id": "G000586",
+        "display_name": "Jesús G. \"Chuy\" García",
+        "formal_name": "Mr. García of Illinois",
+        "party": "D",
+        "state": "IL",
+        "district": "4th"
+      },
+      "candidate_id": "cross-mechanism-opposition",
+      "inference_level": "bounded_repeated_pattern",
+      "evidence_strength_label": "Strong reviewed sample",
+      "primary_conclusion": "In this reviewed sample, García of Illinois's recorded actions indicate a repeated cross-mechanism pattern of opposition in this sample.",
+      "assessment": "candidate_supported_by_current_sample",
+      "support_balance": 5,
+      "supporting_independent_episodes": [
         {
           "episode_id": "dc-police-pursuit-rules",
           "weight": 2,
-          "rationale": "The member-specific episode trajectory supports this candidate."
+          "rationale": "Opposed reviewed actions across distinct mechanisms."
+        },
+        {
+          "episode_id": "dc-policing-reform-repeal",
+          "weight": 2,
+          "rationale": "Opposed reviewed actions across distinct mechanisms."
+        },
+        {
+          "episode_id": "halt-fentanyl-legislative-path",
+          "weight": 2,
+          "rationale": "Opposed reviewed actions across distinct mechanisms."
+        },
+        {
+          "episode_id": "officer-safety-data-reporting",
+          "weight": 2,
+          "rationale": "Opposed reviewed actions across distinct mechanisms."
+        },
+        {
+          "episode_id": "retired-service-weapon-purchases",
+          "weight": 2,
+          "rationale": "Opposed reviewed actions across distinct mechanisms."
+        }
+      ],
+      "weakening_independent_episodes": [],
+      "neutral_independent_episodes": [],
+      "independent_episode_count": 5,
+      "within_episode_trajectories": [
+        {
+          "episode_id": "halt-fentanyl-legislative-path",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
+          "member_trajectory": "Opposed the certification condition, opposed the earlier House framework, and opposed the later permanent framework.",
+          "practical_policy_direction": "One fentanyl trajectory with action signature Nay/Nay/Nay."
+        }
+      ],
+      "repeated_cross_episode_themes": [
+        {
+          "theme_id": "cross-mechanism-opposition",
+          "label": "Cross-mechanism opposition",
+          "finding": "Opposed reviewed actions across distinct mechanisms.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "controlled-substance scheduling, enforcement, and research access",
+            "police operational discretion",
+            "police oversight and accountability safeguards",
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "dc-policing-change-opposition",
+          "label": "D.C. policing change opposition",
+          "finding": "Opposed both reviewed D.C. policing changes.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            }
+          ],
+          "mechanism_families": [
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "limits-on-tools-authority-and-rollbacks",
+          "label": "Limits on tools, authority, and safeguard rollbacks",
+          "finding": "Opposed reviewed tool or authority expansions and safeguard rollbacks.",
+          "supporting_episodes": [
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            },
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "police operational discretion",
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": true
+        }
+      ],
+      "notable_one_off_choices": [],
+      "one_off_or_unproven_themes": [
+        {
+          "theme_id": "fentanyl-episode-opposition",
+          "label": "Fentanyl episode opposition",
+          "finding": "Opposed all three actions within the single fentanyl episode.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Opposed all three actions within the single fentanyl episode."
+            }
+          ],
+          "mechanism_families": [
+            "controlled-substance scheduling, enforcement, and research access"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "safeguard-repeal-opposition",
+          "label": "Safeguard-repeal opposition",
+          "finding": "Opposed the reviewed repeal of most D.C. policing safeguards.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
+            }
+          ],
+          "mechanism_families": [
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        }
+      ],
+      "contrary_or_limiting_evidence": [],
+      "why_conclusion_does_not_go_further": "One-directional actions do not identify a common rationale, ideology, or motive.",
+      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
+      "reviewed_period": "119th Congress, February 6-November 19, 2025",
+      "human_review_status": "human_approval_pending",
+      "coverage": {
+        "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
+        "substantive_yes_no_actions": 7,
+        "present_actions": 0,
+        "not_voting_actions": 0,
+        "missing_actions": 0,
+        "independent_episodes_expected": 5,
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
+      },
+      "episode_references": [
+        "halt-fentanyl-legislative-path",
+        "retired-service-weapon-purchases",
+        "officer-safety-data-reporting",
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal"
+      ],
+      "candidate_evaluation": [
+        {
+          "candidate_id": "conditional-guardrail-boundary",
+          "eligible": false,
+          "score": 3,
+          "specificity": 10,
+          "supporting_themes": [
+            "limits-on-tools-authority-and-rollbacks"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "reviewed-enforcement-expansion",
+          "eligible": false,
+          "score": -1,
+          "specificity": 8,
+          "supporting_themes": [],
+          "conflicting_themes": [
+            "limits-on-tools-authority-and-rollbacks"
+          ]
+        },
+        {
+          "candidate_id": "police-authority-fentanyl-divide",
+          "eligible": false,
+          "score": 1,
+          "specificity": 8,
+          "supporting_themes": [
+            "fentanyl-episode-opposition"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "national-action-dc-boundary",
+          "eligible": false,
+          "score": 2,
+          "specificity": 10,
+          "supporting_themes": [
+            "dc-policing-change-opposition"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "cross-mechanism-opposition",
+          "eligible": true,
+          "score": 5,
+          "specificity": 10,
+          "supporting_themes": [
+            "cross-mechanism-opposition"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "broad-support-safeguard-exception",
+          "eligible": false,
+          "score": -1,
+          "specificity": 12,
+          "supporting_themes": [],
+          "conflicting_themes": [
+            "safeguard-repeal-opposition"
+          ]
+        }
+      ],
+      "publication": {
+        "editorial_status": "human_approval_pending",
+        "benchmark_status": "not_promoted",
+        "production_eligible": false
+      }
+    },
+    {
+      "schema_version": "editorial_member_inference_v2",
+      "member": {
+        "bioguide_id": "M001217",
+        "display_name": "Jared Moskowitz",
+        "formal_name": "Mr. Moskowitz",
+        "party": "D",
+        "state": "FL",
+        "district": "23rd"
+      },
+      "candidate_id": "broad-support-safeguard-exception",
+      "inference_level": "bounded_repeated_pattern",
+      "evidence_strength_label": "Strong reviewed sample with contrary evidence",
+      "primary_conclusion": "In this reviewed sample, Moskowitz's recorded actions indicate broad support for the reviewed public-safety actions with a specific boundary around the safeguard-repeal proposal.",
+      "assessment": "candidate_weakened",
+      "support_balance": 3,
+      "supporting_independent_episodes": [
+        {
+          "episode_id": "dc-police-pursuit-rules",
+          "weight": 2,
+          "rationale": "Supported reviewed actions across distinct mechanisms."
+        },
+        {
+          "episode_id": "halt-fentanyl-legislative-path",
+          "weight": 2,
+          "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+        },
+        {
+          "episode_id": "officer-safety-data-reporting",
+          "weight": 2,
+          "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+        },
+        {
+          "episode_id": "retired-service-weapon-purchases",
+          "weight": 2,
+          "rationale": "Supported reviewed actions across distinct mechanisms."
         }
       ],
       "weakening_independent_episodes": [
         {
           "episode_id": "dc-policing-reform-repeal",
           "weight": 2,
-          "rationale": "Opposition to repealing most reviewed D.C. policing safeguards is material contrary evidence against blanket support across the sample."
+          "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
         }
       ],
       "neutral_independent_episodes": [],
@@ -3126,60 +4337,36 @@ export const justiceCrossMemberValidationData = Object.freeze({
       "within_episode_trajectories": [
         {
           "episode_id": "halt-fentanyl-legislative-path",
-          "relationship_to_repeated_stages": "one policy episode with a certification amendment, an earlier House bill, and later passage of a related Senate-amended bill",
+          "relationship_to_repeated_stages": "Three related rolls are interpreted as one legislative trajectory and one independent episode.",
           "member_trajectory": "Supported the certification condition, supported the earlier House framework, and supported the later permanent framework.",
-          "practical_policy_direction": "The three stages remain one fentanyl policy episode; the action sequence is Yea/Yea/Yea."
-        },
-        {
-          "episode_id": "retired-service-weapon-purchases",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Supported the reviewed retired-service-firearm purchase program.",
-          "practical_policy_direction": "Supported the reviewed retired-service-firearm purchase program."
-        },
-        {
-          "episode_id": "officer-safety-data-reporting",
-          "relationship_to_repeated_stages": "single House-passage action",
-          "member_trajectory": "Supported the reviewed officer-safety and wellness reporting bill.",
-          "practical_policy_direction": "Supported the reviewed officer-safety and wellness reporting bill."
-        },
-        {
-          "episode_id": "dc-police-pursuit-rules",
-          "relationship_to_repeated_stages": "single House-passage action on the Rules Committee substitute",
-          "member_trajectory": "Supported the reviewed expansion of D.C. police-pursuit authority.",
-          "practical_policy_direction": "Supported the reviewed expansion of D.C. police-pursuit authority."
-        },
-        {
-          "episode_id": "dc-policing-reform-repeal",
-          "relationship_to_repeated_stages": "single House-passage action on the committee substitute",
-          "member_trajectory": "Opposed the reviewed repeal of most D.C. policing safeguards.",
-          "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards."
+          "practical_policy_direction": "One fentanyl trajectory with action signature Yea/Yea/Yea."
         }
       ],
       "repeated_cross_episode_themes": [
         {
-          "theme_id": "support-across-reviewed-mechanisms",
-          "label": "Support across reviewed mechanisms",
-          "finding": "Supported reviewed action across fentanyl, firearm access, reporting, and pursuit-authority mechanisms.",
+          "theme_id": "cross-mechanism-support",
+          "label": "Cross-mechanism support",
+          "finding": "Supported reviewed actions across distinct mechanisms.",
           "supporting_episodes": [
             {
               "episode_id": "halt-fentanyl-legislative-path",
               "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support across reviewed mechanisms."
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             },
             {
               "episode_id": "retired-service-weapon-purchases",
               "mechanism_family": "access to retired federal service firearms",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support across reviewed mechanisms."
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             },
             {
               "episode_id": "officer-safety-data-reporting",
               "mechanism_family": "reporting and information gathering",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support across reviewed mechanisms."
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             },
             {
               "episode_id": "dc-police-pursuit-rules",
               "mechanism_family": "police operational discretion",
-              "rationale": "This member-specific trajectory supplies episode-level evidence for support across reviewed mechanisms."
+              "rationale": "Supported reviewed actions across distinct mechanisms."
             }
           ],
           "mechanism_families": [
@@ -3189,44 +4376,206 @@ export const justiceCrossMemberValidationData = Object.freeze({
             "reporting and information gathering"
           ],
           "editorially_defensible": true
+        },
+        {
+          "theme_id": "evidence-and-reporting-conditions",
+          "label": "Evidence and reporting conditions",
+          "finding": "Supported evidence, certification, or reporting conditions across distinct episodes.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            },
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported evidence, certification, or reporting conditions across distinct episodes."
+            }
+          ],
+          "mechanism_families": [
+            "controlled-substance scheduling, enforcement, and research access",
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "national-public-safety-mechanisms",
+          "label": "National public-safety mechanisms",
+          "finding": "Supported reviewed national mechanisms across distinct policy tools.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            },
+            {
+              "episode_id": "officer-safety-data-reporting",
+              "mechanism_family": "reporting and information gathering",
+              "rationale": "Supported reviewed national mechanisms across distinct policy tools."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "controlled-substance scheduling, enforcement, and research access",
+            "reporting and information gathering"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "police-tools-and-authority",
+          "label": "Police tools and authority",
+          "finding": "Supported reviewed police-tool and authority proposals.",
+          "supporting_episodes": [
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Supported reviewed police-tool and authority proposals."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "police operational discretion"
+          ],
+          "editorially_defensible": true
+        },
+        {
+          "theme_id": "reviewed-enforcement-expansion",
+          "label": "Reviewed enforcement expansion",
+          "finding": "Supported reviewed permanent enforcement, police-tool, or authority expansions.",
+          "supporting_episodes": [
+            {
+              "episode_id": "halt-fentanyl-legislative-path",
+              "mechanism_family": "controlled-substance scheduling, enforcement, and research access",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "episode_id": "retired-service-weapon-purchases",
+              "mechanism_family": "access to retired federal service firearms",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            },
+            {
+              "episode_id": "dc-police-pursuit-rules",
+              "mechanism_family": "police operational discretion",
+              "rationale": "Supported reviewed permanent enforcement, police-tool, or authority expansions."
+            }
+          ],
+          "mechanism_families": [
+            "access to retired federal service firearms",
+            "controlled-substance scheduling, enforcement, and research access",
+            "police operational discretion"
+          ],
+          "editorially_defensible": true
         }
       ],
       "notable_one_off_choices": [
         {
           "episode_id": "dc-policing-reform-repeal",
-          "mechanism_family": "police oversight and accountability safeguards",
+          "mechanism_family": "safeguard-repeal",
           "practical_policy_direction": "Opposed the reviewed repeal of most D.C. policing safeguards."
         }
       ],
-      "one_off_or_unproven_themes": [],
+      "one_off_or_unproven_themes": [
+        {
+          "theme_id": "cross-mechanism-opposition",
+          "label": "Cross-mechanism opposition",
+          "finding": "Opposed reviewed actions across distinct mechanisms.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed reviewed actions across distinct mechanisms."
+            }
+          ],
+          "mechanism_families": [
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "dc-policing-change-opposition",
+          "label": "D.C. policing change opposition",
+          "finding": "Opposed both reviewed D.C. policing changes.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed both reviewed D.C. policing changes."
+            }
+          ],
+          "mechanism_families": [
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "limits-on-tools-authority-and-rollbacks",
+          "label": "Limits on tools, authority, and safeguard rollbacks",
+          "finding": "Opposed reviewed tool or authority expansions and safeguard rollbacks.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed reviewed tool or authority expansions and safeguard rollbacks."
+            }
+          ],
+          "mechanism_families": [
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        },
+        {
+          "theme_id": "safeguard-repeal-opposition",
+          "label": "Safeguard-repeal opposition",
+          "finding": "Opposed the reviewed repeal of most D.C. policing safeguards.",
+          "supporting_episodes": [
+            {
+              "episode_id": "dc-policing-reform-repeal",
+              "mechanism_family": "police oversight and accountability safeguards",
+              "rationale": "Opposed the reviewed repeal of most D.C. policing safeguards."
+            }
+          ],
+          "mechanism_families": [
+            "police oversight and accountability safeguards"
+          ],
+          "editorially_defensible": false,
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample."
+        }
+      ],
       "contrary_or_limiting_evidence": [
         {
           "episode_id": "dc-policing-reform-repeal",
-          "text": "Opposition to repealing most reviewed D.C. policing safeguards is material contrary evidence against blanket support across the sample."
-        },
-        {
-          "episode_id": null,
-          "text": "This conclusion is bounded to five researched episodes and does not infer motive, ideology, or future behavior."
+          "text": "Opposed the reviewed repeal of most D.C. policing safeguards."
         }
       ],
-      "why_conclusion_does_not_go_further": "The single contrary episode is material, and five episodes cannot establish blanket support for enforcement or a comprehensive Justice philosophy.",
+      "why_conclusion_does_not_go_further": "The contrary episode is material, and five episodes cannot establish blanket support or a comprehensive Justice philosophy.",
       "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
       "reviewed_period": "119th Congress, February 6-November 19, 2025",
       "human_review_status": "human_approval_pending",
-      "member": {
-        "bioguide_id": "M001217",
-        "display_name": "Jared Moskowitz",
-        "formal_name": "Mr. Moskowitz",
-        "party": "D",
-        "state": "FL",
-        "district": "23rd"
-      },
       "coverage": {
         "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
         "substantive_yes_no_actions": 7,
+        "present_actions": 0,
         "not_voting_actions": 0,
+        "missing_actions": 0,
         "independent_episodes_expected": 5,
-        "independent_episodes_complete": 5
+        "independent_episodes_complete": 5,
+        "independent_episodes_partial": 0,
+        "independent_episodes_missing": 0
       },
       "episode_references": [
         "halt-fentanyl-legislative-path",
@@ -3234,6 +4583,67 @@ export const justiceCrossMemberValidationData = Object.freeze({
         "officer-safety-data-reporting",
         "dc-police-pursuit-rules",
         "dc-policing-reform-repeal"
+      ],
+      "candidate_evaluation": [
+        {
+          "candidate_id": "conditional-guardrail-boundary",
+          "eligible": false,
+          "score": 2,
+          "specificity": 10,
+          "supporting_themes": [
+            "evidence-and-reporting-conditions"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "reviewed-enforcement-expansion",
+          "eligible": false,
+          "score": -1,
+          "specificity": 8,
+          "supporting_themes": [],
+          "conflicting_themes": [
+            "limits-on-tools-authority-and-rollbacks"
+          ]
+        },
+        {
+          "candidate_id": "police-authority-fentanyl-divide",
+          "eligible": false,
+          "score": 0,
+          "specificity": 8,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "national-action-dc-boundary",
+          "eligible": false,
+          "score": 3,
+          "specificity": 10,
+          "supporting_themes": [
+            "national-public-safety-mechanisms"
+          ],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "cross-mechanism-opposition",
+          "eligible": false,
+          "score": 0,
+          "specificity": 10,
+          "supporting_themes": [],
+          "conflicting_themes": []
+        },
+        {
+          "candidate_id": "broad-support-safeguard-exception",
+          "eligible": true,
+          "score": 5,
+          "specificity": 12,
+          "supporting_themes": [
+            "cross-mechanism-support",
+            "evidence-and-reporting-conditions"
+          ],
+          "conflicting_themes": [
+            "safeguard-repeal-opposition"
+          ]
+        }
       ],
       "publication": {
         "editorial_status": "human_approval_pending",

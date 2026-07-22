@@ -58,7 +58,7 @@ test("different overlays preserve shared facts while changing member actions and
   assert.equal(adams.source.interpretations[0].member_action, "Yea");
   assert.equal(aderholt.source.interpretations[0].member_action, "Nay");
   assert.match(adams.synthesis.primary, /selective boundary/);
-  assert.match(aderholt.synthesis.primary, /reviewed expansions and permanent enforcement mechanisms/);
+  assert.match(aderholt.synthesis.primary, /reviewed enforcement, police-tool, and authority expansions/);
   assert.doesNotMatch(aderholt.synthesis.primary, /selective boundary/);
 });
 
