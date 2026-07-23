@@ -35,7 +35,7 @@
 - [x] Three real slices carry a non-publication reference-fixture designation and pass deterministic standardization gates.
 - [x] All 20 required malformed fixtures fail or warn through stable rule IDs.
 - [x] Generated JSON/Markdown validation reports pass drift checking.
-- [ ] Hardening tests, scans, lint, build, responsive/accessibility review, and PR reconciliation complete.
+- [x] Hardening tests, scans, lint, build, responsive/accessibility review, and PR reconciliation complete.
 
 ## Baseline
 
@@ -62,7 +62,7 @@
 - [x] Commit/PR readiness
 - [x] Hardening implementation
 - [x] Hardening validation
-- [ ] Hardening PR update
+- [x] Hardening PR update
 
 ## Discoveries
 
@@ -116,6 +116,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: Pending final commit, draft-PR body update, and remote check verification. The implementation and local validation gates are complete.
+- Definition of done satisfied: Yes. The implementation, local validation gates, scoped commits, branch push, and draft-PR reconciliation are complete; remote preview/check completion remains an external post-push signal.
 - Remaining limitations: Exact `not yet serving` / `no longer serving` transitions remain synthetic-only because the available real House service rows are year-precision; they now fail closed to `Missing`. Eleven obsolete vote-first golden assertions remain as explicit skips to document the replaced contract.
 - Recommended next step: Run one bounded pipeline validation on a newly researched slice in a later milestone. Promotion, production registry inclusion, merge, and deployment remain separate decisions.
