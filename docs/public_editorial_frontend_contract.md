@@ -81,6 +81,8 @@ The public renderer contains only public content. Review warnings and fixture co
 
 Pending real slices may be passed explicitly to the guarded golden-render route in review mode. They still travel through the production selector, adapter, and renderer. Synthetic fixtures may exercise production-eligible and partial-coverage states, but are test data only. Production representative pages read only `frontend/lib/editorialIssueProductionSlices.mjs` and still require every existing publication gate.
 
+The three reviewed reference slices carry `human_reviewed_presentation_fixture` metadata. This designation pins structural presentation expectations only; it does not confer human approval, benchmark promotion, production eligibility, or registry inclusion. Deterministic conformance is recorded in `docs/review_packets/editorial_standardization_validation_v1.json` and checked with `scripts/build_editorial_standardization_validation.mjs --check`.
+
 ## Accessibility and responsive behavior
 
 Issue navigation is hidden when only one issue is available; when multiple issues are available it is keyboard reachable and exposes the selected issue with `aria-current`. Episode, complete-record, action, context, and source disclosures use native `details`/`summary` semantics. Focus rings must remain visible. Public panels must not create horizontal page overflow at 390 px, tablet, laptop, or wide desktop widths; the issue-navigation row may scroll horizontally within its own container.

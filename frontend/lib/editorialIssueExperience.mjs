@@ -6,6 +6,7 @@ import {
   inclusionClassForStatus,
   MEMBER_ACTION_STATUS,
 } from "./editorialSharedEvidence.mjs";
+import { formatPublicDateRange } from "./editorialTextIntegrity.mjs";
 
 export const EDITORIAL_EXPERIENCE_MODE = Object.freeze({
   production: "production",
@@ -64,7 +65,7 @@ export function adaptEditorialIssueSlice(candidate, evidenceRows = [], mode = ED
     ungroupedRecords,
     proceduralRecords,
     records: [...records, ...proceduralRecords],
-    sourceRowKeys: [...interpretations, ...controls].map((entry) => `${candidate.identity.congress}:${entry.roll}`),
+    sourceRowKeys: [...interpretations, ...controls].map((entry) => `${entryCongress(candidate, entry)}:${entry.roll}`),
   };
 }
 
@@ -82,7 +83,7 @@ function candidateMatches({ candidate, domain, evidenceRows, legislator }) {
   return expected.every((entry) => (
     ["not yet serving", "not_yet_serving", "no longer serving", "no_longer_serving", "missing evidence", "missing_evidence"]
       .includes(String(entry.action_status || "").toLowerCase())
-    || evidenceRows.some((row) => rowKey(row) === `${candidate.identity.congress}:${entry.roll}`)
+    || evidenceRows.some((row) => rowKey(row) === `${entryCongress(candidate, entry)}:${entry.roll}`)
   ));
 }
 
@@ -93,6 +94,7 @@ function adaptInterpretation(candidate, entry, row = {}) {
   const overlay = buildMemberActionOverlay(entry, candidate.identity.memberDisplayName);
   return {
     ...shared,
+    congress: entryCongress(candidate, entry),
     memberAction: overlay.label,
     actionStatus: overlay.status,
     result: row.vote_context?.final_result,
@@ -107,6 +109,7 @@ function adaptControl(candidate, entry, row = {}) {
   return {
     id: `context-${entry.roll}`,
     roll: Number(entry.roll),
+    congress: entryCongress(candidate, entry),
     actionIdentity: `House roll call ${entry.roll}`,
     episodeId: explicitEpisodeId(candidate, entry),
     measure: row.description || row.question || entry.measure_id,
@@ -150,9 +153,10 @@ function buildEpisodes(candidate, contract, records) {
     const trajectory = candidate.memberEpisodeTrajectories?.find((item) => item.episode_id === metadata.id);
     return Object.freeze({
       ...metadata,
-      periodLabel: metadata.periodLabel || `${ordinal(candidate.identity.congress)} Congress`,
+      periodLabel: metadata.periodLabel || `${ordinal(metadata.congress || candidate.identity.congress)} Congress`,
       dateSpan: dateSpan(actions),
       memberTrajectory: trajectory?.member_trajectory || defaultTrajectory(actions),
+      memberTrajectoryDetail: trajectory?.member_trajectory_detail || "",
       actions,
       actionCount: actions.length,
       coverageStatus: trajectory?.coverage_status || episodeCoverage(actions),
@@ -188,7 +192,7 @@ function defaultTrajectory(actions) {
 function dateSpan(actions) {
   const dates = actions.map((item) => item.date).filter(Boolean).sort();
   if (!dates.length) return "";
-  return dates.length === 1 ? dates[0] : `${dates[0]} – ${dates.at(-1)}`;
+  return formatPublicDateRange(dates[0], dates.at(-1));
 }
 
 function ordinal(value) {
@@ -199,4 +203,8 @@ function ordinal(value) {
 
 function rowKey(row) {
   return `${row?.congress}:${row?.rollcall_number}`;
+}
+
+function entryCongress(candidate, entry) {
+  return Number(entry?.congress || candidate?.identity?.congress);
 }

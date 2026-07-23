@@ -141,6 +141,10 @@ export default function PositionByIssue({
     legislator,
     mode: editorialMode,
   });
+  const otherReadinessGroups = hasSelectedEditorialSlice
+    ? readinessGroups.map((group) => ({ ...group, rows: group.rows.filter((row) => row.domain !== selectedRow.domain) }))
+    : readinessGroups;
+  const hasOtherIssueRows = otherReadinessGroups.some((group) => group.rows.length > 0);
 
   async function inspectDomain(domain) {
     setSelectedDomain(domain);
@@ -256,14 +260,14 @@ export default function PositionByIssue({
         selectedRow={selectedRow}
       />
 
-      {state.status === "ready" ? (
+      {state.status === "ready" && hasOtherIssueRows ? (
         <section className="mt-4 border-t border-stone-200 pt-4" aria-label="Explore all issue evidence">
           <div className="mb-3">
             <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">Explore other issues</p>
             <p className="mt-1 text-sm leading-6 text-stone-600">Compare where reviewed analysis, vote receipts, or only a limited record is currently available.</p>
           </div>
           <IssueReadinessGroups
-            groups={readinessGroups}
+            groups={otherReadinessGroups}
             inspectDomain={inspectDomain}
             selectedDomain={selectedDomain}
           />

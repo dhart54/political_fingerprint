@@ -279,7 +279,19 @@ function buildAnalyticalSections(candidate) {
     key,
     title,
     items: asArray(supplied[key]).map((item) => typeof item === "string" ? { text: item } : item).filter((item) => item?.text),
-  })).filter((section) => section.items.length);
+  })).filter((section) => section.items.length).map((section) => ({
+    ...section,
+    title: section.items.length === 1 ? singularAnalyticalHeading(section.key) : section.title,
+  }));
+}
+
+function singularAnalyticalHeading(key) {
+  return {
+    repeatedPatterns: "Repeated pattern",
+    policyTrajectories: "Policy trajectory",
+    otherNotableChoices: "Other notable choice",
+    meaningfulExceptions: "Meaningful exception",
+  }[key];
 }
 
 function sourceProceduralLine(value) {

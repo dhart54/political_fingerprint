@@ -77,12 +77,29 @@ export function buildSharedLegislativeAction(entry, row = {}, { episodeId = null
     argumentBoundary: NEUTRAL_ARGUMENT_BOUNDARY,
     oneSidedArgumentNote: oneSidedBoundary,
     additionalDetail: Object.freeze({
-      detail: substantiveDetail(entry.two_minute?.detail),
-      laterHistory: substantiveLaterHistory(entry.two_minute?.later_history),
+      detail: publicDetail(entry),
+      laterHistory: publicLaterHistory(entry),
     }),
-    importantContext: Object.freeze(neutralContext(entry.two_minute?.caveats || [])),
-    sources: Object.freeze((entry.two_minute?.sources || []).map(neutralSource)),
+    importantContext: Object.freeze(publicContext(entry)),
+    sources: Object.freeze(deduplicateSources(entry.two_minute?.sources || [])),
   });
+}
+
+export function classifyActionServiceStatus({
+  actionDate,
+  hasEvidence = false,
+  recordedStatus = null,
+  serviceStartDate = null,
+  serviceEndDate = null,
+  serviceDatePrecision = null,
+} = {}) {
+  if (hasEvidence && recordedStatus) return normalizeMemberActionStatus(recordedStatus);
+  if (serviceDatePrecision !== "day" || !/^\d{4}-\d{2}-\d{2}$/.test(String(actionDate || ""))) {
+    return MEMBER_ACTION_STATUS.missingEvidence;
+  }
+  if (serviceStartDate && actionDate < serviceStartDate) return MEMBER_ACTION_STATUS.notYetServing;
+  if (serviceEndDate && actionDate > serviceEndDate) return MEMBER_ACTION_STATUS.noLongerServing;
+  return MEMBER_ACTION_STATUS.missingEvidence;
 }
 
 export function buildMemberActionOverlay(entry, memberDisplayName) {
@@ -134,6 +151,15 @@ function neutralSource(source) {
   });
 }
 
+function deduplicateSources(sources) {
+  const byUrl = new Map();
+  for (const source of sources.map(neutralSource)) {
+    if (!source.url || byUrl.has(source.url)) continue;
+    byUrl.set(source.url, source);
+  }
+  return [...byUrl.values()];
+}
+
 function neutralContext(items) {
   const result = [];
   for (const item of items) {
@@ -154,6 +180,27 @@ function substantiveDetail(value) {
 function substantiveLaterHistory(value) {
   if (!value || /^received in the senate after house passage\.?$/i.test(value)) return undefined;
   return value;
+}
+
+function publicDetail(entry) {
+  if (isInitialFundingAction(entry)) {
+    return "This vote concerned the September House proposal, not the materially revised Senate package the House accepted in November and that became law.";
+  }
+  return substantiveDetail(entry.two_minute?.detail);
+}
+
+function publicLaterHistory(entry) {
+  if (isInitialFundingAction(entry)) return undefined;
+  return substantiveLaterHistory(entry.two_minute?.later_history);
+}
+
+function publicContext(entry) {
+  if (isInitialFundingAction(entry)) return [];
+  return neutralContext(entry.two_minute?.caveats || []);
+}
+
+function isInitialFundingAction(entry) {
+  return Number(entry?.roll) === 281 && /initial house passage/i.test(String(entry?.stage || ""));
 }
 
 function isServiceOrMissing(status) {

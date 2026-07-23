@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { groupOfficialSources } from "../lib/editorialIssuePresentation.mjs";
 
 export default function EditorialIssueExperience({ experience }) {
@@ -64,9 +65,18 @@ function AnalyticalFindings({ sections = [] }) {
 }
 
 function EpisodeCard({ episode, compact = false }) {
+  const [expanded, setExpanded] = useState(false);
+  const actionLabel = episode.actionCount === 1 ? "View episode" : `View episode and ${episode.actionCount} related actions`;
+  const showTrajectoryDetail = episode.actionCount > 1
+    && episode.memberTrajectoryDetail
+    && normalizeText(episode.memberTrajectoryDetail) !== normalizeText(episode.memberTrajectory);
   return (
-    <details className="rounded-xl border border-cyan-900/15 bg-white shadow-[0_7px_20px_rgba(15,23,42,0.04)]" data-episode-id={episode.id}>
-      <summary className="cursor-pointer list-none px-3 py-3 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-800 sm:px-4">
+    <details
+      className="group rounded-xl border border-cyan-900/15 bg-white shadow-[0_7px_20px_rgba(15,23,42,0.04)]"
+      data-episode-id={episode.id}
+      onToggle={(event) => setExpanded(event.currentTarget.open)}
+    >
+      <summary aria-expanded={expanded} className="cursor-pointer list-none px-3 py-3 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-800 sm:px-4">
         <span className="flex items-start justify-between gap-3">
           <span>
             <span className="block text-[11px] uppercase tracking-[0.14em] text-stone-500">{episode.periodLabel}{episode.dateSpan ? ` · ${episode.dateSpan}` : ""}</span>
@@ -79,11 +89,15 @@ function EpisodeCard({ episode, compact = false }) {
           {episode.actions.map((action) => <ActionChip action={action} key={action.id} />)}
         </span>
         {episode.conclusionRelevance && !compact ? <span className="mt-2 block text-xs font-medium leading-5 text-cyan-900">{episode.conclusionRelevance}</span> : null}
+        <span className="mt-3 flex items-center gap-2 text-xs font-semibold text-cyan-950">
+          <span>{actionLabel}</span>
+          <span aria-hidden="true" className="text-base leading-none transition-transform group-open:rotate-90">›</span>
+        </span>
       </summary>
       <div className="border-t border-stone-200 px-3 pb-3 pt-3 sm:px-4 sm:pb-4">
         <EpisodeFact title="What this episode was about" text={episode.sharedQuestion} />
         {episode.materialDifferences ? <EpisodeFact title="How the proposals changed" text={episode.materialDifferences} /> : null}
-        <EpisodeFact title="The member's record across the episode" text={episode.memberTrajectory} />
+        {showTrajectoryDetail ? <EpisodeFact title="The member's record across the episode" text={episode.memberTrajectoryDetail} /> : null}
         <div className="mt-3 grid gap-2.5">
           {episode.actions.map((action) => <ActionReceipt record={action} key={action.id} />)}
         </div>
@@ -238,4 +252,8 @@ function OfficialSources({ sources = [] }) {
 
 function humanize(value) {
   return String(value || "").replace(/[-_]+/g, " ");
+}
+
+function normalizeText(value) {
+  return String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }

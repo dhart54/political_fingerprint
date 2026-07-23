@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+from datetime import date
 
 
 VALID_ACTIONS = {
@@ -113,6 +114,22 @@ def inference_evidence_view(inference: dict) -> dict:
     return {key: deepcopy(value) for key, value in inference.items() if key not in excluded}
 
 
+def classify_missing_action_status(*, action_date: str, service_start_date: str | None = None,
+                                   service_end_date: str | None = None,
+                                   service_date_precision: str | None = None) -> str:
+    """Classify a missing action only when exact day-level eligibility is established."""
+    if service_date_precision != "day":
+        return "Missing Evidence"
+    action_day = _iso_date(action_date, "action_date")
+    start_day = _iso_date(service_start_date, "service_start_date") if service_start_date else None
+    end_day = _iso_date(service_end_date, "service_end_date") if service_end_date else None
+    if start_day and action_day < start_day:
+        return "Not Yet Serving"
+    if end_day and action_day > end_day:
+        return "No Longer Serving"
+    return "Missing Evidence"
+
+
 def _normalize_contract(value: dict) -> dict:
     result = _required_mapping(value, (
         "episode_set_id", "version", "episode_map_path", "expected_substantive_roll_ids",
@@ -179,3 +196,10 @@ def _required_text(value, field: str) -> str:
     if not isinstance(value, str) or not value.strip():
         raise ValueError(f"missing required overlay field: {field}")
     return value
+
+
+def _iso_date(value: str, field: str) -> date:
+    try:
+        return date.fromisoformat(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"{field} must be an exact ISO date") from exc

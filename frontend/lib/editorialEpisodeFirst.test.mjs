@@ -37,8 +37,11 @@ test("shared Justice actions are member-neutral and overlays change only identit
     const rendered = [
       ["Yea", "Alex Yea"],
       ["Nay", "Blair Nay"],
+      ["Present", "Parker Present"],
       ["Not Voting", "Casey Absent"],
       ["not yet serving", "Drew New"],
+      ["no longer serving", "Evan Former"],
+      ["missing evidence", "Morgan Missing"],
     ].map(([status, name]) => {
       const overlay = buildMemberActionOverlay({
         ...shared,
@@ -50,8 +53,11 @@ test("shared Justice actions are member-neutral and overlays change only identit
     });
     assert.ok(rendered[0].overlay.actionAndResult.includes("Yea"));
     assert.ok(rendered[1].overlay.actionAndResult.includes("Nay"));
-    assert.ok(rendered[2].overlay.actionAndResult.includes("Not Voting"));
-    assert.equal(rendered[3].overlay.actionAndResult, "This action occurred before the member began serving in Congress.");
+    assert.ok(rendered[2].overlay.actionAndResult.includes("Present"));
+    assert.ok(rendered[3].overlay.actionAndResult.includes("Not Voting"));
+    assert.equal(rendered[4].overlay.actionAndResult, "This action occurred before the member began serving in Congress.");
+    assert.match(rendered[5].overlay.actionAndResult, /after the member's congressional service ended/i);
+    assert.match(rendered[6].overlay.actionAndResult, /expected evidence record is unavailable/i);
     assert.ok(rendered.every((item) => item.sharedFacts === sharedFacts));
   }
 });
@@ -127,7 +133,8 @@ test("the three reviewed slices expose the requested bounded episode-first hiera
   assert.equal(justice.featuredEpisodes.length, 5);
   assert.equal(justice.episodes[0].actions.length, 3);
   assert.equal(massie.publicPresentation.strengthLabel, "A clear policy divide in the reviewed record");
-  assert.match(massie.episodes[0].memberTrajectory, /Opposed the certification condition.*opposed the later permanent framework/i);
+  assert.equal(massie.episodes[0].memberTrajectory, "Opposed all three reviewed fentanyl actions.");
+  assert.match(massie.episodes[0].memberTrajectoryDetail, /Massie voted Nay.*H\.R\. 27.*Senate framework/i);
   for (const experience of [economy, justice, massie]) {
     assert.ok(experience.featuredEpisodes.length <= 5);
     assert.equal(experience.records.length, experience.episodes.flatMap((item) => item.actions).length + experience.ungroupedRecords.length + experience.proceduralRecords.length);
@@ -142,6 +149,8 @@ test("rich renderer is bounded by disclosure and omits legacy methodology and to
   assert.doesNotMatch(renderer, /How to read this conclusion|Coverage of this conclusion|Evidence group overview|Official contact metadata|rerun this inference/i);
   assert.match(route, /!editorialExperience \? <EvidenceGroupingPreview/);
   assert.match(route, /!editorialExperience \? \(/);
+  assert.match(route, /group\.rows\.filter\(\(row\) => row\.domain !== selectedRow\.domain\)/);
+  assert.match(route, /state\.status === "ready" && hasOtherIssueRows/);
 });
 
 test("member-neutral shared evidence module contains no reviewed member names", async () => {

@@ -3,7 +3,9 @@ from pathlib import Path
 
 import pytest
 
-from backend.app.summaries.editorial_member_overlay import build_member_overlay
+import json
+
+from backend.app.summaries.editorial_member_overlay import build_member_overlay, classify_missing_action_status
 
 
 PUBLICATION = {"editorial_status": "human_approval_pending", "benchmark_status": "not_promoted", "production_eligible": False}
@@ -90,6 +92,24 @@ def test_explicit_missing_evidence_is_an_in_service_gap():
     assert value["coverage"]["missing_actions"] == 1
     assert value["coverage"]["expected_in_service_actions"] == 3
     assert value["episode_trajectories"][0]["coverage_status"] == "partial"
+
+
+def test_service_eligibility_requires_exact_dates_and_year_only_real_rows_fail_closed():
+    assert classify_missing_action_status(action_date="2025-02-06", service_start_date="2025-04-01", service_date_precision="year") == "Missing Evidence"
+    assert classify_missing_action_status(action_date="2025-02-06", service_start_date="2025-04-01", service_date_precision="day") == "Not Yet Serving"
+    assert classify_missing_action_status(action_date="2025-06-12", service_end_date="2025-05-01", service_date_precision="day") == "No Longer Serving"
+
+    metadata_path = Path(__file__).parents[2] / "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service.json"
+    rows = json.loads(metadata_path.read_text(encoding="utf-8"))
+    partial_service_candidates = [row for row in rows if row["bioguide_id"] in {"G000606", "W000831"}]
+    assert len(partial_service_candidates) == 2
+    for row in partial_service_candidates:
+        assert row["service_date_precision"] == "year"
+        assert classify_missing_action_status(
+            action_date="2025-02-06",
+            service_start_date=f'{row["service_start_year"]}-01-01',
+            service_date_precision=row["service_date_precision"],
+        ) == "Missing Evidence"
 
 
 @pytest.mark.parametrize("rows,match", [

@@ -1,5 +1,6 @@
 import { justiceEpisodePresentation } from "./editorialEpisodeMetadata.mjs";
 import { buildSharedLegislativeAction, neutralizeSharedSources } from "./editorialSharedEvidence.mjs";
+import { firstCompleteSentence } from "./editorialTextIntegrity.mjs";
 import { justiceEditorialIssueFixtureData } from "./justiceEditorialRenderFixture.mjs";
 import { justiceCrossMemberValidationData } from "./justiceCrossMemberValidationData.mjs";
 import { valerieFousheeJusticePublicSafetyEditorialGold } from "./valerieFousheeJusticePublicSafetyEditorialGold.mjs";
@@ -89,7 +90,11 @@ export function buildJusticeMemberReviewCandidate({ overlay, inference, synthesi
       reviewedPeriod: "119th Congress",
     }),
     episodePresentation: justiceEpisodePresentation,
-    memberEpisodeTrajectories: Object.freeze(overlay.episode_trajectories),
+    standardizationFixture: overlay.member.bioguide_id === "M001184" ? Object.freeze({
+      designation: "human_reviewed_presentation_fixture",
+      fixtureId: "massie-justice-reference-v1",
+    }) : undefined,
+    memberEpisodeTrajectories: Object.freeze(reviewedEpisodeTrajectories(overlay)),
     publication: Object.freeze({
       editorialStatus: "human_approval_pending",
       benchmarkStatus: "not_promoted",
@@ -190,8 +195,35 @@ function actionHeadline(practicalChoice = "this legislative action", action) {
 }
 
 function outcomeSentence(value = "") {
-  const first = String(value).split(/(?<=\.)\s+/)[0]?.trim();
+  const first = firstCompleteSentence(value);
   return first ? ` ${first}` : "";
+}
+
+function reviewedEpisodeTrajectories(overlay) {
+  const shortName = memberShortName(overlay.member);
+  const actionsByRoll = new Map(overlay.roll_actions.map((item) => [Number(item.roll), item.action]));
+  return overlay.episode_trajectories.map((trajectory) => {
+    if (trajectory.episode_id === "dc-policing-reform-repeal") {
+      const verb = actionsByRoll.get(299) === "Yea" ? "Supported" : actionsByRoll.get(299) === "Nay" ? "Opposed" : "Was not recorded on";
+      return {
+        ...trajectory,
+        member_trajectory: `${verb} the proposal to repeal most provisions of D.C.'s 2022 policing reform law.`,
+      };
+    }
+    if (trajectory.episode_id !== "halt-fentanyl-legislative-path") return trajectory;
+    const actions = [32, 33, 166].map((roll) => actionsByRoll.get(roll));
+    const allNay = actions.every((action) => action === "Nay");
+    const fousheeShape = actions.join("/") === "Yea/Nay/Yea";
+    return {
+      ...trajectory,
+      member_trajectory: allNay
+        ? "Opposed all three reviewed fentanyl actions."
+        : fousheeShape
+          ? "Supported the certification condition, opposed the earlier House bill, and supported the later permanent framework."
+          : trajectory.member_trajectory,
+      member_trajectory_detail: `${shortName} voted ${actions[0]} on the proposed certification condition, ${actions[1]} on H.R. 27 after that condition failed, and ${actions[2]} on the related but different Senate framework containing research provisions.`,
+    };
+  });
 }
 
 function actionSentence(action) {

@@ -352,6 +352,74 @@ test("episode and action disclosures preserve the complete Economy record and re
   await assertNoHorizontalOverflow(page);
 });
 
+test("reference fixtures apply hardened public copy, dates, and selected-issue suppression", async ({ page }) => {
+  await page.goto("/golden-render-fixture#foushee-economy-editorial-gold");
+  const economyFixture = page.getByTestId("foushee-economy-editorial-gold");
+  const economy = economyFixture.getByTestId("editorial-issue-experience");
+  await expect(economy.getByText("Sep. 19–Nov. 12, 2025", { exact: false }).first()).toBeVisible();
+  await expect(economy.getByText("May 15, 2025", { exact: false })).toHaveCount(0);
+  await expect(economyFixture.locator("section[aria-label='Explore all issue evidence']")).toHaveCount(0);
+
+  const government = economy.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id='government_funding_hr5371']");
+  const governmentSummary = government.locator(":scope > summary");
+  await expect(governmentSummary).toHaveAttribute("aria-expanded", "false");
+  await expect(governmentSummary.getByText("View episode and 2 related actions", { exact: true })).toBeVisible();
+  await governmentSummary.click();
+  await expect(governmentSummary).toHaveAttribute("aria-expanded", "true");
+  await expect(government.getByText(/Foushee voted Nay on the September House proposal and Nay on the materially revised Senate package/i)).toBeVisible();
+  const initialFunding = government.getByTestId("editorial-record-roll-281");
+  await initialFunding.locator(":scope > summary").click();
+  await initialFunding.getByText("Arguments, context, and official sources", { exact: true }).click();
+  await expect(initialFunding.getByText("This vote concerned the September House proposal, not the materially revised Senate package the House accepted in November and that became law.", { exact: true })).toBeVisible();
+  const initialText = await initialFunding.innerText();
+  expect((initialText.match(/do not establish the member's reason for voting/gi) || []).length).toBe(1);
+  expect(initialText).not.toMatch(/This was not a vote on the final enacted package|A Nay does not explain/i);
+
+  const justiceFixture = page.getByTestId("foushee-justice-editorial-gold");
+  const justice = justiceFixture.getByTestId("editorial-issue-experience");
+  await expect(justiceFixture.locator("section[aria-label='Explore all issue evidence']")).toHaveCount(0);
+  const dc = justice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id='dc-policing-reform-repeal']");
+  await dc.locator(":scope > summary").click();
+  await expect(dc.getByText("Whether to approve a proposal to repeal most provisions of D.C.'s 2022 policing reform law.", { exact: true })).toBeVisible();
+  await expect(dc.getByText("The member's record across the episode", { exact: true })).toHaveCount(0);
+  await expect(dc.locator(":scope > summary").getByText("View episode", { exact: true })).toBeVisible();
+});
+
+test("Massie receipts preserve complete H.R. results and differentiated fentanyl trajectory", async ({ page }) => {
+  await page.goto("/golden-render-fixture#justice-cross-member-M001184");
+  const fixture = page.getByTestId("justice-cross-member-M001184");
+  const slice = fixture.getByTestId("editorial-issue-experience");
+  await expect(fixture.locator("section[aria-label='Explore all issue evidence']")).toHaveCount(0);
+  const fentanyl = slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id='halt-fentanyl-legislative-path']");
+  await expect(fentanyl.locator(":scope > summary")).toContainText("Opposed all three reviewed fentanyl actions.");
+  await fentanyl.locator(":scope > summary").click();
+  await expect(fentanyl.getByText("Massie voted Nay on the proposed certification condition, Nay on H.R. 27 after that condition failed, and Nay on the related but different Senate framework containing research provisions.", { exact: true })).toBeVisible();
+  await expect(fentanyl.getByTestId("editorial-record-roll-32")).toContainText("Massie voted Nay. The amendment failed; the House then passed H.R. 27 without it.");
+  await expect(fentanyl.getByTestId("editorial-record-roll-33")).toContainText("Massie voted Nay. H.R. 27 passed the House but did not itself become law.");
+  expect(await slice.innerText()).not.toMatch(/Foushee|Massie voted Yea.*H\.R\. 27/i);
+  const retired = slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id='retired-service-weapon-purchases']");
+  await expect(retired.locator(":scope > summary")).toContainText("Yea · roll 130");
+  await retired.locator(":scope > summary").click();
+  await expect(retired.getByText("The member's record across the episode", { exact: true })).toHaveCount(0);
+});
+
+test("synthetic large record keeps five featured episodes and all 24 actions in the complete hierarchy", async ({ page }) => {
+  await page.goto("/golden-render-fixture#synthetic-large-editorial-fixture");
+  const slice = page.getByTestId("synthetic-large-editorial-fixture").getByTestId("editorial-issue-experience");
+  await expect(slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(5);
+  await expect(slice.locator("details[open]")).toHaveCount(0);
+  const complete = slice.getByTestId("complete-reviewed-record");
+  await complete.locator(":scope > summary").click();
+  await expect(complete.locator("details[data-episode-id]")).toHaveCount(12);
+  await expect(complete.locator("details[data-testid^='editorial-record-roll-']")).toHaveCount(25);
+  await expect(complete.locator("details[data-action-status='yea']")).toHaveCount(24);
+  await expect(complete.getByText("118th Congress", { exact: true }).first()).toBeVisible();
+  await expect(complete.getByText("119th Congress", { exact: true }).first()).toBeVisible();
+  await expect(complete.getByText("Not Voting actions", { exact: true })).toBeVisible();
+  await expect(complete.getByText("Procedural voting context", { exact: true })).toBeVisible();
+  await assertNoHorizontalOverflow(page);
+});
+
 test("episode-first summary stays bounded and overflow-free across responsive widths", async ({ page }) => {
   for (const viewport of [{ width: 1440, height: 1000 }, { width: 768, height: 1024 }, { width: 390, height: 844 }]) {
     await page.setViewportSize(viewport);

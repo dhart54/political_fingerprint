@@ -33,9 +33,13 @@ const economyCandidate = Object.freeze({
   }),
   episodeByRoll: economyEpisodeByRoll,
   episodePresentation: economyEpisodePresentation,
+  standardizationFixture: Object.freeze({
+    designation: "human_reviewed_presentation_fixture",
+    fixtureId: "foushee-economy-reference-v1",
+  }),
   memberEpisodeTrajectories: Object.freeze([
-    trajectory("government_funding_hr5371", "Opposed both reviewed stages of the 2025 government-funding episode."),
-    trajectory("budget_framework_hconres14", "Opposed both reviewed stages of the FY2025–FY2034 budget-framework episode."),
+    trajectory("government_funding_hr5371", "Opposed both reviewed stages of the 2025 government-funding episode.", "Foushee voted Nay on the September House proposal and Nay on the materially revised Senate package the House accepted in November."),
+    trajectory("budget_framework_hconres14", "Opposed both reviewed stages of the FY2025–FY2034 budget-framework episode.", "Foushee voted Nay on the initial House budget framework and Nay on the later Senate-revised framework."),
     trajectory("milcon_va_hr3944", "Opposed the reviewed House military-construction and veterans funding proposal."),
     trajectory("sba_loan_eligibility_hr2966", "Opposed the reviewed immigration-status restrictions on SBA-backed loan eligibility."),
   ]),
@@ -58,7 +62,7 @@ const economyCandidate = Object.freeze({
   }),
 });
 
-const fousheeJusticeCandidate = justiceReviewCandidateForMember("F000477", Object.freeze({
+const fousheeJusticeCandidateSource = justiceReviewCandidateForMember("F000477", Object.freeze({
   primary: "Across the reviewed record, Foushee supported public-safety measures tied to reporting, research, or explicit safeguards, while opposing proposals that expanded police tools or authority or rolled back D.C. policing protections. Her fentanyl votes show that this was not blanket opposition to enforcement: she supported a certification condition, opposed the earlier House bill, and later supported a related permanent framework with research provisions.",
   evidenceBreadth: "A selective pattern in the reviewed record",
   readerFacingLabel: "A selective pattern in the reviewed record",
@@ -73,6 +77,14 @@ const fousheeJusticeCandidate = justiceReviewCandidateForMember("F000477", Objec
   }),
   votingContext: "Foushee voted with the majority of House Democrats on all 7 substantive actions reviewed.",
 }));
+
+const fousheeJusticeCandidate = Object.freeze({
+  ...fousheeJusticeCandidateSource,
+  standardizationFixture: Object.freeze({
+    designation: "human_reviewed_presentation_fixture",
+    fixtureId: "foushee-justice-reference-v1",
+  }),
+});
 
 export const reviewEditorialIssueSlices = Object.freeze([economyCandidate, fousheeJusticeCandidate]);
 
@@ -102,6 +114,6 @@ function finding(episodeId, text) {
   return Object.freeze({ episodeId, text });
 }
 
-function trajectory(episode_id, member_trajectory) {
-  return Object.freeze({ episode_id, member_trajectory, coverage_status: "complete" });
+function trajectory(episode_id, member_trajectory, member_trajectory_detail = "") {
+  return Object.freeze({ episode_id, member_trajectory, member_trajectory_detail, coverage_status: "complete" });
 }
