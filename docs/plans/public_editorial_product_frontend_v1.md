@@ -75,6 +75,9 @@
 
 - Initial rendered review showed the issue-readiness grid dominating the top of the evidence panel. It was moved below the selected issue experience and the compact jump navigation was kept above it.
 - One local development request returned a transient 500 while source files were hot-reloading; the final clean 17-case Playwright run and production build passed.
+- Pre-merge correction pass: authoritative `inference_candidate.coverage` now takes precedence over interpretation-array derivation, so omitted interpretations cannot shrink expected denominators. Supported incomplete records retain the upstream bounded conclusion while disclosing missing actions and episodes; contested and insufficient inference states remain suppressed.
+- Pre-merge correction pass: arbitrary `why_conclusion_does_not_go_further` prose no longer reaches public surfaces. Limits now come from structured coverage, generic motive/sample boundaries, future-review language, and explicitly public-safe limitation fields.
+- Pre-merge correction pass: exception selection retains episode metadata, removes semantic duplicates, prioritizes explicitly public and weakening/conflicting evidence, and then selects relevant caveats across distinct episodes before global limitations. The Justice summary now retains the fentanyl, D.C. pursuit, and partial-repeal boundaries while vote-level caveats remain available.
 
 ## Validation Results
 
@@ -87,6 +90,7 @@
 - Production-registry and editorial-source diff: empty against `origin/main`.
 - Runtime genericity scan: no member names, selected-member IDs, roll-number conditionals, candidate IDs, or party conditionals in the changed editorial runtime path. Existing domain catalogs in `profileNarrative.mjs` remain unchanged in purpose.
 - Visual review: conclusion-first desktop, 390 px mobile, outer review-harness separation, developing, fallback, procedural-only, grouped-source, and production-gate states reviewed. Fifteen screenshots are in the untracked local review bundle.
+- Pre-merge correction validation: 113 frontend Node tests and 42 focused backend/content/inference tests passed; the Playwright suite passed 16 runnable cases with the opt-in screenshot capture skipped; ESLint and the production build/type check passed with the same eight pre-existing hook warnings. Production-registry/editorial-source isolation and `git diff --check` passed.
 
 ## Production Writes
 

@@ -39,6 +39,10 @@ Party alignment is secondary voting context, never the finding. Procedural recor
 
 Incomplete evidence is a coverage statement, not evidence that the representative has no position. Missing expected records must be disclosed. `Not Voting` and `Present` are reported as actions, not folded into substantive Yes/No counts.
 
+When `inference_candidate.coverage` is present, its expected and observed action counts, Yes/No, Present, Not Voting, missing-action counts, and complete/partial/missing episode counts are authoritative. Interpretation-array counting is a legacy fallback only when the complete structured coverage object is absent. A supported upstream conclusion may remain visible with an explicitly disclosed coverage gap; contested and insufficient upstream inference states remain developing and limited, respectively.
+
+Public limitations are generated from structured coverage plus explicitly public-safe limitation fields. Arbitrary internal methodology prose is not rendered. Summary exceptions prefer explicitly public exceptions, then weakening or conflicting evidence, then relevant caveats from distinct episodes, with semantic deduplication and a four-item limit. Additional measure-specific caveats remain in their vote cards.
+
 ## Public-copy glossary
 
 Internal analytical and workflow terms stay outside public surfaces. The adapter owns these translations:

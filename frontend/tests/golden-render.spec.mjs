@@ -107,7 +107,7 @@ test("Foushee economy issue read is episode-aware and keeps secondary context bo
   await expect(slice.getByText(/does not explain why Foushee voted that way/)).toBeVisible();
   await expect(slice.getByText(/repeated stages are not separate policy positions/)).toBeVisible();
   await expect(slice.getByText("How to read this conclusion", { exact: true })).toBeVisible();
-  await expect(slice.getByText(/Repeated votes across independent policy episodes may support broader voting themes/)).toBeVisible();
+  await expect(slice.getByText(/This sample covers 4 independent policy episodes and does not represent the member's complete record/i)).toBeVisible();
   await expect(slice.getByText(/A voter who favored|A voter who opposed/)).toHaveCount(0);
 });
 
@@ -210,6 +210,11 @@ test("Foushee Justice read preserves episodes, optional arguments, controls, and
   await expect(slice.getByText("A selective pattern in the reviewed record", { exact: true })).toBeVisible();
   await expect(slice.getByText(/Across one fentanyl episode/i)).toBeVisible();
   await expect(slice.getByText(/Across independent reporting and fentanyl episodes/i)).toBeVisible();
+  const publicText = await slice.innerText();
+  expect(publicText).not.toMatch(/bounded conditional|bounded selective|\bcandidate\b|\binference\b|annotations|immutable|bounded_selective_pattern|bounded_repeated_pattern|bounded_conditional_boundary|contested_candidate|insufficient_evidence|human_approval_pending|not_promoted|productionEligible|production eligible/i);
+  await expect(slice.getByText("Later support for a permanent enforcement framework means the record is not blanket opposition to fentanyl enforcement.", { exact: true })).toBeVisible();
+  await expect(slice.getByText("The substitute included risk and effectiveness exceptions, so it was not an unconditional pursuit mandate.", { exact: true })).toBeVisible();
+  await expect(slice.getByText("The substitute retained exceptions and did not repeal every provision of the D.C. law.", { exact: true })).toBeVisible();
   await expect(fixture.getByText("Additional reviewed vote list", { exact: true })).toHaveCount(0);
 
   const reporting = slice.getByTestId("editorial-record-roll-131");

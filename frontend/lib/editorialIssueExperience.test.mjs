@@ -254,9 +254,124 @@ test("public presentation maps internal inference levels without exposing workfl
   const publicView = buildPublicEditorialPresentation(justiceCandidate, justiceRows);
   const serialized = JSON.stringify(publicView);
   assert.equal(publicView.strengthLabel, "A selective pattern in the reviewed record");
-  assert.doesNotMatch(serialized, /bounded_selective_pattern|candidate_id|support_balance|rerun this inference|annotations|human_approval_pending|not_promoted|productionEligible/i);
+  assert.doesNotMatch(serialized, /bounded conditional|bounded selective|bounded_selective_pattern|candidate_id|support_balance|candidate|inference|annotations|immutable|human_approval_pending|not_promoted|productionEligible/i);
   assert.ok(publicView.exceptions.length > 0);
   assert.ok(publicView.patterns.every((item) => !/Within one episode:|Across independent episodes:/i.test(item)));
+  assert.match(publicView.limits.join(" "), /does not represent the member's complete record/i);
+  assert.match(publicView.limits.join(" "), /does not establish motive/i);
+});
+
+test("authoritative coverage keeps fail-closed denominators and action counts", () => {
+  const candidate = cloneCandidate(justiceCandidate);
+  candidate.source.interpretations = candidate.source.interpretations.slice(0, 6);
+  candidate.source.inference_candidate.coverage = {
+    substantive_rolls_expected: 7,
+    substantive_rolls_observed: 6,
+    substantive_yes_no_actions: 4,
+    present_actions: 1,
+    not_voting_actions: 1,
+    missing_actions: 1,
+    independent_episodes_expected: 5,
+    independent_episodes_complete: 3,
+    independent_episodes_partial: 1,
+    independent_episodes_missing: 1,
+  };
+
+  const publicView = buildPublicEditorialPresentation(candidate, justiceRows.slice(0, 6));
+  const coverage = publicView.coverage;
+  assert.equal(coverage.usesAuthoritativeCoverage, true);
+  assert.equal(coverage.expectedVotes, 7);
+  assert.equal(coverage.observedVotes, 6);
+  assert.equal(coverage.yesNoVotes, 4);
+  assert.equal(coverage.present, 1);
+  assert.equal(coverage.notVoting, 1);
+  assert.equal(coverage.missingVotes, 1);
+  assert.equal(coverage.expectedEpisodes, 5);
+  assert.equal(coverage.completeEpisodes, 3);
+  assert.equal(coverage.partialEpisodes, 1);
+  assert.equal(coverage.missingEpisodes, 1);
+  assert.equal(coverage.completeForSelectedSet, false);
+  assert.equal(coverage.state, PUBLIC_COVERAGE_STATE.reviewedConclusion);
+  assert.match(publicView.conclusion, /selective, guardrail-oriented approach/i);
+  assert.match(coverage.message, /1 expected vote record is not available/i);
+  assert.match(coverage.message, /1 independent policy episode is missing/i);
+  assert.match(coverage.message, /1 action was Present/i);
+  assert.match(coverage.message, /1 action was Not Voting/i);
+});
+
+test("authoritative coverage preserves upstream contested and insufficient states", () => {
+  const contested = cloneCandidate(justiceCandidate);
+  contested.source.inference_candidate.inference_level = "contested_candidate";
+  contested.source.inference_candidate.coverage = {
+    substantive_rolls_expected: 7,
+    substantive_rolls_observed: 6,
+    substantive_yes_no_actions: 6,
+    present_actions: 0,
+    not_voting_actions: 0,
+    missing_actions: 1,
+    independent_episodes_expected: 5,
+    independent_episodes_complete: 4,
+    independent_episodes_partial: 0,
+    independent_episodes_missing: 1,
+  };
+  const contestedView = buildPublicEditorialPresentation(contested, justiceRows.slice(0, 6));
+  assert.equal(contestedView.coverage.state, PUBLIC_COVERAGE_STATE.developingRecord);
+  assert.equal(contestedView.conclusion, null);
+
+  const insufficient = cloneCandidate(contested);
+  insufficient.source.inference_candidate.inference_level = "insufficient_evidence";
+  const insufficientView = buildPublicEditorialPresentation(insufficient, justiceRows.slice(0, 6));
+  assert.equal(insufficientView.coverage.state, PUBLIC_COVERAGE_STATE.limitedEvidence);
+  assert.equal(insufficientView.conclusion, null);
+});
+
+test("legacy slices without structured coverage continue to derive coverage", () => {
+  const candidate = cloneCandidate(justiceCandidate);
+  delete candidate.source.inference_candidate.coverage;
+  const coverage = buildEditorialCoverage(candidate, justiceRows);
+  assert.equal(coverage.usesAuthoritativeCoverage, false);
+  assert.equal(coverage.expectedVotes, 7);
+  assert.equal(coverage.expectedEpisodes, 5);
+  assert.equal(coverage.completeForSelectedSet, true);
+});
+
+test("public exceptions prioritize explicit and weakening evidence, deduplicate, and span episodes", () => {
+  const candidate = cloneCandidate(justiceCandidate);
+  candidate.synthesis.exceptions = [
+    { episode_id: "public-episode", text: "An explicitly reviewed public exception." },
+    { episode_id: "public-episode", text: "An explicitly reviewed public exception!" },
+  ];
+  candidate.source.inference_candidate.weakening_independent_episodes = [{ episode_id: "weakening-episode", weight: -2 }];
+  candidate.source.inference_candidate.contrary_or_limiting_evidence = [
+    { episode_id: "ordinary-one", text: "An ordinary limitation from one episode." },
+    { episode_id: "weakening-episode", text: "A material conflict from the weakening episode." },
+    { episode_id: "ordinary-two", text: "A distinct limitation from another episode." },
+    { episode_id: null, text: "A global limitation that should come later." },
+    { episode_id: null, text: "Recompute the inference from expanded annotations." },
+  ];
+  candidate.source.inference_candidate.episode_annotations = [];
+
+  const exceptions = buildPublicEditorialPresentation(candidate, justiceRows).exceptions;
+  assert.equal(exceptions.length, 4);
+  assert.equal(exceptions.filter((text) => /explicitly reviewed public exception/i.test(text)).length, 1);
+  assert.equal(exceptions[0], "An explicitly reviewed public exception.");
+  assert.equal(exceptions[1], "A material conflict from the weakening episode.");
+  assert.ok(exceptions.includes("An ordinary limitation from one episode."));
+  assert.ok(exceptions.includes("A distinct limitation from another episode."));
+  assert.equal(exceptions.some((text) => /global limitation/i.test(text)), false);
+  assert.equal(exceptions.some((text) => /inference|annotations|recompute/i.test(text)), false);
+});
+
+test("Justice public exceptions retain material boundaries across distinct episodes", () => {
+  const experience = selectEditorialIssueExperience({ candidates: reviewEditorialIssueSlices, domain: "JUSTICE_PUBLIC_SAFETY", evidenceRows: justiceRows, legislator: editorialGoldLegislator, mode: "review" });
+  const exceptions = experience.publicPresentation.exceptions;
+  assert.ok(exceptions.length <= 4);
+  assert.ok(exceptions.some((text) => /later support for a permanent enforcement framework/i.test(text)));
+  assert.ok(exceptions.some((text) => /risk and effectiveness exceptions/i.test(text)));
+  assert.ok(exceptions.some((text) => /did not repeal every provision/i.test(text)));
+  const voteLevelContext = experience.records.find((record) => record.id === "roll-299").importantContext;
+  assert.ok(voteLevelContext.some((text) => /vote on a package does not isolate a view on each component/i.test(text)));
+  assert.equal(exceptions.some((text) => /vote on a package does not isolate a view on each component/i.test(text)), false);
 });
 
 test("coverage model distinguishes reviewed, developing, limited, unavailable, and procedural-only records", () => {

@@ -32,8 +32,8 @@ Expected local directory:
 
 ## Validation record
 
-- Frontend unit tests: 108 passed.
-- Responsive/accessibility Playwright checks: 17 passed.
+- Frontend unit tests: 113 passed, including authoritative coverage, public limitation, and episode-diverse exception selection cases.
+- Responsive/accessibility Playwright checks: 16 runnable cases passed; the seventeenth screenshot-capture case is intentionally opt-in and was skipped for the correction pass.
 - Focused civic/editorial backend regressions: 42 passed.
 - ESLint: passed with zero errors and eight pre-existing React hook warnings.
 - Production build and type validation: passed.

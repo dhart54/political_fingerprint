@@ -41,26 +41,58 @@ export function buildEditorialCoverage(candidate, evidenceRows = []) {
   const source = candidate?.source || {};
   const inference = source.inference_candidate || {};
   const interpretations = source.interpretations || [];
-  const expectedVotes = interpretations.length;
   const observedKeys = new Set(evidenceRows.map(rowKey));
-  const observedVotes = interpretations.filter((entry) => observedKeys.has(entryKey(candidate, entry))).length;
-  const yesNoVotes = interpretations.filter((entry) => isYesNoAction(entry.member_action)).length;
-  const notVoting = interpretations.filter((entry) => entry.member_action === "Not Voting").length;
-  const present = interpretations.filter((entry) => entry.member_action === "Present").length;
-  const expectedEpisodes = finiteNumber(source.slice_counts?.policy_episodes)
+  const structuredCoverage = hasStructuredCoverage(inference.coverage) ? inference.coverage : null;
+  const legacyExpectedVotes = interpretations.length;
+  const legacyObservedVotes = interpretations.filter((entry) => observedKeys.has(entryKey(candidate, entry))).length;
+  const legacyExpectedEpisodes = finiteNumber(source.slice_counts?.policy_episodes)
     ?? finiteNumber(inference.independent_episode_count)
     ?? countEpisodes(candidate, interpretations);
-  const observedEpisodes = countObservedEpisodes(candidate, interpretations, observedKeys);
-  const missingVotes = Math.max(expectedVotes - observedVotes, 0);
+  const legacyObservedEpisodes = countObservedEpisodes(candidate, interpretations, observedKeys);
+  const expectedVotes = structuredCoverage
+    ? coverageNumber(structuredCoverage, "substantive_rolls_expected")
+    : legacyExpectedVotes;
+  const observedVotes = structuredCoverage
+    ? coverageNumber(structuredCoverage, "substantive_rolls_observed")
+    : legacyObservedVotes;
+  const yesNoVotes = structuredCoverage
+    ? coverageNumber(structuredCoverage, "substantive_yes_no_actions")
+    : interpretations.filter((entry) => isYesNoAction(entry.member_action)).length;
+  const notVoting = structuredCoverage
+    ? coverageNumber(structuredCoverage, "not_voting_actions")
+    : interpretations.filter((entry) => entry.member_action === "Not Voting").length;
+  const present = structuredCoverage
+    ? coverageNumber(structuredCoverage, "present_actions")
+    : interpretations.filter((entry) => entry.member_action === "Present").length;
+  const missingVotes = structuredCoverage
+    ? coverageNumber(structuredCoverage, "missing_actions")
+    : Math.max(expectedVotes - observedVotes, 0);
+  const expectedEpisodes = structuredCoverage
+    ? coverageNumber(structuredCoverage, "independent_episodes_expected")
+    : legacyExpectedEpisodes;
+  const completeEpisodes = structuredCoverage
+    ? coverageNumber(structuredCoverage, "independent_episodes_complete")
+    : legacyObservedEpisodes;
+  const partialEpisodes = structuredCoverage
+    ? coverageNumber(structuredCoverage, "independent_episodes_partial")
+    : 0;
+  const missingEpisodes = structuredCoverage
+    ? coverageNumber(structuredCoverage, "independent_episodes_missing")
+    : Math.max(expectedEpisodes - legacyObservedEpisodes, 0);
+  const observedEpisodes = completeEpisodes + partialEpisodes;
   const inferenceLevel = String(inference.inference_level || "");
   const hasConclusion = Boolean(candidate?.synthesis?.primary)
     && inferenceLevel !== "insufficient_evidence"
     && inferenceLevel !== "contested_candidate";
   const state = hasConclusion
     ? PUBLIC_COVERAGE_STATE.reviewedConclusion
-    : observedEpisodes >= 2
-      ? PUBLIC_COVERAGE_STATE.developingRecord
-      : PUBLIC_COVERAGE_STATE.limitedEvidence;
+    : inferenceLevel === "insufficient_evidence"
+      ? PUBLIC_COVERAGE_STATE.limitedEvidence
+      : inferenceLevel === "contested_candidate"
+        ? PUBLIC_COVERAGE_STATE.developingRecord
+        : observedEpisodes >= 2
+          ? PUBLIC_COVERAGE_STATE.developingRecord
+          : PUBLIC_COVERAGE_STATE.limitedEvidence;
 
   return {
     state,
@@ -70,9 +102,13 @@ export function buildEditorialCoverage(candidate, evidenceRows = []) {
       expectedVotes,
       yesNoVotes,
       expectedEpisodes,
+      completeEpisodes,
+      partialEpisodes,
+      missingEpisodes,
       missingVotes,
       notVoting,
       present,
+      usesAuthoritativeCoverage: Boolean(structuredCoverage),
     }),
     reviewedPeriod: candidate?.identity?.reviewedPeriod || inference.reviewed_period,
     expectedVotes,
@@ -83,7 +119,11 @@ export function buildEditorialCoverage(candidate, evidenceRows = []) {
     missingVotes,
     expectedEpisodes,
     observedEpisodes,
-    completeForSelectedSet: missingVotes === 0,
+    completeEpisodes,
+    partialEpisodes,
+    missingEpisodes,
+    completeForSelectedSet: missingVotes === 0 && partialEpisodes === 0 && missingEpisodes === 0,
+    usesAuthoritativeCoverage: Boolean(structuredCoverage),
   };
 }
 
@@ -129,22 +169,58 @@ export function issueAvailabilityLabel({ hasEditorialSlice, row }) {
 }
 
 function buildExceptions(candidate, inference) {
-  const supplied = candidate?.synthesis?.exceptions || [];
+  const explicitlyPublic = (candidate?.synthesis?.exceptions || [])
+    .map((item, index) => exceptionEntry(item, { index, isPublic: true }));
   const inferred = (inference.contrary_or_limiting_evidence || [])
-    .map((item) => item?.text)
-    .filter((text) => text && !/complete .+ record|private motive|party alignment/i.test(text));
-  return [...supplied, ...inferred].map(cleanInternalLanguage).filter(Boolean).slice(0, 4);
+    .map((item, index) => exceptionEntry(item, { index }));
+  const annotationEntries = (inference.episode_annotations || []).flatMap((annotation, annotationIndex) => [
+    ...(annotation.contrary_or_limiting_evidence || []).map((text, index) => exceptionEntry(text, {
+      episodeId: annotation.episode_id,
+      index: annotationIndex * 100 + index,
+      direction: annotation.conclusion_effect?.direction,
+    })),
+    ...(annotation.package_vote_limitations || []).map((text, index) => exceptionEntry(text, {
+      episodeId: annotation.episode_id,
+      index: annotationIndex * 100 + 50 + index,
+      direction: annotation.conclusion_effect?.direction,
+      isPackageLimit: true,
+    })),
+  ]);
+  const weakeningEpisodes = new Set((inference.weakening_independent_episodes || [])
+    .map((episode) => episode?.episode_id)
+    .filter(Boolean));
+  for (const entry of [...inferred, ...annotationEntries]) {
+    if (weakeningEpisodes.has(entry.episodeId) || /weaken|conflict|contrar/i.test(entry.direction)) {
+      entry.isWeakening = true;
+    }
+  }
+
+  const entries = deduplicateExceptions([...explicitlyPublic, ...inferred, ...annotationEntries])
+    .filter((entry) => entry.text
+      && !/complete .+ record|private motive|party alignment/i.test(entry.text)
+      && !containsInternalMethodology(entry.text));
+  const selected = [];
+  addRankedExceptions(selected, entries.filter((entry) => entry.isPublic), { preferDiversity: false });
+  addRankedExceptions(selected, entries.filter((entry) => entry.isWeakening && !entry.isPublic), { preferDiversity: true, fillRemaining: false });
+  addRankedExceptions(selected, entries.filter((entry) => entry.episodeId && !entry.isPublic && !entry.isWeakening), { preferDiversity: true, fillRemaining: false });
+  addRankedExceptions(selected, entries.filter((entry) => entry.episodeId && !entry.isPublic), { preferDiversity: false });
+  addRankedExceptions(selected, entries.filter((entry) => !entry.episodeId && !entry.isPublic), { preferDiversity: false });
+  return selected.slice(0, 4).map((entry) => entry.text);
 }
 
 function buildLimits(candidate, inference, coverage) {
-  const supplied = inference.inference_level
-    ? ""
-    : cleanInternalLanguage(candidate?.synthesis?.howToRead);
-  const bounded = cleanInternalLanguage(inference.why_conclusion_does_not_go_further);
+  const explicitlyPublic = [
+    ...asArray(candidate?.synthesis?.publicLimitations),
+    ...asArray(inference.public_limitations),
+  ].map((item) => cleanInternalLanguage(typeof item === "string" ? item : item?.text)).filter(Boolean);
+  const sample = coverage.expectedEpisodes
+    ? `This sample covers ${plural(coverage.expectedEpisodes, "independent policy episode")} and does not represent the member's complete record on this issue.`
+    : "This reviewed sample does not represent the member's complete record on this issue.";
+  const motive = "The vote record alone does not establish motive.";
   const future = coverage.state === PUBLIC_COVERAGE_STATE.reviewedConclusion
     ? "This conclusion reflects the votes reviewed so far and may be refined as additional policy episodes are added."
     : "Additional reviewed policy episodes may make the record clearer.";
-  return [...new Set([supplied, bounded, future].filter(Boolean))];
+  return [...new Set([...explicitlyPublic, sample, motive, future])];
 }
 
 function cleanPattern(value) {
@@ -185,10 +261,25 @@ function coverageLabel(state) {
   }[state];
 }
 
-function coverageMessage({ state, expectedVotes, yesNoVotes, expectedEpisodes, missingVotes, notVoting, present }) {
+function coverageMessage({
+  state,
+  expectedVotes,
+  yesNoVotes,
+  expectedEpisodes,
+  completeEpisodes,
+  partialEpisodes,
+  missingEpisodes,
+  missingVotes,
+  notVoting,
+  present,
+  usesAuthoritativeCoverage,
+}) {
   const parts = [
-    `${plural(yesNoVotes, "substantive Yes/No vote")} across ${plural(expectedEpisodes, "independent policy episode")} ${yesNoVotes === 1 ? "was" : "were"} reviewed.`,
+    `${plural(yesNoVotes, "substantive Yes/No vote")} ${yesNoVotes === 1 ? "was" : "were"} reviewed across ${plural(completeEpisodes, "complete independent policy episode")}.`,
   ];
+  if (usesAuthoritativeCoverage) parts.push(`The selected set contains ${plural(expectedEpisodes, "expected independent policy episode")}.`);
+  if (partialEpisodes) parts.push(`${plural(partialEpisodes, "independent policy episode")} ${partialEpisodes === 1 ? "is" : "are"} partially covered.`);
+  if (missingEpisodes) parts.push(`${plural(missingEpisodes, "independent policy episode")} ${missingEpisodes === 1 ? "is" : "are"} missing.`);
   if (notVoting) parts.push(`${plural(notVoting, "action")} ${notVoting === 1 ? "was" : "were"} Not Voting.`);
   if (present) parts.push(`${plural(present, "action")} ${present === 1 ? "was" : "were"} Present.`);
   if (missingVotes) parts.push(`${plural(missingVotes, "expected vote record")} ${missingVotes === 1 ? "is" : "are"} not available.`);
@@ -227,6 +318,98 @@ function isYesNoAction(action) {
 
 function finiteNumber(value) {
   return Number.isFinite(value) ? value : null;
+}
+
+function hasStructuredCoverage(value) {
+  return Boolean(value && typeof value === "object" && !Array.isArray(value));
+}
+
+function coverageNumber(coverage, key) {
+  return Math.max(finiteNumber(coverage?.[key]) ?? 0, 0);
+}
+
+function asArray(value) {
+  if (Array.isArray(value)) return value;
+  return value ? [value] : [];
+}
+
+function exceptionEntry(item, options = {}) {
+  const rawText = typeof item === "string" ? item : item?.text;
+  const text = cleanInternalLanguage(rawText);
+  return {
+    text,
+    episodeId: options.episodeId ?? item?.episode_id ?? item?.episodeId ?? null,
+    direction: options.direction ?? item?.direction ?? "",
+    index: options.index ?? 0,
+    isPublic: Boolean(options.isPublic),
+    isWeakening: false,
+    isPackageLimit: Boolean(options.isPackageLimit),
+  };
+}
+
+function deduplicateExceptions(entries) {
+  const unique = [];
+  for (const entry of entries) {
+    if (!entry.text || unique.some((existing) => semanticallyEquivalent(existing.text, entry.text))) continue;
+    unique.push(entry);
+  }
+  return unique;
+}
+
+function semanticallyEquivalent(left, right) {
+  const leftKey = semanticKey(left);
+  const rightKey = semanticKey(right);
+  if (leftKey === rightKey) return true;
+  const leftTokens = new Set(leftKey.split(" ").filter(Boolean));
+  const rightTokens = new Set(rightKey.split(" ").filter(Boolean));
+  const union = new Set([...leftTokens, ...rightTokens]);
+  const overlap = [...leftTokens].filter((token) => rightTokens.has(token)).length;
+  return union.size > 0 && overlap / union.size >= 0.86;
+}
+
+function semanticKey(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\b(the|a|an|this|that|it|was|were|is|are)\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function containsInternalMethodology(value) {
+  return /\b(inference|annotations?|immutable|recomput(?:e|ation)|schema|support balance)\b|bounded[_ -](?:conditional|selective|repeated)|\b(?:candidate_id|inference_level)\b/i.test(value);
+}
+
+function addRankedExceptions(selected, candidates, { preferDiversity, fillRemaining = true }) {
+  if (selected.length >= 4 || !candidates.length) return;
+  const remaining = candidates
+    .filter((candidate) => !selected.some((entry) => semanticallyEquivalent(entry.text, candidate.text)))
+    .sort((left, right) => exceptionRelevance(right) - exceptionRelevance(left) || left.index - right.index);
+  if (preferDiversity) {
+    const usedEpisodes = new Set(selected.map((entry) => entry.episodeId).filter(Boolean));
+    for (const candidate of remaining) {
+      if (selected.length >= 4) return;
+      if (candidate.episodeId && !usedEpisodes.has(candidate.episodeId)) {
+        selected.push(candidate);
+        usedEpisodes.add(candidate.episodeId);
+      }
+    }
+  }
+  if (!fillRemaining) return;
+  for (const candidate of remaining) {
+    if (selected.length >= 4) return;
+    if (!selected.some((entry) => semanticallyEquivalent(entry.text, candidate.text))) selected.push(candidate);
+  }
+}
+
+function exceptionRelevance(entry) {
+  const text = entry.text.toLowerCase();
+  let score = entry.isPublic ? 1000 : entry.isWeakening ? 500 : entry.episodeId ? 100 : 0;
+  if (/not blanket|later support|related but not identical|actions differed|contrary|conflict/.test(text)) score += 40;
+  if (/exception|not unconditional|not every|retained|repeal most/.test(text)) score += 35;
+  if (entry.isPackageLimit || /combined|multiple|package/.test(text)) score += 25;
+  if (/does not establish|not itself evidence/.test(text)) score += 5;
+  return score;
 }
 
 function plural(value, singular) {
