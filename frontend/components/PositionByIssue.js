@@ -135,6 +135,12 @@ export default function PositionByIssue({
   const takeaway = buildTakeaway(rows);
   const selectedRow = rows.find((row) => row.domain === selectedDomain) || rows[0] || null;
   const startPlan = buildSixtySecondPlan(readinessGroups);
+  const hasSelectedEditorialSlice = Boolean(selectedRow) && hasEligibleEditorialSlice({
+    candidates: editorialCandidates,
+    domain: selectedRow.domain,
+    legislator,
+    mode: editorialMode,
+  });
 
   async function inspectDomain(domain) {
     setSelectedDomain(domain);
@@ -175,7 +181,7 @@ export default function PositionByIssue({
 
   return (
     <section id="position-by-issue" className="mt-4 rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.07)] lg:p-5">
-      <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(360px,0.72fr)_minmax(0,1.28fr)]">
+      {!hasSelectedEditorialSlice ? <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(360px,0.72fr)_minmax(0,1.28fr)]">
         <div className="min-w-0">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">
             Issue Evidence
@@ -228,7 +234,18 @@ export default function PositionByIssue({
             />
           ) : null}
         </div>
-      </div>
+      </div> : state.status === "ready" && rows.length > 1 ? (
+        <div className="mb-3">
+          <IssueNavigation
+            editorialCandidates={editorialCandidates}
+            editorialMode={editorialMode}
+            inspectDomain={inspectDomain}
+            legislator={legislator}
+            rows={rows}
+            selectedDomain={selectedDomain}
+          />
+        </div>
+      ) : null}
 
       <EvidencePanel
         editorialCandidates={editorialCandidates}
@@ -260,7 +277,7 @@ export default function PositionByIssue({
 function IssueNavigation({ editorialCandidates, editorialMode, inspectDomain, legislator, rows, selectedDomain }) {
   const navRows = (rows || []).filter((row) => row.recorded_votes > 0 || getInterpretedCount(row) > 0);
 
-  if (!navRows.length) {
+  if (navRows.length <= 1) {
     return null;
   }
 
@@ -270,7 +287,7 @@ function IssueNavigation({ editorialCandidates, editorialMode, inspectDomain, le
         <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">
           Jump to issue
         </p>
-        <span className="text-xs text-stone-500">{navRows.length} areas</span>
+        <span className="text-xs text-stone-500">{navRows.length} {navRows.length === 1 ? "area" : "areas"}</span>
       </div>
       <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
         {navRows.map((row) => {
@@ -521,7 +538,7 @@ function EvidencePanel({ editorialCandidates, editorialMode, evidenceState, legi
 
   return (
     <div id="position-evidence" className="mt-4 scroll-mt-6 rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 sm:px-4 lg:px-5">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      {!editorialExperience ? <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
             Evidence
@@ -537,7 +554,7 @@ function EvidencePanel({ editorialCandidates, editorialMode, evidenceState, legi
         >
           Show Votes
         </button>
-      </div>
+      </div> : null}
 
       {evidenceState.status === "idle" ? (
         <p className="mt-4 text-sm leading-7 text-stone-700">
@@ -578,7 +595,7 @@ function EvidencePanel({ editorialCandidates, editorialMode, evidenceState, legi
               />
             </>
           )}
-          {additionalEvidenceRows.length > 0 ? (
+          {!editorialExperience && additionalEvidenceRows.length > 0 ? (
             <ReviewedVoteList
               billGroups={billGroups}
               evidenceRows={additionalEvidenceRows}
@@ -590,13 +607,15 @@ function EvidencePanel({ editorialCandidates, editorialMode, evidenceState, legi
               setShowAllVotes={setShowAllVotes}
             />
           ) : null}
-          <EvidenceGroupingPreview evidenceGrouping={evidenceGrouping} />
-          <EvidenceUtilityPanel
-            domain={selectedRow.domain}
-            evidenceRows={evidenceRows}
-            legislator={legislator}
-            selectedEvidenceRow={selectedActionRow}
-          />
+          {!editorialExperience ? <EvidenceGroupingPreview evidenceGrouping={evidenceGrouping} /> : null}
+          {!editorialExperience ? (
+            <EvidenceUtilityPanel
+              domain={selectedRow.domain}
+              evidenceRows={evidenceRows}
+              legislator={legislator}
+              selectedEvidenceRow={selectedActionRow}
+            />
+          ) : null}
         </div>
       ) : null}
     </div>

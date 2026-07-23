@@ -1,200 +1,213 @@
 "use client";
 
-import { useId, useState } from "react";
-
-import { buildImportantContext, groupOfficialSources } from "../lib/editorialIssuePresentation.mjs";
+import { groupOfficialSources } from "../lib/editorialIssuePresentation.mjs";
 
 export default function EditorialIssueExperience({ experience }) {
-  const [openRecordId, setOpenRecordId] = useState(null);
   if (!experience) return null;
   const presentation = experience.publicPresentation;
 
   return (
     <section
-      aria-label={`${experience.identity.issueDisplayName} reviewed issue record`}
+      aria-label={`${experience.identity.memberDisplayName} ${experience.identity.issueDisplayName} reviewed issue record`}
       className="rounded-xl border border-cyan-900/20 bg-cyan-50/60 px-3 py-3 sm:px-4"
+      data-coverage-state={presentation.coverage?.state}
       data-public-surface="editorial-issue"
       data-testid="editorial-issue-experience"
     >
       <header>
-        <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">What the reviewed record suggests</p>
-        <h5 className="mt-1 font-serif text-[1.35rem] leading-tight text-stone-950 sm:text-[1.55rem]">
-          {experience.identity.memberDisplayName} {"\u2014"} {experience.identity.issueDisplayName}
-        </h5>
-        {experience.identity.reviewedPeriod ? (
-          <p className="mt-1 text-xs uppercase tracking-[0.12em] text-stone-500">{experience.identity.reviewedPeriod}</p>
-        ) : null}
-        {presentation.conclusion ? (
-          <p className="mt-3 max-w-[72ch] text-[1.05rem] leading-7 text-stone-900">{presentation.conclusion}</p>
-        ) : null}
-        {presentation.strengthLabel ? (
-          <p className="mt-3 w-fit rounded-full border border-cyan-900/15 bg-white px-3 py-1.5 text-xs font-medium text-cyan-950">
-            {presentation.strengthLabel}
-          </p>
-        ) : null}
+        <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">Reviewed issue record</p>
+        <h4 className="mt-1 font-serif text-[1.55rem] leading-tight text-stone-950 sm:text-[1.85rem]">
+          {experience.identity.memberDisplayName} {"—"} {experience.identity.issueDisplayName}
+        </h4>
+        {presentation.conclusion ? <p className="mt-3 max-w-[78ch] text-[1.08rem] leading-7 text-stone-900">{presentation.conclusion}</p> : null}
+        {presentation.strengthLabel ? <p className="mt-3 w-fit rounded-full border border-cyan-900/15 bg-white px-3 py-1.5 text-xs font-medium text-cyan-950">{presentation.strengthLabel}</p> : null}
+        {presentation.coverageLine ? <p className="mt-3 text-sm font-medium leading-6 text-stone-700" data-testid="editorial-coverage-line">{presentation.coverageLine}</p> : null}
+        {presentation.proceduralContextLine ? <p className="mt-1 text-xs leading-5 text-stone-500">{presentation.proceduralContextLine}</p> : null}
       </header>
 
-      <CoverageSummary coverage={presentation.coverage} indicators={experience.indicators} />
-      <SummaryPanels presentation={presentation} />
+      <AnalyticalFindings sections={presentation.analyticalSections} />
 
-      <div className="mt-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">Supporting evidence</p>
-          <h6 className="mt-1 font-serif text-xl leading-tight text-stone-950">Votes and legislative context</h6>
+      {experience.featuredEpisodes.length ? <section className="mt-5" aria-labelledby="featured-episodes-title">
+        <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">Evidence behind the conclusion</p>
+        <h5 className="mt-1 font-serif text-xl leading-tight text-stone-950" id="featured-episodes-title">Featured policy episodes</h5>
+        <div className="mt-3 grid gap-3">
+          {experience.featuredEpisodes.map((episode) => <EpisodeCard episode={episode} key={episode.id} />)}
         </div>
-        <p className="text-xs leading-5 text-stone-600">Open a record to see what changed, the outcome, arguments, and official sources.</p>
-      </div>
+      </section> : null}
 
-      <div className="mt-3 grid gap-2.5">
-        {experience.records.map((record) => (
-          <EditorialRecordCard
-            isOpen={openRecordId === record.id}
-            key={record.id}
-            onToggle={() => setOpenRecordId((current) => current === record.id ? null : record.id)}
-            record={record}
-          />
-        ))}
-      </div>
-    </section>
-  );
-}
+      <CompleteRecord experience={experience} />
 
-function CoverageSummary({ coverage, indicators = [] }) {
-  if (!coverage) return null;
-  return (
-    <section className="mt-4 rounded-xl border border-cyan-900/15 bg-white px-3 py-3 sm:px-4" data-coverage-state={coverage.state}>
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-xs uppercase tracking-[0.16em] text-cyan-900">Coverage of this conclusion</p>
-          <p className="mt-1 text-sm font-semibold text-stone-950">{coverage.label}</p>
-        </div>
-        {coverage.reviewedPeriod ? <p className="text-xs leading-5 text-stone-500">{coverage.reviewedPeriod}</p> : null}
-      </div>
-      <p className="mt-2 max-w-[78ch] text-sm leading-6 text-stone-700">{coverage.message}</p>
-      {indicators.length ? (
-        <div aria-label="Reviewed coverage details" className="mt-3 flex flex-wrap gap-2">
-          {indicators.map((indicator) => (
-            <span className="rounded-full border border-cyan-900/15 bg-cyan-50 px-3 py-1.5 text-xs text-cyan-950" key={indicator.key}>
-              {indicator.label}
-            </span>
-          ))}
-        </div>
+      {presentation.votingContext ? (
+        <details className="mt-4 rounded-xl border border-stone-200 bg-white px-3 py-2.5">
+          <summary className="cursor-pointer text-xs uppercase tracking-[0.14em] text-cyan-900 marker:text-cyan-900">Secondary voting context</summary>
+          <p className="mt-2 text-sm leading-6 text-stone-700">{presentation.votingContext}</p>
+        </details>
       ) : null}
     </section>
   );
 }
 
-function SummaryPanels({ presentation }) {
-  const panels = [
-    presentation.patterns?.length ? { title: "Patterns in the reviewed record", kind: "list", value: presentation.patterns } : null,
-    presentation.exceptions?.length ? { title: "Important exceptions", kind: "list", value: presentation.exceptions } : null,
-    presentation.votingContext ? { title: "Voting context", kind: "text", value: presentation.votingContext, boundary: presentation.votingContextBoundary } : null,
-    presentation.limits?.length ? { title: "How to read this conclusion", kind: "list", value: presentation.limits } : null,
-  ].filter(Boolean);
-  if (!panels.length) return null;
-
+function AnalyticalFindings({ sections = [] }) {
+  if (!sections.length) return null;
   return (
-    <div className="mt-4 grid items-start gap-3 md:grid-cols-2">
-      {panels.map((panel) => (
-        <section className={`rounded-xl border px-3 py-3 sm:px-4 ${panel.title === "Patterns in the reviewed record" ? "border-cyan-900/15 bg-white" : "border-stone-200 bg-stone-50"}`} key={panel.title}>
-          <p className="text-xs uppercase tracking-[0.16em] text-cyan-900">{panel.title}</p>
-          {panel.kind === "list" ? (
-            <ul className="mt-2 grid gap-1.5 pl-5 text-sm leading-6 text-stone-800">
-              {panel.value.map((item) => <li className="list-disc" key={item}>{item}</li>)}
-            </ul>
-          ) : (
-            <p className="mt-2 text-sm leading-6 text-stone-800">{panel.value}</p>
-          )}
-          {panel.boundary ? <p className="mt-2 border-t border-stone-200 pt-2 text-xs leading-5 text-stone-600">{panel.boundary}</p> : null}
+    <div className="mt-4 grid items-start gap-3 md:grid-cols-2" data-testid="editorial-analytical-findings">
+      {sections.map((section) => (
+        <section className="rounded-xl border border-cyan-900/15 bg-white px-3 py-3 sm:px-4" key={section.key}>
+          <h5 className="text-xs uppercase tracking-[0.16em] text-cyan-900">{section.title}</h5>
+          <ul className="mt-2 grid gap-1.5 pl-5 text-sm leading-6 text-stone-800">
+            {section.items.map((item, index) => <li className="list-disc" key={`${item.episodeId || "finding"}-${index}`}>{item.text}</li>)}
+          </ul>
         </section>
       ))}
     </div>
   );
 }
 
-function EditorialRecordCard({ isOpen, onToggle, record }) {
-  const generatedId = useId();
-  const panelId = `${generatedId}-panel`;
-  const context = buildImportantContext(record);
-  const isContextOnly = record.inclusionClass === "context_only";
-
+function EpisodeCard({ episode, compact = false }) {
   return (
-    <article
-      className={`rounded-xl border ${isContextOnly ? "border-stone-200 bg-stone-50" : "border-cyan-900/15 bg-white shadow-[0_7px_20px_rgba(15,23,42,0.05)]"}`}
-      data-inclusion-class={record.inclusionClass}
-      data-testid={`editorial-record-${record.id}`}
-    >
-      <h6>
-        <button
-          aria-controls={panelId}
-          aria-expanded={isOpen}
-          className="w-full cursor-pointer px-3 py-3 text-left focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-800 sm:px-4"
-          onClick={onToggle}
-          type="button"
-        >
-          {isContextOnly ? <span className="block text-[11px] uppercase tracking-[0.16em] text-stone-500">Context-only record {"\u2014"} not included in substantive votes</span> : null}
-          <span className="mt-1 flex items-start gap-2">
-            <span aria-hidden="true" className="mt-0.5 text-cyan-900">{isOpen ? "\u25be" : "\u25b8"}</span>
-            <span className={`${isContextOnly ? "text-sm font-normal" : "text-[1.02rem] font-semibold sm:text-[1.08rem]"} leading-6 text-stone-950`}>{record.headline}</span>
+    <details className="rounded-xl border border-cyan-900/15 bg-white shadow-[0_7px_20px_rgba(15,23,42,0.04)]" data-episode-id={episode.id}>
+      <summary className="cursor-pointer list-none px-3 py-3 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-800 sm:px-4">
+        <span className="flex items-start justify-between gap-3">
+          <span>
+            <span className="block text-[11px] uppercase tracking-[0.14em] text-stone-500">{episode.periodLabel}{episode.dateSpan ? ` · ${episode.dateSpan}` : ""}</span>
+            <span className="mt-1 block text-[1.02rem] font-semibold leading-6 text-stone-950">{episode.title}</span>
           </span>
-          {!isContextOnly && record.practicalChoice ? <span className="mt-1 block pl-5 text-sm font-normal leading-6 text-stone-700">{record.practicalChoice}</span> : null}
-          {!isContextOnly && record.actionAndResult ? <span className="mt-2 block rounded-lg bg-stone-50 px-3 py-2 text-sm font-normal leading-6 text-stone-800">{record.actionAndResult}</span> : null}
-        </button>
-      </h6>
-
-      {isOpen ? (
-        <div className="border-t border-stone-200 px-3 pb-3 pt-3 sm:px-4 sm:pb-4" id={panelId}>
-          {isContextOnly ? (
-            <>
-              {record.practicalChoice ? <dl><Fact label="Why it is not counted" text={record.practicalChoice} /></dl> : null}
-              <OfficialSources sources={record.sources} />
-            </>
-          ) : (
-            <>
-              <FirstExpansion record={record} />
-              <DeeperDisclosure context={context} record={record} />
-            </>
-          )}
+          <span className="shrink-0 rounded-full bg-cyan-50 px-2.5 py-1 text-[11px] text-cyan-950">{episode.actionCount} {episode.actionCount === 1 ? "action" : "related actions"}</span>
+        </span>
+        <span className="mt-2 block text-sm leading-6 text-stone-800">{episode.memberTrajectory}</span>
+        <span className="mt-2 flex flex-wrap gap-1.5" aria-label="Action timeline">
+          {episode.actions.map((action) => <ActionChip action={action} key={action.id} />)}
+        </span>
+        {episode.conclusionRelevance && !compact ? <span className="mt-2 block text-xs font-medium leading-5 text-cyan-900">{episode.conclusionRelevance}</span> : null}
+      </summary>
+      <div className="border-t border-stone-200 px-3 pb-3 pt-3 sm:px-4 sm:pb-4">
+        <EpisodeFact title="What this episode was about" text={episode.sharedQuestion} />
+        {episode.materialDifferences ? <EpisodeFact title="How the proposals changed" text={episode.materialDifferences} /> : null}
+        <EpisodeFact title="The member's record across the episode" text={episode.memberTrajectory} />
+        <div className="mt-3 grid gap-2.5">
+          {episode.actions.map((action) => <ActionReceipt record={action} key={action.id} />)}
         </div>
-      ) : null}
-    </article>
+      </div>
+    </details>
   );
 }
 
-function FirstExpansion({ record }) {
-  const changed = [record.whatChanged?.before, record.whatChanged?.changeAtStake].some(Boolean);
-  const impact = [record.impactAndOutcome?.affected, record.impactAndOutcome?.scaleAndTiming, record.impactAndOutcome?.outcome].some(Boolean);
-  if (!changed && !impact) return null;
+function ActionChip({ action }) {
+  return <span className="rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-xs text-stone-700">{action.memberAction} · roll {action.roll}</span>;
+}
+
+function ActionReceipt({ record }) {
   return (
-    <div className={`grid gap-3 ${changed && impact ? "md:grid-cols-2" : ""}`}>
-      {changed ? <FactGroup title="What changed"><Fact label="Before this vote" text={record.whatChanged.before} /><Fact label="Change at stake" text={record.whatChanged.changeAtStake} /></FactGroup> : null}
-      {impact ? <FactGroup title="Impact and outcome"><Fact label="Who it affected" text={record.impactAndOutcome.affected} /><Fact label="Scale and timing" text={record.impactAndOutcome.scaleAndTiming} /><Fact label="Outcome" text={record.impactAndOutcome.outcome} /></FactGroup> : null}
-    </div>
+    <details className="rounded-lg border border-stone-200 bg-stone-50" data-action-status={record.actionStatus} data-testid={`editorial-record-${record.id}`}>
+      <summary className="cursor-pointer px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-800">
+        <span className="block text-[11px] uppercase tracking-[0.13em] text-stone-500">{record.legislativeStage} · House roll {record.roll}</span>
+        <span className="mt-1 block text-sm font-semibold leading-6 text-stone-950">{record.headline}</span>
+        <span className="mt-1 block text-sm leading-6 text-stone-700">{record.actionAndResult}</span>
+      </summary>
+      <div className="border-t border-stone-200 px-3 pb-3 pt-3">
+        {record.practicalChoice ? <Fact label="The choice before the House" text={record.practicalChoice} /> : null}
+        <div className="mt-3 grid gap-3 md:grid-cols-2">
+          <FactGroup title="What changed">
+            <Fact label="Prior baseline" text={record.whatChanged?.before} />
+            <Fact label="Change at stake" text={record.whatChanged?.changeAtStake} />
+          </FactGroup>
+          <FactGroup title="Impact and outcome">
+            <Fact label="Who or what was affected" text={record.impactAndOutcome?.affected} />
+            <Fact label="Scale and timing" text={record.impactAndOutcome?.scaleAndTiming} />
+            <Fact label="Outcome" text={record.impactAndOutcome?.outcome} />
+          </FactGroup>
+        </div>
+        <ActionDepth record={record} />
+      </div>
+    </details>
   );
 }
 
-function DeeperDisclosure({ context, record }) {
+function ActionDepth({ record }) {
   const hasArguments = record.arguments?.supporters || record.arguments?.opponents;
-  const hasBothArguments = record.arguments?.supporters && record.arguments?.opponents;
-  const hasDetails = record.additionalDetail?.detail;
-  const hasSources = record.sources?.length;
-  if (!hasArguments && !hasDetails && !context.length && !hasSources) return null;
+  const context = [...(record.importantContext || []), record.additionalDetail?.laterHistory].filter(Boolean);
+  const hasDepth = hasArguments || record.additionalDetail?.detail || context.length || record.sources?.length;
+  if (!hasDepth) return null;
   return (
-    <details className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2.5">
-      <summary className="cursor-pointer text-xs uppercase tracking-[0.14em] text-cyan-900 marker:text-cyan-900">Arguments, context, and sources</summary>
+    <details className="mt-3 rounded-lg border border-stone-200 bg-white px-3 py-2.5">
+      <summary className="cursor-pointer text-xs uppercase tracking-[0.14em] text-cyan-900 marker:text-cyan-900">Arguments, context, and official sources</summary>
       <div className="mt-3 border-t border-stone-200 pt-3">
         {hasArguments ? (
-          <div className={`grid items-start gap-3 ${hasBothArguments ? "md:grid-cols-2" : "max-w-3xl"}`}>
+          <div className={`grid items-start gap-3 ${record.arguments.supporters && record.arguments.opponents ? "md:grid-cols-2" : "max-w-3xl"}`}>
             <ArgumentField argument={record.arguments.supporters} label="Supporters argued" />
             <ArgumentField argument={record.arguments.opponents} label="Opponents argued" />
           </div>
         ) : null}
-        {hasDetails ? <section className="mt-3"><p className="text-[11px] uppercase tracking-[0.14em] text-cyan-900">More detail</p><p className="mt-1 text-sm leading-6 text-stone-800">{record.additionalDetail.detail}</p></section> : null}
+        {hasArguments ? <p className="mt-2 text-xs leading-5 text-stone-600">{record.argumentBoundary}</p> : null}
+        {record.oneSidedArgumentNote ? <p className="mt-2 text-xs leading-5 text-stone-600">{record.oneSidedArgumentNote}</p> : null}
+        {record.additionalDetail?.detail ? <section className="mt-3"><p className="text-[11px] uppercase tracking-[0.14em] text-cyan-900">More detail</p><p className="mt-1 text-sm leading-6 text-stone-800">{record.additionalDetail.detail}</p></section> : null}
         {context.length ? <section className="mt-3"><p className="text-[11px] uppercase tracking-[0.14em] text-cyan-900">Important context</p><ul className="mt-1 grid gap-1.5 pl-5 text-sm leading-6 text-stone-800">{context.map((item) => <li className="list-disc" key={item}>{item}</li>)}</ul></section> : null}
         <OfficialSources sources={record.sources} />
       </div>
     </details>
   );
+}
+
+function CompleteRecord({ experience }) {
+  const auxiliary = experience.ungroupedRecords || [];
+  return (
+    <details className="mt-5 rounded-xl border border-cyan-900/15 bg-white px-3 py-3 sm:px-4" data-testid="complete-reviewed-record">
+      <summary className="cursor-pointer font-semibold text-cyan-950 marker:text-cyan-900">Explore the complete reviewed record</summary>
+      <div className="mt-3 grid gap-4 border-t border-stone-200 pt-3">
+        {experience.completeRecord.map((family) => (
+          <section key={family.id}>
+            <p className="text-xs uppercase tracking-[0.14em] text-stone-500">Policy family · {humanize(family.id)}</p>
+            {family.congresses.map((group) => (
+              <div className="mt-2 grid gap-2" key={group.congress}>
+                <p className="text-sm font-semibold text-stone-800">{group.congress}th Congress</p>
+                {group.episodes.map((episode) => <EpisodeCard compact episode={episode} key={episode.id} />)}
+              </div>
+            ))}
+          </section>
+        ))}
+        <AuxiliaryRecords records={auxiliary} />
+        <ProceduralContext records={experience.proceduralRecords} />
+      </div>
+    </details>
+  );
+}
+
+function AuxiliaryRecords({ records = [] }) {
+  if (!records.length) return null;
+  const groups = [
+    ["substantive", "Substantive actions"],
+    ["not_voting", "Not Voting actions"],
+    ["present", "Present actions"],
+    ["service_ineligible", "Actions outside the member's service"],
+    ["missing_evidence", "Expected evidence unavailable"],
+  ];
+  return groups.map(([kind, title]) => {
+    const matches = records.filter((record) => record.inclusionClass === kind);
+    if (!matches.length) return null;
+    return <section key={kind}><h6 className="text-sm font-semibold text-stone-900">{title}</h6><div className="mt-2 grid gap-2">{matches.map((record) => <ActionReceipt key={record.id} record={record} />)}</div></section>;
+  });
+}
+
+function ProceduralContext({ records = [] }) {
+  if (!records.length) return null;
+  return (
+    <details className="rounded-lg border border-stone-200 bg-stone-50 px-3 py-2.5">
+      <summary className="cursor-pointer text-sm font-semibold text-stone-900">Procedural voting context</summary>
+      <p className="mt-2 text-sm leading-6 text-stone-700">{records.length} floor-process {records.length === 1 ? "action was" : "actions were"} reviewed but not used to summarize support or opposition.</p>
+      <div className="mt-2 grid gap-2">
+        {records.map((record) => <ContextReceipt record={record} key={record.id} />)}
+      </div>
+    </details>
+  );
+}
+
+function ContextReceipt({ record }) {
+  return <details className="rounded-lg border border-stone-200 bg-white px-3 py-2"><summary className="cursor-pointer text-sm text-stone-800">House roll {record.roll}: {record.headline}</summary><p className="mt-2 text-sm leading-6 text-stone-700">{record.practicalChoice}</p><OfficialSources sources={record.sources} /></details>;
+}
+
+function EpisodeFact({ title, text }) {
+  if (!text) return null;
+  return <section className="mt-3 first:mt-0"><h6 className="text-xs uppercase tracking-[0.14em] text-cyan-900">{title}</h6><p className="mt-1 text-sm leading-6 text-stone-800">{text}</p></section>;
 }
 
 function FactGroup({ children, title }) {
@@ -208,7 +221,7 @@ function Fact({ label, text }) {
 
 function ArgumentField({ argument, label }) {
   if (!argument?.argument) return null;
-  return <section className="rounded-lg border border-cyan-900/15 bg-white px-3 py-2.5"><p className="text-[11px] uppercase tracking-[0.14em] text-cyan-900">{label}</p><p className="mt-1 text-sm leading-6 text-stone-900">{argument.argument}</p>{argument.attribution ? <p className="mt-1 text-xs leading-5 text-stone-500">{"\u2014"} {argument.attribution}</p> : null}</section>;
+  return <section className="rounded-lg border border-cyan-900/15 bg-stone-50 px-3 py-2.5"><p className="text-[11px] uppercase tracking-[0.14em] text-cyan-900">{label}</p><p className="mt-1 text-sm leading-6 text-stone-900">{argument.argument}</p>{argument.attribution ? <p className="mt-1 text-xs leading-5 text-stone-500">— {argument.attribution}</p> : null}</section>;
 }
 
 function OfficialSources({ sources = [] }) {
@@ -218,9 +231,11 @@ function OfficialSources({ sources = [] }) {
   return (
     <details className="mt-3 border-t border-stone-200 pt-2">
       <summary className="cursor-pointer text-[11px] uppercase tracking-[0.14em] text-cyan-900 marker:text-cyan-900">Official sources ({count})</summary>
-      <div className="mt-2 grid gap-2">
-        {groups.map((group) => <section key={group.name}><p className="text-xs font-semibold text-stone-700">{group.name}</p><ul className="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600">{group.items.map((source) => <li className="list-disc" key={source.url}><a className="text-cyan-900 underline decoration-cyan-900/35 underline-offset-2 hover:decoration-cyan-900" href={source.url} rel="noreferrer" target="_blank">{source.name}</a>{source.locator ? <span className="block text-stone-500">{source.locator}</span> : null}</li>)}</ul></section>)}
-      </div>
+      <div className="mt-2 grid gap-2">{groups.map((group) => <section key={group.name}><p className="text-xs font-semibold text-stone-700">{group.name}</p><ul className="mt-1 grid gap-1 pl-4 text-xs leading-5 text-stone-600">{group.items.map((source) => <li className="list-disc" key={source.url}><a className="text-cyan-900 underline decoration-cyan-900/35 underline-offset-2" href={source.url} rel="noreferrer" target="_blank">{source.name}</a>{source.locator ? <span className="block text-stone-500">{source.locator}</span> : null}</li>)}</ul></section>)}</div>
     </details>
   );
+}
+
+function humanize(value) {
+  return String(value || "").replace(/[-_]+/g, " ");
 }

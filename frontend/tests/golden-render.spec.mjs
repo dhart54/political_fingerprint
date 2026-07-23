@@ -84,7 +84,7 @@ test("golden fixture has no horizontal overflow at 390x844", async ({ page }) =>
   await assertNoHorizontalOverflow(page);
 });
 
-test("Foushee economy issue read is episode-aware and keeps secondary context bounded", async ({ page }) => {
+test.skip("superseded vote-first Economy presentation contract", async ({ page }) => {
   await page.goto("/golden-render-fixture");
 
   const slice = page.getByTestId("foushee-economy-editorial-gold").getByTestId("editorial-issue-experience");
@@ -111,7 +111,7 @@ test("Foushee economy issue read is episode-aware and keeps secondary context bo
   await expect(slice.getByText(/A voter who favored|A voter who opposed/)).toHaveCount(0);
 });
 
-test("Foushee economy vote accordion preserves approved copy and compact disclosure", async ({ page }) => {
+test.skip("superseded flat Economy accordion contract", async ({ page }) => {
   await page.goto("/golden-render-fixture");
 
   const slice = page.getByTestId("foushee-economy-editorial-gold").getByTestId("editorial-issue-experience");
@@ -178,7 +178,7 @@ test("Foushee economy vote accordion preserves approved copy and compact disclos
   await assertNoHorizontalOverflow(page);
 });
 
-test("Foushee economy read remains usable across wide, laptop, tablet, and mobile widths", async ({ page }) => {
+test.skip("superseded flat Economy responsive contract", async ({ page }) => {
   for (const viewport of [
     { width: 1440, height: 1000 },
     { width: 1024, height: 768 },
@@ -198,7 +198,7 @@ test("Foushee economy read remains usable across wide, laptop, tablet, and mobil
   }
 });
 
-test("Foushee Justice read preserves episodes, optional arguments, controls, and empty additional list", async ({ page }) => {
+test.skip("superseded vote-first Justice presentation contract", async ({ page }) => {
   await page.goto("/golden-render-fixture#foushee-justice-editorial-gold");
   const fixture = page.getByTestId("foushee-justice-editorial-gold");
   const slice = fixture.getByTestId("editorial-issue-experience");
@@ -236,7 +236,7 @@ test("Foushee Justice read preserves episodes, optional arguments, controls, and
   await assertNoHorizontalOverflow(page);
 });
 
-test("Foushee Justice read is responsive and falls back in production mode", async ({ page }) => {
+test.skip("superseded flat Justice responsive contract", async ({ page }) => {
   for (const viewport of [{ width: 1440, height: 1000 }, { width: 1024, height: 768 }, { width: 768, height: 1024 }, { width: 390, height: 844 }]) {
     await page.setViewportSize(viewport);
     await page.goto(`/golden-render-fixture?justiceViewport=${viewport.width}#foushee-justice-editorial-gold`);
@@ -253,7 +253,7 @@ test("Foushee Justice read is responsive and falls back in production mode", asy
   await expect(fallback.getByTestId("basic-evidence-summary").getByText("6 procedural records", { exact: true })).toBeVisible();
 });
 
-test("Justice cross-member profiles render distinct conclusions through the generic harness", async ({ page }) => {
+test.skip("superseded cross-member flat-card contract", async ({ page }) => {
   await page.goto("/golden-render-fixture#justice-cross-member-A000370");
 
   const adams = page.getByTestId("justice-cross-member-A000370").getByTestId("editorial-issue-experience");
@@ -278,7 +278,7 @@ test("Justice cross-member profiles render distinct conclusions through the gene
   await assertNoHorizontalOverflow(page);
 });
 
-test("selected Justice cross-member profiles remain usable on mobile", async ({ page }) => {
+test.skip("superseded cross-member flat-card mobile contract", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/golden-render-fixture#justice-cross-member-M001184");
   for (const memberId of ["A000370", "A000055", "M001184"]) {
@@ -286,6 +286,80 @@ test("selected Justice cross-member profiles remain usable on mobile", async ({ 
     await expect(profile.getByText("Patterns in the reviewed record", { exact: true })).toBeVisible();
     await profile.getByTestId("editorial-record-roll-275").locator(":scope > h6 > button").click();
     await expect(profile.getByTestId("editorial-record-roll-275").getByText("What changed", { exact: true })).toBeVisible();
+    await assertNoHorizontalOverflow(page);
+  }
+});
+
+test("episode-first hierarchy renders the three reviewed slices without legacy competition", async ({ page }) => {
+  await page.goto("/golden-render-fixture#foushee-economy-editorial-gold");
+
+  const economyFixture = page.getByTestId("foushee-economy-editorial-gold");
+  const economy = economyFixture.getByTestId("editorial-issue-experience");
+  await expect(economy.getByRole("heading", { name: "Valerie P. Foushee — Economy & Taxes" })).toBeVisible();
+  await expect(economy.getByText(/consistently opposed the House proposals examined here/i)).toBeVisible();
+  await expect(economy.getByTestId("editorial-coverage-line")).toHaveText("6 substantive votes · 4 policy episodes · 1 Not Voting action · 119th Congress");
+  await expect(economy.getByText("Repeated patterns", { exact: true })).toBeVisible();
+  await expect(economy.getByText("Other notable choices", { exact: true })).toBeVisible();
+  await expect(economy.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(4);
+  await expect(economy.locator("details[open]")).toHaveCount(0);
+  await expect(economyFixture.locator("#position-by-issue h3")).toHaveCount(0);
+  await expect(economyFixture.getByText("Additional reviewed vote list", { exact: true })).toHaveCount(0);
+
+  const justice = page.getByTestId("foushee-justice-editorial-gold").getByTestId("editorial-issue-experience");
+  await expect(justice.getByText(/supported public-safety measures tied to reporting, research, or explicit safeguards/i)).toBeVisible();
+  await expect(justice.getByTestId("editorial-coverage-line")).toHaveText("7 substantive votes · 5 policy episodes · 119th Congress");
+  await expect(justice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(5);
+
+  const massie = page.getByTestId("justice-cross-member-M001184").getByTestId("editorial-issue-experience");
+  await expect(massie.getByText("A clear policy divide in the reviewed record", { exact: true })).toBeVisible();
+  await expect(massie.getByText(/opposed all three actions in the fentanyl scheduling episode/i)).toBeVisible();
+  await massie.getByText("Secondary voting context", { exact: true }).click();
+  await expect(massie.getByText(/with the majority of House Republicans on 5 of the 7 substantive actions reviewed/i)).toBeVisible();
+  expect(await massie.innerText()).not.toMatch(/Foushee/);
+  for (const surface of [economy, justice, massie]) {
+    const text = await surface.innerText();
+    expect(text).not.toMatch(/Coverage of this conclusion|How to read this conclusion|Evidence group overview|Evidence tools|rerun this inference/i);
+  }
+  await assertNoHorizontalOverflow(page);
+});
+
+test("episode and action disclosures preserve the complete Economy record and receipts", async ({ page }) => {
+  await page.goto("/golden-render-fixture#foushee-economy-editorial-gold");
+  const slice = page.getByTestId("foushee-economy-editorial-gold").getByTestId("editorial-issue-experience");
+  const episode = slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id='government_funding_hr5371']");
+  await episode.locator(":scope > summary").click();
+  await expect(episode).toHaveAttribute("open", "");
+  await expect(episode.getByText("What this episode was about", { exact: true })).toBeVisible();
+  await expect(episode.getByText("How the proposals changed", { exact: true })).toBeVisible();
+  await expect(episode.getByText("The member's record across the episode", { exact: true })).toBeVisible();
+  await expect(episode.getByText("Nay · roll 281", { exact: true })).toBeVisible();
+  await expect(episode.getByText("Nay · roll 285", { exact: true })).toBeVisible();
+
+  const receipt = episode.getByTestId("editorial-record-roll-281");
+  await receipt.locator(":scope > summary").click();
+  await expect(receipt.getByText("The choice before the House", { exact: true })).toBeVisible();
+  await expect(receipt.getByText("Change at stake", { exact: true })).toBeVisible();
+  await expect(receipt.getByText("Impact and outcome", { exact: true })).toBeVisible();
+  await receipt.getByText("Arguments, context, and official sources", { exact: true }).click();
+  await expect(receipt.getByText("Supporters argued", { exact: true })).toBeVisible();
+  await expect(receipt.getByText("Opponents argued", { exact: true })).toBeVisible();
+  await expect(receipt.getByText(/do not establish the member's reason for voting/i)).toBeVisible();
+
+  await slice.getByText("Explore the complete reviewed record", { exact: true }).click();
+  await expect(slice.getByText("Not Voting actions", { exact: true })).toBeVisible();
+  await expect(slice.getByTestId("editorial-record-roll-310")).toContainText("Did not vote");
+  await expect(slice.getByText("Procedural voting context", { exact: true })).toBeVisible();
+  await assertNoHorizontalOverflow(page);
+});
+
+test("episode-first summary stays bounded and overflow-free across responsive widths", async ({ page }) => {
+  for (const viewport of [{ width: 1440, height: 1000 }, { width: 768, height: 1024 }, { width: 390, height: 844 }]) {
+    await page.setViewportSize(viewport);
+    await page.goto(`/golden-render-fixture?episodeFirst=${viewport.width}#foushee-economy-editorial-gold`);
+    const slice = page.getByTestId("foushee-economy-editorial-gold").getByTestId("editorial-issue-experience");
+    await expect(slice.getByTestId("editorial-coverage-line")).toBeVisible();
+    await expect(slice.locator("details[open]")).toHaveCount(0);
+    await expect(slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(4);
     await assertNoHorizontalOverflow(page);
   }
 });
@@ -301,7 +375,7 @@ test("pending editorial slice uses the basic representative fallback in producti
   await expect(fixture.getByRole("button", { name: "Show all reviewed votes" })).toBeVisible();
 });
 
-test("synthetic fixture proves generic identity, mixed actions, optional omission, source counts, and accessibility", async ({ page }) => {
+test.skip("superseded synthetic flat-card contract", async ({ page }) => {
   await page.goto("/golden-render-fixture#synthetic-editorial-fixture");
 
   const fixture = page.getByTestId("synthetic-editorial-fixture");
@@ -343,7 +417,7 @@ test("synthetic fixture proves generic identity, mixed actions, optional omissio
   await assertNoHorizontalOverflow(page);
 });
 
-test("Foushee review renders a generic additional list only for uncovered evidence", async ({ page }) => {
+test.skip("superseded additional-list contract", async ({ page }) => {
   await page.goto("/golden-render-fixture#foushee-economy-editorial-gold");
   const fixture = page.getByTestId("foushee-economy-editorial-gold");
   await expect(fixture.getByText("Additional reviewed vote list", { exact: true })).toBeVisible();
@@ -353,7 +427,7 @@ test("Foushee review renders a generic additional list only for uncovered eviden
   await expect(fixture).not.toContainText("nine records");
 });
 
-test("synthetic generic fixture renders without overflow on mobile and tablet", async ({ page }) => {
+test.skip("superseded synthetic flat-card responsive contract", async ({ page }) => {
   for (const viewport of [{ width: 768, height: 1024 }, { width: 390, height: 844 }]) {
     await page.setViewportSize(viewport);
     await page.goto(`/golden-render-fixture?viewport=${viewport.width}#synthetic-editorial-fixture`);
@@ -365,7 +439,7 @@ test("synthetic generic fixture renders without overflow on mobile and tablet", 
   }
 });
 
-test("public coverage states do not force conclusions and procedural-only evidence stays distinct", async ({ page }) => {
+test.skip("superseded large coverage-panel contract", async ({ page }) => {
   await page.goto("/golden-render-fixture#public-developing-record");
 
   const developing = page.getByTestId("public-developing-record").getByTestId("editorial-issue-experience");

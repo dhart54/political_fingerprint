@@ -4,7 +4,7 @@ Use this workflow when adding or reviewing a reader-facing editorial slice for o
 
 ## Presentation contract
 
-The generic frontend contract is adapted in `frontend/lib/editorialIssueExperience.mjs` and rendered by `frontend/components/EditorialIssueExperience.js`. React receives a reader-facing view model; it does not read an editorial review packet directly and does not calculate support, opposition, episodes, patterns, or philosophy from raw rolls.
+The generic frontend contract is adapted in `frontend/lib/editorialIssueExperience.mjs` and rendered by `frontend/components/EditorialIssueExperience.js`. React receives a reader-facing view model; it does not read an editorial review packet directly and does not calculate support, opposition, service eligibility, episodes, featured selections, patterns, or philosophy from raw rolls. Rich views use the shared-action, episode, member-overlay, and issue-synthesis layers documented in `docs/public_editorial_frontend_contract.md`.
 
 The normative reader-facing terminology, coverage states, runtime path, and review/public boundary are documented in `docs/public_editorial_frontend_contract.md`.
 

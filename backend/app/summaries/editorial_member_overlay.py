@@ -5,7 +5,11 @@ from __future__ import annotations
 from copy import deepcopy
 
 
-VALID_ACTIONS = {"Yea", "Nay", "Present", "Not Voting"}
+VALID_ACTIONS = {
+    "Yea", "Nay", "Present", "Not Voting",
+    "Not Yet Serving", "No Longer Serving", "Missing Evidence",
+}
+OUTSIDE_SERVICE_ACTIONS = {"Not Yet Serving", "No Longer Serving"}
 FORBIDDEN_OVERLAY_FACT_KEYS = {
     "bill_title", "measure_summary", "primary_purpose", "source_url",
     "supporter_argument", "opponent_argument", "legislative_history",
@@ -46,9 +50,15 @@ def build_member_overlay(*, member: dict, reviewed_period: str, shared_episode_s
         if episode_id not in episode_action_interpretations:
             raise ValueError(f"missing action interpretation for episode: {episode_id}")
         rolls = contract["episode_rolls"][episode_id]
-        signature = [by_roll[roll]["action"] if roll in by_roll else "missing" for roll in rolls]
-        yes_no = sum(action in {"Yea", "Nay"} for action in signature)
-        coverage = "complete" if yes_no == len(rolls) else "partial" if any(action != "missing" for action in signature) else "missing"
+        signature = [by_roll[roll]["action"] if roll in by_roll else "Missing Evidence" for roll in rolls]
+        in_service = [action for action in signature if action not in OUTSIDE_SERVICE_ACTIONS]
+        yes_no = sum(action in {"Yea", "Nay"} for action in in_service)
+        coverage = (
+            "outside_service" if not in_service
+            else "complete" if yes_no == len(in_service)
+            else "partial" if any(action != "Missing Evidence" for action in in_service)
+            else "missing"
+        )
         catalog = episode_action_interpretations[episode_id]
         interpretation = deepcopy(catalog.get("signatures", {}).get("|".join(signature), catalog.get("non_counting")))
         if not interpretation:
@@ -67,7 +77,8 @@ def build_member_overlay(*, member: dict, reviewed_period: str, shared_episode_s
             "package_vote_limitations": deepcopy(interpretation.get("package_vote_limitations", [])),
         })
 
-    substantive_actions = [by_roll[roll]["action"] for roll in expected_substantive if roll in by_roll]
+    substantive_actions = [by_roll[roll]["action"] if roll in by_roll else "Missing Evidence" for roll in expected_substantive]
+    in_service_actions = [action for action in substantive_actions if action not in OUTSIDE_SERVICE_ACTIONS]
     result = {
         "schema_version": "editorial_member_overlay_v2",
         "member": _required_mapping(member, ("bioguide_id", "display_name")),
@@ -81,11 +92,15 @@ def build_member_overlay(*, member: dict, reviewed_period: str, shared_episode_s
             "substantive_yes_no_actions": sum(action in {"Yea", "Nay"} for action in substantive_actions),
             "present_actions": substantive_actions.count("Present"),
             "not_voting_actions": substantive_actions.count("Not Voting"),
-            "missing_actions": sum(roll not in by_roll for roll in expected_substantive),
+            "not_yet_serving_actions": substantive_actions.count("Not Yet Serving"),
+            "no_longer_serving_actions": substantive_actions.count("No Longer Serving"),
+            "expected_in_service_actions": len(in_service_actions),
+            "missing_actions": substantive_actions.count("Missing Evidence"),
             "independent_episodes_expected": len(contract["expected_independent_episode_ids"]),
             "independent_episodes_complete": sum(item["coverage_status"] == "complete" for item in trajectories),
             "independent_episodes_partial": sum(item["coverage_status"] == "partial" for item in trajectories),
             "independent_episodes_missing": sum(item["coverage_status"] == "missing" for item in trajectories),
+            "independent_episodes_outside_service": sum(item["coverage_status"] == "outside_service" for item in trajectories),
         },
         "publication": _normalize_publication(publication),
     }

@@ -37,10 +37,11 @@ def build(rows=None, contract=None, interpretations=None, publication=None):
 def test_shared_contract_keeps_denominators_when_roll_is_omitted():
     value = build([action(1, "Yea", "multi"), action(3, "Yea", "single")])
     assert value["coverage"] == {"substantive_rolls_expected": 3, "substantive_rolls_observed": 2,
-        "substantive_yes_no_actions": 2, "present_actions": 0, "not_voting_actions": 0, "missing_actions": 1,
+        "substantive_yes_no_actions": 2, "present_actions": 0, "not_voting_actions": 0,
+        "not_yet_serving_actions": 0, "no_longer_serving_actions": 0, "expected_in_service_actions": 3, "missing_actions": 1,
         "independent_episodes_expected": 2, "independent_episodes_complete": 1,
-        "independent_episodes_partial": 1, "independent_episodes_missing": 0}
-    assert next(item for item in value["episode_trajectories"] if item["episode_id"] == "multi")["action_signature"] == ["Yea", "missing"]
+        "independent_episodes_partial": 1, "independent_episodes_missing": 0, "independent_episodes_outside_service": 0}
+    assert next(item for item in value["episode_trajectories"] if item["episode_id"] == "multi")["action_signature"] == ["Yea", "Missing Evidence"]
 
 
 def test_entirely_omitted_episode_stays_in_denominator_as_missing():
@@ -50,7 +51,7 @@ def test_entirely_omitted_episode_stays_in_denominator_as_missing():
     assert value["coverage"]["independent_episodes_missing"] == 1
     multi = next(item for item in value["episode_trajectories"] if item["episode_id"] == "multi")
     assert multi["coverage_status"] == "missing"
-    assert multi["action_signature"] == ["missing", "missing"]
+    assert multi["action_signature"] == ["Missing Evidence", "Missing Evidence"]
 
 
 def test_not_voting_inside_multi_roll_episode_makes_trajectory_partial_and_non_counting():
@@ -67,6 +68,28 @@ def test_present_not_voting_and_missing_never_emit_counting_themes():
         single = overlay["episode_trajectories"][1]
         assert single["coverage_status"] == "partial"
         assert single["theme_evidence"] == []
+
+
+def test_service_statuses_are_distinct_from_not_voting_and_missing():
+    value = build([
+        action(1, "Not Yet Serving", "multi"),
+        action(2, "Yea", "multi"),
+        action(3, "No Longer Serving", "single"),
+    ])
+    assert value["coverage"]["not_yet_serving_actions"] == 1
+    assert value["coverage"]["no_longer_serving_actions"] == 1
+    assert value["coverage"]["expected_in_service_actions"] == 1
+    assert value["coverage"]["missing_actions"] == 0
+    assert value["coverage"]["not_voting_actions"] == 0
+    assert value["episode_trajectories"][0]["coverage_status"] == "complete"
+    assert value["episode_trajectories"][1]["coverage_status"] == "outside_service"
+
+
+def test_explicit_missing_evidence_is_an_in_service_gap():
+    value = build([action(1, "Yea", "multi"), action(2, "Missing Evidence", "multi"), action(3, "Yea", "single")])
+    assert value["coverage"]["missing_actions"] == 1
+    assert value["coverage"]["expected_in_service_actions"] == 3
+    assert value["episode_trajectories"][0]["coverage_status"] == "partial"
 
 
 @pytest.mark.parametrize("rows,match", [

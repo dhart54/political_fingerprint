@@ -1,78 +1,107 @@
+import { economyEpisodeByRoll, economyEpisodePresentation } from "./editorialEpisodeMetadata.mjs";
+import { justiceReviewCandidateForMember } from "./justiceCrossMemberReviewSlices.mjs";
 import { valerieFousheeEconomyEditorialGold } from "./valerieFousheeEconomyEditorialGold.mjs";
-import { valerieFousheeJusticePublicSafetyEditorialGold } from "./valerieFousheeJusticePublicSafetyEditorialGold.mjs";
 
-export const reviewEditorialIssueSlices = Object.freeze([
-  Object.freeze({
-    source: valerieFousheeEconomyEditorialGold,
-    identity: Object.freeze({
-      memberId: "F000477",
-      memberDisplayName: "Valerie P. Foushee",
-      issueId: "ECONOMY_TAXES",
-      issueDisplayName: "Economy & Taxes",
-      congress: 119,
-      reviewedPeriod: "119th Congress",
-    }),
-    publication: Object.freeze({
-      editorialStatus: "human_approval_pending",
-      benchmarkStatus: "not_promoted",
-      productionEligible: false,
-      reviewLabel: "Editorial review preview \u2014 not published",
-    }),
-    synthesis: Object.freeze({
-      primary:
-        "In this sample, Foushee voted against specific proposals involving government funding, frameworks for later tax-and-spending legislation, military construction and veterans programs, and SBA loan eligibility. The six substantive votes represent four policy episodes. They reveal several specific voting patterns, but this sample is not yet broad enough to establish one overarching Economy & Taxes philosophy.",
-      patterns: Object.freeze([
-        "Opposed both stages of the 2025 government-funding episode.",
-        "Opposed both stages of the FY2025\u2013FY2034 budget-framework episode.",
-        "Opposed the House military-construction and veterans funding proposal.",
-        "Opposed immigration-status restrictions on SBA-backed business loans.",
+const economySource = Object.freeze({
+  ...valerieFousheeEconomyEditorialGold,
+  inference_candidate: {
+    inference_level: "bounded_repeated_pattern",
+    coverage: {
+      substantive_rolls_expected: 6,
+      substantive_rolls_observed: 6,
+      substantive_yes_no_actions: 6,
+      present_actions: 0,
+      not_voting_actions: 1,
+      missing_actions: 0,
+      independent_episodes_expected: 4,
+      independent_episodes_complete: 4,
+      independent_episodes_partial: 0,
+      independent_episodes_missing: 0,
+    },
+  },
+});
+
+const economyCandidate = Object.freeze({
+  source: economySource,
+  identity: Object.freeze({
+    memberId: "F000477",
+    memberDisplayName: "Valerie P. Foushee",
+    issueId: "ECONOMY_TAXES",
+    issueDisplayName: "Economy & Taxes",
+    congress: 119,
+    reviewedPeriod: "119th Congress",
+  }),
+  episodeByRoll: economyEpisodeByRoll,
+  episodePresentation: economyEpisodePresentation,
+  memberEpisodeTrajectories: Object.freeze([
+    trajectory("government_funding_hr5371", "Opposed both reviewed stages of the 2025 government-funding episode."),
+    trajectory("budget_framework_hconres14", "Opposed both reviewed stages of the FY2025–FY2034 budget-framework episode."),
+    trajectory("milcon_va_hr3944", "Opposed the reviewed House military-construction and veterans funding proposal."),
+    trajectory("sba_loan_eligibility_hr2966", "Opposed the reviewed immigration-status restrictions on SBA-backed loan eligibility."),
+  ]),
+  publication: pendingPublication("Editorial review preview — not published"),
+  synthesis: Object.freeze({
+    primary: "Across the reviewed record, Foushee consistently opposed the House proposals examined here: both stages of the budget-framework episode, both stages of the government-funding episode, the House military-construction and veterans funding bill, and restrictions on SBA-backed loan eligibility. This is a clear pattern of opposition to these specific proposals, but the varied mechanisms do not establish one overarching economic philosophy.",
+    evidenceBreadth: "A consistent pattern in the reviewed record",
+    readerFacingLabel: "A consistent pattern in the reviewed record",
+    analyticalSections: Object.freeze({
+      repeatedPatterns: Object.freeze([
+        finding("government_funding_hr5371", "Opposed both stages of the 2025 government-funding episode."),
+        finding("budget_framework_hconres14", "Opposed both stages of the FY2025–FY2034 budget-framework episode."),
       ]),
-      votingContext:
-        "Foushee voted with the majority of House Democrats on all 6 substantive roll calls in this sample, covering 4 policy episodes.",
-      votingContextBoundary:
-        "Party alignment describes how these votes compared with other Democrats. It does not explain why Foushee voted that way, and repeated stages are not separate policy positions.",
-      howToRead:
-        "These votes concern several different funding, budget-process, veterans, and small-business policy choices. A recorded No establishes opposition to the proposal at that stage. Repeated votes across independent policy episodes may support broader voting themes, but one vote does not reveal motive or establish a position on every provision in a package.",
-      evidenceBreadth: "Bounded voting pattern",
+      otherNotableChoices: Object.freeze([
+        finding("milcon_va_hr3944", "Opposed the reviewed military-construction and veterans funding proposal."),
+        finding("sba_loan_eligibility_hr2966", "Opposed the reviewed immigration-status restrictions on SBA-backed loan eligibility."),
+      ]),
     }),
+    votingContext: "Foushee voted with the majority of House Democrats on all 6 substantive actions reviewed.",
   }),
-  Object.freeze({
-    source: valerieFousheeJusticePublicSafetyEditorialGold,
-    identity: Object.freeze({
-      memberId: "F000477",
-      memberDisplayName: "Valerie P. Foushee",
-      issueId: "JUSTICE_PUBLIC_SAFETY",
-      issueDisplayName: "Justice & Public Safety",
-      congress: 119,
-      reviewedPeriod: "119th Congress",
-    }),
-    publication: Object.freeze({
-      editorialStatus: "human_approval_pending",
-      benchmarkStatus: "not_promoted",
-      productionEligible: false,
-      reviewLabel: "Editorial review preview — not published",
-    }),
-    synthesis: inferenceSynthesis(valerieFousheeJusticePublicSafetyEditorialGold, {
-      votingContext: "Foushee voted with the majority of House Democrats on all 7 substantive roll calls in this sample, covering 5 policy episodes.",
-      votingContextBoundary: "Party alignment is descriptive, not an explanation. Democratic splits on the two fentanyl passage votes were close, and repeated stages are not separate policy positions.",
-    }),
+});
+
+const fousheeJusticeCandidate = justiceReviewCandidateForMember("F000477", Object.freeze({
+  primary: "Across the reviewed record, Foushee supported public-safety measures tied to reporting, research, or explicit safeguards, while opposing proposals that expanded police tools or authority or rolled back D.C. policing protections. Her fentanyl votes show that this was not blanket opposition to enforcement: she supported a certification condition, opposed the earlier House bill, and later supported a related permanent framework with research provisions.",
+  evidenceBreadth: "A selective pattern in the reviewed record",
+  readerFacingLabel: "A selective pattern in the reviewed record",
+  analyticalSections: Object.freeze({
+    policyTrajectories: Object.freeze([
+      finding("halt-fentanyl-legislative-path", "Supported a certification condition, opposed the earlier House bill after that condition failed, and later supported a related permanent framework with research provisions."),
+    ]),
+    repeatedPatterns: Object.freeze([
+      finding(null, "Supported information gathering, research, or implementation safeguards across the officer-reporting and fentanyl episodes."),
+      finding(null, "Opposed the reviewed service-firearm, D.C. pursuit, and D.C. policing-repeal proposals."),
+    ]),
   }),
-]);
+  votingContext: "Foushee voted with the majority of House Democrats on all 7 substantive actions reviewed.",
+}));
+
+export const reviewEditorialIssueSlices = Object.freeze([economyCandidate, fousheeJusticeCandidate]);
 
 export function inferenceSynthesis(source, context = {}) {
   const inference = source.inference_candidate || {};
-  const trajectories = (inference.within_episode_trajectories || []).map(
-    (item) => `Within one episode: ${item.member_trajectory}`,
-  );
-  const themes = (inference.repeated_cross_episode_themes || []).map(
-    (item) => `Across independent episodes: ${item.finding}`,
-  );
   return Object.freeze({
     primary: inference.primary_conclusion,
-    patterns: Object.freeze([...trajectories, ...themes]),
+    patterns: Object.freeze([
+      ...(inference.within_episode_trajectories || []).map((item) => item.member_trajectory),
+      ...(inference.repeated_cross_episode_themes || []).map((item) => item.finding),
+    ]),
     votingContext: context.votingContext,
-    votingContextBoundary: context.votingContextBoundary,
-    howToRead: [inference.why_conclusion_does_not_go_further, inference.future_expansion_rule].filter(Boolean).join(" "),
     evidenceBreadth: inference.evidence_strength_label,
   });
+}
+
+function pendingPublication(reviewLabel) {
+  return Object.freeze({
+    editorialStatus: "human_approval_pending",
+    benchmarkStatus: "not_promoted",
+    productionEligible: false,
+    reviewLabel,
+  });
+}
+
+function finding(episodeId, text) {
+  return Object.freeze({ episodeId, text });
+}
+
+function trajectory(episode_id, member_trajectory) {
+  return Object.freeze({ episode_id, member_trajectory, coverage_status: "complete" });
 }

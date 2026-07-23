@@ -43,7 +43,6 @@ test("selected profiles reuse one selector and render adapter", () => {
     assert.deepEqual(selected.indicators.map((item) => item.label), [
       "7 substantive votes",
       "5 policy episodes",
-      "0 Not Voting",
       "6 context-only records",
     ]);
   }

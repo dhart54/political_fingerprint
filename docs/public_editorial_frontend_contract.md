@@ -12,18 +12,27 @@ The representative route follows one production path:
 4. `adaptEditorialIssueSlice` creates a public view model with `buildPublicEditorialPresentation`.
 5. `EditorialIssueExperience` renders that view model. If no eligible slice exists, `PositionByIssue` renders the basic-evidence presentation and the same vote receipts.
 
-React must not infer support, opposition, episodes, patterns, philosophy, or publication status from raw rolls. Those decisions remain upstream. The presentation adapter may count supplied records, describe whether expected records are present, and translate already-supplied analytical states into public language.
+React must not infer support, opposition, service eligibility, episodes, featured evidence, patterns, philosophy, or publication status from raw rolls. Those decisions remain upstream. The presentation adapter may group supplied contracts and translate already-supplied analytical states into public language.
+
+The reusable evidence model is:
+
+`shared legislative action + shared episode relationship + member action overlay + member issue synthesis`
+
+Shared actions contain only legislative facts, stage-specific arguments, caveats, and sources. Member identity, action direction, action-and-result copy, service status, and episode trajectory belong to the overlay. Shared evidence must not name a reviewed member or assign a reason for a member's vote.
 
 ## Public hierarchy
 
 An eligible editorial slice is presented in this order:
 
-1. what the reviewed record suggests;
+1. one member-and-issue title;
 2. the supplied conclusion, when the coverage state permits one;
-3. a public evidence-strength label;
-4. coverage of the conclusion, including reviewed period and record counts;
-5. patterns, important exceptions, voting context, and limits when supplied;
-6. progressively disclosed vote explanations and official sources.
+3. a reader-facing evidence label and compact coverage line;
+4. supplied `Repeated patterns`, `Policy trajectories`, `Other notable choices`, and `Meaningful exceptions` sections that actually contain content;
+5. three to five upstream-selected featured policy episodes;
+6. a collapsed complete reviewed record grouped by policy family, Congress, episode, and action;
+7. secondary procedural and voting context disclosures.
+
+The default surface remains bounded: episodes and the complete record start collapsed, regardless of whether an issue contains 6, 20, or 40 actions. The standardized action card remains the detailed receipt inside its episode. Repeated legislative stages are not flattened into independent top-level policy positions.
 
 Party alignment is secondary voting context, never the finding. Procedural records and Not Voting remain visible but do not become support or opposition. A narrow amendment record is not presented as final-passage evidence for its parent measure.
 
@@ -37,11 +46,17 @@ Party alignment is secondary voting context, never the finding. Procedural recor
 | `no_editorial_coverage` | Vote evidence | Show receipts and counts without combining them into an issue conclusion. |
 | `procedural_context_only` | Procedural context only | Explain that the records concern floor process and do not establish a direct position on the underlying issue. |
 
-Incomplete evidence is a coverage statement, not evidence that the representative has no position. Missing expected records must be disclosed. `Not Voting` and `Present` are reported as actions, not folded into substantive Yes/No counts.
+Incomplete evidence is a coverage statement, not evidence that the representative has no position. Missing expected in-service records must be disclosed. `Not Voting` and `Present` are reported as actions, not folded into substantive Yes/No counts. `not yet serving` and `no longer serving` are outside-service states, not Not Voting, missing data, or reduced evidence quality. `missing evidence` applies only to an expected action during the member's service. Service dates and eligibility are supplied upstream and are never inferred in React.
 
 When `inference_candidate.coverage` is present, its expected and observed action counts, Yes/No, Present, Not Voting, missing-action counts, and complete/partial/missing episode counts are authoritative. Interpretation-array counting is a legacy fallback only when the complete structured coverage object is absent. A supported upstream conclusion may remain visible with an explicitly disclosed coverage gap; contested and insufficient upstream inference states remain developing and limited, respectively.
 
-Public limitations are generated from structured coverage plus explicitly public-safe limitation fields. Arbitrary internal methodology prose is not rendered. Summary exceptions prefer explicitly public exceptions, then weakening or conflicting evidence, then relevant caveats from distinct episodes, with semantic deduplication and a four-item limit. Additional measure-specific caveats remain in their vote cards.
+The rich surface does not render a large coverage panel or a generic issue-level methodology/limitations panel. Breadth appears in the compact coverage line. A neutral debate-attribution boundary appears once per expanded action containing arguments. Concrete measure limitations stay with the relevant episode or action. `Meaningful exceptions` is reserved for evidence that materially complicates the issue conclusion.
+
+## Episode and policy-family hierarchy
+
+Closely related actions within one Congress may share an episode. Related legislation in different Congresses remains in separate episodes because legislative text, mechanism, coalition, and service eligibility may differ. An optional policy-family ID may group those Congress-specific episodes without implying one uninterrupted trajectory or a change in the member's position.
+
+`featuredEpisodeIds` is an upstream editorial selection, normally limited to five. React does not choose featured evidence from chronology, vote margin, party alignment, or counts. Internal selection rationales remain in review artifacts and are not public copy.
 
 ## Public-copy glossary
 
@@ -68,4 +83,4 @@ Pending real slices may be passed explicitly to the guarded golden-render route 
 
 ## Accessibility and responsive behavior
 
-Issue navigation is keyboard reachable and exposes the selected issue with `aria-current`. Vote disclosures retain native button semantics and allow one expanded parent record at a time. Focus rings must remain visible. Public panels must not create horizontal page overflow at 390 px, tablet, laptop, or wide desktop widths; the issue-navigation row may scroll horizontally within its own container.
+Issue navigation is hidden when only one issue is available; when multiple issues are available it is keyboard reachable and exposes the selected issue with `aria-current`. Episode, complete-record, action, context, and source disclosures use native `details`/`summary` semantics. Focus rings must remain visible. Public panels must not create horizontal page overflow at 390 px, tablet, laptop, or wide desktop widths; the issue-navigation row may scroll horizontally within its own container.
