@@ -23,9 +23,14 @@ import { justiceCrossMemberRenderProfiles } from "../lib/justiceCrossMemberRevie
 import { EDITORIAL_EXPERIENCE_MODE } from "../lib/editorialIssueExperience.mjs";
 import { reviewEditorialIssueSlices } from "../lib/editorialIssueReviewSlices.mjs";
 import {
+  mixedAvailabilityIssueFixtureData,
+  proceduralOnlyIssueFixtureData,
+  syntheticDevelopingEditorialCandidate,
   syntheticEditorialCandidate,
   syntheticEditorialIssueFixtureData,
   syntheticEditorialLegislator,
+  syntheticLimitedEditorialCandidate,
+  syntheticLimitedEditorialIssueFixtureData,
 } from "../lib/editorialIssueTestFixtures.mjs";
 
 export default function GoldenRenderFixture() {
@@ -62,11 +67,12 @@ export default function GoldenRenderFixture() {
 
         <section
           className="mt-5 scroll-mt-4"
+          data-review-harness="pending-editorial"
           data-testid="foushee-economy-editorial-gold"
           id="foushee-economy-editorial-gold"
         >
-          <div className="rounded-2xl border border-cyan-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
-            <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">Staged content preview</p>
+          <div className="rounded-2xl border border-cyan-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]" data-review-harness-chrome="true">
+            <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">Unpublished review — internal harness</p>
             <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">
               Valerie P. Foushee — Economy &amp; Taxes
             </h2>
@@ -86,9 +92,9 @@ export default function GoldenRenderFixture() {
           />
         </section>
 
-        <section className="mt-5 scroll-mt-4" data-testid="foushee-justice-editorial-gold" id="foushee-justice-editorial-gold">
-          <div className="rounded-2xl border border-cyan-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
-            <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">Staged content preview</p>
+        <section className="mt-5 scroll-mt-4" data-review-harness="pending-editorial" data-testid="foushee-justice-editorial-gold" id="foushee-justice-editorial-gold">
+          <div className="rounded-2xl border border-cyan-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]" data-review-harness-chrome="true">
+            <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">Unpublished review — internal harness</p>
             <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">Valerie P. Foushee {"—"} Justice &amp; Public Safety</h2>
             <p className="mt-1 text-sm leading-6 text-stone-600">Pending, episode-aware editorial review through the generic issue renderer.</p>
           </div>
@@ -98,11 +104,12 @@ export default function GoldenRenderFixture() {
         {justiceCrossMemberRenderProfiles.map((profile) => (
           <section
             className="mt-5 scroll-mt-4"
+            data-review-harness="cross-member-pending"
             data-testid={`justice-cross-member-${profile.memberId}`}
             id={`justice-cross-member-${profile.memberId}`}
             key={profile.memberId}
           >
-            <div className="rounded-2xl border border-indigo-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+            <div className="rounded-2xl border border-indigo-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]" data-review-harness-chrome="true">
               <p className="text-xs uppercase tracking-[0.2em] text-indigo-800">Cross-member validation — review only</p>
               <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">
                 {profile.legislator.name_display} — Justice &amp; Public Safety
@@ -124,31 +131,50 @@ export default function GoldenRenderFixture() {
           </section>
         ))}
 
-        <section className="mt-5 scroll-mt-4" data-testid="foushee-justice-production-gate-fixture" id="foushee-justice-production-gate-fixture">
-          <div className="rounded-2xl border border-stone-300 bg-white px-4 py-3"><p className="text-xs uppercase tracking-[0.2em] text-stone-600">Production-gate fallback proof</p><h2 className="mt-1 font-serif text-[1.8rem]">Pending Justice content stays unpublished</h2></div>
+        <section className="mt-5 scroll-mt-4" data-review-harness="production-fallback" data-testid="foushee-justice-production-gate-fixture" id="foushee-justice-production-gate-fixture">
+          <div className="rounded-2xl border border-stone-300 bg-white px-4 py-3" data-review-harness-chrome="true"><p className="text-xs uppercase tracking-[0.2em] text-stone-600">Production-gate fallback proof</p><h2 className="mt-1 font-serif text-[1.8rem]">Pending Justice content stays unpublished</h2></div>
           <PositionByIssue evidenceRequest={justiceEditorialRequest} fixtureData={justiceEditorialIssueFixtureData} legislator={editorialGoldLegislator} legislatorId={editorialGoldLegislator.id} scope="all" title="Production-mode Justice evidence" />
         </section>
 
-        <section className="mt-5 scroll-mt-4" data-testid="synthetic-editorial-fixture" id="synthetic-editorial-fixture">
-          <div className="rounded-2xl border border-violet-300 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
-            <p className="text-xs uppercase tracking-[0.2em] text-violet-800">Synthetic genericity fixture</p>
-            <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">Jordan Example {"\u2014"} Synthetic Energy Choices</h2>
-            <p className="mt-1 text-sm leading-6 text-stone-600">Test-only content; it makes no researched claim about a real person or measure.</p>
+        <section className="mt-5 scroll-mt-4" data-review-harness="simulated-production" data-testid="synthetic-editorial-fixture" id="synthetic-editorial-fixture">
+          <div className="rounded-2xl border border-violet-300 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]" data-review-harness-chrome="true">
+            <p className="text-xs uppercase tracking-[0.2em] text-violet-800">Synthetic fixture — simulated production eligibility</p>
+            <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">Jordan Example {"\u2014"} public presentation proof</h2>
+            <p className="mt-1 text-sm leading-6 text-stone-600">Internal test-only frame. The nested surface is the exact public adapter and renderer.</p>
           </div>
           <PositionByIssue
             editorialCandidates={[syntheticEditorialCandidate]}
-            editorialMode={EDITORIAL_EXPERIENCE_MODE.review}
             evidenceRequest={syntheticEditorialRequest}
             fixtureData={syntheticEditorialIssueFixtureData}
             legislator={syntheticEditorialLegislator}
             legislatorId={syntheticEditorialLegislator.id}
             scope="all"
-            title="Synthetic generic editorial evidence"
+            title="Jordan Example's issue evidence"
           />
         </section>
 
-        <section className="mt-5 scroll-mt-4" data-testid="foushee-production-gate-fixture" id="foushee-production-gate-fixture">
-          <div className="rounded-2xl border border-stone-300 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
+        <section className="mt-5 scroll-mt-4" data-review-harness="developing-record" data-testid="public-developing-record" id="public-developing-record">
+          <div className="rounded-2xl border border-amber-300 bg-white px-4 py-3" data-review-harness-chrome="true"><p className="text-xs uppercase tracking-[0.2em] text-amber-800">Synthetic fixture — developing public state</p><h2 className="mt-1 font-serif text-[1.8rem]">Developing record</h2></div>
+          <PositionByIssue editorialCandidates={[syntheticDevelopingEditorialCandidate]} evidenceRequest={syntheticEditorialRequest} fixtureData={syntheticEditorialIssueFixtureData} legislator={syntheticEditorialLegislator} legislatorId={syntheticEditorialLegislator.id} scope="all" title="Jordan Example's developing issue record" />
+        </section>
+
+        <section className="mt-5 scroll-mt-4" data-review-harness="limited-evidence" data-testid="public-limited-evidence" id="public-limited-evidence">
+          <div className="rounded-2xl border border-amber-300 bg-white px-4 py-3" data-review-harness-chrome="true"><p className="text-xs uppercase tracking-[0.2em] text-amber-800">Synthetic fixture — limited public state</p><h2 className="mt-1 font-serif text-[1.8rem]">Limited evidence</h2></div>
+          <PositionByIssue editorialCandidates={[syntheticLimitedEditorialCandidate]} evidenceRequest={syntheticEditorialRequest} fixtureData={syntheticLimitedEditorialIssueFixtureData} legislator={syntheticEditorialLegislator} legislatorId={syntheticEditorialLegislator.id} scope="all" title="Jordan Example's limited issue record" />
+        </section>
+
+        <section className="mt-5 scroll-mt-4" data-review-harness="procedural-only" data-testid="public-procedural-only" id="public-procedural-only">
+          <div className="rounded-2xl border border-stone-300 bg-white px-4 py-3" data-review-harness-chrome="true"><p className="text-xs uppercase tracking-[0.2em] text-stone-600">Synthetic fixture — fallback proof</p><h2 className="mt-1 font-serif text-[1.8rem]">Procedural context only</h2></div>
+          <PositionByIssue evidenceRequest={syntheticEditorialRequest} fixtureData={proceduralOnlyIssueFixtureData} legislator={syntheticEditorialLegislator} legislatorId={syntheticEditorialLegislator.id} scope="all" title="Jordan Example's procedural record" />
+        </section>
+
+        <section className="mt-5 scroll-mt-4" data-review-harness="mixed-availability" data-testid="public-mixed-availability" id="public-mixed-availability">
+          <div className="rounded-2xl border border-stone-300 bg-white px-4 py-3" data-review-harness-chrome="true"><p className="text-xs uppercase tracking-[0.2em] text-stone-600">Synthetic fixture — navigation proof</p><h2 className="mt-1 font-serif text-[1.8rem]">Mixed issue availability</h2></div>
+          <PositionByIssue editorialCandidates={[syntheticEditorialCandidate]} evidenceRequest={syntheticEditorialRequest} fixtureData={mixedAvailabilityIssueFixtureData} legislator={syntheticEditorialLegislator} legislatorId={syntheticEditorialLegislator.id} scope="all" title="Jordan Example's issue evidence" />
+        </section>
+
+        <section className="mt-5 scroll-mt-4" data-review-harness="production-fallback" data-testid="foushee-production-gate-fixture" id="foushee-production-gate-fixture">
+          <div className="rounded-2xl border border-stone-300 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]" data-review-harness-chrome="true">
             <p className="text-xs uppercase tracking-[0.2em] text-stone-600">Production-gate fallback proof</p>
             <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">Pending editorial content stays unpublished</h2>
             <p className="mt-1 text-sm leading-6 text-stone-600">The same pending source data runs in default production mode and keeps the basic evidence experience.</p>

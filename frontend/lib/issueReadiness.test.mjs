@@ -37,29 +37,29 @@ test("issue domains are grouped by readiness label", () => {
   assert.deepEqual(summary, [
     {
       key: "strong_evidence",
-      label: "Best issue reads",
-      readinessLabel: "Strong evidence",
+      label: "Clearest vote evidence",
+      readinessLabel: "Clear vote pattern",
       count: 1,
       domains: ["ECONOMY_TAXES"],
     },
     {
       key: "mixed_but_interpretable",
-      label: "Mixed but interpretable",
-      readinessLabel: "Mixed but interpretable",
+      label: "Evidence in more than one direction",
+      readinessLabel: "Evidence in more than one direction",
       count: 1,
       domains: ["JUSTICE_PUBLIC_SAFETY"],
     },
     {
       key: "limited_evidence",
-      label: "Limited evidence",
-      readinessLabel: "Limited evidence",
+      label: "Limited vote evidence",
+      readinessLabel: "Limited vote evidence",
       count: 1,
       domains: ["NATIONAL_SECURITY_FOREIGN"],
     },
     {
       key: "not_enough_to_summarize",
-      label: "Not enough to summarize",
-      readinessLabel: "Not enough to summarize",
+      label: "Receipts only",
+      readinessLabel: "Receipts only",
       count: 1,
       domains: ["HEALTH_SOCIAL"],
     },
@@ -143,10 +143,10 @@ test("representative issue picker renders readiness hierarchy without banned lan
   const readinessSource = readFileSync(new URL("./issueReadiness.mjs", import.meta.url), "utf8");
   const source = `${componentSource}\n${readinessSource}`;
 
-  assert.match(source, /Best issue reads/);
-  assert.match(source, /Mixed but interpretable/);
-  assert.match(source, /Limited evidence/);
-  assert.match(source, /Not enough to summarize/);
+  assert.match(source, /Clearest vote evidence/);
+  assert.match(source, /Evidence in more than one direction/);
+  assert.match(source, /Limited vote evidence/);
+  assert.match(source, /Receipts only/);
   assert.match(source, /ISSUE_READINESS_ORDER = \[\s*"strong_evidence",\s*"mixed_but_interpretable",\s*"limited_evidence",\s*"not_enough_to_summarize"/);
   assert.match(source, /Limited sections remain visible below without being treated as confident summaries/);
   assert.doesNotMatch(

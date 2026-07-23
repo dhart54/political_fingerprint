@@ -150,7 +150,7 @@ test("issue pattern rows preserve support and opposition counts", () => {
     [
       ["NATIONAL_SECURITY_FOREIGN", 2, 17, "Mostly opposed", "Mostly opposed in reviewed sample"],
       ["ECONOMY_TAXES", 0, 6, "Mostly opposed", "Mostly opposed in reviewed sample"],
-      ["JUSTICE_PUBLIC_SAFETY", 3, 4, "Mixed", "Mixed but interpretable"],
+      ["JUSTICE_PUBLIC_SAFETY", 3, 4, "Mixed", "Evidence in more than one direction"],
     ],
   );
 });
@@ -194,7 +194,7 @@ test("issue card previews align dominant and mixed labels with reviewed counts",
   assert.equal(justice.countLine, "51 opposed / 7 supported across 58 reviewed Yes/No votes.");
   assert.match(justice.themeLine, /criminal-law and public-safety measures/);
 
-  assert.equal(immigration.status, "Mixed but interpretable");
+  assert.equal(immigration.status, "Evidence in more than one direction");
   assert.equal(immigration.countLine, "8 opposed / 5 supported across 13 reviewed Yes/No votes.");
   assert.match(immigration.themeLine, /Votes point in more than one direction/);
   assert.doesNotMatch(`${immigration.status} ${immigration.themeLine}`, /mostly opposed|mostly supported/i);

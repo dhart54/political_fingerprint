@@ -280,7 +280,7 @@ function buildTopPosition(rows) {
     metricDomain: formatDomainLabel(strongest.domain),
     value:
       strongest.readiness?.key === "mixed_but_interpretable"
-        ? "Mixed but interpretable"
+        ? "Evidence in more than one direction"
         : strongest.readiness?.key === "limited_evidence"
           ? "Limited reviewed evidence"
           : "Strong reviewed sample",

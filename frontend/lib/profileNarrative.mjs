@@ -101,7 +101,7 @@ export function buildRecordNarrative({ legislator = {}, positions = [], scope = 
   const dominantLine = buildDominantIssueLine(interpretedRows);
   const strongestLine = buildStrongestIssueLine(strongest);
   const mixedLine = mixedRows.length
-    ? `${formatList(mixedRows.slice(0, 2).map((row) => formatDomainLabel(row.domain)))} ${mixedRows.length === 1 ? "is" : "are"} mixed but interpretable.`
+    ? `${formatList(mixedRows.slice(0, 2).map((row) => formatDomainLabel(row.domain)))} ${mixedRows.length === 1 ? "has" : "have"} reviewed votes pointing in more than one direction.`
     : "";
   const limitedLine = limitedRows.length || notReadyRows.length
     ? `${limitedRows.length + notReadyRows.length} issue ${limitedRows.length + notReadyRows.length === 1 ? "area remains" : "areas remain"} limited or not ready to summarize.`
@@ -190,7 +190,7 @@ export function buildIssueCardPreview(row = {}) {
 
   if (readiness.key === "mixed_but_interpretable") {
     return {
-      status: "Mixed but interpretable",
+      status: "Evidence in more than one direction",
       countLine: `${opposeCount} opposed / ${supportCount} supported across ${interpretedYesNo} reviewed Yes/No ${interpretedYesNo === 1 ? "vote" : "votes"}.`,
       themeLine: `Votes point in more than one direction across ${themeText}.`,
       receiptLine: "Open representative votes before reading this as mostly support or mostly opposition.",
@@ -270,7 +270,7 @@ function buildStrongestIssueLine(row) {
     return `${formatDomainLabel(row.domain)} is the best available read, but it should stay cautious: ${countLine}.`;
   }
   if (readiness.key === "mixed_but_interpretable") {
-    return `${formatDomainLabel(row.domain)} is mixed but interpretable: ${countLine}.`;
+    return `${formatDomainLabel(row.domain)} has reviewed votes pointing in more than one direction: ${countLine}.`;
   }
 
   const dominantDirection = getDominantDirection(row);

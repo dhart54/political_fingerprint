@@ -7,46 +7,42 @@ import { buildImportantContext, groupOfficialSources } from "../lib/editorialIss
 export default function EditorialIssueExperience({ experience }) {
   const [openRecordId, setOpenRecordId] = useState(null);
   if (!experience) return null;
+  const presentation = experience.publicPresentation;
 
   return (
     <section
-      aria-label={`${experience.identity.issueDisplayName} editorial issue experience`}
+      aria-label={`${experience.identity.issueDisplayName} reviewed issue record`}
       className="rounded-xl border border-cyan-900/20 bg-cyan-50/60 px-3 py-3 sm:px-4"
+      data-public-surface="editorial-issue"
       data-testid="editorial-issue-experience"
     >
-      {experience.publication.isReview ? (
-        <p className="mb-3 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-amber-900" data-testid="editorial-review-label">
-          {experience.publication.reviewLabel || "Editorial review preview \u2014 not published"}
-        </p>
-      ) : null}
-
       <header>
-        <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">Issue summary</p>
+        <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">What the reviewed record suggests</p>
         <h5 className="mt-1 font-serif text-[1.35rem] leading-tight text-stone-950 sm:text-[1.55rem]">
           {experience.identity.memberDisplayName} {"\u2014"} {experience.identity.issueDisplayName}
         </h5>
         {experience.identity.reviewedPeriod ? (
           <p className="mt-1 text-xs uppercase tracking-[0.12em] text-stone-500">{experience.identity.reviewedPeriod}</p>
         ) : null}
-        {experience.synthesis.primary ? (
-          <p className="mt-2 max-w-3xl text-base leading-7 text-stone-800">{experience.synthesis.primary}</p>
+        {presentation.conclusion ? (
+          <p className="mt-3 max-w-[72ch] text-[1.05rem] leading-7 text-stone-900">{presentation.conclusion}</p>
         ) : null}
-        {experience.synthesis.evidenceBreadth ? (
-          <p className="mt-2 text-xs font-medium uppercase tracking-[0.12em] text-cyan-950">
-            {experience.synthesis.evidenceBreadth}
+        {presentation.strengthLabel ? (
+          <p className="mt-3 w-fit rounded-full border border-cyan-900/15 bg-white px-3 py-1.5 text-xs font-medium text-cyan-950">
+            {presentation.strengthLabel}
           </p>
         ) : null}
       </header>
 
-      <RecordIndicators indicators={experience.indicators} />
-      <SummaryPanels synthesis={experience.synthesis} />
+      <CoverageSummary coverage={presentation.coverage} indicators={experience.indicators} />
+      <SummaryPanels presentation={presentation} />
 
       <div className="mt-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">Reviewed record</p>
-          <h6 className="mt-1 font-serif text-xl leading-tight text-stone-950">Vote explanations and context records</h6>
+          <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">Supporting evidence</p>
+          <h6 className="mt-1 font-serif text-xl leading-tight text-stone-950">Votes and legislative context</h6>
         </div>
-        <p className="text-xs leading-5 text-stone-600">Open one record at a time for the first explanation layer.</p>
+        <p className="text-xs leading-5 text-stone-600">Open a record to see what changed, the outcome, arguments, and official sources.</p>
       </div>
 
       <div className="mt-3 grid gap-2.5">
@@ -63,35 +59,48 @@ export default function EditorialIssueExperience({ experience }) {
   );
 }
 
-function RecordIndicators({ indicators = [] }) {
-  if (!indicators.length) return null;
+function CoverageSummary({ coverage, indicators = [] }) {
+  if (!coverage) return null;
   return (
-    <div aria-label="Reviewed record indicators" className="mt-3 flex flex-wrap gap-2">
-      {indicators.map((indicator) => (
-        <span className="rounded-full border border-cyan-900/15 bg-white px-3 py-1.5 text-xs tracking-[0.04em] text-cyan-950" key={indicator.key}>
-          {indicator.label}
-        </span>
-      ))}
-    </div>
+    <section className="mt-4 rounded-xl border border-cyan-900/15 bg-white px-3 py-3 sm:px-4" data-coverage-state={coverage.state}>
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.16em] text-cyan-900">Coverage of this conclusion</p>
+          <p className="mt-1 text-sm font-semibold text-stone-950">{coverage.label}</p>
+        </div>
+        {coverage.reviewedPeriod ? <p className="text-xs leading-5 text-stone-500">{coverage.reviewedPeriod}</p> : null}
+      </div>
+      <p className="mt-2 max-w-[78ch] text-sm leading-6 text-stone-700">{coverage.message}</p>
+      {indicators.length ? (
+        <div aria-label="Reviewed coverage details" className="mt-3 flex flex-wrap gap-2">
+          {indicators.map((indicator) => (
+            <span className="rounded-full border border-cyan-900/15 bg-cyan-50 px-3 py-1.5 text-xs text-cyan-950" key={indicator.key}>
+              {indicator.label}
+            </span>
+          ))}
+        </div>
+      ) : null}
+    </section>
   );
 }
 
-function SummaryPanels({ synthesis }) {
+function SummaryPanels({ presentation }) {
   const panels = [
-    synthesis.patterns?.length ? { title: "Patterns in this sample", kind: "patterns", value: synthesis.patterns } : null,
-    synthesis.votingContext ? { title: "Voting context", kind: "context", value: synthesis.votingContext, boundary: synthesis.votingContextBoundary } : null,
-    synthesis.howToRead ? { title: "How to read this record", kind: "guidance", value: synthesis.howToRead } : null,
+    presentation.patterns?.length ? { title: "Patterns in the reviewed record", kind: "list", value: presentation.patterns } : null,
+    presentation.exceptions?.length ? { title: "Important exceptions", kind: "list", value: presentation.exceptions } : null,
+    presentation.votingContext ? { title: "Voting context", kind: "text", value: presentation.votingContext, boundary: presentation.votingContextBoundary } : null,
+    presentation.limits?.length ? { title: "How to read this conclusion", kind: "list", value: presentation.limits } : null,
   ].filter(Boolean);
   if (!panels.length) return null;
 
   return (
-    <div className={`mt-4 grid items-start gap-3 ${panels.length === 3 ? "lg:grid-cols-3" : panels.length === 2 ? "md:grid-cols-2" : "max-w-3xl"}`}>
+    <div className="mt-4 grid items-start gap-3 md:grid-cols-2">
       {panels.map((panel) => (
-        <section className={`rounded-xl border px-3 py-3 sm:px-4 ${panel.kind === "patterns" ? "border-cyan-900/15 bg-white" : "border-stone-200 bg-stone-50"}`} key={panel.title}>
+        <section className={`rounded-xl border px-3 py-3 sm:px-4 ${panel.title === "Patterns in the reviewed record" ? "border-cyan-900/15 bg-white" : "border-stone-200 bg-stone-50"}`} key={panel.title}>
           <p className="text-xs uppercase tracking-[0.16em] text-cyan-900">{panel.title}</p>
-          {panel.kind === "patterns" ? (
+          {panel.kind === "list" ? (
             <ul className="mt-2 grid gap-1.5 pl-5 text-sm leading-6 text-stone-800">
-              {panel.value.map((pattern) => <li className="list-disc" key={pattern}>{pattern}</li>)}
+              {panel.value.map((item) => <li className="list-disc" key={item}>{item}</li>)}
             </ul>
           ) : (
             <p className="mt-2 text-sm leading-6 text-stone-800">{panel.value}</p>
