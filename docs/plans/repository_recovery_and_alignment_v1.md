@@ -43,7 +43,7 @@ Out of scope: broader plan archival, legacy-authority consolidation, review-bund
 - [x] Required migrations, workflow, and empty production registry are verified.
 - [x] Documentation and editorial workflow validation passes.
 - [x] Review packet and JSON companion are complete.
-- [ ] Intended tracked files only are committed and pushed in a draft PR.
+- [x] Intended tracked files only are committed and pushed in a draft PR.
 
 ## Current baseline
 
@@ -77,7 +77,7 @@ Out of scope: broader plan archival, legacy-authority consolidation, review-bund
 - [x] Worktree relocation.
 - [x] Root alignment.
 - [x] Tests and documentation validation.
-- [ ] Draft PR.
+- [x] Draft PR.
 
 ## Discoveries
 
@@ -130,4 +130,4 @@ None currently. Any mandatory stop condition will be recorded here and halt the 
 
 ## Final reconciliation
 
-Recovery, cleanup, documentation, worktree relocation, canonical-root alignment, and validation are complete. Commit, push, and draft-PR delivery remain; their final identifiers cannot be embedded in the commit that creates them and will be reconciled in a follow-up plan update on the same branch.
+Recovery, cleanup, documentation, worktree relocation, canonical-root alignment, validation, and delivery are complete. Initial milestone commit `d6139529b21f8181c0943bfef78f19bf1e293b4a` was pushed on `codex/repository-recovery-alignment-v1`, and draft PR [#102](https://github.com/dhart54/political_fingerprint/pull/102) was opened against pinned canonical `main`. This follow-up reconciliation is the only post-PR repository change. No merge, deployment, or production write was performed.
