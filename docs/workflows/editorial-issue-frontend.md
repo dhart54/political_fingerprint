@@ -4,7 +4,7 @@ Use this workflow when adding or reviewing a reader-facing editorial slice for o
 
 ## Presentation contract
 
-The generic frontend contract is adapted in `frontend/lib/editorialIssueExperience.mjs` and rendered by `frontend/components/EditorialIssueExperience.js`. React receives a reader-facing view model; it does not read an editorial review packet directly and does not calculate support, opposition, episodes, patterns, or philosophy from raw rolls.
+The generic frontend contract is adapted in `frontend/lib/editorialIssueExperience.mjs` and rendered by `frontend/components/EditorialIssueExperience.js`. React receives a reader-facing view model; it does not read an editorial review packet directly and does not calculate support, opposition, service eligibility, episodes, featured selections, patterns, or philosophy from raw rolls. Rich views use the shared-action, episode, member-overlay, and issue-synthesis layers documented in `docs/public_editorial_frontend_contract.md`.
 
 The normative reader-facing terminology, coverage states, runtime path, and review/public boundary are documented in `docs/public_editorial_frontend_contract.md`.
 
@@ -37,6 +37,7 @@ Publication gates are deliberately separate:
 
 - Explicit review mode may render pending content on the server-gated golden-render route and labels it as unpublished review content.
 - Production mode reads only `frontend/lib/editorialIssueProductionSlices.mjs`; pending bundles live in the separate review registry and are passed explicitly by the review fixture.
+- Use `docs/workflows/editorial-standardization-pipeline.md` for reusable dossier generation, deterministic validation, failure escalation, and sampled-audit rules.
 - Production mode requires registry `human_approved`, `gold_benchmark`, and a separate explicit `productionEligible: true` flag, plus source-level `human_approved` and `human_approved` on every included record where that field exists.
 - `human_approved` alone is not public-production authorization.
 - Pending content may exist on `main` while remaining ineligible for production representative pages.

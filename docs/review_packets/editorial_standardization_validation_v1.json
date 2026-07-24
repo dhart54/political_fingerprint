@@ -1,0 +1,300 @@
+{
+  "schemaVersion": "editorial_standardization_validation_v1",
+  "deterministic": true,
+  "humanApprovalConferred": false,
+  "politicalTruthOrFactualPerfectionProven": false,
+  "publicationBoundary": {
+    "editorialStatus": "human_approval_pending",
+    "benchmarkStatus": "not_promoted",
+    "productionEligible": false,
+    "productionRegistryExpectedEntries": 0
+  },
+  "summary": {
+    "state": "pass",
+    "sliceCount": 4,
+    "ruleCount": 37,
+    "ruleCountBySeverity": {
+      "block": 36,
+      "warning": 1
+    },
+    "findingCountBySeverity": {
+      "block": 0,
+      "warning": 0
+    }
+  },
+  "ruleCatalog": [
+    {
+      "id": "STATUS-001",
+      "severity": "block",
+      "description": "Real content must remain pending, unpromoted, and production-ineligible."
+    },
+    {
+      "id": "FIXTURE-001",
+      "severity": "block",
+      "description": "Reference fixtures use a non-publication standardization designation."
+    },
+    {
+      "id": "SHARED-001",
+      "severity": "block",
+      "description": "Shared evidence must remain member-neutral."
+    },
+    {
+      "id": "SHARED-002",
+      "severity": "block",
+      "description": "Shared evidence facts must remain stable across member overlays."
+    },
+    {
+      "id": "OVERLAY-001",
+      "severity": "block",
+      "description": "Member action prose must match the recorded overlay status."
+    },
+    {
+      "id": "ACTION-001",
+      "severity": "block",
+      "description": "Every substantive action needs an exact identity."
+    },
+    {
+      "id": "ACTION-002",
+      "severity": "block",
+      "description": "Every substantive action needs a Congress and chamber context."
+    },
+    {
+      "id": "ACTION-003",
+      "severity": "block",
+      "description": "Every substantive action needs an exact legislative stage."
+    },
+    {
+      "id": "ACTION-004",
+      "severity": "block",
+      "description": "Every substantive action needs a neutral practical choice."
+    },
+    {
+      "id": "ACTION-005",
+      "severity": "block",
+      "description": "Prior baseline must be present or reason-coded."
+    },
+    {
+      "id": "ACTION-006",
+      "severity": "block",
+      "description": "Change or mechanism at stake must be present or reason-coded."
+    },
+    {
+      "id": "ACTION-007",
+      "severity": "block",
+      "description": "Affected groups must be present or reason-coded."
+    },
+    {
+      "id": "ACTION-008",
+      "severity": "block",
+      "description": "Scale and timing must be present or reason-coded."
+    },
+    {
+      "id": "ACTION-009",
+      "severity": "block",
+      "description": "Outcome or status must be present or reason-coded."
+    },
+    {
+      "id": "ACTION-010",
+      "severity": "block",
+      "description": "Official vote source is required."
+    },
+    {
+      "id": "ACTION-011",
+      "severity": "block",
+      "description": "Official measure or action source is required."
+    },
+    {
+      "id": "ACTION-012",
+      "severity": "block",
+      "description": "Argument evidence must be sourced, absent with a reason, or explicitly unresolved."
+    },
+    {
+      "id": "ACTION-013",
+      "severity": "block",
+      "description": "Public member action summaries must be complete sentences."
+    },
+    {
+      "id": "SOURCE-001",
+      "severity": "block",
+      "description": "Public sources need permitted nonblank HTTPS URLs."
+    },
+    {
+      "id": "SOURCE-002",
+      "severity": "block",
+      "description": "Source locators must map evidence without implying human verification."
+    },
+    {
+      "id": "EPISODE-001",
+      "severity": "block",
+      "description": "Episode IDs, Congress, and policy-family identities are required."
+    },
+    {
+      "id": "EPISODE-002",
+      "severity": "block",
+      "description": "Multi-action episodes need an explicit relationship."
+    },
+    {
+      "id": "EPISODE-003",
+      "severity": "block",
+      "description": "Episode action order and expected membership must match exactly."
+    },
+    {
+      "id": "EPISODE-004",
+      "severity": "block",
+      "description": "An action may not appear in multiple episodes without an explicit cross-reference."
+    },
+    {
+      "id": "EPISODE-005",
+      "severity": "block",
+      "description": "Episodes may not merge actions across Congresses."
+    },
+    {
+      "id": "COVERAGE-001",
+      "severity": "block",
+      "description": "Coverage counts must agree with episode and action structure."
+    },
+    {
+      "id": "ANALYSIS-001",
+      "severity": "block",
+      "description": "Analytical categories must meet their episode-support rules."
+    },
+    {
+      "id": "ANALYSIS-002",
+      "severity": "block",
+      "description": "Procedural actions may not support a substantive conclusion."
+    },
+    {
+      "id": "ANALYSIS-003",
+      "severity": "block",
+      "description": "Present, Not Voting, service-ineligible, and missing actions cannot count as support or opposition."
+    },
+    {
+      "id": "DETAIL-001",
+      "severity": "block",
+      "description": "Motive boundaries and deterministic duplicate detail may render only once."
+    },
+    {
+      "id": "DETAIL-002",
+      "severity": "warning",
+      "description": "Near-duplicate detail that is not deterministically equivalent needs review."
+    },
+    {
+      "id": "PUBLIC-001",
+      "severity": "block",
+      "description": "Internal workflow and methodology language may not render publicly."
+    },
+    {
+      "id": "PUBLIC-002",
+      "severity": "block",
+      "description": "The selected rich issue may not reappear as a generic issue card."
+    },
+    {
+      "id": "PUBLIC-003",
+      "severity": "block",
+      "description": "A rich issue may feature no more than five episodes."
+    },
+    {
+      "id": "PUBLIC-004",
+      "severity": "block",
+      "description": "Raw ISO date ranges may not render publicly."
+    },
+    {
+      "id": "PUBLIC-005",
+      "severity": "block",
+      "description": "D.C. repeal action wording must remain bounded to most provisions."
+    },
+    {
+      "id": "SERVICE-001",
+      "severity": "block",
+      "description": "Service-ineligible statuses require exact action-date eligibility evidence."
+    }
+  ],
+  "reports": [
+    {
+      "fixtureId": "foushee-economy-reference-v1",
+      "designation": "human_reviewed_presentation_fixture",
+      "state": "pass",
+      "publicationEligibilityMustFail": false,
+      "memberId": "F000477",
+      "issue": "ECONOMY_TAXES",
+      "findings": [],
+      "structuralExpectations": {
+        "substantiveActions": 6,
+        "independentEpisodes": 4,
+        "featuredEpisodes": 4,
+        "notVotingActions": 1,
+        "proceduralContextActions": 2,
+        "completeRecordPolicyFamilies": 4,
+        "completeRecordCongresses": [
+          119
+        ]
+      }
+    },
+    {
+      "fixtureId": "foushee-justice-reference-v1",
+      "designation": "human_reviewed_presentation_fixture",
+      "state": "pass",
+      "publicationEligibilityMustFail": false,
+      "memberId": "F000477",
+      "issue": "JUSTICE_PUBLIC_SAFETY",
+      "findings": [],
+      "structuralExpectations": {
+        "substantiveActions": 7,
+        "independentEpisodes": 5,
+        "featuredEpisodes": 5,
+        "notVotingActions": 0,
+        "proceduralContextActions": 6,
+        "completeRecordPolicyFamilies": 5,
+        "completeRecordCongresses": [
+          119
+        ]
+      }
+    },
+    {
+      "fixtureId": "massie-justice-reference-v1",
+      "designation": "human_reviewed_presentation_fixture",
+      "state": "pass",
+      "publicationEligibilityMustFail": false,
+      "memberId": "M001184",
+      "issue": "JUSTICE_PUBLIC_SAFETY",
+      "findings": [],
+      "structuralExpectations": {
+        "substantiveActions": 7,
+        "independentEpisodes": 5,
+        "featuredEpisodes": 5,
+        "notVotingActions": 0,
+        "proceduralContextActions": 6,
+        "completeRecordPolicyFamilies": 5,
+        "completeRecordCongresses": [
+          119
+        ]
+      }
+    },
+    {
+      "fixtureId": "synthetic-large-record-v1",
+      "designation": "standardization_regression_fixture",
+      "state": "pass",
+      "publicationEligibilityMustFail": false,
+      "memberId": "SYNTHETIC-LARGE",
+      "issue": "PUBLIC_ADMINISTRATION_EXAMPLE",
+      "findings": [],
+      "structuralExpectations": {
+        "substantiveActions": 24,
+        "independentEpisodes": 12,
+        "featuredEpisodes": 5,
+        "notVotingActions": 1,
+        "proceduralContextActions": 3,
+        "completeRecordPolicyFamilies": 11,
+        "completeRecordCongresses": [
+          118,
+          119
+        ]
+      }
+    }
+  ],
+  "mutationCoverage": {
+    "requiredMalformedCases": 20,
+    "testFile": "frontend/lib/editorialStandardizationValidator.test.mjs",
+    "interpretation": "The test suite deliberately mutates valid fixtures and asserts the expected stable rule ID. This report does not substitute for running the tests."
+  }
+}

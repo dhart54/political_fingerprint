@@ -1,10 +1,26 @@
-import { inferenceSynthesis } from "./editorialIssueReviewSlices.mjs";
+import { justiceEpisodePresentation } from "./editorialEpisodeMetadata.mjs";
+import { buildSharedLegislativeAction, neutralizeSharedSources } from "./editorialSharedEvidence.mjs";
+import { firstCompleteSentence } from "./editorialTextIntegrity.mjs";
 import { justiceEditorialIssueFixtureData } from "./justiceEditorialRenderFixture.mjs";
 import { justiceCrossMemberValidationData } from "./justiceCrossMemberValidationData.mjs";
 import { valerieFousheeJusticePublicSafetyEditorialGold } from "./valerieFousheeJusticePublicSafetyEditorialGold.mjs";
 
 const inferenceByMember = new Map(
   justiceCrossMemberValidationData.inferences.map((item) => [item.member.bioguide_id, item]),
+);
+const overlayByMember = new Map(
+  justiceCrossMemberValidationData.overlays.map((item) => [item.member.bioguide_id, item]),
+);
+const episodeById = new Map(justiceEpisodePresentation.episodes.map((item) => [item.id, item]));
+const neutralSharedByRoll = new Map(
+  valerieFousheeJusticePublicSafetyEditorialGold.interpretations.map((entry) => [
+    Number(entry.roll),
+    neutralSharedEntry(entry),
+  ]),
+);
+
+export const justiceSharedLegislativeActions = Object.freeze(
+  [...neutralSharedByRoll.values()].map((entry) => Object.freeze(entry)),
 );
 
 export const justiceCrossMemberReviewSlices = Object.freeze(
@@ -18,12 +34,8 @@ export const justiceCrossMemberReviewSlices = Object.freeze(
 
 export const justiceCrossMemberRenderProfiles = Object.freeze(
   ["A000370", "A000055", "M001184"].map((memberId) => {
-    const overlay = justiceCrossMemberValidationData.overlays.find(
-      (item) => item.member.bioguide_id === memberId,
-    );
-    const candidate = justiceCrossMemberReviewSlices.find(
-      (item) => item.identity.memberId === memberId,
-    );
+    const overlay = overlayByMember.get(memberId);
+    const candidate = justiceCrossMemberReviewSlices.find((item) => item.identity.memberId === memberId);
     return Object.freeze({
       memberId,
       label: overlay.validation_case,
@@ -34,33 +46,37 @@ export const justiceCrossMemberRenderProfiles = Object.freeze(
   }),
 );
 
-export function buildJusticeMemberReviewCandidate({ overlay, inference }) {
+export function justiceReviewCandidateForMember(memberId, synthesis) {
+  const overlay = overlayByMember.get(memberId);
+  if (!overlay) return null;
+  return buildJusticeMemberReviewCandidate({ overlay, inference: inferenceByMember.get(memberId), synthesis });
+}
+
+export function buildJusticeMemberReviewCandidate({ overlay, inference, synthesis = null }) {
   const actionsByRoll = new Map(overlay.roll_actions.map((item) => [Number(item.roll), item]));
   const source = {
     ...valerieFousheeJusticePublicSafetyEditorialGold,
-    member: {
-      name: overlay.member.display_name,
-      bioguide_id: overlay.member.bioguide_id,
-    },
+    member: { name: overlay.member.display_name, bioguide_id: overlay.member.bioguide_id },
+    shared_legislative_actions: justiceSharedLegislativeActions,
     slice_counts: {
       substantive_rolls: overlay.coverage.substantive_rolls_expected,
       policy_episodes: overlay.coverage.independent_episodes_expected,
       not_voting_records: overlay.coverage.not_voting_actions,
       context_controls: overlay.roll_actions.filter((item) => !item.counting).length,
     },
-    interpretations: valerieFousheeJusticePublicSafetyEditorialGold.interpretations.map(
+    interpretations: justiceSharedLegislativeActions.map(
       (entry) => applyMemberAction(entry, actionsByRoll.get(Number(entry.roll)), overlay.member),
     ),
     controls: valerieFousheeJusticePublicSafetyEditorialGold.controls.map((entry) => ({
       ...entry,
       member_action: actionsByRoll.get(Number(entry.roll))?.action,
+      context_summary: neutralControlSummary(entry.context_summary),
+      sources: neutralizeSharedSources(entry.sources),
     })),
     inference_candidate: inference,
     human_approval_status: "human_approval_pending",
   };
-  const aligned = overlay.roll_actions.filter(
-    (item) => item.counting && item.aligned_with_party_majority === true,
-  ).length;
+  const aligned = overlay.roll_actions.filter((item) => item.counting && item.aligned_with_party_majority === true).length;
   const partyName = overlay.member.party === "D" ? "House Democrats" : overlay.member.party === "R" ? "House Republicans" : "the member's party";
   const shortName = memberShortName(overlay.member);
   return Object.freeze({
@@ -73,56 +89,160 @@ export function buildJusticeMemberReviewCandidate({ overlay, inference }) {
       congress: 119,
       reviewedPeriod: "119th Congress",
     }),
+    episodePresentation: justiceEpisodePresentation,
+    standardizationFixture: overlay.member.bioguide_id === "M001184" ? Object.freeze({
+      designation: "human_reviewed_presentation_fixture",
+      fixtureId: "massie-justice-reference-v1",
+    }) : undefined,
+    memberEpisodeTrajectories: Object.freeze(reviewedEpisodeTrajectories(overlay)),
     publication: Object.freeze({
       editorialStatus: "human_approval_pending",
       benchmarkStatus: "not_promoted",
       productionEligible: false,
       reviewLabel: "Cross-member validation candidate — not published",
     }),
-    synthesis: inferenceSynthesis(source, {
-      votingContext: `${shortName} matched the majority of ${partyName} on ${aligned} of ${overlay.coverage.substantive_rolls_expected} substantive roll calls in this sample.`,
-      votingContextBoundary: "Party alignment is descriptive metadata only. It did not select the candidate conclusion, and repeated fentanyl stages remain one policy episode.",
-    }),
+    synthesis: Object.freeze(synthesis || reviewedSynthesisOverride(overlay, aligned, partyName) || inferenceSynthesis(source, {
+      votingContext: `${shortName} voted with the majority of ${partyName} on ${aligned} of the ${overlay.coverage.substantive_rolls_expected} substantive actions reviewed.`,
+    })),
   });
 }
 
-function applyMemberAction(entry, actionRow, member) {
-  const action = actionRow?.action;
-  const originalResult = entry.ten_second?.member_action_and_result || "";
-  const resultSuffix = originalResult.includes(". ")
-    ? originalResult.slice(originalResult.indexOf(". ") + 2)
-    : "";
+function reviewedSynthesisOverride(overlay, aligned, partyName) {
+  if (overlay.member.bioguide_id !== "M001184") return null;
   return {
-    ...entry,
+    primary: "Massie's reviewed record splits clearly by policy mechanism. He opposed all three actions in the fentanyl scheduling episode, while supporting officer-safety reporting and proposals concerning retired service firearms, broader D.C. pursuit authority, and repeal of most of D.C.'s 2022 policing reform law.",
+    evidenceBreadth: "A clear policy divide in the reviewed record",
+    readerFacingLabel: "A clear policy divide in the reviewed record",
+    analyticalSections: {
+      policyTrajectories: [{ episodeId: "halt-fentanyl-legislative-path", text: "Opposed all three reviewed actions in the fentanyl scheduling episode." }],
+      repeatedPatterns: [{ text: "Supported the three reviewed proposals involving police tools, operational authority, or rollback of policing restrictions." }],
+      otherNotableChoices: [{ episodeId: "officer-safety-data-reporting", text: "Supported officer-safety and wellness reporting." }],
+    },
+    votingContext: `Massie voted with the majority of ${partyName} on ${aligned} of the ${overlay.coverage.substantive_rolls_expected} substantive actions reviewed.`,
+  };
+}
+
+function inferenceSynthesis(source, context = {}) {
+  const inference = source.inference_candidate || {};
+  return {
+    primary: inference.primary_conclusion,
+    patterns: [
+      ...(inference.within_episode_trajectories || []).map((item) => item.member_trajectory),
+      ...(inference.repeated_cross_episode_themes || []).map((item) => item.finding),
+    ],
+    analyticalSections: {
+      policyTrajectories: (inference.within_episode_trajectories || []).map((item) => ({ episodeId: item.episode_id, text: item.member_trajectory })),
+      repeatedPatterns: (inference.repeated_cross_episode_themes || []).slice(0, 1).map((item) => ({ text: item.finding })),
+      otherNotableChoices: (inference.notable_one_off_choices || []).map((item) => ({ episodeId: item.episode_id, text: item.practical_policy_direction })),
+      meaningfulExceptions: (inference.contrary_or_limiting_evidence || []).map((item) => ({ episodeId: item.episode_id, text: item.text })),
+    },
+    votingContext: context.votingContext,
+    evidenceBreadth: inference.evidence_strength_label,
+  };
+}
+
+function neutralSharedEntry(entry) {
+  const episode = episodeById.get(entry.episode_id);
+  const shared = buildSharedLegislativeAction(entry, {}, {
+    episodeId: entry.episode_id,
+    policyFamilyId: episode?.policyFamilyId,
+  });
+  return {
+    roll: entry.roll,
+    measure_id: entry.measure_id,
+    stage: entry.stage,
+    episode_id: entry.episode_id,
+    human_approval_status: entry.human_approval_status,
+    ten_second: Object.freeze({ practical_choice: shared.practicalChoice }),
+    thirty_second: Object.freeze({
+      prior_baseline: shared.whatChanged.before,
+      mechanism: shared.whatChanged.changeAtStake,
+      affected: shared.impactAndOutcome.affected,
+      scale_or_timing: shared.impactAndOutcome.scaleAndTiming,
+      what_happened_next: shared.impactAndOutcome.outcome,
+    }),
+    two_minute: Object.freeze({
+      detail: shared.additionalDetail.detail,
+      supporter_argument: shared.arguments.supporters,
+      opponent_argument: shared.arguments.opponents,
+      argument_boundary: shared.argumentBoundary,
+      one_sided_argument_note: shared.oneSidedArgumentNote,
+      later_history: shared.additionalDetail.laterHistory,
+      caveats: shared.importantContext,
+      sources: shared.sources,
+    }),
+  };
+}
+
+function applyMemberAction(shared, actionRow, member) {
+  const action = actionRow?.action || "missing evidence";
+  return {
+    ...shared,
     member_action: action,
+    action_status: action,
     ten_second: {
-      ...entry.ten_second,
-      headline: actionHeadline(entry.ten_second?.headline, action),
-      member_action_and_result: `${memberShortName(member)} ${actionSentence(action)}.${resultSuffix ? ` ${resultSuffix}` : ""}`,
+      ...shared.ten_second,
+      headline: actionHeadline(shared.ten_second?.practical_choice, action),
+      member_action_and_result: `${memberShortName(member)} ${actionSentence(action)}.${outcomeSentence(shared.thirty_second?.what_happened_next)}`,
     },
   };
 }
 
-function actionHeadline(headline = "", action) {
-  const remainder = headline.replace(/^(supported|opposed|did not vote on|voted present on)\s+/i, "");
-  const prefix = {
-    Yea: "Supported",
-    Nay: "Opposed",
-    "Not Voting": "Did not vote on",
-    Present: "Voted Present on",
-  }[action] || "Recorded an action on";
-  return `${prefix} ${remainder}`;
+function actionHeadline(practicalChoice = "this legislative action", action) {
+  const object = practicalChoice.replace(/^Whether\s+(?:to\s+)?/i, "").replace(/\.$/, "");
+  const prefix = { Yea: "Supported", Nay: "Opposed", "Not Voting": "Was not recorded on", Present: "Voted Present on" }[action] || "Evidence unavailable for";
+  return `${prefix} this action: ${object}`;
+}
+
+function outcomeSentence(value = "") {
+  const first = firstCompleteSentence(value);
+  return first ? ` ${first}` : "";
+}
+
+function reviewedEpisodeTrajectories(overlay) {
+  const shortName = memberShortName(overlay.member);
+  const actionsByRoll = new Map(overlay.roll_actions.map((item) => [Number(item.roll), item.action]));
+  return overlay.episode_trajectories.map((trajectory) => {
+    if (trajectory.episode_id === "dc-policing-reform-repeal") {
+      const verb = actionsByRoll.get(299) === "Yea" ? "Supported" : actionsByRoll.get(299) === "Nay" ? "Opposed" : "Was not recorded on";
+      return {
+        ...trajectory,
+        member_trajectory: `${verb} the proposal to repeal most provisions of D.C.'s 2022 policing reform law.`,
+      };
+    }
+    if (trajectory.episode_id !== "halt-fentanyl-legislative-path") return trajectory;
+    const actions = [32, 33, 166].map((roll) => actionsByRoll.get(roll));
+    const allNay = actions.every((action) => action === "Nay");
+    const fousheeShape = actions.join("/") === "Yea/Nay/Yea";
+    return {
+      ...trajectory,
+      member_trajectory: allNay
+        ? "Opposed all three reviewed fentanyl actions."
+        : fousheeShape
+          ? "Supported the certification condition, opposed the earlier House bill, and supported the later permanent framework."
+          : trajectory.member_trajectory,
+      member_trajectory_detail: `${shortName} voted ${actions[0]} on the proposed certification condition, ${actions[1]} on H.R. 27 after that condition failed, and ${actions[2]} on the related but different Senate framework containing research provisions.`,
+    };
+  });
 }
 
 function actionSentence(action) {
-  if (action === "Not Voting") return "did not vote";
+  if (action === "Not Voting") return "was recorded as Not Voting";
   if (action === "Present") return "voted Present";
-  return `voted ${action}`;
+  if (action === "Yea" || action === "Nay") return `voted ${action}`;
+  return "has no resolved evidence record for this action";
+}
+
+function neutralControlSummary(value = "") {
+  return value
+    .replace(/\bFoushee\s+voted\s+(?:Yes|No|Yea|Nay)\b[^.]*\.?/gi, "This floor-process action was reviewed.")
+    .replace(/\bher\b/gi, "the member's");
 }
 
 function memberShortName(member) {
   return (member.formal_name || member.display_name)
-    .replace(/^(Mr\.|Mrs\.|Ms\.|Miss|Dr\.)\s+/, "");
+    .replace(/^(Mr\.|Mrs\.|Ms\.|Miss|Dr\.)\s+/, "")
+    .replace(/,?\s+(?:Jr\.?|Sr\.?|II|III|IV)$/i, "");
 }
 
 function buildLegislator(member) {
@@ -144,11 +264,7 @@ function buildMemberFixtureData(overlay) {
     return {
       ...row,
       position: { Yea: "yea", Nay: "nay", Present: "present", "Not Voting": "not_voting" }[action.action],
-      vote_context: {
-        ...row.vote_context,
-        member_party: overlay.member.party,
-        member_voted_with_party_majority: action.aligned_with_party_majority,
-      },
+      vote_context: { ...row.vote_context, member_party: overlay.member.party, member_voted_with_party_majority: action.aligned_with_party_majority },
     };
   });
   const substantive = overlay.roll_actions.filter((item) => item.counting);
@@ -160,11 +276,9 @@ function buildMemberFixtureData(overlay) {
         recorded_votes: overlay.roll_actions.length,
         interpreted_support_count: substantive.filter((item) => item.action === "Yea").length,
         interpreted_oppose_count: substantive.filter((item) => item.action === "Nay").length,
-        interpreted_other_count: overlay.roll_actions.length - substantive.filter((item) => ["Yea", "Nay"].includes(item.action)).length,
+        interpreted_other_count: substantive.filter((item) => !["Yea", "Nay"].includes(item.action)).length,
       }],
     },
-    evidenceByDomain: {
-      JUSTICE_PUBLIC_SAFETY: { domain: "JUSTICE_PUBLIC_SAFETY", evidence },
-    },
+    evidenceByDomain: { JUSTICE_PUBLIC_SAFETY: { domain: "JUSTICE_PUBLIC_SAFETY", evidence } },
   });
 }

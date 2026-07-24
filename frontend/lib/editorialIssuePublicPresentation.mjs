@@ -20,7 +20,7 @@ export function buildPublicEditorialPresentation(candidate, evidenceRows = []) {
   const inference = candidate?.source?.inference_candidate || {};
   const coverage = buildEditorialCoverage(candidate, evidenceRows);
   const internalLevel = String(inference.inference_level || "");
-  const strengthLabel = PUBLIC_STRENGTH[internalLevel]
+  const strengthLabel = candidate?.synthesis?.readerFacingLabel || PUBLIC_STRENGTH[internalLevel]
     || mapLegacyStrength(candidate?.synthesis?.evidenceBreadth, coverage.state);
 
   return {
@@ -28,12 +28,14 @@ export function buildPublicEditorialPresentation(candidate, evidenceRows = []) {
       ? candidate?.synthesis?.primary
       : null,
     strengthLabel,
+    analyticalSections: buildAnalyticalSections(candidate),
     patterns: (candidate?.synthesis?.patterns || []).map(cleanPattern).filter(Boolean),
     exceptions: buildExceptions(candidate, inference),
     votingContext: candidate?.synthesis?.votingContext,
     votingContextBoundary: cleanInternalLanguage(candidate?.synthesis?.votingContextBoundary),
     coverage,
-    limits: buildLimits(candidate, inference, coverage),
+    coverageLine: compactCoverageLine(coverage),
+    proceduralContextLine: sourceProceduralLine(candidate?.source?.slice_counts?.context_controls),
   };
 }
 
@@ -208,21 +210,6 @@ function buildExceptions(candidate, inference) {
   return selected.slice(0, 4).map((entry) => entry.text);
 }
 
-function buildLimits(candidate, inference, coverage) {
-  const explicitlyPublic = [
-    ...asArray(candidate?.synthesis?.publicLimitations),
-    ...asArray(inference.public_limitations),
-  ].map((item) => cleanInternalLanguage(typeof item === "string" ? item : item?.text)).filter(Boolean);
-  const sample = coverage.expectedEpisodes
-    ? `This sample covers ${plural(coverage.expectedEpisodes, "independent policy episode")} and does not represent the member's complete record on this issue.`
-    : "This reviewed sample does not represent the member's complete record on this issue.";
-  const motive = "The vote record alone does not establish motive.";
-  const future = coverage.state === PUBLIC_COVERAGE_STATE.reviewedConclusion
-    ? "This conclusion reflects the votes reviewed so far and may be refined as additional policy episodes are added."
-    : "Additional reviewed policy episodes may make the record clearer.";
-  return [...new Set([...explicitlyPublic, sample, motive, future])];
-}
-
 function cleanPattern(value) {
   return cleanInternalLanguage(String(value || "")
     .replace(/^Within one episode:\s*/i, "")
@@ -259,6 +246,63 @@ function coverageLabel(state) {
     [PUBLIC_COVERAGE_STATE.developingRecord]: "Developing record",
     [PUBLIC_COVERAGE_STATE.limitedEvidence]: "Limited evidence",
   }[state];
+}
+
+export function compactCoverageLine(coverage) {
+  const parts = [];
+  if (coverage.completeForSelectedSet) {
+    parts.push(plural(coverage.yesNoVotes, "substantive vote"));
+    parts.push(plural(coverage.completeEpisodes, "policy episode"));
+  } else {
+    const inServiceExpected = Math.max(coverage.expectedVotes, 0);
+    const reviewed = Math.max(inServiceExpected - coverage.missingVotes, 0);
+    parts.push(`${reviewed} of ${inServiceExpected} expected in-service actions reviewed`);
+    if (coverage.completeEpisodes) parts.push(plural(coverage.completeEpisodes, "complete episode"));
+    if (coverage.partialEpisodes) parts.push(plural(coverage.partialEpisodes, "partial episode"));
+    if (coverage.missingEpisodes) parts.push(plural(coverage.missingEpisodes, "missing episode"));
+  }
+  if (coverage.notVoting) parts.push(plural(coverage.notVoting, "Not Voting action"));
+  if (coverage.present) parts.push(plural(coverage.present, "Present action"));
+  if (coverage.reviewedPeriod) parts.push(cleanPeriodLabel(coverage.reviewedPeriod));
+  return parts.join(" · ");
+}
+
+function buildAnalyticalSections(candidate) {
+  const supplied = candidate?.synthesis?.analyticalSections || {};
+  const definitions = [
+    ["repeatedPatterns", "Repeated patterns"],
+    ["policyTrajectories", "Policy trajectories"],
+    ["otherNotableChoices", "Other notable choices"],
+    ["meaningfulExceptions", "Meaningful exceptions"],
+  ];
+  return definitions.map(([key, title]) => ({
+    key,
+    title,
+    items: asArray(supplied[key]).map((item) => typeof item === "string" ? { text: item } : item).filter((item) => item?.text),
+  })).filter((section) => section.items.length).map((section) => ({
+    ...section,
+    title: section.items.length === 1 ? singularAnalyticalHeading(section.key) : section.title,
+  }));
+}
+
+function singularAnalyticalHeading(key) {
+  return {
+    repeatedPatterns: "Repeated pattern",
+    policyTrajectories: "Policy trajectory",
+    otherNotableChoices: "Other notable choice",
+    meaningfulExceptions: "Meaningful exception",
+  }[key];
+}
+
+function sourceProceduralLine(value) {
+  if (!Number.isFinite(value) || value <= 0) return null;
+  return `${plural(value, "procedural action")} available as context`;
+}
+
+function cleanPeriodLabel(value) {
+  const text = String(value || "").trim();
+  const congress = text.match(/\b(\d{3})(?:st|nd|rd|th)? Congress\b/i)?.[0];
+  return congress || text.replace(/^(\d{3})(?:st|nd|rd|th)?\s*-\s*\1(?:st|nd|rd|th)?\s*-\s*/i, "");
 }
 
 function coverageMessage({

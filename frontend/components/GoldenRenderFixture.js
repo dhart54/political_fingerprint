@@ -23,6 +23,11 @@ import { justiceCrossMemberRenderProfiles } from "../lib/justiceCrossMemberRevie
 import { EDITORIAL_EXPERIENCE_MODE } from "../lib/editorialIssueExperience.mjs";
 import { reviewEditorialIssueSlices } from "../lib/editorialIssueReviewSlices.mjs";
 import {
+  syntheticLargeRecordCandidate,
+  syntheticLargeRecordFixtureData,
+  syntheticLargeRecordLegislator,
+} from "../lib/editorialStandardizationFixtures.mjs";
+import {
   mixedAvailabilityIssueFixtureData,
   proceduralOnlyIssueFixtureData,
   syntheticDevelopingEditorialCandidate,
@@ -51,6 +56,7 @@ export default function GoldenRenderFixture() {
     domain: "ENVIRONMENT_ENERGY",
     requestedAt: 1,
   });
+  const [syntheticLargeRequest] = useState({ domain: "PUBLIC_ADMINISTRATION_EXAMPLE", requestedAt: 1 });
 
   return (
     <main className="min-h-screen bg-[#f7f4ec] px-4 py-5 text-stone-900 sm:px-6">
@@ -130,6 +136,23 @@ export default function GoldenRenderFixture() {
             />
           </section>
         ))}
+
+        <section className="mt-5 scroll-mt-4" data-review-harness="synthetic-standardization" data-testid="synthetic-large-editorial-fixture" id="synthetic-large-editorial-fixture">
+          <div className="rounded-2xl border border-violet-300 bg-white px-4 py-3" data-review-harness-chrome="true">
+            <p className="text-xs uppercase tracking-[0.2em] text-violet-800">Synthetic scalability validation</p>
+            <h2 className="mt-1 font-serif text-[1.8rem]">24 actions across 12 Congress-bounded episodes</h2>
+          </div>
+          <PositionByIssue
+            editorialCandidates={[syntheticLargeRecordCandidate]}
+            editorialMode={EDITORIAL_EXPERIENCE_MODE.review}
+            evidenceRequest={syntheticLargeRequest}
+            fixtureData={syntheticLargeRecordFixtureData}
+            legislator={syntheticLargeRecordLegislator}
+            legislatorId={syntheticLargeRecordLegislator.id}
+            scope="all"
+            title="Large-record evidence"
+          />
+        </section>
 
         <section className="mt-5 scroll-mt-4" data-review-harness="production-fallback" data-testid="foushee-justice-production-gate-fixture" id="foushee-justice-production-gate-fixture">
           <div className="rounded-2xl border border-stone-300 bg-white px-4 py-3" data-review-harness-chrome="true"><p className="text-xs uppercase tracking-[0.2em] text-stone-600">Production-gate fallback proof</p><h2 className="mt-1 font-serif text-[1.8rem]">Pending Justice content stays unpublished</h2></div>

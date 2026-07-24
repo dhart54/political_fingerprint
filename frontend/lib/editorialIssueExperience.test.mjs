@@ -36,16 +36,17 @@ test("Justice review candidate uses the generic contract with explicit episodes"
   assert.ok(experience);
   assert.equal(justiceCandidate.publication.editorialStatus, "human_approval_pending");
   assert.equal(justiceCandidate.publication.productionEligible, false);
-  assert.deepEqual(experience.indicators.map((item) => item.label), ["7 substantive votes", "5 policy episodes", "0 Not Voting", "6 context-only records"]);
+  assert.deepEqual(experience.indicators.map((item) => item.label), ["7 substantive votes", "5 policy episodes", "6 context-only records"]);
   assert.equal(experience.records.length, 13);
   assert.equal(experience.records.filter((item) => item.inclusionClass === "substantive").length, 7);
   assert.equal(experience.records.filter((item) => item.inclusionClass === "context_only").length, 6);
   assert.equal(new Set(experience.records.filter((item) => item.inclusionClass === "substantive").map((item) => item.episodeId)).size, 5);
   assert.equal(experience.records.find((item) => item.id === "roll-131").arguments.opponents, undefined);
-  assert.match(experience.publicPresentation.conclusion, /selective, guardrail-oriented approach/i);
+  assert.match(experience.publicPresentation.conclusion, /supported public-safety measures tied to reporting, research, or explicit safeguards/i);
   assert.equal(experience.publicPresentation.strengthLabel, "A selective pattern in the reviewed record");
   assert.equal(experience.publicPresentation.patterns.filter((item) => item.startsWith("Across independent episodes:")).length, 0);
-  assert.match(experience.publicPresentation.limits.join(" "), /may be refined as additional policy episodes are added/i);
+  assert.equal("limits" in experience.publicPresentation, false);
+  assert.equal(experience.featuredEpisodes.length, 5);
   assert.equal(experience.publicPresentation.coverage.state, PUBLIC_COVERAGE_STATE.reviewedConclusion);
 });
 
@@ -196,13 +197,10 @@ test("argument advocacy boundary handles both, one, neither, and explicit suppli
 test("roll 131 keeps its explicit one-sided argument boundary without generic duplication", () => {
   const experience = selectEditorialIssueExperience({ candidates: reviewEditorialIssueSlices, domain: "JUSTICE_PUBLIC_SAFETY", evidenceRows: justiceRows, legislator: editorialGoldLegislator, mode: "review" });
   const record = experience.records.find((item) => item.id === "roll-131");
-  const context = buildImportantContext(record);
   assert.ok(record.arguments.supporters);
   assert.equal(record.arguments.opponents, undefined);
-  assert.equal(context.filter((item) => /No adequate stage-specific opposing argument/i.test(item)).length, 1);
-  assert.equal(context.some((item) => /fair stage-specific opposing case/i.test(item)), false);
-  assert.equal(context.some((item) => /Supporter and opponent arguments/i.test(item)), false);
-  assert.equal(context.filter((item) => /does not reveal why|member's motive/i.test(item)).length, 1);
+  assert.match(record.oneSidedArgumentNote, /No adequate stage-specific opposing argument/i);
+  assert.match(record.argumentBoundary, /summarize the debate/i);
 });
 
 test("Foushee Economy regression preserves counts, ordering, non-counting classes, copy, and pending statuses", () => {
@@ -211,7 +209,8 @@ test("Foushee Economy regression preserves counts, ordering, non-counting classe
   assert.equal(experience.records.filter((record) => record.inclusionClass === "substantive").length, 6);
   assert.equal(experience.records.filter((record) => record.inclusionClass === "not_voting").length, 1);
   assert.equal(experience.records.filter((record) => record.inclusionClass === "context_only").length, 2);
-  assert.match(experience.publicPresentation.conclusion, /six substantive votes represent four policy episodes/i);
+  assert.match(experience.publicPresentation.conclusion, /consistently opposed the House proposals examined here/i);
+  assert.equal(experience.publicPresentation.coverageLine, "6 substantive votes · 4 policy episodes · 1 Not Voting action · 119th Congress");
   assert.ok(valerieFousheeEconomyEditorialGold.interpretations.every((entry) => entry.human_approval_status === "human_approval_pending"));
   assert.ok(valerieFousheeEconomyEditorialGold.controls.every((entry) => entry.human_approval_status === "human_approval_pending"));
   assert.equal(fousheeCandidate.publication.productionEligible, false);
@@ -255,10 +254,9 @@ test("public presentation maps internal inference levels without exposing workfl
   const serialized = JSON.stringify(publicView);
   assert.equal(publicView.strengthLabel, "A selective pattern in the reviewed record");
   assert.doesNotMatch(serialized, /bounded conditional|bounded selective|bounded_selective_pattern|candidate_id|support_balance|candidate|inference|annotations|immutable|human_approval_pending|not_promoted|productionEligible/i);
-  assert.ok(publicView.exceptions.length > 0);
+  assert.equal(publicView.exceptions.length, 0);
   assert.ok(publicView.patterns.every((item) => !/Within one episode:|Across independent episodes:/i.test(item)));
-  assert.match(publicView.limits.join(" "), /does not represent the member's complete record/i);
-  assert.match(publicView.limits.join(" "), /does not establish motive/i);
+  assert.equal("limits" in publicView, false);
 });
 
 test("authoritative coverage keeps fail-closed denominators and action counts", () => {
@@ -292,7 +290,7 @@ test("authoritative coverage keeps fail-closed denominators and action counts", 
   assert.equal(coverage.missingEpisodes, 1);
   assert.equal(coverage.completeForSelectedSet, false);
   assert.equal(coverage.state, PUBLIC_COVERAGE_STATE.reviewedConclusion);
-  assert.match(publicView.conclusion, /selective, guardrail-oriented approach/i);
+  assert.match(publicView.conclusion, /supported public-safety measures tied to reporting/i);
   assert.match(coverage.message, /1 expected vote record is not available/i);
   assert.match(coverage.message, /1 independent policy episode is missing/i);
   assert.match(coverage.message, /1 action was Present/i);
@@ -362,13 +360,11 @@ test("public exceptions prioritize explicit and weakening evidence, deduplicate,
   assert.equal(exceptions.some((text) => /inference|annotations|recompute/i.test(text)), false);
 });
 
-test("Justice public exceptions retain material boundaries across distinct episodes", () => {
+test("Justice issue synthesis keeps action-level boundaries out of meaningful exceptions", () => {
   const experience = selectEditorialIssueExperience({ candidates: reviewEditorialIssueSlices, domain: "JUSTICE_PUBLIC_SAFETY", evidenceRows: justiceRows, legislator: editorialGoldLegislator, mode: "review" });
   const exceptions = experience.publicPresentation.exceptions;
   assert.ok(exceptions.length <= 4);
-  assert.ok(exceptions.some((text) => /later support for a permanent enforcement framework/i.test(text)));
-  assert.ok(exceptions.some((text) => /risk and effectiveness exceptions/i.test(text)));
-  assert.ok(exceptions.some((text) => /did not repeal every provision/i.test(text)));
+  assert.deepEqual(exceptions, []);
   const voteLevelContext = experience.records.find((record) => record.id === "roll-299").importantContext;
   assert.ok(voteLevelContext.some((text) => /vote on a package does not isolate a view on each component/i.test(text)));
   assert.equal(exceptions.some((text) => /vote on a package does not isolate a view on each component/i.test(text)), false);

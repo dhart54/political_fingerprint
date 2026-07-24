@@ -3,7 +3,9 @@ from pathlib import Path
 
 import pytest
 
-from backend.app.summaries.editorial_member_overlay import build_member_overlay
+import json
+
+from backend.app.summaries.editorial_member_overlay import build_member_overlay, classify_missing_action_status
 
 
 PUBLICATION = {"editorial_status": "human_approval_pending", "benchmark_status": "not_promoted", "production_eligible": False}
@@ -37,10 +39,11 @@ def build(rows=None, contract=None, interpretations=None, publication=None):
 def test_shared_contract_keeps_denominators_when_roll_is_omitted():
     value = build([action(1, "Yea", "multi"), action(3, "Yea", "single")])
     assert value["coverage"] == {"substantive_rolls_expected": 3, "substantive_rolls_observed": 2,
-        "substantive_yes_no_actions": 2, "present_actions": 0, "not_voting_actions": 0, "missing_actions": 1,
+        "substantive_yes_no_actions": 2, "present_actions": 0, "not_voting_actions": 0,
+        "not_yet_serving_actions": 0, "no_longer_serving_actions": 0, "expected_in_service_actions": 3, "missing_actions": 1,
         "independent_episodes_expected": 2, "independent_episodes_complete": 1,
-        "independent_episodes_partial": 1, "independent_episodes_missing": 0}
-    assert next(item for item in value["episode_trajectories"] if item["episode_id"] == "multi")["action_signature"] == ["Yea", "missing"]
+        "independent_episodes_partial": 1, "independent_episodes_missing": 0, "independent_episodes_outside_service": 0}
+    assert next(item for item in value["episode_trajectories"] if item["episode_id"] == "multi")["action_signature"] == ["Yea", "Missing Evidence"]
 
 
 def test_entirely_omitted_episode_stays_in_denominator_as_missing():
@@ -50,7 +53,7 @@ def test_entirely_omitted_episode_stays_in_denominator_as_missing():
     assert value["coverage"]["independent_episodes_missing"] == 1
     multi = next(item for item in value["episode_trajectories"] if item["episode_id"] == "multi")
     assert multi["coverage_status"] == "missing"
-    assert multi["action_signature"] == ["missing", "missing"]
+    assert multi["action_signature"] == ["Missing Evidence", "Missing Evidence"]
 
 
 def test_not_voting_inside_multi_roll_episode_makes_trajectory_partial_and_non_counting():
@@ -67,6 +70,46 @@ def test_present_not_voting_and_missing_never_emit_counting_themes():
         single = overlay["episode_trajectories"][1]
         assert single["coverage_status"] == "partial"
         assert single["theme_evidence"] == []
+
+
+def test_service_statuses_are_distinct_from_not_voting_and_missing():
+    value = build([
+        action(1, "Not Yet Serving", "multi"),
+        action(2, "Yea", "multi"),
+        action(3, "No Longer Serving", "single"),
+    ])
+    assert value["coverage"]["not_yet_serving_actions"] == 1
+    assert value["coverage"]["no_longer_serving_actions"] == 1
+    assert value["coverage"]["expected_in_service_actions"] == 1
+    assert value["coverage"]["missing_actions"] == 0
+    assert value["coverage"]["not_voting_actions"] == 0
+    assert value["episode_trajectories"][0]["coverage_status"] == "complete"
+    assert value["episode_trajectories"][1]["coverage_status"] == "outside_service"
+
+
+def test_explicit_missing_evidence_is_an_in_service_gap():
+    value = build([action(1, "Yea", "multi"), action(2, "Missing Evidence", "multi"), action(3, "Yea", "single")])
+    assert value["coverage"]["missing_actions"] == 1
+    assert value["coverage"]["expected_in_service_actions"] == 3
+    assert value["episode_trajectories"][0]["coverage_status"] == "partial"
+
+
+def test_service_eligibility_requires_exact_dates_and_year_only_real_rows_fail_closed():
+    assert classify_missing_action_status(action_date="2025-02-06", service_start_date="2025-04-01", service_date_precision="year") == "Missing Evidence"
+    assert classify_missing_action_status(action_date="2025-02-06", service_start_date="2025-04-01", service_date_precision="day") == "Not Yet Serving"
+    assert classify_missing_action_status(action_date="2025-06-12", service_end_date="2025-05-01", service_date_precision="day") == "No Longer Serving"
+
+    metadata_path = Path(__file__).parents[2] / "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service.json"
+    rows = json.loads(metadata_path.read_text(encoding="utf-8"))
+    partial_service_candidates = [row for row in rows if row["bioguide_id"] in {"G000606", "W000831"}]
+    assert len(partial_service_candidates) == 2
+    for row in partial_service_candidates:
+        assert row["service_date_precision"] == "year"
+        assert classify_missing_action_status(
+            action_date="2025-02-06",
+            service_start_date=f'{row["service_start_year"]}-01-01',
+            service_date_precision=row["service_date_precision"],
+        ) == "Missing Evidence"
 
 
 @pytest.mark.parametrize("rows,match", [
