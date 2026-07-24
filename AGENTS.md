@@ -32,6 +32,7 @@ Before product copy, summary, evidence, or UI interpretation work, read `docs/in
 - Do not treat planning, audit, preflight, or documentation alone as completion when implementation remains in scope.
 - Substantial milestones must follow `docs/PLANS.md` and maintain one active plan under `docs/plans/`.
 - Reference workflow runbooks in `docs/workflows/` instead of duplicating their full content in prompts or `AGENTS.md`.
+- Editorial generation and standardization work must follow `docs/workflows/editorial-standardization-pipeline.md`, including its non-negotiable autonomy, failure-handling, and review-routing contract.
 
 ## Autonomy
 

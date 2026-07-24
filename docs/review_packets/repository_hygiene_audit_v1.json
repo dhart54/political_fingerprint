@@ -1,0 +1,576 @@
+{
+  "schema_version": "repository_hygiene_audit_v1",
+  "audit_date": "2026-07-24",
+  "repository": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint",
+  "mode": "read_only_investigation_then_requested_report_creation_only",
+  "cleanup_performed": false,
+  "baseline": {
+    "remote_main": {
+      "commit": "3d0ffb252c54fb8b93e58fbd4724724ec40a2790",
+      "verified_with": "git ls-remote origin refs/heads/main",
+      "fetch_performed": false
+    },
+    "local_origin_main": "3d0ffb252c54fb8b93e58fbd4724724ec40a2790",
+    "root_checkout": {
+      "branch": "codex/foushee-justice-public-safety-gold-v1",
+      "head": "38ad15999f4bfcea85c8777f25da816888750942",
+      "upstream_delta": {
+        "ahead": 0,
+        "behind": 3
+      },
+      "modified_tracked_before_audit_outputs": 20,
+      "untracked_substantive_roots_before_audit_outputs": [
+        "backend/app/summaries/editorial_inference.py",
+        "backend/tests/test_editorial_inference.py",
+        "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/episode_inference.json",
+        "docs/review_packets/chamber_filtering_data_integrity_audit.md",
+        "review_bundle_frontend_data_grounding/"
+      ]
+    }
+  },
+  "stop_conditions": [
+    {
+      "triggered": true,
+      "path": "review_bundle_frontend_data_grounding/",
+      "reason": "The bundle is referenced by a unique chamber-integrity audit, multiple tracked plans, its builder, and trace documents.",
+      "effect": "Excluded from automatic cleanup; human-approved archive or relocation only."
+    },
+    {
+      "triggered": true,
+      "path": "_codex_worktrees/blind-editorial-pipeline-validation-v1/review_bundle_blind_editorial_pipeline_validation_v1/",
+      "reason": "Tracked validation packet names the exact screenshots.",
+      "effect": "Excluded from automatic cleanup."
+    },
+    {
+      "triggered": true,
+      "path": "_codex_worktrees/public-editorial-product-frontend-v1/review_bundle_public_editorial_product_frontend_v1/",
+      "reason": "Tracked plan and validation packet name the bundle; the Playwright test owns the output path.",
+      "effect": "Excluded from automatic cleanup."
+    }
+  ],
+  "classification_records": [
+    {
+      "classification": "keep_canonical",
+      "exact_paths": [
+        "docs/review_packets/chamber_filtering_data_integrity_audit.md"
+      ],
+      "tracked_status": "untracked_in_root_absent_from_origin_main",
+      "owner": "read-only chamber filtering audit; review_bundle_frontend_data_grounding/raw/generate_review_bundle.mjs; backend evidence read paths; frontend fixture tests",
+      "inbound_references": [
+        "docs/plans/zip_population_weighted_ambiguity_evaluation_v1.md",
+        "docs/plans/zip_schema_application_coverage_seed_readiness_v1.md",
+        "docs/plans/zip_source_approval_dry_run_harness_v1.md",
+        "docs/plans/zip_source_backed_ingestion_preflight_v1.md",
+        "docs/plans/zip_source_member_readiness_gate_v1.md",
+        "docs/plans/zip_source_retrieval_official_file_dry_run_v1.md"
+      ],
+      "deletion_breaks": [
+        "provenance_chain",
+        "fixture_mismatch_explanation",
+        "future_guardrail_record"
+      ],
+      "recommended_destination_or_ignore_rule": "Review and track under docs/review_packets; retain its bundle reference or update both together.",
+      "confidence": "high",
+      "rationale": "It is the only audit proving the suspect cross-chamber row is synthetic while recording a real guardrail gap."
+    },
+    {
+      "classification": "keep_canonical",
+      "exact_paths": [
+        "docs/workflows/bounded-production-write.md",
+        "docs/workflows/editorial-issue-frontend.md",
+        "docs/workflows/editorial-standardization-pipeline.md",
+        "docs/workflows/milestone-execution.md",
+        "docs/workflows/pr-merge-deployment.md",
+        "docs/workflows/product-and-rendered-validation.md",
+        "docs/workflows/MILESTONE_TEMPLATE.md",
+        "docs/plans/TEMPLATE.md",
+        "README.md"
+      ],
+      "tracked_status": "tracked; editorial-standardization-pipeline.md exists on origin/main; editorial-issue-frontend.md is modified in the stale root",
+      "owner": "AGENTS.md, docs/PLANS.md, milestone and editorial workflows",
+      "inbound_references": [
+        "AGENTS.md",
+        "docs/PLANS.md",
+        "docs/review_packets/codex_operating_model.md",
+        "docs/workflows/MILESTONE_TEMPLATE.md"
+      ],
+      "deletion_breaks": [
+        "workflow_governance",
+        "planning_convention",
+        "repository_entry_point"
+      ],
+      "recommended_destination_or_ignore_rule": "Keep at canonical paths; repair README's five absolute WSL links to relative docs links.",
+      "confidence": "high",
+      "rationale": "No byte-identical Markdown duplicates were found; the milestone brief and living-plan templates serve different roles."
+    },
+    {
+      "classification": "generated_required",
+      "exact_paths": [
+        "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+        "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/review_packet.json",
+        "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json",
+        "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/episode_inference.json",
+        "docs/editorial/valerie_foushee_economy_gold_v2/review_packet.json",
+        "docs/editorial/valerie_foushee_economy_gold_v2/source_manifest.json",
+        "docs/review_packets/data_inventory_source_manifest_v1.json",
+        "docs/review_packets/editorial_artifact_persistence_v1.json",
+        "docs/review_packets/editorial_standardization_validation_v1.json",
+        "docs/review_packets/legislative_interpretation_quality_benchmark_v1.json",
+        "docs/review_packets/record_across_congresses_frontend_copy_guardrails.json",
+        "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_snapshot.json",
+        "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_snapshot_artifacts.json",
+        "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service.json",
+        "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_member_service_evidence_artifacts.json",
+        "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_seat_status.json",
+        "docs/review_packets/current_house_member_metadata_hardening_v1/normalized_seat_status_evidence_artifacts.json",
+        "docs/editorial/blind_editorial_pipeline_validation_v1/",
+        "docs/editorial/justice_cross_member_validation_v1/",
+        "docs/source_manifests/"
+      ],
+      "tracked_status": "tracked_on_origin_main; three Justice files appear modified or untracked only because the root checkout predates merged commits",
+      "owner": "backend/scripts/build_*, generate_*, analyze_*, apply_*; frontend standardization builders; focused backend and frontend tests",
+      "inbound_references": [
+        "backend/tests/test_valerie_foushee_justice_public_safety_editorial_gold_v1.py",
+        "backend/tests/test_valerie_foushee_economy_editorial_gold_v2.py",
+        "backend/scripts/generate_data_inventory_manifest.py",
+        "frontend/lib/recordAcrossCongresses.test.mjs",
+        "docs/review_packets/data_inventory_source_manifest_v1.json"
+      ],
+      "deletion_breaks": [
+        "test",
+        "drift_check",
+        "provenance_chain",
+        "publication_governance"
+      ],
+      "recommended_destination_or_ignore_rule": "Keep committed beside the corresponding milestone until a reference-preserving artifact layout migration.",
+      "confidence": "high",
+      "rationale": "These generated files are committed contracts and receipts rather than disposable run output."
+    },
+    {
+      "classification": "generated_required",
+      "exact_paths": [
+        "docs/review_packets/118th_congress_historical_expansion_precompute_rollback.sql",
+        "docs/review_packets/118th_congress_historical_expansion_rollback.sql",
+        "docs/review_packets/118th_evidence_expansion_classification_rollback.sql",
+        "docs/review_packets/118th_evidence_expansion_interpretation_rollback.sql",
+        "docs/review_packets/118th_evidence_expansion_precompute_rollback.sql",
+        "docs/review_packets/118th_house_amendment_classification_rollback.sql",
+        "docs/review_packets/118th_house_amendment_interpretation_rollback.sql",
+        "docs/review_packets/118th_house_amendment_precompute_rollback.sql",
+        "docs/review_packets/batch_010_halt_fentanyl_trahan_rollback_phase_9a.sql",
+        "docs/review_packets/current_congress_precompute_rollback.sql",
+        "docs/review_packets/current_congress_refresh_rollback.sql",
+        "docs/review_packets/current_congress_session_identity_rollback.sql",
+        "docs/review_packets/procedural_context_import_rollback_phase_6.sql",
+        "docs/review_packets/production_import_rollback_phase_1d.sql",
+        "docs/review_packets/public_schema_backend_only_rls_rollback.sql",
+        "docs/review_packets/senate_118_amendment_classification_rollback.sql",
+        "docs/review_packets/senate_118_amendment_derived_outputs_rollback.sql",
+        "docs/review_packets/senate_118_amendment_interpretation_rollback.sql",
+        "docs/review_packets/senate_amendment_fact_import_rollback_phase_18.sql",
+        "docs/review_packets/senate_enrichment_classification_rollback_phase_21.sql",
+        "docs/review_packets/senate_enrichment_interpretation_rollback_phase_21.sql",
+        "docs/review_packets/senate_evidence_classification_rollback_phase_20b.sql",
+        "docs/review_packets/senate_fact_only_expansion_rollback_phase_14.sql",
+        "docs/review_packets/senate_value_enrichment_rollback_phase_20b.sql",
+        "docs/review_packets/senate_vote_facts_expansion_rollback_plan_phase_12.sql",
+        "docs/review_packets/session2_evidence_expansion_precompute_rollback.sql",
+        "docs/review_packets/session2_evidence_expansion_rollback.sql"
+      ],
+      "tracked_status": "tracked",
+      "owner": "bounded production-write preflight, post-validation, and rollback documentation",
+      "inbound_references": [
+        "docs/review_packets/data_inventory_source_manifest_v1.json",
+        "paired preflight and post-validation packets",
+        "historical execution plans"
+      ],
+      "deletion_breaks": [
+        "restoration_path",
+        "production_write_governance",
+        "provenance_chain"
+      ],
+      "recommended_destination_or_ignore_rule": "Keep; a future layout may move each beside its milestone packet with reference updates.",
+      "confidence": "high",
+      "rationale": "Rollback assets remain required even after the production milestone is complete."
+    },
+    {
+      "classification": "archive",
+      "exact_paths": [
+        "docs/plans/118th_house_amendment_evidence.md",
+        "docs/plans/blind_editorial_pipeline_validation_v1.md",
+        "docs/plans/caveat_density_cleanup.md",
+        "docs/plans/current_house_member_metadata_hardening_v1.md",
+        "docs/plans/current_house_member_metadata_schema_seed_v1.md",
+        "docs/plans/data_expansion_readiness_audit_v1.md",
+        "docs/plans/data_inventory_source_manifest_v1.md",
+        "docs/plans/editorial_artifact_persistence_v1.md",
+        "docs/plans/episode_first_editorial_product_v1.md",
+        "docs/plans/fallback_static_loading_copy_cleanup.md",
+        "docs/plans/frontend_lint_next15_gate.md",
+        "docs/plans/generic_editorial_issue_frontend.md",
+        "docs/plans/golden_profile_read_v1.md",
+        "docs/plans/golden_public_reads_v1.md",
+        "docs/plans/golden_render_validation_harness_v1.md",
+        "docs/plans/house_comparable_family_legislator_helper.md",
+        "docs/plans/house_record_across_congresses_adapter.md",
+        "docs/plans/internal_record_across_congresses_production_validation.md",
+        "docs/plans/internal_route_auth_convention.md",
+        "docs/plans/justice_cross_member_validation_v1.md",
+        "docs/plans/legislative_interpretation_quality_benchmark_v1.md",
+        "docs/plans/public_copy_safety_contract.md",
+        "docs/plans/public_editorial_product_frontend_v1.md",
+        "docs/plans/record_across_congresses_frontend_contract.md",
+        "docs/plans/record_across_congresses_frontend_prototype.md",
+        "docs/plans/record_across_congresses_internal_transport.md",
+        "docs/plans/show_votes_proof_hierarchy.md",
+        "docs/plans/top_summary_drift_cleanup.md",
+        "docs/plans/valerie_foushee_economy_editorial_gold_v2.md",
+        "docs/plans/valerie_foushee_economy_staged_website_v2.md",
+        "docs/plans/valerie_foushee_justice_public_safety_gold_v1.md",
+        "docs/plans/zip_district_ambiguity_hardening_v1.md",
+        "docs/plans/zip_multi_row_readonly_route_eval_v1.md",
+        "docs/plans/zip_multi_row_schema_migration_application_coverage_v1.md",
+        "docs/plans/zip_overlap_sensitivity_bounded_staging_design_v1.md",
+        "docs/plans/zip_population_weighted_ambiguity_evaluation_v1.md",
+        "docs/plans/zip_schema_application_coverage_seed_readiness_v1.md",
+        "docs/plans/zip_source_approval_dry_run_harness_v1.md",
+        "docs/plans/zip_source_backed_ingestion_preflight_v1.md",
+        "docs/plans/zip_source_member_readiness_gate_v1.md",
+        "docs/plans/zip_source_metadata_ambiguity_payload_v1.md",
+        "docs/plans/zip_source_retrieval_official_file_dry_run_v1.md"
+      ],
+      "tracked_status": "tracked_on_origin_main",
+      "owner": "completed milestone execution history",
+      "inbound_references": [
+        "docs/review_packets/golden_public_reads_v1.md",
+        "docs/review_packets/show_votes_proof_hierarchy.md",
+        "docs/review_packets/zip_source_backed_ingestion_preflight_v1.json",
+        "backend/scripts/generate_zip_source_metadata_report.py"
+      ],
+      "deletion_breaks": [
+        "review_history",
+        "selected_literal_references"
+      ],
+      "recommended_destination_or_ignore_rule": "docs/plans/archive/2026/ with same-commit reference rewrites and link validation",
+      "confidence": "high_for_completed_status_medium_for_move_timing",
+      "rationale": "Their checked completion/final reconciliation makes them historical, while docs/PLANS.md explicitly prefers dated archive over silent deletion."
+    },
+    {
+      "classification": "archive",
+      "exact_paths": [
+        "docs/review_packets/valerie_economy_taxes_current_state.md",
+        "docs/review_packets/valerie_economy_taxes_after_overview_pass.md",
+        "docs/review_packets/valerie_justice_public_safety_current_state.md",
+        "docs/review_packets/valerie_justice_public_safety_after_generic_language_pass.md",
+        "docs/review_packets/evidence_depth_coverage_expansion_plan.md",
+        "docs/autonomous_handoff.md"
+      ],
+      "tracked_status": "tracked",
+      "owner": "historical product snapshots, earlier review stages, and old handoff state",
+      "inbound_references": [
+        "docs/plans/codex_operating_model.md",
+        "docs/review_packets/codex_operating_model.md",
+        "docs/review_packets/valerie_economy_taxes_after_overview_pass.md",
+        "docs/review_packets/valerie_justice_public_safety_after_generic_language_pass.md"
+      ],
+      "deletion_breaks": [
+        "historical_review_chain",
+        "literal_references"
+      ],
+      "recommended_destination_or_ignore_rule": "docs/review_packets/archive/2026/ or docs/archive/legacy_handoffs/ with reference rewrites",
+      "confidence": "medium_high",
+      "rationale": "They are superseded snapshots or misplaced plan/handoff material, but retain historical evidence."
+    },
+    {
+      "classification": "archive",
+      "exact_paths": [
+        "review_bundle_frontend_data_grounding/",
+        "_codex_worktrees/blind-editorial-pipeline-validation-v1/review_bundle_blind_editorial_pipeline_validation_v1/",
+        "_codex_worktrees/public-editorial-product-frontend-v1/review_bundle_public_editorial_product_frontend_v1/"
+      ],
+      "tracked_status": "untracked",
+      "owner": "bundle-local builder, Playwright golden-render tests, tracked review packets",
+      "inbound_references": [
+        "docs/review_packets/chamber_filtering_data_integrity_audit.md",
+        "docs/review_packets/blind_editorial_pipeline_validation_v1.md",
+        "docs/review_packets/public_editorial_product_frontend_v1.md",
+        "frontend/tests/golden-render.spec.mjs"
+      ],
+      "deletion_breaks": [
+        "validation_evidence",
+        "provenance_chain",
+        "restoration_path"
+      ],
+      "recommended_destination_or_ignore_rule": "External immutable review archive or docs/review_packets/archive/2026/<milestone>/assets with all references updated",
+      "confidence": "high",
+      "rationale": "The bundles are local output, but exact files are named by tracked validation records."
+    },
+    {
+      "classification": "safe_to_delete",
+      "exact_paths": [
+        "docs/.gitkeep",
+        "_codex_worktrees/blind-editorial-pipeline-validation-v1/frontend/test-results/.last-run.json",
+        "_codex_worktrees/public-editorial-product-frontend-v1/frontend/test-results/.last-run.json",
+        "_codex_worktrees/blind-editorial-pipeline-validation-v1/backend/tests/_data_inventory_cases/"
+      ],
+      "tracked_status": "docs/.gitkeep is tracked; other paths are untracked",
+      "owner": "directory placeholder, Playwright, and backend/tests/test_data_inventory_manifest.py",
+      "inbound_references": [],
+      "deletion_breaks": [],
+      "recommended_destination_or_ignore_rule": "Delete only after audit approval; add /frontend/test-results/ to .gitignore.",
+      "confidence": "high",
+      "rationale": "The directory is populated, Playwright state is ephemeral, and the test recreates every data-inventory case."
+    },
+    {
+      "classification": "local_only_ignore",
+      "exact_paths": [
+        ".local/",
+        ".pytest_cache/",
+        "backend/.pytest_cache/",
+        "backend/.venv/",
+        "backend/.venv_win/",
+        "backend/data_sources/",
+        "frontend/.next/",
+        "frontend/node_modules/"
+      ],
+      "tracked_status": "ignored or self-ignored local state",
+      "owner": "pytest, Python virtual environments, local source retrieval, Next.js, npm",
+      "inbound_references": [
+        "docs/development_workflow.md",
+        "docs/local_preview_runbook.md",
+        "source retrieval and offline validation scripts"
+      ],
+      "deletion_breaks": [
+        "local_setup_or_offline_reproduction_if_deleted_selectively"
+      ],
+      "recommended_destination_or_ignore_rule": "Retain current ignores; add explicit backend/.venv_win/ for root policy visibility. Do not bulk-delete .local/ or backend/data_sources/.",
+      "confidence": "high",
+      "rationale": "They belong outside version control, but some contain expensive or provenance-relevant local caches."
+    },
+    {
+      "classification": "local_only_ignore",
+      "exact_paths": [
+        ".codex_pytest_staged_final/",
+        ".pytest_tmp_phase21_final/",
+        ".pytest_tmp_pr95_correction/",
+        "backend/.pytest_tmp_phase10/",
+        "backend/.pytest_tmp_phase13/",
+        "backend/.pytest_tmp_phase17/",
+        "backend/.pytest_tmp_phase1d/",
+        "backend/.pytest_tmp_phase2/",
+        "backend/.pytest_tmp_phase20/",
+        "backend/.pytest_tmp_phase2026/"
+      ],
+      "tracked_status": "untracked_unignored_acl_inaccessible",
+      "owner": "pytest/Codex temporary test runs by naming and repository history",
+      "inbound_references": [],
+      "deletion_breaks": [
+        "unknown_internal_diagnostics_due_to_acl"
+      ],
+      "recommended_destination_or_ignore_rule": "Add /.codex_pytest*/ , /.pytest_tmp*/ , and /backend/.pytest_tmp*/; inspect owner/ACL before deletion.",
+      "confidence": "medium",
+      "rationale": "Names and history identify test temp roots, but contents could not be inspected."
+    },
+    {
+      "classification": "move_outside_repository",
+      "exact_paths": [
+        "_codex_worktrees/blind-editorial-pipeline-validation-v1/",
+        "_codex_worktrees/cross-issue-editorial-generality-v1/",
+        "_codex_worktrees/editorial-artifact-persistence-v1/",
+        "_codex_worktrees/justice-cross-member-validation-v1/",
+        "_codex_worktrees/public-editorial-product-frontend-v1/"
+      ],
+      "tracked_status": "untracked_from_root_but_registered_git_worktrees",
+      "owner": "git worktree registry",
+      "inbound_references": [
+        ".git/worktrees registry",
+        "git worktree list --porcelain"
+      ],
+      "deletion_breaks": [
+        "registered_checkout",
+        "local_review_evidence_if_removed_instead_of_moved"
+      ],
+      "recommended_destination_or_ignore_rule": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint-worktrees\\<slug>; use git worktree move and then git worktree repair.",
+      "confidence": "high",
+      "rationale": "Nested registered worktrees distort root status/search and duplicate large ignored dependency/build trees."
+    },
+    {
+      "classification": "unresolved_human_decision",
+      "exact_paths": [
+        "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint"
+      ],
+      "tracked_status": "dirty_root_checkout",
+      "owner": "codex/foushee-justice-public-safety-gold-v1 recovery state",
+      "inbound_references": [
+        "20 modified tracked files",
+        "unique chamber audit",
+        "review_bundle_frontend_data_grounding/"
+      ],
+      "deletion_breaks": [
+        "uncommitted_work",
+        "unique_audit",
+        "review_evidence"
+      ],
+      "recommended_destination_or_ignore_rule": "Create external binary patch, status record, SHA-256 manifest, and untracked bundle copy before any branch or checkout change.",
+      "confidence": "high",
+      "rationale": "Most blobs are already in Git history, but unique untracked evidence makes a direct reset/switch unsafe."
+    },
+    {
+      "classification": "unresolved_human_decision",
+      "exact_paths": [
+        "docs/plans/2026_evidence_eligibility_interpretation_expansion.md",
+        "docs/plans/codex_operating_model.md",
+        "docs/plans/current_congress_freshness_ingestion.md",
+        "docs/plans/zip_schema_source_metadata_design_v1.md",
+        "docs/plans/cross_issue_editorial_generality_v1.md"
+      ],
+      "tracked_status": "first four tracked on root/origin_main; cross-issue plan tracked only on its clean unmerged branch",
+      "owner": "incomplete, paused, or blocked milestones",
+      "inbound_references": [],
+      "deletion_breaks": [
+        "potential_active_plan",
+        "blocked_result_history"
+      ],
+      "recommended_destination_or_ignore_rule": "Human status reconciliation: mark complete, superseded, paused, or active before archive/merge.",
+      "confidence": "high_that_decision_is_needed",
+      "rationale": "Unchecked definition-of-done items or a blocked unmerged result prevent automatic active/superseded classification."
+    },
+    {
+      "classification": "unresolved_human_decision",
+      "exact_paths": [
+        "CONSTRAINTS.md",
+        "DECISIONS.md",
+        "FIXTURES.md",
+        "SKILLS.md",
+        "TASKS.md",
+        "docs/staging_readiness.md",
+        "docs/product_v2_tasklist.md",
+        "docs/north_star_action_plan.md"
+      ],
+      "tracked_status": "tracked",
+      "owner": "legacy root authority, fixture specification, completed MVP task plan, staging status, and product roadmaps",
+      "inbound_references": [
+        "README.md",
+        "DECISIONS.md",
+        "TASKS.md",
+        "docs/deployment.md",
+        "docs/monitoring.md",
+        "docs/review_packets/evidence_depth_coverage_expansion_plan.md",
+        "docs/review_packets/codex_operating_model.md"
+      ],
+      "deletion_breaks": [
+        "civic_semantics_if_consolidated_incorrectly",
+        "historical_decision_context",
+        "literal_references"
+      ],
+      "recommended_destination_or_ignore_rule": "Human semantic review against AGENTS.md, docs/methodology.md, and docs/interpretation_principles.md before consolidation or archive.",
+      "confidence": "high_that_automatic_cleanup_is_unsafe",
+      "rationale": "Several are stale or overlap newer authority, but still contain hard rules or live inbound references."
+    }
+  ],
+  "broken_links": [
+    {
+      "source": "README.md",
+      "target": "/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/real_data_runbook.md",
+      "recommended_target": "docs/real_data_runbook.md"
+    },
+    {
+      "source": "README.md",
+      "target": "/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/development_workflow.md",
+      "recommended_target": "docs/development_workflow.md"
+    },
+    {
+      "source": "README.md",
+      "target": "/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/deployment.md",
+      "recommended_target": "docs/deployment.md"
+    },
+    {
+      "source": "README.md",
+      "target": "/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/accessibility_mobile_checklist.md",
+      "recommended_target": "docs/accessibility_mobile_checklist.md"
+    },
+    {
+      "source": "README.md",
+      "target": "/mnt/c/Users/Dylan/Documents/Data%20Science/political_fingerprint/docs/monitoring.md",
+      "recommended_target": "docs/monitoring.md"
+    }
+  ],
+  "dirty_root_recovery": {
+    "working_files_identical_to_origin_main": 19,
+    "working_files_different_from_origin_main_but_present_in_commit_history": [
+      "docs/workflows/editorial-issue-frontend.md",
+      "frontend/lib/editorialIssueExperience.test.mjs",
+      "frontend/lib/editorialIssueReviewSlices.mjs",
+      "frontend/tests/golden-render.spec.mjs"
+    ],
+    "unique_untracked_evidence": [
+      "docs/review_packets/chamber_filtering_data_integrity_audit.md",
+      "review_bundle_frontend_data_grounding/"
+    ],
+    "external_recovery_destination": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint-recovery\\2026-07-24-root-38ad159\\",
+    "required_files": [
+      "root-tracked.patch",
+      "root-status-porcelain-v2.txt",
+      "sha256.json",
+      "untracked/docs/review_packets/chamber_filtering_data_integrity_audit.md",
+      "untracked/review_bundle_frontend_data_grounding/"
+    ],
+    "validation": [
+      "git apply --check in a temporary clean worktree at the recovery base",
+      "SHA-256 verification of every copied untracked file",
+      "link verification between the chamber audit and restored review bundle"
+    ]
+  },
+  "future_directory_map": {
+    "canonical_root": "clean up-to-date main checkout",
+    "worktree_root": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint-worktrees\\",
+    "recovery_root": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint-recovery\\",
+    "documentation": [
+      "docs/README.md",
+      "docs/product/",
+      "docs/workflows/templates/",
+      "docs/plans/active/",
+      "docs/plans/archive/YYYY/",
+      "docs/review_packets/<milestone>/{README.md,report.json,manifests,rollback,assets}",
+      "docs/review_packets/archive/YYYY/",
+      "docs/editorial/<slice>/{README.md,source_manifest.json,generated,review}",
+      "docs/source_manifests/",
+      "docs/archive/legacy_root_docs/"
+    ]
+  },
+  "cleanup_sequence_low_to_high_risk": [
+    "Delete only the automatic cleanup allowlist.",
+    "Add narrow ignore rules.",
+    "Repair README links.",
+    "Create and validate the external dirty-root recovery package.",
+    "Archive referenced review bundles with same-change reference rewrites.",
+    "Optionally remove ignored build/dependency trees from child worktrees.",
+    "Move registered child worktrees using git worktree move.",
+    "Reconcile incomplete and blocked plans.",
+    "Archive completed plans with reference checks.",
+    "Consolidate legacy authority docs after human civic-semantics review.",
+    "With explicit approval, make the root a clean current main checkout."
+  ],
+  "automatic_cleanup_allowlist": [
+    "docs/.gitkeep",
+    "_codex_worktrees/blind-editorial-pipeline-validation-v1/frontend/test-results/.last-run.json",
+    "_codex_worktrees/public-editorial-product-frontend-v1/frontend/test-results/.last-run.json",
+    "_codex_worktrees/blind-editorial-pipeline-validation-v1/backend/tests/_data_inventory_cases/"
+  ],
+  "human_approval_required": [
+    "all registered worktree moves",
+    "all review bundle archive, move, deduplication, or deletion actions",
+    "all completed-plan moves",
+    "all legacy root-document consolidation or archival",
+    "all ACL-inaccessible pytest-temp deletion",
+    "any deletion under .local/ or backend/data_sources/",
+    "any dirty-root branch or checkout change",
+    "any status decision for incomplete or blocked plans",
+    "any removal of tracked generated reports, rollback SQL, source manifests, or editorial artifacts"
+  ],
+  "limitations": [
+    "ACL-inaccessible pytest temp directory contents were not readable.",
+    "No fetch, checkout, reset, clean, stage, move, delete, builder, or test command was run.",
+    "Literal inbound-reference checks may undercount runtime glob or convention-based ownership."
+  ]
+}
