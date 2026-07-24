@@ -28,21 +28,13 @@ These documents are canonical. Changes that affect eligibility, vote meaning, su
 
 The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE.md` serve different purposes: the first shapes a milestone request and the second shapes its living execution plan.
 
-## Active plans
+## Active plan
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-At the time this index was introduced, the active plan is:
+Active plan: [Documentation Governance Cleanup V1](plans/documentation_governance_cleanup_v1.md)
 
-- `docs/plans/repository_recovery_and_alignment_v1.md`
-
-Future milestones must update this section or otherwise identify their active plan unambiguously.
-
-## Completed plans pending archival
-
-Completed plans currently remain under `docs/plans/` as branch and review history. They are tracked historical records, not active instructions. A later documentation-only milestone may move them into a dated archive, but must update literal references and validate links in the same change.
-
-This milestone does not move or delete any completed plan.
+The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 
 ## Review packets and validation receipts
 
