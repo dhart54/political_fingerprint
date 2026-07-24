@@ -11,11 +11,11 @@
   },
   "summary": {
     "state": "pass",
-    "sliceCount": 4,
-    "ruleCount": 37,
+    "sliceCount": 5,
+    "ruleCount": 48,
     "ruleCountBySeverity": {
-      "block": 36,
-      "warning": 1
+      "block": 46,
+      "warning": 2
     },
     "findingCountBySeverity": {
       "block": 0,
@@ -169,6 +169,61 @@
       "description": "Present, Not Voting, service-ineligible, and missing actions cannot count as support or opposition."
     },
     {
+      "id": "SYNTHESIS-001",
+      "severity": "block",
+      "description": "Direction-only evidence cannot substitute for a substantive repeated policy rationale."
+    },
+    {
+      "id": "CONCLUSION-UTILITY-001",
+      "severity": "block",
+      "description": "The conclusion must synthesize rather than reproduce the episode inventory."
+    },
+    {
+      "id": "CONCLUSION-UTILITY-002",
+      "severity": "block",
+      "description": "Action direction alone cannot serve as a substantive thesis."
+    },
+    {
+      "id": "CONCLUSION-UTILITY-003",
+      "severity": "block",
+      "description": "Repeated, selective, and divided conclusions require a supported policy dimension."
+    },
+    {
+      "id": "CONCLUSION-UTILITY-004",
+      "severity": "block",
+      "description": "A heterogeneous uniform record requires a concrete supported policy contrast."
+    },
+    {
+      "id": "CONCLUSION-UTILITY-005",
+      "severity": "block",
+      "description": "The conclusion must add synthesis rather than duplicate every analytical finding."
+    },
+    {
+      "id": "CONCLUSION-UTILITY-006",
+      "severity": "block",
+      "description": "Circular action-direction propositions are not reader-useful synthesis."
+    },
+    {
+      "id": "CONCLUSION-UTILITY-007",
+      "severity": "block",
+      "description": "A broad philosophy claim requires a supported substantive threshold."
+    },
+    {
+      "id": "CONCLUSION-UTILITY-008",
+      "severity": "warning",
+      "description": "Qualification should not crowd out the strongest defensible result."
+    },
+    {
+      "id": "CONCLUSION-UTILITY-009",
+      "severity": "block",
+      "description": "No more than two episodes may be individually named when policy clusters are available."
+    },
+    {
+      "id": "CONCLUSION-UTILITY-010",
+      "severity": "block",
+      "description": "The reader label must match the selected conclusion archetype."
+    },
+    {
       "id": "DETAIL-001",
       "severity": "block",
       "description": "Motive boundaries and deterministic duplicate detail may render only once."
@@ -271,6 +326,26 @@
       }
     },
     {
+      "fixtureId": "blind-editorial-pipeline-validation-v1",
+      "designation": "reference_render_fixture",
+      "state": "pass",
+      "publicationEligibilityMustFail": false,
+      "memberId": "G000586",
+      "issue": "JUSTICE_PUBLIC_SAFETY",
+      "findings": [],
+      "structuralExpectations": {
+        "substantiveActions": 7,
+        "independentEpisodes": 5,
+        "featuredEpisodes": 5,
+        "notVotingActions": 0,
+        "proceduralContextActions": 6,
+        "completeRecordPolicyFamilies": 5,
+        "completeRecordCongresses": [
+          119
+        ]
+      }
+    },
+    {
       "fixtureId": "synthetic-large-record-v1",
       "designation": "standardization_regression_fixture",
       "state": "pass",
@@ -292,8 +367,214 @@
       }
     }
   ],
+  "semanticReferenceResults": [
+    {
+      "fixtureId": "foushee-economy-reference-v1",
+      "designation": "human_reviewed_semantic_reference",
+      "state": "pass",
+      "findings": []
+    },
+    {
+      "fixtureId": "foushee-justice-reference-v1",
+      "designation": "human_reviewed_semantic_reference",
+      "state": "pass",
+      "findings": []
+    },
+    {
+      "fixtureId": "massie-justice-reference-v1",
+      "designation": "human_reviewed_semantic_reference",
+      "state": "pass",
+      "findings": []
+    },
+    {
+      "fixtureId": "garcia-justice-calibration-v1",
+      "designation": "editorial_utility_calibration_pending",
+      "state": "pass",
+      "findings": []
+    }
+  ],
+  "semanticReferenceContracts": [
+    {
+      "fixtureId": "foushee-economy-reference-v1",
+      "designation": "human_reviewed_semantic_reference",
+      "requiredArchetype": "uniform_direction_without_common_policy_throughline",
+      "requiredSemanticPropositions": [
+        "uniform_specific_proposal_opposition",
+        "two_repeated_multistage_patterns",
+        "important_one_off_choices",
+        "no_overarching_economic_philosophy"
+      ],
+      "requiredPolicyTraits": [
+        "funding_framework",
+        "program_eligibility_restriction"
+      ],
+      "permittedBoundaries": [
+        "reviewed_record",
+        "no_motive_claim",
+        "no_comprehensive_philosophy"
+      ],
+      "forbiddenPropositions": [
+        "motive",
+        "ideology",
+        "party_as_policy_meaning",
+        "future_prediction",
+        "comprehensive_philosophy"
+      ],
+      "supportingEpisodeIds": [
+        "government_funding_hr5371",
+        "budget_framework_hconres14",
+        "milcon_va_hr3944",
+        "sba_loan_eligibility_hr2966"
+      ],
+      "analyticalSectionClassifications": [
+        "repeatedPatterns",
+        "otherNotableChoices"
+      ],
+      "maximumInventoryBehavior": {
+        "maxNamedEpisodes": 2,
+        "exhaustiveInventoryAllowed": false
+      },
+      "expectedReaderLabelConcept": "Consistent opposition without an overarching economic philosophy"
+    },
+    {
+      "fixtureId": "foushee-justice-reference-v1",
+      "designation": "human_reviewed_semantic_reference",
+      "requiredArchetype": "selective_or_conditional_pattern",
+      "requiredSemanticPropositions": [
+        "supports_reporting_research_or_constraints",
+        "opposes_police_tool_authority_or_rollback",
+        "fentanyl_trajectory_limits_blanket_inference"
+      ],
+      "requiredPolicyTraits": [
+        "requires_reporting",
+        "adds_research_access",
+        "broadens_police_operational_authority",
+        "rolls_back_policing_restrictions"
+      ],
+      "permittedBoundaries": [
+        "reviewed_record",
+        "no_motive_claim",
+        "no_comprehensive_philosophy"
+      ],
+      "forbiddenPropositions": [
+        "motive",
+        "ideology",
+        "party_as_policy_meaning",
+        "future_prediction",
+        "comprehensive_philosophy"
+      ],
+      "supportingEpisodeIds": [
+        "halt-fentanyl-legislative-path",
+        "retired-service-weapon-purchases",
+        "officer-safety-data-reporting",
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal"
+      ],
+      "analyticalSectionClassifications": [
+        "repeatedPatterns",
+        "policyTrajectories"
+      ],
+      "maximumInventoryBehavior": {
+        "maxNamedEpisodes": 2,
+        "exhaustiveInventoryAllowed": false
+      },
+      "expectedReaderLabelConcept": "Selective pattern shaped by safeguards and policy mechanism"
+    },
+    {
+      "fixtureId": "massie-justice-reference-v1",
+      "designation": "human_reviewed_semantic_reference",
+      "requiredArchetype": "policy_mechanism_divide",
+      "requiredSemanticPropositions": [
+        "opposes_fentanyl_episode",
+        "supports_police_tools_authority_and_rule_rollback",
+        "officer_reporting_notable_choice"
+      ],
+      "requiredPolicyTraits": [
+        "permanent_controlled_substance_scheduling",
+        "expands_law_enforcement_tool_access",
+        "broadens_police_operational_authority",
+        "rolls_back_policing_restrictions",
+        "requires_federal_reporting"
+      ],
+      "permittedBoundaries": [
+        "reviewed_record",
+        "no_motive_claim",
+        "no_comprehensive_philosophy"
+      ],
+      "forbiddenPropositions": [
+        "motive",
+        "ideology",
+        "party_as_policy_meaning",
+        "future_prediction",
+        "comprehensive_philosophy"
+      ],
+      "supportingEpisodeIds": [
+        "halt-fentanyl-legislative-path",
+        "retired-service-weapon-purchases",
+        "officer-safety-data-reporting",
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal"
+      ],
+      "analyticalSectionClassifications": [
+        "policyTrajectories",
+        "repeatedPatterns",
+        "otherNotableChoices"
+      ],
+      "maximumInventoryBehavior": {
+        "maxNamedEpisodes": 2,
+        "exhaustiveInventoryAllowed": false
+      },
+      "expectedReaderLabelConcept": "A clear policy-mechanism divide in the reviewed record"
+    },
+    {
+      "fixtureId": "garcia-justice-calibration-v1",
+      "designation": "editorial_utility_calibration_pending",
+      "requiredArchetype": "uniform_direction_without_common_policy_throughline",
+      "requiredSemanticPropositions": [
+        "uniform_nay_direction",
+        "contrasting_policy_clusters",
+        "no_common_issue_wide_throughline",
+        "narrower_dc_and_fentanyl_findings_preserved"
+      ],
+      "requiredPolicyTraits": [
+        "enforcement_framework",
+        "broadens_police_operational_authority",
+        "adds_implementation_condition",
+        "requires_federal_reporting"
+      ],
+      "permittedBoundaries": [
+        "reviewed_record",
+        "no_motive_claim",
+        "no_comprehensive_philosophy"
+      ],
+      "forbiddenPropositions": [
+        "motive",
+        "ideology",
+        "party_as_policy_meaning",
+        "future_prediction",
+        "comprehensive_philosophy"
+      ],
+      "supportingEpisodeIds": [
+        "halt-fentanyl-legislative-path",
+        "retired-service-weapon-purchases",
+        "officer-safety-data-reporting",
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal"
+      ],
+      "analyticalSectionClassifications": [
+        "policyTrajectories",
+        "repeatedPatterns",
+        "otherNotableChoices"
+      ],
+      "maximumInventoryBehavior": {
+        "maxNamedEpisodes": 2,
+        "exhaustiveInventoryAllowed": false
+      },
+      "expectedReaderLabelConcept": "Uniform opposition without a common policy throughline"
+    }
+  ],
   "mutationCoverage": {
-    "requiredMalformedCases": 20,
+    "requiredMalformedCases": 32,
     "testFile": "frontend/lib/editorialStandardizationValidator.test.mjs",
     "interpretation": "The test suite deliberately mutates valid fixtures and asserts the expected stable rule ID. This report does not substitute for running the tests."
   }

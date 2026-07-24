@@ -2,6 +2,11 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { adaptEditorialIssueSlice, EDITORIAL_EXPERIENCE_MODE } from "../frontend/lib/editorialIssueExperience.mjs";
+import { blindEditorialPipelineValidationFixture } from "../frontend/lib/blindEditorialPipelineReviewSlice.mjs";
+import {
+  editorialConclusionReferenceFixtures,
+  evaluateConclusionReferences,
+} from "../frontend/lib/editorialConclusionReferenceFixtures.mjs";
 import {
   editorialReferenceFixtures,
   syntheticLargeRecordCandidate,
@@ -20,6 +25,7 @@ const check = process.argv.includes("--check");
 
 const fixtures = [
   ...editorialReferenceFixtures,
+  blindEditorialPipelineValidationFixture,
   {
     id: "synthetic-large-record-v1",
     designation: "standardization_regression_fixture",
@@ -57,8 +63,22 @@ const payload = {
   summary: summarizeValidationReports(reports),
   ruleCatalog: EDITORIAL_STANDARDIZATION_RULES,
   reports,
+  semanticReferenceResults: evaluateConclusionReferences(),
+  semanticReferenceContracts: editorialConclusionReferenceFixtures.map((fixture) => ({
+    fixtureId: fixture.fixtureId,
+    designation: fixture.designation,
+    requiredArchetype: fixture.requiredArchetype,
+    requiredSemanticPropositions: fixture.requiredSemanticPropositions,
+    requiredPolicyTraits: fixture.requiredPolicyTraits,
+    permittedBoundaries: fixture.permittedBoundaries,
+    forbiddenPropositions: fixture.forbiddenPropositions,
+    supportingEpisodeIds: fixture.supportingEpisodeIds,
+    analyticalSectionClassifications: fixture.analyticalSectionClassifications,
+    maximumInventoryBehavior: fixture.maximumInventoryBehavior,
+    expectedReaderLabelConcept: fixture.expectedReaderLabelConcept,
+  })),
   mutationCoverage: {
-    requiredMalformedCases: 20,
+    requiredMalformedCases: 32,
     testFile: "frontend/lib/editorialStandardizationValidator.test.mjs",
     interpretation: "The test suite deliberately mutates valid fixtures and asserts the expected stable rule ID. This report does not substitute for running the tests.",
   },
@@ -118,6 +138,15 @@ function renderMarkdown(value) {
     "## Mutation coverage",
     "",
     `The mutation suite contains ${value.mutationCoverage.requiredMalformedCases} deliberate known-defect cases and requires each one to produce its expected stable rule ID. Run the suite; this generated report is not a substitute for test execution.`,
+    "",
+    "## Semantic conclusion references",
+    "",
+    "| Fixture | Designation | Archetype | Result |",
+    "| --- | --- | --- | --- |",
+    ...value.semanticReferenceResults.map((result) => {
+      const contract = value.semanticReferenceContracts.find((item) => item.fixtureId === result.fixtureId);
+      return `| ${result.fixtureId} | ${result.designation} | ${contract.requiredArchetype} | ${result.state} |`;
+    }),
     "",
     "## Publication boundary",
     "",

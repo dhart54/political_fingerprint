@@ -25,7 +25,7 @@ def synthetic(builder, vector, party="D", omit=()):
 
 
 def test_selected_cohort_actions_coverage_and_expected_candidates():
-    expected = {"F000477": "conditional-guardrail-boundary", "A000370": "conditional-guardrail-boundary", "A000055": "reviewed-enforcement-expansion", "M001184": "police-authority-fentanyl-divide", "B000490": "national-action-dc-boundary", "G000586": "cross-mechanism-opposition", "M001217": "broad-support-safeguard-exception"}
+    expected = {"F000477": "conditional-guardrail-boundary", "A000370": "conditional-guardrail-boundary", "A000055": "reviewed-enforcement-expansion", "M001184": "police-authority-fentanyl-divide", "B000490": "national-action-dc-boundary", "G000586": "uniform_direction_without_common_policy_rationale", "M001217": "broad-support-safeguard-exception"}
     candidates = load_json("inference_candidates.json")["candidates"]
     assert {item["member"]["bioguide_id"]: item["candidate_id"] for item in candidates} == expected
     overlays = load_json("member_overlays.json")["overlays"]
@@ -58,6 +58,45 @@ def test_all_128_complete_yes_no_combinations_evaluate_without_templates():
         assert overlay["coverage"]["substantive_yes_no_actions"] == 7
         assert inference["independent_episode_count"] == 5
     assert len(results) == 128 and len(set(results)) >= 7
+    assert results.count("uniform_direction_without_common_policy_rationale") >= 1
+    assert "cross-mechanism-opposition" not in results
+
+
+def test_committed_complete_vector_distribution_matches_generic_evaluation():
+    builder = load_builder()
+    shared = json.loads((ROOT / builder.SHARED_SET["episode_map_path"]).read_text(encoding="utf-8"))["episodes"]
+    assert load_json("complete_vector_distribution.json") == builder.complete_vector_distribution(shared)
+
+
+def test_uniform_direction_is_descriptive_not_a_substantive_policy_rationale():
+    builder = load_builder()
+    _, nay = synthetic(builder, ("Nay",) * 7)
+    assert nay["candidate_id"] == "uniform_direction_without_common_policy_rationale"
+    assert nay["candidate_basis"] == {
+        "basis_type": "uniform_action_direction",
+        "substantive_theme_ids": [],
+        "uniform_action_direction": {"direction": "Nay", "count": 7, "total": 7, "uniform": True},
+    }
+    assert nay["evidence_strength_label"] == "Uniform opposition across the reviewed proposals"
+    assert "does not reveal one consistent public-safety policy throughline" in nay["primary_conclusion"]
+    assert nay["reader_facing_label"] == "Uniform opposition without a common policy throughline"
+    assert nay["conclusion_model"]["contrast_proposition"]["relationship"] == "contrasts"
+    assert nay["compression_report"]["individually_named_episode_count"] == 0
+    assert [item["theme_id"] for item in nay["repeated_cross_episode_themes"]] == ["dc-policing-change-opposition"]
+    assert [item["episode_id"] for item in nay["notable_one_off_choices"]] == [
+        "officer-safety-data-reporting",
+        "retired-service-weapon-purchases",
+    ]
+
+
+def test_direction_only_candidate_cannot_become_eligible_by_mechanism_label_substitution():
+    builder = load_builder()
+    overlay, _ = synthetic(builder, ("Nay",) * 7)
+    shared = json.loads((ROOT / builder.SHARED_SET["episode_map_path"]).read_text(encoding="utf-8"))["episodes"]
+    changed = [dict(item, mechanism_family=f"renamed-{index}") for index, item in enumerate(shared)]
+    inference = builder.evaluate_overlay(overlay, changed)
+    assert inference["candidate_id"] == "uniform_direction_without_common_policy_rationale"
+    assert inference["candidate_basis"]["substantive_theme_ids"] == []
 
 
 def test_changing_one_action_changes_only_its_episode_evidence():
@@ -120,3 +159,22 @@ def test_cohort_roles_and_rationales_are_action_structural_not_party_methodology
     overlays = load_json("member_overlays.json")["overlays"]
     text = " ".join(f"{item['validation_case']} {item['selection_rationale']}" for item in overlays).lower()
     assert "republican_outlier" not in text and "democratic vector" not in text and "republican vector" not in text
+
+
+def test_committed_catalog_and_inferences_match_the_generic_evaluator_without_source_retrieval():
+    builder = load_builder()
+    catalog = load_json("candidate_catalog.json")
+    assert catalog["themes"] == builder.THEME_CATALOG
+    assert catalog["policy_trait_contract"] == builder.POLICY_TRAIT_CONTRACT
+    assert catalog["candidates"] == builder.CANDIDATE_CATALOG
+
+    shared = json.loads((ROOT / builder.SHARED_SET["episode_map_path"]).read_text(encoding="utf-8"))["episodes"]
+    actual_by_id = {
+        item["member"]["bioguide_id"]: item
+        for item in load_json("inference_candidates.json")["candidates"]
+    }
+    for overlay in load_json("member_overlays.json")["overlays"]:
+        expected = builder.evaluate_overlay(overlay, shared)
+        actual = dict(actual_by_id[overlay["member"]["bioguide_id"]])
+        actual.pop("publication")
+        assert actual == expected

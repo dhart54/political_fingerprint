@@ -311,8 +311,8 @@ test("episode-first hierarchy renders the three reviewed slices without legacy c
   await expect(justice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(5);
 
   const massie = page.getByTestId("justice-cross-member-M001184").getByTestId("editorial-issue-experience");
-  await expect(massie.getByText("A clear policy divide in the reviewed record", { exact: true })).toBeVisible();
-  await expect(massie.getByText(/opposed all three actions in the fentanyl scheduling episode/i)).toBeVisible();
+  await expect(massie.getByText("A clear policy-mechanism divide in the reviewed record", { exact: true })).toBeVisible();
+  await expect(massie.getByText(/opposition continued through all three reviewed fentanyl actions/i)).toBeVisible();
   await massie.getByText("Secondary voting context", { exact: true }).click();
   await expect(massie.getByText(/with the majority of House Republicans on 5 of the 7 substantive actions reviewed/i)).toBeVisible();
   expect(await massie.innerText()).not.toMatch(/Foushee/);
@@ -401,6 +401,69 @@ test("Massie receipts preserve complete H.R. results and differentiated fentanyl
   await expect(retired.locator(":scope > summary")).toContainText("Yea · roll 130");
   await retired.locator(":scope > summary").click();
   await expect(retired.getByText("The member's record across the episode", { exact: true })).toHaveCount(0);
+});
+
+test("blind García anchor preserves the bounded hierarchy, receipts, and mobile layout", async ({ page }) => {
+  const captureDirectory = path.resolve(process.cwd(), "..", "review_bundle_blind_editorial_pipeline_validation_v1", "screenshots");
+  const capture = async (locator, name) => {
+    if (process.env.CAPTURE_BLIND_EDITORIAL_SCREENSHOTS !== "1") return;
+    await mkdir(captureDirectory, { recursive: true });
+    await locator.screenshot({ path: path.join(captureDirectory, name) });
+  };
+  await page.goto("/golden-render-fixture#blind-editorial-pipeline-validation-v1");
+  const fixture = page.getByTestId("blind-editorial-pipeline-validation-v1");
+  const slice = fixture.getByTestId("editorial-issue-experience");
+  await expect(fixture.getByRole("heading", { level: 2, name: /Jesús G\. "Chuy" García.*Justice & Public Safety/ })).toBeVisible();
+  await expect(slice).toContainText("Uniform opposition without a common policy throughline");
+  await expect(slice).toContainText("does not reveal one consistent public-safety policy throughline");
+  await expect(slice).toContainText("Opposed both reviewed D.C. policing policy proposals.");
+  await expect(slice.getByText("Other notable choice in this reviewed record", { exact: true })).toHaveCount(2);
+  await expect(slice.getByText("Part of a narrower repeated pattern", { exact: true })).toHaveCount(2);
+  await expect(slice.getByText("Supports the police-tools-and-authority pattern", { exact: true })).toHaveCount(0);
+  await expect(slice.getByTestId("editorial-coverage-line")).toContainText("7 substantive votes · 5 policy episodes");
+  await expect(slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(5);
+  await expect(slice.locator("details[open]")).toHaveCount(0);
+  await capture(slice, "01-collapsed-desktop.png");
+
+  const fentanyl = slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id='halt-fentanyl-legislative-path']");
+  await expect(fentanyl.locator(":scope > summary")).toContainText("Opposed all three reviewed fentanyl actions.");
+  await fentanyl.locator(":scope > summary").click();
+  const receipt = fentanyl.getByTestId("editorial-record-roll-32");
+  await receipt.locator(":scope > summary").click();
+  await expect(receipt).toContainText("García of Illinois voted Nay.");
+  await expect(receipt).toContainText("What changed");
+  await expect(receipt).toContainText("Who or what was affected");
+  await receipt.getByText("Arguments, context, and official sources", { exact: true }).click();
+  await receipt.getByText("Official sources (3)", { exact: true }).click();
+  await expect(receipt.getByRole("link")).toHaveCount(3);
+  await capture(fentanyl, "02-expanded-fentanyl-and-receipt.png");
+
+  const complete = slice.getByTestId("complete-reviewed-record");
+  await complete.locator(":scope > summary").click();
+  await expect(complete.locator("details[data-episode-id]")).toHaveCount(5);
+  await expect(complete.locator("details[data-testid^='editorial-record-roll-']")).toHaveCount(7);
+  await complete.getByText("Procedural voting context", { exact: true }).click();
+  await expect(complete).toContainText("6 floor-process actions were reviewed but not used to summarize support or opposition.");
+  await expect(complete.getByText(/^House roll \d+:/)).toHaveCount(6);
+  await capture(complete, "03-complete-record-and-procedural-context.png");
+  await assertNoHorizontalOverflow(page);
+
+  const pursuit = slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id='dc-police-pursuit-rules']");
+  await pursuit.locator(":scope > summary").click();
+  const pursuitReceipt = pursuit.getByTestId("editorial-record-roll-275");
+  await pursuitReceipt.locator(":scope > summary").click();
+  await pursuitReceipt.getByText("Arguments, context, and official sources", { exact: true }).click();
+  await expect(pursuitReceipt.getByText("A Nay does not reveal which objection drove the vote.")).toHaveCount(0);
+  await expect(pursuitReceipt.getByText(/retained risk and effectiveness exceptions; it was not an unconditional pursuit mandate/)).toHaveCount(1);
+  await expect(pursuitReceipt.getByText(/Rules Committee substitute, whose exceptions matter/)).toHaveCount(0);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/golden-render-fixture?blindViewport=390#blind-editorial-pipeline-validation-v1");
+  const mobile = page.getByTestId("blind-editorial-pipeline-validation-v1").getByTestId("editorial-issue-experience");
+  await expect(mobile.getByTestId("editorial-coverage-line")).toBeVisible();
+  await expect(mobile.locator("details[open]")).toHaveCount(0);
+  await capture(mobile, "04-mobile-collapsed.png");
+  await assertNoHorizontalOverflow(page);
 });
 
 test("synthetic large record keeps five featured episodes and all 24 actions in the complete hierarchy", async ({ page }) => {

@@ -31,6 +31,17 @@ export const EDITORIAL_STANDARDIZATION_RULES = Object.freeze([
   rule("ANALYSIS-001", "block", "Analytical categories must meet their episode-support rules."),
   rule("ANALYSIS-002", "block", "Procedural actions may not support a substantive conclusion."),
   rule("ANALYSIS-003", "block", "Present, Not Voting, service-ineligible, and missing actions cannot count as support or opposition."),
+  rule("SYNTHESIS-001", "block", "Direction-only evidence cannot substitute for a substantive repeated policy rationale."),
+  rule("CONCLUSION-UTILITY-001", "block", "The conclusion must synthesize rather than reproduce the episode inventory."),
+  rule("CONCLUSION-UTILITY-002", "block", "Action direction alone cannot serve as a substantive thesis."),
+  rule("CONCLUSION-UTILITY-003", "block", "Repeated, selective, and divided conclusions require a supported policy dimension."),
+  rule("CONCLUSION-UTILITY-004", "block", "A heterogeneous uniform record requires a concrete supported policy contrast."),
+  rule("CONCLUSION-UTILITY-005", "block", "The conclusion must add synthesis rather than duplicate every analytical finding."),
+  rule("CONCLUSION-UTILITY-006", "block", "Circular action-direction propositions are not reader-useful synthesis."),
+  rule("CONCLUSION-UTILITY-007", "block", "A broad philosophy claim requires a supported substantive threshold."),
+  rule("CONCLUSION-UTILITY-008", "warning", "Qualification should not crowd out the strongest defensible result."),
+  rule("CONCLUSION-UTILITY-009", "block", "No more than two episodes may be individually named when policy clusters are available."),
+  rule("CONCLUSION-UTILITY-010", "block", "The reader label must match the selected conclusion archetype."),
   rule("DETAIL-001", "block", "Motive boundaries and deterministic duplicate detail may render only once."),
   rule("DETAIL-002", "warning", "Near-duplicate detail that is not deterministically equivalent needs review."),
   rule("PUBLIC-001", "block", "Internal workflow and methodology language may not render publicly."),
@@ -66,6 +77,7 @@ export function validateEditorialStandardization({
   validateActions(experience, add);
   validateEpisodes(candidate, experience, add);
   validateAnalysis(candidate, experience, add);
+  validateConclusionUtility(candidate, experience, add);
   validatePublicSurface(candidate, experience, renderedText, genericIssueCards, add);
   validateServiceChecks(serviceChecks, add);
 
@@ -145,10 +157,15 @@ function validateActions(experience, add) {
     }
     if (action.actionStatus === MEMBER_ACTION_STATUS.yea && !/voted (?:yea|yes)|supported/i.test(action.actionAndResult || "")) add("OVERLAY-001", { ...actionContext, fieldPath: "actionAndResult", explanation: "Yea overlay prose does not describe a Yea action." });
     if (action.actionStatus === MEMBER_ACTION_STATUS.nay && !/voted (?:nay|no)|opposed/i.test(action.actionAndResult || "")) add("OVERLAY-001", { ...actionContext, fieldPath: "actionAndResult", explanation: "Nay overlay prose does not describe a Nay action." });
-    const combinedDetail = [action.argumentBoundary, action.additionalDetail?.detail, action.additionalDetail?.laterHistory, ...(action.importantContext || [])].filter(Boolean);
+    const combinedDetail = [action.whatChanged?.changeAtStake, action.argumentBoundary, action.additionalDetail?.detail, action.additionalDetail?.laterHistory, ...(action.importantContext || [])].filter(Boolean);
     if (combinedDetail.filter((value) => MOTIVE_BOUNDARY.test(value)).length > 1) add("DETAIL-001", { ...actionContext, fieldPath: "importantContext", explanation: "The same motive boundary appears more than once." });
+    if (action.argumentBoundary && (action.importantContext || []).some((value) => /a (?:yea|nay) does not (?:reveal|establish|explain|assign)/i.test(value))) {
+      add("DETAIL-001", { ...actionContext, fieldPath: "importantContext", explanation: "A generic vote-motive disclaimer repeats the neutral argument boundary." });
+    }
     const normalized = combinedDetail.map(normalizeText);
     if (new Set(normalized).size !== normalized.length) add("DETAIL-001", { ...actionContext, fieldPath: "additionalDetail", explanation: "Deterministically duplicate detail is exposed more than once." });
+    const semanticKeys = combinedDetail.map(detailSemanticKey).filter(Boolean);
+    if (new Set(semanticKeys).size !== semanticKeys.length) add("DETAIL-001", { ...actionContext, fieldPath: "additionalDetail", explanation: "The same exact-version qualification is repeated across detail and context." });
   }
 }
 
@@ -183,6 +200,109 @@ function validateAnalysis(candidate, experience, add) {
   }
   if (candidate.validationHints?.proceduralConclusionRolls?.length) add("ANALYSIS-002", { roll: candidate.validationHints.proceduralConclusionRolls[0], fieldPath: "synthesis.primary", explanation: "A procedural action is cited as substantive conclusion support." });
   if (candidate.validationHints?.nonYesNoCounted) add("ANALYSIS-003", { fieldPath: "source.inference_candidate.coverage", explanation: "A non-Yes/No action was counted as support or opposition." });
+  const sampleBoundaryCount = (candidate.synthesis?.primary?.match(/\b(?:reviewed )?sample\b/gi) || []).length;
+  if (sampleBoundaryCount > 1) add("DETAIL-001", { fieldPath: "synthesis.primary", explanation: "The bounded sample phrase is deterministically duplicated in the primary conclusion." });
+  validateSynthesisBasis(candidate, experience, supplied, add);
+}
+
+function detailSemanticKey(value) {
+  const text = String(value || "").toLowerCase();
+  if (/substitute/.test(text) && /exception/.test(text)) return "substitute-exceptions";
+  if (/not repeal every|most provisions/.test(text)) return "bounded-repeal";
+  return null;
+}
+
+function validateSynthesisBasis(candidate, experience, supplied, add) {
+  const inference = candidate.source?.inference_candidate || {};
+  const basis = inference.candidate_basis || {};
+  const primary = candidate.synthesis?.primary || "";
+  const uniformArchetype = inference.candidate_id === "uniform_direction_without_common_policy_rationale"
+    && basis.basis_type === "uniform_action_direction";
+  const directionOnlyThemes = new Set(["cross-mechanism-opposition", "cross-mechanism-support"]);
+  const substantiveThemes = asArray(basis.substantive_theme_ids).filter((id) => !directionOnlyThemes.has(id));
+  const circularDirection = /(?:support|oppos|yea|nay).{0,100}(?:(?:across|distinct|different|multiple|heterogeneous).{0,80}(?:mechanism|proposal|action)|(?:mechanism|proposal|action).{0,80}(?:across|distinct|different|multiple|heterogeneous))/i.test(primary);
+
+  if (!uniformArchetype && (
+    basis.basis_type === "uniform_action_direction"
+    || (basis.basis_type === "substantive_repeated_pattern" && substantiveThemes.length === 0)
+    || circularDirection
+  )) {
+    add("SYNTHESIS-001", {
+      fieldPath: "source.inference_candidate.candidate_basis",
+      explanation: "The primary conclusion substitutes common action direction across heterogeneous mechanisms for a shared substantive policy dimension.",
+    });
+  }
+
+  for (const item of asArray(supplied.repeatedPatterns)) {
+    const text = item.text || "";
+    if (/(?:support|oppos|yea|nay).{0,80}(?:reviewed )?(?:actions?|proposals?|mechanisms?)(?:\s+across|\s+in)?/i.test(text)
+      && !/(?:D\.C\.|fentanyl|report|firearm|pursuit|polic|safeguard|research|evidence|authority)/i.test(text)) {
+      add("SYNTHESIS-001", {
+        fieldPath: "synthesis.analyticalSections.repeatedPatterns",
+        explanation: "A repeated pattern contains action direction but no shared substantive policy theme.",
+      });
+    }
+  }
+
+  const statuses = experience.episodes
+    .flatMap((episode) => episode.actions)
+    .filter((action) => action.inclusionClass === "substantive")
+    .map((action) => action.actionStatus);
+  const homogeneous = statuses.length > 1 && new Set(statuses).size === 1;
+  if (homogeneous && /(?:coherent|overarching|consistent).{0,50}(?:philosophy|approach|orientation|stance)/i.test(primary)
+    && !/(?:does not|do not|cannot|not enough to) establish/i.test(primary)) {
+    add("SYNTHESIS-001", {
+      fieldPath: "synthesis.primary",
+      explanation: "A homogeneous action vector is described as a coherent policy philosophy without a substantive shared-theme basis.",
+    });
+  }
+}
+
+function validateConclusionUtility(candidate, experience, add) {
+  const inference = candidate.source?.inference_candidate || {};
+  const model = candidate.synthesis?.conclusionModel || inference.conclusion_model;
+  const report = candidate.synthesis?.compressionReport || inference.compression_report;
+  if (!model || !report) return;
+  const primary = candidate.synthesis?.primary || inference.primary_conclusion || "";
+  const substantiveArchetypes = new Set(["substantive_repeated_pattern", "selective_or_conditional_pattern", "policy_mechanism_divide"]);
+  const sourceCount = Number(report.source_episode_count || experience.episodes.length);
+  const clusteredCount = Number(report.policy_cluster_count || 0);
+  const namedCount = Number(report.individually_named_episode_count || 0);
+  const represented = asArray(model.evidence_episode_ids).length;
+
+  if (sourceCount > 2 && clusteredCount === 0 && represented >= sourceCount - 1) {
+    add("CONCLUSION-UTILITY-001", { fieldPath: "synthesis.conclusionModel", explanation: "The primary conclusion represents most episodes individually instead of through policy clusters." });
+  }
+  if (substantiveArchetypes.has(model.archetype) && model.thesis_proposition?.policy_dimension_present !== true) {
+    add("CONCLUSION-UTILITY-002", { fieldPath: "synthesis.conclusionModel.thesis_proposition", explanation: "The substantive thesis has no basis beyond the action direction." });
+    add("CONCLUSION-UTILITY-003", { fieldPath: "synthesis.conclusionModel.supporting_policy_clusters", explanation: "The selected archetype lacks a source-grounded policy dimension." });
+  }
+  if (model.archetype === "uniform_direction_without_common_policy_throughline" && !model.contrast_proposition) {
+    add("CONCLUSION-UTILITY-004", { fieldPath: "synthesis.conclusionModel.contrast_proposition", explanation: "The no-common-throughline result lacks the required concrete contrast between supported policy clusters." });
+  }
+  if (asArray(report.duplicated_analytical_propositions).length) {
+    add("CONCLUSION-UTILITY-005", { fieldPath: "synthesis.compressionReport.duplicated_analytical_propositions", explanation: "The primary conclusion duplicates detailed analytical propositions without additional synthesis." });
+  }
+  if (/(?:consistent|repeated|uniform) (?:support|opposition).{0,80}(?:because|shown by).{0,40}(?:supported|opposed|yea|nay)|(?:opposition|support) across (?:different|multiple) (?:mechanisms|proposals)/i.test(primary)) {
+    add("CONCLUSION-UTILITY-006", { fieldPath: "synthesis.primary", explanation: "The conclusion restates action direction as its own policy explanation." });
+  }
+  if (/(?:coherent|overarching|consistent|comprehensive).{0,50}(?:philosophy|ideology|orientation|stance)/i.test(primary)
+    && !/(?:does not|do not|cannot|not enough to|without)/i.test(primary)) {
+    add("CONCLUSION-UTILITY-007", { fieldPath: "synthesis.primary", explanation: "The conclusion makes a broad philosophy claim without the required substantive evidence threshold." });
+  }
+  const qualificationWords = (primary.match(/\b(?:but|however|although|does not|do not|cannot|not enough|limited|caveat)\b/gi) || []).length;
+  if (qualificationWords >= 4 || Number(report.boundary_count || 0) > 2) {
+    add("CONCLUSION-UTILITY-008", { fieldPath: "synthesis.primary", explanation: "Qualification occupies more of the conclusion than the bounded substantive result." });
+  }
+  if (sourceCount > 2 && clusteredCount > 0 && namedCount > 2) {
+    add("CONCLUSION-UTILITY-009", { fieldPath: "synthesis.compressionReport.individually_named_episode_count", explanation: "More than two episodes are individually named despite valid policy clusters." });
+  }
+  const actualLabel = candidate.synthesis?.conclusionModel
+    ? candidate.synthesis?.readerFacingLabel || inference.reader_facing_label
+    : null;
+  if (actualLabel && model.reader_label_concept && actualLabel !== model.reader_label_concept) {
+    add("CONCLUSION-UTILITY-010", { fieldPath: "synthesis.readerFacingLabel", explanation: "The reader label does not match the proposition model's archetype concept." });
+  }
 }
 
 function validatePublicSurface(candidate, experience, renderedText, genericIssueCards, add) {

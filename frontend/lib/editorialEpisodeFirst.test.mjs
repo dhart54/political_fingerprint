@@ -132,7 +132,7 @@ test("the three reviewed slices expose the requested bounded episode-first hiera
   assert.equal(economy.ungroupedRecords.filter((item) => item.inclusionClass === "not_voting").length, 1);
   assert.equal(justice.featuredEpisodes.length, 5);
   assert.equal(justice.episodes[0].actions.length, 3);
-  assert.equal(massie.publicPresentation.strengthLabel, "A clear policy divide in the reviewed record");
+  assert.equal(massie.publicPresentation.strengthLabel, "A clear policy-mechanism divide in the reviewed record");
   assert.equal(massie.episodes[0].memberTrajectory, "Opposed all three reviewed fentanyl actions.");
   assert.match(massie.episodes[0].memberTrajectoryDetail, /Massie voted Nay.*H\.R\. 27.*Senate framework/i);
   for (const experience of [economy, justice, massie]) {

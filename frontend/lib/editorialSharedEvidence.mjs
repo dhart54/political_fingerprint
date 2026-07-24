@@ -51,6 +51,7 @@ export function buildSharedLegislativeAction(entry, row = {}, { episodeId = null
     || (/no adequate stage-specific opposing argument/i.test(entry?.two_minute?.argument_boundary || "")
     ? "No adequate stage-specific opposing argument was found in the reviewed official materials."
     : null);
+  const details = publicDetails(entry);
   return Object.freeze({
     id: `roll-${entry.roll}`,
     roll: Number(entry.roll),
@@ -77,10 +78,10 @@ export function buildSharedLegislativeAction(entry, row = {}, { episodeId = null
     argumentBoundary: NEUTRAL_ARGUMENT_BOUNDARY,
     oneSidedArgumentNote: oneSidedBoundary,
     additionalDetail: Object.freeze({
-      detail: publicDetail(entry),
-      laterHistory: publicLaterHistory(entry),
+      detail: details.detail,
+      laterHistory: details.laterHistory,
     }),
-    importantContext: Object.freeze(publicContext(entry)),
+    importantContext: Object.freeze(details.context),
     sources: Object.freeze(deduplicateSources(entry.two_minute?.sources || [])),
   });
 }
@@ -164,7 +165,7 @@ function neutralContext(items) {
   const result = [];
   for (const item of items) {
     if (!item) continue;
-    if (/one policy episode|belongs? to one episode|vote does not (?:reveal|establish)|does not establish motive|does not reveal why|why [A-Z][a-z]+|reason assigned to|a (?:yea|nay) does not assign a reason/i.test(item)) continue;
+    if (/one policy episode|belongs? to one episode|vote does not (?:reveal|establish)|does not establish motive|does not reveal why|why [A-Z][a-z]+|reason assigned to|a (?:yea|nay) does not (?:assign|reveal|establish|explain)/i.test(item)) continue;
     if (/^the amendment failed\.?$/i.test(item)) continue;
     result.push(item);
   }
@@ -197,6 +198,25 @@ function publicLaterHistory(entry) {
 function publicContext(entry) {
   if (isInitialFundingAction(entry)) return [];
   return neutralContext(entry.two_minute?.caveats || []);
+}
+
+function publicDetails(entry) {
+  const detail = publicDetail(entry);
+  const laterHistory = publicLaterHistory(entry);
+  const context = publicContext(entry).filter((item) => !semanticallyRepeatsDetail(item, detail, laterHistory));
+  return { detail, laterHistory, context };
+}
+
+function semanticallyRepeatsDetail(value, ...details) {
+  const text = String(value || "").toLowerCase();
+  return details.filter(Boolean).some((detail) => {
+    const other = String(detail).toLowerCase();
+    const bothQualifySubstitute = /substitute/.test(text) && /substitute/.test(other)
+      && /exception/.test(text) && /exception/.test(other);
+    const bothBoundRepeal = /not repeal every|most provisions/.test(text)
+      && /not repeal every|most provisions/.test(other);
+    return bothQualifySubstitute || bothBoundRepeal;
+  });
 }
 
 function isInitialFundingAction(entry) {

@@ -48,6 +48,314 @@
       ]
     }
   },
+  "policy_trait_contract": {
+    "schema_version": "member_neutral_policy_traits_v1",
+    "ontology_status": "established_reviewed_evidence",
+    "policy_domain_label": "public-safety",
+    "episode_traits": {
+      "halt-fentanyl-legislative-path": {
+        "policy_problem": [
+          "fentanyl_related_substance_scheduling",
+          "overdose_reduction",
+          "research_access"
+        ],
+        "mechanism_family": [
+          "controlled_substance_scheduling",
+          "implementation_condition",
+          "research_registration"
+        ],
+        "policy_effect_traits": [
+          "makes_scheduling_permanent",
+          "establishes_penalty_rules",
+          "adds_research_access"
+        ],
+        "affected_entity_classes": [
+          "controlled_substance_researchers",
+          "federal_enforcement",
+          "regulated_persons"
+        ],
+        "implementation_traits": [
+          "certification_before_implementation",
+          "permanent_framework"
+        ],
+        "safeguard_or_constraint_traits": [
+          "evidence_based_certification_condition"
+        ],
+        "authority_change_traits": [
+          "preserves_or_expands_enforcement_framework"
+        ],
+        "reporting_or_research_traits": [
+          "research_registration_rules",
+          "research_access"
+        ],
+        "package_or_stage_traits": [
+          "three_related_actions",
+          "earlier_and_later_frameworks"
+        ]
+      },
+      "retired-service-weapon-purchases": {
+        "policy_problem": [
+          "retired_federal_service_firearm_access"
+        ],
+        "mechanism_family": [
+          "bounded_purchase_program"
+        ],
+        "policy_effect_traits": [
+          "expands_access_to_law_enforcement_tool"
+        ],
+        "affected_entity_classes": [
+          "eligible_retired_federal_officers"
+        ],
+        "implementation_traits": [
+          "purchase_program"
+        ],
+        "safeguard_or_constraint_traits": [
+          "eligibility_rules",
+          "weapon_exclusions"
+        ],
+        "authority_change_traits": [],
+        "reporting_or_research_traits": [],
+        "package_or_stage_traits": [
+          "single_action_episode"
+        ]
+      },
+      "officer-safety-data-reporting": {
+        "policy_problem": [
+          "officer_safety_and_wellness_information"
+        ],
+        "mechanism_family": [
+          "federal_reporting",
+          "information_gathering"
+        ],
+        "policy_effect_traits": [
+          "requires_reporting",
+          "gathers_information"
+        ],
+        "affected_entity_classes": [
+          "law_enforcement_officers",
+          "federal_reporting_entities"
+        ],
+        "implementation_traits": [
+          "reporting_requirement"
+        ],
+        "safeguard_or_constraint_traits": [
+          "does_not_create_criminal_penalty"
+        ],
+        "authority_change_traits": [],
+        "reporting_or_research_traits": [
+          "officer_safety_wellness_reporting"
+        ],
+        "package_or_stage_traits": [
+          "single_action_episode"
+        ]
+      },
+      "dc-police-pursuit-rules": {
+        "policy_problem": [
+          "dc_police_pursuit_rules"
+        ],
+        "mechanism_family": [
+          "police_operational_authority",
+          "local_rule_change"
+        ],
+        "policy_effect_traits": [
+          "broadens_pursuit_authority"
+        ],
+        "affected_entity_classes": [
+          "dc_law_enforcement",
+          "people_affected_by_vehicle_pursuits"
+        ],
+        "implementation_traits": [
+          "changes_local_policing_rules"
+        ],
+        "safeguard_or_constraint_traits": [
+          "retains_risk_and_effectiveness_exceptions"
+        ],
+        "authority_change_traits": [
+          "broadens_police_operational_authority"
+        ],
+        "reporting_or_research_traits": [],
+        "package_or_stage_traits": [
+          "rules_committee_substitute",
+          "single_action_episode"
+        ]
+      },
+      "dc-policing-reform-repeal": {
+        "policy_problem": [
+          "dc_policing_reform_rules"
+        ],
+        "mechanism_family": [
+          "repeal_of_local_policing_rules"
+        ],
+        "policy_effect_traits": [
+          "rolls_back_most_existing_reform_provisions"
+        ],
+        "affected_entity_classes": [
+          "dc_law_enforcement",
+          "people_covered_by_dc_policing_rules"
+        ],
+        "implementation_traits": [
+          "changes_oversight_disclosure_discipline_and_policing_rules"
+        ],
+        "safeguard_or_constraint_traits": [
+          "retains_specified_exceptions"
+        ],
+        "authority_change_traits": [
+          "rolls_back_policing_restrictions"
+        ],
+        "reporting_or_research_traits": [
+          "changes_disclosure_rules"
+        ],
+        "package_or_stage_traits": [
+          "single_action_episode"
+        ]
+      }
+    },
+    "action_traits": {
+      "32": {
+        "policy_problem": "overdose reduction before permanent scheduling implementation",
+        "traits": [
+          "adds_implementation_condition",
+          "requires_evidence_certification",
+          "delays_implementation"
+        ]
+      },
+      "33": {
+        "policy_problem": "fentanyl-related substance scheduling",
+        "traits": [
+          "permanent_controlled_substance_scheduling",
+          "enforcement_framework",
+          "penalty_rules",
+          "research_registration_rules"
+        ]
+      },
+      "166": {
+        "policy_problem": "fentanyl-related substance scheduling and research",
+        "traits": [
+          "permanent_controlled_substance_scheduling",
+          "enforcement_framework",
+          "adds_research_access"
+        ]
+      },
+      "130": {
+        "policy_problem": "retired federal service firearm access",
+        "traits": [
+          "expands_law_enforcement_tool_access",
+          "bounded_purchase_program",
+          "eligibility_constraints",
+          "weapon_exclusions"
+        ]
+      },
+      "131": {
+        "policy_problem": "officer safety and wellness information",
+        "traits": [
+          "requires_federal_reporting",
+          "gathers_information",
+          "officer_safety_wellness",
+          "does_not_create_criminal_penalty"
+        ]
+      },
+      "275": {
+        "policy_problem": "D.C. police pursuit rules",
+        "traits": [
+          "broadens_police_operational_authority",
+          "retains_risk_effectiveness_exceptions",
+          "changes_local_policing_rules"
+        ]
+      },
+      "299": {
+        "policy_problem": "D.C. policing reform rules",
+        "traits": [
+          "rolls_back_policing_restrictions",
+          "changes_oversight_disclosure_discipline",
+          "retains_specified_exceptions"
+        ]
+      }
+    },
+    "policy_clusters": {
+      "implementation_safeguards_research_reporting": {
+        "reader_phrase": "proposals adding safeguards, research access, or reporting",
+        "trait_ids": [
+          "adds_implementation_condition",
+          "requires_evidence_certification",
+          "adds_research_access",
+          "requires_federal_reporting",
+          "gathers_information"
+        ]
+      },
+      "enforcement_or_police_authority": {
+        "reader_phrase": "proposals expanding enforcement or police authority",
+        "trait_ids": [
+          "permanent_controlled_substance_scheduling",
+          "enforcement_framework",
+          "expands_law_enforcement_tool_access",
+          "broadens_police_operational_authority",
+          "rolls_back_policing_restrictions"
+        ]
+      },
+      "police_tools_authority_or_rule_rollbacks": {
+        "reader_phrase": "police tools, operational authority, or rollback of policing restrictions",
+        "trait_ids": [
+          "expands_law_enforcement_tool_access",
+          "broadens_police_operational_authority",
+          "rolls_back_policing_restrictions"
+        ]
+      },
+      "fentanyl_scheduling_and_enforcement": {
+        "reader_phrase": "the reviewed fentanyl scheduling and enforcement framework",
+        "trait_ids": [
+          "permanent_controlled_substance_scheduling",
+          "enforcement_framework"
+        ]
+      },
+      "national_public_safety_mechanisms": {
+        "reader_phrase": "the reviewed national reporting, scheduling, and police-tool mechanisms",
+        "trait_ids": [
+          "requires_federal_reporting",
+          "permanent_controlled_substance_scheduling",
+          "expands_law_enforcement_tool_access"
+        ]
+      },
+      "dc_policing_changes": {
+        "reader_phrase": "the two reviewed D.C. policing-rule changes",
+        "trait_ids": [
+          "broadens_police_operational_authority",
+          "rolls_back_policing_restrictions"
+        ]
+      },
+      "policing_restriction_rollback": {
+        "reader_phrase": "the reviewed rollback of D.C. policing restrictions",
+        "trait_ids": [
+          "rolls_back_policing_restrictions"
+        ]
+      }
+    },
+    "cluster_relationships": [
+      {
+        "cluster_ids": [
+          "enforcement_or_police_authority",
+          "implementation_safeguards_research_reporting"
+        ],
+        "relationship": "contrasts",
+        "basis": "authority or enforcement expansion differs from added conditions, research access, and reporting"
+      },
+      {
+        "cluster_ids": [
+          "fentanyl_scheduling_and_enforcement",
+          "police_tools_authority_or_rule_rollbacks"
+        ],
+        "relationship": "contrasts",
+        "basis": "controlled-substance scheduling differs from police tools, operational authority, and local policing rules"
+      },
+      {
+        "cluster_ids": [
+          "national_public_safety_mechanisms",
+          "dc_policing_changes"
+        ],
+        "relationship": "contrasts",
+        "basis": "national policy mechanisms differ from changes to local D.C. policing rules"
+      }
+    ]
+  },
   "interpretations": {
     "retired-service-weapon-purchases": {
       "mechanism_family": "firearm-access",
@@ -194,7 +502,7 @@
             },
             {
               "theme_id": "dc-policing-change-opposition",
-              "rationale": "Opposed both reviewed D.C. policing changes."
+              "rationale": "Opposed both reviewed D.C. policing policy proposals."
             },
             {
               "theme_id": "cross-mechanism-opposition",
@@ -255,7 +563,7 @@
             },
             {
               "theme_id": "dc-policing-change-opposition",
-              "rationale": "Opposed both reviewed D.C. policing changes."
+              "rationale": "Opposed both reviewed D.C. policing policy proposals."
             },
             {
               "theme_id": "cross-mechanism-opposition",

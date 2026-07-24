@@ -20,6 +20,7 @@ import {
 } from "../lib/editorialGoldRenderFixture.mjs";
 import { justiceEditorialIssueFixtureData } from "../lib/justiceEditorialRenderFixture.mjs";
 import { justiceCrossMemberRenderProfiles } from "../lib/justiceCrossMemberReviewSlices.mjs";
+import { blindEditorialPipelineReviewProfile } from "../lib/blindEditorialPipelineReviewSlice.mjs";
 import { EDITORIAL_EXPERIENCE_MODE } from "../lib/editorialIssueExperience.mjs";
 import { reviewEditorialIssueSlices } from "../lib/editorialIssueReviewSlices.mjs";
 import {
@@ -136,6 +137,33 @@ export default function GoldenRenderFixture() {
             />
           </section>
         ))}
+
+        <section
+          className="mt-5 scroll-mt-4"
+          data-review-harness="blind-editorial-pipeline-pending"
+          data-testid="blind-editorial-pipeline-validation-v1"
+          id="blind-editorial-pipeline-validation-v1"
+        >
+          <div className="rounded-2xl border border-emerald-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]" data-review-harness-chrome="true">
+            <p className="text-xs uppercase tracking-[0.2em] text-emerald-800">Blind pipeline validation — review only</p>
+            <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">
+              {blindEditorialPipelineReviewProfile.legislator.name_display} — Justice &amp; Public Safety
+            </h2>
+            <p className="mt-1 text-sm leading-6 text-stone-600">
+              Locked action-only selection rendered through the shared selector, adapter, evidence, and public renderer.
+            </p>
+          </div>
+          <PositionByIssue
+            editorialCandidates={[blindEditorialPipelineReviewProfile.candidate]}
+            editorialMode={EDITORIAL_EXPERIENCE_MODE.review}
+            evidenceRequest={justiceEditorialRequest}
+            fixtureData={blindEditorialPipelineReviewProfile.fixtureData}
+            legislator={blindEditorialPipelineReviewProfile.legislator}
+            legislatorId={blindEditorialPipelineReviewProfile.legislator.id}
+            scope="all"
+            title={`${blindEditorialPipelineReviewProfile.legislator.name_display}'s Justice & Public Safety evidence`}
+          />
+        </section>
 
         <section className="mt-5 scroll-mt-4" data-review-harness="synthetic-standardization" data-testid="synthetic-large-editorial-fixture" id="synthetic-large-editorial-fixture">
           <div className="rounded-2xl border border-violet-300 bg-white px-4 py-3" data-review-harness-chrome="true">

@@ -45,9 +45,9 @@ const economyCandidate = Object.freeze({
   ]),
   publication: pendingPublication("Editorial review preview — not published"),
   synthesis: Object.freeze({
-    primary: "Across the reviewed record, Foushee consistently opposed the House proposals examined here: both stages of the budget-framework episode, both stages of the government-funding episode, the House military-construction and veterans funding bill, and restrictions on SBA-backed loan eligibility. This is a clear pattern of opposition to these specific proposals, but the varied mechanisms do not establish one overarching economic philosophy.",
+    primary: "Across the reviewed record, Foushee consistently opposed the House proposals examined here, including both stages of the budget-framework and government-funding episodes. Her other reviewed choices concerned veterans funding and small-business eligibility; together, these varied mechanisms do not establish one overarching economic philosophy.",
     evidenceBreadth: "A consistent pattern in the reviewed record",
-    readerFacingLabel: "A consistent pattern in the reviewed record",
+    readerFacingLabel: "Consistent opposition without an overarching economic philosophy",
     analyticalSections: Object.freeze({
       repeatedPatterns: Object.freeze([
         finding("government_funding_hr5371", "Opposed both stages of the 2025 government-funding episode."),
