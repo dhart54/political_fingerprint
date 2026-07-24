@@ -86,7 +86,7 @@ if (check) {
     console.error(mismatches.join("; "));
     process.exitCode = 1;
   } else {
-    console.log("Blind first-result preservation and final 37-rule validation are current.");
+    console.log(`Blind first-result preservation and final ${payload.ruleCount}-rule validation are current.`);
   }
 } else {
   if (!existsSync(FIRST_PATH)) {

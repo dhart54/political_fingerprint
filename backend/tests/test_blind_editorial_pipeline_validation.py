@@ -91,7 +91,14 @@ def test_generation_uses_authoritative_seven_action_five_episode_contract():
     inference = generated["inference"]
     assert inference["candidate_id"] == "uniform_direction_without_common_policy_rationale"
     assert inference["evidence_strength_label"] == "Uniform opposition across the reviewed proposals"
-    assert "does not establish one overarching public-safety philosophy" in inference["primary_conclusion"]
+    assert inference["primary_conclusion"] == (
+        "Across the reviewed record, García of Illinois voted Nay on every substantive proposal. "
+        "That opposition extended both to proposals expanding enforcement or police authority and to "
+        "proposals adding safeguards, research access, or reporting, so the uniform vote direction does "
+        "not reveal one consistent public-safety policy throughline."
+    )
+    assert inference["reader_facing_label"] == "Uniform opposition without a common policy throughline"
+    assert inference["review_route"] == "sampled_audit_candidate"
     assert [item["theme_id"] for item in inference["repeated_cross_episode_themes"]] == ["dc-policing-change-opposition"]
 
 

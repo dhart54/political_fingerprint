@@ -6,7 +6,7 @@ This deterministic report checks contract conformance. It does not confer human 
 
 - State: `pass`
 - Fixtures: 5
-- Rules: 37 (36 blocking, 1 warning)
+- Rules: 48 (46 blocking, 2 warning)
 - Findings: 0 blocking, 0 warning
 - Real content remains `human_approval_pending`, `not_promoted`, and `productionEligible: false`.
 - Expected production-registry entries: 0.
@@ -23,7 +23,16 @@ This deterministic report checks contract conformance. It does not confer human 
 
 ## Mutation coverage
 
-The mutation suite contains 20 deliberate known-defect cases and requires each one to produce its expected stable rule ID. Run the suite; this generated report is not a substitute for test execution.
+The mutation suite contains 32 deliberate known-defect cases and requires each one to produce its expected stable rule ID. Run the suite; this generated report is not a substitute for test execution.
+
+## Semantic conclusion references
+
+| Fixture | Designation | Archetype | Result |
+| --- | --- | --- | --- |
+| foushee-economy-reference-v1 | human_reviewed_semantic_reference | uniform_direction_without_common_policy_throughline | pass |
+| foushee-justice-reference-v1 | human_reviewed_semantic_reference | selective_or_conditional_pattern | pass |
+| massie-justice-reference-v1 | human_reviewed_semantic_reference | policy_mechanism_divide | pass |
+| garcia-justice-calibration-v1 | editorial_utility_calibration_pending | uniform_direction_without_common_policy_throughline | pass |
 
 ## Publication boundary
 

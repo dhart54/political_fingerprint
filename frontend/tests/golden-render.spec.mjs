@@ -311,8 +311,8 @@ test("episode-first hierarchy renders the three reviewed slices without legacy c
   await expect(justice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(5);
 
   const massie = page.getByTestId("justice-cross-member-M001184").getByTestId("editorial-issue-experience");
-  await expect(massie.getByText("A clear policy divide in the reviewed record", { exact: true })).toBeVisible();
-  await expect(massie.getByText(/opposed all three actions in the fentanyl scheduling episode/i)).toBeVisible();
+  await expect(massie.getByText("A clear policy-mechanism divide in the reviewed record", { exact: true })).toBeVisible();
+  await expect(massie.getByText(/opposition continued through all three reviewed fentanyl actions/i)).toBeVisible();
   await massie.getByText("Secondary voting context", { exact: true }).click();
   await expect(massie.getByText(/with the majority of House Republicans on 5 of the 7 substantive actions reviewed/i)).toBeVisible();
   expect(await massie.innerText()).not.toMatch(/Foushee/);
@@ -414,8 +414,8 @@ test("blind García anchor preserves the bounded hierarchy, receipts, and mobile
   const fixture = page.getByTestId("blind-editorial-pipeline-validation-v1");
   const slice = fixture.getByTestId("editorial-issue-experience");
   await expect(fixture.getByRole("heading", { level: 2, name: /Jesús G\. "Chuy" García.*Justice & Public Safety/ })).toBeVisible();
-  await expect(slice).toContainText("Uniform opposition across the reviewed proposals");
-  await expect(slice).toContainText("does not establish one overarching public-safety philosophy");
+  await expect(slice).toContainText("Uniform opposition without a common policy throughline");
+  await expect(slice).toContainText("does not reveal one consistent public-safety policy throughline");
   await expect(slice).toContainText("Opposed both reviewed D.C. policing policy proposals.");
   await expect(slice.getByText("Other notable choice in this reviewed record", { exact: true })).toHaveCount(2);
   await expect(slice.getByText("Part of a narrower repeated pattern", { exact: true })).toHaveCount(2);
@@ -454,7 +454,8 @@ test("blind García anchor preserves the bounded hierarchy, receipts, and mobile
   await pursuitReceipt.locator(":scope > summary").click();
   await pursuitReceipt.getByText("Arguments, context, and official sources", { exact: true }).click();
   await expect(pursuitReceipt.getByText("A Nay does not reveal which objection drove the vote.")).toHaveCount(0);
-  await expect(pursuitReceipt.getByText(/Rules Committee substitute, whose exceptions matter/)).toHaveCount(1);
+  await expect(pursuitReceipt.getByText(/retained risk and effectiveness exceptions; it was not an unconditional pursuit mandate/)).toHaveCount(1);
+  await expect(pursuitReceipt.getByText(/Rules Committee substitute, whose exceptions matter/)).toHaveCount(0);
 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/golden-render-fixture?blindViewport=390#blind-editorial-pipeline-validation-v1");

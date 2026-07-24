@@ -79,7 +79,10 @@ test("public model preserves coverage, episode grouping, receipts, and secondary
 test("the correction uses the uniform-direction archetype without changing reference fixture membership", () => {
   assert.equal(blindEditorialPipelineValidationData.inference.candidate_id, "uniform_direction_without_common_policy_rationale");
   assert.equal(candidate.synthesis.evidenceBreadth, "Uniform opposition across the reviewed proposals");
-  assert.match(candidate.synthesis.primary, /does not establish one overarching public-safety philosophy/);
+  assert.match(candidate.synthesis.primary, /does not reveal one consistent public-safety policy throughline/);
+  assert.equal(candidate.synthesis.readerFacingLabel, "Uniform opposition without a common policy throughline");
+  assert.equal(candidate.synthesis.reviewRoute, "sampled_audit_candidate");
+  assert.equal(candidate.synthesis.compressionReport.individually_named_episode_count, 0);
   assert.deepEqual(
     candidate.synthesis.analyticalSections.repeatedPatterns.map((item) => item.text),
     ["Opposed both reviewed D.C. policing policy proposals."],

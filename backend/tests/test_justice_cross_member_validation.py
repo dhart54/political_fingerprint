@@ -78,7 +78,10 @@ def test_uniform_direction_is_descriptive_not_a_substantive_policy_rationale():
         "uniform_action_direction": {"direction": "Nay", "count": 7, "total": 7, "uniform": True},
     }
     assert nay["evidence_strength_label"] == "Uniform opposition across the reviewed proposals"
-    assert "does not establish one overarching public-safety philosophy" in nay["primary_conclusion"]
+    assert "does not reveal one consistent public-safety policy throughline" in nay["primary_conclusion"]
+    assert nay["reader_facing_label"] == "Uniform opposition without a common policy throughline"
+    assert nay["conclusion_model"]["contrast_proposition"]["relationship"] == "contrasts"
+    assert nay["compression_report"]["individually_named_episode_count"] == 0
     assert [item["theme_id"] for item in nay["repeated_cross_episode_themes"]] == ["dc-policing-change-opposition"]
     assert [item["episode_id"] for item in nay["notable_one_off_choices"]] == [
         "officer-safety-data-reporting",
@@ -162,6 +165,7 @@ def test_committed_catalog_and_inferences_match_the_generic_evaluator_without_so
     builder = load_builder()
     catalog = load_json("candidate_catalog.json")
     assert catalog["themes"] == builder.THEME_CATALOG
+    assert catalog["policy_trait_contract"] == builder.POLICY_TRAIT_CONTRACT
     assert catalog["candidates"] == builder.CANDIDATE_CATALOG
 
     shared = json.loads((ROOT / builder.SHARED_SET["episode_map_path"]).read_text(encoding="utf-8"))["episodes"]

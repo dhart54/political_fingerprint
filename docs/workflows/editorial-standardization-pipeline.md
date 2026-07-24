@@ -16,14 +16,16 @@ The legislative action dossier is researched once and reused across representati
 6. Overlay each member's authoritative action status.
 7. Calculate coverage against the shared episode contract.
 8. Derive candidate within-episode trajectories and cross-episode findings.
-9. Produce a bounded issue synthesis supported by structured episode/action references.
-10. Select three to five featured episodes upstream.
-11. Build the public view model; React renders that model and does not infer civic meaning.
-12. Run deterministic validation and mutation-tested integrity gates.
-13. Run responsive, accessibility, and bounded-disclosure tests.
-14. Emit the deterministic JSON validation report and concise Markdown rendering.
-15. Route failures and genuinely novel evidence structures for human review.
-16. Permit periodic stratified auditing of passing slices.
+9. Map established, member-neutral policy traits into shared, compatible, contrasting, or unresolved policy clusters.
+10. Build a structured conclusion proposition model before prose: archetype, thesis, clusters, contrast, trajectory, exception, boundary, evidence and omitted episodes, reader-label concept, and review route.
+11. Render a bounded public conclusion from proposition roles rather than action or episode titles.
+12. Select three to five featured episodes upstream.
+13. Build the public view model; React renders that model and does not infer civic meaning.
+14. Run deterministic structural, editorial-utility, and mutation-tested integrity gates.
+15. Run responsive, accessibility, and bounded-disclosure tests.
+16. Emit deterministic validation and conclusion-compression reports.
+17. Route failures and genuinely novel evidence structures for human review.
+18. Permit periodic stratified auditing of passing slices.
 
 `scripts/build_editorial_standardization_validation.mjs --check` fails when the committed report drifts from the candidate and public-view contracts. The report uses `pass`, `pass_with_nonblocking_warnings`, or `blocked`; none of those states confers human editorial approval.
 
@@ -44,6 +46,15 @@ Source handling preserves four distinct states: source attached, claim mapped to
 
 ## Review escalation
 
+Every generated slice receives one non-publication workflow route:
+
+- `standard_generation_pass`: established sources, policy traits, relationships, and archetype; all blocking and editorial-utility rules pass.
+- `sampled_audit_candidate`: the same passing state, selected by an established deterministic quality-sampling rule.
+- `human_exception_required`: new or unresolved traits, relationships, evidence conflicts, compression ambiguity, broad-philosophy candidates, or structures outside the known archetypes.
+- `blocked`: source, coverage, service-status, member-leak, unsupported-claim, structural, or publication-boundary failure.
+
+These routes govern quality-control work only. None means human approved, gold benchmark, production eligible, published, merged, or deployed.
+
 ### Automatic block
 
 - unresolved source or incomplete action result;
@@ -58,12 +69,15 @@ Source handling preserves four distinct states: source attached, claim mapped to
 
 ### Human exception review
 
+- a new policy trait, trait relationship, or ontology concept;
 - new legislative action type or novel procedural mechanism;
 - contested episode grouping or a package whose policy meaning cannot be bounded;
 - cross-Congress relationship not represented by existing fixtures;
 - new analytical category or broad-philosophy candidate;
 - unresolved one-sided argument evidence;
 - conflicting authoritative sources.
+
+Shared review happens once where possible. Humans review new legislative dossiers, policy traits, episode relationships, and ontology changes at the shared evidence layer. Once established, those structures may be reused across member overlays. Ordinary overlays that remain inside the established contract may proceed through deterministic generation and stratified audit rather than exhaustive bill-by-bill rereview.
 
 ### Eligible for sampled audit
 

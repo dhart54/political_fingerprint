@@ -13,6 +13,11 @@ import {
 } from "./editorialStandardizationValidator.mjs";
 import { classifyActionServiceStatus, MEMBER_ACTION_STATUS } from "./editorialSharedEvidence.mjs";
 import { formatPublicDateRange, firstCompleteSentence, publicSentenceDefects } from "./editorialTextIntegrity.mjs";
+import { blindEditorialPipelineValidationFixture } from "./blindEditorialPipelineReviewSlice.mjs";
+import {
+  editorialConclusionReferenceFixtures,
+  evaluateConclusionReferences,
+} from "./editorialConclusionReferenceFixtures.mjs";
 
 const referenceCases = editorialReferenceFixtures.map((fixture) => ({
   fixture,
@@ -101,7 +106,15 @@ test("all twenty known-defect mutations are caught by stable rules", () => {
     assert.equal(report.state, "blocked", item.name);
     assert.equal(report.findings.some((finding) => finding.ruleId === item.expectedRule), true, `${item.name}: ${JSON.stringify(report.findings)}`);
   }
-  assert.equal(EDITORIAL_STANDARDIZATION_RULES.every((rule) => /^[A-Z]+-\d{3}$/.test(rule.id)), true);
+  assert.equal(EDITORIAL_STANDARDIZATION_RULES.every((rule) => /^[A-Z]+(?:-[A-Z]+)*-\d{3}$/.test(rule.id)), true);
+});
+
+test("semantic references validate propositions rather than byte-identical paragraphs", () => {
+  const results = evaluateConclusionReferences();
+  assert.equal(editorialConclusionReferenceFixtures.length, 4);
+  assert.equal(results.every((result) => result.state === "pass"), true, JSON.stringify(results, null, 2));
+  assert.equal(editorialConclusionReferenceFixtures.at(-1).designation, "editorial_utility_calibration_pending");
+  assert.equal(editorialConclusionReferenceFixtures.at(-1).fixtureId, "garcia-justice-calibration-v1");
 });
 
 test("a duplicated bounded-sample phrase is blocked as deterministic duplicate detail", () => {
@@ -160,6 +173,67 @@ test("detail validation catches semantic qualifier repetition and redundant vote
     const report = validateEditorialStandardization({ candidate, experience });
     assert.equal(report.state, "blocked");
     assert.equal(report.findings.some((finding) => finding.ruleId === "DETAIL-001"), true);
+  }
+});
+
+test("conclusion utility mutations are caught by stable proposition-aware rules", () => {
+  const blind = {
+    candidate: structuredClone(blindEditorialPipelineValidationFixture.candidate),
+    experience: structuredClone(adaptEditorialIssueSlice(
+      blindEditorialPipelineValidationFixture.candidate,
+      blindEditorialPipelineValidationFixture.evidenceRows,
+      EDITORIAL_EXPERIENCE_MODE.review,
+    )),
+  };
+  const cases = [
+    mutation("exhaustive inventory", "CONCLUSION-UTILITY-001", massieJustice, ({ candidate }) => {
+      candidate.synthesis.conclusionModel.supporting_policy_clusters = [];
+      candidate.synthesis.conclusionModel.evidence_episode_ids = candidate.memberEpisodeTrajectories.map((item) => item.episode_id);
+      candidate.synthesis.compressionReport.policy_cluster_count = 0;
+    }),
+    mutation("uniform Nay coherent philosophy", "CONCLUSION-UTILITY-007", blind, ({ candidate }) => {
+      candidate.synthesis.primary = "The uniform Nay record establishes a coherent public-safety philosophy.";
+    }),
+    mutation("uniform Yea coherent philosophy", "CONCLUSION-UTILITY-007", blind, ({ candidate, experience }) => {
+      for (const action of experience.episodes.flatMap((episode) => episode.actions)) action.actionStatus = "yea";
+      candidate.synthesis.primary = "The uniform Yea record establishes a coherent public-safety philosophy.";
+    }),
+    mutation("missing policy dimension", "CONCLUSION-UTILITY-003", massieJustice, ({ candidate }) => {
+      candidate.synthesis.conclusionModel.thesis_proposition.policy_dimension_present = false;
+    }),
+    mutation("direction-only repeated thesis", "CONCLUSION-UTILITY-002", massieJustice, ({ candidate }) => {
+      candidate.synthesis.conclusionModel.archetype = "substantive_repeated_pattern";
+      candidate.synthesis.conclusionModel.thesis_proposition.policy_dimension_present = false;
+    }),
+    mutation("missing heterogeneous uniform contrast", "CONCLUSION-UTILITY-004", blind, ({ candidate }) => {
+      candidate.synthesis.conclusionModel.contrast_proposition = null;
+    }),
+    mutation("duplicates all analytical bullets", "CONCLUSION-UTILITY-005", massieJustice, ({ candidate }) => {
+      candidate.synthesis.compressionReport.duplicated_analytical_propositions = ["trajectory", "repeated_pattern", "notable_choice"];
+    }),
+    mutation("circular conclusion", "CONCLUSION-UTILITY-006", massieJustice, ({ candidate }) => {
+      candidate.synthesis.primary = "This is consistent opposition because the member opposed the reviewed proposals.";
+    }),
+    mutation("excessive qualification", "CONCLUSION-UTILITY-008", massieJustice, ({ candidate }) => {
+      candidate.synthesis.primary = "The record is limited, but however it cannot establish motive, although it does not establish a philosophy.";
+    }),
+    mutation("unnecessary named episodes", "CONCLUSION-UTILITY-009", massieJustice, ({ candidate }) => {
+      candidate.synthesis.compressionReport.individually_named_episode_count = 5;
+    }),
+    mutation("label and archetype mismatch", "CONCLUSION-UTILITY-010", massieJustice, ({ candidate }) => {
+      candidate.synthesis.readerFacingLabel = "Uniform opposition without a common policy throughline";
+    }),
+    mutation("duplicate receipt context", "DETAIL-001", massieJustice, ({ experience }) => {
+      const action = experience.episodes.find((episode) => episode.id === "dc-police-pursuit-rules").actions[0];
+      action.importantContext.push("A Nay does not reveal which objection drove the vote.");
+      action.importantContext.push("The substitute included exceptions; it was not an unconditional pursuit mandate.");
+    }),
+  ];
+  assert.equal(cases.length, 12);
+  for (const item of cases) {
+    const report = validateEditorialStandardization({ candidate: item.candidate, experience: item.experience, ...item.options });
+    assert.equal(report.findings.some((finding) => finding.ruleId === item.expectedRule), true, `${item.name}: ${JSON.stringify(report.findings)}`);
+    if (item.expectedRule !== "CONCLUSION-UTILITY-008") assert.equal(report.state, "blocked", item.name);
   }
 });
 

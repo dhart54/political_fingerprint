@@ -2,6 +2,14 @@
 
 ## Product Scope and Guardrails
 
+### Proposition-first editorial synthesis
+
+Established legislative meaning is modeled separately from a member's recorded action. Shared episode evidence may carry reviewed, member-neutral policy traits describing the policy problem, mechanism, affected entities, implementation, safeguards or constraints, authority changes, reporting or research, and package or stage structure. Those traits must come from the reviewed legislative dossier, never from party, a desired conclusion, or how a member voted.
+
+The automated conclusion layer first produces structured semantic propositions and only then renders public prose. Action direction and substantive organization remain independent: uniform Yea or Nay evidence is descriptive metadata, not by itself a philosophy. Repeated, selective, and divided conclusions require a supported policy dimension. A heterogeneous uniform record requires a concrete source-grounded contrast and may conclude only that the common direction does not reveal one issue-wide policy throughline.
+
+Passing deterministic generation makes a slice eligible for standard quality control or sampled audit. It does not confer factual verification, human editorial approval, benchmark promotion, production eligibility, or publication. New traits, unresolved relationships, conflicting sources, ambiguous compression, and structures outside the established archetypes route to human exception review at the shared evidence layer.
+
 This product is a curiosity-led, trust-anchored civic analytics platform focused on observable legislative behavior.
 
 The expanded product north star is documented in `docs/product_north_star.md`:

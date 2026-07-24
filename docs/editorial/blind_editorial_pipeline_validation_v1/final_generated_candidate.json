@@ -421,7 +421,151 @@
     "candidate_id": "uniform_direction_without_common_policy_rationale",
     "inference_level": "bounded_descriptive_pattern",
     "evidence_strength_label": "Uniform opposition across the reviewed proposals",
-    "primary_conclusion": "Across the reviewed record, García of Illinois voted against all seven substantive proposals examined here. That included all three actions in the fentanyl episode, the officer-safety reporting bill, the retired-service-firearm program, broader D.C. pursuit authority, and repeal of most provisions of D.C.'s 2022 policing reform law. The vote direction is consistently oppositional, but the proposals span different—and sometimes substantively contrasting—policy approaches, so this record does not establish one overarching public-safety philosophy.",
+    "primary_conclusion": "Across the reviewed record, García of Illinois voted Nay on every substantive proposal. That opposition extended both to proposals expanding enforcement or police authority and to proposals adding safeguards, research access, or reporting, so the uniform vote direction does not reveal one consistent public-safety policy throughline.",
+    "reader_facing_label": "Uniform opposition without a common policy throughline",
+    "conclusion_model": {
+      "schema_version": "editorial_conclusion_propositions_v1",
+      "archetype": "uniform_direction_without_common_policy_throughline",
+      "action_direction": {
+        "classification": "uniform_nay",
+        "direction": "Nay",
+        "count": 7,
+        "total": 7,
+        "uniform": true
+      },
+      "thesis_proposition": {
+        "role": "thesis",
+        "claim_type": "uniform_direction_without_common_policy_throughline",
+        "policy_dimension_present": true,
+        "theme_ids": []
+      },
+      "supporting_policy_clusters": [
+        {
+          "cluster_id": "enforcement_or_police_authority",
+          "reader_phrase": "proposals expanding enforcement or police authority",
+          "member_action_phrase": "acted on",
+          "policy_trait_ids": [
+            "broadens_police_operational_authority",
+            "enforcement_framework",
+            "expands_law_enforcement_tool_access",
+            "permanent_controlled_substance_scheduling",
+            "rolls_back_policing_restrictions"
+          ],
+          "evidence_episode_ids": [
+            "dc-police-pursuit-rules",
+            "dc-policing-reform-repeal",
+            "halt-fentanyl-legislative-path",
+            "retired-service-weapon-purchases"
+          ]
+        },
+        {
+          "cluster_id": "implementation_safeguards_research_reporting",
+          "reader_phrase": "proposals adding safeguards, research access, or reporting",
+          "member_action_phrase": "acted on",
+          "policy_trait_ids": [
+            "adds_implementation_condition",
+            "adds_research_access",
+            "gathers_information",
+            "requires_evidence_certification",
+            "requires_federal_reporting"
+          ],
+          "evidence_episode_ids": [
+            "halt-fentanyl-legislative-path",
+            "officer-safety-data-reporting"
+          ]
+        }
+      ],
+      "contrast_proposition": {
+        "role": "contrast",
+        "relationship": "contrasts",
+        "left": {
+          "cluster_id": "enforcement_or_police_authority",
+          "reader_phrase": "proposals expanding enforcement or police authority",
+          "member_action_phrase": "acted on",
+          "policy_trait_ids": [
+            "broadens_police_operational_authority",
+            "enforcement_framework",
+            "expands_law_enforcement_tool_access",
+            "permanent_controlled_substance_scheduling",
+            "rolls_back_policing_restrictions"
+          ],
+          "evidence_episode_ids": [
+            "dc-police-pursuit-rules",
+            "dc-policing-reform-repeal",
+            "halt-fentanyl-legislative-path",
+            "retired-service-weapon-purchases"
+          ]
+        },
+        "right": {
+          "cluster_id": "implementation_safeguards_research_reporting",
+          "reader_phrase": "proposals adding safeguards, research access, or reporting",
+          "member_action_phrase": "acted on",
+          "policy_trait_ids": [
+            "adds_implementation_condition",
+            "adds_research_access",
+            "gathers_information",
+            "requires_evidence_certification",
+            "requires_federal_reporting"
+          ],
+          "evidence_episode_ids": [
+            "halt-fentanyl-legislative-path",
+            "officer-safety-data-reporting"
+          ]
+        },
+        "basis": "authority or enforcement expansion differs from added conditions, research access, and reporting"
+      },
+      "trajectory_proposition": null,
+      "exception_proposition": null,
+      "boundary_proposition": {
+        "role": "boundary",
+        "policy_domain_label": "public-safety",
+        "public_text": ""
+      },
+      "evidence_episode_ids": [
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal",
+        "halt-fentanyl-legislative-path",
+        "officer-safety-data-reporting",
+        "retired-service-weapon-purchases"
+      ],
+      "omitted_episode_ids": [],
+      "reader_label_concept": "Uniform opposition without a common policy throughline",
+      "review_route": "sampled_audit_candidate",
+      "public_conclusion": "Across the reviewed record, García of Illinois voted Nay on every substantive proposal. That opposition extended both to proposals expanding enforcement or police authority and to proposals adding safeguards, research access, or reporting, so the uniform vote direction does not reveal one consistent public-safety policy throughline.",
+      "compression_report": {
+        "conclusion_archetype": "uniform_direction_without_common_policy_throughline",
+        "sentence_roles": [
+          "thesis",
+          "contrast",
+          "boundary"
+        ],
+        "source_episode_count": 5,
+        "policy_cluster_count": 2,
+        "individually_named_episode_count": 0,
+        "clustered_episode_proportion": 1.0,
+        "duplicated_analytical_propositions": [],
+        "boundary_count": 1,
+        "public_word_count": 46,
+        "validation_outcome": "pass"
+      }
+    },
+    "compression_report": {
+      "conclusion_archetype": "uniform_direction_without_common_policy_throughline",
+      "sentence_roles": [
+        "thesis",
+        "contrast",
+        "boundary"
+      ],
+      "source_episode_count": 5,
+      "policy_cluster_count": 2,
+      "individually_named_episode_count": 0,
+      "clustered_episode_proportion": 1.0,
+      "duplicated_analytical_propositions": [],
+      "boundary_count": 1,
+      "public_word_count": 46,
+      "validation_outcome": "pass"
+    },
+    "review_route": "sampled_audit_candidate",
     "assessment": "uniform_direction_without_common_policy_rationale",
     "support_balance": 5,
     "supporting_independent_episodes": [

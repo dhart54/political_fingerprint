@@ -5,9 +5,12 @@ from __future__ import annotations
 from collections import defaultdict
 from copy import deepcopy
 
+from backend.app.summaries.editorial_conclusion_synthesis import build_conclusion_model
+
 
 def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_catalog: dict,
-                        candidate_catalog: list[dict], minimum_complete_episodes: int = 3) -> dict:
+                        candidate_catalog: list[dict], trait_contract: dict | None = None,
+                        minimum_complete_episodes: int = 3) -> dict:
     """Select and synthesize a candidate without access to identity, party, or raw roll totals."""
     complete = [item for item in overlay["episode_trajectories"] if item["coverage_status"] == "complete"]
     if len(complete) < minimum_complete_episodes:
@@ -45,10 +48,22 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
             "conflicting_themes": [],
             "uniform_action_direction": uniform,
         }
+    elif derived := _trait_derived_candidate(overlay, trait_contract or {}):
+        candidate = derived
+        selected = {
+            "score": derived["derived_score"],
+            "specificity": derived["derived_score"],
+            "supporting_themes": derived["proposition_spec"]["policy_cluster_ids"],
+            "conflicting_themes": [],
+        }
     else:
         candidate = {
             "candidate_id": "contested-mixed-record", "inference_level": "contested_candidate",
             "evidence_strength_label": "Mixed reviewed evidence",
+            "conclusion_archetype": "bounded_episode_trajectories",
+            "proposition_spec": {
+                "reader_label_concept": "Bounded episode trajectories without an issue-wide synthesis",
+            },
             "conclusion": "the actions are mixed and do not yet establish a repeated cross-episode boundary",
             "why": "No candidate has enough independent, mechanism-diverse thematic support in the current overlay.",
             "required_themes": [], "conflicting_themes": [],
@@ -79,10 +94,24 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
     weakening_episodes = _episodes_for(evidence, selected_conflicts)
     name = _short_name(overlay["member"])
     uniform = selected.get("uniform_action_direction")
-    if uniform:
-        primary = _uniform_primary(name, uniform, complete, candidate)
-    else:
-        primary = f"In this reviewed sample, {name}'s recorded actions indicate {candidate['conclusion']}."
+    conclusion_model = build_conclusion_model(
+        member_name=name,
+        roll_actions=overlay.get("roll_actions", []),
+        complete_trajectories=complete,
+        candidate=candidate,
+        selected_theme_ids=selected.get("supporting_themes", []),
+        trait_contract=trait_contract or {},
+    )
+    primary = conclusion_model["public_conclusion"]
+    if candidate["candidate_id"].startswith("trait-derived-"):
+        supporting_episodes = [
+            {
+                "episode_id": episode_id,
+                "weight": 2,
+                "rationale": "An established member-neutral policy cluster supports the selected proposition.",
+            }
+            for episode_id in conclusion_model["evidence_episode_ids"]
+        ]
     limitations = [
         {"episode_id": trajectory["episode_id"], "text": text}
         for trajectory in complete
@@ -137,6 +166,10 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
             + " across the reviewed proposals"
             if uniform else candidate["evidence_strength_label"]
         ), "primary_conclusion": primary,
+        "reader_facing_label": conclusion_model["reader_label_concept"],
+        "conclusion_model": conclusion_model,
+        "compression_report": conclusion_model["compression_report"],
+        "review_route": conclusion_model["review_route"],
         "assessment": (
             "uniform_direction_without_common_policy_rationale"
             if uniform else "candidate_weakened" if weakening_episodes else "candidate_supported_by_current_sample"
@@ -204,37 +237,106 @@ def _uniform_action_direction(overlay: dict) -> dict | None:
     }
 
 
-def _uniform_primary(name: str, uniform: dict, complete: list[dict], candidate: dict) -> str:
-    direction = uniform["direction"]
-    count_label = {7: "seven"}.get(uniform["total"], str(uniform["total"]))
-    count_phrase = (
-        f"all {count_label}" if uniform["uniform"]
-        else f"{uniform['count']} of {uniform['total']}"
-    )
-    action_phrase = "against" if direction == "Nay" else "for"
-    direction_word = "oppositional" if direction == "Nay" else "supportive"
-    areas = candidate.get("policy_area_phrases", {})
-    concrete = []
-    ordered = sorted(
-        complete,
-        key=lambda item: candidate.get("policy_area_order", []).index(item["episode_id"])
-        if item["episode_id"] in candidate.get("policy_area_order", []) else len(complete),
-    )
-    for item in ordered:
-        phrase = areas.get(item["episode_id"], item["mechanism_family"])
-        prefix = "all three actions in " if len(item.get("rolls", [])) == 3 else ""
-        concrete.append(f"{prefix}{phrase}")
-    if len(concrete) > 1:
-        concrete_text = ", ".join(concrete[:-1]) + f", and {concrete[-1]}"
-    else:
-        concrete_text = concrete[0]
-    philosophy = candidate.get("philosophy_label", "policy philosophy")
-    return (
-        f"Across the reviewed record, {name} voted {action_phrase} {count_phrase} substantive proposals examined here. "
-        f"That included {concrete_text}. "
-        f"The vote direction is consistently {direction_word}, but the proposals span different—and sometimes "
-        f"substantively contrasting—policy approaches, so this record does not establish one overarching {philosophy}."
-    )
+def _trait_derived_candidate(overlay: dict, trait_contract: dict) -> dict | None:
+    """Derive known-archetype propositions from established traits, not prose or vectors."""
+    action_traits = trait_contract.get("action_traits", {})
+    clusters = trait_contract.get("policy_clusters", {})
+    rows = [
+        item for item in overlay.get("roll_actions", [])
+        if item.get("counting") and item.get("action") in {"Yea", "Nay"}
+    ]
+    evidence = {}
+    for cluster_id, definition in clusters.items():
+        trait_ids = set(definition.get("trait_ids", []))
+        matched = [
+            item for item in rows
+            if trait_ids.intersection(action_traits.get(str(item.get("roll")), {}).get("traits", []))
+        ]
+        if len(matched) < 2:
+            continue
+        counts = {direction: sum(item["action"] == direction for item in matched) for direction in ("Yea", "Nay")}
+        direction = max(counts, key=counts.get)
+        share = counts[direction] / len(matched)
+        if share < .67:
+            continue
+        evidence[cluster_id] = {
+            "direction": direction,
+            "share": share,
+            "actions": len(matched),
+            "episodes": len({item.get("episode_id") for item in matched if item.get("episode_id")}),
+        }
+
+    divides = []
+    for relationship in trait_contract.get("cluster_relationships", []):
+        if relationship.get("relationship") != "contrasts":
+            continue
+        left_id, right_id = relationship.get("cluster_ids", [None, None])
+        left, right = evidence.get(left_id), evidence.get(right_id)
+        if not left or not right or left["direction"] == right["direction"]:
+            continue
+        if min(left["episodes"], right["episodes"]) < 1 or max(left["episodes"], right["episodes"]) < 2:
+            continue
+        divides.append((
+            left["episodes"] + right["episodes"],
+            left["share"] + right["share"],
+            left_id,
+            right_id,
+            left,
+            right,
+        ))
+    if divides:
+        score, _, left_id, right_id, left, right = max(divides)
+        return {
+            "candidate_id": "trait-derived-policy-mechanism-divide",
+            "inference_level": "bounded_conditional_boundary",
+            "evidence_strength_label": "Mixed but interpretable",
+            "conclusion_archetype": "policy_mechanism_divide",
+            "proposition_spec": {
+                "policy_cluster_ids": [left_id, right_id],
+                "cluster_actions": {
+                    left_id: "supported" if left["direction"] == "Yea" else "opposed",
+                    right_id: "supported" if right["direction"] == "Yea" else "opposed",
+                },
+                "reader_label_concept": "A policy-mechanism divide in the reviewed record",
+            },
+            "conclusion": "a source-grounded divide between established policy clusters",
+            "why": "The selected clusters use an established contrasting relationship; unresolved relationships still require human exception review.",
+            "required_themes": [],
+            "conflicting_themes": [],
+            "derived_score": score,
+        }
+
+    repeated = [
+        (item["episodes"], item["share"], cluster_id, item)
+        for cluster_id, item in evidence.items()
+        if item["episodes"] >= 2 and item["share"] >= .75
+    ]
+    if repeated:
+        score, _, cluster_id, item = max(repeated)
+        return {
+            "candidate_id": "trait-derived-substantive-repeated-pattern",
+            "inference_level": "bounded_repeated_pattern",
+            "evidence_strength_label": "Bounded repeated pattern",
+            "conclusion_archetype": "substantive_repeated_pattern",
+            "proposition_spec": {
+                "policy_cluster_ids": [cluster_id],
+                "cluster_actions": {
+                    cluster_id: "supported" if item["direction"] == "Yea" else "opposed",
+                },
+                "reader_label_concept": "A repeated substantive pattern in the reviewed record",
+                "boundary_proposition": {
+                    "role": "boundary",
+                    "policy_domain_label": trait_contract.get("policy_domain_label", "issue-wide"),
+                    "public_text": "This pattern is limited to the reviewed policy cluster and does not explain every action in the issue record.",
+                },
+            },
+            "conclusion": "a repeated source-grounded policy-cluster pattern",
+            "why": "The pattern spans multiple independent episodes under an established policy cluster.",
+            "required_themes": [],
+            "conflicting_themes": [],
+            "derived_score": score,
+        }
+    return None
 
 
 def _episodes_for(evidence: dict, themes: set[str]) -> list[dict]:
@@ -273,4 +375,33 @@ def _insufficient(overlay: dict, complete_count: int) -> dict:
             "substantive_theme_ids": [],
             "uniform_action_direction": None,
         },
+        "reader_facing_label": "Limited or contested evidence",
+        "conclusion_model": {
+            "schema_version": "editorial_conclusion_propositions_v1",
+            "archetype": "limited_or_contested_evidence",
+            "action_direction": {"classification": "incomplete", "direction": None, "count": 0, "total": 0},
+            "thesis_proposition": {"role": "thesis", "claim_type": "limited_or_contested_evidence", "policy_dimension_present": False, "theme_ids": []},
+            "supporting_policy_clusters": [],
+            "contrast_proposition": None,
+            "trajectory_proposition": None,
+            "exception_proposition": None,
+            "boundary_proposition": None,
+            "evidence_episode_ids": [],
+            "omitted_episode_ids": [],
+            "reader_label_concept": "Limited or contested evidence",
+            "review_route": "human_exception_required",
+        },
+        "compression_report": {
+            "conclusion_archetype": "limited_or_contested_evidence",
+            "sentence_roles": ["thesis"],
+            "source_episode_count": complete_count,
+            "policy_cluster_count": 0,
+            "individually_named_episode_count": 0,
+            "clustered_episode_proportion": 0,
+            "duplicated_analytical_propositions": [],
+            "boundary_count": 0,
+            "public_word_count": 0,
+            "validation_outcome": "human_exception_required",
+        },
+        "review_route": "human_exception_required",
     }

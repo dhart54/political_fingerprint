@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "blind_editorial_pipeline_validation_result_v2",
+  "schemaVersion": "blind_editorial_pipeline_validation_result_v1",
   "deterministicBuildIdentifier": "blind-editorial-pipeline-validation-v1@7bce7467cebfde4fd2f164bdcecb596ba0fd1e91",
   "startingCommit": "7bce7467cebfde4fd2f164bdcecb596ba0fd1e91",
   "selectionLock": "dedb3b9700df6a3e40107b838f34ee4c82ed88d55a3ac369dd9c0e192cb796c3",
@@ -57,7 +57,7 @@
   },
   "state": "pass",
   "publicationEligibilityMustFail": false,
-  "ruleCount": 38,
+  "ruleCount": 48,
   "ruleResults": [
     {
       "ruleId": "STATUS-001",
@@ -240,6 +240,66 @@
       "findings": []
     },
     {
+      "ruleId": "CONCLUSION-UTILITY-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "CONCLUSION-UTILITY-002",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "CONCLUSION-UTILITY-003",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "CONCLUSION-UTILITY-004",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "CONCLUSION-UTILITY-005",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "CONCLUSION-UTILITY-006",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "CONCLUSION-UTILITY-007",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "CONCLUSION-UTILITY-008",
+      "severity": "warning",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "CONCLUSION-UTILITY-009",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "CONCLUSION-UTILITY-010",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
       "ruleId": "DETAIL-001",
       "severity": "block",
       "result": "pass",
@@ -296,20 +356,16 @@
     "completeRecordActions": 7,
     "proceduralContextActions": 6,
     "analyticalSectionKeys": [
-      "policyTrajectories",
-      "repeatedPatterns",
-      "otherNotableChoices",
-      "meaningfulExceptions"
+      "0",
+      "1",
+      "2"
     ]
   },
-  "preservedFirstGeneratedConclusion": "In this reviewed sample, García of Illinois's recorded actions indicate a repeated cross-mechanism pattern of opposition in this sample.",
-  "firstAttemptAssessment": "structurally_valid_editorial_utility_failure_found_in_bounded_smoke_review",
-  "finalGeneratedConclusion": "Across the reviewed record, García of Illinois voted against all seven substantive proposals examined here. That included all three actions in the fentanyl episode, the officer-safety reporting bill, the retired-service-firearm program, broader D.C. pursuit authority, and repeal of most provisions of D.C.'s 2022 policing reform law. The vote direction is consistently oppositional, but the proposals span different—and sometimes substantively contrasting—policy approaches, so this record does not establish one overarching public-safety philosophy.",
+  "firstGeneratedConclusion": "Across the reviewed record, García of Illinois voted Nay on every substantive proposal. That opposition extended both to proposals expanding enforcement or police authority and to proposals adding safeguards, research access, or reporting, so the uniform vote direction does not reveal one consistent public-safety policy throughline.",
   "publication": {
     "editorialStatus": "human_approval_pending",
     "benchmarkStatus": "not_promoted",
     "productionEligible": false,
     "reviewLabel": "Cross-member validation candidate — not published"
-  },
-  "fixtureDesignation": "reference_render_fixture"
+  }
 }
