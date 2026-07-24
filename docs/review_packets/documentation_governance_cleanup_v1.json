@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "milestone": "documentation_governance_cleanup_v1",
+  "starting_origin_main": "98029d77ad43f7e877eb545b25d9b6878e71cb1a",
+  "branch": "codex/documentation-governance-cleanup-v1",
+  "final_branch_head": "reported_by_git_and_draft_pr_after_commit_creation_non_self_referential",
+  "delivery": {
+    "initial_milestone_commit": "0cd6f733b70328374acf41c85c56badbdd8ea1fd",
+    "draft_pr": 103,
+    "draft_pr_url": "https://github.com/dhart54/political_fingerprint/pull/103"
+  },
+  "archive_rule": {
+    "source_prefix": "docs/plans/",
+    "destination_prefix": "docs/plans/archive/2026/",
+    "audit_classification": "archive",
+    "unchecked_items": 0,
+    "terminal_state": "documented_terminal_reconciliation",
+    "current_authority": false,
+    "shared_inbound_plain_text": [
+      "docs/review_packets/repository_hygiene_audit_v1.md",
+      "docs/review_packets/repository_hygiene_audit_v1.json"
+    ]
+  },
+  "archive_confirmed": [
+    "118th_house_amendment_evidence.md",
+    "blind_editorial_pipeline_validation_v1.md",
+    "caveat_density_cleanup.md",
+    "current_house_member_metadata_hardening_v1.md",
+    "current_house_member_metadata_schema_seed_v1.md",
+    "data_expansion_readiness_audit_v1.md",
+    "data_inventory_source_manifest_v1.md",
+    "editorial_artifact_persistence_v1.md",
+    "episode_first_editorial_product_v1.md",
+    "fallback_static_loading_copy_cleanup.md",
+    "frontend_lint_next15_gate.md",
+    "generic_editorial_issue_frontend.md",
+    "golden_profile_read_v1.md",
+    "golden_public_reads_v1.md",
+    "golden_render_validation_harness_v1.md",
+    "house_comparable_family_legislator_helper.md",
+    "house_record_across_congresses_adapter.md",
+    "internal_record_across_congresses_production_validation.md",
+    "internal_route_auth_convention.md",
+    "justice_cross_member_validation_v1.md",
+    "legislative_interpretation_quality_benchmark_v1.md",
+    "public_copy_safety_contract.md",
+    "public_editorial_product_frontend_v1.md",
+    "record_across_congresses_frontend_contract.md",
+    "record_across_congresses_frontend_prototype.md",
+    "record_across_congresses_internal_transport.md",
+    "show_votes_proof_hierarchy.md",
+    "top_summary_drift_cleanup.md",
+    "valerie_foushee_economy_editorial_gold_v2.md",
+    "valerie_foushee_economy_staged_website_v2.md",
+    "valerie_foushee_justice_public_safety_gold_v1.md",
+    "zip_district_ambiguity_hardening_v1.md",
+    "zip_multi_row_readonly_route_eval_v1.md",
+    "zip_multi_row_schema_migration_application_coverage_v1.md",
+    "zip_overlap_sensitivity_bounded_staging_design_v1.md",
+    "zip_population_weighted_ambiguity_evaluation_v1.md",
+    "zip_schema_application_coverage_seed_readiness_v1.md",
+    "zip_source_approval_dry_run_harness_v1.md",
+    "zip_source_backed_ingestion_preflight_v1.md",
+    "zip_source_member_readiness_gate_v1.md",
+    "zip_source_retrieval_official_file_dry_run_v1.md"
+  ],
+  "blocked_candidates": [
+    {
+      "current_path": "docs/plans/zip_source_metadata_ambiguity_payload_v1.md",
+      "proposed_archive_path": "docs/plans/archive/2026/zip_source_metadata_ambiguity_payload_v1.md",
+      "audit_classification": "archive",
+      "unchecked_items": 0,
+      "terminal_state": "documented_terminal_reconciliation",
+      "current_authority": false,
+      "decision": "blocked_reference_dependency",
+      "code_builder_test_manifest_references": [
+        "backend/scripts/generate_zip_source_metadata_report.py"
+      ],
+      "evidence": "The report builder loads the exact current plan path."
+    }
+  ],
+  "retained_unresolved": [
+    {
+      "path": "docs/plans/2026_evidence_eligibility_interpretation_expansion.md",
+      "assessment": "completed_but_unreconciled",
+      "decision": "retain_unresolved"
+    },
+    {
+      "path": "docs/plans/codex_operating_model.md",
+      "assessment": "completed_but_unreconciled",
+      "decision": "retain_unresolved"
+    },
+    {
+      "path": "docs/plans/current_congress_freshness_ingestion.md",
+      "assessment": "completed_but_unreconciled",
+      "decision": "retain_unresolved"
+    },
+    {
+      "path": "docs/plans/zip_schema_source_metadata_design_v1.md",
+      "assessment": "completed_but_unreconciled",
+      "decision": "retain_unresolved"
+    }
+  ],
+  "changed_references": [
+    {
+      "path": "docs/README.md",
+      "change": "single active-plan link and plan-index navigation"
+    },
+    {
+      "path": "docs/plans/README.md",
+      "change": "active, unresolved, archive, and template/rules index"
+    },
+    {
+      "path": "docs/plans/archive/2026/README.md",
+      "change": "archive authority boundary"
+    }
+  ],
+  "historical_literals_left_unchanged": [
+    "docs/review_packets/repository_hygiene_audit_v1.md",
+    "docs/review_packets/repository_hygiene_audit_v1.json",
+    "docs/review_packets/golden_public_reads_v1.md",
+    "docs/review_packets/show_votes_proof_hierarchy.md",
+    "docs/review_packets/zip_source_backed_ingestion_preflight_v1.json"
+  ],
+  "legacy_authority_classifications": [
+    {
+      "source": "CONSTRAINTS.md",
+      "sections": "1,3,13,15-22",
+      "classification": "current_duplicate",
+      "confidence": "high"
+    },
+    {
+      "source": "CONSTRAINTS.md",
+      "sections": "2,5-12,14",
+      "classification": "historical_context",
+      "confidence": "medium"
+    },
+    {
+      "source": "CONSTRAINTS.md",
+      "sections": "4",
+      "classification": "human_product_decision_required",
+      "confidence": "medium"
+    },
+    {
+      "source": "DECISIONS.md",
+      "sections": "2026-02-28 entries",
+      "classification": "historical_context",
+      "confidence": "high"
+    },
+    {
+      "source": "DECISIONS.md",
+      "sections": "2026-06-05 product and guardrail entries",
+      "classification": "current_duplicate",
+      "confidence": "high"
+    },
+    {
+      "source": "DECISIONS.md",
+      "sections": "2026-06-05 workflow entry",
+      "classification": "superseded_implementation_guidance",
+      "confidence": "high"
+    },
+    {
+      "source": "FIXTURES.md",
+      "sections": "1-11",
+      "classification": "superseded_implementation_guidance",
+      "confidence": "medium_high"
+    },
+    {
+      "source": "SKILLS.md",
+      "sections": "all implementation and civic-rule sections",
+      "classification": "current_duplicate",
+      "confidence": "medium_high"
+    },
+    {
+      "source": "TASKS.md",
+      "sections": "phases 0-11 and completion",
+      "classification": "historical_context",
+      "confidence": "high"
+    },
+    {
+      "source": "docs/staging_readiness.md",
+      "sections": "current status and latest verification",
+      "classification": "status_stale",
+      "confidence": "high"
+    },
+    {
+      "source": "docs/staging_readiness.md",
+      "sections": "limits, environment, checks, review focus",
+      "classification": "current_duplicate",
+      "confidence": "medium"
+    },
+    {
+      "source": "docs/product_v2_tasklist.md",
+      "sections": "phases 1-11 and 14-15",
+      "classification": "historical_context",
+      "confidence": "high"
+    },
+    {
+      "source": "docs/product_v2_tasklist.md",
+      "sections": "working priority",
+      "classification": "status_stale",
+      "confidence": "high"
+    },
+    {
+      "source": "docs/product_v2_tasklist.md",
+      "sections": "phases 12-13, shelved ideas, follow-up polish",
+      "classification": "human_product_decision_required",
+      "confidence": "high"
+    },
+    {
+      "source": "docs/north_star_action_plan.md",
+      "sections": "destination, evidence ladder, civic action, decision rules",
+      "classification": "current_duplicate",
+      "confidence": "high"
+    },
+    {
+      "source": "docs/north_star_action_plan.md",
+      "sections": "current state, phases A-I, immediate tasks",
+      "classification": "status_stale",
+      "confidence": "high"
+    },
+    {
+      "source": "docs/autonomous_handoff.md",
+      "sections": "branch, completed work, checkpoint, verification, next tasks",
+      "classification": "status_stale",
+      "confidence": "high"
+    },
+    {
+      "source": "docs/autonomous_handoff.md",
+      "sections": "operating mode",
+      "classification": "superseded_implementation_guidance",
+      "confidence": "high"
+    }
+  ],
+  "documentation_checks": {
+    "checker": "scripts/check_documentation_governance.py",
+    "markdown_links": "passed",
+    "governance": "passed",
+    "checker_syntax": "passed",
+    "json_parse": "passed",
+    "machine_specific_navigational_links": 0,
+    "moved_old_paths_checked": 41,
+    "unexpected_old_path_references": 0,
+    "protected_deletions": 0,
+    "production_registry_entries": 0,
+    "registered_child_worktrees_beneath_root": 0,
+    "origin_main_unchanged": true,
+    "status": "passed"
+  },
+  "files_explicitly_untouched": [
+    "docs/editorial/**",
+    "docs/source_manifests/**",
+    "pre-existing machine-generated review JSON",
+    "rollback SQL",
+    "database migrations",
+    "backend and frontend application code",
+    "production registry files",
+    "review screenshot bundles",
+    "external recovery files and worktrees"
+  ],
+  "deviations_and_stop_conditions": [
+    "One terminal candidate retained because a live builder pins its exact path.",
+    "No immutable receipt was rewritten.",
+    "No semantic conflict was resolved by preference."
+  ],
+  "recommended_exact_human_decisions": [
+    "Reconcile the terminal status of the four retained unresolved plans.",
+    "Decide which legacy fingerprint, drift, median, and API invariants remain current technical authority.",
+    "Decide whether unfinished NC/state expansion and evidence-card polish remain product priorities.",
+    "Authorize a later code milestone if the pinned report-builder plan path should change."
+  ]
+}
