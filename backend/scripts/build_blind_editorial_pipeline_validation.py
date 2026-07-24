@@ -125,7 +125,12 @@ def _shared_evidence_identity() -> dict:
     paths = [
         Path("docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json"),
         Path("docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json"),
-        *sorted(Path("docs/editorial/valerie_foushee_justice_public_safety_gold_v1/measures").glob("*.json")),
+        *[
+            path.relative_to(ROOT)
+            for path in sorted(
+                (ROOT / "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/measures").glob("*.json")
+            )
+        ],
     ]
     files = []
     for relative in paths:
