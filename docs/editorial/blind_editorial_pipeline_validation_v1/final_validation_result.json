@@ -1,0 +1,304 @@
+{
+  "schemaVersion": "blind_editorial_pipeline_validation_result_v1",
+  "deterministicBuildIdentifier": "blind-editorial-pipeline-validation-v1@7bce7467cebfde4fd2f164bdcecb596ba0fd1e91",
+  "startingCommit": "7bce7467cebfde4fd2f164bdcecb596ba0fd1e91",
+  "selectionLock": "dedb3b9700df6a3e40107b838f34ee4c82ed88d55a3ac369dd9c0e192cb796c3",
+  "selectedMember": {
+    "member_id": "G000586",
+    "member_display_name": "Jesús G. \"Chuy\" García",
+    "action_vector": [
+      "Nay",
+      "Nay",
+      "Nay",
+      "Nay",
+      "Nay",
+      "Nay",
+      "Nay"
+    ],
+    "novelty": {
+      "distance_from_references": {
+        "F000477": 3,
+        "M001184": 4
+      },
+      "episode_signatures": {
+        "halt-fentanyl-legislative-path": [
+          "Nay",
+          "Nay",
+          "Nay"
+        ],
+        "retired-service-weapon-purchases": [
+          "Nay"
+        ],
+        "officer-safety-data-reporting": [
+          "Nay"
+        ],
+        "dc-police-pursuit-rules": [
+          "Nay"
+        ],
+        "dc-policing-reform-repeal": [
+          "Nay"
+        ]
+      },
+      "episode_signatures_distinct_from_both_references": [
+        "officer-safety-data-reporting"
+      ],
+      "candidate_minority_action_count": 0,
+      "reference_minority_action_counts": [
+        3,
+        3
+      ],
+      "score_components": {
+        "minimum_reference_distance": 3,
+        "novel_episode_signature_count": 1,
+        "action_balance_distance": 3,
+        "total_reference_distance": 7
+      }
+    }
+  },
+  "state": "pass",
+  "publicationEligibilityMustFail": false,
+  "ruleCount": 37,
+  "ruleResults": [
+    {
+      "ruleId": "STATUS-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "FIXTURE-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "SHARED-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "SHARED-002",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "OVERLAY-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-002",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-003",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-004",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-005",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-006",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-007",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-008",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-009",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-010",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-011",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-012",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ACTION-013",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "SOURCE-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "SOURCE-002",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "EPISODE-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "EPISODE-002",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "EPISODE-003",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "EPISODE-004",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "EPISODE-005",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "COVERAGE-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ANALYSIS-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ANALYSIS-002",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "ANALYSIS-003",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "DETAIL-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "DETAIL-002",
+      "severity": "warning",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "PUBLIC-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "PUBLIC-002",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "PUBLIC-003",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "PUBLIC-004",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "PUBLIC-005",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    },
+    {
+      "ruleId": "SERVICE-001",
+      "severity": "block",
+      "result": "pass",
+      "findings": []
+    }
+  ],
+  "findings": [],
+  "structuralExpectations": {
+    "substantiveActions": 7,
+    "independentEpisodes": 5,
+    "featuredEpisodes": 5,
+    "completeRecordActions": 7,
+    "proceduralContextActions": 6,
+    "analyticalSectionKeys": [
+      "0",
+      "1"
+    ]
+  },
+  "firstGeneratedConclusion": "In this reviewed sample, García of Illinois's recorded actions indicate a repeated cross-mechanism pattern of opposition across the reviewed policy mechanisms.",
+  "publication": {
+    "editorialStatus": "human_approval_pending",
+    "benchmarkStatus": "not_promoted",
+    "productionEligible": false,
+    "reviewLabel": "Cross-member validation candidate — not published"
+  }
+}

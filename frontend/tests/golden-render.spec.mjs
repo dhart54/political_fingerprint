@@ -403,6 +403,55 @@ test("Massie receipts preserve complete H.R. results and differentiated fentanyl
   await expect(retired.getByText("The member's record across the episode", { exact: true })).toHaveCount(0);
 });
 
+test("blind García anchor preserves the bounded hierarchy, receipts, and mobile layout", async ({ page }) => {
+  const captureDirectory = path.resolve(process.cwd(), "..", "review_bundle_blind_editorial_pipeline_validation_v1", "screenshots");
+  const capture = async (locator, name) => {
+    if (process.env.CAPTURE_BLIND_EDITORIAL_SCREENSHOTS !== "1") return;
+    await mkdir(captureDirectory, { recursive: true });
+    await locator.screenshot({ path: path.join(captureDirectory, name) });
+  };
+  await page.goto("/golden-render-fixture#blind-editorial-pipeline-validation-v1");
+  const fixture = page.getByTestId("blind-editorial-pipeline-validation-v1");
+  const slice = fixture.getByTestId("editorial-issue-experience");
+  await expect(fixture.getByRole("heading", { level: 2, name: /Jesús G\. "Chuy" García.*Justice & Public Safety/ })).toBeVisible();
+  await expect(slice).toContainText("a repeated cross-mechanism pattern of opposition across the reviewed policy mechanisms");
+  await expect(slice.getByTestId("editorial-coverage-line")).toContainText("7 substantive votes · 5 policy episodes");
+  await expect(slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(5);
+  await expect(slice.locator("details[open]")).toHaveCount(0);
+  await capture(slice, "01-collapsed-desktop.png");
+
+  const fentanyl = slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id='halt-fentanyl-legislative-path']");
+  await expect(fentanyl.locator(":scope > summary")).toContainText("Opposed all three reviewed fentanyl actions.");
+  await fentanyl.locator(":scope > summary").click();
+  const receipt = fentanyl.getByTestId("editorial-record-roll-32");
+  await receipt.locator(":scope > summary").click();
+  await expect(receipt).toContainText("García of Illinois voted Nay.");
+  await expect(receipt).toContainText("What changed");
+  await expect(receipt).toContainText("Who or what was affected");
+  await receipt.getByText("Arguments, context, and official sources", { exact: true }).click();
+  await receipt.getByText("Official sources (3)", { exact: true }).click();
+  await expect(receipt.getByRole("link")).toHaveCount(3);
+  await capture(fentanyl, "02-expanded-fentanyl-and-receipt.png");
+
+  const complete = slice.getByTestId("complete-reviewed-record");
+  await complete.locator(":scope > summary").click();
+  await expect(complete.locator("details[data-episode-id]")).toHaveCount(5);
+  await expect(complete.locator("details[data-testid^='editorial-record-roll-']")).toHaveCount(7);
+  await complete.getByText("Procedural voting context", { exact: true }).click();
+  await expect(complete).toContainText("6 floor-process actions were reviewed but not used to summarize support or opposition.");
+  await expect(complete.getByText(/^House roll \d+:/)).toHaveCount(6);
+  await capture(complete, "03-complete-record-and-procedural-context.png");
+  await assertNoHorizontalOverflow(page);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/golden-render-fixture?blindViewport=390#blind-editorial-pipeline-validation-v1");
+  const mobile = page.getByTestId("blind-editorial-pipeline-validation-v1").getByTestId("editorial-issue-experience");
+  await expect(mobile.getByTestId("editorial-coverage-line")).toBeVisible();
+  await expect(mobile.locator("details[open]")).toHaveCount(0);
+  await capture(mobile, "04-mobile-collapsed.png");
+  await assertNoHorizontalOverflow(page);
+});
+
 test("synthetic large record keeps five featured episodes and all 24 actions in the complete hierarchy", async ({ page }) => {
   await page.goto("/golden-render-fixture#synthetic-large-editorial-fixture");
   const slice = page.getByTestId("synthetic-large-editorial-fixture").getByTestId("editorial-issue-experience");

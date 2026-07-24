@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { adaptEditorialIssueSlice, EDITORIAL_EXPERIENCE_MODE } from "../frontend/lib/editorialIssueExperience.mjs";
+import { blindEditorialPipelineValidationFixture } from "../frontend/lib/blindEditorialPipelineReviewSlice.mjs";
 import {
   editorialReferenceFixtures,
   syntheticLargeRecordCandidate,
@@ -20,6 +21,7 @@ const check = process.argv.includes("--check");
 
 const fixtures = [
   ...editorialReferenceFixtures,
+  blindEditorialPipelineValidationFixture,
   {
     id: "synthetic-large-record-v1",
     designation: "standardization_regression_fixture",

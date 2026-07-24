@@ -5,7 +5,7 @@ This deterministic report checks contract conformance. It does not confer human 
 ## Summary
 
 - State: `pass`
-- Fixtures: 4
+- Fixtures: 5
 - Rules: 37 (36 blocking, 1 warning)
 - Findings: 0 blocking, 0 warning
 - Real content remains `human_approval_pending`, `not_promoted`, and `productionEligible: false`.
@@ -18,6 +18,7 @@ This deterministic report checks contract conformance. It does not confer human 
 | foushee-economy-reference-v1 | human_reviewed_presentation_fixture | pass | 6 | 4 | 4 | 1 | 2 |
 | foushee-justice-reference-v1 | human_reviewed_presentation_fixture | pass | 7 | 5 | 5 | 0 | 6 |
 | massie-justice-reference-v1 | human_reviewed_presentation_fixture | pass | 7 | 5 | 5 | 0 | 6 |
+| blind-editorial-pipeline-validation-v1 | reference_render_fixture | pass | 7 | 5 | 5 | 0 | 6 |
 | synthetic-large-record-v1 | standardization_regression_fixture | pass | 24 | 12 | 5 | 1 | 3 |
 
 ## Mutation coverage

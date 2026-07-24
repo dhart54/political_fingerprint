@@ -104,6 +104,15 @@ test("all twenty known-defect mutations are caught by stable rules", () => {
   assert.equal(EDITORIAL_STANDARDIZATION_RULES.every((rule) => /^[A-Z]+-\d{3}$/.test(rule.id)), true);
 });
 
+test("a duplicated bounded-sample phrase is blocked as deterministic duplicate detail", () => {
+  const candidate = structuredClone(fousheeJustice.candidate);
+  const experience = structuredClone(fousheeJustice.experience);
+  candidate.synthesis.primary = "In this reviewed sample, the record shows a repeated pattern in this sample.";
+  const report = validateEditorialStandardization({ candidate, experience });
+  assert.equal(report.state, "blocked");
+  assert.equal(report.findings.some((finding) => finding.ruleId === "DETAIL-001"), true);
+});
+
 function mutation(name, expectedRule, source, mutate) {
   const value = { name, expectedRule, candidate: structuredClone(source.candidate), experience: structuredClone(source.experience), options: {} };
   mutate(value);

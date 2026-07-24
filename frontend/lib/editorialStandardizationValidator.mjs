@@ -183,6 +183,8 @@ function validateAnalysis(candidate, experience, add) {
   }
   if (candidate.validationHints?.proceduralConclusionRolls?.length) add("ANALYSIS-002", { roll: candidate.validationHints.proceduralConclusionRolls[0], fieldPath: "synthesis.primary", explanation: "A procedural action is cited as substantive conclusion support." });
   if (candidate.validationHints?.nonYesNoCounted) add("ANALYSIS-003", { fieldPath: "source.inference_candidate.coverage", explanation: "A non-Yes/No action was counted as support or opposition." });
+  const sampleBoundaryCount = (candidate.synthesis?.primary?.match(/\b(?:reviewed )?sample\b/gi) || []).length;
+  if (sampleBoundaryCount > 1) add("DETAIL-001", { fieldPath: "synthesis.primary", explanation: "The bounded sample phrase is deterministically duplicated in the primary conclusion." });
 }
 
 function validatePublicSurface(candidate, experience, renderedText, genericIssueCards, add) {

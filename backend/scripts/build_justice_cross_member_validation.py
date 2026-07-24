@@ -76,7 +76,7 @@ CANDIDATE_CATALOG = [
      "why": "The two D.C. votes cover different mechanisms but one jurisdictional setting.",
      "required_themes": [{"theme_id": "national-public-safety-mechanisms", "minimum_episodes": 3, "minimum_mechanisms": 3}, {"theme_id": "dc-policing-change-opposition", "minimum_episodes": 2, "minimum_mechanisms": 2}], "conflicting_themes": []},
     {"candidate_id": "cross-mechanism-opposition", "inference_level": "bounded_repeated_pattern", "evidence_strength_label": "Strong reviewed sample",
-     "conclusion": "a repeated cross-mechanism pattern of opposition in this sample",
+     "conclusion": "a repeated cross-mechanism pattern of opposition across the reviewed policy mechanisms",
      "why": "One-directional actions do not identify a common rationale, ideology, or motive.",
      "required_themes": [{"theme_id": "cross-mechanism-opposition", "minimum_episodes": 5, "minimum_mechanisms": 5}], "conflicting_themes": []},
     {"candidate_id": "broad-support-safeguard-exception", "inference_level": "bounded_repeated_pattern", "evidence_strength_label": "Strong reviewed sample with contrary evidence",

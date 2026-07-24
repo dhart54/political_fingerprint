@@ -1,0 +1,403 @@
+{
+  "schema_version": "blind_editorial_candidate_selection_v1",
+  "starting_commit": "7bce7467cebfde4fd2f164bdcecb596ba0fd1e91",
+  "deterministic_build_identifier": "blind-editorial-pipeline-validation-v1@7bce7467cebfde4fd2f164bdcecb596ba0fd1e91",
+  "selection_inputs": [
+    "complete authoritative Yes/No action vector",
+    "Hamming distance from both reference vectors",
+    "episode signatures distinct from both references",
+    "action-balance distance from both references"
+  ],
+  "excluded_inputs": [
+    "party",
+    "ideology",
+    "electoral competitiveness",
+    "fame",
+    "expected conclusion wording",
+    "manually judged political interest"
+  ],
+  "roll_order": [
+    32,
+    33,
+    130,
+    131,
+    166,
+    275,
+    299
+  ],
+  "episode_rolls": {
+    "halt-fentanyl-legislative-path": [
+      32,
+      33,
+      166
+    ],
+    "retired-service-weapon-purchases": [
+      130
+    ],
+    "officer-safety-data-reporting": [
+      131
+    ],
+    "dc-police-pursuit-rules": [
+      275
+    ],
+    "dc-policing-reform-repeal": [
+      299
+    ]
+  },
+  "reference_member_ids": [
+    "F000477",
+    "M001184"
+  ],
+  "reference_action_vectors": {
+    "F000477": [
+      "Yea",
+      "Nay",
+      "Nay",
+      "Yea",
+      "Yea",
+      "Nay",
+      "Nay"
+    ],
+    "M001184": [
+      "Nay",
+      "Nay",
+      "Yea",
+      "Yea",
+      "Nay",
+      "Yea",
+      "Yea"
+    ]
+  },
+  "tie_break_rule": "Lexicographically maximize the recorded score components, then choose the smallest member ID.",
+  "candidates": [
+    {
+      "member_id": "A000055",
+      "member_display_name": "Robert B. Aderholt",
+      "action_vector": [
+        "Nay",
+        "Yea",
+        "Yea",
+        "Yea",
+        "Yea",
+        "Yea",
+        "Yea"
+      ],
+      "eligible": true,
+      "exclusion_reasons": [],
+      "novelty": {
+        "distance_from_references": {
+          "F000477": 5,
+          "M001184": 2
+        },
+        "episode_signatures": {
+          "halt-fentanyl-legislative-path": [
+            "Nay",
+            "Yea",
+            "Yea"
+          ],
+          "retired-service-weapon-purchases": [
+            "Yea"
+          ],
+          "officer-safety-data-reporting": [
+            "Yea"
+          ],
+          "dc-police-pursuit-rules": [
+            "Yea"
+          ],
+          "dc-policing-reform-repeal": [
+            "Yea"
+          ]
+        },
+        "episode_signatures_distinct_from_both_references": [
+          "halt-fentanyl-legislative-path"
+        ],
+        "candidate_minority_action_count": 1,
+        "reference_minority_action_counts": [
+          3,
+          3
+        ],
+        "score_components": {
+          "minimum_reference_distance": 2,
+          "novel_episode_signature_count": 1,
+          "action_balance_distance": 2,
+          "total_reference_distance": 7
+        }
+      }
+    },
+    {
+      "member_id": "A000370",
+      "member_display_name": "Alma S. Adams",
+      "action_vector": [
+        "Yea",
+        "Nay",
+        "Nay",
+        "Yea",
+        "Yea",
+        "Nay",
+        "Nay"
+      ],
+      "eligible": false,
+      "exclusion_reasons": [
+        "identical_to_reference_fixture:F000477"
+      ],
+      "novelty": null
+    },
+    {
+      "member_id": "B000490",
+      "member_display_name": "Sanford D. Bishop, Jr.",
+      "action_vector": [
+        "Nay",
+        "Yea",
+        "Yea",
+        "Yea",
+        "Yea",
+        "Nay",
+        "Nay"
+      ],
+      "eligible": true,
+      "exclusion_reasons": [],
+      "novelty": {
+        "distance_from_references": {
+          "F000477": 3,
+          "M001184": 4
+        },
+        "episode_signatures": {
+          "halt-fentanyl-legislative-path": [
+            "Nay",
+            "Yea",
+            "Yea"
+          ],
+          "retired-service-weapon-purchases": [
+            "Yea"
+          ],
+          "officer-safety-data-reporting": [
+            "Yea"
+          ],
+          "dc-police-pursuit-rules": [
+            "Nay"
+          ],
+          "dc-policing-reform-repeal": [
+            "Nay"
+          ]
+        },
+        "episode_signatures_distinct_from_both_references": [
+          "halt-fentanyl-legislative-path"
+        ],
+        "candidate_minority_action_count": 3,
+        "reference_minority_action_counts": [
+          3,
+          3
+        ],
+        "score_components": {
+          "minimum_reference_distance": 3,
+          "novel_episode_signature_count": 1,
+          "action_balance_distance": 0,
+          "total_reference_distance": 7
+        }
+      }
+    },
+    {
+      "member_id": "F000477",
+      "member_display_name": "Valerie P. Foushee",
+      "action_vector": [
+        "Yea",
+        "Nay",
+        "Nay",
+        "Yea",
+        "Yea",
+        "Nay",
+        "Nay"
+      ],
+      "eligible": false,
+      "exclusion_reasons": [
+        "existing_reference_fixture"
+      ],
+      "novelty": null
+    },
+    {
+      "member_id": "G000586",
+      "member_display_name": "Jesús G. \"Chuy\" García",
+      "action_vector": [
+        "Nay",
+        "Nay",
+        "Nay",
+        "Nay",
+        "Nay",
+        "Nay",
+        "Nay"
+      ],
+      "eligible": true,
+      "exclusion_reasons": [],
+      "novelty": {
+        "distance_from_references": {
+          "F000477": 3,
+          "M001184": 4
+        },
+        "episode_signatures": {
+          "halt-fentanyl-legislative-path": [
+            "Nay",
+            "Nay",
+            "Nay"
+          ],
+          "retired-service-weapon-purchases": [
+            "Nay"
+          ],
+          "officer-safety-data-reporting": [
+            "Nay"
+          ],
+          "dc-police-pursuit-rules": [
+            "Nay"
+          ],
+          "dc-policing-reform-repeal": [
+            "Nay"
+          ]
+        },
+        "episode_signatures_distinct_from_both_references": [
+          "officer-safety-data-reporting"
+        ],
+        "candidate_minority_action_count": 0,
+        "reference_minority_action_counts": [
+          3,
+          3
+        ],
+        "score_components": {
+          "minimum_reference_distance": 3,
+          "novel_episode_signature_count": 1,
+          "action_balance_distance": 3,
+          "total_reference_distance": 7
+        }
+      }
+    },
+    {
+      "member_id": "M001184",
+      "member_display_name": "Thomas Massie",
+      "action_vector": [
+        "Nay",
+        "Nay",
+        "Yea",
+        "Yea",
+        "Nay",
+        "Yea",
+        "Yea"
+      ],
+      "eligible": false,
+      "exclusion_reasons": [
+        "existing_reference_fixture"
+      ],
+      "novelty": null
+    },
+    {
+      "member_id": "M001217",
+      "member_display_name": "Jared Moskowitz",
+      "action_vector": [
+        "Yea",
+        "Yea",
+        "Yea",
+        "Yea",
+        "Yea",
+        "Yea",
+        "Nay"
+      ],
+      "eligible": true,
+      "exclusion_reasons": [],
+      "novelty": {
+        "distance_from_references": {
+          "F000477": 3,
+          "M001184": 4
+        },
+        "episode_signatures": {
+          "halt-fentanyl-legislative-path": [
+            "Yea",
+            "Yea",
+            "Yea"
+          ],
+          "retired-service-weapon-purchases": [
+            "Yea"
+          ],
+          "officer-safety-data-reporting": [
+            "Yea"
+          ],
+          "dc-police-pursuit-rules": [
+            "Yea"
+          ],
+          "dc-policing-reform-repeal": [
+            "Nay"
+          ]
+        },
+        "episode_signatures_distinct_from_both_references": [
+          "halt-fentanyl-legislative-path"
+        ],
+        "candidate_minority_action_count": 1,
+        "reference_minority_action_counts": [
+          3,
+          3
+        ],
+        "score_components": {
+          "minimum_reference_distance": 3,
+          "novel_episode_signature_count": 1,
+          "action_balance_distance": 2,
+          "total_reference_distance": 7
+        }
+      }
+    }
+  ],
+  "eligible_candidates": [
+    "A000055",
+    "B000490",
+    "G000586",
+    "M001217"
+  ],
+  "selected_member": {
+    "member_id": "G000586",
+    "member_display_name": "Jesús G. \"Chuy\" García",
+    "action_vector": [
+      "Nay",
+      "Nay",
+      "Nay",
+      "Nay",
+      "Nay",
+      "Nay",
+      "Nay"
+    ],
+    "novelty": {
+      "distance_from_references": {
+        "F000477": 3,
+        "M001184": 4
+      },
+      "episode_signatures": {
+        "halt-fentanyl-legislative-path": [
+          "Nay",
+          "Nay",
+          "Nay"
+        ],
+        "retired-service-weapon-purchases": [
+          "Nay"
+        ],
+        "officer-safety-data-reporting": [
+          "Nay"
+        ],
+        "dc-police-pursuit-rules": [
+          "Nay"
+        ],
+        "dc-policing-reform-repeal": [
+          "Nay"
+        ]
+      },
+      "episode_signatures_distinct_from_both_references": [
+        "officer-safety-data-reporting"
+      ],
+      "candidate_minority_action_count": 0,
+      "reference_minority_action_counts": [
+        3,
+        3
+      ],
+      "score_components": {
+        "minimum_reference_distance": 3,
+        "novel_episode_signature_count": 1,
+        "action_balance_distance": 3,
+        "total_reference_distance": 7
+      }
+    }
+  },
+  "selection_lock": "dedb3b9700df6a3e40107b838f34ee4c82ed88d55a3ac369dd9c0e192cb796c3"
+}

@@ -120,3 +120,21 @@ def test_cohort_roles_and_rationales_are_action_structural_not_party_methodology
     overlays = load_json("member_overlays.json")["overlays"]
     text = " ".join(f"{item['validation_case']} {item['selection_rationale']}" for item in overlays).lower()
     assert "republican_outlier" not in text and "democratic vector" not in text and "republican vector" not in text
+
+
+def test_committed_catalog_and_inferences_match_the_generic_evaluator_without_source_retrieval():
+    builder = load_builder()
+    catalog = load_json("candidate_catalog.json")
+    assert catalog["themes"] == builder.THEME_CATALOG
+    assert catalog["candidates"] == builder.CANDIDATE_CATALOG
+
+    shared = json.loads((ROOT / builder.SHARED_SET["episode_map_path"]).read_text(encoding="utf-8"))["episodes"]
+    actual_by_id = {
+        item["member"]["bioguide_id"]: item
+        for item in load_json("inference_candidates.json")["candidates"]
+    }
+    for overlay in load_json("member_overlays.json")["overlays"]:
+        expected = builder.evaluate_overlay(overlay, shared)
+        actual = dict(actual_by_id[overlay["member"]["bioguide_id"]])
+        actual.pop("publication")
+        assert actual == expected

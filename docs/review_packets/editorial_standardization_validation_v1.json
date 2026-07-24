@@ -11,7 +11,7 @@
   },
   "summary": {
     "state": "pass",
-    "sliceCount": 4,
+    "sliceCount": 5,
     "ruleCount": 37,
     "ruleCountBySeverity": {
       "block": 36,
@@ -256,6 +256,26 @@
       "state": "pass",
       "publicationEligibilityMustFail": false,
       "memberId": "M001184",
+      "issue": "JUSTICE_PUBLIC_SAFETY",
+      "findings": [],
+      "structuralExpectations": {
+        "substantiveActions": 7,
+        "independentEpisodes": 5,
+        "featuredEpisodes": 5,
+        "notVotingActions": 0,
+        "proceduralContextActions": 6,
+        "completeRecordPolicyFamilies": 5,
+        "completeRecordCongresses": [
+          119
+        ]
+      }
+    },
+    {
+      "fixtureId": "blind-editorial-pipeline-validation-v1",
+      "designation": "reference_render_fixture",
+      "state": "pass",
+      "publicationEligibilityMustFail": false,
+      "memberId": "G000586",
       "issue": "JUSTICE_PUBLIC_SAFETY",
       "findings": [],
       "structuralExpectations": {

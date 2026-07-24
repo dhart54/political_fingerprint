@@ -107,6 +107,30 @@ export function buildJusticeMemberReviewCandidate({ overlay, inference, synthesi
   });
 }
 
+export function buildJusticeMemberReviewProfile({
+  overlay,
+  inference,
+  fixtureId,
+  designation = "reference_render_fixture",
+  featuredEpisodeIds = justiceEpisodePresentation.featuredEpisodeIds,
+}) {
+  const candidate = Object.freeze({
+    ...buildJusticeMemberReviewCandidate({ overlay, inference }),
+    standardizationFixture: Object.freeze({ designation, fixtureId }),
+    episodePresentation: Object.freeze({
+      ...justiceEpisodePresentation,
+      featuredEpisodeIds: Object.freeze([...featuredEpisodeIds]),
+    }),
+  });
+  return Object.freeze({
+    memberId: overlay.member.bioguide_id,
+    label: fixtureId,
+    candidate,
+    legislator: buildLegislator(overlay.member),
+    fixtureData: buildMemberFixtureData(overlay),
+  });
+}
+
 function reviewedSynthesisOverride(overlay, aligned, partyName) {
   if (overlay.member.bioguide_id !== "M001184") return null;
   return {
