@@ -28,8 +28,8 @@
 - [x] Candidate uses shared dossiers, generic overlay/inference/presentation contracts, and remains review-only.
 - [x] Candidate tests, reference regressions, 20 mutations, identity/leak/source/drift scans, frontend tests, lint, build/type checks, and `git diff --check` pass or an allowed stable block is documented.
 - [x] Bounded desktop/mobile smoke review and review packet are complete.
-- [ ] Intended files are committed, pushed, and presented in a tightly scoped draft PR.
-- [ ] Final reconciliation completed.
+- [x] Intended files are committed, pushed, and presented in a tightly scoped draft PR.
+- [x] Final reconciliation completed.
 
 ## Baseline
 
@@ -58,7 +58,7 @@
 - [x] Implementation/correction
 - [x] Validation
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -88,6 +88,9 @@
 - Lint: passed with eight pre-existing hook warnings. Build/type validation: passed.
 - Rendered suite: 12 passed, 12 intentionally superseded/opt-in skipped. Desktop/mobile captures inspected with no bounded smoke-review defect.
 - Generator/validator drift, reference fixtures, shared-evidence identity, member leakage, source integrity, registry isolation, and `git diff --check`: pass.
+- Primary commit: `801eabaa857419d13fd797cb6577b1a457dbb6f2`.
+- Draft PR: `#99`, targeting `main`; required backend and Vercel checks passed.
+- Vercel preview: Ready at `https://political-fingerprint-git-codex-blind-6db175-dhart54s-projects.vercel.app`.
 
 ## Production Writes
 
@@ -106,6 +109,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: implementation and local validation are complete; commit, draft PR, and hosted preview status remain.
+- Definition of done satisfied: yes; implementation, local validation, scoped commit/push, draft PR, and hosted preview status are complete.
 - Remaining limitations: deterministic validation does not confer human editorial approval; this is one additional member/vector.
 - Recommended next step: proceed to broader generality validation after draft-PR preview checks.

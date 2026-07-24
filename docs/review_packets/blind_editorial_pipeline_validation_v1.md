@@ -124,6 +124,9 @@ No rendered defect was found. Disposable local captures:
 - Benchmark status: `not_promoted`
 - `productionEligible`: `false`
 - Production registry entries: 0
+- Draft PR: `#99` — `https://github.com/dhart54/political_fingerprint/pull/99`
+- Vercel preview: Ready — `https://political-fingerprint-git-codex-blind-6db175-dhart54s-projects.vercel.app`
+- Hosted checks: backend and Vercel passed
 - Human editorial approval: not conferred
 - Production publication: not authorized
 - Production writes/deployments: none
