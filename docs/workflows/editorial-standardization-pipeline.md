@@ -98,6 +98,23 @@ Quality assurance therefore combines reference fixtures, automated gates, mutati
 
 Yea, Nay, Present, Not Voting, not yet serving, no longer serving, and missing evidence remain distinct. Year-only service metadata cannot establish action-date eligibility. When exact dates are unavailable, an absent action remains missing evidence; presentation convenience must never relabel it as outside service.
 
+## Non-negotiable autonomy and failure handling
+
+Within an authorized milestone and established evidence contract, continue autonomously through generation, deterministic validation, correction, regeneration, bounded rendered review, artifact reconciliation, and integration validation. A failed gate is not a completed result and is not, by itself, a reason to stop the wider safe workflow.
+
+When a deterministic gate fails:
+
+1. preserve the failing candidate and exact rule result;
+2. diagnose whether the defect is in shared evidence, member overlay, proposition selection, rendering, or validation;
+3. correct the owning layer without weakening the rule, hand-editing a generated receipt, inventing evidence, or changing publication status;
+4. regenerate affected artifacts and rerun the narrow gate;
+5. continue independent safe cases when one case is blocked;
+6. record the correction, remaining limitation, and review route.
+
+Use `human_exception_required` when established deterministic structures cannot safely represent a new or unresolved evidence meaning. Use `blocked` for hard source, coverage, integrity, unsupported-claim, structural, or publication-boundary failures. Do not relabel either route merely to keep a pipeline moving. Conversely, do not send an ordinary established-contract correction to human review solely because the first generated output failed.
+
+Stop the active case for conflicting authoritative sources, ambiguous civic meaning, a new evidence or legislative-action type outside the contract, an unrepresentable service-status boundary, or another repository true stop condition. Preserve all completed safe work and failure receipts when stopping. The routes `standard_generation_pass`, `sampled_audit_candidate`, `human_exception_required`, and `blocked` remain quality-control routes only and never authorize human approval, benchmark promotion, production eligibility, publication, merge, or deployment.
+
 ## Publication boundary
 
 The reference-fixture designations `human_reviewed_presentation_fixture`, `reference_render_fixture`, and `standardization_regression_fixture` are regression metadata only. Real content remains `human_approval_pending`, `not_promoted`, and `productionEligible: false` until a separately authorized publication decision.

@@ -1,0 +1,363 @@
+{
+  "schema_version": "repository_recovery_and_alignment_v1",
+  "date": "2026-07-24",
+  "production_writes": false,
+  "merge_performed": false,
+  "deployment_performed": false,
+  "publication_or_promotion_changed": false,
+  "canonical_main": {
+    "approved_remote_commit": "3d0ffb252c54fb8b93e58fbd4724724ec40a2790",
+    "remote_rechecked_before_recovery": true,
+    "remote_rechecked_before_alignment": true,
+    "root_main_head_before_feature_branch": "3d0ffb252c54fb8b93e58fbd4724724ec40a2790",
+    "root_main_equal_to_origin_main": true,
+    "root_clean_before_feature_branch": true
+  },
+  "original_root": {
+    "path": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint",
+    "branch": "codex/foushee-justice-public-safety-gold-v1",
+    "commit": "38ad15999f4bfcea85c8777f25da816888750942",
+    "recovery_branch": "codex/recovery-root-20260724-38ad159",
+    "recovery_stash": "repository-recovery-alignment-v1 root preservation 2026-07-24"
+  },
+  "recovery_package": {
+    "path": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint-recovery\\2026-07-24-root-38ad159",
+    "sha256_manifest_hash": "C99397D930ED57A28B80FBF8F070C0C02856692B0DA00C9332E249A20F9FFF8A",
+    "manifest_self_exclusion": "sha256.json is excluded because a file cannot contain its own stable digest",
+    "validation_worktree": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint-recovery\\validation-root-38ad159",
+    "validation_worktree_commit": "38ad15999f4bfcea85c8777f25da816888750942",
+    "patch_apply_check": "passed",
+    "bundle_source_files": 19,
+    "bundle_copied_files": 19,
+    "bundle_hash_mismatches": 0,
+    "chamber_audit_hash_matches": true,
+    "resolved_bundle_references": 2,
+    "manifest_entries": 27,
+    "manifest_failures": 0,
+    "files": [
+      {
+        "path": "branch-and-commit-metadata.txt",
+        "bytes": 400,
+        "sha256": "AD7AC8AEEE60243C9A5B716E68E38EC5B754456B247397921C4731E5D6A01820"
+      },
+      {
+        "path": "repository_hygiene_audit_v1.json",
+        "bytes": 29393,
+        "sha256": "E25E2B7BB8B7DB9190A10025FFC000D02EC8DCC6EEF4D9271D9CAFB8BD87282B"
+      },
+      {
+        "path": "repository_hygiene_audit_v1.md",
+        "bytes": 30453,
+        "sha256": "F960596CE4570C3EE62FD18CF3F351C804596DCACDA923547268CA3C4ACAAD11"
+      },
+      {
+        "path": "RESTORE.md",
+        "bytes": 770,
+        "sha256": "001F62C0AA2C55645C768B57668710DA44B7CD6ECA2E60456CC3D33A781CADA9"
+      },
+      {
+        "path": "root-status-porcelain-v2.txt",
+        "bytes": 5800,
+        "sha256": "A47957168EA893C81FBE40C63579327BA3DC47A3C398746BDC592F643A73557D"
+      },
+      {
+        "path": "root-tracked.patch",
+        "bytes": 153148,
+        "sha256": "4E202611C0D87AA8A998DF3A4256D6C5B28499E2F94425448D9861098AC57E65"
+      },
+      {
+        "path": "untracked/docs/review_packets/chamber_filtering_data_integrity_audit.md",
+        "bytes": 8044,
+        "sha256": "9DFC4743592275DF2FDB3E599D8E115310B981A110CB02E36E2408556500E910"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/data_availability_summary.md",
+        "bytes": 1856,
+        "sha256": "A44AABD17967D0CB6A8F78ED18295392F038DF8318942CAB00EAE9FDD97A15FA"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/frontend_rendered_states.md",
+        "bytes": 20784,
+        "sha256": "B4E10F6E74926179E388EF9ABA9279261DFCDB1C2C92A0220420FA1BF328D39C"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/grouping_review.md",
+        "bytes": 7441,
+        "sha256": "95D4640ABD73C2C4F0BF68B24826C6DB6AB24FCAFA5DAC2C1E8536A768D05806"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/raw/api_evidence_excerpts.json",
+        "bytes": 23771,
+        "sha256": "B6231231AD47830CF5A566FFA09A599A4820D4E10E4584D4F3B7FF26C095A8C1"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/raw/derived_issue_overview_objects.json",
+        "bytes": 8400,
+        "sha256": "25433FD9F385B3D372F126611DC59C52A4A185126ECB6588E4C9565931CCE701"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/raw/evidence_grouping_objects.json",
+        "bytes": 23941,
+        "sha256": "B2CC941E3812AA0891451F78E574C8ECFE805904F1EE950E5A798D3A0D517524"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/raw/frontend_rendered_export.json",
+        "bytes": 69613,
+        "sha256": "304DB74E7B5098D1FDC0C5E316FD9E10A8482266055980B13F9A5F9F644B77C7"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/raw/generate_review_bundle.mjs",
+        "bytes": 31587,
+        "sha256": "D643D7B38326BF3FCF06E113221126DF3BAC9C52E774D28819EB941D84D62C1E"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/raw/generate_static_review_screenshots.ps1",
+        "bytes": 6928,
+        "sha256": "73B7D1FDAD0D7D3E9788462DDDF2B232111E518F2EF6ADFDEB926619CB50F6AE"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/raw/test_output_logs.txt",
+        "bytes": 5919,
+        "sha256": "2F0AB476361E20BA60FD20D15A09504DBA20DB513037EB0766B3143B749F53B2"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/README.md",
+        "bytes": 1601,
+        "sha256": "D4610614CA315C30105010718D83CD4D03F6A373F61929FA7FFAAEF350B4CCB7"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/screenshots/economy_overview_first_card.png",
+        "bytes": 138769,
+        "sha256": "7AFB1709FC9127A716ECA2263D1B94AF6E3CB69BC7C251A0B6B88516C7494779"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/screenshots/expanded_details_card.png",
+        "bytes": 65037,
+        "sha256": "44C5E834655D4FB3908E726AE47914671C1927683EB88F91CF4805E73B6C46A4"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/screenshots/justice_overview_first_card.png",
+        "bytes": 143153,
+        "sha256": "D05941D46BF795BA557DF53ACE57A814EB49AF95D5237132EF3EDEA667A1E4EC"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/screenshots/national_security_limited_overview_first_card.png",
+        "bytes": 111440,
+        "sha256": "26DCCFE6FBB77D6B927DE6C9C42D020CECE821D5E2CB976C001828B88C5E053F"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/screenshots/review_states.html",
+        "bytes": 8926,
+        "sha256": "F37AC7083DCC14A773DABAED293D221492D620CC59ADE5E9AB14013E763D3159"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/screenshots/SCREENSHOT_NOTE.md",
+        "bytes": 741,
+        "sha256": "5D8735D02F9144B1996A57308F9A02A2E6FE0CFC59F4B369F39E61908D7AF4D2"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/source_to_frontend_trace.md",
+        "bytes": 13641,
+        "sha256": "BC1287BD224EDA63E93409B2DC661956C1CA3936D27A5D86C8ED5F06A3152E5C"
+      },
+      {
+        "path": "untracked/review_bundle_frontend_data_grounding/tests_and_build.txt",
+        "bytes": 5919,
+        "sha256": "2F0AB476361E20BA60FD20D15A09504DBA20DB513037EB0766B3143B749F53B2"
+      },
+      {
+        "path": "worktree-list-porcelain.txt",
+        "bytes": 1314,
+        "sha256": "1AC8FBD717FF81ED4CD086D55EA45F4B41A6BE7204C3F242482A5C77E0EC1286"
+      }
+    ]
+  },
+  "cleanup_performed": [
+    "docs/.gitkeep",
+    "_codex_worktrees/blind-editorial-pipeline-validation-v1/frontend/test-results/.last-run.json",
+    "_codex_worktrees/public-editorial-product-frontend-v1/frontend/test-results/.last-run.json",
+    "_codex_worktrees/blind-editorial-pipeline-validation-v1/backend/tests/_data_inventory_cases/"
+  ],
+  "worktree_moves": [
+    {
+      "branch": "codex/blind-editorial-pipeline-validation-v1",
+      "before": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\_codex_worktrees\\blind-editorial-pipeline-validation-v1",
+      "after": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint-worktrees\\blind-editorial-pipeline-validation-v1",
+      "tracked_changes_before_move": 0,
+      "referenced_assets_preserved": 4
+    },
+    {
+      "branch": "codex/cross-issue-editorial-generality-v1",
+      "before": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\_codex_worktrees\\cross-issue-editorial-generality-v1",
+      "after": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint-worktrees\\cross-issue-editorial-generality-v1",
+      "tracked_changes_before_move": 0,
+      "referenced_assets_preserved": 0
+    },
+    {
+      "branch": "codex/editorial-artifact-persistence-v1",
+      "before": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\_codex_worktrees\\editorial-artifact-persistence-v1",
+      "after": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint-worktrees\\editorial-artifact-persistence-v1",
+      "tracked_changes_before_move": 0,
+      "referenced_assets_preserved": 0
+    },
+    {
+      "branch": "codex/justice-cross-member-validation-v1",
+      "before": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\_codex_worktrees\\justice-cross-member-validation-v1",
+      "after": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint-worktrees\\justice-cross-member-validation-v1",
+      "tracked_changes_before_move": 0,
+      "referenced_assets_preserved": 0
+    },
+    {
+      "branch_before_detach": "main",
+      "before": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint\\_codex_worktrees\\public-editorial-product-frontend-v1",
+      "after": "C:\\Users\\Dylan\\Documents\\Data Science\\political_fingerprint-worktrees\\main",
+      "final_state": "detached",
+      "commit": "88d6f3446f54fb8b93e58fbd4724724ec40a2790",
+      "tracked_changes_before_move": 0,
+      "referenced_assets_preserved": 15
+    }
+  ],
+  "moved_review_evidence": {
+    "files": 19,
+    "post_move_missing": 0,
+    "post_move_hash_mismatches": 0,
+    "relative_paths_preserved": true
+  },
+  "repository_changes": {
+    "ignore_rules_added": [
+      "/_codex_worktrees/",
+      "/frontend/test-results/",
+      "/.codex_pytest*/",
+      "/.pytest_tmp*/",
+      "/backend/.pytest_tmp*/",
+      "/backend/.venv_win/"
+    ],
+    "explicitly_not_ignored": [
+      "review_bundle_*",
+      ".local/",
+      "backend/data_sources/",
+      "tracked reports",
+      "source manifests",
+      "rollback SQL",
+      "editorial artifacts"
+    ],
+    "readme_links_repaired": 5,
+    "documentation_index": "docs/README.md",
+    "editorial_contract": "docs/workflows/editorial-standardization-pipeline.md",
+    "agents_pointer_added": true,
+    "routing_terms_preserved": [
+      "standard_generation_pass",
+      "sampled_audit_candidate",
+      "human_exception_required",
+      "blocked"
+    ]
+  },
+  "required_files_verified": [
+    "backend/migrations/0016_editorial_artifact_persistence.sql",
+    "backend/app/editorial_artifacts/__init__.py",
+    "backend/app/editorial_artifacts/bundle.py",
+    "backend/app/editorial_artifacts/migration.py",
+    "backend/app/editorial_artifacts/repository.py",
+    "docs/workflows/editorial-standardization-pipeline.md"
+  ],
+  "production_registry": {
+    "path": "frontend/lib/editorialIssueProductionSlices.mjs",
+    "frozen": true,
+    "entries": 0
+  },
+  "validation": [
+    {
+      "name": "recovery_patch_apply_check",
+      "result": "passed"
+    },
+    {
+      "name": "recovery_manifest",
+      "result": "passed",
+      "passed": 27,
+      "failed": 0
+    },
+    {
+      "name": "moved_review_asset_hashes",
+      "result": "passed",
+      "passed": 19,
+      "failed": 0
+    },
+    {
+      "name": "markdown_link_scan",
+      "result": "passed",
+      "files_scanned": 230,
+      "failed": 0
+    },
+    {
+      "name": "documentation_contract",
+      "result": "passed"
+    },
+    {
+      "name": "frontend_editorial_workflow_tests",
+      "result": "passed",
+      "passed": 49,
+      "failed": 0
+    },
+    {
+      "name": "backend_economy_editorial_documentation_tests",
+      "result": "passed",
+      "passed": 15,
+      "failed": 0
+    },
+    {
+      "name": "production_registry_assertion",
+      "result": "passed"
+    },
+    {
+      "name": "editorial_standardization_raw_check",
+      "result": "local_line_ending_limitation",
+      "detail": "Raw byte comparison fails because checked-out reports use CRLF while generated strings use LF."
+    },
+    {
+      "name": "editorial_standardization_lf_normalized_check",
+      "result": "passed",
+      "detail": "Read-only normalization of the two report inputs proves deterministic semantic content is current; no report was changed."
+    },
+    {
+      "name": "git_diff_check",
+      "result": "passed"
+    },
+    {
+      "name": "git_worktree_repair_and_registry",
+      "result": "passed",
+      "registered_beneath_repository_root": 0
+    },
+    {
+      "name": "git_fsck_no_dangling",
+      "result": "passed"
+    }
+  ],
+  "explicitly_left_untouched": [
+    ".local/",
+    "backend/data_sources/",
+    "ACL-inaccessible pytest temp directories",
+    "all review screenshot bundles",
+    "completed plans pending archival",
+    "legacy authority documents",
+    "tracked generated reports",
+    "source manifests",
+    "rollback SQL",
+    "committed editorial artifacts",
+    "publication and benchmark status",
+    "production data and schema state",
+    "services, deployments, configuration, and secrets"
+  ],
+  "final_delivery": {
+    "branch": "codex/repository-recovery-alignment-v1",
+    "base_commit": "3d0ffb252c54fb8b93e58fbd4724724ec40a2790",
+    "final_head": "reported_by_git_and_draft_pr_after_commit_creation",
+    "status_expectation": "clean_after_commit",
+    "draft_pr_required": true
+  },
+  "limitations": [
+    "The detached recovery validation worktree remains registered because git worktree remove was prohibited.",
+    "ACL-inaccessible pytest temp directories remain untouched and may emit status warnings.",
+    "The named stash remains as an additional local recovery layer.",
+    "The external recovery package and moved worktrees are intentionally excluded from the repository diff."
+  ]
+}

@@ -3,13 +3,21 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 backend/.pytest_tmp/
+/.codex_pytest*/
+/.pytest_tmp*/
+/backend/.pytest_tmp*/
 .venv/
+/backend/.venv_win/
 .local/
 backend/data_sources/
 
 # Node
 node_modules/
 .next/
+/frontend/test-results/
+
+# Codex worktrees belong in the external sibling worktree root.
+/_codex_worktrees/
 
 # Environment files
 .env
