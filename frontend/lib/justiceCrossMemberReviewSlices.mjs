@@ -114,13 +114,11 @@ export function buildJusticeMemberReviewProfile({
   designation = "reference_render_fixture",
   featuredEpisodeIds = justiceEpisodePresentation.featuredEpisodeIds,
 }) {
+  const episodePresentation = memberEpisodePresentation(inference, featuredEpisodeIds);
   const candidate = Object.freeze({
     ...buildJusticeMemberReviewCandidate({ overlay, inference }),
     standardizationFixture: Object.freeze({ designation, fixtureId }),
-    episodePresentation: Object.freeze({
-      ...justiceEpisodePresentation,
-      featuredEpisodeIds: Object.freeze([...featuredEpisodeIds]),
-    }),
+    episodePresentation,
   });
   return Object.freeze({
     memberId: overlay.member.bioguide_id,
@@ -128,6 +126,31 @@ export function buildJusticeMemberReviewProfile({
     candidate,
     legislator: buildLegislator(overlay.member),
     fixtureData: buildMemberFixtureData(overlay),
+  });
+}
+
+function memberEpisodePresentation(inference, featuredEpisodeIds) {
+  const trajectoryIds = new Set((inference.within_episode_trajectories || []).map((item) => item.episode_id));
+  const repeatedIds = new Set(
+    (inference.repeated_cross_episode_themes || [])
+      .flatMap((theme) => theme.supporting_episodes || [])
+      .map((item) => item.episode_id),
+  );
+  const notableIds = new Set((inference.notable_one_off_choices || []).map((item) => item.episode_id));
+  return Object.freeze({
+    ...justiceEpisodePresentation,
+    featuredEpisodeIds: Object.freeze([...featuredEpisodeIds]),
+    episodes: Object.freeze(justiceEpisodePresentation.episodes.map((episode) => Object.freeze({
+      ...episode,
+      conclusionRelevance: trajectoryIds.has(episode.id)
+        ? "Policy trajectory in this reviewed record"
+        : repeatedIds.has(episode.id)
+          ? "Part of a narrower repeated pattern"
+          : notableIds.has(episode.id)
+            ? "Other notable choice in this reviewed record"
+            : "Reviewed episode in this record",
+      selectionRationale: "Selected from the member overlay and current generic inference.",
+    }))),
   });
 }
 
@@ -162,6 +185,7 @@ function inferenceSynthesis(source, context = {}) {
     },
     votingContext: context.votingContext,
     evidenceBreadth: inference.evidence_strength_label,
+    readerFacingLabel: inference.evidence_strength_label,
   };
 }
 

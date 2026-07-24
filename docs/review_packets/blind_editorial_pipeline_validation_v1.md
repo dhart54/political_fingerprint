@@ -30,30 +30,51 @@ This establishes pipeline and validator success for this slice. It does **not** 
 - Fentanyl grouping: rolls 32, 33, and 166 remain one episode
 - Procedural controls: 6, visible and non-counting
 - Featured episodes: 5, selected upstream from structured episode evidence
-- First 37-rule result: `pass`
+- Historical first 37-rule structural result: `pass`
 - First findings: 0 blocking, 0 warning
+- Editorial assessment after bounded smoke review: failure. The validator missed that the conclusion merely restated uniform Nay direction across heterogeneous mechanisms.
 - Preserved artifacts:
   - `docs/editorial/blind_editorial_pipeline_validation_v1/first_generated_candidate.json`
   - `docs/editorial/blind_editorial_pipeline_validation_v1/first_validation_result.json`
 
 ## Generalized Correction
 
-- Defect: deterministic duplicate bounded-sample language in any generated conclusion using the `cross-mechanism-opposition` catalog fragment.
-- Scope: reusable candidate catalog and existing `DETAIL-001` duplicate-detail enforcement; no member ID, name, party, vector, React branch, shared dossier, episode label, coverage count, source, or vote fact was added or changed.
-- Negative proof: a deliberately duplicated sample-boundary conclusion is blocked by `DETAIL-001`.
+- Defect: `cross-mechanism-opposition` treated common action direction as a substantive repeated pattern. Changing mechanism labels would not change the meaning, so the conclusion was circular.
+- Scope: generic evaluator, structured candidate basis, reusable candidate catalog, `SYNTHESIS-001`, and shared detail cleanup; no member ID, name, party, exact vector, React branch, shared dossier, episode label, coverage count, source, or vote fact was added or changed.
+- The evaluator now distinguishes `uniform_action_direction` from `substantive_repeated_pattern`. Direction-only themes cannot qualify a substantive candidate.
+- The fallback archetype is `uniform_direction_without_common_policy_rationale`, not the mixed-record fallback.
+- Narrow findings remain organized as: D.C. opposition under repeated patterns; all three fentanyl actions under policy trajectory; officer-safety reporting and the retired-service-firearm program under other notable choices.
+- Negative proof covers circular conclusion wording, a direction-only repeated pattern, mechanism-label substitution, unsupported coherent-philosophy language, semantic duplicate context, and redundant vote-motive disclaimers.
 - Original 20 malformed mutations remain unchanged and all produce their expected stable rule IDs.
-- Final conclusion: “In this reviewed sample, García of Illinois's recorded actions indicate a repeated cross-mechanism pattern of opposition across the reviewed policy mechanisms.”
-- No second architecture correction was made.
+- Final conclusion: “Across the reviewed record, García of Illinois voted against all 7 substantive proposals examined here. That included all three actions in the fentanyl episode, the officer-safety reporting bill, the retired-service-firearm program, broader D.C. pursuit authority, and repeal of most provisions of D.C.'s 2022 policing reform law. The vote direction is consistently oppositional, but the proposals span different—and sometimes substantively contrasting—policy approaches, so this record does not establish one overarching public-safety philosophy.”
+- Reader label: “Uniform opposition across the reviewed proposals.”
+
+### Complete-vector distribution
+
+All 128 complete Justice Yes/No vectors were evaluated through the same generic overlay and evaluator:
+
+| Selected archetype or candidate | Vectors |
+| --- | ---: |
+| Contested mixed record | 103 |
+| Uniform direction without common policy rationale | 12 |
+| Conditional guardrail boundary | 4 |
+| Reviewed enforcement expansion | 4 |
+| National action / D.C. boundary | 2 |
+| Police-authority / fentanyl divide | 2 |
+| Broad support with safeguard exception | 1 |
+
+Direction-only cross-mechanism support/opposition candidates won zero vectors. The decision code contains no member, party, or exact-vector lookup.
 
 ## Final Validation
 
 | Gate | Result |
 | --- | --- |
-| Final standardization | 37/37 pass; 0 findings |
+| Final standardization | 38/38 pass; 0 findings |
 | Original mutation suite | 20/20 blocked by expected stable rule |
-| Added duplicate-boundary negative case | Blocked by `DETAIL-001` |
-| Backend editorial suite | 60 passed |
-| Frontend Node suite | 132 passed |
+| Added synthesis/detail mutations | Circular synthesis blocked by `SYNTHESIS-001`; semantic context duplication blocked by `DETAIL-001` |
+| Complete-vector sweep | 128/128 evaluated; direction-only candidate winners: 0 |
+| Backend editorial suite | 63 passed |
+| Frontend Node suite | 134 passed |
 | Reference fixtures | Foushee Economy, Foushee Justice, and Massie Justice unchanged as the three references and passing |
 | Shared evidence identity | Pass; candidate reuses the same object contract and seven semantic dossier hashes |
 | Member leakage | Pass; no reviewed member name appears in shared Justice evidence |
@@ -131,4 +152,4 @@ No rendered defect was found. Disposable local captures:
 - Production publication: not authorized
 - Production writes/deployments: none
 - Unresolved blockers: none
-- Recommendation: **proceed to broader generality validation**. This slice passed after one bounded generalized correction; broader validation should preserve the same review-only and publication boundaries.
+- Recommendation: **proceed to broader cross-issue generality validation before any promotion**. The full Justice vector space now passes the corrected distinction, but another issue family should verify that uniform-direction fallback language and genuine substantive themes remain well separated outside this seven-action ontology. Preserve the same review-only and publication boundaries.

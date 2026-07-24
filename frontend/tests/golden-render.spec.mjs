@@ -414,7 +414,12 @@ test("blind García anchor preserves the bounded hierarchy, receipts, and mobile
   const fixture = page.getByTestId("blind-editorial-pipeline-validation-v1");
   const slice = fixture.getByTestId("editorial-issue-experience");
   await expect(fixture.getByRole("heading", { level: 2, name: /Jesús G\. "Chuy" García.*Justice & Public Safety/ })).toBeVisible();
-  await expect(slice).toContainText("a repeated cross-mechanism pattern of opposition across the reviewed policy mechanisms");
+  await expect(slice).toContainText("Uniform opposition across the reviewed proposals");
+  await expect(slice).toContainText("does not establish one overarching public-safety philosophy");
+  await expect(slice).toContainText("Opposed both reviewed D.C. policing policy proposals.");
+  await expect(slice.getByText("Other notable choice in this reviewed record", { exact: true })).toHaveCount(2);
+  await expect(slice.getByText("Part of a narrower repeated pattern", { exact: true })).toHaveCount(2);
+  await expect(slice.getByText("Supports the police-tools-and-authority pattern", { exact: true })).toHaveCount(0);
   await expect(slice.getByTestId("editorial-coverage-line")).toContainText("7 substantive votes · 5 policy episodes");
   await expect(slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(5);
   await expect(slice.locator("details[open]")).toHaveCount(0);
@@ -442,6 +447,14 @@ test("blind García anchor preserves the bounded hierarchy, receipts, and mobile
   await expect(complete.getByText(/^House roll \d+:/)).toHaveCount(6);
   await capture(complete, "03-complete-record-and-procedural-context.png");
   await assertNoHorizontalOverflow(page);
+
+  const pursuit = slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id='dc-police-pursuit-rules']");
+  await pursuit.locator(":scope > summary").click();
+  const pursuitReceipt = pursuit.getByTestId("editorial-record-roll-275");
+  await pursuitReceipt.locator(":scope > summary").click();
+  await pursuitReceipt.getByText("Arguments, context, and official sources", { exact: true }).click();
+  await expect(pursuitReceipt.getByText("A Nay does not reveal which objection drove the vote.")).toHaveCount(0);
+  await expect(pursuitReceipt.getByText(/Rules Committee substitute, whose exceptions matter/)).toHaveCount(1);
 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/golden-render-fixture?blindViewport=390#blind-editorial-pipeline-validation-v1");

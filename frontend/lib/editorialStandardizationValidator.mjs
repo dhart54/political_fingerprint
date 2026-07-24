@@ -31,6 +31,7 @@ export const EDITORIAL_STANDARDIZATION_RULES = Object.freeze([
   rule("ANALYSIS-001", "block", "Analytical categories must meet their episode-support rules."),
   rule("ANALYSIS-002", "block", "Procedural actions may not support a substantive conclusion."),
   rule("ANALYSIS-003", "block", "Present, Not Voting, service-ineligible, and missing actions cannot count as support or opposition."),
+  rule("SYNTHESIS-001", "block", "Direction-only evidence cannot substitute for a substantive repeated policy rationale."),
   rule("DETAIL-001", "block", "Motive boundaries and deterministic duplicate detail may render only once."),
   rule("DETAIL-002", "warning", "Near-duplicate detail that is not deterministically equivalent needs review."),
   rule("PUBLIC-001", "block", "Internal workflow and methodology language may not render publicly."),
@@ -147,8 +148,13 @@ function validateActions(experience, add) {
     if (action.actionStatus === MEMBER_ACTION_STATUS.nay && !/voted (?:nay|no)|opposed/i.test(action.actionAndResult || "")) add("OVERLAY-001", { ...actionContext, fieldPath: "actionAndResult", explanation: "Nay overlay prose does not describe a Nay action." });
     const combinedDetail = [action.argumentBoundary, action.additionalDetail?.detail, action.additionalDetail?.laterHistory, ...(action.importantContext || [])].filter(Boolean);
     if (combinedDetail.filter((value) => MOTIVE_BOUNDARY.test(value)).length > 1) add("DETAIL-001", { ...actionContext, fieldPath: "importantContext", explanation: "The same motive boundary appears more than once." });
+    if (action.argumentBoundary && (action.importantContext || []).some((value) => /a (?:yea|nay) does not (?:reveal|establish|explain|assign)/i.test(value))) {
+      add("DETAIL-001", { ...actionContext, fieldPath: "importantContext", explanation: "A generic vote-motive disclaimer repeats the neutral argument boundary." });
+    }
     const normalized = combinedDetail.map(normalizeText);
     if (new Set(normalized).size !== normalized.length) add("DETAIL-001", { ...actionContext, fieldPath: "additionalDetail", explanation: "Deterministically duplicate detail is exposed more than once." });
+    const semanticKeys = combinedDetail.map(detailSemanticKey).filter(Boolean);
+    if (new Set(semanticKeys).size !== semanticKeys.length) add("DETAIL-001", { ...actionContext, fieldPath: "additionalDetail", explanation: "The same exact-version qualification is repeated across detail and context." });
   }
 }
 
@@ -185,6 +191,60 @@ function validateAnalysis(candidate, experience, add) {
   if (candidate.validationHints?.nonYesNoCounted) add("ANALYSIS-003", { fieldPath: "source.inference_candidate.coverage", explanation: "A non-Yes/No action was counted as support or opposition." });
   const sampleBoundaryCount = (candidate.synthesis?.primary?.match(/\b(?:reviewed )?sample\b/gi) || []).length;
   if (sampleBoundaryCount > 1) add("DETAIL-001", { fieldPath: "synthesis.primary", explanation: "The bounded sample phrase is deterministically duplicated in the primary conclusion." });
+  validateSynthesisBasis(candidate, experience, supplied, add);
+}
+
+function detailSemanticKey(value) {
+  const text = String(value || "").toLowerCase();
+  if (/substitute/.test(text) && /exception/.test(text)) return "substitute-exceptions";
+  if (/not repeal every|most provisions/.test(text)) return "bounded-repeal";
+  return null;
+}
+
+function validateSynthesisBasis(candidate, experience, supplied, add) {
+  const inference = candidate.source?.inference_candidate || {};
+  const basis = inference.candidate_basis || {};
+  const primary = candidate.synthesis?.primary || "";
+  const uniformArchetype = inference.candidate_id === "uniform_direction_without_common_policy_rationale"
+    && basis.basis_type === "uniform_action_direction";
+  const directionOnlyThemes = new Set(["cross-mechanism-opposition", "cross-mechanism-support"]);
+  const substantiveThemes = asArray(basis.substantive_theme_ids).filter((id) => !directionOnlyThemes.has(id));
+  const circularDirection = /(?:support|oppos|yea|nay).{0,100}(?:(?:across|distinct|different|multiple|heterogeneous).{0,80}(?:mechanism|proposal|action)|(?:mechanism|proposal|action).{0,80}(?:across|distinct|different|multiple|heterogeneous))/i.test(primary);
+
+  if (!uniformArchetype && (
+    basis.basis_type === "uniform_action_direction"
+    || (basis.basis_type === "substantive_repeated_pattern" && substantiveThemes.length === 0)
+    || circularDirection
+  )) {
+    add("SYNTHESIS-001", {
+      fieldPath: "source.inference_candidate.candidate_basis",
+      explanation: "The primary conclusion substitutes common action direction across heterogeneous mechanisms for a shared substantive policy dimension.",
+    });
+  }
+
+  for (const item of asArray(supplied.repeatedPatterns)) {
+    const text = item.text || "";
+    if (/(?:support|oppos|yea|nay).{0,80}(?:reviewed )?(?:actions?|proposals?|mechanisms?)(?:\s+across|\s+in)?/i.test(text)
+      && !/(?:D\.C\.|fentanyl|report|firearm|pursuit|polic|safeguard|research|evidence|authority)/i.test(text)) {
+      add("SYNTHESIS-001", {
+        fieldPath: "synthesis.analyticalSections.repeatedPatterns",
+        explanation: "A repeated pattern contains action direction but no shared substantive policy theme.",
+      });
+    }
+  }
+
+  const statuses = experience.episodes
+    .flatMap((episode) => episode.actions)
+    .filter((action) => action.inclusionClass === "substantive")
+    .map((action) => action.actionStatus);
+  const homogeneous = statuses.length > 1 && new Set(statuses).size === 1;
+  if (homogeneous && /(?:coherent|overarching|consistent).{0,50}(?:philosophy|approach|orientation|stance)/i.test(primary)
+    && !/(?:does not|do not|cannot|not enough to) establish/i.test(primary)) {
+    add("SYNTHESIS-001", {
+      fieldPath: "synthesis.primary",
+      explanation: "A homogeneous action vector is described as a coherent policy philosophy without a substantive shared-theme basis.",
+    });
+  }
 }
 
 function validatePublicSurface(candidate, experience, renderedText, genericIssueCards, add) {

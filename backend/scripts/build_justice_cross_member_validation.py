@@ -5,7 +5,9 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from collections import Counter
 from copy import deepcopy
+from itertools import product
 from pathlib import Path
 from xml.etree import ElementTree
 
@@ -52,9 +54,9 @@ THEME_CATALOG = {
     "police-tools-and-authority": {"label": "Police tools and authority", "finding": "Supported reviewed police-tool and authority proposals."},
     "fentanyl-episode-opposition": {"label": "Fentanyl episode opposition", "finding": "Opposed all three actions within the single fentanyl episode."},
     "national-public-safety-mechanisms": {"label": "National public-safety mechanisms", "finding": "Supported reviewed national mechanisms across distinct policy tools."},
-    "dc-policing-change-opposition": {"label": "D.C. policing change opposition", "finding": "Opposed both reviewed D.C. policing changes."},
-    "cross-mechanism-opposition": {"label": "Cross-mechanism opposition", "finding": "Opposed reviewed actions across distinct mechanisms."},
-    "cross-mechanism-support": {"label": "Cross-mechanism support", "finding": "Supported reviewed actions across distinct mechanisms."},
+    "dc-policing-change-opposition": {"label": "D.C. policing change opposition", "finding": "Opposed both reviewed D.C. policing policy proposals.", "uniform_repeated_pattern": True},
+    "cross-mechanism-opposition": {"label": "Cross-mechanism opposition", "finding": "Opposed reviewed actions across distinct mechanisms.", "basis_type": "action_direction_only"},
+    "cross-mechanism-support": {"label": "Cross-mechanism support", "finding": "Supported reviewed actions across distinct mechanisms.", "basis_type": "action_direction_only"},
     "safeguard-repeal-opposition": {"label": "Safeguard-repeal opposition", "finding": "Opposed the reviewed repeal of most D.C. policing safeguards."},
 }
 
@@ -75,14 +77,32 @@ CANDIDATE_CATALOG = [
      "conclusion": "support for several reviewed national public-safety mechanisms with a repeated boundary at the two reviewed D.C. policing changes",
      "why": "The two D.C. votes cover different mechanisms but one jurisdictional setting.",
      "required_themes": [{"theme_id": "national-public-safety-mechanisms", "minimum_episodes": 3, "minimum_mechanisms": 3}, {"theme_id": "dc-policing-change-opposition", "minimum_episodes": 2, "minimum_mechanisms": 2}], "conflicting_themes": []},
-    {"candidate_id": "cross-mechanism-opposition", "inference_level": "bounded_repeated_pattern", "evidence_strength_label": "Strong reviewed sample",
-     "conclusion": "a repeated cross-mechanism pattern of opposition across the reviewed policy mechanisms",
-     "why": "One-directional actions do not identify a common rationale, ideology, or motive.",
-     "required_themes": [{"theme_id": "cross-mechanism-opposition", "minimum_episodes": 5, "minimum_mechanisms": 5}], "conflicting_themes": []},
     {"candidate_id": "broad-support-safeguard-exception", "inference_level": "bounded_repeated_pattern", "evidence_strength_label": "Strong reviewed sample with contrary evidence",
      "conclusion": "broad support for the reviewed public-safety actions with a specific boundary around the safeguard-repeal proposal",
      "why": "The contrary episode is material, and five episodes cannot establish blanket support or a comprehensive Justice philosophy.",
-     "required_themes": [{"theme_id": "cross-mechanism-support", "minimum_episodes": 4, "minimum_mechanisms": 4}, {"theme_id": "evidence-and-reporting-conditions", "minimum_episodes": 2, "minimum_mechanisms": 2}], "conflicting_themes": ["safeguard-repeal-opposition"]},
+     "required_themes": [{"theme_id": "cross-mechanism-support", "minimum_episodes": 4, "minimum_mechanisms": 4}, {"theme_id": "evidence-and-reporting-conditions", "minimum_episodes": 2, "minimum_mechanisms": 2}, {"theme_id": "safeguard-repeal-opposition", "minimum_episodes": 1, "minimum_mechanisms": 1}], "conflicting_themes": []},
+    {"candidate_id": "uniform_direction_without_common_policy_rationale",
+     "archetype_type": "uniform_direction_without_common_policy_rationale",
+     "basis_type": "uniform_action_direction",
+     "inference_level": "bounded_descriptive_pattern",
+     "evidence_strength_label": "Uniform opposition across the reviewed proposals",
+     "why": "Uniform direction across heterogeneous proposals is descriptive and does not establish a shared policy rationale.",
+     "required_themes": [], "conflicting_themes": [],
+     "philosophy_label": "public-safety philosophy",
+     "policy_area_order": [
+         "halt-fentanyl-legislative-path",
+         "officer-safety-data-reporting",
+         "retired-service-weapon-purchases",
+         "dc-police-pursuit-rules",
+         "dc-policing-reform-repeal",
+     ],
+     "policy_area_phrases": {
+         "halt-fentanyl-legislative-path": "the fentanyl episode",
+         "retired-service-weapon-purchases": "the retired-service-firearm program",
+         "officer-safety-data-reporting": "the officer-safety reporting bill",
+         "dc-police-pursuit-rules": "broader D.C. pursuit authority",
+         "dc-policing-reform-repeal": "repeal of most provisions of D.C.'s 2022 policing reform law",
+     }},
 ]
 
 
@@ -198,7 +218,71 @@ def build(source_dir: Path) -> dict[str, object]:
     selection = {"schema_version": "justice_cross_member_cohort_selection_v1", "source_retrieved_on": "2026-07-21", "selection_inputs": ["action completeness", "episode-level action differences", "within-episode trajectory differences", "diversity of observed action structures", "validation usefulness"], "excluded_inputs": ["party as a score", "ideology scores", "reputation", "fame", "caucus labels", "campaign statements", "external ratings"], "roll_order": list(SUBSTANTIVE_ROLLS), "eligible_definition": "Appeared in at least one reviewed substantive roll; yes_no_coverage records completeness.", "tie_break_rule": "After selecting an action structure for methodological value, use the lowest Bioguide ID within that structure unless the reference member is required.", "counts": {"all_considered": len(considered), "complete_yes_no": sum(item["yes_no_coverage"] == len(SUBSTANTIVE_ROLLS) for item in considered), "selected": len(SELECTED)}, "members_considered": considered}
     sources = {"schema_version": "justice_cross_member_official_action_sources_v1", "source_retrieved_on": "2026-07-21", "rolls": [{**roll_metadata[roll], "party_majority_actions": majorities[roll], "counting": roll in SUBSTANTIVE_ROLLS} for roll in (*SUBSTANTIVE_ROLLS, *CONTROL_ROLLS)]}
     comparison = _comparison(overlays, inferences)
-    return {"cohort_selection.json": selection, "official_action_sources.json": sources, "episode_action_interpretations.json": {"schema_version": "justice_episode_action_interpretations_v1", "shared_episode_set": SHARED_SET, "interpretations": EPISODE_ACTION_INTERPRETATIONS}, "candidate_catalog.json": {"schema_version": "justice_candidate_catalog_v1", "themes": THEME_CATALOG, "candidates": CANDIDATE_CATALOG}, "member_overlays.json": {"schema_version": "justice_cross_member_overlays_v2", "publication": PUBLICATION, "overlays": overlays}, "inference_candidates.json": {"schema_version": "justice_cross_member_inferences_v2", "publication": PUBLICATION, "candidates": inferences}, "comparison_matrix.json": comparison}
+    return {"cohort_selection.json": selection, "official_action_sources.json": sources, "episode_action_interpretations.json": {"schema_version": "justice_episode_action_interpretations_v1", "shared_episode_set": SHARED_SET, "interpretations": EPISODE_ACTION_INTERPRETATIONS}, "candidate_catalog.json": {"schema_version": "justice_candidate_catalog_v1", "themes": THEME_CATALOG, "candidates": CANDIDATE_CATALOG}, "member_overlays.json": {"schema_version": "justice_cross_member_overlays_v2", "publication": PUBLICATION, "overlays": overlays}, "inference_candidates.json": {"schema_version": "justice_cross_member_inferences_v2", "publication": PUBLICATION, "candidates": inferences}, "comparison_matrix.json": comparison, "complete_vector_distribution.json": complete_vector_distribution(shared_map["episodes"])}
+
+
+def rebuild_from_committed_overlays(output_dir: Path) -> dict[str, object]:
+    """Re-evaluate the locked reviewed overlays without retrieving or expanding the source set."""
+    existing = {
+        name: json.loads((output_dir / name).read_text(encoding="utf-8"))
+        for name in (
+            "cohort_selection.json",
+            "official_action_sources.json",
+            "member_overlays.json",
+        )
+    }
+    overlays = existing["member_overlays.json"]["overlays"]
+    shared = json.loads((ROOT / SHARED_SET["episode_map_path"]).read_text(encoding="utf-8"))["episodes"]
+    inferences = []
+    for overlay in overlays:
+        inference = evaluate_overlay(overlay, shared)
+        inference["publication"] = deepcopy(PUBLICATION)
+        inferences.append(inference)
+    return {
+        "cohort_selection.json": existing["cohort_selection.json"],
+        "official_action_sources.json": existing["official_action_sources.json"],
+        "episode_action_interpretations.json": {
+            "schema_version": "justice_episode_action_interpretations_v1",
+            "shared_episode_set": SHARED_SET,
+            "interpretations": EPISODE_ACTION_INTERPRETATIONS,
+        },
+        "candidate_catalog.json": {
+            "schema_version": "justice_candidate_catalog_v1",
+            "themes": THEME_CATALOG,
+            "candidates": CANDIDATE_CATALOG,
+        },
+        "member_overlays.json": existing["member_overlays.json"],
+        "inference_candidates.json": {
+            "schema_version": "justice_cross_member_inferences_v2",
+            "publication": PUBLICATION,
+            "candidates": inferences,
+        },
+        "comparison_matrix.json": _comparison(overlays, inferences),
+        "complete_vector_distribution.json": complete_vector_distribution(shared),
+    }
+
+
+def complete_vector_distribution(shared_episodes: list[dict]) -> dict:
+    selected = []
+    for vector in product(("Yea", "Nay"), repeat=len(SUBSTANTIVE_ROLLS)):
+        actions = dict(zip(SUBSTANTIVE_ROLLS, vector))
+        overlay = build_overlay_from_actions(
+            {"bioguide_id": "SYNTHETIC", "display_name": "Synthetic validation profile", "party": None},
+            actions,
+        )
+        inference = evaluate_overlay(overlay, shared_episodes)
+        selected.append(inference["candidate_id"])
+    return {
+        "schema_version": "justice_complete_vector_distribution_v1",
+        "complete_yes_no_vector_count": len(selected),
+        "candidate_distribution": dict(sorted(Counter(selected).items())),
+        "direction_only_candidate_winner_count": sum(
+            candidate_id in {"cross-mechanism-opposition", "cross-mechanism-support"}
+            for candidate_id in selected
+        ),
+        "uniform_archetype": "uniform_direction_without_common_policy_rationale",
+        "decision_code_has_member_party_or_exact_vector_lookup": False,
+    }
 
 
 def _comparison(overlays: list[dict], inferences: list[dict]) -> dict:
@@ -221,7 +305,12 @@ def _frontend_module(outputs: dict[str, object]) -> str:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(); parser.add_argument("--source-dir", type=Path, default=ROOT / "_analysis_house_votes"); parser.add_argument("--output-dir", type=Path, default=ROOT / "docs/editorial/justice_cross_member_validation_v1"); parser.add_argument("--frontend-output", type=Path, default=ROOT / "frontend/lib/justiceCrossMemberValidationData.mjs"); parser.add_argument("--check", action="store_true"); args = parser.parse_args(); outputs = build(args.source_dir)
+    parser = argparse.ArgumentParser(); parser.add_argument("--source-dir", type=Path, default=ROOT / "_analysis_house_votes"); parser.add_argument("--output-dir", type=Path, default=ROOT / "docs/editorial/justice_cross_member_validation_v1"); parser.add_argument("--frontend-output", type=Path, default=ROOT / "frontend/lib/justiceCrossMemberValidationData.mjs"); parser.add_argument("--check", action="store_true"); args = parser.parse_args()
+    outputs = (
+        build(args.source_dir)
+        if (args.source_dir / "members.xml").exists()
+        else rebuild_from_committed_overlays(args.output_dir)
+    )
     if args.check:
         mismatches = [name for name, value in outputs.items() if not (args.output_dir / name).exists() or (args.output_dir / name).read_text(encoding="utf-8") != _serialize(value)]
         if not args.frontend_output.exists() or args.frontend_output.read_text(encoding="utf-8") != _frontend_module(outputs): mismatches.append(args.frontend_output.name)

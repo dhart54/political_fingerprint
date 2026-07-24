@@ -88,6 +88,11 @@ def test_generation_uses_authoritative_seven_action_five_episode_contract():
         "benchmark_status": "not_promoted",
         "production_eligible": False,
     }
+    inference = generated["inference"]
+    assert inference["candidate_id"] == "uniform_direction_without_common_policy_rationale"
+    assert inference["evidence_strength_label"] == "Uniform opposition across the reviewed proposals"
+    assert "does not establish one overarching public-safety philosophy" in inference["primary_conclusion"]
+    assert [item["theme_id"] for item in inference["repeated_cross_episode_themes"]] == ["dc-policing-change-opposition"]
 
 
 def test_featured_selection_uses_episode_evidence_and_never_procedural_controls():

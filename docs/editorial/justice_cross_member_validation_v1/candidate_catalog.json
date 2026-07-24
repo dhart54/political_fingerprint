@@ -27,15 +27,18 @@
     },
     "dc-policing-change-opposition": {
       "label": "D.C. policing change opposition",
-      "finding": "Opposed both reviewed D.C. policing changes."
+      "finding": "Opposed both reviewed D.C. policing policy proposals.",
+      "uniform_repeated_pattern": true
     },
     "cross-mechanism-opposition": {
       "label": "Cross-mechanism opposition",
-      "finding": "Opposed reviewed actions across distinct mechanisms."
+      "finding": "Opposed reviewed actions across distinct mechanisms.",
+      "basis_type": "action_direction_only"
     },
     "cross-mechanism-support": {
       "label": "Cross-mechanism support",
-      "finding": "Supported reviewed actions across distinct mechanisms."
+      "finding": "Supported reviewed actions across distinct mechanisms.",
+      "basis_type": "action_direction_only"
     },
     "safeguard-repeal-opposition": {
       "label": "Safeguard-repeal opposition",
@@ -121,21 +124,6 @@
       "conflicting_themes": []
     },
     {
-      "candidate_id": "cross-mechanism-opposition",
-      "inference_level": "bounded_repeated_pattern",
-      "evidence_strength_label": "Strong reviewed sample",
-      "conclusion": "a repeated cross-mechanism pattern of opposition across the reviewed policy mechanisms",
-      "why": "One-directional actions do not identify a common rationale, ideology, or motive.",
-      "required_themes": [
-        {
-          "theme_id": "cross-mechanism-opposition",
-          "minimum_episodes": 5,
-          "minimum_mechanisms": 5
-        }
-      ],
-      "conflicting_themes": []
-    },
-    {
       "candidate_id": "broad-support-safeguard-exception",
       "inference_level": "bounded_repeated_pattern",
       "evidence_strength_label": "Strong reviewed sample with contrary evidence",
@@ -151,11 +139,39 @@
           "theme_id": "evidence-and-reporting-conditions",
           "minimum_episodes": 2,
           "minimum_mechanisms": 2
+        },
+        {
+          "theme_id": "safeguard-repeal-opposition",
+          "minimum_episodes": 1,
+          "minimum_mechanisms": 1
         }
       ],
-      "conflicting_themes": [
-        "safeguard-repeal-opposition"
-      ]
+      "conflicting_themes": []
+    },
+    {
+      "candidate_id": "uniform_direction_without_common_policy_rationale",
+      "archetype_type": "uniform_direction_without_common_policy_rationale",
+      "basis_type": "uniform_action_direction",
+      "inference_level": "bounded_descriptive_pattern",
+      "evidence_strength_label": "Uniform opposition across the reviewed proposals",
+      "why": "Uniform direction across heterogeneous proposals is descriptive and does not establish a shared policy rationale.",
+      "required_themes": [],
+      "conflicting_themes": [],
+      "philosophy_label": "public-safety philosophy",
+      "policy_area_order": [
+        "halt-fentanyl-legislative-path",
+        "officer-safety-data-reporting",
+        "retired-service-weapon-purchases",
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal"
+      ],
+      "policy_area_phrases": {
+        "halt-fentanyl-legislative-path": "the fentanyl episode",
+        "retired-service-weapon-purchases": "the retired-service-firearm program",
+        "officer-safety-data-reporting": "the officer-safety reporting bill",
+        "dc-police-pursuit-rules": "broader D.C. pursuit authority",
+        "dc-policing-reform-repeal": "repeal of most provisions of D.C.'s 2022 policing reform law"
+      }
     }
   ]
 }

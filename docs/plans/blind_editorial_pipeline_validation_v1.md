@@ -3,7 +3,7 @@
 ## Intent
 
 - Immediate task: Run the accepted editorial standardization pipeline blindly on one deterministically selected, genuinely new representative from the existing Justice cross-member cohort.
-- Larger-goal alignment: Determine whether shared Justice dossiers, generic member overlays, inference, presentation, and the 37-rule validator generalize without manual editorial repair or member-specific behavior.
+- Larger-goal alignment: Determine whether shared Justice dossiers, generic member overlays, inference, presentation, and the standardized validator generalize without manual editorial repair or member-specific behavior.
 
 ## Outcome
 
@@ -19,7 +19,7 @@
 
 - Codex may decide and execute: Deterministic novelty scoring and tie-breaks; generic artifact wiring; tests; one generalized correction pass only when a candidate-independent defect is proven with positive and negative coverage; commit, push, and draft PR.
 - Explicit approval required for: New civic semantics or schema outside the frozen architecture, production writes, human approval, benchmark promotion, production eligibility, merge, or manual deployment.
-- Frozen: Episode-first hierarchy, action-card structure, four analytical section types, shared-evidence contract, service semantics, compact coverage, three-to-five featured episodes, complete-record/procedural disclosures, 37 rules, and three reference fixtures.
+- Frozen: Episode-first hierarchy, action-card structure, four analytical section types, shared-evidence contract, service semantics, compact coverage, three-to-five featured episodes, complete-record/procedural disclosures, and the three reference fixtures. Validator rules may be strengthened generically to catch the demonstrated synthesis defect.
 
 ## Definition Of Done
 
@@ -64,7 +64,7 @@
 
 - The primary checkout is intentionally dirty with unrelated milestone work, so this branch uses a separate clean worktree.
 - Four non-reference, complete, non-identical cohort vectors were eligible. The lexicographic novelty score selected García's all-Nay vector.
-- The first generated conclusion passed the accepted 37-rule validator but repeated a bounded-sample phrase; this exposed a generalized validator/catalog gap rather than a candidate data gap.
+- The preserved first generated conclusion was structurally valid under the then-current validator but failed editorial utility in bounded smoke review. Its core conclusion was circular: common Nay direction across heterogeneous mechanisms was restated as a cross-mechanism pattern rather than interpreted as a substantive policy theme.
 - All candidate actions, sources, service support, and episode relationships were complete; no new research or analytical category was required.
 
 ## Decisions And Rationale
@@ -72,21 +72,22 @@
 - Interpretation boundary: All generated findings must remain bounded to the reviewed actions and concrete mechanisms; no motive, ideology, character, prediction, recommendation, or unsupported cross-time movement claim is permitted.
 - Blind-order boundary: Candidate selection precedes conclusion generation; rendered inspection follows first validator output; the selected member will not be changed after generation.
 - Deterministic validation establishes contract conformance only. It does not confer human editorial approval or publication authority.
-- The one permitted generalized correction removes duplicate bounded-sample wording for any equivalent future vector and extends existing `DETAIL-001`; the three reference fixtures retain their meaning.
+- The generalized correction separates `uniform_action_direction` from `substantive_repeated_pattern`, adds the `uniform_direction_without_common_policy_rationale` archetype, requires a substantive shared-theme basis for substantive candidates, and extends deterministic synthesis/detail checks. The three reference fixtures retain their meaning.
 
 ## Deviations Or Corrections
 
-- One generalized correction pass: removed duplicate “in this sample” catalog wording, enforced duplicate bounded-sample detection through `DETAIL-001`, and added a negative test. The preserved first generation and validation remain unchanged.
+- The original wording-only correction proved insufficient. The follow-up hardening removes direction-only evidence from substantive repeated-theme eligibility, preserves narrower D.C. and fentanyl patterns, adds `SYNTHESIS-001`, cleans duplicated exact-version context generically, and evaluates all 128 complete Justice Yes/No vectors. The preserved first generation and first validation result remain unchanged historical evidence of the missed defect.
 
 ## Validation Results
 
 - Startup: `origin/main`, local `main`, and required starting commit matched; PR #98 merged.
-- First candidate validation: 37/37 pass, zero findings.
-- Final candidate validation: 37/37 pass, zero findings.
-- Original mutations: 20/20 blocked by expected rule IDs; added duplicate-boundary negative case blocked by `DETAIL-001`.
-- Backend editorial suite: 60 passed. Frontend Node suite: 132 passed.
+- First candidate result: structurally valid under the earlier 37-rule contract, but an editorial-utility failure discovered in bounded smoke review; it is not characterized as a successful editorial validation after this correction.
+- Final candidate validation: 38/38 pass with zero findings.
+- Original mutations: 20/20 remain blocked by expected rule IDs; new circular-synthesis and duplicate-context mutations are also blocked.
+- Full-vector evaluation: all 128 complete Justice Yes/No vectors evaluated; direction-only cross-mechanism candidates win 0 times; distribution is committed in `complete_vector_distribution.json`.
+- Backend editorial suite: 63 passed. Frontend Node suite: 134 passed.
 - Lint: passed with eight pre-existing hook warnings. Build/type validation: passed.
-- Rendered suite: 12 passed, 12 intentionally superseded/opt-in skipped. Desktop/mobile captures inspected with no bounded smoke-review defect.
+- Rendered suite: 12 passed, 12 intentionally superseded/opt-in skipped. Desktop/mobile captures inspected; generic episode labels no longer imply support when the member opposed the action.
 - Generator/validator drift, reference fixtures, shared-evidence identity, member leakage, source integrity, registry isolation, and `git diff --check`: pass.
 - Primary commit: `801eabaa857419d13fd797cb6577b1a457dbb6f2`.
 - Draft PR: `#99`, targeting `main`; required backend and Vercel checks passed.
@@ -111,4 +112,4 @@
 
 - Definition of done satisfied: yes; implementation, local validation, scoped commit/push, draft PR, and hosted preview status are complete.
 - Remaining limitations: deterministic validation does not confer human editorial approval; this is one additional member/vector.
-- Recommended next step: proceed to broader generality validation after draft-PR preview checks.
+- Recommended next step: proceed to broader cross-issue generality validation before any promotion; the full Justice vector space is covered, but another issue ontology should test the same direction-versus-substance boundary.

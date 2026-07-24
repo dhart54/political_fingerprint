@@ -25,11 +25,26 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
                 "rationale": item["rationale"],
             })
 
-    evaluations = [_evaluate_candidate(candidate, evidence) for candidate in candidate_catalog]
+    archetype = next(
+        (item for item in candidate_catalog
+         if item.get("archetype_type") == "uniform_direction_without_common_policy_rationale"),
+        None,
+    )
+    substantive_candidates = [item for item in candidate_catalog if not item.get("archetype_type")]
+    evaluations = [_evaluate_candidate(candidate, evidence, theme_catalog) for candidate in substantive_candidates]
     viable = [item for item in evaluations if item["eligible"]]
     if viable:
         selected = max(viable, key=lambda item: (item["score"], item["specificity"], item["candidate_id"]))
-        candidate = next(item for item in candidate_catalog if item["candidate_id"] == selected["candidate_id"])
+        candidate = next(item for item in substantive_candidates if item["candidate_id"] == selected["candidate_id"])
+    elif archetype and (uniform := _uniform_action_direction(overlay)):
+        candidate = archetype
+        selected = {
+            "score": 0,
+            "specificity": 0,
+            "supporting_themes": [],
+            "conflicting_themes": [],
+            "uniform_action_direction": uniform,
+        }
     else:
         candidate = {
             "candidate_id": "contested-mixed-record", "inference_level": "contested_candidate",
@@ -44,6 +59,8 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
     one_off = []
     for theme_id, rows in evidence.items():
         definition = theme_catalog[theme_id]
+        if definition.get("basis_type") == "action_direction_only":
+            continue
         output = {
             "theme_id": theme_id, "label": definition["label"], "finding": definition["finding"],
             "supporting_episodes": rows,
@@ -61,7 +78,11 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
     supporting_episodes = _episodes_for(evidence, selected_support)
     weakening_episodes = _episodes_for(evidence, selected_conflicts)
     name = _short_name(overlay["member"])
-    primary = f"In this reviewed sample, {name}'s recorded actions indicate {candidate['conclusion']}."
+    uniform = selected.get("uniform_action_direction")
+    if uniform:
+        primary = _uniform_primary(name, uniform, complete, candidate)
+    else:
+        primary = f"In this reviewed sample, {name}'s recorded actions indicate {candidate['conclusion']}."
     limitations = [
         {"episode_id": trajectory["episode_id"], "text": text}
         for trajectory in complete
@@ -80,11 +101,46 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
         "episode_id": item["episode_id"], "mechanism_family": item["mechanism_family"],
         "practical_policy_direction": item["practical_policy_direction"],
     } for item in complete if any(e["theme_id"] in selected_conflicts for e in item["theme_evidence"])]
+    if uniform:
+        eligible_repeated = [
+            item for item in repeated
+            if theme_catalog[item["theme_id"]].get("uniform_repeated_pattern")
+        ]
+        repeated = eligible_repeated
+        repeated_episode_ids = {
+            row["episode_id"]
+            for item in repeated
+            for row in item["supporting_episodes"]
+        }
+        trajectory_episode_ids = {item["episode_id"] for item in trajectories}
+        uniform_order = candidate.get("policy_area_order", [])
+        ordered_complete = sorted(
+            complete,
+            key=lambda item: uniform_order.index(item["episode_id"])
+            if item["episode_id"] in uniform_order else len(complete),
+        )
+        notable = [{
+            "episode_id": item["episode_id"], "mechanism_family": item["mechanism_family"],
+            "practical_policy_direction": item["practical_policy_direction"],
+        } for item in ordered_complete
+            if item["episode_id"] not in repeated_episode_ids | trajectory_episode_ids]
+        supporting_episodes = [{
+            "episode_id": item["episode_id"],
+            "weight": 1,
+            "rationale": f"Recorded {uniform['direction']} action in this complete reviewed episode; direction is descriptive, not a shared policy rationale.",
+        } for item in complete]
     return {
         "schema_version": "editorial_member_inference_v2", "member": deepcopy(overlay["member"]),
         "candidate_id": candidate["candidate_id"], "inference_level": candidate["inference_level"],
-        "evidence_strength_label": candidate["evidence_strength_label"], "primary_conclusion": primary,
-        "assessment": "candidate_weakened" if weakening_episodes else "candidate_supported_by_current_sample",
+        "evidence_strength_label": (
+            ("Uniform opposition" if uniform["direction"] == "Nay" else "Uniform support")
+            + " across the reviewed proposals"
+            if uniform else candidate["evidence_strength_label"]
+        ), "primary_conclusion": primary,
+        "assessment": (
+            "uniform_direction_without_common_policy_rationale"
+            if uniform else "candidate_weakened" if weakening_episodes else "candidate_supported_by_current_sample"
+        ),
         "support_balance": len(supporting_episodes) - len(weakening_episodes),
         "supporting_independent_episodes": supporting_episodes,
         "weakening_independent_episodes": weakening_episodes, "neutral_independent_episodes": [],
@@ -97,10 +153,15 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
         "reviewed_period": overlay["reviewed_period"], "human_review_status": "human_approval_pending",
         "coverage": deepcopy(overlay["coverage"]), "episode_references": [item["episode_id"] for item in complete],
         "candidate_evaluation": evaluations,
+        "candidate_basis": {
+            "basis_type": candidate.get("basis_type", candidate.get("archetype_type", "substantive_repeated_pattern")),
+            "substantive_theme_ids": selected.get("supporting_themes", []),
+            "uniform_action_direction": deepcopy(uniform),
+        },
     }
 
 
-def _evaluate_candidate(candidate: dict, evidence: dict) -> dict:
+def _evaluate_candidate(candidate: dict, evidence: dict, theme_catalog: dict) -> dict:
     supporting = []
     eligible = True
     specificity = 0
@@ -115,8 +176,65 @@ def _evaluate_candidate(candidate: dict, evidence: dict) -> dict:
             supporting.append(rule["theme_id"])
     conflicts = [theme_id for theme_id in candidate.get("conflicting_themes", []) if evidence.get(theme_id)]
     score = sum(len({row["episode_id"] for row in evidence[theme_id]}) for theme_id in supporting) - len(conflicts)
+    substantive_support = [
+        theme_id for theme_id in supporting
+        if theme_catalog[theme_id].get("basis_type", "shared_policy_dimension") != "action_direction_only"
+    ]
+    eligible &= bool(substantive_support)
     return {"candidate_id": candidate["candidate_id"], "eligible": eligible, "score": score,
             "specificity": specificity, "supporting_themes": supporting, "conflicting_themes": conflicts}
+
+
+def _uniform_action_direction(overlay: dict) -> dict | None:
+    actions = [
+        item["action"] for item in overlay.get("roll_actions", [])
+        if item.get("counting") and item.get("action") in {"Yea", "Nay"}
+    ]
+    if not actions:
+        return None
+    direction = max(("Yea", "Nay"), key=actions.count)
+    count = actions.count(direction)
+    if count / len(actions) < .85:
+        return None
+    return {
+        "direction": direction,
+        "count": count,
+        "total": len(actions),
+        "uniform": count == len(actions),
+    }
+
+
+def _uniform_primary(name: str, uniform: dict, complete: list[dict], candidate: dict) -> str:
+    direction = uniform["direction"]
+    count_label = {7: "seven"}.get(uniform["total"], str(uniform["total"]))
+    count_phrase = (
+        f"all {count_label}" if uniform["uniform"]
+        else f"{uniform['count']} of {uniform['total']}"
+    )
+    action_phrase = "against" if direction == "Nay" else "for"
+    direction_word = "oppositional" if direction == "Nay" else "supportive"
+    areas = candidate.get("policy_area_phrases", {})
+    concrete = []
+    ordered = sorted(
+        complete,
+        key=lambda item: candidate.get("policy_area_order", []).index(item["episode_id"])
+        if item["episode_id"] in candidate.get("policy_area_order", []) else len(complete),
+    )
+    for item in ordered:
+        phrase = areas.get(item["episode_id"], item["mechanism_family"])
+        prefix = "all three actions in " if len(item.get("rolls", [])) == 3 else ""
+        concrete.append(f"{prefix}{phrase}")
+    if len(concrete) > 1:
+        concrete_text = ", ".join(concrete[:-1]) + f", and {concrete[-1]}"
+    else:
+        concrete_text = concrete[0]
+    philosophy = candidate.get("philosophy_label", "policy philosophy")
+    return (
+        f"Across the reviewed record, {name} voted {action_phrase} {count_phrase} substantive proposals examined here. "
+        f"That included {concrete_text}. "
+        f"The vote direction is consistently {direction_word}, but the proposals span different—and sometimes "
+        f"substantively contrasting—policy approaches, so this record does not establish one overarching {philosophy}."
+    )
 
 
 def _episodes_for(evidence: dict, themes: set[str]) -> list[dict]:
@@ -150,4 +268,9 @@ def _insufficient(overlay: dict, complete_count: int) -> dict:
         "future_expansion_rule": "Recompute when additional complete episode actions are available.",
         "reviewed_period": overlay["reviewed_period"], "human_review_status": "human_approval_pending",
         "coverage": deepcopy(overlay["coverage"]), "episode_references": [], "candidate_evaluation": [],
+        "candidate_basis": {
+            "basis_type": "insufficient_evidence",
+            "substantive_theme_ids": [],
+            "uniform_action_direction": None,
+        },
     }

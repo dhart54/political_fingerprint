@@ -76,8 +76,14 @@ test("public model preserves coverage, episode grouping, receipts, and secondary
   }
 });
 
-test("the correction removes duplicate sample wording without changing reference fixture membership", () => {
-  assert.equal((candidate.synthesis.primary.match(/\b(?:reviewed )?sample\b/gi) || []).length, 1);
+test("the correction uses the uniform-direction archetype without changing reference fixture membership", () => {
+  assert.equal(blindEditorialPipelineValidationData.inference.candidate_id, "uniform_direction_without_common_policy_rationale");
+  assert.equal(candidate.synthesis.evidenceBreadth, "Uniform opposition across the reviewed proposals");
+  assert.match(candidate.synthesis.primary, /does not establish one overarching public-safety philosophy/);
+  assert.deepEqual(
+    candidate.synthesis.analyticalSections.repeatedPatterns.map((item) => item.text),
+    ["Opposed both reviewed D.C. policing policy proposals."],
+  );
   assert.equal(editorialReferenceFixtures.length, 3);
   assert.deepEqual(
     editorialReferenceFixtures.map((item) => item.id),

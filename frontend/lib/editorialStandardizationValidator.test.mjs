@@ -113,6 +113,56 @@ test("a duplicated bounded-sample phrase is blocked as deterministic duplicate d
   assert.equal(report.findings.some((finding) => finding.ruleId === "DETAIL-001"), true);
 });
 
+test("direction-only and circular synthesis mutations are blocked generically", () => {
+  const mutations = [
+    ({ candidate }) => {
+      candidate.source.inference_candidate.candidate_basis = {
+        basis_type: "substantive_repeated_pattern",
+        substantive_theme_ids: ["cross-mechanism-opposition"],
+      };
+    },
+    ({ candidate }) => {
+      candidate.synthesis.primary = "The member opposed different proposals across several policy mechanisms.";
+    },
+    ({ candidate }) => {
+      candidate.synthesis.analyticalSections.repeatedPatterns = [{
+        text: "Nay on reviewed actions across multiple mechanisms.",
+      }];
+    },
+    ({ candidate, experience }) => {
+      for (const action of experience.episodes.flatMap((episode) => episode.actions)) {
+        if (action.inclusionClass === "substantive") action.actionStatus = "nay";
+      }
+      candidate.synthesis.primary = "The record establishes a coherent public-safety philosophy.";
+    },
+  ];
+  for (const mutate of mutations) {
+    const value = {
+      candidate: structuredClone(fousheeJustice.candidate),
+      experience: structuredClone(fousheeJustice.experience),
+    };
+    mutate(value);
+    const report = validateEditorialStandardization(value);
+    assert.equal(report.state, "blocked", JSON.stringify(report.findings));
+    assert.equal(report.findings.some((finding) => finding.ruleId === "SYNTHESIS-001"), true);
+  }
+});
+
+test("detail validation catches semantic qualifier repetition and redundant vote-motive disclaimers", () => {
+  for (const context of [
+    "The substitute included exceptions; it was not an unconditional pursuit mandate.",
+    "A Nay does not reveal which objection drove the vote.",
+  ]) {
+    const candidate = structuredClone(massieJustice.candidate);
+    const experience = structuredClone(massieJustice.experience);
+    const action = experience.episodes.find((episode) => episode.id === "dc-police-pursuit-rules").actions[0];
+    action.importantContext.push(context);
+    const report = validateEditorialStandardization({ candidate, experience });
+    assert.equal(report.state, "blocked");
+    assert.equal(report.findings.some((finding) => finding.ruleId === "DETAIL-001"), true);
+  }
+});
+
 function mutation(name, expectedRule, source, mutate) {
   const value = { name, expectedRule, candidate: structuredClone(source.candidate), experience: structuredClone(source.experience), options: {} };
   mutate(value);
