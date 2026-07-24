@@ -5,6 +5,7 @@
 - Starting `origin/main`: `98029d77ad43f7e877eb545b25d9b6878e71cb1a`.
 - Branch: `codex/documentation-governance-cleanup-v1`.
 - Final branch head: reported by Git and the draft PR after commit creation; a commit cannot contain its own hash.
+- Delivery: initial milestone commit `0cd6f733b70328374acf41c85c56badbdd8ea1fd`; draft PR #103.
 - Root was clean and exactly matched fetched `origin/main` before branch creation.
 - Recovery package, recovery branch `codex/recovery-root-20260724-38ad159`, named preservation stash, and detached validation worktree were present.
 - All registered child worktrees were outside the repository root.
@@ -176,4 +177,4 @@ It introduces no dependency or generated documentation framework.
 | Worktree integrity | all seven registered paths exist; zero registered child worktrees beneath root |
 | `git diff --check` | passed |
 
-Final branch status and name-status are rerun after staging. Application builds were intentionally omitted because application behavior did not change.
+Final branch status and name-status were clean after the initial milestone commit and are rerun after this delivery reconciliation. Application builds were intentionally omitted because application behavior did not change.

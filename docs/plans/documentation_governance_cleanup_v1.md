@@ -107,6 +107,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: Yes for implementation and local validation; scoped commit, push, and draft PR remain.
+- Definition of done satisfied: Yes. Implementation, validation, scoped commit `0cd6f73`, branch push, and draft PR #103 are complete.
 - Remaining limitations: Four plans still need human terminal-status reconciliation; one completed plan cannot move while code pins its path; legacy technical/product authority decisions remain deliberately unresolved.
-- Recommended next step: Commit and open the authorized draft PR, then make the exact human decisions listed in the review packet before any legacy consolidation.
+- Recommended next step: Review draft PR #103, then make the exact human decisions listed in the review packet before any legacy consolidation.
