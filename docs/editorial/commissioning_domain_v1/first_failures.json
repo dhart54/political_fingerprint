@@ -1,0 +1,44 @@
+{
+  "failures": [
+    {
+      "classification": "shared-corpus defect",
+      "correction": "Added source-grounded Division A, Divisions B-C, and final-passage stage identities in shared dossiers.",
+      "failure_id": "COMM-V1-001",
+      "first_candidate": "All H.R. 6938 rows used the same package title and were indistinguishable.",
+      "first_validator_result": "human_exception_required: opaque stages could be duplicated or counted as independent episodes.",
+      "owning_layer": "action identity",
+      "preserved": true,
+      "regression_proof": [
+        "opaque_action_titles mutation",
+        "reordered_actions_episodes mutation"
+      ]
+    },
+    {
+      "classification": "novel meaning",
+      "correction": "Grouped each source-grounded policy family as one episode while preserving mechanism differences.",
+      "failure_id": "COMM-V1-002",
+      "first_candidate": "Treat each separate critical-mineral and home-energy bill as an independent episode.",
+      "first_validator_result": "human_exception_required: related proposals could overstate independent evidence.",
+      "owning_layer": "episode relationship",
+      "preserved": true,
+      "regression_proof": [
+        "incompatible_episode_assignment mutation",
+        "unresolved_trait_relationship mutation"
+      ]
+    },
+    {
+      "classification": "generalized pipeline defect",
+      "correction": "Mapped every edge to the established immutable relationship vocabulary without changing schema 0016.",
+      "failure_id": "COMM-V1-003",
+      "first_candidate": "The first batch used readable relationship labels such as contains_episode and has_overlay.",
+      "first_validator_result": "blocked: migration 0016 rejected the first relationship insert and rolled back the disposable transaction.",
+      "owning_layer": "persistence relationship graph",
+      "preserved": true,
+      "regression_proof": [
+        "disposable PostgreSQL constraint proof",
+        "orphan relationship mutation"
+      ]
+    }
+  ],
+  "schema_version": "commissioning_domain_first_failures_v1"
+}

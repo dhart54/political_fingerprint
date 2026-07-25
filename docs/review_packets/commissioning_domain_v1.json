@@ -1,0 +1,114 @@
+{
+  "schema_version": "commissioning_domain_v1_review_packet",
+  "status": "commissioned_pending_human_review",
+  "git": {
+    "starting_commit": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
+    "final_commit": "draft_pr_head_is_authoritative_self_hash_cannot_be_embedded",
+    "branch": "codex/commissioning-domain-v1"
+  },
+  "domain": {
+    "selected": "ENVIRONMENT_ENERGY",
+    "score": 91,
+    "selection_formula": "30% source completeness + 20% episode richness + 15% action diversity + 15% member-vector diversity + 10% bounded scope + 10% inverse unresolved evidence",
+    "accepted_actions": 8,
+    "rejected_actions": 10,
+    "episodes": 4,
+    "mechanism_families": 4,
+    "official_sources": 15,
+    "supported_claims": 66,
+    "supported_absences": 6,
+    "source_conflicts": 0,
+    "corpus_semantic_sha256": "da334c1ef783d7cb78ad7187f8fdab7d0df412747af099d3afebee72a6672eaf"
+  },
+  "rejected_domains": {
+    "NATIONAL_SECURITY_FOREIGN": {"score": 72, "reason": "NDAA concentration and repeated War Powers mechanism"},
+    "EDUCATION_WORKFORCE": {"score": 70, "reason": "no defensible multi-action episode"},
+    "HEALTH_SOCIAL": {"score": 61, "reason": "only four direct substantive actions"},
+    "IMMIGRATION_BORDER": {"score": 48, "reason": "below six-action minimum"},
+    "INFRASTRUCTURE_TECH_TRANSPORT": {"score": 32, "reason": "below six-action minimum"}
+  },
+  "ontology": {
+    "new_trait_types": 0,
+    "new_trait_values": [
+      "package_stage_retention",
+      "combined_divisions",
+      "accelerates_domestic_mineral_projects",
+      "constrains_efficiency_rulemaking",
+      "repeals_home_energy_programs",
+      "limits_land_manager_authority"
+    ],
+    "candidate_relationship_types": ["separate_proposals_in_one_policy_family"],
+    "review_route": "human_exception_required"
+  },
+  "cohort": {
+    "method": "most frequent complete vector; greedy maximum-minimum Hamming distance; lowest-coverage edge; same-vector cross-party invariance pair; Bioguide tie-break",
+    "all_house_members": 432,
+    "complete_yes_no_members": 369,
+    "unique_observed_vectors": 42,
+    "selected_members": ["A000371", "C001059", "C001063", "F000466", "H001095", "J000288", "M001177", "M001214"]
+  },
+  "generality": {
+    "actual_members": {
+      "evaluated": 432,
+      "routes": {"standard_generation_pass": 1, "sampled_audit_candidate": 193, "human_exception_required": 238, "blocked": 0},
+      "archetypes": {"bounded_episode_trajectories": 219, "uniform_direction_without_common_policy_throughline": 204, "limited_or_contested_evidence": 8, "policy_mechanism_divide": 1}
+    },
+    "binary_vectors": {
+      "evaluated": 256,
+      "routes": {"standard_generation_pass": 32, "sampled_audit_candidate": 18, "human_exception_required": 206, "blocked": 0}
+    },
+    "mutations": {"total": 17, "passed": 17, "failed": 0},
+    "identity_invariance_failures": 0,
+    "party_invariance_failures": 0,
+    "direction_only_winners": 0,
+    "specific_prose_branches": 0
+  },
+  "failures": [
+    {"id": "COMM-V1-001", "layer": "action identity", "correction": "exact shared H.R. 6938 stage identities"},
+    {"id": "COMM-V1-002", "layer": "episode relationship", "correction": "source-grounded related-proposal episode grouping"},
+    {"id": "COMM-V1-003", "layer": "persistence relationship graph", "correction": "migration-0016 relationship vocabulary"}
+  ],
+  "persistence": {
+    "batch_key": "commissioning-domain-v1-environment-energy",
+    "artifacts": 74,
+    "relationships": 68,
+    "manifest_sha256": "5821e12ca1e5666ed6ff39b1a9a2402a9f61e067d56dcd69a1870b5a64333c38",
+    "artifact_semantic_sha256": "ab9f580a6a55eafb7848bbb412788202558e78a05cc7b6771714e5a25b0e977d",
+    "relationship_semantic_sha256": "feb267bc4cf3e9dbc47b37c816bd59ddbc31e97fe7908244d6005055edc69cf7",
+    "disposable_proof": "pass",
+    "production_inserted": {"artifacts": 74, "relationships": 68},
+    "production_second_apply_inserted": {"artifacts": 0, "relationships": 0},
+    "original_seed": {"artifacts": 71, "relationships": 95, "unchanged": true},
+    "total_pending_presentations": 12,
+    "publication_registry_rows": 0,
+    "publication_selector_rows": 0,
+    "canonical_fingerprints_unchanged": true
+  },
+  "frontend": {
+    "production_registry": "Object.freeze([])",
+    "public_database_route_added": false,
+    "domain_specific_render_branch_added": false,
+    "render_cases": ["consistent_or_near_consistent", "selective_or_divided", "coverage_edge", "human_exception"],
+    "render_result": "pass"
+  },
+  "validation": {
+    "commissioning_backend_tests": "8 passed",
+    "focused_backend_regressions": "91 passed, 1 known Windows byte-pin deselected",
+    "broad_backend_observation": "743 passed, 9 skipped, 8 pre-existing environment/CRLF failures classified and independently checked",
+    "fixture_api_regressions": "11 passed",
+    "frontend_unit_tests": "140 passed",
+    "golden_render": "13 passed, 12 intentionally skipped",
+    "lint": "pass with 8 pre-existing warnings",
+    "build": "pass",
+    "documentation_governance": "pass",
+    "diff_check": "pass"
+  },
+  "human_decisions_required": [
+    "new shared trait values and relationship type",
+    "per-field source and editorial review",
+    "member proposition and presentation review",
+    "separate benchmark promotion decision",
+    "separate production eligibility and publication decision"
+  ],
+  "recommendation": "ready_for_controlled_multi_domain_batch_expansion_after_shared_human_review; not_ready_for_broad_publication"
+}

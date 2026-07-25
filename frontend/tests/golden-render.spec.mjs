@@ -506,6 +506,52 @@ test("pending editorial slice uses the basic representative fallback in producti
   await expect(fixture.getByRole("button", { name: "Show all reviewed votes" })).toBeVisible();
 });
 
+test("commissioning domain renders four bounded review cases through the generic issue experience", async ({ page }) => {
+  const cases = [
+    ["J000288", "consistent-or-near-consistent"],
+    ["C001063", "selective-or-divided"],
+    ["H001095", "coverage-edge"],
+    ["A000371", "human-exception"],
+  ];
+  const outputDirectory = path.resolve(
+    process.cwd(),
+    "..",
+    "docs",
+    "editorial",
+    "commissioning_domain_v1",
+    "renders",
+  );
+  const capture = process.env.CAPTURE_COMMISSIONING_DOMAIN_SCREENSHOTS === "1";
+  if (capture) {
+    await mkdir(outputDirectory, { recursive: true });
+  }
+
+  for (const [memberId, label] of cases) {
+    await page.goto(`/golden-render-fixture#commissioning-domain-${memberId}`);
+    const fixture = page.getByTestId(`commissioning-domain-${memberId}`);
+    const slice = fixture.getByTestId("editorial-issue-experience");
+    await expect(fixture).toContainText("Commissioning domain");
+    await expect(fixture).toContainText("Environment & Energy");
+    await expect(slice.getByTestId("editorial-coverage-line")).toBeVisible();
+    await expect(slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(4);
+    await page.evaluate(() => window.scrollTo({ left: 0, top: window.scrollY }));
+    expect(await page.evaluate(() => window.scrollX)).toBe(0);
+    if (capture) {
+      await fixture.screenshot({ path: path.join(outputDirectory, `${label}-${memberId}.png`) });
+    }
+    const complete = slice.getByTestId("complete-reviewed-record");
+    await complete.locator(":scope > summary").click();
+    await expect(complete.locator("details[data-testid^='editorial-record-roll-']")).toHaveCount(8);
+    await complete.locator("details[data-episode-id]").first().locator(":scope > summary").click();
+    const firstReceipt = complete.locator("details[data-testid^='editorial-record-roll-']").first();
+    await firstReceipt.locator(":scope > summary").click();
+    await firstReceipt.getByText("Arguments, context, and official sources", { exact: true }).click();
+    await firstReceipt.getByText(/Official sources \(\d+\)/).click();
+    await expect(firstReceipt.getByRole("link")).not.toHaveCount(0);
+    await assertNoHorizontalOverflow(page);
+  }
+});
+
 test.skip("superseded synthetic flat-card contract", async ({ page }) => {
   await page.goto("/golden-render-fixture#synthetic-editorial-fixture");
 
