@@ -1,4 +1,6 @@
-import { commissioningDomainReviewData } from "./commissioningDomainReviewData.mjs";
+import {
+  commissioningDomainCorrectedReviewData as commissioningDomainReviewData,
+} from "./commissioningDomainCorrectedReviewData.mjs";
 
 const sourceById = new Map(commissioningDomainReviewData.sources.map((source) => [source.source_id, source]));
 const actionByRoll = new Map(commissioningDomainReviewData.actions.map((action) => [Number(action.roll), action]));
@@ -165,7 +167,7 @@ function episodePresentation() {
         title: humanize(episode.episode_id),
         practicalQuestion: episode.shared_objective,
         mechanismFamily: humanize(episode.mechanism_family),
-        policyFamilyId: "environment-energy-commissioning-v1",
+        policyFamilyId: "environment-energy-commissioning-v1-corrected",
         conclusionRelevance: episode.route === "human_exception_required"
           ? "Shared relationship awaiting human review"
           : "Reviewed episode",

@@ -1,0 +1,35 @@
+{
+  "schema_version": "commissioning_domain_v1_production_correction_v1",
+  "status": "prepared_disposable_tested_not_executed",
+  "migration_sha256": "b4fffce458ebda4b09ce92cd1998468c4d18bad2450e43e9567776340337a9f7",
+  "source_commit": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
+  "current_production": {
+    "batch_key": "commissioning-domain-v1-environment-energy",
+    "actions": 8,
+    "artifacts": 74,
+    "relationships": 68,
+    "manifest_sha256": "5821e12ca1e5666ed6ff39b1a9a2402a9f61e067d56dcd69a1870b5a64333c38",
+    "artifact_semantic_sha256": "ab9f580a6a55eafb7848bbb412788202558e78a05cc7b6771714e5a25b0e977d",
+    "relationship_semantic_sha256": "feb267bc4cf3e9dbc47b37c816bd59ddbc31e97fe7908244d6005055edc69cf7"
+  },
+  "proposed_corrected": {
+    "batch_key": "commissioning-domain-v1-environment-energy-corrected",
+    "actions": 7,
+    "artifacts": 66,
+    "relationships": 60,
+    "manifest_sha256": "dea1b8c7a0071462a5eb91f24d22287dc156fda9edcfa71a2abf6e570c2459c5",
+    "artifact_semantic_sha256": "ac393b0fe4fd3d06186cfa4637d10f25357c4f3893c2d54cc8c42b7ec23af45e",
+    "relationship_semantic_sha256": "d42f22e8bfd3c635b6153cd1235aaa2be1bf1e65c93b91ea52adb8522f322628"
+  },
+  "production_operations_executed": {
+    "original_rollback": false,
+    "corrected_apply": false
+  },
+  "invariants": {
+    "original_seed": {"artifacts": 71, "relationships": 95},
+    "publication_registry_rows": 0,
+    "publication_selector_rows": 0,
+    "schema_migration": "0016",
+    "canonical_tables_unchanged": true
+  }
+}

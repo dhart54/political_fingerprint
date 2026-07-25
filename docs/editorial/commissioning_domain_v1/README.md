@@ -23,3 +23,16 @@ The human-readable and machine-readable milestone receipts are:
 - `docs/review_packets/commissioning_domain_v1_persistence.json`
 
 Nothing in this directory grants editorial approval, benchmark status, production eligibility, or public publication.
+
+## Eligibility and routing correction
+
+Human inspection later identified `COMM-V1-004`: roll 5's exact Division A
+retention action is not materially Environment & Energy, and unresolved shared
+meaning was being propagated into member-level human-exception routes.
+
+The original files in this directory remain unchanged historical evidence,
+including the eight-action freeze, evaluations, and exact 74/68 production
+batch. The distinct corrected seven-action corpus is under `corrected/`. Its
+batch is prepared and disposable-tested only. The original production batch
+has not been rolled back, and the corrected batch has not been applied to
+production.

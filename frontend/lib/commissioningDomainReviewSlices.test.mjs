@@ -12,7 +12,7 @@ import {
 } from "./editorialIssueExperience.mjs";
 
 test("commissioning slices remain review-only and render through the generic selector", () => {
-  assert.equal(commissioningDomainReviewSlices.length, 8);
+  assert.equal(commissioningDomainReviewSlices.length, 7);
   assert.equal(commissioningDomainRenderProfiles.length, 4);
 
   for (const profile of commissioningDomainRenderProfiles) {
@@ -26,7 +26,7 @@ test("commissioning slices remain review-only and render through the generic sel
     });
     assert.ok(selected);
     assert.equal(selected.episodes.length, 4);
-    assert.equal(selected.records.length, 8);
+    assert.equal(selected.records.length, 7);
     assert.equal(selected.reviewContext.isReview, true);
     assert.ok(selected.records.every((record) => record.sources.length >= 2));
 
@@ -36,6 +36,21 @@ test("commissioning slices remain review-only and render through the generic sel
       evidenceRows,
       legislator: profile.legislator,
     }), null);
+  }
+});
+
+test("corrected review fixtures exclude roll 5 and retain shared dependencies separately", () => {
+  for (const candidate of commissioningDomainReviewSlices) {
+    assert.equal(candidate.source.interpretations.some((item) => item.roll === 5), false);
+    assert.equal(candidate.source.slice_counts.substantive_rolls, 7);
+    assert.ok(
+      candidate.source.inference_candidate.shared_review_dependencies
+        .publication_blocked_until_resolved,
+    );
+    assert.notEqual(
+      candidate.source.inference_candidate.shared_review_dependencies.dependency_ids.length,
+      0,
+    );
   }
 });
 

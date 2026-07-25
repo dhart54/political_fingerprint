@@ -19,7 +19,13 @@ from app.editorial_artifacts.bundle import build_seed_bundle
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--database-url-env", default="EDITORIAL_DISPOSABLE_DATABASE_URL")
-    parser.add_argument("--additional-manifest", type=Path)
+    parser.add_argument(
+        "--additional-manifest",
+        type=Path,
+        action="append",
+        default=[],
+        help="Manifest used only to seed canonical identities; may be repeated.",
+    )
     args = parser.parse_args()
     db_url = os.getenv(args.database_url_env)
     if not db_url or "localhost" not in db_url and "127.0.0.1" not in db_url:
@@ -28,8 +34,10 @@ def main() -> int:
     import psycopg
 
     bundles = [build_seed_bundle()]
-    if args.additional_manifest:
-        bundles.append(json.loads(args.additional_manifest.read_text(encoding="utf-8")))
+    bundles.extend(
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in args.additional_manifest
+    )
     members = {
         item["member_bioguide_id"]
         for bundle in bundles

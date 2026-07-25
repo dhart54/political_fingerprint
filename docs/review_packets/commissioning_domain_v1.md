@@ -116,3 +116,92 @@ The two byte-pin failures are Windows line-ending normalization issues, not sema
 The corpus is a bounded eight-action commissioning sample, not a complete account of any member's environmental record. Three actions are stages of one cross-domain appropriations package; related-bill episode judgments remain pending human review; six argument states are intentionally absent; and observed 2026 votes do not establish motive, ideology, or future behavior.
 
 Recommendation: the pipeline is operationally ready for a controlled multi-domain batch expansion after the shared ontology/relationship decisions and editorial route calibration above are reviewed. It is not ready for broad House publication, automatic benchmark promotion, or public database selection.
+
+## Correction V1 addendum
+
+Human inspection after the original staging found `COMM-V1-004`. Roll 5 had
+entered Environment & Energy from package context even though the exact
+Division A retention action concerned Commerce, Justice, Science, and related
+agencies. The same inspection found that unresolved shared traits and episode
+relationships were being amplified into member-level human exceptions.
+
+The original result above remains the historical first run. Its accepted action,
+freeze, 432-member/256-vector evaluations, 74/68 manifest, hashes, production
+state, and original validator behavior were not overwritten. The first run did
+not catch this defect automatically.
+
+### Corrected corpus
+
+- Accepted rolls: 6, 7, 55, 64, 76, 78, and 93.
+- Rejected roll 5 reason:
+  `exact_action_not_materially_environment_energy`.
+- Corpus: 7 substantive actions, 4 episodes, 14 official sources, 59 supported
+  claims, and 4 supported absences.
+- Corrected freeze:
+  `d66a9dc053ed04ae6ae4a2e86f15d0b01772a09b812e532b8996c8e1b8e819b9`.
+- Roll 6 remains bounded to the combined Divisions B-C retention action.
+- Roll 7 remains a cross-domain final-passage action whose Environment & Energy
+  meaning is limited to Divisions B-C and whose stage stays within the same
+  appropriations episode.
+
+The generic eligibility contract evaluates exact action content independently
+from a parent package, other divisions, earlier/later stages, titles, and
+measure-wide subjects. Context cannot rescue a domain-ineligible exact action.
+
+### Corrected cohort and routing
+
+The rerun evaluated all 432 members, including 372 complete Yes/No records and
+35 unique observed vectors. The deterministic seven-member cohort is A000372,
+J000288, C001059, M001231, F000466, H001095, and M001214.
+
+Actual member routes are:
+
+- 173 `standard_generation_pass`;
+- 199 `sampled_audit_candidate`;
+- 60 `human_exception_required`;
+- 0 `blocked`.
+
+All 128 binary vectors were evaluated: 112 standard and 16 sampled audit. No
+binary vector required a member exception. The corrected mutation suite
+preserves all 17 original cases and adds nine eligibility/routing cases, for
+26/26 passing. Identity, party, direction-only, and member/domain/title/roll/
+exact-vector branch failures remain zero.
+
+There are eight de-duplicated shared decisions: six trait values, the
+`separate_proposals_in_one_policy_family` relationship, and the roll 7
+cross-domain action boundary. They remain shared
+`human_exception_required` decisions and prevent approval/publication, but do
+not change a member route. Incomplete member evidence still routes to human
+exception.
+
+### Corrected persistence and disposable proof
+
+- Batch:
+  `commissioning-domain-v1-environment-energy-corrected`.
+- Artifacts/relationships: 66/60.
+- Manifest:
+  `dea1b8c7a0071462a5eb91f24d22287dc156fda9edcfa71a2abf6e570c2459c5`.
+- Artifact semantic hash:
+  `ac393b0fe4fd3d06186cfa4637d10f25357c4f3893c2d54cc8c42b7ec23af45e`.
+- Relationship semantic hash:
+  `d42f22e8bfd3c635b6153cd1235aaa2be1bf1e65c93b91ea52adb8522f322628`.
+
+Disposable PostgreSQL mirrored the 71/95 seed plus original 74/68 batch,
+rolled back only the original batch, confirmed the seed remained exact, applied
+the corrected 66/60 batch, proved semantic export equality and 0/0 idempotency,
+rejected conflicts, orphans, and pending publication, preserved RLS/privileges,
+rolled back the corrected batch exactly, and reapplied it with matching hashes.
+Two seed-builder byte-pin tests retain their pre-existing Windows CRLF mismatch;
+the checked reviewed-seed importer and corrected exact-hash path passed.
+
+The review-only frontend now renders the corrected seven-action fixtures through
+the existing generic adapter. It contains no roll 5 receipt. The production
+registry remains empty.
+
+The exact prepared production operations are in
+`commissioning_domain_v1_production_correction.md`. Neither the original
+production rollback nor the corrected production apply was executed.
+
+Additional human decisions are required for rolls 6 and 7, the six traits, the
+candidate relationship, corrected member presentations, explicit production
+rollback/reapplication authorization, benchmark promotion, and publication.

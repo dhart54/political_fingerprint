@@ -509,9 +509,9 @@ test("pending editorial slice uses the basic representative fallback in producti
 test("commissioning domain renders four bounded review cases through the generic issue experience", async ({ page }) => {
   const cases = [
     ["J000288", "consistent-or-near-consistent"],
-    ["C001063", "selective-or-divided"],
+    ["C001059", "selective-or-divided"],
     ["H001095", "coverage-edge"],
-    ["A000371", "human-exception"],
+    ["M001231", "shared-dependency"],
   ];
   const outputDirectory = path.resolve(
     process.cwd(),
@@ -519,6 +519,7 @@ test("commissioning domain renders four bounded review cases through the generic
     "docs",
     "editorial",
     "commissioning_domain_v1",
+    "corrected",
     "renders",
   );
   const capture = process.env.CAPTURE_COMMISSIONING_DOMAIN_SCREENSHOTS === "1";
@@ -541,7 +542,8 @@ test("commissioning domain renders four bounded review cases through the generic
     }
     const complete = slice.getByTestId("complete-reviewed-record");
     await complete.locator(":scope > summary").click();
-    await expect(complete.locator("details[data-testid^='editorial-record-roll-']")).toHaveCount(8);
+    await expect(complete.locator("details[data-testid^='editorial-record-roll-']")).toHaveCount(7);
+    await expect(complete.getByTestId("editorial-record-roll-5")).toHaveCount(0);
     await complete.locator("details[data-episode-id]").first().locator(":scope > summary").click();
     const firstReceipt = complete.locator("details[data-testid^='editorial-record-roll-']").first();
     await firstReceipt.locator(":scope > summary").click();

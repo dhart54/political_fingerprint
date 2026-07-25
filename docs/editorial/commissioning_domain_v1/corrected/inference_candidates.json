@@ -1,0 +1,2167 @@
+{
+  "candidates": [
+    {
+      "assessment": "uniform_direction_without_common_policy_rationale",
+      "candidate_basis": {
+        "basis_type": "uniform_action_direction",
+        "substantive_theme_ids": [],
+        "uniform_action_direction": {
+          "count": 7,
+          "direction": "Yea",
+          "total": 7,
+          "uniform": true
+        }
+      },
+      "candidate_evaluation": [
+        {
+          "candidate_id": "resource-home-energy-divide",
+          "conflicting_themes": [],
+          "eligible": false,
+          "score": 1,
+          "specificity": 4,
+          "supporting_themes": [
+            "resource_supply_support"
+          ]
+        },
+        {
+          "candidate_id": "resource-home-energy-opposite-divide",
+          "conflicting_themes": [],
+          "eligible": false,
+          "score": 1,
+          "specificity": 4,
+          "supporting_themes": [
+            "home_energy_change_support"
+          ]
+        }
+      ],
+      "candidate_id": "uniform-direction-without-common-rationale",
+      "compression_report": {
+        "boundary_count": 1,
+        "clustered_episode_proportion": 0.5,
+        "conclusion_archetype": "uniform_direction_without_common_policy_throughline",
+        "duplicated_analytical_propositions": [],
+        "individually_named_episode_count": 0,
+        "policy_cluster_count": 2,
+        "public_word_count": 47,
+        "sentence_roles": [
+          "thesis",
+          "contrast",
+          "boundary"
+        ],
+        "source_episode_count": 4,
+        "validation_outcome": "pass"
+      },
+      "conclusion_model": {
+        "action_direction": {
+          "classification": "uniform_yea",
+          "count": 7,
+          "direction": "Yea",
+          "total": 7,
+          "uniform": true
+        },
+        "archetype": "uniform_direction_without_common_policy_throughline",
+        "boundary_proposition": {
+          "policy_domain_label": "environment-and-energy",
+          "public_text": "",
+          "role": "boundary"
+        },
+        "compression_report": {
+          "boundary_count": 1,
+          "clustered_episode_proportion": 0.5,
+          "conclusion_archetype": "uniform_direction_without_common_policy_throughline",
+          "duplicated_analytical_propositions": [],
+          "individually_named_episode_count": 0,
+          "policy_cluster_count": 2,
+          "public_word_count": 47,
+          "sentence_roles": [
+            "thesis",
+            "contrast",
+            "boundary"
+          ],
+          "source_episode_count": 4,
+          "validation_outcome": "pass"
+        },
+        "contrast_proposition": {
+          "basis": "resource-supply coordination and project direction differ from constraints or repeal affecting standards and household programs",
+          "left": {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          "relationship": "contrasts",
+          "right": {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          },
+          "role": "contrast"
+        },
+        "evidence_episode_ids": [
+          "critical-mineral-supply-and-domestic-production",
+          "home-energy-standards-and-incentives"
+        ],
+        "exception_proposition": null,
+        "omitted_episode_ids": [
+          "fy2026-energy-water-interior-appropriations",
+          "lead-ammunition-and-tackle-on-federal-lands"
+        ],
+        "public_conclusion": "Across the reviewed record, Allen voted Yea on every substantive proposal. That support extended both to the two reviewed domestic resource-supply proposals and to the two reviewed changes to federal home-energy standards or programs, so the uniform vote direction does not reveal one consistent environment-and-energy policy throughline.",
+        "reader_label_concept": "Uniform direction without a common policy throughline",
+        "review_route": "sampled_audit_candidate",
+        "schema_version": "editorial_conclusion_propositions_v1",
+        "supporting_policy_clusters": [
+          {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          }
+        ],
+        "thesis_proposition": {
+          "claim_type": "uniform_direction_without_common_policy_throughline",
+          "policy_dimension_present": true,
+          "role": "thesis",
+          "theme_ids": []
+        },
+        "trajectory_proposition": null
+      },
+      "contrary_or_limiting_evidence": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        }
+      ],
+      "coverage": {
+        "expected_in_service_actions": 7,
+        "independent_episodes_complete": 4,
+        "independent_episodes_expected": 4,
+        "independent_episodes_missing": 0,
+        "independent_episodes_outside_service": 0,
+        "independent_episodes_partial": 0,
+        "missing_actions": 0,
+        "no_longer_serving_actions": 0,
+        "not_voting_actions": 0,
+        "not_yet_serving_actions": 0,
+        "present_actions": 0,
+        "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
+        "substantive_yes_no_actions": 7
+      },
+      "episode_references": [
+        "fy2026-energy-water-interior-appropriations",
+        "critical-mineral-supply-and-domestic-production",
+        "home-energy-standards-and-incentives",
+        "lead-ammunition-and-tackle-on-federal-lands"
+      ],
+      "evidence_strength_label": "Uniform support across the reviewed proposals",
+      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
+      "human_review_status": "human_approval_pending",
+      "independent_episode_count": 4,
+      "inference_level": "bounded_descriptive_pattern",
+      "member": {
+        "bioguide_id": "A000372",
+        "display_name": "Allen",
+        "party": "R",
+        "state": "GA"
+      },
+      "member_specific_findings": [],
+      "neutral_independent_episodes": [],
+      "notable_one_off_choices": [
+        {
+          "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+          "mechanism_family": "federal-land-regulatory-constraint",
+          "practical_policy_direction": "Supported the reviewed limit on lead-ammunition and tackle regulation on covered federal lands."
+        }
+      ],
+      "one_off_or_unproven_themes": [
+        {
+          "editorially_defensible": false,
+          "finding": "Supported the complete reviewed appropriations trajectory.",
+          "label": "Environment and energy appropriations",
+          "mechanism_families": [
+            "annual_discretionary_appropriations"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "mechanism_family": "annual_discretionary_appropriations",
+              "rationale": "Supported the complete reviewed appropriations trajectory."
+            }
+          ],
+          "theme_id": "funding_support"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Supported both reviewed changes to federal home-energy standards or programs.",
+          "label": "Home-energy federal role changes",
+          "mechanism_families": [
+            "home_energy_regulation_and_programs"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "home-energy-standards-and-incentives",
+              "mechanism_family": "home_energy_regulation_and_programs",
+              "rationale": "Supported both reviewed changes to federal home-energy standards or programs."
+            }
+          ],
+          "theme_id": "home_energy_change_support"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Supported the reviewed limit on federal land-manager authority.",
+          "label": "Federal-land regulatory limit",
+          "mechanism_families": [
+            "federal_land_regulatory_constraint"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+              "mechanism_family": "federal_land_regulatory_constraint",
+              "rationale": "Supported the reviewed limit on federal land-manager authority."
+            }
+          ],
+          "theme_id": "land_rule_support"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Supported both reviewed resource-supply proposals.",
+          "label": "Domestic resource supply actions",
+          "mechanism_families": [
+            "resource_supply_security"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "critical-mineral-supply-and-domestic-production",
+              "mechanism_family": "resource_supply_security",
+              "rationale": "Supported both reviewed resource-supply proposals."
+            }
+          ],
+          "theme_id": "resource_supply_support"
+        }
+      ],
+      "primary_conclusion": "Across the reviewed record, Allen voted Yea on every substantive proposal. That support extended both to the two reviewed domestic resource-supply proposals and to the two reviewed changes to federal home-energy standards or programs, so the uniform vote direction does not reveal one consistent environment-and-energy policy throughline.",
+      "publication": {
+        "benchmark_status": "not_promoted",
+        "editorial_status": "human_approval_pending",
+        "production_eligible": false
+      },
+      "reader_facing_label": "Uniform direction without a common policy throughline",
+      "repeated_cross_episode_themes": [],
+      "review_route": "sampled_audit_candidate",
+      "reviewed_period": "119th Congress, January 8-March 18, 2026",
+      "schema_version": "editorial_member_inference_v2",
+      "shared_review_dependencies": {
+        "dependency_ids": [
+          "action-boundary:house-119-2-7",
+          "relationship:separate-proposals-in-one-policy-family",
+          "trait-value:accelerates-domestic-mineral-projects",
+          "trait-value:combined-divisions",
+          "trait-value:constrains-efficiency-rulemaking",
+          "trait-value:limits-land-manager-authority",
+          "trait-value:package-stage-retention",
+          "trait-value:repeals-home-energy-programs"
+        ],
+        "publication_blocked_until_resolved": true
+      },
+      "support_balance": 4,
+      "supporting_independent_episodes": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "rationale": "Recorded Yea action in this complete reviewed episode; direction is descriptive, not a shared policy rationale.",
+          "weight": 1
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "rationale": "Recorded Yea action in this complete reviewed episode; direction is descriptive, not a shared policy rationale.",
+          "weight": 1
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "rationale": "Recorded Yea action in this complete reviewed episode; direction is descriptive, not a shared policy rationale.",
+          "weight": 1
+        },
+        {
+          "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+          "rationale": "Recorded Yea action in this complete reviewed episode; direction is descriptive, not a shared policy rationale.",
+          "weight": 1
+        }
+      ],
+      "weakening_independent_episodes": [],
+      "why_conclusion_does_not_go_further": "Uniform direction across heterogeneous mechanisms does not establish one rationale.",
+      "within_episode_trajectories": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were supported, supported in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one appropriations trajectory."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "member_trajectory": "Recorded Yea/Yea across the two distinct resource-supply bills; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were supported, supported in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "member_trajectory": "Recorded Yea/Yea across the standards bill and program-repeal bill; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were supported, supported in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory."
+        }
+      ]
+    },
+    {
+      "assessment": "uniform_direction_without_common_policy_rationale",
+      "candidate_basis": {
+        "basis_type": "uniform_action_direction",
+        "substantive_theme_ids": [],
+        "uniform_action_direction": {
+          "count": 7,
+          "direction": "Nay",
+          "total": 7,
+          "uniform": true
+        }
+      },
+      "candidate_evaluation": [
+        {
+          "candidate_id": "resource-home-energy-divide",
+          "conflicting_themes": [],
+          "eligible": false,
+          "score": 1,
+          "specificity": 4,
+          "supporting_themes": [
+            "home_energy_change_opposition"
+          ]
+        },
+        {
+          "candidate_id": "resource-home-energy-opposite-divide",
+          "conflicting_themes": [],
+          "eligible": false,
+          "score": 1,
+          "specificity": 4,
+          "supporting_themes": [
+            "resource_supply_opposition"
+          ]
+        }
+      ],
+      "candidate_id": "uniform-direction-without-common-rationale",
+      "compression_report": {
+        "boundary_count": 1,
+        "clustered_episode_proportion": 0.5,
+        "conclusion_archetype": "uniform_direction_without_common_policy_throughline",
+        "duplicated_analytical_propositions": [],
+        "individually_named_episode_count": 0,
+        "policy_cluster_count": 2,
+        "public_word_count": 48,
+        "sentence_roles": [
+          "thesis",
+          "contrast",
+          "boundary"
+        ],
+        "source_episode_count": 4,
+        "validation_outcome": "pass"
+      },
+      "conclusion_model": {
+        "action_direction": {
+          "classification": "uniform_nay",
+          "count": 7,
+          "direction": "Nay",
+          "total": 7,
+          "uniform": true
+        },
+        "archetype": "uniform_direction_without_common_policy_throughline",
+        "boundary_proposition": {
+          "policy_domain_label": "environment-and-energy",
+          "public_text": "",
+          "role": "boundary"
+        },
+        "compression_report": {
+          "boundary_count": 1,
+          "clustered_episode_proportion": 0.5,
+          "conclusion_archetype": "uniform_direction_without_common_policy_throughline",
+          "duplicated_analytical_propositions": [],
+          "individually_named_episode_count": 0,
+          "policy_cluster_count": 2,
+          "public_word_count": 48,
+          "sentence_roles": [
+            "thesis",
+            "contrast",
+            "boundary"
+          ],
+          "source_episode_count": 4,
+          "validation_outcome": "pass"
+        },
+        "contrast_proposition": {
+          "basis": "resource-supply coordination and project direction differ from constraints or repeal affecting standards and household programs",
+          "left": {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          "relationship": "contrasts",
+          "right": {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          },
+          "role": "contrast"
+        },
+        "evidence_episode_ids": [
+          "critical-mineral-supply-and-domestic-production",
+          "home-energy-standards-and-incentives"
+        ],
+        "exception_proposition": null,
+        "omitted_episode_ids": [
+          "fy2026-energy-water-interior-appropriations",
+          "lead-ammunition-and-tackle-on-federal-lands"
+        ],
+        "public_conclusion": "Across the reviewed record, Johnson (GA) voted Nay on every substantive proposal. That opposition extended both to the two reviewed domestic resource-supply proposals and to the two reviewed changes to federal home-energy standards or programs, so the uniform vote direction does not reveal one consistent environment-and-energy policy throughline.",
+        "reader_label_concept": "Uniform direction without a common policy throughline",
+        "review_route": "sampled_audit_candidate",
+        "schema_version": "editorial_conclusion_propositions_v1",
+        "supporting_policy_clusters": [
+          {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          }
+        ],
+        "thesis_proposition": {
+          "claim_type": "uniform_direction_without_common_policy_throughline",
+          "policy_dimension_present": true,
+          "role": "thesis",
+          "theme_ids": []
+        },
+        "trajectory_proposition": null
+      },
+      "contrary_or_limiting_evidence": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        }
+      ],
+      "coverage": {
+        "expected_in_service_actions": 7,
+        "independent_episodes_complete": 4,
+        "independent_episodes_expected": 4,
+        "independent_episodes_missing": 0,
+        "independent_episodes_outside_service": 0,
+        "independent_episodes_partial": 0,
+        "missing_actions": 0,
+        "no_longer_serving_actions": 0,
+        "not_voting_actions": 0,
+        "not_yet_serving_actions": 0,
+        "present_actions": 0,
+        "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
+        "substantive_yes_no_actions": 7
+      },
+      "episode_references": [
+        "fy2026-energy-water-interior-appropriations",
+        "critical-mineral-supply-and-domestic-production",
+        "home-energy-standards-and-incentives",
+        "lead-ammunition-and-tackle-on-federal-lands"
+      ],
+      "evidence_strength_label": "Uniform opposition across the reviewed proposals",
+      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
+      "human_review_status": "human_approval_pending",
+      "independent_episode_count": 4,
+      "inference_level": "bounded_descriptive_pattern",
+      "member": {
+        "bioguide_id": "J000288",
+        "display_name": "Johnson (GA)",
+        "party": "D",
+        "state": "GA"
+      },
+      "member_specific_findings": [],
+      "neutral_independent_episodes": [],
+      "notable_one_off_choices": [
+        {
+          "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+          "mechanism_family": "federal-land-regulatory-constraint",
+          "practical_policy_direction": "Opposed the reviewed limit on lead-ammunition and tackle regulation on covered federal lands."
+        }
+      ],
+      "one_off_or_unproven_themes": [
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed the complete reviewed appropriations trajectory.",
+          "label": "Environment and energy appropriations",
+          "mechanism_families": [
+            "annual_discretionary_appropriations"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "mechanism_family": "annual_discretionary_appropriations",
+              "rationale": "Opposed the complete reviewed appropriations trajectory."
+            }
+          ],
+          "theme_id": "funding_opposition"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed both reviewed changes to federal home-energy standards or programs.",
+          "label": "Home-energy federal role changes",
+          "mechanism_families": [
+            "home_energy_regulation_and_programs"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "home-energy-standards-and-incentives",
+              "mechanism_family": "home_energy_regulation_and_programs",
+              "rationale": "Opposed both reviewed changes to federal home-energy standards or programs."
+            }
+          ],
+          "theme_id": "home_energy_change_opposition"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed the reviewed limit on federal land-manager authority.",
+          "label": "Federal-land regulatory limit",
+          "mechanism_families": [
+            "federal_land_regulatory_constraint"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+              "mechanism_family": "federal_land_regulatory_constraint",
+              "rationale": "Opposed the reviewed limit on federal land-manager authority."
+            }
+          ],
+          "theme_id": "land_rule_opposition"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed both reviewed resource-supply proposals.",
+          "label": "Domestic resource supply actions",
+          "mechanism_families": [
+            "resource_supply_security"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "critical-mineral-supply-and-domestic-production",
+              "mechanism_family": "resource_supply_security",
+              "rationale": "Opposed both reviewed resource-supply proposals."
+            }
+          ],
+          "theme_id": "resource_supply_opposition"
+        }
+      ],
+      "primary_conclusion": "Across the reviewed record, Johnson (GA) voted Nay on every substantive proposal. That opposition extended both to the two reviewed domestic resource-supply proposals and to the two reviewed changes to federal home-energy standards or programs, so the uniform vote direction does not reveal one consistent environment-and-energy policy throughline.",
+      "publication": {
+        "benchmark_status": "not_promoted",
+        "editorial_status": "human_approval_pending",
+        "production_eligible": false
+      },
+      "reader_facing_label": "Uniform direction without a common policy throughline",
+      "repeated_cross_episode_themes": [],
+      "review_route": "sampled_audit_candidate",
+      "reviewed_period": "119th Congress, January 8-March 18, 2026",
+      "schema_version": "editorial_member_inference_v2",
+      "shared_review_dependencies": {
+        "dependency_ids": [
+          "action-boundary:house-119-2-7",
+          "relationship:separate-proposals-in-one-policy-family",
+          "trait-value:accelerates-domestic-mineral-projects",
+          "trait-value:combined-divisions",
+          "trait-value:constrains-efficiency-rulemaking",
+          "trait-value:limits-land-manager-authority",
+          "trait-value:package-stage-retention",
+          "trait-value:repeals-home-energy-programs"
+        ],
+        "publication_blocked_until_resolved": true
+      },
+      "support_balance": 4,
+      "supporting_independent_episodes": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "rationale": "Recorded Nay action in this complete reviewed episode; direction is descriptive, not a shared policy rationale.",
+          "weight": 1
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "rationale": "Recorded Nay action in this complete reviewed episode; direction is descriptive, not a shared policy rationale.",
+          "weight": 1
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "rationale": "Recorded Nay action in this complete reviewed episode; direction is descriptive, not a shared policy rationale.",
+          "weight": 1
+        },
+        {
+          "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+          "rationale": "Recorded Nay action in this complete reviewed episode; direction is descriptive, not a shared policy rationale.",
+          "weight": 1
+        }
+      ],
+      "weakening_independent_episodes": [],
+      "why_conclusion_does_not_go_further": "Uniform direction across heterogeneous mechanisms does not establish one rationale.",
+      "within_episode_trajectories": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "member_trajectory": "Recorded Nay/Nay across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one appropriations trajectory."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "member_trajectory": "Recorded Nay/Nay across the two distinct resource-supply bills; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "member_trajectory": "Recorded Nay/Nay across the standards bill and program-repeal bill; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory."
+        }
+      ]
+    },
+    {
+      "assessment": "candidate_supported_by_current_sample",
+      "candidate_basis": {
+        "basis_type": "substantive_repeated_pattern",
+        "substantive_theme_ids": [
+          "resource_supply_support",
+          "home_energy_change_opposition"
+        ],
+        "uniform_action_direction": null
+      },
+      "candidate_evaluation": [
+        {
+          "candidate_id": "resource-home-energy-divide",
+          "conflicting_themes": [],
+          "eligible": true,
+          "score": 2,
+          "specificity": 4,
+          "supporting_themes": [
+            "resource_supply_support",
+            "home_energy_change_opposition"
+          ]
+        },
+        {
+          "candidate_id": "resource-home-energy-opposite-divide",
+          "conflicting_themes": [],
+          "eligible": false,
+          "score": 0,
+          "specificity": 4,
+          "supporting_themes": []
+        }
+      ],
+      "candidate_id": "resource-home-energy-divide",
+      "compression_report": {
+        "boundary_count": 1,
+        "clustered_episode_proportion": 0.5,
+        "conclusion_archetype": "policy_mechanism_divide",
+        "duplicated_analytical_propositions": [],
+        "individually_named_episode_count": 0,
+        "policy_cluster_count": 2,
+        "public_word_count": 42,
+        "sentence_roles": [
+          "thesis",
+          "contrast",
+          "boundary"
+        ],
+        "source_episode_count": 4,
+        "validation_outcome": "pass"
+      },
+      "conclusion_model": {
+        "action_direction": {
+          "classification": "divided",
+          "count": 4,
+          "direction": "Yea",
+          "total": 7,
+          "uniform": false
+        },
+        "archetype": "policy_mechanism_divide",
+        "boundary_proposition": {
+          "policy_domain_label": "environment-and-energy",
+          "public_text": "The appropriations and federal-land episodes remain separate evidence and do not establish a motive.",
+          "role": "boundary"
+        },
+        "compression_report": {
+          "boundary_count": 1,
+          "clustered_episode_proportion": 0.5,
+          "conclusion_archetype": "policy_mechanism_divide",
+          "duplicated_analytical_propositions": [],
+          "individually_named_episode_count": 0,
+          "policy_cluster_count": 2,
+          "public_word_count": 42,
+          "sentence_roles": [
+            "thesis",
+            "contrast",
+            "boundary"
+          ],
+          "source_episode_count": 4,
+          "validation_outcome": "pass"
+        },
+        "contrast_proposition": {
+          "basis": "resource-supply coordination and project direction differ from constraints or repeal affecting standards and household programs",
+          "left": {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "supported",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          "relationship": "contrasts",
+          "right": {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "opposed",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          },
+          "role": "contrast"
+        },
+        "evidence_episode_ids": [
+          "critical-mineral-supply-and-domestic-production",
+          "home-energy-standards-and-incentives"
+        ],
+        "exception_proposition": null,
+        "omitted_episode_ids": [
+          "fy2026-energy-water-interior-appropriations",
+          "lead-ammunition-and-tackle-on-federal-lands"
+        ],
+        "public_conclusion": "Costa's reviewed record divides by policy mechanism: support for the two reviewed domestic resource-supply proposals and opposition to the two reviewed changes to federal home-energy standards or programs. The appropriations and federal-land episodes remain separate evidence and do not establish a motive.",
+        "reader_label_concept": "A resource-supply and home-energy policy divide",
+        "review_route": "standard_generation_pass",
+        "schema_version": "editorial_conclusion_propositions_v1",
+        "supporting_policy_clusters": [
+          {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "supported",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "opposed",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          }
+        ],
+        "thesis_proposition": {
+          "claim_type": "policy_mechanism_divide",
+          "policy_dimension_present": true,
+          "role": "thesis",
+          "theme_ids": [
+            "home_energy_change_opposition",
+            "resource_supply_support"
+          ]
+        },
+        "trajectory_proposition": null
+      },
+      "contrary_or_limiting_evidence": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        }
+      ],
+      "coverage": {
+        "expected_in_service_actions": 7,
+        "independent_episodes_complete": 4,
+        "independent_episodes_expected": 4,
+        "independent_episodes_missing": 0,
+        "independent_episodes_outside_service": 0,
+        "independent_episodes_partial": 0,
+        "missing_actions": 0,
+        "no_longer_serving_actions": 0,
+        "not_voting_actions": 0,
+        "not_yet_serving_actions": 0,
+        "present_actions": 0,
+        "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
+        "substantive_yes_no_actions": 7
+      },
+      "episode_references": [
+        "fy2026-energy-water-interior-appropriations",
+        "critical-mineral-supply-and-domestic-production",
+        "home-energy-standards-and-incentives",
+        "lead-ammunition-and-tackle-on-federal-lands"
+      ],
+      "evidence_strength_label": "Mixed but interpretable",
+      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
+      "human_review_status": "human_approval_pending",
+      "independent_episode_count": 4,
+      "inference_level": "bounded_conditional_boundary",
+      "member": {
+        "bioguide_id": "C001059",
+        "display_name": "Costa",
+        "party": "D",
+        "state": "CA"
+      },
+      "member_specific_findings": [],
+      "neutral_independent_episodes": [],
+      "notable_one_off_choices": [],
+      "one_off_or_unproven_themes": [
+        {
+          "editorially_defensible": false,
+          "finding": "Supported the complete reviewed appropriations trajectory.",
+          "label": "Environment and energy appropriations",
+          "mechanism_families": [
+            "annual_discretionary_appropriations"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "mechanism_family": "annual_discretionary_appropriations",
+              "rationale": "Supported the complete reviewed appropriations trajectory."
+            }
+          ],
+          "theme_id": "funding_support"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed both reviewed changes to federal home-energy standards or programs.",
+          "label": "Home-energy federal role changes",
+          "mechanism_families": [
+            "home_energy_regulation_and_programs"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "home-energy-standards-and-incentives",
+              "mechanism_family": "home_energy_regulation_and_programs",
+              "rationale": "Opposed both reviewed changes to federal home-energy standards or programs."
+            }
+          ],
+          "theme_id": "home_energy_change_opposition"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed the reviewed limit on federal land-manager authority.",
+          "label": "Federal-land regulatory limit",
+          "mechanism_families": [
+            "federal_land_regulatory_constraint"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+              "mechanism_family": "federal_land_regulatory_constraint",
+              "rationale": "Opposed the reviewed limit on federal land-manager authority."
+            }
+          ],
+          "theme_id": "land_rule_opposition"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Supported both reviewed resource-supply proposals.",
+          "label": "Domestic resource supply actions",
+          "mechanism_families": [
+            "resource_supply_security"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "critical-mineral-supply-and-domestic-production",
+              "mechanism_family": "resource_supply_security",
+              "rationale": "Supported both reviewed resource-supply proposals."
+            }
+          ],
+          "theme_id": "resource_supply_support"
+        }
+      ],
+      "primary_conclusion": "Costa's reviewed record divides by policy mechanism: support for the two reviewed domestic resource-supply proposals and opposition to the two reviewed changes to federal home-energy standards or programs. The appropriations and federal-land episodes remain separate evidence and do not establish a motive.",
+      "publication": {
+        "benchmark_status": "not_promoted",
+        "editorial_status": "human_approval_pending",
+        "production_eligible": false
+      },
+      "reader_facing_label": "A resource-supply and home-energy policy divide",
+      "repeated_cross_episode_themes": [],
+      "review_route": "standard_generation_pass",
+      "reviewed_period": "119th Congress, January 8-March 18, 2026",
+      "schema_version": "editorial_member_inference_v2",
+      "shared_review_dependencies": {
+        "dependency_ids": [
+          "action-boundary:house-119-2-7",
+          "relationship:separate-proposals-in-one-policy-family",
+          "trait-value:accelerates-domestic-mineral-projects",
+          "trait-value:combined-divisions",
+          "trait-value:constrains-efficiency-rulemaking",
+          "trait-value:limits-land-manager-authority",
+          "trait-value:package-stage-retention",
+          "trait-value:repeals-home-energy-programs"
+        ],
+        "publication_blocked_until_resolved": true
+      },
+      "support_balance": 2,
+      "supporting_independent_episodes": [
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "rationale": "Supported both reviewed resource-supply proposals.",
+          "weight": 2
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "rationale": "Opposed both reviewed changes to federal home-energy standards or programs.",
+          "weight": 2
+        }
+      ],
+      "weakening_independent_episodes": [],
+      "why_conclusion_does_not_go_further": "The result is bounded to two source-grounded policy clusters.",
+      "within_episode_trajectories": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were supported, supported in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one appropriations trajectory."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "member_trajectory": "Recorded Yea/Yea across the two distinct resource-supply bills; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were supported, supported in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "member_trajectory": "Recorded Nay/Nay across the standards bill and program-repeal bill; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory."
+        }
+      ]
+    },
+    {
+      "assessment": "candidate_supported_by_current_sample",
+      "candidate_basis": {
+        "basis_type": "substantive_repeated_pattern",
+        "substantive_theme_ids": [],
+        "uniform_action_direction": null
+      },
+      "candidate_evaluation": [
+        {
+          "candidate_id": "resource-home-energy-divide",
+          "conflicting_themes": [],
+          "eligible": false,
+          "score": 1,
+          "specificity": 4,
+          "supporting_themes": [
+            "home_energy_change_opposition"
+          ]
+        },
+        {
+          "candidate_id": "resource-home-energy-opposite-divide",
+          "conflicting_themes": [],
+          "eligible": false,
+          "score": 1,
+          "specificity": 4,
+          "supporting_themes": [
+            "resource_supply_opposition"
+          ]
+        }
+      ],
+      "candidate_id": "contested-mixed-record",
+      "compression_report": {
+        "boundary_count": 0,
+        "clustered_episode_proportion": 1.0,
+        "conclusion_archetype": "bounded_episode_trajectories",
+        "duplicated_analytical_propositions": [],
+        "individually_named_episode_count": 0,
+        "policy_cluster_count": 4,
+        "public_word_count": 22,
+        "sentence_roles": [
+          "thesis",
+          "contrast"
+        ],
+        "source_episode_count": 4,
+        "validation_outcome": "pass"
+      },
+      "conclusion_model": {
+        "action_direction": {
+          "classification": "divided",
+          "count": 4,
+          "direction": "Nay",
+          "total": 7,
+          "uniform": false
+        },
+        "archetype": "bounded_episode_trajectories",
+        "boundary_proposition": null,
+        "compression_report": {
+          "boundary_count": 0,
+          "clustered_episode_proportion": 1.0,
+          "conclusion_archetype": "bounded_episode_trajectories",
+          "duplicated_analytical_propositions": [],
+          "individually_named_episode_count": 0,
+          "policy_cluster_count": 4,
+          "public_word_count": 22,
+          "sentence_roles": [
+            "thesis",
+            "contrast"
+          ],
+          "source_episode_count": 4,
+          "validation_outcome": "pass"
+        },
+        "contrast_proposition": {
+          "basis": "resource-supply coordination and project direction differ from constraints or repeal affecting standards and household programs",
+          "left": {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          "relationship": "contrasts",
+          "right": {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          },
+          "role": "contrast"
+        },
+        "evidence_episode_ids": [
+          "critical-mineral-supply-and-domestic-production",
+          "fy2026-energy-water-interior-appropriations",
+          "home-energy-standards-and-incentives",
+          "lead-ammunition-and-tackle-on-federal-lands"
+        ],
+        "exception_proposition": null,
+        "omitted_episode_ids": [],
+        "public_conclusion": "The reviewed record for Mannion does not yet support a compressed cross-episode policy conclusion. The available episode trajectories remain visible for review.",
+        "reader_label_concept": "Bounded episode trajectories without an issue-wide synthesis",
+        "review_route": "standard_generation_pass",
+        "schema_version": "editorial_conclusion_propositions_v1",
+        "supporting_policy_clusters": [
+          {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          {
+            "cluster_id": "federal_environment_energy_funding",
+            "evidence_episode_ids": [
+              "fy2026-energy-water-interior-appropriations"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "appropriates_energy_environment_programs",
+              "appropriates_federal_programs"
+            ],
+            "reader_phrase": "the reviewed federal environment-and-energy funding stages"
+          },
+          {
+            "cluster_id": "federal_land_regulatory_limit",
+            "evidence_episode_ids": [
+              "lead-ammunition-and-tackle-on-federal-lands"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "limits_land_manager_authority"
+            ],
+            "reader_phrase": "the reviewed limit on federal land managers' lead-ammunition and tackle rules"
+          },
+          {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          }
+        ],
+        "thesis_proposition": {
+          "claim_type": "bounded_episode_trajectories",
+          "policy_dimension_present": true,
+          "role": "thesis",
+          "theme_ids": []
+        },
+        "trajectory_proposition": null
+      },
+      "contrary_or_limiting_evidence": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        }
+      ],
+      "coverage": {
+        "expected_in_service_actions": 7,
+        "independent_episodes_complete": 4,
+        "independent_episodes_expected": 4,
+        "independent_episodes_missing": 0,
+        "independent_episodes_outside_service": 0,
+        "independent_episodes_partial": 0,
+        "missing_actions": 0,
+        "no_longer_serving_actions": 0,
+        "not_voting_actions": 0,
+        "not_yet_serving_actions": 0,
+        "present_actions": 0,
+        "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
+        "substantive_yes_no_actions": 7
+      },
+      "episode_references": [
+        "fy2026-energy-water-interior-appropriations",
+        "critical-mineral-supply-and-domestic-production",
+        "home-energy-standards-and-incentives",
+        "lead-ammunition-and-tackle-on-federal-lands"
+      ],
+      "evidence_strength_label": "Mixed reviewed evidence",
+      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
+      "human_review_status": "human_approval_pending",
+      "independent_episode_count": 4,
+      "inference_level": "contested_candidate",
+      "member": {
+        "bioguide_id": "M001231",
+        "display_name": "Mannion",
+        "party": "D",
+        "state": "NY"
+      },
+      "member_specific_findings": [],
+      "neutral_independent_episodes": [],
+      "notable_one_off_choices": [],
+      "one_off_or_unproven_themes": [
+        {
+          "editorially_defensible": false,
+          "finding": "Supported the complete reviewed appropriations trajectory.",
+          "label": "Environment and energy appropriations",
+          "mechanism_families": [
+            "annual_discretionary_appropriations"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "mechanism_family": "annual_discretionary_appropriations",
+              "rationale": "Supported the complete reviewed appropriations trajectory."
+            }
+          ],
+          "theme_id": "funding_support"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed both reviewed changes to federal home-energy standards or programs.",
+          "label": "Home-energy federal role changes",
+          "mechanism_families": [
+            "home_energy_regulation_and_programs"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "home-energy-standards-and-incentives",
+              "mechanism_family": "home_energy_regulation_and_programs",
+              "rationale": "Opposed both reviewed changes to federal home-energy standards or programs."
+            }
+          ],
+          "theme_id": "home_energy_change_opposition"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Supported the reviewed limit on federal land-manager authority.",
+          "label": "Federal-land regulatory limit",
+          "mechanism_families": [
+            "federal_land_regulatory_constraint"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+              "mechanism_family": "federal_land_regulatory_constraint",
+              "rationale": "Supported the reviewed limit on federal land-manager authority."
+            }
+          ],
+          "theme_id": "land_rule_support"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed both reviewed resource-supply proposals.",
+          "label": "Domestic resource supply actions",
+          "mechanism_families": [
+            "resource_supply_security"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "critical-mineral-supply-and-domestic-production",
+              "mechanism_family": "resource_supply_security",
+              "rationale": "Opposed both reviewed resource-supply proposals."
+            }
+          ],
+          "theme_id": "resource_supply_opposition"
+        }
+      ],
+      "primary_conclusion": "The reviewed record for Mannion does not yet support a compressed cross-episode policy conclusion. The available episode trajectories remain visible for review.",
+      "publication": {
+        "benchmark_status": "not_promoted",
+        "editorial_status": "human_approval_pending",
+        "production_eligible": false
+      },
+      "reader_facing_label": "Bounded episode trajectories without an issue-wide synthesis",
+      "repeated_cross_episode_themes": [],
+      "review_route": "standard_generation_pass",
+      "reviewed_period": "119th Congress, January 8-March 18, 2026",
+      "schema_version": "editorial_member_inference_v2",
+      "shared_review_dependencies": {
+        "dependency_ids": [
+          "action-boundary:house-119-2-7",
+          "relationship:separate-proposals-in-one-policy-family",
+          "trait-value:accelerates-domestic-mineral-projects",
+          "trait-value:combined-divisions",
+          "trait-value:constrains-efficiency-rulemaking",
+          "trait-value:limits-land-manager-authority",
+          "trait-value:package-stage-retention",
+          "trait-value:repeals-home-energy-programs"
+        ],
+        "publication_blocked_until_resolved": true
+      },
+      "support_balance": 0,
+      "supporting_independent_episodes": [],
+      "weakening_independent_episodes": [],
+      "why_conclusion_does_not_go_further": "No candidate has enough independent, mechanism-diverse thematic support in the current overlay.",
+      "within_episode_trajectories": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were supported, supported in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one appropriations trajectory."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "member_trajectory": "Recorded Nay/Nay across the two distinct resource-supply bills; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "member_trajectory": "Recorded Nay/Nay across the standards bill and program-repeal bill; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory."
+        }
+      ]
+    },
+    {
+      "assessment": "candidate_supported_by_current_sample",
+      "candidate_basis": {
+        "basis_type": "substantive_repeated_pattern",
+        "substantive_theme_ids": [],
+        "uniform_action_direction": null
+      },
+      "candidate_evaluation": [
+        {
+          "candidate_id": "resource-home-energy-divide",
+          "conflicting_themes": [],
+          "eligible": false,
+          "score": 0,
+          "specificity": 4,
+          "supporting_themes": []
+        },
+        {
+          "candidate_id": "resource-home-energy-opposite-divide",
+          "conflicting_themes": [],
+          "eligible": false,
+          "score": 1,
+          "specificity": 4,
+          "supporting_themes": [
+            "resource_supply_opposition"
+          ]
+        }
+      ],
+      "candidate_id": "contested-mixed-record",
+      "compression_report": {
+        "boundary_count": 0,
+        "clustered_episode_proportion": 1.0,
+        "conclusion_archetype": "bounded_episode_trajectories",
+        "duplicated_analytical_propositions": [],
+        "individually_named_episode_count": 0,
+        "policy_cluster_count": 4,
+        "public_word_count": 22,
+        "sentence_roles": [
+          "thesis",
+          "contrast"
+        ],
+        "source_episode_count": 4,
+        "validation_outcome": "pass"
+      },
+      "conclusion_model": {
+        "action_direction": {
+          "classification": "divided",
+          "count": 4,
+          "direction": "Nay",
+          "total": 7,
+          "uniform": false
+        },
+        "archetype": "bounded_episode_trajectories",
+        "boundary_proposition": null,
+        "compression_report": {
+          "boundary_count": 0,
+          "clustered_episode_proportion": 1.0,
+          "conclusion_archetype": "bounded_episode_trajectories",
+          "duplicated_analytical_propositions": [],
+          "individually_named_episode_count": 0,
+          "policy_cluster_count": 4,
+          "public_word_count": 22,
+          "sentence_roles": [
+            "thesis",
+            "contrast"
+          ],
+          "source_episode_count": 4,
+          "validation_outcome": "pass"
+        },
+        "contrast_proposition": {
+          "basis": "resource-supply coordination and project direction differ from constraints or repeal affecting standards and household programs",
+          "left": {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          "relationship": "contrasts",
+          "right": {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          },
+          "role": "contrast"
+        },
+        "evidence_episode_ids": [
+          "critical-mineral-supply-and-domestic-production",
+          "fy2026-energy-water-interior-appropriations",
+          "home-energy-standards-and-incentives",
+          "lead-ammunition-and-tackle-on-federal-lands"
+        ],
+        "exception_proposition": null,
+        "omitted_episode_ids": [],
+        "public_conclusion": "The reviewed record for Fitzpatrick does not yet support a compressed cross-episode policy conclusion. The available episode trajectories remain visible for review.",
+        "reader_label_concept": "Bounded episode trajectories without an issue-wide synthesis",
+        "review_route": "standard_generation_pass",
+        "schema_version": "editorial_conclusion_propositions_v1",
+        "supporting_policy_clusters": [
+          {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          {
+            "cluster_id": "federal_environment_energy_funding",
+            "evidence_episode_ids": [
+              "fy2026-energy-water-interior-appropriations"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "appropriates_energy_environment_programs",
+              "appropriates_federal_programs"
+            ],
+            "reader_phrase": "the reviewed federal environment-and-energy funding stages"
+          },
+          {
+            "cluster_id": "federal_land_regulatory_limit",
+            "evidence_episode_ids": [
+              "lead-ammunition-and-tackle-on-federal-lands"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "limits_land_manager_authority"
+            ],
+            "reader_phrase": "the reviewed limit on federal land managers' lead-ammunition and tackle rules"
+          },
+          {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          }
+        ],
+        "thesis_proposition": {
+          "claim_type": "bounded_episode_trajectories",
+          "policy_dimension_present": true,
+          "role": "thesis",
+          "theme_ids": []
+        },
+        "trajectory_proposition": null
+      },
+      "contrary_or_limiting_evidence": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        }
+      ],
+      "coverage": {
+        "expected_in_service_actions": 7,
+        "independent_episodes_complete": 4,
+        "independent_episodes_expected": 4,
+        "independent_episodes_missing": 0,
+        "independent_episodes_outside_service": 0,
+        "independent_episodes_partial": 0,
+        "missing_actions": 0,
+        "no_longer_serving_actions": 0,
+        "not_voting_actions": 0,
+        "not_yet_serving_actions": 0,
+        "present_actions": 0,
+        "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
+        "substantive_yes_no_actions": 7
+      },
+      "episode_references": [
+        "fy2026-energy-water-interior-appropriations",
+        "critical-mineral-supply-and-domestic-production",
+        "home-energy-standards-and-incentives",
+        "lead-ammunition-and-tackle-on-federal-lands"
+      ],
+      "evidence_strength_label": "Mixed reviewed evidence",
+      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
+      "human_review_status": "human_approval_pending",
+      "independent_episode_count": 4,
+      "inference_level": "contested_candidate",
+      "member": {
+        "bioguide_id": "F000466",
+        "display_name": "Fitzpatrick",
+        "party": "R",
+        "state": "PA"
+      },
+      "member_specific_findings": [],
+      "neutral_independent_episodes": [],
+      "notable_one_off_choices": [],
+      "one_off_or_unproven_themes": [
+        {
+          "editorially_defensible": false,
+          "finding": "Supported the complete reviewed appropriations trajectory.",
+          "label": "Environment and energy appropriations",
+          "mechanism_families": [
+            "annual_discretionary_appropriations"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "mechanism_family": "annual_discretionary_appropriations",
+              "rationale": "Supported the complete reviewed appropriations trajectory."
+            }
+          ],
+          "theme_id": "funding_support"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed the reviewed limit on federal land-manager authority.",
+          "label": "Federal-land regulatory limit",
+          "mechanism_families": [
+            "federal_land_regulatory_constraint"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+              "mechanism_family": "federal_land_regulatory_constraint",
+              "rationale": "Opposed the reviewed limit on federal land-manager authority."
+            }
+          ],
+          "theme_id": "land_rule_opposition"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed both reviewed resource-supply proposals.",
+          "label": "Domestic resource supply actions",
+          "mechanism_families": [
+            "resource_supply_security"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "critical-mineral-supply-and-domestic-production",
+              "mechanism_family": "resource_supply_security",
+              "rationale": "Opposed both reviewed resource-supply proposals."
+            }
+          ],
+          "theme_id": "resource_supply_opposition"
+        }
+      ],
+      "primary_conclusion": "The reviewed record for Fitzpatrick does not yet support a compressed cross-episode policy conclusion. The available episode trajectories remain visible for review.",
+      "publication": {
+        "benchmark_status": "not_promoted",
+        "editorial_status": "human_approval_pending",
+        "production_eligible": false
+      },
+      "reader_facing_label": "Bounded episode trajectories without an issue-wide synthesis",
+      "repeated_cross_episode_themes": [],
+      "review_route": "standard_generation_pass",
+      "reviewed_period": "119th Congress, January 8-March 18, 2026",
+      "schema_version": "editorial_member_inference_v2",
+      "shared_review_dependencies": {
+        "dependency_ids": [
+          "action-boundary:house-119-2-7",
+          "relationship:separate-proposals-in-one-policy-family",
+          "trait-value:accelerates-domestic-mineral-projects",
+          "trait-value:combined-divisions",
+          "trait-value:constrains-efficiency-rulemaking",
+          "trait-value:limits-land-manager-authority",
+          "trait-value:package-stage-retention",
+          "trait-value:repeals-home-energy-programs"
+        ],
+        "publication_blocked_until_resolved": true
+      },
+      "support_balance": 0,
+      "supporting_independent_episodes": [],
+      "weakening_independent_episodes": [],
+      "why_conclusion_does_not_go_further": "No candidate has enough independent, mechanism-diverse thematic support in the current overlay.",
+      "within_episode_trajectories": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were supported, supported in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one appropriations trajectory."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "member_trajectory": "Recorded Nay/Nay across the two distinct resource-supply bills; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "member_trajectory": "Recorded Yea/Nay across the standards bill and program-repeal bill; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were supported, opposed in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory."
+        }
+      ]
+    },
+    {
+      "assessment": "insufficient_coverage",
+      "candidate_basis": {
+        "basis_type": "insufficient_evidence",
+        "substantive_theme_ids": [],
+        "uniform_action_direction": null
+      },
+      "candidate_evaluation": [],
+      "candidate_id": "insufficient-evidence",
+      "compression_report": {
+        "boundary_count": 0,
+        "clustered_episode_proportion": 0,
+        "conclusion_archetype": "limited_or_contested_evidence",
+        "duplicated_analytical_propositions": [],
+        "individually_named_episode_count": 0,
+        "policy_cluster_count": 0,
+        "public_word_count": 0,
+        "sentence_roles": [
+          "thesis"
+        ],
+        "source_episode_count": 1,
+        "validation_outcome": "human_exception_required"
+      },
+      "conclusion_model": {
+        "action_direction": {
+          "classification": "incomplete",
+          "count": 0,
+          "direction": null,
+          "total": 0
+        },
+        "archetype": "limited_or_contested_evidence",
+        "boundary_proposition": null,
+        "contrast_proposition": null,
+        "evidence_episode_ids": [],
+        "exception_proposition": null,
+        "omitted_episode_ids": [],
+        "reader_label_concept": "Limited or contested evidence",
+        "review_route": "human_exception_required",
+        "schema_version": "editorial_conclusion_propositions_v1",
+        "supporting_policy_clusters": [],
+        "thesis_proposition": {
+          "claim_type": "limited_or_contested_evidence",
+          "policy_dimension_present": false,
+          "role": "thesis",
+          "theme_ids": []
+        },
+        "trajectory_proposition": null
+      },
+      "contrary_or_limiting_evidence": [],
+      "coverage": {
+        "expected_in_service_actions": 7,
+        "independent_episodes_complete": 1,
+        "independent_episodes_expected": 4,
+        "independent_episodes_missing": 0,
+        "independent_episodes_outside_service": 0,
+        "independent_episodes_partial": 3,
+        "missing_actions": 0,
+        "no_longer_serving_actions": 0,
+        "not_voting_actions": 5,
+        "not_yet_serving_actions": 0,
+        "present_actions": 0,
+        "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
+        "substantive_yes_no_actions": 2
+      },
+      "episode_references": [],
+      "evidence_strength_label": "Not enough reviewed evidence",
+      "future_expansion_rule": "Recompute when additional complete episode actions are available.",
+      "human_review_status": "human_approval_pending",
+      "independent_episode_count": 1,
+      "inference_level": "insufficient_evidence",
+      "member": {
+        "bioguide_id": "H001095",
+        "display_name": "Hunt",
+        "party": "R",
+        "state": "TX"
+      },
+      "member_specific_findings": [
+        {
+          "finding_id": "incomplete-member-episode-coverage",
+          "level": "human_exception",
+          "summary": "This member has incomplete in-service episode evidence."
+        }
+      ],
+      "neutral_independent_episodes": [],
+      "notable_one_off_choices": [],
+      "one_off_or_unproven_themes": [],
+      "primary_conclusion": "The reviewed record for Hunt does not cover enough independent episodes to support a cross-episode conclusion.",
+      "publication": {
+        "benchmark_status": "not_promoted",
+        "editorial_status": "human_approval_pending",
+        "production_eligible": false
+      },
+      "reader_facing_label": "Limited or contested evidence",
+      "repeated_cross_episode_themes": [],
+      "review_route": "human_exception_required",
+      "reviewed_period": "119th Congress, January 8-March 18, 2026",
+      "schema_version": "editorial_member_inference_v2",
+      "shared_review_dependencies": {
+        "dependency_ids": [
+          "action-boundary:house-119-2-7",
+          "relationship:separate-proposals-in-one-policy-family",
+          "trait-value:accelerates-domestic-mineral-projects",
+          "trait-value:combined-divisions",
+          "trait-value:constrains-efficiency-rulemaking",
+          "trait-value:limits-land-manager-authority",
+          "trait-value:package-stage-retention",
+          "trait-value:repeals-home-energy-programs"
+        ],
+        "publication_blocked_until_resolved": true
+      },
+      "support_balance": 0,
+      "supporting_independent_episodes": [],
+      "weakening_independent_episodes": [],
+      "why_conclusion_does_not_go_further": "Fewer than three independent episodes have complete Yes/No coverage.",
+      "within_episode_trajectories": []
+    },
+    {
+      "assessment": "candidate_supported_by_current_sample",
+      "candidate_basis": {
+        "basis_type": "substantive_repeated_pattern",
+        "substantive_theme_ids": [],
+        "uniform_action_direction": null
+      },
+      "candidate_evaluation": [
+        {
+          "candidate_id": "resource-home-energy-divide",
+          "conflicting_themes": [],
+          "eligible": false,
+          "score": 0,
+          "specificity": 4,
+          "supporting_themes": []
+        },
+        {
+          "candidate_id": "resource-home-energy-opposite-divide",
+          "conflicting_themes": [],
+          "eligible": false,
+          "score": 1,
+          "specificity": 4,
+          "supporting_themes": [
+            "resource_supply_opposition"
+          ]
+        }
+      ],
+      "candidate_id": "contested-mixed-record",
+      "compression_report": {
+        "boundary_count": 0,
+        "clustered_episode_proportion": 1.0,
+        "conclusion_archetype": "bounded_episode_trajectories",
+        "duplicated_analytical_propositions": [],
+        "individually_named_episode_count": 0,
+        "policy_cluster_count": 4,
+        "public_word_count": 22,
+        "sentence_roles": [
+          "thesis",
+          "contrast"
+        ],
+        "source_episode_count": 4,
+        "validation_outcome": "pass"
+      },
+      "conclusion_model": {
+        "action_direction": {
+          "classification": "divided",
+          "count": 4,
+          "direction": "Nay",
+          "total": 7,
+          "uniform": false
+        },
+        "archetype": "bounded_episode_trajectories",
+        "boundary_proposition": null,
+        "compression_report": {
+          "boundary_count": 0,
+          "clustered_episode_proportion": 1.0,
+          "conclusion_archetype": "bounded_episode_trajectories",
+          "duplicated_analytical_propositions": [],
+          "individually_named_episode_count": 0,
+          "policy_cluster_count": 4,
+          "public_word_count": 22,
+          "sentence_roles": [
+            "thesis",
+            "contrast"
+          ],
+          "source_episode_count": 4,
+          "validation_outcome": "pass"
+        },
+        "contrast_proposition": {
+          "basis": "resource-supply coordination and project direction differ from constraints or repeal affecting standards and household programs",
+          "left": {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          "relationship": "contrasts",
+          "right": {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          },
+          "role": "contrast"
+        },
+        "evidence_episode_ids": [
+          "critical-mineral-supply-and-domestic-production",
+          "fy2026-energy-water-interior-appropriations",
+          "home-energy-standards-and-incentives",
+          "lead-ammunition-and-tackle-on-federal-lands"
+        ],
+        "exception_proposition": null,
+        "omitted_episode_ids": [],
+        "public_conclusion": "The reviewed record for Mrvan does not yet support a compressed cross-episode policy conclusion. The available episode trajectories remain visible for review.",
+        "reader_label_concept": "Bounded episode trajectories without an issue-wide synthesis",
+        "review_route": "standard_generation_pass",
+        "schema_version": "editorial_conclusion_propositions_v1",
+        "supporting_policy_clusters": [
+          {
+            "cluster_id": "domestic_resource_supply_actions",
+            "evidence_episode_ids": [
+              "critical-mineral-supply-and-domestic-production"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "accelerates_domestic_mineral_projects",
+              "assesses_supply_chain_vulnerability",
+              "develops_resource_strategies"
+            ],
+            "reader_phrase": "the two reviewed domestic resource-supply proposals"
+          },
+          {
+            "cluster_id": "federal_environment_energy_funding",
+            "evidence_episode_ids": [
+              "fy2026-energy-water-interior-appropriations"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "appropriates_energy_environment_programs",
+              "appropriates_federal_programs"
+            ],
+            "reader_phrase": "the reviewed federal environment-and-energy funding stages"
+          },
+          {
+            "cluster_id": "federal_land_regulatory_limit",
+            "evidence_episode_ids": [
+              "lead-ammunition-and-tackle-on-federal-lands"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "limits_land_manager_authority"
+            ],
+            "reader_phrase": "the reviewed limit on federal land managers' lead-ammunition and tackle rules"
+          },
+          {
+            "cluster_id": "home_energy_federal_role_changes",
+            "evidence_episode_ids": [
+              "home-energy-standards-and-incentives"
+            ],
+            "member_action_phrase": "acted on",
+            "policy_trait_ids": [
+              "changes_building_code_assistance",
+              "constrains_efficiency_rulemaking",
+              "repeals_home_energy_programs"
+            ],
+            "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
+          }
+        ],
+        "thesis_proposition": {
+          "claim_type": "bounded_episode_trajectories",
+          "policy_dimension_present": true,
+          "role": "thesis",
+          "theme_ids": []
+        },
+        "trajectory_proposition": null
+      },
+      "contrary_or_limiting_evidence": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "text": "Related actions remain one episode; their repeated directions do not create multiple independent positions."
+        }
+      ],
+      "coverage": {
+        "expected_in_service_actions": 7,
+        "independent_episodes_complete": 4,
+        "independent_episodes_expected": 4,
+        "independent_episodes_missing": 0,
+        "independent_episodes_outside_service": 0,
+        "independent_episodes_partial": 0,
+        "missing_actions": 0,
+        "no_longer_serving_actions": 0,
+        "not_voting_actions": 0,
+        "not_yet_serving_actions": 0,
+        "present_actions": 0,
+        "substantive_rolls_expected": 7,
+        "substantive_rolls_observed": 7,
+        "substantive_yes_no_actions": 7
+      },
+      "episode_references": [
+        "fy2026-energy-water-interior-appropriations",
+        "critical-mineral-supply-and-domestic-production",
+        "home-energy-standards-and-incentives",
+        "lead-ammunition-and-tackle-on-federal-lands"
+      ],
+      "evidence_strength_label": "Mixed reviewed evidence",
+      "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
+      "human_review_status": "human_approval_pending",
+      "independent_episode_count": 4,
+      "inference_level": "contested_candidate",
+      "member": {
+        "bioguide_id": "M001214",
+        "display_name": "Mrvan",
+        "party": "D",
+        "state": "IN"
+      },
+      "member_specific_findings": [],
+      "neutral_independent_episodes": [],
+      "notable_one_off_choices": [],
+      "one_off_or_unproven_themes": [
+        {
+          "editorially_defensible": false,
+          "finding": "Supported the complete reviewed appropriations trajectory.",
+          "label": "Environment and energy appropriations",
+          "mechanism_families": [
+            "annual_discretionary_appropriations"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "mechanism_family": "annual_discretionary_appropriations",
+              "rationale": "Supported the complete reviewed appropriations trajectory."
+            }
+          ],
+          "theme_id": "funding_support"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed the reviewed limit on federal land-manager authority.",
+          "label": "Federal-land regulatory limit",
+          "mechanism_families": [
+            "federal_land_regulatory_constraint"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+              "mechanism_family": "federal_land_regulatory_constraint",
+              "rationale": "Opposed the reviewed limit on federal land-manager authority."
+            }
+          ],
+          "theme_id": "land_rule_opposition"
+        },
+        {
+          "editorially_defensible": false,
+          "finding": "Opposed both reviewed resource-supply proposals.",
+          "label": "Domestic resource supply actions",
+          "mechanism_families": [
+            "resource_supply_security"
+          ],
+          "not_repeated_reason": "Only one independent episode supplies this theme in the reviewed sample.",
+          "supporting_episodes": [
+            {
+              "episode_id": "critical-mineral-supply-and-domestic-production",
+              "mechanism_family": "resource_supply_security",
+              "rationale": "Opposed both reviewed resource-supply proposals."
+            }
+          ],
+          "theme_id": "resource_supply_opposition"
+        }
+      ],
+      "primary_conclusion": "The reviewed record for Mrvan does not yet support a compressed cross-episode policy conclusion. The available episode trajectories remain visible for review.",
+      "publication": {
+        "benchmark_status": "not_promoted",
+        "editorial_status": "human_approval_pending",
+        "production_eligible": false
+      },
+      "reader_facing_label": "Bounded episode trajectories without an issue-wide synthesis",
+      "repeated_cross_episode_themes": [],
+      "review_route": "standard_generation_pass",
+      "reviewed_period": "119th Congress, January 8-March 18, 2026",
+      "schema_version": "editorial_member_inference_v2",
+      "shared_review_dependencies": {
+        "dependency_ids": [
+          "action-boundary:house-119-2-7",
+          "relationship:separate-proposals-in-one-policy-family",
+          "trait-value:accelerates-domestic-mineral-projects",
+          "trait-value:combined-divisions",
+          "trait-value:constrains-efficiency-rulemaking",
+          "trait-value:limits-land-manager-authority",
+          "trait-value:package-stage-retention",
+          "trait-value:repeals-home-energy-programs"
+        ],
+        "publication_blocked_until_resolved": true
+      },
+      "support_balance": 0,
+      "supporting_independent_episodes": [],
+      "weakening_independent_episodes": [],
+      "why_conclusion_does_not_go_further": "No candidate has enough independent, mechanism-diverse thematic support in the current overlay.",
+      "within_episode_trajectories": [
+        {
+          "episode_id": "fy2026-energy-water-interior-appropriations",
+          "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were supported, supported in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one appropriations trajectory."
+        },
+        {
+          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "member_trajectory": "Recorded Nay/Nay across the two distinct resource-supply bills; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory."
+        },
+        {
+          "episode_id": "home-energy-standards-and-incentives",
+          "member_trajectory": "Recorded Yea/Nay across the standards bill and program-repeal bill; the related actions count as one episode.",
+          "practical_policy_direction": "The episode actions were supported, opposed in stage order.",
+          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory."
+        }
+      ]
+    }
+  ],
+  "publication": {
+    "benchmark_status": "not_promoted",
+    "editorial_status": "human_approval_pending",
+    "production_eligible": false
+  },
+  "schema_version": "commissioning_domain_inference_candidates_v1"
+}

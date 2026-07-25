@@ -1,0 +1,632 @@
+{
+  "application": {
+    "artifacts_idempotent": 0,
+    "artifacts_inserted": 66,
+    "batch_id": 9,
+    "relationships_inserted": 60
+  },
+  "batch_key": "commissioning-domain-v1-environment-energy-corrected",
+  "expected_counts": {
+    "artifacts": 66,
+    "by_type": {
+      "claim_source_map": 1,
+      "issue_conclusion_propositions": 7,
+      "issue_ontology": 1,
+      "issue_public_presentation": 7,
+      "member_action_overlay": 7,
+      "member_episode_trajectory": 7,
+      "policy_episode": 4,
+      "policy_family": 1,
+      "policy_trait_contract": 1,
+      "reference_fixture_metadata": 7,
+      "review_routing_result": 7,
+      "shared_action_dossier": 7,
+      "source_manifest": 1,
+      "standardization_validation_result": 7,
+      "trait_relationship_contract": 1
+    },
+    "relationships": 60
+  },
+  "manifest_sha256": "dea1b8c7a0071462a5eb91f24d22287dc156fda9edcfa71a2abf6e570c2459c5",
+  "migration": {
+    "additive": true,
+    "functions": [
+      "guard_editorial_artifact_immutability",
+      "guard_editorial_publication_activation"
+    ],
+    "identifier": "0016",
+    "path": "backend/migrations/0016_editorial_artifact_persistence.sql",
+    "sha256": "b4fffce458ebda4b09ce92cd1998468c4d18bad2450e43e9567776340337a9f7",
+    "tables": [
+      "editorial_artifact_batches",
+      "editorial_artifact_relationships",
+      "editorial_artifact_versions",
+      "editorial_publication_registry"
+    ]
+  },
+  "mode": "apply",
+  "postcheck": {
+    "canonical_fingerprints": {
+      "bills": {
+        "row_count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "legislators": {
+        "row_count": 13,
+        "sha256": "c4a9305a8c536c7a6a9e0f9f2aa4e4f2f7ec6a3a616b7da7d312f7c933f11467"
+      },
+      "roll_calls": {
+        "row_count": 30,
+        "sha256": "14a3ed4b7d0fa79d5ce253146f6178c7643373357370d3b58486af6ca182fe8f"
+      },
+      "vote_interpretations": {
+        "row_count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "canonical_fingerprints_unchanged": true,
+    "counts": {
+      "artifacts": 66,
+      "publication_registry": 0,
+      "relationships": 60
+    },
+    "fail_closed_guard_probe": {
+      "conflicting_version_rejected": true,
+      "pending_publication_rejected": true,
+      "probe_rows_committed": false
+    },
+    "pending_slice_count": 11,
+    "publication_selector_count": 0,
+    "roundtrip": {
+      "artifact_count": 66,
+      "artifact_semantic_sha256": "ac393b0fe4fd3d06186cfa4637d10f25357c4f3893c2d54cc8c42b7ec23af45e",
+      "relationship_count": 60,
+      "relationship_semantic_sha256": "d42f22e8bfd3c635b6153cd1235aaa2be1bf1e65c93b91ea52adb8522f322628",
+      "repository_artifact_semantic_sha256": "ac393b0fe4fd3d06186cfa4637d10f25357c4f3893c2d54cc8c42b7ec23af45e",
+      "repository_relationship_semantic_sha256": "d42f22e8bfd3c635b6153cd1235aaa2be1bf1e65c93b91ea52adb8522f322628",
+      "semantic_match": true
+    },
+    "schema": {
+      "existing_tables": [
+        "editorial_artifact_batches",
+        "editorial_artifact_relationships",
+        "editorial_artifact_versions",
+        "editorial_publication_registry"
+      ],
+      "state": "complete"
+    },
+    "schema_contract": {
+      "columns": {
+        "editorial_artifact_batches": [
+          "applied_at",
+          "artifact_count",
+          "batch_id",
+          "created_at",
+          "deterministic_batch_key",
+          "manifest_sha256",
+          "relationship_count",
+          "source_commit_sha",
+          "status"
+        ],
+        "editorial_artifact_relationships": [
+          "child_artifact_id",
+          "metadata_jsonb",
+          "ordinal",
+          "parent_artifact_id",
+          "relationship_type"
+        ],
+        "editorial_artifact_versions": [
+          "artifact_id",
+          "artifact_type",
+          "artifact_version",
+          "batch_id",
+          "benchmark_status",
+          "canonical_action_id",
+          "canonical_roll_call_id",
+          "chamber",
+          "congress",
+          "content_sha256",
+          "created_at",
+          "editorial_status",
+          "episode_id",
+          "issue_id",
+          "member_bioguide_id",
+          "natural_key",
+          "payload_jsonb",
+          "policy_family_id",
+          "production_eligible",
+          "review_route",
+          "schema_version",
+          "source_commit_sha",
+          "source_manifest_sha256",
+          "supersedes_artifact_id"
+        ],
+        "editorial_publication_registry": [
+          "activated_at",
+          "artifact_id",
+          "deactivated_at",
+          "issue_id",
+          "member_bioguide_id",
+          "publication_metadata_jsonb",
+          "publicly_active"
+        ]
+      },
+      "constraints": [
+        {
+          "constraint_name": "2200_17070_1_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "2200_17070_2_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "2200_17070_3_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "2200_17070_4_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "2200_17070_5_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "2200_17070_6_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "2200_17070_7_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "2200_17070_8_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "editorial_artifact_batches_artifact_count_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "editorial_artifact_batches_deterministic_batch_key_key",
+          "constraint_type": "UNIQUE",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "editorial_artifact_batches_manifest_sha256_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "editorial_artifact_batches_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "editorial_artifact_batches_relationship_count_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "editorial_artifact_batches_source_commit_sha_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "editorial_artifact_batches_status_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_batches"
+        },
+        {
+          "constraint_name": "2200_17133_1_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_relationships"
+        },
+        {
+          "constraint_name": "2200_17133_2_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_relationships"
+        },
+        {
+          "constraint_name": "2200_17133_3_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_relationships"
+        },
+        {
+          "constraint_name": "2200_17133_4_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_relationships"
+        },
+        {
+          "constraint_name": "2200_17133_5_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_relationships"
+        },
+        {
+          "constraint_name": "editorial_artifact_relationships_child_artifact_id_fkey",
+          "constraint_type": "FOREIGN KEY",
+          "table_name": "editorial_artifact_relationships"
+        },
+        {
+          "constraint_name": "editorial_artifact_relationships_metadata_jsonb_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_relationships"
+        },
+        {
+          "constraint_name": "editorial_artifact_relationships_ordinal_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_relationships"
+        },
+        {
+          "constraint_name": "editorial_artifact_relationships_parent_artifact_id_fkey",
+          "constraint_type": "FOREIGN KEY",
+          "table_name": "editorial_artifact_relationships"
+        },
+        {
+          "constraint_name": "editorial_artifact_relationships_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "table_name": "editorial_artifact_relationships"
+        },
+        {
+          "constraint_name": "editorial_artifact_relationships_relationship_type_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_relationships"
+        },
+        {
+          "constraint_name": "2200_17087_10_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_1_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_20_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_21_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_22_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_23_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_24_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_2_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_3_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_4_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_5_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_6_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_7_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17087_9_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_artifact_id_content_sha256_key",
+          "constraint_type": "UNIQUE",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_artifact_type_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_artifact_version_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_batch_id_fkey",
+          "constraint_type": "FOREIGN KEY",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_benchmark_status_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_canonical_roll_call_id_fkey",
+          "constraint_type": "FOREIGN KEY",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_check1",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_congress_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_content_sha256_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_editorial_status_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_member_bioguide_id_fkey",
+          "constraint_type": "FOREIGN KEY",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_natural_key_artifact_version_key",
+          "constraint_type": "UNIQUE",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_payload_jsonb_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_review_route_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_source_commit_sha_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_source_manifest_sha256_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "editorial_artifact_versions_supersedes_artifact_id_fkey",
+          "constraint_type": "FOREIGN KEY",
+          "table_name": "editorial_artifact_versions"
+        },
+        {
+          "constraint_name": "2200_17155_1_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "2200_17155_2_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "2200_17155_3_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "2200_17155_4_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "2200_17155_5_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "2200_17155_7_not_null",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "editorial_publication_registry_artifact_id_fkey",
+          "constraint_type": "FOREIGN KEY",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "editorial_publication_registry_artifact_id_key",
+          "constraint_type": "UNIQUE",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "editorial_publication_registry_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "editorial_publication_registry_member_bioguide_id_fkey",
+          "constraint_type": "FOREIGN KEY",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "editorial_publication_registry_pkey",
+          "constraint_type": "PRIMARY KEY",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "editorial_publication_registry_publication_metadata_jsonb_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_publication_registry"
+        },
+        {
+          "constraint_name": "editorial_publication_registry_publicly_active_check",
+          "constraint_type": "CHECK",
+          "table_name": "editorial_publication_registry"
+        }
+      ],
+      "exact_columns": true,
+      "functions": [
+        "guard_editorial_artifact_immutability",
+        "guard_editorial_publication_activation"
+      ],
+      "functions_exact": true,
+      "indexes": [
+        "editorial_artifact_batches_deterministic_batch_key_key",
+        "editorial_artifact_batches_pkey",
+        "editorial_artifact_relationships_pkey",
+        "editorial_artifact_versions_artifact_id_content_sha256_key",
+        "editorial_artifact_versions_natural_key_artifact_version_key",
+        "editorial_artifact_versions_pkey",
+        "editorial_publication_registry_artifact_id_key",
+        "editorial_publication_registry_pkey",
+        "idx_editorial_artifact_relationships_child",
+        "idx_editorial_artifact_versions_action",
+        "idx_editorial_artifact_versions_batch",
+        "idx_editorial_artifact_versions_episode",
+        "idx_editorial_artifact_versions_family",
+        "idx_editorial_artifact_versions_hash",
+        "idx_editorial_artifact_versions_member_issue",
+        "idx_editorial_artifact_versions_status",
+        "idx_editorial_artifact_versions_type_key"
+      ],
+      "required_constraint_classes_present": true,
+      "required_indexes_present": true,
+      "triggers": [
+        "editorial_artifact_versions_immutable",
+        "editorial_publication_registry_fail_closed"
+      ],
+      "triggers_exact": true
+    },
+    "security": {
+      "direct_select_privileges": {
+        "anon": {
+          "editorial_artifact_batches": false,
+          "editorial_artifact_relationships": false,
+          "editorial_artifact_versions": false,
+          "editorial_publication_registry": false
+        },
+        "authenticated": {
+          "editorial_artifact_batches": false,
+          "editorial_artifact_relationships": false,
+          "editorial_artifact_versions": false,
+          "editorial_publication_registry": false
+        }
+      },
+      "rls": {
+        "editorial_artifact_batches": {
+          "enabled": true,
+          "forced": false
+        },
+        "editorial_artifact_relationships": {
+          "enabled": true,
+          "forced": false
+        },
+        "editorial_artifact_versions": {
+          "enabled": true,
+          "forced": false
+        },
+        "editorial_publication_registry": {
+          "enabled": true,
+          "forced": false
+        }
+      }
+    }
+  },
+  "preflight": {
+    "batch": null,
+    "canonical_action_count": 7,
+    "canonical_fingerprints": {
+      "bills": {
+        "row_count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "legislators": {
+        "row_count": 13,
+        "sha256": "c4a9305a8c536c7a6a9e0f9f2aa4e4f2f7ec6a3a616b7da7d312f7c933f11467"
+      },
+      "roll_calls": {
+        "row_count": 30,
+        "sha256": "14a3ed4b7d0fa79d5ce253146f6178c7643373357370d3b58486af6ca182fe8f"
+      },
+      "vote_interpretations": {
+        "row_count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    },
+    "canonical_member_count": 7,
+    "publication_registry_count": 0,
+    "read_only": true,
+    "schema": {
+      "existing_tables": [
+        "editorial_artifact_batches",
+        "editorial_artifact_relationships",
+        "editorial_artifact_versions",
+        "editorial_publication_registry"
+      ],
+      "state": "complete"
+    }
+  },
+  "publication_registry_expected_rows": 0,
+  "source_commit": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
+  "target": {
+    "database": "postgres",
+    "environment_file": null,
+    "exact_approved_target": false,
+    "host": "127.0.0.1",
+    "password_present": false,
+    "port": 55440,
+    "raw_url_recorded": false,
+    "scheme": "postgresql",
+    "target": "disposable",
+    "username_present": true
+  }
+}

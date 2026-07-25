@@ -110,5 +110,76 @@
     "separate benchmark promotion decision",
     "separate production eligibility and publication decision"
   ],
-  "recommendation": "ready_for_controlled_multi_domain_batch_expansion_after_shared_human_review; not_ready_for_broad_publication"
+  "recommendation": "historical_first_run_preserved; use correction_v1 for current review; not_ready_for_broad_publication",
+  "correction_v1": {
+    "status": "corrected_pending_human_review_production_operations_not_executed",
+    "failure_id": "COMM-V1-004",
+    "discovery": "human_inspection",
+    "original_result_preserved": true,
+    "eligibility": {
+      "accepted_rolls": [6, 7, 55, 64, 76, 78, 93],
+      "rejected_roll": 5,
+      "rejection_reason": "exact_action_not_materially_environment_energy",
+      "roll_6": "eligible_combined_divisions_b_c_boundary",
+      "roll_7": "eligible_cross_domain_final_passage_boundary"
+    },
+    "domain": {
+      "accepted_actions": 7,
+      "episodes": 4,
+      "official_sources": 14,
+      "supported_claims": 59,
+      "supported_absences": 4,
+      "corpus_semantic_sha256": "d66a9dc053ed04ae6ae4a2e86f15d0b01772a09b812e532b8996c8e1b8e819b9"
+    },
+    "cohort": {
+      "all_house_members": 432,
+      "complete_yes_no_members": 372,
+      "unique_observed_vectors": 35,
+      "selected_members": ["A000372", "J000288", "C001059", "M001231", "F000466", "H001095", "M001214"]
+    },
+    "routing": {
+      "actual_member_routes": {
+        "standard_generation_pass": 173,
+        "sampled_audit_candidate": 199,
+        "human_exception_required": 60,
+        "blocked": 0
+      },
+      "binary_vectors": 128,
+      "binary_routes": {
+        "standard_generation_pass": 112,
+        "sampled_audit_candidate": 16,
+        "human_exception_required": 0,
+        "blocked": 0
+      },
+      "unique_shared_review_decisions": 8,
+      "shared_dependency_member_amplification": 0,
+      "member_route_basis": "member_specific_findings_only"
+    },
+    "generality": {
+      "mutations": {"original": 17, "total": 26, "passed": 26, "failed": 0},
+      "identity_invariance_failures": 0,
+      "party_invariance_failures": 0,
+      "direction_only_winners": 0,
+      "member_party_domain_title_roll_or_exact_vector_branches": 0
+    },
+    "persistence": {
+      "batch_key": "commissioning-domain-v1-environment-energy-corrected",
+      "artifacts": 66,
+      "relationships": 60,
+      "manifest_sha256": "dea1b8c7a0071462a5eb91f24d22287dc156fda9edcfa71a2abf6e570c2459c5",
+      "artifact_semantic_sha256": "ac393b0fe4fd3d06186cfa4637d10f25357c4f3893c2d54cc8c42b7ec23af45e",
+      "relationship_semantic_sha256": "d42f22e8bfd3c635b6153cd1235aaa2be1bf1e65c93b91ea52adb8522f322628",
+      "disposable_proof": "pass",
+      "production_original_rollback_executed": false,
+      "production_corrected_apply_executed": false
+    },
+    "publication": {
+      "editorial_status": "human_approval_pending",
+      "benchmark_status": "not_promoted",
+      "production_eligible": false,
+      "frontend_production_registry": "Object.freeze([])",
+      "database_registry_rows": 0,
+      "publication_selector_rows": 0
+    }
+  }
 }

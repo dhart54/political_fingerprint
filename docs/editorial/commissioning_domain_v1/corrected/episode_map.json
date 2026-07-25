@@ -1,0 +1,69 @@
+{
+  "counting_boundary": "Seven eligible substantive actions count as four independent episodes; roll 5 is excluded by exact-action domain eligibility, and related stages or proposals do not inflate cross-episode evidence.",
+  "counts": {
+    "independent_episodes": 4,
+    "mechanism_families": 4,
+    "multi_action_episodes": 3,
+    "substantive_actions": 7
+  },
+  "domain": "ENVIRONMENT_ENERGY",
+  "episodes": [
+    {
+      "counted_as_independent_episodes": 1,
+      "episode_id": "fy2026-energy-water-interior-appropriations",
+      "meaningful_differences": "Roll 6 jointly retained Divisions B-C; roll 7 passed the assembled cross-domain package. Roll 5 is excluded from this domain.",
+      "mechanism_family": "annual_discretionary_appropriations",
+      "relationship_type": "distinct_stage_actions_within_one_package_episode",
+      "rolls": [
+        6,
+        7
+      ],
+      "route": "human_exception_required",
+      "shared_objective": "Retain the Energy-Water and Interior-Environment divisions, then pass the cross-domain FY2026 appropriations package.",
+      "why": "The combined B-C retention and cross-domain final-passage boundary remain one shared review dependency and do not create member exceptions."
+    },
+    {
+      "counted_as_independent_episodes": 1,
+      "episode_id": "critical-mineral-supply-and-domestic-production",
+      "meaningful_differences": "H.R. 4090 centers Interior, federal lands, project acceleration, and mining studies; H.R. 3617 centers DOE assessments, strategies, alternatives, recycling, and reporting.",
+      "mechanism_family": "resource_supply_security",
+      "relationship_type": "separate_proposals_in_one_policy_family",
+      "rolls": [
+        55,
+        64
+      ],
+      "route": "human_exception_required",
+      "shared_objective": "Address mineral or critical-energy-resource supply security.",
+      "why": "The two separate bills share a source-grounded objective but use contrasting agency mechanisms; confirming one episode rather than two is novel shared meaning."
+    },
+    {
+      "counted_as_independent_episodes": 1,
+      "episode_id": "home-energy-standards-and-incentives",
+      "meaningful_differences": "H.R. 4626 changes future efficiency-rule criteria; H.R. 4758 repeals rebate, training, and building-code assistance programs.",
+      "mechanism_family": "home_energy_regulation_and_programs",
+      "relationship_type": "separate_proposals_in_one_policy_family",
+      "rolls": [
+        76,
+        78
+      ],
+      "route": "human_exception_required",
+      "shared_objective": "Change federal home-energy policy through standards constraints and program repeal.",
+      "why": "The shared home-energy family is clear, but treating distinct standards and subsidy mechanisms as one episode is a novel relationship requiring review."
+    },
+    {
+      "counted_as_independent_episodes": 1,
+      "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+      "meaningful_differences": "Single House-passage action with a unit-specific wildlife exception.",
+      "mechanism_family": "federal_land_regulatory_constraint",
+      "relationship_type": "single_action_episode",
+      "rolls": [
+        93
+      ],
+      "route": "standard_generation_pass",
+      "shared_objective": "Limit federal land managers' authority to regulate lead ammunition or tackle on covered lands and waters.",
+      "why": "Existing single-action relationship accurately represents the evidence."
+    }
+  ],
+  "human_approval_status": "human_approval_pending",
+  "schema_version": "editorial_policy_episode_map_v1"
+}
