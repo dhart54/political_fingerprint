@@ -175,6 +175,11 @@
   or Windows exact-byte failures remained.
 - Final-correction frontend lint and production build: passed with the same 8
   pre-existing hook warnings; documentation governance passed.
+- Post-merge correction reconciliation: live read-only verification matched the
+  final 69/60 batch and semantic hashes; publication registry and selector were
+  zero; the frontend production registry was empty; JSON parsing, receipt
+  agreement, documentation governance, reference search, and `git diff --check`
+  passed.
 
 ## Production Writes
 
@@ -182,8 +187,9 @@
 - Scope: One exact commissioning-domain pending batch only after every hard gate.
 - Expected effects: New immutable pending artifacts and exact relationships only; zero updates/deletes/publication rows; existing 71/95 batch and canonical tables unchanged.
 - Actual effects: 74 artifacts and 68 relationships inserted in one transaction; second exact apply inserted 0/0; semantic export matched; 12 total pending presentations; registry 0; selector 0; original seed 71/95; canonical fingerprints unchanged.
-- Correction-phase authorization: Read-only production verification and preparation of exact rollback/reapplication commands only. Production rollback of the original batch and production application of the corrected batch are explicitly not authorized.
-- Correction-phase actual effects: no production write was executed. The original 74/68 batch remains applied; neither the superseded six-episode proposal nor the final-composition 69/60 proposal was applied to production.
+- Correction-phase authorization at PR merge: Read-only production verification and preparation of exact rollback/reapplication commands only.
+- Post-merge correction authorization: The user separately authorized the exact guarded rollback of the unpublished original 74/68 batch and application of the final-composition 69/60 batch.
+- Post-merge correction actual effects: the original batch was deleted exactly at 74/68; the final batch inserted exactly 69/60; a second apply inserted 0/0; semantic hashes matched; the 71/95 seed, canonical fingerprints, registry 0, selector 0, and empty frontend production registry were preserved.
 
 ## Rollback Paths
 
@@ -196,6 +202,6 @@
 
 ## Final Reconciliation
 
-- Original, hierarchy-correction, and final-composition definitions of done are satisfied. The scoped result is reconciled for draft PR #104. Merge, production correction, approval, promotion, and publication remain explicitly out of scope.
+- Original, hierarchy-correction, and final-composition definitions of done are satisfied. PR #104 was merged, and the separately authorized post-merge production correction was completed and verified exactly at 69 artifacts and 60 relationships.
 - Remaining limitations: Six new trait values, one candidate relationship type, roll 7's cross-domain role, related-proposal episode judgments, four supported argument absences, and all member presentations remain pending human review. The corpus is bounded and is not a complete environmental record.
-- Recommended next step: Human review of rolls 6/7, the shared ontology/relationship package, and routed member presentations, followed by a separate authorization decision for the prepared production rollback/reapplication. Do not publish or promote automatically.
+- Recommended next step: Human review of rolls 6/7, the shared ontology/relationship package, and routed member presentations. Do not publish or promote automatically.

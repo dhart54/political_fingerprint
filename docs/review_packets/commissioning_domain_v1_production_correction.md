@@ -1,13 +1,34 @@
-# Commissioning Domain V1 — Prepared Production Correction
+# Commissioning Domain V1 — Production Correction Reconciliation
 
-Status: prepared and disposable-tested; **not executed against production**.
+Status: **executed and verified against the pinned production target on
+2026-07-25**, after PR #104 was squash-merged.
 
-## Current and proposed state
+## Execution result
+
+- Rolled back only
+  `commissioning-domain-v1-environment-energy`: 74 artifacts and 68
+  relationships deleted; schema retained; no publication rows referenced it.
+- Applied
+  `commissioning-domain-v1-environment-energy-final-composition`: 69 artifacts
+  and 60 relationships inserted.
+- A second exact apply inserted 0 artifacts and 0 relationships and recognized
+  all 69 artifacts as identical.
+- Final artifact/relationship semantic hashes matched
+  `57e158f98b0ef0ab15f020cfd31992d73e1222742cfcfaa827574a8eab18974a` /
+  `bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21`.
+- The original persistence seed remained exact at 71 artifacts and 95
+  relationships, including semantic export equality.
+- Canonical `legislators`, `bills`, `roll_calls`, and `vote_interpretations`
+  fingerprints were unchanged.
+- Database publication registry, database selector, and frontend production
+  registry all remained empty.
+
+## Pre-correction and final state
 
 | State | Batch key | Actions | Artifacts | Relationships | Manifest |
 |---|---|---:|---:|---:|---|
-| Current production | `commissioning-domain-v1-environment-energy` | 8 | 74 | 68 | `5821e12ca1e5666ed6ff39b1a9a2402a9f61e067d56dcd69a1870b5a64333c38` |
-| Proposed final composition | `commissioning-domain-v1-environment-energy-final-composition` | 7 | 69 | 60 | `fbee0675ace2b2e256fe1723681e3bd17dd065c670199367d76e8782b352a600` |
+| Superseded pre-correction production | `commissioning-domain-v1-environment-energy` | 8 | 74 | 68 | `5821e12ca1e5666ed6ff39b1a9a2402a9f61e067d56dcd69a1870b5a64333c38` |
+| Current production | `commissioning-domain-v1-environment-energy-final-composition` | 7 | 69 | 60 | `fbee0675ace2b2e256fe1723681e3bd17dd065c670199367d76e8782b352a600` |
 
 The original 71-artifact/95-relationship seed, canonical tables, schema 0016,
 publication registry, publication selector, and empty frontend production
@@ -26,10 +47,11 @@ registry must remain unchanged.
   `57e158f98b0ef0ab15f020cfd31992d73e1222742cfcfaa827574a8eab18974a` /
   `bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21`
 
-## Exact commands
+## Historical execution commands
 
-Run from the repository root. The check commands are read-only. The rollback
-and apply commands require separate explicit production authorization.
+These are the exact commands used for the completed correction and are retained
+as audit history. The check commands are read-only. Re-running any rollback or
+apply command requires separate explicit production authorization.
 
 Original batch preflight:
 
@@ -60,9 +82,9 @@ Corrected verification and idempotency use the same pinned values with
 
 The earlier
 `commissioning-domain-v1-environment-energy-corrected-six-episode` proposal is
-preserved as audit history, superseded, and was never applied. Neither
-Operation A nor Operation B in this packet has been executed against
-production.
+preserved as audit history, superseded, and was never applied. Operation A and
+Operation B were executed once against the pinned production target on
+2026-07-25 with the results recorded above.
 
 ## Stop conditions
 
@@ -72,11 +94,13 @@ publication reference, canonical fingerprint, seed count, selector count, or
 registry count. Stop if any operation would update an existing artifact,
 create a publication row, touch canonical tables, or require migration 0017.
 
-## Recovery
+## Historical recovery contingency
 
-If Operation A succeeds but Operation B fails, leave the database bounded and
-unpublished, diagnose the mismatch, and do not improvise. With explicit
-recovery authorization, reapply the unchanged original manifest using its
-exact apply command and `--confirm-production-apply`, then verify 74/68,
-semantic export equality, the 71/95 seed, canonical fingerprints, registry 0,
-and selector 0. Do not edit either manifest to force recovery.
+The prepared contingency was: if Operation A succeeded but Operation B failed,
+leave the database bounded and unpublished, diagnose the mismatch, and do not
+improvise. With explicit recovery authorization, reapply the unchanged original
+manifest using its exact apply command and `--confirm-production-apply`, then
+verify 74/68, semantic export equality, the 71/95 seed, canonical fingerprints,
+registry 0, and selector 0. This contingency was not needed because both
+operations completed and the final state verified exactly. Do not edit either
+manifest to force recovery.
