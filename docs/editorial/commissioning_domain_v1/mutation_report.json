@@ -1,0 +1,117 @@
+{
+  "cases": [
+    {
+      "expected_route": "blocked",
+      "mutation_id": "missing_official_source",
+      "owning_layer": "source_integrity",
+      "passed": true
+    },
+    {
+      "expected_route": "blocked",
+      "mutation_id": "wrong_action_stage",
+      "owning_layer": "action_identity",
+      "passed": true
+    },
+    {
+      "expected_route": "blocked",
+      "mutation_id": "swapped_amendment_parent",
+      "owning_layer": "action_identity",
+      "passed": true
+    },
+    {
+      "expected_route": "blocked",
+      "mutation_id": "duplicated_action",
+      "owning_layer": "overlay_contract",
+      "passed": true
+    },
+    {
+      "expected_route": "blocked",
+      "mutation_id": "incompatible_episode_assignment",
+      "owning_layer": "episode_contract",
+      "passed": true
+    },
+    {
+      "expected_route": "human_exception_required",
+      "mutation_id": "unsupported_argument",
+      "owning_layer": "claim_source_map",
+      "passed": true
+    },
+    {
+      "expected_route": "blocked",
+      "mutation_id": "member_leakage",
+      "owning_layer": "shared_evidence",
+      "passed": true
+    },
+    {
+      "expected_route": "standard_generation_pass",
+      "mutation_id": "party_change_identical_votes",
+      "owning_layer": "invariance",
+      "passed": true
+    },
+    {
+      "expected_route": "standard_generation_pass",
+      "mutation_id": "member_identity_change_identical_votes",
+      "owning_layer": "invariance",
+      "passed": true
+    },
+    {
+      "expected_route": "standard_generation_pass",
+      "mutation_id": "reordered_actions_episodes",
+      "owning_layer": "determinism",
+      "passed": true
+    },
+    {
+      "expected_route": "standard_generation_pass",
+      "mutation_id": "opaque_action_titles",
+      "owning_layer": "title_invariance",
+      "passed": true
+    },
+    {
+      "expected_route": "blocked",
+      "mutation_id": "contradictory_coverage",
+      "owning_layer": "coverage_contract",
+      "passed": true
+    },
+    {
+      "expected_route": "blocked",
+      "mutation_id": "not_voting_as_opposition",
+      "owning_layer": "absence_semantics",
+      "passed": true
+    },
+    {
+      "expected_route": "blocked",
+      "mutation_id": "missing_as_outside_service",
+      "owning_layer": "absence_semantics",
+      "passed": true
+    },
+    {
+      "expected_route": "human_exception_required",
+      "mutation_id": "unresolved_trait_relationship",
+      "owning_layer": "trait_contract",
+      "passed": true
+    },
+    {
+      "expected_route": "blocked",
+      "mutation_id": "semantic_hash_drift",
+      "owning_layer": "persistence_contract",
+      "passed": true
+    },
+    {
+      "expected_route": "blocked",
+      "mutation_id": "publication_state_mutation",
+      "owning_layer": "publication_boundary",
+      "passed": true
+    }
+  ],
+  "counts": {
+    "failed": 0,
+    "passed": 17,
+    "route_distribution": {
+      "blocked": 11,
+      "human_exception_required": 2,
+      "standard_generation_pass": 4
+    },
+    "total": 17
+  },
+  "schema_version": "commissioning_domain_mutation_report_v1"
+}

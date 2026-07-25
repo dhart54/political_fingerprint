@@ -64,6 +64,30 @@ def test_not_voting_inside_multi_roll_episode_makes_trajectory_partial_and_non_c
     assert multi["theme_evidence"] == []
 
 
+def test_fully_known_not_voting_episode_uses_exact_opted_in_status_copy():
+    interpretations = catalog()
+    interpretations["multi"]["structural_metadata"] = {
+        "episode_action_label": "the retention and passage stages",
+        "incomplete_status_rendering": "exact_known_action_statuses",
+    }
+    value = build(
+        [
+            action(1, "Not Voting", "multi"),
+            action(2, "Not Voting", "multi"),
+            action(3, "Yea", "single"),
+        ],
+        interpretations=interpretations,
+    )
+    multi = value["episode_trajectories"][0]
+    assert multi["member_trajectory"] == (
+        "Recorded Not Voting/Not Voting across the retention and passage "
+        "stages; both actions are Not Voting, so no support or opposition "
+        "trajectory is inferred."
+    )
+    for generic_fallback in ("Present", "outside service", "missing"):
+        assert generic_fallback not in multi["member_trajectory"]
+
+
 def test_present_not_voting_and_missing_never_emit_counting_themes():
     for value in ("Present", "Not Voting"):
         overlay = build([action(1, "Yea", "multi"), action(2, "Nay", "multi"), action(3, value, "single")])

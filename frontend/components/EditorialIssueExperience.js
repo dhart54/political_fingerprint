@@ -24,6 +24,8 @@ export default function EditorialIssueExperience({ experience }) {
         {presentation.strengthLabel ? <p className="mt-3 w-fit rounded-full border border-cyan-900/15 bg-white px-3 py-1.5 text-xs font-medium text-cyan-950">{presentation.strengthLabel}</p> : null}
         {presentation.coverageLine ? <p className="mt-3 text-sm font-medium leading-6 text-stone-700" data-testid="editorial-coverage-line">{presentation.coverageLine}</p> : null}
         {presentation.proceduralContextLine ? <p className="mt-1 text-xs leading-5 text-stone-500">{presentation.proceduralContextLine}</p> : null}
+        {presentation.coverageNote ? <p className="mt-2 text-xs leading-5 text-stone-600"><span className="font-semibold text-stone-700">Coverage note:</span> {presentation.coverageNote}</p> : null}
+        {presentation.methodNote ? <p className="mt-1 text-xs leading-5 text-stone-600"><span className="font-semibold text-stone-700">Method note:</span> {presentation.methodNote}</p> : null}
       </header>
 
       <AnalyticalFindings sections={presentation.analyticalSections} />
@@ -119,14 +121,14 @@ function ActionReceipt({ record }) {
         <span className="mt-1 block text-sm leading-6 text-stone-700">{record.actionAndResult}</span>
       </summary>
       <div className="border-t border-stone-200 px-3 pb-3 pt-3">
-        {record.practicalChoice ? <Fact label="The choice before the House" text={record.practicalChoice} /> : null}
+        {record.practicalChoice ? <Fact label={record.presentationLabels?.practicalChoice || "The choice before the House"} text={record.practicalChoice} /> : null}
         <div className="mt-3 grid gap-3 md:grid-cols-2">
           <FactGroup title="What changed">
-            <Fact label="Prior baseline" text={record.whatChanged?.before} />
+            <Fact label={record.presentationLabels?.priorBaseline || "Prior baseline"} text={record.whatChanged?.before} />
             <Fact label="Change at stake" text={record.whatChanged?.changeAtStake} />
           </FactGroup>
           <FactGroup title="Impact and outcome">
-            <Fact label="Who or what was affected" text={record.impactAndOutcome?.affected} />
+            <Fact label={record.presentationLabels?.affected || "Who or what was affected"} text={record.impactAndOutcome?.affected} />
             <Fact label="Scale and timing" text={record.impactAndOutcome?.scaleAndTiming} />
             <Fact label="Outcome" text={record.impactAndOutcome?.outcome} />
           </FactGroup>
@@ -155,7 +157,7 @@ function ActionDepth({ record }) {
         {hasArguments ? <p className="mt-2 text-xs leading-5 text-stone-600">{record.argumentBoundary}</p> : null}
         {record.oneSidedArgumentNote ? <p className="mt-2 text-xs leading-5 text-stone-600">{record.oneSidedArgumentNote}</p> : null}
         {record.additionalDetail?.detail ? <section className="mt-3"><p className="text-[11px] uppercase tracking-[0.14em] text-cyan-900">More detail</p><p className="mt-1 text-sm leading-6 text-stone-800">{record.additionalDetail.detail}</p></section> : null}
-        {context.length ? <section className="mt-3"><p className="text-[11px] uppercase tracking-[0.14em] text-cyan-900">Important context</p><ul className="mt-1 grid gap-1.5 pl-5 text-sm leading-6 text-stone-800">{context.map((item) => <li className="list-disc" key={item}>{item}</li>)}</ul></section> : null}
+        {context.length ? <section className="mt-3"><p className="text-[11px] uppercase tracking-[0.14em] text-cyan-900">{record.presentationLabels?.context || "Important context"}</p><ul className="mt-1 grid gap-1.5 pl-5 text-sm leading-6 text-stone-800">{context.map((item) => <li className="list-disc" key={item}>{item}</li>)}</ul></section> : null}
         <OfficialSources sources={record.sources} />
       </div>
     </details>

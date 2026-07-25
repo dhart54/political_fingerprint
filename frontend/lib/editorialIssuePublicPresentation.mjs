@@ -24,7 +24,13 @@ export function buildPublicEditorialPresentation(candidate, evidenceRows = []) {
     || mapLegacyStrength(candidate?.synthesis?.evidenceBreadth, coverage.state);
 
   return {
-    conclusion: coverage.state === PUBLIC_COVERAGE_STATE.reviewedConclusion
+    conclusion: (
+      coverage.state === PUBLIC_COVERAGE_STATE.reviewedConclusion
+      || (
+        coverage.state === PUBLIC_COVERAGE_STATE.limitedEvidence
+        && inference.candidate_id === "insufficient-evidence"
+      )
+    )
       ? candidate?.synthesis?.primary
       : null,
     strengthLabel,
@@ -34,7 +40,12 @@ export function buildPublicEditorialPresentation(candidate, evidenceRows = []) {
     votingContext: candidate?.synthesis?.votingContext,
     votingContextBoundary: cleanInternalLanguage(candidate?.synthesis?.votingContextBoundary),
     coverage,
-    coverageLine: compactCoverageLine(coverage),
+    coverageLine: compactCoverageLine(
+      coverage,
+      Boolean(candidate?.synthesis?.coverageNote),
+    ),
+    coverageNote: candidate?.synthesis?.coverageNote || coverage.message,
+    methodNote: candidate?.synthesis?.methodNote || null,
     proceduralContextLine: sourceProceduralLine(candidate?.source?.slice_counts?.context_controls),
   };
 }
@@ -248,9 +259,20 @@ function coverageLabel(state) {
   }[state];
 }
 
-export function compactCoverageLine(coverage) {
+export function compactCoverageLine(coverage, exactKnownStates = false) {
   const parts = [];
-  if (coverage.completeForSelectedSet) {
+  if (exactKnownStates) {
+    const resolved = coverage.yesNoVotes + coverage.notVoting + coverage.present;
+    parts.push(
+      `${resolved} action ${resolved === 1 ? "status" : "statuses"} resolved`,
+      `${coverage.yesNoVotes} Yea/Nay ${coverage.yesNoVotes === 1 ? "position" : "positions"}`,
+    );
+    if (coverage.notVoting) parts.push(`${coverage.notVoting} Not Voting`);
+    if (coverage.present) parts.push(`${coverage.present} Present`);
+    if (coverage.completeEpisodes) parts.push(plural(coverage.completeEpisodes, "complete episode"));
+    if (coverage.partialEpisodes) parts.push(plural(coverage.partialEpisodes, "partial episode"));
+    if (coverage.missingEpisodes) parts.push(plural(coverage.missingEpisodes, "missing episode"));
+  } else if (coverage.completeForSelectedSet) {
     parts.push(plural(coverage.yesNoVotes, "substantive vote"));
     parts.push(plural(coverage.completeEpisodes, "policy episode"));
   } else {
@@ -261,8 +283,8 @@ export function compactCoverageLine(coverage) {
     if (coverage.partialEpisodes) parts.push(plural(coverage.partialEpisodes, "partial episode"));
     if (coverage.missingEpisodes) parts.push(plural(coverage.missingEpisodes, "missing episode"));
   }
-  if (coverage.notVoting) parts.push(plural(coverage.notVoting, "Not Voting action"));
-  if (coverage.present) parts.push(plural(coverage.present, "Present action"));
+  if (!exactKnownStates && coverage.notVoting) parts.push(plural(coverage.notVoting, "Not Voting action"));
+  if (!exactKnownStates && coverage.present) parts.push(plural(coverage.present, "Present action"));
   if (coverage.reviewedPeriod) parts.push(cleanPeriodLabel(coverage.reviewedPeriod));
   return parts.join(" · ");
 }

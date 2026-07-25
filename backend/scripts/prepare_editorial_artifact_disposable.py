@@ -19,6 +19,13 @@ from app.editorial_artifacts.bundle import build_seed_bundle
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--database-url-env", default="EDITORIAL_DISPOSABLE_DATABASE_URL")
+    parser.add_argument(
+        "--additional-manifest",
+        type=Path,
+        action="append",
+        default=[],
+        help="Manifest used only to seed canonical identities; may be repeated.",
+    )
     args = parser.parse_args()
     db_url = os.getenv(args.database_url_env)
     if not db_url or "localhost" not in db_url and "127.0.0.1" not in db_url:
@@ -26,17 +33,33 @@ def main() -> int:
 
     import psycopg
 
-    bundle = build_seed_bundle()
+    bundles = [build_seed_bundle()]
+    bundles.extend(
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in args.additional_manifest
+    )
     members = {
         item["member_bioguide_id"]
+        for bundle in bundles
         for item in bundle["artifacts"]
         if item["member_bioguide_id"]
     }
     actions = {
         item["canonical_action_id"]
+        for bundle in bundles
         for item in bundle["artifacts"]
         if item["canonical_action_id"]
     }
+    member_metadata = {}
+    for bundle in bundles:
+        for item in bundle["artifacts"]:
+            identifier = item.get("member_bioguide_id")
+            if not identifier:
+                continue
+            payload = item.get("payload", {})
+            member = payload.get("overlay", {}).get("member") or payload.get("member") or {}
+            if member:
+                member_metadata[identifier] = member
     with psycopg.connect(db_url, autocommit=True) as conn:
         for role in ("anon", "authenticated"):
             conn.execute(
@@ -56,7 +79,14 @@ def main() -> int:
                 "M001184": ("Thomas Massie", "KY", "4", "R"),
                 "G000586": ('Jesús G. "Chuy" García', "IL", "4", "D"),
             }
-            name, state, district, party = names[member_id]
+            if member_id in names:
+                name, state, district, party = names[member_id]
+            else:
+                member = member_metadata[member_id]
+                name = member["display_name"]
+                state = member.get("state") or "NA"
+                district = str(member.get("district") or "0")
+                party = member.get("party") or "I"
             conn.execute(
                 """INSERT INTO legislators
                    (bioguide_id, name_display, chamber, state, district, party)
@@ -76,6 +106,7 @@ def main() -> int:
         "migrations_applied_through": "0015",
         "canonical_members": len(members),
         "canonical_actions": len(actions),
+        "bundle_count": len(bundles),
     }, indent=2))
     return 0
 

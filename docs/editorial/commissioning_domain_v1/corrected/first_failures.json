@@ -1,0 +1,148 @@
+{
+  "failures": [
+    {
+      "classification": "shared-corpus defect",
+      "correction": "Added source-grounded Division A, Divisions B-C, and final-passage stage identities in shared dossiers.",
+      "failure_id": "COMM-V1-001",
+      "first_candidate": "All H.R. 6938 rows used the same package title and were indistinguishable.",
+      "first_validator_result": "human_exception_required: opaque stages could be duplicated or counted as independent episodes.",
+      "owning_layer": "action identity",
+      "preserved": true,
+      "regression_proof": [
+        "opaque_action_titles mutation",
+        "reordered_actions_episodes mutation"
+      ]
+    },
+    {
+      "classification": "novel meaning",
+      "correction": "Grouped each source-grounded policy family as one episode while preserving mechanism differences.",
+      "failure_id": "COMM-V1-002",
+      "first_candidate": "Treat each separate critical-mineral and home-energy bill as an independent episode.",
+      "first_validator_result": "human_exception_required: related proposals could overstate independent evidence.",
+      "owning_layer": "episode relationship",
+      "preserved": true,
+      "regression_proof": [
+        "incompatible_episode_assignment mutation",
+        "unresolved_trait_relationship mutation"
+      ]
+    },
+    {
+      "classification": "generalized pipeline defect",
+      "correction": "Mapped every edge to the established immutable relationship vocabulary without changing schema 0016.",
+      "failure_id": "COMM-V1-003",
+      "first_candidate": "The first batch used readable relationship labels such as contains_episode and has_overlay.",
+      "first_validator_result": "blocked: migration 0016 rejected the first relationship insert and rolled back the disposable transaction.",
+      "owning_layer": "persistence relationship graph",
+      "preserved": true,
+      "regression_proof": [
+        "disposable PostgreSQL constraint proof",
+        "orphan relationship mutation"
+      ]
+    },
+    {
+      "classification": "generalized eligibility and routing defect",
+      "correction": "Added exact-action domain eligibility, removed roll 5, and separated deduplicated shared dependencies from member review routes.",
+      "failure_id": "COMM-V1-004",
+      "first_candidate": "Roll 5 entered Environment & Energy from parent-package context, and shared unresolved meaning multiplied into member exceptions.",
+      "first_validator_result": "blocked: the exact Division A action is not materially Environment & Energy; shared novelty is not a member-specific finding.",
+      "owning_layer": "primary-domain eligibility and review routing",
+      "preserved": true,
+      "regression_proof": [
+        "domain eligibility context-rescue mutations",
+        "shared dependency amplification mutation",
+        "432-member and 128-vector corrected evaluations"
+      ]
+    },
+    {
+      "classification": "generalized episode hierarchy defect",
+      "correction": "Represented seven actions as six episodes, with rolls 6/7 alone sharing one episode and two explicit two-episode policy families.",
+      "failure_id": "COMM-V1-005-HIERARCHY",
+      "first_candidate": "The four-episode correction collapsed rolls 55/64 and 76/78 from separate bills into two combined episodes.",
+      "first_validator_result": "blocked: separate bills remain independent episodes even when they share a policy family; member vote direction is irrelevant.",
+      "legacy_failure_id": "COMM-V1-005",
+      "owning_layer": "episode assignment and policy-family hierarchy",
+      "preserved": true,
+      "regression_proof": [
+        "six-episode hierarchy assertion",
+        "four vote-direction pair permutations per policy family",
+        "persistence family-to-episode graph assertion"
+      ],
+      "superseded_proposal": {
+        "batch_key": "commissioning-domain-v1-environment-energy-corrected",
+        "manifest_sha256": "dea1b8c7a0071462a5eb91f24d22287dc156fda9edcfa71a2abf6e570c2459c5",
+        "production_applied": false
+      }
+    },
+    {
+      "classification": "generalized pipeline defect",
+      "correction": "Assigned every semantic proposition one primary section, excluded repeated and trajectory-owned episodes from notable choices, separated method and coverage notes, and omitted empty sections.",
+      "failure_id": "COMM-V1-005",
+      "first_candidate": "Episode propositions appeared under multiple analytical sections, single-action episodes appeared as trajectories, and a counting rule appeared as a meaningful exception.",
+      "first_validator_result": "Human visual review identified deterministic section ownership and semantic deduplication failures not caught by the first validation state.",
+      "owning_layer": "proposition-role assignment and public composition",
+      "preserved": true,
+      "regression_proof": [
+        "all-member and all-vector section-ownership report",
+        "section permutation and collision mutations",
+        "four final-composition rendered fixtures"
+      ]
+    },
+    {
+      "classification": "generalized pipeline defect",
+      "correction": "Ranked repeated clusters by evidence strength without identity or ordering fields and synthesized every materially tied pattern.",
+      "failure_id": "COMM-V1-006",
+      "first_candidate": "The primary conclusion selected one repeated policy cluster and omitted another cluster with equal independent-episode support, completeness, and specificity.",
+      "first_validator_result": "Human visual review found that generation-order tie-breaking made the primary synthesis incomplete.",
+      "owning_layer": "proposition ranking and conclusion compression",
+      "preserved": true,
+      "regression_proof": [
+        "tied-pattern permutation tests",
+        "Mannion two-cluster conclusion assertion",
+        "all-vector tied-pattern omission count zero"
+      ]
+    },
+    {
+      "classification": "generalized pipeline defect",
+      "correction": "Separated resolved action status, Yea/Nay positions, Not Voting, Present, missing, outside-service, complete-episode, and partial-episode counts and rendered exact known states.",
+      "failure_id": "COMM-V1-007",
+      "first_candidate": "The limited-evidence fixture used generic possible-state language and described resolved statuses as reviewed actions without immediately distinguishing substantive Yea/Nay evidence.",
+      "first_validator_result": "Human visual review found five known Not Voting actions were presented through a generic fallback instead of exact counts.",
+      "owning_layer": "coverage presentation",
+      "preserved": true,
+      "regression_proof": [
+        "exact Not Voting coverage mutation",
+        "Hunt limited-evidence text assertion",
+        "generic-known-state fallback count zero"
+      ]
+    },
+    {
+      "classification": "generalized pipeline defect",
+      "correction": "Added opt-in structural metadata and a generic exact-known-status renderer for incomplete multi-action episodes.",
+      "failure_id": "COMM-V1-008",
+      "first_candidate": "Hunt's fully known Not Voting/Not Voting appropriations episode used the generic incomplete-trajectory fallback.",
+      "first_validator_result": "Human review found that two known action statuses must render their exact Not Voting/Not Voting sequence, not a list of possible incomplete states.",
+      "owning_layer": "episode trajectory presentation",
+      "preserved": true,
+      "regression_proof": [
+        "fully known Not Voting/Not Voting episode unit test",
+        "Hunt exact trajectory assertion",
+        "generic fallback exclusion assertion"
+      ]
+    },
+    {
+      "classification": "generalized contract defect",
+      "correction": "Moved both values into action_sequence structural metadata and retained only four new values in the pending policy-trait contract.",
+      "failure_id": "COMM-V1-009",
+      "first_candidate": "package_stage_retention and combined_divisions were routed as pending policy traits even though they describe structure.",
+      "first_validator_result": "Human review classified both values as generic action/episode structure rather than source-grounded policy meaning.",
+      "owning_layer": "action and episode structural metadata",
+      "preserved": true,
+      "regression_proof": [
+        "pending policy-trait exact-set assertion",
+        "structural metadata exact-value assertion",
+        "shared-review dependency exclusion assertion"
+      ]
+    }
+  ],
+  "schema_version": "commissioning_domain_first_failures_v1"
+}

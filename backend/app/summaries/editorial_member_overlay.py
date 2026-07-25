@@ -64,6 +64,13 @@ def build_member_overlay(*, member: dict, reviewed_period: str, shared_episode_s
         interpretation = deepcopy(catalog.get("signatures", {}).get("|".join(signature), catalog.get("non_counting")))
         if not interpretation:
             raise ValueError(f"episode {episode_id} has no interpretation for action signature {signature}")
+        exact_incomplete = _exact_known_incomplete_trajectory(
+            catalog=catalog,
+            signature=signature,
+            coverage=coverage,
+        )
+        if exact_incomplete:
+            interpretation["member_trajectory"] = exact_incomplete
         trajectories.append({
             "episode_id": episode_id,
             "rolls": list(rolls),
@@ -107,6 +114,48 @@ def build_member_overlay(*, member: dict, reviewed_period: str, shared_episode_s
     }
     _reject_duplicated_facts(result)
     return result
+
+
+def _exact_known_incomplete_trajectory(
+    *, catalog: dict, signature: list[str], coverage: str
+) -> str | None:
+    """Render exact statuses when an opted-in incomplete episode is fully known."""
+    structural = catalog.get("structural_metadata", {})
+    if (
+        coverage != "partial"
+        or structural.get("incomplete_status_rendering")
+        != "exact_known_action_statuses"
+        or not signature
+        or any(
+            action in OUTSIDE_SERVICE_ACTIONS | {"Missing Evidence"}
+            for action in signature
+        )
+    ):
+        return None
+    label = structural.get("episode_action_label")
+    if not isinstance(label, str) or not label.strip():
+        raise ValueError(
+            "exact known incomplete-status rendering requires episode_action_label"
+        )
+    joined = "/".join(signature)
+    if len(set(signature)) == 1:
+        count_label = (
+            "the recorded action is"
+            if len(signature) == 1
+            else "both actions are"
+            if len(signature) == 2
+            else f"all {len(signature)} actions are"
+        )
+        status_clause = f"{count_label} {signature[0]}"
+    else:
+        status_clause = (
+            f"the {len(signature)} known action statuses are "
+            f"{', '.join(signature[:-1])} and {signature[-1]} in stage order"
+        )
+    return (
+        f"Recorded {joined} across {label}; {status_clause}, so no support or "
+        "opposition trajectory is inferred."
+    )
 
 
 def inference_evidence_view(inference: dict) -> dict:

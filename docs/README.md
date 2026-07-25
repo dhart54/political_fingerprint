@@ -32,7 +32,7 @@ The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-Active plan: [Documentation Governance Cleanup V1](plans/documentation_governance_cleanup_v1.md)
+Active plan: [Commissioning Domain V1](plans/commissioning_domain_v1.md)
 
 The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 

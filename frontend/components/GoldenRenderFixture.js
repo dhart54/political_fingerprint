@@ -21,6 +21,10 @@ import {
 import { justiceEditorialIssueFixtureData } from "../lib/justiceEditorialRenderFixture.mjs";
 import { justiceCrossMemberRenderProfiles } from "../lib/justiceCrossMemberReviewSlices.mjs";
 import { blindEditorialPipelineReviewProfile } from "../lib/blindEditorialPipelineReviewSlice.mjs";
+import {
+  commissioningDomainRenderProfiles,
+  commissioningDomainSharedReviewText,
+} from "../lib/commissioningDomainReviewSlices.mjs";
 import { EDITORIAL_EXPERIENCE_MODE } from "../lib/editorialIssueExperience.mjs";
 import { reviewEditorialIssueSlices } from "../lib/editorialIssueReviewSlices.mjs";
 import {
@@ -53,6 +57,7 @@ export default function GoldenRenderFixture() {
     requestedAt: 1,
   });
   const [justiceEditorialRequest] = useState({ domain: "JUSTICE_PUBLIC_SAFETY", requestedAt: 1 });
+  const [commissioningDomainRequest] = useState({ domain: "ENVIRONMENT_ENERGY", requestedAt: 1 });
   const [syntheticEditorialRequest] = useState({
     domain: "ENVIRONMENT_ENERGY",
     requestedAt: 1,
@@ -134,6 +139,43 @@ export default function GoldenRenderFixture() {
               legislatorId={profile.legislator.id}
               scope="all"
               title={`${profile.legislator.name_display}'s Justice & Public Safety evidence`}
+            />
+          </section>
+        ))}
+
+        <aside className="mt-5 rounded-2xl border border-amber-800/20 bg-amber-50 px-4 py-3" data-review-harness-chrome="true" data-testid="commissioning-domain-shared-review">
+          <p className="text-xs uppercase tracking-[0.18em] text-amber-900">Shared commissioning review dependencies</p>
+          <ul className="mt-2 grid gap-1 pl-5 text-sm leading-6 text-stone-700">
+            {commissioningDomainSharedReviewText.map((text) => <li className="list-disc" key={text}>{text}</li>)}
+          </ul>
+        </aside>
+
+        {commissioningDomainRenderProfiles.map((profile) => (
+          <section
+            className="mt-5 scroll-mt-4"
+            data-review-harness="commissioning-domain-pending"
+            data-testid={`commissioning-domain-${profile.memberId}`}
+            id={`commissioning-domain-${profile.memberId}`}
+            key={profile.memberId}
+          >
+            <div className="rounded-2xl border border-emerald-900/20 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)]" data-review-harness-chrome="true">
+              <p className="text-xs uppercase tracking-[0.2em] text-emerald-800">Commissioning domain — review only</p>
+              <h2 className="mt-1 font-serif text-[1.8rem] leading-tight text-stone-950">
+                {profile.legislator.name_display} — Environment &amp; Energy
+              </h2>
+              <p className="mt-1 text-sm leading-6 text-stone-600">
+                Frozen shared dossiers with a recorded-action member overlay. Case: {profile.label}.
+              </p>
+            </div>
+            <PositionByIssue
+              editorialCandidates={[profile.candidate]}
+              editorialMode={EDITORIAL_EXPERIENCE_MODE.review}
+              evidenceRequest={commissioningDomainRequest}
+              fixtureData={profile.fixtureData}
+              legislator={profile.legislator}
+              legislatorId={profile.legislator.id}
+              scope="all"
+              title={`${profile.legislator.name_display}'s Environment & Energy evidence`}
             />
           </section>
         ))}

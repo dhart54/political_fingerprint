@@ -60,6 +60,7 @@ export function buildSharedLegislativeAction(entry, row = {}, { episodeId = null
     policyFamilyId,
     measure: row.description || row.question || entry.measure_id,
     legislativeStage: entry.stage,
+    presentationLabels: entry.presentation_labels || null,
     date: row.vote_date,
     practicalChoice: entry.ten_second?.practical_choice,
     whatChanged: Object.freeze({

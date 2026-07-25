@@ -1,0 +1,40 @@
+{
+  "schema_version": "commissioning_domain_v1_production_correction_v1",
+  "status": "prepared_disposable_tested_not_executed",
+  "migration_sha256": "b4fffce458ebda4b09ce92cd1998468c4d18bad2450e43e9567776340337a9f7",
+  "source_commit": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
+  "current_production": {
+    "batch_key": "commissioning-domain-v1-environment-energy",
+    "actions": 8,
+    "artifacts": 74,
+    "relationships": 68,
+    "manifest_sha256": "5821e12ca1e5666ed6ff39b1a9a2402a9f61e067d56dcd69a1870b5a64333c38",
+    "artifact_semantic_sha256": "ab9f580a6a55eafb7848bbb412788202558e78a05cc7b6771714e5a25b0e977d",
+    "relationship_semantic_sha256": "feb267bc4cf3e9dbc47b37c816bd59ddbc31e97fe7908244d6005055edc69cf7"
+  },
+  "proposed_corrected": {
+    "batch_key": "commissioning-domain-v1-environment-energy-final-composition",
+    "actions": 7,
+    "episodes": 6,
+    "artifacts": 69,
+    "relationships": 60,
+    "manifest_sha256": "fbee0675ace2b2e256fe1723681e3bd17dd065c670199367d76e8782b352a600",
+    "artifact_semantic_sha256": "57e158f98b0ef0ab15f020cfd31992d73e1222742cfcfaa827574a8eab18974a",
+    "relationship_semantic_sha256": "bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21"
+  },
+  "superseded_unapplied_proposal": {
+    "batch_key": "commissioning-domain-v1-environment-energy-corrected-six-episode",
+    "production_applied": false
+  },
+  "production_operations_executed": {
+    "original_rollback": false,
+    "corrected_apply": false
+  },
+  "invariants": {
+    "original_seed": {"artifacts": 71, "relationships": 95},
+    "publication_registry_rows": 0,
+    "publication_selector_rows": 0,
+    "schema_migration": "0016",
+    "canonical_tables_unchanged": true
+  }
+}

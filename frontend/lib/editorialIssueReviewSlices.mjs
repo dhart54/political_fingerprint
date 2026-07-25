@@ -1,4 +1,5 @@
 import { economyEpisodeByRoll, economyEpisodePresentation } from "./editorialEpisodeMetadata.mjs";
+import { commissioningDomainReviewSlices } from "./commissioningDomainReviewSlices.mjs";
 import { justiceReviewCandidateForMember } from "./justiceCrossMemberReviewSlices.mjs";
 import { valerieFousheeEconomyEditorialGold } from "./valerieFousheeEconomyEditorialGold.mjs";
 
@@ -86,7 +87,11 @@ const fousheeJusticeCandidate = Object.freeze({
   }),
 });
 
-export const reviewEditorialIssueSlices = Object.freeze([economyCandidate, fousheeJusticeCandidate]);
+export const reviewEditorialIssueSlices = Object.freeze([
+  economyCandidate,
+  fousheeJusticeCandidate,
+  ...commissioningDomainReviewSlices,
+]);
 
 export function inferenceSynthesis(source, context = {}) {
   const inference = source.inference_candidate || {};

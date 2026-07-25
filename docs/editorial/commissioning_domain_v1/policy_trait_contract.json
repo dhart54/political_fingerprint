@@ -1,0 +1,124 @@
+{
+  "action_traits": {
+    "5": {
+      "traits": [
+        "appropriates_federal_programs",
+        "package_stage_retention",
+        "cross_domain_package"
+      ]
+    },
+    "55": {
+      "traits": [
+        "accelerates_domestic_mineral_projects",
+        "directs_land_agencies",
+        "requires_resource_reporting"
+      ]
+    },
+    "6": {
+      "traits": [
+        "appropriates_energy_environment_programs",
+        "package_stage_retention",
+        "combined_divisions"
+      ]
+    },
+    "64": {
+      "traits": [
+        "assesses_supply_chain_vulnerability",
+        "develops_resource_strategies",
+        "requires_resource_reporting"
+      ]
+    },
+    "7": {
+      "traits": [
+        "appropriates_federal_programs",
+        "package_final_passage",
+        "cross_domain_package"
+      ]
+    },
+    "76": {
+      "traits": [
+        "constrains_efficiency_rulemaking",
+        "sets_standard_criteria",
+        "protects_existing_transformer_standards"
+      ]
+    },
+    "78": {
+      "traits": [
+        "repeals_home_energy_programs",
+        "rescinds_unobligated_funds",
+        "changes_building_code_assistance"
+      ]
+    },
+    "93": {
+      "traits": [
+        "limits_land_manager_authority",
+        "retains_unit_specific_exception",
+        "changes_lead_ammunition_tackle_rules"
+      ]
+    }
+  },
+  "cluster_relationships": [
+    {
+      "basis": "resource-supply coordination and project direction differ from constraints or repeal affecting standards and household programs",
+      "cluster_ids": [
+        "domestic_resource_supply_actions",
+        "home_energy_federal_role_changes"
+      ],
+      "relationship": "contrasts"
+    },
+    {
+      "basis": "annual appropriations differ from a durable statutory constraint on land-management authority",
+      "cluster_ids": [
+        "federal_environment_energy_funding",
+        "federal_land_regulatory_limit"
+      ],
+      "relationship": "contrasts"
+    }
+  ],
+  "new_relationship_types": [
+    "separate_proposals_in_one_policy_family"
+  ],
+  "new_trait_types": [],
+  "new_trait_values": [
+    "package_stage_retention",
+    "combined_divisions",
+    "accelerates_domestic_mineral_projects",
+    "constrains_efficiency_rulemaking",
+    "repeals_home_energy_programs",
+    "limits_land_manager_authority"
+  ],
+  "ontology_status": "human_exception_required_for_new_values_only",
+  "policy_clusters": {
+    "domestic_resource_supply_actions": {
+      "reader_phrase": "the two reviewed domestic resource-supply proposals",
+      "trait_ids": [
+        "accelerates_domestic_mineral_projects",
+        "assesses_supply_chain_vulnerability",
+        "develops_resource_strategies"
+      ]
+    },
+    "federal_environment_energy_funding": {
+      "reader_phrase": "the reviewed federal environment-and-energy funding stages",
+      "trait_ids": [
+        "appropriates_energy_environment_programs",
+        "appropriates_federal_programs"
+      ]
+    },
+    "federal_land_regulatory_limit": {
+      "reader_phrase": "the reviewed limit on federal land managers' lead-ammunition and tackle rules",
+      "trait_ids": [
+        "limits_land_manager_authority"
+      ]
+    },
+    "home_energy_federal_role_changes": {
+      "reader_phrase": "the two reviewed changes to federal home-energy standards or programs",
+      "trait_ids": [
+        "constrains_efficiency_rulemaking",
+        "repeals_home_energy_programs",
+        "changes_building_code_assistance"
+      ]
+    }
+  },
+  "policy_domain_label": "environment-and-energy",
+  "schema_version": "member_neutral_policy_traits_v1"
+}

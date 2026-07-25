@@ -65,6 +65,16 @@ def build_conclusion_model(
         "reader_label_concept": spec.get("reader_label_concept", _default_label(archetype, direction)),
         "review_route": "standard_generation_pass",
     }
+    if trait_contract.get("final_composition_contract") == "v1":
+        model["final_composition_contract"] = "v1"
+        limiting_proposition = _limiting_proposition(
+            clusters=clusters,
+            complete_trajectories=complete_trajectories,
+            omitted_episode_ids=model["omitted_episode_ids"],
+            trait_contract=trait_contract,
+        )
+        if archetype == "substantive_repeated_pattern" and limiting_proposition:
+            model["boundary_proposition"] = limiting_proposition
     if archetype in {"bounded_episode_trajectories", "limited_or_contested_evidence"} or not clusters:
         model["review_route"] = "human_exception_required"
     elif archetype == "uniform_direction_without_common_policy_throughline" and not model["contrast_proposition"]:
@@ -136,7 +146,24 @@ def render_public_conclusion(*, member_name: str, model: dict) -> str:
         return f"{lead} {second}".strip()
 
     if archetype == "substantive_repeated_pattern" and clusters:
-        lead = f"Across the reviewed record, {member_name} {_cluster_clause(clusters[0])} across multiple independent policy episodes."
+        if model.get("final_composition_contract") != "v1":
+            lead = (
+                f"Across the reviewed record, {member_name} "
+                f"{_cluster_clause(clusters[0])} across multiple independent "
+                "policy episodes."
+            )
+            second = _optional_sentence(exception) or _optional_sentence(boundary)
+            return f"{lead} {second}".strip()
+        episode_count = len({
+            episode_id
+            for cluster in clusters
+            for episode_id in cluster.get("evidence_episode_ids", [])
+        })
+        lead = (
+            f"Across {episode_count} independent "
+            f"{'proposal' if episode_count == 1 else 'proposals'}, "
+            f"{member_name} {_joined_cluster_clause(clusters)}."
+        )
         second = _optional_sentence(exception) or _optional_sentence(boundary)
         return f"{lead} {second}".strip()
 
@@ -257,6 +284,13 @@ def _cluster_clause(cluster: dict) -> str:
     return f"{phrase} {cluster['reader_phrase']}"
 
 
+def _joined_cluster_clause(clusters: list[dict]) -> str:
+    phrases = [cluster.get("member_action_phrase", "acted on") for cluster in clusters]
+    if len(set(phrases)) == 1:
+        return f"{phrases[0]} {_join_phrases([cluster['reader_phrase'] for cluster in clusters])}"
+    return _join_phrases([_cluster_clause(cluster) for cluster in clusters])
+
+
 def _cluster_noun_clause(cluster: dict) -> str:
     phrase = cluster.get("member_action_phrase")
     noun = {"supported": "support for", "opposed": "opposition to"}.get(phrase, "action on")
@@ -267,6 +301,69 @@ def _optional_sentence(proposition: dict | None) -> str:
     if not proposition:
         return ""
     return proposition.get("public_text", "")
+
+
+def _limiting_proposition(
+    *,
+    clusters: list[dict],
+    complete_trajectories: list[dict],
+    omitted_episode_ids: list[str],
+    trait_contract: dict,
+) -> dict | None:
+    cluster_actions = {
+        cluster.get("member_action_phrase")
+        for cluster in clusters
+        if cluster.get("member_action_phrase") in {"supported", "opposed"}
+    }
+    if len(cluster_actions) != 1:
+        return None
+    cluster_action = next(iter(cluster_actions))
+    opposite = "Yea" if cluster_action == "opposed" else "Nay"
+    omitted = []
+    omitted_set = set(omitted_episode_ids)
+    labels = trait_contract.get("episode_reader_phrases", {})
+    for trajectory in complete_trajectories:
+        signature = trajectory.get("action_signature", [])
+        episode_id = trajectory.get("episode_id")
+        if (
+            episode_id in omitted_set
+            and signature
+            and set(signature) == {opposite}
+        ):
+            omitted.append({
+                "episode_id": episode_id,
+                "reader_phrase": labels.get(
+                    episode_id,
+                    f"the reviewed {trajectory.get('mechanism_family', 'policy')} episode",
+                ),
+            })
+    if not omitted:
+        return None
+    omitted.sort(key=lambda item: item["reader_phrase"])
+    opposite_noun = "Support" if opposite == "Yea" else "Opposition"
+    pattern_noun = "opposition" if cluster_action == "opposed" else "support"
+    domain = trait_contract.get("policy_domain_display", "issue-area")
+    return {
+        "role": "boundary",
+        "analytical_relationship": "opposite_direction_limits_scope",
+        "evidence_episode_ids": [item["episode_id"] for item in omitted],
+        "public_text": (
+            f"{opposite_noun} for "
+            f"{_join_phrases([item['reader_phrase'] for item in omitted])} "
+            f"means that repeated {pattern_noun} does not extend across the "
+            f"entire reviewed {domain} record."
+        ),
+    }
+
+
+def _join_phrases(values: list[str]) -> str:
+    if not values:
+        return ""
+    if len(values) == 1:
+        return values[0]
+    if len(values) == 2:
+        return f"{values[0]} and {values[1]}"
+    return f"{', '.join(values[:-1])}, and {values[-1]}"
 
 
 def _default_label(archetype: str, direction: dict) -> str:
