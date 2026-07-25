@@ -31,8 +31,8 @@
 - [x] Disposable PostgreSQL, import/export equality, idempotency, conflict/orphan/publication guards, RLS, and rollback proof pass.
 - [x] Authorized production staging is applied only if every hard gate passes, then postchecked and proven idempotent.
 - [x] Existing 71/95 seed, canonical tables, database selector/registry, and static registry remain unchanged.
-- [ ] Required test, build, rendered, documentation, review-packet, commit, push, and draft-PR gates complete.
-- [ ] Final reconciliation completed.
+- [x] Required test, build, rendered, documentation, review-packet, commit, push, and draft-PR gates complete.
+- [x] Final reconciliation completed.
 
 ## Baseline
 
@@ -62,7 +62,7 @@
 - [x] Persistence and disposable PostgreSQL
 - [x] Production staging
 - [x] Full validation and documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -123,6 +123,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: Implementation, staging, and validation complete; commit/push/draft-PR handoff remains.
+- Definition of done satisfied: Yes. Implementation, staging, validation, commit, push, and draft PR #104 are complete; merge and publication remain explicitly out of scope.
 - Remaining limitations: Six new trait values, one candidate relationship type, related-proposal episode judgments, six supported argument absences, and all member presentations remain pending human review. The corpus is bounded and is not a complete environmental record.
 - Recommended next step: Human review of the shared ontology/relationship package and routed member presentations, then a separate decision on controlled multi-domain batch expansion. Do not publish or promote automatically.
