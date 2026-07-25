@@ -27,7 +27,9 @@ MANIFEST = (
     / "docs/editorial/commissioning_domain_v1/corrected"
     / "persistence_batch_manifest.json"
 )
-BATCH_KEY = "commissioning-domain-v1-environment-energy-corrected"
+BATCH_KEY = (
+    "commissioning-domain-v1-environment-energy-corrected-six-episode"
+)
 STARTING_COMMIT = "08e675e2039d76f16b8c9576e4b5a8254bc44d72"
 
 

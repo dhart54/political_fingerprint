@@ -52,6 +52,25 @@
         "shared dependency amplification mutation",
         "432-member and 128-vector corrected evaluations"
       ]
+    },
+    {
+      "classification": "generalized episode hierarchy defect",
+      "correction": "Represented seven actions as six episodes, with rolls 6/7 alone sharing one episode and two explicit two-episode policy families.",
+      "failure_id": "COMM-V1-005",
+      "first_candidate": "The four-episode correction collapsed rolls 55/64 and 76/78 from separate bills into two combined episodes.",
+      "first_validator_result": "blocked: separate bills remain independent episodes even when they share a policy family; member vote direction is irrelevant.",
+      "owning_layer": "episode assignment and policy-family hierarchy",
+      "preserved": true,
+      "regression_proof": [
+        "six-episode hierarchy assertion",
+        "four vote-direction pair permutations per policy family",
+        "persistence family-to-episode graph assertion"
+      ],
+      "superseded_proposal": {
+        "batch_key": "commissioning-domain-v1-environment-energy-corrected",
+        "manifest_sha256": "dea1b8c7a0071462a5eb91f24d22287dc156fda9edcfa71a2abf6e570c2459c5",
+        "production_applied": false
+      }
     }
   ],
   "schema_version": "commissioning_domain_first_failures_v1"

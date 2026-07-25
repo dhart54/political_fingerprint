@@ -7,9 +7,12 @@ from pathlib import Path
 from backend.app.editorial_artifacts.bundle import ARTIFACT_TYPES, semantic_hash
 from backend.scripts.build_commissioning_domain_v1_correction import (
     BATCH_KEY,
+    EPISODE_ROLLS,
     ORIGINAL_OUTPUT,
     OUTPUT,
+    POLICY_FAMILIES,
     ROLLS,
+    _configured_original,
     build,
 )
 from backend.scripts.commissioning_domain_corrected_artifact_store import (
@@ -98,8 +101,64 @@ def test_corrected_generality_and_shared_review_deduplication() -> None:
         "exact_vector_branches": 0,
     }
     assert mutation["original_mutation_count"] == 17
-    assert mutation["counts"]["total"] == 26
+    assert mutation["counts"]["total"] == 27
     assert mutation["counts"]["failed"] == 0
+
+
+def test_seven_actions_form_six_vote_direction_invariant_episodes() -> None:
+    assert EPISODE_ROLLS == {
+        "fy2026-energy-water-interior-appropriations": (6, 7),
+        "critical-mineral-project-acceleration": (55,),
+        "critical-mineral-supply-assessment-and-strategy": (64,),
+        "home-energy-efficiency-rulemaking": (76,),
+        "home-energy-program-repeal": (78,),
+        "lead-ammunition-and-tackle-on-federal-lands": (93,),
+    }
+    assert POLICY_FAMILIES == {
+        "critical-mineral-supply": (
+            "critical-mineral-project-acceleration",
+            "critical-mineral-supply-assessment-and-strategy",
+        ),
+        "home-energy-policy": (
+            "home-energy-efficiency-rulemaking",
+            "home-energy-program-repeal",
+        ),
+    }
+    episode_map = load("episode_map.json")
+    assert episode_map["counts"]["independent_episodes"] == 6
+    assert episode_map["counts"]["multi_action_episodes"] == 1
+
+    module = _configured_original()
+    identifier = "DIRECTION-INVARIANCE"
+    for first in ("Yea", "Nay"):
+        for second in ("Yea", "Nay"):
+            actions = {
+                roll: {identifier: {"action": "Yea"}}
+                for roll in ROLLS
+            }
+            actions[55][identifier]["action"] = first
+            actions[64][identifier]["action"] = second
+            actions[76][identifier]["action"] = first
+            actions[78][identifier]["action"] = second
+            overlay = module._overlay(
+                {
+                    "bioguide_id": identifier,
+                    "display_name": "Direction Invariance",
+                    "party": None,
+                    "state": "",
+                },
+                actions,
+            )
+            by_roll = {
+                item["roll"]: item
+                for item in overlay["roll_actions"]
+            }
+            assert by_roll[55]["action"] == first
+            assert by_roll[64]["action"] == second
+            assert by_roll[55]["episode_id"] != by_roll[64]["episode_id"]
+            assert by_roll[76]["action"] == first
+            assert by_roll[78]["action"] == second
+            assert by_roll[76]["episode_id"] != by_roll[78]["episode_id"]
 
 
 def test_corrected_pending_bundle_is_distinct_complete_and_unpublished() -> None:
@@ -136,7 +195,28 @@ def test_corrected_pending_bundle_is_distinct_complete_and_unpublished() -> None
             assert dependencies["review_queue_scope"] == "shared_corpus"
             assert dependencies["dependency_review_state"] == "human_review_pending"
             assert dependencies["publication_blocked_until_resolved"] is True
-            assert len(dependencies["dependency_ids"]) == 8
+            assert len(dependencies["dependency_ids"]) == 7
+    policy_families = [
+        item for item in bundle["artifacts"]
+        if item["artifact_type"] == "policy_family"
+    ]
+    policy_episodes = [
+        item for item in bundle["artifacts"]
+        if item["artifact_type"] == "policy_episode"
+    ]
+    assert len(policy_families) == 2
+    assert len(policy_episodes) == 6
+    assert {
+        item["policy_family_id"] for item in policy_families
+    } == set(POLICY_FAMILIES)
+    assert sum(
+        item["relationship_type"] == "groups_episode"
+        for item in bundle["relationships"]
+    ) == 4
+    assert sum(
+        item["relationship_type"] == "contains_action"
+        for item in bundle["relationships"]
+    ) == 7
     assert STORE_BATCH_KEY == BATCH_KEY
     assert load_manifest() == bundle
 
@@ -148,11 +228,15 @@ def test_failure_history_records_human_discovery_truthfully() -> None:
         "COMM-V1-002",
         "COMM-V1-003",
         "COMM-V1-004",
+        "COMM-V1-005",
     ]
-    correction = failures[-1]
+    correction = failures[-2]
     assert correction["preserved"] is True
     assert "first_validator_result" in correction
     assert "roll 5" in correction["first_candidate"].lower()
+    hierarchy = failures[-1]
+    assert hierarchy["preserved"] is True
+    assert hierarchy["superseded_proposal"]["production_applied"] is False
 
 
 def test_generic_corrections_have_no_case_specific_branches() -> None:

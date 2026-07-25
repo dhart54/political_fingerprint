@@ -31,14 +31,28 @@ from backend.app.summaries.editorial_review_routing import (
 from backend.scripts import build_commissioning_domain_v1 as original
 
 
-CORPUS_VERSION = "commissioning-domain-environment-energy-corrected-v1"
-BATCH_KEY = "commissioning-domain-v1-environment-energy-corrected"
+CORPUS_VERSION = "commissioning-domain-environment-energy-corrected-v2"
+BATCH_KEY = (
+    "commissioning-domain-v1-environment-energy-corrected-six-episode"
+)
 ROLLS = (6, 7, 55, 64, 76, 78, 93)
 EPISODE_ROLLS = {
     "fy2026-energy-water-interior-appropriations": (6, 7),
-    "critical-mineral-supply-and-domestic-production": (55, 64),
-    "home-energy-standards-and-incentives": (76, 78),
+    "critical-mineral-project-acceleration": (55,),
+    "critical-mineral-supply-assessment-and-strategy": (64,),
+    "home-energy-efficiency-rulemaking": (76,),
+    "home-energy-program-repeal": (78,),
     "lead-ammunition-and-tackle-on-federal-lands": (93,),
+}
+POLICY_FAMILIES = {
+    "critical-mineral-supply": (
+        "critical-mineral-project-acceleration",
+        "critical-mineral-supply-assessment-and-strategy",
+    ),
+    "home-energy-policy": (
+        "home-energy-efficiency-rulemaking",
+        "home-energy-program-repeal",
+    ),
 }
 OUTPUT = ROOT / "docs/editorial/commissioning_domain_v1/corrected"
 FRONTEND_OUTPUT = ROOT / "frontend/lib/commissioningDomainCorrectedReviewData.mjs"
@@ -46,8 +60,13 @@ ORIGINAL_OUTPUT = ROOT / "docs/editorial/commissioning_domain_v1"
 
 
 def _episodes() -> list[dict]:
-    episodes = copy.deepcopy(original.EPISODES)
-    appropriations = episodes[0]
+    original_by_id = {
+        episode["episode_id"]: copy.deepcopy(episode)
+        for episode in original.EPISODES
+    }
+    appropriations = original_by_id[
+        "fy2026-cjs-energy-water-interior-appropriations"
+    ]
     appropriations.update({
         "episode_id": "fy2026-energy-water-interior-appropriations",
         "rolls": [6, 7],
@@ -64,12 +83,103 @@ def _episodes() -> list[dict]:
             "remain one shared review dependency and do not create member exceptions."
         ),
     })
-    return episodes
+    lead = original_by_id["lead-ammunition-and-tackle-on-federal-lands"]
+    return [
+        appropriations,
+        {
+            "episode_id": "critical-mineral-project-acceleration",
+            "policy_family_id": "critical-mineral-supply",
+            "rolls": [55],
+            "relationship_type": "single_action_episode",
+            "shared_objective": (
+                "Accelerate domestic mineral projects and direct federal land "
+                "and resource agencies."
+            ),
+            "meaningful_differences": (
+                "H.R. 4090 is a distinct enacted-action candidate from the "
+                "separate supply-assessment bill in the same policy family."
+            ),
+            "mechanism_family": "critical_mineral_project_acceleration",
+            "counted_as_independent_episodes": 1,
+            "route": "standard_generation_pass",
+            "why": (
+                "A separate bill and mechanism is an independent episode; "
+                "recorded vote direction does not affect this assignment."
+            ),
+        },
+        {
+            "episode_id": "critical-mineral-supply-assessment-and-strategy",
+            "policy_family_id": "critical-mineral-supply",
+            "rolls": [64],
+            "relationship_type": "single_action_episode",
+            "shared_objective": (
+                "Assess critical-mineral supply vulnerability and require "
+                "federal strategies, alternatives, recycling, and reporting."
+            ),
+            "meaningful_differences": (
+                "H.R. 3617 is a distinct supply-assessment and strategy bill "
+                "within the Critical Mineral Supply policy family."
+            ),
+            "mechanism_family": (
+                "critical_mineral_supply_assessment_and_strategy"
+            ),
+            "counted_as_independent_episodes": 1,
+            "route": "standard_generation_pass",
+            "why": (
+                "A separate bill and mechanism is an independent episode; "
+                "recorded vote direction does not affect this assignment."
+            ),
+        },
+        {
+            "episode_id": "home-energy-efficiency-rulemaking",
+            "policy_family_id": "home-energy-policy",
+            "rolls": [76],
+            "relationship_type": "single_action_episode",
+            "shared_objective": (
+                "Change the criteria governing future federal home-appliance "
+                "efficiency rulemaking."
+            ),
+            "meaningful_differences": (
+                "H.R. 4626 is a distinct standards and rulemaking bill from "
+                "the separate home-energy program-repeal bill."
+            ),
+            "mechanism_family": "home_energy_efficiency_rulemaking",
+            "counted_as_independent_episodes": 1,
+            "route": "standard_generation_pass",
+            "why": (
+                "A separate bill and mechanism is an independent episode; "
+                "recorded vote direction does not affect this assignment."
+            ),
+        },
+        {
+            "episode_id": "home-energy-program-repeal",
+            "policy_family_id": "home-energy-policy",
+            "rolls": [78],
+            "relationship_type": "single_action_episode",
+            "shared_objective": (
+                "Repeal specified home-energy rebate, training, and "
+                "building-code assistance programs."
+            ),
+            "meaningful_differences": (
+                "H.R. 4758 is a distinct program-repeal and rescission bill "
+                "within the Home Energy Policy family."
+            ),
+            "mechanism_family": "home_energy_program_repeal",
+            "counted_as_independent_episodes": 1,
+            "route": "standard_generation_pass",
+            "why": (
+                "A separate bill and mechanism is an independent episode; "
+                "recorded vote direction does not affect this assignment."
+            ),
+        },
+        lead,
+    ]
 
 
 def _trait_contract() -> dict:
     contract = copy.deepcopy(original.TRAIT_CONTRACT)
     contract["action_traits"].pop("5", None)
+    contract["new_relationship_types"] = []
     return contract
 
 
@@ -90,24 +200,6 @@ def _shared_dependencies() -> list[dict]:
         for value in _trait_contract()["new_trait_values"]
     ]
     dependencies.extend([
-        {
-            "dependency_id": "relationship:separate-proposals-in-one-policy-family",
-            "kind": "trait_relationship",
-            "status": "human_review_pending",
-            "summary": (
-                "Review the shared relationship that groups separate proposals "
-                "within one policy family."
-            ),
-            "references": {
-                "trait_ids": [],
-                "relationship_ids": ["separate_proposals_in_one_policy_family"],
-                "dossier_ids": [],
-                "episode_ids": [
-                    "critical-mineral-supply-and-domestic-production",
-                    "home-energy-standards-and-incentives",
-                ],
-            },
-        },
         {
             "dependency_id": "action-boundary:house-119-2-7",
             "kind": "action_boundary",
@@ -226,6 +318,71 @@ def _configured_original():
         "funding_support",
         "funding_opposition",
     )
+    module.EPISODE_INTERPRETATIONS.pop(
+        "critical-mineral-supply-and-domestic-production"
+    )
+    module.EPISODE_INTERPRETATIONS.pop(
+        "home-energy-standards-and-incentives"
+    )
+    module.EPISODE_INTERPRETATIONS.update({
+        "critical-mineral-project-acceleration": module._single_catalog(
+            "critical-mineral-project-acceleration",
+            "the reviewed domestic mineral project-acceleration bill",
+            ("resource_supply_support",),
+            ("resource_supply_opposition",),
+        ),
+        "critical-mineral-supply-assessment-and-strategy": (
+            module._single_catalog(
+                "critical-mineral-supply-assessment-and-strategy",
+                "the reviewed critical-mineral assessment and strategy bill",
+                ("resource_supply_support",),
+                ("resource_supply_opposition",),
+            )
+        ),
+        "home-energy-efficiency-rulemaking": module._single_catalog(
+            "home-energy-efficiency-rulemaking",
+            "the reviewed home-appliance efficiency-rulemaking bill",
+            ("home_energy_change_support",),
+            ("home_energy_change_opposition",),
+        ),
+        "home-energy-program-repeal": module._single_catalog(
+            "home-energy-program-repeal",
+            "the reviewed home-energy program-repeal bill",
+            ("home_energy_change_support",),
+            ("home_energy_change_opposition",),
+        ),
+    })
+    module.CANDIDATES = copy.deepcopy(original.CANDIDATES)
+    for candidate in module.CANDIDATES:
+        for requirement in candidate.get("required_themes", []):
+            if requirement["theme_id"] in {
+                "resource_supply_support",
+                "resource_supply_opposition",
+                "home_energy_change_support",
+                "home_energy_change_opposition",
+            }:
+                requirement["minimum_episodes"] = 2
+
+    def corrected_shared_set() -> dict:
+        return {
+            "episode_set_id": (
+                "environment-energy-119th-six-episodes-corrected"
+            ),
+            "version": "2.0.0",
+            "episode_map_path": (
+                "docs/editorial/commissioning_domain_v1/"
+                "corrected/episode_map.json"
+            ),
+            "expected_substantive_roll_ids": list(ROLLS),
+            "expected_control_roll_ids": [],
+            "expected_independent_episode_ids": list(EPISODE_ROLLS),
+            "episode_rolls": {
+                key: list(value)
+                for key, value in EPISODE_ROLLS.items()
+            },
+        }
+
+    module._shared_set = corrected_shared_set
 
     dependencies = _shared_dependencies()
 
@@ -342,6 +499,94 @@ def _correct_persistence_identity(
         relationship["child_natural_key"] = _replace_natural_key(
             relationship["child_natural_key"]
         )
+    root_family = next(
+        artifact
+        for artifact in result["artifacts"]
+        if artifact["artifact_type"] == "policy_family"
+    )
+    root_family_key = root_family["natural_key"]
+    result["artifacts"].remove(root_family)
+    result["relationships"] = [
+        relationship
+        for relationship in result["relationships"]
+        if not (
+            relationship["relationship_type"] == "groups_episode"
+            and relationship["parent_natural_key"] == root_family_key
+        )
+    ]
+    source_hash = root_family["source_manifest_sha256"]
+    for family_id, episode_ids in POLICY_FAMILIES.items():
+        family_key = (
+            "environment-energy:commissioning-v1-corrected:"
+            f"policy-family:{family_id}"
+        )
+        payload = {
+            "schema_version": "commissioning_policy_family_v1",
+            "policy_family_id": family_id,
+            "episode_ids": list(episode_ids),
+            "review_route": "standard_generation_pass",
+            "grouping_basis": (
+                "Shared policy subject; each separate bill remains an "
+                "independent episode regardless of member vote direction."
+            ),
+        }
+        family = copy.deepcopy(root_family)
+        family.update({
+            "natural_key": family_key,
+            "payload": payload,
+            "content_sha256": semantic_hash(payload),
+            "source_manifest_sha256": source_hash,
+            "policy_family_id": family_id,
+            "review_route": "standard_generation",
+        })
+        result["artifacts"].append(family)
+        for ordinal, episode_id in enumerate(episode_ids):
+            episode_key = (
+                "environment-energy:commissioning-v1-corrected:"
+                f"episode:{episode_id}"
+            )
+            result["relationships"].append({
+                "parent_natural_key": family_key,
+                "child_natural_key": episode_key,
+                "relationship_type": "groups_episode",
+                "ordinal": ordinal,
+                "metadata": {
+                    "episode_independence": "separate_bill",
+                    "vote_direction_used_for_grouping": False,
+                },
+            })
+    family_by_episode = {
+        episode_id: family_id
+        for family_id, episode_ids in POLICY_FAMILIES.items()
+        for episode_id in episode_ids
+    }
+    for artifact in result["artifacts"]:
+        if artifact["artifact_type"] != "policy_episode":
+            continue
+        episode_id = artifact["episode_id"]
+        artifact["policy_family_id"] = family_by_episode.get(episode_id)
+    result["artifacts"].sort(
+        key=lambda item: (
+            item["artifact_type"],
+            item["natural_key"],
+            item["artifact_version"],
+        )
+    )
+    result["relationships"].sort(
+        key=lambda item: (
+            item["parent_natural_key"],
+            item["relationship_type"],
+            item["ordinal"],
+            item["child_natural_key"],
+        )
+    )
+    result["expected_counts"] = {
+        "artifacts": len(result["artifacts"]),
+        "relationships": len(result["relationships"]),
+        "by_type": dict(sorted(Counter(
+            item["artifact_type"] for item in result["artifacts"]
+        ).items())),
+    }
     result.pop("manifest_sha256", None)
     result["manifest_sha256"] = semantic_hash(result)
     return result
@@ -404,6 +649,12 @@ def _corrected_mutations(legacy: dict) -> dict:
             "owning_layer": "review_routing",
             "passed": True,
         },
+        {
+            "mutation_id": "vote_direction_changes_episode_grouping",
+            "expected_route": "blocked",
+            "owning_layer": "episode_hierarchy",
+            "passed": True,
+        },
     ])
     return {
         "schema_version": "commissioning_domain_corrected_mutation_report_v1",
@@ -456,11 +707,39 @@ def build(source_dir: Path) -> dict[str, object]:
         "boundary": eligibility["decisions"]["5"]["exact_action_boundary"],
     })
     outputs["episode_map.json"]["counting_boundary"] = (
-        "Seven eligible substantive actions count as four independent episodes; "
-        "roll 5 is excluded by exact-action domain eligibility, and related stages "
-        "or proposals do not inflate cross-episode evidence."
+        "Seven eligible substantive actions count as six independent episodes; "
+        "rolls 6 and 7 remain one repeated-stage appropriations episode, while "
+        "the separate mineral and home-energy bills remain independent episodes "
+        "inside two policy families. Vote direction never determines grouping."
     )
     outputs["episode_map.json"]["counts"]["substantive_actions"] = len(ROLLS)
+    outputs["episode_map.json"]["counts"]["independent_episodes"] = len(
+        EPISODE_ROLLS
+    )
+    outputs["episode_map.json"]["counts"]["multi_action_episodes"] = sum(
+        len(rolls) > 1 for rolls in EPISODE_ROLLS.values()
+    )
+    outputs["episode_map.json"]["counts"]["mechanism_families"] = len({
+        episode["mechanism_family"]
+        for episode in outputs["episode_map.json"]["episodes"]
+    })
+    selected_inventory = next(
+        item
+        for item in outputs["domain_inventory.json"]["domains"]
+        if item["domain"] == original.ISSUE
+    )
+    selected_inventory.update({
+        "episodes": len(EPISODE_ROLLS),
+        "mechanisms": outputs["episode_map.json"]["counts"][
+            "mechanism_families"
+        ],
+        "reason": (
+            "Seven eligible actions form six independent episodes: only "
+            "rolls 6 and 7 share a repeated-stage appropriations episode; "
+            "the four separate mineral and home-energy bills remain "
+            "independent within two policy families."
+        ),
+    })
     outputs["mutation_report.json"] = _corrected_mutations(
         outputs["mutation_report.json"]
     )
@@ -484,6 +763,36 @@ def build(source_dir: Path) -> dict[str, object]:
             "domain eligibility context-rescue mutations",
             "shared dependency amplification mutation",
             "432-member and 128-vector corrected evaluations",
+        ],
+        "preserved": True,
+    })
+    outputs["first_failures.json"]["failures"].append({
+        "failure_id": "COMM-V1-005",
+        "classification": "generalized episode hierarchy defect",
+        "owning_layer": "episode assignment and policy-family hierarchy",
+        "first_candidate": (
+            "The four-episode correction collapsed rolls 55/64 and 76/78 "
+            "from separate bills into two combined episodes."
+        ),
+        "first_validator_result": (
+            "blocked: separate bills remain independent episodes even when "
+            "they share a policy family; member vote direction is irrelevant."
+        ),
+        "correction": (
+            "Represented seven actions as six episodes, with rolls 6/7 alone "
+            "sharing one episode and two explicit two-episode policy families."
+        ),
+        "superseded_proposal": {
+            "batch_key": "commissioning-domain-v1-environment-energy-corrected",
+            "manifest_sha256": (
+                "dea1b8c7a0071462a5eb91f24d22287dc156fda9edcfa71a2abf6e570c2459c5"
+            ),
+            "production_applied": False,
+        },
+        "regression_proof": [
+            "six-episode hierarchy assertion",
+            "four vote-direction pair permutations per policy family",
+            "persistence family-to-episode graph assertion",
         ],
         "preserved": True,
     })

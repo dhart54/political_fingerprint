@@ -3,8 +3,8 @@
     {
       "coverage": {
         "expected_in_service_actions": 7,
-        "independent_episodes_complete": 4,
-        "independent_episodes_expected": 4,
+        "independent_episodes_complete": 6,
+        "independent_episodes_expected": 6,
         "independent_episodes_missing": 0,
         "independent_episodes_outside_service": 0,
         "independent_episodes_partial": 0,
@@ -46,21 +46,39 @@
         },
         {
           "action_signature": [
-            "Yea",
             "Yea"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "critical-mineral-supply-and-domestic-production",
-          "mechanism_family": "resource-supply-security",
-          "member_trajectory": "Recorded Yea/Yea across the two distinct resource-supply bills; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were supported, supported in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory.",
+          "episode_id": "critical-mineral-project-acceleration",
+          "mechanism_family": "critical-mineral-project-acceleration",
+          "member_trajectory": "Supported the reviewed domestic mineral project-acceleration bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Supported the reviewed domestic mineral project-acceleration bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            55,
+            55
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Supported both reviewed resource-supply proposals.",
+              "theme_id": "resource_supply_support"
+            }
+          ]
+        },
+        {
+          "action_signature": [
+            "Yea"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
+          "mechanism_family": "critical-mineral-supply-assessment-and-strategy",
+          "member_trajectory": "Supported the reviewed critical-mineral assessment and strategy bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Supported the reviewed critical-mineral assessment and strategy bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
             64
           ],
           "theme_evidence": [
@@ -72,21 +90,39 @@
         },
         {
           "action_signature": [
-            "Yea",
             "Yea"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "home-energy-standards-and-incentives",
-          "mechanism_family": "standards-and-program-repeal",
-          "member_trajectory": "Recorded Yea/Yea across the standards bill and program-repeal bill; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were supported, supported in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory.",
+          "episode_id": "home-energy-efficiency-rulemaking",
+          "mechanism_family": "home-energy-efficiency-rulemaking",
+          "member_trajectory": "Supported the reviewed home-appliance efficiency-rulemaking bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Supported the reviewed home-appliance efficiency-rulemaking bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            76,
+            76
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Supported both reviewed changes to federal home-energy standards or programs.",
+              "theme_id": "home_energy_change_support"
+            }
+          ]
+        },
+        {
+          "action_signature": [
+            "Yea"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "home-energy-program-repeal",
+          "mechanism_family": "home-energy-program-repeal",
+          "member_trajectory": "Supported the reviewed home-energy program-repeal bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Supported the reviewed home-energy program-repeal bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
             78
           ],
           "theme_evidence": [
@@ -149,28 +185,28 @@
         {
           "action": "Yea",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-project-acceleration",
           "roll": 55,
           "source_id": "clerk_roll_055"
         },
         {
           "action": "Yea",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
           "roll": 64,
           "source_id": "clerk_roll_064"
         },
         {
           "action": "Yea",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-efficiency-rulemaking",
           "roll": 76,
           "source_id": "clerk_roll_076"
         },
         {
           "action": "Yea",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-program-repeal",
           "roll": 78,
           "source_id": "clerk_roll_078"
         },
@@ -185,30 +221,36 @@
       "schema_version": "editorial_member_overlay_v2",
       "selection_rationale": "Lowest non-reference Bioguide ID in the most frequent complete observed vector.",
       "shared_episode_set": {
-        "episode_map_path": "docs/editorial/commissioning_domain_v1/episode_map.json",
+        "episode_map_path": "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
         "episode_rolls": {
-          "critical-mineral-supply-and-domestic-production": [
-            55,
+          "critical-mineral-project-acceleration": [
+            55
+          ],
+          "critical-mineral-supply-assessment-and-strategy": [
             64
           ],
           "fy2026-energy-water-interior-appropriations": [
             6,
             7
           ],
-          "home-energy-standards-and-incentives": [
-            76,
+          "home-energy-efficiency-rulemaking": [
+            76
+          ],
+          "home-energy-program-repeal": [
             78
           ],
           "lead-ammunition-and-tackle-on-federal-lands": [
             93
           ]
         },
-        "episode_set_id": "environment-energy-119th-four-episodes",
+        "episode_set_id": "environment-energy-119th-six-episodes-corrected",
         "expected_control_roll_ids": [],
         "expected_independent_episode_ids": [
           "fy2026-energy-water-interior-appropriations",
-          "critical-mineral-supply-and-domestic-production",
-          "home-energy-standards-and-incentives",
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal",
           "lead-ammunition-and-tackle-on-federal-lands"
         ],
         "expected_substantive_roll_ids": [
@@ -220,12 +262,11 @@
           78,
           93
         ],
-        "version": "1.0.0"
+        "version": "2.0.0"
       },
       "shared_review_dependencies": {
         "dependency_ids": [
           "action-boundary:house-119-2-7",
-          "relationship:separate-proposals-in-one-policy-family",
           "trait-value:accelerates-domestic-mineral-projects",
           "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
@@ -241,8 +282,8 @@
     {
       "coverage": {
         "expected_in_service_actions": 7,
-        "independent_episodes_complete": 4,
-        "independent_episodes_expected": 4,
+        "independent_episodes_complete": 6,
+        "independent_episodes_expected": 6,
         "independent_episodes_missing": 0,
         "independent_episodes_outside_service": 0,
         "independent_episodes_partial": 0,
@@ -284,21 +325,39 @@
         },
         {
           "action_signature": [
-            "Nay",
             "Nay"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "critical-mineral-supply-and-domestic-production",
-          "mechanism_family": "resource-supply-security",
-          "member_trajectory": "Recorded Nay/Nay across the two distinct resource-supply bills; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory.",
+          "episode_id": "critical-mineral-project-acceleration",
+          "mechanism_family": "critical-mineral-project-acceleration",
+          "member_trajectory": "Opposed the reviewed domestic mineral project-acceleration bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed domestic mineral project-acceleration bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            55,
+            55
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Opposed both reviewed resource-supply proposals.",
+              "theme_id": "resource_supply_opposition"
+            }
+          ]
+        },
+        {
+          "action_signature": [
+            "Nay"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
+          "mechanism_family": "critical-mineral-supply-assessment-and-strategy",
+          "member_trajectory": "Opposed the reviewed critical-mineral assessment and strategy bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed critical-mineral assessment and strategy bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
             64
           ],
           "theme_evidence": [
@@ -310,21 +369,39 @@
         },
         {
           "action_signature": [
-            "Nay",
             "Nay"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "home-energy-standards-and-incentives",
-          "mechanism_family": "standards-and-program-repeal",
-          "member_trajectory": "Recorded Nay/Nay across the standards bill and program-repeal bill; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory.",
+          "episode_id": "home-energy-efficiency-rulemaking",
+          "mechanism_family": "home-energy-efficiency-rulemaking",
+          "member_trajectory": "Opposed the reviewed home-appliance efficiency-rulemaking bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed home-appliance efficiency-rulemaking bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            76,
+            76
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Opposed both reviewed changes to federal home-energy standards or programs.",
+              "theme_id": "home_energy_change_opposition"
+            }
+          ]
+        },
+        {
+          "action_signature": [
+            "Nay"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "home-energy-program-repeal",
+          "mechanism_family": "home-energy-program-repeal",
+          "member_trajectory": "Opposed the reviewed home-energy program-repeal bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed home-energy program-repeal bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
             78
           ],
           "theme_evidence": [
@@ -387,28 +464,28 @@
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-project-acceleration",
           "roll": 55,
           "source_id": "clerk_roll_055"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
           "roll": 64,
           "source_id": "clerk_roll_064"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-efficiency-rulemaking",
           "roll": 76,
           "source_id": "clerk_roll_076"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-program-repeal",
           "roll": 78,
           "source_id": "clerk_roll_078"
         },
@@ -423,30 +500,36 @@
       "schema_version": "editorial_member_overlay_v2",
       "selection_rationale": "Greedy maximum-minimum Hamming distance over complete observed vectors.",
       "shared_episode_set": {
-        "episode_map_path": "docs/editorial/commissioning_domain_v1/episode_map.json",
+        "episode_map_path": "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
         "episode_rolls": {
-          "critical-mineral-supply-and-domestic-production": [
-            55,
+          "critical-mineral-project-acceleration": [
+            55
+          ],
+          "critical-mineral-supply-assessment-and-strategy": [
             64
           ],
           "fy2026-energy-water-interior-appropriations": [
             6,
             7
           ],
-          "home-energy-standards-and-incentives": [
-            76,
+          "home-energy-efficiency-rulemaking": [
+            76
+          ],
+          "home-energy-program-repeal": [
             78
           ],
           "lead-ammunition-and-tackle-on-federal-lands": [
             93
           ]
         },
-        "episode_set_id": "environment-energy-119th-four-episodes",
+        "episode_set_id": "environment-energy-119th-six-episodes-corrected",
         "expected_control_roll_ids": [],
         "expected_independent_episode_ids": [
           "fy2026-energy-water-interior-appropriations",
-          "critical-mineral-supply-and-domestic-production",
-          "home-energy-standards-and-incentives",
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal",
           "lead-ammunition-and-tackle-on-federal-lands"
         ],
         "expected_substantive_roll_ids": [
@@ -458,12 +541,11 @@
           78,
           93
         ],
-        "version": "1.0.0"
+        "version": "2.0.0"
       },
       "shared_review_dependencies": {
         "dependency_ids": [
           "action-boundary:house-119-2-7",
-          "relationship:separate-proposals-in-one-policy-family",
           "trait-value:accelerates-domestic-mineral-projects",
           "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
@@ -479,8 +561,8 @@
     {
       "coverage": {
         "expected_in_service_actions": 7,
-        "independent_episodes_complete": 4,
-        "independent_episodes_expected": 4,
+        "independent_episodes_complete": 6,
+        "independent_episodes_expected": 6,
         "independent_episodes_missing": 0,
         "independent_episodes_outside_service": 0,
         "independent_episodes_partial": 0,
@@ -522,21 +604,39 @@
         },
         {
           "action_signature": [
-            "Yea",
             "Yea"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "critical-mineral-supply-and-domestic-production",
-          "mechanism_family": "resource-supply-security",
-          "member_trajectory": "Recorded Yea/Yea across the two distinct resource-supply bills; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were supported, supported in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory.",
+          "episode_id": "critical-mineral-project-acceleration",
+          "mechanism_family": "critical-mineral-project-acceleration",
+          "member_trajectory": "Supported the reviewed domestic mineral project-acceleration bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Supported the reviewed domestic mineral project-acceleration bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            55,
+            55
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Supported both reviewed resource-supply proposals.",
+              "theme_id": "resource_supply_support"
+            }
+          ]
+        },
+        {
+          "action_signature": [
+            "Yea"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
+          "mechanism_family": "critical-mineral-supply-assessment-and-strategy",
+          "member_trajectory": "Supported the reviewed critical-mineral assessment and strategy bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Supported the reviewed critical-mineral assessment and strategy bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
             64
           ],
           "theme_evidence": [
@@ -548,21 +648,39 @@
         },
         {
           "action_signature": [
-            "Nay",
             "Nay"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "home-energy-standards-and-incentives",
-          "mechanism_family": "standards-and-program-repeal",
-          "member_trajectory": "Recorded Nay/Nay across the standards bill and program-repeal bill; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory.",
+          "episode_id": "home-energy-efficiency-rulemaking",
+          "mechanism_family": "home-energy-efficiency-rulemaking",
+          "member_trajectory": "Opposed the reviewed home-appliance efficiency-rulemaking bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed home-appliance efficiency-rulemaking bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            76,
+            76
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Opposed both reviewed changes to federal home-energy standards or programs.",
+              "theme_id": "home_energy_change_opposition"
+            }
+          ]
+        },
+        {
+          "action_signature": [
+            "Nay"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "home-energy-program-repeal",
+          "mechanism_family": "home-energy-program-repeal",
+          "member_trajectory": "Opposed the reviewed home-energy program-repeal bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed home-energy program-repeal bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
             78
           ],
           "theme_evidence": [
@@ -625,28 +743,28 @@
         {
           "action": "Yea",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-project-acceleration",
           "roll": 55,
           "source_id": "clerk_roll_055"
         },
         {
           "action": "Yea",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
           "roll": 64,
           "source_id": "clerk_roll_064"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-efficiency-rulemaking",
           "roll": 76,
           "source_id": "clerk_roll_076"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-program-repeal",
           "roll": 78,
           "source_id": "clerk_roll_078"
         },
@@ -661,30 +779,36 @@
       "schema_version": "editorial_member_overlay_v2",
       "selection_rationale": "Greedy maximum-minimum Hamming distance over complete observed vectors.",
       "shared_episode_set": {
-        "episode_map_path": "docs/editorial/commissioning_domain_v1/episode_map.json",
+        "episode_map_path": "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
         "episode_rolls": {
-          "critical-mineral-supply-and-domestic-production": [
-            55,
+          "critical-mineral-project-acceleration": [
+            55
+          ],
+          "critical-mineral-supply-assessment-and-strategy": [
             64
           ],
           "fy2026-energy-water-interior-appropriations": [
             6,
             7
           ],
-          "home-energy-standards-and-incentives": [
-            76,
+          "home-energy-efficiency-rulemaking": [
+            76
+          ],
+          "home-energy-program-repeal": [
             78
           ],
           "lead-ammunition-and-tackle-on-federal-lands": [
             93
           ]
         },
-        "episode_set_id": "environment-energy-119th-four-episodes",
+        "episode_set_id": "environment-energy-119th-six-episodes-corrected",
         "expected_control_roll_ids": [],
         "expected_independent_episode_ids": [
           "fy2026-energy-water-interior-appropriations",
-          "critical-mineral-supply-and-domestic-production",
-          "home-energy-standards-and-incentives",
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal",
           "lead-ammunition-and-tackle-on-federal-lands"
         ],
         "expected_substantive_roll_ids": [
@@ -696,12 +820,11 @@
           78,
           93
         ],
-        "version": "1.0.0"
+        "version": "2.0.0"
       },
       "shared_review_dependencies": {
         "dependency_ids": [
           "action-boundary:house-119-2-7",
-          "relationship:separate-proposals-in-one-policy-family",
           "trait-value:accelerates-domestic-mineral-projects",
           "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
@@ -717,8 +840,8 @@
     {
       "coverage": {
         "expected_in_service_actions": 7,
-        "independent_episodes_complete": 4,
-        "independent_episodes_expected": 4,
+        "independent_episodes_complete": 6,
+        "independent_episodes_expected": 6,
         "independent_episodes_missing": 0,
         "independent_episodes_outside_service": 0,
         "independent_episodes_partial": 0,
@@ -760,21 +883,39 @@
         },
         {
           "action_signature": [
-            "Nay",
             "Nay"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "critical-mineral-supply-and-domestic-production",
-          "mechanism_family": "resource-supply-security",
-          "member_trajectory": "Recorded Nay/Nay across the two distinct resource-supply bills; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory.",
+          "episode_id": "critical-mineral-project-acceleration",
+          "mechanism_family": "critical-mineral-project-acceleration",
+          "member_trajectory": "Opposed the reviewed domestic mineral project-acceleration bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed domestic mineral project-acceleration bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            55,
+            55
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Opposed both reviewed resource-supply proposals.",
+              "theme_id": "resource_supply_opposition"
+            }
+          ]
+        },
+        {
+          "action_signature": [
+            "Nay"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
+          "mechanism_family": "critical-mineral-supply-assessment-and-strategy",
+          "member_trajectory": "Opposed the reviewed critical-mineral assessment and strategy bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed critical-mineral assessment and strategy bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
             64
           ],
           "theme_evidence": [
@@ -786,21 +927,39 @@
         },
         {
           "action_signature": [
-            "Nay",
             "Nay"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "home-energy-standards-and-incentives",
-          "mechanism_family": "standards-and-program-repeal",
-          "member_trajectory": "Recorded Nay/Nay across the standards bill and program-repeal bill; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory.",
+          "episode_id": "home-energy-efficiency-rulemaking",
+          "mechanism_family": "home-energy-efficiency-rulemaking",
+          "member_trajectory": "Opposed the reviewed home-appliance efficiency-rulemaking bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed home-appliance efficiency-rulemaking bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            76,
+            76
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Opposed both reviewed changes to federal home-energy standards or programs.",
+              "theme_id": "home_energy_change_opposition"
+            }
+          ]
+        },
+        {
+          "action_signature": [
+            "Nay"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "home-energy-program-repeal",
+          "mechanism_family": "home-energy-program-repeal",
+          "member_trajectory": "Opposed the reviewed home-energy program-repeal bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed home-energy program-repeal bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
             78
           ],
           "theme_evidence": [
@@ -863,28 +1022,28 @@
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-project-acceleration",
           "roll": 55,
           "source_id": "clerk_roll_055"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
           "roll": 64,
           "source_id": "clerk_roll_064"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-efficiency-rulemaking",
           "roll": 76,
           "source_id": "clerk_roll_076"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-program-repeal",
           "roll": 78,
           "source_id": "clerk_roll_078"
         },
@@ -899,30 +1058,36 @@
       "schema_version": "editorial_member_overlay_v2",
       "selection_rationale": "Greedy maximum-minimum Hamming distance over complete observed vectors.",
       "shared_episode_set": {
-        "episode_map_path": "docs/editorial/commissioning_domain_v1/episode_map.json",
+        "episode_map_path": "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
         "episode_rolls": {
-          "critical-mineral-supply-and-domestic-production": [
-            55,
+          "critical-mineral-project-acceleration": [
+            55
+          ],
+          "critical-mineral-supply-assessment-and-strategy": [
             64
           ],
           "fy2026-energy-water-interior-appropriations": [
             6,
             7
           ],
-          "home-energy-standards-and-incentives": [
-            76,
+          "home-energy-efficiency-rulemaking": [
+            76
+          ],
+          "home-energy-program-repeal": [
             78
           ],
           "lead-ammunition-and-tackle-on-federal-lands": [
             93
           ]
         },
-        "episode_set_id": "environment-energy-119th-four-episodes",
+        "episode_set_id": "environment-energy-119th-six-episodes-corrected",
         "expected_control_roll_ids": [],
         "expected_independent_episode_ids": [
           "fy2026-energy-water-interior-appropriations",
-          "critical-mineral-supply-and-domestic-production",
-          "home-energy-standards-and-incentives",
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal",
           "lead-ammunition-and-tackle-on-federal-lands"
         ],
         "expected_substantive_roll_ids": [
@@ -934,12 +1099,11 @@
           78,
           93
         ],
-        "version": "1.0.0"
+        "version": "2.0.0"
       },
       "shared_review_dependencies": {
         "dependency_ids": [
           "action-boundary:house-119-2-7",
-          "relationship:separate-proposals-in-one-policy-family",
           "trait-value:accelerates-domestic-mineral-projects",
           "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
@@ -955,8 +1119,8 @@
     {
       "coverage": {
         "expected_in_service_actions": 7,
-        "independent_episodes_complete": 4,
-        "independent_episodes_expected": 4,
+        "independent_episodes_complete": 6,
+        "independent_episodes_expected": 6,
         "independent_episodes_missing": 0,
         "independent_episodes_outside_service": 0,
         "independent_episodes_partial": 0,
@@ -998,21 +1162,39 @@
         },
         {
           "action_signature": [
-            "Nay",
             "Nay"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "critical-mineral-supply-and-domestic-production",
-          "mechanism_family": "resource-supply-security",
-          "member_trajectory": "Recorded Nay/Nay across the two distinct resource-supply bills; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory.",
+          "episode_id": "critical-mineral-project-acceleration",
+          "mechanism_family": "critical-mineral-project-acceleration",
+          "member_trajectory": "Opposed the reviewed domestic mineral project-acceleration bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed domestic mineral project-acceleration bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            55,
+            55
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Opposed both reviewed resource-supply proposals.",
+              "theme_id": "resource_supply_opposition"
+            }
+          ]
+        },
+        {
+          "action_signature": [
+            "Nay"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
+          "mechanism_family": "critical-mineral-supply-assessment-and-strategy",
+          "member_trajectory": "Opposed the reviewed critical-mineral assessment and strategy bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed critical-mineral assessment and strategy bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
             64
           ],
           "theme_evidence": [
@@ -1024,24 +1206,47 @@
         },
         {
           "action_signature": [
-            "Yea",
+            "Yea"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "home-energy-efficiency-rulemaking",
+          "mechanism_family": "home-energy-efficiency-rulemaking",
+          "member_trajectory": "Supported the reviewed home-appliance efficiency-rulemaking bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Supported the reviewed home-appliance efficiency-rulemaking bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
+            76
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Supported both reviewed changes to federal home-energy standards or programs.",
+              "theme_id": "home_energy_change_support"
+            }
+          ]
+        },
+        {
+          "action_signature": [
             "Nay"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "home-energy-standards-and-incentives",
-          "mechanism_family": "standards-and-program-repeal",
-          "member_trajectory": "Recorded Yea/Nay across the standards bill and program-repeal bill; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were supported, opposed in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory.",
+          "episode_id": "home-energy-program-repeal",
+          "mechanism_family": "home-energy-program-repeal",
+          "member_trajectory": "Opposed the reviewed home-energy program-repeal bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed home-energy program-repeal bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            76,
             78
           ],
-          "theme_evidence": []
+          "theme_evidence": [
+            {
+              "rationale": "Opposed both reviewed changes to federal home-energy standards or programs.",
+              "theme_id": "home_energy_change_opposition"
+            }
+          ]
         },
         {
           "action_signature": [
@@ -1096,28 +1301,28 @@
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-project-acceleration",
           "roll": 55,
           "source_id": "clerk_roll_055"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
           "roll": 64,
           "source_id": "clerk_roll_064"
         },
         {
           "action": "Yea",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-efficiency-rulemaking",
           "roll": 76,
           "source_id": "clerk_roll_076"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-program-repeal",
           "roll": 78,
           "source_id": "clerk_roll_078"
         },
@@ -1132,30 +1337,36 @@
       "schema_version": "editorial_member_overlay_v2",
       "selection_rationale": "Greedy maximum-minimum Hamming distance over complete observed vectors.",
       "shared_episode_set": {
-        "episode_map_path": "docs/editorial/commissioning_domain_v1/episode_map.json",
+        "episode_map_path": "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
         "episode_rolls": {
-          "critical-mineral-supply-and-domestic-production": [
-            55,
+          "critical-mineral-project-acceleration": [
+            55
+          ],
+          "critical-mineral-supply-assessment-and-strategy": [
             64
           ],
           "fy2026-energy-water-interior-appropriations": [
             6,
             7
           ],
-          "home-energy-standards-and-incentives": [
-            76,
+          "home-energy-efficiency-rulemaking": [
+            76
+          ],
+          "home-energy-program-repeal": [
             78
           ],
           "lead-ammunition-and-tackle-on-federal-lands": [
             93
           ]
         },
-        "episode_set_id": "environment-energy-119th-four-episodes",
+        "episode_set_id": "environment-energy-119th-six-episodes-corrected",
         "expected_control_roll_ids": [],
         "expected_independent_episode_ids": [
           "fy2026-energy-water-interior-appropriations",
-          "critical-mineral-supply-and-domestic-production",
-          "home-energy-standards-and-incentives",
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal",
           "lead-ammunition-and-tackle-on-federal-lands"
         ],
         "expected_substantive_roll_ids": [
@@ -1167,12 +1378,11 @@
           78,
           93
         ],
-        "version": "1.0.0"
+        "version": "2.0.0"
       },
       "shared_review_dependencies": {
         "dependency_ids": [
           "action-boundary:house-119-2-7",
-          "relationship:separate-proposals-in-one-policy-family",
           "trait-value:accelerates-domestic-mineral-projects",
           "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
@@ -1188,11 +1398,11 @@
     {
       "coverage": {
         "expected_in_service_actions": 7,
-        "independent_episodes_complete": 1,
-        "independent_episodes_expected": 4,
+        "independent_episodes_complete": 2,
+        "independent_episodes_expected": 6,
         "independent_episodes_missing": 0,
         "independent_episodes_outside_service": 0,
-        "independent_episodes_partial": 3,
+        "independent_episodes_partial": 4,
         "missing_actions": 0,
         "no_longer_serving_actions": 0,
         "not_voting_actions": 5,
@@ -1224,38 +1434,73 @@
         },
         {
           "action_signature": [
-            "Not Voting",
-            "Yea"
+            "Not Voting"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "partial",
-          "episode_id": "critical-mineral-supply-and-domestic-production",
-          "mechanism_family": "resource-supply-security",
-          "member_trajectory": "The the two distinct resource-supply bills trajectory is incomplete because at least one action is Present, Not Voting, outside service, or missing.",
+          "episode_id": "critical-mineral-project-acceleration",
+          "mechanism_family": "critical-mineral-project-acceleration",
+          "member_trajectory": "Did not vote on the reviewed domestic mineral project-acceleration bill.",
           "package_vote_limitations": [],
-          "practical_policy_direction": "No episode theme is inferred from the incomplete signature.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory.",
+          "practical_policy_direction": "Did not vote on the reviewed domestic mineral project-acceleration bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            55,
-            64
+            55
           ],
           "theme_evidence": []
         },
         {
           "action_signature": [
-            "Not Voting",
+            "Yea"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
+          "mechanism_family": "critical-mineral-supply-assessment-and-strategy",
+          "member_trajectory": "Supported the reviewed critical-mineral assessment and strategy bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Supported the reviewed critical-mineral assessment and strategy bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
+            64
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Supported both reviewed resource-supply proposals.",
+              "theme_id": "resource_supply_support"
+            }
+          ]
+        },
+        {
+          "action_signature": [
             "Not Voting"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "partial",
-          "episode_id": "home-energy-standards-and-incentives",
-          "mechanism_family": "standards-and-program-repeal",
-          "member_trajectory": "The the standards bill and program-repeal bill trajectory is incomplete because at least one action is Present, Not Voting, outside service, or missing.",
+          "episode_id": "home-energy-efficiency-rulemaking",
+          "mechanism_family": "home-energy-efficiency-rulemaking",
+          "member_trajectory": "Did not vote on the reviewed home-appliance efficiency-rulemaking bill.",
           "package_vote_limitations": [],
-          "practical_policy_direction": "No episode theme is inferred from the incomplete signature.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory.",
+          "practical_policy_direction": "Did not vote on the reviewed home-appliance efficiency-rulemaking bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            76,
+            76
+          ],
+          "theme_evidence": []
+        },
+        {
+          "action_signature": [
+            "Not Voting"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "partial",
+          "episode_id": "home-energy-program-repeal",
+          "mechanism_family": "home-energy-program-repeal",
+          "member_trajectory": "Did not vote on the reviewed home-energy program-repeal bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Did not vote on the reviewed home-energy program-repeal bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
             78
           ],
           "theme_evidence": []
@@ -1313,28 +1558,28 @@
         {
           "action": "Not Voting",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-project-acceleration",
           "roll": 55,
           "source_id": "clerk_roll_055"
         },
         {
           "action": "Yea",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
           "roll": 64,
           "source_id": "clerk_roll_064"
         },
         {
           "action": "Not Voting",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-efficiency-rulemaking",
           "roll": 76,
           "source_id": "clerk_roll_076"
         },
         {
           "action": "Not Voting",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-program-repeal",
           "roll": 78,
           "source_id": "clerk_roll_078"
         },
@@ -1349,30 +1594,36 @@
       "schema_version": "editorial_member_overlay_v2",
       "selection_rationale": "Lowest-coverage observed record, included to exercise Not Voting or partial-service handling.",
       "shared_episode_set": {
-        "episode_map_path": "docs/editorial/commissioning_domain_v1/episode_map.json",
+        "episode_map_path": "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
         "episode_rolls": {
-          "critical-mineral-supply-and-domestic-production": [
-            55,
+          "critical-mineral-project-acceleration": [
+            55
+          ],
+          "critical-mineral-supply-assessment-and-strategy": [
             64
           ],
           "fy2026-energy-water-interior-appropriations": [
             6,
             7
           ],
-          "home-energy-standards-and-incentives": [
-            76,
+          "home-energy-efficiency-rulemaking": [
+            76
+          ],
+          "home-energy-program-repeal": [
             78
           ],
           "lead-ammunition-and-tackle-on-federal-lands": [
             93
           ]
         },
-        "episode_set_id": "environment-energy-119th-four-episodes",
+        "episode_set_id": "environment-energy-119th-six-episodes-corrected",
         "expected_control_roll_ids": [],
         "expected_independent_episode_ids": [
           "fy2026-energy-water-interior-appropriations",
-          "critical-mineral-supply-and-domestic-production",
-          "home-energy-standards-and-incentives",
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal",
           "lead-ammunition-and-tackle-on-federal-lands"
         ],
         "expected_substantive_roll_ids": [
@@ -1384,12 +1635,11 @@
           78,
           93
         ],
-        "version": "1.0.0"
+        "version": "2.0.0"
       },
       "shared_review_dependencies": {
         "dependency_ids": [
           "action-boundary:house-119-2-7",
-          "relationship:separate-proposals-in-one-policy-family",
           "trait-value:accelerates-domestic-mineral-projects",
           "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
@@ -1405,8 +1655,8 @@
     {
       "coverage": {
         "expected_in_service_actions": 7,
-        "independent_episodes_complete": 4,
-        "independent_episodes_expected": 4,
+        "independent_episodes_complete": 6,
+        "independent_episodes_expected": 6,
         "independent_episodes_missing": 0,
         "independent_episodes_outside_service": 0,
         "independent_episodes_partial": 0,
@@ -1448,21 +1698,39 @@
         },
         {
           "action_signature": [
-            "Nay",
             "Nay"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "critical-mineral-supply-and-domestic-production",
-          "mechanism_family": "resource-supply-security",
-          "member_trajectory": "Recorded Nay/Nay across the two distinct resource-supply bills; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were opposed, opposed in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one resource-supply trajectory.",
+          "episode_id": "critical-mineral-project-acceleration",
+          "mechanism_family": "critical-mineral-project-acceleration",
+          "member_trajectory": "Opposed the reviewed domestic mineral project-acceleration bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed domestic mineral project-acceleration bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            55,
+            55
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Opposed both reviewed resource-supply proposals.",
+              "theme_id": "resource_supply_opposition"
+            }
+          ]
+        },
+        {
+          "action_signature": [
+            "Nay"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
+          "mechanism_family": "critical-mineral-supply-assessment-and-strategy",
+          "member_trajectory": "Opposed the reviewed critical-mineral assessment and strategy bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed critical-mineral assessment and strategy bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
             64
           ],
           "theme_evidence": [
@@ -1474,24 +1742,47 @@
         },
         {
           "action_signature": [
-            "Yea",
+            "Yea"
+          ],
+          "contrary_or_limiting_evidence": [],
+          "coverage_status": "complete",
+          "episode_id": "home-energy-efficiency-rulemaking",
+          "mechanism_family": "home-energy-efficiency-rulemaking",
+          "member_trajectory": "Supported the reviewed home-appliance efficiency-rulemaking bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Supported the reviewed home-appliance efficiency-rulemaking bill.",
+          "relationship_to_repeated_stages": "",
+          "rolls": [
+            76
+          ],
+          "theme_evidence": [
+            {
+              "rationale": "Supported both reviewed changes to federal home-energy standards or programs.",
+              "theme_id": "home_energy_change_support"
+            }
+          ]
+        },
+        {
+          "action_signature": [
             "Nay"
           ],
           "contrary_or_limiting_evidence": [],
           "coverage_status": "complete",
-          "episode_id": "home-energy-standards-and-incentives",
-          "mechanism_family": "standards-and-program-repeal",
-          "member_trajectory": "Recorded Yea/Nay across the standards bill and program-repeal bill; the related actions count as one episode.",
-          "package_vote_limitations": [
-            "Related actions remain one episode; their repeated directions do not create multiple independent positions."
-          ],
-          "practical_policy_direction": "The episode actions were supported, opposed in stage order.",
-          "relationship_to_repeated_stages": "2 related actions are evaluated as one home-energy trajectory.",
+          "episode_id": "home-energy-program-repeal",
+          "mechanism_family": "home-energy-program-repeal",
+          "member_trajectory": "Opposed the reviewed home-energy program-repeal bill.",
+          "package_vote_limitations": [],
+          "practical_policy_direction": "Opposed the reviewed home-energy program-repeal bill.",
+          "relationship_to_repeated_stages": "",
           "rolls": [
-            76,
             78
           ],
-          "theme_evidence": []
+          "theme_evidence": [
+            {
+              "rationale": "Opposed both reviewed changes to federal home-energy standards or programs.",
+              "theme_id": "home_energy_change_opposition"
+            }
+          ]
         },
         {
           "action_signature": [
@@ -1546,28 +1837,28 @@
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-project-acceleration",
           "roll": 55,
           "source_id": "clerk_roll_055"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "critical-mineral-supply-and-domestic-production",
+          "episode_id": "critical-mineral-supply-assessment-and-strategy",
           "roll": 64,
           "source_id": "clerk_roll_064"
         },
         {
           "action": "Yea",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-efficiency-rulemaking",
           "roll": 76,
           "source_id": "clerk_roll_076"
         },
         {
           "action": "Nay",
           "counting": true,
-          "episode_id": "home-energy-standards-and-incentives",
+          "episode_id": "home-energy-program-repeal",
           "roll": 78,
           "source_id": "clerk_roll_078"
         },
@@ -1582,30 +1873,36 @@
       "schema_version": "editorial_member_overlay_v2",
       "selection_rationale": "Lowest Bioguide ID in a same-vector cross-party pair used only for invariance testing.",
       "shared_episode_set": {
-        "episode_map_path": "docs/editorial/commissioning_domain_v1/episode_map.json",
+        "episode_map_path": "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
         "episode_rolls": {
-          "critical-mineral-supply-and-domestic-production": [
-            55,
+          "critical-mineral-project-acceleration": [
+            55
+          ],
+          "critical-mineral-supply-assessment-and-strategy": [
             64
           ],
           "fy2026-energy-water-interior-appropriations": [
             6,
             7
           ],
-          "home-energy-standards-and-incentives": [
-            76,
+          "home-energy-efficiency-rulemaking": [
+            76
+          ],
+          "home-energy-program-repeal": [
             78
           ],
           "lead-ammunition-and-tackle-on-federal-lands": [
             93
           ]
         },
-        "episode_set_id": "environment-energy-119th-four-episodes",
+        "episode_set_id": "environment-energy-119th-six-episodes-corrected",
         "expected_control_roll_ids": [],
         "expected_independent_episode_ids": [
           "fy2026-energy-water-interior-appropriations",
-          "critical-mineral-supply-and-domestic-production",
-          "home-energy-standards-and-incentives",
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal",
           "lead-ammunition-and-tackle-on-federal-lands"
         ],
         "expected_substantive_roll_ids": [
@@ -1617,12 +1914,11 @@
           78,
           93
         ],
-        "version": "1.0.0"
+        "version": "2.0.0"
       },
       "shared_review_dependencies": {
         "dependency_ids": [
           "action-boundary:house-119-2-7",
-          "relationship:separate-proposals-in-one-policy-family",
           "trait-value:accelerates-domestic-mineral-projects",
           "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",

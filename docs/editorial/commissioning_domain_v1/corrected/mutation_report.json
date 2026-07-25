@@ -155,18 +155,24 @@
       "mutation_id": "member_specific_incomplete_coverage",
       "owning_layer": "review_routing",
       "passed": true
+    },
+    {
+      "expected_route": "blocked",
+      "mutation_id": "vote_direction_changes_episode_grouping",
+      "owning_layer": "episode_hierarchy",
+      "passed": true
     }
   ],
   "counts": {
     "failed": 0,
-    "passed": 26,
+    "passed": 27,
     "route_distribution": {
-      "blocked": 17,
+      "blocked": 18,
       "human_exception_required": 3,
       "shared_human_exception_once": 1,
       "standard_generation_pass": 5
     },
-    "total": 26
+    "total": 27
   },
   "original_mutation_count": 17,
   "schema_version": "commissioning_domain_corrected_mutation_report_v1"

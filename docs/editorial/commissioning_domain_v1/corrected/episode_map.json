@@ -1,9 +1,9 @@
 {
-  "counting_boundary": "Seven eligible substantive actions count as four independent episodes; roll 5 is excluded by exact-action domain eligibility, and related stages or proposals do not inflate cross-episode evidence.",
+  "counting_boundary": "Seven eligible substantive actions count as six independent episodes; rolls 6 and 7 remain one repeated-stage appropriations episode, while the separate mineral and home-energy bills remain independent episodes inside two policy families. Vote direction never determines grouping.",
   "counts": {
-    "independent_episodes": 4,
-    "mechanism_families": 4,
-    "multi_action_episodes": 3,
+    "independent_episodes": 6,
+    "mechanism_families": 6,
+    "multi_action_episodes": 1,
     "substantive_actions": 7
   },
   "domain": "ENVIRONMENT_ENERGY",
@@ -24,31 +24,59 @@
     },
     {
       "counted_as_independent_episodes": 1,
-      "episode_id": "critical-mineral-supply-and-domestic-production",
-      "meaningful_differences": "H.R. 4090 centers Interior, federal lands, project acceleration, and mining studies; H.R. 3617 centers DOE assessments, strategies, alternatives, recycling, and reporting.",
-      "mechanism_family": "resource_supply_security",
-      "relationship_type": "separate_proposals_in_one_policy_family",
+      "episode_id": "critical-mineral-project-acceleration",
+      "meaningful_differences": "H.R. 4090 is a distinct enacted-action candidate from the separate supply-assessment bill in the same policy family.",
+      "mechanism_family": "critical_mineral_project_acceleration",
+      "policy_family_id": "critical-mineral-supply",
+      "relationship_type": "single_action_episode",
       "rolls": [
-        55,
-        64
+        55
       ],
-      "route": "human_exception_required",
-      "shared_objective": "Address mineral or critical-energy-resource supply security.",
-      "why": "The two separate bills share a source-grounded objective but use contrasting agency mechanisms; confirming one episode rather than two is novel shared meaning."
+      "route": "standard_generation_pass",
+      "shared_objective": "Accelerate domestic mineral projects and direct federal land and resource agencies.",
+      "why": "A separate bill and mechanism is an independent episode; recorded vote direction does not affect this assignment."
     },
     {
       "counted_as_independent_episodes": 1,
-      "episode_id": "home-energy-standards-and-incentives",
-      "meaningful_differences": "H.R. 4626 changes future efficiency-rule criteria; H.R. 4758 repeals rebate, training, and building-code assistance programs.",
-      "mechanism_family": "home_energy_regulation_and_programs",
-      "relationship_type": "separate_proposals_in_one_policy_family",
+      "episode_id": "critical-mineral-supply-assessment-and-strategy",
+      "meaningful_differences": "H.R. 3617 is a distinct supply-assessment and strategy bill within the Critical Mineral Supply policy family.",
+      "mechanism_family": "critical_mineral_supply_assessment_and_strategy",
+      "policy_family_id": "critical-mineral-supply",
+      "relationship_type": "single_action_episode",
       "rolls": [
-        76,
+        64
+      ],
+      "route": "standard_generation_pass",
+      "shared_objective": "Assess critical-mineral supply vulnerability and require federal strategies, alternatives, recycling, and reporting.",
+      "why": "A separate bill and mechanism is an independent episode; recorded vote direction does not affect this assignment."
+    },
+    {
+      "counted_as_independent_episodes": 1,
+      "episode_id": "home-energy-efficiency-rulemaking",
+      "meaningful_differences": "H.R. 4626 is a distinct standards and rulemaking bill from the separate home-energy program-repeal bill.",
+      "mechanism_family": "home_energy_efficiency_rulemaking",
+      "policy_family_id": "home-energy-policy",
+      "relationship_type": "single_action_episode",
+      "rolls": [
+        76
+      ],
+      "route": "standard_generation_pass",
+      "shared_objective": "Change the criteria governing future federal home-appliance efficiency rulemaking.",
+      "why": "A separate bill and mechanism is an independent episode; recorded vote direction does not affect this assignment."
+    },
+    {
+      "counted_as_independent_episodes": 1,
+      "episode_id": "home-energy-program-repeal",
+      "meaningful_differences": "H.R. 4758 is a distinct program-repeal and rescission bill within the Home Energy Policy family.",
+      "mechanism_family": "home_energy_program_repeal",
+      "policy_family_id": "home-energy-policy",
+      "relationship_type": "single_action_episode",
+      "rolls": [
         78
       ],
-      "route": "human_exception_required",
-      "shared_objective": "Change federal home-energy policy through standards constraints and program repeal.",
-      "why": "The shared home-energy family is clear, but treating distinct standards and subsidy mechanisms as one episode is a novel relationship requiring review."
+      "route": "standard_generation_pass",
+      "shared_objective": "Repeal specified home-energy rebate, training, and building-code assistance programs.",
+      "why": "A separate bill and mechanism is an independent episode; recorded vote direction does not affect this assignment."
     },
     {
       "counted_as_independent_episodes": 1,

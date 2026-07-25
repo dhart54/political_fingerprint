@@ -135,14 +135,20 @@ not catch this defect automatically.
 - Accepted rolls: 6, 7, 55, 64, 76, 78, and 93.
 - Rejected roll 5 reason:
   `exact_action_not_materially_environment_energy`.
-- Corpus: 7 substantive actions, 4 episodes, 14 official sources, 59 supported
+- Corpus: 7 substantive actions, 6 episodes, 14 official sources, 59 supported
   claims, and 4 supported absences.
 - Corrected freeze:
-  `d66a9dc053ed04ae6ae4a2e86f15d0b01772a09b812e532b8996c8e1b8e819b9`.
+  `885384e2d3dfec9c3acd6b9e8700b752817d4e983758953f6d6d96a2f59709aa`.
 - Roll 6 remains bounded to the combined Divisions B-C retention action.
 - Roll 7 remains a cross-domain final-passage action whose Environment & Energy
   meaning is limited to Divisions B-C and whose stage stays within the same
   appropriations episode.
+- Rolls 55 and 64 are independent episodes under the Critical Mineral Supply
+  policy family. Rolls 76 and 78 are independent episodes under the Home Energy
+  Policy family. Roll 93 is standalone.
+- Episode identity is fixed by the legislative action and mechanism. Nay/Yea,
+  Yea/Nay, Nay/Nay, and Yea/Yea remain separate recorded actions and never
+  change the hierarchy.
 
 The generic eligibility contract evaluates exact action content independently
 from a parent package, other divisions, earlier/later stages, titles, and
@@ -163,32 +169,32 @@ Actual member routes are:
 
 All 128 binary vectors were evaluated: 112 standard and 16 sampled audit. No
 binary vector required a member exception. The corrected mutation suite
-preserves all 17 original cases and adds nine eligibility/routing cases, for
-26/26 passing. Identity, party, direction-only, and member/domain/title/roll/
+preserves all 17 original cases and adds ten eligibility/routing/hierarchy
+cases, for 27/27 passing. Identity, party, direction-only, and member/domain/title/roll/
 exact-vector branch failures remain zero.
 
-There are eight de-duplicated shared decisions: six trait values, the
-`separate_proposals_in_one_policy_family` relationship, and the roll 7
+There are seven de-duplicated shared decisions: six trait values and the roll 7
 cross-domain action boundary. They remain shared
 `human_exception_required` decisions and prevent approval/publication, but do
 not change a member route. Incomplete member evidence still routes to human
-exception.
+exception. The former related-proposal question is resolved by the directed
+six-episode/two-family hierarchy.
 
 ### Corrected persistence and disposable proof
 
 - Batch:
-  `commissioning-domain-v1-environment-energy-corrected`.
-- Artifacts/relationships: 66/60.
+  `commissioning-domain-v1-environment-energy-corrected-six-episode`.
+- Artifacts/relationships: 69/60.
 - Manifest:
-  `dea1b8c7a0071462a5eb91f24d22287dc156fda9edcfa71a2abf6e570c2459c5`.
+  `3e1ecd448f086fae52bd69a74303899940f0e417978a82df34970317052752fc`.
 - Artifact semantic hash:
-  `ac393b0fe4fd3d06186cfa4637d10f25357c4f3893c2d54cc8c42b7ec23af45e`.
+  `c2e2f63577f9b7b4224b09c073add4fdccf443dd121d986fda76eb6ec00919ad`.
 - Relationship semantic hash:
-  `d42f22e8bfd3c635b6153cd1235aaa2be1bf1e65c93b91ea52adb8522f322628`.
+  `7e4826fc8002799a7b1702363cd6fa1859d95cd5379f3b85cdc63111ae7f1238`.
 
 Disposable PostgreSQL mirrored the 71/95 seed plus original 74/68 batch,
 rolled back only the original batch, confirmed the seed remained exact, applied
-the corrected 66/60 batch, proved semantic export equality and 0/0 idempotency,
+the corrected 69/60 batch, proved semantic export equality and 0/0 idempotency,
 rejected conflicts, orphans, and pending publication, preserved RLS/privileges,
 rolled back the corrected batch exactly, and reapplied it with matching hashes.
 Two seed-builder byte-pin tests retain their pre-existing Windows CRLF mismatch;
@@ -202,6 +208,6 @@ The exact prepared production operations are in
 `commissioning_domain_v1_production_correction.md`. Neither the original
 production rollback nor the corrected production apply was executed.
 
-Additional human decisions are required for rolls 6 and 7, the six traits, the
-candidate relationship, corrected member presentations, explicit production
+Additional human decisions are required for rolls 6 and 7, the six traits,
+corrected member presentations, explicit production
 rollback/reapplication authorization, benchmark promotion, and publication.

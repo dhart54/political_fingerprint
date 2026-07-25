@@ -534,7 +534,7 @@ test("commissioning domain renders four bounded review cases through the generic
     await expect(fixture).toContainText("Commissioning domain");
     await expect(fixture).toContainText("Environment & Energy");
     await expect(slice.getByTestId("editorial-coverage-line")).toBeVisible();
-    await expect(slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(4);
+    await expect(slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(5);
     await page.evaluate(() => window.scrollTo({ left: 0, top: window.scrollY }));
     expect(await page.evaluate(() => window.scrollX)).toBe(0);
     if (capture) {
@@ -542,6 +542,7 @@ test("commissioning domain renders four bounded review cases through the generic
     }
     const complete = slice.getByTestId("complete-reviewed-record");
     await complete.locator(":scope > summary").click();
+    await expect(complete.locator("details[data-episode-id]")).toHaveCount(6);
     await expect(complete.locator("details[data-testid^='editorial-record-roll-']")).toHaveCount(7);
     await expect(complete.getByTestId("editorial-record-roll-5")).toHaveCount(0);
     await complete.locator("details[data-episode-id]").first().locator(":scope > summary").click();

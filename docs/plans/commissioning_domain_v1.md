@@ -89,15 +89,16 @@
 - Windows element screenshots can inherit horizontal scroll after nested disclosure interaction even when the document has no overflow; resetting `window.scrollX` before capture produced stable bounded evidence without a product-code change.
 - Correction discovery: exact-action eligibility must be decided before an action enters a domain corpus. Parent-package, adjacent-division, title, episode, and earlier/later-stage context cannot rescue an ineligible exact action.
 - Removing roll 5 reduced the observed seven-action space to 35 vectors and increased complete Yes/No records to 372. The deterministic reselection produced seven members; the authorized six-member minimum remains satisfied.
-- The corrected member routes are 173 standard, 199 sampled audit, 60 human exception, and 0 blocked. All 60 human exceptions reflect incomplete member evidence; the eight shared decisions add zero member exceptions.
-- The corrected immutable batch is 66 artifacts/60 relationships with manifest `dea1b8c7a0071462a5eb91f24d22287dc156fda9edcfa71a2abf6e570c2459c5`.
+- The corrected member routes are 173 standard, 199 sampled audit, 60 human exception, and 0 blocked. All 60 human exceptions reflect incomplete member evidence; the seven unresolved shared decisions add zero member exceptions.
+- Episode-hierarchy correction: rolls 6/7 remain one appropriations episode; rolls 55/64 and 76/78 are four independent episodes grouped under two policy families; roll 93 remains standalone. Seven actions therefore form six episodes, and grouping is invariant to vote direction.
+- The six-episode immutable proposal is 69 artifacts/60 relationships with manifest `3e1ecd448f086fae52bd69a74303899940f0e417978a82df34970317052752fc`.
 
 ## Decisions And Rationale
 
 - Keep domain selection evidence-first: source completeness, episode/action diversity, vector diversity, bounded scope, and unresolved-source minimization only.
 - Treat the prior blocked branch as read-only evidence; do not merge or copy its result as current implementation.
 - Preserve member neutrality and proposition-first synthesis boundaries from the governing workflow and interpretation principles.
-- Reuse the existing ontology shape. Route six new source-grounded values and one related-proposal relationship type once as shared human exceptions.
+- Reuse the existing ontology shape. Route six new source-grounded values once as shared human exceptions; the directed two-family episode hierarchy resolves the former related-proposal relationship question.
 - Keep all 432-member, 42-vector, 256-binary-vector, and 17-mutation evaluations non-persisted; persist only the eight selected real-member slices.
 
 ## Deviations Or Corrections
@@ -106,6 +107,7 @@
 - `COMM-V1-002`: grouped source-grounded related proposals as one episode per policy family rather than overstating independent evidence.
 - `COMM-V1-003`: the first disposable relationship graph used labels outside migration 0016; PostgreSQL rolled the transaction back, and the generalized graph was remapped to the existing vocabulary.
 - `COMM-V1-004` (active): House roll 5 was admitted from parent-package/title context even though the exact Division A action is Commerce, Justice, Science appropriations and is not materially Environment & Energy. The correction adds an exact-action domain eligibility gate, removes roll 5, and prevents shared unresolved traits or relationships from multiplying into member-level human exceptions.
+- `COMM-V1-005` (active): the first seven-action correction still collapsed rolls 55/64 and 76/78 into two combined episodes. The six-episode correction preserves each separate bill as an independent episode inside its policy family and proves that Nay/Yea, Yea/Nay, Nay/Nay, and Yea/Yea never alter grouping.
 - A broad backend run exposed six production-database-versus-fixture expectations and two pre-existing Windows CRLF byte pins. The fixture subset passed 11/11 under an isolated one-second connection fallback; relevant semantic and persistence regressions passed separately.
 
 ## Validation Results
@@ -124,9 +126,9 @@
 - Documentation governance and `git diff --check`: pass.
 - Disposable PostgreSQL: exact 74/68 apply/export, 0/0 idempotent reapply, publication/conflict/orphan guards, RLS/privileges, exact rollback, and clean reapply passed.
 - Correction builder and focused backend suite: 105 passed with the one known Windows seed byte-pin mismatch; correction-only suite: 26 passed.
-- Corrected generality: 432 members, 35 observed vectors, 128 binary vectors, and 26 mutations passed with zero invariance or prohibited-branch failures.
+- Corrected generality: 432 members, 35 observed vectors, 128 binary vectors, and 27 mutations passed with zero invariance or prohibited-branch failures.
 - Corrected frontend: 141 unit tests passed; Playwright 13 passed/12 intentionally skipped; four corrected renders visually inspected; lint passed with 8 pre-existing warnings; production build passed.
-- Corrected disposable PostgreSQL: 71/95 seed, original 74/68 mirror and isolated rollback, corrected 66/60 equality, 0/0 idempotency, conflict/orphan/publication guards, RLS/privileges, corrected rollback, and equality-preserving reapply passed.
+- Six-episode disposable PostgreSQL: 71/95 seed, original 74/68 mirror and isolated rollback, corrected 69/60 equality, 0/0 idempotency, conflict/publication guards, RLS/privileges, corrected rollback, and equality-preserving reapply passed.
 - Broad backend observation after using an unrestricted Windows temp directory: 761 passed, 9 skipped, and the same 8 pre-existing fixture/environment or exact-byte failures remained.
 - Final production read-only verification: original 74/68 batch and semantic hashes exact; 12 pending presentations; registry 0; selector 0; canonical fingerprints unchanged.
 - Documentation governance, generated-artifact determinism, JSON parsing, and `git diff --check`: passed.
@@ -138,7 +140,7 @@
 - Expected effects: New immutable pending artifacts and exact relationships only; zero updates/deletes/publication rows; existing 71/95 batch and canonical tables unchanged.
 - Actual effects: 74 artifacts and 68 relationships inserted in one transaction; second exact apply inserted 0/0; semantic export matched; 12 total pending presentations; registry 0; selector 0; original seed 71/95; canonical fingerprints unchanged.
 - Correction-phase authorization: Read-only production verification and preparation of exact rollback/reapplication commands only. Production rollback of the original batch and production application of the corrected batch are explicitly not authorized.
-- Correction-phase actual effects: no production write was executed. The original 74/68 batch remains applied; the corrected 66/60 batch exists only in repository and disposable proof.
+- Correction-phase actual effects: no production write was executed. The original 74/68 batch remains applied; the six-episode corrected 69/60 batch exists only in repository and disposable proof.
 
 ## Rollback Paths
 

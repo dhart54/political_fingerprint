@@ -25,7 +25,7 @@ test("commissioning slices remain review-only and render through the generic sel
       mode: EDITORIAL_EXPERIENCE_MODE.review,
     });
     assert.ok(selected);
-    assert.equal(selected.episodes.length, 4);
+    assert.equal(selected.episodes.length, 6);
     assert.equal(selected.records.length, 7);
     assert.equal(selected.reviewContext.isReview, true);
     assert.ok(selected.records.every((record) => record.sources.length >= 2));
@@ -50,6 +50,10 @@ test("corrected review fixtures exclude roll 5 and retain shared dependencies se
     assert.notEqual(
       candidate.source.inference_candidate.shared_review_dependencies.dependency_ids.length,
       0,
+    );
+    assert.equal(
+      candidate.source.inference_candidate.shared_review_dependencies.dependency_ids.length,
+      7,
     );
   }
 });

@@ -38,11 +38,11 @@
       "standard_generation": 4
     },
     "policy_episode": {
-      "human_exception": 3,
-      "standard_generation": 1
+      "human_exception": 1,
+      "standard_generation": 5
     },
     "policy_family": {
-      "human_exception": 1
+      "standard_generation": 2
     },
     "policy_trait_contract": {
       "human_exception": 1
@@ -103,7 +103,7 @@
     "standard_generation_pass": 4
   },
   "shared_dependency_member_route_amplification": 0,
-  "shared_human_review_queue_count": 8,
+  "shared_human_review_queue_count": 7,
   "shared_review_dependencies": [
     {
       "dependency_id": "action-boundary:house-119-2-7",
@@ -127,25 +127,6 @@
       "scope": "shared_corpus",
       "status": "human_review_pending",
       "summary": "Review roll 7 as cross-domain final passage whose Environment & Energy evidence is bounded to Divisions B-C."
-    },
-    {
-      "dependency_id": "relationship:separate-proposals-in-one-policy-family",
-      "kind": "trait_relationship",
-      "references": {
-        "dossier_ids": [],
-        "episode_ids": [
-          "critical-mineral-supply-and-domestic-production",
-          "home-energy-standards-and-incentives"
-        ],
-        "relationship_ids": [
-          "separate_proposals_in_one_policy_family"
-        ],
-        "trait_ids": []
-      },
-      "review_route": "human_exception_required",
-      "scope": "shared_corpus",
-      "status": "human_review_pending",
-      "summary": "Review the shared relationship that groups separate proposals within one policy family."
     },
     {
       "dependency_id": "trait-value:accelerates-domestic-mineral-projects",

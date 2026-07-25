@@ -7,24 +7,30 @@ The correction:
 
 - rejects House roll 5 as
   `exact_action_not_materially_environment_energy`;
-- retains seven eligible actions across four episodes;
+- retains seven eligible actions across six independent episodes;
 - bounds roll 6 to the combined Divisions B-C retention action;
 - bounds roll 7 to cross-domain final passage and keeps it in the same
   appropriations episode;
+- keeps rolls 55 and 64 as independent episodes in the Critical Mineral
+  Supply policy family;
+- keeps rolls 76 and 78 as independent episodes in the Home Energy Policy
+  family;
+- assigns episodes from legislative identity and mechanism, never vote
+  direction;
 - evaluates 432 members, 35 observed vectors, and all 128 binary vectors;
-- separates eight unique shared-review dependencies from member-specific
+- separates seven unique shared-review dependencies from member-specific
   routing;
 - preserves exactly four possible member routes without adding a schema;
 - produces the distinct pending batch
-  `commissioning-domain-v1-environment-energy-corrected`.
+  `commissioning-domain-v1-environment-energy-corrected-six-episode`.
 
-The corrected batch contains 66 artifacts and 60 relationships. Its manifest
+The corrected batch contains 69 artifacts and 60 relationships. Its manifest
 SHA-256 is
-`dea1b8c7a0071462a5eb91f24d22287dc156fda9edcfa71a2abf6e570c2459c5`.
+`3e1ecd448f086fae52bd69a74303899940f0e417978a82df34970317052752fc`.
 Its exported artifact and relationship semantic hashes are
-`ac393b0fe4fd3d06186cfa4637d10f25357c4f3893c2d54cc8c42b7ec23af45e`
+`c2e2f63577f9b7b4224b09c073add4fdccf443dd121d986fda76eb6ec00919ad`
 and
-`d42f22e8bfd3c635b6153cd1235aaa2be1bf1e65c93b91ea52adb8522f322628`.
+`7e4826fc8002799a7b1702363cd6fa1859d95cd5379f3b85cdc63111ae7f1238`.
 
 All artifacts remain `human_approval_pending`, `not_promoted`, and
 `production_eligible: false`. Production rollback and corrected application
