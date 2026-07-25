@@ -101,7 +101,7 @@ def test_corrected_generality_and_shared_review_deduplication() -> None:
         "exact_vector_branches": 0,
     }
     assert mutation["original_mutation_count"] == 17
-    assert mutation["counts"]["total"] == 27
+    assert mutation["counts"]["total"] == 39
     assert mutation["counts"]["failed"] == 0
 
 
@@ -172,7 +172,7 @@ def test_corrected_pending_bundle_is_distinct_complete_and_unpublished() -> None
         ARTIFACT_TYPES
     )
     assert all(
-        "commissioning-v1-corrected" in item["natural_key"]
+        "commissioning-v1-final-composition" in item["natural_key"]
         for item in bundle["artifacts"]
     )
     original_keys = {
@@ -228,15 +228,111 @@ def test_failure_history_records_human_discovery_truthfully() -> None:
         "COMM-V1-002",
         "COMM-V1-003",
         "COMM-V1-004",
+        "COMM-V1-005-HIERARCHY",
         "COMM-V1-005",
+        "COMM-V1-006",
+        "COMM-V1-007",
     ]
-    correction = failures[-2]
+    correction = next(item for item in failures if item["failure_id"] == "COMM-V1-004")
     assert correction["preserved"] is True
     assert "first_validator_result" in correction
     assert "roll 5" in correction["first_candidate"].lower()
-    hierarchy = failures[-1]
+    hierarchy = next(
+        item for item in failures
+        if item["failure_id"] == "COMM-V1-005-HIERARCHY"
+    )
     assert hierarchy["preserved"] is True
     assert hierarchy["superseded_proposal"]["production_applied"] is False
+    assert failures[-1]["failure_id"] == "COMM-V1-007"
+
+
+def test_section_ownership_and_equal_strength_synthesis_are_complete() -> None:
+    report = load("section_ownership_report.json")
+    assert report["evaluated"] == {
+        "actual_members": 432,
+        "observed_vectors": 35,
+        "binary_vectors": 128,
+    }
+    assert all(value == 0 for value in report["metrics"].values())
+
+    inferences = {
+        item["member"]["bioguide_id"]: item
+        for item in load("inference_candidates.json")["candidates"]
+    }
+    mannion = inferences["M001231"]
+    tied = mannion["equal_strength_pattern_selection"]
+    assert tied["tied_cluster_ids"] == [
+        "domestic_resource_supply_actions",
+        "home_energy_federal_role_changes",
+    ]
+    assert tied["omitted_tied_cluster_ids"] == []
+    assert "domestic resource-supply proposals" in mannion["primary_conclusion"]
+    assert "home-energy standards or programs" in mannion["primary_conclusion"]
+    assert "appropriations stages and the federal-land proposal" in (
+        mannion["primary_conclusion"]
+    )
+
+    for member_id in ("J000288", "C001059", "M001231"):
+        sections = inferences[member_id]["analytical_sections"]
+        assert len(sections["repeated_patterns"]) == 2
+        assert len(sections["policy_trajectories"]) == 1
+        assert len(sections["other_notable_choices"]) == 1
+        assert sections["meaningful_exceptions"] == []
+        assert inferences[member_id]["method_note"]
+
+    hunt = inferences["H001095"]
+    assert hunt["analytical_sections"]["repeated_patterns"] == []
+    assert hunt["analytical_sections"]["policy_trajectories"] == []
+    assert len(hunt["analytical_sections"]["other_notable_choices"]) == 2
+    assert hunt["analytical_sections"]["meaningful_exceptions"] == []
+    assert "only 2 contain Yea/Nay positions; 5 are Not Voting" in (
+        hunt["primary_conclusion"]
+    )
+    assert "Present" not in hunt["coverage_note"]
+    assert "outside service" not in hunt["coverage_note"]
+
+
+def test_composition_is_invariant_to_episode_and_tied_pattern_order() -> None:
+    module = _configured_original()
+    identifier = "ORDER-INVARIANCE"
+    vector = ("Yea", "Yea", "Nay", "Nay", "Nay", "Nay", "Yea")
+    actions = {
+        roll: {identifier: {"action": action}}
+        for roll, action in zip(ROLLS, vector)
+    }
+    member = {
+        "bioguide_id": identifier,
+        "display_name": "Order Invariance",
+        "party": None,
+        "state": "",
+    }
+    overlay = module._overlay(member, actions)
+    forward = module.evaluate_candidates(
+        overlay=overlay,
+        shared_episodes=module.EPISODES,
+        theme_catalog=module.THEMES,
+        candidate_catalog=module.CANDIDATES,
+        trait_contract=module.TRAIT_CONTRACT,
+    )
+    reversed_overlay = copy.deepcopy(overlay)
+    reversed_overlay["episode_trajectories"].reverse()
+    reverse = module.evaluate_candidates(
+        overlay=reversed_overlay,
+        shared_episodes=list(reversed(module.EPISODES)),
+        theme_catalog=dict(reversed(list(module.THEMES.items()))),
+        candidate_catalog=list(reversed(module.CANDIDATES)),
+        trait_contract={
+            **module.TRAIT_CONTRACT,
+            "policy_clusters": dict(
+                reversed(list(module.TRAIT_CONTRACT["policy_clusters"].items()))
+            ),
+        },
+    )
+    assert forward["primary_conclusion"] == reverse["primary_conclusion"]
+    assert forward["analytical_sections"] == reverse["analytical_sections"]
+    assert forward["equal_strength_pattern_selection"] == (
+        reverse["equal_strength_pattern_selection"]
+    )
 
 
 def test_generic_corrections_have_no_case_specific_branches() -> None:

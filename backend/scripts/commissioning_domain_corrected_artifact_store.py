@@ -27,9 +27,7 @@ MANIFEST = (
     / "docs/editorial/commissioning_domain_v1/corrected"
     / "persistence_batch_manifest.json"
 )
-BATCH_KEY = (
-    "commissioning-domain-v1-environment-energy-corrected-six-episode"
-)
+BATCH_KEY = "commissioning-domain-v1-environment-energy-final-composition"
 STARTING_COMMIT = "08e675e2039d76f16b8c9576e4b5a8254bc44d72"
 
 
@@ -50,7 +48,10 @@ def load_manifest() -> dict[str, Any]:
     natural_keys = {item.get("natural_key") for item in artifacts}
     if len(natural_keys) != len(artifacts):
         raise store.StoreSafetyError("corrected manifest has duplicate natural keys")
-    if any("commissioning-v1-corrected" not in key for key in natural_keys):
+    if any(
+        "commissioning-v1-final-composition" not in key
+        for key in natural_keys
+    ):
         raise store.StoreSafetyError("corrected manifest reuses an original natural key")
     for item in artifacts:
         if item.get("content_sha256") != semantic_hash(item.get("payload")):
@@ -93,7 +94,9 @@ def main(argv: list[str] | None = None) -> int:
         ROOT
         / "docs/review_packets/commissioning_domain_v1_corrected_persistence.json"
     )
-    store.LOCK_KEY = "political_fingerprint:commissioning_domain_v1_corrected"
+    store.LOCK_KEY = (
+        "political_fingerprint:commissioning_domain_v1_final_composition"
+    )
     store.load_manifest = load_manifest
     return store.main(argv)
 

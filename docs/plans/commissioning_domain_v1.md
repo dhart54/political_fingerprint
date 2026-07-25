@@ -2,7 +2,7 @@
 
 ## Intent
 
-- Immediate task: Correct the commissioned 119th-Congress House issue corpus by enforcing exact-action domain eligibility, removing House roll 5 from Environment & Energy, and separating shared-review dependencies from member-specific review routing.
+- Immediate task: Complete the final synthesis-composition correction for the existing seven-action, six-episode Environment & Energy corpus without changing corpus membership, hierarchy, schema, or publication state.
 - Larger-goal alignment: Prove the complete editorial corpus pipeline can generalize beyond Economy and Justice before any multi-domain batch expansion.
 
 ## Outcome
@@ -33,6 +33,17 @@
 - [x] Prove seed, original-batch rollback isolation, corrected import/export/idempotency/guards/RLS, and corrected rollback/reapplication on disposable PostgreSQL.
 - [x] Prepare but do not execute the production rollback or corrected production application.
 - [x] Reconcile review packets, receipts, validation, commit, push, and draft PR #104 without merge.
+
+### Final composition phase
+
+- [x] Assign every analytical proposition to exactly one primary section and keep methodology outside analytical sections.
+- [x] Restrict policy trajectories to complete multi-action episodes and prevent repeated-pattern or trajectory propositions from reappearing as notable choices.
+- [x] Synthesize every equal-strength repeated pattern before applying deterministic display ordering.
+- [x] Render exact known coverage states and exact fixture conclusions for J000288, C001059, H001095, and M001231.
+- [x] Re-evaluate all 432 actual members, all 128 binary vectors, and the expanded 39-case mutation suite.
+- [x] Generate exact Markdown/JSON final-text review exports and a distinct final-composition persistence proposal.
+- [x] Re-prove the final proposal on disposable PostgreSQL and complete broad backend/frontend/rendered validation.
+- [x] Reconcile documentation, commit, push, and update draft PR #104 without merge or production mutation.
 
 ### Original commissioning phase
 
@@ -92,6 +103,9 @@
 - The corrected member routes are 173 standard, 199 sampled audit, 60 human exception, and 0 blocked. All 60 human exceptions reflect incomplete member evidence; the seven unresolved shared decisions add zero member exceptions.
 - Episode-hierarchy correction: rolls 6/7 remain one appropriations episode; rolls 55/64 and 76/78 are four independent episodes grouped under two policy families; roll 93 remains standalone. Seven actions therefore form six episodes, and grouping is invariant to vote direction.
 - The six-episode immutable proposal is 69 artifacts/60 relationships with manifest `3e1ecd448f086fae52bd69a74303899940f0e417978a82df34970317052752fc`.
+- Final composition preserves the same seven actions and six episodes while replacing the unpublished six-episode proposal with a distinct natural-key namespace and batch key.
+- The final proposal is 69 artifacts/60 relationships with manifest `3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187`, artifact semantic hash `66e1b5c6cc32a39b7ce8a8b9fb5f42b2ba538fe036b6eb859b26ac3a9a326ed4`, and relationship semantic hash `bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21`.
+- Final ownership metrics are zero for duplicate propositions, section collisions, unresolved collisions, single-action trajectories, methodology in exceptions, empty rendered sections, tied-pattern omissions, and generic coverage fallbacks when exact counts are known.
 
 ## Decisions And Rationale
 
@@ -108,6 +122,9 @@
 - `COMM-V1-003`: the first disposable relationship graph used labels outside migration 0016; PostgreSQL rolled the transaction back, and the generalized graph was remapped to the existing vocabulary.
 - `COMM-V1-004` (active): House roll 5 was admitted from parent-package/title context even though the exact Division A action is Commerce, Justice, Science appropriations and is not materially Environment & Energy. The correction adds an exact-action domain eligibility gate, removes roll 5, and prevents shared unresolved traits or relationships from multiplying into member-level human exceptions.
 - `COMM-V1-005` (active): the first seven-action correction still collapsed rolls 55/64 and 76/78 into two combined episodes. The six-episode correction preserves each separate bill as an independent episode inside its policy family and proves that Nay/Yea, Yea/Nay, Nay/Nay, and Yea/Yea never alter grouping.
+- `COMM-V1-005` (final composition): human review found the same proposition repeated across analytical sections, including single-action evidence labeled as a trajectory. Deterministic proposition ownership now permits one primary analytical section, and trajectories require a complete multi-action episode.
+- `COMM-V1-006`: equal-strength repeated patterns could be omitted by a single-winner tie-break. Selection now retains every cluster tied on the evidence tuple and orders the retained set only for presentation.
+- `COMM-V1-007`: exact known action-status coverage could fall through to generic possible-state language. Rendering now reports the exact resolved, Yea/Nay, Not Voting, complete-episode, and partial-episode counts.
 - A broad backend run exposed six production-database-versus-fixture expectations and two pre-existing Windows CRLF byte pins. The fixture subset passed 11/11 under an isolated one-second connection fallback; relevant semantic and persistence regressions passed separately.
 
 ## Validation Results
@@ -132,6 +149,17 @@
 - Broad backend observation after using an unrestricted Windows temp directory: 761 passed, 9 skipped, and the same 8 pre-existing fixture/environment or exact-byte failures remained.
 - Final production read-only verification: original 74/68 batch and semantic hashes exact; 12 pending presentations; registry 0; selector 0; canonical fingerprints unchanged.
 - Documentation governance, generated-artifact determinism, JSON parsing, and `git diff --check`: passed.
+- Final-composition deterministic builder and exact-text exporter: passed.
+- Final-composition focused backend tests: 23 passed.
+- Final-composition focused frontend tests: 37 passed.
+- Final-composition disposable PostgreSQL: reviewed 71/95 seed; original 74/68 isolated rollback; final 69/60 semantic equality; 0/0 idempotency; conflict/publication guards; RLS/privileges; exact rollback/reapply: passed.
+- Historical Economy, Justice, and original commissioning reference regressions: 28 passed after the final-composition contract was made explicit and opt-in.
+- Broad backend observation: 764 passed, 9 skipped, and the same 8 pre-existing fixture/database or Windows exact-byte failures remained.
+- Full frontend unit suite: 142 passed.
+- Playwright: 13 passed and 12 intentionally skipped; four final-composition screenshots visually inspected.
+- Frontend lint: passed with 8 pre-existing hook warnings.
+- Frontend production build: passed.
+- Final documentation governance, generated-artifact determinism, 24 changed JSON files, and `git diff --check`: passed.
 
 ## Production Writes
 
@@ -140,7 +168,7 @@
 - Expected effects: New immutable pending artifacts and exact relationships only; zero updates/deletes/publication rows; existing 71/95 batch and canonical tables unchanged.
 - Actual effects: 74 artifacts and 68 relationships inserted in one transaction; second exact apply inserted 0/0; semantic export matched; 12 total pending presentations; registry 0; selector 0; original seed 71/95; canonical fingerprints unchanged.
 - Correction-phase authorization: Read-only production verification and preparation of exact rollback/reapplication commands only. Production rollback of the original batch and production application of the corrected batch are explicitly not authorized.
-- Correction-phase actual effects: no production write was executed. The original 74/68 batch remains applied; the six-episode corrected 69/60 batch exists only in repository and disposable proof.
+- Correction-phase actual effects: no production write was executed. The original 74/68 batch remains applied; neither the superseded six-episode proposal nor the final-composition 69/60 proposal was applied to production.
 
 ## Rollback Paths
 
@@ -153,6 +181,6 @@
 
 ## Final Reconciliation
 
-- Original and correction definitions of done satisfied: Yes. The correction is committed to draft PR #104; merge, production correction, approval, promotion, and publication remain explicitly out of scope.
+- Original, hierarchy-correction, and final-composition definitions of done are satisfied. The scoped result is reconciled for draft PR #104. Merge, production correction, approval, promotion, and publication remain explicitly out of scope.
 - Remaining limitations: Six new trait values, one candidate relationship type, roll 7's cross-domain role, related-proposal episode judgments, four supported argument absences, and all member presentations remain pending human review. The corpus is bounded and is not a complete environmental record.
 - Recommended next step: Human review of rolls 6/7, the shared ontology/relationship package, and routed member presentations, followed by a separate authorization decision for the prepared production rollback/reapplication. Do not publish or promote automatically.

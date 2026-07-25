@@ -21,7 +21,10 @@ import {
 import { justiceEditorialIssueFixtureData } from "../lib/justiceEditorialRenderFixture.mjs";
 import { justiceCrossMemberRenderProfiles } from "../lib/justiceCrossMemberReviewSlices.mjs";
 import { blindEditorialPipelineReviewProfile } from "../lib/blindEditorialPipelineReviewSlice.mjs";
-import { commissioningDomainRenderProfiles } from "../lib/commissioningDomainReviewSlices.mjs";
+import {
+  commissioningDomainRenderProfiles,
+  commissioningDomainSharedReviewText,
+} from "../lib/commissioningDomainReviewSlices.mjs";
 import { EDITORIAL_EXPERIENCE_MODE } from "../lib/editorialIssueExperience.mjs";
 import { reviewEditorialIssueSlices } from "../lib/editorialIssueReviewSlices.mjs";
 import {
@@ -139,6 +142,13 @@ export default function GoldenRenderFixture() {
             />
           </section>
         ))}
+
+        <aside className="mt-5 rounded-2xl border border-amber-800/20 bg-amber-50 px-4 py-3" data-review-harness-chrome="true" data-testid="commissioning-domain-shared-review">
+          <p className="text-xs uppercase tracking-[0.18em] text-amber-900">Shared commissioning review dependencies</p>
+          <ul className="mt-2 grid gap-1 pl-5 text-sm leading-6 text-stone-700">
+            {commissioningDomainSharedReviewText.map((text) => <li className="list-disc" key={text}>{text}</li>)}
+          </ul>
+        </aside>
 
         {commissioningDomainRenderProfiles.map((profile) => (
           <section

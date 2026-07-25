@@ -5,7 +5,7 @@
     "batch_id": 9,
     "relationships_inserted": 60
   },
-  "batch_key": "commissioning-domain-v1-environment-energy-corrected-six-episode",
+  "batch_key": "commissioning-domain-v1-environment-energy-final-composition",
   "expected_counts": {
     "artifacts": 69,
     "by_type": {
@@ -27,7 +27,7 @@
     },
     "relationships": 60
   },
-  "manifest_sha256": "3e1ecd448f086fae52bd69a74303899940f0e417978a82df34970317052752fc",
+  "manifest_sha256": "3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187",
   "migration": {
     "additive": true,
     "functions": [
@@ -53,11 +53,11 @@
       },
       "legislators": {
         "row_count": 13,
-        "sha256": "ed4b13199e668b066a6dfce1c874122bca76fa22b70d1511d197a886da763f07"
+        "sha256": "7e8a891aaa91781ebe3420046e7426297eb606408bd2e160cee59717fc962f6b"
       },
       "roll_calls": {
         "row_count": 30,
-        "sha256": "643f1a412109c09e1be353f870bd59aea2f29a8911a2151b4e786d7a6a2ffedb"
+        "sha256": "8aef497bd1f5f92a1b5a9c16b99bb69bb4beba53e0afe69b0a7952012c8570b4"
       },
       "vote_interpretations": {
         "row_count": 0,
@@ -79,11 +79,11 @@
     "publication_selector_count": 0,
     "roundtrip": {
       "artifact_count": 69,
-      "artifact_semantic_sha256": "c2e2f63577f9b7b4224b09c073add4fdccf443dd121d986fda76eb6ec00919ad",
+      "artifact_semantic_sha256": "66e1b5c6cc32a39b7ce8a8b9fb5f42b2ba538fe036b6eb859b26ac3a9a326ed4",
       "relationship_count": 60,
-      "relationship_semantic_sha256": "7e4826fc8002799a7b1702363cd6fa1859d95cd5379f3b85cdc63111ae7f1238",
-      "repository_artifact_semantic_sha256": "c2e2f63577f9b7b4224b09c073add4fdccf443dd121d986fda76eb6ec00919ad",
-      "repository_relationship_semantic_sha256": "7e4826fc8002799a7b1702363cd6fa1859d95cd5379f3b85cdc63111ae7f1238",
+      "relationship_semantic_sha256": "bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21",
+      "repository_artifact_semantic_sha256": "66e1b5c6cc32a39b7ce8a8b9fb5f42b2ba538fe036b6eb859b26ac3a9a326ed4",
+      "repository_relationship_semantic_sha256": "bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21",
       "semantic_match": true
     },
     "schema": {
@@ -591,11 +591,11 @@
       },
       "legislators": {
         "row_count": 13,
-        "sha256": "ed4b13199e668b066a6dfce1c874122bca76fa22b70d1511d197a886da763f07"
+        "sha256": "7e8a891aaa91781ebe3420046e7426297eb606408bd2e160cee59717fc962f6b"
       },
       "roll_calls": {
         "row_count": 30,
-        "sha256": "643f1a412109c09e1be353f870bd59aea2f29a8911a2151b4e786d7a6a2ffedb"
+        "sha256": "8aef497bd1f5f92a1b5a9c16b99bb69bb4beba53e0afe69b0a7952012c8570b4"
       },
       "vote_interpretations": {
         "row_count": 0,
@@ -623,7 +623,7 @@
     "exact_approved_target": false,
     "host": "127.0.0.1",
     "password_present": false,
-    "port": 55442,
+    "port": 55444,
     "raw_url_recorded": false,
     "scheme": "postgresql",
     "target": "disposable",

@@ -21,17 +21,25 @@ The correction:
 - separates seven unique shared-review dependencies from member-specific
   routing;
 - preserves exactly four possible member routes without adding a schema;
+- assigns each analytical proposition to one primary section;
+- reserves trajectories for complete multi-action episodes;
+- synthesizes every equal-strength repeated pattern;
+- keeps exact coverage and methodology outside analytical findings; and
 - produces the distinct pending batch
-  `commissioning-domain-v1-environment-energy-corrected-six-episode`.
+  `commissioning-domain-v1-environment-energy-final-composition`.
 
 The corrected batch contains 69 artifacts and 60 relationships. Its manifest
 SHA-256 is
-`3e1ecd448f086fae52bd69a74303899940f0e417978a82df34970317052752fc`.
+`3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187`.
 Its exported artifact and relationship semantic hashes are
-`c2e2f63577f9b7b4224b09c073add4fdccf443dd121d986fda76eb6ec00919ad`
+`66e1b5c6cc32a39b7ce8a8b9fb5f42b2ba538fe036b6eb859b26ac3a9a326ed4`
 and
-`7e4826fc8002799a7b1702363cd6fa1859d95cd5379f3b85cdc63111ae7f1238`.
+`bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21`.
 
 All artifacts remain `human_approval_pending`, `not_promoted`, and
 `production_eligible: false`. Production rollback and corrected application
 are prepared but were not executed.
+
+`persistence_batch_manifest_six_episode.json` preserves the prior unpublished
+six-episode proposal for audit history. It is superseded by the final-composition
+proposal and was never applied to production.

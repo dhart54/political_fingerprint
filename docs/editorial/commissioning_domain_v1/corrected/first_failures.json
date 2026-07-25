@@ -56,9 +56,10 @@
     {
       "classification": "generalized episode hierarchy defect",
       "correction": "Represented seven actions as six episodes, with rolls 6/7 alone sharing one episode and two explicit two-episode policy families.",
-      "failure_id": "COMM-V1-005",
+      "failure_id": "COMM-V1-005-HIERARCHY",
       "first_candidate": "The four-episode correction collapsed rolls 55/64 and 76/78 from separate bills into two combined episodes.",
       "first_validator_result": "blocked: separate bills remain independent episodes even when they share a policy family; member vote direction is irrelevant.",
+      "legacy_failure_id": "COMM-V1-005",
       "owning_layer": "episode assignment and policy-family hierarchy",
       "preserved": true,
       "regression_proof": [
@@ -71,6 +72,48 @@
         "manifest_sha256": "dea1b8c7a0071462a5eb91f24d22287dc156fda9edcfa71a2abf6e570c2459c5",
         "production_applied": false
       }
+    },
+    {
+      "classification": "generalized pipeline defect",
+      "correction": "Assigned every semantic proposition one primary section, excluded repeated and trajectory-owned episodes from notable choices, separated method and coverage notes, and omitted empty sections.",
+      "failure_id": "COMM-V1-005",
+      "first_candidate": "Episode propositions appeared under multiple analytical sections, single-action episodes appeared as trajectories, and a counting rule appeared as a meaningful exception.",
+      "first_validator_result": "Human visual review identified deterministic section ownership and semantic deduplication failures not caught by the first validation state.",
+      "owning_layer": "proposition-role assignment and public composition",
+      "preserved": true,
+      "regression_proof": [
+        "all-member and all-vector section-ownership report",
+        "section permutation and collision mutations",
+        "four final-composition rendered fixtures"
+      ]
+    },
+    {
+      "classification": "generalized pipeline defect",
+      "correction": "Ranked repeated clusters by evidence strength without identity or ordering fields and synthesized every materially tied pattern.",
+      "failure_id": "COMM-V1-006",
+      "first_candidate": "The primary conclusion selected one repeated policy cluster and omitted another cluster with equal independent-episode support, completeness, and specificity.",
+      "first_validator_result": "Human visual review found that generation-order tie-breaking made the primary synthesis incomplete.",
+      "owning_layer": "proposition ranking and conclusion compression",
+      "preserved": true,
+      "regression_proof": [
+        "tied-pattern permutation tests",
+        "Mannion two-cluster conclusion assertion",
+        "all-vector tied-pattern omission count zero"
+      ]
+    },
+    {
+      "classification": "generalized pipeline defect",
+      "correction": "Separated resolved action status, Yea/Nay positions, Not Voting, Present, missing, outside-service, complete-episode, and partial-episode counts and rendered exact known states.",
+      "failure_id": "COMM-V1-007",
+      "first_candidate": "The limited-evidence fixture used generic possible-state language and described resolved statuses as reviewed actions without immediately distinguishing substantive Yea/Nay evidence.",
+      "first_validator_result": "Human visual review found five known Not Voting actions were presented through a generic fallback instead of exact counts.",
+      "owning_layer": "coverage presentation",
+      "preserved": true,
+      "regression_proof": [
+        "exact Not Voting coverage mutation",
+        "Hunt limited-evidence text assertion",
+        "generic-known-state fallback count zero"
+      ]
     }
   ],
   "schema_version": "commissioning_domain_first_failures_v1"

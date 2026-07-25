@@ -1,0 +1,190 @@
+{
+  "before_after": {
+    "C001059": "Before: single-action evidence leaked into trajectories and a counting rule appeared as an exception. After: two repeated clusters, one trajectory, and one federal-land choice.",
+    "H001095": "Before: generic possible-state language and non-substantive actions appeared as findings. After: exact two-position/five-Not-Voting language and two bounded substantive choices.",
+    "J000288": "Before: repeated clusters were duplicated as trajectories and notable choices. After: two repeated clusters, one appropriations trajectory, and one lead-regulation choice.",
+    "M001231": "Before: one of two equally supported repeated clusters was omitted. After: both tied clusters are synthesized with the appropriations and federal-land limitation."
+  },
+  "final_persistence_proposal": {
+    "artifact_count": 69,
+    "artifact_semantic_sha256": "66e1b5c6cc32a39b7ce8a8b9fb5f42b2ba538fe036b6eb859b26ac3a9a326ed4",
+    "batch_key": "commissioning-domain-v1-environment-energy-final-composition",
+    "benchmark_status": "not_promoted",
+    "editorial_status": "human_approval_pending",
+    "manifest_sha256": "3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187",
+    "production_eligible": false,
+    "relationship_count": 60,
+    "relationship_semantic_sha256": "bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21"
+  },
+  "generic_contract": {
+    "equal_strength_patterns_all_synthesized": true,
+    "exact_known_coverage_states_required": true,
+    "methodology_separate_from_analytical_sections": true,
+    "one_primary_section_per_proposition": true
+  },
+  "metrics": {
+    "domain_specific_branch_count": 0,
+    "duplicate_proposition_count": 0,
+    "empty_section_render_count": 0,
+    "exact_vector_branch_count": 0,
+    "generic_coverage_fallback_count_when_exact_known": 0,
+    "member_specific_branch_count": 0,
+    "methodology_in_exception_count": 0,
+    "party_specific_branch_count": 0,
+    "section_collision_count": 0,
+    "single_action_trajectory_count": 0,
+    "tied_pattern_omission_count": 0,
+    "title_specific_branch_count": 0,
+    "unresolved_collision_count": 0
+  },
+  "observed_defects": [
+    "COMM-V1-005 analytical-section duplication",
+    "COMM-V1-006 incomplete equal-strength synthesis",
+    "COMM-V1-007 generic coverage-language leakage"
+  ],
+  "production_state": {
+    "final_proposal_applied": false,
+    "frontend_production_registry": "empty",
+    "original_unpublished_batch_present": true,
+    "publication_registry_count": 0,
+    "publication_selector_count": 0
+  },
+  "route_distributions": {
+    "actual_members": {
+      "human_exception_required": 60,
+      "sampled_audit_candidate": 199,
+      "standard_generation_pass": 173
+    },
+    "binary_vectors": {
+      "sampled_audit_candidate": 16,
+      "standard_generation_pass": 112
+    },
+    "selected_members": {
+      "human_exception_required": 1,
+      "sampled_audit_candidate": 2,
+      "standard_generation_pass": 4
+    }
+  },
+  "schema_version": "commissioning_domain_final_composition_receipt_v1",
+  "unresolved_human_decisions": [
+    {
+      "dependency_id": "action-boundary:house-119-2-7",
+      "kind": "action_boundary",
+      "references": {
+        "dossier_ids": [
+          "house:119:2:7"
+        ],
+        "episode_ids": [
+          "fy2026-energy-water-interior-appropriations"
+        ],
+        "relationship_ids": [
+          "distinct_stage_actions_within_one_package_episode"
+        ],
+        "trait_ids": [
+          "cross_domain_package",
+          "package_final_passage"
+        ]
+      },
+      "review_route": "human_exception_required",
+      "scope": "shared_corpus",
+      "status": "human_review_pending",
+      "summary": "Review roll 7 as cross-domain final passage whose Environment & Energy evidence is bounded to Divisions B-C."
+    },
+    {
+      "dependency_id": "trait-value:accelerates-domestic-mineral-projects",
+      "kind": "policy_trait_value",
+      "references": {
+        "dossier_ids": [],
+        "episode_ids": [],
+        "relationship_ids": [],
+        "trait_ids": [
+          "accelerates_domestic_mineral_projects"
+        ]
+      },
+      "review_route": "human_exception_required",
+      "scope": "shared_corpus",
+      "status": "human_review_pending",
+      "summary": "Review the source-grounded shared trait value `accelerates_domestic_mineral_projects` once."
+    },
+    {
+      "dependency_id": "trait-value:combined-divisions",
+      "kind": "policy_trait_value",
+      "references": {
+        "dossier_ids": [],
+        "episode_ids": [],
+        "relationship_ids": [],
+        "trait_ids": [
+          "combined_divisions"
+        ]
+      },
+      "review_route": "human_exception_required",
+      "scope": "shared_corpus",
+      "status": "human_review_pending",
+      "summary": "Review the source-grounded shared trait value `combined_divisions` once."
+    },
+    {
+      "dependency_id": "trait-value:constrains-efficiency-rulemaking",
+      "kind": "policy_trait_value",
+      "references": {
+        "dossier_ids": [],
+        "episode_ids": [],
+        "relationship_ids": [],
+        "trait_ids": [
+          "constrains_efficiency_rulemaking"
+        ]
+      },
+      "review_route": "human_exception_required",
+      "scope": "shared_corpus",
+      "status": "human_review_pending",
+      "summary": "Review the source-grounded shared trait value `constrains_efficiency_rulemaking` once."
+    },
+    {
+      "dependency_id": "trait-value:limits-land-manager-authority",
+      "kind": "policy_trait_value",
+      "references": {
+        "dossier_ids": [],
+        "episode_ids": [],
+        "relationship_ids": [],
+        "trait_ids": [
+          "limits_land_manager_authority"
+        ]
+      },
+      "review_route": "human_exception_required",
+      "scope": "shared_corpus",
+      "status": "human_review_pending",
+      "summary": "Review the source-grounded shared trait value `limits_land_manager_authority` once."
+    },
+    {
+      "dependency_id": "trait-value:package-stage-retention",
+      "kind": "policy_trait_value",
+      "references": {
+        "dossier_ids": [],
+        "episode_ids": [],
+        "relationship_ids": [],
+        "trait_ids": [
+          "package_stage_retention"
+        ]
+      },
+      "review_route": "human_exception_required",
+      "scope": "shared_corpus",
+      "status": "human_review_pending",
+      "summary": "Review the source-grounded shared trait value `package_stage_retention` once."
+    },
+    {
+      "dependency_id": "trait-value:repeals-home-energy-programs",
+      "kind": "policy_trait_value",
+      "references": {
+        "dossier_ids": [],
+        "episode_ids": [],
+        "relationship_ids": [],
+        "trait_ids": [
+          "repeals_home_energy_programs"
+        ]
+      },
+      "review_route": "human_exception_required",
+      "scope": "shared_corpus",
+      "status": "human_review_pending",
+      "summary": "Review the source-grounded shared trait value `repeals_home_energy_programs` once."
+    }
+  ]
+}

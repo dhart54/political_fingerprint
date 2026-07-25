@@ -6,15 +6,22 @@ from collections import defaultdict
 from copy import deepcopy
 
 from backend.app.summaries.editorial_conclusion_synthesis import build_conclusion_model
+from backend.app.summaries.editorial_proposition_ownership import (
+    compose_analytical_sections,
+)
 
 
 def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_catalog: dict,
                         candidate_catalog: list[dict], trait_contract: dict | None = None,
                         minimum_complete_episodes: int = 3) -> dict:
     """Select and synthesize a candidate without access to identity, party, or raw roll totals."""
+    trait_contract = trait_contract or {}
+    final_composition = trait_contract.get("final_composition_contract") == "v1"
     complete = [item for item in overlay["episode_trajectories"] if item["coverage_status"] == "complete"]
     if len(complete) < minimum_complete_episodes:
-        return _insufficient(overlay, len(complete))
+        return _insufficient(
+            overlay, len(complete), trait_contract, final_composition
+        )
     shared_by_id = {item["episode_id"]: item for item in shared_episodes}
     evidence = defaultdict(list)
     for trajectory in complete:
@@ -48,7 +55,9 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
             "conflicting_themes": [],
             "uniform_action_direction": uniform,
         }
-    elif derived := _trait_derived_candidate(overlay, trait_contract or {}):
+    elif derived := _trait_derived_candidate(
+        overlay, trait_contract, final_composition
+    ):
         candidate = derived
         selected = {
             "score": derived["derived_score"],
@@ -100,7 +109,7 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
         complete_trajectories=complete,
         candidate=candidate,
         selected_theme_ids=selected.get("supporting_themes", []),
-        trait_contract=trait_contract or {},
+        trait_contract=trait_contract,
     )
     primary = conclusion_model["public_conclusion"]
     if candidate["candidate_id"].startswith("trait-derived-"):
@@ -112,14 +121,23 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
             }
             for episode_id in conclusion_model["evidence_episode_ids"]
         ]
-    limitations = [
+    meaningful_limitations = [
         {"episode_id": trajectory["episode_id"], "text": text}
         for trajectory in complete
-        for text in [*trajectory.get("contrary_or_limiting_evidence", []), *trajectory.get("package_vote_limitations", [])]
+        for text in trajectory.get("contrary_or_limiting_evidence", [])
+    ]
+    method_notes = [
+        text
+        for trajectory in complete
+        for text in trajectory.get("package_vote_limitations", [])
     ]
     for theme_id in selected_conflicts:
         for row in evidence.get(theme_id, []):
-            limitations.append({"episode_id": row["episode_id"], "text": theme_catalog[theme_id]["finding"]})
+            meaningful_limitations.append({
+                "episode_id": row["episode_id"],
+                "text": theme_catalog[theme_id]["finding"],
+                "analytical_relationship": "contradicts_selected_pattern",
+            })
     trajectories = [{
         "episode_id": item["episode_id"],
         "relationship_to_repeated_stages": item.get("relationship_to_repeated_stages", ""),
@@ -131,11 +149,11 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
         "practical_policy_direction": item["practical_policy_direction"],
     } for item in complete if any(e["theme_id"] in selected_conflicts for e in item["theme_evidence"])]
     if uniform:
-        eligible_repeated = [
-            item for item in repeated
-            if theme_catalog[item["theme_id"]].get("uniform_repeated_pattern")
-        ]
-        repeated = eligible_repeated
+        if not final_composition:
+            repeated = [
+                item for item in repeated
+                if theme_catalog[item["theme_id"]].get("uniform_repeated_pattern")
+            ]
         repeated_episode_ids = {
             row["episode_id"]
             for item in repeated
@@ -158,7 +176,7 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
             "weight": 1,
             "rationale": f"Recorded {uniform['direction']} action in this complete reviewed episode; direction is descriptive, not a shared policy rationale.",
         } for item in complete]
-    return {
+    result = {
         "schema_version": "editorial_member_inference_v2", "member": deepcopy(overlay["member"]),
         "candidate_id": candidate["candidate_id"], "inference_level": candidate["inference_level"],
         "evidence_strength_label": (
@@ -179,8 +197,17 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
         "weakening_independent_episodes": weakening_episodes, "neutral_independent_episodes": [],
         "independent_episode_count": len(complete), "within_episode_trajectories": trajectories,
         "repeated_cross_episode_themes": sorted(repeated, key=lambda item: item["theme_id"]),
-        "notable_one_off_choices": notable, "one_off_or_unproven_themes": sorted(one_off, key=lambda item: item["theme_id"]),
-        "contrary_or_limiting_evidence": limitations,
+        "notable_one_off_choices": notable,
+        "one_off_or_unproven_themes": sorted(one_off, key=lambda item: item["theme_id"]),
+        "contrary_or_limiting_evidence": (
+            meaningful_limitations
+            if final_composition
+            else meaningful_limitations + [
+                {"episode_id": trajectory["episode_id"], "text": text}
+                for trajectory in complete
+                for text in trajectory.get("package_vote_limitations", [])
+            ]
+        ),
         "why_conclusion_does_not_go_further": candidate["why"],
         "future_expansion_rule": "Recompute from expanded member actions and shared episode annotations; new independent episodes may strengthen, narrow, contest, or replace this candidate.",
         "reviewed_period": overlay["reviewed_period"], "human_review_status": "human_approval_pending",
@@ -192,6 +219,46 @@ def evaluate_candidates(*, overlay: dict, shared_episodes: list[dict], theme_cat
             "uniform_action_direction": deepcopy(uniform),
         },
     }
+    if final_composition:
+        ownership = compose_analytical_sections(
+            complete_trajectories=complete,
+            repeated_patterns=repeated,
+            meaningful_limitations=meaningful_limitations,
+            coverage=overlay["coverage"],
+            method_notes=method_notes,
+        )
+        sections = ownership["sections"]
+        tied_pattern_cluster_ids = sorted(
+            candidate.get("equal_strength_cluster_ids", [])
+        )
+        represented_cluster_ids = sorted(
+            cluster["cluster_id"]
+            for cluster in conclusion_model.get("supporting_policy_clusters", [])
+        )
+        result.update({
+            "notable_one_off_choices": [
+                {
+                    "episode_id": item["evidence_episode_ids"][0],
+                    "practical_policy_direction": item["exact_rendered_text"],
+                }
+                for item in sections["other_notable_choices"]
+            ],
+            "analytical_sections": sections,
+            "section_ownership": ownership,
+            "coverage_note": ownership["coverage_note"],
+            "method_note": ownership["method_note"],
+            "equal_strength_pattern_selection": {
+                "tied_cluster_ids": tied_pattern_cluster_ids,
+                "represented_cluster_ids": represented_cluster_ids,
+                "omitted_tied_cluster_ids": sorted(
+                    set(tied_pattern_cluster_ids) - set(represented_cluster_ids)
+                ),
+                "selection_basis": deepcopy(
+                    candidate.get("equal_strength_selection_basis")
+                ),
+            },
+        })
+    return result
 
 
 def _evaluate_candidate(candidate: dict, evidence: dict, theme_catalog: dict) -> dict:
@@ -237,7 +304,9 @@ def _uniform_action_direction(overlay: dict) -> dict | None:
     }
 
 
-def _trait_derived_candidate(overlay: dict, trait_contract: dict) -> dict | None:
+def _trait_derived_candidate(
+    overlay: dict, trait_contract: dict, final_composition: bool
+) -> dict | None:
     """Derive known-archetype propositions from established traits, not prose or vectors."""
     action_traits = trait_contract.get("action_traits", {})
     clusters = trait_contract.get("policy_clusters", {})
@@ -307,22 +376,66 @@ def _trait_derived_candidate(overlay: dict, trait_contract: dict) -> dict | None
         }
 
     repeated = [
-        (item["episodes"], item["share"], cluster_id, item)
+        (item["episodes"], item["share"], item["actions"], cluster_id, item)
         for cluster_id, item in evidence.items()
         if item["episodes"] >= 2 and item["share"] >= .75
     ]
     if repeated:
-        score, _, cluster_id, item = max(repeated)
+        if not final_composition:
+            score, _, _, cluster_id, item = max(repeated)
+            return {
+                "candidate_id": "trait-derived-substantive-repeated-pattern",
+                "inference_level": "bounded_repeated_pattern",
+                "evidence_strength_label": "Bounded repeated pattern",
+                "conclusion_archetype": "substantive_repeated_pattern",
+                "proposition_spec": {
+                    "policy_cluster_ids": [cluster_id],
+                    "cluster_actions": {
+                        cluster_id: (
+                            "supported" if item["direction"] == "Yea" else "opposed"
+                        ),
+                    },
+                    "reader_label_concept": "A repeated substantive pattern in the reviewed record",
+                    "boundary_proposition": {
+                        "role": "boundary",
+                        "analytical_relationship": "limits_scope",
+                        "evidence_episode_ids": [],
+                        "public_text": trait_contract.get(
+                            "default_boundary_text",
+                            "Other reviewed episodes limit how far that pattern can be generalized.",
+                        ),
+                    },
+                },
+                "why": "The pattern spans multiple independent episodes under an established policy cluster.",
+                "required_themes": [],
+                "conflicting_themes": [],
+                "derived_score": score,
+            }
+        best_strength = max(
+            (episodes, share, actions)
+            for episodes, share, actions, _, _ in repeated
+        )
+        tied = sorted(
+            (
+                (cluster_id, item)
+                for episodes, share, actions, cluster_id, item in repeated
+                if (episodes, share, actions) == best_strength
+            ),
+            key=lambda pair: pair[0],
+        )
+        cluster_ids = [cluster_id for cluster_id, _ in tied]
+        cluster_actions = {
+            cluster_id: "supported" if item["direction"] == "Yea" else "opposed"
+            for cluster_id, item in tied
+        }
         return {
             "candidate_id": "trait-derived-substantive-repeated-pattern",
             "inference_level": "bounded_repeated_pattern",
             "evidence_strength_label": "Bounded repeated pattern",
             "conclusion_archetype": "substantive_repeated_pattern",
             "proposition_spec": {
-                "policy_cluster_ids": [cluster_id],
-                "cluster_actions": {
-                    cluster_id: "supported" if item["direction"] == "Yea" else "opposed",
-                },
+                "policy_cluster_ids": cluster_ids,
+                "cluster_actions": cluster_actions,
                 "reader_label_concept": "A repeated substantive pattern in the reviewed record",
                 "boundary_proposition": {
                     "role": "boundary",
@@ -334,7 +447,13 @@ def _trait_derived_candidate(overlay: dict, trait_contract: dict) -> dict | None
             "why": "The pattern spans multiple independent episodes under an established policy cluster.",
             "required_themes": [],
             "conflicting_themes": [],
-            "derived_score": score,
+            "derived_score": sum(item["episodes"] for _, item in tied),
+            "equal_strength_cluster_ids": cluster_ids,
+            "equal_strength_selection_basis": {
+                "independent_episodes": best_strength[0],
+                "completeness_share": best_strength[1],
+                "action_count": best_strength[2],
+            },
         }
     return None
 
@@ -355,21 +474,154 @@ def _short_name(member: dict) -> str:
     return member["display_name"]
 
 
-def _insufficient(overlay: dict, complete_count: int) -> dict:
+def _insufficient(
+    overlay: dict,
+    complete_count: int,
+    trait_contract: dict,
+    final_composition: bool,
+) -> dict:
+    if not final_composition:
+        return {
+            "schema_version": "editorial_member_inference_v2",
+            "member": deepcopy(overlay["member"]),
+            "candidate_id": "insufficient-evidence",
+            "inference_level": "insufficient_evidence",
+            "evidence_strength_label": "Not enough reviewed evidence",
+            "primary_conclusion": (
+                f"The reviewed record for {_short_name(overlay['member'])} does "
+                "not cover enough independent episodes to support a "
+                "cross-episode conclusion."
+            ),
+            "assessment": "insufficient_coverage",
+            "support_balance": 0,
+            "supporting_independent_episodes": [],
+            "weakening_independent_episodes": [],
+            "neutral_independent_episodes": [],
+            "independent_episode_count": complete_count,
+            "within_episode_trajectories": [],
+            "repeated_cross_episode_themes": [],
+            "notable_one_off_choices": [],
+            "one_off_or_unproven_themes": [],
+            "contrary_or_limiting_evidence": [],
+            "why_conclusion_does_not_go_further": "Fewer than three independent episodes have complete Yes/No coverage.",
+            "future_expansion_rule": "Recompute when additional complete episode actions are available.",
+            "reviewed_period": overlay["reviewed_period"],
+            "human_review_status": "human_approval_pending",
+            "coverage": deepcopy(overlay["coverage"]),
+            "episode_references": [],
+            "candidate_evaluation": [],
+            "candidate_basis": {
+                "basis_type": "insufficient_evidence",
+                "substantive_theme_ids": [],
+                "uniform_action_direction": None,
+            },
+            "reader_facing_label": "Limited or contested evidence",
+            "conclusion_model": {
+                "schema_version": "editorial_conclusion_propositions_v1",
+                "archetype": "limited_or_contested_evidence",
+                "action_direction": {
+                    "classification": "incomplete",
+                    "direction": None,
+                    "count": 0,
+                    "total": 0,
+                },
+                "thesis_proposition": {
+                    "role": "thesis",
+                    "claim_type": "limited_or_contested_evidence",
+                    "policy_dimension_present": False,
+                    "theme_ids": [],
+                },
+                "supporting_policy_clusters": [],
+                "contrast_proposition": None,
+                "trajectory_proposition": None,
+                "exception_proposition": None,
+                "boundary_proposition": None,
+                "evidence_episode_ids": [],
+                "omitted_episode_ids": [],
+                "reader_label_concept": "Limited or contested evidence",
+                "review_route": "human_exception_required",
+            },
+            "compression_report": {
+                "conclusion_archetype": "limited_or_contested_evidence",
+                "sentence_roles": ["thesis"],
+                "source_episode_count": complete_count,
+                "policy_cluster_count": 0,
+                "individually_named_episode_count": 0,
+                "clustered_episode_proportion": 0,
+                "duplicated_analytical_propositions": [],
+                "boundary_count": 0,
+                "public_word_count": 0,
+                "validation_outcome": "human_exception_required",
+            },
+            "review_route": "human_exception_required",
+        }
+    coverage = deepcopy(overlay["coverage"])
+    expected = int(coverage.get("expected_in_service_actions", 0))
+    observed = int(coverage.get("substantive_rolls_observed", 0))
+    missing = int(coverage.get("missing_actions", 0))
+    resolved = max(observed - missing, 0)
+    yes_no = int(coverage.get("substantive_yes_no_actions", 0))
+    not_voting = int(coverage.get("not_voting_actions", 0))
+    present = int(coverage.get("present_actions", 0))
+    state_parts = []
+    if not_voting:
+        state_parts.append(f"{not_voting} {'is' if not_voting == 1 else 'are'} Not Voting")
+    if present:
+        state_parts.append(f"{present} {'is' if present == 1 else 'are'} Present")
+    if missing:
+        state_parts.append(
+            f"{missing} expected {'record is' if missing == 1 else 'records are'} missing"
+        )
+    exact_states = "; ".join(state_parts)
+    domain = trait_contract.get("policy_domain_display", "issue-area")
+    primary = (
+        f"Action status is resolved for all {expected} reviewed actions, but only "
+        f"{yes_no} contain Yea/Nay positions"
+        if expected and resolved == expected
+        else f"{resolved} of {expected} expected action statuses are resolved, and "
+        f"{yes_no} contain Yea/Nay positions"
+    )
+    if exact_states:
+        primary += f"; {exact_states}"
+    primary += (
+        f". That is too little substantive evidence to establish a broad "
+        f"{domain} pattern."
+    )
+    ownership = compose_analytical_sections(
+        complete_trajectories=[
+            item
+            for item in overlay.get("episode_trajectories", [])
+            if item.get("coverage_status") == "complete"
+        ],
+        repeated_patterns=[],
+        meaningful_limitations=[],
+        coverage=coverage,
+        method_notes=[],
+    )
     return {
         "schema_version": "editorial_member_inference_v2", "member": deepcopy(overlay["member"]),
         "candidate_id": "insufficient-evidence", "inference_level": "insufficient_evidence",
         "evidence_strength_label": "Not enough reviewed evidence",
-        "primary_conclusion": f"The reviewed record for {_short_name(overlay['member'])} does not cover enough independent episodes to support a cross-episode conclusion.",
+        "primary_conclusion": primary,
         "assessment": "insufficient_coverage", "support_balance": 0,
         "supporting_independent_episodes": [], "weakening_independent_episodes": [], "neutral_independent_episodes": [],
         "independent_episode_count": complete_count, "within_episode_trajectories": [],
         "repeated_cross_episode_themes": [], "notable_one_off_choices": [], "one_off_or_unproven_themes": [],
         "contrary_or_limiting_evidence": [],
+        "analytical_sections": ownership["sections"],
+        "section_ownership": ownership,
+        "coverage_note": ownership["coverage_note"],
+        "method_note": ownership["method_note"],
+        "equal_strength_pattern_selection": {
+            "tied_cluster_ids": [],
+            "represented_cluster_ids": [],
+            "omitted_tied_cluster_ids": [],
+            "selection_basis": None,
+        },
         "why_conclusion_does_not_go_further": "Fewer than three independent episodes have complete Yes/No coverage.",
         "future_expansion_rule": "Recompute when additional complete episode actions are available.",
         "reviewed_period": overlay["reviewed_period"], "human_review_status": "human_approval_pending",
-        "coverage": deepcopy(overlay["coverage"]), "episode_references": [], "candidate_evaluation": [],
+        "coverage": coverage, "episode_references": [], "candidate_evaluation": [],
         "candidate_basis": {
             "basis_type": "insufficient_evidence",
             "substantive_theme_ids": [],

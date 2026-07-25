@@ -211,3 +211,49 @@ production rollback nor the corrected production apply was executed.
 Additional human decisions are required for rolls 6 and 7, the six traits,
 corrected member presentations, explicit production
 rollback/reapplication authorization, benchmark promotion, and publication.
+
+## Final synthesis-composition addendum
+
+Human review then identified three presentation-layer failures without changing
+the corrected corpus or hierarchy:
+
+- `COMM-V1-005`: propositions could repeat across analytical sections, and
+  single-action evidence could appear as a policy trajectory;
+- `COMM-V1-006`: a single-winner tie-break could omit an equally supported
+  repeated pattern; and
+- `COMM-V1-007`: exact known coverage could render as generic possible-state
+  language.
+
+The generic composition contract now gives every analytical proposition one
+primary section, restricts trajectories to complete multi-action episodes,
+keeps methodology outside analytical findings, and synthesizes all
+equal-strength repeated patterns before deterministic display ordering. Exact
+known action-status counts are rendered directly.
+
+The final proposal preserves seven actions, six independent episodes, all
+recorded action directions, the six shared trait decisions, and the roll 7
+shared action-boundary decision. It changes no dossier, claim, source,
+eligibility, episode, policy family, schema, approval, benchmark, publication,
+or production state.
+
+- Batch: `commissioning-domain-v1-environment-energy-final-composition`.
+- Artifacts/relationships: 69/60.
+- Manifest:
+  `3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187`.
+- Artifact semantic hash:
+  `66e1b5c6cc32a39b7ce8a8b9fb5f42b2ba538fe036b6eb859b26ac3a9a326ed4`.
+- Relationship semantic hash:
+  `bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21`.
+
+All composition safety metrics are zero, including duplicate propositions,
+section collisions, unresolved collisions, single-action trajectories,
+methodology in exceptions, tied-pattern omissions, empty rendered sections,
+and generic coverage fallback when exact counts are known. Exact Markdown and
+JSON exports for the four bounded human-review fixtures are in
+`commissioning_domain_v1_final_text_review.*`.
+
+The previous six-episode persistence proposal remains preserved as
+`persistence_batch_manifest_six_episode.json`. It is superseded, was not
+applied, and must not be used for production. The original production 74/68
+batch remains unchanged. No rollback, corrected apply, approval, benchmark
+promotion, publication, merge, or deployment was executed by this phase.

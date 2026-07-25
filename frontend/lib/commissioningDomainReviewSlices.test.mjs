@@ -82,3 +82,28 @@ test("coverage edge preserves Not Voting as non-substantive", () => {
   assert.ok(notVoting.length >= 1);
   assert.ok(notVoting.every((item) => /neither support nor opposition/i.test(item.two_minute.caveats.at(-1))));
 });
+
+test("final composition owns each proposition once and renders exact coverage", () => {
+  const byId = new Map(
+    commissioningDomainRenderProfiles.map((item) => [item.memberId, item]),
+  );
+  for (const memberId of ["J000288", "C001059", "M001231"]) {
+    const sections = byId.get(memberId).candidate.synthesis.analyticalSections;
+    assert.equal(sections.repeatedPatterns.length, 2);
+    assert.equal(sections.policyTrajectories.length, 1);
+    assert.equal(sections.otherNotableChoices.length, 1);
+    assert.equal(sections.meaningfulExceptions.length, 0);
+  }
+  const hunt = byId.get("H001095").candidate;
+  assert.equal(hunt.synthesis.analyticalSections.repeatedPatterns.length, 0);
+  assert.equal(hunt.synthesis.analyticalSections.policyTrajectories.length, 0);
+  assert.equal(hunt.synthesis.analyticalSections.otherNotableChoices.length, 2);
+  assert.match(
+    hunt.synthesis.primary,
+    /only 2 contain Yea\/Nay positions; 5 are Not Voting/,
+  );
+  assert.doesNotMatch(
+    hunt.synthesis.primary,
+    /Present|outside service|missing/,
+  );
+});

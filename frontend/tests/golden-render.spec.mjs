@@ -521,6 +521,7 @@ test("commissioning domain renders four bounded review cases through the generic
     "commissioning_domain_v1",
     "corrected",
     "renders",
+    "final-composition",
   );
   const capture = process.env.CAPTURE_COMMISSIONING_DOMAIN_SCREENSHOTS === "1";
   if (capture) {

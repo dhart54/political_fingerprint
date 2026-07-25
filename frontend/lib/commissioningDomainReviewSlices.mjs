@@ -13,6 +13,10 @@ export const commissioningDomainReviewSlices = Object.freeze(
   })),
 );
 
+export const commissioningDomainSharedReviewText = Object.freeze(
+  (commissioningDomainReviewData.sharedReviewDependencies || []).map((item) => item.summary),
+);
+
 export const commissioningDomainRenderProfiles = Object.freeze(
   commissioningDomainReviewData.renderFixtures.fixtures.map((fixture) => {
     const overlay = commissioningDomainReviewData.overlays.find(
@@ -74,32 +78,18 @@ export function buildReviewCandidate({ overlay, inference }) {
       primary: inference.primary_conclusion,
       evidenceBreadth: inference.evidence_strength_label,
       readerFacingLabel: inference.reader_facing_label,
-      patterns: Object.freeze([
-        ...(inference.within_episode_trajectories || []).map((item) => item.member_trajectory),
-        ...(inference.repeated_cross_episode_themes || []).map((item) => item.finding),
-      ]),
+      coverageNote: inference.coverage_note,
+      methodNote: inference.method_note,
+      patterns: Object.freeze(
+        Object.values(inference.analytical_sections || {})
+          .flat()
+          .map((item) => item.exact_rendered_text),
+      ),
       analyticalSections: Object.freeze({
-        policyTrajectories: Object.freeze(
-          overlay.episode_trajectories.map((item) => ({
-            episodeId: item.episode_id,
-            text: item.member_trajectory,
-          })),
-        ),
-        repeatedPatterns: Object.freeze(
-          (inference.repeated_cross_episode_themes || []).map((item) => ({ text: item.finding })),
-        ),
-        otherNotableChoices: Object.freeze(
-          (inference.notable_one_off_choices || []).map((item) => ({
-            episodeId: item.episode_id,
-            text: item.practical_policy_direction,
-          })),
-        ),
-        meaningfulExceptions: Object.freeze(
-          (inference.contrary_or_limiting_evidence || []).map((item) => ({
-            episodeId: item.episode_id,
-            text: item.text,
-          })),
-        ),
+        repeatedPatterns: ownedSection(inference, "repeated_patterns"),
+        policyTrajectories: ownedSection(inference, "policy_trajectories"),
+        otherNotableChoices: ownedSection(inference, "other_notable_choices"),
+        meaningfulExceptions: ownedSection(inference, "meaningful_exceptions"),
       }),
       conclusionModel: inference.conclusion_model,
       compressionReport: inference.compression_report,
@@ -123,11 +113,12 @@ function interpretation(action, actionRow, member) {
     episode_id: episodeId,
     member_action: memberAction,
     action_status: memberAction,
+    presentation_labels: stagePresentationLabels(dossier),
     human_approval_status: "human_approval_pending",
     ten_second: Object.freeze({
       headline: headline(memberAction, dossier.action_title),
       practical_choice: dossier.proposed_change,
-      member_action_and_result: `${shortName(member)} ${actionSentence(memberAction)}. ${dossier.outcome}.`,
+      member_action_and_result: `${shortName(member)} ${actionSentence(memberAction)}. ${outcomeSentence(dossier)}`,
     }),
     thirty_second: Object.freeze({
       prior_baseline: dossier.prior_baseline,
@@ -137,7 +128,7 @@ function interpretation(action, actionRow, member) {
       what_happened_next: dossier.outcome,
     }),
     two_minute: Object.freeze({
-      detail: dossier.proposed_change,
+      detail: null,
       supporter_argument: presentArgument(dossier.supporter_argument, "Committee majority"),
       opponent_argument: presentArgument(dossier.opponent_argument, "Committee minority or dissenting views"),
       argument_boundary: "Arguments are attributed official positions, not evidence of the member's motive.",
@@ -167,10 +158,8 @@ function episodePresentation() {
         title: humanize(episode.episode_id),
         practicalQuestion: episode.shared_objective,
         mechanismFamily: humanize(episode.mechanism_family),
-        policyFamilyId: "environment-energy-commissioning-v1-corrected",
-        conclusionRelevance: episode.route === "human_exception_required"
-          ? "Shared relationship awaiting human review"
-          : "Reviewed episode",
+        policyFamilyId: episode.policy_family_id || episode.episode_id,
+        conclusionRelevance: null,
         selectionRationale: episode.why,
       })),
     ),
@@ -280,6 +269,48 @@ function actionSentence(action) {
   if (action === "Present") return "voted Present";
   if (action === "Not Voting") return "was recorded as Not Voting";
   return "has no resolved evidence record for this action";
+}
+
+function ownedSection(inference, key) {
+  return Object.freeze(
+    (inference.analytical_sections?.[key] || []).map((item) => Object.freeze({
+      semanticPropositionId: item.semantic_proposition_id,
+      episodeId: item.evidence_episode_ids?.length === 1
+        ? item.evidence_episode_ids[0]
+        : undefined,
+      episodeIds: Object.freeze([...(item.evidence_episode_ids || [])]),
+      text: item.exact_rendered_text,
+    })),
+  );
+}
+
+function outcomeSentence(dossier) {
+  const outcome = String(dossier.outcome || "").trim();
+  const [houseResult, laterHistory] = outcome.split(";").map((item) => item.trim());
+  const tally = houseResult.match(/(\d+)-(\d+)/);
+  const tallyText = tally ? `, ${tally[1]}–${tally[2]}` : "";
+  let first;
+  if (/^retained/i.test(houseResult)) {
+    first = `The House retained the divisions${tallyText}.`;
+  } else {
+    const object = /package/i.test(dossier.exact_stage || "") ? "package" : "bill";
+    first = `The House passed the ${object}${tallyText}.`;
+  }
+  if (/later enacted as /i.test(laterHistory || "")) {
+    return `${first} It was ${laterHistory.replace(/^later /i, "")}.`;
+  }
+  return first;
+}
+
+function stagePresentationLabels(dossier) {
+  const stage = `${dossier.exact_stage || ""} ${dossier.mechanism || ""}`;
+  if (!/(?:package|division|retain|appropriation)/i.test(stage)) return undefined;
+  return Object.freeze({
+    practicalChoice: "What this vote did",
+    priorBaseline: "Stage before this vote",
+    affected: "Programs and agencies covered",
+    context: "Package boundary",
+  });
 }
 
 function shortName(member) {

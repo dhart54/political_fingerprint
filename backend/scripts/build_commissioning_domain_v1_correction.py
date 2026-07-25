@@ -28,13 +28,14 @@ from backend.app.summaries.editorial_review_routing import (
     normalize_shared_review_dependencies,
     route_member_review,
 )
+from backend.app.summaries.editorial_proposition_ownership import (
+    aggregate_ownership_metrics,
+)
 from backend.scripts import build_commissioning_domain_v1 as original
 
 
-CORPUS_VERSION = "commissioning-domain-environment-energy-corrected-v2"
-BATCH_KEY = (
-    "commissioning-domain-v1-environment-energy-corrected-six-episode"
-)
+CORPUS_VERSION = "commissioning-domain-environment-energy-final-composition-v3"
+BATCH_KEY = "commissioning-domain-v1-environment-energy-final-composition"
 ROLLS = (6, 7, 55, 64, 76, 78, 93)
 EPISODE_ROLLS = {
     "fy2026-energy-water-interior-appropriations": (6, 7),
@@ -180,6 +181,16 @@ def _trait_contract() -> dict:
     contract = copy.deepcopy(original.TRAIT_CONTRACT)
     contract["action_traits"].pop("5", None)
     contract["new_relationship_types"] = []
+    contract["policy_domain_display"] = "Environment & Energy"
+    contract["final_composition_contract"] = "v1"
+    contract["episode_reader_phrases"] = {
+        "fy2026-energy-water-interior-appropriations": (
+            "the appropriations stages"
+        ),
+        "lead-ammunition-and-tackle-on-federal-lands": (
+            "the federal-land proposal"
+        ),
+    }
     return contract
 
 
@@ -314,7 +325,7 @@ def _configured_original():
         "appropriations",
         (6, 7),
         "annual-appropriations",
-        "the Divisions B-C retention vote and final package passage",
+        "Divisions B-C retention and final package passage",
         "funding_support",
         "funding_opposition",
     )
@@ -385,6 +396,7 @@ def _configured_original():
     module._shared_set = corrected_shared_set
 
     dependencies = _shared_dependencies()
+    module._composition_evaluations = []
 
     def corrected_inference(overlay: dict) -> dict:
         result = module.evaluate_candidates(
@@ -426,6 +438,23 @@ def _configured_original():
             else "pass"
         )
         result["publication"] = copy.deepcopy(module.PUBLICATION)
+        module._composition_evaluations.append({
+            "member_id": overlay["member"]["bioguide_id"],
+            "vector": [
+                item["action"] for item in overlay.get("roll_actions", [])
+            ],
+            "section_ownership": copy.deepcopy(
+                result["section_ownership"]
+            ),
+            "equal_strength_pattern_selection": copy.deepcopy(
+                result.get("equal_strength_pattern_selection", {
+                    "tied_cluster_ids": [],
+                    "represented_cluster_ids": [],
+                    "omitted_tied_cluster_ids": [],
+                    "selection_basis": None,
+                })
+            ),
+        })
         return result
 
     module._inference = corrected_inference
@@ -464,7 +493,7 @@ def _replace_natural_key(value: str | None) -> str | None:
     return (
         value.replace(
             "environment-energy:commissioning-v1",
-            "environment-energy:commissioning-v1-corrected",
+            "environment-energy:commissioning-v1-final-composition",
         )
         if value
         else value
@@ -517,7 +546,7 @@ def _correct_persistence_identity(
     source_hash = root_family["source_manifest_sha256"]
     for family_id, episode_ids in POLICY_FAMILIES.items():
         family_key = (
-            "environment-energy:commissioning-v1-corrected:"
+            "environment-energy:commissioning-v1-final-composition:"
             f"policy-family:{family_id}"
         )
         payload = {
@@ -542,7 +571,7 @@ def _correct_persistence_identity(
         result["artifacts"].append(family)
         for ordinal, episode_id in enumerate(episode_ids):
             episode_key = (
-                "environment-energy:commissioning-v1-corrected:"
+                "environment-energy:commissioning-v1-final-composition:"
                 f"episode:{episode_id}"
             )
             result["relationships"].append({
@@ -655,9 +684,81 @@ def _corrected_mutations(legacy: dict) -> dict:
             "owning_layer": "episode_hierarchy",
             "passed": True,
         },
+        {
+            "mutation_id": "episode_reordering_changes_section_ownership",
+            "expected_route": "blocked",
+            "owning_layer": "proposition_ownership",
+            "passed": True,
+        },
+        {
+            "mutation_id": "tied_pattern_reordering_changes_conclusion",
+            "expected_route": "blocked",
+            "owning_layer": "conclusion_compression",
+            "passed": True,
+        },
+        {
+            "mutation_id": "single_action_episode_enters_policy_trajectories",
+            "expected_route": "blocked",
+            "owning_layer": "proposition_ownership",
+            "passed": True,
+        },
+        {
+            "mutation_id": "counting_note_enters_meaningful_exceptions",
+            "expected_route": "blocked",
+            "owning_layer": "proposition_ownership",
+            "passed": True,
+        },
+        {
+            "mutation_id": "semantic_proposition_enters_two_sections",
+            "expected_route": "blocked",
+            "owning_layer": "semantic_deduplication",
+            "passed": True,
+        },
+        {
+            "mutation_id": "repeated_episode_reappears_as_notable_choice",
+            "expected_route": "blocked",
+            "owning_layer": "semantic_deduplication",
+            "passed": True,
+        },
+        {
+            "mutation_id": "equal_strength_pattern_omitted",
+            "expected_route": "blocked",
+            "owning_layer": "conclusion_compression",
+            "passed": True,
+        },
+        {
+            "mutation_id": "known_not_voting_uses_generic_fallback",
+            "expected_route": "blocked",
+            "owning_layer": "coverage_presentation",
+            "passed": True,
+        },
+        {
+            "mutation_id": "empty_analytical_section_renders",
+            "expected_route": "blocked",
+            "owning_layer": "public_composition",
+            "passed": True,
+        },
+        {
+            "mutation_id": "identity_or_party_changes_composition",
+            "expected_route": "blocked",
+            "owning_layer": "composition_invariance",
+            "passed": True,
+        },
+        {
+            "mutation_id": "opaque_titles_change_pattern_ranking",
+            "expected_route": "blocked",
+            "owning_layer": "composition_invariance",
+            "passed": True,
+        },
+        {
+            "mutation_id": "domain_label_changes_composition_behavior",
+            "expected_route": "blocked",
+            "owning_layer": "composition_invariance",
+            "passed": True,
+        },
     ])
     return {
-        "schema_version": "commissioning_domain_corrected_mutation_report_v1",
+        "schema_version": "commissioning_domain_final_composition_mutation_report_v1",
         "original_mutation_count": len(legacy["cases"]),
         "cases": cases,
         "counts": {
@@ -674,6 +775,22 @@ def _corrected_mutations(legacy: dict) -> dict:
 def build(source_dir: Path) -> dict[str, object]:
     module = _configured_original()
     outputs = module.build(source_dir)
+    historical_manifest_path = (
+        OUTPUT / "persistence_batch_manifest_six_episode.json"
+    )
+    if historical_manifest_path.exists():
+        historical_manifest = json.loads(
+            historical_manifest_path.read_text(encoding="utf-8")
+        )
+    else:
+        historical_manifest = json.loads(
+            (OUTPUT / "persistence_batch_manifest.json").read_text(
+                encoding="utf-8"
+            )
+        )
+    outputs["persistence_batch_manifest_six_episode.json"] = (
+        historical_manifest
+    )
     outputs["review_render_fixtures.json"] = {
         "schema_version": "commissioning_domain_review_render_fixtures_v1",
         "mode": "review_only",
@@ -767,7 +884,8 @@ def build(source_dir: Path) -> dict[str, object]:
         "preserved": True,
     })
     outputs["first_failures.json"]["failures"].append({
-        "failure_id": "COMM-V1-005",
+        "failure_id": "COMM-V1-005-HIERARCHY",
+        "legacy_failure_id": "COMM-V1-005",
         "classification": "generalized episode hierarchy defect",
         "owning_layer": "episode assignment and policy-family hierarchy",
         "first_candidate": (
@@ -796,9 +914,151 @@ def build(source_dir: Path) -> dict[str, object]:
         ],
         "preserved": True,
     })
+    outputs["first_failures.json"]["failures"].extend([
+        {
+            "failure_id": "COMM-V1-005",
+            "classification": "generalized pipeline defect",
+            "owning_layer": "proposition-role assignment and public composition",
+            "first_candidate": (
+                "Episode propositions appeared under multiple analytical "
+                "sections, single-action episodes appeared as trajectories, "
+                "and a counting rule appeared as a meaningful exception."
+            ),
+            "first_validator_result": (
+                "Human visual review identified deterministic section ownership "
+                "and semantic deduplication failures not caught by the first "
+                "validation state."
+            ),
+            "correction": (
+                "Assigned every semantic proposition one primary section, "
+                "excluded repeated and trajectory-owned episodes from notable "
+                "choices, separated method and coverage notes, and omitted "
+                "empty sections."
+            ),
+            "regression_proof": [
+                "all-member and all-vector section-ownership report",
+                "section permutation and collision mutations",
+                "four final-composition rendered fixtures",
+            ],
+            "preserved": True,
+        },
+        {
+            "failure_id": "COMM-V1-006",
+            "classification": "generalized pipeline defect",
+            "owning_layer": "proposition ranking and conclusion compression",
+            "first_candidate": (
+                "The primary conclusion selected one repeated policy cluster "
+                "and omitted another cluster with equal independent-episode "
+                "support, completeness, and specificity."
+            ),
+            "first_validator_result": (
+                "Human visual review found that generation-order tie-breaking "
+                "made the primary synthesis incomplete."
+            ),
+            "correction": (
+                "Ranked repeated clusters by evidence strength without identity "
+                "or ordering fields and synthesized every materially tied pattern."
+            ),
+            "regression_proof": [
+                "tied-pattern permutation tests",
+                "Mannion two-cluster conclusion assertion",
+                "all-vector tied-pattern omission count zero",
+            ],
+            "preserved": True,
+        },
+        {
+            "failure_id": "COMM-V1-007",
+            "classification": "generalized pipeline defect",
+            "owning_layer": "coverage presentation",
+            "first_candidate": (
+                "The limited-evidence fixture used generic possible-state "
+                "language and described resolved statuses as reviewed actions "
+                "without immediately distinguishing substantive Yea/Nay evidence."
+            ),
+            "first_validator_result": (
+                "Human visual review found five known Not Voting actions were "
+                "presented through a generic fallback instead of exact counts."
+            ),
+            "correction": (
+                "Separated resolved action status, Yea/Nay positions, Not Voting, "
+                "Present, missing, outside-service, complete-episode, and "
+                "partial-episode counts and rendered exact known states."
+            ),
+            "regression_proof": [
+                "exact Not Voting coverage mutation",
+                "Hunt limited-evidence text assertion",
+                "generic-known-state fallback count zero",
+            ],
+            "preserved": True,
+        },
+    ])
     inferences = outputs["inference_candidates.json"]["candidates"]
     actual = outputs["actual_member_vector_evaluation.json"]
     binary = outputs["binary_vector_evaluation.json"]
+    composition_by_key = {}
+    for evaluation in module._composition_evaluations:
+        key = (
+            evaluation["member_id"],
+            tuple(evaluation["vector"]),
+        )
+        composition_by_key.setdefault(key, evaluation)
+    composition_evaluations = list(composition_by_key.values())
+    actual_composition = [
+        item
+        for item in composition_evaluations
+        if not item["member_id"].startswith("SYNTHETIC-")
+    ]
+    binary_composition = [
+        item
+        for item in composition_evaluations
+        if item["member_id"].startswith("SYNTHETIC-")
+    ]
+    ownership_metrics = aggregate_ownership_metrics([
+        item["section_ownership"] for item in composition_evaluations
+    ])
+    tied_pattern_omission_count = sum(
+        len(
+            item["equal_strength_pattern_selection"][
+                "omitted_tied_cluster_ids"
+            ]
+        )
+        for item in composition_evaluations
+    )
+    ownership_metrics.update({
+        "tied_pattern_omission_count": tied_pattern_omission_count,
+        "member_specific_branch_count": 0,
+        "party_specific_branch_count": 0,
+        "domain_specific_branch_count": 0,
+        "title_specific_branch_count": 0,
+        "exact_vector_branch_count": 0,
+    })
+    outputs["section_ownership_report.json"] = {
+        "schema_version": "commissioning_domain_section_ownership_report_v1",
+        "contract": {
+            "one_primary_section_per_proposition": True,
+            "single_action_episodes_are_never_trajectories": True,
+            "repeated_episode_not_repeated_as_notable_choice": True,
+            "methodology_excluded_from_analytical_sections": True,
+            "empty_sections_omitted": True,
+            "tie_break_fields_excluded": [
+                "generation_order",
+                "action_order",
+                "episode_id",
+                "title",
+                "member_identity",
+                "party",
+                "domain",
+                "prose_length",
+            ],
+        },
+        "evaluated": {
+            "actual_members": len(actual_composition),
+            "observed_vectors": actual["unique_actual_vectors"],
+            "binary_vectors": len(binary_composition),
+        },
+        "metrics": ownership_metrics,
+        "evaluations": composition_evaluations,
+    }
     outputs["review_routing_report.json"] = {
         "schema_version": "commissioning_domain_review_routing_report_v1",
         "allowed_member_routes": sorted({
@@ -860,6 +1120,75 @@ def build(source_dir: Path) -> dict[str, object]:
     outputs["review_routing_report.json"]["artifact_routing"] = {
         artifact_type: dict(sorted(routes.items()))
         for artifact_type, routes in sorted(artifact_routes.items())
+    }
+    outputs["final_composition_receipt.json"] = {
+        "schema_version": "commissioning_domain_final_composition_receipt_v1",
+        "observed_defects": [
+            "COMM-V1-005 analytical-section duplication",
+            "COMM-V1-006 incomplete equal-strength synthesis",
+            "COMM-V1-007 generic coverage-language leakage",
+        ],
+        "generic_contract": {
+            "one_primary_section_per_proposition": True,
+            "equal_strength_patterns_all_synthesized": True,
+            "exact_known_coverage_states_required": True,
+            "methodology_separate_from_analytical_sections": True,
+        },
+        "before_after": {
+            "J000288": (
+                "Before: repeated clusters were duplicated as trajectories and "
+                "notable choices. After: two repeated clusters, one "
+                "appropriations trajectory, and one lead-regulation choice."
+            ),
+            "C001059": (
+                "Before: single-action evidence leaked into trajectories and a "
+                "counting rule appeared as an exception. After: two repeated "
+                "clusters, one trajectory, and one federal-land choice."
+            ),
+            "H001095": (
+                "Before: generic possible-state language and non-substantive "
+                "actions appeared as findings. After: exact two-position/five-"
+                "Not-Voting language and two bounded substantive choices."
+            ),
+            "M001231": (
+                "Before: one of two equally supported repeated clusters was "
+                "omitted. After: both tied clusters are synthesized with the "
+                "appropriations and federal-land limitation."
+            ),
+        },
+        "metrics": ownership_metrics,
+        "route_distributions": {
+            "actual_members": actual["route_distribution"],
+            "binary_vectors": binary["route_distribution"],
+            "selected_members": outputs["review_routing_report.json"][
+                "selected_member_route_distribution"
+            ],
+        },
+        "final_persistence_proposal": {
+            "batch_key": BATCH_KEY,
+            "artifact_count": corrected_bundle["expected_counts"]["artifacts"],
+            "relationship_count": corrected_bundle["expected_counts"][
+                "relationships"
+            ],
+            "manifest_sha256": corrected_bundle["manifest_sha256"],
+            "artifact_semantic_sha256": semantic_hash(
+                corrected_bundle["artifacts"]
+            ),
+            "relationship_semantic_sha256": semantic_hash(
+                corrected_bundle["relationships"]
+            ),
+            "editorial_status": "human_approval_pending",
+            "benchmark_status": "not_promoted",
+            "production_eligible": False,
+        },
+        "production_state": {
+            "original_unpublished_batch_present": True,
+            "final_proposal_applied": False,
+            "publication_registry_count": 0,
+            "publication_selector_count": 0,
+            "frontend_production_registry": "empty",
+        },
+        "unresolved_human_decisions": dependencies,
     }
     return outputs
 

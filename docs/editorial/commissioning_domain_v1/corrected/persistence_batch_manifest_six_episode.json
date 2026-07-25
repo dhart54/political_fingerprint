@@ -12,7 +12,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:claim-source-map",
+      "natural_key": "environment-energy:commissioning-v1-corrected:claim-source-map",
       "payload": {
         "claims": [
           {
@@ -727,7 +727,7 @@
       "review_route": "standard_generation",
       "schema_version": "editorial_claim_source_map_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_conclusion_propositions",
@@ -736,12 +736,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "7ed2cefc57df09f07ca08911cbb7d2c0981f3e51c785835036c435553d2a4bc0",
+      "content_sha256": "02b33349c2199a5193f9160b900768b09e4d2352db04fb60ad1ca17bcff17c59",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "A000372",
-      "natural_key": "a000372:environment-energy:commissioning-v1-final-composition:propositions",
+      "natural_key": "a000372:environment-energy:commissioning-v1-corrected:propositions",
       "payload": {
         "model": {
           "action_direction": {
@@ -813,7 +813,6 @@
             "home-energy-program-repeal"
           ],
           "exception_proposition": null,
-          "final_composition_contract": "v1",
           "omitted_episode_ids": [
             "fy2026-energy-water-interior-appropriations",
             "lead-ammunition-and-tackle-on-federal-lands"
@@ -881,7 +880,7 @@
       "review_route": "sampled_audit",
       "schema_version": "issue_conclusion_propositions_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_conclusion_propositions",
@@ -890,12 +889,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "4ef35c1cb068f37a34d4ee768141a8e85268ee1fe28e609f1eddf4cb4a5fb209",
+      "content_sha256": "62af76bf5648098c142002b9db11b32688459aecbdbf52e4fb02b7583df39922",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "C001059",
-      "natural_key": "c001059:environment-energy:commissioning-v1-final-composition:propositions",
+      "natural_key": "c001059:environment-energy:commissioning-v1-corrected:propositions",
       "payload": {
         "model": {
           "action_direction": {
@@ -967,7 +966,6 @@
             "home-energy-program-repeal"
           ],
           "exception_proposition": null,
-          "final_composition_contract": "v1",
           "omitted_episode_ids": [
             "fy2026-energy-water-interior-appropriations",
             "lead-ammunition-and-tackle-on-federal-lands"
@@ -1038,7 +1036,7 @@
       "review_route": "standard_generation",
       "schema_version": "issue_conclusion_propositions_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_conclusion_propositions",
@@ -1047,12 +1045,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "2e06c9bf03b4da842ab6666a790717f038c63cc412593a377ff2e37957227de8",
+      "content_sha256": "1a0aa8213cef6b9dea859624e46fe58e7af63d8e350a5bd35ecdf84cb25b973a",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "F000466",
-      "natural_key": "f000466:environment-energy:commissioning-v1-final-composition:propositions",
+      "natural_key": "f000466:environment-energy:commissioning-v1-corrected:propositions",
       "payload": {
         "model": {
           "action_direction": {
@@ -1064,12 +1062,8 @@
           },
           "archetype": "substantive_repeated_pattern",
           "boundary_proposition": {
-            "analytical_relationship": "opposite_direction_limits_scope",
-            "evidence_episode_ids": [
-              "fy2026-energy-water-interior-appropriations",
-              "home-energy-efficiency-rulemaking"
-            ],
-            "public_text": "Support for the appropriations stages and the reviewed home-energy-efficiency-rulemaking episode means that repeated opposition does not extend across the entire reviewed Environment & Energy record.",
+            "policy_domain_label": "environment-and-energy",
+            "public_text": "This pattern is limited to the reviewed policy cluster and does not explain every action in the issue record.",
             "role": "boundary"
           },
           "compression_report": {
@@ -1077,9 +1071,9 @@
             "clustered_episode_proportion": 0.333,
             "conclusion_archetype": "substantive_repeated_pattern",
             "duplicated_analytical_propositions": [],
-            "individually_named_episode_count": 2,
+            "individually_named_episode_count": 0,
             "policy_cluster_count": 1,
-            "public_word_count": 37,
+            "public_word_count": 36,
             "sentence_roles": [
               "thesis",
               "boundary"
@@ -1093,14 +1087,13 @@
             "critical-mineral-supply-assessment-and-strategy"
           ],
           "exception_proposition": null,
-          "final_composition_contract": "v1",
           "omitted_episode_ids": [
             "fy2026-energy-water-interior-appropriations",
             "home-energy-efficiency-rulemaking",
             "home-energy-program-repeal",
             "lead-ammunition-and-tackle-on-federal-lands"
           ],
-          "public_conclusion": "Across 2 independent proposals, Fitzpatrick opposed the two reviewed domestic resource-supply proposals. Support for the appropriations stages and the reviewed home-energy-efficiency-rulemaking episode means that repeated opposition does not extend across the entire reviewed Environment & Energy record.",
+          "public_conclusion": "Across the reviewed record, Fitzpatrick opposed the two reviewed domestic resource-supply proposals across multiple independent policy episodes. This pattern is limited to the reviewed policy cluster and does not explain every action in the issue record.",
           "reader_label_concept": "A repeated substantive pattern in the reviewed record",
           "review_route": "standard_generation_pass",
           "schema_version": "editorial_conclusion_propositions_v1",
@@ -1151,7 +1144,7 @@
       "review_route": "standard_generation",
       "schema_version": "issue_conclusion_propositions_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_conclusion_propositions",
@@ -1165,7 +1158,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "H001095",
-      "natural_key": "h001095:environment-energy:commissioning-v1-final-composition:propositions",
+      "natural_key": "h001095:environment-energy:commissioning-v1-corrected:propositions",
       "payload": {
         "model": {
           "action_direction": {
@@ -1213,7 +1206,7 @@
       "review_route": "human_exception",
       "schema_version": "issue_conclusion_propositions_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_conclusion_propositions",
@@ -1222,12 +1215,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "25c61b8fa2076402313d9467872310245aa67beceb831867eca0655a8ef647c0",
+      "content_sha256": "eda994e7acbb4e6f7a0a10b3f8eb35fe30cbfb6ad96667093c8440132d1b1b4c",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "J000288",
-      "natural_key": "j000288:environment-energy:commissioning-v1-final-composition:propositions",
+      "natural_key": "j000288:environment-energy:commissioning-v1-corrected:propositions",
       "payload": {
         "model": {
           "action_direction": {
@@ -1299,7 +1292,6 @@
             "home-energy-program-repeal"
           ],
           "exception_proposition": null,
-          "final_composition_contract": "v1",
           "omitted_episode_ids": [
             "fy2026-energy-water-interior-appropriations",
             "lead-ammunition-and-tackle-on-federal-lands"
@@ -1367,7 +1359,7 @@
       "review_route": "sampled_audit",
       "schema_version": "issue_conclusion_propositions_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_conclusion_propositions",
@@ -1376,12 +1368,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "406b826c3480b52c2b27485c148fc36fabbe3888e8709222f932a88acd87040e",
+      "content_sha256": "b08ae1fd9d1f9495273db62f5eefddefce3d2ad1dace8db701d0df2e4cc2aee9",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001214",
-      "natural_key": "m001214:environment-energy:commissioning-v1-final-composition:propositions",
+      "natural_key": "m001214:environment-energy:commissioning-v1-corrected:propositions",
       "payload": {
         "model": {
           "action_direction": {
@@ -1393,12 +1385,8 @@
           },
           "archetype": "substantive_repeated_pattern",
           "boundary_proposition": {
-            "analytical_relationship": "opposite_direction_limits_scope",
-            "evidence_episode_ids": [
-              "fy2026-energy-water-interior-appropriations",
-              "home-energy-efficiency-rulemaking"
-            ],
-            "public_text": "Support for the appropriations stages and the reviewed home-energy-efficiency-rulemaking episode means that repeated opposition does not extend across the entire reviewed Environment & Energy record.",
+            "policy_domain_label": "environment-and-energy",
+            "public_text": "This pattern is limited to the reviewed policy cluster and does not explain every action in the issue record.",
             "role": "boundary"
           },
           "compression_report": {
@@ -1406,9 +1394,9 @@
             "clustered_episode_proportion": 0.333,
             "conclusion_archetype": "substantive_repeated_pattern",
             "duplicated_analytical_propositions": [],
-            "individually_named_episode_count": 2,
+            "individually_named_episode_count": 0,
             "policy_cluster_count": 1,
-            "public_word_count": 37,
+            "public_word_count": 36,
             "sentence_roles": [
               "thesis",
               "boundary"
@@ -1422,14 +1410,13 @@
             "critical-mineral-supply-assessment-and-strategy"
           ],
           "exception_proposition": null,
-          "final_composition_contract": "v1",
           "omitted_episode_ids": [
             "fy2026-energy-water-interior-appropriations",
             "home-energy-efficiency-rulemaking",
             "home-energy-program-repeal",
             "lead-ammunition-and-tackle-on-federal-lands"
           ],
-          "public_conclusion": "Across 2 independent proposals, Mrvan opposed the two reviewed domestic resource-supply proposals. Support for the appropriations stages and the reviewed home-energy-efficiency-rulemaking episode means that repeated opposition does not extend across the entire reviewed Environment & Energy record.",
+          "public_conclusion": "Across the reviewed record, Mrvan opposed the two reviewed domestic resource-supply proposals across multiple independent policy episodes. This pattern is limited to the reviewed policy cluster and does not explain every action in the issue record.",
           "reader_label_concept": "A repeated substantive pattern in the reviewed record",
           "review_route": "standard_generation_pass",
           "schema_version": "editorial_conclusion_propositions_v1",
@@ -1480,7 +1467,7 @@
       "review_route": "standard_generation",
       "schema_version": "issue_conclusion_propositions_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_conclusion_propositions",
@@ -1489,12 +1476,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "9533a9811bfa3a76ea38e8a7c118616a224206b988d2200349f2d3d1a21cf8d6",
+      "content_sha256": "12168b2b65787f4d6b1d8a659b292c9045401ca3f93eb3c0886da162208c8b70",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001231",
-      "natural_key": "m001231:environment-energy:commissioning-v1-final-composition:propositions",
+      "natural_key": "m001231:environment-energy:commissioning-v1-corrected:propositions",
       "payload": {
         "model": {
           "action_direction": {
@@ -1506,94 +1493,42 @@
           },
           "archetype": "substantive_repeated_pattern",
           "boundary_proposition": {
-            "analytical_relationship": "opposite_direction_limits_scope",
-            "evidence_episode_ids": [
-              "fy2026-energy-water-interior-appropriations",
-              "lead-ammunition-and-tackle-on-federal-lands"
-            ],
-            "public_text": "Support for the appropriations stages and the federal-land proposal means that repeated opposition does not extend across the entire reviewed Environment & Energy record.",
+            "policy_domain_label": "environment-and-energy",
+            "public_text": "This pattern is limited to the reviewed policy cluster and does not explain every action in the issue record.",
             "role": "boundary"
           },
           "compression_report": {
             "boundary_count": 1,
-            "clustered_episode_proportion": 0.667,
+            "clustered_episode_proportion": 0.333,
             "conclusion_archetype": "substantive_repeated_pattern",
             "duplicated_analytical_propositions": [],
-            "individually_named_episode_count": 2,
-            "policy_cluster_count": 2,
-            "public_word_count": 47,
+            "individually_named_episode_count": 0,
+            "policy_cluster_count": 1,
+            "public_word_count": 40,
             "sentence_roles": [
               "thesis",
-              "contrast",
               "boundary"
             ],
             "source_episode_count": 6,
             "validation_outcome": "pass"
           },
-          "contrast_proposition": {
-            "basis": "resource-supply coordination and project direction differ from constraints or repeal affecting standards and household programs",
-            "left": {
-              "cluster_id": "domestic_resource_supply_actions",
-              "evidence_episode_ids": [
-                "critical-mineral-project-acceleration",
-                "critical-mineral-supply-assessment-and-strategy"
-              ],
-              "member_action_phrase": "opposed",
-              "policy_trait_ids": [
-                "accelerates_domestic_mineral_projects",
-                "assesses_supply_chain_vulnerability",
-                "develops_resource_strategies"
-              ],
-              "reader_phrase": "the two reviewed domestic resource-supply proposals"
-            },
-            "relationship": "contrasts",
-            "right": {
-              "cluster_id": "home_energy_federal_role_changes",
-              "evidence_episode_ids": [
-                "home-energy-efficiency-rulemaking",
-                "home-energy-program-repeal"
-              ],
-              "member_action_phrase": "opposed",
-              "policy_trait_ids": [
-                "changes_building_code_assistance",
-                "constrains_efficiency_rulemaking",
-                "repeals_home_energy_programs"
-              ],
-              "reader_phrase": "the two reviewed changes to federal home-energy standards or programs"
-            },
-            "role": "contrast"
-          },
+          "contrast_proposition": null,
           "evidence_episode_ids": [
-            "critical-mineral-project-acceleration",
-            "critical-mineral-supply-assessment-and-strategy",
             "home-energy-efficiency-rulemaking",
             "home-energy-program-repeal"
           ],
           "exception_proposition": null,
-          "final_composition_contract": "v1",
           "omitted_episode_ids": [
+            "critical-mineral-project-acceleration",
+            "critical-mineral-supply-assessment-and-strategy",
             "fy2026-energy-water-interior-appropriations",
             "lead-ammunition-and-tackle-on-federal-lands"
           ],
-          "public_conclusion": "Across 4 independent proposals, Mannion opposed the two reviewed domestic resource-supply proposals and the two reviewed changes to federal home-energy standards or programs. Support for the appropriations stages and the federal-land proposal means that repeated opposition does not extend across the entire reviewed Environment & Energy record.",
+          "public_conclusion": "Across the reviewed record, Mannion opposed the two reviewed changes to federal home-energy standards or programs across multiple independent policy episodes. This pattern is limited to the reviewed policy cluster and does not explain every action in the issue record.",
           "reader_label_concept": "A repeated substantive pattern in the reviewed record",
           "review_route": "standard_generation_pass",
           "schema_version": "editorial_conclusion_propositions_v1",
           "supporting_policy_clusters": [
-            {
-              "cluster_id": "domestic_resource_supply_actions",
-              "evidence_episode_ids": [
-                "critical-mineral-project-acceleration",
-                "critical-mineral-supply-assessment-and-strategy"
-              ],
-              "member_action_phrase": "opposed",
-              "policy_trait_ids": [
-                "accelerates_domestic_mineral_projects",
-                "assesses_supply_chain_vulnerability",
-                "develops_resource_strategies"
-              ],
-              "reader_phrase": "the two reviewed domestic resource-supply proposals"
-            },
             {
               "cluster_id": "home_energy_federal_role_changes",
               "evidence_episode_ids": [
@@ -1614,7 +1549,6 @@
             "policy_dimension_present": true,
             "role": "thesis",
             "theme_ids": [
-              "domestic_resource_supply_actions",
               "home_energy_federal_role_changes"
             ]
           },
@@ -1641,7 +1575,7 @@
       "review_route": "standard_generation",
       "schema_version": "issue_conclusion_propositions_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_ontology",
@@ -1655,7 +1589,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:ontology",
+      "natural_key": "environment-energy:commissioning-v1-corrected:ontology",
       "payload": {
         "issue_id": "ENVIRONMENT_ENERGY",
         "new_relationship_types": [],
@@ -1667,7 +1601,7 @@
       "review_route": "human_exception",
       "schema_version": "commissioning_issue_ontology_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_public_presentation",
@@ -1681,7 +1615,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "A000372",
-      "natural_key": "a000372:environment-energy:commissioning-v1-final-composition:presentation",
+      "natural_key": "a000372:environment-energy:commissioning-v1-corrected:presentation",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -1742,7 +1676,7 @@
       "review_route": "sampled_audit",
       "schema_version": "issue_public_presentation_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_public_presentation",
@@ -1756,7 +1690,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "C001059",
-      "natural_key": "c001059:environment-energy:commissioning-v1-final-composition:presentation",
+      "natural_key": "c001059:environment-energy:commissioning-v1-corrected:presentation",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -1817,7 +1751,7 @@
       "review_route": "standard_generation",
       "schema_version": "issue_public_presentation_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_public_presentation",
@@ -1826,12 +1760,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "98c813ea91354afca5ae95f0d03e47e672e65a600249b4232fe28b12cfb714cb",
+      "content_sha256": "d639cf8704d6dd9b4d6fcae2a9beddd2b16ab5ba331ac210a564a229fd89488d",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "F000466",
-      "natural_key": "f000466:environment-energy:commissioning-v1-final-composition:presentation",
+      "natural_key": "f000466:environment-energy:commissioning-v1-corrected:presentation",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -1864,7 +1798,7 @@
           "party": "R",
           "state": "PA"
         },
-        "public_conclusion": "Across 2 independent proposals, Fitzpatrick opposed the two reviewed domestic resource-supply proposals. Support for the appropriations stages and the reviewed home-energy-efficiency-rulemaking episode means that repeated opposition does not extend across the entire reviewed Environment & Energy record.",
+        "public_conclusion": "Across the reviewed record, Fitzpatrick opposed the two reviewed domestic resource-supply proposals across multiple independent policy episodes. This pattern is limited to the reviewed policy cluster and does not explain every action in the issue record.",
         "publication": {
           "benchmark_status": "not_promoted",
           "editorial_status": "human_approval_pending",
@@ -1892,7 +1826,7 @@
       "review_route": "standard_generation",
       "schema_version": "issue_public_presentation_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_public_presentation",
@@ -1901,12 +1835,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "a5872cb3ece6acf9be21938038e8f8e96704aa89fa5be566d10904e61c8a81d4",
+      "content_sha256": "ead2b00e8144bcf34c6f4f9b9839d10dd91f396dc0d6167cb99ea7965642235e",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "H001095",
-      "natural_key": "h001095:environment-energy:commissioning-v1-final-composition:presentation",
+      "natural_key": "h001095:environment-energy:commissioning-v1-corrected:presentation",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -1932,7 +1866,7 @@
           "party": "R",
           "state": "TX"
         },
-        "public_conclusion": "Action status is resolved for all 7 reviewed actions, but only 2 contain Yea/Nay positions; 5 are Not Voting. That is too little substantive evidence to establish a broad Environment & Energy pattern.",
+        "public_conclusion": "The reviewed record for Hunt does not cover enough independent episodes to support a cross-episode conclusion.",
         "publication": {
           "benchmark_status": "not_promoted",
           "editorial_status": "human_approval_pending",
@@ -1960,7 +1894,7 @@
       "review_route": "human_exception",
       "schema_version": "issue_public_presentation_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_public_presentation",
@@ -1974,7 +1908,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "J000288",
-      "natural_key": "j000288:environment-energy:commissioning-v1-final-composition:presentation",
+      "natural_key": "j000288:environment-energy:commissioning-v1-corrected:presentation",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -2035,7 +1969,7 @@
       "review_route": "sampled_audit",
       "schema_version": "issue_public_presentation_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_public_presentation",
@@ -2044,12 +1978,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "d1978b7b011cafef6a9fd6f55ad2198919c8f371b8d46a8d52d98edf51909ccf",
+      "content_sha256": "5e51848c800706ab54ac876581800ad316234c05af3c26fefb56232b575d37bd",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001214",
-      "natural_key": "m001214:environment-energy:commissioning-v1-final-composition:presentation",
+      "natural_key": "m001214:environment-energy:commissioning-v1-corrected:presentation",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -2082,7 +2016,7 @@
           "party": "D",
           "state": "IN"
         },
-        "public_conclusion": "Across 2 independent proposals, Mrvan opposed the two reviewed domestic resource-supply proposals. Support for the appropriations stages and the reviewed home-energy-efficiency-rulemaking episode means that repeated opposition does not extend across the entire reviewed Environment & Energy record.",
+        "public_conclusion": "Across the reviewed record, Mrvan opposed the two reviewed domestic resource-supply proposals across multiple independent policy episodes. This pattern is limited to the reviewed policy cluster and does not explain every action in the issue record.",
         "publication": {
           "benchmark_status": "not_promoted",
           "editorial_status": "human_approval_pending",
@@ -2110,7 +2044,7 @@
       "review_route": "standard_generation",
       "schema_version": "issue_public_presentation_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "issue_public_presentation",
@@ -2119,12 +2053,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "e97a9cf22ced54b6b87b466149eebca62362888258285cbb6ed3f756d4bdfabf",
+      "content_sha256": "daab47de1a096760f8b4d73028eb493c61c3162901817ca662fca29870ad904b",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001231",
-      "natural_key": "m001231:environment-energy:commissioning-v1-final-composition:presentation",
+      "natural_key": "m001231:environment-energy:commissioning-v1-corrected:presentation",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -2157,7 +2091,7 @@
           "party": "D",
           "state": "NY"
         },
-        "public_conclusion": "Across 4 independent proposals, Mannion opposed the two reviewed domestic resource-supply proposals and the two reviewed changes to federal home-energy standards or programs. Support for the appropriations stages and the federal-land proposal means that repeated opposition does not extend across the entire reviewed Environment & Energy record.",
+        "public_conclusion": "Across the reviewed record, Mannion opposed the two reviewed changes to federal home-energy standards or programs across multiple independent policy episodes. This pattern is limited to the reviewed policy cluster and does not explain every action in the issue record.",
         "publication": {
           "benchmark_status": "not_promoted",
           "editorial_status": "human_approval_pending",
@@ -2185,7 +2119,7 @@
       "review_route": "standard_generation",
       "schema_version": "issue_public_presentation_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_action_overlay",
@@ -2194,12 +2128,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "23006dc1920a8485146ef76d33b07672b3c563ec83d262ba9232c04814b5d3c2",
+      "content_sha256": "688779067ef7cce9a0e2a3dc2ad8dd2bb3e28de56d7e2a77049f81b6b4efbef7",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "A000372",
-      "natural_key": "a000372:environment-energy:commissioning-v1-final-composition:overlay",
+      "natural_key": "a000372:environment-energy:commissioning-v1-corrected:overlay",
       "payload": {
         "overlay": {
           "coverage": {
@@ -2228,7 +2162,7 @@
               "coverage_status": "complete",
               "episode_id": "fy2026-energy-water-interior-appropriations",
               "mechanism_family": "annual-appropriations",
-              "member_trajectory": "Recorded Yea/Yea across Divisions B-C retention and final package passage; the related actions count as one episode.",
+              "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
               "package_vote_limitations": [
                 "Related actions remain one episode; their repeated directions do not create multiple independent positions."
               ],
@@ -2501,7 +2435,7 @@
       "review_route": "sampled_audit",
       "schema_version": "member_action_overlay_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_action_overlay",
@@ -2510,12 +2444,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "6f863fd2ff7b7a86f588e902880cc83ffe6f210f9fbd448f27d65ba1508409b4",
+      "content_sha256": "bc33256537ce36c040cb2c58ac46213c87639171544e7572c8a77700c4189467",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "C001059",
-      "natural_key": "c001059:environment-energy:commissioning-v1-final-composition:overlay",
+      "natural_key": "c001059:environment-energy:commissioning-v1-corrected:overlay",
       "payload": {
         "overlay": {
           "coverage": {
@@ -2544,7 +2478,7 @@
               "coverage_status": "complete",
               "episode_id": "fy2026-energy-water-interior-appropriations",
               "mechanism_family": "annual-appropriations",
-              "member_trajectory": "Recorded Yea/Yea across Divisions B-C retention and final package passage; the related actions count as one episode.",
+              "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
               "package_vote_limitations": [
                 "Related actions remain one episode; their repeated directions do not create multiple independent positions."
               ],
@@ -2817,7 +2751,7 @@
       "review_route": "standard_generation",
       "schema_version": "member_action_overlay_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_action_overlay",
@@ -2826,12 +2760,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "15875915b2b95aafb196e39962c320110c81c640220f30fe0d7115d9598fabd7",
+      "content_sha256": "b791688fd751c56140fb878bdc954ca12a13a57cdb7bd7d6b43bd74e95683093",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "F000466",
-      "natural_key": "f000466:environment-energy:commissioning-v1-final-composition:overlay",
+      "natural_key": "f000466:environment-energy:commissioning-v1-corrected:overlay",
       "payload": {
         "overlay": {
           "coverage": {
@@ -2860,7 +2794,7 @@
               "coverage_status": "complete",
               "episode_id": "fy2026-energy-water-interior-appropriations",
               "mechanism_family": "annual-appropriations",
-              "member_trajectory": "Recorded Yea/Yea across Divisions B-C retention and final package passage; the related actions count as one episode.",
+              "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
               "package_vote_limitations": [
                 "Related actions remain one episode; their repeated directions do not create multiple independent positions."
               ],
@@ -3133,7 +3067,7 @@
       "review_route": "standard_generation",
       "schema_version": "member_action_overlay_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_action_overlay",
@@ -3142,12 +3076,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "551e73d07771d03154e048125d5dd6f9176e4aff31dc8d4b44eb5f86e97db09f",
+      "content_sha256": "0ad5c8f7b27fab6a85429b49c080cefc2d31548a89cfdb574accc52f61d79a27",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "H001095",
-      "natural_key": "h001095:environment-energy:commissioning-v1-final-composition:overlay",
+      "natural_key": "h001095:environment-energy:commissioning-v1-corrected:overlay",
       "payload": {
         "overlay": {
           "coverage": {
@@ -3176,7 +3110,7 @@
               "coverage_status": "partial",
               "episode_id": "fy2026-energy-water-interior-appropriations",
               "mechanism_family": "annual-appropriations",
-              "member_trajectory": "The Divisions B-C retention and final package passage trajectory is incomplete because at least one action is Present, Not Voting, outside service, or missing.",
+              "member_trajectory": "The the Divisions B-C retention vote and final package passage trajectory is incomplete because at least one action is Present, Not Voting, outside service, or missing.",
               "package_vote_limitations": [],
               "practical_policy_direction": "No episode theme is inferred from the incomplete signature.",
               "relationship_to_repeated_stages": "2 related actions are evaluated as one appropriations trajectory.",
@@ -3427,7 +3361,7 @@
       "review_route": "human_exception",
       "schema_version": "member_action_overlay_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_action_overlay",
@@ -3436,12 +3370,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "27082056f9cb77a24dcbde1d2d570983703f7de315ee570800469ddfb344f41a",
+      "content_sha256": "e51de90f32f635b40c2e5e70b4a9bff1354ce003e99659ba539d85352897df45",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "J000288",
-      "natural_key": "j000288:environment-energy:commissioning-v1-final-composition:overlay",
+      "natural_key": "j000288:environment-energy:commissioning-v1-corrected:overlay",
       "payload": {
         "overlay": {
           "coverage": {
@@ -3470,7 +3404,7 @@
               "coverage_status": "complete",
               "episode_id": "fy2026-energy-water-interior-appropriations",
               "mechanism_family": "annual-appropriations",
-              "member_trajectory": "Recorded Nay/Nay across Divisions B-C retention and final package passage; the related actions count as one episode.",
+              "member_trajectory": "Recorded Nay/Nay across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
               "package_vote_limitations": [
                 "Related actions remain one episode; their repeated directions do not create multiple independent positions."
               ],
@@ -3743,7 +3677,7 @@
       "review_route": "sampled_audit",
       "schema_version": "member_action_overlay_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_action_overlay",
@@ -3752,12 +3686,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "e78071ba6a70a621c6942da5b72ae19ef07abb2377b5775fdd87e68943e6d874",
+      "content_sha256": "ba75a670f73e627359e43f573a8f0fe872a4ce969fa02cf36647cce29d27ee1a",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001214",
-      "natural_key": "m001214:environment-energy:commissioning-v1-final-composition:overlay",
+      "natural_key": "m001214:environment-energy:commissioning-v1-corrected:overlay",
       "payload": {
         "overlay": {
           "coverage": {
@@ -3786,7 +3720,7 @@
               "coverage_status": "complete",
               "episode_id": "fy2026-energy-water-interior-appropriations",
               "mechanism_family": "annual-appropriations",
-              "member_trajectory": "Recorded Yea/Yea across Divisions B-C retention and final package passage; the related actions count as one episode.",
+              "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
               "package_vote_limitations": [
                 "Related actions remain one episode; their repeated directions do not create multiple independent positions."
               ],
@@ -4059,7 +3993,7 @@
       "review_route": "standard_generation",
       "schema_version": "member_action_overlay_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_action_overlay",
@@ -4068,12 +4002,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "6211becc240d51163e6bda25b24e935a41d0d47cda4bfb32d65e9f1192769d2c",
+      "content_sha256": "abd9fdc240cbd8562cb53e065f831915a6733b979408ff12f9fdeea5eb2a85d8",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001231",
-      "natural_key": "m001231:environment-energy:commissioning-v1-final-composition:overlay",
+      "natural_key": "m001231:environment-energy:commissioning-v1-corrected:overlay",
       "payload": {
         "overlay": {
           "coverage": {
@@ -4102,7 +4036,7 @@
               "coverage_status": "complete",
               "episode_id": "fy2026-energy-water-interior-appropriations",
               "mechanism_family": "annual-appropriations",
-              "member_trajectory": "Recorded Yea/Yea across Divisions B-C retention and final package passage; the related actions count as one episode.",
+              "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
               "package_vote_limitations": [
                 "Related actions remain one episode; their repeated directions do not create multiple independent positions."
               ],
@@ -4375,7 +4309,7 @@
       "review_route": "standard_generation",
       "schema_version": "member_action_overlay_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_episode_trajectory",
@@ -4384,12 +4318,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "4ea73ebda59e56925559a74246c55571f270def9d8444067370e8f5ef762c17c",
+      "content_sha256": "014333e9006fd3e284cb9e74f23555a81f34989e460530f10e42bcd16bdaa360",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "A000372",
-      "natural_key": "a000372:environment-energy:commissioning-v1-final-composition:trajectory",
+      "natural_key": "a000372:environment-energy:commissioning-v1-corrected:trajectory",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -4432,7 +4366,7 @@
             "coverage_status": "complete",
             "episode_id": "fy2026-energy-water-interior-appropriations",
             "mechanism_family": "annual-appropriations",
-            "member_trajectory": "Recorded Yea/Yea across Divisions B-C retention and final package passage; the related actions count as one episode.",
+            "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
             "package_vote_limitations": [
               "Related actions remain one episode; their repeated directions do not create multiple independent positions."
             ],
@@ -4566,7 +4500,7 @@
       "review_route": "sampled_audit",
       "schema_version": "member_episode_trajectory_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_episode_trajectory",
@@ -4575,12 +4509,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "56b7c8e9a6adc8fddfb91c9171e416ba695750168defa5152614b4f00286be8a",
+      "content_sha256": "1644db03a5e8f2be581ed4383299b45d51d3beb42e510919b1decfd977de4642",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "C001059",
-      "natural_key": "c001059:environment-energy:commissioning-v1-final-composition:trajectory",
+      "natural_key": "c001059:environment-energy:commissioning-v1-corrected:trajectory",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -4623,7 +4557,7 @@
             "coverage_status": "complete",
             "episode_id": "fy2026-energy-water-interior-appropriations",
             "mechanism_family": "annual-appropriations",
-            "member_trajectory": "Recorded Yea/Yea across Divisions B-C retention and final package passage; the related actions count as one episode.",
+            "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
             "package_vote_limitations": [
               "Related actions remain one episode; their repeated directions do not create multiple independent positions."
             ],
@@ -4757,7 +4691,7 @@
       "review_route": "standard_generation",
       "schema_version": "member_episode_trajectory_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_episode_trajectory",
@@ -4766,12 +4700,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "6ac069a0630445c866d5c5f5ffe08685df55d8ce4606fb670af574c49121a8cd",
+      "content_sha256": "2978589e266b248453075234fb1448fb754c2d40023da53711e110ca3abbf769",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "F000466",
-      "natural_key": "f000466:environment-energy:commissioning-v1-final-composition:trajectory",
+      "natural_key": "f000466:environment-energy:commissioning-v1-corrected:trajectory",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -4814,7 +4748,7 @@
             "coverage_status": "complete",
             "episode_id": "fy2026-energy-water-interior-appropriations",
             "mechanism_family": "annual-appropriations",
-            "member_trajectory": "Recorded Yea/Yea across Divisions B-C retention and final package passage; the related actions count as one episode.",
+            "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
             "package_vote_limitations": [
               "Related actions remain one episode; their repeated directions do not create multiple independent positions."
             ],
@@ -4948,7 +4882,7 @@
       "review_route": "standard_generation",
       "schema_version": "member_episode_trajectory_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_episode_trajectory",
@@ -4957,12 +4891,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "186d55fd04b0e3d28d332075c437bd04917c597c7a00705d255151a4121f0968",
+      "content_sha256": "afd8c5e0c3561f98eb98d637cb4143e126368a84f6c647e3da449a02feb29f14",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "H001095",
-      "natural_key": "h001095:environment-energy:commissioning-v1-final-composition:trajectory",
+      "natural_key": "h001095:environment-energy:commissioning-v1-corrected:trajectory",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -5005,7 +4939,7 @@
             "coverage_status": "partial",
             "episode_id": "fy2026-energy-water-interior-appropriations",
             "mechanism_family": "annual-appropriations",
-            "member_trajectory": "The Divisions B-C retention and final package passage trajectory is incomplete because at least one action is Present, Not Voting, outside service, or missing.",
+            "member_trajectory": "The the Divisions B-C retention vote and final package passage trajectory is incomplete because at least one action is Present, Not Voting, outside service, or missing.",
             "package_vote_limitations": [],
             "practical_policy_direction": "No episode theme is inferred from the incomplete signature.",
             "relationship_to_repeated_stages": "2 related actions are evaluated as one appropriations trajectory.",
@@ -5117,7 +5051,7 @@
       "review_route": "human_exception",
       "schema_version": "member_episode_trajectory_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_episode_trajectory",
@@ -5126,12 +5060,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "9a9b2bc48d438ff0f91263854682c9665d34b8fdb08eb2c188ff8260848da2b8",
+      "content_sha256": "25a2cbcff6124ed9e56505bc76c78c14145599c9d834c848d0bbd1fc18ceaab9",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "J000288",
-      "natural_key": "j000288:environment-energy:commissioning-v1-final-composition:trajectory",
+      "natural_key": "j000288:environment-energy:commissioning-v1-corrected:trajectory",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -5174,7 +5108,7 @@
             "coverage_status": "complete",
             "episode_id": "fy2026-energy-water-interior-appropriations",
             "mechanism_family": "annual-appropriations",
-            "member_trajectory": "Recorded Nay/Nay across Divisions B-C retention and final package passage; the related actions count as one episode.",
+            "member_trajectory": "Recorded Nay/Nay across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
             "package_vote_limitations": [
               "Related actions remain one episode; their repeated directions do not create multiple independent positions."
             ],
@@ -5308,7 +5242,7 @@
       "review_route": "sampled_audit",
       "schema_version": "member_episode_trajectory_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_episode_trajectory",
@@ -5317,12 +5251,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "6ac069a0630445c866d5c5f5ffe08685df55d8ce4606fb670af574c49121a8cd",
+      "content_sha256": "2978589e266b248453075234fb1448fb754c2d40023da53711e110ca3abbf769",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001214",
-      "natural_key": "m001214:environment-energy:commissioning-v1-final-composition:trajectory",
+      "natural_key": "m001214:environment-energy:commissioning-v1-corrected:trajectory",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -5365,7 +5299,7 @@
             "coverage_status": "complete",
             "episode_id": "fy2026-energy-water-interior-appropriations",
             "mechanism_family": "annual-appropriations",
-            "member_trajectory": "Recorded Yea/Yea across Divisions B-C retention and final package passage; the related actions count as one episode.",
+            "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
             "package_vote_limitations": [
               "Related actions remain one episode; their repeated directions do not create multiple independent positions."
             ],
@@ -5499,7 +5433,7 @@
       "review_route": "standard_generation",
       "schema_version": "member_episode_trajectory_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "member_episode_trajectory",
@@ -5508,12 +5442,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "1f83a0b1548fa5088c9892f2c7052ab964a6ac39519263843c16e0ee2e85ccc2",
+      "content_sha256": "e9f15b1e94cc1312c5311c427586c4628ca746dfd9a16d5b0bd6ed5d3901feaf",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001231",
-      "natural_key": "m001231:environment-energy:commissioning-v1-final-composition:trajectory",
+      "natural_key": "m001231:environment-energy:commissioning-v1-corrected:trajectory",
       "payload": {
         "coverage": {
           "expected_in_service_actions": 7,
@@ -5556,7 +5490,7 @@
             "coverage_status": "complete",
             "episode_id": "fy2026-energy-water-interior-appropriations",
             "mechanism_family": "annual-appropriations",
-            "member_trajectory": "Recorded Yea/Yea across Divisions B-C retention and final package passage; the related actions count as one episode.",
+            "member_trajectory": "Recorded Yea/Yea across the Divisions B-C retention vote and final package passage; the related actions count as one episode.",
             "package_vote_limitations": [
               "Related actions remain one episode; their repeated directions do not create multiple independent positions."
             ],
@@ -5690,7 +5624,7 @@
       "review_route": "standard_generation",
       "schema_version": "member_episode_trajectory_artifact_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "policy_episode",
@@ -5704,7 +5638,7 @@
       "episode_id": "critical-mineral-project-acceleration",
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:episode:critical-mineral-project-acceleration",
+      "natural_key": "environment-energy:commissioning-v1-corrected:episode:critical-mineral-project-acceleration",
       "payload": {
         "episode": {
           "counted_as_independent_episodes": 1,
@@ -5727,7 +5661,7 @@
       "review_route": "standard_generation",
       "schema_version": "editorial_policy_episode_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "policy_episode",
@@ -5741,7 +5675,7 @@
       "episode_id": "critical-mineral-supply-assessment-and-strategy",
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:episode:critical-mineral-supply-assessment-and-strategy",
+      "natural_key": "environment-energy:commissioning-v1-corrected:episode:critical-mineral-supply-assessment-and-strategy",
       "payload": {
         "episode": {
           "counted_as_independent_episodes": 1,
@@ -5764,7 +5698,7 @@
       "review_route": "standard_generation",
       "schema_version": "editorial_policy_episode_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "policy_episode",
@@ -5778,7 +5712,7 @@
       "episode_id": "fy2026-energy-water-interior-appropriations",
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:episode:fy2026-energy-water-interior-appropriations",
+      "natural_key": "environment-energy:commissioning-v1-corrected:episode:fy2026-energy-water-interior-appropriations",
       "payload": {
         "episode": {
           "counted_as_independent_episodes": 1,
@@ -5801,7 +5735,7 @@
       "review_route": "human_exception",
       "schema_version": "editorial_policy_episode_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "policy_episode",
@@ -5815,7 +5749,7 @@
       "episode_id": "home-energy-efficiency-rulemaking",
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:episode:home-energy-efficiency-rulemaking",
+      "natural_key": "environment-energy:commissioning-v1-corrected:episode:home-energy-efficiency-rulemaking",
       "payload": {
         "episode": {
           "counted_as_independent_episodes": 1,
@@ -5838,7 +5772,7 @@
       "review_route": "standard_generation",
       "schema_version": "editorial_policy_episode_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "policy_episode",
@@ -5852,7 +5786,7 @@
       "episode_id": "home-energy-program-repeal",
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:episode:home-energy-program-repeal",
+      "natural_key": "environment-energy:commissioning-v1-corrected:episode:home-energy-program-repeal",
       "payload": {
         "episode": {
           "counted_as_independent_episodes": 1,
@@ -5875,7 +5809,7 @@
       "review_route": "standard_generation",
       "schema_version": "editorial_policy_episode_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "policy_episode",
@@ -5889,7 +5823,7 @@
       "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:episode:lead-ammunition-and-tackle-on-federal-lands",
+      "natural_key": "environment-energy:commissioning-v1-corrected:episode:lead-ammunition-and-tackle-on-federal-lands",
       "payload": {
         "episode": {
           "counted_as_independent_episodes": 1,
@@ -5911,7 +5845,7 @@
       "review_route": "standard_generation",
       "schema_version": "editorial_policy_episode_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "policy_family",
@@ -5925,7 +5859,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:policy-family:critical-mineral-supply",
+      "natural_key": "environment-energy:commissioning-v1-corrected:policy-family:critical-mineral-supply",
       "payload": {
         "episode_ids": [
           "critical-mineral-project-acceleration",
@@ -5941,7 +5875,7 @@
       "review_route": "standard_generation",
       "schema_version": "commissioning_policy_family_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "policy_family",
@@ -5955,7 +5889,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:policy-family:home-energy-policy",
+      "natural_key": "environment-energy:commissioning-v1-corrected:policy-family:home-energy-policy",
       "payload": {
         "episode_ids": [
           "home-energy-efficiency-rulemaking",
@@ -5971,7 +5905,7 @@
       "review_route": "standard_generation",
       "schema_version": "commissioning_policy_family_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "policy_trait_contract",
@@ -5980,12 +5914,12 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "dcdf0e68366d27297810779ba09989a75c9847e8d30c23c7d708f6de60de940d",
+      "content_sha256": "997f7465970b8dd7af29c326f518926639d492934549a7b10a27a49430b1f834",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:traits",
+      "natural_key": "environment-energy:commissioning-v1-corrected:traits",
       "payload": {
         "action_traits": {
           "55": {
@@ -6056,11 +5990,6 @@
             "relationship": "contrasts"
           }
         ],
-        "episode_reader_phrases": {
-          "fy2026-energy-water-interior-appropriations": "the appropriations stages",
-          "lead-ammunition-and-tackle-on-federal-lands": "the federal-land proposal"
-        },
-        "final_composition_contract": "v1",
         "new_relationship_types": [],
         "new_trait_types": [],
         "new_trait_values": [
@@ -6103,7 +6032,6 @@
             ]
           }
         },
-        "policy_domain_display": "Environment & Energy",
         "policy_domain_label": "environment-and-energy",
         "schema_version": "member_neutral_policy_traits_v1"
       },
@@ -6112,7 +6040,7 @@
       "review_route": "human_exception",
       "schema_version": "member_neutral_policy_traits_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "reference_fixture_metadata",
@@ -6121,14 +6049,14 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "ce0509fbecbe1558a9ebbd761c7ce1a39b272643f5d45f9fdcbec3bd2da1bbc7",
+      "content_sha256": "f7396ad959043f308725c8e8972d7b3d428c9248bd1a5f0bca34291fc74db91e",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "A000372",
-      "natural_key": "a000372:environment-energy:commissioning-v1-final-composition:reference",
+      "natural_key": "a000372:environment-energy:commissioning-v1-corrected:reference",
       "payload": {
-        "corpus_version": "commissioning-domain-environment-energy-final-composition-v3",
+        "corpus_version": "commissioning-domain-environment-energy-corrected-v2",
         "designation": "review_only_commissioning_cohort",
         "schema_version": "commissioning_reference_fixture_v1",
         "shared_review_dependencies": {
@@ -6151,7 +6079,7 @@
       "review_route": "sampled_audit",
       "schema_version": "commissioning_reference_fixture_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "reference_fixture_metadata",
@@ -6160,14 +6088,14 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "ce0509fbecbe1558a9ebbd761c7ce1a39b272643f5d45f9fdcbec3bd2da1bbc7",
+      "content_sha256": "f7396ad959043f308725c8e8972d7b3d428c9248bd1a5f0bca34291fc74db91e",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "C001059",
-      "natural_key": "c001059:environment-energy:commissioning-v1-final-composition:reference",
+      "natural_key": "c001059:environment-energy:commissioning-v1-corrected:reference",
       "payload": {
-        "corpus_version": "commissioning-domain-environment-energy-final-composition-v3",
+        "corpus_version": "commissioning-domain-environment-energy-corrected-v2",
         "designation": "review_only_commissioning_cohort",
         "schema_version": "commissioning_reference_fixture_v1",
         "shared_review_dependencies": {
@@ -6190,7 +6118,7 @@
       "review_route": "standard_generation",
       "schema_version": "commissioning_reference_fixture_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "reference_fixture_metadata",
@@ -6199,14 +6127,14 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "ce0509fbecbe1558a9ebbd761c7ce1a39b272643f5d45f9fdcbec3bd2da1bbc7",
+      "content_sha256": "f7396ad959043f308725c8e8972d7b3d428c9248bd1a5f0bca34291fc74db91e",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "F000466",
-      "natural_key": "f000466:environment-energy:commissioning-v1-final-composition:reference",
+      "natural_key": "f000466:environment-energy:commissioning-v1-corrected:reference",
       "payload": {
-        "corpus_version": "commissioning-domain-environment-energy-final-composition-v3",
+        "corpus_version": "commissioning-domain-environment-energy-corrected-v2",
         "designation": "review_only_commissioning_cohort",
         "schema_version": "commissioning_reference_fixture_v1",
         "shared_review_dependencies": {
@@ -6229,7 +6157,7 @@
       "review_route": "standard_generation",
       "schema_version": "commissioning_reference_fixture_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "reference_fixture_metadata",
@@ -6238,14 +6166,14 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "ce0509fbecbe1558a9ebbd761c7ce1a39b272643f5d45f9fdcbec3bd2da1bbc7",
+      "content_sha256": "f7396ad959043f308725c8e8972d7b3d428c9248bd1a5f0bca34291fc74db91e",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "H001095",
-      "natural_key": "h001095:environment-energy:commissioning-v1-final-composition:reference",
+      "natural_key": "h001095:environment-energy:commissioning-v1-corrected:reference",
       "payload": {
-        "corpus_version": "commissioning-domain-environment-energy-final-composition-v3",
+        "corpus_version": "commissioning-domain-environment-energy-corrected-v2",
         "designation": "review_only_commissioning_cohort",
         "schema_version": "commissioning_reference_fixture_v1",
         "shared_review_dependencies": {
@@ -6268,7 +6196,7 @@
       "review_route": "human_exception",
       "schema_version": "commissioning_reference_fixture_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "reference_fixture_metadata",
@@ -6277,14 +6205,14 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "ce0509fbecbe1558a9ebbd761c7ce1a39b272643f5d45f9fdcbec3bd2da1bbc7",
+      "content_sha256": "f7396ad959043f308725c8e8972d7b3d428c9248bd1a5f0bca34291fc74db91e",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "J000288",
-      "natural_key": "j000288:environment-energy:commissioning-v1-final-composition:reference",
+      "natural_key": "j000288:environment-energy:commissioning-v1-corrected:reference",
       "payload": {
-        "corpus_version": "commissioning-domain-environment-energy-final-composition-v3",
+        "corpus_version": "commissioning-domain-environment-energy-corrected-v2",
         "designation": "review_only_commissioning_cohort",
         "schema_version": "commissioning_reference_fixture_v1",
         "shared_review_dependencies": {
@@ -6307,7 +6235,7 @@
       "review_route": "sampled_audit",
       "schema_version": "commissioning_reference_fixture_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "reference_fixture_metadata",
@@ -6316,14 +6244,14 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "ce0509fbecbe1558a9ebbd761c7ce1a39b272643f5d45f9fdcbec3bd2da1bbc7",
+      "content_sha256": "f7396ad959043f308725c8e8972d7b3d428c9248bd1a5f0bca34291fc74db91e",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001214",
-      "natural_key": "m001214:environment-energy:commissioning-v1-final-composition:reference",
+      "natural_key": "m001214:environment-energy:commissioning-v1-corrected:reference",
       "payload": {
-        "corpus_version": "commissioning-domain-environment-energy-final-composition-v3",
+        "corpus_version": "commissioning-domain-environment-energy-corrected-v2",
         "designation": "review_only_commissioning_cohort",
         "schema_version": "commissioning_reference_fixture_v1",
         "shared_review_dependencies": {
@@ -6346,7 +6274,7 @@
       "review_route": "standard_generation",
       "schema_version": "commissioning_reference_fixture_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "reference_fixture_metadata",
@@ -6355,14 +6283,14 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "ce0509fbecbe1558a9ebbd761c7ce1a39b272643f5d45f9fdcbec3bd2da1bbc7",
+      "content_sha256": "f7396ad959043f308725c8e8972d7b3d428c9248bd1a5f0bca34291fc74db91e",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001231",
-      "natural_key": "m001231:environment-energy:commissioning-v1-final-composition:reference",
+      "natural_key": "m001231:environment-energy:commissioning-v1-corrected:reference",
       "payload": {
-        "corpus_version": "commissioning-domain-environment-energy-final-composition-v3",
+        "corpus_version": "commissioning-domain-environment-energy-corrected-v2",
         "designation": "review_only_commissioning_cohort",
         "schema_version": "commissioning_reference_fixture_v1",
         "shared_review_dependencies": {
@@ -6385,7 +6313,7 @@
       "review_route": "standard_generation",
       "schema_version": "commissioning_reference_fixture_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "review_routing_result",
@@ -6399,7 +6327,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "A000372",
-      "natural_key": "a000372:environment-energy:commissioning-v1-final-composition:review-route",
+      "natural_key": "a000372:environment-energy:commissioning-v1-corrected:review-route",
       "payload": {
         "human_review_status": "human_approval_pending",
         "route": "sampled_audit",
@@ -6425,7 +6353,7 @@
       "review_route": "sampled_audit",
       "schema_version": "review_routing_result_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "review_routing_result",
@@ -6439,7 +6367,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "C001059",
-      "natural_key": "c001059:environment-energy:commissioning-v1-final-composition:review-route",
+      "natural_key": "c001059:environment-energy:commissioning-v1-corrected:review-route",
       "payload": {
         "human_review_status": "human_approval_pending",
         "route": "standard_generation",
@@ -6465,7 +6393,7 @@
       "review_route": "standard_generation",
       "schema_version": "review_routing_result_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "review_routing_result",
@@ -6479,7 +6407,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "F000466",
-      "natural_key": "f000466:environment-energy:commissioning-v1-final-composition:review-route",
+      "natural_key": "f000466:environment-energy:commissioning-v1-corrected:review-route",
       "payload": {
         "human_review_status": "human_approval_pending",
         "route": "standard_generation",
@@ -6505,7 +6433,7 @@
       "review_route": "standard_generation",
       "schema_version": "review_routing_result_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "review_routing_result",
@@ -6519,7 +6447,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "H001095",
-      "natural_key": "h001095:environment-energy:commissioning-v1-final-composition:review-route",
+      "natural_key": "h001095:environment-energy:commissioning-v1-corrected:review-route",
       "payload": {
         "human_review_status": "human_approval_pending",
         "route": "human_exception",
@@ -6545,7 +6473,7 @@
       "review_route": "human_exception",
       "schema_version": "review_routing_result_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "review_routing_result",
@@ -6559,7 +6487,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "J000288",
-      "natural_key": "j000288:environment-energy:commissioning-v1-final-composition:review-route",
+      "natural_key": "j000288:environment-energy:commissioning-v1-corrected:review-route",
       "payload": {
         "human_review_status": "human_approval_pending",
         "route": "sampled_audit",
@@ -6585,7 +6513,7 @@
       "review_route": "sampled_audit",
       "schema_version": "review_routing_result_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "review_routing_result",
@@ -6599,7 +6527,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001214",
-      "natural_key": "m001214:environment-energy:commissioning-v1-final-composition:review-route",
+      "natural_key": "m001214:environment-energy:commissioning-v1-corrected:review-route",
       "payload": {
         "human_review_status": "human_approval_pending",
         "route": "standard_generation",
@@ -6625,7 +6553,7 @@
       "review_route": "standard_generation",
       "schema_version": "review_routing_result_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "review_routing_result",
@@ -6639,7 +6567,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001231",
-      "natural_key": "m001231:environment-energy:commissioning-v1-final-composition:review-route",
+      "natural_key": "m001231:environment-energy:commissioning-v1-corrected:review-route",
       "payload": {
         "human_review_status": "human_approval_pending",
         "route": "standard_generation",
@@ -6665,7 +6593,7 @@
       "review_route": "standard_generation",
       "schema_version": "review_routing_result_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "shared_action_dossier",
@@ -6679,7 +6607,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:55",
+      "natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:55",
       "payload": {
         "canonical_action_id": "house:119:2:55",
         "dossier": {
@@ -6736,7 +6664,7 @@
       "review_route": "standard_generation",
       "schema_version": "shared_action_dossier_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "shared_action_dossier",
@@ -6750,7 +6678,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:6",
+      "natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:6",
       "payload": {
         "canonical_action_id": "house:119:2:6",
         "dossier": {
@@ -6804,7 +6732,7 @@
       "review_route": "human_exception",
       "schema_version": "shared_action_dossier_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "shared_action_dossier",
@@ -6818,7 +6746,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:64",
+      "natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:64",
       "payload": {
         "canonical_action_id": "house:119:2:64",
         "dossier": {
@@ -6876,7 +6804,7 @@
       "review_route": "standard_generation",
       "schema_version": "shared_action_dossier_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "shared_action_dossier",
@@ -6890,7 +6818,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:7",
+      "natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:7",
       "payload": {
         "canonical_action_id": "house:119:2:7",
         "dossier": {
@@ -6943,7 +6871,7 @@
       "review_route": "human_exception",
       "schema_version": "shared_action_dossier_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "shared_action_dossier",
@@ -6957,7 +6885,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:76",
+      "natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:76",
       "payload": {
         "canonical_action_id": "house:119:2:76",
         "dossier": {
@@ -7014,7 +6942,7 @@
       "review_route": "standard_generation",
       "schema_version": "shared_action_dossier_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "shared_action_dossier",
@@ -7028,7 +6956,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:78",
+      "natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:78",
       "payload": {
         "canonical_action_id": "house:119:2:78",
         "dossier": {
@@ -7086,7 +7014,7 @@
       "review_route": "standard_generation",
       "schema_version": "shared_action_dossier_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "shared_action_dossier",
@@ -7100,7 +7028,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:93",
+      "natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:93",
       "payload": {
         "canonical_action_id": "house:119:2:93",
         "dossier": {
@@ -7159,7 +7087,7 @@
       "review_route": "standard_generation",
       "schema_version": "shared_action_dossier_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "source_manifest",
@@ -7168,14 +7096,14 @@
       "canonical_action_id": null,
       "chamber": "house",
       "congress": 119,
-      "content_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e",
+      "content_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2",
       "editorial_status": "human_approval_pending",
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:source-manifest",
+      "natural_key": "environment-energy:commissioning-v1-corrected:source-manifest",
       "payload": {
-        "content_version": "commissioning-domain-environment-energy-final-composition-v3",
+        "content_version": "commissioning-domain-environment-energy-corrected-v2",
         "human_approval_status": "human_approval_pending",
         "schema_version": "editorial_source_manifest_v1",
         "source_states": [
@@ -7381,7 +7309,7 @@
       "review_route": "standard_generation",
       "schema_version": "editorial_source_manifest_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "standardization_validation_result",
@@ -7395,7 +7323,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "A000372",
-      "natural_key": "a000372:environment-energy:commissioning-v1-final-composition:validation",
+      "natural_key": "a000372:environment-energy:commissioning-v1-corrected:validation",
       "payload": {
         "blocking_findings": 0,
         "review_route": "sampled_audit_candidate",
@@ -7421,7 +7349,7 @@
       "review_route": "sampled_audit",
       "schema_version": "commissioning_standardization_validation_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "standardization_validation_result",
@@ -7435,7 +7363,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "C001059",
-      "natural_key": "c001059:environment-energy:commissioning-v1-final-composition:validation",
+      "natural_key": "c001059:environment-energy:commissioning-v1-corrected:validation",
       "payload": {
         "blocking_findings": 0,
         "review_route": "standard_generation_pass",
@@ -7461,7 +7389,7 @@
       "review_route": "standard_generation",
       "schema_version": "commissioning_standardization_validation_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "standardization_validation_result",
@@ -7475,7 +7403,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "F000466",
-      "natural_key": "f000466:environment-energy:commissioning-v1-final-composition:validation",
+      "natural_key": "f000466:environment-energy:commissioning-v1-corrected:validation",
       "payload": {
         "blocking_findings": 0,
         "review_route": "standard_generation_pass",
@@ -7501,7 +7429,7 @@
       "review_route": "standard_generation",
       "schema_version": "commissioning_standardization_validation_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "standardization_validation_result",
@@ -7515,7 +7443,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "H001095",
-      "natural_key": "h001095:environment-energy:commissioning-v1-final-composition:validation",
+      "natural_key": "h001095:environment-energy:commissioning-v1-corrected:validation",
       "payload": {
         "blocking_findings": 0,
         "review_route": "human_exception_required",
@@ -7541,7 +7469,7 @@
       "review_route": "human_exception",
       "schema_version": "commissioning_standardization_validation_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "standardization_validation_result",
@@ -7555,7 +7483,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "J000288",
-      "natural_key": "j000288:environment-energy:commissioning-v1-final-composition:validation",
+      "natural_key": "j000288:environment-energy:commissioning-v1-corrected:validation",
       "payload": {
         "blocking_findings": 0,
         "review_route": "sampled_audit_candidate",
@@ -7581,7 +7509,7 @@
       "review_route": "sampled_audit",
       "schema_version": "commissioning_standardization_validation_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "standardization_validation_result",
@@ -7595,7 +7523,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001214",
-      "natural_key": "m001214:environment-energy:commissioning-v1-final-composition:validation",
+      "natural_key": "m001214:environment-energy:commissioning-v1-corrected:validation",
       "payload": {
         "blocking_findings": 0,
         "review_route": "standard_generation_pass",
@@ -7621,7 +7549,7 @@
       "review_route": "standard_generation",
       "schema_version": "commissioning_standardization_validation_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "standardization_validation_result",
@@ -7635,7 +7563,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": "M001231",
-      "natural_key": "m001231:environment-energy:commissioning-v1-final-composition:validation",
+      "natural_key": "m001231:environment-energy:commissioning-v1-corrected:validation",
       "payload": {
         "blocking_findings": 0,
         "review_route": "standard_generation_pass",
@@ -7661,7 +7589,7 @@
       "review_route": "standard_generation",
       "schema_version": "commissioning_standardization_validation_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     },
     {
       "artifact_type": "trait_relationship_contract",
@@ -7675,7 +7603,7 @@
       "episode_id": null,
       "issue_id": "ENVIRONMENT_ENERGY",
       "member_bioguide_id": null,
-      "natural_key": "environment-energy:commissioning-v1-final-composition:trait-relationships",
+      "natural_key": "environment-energy:commissioning-v1-corrected:trait-relationships",
       "payload": {
         "new_relationship_types": [],
         "relationships": [
@@ -7704,10 +7632,10 @@
       "review_route": "human_exception",
       "schema_version": "trait_relationship_contract_v1",
       "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-      "source_manifest_sha256": "5aa1fc09d6acf4f48a1c3a357720d45f56db8950efa8aaeac0fc782719eb5e2e"
+      "source_manifest_sha256": "80edace369a678b3b9bdb4067b68a3bd1b9f482dd1f1bcdebbaa092c03c5e2f2"
     }
   ],
-  "deterministic_batch_key": "commissioning-domain-v1-environment-energy-final-composition",
+  "deterministic_batch_key": "commissioning-domain-v1-environment-energy-corrected-six-episode",
   "excluded_artifacts": [
     "all-House evaluation",
     "256 synthetic binary vectors",
@@ -7735,439 +7663,439 @@
     },
     "relationships": 60
   },
-  "manifest_sha256": "3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187",
+  "manifest_sha256": "3e1ecd448f086fae52bd69a74303899940f0e417978a82df34970317052752fc",
   "publication_registry_expected_rows": 0,
   "relationships": [
     {
-      "child_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:propositions",
+      "child_natural_key": "a000372:environment-energy:commissioning-v1-corrected:propositions",
       "metadata": {},
       "ordinal": 2,
-      "parent_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "a000372:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_conclusion_propositions"
     },
     {
-      "child_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:overlay",
+      "child_natural_key": "a000372:environment-energy:commissioning-v1-corrected:overlay",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "a000372:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_member_overlay"
     },
     {
-      "child_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:reference",
+      "child_natural_key": "a000372:environment-energy:commissioning-v1-corrected:reference",
       "metadata": {},
       "ordinal": 4,
-      "parent_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "a000372:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_reference_metadata"
     },
     {
-      "child_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:review-route",
+      "child_natural_key": "a000372:environment-energy:commissioning-v1-corrected:review-route",
       "metadata": {},
       "ordinal": 5,
-      "parent_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "a000372:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_review_route"
     },
     {
-      "child_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:trajectory",
+      "child_natural_key": "a000372:environment-energy:commissioning-v1-corrected:trajectory",
       "metadata": {},
       "ordinal": 1,
-      "parent_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "a000372:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_trajectory"
     },
     {
-      "child_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:validation",
+      "child_natural_key": "a000372:environment-energy:commissioning-v1-corrected:validation",
       "metadata": {},
       "ordinal": 3,
-      "parent_natural_key": "a000372:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "a000372:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_validation"
     },
     {
-      "child_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:propositions",
+      "child_natural_key": "c001059:environment-energy:commissioning-v1-corrected:propositions",
       "metadata": {},
       "ordinal": 2,
-      "parent_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "c001059:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_conclusion_propositions"
     },
     {
-      "child_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:overlay",
+      "child_natural_key": "c001059:environment-energy:commissioning-v1-corrected:overlay",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "c001059:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_member_overlay"
     },
     {
-      "child_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:reference",
+      "child_natural_key": "c001059:environment-energy:commissioning-v1-corrected:reference",
       "metadata": {},
       "ordinal": 4,
-      "parent_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "c001059:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_reference_metadata"
     },
     {
-      "child_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:review-route",
+      "child_natural_key": "c001059:environment-energy:commissioning-v1-corrected:review-route",
       "metadata": {},
       "ordinal": 5,
-      "parent_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "c001059:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_review_route"
     },
     {
-      "child_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:trajectory",
+      "child_natural_key": "c001059:environment-energy:commissioning-v1-corrected:trajectory",
       "metadata": {},
       "ordinal": 1,
-      "parent_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "c001059:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_trajectory"
     },
     {
-      "child_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:validation",
+      "child_natural_key": "c001059:environment-energy:commissioning-v1-corrected:validation",
       "metadata": {},
       "ordinal": 3,
-      "parent_natural_key": "c001059:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "c001059:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_validation"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:55",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:55",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:episode:critical-mineral-project-acceleration",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:episode:critical-mineral-project-acceleration",
       "relationship_type": "contains_action"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:64",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:64",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:episode:critical-mineral-supply-assessment-and-strategy",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:episode:critical-mineral-supply-assessment-and-strategy",
       "relationship_type": "contains_action"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:6",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:6",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:episode:fy2026-energy-water-interior-appropriations",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:episode:fy2026-energy-water-interior-appropriations",
       "relationship_type": "contains_action"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:7",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:7",
       "metadata": {},
       "ordinal": 1,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:episode:fy2026-energy-water-interior-appropriations",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:episode:fy2026-energy-water-interior-appropriations",
       "relationship_type": "contains_action"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:76",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:76",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:episode:home-energy-efficiency-rulemaking",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:episode:home-energy-efficiency-rulemaking",
       "relationship_type": "contains_action"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:78",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:78",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:episode:home-energy-program-repeal",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:episode:home-energy-program-repeal",
       "relationship_type": "contains_action"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:93",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:93",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:episode:lead-ammunition-and-tackle-on-federal-lands",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:episode:lead-ammunition-and-tackle-on-federal-lands",
       "relationship_type": "contains_action"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:source-manifest",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:source-manifest",
       "metadata": {},
       "ordinal": 55,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:55",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:55",
       "relationship_type": "uses_source_manifest"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:source-manifest",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:source-manifest",
       "metadata": {},
       "ordinal": 6,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:6",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:6",
       "relationship_type": "uses_source_manifest"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:source-manifest",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:source-manifest",
       "metadata": {},
       "ordinal": 64,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:64",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:64",
       "relationship_type": "uses_source_manifest"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:source-manifest",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:source-manifest",
       "metadata": {},
       "ordinal": 7,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:7",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:7",
       "relationship_type": "uses_source_manifest"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:source-manifest",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:source-manifest",
       "metadata": {},
       "ordinal": 76,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:76",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:76",
       "relationship_type": "uses_source_manifest"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:source-manifest",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:source-manifest",
       "metadata": {},
       "ordinal": 78,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:78",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:78",
       "relationship_type": "uses_source_manifest"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:source-manifest",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:source-manifest",
       "metadata": {},
       "ordinal": 93,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:house:119:2:93",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:house:119:2:93",
       "relationship_type": "uses_source_manifest"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:episode:critical-mineral-project-acceleration",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:episode:critical-mineral-project-acceleration",
       "metadata": {
         "episode_independence": "separate_bill",
         "vote_direction_used_for_grouping": false
       },
       "ordinal": 0,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:policy-family:critical-mineral-supply",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:policy-family:critical-mineral-supply",
       "relationship_type": "groups_episode"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:episode:critical-mineral-supply-assessment-and-strategy",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:episode:critical-mineral-supply-assessment-and-strategy",
       "metadata": {
         "episode_independence": "separate_bill",
         "vote_direction_used_for_grouping": false
       },
       "ordinal": 1,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:policy-family:critical-mineral-supply",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:policy-family:critical-mineral-supply",
       "relationship_type": "groups_episode"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:episode:home-energy-efficiency-rulemaking",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:episode:home-energy-efficiency-rulemaking",
       "metadata": {
         "episode_independence": "separate_bill",
         "vote_direction_used_for_grouping": false
       },
       "ordinal": 0,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:policy-family:home-energy-policy",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:policy-family:home-energy-policy",
       "relationship_type": "groups_episode"
     },
     {
-      "child_natural_key": "environment-energy:commissioning-v1-final-composition:episode:home-energy-program-repeal",
+      "child_natural_key": "environment-energy:commissioning-v1-corrected:episode:home-energy-program-repeal",
       "metadata": {
         "episode_independence": "separate_bill",
         "vote_direction_used_for_grouping": false
       },
       "ordinal": 1,
-      "parent_natural_key": "environment-energy:commissioning-v1-final-composition:policy-family:home-energy-policy",
+      "parent_natural_key": "environment-energy:commissioning-v1-corrected:policy-family:home-energy-policy",
       "relationship_type": "groups_episode"
     },
     {
-      "child_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:propositions",
+      "child_natural_key": "f000466:environment-energy:commissioning-v1-corrected:propositions",
       "metadata": {},
       "ordinal": 2,
-      "parent_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "f000466:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_conclusion_propositions"
     },
     {
-      "child_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:overlay",
+      "child_natural_key": "f000466:environment-energy:commissioning-v1-corrected:overlay",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "f000466:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_member_overlay"
     },
     {
-      "child_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:reference",
+      "child_natural_key": "f000466:environment-energy:commissioning-v1-corrected:reference",
       "metadata": {},
       "ordinal": 4,
-      "parent_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "f000466:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_reference_metadata"
     },
     {
-      "child_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:review-route",
+      "child_natural_key": "f000466:environment-energy:commissioning-v1-corrected:review-route",
       "metadata": {},
       "ordinal": 5,
-      "parent_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "f000466:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_review_route"
     },
     {
-      "child_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:trajectory",
+      "child_natural_key": "f000466:environment-energy:commissioning-v1-corrected:trajectory",
       "metadata": {},
       "ordinal": 1,
-      "parent_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "f000466:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_trajectory"
     },
     {
-      "child_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:validation",
+      "child_natural_key": "f000466:environment-energy:commissioning-v1-corrected:validation",
       "metadata": {},
       "ordinal": 3,
-      "parent_natural_key": "f000466:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "f000466:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_validation"
     },
     {
-      "child_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:propositions",
+      "child_natural_key": "h001095:environment-energy:commissioning-v1-corrected:propositions",
       "metadata": {},
       "ordinal": 2,
-      "parent_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "h001095:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_conclusion_propositions"
     },
     {
-      "child_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:overlay",
+      "child_natural_key": "h001095:environment-energy:commissioning-v1-corrected:overlay",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "h001095:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_member_overlay"
     },
     {
-      "child_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:reference",
+      "child_natural_key": "h001095:environment-energy:commissioning-v1-corrected:reference",
       "metadata": {},
       "ordinal": 4,
-      "parent_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "h001095:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_reference_metadata"
     },
     {
-      "child_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:review-route",
+      "child_natural_key": "h001095:environment-energy:commissioning-v1-corrected:review-route",
       "metadata": {},
       "ordinal": 5,
-      "parent_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "h001095:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_review_route"
     },
     {
-      "child_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:trajectory",
+      "child_natural_key": "h001095:environment-energy:commissioning-v1-corrected:trajectory",
       "metadata": {},
       "ordinal": 1,
-      "parent_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "h001095:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_trajectory"
     },
     {
-      "child_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:validation",
+      "child_natural_key": "h001095:environment-energy:commissioning-v1-corrected:validation",
       "metadata": {},
       "ordinal": 3,
-      "parent_natural_key": "h001095:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "h001095:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_validation"
     },
     {
-      "child_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:propositions",
+      "child_natural_key": "j000288:environment-energy:commissioning-v1-corrected:propositions",
       "metadata": {},
       "ordinal": 2,
-      "parent_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "j000288:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_conclusion_propositions"
     },
     {
-      "child_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:overlay",
+      "child_natural_key": "j000288:environment-energy:commissioning-v1-corrected:overlay",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "j000288:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_member_overlay"
     },
     {
-      "child_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:reference",
+      "child_natural_key": "j000288:environment-energy:commissioning-v1-corrected:reference",
       "metadata": {},
       "ordinal": 4,
-      "parent_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "j000288:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_reference_metadata"
     },
     {
-      "child_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:review-route",
+      "child_natural_key": "j000288:environment-energy:commissioning-v1-corrected:review-route",
       "metadata": {},
       "ordinal": 5,
-      "parent_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "j000288:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_review_route"
     },
     {
-      "child_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:trajectory",
+      "child_natural_key": "j000288:environment-energy:commissioning-v1-corrected:trajectory",
       "metadata": {},
       "ordinal": 1,
-      "parent_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "j000288:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_trajectory"
     },
     {
-      "child_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:validation",
+      "child_natural_key": "j000288:environment-energy:commissioning-v1-corrected:validation",
       "metadata": {},
       "ordinal": 3,
-      "parent_natural_key": "j000288:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "j000288:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_validation"
     },
     {
-      "child_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:propositions",
+      "child_natural_key": "m001214:environment-energy:commissioning-v1-corrected:propositions",
       "metadata": {},
       "ordinal": 2,
-      "parent_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001214:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_conclusion_propositions"
     },
     {
-      "child_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:overlay",
+      "child_natural_key": "m001214:environment-energy:commissioning-v1-corrected:overlay",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001214:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_member_overlay"
     },
     {
-      "child_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:reference",
+      "child_natural_key": "m001214:environment-energy:commissioning-v1-corrected:reference",
       "metadata": {},
       "ordinal": 4,
-      "parent_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001214:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_reference_metadata"
     },
     {
-      "child_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:review-route",
+      "child_natural_key": "m001214:environment-energy:commissioning-v1-corrected:review-route",
       "metadata": {},
       "ordinal": 5,
-      "parent_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001214:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_review_route"
     },
     {
-      "child_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:trajectory",
+      "child_natural_key": "m001214:environment-energy:commissioning-v1-corrected:trajectory",
       "metadata": {},
       "ordinal": 1,
-      "parent_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001214:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_trajectory"
     },
     {
-      "child_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:validation",
+      "child_natural_key": "m001214:environment-energy:commissioning-v1-corrected:validation",
       "metadata": {},
       "ordinal": 3,
-      "parent_natural_key": "m001214:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001214:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_validation"
     },
     {
-      "child_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:propositions",
+      "child_natural_key": "m001231:environment-energy:commissioning-v1-corrected:propositions",
       "metadata": {},
       "ordinal": 2,
-      "parent_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001231:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_conclusion_propositions"
     },
     {
-      "child_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:overlay",
+      "child_natural_key": "m001231:environment-energy:commissioning-v1-corrected:overlay",
       "metadata": {},
       "ordinal": 0,
-      "parent_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001231:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_member_overlay"
     },
     {
-      "child_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:reference",
+      "child_natural_key": "m001231:environment-energy:commissioning-v1-corrected:reference",
       "metadata": {},
       "ordinal": 4,
-      "parent_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001231:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_reference_metadata"
     },
     {
-      "child_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:review-route",
+      "child_natural_key": "m001231:environment-energy:commissioning-v1-corrected:review-route",
       "metadata": {},
       "ordinal": 5,
-      "parent_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001231:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_review_route"
     },
     {
-      "child_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:trajectory",
+      "child_natural_key": "m001231:environment-energy:commissioning-v1-corrected:trajectory",
       "metadata": {},
       "ordinal": 1,
-      "parent_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001231:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_trajectory"
     },
     {
-      "child_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:validation",
+      "child_natural_key": "m001231:environment-energy:commissioning-v1-corrected:validation",
       "metadata": {},
       "ordinal": 3,
-      "parent_natural_key": "m001231:environment-energy:commissioning-v1-final-composition:presentation",
+      "parent_natural_key": "m001231:environment-energy:commissioning-v1-corrected:presentation",
       "relationship_type": "has_validation"
     }
   ],
