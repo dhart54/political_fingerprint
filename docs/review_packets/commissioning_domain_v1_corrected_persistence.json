@@ -2,7 +2,7 @@
   "application": {
     "artifacts_idempotent": 0,
     "artifacts_inserted": 69,
-    "batch_id": 9,
+    "batch_id": 7,
     "relationships_inserted": 60
   },
   "batch_key": "commissioning-domain-v1-environment-energy-final-composition",
@@ -27,7 +27,7 @@
     },
     "relationships": 60
   },
-  "manifest_sha256": "3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187",
+  "manifest_sha256": "fbee0675ace2b2e256fe1723681e3bd17dd065c670199367d76e8782b352a600",
   "migration": {
     "additive": true,
     "functions": [
@@ -52,12 +52,12 @@
         "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
       },
       "legislators": {
-        "row_count": 13,
-        "sha256": "7e8a891aaa91781ebe3420046e7426297eb606408bd2e160cee59717fc962f6b"
+        "row_count": 10,
+        "sha256": "f7ae7773b23d19b4fce9b252d099a06ebeec4d40e9540e95c07b3bfa84205aa9"
       },
       "roll_calls": {
-        "row_count": 30,
-        "sha256": "8aef497bd1f5f92a1b5a9c16b99bb69bb4beba53e0afe69b0a7952012c8570b4"
+        "row_count": 29,
+        "sha256": "d35c2427b55fe6d25820a2f344a685919c2f27a961c048b9975a60ee1f8517f3"
       },
       "vote_interpretations": {
         "row_count": 0,
@@ -79,10 +79,10 @@
     "publication_selector_count": 0,
     "roundtrip": {
       "artifact_count": 69,
-      "artifact_semantic_sha256": "66e1b5c6cc32a39b7ce8a8b9fb5f42b2ba538fe036b6eb859b26ac3a9a326ed4",
+      "artifact_semantic_sha256": "57e158f98b0ef0ab15f020cfd31992d73e1222742cfcfaa827574a8eab18974a",
       "relationship_count": 60,
       "relationship_semantic_sha256": "bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21",
-      "repository_artifact_semantic_sha256": "66e1b5c6cc32a39b7ce8a8b9fb5f42b2ba538fe036b6eb859b26ac3a9a326ed4",
+      "repository_artifact_semantic_sha256": "57e158f98b0ef0ab15f020cfd31992d73e1222742cfcfaa827574a8eab18974a",
       "repository_relationship_semantic_sha256": "bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21",
       "semantic_match": true
     },
@@ -590,12 +590,12 @@
         "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
       },
       "legislators": {
-        "row_count": 13,
-        "sha256": "7e8a891aaa91781ebe3420046e7426297eb606408bd2e160cee59717fc962f6b"
+        "row_count": 10,
+        "sha256": "f7ae7773b23d19b4fce9b252d099a06ebeec4d40e9540e95c07b3bfa84205aa9"
       },
       "roll_calls": {
-        "row_count": 30,
-        "sha256": "8aef497bd1f5f92a1b5a9c16b99bb69bb4beba53e0afe69b0a7952012c8570b4"
+        "row_count": 29,
+        "sha256": "d35c2427b55fe6d25820a2f344a685919c2f27a961c048b9975a60ee1f8517f3"
       },
       "vote_interpretations": {
         "row_count": 0,
@@ -623,7 +623,7 @@
     "exact_approved_target": false,
     "host": "127.0.0.1",
     "password_present": false,
-    "port": 55444,
+    "port": 55445,
     "raw_url_recorded": false,
     "scheme": "postgresql",
     "target": "disposable",

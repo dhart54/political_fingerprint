@@ -71,6 +71,22 @@ def _episodes() -> list[dict]:
     appropriations.update({
         "episode_id": "fy2026-energy-water-interior-appropriations",
         "rolls": [6, 7],
+        "structural_metadata": {
+            "structure_type": "multi_action_episode",
+            "action_sequence": [
+                {
+                    "roll": 6,
+                    "stage_structure": "package_stage_retention",
+                    "division_scope": "combined_divisions",
+                },
+                {
+                    "roll": 7,
+                    "stage_structure": "package_final_passage",
+                    "division_scope": "cross_domain_package",
+                },
+            ],
+            "incomplete_status_rendering": "exact_known_action_statuses",
+        },
         "shared_objective": (
             "Retain the Energy-Water and Interior-Environment divisions, then "
             "pass the cross-domain FY2026 appropriations package."
@@ -180,6 +196,16 @@ def _episodes() -> list[dict]:
 def _trait_contract() -> dict:
     contract = copy.deepcopy(original.TRAIT_CONTRACT)
     contract["action_traits"].pop("5", None)
+    contract["action_traits"]["6"]["traits"] = [
+        trait
+        for trait in contract["action_traits"]["6"]["traits"]
+        if trait not in {"package_stage_retention", "combined_divisions"}
+    ]
+    contract["new_trait_values"] = [
+        trait
+        for trait in contract["new_trait_values"]
+        if trait not in {"package_stage_retention", "combined_divisions"}
+    ]
     contract["new_relationship_types"] = []
     contract["policy_domain_display"] = "Environment & Energy"
     contract["final_composition_contract"] = "v1"
@@ -329,6 +355,14 @@ def _configured_original():
         "funding_support",
         "funding_opposition",
     )
+    module.EPISODE_INTERPRETATIONS[
+        "fy2026-energy-water-interior-appropriations"
+    ]["structural_metadata"] = {
+        "episode_action_label": (
+            "Divisions B-C retention and final package passage"
+        ),
+        "incomplete_status_rendering": "exact_known_action_statuses",
+    }
     module.EPISODE_INTERPRETATIONS.pop(
         "critical-mineral-supply-and-domestic-production"
     )
@@ -991,6 +1025,53 @@ def build(source_dir: Path) -> dict[str, object]:
             ],
             "preserved": True,
         },
+        {
+            "failure_id": "COMM-V1-008",
+            "classification": "generalized pipeline defect",
+            "owning_layer": "episode trajectory presentation",
+            "first_candidate": (
+                "Hunt's fully known Not Voting/Not Voting appropriations "
+                "episode used the generic incomplete-trajectory fallback."
+            ),
+            "first_validator_result": (
+                "Human review found that two known action statuses must render "
+                "their exact Not Voting/Not Voting sequence, not a list of "
+                "possible incomplete states."
+            ),
+            "correction": (
+                "Added opt-in structural metadata and a generic exact-known-"
+                "status renderer for incomplete multi-action episodes."
+            ),
+            "regression_proof": [
+                "fully known Not Voting/Not Voting episode unit test",
+                "Hunt exact trajectory assertion",
+                "generic fallback exclusion assertion",
+            ],
+            "preserved": True,
+        },
+        {
+            "failure_id": "COMM-V1-009",
+            "classification": "generalized contract defect",
+            "owning_layer": "action and episode structural metadata",
+            "first_candidate": (
+                "package_stage_retention and combined_divisions were routed as "
+                "pending policy traits even though they describe structure."
+            ),
+            "first_validator_result": (
+                "Human review classified both values as generic action/episode "
+                "structure rather than source-grounded policy meaning."
+            ),
+            "correction": (
+                "Moved both values into action_sequence structural metadata and "
+                "retained only four new values in the pending policy-trait contract."
+            ),
+            "regression_proof": [
+                "pending policy-trait exact-set assertion",
+                "structural metadata exact-value assertion",
+                "shared-review dependency exclusion assertion",
+            ],
+            "preserved": True,
+        },
     ])
     inferences = outputs["inference_candidates.json"]["candidates"]
     actual = outputs["actual_member_vector_evaluation.json"]
@@ -1127,11 +1208,15 @@ def build(source_dir: Path) -> dict[str, object]:
             "COMM-V1-005 analytical-section duplication",
             "COMM-V1-006 incomplete equal-strength synthesis",
             "COMM-V1-007 generic coverage-language leakage",
+            "COMM-V1-008 generic incomplete-trajectory leakage",
+            "COMM-V1-009 structural values misclassified as policy traits",
         ],
         "generic_contract": {
             "one_primary_section_per_proposition": True,
             "equal_strength_patterns_all_synthesized": True,
             "exact_known_coverage_states_required": True,
+            "exact_known_episode_statuses_required": True,
+            "structural_metadata_excluded_from_policy_traits": True,
             "methodology_separate_from_analytical_sections": True,
         },
         "before_after": {

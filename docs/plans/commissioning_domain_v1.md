@@ -104,7 +104,7 @@
 - Episode-hierarchy correction: rolls 6/7 remain one appropriations episode; rolls 55/64 and 76/78 are four independent episodes grouped under two policy families; roll 93 remains standalone. Seven actions therefore form six episodes, and grouping is invariant to vote direction.
 - The six-episode immutable proposal is 69 artifacts/60 relationships with manifest `3e1ecd448f086fae52bd69a74303899940f0e417978a82df34970317052752fc`.
 - Final composition preserves the same seven actions and six episodes while replacing the unpublished six-episode proposal with a distinct natural-key namespace and batch key.
-- The final proposal is 69 artifacts/60 relationships with manifest `3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187`, artifact semantic hash `66e1b5c6cc32a39b7ce8a8b9fb5f42b2ba538fe036b6eb859b26ac3a9a326ed4`, and relationship semantic hash `bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21`.
+- The final proposal is 69 artifacts/60 relationships with manifest `fbee0675ace2b2e256fe1723681e3bd17dd065c670199367d76e8782b352a600`, artifact semantic hash `57e158f98b0ef0ab15f020cfd31992d73e1222742cfcfaa827574a8eab18974a`, and relationship semantic hash `bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21`.
 - Final ownership metrics are zero for duplicate propositions, section collisions, unresolved collisions, single-action trajectories, methodology in exceptions, empty rendered sections, tied-pattern omissions, and generic coverage fallbacks when exact counts are known.
 
 ## Decisions And Rationale
@@ -112,7 +112,7 @@
 - Keep domain selection evidence-first: source completeness, episode/action diversity, vector diversity, bounded scope, and unresolved-source minimization only.
 - Treat the prior blocked branch as read-only evidence; do not merge or copy its result as current implementation.
 - Preserve member neutrality and proposition-first synthesis boundaries from the governing workflow and interpretation principles.
-- Reuse the existing ontology shape. Route six new source-grounded values once as shared human exceptions; the directed two-family episode hierarchy resolves the former related-proposal relationship question.
+- Reuse the existing ontology shape. Route four new source-grounded policy values once as shared human exceptions; keep package-stage retention and combined-division scope in generic action/episode structural metadata. The directed two-family episode hierarchy resolves the former related-proposal relationship question.
 - Keep all 432-member, 42-vector, 256-binary-vector, and 17-mutation evaluations non-persisted; persist only the eight selected real-member slices.
 
 ## Deviations Or Corrections
@@ -125,6 +125,8 @@
 - `COMM-V1-005` (final composition): human review found the same proposition repeated across analytical sections, including single-action evidence labeled as a trajectory. Deterministic proposition ownership now permits one primary analytical section, and trajectories require a complete multi-action episode.
 - `COMM-V1-006`: equal-strength repeated patterns could be omitted by a single-winner tie-break. Selection now retains every cluster tied on the evidence tuple and orders the retained set only for presentation.
 - `COMM-V1-007`: exact known action-status coverage could fall through to generic possible-state language. Rendering now reports the exact resolved, Yea/Nay, Not Voting, complete-episode, and partial-episode counts.
+- `COMM-V1-008`: Hunt's fully known Not Voting/Not Voting appropriations episode used the generic incomplete-trajectory fallback. The generic renderer now uses exact action-status language for opted-in episode structures.
+- `COMM-V1-009`: package-stage retention and combined-division scope were incorrectly modeled as pending policy traits. They now live in generic action/episode structural metadata; the pending policy-trait set contains the other four values only.
 - A broad backend run exposed six production-database-versus-fixture expectations and two pre-existing Windows CRLF byte pins. The fixture subset passed 11/11 under an isolated one-second connection fallback; relevant semantic and persistence regressions passed separately.
 
 ## Validation Results
@@ -160,6 +162,19 @@
 - Frontend lint: passed with 8 pre-existing hook warnings.
 - Frontend production build: passed.
 - Final documentation governance, generated-artifact determinism, 24 changed JSON files, and `git diff --check`: passed.
+- Final-correction focused backend suite: 39 passed; full frontend unit suite:
+  142 passed.
+- Final-correction Playwright: 13 passed and 12 intentionally skipped; the
+  regenerated Hunt fixture was visually inspected with exact Not Voting/Not
+  Voting episode copy.
+- Final-correction disposable PostgreSQL: reviewed 71/95 seed; final 69/60
+  semantic equality; 0/0 idempotency; fail-closed publication/conflict guards;
+  exact rollback and equality-preserving reapply: passed.
+- Final-correction broad backend observation with an unrestricted isolated temp
+  root: 766 passed, 9 skipped, and the same 8 pre-existing fixture/environment
+  or Windows exact-byte failures remained.
+- Final-correction frontend lint and production build: passed with the same 8
+  pre-existing hook warnings; documentation governance passed.
 
 ## Production Writes
 

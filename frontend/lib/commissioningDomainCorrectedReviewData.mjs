@@ -350,6 +350,22 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
       ],
       "route": "human_exception_required",
       "shared_objective": "Retain the Energy-Water and Interior-Environment divisions, then pass the cross-domain FY2026 appropriations package.",
+      "structural_metadata": {
+        "action_sequence": [
+          {
+            "division_scope": "combined_divisions",
+            "roll": 6,
+            "stage_structure": "package_stage_retention"
+          },
+          {
+            "division_scope": "cross_domain_package",
+            "roll": 7,
+            "stage_structure": "package_final_passage"
+          }
+        ],
+        "incomplete_status_rendering": "exact_known_action_statuses",
+        "structure_type": "multi_action_episode"
+      },
       "why": "The combined B-C retention and cross-domain final-passage boundary remain one shared review dependency and do not create member exceptions."
     },
     {
@@ -998,10 +1014,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "publication_blocked_until_resolved": true
@@ -1625,10 +1639,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "publication_blocked_until_resolved": true
@@ -2252,10 +2264,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "publication_blocked_until_resolved": true
@@ -2881,10 +2891,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "publication_blocked_until_resolved": true
@@ -3527,10 +3535,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "publication_blocked_until_resolved": true
@@ -3807,10 +3813,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "publication_blocked_until_resolved": true
@@ -4425,10 +4429,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "publication_blocked_until_resolved": true
@@ -4728,10 +4730,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "dependency_review_state": "human_review_pending",
@@ -5007,10 +5007,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "dependency_review_state": "human_review_pending",
@@ -5286,10 +5284,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "dependency_review_state": "human_review_pending",
@@ -5565,10 +5561,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "dependency_review_state": "human_review_pending",
@@ -5844,10 +5838,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "dependency_review_state": "human_review_pending",
@@ -5882,7 +5874,7 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
           "coverage_status": "partial",
           "episode_id": "fy2026-energy-water-interior-appropriations",
           "mechanism_family": "annual-appropriations",
-          "member_trajectory": "The Divisions B-C retention and final package passage trajectory is incomplete because at least one action is Present, Not Voting, outside service, or missing.",
+          "member_trajectory": "Recorded Not Voting/Not Voting across Divisions B-C retention and final package passage; both actions are Not Voting, so no support or opposition trajectory is inferred.",
           "package_vote_limitations": [],
           "practical_policy_direction": "No episode theme is inferred from the incomplete signature.",
           "relationship_to_repeated_stages": "2 related actions are evaluated as one appropriations trajectory.",
@@ -6101,10 +6093,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "dependency_review_state": "human_review_pending",
@@ -6380,10 +6370,8 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
         "dependency_ids": [
           "action-boundary:house-119-2-7",
           "trait-value:accelerates-domestic-mineral-projects",
-          "trait-value:combined-divisions",
           "trait-value:constrains-efficiency-rulemaking",
           "trait-value:limits-land-manager-authority",
-          "trait-value:package-stage-retention",
           "trait-value:repeals-home-energy-programs"
         ],
         "dependency_review_state": "human_review_pending",
@@ -6461,22 +6449,6 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
       "summary": "Review the source-grounded shared trait value `accelerates_domestic_mineral_projects` once."
     },
     {
-      "dependency_id": "trait-value:combined-divisions",
-      "kind": "policy_trait_value",
-      "references": {
-        "dossier_ids": [],
-        "episode_ids": [],
-        "relationship_ids": [],
-        "trait_ids": [
-          "combined_divisions"
-        ]
-      },
-      "review_route": "human_exception_required",
-      "scope": "shared_corpus",
-      "status": "human_review_pending",
-      "summary": "Review the source-grounded shared trait value `combined_divisions` once."
-    },
-    {
       "dependency_id": "trait-value:constrains-efficiency-rulemaking",
       "kind": "policy_trait_value",
       "references": {
@@ -6507,22 +6479,6 @@ export const commissioningDomainCorrectedReviewData = Object.freeze({
       "scope": "shared_corpus",
       "status": "human_review_pending",
       "summary": "Review the source-grounded shared trait value `limits_land_manager_authority` once."
-    },
-    {
-      "dependency_id": "trait-value:package-stage-retention",
-      "kind": "policy_trait_value",
-      "references": {
-        "dossier_ids": [],
-        "episode_ids": [],
-        "relationship_ids": [],
-        "trait_ids": [
-          "package_stage_retention"
-        ]
-      },
-      "review_route": "human_exception_required",
-      "scope": "shared_corpus",
-      "status": "human_review_pending",
-      "summary": "Review the source-grounded shared trait value `package_stage_retention` once."
     },
     {
       "dependency_id": "trait-value:repeals-home-energy-programs",

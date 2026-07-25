@@ -20,6 +20,22 @@
       ],
       "route": "human_exception_required",
       "shared_objective": "Retain the Energy-Water and Interior-Environment divisions, then pass the cross-domain FY2026 appropriations package.",
+      "structural_metadata": {
+        "action_sequence": [
+          {
+            "division_scope": "combined_divisions",
+            "roll": 6,
+            "stage_structure": "package_stage_retention"
+          },
+          {
+            "division_scope": "cross_domain_package",
+            "roll": 7,
+            "stage_structure": "package_final_passage"
+          }
+        ],
+        "incomplete_status_rendering": "exact_known_action_statuses",
+        "structure_type": "multi_action_episode"
+      },
       "why": "The combined B-C retention and cross-domain final-passage boundary remain one shared review dependency and do not create member exceptions."
     },
     {

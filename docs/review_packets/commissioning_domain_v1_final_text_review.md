@@ -38,10 +38,8 @@ Related actions remain one episode; their repeated directions do not create mult
 
 - Review roll 7 as cross-domain final passage whose Environment & Energy evidence is bounded to Divisions B-C.
 - Review the source-grounded shared trait value `accelerates_domestic_mineral_projects` once.
-- Review the source-grounded shared trait value `combined_divisions` once.
 - Review the source-grounded shared trait value `constrains_efficiency_rulemaking` once.
 - Review the source-grounded shared trait value `limits_land_manager_authority` once.
-- Review the source-grounded shared trait value `package_stage_retention` once.
 - Review the source-grounded shared trait value `repeals_home_energy_programs` once.
 
 ### Episodes
@@ -137,10 +135,8 @@ Related actions remain one episode; their repeated directions do not create mult
 
 - Review roll 7 as cross-domain final passage whose Environment & Energy evidence is bounded to Divisions B-C.
 - Review the source-grounded shared trait value `accelerates_domestic_mineral_projects` once.
-- Review the source-grounded shared trait value `combined_divisions` once.
 - Review the source-grounded shared trait value `constrains_efficiency_rulemaking` once.
 - Review the source-grounded shared trait value `limits_land_manager_authority` once.
-- Review the source-grounded shared trait value `package_stage_retention` once.
 - Review the source-grounded shared trait value `repeals_home_energy_programs` once.
 
 ### Episodes
@@ -236,10 +232,8 @@ Method note: omitted
 
 - Review roll 7 as cross-domain final passage whose Environment & Energy evidence is bounded to Divisions B-C.
 - Review the source-grounded shared trait value `accelerates_domestic_mineral_projects` once.
-- Review the source-grounded shared trait value `combined_divisions` once.
 - Review the source-grounded shared trait value `constrains_efficiency_rulemaking` once.
 - Review the source-grounded shared trait value `limits_land_manager_authority` once.
-- Review the source-grounded shared trait value `package_stage_retention` once.
 - Review the source-grounded shared trait value `repeals_home_energy_programs` once.
 
 ### Episodes
@@ -247,7 +241,7 @@ Method note: omitted
 #### FY2026 Energy Water Interior Appropriations — Fy2026 Energy Water Interior Appropriations
 
 - Action count: 2
-- Collapsed summary: The Divisions B-C retention and final package passage trajectory is incomplete because at least one action is Present, Not Voting, outside service, or missing.
+- Collapsed summary: Recorded Not Voting/Not Voting across Divisions B-C retention and final package passage; both actions are Not Voting, so no support or opposition trajectory is inferred.
 - Vote chips: Not Voting · roll 6; Not Voting · roll 7
 - Featured: yes
 
@@ -335,10 +329,8 @@ Related actions remain one episode; their repeated directions do not create mult
 
 - Review roll 7 as cross-domain final passage whose Environment & Energy evidence is bounded to Divisions B-C.
 - Review the source-grounded shared trait value `accelerates_domestic_mineral_projects` once.
-- Review the source-grounded shared trait value `combined_divisions` once.
 - Review the source-grounded shared trait value `constrains_efficiency_rulemaking` once.
 - Review the source-grounded shared trait value `limits_land_manager_authority` once.
-- Review the source-grounded shared trait value `package_stage_retention` once.
 - Review the source-grounded shared trait value `repeals_home_energy_programs` once.
 
 ### Episodes

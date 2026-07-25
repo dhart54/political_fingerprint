@@ -53,7 +53,19 @@ test("corrected review fixtures exclude roll 5 and retain shared dependencies se
     );
     assert.equal(
       candidate.source.inference_candidate.shared_review_dependencies.dependency_ids.length,
-      7,
+      5,
+    );
+    assert.equal(
+      candidate.source.inference_candidate.shared_review_dependencies.dependency_ids.includes(
+        "trait-value:package-stage-retention",
+      ),
+      false,
+    );
+    assert.equal(
+      candidate.source.inference_candidate.shared_review_dependencies.dependency_ids.includes(
+        "trait-value:combined-divisions",
+      ),
+      false,
     );
   }
 });

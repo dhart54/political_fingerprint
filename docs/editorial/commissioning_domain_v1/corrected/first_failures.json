@@ -114,6 +114,34 @@
         "Hunt limited-evidence text assertion",
         "generic-known-state fallback count zero"
       ]
+    },
+    {
+      "classification": "generalized pipeline defect",
+      "correction": "Added opt-in structural metadata and a generic exact-known-status renderer for incomplete multi-action episodes.",
+      "failure_id": "COMM-V1-008",
+      "first_candidate": "Hunt's fully known Not Voting/Not Voting appropriations episode used the generic incomplete-trajectory fallback.",
+      "first_validator_result": "Human review found that two known action statuses must render their exact Not Voting/Not Voting sequence, not a list of possible incomplete states.",
+      "owning_layer": "episode trajectory presentation",
+      "preserved": true,
+      "regression_proof": [
+        "fully known Not Voting/Not Voting episode unit test",
+        "Hunt exact trajectory assertion",
+        "generic fallback exclusion assertion"
+      ]
+    },
+    {
+      "classification": "generalized contract defect",
+      "correction": "Moved both values into action_sequence structural metadata and retained only four new values in the pending policy-trait contract.",
+      "failure_id": "COMM-V1-009",
+      "first_candidate": "package_stage_retention and combined_divisions were routed as pending policy traits even though they describe structure.",
+      "first_validator_result": "Human review classified both values as generic action/episode structure rather than source-grounded policy meaning.",
+      "owning_layer": "action and episode structural metadata",
+      "preserved": true,
+      "regression_proof": [
+        "pending policy-trait exact-set assertion",
+        "structural metadata exact-value assertion",
+        "shared-review dependency exclusion assertion"
+      ]
     }
   ],
   "schema_version": "commissioning_domain_first_failures_v1"

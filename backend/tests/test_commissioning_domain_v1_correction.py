@@ -195,7 +195,7 @@ def test_corrected_pending_bundle_is_distinct_complete_and_unpublished() -> None
             assert dependencies["review_queue_scope"] == "shared_corpus"
             assert dependencies["dependency_review_state"] == "human_review_pending"
             assert dependencies["publication_blocked_until_resolved"] is True
-            assert len(dependencies["dependency_ids"]) == 7
+            assert len(dependencies["dependency_ids"]) == 5
     policy_families = [
         item for item in bundle["artifacts"]
         if item["artifact_type"] == "policy_family"
@@ -232,6 +232,8 @@ def test_failure_history_records_human_discovery_truthfully() -> None:
         "COMM-V1-005",
         "COMM-V1-006",
         "COMM-V1-007",
+        "COMM-V1-008",
+        "COMM-V1-009",
     ]
     correction = next(item for item in failures if item["failure_id"] == "COMM-V1-004")
     assert correction["preserved"] is True
@@ -243,7 +245,7 @@ def test_failure_history_records_human_discovery_truthfully() -> None:
     )
     assert hierarchy["preserved"] is True
     assert hierarchy["superseded_proposal"]["production_applied"] is False
-    assert failures[-1]["failure_id"] == "COMM-V1-007"
+    assert failures[-1]["failure_id"] == "COMM-V1-009"
 
 
 def test_section_ownership_and_equal_strength_synthesis_are_complete() -> None:
@@ -290,6 +292,70 @@ def test_section_ownership_and_equal_strength_synthesis_are_complete() -> None:
     )
     assert "Present" not in hunt["coverage_note"]
     assert "outside service" not in hunt["coverage_note"]
+
+    hunt_overlay = next(
+        item
+        for item in load("member_overlays.json")["overlays"]
+        if item["member"]["bioguide_id"] == "H001095"
+    )
+    appropriations = next(
+        item
+        for item in hunt_overlay["episode_trajectories"]
+        if item["episode_id"]
+        == "fy2026-energy-water-interior-appropriations"
+    )
+    assert appropriations["action_signature"] == ["Not Voting", "Not Voting"]
+    assert appropriations["member_trajectory"] == (
+        "Recorded Not Voting/Not Voting across Divisions B-C retention and "
+        "final package passage; both actions are Not Voting, so no support or "
+        "opposition trajectory is inferred."
+    )
+    for generic_fallback in ("Present", "outside service", "missing"):
+        assert generic_fallback not in appropriations["member_trajectory"]
+
+
+def test_structural_values_are_not_pending_policy_traits() -> None:
+    contract = load("policy_trait_contract.json")
+    assert contract["new_trait_values"] == [
+        "accelerates_domestic_mineral_projects",
+        "constrains_efficiency_rulemaking",
+        "repeals_home_energy_programs",
+        "limits_land_manager_authority",
+    ]
+    assert "package_stage_retention" not in contract["action_traits"]["6"]["traits"]
+    assert "combined_divisions" not in contract["action_traits"]["6"]["traits"]
+
+    appropriations = next(
+        item
+        for item in load("episode_map.json")["episodes"]
+        if item["episode_id"]
+        == "fy2026-energy-water-interior-appropriations"
+    )
+    structural = appropriations["structural_metadata"]
+    assert structural["structure_type"] == "multi_action_episode"
+    assert structural["incomplete_status_rendering"] == (
+        "exact_known_action_statuses"
+    )
+    assert structural["action_sequence"] == [
+        {
+            "roll": 6,
+            "stage_structure": "package_stage_retention",
+            "division_scope": "combined_divisions",
+        },
+        {
+            "roll": 7,
+            "stage_structure": "package_final_passage",
+            "division_scope": "cross_domain_package",
+        },
+    ]
+    dependencies = load("review_routing_report.json")[
+        "shared_review_dependencies"
+    ]
+    assert len(dependencies) == 5
+    assert not {
+        "trait-value:package-stage-retention",
+        "trait-value:combined-divisions",
+    }.intersection(item["dependency_id"] for item in dependencies)
 
 
 def test_composition_is_invariant_to_episode_and_tied_pattern_order() -> None:

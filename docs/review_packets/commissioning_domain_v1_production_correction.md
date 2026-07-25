@@ -7,7 +7,7 @@ Status: prepared and disposable-tested; **not executed against production**.
 | State | Batch key | Actions | Artifacts | Relationships | Manifest |
 |---|---|---:|---:|---:|---|
 | Current production | `commissioning-domain-v1-environment-energy` | 8 | 74 | 68 | `5821e12ca1e5666ed6ff39b1a9a2402a9f61e067d56dcd69a1870b5a64333c38` |
-| Proposed final composition | `commissioning-domain-v1-environment-energy-final-composition` | 7 | 69 | 60 | `3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187` |
+| Proposed final composition | `commissioning-domain-v1-environment-energy-final-composition` | 7 | 69 | 60 | `fbee0675ace2b2e256fe1723681e3bd17dd065c670199367d76e8782b352a600` |
 
 The original 71-artifact/95-relationship seed, canonical tables, schema 0016,
 publication registry, publication selector, and empty frontend production
@@ -23,7 +23,7 @@ registry must remain unchanged.
   `ab9f580a6a55eafb7848bbb412788202558e78a05cc7b6771714e5a25b0e977d` /
   `feb267bc4cf3e9dbc47b37c816bd59ddbc31e97fe7908244d6005055edc69cf7`
 - Final-composition artifact/relationship semantic hashes:
-  `66e1b5c6cc32a39b7ce8a8b9fb5f42b2ba538fe036b6eb859b26ac3a9a326ed4` /
+  `57e158f98b0ef0ab15f020cfd31992d73e1222742cfcfaa827574a8eab18974a` /
   `bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21`
 
 ## Exact commands
@@ -46,13 +46,13 @@ python backend/scripts/commissioning_domain_artifact_store.py --rollback --targe
 Corrected-batch preflight after Operation A:
 
 ```powershell
-python backend/scripts/commissioning_domain_corrected_artifact_store.py --check --target production --batch-key commissioning-domain-v1-environment-energy-final-composition --source-commit 08e675e2039d76f16b8c9576e4b5a8254bc44d72 --manifest-sha256 3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187 --migration-sha256 b4fffce458ebda4b09ce92cd1998468c4d18bad2450e43e9567776340337a9f7
+python backend/scripts/commissioning_domain_corrected_artifact_store.py --check --target production --batch-key commissioning-domain-v1-environment-energy-final-composition --source-commit 08e675e2039d76f16b8c9576e4b5a8254bc44d72 --manifest-sha256 fbee0675ace2b2e256fe1723681e3bd17dd065c670199367d76e8782b352a600 --migration-sha256 b4fffce458ebda4b09ce92cd1998468c4d18bad2450e43e9567776340337a9f7
 ```
 
 Operation B — exact corrected apply:
 
 ```powershell
-python backend/scripts/commissioning_domain_corrected_artifact_store.py --apply --target production --confirm-production-apply --batch-key commissioning-domain-v1-environment-energy-final-composition --source-commit 08e675e2039d76f16b8c9576e4b5a8254bc44d72 --manifest-sha256 3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187 --migration-sha256 b4fffce458ebda4b09ce92cd1998468c4d18bad2450e43e9567776340337a9f7
+python backend/scripts/commissioning_domain_corrected_artifact_store.py --apply --target production --confirm-production-apply --batch-key commissioning-domain-v1-environment-energy-final-composition --source-commit 08e675e2039d76f16b8c9576e4b5a8254bc44d72 --manifest-sha256 fbee0675ace2b2e256fe1723681e3bd17dd065c670199367d76e8782b352a600 --migration-sha256 b4fffce458ebda4b09ce92cd1998468c4d18bad2450e43e9567776340337a9f7
 ```
 
 Corrected verification and idempotency use the same pinned values with

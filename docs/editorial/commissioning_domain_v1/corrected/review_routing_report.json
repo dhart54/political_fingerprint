@@ -103,7 +103,7 @@
     "standard_generation_pass": 4
   },
   "shared_dependency_member_route_amplification": 0,
-  "shared_human_review_queue_count": 7,
+  "shared_human_review_queue_count": 5,
   "shared_review_dependencies": [
     {
       "dependency_id": "action-boundary:house-119-2-7",
@@ -145,22 +145,6 @@
       "summary": "Review the source-grounded shared trait value `accelerates_domestic_mineral_projects` once."
     },
     {
-      "dependency_id": "trait-value:combined-divisions",
-      "kind": "policy_trait_value",
-      "references": {
-        "dossier_ids": [],
-        "episode_ids": [],
-        "relationship_ids": [],
-        "trait_ids": [
-          "combined_divisions"
-        ]
-      },
-      "review_route": "human_exception_required",
-      "scope": "shared_corpus",
-      "status": "human_review_pending",
-      "summary": "Review the source-grounded shared trait value `combined_divisions` once."
-    },
-    {
       "dependency_id": "trait-value:constrains-efficiency-rulemaking",
       "kind": "policy_trait_value",
       "references": {
@@ -191,22 +175,6 @@
       "scope": "shared_corpus",
       "status": "human_review_pending",
       "summary": "Review the source-grounded shared trait value `limits_land_manager_authority` once."
-    },
-    {
-      "dependency_id": "trait-value:package-stage-retention",
-      "kind": "policy_trait_value",
-      "references": {
-        "dossier_ids": [],
-        "episode_ids": [],
-        "relationship_ids": [],
-        "trait_ids": [
-          "package_stage_retention"
-        ]
-      },
-      "review_route": "human_exception_required",
-      "scope": "shared_corpus",
-      "status": "human_review_pending",
-      "summary": "Review the source-grounded shared trait value `package_stage_retention` once."
     },
     {
       "dependency_id": "trait-value:repeals-home-energy-programs",

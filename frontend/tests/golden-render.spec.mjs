@@ -536,6 +536,14 @@ test("commissioning domain renders four bounded review cases through the generic
     await expect(fixture).toContainText("Environment & Energy");
     await expect(slice.getByTestId("editorial-coverage-line")).toBeVisible();
     await expect(slice.locator("section[aria-labelledby='featured-episodes-title'] details[data-episode-id]")).toHaveCount(5);
+    if (memberId === "H001095") {
+      await expect(fixture).toContainText(
+        "Recorded Not Voting/Not Voting across Divisions B-C retention and final package passage; both actions are Not Voting, so no support or opposition trajectory is inferred.",
+      );
+      await expect(fixture).not.toContainText(
+        "at least one action is Present, Not Voting, outside the member's service, or missing",
+      );
+    }
     await page.evaluate(() => window.scrollTo({ left: 0, top: window.scrollY }));
     expect(await page.evaluate(() => window.scrollX)).toBe(0);
     if (capture) {

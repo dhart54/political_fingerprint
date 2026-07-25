@@ -18,21 +18,27 @@ The correction:
 - assigns episodes from legislative identity and mechanism, never vote
   direction;
 - evaluates 432 members, 35 observed vectors, and all 128 binary vectors;
-- separates seven unique shared-review dependencies from member-specific
+- separates five unique shared-review dependencies from member-specific
   routing;
+- stores package-stage retention and combined-division scope as generic
+  action/episode structure, not pending policy traits;
+- retains four new source-grounded policy values as pending shared-review
+  traits;
 - preserves exactly four possible member routes without adding a schema;
 - assigns each analytical proposition to one primary section;
 - reserves trajectories for complete multi-action episodes;
 - synthesizes every equal-strength repeated pattern;
 - keeps exact coverage and methodology outside analytical findings; and
+- renders a fully known Not Voting/Not Voting episode with exact action-status
+  language instead of a possible-state fallback; and
 - produces the distinct pending batch
   `commissioning-domain-v1-environment-energy-final-composition`.
 
 The corrected batch contains 69 artifacts and 60 relationships. Its manifest
 SHA-256 is
-`3a30602a73f1ca9e8a25360e6a0b6bb232eddd18b87e1ce46b4b71ea04ad4187`.
+`fbee0675ace2b2e256fe1723681e3bd17dd065c670199367d76e8782b352a600`.
 Its exported artifact and relationship semantic hashes are
-`66e1b5c6cc32a39b7ce8a8b9fb5f42b2ba538fe036b6eb859b26ac3a9a326ed4`
+`57e158f98b0ef0ab15f020cfd31992d73e1222742cfcfaa827574a8eab18974a`
 and
 `bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21`.
 
