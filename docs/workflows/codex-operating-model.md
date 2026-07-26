@@ -230,6 +230,7 @@ Canonical commands:
 
 ```powershell
 python scripts/validate_editorial_semantic_ir.py
+python scripts/compare_accepted_semantic_references.py
 python -m unittest backend.tests.test_editorial_semantic_ir
 ```
 

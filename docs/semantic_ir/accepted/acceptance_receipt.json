@@ -1,0 +1,47 @@
+{
+  "receipt_kind": "editorial_semantic_ir_v1_external_acceptance",
+  "schema_version": "editorial_semantic_ir_v1",
+  "contract_version": "editorial_semantic_ir_v1",
+  "corpus_kind": "accepted_semantic_reference_corpus",
+  "review_state": "accepted_semantic_reference",
+  "accepted_case_ids": [
+    "semir-dev-01-economy-funding-stages",
+    "semir-dev-02-economy-uniform-no-throughline",
+    "semir-dev-03-economy-noncounting-boundaries",
+    "semir-dev-04-justice-mixed-fentanyl-trajectory",
+    "semir-dev-05-justice-mechanism-divide",
+    "semir-dev-06-justice-one-sided-argument",
+    "semir-dev-07-environment-exact-action-gate",
+    "semir-dev-08-environment-separate-family-episodes",
+    "semir-dev-09-not-voting-heavy-record",
+    "semir-dev-10-present-known-coverage",
+    "semir-dev-11-tied-pattern-ownership",
+    "semir-dev-12-identity-title-order-invariance"
+  ],
+  "accepted_case_count": 12,
+  "provenance": {
+    "source_pull_request": 106,
+    "source_commit": "3f13059e91bddf4fe16e0e05b085374d75672697",
+    "phase_b_start_commit": "db848088b3d7bd168c7742e47978ef386129ca56",
+    "source_path_at_phase_b_start": "docs/semantic_ir/candidates/development_cases.json",
+    "accepted_path": "docs/semantic_ir/accepted/development_cases.json",
+    "external_acceptance_authority": "Phase B milestone authorization supplied by the repository owner"
+  },
+  "external_acceptance_boundary": {
+    "semantic_test_reference": true,
+    "public_editorial_approval": false,
+    "benchmark_promotion_outside_semantic_contract": false,
+    "production_eligible": false,
+    "persistence_authorized": false,
+    "publication_authorized": false,
+    "registry_inclusion_authorized": false,
+    "deployment_authorized": false
+  },
+  "held_out": {
+    "case_count": 4,
+    "evaluation_state": "unevaluated_input_only",
+    "path": "docs/semantic_ir/held_out_inputs/held_out_cases.json",
+    "phase_b_start_sha256": "767cbacce790c45537833e46e59fe4b1c558b440c2844835a07414e45396a9d1",
+    "expected_answers_present": false
+  }
+}

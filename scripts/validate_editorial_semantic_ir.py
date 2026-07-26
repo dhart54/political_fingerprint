@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -12,7 +13,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = ROOT / "docs/semantic_ir/editorial_semantic_ir_v1.schema.json"
-CANDIDATES = ROOT / "docs/semantic_ir/candidates/development_cases.json"
+ACCEPTED = ROOT / "docs/semantic_ir/accepted/development_cases.json"
+ACCEPTANCE_RECEIPT = ROOT / "docs/semantic_ir/accepted/acceptance_receipt.json"
 HELD_OUT = ROOT / "docs/semantic_ir/held_out_inputs/held_out_cases.json"
 REVIEW_JSON = (
     ROOT
@@ -26,6 +28,7 @@ SOURCE_MANIFESTS = (
 )
 
 REVIEW_STATE = "candidate_pending_external_semantic_review"
+ACCEPTED_STATE = "accepted_semantic_reference"
 STATUS_VALUES = {"Yea", "Nay", "Present", "Not Voting", "Missing Evidence"}
 SECTION_RENDERED_TARGETS = {
     "repeated_patterns",
@@ -195,15 +198,21 @@ def _validate_coverage(
     )
 
 
-def validate_development(
+def validate_accepted_references(
     corpus: dict[str, Any], known_source_ids: set[str] | None = None
 ) -> list[str]:
     known_source_ids = known_source_ids or _known_source_ids()
-    _require(corpus.get("schema_version") == "editorial_semantic_ir_v1", "candidate schema")
-    _require(corpus.get("corpus_kind") == "development_candidate_corpus", "candidate kind")
-    _require(corpus.get("review_state") == REVIEW_STATE, "candidate corpus review state")
+    _require(corpus.get("schema_version") == "editorial_semantic_ir_v1", "accepted schema")
+    _require(
+        corpus.get("corpus_kind") == "accepted_semantic_reference_corpus",
+        "accepted corpus kind",
+    )
+    _require(
+        corpus.get("review_state") == ACCEPTED_STATE,
+        "accepted corpus review state",
+    )
     cases = corpus.get("cases")
-    _require(isinstance(cases, list) and 12 <= len(cases) <= 15, "candidate case count")
+    _require(isinstance(cases, list) and len(cases) == 12, "accepted case count")
     case_ids = [case.get("case_id", "") for case in cases]
     _require(not _duplicates(case_ids), "duplicate development case ID")
 
@@ -211,8 +220,8 @@ def validate_development(
     for case in cases:
         case_id = case.get("case_id", "")
         _require(bool(ID_PATTERNS["development"].fullmatch(case_id)), f"{case_id}: case ID")
-        _require(case.get("case_kind") == "development_candidate", f"{case_id}: kind")
-        _require(case.get("review_state") == REVIEW_STATE, f"{case_id}: review state")
+        _require(case.get("case_kind") == ACCEPTED_STATE, f"{case_id}: kind")
+        _require(case.get("review_state") == ACCEPTED_STATE, f"{case_id}: review state")
         case_scope = case.get("case_scope")
         _require(
             case_scope in {"full_record", "focused_invariant_fixture"},
@@ -222,6 +231,11 @@ def validate_development(
             case_scope != "focused_invariant_fixture"
             or bool(case.get("scope_boundary")),
             f"{case_id}: focused fixture lacks scope boundary",
+        )
+        _require(
+            case_scope != "focused_invariant_fixture"
+            or bool(case.get("compiler_scope")),
+            f"{case_id}: focused fixture lacks compiler scope",
         )
         _require(
             bool(case.get("external_review_decisions")),
@@ -278,6 +292,30 @@ def validate_development(
                 f"{case_id}: family has unknown episode",
             )
 
+        traits = shared.get("policy_traits", [])
+        trait_ids = [trait["trait_id"] for trait in traits]
+        _require(not _duplicates(trait_ids), f"{case_id}: duplicate policy trait")
+        for trait in traits:
+            _require(
+                set(trait["action_ids"]) <= accepted,
+                f"{case_id}: policy trait has non-accepted action",
+            )
+            _require(
+                trait["review_state"]
+                in {"reviewed_reusable_input", "human_review_pending"},
+                f"{case_id}: policy trait review state",
+            )
+        if case_scope == "focused_invariant_fixture":
+            compiler_scope = case["compiler_scope"]
+            scoped_traits = set(
+                compiler_scope["included_policy_trait_refs"]
+                + compiler_scope["limiting_policy_trait_refs"]
+            )
+            _require(
+                scoped_traits <= set(trait_ids),
+                f"{case_id}: compiler scope has unknown trait",
+            )
+
         for member in case["member_semantics"]["members"]:
             member_action_ids = [item["action_id"] for item in member["actions"]]
             _require(
@@ -309,7 +347,10 @@ def validate_development(
         for proposition in propositions:
             prop_id = proposition["proposition_id"]
             _require(bool(ID_PATTERNS["proposition"].fullmatch(prop_id)), f"{case_id}: prop ID")
-            _require(proposition["review_state"] == REVIEW_STATE, f"{case_id}: prop state")
+            _require(
+                proposition["review_state"] == ACCEPTED_STATE,
+                f"{case_id}: prop state",
+            )
             role = proposition["semantic_role"]
             target = proposition["presentation_target"]
             _require(role in {"behavioral", "synthesis"}, f"{case_id}: prop role")
@@ -443,6 +484,10 @@ def validate_development(
     return case_ids
 
 
+# Compatibility name for callers that validate a corpus passed explicitly.
+validate_development = validate_accepted_references
+
+
 def _walk_forbidden(value: Any, path: str = "$") -> list[str]:
     found: list[str] = []
     if isinstance(value, dict):
@@ -532,6 +577,65 @@ def validate_review_packet(
     )
 
 
+def validate_acceptance_receipt(
+    receipt: dict[str, Any], accepted_ids: list[str]
+) -> None:
+    _require(
+        receipt.get("receipt_kind")
+        == "editorial_semantic_ir_v1_external_acceptance",
+        "acceptance receipt kind",
+    )
+    _require(
+        receipt.get("review_state") == ACCEPTED_STATE,
+        "acceptance receipt state",
+    )
+    _require(
+        receipt.get("corpus_kind") == "accepted_semantic_reference_corpus",
+        "acceptance receipt corpus kind",
+    )
+    _require(
+        receipt.get("accepted_case_ids") == accepted_ids,
+        "acceptance receipt case order",
+    )
+    _require(
+        receipt.get("accepted_case_count") == len(accepted_ids),
+        "acceptance receipt case count",
+    )
+    boundary = receipt.get("external_acceptance_boundary", {})
+    _require(
+        boundary.get("semantic_test_reference") is True,
+        "semantic reference acceptance missing",
+    )
+    forbidden_authority = {
+        "public_editorial_approval",
+        "benchmark_promotion_outside_semantic_contract",
+        "production_eligible",
+        "persistence_authorized",
+        "publication_authorized",
+        "registry_inclusion_authorized",
+        "deployment_authorized",
+    }
+    _require(
+        all(boundary.get(key) is False for key in forbidden_authority),
+        "acceptance receipt crosses publication or production boundary",
+    )
+    held = receipt.get("held_out", {})
+    held_digest = hashlib.sha256(HELD_OUT.read_bytes()).hexdigest()
+    _require(held.get("case_count") == 4, "receipt held-out count")
+    _require(
+        held.get("evaluation_state") == "unevaluated_input_only",
+        "receipt held-out state",
+    )
+    _require(
+        held.get("phase_b_start_sha256") == held_digest,
+        "held-out file changed from Phase B baseline",
+    )
+    _require(
+        held.get("expected_answers_present") is False,
+        "receipt claims held-out answers",
+    )
+
+
 def run() -> dict[str, Any]:
     started = time.perf_counter()
     schema = _load(SCHEMA)
@@ -540,17 +644,19 @@ def run() -> dict[str, Any]:
         "definitions" in schema and "developmentCase" in schema["definitions"],
         "schema definitions",
     )
-    candidates = _load(CANDIDATES)
+    accepted = _load(ACCEPTED)
+    receipt = _load(ACCEPTANCE_RECEIPT)
     held_out = _load(HELD_OUT)
     packet = _load(REVIEW_JSON)
     known_source_ids = _known_source_ids()
-    candidate_ids = validate_development(candidates, known_source_ids)
+    accepted_ids = validate_accepted_references(accepted, known_source_ids)
     held_out_ids = validate_held_out(held_out, known_source_ids)
-    validate_review_packet(packet, candidate_ids, held_out_ids)
+    validate_review_packet(packet, accepted_ids, held_out_ids)
+    validate_acceptance_receipt(receipt, accepted_ids)
     elapsed = time.perf_counter() - started
     return {
         "status": "pass",
-        "development_candidates": len(candidate_ids),
+        "accepted_semantic_references": len(accepted_ids),
         "held_out_inputs": len(held_out_ids),
         "elapsed_seconds": round(elapsed, 4),
     }
@@ -567,7 +673,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     print(json.dumps(result, sort_keys=True) if args.json else (
         "Semantic IR validation passed: "
-        f"{result['development_candidates']} development, "
+        f"{result['accepted_semantic_references']} accepted references, "
         f"{result['held_out_inputs']} held-out, "
         f"{result['elapsed_seconds']:.4f}s"
     ))

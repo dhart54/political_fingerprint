@@ -7,25 +7,54 @@
   "properties": {
     "schema_version": {"const": "editorial_semantic_ir_v1"},
     "corpus_kind": {
-      "enum": ["development_candidate_corpus", "held_out_input_corpus"]
+      "enum": [
+        "development_candidate_corpus",
+        "accepted_semantic_reference_corpus",
+        "held_out_input_corpus"
+      ]
     },
     "review_state": {
-      "enum": ["candidate_pending_external_semantic_review"]
+      "enum": [
+        "candidate_pending_external_semantic_review",
+        "accepted_semantic_reference"
+      ]
     },
     "cases": {"type": "array", "minItems": 1}
   },
   "allOf": [
     {
       "if": {
+        "properties": {"corpus_kind": {"const": "held_out_input_corpus"}}
+      },
+      "then": {
+        "not": {"required": ["review_state"]},
+        "properties": {"cases": {"items": {"$ref": "#/definitions/heldOutCase"}}}
+      },
+      "else": {
+        "required": ["review_state"],
+        "properties": {"cases": {"items": {"$ref": "#/definitions/developmentCase"}}}
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "corpus_kind": {"const": "accepted_semantic_reference_corpus"}
+        }
+      },
+      "then": {
+        "properties": {
+          "review_state": {"const": "accepted_semantic_reference"}
+        }
+      }
+    },
+    {
+      "if": {
         "properties": {"corpus_kind": {"const": "development_candidate_corpus"}}
       },
       "then": {
-        "required": ["review_state"],
-        "properties": {"cases": {"items": {"$ref": "#/definitions/developmentCase"}}}
-      },
-      "else": {
-        "not": {"required": ["review_state"]},
-        "properties": {"cases": {"items": {"$ref": "#/definitions/heldOutCase"}}}
+        "properties": {
+          "review_state": {"const": "candidate_pending_external_semantic_review"}
+        }
       }
     }
   ],
@@ -64,10 +93,16 @@
     },
     "policyTrait": {
       "type": "object",
-      "required": ["trait_id", "meaning_ref", "review_state"],
+      "required": ["trait_id", "meaning_ref", "action_ids", "review_state"],
       "properties": {
         "trait_id": {"type": "string", "minLength": 1},
         "meaning_ref": {"type": "string", "minLength": 1},
+        "action_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
         "review_state": {
           "enum": ["reviewed_reusable_input", "human_review_pending"]
         }
@@ -163,7 +198,12 @@
           "uniqueItems": true,
           "items": {"type": "string"}
         },
-        "policy_family_id": {"type": ["string", "null"]}
+        "policy_family_id": {"type": ["string", "null"]},
+        "method_boundary_types": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"enum": ["episode_counting"]}
+        }
       },
       "additionalProperties": false
     },
@@ -299,7 +339,12 @@
           },
           "additionalProperties": false
         },
-        "review_state": {"const": "candidate_pending_external_semantic_review"}
+        "review_state": {
+          "enum": [
+            "candidate_pending_external_semantic_review",
+            "accepted_semantic_reference"
+          ]
+        }
       },
       "allOf": [
         {
@@ -466,9 +511,32 @@
       ],
       "properties": {
         "case_id": {"type": "string", "pattern": "^semir-dev-[0-9]{2}-[a-z0-9-]+$"},
-        "case_kind": {"const": "development_candidate"},
+        "case_kind": {
+          "enum": ["development_candidate", "accepted_semantic_reference"]
+        },
         "case_scope": {"enum": ["full_record", "focused_invariant_fixture"]},
         "scope_boundary": {"type": "string", "minLength": 1},
+        "compiler_scope": {
+          "type": "object",
+          "required": [
+            "included_policy_trait_refs",
+            "limiting_policy_trait_refs"
+          ],
+          "properties": {
+            "included_policy_trait_refs": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {"type": "string"}
+            },
+            "limiting_policy_trait_refs": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {"type": "string"}
+            }
+          },
+          "additionalProperties": false
+        },
         "structural_purposes": {
           "type": "array",
           "minItems": 1,
@@ -625,7 +693,12 @@
           "minItems": 1,
           "items": {"type": "string"}
         },
-        "review_state": {"const": "candidate_pending_external_semantic_review"}
+        "review_state": {
+          "enum": [
+            "candidate_pending_external_semantic_review",
+            "accepted_semantic_reference"
+          ]
+        }
       },
       "allOf": [
         {
@@ -634,8 +707,35 @@
               "case_scope": {"const": "focused_invariant_fixture"}
             }
           },
-          "then": {"required": ["scope_boundary"]},
-          "else": {"not": {"required": ["scope_boundary"]}}
+          "then": {"required": ["scope_boundary", "compiler_scope"]},
+          "else": {
+            "not": {
+              "anyOf": [
+                {"required": ["scope_boundary"]},
+                {"required": ["compiler_scope"]}
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["case_kind"],
+            "properties": {
+              "case_kind": {"const": "accepted_semantic_reference"}
+            }
+          },
+          "then": {
+            "properties": {
+              "review_state": {"const": "accepted_semantic_reference"}
+            }
+          },
+          "else": {
+            "properties": {
+              "review_state": {
+                "const": "candidate_pending_external_semantic_review"
+              }
+            }
+          }
         }
       ],
       "additionalProperties": false
