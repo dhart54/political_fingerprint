@@ -57,7 +57,10 @@ findings.
 Source/render constraints are shared member-neutral restrictions on what
 available sources and later rendering can support. They target `source_note`.
 Rendering cannot manufacture an opposing argument, fill a source gap, or add
-analytical meaning.
+analytical meaning. Each constraint has one typed semantic effect:
+`blocks_behavioral_propositions`, `limits_argument_rendering`, or
+`bounds_cross_domain_attribution`. Compiler behavior depends on that typed
+effect, never on parsing `render_rule` prose.
 
 The complete presentation-target vocabulary is:
 `repeated_patterns`, `policy_trajectories`, `other_notable_choices`,
@@ -160,6 +163,7 @@ records:
 - `present_actions`;
 - `not_voting_actions`;
 - `missing_evidence_actions`;
+- `unresolved_service_actions`;
 - `outside_service_actions`;
 - `complete_episodes`;
 - `partial_episodes`.
@@ -167,6 +171,17 @@ records:
 Context-only, procedural, mixed-measure, and rejected eligibility inputs remain
 available for method review but do not enter the substantive denominator.
 Present and Not Voting are resolved, known, and non-directional.
+Service and evidence status are orthogonal. Only verified
+`not_yet_serving` and `no_longer_serving` actions count as outside service;
+`unresolved` service receives its own count and `service_unresolved` coverage
+boundary. Missing evidence remains missing evidence when service is unresolved.
+Either state on an accepted action blocks the result.
+
+An accepted directional action covered by a
+`blocks_behavioral_propositions` source constraint keeps its raw member action
+status but produces no behavioral proposition, receives an explicit
+`source_constraint_blocks_behavioral_proposition` accounting reason, is absent
+from the conclusion plan, and blocks the result.
 
 ## Identity rules
 
@@ -218,14 +233,17 @@ contract, production eligibility, persistence authority, publication, registry
 inclusion, runtime adoption, or deployment. The historical candidate review
 packet preserves the pre-acceptance review evidence.
 
-Held-out files still contain inputs and questions only; expected graphs and
-conclusions remain excluded and unevaluated.
+The original held-out files still contain inputs and questions only, and the PR
+#109 first-pass proof artifacts remain historical and unchanged. The separately
+accepted held-out corpus at `accepted/held_out_cases.json` records the four
+authorized post-correction semantic references. Its acceptance receipt confines
+that status to this compiler/reference contract.
 
 ## Validation tiers
 
 Only the semantic loop is implemented: schema-shape checks, accepted-reference
 and held-out integrity, stable identities, evidence references, hierarchy, the
-separated coverage contract, role/presentation rules, action accounting, all 12
+separated coverage contract, role/presentation rules, action accounting, all 16
 compiler comparisons, and targeted invariance and anti-overfitting tests.
 
 The domain loop remains proposed: full domain member/vector inputs and derived

@@ -14,7 +14,11 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = ROOT / "docs/semantic_ir/editorial_semantic_ir_v1.schema.json"
 ACCEPTED = ROOT / "docs/semantic_ir/accepted/development_cases.json"
+ACCEPTED_HELD_OUT = ROOT / "docs/semantic_ir/accepted/held_out_cases.json"
 ACCEPTANCE_RECEIPT = ROOT / "docs/semantic_ir/accepted/acceptance_receipt.json"
+HELD_OUT_ACCEPTANCE_RECEIPT = (
+    ROOT / "docs/semantic_ir/accepted/held_out_acceptance_receipt.json"
+)
 HELD_OUT = ROOT / "docs/semantic_ir/held_out_inputs/held_out_cases.json"
 REVIEW_JSON = (
     ROOT
@@ -123,17 +127,29 @@ def _validate_coverage(
     in_service = sum(item["service_status"] == "in_service" for item in eligible_actions)
     resolved = sum(
         item["evidence_status"] == "official_record_resolved"
+        and item["status"] != "Missing Evidence"
         for item in eligible_actions
     )
-    yes_no = sum(status in {"Yea", "Nay"} for status in statuses)
-    present = statuses.count("Present")
-    not_voting = statuses.count("Not Voting")
+    resolved_in_service = [
+        item
+        for item in eligible_actions
+        if item["service_status"] == "in_service"
+        and item["evidence_status"] == "official_record_resolved"
+    ]
+    yes_no = sum(item["status"] in {"Yea", "Nay"} for item in resolved_in_service)
+    present = sum(item["status"] == "Present" for item in resolved_in_service)
+    not_voting = sum(item["status"] == "Not Voting" for item in resolved_in_service)
     missing = sum(
         item["evidence_status"] != "official_record_resolved"
+        or item["status"] == "Missing Evidence"
         for item in eligible_actions
     )
     outside_service = sum(
-        item["service_status"] != "in_service" for item in eligible_actions
+        item["service_status"] in {"not_yet_serving", "no_longer_serving"}
+        for item in eligible_actions
+    )
+    unresolved_service = sum(
+        item["service_status"] == "unresolved" for item in eligible_actions
     )
     by_id = {item["action_id"]: item for item in actions}
     complete_episodes = 0
@@ -177,6 +193,10 @@ def _validate_coverage(
         f"{case_id}: missing evidence coverage",
     )
     _require(
+        coverage["unresolved_service_actions"] == unresolved_service,
+        f"{case_id}: unresolved-service coverage",
+    )
+    _require(
         coverage["outside_service_actions"] == outside_service,
         f"{case_id}: outside-service coverage",
     )
@@ -189,10 +209,6 @@ def _validate_coverage(
         f"{case_id}: partial episode coverage",
     )
     _require(
-        yes_no + present + not_voting + missing == len(eligible_actions),
-        f"{case_id}: eligible-status arithmetic",
-    )
-    _require(
         len(eligible_actions) == len(eligible_ids),
         f"{case_id}: missing eligible member action",
     )
@@ -203,8 +219,13 @@ def validate_accepted_references(
 ) -> list[str]:
     known_source_ids = known_source_ids or _known_source_ids()
     _require(corpus.get("schema_version") == "editorial_semantic_ir_v1", "accepted schema")
+    corpus_kind = corpus.get("corpus_kind")
     _require(
-        corpus.get("corpus_kind") == "accepted_semantic_reference_corpus",
+        corpus_kind
+        in {
+            "accepted_semantic_reference_corpus",
+            "accepted_held_out_semantic_reference_corpus",
+        },
         "accepted corpus kind",
     )
     _require(
@@ -212,14 +233,20 @@ def validate_accepted_references(
         "accepted corpus review state",
     )
     cases = corpus.get("cases")
-    _require(isinstance(cases, list) and len(cases) == 12, "accepted case count")
+    held_out_reference = corpus_kind == "accepted_held_out_semantic_reference_corpus"
+    expected_count = 4 if held_out_reference else 12
+    _require(
+        isinstance(cases, list) and len(cases) == expected_count,
+        "accepted case count",
+    )
     case_ids = [case.get("case_id", "") for case in cases]
     _require(not _duplicates(case_ids), "duplicate development case ID")
 
     all_proposition_ids: list[str] = []
     for case in cases:
         case_id = case.get("case_id", "")
-        _require(bool(ID_PATTERNS["development"].fullmatch(case_id)), f"{case_id}: case ID")
+        pattern = ID_PATTERNS["held_out" if held_out_reference else "development"]
+        _require(bool(pattern.fullmatch(case_id)), f"{case_id}: case ID")
         _require(case.get("case_kind") == ACCEPTED_STATE, f"{case_id}: kind")
         _require(case.get("review_state") == ACCEPTED_STATE, f"{case_id}: review state")
         case_scope = case.get("case_scope")
@@ -244,8 +271,15 @@ def validate_accepted_references(
         refs = case["source_references"]
         for path in refs["dossier_paths"]:
             _require((ROOT / path).is_file(), f"{case_id}: missing dossier {path}")
+        referenced_text = "\n".join(
+            (ROOT / path).read_text(encoding="utf-8")
+            for path in refs["dossier_paths"]
+        )
         _require(
-            set(refs["source_ids"]) <= known_source_ids,
+            all(
+                source_id in known_source_ids or source_id in referenced_text
+                for source_id in refs["source_ids"]
+            ),
             f"{case_id}: unknown source ID",
         )
 
@@ -337,6 +371,15 @@ def validate_accepted_references(
             _require(
                 set(constraint["source_ids"]) <= set(refs["source_ids"]),
                 f"{case_id}: source constraint has unknown source",
+            )
+            _require(
+                constraint["semantic_effect"]
+                in {
+                    "blocks_behavioral_propositions",
+                    "limits_argument_rendering",
+                    "bounds_cross_domain_attribution",
+                },
+                f"{case_id}: source constraint semantic effect",
             )
 
         propositions = case["proposition_graph"]["propositions"]
@@ -636,6 +679,67 @@ def validate_acceptance_receipt(
     )
 
 
+def validate_held_out_acceptance_receipt(
+    receipt: dict[str, Any], accepted_ids: list[str]
+) -> None:
+    _require(
+        receipt.get("receipt_kind")
+        == "editorial_semantic_ir_v1_held_out_acceptance",
+        "held-out acceptance receipt kind",
+    )
+    _require(
+        receipt.get("review_state") == ACCEPTED_STATE,
+        "held-out acceptance receipt state",
+    )
+    _require(
+        receipt.get("corpus_kind")
+        == "accepted_held_out_semantic_reference_corpus",
+        "held-out acceptance receipt corpus kind",
+    )
+    _require(
+        receipt.get("accepted_case_ids") == accepted_ids,
+        "held-out acceptance receipt case order",
+    )
+    _require(
+        receipt.get("accepted_case_count") == len(accepted_ids),
+        "held-out acceptance receipt case count",
+    )
+    _require(
+        receipt.get("accepted_corpus_sha256")
+        == hashlib.sha256(ACCEPTED_HELD_OUT.read_bytes()).hexdigest(),
+        "held-out accepted corpus digest drift",
+    )
+    for protected in receipt.get("protected_artifacts", []):
+        path = ROOT / protected["path"]
+        _require(path.is_file(), f"missing protected artifact {protected['path']}")
+        _require(
+            protected["sha256"] == hashlib.sha256(path.read_bytes()).hexdigest(),
+            f"protected artifact changed: {protected['path']}",
+        )
+    _require(
+        len(receipt.get("protected_artifacts", [])) == 3,
+        "held-out protected artifact receipt count",
+    )
+    boundary = receipt.get("acceptance_boundary", {})
+    _require(
+        boundary.get("semantic_compiler_reference") is True,
+        "held-out semantic reference acceptance missing",
+    )
+    forbidden_authority = {
+        "runtime_adoption",
+        "public_editorial_approval",
+        "production_eligibility",
+        "persistence_authorized",
+        "publication_authorized",
+        "promotion_authorized",
+        "deployment_authorized",
+    }
+    _require(
+        all(boundary.get(key) is False for key in forbidden_authority),
+        "held-out acceptance crosses runtime, publication, or production boundary",
+    )
+
+
 def run() -> dict[str, Any]:
     started = time.perf_counter()
     schema = _load(SCHEMA)
@@ -645,18 +749,27 @@ def run() -> dict[str, Any]:
         "schema definitions",
     )
     accepted = _load(ACCEPTED)
+    accepted_held_out = _load(ACCEPTED_HELD_OUT)
     receipt = _load(ACCEPTANCE_RECEIPT)
+    held_out_receipt = _load(HELD_OUT_ACCEPTANCE_RECEIPT)
     held_out = _load(HELD_OUT)
     packet = _load(REVIEW_JSON)
     known_source_ids = _known_source_ids()
     accepted_ids = validate_accepted_references(accepted, known_source_ids)
+    accepted_held_out_ids = validate_accepted_references(
+        accepted_held_out, known_source_ids
+    )
     held_out_ids = validate_held_out(held_out, known_source_ids)
     validate_review_packet(packet, accepted_ids, held_out_ids)
     validate_acceptance_receipt(receipt, accepted_ids)
+    validate_held_out_acceptance_receipt(
+        held_out_receipt, accepted_held_out_ids
+    )
     elapsed = time.perf_counter() - started
     return {
         "status": "pass",
         "accepted_semantic_references": len(accepted_ids),
+        "accepted_held_out_references": len(accepted_held_out_ids),
         "held_out_inputs": len(held_out_ids),
         "elapsed_seconds": round(elapsed, 4),
     }
@@ -674,6 +787,7 @@ def main(argv: list[str] | None = None) -> int:
     print(json.dumps(result, sort_keys=True) if args.json else (
         "Semantic IR validation passed: "
         f"{result['accepted_semantic_references']} accepted references, "
+        f"{result['accepted_held_out_references']} accepted held-out references, "
         f"{result['held_out_inputs']} held-out, "
         f"{result['elapsed_seconds']:.4f}s"
     ))

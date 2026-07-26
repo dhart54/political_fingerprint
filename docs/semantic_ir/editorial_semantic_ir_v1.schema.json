@@ -10,6 +10,7 @@
       "enum": [
         "development_candidate_corpus",
         "accepted_semantic_reference_corpus",
+        "accepted_held_out_semantic_reference_corpus",
         "held_out_input_corpus"
       ]
     },
@@ -38,7 +39,12 @@
     {
       "if": {
         "properties": {
-          "corpus_kind": {"const": "accepted_semantic_reference_corpus"}
+          "corpus_kind": {
+            "enum": [
+              "accepted_semantic_reference_corpus",
+              "accepted_held_out_semantic_reference_corpus"
+            ]
+          }
         }
       },
       "then": {
@@ -249,6 +255,7 @@
         "present_actions",
         "not_voting_actions",
         "missing_evidence_actions",
+        "unresolved_service_actions",
         "outside_service_actions",
         "complete_episodes",
         "partial_episodes"
@@ -262,6 +269,7 @@
         "present_actions": {"type": "integer", "minimum": 0},
         "not_voting_actions": {"type": "integer", "minimum": 0},
         "missing_evidence_actions": {"type": "integer", "minimum": 0},
+        "unresolved_service_actions": {"type": "integer", "minimum": 0},
         "outside_service_actions": {"type": "integer", "minimum": 0},
         "complete_episodes": {"type": "integer", "minimum": 0},
         "partial_episodes": {"type": "integer", "minimum": 0}
@@ -403,6 +411,7 @@
             "not_voting",
             "not_voting_heavy",
             "missing_evidence",
+            "service_unresolved",
             "outside_service",
             "partial_episode"
           ]
@@ -419,6 +428,7 @@
         "boundary_id",
         "boundary_type",
         "action_ids",
+        "semantic_effect",
         "presentation_target",
         "detail"
       ],
@@ -452,6 +462,13 @@
         "constraint_type": {"enum": ["argument_availability", "source_completeness"]},
         "source_ids": {"type": "array", "items": {"type": "string"}},
         "action_ids": {"type": "array", "items": {"type": "string"}},
+        "semantic_effect": {
+          "enum": [
+            "blocks_behavioral_propositions",
+            "limits_argument_rendering",
+            "bounds_cross_domain_attribution"
+          ]
+        },
         "presentation_target": {"const": "source_note"},
         "render_rule": {"type": "string", "minLength": 1}
       },
@@ -480,7 +497,9 @@
                 "enum": [
                   "non_directional_status",
                   "missing_evidence",
+                  "service_unresolved",
                   "outside_service",
+                  "source_constraint_blocks_behavioral_proposition",
                   "outside_focused_fixture"
                 ]
               },
@@ -510,7 +529,7 @@
         "review_state"
       ],
       "properties": {
-        "case_id": {"type": "string", "pattern": "^semir-dev-[0-9]{2}-[a-z0-9-]+$"},
+        "case_id": {"type": "string", "pattern": "^semir-(dev|held)-[0-9]{2}-[a-z0-9-]+$"},
         "case_kind": {
           "enum": ["development_candidate", "accepted_semantic_reference"]
         },

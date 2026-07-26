@@ -20,6 +20,7 @@ from backend.app.semantic_ir.compiler import (  # noqa: E402
 
 
 ACCEPTED = ROOT / "docs/semantic_ir/accepted/development_cases.json"
+ACCEPTED_HELD_OUT = ROOT / "docs/semantic_ir/accepted/held_out_cases.json"
 
 
 class ReferenceComparisonError(AssertionError):
@@ -192,11 +193,12 @@ def compare_case(case: dict[str, Any]) -> None:
 
 def run() -> dict[str, Any]:
     started = time.perf_counter()
-    corpus = json.loads(ACCEPTED.read_text(encoding="utf-8"))
     case_ids = []
-    for case in corpus["cases"]:
-        compare_case(case)
-        case_ids.append(case["case_id"])
+    for path in (ACCEPTED, ACCEPTED_HELD_OUT):
+        corpus = json.loads(path.read_text(encoding="utf-8"))
+        for case in corpus["cases"]:
+            compare_case(case)
+            case_ids.append(case["case_id"])
     return {
         "status": "pass",
         "accepted_reference_comparisons": len(case_ids),
