@@ -7,11 +7,18 @@ basic evidence path in `frontend/components/PositionByIssue.js`.
 
 - Representative and issue selection remain functional.
 - Existing position evidence and vote receipts remain available.
-- Procedural, limited-context, Present, Not Voting, and missing-evidence states
-  remain distinct.
+- Present, Not Voting, procedural, and limited-context distinctions remain
+  available when supplied by actual recorded vote rows.
+- The current positions and evidence APIs do not emit expected-but-missing
+  actions or service-status absence rows. React does not infer or synthesize
+  those states.
 - The frontend does not load old editorial registries, selectors, adapters,
   review fixtures, or rich editorial components.
 - The former `/golden-render-fixture` route is removed and returns 404.
+
+Expected-missing and service-status coverage belongs to a future upstream
+Semantic IR presentation boundary. That future layer must preserve those typed
+states rather than reconstructing them from the current actual-record APIs.
 
 Use `docs/public_editorial_frontend_contract.md` for the normative reduced
 frontend contract.
