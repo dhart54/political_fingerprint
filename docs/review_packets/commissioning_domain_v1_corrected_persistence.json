@@ -2,7 +2,7 @@
   "application": {
     "artifacts_idempotent": 0,
     "artifacts_inserted": 69,
-    "batch_id": 7,
+    "batch_id": 8,
     "relationships_inserted": 60
   },
   "batch_key": "commissioning-domain-v1-environment-energy-final-composition",
@@ -48,20 +48,20 @@
   "postcheck": {
     "canonical_fingerprints": {
       "bills": {
-        "row_count": 0,
-        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        "row_count": 967,
+        "sha256": "203f20ed686dc0e82b9fdce3e136f36862c0b7415915d3e7126f8920cb96b1c6"
       },
       "legislators": {
-        "row_count": 10,
-        "sha256": "f7ae7773b23d19b4fce9b252d099a06ebeec4d40e9540e95c07b3bfa84205aa9"
+        "row_count": 637,
+        "sha256": "9de212550eab468793571c44b079982d8d50d3c90cb3027385e9c1f0fd336b1e"
       },
       "roll_calls": {
-        "row_count": 29,
-        "sha256": "d35c2427b55fe6d25820a2f344a685919c2f27a961c048b9975a60ee1f8517f3"
+        "row_count": 2259,
+        "sha256": "bbe2f09873e896e85d71c9db474c4a563e040f18c3dbc3363212bd54b131e17b"
       },
       "vote_interpretations": {
-        "row_count": 0,
-        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        "row_count": 1758,
+        "sha256": "d780cd4b34faf92baba636ed63aa82aefe9461544c9229579369b1495f35b913"
       }
     },
     "canonical_fingerprints_unchanged": true,
@@ -153,42 +153,42 @@
       },
       "constraints": [
         {
-          "constraint_name": "2200_17070_1_not_null",
+          "constraint_name": "2200_58917_1_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_batches"
         },
         {
-          "constraint_name": "2200_17070_2_not_null",
+          "constraint_name": "2200_58917_2_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_batches"
         },
         {
-          "constraint_name": "2200_17070_3_not_null",
+          "constraint_name": "2200_58917_3_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_batches"
         },
         {
-          "constraint_name": "2200_17070_4_not_null",
+          "constraint_name": "2200_58917_4_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_batches"
         },
         {
-          "constraint_name": "2200_17070_5_not_null",
+          "constraint_name": "2200_58917_5_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_batches"
         },
         {
-          "constraint_name": "2200_17070_6_not_null",
+          "constraint_name": "2200_58917_6_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_batches"
         },
         {
-          "constraint_name": "2200_17070_7_not_null",
+          "constraint_name": "2200_58917_7_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_batches"
         },
         {
-          "constraint_name": "2200_17070_8_not_null",
+          "constraint_name": "2200_58917_8_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_batches"
         },
@@ -228,27 +228,27 @@
           "table_name": "editorial_artifact_batches"
         },
         {
-          "constraint_name": "2200_17133_1_not_null",
+          "constraint_name": "2200_58980_1_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_relationships"
         },
         {
-          "constraint_name": "2200_17133_2_not_null",
+          "constraint_name": "2200_58980_2_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_relationships"
         },
         {
-          "constraint_name": "2200_17133_3_not_null",
+          "constraint_name": "2200_58980_3_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_relationships"
         },
         {
-          "constraint_name": "2200_17133_4_not_null",
+          "constraint_name": "2200_58980_4_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_relationships"
         },
         {
-          "constraint_name": "2200_17133_5_not_null",
+          "constraint_name": "2200_58980_5_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_relationships"
         },
@@ -283,72 +283,72 @@
           "table_name": "editorial_artifact_relationships"
         },
         {
-          "constraint_name": "2200_17087_10_not_null",
+          "constraint_name": "2200_58934_10_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_1_not_null",
+          "constraint_name": "2200_58934_1_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_20_not_null",
+          "constraint_name": "2200_58934_20_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_21_not_null",
+          "constraint_name": "2200_58934_21_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_22_not_null",
+          "constraint_name": "2200_58934_22_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_23_not_null",
+          "constraint_name": "2200_58934_23_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_24_not_null",
+          "constraint_name": "2200_58934_24_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_2_not_null",
+          "constraint_name": "2200_58934_2_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_3_not_null",
+          "constraint_name": "2200_58934_3_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_4_not_null",
+          "constraint_name": "2200_58934_4_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_5_not_null",
+          "constraint_name": "2200_58934_5_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_6_not_null",
+          "constraint_name": "2200_58934_6_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_7_not_null",
+          "constraint_name": "2200_58934_7_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17087_9_not_null",
+          "constraint_name": "2200_58934_9_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_artifact_versions"
         },
@@ -448,32 +448,32 @@
           "table_name": "editorial_artifact_versions"
         },
         {
-          "constraint_name": "2200_17155_1_not_null",
+          "constraint_name": "2200_59002_1_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_publication_registry"
         },
         {
-          "constraint_name": "2200_17155_2_not_null",
+          "constraint_name": "2200_59002_2_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_publication_registry"
         },
         {
-          "constraint_name": "2200_17155_3_not_null",
+          "constraint_name": "2200_59002_3_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_publication_registry"
         },
         {
-          "constraint_name": "2200_17155_4_not_null",
+          "constraint_name": "2200_59002_4_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_publication_registry"
         },
         {
-          "constraint_name": "2200_17155_5_not_null",
+          "constraint_name": "2200_59002_5_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_publication_registry"
         },
         {
-          "constraint_name": "2200_17155_7_not_null",
+          "constraint_name": "2200_59002_7_not_null",
           "constraint_type": "CHECK",
           "table_name": "editorial_publication_registry"
         },
@@ -586,20 +586,20 @@
     "canonical_action_count": 7,
     "canonical_fingerprints": {
       "bills": {
-        "row_count": 0,
-        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        "row_count": 967,
+        "sha256": "203f20ed686dc0e82b9fdce3e136f36862c0b7415915d3e7126f8920cb96b1c6"
       },
       "legislators": {
-        "row_count": 10,
-        "sha256": "f7ae7773b23d19b4fce9b252d099a06ebeec4d40e9540e95c07b3bfa84205aa9"
+        "row_count": 637,
+        "sha256": "9de212550eab468793571c44b079982d8d50d3c90cb3027385e9c1f0fd336b1e"
       },
       "roll_calls": {
-        "row_count": 29,
-        "sha256": "d35c2427b55fe6d25820a2f344a685919c2f27a961c048b9975a60ee1f8517f3"
+        "row_count": 2259,
+        "sha256": "bbe2f09873e896e85d71c9db474c4a563e040f18c3dbc3363212bd54b131e17b"
       },
       "vote_interpretations": {
-        "row_count": 0,
-        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        "row_count": 1758,
+        "sha256": "d780cd4b34faf92baba636ed63aa82aefe9461544c9229579369b1495f35b913"
       }
     },
     "canonical_member_count": 7,
@@ -619,14 +619,16 @@
   "source_commit": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
   "target": {
     "database": "postgres",
-    "environment_file": null,
-    "exact_approved_target": false,
-    "host": "127.0.0.1",
-    "password_present": false,
-    "port": 55445,
+    "environment_file": "backend\\.env",
+    "exact_approved_target": true,
+    "host": "aws-1-us-east-1.pooler.supabase.com",
+    "password_present": true,
+    "port": 5432,
     "raw_url_recorded": false,
     "scheme": "postgresql",
-    "target": "disposable",
-    "username_present": true
+    "target": "production",
+    "username_identity_pinned": true,
+    "username_present": true,
+    "username_sha256_matches": true
   }
 }

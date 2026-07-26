@@ -1,9 +1,9 @@
 {
   "schema_version": "commissioning_domain_v1_production_correction_v1",
-  "status": "prepared_disposable_tested_not_executed",
+  "status": "executed_verified",
   "migration_sha256": "b4fffce458ebda4b09ce92cd1998468c4d18bad2450e43e9567776340337a9f7",
   "source_commit": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
-  "current_production": {
+  "superseded_pre_correction_production": {
     "batch_key": "commissioning-domain-v1-environment-energy",
     "actions": 8,
     "artifacts": 74,
@@ -12,7 +12,7 @@
     "artifact_semantic_sha256": "ab9f580a6a55eafb7848bbb412788202558e78a05cc7b6771714e5a25b0e977d",
     "relationship_semantic_sha256": "feb267bc4cf3e9dbc47b37c816bd59ddbc31e97fe7908244d6005055edc69cf7"
   },
-  "proposed_corrected": {
+  "final_production": {
     "batch_key": "commissioning-domain-v1-environment-energy-final-composition",
     "actions": 7,
     "episodes": 6,
@@ -27,8 +27,19 @@
     "production_applied": false
   },
   "production_operations_executed": {
-    "original_rollback": false,
-    "corrected_apply": false
+    "original_rollback": true,
+    "corrected_apply": true
+  },
+  "execution_result": {
+    "executed_on": "2026-07-25",
+    "original_rollback": {"artifacts_deleted": 74, "relationships_deleted": 68},
+    "corrected_apply": {"artifacts_inserted": 69, "relationships_inserted": 60},
+    "idempotent_reapply": {"artifacts_inserted": 0, "relationships_inserted": 0, "artifacts_idempotent": 69},
+    "semantic_match": true,
+    "canonical_tables_unchanged": true,
+    "publication_registry_rows": 0,
+    "publication_selector_rows": 0,
+    "frontend_production_registry_rows": 0
   },
   "invariants": {
     "original_seed": {"artifacts": 71, "relationships": 95},
