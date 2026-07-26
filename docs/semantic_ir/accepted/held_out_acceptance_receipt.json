@@ -1,0 +1,37 @@
+{
+  "receipt_kind": "editorial_semantic_ir_v1_held_out_acceptance",
+  "review_state": "accepted_semantic_reference",
+  "corpus_kind": "accepted_held_out_semantic_reference_corpus",
+  "accepted_case_ids": [
+    "semir-held-01-partial-service-missing-evidence",
+    "semir-held-02-source-conflict-unsupported",
+    "semir-held-03-title-order-invariance",
+    "semir-held-04-cross-domain-final-passage"
+  ],
+  "accepted_case_count": 4,
+  "accepted_corpus_sha256": "77b203f25e4bf41527e1502da071bbac2fd60e1c84a69f5a12508ca754f30eb6",
+  "protected_artifacts": [
+    {
+      "path": "docs/semantic_ir/held_out_inputs/held_out_cases.json",
+      "sha256": "767cbacce790c45537833e46e59fe4b1c558b440c2844835a07414e45396a9d1"
+    },
+    {
+      "path": "docs/semantic_ir/held_out_results/held_out_semantic_inputs.json",
+      "sha256": "ecb85fcbf4d9eb813569f3182596768c70886ad24b5945a600a5222e07afe2c7"
+    },
+    {
+      "path": "docs/semantic_ir/held_out_results/held_out_compiled_results.json",
+      "sha256": "fc7a355e05fd6bccd0a35685a2e817ffd6b52fa1a0da250f4524be1c54d1729d"
+    }
+  ],
+  "acceptance_boundary": {
+    "semantic_compiler_reference": true,
+    "runtime_adoption": false,
+    "public_editorial_approval": false,
+    "production_eligibility": false,
+    "persistence_authorized": false,
+    "publication_authorized": false,
+    "promotion_authorized": false,
+    "deployment_authorized": false
+  }
+}

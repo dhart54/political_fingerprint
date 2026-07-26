@@ -206,6 +206,7 @@ Keep these distinct:
 - Present;
 - Not Voting;
 - missing evidence;
+- unresolved service;
 - outside-service actions;
 - complete episodes;
 - partial episodes.
@@ -216,6 +217,13 @@ for method review but do not inflate substantive denominators.
 Year-only service metadata cannot establish action-date eligibility. When exact
 dates are unavailable, an absent action remains missing evidence; presentation
 convenience must not relabel it as outside service.
+
+Service and evidence states are orthogonal. Only verified
+`not_yet_serving` and `no_longer_serving` statuses count as outside service;
+unresolved service remains separately counted and blocks the result. Typed
+source/render effects—not parsed prose—determine whether a constraint blocks
+behavioral propositions, limits argument rendering, or bounds cross-domain
+attribution.
 
 ## Review routing
 

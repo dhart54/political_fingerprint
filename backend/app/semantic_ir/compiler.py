@@ -29,6 +29,12 @@ OUTPUT_FIELDS = {
     "proposition_graph",
     "review_route",
 }
+VERIFIED_OUTSIDE_SERVICE = {"not_yet_serving", "no_longer_serving"}
+SOURCE_SEMANTIC_EFFECTS = {
+    "blocks_behavioral_propositions",
+    "limits_argument_rendering",
+    "bounds_cross_domain_attribution",
+}
 
 
 class SemanticCompilerInputError(ValueError):
@@ -59,7 +65,20 @@ def project_compiler_input(reference_case: dict[str, Any]) -> dict[str, Any]:
 
 def _assert_input_only(value: Any, path: str = "$") -> None:
     if isinstance(value, dict):
-        forbidden = OUTPUT_FIELDS.intersection(value)
+        dependency_prefix = "$.shared_semantics.shared_review_dependencies["
+        dependency_index = (
+            path[len(dependency_prefix) : -1]
+            if path.startswith(dependency_prefix) and path.endswith("]")
+            else ""
+        )
+        forbidden = {
+            key
+            for key in OUTPUT_FIELDS.intersection(value)
+            if not (
+                key == "review_route"
+                and dependency_index.isdigit()
+            )
+        }
         if forbidden:
             names = ", ".join(sorted(forbidden))
             raise SemanticCompilerInputError(
@@ -116,6 +135,12 @@ def _validate_shared_semantics(shared: dict[str, Any]) -> None:
         if not set(trait["action_ids"]) <= accepted_ids:
             raise SemanticCompilerInputError(
                 f"policy trait {trait['trait_id']} has a non-accepted action"
+            )
+    for constraint in shared.get("source_render_constraints", []):
+        if constraint.get("semantic_effect") not in SOURCE_SEMANTIC_EFFECTS:
+            raise SemanticCompilerInputError(
+                f"source constraint {constraint.get('constraint_id')} "
+                "has an invalid semantic effect"
             )
 
 
@@ -183,7 +208,7 @@ def _coverage(
     ]
     resolved = [
         action
-        for action in in_service
+        for action in accepted
         if member_actions.get(action["action_id"], {}).get("evidence_status")
         == "official_record_resolved"
         and member_actions[action["action_id"]]["status"] != "Missing Evidence"
@@ -234,9 +259,18 @@ def _coverage(
             != "official_record_resolved"
             or member_actions.get(action["action_id"], {}).get("status")
             == "Missing Evidence"
-            for action in in_service
+            for action in accepted
         ),
-        "outside_service_actions": len(accepted) - len(in_service),
+        "unresolved_service_actions": sum(
+            member_actions.get(action["action_id"], {}).get("service_status")
+            == "unresolved"
+            for action in accepted
+        ),
+        "outside_service_actions": sum(
+            member_actions.get(action["action_id"], {}).get("service_status")
+            in VERIFIED_OUTSIDE_SERVICE
+            for action in accepted
+        ),
         "complete_episodes": complete_episodes,
         "partial_episodes": partial_episodes,
     }
@@ -304,7 +338,8 @@ def _coverage_boundaries(
     outside = sorted(
         action_id
         for action_id, action in member_actions.items()
-        if action_id in accepted_ids and action["service_status"] != "in_service"
+        if action_id in accepted_ids
+        and action["service_status"] in VERIFIED_OUTSIDE_SERVICE
     )
     if outside:
         result.append(
@@ -314,6 +349,21 @@ def _coverage_boundaries(
                 outside,
                 "coverage_note",
                 "These accepted actions fall outside the member's service window.",
+            )
+        )
+    unresolved_service = sorted(
+        action_id
+        for action_id, action in member_actions.items()
+        if action_id in accepted_ids and action["service_status"] == "unresolved"
+    )
+    if unresolved_service:
+        result.append(
+            _boundary(
+                "coverage",
+                "service_unresolved",
+                unresolved_service,
+                "coverage_note",
+                "Service status is unresolved for these accepted actions.",
             )
         )
     partial_ids = []
@@ -436,6 +486,13 @@ def _compile_member(
         for action_id, action in actions.items()
         if action["eligibility"]["decision"] == "accepted"
     }
+    blocked_action_ids = {
+        action_id
+        for constraint in shared.get("source_render_constraints", [])
+        if constraint["semantic_effect"] == "blocks_behavioral_propositions"
+        for action_id in constraint["action_ids"]
+        if action_id in accepted_ids
+    }
     directional_ids = {
         action_id
         for action_id in accepted_ids
@@ -444,6 +501,7 @@ def _compile_member(
         and member_actions[action_id]["evidence_status"]
         == "official_record_resolved"
         and member_actions[action_id]["status"] in DIRECTIONAL_STATUS
+        and action_id not in blocked_action_ids
     }
     traits = {
         trait["trait_id"]: trait
@@ -798,12 +856,21 @@ def _compile_member(
         action = member_actions.get(action_id)
         if focused:
             reason_code = "outside_focused_fixture"
-        elif not action or action["service_status"] != "in_service":
+        elif not action:
+            reason_code = "missing_evidence"
+        elif (
+            action["status"] == "Missing Evidence"
+            or action["evidence_status"] != "official_record_resolved"
+        ):
+            reason_code = "missing_evidence"
+        elif action["service_status"] in VERIFIED_OUTSIDE_SERVICE:
             reason_code = "outside_service"
+        elif action["service_status"] == "unresolved":
+            reason_code = "service_unresolved"
+        elif action_id in blocked_action_ids:
+            reason_code = "source_constraint_blocks_behavioral_proposition"
         elif action["status"] in NON_DIRECTIONAL_REASONS:
             reason_code = NON_DIRECTIONAL_REASONS[action["status"]]
-        elif action["evidence_status"] != "official_record_resolved":
-            reason_code = "missing_evidence"
         else:
             raise SemanticCompilerInputError(
                 f"directional accepted action {action_id} was not represented"
@@ -821,9 +888,14 @@ def _compile_member(
         for action in shared["actions"]
     )
     if (
+        coverage["missing_evidence_actions"]
+        or coverage["unresolved_service_actions"]
+        or blocked_action_ids
+    ):
+        review_route = "blocked"
+    elif (
         coverage["present_actions"]
         or coverage["not_voting_actions"]
-        or coverage["missing_evidence_actions"]
         or coverage["outside_service_actions"]
         or has_nonaccepted_actions
         or shared.get("source_render_constraints")
