@@ -12,8 +12,9 @@ The machine-readable authority is
   generated historical evidence remain in place as noncanonical evidence. A
   119-file whole-tree manifest locks those roots to the cutover base.
 - Acquisition capability and tests remain intact.
-- The representative route deliberately renders basic vote evidence and source
-  receipts. Its top panel orders issue cards by available action count, reviewed
+- The representative route retains basic vote evidence and source receipts and
+  can layer publication-gated IR-native presentation fields. Its top panel
+  orders issue cards by available action count, reviewed
   substantive Yes/No count, non-directional or limited/context availability,
   and stable domain order. This is evidence coverage, not an analytical,
   ideological, or vote-direction ranking. Shared member-neutral domain
@@ -24,7 +25,9 @@ The machine-readable authority is
   issue list is absent. Party benchmarking remains deferred. Actual Present and
   Not Voting-only issue areas remain selectable. Expected-but-missing actions
   are not emitted by the current API and are not synthesized in React. The former
-  `/golden-render-fixture` route is absent.
+  `/golden-render-fixture` route is absent. Presentation tiers and wording are
+  supplied by the backend; React does not infer them. The pending F000477
+  Justice 119th fixture therefore remains `receipts_only`.
 - The 71 historically staged artifacts remain unpublished; persistence,
   publication, database, deployment, and production state were not changed by
   the cutover.

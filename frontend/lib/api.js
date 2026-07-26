@@ -99,6 +99,19 @@ export async function fetchPositionEvidence({ legislatorId, domain, scope = "all
   return response.json();
 }
 
+export async function fetchEditorialPresentations({ legislatorId, scope = "all" }) {
+  const searchParams = new URLSearchParams({ scope });
+  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/editorial-presentations?${searchParams.toString()}`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Editorial presentations request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchAlignment({ legislatorId, preferences, scope = "all" }) {
   const searchParams = new URLSearchParams({ scope });
   const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/alignment?${searchParams.toString()}`, {

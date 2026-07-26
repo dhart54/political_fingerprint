@@ -143,10 +143,10 @@ semantic meaning.
 15. Account for every accepted action in full-record cases.
 16. Build the conclusion plan and typed presentation targets.
 17. Render bounded prose without adding meaning.
-18. Select featured episodes upstream for a future presentation stage.
-19. When an IR-native presentation milestone is authorized, build a public view
-    model without adding meaning. Until then the frontend shows basic vote
-    evidence and receipts only.
+18. Select featured episodes upstream for presentation.
+19. Compile `editorial_public_issue_presentation_v1` from compiled IR and
+    separately reviewed wording without adding meaning. Fail closed to
+    `receipts_only` unless all publication controls pass.
 20. Run the validation tier appropriate to the change.
 21. Route failures and genuine novelty.
 22. Permit stratified auditing of passing slices.

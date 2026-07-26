@@ -144,7 +144,7 @@ test("representative issue picker uses neutral evidence navigation without readi
   assert.match(componentSource, /function IssueNavigation/);
   assert.match(componentSource, /Jump to issue/);
   assert.doesNotMatch(componentSource, /function BasicIssueList|Explore other issues/);
-  assert.match(componentSource, /without combining them into a broader issue conclusion/);
+  assert.match(componentSource, /publication-gated presentation/);
   assert.doesNotMatch(componentSource, /IssueReadinessTile|Clearest vote evidence|vote pattern|buildTakeaway/);
   assert.doesNotMatch(
     componentSource,

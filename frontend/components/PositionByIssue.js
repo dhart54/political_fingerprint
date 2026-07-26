@@ -2,12 +2,17 @@
 
 import { useEffect, useState } from "react";
 
-import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
+import { fetchEditorialPresentations, fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
 import {
   buildBasicEvidencePresentation,
   hasAvailableIssueEvidence,
 } from "../lib/basicEvidencePresentation.mjs";
 import { deriveEvidenceGroups } from "../lib/evidenceGrouping.mjs";
+import {
+  getCanonicalActionId,
+  getEditorialPresentation,
+  receiptAnchorId,
+} from "../lib/editorialPresentation.mjs";
 import { formatDisplayMeasureTitle } from "../lib/measureDisplay.mjs";
 import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
 import { isProceduralContextRow } from "../lib/proceduralContext.mjs";
@@ -34,6 +39,7 @@ export default function PositionByIssue({
   const [state, setState] = useState({
     status: "loading",
     payload: null,
+    presentations: null,
     error: null,
   });
   const [selectedDomain, setSelectedDomain] = useState(null);
@@ -55,12 +61,16 @@ export default function PositionByIssue({
           setState({
             status: "ready",
             payload: fixtureData.positions,
+            presentations: fixtureData.presentations || { presentations: [] },
             error: null,
           });
           return;
         }
 
-        const positionsPayload = await fetchPositions({ legislatorId, scope });
+        const [positionsPayload, presentations] = await Promise.all([
+          fetchPositions({ legislatorId, scope }),
+          fetchEditorialPresentations({ legislatorId, scope }).catch(() => ({ presentations: [] })),
+        ]);
         const payload = await fillMissingInterpretedCounts({
           payload: positionsPayload,
           fetchEvidence: (args) => fetchPositionEvidence({ ...args, scope }),
@@ -72,6 +82,7 @@ export default function PositionByIssue({
         setState({
           status: "ready",
           payload,
+          presentations,
           error: null,
         });
       } catch (error) {
@@ -81,6 +92,7 @@ export default function PositionByIssue({
         setState({
           status: "error",
           payload: null,
+          presentations: null,
           error: "Vote-direction data is unavailable for this legislator right now.",
         });
       }
@@ -126,6 +138,14 @@ export default function PositionByIssue({
     (state.payload?.positions || []).filter(hasAvailableIssueEvidence),
   );
   const selectedRow = rows.find((row) => row.domain === selectedDomain) || rows[0] || null;
+  const selectedPresentation = getEditorialPresentation(
+    state.presentations,
+    selectedRow?.domain,
+    {
+      legislatorId,
+      memberBioguideId: legislator?.bioguide_id,
+    },
+  );
 
   async function inspectDomain(domain) {
     setSelectedDomain(domain);
@@ -176,7 +196,7 @@ export default function PositionByIssue({
           </h3>
           <p className="mt-2 max-w-xl text-[15px] leading-6 text-stone-800">
             {state.status === "ready"
-              ? "Select an issue to inspect its vote receipts. This basic view keeps recorded actions visible without combining them into a broader issue conclusion."
+              ? "Select an issue to inspect publication-gated presentation when available and the underlying vote receipts."
               : state.status === "loading"
                 ? "Loading this legislator's issue evidence."
                 : "The site cannot read issue evidence for this legislator right now."}
@@ -213,6 +233,7 @@ export default function PositionByIssue({
         evidenceState={evidenceState}
         legislator={legislator}
         onInspectDomain={inspectDomain}
+        presentation={selectedPresentation}
         selectedRow={selectedRow}
       />
 
@@ -259,7 +280,7 @@ function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
   );
 }
 
-function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow }) {
+function EvidencePanel({ evidenceState, legislator, onInspectDomain, presentation, selectedRow }) {
   const [selectedActionRow, setSelectedActionRow] = useState(null);
   const [showAllVotes, setShowAllVotes] = useState(false);
 
@@ -277,6 +298,29 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
   const evidenceGrouping = deriveEvidenceGroups(evidenceRows);
   const billGroups = groupEvidenceByBill(evidenceRows);
   const proofView = buildProofView(evidenceRows);
+
+  function showSupportingVotes(actionIds) {
+    const actionIdSet = new Set(actionIds || []);
+    const targetRow = evidenceRows.find((row) => actionIdSet.has(getCanonicalActionId(row)));
+    if (!targetRow) {
+      return;
+    }
+    const targetActionId = getCanonicalActionId(targetRow);
+    setShowAllVotes(true);
+    setSelectedActionRow(targetRow);
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        document.getElementById(receiptAnchorId(targetActionId))?.scrollIntoView({
+          behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
+          block: "center",
+        });
+        const target = document.getElementById(receiptAnchorId(targetActionId));
+        target?.focus({ preventScroll: true });
+      });
+    });
+  }
 
   return (
     <div id="position-evidence" className="mt-4 scroll-mt-6 rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 sm:px-4 lg:px-5">
@@ -320,6 +364,12 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
       ) : null}
       {evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (
         <div className="mt-3 grid gap-3">
+          {presentation ? (
+            <EditorialPresentationPanel
+              onShowSupportingVotes={showSupportingVotes}
+              presentation={presentation}
+            />
+          ) : null}
           <IssueEvidenceSummary
             domain={selectedRow.domain}
             representativeName={legislator?.name_display}
@@ -352,6 +402,147 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
         </div>
       ) : null}
     </div>
+  );
+}
+
+function EditorialPresentationPanel({ onShowSupportingVotes, presentation }) {
+  const isReceiptsOnly = presentation.tier === "receipts_only";
+  const hasAnalysis = !isReceiptsOnly && presentation.conclusion;
+
+  return (
+    <section
+      className="rounded-xl border border-cyan-900/15 bg-white px-3 py-3 sm:px-4"
+      data-presentation-tier={presentation.tier}
+      data-testid="editorial-presentation"
+    >
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
+            {presentation.tier_badge}
+          </p>
+          <p className="mt-1 max-w-4xl text-[16px] leading-7 text-stone-950">
+            {presentation.teaser}
+          </p>
+        </div>
+        {presentation.reviewed_scope ? (
+          <span className="w-fit rounded-full bg-cyan-50 px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-cyan-950">
+            Reviewed {presentation.reviewed_scope}th Congress
+          </span>
+        ) : null}
+      </div>
+
+      {presentation.coverage_text ? (
+        <p className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2 text-sm leading-6 text-stone-700">
+          {presentation.coverage_text}
+        </p>
+      ) : null}
+
+      {hasAnalysis ? (
+        <div className="mt-3 grid gap-3">
+          <div className="rounded-xl bg-cyan-950 px-4 py-4 text-white">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-cyan-100">
+              {presentation.conclusion.headline}
+            </p>
+            <p className="mt-2 text-[16px] leading-7 text-white">
+              {presentation.conclusion.body}
+            </p>
+          </div>
+
+          {presentation.repeated_patterns?.length ? (
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
+                Repeated patterns
+              </p>
+              <div className="mt-2 grid gap-2 lg:grid-cols-2">
+                {presentation.repeated_patterns.map((pattern) => (
+                  <PresentationFinding
+                    item={pattern}
+                    key={pattern.proposition_id}
+                    onShowSupportingVotes={onShowSupportingVotes}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          {presentation.policy_trajectories?.length ? (
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-amber-900">
+                Limiting trajectory
+              </p>
+              <div className="mt-2 grid gap-2">
+                {presentation.policy_trajectories.map((trajectory) => (
+                  <PresentationFinding
+                    item={trajectory}
+                    key={trajectory.proposition_id}
+                    onShowSupportingVotes={onShowSupportingVotes}
+                    tone="limiting"
+                  />
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          {presentation.limitations?.length ? (
+            <div className="grid gap-2 border-t border-stone-200 pt-3 md:grid-cols-2">
+              {presentation.limitations.map((limitation) => (
+                <div
+                  className="rounded-lg border border-stone-200 bg-stone-50 px-3 py-3"
+                  key={`${limitation.proposition_id || "limit"}-${limitation.heading}`}
+                >
+                  <p className="text-[11px] uppercase tracking-[0.15em] text-stone-500">
+                    {limitation.heading}
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-stone-700">
+                    {limitation.body}
+                  </p>
+                  {limitation.action_ids?.length ? (
+                    <SupportingVotesButton
+                      actionIds={limitation.action_ids}
+                      findingLabel={limitation.heading}
+                      onClick={onShowSupportingVotes}
+                    />
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+
+      {presentation.scope_boundary ? (
+        <p className="mt-3 border-t border-stone-200 pt-3 text-sm leading-6 text-stone-600">
+          {presentation.scope_boundary}
+        </p>
+      ) : null}
+    </section>
+  );
+}
+
+function PresentationFinding({ item, onShowSupportingVotes, tone = "standard" }) {
+  return (
+    <article className={`rounded-xl border px-3 py-3 ${tone === "limiting" ? "border-amber-200 bg-amber-50" : "border-cyan-900/10 bg-cyan-50/50"}`}>
+      <h5 className="text-base leading-6 text-stone-950">{item.heading}</h5>
+      <p className="mt-1 text-sm leading-6 text-stone-700">{item.body}</p>
+      <SupportingVotesButton
+        actionIds={item.action_ids}
+        findingLabel={item.heading}
+        onClick={onShowSupportingVotes}
+      />
+    </article>
+  );
+}
+
+function SupportingVotesButton({ actionIds, findingLabel, onClick }) {
+  return (
+    <button
+      aria-label={`See supporting votes for ${findingLabel}`}
+      className="mt-3 rounded-full border border-cyan-900/20 bg-white px-3 py-2 text-xs uppercase tracking-[0.14em] text-cyan-950 transition hover:bg-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
+      onClick={() => onClick(actionIds)}
+      type="button"
+    >
+      See supporting votes
+    </button>
   );
 }
 
@@ -485,6 +676,7 @@ function BillEvidenceGroup({ group, representativeName, selectedActionRow, setSe
       <div className="mt-3 grid gap-2">
         {group.rows.map((row) => (
           <VoteEvidenceRow
+            anchorReceipt
             key={`${row.roll_call_id}-${row.position}`}
             representativeName={representativeName}
             row={row}
@@ -497,7 +689,7 @@ function BillEvidenceGroup({ group, representativeName, selectedActionRow, setSe
   );
 }
 
-function VoteEvidenceRow({ representativeName, row, selectedActionRow, setSelectedActionRow }) {
+function VoteEvidenceRow({ anchorReceipt = false, representativeName, row, selectedActionRow, setSelectedActionRow }) {
   const isProcedural = isProceduralContextRow(row);
   const scanSummary =
     buildVoteCardSummary(row, { representativeName }) ||
@@ -509,6 +701,8 @@ function VoteEvidenceRow({ representativeName, row, selectedActionRow, setSelect
   const voteType = row.vote_context?.vote_type || row.vote_type;
   const typeLabel = voteType ? formatVoteType(voteType) : "";
   const confidenceLabel = formatEvidenceConfidenceLabel(row);
+  const canonicalActionId = getCanonicalActionId(row);
+  const isSelected = canonicalActionId && canonicalActionId === getCanonicalActionId(selectedActionRow);
   const rowToneClass = isProcedural
     ? "border-sky-100 bg-sky-50/70"
     : row.interpretation_status === "interpreted" && row.position !== "not_voting"
@@ -516,7 +710,12 @@ function VoteEvidenceRow({ representativeName, row, selectedActionRow, setSelect
       : "border-stone-200 bg-stone-50";
 
   return (
-    <article className={`rounded-xl border px-3 py-2.5 ${rowToneClass}`}>
+    <article
+      className={`scroll-mt-24 rounded-xl border px-3 py-2.5 ${rowToneClass} ${isSelected ? "ring-2 ring-cyan-700 ring-offset-2" : ""}`}
+      data-canonical-action-id={canonicalActionId || undefined}
+      id={anchorReceipt && canonicalActionId ? receiptAnchorId(canonicalActionId) : undefined}
+      tabIndex={anchorReceipt && canonicalActionId ? -1 : undefined}
+    >
       <div className="grid gap-2 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
         <div>
           <p className="break-words text-[11px] uppercase tracking-[0.16em] text-stone-500">

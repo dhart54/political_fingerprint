@@ -1,0 +1,700 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://political-fingerprint.local/schemas/editorial_public_issue_presentation_v1.schema.json",
+  "title": "Editorial Public Issue Presentation V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_identity",
+    "compiled_semantic_meaning",
+    "editorial_wording",
+    "frontend_display",
+    "evidence_metadata",
+    "provenance",
+    "controls"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "editorial_public_issue_presentation_v1"
+    },
+    "artifact_identity": {
+      "$ref": "#/definitions/artifactIdentity"
+    },
+    "compiled_semantic_meaning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_proposition_ids",
+        "limiting_proposition_ids",
+        "propositions",
+        "source_render_constraints",
+        "coverage_boundaries",
+        "presentation_boundaries",
+        "review_route"
+      ],
+      "properties": {
+        "primary_proposition_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "limiting_proposition_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "propositions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/proposition"
+          }
+        },
+        "source_render_constraints": {
+          "type": "array"
+        },
+        "coverage_boundaries": {
+          "type": "array"
+        },
+        "presentation_boundaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/presentationBoundary"
+          }
+        },
+        "review_route": {
+          "enum": [
+            "standard_generation_pass",
+            "sampled_audit_candidate",
+            "human_exception_required",
+            "blocked"
+          ]
+        }
+      }
+    },
+    "editorial_wording": {
+      "$ref": "#/definitions/editorialWording"
+    },
+    "frontend_display": {
+      "$ref": "#/definitions/frontendDisplay"
+    },
+    "evidence_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coverage",
+        "action_ids",
+        "episode_ids",
+        "action_accounting"
+      ],
+      "properties": {
+        "coverage": {
+          "type": "object"
+        },
+        "action_ids": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "episode_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "action_accounting": {
+          "type": "object"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "semantic_source_case_id",
+        "dossier_refs",
+        "source_refs",
+        "claim_refs",
+        "receipt_refs",
+        "compiled_ir_sha256",
+        "reviewed_wording_sha256",
+        "review_receipt",
+        "compiler_receipt"
+      ],
+      "properties": {
+        "compiled_ir_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "reviewed_wording_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "review_receipt": {
+          "$ref": "#/definitions/reviewReceipt"
+        },
+        "compiler_receipt": {
+          "$ref": "#/definitions/contentBinding"
+        }
+      }
+    },
+    "controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "semantic",
+        "editorial",
+        "benchmark",
+        "production",
+        "publication",
+        "review_receipt",
+        "derived_semantic_tier",
+        "effective_public_tier",
+        "publication_gates_passed"
+      ],
+      "properties": {
+        "semantic": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "validation_status"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "accepted_semantic_reference",
+                "candidate",
+                "blocked"
+              ]
+            },
+            "validation_status": {
+              "enum": [
+                "passed",
+                "failed",
+                "pending"
+              ]
+            }
+          }
+        },
+        "editorial": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "human_approval_status"
+          ],
+          "properties": {
+            "human_approval_status": {
+              "enum": [
+                "human_approval_pending",
+                "human_approved",
+                "rejected"
+              ]
+            }
+          }
+        },
+        "benchmark": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "not_promoted",
+                "gold_benchmark"
+              ]
+            }
+          }
+        },
+        "production": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "eligible"
+          ],
+          "properties": {
+            "eligible": {
+              "type": "boolean"
+            }
+          }
+        },
+        "publication": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "active"
+          ],
+          "properties": {
+            "active": {
+              "type": "boolean"
+            }
+          }
+        },
+        "review_receipt": {
+          "$ref": "#/definitions/reviewReceipt"
+        },
+        "derived_semantic_tier": {
+          "$ref": "#/definitions/tier"
+        },
+        "effective_public_tier": {
+          "$ref": "#/definitions/tier"
+        },
+        "publication_gates_passed": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "uniqueStrings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "actionIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^house:[1-9][0-9]*:[0-9]+:[0-9]+$"
+      },
+      "uniqueItems": true
+    },
+    "artifactIdentity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "artifact_version",
+        "member_id",
+        "issue_id",
+        "congress",
+        "scope",
+        "source_case_id"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "member_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issue_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "congress": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "scope": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "source_case_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "tier": {
+      "enum": [
+        "reviewed_conclusion",
+        "developing_read",
+        "non_directional_or_limited_evidence",
+        "receipts_only"
+      ]
+    },
+    "proposition": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "proposition_id",
+        "semantic_role",
+        "proposition_type",
+        "direction",
+        "evidence_action_ids",
+        "evidence_episode_ids",
+        "presentation_target",
+        "conclusion_relevance",
+        "relationships"
+      ]
+    },
+    "presentationBoundary": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "boundary_id",
+        "presentation_target"
+      ],
+      "properties": {
+        "boundary_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "presentation_target": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mapping_id",
+        "proposition_ids",
+        "boundary_ids",
+        "presentation_target",
+        "action_ids",
+        "episode_ids",
+        "source_refs",
+        "receipt_refs"
+      ],
+      "properties": {
+        "mapping_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proposition_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "boundary_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "presentation_target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action_ids": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "episode_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "source_refs": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "receipt_refs": {
+          "$ref": "#/definitions/uniqueStrings"
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "proposition_ids": {
+              "minItems": 1
+            },
+            "boundary_ids": {
+              "maxItems": 0
+            }
+          }
+        },
+        {
+          "properties": {
+            "proposition_ids": {
+              "maxItems": 0
+            },
+            "boundary_ids": {
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    },
+    "analyticalText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "mapping"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mapping": {
+          "$ref": "#/definitions/mapping"
+        }
+      }
+    },
+    "sectionWording": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proposition_id",
+        "heading",
+        "body"
+      ],
+      "properties": {
+        "proposition_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "heading": {
+          "$ref": "#/definitions/analyticalText"
+        },
+        "body": {
+          "$ref": "#/definitions/analyticalText"
+        }
+      }
+    },
+    "limitationWording": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heading",
+        "body"
+      ],
+      "properties": {
+        "proposition_id": {
+          "type": "string"
+        },
+        "boundary_id": {
+          "type": "string"
+        },
+        "heading": {
+          "$ref": "#/definitions/analyticalText"
+        },
+        "body": {
+          "$ref": "#/definitions/analyticalText"
+        }
+      }
+    },
+    "editorialWording": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "tier_display",
+        "coverage_text",
+        "scope_boundary",
+        "conclusion",
+        "repeated_patterns",
+        "policy_trajectories",
+        "limitations"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tier_display": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "badge",
+              "teaser"
+            ],
+            "properties": {
+              "badge": {
+                "type": "string",
+                "minLength": 1
+              },
+              "teaser": {
+                "$ref": "#/definitions/analyticalText"
+              }
+            }
+          }
+        },
+        "coverage_text": {
+          "$ref": "#/definitions/analyticalText"
+        },
+        "scope_boundary": {
+          "$ref": "#/definitions/analyticalText"
+        },
+        "conclusion": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "headline",
+                "body"
+              ],
+              "properties": {
+                "headline": {
+                  "$ref": "#/definitions/analyticalText"
+                },
+                "body": {
+                  "$ref": "#/definitions/analyticalText"
+                }
+              }
+            }
+          ]
+        },
+        "repeated_patterns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/sectionWording"
+          }
+        },
+        "policy_trajectories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/sectionWording"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/limitationWording"
+          }
+        }
+      }
+    },
+    "contentBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "artifact_version",
+        "compiled_ir_sha256",
+        "reviewed_wording_sha256",
+        "mapping_ids",
+        "approved_scope"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "compiled_ir_sha256": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewed_wording_sha256": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mapping_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "approved_scope": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        }
+      }
+    },
+    "reviewReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_id",
+        "status",
+        "binding",
+        "reviewer",
+        "approvals"
+      ],
+      "properties": {
+        "receipt_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "human_approval_pending",
+            "approved",
+            "rejected"
+          ]
+        },
+        "binding": {
+          "$ref": "#/definitions/contentBinding"
+        },
+        "reviewer": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "reviewer_id",
+            "authority"
+          ],
+          "properties": {
+            "reviewer_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "authority": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "approvals": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "frontendDisplay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tier",
+        "tier_badge",
+        "teaser",
+        "coverage_text",
+        "scope_boundary",
+        "conclusion",
+        "repeated_patterns",
+        "policy_trajectories",
+        "limitations"
+      ],
+      "properties": {
+        "tier": {
+          "$ref": "#/definitions/tier"
+        },
+        "tier_badge": {
+          "type": "string",
+          "minLength": 1
+        },
+        "teaser": {
+          "type": "string",
+          "minLength": 1
+        },
+        "coverage_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scope_boundary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "conclusion": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "repeated_patterns": {
+          "type": "array"
+        },
+        "policy_trajectories": {
+          "type": "array"
+        },
+        "limitations": {
+          "type": "array"
+        }
+      }
+    }
+  }
+}

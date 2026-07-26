@@ -7,6 +7,7 @@ from app.api.alignment import router as alignment_router
 from app.api.compare import router as compare_router
 from app.api.contact import router as contact_router
 from app.api.drift import router as drift_router
+from app.api.editorial_presentations import router as editorial_presentations_router
 from app.api.fingerprint import router as fingerprint_router
 from app.api.internal_record_across import router as internal_record_across_router
 from app.api.lookup import router as lookup_router
@@ -42,6 +43,7 @@ app.include_router(fingerprint_router)
 app.include_router(positions_router)
 app.include_router(alignment_router)
 app.include_router(drift_router)
+app.include_router(editorial_presentations_router)
 app.include_router(summary_router)
 app.include_router(lookup_router)
 app.include_router(metadata_router)
