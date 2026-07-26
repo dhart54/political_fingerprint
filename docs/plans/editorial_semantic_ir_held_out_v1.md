@@ -1,6 +1,6 @@
 # Editorial Semantic IR V1 Held-Out Generalization Proof
 
-Status: active
+Status: complete
 
 Starting commit: `cc70e7d58e264e535548aab313681b655e684772`
 
@@ -38,7 +38,7 @@ Starting commit: `cc70e7d58e264e535548aab313681b655e684772`
 - [x] Protected files and inputs are byte-identical to the starting commit.
 - [x] Bounded semantic, property, packet, and governance checks pass.
 - [x] Staged `git diff --check` passes.
-- [ ] Intended files are committed, pushed, and presented in a draft PR.
+- [x] Intended files are committed, pushed, and presented in draft PR #109.
 
 ## Baseline
 
@@ -65,7 +65,7 @@ Starting commit: `cc70e7d58e264e535548aab313681b655e684772`
 - [x] Shared semantic packets complete.
 - [x] Compilation and judgments complete.
 - [x] Validation and protected-file proofs complete.
-- [ ] Commit and draft PR complete.
+- [x] Commit and draft PR complete.
 
 ## Discoveries And Decisions
 
@@ -123,6 +123,7 @@ Starting commit: `cc70e7d58e264e535548aab313681b655e684772`
 
 ## Final Reconciliation
 
-- Definition of done satisfied: pending.
+- Definition of done satisfied: yes. Five proof-only files were committed and
+  pushed; draft PR #109 is open against `main`.
 - Remaining limitation: external semantic review is required by design.
 - Recommended next step: external review of the four held-out results.
