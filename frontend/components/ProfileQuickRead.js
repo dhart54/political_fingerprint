@@ -146,7 +146,14 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
             <IssueEvidenceCard
               key={row.domain}
               onClick={() => onInspectDomain?.(row.domain)}
-              presentation={getEditorialPresentation(state.presentations, row.domain)}
+              presentation={getEditorialPresentation(
+                state.presentations,
+                row.domain,
+                {
+                  legislatorId: legislator.id,
+                  memberBioguideId: legislator.bioguide_id,
+                },
+              )}
               row={row}
             />
           ))}

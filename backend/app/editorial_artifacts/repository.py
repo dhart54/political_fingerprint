@@ -112,7 +112,7 @@ class EditorialArtifactRepository:
                WHERE registry.publicly_active = TRUE
                  AND registry.deactivated_at IS NULL
                  AND artifact.editorial_status = 'human_approved'
-                 AND artifact.benchmark_status = 'promoted'
+                 AND artifact.benchmark_status = 'gold_benchmark'
                  AND artifact.production_eligible = TRUE
                ORDER BY registry.member_bioguide_id, registry.issue_id""",
         )

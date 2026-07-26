@@ -82,6 +82,12 @@ patterns, a limiting trajectory, limitations, and canonical supporting-action
 controls before the unchanged receipts. `scope=all` preserves an explicit
 reviewed-119th boundary; `scope=118` cannot display the 119th artifact.
 
+React renders a presentation only when the API payload's legislator and
+bioguide identities match the currently displayed representative and the
+presentation issue matches the selected issue. Supporting-vote controls use
+finding-specific accessible names, move focus to the canonical receipt, retain
+visible focus/highlight styling, and respect `prefers-reduced-motion`.
+
 Semantic acceptance, human approval, benchmark status, production eligibility,
 publication, merge, and deployment remain separate decisions. The current
 F000477 Justice fixture remains pending and therefore public `receipts_only`.

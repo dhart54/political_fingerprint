@@ -141,6 +141,10 @@ export default function PositionByIssue({
   const selectedPresentation = getEditorialPresentation(
     state.presentations,
     selectedRow?.domain,
+    {
+      legislatorId,
+      memberBioguideId: legislator?.bioguide_id,
+    },
   );
 
   async function inspectDomain(domain) {
@@ -307,9 +311,13 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, presentatio
     window.requestAnimationFrame(() => {
       window.requestAnimationFrame(() => {
         document.getElementById(receiptAnchorId(targetActionId))?.scrollIntoView({
-          behavior: "smooth",
+          behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
           block: "center",
         });
+        const target = document.getElementById(receiptAnchorId(targetActionId));
+        target?.focus({ preventScroll: true });
       });
     });
   }
@@ -491,6 +499,7 @@ function EditorialPresentationPanel({ onShowSupportingVotes, presentation }) {
                   {limitation.action_ids?.length ? (
                     <SupportingVotesButton
                       actionIds={limitation.action_ids}
+                      findingLabel={limitation.heading}
                       onClick={onShowSupportingVotes}
                     />
                   ) : null}
@@ -517,15 +526,17 @@ function PresentationFinding({ item, onShowSupportingVotes, tone = "standard" })
       <p className="mt-1 text-sm leading-6 text-stone-700">{item.body}</p>
       <SupportingVotesButton
         actionIds={item.action_ids}
+        findingLabel={item.heading}
         onClick={onShowSupportingVotes}
       />
     </article>
   );
 }
 
-function SupportingVotesButton({ actionIds, onClick }) {
+function SupportingVotesButton({ actionIds, findingLabel, onClick }) {
   return (
     <button
+      aria-label={`See supporting votes for ${findingLabel}`}
       className="mt-3 rounded-full border border-cyan-900/20 bg-white px-3 py-2 text-xs uppercase tracking-[0.14em] text-cyan-950 transition hover:bg-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
       onClick={() => onClick(actionIds)}
       type="button"
@@ -703,6 +714,7 @@ function VoteEvidenceRow({ anchorReceipt = false, representativeName, row, selec
       className={`scroll-mt-24 rounded-xl border px-3 py-2.5 ${rowToneClass} ${isSelected ? "ring-2 ring-cyan-700 ring-offset-2" : ""}`}
       data-canonical-action-id={canonicalActionId || undefined}
       id={anchorReceipt && canonicalActionId ? receiptAnchorId(canonicalActionId) : undefined}
+      tabIndex={anchorReceipt && canonicalActionId ? -1 : undefined}
     >
       <div className="grid gap-2 md:grid-cols-[minmax(0,1fr)_auto] md:items-start">
         <div>

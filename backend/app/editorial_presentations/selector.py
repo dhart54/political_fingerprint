@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import copy
+import hmac
 import json
 from typing import Any, Iterable
 
+from .compiler import EditorialPresentationError, artifact_digest
 from .validation import validate_public_issue_presentation
 
 
@@ -65,7 +67,7 @@ def _eligible_row(
         or row.get("publicly_active") is not True
         or row.get("deactivated_at") is not None
         or row.get("editorial_status") != "human_approved"
-        or row.get("benchmark_status") != "promoted"
+        or row.get("benchmark_status") != "gold_benchmark"
         or row.get("production_eligible") is not True
     ):
         return None
@@ -76,13 +78,26 @@ def _eligible_row(
         validate_public_issue_presentation(payload)
     except (KeyError, TypeError, EditorialPresentationError):
         return None
+    identity = payload["artifact_identity"]
     controls = payload["controls"]
     if (
         controls["publication"]["active"] is not True
-        or controls["effective_public_tier"] == "receipts_only"
+        or payload["frontend_display"]["tier"] == "receipts_only"
+        or row.get("issue_id") != identity["issue_id"]
+        or identity["issue_id"] not in SUPPORTED_ISSUES
+        or identity["member_id"] != member_bioguide_id
+        or row.get("natural_key") != identity["artifact_id"]
+        or row.get("artifact_version") != identity["artifact_version"]
+        or row.get("schema_version") != payload["schema_version"]
     ):
         return None
-    reviewed_scope = payload["artifact_identity"]["scope"]
+    stored_digest = row.get("content_sha256")
+    if not isinstance(stored_digest, str) or not hmac.compare_digest(
+        stored_digest,
+        artifact_digest(payload),
+    ):
+        return None
+    reviewed_scope = identity["scope"]
     if scope == "118" or reviewed_scope != "119":
         return None
     return payload
@@ -128,6 +143,9 @@ def select_public_presentations(
                 "compiled_ir_sha256": artifact["provenance"][
                     "compiled_ir_sha256"
                 ],
+                "reviewed_wording_sha256": artifact["provenance"][
+                    "reviewed_wording_sha256"
+                ],
                 "review_receipt_id": artifact["controls"]["review_receipt"][
                     "receipt_id"
                 ],
@@ -140,7 +158,3 @@ def select_public_presentations(
         "scope": scope,
         "presentations": [result[issue_id] for issue_id in SUPPORTED_ISSUES],
     }
-
-
-# Imported late to avoid a circular import in the validation exception path.
-from .compiler import EditorialPresentationError  # noqa: E402

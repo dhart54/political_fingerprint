@@ -1,6 +1,15 @@
 import { expect, test } from "@playwright/test";
 
 const actions = [32, 33, 130, 131, 166, 275, 299];
+const foushee = {
+  id: "leg_valerie_p_foushee",
+  bioguide_id: "F000477",
+  name_display: "Valerie P. Foushee",
+  chamber: "house",
+  state: "NC",
+  district: "04",
+  party: "D",
+};
 
 const positions = {
   scope_metadata: {
@@ -26,7 +35,7 @@ const positions = {
 
 const presentation = {
   schema_version: "editorial_public_presentations_api_v1",
-  legislator_id: "leg_aaron_bean",
+  legislator_id: "leg_valerie_p_foushee",
   member_bioguide_id: "F000477",
   scope: "all",
   presentations: [
@@ -75,11 +84,61 @@ const presentation = {
   ],
 };
 
-test.beforeEach(async ({ page }) => {
-  await page.route("http://localhost:8000/**", async (route) => {
-    const path = new URL(route.request().url()).pathname;
+const nonDirectionalPresentation = {
+  ...presentation,
+  presentations: [
+    {
+      ...presentation.presentations[0],
+      tier: "non_directional_or_limited_evidence",
+      tier_badge: "Limited reviewed evidence",
+      teaser: "The supplied record contains non-directional or limited evidence.",
+      conclusion: null,
+      repeated_patterns: [],
+      policy_trajectories: [],
+      limitations: [],
+    },
+  ],
+};
+
+test.beforeEach(async ({ page }, testInfo) => {
+  const presentationPayload = testInfo.title.includes("non-directional tier")
+    ? nonDirectionalPresentation
+    : presentation;
+  const handleApi = async (route) => {
+    const path = new URL(route.request().url()).pathname.replace(/\/+$/, "");
     if (path.endsWith("/editorial-presentations")) {
-      await route.fulfill({ json: presentation });
+      await route.fulfill({ json: presentationPayload });
+      return;
+    }
+    if (path.endsWith("/lookup/zip/27701")) {
+      await route.fulfill({
+        json: {
+          zip: "27701",
+          state: "NC",
+          district: "04",
+          data_source: "database",
+          source_metadata: {
+            source_type: "reviewed_zip_map",
+            source_retrieved_at: "2026-07-01",
+            source_version: "reviewed-v1",
+          },
+          district_mappings: [
+            { zip: "27701", state: "NC", district: "04" },
+          ],
+          house_rep: foushee,
+          senators: [],
+        },
+      });
+      return;
+    }
+    if (path.endsWith("/lookup/zip/27701/races")) {
+      await route.fulfill({ json: { races: [] } });
+      return;
+    }
+    if (path.endsWith("/lookup/zips")) {
+      await route.fulfill({
+        json: { data_source: "database", zips: ["27701"] },
+      });
       return;
     }
     if (path.endsWith("/positions")) {
@@ -114,11 +173,22 @@ test.beforeEach(async ({ page }) => {
       return;
     }
     await route.fulfill({ json: {} });
-  });
+  };
+  for (const pattern of [
+    "**/lookup/**",
+    "**/legislators/**",
+    "**/metadata/**",
+    "**/coverage/**",
+  ]) {
+    await page.route(pattern, handleApi);
+  }
 });
 
 test("IR-native conclusion is display-only and supporting controls resolve to receipts", async ({ page }) => {
   await page.goto("/");
+  await expect(
+    page.getByRole("heading", { name: "Valerie P. Foushee", exact: true }),
+  ).toBeVisible();
   const card = page.getByRole("button", { name: "Inspect Justice & Public Safety votes" });
   await expect(card).toContainText("Reviewed conclusion");
   await expect(card).toContainText("reviewed 119th-Congress sample");
@@ -130,26 +200,80 @@ test("IR-native conclusion is display-only and supporting controls resolve to re
   await expect(panel).toContainText("The fentanyl episode is mixed");
   await expect(panel).toContainText("bounded to the reviewed 119th-Congress record");
 
-  await panel.getByRole("button", { name: "See supporting votes" }).first().click();
+  const supporting = panel.getByRole("button", {
+    name: "See supporting votes for Safeguards, research, reporting, and implementation constraints",
+  });
+  await supporting.click();
   const receipt = page.locator('[data-canonical-action-id="house:119:1:32"]').last();
   await expect(receipt).toBeVisible();
   await expect(receipt).toHaveAttribute("id", "vote-receipt-house-119-1-32");
   await expect(receipt).toHaveClass(/ring-2/);
+  await expect(receipt).toBeFocused();
 });
 
 test("IR-native presentation remains keyboard-accessible and responsive at 390px", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.addInitScript(() => {
+    window.__presentationScrollBehaviors = [];
+    const original = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function scrollIntoView(options) {
+      window.__presentationScrollBehaviors.push(options?.behavior || null);
+      return original.call(this, options);
+    };
+  });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
+  await expect(
+    page.getByRole("heading", { name: "Valerie P. Foushee", exact: true }),
+  ).toBeVisible();
   const card = page.getByRole("button", { name: "Inspect Justice & Public Safety votes" });
   await card.focus();
   await page.keyboard.press("Enter");
   const panel = page.getByTestId("editorial-presentation");
   await expect(panel).toBeVisible();
-  const supporting = panel.getByRole("button", { name: "See supporting votes" }).first();
+  const supportingButtons = panel.getByRole("button", {
+    name: /See supporting votes for/,
+  });
+  const labels = await supportingButtons.evaluateAll((buttons) =>
+    buttons.map((button) => button.getAttribute("aria-label")),
+  );
+  expect(new Set(labels).size).toBe(labels.length);
+  const supporting = supportingButtons.first();
   await supporting.focus();
   await expect(supporting).toBeFocused();
+  await page.keyboard.press("Enter");
+  const receipt = page.locator("#vote-receipt-house-119-1-32");
+  await expect(receipt).toBeFocused();
+  await expect(receipt).toHaveClass(/ring-2/);
+  const scrollBehaviors = await page.evaluate(
+    () => window.__presentationScrollBehaviors,
+  );
+  expect(scrollBehaviors).toContain("auto");
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   expect(overflow).toBeLessThanOrEqual(1);
+});
+
+test("supplied non-directional tier renders no analytical synthesis", async ({ page }) => {
+  await page.goto("/");
+  await expect(
+    page.getByRole("heading", { name: "Valerie P. Foushee", exact: true }),
+  ).toBeVisible();
+  const card = page.getByRole("button", {
+    name: "Inspect Justice & Public Safety votes",
+  });
+  await expect(card).toContainText("Limited reviewed evidence");
+  await card.click();
+  const panel = page.getByTestId("editorial-presentation");
+  await expect(panel).toHaveAttribute(
+    "data-presentation-tier",
+    "non_directional_or_limited_evidence",
+  );
+  await expect(panel).toContainText(
+    "The supplied record contains non-directional or limited evidence.",
+  );
+  await expect(panel).not.toContainText("A divide by policy mechanism");
+  await expect(panel).not.toContainText("Repeated patterns");
+  await expect(panel).not.toContainText("Safeguards, research");
 });
 
 test("/golden-render-fixture remains unavailable", async ({ page }) => {

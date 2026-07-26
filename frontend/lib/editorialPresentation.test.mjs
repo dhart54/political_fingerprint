@@ -8,6 +8,7 @@ import {
   getCanonicalActionId,
   getEditorialPresentation,
   indexEditorialPresentations,
+  presentationIdentityMatches,
   receiptAnchorId,
 } from "./editorialPresentation.mjs";
 
@@ -15,6 +16,8 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 
 function payload() {
   return {
+    legislator_id: "leg_valerie_p_foushee",
+    member_bioguide_id: "F000477",
     presentations: [
       {
         issue_id: "JUSTICE_PUBLIC_SAFETY",
@@ -33,16 +36,51 @@ function payload() {
 test("presentation helpers expose only the API-supplied domain object", () => {
   const input = payload();
   assert.equal(
-    getEditorialPresentation(input, "JUSTICE_PUBLIC_SAFETY"),
+    getEditorialPresentation(input, "JUSTICE_PUBLIC_SAFETY", {
+      legislatorId: "leg_valerie_p_foushee",
+      memberBioguideId: "F000477",
+    }),
     input.presentations[0],
   );
-  assert.equal(getEditorialPresentation(input, "ECONOMY_TAXES"), null);
+  assert.equal(
+    getEditorialPresentation(input, "ECONOMY_TAXES", {
+      legislatorId: "leg_valerie_p_foushee",
+      memberBioguideId: "F000477",
+    }),
+    null,
+  );
   assert.equal(indexEditorialPresentations({ presentations: [{}] }).size, 0);
+});
+
+test("presentation identity must match the displayed member", () => {
+  const input = payload();
+  assert.equal(
+    presentationIdentityMatches(input, {
+      legislatorId: "leg_valerie_p_foushee",
+      memberBioguideId: "F000477",
+    }),
+    true,
+  );
+  assert.equal(
+    getEditorialPresentation(input, "JUSTICE_PUBLIC_SAFETY", {
+      legislatorId: "leg_aaron_bean",
+      memberBioguideId: "B001317",
+    }),
+    null,
+  );
 });
 
 test("raw vote reordering and direction reversal cannot alter supplied conclusion", () => {
   const input = payload();
-  const baseline = getEditorialPresentation(input, "JUSTICE_PUBLIC_SAFETY");
+  const identity = {
+    legislatorId: "leg_valerie_p_foushee",
+    memberBioguideId: "F000477",
+  };
+  const baseline = getEditorialPresentation(
+    input,
+    "JUSTICE_PUBLIC_SAFETY",
+    identity,
+  );
   const rawVotes = [
     { position: "nay", roll_call_id: "house:119:1:2" },
     { position: "yea", roll_call_id: "house:119:1:1" },
@@ -51,7 +89,7 @@ test("raw vote reordering and direction reversal cannot alter supplied conclusio
     row.position = row.position === "yea" ? "nay" : "yea";
   }
   assert.deepEqual(
-    getEditorialPresentation(input, "JUSTICE_PUBLIC_SAFETY"),
+    getEditorialPresentation(input, "JUSTICE_PUBLIC_SAFETY", identity),
     baseline,
   );
 });

@@ -14,64 +14,167 @@
     "tier_display": {
       "reviewed_conclusion": {
         "badge": "Reviewed conclusion",
-        "teaser": "The reviewed 119th-Congress sample shows a divide between safeguards, research, reporting, or implementation constraints and measures involving police tools, operational authority, or rollback of policing restrictions."
+        "teaser": {
+          "text": "The reviewed 119th-Congress sample shows a divide between safeguards, research, reporting, or implementation constraints and measures involving police tools, operational authority, or rollback of policing restrictions.",
+          "mapping": {
+            "mapping_id": "mapping:teaser:mechanism-divide",
+            "proposition_ids": ["prop:af269162633f4c5c"],
+            "boundary_ids": [],
+            "presentation_target": "conclusion_only",
+            "action_ids": ["house:119:1:130", "house:119:1:131", "house:119:1:275", "house:119:1:299", "house:119:1:32"],
+            "episode_ids": ["dc-police-pursuit-rules", "dc-policing-reform-repeal", "halt-fentanyl-legislative-path", "officer-safety-data-reporting", "retired-service-weapon-purchases"],
+            "source_refs": ["clerk_roll_032", "clerk_roll_130", "clerk_roll_131", "clerk_roll_275", "clerk_roll_299"],
+            "receipt_refs": ["docs/semantic_ir/accepted/acceptance_receipt.json", "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"]
+          }
+        }
       }
     },
-    "coverage_text": "This conclusion covers 7 reviewed substantive actions across 5 independent policy episodes in the 119th Congress.",
-    "scope_boundary": "This is a conclusion about the reviewed 119th-Congress sample, not every possible Justice & Public Safety issue or a broader political philosophy.",
+    "coverage_text": {
+      "text": "This conclusion covers 7 reviewed substantive actions across 5 independent policy episodes in the 119th Congress.",
+      "mapping": {
+        "mapping_id": "mapping:coverage:reviewed-actions",
+        "proposition_ids": [],
+        "boundary_ids": ["boundary:coverage:f000477:justice_public_safety:119"],
+        "presentation_target": "coverage_note",
+        "action_ids": ["house:119:1:130", "house:119:1:131", "house:119:1:166", "house:119:1:275", "house:119:1:299", "house:119:1:32", "house:119:1:33"],
+        "episode_ids": ["dc-police-pursuit-rules", "dc-policing-reform-repeal", "halt-fentanyl-legislative-path", "officer-safety-data-reporting", "retired-service-weapon-purchases"],
+        "source_refs": ["clerk_roll_032", "clerk_roll_033", "clerk_roll_130", "clerk_roll_131", "clerk_roll_166", "clerk_roll_275", "clerk_roll_299"],
+        "receipt_refs": ["docs/semantic_ir/accepted/acceptance_receipt.json", "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"]
+      }
+    },
+    "scope_boundary": {
+      "text": "This conclusion remains bounded to the reviewed 119th-Congress sample.",
+      "mapping": {
+        "mapping_id": "mapping:scope:reviewed-119",
+        "proposition_ids": [],
+        "boundary_ids": ["boundary:scope:f000477:justice_public_safety:119"],
+        "presentation_target": "scope_note",
+        "action_ids": ["house:119:1:130", "house:119:1:131", "house:119:1:166", "house:119:1:275", "house:119:1:299", "house:119:1:32", "house:119:1:33"],
+        "episode_ids": ["dc-police-pursuit-rules", "dc-policing-reform-repeal", "halt-fentanyl-legislative-path", "officer-safety-data-reporting", "retired-service-weapon-purchases"],
+        "source_refs": ["clerk_roll_032", "clerk_roll_033", "clerk_roll_130", "clerk_roll_131", "clerk_roll_166", "clerk_roll_275", "clerk_roll_299"],
+        "receipt_refs": ["docs/semantic_ir/accepted/acceptance_receipt.json", "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"]
+      }
+    },
     "conclusion": {
-      "proposition_ids": [
-        "prop:c428677c0dbee5e0",
-        "prop:abbe87a63baefb7d",
-        "prop:af269162633f4c5c"
-      ],
-      "headline": "A divide by policy mechanism in the reviewed sample",
-      "body": "In this reviewed 119th-Congress sample, Foushee supported safeguards, research, reporting, or implementation constraints across independent episodes, while opposing measures involving police tools, operational authority, or rollback of policing restrictions."
+      "headline": {
+        "text": "A divide by policy mechanism in the reviewed sample",
+        "mapping": {
+          "mapping_id": "mapping:conclusion:headline",
+          "proposition_ids": ["prop:af269162633f4c5c"],
+          "boundary_ids": [],
+          "presentation_target": "conclusion_only",
+          "action_ids": ["house:119:1:130", "house:119:1:131", "house:119:1:275", "house:119:1:299", "house:119:1:32"],
+          "episode_ids": ["dc-police-pursuit-rules", "dc-policing-reform-repeal", "halt-fentanyl-legislative-path", "officer-safety-data-reporting", "retired-service-weapon-purchases"],
+          "source_refs": ["clerk_roll_032", "clerk_roll_130", "clerk_roll_131", "clerk_roll_275", "clerk_roll_299"],
+          "receipt_refs": ["docs/semantic_ir/accepted/acceptance_receipt.json", "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"]
+        }
+      },
+      "body": {
+        "text": "In this reviewed 119th-Congress sample, Foushee supported safeguards, research, reporting, or implementation constraints across independent episodes, while opposing measures involving police tools, operational authority, or rollback of policing restrictions.",
+        "mapping": {
+          "mapping_id": "mapping:conclusion:body",
+          "proposition_ids": ["prop:af269162633f4c5c"],
+          "boundary_ids": [],
+          "presentation_target": "conclusion_only",
+          "action_ids": ["house:119:1:130", "house:119:1:131", "house:119:1:275", "house:119:1:299", "house:119:1:32"],
+          "episode_ids": ["dc-police-pursuit-rules", "dc-policing-reform-repeal", "halt-fentanyl-legislative-path", "officer-safety-data-reporting", "retired-service-weapon-purchases"],
+          "source_refs": ["clerk_roll_032", "clerk_roll_130", "clerk_roll_131", "clerk_roll_275", "clerk_roll_299"],
+          "receipt_refs": ["docs/semantic_ir/accepted/acceptance_receipt.json", "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"]
+        }
+      }
     },
     "repeated_patterns": [
       {
         "proposition_id": "prop:c428677c0dbee5e0",
-        "heading": "Safeguards, research, reporting, and implementation constraints",
-        "body": "Across independent episodes, Foushee supported an overdose-reduction certification condition, a later fentanyl framework with research provisions, and officer-safety reporting requirements.",
-        "action_ids": [
-          "house:119:1:131",
-          "house:119:1:166",
-          "house:119:1:32"
-        ]
+        "heading": {
+          "text": "Safeguards, research, reporting, and implementation constraints",
+          "mapping": {
+            "mapping_id": "mapping:repeated-support:heading",
+            "proposition_ids": ["prop:c428677c0dbee5e0"],
+            "boundary_ids": [],
+            "presentation_target": "repeated_patterns",
+            "action_ids": ["house:119:1:131", "house:119:1:166", "house:119:1:32"],
+            "episode_ids": ["halt-fentanyl-legislative-path", "officer-safety-data-reporting"],
+            "source_refs": ["clerk_roll_032", "clerk_roll_131", "clerk_roll_166"],
+            "receipt_refs": ["docs/semantic_ir/accepted/acceptance_receipt.json", "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"]
+          }
+        },
+        "body": {
+          "text": "Across independent episodes, Foushee supported an overdose-reduction certification condition, a later fentanyl framework with research provisions, and officer-safety reporting requirements.",
+          "mapping": {
+            "mapping_id": "mapping:repeated-support:body",
+            "proposition_ids": ["prop:c428677c0dbee5e0"],
+            "boundary_ids": [],
+            "presentation_target": "repeated_patterns",
+            "action_ids": ["house:119:1:131", "house:119:1:166", "house:119:1:32"],
+            "episode_ids": ["halt-fentanyl-legislative-path", "officer-safety-data-reporting"],
+            "source_refs": ["clerk_roll_032", "clerk_roll_131", "clerk_roll_166"],
+            "receipt_refs": ["docs/semantic_ir/accepted/acceptance_receipt.json", "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"]
+          }
+        }
       },
       {
         "proposition_id": "prop:abbe87a63baefb7d",
-        "heading": "Police tools, operational authority, and safeguard rollbacks",
-        "body": "Across independent episodes, Foushee opposed a reviewed expansion of a law-enforcement firearm purchase program, broader D.C. police pursuit authority, and repeal of most reviewed D.C. policing restrictions.",
-        "action_ids": [
-          "house:119:1:130",
-          "house:119:1:275",
-          "house:119:1:299"
-        ]
+        "heading": {
+          "text": "Police tools, operational authority, and safeguard rollbacks",
+          "mapping": {
+            "mapping_id": "mapping:repeated-opposition:heading",
+            "proposition_ids": ["prop:abbe87a63baefb7d"],
+            "boundary_ids": [],
+            "presentation_target": "repeated_patterns",
+            "action_ids": ["house:119:1:130", "house:119:1:275", "house:119:1:299"],
+            "episode_ids": ["dc-police-pursuit-rules", "dc-policing-reform-repeal", "retired-service-weapon-purchases"],
+            "source_refs": ["clerk_roll_130", "clerk_roll_275", "clerk_roll_299"],
+            "receipt_refs": ["docs/semantic_ir/accepted/acceptance_receipt.json", "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"]
+          }
+        },
+        "body": {
+          "text": "Across independent episodes, Foushee opposed a reviewed expansion of a law-enforcement firearm purchase program, broader D.C. police pursuit authority, and repeal of most reviewed D.C. policing restrictions.",
+          "mapping": {
+            "mapping_id": "mapping:repeated-opposition:body",
+            "proposition_ids": ["prop:abbe87a63baefb7d"],
+            "boundary_ids": [],
+            "presentation_target": "repeated_patterns",
+            "action_ids": ["house:119:1:130", "house:119:1:275", "house:119:1:299"],
+            "episode_ids": ["dc-police-pursuit-rules", "dc-policing-reform-repeal", "retired-service-weapon-purchases"],
+            "source_refs": ["clerk_roll_130", "clerk_roll_275", "clerk_roll_299"],
+            "receipt_refs": ["docs/semantic_ir/accepted/acceptance_receipt.json", "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"]
+          }
+        }
       }
     ],
     "policy_trajectories": [
       {
         "proposition_id": "prop:bc08a2271517ebb7",
-        "heading": "The fentanyl episode is mixed",
-        "body": "Within one fentanyl legislative episode, Foushee supported a certification amendment, opposed the earlier House bill, and supported a later related framework with research provisions. These are related stages within one episode, not three independent policy positions or evidence of a change in motive or philosophy.",
-        "action_ids": [
-          "house:119:1:166",
-          "house:119:1:32",
-          "house:119:1:33"
-        ]
+        "heading": {
+          "text": "The fentanyl episode is mixed",
+          "mapping": {
+            "mapping_id": "mapping:trajectory-fentanyl:heading",
+            "proposition_ids": ["prop:bc08a2271517ebb7"],
+            "boundary_ids": [],
+            "presentation_target": "policy_trajectories",
+            "action_ids": ["house:119:1:166", "house:119:1:32", "house:119:1:33"],
+            "episode_ids": ["halt-fentanyl-legislative-path"],
+            "source_refs": ["clerk_roll_032", "clerk_roll_033", "clerk_roll_166"],
+            "receipt_refs": ["docs/semantic_ir/accepted/acceptance_receipt.json", "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"]
+          }
+        },
+        "body": {
+          "text": "Within one fentanyl legislative episode, Foushee supported a certification amendment, opposed the earlier House bill, and supported a later related framework with research provisions. These are related stages within one episode, not three independent policy positions or evidence of a change in motive or philosophy.",
+          "mapping": {
+            "mapping_id": "mapping:trajectory-fentanyl:body",
+            "proposition_ids": ["prop:bc08a2271517ebb7"],
+            "boundary_ids": [],
+            "presentation_target": "policy_trajectories",
+            "action_ids": ["house:119:1:166", "house:119:1:32", "house:119:1:33"],
+            "episode_ids": ["halt-fentanyl-legislative-path"],
+            "source_refs": ["clerk_roll_032", "clerk_roll_033", "clerk_roll_166"],
+            "receipt_refs": ["docs/semantic_ir/accepted/acceptance_receipt.json", "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"]
+          }
+        }
       }
     ],
-    "limitations": [
-      {
-        "heading": "Limits of this read",
-        "body": "The record is bounded to reviewed actions in the 119th Congress. It does not establish motive, ideology, character, future behavior, or a broad Justice philosophy."
-      },
-      {
-        "heading": "One-sided source boundary",
-        "body": "For the officer-safety reporting bill, the reviewed official materials supported a fair supporter case but did not supply an adequate stage-specific opposing case; no opposing argument is invented."
-      }
-    ]
+    "limitations": []
   },
   "provenance": {
     "semantic_source_case_id": "semir-dev-05-justice-mechanism-divide",
@@ -135,6 +238,30 @@
     "review_receipt": {
       "receipt_id": "not_supplied",
       "status": "human_approval_pending",
+      "binding": {
+        "artifact_id": "f000477:justice_public_safety:119:v1",
+        "artifact_version": 1,
+        "compiled_ir_sha256": "f6acbacca4b32f7daf3deef757d14538add4c8b81d0fc80923f0cf3caf8aa3f1",
+        "reviewed_wording_sha256": "100a625b7b2865663689aafe1e92be627b368faa136c23f4ae6d6b9ca88b8924",
+        "mapping_ids": [
+          "mapping:conclusion:body",
+          "mapping:conclusion:headline",
+          "mapping:coverage:reviewed-actions",
+          "mapping:repeated-opposition:body",
+          "mapping:repeated-opposition:heading",
+          "mapping:repeated-support:body",
+          "mapping:repeated-support:heading",
+          "mapping:scope:reviewed-119",
+          "mapping:teaser:mechanism-divide",
+          "mapping:trajectory-fentanyl:body",
+          "mapping:trajectory-fentanyl:heading"
+        ],
+        "approved_scope": "119"
+      },
+      "reviewer": {
+        "reviewer_id": "not_supplied",
+        "authority": "not_supplied"
+      },
       "approvals": {
         "bounded_issue_conclusion": false,
         "repeated_pattern_statements": false,

@@ -13,6 +13,8 @@
 - Candidate artifact: `f000477:justice_public_safety:119:v1`
 - Compiled IR digest:
   `f6acbacca4b32f7daf3deef757d14538add4c8b81d0fc80923f0cf3caf8aa3f1`
+- Reviewed wording digest:
+  `100a625b7b2865663689aafe1e92be627b368faa136c23f4ae6d6b9ca88b8924`
 
 ## Implemented result
 
@@ -26,7 +28,9 @@ the accepted compiled conclusion plan. The real review fixture remains:
 - without an authorized review receipt.
 
 The effective public tier is therefore `receipts_only`. The read-only selector
-returns no analytical wording for the real pending state.
+returns no analytical wording for the real pending state. The eligible
+benchmark value is the persistence contract's `gold_benchmark`; `promoted` is
+not accepted anywhere in this presentation path.
 
 The candidate wording remains bounded to the reviewed 119th-Congress sample. It
 preserves:
@@ -36,13 +40,17 @@ preserves:
 - opposition across independent episodes involving police tools, operational
   authority, or rollback of policing restrictions;
 - the mixed fentanyl episode as a material limiting trajectory;
-- the one-sided source boundary; and
+- the one-sided source companion as focused validation and provenance without
+  publishing an unmapped analytical limitation; and
 - the prohibition on motive, ideology, character, prediction, cross-time
   movement, or broad Justice-philosophy claims.
 
 ## Human approval gate
 
-An authorized reviewer must supply one receipt that explicitly approves:
+An authorized reviewer must supply one content-bound receipt identifying the
+artifact key and version, compiled-IR digest, reviewed-wording digest, complete
+mapping set, reviewed scope, and reviewer identity and authority. That receipt
+must explicitly approve:
 
 1. the bounded issue conclusion;
 2. both repeated-pattern statements;
@@ -54,19 +62,29 @@ An authorized reviewer must supply one receipt that explicitly approves:
 This PR does not supply, infer, or simulate that authorization. Publication
 activation is a separate control and remains inactive.
 
+Every candidate analytical string now carries a proposition or typed-boundary
+mapping with its exact action, episode, source, and receipt references. The
+validator enforces declared presentation-section ownership. At selection time,
+derived gate flags are ignored as authority; atomic controls, registry/payload/
+request identity, artifact version, content digest, wording digest, review
+receipt, and compiler receipt are revalidated and any mismatch returns
+`receipts_only`.
+
 ## Validation evidence
 
 - Semantic pipeline: 5 checks passed.
 - Justice mechanism-divide domain case: passed.
 - Mixed fentanyl trajectory domain case: passed.
 - One-sided argument domain case: passed.
-- Requested backend presentation/API/cutover tests: 31 passed.
-- Frontend library tests: 97 passed.
+- Requested backend presentation/API/cutover tests: 43 passed, including the
+  in-memory persistence-contract benchmark selector.
+- Frontend library tests: 98 passed.
 - Frontend production build: passed.
 - Cutover browser smoke: 3 passed.
-- IR presentation browser suite: 3 passed, including keyboard access,
-  390-pixel responsive rendering, supporting-vote navigation, and the removed
-  fixture route remaining 404.
+- IR presentation browser suite: 4 passed, including consistent Foushee
+  identity, direct non-directional display coverage, keyboard focus transfer,
+  reduced-motion behavior, 390-pixel rendering, and the removed fixture route
+  remaining 404.
 - Release pipeline with frontend: 6 checks passed.
 - Documentation governance: passed.
 - `git diff --check`: passed.

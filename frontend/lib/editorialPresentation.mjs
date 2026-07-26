@@ -21,7 +21,22 @@ export function indexEditorialPresentations(payload) {
   return result;
 }
 
-export function getEditorialPresentation(payload, domain) {
+export function presentationIdentityMatches(
+  payload,
+  { legislatorId, memberBioguideId } = {},
+) {
+  return (
+    typeof legislatorId === "string" &&
+    typeof memberBioguideId === "string" &&
+    payload?.legislator_id === legislatorId &&
+    payload?.member_bioguide_id === memberBioguideId
+  );
+}
+
+export function getEditorialPresentation(payload, domain, identity) {
+  if (!presentationIdentityMatches(payload, identity)) {
+    return null;
+  }
   return indexEditorialPresentations(payload).get(domain) || null;
 }
 

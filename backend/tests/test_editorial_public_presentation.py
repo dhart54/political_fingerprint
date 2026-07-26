@@ -9,6 +9,7 @@ import pytest
 from app.editorial_presentations.compiler import (
     EditorialPresentationError,
     artifact_bytes,
+    build_review_binding,
     compile_public_issue_presentation,
 )
 from app.editorial_presentations.validation import (
@@ -39,19 +40,24 @@ def _compiled(case_id: str) -> dict:
     return replay_accepted_reference(copy.deepcopy(_cases()[case_id])).compiled_ir
 
 
-def _approved_controls() -> dict:
+def _approved_controls(binding: dict) -> dict:
     return {
         "semantic": {
             "status": "accepted_semantic_reference",
             "validation_status": "passed",
         },
         "editorial": {"human_approval_status": "human_approved"},
-        "benchmark": {"status": "promoted"},
+        "benchmark": {"status": "gold_benchmark"},
         "production": {"eligible": True},
         "publication": {"active": True},
         "review_receipt": {
             "receipt_id": "test-only-authorized-receipt",
             "status": "approved",
+            "binding": binding,
+            "reviewer": {
+                "reviewer_id": "test-reviewer",
+                "authority": "test-authorized-editorial-reviewer",
+            },
             "approvals": {
                 "bounded_issue_conclusion": True,
                 "repeated_pattern_statements": True,
@@ -60,6 +66,31 @@ def _approved_controls() -> dict:
                 "benchmark_promotion": True,
                 "production_eligibility": True,
             },
+        },
+    }
+
+
+def _mapped_text(
+    *,
+    text: str,
+    mapping_id: str,
+    presentation_target: str,
+    action_ids: list[str],
+    episode_ids: list[str],
+    proposition_ids: list[str] | None = None,
+    boundary_ids: list[str] | None = None,
+) -> dict:
+    return {
+        "text": text,
+        "mapping": {
+            "mapping_id": mapping_id,
+            "proposition_ids": proposition_ids or [],
+            "boundary_ids": boundary_ids or [],
+            "presentation_target": presentation_target,
+            "action_ids": list(action_ids),
+            "episode_ids": list(episode_ids),
+            "source_refs": ["test-source"],
+            "receipt_refs": ["test-receipt"],
         },
     }
 
@@ -73,31 +104,90 @@ def _input_for(compiled: dict, *, approved: bool = True) -> dict:
     plan = member["composition"]["conclusion_plan"]
     primary = list(plan["primary_proposition_ids"])
     limiting = list(plan["limiting_proposition_ids"])
-    repeated_patterns = []
-    trajectories = []
-    limitations = []
-    primary_synthesis = {
+    planned = [propositions[item] for item in [*primary, *limiting]]
+    all_actions = sorted(
+        {
+            action_id
+            for proposition in planned
+            for action_id in proposition["evidence_action_ids"]
+        }
+    )
+    all_episodes = sorted(
+        {
+            episode_id
+            for proposition in planned
+            for episode_id in proposition["evidence_episode_ids"]
+        }
+    )
+    repeated_patterns: list[dict] = []
+    trajectories: list[dict] = []
+    limitations: list[dict] = []
+    conclusion_only = [
         proposition_id
         for proposition_id in primary
-        if propositions[proposition_id]["semantic_role"] == "synthesis"
-    }
+        if propositions[proposition_id]["presentation_target"] == "conclusion_only"
+    ]
     for proposition_id in [*primary, *limiting]:
-        if proposition_id in primary_synthesis:
-            continue
         proposition = propositions[proposition_id]
+        target = proposition["presentation_target"]
+        if target == "conclusion_only":
+            continue
+        if target not in {
+            "repeated_patterns",
+            "policy_trajectories",
+            "meaningful_limitations",
+        }:
+            continue
         record = {
             "proposition_id": proposition_id,
-            "heading": f"Reviewed {proposition['proposition_type']}",
-            "body": f"Reviewed wording for {proposition_id}.",
-            "action_ids": list(proposition["evidence_action_ids"]),
+            "heading": _mapped_text(
+                text=f"Reviewed {proposition['proposition_type']}",
+                mapping_id=f"mapping:{proposition_id}:heading",
+                presentation_target=target,
+                action_ids=proposition["evidence_action_ids"],
+                episode_ids=proposition["evidence_episode_ids"],
+                proposition_ids=[proposition_id],
+            ),
+            "body": _mapped_text(
+                text=f"Reviewed wording for {proposition_id}.",
+                mapping_id=f"mapping:{proposition_id}:body",
+                presentation_target=target,
+                action_ids=proposition["evidence_action_ids"],
+                episode_ids=proposition["evidence_episode_ids"],
+                proposition_ids=[proposition_id],
+            ),
         }
-        if proposition["proposition_type"] == "repeated_pattern":
+        if target == "repeated_patterns":
             repeated_patterns.append(record)
-        elif proposition["semantic_role"] == "behavioral":
+        elif target == "policy_trajectories":
             trajectories.append(record)
         else:
             limitations.append(record)
-    return {
+    boundary_suffix = (
+        f"{member['member_id']}:justice_public_safety:119".lower()
+    )
+    teaser_proposition_id = (
+        conclusion_only[0]
+        if conclusion_only
+        else (primary[0] if primary else None)
+    )
+    teaser_proposition = (
+        propositions[teaser_proposition_id] if teaser_proposition_id else None
+    )
+    teaser_target = (
+        teaser_proposition["presentation_target"]
+        if teaser_proposition
+        else "coverage_note"
+    )
+    teaser_actions = (
+        teaser_proposition["evidence_action_ids"] if teaser_proposition else all_actions
+    )
+    teaser_episodes = (
+        teaser_proposition["evidence_episode_ids"]
+        if teaser_proposition
+        else all_episodes
+    )
+    authoring = {
         "artifact_identity": {
             "artifact_id": "test:artifact:v1",
             "artifact_version": 1,
@@ -112,26 +202,133 @@ def _input_for(compiled: dict, *, approved: bool = True) -> dict:
             "tier_display": {
                 "reviewed_conclusion": {
                     "badge": "Reviewed conclusion",
-                    "teaser": "Supplied reviewed conclusion wording.",
+                    "teaser": _mapped_text(
+                        text="Supplied reviewed conclusion wording.",
+                        mapping_id="mapping:tier:reviewed",
+                        presentation_target=teaser_target,
+                        action_ids=teaser_actions,
+                        episode_ids=teaser_episodes,
+                        proposition_ids=(
+                            [teaser_proposition_id]
+                            if teaser_proposition_id
+                            else None
+                        ),
+                        boundary_ids=(
+                            None
+                            if teaser_proposition_id
+                            else [f"boundary:coverage:{boundary_suffix}"]
+                        ),
+                    ),
                 },
                 "developing_read": {
                     "badge": "Developing read",
-                    "teaser": "Supplied developing wording.",
+                    "teaser": _mapped_text(
+                        text="Supplied developing wording.",
+                        mapping_id="mapping:tier:developing",
+                        presentation_target=teaser_target,
+                        action_ids=teaser_actions,
+                        episode_ids=teaser_episodes,
+                        proposition_ids=(
+                            [teaser_proposition_id]
+                            if teaser_proposition_id
+                            else None
+                        ),
+                        boundary_ids=(
+                            None
+                            if teaser_proposition_id
+                            else [f"boundary:coverage:{boundary_suffix}"]
+                        ),
+                    ),
                 },
                 "non_directional_or_limited_evidence": {
                     "badge": "Limited reviewed evidence",
-                    "teaser": "Supplied non-directional wording.",
+                    "teaser": _mapped_text(
+                        text="Supplied non-directional wording.",
+                        mapping_id="mapping:tier:limited",
+                        presentation_target=teaser_target,
+                        action_ids=teaser_actions,
+                        episode_ids=teaser_episodes,
+                        proposition_ids=(
+                            [teaser_proposition_id]
+                            if teaser_proposition_id
+                            else None
+                        ),
+                        boundary_ids=(
+                            None
+                            if teaser_proposition_id
+                            else [f"boundary:coverage:{boundary_suffix}"]
+                        ),
+                    ),
                 },
             },
-            "coverage_text": "Supplied reviewed coverage wording.",
-            "scope_boundary": "Supplied reviewed scope boundary.",
+            "coverage_text": _mapped_text(
+                text="Supplied reviewed coverage wording.",
+                mapping_id="mapping:coverage",
+                presentation_target="coverage_note",
+                action_ids=all_actions,
+                episode_ids=all_episodes,
+                boundary_ids=[f"boundary:coverage:{boundary_suffix}"],
+            ),
+            "scope_boundary": _mapped_text(
+                text="Supplied reviewed scope boundary.",
+                mapping_id="mapping:scope",
+                presentation_target="scope_note",
+                action_ids=all_actions,
+                episode_ids=all_episodes,
+                boundary_ids=[f"boundary:scope:{boundary_suffix}"],
+            ),
             "conclusion": (
                 {
-                    "proposition_ids": primary,
-                    "headline": "Supplied reviewed headline.",
-                    "body": "Supplied reviewed conclusion.",
+                    "headline": _mapped_text(
+                        text="Supplied reviewed headline.",
+                        mapping_id="mapping:conclusion:headline",
+                        presentation_target="conclusion_only",
+                        action_ids=sorted(
+                            {
+                                action_id
+                                for item in conclusion_only
+                                for action_id in propositions[item][
+                                    "evidence_action_ids"
+                                ]
+                            }
+                        ),
+                        episode_ids=sorted(
+                            {
+                                episode_id
+                                for item in conclusion_only
+                                for episode_id in propositions[item][
+                                    "evidence_episode_ids"
+                                ]
+                            }
+                        ),
+                        proposition_ids=conclusion_only,
+                    ),
+                    "body": _mapped_text(
+                        text="Supplied reviewed conclusion.",
+                        mapping_id="mapping:conclusion:body",
+                        presentation_target="conclusion_only",
+                        action_ids=sorted(
+                            {
+                                action_id
+                                for item in conclusion_only
+                                for action_id in propositions[item][
+                                    "evidence_action_ids"
+                                ]
+                            }
+                        ),
+                        episode_ids=sorted(
+                            {
+                                episode_id
+                                for item in conclusion_only
+                                for episode_id in propositions[item][
+                                    "evidence_episode_ids"
+                                ]
+                            }
+                        ),
+                        proposition_ids=conclusion_only,
+                    ),
                 }
-                if primary
+                if conclusion_only
                 else None
             ),
             "repeated_patterns": repeated_patterns,
@@ -146,21 +343,26 @@ def _input_for(compiled: dict, *, approved: bool = True) -> dict:
             "claim_refs": ["test-claim"],
             "receipt_refs": ["test-receipt"],
         },
-        "controls": (
-            _approved_controls()
-            if approved
-            else json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))[
-                "controls"
-            ]
-        ),
+        "controls": {},
     }
+    if approved:
+        authoring["controls"] = _approved_controls(
+            build_review_binding(compiled, authoring)
+        )
+    else:
+        authoring["controls"] = json.loads(
+            FOUSHEE_FIXTURE.read_text(encoding="utf-8")
+        )["controls"]
+    return authoring
 
 
 def test_accepted_justice_mechanism_divide_presentation() -> None:
     case = copy.deepcopy(_cases()["semir-dev-05-justice-mechanism-divide"])
     compiled = replay_accepted_reference(case).compiled_ir
     authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
-    authoring["controls"] = _approved_controls()
+    authoring["controls"] = _approved_controls(
+        build_review_binding(compiled, authoring)
+    )
     pipeline_result = replay_accepted_reference(
         case,
         public_presentation_authoring=authoring,
@@ -208,6 +410,19 @@ def test_not_voting_and_present_remain_non_directional(case_id: str) -> None:
         for item in artifact["compiled_semantic_meaning"]["propositions"]
         if not item["evidence_action_ids"]
     )
+
+
+def test_not_voting_fixture_derives_non_directional_tier() -> None:
+    compiled = _compiled("semir-dev-09-not-voting-heavy-record")
+    artifact = compile_public_issue_presentation(compiled, _input_for(compiled))
+    assert artifact["controls"]["derived_semantic_tier"] == (
+        "non_directional_or_limited_evidence"
+    )
+    assert artifact["frontend_display"]["tier"] == (
+        "non_directional_or_limited_evidence"
+    )
+    assert artifact["frontend_display"]["conclusion"] is None
+    assert artifact["frontend_display"]["repeated_patterns"] == []
 
 
 @pytest.mark.parametrize(
@@ -270,11 +485,42 @@ def test_scope_mismatch_is_rejected() -> None:
 def test_exact_action_mapping_cannot_be_replaced_by_parent_measure() -> None:
     compiled = _compiled("semir-dev-05-justice-mechanism-divide")
     authoring = _input_for(compiled)
-    authoring["editorial_wording"]["policy_trajectories"][0]["action_ids"][0] = (
-        "parent-measure:hr27"
-    )
+    authoring["editorial_wording"]["policy_trajectories"][0]["body"]["mapping"][
+        "action_ids"
+    ][0] = "parent-measure:hr27"
     with pytest.raises(EditorialPresentationError, match="exactly match"):
         compile_public_issue_presentation(compiled, authoring)
+
+
+def test_unmapped_limitation_is_rejected() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = _input_for(compiled)
+    authoring["editorial_wording"]["limitations"].append(
+        {
+            "heading": "Unmapped limitation",
+            "body": "This analytical sentence has no semantic mapping.",
+        }
+    )
+    with pytest.raises(EditorialPresentationError, match="explicit mapping"):
+        compile_public_issue_presentation(compiled, authoring)
+
+
+def test_proposition_cannot_be_mapped_to_the_wrong_section() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = _input_for(compiled)
+    trajectory = authoring["editorial_wording"]["policy_trajectories"][0]
+    trajectory["body"]["mapping"]["presentation_target"] = "repeated_patterns"
+    with pytest.raises(EditorialPresentationError, match="wrong presentation"):
+        compile_public_issue_presentation(compiled, authoring)
+
+
+def test_impossible_promoted_benchmark_value_is_rejected() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = _input_for(compiled)
+    authoring["controls"]["benchmark"]["status"] = "promoted"
+    artifact = compile_public_issue_presentation(compiled, authoring)
+    with pytest.raises(EditorialPresentationError, match="benchmark status"):
+        validate_public_issue_presentation(artifact)
 
 
 def test_amendment_final_passage_and_contradictory_evidence_are_retained() -> None:
