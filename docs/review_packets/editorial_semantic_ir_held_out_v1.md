@@ -1,0 +1,795 @@
+# Editorial Semantic IR V1 Held-Out Generalization Proof
+
+Status: `candidate_pending_external_semantic_review`
+
+Starting commit: `cc70e7d58e264e535548aab313681b655e684772`
+
+This packet records a first-pass semantic proof using the merged compiler unchanged. It contains candidate semantics and exact machine output, not approved prose, gold benchmarks, production eligibility, publication, or engine correction.
+
+## Result Summary
+
+| Case | Compiler route | Case judgment |
+| --- | --- | --- |
+| `semir-held-01-partial-service-missing-evidence` | `human_exception_required` | `blocked` |
+| `semir-held-02-source-conflict-unsupported` | `human_exception_required` | `blocked` |
+| `semir-held-03-title-order-invariance` | `sampled_audit_candidate` | `defensible_under_established_v1_rules` |
+| `semir-held-04-cross-domain-final-passage` | `human_exception_required` | `human_exception_required` |
+
+## `semir-held-01-partial-service-missing-evidence`
+
+### Structural question
+
+How should the IR distinguish unresolved missing evidence from verified outside-service status while stating exact known coverage without generic unknown-state language?
+
+### Evidence reviewed
+
+- docs/editorial/commissioning_domain_v1/corrected/actual_member_vector_evaluation.json
+- docs/editorial/commissioning_domain_v1/corrected/mutation_report.json
+- docs/editorial/commissioning_domain_v1/corrected/episode_map.json
+- docs/editorial/commissioning_domain_v1/corrected/domain_eligibility_report.json
+- docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_006.json
+- docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_055.json
+- docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_064.json
+
+Source IDs: clerk_roll_006, clerk_roll_007, clerk_roll_055, clerk_roll_064, clerk_roll_076, clerk_roll_078, clerk_roll_093.
+
+Mutation IDs: missing_as_outside_service.
+
+### Proposed shared semantics
+
+**Established reusable semantics**
+
+- seven exact actions are accepted Environment and Energy actions
+- rolls 6 and 7 form one ordered appropriations episode
+- rolls 55 and 64 are separate episodes in the critical-mineral-supply family
+- rolls 76 and 78 are separate episodes in the home-energy-policy family
+- Present and Not Voting are non-directional
+- missing evidence is distinct from verified outside-service status
+
+**New proposals (not accepted)**
+
+- None.
+
+**Unresolved semantics**
+
+- service status for rolls 6 and 7 remains unresolved and cannot be relabeled as outside service
+
+**Unsupported or conflicting evidence**
+
+- None.
+
+### Adversarial concerns found
+
+- unresolved missing evidence could be collapsed into outside-service coverage
+- Not Voting actions could be treated directionally
+- the two appropriations stages could be counted as separate episodes
+
+### Corrections made before compilation
+
+- preserved Missing Evidence, unresolved service, and missing evidence status exactly
+- kept Not Voting non-directional
+- kept rolls 6 and 7 in one ordered episode
+
+### Exact compiler output
+
+```json
+{
+  "members": [
+    {
+      "member_id": "M001245",
+      "party": "unknown",
+      "coverage": {
+        "eligible_substantive_actions": 7,
+        "context_only_control_actions": 0,
+        "in_service_eligible_actions": 5,
+        "resolved_eligible_actions": 5,
+        "directional_yes_no_positions": 2,
+        "present_actions": 0,
+        "not_voting_actions": 3,
+        "missing_evidence_actions": 0,
+        "outside_service_actions": 2,
+        "complete_episodes": 5,
+        "partial_episodes": 1
+      },
+      "proposition_graph": {
+        "propositions": [
+          {
+            "proposition_id": "prop:d51651ebe09cb361",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:2:64"
+            ],
+            "evidence_episode_ids": [
+              "critical-mineral-supply-assessment-and-strategy"
+            ],
+            "mechanism_or_trait_refs": [
+              "domestic_resource_supply_actions"
+            ],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:2f3d637391eca04e",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:2:93"
+            ],
+            "evidence_episode_ids": [
+              "lead-ammunition-and-tackle-on-federal-lands"
+            ],
+            "mechanism_or_trait_refs": [
+              "limits_land_manager_authority"
+            ],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          }
+        ]
+      },
+      "composition": {
+        "conclusion_plan": {
+          "primary_proposition_ids": [],
+          "limiting_proposition_ids": []
+        },
+        "presentation_ownership": {
+          "other_notable_choices": [
+            "prop:d51651ebe09cb361",
+            "prop:2f3d637391eca04e"
+          ]
+        },
+        "coverage_boundaries": [
+          {
+            "boundary_id": "coverage:47cf9bc10b0f1ee0",
+            "boundary_type": "not_voting_heavy",
+            "action_ids": [
+              "house:119:2:55",
+              "house:119:2:76",
+              "house:119:2:78"
+            ],
+            "presentation_target": "coverage_note",
+            "detail": "Resolved Not Voting actions are non-directional."
+          },
+          {
+            "boundary_id": "coverage:bd73c0b6f8ecbf68",
+            "boundary_type": "missing_evidence",
+            "action_ids": [
+              "house:119:2:6",
+              "house:119:2:7"
+            ],
+            "presentation_target": "coverage_note",
+            "detail": "These accepted actions lack resolved official evidence."
+          },
+          {
+            "boundary_id": "coverage:280fb05c7f0c3811",
+            "boundary_type": "outside_service",
+            "action_ids": [
+              "house:119:2:6",
+              "house:119:2:7"
+            ],
+            "presentation_target": "coverage_note",
+            "detail": "These accepted actions fall outside the member's service window."
+          }
+        ],
+        "method_boundaries": [
+          {
+            "boundary_id": "method:58360fbe9949f8db",
+            "boundary_type": "episode_counting",
+            "action_ids": [
+              "house:119:2:6",
+              "house:119:2:7"
+            ],
+            "presentation_target": "method_note",
+            "detail": "Multiple legislative actions count as one reviewed episode."
+          }
+        ]
+      },
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:2:64",
+          "house:119:2:93"
+        ],
+        "non_proposition_reasons": [
+          {
+            "action_id": "house:119:2:55",
+            "reason_code": "non_directional_status",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:2:6",
+            "reason_code": "outside_service",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:2:7",
+            "reason_code": "outside_service",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:2:76",
+            "reason_code": "non_directional_status",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:2:78",
+            "reason_code": "non_directional_status",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          }
+        ]
+      },
+      "review_route": "human_exception_required"
+    }
+  ],
+  "source_render_constraints": []
+}
+```
+
+### Route and justification
+
+- Compiler route: human_exception_required
+- Case judgment: blocked
+- Justification: The unchanged compiler emits missing_evidence_actions=0 and outside_service_actions=2 for two explicitly unresolved Missing Evidence actions, and emits both missing-evidence and outside-service boundaries for the same actions.
+- Owning gap: member coverage and absence semantics
+- Generalized later correction (not authorized here): Coverage must count verified outside-service separately from unresolved service with missing evidence; boundary construction must make those states mutually accurate.
+
+### Remaining external-review questions
+
+- Confirm the blocked classification and the later generalized separation of unresolved missing evidence from verified outside service.
+
+## `semir-held-02-source-conflict-unsupported`
+
+### Structural question
+
+Which semantic boundary and review route should apply when the recorded member action is known but a proposed interpretive claim would be unsupported or would conflict with the available authoritative sources?
+
+### Evidence reviewed
+
+- docs/editorial/valerie_foushee_justice_public_safety_gold_v1/side_by_side_review.md
+- docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json
+
+Source IDs: clerk_roll_131, congress_s331.
+
+### Proposed shared semantics
+
+**Established reusable semantics**
+
+- the Clerk source resolves a Yea on House roll 131
+- a source completeness or argument-availability limit is not a behavioral proposition
+
+**New proposals (not accepted)**
+
+- human_review_pending: represent the unresolved action-source mapping as a shared source constraint
+
+**Unresolved semantics**
+
+- the supplied Congress source describes S. 331 while the manifest maps roll 131 to a different House action
+- policy meaning and policy traits for the exact action are unresolved
+
+**Unsupported or conflicting evidence**
+
+- congress_s331 cannot support a policy claim about house:119:1:131
+- no opposing argument or substitute policy meaning may be synthesized
+
+### Adversarial concerns found
+
+- the parent or neighboring fentanyl context could be inherited by roll 131
+- a resolved member vote could be mistaken for resolved action meaning
+- the compiler could manufacture a substantive notable choice from an unresolved meaning reference
+
+### Corrections made before compilation
+
+- set parent_context_used to false
+- used an explicitly unresolved action-meaning reference and no policy trait
+- added a source-completeness constraint forbidding a substantive rendering
+
+### Exact compiler output
+
+```json
+{
+  "members": [
+    {
+      "member_id": "F000477",
+      "party": "D",
+      "coverage": {
+        "eligible_substantive_actions": 1,
+        "context_only_control_actions": 0,
+        "in_service_eligible_actions": 1,
+        "resolved_eligible_actions": 1,
+        "directional_yes_no_positions": 1,
+        "present_actions": 0,
+        "not_voting_actions": 0,
+        "missing_evidence_actions": 0,
+        "outside_service_actions": 0,
+        "complete_episodes": 1,
+        "partial_episodes": 0
+      },
+      "proposition_graph": {
+        "propositions": [
+          {
+            "proposition_id": "prop:37c6e9660438b19b",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:1:131"
+            ],
+            "evidence_episode_ids": [
+              "unresolved-house-passage-roll-131"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          }
+        ]
+      },
+      "composition": {
+        "conclusion_plan": {
+          "primary_proposition_ids": [],
+          "limiting_proposition_ids": []
+        },
+        "presentation_ownership": {
+          "other_notable_choices": [
+            "prop:37c6e9660438b19b"
+          ]
+        },
+        "coverage_boundaries": [],
+        "method_boundaries": []
+      },
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:1:131"
+        ],
+        "non_proposition_reasons": []
+      },
+      "review_route": "human_exception_required"
+    }
+  ],
+  "source_render_constraints": [
+    {
+      "constraint_id": "source:held02-conflicting-action-source",
+      "constraint_type": "source_completeness",
+      "source_ids": [
+        "clerk_roll_131",
+        "congress_s331"
+      ],
+      "action_ids": [
+        "house:119:1:131"
+      ],
+      "presentation_target": "source_note",
+      "render_rule": "Do not render a substantive policy meaning, trait, argument, or conclusion until the action-source conflict is resolved."
+    }
+  ]
+}
+```
+
+### Route and justification
+
+- Compiler route: human_exception_required
+- Case judgment: blocked
+- Justification: The unchanged compiler emits a substantive support notable choice even though the action meaning reference is explicitly unresolved and the supplied Congress source conflicts with the recorded roll.
+- Owning gap: shared source integrity and action meaning validation
+- Generalized later correction (not authorized here): Compilation must reject or withhold behavioral propositions when exact-action meaning is unresolved or authoritative action sources conflict.
+
+### Remaining external-review questions
+
+- Identify the correct policy-meaning source for roll 131 or confirm that the conflict remains blocked.
+- Confirm that no behavioral proposition is allowed while exact-action meaning is unresolved.
+
+## `semir-held-03-title-order-invariance`
+
+### Structural question
+
+Which hierarchy, proposition identities, and ownership decisions remain stable when input order, display titles, or member identity change while the authoritative action evidence does not?
+
+### Evidence reviewed
+
+- docs/editorial/commissioning_domain_v1/corrected/episode_map.json
+- docs/editorial/commissioning_domain_v1/corrected/mutation_report.json
+- docs/editorial/commissioning_domain_v1/corrected/domain_eligibility_report.json
+- docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_006.json
+- docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_055.json
+- docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_064.json
+
+Source IDs: clerk_roll_006, clerk_roll_007, clerk_roll_055, clerk_roll_064.
+
+Mutation IDs: reordered_actions_episodes, opaque_action_titles, member_identity_change_identical_votes.
+
+### Proposed shared semantics
+
+**Established reusable semantics**
+
+- rolls 6 and 7 form one ordered appropriations episode
+- rolls 55 and 64 are separate episodes in one critical-mineral-supply policy family
+- rolls 55 and 64 share the reviewed domestic-resource-supply trait
+- stable semantic identities derive from evidence rather than list order, display titles, member identity, or party
+
+**New proposals (not accepted)**
+
+- None.
+
+**Unresolved semantics**
+
+- None.
+
+**Unsupported or conflicting evidence**
+
+- None.
+
+### Adversarial concerns found
+
+- input order could leak into episode or proposition order
+- the package title could cause rolls 6 and 7 to be grouped with mineral bills
+- member or party identity could alter semantic selection
+- the appropriations stage order could be lost
+
+### Corrections made before compilation
+
+- preserved the held-out reordered action list
+- grouped only rolls 6 and 7 by legislative episode
+- kept mineral bills as separate episodes within a policy family
+- retained explicit stage_order metadata and no display-title input
+
+### Exact compiler output
+
+```json
+{
+  "members": [
+    {
+      "member_id": "A000372",
+      "party": "R",
+      "coverage": {
+        "eligible_substantive_actions": 4,
+        "context_only_control_actions": 0,
+        "in_service_eligible_actions": 4,
+        "resolved_eligible_actions": 4,
+        "directional_yes_no_positions": 4,
+        "present_actions": 0,
+        "not_voting_actions": 0,
+        "missing_evidence_actions": 0,
+        "outside_service_actions": 0,
+        "complete_episodes": 3,
+        "partial_episodes": 0
+      },
+      "proposition_graph": {
+        "propositions": [
+          {
+            "proposition_id": "prop:b7065f29ab3d6941",
+            "semantic_role": "behavioral",
+            "proposition_type": "trajectory",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:6",
+              "house:119:2:7"
+            ],
+            "evidence_episode_ids": [
+              "fy2026-energy-water-interior-appropriations"
+            ],
+            "mechanism_or_trait_refs": [
+              "federal_environment_energy_funding"
+            ],
+            "presentation_target": "policy_trajectories",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:08423610c231d440",
+            "semantic_role": "behavioral",
+            "proposition_type": "repeated_pattern",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:55",
+              "house:119:2:64"
+            ],
+            "evidence_episode_ids": [
+              "critical-mineral-project-acceleration",
+              "critical-mineral-supply-assessment-and-strategy"
+            ],
+            "mechanism_or_trait_refs": [
+              "domestic_resource_supply_actions"
+            ],
+            "presentation_target": "repeated_patterns",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:26014159b0b2e1cd",
+            "semantic_role": "synthesis",
+            "proposition_type": "uniform_direction",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:55",
+              "house:119:2:6",
+              "house:119:2:64",
+              "house:119:2:7"
+            ],
+            "evidence_episode_ids": [
+              "critical-mineral-project-acceleration",
+              "critical-mineral-supply-assessment-and-strategy",
+              "fy2026-energy-water-interior-appropriations"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "conclusion_only",
+            "conclusion_relevance": "primary",
+            "relationships": {
+              "supported_by": [
+                "prop:b7065f29ab3d6941",
+                "prop:08423610c231d440"
+              ],
+              "limited_by": [
+                "prop:5d7faa6537a4b3ed"
+              ]
+            }
+          },
+          {
+            "proposition_id": "prop:5d7faa6537a4b3ed",
+            "semantic_role": "synthesis",
+            "proposition_type": "no_common_throughline",
+            "direction": "non_directional",
+            "evidence_action_ids": [
+              "house:119:2:55",
+              "house:119:2:6"
+            ],
+            "evidence_episode_ids": [
+              "critical-mineral-project-acceleration",
+              "fy2026-energy-water-interior-appropriations"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "conclusion_only",
+            "conclusion_relevance": "limiting",
+            "relationships": {
+              "supported_by": [
+                "prop:b7065f29ab3d6941",
+                "prop:08423610c231d440"
+              ],
+              "limited_by": []
+            }
+          }
+        ]
+      },
+      "composition": {
+        "conclusion_plan": {
+          "primary_proposition_ids": [
+            "prop:26014159b0b2e1cd"
+          ],
+          "limiting_proposition_ids": [
+            "prop:5d7faa6537a4b3ed"
+          ]
+        },
+        "presentation_ownership": {
+          "policy_trajectories": [
+            "prop:b7065f29ab3d6941"
+          ],
+          "repeated_patterns": [
+            "prop:08423610c231d440"
+          ],
+          "conclusion_only": [
+            "prop:26014159b0b2e1cd",
+            "prop:5d7faa6537a4b3ed"
+          ]
+        },
+        "coverage_boundaries": [],
+        "method_boundaries": [
+          {
+            "boundary_id": "method:58360fbe9949f8db",
+            "boundary_type": "episode_counting",
+            "action_ids": [
+              "house:119:2:6",
+              "house:119:2:7"
+            ],
+            "presentation_target": "method_note",
+            "detail": "Multiple legislative actions count as one reviewed episode."
+          }
+        ]
+      },
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:2:55",
+          "house:119:2:6",
+          "house:119:2:64",
+          "house:119:2:7"
+        ],
+        "non_proposition_reasons": []
+      },
+      "review_route": "sampled_audit_candidate"
+    }
+  ],
+  "source_render_constraints": []
+}
+```
+
+### Route and justification
+
+- Compiler route: sampled_audit_candidate
+- Case judgment: defensible_under_established_v1_rules
+- Justification: Established episode, family, trait, and stage inputs compile deterministically to a trajectory, a repeated pattern, and bounded synthesis independent of input ordering, titles, member identity, and party.
+
+### Remaining external-review questions
+
+- Confirm the established hierarchy and proposition composition; no new shared semantic acceptance is requested.
+
+## `semir-held-04-cross-domain-final-passage`
+
+### Structural question
+
+How should exact-action eligibility represent a bounded cross-domain final-passage action while preventing a neighboring parent-package action from inheriting domain eligibility?
+
+### Evidence reviewed
+
+- docs/editorial/commissioning_domain_v1/corrected/domain_eligibility_report.json
+- docs/editorial/commissioning_domain_v1/corrected/rejected_actions.json
+- docs/editorial/commissioning_domain_v1/dossiers/roll_005.json
+- docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_007.json
+- docs/editorial/commissioning_domain_v1/corrected/mutation_report.json
+
+Source IDs: clerk_roll_005, clerk_roll_007, congress_hr6938_text.
+
+Mutation IDs: wrong_action_stage.
+
+### Proposed shared semantics
+
+**Established reusable semantics**
+
+- roll 5 is rejected for Environment and Energy because the exact action retained Division A
+- roll 7 is accepted as cross-domain final passage with Environment and Energy meaning bounded to Divisions B and C
+- parent-package context cannot establish exact-action eligibility
+- rejected context cannot enter substantive coverage
+
+**New proposals (not accepted)**
+
+- human_review_pending: carry the cross-domain scope boundary as a source/render constraint for later presentation
+
+**Unresolved semantics**
+
+- None.
+
+**Unsupported or conflicting evidence**
+
+- a Yea on roll 7 cannot be rendered as support for every provision or every domain in H.R. 6938
+
+### Adversarial concerns found
+
+- roll 5 could inherit Environment and Energy eligibility from the parent package
+- roll 7 could be mislabeled as a retention stage
+- cross-domain package structure could be treated as a policy trait
+- the rejected action could enter member coverage
+
+### Corrections made before compilation
+
+- kept roll 5 rejected with parent_context_used false
+- kept roll 7 at final passage
+- recorded package scope as structural metadata and a render constraint, not a policy trait
+- provided member status only for accepted roll 7
+
+### Exact compiler output
+
+```json
+{
+  "members": [
+    {
+      "member_id": "C001059",
+      "party": "D",
+      "coverage": {
+        "eligible_substantive_actions": 1,
+        "context_only_control_actions": 1,
+        "in_service_eligible_actions": 1,
+        "resolved_eligible_actions": 1,
+        "directional_yes_no_positions": 1,
+        "present_actions": 0,
+        "not_voting_actions": 0,
+        "missing_evidence_actions": 0,
+        "outside_service_actions": 0,
+        "complete_episodes": 1,
+        "partial_episodes": 0
+      },
+      "proposition_graph": {
+        "propositions": [
+          {
+            "proposition_id": "prop:af318e59426175d7",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:7"
+            ],
+            "evidence_episode_ids": [
+              "fy2026-cross-domain-appropriations-final-passage"
+            ],
+            "mechanism_or_trait_refs": [
+              "federal_environment_energy_funding"
+            ],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          }
+        ]
+      },
+      "composition": {
+        "conclusion_plan": {
+          "primary_proposition_ids": [],
+          "limiting_proposition_ids": []
+        },
+        "presentation_ownership": {
+          "other_notable_choices": [
+            "prop:af318e59426175d7"
+          ]
+        },
+        "coverage_boundaries": [],
+        "method_boundaries": [
+          {
+            "boundary_id": "method:57c605c5763cb117",
+            "boundary_type": "exact_action_eligibility",
+            "action_ids": [
+              "house:119:2:5"
+            ],
+            "presentation_target": "method_note",
+            "detail": "Rejected exact actions remain outside substantive coverage."
+          }
+        ]
+      },
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:2:7"
+        ],
+        "non_proposition_reasons": []
+      },
+      "review_route": "human_exception_required"
+    }
+  ],
+  "source_render_constraints": [
+    {
+      "constraint_id": "source:held04-cross-domain-scope",
+      "constraint_type": "source_completeness",
+      "source_ids": [
+        "clerk_roll_007",
+        "congress_hr6938_text"
+      ],
+      "action_ids": [
+        "house:119:2:7"
+      ],
+      "presentation_target": "source_note",
+      "render_rule": "Limit Environment and Energy meaning to the Energy-Water and Interior-Environment divisions; do not imply support for every provision or domain in the package."
+    }
+  ]
+}
+```
+
+### Route and justification
+
+- Compiler route: human_exception_required
+- Case judgment: human_exception_required
+- Justification: Established exact-action eligibility safely excludes roll 5 and represents roll 7 as a bounded cross-domain final-passage notable choice; the proposed render constraint requires external shared semantic review.
+- Owning gap: shared cross-domain source/render boundary review
+
+### Remaining external-review questions
+
+- Review the proposed cross-domain source/render constraint.
+- Confirm that roll 7 remains bounded to Environment and Energy divisions while roll 5 remains rejected.
+
+## Proof boundary
+
+- The compiler, schema, accepted references, held-out inputs, and source dossiers were not modified.
+- No frontend, browser, database, persistence, production, publication, merge, or deployment action was performed.
+- The next action is external review of these four held-out results.
