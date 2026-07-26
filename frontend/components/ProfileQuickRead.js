@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-import { fetchFingerprint, fetchPositions } from "../lib/api";
+import { fetchEditorialPresentations, fetchFingerprint, fetchPositions } from "../lib/api";
 import { hasAvailableIssueEvidence } from "../lib/basicEvidencePresentation.mjs";
+import { getEditorialPresentation } from "../lib/editorialPresentation.mjs";
 import { formatDomainLabel } from "../lib/issueDomains";
 import {
   getDomainDescription,
   getEvidenceCoverage,
-  getEvidenceCoverageLabel,
   getRecordedActionComposition,
   orderIssueRowsByEvidenceUsefulness,
   pluralizeCountNoun,
@@ -19,6 +19,7 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
     status: "loading",
     fingerprint: null,
     positions: null,
+    presentations: null,
     error: null,
   });
 
@@ -30,6 +31,7 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
         status: "loading",
         fingerprint: null,
         positions: null,
+        presentations: null,
         error: null,
       });
 
@@ -37,11 +39,13 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
         if (fixtureData) {
           const fingerprint = fixtureData.fingerprint || { fingerprint: [] };
           const positions = fixtureData.positions || { positions: [] };
+          const presentations = fixtureData.presentations || { presentations: [] };
           if (active) {
             setState({
               status: "ready",
               fingerprint,
               positions,
+              presentations,
               error: null,
             });
             onProfileRead?.({
@@ -52,9 +56,10 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
           return;
         }
 
-        const [fingerprint, positions] = await Promise.all([
+        const [fingerprint, positions, presentations] = await Promise.all([
           fetchFingerprint({ legislatorId: legislator.id, scope }),
           fetchPositions({ legislatorId: legislator.id, scope }),
+          fetchEditorialPresentations({ legislatorId: legislator.id, scope }).catch(() => ({ presentations: [] })),
         ]);
 
         if (!active) {
@@ -65,6 +70,7 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
           status: "ready",
           fingerprint,
           positions,
+          presentations,
           error: null,
         });
         onProfileRead?.({
@@ -80,6 +86,7 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
           status: "error",
           fingerprint: null,
           positions: null,
+          presentations: null,
           error: "The quick read is unavailable right now.",
         });
       }
@@ -135,11 +142,11 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
 
       {state.status === "ready" && availableRows.length > 0 ? (
         <div className="mt-3 grid gap-2 border-t border-white/10 pt-3 md:grid-cols-2 xl:grid-cols-4">
-          {availableRows.map((row, index) => (
+          {availableRows.map((row) => (
             <IssueEvidenceCard
-              featured={index === 0}
               key={row.domain}
               onClick={() => onInspectDomain?.(row.domain)}
+              presentation={getEditorialPresentation(state.presentations, row.domain)}
               row={row}
             />
           ))}
@@ -169,7 +176,7 @@ function buildHeadline({ status, name }) {
   return `${name}'s available issue records`;
 }
 
-function IssueEvidenceCard({ featured, onClick, row }) {
+function IssueEvidenceCard({ onClick, presentation, row }) {
   const coverage = getEvidenceCoverage(row);
   const composition = getRecordedActionComposition(row);
 
@@ -184,9 +191,11 @@ function IssueEvidenceCard({ featured, onClick, row }) {
         <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-100">
           {formatDomainLabel(row.domain)}
         </p>
-        <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[10px] uppercase tracking-[0.12em] text-cyan-50">
-          {featured ? "Best-covered issue" : getEvidenceCoverageLabel(row)}
-        </span>
+        {presentation ? (
+          <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[10px] uppercase tracking-[0.12em] text-cyan-50">
+            {presentation.tier_badge}
+          </span>
+        ) : null}
       </div>
       <p className="mt-2 text-xs leading-4 text-cyan-50">
         {getDomainDescription(row.domain)}
@@ -196,8 +205,12 @@ function IssueEvidenceCard({ featured, onClick, row }) {
       </p>
       <p className="mt-0.5 text-[11px] leading-4 text-cyan-100">
         {coverage.reviewedYesNo} reviewed substantive Yes/No
-        {featured ? ` · ${getEvidenceCoverageLabel(row)}` : ""}
       </p>
+      {presentation ? (
+        <p className="mt-2 rounded-lg border border-white/10 bg-white/5 px-2.5 py-2 text-xs leading-4 text-cyan-50">
+          {presentation.teaser}
+        </p>
+      ) : null}
       <div className="mt-2" role="group" aria-label="Recorded action composition">
         <p className="text-[10px] uppercase tracking-[0.13em] text-cyan-100">
           Recorded action composition

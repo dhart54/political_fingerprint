@@ -238,7 +238,7 @@ test("basic issue navigation does not rebuild issue-card conclusions", () => {
 
   assert.match(source, /function IssueNavigation/);
   assert.doesNotMatch(source, /function BasicIssueList|Explore other issues/);
-  assert.match(source, /without combining them into a broader issue conclusion/);
+  assert.match(source, /publication-gated presentation/);
   assert.doesNotMatch(source, /buildIssueCardPreview|formatIssueCardStatusLabel|IssueReadinessTile/);
   assert.doesNotMatch(source, /from "\.\.\/lib\/issueReadiness\.mjs"/);
 });

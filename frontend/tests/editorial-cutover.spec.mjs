@@ -86,6 +86,19 @@ const evidenceByDomain = {
 test.beforeEach(async ({ page }) => {
   await page.route("http://localhost:8000/**", async (route) => {
     const path = new URL(route.request().url()).pathname;
+    if (path.endsWith("/editorial-presentations")) {
+      await route.fulfill({
+        json: {
+          presentations: positions.positions.map((row) => ({
+            issue_id: row.domain,
+            tier: "receipts_only",
+            tier_badge: "Vote receipts",
+            teaser: "Reviewed analytical wording is not published for this record scope.",
+          })),
+        },
+      });
+      return;
+    }
     if (path.endsWith("/positions")) {
       await route.fulfill({ json: positions });
       return;
@@ -122,7 +135,7 @@ test("representative page deliberately renders basic evidence and vote receipts"
   await expect(page.locator("body")).not.toContainText(
     /clearest(?: reviewed)? patterns?|strongest issue evidence|strongest issue card|best read/i,
   );
-  await expect(page.getByText("Best-covered issue", { exact: true })).toBeVisible();
+  await expect(page.getByText("Vote receipts", { exact: true }).first()).toBeVisible();
   const economyCard = page.getByRole("button", { name: "Inspect Economy & Taxes votes" });
   await expect(economyCard).toHaveCount(1);
   const compositionLegend = economyCard.getByRole("list", { name: "Recorded action composition legend" });

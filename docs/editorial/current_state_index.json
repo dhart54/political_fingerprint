@@ -10,7 +10,12 @@
     "pipeline": "backend/app/semantic_ir/pipeline.py",
     "compiled_validation": "backend/app/semantic_ir/validation.py",
     "adapters": "backend/app/semantic_ir/adapters.py",
-    "command": "scripts/run_editorial_pipeline.py"
+    "command": "scripts/run_editorial_pipeline.py",
+    "public_presentation_contract": "docs/editorial_public_issue_presentation_v1.md",
+    "public_presentation_schema": "docs/editorial_public_issue_presentation_v1.schema.json",
+    "public_presentation_compiler": "backend/app/editorial_presentations/compiler.py",
+    "public_presentation_validator": "backend/app/editorial_presentations/validation.py",
+    "public_presentation_selector": "backend/app/editorial_presentations/selector.py"
   },
   "accepted_reference_corpora": [
     {
@@ -46,7 +51,7 @@
   "frontend": {
     "rich_editorial_runtime_available": false,
     "representative_route": "/",
-    "representative_route_state": "basic_vote_evidence_and_receipts",
+    "representative_route_state": "coverage_first_with_publication_gated_ir_native_presentation_and_receipts",
     "profile_summary_state": "evidence_coverage_ordered_issue_cards_and_receipt_links",
     "issue_availability_basis": "actual_position_action_counts",
     "issue_ordering_basis": [
@@ -80,7 +85,16 @@
     "expected_missing_actions_available": false,
     "removed_routes": ["/golden-render-fixture"],
     "removed_route_result": "404",
-    "ir_native_presentation": "deferred"
+    "ir_native_presentation": "implemented_fail_closed",
+    "presentation_tiers": [
+      "reviewed_conclusion",
+      "developing_read",
+      "non_directional_or_limited_evidence",
+      "receipts_only"
+    ],
+    "presentation_ordering_effect": "none",
+    "presentation_react_analytical_inference": false,
+    "f000477_justice_119_publication_state": "human_approval_pending_receipts_only"
   },
   "production_staged_but_unpublished": {
     "artifact_count": 71,

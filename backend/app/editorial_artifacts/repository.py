@@ -102,12 +102,18 @@ class EditorialArtifactRepository:
 
     def publication_selector(self) -> list[dict[str, Any]]:
         return self._all(
-            """SELECT registry.*, artifact.payload_jsonb, artifact.content_sha256
+            """SELECT registry.*, artifact.payload_jsonb, artifact.content_sha256,
+                      artifact.editorial_status, artifact.benchmark_status,
+                      artifact.production_eligible, artifact.schema_version,
+                      artifact.artifact_version, artifact.natural_key
                FROM editorial_publication_registry registry
                JOIN editorial_artifact_versions artifact
                  ON artifact.artifact_id = registry.artifact_id
                WHERE registry.publicly_active = TRUE
                  AND registry.deactivated_at IS NULL
+                 AND artifact.editorial_status = 'human_approved'
+                 AND artifact.benchmark_status = 'promoted'
+                 AND artifact.production_eligible = TRUE
                ORDER BY registry.member_bioguide_id, registry.issue_id""",
         )
 

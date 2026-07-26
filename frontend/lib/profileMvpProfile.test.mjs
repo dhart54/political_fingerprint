@@ -18,7 +18,7 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   assert.ok(source.includes("Available actions"), "profile should expose descriptive evidence counts");
   assert.ok(source.includes("IssueNavigation"), "the issue evidence surface should use compact neutral navigation");
   assert.doesNotMatch(source, /BasicIssueList|Explore other issues/, "the third duplicate selector should be absent");
-  assert.ok(source.includes("without combining them into a broader issue conclusion"), "the basic fallback should state its semantic limit");
+  assert.ok(source.includes("publication-gated presentation"), "the route should name the publication gate");
   assert.ok(source.includes("Evidence group overview"), "grouped evidence preview should be user-visible as a secondary overview");
   assert.ok(source.includes("formatCompactEvidenceGroupingOverview"), "compact grouping summary should be rendered");
   assert.ok(source.includes("IssueNavigation"), "large profiles should expose compact issue navigation");
@@ -60,14 +60,15 @@ test("representative page flow exposes neutral coverage without changing evidenc
     readFileSync(new URL("./issueEvidenceCoverage.mjs", import.meta.url), "utf8"),
     /Non-directional \/ context/,
   );
-  assert.match(source, /Best-covered issue/);
+  assert.match(source, /presentation\.tier_badge/);
+  assert.match(source, /presentation\.teaser/);
   assert.match(source, /getDomainDescription/);
   assert.match(source, /orderIssueRowsByEvidenceUsefulness/);
   assert.match(source, /These counts do not combine the actions into an analytical conclusion/);
   assert.doesNotMatch(source, /Open Best Read|Strongest evidence|strongest issue|Record read|clearest reviewed issue read/);
   assert.doesNotMatch(source, /QuickMetric eyebrow="Change"|Steady mix|Issue mix changed|fetchDrift/);
   assert.match(source, /Jump to issue/);
-  assert.match(source, /without combining them into a broader issue conclusion/);
+  assert.match(source, /publication-gated presentation/);
   assert.doesNotMatch(source, /Open another issue to inspect its available vote receipts|Explore other issues/);
   assert.match(source, /Context rows remain visible but do not drive support\/opposition summaries/);
   assert.doesNotMatch(source, /stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|Yes-pattern|No-pattern/);
@@ -78,7 +79,8 @@ test("quick read ranks coverage without synthesizing an analytical issue read", 
 
   assert.match(source, /hasAvailableIssueEvidence/);
   assert.match(source, /orderIssueRowsByEvidenceUsefulness/);
-  assert.match(source, /Best-covered issue/);
+  assert.match(source, /getEditorialPresentation/);
+  assert.match(source, /presentation\.tier_badge/);
   assert.match(source, /Open vote evidence/);
   assert.doesNotMatch(source, /buildRecordNarrative|getBestIssueRead|fillMissingInterpretedCounts|mostly supported|mostly opposed|patternRows/);
 });
@@ -109,7 +111,7 @@ test("compact issue navigation avoids readiness conclusions and contact follows 
   assert.match(source, /function IssueNavigation/);
   assert.match(source, /getEvidenceCoverageLabel\(row\)/);
   assert.doesNotMatch(source, /function BasicIssueList|Explore other issues/);
-  assert.match(source, /without combining them into a broader issue conclusion/);
+  assert.match(source, /publication-gated presentation/);
   assert.doesNotMatch(source, /buildIssueCardPreview|formatIssueCardStatusLabel|IssueReadinessTile/);
   assert.ok(reviewedVoteListIndex > 0 && civicActionIndex > reviewedVoteListIndex, "utility panel should render after reviewed vote list access");
 });

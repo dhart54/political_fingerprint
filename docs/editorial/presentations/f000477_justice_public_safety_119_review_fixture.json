@@ -1,0 +1,148 @@
+{
+  "schema_version": "editorial_public_issue_presentation_authoring_v1",
+  "artifact_identity": {
+    "artifact_id": "f000477:justice_public_safety:119:v1",
+    "artifact_version": 1,
+    "member_id": "F000477",
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "congress": 119,
+    "scope": "119",
+    "source_case_id": "semir-dev-05-justice-mechanism-divide"
+  },
+  "editorial_wording": {
+    "status": "candidate_human_approval_pending",
+    "tier_display": {
+      "reviewed_conclusion": {
+        "badge": "Reviewed conclusion",
+        "teaser": "The reviewed 119th-Congress sample shows a divide between safeguards, research, reporting, or implementation constraints and measures involving police tools, operational authority, or rollback of policing restrictions."
+      }
+    },
+    "coverage_text": "This conclusion covers 7 reviewed substantive actions across 5 independent policy episodes in the 119th Congress.",
+    "scope_boundary": "This is a conclusion about the reviewed 119th-Congress sample, not every possible Justice & Public Safety issue or a broader political philosophy.",
+    "conclusion": {
+      "proposition_ids": [
+        "prop:c428677c0dbee5e0",
+        "prop:abbe87a63baefb7d",
+        "prop:af269162633f4c5c"
+      ],
+      "headline": "A divide by policy mechanism in the reviewed sample",
+      "body": "In this reviewed 119th-Congress sample, Foushee supported safeguards, research, reporting, or implementation constraints across independent episodes, while opposing measures involving police tools, operational authority, or rollback of policing restrictions."
+    },
+    "repeated_patterns": [
+      {
+        "proposition_id": "prop:c428677c0dbee5e0",
+        "heading": "Safeguards, research, reporting, and implementation constraints",
+        "body": "Across independent episodes, Foushee supported an overdose-reduction certification condition, a later fentanyl framework with research provisions, and officer-safety reporting requirements.",
+        "action_ids": [
+          "house:119:1:131",
+          "house:119:1:166",
+          "house:119:1:32"
+        ]
+      },
+      {
+        "proposition_id": "prop:abbe87a63baefb7d",
+        "heading": "Police tools, operational authority, and safeguard rollbacks",
+        "body": "Across independent episodes, Foushee opposed a reviewed expansion of a law-enforcement firearm purchase program, broader D.C. police pursuit authority, and repeal of most reviewed D.C. policing restrictions.",
+        "action_ids": [
+          "house:119:1:130",
+          "house:119:1:275",
+          "house:119:1:299"
+        ]
+      }
+    ],
+    "policy_trajectories": [
+      {
+        "proposition_id": "prop:bc08a2271517ebb7",
+        "heading": "The fentanyl episode is mixed",
+        "body": "Within one fentanyl legislative episode, Foushee supported a certification amendment, opposed the earlier House bill, and supported a later related framework with research provisions. These are related stages within one episode, not three independent policy positions or evidence of a change in motive or philosophy.",
+        "action_ids": [
+          "house:119:1:166",
+          "house:119:1:32",
+          "house:119:1:33"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "heading": "Limits of this read",
+        "body": "The record is bounded to reviewed actions in the 119th Congress. It does not establish motive, ideology, character, future behavior, or a broad Justice philosophy."
+      },
+      {
+        "heading": "One-sided source boundary",
+        "body": "For the officer-safety reporting bill, the reviewed official materials supported a fair supporter case but did not supply an adequate stage-specific opposing case; no opposing argument is invented."
+      }
+    ]
+  },
+  "provenance": {
+    "semantic_source_case_id": "semir-dev-05-justice-mechanism-divide",
+    "focused_validation_case_ids": [
+      "semir-dev-04-justice-mixed-fentanyl-trajectory",
+      "semir-dev-06-justice-one-sided-argument"
+    ],
+    "dossier_refs": [
+      "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/episode_inference.json",
+      "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+      "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/claim_source_map.json",
+      "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json"
+    ],
+    "source_refs": [
+      "clerk_roll_032",
+      "clerk_roll_033",
+      "clerk_roll_130",
+      "clerk_roll_131",
+      "clerk_roll_166",
+      "clerk_roll_275",
+      "clerk_roll_299",
+      "congress_hamdt5",
+      "congress_hr27",
+      "congress_s331",
+      "congress_hr2255_text",
+      "congress_hr2240",
+      "congress_hr5143",
+      "congress_hr5107"
+    ],
+    "claim_refs": [
+      "roll_32_editorial",
+      "roll_33_editorial",
+      "roll_130_editorial",
+      "roll_131_editorial",
+      "roll_166_editorial",
+      "roll_275_editorial",
+      "roll_299_editorial"
+    ],
+    "receipt_refs": [
+      "docs/semantic_ir/accepted/acceptance_receipt.json",
+      "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+    ]
+  },
+  "controls": {
+    "semantic": {
+      "status": "accepted_semantic_reference",
+      "validation_status": "passed"
+    },
+    "editorial": {
+      "human_approval_status": "human_approval_pending"
+    },
+    "benchmark": {
+      "status": "not_promoted"
+    },
+    "production": {
+      "eligible": false
+    },
+    "publication": {
+      "active": false
+    },
+    "review_receipt": {
+      "receipt_id": "not_supplied",
+      "status": "human_approval_pending",
+      "approvals": {
+        "bounded_issue_conclusion": false,
+        "repeated_pattern_statements": false,
+        "fentanyl_limitation": false,
+        "claim_source_mappings": false,
+        "benchmark_promotion": false,
+        "production_eligibility": false
+      }
+    }
+  }
+}

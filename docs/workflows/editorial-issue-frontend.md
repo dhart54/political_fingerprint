@@ -2,8 +2,10 @@
 
 ## Current runtime
 
-After Editorial Hard Cutover V1, the public representative route uses only the
-basic evidence path in `frontend/components/PositionByIssue.js`.
+After Editorial Hard Cutover V1, the public representative route retains the
+basic evidence path in `frontend/components/PositionByIssue.js` and can layer
+the IR-native public presentation payload defined in
+`docs/editorial_public_issue_presentation_v1.md`.
 
 - Representative and issue selection remain functional.
 - Existing position evidence and vote receipts remain available.
@@ -14,6 +16,8 @@ basic evidence path in `frontend/components/PositionByIssue.js`.
   those states.
 - The frontend does not load old editorial registries, selectors, adapters,
   review fixtures, or rich editorial components.
+- Tier, teaser, conclusion, repeated-pattern, trajectory, limitation, scope,
+  and supporting-action fields are backend-supplied. React does not derive them.
 - The former `/golden-render-fixture` route is removed and returns 404.
 
 Expected-missing and service-status coverage belongs to a future upstream
@@ -38,18 +42,18 @@ The browser smoke mocks only API responses, exercises the real representative
 route, confirms basic evidence and source receipts, and confirms the old route
 is unavailable.
 
-## Deferred IR-native work
+## IR-native presentation boundary
 
-Do not add a new rich editorial design within the cutover. A future presentation
-milestone may consume compiled Semantic IR through a meaning-preserving public
-view model. It must not adapt Semantic IR back into the deleted format or infer
-new civic meaning in React.
+The backend presentation compiler consumes compiled Semantic IR after canonical
+validation. It copies separately reviewed wording mapped to stable proposition
+identities and derives tiers from compiled plans and typed boundaries. It must
+not adapt Semantic IR back into the deleted format or infer civic meaning from
+raw vote counts.
 
 The coverage-first cards, compact issue navigation, and vote-receipt structure
-are intended to remain as that presentation evolves. A future IR-native
-milestone may layer reviewed conclusions, repeated patterns, trajectories, and
-limitations onto this structure only when they come from compiled Semantic IR
-and reviewed dossiers, never from frontend vote-count logic. The compiled
-evidence state must continue to determine whether the UI shows a full
-conclusion, a bounded developing read, non-directional coverage, or receipts
-only.
+remain. Eligible payloads may layer reviewed conclusions, repeated patterns,
+trajectories, and limitations only when every independent control passes. The
+compiled evidence state determines `reviewed_conclusion`, `developing_read`,
+`non_directional_or_limited_evidence`, or `receipts_only`; no arbitrary vote
+threshold does. The public API rechecks publication eligibility and supplies
+`receipts_only` when no eligible artifact exists.

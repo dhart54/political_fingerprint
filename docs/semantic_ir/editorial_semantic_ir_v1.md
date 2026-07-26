@@ -103,7 +103,9 @@ object to `compile_semantic_ir`.
 all newly commissioned work. It invokes the pure compiler exactly once,
 validates compiled identities and references, and passes only compiled IR to
 review, presentation, and optional inert persistence-proposal adapters. The pure
-compiler remains independently usable.
+compiler remains independently usable. The downstream public presentation
+contract is `docs/editorial_public_issue_presentation_v1.md`; it cannot alter
+this semantic result.
 
 After Editorial Hard Cutover V1, this is the repository's only executable
 editorial semantic architecture. Pre-IR generators and old-format public

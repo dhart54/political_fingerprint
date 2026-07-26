@@ -32,7 +32,7 @@ The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-Active plan: [Editorial Hard Cutover V1](plans/editorial_hard_cutover_v1_spec.md)
+Active plan: [IR-native Foushee Justice presentation](plans/ir_native_foushee_justice_presentation.md)
 
 The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 
@@ -50,6 +50,11 @@ is retained as historical review evidence, and the
 [dependency inventory](review_packets/editorial_pipeline_dependency_inventory_v1.md)
 remains descriptive. None of these artifacts changes runtime, production, or
 publication state.
+
+The downstream
+[Editorial Public Issue Presentation V1](editorial_public_issue_presentation_v1.md)
+contract governs deterministic wording mapping, public tiers, publication
+controls, API serialization, and display-only React.
 
 Do not delete a review packet or asset merely because its milestone is complete. First verify builders, tests, source manifests, publication governance, restoration documentation, and inbound references. Referenced local screenshot bundles require explicit archival decisions.
 

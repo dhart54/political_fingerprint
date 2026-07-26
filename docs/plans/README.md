@@ -4,10 +4,12 @@ This index distinguishes the branch's one active execution plan from unresolved 
 
 ## Active plan
 
-- [Editorial Hard Cutover V1](editorial_hard_cutover_v1_spec.md) — the only active plan on this branch.
+- [IR-native Foushee Justice presentation](ir_native_foushee_justice_presentation.md) — the only active plan on this branch.
 
 ## Retained unresolved plans
 
+- [Editorial Hard Cutover V1](editorial_hard_cutover_v1_spec.md) — completed
+  cutover retained for unresolved final archival reconciliation.
 - [2026 Evidence Eligibility and Interpretation Expansion](2026_evidence_eligibility_interpretation_expansion.md) — completed but unreconciled; terminal delivery status needs a human decision.
 - [Codex Operating Model](codex_operating_model.md) — completed but unreconciled; the current operating model exists, but the plan's delivery checklist was never reconciled.
 - [Current-Congress Freshness and Automated Ingestion](current_congress_freshness_ingestion.md) — completed but unreconciled; production and validation work is recorded, while PR/merge/deployment items remain open.
