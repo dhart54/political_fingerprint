@@ -1,12 +1,13 @@
 # Editorial Semantic IR V1
 
-Status: design candidate pending external semantic review.
+Status: revised candidate pending external semantic acceptance.
 
 ## Canonical boundary
 
 Semantic IR V1 is the review contract between authoritative evidence and later
-presentation. Its canonical result is the proposition graph plus conclusion
-plan, not a paragraph. Example prose is optional, non-authoritative review aid.
+presentation. Its canonical result is a typed proposition graph, evidence-state
+boundaries, and conclusion plan—not a paragraph. Example prose is an optional,
+non-authoritative review aid.
 
 The stage order is:
 
@@ -16,52 +17,128 @@ The stage order is:
 4. episode;
 5. policy family;
 6. structural metadata and policy traits;
-7. member action;
-8. evidence proposition;
-9. proposition relationship;
-10. conclusion plan;
-11. section ownership;
+7. member action and coverage;
+8. behavioral proposition;
+9. synthesis proposition;
+10. coverage, method, and source/render boundaries;
+11. conclusion plan and presentation ownership;
 12. render plan.
 
 Every later stage consumes stable identities and decisions from earlier stages.
 It may select, relate, omit, or render them, but may not reinterpret them.
 
-## Three layers
+## Explicit semantic roles
+
+Behavioral propositions describe what a member did on eligible substantive
+actions. Their types are `trajectory`, `repeated_pattern`, and
+`notable_choice`. Each behavioral proposition has exactly one public analytical
+presentation target:
+
+- `repeated_patterns`;
+- `policy_trajectories`;
+- `other_notable_choices`.
+
+Synthesis propositions derive a conclusion from behavioral propositions.
+`mechanism_divide`, `uniform_direction`, `no_common_throughline`, and
+`interpretive_boundary` are synthesis types. They may target
+`meaningful_limitations`, `conclusion_only`, or `omitted`; the reviewed
+mechanism-divide and no-common-throughline cases use `conclusion_only`. They do
+not displace their supporting behavioral propositions.
+
+Coverage boundaries represent known evidence states such as Present, Not
+Voting, missing evidence, outside service, or a partial episode. They are not
+behavioral propositions and target `coverage_note`.
+
+Method boundaries contain counting, episode-grouping, exact-action, and
+context/control-exclusion rules. They target `method_note` and cannot appear as
+findings.
+
+Source/render constraints are shared member-neutral restrictions on what
+available sources and later rendering can support. They target `source_note`.
+Rendering cannot manufacture an opposing argument, fill a source gap, or add
+analytical meaning.
+
+The complete presentation-target vocabulary is:
+`repeated_patterns`, `policy_trajectories`, `other_notable_choices`,
+`meaningful_limitations`, `conclusion_only`, `coverage_note`, `method_note`,
+`source_note`, and `omitted`. V1 behavioral propositions use only the three
+analytical targets; the remaining values keep non-behavioral semantic objects
+explicit without forcing them into a public section.
+
+## Shared, member, and composition layers
 
 Shared legislative semantics contain canonical actions, exact-action domain
 eligibility, claim/source references, action meaning, legislative stage,
 structural metadata, episodes, policy families, policy traits, trait
-relationships, and shared review dependencies. These fields are member-neutral.
-Action-meaning and policy-trait IDs may resolve to the referenced reviewed
-dossier contracts rather than being copied into every case. When a case needs
-to introduce or override one, the schema provides typed `policy_traits`,
-`trait_relationships`, and `shared_review_dependencies` records; shared
-dependencies carry their review route and cannot be resolved per member.
+relationships, shared review dependencies, and source/render constraints.
+These fields are member-neutral.
+
+Action-meaning and policy-trait IDs may resolve to referenced reviewed dossier
+contracts rather than being copied into each case. Typed `policy_traits`,
+`trait_relationships`, `shared_review_dependencies`, and
+`source_render_constraints` records are available when a case must introduce
+or expose one.
 
 Member semantics contain exact action status, service status, evidence status,
-coverage, propositions grounded in the shared layer, and a review route. Member
-and party fields provide identity/context only and cannot change the shared
-semantic result.
+the coverage contract, and a review route. Member and party fields provide
+identity/context only and cannot change the shared semantic result.
 
-Composition semantics contain primary and limiting proposition IDs, one primary
-section per proposition, intentionally omitted sections, exact coverage and
-method notes, prohibited claims, and a render plan that cannot add analysis.
+Composition semantics contain the conclusion plan, typed presentation
+ownership, coverage boundaries, method boundaries, intentionally omitted
+sections, notes, prohibited claims, and a render plan that cannot add analysis.
+
+## Case scope and completeness
+
+Every development case declares one scope:
+
+- `full_record`: the graph represents all accepted in-scope actions;
+- `focused_invariant_fixture`: the graph tests a declared invariant and must
+  state which unrelated semantics are intentionally outside the fixture.
+
+For every accepted action, `action_accounting` records either:
+
+- at least one behavioral proposition containing the action; or
+- an explicit non-proposition reason such as Present, Not Voting, missing
+  evidence, outside service, or exclusion by a declared focused-fixture
+  boundary.
+
+Full-record cases must account for every accepted action exactly this way.
+Rejected and context-only actions never satisfy or inflate that requirement.
+
+## Coverage contract
+
+Coverage is computed only over exact-action-eligible substantive actions and
+records:
+
+- `eligible_substantive_actions`;
+- `context_only_control_actions`;
+- `in_service_eligible_actions`;
+- `resolved_eligible_actions`;
+- `directional_yes_no_positions`;
+- `present_actions`;
+- `not_voting_actions`;
+- `missing_evidence_actions`;
+- `outside_service_actions`;
+- `complete_episodes`;
+- `partial_episodes`.
+
+Context-only, procedural, mixed-measure, and rejected eligibility inputs remain
+available for method review but do not enter the substantive denominator.
+Present and Not Voting are resolved, known, and non-directional.
 
 ## Identity rules
 
 - Action IDs use `house:{congress}:{session}:{roll}` for this corpus.
 - Episode and policy-family IDs reuse existing corpus IDs where available.
-- Case IDs are stable review identities and do not encode member names.
-- Proposition IDs are case-scoped semantic identities. Their meaning is the
-  proposition type, evidence identities, direction, traits/mechanisms, primary
-  section, and relationships—not exact prose.
+- Case IDs do not encode member names.
+- Proposition meaning is defined by role, type, evidence identities, direction,
+  traits/mechanisms, presentation target, and relationships—not exact prose.
 - Reordering actions, changing titles, or changing member/party identity cannot
-  change semantic identities or proposition selection.
+  change shared semantics or proposition selection for identical evidence.
 
 ## Universal invariants
 
-1. Member vote direction cannot alter action eligibility, episode identity, or
-   policy-family identity.
+1. Member vote direction cannot alter eligibility, episode identity, or family.
 2. Member and party identity cannot alter semantics for identical evidence.
 3. Parent-measure context cannot establish exact-action eligibility.
 4. Structural metadata is distinct from policy traits.
@@ -71,36 +148,40 @@ method notes, prohibited claims, and a render plan that cannot add analysis.
 8. A repeated pattern requires multiple independent episodes.
 9. Present and Not Voting are neither support nor opposition.
 10. Known coverage cannot use generic unknown-state language.
-11. Every proposition has exactly one primary analytical section.
-12. Tied material patterns cannot be silently omitted.
-13. Rendering cannot add analytical meaning.
-14. Shared novelty is reviewed once at the shared layer.
-15. Approval, production eligibility, benchmark status, and publication remain
+11. Only section-rendered behavioral propositions have the one-primary-section
+    invariant.
+12. Synthesis, coverage, method, and source/render objects do not require a
+    public analytical section.
+13. Tied material patterns cannot be silently omitted.
+14. Every accepted full-record action has behavioral evidence or an explicit
+    non-proposition reason.
+15. Rendering cannot add analytical meaning.
+16. Shared novelty is reviewed once at the shared layer.
+17. Approval, production eligibility, benchmark status, and publication remain
     separate gates.
 
 ## Evidence and review states
 
 `official_record_resolved` means the authoritative member action is known. It
-does not mean the dossier, proposition, or presentation is human approved.
-`missing`, `source_unresolved`, and `conflicting` stay distinct. Present and Not
-Voting are resolved non-directional statuses.
+does not confer semantic acceptance. `missing`, `source_unresolved`, and
+`conflicting` remain distinct. Present and Not Voting are resolved
+non-directional statuses.
 
-All development results in this milestone use
-`candidate_pending_external_semantic_review`. That label conveys neither gold
-status nor approval. Held-out files contain inputs and questions only; expected
-graphs and conclusions must remain outside this implementation context.
+All development results remain
+`candidate_pending_external_semantic_review`. The external role-model decisions
+have been applied, but no candidate is promoted. Held-out files still contain
+inputs and questions only; expected graphs and conclusions remain excluded.
 
 ## Validation tiers
 
-The semantic loop is implemented here: schema-shape checks, selected candidate
-and held-out integrity, stable IDs, evidence references, hierarchy, coverage,
-proposition ownership, and targeted invariants.
+Only the semantic loop is implemented: schema-shape checks, candidate and
+held-out integrity, stable IDs, evidence references, hierarchy, the separated
+coverage contract, role/presentation rules, action accounting, and targeted
+invariants.
 
-The domain loop is proposed only: all member/vector inputs for one domain,
-domain fixtures, and persistence-manifest generation.
-
-The release loop is proposed only: all domains, frontend/browser validation,
-disposable PostgreSQL, broad regressions, documentation, and rollback receipts.
+The domain loop remains proposed: full domain member/vector inputs and derived
+fixtures. The release loop remains proposed: runtime, frontend, database,
+broad regression, and production-oriented validation.
 
 Run the implemented loop from the repository root:
 

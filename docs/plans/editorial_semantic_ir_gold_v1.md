@@ -87,6 +87,9 @@
 - Interpretation boundary: the canonical V1 result is a proposition graph and
   conclusion plan. Example prose is non-authoritative and rendering may not add
   analytical meaning.
+- External semantic review found that the initial graph incorrectly modeled
+  coverage, method, and source boundaries as member analytical propositions and
+  forced every semantic object into a public section.
 
 ## Decisions And Rationale
 
@@ -97,11 +100,21 @@
   conditions with twelve development cases and four held-out cases.
 - Reuse existing dossier/source/action identifiers; do not restate or revise
   dossier facts.
+- Separate behavioral and synthesis propositions from coverage boundaries,
+  method boundaries, and shared source/render constraints.
+- Give every proposition a typed presentation target while applying the
+  one-primary-section invariant only to section-rendered behavioral
+  propositions.
+- Require explicit accepted-action accounting for full-record cases. Retain
+  Dev 12 as a declared `focused_invariant_fixture`.
 
 ## Deviations Or Corrections
 
 - The preflight estimate assumed one file per case. Consolidating each split
   reduced expected file count without changing the 12/4 case design.
+- External review decisions were applied on the existing branch and PR. The
+  revision changes only the schema/design, development corpus, candidate review
+  packet, focused validator/tests, and this plan.
 
 ## Validation Results
 
@@ -116,6 +129,19 @@
 - `git diff --check`: passed.
 - No frontend build, browser test, database operation, broad backend suite, or
   population regeneration was run.
+
+### External review revision
+
+- Revised semantic loop: passed for 12 development candidates and 4 held-out
+  inputs; measured validator-internal runtime was 0.0054 seconds.
+- Draft-07 schema validation: passed for both corpus files.
+- Revised focused invariant tests: 9 passed.
+- Accepted-action accounting: complete for all 11 full-record cases and the
+  declared focused fixture.
+- Documentation governance: passed.
+- `git diff --check`: passed.
+- No runtime, frontend, persistence, production, generator, or dossier
+  validation was run or required.
 
 ## Production Writes
 

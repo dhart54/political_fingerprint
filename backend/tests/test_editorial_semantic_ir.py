@@ -34,7 +34,10 @@ class EditorialSemanticIRTests(unittest.TestCase):
         present = cases["semir-dev-10-present-known-coverage"]
         not_voting = cases["semir-dev-09-not-voting-heavy-record"]
         self.assertEqual(
-            present["member_semantics"]["members"][0]["coverage"]["yes_no_actions"], 6
+            present["member_semantics"]["members"][0]["coverage"][
+                "directional_yes_no_positions"
+            ],
+            6,
         )
         self.assertEqual(
             not_voting["member_semantics"]["members"][0]["coverage"][
@@ -42,6 +45,50 @@ class EditorialSemanticIRTests(unittest.TestCase):
             ],
             5,
         )
+
+    def test_context_controls_do_not_inflate_substantive_coverage(self) -> None:
+        corpus = _load(CANDIDATES)
+        cases = {case["case_id"]: case for case in corpus["cases"]}
+        coverage = cases["semir-dev-03-economy-noncounting-boundaries"][
+            "member_semantics"
+        ]["members"][0]["coverage"]
+        self.assertEqual(coverage["eligible_substantive_actions"], 1)
+        self.assertEqual(coverage["context_only_control_actions"], 2)
+        self.assertEqual(coverage["directional_yes_no_positions"], 0)
+
+    def test_synthesis_is_conclusion_only_and_coverage_is_not_behavioral(self) -> None:
+        corpus = _load(CANDIDATES)
+        cases = {case["case_id"]: case for case in corpus["cases"]}
+        mechanism = cases["semir-dev-05-justice-mechanism-divide"][
+            "proposition_graph"
+        ]["propositions"][-1]
+        self.assertEqual(mechanism["semantic_role"], "synthesis")
+        self.assertEqual(mechanism["presentation_target"], "conclusion_only")
+        not_voting = cases["semir-dev-09-not-voting-heavy-record"]
+        self.assertTrue(not_voting["composition"]["coverage_boundaries"])
+        self.assertTrue(
+            all(
+                proposition["semantic_role"] == "behavioral"
+                for proposition in not_voting["proposition_graph"]["propositions"]
+            )
+        )
+
+    def test_full_record_requires_complete_action_accounting(self) -> None:
+        corpus = _load(CANDIDATES)
+        mutated = copy.deepcopy(corpus)
+        case = mutated["cases"][1]
+        case["action_accounting"]["behavioral_proposition_action_ids"].pop()
+        with self.assertRaisesRegex(
+            SemanticValidationError, "behavioral action accounting drift"
+        ):
+            validate_development(mutated)
+
+    def test_focused_fixture_declares_scope_boundary(self) -> None:
+        corpus = _load(CANDIDATES)
+        cases = {case["case_id"]: case for case in corpus["cases"]}
+        focused = cases["semir-dev-12-identity-title-order-invariance"]
+        self.assertEqual(focused["case_scope"], "focused_invariant_fixture")
+        self.assertTrue(focused["scope_boundary"])
 
     def test_single_action_episode_cannot_be_trajectory(self) -> None:
         corpus = _load(CANDIDATES)

@@ -27,6 +27,19 @@ SOURCE_MANIFESTS = (
 
 REVIEW_STATE = "candidate_pending_external_semantic_review"
 STATUS_VALUES = {"Yea", "Nay", "Present", "Not Voting", "Missing Evidence"}
+SECTION_RENDERED_TARGETS = {
+    "repeated_patterns",
+    "policy_trajectories",
+    "other_notable_choices",
+}
+PRESENTATION_TARGETS = SECTION_RENDERED_TARGETS | {
+    "meaningful_limitations",
+    "conclusion_only",
+    "coverage_note",
+    "method_note",
+    "source_note",
+    "omitted",
+}
 HELD_OUT_FORBIDDEN_KEYS = {
     "proposition_graph",
     "propositions",
@@ -35,6 +48,10 @@ HELD_OUT_FORBIDDEN_KEYS = {
     "expected_result",
     "expected_propositions",
     "expected_conclusion",
+    "coverage_boundaries",
+    "method_boundaries",
+    "action_accounting",
+    "external_review_decisions",
 }
 ID_PATTERNS = {
     "development": re.compile(r"^semir-dev-\d{2}-[a-z0-9-]+$"),
@@ -79,25 +96,102 @@ def _known_source_ids() -> set[str]:
     return source_ids
 
 
-def _validate_coverage(case_id: str, member: dict[str, Any]) -> None:
+def _validate_coverage(
+    case_id: str,
+    member: dict[str, Any],
+    shared_actions: list[dict[str, Any]],
+    episodes: list[dict[str, Any]],
+) -> None:
     actions = member["actions"]
     coverage = member["coverage"]
-    statuses = [item["status"] for item in actions]
+    eligible_ids = {
+        action["action_id"]
+        for action in shared_actions
+        if action["eligibility"]["decision"] == "accepted"
+    }
+    context_ids = {
+        action["action_id"]
+        for action in shared_actions
+        if action["eligibility"]["decision"] != "accepted"
+    }
+    eligible_actions = [item for item in actions if item["action_id"] in eligible_ids]
+    statuses = [item["status"] for item in eligible_actions]
     _require(set(statuses) <= STATUS_VALUES, f"{case_id}: invalid member status")
-    resolved = sum(item["evidence_status"] == "official_record_resolved" for item in actions)
+    in_service = sum(item["service_status"] == "in_service" for item in eligible_actions)
+    resolved = sum(
+        item["evidence_status"] == "official_record_resolved"
+        for item in eligible_actions
+    )
     yes_no = sum(status in {"Yea", "Nay"} for status in statuses)
     present = statuses.count("Present")
     not_voting = statuses.count("Not Voting")
-    missing = statuses.count("Missing Evidence")
-    _require(coverage["expected_actions"] == len(actions), f"{case_id}: expected coverage")
-    _require(coverage["resolved_actions"] == resolved, f"{case_id}: resolved coverage")
-    _require(coverage["yes_no_actions"] == yes_no, f"{case_id}: Yea/Nay coverage")
+    missing = sum(
+        item["evidence_status"] != "official_record_resolved"
+        for item in eligible_actions
+    )
+    outside_service = sum(
+        item["service_status"] != "in_service" for item in eligible_actions
+    )
+    by_id = {item["action_id"]: item for item in actions}
+    complete_episodes = 0
+    partial_episodes = 0
+    for episode in episodes:
+        episode_actions = [by_id.get(action_id) for action_id in episode["action_ids"]]
+        if all(
+            action
+            and action["service_status"] == "in_service"
+            and action["evidence_status"] == "official_record_resolved"
+            for action in episode_actions
+        ):
+            complete_episodes += 1
+        else:
+            partial_episodes += 1
+
+    _require(
+        coverage["eligible_substantive_actions"] == len(eligible_ids),
+        f"{case_id}: eligible substantive coverage",
+    )
+    _require(
+        coverage["context_only_control_actions"] == len(context_ids),
+        f"{case_id}: context/control coverage",
+    )
+    _require(
+        coverage["in_service_eligible_actions"] == in_service,
+        f"{case_id}: in-service coverage",
+    )
+    _require(
+        coverage["resolved_eligible_actions"] == resolved,
+        f"{case_id}: resolved eligible coverage",
+    )
+    _require(
+        coverage["directional_yes_no_positions"] == yes_no,
+        f"{case_id}: directional Yea/Nay coverage",
+    )
     _require(coverage["present_actions"] == present, f"{case_id}: Present coverage")
     _require(coverage["not_voting_actions"] == not_voting, f"{case_id}: Not Voting coverage")
-    _require(coverage["missing_actions"] == missing, f"{case_id}: missing coverage")
     _require(
-        resolved + missing + coverage["outside_service_actions"] == len(actions),
-        f"{case_id}: coverage arithmetic",
+        coverage["missing_evidence_actions"] == missing,
+        f"{case_id}: missing evidence coverage",
+    )
+    _require(
+        coverage["outside_service_actions"] == outside_service,
+        f"{case_id}: outside-service coverage",
+    )
+    _require(
+        coverage["complete_episodes"] == complete_episodes,
+        f"{case_id}: complete episode coverage",
+    )
+    _require(
+        coverage["partial_episodes"] == partial_episodes,
+        f"{case_id}: partial episode coverage",
+    )
+    _require(
+        yes_no + present + not_voting + missing == len(eligible_actions),
+        f"{case_id}: eligible-status arithmetic",
+    )
+    _require(
+        len(eligible_actions) == len(eligible_ids),
+        f"{case_id}: missing eligible member action",
     )
 
 
@@ -119,6 +213,20 @@ def validate_development(
         _require(bool(ID_PATTERNS["development"].fullmatch(case_id)), f"{case_id}: case ID")
         _require(case.get("case_kind") == "development_candidate", f"{case_id}: kind")
         _require(case.get("review_state") == REVIEW_STATE, f"{case_id}: review state")
+        case_scope = case.get("case_scope")
+        _require(
+            case_scope in {"full_record", "focused_invariant_fixture"},
+            f"{case_id}: case scope",
+        )
+        _require(
+            case_scope != "focused_invariant_fixture"
+            or bool(case.get("scope_boundary")),
+            f"{case_id}: focused fixture lacks scope boundary",
+        )
+        _require(
+            bool(case.get("external_review_decisions")),
+            f"{case_id}: external review decisions",
+        )
         refs = case["source_references"]
         for path in refs["dossier_paths"]:
             _require((ROOT / path).is_file(), f"{case_id}: missing dossier {path}")
@@ -130,6 +238,11 @@ def validate_development(
         shared = case["shared_semantics"]
         actions = shared["actions"]
         action_ids = [action["action_id"] for action in actions]
+        accepted = {
+            action["action_id"]
+            for action in actions
+            if action["eligibility"]["decision"] == "accepted"
+        }
         _require(not _duplicates(action_ids), f"{case_id}: duplicate action ID")
         for action in actions:
             action_id = action["action_id"]
@@ -151,11 +264,6 @@ def validate_development(
                 set(episode["action_ids"]) <= set(action_ids),
                 f"{case_id}: episode has unknown action",
             )
-            accepted = {
-                action["action_id"]
-                for action in actions
-                if action["eligibility"]["decision"] == "accepted"
-            }
             _require(
                 set(episode["action_ids"]) <= accepted,
                 f"{case_id}: rejected action assigned to episode",
@@ -177,16 +285,47 @@ def validate_development(
                 f"{case_id}: member has unknown action",
             )
             _require(not _duplicates(member_action_ids), f"{case_id}: duplicate member action")
-            _validate_coverage(case_id, member)
+            _validate_coverage(case_id, member, actions, episodes)
+
+        for constraint in shared["source_render_constraints"]:
+            _require(
+                constraint["presentation_target"] == "source_note",
+                f"{case_id}: source constraint target",
+            )
+            _require(
+                set(constraint["action_ids"]) <= set(action_ids),
+                f"{case_id}: source constraint has unknown action",
+            )
+            _require(
+                set(constraint["source_ids"]) <= set(refs["source_ids"]),
+                f"{case_id}: source constraint has unknown source",
+            )
 
         propositions = case["proposition_graph"]["propositions"]
         proposition_ids = [item["proposition_id"] for item in propositions]
         _require(not _duplicates(proposition_ids), f"{case_id}: duplicate proposition")
         all_proposition_ids.extend(proposition_ids)
+        behavioral_action_ids: set[str] = set()
         for proposition in propositions:
             prop_id = proposition["proposition_id"]
             _require(bool(ID_PATTERNS["proposition"].fullmatch(prop_id)), f"{case_id}: prop ID")
             _require(proposition["review_state"] == REVIEW_STATE, f"{case_id}: prop state")
+            role = proposition["semantic_role"]
+            target = proposition["presentation_target"]
+            _require(role in {"behavioral", "synthesis"}, f"{case_id}: prop role")
+            _require(target in PRESENTATION_TARGETS, f"{case_id}: presentation target")
+            if role == "behavioral":
+                _require(
+                    target in SECTION_RENDERED_TARGETS,
+                    f"{case_id}: behavioral proposition lacks analytical section",
+                )
+                behavioral_action_ids.update(proposition["evidence_action_ids"])
+            else:
+                _require(
+                    target
+                    in {"meaningful_limitations", "conclusion_only", "omitted"},
+                    f"{case_id}: synthesis presentation target",
+                )
             _require(
                 set(proposition["evidence_action_ids"]) <= set(action_ids),
                 f"{case_id}: proposition has unknown action",
@@ -213,28 +352,87 @@ def validate_development(
                 )
 
         composition = case["composition"]
-        owned = composition["section_ownership"]
+        owned = composition["presentation_ownership"]
         owned_ids = [value for values in owned.values() for value in values]
         _require(not _duplicates(owned_ids), f"{case_id}: proposition section collision")
         _require(set(owned_ids) == set(proposition_ids), f"{case_id}: proposition ownership")
         for proposition in propositions:
             _require(
                 proposition["proposition_id"]
-                in owned.get(proposition["primary_section"], []),
-                f"{case_id}: primary section mismatch",
+                in owned.get(proposition["presentation_target"], []),
+                f"{case_id}: presentation ownership mismatch",
             )
             related = (
-                proposition["relationships"]["supports"]
-                + proposition["relationships"]["limits"]
+                proposition["relationships"]["supported_by"]
+                + proposition["relationships"]["limited_by"]
             )
             _require(set(related) <= set(proposition_ids), f"{case_id}: bad prop relation")
+        conclusion_plan = composition["conclusion_plan"]
         _require(
-            set(composition["primary_conclusion_proposition_ids"]) <= set(proposition_ids),
+            set(conclusion_plan["primary_proposition_ids"]) <= set(proposition_ids),
             f"{case_id}: unknown primary conclusion proposition",
         )
         _require(
-            set(composition["limiting_proposition_ids"]) <= set(proposition_ids),
+            set(conclusion_plan["limiting_proposition_ids"]) <= set(proposition_ids),
             f"{case_id}: unknown limiting proposition",
+        )
+        coverage_boundary_ids = [
+            boundary["boundary_id"] for boundary in composition["coverage_boundaries"]
+        ]
+        method_boundary_ids = [
+            boundary["boundary_id"] for boundary in composition["method_boundaries"]
+        ]
+        _require(
+            not _duplicates(coverage_boundary_ids),
+            f"{case_id}: duplicate coverage boundary",
+        )
+        _require(
+            not _duplicates(method_boundary_ids),
+            f"{case_id}: duplicate method boundary",
+        )
+        for boundary in composition["coverage_boundaries"]:
+            _require(
+                boundary["presentation_target"] == "coverage_note",
+                f"{case_id}: coverage boundary target",
+            )
+            _require(
+                set(boundary["action_ids"]) <= accepted,
+                f"{case_id}: coverage boundary has non-eligible action",
+            )
+        for boundary in composition["method_boundaries"]:
+            _require(
+                boundary["presentation_target"] == "method_note",
+                f"{case_id}: method boundary target",
+            )
+            _require(
+                set(boundary["action_ids"]) <= set(action_ids),
+                f"{case_id}: method boundary has unknown action",
+            )
+
+        accounting = case["action_accounting"]
+        declared_behavioral = set(accounting["behavioral_proposition_action_ids"])
+        reason_ids = [
+            reason["action_id"] for reason in accounting["non_proposition_reasons"]
+        ]
+        _require(
+            declared_behavioral == behavioral_action_ids,
+            f"{case_id}: behavioral action accounting drift",
+        )
+        _require(
+            not _duplicates(reason_ids),
+            f"{case_id}: duplicate non-proposition reason",
+        )
+        _require(
+            declared_behavioral.isdisjoint(reason_ids),
+            f"{case_id}: action both behavioral and non-proposition",
+        )
+        _require(
+            declared_behavioral | set(reason_ids) == accepted,
+            f"{case_id}: incomplete accepted-action accounting",
+        )
+        _require(
+            declared_behavioral <= accepted,
+            f"{case_id}: rejected action in behavioral proposition",
         )
         _require(
             composition["render_plan"]["analytical_additions_allowed"] is False,
@@ -306,6 +504,11 @@ def validate_review_packet(
     packet: dict[str, Any], candidate_ids: list[str], held_out_ids: list[str]
 ) -> None:
     _require(packet.get("review_state") == REVIEW_STATE, "review packet state")
+    _require(
+        packet.get("external_review_disposition")
+        == "decisions_applied_candidate_revision",
+        "review packet external decision disposition",
+    )
     _require(packet.get("candidate_case_ids") == candidate_ids, "review packet case order")
     _require(packet.get("development_candidate_count") == len(candidate_ids), "packet count")
     _require(packet.get("held_out_case_ids") == held_out_ids, "packet held-out order")
@@ -317,9 +520,16 @@ def validate_review_packet(
         all(values and set(values) <= known_cases for values in coverage_matrix.values()),
         "coverage matrix has unknown or empty case mapping",
     )
+    serialized_packet = json.dumps(packet, sort_keys=True)
+    _require(
+        "external_review_questions" not in serialized_packet,
+        "review packet still presents resolved questions",
+    )
     forbidden = {"human_approved", "gold_benchmark", "production_eligible"}
-    serialized = json.dumps(packet, sort_keys=True)
-    _require(not any(token in serialized for token in forbidden), "packet crosses gate")
+    _require(
+        not any(token in serialized_packet for token in forbidden),
+        "packet crosses gate",
+    )
 
 
 def run() -> dict[str, Any]:

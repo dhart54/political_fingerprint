@@ -2,59 +2,63 @@
 
 Status: `candidate_pending_external_semantic_review`
 
-This packet reviews political meaning before prose, rendering, persistence,
-population generation, or publication. The canonical review object is the
-proposition graph and conclusion plan in
-`docs/semantic_ir/candidates/development_cases.json`; example prose is
-non-authoritative. None of these candidates changes an approval, benchmark,
-production, or publication gate.
+External semantic review decisions have been applied to the candidate contract.
+This packet records those decisions; it does not present them as unresolved
+questions and does not change any acceptance, production, or publication gate.
 
-## Development candidates
+## Applied role model
 
-| Case | Structural purpose | Evidence and hierarchy | Member evidence | Proposed graph and ownership | Conclusion, omissions, and prohibited claims | External review |
-| --- | --- | --- | --- | --- | --- | --- |
-| `semir-dev-01-economy-funding-stages` | Multiple stages in one episode | H.R. 5371 sources; rolls 281/285 in `government_funding_hr5371` | F000477 Nay/Nay | trajectory → `policy_trajectories`; stage limit → `meaningful_limitations` | Lead with bounded two-stage trajectory; omit repeated/notable; no motive, movement, or parent-measure inference | Same episode? Is stage distinction analytically material? |
-| `semir-dev-02-economy-uniform-no-throughline` | Uniform direction without common throughline | Six actions in four independent Economy episodes; no family asserted | F000477 six Nay | uniform direction → `repeated_patterns`; no-throughline limit → `meaningful_limitations` | State direction only; omit notable; no invented agenda, motive, or trajectory | Is direction material without a common trait? |
-| `semir-dev-03-economy-noncounting-boundaries` | Known Not Voting; procedural and mixed controls | Roll 310 substantive episode; rolls 263/180 context-only | F000477 Not Voting, plus two controls | coverage boundary → `coverage`; controls create no propositions | Exact coverage; controls stay in method; omit all substantive sections; no direction from non-counting rows | Is coverage alone sufficient? Should control exclusions remain method only? |
-| `semir-dev-04-justice-mixed-fentanyl-trajectory` | Mixed direction within one episode | Rolls 32/33/166 in `halt-fentanyl-legislative-path` | F000477 Yea/Nay/Yea | trajectory → `policy_trajectories`; change-claim limit → `meaningful_limitations` | Preserve stage distinctions; omit repeated; no motive or personal evolution | Does the trajectory preserve each legislative stage? |
-| `semir-dev-05-justice-mechanism-divide` | Repeated independent patterns and mechanism divide | Seven actions in five Justice episodes | F000477 Yea/Nay/Yea/Nay/Yea/Nay/Nay | two patterns → `repeated_patterns`; divide → `meaningful_limitations` | Retain both patterns and bounded distinction; no ideology, motive, or causality | Are both patterns defensible? Is the divide primary or limiting? |
-| `semir-dev-06-justice-one-sided-argument` | Single action; one-sided official argument evidence | Roll 131 in `officer-safety-data-reporting` | F000477 Yea | notable choice → `other_notable_choices`; source boundary → `meaningful_limitations` | Disclose source boundary; omit trajectory/repeated; no balanced-debate or motive claim | Is the missing opposing argument analytical or source-detail only? |
-| `semir-dev-07-environment-exact-action-gate` | Exact-action versus parent-package eligibility | Roll 6 accepted into appropriations episode; roll 5 rejected | A000372 Yea on accepted action | notable choice → `other_notable_choices` | Use exact-action basis; omit repeated/trajectory; no inherited eligibility or single-action trajectory | Are rolls 5 and 6 correctly separated? |
-| `semir-dev-08-environment-separate-family-episodes` | Separate proposals within families; mechanism divide | Four episodes in mineral-supply and home-energy families | C001059 Yea/Yea/Nay/Nay | two patterns → `repeated_patterns`; divide → `meaningful_limitations` | Keep four episodes distinct; omit trajectories; no family-as-episode collapse or ideology | Are episodes independent? Are families comparable enough for a divide? |
-| `semir-dev-09-not-voting-heavy-record` | Not Voting-heavy known evidence | Seven actions in six episodes/two families | H001095 five Not Voting, two Yea | coverage boundary → `coverage` | Exact coverage only; omit repeated/trajectory; no nonvote-as-opposition or unknown-evidence wording | Should coverage prevent a substantive conclusion? |
-| `semir-dev-10-present-known-coverage` | Present as known non-directional evidence | Seven actions in six episodes/two families | D000230 six Yea, one Present | direction → `repeated_patterns`; Present boundary → `coverage` | Describe six directional actions; omit trajectory; no Present-as-direction or seven-action support claim | Is the direction proposition valid with Present excluded? |
-| `semir-dev-11-tied-pattern-ownership` | Tied patterns, deduplication, shared pending relationship | Six episodes/two families; shared trait contract | M001231 Yea/Yea/Nay/Nay/Nay/Nay/Yea | two patterns → `repeated_patterns`; shared limit → `meaningful_limitations` | Retain both tied patterns; omit notable; no silent omission or duplicate ownership | Are both material? Does the limit constrain both? Is novelty reviewed once? |
-| `semir-dev-12-identity-title-order-invariance` | Identity, title, and order invariance | Stable action/episode/family IDs; mutation evidence | F000466 R and M001214 D have identical vectors | one deduplicated pattern → `repeated_patterns`; boundary → `meaningful_limitations` | Same graph for same evidence; no party- or title-derived meaning | Do identity and ordering leave the graph unchanged? |
+- Behavioral propositions describe member actions and render only in
+  `repeated_patterns`, `policy_trajectories`, or `other_notable_choices`.
+- Synthesis propositions derive conclusions; the reviewed candidates use
+  `conclusion_only`, while the contract also permits an explicit limitation or
+  omission target.
+- Coverage boundaries are evidence-state records using `coverage_note`, not
+  behavioral propositions.
+- Counting and control-exclusion rules are method boundaries using
+  `method_note`.
+- Source completeness is a shared source/render constraint using `source_note`.
+- Only section-rendered behavioral propositions participate in the
+  one-primary-section invariant.
 
-The JSON review packet provides the exact evidence references, proposition IDs,
-relationships, conclusion IDs, omissions, and prohibited claims for every row.
+The machine packet records every proposition role, presentation target,
+relationship, conclusion-plan reference, coverage/method boundary, shared
+source constraint, and accepted-action accounting entry.
+
+## Candidate decisions
+
+| Case | Scope | Applied external decision | Accepted-action accounting |
+| --- | --- | --- | --- |
+| `semir-dev-01-economy-funding-stages` | full record | Keep one H.R. 5371 trajectory; move one-episode counting to method only. | 2/2 actions in the trajectory. |
+| `semir-dev-02-economy-uniform-no-throughline` | full record | Retain funding and budget trajectories plus the military-construction and SBA choices; uniform direction and no common throughline are conclusion-only synthesis. | 6/6 actions in behavioral propositions. |
+| `semir-dev-03-economy-noncounting-boundaries` | full record | Separate one eligible substantive Not Voting action from two context-only controls; coverage and method objects replace the former proposition. | 1/1 eligible action has an explicit non-directional reason; 2 controls excluded. |
+| `semir-dev-04-justice-mixed-fentanyl-trajectory` | full record | Retain the three-stage mixed trajectory; treat the no-change claim as conclusion-only synthesis. | 3/3 actions in the trajectory. |
+| `semir-dev-05-justice-mechanism-divide` | full record | Retain two patterns and the mixed fentanyl trajectory; mechanism divide is conclusion-only synthesis. | 7/7 actions in behavioral propositions. |
+| `semir-dev-06-justice-one-sided-argument` | full record | Retain the reporting choice; move one-sided argument availability to a shared source/render constraint. | 1/1 action in a notable choice. |
+| `semir-dev-07-environment-exact-action-gate` | full record | Retain roll 6 as eligible and roll 5 only as rejected eligibility context. | 1/1 eligible action in a notable choice; 1 rejected context action excluded. |
+| `semir-dev-08-environment-separate-family-episodes` | full record | Retain both repeated patterns; mechanism divide is conclusion-only synthesis. | 4/4 actions in behavioral propositions. |
+| `semir-dev-09-not-voting-heavy-record` | full record | Retain the two Yea choices as notable propositions and withhold a broad conclusion because five actions are Not Voting. | 2 actions behavioral; 5/5 remaining actions have explicit Not Voting reasons. |
+| `semir-dev-10-present-known-coverage` | full record | Preserve six Yea and one Present; retain the appropriations trajectory, resource pattern, and two notable choices; uniform direction/no-throughline remain conclusion-only. | 6 actions behavioral; the Present action has an explicit non-directional reason. |
+| `semir-dev-11-tied-pattern-ownership` | full record | Retain both tied patterns, the appropriations trajectory, and the federal-land choice; the latter two limit the conclusion without replacing the patterns. | 7/7 actions in behavioral propositions. |
+| `semir-dev-12-identity-title-order-invariance` | focused invariant fixture | Limit the fixture to identity, party, title, order, stable-ID, and deduplication invariance. | 2 actions behavioral; 5 actions explicitly outside the focused assertion. |
+
+## Revised coverage contract
+
+Each member record separately reports eligible substantive actions,
+context-only/control actions, in-service eligible actions, resolved eligible
+actions, directional Yea/Nay positions, Present, Not Voting, missing evidence,
+outside-service actions, and complete/partial episodes. Controls and rejected
+context never inflate substantive denominators.
 
 ## Held-out inputs
 
-Held-out files intentionally contain no proposed graph, section ownership, or
-conclusion.
-
-| Case | Input-only question |
-| --- | --- |
-| `semir-held-01-partial-service-missing-evidence` | Distinguish unresolved missing evidence from verified outside-service status while stating exact known coverage. |
-| `semir-held-02-source-conflict-unsupported` | Route a known action whose interpretive claim lacks adequate or consistent authoritative support. |
-| `semir-held-03-title-order-invariance` | Identify what remains stable under reordered inputs, opaque titles, and identity changes. |
-| `semir-held-04-cross-domain-final-passage` | Bound cross-domain final-passage eligibility without parent-package inheritance. |
-
-## Cross-case review questions
-
-- Is the proposition type set expressive enough without embedding prose?
-- Should a mechanism divide be a primary conclusion proposition, a limiting
-  proposition, or context determined by its supporting pattern strength?
-- When does a fully known but non-directional coverage boundary prevent a
-  substantive conclusion rather than merely qualify it?
-- Which trait relationships are stable shared semantics, and which require a
-  one-time human exception before candidate generation?
-- Are conclusion relevance and section ownership sufficiently independent to
-  prevent duplicate presentation while preserving tied material patterns?
+The four held-out cases remain input-only. They contain authoritative
+references, member action states, and a semantic question, but no expected
+propositions, boundaries, action accounting, or conclusions.
 
 ## Gate
 
-External semantic review is required before any candidate can move to a
-separate acceptance gate. This milestone does not authorize runtime adoption,
-persistence, population generation, promotion, or publication.
+The role-model review has been incorporated, but every development case remains
+`candidate_pending_external_semantic_review`. This revision does not authorize
+runtime adoption, persistence, population generation, promotion, or
+publication.
