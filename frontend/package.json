@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "test:golden-render": "playwright test tests/golden-render.spec.mjs"
+    "test:cutover-smoke": "playwright test tests/editorial-cutover.spec.mjs"
   },
   "dependencies": {
     "next": "^15.3.0",

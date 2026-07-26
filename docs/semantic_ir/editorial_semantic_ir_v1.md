@@ -105,6 +105,11 @@ validates compiled identities and references, and passes only compiled IR to
 review, presentation, and optional inert persistence-proposal adapters. The pure
 compiler remains independently usable.
 
+After Editorial Hard Cutover V1, this is the repository's only executable
+editorial semantic architecture. Pre-IR generators and old-format public
+adapters are deleted and are not available for replay. Preserved historical
+artifacts remain noncanonical evidence.
+
 The projection contains only:
 
 - case scope and structured focused-fixture scope, when applicable;

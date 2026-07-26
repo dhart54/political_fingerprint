@@ -11,6 +11,7 @@ import ProfileQuickRead from "../components/ProfileQuickRead";
 import RecordAcrossCongressesPanel from "../components/RecordAcrossCongressesPanel";
 import ZipLookupPanel, { UpcomingRacePanel } from "../components/ZipLookupPanel";
 import { fetchCoverageMetadata } from "../lib/api";
+import { pluralizeCountNoun } from "../lib/issueEvidenceCoverage.mjs";
 
 const DEFAULT_LEGISLATOR = {
   id: "leg_aaron_bean",
@@ -99,13 +100,19 @@ export default function HomePage() {
                 </h1>
               </div>
               <p className="max-w-[300px] text-sm leading-5 text-stone-700">
-                Start with the clearest reviewed patterns, then inspect the proof.
+                Start with the best-covered issue areas, then inspect the receipts.
               </p>
             </div>
             {coverageMetadata ? (
               <div className="mt-2 grid gap-2 sm:grid-cols-3">
-                <HeroStat value={formatNumber(coverageMetadata.legislator_count)} label="legislators" />
-                <HeroStat value={formatNumber(coverageMetadata.eligible_roll_call_count)} label="reviewed votes" />
+                <HeroStat
+                  value={formatNumber(coverageMetadata.legislator_count)}
+                  label={pluralizeCountNoun(coverageMetadata.legislator_count, "legislator")}
+                />
+                <HeroStat
+                  value={formatNumber(coverageMetadata.eligible_roll_call_count)}
+                  label={pluralizeCountNoun(coverageMetadata.eligible_roll_call_count, "eligible roll call")}
+                />
                 <HeroStat value={formatPercent(coverageMetadata.source_url_share)} label="source links" />
               </div>
             ) : (
@@ -176,7 +183,7 @@ export default function HomePage() {
           legislator={selectedLegislator}
           legislatorId={selectedLegislator.id}
           scope={profileScope}
-          title={`${selectedLegislator.name_display}'s strongest issue evidence`}
+          title={`${selectedLegislator.name_display}'s issue evidence`}
         />
 
         <RecordAcrossCongressesPanel

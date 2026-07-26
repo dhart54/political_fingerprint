@@ -2,11 +2,17 @@
 
 import { useEffect, useState } from "react";
 
-import { fetchFingerprint, fetchPositionEvidence, fetchPositions } from "../lib/api";
-import { getBestIssueRead } from "../lib/issueReadiness.mjs";
+import { fetchFingerprint, fetchPositions } from "../lib/api";
+import { hasAvailableIssueEvidence } from "../lib/basicEvidencePresentation.mjs";
 import { formatDomainLabel } from "../lib/issueDomains";
-import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
-import { buildRecordNarrative } from "../lib/profileNarrative.mjs";
+import {
+  getDomainDescription,
+  getEvidenceCoverage,
+  getEvidenceCoverageLabel,
+  getRecordedActionComposition,
+  orderIssueRowsByEvidenceUsefulness,
+  pluralizeCountNoun,
+} from "../lib/issueEvidenceCoverage.mjs";
 
 export default function ProfileQuickRead({ fixtureData = null, legislator, onInspectDomain, onProfileRead, scope = "all" }) {
   const [state, setState] = useState({
@@ -46,15 +52,10 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
           return;
         }
 
-        const [fingerprint, positionsPayload] = await Promise.all([
+        const [fingerprint, positions] = await Promise.all([
           fetchFingerprint({ legislatorId: legislator.id, scope }),
           fetchPositions({ legislatorId: legislator.id, scope }),
         ]);
-        const positions = await fillMissingInterpretedCounts({
-          payload: positionsPayload,
-          fetchEvidence: (args) => fetchPositionEvidence({ ...args, scope }),
-          legislatorId: legislator.id,
-        });
 
         if (!active) {
           return;
@@ -91,16 +92,11 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
     };
   }, [fixtureData, legislator.id, scope]);
 
-  const fingerprintRows = state.fingerprint?.fingerprint || [];
   const positionRows = state.positions?.positions || [];
-  const topFocus = buildTopFocus(fingerprintRows);
-  const topPosition = buildTopPosition(positionRows);
-  const coverage = buildCoverage(fingerprintRows);
-  const narrative = buildRecordNarrative({
-    legislator,
-    positions: positionRows,
-    scope,
-  });
+  const availableRows = orderIssueRowsByEvidenceUsefulness(
+    positionRows.filter(hasAvailableIssueEvidence),
+  );
+  const coverage = buildCoverage(availableRows);
   const scopeRead = buildScopeRead({ scope, positions: state.positions });
 
   return (
@@ -108,32 +104,22 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
       <div className="grid gap-3 xl:grid-cols-[minmax(0,1fr)_minmax(420px,0.8fr)] xl:items-start">
         <div className="min-w-0">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-100">
-            Record Summary
+            Record Coverage
           </p>
           <h3 className="mt-1 max-w-[820px] font-serif text-[1.45rem] leading-[1.08] text-white sm:text-[1.85rem]">
             {state.status === "ready"
-              ? narrative.headline
-              : buildHeadline({
-                  status: state.status,
-                  name: legislator.name_display,
-                  topFocus,
-                  topPosition,
-                })}
+              ? `${legislator.name_display}'s available issue records`
+              : buildHeadline({ status: state.status, name: legislator.name_display })}
           </h3>
           <p className="mt-2 max-w-4xl text-[13px] leading-5 text-cyan-50">
             {state.status === "loading"
-              ? "Loading the profile summary from the same deterministic data used below."
+              ? "Loading available vote records from the same evidence used below."
               : null}
             {state.status === "error" ? state.error : null}
             {state.status === "ready"
-              ? narrative.body
+              ? coverage.description
               : null}
           </p>
-          {state.status === "ready" ? (
-            <p className="mt-2 text-[12px] leading-5 text-cyan-100">
-              {narrative.evidenceLine}
-            </p>
-          ) : null}
           {state.status === "ready" && scopeRead ? (
             <p className="mt-2 max-w-4xl rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-[12px] leading-5 text-cyan-50">
               {scopeRead}
@@ -141,50 +127,22 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
           ) : null}
         </div>
         <div className="grid shrink-0 gap-2 sm:grid-cols-3">
-          <QuickMetric eyebrow="Strongest evidence" value={state.status === "ready" ? topPosition.metricDomain : "--"} />
-          <QuickMetric eyebrow="Coverage" value={state.status === "ready" ? coverage.value : "--"} />
-          <QuickMetric eyebrow="Record read" value={state.status === "ready" ? topPosition.value : "--"} />
+          <QuickMetric eyebrow="Available actions" value={state.status === "ready" ? coverage.voteCount : "--"} />
+          <QuickMetric eyebrow="Issue areas" value={state.status === "ready" ? coverage.issueCount : "--"} />
+          <QuickMetric eyebrow="Evidence view" value={state.status === "ready" ? "Vote receipts" : "--"} />
         </div>
       </div>
 
-      {state.status === "ready" && narrative.patternRows.length > 0 ? (
+      {state.status === "ready" && availableRows.length > 0 ? (
         <div className="mt-3 grid gap-2 border-t border-white/10 pt-3 md:grid-cols-2 xl:grid-cols-4">
-          {narrative.patternRows.map((row) => (
-            <button
-              className="rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-left transition hover:bg-white/15"
+          {availableRows.map((row, index) => (
+            <IssueEvidenceCard
+              featured={index === 0}
               key={row.domain}
               onClick={() => onInspectDomain?.(row.domain)}
-              type="button"
-            >
-              <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-100">
-                {formatDomainLabel(row.domain)}
-              </p>
-              <p className="mt-1 text-sm font-medium leading-5 text-white">
-                {row.preview.status}
-              </p>
-              <p className="mt-1 text-xs leading-4 text-cyan-50">
-                {row.preview.countLine}
-              </p>
-              <p className="mt-1 text-xs leading-4 text-cyan-50">
-                {row.preview.themeLine}
-              </p>
-            </button>
+              row={row}
+            />
           ))}
-        </div>
-      ) : null}
-
-      {state.status === "ready" && topPosition.domain !== "NONE" ? (
-        <div className="mt-3 flex flex-col gap-2 border-t border-white/10 pt-3 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm leading-5 text-cyan-50">
-            {buildStartHereCopy({ topFocus, topPosition })}
-          </p>
-          <button
-            className="w-fit rounded-full bg-white px-4 py-2 text-xs uppercase tracking-[0.16em] text-cyan-950 transition hover:bg-cyan-50"
-            onClick={() => onInspectDomain?.(topPosition.domain)}
-            type="button"
-          >
-            Open Best Read
-          </button>
         </div>
       ) : null}
     </section>
@@ -200,7 +158,7 @@ function QuickMetric({ eyebrow, value }) {
   );
 }
 
-function buildHeadline({ status, name, topFocus, topPosition }) {
+function buildHeadline({ status, name }) {
   if (status === "loading") {
     return `Reading ${name}'s voting record...`;
   }
@@ -208,91 +166,102 @@ function buildHeadline({ status, name, topFocus, topPosition }) {
   if (status === "error") {
     return `The quick read for ${name} is unavailable.`;
   }
-
-  if (topFocus.domain === "NONE") {
-    return `${name} does not have enough eligible policy votes for a clear read yet.`;
-  }
-
-  if (topPosition.domain === "NONE") {
-    return `${name}'s profile has recorded votes, but no issue area has enough reviewed vote meaning for a confident first read yet.`;
-  }
-
-  if (topFocus.domain !== topPosition.domain) {
-    return `Start with ${formatDomainLabel(topPosition.domain)}. It has the clearest reviewed vote meaning in this profile.`;
-  }
-
-  return `Start with ${formatDomainLabel(topPosition.domain)}. It has both the clearest reviewed vote meaning and the largest recorded-vote footprint in this profile.`;
+  return `${name}'s available issue records`;
 }
 
-function buildStartHereCopy({ topFocus, topPosition }) {
-  const bestIssue = formatDomainLabel(topPosition.domain);
-  if (topFocus.domain !== topPosition.domain && topFocus.domain !== "NONE") {
-    return `Open ${bestIssue} first. It has the clearest reviewed vote meaning; ${topFocus.label} has more recorded votes but is not the best first read.`;
-  }
-  return `Open ${bestIssue} first. It is the clearest reviewed issue read, and limited issue sections are intentionally lower priority.`;
+function IssueEvidenceCard({ featured, onClick, row }) {
+  const coverage = getEvidenceCoverage(row);
+  const composition = getRecordedActionComposition(row);
+
+  return (
+    <button
+      aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
+      className="rounded-xl border border-white/10 bg-white/10 px-3 py-3 text-left transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-cyan-100 focus:ring-offset-2 focus:ring-offset-cyan-950"
+      onClick={onClick}
+      type="button"
+    >
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-100">
+          {formatDomainLabel(row.domain)}
+        </p>
+        <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[10px] uppercase tracking-[0.12em] text-cyan-50">
+          {featured ? "Best-covered issue" : getEvidenceCoverageLabel(row)}
+        </span>
+      </div>
+      <p className="mt-2 text-xs leading-4 text-cyan-50">
+        {getDomainDescription(row.domain)}
+      </p>
+      <p className="mt-2 text-sm font-medium leading-5 text-white">
+        {formatAvailableActionCount(row)}
+      </p>
+      <p className="mt-0.5 text-[11px] leading-4 text-cyan-100">
+        {coverage.reviewedYesNo} reviewed substantive Yes/No
+        {featured ? ` · ${getEvidenceCoverageLabel(row)}` : ""}
+      </p>
+      <div className="mt-2" role="group" aria-label="Recorded action composition">
+        <p className="text-[10px] uppercase tracking-[0.13em] text-cyan-100">
+          Recorded action composition
+        </p>
+        <div aria-hidden="true" className="mt-1 flex h-1.5 overflow-hidden rounded-full bg-white/10">
+          {composition.map((item) => (
+            <span
+              className={getCompositionSegmentClass(item.key)}
+              key={item.key}
+              style={{ width: `${item.percent}%` }}
+            />
+          ))}
+        </div>
+        <ul aria-label="Recorded action composition legend" className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-[10px] leading-4 text-cyan-50">
+          {composition.map((item) => (
+            <li className="flex items-center gap-1" key={item.key}>
+              <span aria-hidden="true" className={`h-2 w-2 rounded-full ${getCompositionSegmentClass(item.key)}`} />
+              <span>
+                {item.label} <span className="font-medium text-white">{item.count}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p className="mt-2 text-xs leading-4 text-white underline decoration-white/30 underline-offset-2">
+        Open vote evidence
+      </p>
+    </button>
+  );
 }
 
-function buildTopFocus(rows) {
-  const strongest = [...rows]
-    .filter((row) => (row?.vote_share || 0) > 0)
-    .sort((left, right) => (right.vote_share || 0) - (left.vote_share || 0))[0];
-
-  if (!strongest) {
-    return {
-      domain: "NONE",
-      label: "No strong issue focus",
-      value: "0%",
-    };
+function getCompositionSegmentClass(key) {
+  if (key === "yea") {
+    return "bg-cyan-200";
   }
-
-  return {
-    domain: strongest.domain,
-    label: formatDomainLabel(strongest.domain),
-    value: `${((strongest.vote_share || 0) * 100).toFixed(0)}%`,
-  };
-}
-
-function buildTopPosition(rows) {
-  const strongest = getBestIssueRead(rows);
-
-  if (!strongest) {
-    return {
-      shortLabel: "no confident issue read",
-      domain: "NONE",
-      label: "No issue has enough reviewed Yes/No vote meaning for a confident read in the current window.",
-      metricDomain: "--",
-      value: "--",
-    };
+  if (key === "nay") {
+    return "bg-amber-200";
   }
-
-  const interpretedYeaNay = (strongest.interpreted_support_count || 0) + (strongest.interpreted_oppose_count || 0);
-  const gap = Math.abs((strongest.yea_share || 0) - (strongest.nay_share || 0));
-  let direction = "Mixed record in votes shown";
-  if (!interpretedYeaNay) {
-    direction = "Too little interpreted evidence";
-  } else if (gap >= 0.15) {
-    direction = strongest.yea_share >= strongest.nay_share ? "Mostly Yea in votes shown" : "Mostly Nay in votes shown";
-  }
-  return {
-    shortLabel: `${strongest.readiness?.label || direction} in ${formatDomainLabel(strongest.domain)}`,
-    domain: strongest.domain,
-    label: `${formatDomainLabel(strongest.domain)} has ${strongest.recorded_votes} recorded votes in this window; ${interpretedYeaNay} reviewed Yes/No votes can be summarized.`,
-    metricDomain: formatDomainLabel(strongest.domain),
-    value:
-      strongest.readiness?.key === "mixed_but_interpretable"
-        ? "Evidence in more than one direction"
-        : strongest.readiness?.key === "limited_evidence"
-          ? "Limited reviewed evidence"
-          : "Strong reviewed sample",
-  };
+  return "bg-stone-300";
 }
 
 function buildCoverage(rows) {
-  const totalVotes = rows[0]?.total_votes || 0;
+  const totalVotes = rows.reduce((total, row) => total + getAvailableActionCount(row), 0);
+  const issueCount = rows.length;
   return {
-    label: `${totalVotes} eligible votes in the selected profile scope.`,
-    value: `${totalVotes} votes`,
+    description: issueCount
+      ? `${totalVotes} recorded ${totalVotes === 1 ? "action is" : "actions are"} available across ${issueCount} issue ${issueCount === 1 ? "area" : "areas"}. Open an issue to inspect its vote receipts. These counts do not combine the actions into an analytical conclusion.`
+      : "No vote records are available in the selected profile scope.",
+    issueCount: String(issueCount),
+    voteCount: String(totalVotes),
   };
+}
+
+function formatAvailableActionCount(row) {
+  const count = getAvailableActionCount(row);
+  return `${count} ${pluralizeCountNoun(count, "recorded action")}`;
+}
+
+function getAvailableActionCount(row) {
+  const total = Number(row?.total_votes);
+  if (Number.isFinite(total) && total >= 0) {
+    return total;
+  }
+  return Number(row?.yea_count || 0) + Number(row?.nay_count || 0) + Number(row?.other_count || 0);
 }
 
 function buildScopeRead({ scope, positions }) {

@@ -68,6 +68,15 @@ Exact prose is a replaceable presentation result.
 Later stages may select, relate, omit, or render established semantic objects.
 They may not reinterpret earlier-stage meaning.
 
+Semantic IR V1 is the only executable editorial semantic architecture. Frozen
+pre-IR dossiers, receipts, proof artifacts, and provenance remain historical
+evidence, but deleted pre-IR generators and old-format frontend adapters must
+not be recreated for replay or compatibility.
+
+Until an IR-native presentation milestone is separately authorized, the public
+representative experience uses basic vote evidence and receipts without
+reconstructing analytical conclusions in React.
+
 ## Repository operating model
 
 - Use one accountable implementation owner and one meaningful outcome per

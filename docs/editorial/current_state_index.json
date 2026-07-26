@@ -1,7 +1,8 @@
 {
   "schema_version": "editorial_current_state_index_v1",
-  "source_baseline_commit": "0343a0771973ea4b085627fcb9b26387092ba302",
+  "source_baseline_commit": "bc7617b05f33d56cf83c4bb7e4b8113b945a3998",
   "owning_pipeline_for_new_work": "backend.app.semantic_ir.pipeline.run_editorial_pipeline",
+  "only_executable_editorial_semantic_architecture": "editorial_semantic_ir_v1",
   "canonical": {
     "schema": "docs/semantic_ir/editorial_semantic_ir_v1.schema.json",
     "contract": "docs/semantic_ir/editorial_semantic_ir_v1.md",
@@ -25,56 +26,80 @@
       "receipt": "docs/semantic_ir/accepted/held_out_acceptance_receipt.json"
     }
   ],
-  "current_commissioning_domains": [
-    "ECONOMY_TAXES",
-    "JUSTICE_PUBLIC_SAFETY",
-    "ENVIRONMENT_ENERGY"
-  ],
-  "current_public_editorial_artifacts": {
-    "count": 0,
-    "manifest": "frontend/lib/editorialIssueProductionSlices.mjs",
-    "state": "frozen_empty_registry"
+  "legacy_execution": {
+    "available": false,
+    "deleted_paths_receipt": "docs/editorial/editorial_hard_cutover_v1_receipt.json"
   },
-  "review_only_artifacts": [
-    {
-      "domain": "ECONOMY_TAXES",
-      "manifest": "frontend/lib/editorialIssueReviewSlices.mjs",
-      "source_manifest": "docs/editorial/valerie_foushee_economy_gold_v2/source_manifest.json"
-    },
-    {
-      "domain": "JUSTICE_PUBLIC_SAFETY",
-      "manifest": "frontend/lib/justiceCrossMemberReviewSlices.mjs",
-      "source_manifest": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json"
-    },
-    {
-      "domain": "ENVIRONMENT_ENERGY",
-      "manifest": "frontend/lib/commissioningDomainReviewSlices.mjs",
-      "source_manifest": "docs/editorial/commissioning_domain_v1/corrected/source_manifest.json"
-    }
-  ],
+  "historical_evidence": {
+    "state": "preserved_frozen_noncanonical",
+    "roots": [
+      "docs/editorial/valerie_foushee_economy_gold_v2/",
+      "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/",
+      "docs/editorial/justice_cross_member_validation_v1/",
+      "docs/editorial/blind_editorial_pipeline_validation_v1/",
+      "docs/editorial/commissioning_domain_v1/",
+      "docs/semantic_ir/held_out_results/"
+    ],
+    "whole_tree_manifest": "docs/editorial/frozen_historical_evidence_manifest_v1.json",
+    "manifest_file_count": 119
+  },
+  "frontend": {
+    "rich_editorial_runtime_available": false,
+    "representative_route": "/",
+    "representative_route_state": "basic_vote_evidence_and_receipts",
+    "profile_summary_state": "evidence_coverage_ordered_issue_cards_and_receipt_links",
+    "issue_availability_basis": "actual_position_action_counts",
+    "issue_ordering_basis": [
+      "available_action_count",
+      "reviewed_substantive_yes_no_count",
+      "non_directional_or_limited_context_availability",
+      "stable_domain_order"
+    ],
+    "issue_ordering_excludes": [
+      "yea_nay_direction",
+      "support_opposition",
+      "party_alignment",
+      "ideology",
+      "react_generated_conclusions"
+    ],
+    "domain_descriptions": "shared_member_neutral_registry",
+    "overview_gauge": "recorded_action_composition",
+    "overview_gauge_segments": [
+      "yea",
+      "nay",
+      "non_directional_or_context"
+    ],
+    "overview_gauge_denominator": "sum_of_supplied_overview_action_counts",
+    "issue_navigation": [
+      "primary_evidence_ranked_card_grid",
+      "compact_in_section_jump_navigation"
+    ],
+    "duplicative_third_issue_selector": false,
+    "party_benchmarking": "deferred",
+    "non_directional_actual_actions_available": true,
+    "expected_missing_actions_available": false,
+    "removed_routes": ["/golden-render-fixture"],
+    "removed_route_result": "404",
+    "ir_native_presentation": "deferred"
+  },
   "production_staged_but_unpublished": {
     "artifact_count": 71,
     "publication_registry_count": 0,
     "receipt": "docs/editorial/editorial_artifact_persistence_v1/seed_manifest.json",
     "review_packet": "docs/review_packets/editorial_artifact_persistence_v1.json",
-    "state_changed_by_this_milestone": false
-  },
-  "historical_and_superseded": {
-    "inventory": "docs/architecture/editorial_pipeline_inventory_v1.json",
-    "held_out_first_pass_results": "docs/semantic_ir/held_out_results/",
-    "original_environment_preservation_receipt": "docs/editorial/commissioning_domain_v1/corrected/original_preservation_receipt.json"
+    "state_changed_by_cutover": false
   },
   "publication_and_persistence_state": {
     "public_selection_count": 0,
-    "publication_registry_expected_rows": 0,
     "persistence_proposal_default": false,
     "publication_authorized_by_pipeline": false,
-    "production_write_authorized_by_pipeline": false
+    "production_write_authorized_by_pipeline": false,
+    "database_cleanup": "deferred"
   },
   "canonical_validation_commands": {
     "semantic": "python scripts/run_editorial_pipeline.py validate --tier semantic",
     "domain": "python scripts/run_editorial_pipeline.py validate --tier domain --domain <DOMAIN_ID>",
     "representative_cases": "python scripts/run_editorial_pipeline.py validate --tier domain --case <CASE_ID>",
-    "release": "python scripts/run_editorial_pipeline.py validate --tier release [--include-persistence] [--include-frontend]"
+    "release": "python scripts/run_editorial_pipeline.py validate --tier release --include-frontend"
   }
 }

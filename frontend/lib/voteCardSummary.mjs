@@ -12,7 +12,9 @@ export function buildVoteCardSummary(row, { representativeName = "" } = {}) {
   }
 
   const action = cleanSummarySentence(row.what_happened || buildUsefulInterpretationText(row.plain_english_summary));
-  const stakes = cleanSummarySentence(row.why_it_mattered || buildPlainTakeaway(row));
+  const stakes = cleanSummarySentence(
+    row.why_it_mattered || buildUsefulInterpretationText(row.policy_effect),
+  );
   const voteMeaning = buildPlainVoteMeaning(row, { representativeName });
   const context = buildPlainPartyOutcomeContext(row);
   const voteAndContext = combineVoteMeaningAndContext(voteMeaning, context);
@@ -249,33 +251,6 @@ function buildPlainOutcomeSentence(row) {
     return "The bill passed the House";
   }
   return "The measure passed";
-}
-
-function buildPlainTakeaway(row) {
-  const summary = buildUsefulInterpretationText(row.plain_english_summary);
-  const effect = buildUsefulInterpretationText(row.policy_effect);
-  const text = `${summary} ${effect}`.toLowerCase();
-
-  if (text.includes("budget blueprint") || text.includes("reconciliation")) {
-    return "This vote helped set the rules for a later fast-track budget bill that could affect taxes, spending, deficits, and the debt limit.";
-  }
-  if (text.includes("shutdown") || text.includes("continuing appropriations") || text.includes("short-term funding")) {
-    if (text.includes("back pay") || text.includes("reduction-in-force")) {
-      return "This vote was about ending a shutdown, paying federal workers, and deciding how agencies would operate while longer-term funding was still unresolved.";
-    }
-    return "This vote was about avoiding a shutdown by keeping most federal agencies temporarily funded while longer-term spending bills were unfinished.";
-  }
-  if (text.includes("small business administration") || text.includes("sba")) {
-    if (text.includes("loan")) {
-      return "This vote was about restricting access to certain SBA-backed small-business loans based on immigration or residency status.";
-    }
-    return "This vote was about limiting net new SBA rulemaking costs for small businesses.";
-  }
-  if (text.includes("military construction") || text.includes("veterans affairs")) {
-    return "This vote was about funding military construction, military housing, and veterans-related agencies and programs.";
-  }
-
-  return effect || summary;
 }
 
 function extractMemberLabel(row) {

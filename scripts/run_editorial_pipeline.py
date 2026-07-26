@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import subprocess
 import sys
 import time
@@ -132,8 +133,11 @@ def _release_loop(
             )
         )
     if include_frontend:
+        npm = shutil.which("npm")
+        if npm is None:
+            raise RuntimeError("npm is required for frontend release validation")
         result["commands"].append(
-            _run(["npm", "run", "build", "--prefix", "frontend"])
+            _run([npm, "run", "build", "--prefix", "frontend"])
         )
     result["frontend_included"] = include_frontend
     result["persistence_included"] = include_persistence

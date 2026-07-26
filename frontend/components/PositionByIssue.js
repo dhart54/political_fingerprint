@@ -2,25 +2,20 @@
 
 import { useEffect, useState } from "react";
 
-import EditorialIssueExperience from "./EditorialIssueExperience";
 import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
 import {
-  EDITORIAL_EXPERIENCE_MODE,
-  hasEligibleEditorialSlice,
-  isEditorialExperienceRow,
-  selectEditorialIssueExperience,
-} from "../lib/editorialIssueExperience.mjs";
-import {
   buildBasicEvidencePresentation,
-  issueAvailabilityLabel,
-} from "../lib/editorialIssuePublicPresentation.mjs";
+  hasAvailableIssueEvidence,
+} from "../lib/basicEvidencePresentation.mjs";
 import { deriveEvidenceGroups } from "../lib/evidenceGrouping.mjs";
-import { groupIssueRowsByReadiness, sortIssueRowsByReadiness } from "../lib/issueReadiness.mjs";
 import { formatDisplayMeasureTitle } from "../lib/measureDisplay.mjs";
 import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
 import { isProceduralContextRow } from "../lib/proceduralContext.mjs";
-import { buildIssueCardPreview } from "../lib/profileNarrative.mjs";
 import { DOMAIN_LABELS, formatDomainLabel } from "../lib/issueDomains";
+import {
+  getEvidenceCoverageLabel,
+  orderIssueRowsByEvidenceUsefulness,
+} from "../lib/issueEvidenceCoverage.mjs";
 import {
   buildLimitedContextSummary as buildGenericLimitedContextSummary,
   buildVoteCardSummary as buildGenericVoteCardSummary,
@@ -29,8 +24,6 @@ import {
 const REPRESENTATIVE_VOTE_LIMIT = 8;
 
 export default function PositionByIssue({
-  editorialCandidates,
-  editorialMode = EDITORIAL_EXPERIENCE_MODE.production,
   evidenceRequest = null,
   fixtureData = null,
   legislator = null,
@@ -129,22 +122,10 @@ export default function PositionByIssue({
     });
   }, [evidenceRequest?.requestedAt]);
 
-  const issueRows = sortIssueRowsByReadiness(state.payload?.positions || []);
-  const rows = issueRows.filter((row) => row.recorded_votes > 0 || row.readiness.key === "not_enough_to_summarize");
-  const readinessGroups = groupIssueRowsByReadiness(state.payload?.positions || []);
-  const takeaway = buildTakeaway(rows);
+  const rows = orderIssueRowsByEvidenceUsefulness(
+    (state.payload?.positions || []).filter(hasAvailableIssueEvidence),
+  );
   const selectedRow = rows.find((row) => row.domain === selectedDomain) || rows[0] || null;
-  const startPlan = buildSixtySecondPlan(readinessGroups);
-  const hasSelectedEditorialSlice = Boolean(selectedRow) && hasEligibleEditorialSlice({
-    candidates: editorialCandidates,
-    domain: selectedRow.domain,
-    legislator,
-    mode: editorialMode,
-  });
-  const otherReadinessGroups = hasSelectedEditorialSlice
-    ? readinessGroups.map((group) => ({ ...group, rows: group.rows.filter((row) => row.domain !== selectedRow.domain) }))
-    : readinessGroups;
-  const hasOtherIssueRows = otherReadinessGroups.some((group) => group.rows.length > 0);
 
   async function inspectDomain(domain) {
     setSelectedDomain(domain);
@@ -185,7 +166,7 @@ export default function PositionByIssue({
 
   return (
     <section id="position-by-issue" className="mt-4 rounded-2xl border border-stone-200 bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.07)] lg:p-5">
-      {!hasSelectedEditorialSlice ? <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(360px,0.72fr)_minmax(0,1.28fr)]">
+      <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(360px,0.72fr)_minmax(0,1.28fr)]">
         <div className="min-w-0">
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-800">
             Issue Evidence
@@ -195,24 +176,15 @@ export default function PositionByIssue({
           </h3>
           <p className="mt-2 max-w-xl text-[15px] leading-6 text-stone-800">
             {state.status === "ready"
-              ? takeaway
+              ? "Select an issue to inspect its vote receipts. This basic view keeps recorded actions visible without combining them into a broader issue conclusion."
               : state.status === "loading"
-                ? "Reading where this legislator's reviewed issue evidence is strongest."
-                : "The site cannot read issue readiness for this legislator right now."}
+                ? "Loading this legislator's issue evidence."
+                : "The site cannot read issue evidence for this legislator right now."}
           </p>
           {state.status === "ready" ? (
             <p className="mt-2 text-xs uppercase tracking-[0.14em] text-stone-500">
               {formatScopeLine(state.payload?.scope_metadata)}
             </p>
-          ) : null}
-          {state.status === "ready" && !selectedDomain && startPlan?.steps?.[0] ? (
-            <button
-              className="mt-3 rounded-full border border-cyan-900/20 bg-cyan-50 px-4 py-2 text-left text-xs uppercase tracking-[0.15em] text-cyan-950 transition hover:bg-cyan-100"
-              onClick={() => inspectDomain(startPlan.steps[0].domain)}
-              type="button"
-            >
-              Start with {formatDomainLabel(startPlan.steps[0].domain)}
-            </button>
           ) : null}
         </div>
 
@@ -224,62 +196,32 @@ export default function PositionByIssue({
           ) : null}
           {state.status === "ready" && rows.length === 0 ? (
             <div className="rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600">
-              No recorded yea/nay policy-vote splits are available in the current window. This is a coverage note, not an alignment finding.
+              No vote evidence is available in the current window. This is a coverage note, not an alignment finding.
             </div>
           ) : null}
           {state.status === "ready" ? (
             <IssueNavigation
-              editorialCandidates={editorialCandidates}
-              editorialMode={editorialMode}
               inspectDomain={inspectDomain}
-              legislator={legislator}
               rows={rows}
               selectedDomain={selectedDomain}
             />
           ) : null}
         </div>
-      </div> : state.status === "ready" && rows.length > 1 ? (
-        <div className="mb-3">
-          <IssueNavigation
-            editorialCandidates={editorialCandidates}
-            editorialMode={editorialMode}
-            inspectDomain={inspectDomain}
-            legislator={legislator}
-            rows={rows}
-            selectedDomain={selectedDomain}
-          />
-        </div>
-      ) : null}
+      </div>
 
       <EvidencePanel
-        editorialCandidates={editorialCandidates}
-        editorialMode={editorialMode}
         evidenceState={evidenceState}
         legislator={legislator}
         onInspectDomain={inspectDomain}
         selectedRow={selectedRow}
       />
 
-      {state.status === "ready" && hasOtherIssueRows ? (
-        <section className="mt-4 border-t border-stone-200 pt-4" aria-label="Explore all issue evidence">
-          <div className="mb-3">
-            <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">Explore other issues</p>
-            <p className="mt-1 text-sm leading-6 text-stone-600">Compare where reviewed analysis, vote receipts, or only a limited record is currently available.</p>
-          </div>
-          <IssueReadinessGroups
-            groups={otherReadinessGroups}
-            inspectDomain={inspectDomain}
-            selectedDomain={selectedDomain}
-          />
-        </section>
-      ) : null}
-
     </section>
   );
 }
 
-function IssueNavigation({ editorialCandidates, editorialMode, inspectDomain, legislator, rows, selectedDomain }) {
-  const navRows = (rows || []).filter((row) => row.recorded_votes > 0 || getInterpretedCount(row) > 0);
+function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
+  const navRows = (rows || []).filter(hasAvailableIssueEvidence);
 
   if (navRows.length <= 1) {
     return null;
@@ -295,12 +237,6 @@ function IssueNavigation({ editorialCandidates, editorialMode, inspectDomain, le
       </div>
       <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
         {navRows.map((row) => {
-          const hasEditorialSlice = hasEligibleEditorialSlice({
-            candidates: editorialCandidates,
-            domain: row.domain,
-            legislator,
-            mode: editorialMode,
-          });
           return (
           <button
             aria-current={selectedDomain === row.domain ? "true" : undefined}
@@ -314,7 +250,7 @@ function IssueNavigation({ editorialCandidates, editorialMode, inspectDomain, le
             type="button"
           >
             <span className="font-medium">{formatDomainLabel(row.domain)}</span>
-            <span className="ml-2 opacity-75">{issueAvailabilityLabel({ hasEditorialSlice, row })}</span>
+            <span className="ml-2 opacity-75">{getEvidenceCoverageLabel(row)}</span>
           </button>
           );
         })}
@@ -323,195 +259,7 @@ function IssueNavigation({ editorialCandidates, editorialMode, inspectDomain, le
   );
 }
 
-function IssueReadinessGroups({ groups, inspectDomain, selectedDomain }) {
-  const visibleGroups = groups.filter((group) => group.rows.length > 0);
-
-  if (!visibleGroups.length) {
-    return null;
-  }
-
-  return (
-    <div className="grid gap-2.5">
-      {visibleGroups.map((group) => (
-        <section className={`rounded-xl border px-3 py-3 ${getReadinessGroupContainerClass(group.key)}`} key={group.key}>
-          <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.16em] text-cyan-900">
-                {group.label}
-              </p>
-              <p className="mt-1 text-sm leading-5 text-stone-600">
-                {formatReadinessGroupHelp(group.key)}
-              </p>
-            </div>
-            <span className="w-fit rounded-full bg-white px-3 py-1 text-xs uppercase tracking-[0.16em] text-stone-600">
-              {group.rows.length} {group.rows.length === 1 ? "issue" : "issues"}
-            </span>
-          </div>
-          {group.key === "limited_evidence" || group.key === "not_enough_to_summarize" ? (
-            <CompactIssueList
-              inspectDomain={inspectDomain}
-              rows={group.rows}
-              selectedDomain={selectedDomain}
-            />
-          ) : (
-            <div className="mt-2 grid gap-2 md:grid-cols-2">
-              {group.rows.map((row) => (
-                <IssueReadinessTile
-                  inspectDomain={inspectDomain}
-                  key={row.domain}
-                  row={row}
-                  selectedDomain={selectedDomain}
-                />
-              ))}
-            </div>
-          )}
-        </section>
-      ))}
-    </div>
-  );
-}
-
-function CompactIssueList({ inspectDomain, rows, selectedDomain }) {
-  return (
-    <div className="mt-2 divide-y divide-stone-200 overflow-hidden rounded-xl border border-stone-200 bg-white">
-      {rows.map((row) => (
-        <button
-          aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
-          aria-pressed={selectedDomain === row.domain}
-          className={`grid w-full gap-1 px-3 py-2.5 text-left transition sm:grid-cols-[minmax(0,1fr)_auto_auto] sm:items-center sm:gap-3 ${
-            selectedDomain === row.domain ? "bg-cyan-50" : "hover:bg-stone-50"
-          }`}
-          key={row.domain}
-          onClick={() => inspectDomain(row.domain)}
-          type="button"
-        >
-          <span className="text-sm font-medium leading-5 text-stone-950">
-            {formatDomainLabel(row.domain)}
-          </span>
-          <span className="text-xs uppercase tracking-[0.12em] text-stone-500">
-            {row.recorded_votes || 0} votes
-          </span>
-          <span className={`w-fit rounded-full px-2.5 py-1 text-[11px] uppercase tracking-[0.1em] ${getReadinessBadgeClass(row.readiness?.key)}`}>
-            {(row.interpreted_support_count || 0) + (row.interpreted_oppose_count || 0)} reviewed
-          </span>
-        </button>
-      ))}
-    </div>
-  );
-}
-
-function IssueReadinessTile({ inspectDomain, row, selectedDomain }) {
-  const readinessKey = row.readiness?.key;
-
-  return (
-    <button
-      aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
-      aria-pressed={selectedDomain === row.domain}
-      className={`rounded-xl border px-3 py-2.5 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.72)] transition ${
-        selectedDomain === row.domain
-          ? "border-cyan-800 bg-cyan-50"
-          : readinessKey === "strong_evidence"
-            ? "border-cyan-800/30 bg-white hover:border-cyan-800"
-            : readinessKey === "mixed_but_interpretable"
-              ? "border-indigo-200 bg-white hover:border-indigo-500"
-              : "border-stone-200 bg-white hover:border-cyan-700/50"
-      }`}
-      onClick={() => inspectDomain(row.domain)}
-      type="button"
-    >
-      <div className="flex items-start justify-between gap-3">
-        <p className="max-w-[220px] text-sm leading-5 text-stone-950">
-          {formatDomainLabel(row.domain)}
-        </p>
-        <p className="shrink-0 text-sm text-stone-500">{row.recorded_votes || 0} votes</p>
-      </div>
-      <div className="mt-2 flex flex-col gap-1.5">
-        <span className={`w-fit max-w-full rounded-xl px-3 py-1 text-[11px] uppercase leading-4 tracking-[0.12em] ${getReadinessBadgeClass(row.readiness?.key)}`}>
-          {formatIssueCardStatusLabel(row)}
-        </span>
-        <p className="text-[13px] leading-5 text-stone-700">
-          {formatIssueCardEvidenceLine(row)}
-        </p>
-        <p className="text-[13px] leading-5 text-stone-600">
-          {formatIssueCardReason(row)}
-        </p>
-        <p className="text-[11px] uppercase leading-4 tracking-[0.12em] text-stone-500">
-          {formatIssueCardPriority(row)}
-        </p>
-      </div>
-      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-stone-200">
-        <div className="flex h-full w-full">
-          <div
-            className="bg-emerald-500"
-            style={{ width: `${(row.yea_share || 0) * 100}%` }}
-          />
-          <div
-            className="bg-rose-500"
-            style={{ width: `${(row.nay_share || 0) * 100}%` }}
-          />
-        </div>
-      </div>
-    </button>
-  );
-}
-
-function IssuePatternCards({ onInspectDomain, rows, status }) {
-  if (status !== "ready" || rows.length === 0) {
-    return null;
-  }
-
-  return (
-    <div className="mt-5 rounded-[1.5rem] border border-stone-200 bg-white px-3 py-4 sm:px-4 lg:px-5">
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-xs uppercase tracking-[0.28em] text-stone-500">
-            Issue Patterns
-          </p>
-          <h4 className="mt-2 font-serif text-[1.75rem] leading-none text-stone-950 sm:text-[2rem]">
-            Reviewed issue patterns
-          </h4>
-        </div>
-        <p className="max-w-xl text-sm leading-6 text-stone-600">
-          These cards use only reviewed vote meanings. Missing or ambiguous meanings stay out of the pattern instead of being guessed.
-        </p>
-      </div>
-
-      <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-          {rows.map((row) => (
-            <button
-              aria-label={`Open interpreted votes for ${formatDomainLabel(row.domain)}`}
-              className="rounded-[1.25rem] border border-stone-200 bg-stone-50 px-4 py-4 text-left transition hover:border-cyan-700/50 hover:bg-cyan-50 focus:outline-none focus:ring-2 focus:ring-cyan-800 focus:ring-offset-2"
-              key={row.domain}
-              onClick={() => onInspectDomain(row.domain)}
-              type="button"
-            >
-              <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
-                {formatDomainLabel(row.domain)}
-              </p>
-              <p className="mt-3 text-[1.35rem] leading-7 text-stone-950">
-                {row.label}
-              </p>
-              <p className="mt-3 text-sm leading-6 text-stone-700">
-                {row.detail}
-              </p>
-              <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
-                <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3">
-                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">For measures</p>
-                  <p className="mt-2 text-[1.4rem] leading-none text-stone-950">{row.supportCount}</p>
-                </div>
-                <div className="rounded-xl border border-cyan-900/10 bg-white px-3 py-3">
-                  <p className="text-[11px] uppercase tracking-[0.16em] text-stone-500">Against measures</p>
-                  <p className="mt-2 text-[1.4rem] leading-none text-stone-950">{row.opposeCount}</p>
-                </div>
-              </div>
-            </button>
-          ))}
-        </div>
-    </div>
-  );
-}
-
-function EvidencePanel({ editorialCandidates, editorialMode, evidenceState, legislator, onInspectDomain, selectedRow }) {
+function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow }) {
   const [selectedActionRow, setSelectedActionRow] = useState(null);
   const [showAllVotes, setShowAllVotes] = useState(false);
 
@@ -526,23 +274,13 @@ function EvidencePanel({ editorialCandidates, editorialMode, evidenceState, legi
 
   const evidenceRows = evidenceState.payload?.evidence || [];
   const isSelected = evidenceState.payload?.domain === selectedRow.domain;
-  const editorialExperience = selectEditorialIssueExperience({
-    candidates: editorialCandidates,
-    domain: selectedRow.domain,
-    evidenceRows,
-    legislator,
-    mode: editorialMode,
-  });
-  const additionalEvidenceRows = editorialExperience
-    ? evidenceRows.filter((row) => !isEditorialExperienceRow(row, editorialExperience))
-    : evidenceRows;
   const evidenceGrouping = deriveEvidenceGroups(evidenceRows);
-  const billGroups = groupEvidenceByBill(additionalEvidenceRows);
+  const billGroups = groupEvidenceByBill(evidenceRows);
   const proofView = buildProofView(evidenceRows);
 
   return (
     <div id="position-evidence" className="mt-4 scroll-mt-6 rounded-2xl border border-stone-200 bg-stone-50 px-3 py-3 sm:px-4 lg:px-5">
-      {!editorialExperience ? <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.22em] text-stone-500">
             Evidence
@@ -558,11 +296,11 @@ function EvidencePanel({ editorialCandidates, editorialMode, evidenceState, legi
         >
           Show Votes
         </button>
-      </div> : null}
+      </div>
 
       {evidenceState.status === "idle" ? (
         <p className="mt-4 text-sm leading-7 text-stone-700">
-          Start with the strongest issue card above or use Show Votes to inspect the roll calls behind this read. The clearest sections get summarized first; limited sections stay available as evidence without being forced into a confident pattern.
+          Start with one of the best-covered issues above, or choose any issue to inspect its receipts.
         </p>
       ) : null}
       {evidenceState.status === "loading" ? (
@@ -582,28 +320,21 @@ function EvidencePanel({ editorialCandidates, editorialMode, evidenceState, legi
       ) : null}
       {evidenceState.status === "ready" && isSelected && evidenceRows.length > 0 ? (
         <div className="mt-3 grid gap-3">
-          {editorialExperience ? (
-            <EditorialIssueExperience experience={editorialExperience} />
-          ) : (
-            <>
-              <IssueEvidenceSummary
-                domain={selectedRow.domain}
-                representativeName={legislator?.name_display}
-                rows={evidenceRows}
-              />
-              <RepresentativeVotesSection
-                proofView={proofView}
-                representativeName={legislator?.name_display}
-                selectedActionRow={selectedActionRow}
-                setSelectedActionRow={setSelectedActionRow}
-              />
-            </>
-          )}
-          {!editorialExperience && additionalEvidenceRows.length > 0 ? (
+          <IssueEvidenceSummary
+            domain={selectedRow.domain}
+            representativeName={legislator?.name_display}
+            rows={evidenceRows}
+          />
+          <RepresentativeVotesSection
+            proofView={proofView}
+            representativeName={legislator?.name_display}
+            selectedActionRow={selectedActionRow}
+            setSelectedActionRow={setSelectedActionRow}
+          />
+          {evidenceRows.length > 0 ? (
             <ReviewedVoteList
               billGroups={billGroups}
-              evidenceRows={additionalEvidenceRows}
-              hasEditorialSlice={Boolean(editorialExperience)}
+              evidenceRows={evidenceRows}
               representativeName={legislator?.name_display}
               selectedActionRow={selectedActionRow}
               setSelectedActionRow={setSelectedActionRow}
@@ -611,15 +342,13 @@ function EvidencePanel({ editorialCandidates, editorialMode, evidenceState, legi
               setShowAllVotes={setShowAllVotes}
             />
           ) : null}
-          {!editorialExperience ? <EvidenceGroupingPreview evidenceGrouping={evidenceGrouping} /> : null}
-          {!editorialExperience ? (
-            <EvidenceUtilityPanel
-              domain={selectedRow.domain}
-              evidenceRows={evidenceRows}
-              legislator={legislator}
-              selectedEvidenceRow={selectedActionRow}
-            />
-          ) : null}
+          <EvidenceGroupingPreview evidenceGrouping={evidenceGrouping} />
+          <EvidenceUtilityPanel
+            domain={selectedRow.domain}
+            evidenceRows={evidenceRows}
+            legislator={legislator}
+            selectedEvidenceRow={selectedActionRow}
+          />
         </div>
       ) : null}
     </div>
@@ -636,7 +365,7 @@ function RepresentativeVotesSection({ proofView, representativeName, selectedAct
           Representative votes
         </p>
         <p className="mt-1 text-sm leading-6 text-stone-700">
-          This issue does not have countable Yes/No votes ready for a first proof set. Open the full reviewed vote list to inspect the available context.
+          This issue does not have reviewed substantive Yes/No ready for a first proof set. Open the full vote receipt list to inspect the available context.
         </p>
       </section>
     );
@@ -647,14 +376,14 @@ function RepresentativeVotesSection({ proofView, representativeName, selectedAct
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
-            Representative votes
+            Reviewed substantive Yes/No
           </p>
           <p className="mt-1 text-sm leading-6 text-stone-700">
-            A first set of votes behind this read. Start here, then expand the full reviewed vote list.
+            A first set of vote receipts behind this issue. Start here, then expand the full receipt list.
           </p>
         </div>
         <span className="w-fit rounded-full bg-cyan-50 px-3 py-1 text-xs uppercase tracking-[0.14em] text-cyan-950">
-          {rows.length} of {proofView.countableRows.length} countable Yes/No votes
+          {rows.length} of {proofView.countableRows.length} reviewed substantive Yes/No
         </span>
       </div>
       <div className="mt-3 grid gap-2">
@@ -670,7 +399,7 @@ function RepresentativeVotesSection({ proofView, representativeName, selectedAct
       </div>
       {proofView.contextRows.length ? (
         <p className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2 text-sm leading-6 text-stone-700">
-          {formatContextRowSummary(proofView)} Full context rows remain available in the reviewed vote list.
+          {formatContextRowSummary(proofView)} Full context rows remain available in the vote receipt list.
         </p>
       ) : null}
     </section>
@@ -680,7 +409,6 @@ function RepresentativeVotesSection({ proofView, representativeName, selectedAct
 function ReviewedVoteList({
   billGroups,
   evidenceRows,
-  hasEditorialSlice = false,
   representativeName,
   selectedActionRow,
   setSelectedActionRow,
@@ -692,12 +420,10 @@ function ReviewedVoteList({
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
-            {hasEditorialSlice ? "Additional reviewed vote list" : "Full reviewed vote list"}
+            Full vote receipt list
           </p>
           <p className="mt-1 text-sm leading-6 text-stone-700">
-            {hasEditorialSlice
-              ? "The remaining receipts stay available here, grouped by bill or measure, with context and counting labels preserved."
-              : "All receipts stay available, grouped by bill or measure, with countable and context labels preserved."}
+            All receipts stay available, grouped by bill or measure, with countable and context labels preserved.
           </p>
         </div>
         <button
@@ -706,11 +432,13 @@ function ReviewedVoteList({
           onClick={() => setShowAllVotes((current) => !current)}
           type="button"
         >
-          {showAllVotes ? "Hide full list" : "Show all reviewed votes"}
+          {showAllVotes ? "Hide full list" : "Show all vote receipts"}
         </button>
       </div>
       <div className="mt-3 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.12em] text-stone-600">
-        <span className="rounded-full bg-stone-100 px-2.5 py-1">{evidenceRows.length} reviewed votes</span>
+        <span className="rounded-full bg-stone-100 px-2.5 py-1">
+          {evidenceRows.length} recorded {evidenceRows.length === 1 ? "action" : "actions"}
+        </span>
         <span className="rounded-full bg-cyan-50 px-2.5 py-1">{billGroups.length} evidence groups</span>
       </div>
       {showAllVotes ? (
@@ -727,7 +455,7 @@ function ReviewedVoteList({
         </div>
       ) : (
         <p className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2 text-sm leading-6 text-stone-700">
-          Showing representative votes first. Use Show all reviewed votes for every grouped receipt in this issue.
+          Showing reviewed substantive Yes/No first. Use Show all vote receipts for every grouped receipt in this issue.
         </p>
       )}
     </section>
@@ -750,7 +478,7 @@ function BillEvidenceGroup({ group, representativeName, selectedActionRow, setSe
           </p>
         </div>
         <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-xs uppercase tracking-[0.16em] text-stone-700">
-          {group.rows.length} reviewed {group.rows.length === 1 ? "vote" : "votes"}
+          {group.rows.length} recorded {group.rows.length === 1 ? "action" : "actions"}
         </span>
       </div>
 
@@ -1063,6 +791,7 @@ function IssueEvidenceSummary({ rows }) {
   const details = [
     presentation.substantiveVotes ? `${presentation.substantiveVotes} substantive Yes/No ${presentation.substantiveVotes === 1 ? "vote" : "votes"}` : null,
     presentation.notVoting ? `${presentation.notVoting} Not Voting` : null,
+    presentation.present ? `${presentation.present} Present` : null,
     presentation.proceduralRecords ? `${presentation.proceduralRecords} procedural ${presentation.proceduralRecords === 1 ? "record" : "records"}` : null,
     presentation.limitedRecords ? `${presentation.limitedRecords} limited-context ${presentation.limitedRecords === 1 ? "record" : "records"}` : null,
   ].filter(Boolean);
@@ -1107,7 +836,7 @@ function InterpretationBreakdown({ representativeName, row, selectedActionRow, s
   const policyEffectText = buildUsefulInterpretationText(row.policy_effect);
   const interpretedVoteRead = buildInterpretedVoteRead(row);
   const whatHappened = row.what_happened || summaryText || policyEffectText;
-  const whyItMattered = row.why_it_mattered || buildPlainTakeaway(row);
+  const whyItMattered = buildUsefulInterpretationText(row.why_it_mattered) || policyEffectText;
   const voteCardSummary = buildVoteCardSummary(row, { representativeName }) || interpretedVoteRead;
   const limitedContextSummary = buildLimitedContextSummary(row);
   const contextBadges = buildContextBadges(row);
@@ -1249,33 +978,6 @@ function buildVoteCardSummary(row, options = {}) {
 
 function buildLimitedContextSummary(row) {
   return buildGenericLimitedContextSummary(row);
-}
-
-function buildPlainTakeaway(row) {
-  const summary = buildUsefulInterpretationText(row.plain_english_summary);
-  const effect = buildUsefulInterpretationText(row.policy_effect);
-  const text = `${summary} ${effect}`.toLowerCase();
-
-  if (text.includes("budget blueprint") || text.includes("reconciliation")) {
-    return "This vote helped set the rules for a later fast-track budget bill that could affect taxes, spending, deficits, and the debt limit.";
-  }
-  if (text.includes("shutdown") || text.includes("continuing appropriations") || text.includes("short-term funding")) {
-    if (text.includes("back pay") || text.includes("reduction-in-force")) {
-      return "This vote was about ending a shutdown, paying federal workers, and deciding how agencies would operate while longer-term funding was still unresolved.";
-    }
-    return "This vote was about avoiding a shutdown by keeping most federal agencies temporarily funded while longer-term spending bills were unfinished.";
-  }
-  if (text.includes("small business administration") || text.includes("sba")) {
-    if (text.includes("loan")) {
-      return "This vote was about restricting access to certain SBA-backed small-business loans based on immigration or residency status.";
-    }
-    return "This vote was about limiting net new SBA rulemaking costs for small businesses.";
-  }
-  if (text.includes("military construction") || text.includes("veterans affairs")) {
-    return "This vote was about funding military construction, military housing, and veterans-related agencies and programs.";
-  }
-
-  return effect || summary;
 }
 
 function formatRecordedSideMeaning(value) {
@@ -1552,128 +1254,6 @@ function buildVoterFacingGroupLabel(group) {
   return "";
 }
 
-function buildSixtySecondPlan(groups) {
-  const groupByKey = new Map((groups || []).map((group) => [group.key, group]));
-  const strong = groupByKey.get("strong_evidence")?.rows?.[0] || null;
-  const mixed = groupByKey.get("mixed_but_interpretable")?.rows?.[0] || null;
-  const limitedRows = groupByKey.get("limited_evidence")?.rows || [];
-  const notReadyRows = groupByKey.get("not_enough_to_summarize")?.rows || [];
-  const firstStart = strong || mixed || limitedRows[0] || notReadyRows[0] || null;
-
-  if (!firstStart) {
-    return null;
-  }
-
-  const steps = [
-    {
-      domain: firstStart.domain,
-      priority: "primary",
-      title: strong
-        ? `Start with ${formatDomainLabel(strong.domain)}`
-        : mixed
-          ? `Start with ${formatDomainLabel(mixed.domain)}`
-          : `Start with ${formatDomainLabel(firstStart.domain)}`,
-      detail: strong
-        ? buildIssueCardPreview(strong).themeLine || "This is the clearest reviewed issue read available for this representative."
-        : mixed
-          ? "This has enough reviewed vote meaning to inspect, but the pattern is mixed."
-          : "Only limited evidence is available, so read the evidence before drawing a broader conclusion.",
-    },
-  ];
-
-  if (mixed && mixed.domain !== firstStart.domain) {
-    steps.push({
-      domain: mixed.domain,
-      priority: "secondary",
-      title: `Then compare ${formatDomainLabel(mixed.domain)}`,
-      detail: "This section is useful because reviewed votes point in more than one direction.",
-    });
-  }
-
-  const limitedTarget = limitedRows.find((row) => row.domain !== firstStart.domain);
-  if (limitedTarget) {
-    steps.push({
-      domain: limitedTarget.domain,
-      priority: "secondary",
-      title: `Use ${formatDomainLabel(limitedTarget.domain)} as a caution check`,
-      detail: "This section remains visible, but it should not be read as a stable issue pattern yet.",
-    });
-  }
-
-  return {
-    summary: strong
-      ? `Start with ${formatDomainLabel(strong.domain)} for the clearest reviewed record, then use mixed or limited sections to understand where the evidence gets thinner.`
-      : "No strong issue read is available yet. The page still shows the best available evidence first and labels where the record is limited.",
-    steps: steps.slice(0, 3),
-    limitedNote: buildLimitedReadinessNote(limitedRows.length, notReadyRows.length),
-  };
-}
-
-function buildLimitedReadinessNote(limitedCount, notReadyCount) {
-  const pieces = [];
-  if (limitedCount) {
-    pieces.push(`${limitedCount} limited ${limitedCount === 1 ? "section is" : "sections are"} lower priority because reviewed vote meaning is thin`);
-  }
-  if (notReadyCount) {
-    pieces.push(`${notReadyCount} ${notReadyCount === 1 ? "section does" : "sections do"} not have enough reviewed vote meaning to summarize`);
-  }
-  if (!pieces.length) {
-    return "";
-  }
-  return `${pieces.join("; ")}.`;
-}
-
-function getReadinessGroupContainerClass(key) {
-  if (key === "strong_evidence") {
-    return "border-cyan-800/30 bg-cyan-50";
-  }
-  if (key === "mixed_but_interpretable") {
-    return "border-indigo-200 bg-indigo-50";
-  }
-  if (key === "limited_evidence") {
-    return "border-amber-200 bg-amber-50";
-  }
-  return "border-stone-200 bg-stone-50";
-}
-
-const DIRECTIONAL_DOMINANCE_SHARE = 2 / 3;
-
-function formatIssueCardPriority(row) {
-  return buildIssueCardPreview(row).receiptLine;
-}
-
-function getInterpretedCount(row) {
-  return Number(row?.interpreted_support_count || 0) + Number(row?.interpreted_oppose_count || 0);
-}
-
-function formatIssueCardEvidenceLine(row) {
-  return buildIssueCardPreview(row).countLine;
-}
-
-function formatIssueCardReason(row) {
-  return buildIssueCardPreview(row).themeLine;
-}
-
-function formatIssueCardStatusLabel(row) {
-  return buildIssueCardPreview(row).status;
-}
-
-function getDominantIssueDirection(row) {
-  const supportCount = Number(row?.interpreted_support_count || 0);
-  const opposeCount = Number(row?.interpreted_oppose_count || 0);
-  const total = supportCount + opposeCount;
-  if (!total) {
-    return "";
-  }
-  if (supportCount / total >= DIRECTIONAL_DOMINANCE_SHARE) {
-    return "supported";
-  }
-  if (opposeCount / total >= DIRECTIONAL_DOMINANCE_SHARE) {
-    return "opposed";
-  }
-  return "";
-}
-
 function formatChamber(chamber) {
   return chamber ? chamber[0].toUpperCase() + chamber.slice(1) : "";
 }
@@ -1743,31 +1323,6 @@ function getEvidenceConfidenceBadgeClass(row) {
   return "bg-stone-100 text-stone-600";
 }
 
-function buildTakeaway(rows) {
-  if (!rows.length) {
-    return "There is not enough reviewed issue evidence in the current window to show a confident issue read.";
-  }
-
-  const bestRead = rows.find((row) => row.readiness?.key === "strong_evidence");
-  const mixedRead = rows.find((row) => row.readiness?.key === "mixed_but_interpretable");
-  const firstLimited = rows.find((row) => row.readiness?.key === "limited_evidence");
-
-  if (bestRead && mixedRead) {
-    return `The strongest reviewed issue read is ${formatDomainLabel(bestRead.domain)}. ${formatDomainLabel(mixedRead.domain)} is also useful, but the interpreted votes are mixed.`;
-  }
-  if (bestRead) {
-    return `The strongest reviewed issue read is ${formatDomainLabel(bestRead.domain)}. Limited sections remain visible below without being treated as confident summaries.`;
-  }
-  if (mixedRead) {
-    return `${formatDomainLabel(mixedRead.domain)} has enough reviewed evidence to inspect, but the vote pattern is mixed rather than one-directional.`;
-  }
-  if (firstLimited) {
-    return `The available issue reads are limited. Start with ${formatDomainLabel(firstLimited.domain)} if you want to inspect the strongest available evidence, but do not treat it as a confident issue pattern.`;
-  }
-
-  return "The current issue sections are visible as evidence, but none have enough reviewed vote meaning for a confident summary yet.";
-}
-
 function formatScopeLine(metadata) {
   if (!metadata) {
     return "Selected record scope";
@@ -1780,42 +1335,6 @@ function formatScopeLine(metadata) {
     ? `votes from ${String(metadata.window_start).slice(0, 4)}-${String(metadata.window_end).slice(0, 4)}`
     : "selected vote window";
   return [label, congresses, windowText].filter(Boolean).join(" - ");
-}
-
-function buildPatternRows(rows) {
-  return [...rows]
-    .filter((row) => (row.interpreted_total || 0) > 0)
-    .sort(
-      (left, right) =>
-        (right.interpreted_total || 0) - (left.interpreted_total || 0) ||
-        Math.abs((right.interpreted_support_count || 0) - (right.interpreted_oppose_count || 0)) -
-          Math.abs((left.interpreted_support_count || 0) - (left.interpreted_oppose_count || 0)),
-    )
-    .slice(0, 3)
-    .map((row) => {
-      const supportCount = row.interpreted_support_count || 0;
-      const opposeCount = row.interpreted_oppose_count || 0;
-      const otherCount = row.interpreted_other_count || 0;
-      const recordedVotes = row.recorded_votes || 0;
-      const interpretedRecordedVotes = supportCount + opposeCount;
-      const coverageText = `${interpretedRecordedVotes} of ${recordedVotes} recorded yes/no votes have reviewed meaning`;
-      let label = "Mixed record in votes shown";
-
-      const dominantDirection = getDominantIssueDirection(row);
-      if (dominantDirection === "supported") {
-        label = "Mostly for interpreted measures";
-      } else if (dominantDirection === "opposed") {
-        label = "Mostly against interpreted measures";
-      }
-
-      return {
-        domain: row.domain,
-        label,
-        supportCount,
-        opposeCount,
-        detail: `${coverageText}. ${formatOtherInterpretedCount(otherCount)}`,
-      };
-    });
 }
 
 function formatPartyName(party) {
@@ -2012,84 +1531,4 @@ function formatVoteType(value) {
     .split("_")
     .map((segment) => segment[0].toUpperCase() + segment.slice(1))
     .join(" ");
-}
-
-function getPositionLabel(row) {
-  const interpretedYeaNay = (row.interpreted_support_count || 0) + (row.interpreted_oppose_count || 0);
-  if (!interpretedYeaNay) {
-    return "Too little interpreted evidence";
-  }
-
-  const gap = Math.abs(row.yea_share - row.nay_share);
-  if (gap < 0.15) {
-    return "Mixed record in votes shown";
-  }
-
-  return row.yea_share >= row.nay_share ? "Mostly Yea in votes shown" : "Mostly Nay in votes shown";
-}
-
-function getPositionBadgeClass(row) {
-  const label = getPositionLabel(row);
-  if (label === "Mostly Yea in votes shown") {
-    return "bg-emerald-100 text-emerald-800";
-  }
-  if (label === "Mostly Nay in votes shown") {
-    return "bg-rose-100 text-rose-800";
-  }
-  return "bg-stone-200 text-stone-700";
-}
-
-function getReadinessBadgeClass(key) {
-  if (key === "strong_evidence") {
-    return "bg-cyan-900 text-white";
-  }
-  if (key === "mixed_but_interpretable") {
-    return "bg-indigo-100 text-indigo-900";
-  }
-  if (key === "limited_evidence") {
-    return "bg-amber-100 text-amber-900";
-  }
-  return "bg-stone-200 text-stone-700";
-}
-
-function formatReadinessGroupHelp(key) {
-  if (key === "strong_evidence") {
-    return "Enough reviewed vote meaning is available for a clear issue read.";
-  }
-  if (key === "mixed_but_interpretable") {
-    return "Enough reviewed vote meaning is available, but the votes point in more than one direction.";
-  }
-  if (key === "limited_evidence") {
-    return "Some reviewed evidence is available, but the section should stay cautious.";
-  }
-  return "Evidence rows may still be visible, but the issue should not get a confident summary yet.";
-}
-
-function buildPositionRead(row) {
-  const label = getPositionLabel(row);
-  if (label === "Too little interpreted evidence") {
-    return `${row.recorded_votes || 0} recorded votes`;
-  }
-  if (label === "Mixed record in votes shown") {
-    return `${(row.yea_share * 100).toFixed(0)}% yea / ${(row.nay_share * 100).toFixed(0)}% nay`;
-  }
-
-  const strongerShare = Math.max(row.yea_share, row.nay_share);
-  return `${(strongerShare * 100).toFixed(0)}% of recorded votes`;
-}
-
-function buildInterpretationCoverageRead(row) {
-  const interpretedYeaNay = (row.interpreted_support_count || 0) + (row.interpreted_oppose_count || 0);
-  const recordedVotes = row.recorded_votes || 0;
-
-  if (!recordedVotes) {
-    return "No recorded yea/nay votes in this issue.";
-  }
-  if (!interpretedYeaNay) {
-    return "No interpreted yea/nay vote meanings yet; open evidence to inspect raw roll calls.";
-  }
-  if (interpretedYeaNay === recordedVotes) {
-    return `${interpretedYeaNay} of ${recordedVotes} recorded yes/no votes have reviewed meaning.`;
-  }
-  return `${interpretedYeaNay} of ${recordedVotes} recorded yes/no votes have reviewed meaning; the rest stay visible but uninterpreted.`;
 }

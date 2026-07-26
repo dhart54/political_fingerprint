@@ -149,12 +149,16 @@ def test_migration_is_additive_and_pinned() -> None:
     assert "editorial_artifact_versions_immutable" in sql
 
 
-def test_static_frontend_production_registry_remains_empty() -> None:
-    source = (ROOT / "frontend/lib/editorialIssueProductionSlices.mjs").read_text(encoding="utf-8")
-    assert "F000477" not in source
-    assert "M001184" not in source
-    assert "G000586" not in source
-    assert "human_approval_pending" not in source
+def test_public_frontend_has_no_editorial_store_or_legacy_registry() -> None:
+    assert not (ROOT / "frontend/lib/editorialIssueProductionSlices.mjs").exists()
+    route_sources = "\n".join(
+        path.read_text(encoding="utf-8")
+        for root in (ROOT / "frontend/app", ROOT / "frontend/components")
+        for path in root.rglob("*.js")
+    )
+    assert "editorial_artifact_versions" not in route_sources
+    assert "editorial_publication_registry" not in route_sources
+    assert "editorialIssueProductionSlices" not in route_sources
 
 
 def test_no_public_api_route_references_editorial_store() -> None:

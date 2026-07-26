@@ -14,12 +14,11 @@ export default defineConfig({
     command: "npm run dev -- --hostname 127.0.0.1 --port 3100",
     env: {
       ...process.env,
-      ENABLE_GOLDEN_RENDER_FIXTURE: "1",
       ENABLE_ZIP_LOOKUP_STATE_FIXTURE: "1",
     },
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
-    url: "http://127.0.0.1:3100/golden-render-fixture",
+    url: "http://127.0.0.1:3100/",
   },
   projects: [
     {

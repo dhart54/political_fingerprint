@@ -1,55 +1,55 @@
 # Editorial Issue Frontend Workflow
 
-Use this workflow when adding or reviewing a reader-facing editorial slice for one representative and one issue.
+## Current runtime
 
-## Presentation contract
+After Editorial Hard Cutover V1, the public representative route uses only the
+basic evidence path in `frontend/components/PositionByIssue.js`.
 
-The generic frontend contract is adapted in `frontend/lib/editorialIssueExperience.mjs` and rendered by `frontend/components/EditorialIssueExperience.js`. React receives a reader-facing view model; it does not read an editorial review packet directly and does not calculate support, opposition, service eligibility, episodes, featured selections, patterns, or philosophy from raw rolls. Rich views use the shared-action, episode, member-overlay, and issue-synthesis layers documented in `docs/public_editorial_frontend_contract.md`.
+- Representative and issue selection remain functional.
+- Existing position evidence and vote receipts remain available.
+- Present, Not Voting, procedural, and limited-context distinctions remain
+  available when supplied by actual recorded vote rows.
+- The current positions and evidence APIs do not emit expected-but-missing
+  actions or service-status absence rows. React does not infer or synthesize
+  those states.
+- The frontend does not load old editorial registries, selectors, adapters,
+  review fixtures, or rich editorial components.
+- The former `/golden-render-fixture` route is removed and returns 404.
 
-The normative reader-facing terminology, coverage states, runtime path, and review/public boundary are documented in `docs/public_editorial_frontend_contract.md`.
+Expected-missing and service-status coverage belongs to a future upstream
+Semantic IR presentation boundary. That future layer must preserve those typed
+states rather than reconstructing them from the current actual-record APIs.
 
-The view model supports:
+Use `docs/public_editorial_frontend_contract.md` for the normative reduced
+frontend contract.
 
-- member, issue, Congress/review-period, editorial status, and publication identity;
-- supplied synthesis, indicators, patterns, voting context, reading guidance, and evidence-strength wording;
-- variable vote/context record counts with optional stage, date, lifecycle, practical-choice, change, impact, argument, context, and source fields;
-- explicit `substantive`, `not_voting`, and `context_only` inclusion classes;
-- grouped official sources with valid HTTP(S) URLs, independently deduplicated by stable ID and canonical URL, without internal claim or source IDs.
+## Validation
 
-Optional fields are omitted rather than replaced with invented content. Missing panels, facts, arguments, context, or source groups must not leave empty cards or headings.
+Run the surviving frontend unit tests, production build, and bounded browser
+smoke:
 
-Argument boundaries are cardinality-aware: no generic advocacy boundary is shown when no argument is present, singular wording is used for one-sided evidence, and plural wording is used only when both sides are present. A supplied source-review or institutional boundary takes precedence and must not be duplicated.
+```powershell
+node --test frontend/lib/*.test.mjs
+npm run build --prefix frontend
+npm run test:cutover-smoke --prefix frontend
+```
 
-Reader-facing source groups are a presentation layer over the source manifest's internal taxonomy. Preserve source URLs and claim mappings; translate internal source types into plain-language headings before rendering.
+The browser smoke mocks only API responses, exercises the real representative
+route, confirms basic evidence and source receipts, and confirms the old route
+is unavailable.
 
-## Real representative selection
+## Deferred IR-native work
 
-`frontend/app/page.js` supplies the selected member to `PositionByIssue`. `PositionByIssue` loads the existing issue evidence response and asks the pure selector for a matching editorial experience at the `EvidencePanel` boundary.
+Do not add a new rich editorial design within the cutover. A future presentation
+milestone may consume compiled Semantic IR through a meaning-preserving public
+view model. It must not adapt Semantic IR back into the deleted format or infer
+new civic meaning in React.
 
-- Eligible matching slice: render `EditorialIssueExperience`.
-- No slice, incomplete evidence match, or ineligible slice: render a basic evidence presentation and the existing vote receipts. It may describe available substantive, Not Voting, procedural, and limited-context records, but it must not combine those counts into a broader issue conclusion.
-
-Issue navigation labels availability as `Reviewed analysis`, `Vote evidence`, or `Limited record`. The fallback remains intentionally bounded while editorial coverage is sparse. Do not duplicate new product features across both paths unless they are truly shared low-level primitives.
-
-## Review versus production eligibility
-
-Publication gates are deliberately separate:
-
-- Explicit review mode may render pending content on the server-gated golden-render route and labels it as unpublished review content.
-- Production mode reads only `frontend/lib/editorialIssueProductionSlices.mjs`; pending bundles live in the separate review registry and are passed explicitly by the review fixture.
-- Use `docs/workflows/editorial-standardization-pipeline.md` for reusable dossier generation, deterministic validation, failure escalation, and sampled-audit rules.
-- Production mode requires registry `human_approved`, `gold_benchmark`, and a separate explicit `productionEligible: true` flag, plus source-level `human_approved` and `human_approved` on every included record where that field exists.
-- `human_approved` alone is not public-production authorization.
-- Pending content may exist on `main` while remaining ineligible for production representative pages.
-
-The golden-render route is unlinked and enabled only by `ENABLE_GOLDEN_RENDER_FIXTURE=1` or Vercel preview. It passes review mode through the same `PositionByIssue` selector, adapter, and renderer used by the real representative flow; it must not fork the renderer. Review labels and fixture controls stay in outer harness chrome and must not appear inside elements marked as public surfaces.
-
-## Adding a future slice
-
-1. Complete the source-grounded editorial workflow without changing frontend semantics.
-2. Add the static source bundle and identity/synthesis/publication metadata to the review registry.
-3. Keep it pending and production-ineligible while review is incomplete; promotion to the production registry is a separate publication action.
-4. Validate matching, optional fields, non-counting classes, source deduplication, fallback, accessibility, and responsive behavior.
-5. Promote human approval, benchmark status, and public-production eligibility only through their separate authorized governance decisions.
-
-The second real-domain validation (Foushee Justice & Public Safety) confirmed that explicit episodes, rerunnable episode-level inference, optional one-sided arguments, reader-facing source groups, variable counts, empty additional lists, and structured procedural fallback work without domain-specific runtime branching. The next contract-validation milestone should reuse a measure dossier across another representative. Synthetic fixtures are only genericity tests and are never editorial evidence.
+The coverage-first cards, compact issue navigation, and vote-receipt structure
+are intended to remain as that presentation evolves. A future IR-native
+milestone may layer reviewed conclusions, repeated patterns, trajectories, and
+limitations onto this structure only when they come from compiled Semantic IR
+and reviewed dossiers, never from frontend vote-count logic. The compiled
+evidence state must continue to determine whether the UI shows a full
+conclusion, a bounded developing read, non-directional coverage, or receipts
+only.
