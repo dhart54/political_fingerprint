@@ -4,7 +4,7 @@ This index distinguishes the branch's one active execution plan from unresolved 
 
 ## Active plan
 
-- [Commissioning Domain V1](commissioning_domain_v1.md) — the only active plan on this branch.
+- [Editorial Semantic IR and Candidate Acceptance Corpus V1](editorial_semantic_ir_gold_v1.md) — the only active plan on this branch.
 
 ## Retained unresolved plans
 

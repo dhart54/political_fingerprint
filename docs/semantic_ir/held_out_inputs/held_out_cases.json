@@ -1,0 +1,226 @@
+{
+  "schema_version": "editorial_semantic_ir_v1",
+  "corpus_kind": "held_out_input_corpus",
+  "cases": [
+    {
+      "case_id": "semir-held-01-partial-service-missing-evidence",
+      "case_kind": "held_out_input",
+      "structural_purposes": [
+        "partial service or missing evidence",
+        "known coverage boundary"
+      ],
+      "domain": "ENVIRONMENT_ENERGY",
+      "authoritative_inputs": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/actual_member_vector_evaluation.json",
+          "docs/editorial/commissioning_domain_v1/corrected/mutation_report.json"
+        ],
+        "source_ids": [
+          "clerk_roll_006",
+          "clerk_roll_007",
+          "clerk_roll_055",
+          "clerk_roll_064",
+          "clerk_roll_076",
+          "clerk_roll_078",
+          "clerk_roll_093"
+        ],
+        "action_ids": [
+          "house:119:2:6",
+          "house:119:2:7",
+          "house:119:2:55",
+          "house:119:2:64",
+          "house:119:2:76",
+          "house:119:2:78",
+          "house:119:2:93"
+        ],
+        "mutation_ids": ["missing_as_outside_service"]
+      },
+      "member_action_statuses": [
+        {
+          "member_id": "M001245",
+          "party": "unknown",
+          "actions": [
+            {
+              "action_id": "house:119:2:6",
+              "status": "Missing Evidence",
+              "service_status": "unresolved",
+              "evidence_status": "missing"
+            },
+            {
+              "action_id": "house:119:2:7",
+              "status": "Missing Evidence",
+              "service_status": "unresolved",
+              "evidence_status": "missing"
+            },
+            {
+              "action_id": "house:119:2:55",
+              "status": "Not Voting",
+              "service_status": "in_service",
+              "evidence_status": "official_record_resolved"
+            },
+            {
+              "action_id": "house:119:2:64",
+              "status": "Nay",
+              "service_status": "in_service",
+              "evidence_status": "official_record_resolved"
+            },
+            {
+              "action_id": "house:119:2:76",
+              "status": "Not Voting",
+              "service_status": "in_service",
+              "evidence_status": "official_record_resolved"
+            },
+            {
+              "action_id": "house:119:2:78",
+              "status": "Not Voting",
+              "service_status": "in_service",
+              "evidence_status": "official_record_resolved"
+            },
+            {
+              "action_id": "house:119:2:93",
+              "status": "Nay",
+              "service_status": "in_service",
+              "evidence_status": "official_record_resolved"
+            }
+          ]
+        }
+      ],
+      "semantic_question": "How should the IR distinguish unresolved missing evidence from verified outside-service status while stating exact known coverage without generic unknown-state language?"
+    },
+    {
+      "case_id": "semir-held-02-source-conflict-unsupported",
+      "case_kind": "held_out_input",
+      "structural_purposes": [
+        "unsupported or conflicting evidence",
+        "review routing"
+      ],
+      "domain": "JUSTICE_PUBLIC_SAFETY",
+      "authoritative_inputs": {
+        "dossier_paths": [
+          "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/side_by_side_review.md",
+          "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json"
+        ],
+        "source_ids": ["clerk_roll_131", "congress_s331"],
+        "action_ids": ["house:119:1:131"],
+        "mutation_ids": []
+      },
+      "member_action_statuses": [
+        {
+          "member_id": "F000477",
+          "party": "D",
+          "actions": [
+            {
+              "action_id": "house:119:1:131",
+              "status": "Yea",
+              "service_status": "in_service",
+              "evidence_status": "official_record_resolved"
+            }
+          ]
+        }
+      ],
+      "semantic_question": "Which semantic boundary and review route should apply when the recorded member action is known but a proposed interpretive claim would be unsupported or would conflict with the available authoritative sources?"
+    },
+    {
+      "case_id": "semir-held-03-title-order-invariance",
+      "case_kind": "held_out_input",
+      "structural_purposes": [
+        "reordered actions and episodes",
+        "opaque action titles",
+        "identity-independent semantics"
+      ],
+      "domain": "ENVIRONMENT_ENERGY",
+      "authoritative_inputs": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
+          "docs/editorial/commissioning_domain_v1/corrected/mutation_report.json"
+        ],
+        "source_ids": [
+          "clerk_roll_006",
+          "clerk_roll_007",
+          "clerk_roll_055",
+          "clerk_roll_064"
+        ],
+        "action_ids": [
+          "house:119:2:64",
+          "house:119:2:6",
+          "house:119:2:55",
+          "house:119:2:7"
+        ],
+        "mutation_ids": [
+          "reordered_actions_episodes",
+          "opaque_action_titles",
+          "member_identity_change_identical_votes"
+        ]
+      },
+      "member_action_statuses": [
+        {
+          "member_id": "A000372",
+          "party": "R",
+          "actions": [
+            {
+              "action_id": "house:119:2:64",
+              "status": "Yea",
+              "service_status": "in_service",
+              "evidence_status": "official_record_resolved"
+            },
+            {
+              "action_id": "house:119:2:6",
+              "status": "Yea",
+              "service_status": "in_service",
+              "evidence_status": "official_record_resolved"
+            },
+            {
+              "action_id": "house:119:2:55",
+              "status": "Yea",
+              "service_status": "in_service",
+              "evidence_status": "official_record_resolved"
+            },
+            {
+              "action_id": "house:119:2:7",
+              "status": "Yea",
+              "service_status": "in_service",
+              "evidence_status": "official_record_resolved"
+            }
+          ]
+        }
+      ],
+      "semantic_question": "Which hierarchy, proposition identities, and ownership decisions remain stable when input order, display titles, or member identity change while the authoritative action evidence does not?"
+    },
+    {
+      "case_id": "semir-held-04-cross-domain-final-passage",
+      "case_kind": "held_out_input",
+      "structural_purposes": [
+        "bounded cross-domain final passage",
+        "exact-action versus parent-package eligibility"
+      ],
+      "domain": "ENVIRONMENT_ENERGY",
+      "authoritative_inputs": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/domain_eligibility_report.json",
+          "docs/editorial/commissioning_domain_v1/corrected/rejected_actions.json",
+          "docs/editorial/commissioning_domain_v1/dossiers/roll_005.json",
+          "docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_007.json",
+          "docs/editorial/commissioning_domain_v1/corrected/mutation_report.json"
+        ],
+        "source_ids": ["clerk_roll_005", "clerk_roll_007", "congress_hr6938_text"],
+        "action_ids": ["house:119:2:5", "house:119:2:7"],
+        "mutation_ids": ["wrong_action_stage"]
+      },
+      "member_action_statuses": [
+        {
+          "member_id": "C001059",
+          "party": "D",
+          "actions": [
+            {
+              "action_id": "house:119:2:7",
+              "status": "Yea",
+              "service_status": "in_service",
+              "evidence_status": "official_record_resolved"
+            }
+          ]
+        }
+      ],
+      "semantic_question": "How should exact-action eligibility represent a bounded cross-domain final-passage action while preventing a neighboring parent-package action from inheriting domain eligibility?"
+    }
+  ]
+}
