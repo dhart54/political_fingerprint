@@ -37,11 +37,17 @@ status, or other analytical meaning from raw rolls.
 Issue cards use a single shared, member-neutral description for each supported
 domain. Their coverage labels describe evidence availability only. The compact
 bar is labeled `Recorded action composition` and displays the positions API's
-Yea, Nay, and combined Present / Not Voting / other counts. Exact
-non-directional, procedural, and limited-context states remain visible in the
-opened receipt view. No expected-action denominator is invented. Party
+Yea, Nay, and combined `Non-directional / context` counts. Its denominator is
+the sum of those three supplied overview counts, not an expected-action total.
+The visible legend names every segment and does not rely on color alone. Exact
+Present, Not Voting, procedural, and limited-context distinctions remain visible
+in the opened vote receipts. No expected-action denominator is invented. Party
 benchmarking is deferred because raw party-level Yea/Nay aggregates would not
 establish reviewed action-level meaning.
+
+The evidence-ranked card grid is the primary issue selector. The compact
+`Jump to issue` control remains inside the evidence section for local
+navigation. A third repeated issue list is intentionally omitted.
 
 These states remain distinct:
 

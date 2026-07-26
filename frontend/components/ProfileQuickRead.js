@@ -11,6 +11,7 @@ import {
   getEvidenceCoverageLabel,
   getRecordedActionComposition,
   orderIssueRowsByEvidenceUsefulness,
+  pluralizeCountNoun,
 } from "../lib/issueEvidenceCoverage.mjs";
 
 export default function ProfileQuickRead({ fixtureData = null, legislator, onInspectDomain, onProfileRead, scope = "all" }) {
@@ -197,37 +198,45 @@ function IssueEvidenceCard({ featured, onClick, row }) {
         {coverage.reviewedYesNo} reviewed substantive Yes/No
         {featured ? ` · ${getEvidenceCoverageLabel(row)}` : ""}
       </p>
-      <div
-        aria-label={`Recorded action composition: ${composition.map((item) => `${item.label} ${item.count}`).join(", ")}`}
-        className="mt-2"
-      >
+      <div className="mt-2" role="group" aria-label="Recorded action composition">
         <p className="text-[10px] uppercase tracking-[0.13em] text-cyan-100">
           Recorded action composition
         </p>
-        <div className="mt-1 flex h-1.5 overflow-hidden rounded-full bg-white/10">
+        <div aria-hidden="true" className="mt-1 flex h-1.5 overflow-hidden rounded-full bg-white/10">
           {composition.map((item) => (
             <span
-              className={
-                item.key === "yea"
-                  ? "bg-cyan-200"
-                  : item.key === "nay"
-                    ? "bg-amber-200"
-                    : "bg-stone-300"
-              }
+              className={getCompositionSegmentClass(item.key)}
               key={item.key}
               style={{ width: `${item.percent}%` }}
             />
           ))}
         </div>
-        <p className="mt-1 text-[10px] leading-4 text-cyan-50">
-          {composition.map((item) => `${item.label} ${item.count}`).join(" · ")}
-        </p>
+        <ul aria-label="Recorded action composition legend" className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-[10px] leading-4 text-cyan-50">
+          {composition.map((item) => (
+            <li className="flex items-center gap-1" key={item.key}>
+              <span aria-hidden="true" className={`h-2 w-2 rounded-full ${getCompositionSegmentClass(item.key)}`} />
+              <span>
+                {item.label} <span className="font-medium text-white">{item.count}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
       <p className="mt-2 text-xs leading-4 text-white underline decoration-white/30 underline-offset-2">
         Open vote evidence
       </p>
     </button>
   );
+}
+
+function getCompositionSegmentClass(key) {
+  if (key === "yea") {
+    return "bg-cyan-200";
+  }
+  if (key === "nay") {
+    return "bg-amber-200";
+  }
+  return "bg-stone-300";
 }
 
 function buildCoverage(rows) {
@@ -244,7 +253,7 @@ function buildCoverage(rows) {
 
 function formatAvailableActionCount(row) {
   const count = getAvailableActionCount(row);
-  return `${count} recorded ${count === 1 ? "action" : "actions"}`;
+  return `${count} ${pluralizeCountNoun(count, "recorded action")}`;
 }
 
 function getAvailableActionCount(row) {

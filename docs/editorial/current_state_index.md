@@ -17,10 +17,13 @@ The machine-readable authority is
   substantive Yes/No count, non-directional or limited/context availability,
   and stable domain order. This is evidence coverage, not an analytical,
   ideological, or vote-direction ranking. Shared member-neutral domain
-  descriptions and a `Recorded action composition` bar explain the cards; party
-  benchmarking remains deferred. Actual Present and Not Voting-only issue areas
-  remain selectable. Expected-but-missing actions are not emitted by the current
-  API and are not synthesized in React. The former
+  descriptions and an accessible `Recorded action composition` bar explain the
+  cards. Its Yea, Nay, and combined non-directional/context segments use only
+  supplied action counts. The ranked grid is the primary selector and compact
+  jump navigation is retained in the evidence section; the duplicative third
+  issue list is absent. Party benchmarking remains deferred. Actual Present and
+  Not Voting-only issue areas remain selectable. Expected-but-missing actions
+  are not emitted by the current API and are not synthesized in React. The former
   `/golden-render-fixture` route is absent.
 - The 71 historically staged artifacts remain unpublished; persistence,
   publication, database, deployment, and production state were not changed by

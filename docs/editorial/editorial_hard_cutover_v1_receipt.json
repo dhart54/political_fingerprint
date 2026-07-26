@@ -4,7 +4,7 @@
   "base_commit": "bc7617b05f33d56cf83c4bb7e4b8113b945a3998",
   "branch": "codex/editorial-hard-cutover-v1",
   "pull_request": 112,
-  "correction_reviewed_head": "2ace04d0f84890a9a834300d429d1a6c0104c23b",
+  "correction_reviewed_head": "15a784487fe06d41d4a0c64de77a7b907a7617d0",
   "rewritten_paths": [
     "AGENTS.md",
     "backend/scripts/generate_data_inventory_manifest.py",
@@ -476,7 +476,17 @@
     "issue_ordering_uses_vote_direction": false,
     "domain_descriptions_shared_and_member_neutral": true,
     "overview_gauge_label": "Recorded action composition",
+    "overview_gauge_segments": [
+      "Yea",
+      "Nay",
+      "Non-directional / context"
+    ],
+    "overview_gauge_denominator": "sum of supplied Yea, Nay, and non-directional/context action counts",
+    "overview_gauge_visible_accessible_legend": true,
     "overview_gauge_infers_policy_position": false,
+    "primary_issue_selector": "evidence-ranked card grid",
+    "secondary_issue_navigation": "compact in-section Jump to issue control",
+    "duplicative_third_issue_selector": false,
     "expected_action_denominator_invented_in_react": false,
     "party_benchmarking": "deferred"
   },
@@ -519,7 +529,7 @@
     {
       "command": "node --test frontend/lib/*.test.mjs",
       "status": "pass",
-      "result": "92 tests passed, including evidence-usefulness ordering, Yea/Nay reversal invariance, shared member-neutral domain descriptions, and recorded-action composition"
+      "result": "93 tests passed, including evidence-usefulness ordering, Yea/Nay reversal invariance, shared member-neutral domain descriptions, recorded-action composition, and count-noun pluralization"
     },
     {
       "command": "npm run build --prefix frontend",
@@ -529,7 +539,7 @@
     {
       "command": "npm run test:cutover-smoke --prefix frontend",
       "status": "pass",
-      "result": "3 Chromium smoke tests passed, including coverage ordering and labels, complete-page forbidden-copy scan, hidden zero-evidence domains, source receipts, and Present-only and Not Voting-only issue selection"
+      "result": "3 Chromium smoke tests passed, including the accessible three-part action legend, whole-card keyboard activation, receipt terminology, absence of a duplicative third issue selector, hidden zero-evidence domains, source receipts, and Present-only and Not Voting-only issue selection"
     },
     {
       "command": "python scripts/run_editorial_pipeline.py validate --tier release --include-frontend",

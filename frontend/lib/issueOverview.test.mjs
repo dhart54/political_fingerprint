@@ -236,7 +236,8 @@ test("evidence card disclosure keeps public summary visible and audit details co
 test("basic issue navigation does not rebuild issue-card conclusions", () => {
   const source = readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8");
 
-  assert.match(source, /function BasicIssueList/);
+  assert.match(source, /function IssueNavigation/);
+  assert.doesNotMatch(source, /function BasicIssueList|Explore other issues/);
   assert.match(source, /without combining them into a broader issue conclusion/);
   assert.doesNotMatch(source, /buildIssueCardPreview|formatIssueCardStatusLabel|IssueReadinessTile/);
   assert.doesNotMatch(source, /from "\.\.\/lib\/issueReadiness\.mjs"/);

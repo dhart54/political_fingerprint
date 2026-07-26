@@ -141,8 +141,9 @@ test("limited and not-ready sections do not receive confident readiness labels",
 test("representative issue picker uses neutral evidence navigation without readiness conclusions", () => {
   const componentSource = readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8");
 
-  assert.match(componentSource, /function BasicIssueList/);
-  assert.match(componentSource, /Open another issue to inspect its available vote receipts/);
+  assert.match(componentSource, /function IssueNavigation/);
+  assert.match(componentSource, /Jump to issue/);
+  assert.doesNotMatch(componentSource, /function BasicIssueList|Explore other issues/);
   assert.match(componentSource, /without combining them into a broader issue conclusion/);
   assert.doesNotMatch(componentSource, /IssueReadinessTile|Clearest vote evidence|vote pattern|buildTakeaway/);
   assert.doesNotMatch(

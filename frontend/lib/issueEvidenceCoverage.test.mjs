@@ -8,6 +8,7 @@ import {
   getEvidenceCoverageLabel,
   getRecordedActionComposition,
   orderIssueRowsByEvidenceUsefulness,
+  pluralizeCountNoun,
 } from "./issueEvidenceCoverage.mjs";
 
 test("orders issue rows by neutral evidence usefulness with stable domain ties", () => {
@@ -89,7 +90,7 @@ test("coverage labels are bounded by evidence availability", () => {
 
 test("action composition reports recorded states without policy direction labels", () => {
   const composition = getRecordedActionComposition(
-    row({ yea_count: 4, nay_count: 3, other_count: 2, total_votes: 9 }),
+    row({ yea_count: 4, nay_count: 3, other_count: 3, total_votes: 99 }),
   );
 
   assert.deepEqual(
@@ -97,11 +98,20 @@ test("action composition reports recorded states without policy direction labels
     [
       { label: "Yea", count: 4 },
       { label: "Nay", count: 3 },
-      { label: "Present / Not Voting / other", count: 2 },
+      { label: "Non-directional / context", count: 3 },
     ],
   );
   assert.equal(Math.round(composition.reduce((sum, item) => sum + item.percent, 0)), 100);
+  assert.deepEqual(composition.map(({ percent }) => percent), [40, 30, 30]);
   assert.doesNotMatch(JSON.stringify(composition), /support|oppose|aligned|favorable/i);
+});
+
+test("count nouns use correct singular and plural forms", () => {
+  assert.equal(pluralizeCountNoun(1, "legislator"), "legislator");
+  assert.equal(pluralizeCountNoun(2, "legislator"), "legislators");
+  assert.equal(pluralizeCountNoun(1, "recorded action"), "recorded action");
+  assert.equal(pluralizeCountNoun(0, "recorded action"), "recorded actions");
+  assert.equal(pluralizeCountNoun(1, "issue area", "issue areas"), "issue area");
 });
 
 function row(overrides = {}) {

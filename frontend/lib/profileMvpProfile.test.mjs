@@ -16,7 +16,8 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   assert.ok(source.includes("Record Coverage"), "profile should provide one neutral record coverage summary");
   assert.ok(source.includes("Open vote evidence"), "profile issue links should open source-backed vote evidence");
   assert.ok(source.includes("Available actions"), "profile should expose descriptive evidence counts");
-  assert.ok(source.includes("BasicIssueList"), "the issue evidence surface should use neutral navigation");
+  assert.ok(source.includes("IssueNavigation"), "the issue evidence surface should use compact neutral navigation");
+  assert.doesNotMatch(source, /BasicIssueList|Explore other issues/, "the third duplicate selector should be absent");
   assert.ok(source.includes("without combining them into a broader issue conclusion"), "the basic fallback should state its semantic limit");
   assert.ok(source.includes("Evidence group overview"), "grouped evidence preview should be user-visible as a secondary overview");
   assert.ok(source.includes("formatCompactEvidenceGroupingOverview"), "compact grouping summary should be rendered");
@@ -54,6 +55,11 @@ test("representative page flow exposes neutral coverage without changing evidenc
   assert.match(source, /Record Coverage/);
   assert.match(source, /Available actions/);
   assert.match(source, /Recorded action composition/);
+  assert.match(source, /Recorded action composition legend/);
+  assert.match(
+    readFileSync(new URL("./issueEvidenceCoverage.mjs", import.meta.url), "utf8"),
+    /Non-directional \/ context/,
+  );
   assert.match(source, /Best-covered issue/);
   assert.match(source, /getDomainDescription/);
   assert.match(source, /orderIssueRowsByEvidenceUsefulness/);
@@ -62,7 +68,7 @@ test("representative page flow exposes neutral coverage without changing evidenc
   assert.doesNotMatch(source, /QuickMetric eyebrow="Change"|Steady mix|Issue mix changed|fetchDrift/);
   assert.match(source, /Jump to issue/);
   assert.match(source, /without combining them into a broader issue conclusion/);
-  assert.match(source, /Open another issue to inspect its available vote receipts/);
+  assert.doesNotMatch(source, /Open another issue to inspect its available vote receipts|Explore other issues/);
   assert.match(source, /Context rows remain visible but do not drive support\/opposition summaries/);
   assert.doesNotMatch(source, /stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|Yes-pattern|No-pattern/);
 });
@@ -95,14 +101,14 @@ test("no-preference record views avoid alignment framing in neutral summaries", 
   assert.doesNotMatch(source, /Your Issues vs This Record|Pick what you want this record checked against|Record shown|record check|Change Comparison Pair/);
 });
 
-test("basic issue navigation avoids readiness conclusions and contact follows vote cards", () => {
+test("compact issue navigation avoids readiness conclusions and contact follows vote cards", () => {
   const source = readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8");
   const civicActionIndex = source.indexOf("<EvidenceUtilityPanel");
   const reviewedVoteListIndex = source.indexOf("<ReviewedVoteList");
 
-  assert.match(source, /function BasicIssueList/);
+  assert.match(source, /function IssueNavigation/);
   assert.match(source, /getEvidenceCoverageLabel\(row\)/);
-  assert.match(source, /getDomainDescription\(row\.domain\)/);
+  assert.doesNotMatch(source, /function BasicIssueList|Explore other issues/);
   assert.match(source, /without combining them into a broader issue conclusion/);
   assert.doesNotMatch(source, /buildIssueCardPreview|formatIssueCardStatusLabel|IssueReadinessTile/);
   assert.ok(reviewedVoteListIndex > 0 && civicActionIndex > reviewedVoteListIndex, "utility panel should render after reviewed vote list access");
@@ -125,14 +131,14 @@ test("show votes proof view starts bounded and keeps the full receipt list avail
   const sourceDrawerStart = source.indexOf("Source, caveats, and full context", voteRowStart);
 
   assert.match(source, /const REPRESENTATIVE_VOTE_LIMIT = 8/);
-  assert.match(source, /Representative votes/);
-  assert.match(source, /A first set of votes behind this read/);
-  assert.match(source, /Show all reviewed votes/);
-  assert.match(source, /Full reviewed vote list/);
+  assert.match(source, /Reviewed substantive Yes\/No/);
+  assert.match(source, /A first set of vote receipts behind this issue/);
+  assert.match(source, /Show all vote receipts/);
+  assert.match(source, /Full vote receipt list/);
   assert.match(source, /Evidence group overview/);
   assert.match(source, /showAllVotes \?/);
   assert.match(source, /buildProofView/);
-  assert.match(source, /countable Yes\/No votes/);
+  assert.match(source, /reviewed substantive Yes\/No/);
   assert.ok(summaryRenderStart >= 0 && summaryRenderStart < representativeRenderStart, "issue summary should render before representative votes");
   assert.ok(representativeRenderStart > 0 && representativeRenderStart < fullListRenderStart, "representative votes should render before full reviewed list");
   assert.ok(fullListRenderStart > 0 && fullListRenderStart < groupingRenderStart, "full reviewed list should render before evidence group overview");

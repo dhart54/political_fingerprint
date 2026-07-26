@@ -117,25 +117,35 @@ test("representative page deliberately renders basic evidence and vote receipts"
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Aaron Bean", exact: true })).toBeVisible();
   await expect(page.getByText("Record Coverage", { exact: true })).toBeVisible();
+  await expect(page.getByText("legislator", { exact: true })).toBeVisible();
+  await expect(page.getByText("eligible roll calls", { exact: true })).toBeVisible();
   await expect(page.locator("body")).not.toContainText(
     /clearest(?: reviewed)? patterns?|strongest issue evidence|strongest issue card|best read/i,
   );
   await expect(page.getByText("Best-covered issue", { exact: true })).toBeVisible();
-  await expect(page.getByText("Recorded action composition", { exact: true }).first()).toBeVisible();
+  const economyCard = page.getByRole("button", { name: "Inspect Economy & Taxes votes" });
+  await expect(economyCard).toHaveCount(1);
+  const compositionLegend = economyCard.getByRole("list", { name: "Recorded action composition legend" });
+  await expect(compositionLegend).toContainText("Yea 2");
+  await expect(compositionLegend).toContainText("Nay 2");
+  await expect(compositionLegend).toContainText("Non-directional / context 1");
+  await expect(compositionLegend).not.toContainText("Present");
   await expect(page.getByText(/Budgets, taxation, government funding/).first()).toBeVisible();
   await expect(page.getByRole("button", { name: /Inspect Health & Social Services votes/i })).toHaveCount(0);
   const profileIssueCards = page.locator('section').filter({ hasText: "Record Coverage" }).getByRole("button", { name: /Inspect .* votes/i });
   await expect(profileIssueCards.nth(0)).toHaveAttribute("aria-label", "Inspect Economy & Taxes votes");
-  await page.getByRole("button", { name: "Show Votes" }).click();
+  await expect(page.getByRole("region", { name: "Explore all issue evidence" })).toHaveCount(0);
+  await economyCard.focus();
+  await page.keyboard.press("Enter");
 
   const summary = page.getByTestId("basic-evidence-summary");
   await expect(summary).toContainText("Vote evidence");
   await expect(summary).toContainText("does not combine them into a broader issue conclusion");
   await expect(summary).toContainText("Present");
   await expect(summary).toContainText("Not Voting");
-  await expect(page.getByText("Representative votes", { exact: true })).toBeVisible();
+  await expect(page.getByText("Reviewed substantive Yes/No", { exact: true })).toBeVisible();
 
-  await page.getByRole("button", { name: "Show all reviewed votes" }).click();
+  await page.getByRole("button", { name: "Show all vote receipts" }).click();
   await expect(
     page.locator('a[href="https://clerk.house.gov/evs/2025/roll010.xml"]').first(),
   ).toHaveAttribute("href", "https://clerk.house.gov/evs/2025/roll010.xml");

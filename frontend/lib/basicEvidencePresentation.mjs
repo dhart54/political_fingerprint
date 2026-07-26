@@ -32,7 +32,7 @@ export function buildBasicEvidencePresentation(rows = []) {
     message: state === BASIC_EVIDENCE_STATE.proceduralContextOnly
       ? "The available records concern floor process. They remain visible as context, but they do not establish a direct position on the underlying issue."
       : substantiveRows.length
-        ? `${plural(substantiveRows.length, "reviewed Yes/No vote")} ${substantiveRows.length === 1 ? "is" : "are"} available. These receipts show recorded actions; this basic view does not combine them into a broader issue conclusion.`
+        ? `${plural(substantiveRows.length, "reviewed substantive Yes/No action")} ${substantiveRows.length === 1 ? "is" : "are"} available. These vote receipts show recorded actions; this basic view does not combine them into a broader issue conclusion.`
         : "Vote receipts may be available, but this issue does not yet have enough reviewed substantive evidence for a plain-language issue conclusion.",
     substantiveVotes: substantiveRows.length,
     proceduralRecords: proceduralRows.length,

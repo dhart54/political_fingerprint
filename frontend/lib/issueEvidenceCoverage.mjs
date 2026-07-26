@@ -66,19 +66,24 @@ export function getEvidenceCoverageLabel(row) {
 }
 
 export function getRecordedActionComposition(row) {
-  const { yea, nay, other, total } = getEvidenceCoverage(row);
+  const { yea, nay, other } = getEvidenceCoverage(row);
+  const compositionTotal = yea + nay + other;
   return [
     { key: "yea", label: "Yea", count: yea },
     { key: "nay", label: "Nay", count: nay },
     {
       key: "other",
-      label: "Present / Not Voting / other",
+      label: "Non-directional / context",
       count: other,
     },
   ].map((segment) => ({
     ...segment,
-    percent: total > 0 ? (segment.count / total) * 100 : 0,
+    percent: compositionTotal > 0 ? (segment.count / compositionTotal) * 100 : 0,
   }));
+}
+
+export function pluralizeCountNoun(value, singular, plural = `${singular}s`) {
+  return Number(value) === 1 ? singular : plural;
 }
 
 export function orderIssueRowsByEvidenceUsefulness(rows = []) {

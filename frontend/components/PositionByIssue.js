@@ -13,8 +13,6 @@ import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs"
 import { isProceduralContextRow } from "../lib/proceduralContext.mjs";
 import { DOMAIN_LABELS, formatDomainLabel } from "../lib/issueDomains";
 import {
-  getDomainDescription,
-  getEvidenceCoverage,
   getEvidenceCoverageLabel,
   orderIssueRowsByEvidenceUsefulness,
 } from "../lib/issueEvidenceCoverage.mjs";
@@ -128,7 +126,6 @@ export default function PositionByIssue({
     (state.payload?.positions || []).filter(hasAvailableIssueEvidence),
   );
   const selectedRow = rows.find((row) => row.domain === selectedDomain) || rows[0] || null;
-  const hasOtherIssueRows = rows.length > 1;
 
   async function inspectDomain(domain) {
     setSelectedDomain(domain);
@@ -179,7 +176,7 @@ export default function PositionByIssue({
           </h3>
           <p className="mt-2 max-w-xl text-[15px] leading-6 text-stone-800">
             {state.status === "ready"
-              ? "Select an issue to inspect reviewed vote receipts. This basic view keeps recorded actions visible without combining them into a broader issue conclusion."
+              ? "Select an issue to inspect its vote receipts. This basic view keeps recorded actions visible without combining them into a broader issue conclusion."
               : state.status === "loading"
                 ? "Loading this legislator's issue evidence."
                 : "The site cannot read issue evidence for this legislator right now."}
@@ -218,20 +215,6 @@ export default function PositionByIssue({
         onInspectDomain={inspectDomain}
         selectedRow={selectedRow}
       />
-
-      {state.status === "ready" && hasOtherIssueRows ? (
-        <section className="mt-4 border-t border-stone-200 pt-4" aria-label="Explore all issue evidence">
-          <div className="mb-3">
-            <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">Explore other issues</p>
-            <p className="mt-1 text-sm leading-6 text-stone-600">Open another issue to inspect its available vote receipts.</p>
-          </div>
-          <BasicIssueList
-            inspectDomain={inspectDomain}
-            rows={rows}
-            selectedDomain={selectedDomain}
-          />
-        </section>
-      ) : null}
 
     </section>
   );
@@ -276,43 +259,6 @@ function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
   );
 }
 
-function BasicIssueList({ inspectDomain, rows, selectedDomain }) {
-  return (
-    <div className="divide-y divide-stone-200 overflow-hidden rounded-xl border border-stone-200 bg-white">
-      {rows.map((row) => {
-        const coverage = getEvidenceCoverage(row);
-        return (
-        <button
-          aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
-          aria-pressed={selectedDomain === row.domain}
-          className={`grid w-full gap-1 px-3 py-2.5 text-left transition sm:grid-cols-[minmax(0,1fr)_auto_auto] sm:items-center sm:gap-3 ${
-            selectedDomain === row.domain ? "bg-cyan-50" : "hover:bg-stone-50"
-          }`}
-          key={row.domain}
-          onClick={() => inspectDomain(row.domain)}
-          type="button"
-        >
-          <span>
-            <span className="block text-sm font-medium leading-5 text-stone-950">
-              {formatDomainLabel(row.domain)}
-            </span>
-            <span className="mt-0.5 block text-xs leading-4 text-stone-600">
-              {getDomainDescription(row.domain)}
-            </span>
-          </span>
-          <span className="text-xs uppercase tracking-[0.12em] text-stone-500">
-            {coverage.total} actions · {coverage.reviewedYesNo} reviewed Yes/No
-          </span>
-          <span className="w-fit rounded-full bg-stone-100 px-2.5 py-1 text-[11px] uppercase tracking-[0.1em] text-stone-700">
-            {getEvidenceCoverageLabel(row)}
-          </span>
-        </button>
-        );
-      })}
-    </div>
-  );
-}
-
 function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow }) {
   const [selectedActionRow, setSelectedActionRow] = useState(null);
   const [showAllVotes, setShowAllVotes] = useState(false);
@@ -354,7 +300,7 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
 
       {evidenceState.status === "idle" ? (
         <p className="mt-4 text-sm leading-7 text-stone-700">
-          Start with a best-covered issue above, or choose any issue to inspect its receipts.
+          Start with one of the best-covered issues above, or choose any issue to inspect its receipts.
         </p>
       ) : null}
       {evidenceState.status === "loading" ? (
@@ -419,7 +365,7 @@ function RepresentativeVotesSection({ proofView, representativeName, selectedAct
           Representative votes
         </p>
         <p className="mt-1 text-sm leading-6 text-stone-700">
-          This issue does not have countable Yes/No votes ready for a first proof set. Open the full reviewed vote list to inspect the available context.
+          This issue does not have reviewed substantive Yes/No ready for a first proof set. Open the full vote receipt list to inspect the available context.
         </p>
       </section>
     );
@@ -430,14 +376,14 @@ function RepresentativeVotesSection({ proofView, representativeName, selectedAct
       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
-            Representative votes
+            Reviewed substantive Yes/No
           </p>
           <p className="mt-1 text-sm leading-6 text-stone-700">
-            A first set of votes behind this read. Start here, then expand the full reviewed vote list.
+            A first set of vote receipts behind this issue. Start here, then expand the full receipt list.
           </p>
         </div>
         <span className="w-fit rounded-full bg-cyan-50 px-3 py-1 text-xs uppercase tracking-[0.14em] text-cyan-950">
-          {rows.length} of {proofView.countableRows.length} countable Yes/No votes
+          {rows.length} of {proofView.countableRows.length} reviewed substantive Yes/No
         </span>
       </div>
       <div className="mt-3 grid gap-2">
@@ -453,7 +399,7 @@ function RepresentativeVotesSection({ proofView, representativeName, selectedAct
       </div>
       {proofView.contextRows.length ? (
         <p className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2 text-sm leading-6 text-stone-700">
-          {formatContextRowSummary(proofView)} Full context rows remain available in the reviewed vote list.
+          {formatContextRowSummary(proofView)} Full context rows remain available in the vote receipt list.
         </p>
       ) : null}
     </section>
@@ -474,7 +420,7 @@ function ReviewedVoteList({
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-cyan-900">
-            Full reviewed vote list
+            Full vote receipt list
           </p>
           <p className="mt-1 text-sm leading-6 text-stone-700">
             All receipts stay available, grouped by bill or measure, with countable and context labels preserved.
@@ -486,11 +432,13 @@ function ReviewedVoteList({
           onClick={() => setShowAllVotes((current) => !current)}
           type="button"
         >
-          {showAllVotes ? "Hide full list" : "Show all reviewed votes"}
+          {showAllVotes ? "Hide full list" : "Show all vote receipts"}
         </button>
       </div>
       <div className="mt-3 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.12em] text-stone-600">
-        <span className="rounded-full bg-stone-100 px-2.5 py-1">{evidenceRows.length} reviewed votes</span>
+        <span className="rounded-full bg-stone-100 px-2.5 py-1">
+          {evidenceRows.length} recorded {evidenceRows.length === 1 ? "action" : "actions"}
+        </span>
         <span className="rounded-full bg-cyan-50 px-2.5 py-1">{billGroups.length} evidence groups</span>
       </div>
       {showAllVotes ? (
@@ -507,7 +455,7 @@ function ReviewedVoteList({
         </div>
       ) : (
         <p className="mt-3 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2 text-sm leading-6 text-stone-700">
-          Showing representative votes first. Use Show all reviewed votes for every grouped receipt in this issue.
+          Showing reviewed substantive Yes/No first. Use Show all vote receipts for every grouped receipt in this issue.
         </p>
       )}
     </section>
@@ -530,7 +478,7 @@ function BillEvidenceGroup({ group, representativeName, selectedActionRow, setSe
           </p>
         </div>
         <span className="w-fit rounded-full bg-stone-100 px-3 py-1 text-xs uppercase tracking-[0.16em] text-stone-700">
-          {group.rows.length} reviewed {group.rows.length === 1 ? "vote" : "votes"}
+          {group.rows.length} recorded {group.rows.length === 1 ? "action" : "actions"}
         </span>
       </div>
 

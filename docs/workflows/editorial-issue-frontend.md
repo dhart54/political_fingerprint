@@ -37,3 +37,12 @@ Do not add a new rich editorial design within the cutover. A future presentation
 milestone may consume compiled Semantic IR through a meaning-preserving public
 view model. It must not adapt Semantic IR back into the deleted format or infer
 new civic meaning in React.
+
+The coverage-first cards, compact issue navigation, and vote-receipt structure
+are intended to remain as that presentation evolves. A future IR-native
+milestone may layer reviewed conclusions, repeated patterns, trajectories, and
+limitations onto this structure only when they come from compiled Semantic IR
+and reviewed dossiers, never from frontend vote-count logic. The compiled
+evidence state must continue to determine whether the UI shows a full
+conclusion, a bounded developing read, non-directional coverage, or receipts
+only.
