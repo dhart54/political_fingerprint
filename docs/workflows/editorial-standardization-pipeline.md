@@ -2,36 +2,175 @@
 
 ## Purpose
 
-This workflow turns a human-reviewed presentation standard into a scalable, fail-closed generation and quality-control process. Deterministic validation establishes contract conformance; it does not prove political truth, factual perfection, motive, or human verification.
+This workflow turns source-grounded legislative evidence and accepted semantic
+contracts into scalable, fail-closed member interpretation and presentation.
 
-The legislative action dossier is researched once and reused across representatives. The system must not independently rewrite the same bill facts, effects, arguments, or sources for every member. Member-specific data is limited to authoritative action status and the bounded synthesis derived from the shared episode contract.
+Deterministic validation establishes contract conformance. It does not by itself
+prove political truth, factual perfection, motive, human approval, production
+eligibility, or publication authority.
+
+The legislative action dossier is researched once and reused across
+representatives. The system must not independently rewrite the same bill facts,
+effects, arguments, or sources for every member.
+
+Member-specific data is limited to authoritative member action status, exact
+coverage, and the bounded interpretation derived from shared legislative
+semantics.
+
+## Canonical semantic boundary
+
+Editorial Semantic IR V1 is the contract between shared evidence and later
+presentation:
+
+- `docs/semantic_ir/editorial_semantic_ir_v1.md`
+- `docs/semantic_ir/editorial_semantic_ir_v1.schema.json`
+
+The canonical output is:
+
+- shared action eligibility and meaning;
+- episode and policy-family hierarchy;
+- structural metadata and policy traits;
+- exact member action and coverage states;
+- behavioral propositions;
+- synthesis propositions;
+- coverage, method, and source/render boundaries;
+- action accounting;
+- conclusion plan;
+- presentation targets.
+
+Exact prose is not canonical.
+
+Later stages may select, relate, omit, or render established semantic objects.
+They may not reinterpret earlier-stage meaning or add analytical claims.
+
+## Three review checkpoints
+
+### Checkpoint 1: shared semantic corpus
+
+Review only member-neutral meaning:
+
+- exact-action eligibility;
+- action meaning and sources;
+- legislative stage;
+- episode hierarchy;
+- policy families;
+- structural metadata;
+- policy traits and relationships;
+- shared source constraints;
+- supported absences and conflicts.
+
+No member conclusion or frontend review occurs until this checkpoint is stable.
+
+A change here invalidates affected downstream proposition and presentation
+reviews.
+
+### Checkpoint 2: proposition-shape calibration
+
+Run the necessary member and synthetic inputs, but review representative semantic
+shapes rather than every member.
+
+Review:
+
+- exact member action status;
+- coverage;
+- behavioral propositions;
+- synthesis relationships;
+- action accounting;
+- conclusion plan;
+- presentation ownership;
+- review route.
+
+Humans should review:
+
+- each novel proposition shape;
+- each genuine exception;
+- shared unresolved dependencies once;
+- a stratified audit sample.
+
+Humans should not rereview every member whose proposition graph matches an
+already accepted shape.
+
+### Checkpoint 3: presentation calibration
+
+Only after semantic graphs are stable, review a bounded set of rendered cases
+covering relevant structures such as:
+
+- consistent or uniform direction;
+- mechanism divide;
+- mixed within-episode trajectory;
+- limited coverage;
+- Present and Not Voting;
+- tied patterns;
+- notable choices;
+- meaningful limiting evidence.
+
+Presentation review concerns clarity, grammar, density, caveat placement,
+accessibility, and visual hierarchy. It must not silently reopen upstream
+semantic meaning.
 
 ## Generation order
 
 1. Ingest and canonicalize the legislative action.
 2. Build or reuse the member-neutral action dossier.
-3. Resolve the exact stage and source mappings.
-4. Group related actions into a Congress-bounded policy episode.
-5. Optionally relate episodes through a cross-Congress policy family without merging them.
-6. Overlay each member's authoritative action status.
-7. Calculate coverage against the shared episode contract.
-8. Derive candidate within-episode trajectories and cross-episode findings.
-9. Map established, member-neutral policy traits into shared, compatible, contrasting, or unresolved policy clusters.
-10. Build a structured conclusion proposition model before prose: archetype, thesis, clusters, contrast, trajectory, exception, boundary, evidence and omitted episodes, reader-label concept, and review route.
-11. Render a bounded public conclusion from proposition roles rather than action or episode titles.
-12. Select three to five featured episodes upstream.
-13. Build the public view model; React renders that model and does not infer civic meaning.
-14. Run deterministic structural, editorial-utility, and mutation-tested integrity gates.
-15. Run responsive, accessibility, and bounded-disclosure tests.
-16. Emit deterministic validation and conclusion-compression reports.
-17. Route failures and genuinely novel evidence structures for human review.
-18. Permit periodic stratified auditing of passing slices.
+3. Resolve the exact action, stage, source, and claim mappings.
+4. Decide exact-action domain eligibility independently from parent context.
+5. Group stages of one legislative event into an episode where supported.
+6. Keep separate proposals as separate episodes.
+7. Optionally relate episodes through a policy family without merging them.
+8. Resolve structural metadata separately from policy traits.
+9. Resolve shared review dependencies once at the shared layer.
+10. Overlay each member's authoritative action status.
+11. Calculate the Semantic IR coverage contract.
+12. Build behavioral propositions:
+    - trajectories;
+    - repeated patterns;
+    - notable choices.
+13. Build conclusion-only synthesis where justified:
+    - mechanism divides;
+    - uniform-direction synthesis;
+    - no-common-throughline synthesis;
+    - interpretive boundaries.
+14. Record coverage, method, and source/render boundaries outside the behavioral
+    graph.
+15. Account for every accepted action in full-record cases.
+16. Build the conclusion plan and typed presentation targets.
+17. Render bounded prose without adding meaning.
+18. Select featured episodes upstream.
+19. Build the public view model. React renders that model and does not infer
+    civic meaning.
+20. Run the validation tier appropriate to the change.
+21. Route failures and genuine novelty.
+22. Permit stratified auditing of passing slices.
 
-`scripts/build_editorial_standardization_validation.mjs --check` fails when the committed report drifts from the candidate and public-view contracts. The report uses `pass`, `pass_with_nonblocking_warnings`, or `blocked`; none of those states confers human editorial approval.
+## Semantic invariants
+
+- Vote direction cannot alter action eligibility, episode identity, or
+  policy-family identity.
+- Member and party identity cannot alter semantics for identical evidence.
+- Parent-measure context cannot establish exact-action eligibility.
+- Structural metadata is distinct from policy traits.
+- Multiple stages of one legislative event may form one episode.
+- Separate proposals remain separate episodes within one policy family.
+- A trajectory requires multiple actions within one episode.
+- A repeated pattern requires multiple independent episodes.
+- Present and Not Voting are neither support nor opposition.
+- Known coverage cannot use generic unknown-state language.
+- Only section-rendered behavioral propositions have one primary analytical
+  section.
+- Synthesis, coverage, method, and source constraints do not require an
+  analytical section.
+- Tied material patterns cannot be silently omitted.
+- Every accepted full-record action contributes to behavioral evidence or has an
+  explicit non-proposition reason.
+- Rendering cannot add analytical meaning.
+- Shared novelty is reviewed once at the shared layer.
+- Approval, gold status, benchmark status, production eligibility, promotion,
+  publication, merge, and deployment remain separate gates.
 
 ## Evidence and absence states
 
-Required action fields must contain sourced content or an explicit supported absence state:
+Required action fields must contain sourced content or an explicit supported
+absence state:
 
 - `not_applicable`
 - `not_material`
@@ -40,81 +179,188 @@ Required action fields must contain sourced content or an explicit supported abs
 - `source_unresolved`
 - `pending_research`
 
-`source_unresolved` and `pending_research` block publication eligibility. One-sided official argument evidence stays one-sided: render the supported side and the supported absence note, never invented symmetry.
+`source_unresolved` and `pending_research` block publication eligibility.
 
-Source handling preserves four distinct states: source attached, claim mapped to a locator, claim supported under the dossier contract, and human verified. An attached source or mapping is not by itself proof of support or human verification.
+One-sided official argument evidence stays one-sided. Render the supported side
+and the supported absence note. Never invent symmetry.
 
-## Review escalation
+Source handling preserves distinct states:
 
-Every generated slice receives one non-publication workflow route:
+- source attached;
+- claim mapped to a locator;
+- claim supported under the dossier contract;
+- human verified.
 
-- `standard_generation_pass`: established sources, policy traits, relationships, and archetype; all blocking and editorial-utility rules pass.
-- `sampled_audit_candidate`: the same passing state, selected by an established deterministic quality-sampling rule.
-- `human_exception_required`: new or unresolved traits, relationships, evidence conflicts, compression ambiguity, broad-philosophy candidates, or structures outside the known archetypes.
-- `blocked`: source, coverage, service-status, member-leak, unsupported-claim, structural, or publication-boundary failure.
+An attached source or mapping is not by itself proof of support or human
+verification.
 
-These routes govern quality-control work only. None means human approved, gold benchmark, production eligible, published, merged, or deployed.
+## Coverage and service boundary
 
-### Automatic block
+Keep these distinct:
 
-- unresolved source or incomplete action result;
+- eligible substantive actions;
+- context-only or control actions;
+- in-service eligible actions;
+- resolved eligible actions;
+- directional Yea/Nay positions;
+- Present;
+- Not Voting;
+- missing evidence;
+- outside-service actions;
+- complete episodes;
+- partial episodes.
+
+Context-only, procedural, mixed-measure, and rejected actions remain available
+for method review but do not inflate substantive denominators.
+
+Year-only service metadata cannot establish action-date eligibility. When exact
+dates are unavailable, an absent action remains missing evidence; presentation
+convenience must not relabel it as outside service.
+
+## Review routing
+
+Every generated slice receives one quality-control route:
+
+- `standard_generation_pass`
+- `sampled_audit_candidate`
+- `human_exception_required`
+- `blocked`
+
+These routes do not confer human approval, gold status, benchmark promotion,
+production eligibility, publication, merge, or deployment.
+
+### Standard generation pass
+
+Use when:
+
+- shared semantics are established;
+- the proposition shape is established;
+- coverage and action accounting are complete;
+- all blocking and editorial-integrity checks pass.
+
+### Sampled audit candidate
+
+Use the same passing state, selected by a deterministic stratified quality rule.
+
+### Human exception required
+
+Use when:
+
+- a new or unresolved policy trait or relationship is material;
+- a new legislative action or evidence type is outside the established contract;
+- authoritative meaning is genuinely contestable;
+- a new proposition or synthesis shape is required;
+- source support is one-sided or incomplete in a way requiring judgment;
+- the contract can preserve the candidate safely but acceptance requires review.
+
+Review shared novelty once at the shared layer rather than propagating duplicate
+member exceptions.
+
+### Blocked
+
+Use for hard failures such as:
+
+- unresolved or conflicting authoritative source evidence;
 - representative leakage into shared evidence;
 - action-direction or coverage contradiction;
 - unsupported claim or invented argument;
-- ambiguous service eligibility presented as known;
-- missing required episode relationship or cross-Congress merge;
-- public workflow/methodology leakage or invalid publication status;
-- missing official vote or measure source;
-- more than five featured episodes or selected-issue duplication.
+- unrepresentable service status;
+- invalid action accounting;
+- hierarchy contradiction;
+- publication-boundary failure;
+- missing required official action source.
 
-### Human exception review
-
-- a new policy trait, trait relationship, or ontology concept;
-- new legislative action type or novel procedural mechanism;
-- contested episode grouping or a package whose policy meaning cannot be bounded;
-- cross-Congress relationship not represented by existing fixtures;
-- new analytical category or broad-philosophy candidate;
-- unresolved one-sided argument evidence;
-- conflicting authoritative sources.
-
-Shared review happens once where possible. Humans review new legislative dossiers, policy traits, episode relationships, and ontology changes at the shared evidence layer. Once established, those structures may be reused across member overlays. Ordinary overlays that remain inside the established contract may proceed through deterministic generation and stratified audit rather than exhaustive bill-by-bill rereview.
-
-### Eligible for sampled audit
-
-- standard final-passage or amendment action using an existing dossier contract;
-- known episode relationship with a member-overlay-only change;
-- known consistent, selective, or divided synthesis shape;
-- every deterministic gate passes.
-
-Eligibility for sampled audit does not authorize production publication, benchmark promotion, registry inclusion, merge, or deployment.
+Do not weaken a rule or relabel a failure merely to keep the pipeline moving.
 
 ## Stratified quality sampling
 
-Future audits should sample across chamber, issue, Congress, action type, Yea/Nay/Present/Not Voting, multi-action and single-action episodes, package and non-package measures, one-sided argument evidence, consistent/selective/divided conclusions, and incumbent/partial-service records.
+Audit across:
 
-Quality assurance therefore combines reference fixtures, automated gates, mutation testing, targeted exception review, and stratified sample audits. It does not depend on exhaustive human reading of every generated card.
+- chamber;
+- issue;
+- Congress;
+- action type;
+- Yea, Nay, Present, and Not Voting;
+- multi-action and single-action episodes;
+- package and non-package actions;
+- one-sided source evidence;
+- consistent, divided, mixed, and limited-evidence conclusions;
+- full-service and partial-service records;
+- established and newly migrated proposition shapes.
 
-## Service-status boundary
+Quality assurance combines accepted semantic fixtures, held-out evaluation,
+property testing, mutation testing, targeted exception review, and stratified
+sample audits. It does not depend on exhaustive human reading of every generated
+card.
 
-Yea, Nay, Present, Not Voting, not yet serving, no longer serving, and missing evidence remain distinct. Year-only service metadata cannot establish action-date eligibility. When exact dates are unavailable, an absent action remains missing evidence; presentation convenience must never relabel it as outside service.
+## Validation tiers
 
-## Non-negotiable autonomy and failure handling
+### Semantic loop
 
-Within an authorized milestone and established evidence contract, continue autonomously through generation, deterministic validation, correction, regeneration, bounded rendered review, artifact reconciliation, and integration validation. A failed gate is not a completed result and is not, by itself, a reason to stop the wider safe workflow.
+Use while authoring or correcting Semantic IR, candidate cases, proposition
+logic, action accounting, and coverage.
 
-When a deterministic gate fails:
+```powershell
+python scripts/validate_editorial_semantic_ir.py
+python -m unittest backend.tests.test_editorial_semantic_ir
+```
 
-1. preserve the failing candidate and exact rule result;
-2. diagnose whether the defect is in shared evidence, member overlay, proposition selection, rendering, or validation;
-3. correct the owning layer without weakening the rule, hand-editing a generated receipt, inventing evidence, or changing publication status;
-4. regenerate affected artifacts and rerun the narrow gate;
-5. continue independent safe cases when one case is blocked;
+This loop must not require frontend, browser, persistence, or production work.
+
+### Domain loop
+
+Use after changes affect a full issue domain.
+
+Validate affected members, vectors, mutations, fixtures, and persistence
+proposal for that domain.
+
+### Release loop
+
+Use near merge when runtime, frontend, cross-domain, migration, persistence,
+publication, or deployment behavior changes.
+
+Do not run release validation after every small semantic correction.
+
+## Failure handling
+
+Within an authorized milestone and established contract, continue autonomously
+through safe correction and narrow regeneration.
+
+When a gate fails:
+
+1. preserve the failing input and exact rule result;
+2. diagnose the owning layer:
+   - shared evidence;
+   - eligibility;
+   - hierarchy;
+   - member status or coverage;
+   - proposition selection;
+   - synthesis;
+   - presentation;
+   - validation;
+3. correct the owning layer without weakening the rule, inventing evidence,
+   hand-editing generated output, or changing publication state;
+4. rerun the narrowest sufficient validation;
+5. continue independent safe cases;
 6. record the correction, remaining limitation, and review route.
 
-Use `human_exception_required` when established deterministic structures cannot safely represent a new or unresolved evidence meaning. Use `blocked` for hard source, coverage, integrity, unsupported-claim, structural, or publication-boundary failures. Do not relabel either route merely to keep a pipeline moving. Conversely, do not send an ordinary established-contract correction to human review solely because the first generated output failed.
-
-Stop the active case for conflicting authoritative sources, ambiguous civic meaning, a new evidence or legislative-action type outside the contract, an unrepresentable service-status boundary, or another repository true stop condition. Preserve all completed safe work and failure receipts when stopping. The routes `standard_generation_pass`, `sampled_audit_candidate`, `human_exception_required`, and `blocked` remain quality-control routes only and never authorize human approval, benchmark promotion, production eligibility, publication, merge, or deployment.
+A failed first output is not by itself a reason to stop. Stop when a true
+repository stop condition remains after safe correction.
 
 ## Publication boundary
 
-The reference-fixture designations `human_reviewed_presentation_fixture`, `reference_render_fixture`, and `standardization_regression_fixture` are regression metadata only. Real content remains `human_approval_pending`, `not_promoted`, and `productionEligible: false` until a separately authorized publication decision.
+Reference, candidate, fixture, route, and validation labels are regression and
+workflow metadata only.
+
+Real content remains unapproved and non-public until separately authorized
+decisions establish the required approval, production-eligibility, registry, and
+publication state.
+
+No semantic acceptance automatically authorizes:
+
+- persistence to production;
+- benchmark promotion;
+- publication-registry inclusion;
+- public selection;
+- merge;
+- deployment.

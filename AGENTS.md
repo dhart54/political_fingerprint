@@ -1,113 +1,196 @@
 # AGENTS.md - Political Fingerprint
 
-This file defines durable repository rules for Codex and coding agents. Follow it unless the user's current request gives a more specific instruction.
+This file defines durable repository rules for Codex and coding agents. Follow it
+unless the user's current milestone request gives a more specific instruction.
 
-## Product Identity
+Detailed execution guidance belongs in referenced workflow documents rather than
+being duplicated here.
 
-Political Fingerprint is a curiosity-led, trust-anchored civic analytics platform.
+## Product identity
 
-Primary promise: "In 60 seconds, understand how this politician actually behaves."
+Political Fingerprint is a curiosity-led, trust-anchored civic analytics
+platform.
 
-North star: "Who represents me, how are they acting on the issues I care about, and what can I do next?"
+Primary promise: "In 60 seconds, understand how this politician actually
+behaves."
 
-The product maps observable legislative behavior. It must not rank politicians, infer motives, make corruption claims, predict behavior, tell users how to vote, or turn campaign statements into governing records.
+North star: "Who represents me, how are they acting on the issues I care about,
+and what can I do next?"
 
-Before product copy, summary, evidence, or UI interpretation work, read `docs/interpretation_principles.md`. Political Fingerprint should make clear, evidence-backed interpretations with receipts while avoiding moral judgment, motive claims, unsupported ideology labels, and unsupported cross-time movement claims.
+The product maps observable legislative behavior. It must not rank politicians,
+infer motives, make corruption claims, predict behavior, tell users how to vote,
+or turn campaign statements into governing records.
 
-## Civic Integrity
+Before product copy, summary, evidence, Semantic IR, or UI interpretation work,
+read `docs/interpretation_principles.md`.
 
-- Preserve amendment, final-passage, procedural, limited-context, and not-voting distinctions.
-- Do not infer motive, ideology, character, corruption, causality, endorsement, or voting recommendations.
-- Procedural and limited-context rows remain non-counting unless an explicit methodology decision changes that.
-- Not-voting remains excluded from support/opposition.
-- Do not change support/opposition, readiness, alignment, or interpretation semantics without an explicit product decision.
-- Parent-measure context cannot replace the meaning of a narrower amendment vote.
-- LLMs may draft cached/source-grounded explanations, but must not decide eligibility, vote meaning, alignment, readiness, or evidence tier.
+## Civic integrity
 
-## Repository Operating Model
+- Preserve amendment, final-passage, procedural, limited-context, Present,
+  Not Voting, service-status, and missing-evidence distinctions.
+- Do not infer motive, ideology, character, corruption, causality, endorsement,
+  or voting recommendations.
+- Procedural and limited-context rows remain non-counting unless an explicit
+  methodology decision changes that.
+- Present and Not Voting are resolved non-directional statuses and remain
+  excluded from support or opposition.
+- Parent-measure context cannot establish the meaning or domain eligibility of a
+  narrower exact action.
+- Do not change support/opposition, eligibility, evidence-tier, readiness,
+  alignment, counting, or interpretation semantics without an authorized
+  product or methodology decision.
+- Rendering cannot add analytical meaning absent from the canonical semantic
+  model.
 
-- Prefer one branch and one meaningful product outcome per milestone.
-- Keep diffs scoped to the active milestone and preserve unrelated untracked artifacts.
-- Do not open a PR until the milestone definition of done is met unless the user explicitly authorizes preview or deployment validation.
-- Do not treat planning, audit, preflight, or documentation alone as completion when implementation remains in scope.
-- Substantial milestones must follow `docs/PLANS.md` and maintain one active plan under `docs/plans/`.
-- Reference workflow runbooks in `docs/workflows/` instead of duplicating their full content in prompts or `AGENTS.md`.
-- Editorial generation and standardization work must follow `docs/workflows/editorial-standardization-pipeline.md`, including its non-negotiable autonomy, failure-handling, and review-routing contract.
+LLMs may research, propose, challenge, and explain source-grounded semantic
+interpretations. Their work must compile into typed, source-mapped artifacts and
+pass the applicable evidence, civic-integrity, and review contracts.
+
+Deterministic code owns repeatable application of established contracts across
+members and records. Novel, genuinely ambiguous, conflicting, or unsupported
+semantic decisions require review before acceptance or publication.
+
+An LLM-generated interpretation is a candidate. It is not automatically approved,
+gold, benchmarked, production-eligible, promoted, or publishable.
+
+## Canonical editorial boundary
+
+For new editorial work, the canonical contract between shared evidence and later
+presentation is Editorial Semantic IR V1:
+
+- `docs/semantic_ir/editorial_semantic_ir_v1.md`
+- `docs/semantic_ir/editorial_semantic_ir_v1.schema.json`
+
+The canonical output is the typed behavioral proposition graph, synthesis
+propositions, evidence-state boundaries, action accounting, and conclusion plan.
+Exact prose is a replaceable presentation result.
+
+Later stages may select, relate, omit, or render established semantic objects.
+They may not reinterpret earlier-stage meaning.
+
+## Repository operating model
+
+- Use one accountable implementation owner and one meaningful outcome per
+  milestone.
+- Keep diffs centered on the requested outcome and preserve unrelated tracked
+  and untracked work.
+- Classify adjacent findings as blocking, follow-up, or historical. Only blocking
+  findings may automatically expand the active task.
+- Do not turn a bounded change into repository-wide reconciliation.
+- Use direct execution for small isolated changes, a compact plan for normal
+  cross-file work, and a living execution plan for production, methodology,
+  infrastructure, or genuinely long-running work.
+- Planning, audits, and documentation are not completion when implementation
+  remains in scope.
+- Follow `docs/workflows/editorial-standardization-pipeline.md` when legislative
+  semantics, proposition generation, review routing, or publication state are
+  affected.
+- Follow `docs/workflows/codex-operating-model.md` for planning, scope,
+  parallelism, RTK, and validation defaults.
 
 ## Autonomy
 
-When the milestone permits it, Codex may continue autonomously through established stages:
+Within the user's authorized milestone, continue through ordinary discovery,
+implementation, safe correction, targeted validation, diff review,
+documentation, commit preparation, and PR preparation without repeated
+handoffs.
 
-- read-only discovery
-- active-plan creation and maintenance
-- source collection
-- implementation
-- deterministic classification
-- bounded dry-runs
-- rollback creation
-- explicitly authorized bounded production writes
-- post-write validation
-- tests and builds
-- rendered review
-- documentation
-- commit preparation
-- PR creation
-- green-check merge
-- deployment verification or redeployment of already-reviewed code
+An ordinary in-scope defect or failing targeted test is not a stop condition when
+its cause can be safely corrected without weakening a rule or changing the
+authorized outcome.
 
-Normal movement between these stages is not a reason to stop.
+Do not merge, deploy, publish, promote, approve editorial artifacts, alter
+publication registries, or write to production unless the current milestone
+explicitly authorizes that action.
 
-## True Stop Conditions
+## True stop conditions
 
-Stop for:
+Stop only when:
 
-- new schema or product-semantics decisions outside the milestone envelope
-- ambiguous civic meaning or conflicting authoritative sources
-- a vote/evidence type the current model cannot represent safely
-- failed hard gates
-- incomplete rollback
-- destructive or unbounded behavior
-- production effects differing materially from preflight
-- unexpected counting, readiness, alignment, API, security, accessibility, or data-integrity effects
-- infrastructure/configuration ambiguity involving services, secrets, or environments
+- authoritative sources materially conflict and no established rule resolves
+  them;
+- the task requires a new product, architecture, ontology, or methodology
+  decision outside the milestone;
+- the available evidence cannot support a safe representation;
+- a new action, evidence, service-status, or semantic type cannot be represented
+  safely by the established contract;
+- a destructive, security-sensitive, or unbounded action would be required;
+- production effects would exceed the approved envelope;
+- a required rollback is absent, incomplete, or invalid;
+- a hard gate remains unresolved after safe in-scope correction;
+- the requested outcome cannot be completed without materially expanding scope.
 
-## Production Safety
+When existing standards support a defensible candidate interpretation, produce
+and route the candidate rather than stopping merely because later review is
+required.
 
-- No production write unless the milestone explicitly authorizes that class of write.
+## Production safety
+
+- No production write unless the milestone explicitly authorizes that class of
+  write.
 - Define exact bounded scope and caps before writing.
-- Create rollback before writing.
+- Create and validate rollback before writing.
 - Run preflight before writing.
 - Validate actual versus expected effects after writing.
 - Run idempotency or no-write checks where applicable.
-- Preserve table boundaries and stop on material mismatch.
+- Preserve table and publication boundaries and stop on material mismatch.
 - Do not expose secrets.
 - Security changes must use least privilege.
 
 Use `docs/workflows/bounded-production-write.md` for production-write milestones.
 
-## Quality And Tooling
+## Validation
 
-- Run targeted relevant tests.
-- Build when frontend/runtime behavior changes.
-- Perform production-backed and rendered validation for meaningful UI work.
-- Use bounded commands with timeouts.
-- Split long validation into independently reported checks.
-- Do not repeatedly rerun a hanging command.
-- Distinguish local-tool limitations from product failures.
-- Report the exact active command/status when steered.
-- Honor user steering before starting another command after the current safe command returns.
+Choose the lowest validation tier that establishes confidence in the behavior
+actually touched.
 
-## Instruction Precedence
+### Semantic loop
+
+Use for Semantic IR schemas, candidate cases, proposition logic, action
+accounting, coverage contracts, and focused interpretation corrections.
+
+Canonical commands:
+
+```powershell
+python scripts/validate_editorial_semantic_ir.py
+python -m unittest backend.tests.test_editorial_semantic_ir
+```
+
+Do not trigger frontend, browser, database, persistence, or full-population work
+solely because a Semantic IR authoring file changed.
+
+### Domain loop
+
+Use when a change affects one complete issue domain, its members, vectors,
+fixtures, or persistence proposal.
+
+### Release loop
+
+Use near merge when changes affect cross-domain runtime behavior, frontend
+runtime, migrations, production persistence, publication controls, or
+deployment.
+
+Do not run a release loop reflexively after every small correction.
+
+Always inspect the resulting behavior and final diff. Passing tests alone does
+not establish completion. Report unrelated baseline failures separately.
+
+## Instruction precedence
 
 1. The user's current milestone request.
-2. Applicable `AGENTS.md` instructions by directory scope.
-3. The active execution plan.
-4. Workflow runbooks.
-5. Broader methodology and product documentation.
+2. Applicable directory-scoped `AGENTS.md` instructions.
+3. This repository root `AGENTS.md`.
+4. The active execution plan.
+5. Workflow runbooks.
+6. Broader methodology and product documentation.
 
-The active plan records implementation decisions but cannot override higher-priority instructions. Workflow runbooks supply defaults; they do not permit actions forbidden by the milestone. Production-write permission must come from the milestone decision envelope or explicit user approval.
+The active plan records implementation decisions but cannot override
+higher-priority instructions. Workflow runbooks supply defaults; they do not
+authorize forbidden actions. Production-write, publication, promotion, approval,
+merge, and deployment authority must come from the current milestone or explicit
+user approval.
 
-## Core Stack And Structure
+## Core stack and structure
 
 Backend: Python 3.11+, FastAPI, Postgres/Supabase.
 
@@ -131,12 +214,16 @@ Maintain the repository structure:
 - `docs`
 - `scripts`
 
-## Reference Documents
+## Reference documents
 
+- Codex operating model: `docs/workflows/codex-operating-model.md`
+- Editorial generation: `docs/workflows/editorial-standardization-pipeline.md`
+- Semantic IR contract: `docs/semantic_ir/editorial_semantic_ir_v1.md`
 - Planning convention: `docs/PLANS.md`
 - Milestone execution: `docs/workflows/milestone-execution.md`
 - Bounded production writes: `docs/workflows/bounded-production-write.md`
-- Product/rendered validation: `docs/workflows/product-and-rendered-validation.md`
+- Product/rendered validation:
+  `docs/workflows/product-and-rendered-validation.md`
 - PR, merge, deployment: `docs/workflows/pr-merge-deployment.md`
 - Development workflow: `docs/development_workflow.md`
 - Deployment details: `docs/deployment.md`
