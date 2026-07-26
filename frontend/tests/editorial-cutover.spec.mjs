@@ -13,7 +13,7 @@ const positions = {
       nay_count: 2,
       other_count: 1,
       total_votes: 5,
-      recorded_votes: 5,
+      recorded_votes: 4,
       interpreted_support_count: 1,
       interpreted_oppose_count: 1,
       interpreted_other_count: 3,
@@ -43,7 +43,7 @@ const positions = {
       interpreted_other_count: 1,
     },
     {
-      domain: "HEALTHCARE",
+      domain: "HEALTH_SOCIAL",
       yea_count: 0,
       nay_count: 0,
       other_count: 0,
@@ -117,9 +117,15 @@ test("representative page deliberately renders basic evidence and vote receipts"
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Aaron Bean", exact: true })).toBeVisible();
   await expect(page.getByText("Record Coverage", { exact: true })).toBeVisible();
-  await expect(page.locator("body")).not.toContainText("Open Best Read");
-  await expect(page.locator("body")).not.toContainText("Strongest evidence");
-  await expect(page.getByRole("button", { name: /Inspect Healthcare votes/i })).toHaveCount(0);
+  await expect(page.locator("body")).not.toContainText(
+    /clearest(?: reviewed)? patterns?|strongest issue evidence|strongest issue card|best read/i,
+  );
+  await expect(page.getByText("Best-covered issue", { exact: true })).toBeVisible();
+  await expect(page.getByText("Recorded action composition", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText(/Budgets, taxation, government funding/).first()).toBeVisible();
+  await expect(page.getByRole("button", { name: /Inspect Health & Social Services votes/i })).toHaveCount(0);
+  const profileIssueCards = page.locator('section').filter({ hasText: "Record Coverage" }).getByRole("button", { name: /Inspect .* votes/i });
+  await expect(profileIssueCards.nth(0)).toHaveAttribute("aria-label", "Inspect Economy & Taxes votes");
   await page.getByRole("button", { name: "Show Votes" }).click();
 
   const summary = page.getByTestId("basic-evidence-summary");
@@ -139,7 +145,7 @@ test("representative page deliberately renders basic evidence and vote receipts"
 test("non-directional-only issue records remain selectable with receipts and no directional conclusion", async ({ page }) => {
   await page.goto("/");
 
-  await page.getByRole("button", { name: "Inspect Education & Workforce votes" }).click();
+  await page.getByRole("button", { name: "Inspect Education & Workforce votes" }).first().click();
   const educationSummary = page.getByTestId("basic-evidence-summary");
   await expect(educationSummary).toContainText("Not Voting");
   await expect(educationSummary).not.toContainText(/support|opposition/i);
@@ -147,7 +153,7 @@ test("non-directional-only issue records remain selectable with receipts and no 
     page.locator('a[href="https://clerk.house.gov/evs/2025/roll020.xml"]').first(),
   ).toHaveAttribute("href", "https://clerk.house.gov/evs/2025/roll020.xml");
 
-  await page.getByRole("button", { name: "Inspect Environment & Energy votes" }).click();
+  await page.getByRole("button", { name: "Inspect Environment & Energy votes" }).first().click();
   const environmentSummary = page.getByTestId("basic-evidence-summary");
   await expect(environmentSummary).toContainText("Present");
   await expect(environmentSummary).not.toContainText(/support|opposition/i);

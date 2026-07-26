@@ -13,10 +13,15 @@ The machine-readable authority is
   119-file whole-tree manifest locks those roots to the cutover base.
 - Acquisition capability and tests remain intact.
 - The representative route deliberately renders basic vote evidence and source
-  receipts. Its top panel reports neutral action and issue-area coverage; actual
-  Present and Not Voting-only issue areas remain selectable. Expected-but-missing
-  actions are not emitted by the current API and are not synthesized in React.
-  The former `/golden-render-fixture` route is absent.
+  receipts. Its top panel orders issue cards by available action count, reviewed
+  substantive Yes/No count, non-directional or limited/context availability,
+  and stable domain order. This is evidence coverage, not an analytical,
+  ideological, or vote-direction ranking. Shared member-neutral domain
+  descriptions and a `Recorded action composition` bar explain the cards; party
+  benchmarking remains deferred. Actual Present and Not Voting-only issue areas
+  remain selectable. Expected-but-missing actions are not emitted by the current
+  API and are not synthesized in React. The former
+  `/golden-render-fixture` route is absent.
 - The 71 historically staged artifacts remain unpublished; persistence,
   publication, database, deployment, and production state were not changed by
   the cutover.

@@ -99,7 +99,7 @@ export default function HomePage() {
                 </h1>
               </div>
               <p className="max-w-[300px] text-sm leading-5 text-stone-700">
-                Start with the clearest reviewed patterns, then inspect the proof.
+                Start with the best-covered issue areas, then inspect the receipts.
               </p>
             </div>
             {coverageMetadata ? (
@@ -176,7 +176,7 @@ export default function HomePage() {
           legislator={selectedLegislator}
           legislatorId={selectedLegislator.id}
           scope={profileScope}
-          title={`${selectedLegislator.name_display}'s strongest issue evidence`}
+          title={`${selectedLegislator.name_display}'s issue evidence`}
         />
 
         <RecordAcrossCongressesPanel

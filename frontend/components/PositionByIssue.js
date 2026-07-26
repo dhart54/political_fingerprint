@@ -6,13 +6,18 @@ import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from ".
 import {
   buildBasicEvidencePresentation,
   hasAvailableIssueEvidence,
-  issueAvailabilityLabel,
 } from "../lib/basicEvidencePresentation.mjs";
 import { deriveEvidenceGroups } from "../lib/evidenceGrouping.mjs";
 import { formatDisplayMeasureTitle } from "../lib/measureDisplay.mjs";
 import { fillMissingInterpretedCounts } from "../lib/positionEvidenceCounts.mjs";
 import { isProceduralContextRow } from "../lib/proceduralContext.mjs";
 import { DOMAIN_LABELS, formatDomainLabel } from "../lib/issueDomains";
+import {
+  getDomainDescription,
+  getEvidenceCoverage,
+  getEvidenceCoverageLabel,
+  orderIssueRowsByEvidenceUsefulness,
+} from "../lib/issueEvidenceCoverage.mjs";
 import {
   buildLimitedContextSummary as buildGenericLimitedContextSummary,
   buildVoteCardSummary as buildGenericVoteCardSummary,
@@ -119,7 +124,9 @@ export default function PositionByIssue({
     });
   }, [evidenceRequest?.requestedAt]);
 
-  const rows = (state.payload?.positions || []).filter(hasAvailableIssueEvidence);
+  const rows = orderIssueRowsByEvidenceUsefulness(
+    (state.payload?.positions || []).filter(hasAvailableIssueEvidence),
+  );
   const selectedRow = rows.find((row) => row.domain === selectedDomain) || rows[0] || null;
   const hasOtherIssueRows = rows.length > 1;
 
@@ -260,7 +267,7 @@ function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
             type="button"
           >
             <span className="font-medium">{formatDomainLabel(row.domain)}</span>
-            <span className="ml-2 opacity-75">{issueAvailabilityLabel(row)}</span>
+            <span className="ml-2 opacity-75">{getEvidenceCoverageLabel(row)}</span>
           </button>
           );
         })}
@@ -272,7 +279,9 @@ function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
 function BasicIssueList({ inspectDomain, rows, selectedDomain }) {
   return (
     <div className="divide-y divide-stone-200 overflow-hidden rounded-xl border border-stone-200 bg-white">
-      {rows.map((row) => (
+      {rows.map((row) => {
+        const coverage = getEvidenceCoverage(row);
+        return (
         <button
           aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
           aria-pressed={selectedDomain === row.domain}
@@ -283,17 +292,23 @@ function BasicIssueList({ inspectDomain, rows, selectedDomain }) {
           onClick={() => inspectDomain(row.domain)}
           type="button"
         >
-          <span className="text-sm font-medium leading-5 text-stone-950">
-            {formatDomainLabel(row.domain)}
+          <span>
+            <span className="block text-sm font-medium leading-5 text-stone-950">
+              {formatDomainLabel(row.domain)}
+            </span>
+            <span className="mt-0.5 block text-xs leading-4 text-stone-600">
+              {getDomainDescription(row.domain)}
+            </span>
           </span>
           <span className="text-xs uppercase tracking-[0.12em] text-stone-500">
-            {row.total_votes || 0} actions
+            {coverage.total} actions · {coverage.reviewedYesNo} reviewed Yes/No
           </span>
           <span className="w-fit rounded-full bg-stone-100 px-2.5 py-1 text-[11px] uppercase tracking-[0.1em] text-stone-700">
-            {issueAvailabilityLabel(row)}
+            {getEvidenceCoverageLabel(row)}
           </span>
         </button>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -339,7 +354,7 @@ function EvidencePanel({ evidenceState, legislator, onInspectDomain, selectedRow
 
       {evidenceState.status === "idle" ? (
         <p className="mt-4 text-sm leading-7 text-stone-700">
-          Start with the strongest issue card above or use Show Votes to inspect the roll calls behind this read. The clearest sections get summarized first; limited sections stay available as evidence without being forced into a confident pattern.
+          Start with a best-covered issue above, or choose any issue to inspect its receipts.
         </p>
       ) : null}
       {evidenceState.status === "loading" ? (

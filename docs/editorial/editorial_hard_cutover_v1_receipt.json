@@ -4,7 +4,7 @@
   "base_commit": "bc7617b05f33d56cf83c4bb7e4b8113b945a3998",
   "branch": "codex/editorial-hard-cutover-v1",
   "pull_request": 112,
-  "correction_reviewed_head": "6b8564823e58997078049b7d3ae0f8dbb71229dd",
+  "correction_reviewed_head": "2ace04d0f84890a9a834300d429d1a6c0104c23b",
   "rewritten_paths": [
     "AGENTS.md",
     "backend/scripts/generate_data_inventory_manifest.py",
@@ -22,6 +22,7 @@
     "docs/semantic_ir/editorial_semantic_ir_v1.md",
     "docs/workflows/editorial-issue-frontend.md",
     "docs/workflows/editorial-standardization-pipeline.md",
+    "frontend/app/page.js",
     "frontend/components/PositionByIssue.js",
     "frontend/components/ProfileQuickRead.js",
     "frontend/lib/issueOverview.test.mjs",
@@ -40,6 +41,8 @@
     "docs/plans/editorial_hard_cutover_v1_spec.md",
     "frontend/lib/basicEvidencePresentation.mjs",
     "frontend/lib/basicEvidencePresentation.test.mjs",
+    "frontend/lib/issueEvidenceCoverage.mjs",
+    "frontend/lib/issueEvidenceCoverage.test.mjs",
     "frontend/tests/editorial-cutover.spec.mjs"
   ],
   "deleted_executable_paths": [
@@ -462,7 +465,20 @@
     "expected_missing_actions_supplied_by_current_api": false,
     "expected_missing_actions_synthesized_in_react": false,
     "keyword_derived_policy_takeaways": false,
-    "profile_best_issue_or_directional_conclusion": false
+    "profile_best_issue_or_directional_conclusion": false,
+    "issue_cards_ordered_by_evidence_coverage": true,
+    "issue_ordering_fields": [
+      "available_action_count",
+      "reviewed_substantive_yes_no_count",
+      "non_directional_or_limited_context_availability",
+      "stable_domain_order"
+    ],
+    "issue_ordering_uses_vote_direction": false,
+    "domain_descriptions_shared_and_member_neutral": true,
+    "overview_gauge_label": "Recorded action composition",
+    "overview_gauge_infers_policy_position": false,
+    "expected_action_denominator_invented_in_react": false,
+    "party_benchmarking": "deferred"
   },
   "validation": [
     {
@@ -503,7 +519,7 @@
     {
       "command": "node --test frontend/lib/*.test.mjs",
       "status": "pass",
-      "result": "87 tests passed"
+      "result": "92 tests passed, including evidence-usefulness ordering, Yea/Nay reversal invariance, shared member-neutral domain descriptions, and recorded-action composition"
     },
     {
       "command": "npm run build --prefix frontend",
@@ -513,7 +529,7 @@
     {
       "command": "npm run test:cutover-smoke --prefix frontend",
       "status": "pass",
-      "result": "3 Chromium smoke tests passed, including Present-only and Not Voting-only issue selection"
+      "result": "3 Chromium smoke tests passed, including coverage ordering and labels, complete-page forbidden-copy scan, hidden zero-evidence domains, source receipts, and Present-only and Not Voting-only issue selection"
     },
     {
       "command": "python scripts/run_editorial_pipeline.py validate --tier release --include-frontend",

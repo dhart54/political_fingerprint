@@ -53,8 +53,12 @@ test("representative page flow exposes neutral coverage without changing evidenc
 
   assert.match(source, /Record Coverage/);
   assert.match(source, /Available actions/);
+  assert.match(source, /Recorded action composition/);
+  assert.match(source, /Best-covered issue/);
+  assert.match(source, /getDomainDescription/);
+  assert.match(source, /orderIssueRowsByEvidenceUsefulness/);
   assert.match(source, /These counts do not combine the actions into an analytical conclusion/);
-  assert.doesNotMatch(source, /Open Best Read|Strongest evidence|Record read|clearest reviewed issue read/);
+  assert.doesNotMatch(source, /Open Best Read|Strongest evidence|strongest issue|Record read|clearest reviewed issue read/);
   assert.doesNotMatch(source, /QuickMetric eyebrow="Change"|Steady mix|Issue mix changed|fetchDrift/);
   assert.match(source, /Jump to issue/);
   assert.match(source, /without combining them into a broader issue conclusion/);
@@ -63,10 +67,12 @@ test("representative page flow exposes neutral coverage without changing evidenc
   assert.doesNotMatch(source, /stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|Yes-pattern|No-pattern/);
 });
 
-test("quick read does not select or synthesize a best issue read", () => {
+test("quick read ranks coverage without synthesizing an analytical issue read", () => {
   const source = readFileSync(new URL("../components/ProfileQuickRead.js", import.meta.url), "utf8");
 
   assert.match(source, /hasAvailableIssueEvidence/);
+  assert.match(source, /orderIssueRowsByEvidenceUsefulness/);
+  assert.match(source, /Best-covered issue/);
   assert.match(source, /Open vote evidence/);
   assert.doesNotMatch(source, /buildRecordNarrative|getBestIssueRead|fillMissingInterpretedCounts|mostly supported|mostly opposed|patternRows/);
 });
@@ -95,7 +101,8 @@ test("basic issue navigation avoids readiness conclusions and contact follows vo
   const reviewedVoteListIndex = source.indexOf("<ReviewedVoteList");
 
   assert.match(source, /function BasicIssueList/);
-  assert.match(source, /issueAvailabilityLabel\(row\)/);
+  assert.match(source, /getEvidenceCoverageLabel\(row\)/);
+  assert.match(source, /getDomainDescription\(row\.domain\)/);
   assert.match(source, /without combining them into a broader issue conclusion/);
   assert.doesNotMatch(source, /buildIssueCardPreview|formatIssueCardStatusLabel|IssueReadinessTile/);
   assert.ok(reviewedVoteListIndex > 0 && civicActionIndex > reviewedVoteListIndex, "utility panel should render after reviewed vote list access");

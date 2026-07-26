@@ -47,8 +47,24 @@
     "rich_editorial_runtime_available": false,
     "representative_route": "/",
     "representative_route_state": "basic_vote_evidence_and_receipts",
-    "profile_summary_state": "neutral_coverage_counts_and_issue_links",
+    "profile_summary_state": "evidence_coverage_ordered_issue_cards_and_receipt_links",
     "issue_availability_basis": "actual_position_action_counts",
+    "issue_ordering_basis": [
+      "available_action_count",
+      "reviewed_substantive_yes_no_count",
+      "non_directional_or_limited_context_availability",
+      "stable_domain_order"
+    ],
+    "issue_ordering_excludes": [
+      "yea_nay_direction",
+      "support_opposition",
+      "party_alignment",
+      "ideology",
+      "react_generated_conclusions"
+    ],
+    "domain_descriptions": "shared_member_neutral_registry",
+    "overview_gauge": "recorded_action_composition",
+    "party_benchmarking": "deferred",
     "non_directional_actual_actions_available": true,
     "expected_missing_actions_available": false,
     "removed_routes": ["/golden-render-fixture"],

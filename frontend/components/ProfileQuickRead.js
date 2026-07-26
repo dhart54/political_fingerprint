@@ -5,6 +5,13 @@ import { useEffect, useState } from "react";
 import { fetchFingerprint, fetchPositions } from "../lib/api";
 import { hasAvailableIssueEvidence } from "../lib/basicEvidencePresentation.mjs";
 import { formatDomainLabel } from "../lib/issueDomains";
+import {
+  getDomainDescription,
+  getEvidenceCoverage,
+  getEvidenceCoverageLabel,
+  getRecordedActionComposition,
+  orderIssueRowsByEvidenceUsefulness,
+} from "../lib/issueEvidenceCoverage.mjs";
 
 export default function ProfileQuickRead({ fixtureData = null, legislator, onInspectDomain, onProfileRead, scope = "all" }) {
   const [state, setState] = useState({
@@ -85,7 +92,9 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
   }, [fixtureData, legislator.id, scope]);
 
   const positionRows = state.positions?.positions || [];
-  const availableRows = positionRows.filter(hasAvailableIssueEvidence);
+  const availableRows = orderIssueRowsByEvidenceUsefulness(
+    positionRows.filter(hasAvailableIssueEvidence),
+  );
   const coverage = buildCoverage(availableRows);
   const scopeRead = buildScopeRead({ scope, positions: state.positions });
 
@@ -125,23 +134,13 @@ export default function ProfileQuickRead({ fixtureData = null, legislator, onIns
 
       {state.status === "ready" && availableRows.length > 0 ? (
         <div className="mt-3 grid gap-2 border-t border-white/10 pt-3 md:grid-cols-2 xl:grid-cols-4">
-          {availableRows.map((row) => (
-            <button
-              className="rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-left transition hover:bg-white/15"
+          {availableRows.map((row, index) => (
+            <IssueEvidenceCard
+              featured={index === 0}
               key={row.domain}
               onClick={() => onInspectDomain?.(row.domain)}
-              type="button"
-            >
-              <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-100">
-                {formatDomainLabel(row.domain)}
-              </p>
-              <p className="mt-1 text-sm font-medium leading-5 text-white">
-                {formatAvailableActionCount(row)}
-              </p>
-              <p className="mt-1 text-xs leading-4 text-cyan-50">
-                Open vote evidence
-              </p>
-            </button>
+              row={row}
+            />
           ))}
         </div>
       ) : null}
@@ -167,6 +166,68 @@ function buildHeadline({ status, name }) {
     return `The quick read for ${name} is unavailable.`;
   }
   return `${name}'s available issue records`;
+}
+
+function IssueEvidenceCard({ featured, onClick, row }) {
+  const coverage = getEvidenceCoverage(row);
+  const composition = getRecordedActionComposition(row);
+
+  return (
+    <button
+      aria-label={`Inspect ${formatDomainLabel(row.domain)} votes`}
+      className="rounded-xl border border-white/10 bg-white/10 px-3 py-3 text-left transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-cyan-100 focus:ring-offset-2 focus:ring-offset-cyan-950"
+      onClick={onClick}
+      type="button"
+    >
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="text-[11px] uppercase tracking-[0.16em] text-cyan-100">
+          {formatDomainLabel(row.domain)}
+        </p>
+        <span className="rounded-full border border-white/15 bg-white/10 px-2 py-1 text-[10px] uppercase tracking-[0.12em] text-cyan-50">
+          {featured ? "Best-covered issue" : getEvidenceCoverageLabel(row)}
+        </span>
+      </div>
+      <p className="mt-2 text-xs leading-4 text-cyan-50">
+        {getDomainDescription(row.domain)}
+      </p>
+      <p className="mt-2 text-sm font-medium leading-5 text-white">
+        {formatAvailableActionCount(row)}
+      </p>
+      <p className="mt-0.5 text-[11px] leading-4 text-cyan-100">
+        {coverage.reviewedYesNo} reviewed substantive Yes/No
+        {featured ? ` · ${getEvidenceCoverageLabel(row)}` : ""}
+      </p>
+      <div
+        aria-label={`Recorded action composition: ${composition.map((item) => `${item.label} ${item.count}`).join(", ")}`}
+        className="mt-2"
+      >
+        <p className="text-[10px] uppercase tracking-[0.13em] text-cyan-100">
+          Recorded action composition
+        </p>
+        <div className="mt-1 flex h-1.5 overflow-hidden rounded-full bg-white/10">
+          {composition.map((item) => (
+            <span
+              className={
+                item.key === "yea"
+                  ? "bg-cyan-200"
+                  : item.key === "nay"
+                    ? "bg-amber-200"
+                    : "bg-stone-300"
+              }
+              key={item.key}
+              style={{ width: `${item.percent}%` }}
+            />
+          ))}
+        </div>
+        <p className="mt-1 text-[10px] leading-4 text-cyan-50">
+          {composition.map((item) => `${item.label} ${item.count}`).join(" · ")}
+        </p>
+      </div>
+      <p className="mt-2 text-xs leading-4 text-white underline decoration-white/30 underline-offset-2">
+        Open vote evidence
+      </p>
+    </button>
+  );
 }
 
 function buildCoverage(rows) {

@@ -15,8 +15,12 @@ experience from the existing positions and evidence APIs. The removed
 `frontend/app/page.js` supplies the selected representative to
 `frontend/components/ProfileQuickRead.js` and
 `frontend/components/PositionByIssue.js`. The former renders neutral coverage
-counts and issue links. The latter loads issue summaries and exact vote evidence
-with `fetchPositions` and `fetchPositionEvidence`, then renders:
+counts and issue links ordered by evidence usefulness. That order compares total
+available actions, reviewed substantive Yes/No counts, non-directional or
+limited/context availability, and finally the stable domain order. It never uses
+Yea versus Nay direction, party, ideology, or a generated conclusion. The latter
+loads issue summaries and exact vote evidence with `fetchPositions` and
+`fetchPositionEvidence`, then renders:
 
 1. issue selection based on actual evidence availability;
 2. a bounded basic-evidence notice;
@@ -29,6 +33,15 @@ The current React path may count and label already-supplied evidence states for
 display. It must not infer support or opposition, service eligibility, episodes,
 featured evidence, policy patterns, conclusions, motives, ideology, publication
 status, or other analytical meaning from raw rolls.
+
+Issue cards use a single shared, member-neutral description for each supported
+domain. Their coverage labels describe evidence availability only. The compact
+bar is labeled `Recorded action composition` and displays the positions API's
+Yea, Nay, and combined Present / Not Voting / other counts. Exact
+non-directional, procedural, and limited-context states remain visible in the
+opened receipt view. No expected-action denominator is invented. Party
+benchmarking is deferred because raw party-level Yea/Nay aggregates would not
+establish reviewed action-level meaning.
 
 These states remain distinct:
 
