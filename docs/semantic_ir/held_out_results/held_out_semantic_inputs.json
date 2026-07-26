@@ -1,0 +1,720 @@
+{
+  "schema_version": "editorial_semantic_ir_held_out_inputs_v1",
+  "corpus_kind": "held_out_semantic_input_packets",
+  "starting_commit": "cc70e7d58e264e535548aab313681b655e684772",
+  "review_state": "candidate_pending_external_semantic_review",
+  "cases": [
+    {
+      "case_id": "semir-held-01-partial-service-missing-evidence",
+      "evidence_reviewed": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/actual_member_vector_evaluation.json",
+          "docs/editorial/commissioning_domain_v1/corrected/mutation_report.json",
+          "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
+          "docs/editorial/commissioning_domain_v1/corrected/domain_eligibility_report.json",
+          "docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_006.json",
+          "docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_055.json",
+          "docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_064.json"
+        ],
+        "source_ids": [
+          "clerk_roll_006",
+          "clerk_roll_007",
+          "clerk_roll_055",
+          "clerk_roll_064",
+          "clerk_roll_076",
+          "clerk_roll_078",
+          "clerk_roll_093"
+        ],
+        "mutation_ids": ["missing_as_outside_service"]
+      },
+      "semantic_classification": {
+        "established_reusable_semantics": [
+          "seven exact actions are accepted Environment and Energy actions",
+          "rolls 6 and 7 form one ordered appropriations episode",
+          "rolls 55 and 64 are separate episodes in the critical-mineral-supply family",
+          "rolls 76 and 78 are separate episodes in the home-energy-policy family",
+          "Present and Not Voting are non-directional",
+          "missing evidence is distinct from verified outside-service status"
+        ],
+        "newly_proposed_semantics": [],
+        "unresolved_semantics": [
+          "service status for rolls 6 and 7 remains unresolved and cannot be relabeled as outside service"
+        ],
+        "unsupported_or_conflicting_evidence": []
+      },
+      "adversarial_self_review": {
+        "concerns_found": [
+          "unresolved missing evidence could be collapsed into outside-service coverage",
+          "Not Voting actions could be treated directionally",
+          "the two appropriations stages could be counted as separate episodes"
+        ],
+        "corrections_before_compilation": [
+          "preserved Missing Evidence, unresolved service, and missing evidence status exactly",
+          "kept Not Voting non-directional",
+          "kept rolls 6 and 7 in one ordered episode"
+        ]
+      },
+      "compiler_input": {
+        "case_scope": "full_record",
+        "shared_semantics": {
+          "actions": [
+            {
+              "action_id": "house:119:2:6",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Retention of Energy-Water and Interior-Environment divisions",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-006:exact_stage",
+              "legislative_stage": "retention",
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "structural_metadata": {"stage_order": 1},
+              "policy_trait_refs": ["appropriates_energy_environment_programs"],
+              "source_ids": ["clerk_roll_006"]
+            },
+            {
+              "action_id": "house:119:2:7",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Cross-domain final passage bounded to the Energy-Water and Interior-Environment divisions",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-007:exact_stage",
+              "legislative_stage": "final passage",
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "structural_metadata": {"stage_order": 2},
+              "policy_trait_refs": ["cross_domain_package"],
+              "source_ids": ["clerk_roll_007"]
+            },
+            {
+              "action_id": "house:119:2:55",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Critical Mineral Dominance Act passage",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-055:proposed_change",
+              "legislative_stage": "House passage",
+              "episode_id": "critical-mineral-project-acceleration",
+              "structural_metadata": {"single_action_episode": true},
+              "policy_trait_refs": ["accelerates_domestic_mineral_projects"],
+              "source_ids": ["clerk_roll_055"]
+            },
+            {
+              "action_id": "house:119:2:64",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Critical mineral supply strategy bill passage",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-064:proposed_change",
+              "legislative_stage": "House passage",
+              "episode_id": "critical-mineral-supply-assessment-and-strategy",
+              "structural_metadata": {"single_action_episode": true},
+              "policy_trait_refs": ["assesses_supply_chain_vulnerability"],
+              "source_ids": ["clerk_roll_064"]
+            },
+            {
+              "action_id": "house:119:2:76",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Efficiency rulemaking bill passage",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-076:proposed_change",
+              "legislative_stage": "House passage",
+              "episode_id": "home-energy-efficiency-rulemaking",
+              "structural_metadata": {"single_action_episode": true},
+              "policy_trait_refs": ["constrains_efficiency_rulemaking"],
+              "source_ids": ["clerk_roll_076"]
+            },
+            {
+              "action_id": "house:119:2:78",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Home-energy program repeal bill passage",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-078:proposed_change",
+              "legislative_stage": "House passage",
+              "episode_id": "home-energy-program-repeal",
+              "structural_metadata": {"single_action_episode": true},
+              "policy_trait_refs": ["repeals_home_energy_programs"],
+              "source_ids": ["clerk_roll_078"]
+            },
+            {
+              "action_id": "house:119:2:93",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Federal land regulatory bill passage",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-093:proposed_change",
+              "legislative_stage": "House passage",
+              "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+              "structural_metadata": {"single_action_episode": true},
+              "policy_trait_refs": ["limits_land_manager_authority"],
+              "source_ids": ["clerk_roll_093"]
+            }
+          ],
+          "episodes": [
+            {
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "action_ids": ["house:119:2:6", "house:119:2:7"],
+              "policy_family_id": null,
+              "method_boundary_types": ["episode_counting"]
+            },
+            {
+              "episode_id": "critical-mineral-project-acceleration",
+              "action_ids": ["house:119:2:55"],
+              "policy_family_id": "critical-mineral-supply"
+            },
+            {
+              "episode_id": "critical-mineral-supply-assessment-and-strategy",
+              "action_ids": ["house:119:2:64"],
+              "policy_family_id": "critical-mineral-supply"
+            },
+            {
+              "episode_id": "home-energy-efficiency-rulemaking",
+              "action_ids": ["house:119:2:76"],
+              "policy_family_id": "home-energy-policy"
+            },
+            {
+              "episode_id": "home-energy-program-repeal",
+              "action_ids": ["house:119:2:78"],
+              "policy_family_id": "home-energy-policy"
+            },
+            {
+              "episode_id": "lead-ammunition-and-tackle-on-federal-lands",
+              "action_ids": ["house:119:2:93"],
+              "policy_family_id": null
+            }
+          ],
+          "policy_families": [
+            {
+              "policy_family_id": "critical-mineral-supply",
+              "episode_ids": [
+                "critical-mineral-project-acceleration",
+                "critical-mineral-supply-assessment-and-strategy"
+              ]
+            },
+            {
+              "policy_family_id": "home-energy-policy",
+              "episode_ids": [
+                "home-energy-efficiency-rulemaking",
+                "home-energy-program-repeal"
+              ]
+            }
+          ],
+          "policy_traits": [
+            {
+              "trait_id": "domestic_resource_supply_actions",
+              "meaning_ref": "reviewed:domestic_resource_supply_actions",
+              "action_ids": ["house:119:2:55", "house:119:2:64"],
+              "review_state": "reviewed_reusable_input"
+            },
+            {
+              "trait_id": "home_energy_federal_role_changes",
+              "meaning_ref": "reviewed:home_energy_federal_role_changes",
+              "action_ids": ["house:119:2:76", "house:119:2:78"],
+              "review_state": "reviewed_reusable_input"
+            }
+          ],
+          "trait_relationships": [],
+          "shared_review_dependencies": [],
+          "source_render_constraints": []
+        },
+        "members": [
+          {
+            "member_id": "M001245",
+            "party": "unknown",
+            "actions": [
+              {
+                "action_id": "house:119:2:6",
+                "status": "Missing Evidence",
+                "service_status": "unresolved",
+                "evidence_status": "missing"
+              },
+              {
+                "action_id": "house:119:2:7",
+                "status": "Missing Evidence",
+                "service_status": "unresolved",
+                "evidence_status": "missing"
+              },
+              {
+                "action_id": "house:119:2:55",
+                "status": "Not Voting",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved"
+              },
+              {
+                "action_id": "house:119:2:64",
+                "status": "Nay",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved"
+              },
+              {
+                "action_id": "house:119:2:76",
+                "status": "Not Voting",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved"
+              },
+              {
+                "action_id": "house:119:2:78",
+                "status": "Not Voting",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved"
+              },
+              {
+                "action_id": "house:119:2:93",
+                "status": "Nay",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "semir-held-02-source-conflict-unsupported",
+      "evidence_reviewed": {
+        "dossier_paths": [
+          "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/side_by_side_review.md",
+          "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json"
+        ],
+        "source_ids": ["clerk_roll_131", "congress_s331"],
+        "mutation_ids": []
+      },
+      "semantic_classification": {
+        "established_reusable_semantics": [
+          "the Clerk source resolves a Yea on House roll 131",
+          "a source completeness or argument-availability limit is not a behavioral proposition"
+        ],
+        "newly_proposed_semantics": [
+          {
+            "proposal": "represent the unresolved action-source mapping as a shared source constraint",
+            "review_state": "human_review_pending"
+          }
+        ],
+        "unresolved_semantics": [
+          "the supplied Congress source describes S. 331 while the manifest maps roll 131 to a different House action",
+          "policy meaning and policy traits for the exact action are unresolved"
+        ],
+        "unsupported_or_conflicting_evidence": [
+          "congress_s331 cannot support a policy claim about house:119:1:131",
+          "no opposing argument or substitute policy meaning may be synthesized"
+        ]
+      },
+      "adversarial_self_review": {
+        "concerns_found": [
+          "the parent or neighboring fentanyl context could be inherited by roll 131",
+          "a resolved member vote could be mistaken for resolved action meaning",
+          "the compiler could manufacture a substantive notable choice from an unresolved meaning reference"
+        ],
+        "corrections_before_compilation": [
+          "set parent_context_used to false",
+          "used an explicitly unresolved action-meaning reference and no policy trait",
+          "added a source-completeness constraint forbidding a substantive rendering"
+        ]
+      },
+      "compiler_input": {
+        "case_scope": "full_record",
+        "shared_semantics": {
+          "actions": [
+            {
+              "action_id": "house:119:1:131",
+              "eligibility": {
+                "domain": "JUSTICE_PUBLIC_SAFETY",
+                "decision": "accepted",
+                "exact_action_basis": "The Clerk manifest resolves the House passage action, but the supplied Congress source does not describe that action",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "unresolved:clerk-roll-131-versus-congress-s331",
+              "legislative_stage": "House passage",
+              "episode_id": "unresolved-house-passage-roll-131",
+              "structural_metadata": {
+                "single_action_episode": true,
+                "argument_evidence": "conflicting_action_source"
+              },
+              "policy_trait_refs": [],
+              "source_ids": ["clerk_roll_131", "congress_s331"]
+            }
+          ],
+          "episodes": [
+            {
+              "episode_id": "unresolved-house-passage-roll-131",
+              "action_ids": ["house:119:1:131"],
+              "policy_family_id": null
+            }
+          ],
+          "policy_families": [],
+          "policy_traits": [],
+          "trait_relationships": [],
+          "shared_review_dependencies": [],
+          "source_render_constraints": [
+            {
+              "constraint_id": "source:held02-conflicting-action-source",
+              "constraint_type": "source_completeness",
+              "source_ids": ["clerk_roll_131", "congress_s331"],
+              "action_ids": ["house:119:1:131"],
+              "presentation_target": "source_note",
+              "render_rule": "Do not render a substantive policy meaning, trait, argument, or conclusion until the action-source conflict is resolved."
+            }
+          ]
+        },
+        "members": [
+          {
+            "member_id": "F000477",
+            "party": "D",
+            "actions": [
+              {
+                "action_id": "house:119:1:131",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "semir-held-03-title-order-invariance",
+      "evidence_reviewed": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
+          "docs/editorial/commissioning_domain_v1/corrected/mutation_report.json",
+          "docs/editorial/commissioning_domain_v1/corrected/domain_eligibility_report.json",
+          "docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_006.json",
+          "docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_055.json",
+          "docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_064.json"
+        ],
+        "source_ids": [
+          "clerk_roll_006",
+          "clerk_roll_007",
+          "clerk_roll_055",
+          "clerk_roll_064"
+        ],
+        "mutation_ids": [
+          "reordered_actions_episodes",
+          "opaque_action_titles",
+          "member_identity_change_identical_votes"
+        ]
+      },
+      "semantic_classification": {
+        "established_reusable_semantics": [
+          "rolls 6 and 7 form one ordered appropriations episode",
+          "rolls 55 and 64 are separate episodes in one critical-mineral-supply policy family",
+          "rolls 55 and 64 share the reviewed domestic-resource-supply trait",
+          "stable semantic identities derive from evidence rather than list order, display titles, member identity, or party"
+        ],
+        "newly_proposed_semantics": [],
+        "unresolved_semantics": [],
+        "unsupported_or_conflicting_evidence": []
+      },
+      "adversarial_self_review": {
+        "concerns_found": [
+          "input order could leak into episode or proposition order",
+          "the package title could cause rolls 6 and 7 to be grouped with mineral bills",
+          "member or party identity could alter semantic selection",
+          "the appropriations stage order could be lost"
+        ],
+        "corrections_before_compilation": [
+          "preserved the held-out reordered action list",
+          "grouped only rolls 6 and 7 by legislative episode",
+          "kept mineral bills as separate episodes within a policy family",
+          "retained explicit stage_order metadata and no display-title input"
+        ]
+      },
+      "compiler_input": {
+        "case_scope": "full_record",
+        "shared_semantics": {
+          "actions": [
+            {
+              "action_id": "house:119:2:64",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Critical mineral supply strategy bill passage",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-064:proposed_change",
+              "legislative_stage": "House passage",
+              "episode_id": "critical-mineral-supply-assessment-and-strategy",
+              "structural_metadata": {"single_action_episode": true},
+              "policy_trait_refs": ["assesses_supply_chain_vulnerability"],
+              "source_ids": ["clerk_roll_064"]
+            },
+            {
+              "action_id": "house:119:2:6",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Retention of Energy-Water and Interior-Environment divisions",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-006:exact_stage",
+              "legislative_stage": "retention",
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "structural_metadata": {"stage_order": 1},
+              "policy_trait_refs": ["appropriates_energy_environment_programs"],
+              "source_ids": ["clerk_roll_006"]
+            },
+            {
+              "action_id": "house:119:2:55",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Critical Mineral Dominance Act passage",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-055:proposed_change",
+              "legislative_stage": "House passage",
+              "episode_id": "critical-mineral-project-acceleration",
+              "structural_metadata": {"single_action_episode": true},
+              "policy_trait_refs": ["accelerates_domestic_mineral_projects"],
+              "source_ids": ["clerk_roll_055"]
+            },
+            {
+              "action_id": "house:119:2:7",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Cross-domain final passage bounded to the Energy-Water and Interior-Environment divisions",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-007:exact_stage",
+              "legislative_stage": "final passage",
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "structural_metadata": {"stage_order": 2},
+              "policy_trait_refs": ["cross_domain_package"],
+              "source_ids": ["clerk_roll_007"]
+            }
+          ],
+          "episodes": [
+            {
+              "episode_id": "critical-mineral-supply-assessment-and-strategy",
+              "action_ids": ["house:119:2:64"],
+              "policy_family_id": "critical-mineral-supply"
+            },
+            {
+              "episode_id": "fy2026-energy-water-interior-appropriations",
+              "action_ids": ["house:119:2:6", "house:119:2:7"],
+              "policy_family_id": null,
+              "method_boundary_types": ["episode_counting"]
+            },
+            {
+              "episode_id": "critical-mineral-project-acceleration",
+              "action_ids": ["house:119:2:55"],
+              "policy_family_id": "critical-mineral-supply"
+            }
+          ],
+          "policy_families": [
+            {
+              "policy_family_id": "critical-mineral-supply",
+              "episode_ids": [
+                "critical-mineral-supply-assessment-and-strategy",
+                "critical-mineral-project-acceleration"
+              ]
+            }
+          ],
+          "policy_traits": [
+            {
+              "trait_id": "domestic_resource_supply_actions",
+              "meaning_ref": "reviewed:domestic_resource_supply_actions",
+              "action_ids": ["house:119:2:64", "house:119:2:55"],
+              "review_state": "reviewed_reusable_input"
+            },
+            {
+              "trait_id": "federal_environment_energy_funding",
+              "meaning_ref": "reviewed:federal_environment_energy_funding",
+              "action_ids": ["house:119:2:7", "house:119:2:6"],
+              "review_state": "reviewed_reusable_input"
+            }
+          ],
+          "trait_relationships": [],
+          "shared_review_dependencies": [],
+          "source_render_constraints": []
+        },
+        "members": [
+          {
+            "member_id": "A000372",
+            "party": "R",
+            "actions": [
+              {
+                "action_id": "house:119:2:64",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved"
+              },
+              {
+                "action_id": "house:119:2:6",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved"
+              },
+              {
+                "action_id": "house:119:2:55",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved"
+              },
+              {
+                "action_id": "house:119:2:7",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "semir-held-04-cross-domain-final-passage",
+      "evidence_reviewed": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/domain_eligibility_report.json",
+          "docs/editorial/commissioning_domain_v1/corrected/rejected_actions.json",
+          "docs/editorial/commissioning_domain_v1/dossiers/roll_005.json",
+          "docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_007.json",
+          "docs/editorial/commissioning_domain_v1/corrected/mutation_report.json"
+        ],
+        "source_ids": [
+          "clerk_roll_005",
+          "clerk_roll_007",
+          "congress_hr6938_text"
+        ],
+        "mutation_ids": ["wrong_action_stage"]
+      },
+      "semantic_classification": {
+        "established_reusable_semantics": [
+          "roll 5 is rejected for Environment and Energy because the exact action retained Division A",
+          "roll 7 is accepted as cross-domain final passage with Environment and Energy meaning bounded to Divisions B and C",
+          "parent-package context cannot establish exact-action eligibility",
+          "rejected context cannot enter substantive coverage"
+        ],
+        "newly_proposed_semantics": [
+          {
+            "proposal": "carry the cross-domain scope boundary as a source/render constraint for later presentation",
+            "review_state": "human_review_pending"
+          }
+        ],
+        "unresolved_semantics": [],
+        "unsupported_or_conflicting_evidence": [
+          "a Yea on roll 7 cannot be rendered as support for every provision or every domain in H.R. 6938"
+        ]
+      },
+      "adversarial_self_review": {
+        "concerns_found": [
+          "roll 5 could inherit Environment and Energy eligibility from the parent package",
+          "roll 7 could be mislabeled as a retention stage",
+          "cross-domain package structure could be treated as a policy trait",
+          "the rejected action could enter member coverage"
+        ],
+        "corrections_before_compilation": [
+          "kept roll 5 rejected with parent_context_used false",
+          "kept roll 7 at final passage",
+          "recorded package scope as structural metadata and a render constraint, not a policy trait",
+          "provided member status only for accepted roll 7"
+        ]
+      },
+      "compiler_input": {
+        "case_scope": "full_record",
+        "shared_semantics": {
+          "actions": [
+            {
+              "action_id": "house:119:2:5",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "rejected",
+                "exact_action_basis": "Division A is Commerce, Justice, Science and not materially Environment and Energy",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "domain_eligibility_report.decisions.5",
+              "legislative_stage": "retention vote",
+              "episode_id": null,
+              "structural_metadata": {
+                "division": "A",
+                "parent_package": "H.R. 6938",
+                "package_stage": "division retention"
+              },
+              "policy_trait_refs": [],
+              "source_ids": ["clerk_roll_005", "congress_hr6938_text"]
+            },
+            {
+              "action_id": "house:119:2:7",
+              "eligibility": {
+                "domain": "ENVIRONMENT_ENERGY",
+                "decision": "accepted",
+                "exact_action_basis": "Final passage is cross-domain; Environment and Energy meaning is limited to the Energy-Water and Interior-Environment divisions",
+                "parent_context_used": false
+              },
+              "action_meaning_ref": "roll-007:exact_stage",
+              "legislative_stage": "final passage",
+              "episode_id": "fy2026-cross-domain-appropriations-final-passage",
+              "structural_metadata": {
+                "parent_package": "H.R. 6938",
+                "package_stage": "final passage",
+                "divisions": ["A", "B", "C"],
+                "single_action_episode": true
+              },
+              "policy_trait_refs": ["cross_domain_package"],
+              "source_ids": ["clerk_roll_007", "congress_hr6938_text"]
+            }
+          ],
+          "episodes": [
+            {
+              "episode_id": "fy2026-cross-domain-appropriations-final-passage",
+              "action_ids": ["house:119:2:7"],
+              "policy_family_id": null
+            }
+          ],
+          "policy_families": [],
+          "policy_traits": [
+            {
+              "trait_id": "federal_environment_energy_funding",
+              "meaning_ref": "reviewed:federal_environment_energy_funding",
+              "action_ids": ["house:119:2:7"],
+              "review_state": "reviewed_reusable_input"
+            }
+          ],
+          "trait_relationships": [],
+          "shared_review_dependencies": [],
+          "source_render_constraints": [
+            {
+              "constraint_id": "source:held04-cross-domain-scope",
+              "constraint_type": "source_completeness",
+              "source_ids": ["clerk_roll_007", "congress_hr6938_text"],
+              "action_ids": ["house:119:2:7"],
+              "presentation_target": "source_note",
+              "render_rule": "Limit Environment and Energy meaning to the Energy-Water and Interior-Environment divisions; do not imply support for every provision or domain in the package."
+            }
+          ]
+        },
+        "members": [
+          {
+            "member_id": "C001059",
+            "party": "D",
+            "actions": [
+              {
+                "action_id": "house:119:2:7",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
