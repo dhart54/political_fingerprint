@@ -3,6 +3,7 @@ from __future__ import annotations
 import ast
 import copy
 import hashlib
+import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -97,6 +98,21 @@ def _selection(result: dict[str, Any]) -> set[tuple[Any, ...]]:
 
 
 class EditorialSemanticIRReferenceTests(unittest.TestCase):
+    def test_committed_corpora_pass_draft_07_schema_validation(self) -> None:
+        completed = subprocess.run(
+            ["node", "scripts/validate_editorial_semantic_ir_schema.mjs"],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        self.assertIn('"status":"pass"', completed.stdout)
+        self.assertIn(
+            '"source_constraint_without_semantic_effect":"rejected"',
+            completed.stdout,
+        )
+
     def test_committed_accepted_references_validate(self) -> None:
         case_ids = validate_accepted_references(_load(ACCEPTED))
         self.assertEqual(len(case_ids), 12)

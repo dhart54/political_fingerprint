@@ -83,6 +83,10 @@ Starting commit: `c7b99ef0be5ac95884ecaac141c6a0e7b770647d`
 - The recursive input guard treated a field name as output-only regardless of
   path. A direct shared-review dependency legitimately owns `review_route`;
   root and member-output locations remain prohibited.
+- Follow-up review found `semantic_effect` attached to the wrong Draft-07
+  `required` array. Ajv 6.15 was already available through the frontend
+  lockfile/runtime, so actual schema validation was added without a dependency
+  change.
 
 ## Decisions And Rationale
 
@@ -98,6 +102,9 @@ Starting commit: `c7b99ef0be5ac95884ecaac141c6a0e7b770647d`
 
 - Branch creation required the repository's protected Git-metadata permission;
   it succeeded without changing the worktree baseline.
+- Corrected the schema-only `semantic_effect` requirement: method boundaries do
+  not require it, while source/render constraints do. Compiler semantics,
+  accepted outputs, and protected artifacts were not changed.
 
 ## Validation Results
 
@@ -110,6 +117,11 @@ Starting commit: `c7b99ef0be5ac95884ecaac141c6a0e7b770647d`
   including anonymous service/evidence, source-conflict, case-3 invariance,
   path-aware input, anti-branch, and protected-integrity properties; 0.2518 s
   wall (0.156 s unittest).
+- `node scripts/validate_editorial_semantic_ir_schema.mjs`: actual Draft-07
+  validation passed for both accepted corpora and the original held-out input
+  corpus; method-boundary, missing-effect rejection, and typed-effect
+  regressions passed.
+- Focused suite after the Draft-07 correction: 26 tests passed in 0.225 s.
 - `python scripts/check_documentation_governance.py`: passed; 0.1601 s wall.
 - `git diff --check`: passed; 0.0529 s wall.
 - Focused measured wall time: 0.6332 s.
@@ -141,3 +153,4 @@ Starting commit: `c7b99ef0be5ac95884ecaac141c6a0e7b770647d`
 - Remaining limitations: acceptance is confined to the Semantic IR
   compiler/reference contract; no runtime or publication authority is granted.
 - Recommended next step: review draft PR #110; do not merge automatically.
+  The Draft-07 correction remains on the same branch and PR.
