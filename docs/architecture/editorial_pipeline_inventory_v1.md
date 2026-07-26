@@ -40,13 +40,17 @@ no legacy replay path or compatibility adapter.
 ## State boundaries
 
 - Accepted Semantic IR corpora and receipts remain unchanged.
-- Frozen historical evidence remains in place but is not a canonical input.
+- Frozen historical evidence remains in place but is not a canonical input. Its
+  six preserved roots are locked by a 119-file base-commit hash manifest.
 - All source-acquisition capability remains available, including currently
   unused clients and parsers.
 - The 71 persisted historical artifacts remain unpublished; persistence and
   publication tooling remains protected.
 - The public representative route deliberately uses basic vote evidence and
-  receipts. No old editorial registry exists.
+  receipts. Its profile panel shows neutral coverage counts, and issue
+  availability includes actual Present or Not Voting-only records. The current
+  API does not supply expected-but-missing actions, so React does not synthesize
+  them. No old editorial registry exists.
 - The former `/golden-render-fixture` route is absent.
 - IR-native public presentation and database cleanup are deferred.
 

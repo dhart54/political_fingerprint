@@ -39,12 +39,18 @@
       "docs/editorial/blind_editorial_pipeline_validation_v1/",
       "docs/editorial/commissioning_domain_v1/",
       "docs/semantic_ir/held_out_results/"
-    ]
+    ],
+    "whole_tree_manifest": "docs/editorial/frozen_historical_evidence_manifest_v1.json",
+    "manifest_file_count": 119
   },
   "frontend": {
     "rich_editorial_runtime_available": false,
     "representative_route": "/",
     "representative_route_state": "basic_vote_evidence_and_receipts",
+    "profile_summary_state": "neutral_coverage_counts_and_issue_links",
+    "issue_availability_basis": "actual_position_action_counts",
+    "non_directional_actual_actions_available": true,
+    "expected_missing_actions_available": false,
     "removed_routes": ["/golden-render-fixture"],
     "removed_route_result": "404",
     "ir_native_presentation": "deferred"

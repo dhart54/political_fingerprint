@@ -69,16 +69,23 @@
       "disposition": "retain_unchanged"
     },
     {
+      "path": "frontend/components/ProfileQuickRead.js",
+      "classification": "unrelated",
+      "purpose": "Neutral action and issue-area coverage with links to available vote evidence; no best-issue selection or analytical synthesis.",
+      "effects": ["frontend"],
+      "disposition": "retain_neutral_coverage"
+    },
+    {
       "path": "frontend/components/PositionByIssue.js",
       "classification": "unrelated",
-      "purpose": "Basic issue evidence, non-directional state distinctions, and source receipts without editorial inference.",
+      "purpose": "Basic issue evidence, actual-action availability including non-directional-only domains, and source receipts without editorial inference.",
       "effects": ["frontend"],
       "disposition": "retain_reduced_fallback"
     },
     {
       "path": "frontend/lib/basicEvidencePresentation.mjs",
       "classification": "unrelated",
-      "purpose": "Count and label already-supplied evidence states without constructing analytical conclusions.",
+      "purpose": "Count and label actual supplied evidence states without constructing analytical conclusions or synthesizing expected-but-missing actions.",
       "effects": ["frontend"],
       "disposition": "retain_reduced_fallback"
     }

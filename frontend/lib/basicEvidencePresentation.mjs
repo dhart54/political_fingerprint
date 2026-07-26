@@ -9,7 +9,6 @@ export function buildBasicEvidencePresentation(rows = []) {
   const proceduralRows = rows.filter(isProceduralContextRow);
   const notVotingRows = rows.filter((row) => normalize(row.position) === "not_voting");
   const presentRows = rows.filter((row) => normalize(row.position) === "present");
-  const missingEvidenceRows = rows.filter(isMissingEvidenceRow);
   const substantiveRows = rows.filter((row) => (
     normalize(row.interpretation_status) === "interpreted"
     && ["yea", "nay"].includes(normalize(row.position))
@@ -20,7 +19,6 @@ export function buildBasicEvidencePresentation(rows = []) {
     && !proceduralRows.includes(row)
     && !notVotingRows.includes(row)
     && !presentRows.includes(row)
-    && !missingEvidenceRows.includes(row)
   ));
   const state = rows.length > 0 && proceduralRows.length === rows.length
     ? BASIC_EVIDENCE_STATE.proceduralContextOnly
@@ -40,26 +38,27 @@ export function buildBasicEvidencePresentation(rows = []) {
     proceduralRecords: proceduralRows.length,
     notVoting: notVotingRows.length,
     present: presentRows.length,
-    missingEvidence: missingEvidenceRows.length,
     limitedRecords: limitedRows.length,
   };
 }
 
 export function issueAvailabilityLabel(row) {
-  const reviewed = Number(row?.interpreted_support_count || 0)
-    + Number(row?.interpreted_oppose_count || 0);
-  return reviewed > 0 ? "Vote evidence" : "Limited record";
+  if (!hasAvailableIssueEvidence(row)) {
+    return "No evidence";
+  }
+  return Number(row?.recorded_votes || 0) > 0
+    ? "Vote evidence"
+    : "Non-directional evidence";
 }
 
-function isMissingEvidenceRow(row) {
-  const values = [
-    row?.position,
-    row?.action_status,
-    row?.evidence_status,
-    row?.interpretation_status,
-    row?.service_status,
-  ].map(normalize);
-  return values.includes("missing_evidence") || values.includes("missing");
+export function hasAvailableIssueEvidence(row) {
+  const total = Number(row?.total_votes);
+  if (Number.isFinite(total)) {
+    return total > 0;
+  }
+  return Number(row?.yea_count || 0)
+    + Number(row?.nay_count || 0)
+    + Number(row?.other_count || 0) > 0;
 }
 
 function normalize(value) {

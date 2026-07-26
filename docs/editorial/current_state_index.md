@@ -9,10 +9,14 @@ The machine-readable authority is
 - The pre-IR builders, milestone generators, old frontend adapters, registries,
   review fixtures, and rich renderer are deleted and cannot be replayed.
 - Frozen dossiers, source manifests, proof packets, receipts, provenance, and
-  generated historical evidence remain in place as noncanonical evidence.
+  generated historical evidence remain in place as noncanonical evidence. A
+  119-file whole-tree manifest locks those roots to the cutover base.
 - Acquisition capability and tests remain intact.
 - The representative route deliberately renders basic vote evidence and source
-  receipts. The former `/golden-render-fixture` route is absent.
+  receipts. Its top panel reports neutral action and issue-area coverage; actual
+  Present and Not Voting-only issue areas remain selectable. Expected-but-missing
+  actions are not emitted by the current API and are not synthesized in React.
+  The former `/golden-render-fixture` route is absent.
 - The 71 historically staged artifacts remain unpublished; persistence,
   publication, database, deployment, and production state were not changed by
   the cutover.

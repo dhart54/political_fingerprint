@@ -13,13 +13,11 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   const sourceButtonStart = source.indexOf("{row.source_url ?", voteRowStart);
   const detailsStart = source.indexOf("<details", voteRowStart);
 
-  assert.ok(source.includes("Record Summary"), "profile should provide one top-level record summary");
-  assert.ok(source.includes("narrative.patternRows"), "reviewed issue patterns should appear inside the top-level summary");
-  assert.ok(source.includes("Open Best Read"), "quick read should provide a direct path to the strongest issue read");
+  assert.ok(source.includes("Record Coverage"), "profile should provide one neutral record coverage summary");
+  assert.ok(source.includes("Open vote evidence"), "profile issue links should open source-backed vote evidence");
+  assert.ok(source.includes("Available actions"), "profile should expose descriptive evidence counts");
   assert.ok(source.includes("BasicIssueList"), "the issue evidence surface should use neutral navigation");
   assert.ok(source.includes("without combining them into a broader issue conclusion"), "the basic fallback should state its semantic limit");
-  assert.ok(source.includes("row.preview.countLine"), "profile issue cards should render preview counts");
-  assert.ok(source.includes("row.preview.themeLine"), "profile issue cards should render preview themes");
   assert.ok(source.includes("Evidence group overview"), "grouped evidence preview should be user-visible as a secondary overview");
   assert.ok(source.includes("formatCompactEvidenceGroupingOverview"), "compact grouping summary should be rendered");
   assert.ok(source.includes("IssueNavigation"), "large profiles should expose compact issue navigation");
@@ -47,17 +45,16 @@ test("grouped preview copy preserves limited and not-voting caveats", () => {
   assert.match(source, /should not be treated as final policy votes/);
 });
 
-test("representative page flow directs the voter without changing evidence logic", () => {
+test("representative page flow exposes neutral coverage without changing evidence logic", () => {
   const source = [
     readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8"),
     readFileSync(new URL("../components/ProfileQuickRead.js", import.meta.url), "utf8"),
   ].join("\n");
 
-  assert.match(source, /clearest reviewed issue read/);
-  assert.match(source, /Record Summary/);
-  assert.match(source, /limited issue sections are intentionally lower priority/);
-  assert.match(source, /Strongest evidence/);
-  assert.match(source, /Record read/);
+  assert.match(source, /Record Coverage/);
+  assert.match(source, /Available actions/);
+  assert.match(source, /These counts do not combine the actions into an analytical conclusion/);
+  assert.doesNotMatch(source, /Open Best Read|Strongest evidence|Record read|clearest reviewed issue read/);
   assert.doesNotMatch(source, /QuickMetric eyebrow="Change"|Steady mix|Issue mix changed|fetchDrift/);
   assert.match(source, /Jump to issue/);
   assert.match(source, /without combining them into a broader issue conclusion/);
@@ -66,12 +63,12 @@ test("representative page flow directs the voter without changing evidence logic
   assert.doesNotMatch(source, /stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|Yes-pattern|No-pattern/);
 });
 
-test("quick read separates high-volume issue focus from clearest reviewed issue read", () => {
+test("quick read does not select or synthesize a best issue read", () => {
   const source = readFileSync(new URL("../components/ProfileQuickRead.js", import.meta.url), "utf8");
 
-  assert.match(source, /topFocus\.domain !== topPosition\.domain/);
-  assert.match(source, /It has the clearest reviewed vote meaning in this profile/);
-  assert.match(source, /has more recorded votes but is not the best first read/);
+  assert.match(source, /hasAvailableIssueEvidence/);
+  assert.match(source, /Open vote evidence/);
+  assert.doesNotMatch(source, /buildRecordNarrative|getBestIssueRead|fillMissingInterpretedCounts|mostly supported|mostly opposed|patternRows/);
 });
 
 test("no-preference record views avoid alignment framing in neutral summaries", () => {

@@ -13,11 +13,12 @@ experience from the existing positions and evidence APIs. The removed
 ## Basic evidence contract
 
 `frontend/app/page.js` supplies the selected representative to
-`frontend/components/PositionByIssue.js`. The component loads issue summaries
-and exact vote evidence with `fetchPositions` and `fetchPositionEvidence`, then
-renders:
+`frontend/components/ProfileQuickRead.js` and
+`frontend/components/PositionByIssue.js`. The former renders neutral coverage
+counts and issue links. The latter loads issue summaries and exact vote evidence
+with `fetchPositions` and `fetchPositionEvidence`, then renders:
 
-1. issue selection and readiness;
+1. issue selection based on actual evidence availability;
 2. a bounded basic-evidence notice;
 3. representative Yes/No vote examples;
 4. the complete grouped vote list;
@@ -36,13 +37,13 @@ These states remain distinct:
 - limited context;
 - Present;
 - Not Voting;
-- missing evidence;
-- outside-service and unresolved-service states when supplied upstream.
 
 Present and Not Voting are resolved non-directional actions. Procedural and
-limited-context rows do not become support or opposition. Missing evidence is
-not evidence of no position. A narrow amendment does not become final-passage
-evidence for its parent measure.
+limited-context rows do not become support or opposition. The current production
+positions and evidence APIs return actual vote records; they do not emit
+expected-but-missing actions or service-status rows. React therefore does not
+synthesize or claim to display those states. A narrow amendment does not become
+final-passage evidence for its parent measure.
 
 ## Deferred presentation
 

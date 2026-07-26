@@ -44,6 +44,8 @@ and are validated directly without executing their former generators.
 The exact classifications, deleted paths, transferred tests, preserved hashes,
 and validation results are recorded in
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.
+The complete 119-file frozen-tree hash set is recorded in
+`docs/editorial/frozen_historical_evidence_manifest_v1.json`.
 
 ## Frontend state
 
@@ -53,9 +55,11 @@ adapters, React components, fixture data, and review route are removed.
 The representative page deliberately uses the basic evidence path:
 
 - issue and representative selection remain available;
+- the top profile panel reports neutral action and issue-area coverage only;
 - exact vote evidence and official receipts remain available;
-- procedural, limited-context, Present, Not Voting, and missing-evidence states
-  remain distinct;
+- procedural, limited-context, Present, and Not Voting states remain distinct;
+- expected-but-missing actions are not supplied by the current production API
+  and are not synthesized in React;
 - React does not construct a broad analytical conclusion from vote counts;
 - `/golden-render-fixture` is absent and returns 404.
 

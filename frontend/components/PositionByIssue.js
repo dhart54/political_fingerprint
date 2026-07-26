@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { fetchLegislatorContact, fetchPositionEvidence, fetchPositions } from "../lib/api";
 import {
   buildBasicEvidencePresentation,
+  hasAvailableIssueEvidence,
   issueAvailabilityLabel,
 } from "../lib/basicEvidencePresentation.mjs";
 import { deriveEvidenceGroups } from "../lib/evidenceGrouping.mjs";
@@ -118,7 +119,7 @@ export default function PositionByIssue({
     });
   }, [evidenceRequest?.requestedAt]);
 
-  const rows = (state.payload?.positions || []).filter((row) => row.recorded_votes > 0);
+  const rows = (state.payload?.positions || []).filter(hasAvailableIssueEvidence);
   const selectedRow = rows.find((row) => row.domain === selectedDomain) || rows[0] || null;
   const hasOtherIssueRows = rows.length > 1;
 
@@ -191,7 +192,7 @@ export default function PositionByIssue({
           ) : null}
           {state.status === "ready" && rows.length === 0 ? (
             <div className="rounded-[1.5rem] border border-stone-200 bg-stone-50 px-4 py-4 text-sm text-stone-600">
-              No recorded yea/nay policy-vote splits are available in the current window. This is a coverage note, not an alignment finding.
+              No vote evidence is available in the current window. This is a coverage note, not an alignment finding.
             </div>
           ) : null}
           {state.status === "ready" ? (
@@ -230,7 +231,7 @@ export default function PositionByIssue({
 }
 
 function IssueNavigation({ inspectDomain, rows, selectedDomain }) {
-  const navRows = (rows || []).filter((row) => row.recorded_votes > 0 || getInterpretedCount(row) > 0);
+  const navRows = (rows || []).filter(hasAvailableIssueEvidence);
 
   if (navRows.length <= 1) {
     return null;
@@ -286,7 +287,7 @@ function BasicIssueList({ inspectDomain, rows, selectedDomain }) {
             {formatDomainLabel(row.domain)}
           </span>
           <span className="text-xs uppercase tracking-[0.12em] text-stone-500">
-            {row.recorded_votes || 0} votes
+            {row.total_votes || 0} actions
           </span>
           <span className="w-fit rounded-full bg-stone-100 px-2.5 py-1 text-[11px] uppercase tracking-[0.1em] text-stone-700">
             {issueAvailabilityLabel(row)}
@@ -828,7 +829,6 @@ function IssueEvidenceSummary({ rows }) {
     presentation.substantiveVotes ? `${presentation.substantiveVotes} substantive Yes/No ${presentation.substantiveVotes === 1 ? "vote" : "votes"}` : null,
     presentation.notVoting ? `${presentation.notVoting} Not Voting` : null,
     presentation.present ? `${presentation.present} Present` : null,
-    presentation.missingEvidence ? `${presentation.missingEvidence} missing-evidence ${presentation.missingEvidence === 1 ? "record" : "records"}` : null,
     presentation.proceduralRecords ? `${presentation.proceduralRecords} procedural ${presentation.proceduralRecords === 1 ? "record" : "records"}` : null,
     presentation.limitedRecords ? `${presentation.limitedRecords} limited-context ${presentation.limitedRecords === 1 ? "record" : "records"}` : null,
   ].filter(Boolean);
@@ -873,7 +873,7 @@ function InterpretationBreakdown({ representativeName, row, selectedActionRow, s
   const policyEffectText = buildUsefulInterpretationText(row.policy_effect);
   const interpretedVoteRead = buildInterpretedVoteRead(row);
   const whatHappened = row.what_happened || summaryText || policyEffectText;
-  const whyItMattered = row.why_it_mattered || buildPlainTakeaway(row);
+  const whyItMattered = buildUsefulInterpretationText(row.why_it_mattered) || policyEffectText;
   const voteCardSummary = buildVoteCardSummary(row, { representativeName }) || interpretedVoteRead;
   const limitedContextSummary = buildLimitedContextSummary(row);
   const contextBadges = buildContextBadges(row);
@@ -1015,33 +1015,6 @@ function buildVoteCardSummary(row, options = {}) {
 
 function buildLimitedContextSummary(row) {
   return buildGenericLimitedContextSummary(row);
-}
-
-function buildPlainTakeaway(row) {
-  const summary = buildUsefulInterpretationText(row.plain_english_summary);
-  const effect = buildUsefulInterpretationText(row.policy_effect);
-  const text = `${summary} ${effect}`.toLowerCase();
-
-  if (text.includes("budget blueprint") || text.includes("reconciliation")) {
-    return "This vote helped set the rules for a later fast-track budget bill that could affect taxes, spending, deficits, and the debt limit.";
-  }
-  if (text.includes("shutdown") || text.includes("continuing appropriations") || text.includes("short-term funding")) {
-    if (text.includes("back pay") || text.includes("reduction-in-force")) {
-      return "This vote was about ending a shutdown, paying federal workers, and deciding how agencies would operate while longer-term funding was still unresolved.";
-    }
-    return "This vote was about avoiding a shutdown by keeping most federal agencies temporarily funded while longer-term spending bills were unfinished.";
-  }
-  if (text.includes("small business administration") || text.includes("sba")) {
-    if (text.includes("loan")) {
-      return "This vote was about restricting access to certain SBA-backed small-business loans based on immigration or residency status.";
-    }
-    return "This vote was about limiting net new SBA rulemaking costs for small businesses.";
-  }
-  if (text.includes("military construction") || text.includes("veterans affairs")) {
-    return "This vote was about funding military construction, military housing, and veterans-related agencies and programs.";
-  }
-
-  return effect || summary;
 }
 
 function formatRecordedSideMeaning(value) {
@@ -1316,10 +1289,6 @@ function buildVoterFacingGroupLabel(group) {
   }
 
   return "";
-}
-
-function getInterpretedCount(row) {
-  return Number(row?.interpreted_support_count || 0) + Number(row?.interpreted_oppose_count || 0);
 }
 
 function formatChamber(chamber) {

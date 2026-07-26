@@ -3,6 +3,8 @@
   "milestone": "Political Fingerprint Editorial Hard Cutover V1",
   "base_commit": "bc7617b05f33d56cf83c4bb7e4b8113b945a3998",
   "branch": "codex/editorial-hard-cutover-v1",
+  "pull_request": 112,
+  "correction_reviewed_head": "6b8564823e58997078049b7d3ae0f8dbb71229dd",
   "rewritten_paths": [
     "AGENTS.md",
     "backend/scripts/generate_data_inventory_manifest.py",
@@ -21,10 +23,12 @@
     "docs/workflows/editorial-issue-frontend.md",
     "docs/workflows/editorial-standardization-pipeline.md",
     "frontend/components/PositionByIssue.js",
+    "frontend/components/ProfileQuickRead.js",
     "frontend/lib/issueOverview.test.mjs",
     "frontend/lib/issueReadiness.test.mjs",
     "frontend/lib/profileMvpProfile.test.mjs",
     "frontend/lib/proceduralContext.test.mjs",
+    "frontend/lib/voteCardSummary.mjs",
     "frontend/package.json",
     "frontend/playwright.config.mjs",
     "scripts/run_editorial_pipeline.py"
@@ -32,6 +36,7 @@
   "added_paths": [
     "backend/tests/test_editorial_cutover_integrity.py",
     "docs/editorial/editorial_hard_cutover_v1_receipt.json",
+    "docs/editorial/frozen_historical_evidence_manifest_v1.json",
     "docs/plans/editorial_hard_cutover_v1_spec.md",
     "frontend/lib/basicEvidencePresentation.mjs",
     "frontend/lib/basicEvidencePresentation.test.mjs",
@@ -168,7 +173,7 @@
       "path": "backend/tests/test_editorial_member_overlay.py",
       "change": "deleted",
       "classification": "semantic_invariant_already_covered",
-      "useful_invariant": "Present, Not Voting, missing evidence, and service status remain distinct and non-directional.",
+      "useful_invariant": "Present and Not Voting remain distinct and non-directional; missing evidence and service status remain typed Semantic IR states but are not synthesized when absent from the production evidence API.",
       "replacement_coverage": ["backend/tests/test_editorial_semantic_ir.py", "frontend/lib/basicEvidencePresentation.test.mjs"],
       "replacement_layer": "code_behavior"
     },
@@ -399,6 +404,12 @@
     "docs/editorial/commissioning_domain_v1",
     "docs/semantic_ir/held_out_results"
   ],
+  "frozen_historical_evidence_manifest": {
+    "path": "docs/editorial/frozen_historical_evidence_manifest_v1.json",
+    "base_commit": "bc7617b05f33d56cf83c4bb7e4b8113b945a3998",
+    "file_count": 119,
+    "coverage": "complete files under every preserved historical evidence root"
+  },
   "preserved_acquisition_paths": [
     "backend/app/etl",
     "backend/scripts/generate_data_inventory_manifest.py",
@@ -442,9 +453,16 @@
     "retained_fallback": [
       {
         "route": "/",
-        "result": "representative and issue selection with basic vote evidence and source receipts"
+        "result": "neutral profile coverage and issue selection with actual directional or non-directional vote evidence and source receipts"
       }
     ]
+  },
+  "frontend_evidence_boundary": {
+    "actual_present_and_not_voting_actions_selectable": true,
+    "expected_missing_actions_supplied_by_current_api": false,
+    "expected_missing_actions_synthesized_in_react": false,
+    "keyword_derived_policy_takeaways": false,
+    "profile_best_issue_or_directional_conclusion": false
   },
   "validation": [
     {
@@ -465,7 +483,12 @@
     {
       "command": "python -m pytest -q backend/tests/test_editorial_cutover_integrity.py",
       "status": "pass",
-      "result": "6 tests passed"
+      "result": "10 tests passed; whole-tree hashes and Economy, Justice, and Environment provenance relationships validated"
+    },
+    {
+      "command": "python -m pytest -q backend/tests/test_api_positions.py backend/tests/test_editorial_cutover_integrity.py",
+      "status": "pass",
+      "result": "33 tests passed"
     },
     {
       "command": "python -m pytest -q backend/tests/test_editorial_artifact_persistence.py",
@@ -490,7 +513,7 @@
     {
       "command": "npm run test:cutover-smoke --prefix frontend",
       "status": "pass",
-      "result": "2 Chromium smoke tests passed"
+      "result": "3 Chromium smoke tests passed, including Present-only and Not Voting-only issue selection"
     },
     {
       "command": "python scripts/run_editorial_pipeline.py validate --tier release --include-frontend",

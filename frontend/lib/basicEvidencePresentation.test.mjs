@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   BASIC_EVIDENCE_STATE,
   buildBasicEvidencePresentation,
+  hasAvailableIssueEvidence,
   issueAvailabilityLabel,
 } from "./basicEvidencePresentation.mjs";
 
@@ -13,7 +14,6 @@ test("basic evidence preserves directional and non-directional states without a 
     row({ position: "nay" }),
     row({ position: "present" }),
     row({ position: "not_voting" }),
-    row({ evidence_status: "missing_evidence", interpretation_status: "missing" }),
     row({ interpretation_status: "ambiguous" }),
   ]);
 
@@ -21,7 +21,6 @@ test("basic evidence preserves directional and non-directional states without a 
   assert.equal(result.substantiveVotes, 2);
   assert.equal(result.present, 1);
   assert.equal(result.notVoting, 1);
-  assert.equal(result.missingEvidence, 1);
   assert.equal(result.limitedRecords, 1);
   assert.match(result.message, /does not combine them into a broader issue conclusion/);
   assert.doesNotMatch(result.message, /mostly|pattern|supports|opposes/i);
@@ -44,9 +43,17 @@ test("procedural-only rows remain context and never become a policy position", (
   assert.match(result.message, /do not establish a direct position/);
 });
 
-test("issue availability is derived only from reviewed evidence presence", () => {
-  assert.equal(issueAvailabilityLabel({ interpreted_support_count: 1 }), "Vote evidence");
-  assert.equal(issueAvailabilityLabel({ interpreted_other_count: 3 }), "Limited record");
+test("issue availability follows actual evidence counts, including non-directional-only records", () => {
+  const directional = { recorded_votes: 1, total_votes: 1, yea_count: 1 };
+  const nonDirectional = { recorded_votes: 0, total_votes: 1, other_count: 1 };
+  const noEvidence = { recorded_votes: 0, total_votes: 0, interpreted_support_count: 1 };
+
+  assert.equal(hasAvailableIssueEvidence(directional), true);
+  assert.equal(issueAvailabilityLabel(directional), "Vote evidence");
+  assert.equal(hasAvailableIssueEvidence(nonDirectional), true);
+  assert.equal(issueAvailabilityLabel(nonDirectional), "Non-directional evidence");
+  assert.equal(hasAvailableIssueEvidence(noEvidence), false);
+  assert.equal(issueAvailabilityLabel(noEvidence), "No evidence");
 });
 
 function row(overrides = {}) {

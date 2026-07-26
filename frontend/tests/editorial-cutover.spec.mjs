@@ -9,6 +9,10 @@ const positions = {
   positions: [
     {
       domain: "ECONOMY_TAXES",
+      yea_count: 2,
+      nay_count: 2,
+      other_count: 1,
+      total_votes: 5,
       recorded_votes: 5,
       interpreted_support_count: 1,
       interpreted_oppose_count: 1,
@@ -16,10 +20,44 @@ const positions = {
       yea_share: 0.5,
       nay_share: 0.5,
     },
+    {
+      domain: "EDUCATION_WORKFORCE",
+      yea_count: 0,
+      nay_count: 0,
+      other_count: 1,
+      total_votes: 1,
+      recorded_votes: 0,
+      interpreted_support_count: 0,
+      interpreted_oppose_count: 0,
+      interpreted_other_count: 1,
+    },
+    {
+      domain: "ENVIRONMENT_ENERGY",
+      yea_count: 0,
+      nay_count: 0,
+      other_count: 1,
+      total_votes: 1,
+      recorded_votes: 0,
+      interpreted_support_count: 0,
+      interpreted_oppose_count: 0,
+      interpreted_other_count: 1,
+    },
+    {
+      domain: "HEALTHCARE",
+      yea_count: 0,
+      nay_count: 0,
+      other_count: 0,
+      total_votes: 0,
+      recorded_votes: 0,
+      interpreted_support_count: 0,
+      interpreted_oppose_count: 0,
+      interpreted_other_count: 0,
+    },
   ],
 };
 
-const evidence = {
+const evidenceByDomain = {
+  ECONOMY_TAXES: {
   domain: "ECONOMY_TAXES",
   evidence: [
     vote({ position: "yea", roll: 10 }),
@@ -34,6 +72,15 @@ const evidence = {
       uncertainty_note: "The exact action has limited context.",
     }),
   ],
+  },
+  EDUCATION_WORKFORCE: {
+    domain: "EDUCATION_WORKFORCE",
+    evidence: [vote({ domain: "EDUCATION_WORKFORCE", position: "not_voting", roll: 20 })],
+  },
+  ENVIRONMENT_ENERGY: {
+    domain: "ENVIRONMENT_ENERGY",
+    evidence: [vote({ domain: "ENVIRONMENT_ENERGY", position: "present", roll: 30 })],
+  },
 };
 
 test.beforeEach(async ({ page }) => {
@@ -43,8 +90,9 @@ test.beforeEach(async ({ page }) => {
       await route.fulfill({ json: positions });
       return;
     }
-    if (path.includes("/positions/ECONOMY_TAXES/evidence")) {
-      await route.fulfill({ json: evidence });
+    const evidenceMatch = path.match(/\/positions\/([^/]+)\/evidence$/);
+    if (evidenceMatch && evidenceByDomain[evidenceMatch[1]]) {
+      await route.fulfill({ json: evidenceByDomain[evidenceMatch[1]] });
       return;
     }
     if (path.endsWith("/contact")) {
@@ -68,6 +116,10 @@ test.beforeEach(async ({ page }) => {
 test("representative page deliberately renders basic evidence and vote receipts", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Aaron Bean", exact: true })).toBeVisible();
+  await expect(page.getByText("Record Coverage", { exact: true })).toBeVisible();
+  await expect(page.locator("body")).not.toContainText("Open Best Read");
+  await expect(page.locator("body")).not.toContainText("Strongest evidence");
+  await expect(page.getByRole("button", { name: /Inspect Healthcare votes/i })).toHaveCount(0);
   await page.getByRole("button", { name: "Show Votes" }).click();
 
   const summary = page.getByTestId("basic-evidence-summary");
@@ -84,6 +136,26 @@ test("representative page deliberately renders basic evidence and vote receipts"
   await expect(page.locator("body")).not.toContainText("Internal Server Error");
 });
 
+test("non-directional-only issue records remain selectable with receipts and no directional conclusion", async ({ page }) => {
+  await page.goto("/");
+
+  await page.getByRole("button", { name: "Inspect Education & Workforce votes" }).click();
+  const educationSummary = page.getByTestId("basic-evidence-summary");
+  await expect(educationSummary).toContainText("Not Voting");
+  await expect(educationSummary).not.toContainText(/support|opposition/i);
+  await expect(
+    page.locator('a[href="https://clerk.house.gov/evs/2025/roll020.xml"]').first(),
+  ).toHaveAttribute("href", "https://clerk.house.gov/evs/2025/roll020.xml");
+
+  await page.getByRole("button", { name: "Inspect Environment & Energy votes" }).click();
+  const environmentSummary = page.getByTestId("basic-evidence-summary");
+  await expect(environmentSummary).toContainText("Present");
+  await expect(environmentSummary).not.toContainText(/support|opposition/i);
+  await expect(
+    page.locator('a[href="https://clerk.house.gov/evs/2025/roll030.xml"]').first(),
+  ).toHaveAttribute("href", "https://clerk.house.gov/evs/2025/roll030.xml");
+});
+
 test("removed rich-editorial fixture route is deliberately unavailable", async ({ page }) => {
   const response = await page.goto("/golden-render-fixture");
   expect(response?.status()).toBe(404);
@@ -91,6 +163,7 @@ test("removed rich-editorial fixture route is deliberately unavailable", async (
 
 function vote({
   classification_reason = "policy_vote",
+  domain = "ECONOMY_TAXES",
   interpretation_status = "interpreted",
   position,
   roll,
@@ -103,8 +176,8 @@ function vote({
     congress: 119,
     description: title,
     interpretation_status,
-    issue_domain: "ECONOMY_TAXES",
-    issue_facet: "economy_taxes",
+    issue_domain: domain,
+    issue_facet: domain.toLowerCase(),
     oppose_position: "nay",
     plain_english_summary: `${title} summary.`,
     policy_effect: `${title} effect.`,
