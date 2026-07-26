@@ -32,7 +32,7 @@ The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-Active plan: [Editorial Semantic IR Engine V1](plans/editorial_semantic_ir_engine_v1.md)
+Active plan: [Editorial Hard Cutover V1](plans/editorial_hard_cutover_v1_spec.md)
 
 The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 

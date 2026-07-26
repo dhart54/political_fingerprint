@@ -486,7 +486,6 @@ def inventory_derived_artifacts(repo_root: Path) -> dict[str, Any]:
         "docs/analysis/house_comparable_policy_question_thresholds.csv",
         "docs/analysis/house_continuity_readiness_analysis.json",
         "docs/analysis/house_continuity_thresholds.csv",
-        "frontend/lib/goldenRenderFixture.mjs",
     ):
         path = repo_root / rel_path
         artifacts.append(_artifact_summary(repo_root, path))

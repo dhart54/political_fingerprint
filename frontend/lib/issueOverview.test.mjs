@@ -233,20 +233,13 @@ test("evidence card disclosure keeps public summary visible and audit details co
   assert.ok(officialVoteRecordStart > detailsStart && officialVoteRecordStart < detailsEnd, "official vote record action should stay inside details");
 });
 
-test("issue-card top copy helpers do not read raw evidence fields", () => {
+test("basic issue navigation does not rebuild issue-card conclusions", () => {
   const source = readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8");
-  const helperStart = source.indexOf("function formatIssueCardEvidenceLine");
-  const helperEnd = source.indexOf("function formatChamber", helperStart);
-  const helperSource = source.slice(helperStart, helperEnd);
 
-  assert.ok(helperStart > 0 && helperEnd > helperStart, "issue-card helper source should be present");
-  assert.doesNotMatch(
-    helperSource,
-    /what_happened|why_it_mattered|plain_english_summary|description|question|uncertainty_note|interpretation_reason|classification_reason|source_basis|policy_effect/i,
-  );
-  assert.match(helperSource, /buildIssueCardPreview/);
-  assert.match(helperSource, /countLine/);
-  assert.match(helperSource, /themeLine/);
+  assert.match(source, /function BasicIssueList/);
+  assert.match(source, /without combining them into a broader issue conclusion/);
+  assert.doesNotMatch(source, /buildIssueCardPreview|formatIssueCardStatusLabel|IssueReadinessTile/);
+  assert.doesNotMatch(source, /from "\.\.\/lib\/issueReadiness\.mjs"/);
 });
 
 test("public vote-card runtime has no member or roll-number presentation branches", () => {

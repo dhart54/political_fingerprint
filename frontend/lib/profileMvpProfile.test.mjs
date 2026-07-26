@@ -16,7 +16,8 @@ test("evidence panel exposes grouped preview and confidence labels without chang
   assert.ok(source.includes("Record Summary"), "profile should provide one top-level record summary");
   assert.ok(source.includes("narrative.patternRows"), "reviewed issue patterns should appear inside the top-level summary");
   assert.ok(source.includes("Open Best Read"), "quick read should provide a direct path to the strongest issue read");
-  assert.ok(source.includes("buildIssueCardPreview"), "issue cards should use the shared safe preview helper");
+  assert.ok(source.includes("BasicIssueList"), "the issue evidence surface should use neutral navigation");
+  assert.ok(source.includes("without combining them into a broader issue conclusion"), "the basic fallback should state its semantic limit");
   assert.ok(source.includes("row.preview.countLine"), "profile issue cards should render preview counts");
   assert.ok(source.includes("row.preview.themeLine"), "profile issue cards should render preview themes");
   assert.ok(source.includes("Evidence group overview"), "grouped evidence preview should be user-visible as a secondary overview");
@@ -59,7 +60,8 @@ test("representative page flow directs the voter without changing evidence logic
   assert.match(source, /Record read/);
   assert.doesNotMatch(source, /QuickMetric eyebrow="Change"|Steady mix|Issue mix changed|fetchDrift/);
   assert.match(source, /Jump to issue/);
-  assert.match(source, /without being forced into a confident pattern/);
+  assert.match(source, /without combining them into a broader issue conclusion/);
+  assert.match(source, /Open another issue to inspect its available vote receipts/);
   assert.match(source, /Context rows remain visible but do not drive support\/opposition summaries/);
   assert.doesNotMatch(source, /stored vote context|for-side|against-side|leans Nay|plus other reviewed measures|Yes-pattern|No-pattern/);
 });
@@ -90,16 +92,15 @@ test("no-preference record views avoid alignment framing in neutral summaries", 
   assert.doesNotMatch(source, /Your Issues vs This Record|Pick what you want this record checked against|Record shown|record check|Change Comparison Pair/);
 });
 
-test("issue cards use generalized readiness copy and contact follows vote cards", () => {
+test("basic issue navigation avoids readiness conclusions and contact follows vote cards", () => {
   const source = readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8");
   const civicActionIndex = source.indexOf("<EvidenceUtilityPanel");
   const reviewedVoteListIndex = source.indexOf("<ReviewedVoteList");
 
-  assert.match(source, /buildIssueCardPreview/);
-  assert.match(source, /countLine/);
-  assert.match(source, /themeLine/);
-  assert.match(source, /receiptLine/);
-  assert.match(source, /formatIssueCardStatusLabel/);
+  assert.match(source, /function BasicIssueList/);
+  assert.match(source, /issueAvailabilityLabel\(row\)/);
+  assert.match(source, /without combining them into a broader issue conclusion/);
+  assert.doesNotMatch(source, /buildIssueCardPreview|formatIssueCardStatusLabel|IssueReadinessTile/);
   assert.ok(reviewedVoteListIndex > 0 && civicActionIndex > reviewedVoteListIndex, "utility panel should render after reviewed vote list access");
 });
 

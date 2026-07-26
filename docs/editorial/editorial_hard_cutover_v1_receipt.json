@@ -1,0 +1,521 @@
+{
+  "schema_version": "editorial_hard_cutover_receipt_v1",
+  "milestone": "Political Fingerprint Editorial Hard Cutover V1",
+  "base_commit": "bc7617b05f33d56cf83c4bb7e4b8113b945a3998",
+  "branch": "codex/editorial-hard-cutover-v1",
+  "rewritten_paths": [
+    "AGENTS.md",
+    "backend/scripts/generate_data_inventory_manifest.py",
+    "backend/tests/test_editorial_artifact_persistence.py",
+    "backend/tests/test_editorial_pipeline.py",
+    "docs/README.md",
+    "docs/architecture/editorial_pipeline_inventory_v1.json",
+    "docs/architecture/editorial_pipeline_inventory_v1.md",
+    "docs/architecture/editorial_pipeline_v1_handoff.md",
+    "docs/editorial/current_state_index.json",
+    "docs/editorial/current_state_index.md",
+    "docs/plans/README.md",
+    "docs/plans/editorial_pipeline_v1_consolidation.md",
+    "docs/public_editorial_frontend_contract.md",
+    "docs/semantic_ir/editorial_semantic_ir_v1.md",
+    "docs/workflows/editorial-issue-frontend.md",
+    "docs/workflows/editorial-standardization-pipeline.md",
+    "frontend/components/PositionByIssue.js",
+    "frontend/lib/issueOverview.test.mjs",
+    "frontend/lib/issueReadiness.test.mjs",
+    "frontend/lib/profileMvpProfile.test.mjs",
+    "frontend/lib/proceduralContext.test.mjs",
+    "frontend/package.json",
+    "frontend/playwright.config.mjs",
+    "scripts/run_editorial_pipeline.py"
+  ],
+  "added_paths": [
+    "backend/tests/test_editorial_cutover_integrity.py",
+    "docs/editorial/editorial_hard_cutover_v1_receipt.json",
+    "docs/plans/editorial_hard_cutover_v1_spec.md",
+    "frontend/lib/basicEvidencePresentation.mjs",
+    "frontend/lib/basicEvidencePresentation.test.mjs",
+    "frontend/tests/editorial-cutover.spec.mjs"
+  ],
+  "deleted_executable_paths": [
+    "backend/app/summaries/editorial_candidate_evaluation.py",
+    "backend/app/summaries/editorial_candidate_selection.py",
+    "backend/app/summaries/editorial_conclusion_synthesis.py",
+    "backend/app/summaries/editorial_domain_eligibility.py",
+    "backend/app/summaries/editorial_inference.py",
+    "backend/app/summaries/editorial_member_overlay.py",
+    "backend/app/summaries/editorial_proposition_ownership.py",
+    "backend/app/summaries/editorial_review_routing.py",
+    "backend/scripts/build_blind_editorial_pipeline_validation.py",
+    "backend/scripts/build_commissioning_domain_v1.py",
+    "backend/scripts/build_commissioning_domain_v1_correction.py",
+    "backend/scripts/build_justice_cross_member_validation.py",
+    "backend/scripts/build_valerie_foushee_economy_editorial_gold_v2_review.py",
+    "backend/scripts/build_valerie_foushee_economy_staged_content.py",
+    "backend/scripts/build_valerie_foushee_justice_public_safety_editorial.py",
+    "frontend/app/golden-render-fixture/page.js",
+    "frontend/components/EditorialIssueExperience.js",
+    "frontend/components/GoldenRenderFixture.js",
+    "frontend/lib/blindEditorialPipelineReviewSlice.mjs",
+    "frontend/lib/blindEditorialPipelineValidationData.mjs",
+    "frontend/lib/buildBlindEditorialPipelineValidationResult.mjs",
+    "frontend/lib/commissioningDomainCorrectedReviewData.mjs",
+    "frontend/lib/commissioningDomainReviewData.mjs",
+    "frontend/lib/commissioningDomainReviewSlices.mjs",
+    "frontend/lib/editorialConclusionReferenceFixtures.mjs",
+    "frontend/lib/editorialEpisodeMetadata.mjs",
+    "frontend/lib/editorialGoldRenderFixture.mjs",
+    "frontend/lib/editorialIssueExperience.mjs",
+    "frontend/lib/editorialIssuePresentation.mjs",
+    "frontend/lib/editorialIssueProductionSlices.mjs",
+    "frontend/lib/editorialIssuePublicPresentation.mjs",
+    "frontend/lib/editorialIssueReviewSlices.mjs",
+    "frontend/lib/editorialIssueTestFixtures.mjs",
+    "frontend/lib/editorialSharedEvidence.mjs",
+    "frontend/lib/editorialStandardizationFixtures.mjs",
+    "frontend/lib/editorialStandardizationValidator.mjs",
+    "frontend/lib/editorialTextIntegrity.mjs",
+    "frontend/lib/goldenRenderFixture.mjs",
+    "frontend/lib/justiceCrossMemberReviewSlices.mjs",
+    "frontend/lib/justiceCrossMemberValidationData.mjs",
+    "frontend/lib/justiceEditorialRenderFixture.mjs",
+    "frontend/lib/valerieFousheeEconomyEditorialGold.mjs",
+    "frontend/lib/valerieFousheeJusticePublicSafetyEditorialGold.mjs",
+    "scripts/build_blind_editorial_pipeline_validation.mjs",
+    "scripts/build_commissioning_domain_final_text_review.mjs",
+    "scripts/build_editorial_standardization_validation.mjs"
+  ],
+  "deleted_test_paths": [
+    "backend/tests/test_blind_editorial_pipeline_validation.py",
+    "backend/tests/test_commissioning_domain_v1.py",
+    "backend/tests/test_commissioning_domain_v1_correction.py",
+    "backend/tests/test_editorial_conclusion_synthesis.py",
+    "backend/tests/test_editorial_domain_eligibility.py",
+    "backend/tests/test_editorial_inference.py",
+    "backend/tests/test_editorial_member_overlay.py",
+    "backend/tests/test_editorial_review_routing.py",
+    "backend/tests/test_justice_cross_member_validation.py",
+    "backend/tests/test_valerie_foushee_economy_editorial_gold_v2.py",
+    "backend/tests/test_valerie_foushee_economy_staged_website.py",
+    "backend/tests/test_valerie_foushee_justice_public_safety_editorial_gold_v1.py",
+    "frontend/lib/blindEditorialPipelineValidation.test.mjs",
+    "frontend/lib/commissioningDomainReviewSlices.test.mjs",
+    "frontend/lib/editorialEpisodeFirst.test.mjs",
+    "frontend/lib/editorialIssueExperience.test.mjs",
+    "frontend/lib/editorialStandardizationValidator.test.mjs",
+    "frontend/lib/goldenRenderFixture.test.mjs",
+    "frontend/lib/justiceCrossMemberReviewSlices.test.mjs",
+    "frontend/tests/golden-render.spec.mjs"
+  ],
+  "rewritten_test_paths": [
+    "backend/tests/test_editorial_artifact_persistence.py",
+    "backend/tests/test_editorial_pipeline.py",
+    "frontend/lib/issueOverview.test.mjs",
+    "frontend/lib/issueReadiness.test.mjs",
+    "frontend/lib/profileMvpProfile.test.mjs",
+    "frontend/lib/proceduralContext.test.mjs"
+  ],
+  "legacy_test_classifications": [
+    {
+      "path": "backend/tests/test_blind_editorial_pipeline_validation.py",
+      "change": "deleted",
+      "classification": "obsolete_implementation_test",
+      "useful_invariant": "Member and party identity must not branch semantic selection.",
+      "replacement_coverage": ["backend/tests/test_editorial_semantic_ir.py"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "backend/tests/test_commissioning_domain_v1.py",
+      "change": "deleted",
+      "classification": "historical_artifact_integrity",
+      "useful_invariant": "The frozen Environment artifact and unpublished persistence proposal remain intact.",
+      "replacement_coverage": ["backend/tests/test_editorial_cutover_integrity.py", "backend/tests/test_editorial_artifact_persistence.py"],
+      "replacement_layer": "frozen_historical_evidence"
+    },
+    {
+      "path": "backend/tests/test_commissioning_domain_v1_correction.py",
+      "change": "deleted",
+      "classification": "historical_artifact_integrity",
+      "useful_invariant": "Original and corrected Environment receipts, evidence, and manifests remain preserved.",
+      "replacement_coverage": ["backend/tests/test_editorial_cutover_integrity.py"],
+      "replacement_layer": "frozen_historical_evidence"
+    },
+    {
+      "path": "backend/tests/test_editorial_conclusion_synthesis.py",
+      "change": "deleted",
+      "classification": "semantic_invariant_already_covered",
+      "useful_invariant": "Identity invariance, typed synthesis, and proposition ownership are generic.",
+      "replacement_coverage": ["backend/tests/test_editorial_semantic_ir.py"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "backend/tests/test_editorial_domain_eligibility.py",
+      "change": "deleted",
+      "classification": "semantic_invariant_already_covered",
+      "useful_invariant": "Exact-action eligibility cannot be inherited from parent context.",
+      "replacement_coverage": ["backend/tests/test_editorial_semantic_ir.py"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "backend/tests/test_editorial_inference.py",
+      "change": "deleted",
+      "classification": "semantic_invariant_already_covered",
+      "useful_invariant": "Repeated patterns require independent episodes and contrary evidence remains explicit.",
+      "replacement_coverage": ["backend/tests/test_editorial_semantic_ir.py"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "backend/tests/test_editorial_member_overlay.py",
+      "change": "deleted",
+      "classification": "semantic_invariant_already_covered",
+      "useful_invariant": "Present, Not Voting, missing evidence, and service status remain distinct and non-directional.",
+      "replacement_coverage": ["backend/tests/test_editorial_semantic_ir.py", "frontend/lib/basicEvidencePresentation.test.mjs"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "backend/tests/test_editorial_review_routing.py",
+      "change": "deleted",
+      "classification": "semantic_invariant_already_covered",
+      "useful_invariant": "Shared dependencies and member routes remain typed and deterministic.",
+      "replacement_coverage": ["backend/tests/test_editorial_pipeline.py", "backend/tests/test_editorial_semantic_ir.py"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "backend/tests/test_justice_cross_member_validation.py",
+      "change": "deleted",
+      "classification": "semantic_invariant_already_covered",
+      "useful_invariant": "Member identity and action direction do not alter shared semantics.",
+      "replacement_coverage": ["backend/tests/test_editorial_semantic_ir.py"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "backend/tests/test_valerie_foushee_economy_editorial_gold_v2.py",
+      "change": "deleted",
+      "classification": "acquisition_or_provenance_protection",
+      "useful_invariant": "Economy dossiers, claim-source mappings, source locators, and review packet remain parseable and byte-preserved.",
+      "replacement_coverage": ["backend/tests/test_editorial_cutover_integrity.py"],
+      "replacement_layer": "frozen_historical_evidence"
+    },
+    {
+      "path": "backend/tests/test_valerie_foushee_economy_staged_website.py",
+      "change": "deleted",
+      "classification": "obsolete_implementation_test",
+      "useful_invariant": "The removed old-format frontend bundle matched its builder.",
+      "replacement_coverage": [],
+      "replacement_layer": "none"
+    },
+    {
+      "path": "backend/tests/test_valerie_foushee_justice_public_safety_editorial_gold_v1.py",
+      "change": "deleted",
+      "classification": "acquisition_or_provenance_protection",
+      "useful_invariant": "Justice dossiers, sources, mappings, and review packet remain preserved.",
+      "replacement_coverage": ["backend/tests/test_editorial_cutover_integrity.py"],
+      "replacement_layer": "frozen_historical_evidence"
+    },
+    {
+      "path": "frontend/lib/blindEditorialPipelineValidation.test.mjs",
+      "change": "deleted",
+      "classification": "obsolete_implementation_test",
+      "useful_invariant": "The old review slice adapted through the old selector.",
+      "replacement_coverage": [],
+      "replacement_layer": "none"
+    },
+    {
+      "path": "frontend/lib/commissioningDomainReviewSlices.test.mjs",
+      "change": "deleted",
+      "classification": "historical_artifact_integrity",
+      "useful_invariant": "Environment review evidence and non-directional states remain preserved.",
+      "replacement_coverage": ["backend/tests/test_editorial_cutover_integrity.py", "frontend/lib/basicEvidencePresentation.test.mjs"],
+      "replacement_layer": "frozen_historical_evidence"
+    },
+    {
+      "path": "frontend/lib/editorialEpisodeFirst.test.mjs",
+      "change": "deleted",
+      "classification": "semantic_invariant_already_covered",
+      "useful_invariant": "Episode and policy-family hierarchy and member-neutral shared evidence are canonical.",
+      "replacement_coverage": ["backend/tests/test_editorial_semantic_ir.py"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "frontend/lib/editorialIssueExperience.test.mjs",
+      "change": "deleted",
+      "classification": "obsolete_implementation_test",
+      "useful_invariant": "The old selector, adapter, publication registry, and rich view model fail closed.",
+      "replacement_coverage": ["backend/tests/test_editorial_cutover_integrity.py", "frontend/tests/editorial-cutover.spec.mjs"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "frontend/lib/editorialStandardizationValidator.test.mjs",
+      "change": "deleted",
+      "classification": "obsolete_implementation_test",
+      "useful_invariant": "Old-format presentation fixtures satisfy the old renderer validator.",
+      "replacement_coverage": [],
+      "replacement_layer": "none"
+    },
+    {
+      "path": "frontend/lib/goldenRenderFixture.test.mjs",
+      "change": "deleted",
+      "classification": "obsolete_implementation_test",
+      "useful_invariant": "The old rich-editorial fixture route was gated and unlinked.",
+      "replacement_coverage": ["frontend/tests/editorial-cutover.spec.mjs"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "frontend/lib/justiceCrossMemberReviewSlices.test.mjs",
+      "change": "deleted",
+      "classification": "semantic_invariant_already_covered",
+      "useful_invariant": "Shared legislative facts remain member-neutral and identical evidence compiles identically.",
+      "replacement_coverage": ["backend/tests/test_editorial_semantic_ir.py"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "frontend/tests/golden-render.spec.mjs",
+      "change": "deleted",
+      "classification": "obsolete_implementation_test",
+      "useful_invariant": "The old rich editorial surface rendered its fixture hierarchy.",
+      "replacement_coverage": ["frontend/tests/editorial-cutover.spec.mjs"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "backend/tests/test_editorial_artifact_persistence.py",
+      "change": "rewritten",
+      "classification": "historical_artifact_integrity",
+      "useful_invariant": "Persisted editorial artifacts remain unpublished and public routes do not read the protected store.",
+      "replacement_coverage": ["backend/tests/test_editorial_artifact_persistence.py"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "backend/tests/test_editorial_pipeline.py",
+      "change": "rewritten",
+      "classification": "semantic_invariant_already_covered",
+      "useful_invariant": "The canonical pipeline remains isolated from deleted legacy modules and resolves the platform npm executable for release validation.",
+      "replacement_coverage": ["backend/tests/test_editorial_pipeline.py"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "frontend/lib/proceduralContext.test.mjs",
+      "change": "rewritten",
+      "classification": "semantic_invariant_already_covered",
+      "useful_invariant": "Procedural rows remain visible, non-directional floor-process context.",
+      "replacement_coverage": ["frontend/lib/proceduralContext.test.mjs"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "frontend/lib/issueOverview.test.mjs",
+      "change": "rewritten",
+      "classification": "obsolete_implementation_test",
+      "useful_invariant": "The public issue runtime must not rebuild issue-card conclusions from aggregate evidence.",
+      "replacement_coverage": ["frontend/lib/issueOverview.test.mjs", "frontend/tests/editorial-cutover.spec.mjs"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "frontend/lib/issueReadiness.test.mjs",
+      "change": "rewritten",
+      "classification": "obsolete_implementation_test",
+      "useful_invariant": "The representative issue picker remains safe and navigable after readiness hierarchy removal.",
+      "replacement_coverage": ["frontend/lib/issueReadiness.test.mjs", "frontend/tests/editorial-cutover.spec.mjs"],
+      "replacement_layer": "code_behavior"
+    },
+    {
+      "path": "frontend/lib/profileMvpProfile.test.mjs",
+      "change": "rewritten",
+      "classification": "obsolete_implementation_test",
+      "useful_invariant": "Neutral issue navigation remains ahead of receipt access and the utility panel remains secondary to vote evidence.",
+      "replacement_coverage": ["frontend/lib/profileMvpProfile.test.mjs", "frontend/tests/editorial-cutover.spec.mjs"],
+      "replacement_layer": "code_behavior"
+    }
+  ],
+  "deleted_import_tokens": [
+    "editorial_candidate_evaluation",
+    "editorial_candidate_selection",
+    "editorial_conclusion_synthesis",
+    "editorial_domain_eligibility",
+    "editorial_inference",
+    "editorial_member_overlay",
+    "editorial_proposition_ownership",
+    "editorial_review_routing",
+    "build_blind_editorial_pipeline_validation",
+    "build_commissioning_domain_v1",
+    "build_justice_cross_member_validation",
+    "build_valerie_foushee_economy",
+    "build_valerie_foushee_justice",
+    "EditorialIssueExperience",
+    "editorialIssueExperience",
+    "editorialIssueProductionSlices",
+    "editorialIssueReviewSlices",
+    "golden-render-fixture"
+  ],
+  "replacement_coverage": [
+    "backend/tests/test_editorial_semantic_ir.py",
+    "backend/tests/test_editorial_pipeline.py",
+    "backend/tests/test_editorial_cutover_integrity.py",
+    "backend/tests/test_editorial_artifact_persistence.py",
+    "frontend/lib/basicEvidencePresentation.test.mjs",
+    "frontend/lib/proceduralContext.test.mjs",
+    "frontend/tests/editorial-cutover.spec.mjs"
+  ],
+  "preserved_accepted_corpora_and_receipts": [
+    "docs/semantic_ir/accepted/development_cases.json",
+    "docs/semantic_ir/accepted/acceptance_receipt.json",
+    "docs/semantic_ir/accepted/held_out_cases.json",
+    "docs/semantic_ir/accepted/held_out_acceptance_receipt.json",
+    "docs/semantic_ir/held_out_inputs/held_out_cases.json"
+  ],
+  "preserved_file_hashes": [
+    {
+      "path": "docs/semantic_ir/accepted/development_cases.json",
+      "sha256": "d898ce00660d184043af5b971dd24788b888409f490c45c121328f47cab2b31f"
+    },
+    {
+      "path": "docs/semantic_ir/accepted/acceptance_receipt.json",
+      "sha256": "c0b2080d09fafc48fce8759aa84d6cfbefcd8f6adbf4c95ffbb0f74481962395"
+    },
+    {
+      "path": "docs/semantic_ir/accepted/held_out_cases.json",
+      "sha256": "77b203f25e4bf41527e1502da071bbac2fd60e1c84a69f5a12508ca754f30eb6"
+    },
+    {
+      "path": "docs/semantic_ir/accepted/held_out_acceptance_receipt.json",
+      "sha256": "e2a812da7e1ab38d366f8ddb500a169b1d670009f62f81195e3b03cc6ed7d29c"
+    },
+    {
+      "path": "docs/semantic_ir/held_out_inputs/held_out_cases.json",
+      "sha256": "767cbacce790c45537833e46e59fe4b1c558b440c2844835a07414e45396a9d1"
+    },
+    {
+      "path": "docs/editorial/editorial_artifact_persistence_v1/seed_manifest.json",
+      "sha256": "ed78d27ab96ed65a7c8c6583186bc5f90977532c653d470c565a4236c67554fb"
+    },
+    {
+      "path": "docs/editorial/commissioning_domain_v1/corrected/original_preservation_receipt.json",
+      "sha256": "3ada9907ce033f83eac63fdea5f66eb7033ad62a50c0c7aea30e012e96dd7c39"
+    }
+  ],
+  "preserved_historical_evidence_roots": [
+    "docs/editorial/valerie_foushee_economy_gold_v2",
+    "docs/editorial/valerie_foushee_justice_public_safety_gold_v1",
+    "docs/editorial/justice_cross_member_validation_v1",
+    "docs/editorial/blind_editorial_pipeline_validation_v1",
+    "docs/editorial/commissioning_domain_v1",
+    "docs/semantic_ir/held_out_results"
+  ],
+  "preserved_acquisition_paths": [
+    "backend/app/etl",
+    "backend/scripts/generate_data_inventory_manifest.py",
+    "backend/tests/test_fetch_sources.py",
+    "backend/tests/test_congress_adapter.py",
+    "backend/tests/test_house_clerk_adapter.py",
+    "backend/tests/test_senate_xml_adapter.py",
+    "backend/tests/test_source_packets.py",
+    "backend/scripts/retrieve_zip_population_sources.py"
+  ],
+  "preserved_acquisition_capabilities": [
+    "clients and source retrieval",
+    "scraping and downloads",
+    "parsing and pagination",
+    "retries, caching, and raw response handling",
+    "canonicalization and normalization",
+    "stable identifiers and source-claim mapping",
+    "raw storage and archive handling",
+    "acquisition fixtures and integrity tests"
+  ],
+  "preserved_persistence_and_recovery_paths": [
+    "backend/app/editorial_artifacts",
+    "backend/migrations/0016_editorial_artifact_persistence.sql",
+    "backend/scripts/build_editorial_artifact_seed.py",
+    "backend/scripts/editorial_artifact_store.py",
+    "backend/scripts/commissioning_domain_artifact_store.py",
+    "backend/scripts/commissioning_domain_corrected_artifact_store.py",
+    "backend/scripts/prepare_editorial_artifact_disposable.py",
+    "backend/tests/test_editorial_artifact_persistence.py",
+    "backend/tests/test_editorial_artifact_postgres.py",
+    "docs/editorial/editorial_artifact_persistence_v1/seed_manifest.json",
+    "docs/review_packets/editorial_artifact_persistence_v1.json"
+  ],
+  "frontend_route_changes": {
+    "removed": [
+      {
+        "route": "/golden-render-fixture",
+        "result": "404"
+      }
+    ],
+    "retained_fallback": [
+      {
+        "route": "/",
+        "result": "representative and issue selection with basic vote evidence and source receipts"
+      }
+    ]
+  },
+  "validation": [
+    {
+      "command": "python scripts/run_editorial_pipeline.py validate --tier semantic",
+      "status": "pass",
+      "result": "5 checks passed"
+    },
+    {
+      "command": "python scripts/run_editorial_pipeline.py validate --tier domain --domain ECONOMY_TAXES",
+      "status": "pass",
+      "result": "3 checks passed"
+    },
+    {
+      "command": "python scripts/run_editorial_pipeline.py validate --tier domain --case semir-dev-04-justice-mixed-fentanyl-trajectory",
+      "status": "pass",
+      "result": "1 case check passed"
+    },
+    {
+      "command": "python -m pytest -q backend/tests/test_editorial_cutover_integrity.py",
+      "status": "pass",
+      "result": "6 tests passed"
+    },
+    {
+      "command": "python -m pytest -q backend/tests/test_editorial_artifact_persistence.py",
+      "status": "baseline_failure",
+      "result": "14 tests passed; test_checked_in_manifest_is_deterministic failed because the pre-existing protected seed manifest differs from build_seed_bundle(); the persistence implementation, seed manifest, and all bundle source artifacts are byte-unchanged by this milestone"
+    },
+    {
+      "command": "python -m pytest -q backend/tests/test_fetch_sources.py backend/tests/test_congress_adapter.py backend/tests/test_house_clerk_adapter.py backend/tests/test_senate_xml_adapter.py backend/tests/test_source_packets.py backend/tests/test_data_inventory_manifest.py",
+      "status": "pass",
+      "result": "55 tests passed"
+    },
+    {
+      "command": "node --test frontend/lib/*.test.mjs",
+      "status": "pass",
+      "result": "87 tests passed"
+    },
+    {
+      "command": "npm run build --prefix frontend",
+      "status": "pass",
+      "result": "Next.js production build completed; existing React hook warnings remain non-blocking"
+    },
+    {
+      "command": "npm run test:cutover-smoke --prefix frontend",
+      "status": "pass",
+      "result": "2 Chromium smoke tests passed"
+    },
+    {
+      "command": "python scripts/run_editorial_pipeline.py validate --tier release --include-frontend",
+      "status": "pass",
+      "result": "6 checks passed"
+    },
+    {
+      "command": "python scripts/check_documentation_governance.py",
+      "status": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass"
+    }
+  ],
+  "confirmations": {
+    "frontend_build_passed": true,
+    "frontend_startup_smoke_passed": true,
+    "no_dangling_imports": true,
+    "accepted_semantic_references_unchanged": true,
+    "production_queried": false,
+    "production_changed": false,
+    "persistence_state_changed": false,
+    "publication_state_changed": false,
+    "deployment_state_changed": false,
+    "database_state_changed": false
+  }
+}

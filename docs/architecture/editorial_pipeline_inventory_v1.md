@@ -1,15 +1,15 @@
 # Editorial Pipeline Inventory V1
 
-Baseline: `0343a0771973ea4b085627fcb9b26387092ba302`.
+Baseline: `bc7617b05f33d56cf83c4bb7e4b8113b945a3998`.
 
-The authoritative inventory is
-`docs/architecture/editorial_pipeline_inventory_v1.json`. It records purpose,
-callers, inputs, outputs, semantic authority, effects, disposition, and evidence
-for each material lane.
+The authoritative machine-readable inventory is
+`docs/architecture/editorial_pipeline_inventory_v1.json`. Exact deleted paths,
+test classifications, preservation hashes, and validation outcomes are in
+`docs/editorial/editorial_hard_cutover_v1_receipt.json`.
 
 ## Ownership
 
-New work has one semantic path:
+New work has one executable semantic path:
 
 ```text
 reviewed shared semantics + exact member states
@@ -17,51 +17,38 @@ reviewed shared semantics + exact member states
   -> backend.app.semantic_ir.compiler.compile_semantic_ir (exactly once)
   -> compiled-IR validation
   -> compiler-owned review route
-  -> meaning-preserving presentation payload
-  -> optional inert persistence proposal
-  -> separate, unauthorized-by-default publication boundary
+  -> meaning-preserving adapters
+  -> separate, unauthorized persistence/publication boundaries
 ```
 
-The compiler remains independently usable. The pipeline never imports dossiers,
-vote-vector generators, pre-IR inference, pre-IR conclusion synthesis,
-persistence stores, frontend registries, or publication selectors.
+The pre-IR semantic helpers, milestone generators, old-format frontend
+adapters, registries, review fixtures, and rich renderer were deleted. There is
+no legacy replay path or compatibility adapter.
 
 ## Classification summary
 
-| Classification | Meaning in this inventory |
+| Classification | Post-cutover meaning |
 | --- | --- |
-| `canonical` | Owns new-work semantic input, compilation, validation, or command orchestration. |
-| `canonical_adapter` | Consumes established meaning or validates it without adding meaning. |
-| `retained_public_fallback` | Existing runtime/public boundary retained unchanged for current pages. |
-| `historical_replay_only` | Receipt-bearing or milestone-specific path available only by deliberate direct invocation. |
-| `superseded_remove` | Proven safe to delete now. There are no entries. |
-| `unrelated` | Outside the bounded inventory and omitted from the entry list. |
-| `unknown_requires_review` | Material path whose disposition cannot be established. There are no entries. |
-
-No file qualified for deletion. The older builders still support tests,
-accepted-reference provenance, correction receipts, or current review fixtures.
-Indexing and excluding them from the canonical command is safer than deleting or
-moving their artifact trees.
+| `canonical_semantic` | Owns Semantic IR input, compilation, validation, or command orchestration. |
+| `retained_acquisition` | Acquires, parses, normalizes, identifies, maps, caches, archives, or stores source evidence. |
+| `retained_historical_evidence` | Frozen dossiers, manifests, proofs, receipts, provenance, and generated historical artifacts. |
+| `retained_live_persistence_safety` | Production migration, import/export, backup, rollback, reconciliation, dependency discovery, and audit history. |
+| `remove_legacy_execution` | Deleted old semantic or presentation execution recorded by the cutover receipt. |
+| `unrelated` | Outside the editorial semantic architecture. |
+| `blocking_requires_review` | Unresolved mixed responsibility. There are no entries. |
 
 ## State boundaries
 
-- The production frontend registry remains the frozen empty array at
-  `frontend/lib/editorialIssueProductionSlices.mjs`.
-- Review-only Economy, Justice, and Environment modules remain outside that
-  registry.
-- The historical persistence receipt records 71 stored artifacts and zero
-  publication-registry rows. This milestone neither queries nor changes it.
-- A semantic run creates no presentation file, persistence batch, registry
-  selection, database write, frontend regeneration, or publication action.
-- Release checks are opt-in and flags merely select checks; they confer no
-  production, persistence, publication, merge, or deployment authority.
+- Accepted Semantic IR corpora and receipts remain unchanged.
+- Frozen historical evidence remains in place but is not a canonical input.
+- All source-acquisition capability remains available, including currently
+  unused clients and parsers.
+- The 71 persisted historical artifacts remain unpublished; persistence and
+  publication tooling remains protected.
+- The public representative route deliberately uses basic vote evidence and
+  receipts. No old editorial registry exists.
+- The former `/golden-render-fixture` route is absent.
+- IR-native public presentation and database cleanup are deferred.
 
-## Legacy isolation proof
-
-- `scripts/run_editorial_pipeline.py` imports the V1 pipeline and accepted
-  reference comparator only.
-- Focused tests reject expected-output fields at new-work input.
-- A compiler-call spy proves one compiler invocation per pipeline run.
-- Adapter equality and deterministic digests prove adapters do not mutate or
-  synthesize proposition graphs or conclusion plans.
-- Historical builders have no flag or selection route on the canonical CLI.
+The cutover did not query or change production, persistence, publication,
+deployment, migrations, or database state.

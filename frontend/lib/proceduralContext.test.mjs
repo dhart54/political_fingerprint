@@ -4,7 +4,6 @@ import test from "node:test";
 import { buildLimitedContextSummary } from "./voteCardSummary.mjs";
 import { buildIssueOverview, formatRenderedIssueOverview } from "./issueOverview.mjs";
 import { isProceduralContextRow } from "./proceduralContext.mjs";
-import { justiceEditorialIssueFixtureData } from "./justiceEditorialRenderFixture.mjs";
 
 test("procedural-context vote cards explain floor process without support or opposition claims", () => {
   const row = proceduralRow({
@@ -78,8 +77,11 @@ test("interpreted substantive row is never overridden by procedural metadata or 
 });
 
 test("all six Justice controls classify as floor-process context in production fallback", () => {
-  const rows = justiceEditorialIssueFixtureData.evidenceByDomain.JUSTICE_PUBLIC_SAFETY.evidence;
-  const controls = rows.filter((row) => row.interpretation_status !== "interpreted");
+  const controls = [160, 161, 267, 268, 290, 291].map((rollcall_number) => proceduralRow({
+    classification_reason: "procedural_context",
+    rollcall_number,
+  }));
+  const rows = [interpretedRow({ rollcall_number: 32 }), ...controls];
   assert.deepEqual(controls.map((row) => row.rollcall_number), [160, 161, 267, 268, 290, 291]);
   assert.ok(controls.every(isProceduralContextRow));
   assert.ok(controls.every((row) => row.classification_reason === "procedural_context"));

@@ -47,8 +47,9 @@ All newly commissioned work enters through
 `backend.app.semantic_ir.pipeline.run_editorial_pipeline`. That orchestration
 calls the independently usable pure compiler exactly once, validates compiled
 IR, and only then prepares review, presentation, or optional inert persistence
-proposal payloads. Historical generators are replay-only and are not selectable
-from the canonical command.
+proposal payloads. The obsolete generators were deleted in Editorial Hard
+Cutover V1. Their frozen outputs remain historical evidence and are validated
+directly rather than replayed.
 
 ## Three review checkpoints
 
@@ -142,9 +143,10 @@ semantic meaning.
 15. Account for every accepted action in full-record cases.
 16. Build the conclusion plan and typed presentation targets.
 17. Render bounded prose without adding meaning.
-18. Select featured episodes upstream.
-19. Build the public view model. React renders that model and does not infer
-    civic meaning.
+18. Select featured episodes upstream for a future presentation stage.
+19. When an IR-native presentation milestone is authorized, build a public view
+    model without adding meaning. Until then the frontend shows basic vote
+    evidence and receipts only.
 20. Run the validation tier appropriate to the change.
 21. Route failures and genuine novelty.
 22. Permit stratified auditing of passing slices.

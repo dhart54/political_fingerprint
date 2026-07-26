@@ -138,19 +138,15 @@ test("limited and not-ready sections do not receive confident readiness labels",
   assert.match(notReady.reason, /reviewed Yes\/No vote meaning is not loaded yet/);
 });
 
-test("representative issue picker renders readiness hierarchy without banned language", () => {
+test("representative issue picker uses neutral evidence navigation without readiness conclusions", () => {
   const componentSource = readFileSync(new URL("../components/PositionByIssue.js", import.meta.url), "utf8");
-  const readinessSource = readFileSync(new URL("./issueReadiness.mjs", import.meta.url), "utf8");
-  const source = `${componentSource}\n${readinessSource}`;
 
-  assert.match(source, /Clearest vote evidence/);
-  assert.match(source, /Evidence in more than one direction/);
-  assert.match(source, /Limited vote evidence/);
-  assert.match(source, /Receipts only/);
-  assert.match(source, /ISSUE_READINESS_ORDER = \[\s*"strong_evidence",\s*"mixed_but_interpretable",\s*"limited_evidence",\s*"not_enough_to_summarize"/);
-  assert.match(source, /Limited sections remain visible below without being treated as confident summaries/);
+  assert.match(componentSource, /function BasicIssueList/);
+  assert.match(componentSource, /Open another issue to inspect its available vote receipts/);
+  assert.match(componentSource, /without combining them into a broader issue conclusion/);
+  assert.doesNotMatch(componentSource, /IssueReadinessTile|Clearest vote evidence|vote pattern|buildTakeaway/);
   assert.doesNotMatch(
-    source,
+    componentSource,
     /is corrupt|you should vote|support this candidate|oppose this candidate|bought|extreme|radical|worst|best politician/i,
   );
 });

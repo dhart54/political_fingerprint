@@ -4,7 +4,7 @@ This index distinguishes the branch's one active execution plan from unresolved 
 
 ## Active plan
 
-- [Editorial Semantic IR Engine V1](editorial_semantic_ir_engine_v1.md) — the only active plan on this branch.
+- [Editorial Hard Cutover V1](editorial_hard_cutover_v1_spec.md) — the only active plan on this branch.
 
 ## Retained unresolved plans
 

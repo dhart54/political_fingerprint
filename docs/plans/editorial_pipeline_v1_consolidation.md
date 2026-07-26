@@ -148,3 +148,9 @@
 - Recommended next step: commission one bounded new domain directly into
   reviewed shared semantics and exact member states, then calibrate review-only
   presentation from the canonical payload.
+# Superseded execution note
+
+The retention decisions in this historical plan were superseded by
+`docs/plans/editorial_hard_cutover_v1_spec.md`. The listed pre-IR replay
+implementations and old public fallback adapters were deleted in Editorial Hard
+Cutover V1; only their frozen historical evidence remains.

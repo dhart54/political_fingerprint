@@ -8,6 +8,8 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+from scripts import run_editorial_pipeline as pipeline_command
+
 from backend.app.semantic_ir.adapters import (
     build_persistence_proposal,
     build_presentation_payload,
@@ -96,14 +98,49 @@ class EditorialPipelineV1Tests(unittest.TestCase):
             encoding="utf-8"
         )
         forbidden = (
-            "editorial_inference",
+            "editorial_candidate_evaluation",
+            "editorial_candidate_selection",
             "editorial_conclusion_synthesis",
+            "editorial_domain_eligibility",
+            "editorial_inference",
+            "editorial_member_overlay",
+            "editorial_proposition_ownership",
+            "editorial_review_routing",
+            "build_blind_editorial_pipeline_validation",
             "build_commissioning_domain_v1",
-            "editorialIssueProductionSlices",
+            "build_justice_cross_member_validation",
+            "build_valerie_foushee",
             "editorial_artifact_store",
         )
         for name in forbidden:
             self.assertNotIn(name, source)
+
+    def test_frontend_release_resolves_platform_npm_executable(self) -> None:
+        with (
+            patch.object(
+                pipeline_command,
+                "_semantic_loop",
+                return_value={"tier": "semantic", "commands": []},
+            ),
+            patch.object(
+                pipeline_command.shutil,
+                "which",
+                return_value=r"C:\tools\npm.cmd",
+            ),
+            patch.object(
+                pipeline_command,
+                "_run",
+                return_value={"command": "npm build", "status": "pass"},
+            ) as run,
+        ):
+            result = pipeline_command._release_loop(
+                include_frontend=True,
+                include_persistence=False,
+            )
+        run.assert_called_once_with(
+            [r"C:\tools\npm.cmd", "run", "build", "--prefix", "frontend"]
+        )
+        self.assertTrue(result["frontend_included"])
 
     def test_representative_boundary_routes_are_preserved(self) -> None:
         cases = _cases()
