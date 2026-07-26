@@ -297,11 +297,12 @@ card.
 
 ### Semantic loop
 
-Use while authoring or correcting Semantic IR, candidate cases, proposition
-logic, action accounting, and coverage.
+Use while authoring or correcting Semantic IR, candidate or accepted-reference
+cases, compiler logic, action accounting, and coverage.
 
 ```powershell
 python scripts/validate_editorial_semantic_ir.py
+python scripts/compare_accepted_semantic_references.py
 python -m unittest backend.tests.test_editorial_semantic_ir
 ```
 

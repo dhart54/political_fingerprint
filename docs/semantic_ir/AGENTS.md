@@ -40,7 +40,10 @@ evidence or carry an explicit non-proposition reason.
 
 ## Review states
 
-Development cases remain candidates until explicitly accepted.
+Development cases remain candidates until explicitly accepted. The 12 cases in
+`accepted/development_cases.json` have that explicit authorization and use
+`accepted_semantic_reference`; the Phase A candidate-review packet remains
+historical review evidence.
 
 Do not mark any artifact:
 
@@ -55,6 +58,11 @@ without explicit authorization.
 
 Acceptance of an IR schema or candidate graph does not authorize runtime
 adoption, persistence, production selection, or publication.
+
+Accepted semantic-reference status is confined to the Semantic IR compiler and
+authoring test contract. It does not imply public editorial approval, benchmark
+promotion outside that contract, production eligibility, persistence,
+publication, registry inclusion, or deployment.
 
 ## Held-out cases
 
@@ -88,6 +96,7 @@ Use the semantic loop by default:
 
 ```powershell
 python scripts/validate_editorial_semantic_ir.py
+python scripts/compare_accepted_semantic_references.py
 python -m unittest backend.tests.test_editorial_semantic_ir
 ```
 

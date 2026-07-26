@@ -1,11 +1,11 @@
 {
   "schema_version": "editorial_semantic_ir_v1",
-  "corpus_kind": "development_candidate_corpus",
-  "review_state": "candidate_pending_external_semantic_review",
+  "corpus_kind": "accepted_semantic_reference_corpus",
+  "review_state": "accepted_semantic_reference",
   "cases": [
     {
       "case_id": "semir-dev-01-economy-funding-stages",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "multiple stages in one episode",
         "trajectory requires multiple actions"
@@ -85,12 +85,33 @@
               "house:119:1:281",
               "house:119:1:285"
             ],
-            "policy_family_id": null
+            "policy_family_id": null,
+            "method_boundary_types": [
+              "episode_counting"
+            ]
           }
         ],
         "policy_families": [],
         "trait_relationships": [],
-        "source_render_constraints": []
+        "source_render_constraints": [],
+        "policy_traits": [
+          {
+            "trait_id": "temporary_government_funding",
+            "meaning_ref": "reviewed:temporary_government_funding",
+            "action_ids": [
+              "house:119:1:281"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "temporary_and_full_year_funding",
+            "meaning_ref": "reviewed:temporary_and_full_year_funding",
+            "action_ids": [
+              "house:119:1:285"
+            ],
+            "review_state": "reviewed_reusable_input"
+          }
+        ]
       },
       "member_semantics": {
         "members": [
@@ -152,7 +173,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           }
         ]
       },
@@ -201,7 +222,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "full_record",
       "action_accounting": {
         "behavioral_proposition_action_ids": [
@@ -217,7 +238,7 @@
     },
     {
       "case_id": "semir-dev-02-economy-uniform-no-throughline",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "uniform direction without a common throughline",
         "single-action episodes remain non-trajectories"
@@ -409,7 +430,43 @@
         ],
         "policy_families": [],
         "trait_relationships": [],
-        "source_render_constraints": []
+        "source_render_constraints": [],
+        "policy_traits": [
+          {
+            "trait_id": "temporary_government_funding",
+            "meaning_ref": "reviewed:temporary_government_funding",
+            "action_ids": [
+              "house:119:1:281",
+              "house:119:1:285"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "budget_framework",
+            "meaning_ref": "reviewed:budget_framework",
+            "action_ids": [
+              "house:119:1:50",
+              "house:119:1:100"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "military_construction_and_veterans_funding",
+            "meaning_ref": "reviewed:military_construction_and_veterans_funding",
+            "action_ids": [
+              "house:119:1:182"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "sba_loan_eligibility",
+            "meaning_ref": "reviewed:sba_loan_eligibility",
+            "action_ids": [
+              "house:119:1:156"
+            ],
+            "review_state": "reviewed_reusable_input"
+          }
+        ]
       },
       "member_semantics": {
         "members": [
@@ -494,7 +551,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev02-budget-trajectory",
@@ -517,7 +574,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev02-milcon-choice",
@@ -539,7 +596,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev02-sba-choice",
@@ -561,7 +618,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev02-uniform-direction",
@@ -596,7 +653,7 @@
                 "prop:dev02-no-throughline"
               ]
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev02-no-throughline",
@@ -627,7 +684,7 @@
               ],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           }
         ]
       },
@@ -673,7 +730,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "full_record",
       "action_accounting": {
         "behavioral_proposition_action_ids": [
@@ -693,7 +750,7 @@
     },
     {
       "case_id": "semir-dev-03-economy-noncounting-boundaries",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "Not Voting is non-directional",
         "meaningful limitation versus methodology",
@@ -797,7 +854,8 @@
         ],
         "policy_families": [],
         "trait_relationships": [],
-        "source_render_constraints": []
+        "source_render_constraints": [],
+        "policy_traits": []
       },
       "member_semantics": {
         "members": [
@@ -894,7 +952,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "full_record",
       "action_accounting": {
         "behavioral_proposition_action_ids": [],
@@ -913,7 +971,7 @@
     },
     {
       "case_id": "semir-dev-04-justice-mixed-fentanyl-trajectory",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "mixed direction within one episode",
         "multiple stages in one episode",
@@ -1026,7 +1084,26 @@
             "to": "house:119:1:166"
           }
         ],
-        "source_render_constraints": []
+        "source_render_constraints": [],
+        "policy_traits": [
+          {
+            "trait_id": "implementation_safeguard",
+            "meaning_ref": "reviewed:implementation_safeguard",
+            "action_ids": [
+              "house:119:1:32"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "criminal_penalty_framework",
+            "meaning_ref": "reviewed:criminal_penalty_framework",
+            "action_ids": [
+              "house:119:1:33",
+              "house:119:1:166"
+            ],
+            "review_state": "reviewed_reusable_input"
+          }
+        ]
       },
       "member_semantics": {
         "members": [
@@ -1097,7 +1174,7 @@
                 "prop:dev04-no-change-claim"
               ]
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev04-no-change-claim",
@@ -1120,7 +1197,7 @@
               ],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           }
         ]
       },
@@ -1161,7 +1238,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "full_record",
       "action_accounting": {
         "behavioral_proposition_action_ids": [
@@ -1178,7 +1255,7 @@
     },
     {
       "case_id": "semir-dev-05-justice-mechanism-divide",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "mechanism divide",
         "mixed direction across independent episodes",
@@ -1411,7 +1488,29 @@
             "right": "police_tools_authority_or_rule_rollbacks"
           }
         ],
-        "source_render_constraints": []
+        "source_render_constraints": [],
+        "policy_traits": [
+          {
+            "trait_id": "implementation_safeguards_research_reporting",
+            "meaning_ref": "reviewed:implementation_safeguards_research_reporting",
+            "action_ids": [
+              "house:119:1:32",
+              "house:119:1:166",
+              "house:119:1:131"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "police_tools_authority_or_rule_rollbacks",
+            "meaning_ref": "reviewed:police_tools_authority_or_rule_rollbacks",
+            "action_ids": [
+              "house:119:1:130",
+              "house:119:1:275",
+              "house:119:1:299"
+            ],
+            "review_state": "reviewed_reusable_input"
+          }
+        ]
       },
       "member_semantics": {
         "members": [
@@ -1504,7 +1603,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev05-authority-limits",
@@ -1530,7 +1629,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev05-fentanyl-trajectory",
@@ -1554,7 +1653,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev05-mechanism-divide",
@@ -1590,7 +1689,7 @@
                 "prop:dev05-fentanyl-trajectory"
               ]
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           }
         ]
       },
@@ -1636,7 +1735,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "full_record",
       "action_accounting": {
         "behavioral_proposition_action_ids": [
@@ -1657,7 +1756,7 @@
     },
     {
       "case_id": "semir-dev-06-justice-one-sided-argument",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "one-sided official argument evidence",
         "single-action episode"
@@ -1731,6 +1830,16 @@
             "presentation_target": "source_note",
             "render_rule": "Disclose that the reviewed official argument evidence is one-sided; do not synthesize a missing opposing argument."
           }
+        ],
+        "policy_traits": [
+          {
+            "trait_id": "reporting_and_research",
+            "meaning_ref": "reviewed:reporting_and_research",
+            "action_ids": [
+              "house:119:1:131"
+            ],
+            "review_state": "reviewed_reusable_input"
+          }
         ]
       },
       "member_semantics": {
@@ -1785,7 +1894,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           }
         ]
       },
@@ -1820,7 +1929,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "full_record",
       "action_accounting": {
         "behavioral_proposition_action_ids": [
@@ -1835,7 +1944,7 @@
     },
     {
       "case_id": "semir-dev-07-environment-exact-action-gate",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "exact-action versus parent-package eligibility",
         "bounded cross-domain context"
@@ -1920,7 +2029,17 @@
         ],
         "policy_families": [],
         "trait_relationships": [],
-        "source_render_constraints": []
+        "source_render_constraints": [],
+        "policy_traits": [
+          {
+            "trait_id": "federal_environment_energy_funding",
+            "meaning_ref": "reviewed:federal_environment_energy_funding",
+            "action_ids": [
+              "house:119:2:6"
+            ],
+            "review_state": "reviewed_reusable_input"
+          }
+        ]
       },
       "member_semantics": {
         "members": [
@@ -1974,7 +2093,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           }
         ]
       },
@@ -2019,7 +2138,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "full_record",
       "action_accounting": {
         "behavioral_proposition_action_ids": [
@@ -2034,7 +2153,7 @@
     },
     {
       "case_id": "semir-dev-08-environment-separate-family-episodes",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "separate proposals in one policy family",
         "mechanism divide",
@@ -2211,7 +2330,27 @@
             "right": "home_energy_federal_role_changes"
           }
         ],
-        "source_render_constraints": []
+        "source_render_constraints": [],
+        "policy_traits": [
+          {
+            "trait_id": "domestic_resource_supply_actions",
+            "meaning_ref": "reviewed:domestic_resource_supply_actions",
+            "action_ids": [
+              "house:119:2:55",
+              "house:119:2:64"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "home_energy_federal_role_changes",
+            "meaning_ref": "reviewed:home_energy_federal_role_changes",
+            "action_ids": [
+              "house:119:2:76",
+              "house:119:2:78"
+            ],
+            "review_state": "reviewed_reusable_input"
+          }
+        ]
       },
       "member_semantics": {
         "members": [
@@ -2285,7 +2424,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev08-home-energy-opposition",
@@ -2309,7 +2448,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev08-family-mechanism-divide",
@@ -2341,7 +2480,7 @@
               ],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           }
         ]
       },
@@ -2382,7 +2521,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "full_record",
       "action_accounting": {
         "behavioral_proposition_action_ids": [
@@ -2400,7 +2539,7 @@
     },
     {
       "case_id": "semir-dev-09-not-voting-heavy-record",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "Not Voting-heavy evidence",
         "known coverage cannot use unknown language",
@@ -2638,7 +2777,25 @@
           }
         ],
         "trait_relationships": [],
-        "source_render_constraints": []
+        "source_render_constraints": [],
+        "policy_traits": [
+          {
+            "trait_id": "assesses_supply_chain_vulnerability",
+            "meaning_ref": "reviewed:assesses_supply_chain_vulnerability",
+            "action_ids": [
+              "house:119:2:64"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "limits_land_manager_authority",
+            "meaning_ref": "reviewed:limits_land_manager_authority",
+            "action_ids": [
+              "house:119:2:93"
+            ],
+            "review_state": "reviewed_reusable_input"
+          }
+        ]
       },
       "member_semantics": {
         "members": [
@@ -2728,7 +2885,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev09-federal-land-choice",
@@ -2750,7 +2907,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           }
         ]
       },
@@ -2801,7 +2958,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "full_record",
       "action_accounting": {
         "behavioral_proposition_action_ids": [
@@ -2843,7 +3000,7 @@
     },
     {
       "case_id": "semir-dev-10-present-known-coverage",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "Present is neither support nor opposition",
         "known coverage arithmetic"
@@ -3078,7 +3235,43 @@
           }
         ],
         "trait_relationships": [],
-        "source_render_constraints": []
+        "source_render_constraints": [],
+        "policy_traits": [
+          {
+            "trait_id": "domestic_resource_supply_actions",
+            "meaning_ref": "reviewed:domestic_resource_supply_actions",
+            "action_ids": [
+              "house:119:2:55",
+              "house:119:2:64"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "federal_environment_energy_funding",
+            "meaning_ref": "reviewed:federal_environment_energy_funding",
+            "action_ids": [
+              "house:119:2:6",
+              "house:119:2:7"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "constrains_efficiency_rulemaking",
+            "meaning_ref": "reviewed:constrains_efficiency_rulemaking",
+            "action_ids": [
+              "house:119:2:76"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "limits_land_manager_authority",
+            "meaning_ref": "reviewed:limits_land_manager_authority",
+            "action_ids": [
+              "house:119:2:93"
+            ],
+            "review_state": "reviewed_reusable_input"
+          }
+        ]
       },
       "member_semantics": {
         "members": [
@@ -3169,7 +3362,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev10-resource-support",
@@ -3193,7 +3386,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev10-efficiency-choice",
@@ -3215,7 +3408,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev10-federal-land-choice",
@@ -3237,7 +3430,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev10-uniform-direction",
@@ -3273,7 +3466,7 @@
                 "prop:dev10-no-common-throughline"
               ]
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev10-no-common-throughline",
@@ -3304,7 +3497,7 @@
               ],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           }
         ]
       },
@@ -3364,7 +3557,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "full_record",
       "action_accounting": {
         "behavioral_proposition_action_ids": [
@@ -3390,7 +3583,7 @@
     },
     {
       "case_id": "semir-dev-11-tied-pattern-ownership",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "two equally strong repeated patterns",
         "proposition deduplication",
@@ -3640,7 +3833,44 @@
             "review_state": "human_review_pending"
           }
         ],
-        "source_render_constraints": []
+        "source_render_constraints": [],
+        "policy_traits": [
+          {
+            "trait_id": "domestic_resource_supply_actions",
+            "meaning_ref": "reviewed:domestic_resource_supply_actions",
+            "action_ids": [
+              "house:119:2:55",
+              "house:119:2:64"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "home_energy_federal_role_changes",
+            "meaning_ref": "reviewed:home_energy_federal_role_changes",
+            "action_ids": [
+              "house:119:2:76",
+              "house:119:2:78"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "federal_environment_energy_funding",
+            "meaning_ref": "reviewed:federal_environment_energy_funding",
+            "action_ids": [
+              "house:119:2:6",
+              "house:119:2:7"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "limits_land_manager_authority",
+            "meaning_ref": "reviewed:limits_land_manager_authority",
+            "action_ids": [
+              "house:119:2:93"
+            ],
+            "review_state": "reviewed_reusable_input"
+          }
+        ]
       },
       "member_semantics": {
         "members": [
@@ -3732,7 +3962,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev11-home-energy-opposition",
@@ -3756,7 +3986,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev11-appropriations-trajectory",
@@ -3779,7 +4009,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev11-federal-land-choice",
@@ -3801,7 +4031,7 @@
               "supported_by": [],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           }
         ]
       },
@@ -3848,7 +4078,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "full_record",
       "action_accounting": {
         "behavioral_proposition_action_ids": [
@@ -3869,7 +4099,7 @@
     },
     {
       "case_id": "semir-dev-12-identity-title-order-invariance",
-      "case_kind": "development_candidate",
+      "case_kind": "accepted_semantic_reference",
       "structural_purposes": [
         "identical evidence across different parties",
         "opaque and reordered action titles",
@@ -4111,7 +4341,35 @@
           }
         ],
         "trait_relationships": [],
-        "source_render_constraints": []
+        "source_render_constraints": [],
+        "policy_traits": [
+          {
+            "trait_id": "domestic_resource_supply_actions",
+            "meaning_ref": "reviewed:domestic_resource_supply_actions",
+            "action_ids": [
+              "house:119:2:55",
+              "house:119:2:64"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "home_energy_federal_role_changes",
+            "meaning_ref": "reviewed:home_energy_federal_role_changes",
+            "action_ids": [
+              "house:119:2:76",
+              "house:119:2:78"
+            ],
+            "review_state": "reviewed_reusable_input"
+          },
+          {
+            "trait_id": "limits_land_manager_authority",
+            "meaning_ref": "reviewed:limits_land_manager_authority",
+            "action_ids": [
+              "house:119:2:93"
+            ],
+            "review_state": "reviewed_reusable_input"
+          }
+        ]
       },
       "member_semantics": {
         "members": [
@@ -4266,7 +4524,7 @@
                 "prop:dev12-shared-vector-boundary"
               ]
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           },
           {
             "proposition_id": "prop:dev12-shared-vector-boundary",
@@ -4295,7 +4553,7 @@
               ],
               "limited_by": []
             },
-            "review_state": "candidate_pending_external_semantic_review"
+            "review_state": "accepted_semantic_reference"
           }
         ]
       },
@@ -4335,7 +4593,7 @@
           "example_prose": null
         }
       },
-      "review_state": "candidate_pending_external_semantic_review",
+      "review_state": "accepted_semantic_reference",
       "case_scope": "focused_invariant_fixture",
       "scope_boundary": "Only identity, party, title, input-order, stable-ID, and proposition-deduplication invariance are evaluated; unrelated full-record synthesis is intentionally omitted.",
       "action_accounting": {
@@ -4374,7 +4632,16 @@
       "external_review_decisions": [
         "This case is a focused invariant fixture, not a full-record canonical graph.",
         "Its declared boundary limits evaluation to identity, title, order, and proposition-deduplication invariance."
-      ]
+      ],
+      "compiler_scope": {
+        "included_policy_trait_refs": [
+          "domestic_resource_supply_actions"
+        ],
+        "limiting_policy_trait_refs": [
+          "home_energy_federal_role_changes",
+          "limits_land_manager_authority"
+        ]
+      }
     }
   ]
 }
