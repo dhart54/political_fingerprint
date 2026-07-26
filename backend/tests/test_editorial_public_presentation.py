@@ -8,9 +8,12 @@ import pytest
 
 from app.editorial_presentations.compiler import (
     EditorialPresentationError,
+    approval_subject_for_artifact,
     artifact_bytes,
-    build_review_binding,
+    artifact_digest,
+    build_approval_subject,
     compile_public_issue_presentation,
+    detached_receipt_matches,
 )
 from app.editorial_presentations.validation import (
     validate_public_issue_presentation,
@@ -26,6 +29,11 @@ FOUSHEE_FIXTURE = (
     / "docs/editorial/presentations/"
     "f000477_justice_public_safety_119_review_fixture.json"
 )
+FOUSHEE_RECEIPT_TEMPLATE = (
+    ROOT
+    / "docs/editorial/presentations/"
+    "f000477_justice_public_safety_119_approval_receipt_template.json"
+)
 
 
 def _cases() -> dict[str, dict]:
@@ -40,7 +48,7 @@ def _compiled(case_id: str) -> dict:
     return replay_accepted_reference(copy.deepcopy(_cases()[case_id])).compiled_ir
 
 
-def _approved_controls(binding: dict) -> dict:
+def _approved_controls() -> dict:
     return {
         "semantic": {
             "status": "accepted_semantic_reference",
@@ -50,22 +58,39 @@ def _approved_controls(binding: dict) -> dict:
         "benchmark": {"status": "gold_benchmark"},
         "production": {"eligible": True},
         "publication": {"active": True},
-        "review_receipt": {
-            "receipt_id": "test-only-authorized-receipt",
-            "status": "approved",
-            "binding": binding,
-            "reviewer": {
-                "reviewer_id": "test-reviewer",
-                "authority": "test-authorized-editorial-reviewer",
-            },
-            "approvals": {
-                "bounded_issue_conclusion": True,
-                "repeated_pattern_statements": True,
-                "fentanyl_limitation": True,
-                "claim_source_mappings": True,
-                "benchmark_promotion": True,
-                "production_eligibility": True,
-            },
+        "approval_mode": "detached_receipt_required",
+    }
+
+
+def _approved_receipt(artifact: dict) -> dict:
+    subject = approval_subject_for_artifact(artifact)
+    return {
+        "schema_version": "editorial_public_issue_approval_receipt_v1",
+        "receipt_id": "test-only-authorized-receipt",
+        "status": "approved",
+        "binding": subject,
+        "approved_statement_ids": subject["statement_ids"],
+        "approved_mapping_ids": subject["mapping_ids"],
+        "reviewer": {
+            "reviewer_id": "test-reviewer",
+            "authority": "test-authorized-editorial-reviewer",
+        },
+        "decision_timestamp": "2026-07-26T20:00:00Z",
+        "limitations_acknowledged": [
+            {
+                "limitation_id": "test-limitation",
+                "text": "Test-only reviewed limitation.",
+                "acknowledged": True,
+            }
+        ],
+        "decisions": {
+            "editorial_wording": "approved",
+            "gold_benchmark_promotion": "approved",
+            "production_eligibility": "approved",
+        },
+        "publication_activation": {
+            "active": False,
+            "decision_scope": "out_of_scope",
         },
     }
 
@@ -81,6 +106,7 @@ def _mapped_text(
     boundary_ids: list[str] | None = None,
 ) -> dict:
     return {
+        "statement_id": mapping_id.replace("mapping:", "statement:", 1),
         "text": text,
         "mapping": {
             "mapping_id": mapping_id,
@@ -89,7 +115,7 @@ def _mapped_text(
             "presentation_target": presentation_target,
             "action_ids": list(action_ids),
             "episode_ids": list(episode_ids),
-            "source_refs": ["test-source"],
+            "source_refs": ["test-vote-source", "test-meaning-source"],
             "receipt_refs": ["test-receipt"],
         },
     }
@@ -339,16 +365,21 @@ def _input_for(compiled: dict, *, approved: bool = True) -> dict:
             "semantic_source_case_id": "test-case",
             "focused_validation_case_ids": [],
             "dossier_refs": ["test-dossier"],
-            "source_refs": ["test-source"],
+            "source_refs": ["test-vote-source", "test-meaning-source"],
             "claim_refs": ["test-claim"],
             "receipt_refs": ["test-receipt"],
+            "action_source_requirements": {
+                action_id: {
+                    "vote_source_refs": ["test-vote-source"],
+                    "action_meaning_source_refs": ["test-meaning-source"],
+                }
+                for action_id in all_actions
+            },
         },
         "controls": {},
     }
     if approved:
-        authoring["controls"] = _approved_controls(
-            build_review_binding(compiled, authoring)
-        )
+        authoring["controls"] = _approved_controls()
     else:
         authoring["controls"] = json.loads(
             FOUSHEE_FIXTURE.read_text(encoding="utf-8")
@@ -360,9 +391,7 @@ def test_accepted_justice_mechanism_divide_presentation() -> None:
     case = copy.deepcopy(_cases()["semir-dev-05-justice-mechanism-divide"])
     compiled = replay_accepted_reference(case).compiled_ir
     authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
-    authoring["controls"] = _approved_controls(
-        build_review_binding(compiled, authoring)
-    )
+    authoring["controls"] = _approved_controls()
     pipeline_result = replay_accepted_reference(
         case,
         public_presentation_authoring=authoring,
@@ -374,9 +403,10 @@ def test_accepted_justice_mechanism_divide_presentation() -> None:
         "action_count": 7,
         "episode_count": 5,
     }
-    assert artifact["frontend_display"]["tier"] == "reviewed_conclusion"
-    assert len(artifact["frontend_display"]["repeated_patterns"]) == 2
-    assert artifact["frontend_display"]["policy_trajectories"][0][
+    assert artifact["controls"]["derived_semantic_tier"] == "reviewed_conclusion"
+    assert artifact["frontend_display"]["tier"] == "receipts_only"
+    assert len(artifact["editorial_wording"]["repeated_patterns"]) == 2
+    assert artifact["editorial_wording"]["policy_trajectories"][0][
         "proposition_id"
     ] == "prop:bc08a2271517ebb7"
     assert validate_public_issue_presentation(artifact) == {
@@ -389,7 +419,7 @@ def test_accepted_justice_mechanism_divide_presentation() -> None:
 def test_developing_trajectory_fixture_uses_compiled_plan_not_counts() -> None:
     compiled = _compiled("semir-dev-04-justice-mixed-fentanyl-trajectory")
     artifact = compile_public_issue_presentation(compiled, _input_for(compiled))
-    assert artifact["frontend_display"]["tier"] == "developing_read"
+    assert artifact["frontend_display"]["tier"] == "receipts_only"
     assert artifact["controls"]["derived_semantic_tier"] == "developing_read"
 
 
@@ -418,9 +448,7 @@ def test_not_voting_fixture_derives_non_directional_tier() -> None:
     assert artifact["controls"]["derived_semantic_tier"] == (
         "non_directional_or_limited_evidence"
     )
-    assert artifact["frontend_display"]["tier"] == (
-        "non_directional_or_limited_evidence"
-    )
+    assert artifact["frontend_display"]["tier"] == "receipts_only"
     assert artifact["frontend_display"]["conclusion"] is None
     assert artifact["frontend_display"]["repeated_patterns"] == []
 
@@ -558,3 +586,138 @@ def test_action_ids_resolve_to_foushee_source_receipts() -> None:
     for action_id in artifact["evidence_metadata"]["action_ids"]:
         roll = int(action_id.rsplit(":", 1)[1])
         assert f"clerk_roll_{roll:03d}" in source_refs
+
+
+def _all_mapped_text(wording: dict) -> list[dict]:
+    records: list[dict] = []
+
+    def collect(value: object) -> None:
+        if isinstance(value, dict):
+            if {"statement_id", "text", "mapping"} <= set(value):
+                records.append(value)
+            for nested in value.values():
+                collect(nested)
+        elif isinstance(value, list):
+            for nested in value:
+                collect(nested)
+
+    collect(wording)
+    return records
+
+
+def test_real_candidate_emits_all_six_reviewed_replacements() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    artifact = compile_public_issue_presentation(compiled, authoring)
+    wording = artifact["editorial_wording"]
+    expected = {
+        "The reviewed 119th-Congress sample shows support for reporting and for evidence, research, or implementation conditions in two independent episodes, alongside opposition to three specific proposals concerning retired-service firearm access, broader D.C. police pursuit authority, or repeal of most reviewed D.C. policing restrictions.",
+        "In this reviewed 119th-Congress sample, Foushee supported reporting and evidence, research, or implementation conditions in two independent episodes, while opposing three specific proposals concerning retired-service firearm access, broader D.C. police pursuit authority, and repeal of most reviewed D.C. policing restrictions.",
+        "Certification, fentanyl research provisions, and officer-safety reporting",
+        "Retired-service firearm access, D.C. pursuit authority, and policing-rule rollbacks",
+        "Across independent episodes, Foushee opposed creating a reviewed federal program for eligible current and retired officers to buy qualifying retired agency firearms, broader D.C. police pursuit authority, and repeal of most reviewed D.C. policing restrictions.",
+        "Within one fentanyl legislative episode, Foushee supported a certification amendment, opposed the earlier House bill, and supported a later related framework that permanently scheduled fentanyl-related substances and included research provisions. These related stages count as one episode for breadth and do not establish a change in position, motive, or philosophy.",
+    }
+    actual = {item["text"] for item in _all_mapped_text(wording)}
+    assert expected <= actual
+    joined = " ".join(actual).lower()
+    assert "police tools" not in joined
+    assert "expansion of a law-enforcement firearm purchase program" not in joined
+
+
+def test_pending_receipt_template_binds_exact_candidate_and_cannot_authorize() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    artifact = compile_public_issue_presentation(compiled, authoring)
+    receipt = json.loads(
+        FOUSHEE_RECEIPT_TEMPLATE.read_text(encoding="utf-8")
+    )
+    assert receipt["binding"] == approval_subject_for_artifact(artifact)
+    assert receipt["status"] == "human_approval_pending"
+    assert receipt["approved_statement_ids"] == []
+    assert receipt["approved_mapping_ids"] == []
+    assert detached_receipt_matches(
+        receipt,
+        expected_subject=approval_subject_for_artifact(artifact),
+    ) is False
+
+
+def test_every_real_mapping_has_vote_and_action_meaning_sources() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    artifact = compile_public_issue_presentation(compiled, authoring)
+    requirements = artifact["provenance"]["action_source_requirements"]
+    for record in _all_mapped_text(artifact["editorial_wording"]):
+        mapping_sources = set(record["mapping"]["source_refs"])
+        for action_id in record["mapping"]["action_ids"]:
+            requirement = requirements[action_id]
+            assert set(requirement["vote_source_refs"]) <= mapping_sources
+            assert set(
+                requirement["action_meaning_source_refs"]
+            ) <= mapping_sources
+
+
+def test_missing_action_meaning_provenance_fails_validation() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    teaser_sources = authoring["editorial_wording"]["tier_display"][
+        "reviewed_conclusion"
+    ]["teaser"]["mapping"]["source_refs"]
+    teaser_sources.remove("congress_hr2255_text")
+    with pytest.raises(
+        EditorialPresentationError,
+        match="direct vote or action-meaning provenance",
+    ):
+        compile_public_issue_presentation(compiled, authoring)
+
+
+def test_wording_mapping_and_controls_have_expected_digest_boundaries() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    baseline = build_approval_subject(compiled, authoring)
+
+    changed_wording = copy.deepcopy(authoring)
+    changed_wording["editorial_wording"]["conclusion"]["body"]["text"] += " "
+    wording_subject = build_approval_subject(compiled, changed_wording)
+    assert wording_subject["reviewed_wording_sha256"] != baseline[
+        "reviewed_wording_sha256"
+    ]
+    assert wording_subject["approval_subject_sha256"] != baseline[
+        "approval_subject_sha256"
+    ]
+
+    changed_mapping = copy.deepcopy(authoring)
+    changed_mapping["provenance"]["source_refs"].append(
+        "record_s331_debate"
+    )
+    changed_mapping["editorial_wording"]["policy_trajectories"][0][
+        "body"
+    ]["mapping"]["source_refs"].append("record_s331_debate")
+    mapping_subject = build_approval_subject(compiled, changed_mapping)
+    assert mapping_subject["mapping_set_sha256"] != baseline[
+        "mapping_set_sha256"
+    ]
+    assert mapping_subject["approval_subject_sha256"] != baseline[
+        "approval_subject_sha256"
+    ]
+
+    changed_controls = copy.deepcopy(authoring)
+    changed_controls["controls"]["publication"]["active"] = True
+    changed_controls["controls"]["production"]["eligible"] = True
+    assert build_approval_subject(compiled, changed_controls) == baseline
+
+
+def test_detached_receipt_has_no_digest_cycle() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    authoring["controls"] = _approved_controls()
+    artifact = compile_public_issue_presentation(compiled, authoring)
+    subject_before = approval_subject_for_artifact(artifact)
+    digest_before = artifact_digest(artifact)
+    receipt = _approved_receipt(artifact)
+    assert detached_receipt_matches(
+        receipt,
+        expected_subject=subject_before,
+    )
+    assert approval_subject_for_artifact(artifact) == subject_before
+    assert artifact_digest(artifact) == digest_before

@@ -13,6 +13,8 @@ registry, view model, fixture route, or rich editorial component.
 
 The machine-readable shape is
 `docs/editorial_public_issue_presentation_v1.schema.json`.
+Detached human receipts use
+`docs/editorial_public_issue_approval_receipt_v1.schema.json`.
 
 ## Separated layers
 
@@ -34,12 +36,14 @@ Each immutable artifact keeps these layers distinct:
 4. `evidence_metadata` preserves compiled coverage, complete action accounting,
    canonical action IDs, and episode IDs.
 5. `provenance` records semantic sources, focused validation cases, dossier,
-   claim, source, and receipt references, compiled-IR and reviewed-wording
-   digests, the review receipt, and a deterministic compiler receipt.
+   claim, source, and receipt references, per-action vote and action-meaning
+   source requirements, content digests, the approval-subject digest, and a
+   deterministic compiler receipt. Human approval receipts are detached and
+   are never embedded in the content they approve.
 6. `controls` keeps semantic acceptance, editorial approval, benchmark status,
-   production eligibility, publication activation, and human review separate.
-   Derived tier and gate fields are explanatory only and must equal
-   independently recomputed values.
+   production eligibility, publication activation, and the detached-receipt
+   requirement separate. Derived tier and gate fields are explanatory only and
+   must equal independently recomputed values.
 
 Canonical artifact bytes are UTF-8 JSON with sorted keys and compact separators.
 The deterministic content digest is SHA-256 over those exact bytes.
@@ -55,7 +59,10 @@ The deterministic content digest is SHA-256 over those exact bytes.
 - Coverage and scope wording map to deterministic typed presentation
   boundaries derived from compiled coverage and immutable artifact scope.
 - Each mapping carries exactly the action and episode identities established
-  by its proposition or boundary, plus source and receipt references.
+  by its proposition or boundary, plus source and receipt references. For
+  every mapped action, those references must include both its authoritative
+  vote source and every required official action-meaning source declared by
+  `provenance.action_source_requirements`.
 - The compiler rejects missing, duplicate, unknown, broadened, unmapped,
   wrong-section, or parent-measure mappings. It never silently omits an
   unmapped limitation.
@@ -101,11 +108,22 @@ value. `not_promoted` cannot pass the gate, and `promoted` is not a valid status
 in this presentation path. Failure of any gate produces `receipts_only`. Merge,
 tests, compilation, or semantic acceptance do not satisfy a publication gate.
 
-The human approval receipt identifies the artifact key and version, compiled-IR
-digest, reviewed-wording digest, complete mapping ID set, reviewed scope,
-reviewer identity and authority, approval state, and individual approval
-decisions. Changing wording, mappings, scope, identity, version, or reviewed
-content invalidates approval.
+Human approval uses
+`editorial_public_issue_approval_receipt_v1`, a detached immutable receipt. The
+compiler creates an approval subject containing the artifact key and version,
+member/issue/Congress scope, schema version, compiled-IR digest,
+reviewed-wording digest, mapping-set digest, evidence/provenance digest,
+immutable presentation-content digest, and complete statement and mapping ID
+sets. The approval-subject digest excludes the receipt and mutable publication
+controls, so it has no digest cycle.
+
+The detached receipt repeats the complete approval subject and separately
+records approved statement and mapping IDs, reviewer identity and authority,
+decision timestamp, acknowledged limitations, and independent editorial,
+benchmark, and production-eligibility decisions. Publication activation must
+remain false and out of scope. Changing wording, mappings, sources, scope,
+identity, version, compiled meaning, or immutable presentation content
+invalidates the receipt.
 
 ## Public selector and scope
 
@@ -124,8 +142,13 @@ Selection requires exact agreement among:
 - schema version;
 - recomputed artifact content digest;
 - recomputed reviewed-wording digest;
-- review receipt binding; and
+- detached approval-subject and receipt binding; and
 - provenance/compiler receipt binding.
+
+The selector reads a detached approval receipt from publication metadata. It
+never treats cached artifact gate fields as receipt authority. A missing,
+pending, malformed, stale, substituted, or content-mismatched receipt fails
+closed to `receipts_only`.
 
 Any invalid or mismatched row fails closed to the supplied `receipts_only`
 result rather than causing a public-route failure.
@@ -155,10 +178,11 @@ semantic source is `semir-dev-05-justice-mechanism-divide`, with
 `semir-dev-04-justice-mixed-fentanyl-trajectory` and
 `semir-dev-06-justice-one-sided-argument` as focused validation companions.
 
-The pending receipt identifies the immutable content requiring review but does
-not approve it: reviewer identity and authority remain `not_supplied`, approval
-state remains `human_approval_pending`, and every approval decision remains
-false. The fixture remains `not_promoted`, production-ineligible, and
+The pending detached receipt template identifies the immutable content
+requiring review but does not approve it: reviewer identity and authority
+remain `not_supplied`, the decision timestamp is absent, all three decisions
+remain pending, and approved statement and mapping sets remain empty. The
+fixture remains `not_promoted`, production-ineligible, and
 publication-inactive. It is a review fixture, not an active public artifact.
-Until an authorized receipt supplies every required approval, its public result
-is `receipts_only`.
+Until a detached authorized receipt matches the complete approval subject and
+every independent gate passes, its public result is `receipts_only`.

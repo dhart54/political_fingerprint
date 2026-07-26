@@ -1,0 +1,226 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://political-fingerprint.local/schemas/editorial_public_issue_approval_receipt_v1.schema.json",
+  "title": "Editorial Public Issue Detached Approval Receipt V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "status",
+    "binding",
+    "approved_statement_ids",
+    "approved_mapping_ids",
+    "reviewer",
+    "decision_timestamp",
+    "limitations_acknowledged",
+    "decisions",
+    "publication_activation"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "editorial_public_issue_approval_receipt_v1"
+    },
+    "receipt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "human_approval_pending",
+        "approved",
+        "rejected"
+      ]
+    },
+    "binding": {
+      "$ref": "#/definitions/approvalSubject"
+    },
+    "approved_statement_ids": {
+      "$ref": "#/definitions/uniqueStrings"
+    },
+    "approved_mapping_ids": {
+      "$ref": "#/definitions/uniqueStrings"
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_id",
+        "authority"
+      ],
+      "properties": {
+        "reviewer_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "decision_timestamp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "limitations_acknowledged": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "limitation_id",
+          "text",
+          "acknowledged"
+        ],
+        "properties": {
+          "limitation_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "acknowledged": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "decisions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "editorial_wording",
+        "gold_benchmark_promotion",
+        "production_eligibility"
+      ],
+      "properties": {
+        "editorial_wording": {
+          "$ref": "#/definitions/decision"
+        },
+        "gold_benchmark_promotion": {
+          "$ref": "#/definitions/decision"
+        },
+        "production_eligibility": {
+          "$ref": "#/definitions/decision"
+        }
+      }
+    },
+    "publication_activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "active",
+        "decision_scope"
+      ],
+      "properties": {
+        "active": {
+          "const": false
+        },
+        "decision_scope": {
+          "const": "out_of_scope"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "uniqueStrings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "decision": {
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ]
+    },
+    "approvalSubject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "artifact_version",
+        "member_id",
+        "issue_id",
+        "congress",
+        "approved_scope",
+        "schema_version",
+        "compiled_ir_sha256",
+        "reviewed_wording_sha256",
+        "mapping_set_sha256",
+        "evidence_provenance_sha256",
+        "presentation_content_sha256",
+        "statement_ids",
+        "mapping_ids",
+        "approval_subject_sha256"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "member_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "issue_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "congress": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "approved_scope": {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        },
+        "schema_version": {
+          "const": "editorial_public_issue_presentation_v1"
+        },
+        "compiled_ir_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "reviewed_wording_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "mapping_set_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "evidence_provenance_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "presentation_content_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "statement_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "mapping_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "approval_subject_sha256": {
+          "$ref": "#/definitions/sha256"
+        }
+      }
+    }
+  }
+}
