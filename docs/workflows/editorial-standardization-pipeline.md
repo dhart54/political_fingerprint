@@ -43,6 +43,13 @@ Exact prose is not canonical.
 Later stages may select, relate, omit, or render established semantic objects.
 They may not reinterpret earlier-stage meaning or add analytical claims.
 
+All newly commissioned work enters through
+`backend.app.semantic_ir.pipeline.run_editorial_pipeline`. That orchestration
+calls the independently usable pure compiler exactly once, validates compiled
+IR, and only then prepares review, presentation, or optional inert persistence
+proposal payloads. Historical generators are replay-only and are not selectable
+from the canonical command.
+
 ## Three review checkpoints
 
 ### Checkpoint 1: shared semantic corpus
@@ -309,10 +316,12 @@ Use while authoring or correcting Semantic IR, candidate or accepted-reference
 cases, compiler logic, action accounting, and coverage.
 
 ```powershell
-python scripts/validate_editorial_semantic_ir.py
-python scripts/compare_accepted_semantic_references.py
-python -m unittest backend.tests.test_editorial_semantic_ir
+python scripts/run_editorial_pipeline.py validate --tier semantic
 ```
+
+The canonical command coordinates actual Draft-07 validation, corpus and receipt
+integrity, all 16 accepted-reference comparisons, and the focused compiler,
+property, input-only, and adapter-isolation tests.
 
 This loop must not require frontend, browser, persistence, or production work.
 
@@ -323,12 +332,30 @@ Use after changes affect a full issue domain.
 Validate affected members, vectors, mutations, fixtures, and persistence
 proposal for that domain.
 
+For the current accepted-reference domains, run a bounded read-only replay
+through the canonical pipeline:
+
+```powershell
+python scripts/run_editorial_pipeline.py validate --tier domain --domain <DOMAIN_ID>
+```
+
+The default does not prepare a persistence proposal or generate downstream
+artifacts.
+
 ### Release loop
 
 Use near merge when runtime, frontend, cross-domain, migration, persistence,
 publication, or deployment behavior changes.
 
 Do not run release validation after every small semantic correction.
+
+```powershell
+python scripts/run_editorial_pipeline.py validate --tier release
+```
+
+Use `--include-frontend` or `--include-persistence` only when those boundaries
+actually changed. The command coordinates checks only and confers no production,
+publication, merge, or deployment authority.
 
 ## Failure handling
 

@@ -99,6 +99,12 @@ is pure, dependency-light, and file-agnostic. A test harness or authoring tool
 loads a case, calls `project_compiler_input`, and then passes the resulting
 object to `compile_semantic_ir`.
 
+`backend/app/semantic_ir/pipeline.py` is the canonical orchestration boundary for
+all newly commissioned work. It invokes the pure compiler exactly once,
+validates compiled identities and references, and passes only compiled IR to
+review, presentation, and optional inert persistence-proposal adapters. The pure
+compiler remains independently usable.
+
 The projection contains only:
 
 - case scope and structured focused-fixture scope, when applicable;
@@ -241,19 +247,22 @@ that status to this compiler/reference contract.
 
 ## Validation tiers
 
-Only the semantic loop is implemented: schema-shape checks, accepted-reference
-and held-out integrity, stable identities, evidence references, hierarchy, the
+The semantic loop includes actual Draft-07 validation, accepted-reference and
+held-out integrity, stable identities, evidence references, hierarchy, the
 separated coverage contract, role/presentation rules, action accounting, all 16
-compiler comparisons, and targeted invariance and anti-overfitting tests.
+compiler comparisons, and targeted invariance, anti-overfitting, input-only, and
+adapter-isolation tests.
 
-The domain loop remains proposed: full domain member/vector inputs and derived
-fixtures. The release loop remains proposed: runtime, frontend, database,
-broad regression, and production-oriented validation.
+The domain loop is implemented as bounded read-only accepted-reference replay
+through the same public pipeline. A future milestone must add a newly
+commissioned full-domain input manifest before this can be described as
+full-population generation. The release loop coordinates existing checks and is
+not the default.
 
 Run the implemented loop from the repository root:
 
 ```powershell
-python scripts/validate_editorial_semantic_ir.py
-python scripts/compare_accepted_semantic_references.py
-python -m unittest backend.tests.test_editorial_semantic_ir
+python scripts/run_editorial_pipeline.py validate --tier semantic
+python scripts/run_editorial_pipeline.py validate --tier domain --domain <DOMAIN_ID>
+python scripts/run_editorial_pipeline.py validate --tier release
 ```
