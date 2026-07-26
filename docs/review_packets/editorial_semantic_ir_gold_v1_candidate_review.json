@@ -1,0 +1,2195 @@
+{
+  "schema_version": "editorial_semantic_ir_candidate_review_packet_v1",
+  "review_state": "candidate_pending_external_semantic_review",
+  "external_review_disposition": "decisions_applied_candidate_revision",
+  "development_candidate_count": 12,
+  "held_out_input_count": 4,
+  "candidate_case_ids": [
+    "semir-dev-01-economy-funding-stages",
+    "semir-dev-02-economy-uniform-no-throughline",
+    "semir-dev-03-economy-noncounting-boundaries",
+    "semir-dev-04-justice-mixed-fentanyl-trajectory",
+    "semir-dev-05-justice-mechanism-divide",
+    "semir-dev-06-justice-one-sided-argument",
+    "semir-dev-07-environment-exact-action-gate",
+    "semir-dev-08-environment-separate-family-episodes",
+    "semir-dev-09-not-voting-heavy-record",
+    "semir-dev-10-present-known-coverage",
+    "semir-dev-11-tied-pattern-ownership",
+    "semir-dev-12-identity-title-order-invariance"
+  ],
+  "held_out_case_ids": [
+    "semir-held-01-partial-service-missing-evidence",
+    "semir-held-02-source-conflict-unsupported",
+    "semir-held-03-title-order-invariance",
+    "semir-held-04-cross-domain-final-passage"
+  ],
+  "coverage_matrix": {
+    "01_multiple_stages_one_episode": [
+      "semir-dev-01-economy-funding-stages",
+      "semir-dev-04-justice-mixed-fentanyl-trajectory"
+    ],
+    "02_separate_proposals_one_family": [
+      "semir-dev-08-environment-separate-family-episodes"
+    ],
+    "03_exact_action_vs_parent_package": [
+      "semir-dev-07-environment-exact-action-gate",
+      "semir-held-04-cross-domain-final-passage"
+    ],
+    "04_bounded_cross_domain_final_passage": [
+      "semir-held-04-cross-domain-final-passage"
+    ],
+    "05_single_action_episode": [
+      "semir-dev-06-justice-one-sided-argument",
+      "semir-dev-07-environment-exact-action-gate"
+    ],
+    "06_mixed_direction_within_episode": [
+      "semir-dev-04-justice-mixed-fentanyl-trajectory"
+    ],
+    "07_mixed_direction_across_episodes": [
+      "semir-dev-05-justice-mechanism-divide",
+      "semir-dev-08-environment-separate-family-episodes"
+    ],
+    "08_uniform_direction_no_throughline": [
+      "semir-dev-02-economy-uniform-no-throughline"
+    ],
+    "09_mechanism_divide": [
+      "semir-dev-05-justice-mechanism-divide",
+      "semir-dev-08-environment-separate-family-episodes"
+    ],
+    "10_tied_repeated_patterns": [
+      "semir-dev-11-tied-pattern-ownership"
+    ],
+    "11_not_voting_heavy": [
+      "semir-dev-09-not-voting-heavy-record"
+    ],
+    "12_present": [
+      "semir-dev-10-present-known-coverage"
+    ],
+    "13_partial_service_or_missing": [
+      "semir-held-01-partial-service-missing-evidence"
+    ],
+    "14_one_sided_official_argument": [
+      "semir-dev-06-justice-one-sided-argument"
+    ],
+    "15_shared_pending_trait_relationship": [
+      "semir-dev-11-tied-pattern-ownership"
+    ],
+    "16_identical_evidence_different_parties": [
+      "semir-dev-12-identity-title-order-invariance"
+    ],
+    "17_reordered_or_opaque_titles": [
+      "semir-dev-12-identity-title-order-invariance",
+      "semir-held-03-title-order-invariance"
+    ],
+    "18_unsupported_or_conflicting_evidence": [
+      "semir-held-02-source-conflict-unsupported"
+    ],
+    "19_proposition_deduplication": [
+      "semir-dev-11-tied-pattern-ownership",
+      "semir-dev-12-identity-title-order-invariance"
+    ],
+    "20_limitation_vs_methodology": [
+      "semir-dev-03-economy-noncounting-boundaries"
+    ]
+  },
+  "role_model_decisions": [
+    "Behavioral propositions describe member actions and may render in analytical sections.",
+    "Synthesis propositions derive conclusions from behavioral propositions; reviewed mechanism-divide and no-common-throughline candidates use conclusion_only.",
+    "Coverage boundaries are member evidence-state records, not behavioral propositions.",
+    "Method boundaries contain counting and control-exclusion rules.",
+    "Source completeness is a shared source/render constraint, not a member proposition.",
+    "Only section-rendered behavioral propositions participate in the one-primary-section invariant."
+  ],
+  "coverage_contract": [
+    "eligible_substantive_actions",
+    "context_only_control_actions",
+    "in_service_eligible_actions",
+    "resolved_eligible_actions",
+    "directional_yes_no_positions",
+    "present_actions",
+    "not_voting_actions",
+    "missing_evidence_actions",
+    "outside_service_actions",
+    "complete_episodes",
+    "partial_episodes"
+  ],
+  "candidate_review_index": [
+    {
+      "case_id": "semir-dev-01-economy-funding-stages",
+      "case_scope": "full_record",
+      "structural_purpose": [
+        "multiple stages in one episode",
+        "trajectory requires multiple actions"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/valerie_foushee_economy_gold_v2/measures/hr5371.json",
+          "docs/editorial/valerie_foushee_economy_gold_v2/policy_episode_map.json"
+        ],
+        "source_ids": [
+          "clerk_roll_281",
+          "clerk_roll_285",
+          "congress_hr5371_actions",
+          "govinfo_pl119_37"
+        ],
+        "claim_ids": [
+          "hr5371_initial_stage",
+          "hr5371_final_status"
+        ],
+        "mutation_ids": []
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "government_funding_hr5371"
+        ],
+        "policy_family_ids": []
+      },
+      "member_evidence": [
+        {
+          "member_id": "F000477",
+          "party": "D",
+          "statuses": [
+            {
+              "action_id": "house:119:1:281",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:1:285",
+              "status": "Nay"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 2,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 2,
+            "resolved_eligible_actions": 2,
+            "directional_yes_no_positions": 2,
+            "present_actions": 0,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 1,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [
+        {
+          "proposition_id": "prop:dev01-funding-trajectory",
+          "semantic_role": "behavioral",
+          "proposition_type": "trajectory",
+          "presentation_target": "policy_trajectories",
+          "evidence_action_ids": [
+            "house:119:1:281",
+            "house:119:1:285"
+          ]
+        }
+      ],
+      "proposition_relationships": [],
+      "presentation_ownership": {
+        "policy_trajectories": [
+          "prop:dev01-funding-trajectory"
+        ]
+      },
+      "conclusion_plan": {
+        "primary_proposition_ids": [
+          "prop:dev01-funding-trajectory"
+        ],
+        "limiting_proposition_ids": []
+      },
+      "coverage_boundaries": [],
+      "method_boundaries": [
+        {
+          "boundary_id": "method:dev01-one-episode-counting",
+          "boundary_type": "episode_counting",
+          "action_ids": [
+            "house:119:1:281",
+            "house:119:1:285"
+          ],
+          "presentation_target": "method_note",
+          "detail": "Two legislative stages count as one episode and do not create two independent positions."
+        }
+      ],
+      "source_render_constraints": [],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:1:281",
+          "house:119:1:285"
+        ],
+        "non_proposition_reasons": []
+      },
+      "intentionally_omitted_sections": [
+        "repeated_patterns",
+        "other_notable_choices"
+      ],
+      "prohibited_claims": [
+        "motive",
+        "change in position",
+        "two independent funding positions"
+      ],
+      "external_review_decisions": [
+        "The two H.R. 5371 stages form one behavioral trajectory.",
+        "Counting multiple actions as one episode is a method boundary, not an analytical proposition."
+      ]
+    },
+    {
+      "case_id": "semir-dev-02-economy-uniform-no-throughline",
+      "case_scope": "full_record",
+      "structural_purpose": [
+        "uniform direction without a common throughline",
+        "single-action episodes remain non-trajectories"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/valerie_foushee_economy_gold_v2/policy_episode_map.json",
+          "docs/editorial/valerie_foushee_economy_gold_v2/issue_synthesis.md"
+        ],
+        "source_ids": [
+          "clerk_roll_281",
+          "clerk_roll_285",
+          "clerk_roll_050",
+          "clerk_roll_100",
+          "clerk_roll_182",
+          "clerk_roll_156"
+        ],
+        "claim_ids": [
+          "hr5371_initial_stage",
+          "hr5371_final_status",
+          "hconres14_initial_stage",
+          "hconres14_senate_stage",
+          "hr3944_house_stage",
+          "hr2966_mechanism"
+        ],
+        "mutation_ids": []
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "government_funding_hr5371",
+          "budget_framework_hconres14",
+          "milcon_va_hr3944",
+          "sba_loan_eligibility_hr2966"
+        ],
+        "policy_family_ids": []
+      },
+      "member_evidence": [
+        {
+          "member_id": "F000477",
+          "party": "D",
+          "statuses": [
+            {
+              "action_id": "house:119:1:281",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:1:285",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:1:50",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:1:100",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:1:182",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:1:156",
+              "status": "Nay"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 6,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 6,
+            "resolved_eligible_actions": 6,
+            "directional_yes_no_positions": 6,
+            "present_actions": 0,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 4,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [
+        {
+          "proposition_id": "prop:dev02-funding-trajectory",
+          "semantic_role": "behavioral",
+          "proposition_type": "trajectory",
+          "presentation_target": "policy_trajectories",
+          "evidence_action_ids": [
+            "house:119:1:281",
+            "house:119:1:285"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev02-budget-trajectory",
+          "semantic_role": "behavioral",
+          "proposition_type": "trajectory",
+          "presentation_target": "policy_trajectories",
+          "evidence_action_ids": [
+            "house:119:1:50",
+            "house:119:1:100"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev02-milcon-choice",
+          "semantic_role": "behavioral",
+          "proposition_type": "notable_choice",
+          "presentation_target": "other_notable_choices",
+          "evidence_action_ids": [
+            "house:119:1:182"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev02-sba-choice",
+          "semantic_role": "behavioral",
+          "proposition_type": "notable_choice",
+          "presentation_target": "other_notable_choices",
+          "evidence_action_ids": [
+            "house:119:1:156"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev02-uniform-direction",
+          "semantic_role": "synthesis",
+          "proposition_type": "uniform_direction",
+          "presentation_target": "conclusion_only",
+          "evidence_action_ids": [
+            "house:119:1:281",
+            "house:119:1:285",
+            "house:119:1:50",
+            "house:119:1:100",
+            "house:119:1:182",
+            "house:119:1:156"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev02-no-throughline",
+          "semantic_role": "synthesis",
+          "proposition_type": "no_common_throughline",
+          "presentation_target": "conclusion_only",
+          "evidence_action_ids": [
+            "house:119:1:281",
+            "house:119:1:50",
+            "house:119:1:182",
+            "house:119:1:156"
+          ]
+        }
+      ],
+      "proposition_relationships": [
+        {
+          "proposition_id": "prop:dev02-uniform-direction",
+          "supported_by": [
+            "prop:dev02-funding-trajectory",
+            "prop:dev02-budget-trajectory",
+            "prop:dev02-milcon-choice",
+            "prop:dev02-sba-choice"
+          ],
+          "limited_by": [
+            "prop:dev02-no-throughline"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev02-no-throughline",
+          "supported_by": [
+            "prop:dev02-funding-trajectory",
+            "prop:dev02-budget-trajectory",
+            "prop:dev02-milcon-choice",
+            "prop:dev02-sba-choice"
+          ],
+          "limited_by": []
+        }
+      ],
+      "presentation_ownership": {
+        "policy_trajectories": [
+          "prop:dev02-funding-trajectory",
+          "prop:dev02-budget-trajectory"
+        ],
+        "other_notable_choices": [
+          "prop:dev02-milcon-choice",
+          "prop:dev02-sba-choice"
+        ],
+        "conclusion_only": [
+          "prop:dev02-uniform-direction",
+          "prop:dev02-no-throughline"
+        ]
+      },
+      "conclusion_plan": {
+        "primary_proposition_ids": [
+          "prop:dev02-uniform-direction"
+        ],
+        "limiting_proposition_ids": [
+          "prop:dev02-no-throughline"
+        ]
+      },
+      "coverage_boundaries": [],
+      "method_boundaries": [],
+      "source_render_constraints": [],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:1:281",
+          "house:119:1:285",
+          "house:119:1:50",
+          "house:119:1:100",
+          "house:119:1:182",
+          "house:119:1:156"
+        ],
+        "non_proposition_reasons": []
+      },
+      "intentionally_omitted_sections": [
+        "other_notable_choices"
+      ],
+      "prohibited_claims": [
+        "shared motive",
+        "ideological label",
+        "single common policy throughline"
+      ],
+      "external_review_decisions": [
+        "The full graph retains the funding and budget trajectories plus both eligible one-off choices.",
+        "Uniform direction and the absence of a common throughline are conclusion-only synthesis."
+      ]
+    },
+    {
+      "case_id": "semir-dev-03-economy-noncounting-boundaries",
+      "case_scope": "full_record",
+      "structural_purpose": [
+        "Not Voting is non-directional",
+        "meaningful limitation versus methodology",
+        "procedural and mixed controls remain non-counting"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/valerie_foushee_economy_gold_v2/measures/hr2965.json",
+          "docs/editorial/valerie_foushee_economy_gold_v2/policy_episode_map.json"
+        ],
+        "source_ids": [
+          "clerk_roll_310",
+          "clerk_roll_263",
+          "clerk_roll_180",
+          "record_roll263_instruction",
+          "record_roll180_en_bloc"
+        ],
+        "claim_ids": [
+          "hr2965_mechanism",
+          "roll263_instruction",
+          "roll180_ambiguity"
+        ],
+        "mutation_ids": [
+          "not_voting_as_opposition",
+          "counting_note_enters_meaningful_exceptions"
+        ]
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "sba_regulatory_cost_hr2965"
+        ],
+        "policy_family_ids": []
+      },
+      "member_evidence": [
+        {
+          "member_id": "F000477",
+          "party": "D",
+          "statuses": [
+            {
+              "action_id": "house:119:1:310",
+              "status": "Not Voting"
+            },
+            {
+              "action_id": "house:119:1:263",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:1:180",
+              "status": "Nay"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 1,
+            "context_only_control_actions": 2,
+            "in_service_eligible_actions": 1,
+            "resolved_eligible_actions": 1,
+            "directional_yes_no_positions": 0,
+            "present_actions": 0,
+            "not_voting_actions": 1,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 1,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [],
+      "proposition_relationships": [],
+      "presentation_ownership": {},
+      "conclusion_plan": {
+        "primary_proposition_ids": [],
+        "limiting_proposition_ids": []
+      },
+      "coverage_boundaries": [
+        {
+          "boundary_id": "coverage:dev03-known-not-voting",
+          "boundary_type": "not_voting",
+          "action_ids": [
+            "house:119:1:310"
+          ],
+          "presentation_target": "coverage_note",
+          "detail": "The sole eligible substantive action is resolved as Not Voting and is neither support nor opposition."
+        }
+      ],
+      "method_boundaries": [
+        {
+          "boundary_id": "method:dev03-context-controls",
+          "boundary_type": "context_only_control_exclusion",
+          "action_ids": [
+            "house:119:1:263",
+            "house:119:1:180"
+          ],
+          "presentation_target": "method_note",
+          "detail": "The procedural and mixed-measure controls remain outside the substantive coverage denominator."
+        }
+      ],
+      "source_render_constraints": [],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [],
+        "non_proposition_reasons": [
+          {
+            "action_id": "house:119:1:310",
+            "reason_code": "non_directional_status",
+            "detail": "Known Not Voting is recorded in coverage and cannot support a behavioral proposition."
+          }
+        ]
+      },
+      "intentionally_omitted_sections": [
+        "repeated_patterns",
+        "policy_trajectories",
+        "other_notable_choices",
+        "meaningful_limitations"
+      ],
+      "prohibited_claims": [
+        "Not Voting as opposition",
+        "control votes as substantive positions"
+      ],
+      "external_review_decisions": [
+        "Coverage contains one eligible substantive action and two context-only controls.",
+        "The known Not Voting state is a coverage boundary; control exclusion is a method boundary."
+      ]
+    },
+    {
+      "case_id": "semir-dev-04-justice-mixed-fentanyl-trajectory",
+      "case_scope": "full_record",
+      "structural_purpose": [
+        "mixed direction within one episode",
+        "multiple stages in one episode",
+        "trajectory is not a repeated pattern"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/measures/halt_fentanyl.json",
+          "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/episode_inference.json"
+        ],
+        "source_ids": [
+          "clerk_roll_032",
+          "clerk_roll_033",
+          "clerk_roll_166",
+          "congress_hamdt5",
+          "congress_hr27",
+          "congress_s331"
+        ],
+        "claim_ids": [],
+        "mutation_ids": []
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "halt-fentanyl-legislative-path"
+        ],
+        "policy_family_ids": []
+      },
+      "member_evidence": [
+        {
+          "member_id": "F000477",
+          "party": "D",
+          "statuses": [
+            {
+              "action_id": "house:119:1:32",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:1:33",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:1:166",
+              "status": "Yea"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 3,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 3,
+            "resolved_eligible_actions": 3,
+            "directional_yes_no_positions": 3,
+            "present_actions": 0,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 1,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [
+        {
+          "proposition_id": "prop:dev04-fentanyl-trajectory",
+          "semantic_role": "behavioral",
+          "proposition_type": "trajectory",
+          "presentation_target": "policy_trajectories",
+          "evidence_action_ids": [
+            "house:119:1:32",
+            "house:119:1:33",
+            "house:119:1:166"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev04-no-change-claim",
+          "semantic_role": "synthesis",
+          "proposition_type": "interpretive_boundary",
+          "presentation_target": "conclusion_only",
+          "evidence_action_ids": [
+            "house:119:1:33",
+            "house:119:1:166"
+          ]
+        }
+      ],
+      "proposition_relationships": [
+        {
+          "proposition_id": "prop:dev04-fentanyl-trajectory",
+          "supported_by": [],
+          "limited_by": [
+            "prop:dev04-no-change-claim"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev04-no-change-claim",
+          "supported_by": [
+            "prop:dev04-fentanyl-trajectory"
+          ],
+          "limited_by": []
+        }
+      ],
+      "presentation_ownership": {
+        "policy_trajectories": [
+          "prop:dev04-fentanyl-trajectory"
+        ],
+        "conclusion_only": [
+          "prop:dev04-no-change-claim"
+        ]
+      },
+      "conclusion_plan": {
+        "primary_proposition_ids": [
+          "prop:dev04-fentanyl-trajectory"
+        ],
+        "limiting_proposition_ids": [
+          "prop:dev04-no-change-claim"
+        ]
+      },
+      "coverage_boundaries": [],
+      "method_boundaries": [],
+      "source_render_constraints": [],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:1:32",
+          "house:119:1:33",
+          "house:119:1:166"
+        ],
+        "non_proposition_reasons": []
+      },
+      "intentionally_omitted_sections": [
+        "repeated_patterns"
+      ],
+      "prohibited_claims": [
+        "change in position",
+        "motive",
+        "three independent fentanyl positions"
+      ],
+      "external_review_decisions": [
+        "The three stages form one mixed behavioral trajectory.",
+        "The record does not support a cross-time change claim; that limit is conclusion-only synthesis."
+      ]
+    },
+    {
+      "case_id": "semir-dev-05-justice-mechanism-divide",
+      "case_scope": "full_record",
+      "structural_purpose": [
+        "mechanism divide",
+        "mixed direction across independent episodes",
+        "repeated patterns require independent episodes"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/episode_inference.json",
+          "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json"
+        ],
+        "source_ids": [
+          "clerk_roll_032",
+          "clerk_roll_033",
+          "clerk_roll_166",
+          "clerk_roll_130",
+          "clerk_roll_131",
+          "clerk_roll_275",
+          "clerk_roll_299"
+        ],
+        "claim_ids": [],
+        "mutation_ids": []
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "halt-fentanyl-legislative-path",
+          "retired-service-weapon-purchases",
+          "officer-safety-data-reporting",
+          "dc-police-pursuit-rules",
+          "dc-policing-reform-repeal"
+        ],
+        "policy_family_ids": [
+          "justice-reviewed-mechanisms"
+        ]
+      },
+      "member_evidence": [
+        {
+          "member_id": "F000477",
+          "party": "D",
+          "statuses": [
+            {
+              "action_id": "house:119:1:32",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:1:33",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:1:166",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:1:130",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:1:131",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:1:275",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:1:299",
+              "status": "Nay"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 7,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 7,
+            "resolved_eligible_actions": 7,
+            "directional_yes_no_positions": 7,
+            "present_actions": 0,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 5,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [
+        {
+          "proposition_id": "prop:dev05-guardrail-pattern",
+          "semantic_role": "behavioral",
+          "proposition_type": "repeated_pattern",
+          "presentation_target": "repeated_patterns",
+          "evidence_action_ids": [
+            "house:119:1:32",
+            "house:119:1:166",
+            "house:119:1:131"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev05-authority-limits",
+          "semantic_role": "behavioral",
+          "proposition_type": "repeated_pattern",
+          "presentation_target": "repeated_patterns",
+          "evidence_action_ids": [
+            "house:119:1:130",
+            "house:119:1:275",
+            "house:119:1:299"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev05-fentanyl-trajectory",
+          "semantic_role": "behavioral",
+          "proposition_type": "trajectory",
+          "presentation_target": "policy_trajectories",
+          "evidence_action_ids": [
+            "house:119:1:32",
+            "house:119:1:33",
+            "house:119:1:166"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev05-mechanism-divide",
+          "semantic_role": "synthesis",
+          "proposition_type": "mechanism_divide",
+          "presentation_target": "conclusion_only",
+          "evidence_action_ids": [
+            "house:119:1:32",
+            "house:119:1:130",
+            "house:119:1:131",
+            "house:119:1:275",
+            "house:119:1:299"
+          ]
+        }
+      ],
+      "proposition_relationships": [
+        {
+          "proposition_id": "prop:dev05-mechanism-divide",
+          "supported_by": [
+            "prop:dev05-guardrail-pattern",
+            "prop:dev05-authority-limits"
+          ],
+          "limited_by": [
+            "prop:dev05-fentanyl-trajectory"
+          ]
+        }
+      ],
+      "presentation_ownership": {
+        "repeated_patterns": [
+          "prop:dev05-guardrail-pattern",
+          "prop:dev05-authority-limits"
+        ],
+        "policy_trajectories": [
+          "prop:dev05-fentanyl-trajectory"
+        ],
+        "conclusion_only": [
+          "prop:dev05-mechanism-divide"
+        ]
+      },
+      "conclusion_plan": {
+        "primary_proposition_ids": [
+          "prop:dev05-mechanism-divide",
+          "prop:dev05-guardrail-pattern",
+          "prop:dev05-authority-limits"
+        ],
+        "limiting_proposition_ids": [
+          "prop:dev05-fentanyl-trajectory"
+        ]
+      },
+      "coverage_boundaries": [],
+      "method_boundaries": [],
+      "source_render_constraints": [],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:1:32",
+          "house:119:1:166",
+          "house:119:1:131",
+          "house:119:1:130",
+          "house:119:1:275",
+          "house:119:1:299",
+          "house:119:1:33"
+        ],
+        "non_proposition_reasons": []
+      },
+      "intentionally_omitted_sections": [],
+      "prohibited_claims": [
+        "comprehensive Justice philosophy",
+        "motive",
+        "ideological label"
+      ],
+      "external_review_decisions": [
+        "The two independent repeated patterns remain behavioral propositions.",
+        "The mechanism divide is conclusion-only synthesis and the mixed fentanyl trajectory limits it."
+      ]
+    },
+    {
+      "case_id": "semir-dev-06-justice-one-sided-argument",
+      "case_scope": "full_record",
+      "structural_purpose": [
+        "one-sided official argument evidence",
+        "single-action episode"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/measures/hr2240.json",
+          "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/side_by_side_review.md"
+        ],
+        "source_ids": [
+          "clerk_roll_131",
+          "congress_hr2240",
+          "hrpt_119_079"
+        ],
+        "claim_ids": [],
+        "mutation_ids": [
+          "unsupported_argument"
+        ]
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "officer-safety-data-reporting"
+        ],
+        "policy_family_ids": []
+      },
+      "member_evidence": [
+        {
+          "member_id": "F000477",
+          "party": "D",
+          "statuses": [
+            {
+              "action_id": "house:119:1:131",
+              "status": "Yea"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 1,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 1,
+            "resolved_eligible_actions": 1,
+            "directional_yes_no_positions": 1,
+            "present_actions": 0,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 1,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [
+        {
+          "proposition_id": "prop:dev06-reporting-choice",
+          "semantic_role": "behavioral",
+          "proposition_type": "notable_choice",
+          "presentation_target": "other_notable_choices",
+          "evidence_action_ids": [
+            "house:119:1:131"
+          ]
+        }
+      ],
+      "proposition_relationships": [],
+      "presentation_ownership": {
+        "other_notable_choices": [
+          "prop:dev06-reporting-choice"
+        ]
+      },
+      "conclusion_plan": {
+        "primary_proposition_ids": [],
+        "limiting_proposition_ids": []
+      },
+      "coverage_boundaries": [],
+      "method_boundaries": [],
+      "source_render_constraints": [
+        {
+          "constraint_id": "source:dev06-one-sided-argument",
+          "constraint_type": "argument_availability",
+          "source_ids": [
+            "congress_hr2240",
+            "hrpt_119_079"
+          ],
+          "action_ids": [
+            "house:119:1:131"
+          ],
+          "presentation_target": "source_note",
+          "render_rule": "Disclose that the reviewed official argument evidence is one-sided; do not synthesize a missing opposing argument."
+        }
+      ],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:1:131"
+        ],
+        "non_proposition_reasons": []
+      },
+      "intentionally_omitted_sections": [
+        "policy_trajectories",
+        "repeated_patterns"
+      ],
+      "prohibited_claims": [
+        "invented opponent argument",
+        "member motive"
+      ],
+      "external_review_decisions": [
+        "The reporting vote remains a behavioral notable choice.",
+        "One-sided argument availability is a shared source/render constraint, not a member proposition."
+      ]
+    },
+    {
+      "case_id": "semir-dev-07-environment-exact-action-gate",
+      "case_scope": "full_record",
+      "structural_purpose": [
+        "exact-action versus parent-package eligibility",
+        "bounded cross-domain context"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/domain_eligibility_report.json",
+          "docs/editorial/commissioning_domain_v1/corrected/dossiers/roll_006.json"
+        ],
+        "source_ids": [
+          "clerk_roll_006",
+          "congress_hr6938_text",
+          "congress_fy2026_status"
+        ],
+        "claim_ids": [
+          "roll-006:exact_stage"
+        ],
+        "mutation_ids": [
+          "unrelated_division_inherits_adjacent_domain",
+          "package_transfers_domain_to_component_vote"
+        ]
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "fy2026-energy-water-interior-appropriations"
+        ],
+        "policy_family_ids": []
+      },
+      "member_evidence": [
+        {
+          "member_id": "A000372",
+          "party": "R",
+          "statuses": [
+            {
+              "action_id": "house:119:2:6",
+              "status": "Yea"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 1,
+            "context_only_control_actions": 1,
+            "in_service_eligible_actions": 1,
+            "resolved_eligible_actions": 1,
+            "directional_yes_no_positions": 1,
+            "present_actions": 0,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 1,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [
+        {
+          "proposition_id": "prop:dev07-eligible-retention-choice",
+          "semantic_role": "behavioral",
+          "proposition_type": "notable_choice",
+          "presentation_target": "other_notable_choices",
+          "evidence_action_ids": [
+            "house:119:2:6"
+          ]
+        }
+      ],
+      "proposition_relationships": [],
+      "presentation_ownership": {
+        "other_notable_choices": [
+          "prop:dev07-eligible-retention-choice"
+        ]
+      },
+      "conclusion_plan": {
+        "primary_proposition_ids": [],
+        "limiting_proposition_ids": []
+      },
+      "coverage_boundaries": [],
+      "method_boundaries": [
+        {
+          "boundary_id": "method:dev07-rejected-parent-context",
+          "boundary_type": "exact_action_eligibility",
+          "action_ids": [
+            "house:119:2:5"
+          ],
+          "presentation_target": "method_note",
+          "detail": "The rejected parent-package action is retained only as eligibility context and does not enter substantive coverage."
+        }
+      ],
+      "source_render_constraints": [],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:2:6"
+        ],
+        "non_proposition_reasons": []
+      },
+      "intentionally_omitted_sections": [
+        "repeated_patterns",
+        "policy_trajectories"
+      ],
+      "prohibited_claims": [
+        "roll 5 as Environment and Energy evidence",
+        "package-wide motive"
+      ],
+      "external_review_decisions": [
+        "Roll 6 is the sole eligible substantive action in this case; roll 5 is a non-substantive rejected context action.",
+        "Parent-package context does not establish exact-action eligibility."
+      ]
+    },
+    {
+      "case_id": "semir-dev-08-environment-separate-family-episodes",
+      "case_scope": "full_record",
+      "structural_purpose": [
+        "separate proposals in one policy family",
+        "mechanism divide",
+        "mixed direction across independent episodes"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
+          "docs/editorial/commissioning_domain_v1/corrected/policy_trait_contract.json",
+          "docs/editorial/commissioning_domain_v1/corrected/member_overlays.json"
+        ],
+        "source_ids": [
+          "clerk_roll_055",
+          "clerk_roll_064",
+          "clerk_roll_076",
+          "clerk_roll_078",
+          "hrpt_119_387",
+          "hrpt_119_268",
+          "hrpt_119_470",
+          "hrpt_119_484"
+        ],
+        "claim_ids": [
+          "roll-055:proposed_change",
+          "roll-064:proposed_change",
+          "roll-076:proposed_change",
+          "roll-078:proposed_change"
+        ],
+        "mutation_ids": [
+          "vote_direction_changes_episode_grouping"
+        ]
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal"
+        ],
+        "policy_family_ids": [
+          "critical-mineral-supply",
+          "home-energy-policy"
+        ]
+      },
+      "member_evidence": [
+        {
+          "member_id": "C001059",
+          "party": "D",
+          "statuses": [
+            {
+              "action_id": "house:119:2:55",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:64",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:76",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:2:78",
+              "status": "Nay"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 4,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 4,
+            "resolved_eligible_actions": 4,
+            "directional_yes_no_positions": 4,
+            "present_actions": 0,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 4,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [
+        {
+          "proposition_id": "prop:dev08-resource-support",
+          "semantic_role": "behavioral",
+          "proposition_type": "repeated_pattern",
+          "presentation_target": "repeated_patterns",
+          "evidence_action_ids": [
+            "house:119:2:55",
+            "house:119:2:64"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev08-home-energy-opposition",
+          "semantic_role": "behavioral",
+          "proposition_type": "repeated_pattern",
+          "presentation_target": "repeated_patterns",
+          "evidence_action_ids": [
+            "house:119:2:76",
+            "house:119:2:78"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev08-family-mechanism-divide",
+          "semantic_role": "synthesis",
+          "proposition_type": "mechanism_divide",
+          "presentation_target": "conclusion_only",
+          "evidence_action_ids": [
+            "house:119:2:55",
+            "house:119:2:64",
+            "house:119:2:76",
+            "house:119:2:78"
+          ]
+        }
+      ],
+      "proposition_relationships": [
+        {
+          "proposition_id": "prop:dev08-family-mechanism-divide",
+          "supported_by": [
+            "prop:dev08-resource-support",
+            "prop:dev08-home-energy-opposition"
+          ],
+          "limited_by": []
+        }
+      ],
+      "presentation_ownership": {
+        "repeated_patterns": [
+          "prop:dev08-resource-support",
+          "prop:dev08-home-energy-opposition"
+        ],
+        "conclusion_only": [
+          "prop:dev08-family-mechanism-divide"
+        ]
+      },
+      "conclusion_plan": {
+        "primary_proposition_ids": [
+          "prop:dev08-family-mechanism-divide",
+          "prop:dev08-resource-support",
+          "prop:dev08-home-energy-opposition"
+        ],
+        "limiting_proposition_ids": []
+      },
+      "coverage_boundaries": [],
+      "method_boundaries": [],
+      "source_render_constraints": [],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:2:55",
+          "house:119:2:64",
+          "house:119:2:76",
+          "house:119:2:78"
+        ],
+        "non_proposition_reasons": []
+      },
+      "intentionally_omitted_sections": [
+        "policy_trajectories"
+      ],
+      "prohibited_claims": [
+        "two actions as one episode",
+        "vote direction changing family hierarchy"
+      ],
+      "external_review_decisions": [
+        "The mineral and home-energy pairs remain separate-episode behavioral patterns.",
+        "The cross-family mechanism divide is conclusion-only synthesis."
+      ]
+    },
+    {
+      "case_id": "semir-dev-09-not-voting-heavy-record",
+      "case_scope": "full_record",
+      "structural_purpose": [
+        "Not Voting-heavy evidence",
+        "known coverage cannot use unknown language",
+        "partial episodes"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/member_overlays.json",
+          "docs/editorial/commissioning_domain_v1/corrected/section_ownership_report.json"
+        ],
+        "source_ids": [
+          "clerk_roll_006",
+          "clerk_roll_007",
+          "clerk_roll_055",
+          "clerk_roll_064",
+          "clerk_roll_076",
+          "clerk_roll_078",
+          "clerk_roll_093"
+        ],
+        "claim_ids": [],
+        "mutation_ids": [
+          "known_not_voting_uses_generic_fallback"
+        ]
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "fy2026-energy-water-interior-appropriations",
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal",
+          "lead-ammunition-and-tackle-on-federal-lands"
+        ],
+        "policy_family_ids": [
+          "critical-mineral-supply",
+          "home-energy-policy"
+        ]
+      },
+      "member_evidence": [
+        {
+          "member_id": "H001095",
+          "party": "R",
+          "statuses": [
+            {
+              "action_id": "house:119:2:6",
+              "status": "Not Voting"
+            },
+            {
+              "action_id": "house:119:2:7",
+              "status": "Not Voting"
+            },
+            {
+              "action_id": "house:119:2:55",
+              "status": "Not Voting"
+            },
+            {
+              "action_id": "house:119:2:64",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:76",
+              "status": "Not Voting"
+            },
+            {
+              "action_id": "house:119:2:78",
+              "status": "Not Voting"
+            },
+            {
+              "action_id": "house:119:2:93",
+              "status": "Yea"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 7,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 7,
+            "resolved_eligible_actions": 7,
+            "directional_yes_no_positions": 2,
+            "present_actions": 0,
+            "not_voting_actions": 5,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 6,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [
+        {
+          "proposition_id": "prop:dev09-mineral-strategy-choice",
+          "semantic_role": "behavioral",
+          "proposition_type": "notable_choice",
+          "presentation_target": "other_notable_choices",
+          "evidence_action_ids": [
+            "house:119:2:64"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev09-federal-land-choice",
+          "semantic_role": "behavioral",
+          "proposition_type": "notable_choice",
+          "presentation_target": "other_notable_choices",
+          "evidence_action_ids": [
+            "house:119:2:93"
+          ]
+        }
+      ],
+      "proposition_relationships": [],
+      "presentation_ownership": {
+        "other_notable_choices": [
+          "prop:dev09-mineral-strategy-choice",
+          "prop:dev09-federal-land-choice"
+        ]
+      },
+      "conclusion_plan": {
+        "primary_proposition_ids": [],
+        "limiting_proposition_ids": []
+      },
+      "coverage_boundaries": [
+        {
+          "boundary_id": "coverage:dev09-five-not-voting",
+          "boundary_type": "not_voting_heavy",
+          "action_ids": [
+            "house:119:2:6",
+            "house:119:2:7",
+            "house:119:2:55",
+            "house:119:2:76",
+            "house:119:2:78"
+          ],
+          "presentation_target": "coverage_note",
+          "detail": "Five accepted actions are resolved as Not Voting; the two Yea choices remain visible but do not support a broad record conclusion."
+        }
+      ],
+      "method_boundaries": [],
+      "source_render_constraints": [],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:2:64",
+          "house:119:2:93"
+        ],
+        "non_proposition_reasons": [
+          {
+            "action_id": "house:119:2:6",
+            "reason_code": "non_directional_status",
+            "detail": "Known Not Voting is represented in coverage and cannot support a behavioral proposition."
+          },
+          {
+            "action_id": "house:119:2:7",
+            "reason_code": "non_directional_status",
+            "detail": "Known Not Voting is represented in coverage and cannot support a behavioral proposition."
+          },
+          {
+            "action_id": "house:119:2:55",
+            "reason_code": "non_directional_status",
+            "detail": "Known Not Voting is represented in coverage and cannot support a behavioral proposition."
+          },
+          {
+            "action_id": "house:119:2:76",
+            "reason_code": "non_directional_status",
+            "detail": "Known Not Voting is represented in coverage and cannot support a behavioral proposition."
+          },
+          {
+            "action_id": "house:119:2:78",
+            "reason_code": "non_directional_status",
+            "detail": "Known Not Voting is represented in coverage and cannot support a behavioral proposition."
+          }
+        ]
+      },
+      "intentionally_omitted_sections": [
+        "repeated_patterns",
+        "policy_trajectories"
+      ],
+      "prohibited_claims": [
+        "generic unknown coverage",
+        "Not Voting as opposition",
+        "broad pattern from two positions"
+      ],
+      "external_review_decisions": [
+        "The two resolved Yea actions remain separate notable behavioral propositions.",
+        "Five known Not Voting actions are coverage boundaries that withhold a broad conclusion."
+      ]
+    },
+    {
+      "case_id": "semir-dev-10-present-known-coverage",
+      "case_scope": "full_record",
+      "structural_purpose": [
+        "Present is neither support nor opposition",
+        "known coverage arithmetic"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/actual_member_vector_evaluation.json",
+          "docs/editorial/commissioning_domain_v1/corrected/episode_map.json"
+        ],
+        "source_ids": [
+          "clerk_roll_006",
+          "clerk_roll_007",
+          "clerk_roll_055",
+          "clerk_roll_064",
+          "clerk_roll_076",
+          "clerk_roll_078",
+          "clerk_roll_093"
+        ],
+        "claim_ids": [],
+        "mutation_ids": []
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "fy2026-energy-water-interior-appropriations",
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal",
+          "lead-ammunition-and-tackle-on-federal-lands"
+        ],
+        "policy_family_ids": [
+          "critical-mineral-supply",
+          "home-energy-policy"
+        ]
+      },
+      "member_evidence": [
+        {
+          "member_id": "D000230",
+          "party": "D",
+          "statuses": [
+            {
+              "action_id": "house:119:2:6",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:7",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:55",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:64",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:76",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:78",
+              "status": "Present"
+            },
+            {
+              "action_id": "house:119:2:93",
+              "status": "Yea"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 7,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 7,
+            "resolved_eligible_actions": 7,
+            "directional_yes_no_positions": 6,
+            "present_actions": 1,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 6,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [
+        {
+          "proposition_id": "prop:dev10-appropriations-trajectory",
+          "semantic_role": "behavioral",
+          "proposition_type": "trajectory",
+          "presentation_target": "policy_trajectories",
+          "evidence_action_ids": [
+            "house:119:2:6",
+            "house:119:2:7"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev10-resource-support",
+          "semantic_role": "behavioral",
+          "proposition_type": "repeated_pattern",
+          "presentation_target": "repeated_patterns",
+          "evidence_action_ids": [
+            "house:119:2:55",
+            "house:119:2:64"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev10-efficiency-choice",
+          "semantic_role": "behavioral",
+          "proposition_type": "notable_choice",
+          "presentation_target": "other_notable_choices",
+          "evidence_action_ids": [
+            "house:119:2:76"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev10-federal-land-choice",
+          "semantic_role": "behavioral",
+          "proposition_type": "notable_choice",
+          "presentation_target": "other_notable_choices",
+          "evidence_action_ids": [
+            "house:119:2:93"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev10-uniform-direction",
+          "semantic_role": "synthesis",
+          "proposition_type": "uniform_direction",
+          "presentation_target": "conclusion_only",
+          "evidence_action_ids": [
+            "house:119:2:6",
+            "house:119:2:7",
+            "house:119:2:55",
+            "house:119:2:64",
+            "house:119:2:76",
+            "house:119:2:93"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev10-no-common-throughline",
+          "semantic_role": "synthesis",
+          "proposition_type": "no_common_throughline",
+          "presentation_target": "conclusion_only",
+          "evidence_action_ids": [
+            "house:119:2:6",
+            "house:119:2:55",
+            "house:119:2:76",
+            "house:119:2:93"
+          ]
+        }
+      ],
+      "proposition_relationships": [
+        {
+          "proposition_id": "prop:dev10-uniform-direction",
+          "supported_by": [
+            "prop:dev10-appropriations-trajectory",
+            "prop:dev10-resource-support",
+            "prop:dev10-efficiency-choice",
+            "prop:dev10-federal-land-choice"
+          ],
+          "limited_by": [
+            "prop:dev10-no-common-throughline"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev10-no-common-throughline",
+          "supported_by": [
+            "prop:dev10-appropriations-trajectory",
+            "prop:dev10-resource-support",
+            "prop:dev10-efficiency-choice",
+            "prop:dev10-federal-land-choice"
+          ],
+          "limited_by": []
+        }
+      ],
+      "presentation_ownership": {
+        "policy_trajectories": [
+          "prop:dev10-appropriations-trajectory"
+        ],
+        "repeated_patterns": [
+          "prop:dev10-resource-support"
+        ],
+        "other_notable_choices": [
+          "prop:dev10-efficiency-choice",
+          "prop:dev10-federal-land-choice"
+        ],
+        "conclusion_only": [
+          "prop:dev10-uniform-direction",
+          "prop:dev10-no-common-throughline"
+        ]
+      },
+      "conclusion_plan": {
+        "primary_proposition_ids": [
+          "prop:dev10-uniform-direction"
+        ],
+        "limiting_proposition_ids": [
+          "prop:dev10-no-common-throughline"
+        ]
+      },
+      "coverage_boundaries": [
+        {
+          "boundary_id": "coverage:dev10-present",
+          "boundary_type": "present",
+          "action_ids": [
+            "house:119:2:78"
+          ],
+          "presentation_target": "coverage_note",
+          "detail": "The home-energy-program action is resolved as Present and is excluded from support/opposition."
+        }
+      ],
+      "method_boundaries": [],
+      "source_render_constraints": [],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:2:6",
+          "house:119:2:7",
+          "house:119:2:55",
+          "house:119:2:64",
+          "house:119:2:76",
+          "house:119:2:93"
+        ],
+        "non_proposition_reasons": [
+          {
+            "action_id": "house:119:2:78",
+            "reason_code": "non_directional_status",
+            "detail": "Present is represented in coverage and cannot support a behavioral proposition."
+          }
+        ]
+      },
+      "intentionally_omitted_sections": [
+        "policy_trajectories"
+      ],
+      "prohibited_claims": [
+        "Present as support",
+        "Present as opposition",
+        "seven supportive actions"
+      ],
+      "external_review_decisions": [
+        "Coverage preserves six Yea positions and one Present exactly.",
+        "Underlying material episode propositions remain behavioral; uniform direction and no common throughline are conclusion-only synthesis."
+      ]
+    },
+    {
+      "case_id": "semir-dev-11-tied-pattern-ownership",
+      "case_scope": "full_record",
+      "structural_purpose": [
+        "two equally strong repeated patterns",
+        "proposition deduplication",
+        "single section ownership",
+        "shared pending trait relationship"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/section_ownership_report.json",
+          "docs/editorial/commissioning_domain_v1/corrected/trait_relationship_contract.json",
+          "docs/editorial/commissioning_domain_v1/corrected/member_overlays.json"
+        ],
+        "source_ids": [
+          "clerk_roll_006",
+          "clerk_roll_007",
+          "clerk_roll_055",
+          "clerk_roll_064",
+          "clerk_roll_076",
+          "clerk_roll_078",
+          "clerk_roll_093"
+        ],
+        "claim_ids": [],
+        "mutation_ids": [
+          "equal_strength_pattern_omitted",
+          "semantic_proposition_enters_two_sections",
+          "episode_reordering_changes_section_ownership",
+          "duplicate_shared_dependency"
+        ]
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "fy2026-energy-water-interior-appropriations",
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal",
+          "lead-ammunition-and-tackle-on-federal-lands"
+        ],
+        "policy_family_ids": [
+          "critical-mineral-supply",
+          "home-energy-policy"
+        ]
+      },
+      "member_evidence": [
+        {
+          "member_id": "M001231",
+          "party": "D",
+          "statuses": [
+            {
+              "action_id": "house:119:2:6",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:7",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:55",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:2:64",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:2:76",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:2:78",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:2:93",
+              "status": "Yea"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 7,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 7,
+            "resolved_eligible_actions": 7,
+            "directional_yes_no_positions": 7,
+            "present_actions": 0,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 6,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [
+        {
+          "proposition_id": "prop:dev11-resource-opposition",
+          "semantic_role": "behavioral",
+          "proposition_type": "repeated_pattern",
+          "presentation_target": "repeated_patterns",
+          "evidence_action_ids": [
+            "house:119:2:55",
+            "house:119:2:64"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev11-home-energy-opposition",
+          "semantic_role": "behavioral",
+          "proposition_type": "repeated_pattern",
+          "presentation_target": "repeated_patterns",
+          "evidence_action_ids": [
+            "house:119:2:76",
+            "house:119:2:78"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev11-appropriations-trajectory",
+          "semantic_role": "behavioral",
+          "proposition_type": "trajectory",
+          "presentation_target": "policy_trajectories",
+          "evidence_action_ids": [
+            "house:119:2:6",
+            "house:119:2:7"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev11-federal-land-choice",
+          "semantic_role": "behavioral",
+          "proposition_type": "notable_choice",
+          "presentation_target": "other_notable_choices",
+          "evidence_action_ids": [
+            "house:119:2:93"
+          ]
+        }
+      ],
+      "proposition_relationships": [],
+      "presentation_ownership": {
+        "repeated_patterns": [
+          "prop:dev11-resource-opposition",
+          "prop:dev11-home-energy-opposition"
+        ],
+        "policy_trajectories": [
+          "prop:dev11-appropriations-trajectory"
+        ],
+        "other_notable_choices": [
+          "prop:dev11-federal-land-choice"
+        ]
+      },
+      "conclusion_plan": {
+        "primary_proposition_ids": [
+          "prop:dev11-resource-opposition",
+          "prop:dev11-home-energy-opposition"
+        ],
+        "limiting_proposition_ids": [
+          "prop:dev11-appropriations-trajectory",
+          "prop:dev11-federal-land-choice"
+        ]
+      },
+      "coverage_boundaries": [],
+      "method_boundaries": [],
+      "source_render_constraints": [],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:2:55",
+          "house:119:2:64",
+          "house:119:2:76",
+          "house:119:2:78",
+          "house:119:2:6",
+          "house:119:2:7",
+          "house:119:2:93"
+        ],
+        "non_proposition_reasons": []
+      },
+      "intentionally_omitted_sections": [
+        "other_notable_choices"
+      ],
+      "prohibited_claims": [
+        "silently select one tied pattern",
+        "duplicate a proposition across sections",
+        "propagate one shared trait review to each member"
+      ],
+      "external_review_decisions": [
+        "Both tied patterns, the appropriations trajectory, and the federal-land notable choice remain behavioral propositions.",
+        "The contrary trajectory and notable choice limit the conclusion without replacing either tied pattern."
+      ]
+    },
+    {
+      "case_id": "semir-dev-12-identity-title-order-invariance",
+      "case_scope": "focused_invariant_fixture",
+      "scope_boundary": "Only identity, party, title, input-order, stable-ID, and proposition-deduplication invariance are evaluated; unrelated full-record synthesis is intentionally omitted.",
+      "structural_purpose": [
+        "identical evidence across different parties",
+        "opaque and reordered action titles",
+        "proposition deduplication"
+      ],
+      "evidence_references": {
+        "dossier_paths": [
+          "docs/editorial/commissioning_domain_v1/corrected/member_overlays.json",
+          "docs/editorial/commissioning_domain_v1/corrected/mutation_report.json"
+        ],
+        "source_ids": [
+          "clerk_roll_006",
+          "clerk_roll_007",
+          "clerk_roll_055",
+          "clerk_roll_064",
+          "clerk_roll_076",
+          "clerk_roll_078",
+          "clerk_roll_093"
+        ],
+        "claim_ids": [],
+        "mutation_ids": [
+          "party_change_identical_votes",
+          "member_identity_change_identical_votes",
+          "reordered_actions_episodes",
+          "opaque_action_titles",
+          "semantic_proposition_enters_two_sections"
+        ]
+      },
+      "hierarchy": {
+        "episode_ids": [
+          "fy2026-energy-water-interior-appropriations",
+          "critical-mineral-project-acceleration",
+          "critical-mineral-supply-assessment-and-strategy",
+          "home-energy-efficiency-rulemaking",
+          "home-energy-program-repeal",
+          "lead-ammunition-and-tackle-on-federal-lands"
+        ],
+        "policy_family_ids": [
+          "critical-mineral-supply",
+          "home-energy-policy"
+        ]
+      },
+      "member_evidence": [
+        {
+          "member_id": "F000466",
+          "party": "R",
+          "statuses": [
+            {
+              "action_id": "house:119:2:6",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:7",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:55",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:2:64",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:2:76",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:78",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:2:93",
+              "status": "Nay"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 7,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 7,
+            "resolved_eligible_actions": 7,
+            "directional_yes_no_positions": 7,
+            "present_actions": 0,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 6,
+            "partial_episodes": 0
+          }
+        },
+        {
+          "member_id": "M001214",
+          "party": "D",
+          "statuses": [
+            {
+              "action_id": "house:119:2:6",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:7",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:55",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:2:64",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:2:76",
+              "status": "Yea"
+            },
+            {
+              "action_id": "house:119:2:78",
+              "status": "Nay"
+            },
+            {
+              "action_id": "house:119:2:93",
+              "status": "Nay"
+            }
+          ],
+          "coverage": {
+            "eligible_substantive_actions": 7,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 7,
+            "resolved_eligible_actions": 7,
+            "directional_yes_no_positions": 7,
+            "present_actions": 0,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 6,
+            "partial_episodes": 0
+          }
+        }
+      ],
+      "propositions": [
+        {
+          "proposition_id": "prop:dev12-shared-vector-pattern",
+          "semantic_role": "behavioral",
+          "proposition_type": "repeated_pattern",
+          "presentation_target": "repeated_patterns",
+          "evidence_action_ids": [
+            "house:119:2:55",
+            "house:119:2:64"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev12-shared-vector-boundary",
+          "semantic_role": "synthesis",
+          "proposition_type": "interpretive_boundary",
+          "presentation_target": "conclusion_only",
+          "evidence_action_ids": [
+            "house:119:2:76",
+            "house:119:2:78",
+            "house:119:2:93"
+          ]
+        }
+      ],
+      "proposition_relationships": [
+        {
+          "proposition_id": "prop:dev12-shared-vector-pattern",
+          "supported_by": [],
+          "limited_by": [
+            "prop:dev12-shared-vector-boundary"
+          ]
+        },
+        {
+          "proposition_id": "prop:dev12-shared-vector-boundary",
+          "supported_by": [
+            "prop:dev12-shared-vector-pattern"
+          ],
+          "limited_by": []
+        }
+      ],
+      "presentation_ownership": {
+        "repeated_patterns": [
+          "prop:dev12-shared-vector-pattern"
+        ],
+        "conclusion_only": [
+          "prop:dev12-shared-vector-boundary"
+        ]
+      },
+      "conclusion_plan": {
+        "primary_proposition_ids": [
+          "prop:dev12-shared-vector-pattern"
+        ],
+        "limiting_proposition_ids": [
+          "prop:dev12-shared-vector-boundary"
+        ]
+      },
+      "coverage_boundaries": [],
+      "method_boundaries": [],
+      "source_render_constraints": [],
+      "action_accounting": {
+        "behavioral_proposition_action_ids": [
+          "house:119:2:55",
+          "house:119:2:64"
+        ],
+        "non_proposition_reasons": [
+          {
+            "action_id": "house:119:2:6",
+            "reason_code": "outside_focused_fixture",
+            "detail": "The action is intentionally outside this fixture's identity/title/order invariance assertion."
+          },
+          {
+            "action_id": "house:119:2:7",
+            "reason_code": "outside_focused_fixture",
+            "detail": "The action is intentionally outside this fixture's identity/title/order invariance assertion."
+          },
+          {
+            "action_id": "house:119:2:76",
+            "reason_code": "outside_focused_fixture",
+            "detail": "The action is intentionally outside this fixture's identity/title/order invariance assertion."
+          },
+          {
+            "action_id": "house:119:2:78",
+            "reason_code": "outside_focused_fixture",
+            "detail": "The action is intentionally outside this fixture's identity/title/order invariance assertion."
+          },
+          {
+            "action_id": "house:119:2:93",
+            "reason_code": "outside_focused_fixture",
+            "detail": "The action is intentionally outside this fixture's identity/title/order invariance assertion."
+          }
+        ]
+      },
+      "intentionally_omitted_sections": [],
+      "prohibited_claims": [
+        "party-specific semantic result",
+        "member-specific semantic branch",
+        "title-dependent ranking",
+        "duplicate proposition in another section"
+      ],
+      "external_review_decisions": [
+        "This case is a focused invariant fixture, not a full-record canonical graph.",
+        "Its declared boundary limits evaluation to identity, title, order, and proposition-deduplication invariance."
+      ]
+    }
+  ],
+  "held_out_review_index": [
+    {
+      "case_id": "semir-held-01-partial-service-missing-evidence",
+      "contains": "Input references, exact statuses, and the missing-versus-service semantic question only."
+    },
+    {
+      "case_id": "semir-held-02-source-conflict-unsupported",
+      "contains": "Input references, exact status, and the source-boundary review-route question only."
+    },
+    {
+      "case_id": "semir-held-03-title-order-invariance",
+      "contains": "Reordered inputs, exact statuses, and the invariance question only."
+    },
+    {
+      "case_id": "semir-held-04-cross-domain-final-passage",
+      "contains": "Exact-action inputs, exact statuses, and the bounded-eligibility question only."
+    }
+  ],
+  "gate_boundaries": {
+    "external_semantic_review_required": true,
+    "approval_gate_separate": true,
+    "benchmark_gate_separate": true,
+    "production_gate_separate": true,
+    "publication_gate_separate": true,
+    "no_runtime_or_production_effect": true
+  }
+}

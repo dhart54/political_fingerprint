@@ -32,13 +32,20 @@ The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-Active plan: [Commissioning Domain V1](plans/commissioning_domain_v1.md)
+Active plan: [Editorial Semantic IR and Candidate Acceptance Corpus V1](plans/editorial_semantic_ir_gold_v1.md)
 
 The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 
 ## Review packets and validation receipts
 
 `docs/review_packets/` contains human-readable review packets, machine-readable validation reports, preflight and post-write evidence, rollback SQL, and other milestone receipts.
+
+The candidate [Editorial Semantic IR V1](semantic_ir/editorial_semantic_ir_v1.md)
+defines the pre-render semantic contract. Its
+[candidate review packet](review_packets/editorial_semantic_ir_gold_v1_candidate_review.md)
+and [dependency inventory](review_packets/editorial_pipeline_dependency_inventory_v1.md)
+remain pending external semantic review and have no runtime or publication
+effect.
 
 Do not delete a review packet or asset merely because its milestone is complete. First verify builders, tests, source manifests, publication governance, restoration documentation, and inbound references. Referenced local screenshot bundles require explicit archival decisions.
 

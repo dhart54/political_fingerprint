@@ -1,0 +1,226 @@
+{
+  "schema_version": "editorial_pipeline_dependency_inventory_v1",
+  "baseline_commit": "b49d380acd1e1d80dc462a8159d1155c320241f1",
+  "scope": "read_only_inventory_no_cleanup",
+  "classification_definitions": {
+    "canonical_candidate": "A strong candidate to own this semantic layer after a separately reviewed migration.",
+    "reusable_input": "Reviewed evidence or structure that Semantic IR can reference without changing it.",
+    "compatibility_adapter": "A boundary that translates existing representations for a consumer.",
+    "historical_generator": "A milestone-specific generator retained for reproducibility, not selected as the future source of truth.",
+    "duplicate_representation": "Derived semantic content also encoded elsewhere and therefore exposed to drift.",
+    "superseded_representation": "An older artifact retained for history after a corrected representation replaced it.",
+    "unresolved": "Ownership or canonical status requires a future product decision."
+  },
+  "representations": [
+    {
+      "semantic_layer": "exact-action eligibility",
+      "path": "backend/app/summaries/editorial_domain_eligibility.py",
+      "classification": "canonical_candidate",
+      "notes": "Deterministic exact-action decision boundary; parent context is insufficient."
+    },
+    {
+      "semantic_layer": "exact-action eligibility",
+      "path": "docs/editorial/commissioning_domain_v1/corrected/domain_eligibility_report.json",
+      "classification": "reusable_input",
+      "notes": "Reviewed corrected action-level decisions and rejection reasons."
+    },
+    {
+      "semantic_layer": "action meaning and legislative stage",
+      "path": "docs/editorial/commissioning_domain_v1/corrected/dossiers/",
+      "classification": "reusable_input",
+      "notes": "Action-scoped meanings, stages, sources, and claim evidence."
+    },
+    {
+      "semantic_layer": "action meaning and legislative stage",
+      "path": "docs/editorial/valerie_foushee_economy_gold_v2/measures/",
+      "classification": "reusable_input",
+      "notes": "Reviewed Economy action dossiers."
+    },
+    {
+      "semantic_layer": "action meaning and legislative stage",
+      "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/measures/",
+      "classification": "reusable_input",
+      "notes": "Reviewed Justice action dossiers."
+    },
+    {
+      "semantic_layer": "episode and policy family",
+      "path": "docs/editorial/commissioning_domain_v1/corrected/episode_map.json",
+      "classification": "reusable_input",
+      "notes": "Corrected episode membership and family grouping."
+    },
+    {
+      "semantic_layer": "episode",
+      "path": "docs/editorial/valerie_foushee_economy_gold_v2/policy_episode_map.json",
+      "classification": "reusable_input",
+      "notes": "Reviewed Economy episode grouping."
+    },
+    {
+      "semantic_layer": "episode",
+      "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+      "classification": "reusable_input",
+      "notes": "Reviewed Justice episode grouping."
+    },
+    {
+      "semantic_layer": "structural metadata and policy traits",
+      "path": "docs/editorial/commissioning_domain_v1/corrected/policy_trait_contract.json",
+      "classification": "reusable_input",
+      "notes": "Separates structural attributes from policy traits."
+    },
+    {
+      "semantic_layer": "trait relationships and shared review dependencies",
+      "path": "docs/editorial/commissioning_domain_v1/corrected/trait_relationship_contract.json",
+      "classification": "reusable_input",
+      "notes": "Records shared relationships and review dependencies once."
+    },
+    {
+      "semantic_layer": "member action status and coverage",
+      "path": "backend/app/summaries/editorial_member_overlay.py",
+      "classification": "canonical_candidate",
+      "notes": "Deterministic member/action overlay boundary."
+    },
+    {
+      "semantic_layer": "member action status and coverage",
+      "path": "docs/editorial/commissioning_domain_v1/corrected/member_overlays.json",
+      "classification": "duplicate_representation",
+      "notes": "Derived review representation of member statuses and coverage."
+    },
+    {
+      "semantic_layer": "evidence patterns and propositions",
+      "path": "backend/app/summaries/editorial_inference.py",
+      "classification": "compatibility_adapter",
+      "notes": "Current inference output predates a normalized proposition graph."
+    },
+    {
+      "semantic_layer": "evidence patterns and propositions",
+      "path": "docs/editorial/commissioning_domain_v1/corrected/inference_candidates.json",
+      "classification": "duplicate_representation",
+      "notes": "Materialized candidate inference that can drift from builders and review fixtures."
+    },
+    {
+      "semantic_layer": "conclusion planning",
+      "path": "backend/app/summaries/editorial_conclusion_synthesis.py",
+      "classification": "canonical_candidate",
+      "notes": "Current deterministic conclusion composition is the closest reusable boundary."
+    },
+    {
+      "semantic_layer": "section ownership",
+      "path": "backend/app/summaries/editorial_proposition_ownership.py",
+      "classification": "canonical_candidate",
+      "notes": "Owns proposition deduplication and one-primary-section checks."
+    },
+    {
+      "semantic_layer": "section ownership",
+      "path": "docs/editorial/commissioning_domain_v1/corrected/section_ownership_report.json",
+      "classification": "duplicate_representation",
+      "notes": "Derived audit artifact rather than a future semantic source."
+    },
+    {
+      "semantic_layer": "review routing",
+      "path": "backend/app/summaries/editorial_review_routing.py",
+      "classification": "canonical_candidate",
+      "notes": "Deterministic route selection is reusable after IR adaptation."
+    },
+    {
+      "semantic_layer": "rendered presentation",
+      "path": "frontend/lib/editorialIssuePresentation.mjs",
+      "classification": "compatibility_adapter",
+      "notes": "Transforms editorial data into current review presentation."
+    },
+    {
+      "semantic_layer": "rendered presentation",
+      "path": "frontend/lib/editorialIssuePublicPresentation.mjs",
+      "classification": "compatibility_adapter",
+      "notes": "Public presentation boundary; rendering must not add semantics."
+    },
+    {
+      "semantic_layer": "review fixtures",
+      "path": "docs/editorial/commissioning_domain_v1/corrected/review_render_fixtures.json",
+      "classification": "duplicate_representation",
+      "notes": "Materialized downstream review examples."
+    },
+    {
+      "semantic_layer": "review fixtures",
+      "path": "frontend/lib/editorialIssueTestFixtures.mjs",
+      "classification": "duplicate_representation",
+      "notes": "Frontend fixture copy of editorial meaning and presentation data."
+    },
+    {
+      "semantic_layer": "persistence mirror",
+      "path": "docs/editorial/commissioning_domain_v1/corrected/persistence_batch_manifest.json",
+      "classification": "compatibility_adapter",
+      "notes": "Bounded persistence representation; not the semantic authority."
+    },
+    {
+      "semantic_layer": "historical generation",
+      "path": "backend/scripts/build_valerie_foushee_economy_editorial_gold_v2_review.py",
+      "classification": "historical_generator",
+      "notes": "Economy milestone generator retained for provenance."
+    },
+    {
+      "semantic_layer": "historical generation",
+      "path": "backend/scripts/build_valerie_foushee_justice_public_safety_editorial.py",
+      "classification": "historical_generator",
+      "notes": "Justice milestone generator retained for provenance."
+    },
+    {
+      "semantic_layer": "historical generation",
+      "path": "backend/scripts/build_commissioning_domain_v1.py",
+      "classification": "superseded_representation",
+      "notes": "Original Environment generator was followed by a corrected generator."
+    },
+    {
+      "semantic_layer": "historical generation",
+      "path": "backend/scripts/build_commissioning_domain_v1_correction.py",
+      "classification": "historical_generator",
+      "notes": "Corrected Environment milestone generator retained for provenance."
+    },
+    {
+      "semantic_layer": "cross-domain canonical ownership",
+      "path": "docs/semantic_ir/editorial_semantic_ir_v1.md",
+      "classification": "unresolved",
+      "notes": "V1 proposes the normalized contract; runtime ownership requires later review and migration."
+    }
+  ],
+  "semantic_correction_fanout": [
+    {
+      "stage": 1,
+      "meaning": "action eligibility, action meaning, stage, episode, family, traits",
+      "current_paths": ["dossiers", "eligibility reports", "episode maps", "trait contracts"]
+    },
+    {
+      "stage": 2,
+      "meaning": "member action status and coverage",
+      "current_paths": ["member overlays", "vector evaluations"]
+    },
+    {
+      "stage": 3,
+      "meaning": "patterns, propositions, conclusion plan, section ownership, review route",
+      "current_paths": ["inference candidates", "composition receipts", "ownership and routing reports"]
+    },
+    {
+      "stage": 4,
+      "meaning": "persistence and rendered presentation",
+      "current_paths": ["persistence manifests", "review fixtures", "frontend fixtures and adapters"]
+    },
+    {
+      "stage": 5,
+      "meaning": "validation and receipts",
+      "current_paths": ["mutation reports", "review packets", "tests", "render comparisons"]
+    }
+  ],
+  "future_strangler_sequence": [
+    "Establish Semantic IR schema, candidates, held-out inputs, and the seconds-scale validator.",
+    "Add a read-only adapter that emits IR from existing reviewed dossiers and maps without changing runtime consumers.",
+    "Derive review packets and fixtures from IR and prove semantic parity.",
+    "Adapt conclusion planning, proposition ownership, and review routing to consume IR.",
+    "Adapt persistence mirrors to consume reviewed IR while keeping gate state separate.",
+    "Move frontend adapters to an IR-derived view model with rendering prohibited from adding meaning.",
+    "Retire historical generators and duplicate representations only after independently reviewed parity and rollback coverage."
+  ],
+  "phase_a_actions": {
+    "files_moved": 0,
+    "legacy_paths_modified": 0,
+    "runtime_consumers_changed": 0,
+    "production_effect": false
+  }
+}

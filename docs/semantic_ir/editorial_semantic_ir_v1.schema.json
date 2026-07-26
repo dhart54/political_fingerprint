@@ -1,0 +1,695 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://politicalfingerprint.example/schemas/editorial_semantic_ir_v1.schema.json",
+  "title": "Editorial Semantic IR V1 acceptance corpus",
+  "type": "object",
+  "required": ["schema_version", "corpus_kind", "cases"],
+  "properties": {
+    "schema_version": {"const": "editorial_semantic_ir_v1"},
+    "corpus_kind": {
+      "enum": ["development_candidate_corpus", "held_out_input_corpus"]
+    },
+    "review_state": {
+      "enum": ["candidate_pending_external_semantic_review"]
+    },
+    "cases": {"type": "array", "minItems": 1}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"corpus_kind": {"const": "development_candidate_corpus"}}
+      },
+      "then": {
+        "required": ["review_state"],
+        "properties": {"cases": {"items": {"$ref": "#/definitions/developmentCase"}}}
+      },
+      "else": {
+        "not": {"required": ["review_state"]},
+        "properties": {"cases": {"items": {"$ref": "#/definitions/heldOutCase"}}}
+      }
+    }
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "referenceSet": {
+      "type": "object",
+      "required": ["dossier_paths", "source_ids", "claim_ids", "mutation_ids"],
+      "properties": {
+        "dossier_paths": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^docs/"}
+        },
+        "source_ids": {"type": "array", "items": {"type": "string"}},
+        "claim_ids": {"type": "array", "items": {"type": "string"}},
+        "mutation_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "structuralMetadata": {
+      "type": "object",
+      "properties": {
+        "action_type": {"type": "string"},
+        "argument_evidence": {"type": "string"},
+        "division": {"type": "string"},
+        "divisions": {"type": "array", "items": {"type": "string"}},
+        "mixed_control": {"type": "boolean"},
+        "package_stage": {"type": "string"},
+        "parent_package": {"type": "string"},
+        "procedural_control": {"type": "boolean"},
+        "separate_proposal": {"type": "boolean"},
+        "single_action_episode": {"type": "boolean"},
+        "stage_order": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "policyTrait": {
+      "type": "object",
+      "required": ["trait_id", "meaning_ref", "review_state"],
+      "properties": {
+        "trait_id": {"type": "string", "minLength": 1},
+        "meaning_ref": {"type": "string", "minLength": 1},
+        "review_state": {
+          "enum": ["reviewed_reusable_input", "human_review_pending"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "traitRelationship": {
+      "type": "object",
+      "required": ["relationship"],
+      "properties": {
+        "relationship": {"type": "string", "minLength": 1},
+        "left": {"type": "string"},
+        "right": {"type": "string"},
+        "from": {"type": "string"},
+        "to": {"type": "string"},
+        "review_state": {
+          "enum": ["reviewed_reusable_input", "human_review_pending"]
+        }
+      },
+      "anyOf": [
+        {"required": ["left", "right"]},
+        {"required": ["from", "to"]}
+      ],
+      "additionalProperties": false
+    },
+    "sharedReviewDependency": {
+      "type": "object",
+      "required": ["dependency_id", "semantic_refs", "review_state", "review_route"],
+      "properties": {
+        "dependency_id": {"type": "string", "minLength": 1},
+        "semantic_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "review_state": {"enum": ["resolved", "human_review_pending"]},
+        "review_route": {
+          "enum": ["shared_corpus_review", "human_exception_required"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "action": {
+      "type": "object",
+      "required": [
+        "action_id",
+        "eligibility",
+        "action_meaning_ref",
+        "legislative_stage",
+        "episode_id",
+        "structural_metadata",
+        "policy_trait_refs",
+        "source_ids"
+      ],
+      "properties": {
+        "action_id": {"type": "string", "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$"},
+        "eligibility": {
+          "type": "object",
+          "required": [
+            "domain",
+            "decision",
+            "exact_action_basis",
+            "parent_context_used"
+          ],
+          "properties": {
+            "domain": {
+              "enum": ["ECONOMY_TAXES", "JUSTICE_PUBLIC_SAFETY", "ENVIRONMENT_ENERGY"]
+            },
+            "decision": {"enum": ["accepted", "rejected", "context_only"]},
+            "exact_action_basis": {"type": "string", "minLength": 1},
+            "parent_context_used": {"const": false}
+          },
+          "additionalProperties": false
+        },
+        "action_meaning_ref": {"type": "string", "minLength": 1},
+        "legislative_stage": {"type": "string", "minLength": 1},
+        "episode_id": {"type": ["string", "null"]},
+        "structural_metadata": {"$ref": "#/definitions/structuralMetadata"},
+        "policy_trait_refs": {"type": "array", "items": {"type": "string"}},
+        "source_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "episode": {
+      "type": "object",
+      "required": ["episode_id", "action_ids", "policy_family_id"],
+      "properties": {
+        "episode_id": {"type": "string", "minLength": 1},
+        "action_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "policy_family_id": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "policyFamily": {
+      "type": "object",
+      "required": ["policy_family_id", "episode_ids"],
+      "properties": {
+        "policy_family_id": {"type": "string", "minLength": 1},
+        "episode_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "memberAction": {
+      "type": "object",
+      "required": ["action_id", "status", "service_status", "evidence_status"],
+      "properties": {
+        "action_id": {"type": "string"},
+        "status": {
+          "enum": ["Yea", "Nay", "Present", "Not Voting", "Missing Evidence"]
+        },
+        "service_status": {
+          "enum": ["in_service", "not_yet_serving", "no_longer_serving", "unresolved"]
+        },
+        "evidence_status": {
+          "enum": ["official_record_resolved", "missing", "source_unresolved", "conflicting"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "eligible_substantive_actions",
+        "context_only_control_actions",
+        "in_service_eligible_actions",
+        "resolved_eligible_actions",
+        "directional_yes_no_positions",
+        "present_actions",
+        "not_voting_actions",
+        "missing_evidence_actions",
+        "outside_service_actions",
+        "complete_episodes",
+        "partial_episodes"
+      ],
+      "properties": {
+        "eligible_substantive_actions": {"type": "integer", "minimum": 0},
+        "context_only_control_actions": {"type": "integer", "minimum": 0},
+        "in_service_eligible_actions": {"type": "integer", "minimum": 0},
+        "resolved_eligible_actions": {"type": "integer", "minimum": 0},
+        "directional_yes_no_positions": {"type": "integer", "minimum": 0},
+        "present_actions": {"type": "integer", "minimum": 0},
+        "not_voting_actions": {"type": "integer", "minimum": 0},
+        "missing_evidence_actions": {"type": "integer", "minimum": 0},
+        "outside_service_actions": {"type": "integer", "minimum": 0},
+        "complete_episodes": {"type": "integer", "minimum": 0},
+        "partial_episodes": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "member": {
+      "type": "object",
+      "required": ["member_id", "party", "actions", "coverage"],
+      "properties": {
+        "member_id": {"type": "string", "pattern": "^[A-Z][0-9]{6}$"},
+        "party": {"enum": ["D", "R", "I", "unknown"]},
+        "actions": {"type": "array", "items": {"$ref": "#/definitions/memberAction"}},
+        "coverage": {"$ref": "#/definitions/coverage"}
+      },
+      "additionalProperties": false
+    },
+    "proposition": {
+      "type": "object",
+      "required": [
+        "proposition_id",
+        "semantic_role",
+        "proposition_type",
+        "direction",
+        "evidence_action_ids",
+        "evidence_episode_ids",
+        "mechanism_or_trait_refs",
+        "presentation_target",
+        "conclusion_relevance",
+        "relationships",
+        "review_state"
+      ],
+      "properties": {
+        "proposition_id": {"type": "string", "pattern": "^prop:[a-z0-9-]+$"},
+        "semantic_role": {"enum": ["behavioral", "synthesis"]},
+        "proposition_type": {
+          "enum": [
+            "trajectory",
+            "repeated_pattern",
+            "notable_choice",
+            "mechanism_divide",
+            "uniform_direction",
+            "no_common_throughline",
+            "interpretive_boundary"
+          ]
+        },
+        "direction": {
+          "enum": ["support", "opposition", "mixed", "non_directional", "not_applicable"]
+        },
+        "evidence_action_ids": {"type": "array", "items": {"type": "string"}},
+        "evidence_episode_ids": {"type": "array", "items": {"type": "string"}},
+        "mechanism_or_trait_refs": {"type": "array", "items": {"type": "string"}},
+        "presentation_target": {
+          "enum": [
+            "repeated_patterns",
+            "policy_trajectories",
+            "other_notable_choices",
+            "meaningful_limitations",
+            "conclusion_only",
+            "coverage_note",
+            "method_note",
+            "source_note",
+            "omitted"
+          ]
+        },
+        "conclusion_relevance": {
+          "enum": ["primary", "supporting", "limiting", "excluded"]
+        },
+        "relationships": {
+          "type": "object",
+          "required": ["supported_by", "limited_by"],
+          "properties": {
+            "supported_by": {"type": "array", "items": {"type": "string"}},
+            "limited_by": {"type": "array", "items": {"type": "string"}}
+          },
+          "additionalProperties": false
+        },
+        "review_state": {"const": "candidate_pending_external_semantic_review"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"semantic_role": {"const": "behavioral"}}},
+          "then": {
+            "properties": {
+              "proposition_type": {
+                "enum": ["trajectory", "repeated_pattern", "notable_choice"]
+              },
+              "presentation_target": {
+                "enum": [
+                  "repeated_patterns",
+                  "policy_trajectories",
+                  "other_notable_choices"
+                ]
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "proposition_type": {
+                "enum": [
+                  "mechanism_divide",
+                  "uniform_direction",
+                  "no_common_throughline",
+                  "interpretive_boundary"
+                ]
+              },
+              "presentation_target": {
+                "enum": [
+                  "meaningful_limitations",
+                  "conclusion_only",
+                  "omitted"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "coverageBoundary": {
+      "type": "object",
+      "required": [
+        "boundary_id",
+        "boundary_type",
+        "action_ids",
+        "presentation_target",
+        "detail"
+      ],
+      "properties": {
+        "boundary_id": {"type": "string", "pattern": "^coverage:[a-z0-9-]+$"},
+        "boundary_type": {
+          "enum": [
+            "present",
+            "not_voting",
+            "not_voting_heavy",
+            "missing_evidence",
+            "outside_service",
+            "partial_episode"
+          ]
+        },
+        "action_ids": {"type": "array", "items": {"type": "string"}},
+        "presentation_target": {"const": "coverage_note"},
+        "detail": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "methodBoundary": {
+      "type": "object",
+      "required": [
+        "boundary_id",
+        "boundary_type",
+        "action_ids",
+        "presentation_target",
+        "detail"
+      ],
+      "properties": {
+        "boundary_id": {"type": "string", "pattern": "^method:[a-z0-9-]+$"},
+        "boundary_type": {
+          "enum": [
+            "episode_counting",
+            "context_only_control_exclusion",
+            "exact_action_eligibility"
+          ]
+        },
+        "action_ids": {"type": "array", "items": {"type": "string"}},
+        "presentation_target": {"const": "method_note"},
+        "detail": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "sourceRenderConstraint": {
+      "type": "object",
+      "required": [
+        "constraint_id",
+        "constraint_type",
+        "source_ids",
+        "action_ids",
+        "presentation_target",
+        "render_rule"
+      ],
+      "properties": {
+        "constraint_id": {"type": "string", "pattern": "^source:[a-z0-9-]+$"},
+        "constraint_type": {"enum": ["argument_availability", "source_completeness"]},
+        "source_ids": {"type": "array", "items": {"type": "string"}},
+        "action_ids": {"type": "array", "items": {"type": "string"}},
+        "presentation_target": {"const": "source_note"},
+        "render_rule": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "actionAccounting": {
+      "type": "object",
+      "required": [
+        "behavioral_proposition_action_ids",
+        "non_proposition_reasons"
+      ],
+      "properties": {
+        "behavioral_proposition_action_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "non_proposition_reasons": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["action_id", "reason_code", "detail"],
+            "properties": {
+              "action_id": {"type": "string"},
+              "reason_code": {
+                "enum": [
+                  "non_directional_status",
+                  "missing_evidence",
+                  "outside_service",
+                  "outside_focused_fixture"
+                ]
+              },
+              "detail": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "developmentCase": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "case_kind",
+        "case_scope",
+        "structural_purposes",
+        "domain",
+        "source_references",
+        "shared_semantics",
+        "member_semantics",
+        "proposition_graph",
+        "composition",
+        "action_accounting",
+        "external_review_decisions",
+        "review_state"
+      ],
+      "properties": {
+        "case_id": {"type": "string", "pattern": "^semir-dev-[0-9]{2}-[a-z0-9-]+$"},
+        "case_kind": {"const": "development_candidate"},
+        "case_scope": {"enum": ["full_record", "focused_invariant_fixture"]},
+        "scope_boundary": {"type": "string", "minLength": 1},
+        "structural_purposes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        },
+        "domain": {
+          "enum": ["ECONOMY_TAXES", "JUSTICE_PUBLIC_SAFETY", "ENVIRONMENT_ENERGY"]
+        },
+        "source_references": {"$ref": "#/definitions/referenceSet"},
+        "shared_semantics": {
+          "type": "object",
+          "required": [
+            "actions",
+            "episodes",
+            "policy_families",
+            "trait_relationships",
+            "source_render_constraints"
+          ],
+          "properties": {
+            "actions": {"type": "array", "items": {"$ref": "#/definitions/action"}},
+            "episodes": {"type": "array", "items": {"$ref": "#/definitions/episode"}},
+            "policy_families": {"type": "array", "items": {"$ref": "#/definitions/policyFamily"}},
+            "policy_traits": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/policyTrait"}
+            },
+            "trait_relationships": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/traitRelationship"}
+            },
+            "shared_review_dependencies": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/sharedReviewDependency"}
+            },
+            "source_render_constraints": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/sourceRenderConstraint"}
+            }
+          },
+          "additionalProperties": false
+        },
+        "member_semantics": {
+          "type": "object",
+          "required": ["members", "review_route"],
+          "properties": {
+            "members": {"type": "array", "minItems": 1, "items": {"$ref": "#/definitions/member"}},
+            "review_route": {
+              "enum": [
+                "standard_generation_pass",
+                "sampled_audit_candidate",
+                "human_exception_required",
+                "blocked"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "proposition_graph": {
+          "type": "object",
+          "required": ["propositions"],
+          "properties": {
+            "propositions": {"type": "array", "items": {"$ref": "#/definitions/proposition"}}
+          },
+          "additionalProperties": false
+        },
+        "composition": {
+          "type": "object",
+          "required": [
+            "conclusion_plan",
+            "presentation_ownership",
+            "coverage_boundaries",
+            "method_boundaries",
+            "intentionally_omitted_sections",
+            "coverage_note",
+            "method_note",
+            "prohibited_claims",
+            "render_plan"
+          ],
+          "properties": {
+            "conclusion_plan": {
+              "type": "object",
+              "required": [
+                "primary_proposition_ids",
+                "limiting_proposition_ids"
+              ],
+              "properties": {
+                "primary_proposition_ids": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                },
+                "limiting_proposition_ids": {
+                  "type": "array",
+                  "items": {"type": "string"}
+                }
+              },
+              "additionalProperties": false
+            },
+            "presentation_ownership": {
+              "type": "object",
+              "propertyNames": {
+                "enum": [
+                  "repeated_patterns",
+                  "policy_trajectories",
+                  "other_notable_choices",
+                  "meaningful_limitations",
+                  "conclusion_only",
+                  "coverage_note",
+                  "method_note",
+                  "source_note",
+                  "omitted"
+                ]
+              },
+              "additionalProperties": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {"type": "string"}
+              }
+            },
+            "coverage_boundaries": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/coverageBoundary"}
+            },
+            "method_boundaries": {
+              "type": "array",
+              "items": {"$ref": "#/definitions/methodBoundary"}
+            },
+            "intentionally_omitted_sections": {
+              "type": "array",
+              "items": {"type": "string"}
+            },
+            "coverage_note": {"type": "string", "minLength": 1},
+            "method_note": {"type": "string", "minLength": 1},
+            "prohibited_claims": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"type": "string"}
+            },
+            "render_plan": {
+              "type": "object",
+              "required": ["section_order", "analytical_additions_allowed", "example_prose"],
+              "properties": {
+                "section_order": {"type": "array", "items": {"type": "string"}},
+                "analytical_additions_allowed": {"const": false},
+                "example_prose": {"type": ["string", "null"]}
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "action_accounting": {"$ref": "#/definitions/actionAccounting"},
+        "external_review_decisions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        },
+        "review_state": {"const": "candidate_pending_external_semantic_review"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "case_scope": {"const": "focused_invariant_fixture"}
+            }
+          },
+          "then": {"required": ["scope_boundary"]},
+          "else": {"not": {"required": ["scope_boundary"]}}
+        }
+      ],
+      "additionalProperties": false
+    },
+    "heldOutCase": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "case_kind",
+        "structural_purposes",
+        "domain",
+        "authoritative_inputs",
+        "member_action_statuses",
+        "semantic_question"
+      ],
+      "properties": {
+        "case_id": {"type": "string", "pattern": "^semir-held-[0-9]{2}-[a-z0-9-]+$"},
+        "case_kind": {"const": "held_out_input"},
+        "structural_purposes": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "domain": {
+          "enum": ["ECONOMY_TAXES", "JUSTICE_PUBLIC_SAFETY", "ENVIRONMENT_ENERGY"]
+        },
+        "authoritative_inputs": {
+          "type": "object",
+          "required": ["dossier_paths", "source_ids", "action_ids", "mutation_ids"],
+          "properties": {
+            "dossier_paths": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"type": "string", "pattern": "^docs/"}
+            },
+            "source_ids": {"type": "array", "items": {"type": "string"}},
+            "action_ids": {"type": "array", "items": {"type": "string"}},
+            "mutation_ids": {"type": "array", "items": {"type": "string"}}
+          },
+          "additionalProperties": false
+        },
+        "member_action_statuses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["member_id", "party", "actions"],
+            "properties": {
+              "member_id": {"type": "string"},
+              "party": {"enum": ["D", "R", "I", "unknown"]},
+              "actions": {"type": "array", "items": {"$ref": "#/definitions/memberAction"}}
+            },
+            "additionalProperties": false
+          }
+        },
+        "semantic_question": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  }
+}
