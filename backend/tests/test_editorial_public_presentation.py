@@ -37,6 +37,11 @@ FOUSHEE_RECEIPT_TEMPLATE = (
     / "docs/editorial/presentations/"
     "f000477_justice_public_safety_119_approval_receipt_template.json"
 )
+FOUSHEE_APPROVAL_RECEIPT = (
+    ROOT
+    / "docs/editorial/presentations/"
+    "f000477_justice_public_safety_119_approval_receipt.json"
+)
 FOUSHEE_ACTION_SOURCE_CONTRACT = (
     ROOT
     / "docs/editorial/action_source_contracts/"
@@ -557,16 +562,19 @@ def test_each_publication_gate_fails_closed(
     assert artifact["frontend_display"]["repeated_patterns"] == []
 
 
-def test_pending_real_fixture_is_unpublished_and_preserves_candidate_wording() -> None:
+def test_approved_inactive_real_fixture_remains_receipts_only() -> None:
     compiled = _compiled("semir-dev-05-justice-mechanism-divide")
     authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
     artifact = compile_public_issue_presentation(compiled, authoring)
     assert artifact["controls"]["derived_semantic_tier"] == "reviewed_conclusion"
+    assert artifact["controls"]["editorial"] == {
+        "human_approval_status": "human_approved"
+    }
+    assert artifact["controls"]["benchmark"] == {"status": "gold_benchmark"}
+    assert artifact["controls"]["production"] == {"eligible": True}
+    assert artifact["controls"]["publication"] == {"active": False}
     assert artifact["controls"]["publication_gates_passed"] is False
     assert artifact["frontend_display"]["tier"] == "receipts_only"
-    assert artifact["editorial_wording"]["status"] == (
-        "candidate_human_approval_pending"
-    )
 
 
 def test_scope_mismatch_is_rejected() -> None:
@@ -708,6 +716,25 @@ def test_pending_receipt_template_binds_exact_candidate_and_cannot_authorize() -
         receipt,
         expected_subject=approval_subject_for_artifact(artifact),
     ) is False
+
+
+def test_human_approval_receipt_matches_but_inactive_candidate_stays_private() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    artifact = compile_public_issue_presentation(compiled, authoring)
+    receipt = json.loads(
+        FOUSHEE_APPROVAL_RECEIPT.read_text(encoding="utf-8")
+    )
+    controls = artifact["controls"]
+    assert controls["editorial"]["human_approval_status"] == "human_approved"
+    assert controls["benchmark"]["status"] == "gold_benchmark"
+    assert controls["production"]["eligible"] is True
+    assert controls["publication"]["active"] is False
+    assert controls["effective_public_tier"] == "receipts_only"
+    assert detached_receipt_matches(
+        receipt,
+        expected_subject=approval_subject_for_artifact(artifact),
+    )
 
 
 def test_every_real_mapping_has_vote_and_action_meaning_sources() -> None:

@@ -9,15 +9,17 @@
 - Semantic source: `semir-dev-05-justice-mechanism-divide`
 - Focused validation: `semir-dev-04-justice-mixed-fentanyl-trajectory` and
   `semir-dev-06-justice-one-sided-argument`
-- Editorial status: `human_approval_pending`
-- Benchmark status: `not_promoted`
-- Production eligible: `false`
+- Editorial status: `human_approved`
+- Benchmark status: `gold_benchmark`
+- Production eligible: `true`
 - Publication active: `false`
 - Effective public tier: `receipts_only`
 
-This is a pending candidate for a new human decision. It does not approve
-wording, promote a benchmark, establish production eligibility, or authorize
-publication.
+Reviewer `reviewer:dhart54`, acting under
+`editorial_publication_review_authority_v1`, approved the exact wording, gold
+benchmark promotion, and production eligibility on 2026-07-27. The reviewer
+acknowledged all seven canonical limitations. Publication activation was
+explicitly kept inactive.
 
 ## Exact revised candidate copy
 
@@ -56,7 +58,8 @@ publication.
 - Scope: “This conclusion remains bounded to the reviewed 119th-Congress
   sample.”
 
-The pending artifact exposes only the non-analytical `Vote receipts` tier.
+The approved but publication-inactive artifact exposes only the non-analytical
+`Vote receipts` tier.
 
 ## Independent exact-action source authority
 
@@ -123,8 +126,8 @@ not an artifact-specific receipt limitation.
   `5813d5e556542d0ef2234dc05b1e1e24d5811d8c0e22af7775cd1e9b82aa55ca`
 - Approval-subject SHA-256:
   `67e67001ca678e70debba52e9049632f90d99da4d6f1dcaea60da40beaa87874`
-- Pending compiled artifact SHA-256:
-  `94938740c3b4dcd18e24b317d6e1e8f61ecdbf34601edd044810e821050421c9`
+- Approved, publication-inactive compiled artifact SHA-256:
+  `b05e4a9e5212bac50c9c2cbeb0afd4cd5a07818b022c977c2f10252d01d3f2c4`
 
 The compiler receipt repeats the complete approval subject. The subject binds
 identity, scope, compiled meaning, wording, mappings, all immutable provenance,
@@ -132,11 +135,13 @@ the independent source-contract ID and digest, the exact limitation set, and
 the immutable presentation content. Mutable publication controls and the
 detached receipt are excluded, preventing a digest cycle.
 
-The unsigned template is
-`docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt_template.json`.
-Its receipt ID, reviewer ID, authority, and timestamp are null; approved ID sets
-are empty; all decisions remain pending; all seven limitations remain
-unacknowledged; and publication activation remains false and out of scope.
+The signed decision is
+`docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json`.
+Its receipt ID is
+`approval-receipt:f000477-justice-public-safety-119-v1-20260727-dhart54`.
+It binds the exact statement and mapping sets, all seven limitations, and the
+complete approval subject. The unsigned template remains solely as a
+non-authorizing regression fixture.
 
 An approved receipt must use an ID matching
 `approval-receipt:[a-z0-9][a-z0-9._-]{2,127}`, a reviewer ID matching
@@ -145,12 +150,11 @@ An approved receipt must use an ID matching
 timestamp. It must exactly acknowledge the seven bound limitation IDs and
 texts and exactly match every approval-subject field.
 
-## Independent human decisions still required
+## Remaining independent decision
 
-An authorized human must separately decide whether to approve the exact
-wording, promote this artifact to `gold_benchmark`, and mark it production
-eligible. Publication activation remains a separate future operational action.
-No decision is inferred from compilation, validation, or this packet.
+Publication activation remains inactive and requires a separate future
+authorization and operational milestone. Approval, benchmark promotion, and
+production eligibility do not activate publication by themselves.
 
 ## Production effects
 

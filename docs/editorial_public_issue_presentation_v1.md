@@ -183,11 +183,15 @@ semantic source is `semir-dev-05-justice-mechanism-divide`, with
 `semir-dev-04-justice-mixed-fentanyl-trajectory` and
 `semir-dev-06-justice-one-sided-argument` as focused validation companions.
 
-The pending detached receipt template identifies the immutable content
-requiring review but does not approve it: reviewer identity and authority
-remain null, the decision timestamp is absent, all three decisions
-remain pending, and approved statement and mapping sets remain empty. The
-fixture remains `not_promoted`, production-ineligible, and
-publication-inactive. It is a review fixture, not an active public artifact.
-Until a detached authorized receipt matches the complete approval subject and
-every independent gate passes, its public result is `receipts_only`.
+The unsigned detached receipt template remains as a non-authorizing regression
+fixture. The human decision is recorded separately in
+`f000477_justice_public_safety_119_approval_receipt.json`, bound to the exact
+approval subject and all seven canonical limitations. Reviewer
+`reviewer:dhart54`, acting under
+`editorial_publication_review_authority_v1`, approved the wording, gold
+benchmark promotion, and production eligibility on 2026-07-27.
+
+The authoring fixture now records `human_approved`, `gold_benchmark`, and
+production-eligible controls. Publication remains inactive. Because publication
+activation is still an independent unsatisfied gate, the effective public tier
+remains `receipts_only`; no analytical copy is public.
