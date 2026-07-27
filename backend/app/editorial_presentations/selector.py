@@ -7,7 +7,14 @@ import hmac
 import json
 from typing import Any, Iterable
 
-from .compiler import EditorialPresentationError, artifact_digest
+from .compiler import (
+    EditorialPresentationError,
+    _copy_display_wording,
+    approval_subject_for_artifact,
+    artifact_digest,
+    publication_gates_pass,
+    semantic_tier_for_artifact,
+)
 from .validation import validate_public_issue_presentation
 
 
@@ -56,6 +63,24 @@ def _payload(row: dict[str, Any]) -> dict[str, Any] | None:
     return payload if isinstance(payload, dict) else None
 
 
+def _detached_receipt(row: dict[str, Any]) -> dict[str, Any] | None:
+    receipt = row.get("approval_receipt")
+    metadata = row.get("publication_metadata_jsonb")
+    if isinstance(metadata, str):
+        try:
+            metadata = json.loads(metadata)
+        except json.JSONDecodeError:
+            return None
+    if receipt is None and isinstance(metadata, dict):
+        receipt = metadata.get("approval_receipt")
+    if isinstance(receipt, str):
+        try:
+            receipt = json.loads(receipt)
+        except json.JSONDecodeError:
+            return None
+    return receipt if isinstance(receipt, dict) else None
+
+
 def _eligible_row(
     row: dict[str, Any],
     *,
@@ -80,9 +105,9 @@ def _eligible_row(
         return None
     identity = payload["artifact_identity"]
     controls = payload["controls"]
+    detached_receipt = _detached_receipt(row)
     if (
         controls["publication"]["active"] is not True
-        or payload["frontend_display"]["tier"] == "receipts_only"
         or row.get("issue_id") != identity["issue_id"]
         or identity["issue_id"] not in SUPPORTED_ISSUES
         or identity["member_id"] != member_bioguide_id
@@ -100,6 +125,18 @@ def _eligible_row(
     reviewed_scope = identity["scope"]
     if scope == "118" or reviewed_scope != "119":
         return None
+    if not publication_gates_pass(
+        controls,
+        expected_subject=approval_subject_for_artifact(payload),
+        detached_receipt=detached_receipt,
+    ):
+        return None
+    payload = copy.deepcopy(payload)
+    payload["frontend_display"] = _copy_display_wording(
+        payload["editorial_wording"],
+        semantic_tier=semantic_tier_for_artifact(payload),
+    )
+    payload["_detached_approval_receipt_id"] = detached_receipt["receipt_id"]
     return payload
 
 
@@ -146,8 +183,8 @@ def select_public_presentations(
                 "reviewed_wording_sha256": artifact["provenance"][
                     "reviewed_wording_sha256"
                 ],
-                "review_receipt_id": artifact["controls"]["review_receipt"][
-                    "receipt_id"
+                "review_receipt_id": artifact[
+                    "_detached_approval_receipt_id"
                 ],
             },
         }

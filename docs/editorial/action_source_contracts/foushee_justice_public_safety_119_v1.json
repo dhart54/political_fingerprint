@@ -1,0 +1,70 @@
+{
+  "schema_version": "editorial_action_source_contract_v1",
+  "contract_id": "foushee_justice_public_safety_119_v1",
+  "source_manifest": {
+    "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json",
+    "sha256": "8c03c55079b8e499e88a25381d0b7e3e641ecb393391029a023f37dcda4f2424"
+  },
+  "claim_source_map": {
+    "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/claim_source_map.json",
+    "sha256": "602967fdf693ffffde0d951604db9d9b51c91b9c8dfa269780a71541ccd5d554"
+  },
+  "source_authorities": {
+    "clerk_roll_032": "house_clerk_roll_call",
+    "clerk_roll_033": "house_clerk_roll_call",
+    "clerk_roll_130": "house_clerk_roll_call",
+    "clerk_roll_131": "house_clerk_roll_call",
+    "clerk_roll_166": "house_clerk_roll_call",
+    "clerk_roll_275": "house_clerk_roll_call",
+    "clerk_roll_299": "house_clerk_roll_call",
+    "congress_hamdt5": "congress_gov_amendment",
+    "congress_hr27": "congress_gov_bill",
+    "congress_s331": "congress_gov_bill",
+    "public_law_119_26": "public_law_text",
+    "cbo_s331": "cbo_cost_estimate",
+    "congress_hr2255_text": "congress_gov_measure_text",
+    "congress_hr2240": "congress_gov_bill",
+    "hrpt_119_079": "house_committee_report",
+    "congress_hr5143": "congress_gov_bill",
+    "rules_print_119_11": "house_floor_document",
+    "congress_hr5107": "congress_gov_bill",
+    "hrpt_119_317": "house_committee_report"
+  },
+  "actions": {
+    "house:119:1:32": {
+      "vote_source_refs": ["clerk_roll_032"],
+      "action_meaning_source_refs": ["congress_hamdt5"],
+      "required_action_meaning_source_types": ["congress_gov_amendment"]
+    },
+    "house:119:1:33": {
+      "vote_source_refs": ["clerk_roll_033"],
+      "action_meaning_source_refs": ["congress_hr27"],
+      "required_action_meaning_source_types": ["congress_gov_bill"]
+    },
+    "house:119:1:130": {
+      "vote_source_refs": ["clerk_roll_130"],
+      "action_meaning_source_refs": ["congress_hr2255_text"],
+      "required_action_meaning_source_types": ["congress_gov_measure_text"]
+    },
+    "house:119:1:131": {
+      "vote_source_refs": ["clerk_roll_131"],
+      "action_meaning_source_refs": ["congress_hr2240", "hrpt_119_079"],
+      "required_action_meaning_source_types": ["congress_gov_bill", "house_committee_report"]
+    },
+    "house:119:1:166": {
+      "vote_source_refs": ["clerk_roll_166"],
+      "action_meaning_source_refs": ["congress_s331", "public_law_119_26", "cbo_s331"],
+      "required_action_meaning_source_types": ["congress_gov_bill", "public_law_text", "cbo_cost_estimate"]
+    },
+    "house:119:1:275": {
+      "vote_source_refs": ["clerk_roll_275"],
+      "action_meaning_source_refs": ["congress_hr5143", "rules_print_119_11"],
+      "required_action_meaning_source_types": ["congress_gov_bill", "house_floor_document"]
+    },
+    "house:119:1:299": {
+      "vote_source_refs": ["clerk_roll_299"],
+      "action_meaning_source_refs": ["congress_hr5107", "hrpt_119_317"],
+      "required_action_meaning_source_types": ["congress_gov_bill", "house_committee_report"]
+    }
+  }
+}

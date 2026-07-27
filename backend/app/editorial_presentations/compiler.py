@@ -5,6 +5,8 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import re
+from datetime import datetime
 from typing import Any
 
 PUBLIC_TIERS = {
@@ -13,14 +15,38 @@ PUBLIC_TIERS = {
     "non_directional_or_limited_evidence",
     "receipts_only",
 }
-REQUIRED_RECEIPT_APPROVALS = {
-    "bounded_issue_conclusion",
-    "repeated_pattern_statements",
-    "fentanyl_limitation",
-    "claim_source_mappings",
-    "benchmark_promotion",
-    "production_eligibility",
+REQUIRED_DETACHED_DECISIONS = {
+    "editorial_wording": "approved",
+    "gold_benchmark_promotion": "approved",
+    "production_eligibility": "approved",
 }
+IMMUTABLE_PROVENANCE_FIELDS = (
+    "semantic_source_case_id",
+    "focused_validation_case_ids",
+    "dossier_refs",
+    "source_refs",
+    "claim_refs",
+    "receipt_refs",
+    "action_source_contract_id",
+    "action_source_contract_sha256",
+    "review_limitations",
+)
+AUTHORING_PROVENANCE_FIELDS = (
+    "semantic_source_case_id",
+    "focused_validation_case_ids",
+    "dossier_refs",
+    "source_refs",
+    "claim_refs",
+    "receipt_refs",
+    "review_limitations",
+)
+RECOGNIZED_REVIEWER_AUTHORITIES = {
+    "editorial_publication_review_authority_v1",
+}
+APPROVAL_RECEIPT_ID = re.compile(
+    r"^approval-receipt:[a-z0-9][a-z0-9._-]{2,127}$"
+)
+REVIEWER_ID = re.compile(r"^reviewer:[a-z0-9][a-z0-9._-]{2,127}$")
 ANALYTICAL_TIERS = PUBLIC_TIERS - {"receipts_only"}
 BENCHMARK_STATUSES = {"not_promoted", "gold_benchmark"}
 
@@ -56,6 +82,194 @@ def artifact_digest(artifact: dict[str, Any]) -> str:
 
 def reviewed_wording_digest(wording: dict[str, Any]) -> str:
     return canonical_digest(wording)
+
+
+def _mapped_records(wording: dict[str, Any]) -> list[dict[str, Any]]:
+    result: list[dict[str, Any]] = []
+
+    def collect(record: Any) -> None:
+        if isinstance(record, dict):
+            mapping = record.get("mapping")
+            statement_id = record.get("statement_id")
+            if isinstance(mapping, dict) and isinstance(statement_id, str):
+                result.append(
+                    {
+                        "statement_id": statement_id,
+                        "mapping": copy.deepcopy(mapping),
+                    }
+                )
+            for value in record.values():
+                collect(value)
+        elif isinstance(record, list):
+            for value in record:
+                collect(value)
+
+    collect(wording)
+    return sorted(
+        result,
+        key=lambda item: item["mapping"]["mapping_id"],
+    )
+
+
+def mapping_set_digest(wording: dict[str, Any]) -> str:
+    return canonical_digest(_mapped_records(wording))
+
+
+def _immutable_provenance(provenance: dict[str, Any]) -> dict[str, Any]:
+    try:
+        return {
+            field: copy.deepcopy(provenance[field])
+            for field in IMMUTABLE_PROVENANCE_FIELDS
+        }
+    except KeyError as exc:
+        raise EditorialPresentationError(
+            "immutable evidence provenance is incomplete"
+        ) from exc
+
+
+def evidence_provenance_digest(provenance: dict[str, Any]) -> str:
+    return canonical_digest(_immutable_provenance(provenance))
+
+
+def canonical_limitations(
+    limitations: Any,
+) -> list[dict[str, str]]:
+    if not isinstance(limitations, list) or not limitations:
+        raise EditorialPresentationError(
+            "review limitations must be a non-empty canonical set"
+        )
+    normalized: list[dict[str, str]] = []
+    for item in limitations:
+        if (
+            not isinstance(item, dict)
+            or set(item) != {"limitation_id", "text"}
+            or not isinstance(item["limitation_id"], str)
+            or not item["limitation_id"].strip()
+            or not isinstance(item["text"], str)
+            or not item["text"].strip()
+        ):
+            raise EditorialPresentationError(
+                "review limitations require exact IDs and text"
+            )
+        normalized.append(copy.deepcopy(item))
+    normalized.sort(key=lambda item: item["limitation_id"])
+    if len({item["limitation_id"] for item in normalized}) != len(normalized):
+        raise EditorialPresentationError("review limitation IDs are not unique")
+    return normalized
+
+
+def limitations_digest(limitations: Any) -> str:
+    return canonical_digest(canonical_limitations(limitations))
+
+
+def validate_trusted_action_source_contract(
+    contract: dict[str, Any],
+) -> str:
+    if not isinstance(contract, dict) or set(contract) != {
+        "schema_version",
+        "contract_id",
+        "source_manifest",
+        "claim_source_map",
+        "source_authorities",
+        "actions",
+    }:
+        raise EditorialPresentationError(
+            "trusted action/source contract is malformed"
+        )
+    if (
+        contract["schema_version"] != "editorial_action_source_contract_v1"
+        or not isinstance(contract["contract_id"], str)
+        or not contract["contract_id"]
+    ):
+        raise EditorialPresentationError(
+            "trusted action/source contract identity is invalid"
+        )
+    for reference in ("source_manifest", "claim_source_map"):
+        value = contract[reference]
+        if (
+            not isinstance(value, dict)
+            or set(value) != {"path", "sha256"}
+            or not isinstance(value["path"], str)
+            or not re.fullmatch(r"[0-9a-f]{64}", value["sha256"])
+        ):
+            raise EditorialPresentationError(
+                "trusted action/source authority reference is invalid"
+            )
+    authorities = contract["source_authorities"]
+    actions = contract["actions"]
+    if not isinstance(authorities, dict) or not isinstance(actions, dict):
+        raise EditorialPresentationError(
+            "trusted action/source contract registry is invalid"
+        )
+    for source_id, source_type in authorities.items():
+        if not source_id or not isinstance(source_type, str) or not source_type:
+            raise EditorialPresentationError(
+                "trusted source authority is invalid"
+            )
+    for action_id, requirement in actions.items():
+        if (
+            not isinstance(action_id, str)
+            or not re.fullmatch(
+                r"^house:[1-9][0-9]*:[1-9][0-9]*:[1-9][0-9]*$",
+                action_id,
+            )
+            or not isinstance(requirement, dict)
+            or set(requirement)
+            != {
+                "vote_source_refs",
+                "action_meaning_source_refs",
+                "required_action_meaning_source_types",
+            }
+        ):
+            raise EditorialPresentationError(
+                "trusted exact-action requirement is invalid"
+            )
+        vote_sources = requirement["vote_source_refs"]
+        meaning_sources = requirement["action_meaning_source_refs"]
+        required_types = requirement["required_action_meaning_source_types"]
+        if (
+            not vote_sources
+            or not meaning_sources
+            or not required_types
+            or len(vote_sources) != len(set(vote_sources))
+            or len(meaning_sources) != len(set(meaning_sources))
+            or any(
+                source not in authorities
+                for source in [*vote_sources, *meaning_sources]
+            )
+            or any(
+                authorities[source] != "house_clerk_roll_call"
+                for source in vote_sources
+            )
+            or not set(required_types)
+            <= {authorities[source] for source in meaning_sources}
+        ):
+            raise EditorialPresentationError(
+                "trusted exact-action sources or authority types are invalid"
+            )
+    return canonical_digest(contract)
+
+
+def _prepare_provenance(
+    provenance: dict[str, Any],
+    trusted_action_source_contract: dict[str, Any],
+) -> dict[str, Any]:
+    if set(provenance) != set(AUTHORING_PROVENANCE_FIELDS):
+        raise EditorialPresentationError(
+            "authoring provenance must contain exactly the permitted fields"
+        )
+    result = copy.deepcopy(provenance)
+    result["review_limitations"] = canonical_limitations(
+        result["review_limitations"]
+    )
+    contract_sha256 = validate_trusted_action_source_contract(
+        trusted_action_source_contract
+    )
+    result["action_source_contract_id"] = trusted_action_source_contract[
+        "contract_id"
+    ]
+    result["action_source_contract_sha256"] = contract_sha256
+    return result
 
 
 def _member(compiled_ir: dict[str, Any], member_id: str) -> dict[str, Any]:
@@ -228,12 +442,15 @@ def _validate_analytical_text(
     boundaries: dict[str, dict[str, Any]],
     source_refs: set[str],
     receipt_refs: set[str],
+    trusted_action_source_contract: dict[str, Any] | None,
 ) -> None:
-    if set(record) != {"text", "mapping"} or not isinstance(
+    if set(record) != {"statement_id", "text", "mapping"} or not isinstance(
+        record["statement_id"], str
+    ) or not record["statement_id"].strip() or not isinstance(
         record["text"], str
     ) or not record["text"].strip():
         raise EditorialPresentationError(
-            "analytical wording must contain text and an explicit mapping"
+            "analytical wording must contain a statement ID, text, and an explicit mapping"
         )
     mapping = record["mapping"]
     required = {
@@ -303,6 +520,64 @@ def _validate_analytical_text(
         raise EditorialPresentationError(
             "analytical wording lacks valid source and receipt references"
         )
+    mapped_sources = set(mapping["source_refs"])
+    if trusted_action_source_contract is None:
+        return
+    action_source_requirements = trusted_action_source_contract["actions"]
+    authorities = trusted_action_source_contract["source_authorities"]
+    if not expected_actions:
+        if not mapped_sources <= set(authorities):
+            raise EditorialPresentationError(
+                "analytical wording uses an unknown source"
+            )
+        return
+    permitted_sources: set[str] = set()
+    for action_id in expected_actions:
+        requirement = action_source_requirements.get(action_id)
+        if not isinstance(requirement, dict):
+            raise EditorialPresentationError(
+                f"analytical wording lacks source requirements for {action_id}"
+            )
+        permitted_sources.update(requirement.get("vote_source_refs", []))
+        permitted_sources.update(
+            requirement.get("action_meaning_source_refs", [])
+        )
+    if (
+        not mapped_sources <= set(authorities)
+        or not mapped_sources <= permitted_sources
+    ):
+        raise EditorialPresentationError(
+            "analytical wording uses a source not authorized for its exact actions"
+        )
+    for action_id in expected_actions:
+        requirement = action_source_requirements.get(action_id)
+        if not isinstance(requirement, dict):
+            raise EditorialPresentationError(
+                f"analytical wording lacks source requirements for {action_id}"
+            )
+        vote_sources = set(requirement.get("vote_source_refs", []))
+        meaning_sources = set(
+            requirement.get("action_meaning_source_refs", [])
+        )
+        required_types = set(
+            requirement.get("required_action_meaning_source_types", [])
+        )
+        mapped_meaning_types = {
+            authorities[source]
+            for source in mapped_sources & meaning_sources
+        }
+        if (
+            not vote_sources
+            or not meaning_sources
+            or not vote_sources <= source_refs
+            or not meaning_sources <= source_refs
+            or not vote_sources <= mapped_sources
+            or not meaning_sources <= mapped_sources
+            or not required_types <= mapped_meaning_types
+        ):
+            raise EditorialPresentationError(
+                "analytical wording lacks direct vote or action-meaning provenance"
+            )
 
 
 def validate_editorial_wording(
@@ -313,6 +588,7 @@ def validate_editorial_wording(
     propositions: dict[str, dict[str, Any]],
     boundaries: list[dict[str, Any]],
     provenance: dict[str, Any],
+    trusted_action_source_contract: dict[str, Any] | None = None,
 ) -> list[str]:
     boundary_index = {item["boundary_id"]: item for item in boundaries}
     if len(boundary_index) != len(boundaries):
@@ -328,6 +604,7 @@ def validate_editorial_wording(
             boundaries=boundary_index,
             source_refs=source_refs,
             receipt_refs=receipt_refs,
+            trusted_action_source_contract=trusted_action_source_contract,
         )
 
     for tier_wording in wording["tier_display"].values():
@@ -416,57 +693,200 @@ def validate_editorial_wording(
         raise EditorialPresentationError(
             "every analytical display field requires a unique mapping identity"
         )
+    statement_ids = [
+        item["statement_id"] for item in _mapped_records(wording)
+    ]
+    if len(statement_ids) != len(set(statement_ids)):
+        raise EditorialPresentationError(
+            "every analytical display field requires a unique statement identity"
+        )
     return mapping_ids
 
 
-def expected_review_binding(
+def _statement_ids(wording: dict[str, Any]) -> list[str]:
+    return sorted(item["statement_id"] for item in _mapped_records(wording))
+
+
+def expected_approval_subject(
     *,
+    schema_version: str,
     identity: dict[str, Any],
     compiled_ir_sha256: str,
     wording: dict[str, Any],
-    mapping_ids: list[str],
+    compiled_semantic_meaning: dict[str, Any],
+    evidence_metadata: dict[str, Any],
+    provenance: dict[str, Any],
 ) -> dict[str, Any]:
-    return {
+    mapping_ids = _mapping_ids(wording)
+    provenance_identity = _immutable_provenance(provenance)
+    presentation_content = {
+        "schema_version": schema_version,
+        "artifact_identity": copy.deepcopy(identity),
+        "compiled_semantic_meaning": copy.deepcopy(
+            compiled_semantic_meaning
+        ),
+        "editorial_wording": copy.deepcopy(wording),
+        "evidence_metadata": copy.deepcopy(evidence_metadata),
+        "evidence_provenance": provenance_identity,
+    }
+    subject = {
         "artifact_id": identity["artifact_id"],
         "artifact_version": identity["artifact_version"],
+        "member_id": identity["member_id"],
+        "issue_id": identity["issue_id"],
+        "congress": identity["congress"],
+        "approved_scope": identity["scope"],
+        "schema_version": schema_version,
         "compiled_ir_sha256": compiled_ir_sha256,
         "reviewed_wording_sha256": reviewed_wording_digest(wording),
+        "mapping_set_sha256": mapping_set_digest(wording),
+        "evidence_provenance_sha256": canonical_digest(
+            provenance_identity
+        ),
+        "action_source_contract_id": provenance_identity[
+            "action_source_contract_id"
+        ],
+        "action_source_contract_sha256": provenance_identity[
+            "action_source_contract_sha256"
+        ],
+        "limitation_ids": [
+            item["limitation_id"]
+            for item in provenance_identity["review_limitations"]
+        ],
+        "limitations_sha256": limitations_digest(
+            provenance_identity["review_limitations"]
+        ),
+        "presentation_content_sha256": canonical_digest(
+            presentation_content
+        ),
+        "statement_ids": _statement_ids(wording),
         "mapping_ids": sorted(mapping_ids),
-        "approved_scope": identity["scope"],
     }
+    return {
+        **subject,
+        "approval_subject_sha256": canonical_digest(subject),
+    }
+
+
+def approval_subject_for_artifact(
+    artifact: dict[str, Any],
+) -> dict[str, Any]:
+    return expected_approval_subject(
+        schema_version=artifact["schema_version"],
+        identity=artifact["artifact_identity"],
+        compiled_ir_sha256=artifact["provenance"]["compiled_ir_sha256"],
+        wording=artifact["editorial_wording"],
+        compiled_semantic_meaning=artifact["compiled_semantic_meaning"],
+        evidence_metadata=artifact["evidence_metadata"],
+        provenance=artifact["provenance"],
+    )
+
+
+def detached_receipt_matches(
+    receipt: dict[str, Any] | None,
+    *,
+    expected_subject: dict[str, Any],
+) -> bool:
+    if not isinstance(receipt, dict):
+        return False
+    if set(receipt) != {
+        "schema_version",
+        "receipt_id",
+        "status",
+        "binding",
+        "approved_statement_ids",
+        "approved_mapping_ids",
+        "reviewer",
+        "decision_timestamp",
+        "limitations_sha256",
+        "limitations_acknowledged",
+        "decisions",
+        "publication_activation",
+    }:
+        return False
+    reviewer = receipt.get("reviewer", {})
+    limitations = receipt.get("limitations_acknowledged", [])
+    timestamp = receipt.get("decision_timestamp")
+    try:
+        parsed_timestamp = datetime.fromisoformat(
+            timestamp.replace("Z", "+00:00")
+        )
+        normalized_receipt_limitations = canonical_limitations([
+            {
+                "limitation_id": item.get("limitation_id"),
+                "text": item.get("text"),
+            }
+            for item in limitations
+            if isinstance(item, dict)
+        ])
+    except (AttributeError, ValueError, EditorialPresentationError):
+        return False
+    return bool(
+        receipt.get("schema_version")
+        == "editorial_public_issue_approval_receipt_v1"
+        and isinstance(receipt.get("receipt_id"), str)
+        and APPROVAL_RECEIPT_ID.fullmatch(receipt["receipt_id"])
+        and receipt.get("status") == "approved"
+        and receipt.get("binding") == expected_subject
+        and receipt.get("approved_statement_ids")
+        == expected_subject["statement_ids"]
+        and receipt.get("approved_mapping_ids")
+        == expected_subject["mapping_ids"]
+        and isinstance(reviewer, dict)
+        and set(reviewer) == {"reviewer_id", "authority"}
+        and isinstance(reviewer.get("reviewer_id"), str)
+        and REVIEWER_ID.fullmatch(reviewer["reviewer_id"])
+        and reviewer.get("authority") in RECOGNIZED_REVIEWER_AUTHORITIES
+        and parsed_timestamp.tzinfo is not None
+        and isinstance(limitations, list)
+        and receipt.get("limitations_sha256")
+        == expected_subject["limitations_sha256"]
+        and [item["limitation_id"] for item in normalized_receipt_limitations]
+        == expected_subject["limitation_ids"]
+        and limitations_digest(normalized_receipt_limitations)
+        == expected_subject["limitations_sha256"]
+        and all(
+            isinstance(item, dict)
+            and set(item) == {"limitation_id", "text", "acknowledged"}
+            and item.get("limitation_id")
+            and item.get("text")
+            and item.get("acknowledged") is True
+            for item in limitations
+        )
+        and receipt.get("decisions") == REQUIRED_DETACHED_DECISIONS
+        and receipt.get("publication_activation")
+        == {"active": False, "decision_scope": "out_of_scope"}
+    )
 
 
 def publication_gates_pass(
     controls: dict[str, Any],
     *,
-    expected_binding: dict[str, Any],
+    expected_subject: dict[str, Any],
+    detached_receipt: dict[str, Any] | None = None,
 ) -> bool:
-    receipt = controls["review_receipt"]
-    approvals = receipt.get("approvals", {})
-    reviewer = receipt.get("reviewer", {})
     if controls["benchmark"]["status"] not in BENCHMARK_STATUSES:
         return False
     return bool(
         controls["semantic"]["status"] == "accepted_semantic_reference"
         and controls["semantic"]["validation_status"] == "passed"
         and controls["editorial"]["human_approval_status"] == "human_approved"
-        and receipt.get("status") == "approved"
-        and receipt.get("binding") == expected_binding
-        and reviewer.get("reviewer_id")
-        and reviewer.get("authority")
-        and reviewer.get("reviewer_id") != "not_supplied"
-        and reviewer.get("authority") != "not_supplied"
-        and REQUIRED_RECEIPT_APPROVALS
-        <= {key for key, value in approvals.items() if value is True}
+        and controls["approval_mode"] == "detached_receipt_required"
+        and detached_receipt_matches(
+            detached_receipt,
+            expected_subject=expected_subject,
+        )
         and controls["benchmark"]["status"] == "gold_benchmark"
         and controls["production"]["eligible"] is True
         and controls["publication"]["active"] is True
     )
 
 
-def build_review_binding(
+def build_approval_subject(
     compiled_ir: dict[str, Any],
     editorial_input: dict[str, Any],
+    *,
+    trusted_action_source_contract: dict[str, Any],
 ) -> dict[str, Any]:
     snapshot = copy.deepcopy(compiled_ir)
     identity = editorial_input["artifact_identity"]
@@ -485,19 +905,64 @@ def build_review_binding(
             snapshot.get("source_render_constraints", [])
         ),
     ]
-    mapping_ids = validate_editorial_wording(
+    provenance = _prepare_provenance(
+        editorial_input["provenance"],
+        trusted_action_source_contract,
+    )
+    validate_editorial_wording(
         editorial_input["editorial_wording"],
         primary_ids=plan["primary_proposition_ids"],
         limiting_ids=plan["limiting_proposition_ids"],
         propositions=propositions,
         boundaries=mapping_boundaries,
-        provenance=editorial_input["provenance"],
+        provenance=provenance,
+        trusted_action_source_contract=trusted_action_source_contract,
     )
-    return expected_review_binding(
+    action_ids = sorted(
+        {
+            action_id
+            for proposition in planned
+            for action_id in proposition["evidence_action_ids"]
+        }
+    )
+    episode_ids = sorted(
+        {
+            episode_id
+            for proposition in planned
+            for episode_id in proposition["evidence_episode_ids"]
+        }
+    )
+    meaning = {
+        "primary_proposition_ids": copy.deepcopy(
+            plan["primary_proposition_ids"]
+        ),
+        "limiting_proposition_ids": copy.deepcopy(
+            plan["limiting_proposition_ids"]
+        ),
+        "propositions": planned,
+        "source_render_constraints": copy.deepcopy(
+            snapshot.get("source_render_constraints", [])
+        ),
+        "coverage_boundaries": copy.deepcopy(
+            member["composition"]["coverage_boundaries"]
+        ),
+        "presentation_boundaries": boundaries,
+        "review_route": member["review_route"],
+    }
+    evidence = {
+        "coverage": copy.deepcopy(member["coverage"]),
+        "action_ids": action_ids,
+        "episode_ids": episode_ids,
+        "action_accounting": copy.deepcopy(member["action_accounting"]),
+    }
+    return expected_approval_subject(
+        schema_version="editorial_public_issue_presentation_v1",
         identity=identity,
         compiled_ir_sha256=canonical_digest(snapshot),
         wording=editorial_input["editorial_wording"],
-        mapping_ids=mapping_ids,
+        compiled_semantic_meaning=meaning,
+        evidence_metadata=evidence,
+        provenance=provenance,
     )
 
 
@@ -571,6 +1036,8 @@ def fallback_display() -> dict[str, Any]:
 def compile_public_issue_presentation(
     compiled_ir: dict[str, Any],
     editorial_input: dict[str, Any],
+    *,
+    trusted_action_source_contract: dict[str, Any],
 ) -> dict[str, Any]:
     """Compile reviewed wording without deriving or rewriting analytical prose."""
 
@@ -598,22 +1065,20 @@ def compile_public_issue_presentation(
         ),
     ]
     wording = editorial_input["editorial_wording"]
-    provenance_input = editorial_input["provenance"]
-    mapping_ids = validate_editorial_wording(
+    provenance_input = _prepare_provenance(
+        editorial_input["provenance"],
+        trusted_action_source_contract,
+    )
+    validate_editorial_wording(
         wording,
         primary_ids=plan["primary_proposition_ids"],
         limiting_ids=plan["limiting_proposition_ids"],
         propositions=propositions,
         boundaries=mapping_boundaries,
         provenance=provenance_input,
+        trusted_action_source_contract=trusted_action_source_contract,
     )
     compiled_digest = canonical_digest(snapshot)
-    binding = expected_review_binding(
-        identity=identity,
-        compiled_ir_sha256=compiled_digest,
-        wording=wording,
-        mapping_ids=mapping_ids,
-    )
     controls = copy.deepcopy(editorial_input["controls"])
     semantic_tier = _semantic_tier_from_parts(
         coverage=member["coverage"],
@@ -624,16 +1089,6 @@ def compile_public_issue_presentation(
         source_constraints=snapshot.get("source_render_constraints", []),
         coverage_boundaries=member["composition"]["coverage_boundaries"],
     )
-    gates_pass = publication_gates_pass(
-        controls,
-        expected_binding=binding,
-    )
-    public_tier = (
-        semantic_tier
-        if semantic_tier in ANALYTICAL_TIERS and gates_pass
-        else "receipts_only"
-    )
-
     action_ids = sorted(
         {
             action_id
@@ -648,44 +1103,76 @@ def compile_public_issue_presentation(
             for episode_id in proposition["evidence_episode_ids"]
         }
     )
+    meaning = {
+        "primary_proposition_ids": copy.deepcopy(
+            plan["primary_proposition_ids"]
+        ),
+        "limiting_proposition_ids": copy.deepcopy(
+            plan["limiting_proposition_ids"]
+        ),
+        "propositions": planned_propositions,
+        "source_render_constraints": copy.deepcopy(
+            snapshot.get("source_render_constraints", [])
+        ),
+        "coverage_boundaries": copy.deepcopy(
+            member["composition"]["coverage_boundaries"]
+        ),
+        "presentation_boundaries": boundaries,
+        "review_route": member["review_route"],
+    }
+    evidence = {
+        "coverage": copy.deepcopy(member["coverage"]),
+        "action_ids": action_ids,
+        "episode_ids": episode_ids,
+        "action_accounting": copy.deepcopy(member["action_accounting"]),
+    }
+    subject = expected_approval_subject(
+        schema_version="editorial_public_issue_presentation_v1",
+        identity=identity,
+        compiled_ir_sha256=compiled_digest,
+        wording=wording,
+        compiled_semantic_meaning=meaning,
+        evidence_metadata=evidence,
+        provenance=provenance_input,
+    )
+    gates_pass = publication_gates_pass(
+        controls,
+        expected_subject=subject,
+    )
+    public_tier = (
+        semantic_tier
+        if semantic_tier in ANALYTICAL_TIERS and gates_pass
+        else "receipts_only"
+    )
     provenance = copy.deepcopy(provenance_input)
     provenance["compiled_ir_sha256"] = compiled_digest
-    provenance["reviewed_wording_sha256"] = reviewed_wording_digest(wording)
-    provenance["review_receipt"] = copy.deepcopy(controls["review_receipt"])
-    provenance["compiler_receipt"] = copy.deepcopy(binding)
+    provenance["reviewed_wording_sha256"] = subject[
+        "reviewed_wording_sha256"
+    ]
+    provenance["mapping_set_sha256"] = subject["mapping_set_sha256"]
+    provenance["evidence_provenance_sha256"] = subject[
+        "evidence_provenance_sha256"
+    ]
+    provenance["presentation_content_sha256"] = subject[
+        "presentation_content_sha256"
+    ]
+    provenance["limitations_sha256"] = subject["limitations_sha256"]
+    provenance["approval_subject_sha256"] = subject[
+        "approval_subject_sha256"
+    ]
+    provenance["compiler_receipt"] = copy.deepcopy(subject)
 
     artifact = {
         "schema_version": "editorial_public_issue_presentation_v1",
         "artifact_identity": copy.deepcopy(identity),
-        "compiled_semantic_meaning": {
-            "primary_proposition_ids": copy.deepcopy(
-                plan["primary_proposition_ids"]
-            ),
-            "limiting_proposition_ids": copy.deepcopy(
-                plan["limiting_proposition_ids"]
-            ),
-            "propositions": planned_propositions,
-            "source_render_constraints": copy.deepcopy(
-                snapshot.get("source_render_constraints", [])
-            ),
-            "coverage_boundaries": copy.deepcopy(
-                member["composition"]["coverage_boundaries"]
-            ),
-            "presentation_boundaries": boundaries,
-            "review_route": member["review_route"],
-        },
+        "compiled_semantic_meaning": meaning,
         "editorial_wording": copy.deepcopy(wording),
         "frontend_display": (
             _copy_display_wording(wording, semantic_tier=semantic_tier)
             if public_tier != "receipts_only"
             else fallback_display()
         ),
-        "evidence_metadata": {
-            "coverage": copy.deepcopy(member["coverage"]),
-            "action_ids": action_ids,
-            "episode_ids": episode_ids,
-            "action_accounting": copy.deepcopy(member["action_accounting"]),
-        },
+        "evidence_metadata": evidence,
         "provenance": provenance,
         "controls": {
             **controls,

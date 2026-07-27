@@ -1,0 +1,112 @@
+{
+  "schema_version": "editorial_public_issue_approval_receipt_v1",
+  "receipt_id": null,
+  "status": "human_approval_pending",
+  "binding": {
+    "artifact_id": "f000477:justice_public_safety:119:v1",
+    "artifact_version": 1,
+    "member_id": "F000477",
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "congress": 119,
+    "approved_scope": "119",
+    "schema_version": "editorial_public_issue_presentation_v1",
+    "compiled_ir_sha256": "f6acbacca4b32f7daf3deef757d14538add4c8b81d0fc80923f0cf3caf8aa3f1",
+    "reviewed_wording_sha256": "30636227799244522d07a9608e06878561439f0fb9819931989727277607ae92",
+    "mapping_set_sha256": "c71926699df244e9cbd1e6438cd06139570462765c2b7374d35c209bfc692bcd",
+    "evidence_provenance_sha256": "a37fc3468f1af932c5bf062789f25551337b40eefe4502df7afd469d0af795f6",
+    "action_source_contract_id": "foushee_justice_public_safety_119_v1",
+    "action_source_contract_sha256": "0ee8575db526d4b021d7b26d2befbe9c22eb7af9473c12ac2ecec616f3ae9386",
+    "limitation_ids": [
+      "bounded-reviewed-sample",
+      "dc-pursuit-exceptions",
+      "dc-repeal-exceptions",
+      "fentanyl-package-content",
+      "mixed-fentanyl-trajectory",
+      "one-sided-hr2240-arguments",
+      "retired-firearm-scope"
+    ],
+    "limitations_sha256": "822098797ffce236c0018576b02969e15a6495c82ca577c5c74e69f5dd2a58df",
+    "presentation_content_sha256": "5813d5e556542d0ef2234dc05b1e1e24d5811d8c0e22af7775cd1e9b82aa55ca",
+    "statement_ids": [
+      "statement:conclusion:body",
+      "statement:conclusion:headline",
+      "statement:coverage:reviewed-actions",
+      "statement:repeated-opposition:body",
+      "statement:repeated-opposition:heading",
+      "statement:repeated-support:body",
+      "statement:repeated-support:heading",
+      "statement:scope:reviewed-119",
+      "statement:teaser:mechanism-divide",
+      "statement:trajectory-fentanyl:body",
+      "statement:trajectory-fentanyl:heading"
+    ],
+    "mapping_ids": [
+      "mapping:conclusion:body",
+      "mapping:conclusion:headline",
+      "mapping:coverage:reviewed-actions",
+      "mapping:repeated-opposition:body",
+      "mapping:repeated-opposition:heading",
+      "mapping:repeated-support:body",
+      "mapping:repeated-support:heading",
+      "mapping:scope:reviewed-119",
+      "mapping:teaser:mechanism-divide",
+      "mapping:trajectory-fentanyl:body",
+      "mapping:trajectory-fentanyl:heading"
+    ],
+    "approval_subject_sha256": "67e67001ca678e70debba52e9049632f90d99da4d6f1dcaea60da40beaa87874"
+  },
+  "approved_statement_ids": [],
+  "approved_mapping_ids": [],
+  "reviewer": {
+    "reviewer_id": null,
+    "authority": null
+  },
+  "decision_timestamp": null,
+  "limitations_sha256": "822098797ffce236c0018576b02969e15a6495c82ca577c5c74e69f5dd2a58df",
+  "limitations_acknowledged": [
+    {
+      "limitation_id": "bounded-reviewed-sample",
+      "text": "Seven substantive actions across five independent episodes are a bounded 119th-Congress sample, not the complete Justice record.",
+      "acknowledged": false
+    },
+    {
+      "limitation_id": "mixed-fentanyl-trajectory",
+      "text": "The three related fentanyl actions form one mixed episode and do not establish a change in position, motive, or philosophy.",
+      "acknowledged": false
+    },
+    {
+      "limitation_id": "fentanyl-package-content",
+      "text": "The later fentanyl framework combined permanent scheduling and enforcement consequences with research provisions.",
+      "acknowledged": false
+    },
+    {
+      "limitation_id": "retired-firearm-scope",
+      "text": "The retired-firearm action does not establish a general position on police tools or police equipment.",
+      "acknowledged": false
+    },
+    {
+      "limitation_id": "dc-pursuit-exceptions",
+      "text": "The D.C. pursuit proposal included risk, futility, and alternative-apprehension exceptions.",
+      "acknowledged": false
+    },
+    {
+      "limitation_id": "dc-repeal-exceptions",
+      "text": "The D.C. reform-repeal substitute retained the neck-restraint and vehicular-pursuit subtitles.",
+      "acknowledged": false
+    },
+    {
+      "limitation_id": "one-sided-hr2240-arguments",
+      "text": "The reviewed H.R. 2240 official argument evidence was one-sided; no opposing argument was synthesized.",
+      "acknowledged": false
+    }
+  ],
+  "decisions": {
+    "editorial_wording": "pending",
+    "gold_benchmark_promotion": "pending",
+    "production_eligibility": "pending"
+  },
+  "publication_activation": {
+    "active": false,
+    "decision_scope": "out_of_scope"
+  }
+}

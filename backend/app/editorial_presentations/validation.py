@@ -8,11 +8,14 @@ from .compiler import (
     ANALYTICAL_TIERS,
     BENCHMARK_STATUSES,
     PUBLIC_TIERS,
+    IMMUTABLE_PROVENANCE_FIELDS,
     EditorialPresentationError,
     _copy_display_wording,
-    expected_review_binding,
+    approval_subject_for_artifact,
     fallback_display,
     publication_gates_pass,
+    mapping_set_digest,
+    limitations_digest,
     reviewed_wording_digest,
     semantic_tier_for_artifact,
     source_constraint_boundaries,
@@ -122,7 +125,7 @@ def validate_public_issue_presentation(
     propositions = {
         item["proposition_id"]: item for item in meaning["propositions"]
     }
-    mapping_ids = validate_editorial_wording(
+    validate_editorial_wording(
         artifact["editorial_wording"],
         primary_ids=meaning["primary_proposition_ids"],
         limiting_ids=meaning["limiting_proposition_ids"],
@@ -136,17 +139,45 @@ def validate_public_issue_presentation(
         provenance=artifact["provenance"],
     )
     provenance = artifact["provenance"]
+    expected_provenance_fields = {
+        *IMMUTABLE_PROVENANCE_FIELDS,
+        "compiled_ir_sha256",
+        "reviewed_wording_sha256",
+        "mapping_set_sha256",
+        "evidence_provenance_sha256",
+        "presentation_content_sha256",
+        "limitations_sha256",
+        "approval_subject_sha256",
+        "compiler_receipt",
+    }
+    if set(provenance) != expected_provenance_fields:
+        raise EditorialPresentationError(
+            "provenance must contain exactly the permitted immutable and computed fields"
+        )
     if provenance["reviewed_wording_sha256"] != reviewed_wording_digest(
         artifact["editorial_wording"]
     ):
         raise EditorialPresentationError("reviewed wording digest mismatch")
-    expected_binding = expected_review_binding(
-        identity=identity,
-        compiled_ir_sha256=provenance["compiled_ir_sha256"],
-        wording=artifact["editorial_wording"],
-        mapping_ids=mapping_ids,
-    )
-    if provenance["compiler_receipt"] != expected_binding:
+    expected_subject = approval_subject_for_artifact(artifact)
+    if provenance["mapping_set_sha256"] != mapping_set_digest(
+        artifact["editorial_wording"]
+    ):
+        raise EditorialPresentationError("mapping-set digest mismatch")
+    for field in (
+        "evidence_provenance_sha256",
+        "presentation_content_sha256",
+        "limitations_sha256",
+        "approval_subject_sha256",
+    ):
+        if provenance[field] != expected_subject[field]:
+            raise EditorialPresentationError(
+                f"{field.replace('_', ' ')} mismatch"
+            )
+    if provenance["limitations_sha256"] != limitations_digest(
+        provenance["review_limitations"]
+    ):
+        raise EditorialPresentationError("limitations digest mismatch")
+    if provenance["compiler_receipt"] != expected_subject:
         raise EditorialPresentationError(
             "compiler receipt identity or digest mismatch"
         )
@@ -154,14 +185,14 @@ def validate_public_issue_presentation(
     controls = artifact["controls"]
     if controls["benchmark"]["status"] not in BENCHMARK_STATUSES:
         raise EditorialPresentationError("unknown benchmark status")
-    if provenance["review_receipt"] != controls["review_receipt"]:
+    if controls.get("approval_mode") != "detached_receipt_required":
         raise EditorialPresentationError(
-            "provenance and control review receipts differ"
+            "public presentation requires detached approval receipts"
         )
     semantic_tier = semantic_tier_for_artifact(artifact)
     gates_pass = publication_gates_pass(
         controls,
-        expected_binding=expected_binding,
+        expected_subject=expected_subject,
     )
     effective_tier = (
         semantic_tier

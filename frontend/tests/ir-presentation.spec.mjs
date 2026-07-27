@@ -45,24 +45,24 @@ const presentation = {
       reviewed_scope: "119",
       tier: "reviewed_conclusion",
       tier_badge: "Reviewed conclusion",
-      teaser: "The reviewed 119th-Congress sample shows a divide between safeguards and reviewed police authority measures.",
+      teaser: "The reviewed 119th-Congress sample shows support for reporting and for evidence, research, or implementation conditions in two independent episodes, alongside opposition to three specific proposals concerning retired-service firearm access, broader D.C. police pursuit authority, or repeal of most reviewed D.C. policing restrictions.",
       coverage_text: "This conclusion covers 7 reviewed substantive actions across 5 independent policy episodes in the 119th Congress.",
       scope_boundary: "This conclusion remains bounded to the reviewed 119th-Congress record.",
       conclusion: {
         headline: "A divide by policy mechanism in the reviewed sample",
-        body: "In this reviewed 119th-Congress sample, Foushee supported safeguards, research, reporting, or implementation constraints while opposing reviewed measures involving police tools, operational authority, or rollback of policing restrictions.",
+        body: "In this reviewed 119th-Congress sample, Foushee supported reporting and evidence, research, or implementation conditions in two independent episodes, while opposing three specific proposals concerning retired-service firearm access, broader D.C. police pursuit authority, and repeal of most reviewed D.C. policing restrictions.",
       },
       repeated_patterns: [
         {
           proposition_id: "prop:support",
-          heading: "Safeguards, research, reporting, and implementation constraints",
+          heading: "Certification, fentanyl research provisions, and officer-safety reporting",
           body: "Across independent episodes, the reviewed wording describes support for these mechanisms.",
           action_ids: ["house:119:1:32", "house:119:1:131", "house:119:1:166"],
         },
         {
           proposition_id: "prop:oppose",
-          heading: "Police tools, operational authority, and safeguard rollbacks",
-          body: "Across independent episodes, the reviewed wording describes opposition to these mechanisms.",
+          heading: "Retired-service firearm access, D.C. pursuit authority, and policing-rule rollbacks",
+          body: "Across independent episodes, Foushee opposed creating a reviewed federal program for eligible current and retired officers to buy qualifying retired agency firearms, broader D.C. police pursuit authority, and repeal of most reviewed D.C. policing restrictions.",
           action_ids: ["house:119:1:130", "house:119:1:275", "house:119:1:299"],
         },
       ],
@@ -70,7 +70,7 @@ const presentation = {
         {
           proposition_id: "prop:fentanyl",
           heading: "The fentanyl episode is mixed",
-          body: "The related amendment and passage stages remain one mixed episode.",
+          body: "Within one fentanyl legislative episode, Foushee supported a certification amendment, opposed the earlier House bill, and supported a later related framework that permanently scheduled fentanyl-related substances and included research provisions. These related stages count as one episode for breadth and do not establish a change in position, motive, or philosophy.",
           action_ids: ["house:119:1:32", "house:119:1:33", "house:119:1:166"],
         },
       ],
@@ -201,7 +201,7 @@ test("IR-native conclusion is display-only and supporting controls resolve to re
   await expect(panel).toContainText("bounded to the reviewed 119th-Congress record");
 
   const supporting = panel.getByRole("button", {
-    name: "See supporting votes for Safeguards, research, reporting, and implementation constraints",
+    name: "See supporting votes for Certification, fentanyl research provisions, and officer-safety reporting",
   });
   await supporting.click();
   const receipt = page.locator('[data-canonical-action-id="house:119:1:32"]').last();
@@ -273,7 +273,9 @@ test("supplied non-directional tier renders no analytical synthesis", async ({ p
   );
   await expect(panel).not.toContainText("A divide by policy mechanism");
   await expect(panel).not.toContainText("Repeated patterns");
-  await expect(panel).not.toContainText("Safeguards, research");
+  await expect(panel).not.toContainText(
+    "Certification, fentanyl research provisions, and officer-safety reporting",
+  );
 });
 
 test("/golden-render-fixture remains unavailable", async ({ page }) => {

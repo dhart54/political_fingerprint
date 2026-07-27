@@ -9,17 +9,19 @@ from unittest.mock import patch
 from fastapi.testclient import TestClient
 
 from app.editorial_presentations.compiler import (
+    approval_subject_for_artifact,
     artifact_digest,
-    build_review_binding,
-    compile_public_issue_presentation,
+    compile_public_issue_presentation as _compile_public_issue_presentation,
 )
 from app.editorial_presentations.selector import select_public_presentations
 from app.editorial_artifacts.repository import EditorialArtifactRepository
 from app.main import app
 from app.semantic_ir.pipeline import replay_accepted_reference
 from backend.tests.test_editorial_public_presentation import (
+    _approved_receipt,
     _compiled,
     _input_for,
+    _trusted_contract,
 )
 
 
@@ -30,6 +32,14 @@ FIXTURE = (
     "f000477_justice_public_safety_119_review_fixture.json"
 )
 CASES = ROOT / "docs/semantic_ir/accepted/development_cases.json"
+
+
+def compile_public_issue_presentation(compiled: dict, authoring: dict) -> dict:
+    return _compile_public_issue_presentation(
+        compiled,
+        authoring,
+        trusted_action_source_contract=_trusted_contract(compiled, authoring),
+    )
 
 
 def _approved_artifact() -> dict:
@@ -46,23 +56,6 @@ def _approved_artifact() -> dict:
     controls["benchmark"]["status"] = "gold_benchmark"
     controls["production"]["eligible"] = True
     controls["publication"]["active"] = True
-    controls["review_receipt"] = {
-        "receipt_id": "test-only-authorized-receipt",
-        "status": "approved",
-        "binding": build_review_binding(compiled, authoring),
-        "reviewer": {
-            "reviewer_id": "test-reviewer",
-            "authority": "test-authorized-editorial-reviewer",
-        },
-        "approvals": {
-            "bounded_issue_conclusion": True,
-            "repeated_pattern_statements": True,
-            "fentanyl_limitation": True,
-            "claim_source_mappings": True,
-            "benchmark_promotion": True,
-            "production_eligibility": True,
-        },
-    }
     return compile_public_issue_presentation(compiled, authoring)
 
 
@@ -82,6 +75,9 @@ def _row(artifact: dict, **overrides: object) -> dict:
         "schema_version": artifact["schema_version"],
         "content_sha256": artifact_digest(artifact),
         "payload_jsonb": artifact,
+        "publication_metadata_jsonb": {
+            "approval_receipt": _approved_receipt(artifact)
+        },
     }
     row.update(overrides)
     return row
@@ -123,6 +119,21 @@ def test_approved_artifact_is_visible_for_119_and_bounded_under_all() -> None:
     assert recent_justice["tier"] == "reviewed_conclusion"
     assert recent_justice["reviewed_scope"] == "119"
     assert "119th-Congress" in full_justice["scope_boundary"]
+
+
+def test_embedded_provenance_receipt_injection_cannot_authorize_copy() -> None:
+    artifact = _approved_artifact()
+    artifact["provenance"]["review_receipt"] = _approved_receipt(artifact)
+    assert _justice([_row(artifact)])["tier"] == "receipts_only"
+
+
+def test_limitation_digest_substitution_fails_selection() -> None:
+    artifact = _approved_artifact()
+    row = _row(artifact)
+    row["publication_metadata_jsonb"]["approval_receipt"][
+        "limitations_sha256"
+    ] = "0" * 64
+    assert _justice([row])["tier"] == "receipts_only"
 
 
 def test_approved_artifact_is_not_visible_for_118() -> None:
@@ -301,7 +312,7 @@ def test_registry_payload_identity_and_digest_mismatches_fail_closed() -> None:
     )["tier"] == "receipts_only"
 
 
-def test_wording_and_review_receipt_substitution_fail_closed() -> None:
+def test_wording_and_detached_receipt_substitution_fail_closed() -> None:
     artifact = _approved_artifact()
     changed_wording = copy.deepcopy(artifact)
     changed_wording["editorial_wording"]["conclusion"]["body"]["text"] += (
@@ -309,19 +320,59 @@ def test_wording_and_review_receipt_substitution_fail_closed() -> None:
     )
     changed_digest = copy.deepcopy(artifact)
     changed_digest["provenance"]["reviewed_wording_sha256"] = "0" * 64
-    wrong_receipt_artifact = copy.deepcopy(artifact)
-    wrong_receipt_artifact["controls"]["review_receipt"]["binding"][
+    wrong_receipt_row = _row(artifact)
+    wrong_receipt_row["publication_metadata_jsonb"]["approval_receipt"]["binding"][
         "artifact_id"
     ] = "different:artifact"
-    wrong_receipt_artifact["provenance"]["review_receipt"] = copy.deepcopy(
-        wrong_receipt_artifact["controls"]["review_receipt"]
-    )
-    for candidate in (
-        changed_wording,
-        changed_digest,
-        wrong_receipt_artifact,
+    assert _justice([_row(changed_wording)])["tier"] == "receipts_only"
+    assert _justice([_row(changed_digest)])["tier"] == "receipts_only"
+    assert _justice([wrong_receipt_row])["tier"] == "receipts_only"
+
+
+def test_detached_receipt_scope_identity_and_stale_wording_fail_closed() -> None:
+    artifact = _approved_artifact()
+    for field, value in (
+        ("member_id", "X000001"),
+        ("issue_id", "ECONOMY_TAXES"),
+        ("approved_scope", "118"),
+        ("reviewed_wording_sha256", "0" * 64),
     ):
-        assert _justice([_row(candidate)])["tier"] == "receipts_only"
+        row = _row(artifact)
+        row["publication_metadata_jsonb"]["approval_receipt"]["binding"][
+            field
+        ] = value
+        assert _justice([row])["tier"] == "receipts_only"
+
+
+def test_pending_or_unsigned_detached_receipt_fails_closed() -> None:
+    artifact = _approved_artifact()
+    row = _row(artifact)
+    receipt = row["publication_metadata_jsonb"]["approval_receipt"]
+    receipt["status"] = "human_approval_pending"
+    receipt["reviewer"] = {
+        "reviewer_id": "not_supplied",
+        "authority": "not_supplied",
+    }
+    receipt["decision_timestamp"] = None
+    receipt["approved_statement_ids"] = []
+    receipt["approved_mapping_ids"] = []
+    receipt["decisions"] = {
+        "editorial_wording": "pending",
+        "gold_benchmark_promotion": "pending",
+        "production_eligibility": "pending",
+    }
+    assert _justice([row])["tier"] == "receipts_only"
+
+
+def test_publication_controls_are_outside_subject_but_still_enforced() -> None:
+    artifact = _approved_artifact()
+    baseline_subject = approval_subject_for_artifact(artifact)
+    inactive = copy.deepcopy(artifact)
+    inactive["controls"]["publication"]["active"] = False
+    inactive["controls"]["publication_gates_passed"] = False
+    inactive["controls"]["effective_public_tier"] = "receipts_only"
+    assert approval_subject_for_artifact(inactive) == baseline_subject
+    assert _justice([_row(inactive)])["tier"] == "receipts_only"
 
 
 def test_raw_vote_reordering_and_yea_nay_fields_cannot_change_conclusion() -> None:

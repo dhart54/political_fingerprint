@@ -100,30 +100,59 @@
     },
     "provenance": {
       "type": "object",
-      "additionalProperties": true,
+      "additionalProperties": false,
       "required": [
         "semantic_source_case_id",
+        "focused_validation_case_ids",
         "dossier_refs",
         "source_refs",
         "claim_refs",
         "receipt_refs",
+        "action_source_contract_id",
+        "action_source_contract_sha256",
+        "review_limitations",
         "compiled_ir_sha256",
         "reviewed_wording_sha256",
-        "review_receipt",
+        "mapping_set_sha256",
+        "evidence_provenance_sha256",
+        "presentation_content_sha256",
+        "limitations_sha256",
+        "approval_subject_sha256",
         "compiler_receipt"
       ],
       "properties": {
+        "semantic_source_case_id": {"type": "string", "minLength": 1},
+        "focused_validation_case_ids": {"$ref": "#/definitions/uniqueStrings"},
+        "dossier_refs": {"$ref": "#/definitions/uniqueStrings"},
+        "source_refs": {"$ref": "#/definitions/uniqueStrings"},
+        "claim_refs": {"$ref": "#/definitions/uniqueStrings"},
+        "receipt_refs": {"$ref": "#/definitions/uniqueStrings"},
+        "action_source_contract_id": {"type": "string", "minLength": 1},
+        "action_source_contract_sha256": {"$ref": "#/definitions/sha256"},
+        "review_limitations": {"$ref": "#/definitions/reviewLimitations"},
         "compiled_ir_sha256": {
           "$ref": "#/definitions/sha256"
         },
         "reviewed_wording_sha256": {
           "$ref": "#/definitions/sha256"
         },
-        "review_receipt": {
-          "$ref": "#/definitions/reviewReceipt"
+        "mapping_set_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "evidence_provenance_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "presentation_content_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "limitations_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "approval_subject_sha256": {
+          "$ref": "#/definitions/sha256"
         },
         "compiler_receipt": {
-          "$ref": "#/definitions/contentBinding"
+          "$ref": "#/definitions/approvalSubject"
         }
       }
     },
@@ -136,7 +165,7 @@
         "benchmark",
         "production",
         "publication",
-        "review_receipt",
+        "approval_mode",
         "derived_semantic_tier",
         "effective_public_tier",
         "publication_gates_passed"
@@ -221,8 +250,8 @@
             }
           }
         },
-        "review_receipt": {
-          "$ref": "#/definitions/reviewReceipt"
+        "approval_mode": {
+          "const": "detached_receipt_required"
         },
         "derived_semantic_tier": {
           "$ref": "#/definitions/tier"
@@ -409,10 +438,15 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
+        "statement_id",
         "text",
         "mapping"
       ],
       "properties": {
+        "statement_id": {
+          "type": "string",
+          "minLength": 1
+        },
         "text": {
           "type": "string",
           "minLength": 1
@@ -553,16 +587,52 @@
         }
       }
     },
-    "contentBinding": {
+    "reviewLimitations": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "limitation_id",
+          "text"
+        ],
+        "properties": {
+          "limitation_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "approvalSubject": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "artifact_id",
         "artifact_version",
+        "member_id",
+        "issue_id",
+        "congress",
+        "approved_scope",
+        "schema_version",
         "compiled_ir_sha256",
         "reviewed_wording_sha256",
+        "mapping_set_sha256",
+        "evidence_provenance_sha256",
+        "action_source_contract_id",
+        "action_source_contract_sha256",
+        "limitation_ids",
+        "limitations_sha256",
+        "presentation_content_sha256",
+        "statement_ids",
         "mapping_ids",
-        "approved_scope"
+        "approval_subject_sha256"
       ],
       "properties": {
         "artifact_id": {
@@ -573,71 +643,61 @@
           "type": "integer",
           "minimum": 1
         },
-        "compiled_ir_sha256": {
+        "member_id": {
           "type": "string",
           "minLength": 1
         },
-        "reviewed_wording_sha256": {
+        "issue_id": {
           "type": "string",
           "minLength": 1
         },
-        "mapping_ids": {
-          "$ref": "#/definitions/uniqueStrings"
+        "congress": {
+          "type": "integer",
+          "minimum": 1
         },
         "approved_scope": {
           "type": "string",
           "pattern": "^[1-9][0-9]*$"
-        }
-      }
-    },
-    "reviewReceipt": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "receipt_id",
-        "status",
-        "binding",
-        "reviewer",
-        "approvals"
-      ],
-      "properties": {
-        "receipt_id": {
+        },
+        "schema_version": {
+          "const": "editorial_public_issue_presentation_v1"
+        },
+        "compiled_ir_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "reviewed_wording_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "mapping_set_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "evidence_provenance_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "action_source_contract_id": {
           "type": "string",
           "minLength": 1
         },
-        "status": {
-          "enum": [
-            "human_approval_pending",
-            "approved",
-            "rejected"
-          ]
+        "action_source_contract_sha256": {
+          "$ref": "#/definitions/sha256"
         },
-        "binding": {
-          "$ref": "#/definitions/contentBinding"
+        "limitation_ids": {
+          "$ref": "#/definitions/uniqueStrings"
         },
-        "reviewer": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "reviewer_id",
-            "authority"
-          ],
-          "properties": {
-            "reviewer_id": {
-              "type": "string",
-              "minLength": 1
-            },
-            "authority": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
+        "limitations_sha256": {
+          "$ref": "#/definitions/sha256"
         },
-        "approvals": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "boolean"
-          }
+        "presentation_content_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "statement_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "mapping_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "approval_subject_sha256": {
+          "$ref": "#/definitions/sha256"
         }
       }
     },
