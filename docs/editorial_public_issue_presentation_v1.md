@@ -35,11 +35,13 @@ Each immutable artifact keeps these layers distinct:
    copy.
 4. `evidence_metadata` preserves compiled coverage, complete action accounting,
    canonical action IDs, and episode IDs.
-5. `provenance` records semantic sources, focused validation cases, dossier,
-   claim, source, and receipt references, per-action vote and action-meaning
-   source requirements, content digests, the approval-subject digest, and a
-   deterministic compiler receipt. Human approval receipts are detached and
-   are never embedded in the content they approve.
+5. `provenance` is a closed object recording semantic sources, focused
+   validation cases, dossier, claim, source, and receipt references, the
+   independently supplied exact-action source-contract ID and digest, the
+   canonical review limitations, recomputed content digests, the
+   approval-subject digest, and a deterministic compiler receipt. Human
+   approval receipts are detached and can never be embedded in the content
+   they approve.
 6. `controls` keeps semantic acceptance, editorial approval, benchmark status,
    production eligibility, publication activation, and the detached-receipt
    requirement separate. Derived tier and gate fields are explanatory only and
@@ -62,7 +64,8 @@ The deterministic content digest is SHA-256 over those exact bytes.
   by its proposition or boundary, plus source and receipt references. For
   every mapped action, those references must include both its authoritative
   vote source and every required official action-meaning source declared by
-  `provenance.action_source_requirements`.
+  the separately governed `editorial_action_source_contract_v1`. Authoring
+  cannot supply or override that contract.
 - The compiler rejects missing, duplicate, unknown, broadened, unmapped,
   wrong-section, or parent-measure mappings. It never silently omits an
   unmapped limitation.
@@ -113,13 +116,15 @@ Human approval uses
 compiler creates an approval subject containing the artifact key and version,
 member/issue/Congress scope, schema version, compiled-IR digest,
 reviewed-wording digest, mapping-set digest, evidence/provenance digest,
-immutable presentation-content digest, and complete statement and mapping ID
-sets. The approval-subject digest excludes the receipt and mutable publication
-controls, so it has no digest cycle.
+exact-action source-contract ID and digest, canonical limitation IDs and
+digest, immutable presentation-content digest, and complete statement and
+mapping ID sets. The approval-subject digest excludes the receipt and mutable
+publication controls, so it has no digest cycle.
 
 The detached receipt repeats the complete approval subject and separately
-records approved statement and mapping IDs, reviewer identity and authority,
-decision timestamp, acknowledged limitations, and independent editorial,
+records approved statement and mapping IDs, a durable receipt identity,
+recognized reviewer identity and authority, decision timestamp, exact
+acknowledged limitations and their digest, and independent editorial,
 benchmark, and production-eligibility decisions. Publication activation must
 remain false and out of scope. Changing wording, mappings, sources, scope,
 identity, version, compiled meaning, or immutable presentation content
@@ -180,7 +185,7 @@ semantic source is `semir-dev-05-justice-mechanism-divide`, with
 
 The pending detached receipt template identifies the immutable content
 requiring review but does not approve it: reviewer identity and authority
-remain `not_supplied`, the decision timestamp is absent, all three decisions
+remain null, the decision timestamp is absent, all three decisions
 remain pending, and approved statement and mapping sets remain empty. The
 fixture remains `not_promoted`, production-ineligible, and
 publication-inactive. It is a review fixture, not an active public artifact.

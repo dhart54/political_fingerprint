@@ -100,23 +100,36 @@
     },
     "provenance": {
       "type": "object",
-      "additionalProperties": true,
+      "additionalProperties": false,
       "required": [
         "semantic_source_case_id",
+        "focused_validation_case_ids",
         "dossier_refs",
         "source_refs",
         "claim_refs",
         "receipt_refs",
-        "action_source_requirements",
+        "action_source_contract_id",
+        "action_source_contract_sha256",
+        "review_limitations",
         "compiled_ir_sha256",
         "reviewed_wording_sha256",
         "mapping_set_sha256",
         "evidence_provenance_sha256",
         "presentation_content_sha256",
+        "limitations_sha256",
         "approval_subject_sha256",
         "compiler_receipt"
       ],
       "properties": {
+        "semantic_source_case_id": {"type": "string", "minLength": 1},
+        "focused_validation_case_ids": {"$ref": "#/definitions/uniqueStrings"},
+        "dossier_refs": {"$ref": "#/definitions/uniqueStrings"},
+        "source_refs": {"$ref": "#/definitions/uniqueStrings"},
+        "claim_refs": {"$ref": "#/definitions/uniqueStrings"},
+        "receipt_refs": {"$ref": "#/definitions/uniqueStrings"},
+        "action_source_contract_id": {"type": "string", "minLength": 1},
+        "action_source_contract_sha256": {"$ref": "#/definitions/sha256"},
+        "review_limitations": {"$ref": "#/definitions/reviewLimitations"},
         "compiled_ir_sha256": {
           "$ref": "#/definitions/sha256"
         },
@@ -132,11 +145,11 @@
         "presentation_content_sha256": {
           "$ref": "#/definitions/sha256"
         },
-        "approval_subject_sha256": {
+        "limitations_sha256": {
           "$ref": "#/definitions/sha256"
         },
-        "action_source_requirements": {
-          "$ref": "#/definitions/actionSourceRequirements"
+        "approval_subject_sha256": {
+          "$ref": "#/definitions/sha256"
         },
         "compiler_receipt": {
           "$ref": "#/definitions/approvalSubject"
@@ -574,21 +587,25 @@
         }
       }
     },
-    "actionSourceRequirements": {
-      "type": "object",
-      "additionalProperties": {
+    "reviewLimitations": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
         "type": "object",
         "additionalProperties": false,
         "required": [
-          "vote_source_refs",
-          "action_meaning_source_refs"
+          "limitation_id",
+          "text"
         ],
         "properties": {
-          "vote_source_refs": {
-            "$ref": "#/definitions/uniqueStrings"
+          "limitation_id": {
+            "type": "string",
+            "minLength": 1
           },
-          "action_meaning_source_refs": {
-            "$ref": "#/definitions/uniqueStrings"
+          "text": {
+            "type": "string",
+            "minLength": 1
           }
         }
       }
@@ -608,6 +625,10 @@
         "reviewed_wording_sha256",
         "mapping_set_sha256",
         "evidence_provenance_sha256",
+        "action_source_contract_id",
+        "action_source_contract_sha256",
+        "limitation_ids",
+        "limitations_sha256",
         "presentation_content_sha256",
         "statement_ids",
         "mapping_ids",
@@ -651,6 +672,19 @@
           "$ref": "#/definitions/sha256"
         },
         "evidence_provenance_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "action_source_contract_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action_source_contract_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "limitation_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "limitations_sha256": {
           "$ref": "#/definitions/sha256"
         },
         "presentation_content_sha256": {

@@ -6,10 +6,8 @@
 - Issue: `JUSTICE_PUBLIC_SAFETY`
 - Reviewed scope: 119th Congress
 - Artifact: `f000477:justice_public_safety:119:v1`
-- Full-record semantic source:
-  `semir-dev-05-justice-mechanism-divide`
-- Focused validation:
-  `semir-dev-04-justice-mixed-fentanyl-trajectory` and
+- Semantic source: `semir-dev-05-justice-mechanism-divide`
+- Focused validation: `semir-dev-04-justice-mixed-fentanyl-trajectory` and
   `semir-dev-06-justice-one-sided-argument`
 - Editorial status: `human_approval_pending`
 - Benchmark status: `not_promoted`
@@ -17,9 +15,9 @@
 - Publication active: `false`
 - Effective public tier: `receipts_only`
 
-This packet is a revised candidate for a new human decision. It does not
-approve wording, promote a benchmark, establish production eligibility, or
-authorize publication.
+This is a pending candidate for a new human decision. It does not approve
+wording, promote a benchmark, establish production eligibility, or authorize
+publication.
 
 ## Exact revised candidate copy
 
@@ -58,53 +56,58 @@ authorize publication.
 - Scope: “This conclusion remains bounded to the reviewed 119th-Congress
   sample.”
 
-The pending artifact itself exposes only the `Vote receipts` tier and the
-non-analytical receipts-only teaser.
+The pending artifact exposes only the non-analytical `Vote receipts` tier.
 
-## Sentence-level mapping and direct provenance
+## Independent exact-action source authority
 
-Every mapped sentence has a unique statement ID and mapping ID. Each action
-lists both its House Clerk vote receipt and the official source or sources
-required to establish the action’s policy meaning.
+The compiler receives
+`docs/editorial/action_source_contracts/foushee_justice_public_safety_119_v1.json`
+separately from presentation authoring. Its contract ID is
+`foushee_justice_public_safety_119_v1`; its canonical SHA-256 is
+`0ee8575db526d4b021d7b26d2befbe9c22eb7af9473c12ac2ecec616f3ae9386`.
 
-| Statement / mapping | Proposition or boundary | Actions | Episodes | Direct vote and action-meaning sources |
-|---|---|---|---|---|
-| `statement:teaser:mechanism-divide` / `mapping:teaser:mechanism-divide` | `prop:af269162633f4c5c` | `32,130,131,275,299` | all five | Clerk `032,130,131,275,299`; `congress_hamdt5`, `congress_hr2255_text`, `congress_hr2240`, `hrpt_119_079`, `congress_hr5143`, `rules_print_119_11`, `congress_hr5107`, `hrpt_119_317` |
-| `statement:conclusion:headline` / `mapping:conclusion:headline` | `prop:af269162633f4c5c` | `32,130,131,275,299` | all five | Same direct sources as teaser |
-| `statement:conclusion:body` / `mapping:conclusion:body` | `prop:af269162633f4c5c` | `32,130,131,275,299` | all five | Same direct sources as teaser |
-| `statement:coverage:reviewed-actions` / `mapping:coverage:reviewed-actions` | `boundary:coverage:f000477:justice_public_safety:119` | all seven | all five | All seven Clerk receipts and all required official action-meaning sources |
-| `statement:scope:reviewed-119` / `mapping:scope:reviewed-119` | `boundary:scope:f000477:justice_public_safety:119` | all seven | all five | All seven Clerk receipts and all required official action-meaning sources |
-| `statement:repeated-support:heading` / `mapping:repeated-support:heading` | `prop:c428677c0dbee5e0` | `32,131,166` | fentanyl; reporting | Clerk `032,131,166`; `congress_hamdt5`, `congress_hr2240`, `hrpt_119_079`, `congress_s331`, `public_law_119_26`, `cbo_s331` |
-| `statement:repeated-support:body` / `mapping:repeated-support:body` | `prop:c428677c0dbee5e0` | `32,131,166` | fentanyl; reporting | Same direct sources as support heading |
-| `statement:repeated-opposition:heading` / `mapping:repeated-opposition:heading` | `prop:abbe87a63baefb7d` | `130,275,299` | firearm; pursuit; repeal | Clerk `130,275,299`; `congress_hr2255_text`, `congress_hr5143`, `rules_print_119_11`, `congress_hr5107`, `hrpt_119_317` |
-| `statement:repeated-opposition:body` / `mapping:repeated-opposition:body` | `prop:abbe87a63baefb7d` | `130,275,299` | firearm; pursuit; repeal | Same direct sources as opposition heading |
-| `statement:trajectory-fentanyl:heading` / `mapping:trajectory-fentanyl:heading` | `prop:bc08a2271517ebb7` | `32,33,166` | fentanyl | Clerk `032,033,166`; `congress_hamdt5`, `congress_hr27`, `congress_s331`, `public_law_119_26`, `cbo_s331` |
-| `statement:trajectory-fentanyl:body` / `mapping:trajectory-fentanyl:body` | `prop:bc08a2271517ebb7` | `32,33,166` | fentanyl | Same direct sources as trajectory heading |
+The contract is tied by raw-file SHA-256 to the frozen source manifest and
+accepted claim/source map. It authorizes these exact pairs:
 
-Canonical action IDs use `house:119:1:<roll>`. All statement mappings also
-retain:
+| Action | Vote source | Action-meaning source(s) |
+|---|---|---|
+| `house:119:1:32` | `clerk_roll_032` | `congress_hamdt5` |
+| `house:119:1:33` | `clerk_roll_033` | `congress_hr27` |
+| `house:119:1:130` | `clerk_roll_130` | `congress_hr2255_text` |
+| `house:119:1:131` | `clerk_roll_131` | `congress_hr2240`, `hrpt_119_079` |
+| `house:119:1:166` | `clerk_roll_166` | `congress_s331`, `public_law_119_26`, `cbo_s331` |
+| `house:119:1:275` | `clerk_roll_275` | `congress_hr5143`, `rules_print_119_11` |
+| `house:119:1:299` | `clerk_roll_299` | `congress_hr5107`, `hrpt_119_317` |
 
-- `docs/semantic_ir/accepted/acceptance_receipt.json`; and
-- `docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md`.
+Every analytical mapping includes the Clerk receipt and all required
+action-meaning sources for each mapped action. Unknown pairs, cross-action
+substitutions, and vote-only mechanism provenance fail closed.
 
-## Material limitations for human acknowledgment
+## Canonical material limitations
 
-1. Seven substantive actions across five independent episodes are a bounded
-   119th-Congress sample, not the complete Justice record.
-2. The three related fentanyl actions form one mixed episode and do not
-   establish a change in position, motive, or philosophy.
-3. The later fentanyl framework combined permanent scheduling and enforcement
-   consequences with research provisions.
-4. The retired-firearm action does not establish a general position on police
-   tools or police equipment.
-5. The D.C. pursuit proposal included risk, futility, and
-   alternative-apprehension exceptions.
-6. The D.C. reform-repeal substitute retained the neck-restraint and
-   vehicular-pursuit subtitles.
-7. The reviewed H.R. 2240 official argument evidence was one-sided; no opposing
-   argument was synthesized.
-8. Party alignment is context only and does not establish motive, ideology,
-   character, or philosophy.
+The approval subject binds the following exact, canonically sorted IDs and
+texts. The limitation-set SHA-256 is
+`822098797ffce236c0018576b02969e15a6495c82ca577c5c74e69f5dd2a58df`.
+
+1. `bounded-reviewed-sample`: Seven substantive actions across five independent
+   episodes are a bounded 119th-Congress sample, not the complete Justice
+   record.
+2. `dc-pursuit-exceptions`: The D.C. pursuit proposal included risk, futility,
+   and alternative-apprehension exceptions.
+3. `dc-repeal-exceptions`: The D.C. reform-repeal substitute retained the
+   neck-restraint and vehicular-pursuit subtitles.
+4. `fentanyl-package-content`: The later fentanyl framework combined permanent
+   scheduling and enforcement consequences with research provisions.
+5. `mixed-fentanyl-trajectory`: The three related fentanyl actions form one
+   mixed episode and do not establish a change in position, motive, or
+   philosophy.
+6. `one-sided-hr2240-arguments`: The reviewed H.R. 2240 official argument
+   evidence was one-sided; no opposing argument was synthesized.
+7. `retired-firearm-scope`: The retired-firearm action does not establish a
+   general position on police tools or police equipment.
+
+Party alignment remains context only under the interpretation principles; it is
+not an artifact-specific receipt limitation.
 
 ## Immutable approval subject and compiler receipt
 
@@ -115,142 +118,39 @@ retain:
 - Mapping-set SHA-256:
   `c71926699df244e9cbd1e6438cd06139570462765c2b7374d35c209bfc692bcd`
 - Evidence/provenance SHA-256:
-  `1e08c8fb326200ab50a9b434273c3b538d1e8b81ec1ad1ac80c3a7ebf42edc4b`
+  `a37fc3468f1af932c5bf062789f25551337b40eefe4502df7afd469d0af795f6`
 - Immutable presentation-content SHA-256:
-  `b04f0c7df8eb54a588aaf2141cd40da700433b842a08c85183813753e21f2cbf`
+  `5813d5e556542d0ef2234dc05b1e1e24d5811d8c0e22af7775cd1e9b82aa55ca`
 - Approval-subject SHA-256:
-  `3c0d4b41005ebbb16260079ecccae12fa8bef6c1f0f6ece32af34219b2cdbb94`
+  `67e67001ca678e70debba52e9049632f90d99da4d6f1dcaea60da40beaa87874`
 - Pending compiled artifact SHA-256:
-  `abf1c5f091e27e336b9d06802f673f4cb4d48af127e7648c010260384c25dad1`
+  `94938740c3b4dcd18e24b317d6e1e8f61ecdbf34601edd044810e821050421c9`
 
-The compiler receipt is the complete approval subject plus its digest. The
-approval subject covers immutable reviewed content, mappings, evidence, scope,
-and identity. It excludes the detached receipt itself and mutable publication
-controls, eliminating the prior self-referential digest cycle.
+The compiler receipt repeats the complete approval subject. The subject binds
+identity, scope, compiled meaning, wording, mappings, all immutable provenance,
+the independent source-contract ID and digest, the exact limitation set, and
+the immutable presentation content. Mutable publication controls and the
+detached receipt are excluded, preventing a digest cycle.
 
-The unsigned template is:
+The unsigned template is
+`docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt_template.json`.
+Its receipt ID, reviewer ID, authority, and timestamp are null; approved ID sets
+are empty; all decisions remain pending; all seven limitations remain
+unacknowledged; and publication activation remains false and out of scope.
 
-`docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt_template.json`
-
-It remains `human_approval_pending`, has no reviewer, authority, timestamp, or
-approved IDs, records all decisions as pending, and keeps publication
-activation false and out of scope.
-
-### Unsigned detached approval-receipt payload
-
-```json
-{
-  "schema_version": "editorial_public_issue_approval_receipt_v1",
-  "receipt_id": "not_supplied",
-  "status": "human_approval_pending",
-  "binding": {
-    "artifact_id": "f000477:justice_public_safety:119:v1",
-    "artifact_version": 1,
-    "member_id": "F000477",
-    "issue_id": "JUSTICE_PUBLIC_SAFETY",
-    "congress": 119,
-    "approved_scope": "119",
-    "schema_version": "editorial_public_issue_presentation_v1",
-    "compiled_ir_sha256": "f6acbacca4b32f7daf3deef757d14538add4c8b81d0fc80923f0cf3caf8aa3f1",
-    "reviewed_wording_sha256": "30636227799244522d07a9608e06878561439f0fb9819931989727277607ae92",
-    "mapping_set_sha256": "c71926699df244e9cbd1e6438cd06139570462765c2b7374d35c209bfc692bcd",
-    "evidence_provenance_sha256": "1e08c8fb326200ab50a9b434273c3b538d1e8b81ec1ad1ac80c3a7ebf42edc4b",
-    "presentation_content_sha256": "b04f0c7df8eb54a588aaf2141cd40da700433b842a08c85183813753e21f2cbf",
-    "statement_ids": [
-      "statement:conclusion:body",
-      "statement:conclusion:headline",
-      "statement:coverage:reviewed-actions",
-      "statement:repeated-opposition:body",
-      "statement:repeated-opposition:heading",
-      "statement:repeated-support:body",
-      "statement:repeated-support:heading",
-      "statement:scope:reviewed-119",
-      "statement:teaser:mechanism-divide",
-      "statement:trajectory-fentanyl:body",
-      "statement:trajectory-fentanyl:heading"
-    ],
-    "mapping_ids": [
-      "mapping:conclusion:body",
-      "mapping:conclusion:headline",
-      "mapping:coverage:reviewed-actions",
-      "mapping:repeated-opposition:body",
-      "mapping:repeated-opposition:heading",
-      "mapping:repeated-support:body",
-      "mapping:repeated-support:heading",
-      "mapping:scope:reviewed-119",
-      "mapping:teaser:mechanism-divide",
-      "mapping:trajectory-fentanyl:body",
-      "mapping:trajectory-fentanyl:heading"
-    ],
-    "approval_subject_sha256": "3c0d4b41005ebbb16260079ecccae12fa8bef6c1f0f6ece32af34219b2cdbb94"
-  },
-  "approved_statement_ids": [],
-  "approved_mapping_ids": [],
-  "reviewer": {
-    "reviewer_id": "not_supplied",
-    "authority": "not_supplied"
-  },
-  "decision_timestamp": null,
-  "limitations_acknowledged": [
-    {
-      "limitation_id": "bounded-reviewed-sample",
-      "text": "Seven substantive actions across five independent episodes are a bounded 119th-Congress sample, not the complete Justice record.",
-      "acknowledged": false
-    },
-    {
-      "limitation_id": "mixed-fentanyl-trajectory",
-      "text": "The three related fentanyl actions form one mixed episode and do not establish a change in position, motive, or philosophy.",
-      "acknowledged": false
-    },
-    {
-      "limitation_id": "fentanyl-package-content",
-      "text": "The later fentanyl framework combined permanent scheduling and enforcement consequences with research provisions.",
-      "acknowledged": false
-    },
-    {
-      "limitation_id": "retired-firearm-scope",
-      "text": "The retired-firearm action does not establish a general position on police tools or police equipment.",
-      "acknowledged": false
-    },
-    {
-      "limitation_id": "dc-pursuit-exceptions",
-      "text": "The D.C. pursuit proposal included risk, futility, and alternative-apprehension exceptions.",
-      "acknowledged": false
-    },
-    {
-      "limitation_id": "dc-repeal-exceptions",
-      "text": "The D.C. reform-repeal substitute retained the neck-restraint and vehicular-pursuit subtitles.",
-      "acknowledged": false
-    },
-    {
-      "limitation_id": "one-sided-hr2240-arguments",
-      "text": "The reviewed H.R. 2240 official argument evidence was one-sided; no opposing argument was synthesized.",
-      "acknowledged": false
-    }
-  ],
-  "decisions": {
-    "editorial_wording": "pending",
-    "gold_benchmark_promotion": "pending",
-    "production_eligibility": "pending"
-  },
-  "publication_activation": {
-    "active": false,
-    "decision_scope": "out_of_scope"
-  }
-}
-```
+An approved receipt must use an ID matching
+`approval-receipt:[a-z0-9][a-z0-9._-]{2,127}`, a reviewer ID matching
+`reviewer:[a-z0-9][a-z0-9._-]{2,127}`, recognized authority
+`editorial_publication_review_authority_v1`, and a timezone-aware decision
+timestamp. It must exactly acknowledge the seven bound limitation IDs and
+texts and exactly match every approval-subject field.
 
 ## Independent human decisions still required
 
-An authorized human must separately decide:
-
-1. whether to approve the exact revised editorial wording;
-2. whether to promote this artifact to `gold_benchmark`; and
-3. whether to mark it production eligible.
-
+An authorized human must separately decide whether to approve the exact
+wording, promote this artifact to `gold_benchmark`, and mark it production
+eligible. Publication activation remains a separate future operational action.
 No decision is inferred from compilation, validation, or this packet.
-Publication activation remains a separate future operational action after a
-valid detached receipt is merged.
 
 ## Production effects
 

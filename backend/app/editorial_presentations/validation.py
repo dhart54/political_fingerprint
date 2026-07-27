@@ -8,12 +8,14 @@ from .compiler import (
     ANALYTICAL_TIERS,
     BENCHMARK_STATUSES,
     PUBLIC_TIERS,
+    IMMUTABLE_PROVENANCE_FIELDS,
     EditorialPresentationError,
     _copy_display_wording,
     approval_subject_for_artifact,
     fallback_display,
     publication_gates_pass,
     mapping_set_digest,
+    limitations_digest,
     reviewed_wording_digest,
     semantic_tier_for_artifact,
     source_constraint_boundaries,
@@ -137,6 +139,21 @@ def validate_public_issue_presentation(
         provenance=artifact["provenance"],
     )
     provenance = artifact["provenance"]
+    expected_provenance_fields = {
+        *IMMUTABLE_PROVENANCE_FIELDS,
+        "compiled_ir_sha256",
+        "reviewed_wording_sha256",
+        "mapping_set_sha256",
+        "evidence_provenance_sha256",
+        "presentation_content_sha256",
+        "limitations_sha256",
+        "approval_subject_sha256",
+        "compiler_receipt",
+    }
+    if set(provenance) != expected_provenance_fields:
+        raise EditorialPresentationError(
+            "provenance must contain exactly the permitted immutable and computed fields"
+        )
     if provenance["reviewed_wording_sha256"] != reviewed_wording_digest(
         artifact["editorial_wording"]
     ):
@@ -149,12 +166,17 @@ def validate_public_issue_presentation(
     for field in (
         "evidence_provenance_sha256",
         "presentation_content_sha256",
+        "limitations_sha256",
         "approval_subject_sha256",
     ):
         if provenance[field] != expected_subject[field]:
             raise EditorialPresentationError(
                 f"{field.replace('_', ' ')} mismatch"
             )
+    if provenance["limitations_sha256"] != limitations_digest(
+        provenance["review_limitations"]
+    ):
+        raise EditorialPresentationError("limitations digest mismatch")
     if provenance["compiler_receipt"] != expected_subject:
         raise EditorialPresentationError(
             "compiler receipt identity or digest mismatch"

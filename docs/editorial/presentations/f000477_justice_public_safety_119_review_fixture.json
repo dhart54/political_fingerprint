@@ -233,36 +233,36 @@
       "docs/semantic_ir/accepted/acceptance_receipt.json",
       "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
     ],
-    "action_source_requirements": {
-      "house:119:1:32": {
-        "vote_source_refs": ["clerk_roll_032"],
-        "action_meaning_source_refs": ["congress_hamdt5"]
+    "review_limitations": [
+      {
+        "limitation_id": "bounded-reviewed-sample",
+        "text": "Seven substantive actions across five independent episodes are a bounded 119th-Congress sample, not the complete Justice record."
       },
-      "house:119:1:33": {
-        "vote_source_refs": ["clerk_roll_033"],
-        "action_meaning_source_refs": ["congress_hr27"]
+      {
+        "limitation_id": "mixed-fentanyl-trajectory",
+        "text": "The three related fentanyl actions form one mixed episode and do not establish a change in position, motive, or philosophy."
       },
-      "house:119:1:130": {
-        "vote_source_refs": ["clerk_roll_130"],
-        "action_meaning_source_refs": ["congress_hr2255_text"]
+      {
+        "limitation_id": "fentanyl-package-content",
+        "text": "The later fentanyl framework combined permanent scheduling and enforcement consequences with research provisions."
       },
-      "house:119:1:131": {
-        "vote_source_refs": ["clerk_roll_131"],
-        "action_meaning_source_refs": ["congress_hr2240", "hrpt_119_079"]
+      {
+        "limitation_id": "retired-firearm-scope",
+        "text": "The retired-firearm action does not establish a general position on police tools or police equipment."
       },
-      "house:119:1:166": {
-        "vote_source_refs": ["clerk_roll_166"],
-        "action_meaning_source_refs": ["congress_s331", "public_law_119_26", "cbo_s331"]
+      {
+        "limitation_id": "dc-pursuit-exceptions",
+        "text": "The D.C. pursuit proposal included risk, futility, and alternative-apprehension exceptions."
       },
-      "house:119:1:275": {
-        "vote_source_refs": ["clerk_roll_275"],
-        "action_meaning_source_refs": ["congress_hr5143", "rules_print_119_11"]
+      {
+        "limitation_id": "dc-repeal-exceptions",
+        "text": "The D.C. reform-repeal substitute retained the neck-restraint and vehicular-pursuit subtitles."
       },
-      "house:119:1:299": {
-        "vote_source_refs": ["clerk_roll_299"],
-        "action_meaning_source_refs": ["congress_hr5107", "hrpt_119_317"]
+      {
+        "limitation_id": "one-sided-hr2240-arguments",
+        "text": "The reviewed H.R. 2240 official argument evidence was one-sided; no opposing argument was synthesized."
       }
-    }
+    ]
   },
   "controls": {
     "semantic": {

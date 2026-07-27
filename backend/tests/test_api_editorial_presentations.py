@@ -11,7 +11,7 @@ from fastapi.testclient import TestClient
 from app.editorial_presentations.compiler import (
     approval_subject_for_artifact,
     artifact_digest,
-    compile_public_issue_presentation,
+    compile_public_issue_presentation as _compile_public_issue_presentation,
 )
 from app.editorial_presentations.selector import select_public_presentations
 from app.editorial_artifacts.repository import EditorialArtifactRepository
@@ -21,6 +21,7 @@ from backend.tests.test_editorial_public_presentation import (
     _approved_receipt,
     _compiled,
     _input_for,
+    _trusted_contract,
 )
 
 
@@ -31,6 +32,14 @@ FIXTURE = (
     "f000477_justice_public_safety_119_review_fixture.json"
 )
 CASES = ROOT / "docs/semantic_ir/accepted/development_cases.json"
+
+
+def compile_public_issue_presentation(compiled: dict, authoring: dict) -> dict:
+    return _compile_public_issue_presentation(
+        compiled,
+        authoring,
+        trusted_action_source_contract=_trusted_contract(compiled, authoring),
+    )
 
 
 def _approved_artifact() -> dict:
@@ -110,6 +119,21 @@ def test_approved_artifact_is_visible_for_119_and_bounded_under_all() -> None:
     assert recent_justice["tier"] == "reviewed_conclusion"
     assert recent_justice["reviewed_scope"] == "119"
     assert "119th-Congress" in full_justice["scope_boundary"]
+
+
+def test_embedded_provenance_receipt_injection_cannot_authorize_copy() -> None:
+    artifact = _approved_artifact()
+    artifact["provenance"]["review_receipt"] = _approved_receipt(artifact)
+    assert _justice([_row(artifact)])["tier"] == "receipts_only"
+
+
+def test_limitation_digest_substitution_fails_selection() -> None:
+    artifact = _approved_artifact()
+    row = _row(artifact)
+    row["publication_metadata_jsonb"]["approval_receipt"][
+        "limitations_sha256"
+    ] = "0" * 64
+    assert _justice([row])["tier"] == "receipts_only"
 
 
 def test_approved_artifact_is_not_visible_for_118() -> None:

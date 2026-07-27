@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 from pathlib import Path
 
@@ -12,8 +13,10 @@ from app.editorial_presentations.compiler import (
     artifact_bytes,
     artifact_digest,
     build_approval_subject,
-    compile_public_issue_presentation,
+    compile_public_issue_presentation as _compile_public_issue_presentation,
     detached_receipt_matches,
+    limitations_digest,
+    validate_trusted_action_source_contract,
 )
 from app.editorial_presentations.validation import (
     validate_public_issue_presentation,
@@ -34,6 +37,70 @@ FOUSHEE_RECEIPT_TEMPLATE = (
     / "docs/editorial/presentations/"
     "f000477_justice_public_safety_119_approval_receipt_template.json"
 )
+FOUSHEE_ACTION_SOURCE_CONTRACT = (
+    ROOT
+    / "docs/editorial/action_source_contracts/"
+    "foushee_justice_public_safety_119_v1.json"
+)
+
+
+def _trusted_contract(compiled: dict, authoring: dict) -> dict:
+    if authoring["provenance"]["semantic_source_case_id"] == (
+        "semir-dev-05-justice-mechanism-divide"
+    ):
+        return json.loads(
+            FOUSHEE_ACTION_SOURCE_CONTRACT.read_text(encoding="utf-8")
+        )
+    member = compiled["members"][0]
+    proposition_ids = {
+        *member["composition"]["conclusion_plan"]["primary_proposition_ids"],
+        *member["composition"]["conclusion_plan"]["limiting_proposition_ids"],
+    }
+    actions = sorted({
+        action_id
+        for proposition in member["proposition_graph"]["propositions"]
+        if proposition["proposition_id"] in proposition_ids
+        for action_id in proposition["evidence_action_ids"]
+    })
+    return {
+        "schema_version": "editorial_action_source_contract_v1",
+        "contract_id": "synthetic_test_action_source_contract_v1",
+        "source_manifest": {"path": "synthetic", "sha256": "0" * 64},
+        "claim_source_map": {"path": "synthetic", "sha256": "1" * 64},
+        "source_authorities": {
+            "test-vote-source": "house_clerk_roll_call",
+            "test-meaning-source": "official_measure_text",
+        },
+        "actions": {
+            action_id: {
+                "vote_source_refs": ["test-vote-source"],
+                "action_meaning_source_refs": ["test-meaning-source"],
+                "required_action_meaning_source_types": [
+                    "official_measure_text"
+                ],
+            }
+            for action_id in actions
+        },
+    }
+
+
+def compile_public_issue_presentation(
+    compiled: dict,
+    authoring: dict,
+) -> dict:
+    return _compile_public_issue_presentation(
+        compiled,
+        authoring,
+        trusted_action_source_contract=_trusted_contract(compiled, authoring),
+    )
+
+
+def _approval_subject(compiled: dict, authoring: dict) -> dict:
+    return build_approval_subject(
+        compiled,
+        authoring,
+        trusted_action_source_contract=_trusted_contract(compiled, authoring),
+    )
 
 
 def _cases() -> dict[str, dict]:
@@ -66,23 +133,24 @@ def _approved_receipt(artifact: dict) -> dict:
     subject = approval_subject_for_artifact(artifact)
     return {
         "schema_version": "editorial_public_issue_approval_receipt_v1",
-        "receipt_id": "test-only-authorized-receipt",
+        "receipt_id": "approval-receipt:test-authorized-001",
         "status": "approved",
         "binding": subject,
         "approved_statement_ids": subject["statement_ids"],
         "approved_mapping_ids": subject["mapping_ids"],
         "reviewer": {
-            "reviewer_id": "test-reviewer",
-            "authority": "test-authorized-editorial-reviewer",
+            "reviewer_id": "reviewer:test-editorial-001",
+            "authority": "editorial_publication_review_authority_v1",
         },
         "decision_timestamp": "2026-07-26T20:00:00Z",
         "limitations_acknowledged": [
             {
-                "limitation_id": "test-limitation",
-                "text": "Test-only reviewed limitation.",
+                **item,
                 "acknowledged": True,
             }
+            for item in artifact["provenance"]["review_limitations"]
         ],
+        "limitations_sha256": subject["limitations_sha256"],
         "decisions": {
             "editorial_wording": "approved",
             "gold_benchmark_promotion": "approved",
@@ -368,13 +436,12 @@ def _input_for(compiled: dict, *, approved: bool = True) -> dict:
             "source_refs": ["test-vote-source", "test-meaning-source"],
             "claim_refs": ["test-claim"],
             "receipt_refs": ["test-receipt"],
-            "action_source_requirements": {
-                action_id: {
-                    "vote_source_refs": ["test-vote-source"],
-                    "action_meaning_source_refs": ["test-meaning-source"],
+            "review_limitations": [
+                {
+                    "limitation_id": "synthetic-bounded-sample",
+                    "text": "Synthetic test evidence remains bounded.",
                 }
-                for action_id in all_actions
-            },
+            ],
         },
         "controls": {},
     }
@@ -395,6 +462,7 @@ def test_accepted_justice_mechanism_divide_presentation() -> None:
     pipeline_result = replay_accepted_reference(
         case,
         public_presentation_authoring=authoring,
+        trusted_action_source_contract=_trusted_contract(compiled, authoring),
     )
     artifact = pipeline_result.public_presentation_artifact
     assert pipeline_result.compiled_ir == compiled
@@ -646,7 +714,7 @@ def test_every_real_mapping_has_vote_and_action_meaning_sources() -> None:
     compiled = _compiled("semir-dev-05-justice-mechanism-divide")
     authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
     artifact = compile_public_issue_presentation(compiled, authoring)
-    requirements = artifact["provenance"]["action_source_requirements"]
+    requirements = _trusted_contract(compiled, authoring)["actions"]
     for record in _all_mapped_text(artifact["editorial_wording"]):
         mapping_sources = set(record["mapping"]["source_refs"])
         for action_id in record["mapping"]["action_ids"]:
@@ -674,11 +742,11 @@ def test_missing_action_meaning_provenance_fails_validation() -> None:
 def test_wording_mapping_and_controls_have_expected_digest_boundaries() -> None:
     compiled = _compiled("semir-dev-05-justice-mechanism-divide")
     authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
-    baseline = build_approval_subject(compiled, authoring)
+    baseline = _approval_subject(compiled, authoring)
 
     changed_wording = copy.deepcopy(authoring)
     changed_wording["editorial_wording"]["conclusion"]["body"]["text"] += " "
-    wording_subject = build_approval_subject(compiled, changed_wording)
+    wording_subject = _approval_subject(compiled, changed_wording)
     assert wording_subject["reviewed_wording_sha256"] != baseline[
         "reviewed_wording_sha256"
     ]
@@ -687,13 +755,10 @@ def test_wording_mapping_and_controls_have_expected_digest_boundaries() -> None:
     ]
 
     changed_mapping = copy.deepcopy(authoring)
-    changed_mapping["provenance"]["source_refs"].append(
-        "record_s331_debate"
-    )
     changed_mapping["editorial_wording"]["policy_trajectories"][0][
         "body"
-    ]["mapping"]["source_refs"].append("record_s331_debate")
-    mapping_subject = build_approval_subject(compiled, changed_mapping)
+    ]["mapping"]["source_refs"].reverse()
+    mapping_subject = _approval_subject(compiled, changed_mapping)
     assert mapping_subject["mapping_set_sha256"] != baseline[
         "mapping_set_sha256"
     ]
@@ -704,7 +769,7 @@ def test_wording_mapping_and_controls_have_expected_digest_boundaries() -> None:
     changed_controls = copy.deepcopy(authoring)
     changed_controls["controls"]["publication"]["active"] = True
     changed_controls["controls"]["production"]["eligible"] = True
-    assert build_approval_subject(compiled, changed_controls) == baseline
+    assert _approval_subject(compiled, changed_controls) == baseline
 
 
 def test_detached_receipt_has_no_digest_cycle() -> None:
@@ -721,3 +786,174 @@ def test_detached_receipt_has_no_digest_cycle() -> None:
     )
     assert approval_subject_for_artifact(artifact) == subject_before
     assert artifact_digest(artifact) == digest_before
+
+
+def test_trusted_action_source_contract_matches_governed_evidence() -> None:
+    contract = json.loads(
+        FOUSHEE_ACTION_SOURCE_CONTRACT.read_text(encoding="utf-8")
+    )
+    first_digest = validate_trusted_action_source_contract(contract)
+    assert first_digest == validate_trusted_action_source_contract(
+        json.loads(json.dumps(contract, sort_keys=True))
+    )
+    for key in ("source_manifest", "claim_source_map"):
+        reference = contract[key]
+        content = (ROOT / reference["path"]).read_bytes()
+        assert hashlib.sha256(content).hexdigest() == reference["sha256"]
+    manifest = json.loads(
+        (ROOT / contract["source_manifest"]["path"]).read_text(encoding="utf-8")
+    )
+    source_types = {
+        item["source_id"]: item["source_type"]
+        for item in manifest["sources"]
+    }
+    claim_map = json.loads(
+        (ROOT / contract["claim_source_map"]["path"]).read_text(encoding="utf-8")
+    )
+    claims = {item["roll"]: set(item["source_ids"]) for item in claim_map["claims"]}
+    for action_id, requirement in contract["actions"].items():
+        roll = int(action_id.rsplit(":", 1)[1])
+        required_sources = {
+            *requirement["vote_source_refs"],
+            *requirement["action_meaning_source_refs"],
+        }
+        assert required_sources <= claims[roll]
+        assert {
+            source_types[source]
+            for source in requirement["action_meaning_source_refs"]
+        } >= set(requirement["required_action_meaning_source_types"])
+
+
+def test_independent_contract_rejects_consistent_hr27_for_hr2255_attack() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    authoring["provenance"]["source_refs"].remove("congress_hr2255_text")
+    for record in _all_mapped_text(authoring["editorial_wording"]):
+        sources = record["mapping"]["source_refs"]
+        if "congress_hr2255_text" in sources:
+            sources.remove("congress_hr2255_text")
+            if "congress_hr27" not in sources:
+                sources.append("congress_hr27")
+    with pytest.raises(
+        EditorialPresentationError,
+        match=(
+            "direct vote or action-meaning provenance|"
+            "not authorized for its exact actions"
+        ),
+    ):
+        compile_public_issue_presentation(compiled, authoring)
+
+
+@pytest.mark.parametrize(
+    "replacement",
+    ["congress_hamdt5", "clerk_roll_130", "unknown_official_source"],
+)
+def test_exact_action_contract_rejects_wrong_vote_only_or_unknown_source(
+    replacement: str,
+) -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    for record in _all_mapped_text(authoring["editorial_wording"]):
+        if "congress_hr2255_text" in record["mapping"]["source_refs"]:
+            record["mapping"]["source_refs"].remove("congress_hr2255_text")
+            if replacement not in record["mapping"]["source_refs"]:
+                record["mapping"]["source_refs"].append(replacement)
+    if replacement == "unknown_official_source":
+        authoring["provenance"]["source_refs"].append(replacement)
+    with pytest.raises(
+        EditorialPresentationError,
+        match=(
+            "direct vote or action-meaning provenance|"
+            "not authorized for its exact actions"
+        ),
+    ):
+        compile_public_issue_presentation(compiled, authoring)
+
+
+def test_authoring_cannot_redefine_trusted_action_sources() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    authoring["provenance"]["action_source_requirements"] = {}
+    with pytest.raises(
+        EditorialPresentationError,
+        match="exactly the permitted fields",
+    ):
+        compile_public_issue_presentation(compiled, authoring)
+
+
+@pytest.mark.parametrize(
+    "field",
+    ["review_receipt", "approval_receipt", "reviewer_decisions", "extra"],
+)
+def test_provenance_is_closed_against_receipt_aliases_and_unknown_fields(
+    field: str,
+) -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    artifact = compile_public_issue_presentation(compiled, authoring)
+    artifact["provenance"][field] = {"status": "approved"}
+    with pytest.raises(
+        EditorialPresentationError,
+        match="exactly the permitted",
+    ):
+        validate_public_issue_presentation(artifact)
+
+
+def test_required_provenance_and_detached_receipt_boundaries_fail_closed() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    artifact = compile_public_issue_presentation(compiled, authoring)
+    receipt = _approved_receipt(artifact)
+    assert b"approval-receipt:" not in artifact_bytes(artifact)
+    changed = copy.deepcopy(artifact)
+    changed["provenance"]["receipt_refs"][0] += ".changed"
+    assert approval_subject_for_artifact(changed)["approval_subject_sha256"] != (
+        receipt["binding"]["approval_subject_sha256"]
+    )
+    assert not detached_receipt_matches(
+        receipt,
+        expected_subject=approval_subject_for_artifact(changed),
+    )
+    del changed["provenance"]["semantic_source_case_id"]
+    with pytest.raises(EditorialPresentationError):
+        validate_public_issue_presentation(changed)
+
+
+def test_receipt_requires_exact_canonical_limitations_and_durable_identity() -> None:
+    compiled = _compiled("semir-dev-05-justice-mechanism-divide")
+    authoring = json.loads(FOUSHEE_FIXTURE.read_text(encoding="utf-8"))
+    artifact = compile_public_issue_presentation(compiled, authoring)
+    subject = approval_subject_for_artifact(artifact)
+    receipt = _approved_receipt(artifact)
+    assert len(receipt["limitations_acknowledged"]) == 7
+    assert detached_receipt_matches(receipt, expected_subject=subject)
+    reordered = copy.deepcopy(receipt)
+    reordered["limitations_acknowledged"].reverse()
+    assert detached_receipt_matches(reordered, expected_subject=subject)
+    for mutate in (
+        lambda item: item.__setitem__("receipt_id", "not_supplied"),
+        lambda item: item["limitations_acknowledged"].pop(),
+        lambda item: item["limitations_acknowledged"].append({
+            "limitation_id": "extra",
+            "text": "Extra limitation.",
+            "acknowledged": True,
+        }),
+        lambda item: item["limitations_acknowledged"][0].__setitem__(
+            "text", "Changed text."
+        ),
+        lambda item: item["reviewer"].__setitem__("reviewer_id", "placeholder"),
+        lambda item: item["reviewer"].__setitem__("authority", "unknown"),
+        lambda item: item.__setitem__("decision_timestamp", "not-a-time"),
+    ):
+        candidate = copy.deepcopy(receipt)
+        mutate(candidate)
+        assert not detached_receipt_matches(candidate, expected_subject=subject)
+    missing_timestamp = copy.deepcopy(receipt)
+    del missing_timestamp["decision_timestamp"]
+    assert not detached_receipt_matches(
+        missing_timestamp,
+        expected_subject=subject,
+    )
+    assert limitations_digest(
+        list(reversed(artifact["provenance"]["review_limitations"]))
+    ) == subject["limitations_sha256"]

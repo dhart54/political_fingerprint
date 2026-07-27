@@ -40,6 +40,7 @@ def run_editorial_pipeline(
     *,
     prepare_persistence_proposal: bool = False,
     public_presentation_authoring: dict[str, Any] | None = None,
+    trusted_action_source_contract: dict[str, Any] | None = None,
 ) -> EditorialPipelineResult:
     """Compile input exactly once, validate it, then adapt compiled meaning."""
 
@@ -49,8 +50,20 @@ def run_editorial_pipeline(
     digest_before_adapters = semantic_digest(compiled)
     review = build_review_payload(compiled)
     presentation = build_presentation_payload(compiled)
+    if (
+        public_presentation_authoring is not None
+        and trusted_action_source_contract is None
+    ):
+        raise ValueError(
+            "public presentation authoring requires a separately trusted "
+            "action/source contract"
+        )
     public_presentation = (
-        compile_public_issue_presentation(compiled, public_presentation_authoring)
+        compile_public_issue_presentation(
+            compiled,
+            public_presentation_authoring,
+            trusted_action_source_contract=trusted_action_source_contract,
+        )
         if public_presentation_authoring is not None
         else None
     )
@@ -82,6 +95,7 @@ def replay_accepted_reference(
     *,
     prepare_persistence_proposal: bool = False,
     public_presentation_authoring: dict[str, Any] | None = None,
+    trusted_action_source_contract: dict[str, Any] | None = None,
 ) -> EditorialPipelineResult:
     """Deliberately replay an accepted fixture through the same public path."""
 
@@ -89,4 +103,5 @@ def replay_accepted_reference(
         project_compiler_input(accepted_case),
         prepare_persistence_proposal=prepare_persistence_proposal,
         public_presentation_authoring=public_presentation_authoring,
+        trusted_action_source_contract=trusted_action_source_contract,
     )
