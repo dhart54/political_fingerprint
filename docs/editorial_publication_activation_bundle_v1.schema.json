@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://politicalfingerprint.org/schemas/editorial_publication_activation_bundle_v1.schema.json",
+  "title": "Editorial publication activation bundle V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "bundle_id",
+    "deterministic_batch_key",
+    "source_commit_sha",
+    "target_environment_class",
+    "historical_seed",
+    "activation_target",
+    "artifacts",
+    "relationships",
+    "publication_registry",
+    "expected_counts",
+    "rollback_identity",
+    "public_smoke_contract",
+    "semantic_hashes",
+    "bundle_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "editorial_publication_activation_bundle_v1"
+    },
+    "bundle_id": {
+      "const": "foushee_justice_public_safety_119_publication_activation_v1"
+    },
+    "deterministic_batch_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_commit_sha": {
+      "$ref": "#/$defs/sha40"
+    },
+    "target_environment_class": {
+      "const": "production_postgresql"
+    },
+    "historical_seed": {
+      "type": "object",
+      "required": ["deterministic_batch_key", "manifest_sha256", "expected_counts"]
+    },
+    "activation_target": {
+      "type": "object",
+      "required": [
+        "member_bioguide_id",
+        "issue_id",
+        "congress",
+        "scope",
+        "presentation_natural_key",
+        "presentation_artifact_version",
+        "approval_receipt_id",
+        "approval_subject_sha256",
+        "presentation_content_sha256",
+        "active_artifact_sha256",
+        "inactive_artifact_sha256",
+        "detached_approval_receipt_sha256",
+        "action_source_contract_id",
+        "action_source_contract_sha256",
+        "limitations_sha256"
+      ]
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "$ref": "#/$defs/relationship"
+      }
+    },
+    "publication_registry": {
+      "type": "object",
+      "required": [
+        "member_bioguide_id",
+        "issue_id",
+        "presentation_natural_key",
+        "presentation_artifact_version",
+        "publicly_active",
+        "publication_metadata"
+      ]
+    },
+    "expected_counts": {
+      "type": "object",
+      "required": ["before", "after"],
+      "properties": {
+        "before": {
+          "$ref": "#/$defs/counts"
+        },
+        "after": {
+          "$ref": "#/$defs/counts"
+        }
+      }
+    },
+    "rollback_identity": {
+      "type": "object",
+      "required": [
+        "deterministic_batch_key",
+        "artifact_versions",
+        "relationship_sha256",
+        "registry_primary_key",
+        "approval_receipt_id",
+        "restore_expected_counts",
+        "deletion_order"
+      ]
+    },
+    "public_smoke_contract": {
+      "type": "object",
+      "required": ["before", "after", "approved_counts", "cross_identity"]
+    },
+    "semantic_hashes": {
+      "type": "object",
+      "required": [
+        "artifacts_sha256",
+        "relationships_sha256",
+        "publication_registry_sha256"
+      ]
+    },
+    "bundle_sha256": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "$defs": {
+    "sha40": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["batches", "artifacts", "relationships", "publication_registry"],
+      "properties": {
+        "batches": {"type": "integer", "minimum": 0},
+        "artifacts": {"type": "integer", "minimum": 0},
+        "relationships": {"type": "integer", "minimum": 0},
+        "publication_registry": {"type": "integer", "minimum": 0}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "required": [
+        "artifact_type",
+        "natural_key",
+        "schema_version",
+        "artifact_version",
+        "payload",
+        "content_sha256",
+        "source_manifest_sha256",
+        "source_commit_sha",
+        "member_bioguide_id",
+        "issue_id",
+        "congress",
+        "chamber",
+        "editorial_status",
+        "benchmark_status",
+        "production_eligible",
+        "review_route"
+      ],
+      "properties": {
+        "content_sha256": {"$ref": "#/$defs/sha256"},
+        "source_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "source_commit_sha": {"$ref": "#/$defs/sha40"},
+        "payload": {"type": "object"}
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parent_natural_key",
+        "child_natural_key",
+        "relationship_type",
+        "ordinal",
+        "metadata"
+      ],
+      "properties": {
+        "parent_natural_key": {"type": "string"},
+        "child_natural_key": {"type": "string"},
+        "relationship_type": {
+          "enum": ["has_validation", "uses_source_manifest"]
+        },
+        "ordinal": {"type": "integer", "minimum": 0},
+        "metadata": {"type": "object"}
+      }
+    }
+  }
+}

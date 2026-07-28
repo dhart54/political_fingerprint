@@ -26,11 +26,14 @@ The machine-readable authority is
   Not Voting-only issue areas remain selectable. Expected-but-missing actions
   are not emitted by the current API and are not synthesized in React. The former
   `/golden-render-fixture` route is absent. Presentation tiers and wording are
-  supplied by the backend; React does not infer them. The pending F000477
-  Justice 119th fixture therefore remains `receipts_only`.
+  supplied by the backend; React does not infer them. The human-approved, gold,
+  production-eligible F000477 Justice 119th presentation remains publication
+  inactive and therefore `receipts_only`.
 - The 71 historically staged artifacts remain unpublished; persistence,
   publication, database, deployment, and production state were not changed by
   the cutover.
+- The deterministic Foushee activation bundle is separate from that frozen
+  71-artifact seed and has not been applied.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

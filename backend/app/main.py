@@ -1,4 +1,5 @@
 import os
+import re
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -21,12 +22,22 @@ DEFAULT_CORS_ORIGINS = (
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 )
+COMMIT_SHA_PATTERN = re.compile(r"^[0-9a-f]{40}$")
 
 
 def get_cors_origins() -> list[str]:
     configured = os.getenv("FRONTEND_ORIGINS", "")
     origins = [origin.strip() for origin in configured.split(",") if origin.strip()]
     return list(DEFAULT_CORS_ORIGINS) + origins
+
+
+def get_deployed_commit_sha() -> str:
+    value = (
+        os.getenv("RENDER_GIT_COMMIT")
+        or os.getenv("SOURCE_COMMIT_SHA")
+        or ""
+    ).strip().lower()
+    return value if COMMIT_SHA_PATTERN.fullmatch(value) else "unknown"
 
 
 app = FastAPI(title="Political Fingerprint API")
@@ -55,4 +66,4 @@ app.include_router(internal_record_across_router)
 
 @app.get("/health")
 def health() -> dict[str, str]:
-    return {"status": "ok"}
+    return {"status": "ok", "commit_sha": get_deployed_commit_sha()}
