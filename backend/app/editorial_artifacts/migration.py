@@ -17,11 +17,20 @@ FUNCTIONS = {
     "guard_editorial_artifact_immutability",
     "guard_editorial_publication_activation",
 }
-MIGRATION_SHA256 = hashlib.sha256(MIGRATION.read_bytes()).hexdigest()
+MIGRATION_SHA256 = "b4fffce458ebda4b09ce92cd1998468c4d18bad2450e43e9567776340337a9f7"
 
 
 class MigrationSafetyError(RuntimeError):
     pass
+
+
+def _migration_crlf_sha256(path: Path) -> str:
+    """Reconstruct the reviewed Windows migration bytes on every checkout."""
+
+    with path.open("r", encoding="utf-8", newline=None) as source:
+        normalized_text = source.read()
+    reviewed_bytes = normalized_text.replace("\n", "\r\n").encode("utf-8")
+    return hashlib.sha256(reviewed_bytes).hexdigest()
 
 
 def strip_transaction_wrappers(sql: str) -> str:
@@ -32,7 +41,7 @@ def strip_transaction_wrappers(sql: str) -> str:
 
 
 def validate_migration(expected_sha256: str = MIGRATION_SHA256) -> dict[str, Any]:
-    actual = hashlib.sha256(MIGRATION.read_bytes()).hexdigest()
+    actual = _migration_crlf_sha256(MIGRATION)
     if actual != expected_sha256:
         raise MigrationSafetyError(f"migration SHA-256 mismatch: expected {expected_sha256}, got {actual}")
     sql = MIGRATION.read_text(encoding="utf-8")
