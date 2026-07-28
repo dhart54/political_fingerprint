@@ -16,6 +16,7 @@ from app.editorial_presentations.compiler import (
 from app.editorial_presentations.selector import select_public_presentations
 from app.editorial_artifacts.repository import EditorialArtifactRepository
 from app.main import app
+from app.main import get_deployed_commit_sha
 from app.semantic_ir.pipeline import replay_accepted_reference
 from backend.tests.test_editorial_public_presentation import (
     _approved_receipt,
@@ -32,6 +33,16 @@ FIXTURE = (
     "f000477_justice_public_safety_119_review_fixture.json"
 )
 CASES = ROOT / "docs/semantic_ir/accepted/development_cases.json"
+
+
+def test_health_exposes_validated_deployed_commit(monkeypatch) -> None:
+    commit = "a" * 40
+    monkeypatch.setenv("RENDER_GIT_COMMIT", commit.upper())
+    response = TestClient(app).get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok", "commit_sha": commit}
+    monkeypatch.setenv("RENDER_GIT_COMMIT", "untrusted")
+    assert get_deployed_commit_sha() == "unknown"
 
 
 def compile_public_issue_presentation(compiled: dict, authoring: dict) -> dict:

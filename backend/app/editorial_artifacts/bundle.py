@@ -11,6 +11,14 @@ ROOT = Path(__file__).resolve().parents[3]
 STARTING_COMMIT = "88d6f3446f54b07735e084cbc958c1614b190fab"
 BATCH_KEY = "editorial-artifact-persistence-v1-88d6f344"
 SCHEMA_VERSION = "editorial_artifact_bundle_v1"
+FROZEN_MANIFEST = (
+    ROOT / "docs/editorial/editorial_artifact_persistence_v1/seed_manifest.json"
+)
+FROZEN_INPUT_CONTRACT = (
+    ROOT
+    / "docs/editorial/editorial_artifact_persistence_v1/"
+    "frozen_input_contract.json"
+)
 ARTIFACT_TYPES = (
     "shared_action_dossier",
     "source_manifest",
@@ -103,7 +111,7 @@ def _artifact(
     return item
 
 
-def build_seed_bundle() -> dict[str, Any]:
+def build_seed_bundle_from_current_inputs() -> dict[str, Any]:
     economy_packet = _load(ECONOMY / "review_packet.json")
     economy_episodes = _load(ECONOMY / "policy_episode_map.json")
     justice_packet = _load(JUSTICE / "review_packet.json")
@@ -397,6 +405,60 @@ def build_seed_bundle() -> dict[str, Any]:
     body["manifest_sha256"] = semantic_hash(body)
     validate_bundle(body)
     return body
+
+
+def build_seed_bundle() -> dict[str, Any]:
+    """Load and validate the immutable historical V1 persistence snapshot.
+
+    V1 was produced from the repository at ``STARTING_COMMIT``. Later editorial
+    source corrections must not silently regenerate or rewrite those 71 stored
+    artifacts. The separate frozen-input contract pins the original manifest
+    bytes and the exact source-file identities recorded by that snapshot.
+    """
+
+    contract = _load(FROZEN_INPUT_CONTRACT)
+    bundle = _load(FROZEN_MANIFEST)
+    if contract.get("schema_version") != "editorial_artifact_frozen_input_v1":
+        raise ValueError("unsupported historical seed frozen-input contract")
+    if contract.get("contract_id") != BATCH_KEY:
+        raise ValueError("historical seed frozen-input contract ID mismatch")
+    if contract.get("source_commit_sha") != STARTING_COMMIT:
+        raise ValueError("historical seed source commit mismatch")
+    if contract.get("seed_manifest_path") != FROZEN_MANIFEST.relative_to(
+        ROOT
+    ).as_posix():
+        raise ValueError("historical seed manifest path mismatch")
+    if hashlib.sha256(FROZEN_MANIFEST.read_bytes()).hexdigest() != contract.get(
+        "seed_manifest_file_sha256"
+    ):
+        raise ValueError("historical seed manifest file digest mismatch")
+    if bundle.get("manifest_sha256") != contract.get(
+        "seed_manifest_semantic_sha256"
+    ):
+        raise ValueError("historical seed semantic digest mismatch")
+    source_artifacts = {
+        item["natural_key"]: item
+        for item in bundle["artifacts"]
+        if item["artifact_type"] == "source_manifest"
+    }
+    expected_sources = {
+        item["natural_key"]: item for item in contract["source_manifests"]
+    }
+    if set(source_artifacts) != set(expected_sources):
+        raise ValueError("historical seed source-manifest identity mismatch")
+    for natural_key, expected in expected_sources.items():
+        artifact = source_artifacts[natural_key]
+        if (
+            artifact["content_sha256"] != expected["content_sha256"]
+            or artifact["source_manifest_sha256"]
+            != expected["source_manifest_sha256"]
+            or artifact["payload"]["source_files"] != expected["source_files"]
+        ):
+            raise ValueError(
+                f"historical seed frozen source mismatch: {natural_key}"
+            )
+    validate_bundle(bundle)
+    return bundle
 
 
 def validate_bundle(bundle: dict[str, Any]) -> None:

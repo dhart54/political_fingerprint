@@ -1,0 +1,1403 @@
+{
+  "schema_version": "editorial_publication_activation_bundle_v1",
+  "bundle_id": "foushee_justice_public_safety_119_publication_activation_v1",
+  "deterministic_batch_key": "foushee-justice-public-safety-119-publication-activation-v1-bae70a36",
+  "source_commit_sha": "bae70a3623b66a68cda40ac537dc4a1740e87f92",
+  "target_environment_class": "production_postgresql",
+  "historical_seed": {
+    "deterministic_batch_key": "editorial-artifact-persistence-v1-88d6f344",
+    "manifest_sha256": "f8c4c24f00f3835b4c1a82e415ae7f2fde77002529b3cc3a23d0785c15efd726",
+    "expected_counts": {
+      "batches": 1,
+      "artifacts": 71,
+      "relationships": 95,
+      "publication_registry": 0
+    }
+  },
+  "activation_target": {
+    "member_bioguide_id": "F000477",
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "congress": 119,
+    "scope": "119",
+    "presentation_natural_key": "f000477:justice_public_safety:119:v1",
+    "presentation_artifact_version": 1,
+    "approval_receipt_id": "approval-receipt:f000477-justice-public-safety-119-v1-20260727-dhart54",
+    "approval_subject_sha256": "67e67001ca678e70debba52e9049632f90d99da4d6f1dcaea60da40beaa87874",
+    "presentation_content_sha256": "5813d5e556542d0ef2234dc05b1e1e24d5811d8c0e22af7775cd1e9b82aa55ca",
+    "active_artifact_sha256": "fd7a8b5e440654147bbb6b738be3bb683034f07b0c9cc4e26eba9cce84e07e59",
+    "inactive_artifact_sha256": "b05e4a9e5212bac50c9c2cbeb0afd4cd5a07818b022c977c2f10252d01d3f2c4",
+    "detached_approval_receipt_sha256": "b816b926c115df63260eeb2d5c08d1b88cf28e6e1de3ddbb2d7ebae6e9e93f12",
+    "action_source_contract_id": "foushee_justice_public_safety_119_v1",
+    "action_source_contract_sha256": "0ee8575db526d4b021d7b26d2befbe9c22eb7af9473c12ac2ecec616f3ae9386",
+    "limitations_sha256": "822098797ffce236c0018576b02969e15a6495c82ca577c5c74e69f5dd2a58df"
+  },
+  "artifacts": [
+    {
+      "artifact_type": "issue_public_presentation",
+      "natural_key": "f000477:justice_public_safety:119:v1",
+      "schema_version": "editorial_public_issue_presentation_v1",
+      "artifact_version": 1,
+      "payload": {
+        "schema_version": "editorial_public_issue_presentation_v1",
+        "artifact_identity": {
+          "artifact_id": "f000477:justice_public_safety:119:v1",
+          "artifact_version": 1,
+          "member_id": "F000477",
+          "issue_id": "JUSTICE_PUBLIC_SAFETY",
+          "congress": 119,
+          "scope": "119",
+          "source_case_id": "semir-dev-05-justice-mechanism-divide"
+        },
+        "compiled_semantic_meaning": {
+          "primary_proposition_ids": [
+            "prop:c428677c0dbee5e0",
+            "prop:abbe87a63baefb7d",
+            "prop:af269162633f4c5c"
+          ],
+          "limiting_proposition_ids": [
+            "prop:bc08a2271517ebb7"
+          ],
+          "propositions": [
+            {
+              "proposition_id": "prop:c428677c0dbee5e0",
+              "semantic_role": "behavioral",
+              "proposition_type": "repeated_pattern",
+              "direction": "support",
+              "evidence_action_ids": [
+                "house:119:1:131",
+                "house:119:1:166",
+                "house:119:1:32"
+              ],
+              "evidence_episode_ids": [
+                "halt-fentanyl-legislative-path",
+                "officer-safety-data-reporting"
+              ],
+              "mechanism_or_trait_refs": [
+                "implementation_safeguards_research_reporting"
+              ],
+              "presentation_target": "repeated_patterns",
+              "conclusion_relevance": "primary",
+              "relationships": {
+                "supported_by": [],
+                "limited_by": []
+              }
+            },
+            {
+              "proposition_id": "prop:abbe87a63baefb7d",
+              "semantic_role": "behavioral",
+              "proposition_type": "repeated_pattern",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:130",
+                "house:119:1:275",
+                "house:119:1:299"
+              ],
+              "evidence_episode_ids": [
+                "dc-police-pursuit-rules",
+                "dc-policing-reform-repeal",
+                "retired-service-weapon-purchases"
+              ],
+              "mechanism_or_trait_refs": [
+                "police_tools_authority_or_rule_rollbacks"
+              ],
+              "presentation_target": "repeated_patterns",
+              "conclusion_relevance": "primary",
+              "relationships": {
+                "supported_by": [],
+                "limited_by": []
+              }
+            },
+            {
+              "proposition_id": "prop:af269162633f4c5c",
+              "semantic_role": "synthesis",
+              "proposition_type": "mechanism_divide",
+              "direction": "mixed",
+              "evidence_action_ids": [
+                "house:119:1:130",
+                "house:119:1:131",
+                "house:119:1:275",
+                "house:119:1:299",
+                "house:119:1:32"
+              ],
+              "evidence_episode_ids": [
+                "dc-police-pursuit-rules",
+                "dc-policing-reform-repeal",
+                "halt-fentanyl-legislative-path",
+                "officer-safety-data-reporting",
+                "retired-service-weapon-purchases"
+              ],
+              "mechanism_or_trait_refs": [
+                "implementation_safeguards_research_reporting",
+                "police_tools_authority_or_rule_rollbacks"
+              ],
+              "presentation_target": "conclusion_only",
+              "conclusion_relevance": "primary",
+              "relationships": {
+                "supported_by": [
+                  "prop:c428677c0dbee5e0",
+                  "prop:abbe87a63baefb7d"
+                ],
+                "limited_by": [
+                  "prop:bc08a2271517ebb7"
+                ]
+              }
+            },
+            {
+              "proposition_id": "prop:bc08a2271517ebb7",
+              "semantic_role": "behavioral",
+              "proposition_type": "trajectory",
+              "direction": "mixed",
+              "evidence_action_ids": [
+                "house:119:1:166",
+                "house:119:1:32",
+                "house:119:1:33"
+              ],
+              "evidence_episode_ids": [
+                "halt-fentanyl-legislative-path"
+              ],
+              "mechanism_or_trait_refs": [
+                "implementation_safeguards_research_reporting"
+              ],
+              "presentation_target": "policy_trajectories",
+              "conclusion_relevance": "limiting",
+              "relationships": {
+                "supported_by": [],
+                "limited_by": []
+              }
+            }
+          ],
+          "source_render_constraints": [],
+          "coverage_boundaries": [],
+          "presentation_boundaries": [
+            {
+              "boundary_id": "boundary:coverage:f000477:justice_public_safety:119",
+              "boundary_type": "reviewed_evidence_coverage",
+              "presentation_target": "coverage_note",
+              "action_ids": [
+                "house:119:1:130",
+                "house:119:1:131",
+                "house:119:1:166",
+                "house:119:1:275",
+                "house:119:1:299",
+                "house:119:1:32",
+                "house:119:1:33"
+              ],
+              "episode_ids": [
+                "dc-police-pursuit-rules",
+                "dc-policing-reform-repeal",
+                "halt-fentanyl-legislative-path",
+                "officer-safety-data-reporting",
+                "retired-service-weapon-purchases"
+              ]
+            },
+            {
+              "boundary_id": "boundary:scope:f000477:justice_public_safety:119",
+              "boundary_type": "reviewed_congress_scope",
+              "presentation_target": "scope_note",
+              "action_ids": [
+                "house:119:1:130",
+                "house:119:1:131",
+                "house:119:1:166",
+                "house:119:1:275",
+                "house:119:1:299",
+                "house:119:1:32",
+                "house:119:1:33"
+              ],
+              "episode_ids": [
+                "dc-police-pursuit-rules",
+                "dc-policing-reform-repeal",
+                "halt-fentanyl-legislative-path",
+                "officer-safety-data-reporting",
+                "retired-service-weapon-purchases"
+              ]
+            }
+          ],
+          "review_route": "human_exception_required"
+        },
+        "editorial_wording": {
+          "status": "candidate_human_approval_pending",
+          "tier_display": {
+            "reviewed_conclusion": {
+              "badge": "Reviewed conclusion",
+              "teaser": {
+                "statement_id": "statement:teaser:mechanism-divide",
+                "text": "The reviewed 119th-Congress sample shows support for reporting and for evidence, research, or implementation conditions in two independent episodes, alongside opposition to three specific proposals concerning retired-service firearm access, broader D.C. police pursuit authority, or repeal of most reviewed D.C. policing restrictions.",
+                "mapping": {
+                  "mapping_id": "mapping:teaser:mechanism-divide",
+                  "proposition_ids": [
+                    "prop:af269162633f4c5c"
+                  ],
+                  "boundary_ids": [],
+                  "presentation_target": "conclusion_only",
+                  "action_ids": [
+                    "house:119:1:130",
+                    "house:119:1:131",
+                    "house:119:1:275",
+                    "house:119:1:299",
+                    "house:119:1:32"
+                  ],
+                  "episode_ids": [
+                    "dc-police-pursuit-rules",
+                    "dc-policing-reform-repeal",
+                    "halt-fentanyl-legislative-path",
+                    "officer-safety-data-reporting",
+                    "retired-service-weapon-purchases"
+                  ],
+                  "source_refs": [
+                    "clerk_roll_032",
+                    "clerk_roll_130",
+                    "clerk_roll_131",
+                    "clerk_roll_275",
+                    "clerk_roll_299",
+                    "congress_hamdt5",
+                    "congress_hr2255_text",
+                    "congress_hr2240",
+                    "hrpt_119_079",
+                    "congress_hr5143",
+                    "rules_print_119_11",
+                    "congress_hr5107",
+                    "hrpt_119_317"
+                  ],
+                  "receipt_refs": [
+                    "docs/semantic_ir/accepted/acceptance_receipt.json",
+                    "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+                  ]
+                }
+              }
+            }
+          },
+          "coverage_text": {
+            "statement_id": "statement:coverage:reviewed-actions",
+            "text": "This conclusion covers 7 reviewed substantive actions across 5 independent policy episodes in the 119th Congress.",
+            "mapping": {
+              "mapping_id": "mapping:coverage:reviewed-actions",
+              "proposition_ids": [],
+              "boundary_ids": [
+                "boundary:coverage:f000477:justice_public_safety:119"
+              ],
+              "presentation_target": "coverage_note",
+              "action_ids": [
+                "house:119:1:130",
+                "house:119:1:131",
+                "house:119:1:166",
+                "house:119:1:275",
+                "house:119:1:299",
+                "house:119:1:32",
+                "house:119:1:33"
+              ],
+              "episode_ids": [
+                "dc-police-pursuit-rules",
+                "dc-policing-reform-repeal",
+                "halt-fentanyl-legislative-path",
+                "officer-safety-data-reporting",
+                "retired-service-weapon-purchases"
+              ],
+              "source_refs": [
+                "clerk_roll_032",
+                "clerk_roll_033",
+                "clerk_roll_130",
+                "clerk_roll_131",
+                "clerk_roll_166",
+                "clerk_roll_275",
+                "clerk_roll_299",
+                "congress_hamdt5",
+                "congress_hr27",
+                "congress_hr2255_text",
+                "congress_hr2240",
+                "hrpt_119_079",
+                "congress_s331",
+                "public_law_119_26",
+                "cbo_s331",
+                "congress_hr5143",
+                "rules_print_119_11",
+                "congress_hr5107",
+                "hrpt_119_317"
+              ],
+              "receipt_refs": [
+                "docs/semantic_ir/accepted/acceptance_receipt.json",
+                "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+              ]
+            }
+          },
+          "scope_boundary": {
+            "statement_id": "statement:scope:reviewed-119",
+            "text": "This conclusion remains bounded to the reviewed 119th-Congress sample.",
+            "mapping": {
+              "mapping_id": "mapping:scope:reviewed-119",
+              "proposition_ids": [],
+              "boundary_ids": [
+                "boundary:scope:f000477:justice_public_safety:119"
+              ],
+              "presentation_target": "scope_note",
+              "action_ids": [
+                "house:119:1:130",
+                "house:119:1:131",
+                "house:119:1:166",
+                "house:119:1:275",
+                "house:119:1:299",
+                "house:119:1:32",
+                "house:119:1:33"
+              ],
+              "episode_ids": [
+                "dc-police-pursuit-rules",
+                "dc-policing-reform-repeal",
+                "halt-fentanyl-legislative-path",
+                "officer-safety-data-reporting",
+                "retired-service-weapon-purchases"
+              ],
+              "source_refs": [
+                "clerk_roll_032",
+                "clerk_roll_033",
+                "clerk_roll_130",
+                "clerk_roll_131",
+                "clerk_roll_166",
+                "clerk_roll_275",
+                "clerk_roll_299",
+                "congress_hamdt5",
+                "congress_hr27",
+                "congress_hr2255_text",
+                "congress_hr2240",
+                "hrpt_119_079",
+                "congress_s331",
+                "public_law_119_26",
+                "cbo_s331",
+                "congress_hr5143",
+                "rules_print_119_11",
+                "congress_hr5107",
+                "hrpt_119_317"
+              ],
+              "receipt_refs": [
+                "docs/semantic_ir/accepted/acceptance_receipt.json",
+                "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+              ]
+            }
+          },
+          "conclusion": {
+            "headline": {
+              "statement_id": "statement:conclusion:headline",
+              "text": "A divide by policy mechanism in the reviewed sample",
+              "mapping": {
+                "mapping_id": "mapping:conclusion:headline",
+                "proposition_ids": [
+                  "prop:af269162633f4c5c"
+                ],
+                "boundary_ids": [],
+                "presentation_target": "conclusion_only",
+                "action_ids": [
+                  "house:119:1:130",
+                  "house:119:1:131",
+                  "house:119:1:275",
+                  "house:119:1:299",
+                  "house:119:1:32"
+                ],
+                "episode_ids": [
+                  "dc-police-pursuit-rules",
+                  "dc-policing-reform-repeal",
+                  "halt-fentanyl-legislative-path",
+                  "officer-safety-data-reporting",
+                  "retired-service-weapon-purchases"
+                ],
+                "source_refs": [
+                  "clerk_roll_032",
+                  "clerk_roll_130",
+                  "clerk_roll_131",
+                  "clerk_roll_275",
+                  "clerk_roll_299",
+                  "congress_hamdt5",
+                  "congress_hr2255_text",
+                  "congress_hr2240",
+                  "hrpt_119_079",
+                  "congress_hr5143",
+                  "rules_print_119_11",
+                  "congress_hr5107",
+                  "hrpt_119_317"
+                ],
+                "receipt_refs": [
+                  "docs/semantic_ir/accepted/acceptance_receipt.json",
+                  "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+                ]
+              }
+            },
+            "body": {
+              "statement_id": "statement:conclusion:body",
+              "text": "In this reviewed 119th-Congress sample, Foushee supported reporting and evidence, research, or implementation conditions in two independent episodes, while opposing three specific proposals concerning retired-service firearm access, broader D.C. police pursuit authority, and repeal of most reviewed D.C. policing restrictions.",
+              "mapping": {
+                "mapping_id": "mapping:conclusion:body",
+                "proposition_ids": [
+                  "prop:af269162633f4c5c"
+                ],
+                "boundary_ids": [],
+                "presentation_target": "conclusion_only",
+                "action_ids": [
+                  "house:119:1:130",
+                  "house:119:1:131",
+                  "house:119:1:275",
+                  "house:119:1:299",
+                  "house:119:1:32"
+                ],
+                "episode_ids": [
+                  "dc-police-pursuit-rules",
+                  "dc-policing-reform-repeal",
+                  "halt-fentanyl-legislative-path",
+                  "officer-safety-data-reporting",
+                  "retired-service-weapon-purchases"
+                ],
+                "source_refs": [
+                  "clerk_roll_032",
+                  "clerk_roll_130",
+                  "clerk_roll_131",
+                  "clerk_roll_275",
+                  "clerk_roll_299",
+                  "congress_hamdt5",
+                  "congress_hr2255_text",
+                  "congress_hr2240",
+                  "hrpt_119_079",
+                  "congress_hr5143",
+                  "rules_print_119_11",
+                  "congress_hr5107",
+                  "hrpt_119_317"
+                ],
+                "receipt_refs": [
+                  "docs/semantic_ir/accepted/acceptance_receipt.json",
+                  "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+                ]
+              }
+            }
+          },
+          "repeated_patterns": [
+            {
+              "proposition_id": "prop:c428677c0dbee5e0",
+              "heading": {
+                "statement_id": "statement:repeated-support:heading",
+                "text": "Certification, fentanyl research provisions, and officer-safety reporting",
+                "mapping": {
+                  "mapping_id": "mapping:repeated-support:heading",
+                  "proposition_ids": [
+                    "prop:c428677c0dbee5e0"
+                  ],
+                  "boundary_ids": [],
+                  "presentation_target": "repeated_patterns",
+                  "action_ids": [
+                    "house:119:1:131",
+                    "house:119:1:166",
+                    "house:119:1:32"
+                  ],
+                  "episode_ids": [
+                    "halt-fentanyl-legislative-path",
+                    "officer-safety-data-reporting"
+                  ],
+                  "source_refs": [
+                    "clerk_roll_032",
+                    "clerk_roll_131",
+                    "clerk_roll_166",
+                    "congress_hamdt5",
+                    "congress_hr2240",
+                    "hrpt_119_079",
+                    "congress_s331",
+                    "public_law_119_26",
+                    "cbo_s331"
+                  ],
+                  "receipt_refs": [
+                    "docs/semantic_ir/accepted/acceptance_receipt.json",
+                    "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+                  ]
+                }
+              },
+              "body": {
+                "statement_id": "statement:repeated-support:body",
+                "text": "Across independent episodes, Foushee supported an overdose-reduction certification condition, a later fentanyl framework with research provisions, and officer-safety reporting requirements.",
+                "mapping": {
+                  "mapping_id": "mapping:repeated-support:body",
+                  "proposition_ids": [
+                    "prop:c428677c0dbee5e0"
+                  ],
+                  "boundary_ids": [],
+                  "presentation_target": "repeated_patterns",
+                  "action_ids": [
+                    "house:119:1:131",
+                    "house:119:1:166",
+                    "house:119:1:32"
+                  ],
+                  "episode_ids": [
+                    "halt-fentanyl-legislative-path",
+                    "officer-safety-data-reporting"
+                  ],
+                  "source_refs": [
+                    "clerk_roll_032",
+                    "clerk_roll_131",
+                    "clerk_roll_166",
+                    "congress_hamdt5",
+                    "congress_hr2240",
+                    "hrpt_119_079",
+                    "congress_s331",
+                    "public_law_119_26",
+                    "cbo_s331"
+                  ],
+                  "receipt_refs": [
+                    "docs/semantic_ir/accepted/acceptance_receipt.json",
+                    "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+                  ]
+                }
+              }
+            },
+            {
+              "proposition_id": "prop:abbe87a63baefb7d",
+              "heading": {
+                "statement_id": "statement:repeated-opposition:heading",
+                "text": "Retired-service firearm access, D.C. pursuit authority, and policing-rule rollbacks",
+                "mapping": {
+                  "mapping_id": "mapping:repeated-opposition:heading",
+                  "proposition_ids": [
+                    "prop:abbe87a63baefb7d"
+                  ],
+                  "boundary_ids": [],
+                  "presentation_target": "repeated_patterns",
+                  "action_ids": [
+                    "house:119:1:130",
+                    "house:119:1:275",
+                    "house:119:1:299"
+                  ],
+                  "episode_ids": [
+                    "dc-police-pursuit-rules",
+                    "dc-policing-reform-repeal",
+                    "retired-service-weapon-purchases"
+                  ],
+                  "source_refs": [
+                    "clerk_roll_130",
+                    "clerk_roll_275",
+                    "clerk_roll_299",
+                    "congress_hr2255_text",
+                    "congress_hr5143",
+                    "rules_print_119_11",
+                    "congress_hr5107",
+                    "hrpt_119_317"
+                  ],
+                  "receipt_refs": [
+                    "docs/semantic_ir/accepted/acceptance_receipt.json",
+                    "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+                  ]
+                }
+              },
+              "body": {
+                "statement_id": "statement:repeated-opposition:body",
+                "text": "Across independent episodes, Foushee opposed creating a reviewed federal program for eligible current and retired officers to buy qualifying retired agency firearms, broader D.C. police pursuit authority, and repeal of most reviewed D.C. policing restrictions.",
+                "mapping": {
+                  "mapping_id": "mapping:repeated-opposition:body",
+                  "proposition_ids": [
+                    "prop:abbe87a63baefb7d"
+                  ],
+                  "boundary_ids": [],
+                  "presentation_target": "repeated_patterns",
+                  "action_ids": [
+                    "house:119:1:130",
+                    "house:119:1:275",
+                    "house:119:1:299"
+                  ],
+                  "episode_ids": [
+                    "dc-police-pursuit-rules",
+                    "dc-policing-reform-repeal",
+                    "retired-service-weapon-purchases"
+                  ],
+                  "source_refs": [
+                    "clerk_roll_130",
+                    "clerk_roll_275",
+                    "clerk_roll_299",
+                    "congress_hr2255_text",
+                    "congress_hr5143",
+                    "rules_print_119_11",
+                    "congress_hr5107",
+                    "hrpt_119_317"
+                  ],
+                  "receipt_refs": [
+                    "docs/semantic_ir/accepted/acceptance_receipt.json",
+                    "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+                  ]
+                }
+              }
+            }
+          ],
+          "policy_trajectories": [
+            {
+              "proposition_id": "prop:bc08a2271517ebb7",
+              "heading": {
+                "statement_id": "statement:trajectory-fentanyl:heading",
+                "text": "The fentanyl episode is mixed",
+                "mapping": {
+                  "mapping_id": "mapping:trajectory-fentanyl:heading",
+                  "proposition_ids": [
+                    "prop:bc08a2271517ebb7"
+                  ],
+                  "boundary_ids": [],
+                  "presentation_target": "policy_trajectories",
+                  "action_ids": [
+                    "house:119:1:166",
+                    "house:119:1:32",
+                    "house:119:1:33"
+                  ],
+                  "episode_ids": [
+                    "halt-fentanyl-legislative-path"
+                  ],
+                  "source_refs": [
+                    "clerk_roll_032",
+                    "clerk_roll_033",
+                    "clerk_roll_166",
+                    "congress_hamdt5",
+                    "congress_hr27",
+                    "congress_s331",
+                    "public_law_119_26",
+                    "cbo_s331"
+                  ],
+                  "receipt_refs": [
+                    "docs/semantic_ir/accepted/acceptance_receipt.json",
+                    "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+                  ]
+                }
+              },
+              "body": {
+                "statement_id": "statement:trajectory-fentanyl:body",
+                "text": "Within one fentanyl legislative episode, Foushee supported a certification amendment, opposed the earlier House bill, and supported a later related framework that permanently scheduled fentanyl-related substances and included research provisions. These related stages count as one episode for breadth and do not establish a change in position, motive, or philosophy.",
+                "mapping": {
+                  "mapping_id": "mapping:trajectory-fentanyl:body",
+                  "proposition_ids": [
+                    "prop:bc08a2271517ebb7"
+                  ],
+                  "boundary_ids": [],
+                  "presentation_target": "policy_trajectories",
+                  "action_ids": [
+                    "house:119:1:166",
+                    "house:119:1:32",
+                    "house:119:1:33"
+                  ],
+                  "episode_ids": [
+                    "halt-fentanyl-legislative-path"
+                  ],
+                  "source_refs": [
+                    "clerk_roll_032",
+                    "clerk_roll_033",
+                    "clerk_roll_166",
+                    "congress_hamdt5",
+                    "congress_hr27",
+                    "congress_s331",
+                    "public_law_119_26",
+                    "cbo_s331"
+                  ],
+                  "receipt_refs": [
+                    "docs/semantic_ir/accepted/acceptance_receipt.json",
+                    "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+                  ]
+                }
+              }
+            }
+          ],
+          "limitations": []
+        },
+        "frontend_display": {
+          "tier": "receipts_only",
+          "tier_badge": "Vote receipts",
+          "teaser": "Reviewed analytical wording is not published for this record scope.",
+          "coverage_text": null,
+          "scope_boundary": null,
+          "conclusion": null,
+          "repeated_patterns": [],
+          "policy_trajectories": [],
+          "limitations": []
+        },
+        "evidence_metadata": {
+          "coverage": {
+            "eligible_substantive_actions": 7,
+            "context_only_control_actions": 0,
+            "in_service_eligible_actions": 7,
+            "resolved_eligible_actions": 7,
+            "directional_yes_no_positions": 7,
+            "present_actions": 0,
+            "not_voting_actions": 0,
+            "missing_evidence_actions": 0,
+            "unresolved_service_actions": 0,
+            "outside_service_actions": 0,
+            "complete_episodes": 5,
+            "partial_episodes": 0
+          },
+          "action_ids": [
+            "house:119:1:130",
+            "house:119:1:131",
+            "house:119:1:166",
+            "house:119:1:275",
+            "house:119:1:299",
+            "house:119:1:32",
+            "house:119:1:33"
+          ],
+          "episode_ids": [
+            "dc-police-pursuit-rules",
+            "dc-policing-reform-repeal",
+            "halt-fentanyl-legislative-path",
+            "officer-safety-data-reporting",
+            "retired-service-weapon-purchases"
+          ],
+          "action_accounting": {
+            "behavioral_proposition_action_ids": [
+              "house:119:1:130",
+              "house:119:1:131",
+              "house:119:1:166",
+              "house:119:1:275",
+              "house:119:1:299",
+              "house:119:1:32",
+              "house:119:1:33"
+            ],
+            "non_proposition_reasons": []
+          }
+        },
+        "provenance": {
+          "semantic_source_case_id": "semir-dev-05-justice-mechanism-divide",
+          "focused_validation_case_ids": [
+            "semir-dev-04-justice-mixed-fentanyl-trajectory",
+            "semir-dev-06-justice-one-sided-argument"
+          ],
+          "dossier_refs": [
+            "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/episode_inference.json",
+            "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+            "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/claim_source_map.json",
+            "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json"
+          ],
+          "source_refs": [
+            "clerk_roll_032",
+            "clerk_roll_033",
+            "clerk_roll_130",
+            "clerk_roll_131",
+            "clerk_roll_166",
+            "clerk_roll_275",
+            "clerk_roll_299",
+            "congress_hamdt5",
+            "congress_hr27",
+            "congress_s331",
+            "public_law_119_26",
+            "cbo_s331",
+            "congress_hr2255_text",
+            "congress_hr2240",
+            "hrpt_119_079",
+            "congress_hr5143",
+            "rules_print_119_11",
+            "congress_hr5107",
+            "hrpt_119_317"
+          ],
+          "claim_refs": [
+            "roll_32_editorial",
+            "roll_33_editorial",
+            "roll_130_editorial",
+            "roll_131_editorial",
+            "roll_166_editorial",
+            "roll_275_editorial",
+            "roll_299_editorial"
+          ],
+          "receipt_refs": [
+            "docs/semantic_ir/accepted/acceptance_receipt.json",
+            "docs/review_packets/valerie_foushee_justice_public_safety_editorial_gold_v1.md"
+          ],
+          "review_limitations": [
+            {
+              "limitation_id": "bounded-reviewed-sample",
+              "text": "Seven substantive actions across five independent episodes are a bounded 119th-Congress sample, not the complete Justice record."
+            },
+            {
+              "limitation_id": "dc-pursuit-exceptions",
+              "text": "The D.C. pursuit proposal included risk, futility, and alternative-apprehension exceptions."
+            },
+            {
+              "limitation_id": "dc-repeal-exceptions",
+              "text": "The D.C. reform-repeal substitute retained the neck-restraint and vehicular-pursuit subtitles."
+            },
+            {
+              "limitation_id": "fentanyl-package-content",
+              "text": "The later fentanyl framework combined permanent scheduling and enforcement consequences with research provisions."
+            },
+            {
+              "limitation_id": "mixed-fentanyl-trajectory",
+              "text": "The three related fentanyl actions form one mixed episode and do not establish a change in position, motive, or philosophy."
+            },
+            {
+              "limitation_id": "one-sided-hr2240-arguments",
+              "text": "The reviewed H.R. 2240 official argument evidence was one-sided; no opposing argument was synthesized."
+            },
+            {
+              "limitation_id": "retired-firearm-scope",
+              "text": "The retired-firearm action does not establish a general position on police tools or police equipment."
+            }
+          ],
+          "action_source_contract_id": "foushee_justice_public_safety_119_v1",
+          "action_source_contract_sha256": "0ee8575db526d4b021d7b26d2befbe9c22eb7af9473c12ac2ecec616f3ae9386",
+          "compiled_ir_sha256": "f6acbacca4b32f7daf3deef757d14538add4c8b81d0fc80923f0cf3caf8aa3f1",
+          "reviewed_wording_sha256": "30636227799244522d07a9608e06878561439f0fb9819931989727277607ae92",
+          "mapping_set_sha256": "c71926699df244e9cbd1e6438cd06139570462765c2b7374d35c209bfc692bcd",
+          "evidence_provenance_sha256": "a37fc3468f1af932c5bf062789f25551337b40eefe4502df7afd469d0af795f6",
+          "presentation_content_sha256": "5813d5e556542d0ef2234dc05b1e1e24d5811d8c0e22af7775cd1e9b82aa55ca",
+          "limitations_sha256": "822098797ffce236c0018576b02969e15a6495c82ca577c5c74e69f5dd2a58df",
+          "approval_subject_sha256": "67e67001ca678e70debba52e9049632f90d99da4d6f1dcaea60da40beaa87874",
+          "compiler_receipt": {
+            "artifact_id": "f000477:justice_public_safety:119:v1",
+            "artifact_version": 1,
+            "member_id": "F000477",
+            "issue_id": "JUSTICE_PUBLIC_SAFETY",
+            "congress": 119,
+            "approved_scope": "119",
+            "schema_version": "editorial_public_issue_presentation_v1",
+            "compiled_ir_sha256": "f6acbacca4b32f7daf3deef757d14538add4c8b81d0fc80923f0cf3caf8aa3f1",
+            "reviewed_wording_sha256": "30636227799244522d07a9608e06878561439f0fb9819931989727277607ae92",
+            "mapping_set_sha256": "c71926699df244e9cbd1e6438cd06139570462765c2b7374d35c209bfc692bcd",
+            "evidence_provenance_sha256": "a37fc3468f1af932c5bf062789f25551337b40eefe4502df7afd469d0af795f6",
+            "action_source_contract_id": "foushee_justice_public_safety_119_v1",
+            "action_source_contract_sha256": "0ee8575db526d4b021d7b26d2befbe9c22eb7af9473c12ac2ecec616f3ae9386",
+            "limitation_ids": [
+              "bounded-reviewed-sample",
+              "dc-pursuit-exceptions",
+              "dc-repeal-exceptions",
+              "fentanyl-package-content",
+              "mixed-fentanyl-trajectory",
+              "one-sided-hr2240-arguments",
+              "retired-firearm-scope"
+            ],
+            "limitations_sha256": "822098797ffce236c0018576b02969e15a6495c82ca577c5c74e69f5dd2a58df",
+            "presentation_content_sha256": "5813d5e556542d0ef2234dc05b1e1e24d5811d8c0e22af7775cd1e9b82aa55ca",
+            "statement_ids": [
+              "statement:conclusion:body",
+              "statement:conclusion:headline",
+              "statement:coverage:reviewed-actions",
+              "statement:repeated-opposition:body",
+              "statement:repeated-opposition:heading",
+              "statement:repeated-support:body",
+              "statement:repeated-support:heading",
+              "statement:scope:reviewed-119",
+              "statement:teaser:mechanism-divide",
+              "statement:trajectory-fentanyl:body",
+              "statement:trajectory-fentanyl:heading"
+            ],
+            "mapping_ids": [
+              "mapping:conclusion:body",
+              "mapping:conclusion:headline",
+              "mapping:coverage:reviewed-actions",
+              "mapping:repeated-opposition:body",
+              "mapping:repeated-opposition:heading",
+              "mapping:repeated-support:body",
+              "mapping:repeated-support:heading",
+              "mapping:scope:reviewed-119",
+              "mapping:teaser:mechanism-divide",
+              "mapping:trajectory-fentanyl:body",
+              "mapping:trajectory-fentanyl:heading"
+            ],
+            "approval_subject_sha256": "67e67001ca678e70debba52e9049632f90d99da4d6f1dcaea60da40beaa87874"
+          }
+        },
+        "controls": {
+          "semantic": {
+            "status": "accepted_semantic_reference",
+            "validation_status": "passed"
+          },
+          "editorial": {
+            "human_approval_status": "human_approved"
+          },
+          "benchmark": {
+            "status": "gold_benchmark"
+          },
+          "production": {
+            "eligible": true
+          },
+          "publication": {
+            "active": true
+          },
+          "approval_mode": "detached_receipt_required",
+          "derived_semantic_tier": "reviewed_conclusion",
+          "effective_public_tier": "receipts_only",
+          "publication_gates_passed": false
+        }
+      },
+      "content_sha256": "fd7a8b5e440654147bbb6b738be3bb683034f07b0c9cc4e26eba9cce84e07e59",
+      "source_manifest_sha256": "174a13e3c18b3e982228d3e3136fb63e64ba4cf3ca5f11773744e5784b46b757",
+      "source_commit_sha": "bae70a3623b66a68cda40ac537dc4a1740e87f92",
+      "member_bioguide_id": "F000477",
+      "issue_id": "JUSTICE_PUBLIC_SAFETY",
+      "congress": 119,
+      "chamber": "house",
+      "canonical_action_id": null,
+      "episode_id": null,
+      "policy_family_id": null,
+      "editorial_status": "human_approved",
+      "benchmark_status": "gold_benchmark",
+      "production_eligible": true,
+      "review_route": "human_exception"
+    },
+    {
+      "artifact_type": "source_manifest",
+      "natural_key": "f000477:justice_public_safety:119:v1:publication-source-manifest",
+      "schema_version": "editorial_publication_source_manifest_v1",
+      "artifact_version": 1,
+      "payload": {
+        "schema_version": "editorial_publication_source_manifest_v1",
+        "complete_required_sources": true,
+        "activation_bundle_id": "foushee_justice_public_safety_119_publication_activation_v1",
+        "source_contract": {
+          "schema_version": "editorial_action_source_contract_v1",
+          "contract_id": "foushee_justice_public_safety_119_v1",
+          "source_manifest": {
+            "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json",
+            "sha256": "8c03c55079b8e499e88a25381d0b7e3e641ecb393391029a023f37dcda4f2424"
+          },
+          "claim_source_map": {
+            "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/claim_source_map.json",
+            "sha256": "602967fdf693ffffde0d951604db9d9b51c91b9c8dfa269780a71541ccd5d554"
+          },
+          "source_authorities": {
+            "clerk_roll_032": "house_clerk_roll_call",
+            "clerk_roll_033": "house_clerk_roll_call",
+            "clerk_roll_130": "house_clerk_roll_call",
+            "clerk_roll_131": "house_clerk_roll_call",
+            "clerk_roll_166": "house_clerk_roll_call",
+            "clerk_roll_275": "house_clerk_roll_call",
+            "clerk_roll_299": "house_clerk_roll_call",
+            "congress_hamdt5": "congress_gov_amendment",
+            "congress_hr27": "congress_gov_bill",
+            "congress_s331": "congress_gov_bill",
+            "public_law_119_26": "public_law_text",
+            "cbo_s331": "cbo_cost_estimate",
+            "congress_hr2255_text": "congress_gov_measure_text",
+            "congress_hr2240": "congress_gov_bill",
+            "hrpt_119_079": "house_committee_report",
+            "congress_hr5143": "congress_gov_bill",
+            "rules_print_119_11": "house_floor_document",
+            "congress_hr5107": "congress_gov_bill",
+            "hrpt_119_317": "house_committee_report"
+          },
+          "actions": {
+            "house:119:1:32": {
+              "vote_source_refs": [
+                "clerk_roll_032"
+              ],
+              "action_meaning_source_refs": [
+                "congress_hamdt5"
+              ],
+              "required_action_meaning_source_types": [
+                "congress_gov_amendment"
+              ]
+            },
+            "house:119:1:33": {
+              "vote_source_refs": [
+                "clerk_roll_033"
+              ],
+              "action_meaning_source_refs": [
+                "congress_hr27"
+              ],
+              "required_action_meaning_source_types": [
+                "congress_gov_bill"
+              ]
+            },
+            "house:119:1:130": {
+              "vote_source_refs": [
+                "clerk_roll_130"
+              ],
+              "action_meaning_source_refs": [
+                "congress_hr2255_text"
+              ],
+              "required_action_meaning_source_types": [
+                "congress_gov_measure_text"
+              ]
+            },
+            "house:119:1:131": {
+              "vote_source_refs": [
+                "clerk_roll_131"
+              ],
+              "action_meaning_source_refs": [
+                "congress_hr2240",
+                "hrpt_119_079"
+              ],
+              "required_action_meaning_source_types": [
+                "congress_gov_bill",
+                "house_committee_report"
+              ]
+            },
+            "house:119:1:166": {
+              "vote_source_refs": [
+                "clerk_roll_166"
+              ],
+              "action_meaning_source_refs": [
+                "congress_s331",
+                "public_law_119_26",
+                "cbo_s331"
+              ],
+              "required_action_meaning_source_types": [
+                "congress_gov_bill",
+                "public_law_text",
+                "cbo_cost_estimate"
+              ]
+            },
+            "house:119:1:275": {
+              "vote_source_refs": [
+                "clerk_roll_275"
+              ],
+              "action_meaning_source_refs": [
+                "congress_hr5143",
+                "rules_print_119_11"
+              ],
+              "required_action_meaning_source_types": [
+                "congress_gov_bill",
+                "house_floor_document"
+              ]
+            },
+            "house:119:1:299": {
+              "vote_source_refs": [
+                "clerk_roll_299"
+              ],
+              "action_meaning_source_refs": [
+                "congress_hr5107",
+                "hrpt_119_317"
+              ],
+              "required_action_meaning_source_types": [
+                "congress_gov_bill",
+                "house_committee_report"
+              ]
+            }
+          }
+        },
+        "source_files": [
+          {
+            "path": "docs/editorial/action_source_contracts/foushee_justice_public_safety_119_v1.json",
+            "sha256": "33a746b7ba1700b8834e82c10ecd5742ee4be3b453bff06ea802b45f1f3e9299"
+          },
+          {
+            "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json",
+            "sha256": "8c03c55079b8e499e88a25381d0b7e3e641ecb393391029a023f37dcda4f2424"
+          },
+          {
+            "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/claim_source_map.json",
+            "sha256": "602967fdf693ffffde0d951604db9d9b51c91b9c8dfa269780a71541ccd5d554"
+          },
+          {
+            "path": "docs/semantic_ir/accepted/development_cases.json",
+            "sha256": "d898ce00660d184043af5b971dd24788b888409f490c45c121328f47cab2b31f"
+          },
+          {
+            "path": "docs/editorial/presentations/f000477_justice_public_safety_119_review_fixture.json",
+            "sha256": "a2f611c8b9bc2194a27839dd0d8f3af2124f9c26285318af612f361adb878d3c"
+          },
+          {
+            "path": "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json",
+            "sha256": "cf269a276de19902f9b5c8a2c6af9416ede981b658bc1867f9bdec5aea94a112"
+          }
+        ],
+        "reviewed_action_ids": [
+          "house:119:1:130",
+          "house:119:1:131",
+          "house:119:1:166",
+          "house:119:1:275",
+          "house:119:1:299",
+          "house:119:1:32",
+          "house:119:1:33"
+        ]
+      },
+      "content_sha256": "74f9a755b76dc5079b5bf3afd2d0892713cdf7dc3f3f16f1352910943fce9a7f",
+      "source_manifest_sha256": "174a13e3c18b3e982228d3e3136fb63e64ba4cf3ca5f11773744e5784b46b757",
+      "source_commit_sha": "bae70a3623b66a68cda40ac537dc4a1740e87f92",
+      "member_bioguide_id": "F000477",
+      "issue_id": "JUSTICE_PUBLIC_SAFETY",
+      "congress": 119,
+      "chamber": "house",
+      "canonical_action_id": null,
+      "episode_id": null,
+      "policy_family_id": null,
+      "editorial_status": "human_approved",
+      "benchmark_status": "gold_benchmark",
+      "production_eligible": true,
+      "review_route": "human_exception"
+    },
+    {
+      "artifact_type": "standardization_validation_result",
+      "natural_key": "f000477:justice_public_safety:119:v1:publication-validation",
+      "schema_version": "editorial_publication_validation_v1",
+      "artifact_version": 1,
+      "payload": {
+        "schema_version": "editorial_publication_validation_v1",
+        "validation_run_id": "foushee_justice_public_safety_119_publication_activation_v1:local-release-validation",
+        "successful": true,
+        "current": true,
+        "blocking_findings": 0,
+        "activation_bundle_id": "foushee_justice_public_safety_119_publication_activation_v1",
+        "presentation_identity": {
+          "natural_key": "f000477:justice_public_safety:119:v1",
+          "artifact_version": 1,
+          "artifact_sha256": "fd7a8b5e440654147bbb6b738be3bb683034f07b0c9cc4e26eba9cce84e07e59",
+          "approval_subject_sha256": "67e67001ca678e70debba52e9049632f90d99da4d6f1dcaea60da40beaa87874",
+          "presentation_content_sha256": "5813d5e556542d0ef2234dc05b1e1e24d5811d8c0e22af7775cd1e9b82aa55ca",
+          "approval_receipt_id": "approval-receipt:f000477-justice-public-safety-119-v1-20260727-dhart54"
+        },
+        "contract_versions": {
+          "presentation": "editorial_public_issue_presentation_v1",
+          "selector": "editorial_public_presentations_api_v1",
+          "persistence": "0016_editorial_artifact_persistence"
+        },
+        "validation_commands": [
+          "python backend/scripts/build_editorial_artifact_seed.py --check",
+          "python backend/scripts/build_foushee_justice_publication_activation.py --check",
+          "python backend/scripts/foushee_justice_publication_activation.py verify-bundle",
+          "python -m pytest -q backend/tests/test_foushee_justice_publication_activation.py backend/tests/test_foushee_justice_publication_activation_postgres.py backend/tests/test_api_editorial_presentations.py"
+        ]
+      },
+      "content_sha256": "aafc7f2605d0f042ab6ca900557b68e63a57d9a41dc573768c951db48dd023d0",
+      "source_manifest_sha256": "174a13e3c18b3e982228d3e3136fb63e64ba4cf3ca5f11773744e5784b46b757",
+      "source_commit_sha": "bae70a3623b66a68cda40ac537dc4a1740e87f92",
+      "member_bioguide_id": "F000477",
+      "issue_id": "JUSTICE_PUBLIC_SAFETY",
+      "congress": 119,
+      "chamber": "house",
+      "canonical_action_id": null,
+      "episode_id": null,
+      "policy_family_id": null,
+      "editorial_status": "human_approved",
+      "benchmark_status": "gold_benchmark",
+      "production_eligible": true,
+      "review_route": "human_exception"
+    }
+  ],
+  "relationships": [
+    {
+      "parent_natural_key": "f000477:justice_public_safety:119:v1",
+      "child_natural_key": "f000477:justice_public_safety:119:v1:publication-validation",
+      "relationship_type": "has_validation",
+      "ordinal": 0,
+      "metadata": {
+        "activation_bundle_id": "foushee_justice_public_safety_119_publication_activation_v1"
+      }
+    },
+    {
+      "parent_natural_key": "f000477:justice_public_safety:119:v1",
+      "child_natural_key": "f000477:justice_public_safety:119:v1:publication-source-manifest",
+      "relationship_type": "uses_source_manifest",
+      "ordinal": 0,
+      "metadata": {
+        "activation_bundle_id": "foushee_justice_public_safety_119_publication_activation_v1"
+      }
+    }
+  ],
+  "publication_registry": {
+    "member_bioguide_id": "F000477",
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "presentation_natural_key": "f000477:justice_public_safety:119:v1",
+    "presentation_artifact_version": 1,
+    "publicly_active": true,
+    "publication_metadata": {
+      "activation_bundle_id": "foushee_justice_public_safety_119_publication_activation_v1",
+      "approval_receipt": {
+        "schema_version": "editorial_public_issue_approval_receipt_v1",
+        "receipt_id": "approval-receipt:f000477-justice-public-safety-119-v1-20260727-dhart54",
+        "status": "approved",
+        "binding": {
+          "artifact_id": "f000477:justice_public_safety:119:v1",
+          "artifact_version": 1,
+          "member_id": "F000477",
+          "issue_id": "JUSTICE_PUBLIC_SAFETY",
+          "congress": 119,
+          "approved_scope": "119",
+          "schema_version": "editorial_public_issue_presentation_v1",
+          "compiled_ir_sha256": "f6acbacca4b32f7daf3deef757d14538add4c8b81d0fc80923f0cf3caf8aa3f1",
+          "reviewed_wording_sha256": "30636227799244522d07a9608e06878561439f0fb9819931989727277607ae92",
+          "mapping_set_sha256": "c71926699df244e9cbd1e6438cd06139570462765c2b7374d35c209bfc692bcd",
+          "evidence_provenance_sha256": "a37fc3468f1af932c5bf062789f25551337b40eefe4502df7afd469d0af795f6",
+          "action_source_contract_id": "foushee_justice_public_safety_119_v1",
+          "action_source_contract_sha256": "0ee8575db526d4b021d7b26d2befbe9c22eb7af9473c12ac2ecec616f3ae9386",
+          "limitation_ids": [
+            "bounded-reviewed-sample",
+            "dc-pursuit-exceptions",
+            "dc-repeal-exceptions",
+            "fentanyl-package-content",
+            "mixed-fentanyl-trajectory",
+            "one-sided-hr2240-arguments",
+            "retired-firearm-scope"
+          ],
+          "limitations_sha256": "822098797ffce236c0018576b02969e15a6495c82ca577c5c74e69f5dd2a58df",
+          "presentation_content_sha256": "5813d5e556542d0ef2234dc05b1e1e24d5811d8c0e22af7775cd1e9b82aa55ca",
+          "statement_ids": [
+            "statement:conclusion:body",
+            "statement:conclusion:headline",
+            "statement:coverage:reviewed-actions",
+            "statement:repeated-opposition:body",
+            "statement:repeated-opposition:heading",
+            "statement:repeated-support:body",
+            "statement:repeated-support:heading",
+            "statement:scope:reviewed-119",
+            "statement:teaser:mechanism-divide",
+            "statement:trajectory-fentanyl:body",
+            "statement:trajectory-fentanyl:heading"
+          ],
+          "mapping_ids": [
+            "mapping:conclusion:body",
+            "mapping:conclusion:headline",
+            "mapping:coverage:reviewed-actions",
+            "mapping:repeated-opposition:body",
+            "mapping:repeated-opposition:heading",
+            "mapping:repeated-support:body",
+            "mapping:repeated-support:heading",
+            "mapping:scope:reviewed-119",
+            "mapping:teaser:mechanism-divide",
+            "mapping:trajectory-fentanyl:body",
+            "mapping:trajectory-fentanyl:heading"
+          ],
+          "approval_subject_sha256": "67e67001ca678e70debba52e9049632f90d99da4d6f1dcaea60da40beaa87874"
+        },
+        "approved_statement_ids": [
+          "statement:conclusion:body",
+          "statement:conclusion:headline",
+          "statement:coverage:reviewed-actions",
+          "statement:repeated-opposition:body",
+          "statement:repeated-opposition:heading",
+          "statement:repeated-support:body",
+          "statement:repeated-support:heading",
+          "statement:scope:reviewed-119",
+          "statement:teaser:mechanism-divide",
+          "statement:trajectory-fentanyl:body",
+          "statement:trajectory-fentanyl:heading"
+        ],
+        "approved_mapping_ids": [
+          "mapping:conclusion:body",
+          "mapping:conclusion:headline",
+          "mapping:coverage:reviewed-actions",
+          "mapping:repeated-opposition:body",
+          "mapping:repeated-opposition:heading",
+          "mapping:repeated-support:body",
+          "mapping:repeated-support:heading",
+          "mapping:scope:reviewed-119",
+          "mapping:teaser:mechanism-divide",
+          "mapping:trajectory-fentanyl:body",
+          "mapping:trajectory-fentanyl:heading"
+        ],
+        "reviewer": {
+          "reviewer_id": "reviewer:dhart54",
+          "authority": "editorial_publication_review_authority_v1"
+        },
+        "decision_timestamp": "2026-07-27T15:34:40Z",
+        "limitations_sha256": "822098797ffce236c0018576b02969e15a6495c82ca577c5c74e69f5dd2a58df",
+        "limitations_acknowledged": [
+          {
+            "limitation_id": "bounded-reviewed-sample",
+            "text": "Seven substantive actions across five independent episodes are a bounded 119th-Congress sample, not the complete Justice record.",
+            "acknowledged": true
+          },
+          {
+            "limitation_id": "mixed-fentanyl-trajectory",
+            "text": "The three related fentanyl actions form one mixed episode and do not establish a change in position, motive, or philosophy.",
+            "acknowledged": true
+          },
+          {
+            "limitation_id": "fentanyl-package-content",
+            "text": "The later fentanyl framework combined permanent scheduling and enforcement consequences with research provisions.",
+            "acknowledged": true
+          },
+          {
+            "limitation_id": "retired-firearm-scope",
+            "text": "The retired-firearm action does not establish a general position on police tools or police equipment.",
+            "acknowledged": true
+          },
+          {
+            "limitation_id": "dc-pursuit-exceptions",
+            "text": "The D.C. pursuit proposal included risk, futility, and alternative-apprehension exceptions.",
+            "acknowledged": true
+          },
+          {
+            "limitation_id": "dc-repeal-exceptions",
+            "text": "The D.C. reform-repeal substitute retained the neck-restraint and vehicular-pursuit subtitles.",
+            "acknowledged": true
+          },
+          {
+            "limitation_id": "one-sided-hr2240-arguments",
+            "text": "The reviewed H.R. 2240 official argument evidence was one-sided; no opposing argument was synthesized.",
+            "acknowledged": true
+          }
+        ],
+        "decisions": {
+          "editorial_wording": "approved",
+          "gold_benchmark_promotion": "approved",
+          "production_eligibility": "approved"
+        },
+        "publication_activation": {
+          "active": false,
+          "decision_scope": "out_of_scope"
+        }
+      },
+      "approval_subject_sha256": "67e67001ca678e70debba52e9049632f90d99da4d6f1dcaea60da40beaa87874",
+      "presentation_content_sha256": "5813d5e556542d0ef2234dc05b1e1e24d5811d8c0e22af7775cd1e9b82aa55ca",
+      "active_artifact_sha256": "fd7a8b5e440654147bbb6b738be3bb683034f07b0c9cc4e26eba9cce84e07e59",
+      "validation_natural_key": "f000477:justice_public_safety:119:v1:publication-validation",
+      "source_manifest_natural_key": "f000477:justice_public_safety:119:v1:publication-source-manifest"
+    }
+  },
+  "expected_counts": {
+    "before": {
+      "batches": 1,
+      "artifacts": 71,
+      "relationships": 95,
+      "publication_registry": 0
+    },
+    "after": {
+      "batches": 2,
+      "artifacts": 74,
+      "relationships": 97,
+      "publication_registry": 1
+    }
+  },
+  "rollback_identity": {
+    "deterministic_batch_key": "foushee-justice-public-safety-119-publication-activation-v1-bae70a36",
+    "artifact_versions": [
+      {
+        "natural_key": "f000477:justice_public_safety:119:v1",
+        "artifact_version": 1,
+        "content_sha256": "fd7a8b5e440654147bbb6b738be3bb683034f07b0c9cc4e26eba9cce84e07e59"
+      },
+      {
+        "natural_key": "f000477:justice_public_safety:119:v1:publication-source-manifest",
+        "artifact_version": 1,
+        "content_sha256": "74f9a755b76dc5079b5bf3afd2d0892713cdf7dc3f3f16f1352910943fce9a7f"
+      },
+      {
+        "natural_key": "f000477:justice_public_safety:119:v1:publication-validation",
+        "artifact_version": 1,
+        "content_sha256": "aafc7f2605d0f042ab6ca900557b68e63a57d9a41dc573768c951db48dd023d0"
+      }
+    ],
+    "relationship_sha256": "98bb7a56e357bdcb04d19011822113a28864ec60daf5cc8cd0a6c012f45af902",
+    "registry_primary_key": {
+      "member_bioguide_id": "F000477",
+      "issue_id": "JUSTICE_PUBLIC_SAFETY"
+    },
+    "approval_receipt_id": "approval-receipt:f000477-justice-public-safety-119-v1-20260727-dhart54",
+    "restore_expected_counts": {
+      "batches": 1,
+      "artifacts": 71,
+      "relationships": 95,
+      "publication_registry": 0
+    },
+    "deletion_order": [
+      "editorial_publication_registry:F000477:JUSTICE_PUBLIC_SAFETY",
+      "editorial_artifact_relationships:2 exact bundle relationships",
+      "editorial_artifact_versions:3 exact bundle artifact versions",
+      "editorial_artifact_batches:foushee-justice-public-safety-119-publication-activation-v1-bae70a36"
+    ]
+  },
+  "public_smoke_contract": {
+    "before": {
+      "119": "receipts_only",
+      "all": "receipts_only",
+      "118": "receipts_only"
+    },
+    "after": {
+      "119": "reviewed_conclusion",
+      "all": "reviewed_conclusion_with_reviewed_119_boundary",
+      "118": "receipts_only"
+    },
+    "approved_counts": {
+      "actions": 7,
+      "episodes": 5,
+      "repeated_patterns": 2
+    },
+    "cross_identity": "receipts_only_for_other_members_and_issues"
+  },
+  "semantic_hashes": {
+    "artifacts_sha256": "b8cd31add808710ed6413a4cf5195b436d29b8afb382d7a61b4a87cab3e77307",
+    "relationships_sha256": "98bb7a56e357bdcb04d19011822113a28864ec60daf5cc8cd0a6c012f45af902",
+    "publication_registry_sha256": "440fd36a75befd63014551c1d70530d809af9574e1969d5d78c26b2304a637a4"
+  },
+  "bundle_sha256": "5e6c8337616bc8e845585e9bac959943bcdb4196c4bd2553a359b8a14d7461ea"
+}

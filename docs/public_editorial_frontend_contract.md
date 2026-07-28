@@ -89,5 +89,8 @@ finding-specific accessible names, move focus to the canonical receipt, retain
 visible focus/highlight styling, and respect `prefers-reduced-motion`.
 
 Semantic acceptance, human approval, benchmark status, production eligibility,
-publication, merge, and deployment remain separate decisions. The current
-F000477 Justice fixture remains pending and therefore public `receipts_only`.
+publication, merge, and deployment remain separate decisions. The F000477
+Justice presentation is human-approved, a gold benchmark, and production
+eligible. Publication remains inactive, so the effective public tier remains
+`receipts_only`. Its activation bundle is separate from the historical
+71-artifact seed.

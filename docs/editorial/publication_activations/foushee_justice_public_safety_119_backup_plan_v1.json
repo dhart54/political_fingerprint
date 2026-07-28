@@ -1,0 +1,62 @@
+{
+  "schema_version": "editorial_publication_backup_plan_v1",
+  "plan_id": "foushee_justice_public_safety_119_backup_plan_v1",
+  "activation_bundle_id": "foushee_justice_public_safety_119_publication_activation_v1",
+  "required_before_apply": true,
+  "capture": {
+    "format": "PostgreSQL custom archive",
+    "command_template": "pg_dump --format=custom --no-owner --no-privileges --file <snapshot.dump> <DATABASE_URL>",
+    "required_tables": [
+      "public.editorial_artifact_batches",
+      "public.editorial_artifact_versions",
+      "public.editorial_artifact_relationships",
+      "public.editorial_publication_registry"
+    ],
+    "required_pre_activation_counts": {
+      "batches": 1,
+      "artifacts": 71,
+      "relationships": 95,
+      "publication_registry": 0
+    },
+    "required_manifest_sha256": "f8c4c24f00f3835b4c1a82e415ae7f2fde77002529b3cc3a23d0785c15efd726",
+    "required_inventory": [
+      "semantic hashes for the frozen historical artifacts and relationships",
+      "target natural-key/version query result",
+      "target registry primary-key query result",
+      "referenced validation and source rows",
+      "target relationship rows",
+      "trigger and function definitions",
+      "RLS enablement and policy rows",
+      "table and sequence grants and effective privileges",
+      "PostgreSQL server version and current schema version",
+      "deployed backend commit SHA"
+    ],
+    "absence_assertions": {
+      "artifact": "f000477:justice_public_safety:119:v1@1",
+      "registry": "F000477:JUSTICE_PUBLIC_SAFETY",
+      "activation_batch": "foushee-justice-public-safety-119-publication-activation-v1-bae70a36"
+    }
+  },
+  "validation": {
+    "snapshot_sha256_required": true,
+    "restore_to_fresh_disposable_database_required": true,
+    "restored_schema_contract_required": "0016_editorial_artifact_persistence",
+    "restored_historical_seed_semantic_equality_required": true,
+    "restore_command_template": "pg_restore --exit-on-error --clean --if-exists --no-owner --dbname <DISPOSABLE_DATABASE_URL> <snapshot.dump>"
+  },
+  "proof_contract": {
+    "schema_version": "editorial_publication_backup_proof_v1",
+    "bundle_id": "foushee_justice_public_safety_119_publication_activation_v1",
+    "bundle_sha256": "5e6c8337616bc8e845585e9bac959943bcdb4196c4bd2553a359b8a14d7461ea",
+    "database_snapshot_created": true,
+    "restore_test_passed": true,
+    "snapshot_sha256": "<64 lowercase hex characters>",
+    "pre_activation_counts": {
+      "batches": 1,
+      "artifacts": 71,
+      "relationships": 95,
+      "publication_registry": 0
+    }
+  },
+  "retention": "Retain the encrypted snapshot and proof until post-activation acceptance and rollback-window closure."
+}

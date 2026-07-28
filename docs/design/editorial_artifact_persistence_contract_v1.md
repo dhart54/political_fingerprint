@@ -2,7 +2,10 @@
 
 ## Source-of-truth phase
 
-Checked-in editorial artifacts remain canonical. PostgreSQL is a deterministic, queryable staging mirror. No public backend or frontend path reads this store, no dual write is introduced, and artifact presence never implies publication.
+Checked-in editorial artifacts remain canonical. PostgreSQL is a deterministic,
+queryable staging mirror and the public editorial-presentations API reads only
+through its fail-closed publication selector. Artifact presence never implies
+publication, and no dual write is introduced.
 
 The existing `vote_interpretations` table remains the canonical roll-scoped interpretation store. It is not extended because its mutable one-row-per-roll shape cannot safely represent shared evidence graphs, member overlays, validation history, supersession, and exact-version publication. Migration `0016` therefore adds a narrow generic layer without replacing members, measures, roll calls, or existing interpretations.
 
@@ -25,7 +28,11 @@ The same natural key, version, and hash is idempotent. The same natural key and 
 
 Editorial status, benchmark status, production eligibility, and review route are indexed columns rather than payload-only data. Review routes normalize to `standard_generation`, `sampled_audit`, `human_exception`, or `blocked`; they do not confer approval.
 
-All V1 seed artifacts are `human_approval_pending`, `not_promoted`, and `production_eligible = false`. García is retained as sampled-audit calibration metadata, not a gold benchmark.
+All V1 seed artifacts are `human_approval_pending`, `not_promoted`, and
+`production_eligible = false`. They remain frozen historical rows. The separately
+approved F000477 Justice IR-native artifact is human-approved, gold benchmark,
+and production eligible, but is not part of V1 and remains unpublished.
+García is retained as sampled-audit calibration metadata, not a gold benchmark.
 
 ## Publication gates
 
@@ -44,11 +51,27 @@ The V1 seed creates no active or inactive registry rows.
 
 ## Security
 
-All four tables enable RLS. `anon` and `authenticated` receive no direct table or sequence privileges, and there are no public policies. Backend/service-role access and reviewed migration tooling remain the only write path. No public API endpoint is added.
+All four tables enable RLS. `anon` and `authenticated` receive no direct table
+or sequence privileges, and there are no public policies. Backend/service-role
+access and reviewed migration tooling remain the only write path. The read-only
+public editorial-presentations API uses backend credentials and the exact
+publication selector; it exposes no generic artifact-store endpoint.
 
 ## Import and export
 
-`backend/scripts/build_editorial_artifact_seed.py` builds or checks the only accepted manifest. `backend/scripts/editorial_artifact_store.py` requires an explicit mode, target, batch key, source commit, manifest hash, and migration hash. Apply uses statement and lock timeouts, a transaction-scoped advisory lock, canonical identity checks, immutable inserts, exact postchecks, and redacted target reporting.
+`backend/scripts/build_editorial_artifact_seed.py` checks the frozen V1 manifest
+against `frozen_input_contract.json`. V1 records the exact input identities from
+commit `88d6f3446f54b07735e084cbc958c1614b190fab`; it is not regenerated from
+mutable current editorial files. Current Justice source-manifest corrections
+changed the recorded provenance on 45 historical records, so the former dynamic
+builder produced a different candidate even though those immutable database
+rows had not changed. Freezing the original input contract resolves that drift
+truthfully without rewriting any of the 71 artifacts.
+
+`backend/scripts/editorial_artifact_store.py` requires an explicit mode, target,
+batch key, source commit, manifest hash, and migration hash. Apply uses statement
+and lock timeouts, a transaction-scoped advisory lock, canonical identity
+checks, immutable inserts, exact postchecks, and redacted target reporting.
 
 The exporter reads one exact batch, reconstructs deterministic artifacts and relationships, recomputes hashes, and requires equality with the checked-in bundle.
 
@@ -71,4 +94,7 @@ The rollback was not executed. Schema recovery is forward-only: correct a defect
 7. Leave publication unchanged.
 8. Approve and activate an exact version only in a separately authorized milestone.
 
-A later read-path milestone may use approved database artifacts. It must preserve the static/public fail-closed behavior until that cutover is explicitly reviewed.
+The read path now selects only approved and explicitly active exact versions.
+The Foushee activation bundle is a separate deterministic batch and remains
+unapplied until separately authorized. Deployment, approval, persistence, and
+publication remain independent controls.
