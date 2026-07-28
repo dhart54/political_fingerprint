@@ -16,6 +16,7 @@ if str(BACKEND) not in sys.path:
 from app.editorial_artifacts.bundle import build_seed_bundle
 from app.editorial_artifacts.migration import MIGRATION, strip_transaction_wrappers
 from app.editorial_artifacts.publication_activation import (
+    load_activation_bundle,
     load_pre_activation_baseline_manifests,
 )
 from scripts import editorial_artifact_store as store
@@ -126,6 +127,8 @@ def main() -> int:
             conn.execute(
                 strip_transaction_wrappers(MIGRATION.read_text(encoding="utf-8"))
             )
+            original_batch_key = store.BATCH_KEY
+            original_starting_commit = store.STARTING_COMMIT
             for index, bundle in enumerate(bundles):
                 if index == 1:
                     conn.execute(
@@ -141,6 +144,8 @@ def main() -> int:
                         store.resolve_canonical_identities(conn, bundle),
                     )
                 )
+            store.BATCH_KEY = original_batch_key
+            store.STARTING_COMMIT = original_starting_commit
             counts = {
                 "batches": int(
                     conn.execute(
@@ -175,6 +180,13 @@ def main() -> int:
                     f"disposable governed baseline mismatch: "
                     f"{counts}, {baseline_application}"
                 )
+            from scripts.foushee_justice_publication_activation import (
+                _preflight,
+            )
+
+            exact_preflight = _preflight(conn, load_activation_bundle())
+        else:
+            exact_preflight = None
     print(json.dumps({
         "initialized": True,
         "migrations_applied_through": (
@@ -185,6 +197,25 @@ def main() -> int:
         "bundle_count": len(bundles),
         "baseline_application": baseline_application
         if args.seed_foushee_activation_baseline
+        else None,
+        "exact_preflight": {
+            "counts": exact_preflight["counts"],
+            "batch_graphs": [
+                {
+                    "database_batch_id": item["database_batch_id"],
+                    "graph_sha256": item["graph_sha256"],
+                }
+                for item in exact_preflight["governed_baseline"]["batches"]
+            ],
+            "canonical_semantic_hashes": exact_preflight[
+                "governed_baseline"
+            ]["canonical_semantic_hashes"],
+            "fingerprint_sha256": exact_preflight["governed_baseline"][
+                "reconciled_fingerprint"
+            ]["sha256"],
+            "selector": exact_preflight["selector"],
+        }
+        if exact_preflight
         else None,
     }, indent=2))
     return 0

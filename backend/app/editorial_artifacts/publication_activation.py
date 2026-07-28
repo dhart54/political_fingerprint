@@ -21,6 +21,14 @@ from app.editorial_presentations.validation import (
 from app.semantic_ir.pipeline import replay_accepted_reference
 
 from .bundle import build_seed_bundle, canonical_json, semantic_hash
+from .reconciliation import (
+    canonical_artifacts,
+    canonical_batch_graph_sha256,
+    canonical_relationships,
+    canonical_target_absence,
+    compose_pre_activation_fingerprint,
+    validate_pre_activation_fingerprint,
+)
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -56,16 +64,13 @@ LIMITATIONS_SHA256 = (
 RECONCILED_SCHEMA_SHA256 = (
     "8536bd81b66939487aa6ef0815507f945258a7034d9ba0634046d90ce876caba"
 )
-RECONCILED_ARTIFACT_SET_SHA256 = (
-    "df0bdc91e7a8a9527b655a83c1bc085e7269bba4b2c65168fb3c6167830092c4"
-)
-RECONCILED_RELATIONSHIP_SET_SHA256 = (
-    "8cc57ee52040861753e147d35c5ec0680be797b8416b18e9821922a4d913cd48"
-)
 RECONCILED_REGISTRY_SHA256 = (
     "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
 )
-RECONCILED_FINGERPRINT_SHA256 = (
+RECONCILIATION_REPORT_SHA256 = (
+    "fa8ccbf5d0549ed11b75d67b58b6e20e0346c67ac6ecb0b2dd13a712fb3f3a6d"
+)
+PRIOR_RECONCILIATION_FINGERPRINT_SHA256 = (
     "df9aeb1a746785395e28c177785b6f560494661af20073262efb9e1a40648ee7"
 )
 
@@ -172,23 +177,10 @@ def _baseline_batch_contract(
     manifest: dict[str, Any],
     *,
     database_batch_id: int,
-    reconciled_graph_sha256: str,
 ) -> dict[str, Any]:
     artifact_count = len(manifest["artifacts"])
     relationship_count = len(manifest["relationships"])
-    portable_graph = {
-        "batch": {
-            "deterministic_batch_key": manifest["deterministic_batch_key"],
-            "source_commit_sha": manifest["starting_commit"],
-            "manifest_sha256": manifest["manifest_sha256"],
-            "status": "applied",
-            "artifact_count": artifact_count,
-            "relationship_count": relationship_count,
-        },
-        "artifacts": manifest["artifacts"],
-        "relationships": manifest["relationships"],
-    }
-    return {
+    batch = {
         "database_batch_id": database_batch_id,
         "deterministic_batch_key": manifest["deterministic_batch_key"],
         "source_commit_sha": manifest["starting_commit"],
@@ -196,33 +188,86 @@ def _baseline_batch_contract(
         "status": "applied",
         "artifact_count": artifact_count,
         "relationship_count": relationship_count,
-        "artifact_semantic_sha256": semantic_hash(manifest["artifacts"]),
-        "relationship_semantic_sha256": semantic_hash(
-            manifest["relationships"]
+    }
+    return {
+        **batch,
+        "graph_schema_version": "editorial_persistence_batch_graph_v1",
+        "graph_sha256": canonical_batch_graph_sha256(
+            batch,
+            manifest["artifacts"],
+            manifest["relationships"],
         ),
-        "portable_graph_sha256": semantic_hash(portable_graph),
-        "reconciled_graph_sha256": reconciled_graph_sha256,
     }
 
 
 def build_pre_activation_baseline() -> dict[str, Any]:
     historical, commissioning = load_pre_activation_baseline_manifests()
-    artifacts = sorted(
-        historical["artifacts"] + commissioning["artifacts"],
-        key=lambda item: (
-            item["artifact_type"],
-            item["natural_key"],
-            item["artifact_version"],
-        ),
+    artifacts = canonical_artifacts(
+        historical["artifacts"] + commissioning["artifacts"]
     )
-    relationships = sorted(
+    relationships = canonical_relationships(
         historical["relationships"] + commissioning["relationships"],
-        key=lambda item: (
-            item["parent_natural_key"],
-            item["relationship_type"],
-            item["ordinal"],
-            item["child_natural_key"],
-        ),
+        artifacts,
+    )
+    governed_batches = [
+        _baseline_batch_contract(historical, database_batch_id=1),
+        _baseline_batch_contract(commissioning, database_batch_id=8),
+    ]
+    target_absence = canonical_target_absence(
+        artifact_identities=[
+            {
+                "artifact_type": "issue_public_presentation",
+                "natural_key": PRESENTATION_KEY,
+                "artifact_version": 1,
+            },
+            {
+                "artifact_type": "standardization_validation_result",
+                "natural_key": VALIDATION_KEY,
+                "artifact_version": 1,
+            },
+            {
+                "artifact_type": "source_manifest",
+                "natural_key": SOURCE_KEY,
+                "artifact_version": 1,
+            },
+        ],
+        active_content_sha256=ACTIVE_ARTIFACT_SHA256,
+        inactive_content_sha256=INACTIVE_ARTIFACT_SHA256,
+        activation_batch_key=BATCH_KEY,
+        registry_primary_key={
+            "member_bioguide_id": MEMBER_ID,
+            "issue_id": ISSUE_ID,
+        },
+        artifact_rows=[],
+        activation_batch_rows=[],
+        registry_rows=[],
+        partial_activation_relationships=[],
+    )
+    fingerprint_batches = [
+        {
+            key: batch[key]
+            for key in (
+                "database_batch_id",
+                "deterministic_batch_key",
+                "source_commit_sha",
+                "manifest_sha256",
+                "artifact_count",
+                "relationship_count",
+                "graph_sha256",
+            )
+        }
+        for batch in governed_batches
+    ]
+    fingerprint = compose_pre_activation_fingerprint(
+        schema_object_sha256=RECONCILED_SCHEMA_SHA256,
+        batches=fingerprint_batches,
+        artifact_count=len(artifacts),
+        artifact_set_sha256=semantic_hash(artifacts),
+        relationship_count=len(relationships),
+        relationship_set_sha256=semantic_hash(relationships),
+        registry_count=0,
+        registry_sha256=RECONCILED_REGISTRY_SHA256,
+        target_absence=target_absence,
     )
     return {
         "schema_version": "editorial_publication_pre_activation_baseline_v1",
@@ -232,45 +277,21 @@ def build_pre_activation_baseline() -> dict[str, Any]:
             "relationships": 155,
             "publication_registry": 0,
         },
-        "governed_batches": [
-            _baseline_batch_contract(
-                historical,
-                database_batch_id=1,
-                reconciled_graph_sha256=(
-                    "417f715860554764376f58786444f8e8f37a3709dbb83eefa299a97d15713adb"
-                ),
-            ),
-            _baseline_batch_contract(
-                commissioning,
-                database_batch_id=8,
-                reconciled_graph_sha256=(
-                    "e84b2f1cbc8d5f0a9d887d213be51098f2492af9449ff30f509497e32301e864"
-                ),
-            ),
-        ],
-        "portable_semantic_hashes": {
+        "governed_batches": governed_batches,
+        "canonical_semantic_hashes": {
             "artifacts_sha256": semantic_hash(artifacts),
             "relationships_sha256": semantic_hash(relationships),
-        },
-        "reconciled_production_fingerprint": {
-            "schema_object_sha256": RECONCILED_SCHEMA_SHA256,
-            "artifact_set_sha256": RECONCILED_ARTIFACT_SET_SHA256,
-            "relationship_set_sha256": RECONCILED_RELATIONSHIP_SET_SHA256,
             "registry_sha256": RECONCILED_REGISTRY_SHA256,
-            "fingerprint_sha256": RECONCILED_FINGERPRINT_SHA256,
         },
-        "target_absence": {
-            "natural_keys": [PRESENTATION_KEY, SOURCE_KEY, VALIDATION_KEY],
-            "content_sha256": [
-                ACTIVE_ARTIFACT_SHA256,
-                INACTIVE_ARTIFACT_SHA256,
-            ],
-            "activation_batch_key": BATCH_KEY,
-            "registry_primary_key": {
-                "member_bioguide_id": MEMBER_ID,
-                "issue_id": ISSUE_ID,
-            },
+        "reconciliation_evidence": {
+            "report_sha256": RECONCILIATION_REPORT_SHA256,
+            "prior_environment_bound_fingerprint_sha256": (
+                PRIOR_RECONCILIATION_FINGERPRINT_SHA256
+            ),
+            "normalization_resolution": "canonical_semantic_normalization_v1",
         },
+        "target_absence": target_absence,
+        "reconciled_fingerprint": fingerprint,
     }
 
 
@@ -664,6 +685,9 @@ def validate_activation_bundle(bundle: dict[str, Any]) -> None:
         raise ValueError("activation bundle count contract mismatch")
     if bundle["pre_activation_baseline"] != build_pre_activation_baseline():
         raise ValueError("pre-activation governed baseline mismatch")
+    validate_pre_activation_fingerprint(
+        bundle["pre_activation_baseline"]["reconciled_fingerprint"]
+    )
     artifacts = bundle["artifacts"]
     if len(artifacts) != 3 or {
         item["artifact_type"] for item in artifacts
