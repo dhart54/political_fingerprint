@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "proof_id", "created_at", "bundle_id", "bundle_sha256", "deployed_commit", "database_fingerprint", "preflight_report_id", "preflight_report_digest", "preflight_report", "snapshot", "source_inventory", "restored_inventory", "restore_receipt", "verification", "proof_sha256"],
+  "properties": {
+    "schema_version": {"const": "editorial_publication_backup_proof_v1"},
+    "proof_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "bundle_id": {"type": "string", "minLength": 1},
+    "bundle_sha256": {"$ref": "#/$defs/sha256"},
+    "deployed_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "database_fingerprint": {"$ref": "#/$defs/sha256"},
+    "preflight_report_id": {"type": "string", "minLength": 1},
+    "preflight_report_digest": {"$ref": "#/$defs/sha256"},
+    "preflight_report": {"$ref": "#/$defs/file"},
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "byte_size", "sha256", "format", "created_at", "tool", "tool_version"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "format": {"const": "postgresql_custom_archive"},
+        "created_at": {"type": "string", "format": "date-time"},
+        "tool": {"const": "pg_dump"},
+        "tool_version": {"type": "string", "minLength": 1}
+      }
+    },
+    "source_inventory": {"$ref": "#/$defs/file"},
+    "restored_inventory": {"$ref": "#/$defs/file"},
+    "restore_receipt": {"$ref": "#/$defs/file"},
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "tool_version", "source_commit", "pg_restore_version"],
+      "properties": {
+        "tool": {"const": "foushee_justice_publication_activation.py"},
+        "tool_version": {"const": "editorial_publication_activation_operator_v1"},
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "pg_restore_version": {"type": "string", "minLength": 1}
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "byte_size", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

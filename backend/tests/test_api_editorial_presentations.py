@@ -224,14 +224,23 @@ def test_repository_selector_accepts_only_persistence_valid_gold_benchmark() -> 
             production_eligible INTEGER NOT NULL,
             schema_version TEXT NOT NULL,
             artifact_version INTEGER NOT NULL,
-            natural_key TEXT NOT NULL
+            natural_key TEXT NOT NULL,
+            artifact_type TEXT NOT NULL
         );
         CREATE TABLE editorial_publication_registry (
             artifact_id INTEGER NOT NULL,
             member_bioguide_id TEXT NOT NULL,
             issue_id TEXT NOT NULL,
             publicly_active INTEGER NOT NULL,
-            deactivated_at TEXT
+            deactivated_at TEXT,
+            publication_metadata_jsonb TEXT NOT NULL
+        );
+        CREATE TABLE editorial_artifact_relationships (
+            parent_artifact_id INTEGER NOT NULL,
+            child_artifact_id INTEGER NOT NULL,
+            relationship_type TEXT NOT NULL,
+            ordinal INTEGER NOT NULL,
+            metadata_jsonb TEXT NOT NULL
         );
         """
     )
@@ -248,6 +257,7 @@ def test_repository_selector_accepts_only_persistence_valid_gold_benchmark() -> 
             artifact["schema_version"],
             artifact["artifact_identity"]["artifact_version"],
             artifact["artifact_identity"]["artifact_id"],
+            "issue_public_presentation",
         ),
         (
             2,
@@ -259,20 +269,49 @@ def test_repository_selector_accepts_only_persistence_valid_gold_benchmark() -> 
             artifact["schema_version"],
             artifact["artifact_identity"]["artifact_version"],
             artifact["artifact_identity"]["artifact_id"],
+            "issue_public_presentation",
         ),
+        (3, "{}", "a" * 64, "human_approved", "not_promoted", 0,
+         "editorial_publication_validation_v1", 1, "validation-key",
+         "standardization_validation_result"),
+        (4, "{}", "b" * 64, "human_approved", "not_promoted", 0,
+         "editorial_publication_source_manifest_v1", 1, "source-key",
+         "source_manifest"),
     ]
     connection.executemany(
         """
-        INSERT INTO editorial_artifact_versions VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        INSERT INTO editorial_artifact_versions VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         rows,
+    )
+    metadata = json.dumps(
+        {
+            "presentation_natural_key": artifact["artifact_identity"]["artifact_id"],
+            "presentation_artifact_version": 1,
+            "active_artifact_sha256": artifact_digest(artifact),
+            "validation_natural_key": "validation-key",
+            "validation_artifact_version": 1,
+            "validation_content_sha256": "a" * 64,
+            "source_manifest_natural_key": "source-key",
+            "source_manifest_artifact_version": 1,
+            "source_manifest_content_sha256": "b" * 64,
+            "relationship_metadata": {"activation_bundle_id": "bundle"},
+        },
+        separators=(",", ":"),
     )
     connection.executemany(
         """
         INSERT INTO editorial_publication_registry
-        VALUES (?, 'F000477', 'JUSTICE_PUBLIC_SAFETY', 1, NULL)
+        VALUES (?, 'F000477', 'JUSTICE_PUBLIC_SAFETY', 1, NULL, ?)
         """,
-        [(1,), (2,)],
+        [(1, metadata), (2, metadata)],
+    )
+    connection.executemany(
+        "INSERT INTO editorial_artifact_relationships VALUES (?, ?, ?, 0, ?)",
+        [
+            (1, 3, "has_validation", json.dumps({"activation_bundle_id": "bundle"}, separators=(",", ":"))),
+            (1, 4, "uses_source_manifest", json.dumps({"activation_bundle_id": "bundle"}, separators=(",", ":"))),
+        ],
     )
     selected = EditorialArtifactRepository(connection).publication_selector()
     connection.close()

@@ -251,6 +251,7 @@ def build_activation_bundle() -> dict[str, Any]:
             item["artifact_version"],
         )
     )
+    artifact_by_key = {item["natural_key"]: item for item in artifacts}
     relationships = [
         {
             "parent_natural_key": PRESENTATION_KEY,
@@ -321,8 +322,23 @@ def build_activation_bundle() -> dict[str, Any]:
                 "approval_subject_sha256": APPROVAL_SUBJECT_SHA256,
                 "presentation_content_sha256": PRESENTATION_CONTENT_SHA256,
                 "active_artifact_sha256": ACTIVE_ARTIFACT_SHA256,
+                "presentation_natural_key": PRESENTATION_KEY,
+                "presentation_artifact_version": 1,
                 "validation_natural_key": VALIDATION_KEY,
+                "validation_artifact_version": artifact_by_key[VALIDATION_KEY][
+                    "artifact_version"
+                ],
+                "validation_content_sha256": artifact_by_key[VALIDATION_KEY][
+                    "content_sha256"
+                ],
                 "source_manifest_natural_key": SOURCE_KEY,
+                "source_manifest_artifact_version": artifact_by_key[SOURCE_KEY][
+                    "artifact_version"
+                ],
+                "source_manifest_content_sha256": artifact_by_key[SOURCE_KEY][
+                    "content_sha256"
+                ],
+                "relationship_metadata": {"activation_bundle_id": BUNDLE_ID},
             },
         },
         "expected_counts": {

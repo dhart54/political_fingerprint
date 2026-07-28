@@ -16,32 +16,46 @@ reads PostgreSQL on every request and the frontend request uses `no-store`.
 1. Deploy a commit containing source commit
    `bae70a3623b66a68cda40ac537dc4a1740e87f92` and verify `/health` reports its
    exact commit SHA.
-2. Run `verify-bundle`.
-3. Run read-only `preflight` against the exact target. It must prove schema
+2. Run `verify-bundle` and record the exact bundle digest.
+3. Run read-only `preflight` with the explicit bundle ID, deployed commit, and
+   `--report-path` against the exact target. It must prove schema
    `0016`, the frozen historical 71/95 seed, counts `1/71/95/0`, and absence of
-   all activation identities.
-4. Create a custom-format `pg_dump`, calculate its SHA-256, restore it into a
-   fresh disposable PostgreSQL database, and prove the restored schema, counts,
-   and historical seed. Record the result using the backup proof contract in
-   `foushee_justice_public_safety_119_backup_plan_v1.json`.
+   all activation identities. The report binds those results to the database
+   fingerprint, bundle digest, and deployed backend identity.
+4. Run `prepare-backup` with that report and a fresh empty disposable database.
+   The tool creates the custom-format `pg_dump`, inventories the source, restores
+   the archive, inventories the restored database, proves semantic equality and
+   the `receipts_only` selector state, and emits a schema-validated evidence
+   chain. Operator-authored booleans are not accepted as backup evidence.
 5. Obtain explicit publication authorization naming the bundle ID and digest.
 6. Run `apply` with the exact bundle ID, bundle digest, deployed commit, backup
-   proof, target, and production confirmation. The tool repeats preflight under
-   an advisory lock and performs all five inserts in one transaction.
+   proof, preflight report, target, and production confirmation. The tool repeats
+   and binds preflight under an advisory lock and performs all seven row inserts
+   (one batch, three artifacts, two relationships, and one registry row) in one
+   transaction.
 7. Run `postcheck`, then public API and frontend smoke checks. Any failed gate
-   requires immediate exact rollback.
+   before commit aborts the transaction. After commit, immediately invoke exact
+   database-only rollback on any blocking smoke failure. A deployment outage or
+   unknown backend health must not prevent that rollback path.
 
 The activation tool is:
 
 ```powershell
 python backend/scripts/foushee_justice_publication_activation.py verify-bundle
-python backend/scripts/foushee_justice_publication_activation.py preflight --target production
+python backend/scripts/foushee_justice_publication_activation.py preflight --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --deployed-commit <40-char-sha> --report-path <evidence-dir>/preflight-report.json
+python backend/scripts/foushee_justice_publication_activation.py prepare-backup --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --deployed-commit <40-char-sha> --preflight-report <evidence-dir>/preflight-report.json --restore-database-url <fresh-disposable-url> --evidence-dir <evidence-dir>
+python backend/scripts/foushee_justice_publication_activation.py apply --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --confirm-bundle-digest f03a5a8488103e7b06c65547f31d236098a048b0d317623f9277ca9ddb1e21f2 --deployed-commit <40-char-sha> --preflight-report <evidence-dir>/preflight-report.json --backup-proof <evidence-dir>/backup-proof.json --confirm-production-activation
+python backend/scripts/foushee_justice_publication_activation.py rollback --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --confirm-bundle-digest f03a5a8488103e7b06c65547f31d236098a048b0d317623f9277ca9ddb1e21f2 --confirm-rollback-token ROLLBACK:foushee_justice_public_safety_119_publication_activation_v1:f03a5a8488103e7b06c65547f31d236098a048b0d317623f9277ca9ddb1e21f2 --confirm-batch-id <batch-id> --confirm-artifact-ids <ordered-ids> --confirm-production-rollback
 ```
 
-Write modes additionally require `--bundle-sha256`, `--deployed-commit`,
-`--backup-proof`, and an explicit production confirmation flag. Rollback also
-requires the exact live batch ID and the comma-separated ordered artifact IDs
-reported by postcheck.
+Every database-facing mode requires the explicit bundle ID. `preflight` rejects
+an absent, malformed, incompatible, or placeholder deployed commit before
+opening the database. `apply` additionally requires
+`--confirm-bundle-digest`, the same deployed commit, the successful preflight
+report, the tool-generated backup proof, and an explicit production confirmation
+flag. Rollback requires `--confirm-bundle-digest`, the exact rollback token, the
+live batch ID, the comma-separated ordered artifact IDs reported by postcheck,
+and the production rollback flag; deployed health is deliberately not required.
 
 ## Public contract and thresholds
 
@@ -56,15 +70,31 @@ After activation:
 - Foushee `scope=118`: `receipts_only`;
 - every other member and every other issue: unchanged.
 
-The smoke gate fails on any non-200 response, timeout, schema mismatch, wrong
-tier, missing reviewed scope, receipt mismatch, digest mismatch, leak to scope
-118/another member, or unexpected change to another issue. There is zero
-tolerance for these failures.
+Rollback immediately after any semantic or identity failure: member, issue, or
+scope mismatch; artifact or content digest mismatch; wording that differs from
+the approved presentation; a missing or wrong approval receipt; validation or
+source graph mismatch; selection of the wrong artifact; analytical copy exposed
+for another member or issue; or a supporting-vote or provenance identity
+failure.
+
+Treat availability separately. For an API timeout, non-200 response, or frontend
+unavailability, make two confirmed attempts within 60 seconds and record both
+timestamps and responses. Roll back after the second confirmed failure. One
+transient availability failure alone does not meet the rollback threshold.
+
+Publication may remain active for a documented cosmetic-only defect with an
+assigned immediate follow-up only when API semantics, every identity and digest,
+exact approved wording, receipt/source resolution, and non-blocking
+accessibility all pass. Examples are minor spacing, a non-semantic color
+variation, or harmless line wrapping. Wrong wording, hidden limitations, broken
+evidence navigation, cross-member exposure, and any accessibility blocker are
+semantic or functional failures and never qualify for this exception.
 
 ## Rollback
 
 Rollback validates the exact active artifact, receipt, registry primary key,
-batch ID, artifact IDs, and bundle digests under the same advisory lock. In one
+batch ID, artifact IDs, bundle digest, and explicit rollback token under the
+same advisory lock. In one
 transaction it deletes the one registry row, the two bundle relationships, the
 three immutable artifact rows using the exact rollback session setting, and the
 activation batch. It then proves counts `1/71/95/0` and exact historical seed

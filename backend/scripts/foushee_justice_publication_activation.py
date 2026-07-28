@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from urllib.request import urlopen
@@ -41,6 +44,15 @@ from scripts.editorial_artifact_store import (
 
 LOCK_KEY = f"political_fingerprint:{BUNDLE_ID}"
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
+EVIDENCE_SCHEMAS = {
+    name: ROOT / "docs" / f"{name}.schema.json"
+    for name in (
+        "editorial_publication_preflight_report_v1",
+        "editorial_publication_backup_inventory_v1",
+        "editorial_publication_restore_receipt_v1",
+        "editorial_publication_backup_proof_v1",
+    )
+}
 
 
 def _counts(conn: Any) -> dict[str, int]:
@@ -84,31 +96,559 @@ def _exact_deployed_commit(actual: str) -> dict[str, Any]:
         )
     return {
         "required_ancestor": SOURCE_COMMIT,
-        "deployed_commit": actual,
+        "supplied_identity": actual,
         "compatible": True,
+        "verification_method": "git_merge_base_is_ancestor",
     }
 
 
-def _verify_backup_proof(path: Path, bundle: dict[str, Any]) -> dict[str, Any]:
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _digest_body(value: dict[str, Any], digest_key: str) -> str:
+    body = {key: item for key, item in value.items() if key != digest_key}
+    return semantic_hash(body)
+
+
+def _file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as source:
+        for block in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def _file_record(path: Path, *, relative_to: Path) -> dict[str, Any]:
+    return {
+        "path": path.resolve().relative_to(relative_to.resolve()).as_posix(),
+        "byte_size": path.stat().st_size,
+        "sha256": _file_sha256(path),
+    }
+
+
+def _validate_evidence(value: dict[str, Any], schema_name: str) -> None:
+    from jsonschema import Draft202012Validator, FormatChecker
+    from referencing import Registry, Resource
+
+    schema = json.loads(EVIDENCE_SCHEMAS[schema_name].read_text(encoding="utf-8"))
+    registry = Registry()
+    for schema_path in EVIDENCE_SCHEMAS.values():
+        resource_schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        registry = registry.with_resource(
+            schema_path.name, Resource.from_contents(resource_schema)
+        )
+    errors = sorted(
+        Draft202012Validator(
+            schema, format_checker=FormatChecker(), registry=registry
+        ).iter_errors(value),
+        key=lambda error: list(error.absolute_path),
+    )
+    if errors:
+        raise StoreSafetyError(
+            f"{schema_name} schema mismatch: {errors[0].message}"
+        )
+
+
+def _load_evidence(path: Path, schema_name: str, digest_key: str) -> dict[str, Any]:
     try:
-        proof = json.loads(path.read_text(encoding="utf-8"))
+        value = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
-        raise StoreSafetyError("backup proof is missing or invalid") from exc
-    expected = {
-        "schema_version": "editorial_publication_backup_proof_v1",
+        raise StoreSafetyError(f"{schema_name} is missing or invalid") from exc
+    _validate_evidence(value, schema_name)
+    if not hashlib.sha256(
+        json.dumps(
+            {key: item for key, item in value.items() if key != digest_key},
+            sort_keys=True,
+            separators=(",", ":"),
+            ensure_ascii=False,
+        ).encode("utf-8")
+    ).hexdigest() == value[digest_key]:
+        raise StoreSafetyError(f"{schema_name} canonical digest mismatch")
+    return value
+
+
+def _database_fingerprint(conn: Any) -> str:
+    row = conn.execute(
+        """SELECT current_database() AS database,
+                  current_setting('server_version_num') AS server_version_num,
+                  current_user AS database_user"""
+    ).fetchone()
+    return semantic_hash(dict(row))
+
+
+def _schema_semantics(schema: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "exact_columns": schema["exact_columns"],
+        "triggers_exact": schema["triggers_exact"],
+        "functions_exact": schema["functions_exact"],
+        "required_indexes_present": schema["required_indexes_present"],
+        "required_constraint_classes_present": schema[
+            "required_constraint_classes_present"
+        ],
+        "columns": schema["columns"],
+        "triggers": schema["triggers"],
+        "functions": schema["functions"],
+        "indexes": schema["indexes"],
+        "constraint_classes": sorted(
+            {
+                (item["table_name"], item["constraint_type"])
+                for item in schema["constraints"]
+            }
+        ),
+    }
+
+
+def _inventory(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
+    schema = live_schema_contract(conn)
+    preflight = _preflight(conn, bundle)
+    exported = export_bundle(
+        conn,
+        __import__(
+            "app.editorial_artifacts.bundle",
+            fromlist=["build_seed_bundle"],
+        ).build_seed_bundle(),
+    )
+    artifact_keys = [item["natural_key"] for item in bundle["artifacts"]]
+    target_queries = {
+        "artifact_versions": [
+            dict(row)
+            for row in conn.execute(
+                """SELECT natural_key, artifact_version, content_sha256
+                   FROM editorial_artifact_versions
+                   WHERE natural_key = ANY(%s)
+                   ORDER BY natural_key, artifact_version""",
+                (artifact_keys,),
+            ).fetchall()
+        ],
+        "activation_batch": [
+            dict(row)
+            for row in conn.execute(
+                """SELECT deterministic_batch_key, manifest_sha256
+                   FROM editorial_artifact_batches
+                   WHERE deterministic_batch_key = %s""",
+                (BATCH_KEY,),
+            ).fetchall()
+        ],
+        "publication_registry": [
+            dict(row)
+            for row in conn.execute(
+                """SELECT member_bioguide_id, issue_id, artifact_id
+                   FROM editorial_publication_registry
+                   WHERE member_bioguide_id = %s AND issue_id = %s""",
+                (MEMBER_ID, ISSUE_ID),
+            ).fetchall()
+        ],
+        "relationships": [
+            dict(row)
+            for row in conn.execute(
+                """SELECT parent.natural_key AS parent_natural_key,
+                          child.natural_key AS child_natural_key,
+                          rel.relationship_type
+                   FROM editorial_artifact_relationships rel
+                   JOIN editorial_artifact_versions parent
+                     ON parent.artifact_id = rel.parent_artifact_id
+                   JOIN editorial_artifact_versions child
+                     ON child.artifact_id = rel.child_artifact_id
+                   WHERE parent.natural_key = %s
+                   ORDER BY rel.relationship_type, child.natural_key""",
+                (PRESENTATION_KEY,),
+            ).fetchall()
+        ],
+    }
+    value = {
+        "schema_version": "editorial_publication_backup_inventory_v1",
+        "captured_at": _utc_now(),
         "bundle_id": BUNDLE_ID,
         "bundle_sha256": bundle["bundle_sha256"],
-        "database_snapshot_created": True,
-        "restore_test_passed": True,
-        "pre_activation_counts": bundle["expected_counts"]["before"],
+        "preflight_binding": None,
+        "database_fingerprint": _database_fingerprint(conn),
+        "counts": preflight["counts"],
+        "historical_seed": preflight["historical_seed"],
+        "schema_contract": schema,
+        "security": preflight["security"],
+        "target_absent": preflight["target_absent"],
+        "target_queries": target_queries,
+        "semantic_hashes": {
+            "historical_export_sha256": semantic_hash(exported),
+            "schema_contract_sha256": semantic_hash(_schema_semantics(schema)),
+        },
     }
-    for key, value in expected.items():
-        if proof.get(key) != value:
-            raise StoreSafetyError(f"backup proof mismatch: {key}")
-    snapshot_sha = proof.get("snapshot_sha256")
-    if not isinstance(snapshot_sha, str) or not re.fullmatch(r"[0-9a-f]{64}", snapshot_sha):
-        raise StoreSafetyError("backup proof lacks an exact snapshot digest")
-    return {key: proof[key] for key in (*expected, "snapshot_sha256")}
+    value["inventory_sha256"] = _digest_body(value, "inventory_sha256")
+    _validate_evidence(value, value["schema_version"])
+    return value
+
+
+def _inventory_semantics(value: dict[str, Any]) -> dict[str, Any]:
+    semantics = {
+        key: value[key]
+        for key in (
+            "bundle_id",
+            "bundle_sha256",
+            "preflight_binding",
+            "counts",
+            "historical_seed",
+            "security",
+            "target_absent",
+            "target_queries",
+            "semantic_hashes",
+        )
+    }
+    semantics["schema_contract"] = _schema_semantics(value["schema_contract"])
+    return semantics
+
+
+def _bind_inventory(
+    inventory: dict[str, Any], report: dict[str, Any]
+) -> dict[str, Any]:
+    bound = json.loads(json.dumps(inventory))
+    bound["preflight_binding"] = {
+        "report_id": report["report_id"],
+        "report_sha256": report["report_sha256"],
+    }
+    bound["inventory_sha256"] = _digest_body(bound, "inventory_sha256")
+    _validate_evidence(bound, bound["schema_version"])
+    return bound
+
+
+def _write_json(path: Path, value: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+
+def _preflight_report(
+    conn: Any,
+    bundle: dict[str, Any],
+    deployed_commit: str,
+) -> dict[str, Any]:
+    inventory = _inventory(conn, bundle)
+    value = {
+        "schema_version": "editorial_publication_preflight_report_v1",
+        "report_id": f"{BUNDLE_ID}:{inventory['database_fingerprint']}:{deployed_commit}",
+        "created_at": _utc_now(),
+        "bundle_id": BUNDLE_ID,
+        "bundle_sha256": bundle["bundle_sha256"],
+        "deployment_compatibility": _exact_deployed_commit(deployed_commit),
+        "database_fingerprint": inventory["database_fingerprint"],
+        "inventory": inventory,
+    }
+    value["report_sha256"] = _digest_body(value, "report_sha256")
+    _validate_evidence(value, value["schema_version"])
+    return value
+
+
+def _verify_preflight_report(
+    path: Path,
+    bundle: dict[str, Any],
+    deployed_commit: str,
+    conn: Any | None = None,
+) -> dict[str, Any]:
+    report = _load_evidence(
+        path, "editorial_publication_preflight_report_v1", "report_sha256"
+    )
+    _validate_evidence(
+        report["inventory"], "editorial_publication_backup_inventory_v1"
+    )
+    if (
+        _digest_body(report["inventory"], "inventory_sha256")
+        != report["inventory"]["inventory_sha256"]
+    ):
+        raise StoreSafetyError("preflight inventory canonical digest mismatch")
+    if (
+        report["bundle_id"] != BUNDLE_ID
+        or report["bundle_sha256"] != bundle["bundle_sha256"]
+        or report["deployment_compatibility"]["supplied_identity"]
+        != deployed_commit
+    ):
+        raise StoreSafetyError("preflight report identity mismatch")
+    if conn is not None:
+        current = _inventory(conn, bundle)
+        if (
+            report["database_fingerprint"] != current["database_fingerprint"]
+            or _inventory_semantics(report["inventory"])
+            != _inventory_semantics(current)
+        ):
+            raise StoreSafetyError("preflight report is stale or targets another database")
+    return report
+
+
+def _verify_backup_proof(
+    path: Path,
+    bundle: dict[str, Any],
+    deployed_commit: str,
+    preflight_report_path: Path,
+) -> dict[str, Any]:
+    proof = _load_evidence(
+        path, "editorial_publication_backup_proof_v1", "proof_sha256"
+    )
+    if (
+        proof["bundle_id"] != BUNDLE_ID
+        or proof["bundle_sha256"] != bundle["bundle_sha256"]
+        or proof["deployed_commit"] != deployed_commit
+    ):
+        raise StoreSafetyError("backup proof identity mismatch")
+    created_at = datetime.fromisoformat(proof["created_at"].replace("Z", "+00:00"))
+    age = (datetime.now(timezone.utc) - created_at).total_seconds()
+    if age < -300 or age > 14400:
+        raise StoreSafetyError("backup proof is stale or has a future timestamp")
+    base = path.resolve().parent
+    loaded: dict[str, dict[str, Any]] = {}
+    for name, schema_name, digest_key in (
+        ("preflight_report", "editorial_publication_preflight_report_v1", "report_sha256"),
+        ("source_inventory", "editorial_publication_backup_inventory_v1", "inventory_sha256"),
+        ("restored_inventory", "editorial_publication_backup_inventory_v1", "inventory_sha256"),
+        ("restore_receipt", "editorial_publication_restore_receipt_v1", "receipt_sha256"),
+    ):
+        record = proof[name]
+        evidence_path = (base / record["path"]).resolve()
+        if base not in evidence_path.parents:
+            raise StoreSafetyError("backup evidence path escapes its evidence directory")
+        if (
+            not evidence_path.is_file()
+            or evidence_path.stat().st_size != record["byte_size"]
+            or _file_sha256(evidence_path) != record["sha256"]
+        ):
+            raise StoreSafetyError(f"backup evidence file mismatch: {name}")
+        loaded[name] = _load_evidence(evidence_path, schema_name, digest_key)
+    snapshot_path = (base / proof["snapshot"]["path"]).resolve()
+    snapshot = proof["snapshot"]
+    if (
+        base not in snapshot_path.parents
+        or not snapshot_path.is_file()
+        or snapshot_path.stat().st_size != snapshot["byte_size"]
+        or _file_sha256(snapshot_path) != snapshot["sha256"]
+    ):
+        raise StoreSafetyError("backup snapshot file mismatch")
+    pg_restore = shutil.which("pg_restore")
+    if not pg_restore:
+        raise StoreSafetyError("pg_restore is required to verify the snapshot archive")
+    archive = subprocess.run(
+        [pg_restore, "--list", str(snapshot_path)],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if archive.returncode != 0 or "editorial_artifact_batches" not in archive.stdout:
+        raise StoreSafetyError("snapshot is not a valid required PostgreSQL archive")
+    report = loaded["preflight_report"]
+    source = loaded["source_inventory"]
+    restored = loaded["restored_inventory"]
+    restore = loaded["restore_receipt"]
+    expected_report = preflight_report_path.resolve()
+    actual_report = (base / proof["preflight_report"]["path"]).resolve()
+    if actual_report != expected_report:
+        raise StoreSafetyError("backup proof does not bind the supplied preflight report")
+    if (
+        proof["preflight_report_id"] != report["report_id"]
+        or proof["preflight_report_digest"] != report["report_sha256"]
+        or proof["verification"]["source_commit"] != SOURCE_COMMIT
+        or report["database_fingerprint"] != proof["database_fingerprint"]
+        or source["database_fingerprint"] != proof["database_fingerprint"]
+        or source["preflight_binding"]
+        != {
+            "report_id": report["report_id"],
+            "report_sha256": report["report_sha256"],
+        }
+        or restored["preflight_binding"] != source["preflight_binding"]
+        or restore["snapshot_sha256"] != snapshot["sha256"]
+        or restore["source_inventory_sha256"] != source["inventory_sha256"]
+        or restore["restored_inventory_sha256"] != restored["inventory_sha256"]
+        or restore["source_counts"] != source["counts"]
+        or restore["restored_counts"] != restored["counts"]
+        or restore["source_semantic_hashes"] != source["semantic_hashes"]
+        or restore["restored_semantic_hashes"] != restored["semantic_hashes"]
+        or restore["source_schema_object_digest"]
+        != source["semantic_hashes"]["schema_contract_sha256"]
+        or restore["restored_schema_object_digest"]
+        != restored["semantic_hashes"]["schema_contract_sha256"]
+        or _inventory_semantics(source) != _inventory_semantics(restored)
+        or restore["semantic_equality"] is not True
+        or restore["selector_state"] != "receipts_only"
+    ):
+        raise StoreSafetyError("backup evidence chain mismatch")
+    return {
+        "proof_sha256": proof["proof_sha256"],
+        "snapshot_sha256": snapshot["sha256"],
+        "preflight_report_sha256": report["report_sha256"],
+        "restore_receipt_sha256": restore["receipt_sha256"],
+        "verified": True,
+    }
+
+
+def _prepare_backup(
+    source_database_url: str,
+    restore_database_url: str,
+    evidence_dir: Path,
+    bundle: dict[str, Any],
+    deployed_commit: str,
+    preflight_report_path: Path,
+) -> Path:
+    pg_dump = shutil.which("pg_dump")
+    pg_restore = shutil.which("pg_restore")
+    if not pg_dump or not pg_restore:
+        raise StoreSafetyError("pg_dump and pg_restore are required")
+    evidence_dir = evidence_dir.resolve()
+    evidence_dir.mkdir(parents=True, exist_ok=True)
+    report = _verify_preflight_report(
+        preflight_report_path, bundle, deployed_commit
+    )
+    with _connect(source_database_url, autocommit=True) as source_conn:
+        source_conn.execute("SET default_transaction_read_only = on")
+        with source_conn.transaction():
+            source_conn.execute("SET TRANSACTION READ ONLY")
+            source_inventory = _inventory(source_conn, bundle)
+    if (
+        source_inventory["database_fingerprint"] != report["database_fingerprint"]
+        or _inventory_semantics(source_inventory)
+        != _inventory_semantics(report["inventory"])
+    ):
+        raise StoreSafetyError("backup source differs from the successful preflight")
+    source_inventory = _bind_inventory(source_inventory, report)
+    source_path = evidence_dir / "source-inventory.json"
+    report_path = evidence_dir / "preflight-report.json"
+    restored_path = evidence_dir / "restored-inventory.json"
+    receipt_path = evidence_dir / "restore-receipt.json"
+    snapshot_path = evidence_dir / "pre-activation.dump"
+    proof_path = evidence_dir / "backup-proof.json"
+    _write_json(report_path, report)
+    _write_json(source_path, source_inventory)
+    dump = subprocess.run(
+        [
+            pg_dump,
+            "--format=custom",
+            "--no-owner",
+            "--no-privileges",
+            "--file",
+            str(snapshot_path),
+            source_database_url,
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if dump.returncode != 0:
+        raise StoreSafetyError(f"pg_dump failed: {dump.stderr.strip()}")
+    restore = subprocess.run(
+        [
+            pg_restore,
+            "--exit-on-error",
+            "--no-owner",
+            "--no-privileges",
+            "--dbname",
+            restore_database_url,
+            str(snapshot_path),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if restore.returncode != 0:
+        raise StoreSafetyError(f"pg_restore failed: {restore.stderr.strip()}")
+    with _connect(restore_database_url, autocommit=True) as restored_conn:
+        restored_conn.execute("SET default_transaction_read_only = on")
+        with restored_conn.transaction():
+            restored_conn.execute("SET TRANSACTION READ ONLY")
+            restored_inventory = _inventory(restored_conn, bundle)
+            restored_rows = EditorialArtifactRepository(
+                restored_conn
+            ).publication_selector()
+            if restored_rows:
+                raise StoreSafetyError(
+                    "restored pre-activation selector is not receipts-only"
+                )
+            for scope in ("119", "all", "118"):
+                response = select_public_presentations(
+                    restored_rows,
+                    legislator_id="leg_valerie_p_foushee",
+                    member_bioguide_id=MEMBER_ID,
+                    scope=scope,
+                )
+                if any(
+                    item["tier"] != "receipts_only"
+                    for item in response["presentations"]
+                ):
+                    raise StoreSafetyError(
+                        "restored pre-activation API contract is not receipts-only"
+                    )
+    restored_inventory = _bind_inventory(restored_inventory, report)
+    if _inventory_semantics(source_inventory) != _inventory_semantics(
+        restored_inventory
+    ):
+        raise StoreSafetyError("restored database differs from the source inventory")
+    _write_json(restored_path, restored_inventory)
+    snapshot_sha256 = _file_sha256(snapshot_path)
+    pg_dump_version = subprocess.run(
+        [pg_dump, "--version"], capture_output=True, text=True, check=True
+    ).stdout.strip()
+    pg_restore_version = subprocess.run(
+        [pg_restore, "--version"], capture_output=True, text=True, check=True
+    ).stdout.strip()
+    receipt = {
+        "schema_version": "editorial_publication_restore_receipt_v1",
+        "restored_at": _utc_now(),
+        "bundle_id": BUNDLE_ID,
+        "bundle_sha256": bundle["bundle_sha256"],
+        "snapshot_sha256": snapshot_sha256,
+        "source_inventory_sha256": source_inventory["inventory_sha256"],
+        "restored_inventory_sha256": restored_inventory["inventory_sha256"],
+        "source_counts": source_inventory["counts"],
+        "restored_counts": restored_inventory["counts"],
+        "source_semantic_hashes": source_inventory["semantic_hashes"],
+        "restored_semantic_hashes": restored_inventory["semantic_hashes"],
+        "source_schema_object_digest": source_inventory["semantic_hashes"][
+            "schema_contract_sha256"
+        ],
+        "restored_schema_object_digest": restored_inventory["semantic_hashes"][
+            "schema_contract_sha256"
+        ],
+        "semantic_equality": True,
+        "selector_state": "receipts_only",
+    }
+    receipt["receipt_sha256"] = _digest_body(receipt, "receipt_sha256")
+    _validate_evidence(receipt, receipt["schema_version"])
+    _write_json(receipt_path, receipt)
+    proof = {
+        "schema_version": "editorial_publication_backup_proof_v1",
+        "proof_id": (
+            f"{BUNDLE_ID}:{report['report_sha256']}:{snapshot_sha256}"
+        ),
+        "created_at": _utc_now(),
+        "bundle_id": BUNDLE_ID,
+        "bundle_sha256": bundle["bundle_sha256"],
+        "deployed_commit": deployed_commit,
+        "database_fingerprint": source_inventory["database_fingerprint"],
+        "preflight_report_id": report["report_id"],
+        "preflight_report_digest": report["report_sha256"],
+        "preflight_report": _file_record(
+            report_path, relative_to=evidence_dir
+        ),
+        "snapshot": {
+            **_file_record(snapshot_path, relative_to=evidence_dir),
+            "format": "postgresql_custom_archive",
+            "created_at": _utc_now(),
+            "tool": "pg_dump",
+            "tool_version": pg_dump_version,
+        },
+        "source_inventory": _file_record(source_path, relative_to=evidence_dir),
+        "restored_inventory": _file_record(restored_path, relative_to=evidence_dir),
+        "restore_receipt": _file_record(receipt_path, relative_to=evidence_dir),
+        "verification": {
+            "tool": "foushee_justice_publication_activation.py",
+            "tool_version": "editorial_publication_activation_operator_v1",
+            "source_commit": SOURCE_COMMIT,
+            "pg_restore_version": pg_restore_version,
+        },
+    }
+    proof["proof_sha256"] = _digest_body(proof, "proof_sha256")
+    _validate_evidence(proof, proof["schema_version"])
+    _write_json(proof_path, proof)
+    _verify_backup_proof(
+        proof_path, bundle, deployed_commit, report_path
+    )
+    return proof_path
 
 
 def _historical_seed_exact(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
@@ -229,11 +769,13 @@ def _row_for_selector(conn: Any) -> dict[str, Any]:
 
 
 def _selector_check(conn: Any) -> dict[str, Any]:
-    row = _row_for_selector(conn)
+    rows = EditorialArtifactRepository(conn).publication_selector()
+    if len(rows) != 1:
+        raise StoreSafetyError("runtime selector relationship graph failed")
     scopes: dict[str, str] = {}
     for scope in ("119", "all", "118"):
         response = select_public_presentations(
-            [row],
+            rows,
             legislator_id="leg_valerie_p_foushee",
             member_bioguide_id=MEMBER_ID,
             scope=scope,
@@ -245,7 +787,7 @@ def _selector_check(conn: Any) -> dict[str, Any]:
         )
         scopes[scope] = justice["tier"]
     other = select_public_presentations(
-        [row],
+        rows,
         legislator_id="leg_other",
         member_bioguide_id="A000001",
         scope="119",
@@ -262,9 +804,7 @@ def _selector_check(conn: Any) -> dict[str, Any]:
     return {
         "F000477": scopes,
         "other_member_119": other_justice["tier"],
-        "selector_rows": len(
-            EditorialArtifactRepository(conn).publication_selector()
-        ),
+        "selector_rows": len(rows),
     }
 
 
@@ -433,7 +973,7 @@ def _apply(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     )
     return {
         "already_applied": False,
-        "rows_inserted": 6,
+        "rows_inserted": 7,
         "preflight": preflight,
         "postcheck": _postcheck(conn, bundle),
     }
@@ -525,17 +1065,30 @@ def _parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "mode",
-        choices=("verify-bundle", "preflight", "apply", "postcheck", "rollback"),
+        choices=(
+            "verify-bundle",
+            "preflight",
+            "prepare-backup",
+            "apply",
+            "postcheck",
+            "rollback",
+        ),
     )
     parser.add_argument("--database-url")
     parser.add_argument("--target", choices=("disposable", "production"), default="disposable")
-    parser.add_argument("--bundle-id", default=BUNDLE_ID)
+    parser.add_argument("--bundle-id")
     parser.add_argument("--bundle-sha256")
+    parser.add_argument("--confirm-bundle-digest")
     parser.add_argument("--deployed-commit")
     parser.add_argument("--required-schema", default="0016")
+    parser.add_argument("--preflight-report", type=Path)
+    parser.add_argument("--report-path", type=Path)
     parser.add_argument("--backup-proof", type=Path)
+    parser.add_argument("--restore-database-url")
+    parser.add_argument("--evidence-dir", type=Path)
     parser.add_argument("--confirm-production-activation", action="store_true")
     parser.add_argument("--confirm-production-rollback", action="store_true")
+    parser.add_argument("--confirm-rollback-token")
     parser.add_argument("--confirm-batch-id", type=int)
     parser.add_argument("--confirm-artifact-ids")
     parser.add_argument("--api-base-url")
@@ -547,7 +1100,9 @@ def main(argv: list[str] | None = None) -> int:
     bundle = load_activation_bundle()
     if args.required_schema != "0016":
         raise StoreSafetyError("deployed schema expectation must be exactly migration 0016")
-    if args.bundle_id != BUNDLE_ID:
+    if args.mode != "verify-bundle" and not args.bundle_id:
+        _parser().error("DB-facing modes require an explicit --bundle-id")
+    if args.bundle_id is not None and args.bundle_id != BUNDLE_ID:
         raise StoreSafetyError("bundle ID confirmation mismatch")
     if args.bundle_sha256 and args.bundle_sha256 != bundle["bundle_sha256"]:
         raise StoreSafetyError("bundle digest confirmation mismatch")
@@ -562,6 +1117,15 @@ def main(argv: list[str] | None = None) -> int:
     if args.mode == "verify-bundle":
         print(json.dumps(result, indent=2, sort_keys=True))
         return 0
+    if args.mode != "rollback" and not args.deployed_commit:
+        raise StoreSafetyError(
+            "DB-facing modes require the exact deployed backend commit"
+        )
+    result["deployment"] = (
+        _exact_deployed_commit(args.deployed_commit)
+        if args.deployed_commit
+        else {"verification": "database_only_safe_rollback"}
+    )
     db_url = args.database_url or os.getenv("EDITORIAL_DISPOSABLE_DATABASE_URL")
     if args.target == "production":
         db_url = args.database_url or os.getenv("DATABASE_URL")
@@ -569,20 +1133,47 @@ def main(argv: list[str] | None = None) -> int:
         raise StoreSafetyError("an explicit database URL is required")
     result["target"] = target_info(db_url, args.target, None)
     if args.mode in {"apply", "rollback"}:
-        if not args.bundle_sha256:
-            raise StoreSafetyError("write modes require the exact bundle digest")
-        if not args.deployed_commit:
-            raise StoreSafetyError("write modes require the deployed commit")
-        result["deployment"] = _exact_deployed_commit(args.deployed_commit)
+        if args.confirm_bundle_digest != bundle["bundle_sha256"]:
+            raise StoreSafetyError(
+                "write modes require --confirm-bundle-digest with the exact digest"
+            )
+    if args.mode == "prepare-backup":
+        if not args.preflight_report or not args.restore_database_url or not args.evidence_dir:
+            raise StoreSafetyError(
+                "prepare-backup requires preflight report, restore database URL, and evidence directory"
+            )
+        proof_path = _prepare_backup(
+            db_url,
+            args.restore_database_url,
+            args.evidence_dir,
+            bundle,
+            args.deployed_commit,
+            args.preflight_report,
+        )
+        result["backup_proof"] = str(proof_path)
+        print(json.dumps(result, indent=2, sort_keys=True))
+        return 0
+    if args.mode == "apply":
+        if not args.preflight_report:
+            raise StoreSafetyError("apply requires the successful preflight report")
         if not args.backup_proof:
-            raise StoreSafetyError("write modes require a validated backup proof")
-        result["backup"] = _verify_backup_proof(args.backup_proof, bundle)
+            raise StoreSafetyError("apply requires a validated backup proof")
+        result["backup"] = _verify_backup_proof(
+            args.backup_proof,
+            bundle,
+            args.deployed_commit,
+            args.preflight_report,
+        )
     if args.target == "production" and args.mode == "apply":
         if not args.confirm_production_activation:
             raise StoreSafetyError("production activation lacks explicit confirmation")
     if args.target == "production" and args.mode == "rollback":
         if not args.confirm_production_rollback:
             raise StoreSafetyError("production rollback lacks explicit confirmation")
+    if args.mode == "rollback":
+        expected_token = f"ROLLBACK:{BUNDLE_ID}:{bundle['bundle_sha256']}"
+        if args.confirm_rollback_token != expected_token:
+            raise StoreSafetyError("rollback requires the exact confirmation token")
     read_only = args.mode in {"preflight", "postcheck"}
     with _connect(db_url, autocommit=read_only) as conn:
         if read_only:
@@ -596,7 +1187,22 @@ def main(argv: list[str] | None = None) -> int:
                 conn.execute("SELECT pg_advisory_xact_lock(hashtext(%s))", (LOCK_KEY,))
             if args.mode == "preflight":
                 result["preflight"] = _preflight(conn, bundle)
+                report = _preflight_report(
+                    conn, bundle, args.deployed_commit
+                )
+                result["preflight_report"] = report
+                if args.report_path:
+                    _write_json(args.report_path, report)
+                    result["preflight_report_path"] = str(
+                        args.report_path.resolve()
+                    )
             elif args.mode == "apply":
+                result["bound_preflight"] = _verify_preflight_report(
+                    args.preflight_report,
+                    bundle,
+                    args.deployed_commit,
+                    conn,
+                )
                 result["application"] = _apply(conn, bundle)
             elif args.mode == "postcheck":
                 result["postcheck"] = _postcheck(conn, bundle)

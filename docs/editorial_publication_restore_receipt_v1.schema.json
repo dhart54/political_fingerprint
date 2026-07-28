@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "restored_at", "bundle_id", "bundle_sha256", "snapshot_sha256", "source_inventory_sha256", "restored_inventory_sha256", "source_counts", "restored_counts", "source_semantic_hashes", "restored_semantic_hashes", "source_schema_object_digest", "restored_schema_object_digest", "semantic_equality", "selector_state", "receipt_sha256"],
+  "properties": {
+    "schema_version": {"const": "editorial_publication_restore_receipt_v1"},
+    "restored_at": {"type": "string", "format": "date-time"},
+    "bundle_id": {"type": "string", "minLength": 1},
+    "bundle_sha256": {"$ref": "#/$defs/sha256"},
+    "snapshot_sha256": {"$ref": "#/$defs/sha256"},
+    "source_inventory_sha256": {"$ref": "#/$defs/sha256"},
+    "restored_inventory_sha256": {"$ref": "#/$defs/sha256"},
+    "source_counts": {"$ref": "#/$defs/counts"},
+    "restored_counts": {"$ref": "#/$defs/counts"},
+    "source_semantic_hashes": {"$ref": "#/$defs/semantic_hashes"},
+    "restored_semantic_hashes": {"$ref": "#/$defs/semantic_hashes"},
+    "source_schema_object_digest": {"$ref": "#/$defs/sha256"},
+    "restored_schema_object_digest": {"$ref": "#/$defs/sha256"},
+    "semantic_equality": {"const": true},
+    "selector_state": {"const": "receipts_only"},
+    "receipt_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["batches", "artifacts", "relationships", "publication_registry"],
+      "properties": {
+        "batches": {"type": "integer", "minimum": 0},
+        "artifacts": {"type": "integer", "minimum": 0},
+        "relationships": {"type": "integer", "minimum": 0},
+        "publication_registry": {"type": "integer", "minimum": 0}
+      }
+    },
+    "semantic_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["historical_export_sha256", "schema_contract_sha256"],
+      "properties": {
+        "historical_export_sha256": {"$ref": "#/$defs/sha256"},
+        "schema_contract_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

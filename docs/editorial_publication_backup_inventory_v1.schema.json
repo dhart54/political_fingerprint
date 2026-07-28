@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "captured_at", "bundle_id", "bundle_sha256", "preflight_binding", "database_fingerprint", "counts", "historical_seed", "schema_contract", "security", "target_absent", "target_queries", "semantic_hashes", "inventory_sha256"],
+  "properties": {
+    "schema_version": {"const": "editorial_publication_backup_inventory_v1"},
+    "captured_at": {"type": "string", "format": "date-time"},
+    "bundle_id": {"type": "string", "minLength": 1},
+    "bundle_sha256": {"$ref": "#/$defs/sha256"},
+    "preflight_binding": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["report_id", "report_sha256"],
+          "properties": {
+            "report_id": {"type": "string", "minLength": 1},
+            "report_sha256": {"$ref": "#/$defs/sha256"}
+          }
+        }
+      ]
+    },
+    "database_fingerprint": {"$ref": "#/$defs/sha256"},
+    "counts": {"$ref": "#/$defs/counts"},
+    "historical_seed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["manifest_sha256", "artifact_count", "relationship_count", "semantic_match"],
+      "properties": {
+        "manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "artifact_count": {"const": 71},
+        "relationship_count": {"const": 95},
+        "semantic_match": {"const": true}
+      }
+    },
+    "schema_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exact_columns", "triggers_exact", "functions_exact", "required_indexes_present", "required_constraint_classes_present", "columns", "triggers", "functions", "indexes", "constraints"],
+      "properties": {
+        "exact_columns": {"const": true},
+        "triggers_exact": {"const": true},
+        "functions_exact": {"const": true},
+        "required_indexes_present": {"const": true},
+        "required_constraint_classes_present": {"const": true},
+        "columns": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["editorial_artifact_batches", "editorial_artifact_versions", "editorial_artifact_relationships", "editorial_publication_registry"],
+          "properties": {
+            "editorial_artifact_batches": {"$ref": "#/$defs/string_array"},
+            "editorial_artifact_versions": {"$ref": "#/$defs/string_array"},
+            "editorial_artifact_relationships": {"$ref": "#/$defs/string_array"},
+            "editorial_publication_registry": {"$ref": "#/$defs/string_array"}
+          }
+        },
+        "triggers": {"type": "array", "items": {"type": "string"}},
+        "functions": {"type": "array", "items": {"type": "string"}},
+        "indexes": {"type": "array", "items": {"type": "string"}},
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["table_name", "constraint_name", "constraint_type"],
+            "properties": {
+              "table_name": {"type": "string"},
+              "constraint_name": {"type": "string"},
+              "constraint_type": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "security": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["direct_select_privileges", "rls_enabled"],
+      "properties": {
+        "direct_select_privileges": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["anon", "authenticated"],
+          "properties": {
+            "anon": {"$ref": "#/$defs/table_flags"},
+            "authenticated": {"$ref": "#/$defs/table_flags"}
+          }
+        },
+        "rls_enabled": {"$ref": "#/$defs/table_flags"}
+      }
+    },
+    "target_absent": {"const": true},
+    "target_queries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_versions", "activation_batch", "publication_registry", "relationships"],
+      "properties": {
+        "artifact_versions": {"type": "array", "maxItems": 0},
+        "activation_batch": {"type": "array", "maxItems": 0},
+        "publication_registry": {"type": "array", "maxItems": 0},
+        "relationships": {"type": "array", "maxItems": 0}
+      }
+    },
+    "semantic_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["historical_export_sha256", "schema_contract_sha256"],
+      "properties": {
+        "historical_export_sha256": {"$ref": "#/$defs/sha256"},
+        "schema_contract_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "inventory_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["batches", "artifacts", "relationships", "publication_registry"],
+      "properties": {
+        "batches": {"type": "integer", "minimum": 0},
+        "artifacts": {"type": "integer", "minimum": 0},
+        "relationships": {"type": "integer", "minimum": 0},
+        "publication_registry": {"type": "integer", "minimum": 0}
+      }
+    },
+    "table_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["editorial_artifact_batches", "editorial_artifact_versions", "editorial_artifact_relationships", "editorial_publication_registry"],
+      "properties": {
+        "editorial_artifact_batches": {"type": "boolean"},
+        "editorial_artifact_versions": {"type": "boolean"},
+        "editorial_artifact_relationships": {"type": "boolean"},
+        "editorial_publication_registry": {"type": "boolean"}
+      }
+    },
+    "string_array": {"type": "array", "items": {"type": "string"}}
+  }
+}

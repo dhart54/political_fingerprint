@@ -114,6 +114,64 @@ class EditorialArtifactRepository:
                  AND artifact.editorial_status = 'human_approved'
                  AND artifact.benchmark_status = 'gold_benchmark'
                  AND artifact.production_eligible = TRUE
+                 AND artifact.natural_key =
+                   registry.publication_metadata_jsonb->>'presentation_natural_key'
+                 AND artifact.artifact_version = CAST(
+                   registry.publication_metadata_jsonb->>'presentation_artifact_version'
+                   AS INTEGER)
+                 AND artifact.content_sha256 =
+                   registry.publication_metadata_jsonb->>'active_artifact_sha256'
+                 AND (
+                   SELECT COUNT(*)
+                   FROM editorial_artifact_relationships rel
+                   JOIN editorial_artifact_versions child
+                     ON child.artifact_id = rel.child_artifact_id
+                   WHERE rel.parent_artifact_id = artifact.artifact_id
+                     AND rel.relationship_type = 'has_validation'
+                     AND rel.ordinal = 0
+                     AND rel.metadata_jsonb =
+                       registry.publication_metadata_jsonb->'relationship_metadata'
+                     AND child.artifact_type =
+                       'standardization_validation_result'
+                     AND child.natural_key =
+                       registry.publication_metadata_jsonb->>'validation_natural_key'
+                     AND child.artifact_version = CAST(
+                       registry.publication_metadata_jsonb->>'validation_artifact_version'
+                       AS INTEGER)
+                     AND child.content_sha256 =
+                       registry.publication_metadata_jsonb->>'validation_content_sha256'
+                 ) = 1
+                 AND (
+                   SELECT COUNT(*)
+                   FROM editorial_artifact_relationships rel
+                   WHERE rel.parent_artifact_id = artifact.artifact_id
+                     AND rel.relationship_type = 'has_validation'
+                 ) = 1
+                 AND (
+                   SELECT COUNT(*)
+                   FROM editorial_artifact_relationships rel
+                   JOIN editorial_artifact_versions child
+                     ON child.artifact_id = rel.child_artifact_id
+                   WHERE rel.parent_artifact_id = artifact.artifact_id
+                     AND rel.relationship_type = 'uses_source_manifest'
+                     AND rel.ordinal = 0
+                     AND rel.metadata_jsonb =
+                       registry.publication_metadata_jsonb->'relationship_metadata'
+                     AND child.artifact_type = 'source_manifest'
+                     AND child.natural_key =
+                       registry.publication_metadata_jsonb->>'source_manifest_natural_key'
+                     AND child.artifact_version = CAST(
+                       registry.publication_metadata_jsonb->>'source_manifest_artifact_version'
+                       AS INTEGER)
+                     AND child.content_sha256 =
+                       registry.publication_metadata_jsonb->>'source_manifest_content_sha256'
+                 ) = 1
+                 AND (
+                   SELECT COUNT(*)
+                   FROM editorial_artifact_relationships rel
+                   WHERE rel.parent_artifact_id = artifact.artifact_id
+                     AND rel.relationship_type = 'uses_source_manifest'
+                 ) = 1
                ORDER BY registry.member_bioguide_id, registry.issue_id""",
         )
 
