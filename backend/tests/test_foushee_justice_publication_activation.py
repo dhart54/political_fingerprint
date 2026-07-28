@@ -12,8 +12,13 @@ from app.editorial_artifacts.publication_activation import (
     SOURCE_COMMIT,
     _reviewed_text_file_sha256,
     build_activation_bundle,
+    build_pre_activation_baseline,
     load_activation_bundle,
     validate_activation_bundle,
+)
+from app.editorial_artifacts.reconciliation import (
+    compose_pre_activation_fingerprint,
+    validate_pre_activation_fingerprint,
 )
 from scripts.editorial_artifact_store import StoreSafetyError
 from scripts.foushee_justice_publication_activation import (
@@ -27,17 +32,22 @@ def test_checked_activation_bundle_is_deterministic_and_exact() -> None:
     assert bundle == build_activation_bundle()
     assert bundle["bundle_id"] == BUNDLE_ID
     assert bundle["expected_counts"]["before"] == {
-        "batches": 1,
-        "artifacts": 71,
-        "relationships": 95,
+        "batches": 2,
+        "artifacts": 140,
+        "relationships": 155,
         "publication_registry": 0,
     }
     assert bundle["expected_counts"]["after"] == {
-        "batches": 2,
-        "artifacts": 74,
-        "relationships": 97,
+        "batches": 3,
+        "artifacts": 143,
+        "relationships": 157,
         "publication_registry": 1,
     }
+    assert bundle["pre_activation_baseline"] == build_pre_activation_baseline()
+    assert [
+        item["database_batch_id"]
+        for item in bundle["pre_activation_baseline"]["governed_batches"]
+    ] == [1, 8]
 
 
 def test_activation_source_hashes_are_checkout_eol_independent(
@@ -81,6 +91,9 @@ def test_active_presentation_is_exact_approved_candidate() -> None:
         lambda bundle: bundle["publication_registry"]["publication_metadata"][
             "approval_receipt"
         ].update({"receipt_id": "approval-receipt:substituted"}),
+        lambda bundle: bundle["pre_activation_baseline"]["governed_batches"][
+            1
+        ].update({"graph_sha256": "0" * 64}),
     ],
 )
 def test_activation_bundle_fails_closed_on_mutation(mutate) -> None:
@@ -88,6 +101,95 @@ def test_activation_bundle_fails_closed_on_mutation(mutate) -> None:
     mutate(bundle)
     with pytest.raises(ValueError):
         validate_activation_bundle(bundle)
+
+
+@pytest.mark.parametrize(
+    "mutate",
+    [
+        lambda value: value["input"].update(
+            {"schema_object_sha256": "0" * 64}
+        ),
+        lambda value: value["input"]["batches"][0].update(
+            {"database_batch_id": 7}
+        ),
+        lambda value: value["input"]["batches"][1].update(
+            {"database_batch_id": 9}
+        ),
+        lambda value: value["input"]["batches"][0].update(
+            {"deterministic_batch_key": "substituted"}
+        ),
+        lambda value: value["input"]["batches"][1].update(
+            {"deterministic_batch_key": "substituted"}
+        ),
+        lambda value: value["input"]["batches"][0].update(
+            {"source_commit_sha": "0" * 40}
+        ),
+        lambda value: value["input"]["batches"][1].update(
+            {"source_commit_sha": "0" * 40}
+        ),
+        lambda value: value["input"]["batches"][0].update(
+            {"manifest_sha256": "0" * 64}
+        ),
+        lambda value: value["input"]["batches"][1].update(
+            {"manifest_sha256": "0" * 64}
+        ),
+        lambda value: value["input"]["batches"][0].update(
+            {"graph_sha256": "0" * 64}
+        ),
+        lambda value: value["input"]["batches"][1].update(
+            {"graph_sha256": "0" * 64}
+        ),
+        lambda value: value["input"]["artifact_set"].update(
+            {"sha256": "0" * 64}
+        ),
+        lambda value: value["input"]["relationship_set"].update(
+            {"sha256": "0" * 64}
+        ),
+        lambda value: value["input"]["registry"].update({"count": 1}),
+        lambda value: value["input"]["registry"].update(
+            {"sha256": "0" * 64}
+        ),
+        lambda value: value["input"]["target_absence"]["results"][
+            "artifact_rows"
+        ].append(
+            {
+                "artifact_type": "issue_public_presentation",
+                "natural_key": PRESENTATION_KEY,
+                "artifact_version": 1,
+                "content_sha256": ACTIVE_ARTIFACT_SHA256,
+            }
+        ),
+    ],
+)
+def test_reconciled_fingerprint_fails_closed_on_component_mutation(
+    mutate,
+) -> None:
+    fingerprint = copy.deepcopy(
+        build_pre_activation_baseline()["reconciled_fingerprint"]
+    )
+    expected_constant = fingerprint["sha256"]
+    mutate(fingerprint)
+    fingerprint["sha256"] = expected_constant
+    with pytest.raises(ValueError, match="fingerprint digest mismatch"):
+        validate_pre_activation_fingerprint(fingerprint)
+
+
+def test_reconciled_fingerprint_is_canonically_composed() -> None:
+    baseline = build_pre_activation_baseline()
+    fingerprint = baseline["reconciled_fingerprint"]
+    fingerprint_input = fingerprint["input"]
+    recomposed = compose_pre_activation_fingerprint(
+        schema_object_sha256=fingerprint_input["schema_object_sha256"],
+        batches=fingerprint_input["batches"],
+        artifact_count=fingerprint_input["artifact_set"]["count"],
+        artifact_set_sha256=fingerprint_input["artifact_set"]["sha256"],
+        relationship_count=fingerprint_input["relationship_set"]["count"],
+        relationship_set_sha256=fingerprint_input["relationship_set"]["sha256"],
+        registry_count=fingerprint_input["registry"]["count"],
+        registry_sha256=fingerprint_input["registry"]["sha256"],
+        target_absence=fingerprint_input["target_absence"],
+    )
+    assert recomposed == fingerprint
 
 
 def test_tool_rejects_wrong_bundle_digest_and_schema_expectation() -> None:

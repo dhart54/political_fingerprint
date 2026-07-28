@@ -7,8 +7,8 @@ member `F000477`, issue `JUSTICE_PUBLIC_SAFETY`, Congress/scope `119`, artifact
 The immutable activation bundle is
 `foushee_justice_public_safety_119_publication_activation_v1`. It adds one
 three-artifact batch, two relationships, and one publication-registry row. It
-does not update the historical 71-artifact seed, approved wording, Semantic IR,
-or approval receipt. No migration or cache invalidation is required. The API
+does not update either governed pre-activation batch, approved wording, Semantic
+IR, or approval receipt. No migration or cache invalidation is required. The API
 reads PostgreSQL on every request and the frontend request uses `no-store`.
 
 ## Mandatory sequence
@@ -19,9 +19,14 @@ reads PostgreSQL on every request and the frontend request uses `no-store`.
 2. Run `verify-bundle` and record the exact bundle digest.
 3. Run read-only `preflight` with the explicit bundle ID, deployed commit, and
    `--report-path` against the exact target. It must prove schema
-   `0016`, the frozen historical 71/95 seed, counts `1/71/95/0`, and absence of
-   all activation identities. The report binds those results to the database
-   fingerprint, bundle digest, and deployed backend identity.
+   `0016`, both exact governed batches, counts `2/140/155/0`, their pinned
+   identities and canonical V1 graph hashes, the canonical full-set hashes,
+   the composed reconciled fingerprint, and absence of all activation
+   identities. The two batches are the frozen V1 seed
+   (`71/95`) and the corrected Environment & Energy commissioning corpus
+   (`69/60`). The report binds those results to the database fingerprint,
+   bundle digest, and deployed backend identity. The normalization contract is
+   `docs/editorial/publication_activations/foushee_pre_activation_canonical_hashing_v1.md`.
 4. Run `prepare-backup` with that report and a fresh empty disposable database.
    The tool creates the custom-format `pg_dump`, inventories the source, restores
    the archive, inventories the restored database, proves semantic equality and
@@ -44,8 +49,8 @@ The activation tool is:
 python backend/scripts/foushee_justice_publication_activation.py verify-bundle
 python backend/scripts/foushee_justice_publication_activation.py preflight --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --deployed-commit <40-char-sha> --report-path <evidence-dir>/preflight-report.json
 python backend/scripts/foushee_justice_publication_activation.py prepare-backup --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --deployed-commit <40-char-sha> --preflight-report <evidence-dir>/preflight-report.json --restore-database-url <fresh-disposable-url> --evidence-dir <evidence-dir>
-python backend/scripts/foushee_justice_publication_activation.py apply --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --confirm-bundle-digest f03a5a8488103e7b06c65547f31d236098a048b0d317623f9277ca9ddb1e21f2 --deployed-commit <40-char-sha> --preflight-report <evidence-dir>/preflight-report.json --backup-proof <evidence-dir>/backup-proof.json --confirm-production-activation
-python backend/scripts/foushee_justice_publication_activation.py rollback --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --confirm-bundle-digest f03a5a8488103e7b06c65547f31d236098a048b0d317623f9277ca9ddb1e21f2 --confirm-rollback-token ROLLBACK:foushee_justice_public_safety_119_publication_activation_v1:f03a5a8488103e7b06c65547f31d236098a048b0d317623f9277ca9ddb1e21f2 --confirm-batch-id <batch-id> --confirm-artifact-ids <ordered-ids> --confirm-production-rollback
+python backend/scripts/foushee_justice_publication_activation.py apply --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --confirm-bundle-digest df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813 --deployed-commit <40-char-sha> --preflight-report <evidence-dir>/preflight-report.json --backup-proof <evidence-dir>/backup-proof.json --confirm-production-activation
+python backend/scripts/foushee_justice_publication_activation.py rollback --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --confirm-bundle-digest df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813 --confirm-rollback-token ROLLBACK:foushee_justice_public_safety_119_publication_activation_v1:df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813 --confirm-batch-id <batch-id> --confirm-artifact-ids <ordered-ids> --confirm-production-rollback
 ```
 
 Every database-facing mode requires the explicit bundle ID. `preflight` rejects
@@ -56,6 +61,10 @@ report, the tool-generated backup proof, and an explicit production confirmation
 flag. Rollback requires `--confirm-bundle-digest`, the exact rollback token, the
 live batch ID, the comma-separated ordered artifact IDs reported by postcheck,
 and the production rollback flag; deployed health is deliberately not required.
+Preflight reports, freshness checks, source and restored backup inventories,
+backup proofs, apply preconditions, postchecks, and rollback restoration all
+use the same mandatory canonical graph and fingerprint functions. There is no
+permissive operational hash mode.
 
 ## Public contract and thresholds
 
@@ -97,10 +106,17 @@ batch ID, artifact IDs, bundle digest, and explicit rollback token under the
 same advisory lock. In one
 transaction it deletes the one registry row, the two bundle relationships, the
 three immutable artifact rows using the exact rollback session setting, and the
-activation batch. It then proves counts `1/71/95/0` and exact historical seed
-equality. If transactional rollback cannot complete, restore the validated
+activation batch. It then proves counts `2/140/155/0` and exact governed
+two-batch baseline equality. If transactional rollback cannot complete, restore the validated
 pre-activation snapshot to a fresh database and cut over only under the bounded
 production-write incident procedure.
 
 Publication remains inactive until a later task supplies explicit authorization
 and successfully completes every gate above.
+
+The baseline-reconciliation PR was repository-only. It did not access or modify
+production, create a production backup, activate publication, or deploy. The
+two governed batches are legitimate additive corpora; neither is duplicate,
+corrupt, or a cleanup target. The fingerprint is an exact required pre-state
+and must be recomputed immediately before activation rather than treated as a
+timeless production description.

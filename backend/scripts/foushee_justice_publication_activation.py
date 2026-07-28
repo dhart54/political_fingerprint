@@ -30,6 +30,15 @@ from app.editorial_artifacts.publication_activation import (
     PRESENTATION_KEY,
     SOURCE_COMMIT,
     load_activation_bundle,
+    load_pre_activation_baseline_manifests,
+)
+from app.editorial_artifacts.reconciliation import (
+    canonical_artifacts,
+    canonical_batch_graph_sha256,
+    canonical_relationships,
+    canonical_target_absence,
+    compose_pre_activation_fingerprint,
+    validate_pre_activation_fingerprint,
 )
 from app.editorial_artifacts.repository import EditorialArtifactRepository
 from app.editorial_presentations.selector import select_public_presentations
@@ -199,7 +208,10 @@ def _schema_semantics(schema: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _inventory(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
+def _inventory(
+    conn: Any,
+    bundle: dict[str, Any],
+) -> dict[str, Any]:
     schema = live_schema_contract(conn)
     preflight = _preflight(conn, bundle)
     exported = export_bundle(
@@ -210,15 +222,20 @@ def _inventory(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
         ).build_seed_bundle(),
     )
     artifact_keys = [item["natural_key"] for item in bundle["artifacts"]]
+    target_hashes = list(
+        bundle["pre_activation_baseline"]["target_absence"][
+            "content_sha256"
+        ].values()
+    )
     target_queries = {
         "artifact_versions": [
             dict(row)
             for row in conn.execute(
                 """SELECT natural_key, artifact_version, content_sha256
                    FROM editorial_artifact_versions
-                   WHERE natural_key = ANY(%s)
+                   WHERE natural_key = ANY(%s) OR content_sha256 = ANY(%s)
                    ORDER BY natural_key, artifact_version""",
-                (artifact_keys,),
+                (artifact_keys, target_hashes),
             ).fetchall()
         ],
         "activation_batch": [
@@ -265,6 +282,7 @@ def _inventory(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
         "database_fingerprint": _database_fingerprint(conn),
         "counts": preflight["counts"],
         "historical_seed": preflight["historical_seed"],
+        "governed_baseline": preflight["governed_baseline"],
         "schema_contract": schema,
         "security": preflight["security"],
         "target_absent": preflight["target_absent"],
@@ -288,6 +306,7 @@ def _inventory_semantics(value: dict[str, Any]) -> dict[str, Any]:
             "preflight_binding",
             "counts",
             "historical_seed",
+            "governed_baseline",
             "security",
             "target_absent",
             "target_queries",
@@ -464,6 +483,14 @@ def _verify_backup_proof(
         != source["semantic_hashes"]["schema_contract_sha256"]
         or restore["restored_schema_object_digest"]
         != restored["semantic_hashes"]["schema_contract_sha256"]
+        or restore["source_canonical_semantic_hashes"]
+        != source["governed_baseline"]["canonical_semantic_hashes"]
+        or restore["restored_canonical_semantic_hashes"]
+        != restored["governed_baseline"]["canonical_semantic_hashes"]
+        or restore["source_reconciled_fingerprint_sha256"]
+        != source["governed_baseline"]["reconciled_fingerprint"]["sha256"]
+        or restore["restored_reconciled_fingerprint_sha256"]
+        != restored["governed_baseline"]["reconciled_fingerprint"]["sha256"]
         or _inventory_semantics(source) != _inventory_semantics(restored)
         or restore["semantic_equality"] is not True
         or restore["selector_state"] != "receipts_only"
@@ -604,6 +631,18 @@ def _prepare_backup(
         "restored_schema_object_digest": restored_inventory["semantic_hashes"][
             "schema_contract_sha256"
         ],
+        "source_canonical_semantic_hashes": source_inventory[
+            "governed_baseline"
+        ]["canonical_semantic_hashes"],
+        "restored_canonical_semantic_hashes": restored_inventory[
+            "governed_baseline"
+        ]["canonical_semantic_hashes"],
+        "source_reconciled_fingerprint_sha256": source_inventory[
+            "governed_baseline"
+        ]["reconciled_fingerprint"]["sha256"],
+        "restored_reconciled_fingerprint_sha256": restored_inventory[
+            "governed_baseline"
+        ]["reconciled_fingerprint"]["sha256"],
         "semantic_equality": True,
         "selector_state": "receipts_only",
     }
@@ -683,6 +722,177 @@ def _historical_seed_exact(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _export_governed_batch(
+    conn: Any,
+    expected: dict[str, Any],
+    manifest: dict[str, Any],
+) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
+    batch = conn.execute(
+        """SELECT *
+           FROM editorial_artifact_batches
+           WHERE deterministic_batch_key = %s""",
+        (expected["deterministic_batch_key"],),
+    ).fetchone()
+    if not batch:
+        raise StoreSafetyError(
+            f"governed baseline batch is absent: {expected['deterministic_batch_key']}"
+        )
+    actual_identity = {
+        "database_batch_id": int(batch["batch_id"]),
+        "deterministic_batch_key": batch["deterministic_batch_key"],
+        "source_commit_sha": batch["source_commit_sha"],
+        "manifest_sha256": batch["manifest_sha256"],
+        "status": batch["status"],
+        "artifact_count": int(batch["artifact_count"]),
+        "relationship_count": int(batch["relationship_count"]),
+    }
+    expected_identity = {
+        key: expected[key]
+        for key in (
+            "database_batch_id",
+            "deterministic_batch_key",
+            "source_commit_sha",
+            "manifest_sha256",
+            "status",
+            "artifact_count",
+            "relationship_count",
+        )
+    }
+    if actual_identity != expected_identity:
+        raise StoreSafetyError(
+            f"governed baseline batch identity mismatch: "
+            f"{expected['deterministic_batch_key']}"
+        )
+    artifact_rows = [
+        dict(row)
+        for row in conn.execute(
+            """SELECT *
+           FROM editorial_artifact_versions
+           WHERE batch_id = %s
+           ORDER BY artifact_type, natural_key, artifact_version""",
+            (batch["batch_id"],),
+        ).fetchall()
+    ]
+    artifacts = []
+    for row in artifact_rows:
+        artifact = {
+            key: row["payload_jsonb"] if key == "payload" else row[key]
+            for key in manifest["artifacts"][0]
+        }
+        artifacts.append(artifact)
+    relationship_rows = [
+        dict(row)
+        for row in conn.execute(
+            """SELECT rel.parent_artifact_id, rel.child_artifact_id,
+                      rel.relationship_type, rel.ordinal, rel.metadata_jsonb,
+                      parent.batch_id AS parent_batch_id,
+                      child.batch_id AS child_batch_id,
+                      parent.natural_key AS parent_natural_key,
+                      parent.artifact_version AS parent_artifact_version,
+                      parent.content_sha256 AS parent_content_sha256,
+                      child.natural_key AS child_natural_key,
+                      child.artifact_version AS child_artifact_version,
+                      child.content_sha256 AS child_content_sha256
+               FROM editorial_artifact_relationships rel
+               JOIN editorial_artifact_versions parent
+                 ON parent.artifact_id = rel.parent_artifact_id
+               JOIN editorial_artifact_versions child
+                 ON child.artifact_id = rel.child_artifact_id
+               WHERE parent.batch_id = %s
+               ORDER BY parent.natural_key, rel.relationship_type,
+                        rel.ordinal, child.natural_key""",
+            (batch["batch_id"],),
+        ).fetchall()
+    ]
+    relationships = [
+        {
+            "parent_natural_key": row["parent_natural_key"],
+            "child_natural_key": row["child_natural_key"],
+            "relationship_type": row["relationship_type"],
+            "ordinal": row["ordinal"],
+            "metadata": row["metadata_jsonb"],
+        }
+        for row in relationship_rows
+    ]
+    if artifacts != manifest["artifacts"] or relationships != manifest["relationships"]:
+        raise StoreSafetyError(
+            f"governed baseline graph differs from repository manifest: "
+            f"{expected['deterministic_batch_key']}"
+        )
+    graph_sha256 = canonical_batch_graph_sha256(
+        actual_identity,
+        artifacts,
+        relationships,
+    )
+    if (
+        expected["graph_schema_version"]
+        != "editorial_persistence_batch_graph_v1"
+        or graph_sha256 != expected["graph_sha256"]
+    ):
+        raise StoreSafetyError(
+            f"governed baseline canonical graph hash mismatch: "
+            f"{expected['deterministic_batch_key']}; "
+            f"expected {expected['graph_sha256']}, actual {graph_sha256}"
+        )
+    return (
+        {
+            **actual_identity,
+            "graph_schema_version": expected["graph_schema_version"],
+            "graph_sha256": graph_sha256,
+            "semantic_match": True,
+        },
+        artifacts,
+        relationships,
+    )
+
+
+def _governed_baseline_exact(
+    conn: Any,
+    bundle: dict[str, Any],
+) -> dict[str, Any]:
+    baseline = bundle["pre_activation_baseline"]
+    manifests = load_pre_activation_baseline_manifests()
+    expected_batches = baseline["governed_batches"]
+    if len(manifests) != len(expected_batches):
+        raise StoreSafetyError("governed baseline manifest count mismatch")
+    exported = [
+        _export_governed_batch(conn, expected, manifest)
+        for expected, manifest in zip(expected_batches, manifests, strict=True)
+    ]
+    batches = [item[0] for item in exported]
+    artifacts = canonical_artifacts(
+        [artifact for item in exported for artifact in item[1]]
+    )
+    relationships = canonical_relationships(
+        [relationship for item in exported for relationship in item[2]],
+        artifacts,
+    )
+    canonical_hashes = {
+        "artifacts_sha256": semantic_hash(artifacts),
+        "relationships_sha256": semantic_hash(relationships),
+        "registry_sha256": None,
+    }
+    registry_rows = [
+        dict(row)
+        for row in conn.execute(
+            """SELECT member_bioguide_id, issue_id, artifact_id, publicly_active,
+                      activated_at, deactivated_at, publication_metadata_jsonb
+               FROM editorial_publication_registry
+               ORDER BY member_bioguide_id, issue_id"""
+        ).fetchall()
+    ]
+    canonical_hashes["registry_sha256"] = semantic_hash(registry_rows)
+    if canonical_hashes != baseline["canonical_semantic_hashes"]:
+        raise StoreSafetyError("governed baseline canonical full-set hash mismatch")
+    return {
+        "schema_version": baseline["schema_version"],
+        "expected_counts": baseline["expected_counts"],
+        "batches": batches,
+        "canonical_semantic_hashes": canonical_hashes,
+        "semantic_match": True,
+    }
+
+
 def _security_state(conn: Any) -> dict[str, Any]:
     privileges = {
         role: {
@@ -716,38 +926,170 @@ def _security_state(conn: Any) -> dict[str, Any]:
     return {"direct_select_privileges": privileges, "rls_enabled": rls}
 
 
-def _preflight(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
-    live_schema_contract(conn)
+def _preflight(
+    conn: Any,
+    bundle: dict[str, Any],
+) -> dict[str, Any]:
+    schema = live_schema_contract(conn)
+    schema_sha256 = semantic_hash(_schema_semantics(schema))
+    expected_schema_sha256 = bundle["pre_activation_baseline"][
+        "reconciled_fingerprint"
+    ]["input"]["schema_object_sha256"]
+    if schema_sha256 != expected_schema_sha256:
+        raise StoreSafetyError("pre-activation schema-object digest mismatch")
     security = _security_state(conn)
     counts = _counts(conn)
     if counts != bundle["expected_counts"]["before"]:
         raise StoreSafetyError(f"pre-activation database counts mismatch: {counts}")
     historical = _historical_seed_exact(conn, bundle)
-    keys = [item["natural_key"] for item in bundle["artifacts"]]
-    conflicting = conn.execute(
-        """SELECT natural_key, artifact_version, content_sha256
+    governed = _governed_baseline_exact(conn, bundle)
+    absence = bundle["pre_activation_baseline"]["target_absence"]
+    keys = [
+        item["natural_key"]
+        for item in absence["artifact_identities"]
+    ]
+    content_hashes = list(absence["content_sha256"].values())
+    conflicting = [
+        dict(row)
+        for row in conn.execute(
+            """SELECT artifact_type, natural_key, artifact_version,
+                      content_sha256
            FROM editorial_artifact_versions
-           WHERE natural_key = ANY(%s)""",
-        (keys,),
-    ).fetchall()
-    existing_batch = conn.execute(
-        "SELECT batch_id FROM editorial_artifact_batches WHERE deterministic_batch_key = %s",
-        (BATCH_KEY,),
-    ).fetchone()
-    registry = conn.execute(
-        """SELECT artifact_id FROM editorial_publication_registry
+           WHERE natural_key = ANY(%s) OR content_sha256 = ANY(%s)
+           ORDER BY natural_key, artifact_version, content_sha256""",
+            (keys, content_hashes),
+        ).fetchall()
+    ]
+    existing_batch = [
+        dict(row)
+        for row in conn.execute(
+            """SELECT deterministic_batch_key, manifest_sha256
+               FROM editorial_artifact_batches
+               WHERE deterministic_batch_key = %s
+               ORDER BY deterministic_batch_key""",
+            (absence["activation_batch_key"],),
+        ).fetchall()
+    ]
+    registry = [
+        dict(row)
+        for row in conn.execute(
+            """SELECT member_bioguide_id, issue_id, artifact_id,
+                      publicly_active
+               FROM editorial_publication_registry
            WHERE member_bioguide_id = %s AND issue_id = %s""",
-        (MEMBER_ID, ISSUE_ID),
-    ).fetchone()
-    if conflicting or existing_batch or registry:
+            (MEMBER_ID, ISSUE_ID),
+        ).fetchall()
+    ]
+    partial_relationships = [
+        dict(row)
+        for row in conn.execute(
+            """SELECT parent.natural_key AS parent_natural_key,
+                      child.natural_key AS child_natural_key,
+                      rel.relationship_type, rel.ordinal
+               FROM editorial_artifact_relationships rel
+               JOIN editorial_artifact_versions parent
+                 ON parent.artifact_id = rel.parent_artifact_id
+               JOIN editorial_artifact_versions child
+                 ON child.artifact_id = rel.child_artifact_id
+               WHERE parent.natural_key = ANY(%s)
+                  OR child.natural_key = ANY(%s)
+                  OR rel.metadata_jsonb ->> 'activation_bundle_id' = %s
+               ORDER BY parent.natural_key, rel.relationship_type,
+                        rel.ordinal, child.natural_key""",
+            (keys, keys, BUNDLE_ID),
+        ).fetchall()
+    ]
+    registry_count = int(
+        conn.execute(
+            "SELECT COUNT(*) AS n FROM editorial_publication_registry"
+        ).fetchone()["n"]
+    )
+    selector_rows = EditorialArtifactRepository(conn).publication_selector()
+    selector_tiers = {}
+    for scope in ("119", "all", "118"):
+        response = select_public_presentations(
+            selector_rows,
+            legislator_id="leg_valerie_p_foushee",
+            member_bioguide_id=MEMBER_ID,
+            scope=scope,
+        )
+        selector_tiers[scope] = next(
+            item
+            for item in response["presentations"]
+            if item["issue_id"] == ISSUE_ID
+        )["tier"]
+    actual_target_absence = canonical_target_absence(
+        artifact_identities=absence["artifact_identities"],
+        active_content_sha256=absence["content_sha256"]["active"],
+        inactive_content_sha256=absence["content_sha256"]["inactive"],
+        activation_batch_key=absence["activation_batch_key"],
+        registry_primary_key=absence["registry_primary_key"],
+        artifact_rows=conflicting,
+        activation_batch_rows=existing_batch,
+        registry_rows=registry,
+        partial_activation_relationships=partial_relationships,
+    )
+    if actual_target_absence != absence:
+        raise StoreSafetyError("activation target absence contract mismatch")
+    if (
+        registry_count != 0
+        or selector_rows
+        or selector_tiers
+        != {"119": "receipts_only", "all": "receipts_only", "118": "receipts_only"}
+    ):
         raise StoreSafetyError("activation target is not absent")
+    fingerprint_batches = [
+        {
+            key: batch[key]
+            for key in (
+                "database_batch_id",
+                "deterministic_batch_key",
+                "source_commit_sha",
+                "manifest_sha256",
+                "artifact_count",
+                "relationship_count",
+                "graph_sha256",
+            )
+        }
+        for batch in governed["batches"]
+    ]
+    actual_fingerprint = compose_pre_activation_fingerprint(
+        schema_object_sha256=schema_sha256,
+        batches=fingerprint_batches,
+        artifact_count=counts["artifacts"],
+        artifact_set_sha256=governed["canonical_semantic_hashes"][
+            "artifacts_sha256"
+        ],
+        relationship_count=counts["relationships"],
+        relationship_set_sha256=governed["canonical_semantic_hashes"][
+            "relationships_sha256"
+        ],
+        registry_count=registry_count,
+        registry_sha256=governed["canonical_semantic_hashes"][
+            "registry_sha256"
+        ],
+        target_absence=actual_target_absence,
+    )
+    validate_pre_activation_fingerprint(actual_fingerprint)
+    if (
+        actual_fingerprint
+        != bundle["pre_activation_baseline"]["reconciled_fingerprint"]
+    ):
+        raise StoreSafetyError("pre-activation reconciled fingerprint mismatch")
+    governed["reconciled_fingerprint"] = actual_fingerprint
     return {
         "read_only": True,
         "schema_exact": True,
+        "schema_object_sha256": schema_sha256,
         "historical_seed": historical,
+        "governed_baseline": governed,
         "counts": counts,
         "security": security,
         "target_absent": True,
+        "selector": {
+            "rows": len(selector_rows),
+            "F000477": selector_tiers,
+        },
     }
 
 
@@ -812,6 +1154,15 @@ def _postcheck(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     counts = _counts(conn)
     if counts != bundle["expected_counts"]["after"]:
         raise StoreSafetyError(f"post-activation counts mismatch: {counts}")
+    baseline = bundle["pre_activation_baseline"]
+    governed_batches = [
+        _export_governed_batch(conn, expected, manifest)[0]
+        for expected, manifest in zip(
+            baseline["governed_batches"],
+            load_pre_activation_baseline_manifests(),
+            strict=True,
+        )
+    ]
     batch = conn.execute(
         """SELECT batch_id, source_commit_sha, manifest_sha256, artifact_count,
                   relationship_count, status
@@ -896,6 +1247,7 @@ def _postcheck(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
             ).fetchall()
         ],
         "selector": _selector_check(conn),
+        "governed_batches": governed_batches,
         "semantic_hashes": {
             "artifacts_sha256": semantic_hash(bundle["artifacts"]),
             "relationships_sha256": semantic_hash(relationships),
@@ -1028,8 +1380,15 @@ def _rollback(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     counts = _counts(conn)
     if counts != bundle["expected_counts"]["before"]:
         raise StoreSafetyError(f"rollback counts mismatch: {counts}")
-    historical = _historical_seed_exact(conn, bundle)
-    return {"removed_batch_id": post["batch_id"], "counts": counts, "historical_seed": historical}
+    restored = _preflight(conn, bundle)
+    return {
+        "removed_batch_id": post["batch_id"],
+        "counts": counts,
+        "historical_seed": restored["historical_seed"],
+        "governed_baseline": restored["governed_baseline"],
+        "target_absent": restored["target_absent"],
+        "selector": restored["selector"],
+    }
 
 
 def _api_smoke(base_url: str) -> dict[str, Any]:
@@ -1188,7 +1547,9 @@ def main(argv: list[str] | None = None) -> int:
             if args.mode == "preflight":
                 result["preflight"] = _preflight(conn, bundle)
                 report = _preflight_report(
-                    conn, bundle, args.deployed_commit
+                    conn,
+                    bundle,
+                    args.deployed_commit,
                 )
                 result["preflight_report"] = report
                 if args.report_path:

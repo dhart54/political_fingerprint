@@ -11,6 +11,7 @@
     "source_commit_sha",
     "target_environment_class",
     "historical_seed",
+    "pre_activation_baseline",
     "activation_target",
     "artifacts",
     "relationships",
@@ -41,6 +42,57 @@
     "historical_seed": {
       "type": "object",
       "required": ["deterministic_batch_key", "manifest_sha256", "expected_counts"]
+    },
+    "pre_activation_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "expected_counts",
+        "governed_batches",
+        "canonical_semantic_hashes",
+        "reconciliation_evidence",
+        "target_absence",
+        "reconciled_fingerprint"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "editorial_publication_pre_activation_baseline_v1"
+        },
+        "expected_counts": {"$ref": "#/$defs/counts"},
+        "governed_batches": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/governed_batch"}
+        },
+        "canonical_semantic_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["artifacts_sha256", "relationships_sha256", "registry_sha256"],
+          "properties": {
+            "artifacts_sha256": {"$ref": "#/$defs/sha256"},
+            "relationships_sha256": {"$ref": "#/$defs/sha256"},
+            "registry_sha256": {"$ref": "#/$defs/sha256"}
+          }
+        },
+        "reconciliation_evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "report_sha256",
+            "prior_environment_bound_fingerprint_sha256",
+            "normalization_resolution"
+          ],
+          "properties": {
+            "report_sha256": {"$ref": "#/$defs/sha256"},
+            "prior_environment_bound_fingerprint_sha256": {"$ref": "#/$defs/sha256"},
+            "normalization_resolution": {"const": "canonical_semantic_normalization_v1"}
+          }
+        },
+        "target_absence": {"$ref": "#/$defs/target_absence"},
+        "reconciled_fingerprint": {"$ref": "#/$defs/reconciled_fingerprint"}
+      }
     },
     "activation_target": {
       "type": "object",
@@ -147,6 +199,181 @@
         "artifacts": {"type": "integer", "minimum": 0},
         "relationships": {"type": "integer", "minimum": 0},
         "publication_registry": {"type": "integer", "minimum": 0}
+      }
+    },
+    "hash_pair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifacts_sha256", "relationships_sha256"],
+      "properties": {
+        "artifacts_sha256": {"$ref": "#/$defs/sha256"},
+        "relationships_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "governed_batch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "database_batch_id",
+        "deterministic_batch_key",
+        "source_commit_sha",
+        "manifest_sha256",
+        "status",
+        "artifact_count",
+        "relationship_count",
+        "graph_schema_version",
+        "graph_sha256"
+      ],
+      "properties": {
+        "database_batch_id": {"type": "integer", "minimum": 1},
+        "deterministic_batch_key": {"type": "string", "minLength": 1},
+        "source_commit_sha": {"$ref": "#/$defs/sha40"},
+        "manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "status": {"const": "applied"},
+        "artifact_count": {"type": "integer", "minimum": 0},
+        "relationship_count": {"type": "integer", "minimum": 0},
+        "graph_schema_version": {
+          "const": "editorial_persistence_batch_graph_v1"
+        },
+        "graph_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "target_absence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "artifact_identities",
+        "content_sha256",
+        "activation_batch_key",
+        "registry_primary_key",
+        "results"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "editorial_publication_target_absence_v1"
+        },
+        "artifact_identities": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["artifact_type", "natural_key", "artifact_version"],
+            "properties": {
+              "artifact_type": {"type": "string", "minLength": 1},
+              "natural_key": {"type": "string", "minLength": 1},
+              "artifact_version": {"const": 1}
+            }
+          }
+        },
+        "content_sha256": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["active", "inactive"],
+          "properties": {
+            "active": {"$ref": "#/$defs/sha256"},
+            "inactive": {"$ref": "#/$defs/sha256"}
+          }
+        },
+        "activation_batch_key": {"type": "string", "minLength": 1},
+        "registry_primary_key": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["member_bioguide_id", "issue_id"],
+          "properties": {
+            "member_bioguide_id": {"type": "string", "minLength": 1},
+            "issue_id": {"type": "string", "minLength": 1}
+          }
+        },
+        "results": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "artifact_rows",
+            "activation_batch_rows",
+            "registry_rows",
+            "partial_activation_relationships"
+          ],
+          "properties": {
+            "artifact_rows": {"type": "array", "maxItems": 0},
+            "activation_batch_rows": {"type": "array", "maxItems": 0},
+            "registry_rows": {"type": "array", "maxItems": 0},
+            "partial_activation_relationships": {"type": "array", "maxItems": 0}
+          }
+        }
+      }
+    },
+    "fingerprint_batch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "database_batch_id",
+        "deterministic_batch_key",
+        "source_commit_sha",
+        "manifest_sha256",
+        "artifact_count",
+        "relationship_count",
+        "graph_sha256"
+      ],
+      "properties": {
+        "database_batch_id": {"type": "integer", "minimum": 1},
+        "deterministic_batch_key": {"type": "string", "minLength": 1},
+        "source_commit_sha": {"$ref": "#/$defs/sha40"},
+        "manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "artifact_count": {"type": "integer", "minimum": 0},
+        "relationship_count": {"type": "integer", "minimum": 0},
+        "graph_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "count_hash": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["count", "sha256"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 0},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "fingerprint_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "schema_object_sha256",
+        "batches",
+        "artifact_set",
+        "relationship_set",
+        "registry",
+        "target_absence",
+        "target_absence_sha256"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "editorial_publication_pre_activation_fingerprint_v1"
+        },
+        "schema_object_sha256": {"$ref": "#/$defs/sha256"},
+        "batches": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/fingerprint_batch"}
+        },
+        "artifact_set": {"$ref": "#/$defs/count_hash"},
+        "relationship_set": {"$ref": "#/$defs/count_hash"},
+        "registry": {"$ref": "#/$defs/count_hash"},
+        "target_absence": {"$ref": "#/$defs/target_absence"},
+        "target_absence_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "reconciled_fingerprint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input", "sha256"],
+      "properties": {
+        "input": {"$ref": "#/$defs/fingerprint_input"},
+        "sha256": {"$ref": "#/$defs/sha256"}
       }
     },
     "artifact": {

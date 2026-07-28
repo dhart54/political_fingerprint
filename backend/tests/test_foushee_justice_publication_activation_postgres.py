@@ -49,11 +49,40 @@ def test_transactional_apply_idempotency_postcheck_and_rollback() -> None:
     bundle = load_activation_bundle()
     with _connect(DATABASE_URL) as conn:
         with conn.transaction():
-            assert _preflight(conn, bundle)["counts"] == {
-                "batches": 1,
-                "artifacts": 71,
-                "relationships": 95,
+            preflight = _preflight(conn, bundle)
+            assert preflight["counts"] == {
+                "batches": 2,
+                "artifacts": 140,
+                "relationships": 155,
                 "publication_registry": 0,
+            }
+            assert [item["database_batch_id"] for item in preflight[
+                "governed_baseline"
+            ]["batches"]] == [1, 8]
+            assert [
+                item["graph_sha256"]
+                for item in preflight["governed_baseline"]["batches"]
+            ] == [
+                item["graph_sha256"]
+                for item in bundle["pre_activation_baseline"][
+                    "governed_batches"
+                ]
+            ]
+            assert preflight["governed_baseline"][
+                "canonical_semantic_hashes"
+            ] == bundle["pre_activation_baseline"][
+                "canonical_semantic_hashes"
+            ]
+            assert preflight["governed_baseline"][
+                "reconciled_fingerprint"
+            ] == bundle["pre_activation_baseline"]["reconciled_fingerprint"]
+            assert preflight["selector"] == {
+                "rows": 0,
+                "F000477": {
+                    "119": "receipts_only",
+                    "all": "receipts_only",
+                    "118": "receipts_only",
+                },
             }
             conn.execute(
                 "SELECT pg_advisory_xact_lock(hashtext(%s))", (LOCK_KEY,)
@@ -134,6 +163,15 @@ def test_transactional_apply_idempotency_postcheck_and_rollback() -> None:
             )
             rolled_back = _rollback(conn, bundle)
             assert rolled_back["counts"] == bundle["expected_counts"]["before"]
+            assert rolled_back["governed_baseline"][
+                "reconciled_fingerprint"
+            ] == bundle["pre_activation_baseline"]["reconciled_fingerprint"]
+            assert rolled_back["target_absent"] is True
+            assert rolled_back["selector"]["F000477"] == {
+                "119": "receipts_only",
+                "all": "receipts_only",
+                "118": "receipts_only",
+            }
         with conn.transaction():
             assert _counts(conn) == bundle["expected_counts"]["before"]
         with patch(
@@ -243,6 +281,53 @@ def test_machine_generated_backup_restore_and_tamper_rejection(tmp_path: Path) -
         assert _verify_backup_proof(
             proof_path, bundle, SOURCE_COMMIT, copied_report
         )["verified"] is True
+        source_inventory = json.loads(
+            (evidence_dir / "source-inventory.json").read_text(encoding="utf-8")
+        )
+        restored_inventory_json = json.loads(
+            (evidence_dir / "restored-inventory.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        expected_fingerprint = bundle["pre_activation_baseline"][
+            "reconciled_fingerprint"
+        ]
+        assert source_inventory["governed_baseline"][
+            "reconciled_fingerprint"
+        ] == expected_fingerprint
+        assert restored_inventory_json["governed_baseline"][
+            "reconciled_fingerprint"
+        ] == expected_fingerprint
+        assert source_inventory["governed_baseline"] == restored_inventory_json[
+            "governed_baseline"
+        ]
+        with _connect(restored_url) as restored_conn:
+            with restored_conn.transaction(force_rollback=True):
+                restored_conn.execute(
+                    """UPDATE editorial_artifact_relationships
+                       SET metadata_jsonb = '{"restored-drift":true}'::jsonb
+                       WHERE parent_artifact_id = (
+                         SELECT MIN(parent_artifact_id)
+                         FROM editorial_artifact_relationships
+                       )"""
+                )
+                assert _counts(restored_conn) == bundle["expected_counts"]["before"]
+                with pytest.raises(StoreSafetyError):
+                    _preflight(restored_conn, bundle)
+            with restored_conn.transaction(force_rollback=True):
+                _apply(restored_conn, bundle)
+                restored_conn.execute(
+                    """UPDATE editorial_artifact_relationships
+                       SET metadata_jsonb =
+                         '{"restored-rollback-drift":true}'::jsonb
+                       WHERE parent_artifact_id = (
+                         SELECT MIN(parent_artifact_id)
+                         FROM editorial_artifact_relationships
+                       )"""
+                )
+                assert _counts(restored_conn) == bundle["expected_counts"]["after"]
+                with pytest.raises(StoreSafetyError):
+                    _rollback(restored_conn, bundle)
 
         snapshot = evidence_dir / "pre-activation.dump"
         original_snapshot = snapshot.read_bytes()
@@ -406,6 +491,203 @@ def test_deployed_commit_preflight_is_read_only_and_apply_binding_is_exact(
                 "63c5f171bbaae8a20a42515122cc0ea3fa1a4336",
                 conn,
             )
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires an explicitly provisioned disposable PostgreSQL database",
+)
+def test_preflight_rejects_governed_baseline_batch_identity_drift() -> None:
+    bundle = load_activation_bundle()
+    with _connect(DATABASE_URL) as conn:
+        with conn.transaction(force_rollback=True):
+            conn.execute(
+                """UPDATE editorial_artifact_batches
+                   SET source_commit_sha = %s
+                   WHERE deterministic_batch_key =
+                     'commissioning-domain-v1-environment-energy-final-composition'""",
+                ("0" * 40,),
+            )
+            with pytest.raises(
+                StoreSafetyError,
+                match="governed baseline batch identity mismatch",
+            ):
+                _preflight(conn, bundle)
+
+
+@pytest.mark.parametrize(
+    "batch_key",
+    [
+        "editorial-artifact-persistence-v1-88d6f344",
+        "commissioning-domain-v1-environment-energy-final-composition",
+    ],
+)
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires an explicitly provisioned disposable PostgreSQL database",
+)
+def test_preflight_rejects_canonical_batch_graph_drift(
+    batch_key: str,
+) -> None:
+    bundle = load_activation_bundle()
+    with _connect(DATABASE_URL) as conn:
+        with conn.transaction(force_rollback=True):
+            conn.execute(
+                """UPDATE editorial_artifact_relationships rel
+                   SET metadata_jsonb = '{"drift":true}'::jsonb
+                   FROM editorial_artifact_versions parent,
+                        editorial_artifact_batches batch
+                   WHERE parent.artifact_id = rel.parent_artifact_id
+                     AND batch.batch_id = parent.batch_id
+                     AND batch.deterministic_batch_key = %s
+                     AND rel.parent_artifact_id = (
+                       SELECT MIN(rel2.parent_artifact_id)
+                       FROM editorial_artifact_relationships rel2
+                       JOIN editorial_artifact_versions parent2
+                         ON parent2.artifact_id = rel2.parent_artifact_id
+                       WHERE parent2.batch_id = batch.batch_id
+                     )""",
+                (batch_key,),
+            )
+            with pytest.raises(StoreSafetyError):
+                _preflight(conn, bundle)
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires an explicitly provisioned disposable PostgreSQL database",
+)
+def test_preflight_rejects_wrong_canonical_full_set_hash() -> None:
+    bundle = copy.deepcopy(load_activation_bundle())
+    bundle["pre_activation_baseline"]["canonical_semantic_hashes"][
+        "artifacts_sha256"
+    ] = "0" * 64
+    with _connect(DATABASE_URL) as conn:
+        with conn.transaction():
+            with pytest.raises(
+                StoreSafetyError,
+                match="canonical full-set hash mismatch",
+            ):
+                _preflight(conn, bundle)
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires an explicitly provisioned disposable PostgreSQL database",
+)
+def test_stale_preflight_rejects_relationship_drift(
+    tmp_path: Path,
+) -> None:
+    bundle = load_activation_bundle()
+    report_path = tmp_path / "preflight-report.json"
+    with _connect(DATABASE_URL) as conn:
+        with conn.transaction(force_rollback=True):
+            report = _preflight_report(conn, bundle, SOURCE_COMMIT)
+            _write_json(report_path, report)
+            conn.execute(
+                """UPDATE editorial_artifact_relationships
+                   SET metadata_jsonb = '{"stale":true}'::jsonb
+                   WHERE parent_artifact_id = (
+                     SELECT MIN(parent_artifact_id)
+                     FROM editorial_artifact_relationships
+                   )"""
+            )
+            with pytest.raises(StoreSafetyError):
+                _verify_preflight_report(
+                    report_path,
+                    bundle,
+                    SOURCE_COMMIT,
+                    conn,
+                )
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires an explicitly provisioned disposable PostgreSQL database",
+)
+def test_stale_preflight_rejects_artifact_drift(tmp_path: Path) -> None:
+    bundle = load_activation_bundle()
+    report_path = tmp_path / "preflight-report.json"
+    with _connect(DATABASE_URL) as conn:
+        with conn.transaction(force_rollback=True):
+            report = _preflight_report(conn, bundle, SOURCE_COMMIT)
+            _write_json(report_path, report)
+            artifact = conn.execute(
+                """SELECT artifact.artifact_id, batch.deterministic_batch_key
+                   FROM editorial_artifact_versions artifact
+                   JOIN editorial_artifact_batches batch
+                     ON batch.batch_id = artifact.batch_id
+                   WHERE NOT EXISTS (
+                     SELECT 1
+                     FROM editorial_artifact_relationships rel
+                     WHERE rel.parent_artifact_id = artifact.artifact_id
+                        OR rel.child_artifact_id = artifact.artifact_id
+                   )
+                   ORDER BY artifact.artifact_id
+                   LIMIT 1"""
+            ).fetchone()
+            assert artifact is not None
+            conn.execute(
+                "SELECT set_config('app.editorial_artifact_rollback_batch', %s, true)",
+                (artifact["deterministic_batch_key"],),
+            )
+            conn.execute(
+                "DELETE FROM editorial_artifact_versions WHERE artifact_id = %s",
+                (artifact["artifact_id"],),
+            )
+            with pytest.raises(StoreSafetyError):
+                _verify_preflight_report(
+                    report_path,
+                    bundle,
+                    SOURCE_COMMIT,
+                    conn,
+                )
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires an explicitly provisioned disposable PostgreSQL database",
+)
+def test_stale_preflight_rejects_target_state_change(tmp_path: Path) -> None:
+    bundle = load_activation_bundle()
+    report_path = tmp_path / "preflight-report.json"
+    with _connect(DATABASE_URL) as conn:
+        with conn.transaction(force_rollback=True):
+            report = _preflight_report(conn, bundle, SOURCE_COMMIT)
+            _write_json(report_path, report)
+            _apply(conn, bundle)
+            with pytest.raises(StoreSafetyError):
+                _verify_preflight_report(
+                    report_path,
+                    bundle,
+                    SOURCE_COMMIT,
+                    conn,
+                )
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires an explicitly provisioned disposable PostgreSQL database",
+)
+def test_rollback_rejects_baseline_graph_drift_with_matching_counts() -> None:
+    bundle = load_activation_bundle()
+    with _connect(DATABASE_URL) as conn:
+        with conn.transaction(force_rollback=True):
+            _apply(conn, bundle)
+            conn.execute(
+                """UPDATE editorial_artifact_relationships
+                   SET metadata_jsonb = '{"rollback-drift":true}'::jsonb
+                   WHERE parent_artifact_id = (
+                     SELECT MIN(parent_artifact_id)
+                     FROM editorial_artifact_relationships
+                   )"""
+            )
+            assert _counts(conn) == bundle["expected_counts"]["after"]
+            with pytest.raises(
+                StoreSafetyError,
+                match="graph differs from repository manifest",
+            ):
+                _rollback(conn, bundle)
 
 
 @pytest.mark.skipif(
@@ -627,8 +909,8 @@ def test_preexisting_registry_conflict_is_unchanged_on_rejected_activation() -> 
             )
             assert after == before
             assert _counts(conn) == before_counts == {
-                "batches": 1,
-                "artifacts": 71,
-                "relationships": 95,
+                "batches": 2,
+                "artifacts": 140,
+                "relationships": 155,
                 "publication_registry": 1,
             }
