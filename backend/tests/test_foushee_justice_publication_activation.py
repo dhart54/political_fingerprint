@@ -10,6 +10,7 @@ from app.editorial_artifacts.publication_activation import (
     BUNDLE_ID,
     PRESENTATION_KEY,
     SOURCE_COMMIT,
+    _reviewed_text_file_sha256,
     build_activation_bundle,
     load_activation_bundle,
     validate_activation_bundle,
@@ -37,6 +38,16 @@ def test_checked_activation_bundle_is_deterministic_and_exact() -> None:
         "relationships": 97,
         "publication_registry": 1,
     }
+
+
+def test_activation_source_hashes_are_checkout_eol_independent(
+    tmp_path: Path,
+) -> None:
+    lf = tmp_path / "source-lf.json"
+    crlf = tmp_path / "source-crlf.json"
+    lf.write_bytes(b'{\n  "reviewed": true\n}\n')
+    crlf.write_bytes(b'{\r\n  "reviewed": true\r\n}\r\n')
+    assert _reviewed_text_file_sha256(lf) == _reviewed_text_file_sha256(crlf)
 
 
 def test_active_presentation_is_exact_approved_candidate() -> None:

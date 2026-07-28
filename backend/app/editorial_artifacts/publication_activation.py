@@ -78,16 +78,53 @@ CASES_PATH = ROOT / "docs/semantic_ir/accepted/development_cases.json"
 BUNDLE_SCHEMA_PATH = (
     ROOT / "docs/editorial_publication_activation_bundle_v1.schema.json"
 )
+REVIEWED_SOURCE_FILE_SHA256 = {
+    "docs/editorial/action_source_contracts/foushee_justice_public_safety_119_v1.json":
+        "33a746b7ba1700b8834e82c10ecd5742ee4be3b453bff06ea802b45f1f3e9299",
+    "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json":
+        "8c03c55079b8e499e88a25381d0b7e3e641ecb393391029a023f37dcda4f2424",
+    "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/claim_source_map.json":
+        "602967fdf693ffffde0d951604db9d9b51c91b9c8dfa269780a71541ccd5d554",
+    "docs/semantic_ir/accepted/development_cases.json":
+        "d898ce00660d184043af5b971dd24788b888409f490c45c121328f47cab2b31f",
+    "docs/editorial/presentations/f000477_justice_public_safety_119_review_fixture.json":
+        "a2f611c8b9bc2194a27839dd0d8f3af2124f9c26285318af612f361adb878d3c",
+    "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json":
+        "cf269a276de19902f9b5c8a2c6af9416ede981b658bc1867f9bdec5aea94a112",
+}
 
 
 def _load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _reviewed_text_file_sha256(
+    path: Path, expected_sha256: str | None = None
+) -> str:
+    """Verify reviewed text independent of checkout line endings."""
+
+    with path.open("r", encoding="utf-8", newline=None) as source:
+        normalized_text = source.read()
+    candidates = {
+        hashlib.sha256(normalized_text.encode("utf-8")).hexdigest(),
+        hashlib.sha256(
+            normalized_text.replace("\n", "\r\n").encode("utf-8")
+        ).hexdigest(),
+    }
+    if expected_sha256 is not None:
+        if expected_sha256 not in candidates:
+            raise ValueError(f"reviewed source file digest mismatch: {path}")
+        return expected_sha256
+    return min(candidates)
+
+
 def _file_record(path: Path) -> dict[str, str]:
+    relative = path.relative_to(ROOT).as_posix()
     return {
-        "path": path.relative_to(ROOT).as_posix(),
-        "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        "path": relative,
+        "sha256": _reviewed_text_file_sha256(
+            path, REVIEWED_SOURCE_FILE_SHA256[relative]
+        ),
     }
 
 
