@@ -10,6 +10,7 @@ from app.editorial_artifacts.bundle import (
     ARTIFACT_TYPES,
     BATCH_KEY,
     ROOT,
+    _frozen_crlf_file_sha256,
     build_seed_bundle,
     semantic_hash,
     validate_bundle,
@@ -36,6 +37,16 @@ def test_checked_in_manifest_is_deterministic(bundle: dict) -> None:
     assert bundle["manifest_sha256"] == semantic_hash({
         key: value for key, value in bundle.items() if key != "manifest_sha256"
     })
+
+
+def test_frozen_manifest_byte_identity_is_checkout_eol_independent(
+    tmp_path: Path,
+) -> None:
+    lf = tmp_path / "lf.json"
+    crlf = tmp_path / "crlf.json"
+    lf.write_bytes(b'{\n  "frozen": true\n}\n')
+    crlf.write_bytes(b'{\r\n  "frozen": true\r\n}\r\n')
+    assert _frozen_crlf_file_sha256(lf) == _frozen_crlf_file_sha256(crlf)
 
 
 def test_taxonomy_counts_and_relationships_are_exact(bundle: dict) -> None:

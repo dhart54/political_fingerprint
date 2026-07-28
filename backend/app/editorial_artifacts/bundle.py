@@ -59,6 +59,15 @@ def _load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _frozen_crlf_file_sha256(path: Path) -> str:
+    """Reconstruct the frozen Windows snapshot bytes on every checkout."""
+
+    with path.open("r", encoding="utf-8", newline=None) as source:
+        normalized_text = source.read()
+    frozen_bytes = normalized_text.replace("\n", "\r\n").encode("utf-8")
+    return hashlib.sha256(frozen_bytes).hexdigest()
+
+
 def _file_record(path: Path) -> dict[str, str]:
     relative = path.relative_to(ROOT).as_posix()
     return {
@@ -428,7 +437,7 @@ def build_seed_bundle() -> dict[str, Any]:
         ROOT
     ).as_posix():
         raise ValueError("historical seed manifest path mismatch")
-    if hashlib.sha256(FROZEN_MANIFEST.read_bytes()).hexdigest() != contract.get(
+    if _frozen_crlf_file_sha256(FROZEN_MANIFEST) != contract.get(
         "seed_manifest_file_sha256"
     ):
         raise ValueError("historical seed manifest file digest mismatch")
