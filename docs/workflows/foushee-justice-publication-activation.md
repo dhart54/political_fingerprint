@@ -15,7 +15,9 @@ reads PostgreSQL on every request and the frontend request uses `no-store`.
 
 1. Deploy a commit containing source commit
    `bae70a3623b66a68cda40ac537dc4a1740e87f92` and verify `/health` reports its
-   exact commit SHA.
+   exact commit SHA. The deployed commit must also contain the tuple-row HTTP
+   correction recorded in
+   `docs/incidents/2026-07-28-foushee-justice-activation-http500.md`.
 2. Run `verify-bundle` and record the exact bundle digest.
 3. Run read-only `preflight` with the explicit bundle ID, deployed commit, and
    `--report-path` against the exact target. It must prove schema
@@ -32,13 +34,21 @@ reads PostgreSQL on every request and the frontend request uses `no-store`.
    the archive, inventories the restored database, proves semantic equality and
    the `receipts_only` selector state, and emits a schema-validated evidence
    chain. Operator-authored booleans are not accepted as backup evidence.
-5. Obtain explicit publication authorization naming the bundle ID and digest.
-6. Run `apply` with the exact bundle ID, bundle digest, deployed commit, backup
+5. Against the verified disposable restore, run
+   `foushee_justice_publication_http_proof.py`. It must start the real backend,
+   prove inactive HTTP, apply the exact bundle, prove the complete activated
+   HTTP contract and isolation, roll back, and prove both inactive HTTP and the
+   exact canonical baseline. This proof is mandatory; selector-only or
+   CLI-postcheck-only evidence is insufficient.
+6. Confirm production is still at the exact inactive governed baseline, then
+   obtain separate explicit publication authorization naming the bundle ID and
+   digest.
+7. Run `apply` with the exact bundle ID, bundle digest, deployed commit, backup
    proof, preflight report, target, and production confirmation. The tool repeats
    and binds preflight under an advisory lock and performs all seven row inserts
    (one batch, three artifacts, two relationships, and one registry row) in one
    transaction.
-7. Run `postcheck`, then public API and frontend smoke checks. Any failed gate
+8. Run `postcheck`, then public API and frontend smoke checks. Any failed gate
    before commit aborts the transaction. After commit, immediately invoke exact
    database-only rollback on any blocking smoke failure. A deployment outage or
    unknown backend health must not prevent that rollback path.
@@ -49,6 +59,7 @@ The activation tool is:
 python backend/scripts/foushee_justice_publication_activation.py verify-bundle
 python backend/scripts/foushee_justice_publication_activation.py preflight --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --deployed-commit <40-char-sha> --report-path <evidence-dir>/preflight-report.json
 python backend/scripts/foushee_justice_publication_activation.py prepare-backup --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --deployed-commit <40-char-sha> --preflight-report <evidence-dir>/preflight-report.json --restore-database-url <fresh-disposable-url> --evidence-dir <evidence-dir>
+python backend/scripts/foushee_justice_publication_http_proof.py --database-url <verified-disposable-url> --deployed-commit <40-char-sha> --preflight-report <disposable-evidence-dir>/preflight-report.json --backup-proof <disposable-evidence-dir>/backup-proof.json --report-path <disposable-evidence-dir>/http-integration-proof.json
 python backend/scripts/foushee_justice_publication_activation.py apply --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --confirm-bundle-digest df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813 --deployed-commit <40-char-sha> --preflight-report <evidence-dir>/preflight-report.json --backup-proof <evidence-dir>/backup-proof.json --confirm-production-activation
 python backend/scripts/foushee_justice_publication_activation.py rollback --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --confirm-bundle-digest df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813 --confirm-rollback-token ROLLBACK:foushee_justice_public_safety_119_publication_activation_v1:df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813 --confirm-batch-id <batch-id> --confirm-artifact-ids <ordered-ids> --confirm-production-rollback
 ```
@@ -113,6 +124,14 @@ production-write incident procedure.
 
 Publication remains inactive until a later task supplies explicit authorization
 and successfully completes every gate above.
+
+The 2026-07-28 attempt inserted exactly seven rows, but its independent HTTP
+checks returned 500 and the exact rollback restored `2/140/155/0`. That attempt
+is not reusable activation evidence. A later authorization requires the
+corrected deployed commit, exact `/health` identity, a fresh production
+preflight, a fresh verified backup or an explicit in-lifetime revalidation of
+the existing proof, the real-server disposable HTTP proof, and a final
+confirmation that production remains inactive.
 
 The baseline-reconciliation PR was repository-only. It did not access or modify
 production, create a production backup, activate publication, or deploy. The

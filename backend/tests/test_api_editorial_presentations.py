@@ -4,8 +4,10 @@ import copy
 import json
 import sqlite3
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
+import pytest
 from fastapi.testclient import TestClient
 
 from app.editorial_presentations.compiler import (
@@ -460,3 +462,54 @@ def test_api_uses_read_only_selector_payload() -> None:
     payload = response.json()
     assert payload["member_bioguide_id"] == "F000477"
     assert payload["presentations"][6]["tier"] == "reviewed_conclusion"
+
+
+def test_repository_normalizes_default_dbapi_tuple_rows() -> None:
+    class Cursor:
+        description = [
+            SimpleNamespace(name="artifact_id"),
+            SimpleNamespace(name="payload_jsonb"),
+        ]
+
+        @staticmethod
+        def fetchall() -> list[tuple[object, ...]]:
+            return [(101, {"schema_version": "test"})]
+
+        @staticmethod
+        def fetchone() -> tuple[object, ...]:
+            return (101, {"schema_version": "test"})
+
+    class Connection:
+        @staticmethod
+        def execute(_query: str, _params: tuple[object, ...]) -> Cursor:
+            return Cursor()
+
+    rows = EditorialArtifactRepository(Connection())._all("SELECT test")
+
+    assert rows == [
+        {"artifact_id": 101, "payload_jsonb": {"schema_version": "test"}}
+    ]
+    assert EditorialArtifactRepository(Connection())._one("SELECT test") == rows[0]
+
+
+def test_repository_rejects_tuple_row_width_mismatch() -> None:
+    cursor = SimpleNamespace(
+        description=[
+            SimpleNamespace(name="artifact_id"),
+            SimpleNamespace(name="payload_jsonb"),
+        ]
+    )
+    with pytest.raises(ValueError, match="row width"):
+        EditorialArtifactRepository._row_to_dict(cursor, (101,))
+
+
+def test_operational_database_failure_is_not_recast_as_receipts_only() -> None:
+    with patch(
+        "app.api.editorial_presentations._load_publication_rows",
+        side_effect=RuntimeError("database unavailable"),
+    ):
+        with pytest.raises(RuntimeError, match="database unavailable"):
+            TestClient(app).get(
+                "/legislators/leg_valerie_p_foushee/editorial-presentations",
+                params={"scope": "119"},
+            )

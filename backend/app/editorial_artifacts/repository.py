@@ -176,8 +176,38 @@ class EditorialArtifactRepository:
         )
 
     def _one(self, query: str, params: tuple[Any, ...] = ()) -> dict[str, Any] | None:
-        row = self.connection.execute(query, params).fetchone()
-        return dict(row) if row else None
+        cursor = self.connection.execute(query, params)
+        row = cursor.fetchone()
+        return self._row_to_dict(cursor, row) if row is not None else None
 
     def _all(self, query: str, params: tuple[Any, ...] = ()) -> list[dict[str, Any]]:
-        return [dict(row) for row in self.connection.execute(query, params).fetchall()]
+        cursor = self.connection.execute(query, params)
+        return [self._row_to_dict(cursor, row) for row in cursor.fetchall()]
+
+    @staticmethod
+    def _row_to_dict(cursor: Any, row: Any) -> dict[str, Any]:
+        """Normalize mapping and DB-API sequence rows without hiding driver errors."""
+
+        keys = getattr(row, "keys", None)
+        if callable(keys):
+            return {str(key): row[key] for key in keys()}
+        description = getattr(cursor, "description", None)
+        if description is None:
+            raise TypeError("database cursor did not provide row metadata")
+        columns = [
+            str(
+                getattr(column, "name", None)
+                or (
+                    column[0]
+                    if isinstance(column, (tuple, list)) and column
+                    else ""
+                )
+            )
+            for column in description
+        ]
+        if not all(columns):
+            raise TypeError("database cursor returned an invalid column description")
+        values = tuple(row)
+        if len(columns) != len(values):
+            raise ValueError("database row width does not match its column description")
+        return dict(zip(columns, values, strict=True))
