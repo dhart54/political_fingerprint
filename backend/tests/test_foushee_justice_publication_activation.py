@@ -12,6 +12,7 @@ from app.editorial_artifacts.publication_activation import (
     SOURCE_COMMIT,
     _reviewed_text_file_sha256,
     build_activation_bundle,
+    build_pre_activation_baseline,
     load_activation_bundle,
     validate_activation_bundle,
 )
@@ -27,17 +28,22 @@ def test_checked_activation_bundle_is_deterministic_and_exact() -> None:
     assert bundle == build_activation_bundle()
     assert bundle["bundle_id"] == BUNDLE_ID
     assert bundle["expected_counts"]["before"] == {
-        "batches": 1,
-        "artifacts": 71,
-        "relationships": 95,
+        "batches": 2,
+        "artifacts": 140,
+        "relationships": 155,
         "publication_registry": 0,
     }
     assert bundle["expected_counts"]["after"] == {
-        "batches": 2,
-        "artifacts": 74,
-        "relationships": 97,
+        "batches": 3,
+        "artifacts": 143,
+        "relationships": 157,
         "publication_registry": 1,
     }
+    assert bundle["pre_activation_baseline"] == build_pre_activation_baseline()
+    assert [
+        item["database_batch_id"]
+        for item in bundle["pre_activation_baseline"]["governed_batches"]
+    ] == [1, 8]
 
 
 def test_activation_source_hashes_are_checkout_eol_independent(
@@ -81,6 +87,9 @@ def test_active_presentation_is_exact_approved_candidate() -> None:
         lambda bundle: bundle["publication_registry"]["publication_metadata"][
             "approval_receipt"
         ].update({"receipt_id": "approval-receipt:substituted"}),
+        lambda bundle: bundle["pre_activation_baseline"]["governed_batches"][
+            1
+        ].update({"reconciled_graph_sha256": "0" * 64}),
     ],
 )
 def test_activation_bundle_fails_closed_on_mutation(mutate) -> None:

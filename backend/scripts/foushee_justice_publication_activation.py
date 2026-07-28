@@ -30,6 +30,7 @@ from app.editorial_artifacts.publication_activation import (
     PRESENTATION_KEY,
     SOURCE_COMMIT,
     load_activation_bundle,
+    load_pre_activation_baseline_manifests,
 )
 from app.editorial_artifacts.repository import EditorialArtifactRepository
 from app.editorial_presentations.selector import select_public_presentations
@@ -199,9 +200,18 @@ def _schema_semantics(schema: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _inventory(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
+def _inventory(
+    conn: Any,
+    bundle: dict[str, Any],
+    *,
+    require_reconciled_hashes: bool = False,
+) -> dict[str, Any]:
     schema = live_schema_contract(conn)
-    preflight = _preflight(conn, bundle)
+    preflight = _preflight(
+        conn,
+        bundle,
+        require_reconciled_hashes=require_reconciled_hashes,
+    )
     exported = export_bundle(
         conn,
         __import__(
@@ -210,15 +220,18 @@ def _inventory(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
         ).build_seed_bundle(),
     )
     artifact_keys = [item["natural_key"] for item in bundle["artifacts"]]
+    target_hashes = bundle["pre_activation_baseline"]["target_absence"][
+        "content_sha256"
+    ]
     target_queries = {
         "artifact_versions": [
             dict(row)
             for row in conn.execute(
                 """SELECT natural_key, artifact_version, content_sha256
                    FROM editorial_artifact_versions
-                   WHERE natural_key = ANY(%s)
+                   WHERE natural_key = ANY(%s) OR content_sha256 = ANY(%s)
                    ORDER BY natural_key, artifact_version""",
-                (artifact_keys,),
+                (artifact_keys, target_hashes),
             ).fetchall()
         ],
         "activation_batch": [
@@ -265,6 +278,7 @@ def _inventory(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
         "database_fingerprint": _database_fingerprint(conn),
         "counts": preflight["counts"],
         "historical_seed": preflight["historical_seed"],
+        "governed_baseline": preflight["governed_baseline"],
         "schema_contract": schema,
         "security": preflight["security"],
         "target_absent": preflight["target_absent"],
@@ -288,6 +302,7 @@ def _inventory_semantics(value: dict[str, Any]) -> dict[str, Any]:
             "preflight_binding",
             "counts",
             "historical_seed",
+            "governed_baseline",
             "security",
             "target_absent",
             "target_queries",
@@ -323,8 +338,14 @@ def _preflight_report(
     conn: Any,
     bundle: dict[str, Any],
     deployed_commit: str,
+    *,
+    require_reconciled_hashes: bool = False,
 ) -> dict[str, Any]:
-    inventory = _inventory(conn, bundle)
+    inventory = _inventory(
+        conn,
+        bundle,
+        require_reconciled_hashes=require_reconciled_hashes,
+    )
     value = {
         "schema_version": "editorial_publication_preflight_report_v1",
         "report_id": f"{BUNDLE_ID}:{inventory['database_fingerprint']}:{deployed_commit}",
@@ -683,6 +704,328 @@ def _historical_seed_exact(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _export_governed_batch(
+    conn: Any,
+    expected: dict[str, Any],
+    manifest: dict[str, Any],
+    *,
+    require_reconciled_hashes: bool = False,
+) -> dict[str, Any]:
+    batch = conn.execute(
+        """SELECT *
+           FROM editorial_artifact_batches
+           WHERE deterministic_batch_key = %s""",
+        (expected["deterministic_batch_key"],),
+    ).fetchone()
+    if not batch:
+        raise StoreSafetyError(
+            f"governed baseline batch is absent: {expected['deterministic_batch_key']}"
+        )
+    actual_identity = {
+        "database_batch_id": int(batch["batch_id"]),
+        "deterministic_batch_key": batch["deterministic_batch_key"],
+        "source_commit_sha": batch["source_commit_sha"],
+        "manifest_sha256": batch["manifest_sha256"],
+        "status": batch["status"],
+        "artifact_count": int(batch["artifact_count"]),
+        "relationship_count": int(batch["relationship_count"]),
+    }
+    expected_identity = {
+        key: expected[key]
+        for key in (
+            "database_batch_id",
+            "deterministic_batch_key",
+            "source_commit_sha",
+            "manifest_sha256",
+            "status",
+            "artifact_count",
+            "relationship_count",
+        )
+    }
+    if actual_identity != expected_identity:
+        raise StoreSafetyError(
+            f"governed baseline batch identity mismatch: "
+            f"{expected['deterministic_batch_key']}"
+        )
+    artifact_rows = [
+        dict(row)
+        for row in conn.execute(
+            """SELECT *
+           FROM editorial_artifact_versions
+           WHERE batch_id = %s
+           ORDER BY artifact_type, natural_key, artifact_version""",
+            (batch["batch_id"],),
+        ).fetchall()
+    ]
+    artifacts = []
+    for row in artifact_rows:
+        artifact = {
+            key: row["payload_jsonb"] if key == "payload" else row[key]
+            for key in manifest["artifacts"][0]
+        }
+        artifacts.append(artifact)
+    relationship_rows = [
+        dict(row)
+        for row in conn.execute(
+            """SELECT rel.parent_artifact_id, rel.child_artifact_id,
+                      rel.relationship_type, rel.ordinal, rel.metadata_jsonb,
+                      parent.batch_id AS parent_batch_id,
+                      child.batch_id AS child_batch_id,
+                      parent.natural_key AS parent_natural_key,
+                      parent.artifact_version AS parent_artifact_version,
+                      parent.content_sha256 AS parent_content_sha256,
+                      child.natural_key AS child_natural_key,
+                      child.artifact_version AS child_artifact_version,
+                      child.content_sha256 AS child_content_sha256
+               FROM editorial_artifact_relationships rel
+               JOIN editorial_artifact_versions parent
+                 ON parent.artifact_id = rel.parent_artifact_id
+               JOIN editorial_artifact_versions child
+                 ON child.artifact_id = rel.child_artifact_id
+               WHERE parent.batch_id = %s
+               ORDER BY parent.natural_key, rel.relationship_type,
+                        rel.ordinal, child.natural_key""",
+            (batch["batch_id"],),
+        ).fetchall()
+    ]
+    relationships = [
+        {
+            "parent_natural_key": row["parent_natural_key"],
+            "child_natural_key": row["child_natural_key"],
+            "relationship_type": row["relationship_type"],
+            "ordinal": row["ordinal"],
+            "metadata": row["metadata_jsonb"],
+        }
+        for row in relationship_rows
+    ]
+    if artifacts != manifest["artifacts"] or relationships != manifest["relationships"]:
+        raise StoreSafetyError(
+            f"governed baseline graph differs from repository manifest: "
+            f"{expected['deterministic_batch_key']}"
+        )
+    portable_graph = {
+        "batch": {
+            key: actual_identity[key]
+            for key in (
+                "deterministic_batch_key",
+                "source_commit_sha",
+                "manifest_sha256",
+                "status",
+                "artifact_count",
+                "relationship_count",
+            )
+        },
+        "artifacts": artifacts,
+        "relationships": relationships,
+    }
+    reconciled_graph = {
+        "batch": {
+            key: value
+            for key, value in dict(batch).items()
+            if key not in {"batch_id", "created_at", "applied_at"}
+        },
+        "artifacts": sorted(
+            [
+                {
+                    key: value
+                    for key, value in row.items()
+                    if key not in {"artifact_id", "batch_id", "created_at"}
+                }
+                for row in artifact_rows
+            ],
+            key=lambda item: (item["natural_key"], item["artifact_version"]),
+        ),
+        "relationships": sorted(
+            [
+                {
+                    "parent_natural_key": row["parent_natural_key"],
+                    "parent_artifact_version": int(
+                        row["parent_artifact_version"]
+                    ),
+                    "parent_content_sha256": row["parent_content_sha256"],
+                    "child_natural_key": row["child_natural_key"],
+                    "child_artifact_version": int(
+                        row["child_artifact_version"]
+                    ),
+                    "child_content_sha256": row["child_content_sha256"],
+                    "relationship_type": row["relationship_type"],
+                    "ordinal": int(row["ordinal"]),
+                    "metadata": row["metadata_jsonb"],
+                }
+                for row in relationship_rows
+            ],
+            key=lambda item: (
+                item["parent_natural_key"],
+                item["relationship_type"],
+                item["ordinal"],
+                item["child_natural_key"],
+            ),
+        ),
+    }
+    actual_hashes = {
+        "artifact_semantic_sha256": semantic_hash(artifacts),
+        "relationship_semantic_sha256": semantic_hash(relationships),
+        "portable_graph_sha256": semantic_hash(portable_graph),
+    }
+    if any(actual_hashes[key] != expected[key] for key in actual_hashes):
+        raise StoreSafetyError(
+            f"governed baseline semantic hash mismatch: "
+            f"{expected['deterministic_batch_key']}"
+        )
+    reconciled_graph_sha256 = semantic_hash(reconciled_graph)
+    if (
+        require_reconciled_hashes
+        and reconciled_graph_sha256 != expected["reconciled_graph_sha256"]
+    ):
+        raise StoreSafetyError(
+            f"governed baseline reconciled graph hash mismatch: "
+            f"{expected['deterministic_batch_key']}; "
+            f"expected {expected['reconciled_graph_sha256']}, "
+            f"actual {reconciled_graph_sha256}; "
+            f"batch {semantic_hash(reconciled_graph['batch'])}; "
+            f"artifacts {semantic_hash(reconciled_graph['artifacts'])}; "
+            f"relationships {semantic_hash(reconciled_graph['relationships'])}"
+        )
+    return {
+        **actual_identity,
+        **actual_hashes,
+        "reconciled_graph_sha256": expected["reconciled_graph_sha256"],
+        "semantic_match": True,
+    }
+
+
+def _governed_baseline_exact(
+    conn: Any,
+    bundle: dict[str, Any],
+    *,
+    require_reconciled_hashes: bool = False,
+) -> dict[str, Any]:
+    baseline = bundle["pre_activation_baseline"]
+    manifests = load_pre_activation_baseline_manifests()
+    expected_batches = baseline["governed_batches"]
+    if len(manifests) != len(expected_batches):
+        raise StoreSafetyError("governed baseline manifest count mismatch")
+    batches = [
+        _export_governed_batch(
+            conn,
+            expected,
+            manifest,
+            require_reconciled_hashes=require_reconciled_hashes,
+        )
+        for expected, manifest in zip(expected_batches, manifests, strict=True)
+    ]
+    artifacts = sorted(
+        [
+            artifact
+            for manifest in manifests
+            for artifact in manifest["artifacts"]
+        ],
+        key=lambda item: (
+            item["artifact_type"],
+            item["natural_key"],
+            item["artifact_version"],
+        ),
+    )
+    relationships = sorted(
+        [
+            relationship
+            for manifest in manifests
+            for relationship in manifest["relationships"]
+        ],
+        key=lambda item: (
+            item["parent_natural_key"],
+            item["relationship_type"],
+            item["ordinal"],
+            item["child_natural_key"],
+        ),
+    )
+    portable_hashes = {
+        "artifacts_sha256": semantic_hash(artifacts),
+        "relationships_sha256": semantic_hash(relationships),
+    }
+    if portable_hashes != baseline["portable_semantic_hashes"]:
+        raise StoreSafetyError("governed baseline full-set semantic hash mismatch")
+    reconciled_artifacts = sorted(
+        [
+            {
+                key: value
+                for key, value in dict(row).items()
+                if key not in {"artifact_id", "batch_id", "created_at"}
+            }
+            for row in conn.execute(
+                "SELECT * FROM editorial_artifact_versions ORDER BY artifact_id"
+            ).fetchall()
+        ],
+        key=lambda item: (item["natural_key"], item["artifact_version"]),
+    )
+    reconciled_relationships = sorted(
+        [
+            {
+                "parent_natural_key": row["parent_natural_key"],
+                "parent_artifact_version": int(row["parent_artifact_version"]),
+                "parent_content_sha256": row["parent_content_sha256"],
+                "child_natural_key": row["child_natural_key"],
+                "child_artifact_version": int(row["child_artifact_version"]),
+                "child_content_sha256": row["child_content_sha256"],
+                "relationship_type": row["relationship_type"],
+                "ordinal": int(row["ordinal"]),
+                "metadata": row["metadata_jsonb"],
+            }
+            for row in conn.execute(
+                """SELECT rel.relationship_type, rel.ordinal, rel.metadata_jsonb,
+                          parent.natural_key AS parent_natural_key,
+                          parent.artifact_version AS parent_artifact_version,
+                          parent.content_sha256 AS parent_content_sha256,
+                          child.natural_key AS child_natural_key,
+                          child.artifact_version AS child_artifact_version,
+                          child.content_sha256 AS child_content_sha256
+                   FROM editorial_artifact_relationships rel
+                   JOIN editorial_artifact_versions parent
+                     ON parent.artifact_id = rel.parent_artifact_id
+                   JOIN editorial_artifact_versions child
+                     ON child.artifact_id = rel.child_artifact_id
+                   ORDER BY rel.parent_artifact_id, rel.relationship_type,
+                            rel.ordinal, rel.child_artifact_id"""
+            ).fetchall()
+        ],
+        key=lambda item: (
+            item["parent_natural_key"],
+            item["relationship_type"],
+            item["ordinal"],
+            item["child_natural_key"],
+        ),
+    )
+    registry_rows = [
+        dict(row)
+        for row in conn.execute(
+            """SELECT member_bioguide_id, issue_id, artifact_id, publicly_active,
+                      activated_at, deactivated_at, publication_metadata_jsonb
+               FROM editorial_publication_registry
+               ORDER BY member_bioguide_id, issue_id"""
+        ).fetchall()
+    ]
+    reconciled = baseline["reconciled_production_fingerprint"]
+    reconciled_hashes = {
+        "artifact_set_sha256": semantic_hash(reconciled_artifacts),
+        "relationship_set_sha256": semantic_hash(reconciled_relationships),
+        "registry_sha256": semantic_hash(registry_rows),
+    }
+    if require_reconciled_hashes and any(
+        reconciled_hashes[key] != reconciled[key] for key in reconciled_hashes
+    ):
+        raise StoreSafetyError("governed baseline reconciled full-set hash mismatch")
+    return {
+        "schema_version": baseline["schema_version"],
+        "expected_counts": baseline["expected_counts"],
+        "batches": batches,
+        "portable_semantic_hashes": portable_hashes,
+        "reconciled_production_fingerprint": {
+            **reconciled,
+        },
+        "semantic_match": True,
+    }
+
+
 def _security_state(conn: Any) -> dict[str, Any]:
     privileges = {
         role: {
@@ -716,38 +1059,88 @@ def _security_state(conn: Any) -> dict[str, Any]:
     return {"direct_select_privileges": privileges, "rls_enabled": rls}
 
 
-def _preflight(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
-    live_schema_contract(conn)
+def _preflight(
+    conn: Any,
+    bundle: dict[str, Any],
+    *,
+    require_reconciled_hashes: bool = False,
+) -> dict[str, Any]:
+    schema = live_schema_contract(conn)
+    schema_sha256 = semantic_hash(_schema_semantics(schema))
+    expected_schema_sha256 = bundle["pre_activation_baseline"][
+        "reconciled_production_fingerprint"
+    ]["schema_object_sha256"]
+    if schema_sha256 != expected_schema_sha256:
+        raise StoreSafetyError("pre-activation schema-object digest mismatch")
     security = _security_state(conn)
     counts = _counts(conn)
     if counts != bundle["expected_counts"]["before"]:
         raise StoreSafetyError(f"pre-activation database counts mismatch: {counts}")
     historical = _historical_seed_exact(conn, bundle)
-    keys = [item["natural_key"] for item in bundle["artifacts"]]
+    governed = _governed_baseline_exact(
+        conn,
+        bundle,
+        require_reconciled_hashes=require_reconciled_hashes,
+    )
+    absence = bundle["pre_activation_baseline"]["target_absence"]
+    keys = absence["natural_keys"]
     conflicting = conn.execute(
         """SELECT natural_key, artifact_version, content_sha256
            FROM editorial_artifact_versions
-           WHERE natural_key = ANY(%s)""",
-        (keys,),
+           WHERE natural_key = ANY(%s) OR content_sha256 = ANY(%s)""",
+        (keys, absence["content_sha256"]),
     ).fetchall()
     existing_batch = conn.execute(
         "SELECT batch_id FROM editorial_artifact_batches WHERE deterministic_batch_key = %s",
-        (BATCH_KEY,),
+        (absence["activation_batch_key"],),
     ).fetchone()
     registry = conn.execute(
         """SELECT artifact_id FROM editorial_publication_registry
            WHERE member_bioguide_id = %s AND issue_id = %s""",
         (MEMBER_ID, ISSUE_ID),
     ).fetchone()
-    if conflicting or existing_batch or registry:
+    registry_count = int(
+        conn.execute(
+            "SELECT COUNT(*) AS n FROM editorial_publication_registry"
+        ).fetchone()["n"]
+    )
+    selector_rows = EditorialArtifactRepository(conn).publication_selector()
+    selector_tiers = {}
+    for scope in ("119", "all", "118"):
+        response = select_public_presentations(
+            selector_rows,
+            legislator_id="leg_valerie_p_foushee",
+            member_bioguide_id=MEMBER_ID,
+            scope=scope,
+        )
+        selector_tiers[scope] = next(
+            item
+            for item in response["presentations"]
+            if item["issue_id"] == ISSUE_ID
+        )["tier"]
+    if (
+        conflicting
+        or existing_batch
+        or registry
+        or registry_count != 0
+        or selector_rows
+        or selector_tiers
+        != {"119": "receipts_only", "all": "receipts_only", "118": "receipts_only"}
+    ):
         raise StoreSafetyError("activation target is not absent")
     return {
         "read_only": True,
         "schema_exact": True,
+        "schema_object_sha256": schema_sha256,
         "historical_seed": historical,
+        "governed_baseline": governed,
         "counts": counts,
         "security": security,
         "target_absent": True,
+        "selector": {
+            "rows": len(selector_rows),
+            "F000477": selector_tiers,
+        },
     }
 
 
@@ -1029,7 +1422,13 @@ def _rollback(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     if counts != bundle["expected_counts"]["before"]:
         raise StoreSafetyError(f"rollback counts mismatch: {counts}")
     historical = _historical_seed_exact(conn, bundle)
-    return {"removed_batch_id": post["batch_id"], "counts": counts, "historical_seed": historical}
+    governed = _governed_baseline_exact(conn, bundle)
+    return {
+        "removed_batch_id": post["batch_id"],
+        "counts": counts,
+        "historical_seed": historical,
+        "governed_baseline": governed,
+    }
 
 
 def _api_smoke(base_url: str) -> dict[str, Any]:
@@ -1186,9 +1585,17 @@ def main(argv: list[str] | None = None) -> int:
             if args.mode in {"apply", "rollback"}:
                 conn.execute("SELECT pg_advisory_xact_lock(hashtext(%s))", (LOCK_KEY,))
             if args.mode == "preflight":
-                result["preflight"] = _preflight(conn, bundle)
+                require_reconciled_hashes = args.target == "production"
+                result["preflight"] = _preflight(
+                    conn,
+                    bundle,
+                    require_reconciled_hashes=require_reconciled_hashes,
+                )
                 report = _preflight_report(
-                    conn, bundle, args.deployed_commit
+                    conn,
+                    bundle,
+                    args.deployed_commit,
+                    require_reconciled_hashes=require_reconciled_hashes,
                 )
                 result["preflight_report"] = report
                 if args.report_path:

@@ -78,17 +78,11 @@ jobs:
           python -m pip install -r backend/requirements.txt
           python -m pip install httpx==0.28.1
 
-      - name: Prepare frozen disposable editorial state
+      - name: Prepare reconciled disposable editorial baseline
         run: |
           createdb -h 127.0.0.1 -U postgres pf_activation
-          python backend/scripts/prepare_editorial_artifact_disposable.py
-          python backend/scripts/editorial_artifact_store.py \
-            --apply \
-            --target disposable \
-            --batch-key editorial-artifact-persistence-v1-88d6f344 \
-            --source-commit 88d6f3446f54b07735e084cbc958c1614b190fab \
-            --manifest-sha256 f8c4c24f00f3835b4c1a82e415ae7f2fde77002529b3cc3a23d0785c15efd726 \
-            --migration-sha256 b4fffce458ebda4b09ce92cd1998468c4d18bad2450e43e9567776340337a9f7
+          python backend/scripts/prepare_editorial_artifact_disposable.py \
+            --seed-foushee-activation-baseline
 
       - name: Run publication activation PostgreSQL suite without skips
         run: >-

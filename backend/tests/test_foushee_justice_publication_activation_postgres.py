@@ -49,11 +49,23 @@ def test_transactional_apply_idempotency_postcheck_and_rollback() -> None:
     bundle = load_activation_bundle()
     with _connect(DATABASE_URL) as conn:
         with conn.transaction():
-            assert _preflight(conn, bundle)["counts"] == {
-                "batches": 1,
-                "artifacts": 71,
-                "relationships": 95,
+            preflight = _preflight(conn, bundle)
+            assert preflight["counts"] == {
+                "batches": 2,
+                "artifacts": 140,
+                "relationships": 155,
                 "publication_registry": 0,
+            }
+            assert [item["database_batch_id"] for item in preflight[
+                "governed_baseline"
+            ]["batches"]] == [1, 8]
+            assert preflight["selector"] == {
+                "rows": 0,
+                "F000477": {
+                    "119": "receipts_only",
+                    "all": "receipts_only",
+                    "118": "receipts_only",
+                },
             }
             conn.execute(
                 "SELECT pg_advisory_xact_lock(hashtext(%s))", (LOCK_KEY,)
@@ -412,6 +424,28 @@ def test_deployed_commit_preflight_is_read_only_and_apply_binding_is_exact(
     not DATABASE_URL,
     reason="requires an explicitly provisioned disposable PostgreSQL database",
 )
+def test_preflight_rejects_governed_baseline_batch_identity_drift() -> None:
+    bundle = load_activation_bundle()
+    with _connect(DATABASE_URL) as conn:
+        with conn.transaction(force_rollback=True):
+            conn.execute(
+                """UPDATE editorial_artifact_batches
+                   SET source_commit_sha = %s
+                   WHERE deterministic_batch_key =
+                     'commissioning-domain-v1-environment-energy-final-composition'""",
+                ("0" * 40,),
+            )
+            with pytest.raises(
+                StoreSafetyError,
+                match="governed baseline batch identity mismatch",
+            ):
+                _preflight(conn, bundle)
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires an explicitly provisioned disposable PostgreSQL database",
+)
 @pytest.mark.parametrize(
     "corruption",
     [
@@ -627,8 +661,8 @@ def test_preexisting_registry_conflict_is_unchanged_on_rejected_activation() -> 
             )
             assert after == before
             assert _counts(conn) == before_counts == {
-                "batches": 1,
-                "artifacts": 71,
-                "relationships": 95,
+                "batches": 2,
+                "artifacts": 140,
+                "relationships": 155,
                 "publication_registry": 1,
             }

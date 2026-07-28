@@ -1,4 +1,4 @@
-"""Create the existing schema and minimum canonical identities in a disposable DB only."""
+"""Create canonical identities or the governed Foushee baseline in a disposable DB."""
 
 from __future__ import annotations
 
@@ -14,6 +14,11 @@ if str(BACKEND) not in sys.path:
     sys.path.insert(0, str(BACKEND))
 
 from app.editorial_artifacts.bundle import build_seed_bundle
+from app.editorial_artifacts.migration import MIGRATION, strip_transaction_wrappers
+from app.editorial_artifacts.publication_activation import (
+    load_pre_activation_baseline_manifests,
+)
+from scripts import editorial_artifact_store as store
 
 
 def main() -> int:
@@ -26,14 +31,27 @@ def main() -> int:
         default=[],
         help="Manifest used only to seed canonical identities; may be repeated.",
     )
+    parser.add_argument(
+        "--seed-foushee-activation-baseline",
+        action="store_true",
+        help=(
+            "Apply migration 0016 and seed the exact governed 2/140/155/0 "
+            "pre-activation baseline; disposable loopback databases only."
+        ),
+    )
     args = parser.parse_args()
     db_url = os.getenv(args.database_url_env)
     if not db_url or "localhost" not in db_url and "127.0.0.1" not in db_url:
         raise SystemExit("disposable initializer requires a loopback PostgreSQL URL")
 
     import psycopg
+    from psycopg.rows import dict_row
 
-    bundles = [build_seed_bundle()]
+    bundles = (
+        load_pre_activation_baseline_manifests()
+        if args.seed_foushee_activation_baseline
+        else [build_seed_bundle()]
+    )
     bundles.extend(
         json.loads(path.read_text(encoding="utf-8"))
         for path in args.additional_manifest
@@ -60,7 +78,9 @@ def main() -> int:
             member = payload.get("overlay", {}).get("member") or payload.get("member") or {}
             if member:
                 member_metadata[identifier] = member
-    with psycopg.connect(db_url, autocommit=True) as conn:
+    with psycopg.connect(
+        db_url, autocommit=True, row_factory=dict_row
+    ) as conn:
         for role in ("anon", "authenticated"):
             conn.execute(
                 f"""DO $$ BEGIN
@@ -101,12 +121,71 @@ def main() -> int:
                    VALUES (%s, %s, %s, %s, '2025-01-03T12:00:00Z', 'Disposable identity', '')""",
                 (chamber, int(congress), int(session), int(roll)),
             )
+        baseline_application = []
+        if args.seed_foushee_activation_baseline:
+            conn.execute(
+                strip_transaction_wrappers(MIGRATION.read_text(encoding="utf-8"))
+            )
+            for index, bundle in enumerate(bundles):
+                if index == 1:
+                    conn.execute(
+                        "SELECT setval("
+                        "'editorial_artifact_batches_batch_id_seq', 7, true)"
+                    )
+                store.BATCH_KEY = bundle["deterministic_batch_key"]
+                store.STARTING_COMMIT = bundle["starting_commit"]
+                baseline_application.append(
+                    store.insert_bundle(
+                        conn,
+                        bundle,
+                        store.resolve_canonical_identities(conn, bundle),
+                    )
+                )
+            counts = {
+                "batches": int(
+                    conn.execute(
+                        "SELECT COUNT(*) AS n FROM editorial_artifact_batches"
+                    ).fetchone()["n"]
+                ),
+                "artifacts": int(
+                    conn.execute(
+                        "SELECT COUNT(*) AS n FROM editorial_artifact_versions"
+                    ).fetchone()["n"]
+                ),
+                "relationships": int(
+                    conn.execute(
+                        "SELECT COUNT(*) AS n "
+                        "FROM editorial_artifact_relationships"
+                    ).fetchone()["n"]
+                ),
+                "publication_registry": int(
+                    conn.execute(
+                        "SELECT COUNT(*) AS n "
+                        "FROM editorial_publication_registry"
+                    ).fetchone()["n"]
+                ),
+            }
+            if counts != {
+                "batches": 2,
+                "artifacts": 140,
+                "relationships": 155,
+                "publication_registry": 0,
+            } or [item["batch_id"] for item in baseline_application] != [1, 8]:
+                raise RuntimeError(
+                    f"disposable governed baseline mismatch: "
+                    f"{counts}, {baseline_application}"
+                )
     print(json.dumps({
         "initialized": True,
-        "migrations_applied_through": "0015",
+        "migrations_applied_through": (
+            "0016" if args.seed_foushee_activation_baseline else "0015"
+        ),
         "canonical_members": len(members),
         "canonical_actions": len(actions),
         "bundle_count": len(bundles),
+        "baseline_application": baseline_application
+        if args.seed_foushee_activation_baseline
+        else None,
     }, indent=2))
     return 0
 

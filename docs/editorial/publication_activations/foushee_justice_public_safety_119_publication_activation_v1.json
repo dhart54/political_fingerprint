@@ -14,6 +14,70 @@
       "publication_registry": 0
     }
   },
+  "pre_activation_baseline": {
+    "schema_version": "editorial_publication_pre_activation_baseline_v1",
+    "expected_counts": {
+      "batches": 2,
+      "artifacts": 140,
+      "relationships": 155,
+      "publication_registry": 0
+    },
+    "governed_batches": [
+      {
+        "database_batch_id": 1,
+        "deterministic_batch_key": "editorial-artifact-persistence-v1-88d6f344",
+        "source_commit_sha": "88d6f3446f54b07735e084cbc958c1614b190fab",
+        "manifest_sha256": "f8c4c24f00f3835b4c1a82e415ae7f2fde77002529b3cc3a23d0785c15efd726",
+        "status": "applied",
+        "artifact_count": 71,
+        "relationship_count": 95,
+        "artifact_semantic_sha256": "00cf0ecd953ca00926612dfdf5b163f54371fb4d50c7575f668646478a5cf86b",
+        "relationship_semantic_sha256": "7efc0c1230a881617acb032d411aeac4cb53afb0ee25b2b2d2d66ad97a1a0016",
+        "portable_graph_sha256": "d3c24f76ff4907b566087a5a427d98cebe9fa6c5f4a5251d8e7dd8e3ac1303c6",
+        "reconciled_graph_sha256": "417f715860554764376f58786444f8e8f37a3709dbb83eefa299a97d15713adb"
+      },
+      {
+        "database_batch_id": 8,
+        "deterministic_batch_key": "commissioning-domain-v1-environment-energy-final-composition",
+        "source_commit_sha": "08e675e2039d76f16b8c9576e4b5a8254bc44d72",
+        "manifest_sha256": "fbee0675ace2b2e256fe1723681e3bd17dd065c670199367d76e8782b352a600",
+        "status": "applied",
+        "artifact_count": 69,
+        "relationship_count": 60,
+        "artifact_semantic_sha256": "57e158f98b0ef0ab15f020cfd31992d73e1222742cfcfaa827574a8eab18974a",
+        "relationship_semantic_sha256": "bbc37b284aa43138b53abeffbf6e416fd678806f11fbd95542641cb70c997b21",
+        "portable_graph_sha256": "40184eabc8aceaa87ffc4153d66aac3afeee8c7de77297c996caee4efb28cbef",
+        "reconciled_graph_sha256": "e84b2f1cbc8d5f0a9d887d213be51098f2492af9449ff30f509497e32301e864"
+      }
+    ],
+    "portable_semantic_hashes": {
+      "artifacts_sha256": "6a981ebf2b645d8ac8072d8aa1cc2eceef2aa861addf4a551676c4cb8c586c4f",
+      "relationships_sha256": "7c01d887d93a008515bea2d7c0b02e0032b4f90cb268faa699bcd1550f7d6698"
+    },
+    "reconciled_production_fingerprint": {
+      "schema_object_sha256": "8536bd81b66939487aa6ef0815507f945258a7034d9ba0634046d90ce876caba",
+      "artifact_set_sha256": "df0bdc91e7a8a9527b655a83c1bc085e7269bba4b2c65168fb3c6167830092c4",
+      "relationship_set_sha256": "8cc57ee52040861753e147d35c5ec0680be797b8416b18e9821922a4d913cd48",
+      "registry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "fingerprint_sha256": "df9aeb1a746785395e28c177785b6f560494661af20073262efb9e1a40648ee7"
+    },
+    "target_absence": {
+      "natural_keys": [
+        "f000477:justice_public_safety:119:v1",
+        "f000477:justice_public_safety:119:v1:publication-source-manifest",
+        "f000477:justice_public_safety:119:v1:publication-validation"
+      ],
+      "content_sha256": [
+        "fd7a8b5e440654147bbb6b738be3bb683034f07b0c9cc4e26eba9cce84e07e59",
+        "b05e4a9e5212bac50c9c2cbeb0afd4cd5a07818b022c977c2f10252d01d3f2c4"
+      ],
+      "activation_batch_key": "foushee-justice-public-safety-119-publication-activation-v1-bae70a36",
+      "registry_primary_key": {
+        "member_bioguide_id": "F000477",
+        "issue_id": "JUSTICE_PUBLIC_SAFETY"
+      }
+    }
+  },
   "activation_target": {
     "member_bioguide_id": "F000477",
     "issue_id": "JUSTICE_PUBLIC_SAFETY",
@@ -1335,15 +1399,15 @@
   },
   "expected_counts": {
     "before": {
-      "batches": 1,
-      "artifacts": 71,
-      "relationships": 95,
+      "batches": 2,
+      "artifacts": 140,
+      "relationships": 155,
       "publication_registry": 0
     },
     "after": {
-      "batches": 2,
-      "artifacts": 74,
-      "relationships": 97,
+      "batches": 3,
+      "artifacts": 143,
+      "relationships": 157,
       "publication_registry": 1
     }
   },
@@ -1373,9 +1437,9 @@
     },
     "approval_receipt_id": "approval-receipt:f000477-justice-public-safety-119-v1-20260727-dhart54",
     "restore_expected_counts": {
-      "batches": 1,
-      "artifacts": 71,
-      "relationships": 95,
+      "batches": 2,
+      "artifacts": 140,
+      "relationships": 155,
       "publication_registry": 0
     },
     "deletion_order": [
@@ -1408,5 +1472,5 @@
     "relationships_sha256": "98bb7a56e357bdcb04d19011822113a28864ec60daf5cc8cd0a6c012f45af902",
     "publication_registry_sha256": "440fd36a75befd63014551c1d70530d809af9574e1969d5d78c26b2304a637a4"
   },
-  "bundle_sha256": "f03a5a8488103e7b06c65547f31d236098a048b0d317623f9277ca9ddb1e21f2"
+  "bundle_sha256": "dc6ee9ff9e8c73f30541908af4e2f53c6847c7c593bb48367ddd4ff328ebecf6"
 }

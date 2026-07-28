@@ -13,14 +13,18 @@
       "public.editorial_publication_registry"
     ],
     "required_pre_activation_counts": {
-      "batches": 1,
-      "artifacts": 71,
-      "relationships": 95,
+      "batches": 2,
+      "artifacts": 140,
+      "relationships": 155,
       "publication_registry": 0
     },
-    "required_manifest_sha256": "f8c4c24f00f3835b4c1a82e415ae7f2fde77002529b3cc3a23d0785c15efd726",
+    "required_manifest_sha256": [
+      "f8c4c24f00f3835b4c1a82e415ae7f2fde77002529b3cc3a23d0785c15efd726",
+      "fbee0675ace2b2e256fe1723681e3bd17dd065c670199367d76e8782b352a600"
+    ],
     "required_inventory": [
-      "semantic hashes for the frozen historical artifacts and relationships",
+      "semantic hashes for both governed baseline artifact and relationship graphs",
+      "reconciled schema, full artifact-set, full relationship-set, registry, and fingerprint hashes",
       "target natural-key/version query result",
       "target registry primary-key query result",
       "referenced validation and source rows",
@@ -41,14 +45,14 @@
     "snapshot_sha256_required": true,
     "restore_to_fresh_disposable_database_required": true,
     "restored_schema_contract_required": "0016_editorial_artifact_persistence",
-    "restored_historical_seed_semantic_equality_required": true,
+    "restored_governed_baseline_semantic_equality_required": true,
     "restore_command_template": "Executed by prepare-backup with pg_restore --exit-on-error --no-owner --no-privileges into a fresh empty disposable database"
   },
   "proof_contract": {
     "schema_version": "editorial_publication_backup_proof_v1",
     "schema_path": "docs/editorial_publication_backup_proof_v1.schema.json",
     "bundle_id": "foushee_justice_public_safety_119_publication_activation_v1",
-    "bundle_sha256": "f03a5a8488103e7b06c65547f31d236098a048b0d317623f9277ca9ddb1e21f2",
+    "bundle_sha256": "dc6ee9ff9e8c73f30541908af4e2f53c6847c7c593bb48367ddd4ff328ebecf6",
     "machine_generated_only": true,
     "required_evidence": [
       "successful preflight report and digest",
