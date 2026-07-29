@@ -27,13 +27,19 @@ The machine-readable authority is
   are not emitted by the current API and are not synthesized in React. The former
   `/golden-render-fixture` route is absent. Presentation tiers and wording are
   supplied by the backend; React does not infer them. The human-approved, gold,
-  production-eligible F000477 Justice 119th presentation remains publication
-  inactive and therefore `receipts_only`.
-- The 71 historically staged artifacts remain unpublished; persistence,
-  publication, database, deployment, and production state were not changed by
-  the cutover.
-- The deterministic Foushee activation bundle is separate from that frozen
-  71-artifact seed and has not been applied.
+  production-eligible F000477 Justice 119th presentation is publication-active:
+  `scope=119` and `scope=all` return `reviewed_conclusion`, with `scope=all`
+  explicitly bounded to the reviewed 119th-Congress record; `scope=118` remains
+  `receipts_only`.
+- Before the activation, the 71-artifact seed had no publication-registry row.
+  That state remains historical evidence and was not modified by the editorial
+  hard cutover.
+- The separate deterministic Foushee activation bundle was applied successfully
+  on 2026-07-29 as one exact seven-row transaction. Its immutable closeout
+  receipt is
+  `docs/editorial/publication_activations/foushee_justice_public_safety_119_successful_activation_receipt_v1.json`.
+  The rollback was not triggered; its identity-bound guardrails remain
+  documented but are not authorized by the receipt.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

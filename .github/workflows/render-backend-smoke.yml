@@ -35,34 +35,131 @@ jobs:
           set -euo pipefail
           curl --fail --silent --show-error --max-time 20 "$API_BASE_URL/health" >/tmp/health.json
           curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/positions" >/tmp/positions.json
-          curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence" >/tmp/evidence.json
-          curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/editorial-presentations?scope=119" >/tmp/editorial-presentations.json
+          curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/positions/JUSTICE_PUBLIC_SAFETY/evidence" >/tmp/justice-evidence.json
+          curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/editorial-presentations?scope=119" >/tmp/presentations-119.json
+          curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/editorial-presentations?scope=all" >/tmp/presentations-all.json
+          curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/editorial-presentations?scope=118" >/tmp/presentations-118.json
+          curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_alex_morgan/editorial-presentations?scope=119" >/tmp/other-member.json
           python - <<'PY'
           import json
+          import os
           from pathlib import Path
 
-          positions = json.loads(Path("/tmp/positions.json").read_text())
-          evidence = json.loads(Path("/tmp/evidence.json").read_text())
-          presentations = json.loads(Path("/tmp/editorial-presentations.json").read_text())
-          position = next((row for row in positions.get("positions", []) if row.get("domain") == "NATIONAL_SECURITY_FOREIGN"), None)
+          output_dir = Path(os.environ.get("SMOKE_OUTPUT_DIR", "/tmp"))
+          positions = json.loads((output_dir / "positions.json").read_text())
+          evidence = json.loads((output_dir / "justice-evidence.json").read_text())
+          presentations = {
+              "119": json.loads((output_dir / "presentations-119.json").read_text()),
+              "all": json.loads((output_dir / "presentations-all.json").read_text()),
+              "118": json.loads((output_dir / "presentations-118.json").read_text()),
+          }
+          other_member = json.loads((output_dir / "other-member.json").read_text())
+          position = next((row for row in positions.get("positions", []) if row.get("domain") == "JUSTICE_PUBLIC_SAFETY"), None)
           if not position or "interpreted_total" not in position:
               raise SystemExit("Valerie positions response is missing interpreted_total")
           rows = evidence.get("evidence", [])
           if not rows or "interpretation_status" not in rows[0]:
               raise SystemExit("Valerie evidence response is missing interpretation_status")
-          if presentations.get("schema_version") != "editorial_public_presentations_api_v1":
-              raise SystemExit("Valerie editorial response has the wrong schema")
-          justice = next(
-              (
-                  row
-                  for row in presentations.get("presentations", [])
-                  if row.get("issue_id") == "JUSTICE_PUBLIC_SAFETY"
-              ),
-              None,
+
+          def issue(payload, issue_id):
+              if payload.get("schema_version") != "editorial_public_presentations_api_v1":
+                  raise SystemExit("Editorial response has the wrong schema")
+              result = next(
+                  (row for row in payload.get("presentations", []) if row.get("issue_id") == issue_id),
+                  None,
+              )
+              if result is None:
+                  raise SystemExit(f"Editorial response is missing {issue_id}")
+              return result
+
+          def require_identity(payload, *, legislator_id, member_bioguide_id, scope):
+              expected = {
+                  "legislator_id": legislator_id,
+                  "member_bioguide_id": member_bioguide_id,
+                  "scope": scope,
+              }
+              actual = {key: payload.get(key) for key in expected}
+              if actual != expected:
+                  raise SystemExit(
+                      f"Editorial response identity changed: expected {expected}, got {actual}"
+                  )
+
+          for scope, payload in presentations.items():
+              require_identity(
+                  payload,
+                  legislator_id="leg_valerie_p_foushee",
+                  member_bioguide_id="F000477",
+                  scope=scope,
+              )
+          require_identity(
+              other_member,
+              legislator_id="leg_alex_morgan",
+              member_bioguide_id="H000001",
+              scope="119",
           )
-          if not justice or justice.get("tier") not in {
-              "receipts_only",
-              "reviewed_conclusion",
+
+          justice = {scope: issue(payload, "JUSTICE_PUBLIC_SAFETY") for scope, payload in presentations.items()}
+          tiers = {scope: row.get("tier") for scope, row in justice.items()}
+          if tiers != {
+              "119": "reviewed_conclusion",
+              "all": "reviewed_conclusion",
+              "118": "receipts_only",
           }:
-              raise SystemExit("Valerie Justice editorial response has an invalid tier")
+              raise SystemExit(f"Valerie Justice editorial tiers changed: {tiers}")
+
+          expected_provenance = {
+              "artifact_id": "f000477:justice_public_safety:119:v1",
+              "artifact_version": 1,
+              "reviewed_wording_sha256": "30636227799244522d07a9608e06878561439f0fb9819931989727277607ae92",
+              "review_receipt_id": "approval-receipt:f000477-justice-public-safety-119-v1-20260727-dhart54",
+          }
+          for scope in ("119", "all"):
+              row = justice[scope]
+              provenance = row.get("provenance", {})
+              for key, expected in expected_provenance.items():
+                  if provenance.get(key) != expected:
+                      raise SystemExit(f"Valerie Justice {scope} provenance changed: {key}")
+              evidence_metadata = row.get("evidence_metadata", {})
+              if (
+                  len(evidence_metadata.get("action_ids", [])) != 7
+                  or len(evidence_metadata.get("episode_ids", [])) != 5
+                  or len(row.get("repeated_patterns", [])) != 2
+                  or len(row.get("policy_trajectories", [])) != 1
+              ):
+                  raise SystemExit(f"Valerie Justice {scope} evidence coverage changed")
+          if not justice["all"].get("scope_boundary", "").endswith(
+              "The conclusion remains bounded to the reviewed 119th-Congress record."
+          ):
+              raise SystemExit("scope=all omitted its reviewed-record boundary")
+          if justice["118"].get("conclusion") is not None:
+              raise SystemExit("scope=118 exposed analytical copy")
+
+          cross_issue = issue(presentations["119"], "ECONOMY_TAXES")
+          if (
+              cross_issue.get("tier") != "receipts_only"
+              or cross_issue.get("conclusion") is not None
+          ):
+              raise SystemExit("Cross-issue publication isolation failed")
+          other_member_justice = issue(other_member, "JUSTICE_PUBLIC_SAFETY")
+          if (
+              other_member_justice.get("tier") != "receipts_only"
+              or other_member_justice.get("conclusion") is not None
+          ):
+              raise SystemExit("Cross-member publication isolation failed")
+
+          required_rolls = {
+              int(action_id.rsplit(":", 1)[1])
+              for action_id in justice["119"]["evidence_metadata"]["action_ids"]
+          }
+          supporting_rolls = {
+              int(row["rollcall_number"])
+              for row in rows
+              if int(row.get("congress", 0)) == 119
+              and int(row.get("rollcall_number", 0)) in required_rolls
+              and row.get("position") in {"yea", "nay"}
+              and isinstance(row.get("source_url"), str)
+              and row["source_url"].startswith("https://clerk.house.gov/")
+          }
+          if supporting_rolls != required_rolls:
+              raise SystemExit("Valerie Justice supporting receipt contract failed")
           PY

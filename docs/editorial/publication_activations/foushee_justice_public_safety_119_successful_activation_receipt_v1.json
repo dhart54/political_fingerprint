@@ -1,0 +1,176 @@
+{
+  "schema_version": "editorial_publication_successful_activation_receipt_v1",
+  "receipt_id": "production-activation-receipt:f000477-justice-public-safety-119-v1-20260729",
+  "status": "closed_successful",
+  "authorization": {
+    "record_scope": "historical_record_only",
+    "authorizes_activation": false,
+    "authorizes_deactivation": false,
+    "authorizes_deployment": false,
+    "authorizes_rollback": false
+  },
+  "bundle": {
+    "bundle_id": "foushee_justice_public_safety_119_publication_activation_v1",
+    "bundle_sha256": "df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813"
+  },
+  "deployment": {
+    "backend_commit_sha": "bbeafa1e64b4e7783739f5b2f6b2c343b39209e5"
+  },
+  "subject": {
+    "member_bioguide_id": "F000477",
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "reviewed_scope": "119",
+    "approval_receipt_id": "approval-receipt:f000477-justice-public-safety-119-v1-20260727-dhart54",
+    "approval_subject_sha256": "67e67001ca678e70debba52e9049632f90d99da4d6f1dcaea60da40beaa87874",
+    "presentation_content_sha256": "5813d5e556542d0ef2234dc05b1e1e24d5811d8c0e22af7775cd1e9b82aa55ca",
+    "active_presentation_sha256": "fd7a8b5e440654147bbb6b738be3bb683034f07b0c9cc4e26eba9cce84e07e59"
+  },
+  "production_activation": {
+    "activated_at": "2026-07-29T02:01:07.388267Z",
+    "public_smoke_completed_at": "2026-07-29T02:01:44.742108Z"
+  },
+  "database_identities": {
+    "identity_scope": "historical_operational_identities_not_portable_constants",
+    "batch_id": 13,
+    "artifacts": [
+      {
+        "artifact_id": 218,
+        "artifact_type": "issue_public_presentation",
+        "natural_key": "f000477:justice_public_safety:119:v1",
+        "artifact_version": 1,
+        "content_sha256": "fd7a8b5e440654147bbb6b738be3bb683034f07b0c9cc4e26eba9cce84e07e59"
+      },
+      {
+        "artifact_id": 219,
+        "artifact_type": "source_manifest",
+        "natural_key": "f000477:justice_public_safety:119:v1:publication-source-manifest",
+        "artifact_version": 1,
+        "content_sha256": "74f9a755b76dc5079b5bf3afd2d0892713cdf7dc3f3f16f1352910943fce9a7f"
+      },
+      {
+        "artifact_id": 220,
+        "artifact_type": "standardization_validation_result",
+        "natural_key": "f000477:justice_public_safety:119:v1:publication-validation",
+        "artifact_version": 1,
+        "content_sha256": "aafc7f2605d0f042ab6ca900557b68e63a57d9a41dc573768c951db48dd023d0"
+      }
+    ]
+  },
+  "relationships": [
+    {
+      "parent_natural_key": "f000477:justice_public_safety:119:v1",
+      "child_natural_key": "f000477:justice_public_safety:119:v1:publication-validation",
+      "relationship_type": "has_validation",
+      "ordinal": 0,
+      "metadata": {
+        "activation_bundle_id": "foushee_justice_public_safety_119_publication_activation_v1"
+      }
+    },
+    {
+      "parent_natural_key": "f000477:justice_public_safety:119:v1",
+      "child_natural_key": "f000477:justice_public_safety:119:v1:publication-source-manifest",
+      "relationship_type": "uses_source_manifest",
+      "ordinal": 0,
+      "metadata": {
+        "activation_bundle_id": "foushee_justice_public_safety_119_publication_activation_v1"
+      }
+    }
+  ],
+  "registry": {
+    "member_bioguide_id": "F000477",
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "artifact_id": 218,
+    "publicly_active": true
+  },
+  "effect": {
+    "rows_inserted": 7,
+    "batches_inserted": 1,
+    "artifacts_inserted": 3,
+    "relationships_inserted": 2,
+    "registry_rows_inserted": 1
+  },
+  "pre_activation": {
+    "counts": {
+      "batches": 2,
+      "artifacts": 140,
+      "relationships": 155,
+      "publication_registry": 0
+    },
+    "reconciled_fingerprint_sha256": "3328dd38b4483f651a8459adec9b1d4ed2cfb8baa61ad413a282d3617d726b18"
+  },
+  "post_activation": {
+    "counts": {
+      "batches": 3,
+      "artifacts": 143,
+      "relationships": 157,
+      "publication_registry": 1
+    },
+    "artifact_set_sha256": "b8cd31add808710ed6413a4cf5195b436d29b8afb382d7a61b4a87cab3e77307",
+    "relationship_set_sha256": "98bb7a56e357bdcb04d19011822113a28864ec60daf5cc8cd0a6c012f45af902"
+  },
+  "public_smoke": {
+    "scope_119": "reviewed_conclusion",
+    "scope_all": "reviewed_conclusion",
+    "scope_118": "receipts_only",
+    "scope_all_boundary": "reviewed_119_record",
+    "actions": 7,
+    "episodes": 5,
+    "repeated_patterns": 2,
+    "supporting_receipts": 7,
+    "approved_wording_and_provenance": true,
+    "cross_member_isolated": true,
+    "cross_issue_isolated": true,
+    "http_500_observed": false
+  },
+  "rollback_readiness": {
+    "status": "not_triggered",
+    "activation_batch_id": 13,
+    "artifact_ids": [
+      218,
+      219,
+      220
+    ],
+    "bundle_id": "foushee_justice_public_safety_119_publication_activation_v1",
+    "bundle_sha256": "df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813",
+    "activation_receipt_id": "production-activation-receipt:f000477-justice-public-safety-119-v1-20260729",
+    "tool_path": "backend/scripts/foushee_justice_publication_activation.py",
+    "requires_live_identity_verification": true,
+    "refuses_registry_or_graph_drift": true,
+    "rollback_authorized": false
+  },
+  "evidence": {
+    "preflight_report_id": "foushee_justice_public_safety_119_publication_activation_v1:238fa30687793b6e925e57a97267eb0919c2687f5703bf852fe03da2c68986de:bbeafa1e64b4e7783739f5b2f6b2c343b39209e5",
+    "preflight_report_sha256": "7c51850cd99ee0fa1b5896cf77525e8b047d9be67d2376f6a97d3fddf1a932be",
+    "final_freshness_report_sha256": "d872a43a6922021df6acaaf29eef7cae455cbb27893b0f2404cab9a2f69aa966",
+    "backup_proof_id": "foushee_justice_public_safety_119_publication_activation_v1:7c51850cd99ee0fa1b5896cf77525e8b047d9be67d2376f6a97d3fddf1a932be:69f4689cf7f88868b3966a47ba3820e460ec73dca1c5677497ab4adec511a5b1",
+    "backup_proof_sha256": "d0a679c57b80723b81de9abd8f52a0b9190716ca98034740821a4e10d71f3f4a",
+    "snapshot_size_bytes": 9654335,
+    "snapshot_sha256": "69f4689cf7f88868b3966a47ba3820e460ec73dca1c5677497ab4adec511a5b1",
+    "source_inventory_sha256": "c3be4bd78e77401e3c017b9d5a45e86829a8ca5fe031a2038b875c4641095433",
+    "restored_inventory_sha256": "5a6cae2d11a0635b499a679375a61e495d111b33ea6c7e3042ca6a40b8f57c1f",
+    "restore_receipt_sha256": "e2ea7ee755c7d5bef1e20f6c0a78e7a078caaf5512e785a92611c3f21f0083f6",
+    "lifecycle_http_proof_sha256": "d71181db3f5e379d1439e2c2bbe6b23e64ae12a7f0cc25019a2f4614182f3b3d"
+  },
+  "activation_result": {
+    "status": "successful",
+    "batch_id": 13,
+    "artifact_ids": [
+      218,
+      219,
+      220
+    ],
+    "rows_inserted": 7,
+    "post_activation_counts": {
+      "batches": 3,
+      "artifacts": 143,
+      "relationships": 157,
+      "publication_registry": 1
+    },
+    "artifact_set_sha256": "b8cd31add808710ed6413a4cf5195b436d29b8afb382d7a61b4a87cab3e77307",
+    "relationship_set_sha256": "98bb7a56e357bdcb04d19011822113a28864ec60daf5cc8cd0a6c012f45af902",
+    "public_smoke_completed_at": "2026-07-29T02:01:44.742108Z",
+    "rollback_status": "not_triggered"
+  },
+  "activation_result_sha256": "3ac0833a330261601fdacae4972a83d4e218c62e19532b84018fc36b71023b33",
+  "canonical_receipt_sha256": "1d1d29392b9058058649e67341a3af78d9a2fa4921b7682380baf97be3326c9c"
+}
