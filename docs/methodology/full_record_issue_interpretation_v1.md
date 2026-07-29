@@ -95,8 +95,9 @@ identity, review scope, or episode identity.
 ## Content-addressed issue universe
 
 Every review declares an immutable issue-universe snapshot. Its action
-membership is the only allowed accounting denominator. The V1 snapshot digest
-is SHA-256 over UTF-8 compact, key-sorted JSON with this exact shape:
+membership is the only allowed accounting denominator. For benchmark and
+partial reviews, the local V1 snapshot digest remains SHA-256 over UTF-8
+compact, key-sorted JSON with this exact shape:
 
 ```json
 {
@@ -117,6 +118,25 @@ The universe definition must say what inclusion rule and temporal boundary it
 uses. A benchmark universe must explicitly say that it is not the complete
 issue record.
 
+`full_defined_issue_record` authority cannot be authored by the review manifest.
+It requires a separate `full_issue_universe_manifest_v1` plus a detached
+`full_issue_universe_authority_receipt_v1`. The manifest binds member, issue,
+Congress/session/time, chamber and service boundaries, inclusion/exclusion
+rules, acquisition/source-manifest identities and digests, exact action
+membership and count, source commit, action-set digest, and a digest of the
+complete universe subject. The detached receipt repeats that subject under
+`full_issue_universe_review_authority_v1`, repeats the exact closed boundary
+definition and digest, and explicitly approves it as the complete issue
+universe.
+
+The review stores only content-addressed references. Validation loads both
+artifacts, compiles their closed Draft-07 schemas, recomputes every file,
+boundary, action-set, and subject digest, verifies source manifests, and checks
+the receipt authority and binding. Recomputing a local review digest or changing
+`review_scope` cannot promote a benchmark. Test-only authority is accepted only
+through an explicit in-process test flag; the repository validation CLI cannot
+use it. This milestone creates no Foushee full-record universe.
+
 ## Complete action accounting
 
 Every action ID in the snapshot appears exactly once in `action_accounting`,
@@ -135,6 +155,7 @@ and no outside action may appear. Each receives one closed disposition:
 
 For each interpreted substantive action, the manifest requires:
 
+- a unique action-interpretation ID and action-meaning ID;
 - exact-action meaning;
 - official member action;
 - resolved evidence and in-service status;
@@ -142,7 +163,8 @@ For each interpreted substantive action, the manifest requires:
 - authoritative exact-action meaning sources;
 - one stable episode identity;
 - review state; and
-- an interpretation receipt or equivalent governed provenance.
+- an interpretation receipt or equivalent governed provenance; and
+- a digest over that complete action-interpretation subject.
 
 The disposition must follow the evidence state. A review-friendly `Yea` or `Nay`
 is directional. A review-friendly `Present` or `Not Voting` is
@@ -170,13 +192,25 @@ related actions. Multiple stages of that event count as one episode for
 breadth. Separate proposals remain separate episodes even when they share a
 policy family.
 
+Action accounting is the sole authority for action meaning. Episodes carry only
+the action ID, action-interpretation ID, and interpretation digest. They cannot
+author a second meaning. The validator resolves each reference to exactly one
+interpreted action and verifies identity and digest equality.
+
+Every in-scope substantive action also declares
+`episode_membership_state=established` with exactly one episode, or
+`episode_membership_state=unresolved` with a governed reason and no episode.
+Unresolved membership blocks review completion and synthesis. An established
+action remains in its episode even when evidence is missing, unresolved,
+conflicting, constraint-blocked, non-directional, or pending.
+
 Every episode requires:
 
 - stable episode identity;
 - all related in-scope actions known in the declared universe;
 - an action list and a complete chronological action order;
 - a concrete policy question;
-- exact action-level meanings;
+- exact content-addressed action-interpretation references;
 - the member record across every episode action;
 - a `directional_support`, `directional_opposition`, `mixed`,
   `non_directional`, or `unresolved` outcome;
@@ -184,10 +218,11 @@ Every episode requires:
 - official source references and source-completeness state; and
 - an explicit `complete` or `partial` completion state.
 
-An open episode action must appear in `unresolved_action_ids`; the episode must
-then be `partial`. A source gap also makes source completeness partial, while an
-action awaiting interpretation may leave sources complete. An interpreted
-action belongs to exactly one episode.
+An open episode action must appear in `unresolved_action_ids`; the validator
+derives the episode as `partial`. A source gap also makes source completeness
+partial, while an action awaiting interpretation may leave sources complete.
+Every established substantive action belongs to exactly one episode whether or
+not it is currently interpretable.
 
 Public episode ordering is deterministic: episodes are ordered by latest action
 date, newest first. Actions within an episode are chronological, oldest first.
@@ -210,8 +245,28 @@ benchmark labels are non-authorizing. A full synthesis is eligible only when:
 - all interpreted episode outcomes are supplied to full-record Semantic IR;
 - contradictory and mixed evidence is retained;
 - source boundaries are resolved;
-- semantic validation passes; and
-- human editorial review and content-bound approval pass.
+- a detached full-record semantic-validation receipt passes; and
+- a detached content-bound full-record human approval receipt passes.
+
+The explanatory `semantic_validation` and `human_editorial_review` fields never
+authorize these gates. A full public claim must reference:
+
+- a `full_record_semantic_artifact_v1` bound to the external universe, exact
+  action-accounting digest, episode-set digest, propositions, conclusion plan,
+  semantic tier, synthesis outcome, its own semantic-subject digest, and an
+  exact digest-addressed canonical compiled Editorial Semantic IR artifact;
+- a `full_record_semantic_validation_receipt_v1` binding that artifact and its
+  accounting/episode digests to the canonical validator with passed status and
+  zero blockers; and
+- a `full_record_synthesis_approval_receipt_v1` binding the universe, semantic
+  artifact, validation receipt, outcome, public claim class, wording, mappings,
+  limitations, provenance, reviewer authority, and decision.
+
+Validation loads every artifact, recomputes its digest, revalidates the canonical
+compiled IR, and requires its exact member, action universe, proposition
+identities, conclusion plan, and synthesis outcome to match. A changed universe,
+action, episode, semantic result, outcome, claim class, wording, mapping,
+limitation, or provenance invalidates the chain.
 
 Production eligibility, publication activation, registry selection, deployment,
 and merge remain separate later gates.
@@ -232,6 +287,21 @@ uses the distinct `full_review_no_safe_synthesis` claim class.
 
 Raw Yea/Nay totals, party, bill-title keywords, salience, and vote volume cannot
 directly produce or select the final synthesis.
+
+## Semantic-tier and public-claim compatibility
+
+| Public claim class | Scope and completion | Compatible semantic tier | Analytical teaser |
+| --- | --- | --- | --- |
+| `vote_record_only` | any | any internal tier | forbidden |
+| `reviewed_sample_finding` | benchmark or bounded partial | `reviewed_conclusion` or `developing_read` | scope-bounded only |
+| `full_issue_synthesis` | externally authorized full scope, complete | `reviewed_conclusion` | allowed after external gates |
+| `full_review_no_common_throughline` | externally authorized full scope, complete | `reviewed_conclusion` | only the externally validated outcome |
+| `full_review_no_safe_synthesis` | externally authorized full scope, complete | `receipts_only` or `non_directional_or_limited_evidence` | forbidden |
+
+The no-common-throughline path is supported by the isolated synthetic authority
+proof and is not inferred from the current Foushee benchmark. A
+`receipts_only` tier can never authorize an analytical synthesis or
+no-common-throughline claim.
 
 ## Benchmark role
 
@@ -269,6 +339,8 @@ It separates three truths:
    `full_defined_issue_record` for F000477, `JUSTICE_PUBLIC_SAFETY`, Congress
    119 has not been established or completed under this contract. Full-record
    action accounting has not passed, so `full_issue_synthesis_eligible=false`.
+   External full-universe authority, full-record Semantic IR validation, and
+   full-record synthesis approval references are all absent.
 
 This classification does not rewrite, invalidate, deactivate, or mutate the
 active artifact, its approved wording, its approval receipt, its publication
@@ -326,7 +398,8 @@ JSON Schema alone cannot prove:
 - benchmark non-authority; and
 - protected benchmark, approval, publication, and incident file digests.
 
-`scripts/check_full_record_terminology.py` rejects the prohibited
-benchmark-broadening conclusion phrase in current authoritative documentation.
-Clearly dated historical and archived evidence may preserve original
-terminology, but it cannot govern current scope or eligibility.
+`scripts/check_full_record_terminology.py` validates current structured labels
+against scope, completion, and authority, and rejects governed sentence patterns
+that equate a benchmark, gold slice, reviewed sample, or seven-action sample with
+a complete or representative-wide record. Clearly dated historical and archived
+evidence is exempt only through an explicit path allowlist.

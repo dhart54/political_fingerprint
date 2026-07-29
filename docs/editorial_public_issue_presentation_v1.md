@@ -103,6 +103,9 @@ Semantic tier is independent from the evidence universe and claim authority.
 A `reviewed_conclusion` may therefore be valid for a `benchmark_sample` while
 remaining ineligible for `full_issue_synthesis`. Benchmark promotion and public
 activation do not broaden the artifact's reviewed scope.
+Full-record public claim classes additionally require the detached universe,
+compiled Semantic IR, semantic-validation, and content-bound synthesis-approval
+chain defined by Full-Record Issue Interpretation V1.
 
 Public analytical display requires:
 

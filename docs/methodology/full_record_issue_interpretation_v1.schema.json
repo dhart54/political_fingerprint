@@ -16,6 +16,7 @@
     "benchmark",
     "historical_publication",
     "frontend_state",
+    "external_authority",
     "provenance"
   ],
   "properties": {
@@ -58,6 +59,9 @@
     },
     "frontend_state": {
       "$ref": "#/definitions/frontendState"
+    },
+    "external_authority": {
+      "$ref": "#/definitions/externalAuthority"
     },
     "provenance": {
       "$ref": "#/definitions/provenance"
@@ -299,6 +303,8 @@
       "additionalProperties": false,
       "required": [
         "exact_action_meaning",
+        "interpretation_id",
+        "action_meaning_id",
         "member_action",
         "evidence_status",
         "service_status",
@@ -306,10 +312,17 @@
         "action_meaning_source_refs",
         "episode_id",
         "review_state",
-        "interpretation_receipt_refs"
+        "interpretation_receipt_refs",
+        "interpretation_sha256"
       ],
       "properties": {
         "exact_action_meaning": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "interpretation_id": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "action_meaning_id": {
           "$ref": "#/definitions/nonEmptyString"
         },
         "member_action": {
@@ -339,6 +352,9 @@
         },
         "interpretation_receipt_refs": {
           "$ref": "#/definitions/nonEmptyUniqueStrings"
+        },
+        "interpretation_sha256": {
+          "$ref": "#/definitions/sha256"
         }
       }
     },
@@ -351,6 +367,8 @@
         "disposition",
         "review_friendliness",
         "episode_id",
+        "episode_membership_state",
+        "episode_membership_reason",
         "interpretation"
       ],
       "properties": {
@@ -386,6 +404,19 @@
             {
               "type": "null"
             }
+          ]
+        },
+        "episode_membership_state": {
+          "enum": [
+            "established",
+            "unresolved",
+            "not_applicable"
+          ]
+        },
+        "episode_membership_reason": {
+          "type": [
+            "string",
+            "null"
           ]
         },
         "interpretation": {
@@ -434,19 +465,23 @@
         }
       ]
     },
-    "actionMeaning": {
+    "actionInterpretationReference": {
       "type": "object",
       "additionalProperties": false,
       "required": [
         "action_id",
-        "meaning"
+        "interpretation_id",
+        "interpretation_sha256"
       ],
       "properties": {
         "action_id": {
           "$ref": "#/definitions/nonEmptyString"
         },
-        "meaning": {
+        "interpretation_id": {
           "$ref": "#/definitions/nonEmptyString"
+        },
+        "interpretation_sha256": {
+          "$ref": "#/definitions/sha256"
         }
       }
     },
@@ -475,7 +510,7 @@
         "chronological_action_ids",
         "latest_action_date",
         "policy_question",
-        "action_meanings",
+        "action_interpretation_refs",
         "member_record",
         "outcome",
         "contrary_or_limiting_evidence",
@@ -501,11 +536,10 @@
         "policy_question": {
           "$ref": "#/definitions/nonEmptyString"
         },
-        "action_meanings": {
+        "action_interpretation_refs": {
           "type": "array",
-          "minItems": 1,
           "items": {
-            "$ref": "#/definitions/actionMeaning"
+            "$ref": "#/definitions/actionInterpretationReference"
           }
         },
         "member_record": {
@@ -628,10 +662,12 @@
               "source_unresolved",
               "source_conflicting",
               "source_constraint_blocked",
+              "episode_membership_unresolved",
               "episode_outcomes_not_supplied",
               "contradictory_or_mixed_evidence_not_retained",
               "semantic_validation_not_passed",
               "human_editorial_review_not_approved",
+              "external_full_record_authority_not_verified",
               "no_safe_synthesis"
             ]
           }
@@ -868,6 +904,86 @@
         },
         "sha256": {
           "$ref": "#/definitions/sha256"
+        }
+      }
+    },
+    "artifactReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "schema_version",
+        "sha256",
+        "artifact_id",
+        "subject_sha256",
+        "bound_receipt_id"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "schema_version": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "artifact_id": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "subject_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bound_receipt_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "nullableArtifactReference": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/artifactReference"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "externalAuthority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "universe_manifest",
+        "universe_authority_receipt",
+        "semantic_artifact",
+        "semantic_validation_receipt",
+        "human_approval_receipt"
+      ],
+      "properties": {
+        "universe_manifest": {
+          "$ref": "#/definitions/nullableArtifactReference"
+        },
+        "universe_authority_receipt": {
+          "$ref": "#/definitions/nullableArtifactReference"
+        },
+        "semantic_artifact": {
+          "$ref": "#/definitions/nullableArtifactReference"
+        },
+        "semantic_validation_receipt": {
+          "$ref": "#/definitions/nullableArtifactReference"
+        },
+        "human_approval_receipt": {
+          "$ref": "#/definitions/nullableArtifactReference"
         }
       }
     },

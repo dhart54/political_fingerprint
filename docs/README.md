@@ -60,7 +60,10 @@ controls, API serialization, and display-only React.
 
 The [Full-Record Issue Interpretation V1](methodology/full_record_issue_interpretation_v1.md)
 contract separately governs review scope, completion, action accounting,
-episode completion, and full-record claim eligibility.
+episode completion, and full-record claim eligibility. Its detached authority
+schemas govern complete issue universes, universe approval, compiled full-record
+Semantic IR, semantic-validation receipts, and synthesis-approval receipts;
+benchmark states carry none of those full-record references.
 
 Do not delete a review packet or asset merely because its milestone is complete. First verify builders, tests, source manifests, publication governance, restoration documentation, and inbound references. Referenced local screenshot bundles require explicit archival decisions.
 

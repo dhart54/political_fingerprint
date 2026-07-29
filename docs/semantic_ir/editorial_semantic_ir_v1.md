@@ -170,6 +170,10 @@ IR fixture does not by itself establish product-level
 content-addressed issue universe, review completion, public claim class, and
 final full-record synthesis gates. A benchmark fixture may be semantically
 complete for its supplied actions without becoming a full issue synthesis.
+Representative-level full claims additionally require a separately
+content-addressed full-record Semantic IR artifact and detached validation
+receipt bound to an independently authorized issue universe. A local `passed`
+status cannot substitute for that chain.
 
 ## Coverage contract
 

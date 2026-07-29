@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://political-fingerprint.local/schemas/full_record_semantic_artifact_v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact_id", "member_id", "issue_id", "universe_manifest_id", "universe_subject_sha256", "action_accounting_sha256", "episode_set_sha256", "semantic_tier", "synthesis_outcome", "compiled_ir_path", "compiled_ir_sha256", "proposition_ids", "conclusion_plan", "semantic_subject_sha256"],
+  "properties": {
+    "schema_version": {"const": "full_record_semantic_artifact_v1"},
+    "artifact_id": {"type": "string", "pattern": "^full-semantic:[a-z0-9][a-z0-9._:-]+$"},
+    "member_id": {"type": "string", "pattern": "^[A-Z][0-9]{6}$"},
+    "issue_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]+$"},
+    "universe_manifest_id": {"type": "string", "minLength": 1},
+    "universe_subject_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "action_accounting_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "episode_set_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "semantic_tier": {"enum": ["reviewed_conclusion", "developing_read", "non_directional_or_limited_evidence", "receipts_only"]},
+    "synthesis_outcome": {"enum": ["repeated_pattern", "mechanism_divide", "uniform_direction", "mixed_or_qualified", "no_common_throughline", "no_safe_synthesis"]},
+    "compiled_ir_path": {"type": "string", "minLength": 1},
+    "compiled_ir_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "proposition_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "conclusion_plan": {"type": "object", "additionalProperties": false, "required": ["primary_proposition_ids", "limiting_proposition_ids"], "properties": {"primary_proposition_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "limiting_proposition_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}}},
+    "semantic_subject_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

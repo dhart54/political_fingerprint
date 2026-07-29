@@ -110,6 +110,11 @@
   activation and truthfully records publication inactive at review time.
   Current authoritative contracts were updated to add the later activation
   truth without rewriting that historical packet or its receipts.
+- The PR #120 merge gate found six fail-open edges. The correction adds detached
+  universe, semantic-validation, and synthesis-approval authority; makes action
+  interpretations the sole episode-meaning source; requires complete
+  substantive episode membership; closes claim/tier combinations; and expands
+  structured and sentence-level terminology governance.
 
 ## Validation Results
 
@@ -118,11 +123,14 @@
   accepted semantic references, the new manifest validator, focused tests,
   documentation governance, and terminology governance.
 - `python -m unittest backend.tests.test_full_record_issue_interpretation`:
-  15 tests passed.
+  18 tests passed, including compiler-backed synthetic full-synthesis,
+  no-common-throughline, and no-safe-synthesis authority chains.
 - All changed JSON parsed; Python compilation and `git diff --check` passed.
 - Protected accepted corpora, gold dossiers/maps, action-source contract,
   approval and publication artifacts, successful receipt, and incident record
   matched their committed SHA-256 values and have no diff.
+- The corrected diff was reconciled against all six merge-gate findings; no
+  blocking or important defect remained before commit preparation.
 
 ## Production Writes
 

@@ -11,11 +11,32 @@ from typing import Any
 
 from jsonschema import Draft7Validator, FormatChecker
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
-ROOT = Path(__file__).resolve().parents[1]
+from backend.app.semantic_ir.validation import (
+    CompiledSemanticIRError,
+    validate_compiled_ir,
+)
+
+
+ROOT = REPO_ROOT
 SCHEMA_PATH = (
     ROOT / "docs/methodology/full_record_issue_interpretation_v1.schema.json"
 )
+AUTHORITY_SCHEMAS = {
+    "full_issue_universe_manifest_v1": ROOT
+    / "docs/methodology/full_issue_universe_manifest_v1.schema.json",
+    "full_issue_universe_authority_receipt_v1": ROOT
+    / "docs/methodology/full_issue_universe_authority_receipt_v1.schema.json",
+    "full_record_semantic_artifact_v1": ROOT
+    / "docs/methodology/full_record_semantic_artifact_v1.schema.json",
+    "full_record_semantic_validation_receipt_v1": ROOT
+    / "docs/methodology/full_record_semantic_validation_receipt_v1.schema.json",
+    "full_record_synthesis_approval_receipt_v1": ROOT
+    / "docs/methodology/full_record_synthesis_approval_receipt_v1.schema.json",
+}
 REVIEW_ROOT = ROOT / "docs/editorial/full_record_reviews"
 
 INTERPRETED_DISPOSITIONS = {
@@ -70,6 +91,313 @@ def universe_digest_input(review: dict[str, Any]) -> dict[str, Any]:
 
 def compute_universe_sha256(review: dict[str, Any]) -> str:
     return hashlib.sha256(_canonical_json(universe_digest_input(review))).hexdigest()
+
+
+def _sha256(value: Any) -> str:
+    return hashlib.sha256(_canonical_json(value)).hexdigest()
+
+
+def _file_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def interpretation_digest(interpretation: dict[str, Any]) -> str:
+    return _sha256(
+        {key: value for key, value in interpretation.items() if key != "interpretation_sha256"}
+    )
+
+
+def _schema_validate(value: dict[str, Any], schema_version: str) -> None:
+    schema_path = AUTHORITY_SCHEMAS[schema_version]
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    Draft7Validator.check_schema(schema)
+    errors = list(Draft7Validator(schema, format_checker=FormatChecker()).iter_errors(value))
+    _require(
+        not errors,
+        f"{schema_version} schema validation failed: "
+        + "; ".join(error.message for error in errors),
+    )
+
+
+def _load_authority_reference(
+    reference: dict[str, Any],
+    *,
+    authority_root: Path,
+    allow_test_authority: bool,
+) -> tuple[dict[str, Any], Path]:
+    root = authority_root.resolve()
+    path = (root / reference["path"]).resolve()
+    _require(path.is_relative_to(root), "authority artifact path escapes its root")
+    if not allow_test_authority:
+        _require(
+            "backend/tests" not in path.as_posix(),
+            "test authority cannot authorize repository review state",
+        )
+    _require(path.is_file(), f"missing authority artifact: {reference['path']}")
+    _require(
+        _file_sha256(path) == reference["sha256"],
+        f"authority artifact digest mismatch: {reference['path']}",
+    )
+    value = json.loads(path.read_text(encoding="utf-8"))
+    _require(
+        value.get("schema_version") == reference["schema_version"],
+        f"authority schema mismatch: {reference['path']}",
+    )
+    _schema_validate(value, reference["schema_version"])
+    identity_field = {
+        "full_issue_universe_manifest_v1": "manifest_id",
+        "full_record_semantic_artifact_v1": "artifact_id",
+    }.get(reference["schema_version"], "receipt_id")
+    identity = value.get(identity_field)
+    _require(identity == reference["artifact_id"], "authority artifact identity mismatch")
+    return value, path
+
+
+def _validate_external_authority(
+    review: dict[str, Any],
+    *,
+    authority_root: Path,
+    allow_test_authority: bool,
+) -> bool:
+    refs = review["external_authority"]
+    scope = review["axes"]["review_scope"]
+    full_claim = review["axes"]["public_claim_class"] in {
+        "full_issue_synthesis",
+        "full_review_no_common_throughline",
+        "full_review_no_safe_synthesis",
+    }
+    if scope != "full_defined_issue_record":
+        _require(
+            all(value is None for value in refs.values()),
+            "sample or partial review cannot carry full-record authority",
+        )
+        return False
+
+    for name in ("universe_manifest", "universe_authority_receipt"):
+        _require(refs[name] is not None, f"full record requires {name}")
+    manifest, _ = _load_authority_reference(
+        refs["universe_manifest"],
+        authority_root=authority_root,
+        allow_test_authority=allow_test_authority,
+    )
+    receipt, _ = _load_authority_reference(
+        refs["universe_authority_receipt"],
+        authority_root=authority_root,
+        allow_test_authority=allow_test_authority,
+    )
+    action_ids = sorted(manifest["action_ids"])
+    action_set_sha = _sha256(action_ids)
+    _require(manifest["action_count"] == len(action_ids), "universe action count mismatch")
+    _require(manifest["action_set_sha256"] == action_set_sha, "universe action-set digest mismatch")
+    subject_input = {
+        key: value for key, value in manifest.items() if key != "universe_subject_sha256"
+    }
+    subject_sha = _sha256(subject_input)
+    _require(
+        manifest["universe_subject_sha256"] == subject_sha,
+        "universe subject digest mismatch",
+    )
+    for source in manifest["source_manifests"]:
+        source_path = (authority_root.resolve() / source["path"]).resolve()
+        _require(source_path.is_relative_to(authority_root.resolve()), "source path escapes authority root")
+        _require(source_path.is_file(), f"missing acquisition/source manifest: {source['path']}")
+        _require(_file_sha256(source_path) == source["sha256"], "source/acquisition digest mismatch")
+    review_subject = review["subject"]
+    _require(manifest["subject"] == review_subject, "universe member, issue, or Congress mismatch")
+    _require(action_ids == sorted(review["issue_universe"]["action_ids"]), "universe membership mismatch")
+    _require(receipt["manifest_id"] == manifest["manifest_id"], "receipt is for another universe")
+    _require(receipt["manifest_sha256"] == refs["universe_manifest"]["sha256"], "receipt manifest digest mismatch")
+    _require(receipt["member_id"] == review_subject["member_id"], "receipt member mismatch")
+    _require(receipt["issue_id"] == review_subject["issue_id"], "receipt issue mismatch")
+    _require(receipt["boundary"] == manifest["boundary"], "receipt boundary definition mismatch")
+    _require(receipt["boundary_sha256"] == _sha256(manifest["boundary"]), "receipt boundary mismatch")
+    _require(receipt["action_set_sha256"] == action_set_sha, "receipt action-set mismatch")
+    _require(receipt["action_count"] == len(action_ids), "receipt action count mismatch")
+    _require(
+        receipt["source_manifest_identities"]
+        == [source["artifact_id"] for source in manifest["source_manifests"]],
+        "receipt source/acquisition identities mismatch",
+    )
+    _require(receipt["universe_subject_sha256"] == subject_sha, "receipt subject mismatch")
+    _require(
+        refs["universe_manifest"]["subject_sha256"] == subject_sha
+        and refs["universe_manifest"]["bound_receipt_id"] == receipt["receipt_id"],
+        "review universe reference is not bound to its subject and receipt",
+    )
+
+    if not full_claim:
+        _require(
+            refs["semantic_artifact"] is None
+            and refs["semantic_validation_receipt"] is None
+            and refs["human_approval_receipt"] is None,
+            "non-analytical full-record state cannot carry synthesis authority",
+        )
+        return False
+
+    for name in ("semantic_artifact", "semantic_validation_receipt", "human_approval_receipt"):
+        _require(refs[name] is not None, f"full-record public claim requires {name}")
+    semantic, _ = _load_authority_reference(
+        refs["semantic_artifact"], authority_root=authority_root, allow_test_authority=allow_test_authority
+    )
+    validation, _ = _load_authority_reference(
+        refs["semantic_validation_receipt"], authority_root=authority_root, allow_test_authority=allow_test_authority
+    )
+    approval, _ = _load_authority_reference(
+        refs["human_approval_receipt"], authority_root=authority_root, allow_test_authority=allow_test_authority
+    )
+    accounting_sha = _sha256(review["action_accounting"])
+    episode_sha = _sha256(review["episodes"])
+    semantic_subject_sha = _sha256(
+        {key: value for key, value in semantic.items() if key != "semantic_subject_sha256"}
+    )
+    _require(
+        semantic["semantic_subject_sha256"] == semantic_subject_sha,
+        "semantic artifact subject digest mismatch",
+    )
+    expected_semantic = {
+        "member_id": review_subject["member_id"],
+        "issue_id": review_subject["issue_id"],
+        "universe_manifest_id": manifest["manifest_id"],
+        "universe_subject_sha256": subject_sha,
+        "action_accounting_sha256": accounting_sha,
+        "episode_set_sha256": episode_sha,
+        "semantic_tier": review["axes"]["semantic_tier"],
+        "synthesis_outcome": review["synthesis"]["outcome"],
+    }
+    for field, expected in expected_semantic.items():
+        _require(semantic[field] == expected, f"Semantic IR {field} mismatch")
+    compiled_path = (authority_root.resolve() / semantic["compiled_ir_path"]).resolve()
+    _require(
+        compiled_path.is_relative_to(authority_root.resolve()),
+        "compiled Semantic IR path escapes its authority root",
+    )
+    if not allow_test_authority:
+        _require(
+            "backend/tests" not in compiled_path.as_posix(),
+            "test compiled IR cannot authorize repository review state",
+        )
+    _require(compiled_path.is_file(), "compiled Semantic IR artifact is missing")
+    _require(
+        _file_sha256(compiled_path) == semantic["compiled_ir_sha256"],
+        "compiled Semantic IR file digest mismatch",
+    )
+    compiled_ir = json.loads(compiled_path.read_text(encoding="utf-8"))
+    try:
+        validate_compiled_ir(compiled_ir)
+    except (CompiledSemanticIRError, KeyError, TypeError) as error:
+        raise FullRecordValidationError(
+            f"compiled Semantic IR validation failed: {error}"
+        ) from error
+    compiled_members = [
+        member
+        for member in compiled_ir["members"]
+        if member["member_id"] == review_subject["member_id"]
+    ]
+    _require(
+        len(compiled_members) == 1,
+        "compiled Semantic IR must contain the exact review member once",
+    )
+    compiled_member = compiled_members[0]
+    propositions = compiled_member["proposition_graph"]["propositions"]
+    _require(
+        semantic["proposition_ids"]
+        == [proposition["proposition_id"] for proposition in propositions],
+        "semantic artifact proposition identities do not match compiled IR",
+    )
+    _require(
+        semantic["conclusion_plan"]
+        == compiled_member["composition"]["conclusion_plan"],
+        "semantic artifact conclusion plan does not match compiled IR",
+    )
+    compiled_action_ids = {
+        action_id
+        for proposition in propositions
+        if proposition["semantic_role"] == "behavioral"
+        for action_id in proposition["evidence_action_ids"]
+    }
+    compiled_action_ids.update(
+        item["action_id"]
+        for item in compiled_member["action_accounting"]["non_proposition_reasons"]
+    )
+    _require(
+        compiled_action_ids
+        == {action["action_id"] for action in review["action_accounting"]},
+        "compiled Semantic IR action universe does not match review accounting",
+    )
+    synthesis_types = {
+        proposition["proposition_type"]
+        for proposition in propositions
+        if proposition["semantic_role"] == "synthesis"
+    }
+    outcome = semantic["synthesis_outcome"]
+    if outcome == "no_safe_synthesis":
+        _require(
+            not synthesis_types
+            and not semantic["conclusion_plan"]["primary_proposition_ids"]
+            and not semantic["conclusion_plan"]["limiting_proposition_ids"],
+            "no-safe-synthesis claim conflicts with compiled Semantic IR",
+        )
+    else:
+        _require(
+            outcome in synthesis_types,
+            "synthesis outcome is not established by compiled Semantic IR",
+        )
+    for field in (
+        "universe_manifest_id",
+        "universe_subject_sha256",
+        "action_accounting_sha256",
+        "episode_set_sha256",
+        "semantic_tier",
+        "synthesis_outcome",
+    ):
+        expected = expected_semantic[field]
+        _require(validation[field] == expected, f"semantic validation {field} mismatch")
+    _require(validation["semantic_artifact_id"] == semantic["artifact_id"], "validation artifact mismatch")
+    _require(validation["semantic_artifact_sha256"] == refs["semantic_artifact"]["sha256"], "validation artifact digest mismatch")
+    _require(validation["status"] == "passed" and not validation["blockers"], "semantic validation did not pass")
+    _require(
+        refs["semantic_artifact"]["subject_sha256"] == subject_sha
+        and refs["semantic_artifact"]["bound_receipt_id"] == validation["receipt_id"],
+        "review semantic reference is not bound to its subject and receipt",
+    )
+    approval_expected = {
+        "member_id": review_subject["member_id"],
+        "issue_id": review_subject["issue_id"],
+        "universe_manifest_id": manifest["manifest_id"],
+        "universe_manifest_sha256": refs["universe_manifest"]["sha256"],
+        "semantic_artifact_id": semantic["artifact_id"],
+        "semantic_artifact_sha256": refs["semantic_artifact"]["sha256"],
+        "semantic_validation_receipt_id": validation["receipt_id"],
+        "semantic_validation_receipt_sha256": refs["semantic_validation_receipt"]["sha256"],
+        "synthesis_outcome": review["synthesis"]["outcome"],
+        "public_claim_class": review["axes"]["public_claim_class"],
+        "presentation_subject_sha256": _sha256(
+            {
+                "conclusion_teaser": review["frontend_state"]["conclusion_teaser"],
+                "available_labels": review["frontend_state"]["available_labels"],
+            }
+        ),
+    }
+    for field, expected in approval_expected.items():
+        _require(approval[field] == expected, f"human approval {field} mismatch")
+    if review["axes"]["public_claim_class"] in {
+        "full_issue_synthesis",
+        "full_review_no_common_throughline",
+    }:
+        _require(
+            bool(approval["wording_ids"]) and bool(approval["mapping_ids"]),
+            "analytical full-record approval lacks wording or mapping identities",
+        )
+    _require(
+        review["synthesis"]["semantic_validation"] == "passed"
+        and review["synthesis"]["human_editorial_review"] == "approved",
+        "explanatory external gate states mismatch",
+    )
+    _require(
+        review["synthesis"]["human_approval_receipt_refs"] == [refs["human_approval_receipt"]["path"]],
+        "human approval receipt references are empty or mismatched",
+    )
+    return True
 
 
 def _schema_errors(review: dict[str, Any]) -> list[str]:
@@ -142,6 +470,7 @@ def _validate_actions(review: dict[str, Any]) -> dict[str, dict[str, Any]]:
     )
 
     by_id = {item["action_id"]: item for item in accounting}
+    interpretation_ids: set[str] = set()
     for action in accounting:
         action_id = action["action_id"]
         criteria = action["review_friendliness"]
@@ -182,8 +511,51 @@ def _validate_actions(review: dict[str, Any]) -> dict[str, dict[str, Any]]:
             )
 
         interpretation = action["interpretation"]
+        substantive = (
+            criteria["substantive_candidate"]
+            and criteria["exact_action_issue_eligibility"] == "eligible"
+        )
+        membership_state = action["episode_membership_state"]
+        if substantive:
+            _require(
+                membership_state in {"established", "unresolved"},
+                f"{action_id}: substantive action lacks governed episode membership",
+            )
+            if membership_state == "established":
+                _require(
+                    action["episode_id"] is not None
+                    and action["episode_membership_reason"] is None,
+                    f"{action_id}: established episode membership is incomplete",
+                )
+            else:
+                _require(
+                    action["episode_id"] is None
+                    and bool(action["episode_membership_reason"]),
+                    f"{action_id}: unresolved episode membership lacks a governed reason",
+                )
+                _require(
+                    review["axes"]["review_completion_state"] != "complete",
+                    f"{action_id}: unresolved episode membership blocks review completion",
+                )
+        else:
+            _require(
+                membership_state == "not_applicable"
+                and action["episode_id"] is None
+                and action["episode_membership_reason"] is None,
+                f"{action_id}: non-substantive action has analytical episode membership",
+            )
         if action["disposition"] in INTERPRETED_DISPOSITIONS:
             _require(interpretation is not None, f"{action_id}: missing interpretation")
+            _require(
+                interpretation["interpretation_id"] not in interpretation_ids,
+                f"{action_id}: action interpretation identity is reused",
+            )
+            interpretation_ids.add(interpretation["interpretation_id"])
+            _require(
+                interpretation["interpretation_sha256"]
+                == interpretation_digest(interpretation),
+                f"{action_id}: action interpretation digest mismatch",
+            )
             _require(
                 interpretation["member_action"] == criteria["member_action"],
                 f"{action_id}: interpretation changes the official member action",
@@ -254,12 +626,12 @@ def _validate_episodes(
                 f"{action_id}: action and episode membership disagree",
             )
 
-        meaning_ids = [item["action_id"] for item in episode["action_meanings"]]
+        interpretation_refs = episode["action_interpretation_refs"]
+        interpretation_ref_ids = [item["action_id"] for item in interpretation_refs]
         member_ids = [item["action_id"] for item in episode["member_record"]]
         _require(
-            len(meaning_ids) == len(set(meaning_ids))
-            and set(meaning_ids) == action_set,
-            f"{episode_id}: action meanings do not cover exact episode membership",
+            len(interpretation_ref_ids) == len(set(interpretation_ref_ids)),
+            f"{episode_id}: duplicate action interpretation reference",
         )
         _require(
             len(member_ids) == len(set(member_ids))
@@ -271,6 +643,24 @@ def _validate_episodes(
                 item["member_action"]
                 == actions[item["action_id"]]["review_friendliness"]["member_action"],
                 f"{episode_id}: member record changes an official action state",
+            )
+        interpreted_members = {
+            action_id
+            for action_id in action_ids
+            if actions[action_id]["disposition"] in INTERPRETED_DISPOSITIONS
+        }
+        _require(
+            set(interpretation_ref_ids) == interpreted_members,
+            f"{episode_id}: action interpretation references do not match interpreted membership",
+        )
+        for reference in interpretation_refs:
+            interpretation = actions[reference["action_id"]]["interpretation"]
+            _require(
+                interpretation is not None
+                and reference["interpretation_id"] == interpretation["interpretation_id"]
+                and reference["interpretation_sha256"]
+                == interpretation["interpretation_sha256"],
+                f"{episode_id}: episode action meaning contradicts governed interpretation",
             )
 
         unresolved = {
@@ -318,10 +708,10 @@ def _validate_episodes(
                 all_memberships.get(action_id) == action["episode_id"],
                 f"{action_id}: declared episode membership is missing",
             )
-        if action["disposition"] in INTERPRETED_DISPOSITIONS:
+        if action["episode_membership_state"] == "established":
             _require(
                 action_id in all_memberships,
-                f"{action_id}: interpreted action must belong to exactly one episode",
+                f"{action_id}: established substantive action must belong to exactly one episode",
             )
 
 
@@ -346,6 +736,10 @@ def _derived_blockers(review: dict[str, Any]) -> set[str]:
         blockers.add("review_friendly_action_uninterpreted")
     if any(episode["completion_state"] == "partial" for episode in review["episodes"]):
         blockers.add("partial_episode")
+    if any(
+        action["episode_membership_state"] == "unresolved" for action in actions
+    ):
+        blockers.add("episode_membership_unresolved")
     dispositions = {action["disposition"] for action in actions}
     if "source_unresolved" in dispositions or "missing_evidence" in dispositions:
         blockers.add("source_unresolved")
@@ -368,7 +762,7 @@ def _derived_blockers(review: dict[str, Any]) -> set[str]:
     return blockers
 
 
-def _validate_synthesis(review: dict[str, Any]) -> None:
+def _validate_synthesis(review: dict[str, Any], external_authority_verified: bool) -> None:
     axes = review["axes"]
     synthesis = review["synthesis"]
     has_partial_or_unresolved = any(
@@ -394,6 +788,8 @@ def _validate_synthesis(review: dict[str, Any]) -> None:
         "sample or partial review cannot claim full-record action accounting",
     )
     blockers = _derived_blockers(review)
+    if axes["review_scope"] == "full_defined_issue_record" and not external_authority_verified:
+        blockers.add("external_full_record_authority_not_verified")
     _require(
         set(synthesis["eligibility_blockers"]) == blockers,
         "full-synthesis eligibility blockers do not match governed state",
@@ -408,15 +804,21 @@ def _validate_synthesis(review: dict[str, Any]) -> None:
     )
     claim_class = axes["public_claim_class"]
     outcome = synthesis["outcome"]
-    if claim_class == "reviewed_sample_finding":
+    if claim_class == "vote_record_only":
+        _require(
+            not synthesis["full_issue_synthesis_eligible"],
+            "vote-record-only state cannot authorize full synthesis",
+        )
+    elif claim_class == "reviewed_sample_finding":
         _require(
             axes["review_scope"] in {"benchmark_sample", "bounded_partial_record"}
-            and axes["semantic_tier"] == "reviewed_conclusion",
+            and axes["semantic_tier"] in {"reviewed_conclusion", "developing_read"},
             "reviewed sample finding requires a bounded reviewed conclusion",
         )
     elif claim_class == "full_issue_synthesis":
         _require(
             expected_eligible
+            and axes["semantic_tier"] == "reviewed_conclusion"
             and outcome
             in {
                 "repeated_pattern",
@@ -428,13 +830,17 @@ def _validate_synthesis(review: dict[str, Any]) -> None:
         )
     elif claim_class == "full_review_no_common_throughline":
         _require(
-            expected_eligible and outcome == "no_common_throughline",
+            expected_eligible
+            and axes["semantic_tier"] == "reviewed_conclusion"
+            and outcome == "no_common_throughline",
             "no-common-throughline claim lacks a complete eligible review",
         )
     elif claim_class == "full_review_no_safe_synthesis":
         _require(
             axes["review_scope"] == "full_defined_issue_record"
             and axes["review_completion_state"] == "complete"
+            and axes["semantic_tier"]
+            in {"receipts_only", "non_directional_or_limited_evidence"}
             and outcome == "no_safe_synthesis"
             and synthesis["semantic_validation"] == "passed"
             and synthesis["human_editorial_review"] == "approved",
@@ -492,6 +898,11 @@ def _validate_frontend(review: dict[str, Any]) -> None:
         )
 
     teaser = frontend["conclusion_teaser"]
+    if axes["public_claim_class"] in {
+        "vote_record_only",
+        "full_review_no_safe_synthesis",
+    }:
+        _require(teaser is None, "non-analytical public state cannot expose a conclusion teaser")
     if teaser is not None:
         _require(
             teaser["valid_scope"] == axes["review_scope"],
@@ -595,7 +1006,12 @@ def _validate_provenance(review: dict[str, Any]) -> None:
         )
 
 
-def validate_review(review: dict[str, Any]) -> dict[str, int]:
+def validate_review(
+    review: dict[str, Any],
+    *,
+    authority_root: Path = ROOT,
+    allow_test_authority: bool = False,
+) -> dict[str, int]:
     """Validate one manifest and return deterministic summary counts."""
 
     errors = _schema_errors(review)
@@ -607,7 +1023,12 @@ def validate_review(review: dict[str, Any]) -> dict[str, int]:
     )
     actions = _validate_actions(review)
     _validate_episodes(review, actions)
-    _validate_synthesis(review)
+    external_authority_verified = _validate_external_authority(
+        review,
+        authority_root=authority_root,
+        allow_test_authority=allow_test_authority,
+    )
+    _validate_synthesis(review, external_authority_verified)
     _validate_frontend(review)
     _validate_benchmark_and_history(review)
     _validate_provenance(review)

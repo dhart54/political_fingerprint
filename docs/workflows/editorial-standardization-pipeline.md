@@ -149,12 +149,14 @@ semantic meaning.
     graph.
 15. Account for every accepted action in full-record cases.
 16. For a representative-level full issue review, validate the
-    content-addressed issue-universe manifest, governed action dispositions, and
-    complete or explicitly partial episode membership.
+    independently governed content-addressed issue-universe manifest and
+    detached authority receipt, governed action dispositions, and complete or
+    explicitly partial episode membership.
 17. Supply every interpreted episode outcome, including contrary and mixed
     evidence, to the full-record Semantic IR compilation.
 18. Derive full-record eligibility from scope, completion, source, semantic,
-    and human-review gates; do not require a neat conclusion.
+    detached semantic-validation, and content-bound human-review gates; do not
+    require a neat conclusion.
 19. Build the conclusion plan and typed presentation targets.
 20. Render bounded prose without adding meaning.
 21. Select featured episodes upstream for presentation.

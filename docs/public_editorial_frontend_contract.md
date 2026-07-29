@@ -120,6 +120,9 @@ The next frontend milestone may consume the backend-supplied fields defined by
 React must render, not derive, these states. Counts use the declared
 content-addressed universe. Raw votes, party, titles, keywords, or benchmark
 status cannot establish review scope, completion, or synthesis eligibility.
+For full-record claims, the backend must first verify the detached universe,
+Semantic IR validation, and content-bound human approval chain; explanatory
+status strings and React never authorize those gates.
 
 The truthful labels are `Reviewed benchmark sample`, `Full review complete`,
 `Full issue interpretation available`, `No common throughline found`, `No safe
