@@ -92,7 +92,7 @@ jobs:
 
       - name: Run row-contract and owned-lifecycle fault tests
         run: >-
-          pytest -q
+          python -m pytest -q
           backend/tests/test_api_editorial_presentations.py
           backend/tests/test_foushee_justice_publication_http_proof.py
 
