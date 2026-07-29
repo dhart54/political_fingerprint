@@ -1,8 +1,9 @@
 # Foushee Justice publication activation
 
-This runbook prepares, but does not authorize, one exact publication activation:
-member `F000477`, issue `JUSTICE_PUBLIC_SAFETY`, Congress/scope `119`, artifact
-`f000477:justice_public_safety:119:v1` version 1.
+This runbook records the completed exact publication activation for member
+`F000477`, issue `JUSTICE_PUBLIC_SAFETY`, Congress/scope `119`, artifact
+`f000477:justice_public_safety:119:v1` version 1. It does not authorize replay,
+deactivation, rollback, deployment, or any other production action.
 
 The immutable activation bundle is
 `foushee_justice_public_safety_119_publication_activation_v1`. It adds one
@@ -11,7 +12,21 @@ does not update either governed pre-activation batch, approved wording, Semantic
 IR, or approval receipt. No migration or cache invalidation is required. The API
 reads PostgreSQL on every request and the frontend request uses `no-store`.
 
-## Mandatory sequence
+## Current production state
+
+The activation completed at `2026-07-29T02:01:07.388267Z` on deployed commit
+`bbeafa1e64b4e7783739f5b2f6b2c343b39209e5`. Batch 13 contains presentation
+artifact 218, source-manifest artifact 219, and validation-result artifact 220.
+Those numeric IDs are historical operational identities; the bundle's natural
+keys and content digests remain authoritative. The public contract is
+`reviewed_conclusion` for `scope=119` and bounded `scope=all`, and
+`receipts_only` for `scope=118`. The successful, non-authorizing receipt is
+`docs/editorial/publication_activations/foushee_justice_public_safety_119_successful_activation_receipt_v1.json`.
+
+## Historical activation sequence
+
+The following sequence records the gates used for the completed activation. It
+must not be replayed without new explicit production authorization.
 
 1. Deploy a commit containing source commit
    `bae70a3623b66a68cda40ac537dc4a1740e87f92` and verify `/health` reports its
@@ -141,8 +156,9 @@ two-batch baseline equality. If transactional rollback cannot complete, restore 
 pre-activation snapshot to a fresh database and cut over only under the bounded
 production-write incident procedure.
 
-Publication remains inactive until a later task supplies explicit authorization
-and successfully completes every gate above.
+Publication is active following the separately authorized 2026-07-29
+transaction and passing internal and public HTTP postchecks. The immutable
+successful-activation receipt above is the current closeout authority.
 
 The 2026-07-28 attempt inserted exactly seven rows, but its independent HTTP
 checks returned 500 and the exact rollback restored `2/140/155/0`. That attempt
@@ -159,3 +175,15 @@ two governed batches are legitimate additive corpora; neither is duplicate,
 corrupt, or a cleanup target. The fingerprint is an exact required pre-state
 and must be recomputed immediately before activation rather than treated as a
 timeless production description.
+
+## Current rollback target (record only)
+
+The rollback target is batch 13; artifacts 218 (presentation), 219 (source
+manifest), and 220 (validation result); the two exact bundle relationships; and
+the `F000477 / JUSTICE_PUBLIC_SAFETY` registry row. The activation bundle is
+`foushee_justice_public_safety_119_publication_activation_v1`, digest
+`df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813`.
+The rollback tool must still verify the live natural keys, content digests,
+registry identity, and graph before acting, and must refuse registry or graph
+drift. This section and the successful-activation receipt do not authorize a
+rollback.

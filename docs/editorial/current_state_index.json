@@ -94,19 +94,54 @@
     ],
     "presentation_ordering_effect": "none",
     "presentation_react_analytical_inference": false,
-    "f000477_justice_119_publication_state": "human_approved_gold_production_eligible_publication_inactive_receipts_only",
+    "f000477_justice_119_publication_state": "human_approved_gold_production_eligible_publication_active",
     "f000477_justice_119_activation_bundle": "docs/editorial/publication_activations/foushee_justice_public_safety_119_publication_activation_v1.json",
-    "f000477_justice_119_activation_bundle_state": "prepared_unapplied"
+    "f000477_justice_119_activation_bundle_state": "applied_production_active",
+    "f000477_justice_successful_activation_receipt": "docs/editorial/publication_activations/foushee_justice_public_safety_119_successful_activation_receipt_v1.json",
+    "f000477_justice_effective_tiers": {
+      "119": "reviewed_conclusion",
+      "all": "reviewed_conclusion",
+      "118": "receipts_only"
+    },
+    "f000477_justice_scope_all_boundary": "reviewed_119_record"
   },
-  "production_staged_but_unpublished": {
+  "historical_pre_activation_persistence_state": {
+    "historical_as_of": "before_2026-07-29_activation",
+    "superseded_by": "production_publication_state",
     "artifact_count": 71,
     "publication_registry_count": 0,
     "receipt": "docs/editorial/editorial_artifact_persistence_v1/seed_manifest.json",
     "review_packet": "docs/review_packets/editorial_artifact_persistence_v1.json",
     "state_changed_by_cutover": false
   },
+  "production_publication_state": {
+    "activated_at": "2026-07-29T02:01:07.388267Z",
+    "activation_batch_id": 13,
+    "activation_artifact_ids": {
+      "presentation": 218,
+      "source_manifest": 219,
+      "validation_result": 220
+    },
+    "activation_rows_inserted": 7,
+    "counts": {
+      "batches": 3,
+      "artifacts": 143,
+      "relationships": 157,
+      "publication_registry": 1
+    },
+    "active_publication": {
+      "member_bioguide_id": "F000477",
+      "issue_id": "JUSTICE_PUBLIC_SAFETY",
+      "artifact_natural_key": "f000477:justice_public_safety:119:v1",
+      "artifact_content_sha256": "fd7a8b5e440654147bbb6b738be3bb683034f07b0c9cc4e26eba9cce84e07e59"
+    },
+    "public_smoke_completed_at": "2026-07-29T02:01:44.742108Z",
+    "rollback_status": "not_triggered",
+    "successful_activation_receipt": "docs/editorial/publication_activations/foushee_justice_public_safety_119_successful_activation_receipt_v1.json"
+  },
   "publication_and_persistence_state": {
-    "public_selection_count": 0,
+    "public_selection_count": 1,
+    "active_publication_count": 1,
     "persistence_proposal_default": false,
     "publication_authorized_by_pipeline": false,
     "production_write_authorized_by_pipeline": false,

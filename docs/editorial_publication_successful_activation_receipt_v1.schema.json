@@ -1,0 +1,389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://politicalfingerprint.org/schemas/editorial_publication_successful_activation_receipt_v1.schema.json",
+  "title": "Editorial publication successful activation receipt V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "status",
+    "authorization",
+    "bundle",
+    "deployment",
+    "subject",
+    "production_activation",
+    "database_identities",
+    "relationships",
+    "registry",
+    "effect",
+    "pre_activation",
+    "post_activation",
+    "public_smoke",
+    "rollback_readiness",
+    "evidence",
+    "activation_result",
+    "activation_result_sha256",
+    "canonical_receipt_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "editorial_publication_successful_activation_receipt_v1"
+    },
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^production-activation-receipt:[a-z0-9][a-z0-9._-]{2,191}$"
+    },
+    "status": {
+      "const": "closed_successful"
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_scope",
+        "authorizes_activation",
+        "authorizes_deactivation",
+        "authorizes_deployment",
+        "authorizes_rollback"
+      ],
+      "properties": {
+        "record_scope": {"const": "historical_record_only"},
+        "authorizes_activation": {"const": false},
+        "authorizes_deactivation": {"const": false},
+        "authorizes_deployment": {"const": false},
+        "authorizes_rollback": {"const": false}
+      }
+    },
+    "bundle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bundle_id", "bundle_sha256"],
+      "properties": {
+        "bundle_id": {"type": "string", "minLength": 1},
+        "bundle_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "deployment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["backend_commit_sha"],
+      "properties": {
+        "backend_commit_sha": {"$ref": "#/$defs/sha40"}
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "member_bioguide_id",
+        "issue_id",
+        "reviewed_scope",
+        "approval_receipt_id",
+        "approval_subject_sha256",
+        "presentation_content_sha256",
+        "active_presentation_sha256"
+      ],
+      "properties": {
+        "member_bioguide_id": {"type": "string", "minLength": 1},
+        "issue_id": {"type": "string", "minLength": 1},
+        "reviewed_scope": {"type": "string", "pattern": "^[1-9][0-9]*$"},
+        "approval_receipt_id": {"type": "string", "minLength": 1},
+        "approval_subject_sha256": {"$ref": "#/$defs/sha256"},
+        "presentation_content_sha256": {"$ref": "#/$defs/sha256"},
+        "active_presentation_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "production_activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["activated_at", "public_smoke_completed_at"],
+      "properties": {
+        "activated_at": {"type": "string", "format": "date-time"},
+        "public_smoke_completed_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "database_identities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identity_scope", "batch_id", "artifacts"],
+      "properties": {
+        "identity_scope": {
+          "const": "historical_operational_identities_not_portable_constants"
+        },
+        "batch_id": {"type": "integer", "minimum": 1},
+        "artifacts": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/artifact"}
+        }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/relationship"}
+    },
+    "registry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "member_bioguide_id",
+        "issue_id",
+        "artifact_id",
+        "publicly_active"
+      ],
+      "properties": {
+        "member_bioguide_id": {"type": "string", "minLength": 1},
+        "issue_id": {"type": "string", "minLength": 1},
+        "artifact_id": {"type": "integer", "minimum": 1},
+        "publicly_active": {"const": true}
+      }
+    },
+    "effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rows_inserted",
+        "batches_inserted",
+        "artifacts_inserted",
+        "relationships_inserted",
+        "registry_rows_inserted"
+      ],
+      "properties": {
+        "rows_inserted": {"const": 7},
+        "batches_inserted": {"const": 1},
+        "artifacts_inserted": {"const": 3},
+        "relationships_inserted": {"const": 2},
+        "registry_rows_inserted": {"const": 1}
+      }
+    },
+    "pre_activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["counts", "reconciled_fingerprint_sha256"],
+      "properties": {
+        "counts": {"$ref": "#/$defs/counts"},
+        "reconciled_fingerprint_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "post_activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "counts",
+        "artifact_set_sha256",
+        "relationship_set_sha256"
+      ],
+      "properties": {
+        "counts": {"$ref": "#/$defs/counts"},
+        "artifact_set_sha256": {"$ref": "#/$defs/sha256"},
+        "relationship_set_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "public_smoke": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope_119",
+        "scope_all",
+        "scope_118",
+        "scope_all_boundary",
+        "actions",
+        "episodes",
+        "repeated_patterns",
+        "supporting_receipts",
+        "approved_wording_and_provenance",
+        "cross_member_isolated",
+        "cross_issue_isolated",
+        "http_500_observed"
+      ],
+      "properties": {
+        "scope_119": {"const": "reviewed_conclusion"},
+        "scope_all": {"const": "reviewed_conclusion"},
+        "scope_118": {"const": "receipts_only"},
+        "scope_all_boundary": {"const": "reviewed_119_record"},
+        "actions": {"const": 7},
+        "episodes": {"const": 5},
+        "repeated_patterns": {"const": 2},
+        "supporting_receipts": {"const": 7},
+        "approved_wording_and_provenance": {"const": true},
+        "cross_member_isolated": {"const": true},
+        "cross_issue_isolated": {"const": true},
+        "http_500_observed": {"const": false}
+      }
+    },
+    "rollback_readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "activation_batch_id",
+        "artifact_ids",
+        "bundle_id",
+        "bundle_sha256",
+        "activation_receipt_id",
+        "tool_path",
+        "requires_live_identity_verification",
+        "refuses_registry_or_graph_drift",
+        "rollback_authorized"
+      ],
+      "properties": {
+        "status": {"const": "not_triggered"},
+        "activation_batch_id": {"type": "integer", "minimum": 1},
+        "artifact_ids": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 1}
+        },
+        "bundle_id": {"type": "string", "minLength": 1},
+        "bundle_sha256": {"$ref": "#/$defs/sha256"},
+        "activation_receipt_id": {"type": "string", "minLength": 1},
+        "tool_path": {"type": "string", "minLength": 1},
+        "requires_live_identity_verification": {"const": true},
+        "refuses_registry_or_graph_drift": {"const": true},
+        "rollback_authorized": {"const": false}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preflight_report_id",
+        "preflight_report_sha256",
+        "final_freshness_report_sha256",
+        "backup_proof_id",
+        "backup_proof_sha256",
+        "snapshot_size_bytes",
+        "snapshot_sha256",
+        "source_inventory_sha256",
+        "restored_inventory_sha256",
+        "restore_receipt_sha256",
+        "lifecycle_http_proof_sha256"
+      ],
+      "properties": {
+        "preflight_report_id": {"type": "string", "minLength": 1},
+        "preflight_report_sha256": {"$ref": "#/$defs/sha256"},
+        "final_freshness_report_sha256": {"$ref": "#/$defs/sha256"},
+        "backup_proof_id": {"type": "string", "minLength": 1},
+        "backup_proof_sha256": {"$ref": "#/$defs/sha256"},
+        "snapshot_size_bytes": {"const": 9654335},
+        "snapshot_sha256": {"$ref": "#/$defs/sha256"},
+        "source_inventory_sha256": {"$ref": "#/$defs/sha256"},
+        "restored_inventory_sha256": {"$ref": "#/$defs/sha256"},
+        "restore_receipt_sha256": {"$ref": "#/$defs/sha256"},
+        "lifecycle_http_proof_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "activation_result": {"$ref": "#/$defs/activation_result"},
+    "activation_result_sha256": {"$ref": "#/$defs/sha256"},
+    "canonical_receipt_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha40": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "batches",
+        "artifacts",
+        "relationships",
+        "publication_registry"
+      ],
+      "properties": {
+        "batches": {"type": "integer", "minimum": 0},
+        "artifacts": {"type": "integer", "minimum": 0},
+        "relationships": {"type": "integer", "minimum": 0},
+        "publication_registry": {"type": "integer", "minimum": 0}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "artifact_type",
+        "natural_key",
+        "artifact_version",
+        "content_sha256"
+      ],
+      "properties": {
+        "artifact_id": {"type": "integer", "minimum": 1},
+        "artifact_type": {
+          "enum": [
+            "issue_public_presentation",
+            "source_manifest",
+            "standardization_validation_result"
+          ]
+        },
+        "natural_key": {"type": "string", "minLength": 1},
+        "artifact_version": {"const": 1},
+        "content_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parent_natural_key",
+        "child_natural_key",
+        "relationship_type",
+        "ordinal",
+        "metadata"
+      ],
+      "properties": {
+        "parent_natural_key": {"type": "string", "minLength": 1},
+        "child_natural_key": {"type": "string", "minLength": 1},
+        "relationship_type": {
+          "enum": ["has_validation", "uses_source_manifest"]
+        },
+        "ordinal": {"const": 0},
+        "metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["activation_bundle_id"],
+          "properties": {
+            "activation_bundle_id": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "activation_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "batch_id",
+        "artifact_ids",
+        "rows_inserted",
+        "post_activation_counts",
+        "artifact_set_sha256",
+        "relationship_set_sha256",
+        "public_smoke_completed_at",
+        "rollback_status"
+      ],
+      "properties": {
+        "status": {"const": "successful"},
+        "batch_id": {"type": "integer", "minimum": 1},
+        "artifact_ids": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 1}
+        },
+        "rows_inserted": {"const": 7},
+        "post_activation_counts": {"$ref": "#/$defs/counts"},
+        "artifact_set_sha256": {"$ref": "#/$defs/sha256"},
+        "relationship_set_sha256": {"$ref": "#/$defs/sha256"},
+        "public_smoke_completed_at": {"type": "string", "format": "date-time"},
+        "rollback_status": {"const": "not_triggered"}
+      }
+    }
+  }
+}

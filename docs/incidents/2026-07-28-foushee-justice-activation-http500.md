@@ -1,6 +1,6 @@
 # Foushee Justice activation HTTP 500 and rollback
 
-Status: production recovered; publication inactive; repository correction pending.
+Status: resolved and closed; corrected publication active.
 
 This receipt records the failed public-availability check for activation bundle
 `foushee_justice_public_safety_119_publication_activation_v1`, digest
@@ -100,10 +100,10 @@ grants were not available from the unauthenticated log context. The reproduced
 exception precedes role-sensitive graph hydration and is fully explained by
 the verified row-factory difference.
 
-Production remains publication-inactive. Another activation requires a separate
-authorization after the corrected commit is merged, deployed, reported exactly
-by `/health`, and followed by fresh production preflight/backup evidence and a
-passing real-HTTP disposable proof.
+At the time of this incident, production remained publication-inactive. Another
+activation required a separate authorization after the corrected commit was
+merged, deployed, reported exactly by `/health`, and followed by fresh production
+preflight/backup evidence and a passing real-HTTP disposable proof.
 
 ## Merge-gate correction note
 
@@ -126,3 +126,22 @@ are required to pass.
 These findings concerned the repository correction and its disposable
 readiness proof. They did not cause another production activation, production
 database change, backup replacement, or deployment.
+
+## Successful activation and closure
+
+A separately authorized activation completed on 2026-07-29 after corrected
+commit `bbeafa1e64b4e7783739f5b2f6b2c343b39209e5` was deployed and fresh health,
+production-freshness, public receipts-only, backup-lifetime, archive, and
+lifecycle HTTP proofs passed. At `2026-07-29T02:01:07.388267Z`, one transaction
+inserted batch 13, presentation artifact 218, source-manifest artifact 219,
+validation-result artifact 220, two relationships, and one publication-registry
+row. These numeric IDs record that production event; the natural keys and
+content digests are the portable identities.
+
+The internal postcheck proved counts `3 / 143 / 157 / 1`. The public smoke
+completed at `2026-07-29T02:01:44.742108Z` without an HTTP 500: Foushee Justice
+returned `reviewed_conclusion` for `scope=119` and bounded `scope=all`, while
+`scope=118`, other issues, and other members retained their required isolation.
+The identity-bound rollback was not triggered. The immutable, non-authorizing
+closeout record is
+`docs/editorial/publication_activations/foushee_justice_public_safety_119_successful_activation_receipt_v1.json`.
