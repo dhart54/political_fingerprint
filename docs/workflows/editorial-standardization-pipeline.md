@@ -51,6 +51,13 @@ proposal payloads. The obsolete generators were deleted in Editorial Hard
 Cutover V1. Their frozen outputs remain historical evidence and are validated
 directly rather than replayed.
 
+Representative-level expansion from an accepted sample to a complete issue
+record also follows
+`docs/methodology/full_record_issue_interpretation_v1.md`. Semantic tier,
+review scope, review completion, and public claim class remain separate.
+Accepted benchmark cases calibrate the compiler but do not define or complete a
+representative's full issue universe.
+
 ## Three review checkpoints
 
 ### Checkpoint 1: shared semantic corpus
@@ -141,15 +148,24 @@ semantic meaning.
 14. Record coverage, method, and source/render boundaries outside the behavioral
     graph.
 15. Account for every accepted action in full-record cases.
-16. Build the conclusion plan and typed presentation targets.
-17. Render bounded prose without adding meaning.
-18. Select featured episodes upstream for presentation.
-19. Compile `editorial_public_issue_presentation_v1` from compiled IR and
+16. For a representative-level full issue review, validate the
+    independently governed content-addressed issue-universe manifest and
+    detached authority receipt, governed action dispositions, and complete or
+    explicitly partial episode membership.
+17. Supply every interpreted episode outcome, including contrary and mixed
+    evidence, to the full-record Semantic IR compilation.
+18. Derive full-record eligibility from scope, completion, source, semantic,
+    detached semantic-validation, and content-bound human-review gates; do not
+    require a neat conclusion.
+19. Build the conclusion plan and typed presentation targets.
+20. Render bounded prose without adding meaning.
+21. Select featured episodes upstream for presentation.
+22. Compile `editorial_public_issue_presentation_v1` from compiled IR and
     separately reviewed wording without adding meaning. Fail closed to
     `receipts_only` unless all publication controls pass.
-20. Run the validation tier appropriate to the change.
-21. Route failures and genuine novelty.
-22. Permit stratified auditing of passing slices.
+23. Run the validation tier appropriate to the change.
+24. Route failures and genuine novelty.
+25. Permit stratified auditing of passing slices.
 
 ## Semantic invariants
 
@@ -171,6 +187,12 @@ semantic meaning.
 - Tied material patterns cannot be silently omitted.
 - Every accepted full-record action contributes to behavioral evidence or has an
   explicit non-proposition reason.
+- A benchmark sample cannot confer `full_defined_issue_record` scope,
+  full-record completion, or a full-record public claim.
+- Every action in a declared issue-universe snapshot has exactly one governed
+  disposition; new action membership invalidates the prior snapshot digest.
+- Every interpreted action belongs to exactly one complete or explicitly
+  partial episode.
 - Rendering cannot add analytical meaning.
 - Shared novelty is reviewed once at the shared layer.
 - Approval, gold status, benchmark status, production eligibility, promotion,

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://political-fingerprint.local/schemas/full_record_semantic_validation_receipt_v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "receipt_id", "universe_manifest_id", "universe_subject_sha256", "semantic_artifact_id", "semantic_artifact_sha256", "action_accounting_sha256", "episode_set_sha256", "semantic_tier", "synthesis_outcome", "validator", "validation_run_id", "status", "blockers"],
+  "properties": {
+    "schema_version": {"const": "full_record_semantic_validation_receipt_v1"},
+    "receipt_id": {"type": "string", "pattern": "^semantic-validation:[a-z0-9][a-z0-9._:-]+$"},
+    "universe_manifest_id": {"type": "string", "minLength": 1},
+    "universe_subject_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "semantic_artifact_id": {"type": "string", "minLength": 1},
+    "semantic_artifact_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "action_accounting_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "episode_set_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "semantic_tier": {"enum": ["reviewed_conclusion", "developing_read", "non_directional_or_limited_evidence", "receipts_only"]},
+    "synthesis_outcome": {"type": "string", "minLength": 1},
+    "validator": {"type": "object", "additionalProperties": false, "required": ["tool_id", "version"], "properties": {"tool_id": {"const": "scripts/validate_full_record_issue_interpretation.py"}, "version": {"const": "full_record_validator_v1"}}},
+    "validation_run_id": {"type": "string", "minLength": 1},
+    "status": {"const": "passed"},
+    "blockers": {"type": "array", "maxItems": 0}
+  }
+}

@@ -31,6 +31,17 @@ The machine-readable authority is
   `scope=119` and `scope=all` return `reviewed_conclusion`, with `scope=all`
   explicitly bounded to the reviewed 119th-Congress record; `scope=118` remains
   `receipts_only`.
+- Full-Record Issue Interpretation V1 now keeps semantic tier, review scope,
+  review completion, and public claim class separate. The active F000477 Justice
+  artifact remains a valid `reviewed_conclusion` within its completely
+  accounted seven-action `benchmark_sample`, with public claim class
+  `reviewed_sample_finding`. A content-addressed
+  `full_defined_issue_record` has not been established, full-record action
+  accounting has not passed, external universe authority and full-record
+  semantic-validation/human-approval receipts are absent, and a final full
+  issue synthesis is not eligible.
+  The machine-readable state is
+  `docs/editorial/full_record_reviews/f000477_justice_public_safety_119_review_state_v1.json`.
 - Before the activation, the 71-artifact seed had no publication-registry row.
   That state remains historical evidence and was not modified by the editorial
   hard cutover.

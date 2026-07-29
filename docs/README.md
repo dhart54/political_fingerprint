@@ -14,6 +14,8 @@ This index identifies the role and retention expectation of repository documenta
 - `docs/interpretation_principles.md` governs evidence-backed public interpretation and civic-language boundaries.
 - `docs/amendment_evidence_pipeline.md` records the canonical amendment evidence path.
 - `docs/manual_interpretation_workflow.md` governs reviewed manual interpretation packets.
+- `docs/methodology/full_record_issue_interpretation_v1.md` governs expansion
+  from benchmark samples to content-addressed full issue records.
 
 These documents are canonical. Changes that affect eligibility, vote meaning, support/opposition, readiness, alignment, evidence tiers, or publication semantics require an explicit product decision.
 
@@ -32,7 +34,7 @@ The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-Active plan: [IR-native Foushee Justice presentation](plans/ir_native_foushee_justice_presentation.md)
+Active plan: [Full-Record Issue Interpretation Contract V1](plans/full_record_issue_interpretation_contract_v1.md)
 
 The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 
@@ -55,6 +57,13 @@ The downstream
 [Editorial Public Issue Presentation V1](editorial_public_issue_presentation_v1.md)
 contract governs deterministic wording mapping, public tiers, publication
 controls, API serialization, and display-only React.
+
+The [Full-Record Issue Interpretation V1](methodology/full_record_issue_interpretation_v1.md)
+contract separately governs review scope, completion, action accounting,
+episode completion, and full-record claim eligibility. Its detached authority
+schemas govern complete issue universes, universe approval, compiled full-record
+Semantic IR, semantic-validation receipts, and synthesis-approval receipts;
+benchmark states carry none of those full-record references.
 
 Do not delete a review packet or asset merely because its milestone is complete. First verify builders, tests, source manifests, publication governance, restoration documentation, and inbound references. Referenced local screenshot bundles require explicit archival decisions.
 

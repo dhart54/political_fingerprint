@@ -1,0 +1,1023 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://political-fingerprint.local/schemas/full_record_issue_interpretation_v1.schema.json",
+  "title": "Political Fingerprint Full-Record Issue Interpretation V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "review_id",
+    "subject",
+    "axes",
+    "issue_universe",
+    "action_accounting",
+    "episodes",
+    "synthesis",
+    "benchmark",
+    "historical_publication",
+    "frontend_state",
+    "external_authority",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "full_record_issue_interpretation_v1"
+    },
+    "review_id": {
+      "type": "string",
+      "pattern": "^full-review:[a-z0-9][a-z0-9._:-]{2,191}$"
+    },
+    "subject": {
+      "$ref": "#/definitions/subject"
+    },
+    "axes": {
+      "$ref": "#/definitions/axes"
+    },
+    "issue_universe": {
+      "$ref": "#/definitions/issueUniverse"
+    },
+    "action_accounting": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/actionAccounting"
+      }
+    },
+    "episodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/episode"
+      }
+    },
+    "synthesis": {
+      "$ref": "#/definitions/synthesis"
+    },
+    "benchmark": {
+      "$ref": "#/definitions/benchmark"
+    },
+    "historical_publication": {
+      "$ref": "#/definitions/historicalPublication"
+    },
+    "frontend_state": {
+      "$ref": "#/definitions/frontendState"
+    },
+    "external_authority": {
+      "$ref": "#/definitions/externalAuthority"
+    },
+    "provenance": {
+      "$ref": "#/definitions/provenance"
+    }
+  },
+  "definitions": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "uniqueStrings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/nonEmptyString"
+      }
+    },
+    "nonEmptyUniqueStrings": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        {
+          "minItems": 1
+        }
+      ]
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "member_id",
+        "issue_id",
+        "congress_scope"
+      ],
+      "properties": {
+        "member_id": {
+          "type": "string",
+          "pattern": "^[A-Z][0-9]{6}$"
+        },
+        "issue_id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]+$"
+        },
+        "congress_scope": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "axes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "semantic_tier",
+        "review_scope",
+        "review_completion_state",
+        "public_claim_class"
+      ],
+      "properties": {
+        "semantic_tier": {
+          "enum": [
+            "reviewed_conclusion",
+            "developing_read",
+            "non_directional_or_limited_evidence",
+            "receipts_only"
+          ]
+        },
+        "review_scope": {
+          "enum": [
+            "benchmark_sample",
+            "bounded_partial_record",
+            "full_defined_issue_record"
+          ]
+        },
+        "review_completion_state": {
+          "enum": [
+            "not_started",
+            "in_progress",
+            "blocked",
+            "complete"
+          ]
+        },
+        "public_claim_class": {
+          "enum": [
+            "vote_record_only",
+            "reviewed_sample_finding",
+            "full_issue_synthesis",
+            "full_review_no_common_throughline",
+            "full_review_no_safe_synthesis"
+          ]
+        }
+      }
+    },
+    "issueUniverse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshot_id",
+        "snapshot_sha256",
+        "definition",
+        "as_of_date",
+        "action_ids",
+        "source_refs"
+      ],
+      "properties": {
+        "snapshot_id": {
+          "type": "string",
+          "pattern": "^issue-universe:[a-z0-9][a-z0-9._:-]{2,191}$"
+        },
+        "snapshot_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "definition": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "as_of_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "action_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "source_refs": {
+          "$ref": "#/definitions/nonEmptyUniqueStrings"
+        }
+      }
+    },
+    "memberAction": {
+      "enum": [
+        "Yea",
+        "Nay",
+        "Present",
+        "Not Voting",
+        "Missing Evidence",
+        "Source Unresolved",
+        "Source Conflicting"
+      ]
+    },
+    "resolvedMemberAction": {
+      "enum": [
+        "Yea",
+        "Nay",
+        "Present",
+        "Not Voting"
+      ]
+    },
+    "provenanceState": {
+      "enum": [
+        "authoritative",
+        "missing",
+        "unresolved",
+        "conflicting",
+        "constraint_blocked",
+        "not_applicable"
+      ]
+    },
+    "reviewFriendliness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "substantive_candidate",
+        "stable_canonical_action_identity",
+        "service_status",
+        "member_action",
+        "exact_action_issue_eligibility",
+        "action_meaning_evidence",
+        "vote_provenance",
+        "action_meaning_provenance",
+        "source_conflict_state",
+        "is_review_friendly"
+      ],
+      "properties": {
+        "substantive_candidate": {
+          "type": "boolean"
+        },
+        "stable_canonical_action_identity": {
+          "type": "boolean"
+        },
+        "service_status": {
+          "enum": [
+            "in_service",
+            "not_yet_serving",
+            "no_longer_serving",
+            "unresolved"
+          ]
+        },
+        "member_action": {
+          "$ref": "#/definitions/memberAction"
+        },
+        "exact_action_issue_eligibility": {
+          "enum": [
+            "eligible",
+            "ineligible",
+            "procedural_context",
+            "unresolved"
+          ]
+        },
+        "action_meaning_evidence": {
+          "enum": [
+            "sufficient",
+            "missing",
+            "unresolved",
+            "conflicting",
+            "constraint_blocked",
+            "not_applicable"
+          ]
+        },
+        "vote_provenance": {
+          "$ref": "#/definitions/provenanceState"
+        },
+        "action_meaning_provenance": {
+          "$ref": "#/definitions/provenanceState"
+        },
+        "source_conflict_state": {
+          "enum": [
+            "none",
+            "unresolved",
+            "conflicting",
+            "not_applicable"
+          ]
+        },
+        "is_review_friendly": {
+          "type": "boolean"
+        }
+      }
+    },
+    "interpretation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exact_action_meaning",
+        "interpretation_id",
+        "action_meaning_id",
+        "member_action",
+        "evidence_status",
+        "service_status",
+        "vote_source_refs",
+        "action_meaning_source_refs",
+        "episode_id",
+        "review_state",
+        "interpretation_receipt_refs",
+        "interpretation_sha256"
+      ],
+      "properties": {
+        "exact_action_meaning": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "interpretation_id": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "action_meaning_id": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "member_action": {
+          "$ref": "#/definitions/resolvedMemberAction"
+        },
+        "evidence_status": {
+          "const": "official_record_resolved"
+        },
+        "service_status": {
+          "const": "in_service"
+        },
+        "vote_source_refs": {
+          "$ref": "#/definitions/nonEmptyUniqueStrings"
+        },
+        "action_meaning_source_refs": {
+          "$ref": "#/definitions/nonEmptyUniqueStrings"
+        },
+        "episode_id": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "review_state": {
+          "enum": [
+            "candidate",
+            "human_reviewed",
+            "accepted_semantic_reference"
+          ]
+        },
+        "interpretation_receipt_refs": {
+          "$ref": "#/definitions/nonEmptyUniqueStrings"
+        },
+        "interpretation_sha256": {
+          "$ref": "#/definitions/sha256"
+        }
+      }
+    },
+    "actionAccounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "action_date",
+        "disposition",
+        "review_friendliness",
+        "episode_id",
+        "episode_membership_state",
+        "episode_membership_reason",
+        "interpretation"
+      ],
+      "properties": {
+        "action_id": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "action_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "disposition": {
+          "enum": [
+            "interpreted_substantive_directional",
+            "interpreted_substantive_non_directional",
+            "pending_interpretation",
+            "procedural_context",
+            "exact_action_ineligible",
+            "outside_service",
+            "missing_evidence",
+            "source_unresolved",
+            "source_conflicting",
+            "source_constraint_blocked"
+          ]
+        },
+        "review_friendliness": {
+          "$ref": "#/definitions/reviewFriendliness"
+        },
+        "episode_id": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/nonEmptyString"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "episode_membership_state": {
+          "enum": [
+            "established",
+            "unresolved",
+            "not_applicable"
+          ]
+        },
+        "episode_membership_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "interpretation": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/interpretation"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "disposition": {
+                "enum": [
+                  "interpreted_substantive_directional",
+                  "interpreted_substantive_non_directional"
+                ]
+              }
+            },
+            "required": [
+              "disposition"
+            ]
+          },
+          "then": {
+            "properties": {
+              "episode_id": {
+                "$ref": "#/definitions/nonEmptyString"
+              },
+              "interpretation": {
+                "$ref": "#/definitions/interpretation"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "interpretation": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "actionInterpretationReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "interpretation_id",
+        "interpretation_sha256"
+      ],
+      "properties": {
+        "action_id": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "interpretation_id": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "interpretation_sha256": {
+          "$ref": "#/definitions/sha256"
+        }
+      }
+    },
+    "episodeMemberRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "member_action"
+      ],
+      "properties": {
+        "action_id": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "member_action": {
+          "$ref": "#/definitions/memberAction"
+        }
+      }
+    },
+    "episode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "episode_id",
+        "action_ids",
+        "chronological_action_ids",
+        "latest_action_date",
+        "policy_question",
+        "action_interpretation_refs",
+        "member_record",
+        "outcome",
+        "contrary_or_limiting_evidence",
+        "source_completeness",
+        "source_refs",
+        "completion_state",
+        "unresolved_action_ids"
+      ],
+      "properties": {
+        "episode_id": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "action_ids": {
+          "$ref": "#/definitions/nonEmptyUniqueStrings"
+        },
+        "chronological_action_ids": {
+          "$ref": "#/definitions/nonEmptyUniqueStrings"
+        },
+        "latest_action_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "policy_question": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "action_interpretation_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/actionInterpretationReference"
+          }
+        },
+        "member_record": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/episodeMemberRecord"
+          }
+        },
+        "outcome": {
+          "enum": [
+            "directional_support",
+            "directional_opposition",
+            "mixed",
+            "non_directional",
+            "unresolved"
+          ]
+        },
+        "contrary_or_limiting_evidence": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "source_completeness": {
+          "enum": [
+            "complete",
+            "partial"
+          ]
+        },
+        "source_refs": {
+          "$ref": "#/definitions/nonEmptyUniqueStrings"
+        },
+        "completion_state": {
+          "enum": [
+            "complete",
+            "partial"
+          ]
+        },
+        "unresolved_action_ids": {
+          "$ref": "#/definitions/uniqueStrings"
+        }
+      }
+    },
+    "synthesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outcome",
+        "full_record_action_accounting",
+        "all_interpreted_episode_outcomes_supplied",
+        "contradictory_and_mixed_evidence_retained",
+        "source_boundaries",
+        "semantic_validation",
+        "human_editorial_review",
+        "human_approval_receipt_refs",
+        "full_issue_synthesis_eligible",
+        "eligibility_blockers"
+      ],
+      "properties": {
+        "outcome": {
+          "enum": [
+            "not_yet_determined",
+            "repeated_pattern",
+            "mechanism_divide",
+            "uniform_direction",
+            "mixed_or_qualified",
+            "no_common_throughline",
+            "no_safe_synthesis"
+          ]
+        },
+        "full_record_action_accounting": {
+          "enum": [
+            "passed",
+            "not_passed"
+          ]
+        },
+        "all_interpreted_episode_outcomes_supplied": {
+          "type": "boolean"
+        },
+        "contradictory_and_mixed_evidence_retained": {
+          "type": "boolean"
+        },
+        "source_boundaries": {
+          "enum": [
+            "resolved",
+            "synthesis_blocking",
+            "not_resolved"
+          ]
+        },
+        "semantic_validation": {
+          "enum": [
+            "not_run",
+            "passed",
+            "failed"
+          ]
+        },
+        "human_editorial_review": {
+          "enum": [
+            "not_started",
+            "in_progress",
+            "blocked",
+            "approved"
+          ]
+        },
+        "human_approval_receipt_refs": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "full_issue_synthesis_eligible": {
+          "type": "boolean"
+        },
+        "eligibility_blockers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "issue_universe_not_defined",
+              "review_scope_not_full_defined_issue_record",
+              "review_completion_not_complete",
+              "action_accounting_incomplete",
+              "review_friendly_action_uninterpreted",
+              "partial_episode",
+              "source_unresolved",
+              "source_conflicting",
+              "source_constraint_blocked",
+              "episode_membership_unresolved",
+              "episode_outcomes_not_supplied",
+              "contradictory_or_mixed_evidence_not_retained",
+              "semantic_validation_not_passed",
+              "human_editorial_review_not_approved",
+              "external_full_record_authority_not_verified",
+              "no_safe_synthesis"
+            ]
+          }
+        }
+      }
+    },
+    "benchmark": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "benchmark_sample_available",
+        "role",
+        "benchmark_refs",
+        "confers_full_record_scope",
+        "confers_full_record_completion"
+      ],
+      "properties": {
+        "benchmark_sample_available": {
+          "type": "boolean"
+        },
+        "role": {
+          "enum": [
+            "no_benchmark",
+            "immutable_reference"
+          ]
+        },
+        "benchmark_refs": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "confers_full_record_scope": {
+          "const": false
+        },
+        "confers_full_record_completion": {
+          "const": false
+        }
+      }
+    },
+    "historicalPublication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "artifact_id",
+        "effective_semantic_tier",
+        "publication_receipt_refs",
+        "historical_truth_note",
+        "mutated_by_this_record"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "none",
+            "inactive",
+            "active"
+          ]
+        },
+        "artifact_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "effective_semantic_tier": {
+          "anyOf": [
+            {
+              "enum": [
+                "reviewed_conclusion",
+                "developing_read",
+                "non_directional_or_limited_evidence",
+                "receipts_only"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "publication_receipt_refs": {
+          "$ref": "#/definitions/uniqueStrings"
+        },
+        "historical_truth_note": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "mutated_by_this_record": {
+          "const": false
+        }
+      }
+    },
+    "conclusionTeaser": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "valid_scope"
+      ],
+      "properties": {
+        "text": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "valid_scope": {
+          "enum": [
+            "benchmark_sample",
+            "bounded_partial_record",
+            "full_defined_issue_record"
+          ]
+        }
+      }
+    },
+    "frontendState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_scope",
+        "review_completion_state",
+        "public_claim_class",
+        "total_recorded_actions",
+        "review_friendly_actions",
+        "interpreted_actions",
+        "unresolved_actions",
+        "procedural_context_actions",
+        "present_actions",
+        "not_voting_actions",
+        "complete_episode_count",
+        "partial_episode_count",
+        "full_issue_synthesis_eligible",
+        "benchmark_sample_available",
+        "conclusion_teaser",
+        "available_labels"
+      ],
+      "properties": {
+        "review_scope": {
+          "enum": [
+            "benchmark_sample",
+            "bounded_partial_record",
+            "full_defined_issue_record"
+          ]
+        },
+        "review_completion_state": {
+          "enum": [
+            "not_started",
+            "in_progress",
+            "blocked",
+            "complete"
+          ]
+        },
+        "public_claim_class": {
+          "enum": [
+            "vote_record_only",
+            "reviewed_sample_finding",
+            "full_issue_synthesis",
+            "full_review_no_common_throughline",
+            "full_review_no_safe_synthesis"
+          ]
+        },
+        "total_recorded_actions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "review_friendly_actions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "interpreted_actions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unresolved_actions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "procedural_context_actions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "present_actions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "not_voting_actions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "complete_episode_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "partial_episode_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "full_issue_synthesis_eligible": {
+          "type": "boolean"
+        },
+        "benchmark_sample_available": {
+          "type": "boolean"
+        },
+        "conclusion_teaser": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/conclusionTeaser"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "available_labels": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "Reviewed benchmark sample",
+              "Full review complete",
+              "Full issue interpretation available",
+              "No common throughline found",
+              "No safe synthesis available",
+              "Vote receipts available"
+            ]
+          }
+        }
+      }
+    },
+    "protectedFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^docs/"
+        },
+        "sha256": {
+          "$ref": "#/definitions/sha256"
+        }
+      }
+    },
+    "artifactReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "schema_version",
+        "sha256",
+        "artifact_id",
+        "subject_sha256",
+        "bound_receipt_id"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "schema_version": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "artifact_id": {
+          "$ref": "#/definitions/nonEmptyString"
+        },
+        "subject_sha256": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bound_receipt_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "nullableArtifactReference": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/artifactReference"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "externalAuthority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "universe_manifest",
+        "universe_authority_receipt",
+        "semantic_artifact",
+        "semantic_validation_receipt",
+        "human_approval_receipt"
+      ],
+      "properties": {
+        "universe_manifest": {
+          "$ref": "#/definitions/nullableArtifactReference"
+        },
+        "universe_authority_receipt": {
+          "$ref": "#/definitions/nullableArtifactReference"
+        },
+        "semantic_artifact": {
+          "$ref": "#/definitions/nullableArtifactReference"
+        },
+        "semantic_validation_receipt": {
+          "$ref": "#/definitions/nullableArtifactReference"
+        },
+        "human_approval_receipt": {
+          "$ref": "#/definitions/nullableArtifactReference"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_path",
+        "schema_path",
+        "created_from_repository_commit",
+        "source_refs",
+        "protected_files"
+      ],
+      "properties": {
+        "contract_path": {
+          "const": "docs/methodology/full_record_issue_interpretation_v1.md"
+        },
+        "schema_path": {
+          "const": "docs/methodology/full_record_issue_interpretation_v1.schema.json"
+        },
+        "created_from_repository_commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "source_refs": {
+          "$ref": "#/definitions/nonEmptyUniqueStrings"
+        },
+        "protected_files": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protectedFile"
+          }
+        }
+      }
+    }
+  }
+}

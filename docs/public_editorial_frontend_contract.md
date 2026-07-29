@@ -91,6 +91,44 @@ visible focus/highlight styling, and respect `prefers-reduced-motion`.
 Semantic acceptance, human approval, benchmark status, production eligibility,
 publication, merge, and deployment remain separate decisions. The F000477
 Justice presentation is human-approved, a gold benchmark, and production
-eligible. Publication remains inactive, so the effective public tier remains
-`receipts_only`. Its activation bundle is separate from the historical
-71-artifact seed.
+eligible. Its separately authorized 2026-07-29 activation succeeded, so
+`scope=119` and bounded `scope=all` return `reviewed_conclusion`; `scope=118`
+remains `receipts_only`. This is a published benchmark-sample finding, not a
+completed full Justice record.
+
+## Full-record state contract for Frontend Pass A
+
+The next frontend milestone may consume the backend-supplied fields defined by
+`docs/methodology/full_record_issue_interpretation_v1.md`:
+
+- `review_scope`
+- `review_completion_state`
+- `public_claim_class`
+- `total_recorded_actions`
+- `review_friendly_actions`
+- `interpreted_actions`
+- `unresolved_actions`
+- `procedural_context_actions`
+- `present_actions`
+- `not_voting_actions`
+- `complete_episode_count`
+- `partial_episode_count`
+- `full_issue_synthesis_eligible`
+- `benchmark_sample_available`
+- `conclusion_teaser`, only when valid for its declared scope
+
+React must render, not derive, these states. Counts use the declared
+content-addressed universe. Raw votes, party, titles, keywords, or benchmark
+status cannot establish review scope, completion, or synthesis eligibility.
+For full-record claims, the backend must first verify the detached universe,
+Semantic IR validation, and content-bound human approval chain; explanatory
+status strings and React never authorize those gates.
+
+The truthful labels are `Reviewed benchmark sample`, `Full review complete`,
+`Full issue interpretation available`, `No common throughline found`, `No safe
+synthesis available`, and `Vote receipts available`. The current Foushee
+Justice artifact is labeled `Reviewed benchmark sample`; it is not labeled
+`Full review complete` or `Full issue interpretation available`.
+
+This section specifies future input fields and labels only. No current API or
+React implementation supplies or renders this full-record state contract.

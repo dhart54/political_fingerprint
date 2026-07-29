@@ -48,6 +48,7 @@ def _semantic_loop() -> dict[str, Any]:
     commands = [
         ["node", "scripts/validate_editorial_semantic_ir_schema.mjs"],
         [sys.executable, "scripts/validate_editorial_semantic_ir.py"],
+        [sys.executable, "scripts/validate_full_record_issue_interpretation.py"],
         [sys.executable, "scripts/compare_accepted_semantic_references.py"],
         [
             sys.executable,
@@ -55,8 +56,10 @@ def _semantic_loop() -> dict[str, Any]:
             "unittest",
             "backend.tests.test_editorial_semantic_ir",
             "backend.tests.test_editorial_pipeline",
+            "backend.tests.test_full_record_issue_interpretation",
         ],
         [sys.executable, "scripts/check_documentation_governance.py"],
+        [sys.executable, "scripts/check_full_record_terminology.py"],
     ]
     return {
         "tier": "semantic",

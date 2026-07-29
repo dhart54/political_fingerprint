@@ -163,6 +163,18 @@ For every accepted action, `action_accounting` records either:
 Full-record cases must account for every accepted action exactly this way.
 Rejected and context-only actions never satisfy or inflate that requirement.
 
+For representative-level expansion, `full_record` inside an accepted Semantic
+IR fixture does not by itself establish product-level
+`full_defined_issue_record` scope. The separate
+`docs/methodology/full_record_issue_interpretation_v1.md` contract defines the
+content-addressed issue universe, review completion, public claim class, and
+final full-record synthesis gates. A benchmark fixture may be semantically
+complete for its supplied actions without becoming a full issue synthesis.
+Representative-level full claims additionally require a separately
+content-addressed full-record Semantic IR artifact and detached validation
+receipt bound to an independently authorized issue universe. A local `passed`
+status cannot substitute for that chain.
+
 ## Coverage contract
 
 Coverage is computed only over exact-action-eligible substantive actions and
