@@ -1345,7 +1345,9 @@ def _apply(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _rollback(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
+def _rollback_identity(
+    conn: Any, bundle: dict[str, Any]
+) -> dict[str, Any]:
     registry = _row_for_selector(conn)
     metadata = registry["publication_metadata_jsonb"]
     if (
@@ -1353,24 +1355,122 @@ def _rollback(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
         or metadata.get("activation_bundle_id") != BUNDLE_ID
         or metadata.get("approval_receipt", {}).get("receipt_id")
         != bundle["activation_target"]["approval_receipt_id"]
+        or metadata != bundle["publication_registry"]["publication_metadata"]
     ):
         raise StoreSafetyError("rollback registry identity mismatch")
-    post = _postcheck(conn, bundle)
+    batch = conn.execute(
+        """SELECT batch_id, source_commit_sha, manifest_sha256, status,
+                  artifact_count, relationship_count
+           FROM editorial_artifact_batches
+           WHERE deterministic_batch_key = %s""",
+        (BATCH_KEY,),
+    ).fetchone()
+    if batch is None or (
+        batch["source_commit_sha"],
+        batch["manifest_sha256"],
+        batch["status"],
+        int(batch["artifact_count"]),
+        int(batch["relationship_count"]),
+    ) != (SOURCE_COMMIT, bundle["bundle_sha256"], "applied", 3, 2):
+        raise StoreSafetyError("rollback batch identity mismatch")
+    artifacts = conn.execute(
+        """SELECT artifact_id, natural_key, artifact_version, content_sha256
+           FROM editorial_artifact_versions
+           WHERE batch_id = %s ORDER BY artifact_id""",
+        (batch["batch_id"],),
+    ).fetchall()
+    expected_artifacts = sorted(
+        (
+            item["natural_key"],
+            int(item["artifact_version"]),
+            item["content_sha256"],
+        )
+        for item in bundle["artifacts"]
+    )
+    actual_artifacts = sorted(
+        (
+            row["natural_key"],
+            int(row["artifact_version"]),
+            row["content_sha256"],
+        )
+        for row in artifacts
+    )
+    if actual_artifacts != expected_artifacts:
+        raise StoreSafetyError("rollback artifact identity mismatch")
+    relationships = [
+        {
+            "parent_natural_key": row["parent_natural_key"],
+            "child_natural_key": row["child_natural_key"],
+            "relationship_type": row["relationship_type"],
+            "ordinal": row["ordinal"],
+            "metadata": row["metadata_jsonb"],
+        }
+        for row in conn.execute(
+            """SELECT parent.natural_key AS parent_natural_key,
+                      child.natural_key AS child_natural_key,
+                      rel.relationship_type, rel.ordinal, rel.metadata_jsonb
+               FROM editorial_artifact_relationships rel
+               JOIN editorial_artifact_versions parent
+                 ON parent.artifact_id = rel.parent_artifact_id
+               JOIN editorial_artifact_versions child
+                 ON child.artifact_id = rel.child_artifact_id
+               WHERE parent.batch_id = %s
+               ORDER BY parent.natural_key, rel.relationship_type,
+                        child.natural_key""",
+            (batch["batch_id"],),
+        ).fetchall()
+    ]
+    if relationships != bundle["relationships"]:
+        raise StoreSafetyError("rollback relationship identity mismatch")
+    return {
+        "batch_id": int(batch["batch_id"]),
+        "artifact_ids": [int(row["artifact_id"]) for row in artifacts],
+        "relationship_identities": relationships,
+        "registry_target": {
+            "member_bioguide_id": MEMBER_ID,
+            "issue_id": ISSUE_ID,
+        },
+        "bundle_id": BUNDLE_ID,
+        "bundle_sha256": bundle["bundle_sha256"],
+    }
+
+
+def _rollback(
+    conn: Any,
+    bundle: dict[str, Any],
+    *,
+    expected_identity: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    identity = _rollback_identity(conn, bundle)
+    if expected_identity is None:
+        post = _postcheck(conn, bundle)
+    else:
+        expected = {
+            "batch_id": int(expected_identity["batch_id"]),
+            "artifact_ids": [
+                int(item) for item in expected_identity["artifact_ids"]
+            ],
+            "relationship_identities": expected_identity[
+                "relationship_identities"
+            ],
+            "registry_target": expected_identity["registry_target"],
+            "bundle_id": expected_identity["bundle_id"],
+            "bundle_sha256": expected_identity["bundle_sha256"],
+        }
+        if identity != expected:
+            raise StoreSafetyError("rollback captured activation identity mismatch")
+        post = identity
     deleted_registry = conn.execute(
         """DELETE FROM editorial_publication_registry
            WHERE member_bioguide_id = %s AND issue_id = %s""",
         (MEMBER_ID, ISSUE_ID),
     )
-    batch = conn.execute(
-        "SELECT batch_id FROM editorial_artifact_batches WHERE deterministic_batch_key = %s",
-        (BATCH_KEY,),
-    ).fetchone()
     deleted_relationships = conn.execute(
         """DELETE FROM editorial_artifact_relationships rel
            USING editorial_artifact_versions parent
            WHERE rel.parent_artifact_id = parent.artifact_id
              AND parent.batch_id = %s""",
-        (batch["batch_id"],),
+        (identity["batch_id"],),
     )
     conn.execute(
         "SELECT set_config('app.editorial_artifact_rollback_batch', %s, true)",
@@ -1378,11 +1478,11 @@ def _rollback(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     )
     deleted_artifacts = conn.execute(
         "DELETE FROM editorial_artifact_versions WHERE batch_id = %s",
-        (batch["batch_id"],),
+        (identity["batch_id"],),
     )
     deleted_batch = conn.execute(
         "DELETE FROM editorial_artifact_batches WHERE batch_id = %s",
-        (batch["batch_id"],),
+        (identity["batch_id"],),
     )
     if (
         deleted_registry.rowcount,

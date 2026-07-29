@@ -104,3 +104,25 @@ Production remains publication-inactive. Another activation requires a separate
 authorization after the corrected commit is merged, deployed, reported exactly
 by `/health`, and followed by fresh production preflight/backup evidence and a
 passing real-HTTP disposable proof.
+
+## Merge-gate correction note
+
+The PR #118 merge gate identified two repository-only defects in the proposed
+correction. First, the initial row normalizer admitted ambiguous mapping keys,
+duplicate cursor names, and arbitrary iterable or string rows. The corrected
+closed contract now accepts only validated string-key mappings or supported
+non-string sequences paired with unique, nonblank DB-API/Psycopg column names;
+it preserves keys and values without coercion and rejects width mismatches.
+
+Second, the initial real-Uvicorn harness depended on an operator-provisioned
+database and discovered rollback IDs through postcheck. The authoritative proof
+now owns a uniquely labeled PostgreSQL container, volume, and network from
+validated snapshot restore through final destruction. It captures exact apply
+identities before postcheck, attempts identity-bound rollback after any
+post-commit failure, and destroys all current-run database resources regardless
+of rollback outcome. Both rollback verification and verified resource absence
+are required to pass.
+
+These findings concerned the repository correction and its disposable
+readiness proof. They did not cause another production activation, production
+database change, backup replacement, or deployment.

@@ -34,12 +34,20 @@ reads PostgreSQL on every request and the frontend request uses `no-store`.
    the archive, inventories the restored database, proves semantic equality and
    the `receipts_only` selector state, and emits a schema-validated evidence
    chain. Operator-authored booleans are not accepted as backup evidence.
-5. Against the verified disposable restore, run
-   `foushee_justice_publication_http_proof.py`. It must start the real backend,
-   prove inactive HTTP, apply the exact bundle, prove the complete activated
-   HTTP contract and isolation, roll back, and prove both inactive HTTP and the
-   exact canonical baseline. This proof is mandatory; selector-only or
-   CLI-postcheck-only evidence is insufficient.
+5. Run `foushee_justice_publication_http_proof.py` with the bound backup proof.
+   This authoritative mode owns the complete disposable lifecycle: it creates a
+   uniquely labeled PostgreSQL 17.6-compatible Docker network, volume, and
+   container; generates local credentials; exposes a random loopback-only port;
+   restores the verified snapshot; and proves the canonical baseline before
+   starting the real backend. It then proves inactive HTTP, applies the exact
+   bundle, captures the batch, artifact, relationship, registry, bundle, and
+   digest identities before a separate postcheck, proves the complete activated
+   HTTP contract and isolation, performs identity-bound rollback, and proves
+   inactive HTTP and the exact canonical baseline. Finally it stops Uvicorn and
+   removes its container, volume, and network. A passing proof requires both
+   verified rollback and verified resource absence. Selector-only,
+   CLI-postcheck-only, or externally provisioned database evidence is
+   insufficient.
 6. Confirm production is still at the exact inactive governed baseline, then
    obtain separate explicit publication authorization naming the bundle ID and
    digest.
@@ -59,7 +67,7 @@ The activation tool is:
 python backend/scripts/foushee_justice_publication_activation.py verify-bundle
 python backend/scripts/foushee_justice_publication_activation.py preflight --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --deployed-commit <40-char-sha> --report-path <evidence-dir>/preflight-report.json
 python backend/scripts/foushee_justice_publication_activation.py prepare-backup --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --deployed-commit <40-char-sha> --preflight-report <evidence-dir>/preflight-report.json --restore-database-url <fresh-disposable-url> --evidence-dir <evidence-dir>
-python backend/scripts/foushee_justice_publication_http_proof.py --database-url <verified-disposable-url> --deployed-commit <40-char-sha> --preflight-report <disposable-evidence-dir>/preflight-report.json --backup-proof <disposable-evidence-dir>/backup-proof.json --report-path <disposable-evidence-dir>/http-integration-proof.json
+python backend/scripts/foushee_justice_publication_http_proof.py --deployed-commit <40-char-sha> --preflight-report <evidence-dir>/preflight-report.json --backup-proof <evidence-dir>/backup-proof.json --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --bundle-sha256 df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813 --evidence-dir <local-http-proof-output-dir>
 python backend/scripts/foushee_justice_publication_activation.py apply --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --confirm-bundle-digest df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813 --deployed-commit <40-char-sha> --preflight-report <evidence-dir>/preflight-report.json --backup-proof <evidence-dir>/backup-proof.json --confirm-production-activation
 python backend/scripts/foushee_justice_publication_activation.py rollback --target production --bundle-id foushee_justice_public_safety_119_publication_activation_v1 --confirm-bundle-digest df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813 --confirm-rollback-token ROLLBACK:foushee_justice_public_safety_119_publication_activation_v1:df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813 --confirm-batch-id <batch-id> --confirm-artifact-ids <ordered-ids> --confirm-production-rollback
 ```
@@ -76,6 +84,17 @@ Preflight reports, freshness checks, source and restored backup inventories,
 backup proofs, apply preconditions, postchecks, and rollback restoration all
 use the same mandatory canonical graph and fingerprint functions. There is no
 permissive operational hash mode.
+
+The authoritative HTTP proof does not accept an arbitrary database URL. An
+externally managed database run is diagnostic only and cannot produce
+activation-readiness evidence. After a successful apply, the authoritative
+proof persists a closed local receipt containing the exact activation
+identities before invoking its independent postcheck. Any later postcheck,
+serialization, or HTTP assertion failure causes the outer cleanup path to stop
+Uvicorn and attempt exact rollback from that captured receipt. Rollback failure
+is reported as a proof failure but never prevents destruction of the
+current-run labeled container, volume, and network. No global Docker cleanup is
+permitted.
 
 ## Public contract and thresholds
 
@@ -130,8 +149,9 @@ checks returned 500 and the exact rollback restored `2/140/155/0`. That attempt
 is not reusable activation evidence. A later authorization requires the
 corrected deployed commit, exact `/health` identity, a fresh production
 preflight, a fresh verified backup or an explicit in-lifetime revalidation of
-the existing proof, the real-server disposable HTTP proof, and a final
-confirmation that production remains inactive.
+the existing proof, a fresh lifecycle-owned real-server disposable HTTP proof,
+and a final confirmation that production remains inactive. An operator-created
+database cannot substitute for that proof.
 
 The baseline-reconciliation PR was repository-only. It did not access or modify
 production, create a production backup, activate publication, or deploy. The
