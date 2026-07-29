@@ -42,16 +42,18 @@ jobs:
           curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_alex_morgan/editorial-presentations?scope=119" >/tmp/other-member.json
           python - <<'PY'
           import json
+          import os
           from pathlib import Path
 
-          positions = json.loads(Path("/tmp/positions.json").read_text())
-          evidence = json.loads(Path("/tmp/justice-evidence.json").read_text())
+          output_dir = Path(os.environ.get("SMOKE_OUTPUT_DIR", "/tmp"))
+          positions = json.loads((output_dir / "positions.json").read_text())
+          evidence = json.loads((output_dir / "justice-evidence.json").read_text())
           presentations = {
-              "119": json.loads(Path("/tmp/presentations-119.json").read_text()),
-              "all": json.loads(Path("/tmp/presentations-all.json").read_text()),
-              "118": json.loads(Path("/tmp/presentations-118.json").read_text()),
+              "119": json.loads((output_dir / "presentations-119.json").read_text()),
+              "all": json.loads((output_dir / "presentations-all.json").read_text()),
+              "118": json.loads((output_dir / "presentations-118.json").read_text()),
           }
-          other_member = json.loads(Path("/tmp/other-member.json").read_text())
+          other_member = json.loads((output_dir / "other-member.json").read_text())
           position = next((row for row in positions.get("positions", []) if row.get("domain") == "JUSTICE_PUBLIC_SAFETY"), None)
           if not position or "interpreted_total" not in position:
               raise SystemExit("Valerie positions response is missing interpreted_total")
@@ -69,6 +71,32 @@ jobs:
               if result is None:
                   raise SystemExit(f"Editorial response is missing {issue_id}")
               return result
+
+          def require_identity(payload, *, legislator_id, member_bioguide_id, scope):
+              expected = {
+                  "legislator_id": legislator_id,
+                  "member_bioguide_id": member_bioguide_id,
+                  "scope": scope,
+              }
+              actual = {key: payload.get(key) for key in expected}
+              if actual != expected:
+                  raise SystemExit(
+                      f"Editorial response identity changed: expected {expected}, got {actual}"
+                  )
+
+          for scope, payload in presentations.items():
+              require_identity(
+                  payload,
+                  legislator_id="leg_valerie_p_foushee",
+                  member_bioguide_id="F000477",
+                  scope=scope,
+              )
+          require_identity(
+              other_member,
+              legislator_id="leg_alex_morgan",
+              member_bioguide_id="H000001",
+              scope="119",
+          )
 
           justice = {scope: issue(payload, "JUSTICE_PUBLIC_SAFETY") for scope, payload in presentations.items()}
           tiers = {scope: row.get("tier") for scope, row in justice.items()}
@@ -103,10 +131,20 @@ jobs:
               "The conclusion remains bounded to the reviewed 119th-Congress record."
           ):
               raise SystemExit("scope=all omitted its reviewed-record boundary")
+          if justice["118"].get("conclusion") is not None:
+              raise SystemExit("scope=118 exposed analytical copy")
 
-          if issue(presentations["119"], "ECONOMY_TAXES").get("tier") != "receipts_only":
+          cross_issue = issue(presentations["119"], "ECONOMY_TAXES")
+          if (
+              cross_issue.get("tier") != "receipts_only"
+              or cross_issue.get("conclusion") is not None
+          ):
               raise SystemExit("Cross-issue publication isolation failed")
-          if issue(other_member, "JUSTICE_PUBLIC_SAFETY").get("tier") != "receipts_only":
+          other_member_justice = issue(other_member, "JUSTICE_PUBLIC_SAFETY")
+          if (
+              other_member_justice.get("tier") != "receipts_only"
+              or other_member_justice.get("conclusion") is not None
+          ):
               raise SystemExit("Cross-member publication isolation failed")
 
           required_rolls = {

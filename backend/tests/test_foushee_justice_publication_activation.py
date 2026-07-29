@@ -2,7 +2,11 @@ from __future__ import annotations
 
 import copy
 import json
+import os
 from pathlib import Path
+import subprocess
+import sys
+import textwrap
 
 import pytest
 from jsonschema import Draft202012Validator, FormatChecker
@@ -43,6 +47,155 @@ SUCCESS_RECEIPT_SCHEMA_PATH = (
 
 def _json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _workflow_validator_source() -> str:
+    workflow = (
+        REPOSITORY_ROOT / ".github/workflows/render-backend-smoke.yml"
+    ).read_text(encoding="utf-8")
+    start_marker = "          python - <<'PY'\n"
+    end_marker = "\n          PY"
+    return textwrap.dedent(
+        workflow.split(start_marker, 1)[1].split(end_marker, 1)[0]
+    )
+
+
+def _workflow_smoke_payloads() -> dict[str, dict]:
+    action_ids = [f"house:119:{roll}" for roll in range(1, 8)]
+    active_provenance = {
+        "artifact_id": "f000477:justice_public_safety:119:v1",
+        "artifact_version": 1,
+        "reviewed_wording_sha256": (
+            "30636227799244522d07a9608e06878561439f0fb9819931989727277607ae92"
+        ),
+        "review_receipt_id": (
+            "approval-receipt:f000477-justice-public-safety-119-v1-"
+            "20260727-dhart54"
+        ),
+    }
+
+    def justice(scope: str, tier: str) -> dict:
+        if tier == "receipts_only":
+            return {
+                "issue_id": "JUSTICE_PUBLIC_SAFETY",
+                "tier": tier,
+                "conclusion": None,
+            }
+        boundary = "Reviewed 119th-Congress record."
+        if scope == "all":
+            boundary += (
+                " The conclusion remains bounded to the reviewed "
+                "119th-Congress record."
+            )
+        return {
+            "issue_id": "JUSTICE_PUBLIC_SAFETY",
+            "tier": tier,
+            "scope_boundary": boundary,
+            "conclusion": {"headline": "Approved", "body": "Approved"},
+            "repeated_patterns": [{}, {}],
+            "policy_trajectories": [{}],
+            "evidence_metadata": {
+                "action_ids": action_ids,
+                "episode_ids": [f"episode:{index}" for index in range(1, 6)],
+            },
+            "provenance": active_provenance,
+        }
+
+    def response(
+        *,
+        legislator_id: str,
+        member_bioguide_id: str,
+        scope: str,
+        presentations: list[dict],
+    ) -> dict:
+        return {
+            "schema_version": "editorial_public_presentations_api_v1",
+            "legislator_id": legislator_id,
+            "member_bioguide_id": member_bioguide_id,
+            "scope": scope,
+            "presentations": presentations,
+        }
+
+    return {
+        "positions.json": {
+            "positions": [
+                {
+                    "domain": "JUSTICE_PUBLIC_SAFETY",
+                    "interpreted_total": 7,
+                }
+            ]
+        },
+        "justice-evidence.json": {
+            "evidence": [
+                {
+                    "congress": 119,
+                    "rollcall_number": roll,
+                    "position": "yea",
+                    "source_url": f"https://clerk.house.gov/Votes/{roll}",
+                    "interpretation_status": "reviewed",
+                }
+                for roll in range(1, 8)
+            ]
+        },
+        "presentations-119.json": response(
+            legislator_id="leg_valerie_p_foushee",
+            member_bioguide_id="F000477",
+            scope="119",
+            presentations=[
+                justice("119", "reviewed_conclusion"),
+                {
+                    "issue_id": "ECONOMY_TAXES",
+                    "tier": "receipts_only",
+                    "conclusion": None,
+                },
+            ],
+        ),
+        "presentations-all.json": response(
+            legislator_id="leg_valerie_p_foushee",
+            member_bioguide_id="F000477",
+            scope="all",
+            presentations=[justice("all", "reviewed_conclusion")],
+        ),
+        "presentations-118.json": response(
+            legislator_id="leg_valerie_p_foushee",
+            member_bioguide_id="F000477",
+            scope="118",
+            presentations=[justice("118", "receipts_only")],
+        ),
+        "other-member.json": response(
+            legislator_id="leg_alex_morgan",
+            member_bioguide_id="H000001",
+            scope="119",
+            presentations=[justice("119", "receipts_only")],
+        ),
+    }
+
+
+def _run_workflow_validator(tmp_path: Path, payloads: dict[str, dict]):
+    for filename, payload in payloads.items():
+        (tmp_path / filename).write_text(
+            json.dumps(payload),
+            encoding="utf-8",
+        )
+    environment = os.environ.copy()
+    environment["SMOKE_OUTPUT_DIR"] = str(tmp_path)
+    return subprocess.run(
+        [sys.executable, "-c", _workflow_validator_source()],
+        cwd=REPOSITORY_ROOT,
+        env=environment,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+
+def _replace_cross_issue_with_justice(payloads: dict[str, dict]) -> None:
+    cross_issue = next(
+        row
+        for row in payloads["presentations-119.json"]["presentations"]
+        if row["issue_id"] == "ECONOMY_TAXES"
+    )
+    cross_issue["issue_id"] = "JUSTICE_PUBLIC_SAFETY"
 
 
 def test_checked_activation_bundle_is_deterministic_and_exact() -> None:
@@ -446,9 +599,77 @@ def test_public_smoke_contract_pins_active_scopes_and_stable_identities() -> Non
     )
     assert "reviewed 119th-Congress record" in workflow
     assert "leg_alex_morgan" in workflow
+    assert "H000001" in workflow
+    assert "require_identity" in workflow
     assert "ECONOMY_TAXES" in workflow
     for unstable_database_id in ("218", "219", "220"):
         assert unstable_database_id not in workflow
+
+
+def test_workflow_smoke_accepts_exact_member_and_scope_identities(
+    tmp_path: Path,
+) -> None:
+    result = _run_workflow_validator(tmp_path, _workflow_smoke_payloads())
+    assert result.returncode == 0, result.stderr
+
+
+@pytest.mark.parametrize(
+    ("mutate", "expected_error"),
+    [
+        pytest.param(
+            lambda payloads: payloads["presentations-119.json"].update(
+                {"legislator_id": "leg_wrong_member"}
+            ),
+            "Editorial response identity changed",
+            id="wrong-legislator-id",
+        ),
+        pytest.param(
+            lambda payloads: payloads["presentations-119.json"].update(
+                {"member_bioguide_id": "X000001"}
+            ),
+            "Editorial response identity changed",
+            id="wrong-bioguide-id",
+        ),
+        pytest.param(
+            lambda payloads: payloads["presentations-118.json"].update(
+                {"scope": "all"}
+            ),
+            "Editorial response identity changed",
+            id="wrong-returned-scope",
+        ),
+        pytest.param(
+            lambda payloads: payloads.__setitem__(
+                "presentations-119.json",
+                copy.deepcopy(payloads["presentations-all.json"]),
+            ),
+            "Editorial response identity changed",
+            id="all-payload-for-119-request",
+        ),
+        pytest.param(
+            lambda payloads: payloads.__setitem__(
+                "other-member.json",
+                copy.deepcopy(payloads["presentations-119.json"]),
+            ),
+            "Editorial response identity changed",
+            id="foushee-payload-for-other-member",
+        ),
+        pytest.param(
+            _replace_cross_issue_with_justice,
+            "Editorial response is missing ECONOMY_TAXES",
+            id="justice-row-for-cross-issue",
+        ),
+    ],
+)
+def test_workflow_smoke_rejects_member_scope_and_issue_substitution(
+    tmp_path: Path,
+    mutate,
+    expected_error: str,
+) -> None:
+    payloads = _workflow_smoke_payloads()
+    mutate(payloads)
+    result = _run_workflow_validator(tmp_path, payloads)
+    assert result.returncode != 0
+    assert expected_error in f"{result.stdout}\n{result.stderr}"
 
 
 def test_incident_is_closed_without_rewriting_failed_attempt_history() -> None:
