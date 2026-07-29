@@ -89,3 +89,64 @@ jobs:
           pytest -q
           backend/tests/test_foushee_justice_publication_activation_postgres.py
           -rs
+
+      - name: Run row-contract and owned-lifecycle fault tests
+        run: >-
+          python -m pytest -q
+          backend/tests/test_api_editorial_presentations.py
+          backend/tests/test_foushee_justice_publication_http_proof.py
+
+      - name: Build fresh disposable backup evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence_dir="${RUNNER_TEMP}/foushee-http-proof-source"
+          deployed_commit="$(git rev-parse HEAD)"
+          mkdir -p "${evidence_dir}"
+          createdb -h 127.0.0.1 -U postgres pf_backup_restore
+          python backend/scripts/foushee_justice_publication_activation.py \
+            preflight \
+            --database-url "${DATABASE_URL}" \
+            --target disposable \
+            --bundle-id foushee_justice_public_safety_119_publication_activation_v1 \
+            --deployed-commit "${deployed_commit}" \
+            --report-path "${evidence_dir}/preflight-report.json"
+          python backend/scripts/foushee_justice_publication_activation.py \
+            prepare-backup \
+            --database-url "${DATABASE_URL}" \
+            --target disposable \
+            --bundle-id foushee_justice_public_safety_119_publication_activation_v1 \
+            --deployed-commit "${deployed_commit}" \
+            --preflight-report "${evidence_dir}/preflight-report.json" \
+            --restore-database-url \
+              postgresql://postgres:postgres@127.0.0.1:5432/pf_backup_restore \
+            --evidence-dir "${evidence_dir}"
+          dropdb -h 127.0.0.1 -U postgres pf_backup_restore
+
+      - name: Run authoritative owned-lifecycle real-Uvicorn proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence_dir="${RUNNER_TEMP}/foushee-http-proof-source"
+          output_dir="${RUNNER_TEMP}/foushee-http-proof-output"
+          deployed_commit="$(git rev-parse HEAD)"
+          python backend/scripts/foushee_justice_publication_http_proof.py \
+            --deployed-commit "${deployed_commit}" \
+            --preflight-report "${evidence_dir}/preflight-report.json" \
+            --backup-proof "${evidence_dir}/backup-proof.json" \
+            --bundle-id foushee_justice_public_safety_119_publication_activation_v1 \
+            --bundle-sha256 \
+              df081ea7fc93039926b5a8ac1e468444f30e28b25bb2862bb2980f7d2d83e813 \
+            --evidence-dir "${output_dir}"
+
+      - name: Prove no owned proof resources remain
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -z "$(docker ps -aq \
+            --filter label=political-fingerprint.http-proof-run)"
+          test -z "$(docker volume ls -q \
+            --filter label=political-fingerprint.http-proof-run)"
+          test -z "$(docker network ls -q \
+            --filter label=political-fingerprint.http-proof-run)"

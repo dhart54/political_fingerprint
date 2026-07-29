@@ -36,16 +36,33 @@ jobs:
           curl --fail --silent --show-error --max-time 20 "$API_BASE_URL/health" >/tmp/health.json
           curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/positions" >/tmp/positions.json
           curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/positions/NATIONAL_SECURITY_FOREIGN/evidence" >/tmp/evidence.json
+          curl --fail --silent --show-error --max-time 30 "$API_BASE_URL/legislators/leg_valerie_p_foushee/editorial-presentations?scope=119" >/tmp/editorial-presentations.json
           python - <<'PY'
           import json
           from pathlib import Path
 
           positions = json.loads(Path("/tmp/positions.json").read_text())
           evidence = json.loads(Path("/tmp/evidence.json").read_text())
+          presentations = json.loads(Path("/tmp/editorial-presentations.json").read_text())
           position = next((row for row in positions.get("positions", []) if row.get("domain") == "NATIONAL_SECURITY_FOREIGN"), None)
           if not position or "interpreted_total" not in position:
               raise SystemExit("Valerie positions response is missing interpreted_total")
           rows = evidence.get("evidence", [])
           if not rows or "interpretation_status" not in rows[0]:
               raise SystemExit("Valerie evidence response is missing interpretation_status")
+          if presentations.get("schema_version") != "editorial_public_presentations_api_v1":
+              raise SystemExit("Valerie editorial response has the wrong schema")
+          justice = next(
+              (
+                  row
+                  for row in presentations.get("presentations", [])
+                  if row.get("issue_id") == "JUSTICE_PUBLIC_SAFETY"
+              ),
+              None,
+          )
+          if not justice or justice.get("tier") not in {
+              "receipts_only",
+              "reviewed_conclusion",
+          }:
+              raise SystemExit("Valerie Justice editorial response has an invalid tier")
           PY

@@ -41,6 +41,10 @@ from app.editorial_artifacts.reconciliation import (
     validate_pre_activation_fingerprint,
 )
 from app.editorial_artifacts.repository import EditorialArtifactRepository
+from app.editorial_presentations.compiler import (
+    _copy_display_wording,
+    semantic_tier_for_artifact,
+)
 from app.editorial_presentations.selector import select_public_presentations
 from scripts.editorial_artifact_store import (
     StoreSafetyError,
@@ -113,6 +117,16 @@ def _exact_deployed_commit(actual: str) -> dict[str, Any]:
 
 def _utc_now() -> str:
     return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _postgres_tool(name: str) -> str | None:
+    configured = os.getenv("POSTGRES_BIN")
+    if configured:
+        suffix = ".exe" if os.name == "nt" else ""
+        candidate = Path(configured) / f"{name}{suffix}"
+        if candidate.is_file():
+            return str(candidate)
+    return shutil.which(name)
 
 
 def _digest_body(value: dict[str, Any], digest_key: str) -> str:
@@ -441,7 +455,7 @@ def _verify_backup_proof(
         or _file_sha256(snapshot_path) != snapshot["sha256"]
     ):
         raise StoreSafetyError("backup snapshot file mismatch")
-    pg_restore = shutil.which("pg_restore")
+    pg_restore = _postgres_tool("pg_restore")
     if not pg_restore:
         raise StoreSafetyError("pg_restore is required to verify the snapshot archive")
     archive = subprocess.run(
@@ -513,8 +527,8 @@ def _prepare_backup(
     deployed_commit: str,
     preflight_report_path: Path,
 ) -> Path:
-    pg_dump = shutil.which("pg_dump")
-    pg_restore = shutil.which("pg_restore")
+    pg_dump = _postgres_tool("pg_dump")
+    pg_restore = _postgres_tool("pg_restore")
     if not pg_dump or not pg_restore:
         raise StoreSafetyError("pg_dump and pg_restore are required")
     evidence_dir = evidence_dir.resolve()
@@ -1331,7 +1345,9 @@ def _apply(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _rollback(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
+def _rollback_identity(
+    conn: Any, bundle: dict[str, Any]
+) -> dict[str, Any]:
     registry = _row_for_selector(conn)
     metadata = registry["publication_metadata_jsonb"]
     if (
@@ -1339,24 +1355,122 @@ def _rollback(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
         or metadata.get("activation_bundle_id") != BUNDLE_ID
         or metadata.get("approval_receipt", {}).get("receipt_id")
         != bundle["activation_target"]["approval_receipt_id"]
+        or metadata != bundle["publication_registry"]["publication_metadata"]
     ):
         raise StoreSafetyError("rollback registry identity mismatch")
-    post = _postcheck(conn, bundle)
+    batch = conn.execute(
+        """SELECT batch_id, source_commit_sha, manifest_sha256, status,
+                  artifact_count, relationship_count
+           FROM editorial_artifact_batches
+           WHERE deterministic_batch_key = %s""",
+        (BATCH_KEY,),
+    ).fetchone()
+    if batch is None or (
+        batch["source_commit_sha"],
+        batch["manifest_sha256"],
+        batch["status"],
+        int(batch["artifact_count"]),
+        int(batch["relationship_count"]),
+    ) != (SOURCE_COMMIT, bundle["bundle_sha256"], "applied", 3, 2):
+        raise StoreSafetyError("rollback batch identity mismatch")
+    artifacts = conn.execute(
+        """SELECT artifact_id, natural_key, artifact_version, content_sha256
+           FROM editorial_artifact_versions
+           WHERE batch_id = %s ORDER BY artifact_id""",
+        (batch["batch_id"],),
+    ).fetchall()
+    expected_artifacts = sorted(
+        (
+            item["natural_key"],
+            int(item["artifact_version"]),
+            item["content_sha256"],
+        )
+        for item in bundle["artifacts"]
+    )
+    actual_artifacts = sorted(
+        (
+            row["natural_key"],
+            int(row["artifact_version"]),
+            row["content_sha256"],
+        )
+        for row in artifacts
+    )
+    if actual_artifacts != expected_artifacts:
+        raise StoreSafetyError("rollback artifact identity mismatch")
+    relationships = [
+        {
+            "parent_natural_key": row["parent_natural_key"],
+            "child_natural_key": row["child_natural_key"],
+            "relationship_type": row["relationship_type"],
+            "ordinal": row["ordinal"],
+            "metadata": row["metadata_jsonb"],
+        }
+        for row in conn.execute(
+            """SELECT parent.natural_key AS parent_natural_key,
+                      child.natural_key AS child_natural_key,
+                      rel.relationship_type, rel.ordinal, rel.metadata_jsonb
+               FROM editorial_artifact_relationships rel
+               JOIN editorial_artifact_versions parent
+                 ON parent.artifact_id = rel.parent_artifact_id
+               JOIN editorial_artifact_versions child
+                 ON child.artifact_id = rel.child_artifact_id
+               WHERE parent.batch_id = %s
+               ORDER BY parent.natural_key, rel.relationship_type,
+                        child.natural_key""",
+            (batch["batch_id"],),
+        ).fetchall()
+    ]
+    if relationships != bundle["relationships"]:
+        raise StoreSafetyError("rollback relationship identity mismatch")
+    return {
+        "batch_id": int(batch["batch_id"]),
+        "artifact_ids": [int(row["artifact_id"]) for row in artifacts],
+        "relationship_identities": relationships,
+        "registry_target": {
+            "member_bioguide_id": MEMBER_ID,
+            "issue_id": ISSUE_ID,
+        },
+        "bundle_id": BUNDLE_ID,
+        "bundle_sha256": bundle["bundle_sha256"],
+    }
+
+
+def _rollback(
+    conn: Any,
+    bundle: dict[str, Any],
+    *,
+    expected_identity: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    identity = _rollback_identity(conn, bundle)
+    if expected_identity is None:
+        post = _postcheck(conn, bundle)
+    else:
+        expected = {
+            "batch_id": int(expected_identity["batch_id"]),
+            "artifact_ids": [
+                int(item) for item in expected_identity["artifact_ids"]
+            ],
+            "relationship_identities": expected_identity[
+                "relationship_identities"
+            ],
+            "registry_target": expected_identity["registry_target"],
+            "bundle_id": expected_identity["bundle_id"],
+            "bundle_sha256": expected_identity["bundle_sha256"],
+        }
+        if identity != expected:
+            raise StoreSafetyError("rollback captured activation identity mismatch")
+        post = identity
     deleted_registry = conn.execute(
         """DELETE FROM editorial_publication_registry
            WHERE member_bioguide_id = %s AND issue_id = %s""",
         (MEMBER_ID, ISSUE_ID),
     )
-    batch = conn.execute(
-        "SELECT batch_id FROM editorial_artifact_batches WHERE deterministic_batch_key = %s",
-        (BATCH_KEY,),
-    ).fetchone()
     deleted_relationships = conn.execute(
         """DELETE FROM editorial_artifact_relationships rel
            USING editorial_artifact_versions parent
            WHERE rel.parent_artifact_id = parent.artifact_id
              AND parent.batch_id = %s""",
-        (batch["batch_id"],),
+        (identity["batch_id"],),
     )
     conn.execute(
         "SELECT set_config('app.editorial_artifact_rollback_batch', %s, true)",
@@ -1364,11 +1478,11 @@ def _rollback(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     )
     deleted_artifacts = conn.execute(
         "DELETE FROM editorial_artifact_versions WHERE batch_id = %s",
-        (batch["batch_id"],),
+        (identity["batch_id"],),
     )
     deleted_batch = conn.execute(
         "DELETE FROM editorial_artifact_batches WHERE batch_id = %s",
-        (batch["batch_id"],),
+        (identity["batch_id"],),
     )
     if (
         deleted_registry.rowcount,
@@ -1391,31 +1505,182 @@ def _rollback(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _get_public_presentations(
+    base_url: str, legislator_id: str, scope: str
+) -> dict[str, Any]:
+    url = (
+        f"{base_url.rstrip('/')}/legislators/{legislator_id}/"
+        f"editorial-presentations?scope={scope}"
+    )
+    with urlopen(url, timeout=20) as response:
+        payload = json.load(response)
+    if payload.get("schema_version") != "editorial_public_presentations_api_v1":
+        raise StoreSafetyError("public API response schema mismatch")
+    # Exercise the same JSON serialization boundary used by the public response.
+    json.dumps(payload, allow_nan=False)
+    return payload
+
+
+def _issue(payload: dict[str, Any], issue_id: str) -> dict[str, Any]:
+    try:
+        return next(
+            item for item in payload["presentations"] if item["issue_id"] == issue_id
+        )
+    except (KeyError, StopIteration, TypeError) as exc:
+        raise StoreSafetyError(
+            f"public API response omitted required issue {issue_id}"
+        ) from exc
+
+
+def _api_receipts_only_smoke(base_url: str) -> dict[str, Any]:
+    tiers: dict[str, str] = {}
+    for scope in ("119", "all", "118"):
+        payload = _get_public_presentations(
+            base_url, "leg_valerie_p_foushee", scope
+        )
+        tiers[scope] = _issue(payload, ISSUE_ID)["tier"]
+    if set(tiers.values()) != {"receipts_only"}:
+        raise StoreSafetyError(f"inactive public API contract failed: {tiers}")
+    foushee = _get_public_presentations(
+        base_url, "leg_valerie_p_foushee", "119"
+    )
+    other_member = _get_public_presentations(base_url, "leg_alex_morgan", "119")
+    if (
+        _issue(foushee, "ECONOMY_TAXES")["tier"] != "receipts_only"
+        or _issue(other_member, ISSUE_ID)["tier"] != "receipts_only"
+    ):
+        raise StoreSafetyError("inactive public API isolation contract failed")
+    return {
+        "tiers": tiers,
+        "cross_issue": "isolated",
+        "cross_member": "isolated",
+    }
+
+
 def _api_smoke(base_url: str) -> dict[str, Any]:
     base = base_url.rstrip("/")
     with urlopen(f"{base}/health", timeout=20) as response:
         health = json.load(response)
     commit = health.get("commit_sha")
     _exact_deployed_commit(commit)
+    bundle = load_activation_bundle()
+    presentation_artifact = next(
+        item
+        for item in bundle["artifacts"]
+        if item["artifact_type"] == "issue_public_presentation"
+    )
+    approved = presentation_artifact["payload"]
+    approved_display = _copy_display_wording(
+        approved["editorial_wording"],
+        semantic_tier=semantic_tier_for_artifact(approved),
+    )
     tiers: dict[str, str] = {}
+    selected: dict[str, dict[str, Any]] = {}
     for scope in ("119", "all", "118"):
-        url = (
-            f"{base}/legislators/leg_valerie_p_foushee/"
-            f"editorial-presentations?scope={scope}"
+        payload = _get_public_presentations(
+            base, "leg_valerie_p_foushee", scope
         )
-        with urlopen(url, timeout=20) as response:
-            payload = json.load(response)
-        justice = next(
-            item for item in payload["presentations"] if item["issue_id"] == ISSUE_ID
-        )
+        justice = _issue(payload, ISSUE_ID)
         tiers[scope] = justice["tier"]
+        selected[scope] = justice
     if tiers != {
         "119": "reviewed_conclusion",
         "all": "reviewed_conclusion",
         "118": "receipts_only",
     }:
         raise StoreSafetyError(f"public API smoke contract failed: {tiers}")
-    return {"health": health, "tiers": tiers}
+    for scope in ("119", "all"):
+        justice = selected[scope]
+        for field in (
+            "tier",
+            "tier_badge",
+            "teaser",
+            "coverage_text",
+            "conclusion",
+            "repeated_patterns",
+            "policy_trajectories",
+            "limitations",
+        ):
+            if justice[field] != approved_display[field]:
+                raise StoreSafetyError(
+                    f"public API approved wording mismatch for {scope}:{field}"
+                )
+        if scope == "119" and justice["scope_boundary"] != approved_display[
+            "scope_boundary"
+        ]:
+            raise StoreSafetyError("scope=119 boundary differs from approved wording")
+        if scope == "all" and not justice["scope_boundary"].endswith(
+            "The conclusion remains bounded to the reviewed 119th-Congress record."
+        ):
+            raise StoreSafetyError("scope=all omitted its reviewed-record boundary")
+        evidence = justice["evidence_metadata"]
+        if (
+            len(evidence["action_ids"]) != 7
+            or len(evidence["episode_ids"]) != 5
+            or len(justice["repeated_patterns"]) != 2
+            or len(justice["policy_trajectories"]) != 1
+            or "fentanyl" not in justice["policy_trajectories"][0]["heading"].lower()
+            or set(
+                evidence["action_accounting"][
+                    "behavioral_proposition_action_ids"
+                ]
+            )
+            != set(evidence["action_ids"])
+        ):
+            raise StoreSafetyError("public API evidence coverage contract failed")
+        provenance = justice["provenance"]
+        if (
+            provenance["artifact_id"] != PRESENTATION_KEY
+            or provenance["reviewed_wording_sha256"]
+            != approved["provenance"]["reviewed_wording_sha256"]
+            or provenance["review_receipt_id"]
+            != bundle["activation_target"]["approval_receipt_id"]
+        ):
+            raise StoreSafetyError("public API provenance contract failed")
+    if _issue(
+        _get_public_presentations(base, "leg_valerie_p_foushee", "119"),
+        "ECONOMY_TAXES",
+    )["tier"] != "receipts_only":
+        raise StoreSafetyError("cross-issue isolation failed")
+    other_member = _get_public_presentations(base, "leg_alex_morgan", "119")
+    if _issue(other_member, ISSUE_ID)["tier"] != "receipts_only":
+        raise StoreSafetyError("cross-member isolation failed")
+    with urlopen(
+        (
+            f"{base}/legislators/leg_valerie_p_foushee/positions/"
+            "JUSTICE_PUBLIC_SAFETY/evidence"
+        ),
+        timeout=20,
+    ) as response:
+        receipts = json.load(response).get("evidence", [])
+    required_rolls = {
+        int(action_id.rsplit(":", 1)[1])
+        for action_id in selected["119"]["evidence_metadata"]["action_ids"]
+    }
+    supporting_receipts = {
+        int(item["rollcall_number"])
+        for item in receipts
+        if int(item.get("congress", 0)) == 119
+        and int(item.get("rollcall_number", 0)) in required_rolls
+        and item.get("position") in {"yea", "nay"}
+        and isinstance(item.get("source_url"), str)
+        and item["source_url"].startswith("https://clerk.house.gov/")
+    }
+    if supporting_receipts != required_rolls:
+        raise StoreSafetyError("public API supporting receipt contract failed")
+    return {
+        "health": health,
+        "tiers": tiers,
+        "approved_wording_sha256": approved["provenance"][
+            "reviewed_wording_sha256"
+        ],
+        "action_count": 7,
+        "episode_count": 5,
+        "repeated_pattern_count": 2,
+        "cross_issue": "isolated",
+        "cross_member": "isolated",
+        "supporting_receipt_count": len(supporting_receipts),
+    }
 
 
 def _parser() -> argparse.ArgumentParser:

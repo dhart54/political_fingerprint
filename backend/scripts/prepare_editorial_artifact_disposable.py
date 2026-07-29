@@ -21,6 +21,16 @@ from app.editorial_artifacts.publication_activation import (
 )
 from scripts import editorial_artifact_store as store
 
+FOUSHEE_JUSTICE_119_POSITIONS = {
+    32: ("yea", "https://clerk.house.gov/Votes/202532?Page=2"),
+    33: ("nay", "https://clerk.house.gov/Votes/2025033"),
+    130: ("nay", "https://clerk.house.gov/Votes/2025130"),
+    131: ("yea", "https://clerk.house.gov/Votes/2025131"),
+    166: ("yea", "https://clerk.house.gov/Votes/2025166"),
+    275: ("nay", "https://clerk.house.gov/Votes/2025275"),
+    299: ("nay", "https://clerk.house.gov/Votes/2025299"),
+}
+
 
 def main() -> int:
     parser = argparse.ArgumentParser()
@@ -118,10 +128,61 @@ def main() -> int:
             chamber, congress, session, roll = action_id.split(":")
             conn.execute(
                 """INSERT INTO roll_calls
-                   (chamber, congress, session, rollcall_number, vote_date, question, description)
-                   VALUES (%s, %s, %s, %s, '2025-01-03T12:00:00Z', 'Disposable identity', '')""",
-                (chamber, int(congress), int(session), int(roll)),
+                   (chamber, congress, session, rollcall_number, vote_date,
+                    question, description, source_url)
+                   VALUES (%s, %s, %s, %s, '2025-01-03T12:00:00Z',
+                           'Disposable identity', '', %s)""",
+                (
+                    chamber,
+                    int(congress),
+                    int(session),
+                    int(roll),
+                    (
+                        FOUSHEE_JUSTICE_119_POSITIONS[int(roll)][1]
+                        if int(roll) in FOUSHEE_JUSTICE_119_POSITIONS
+                        else f"https://clerk.house.gov/Votes/2025{int(roll):03d}"
+                    )
+                    if chamber == "house" and int(congress) == 119
+                    else None
+                ),
             )
+        if args.seed_foushee_activation_baseline:
+            # Exact accepted statuses from semir-dev-05 and its reviewed
+            # House Clerk sources; these populate only the disposable HTTP
+            # receipt boundary and do not participate in editorial hashes.
+            for roll, (position, _source_url) in (
+                FOUSHEE_JUSTICE_119_POSITIONS.items()
+            ):
+                conn.execute(
+                    """INSERT INTO votes_cast
+                       (roll_call_id, legislator_id, position)
+                       SELECT rc.id, legislator.id, %s
+                       FROM roll_calls rc
+                       CROSS JOIN LATERAL (
+                         SELECT id FROM legislators
+                         WHERE bioguide_id = 'F000477'
+                       ) legislator
+                       WHERE rc.chamber = 'house'
+                         AND rc.congress = 119
+                         AND rc.session = 1
+                         AND rc.rollcall_number = %s""",
+                    (position, roll),
+                )
+                conn.execute(
+                    """INSERT INTO vote_classifications
+                       (roll_call_id, is_eligible, eligibility_reason,
+                        primary_domain, score_breakdown,
+                        classification_version)
+                       SELECT id, TRUE, 'reviewed disposable HTTP proof receipt',
+                              'JUSTICE_PUBLIC_SAFETY', '{}'::jsonb,
+                              'foushee-http-proof-v1'
+                       FROM roll_calls
+                       WHERE chamber = 'house'
+                         AND congress = 119
+                         AND session = 1
+                         AND rollcall_number = %s""",
+                    (roll,),
+                )
         baseline_application = []
         if args.seed_foushee_activation_baseline:
             conn.execute(

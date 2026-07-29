@@ -3,9 +3,14 @@ from __future__ import annotations
 import copy
 import json
 import sqlite3
+from collections.abc import Iterator, Mapping
+from datetime import UTC, datetime
 from pathlib import Path
+from types import SimpleNamespace
+from uuid import UUID
 from unittest.mock import patch
 
+import pytest
 from fastapi.testclient import TestClient
 
 from app.editorial_presentations.compiler import (
@@ -460,3 +465,180 @@ def test_api_uses_read_only_selector_payload() -> None:
     payload = response.json()
     assert payload["member_bioguide_id"] == "F000477"
     assert payload["presentations"][6]["tier"] == "reviewed_conclusion"
+
+
+def test_repository_normalizes_default_dbapi_tuple_rows() -> None:
+    class Cursor:
+        description = [
+            SimpleNamespace(name="artifact_id"),
+            SimpleNamespace(name="payload_jsonb"),
+        ]
+
+        @staticmethod
+        def fetchall() -> list[tuple[object, ...]]:
+            return [(101, {"schema_version": "test"})]
+
+        @staticmethod
+        def fetchone() -> tuple[object, ...]:
+            return (101, {"schema_version": "test"})
+
+    class Connection:
+        @staticmethod
+        def execute(_query: str, _params: tuple[object, ...]) -> Cursor:
+            return Cursor()
+
+    rows = EditorialArtifactRepository(Connection())._all("SELECT test")
+
+    assert rows == [
+        {"artifact_id": 101, "payload_jsonb": {"schema_version": "test"}}
+    ]
+    assert EditorialArtifactRepository(Connection())._one("SELECT test") == rows[0]
+
+
+def test_repository_normalizes_list_row_with_standard_dbapi_metadata() -> None:
+    marker = {"nested": [1, None]}
+    result = EditorialArtifactRepository._row_to_dict(
+        SimpleNamespace(description=[("artifact_id", None), ("payload_jsonb", None)]),
+        [101, marker],
+    )
+    assert result == {"artifact_id": 101, "payload_jsonb": marker}
+    assert result["payload_jsonb"] is marker
+
+
+def test_repository_rejects_tuple_row_width_mismatch() -> None:
+    cursor = SimpleNamespace(
+        description=[
+            SimpleNamespace(name="artifact_id"),
+            SimpleNamespace(name="payload_jsonb"),
+        ]
+    )
+    with pytest.raises(ValueError, match="row width"):
+        EditorialArtifactRepository._row_to_dict(cursor, (101,))
+    with pytest.raises(ValueError, match="row width"):
+        EditorialArtifactRepository._row_to_dict(cursor, (101, {}, "extra"))
+
+
+def test_repository_preserves_supported_mapping_values_and_key_identity() -> None:
+    values = {
+        "uuid_value": UUID("3f7fa76a-fc18-4ab9-a8e0-786dd28f0c0c"),
+        "datetime_value": datetime(2026, 7, 28, tzinfo=UTC),
+        "json_value": {"nested": [1, True]},
+        "null_value": None,
+    }
+    result = EditorialArtifactRepository._row_to_dict(
+        SimpleNamespace(description=None), values
+    )
+    assert result == values
+    assert list(result) == list(values)
+    assert all(result[key] is value for key, value in values.items())
+
+
+@pytest.mark.parametrize(
+    "row",
+    [
+        "ab",
+        b"ab",
+        bytearray(b"ab"),
+        memoryview(b"ab"),
+        {1, 2},
+        iter((1, 2)),
+        (value for value in (1, 2)),
+    ],
+)
+def test_repository_rejects_arbitrary_iterables_as_rows(row: object) -> None:
+    cursor = SimpleNamespace(description=[("first",), ("second",)])
+    with pytest.raises(TypeError, match="mapping or a non-string sequence"):
+        EditorialArtifactRepository._row_to_dict(cursor, row)
+
+
+class _ArbitraryIterable:
+    def __iter__(self) -> Iterator[int]:
+        return iter((1, 2))
+
+
+def test_repository_rejects_arbitrary_nonsequence_iterable() -> None:
+    with pytest.raises(TypeError, match="mapping or a non-string sequence"):
+        EditorialArtifactRepository._row_to_dict(
+            SimpleNamespace(description=[("first",), ("second",)]),
+            _ArbitraryIterable(),
+        )
+
+
+class _NonStringKeyMapping(Mapping[object, object]):
+    def __getitem__(self, key: object) -> object:
+        return {1: "integer", "1": "string"}[key]
+
+    def __iter__(self) -> Iterator[object]:
+        return iter((1, "1"))
+
+    def __len__(self) -> int:
+        return 2
+
+
+@pytest.mark.parametrize(
+    "row",
+    [
+        _NonStringKeyMapping(),
+        {"": 1},
+        {"   ": 1},
+    ],
+)
+def test_repository_rejects_invalid_mapping_keys(row: Mapping[object, object]) -> None:
+    with pytest.raises(TypeError, match="mapping row"):
+        EditorialArtifactRepository._row_to_dict(
+            SimpleNamespace(description=None), row
+        )
+
+
+def test_repository_rejects_missing_cursor_description() -> None:
+    with pytest.raises(TypeError, match="did not provide row metadata"):
+        EditorialArtifactRepository._row_to_dict(
+            SimpleNamespace(description=None), (1,)
+        )
+
+
+@pytest.mark.parametrize(
+    "description",
+    [
+        [("same",), ("same",)],
+        [SimpleNamespace(name="same"), SimpleNamespace(name="same")],
+    ],
+)
+def test_repository_rejects_duplicate_cursor_names(description: object) -> None:
+    with pytest.raises(ValueError, match="duplicate column name 'same'"):
+        EditorialArtifactRepository._row_to_dict(
+            SimpleNamespace(description=description), (1, 2)
+        )
+
+
+@pytest.mark.parametrize(
+    "description",
+    [
+        [(1,)],
+        [("",)],
+        [("   ",)],
+        [SimpleNamespace(name=1)],
+        [SimpleNamespace(name="")],
+        [SimpleNamespace(name="   ")],
+        [[]],
+        [object()],
+        (item for item in [("value",)]),
+    ],
+)
+def test_repository_rejects_invalid_cursor_metadata(description: object) -> None:
+    with pytest.raises(TypeError, match="description|column name|metadata"):
+        EditorialArtifactRepository._row_to_dict(
+            SimpleNamespace(description=description), (1,)
+        )
+
+
+def test_operational_database_failure_is_not_recast_as_receipts_only() -> None:
+    with patch(
+        "app.api.editorial_presentations._load_publication_rows",
+        side_effect=RuntimeError("database unavailable"),
+    ):
+        with pytest.raises(RuntimeError, match="database unavailable"):
+            TestClient(app).get(
+                "/legislators/leg_valerie_p_foushee/editorial-presentations",
+                params={"scope": "119"},
+            )

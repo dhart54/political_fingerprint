@@ -18,6 +18,10 @@ from app.editorial_artifacts.publication_activation import (
 )
 from app.editorial_artifacts.bundle import semantic_hash
 from app.editorial_artifacts.repository import EditorialArtifactRepository
+from app.editorial_presentations.compiler import (
+    _copy_display_wording,
+    semantic_tier_for_artifact,
+)
 from app.editorial_presentations.selector import select_public_presentations
 from app.main import app
 from scripts.editorial_artifact_store import _connect
@@ -128,21 +132,81 @@ def test_transactional_apply_idempotency_postcheck_and_rollback() -> None:
                 for item in selected["presentations"]
                 if item["issue_id"] != "JUSTICE_PUBLIC_SAFETY"
             )
-        with patch(
-            "app.api.editorial_presentations.get_connection",
-            side_effect=lambda: _connect(DATABASE_URL, autocommit=True),
-        ):
-            response = TestClient(app).get(
+        with patch.dict(os.environ, {"DATABASE_URL": DATABASE_URL}):
+            client = TestClient(app)
+            response = client.get(
                 "/legislators/leg_valerie_p_foushee/editorial-presentations",
                 params={"scope": "all"},
             )
-        assert response.status_code == 200
+            response_119 = client.get(
+                "/legislators/leg_valerie_p_foushee/editorial-presentations",
+                params={"scope": "119"},
+            )
+            response_118 = client.get(
+                "/legislators/leg_valerie_p_foushee/editorial-presentations",
+                params={"scope": "118"},
+            )
+            other_member = client.get(
+                "/legislators/leg_alex_morgan/editorial-presentations",
+                params={"scope": "119"},
+            )
+        assert {
+            response.status_code,
+            response_119.status_code,
+            response_118.status_code,
+            other_member.status_code,
+        } == {200}
         justice = next(
             item
             for item in response.json()["presentations"]
             if item["issue_id"] == "JUSTICE_PUBLIC_SAFETY"
         )
+        justice_119 = next(
+            item
+            for item in response_119.json()["presentations"]
+            if item["issue_id"] == "JUSTICE_PUBLIC_SAFETY"
+        )
+        justice_118 = next(
+            item
+            for item in response_118.json()["presentations"]
+            if item["issue_id"] == "JUSTICE_PUBLIC_SAFETY"
+        )
+        other_justice = next(
+            item
+            for item in other_member.json()["presentations"]
+            if item["issue_id"] == "JUSTICE_PUBLIC_SAFETY"
+        )
+        economy = next(
+            item
+            for item in response_119.json()["presentations"]
+            if item["issue_id"] == "ECONOMY_TAXES"
+        )
         assert justice["tier"] == "reviewed_conclusion"
+        assert justice_119["tier"] == "reviewed_conclusion"
+        assert justice_118["tier"] == "receipts_only"
+        assert other_justice["tier"] == "receipts_only"
+        assert economy["tier"] == "receipts_only"
+        approved_artifact = next(
+            item
+            for item in bundle["artifacts"]
+            if item["artifact_type"] == "issue_public_presentation"
+        )["payload"]
+        approved = _copy_display_wording(
+            approved_artifact["editorial_wording"],
+            semantic_tier=semantic_tier_for_artifact(approved_artifact),
+        )
+        for field in (
+            "tier",
+            "tier_badge",
+            "teaser",
+            "coverage_text",
+            "scope_boundary",
+            "conclusion",
+            "repeated_patterns",
+            "policy_trajectories",
+            "limitations",
+        ):
+            assert justice_119[field] == approved[field]
         assert "119th-Congress" in justice["scope_boundary"]
         assert len(justice["evidence_metadata"]["action_ids"]) == 7
         assert len(justice["evidence_metadata"]["episode_ids"]) == 5
@@ -174,10 +238,7 @@ def test_transactional_apply_idempotency_postcheck_and_rollback() -> None:
             }
         with conn.transaction():
             assert _counts(conn) == bundle["expected_counts"]["before"]
-        with patch(
-            "app.api.editorial_presentations.get_connection",
-            side_effect=lambda: _connect(DATABASE_URL, autocommit=True),
-        ):
+        with patch.dict(os.environ, {"DATABASE_URL": DATABASE_URL}):
             response = TestClient(app).get(
                 "/legislators/leg_valerie_p_foushee/editorial-presentations",
                 params={"scope": "119"},
