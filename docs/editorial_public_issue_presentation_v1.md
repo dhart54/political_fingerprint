@@ -93,6 +93,17 @@ controls:
 No vote-count threshold, raw Yea/Nay total, keyword, party, member identity, or
 receipt order determines a tier.
 
+Semantic tier is independent from the evidence universe and claim authority.
+`docs/methodology/full_record_issue_interpretation_v1.md` separately supplies:
+
+- `review_scope`;
+- `review_completion_state`; and
+- `public_claim_class`.
+
+A `reviewed_conclusion` may therefore be valid for a `benchmark_sample` while
+remaining ineligible for `full_issue_synthesis`. Benchmark promotion and public
+activation do not broaden the artifact's reviewed scope.
+
 Public analytical display requires:
 
 - accepted semantic-reference status;
@@ -191,7 +202,15 @@ approval subject and all seven canonical limitations. Reviewer
 `editorial_publication_review_authority_v1`, approved the wording, gold
 benchmark promotion, and production eligibility on 2026-07-27.
 
-The authoring fixture now records `human_approved`, `gold_benchmark`, and
-production-eligible controls. Publication remains inactive. Because publication
-activation is still an independent unsatisfied gate, the effective public tier
-remains `receipts_only`; no analytical copy is public.
+The authoring fixture records `human_approved`, `gold_benchmark`, and
+production-eligible controls and preserves its original publication-inactive
+authoring state. A separately authorized activation succeeded on 2026-07-29;
+the active artifact returns `reviewed_conclusion` for `scope=119` and bounded
+`scope=all`, while `scope=118` remains `receipts_only`.
+
+That successful activation is historical publication truth, not a scope
+expansion. Under Full-Record Issue Interpretation V1, the artifact remains a
+valid seven-action, five-episode `benchmark_sample` with public claim class
+`reviewed_sample_finding`. A content-addressed and completed
+`full_defined_issue_record` has not yet been established, so a final full issue
+synthesis is not eligible.

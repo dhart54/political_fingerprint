@@ -15,7 +15,28 @@
     "public_presentation_schema": "docs/editorial_public_issue_presentation_v1.schema.json",
     "public_presentation_compiler": "backend/app/editorial_presentations/compiler.py",
     "public_presentation_validator": "backend/app/editorial_presentations/validation.py",
-    "public_presentation_selector": "backend/app/editorial_presentations/selector.py"
+    "public_presentation_selector": "backend/app/editorial_presentations/selector.py",
+    "full_record_issue_interpretation_contract": "docs/methodology/full_record_issue_interpretation_v1.md",
+    "full_record_issue_interpretation_schema": "docs/methodology/full_record_issue_interpretation_v1.schema.json",
+    "full_record_issue_interpretation_validator": "scripts/validate_full_record_issue_interpretation.py"
+  },
+  "full_record_issue_interpretation": {
+    "schema_version": "full_record_issue_interpretation_v1",
+    "independent_axes": [
+      "semantic_tier",
+      "review_scope",
+      "review_completion_state",
+      "public_claim_class"
+    ],
+    "f000477_justice_119_review_state": "docs/editorial/full_record_reviews/f000477_justice_public_safety_119_review_state_v1.json",
+    "f000477_justice_119_semantic_tier": "reviewed_conclusion",
+    "f000477_justice_119_review_scope": "benchmark_sample",
+    "f000477_justice_119_review_completion_state": "complete",
+    "f000477_justice_119_completion_boundary": "complete_within_declared_seven_action_benchmark_sample_only",
+    "f000477_justice_119_public_claim_class": "reviewed_sample_finding",
+    "f000477_justice_119_full_defined_issue_record_established": false,
+    "f000477_justice_119_full_issue_synthesis_eligible": false,
+    "frontend_pass_a_state_contract": "specified_not_implemented"
   },
   "accepted_reference_corpora": [
     {

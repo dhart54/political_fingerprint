@@ -1,0 +1,640 @@
+{
+  "schema_version": "full_record_issue_interpretation_v1",
+  "review_id": "full-review:f000477:justice_public_safety:119:v1",
+  "subject": {
+    "member_id": "F000477",
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "congress_scope": [
+      119
+    ]
+  },
+  "axes": {
+    "semantic_tier": "reviewed_conclusion",
+    "review_scope": "benchmark_sample",
+    "review_completion_state": "complete",
+    "public_claim_class": "reviewed_sample_finding"
+  },
+  "issue_universe": {
+    "snapshot_id": "issue-universe:f000477:justice_public_safety:119:benchmark:v1",
+    "snapshot_sha256": "4c165622a40bdaf27678f2523eeaec51353a77066fa4af77d45160d4192fd0a5",
+    "definition": "The seven substantive actions in the accepted and human-approved Foushee Justice benchmark sample; this is not a snapshot of the complete defined Justice record.",
+    "as_of_date": "2026-07-29",
+    "action_ids": [
+      "house:119:1:32",
+      "house:119:1:33",
+      "house:119:1:130",
+      "house:119:1:131",
+      "house:119:1:166",
+      "house:119:1:275",
+      "house:119:1:299"
+    ],
+    "source_refs": [
+      "docs/semantic_ir/accepted/development_cases.json",
+      "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+      "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json"
+    ]
+  },
+  "action_accounting": [
+    {
+      "action_id": "house:119:1:32",
+      "action_date": "2025-02-06",
+      "disposition": "interpreted_substantive_directional",
+      "review_friendliness": {
+        "substantive_candidate": true,
+        "stable_canonical_action_identity": true,
+        "service_status": "in_service",
+        "member_action": "Yea",
+        "exact_action_issue_eligibility": "eligible",
+        "action_meaning_evidence": "sufficient",
+        "vote_provenance": "authoritative",
+        "action_meaning_provenance": "authoritative",
+        "source_conflict_state": "none",
+        "is_review_friendly": true
+      },
+      "episode_id": "halt-fentanyl-legislative-path",
+      "interpretation": {
+        "exact_action_meaning": "An amendment requiring an overdose-reduction certification before classwide fentanyl scheduling took effect.",
+        "member_action": "Yea",
+        "evidence_status": "official_record_resolved",
+        "service_status": "in_service",
+        "vote_source_refs": [
+          "clerk_roll_032"
+        ],
+        "action_meaning_source_refs": [
+          "congress_hamdt5"
+        ],
+        "episode_id": "halt-fentanyl-legislative-path",
+        "review_state": "accepted_semantic_reference",
+        "interpretation_receipt_refs": [
+          "docs/semantic_ir/accepted/acceptance_receipt.json",
+          "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json"
+        ]
+      }
+    },
+    {
+      "action_id": "house:119:1:33",
+      "action_date": "2025-02-06",
+      "disposition": "interpreted_substantive_directional",
+      "review_friendliness": {
+        "substantive_candidate": true,
+        "stable_canonical_action_identity": true,
+        "service_status": "in_service",
+        "member_action": "Nay",
+        "exact_action_issue_eligibility": "eligible",
+        "action_meaning_evidence": "sufficient",
+        "vote_provenance": "authoritative",
+        "action_meaning_provenance": "authoritative",
+        "source_conflict_state": "none",
+        "is_review_friendly": true
+      },
+      "episode_id": "halt-fentanyl-legislative-path",
+      "interpretation": {
+        "exact_action_meaning": "House passage of the earlier HALT Fentanyl Act framework.",
+        "member_action": "Nay",
+        "evidence_status": "official_record_resolved",
+        "service_status": "in_service",
+        "vote_source_refs": [
+          "clerk_roll_033"
+        ],
+        "action_meaning_source_refs": [
+          "congress_hr27"
+        ],
+        "episode_id": "halt-fentanyl-legislative-path",
+        "review_state": "accepted_semantic_reference",
+        "interpretation_receipt_refs": [
+          "docs/semantic_ir/accepted/acceptance_receipt.json",
+          "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json"
+        ]
+      }
+    },
+    {
+      "action_id": "house:119:1:130",
+      "action_date": "2025-05-15",
+      "disposition": "interpreted_substantive_directional",
+      "review_friendliness": {
+        "substantive_candidate": true,
+        "stable_canonical_action_identity": true,
+        "service_status": "in_service",
+        "member_action": "Nay",
+        "exact_action_issue_eligibility": "eligible",
+        "action_meaning_evidence": "sufficient",
+        "vote_provenance": "authoritative",
+        "action_meaning_provenance": "authoritative",
+        "source_conflict_state": "none",
+        "is_review_friendly": true
+      },
+      "episode_id": "retired-service-weapon-purchases",
+      "interpretation": {
+        "exact_action_meaning": "House passage of a purchase program for eligible officers and qualifying retired agency firearms.",
+        "member_action": "Nay",
+        "evidence_status": "official_record_resolved",
+        "service_status": "in_service",
+        "vote_source_refs": [
+          "clerk_roll_130"
+        ],
+        "action_meaning_source_refs": [
+          "congress_hr2255_text"
+        ],
+        "episode_id": "retired-service-weapon-purchases",
+        "review_state": "accepted_semantic_reference",
+        "interpretation_receipt_refs": [
+          "docs/semantic_ir/accepted/acceptance_receipt.json",
+          "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json"
+        ]
+      }
+    },
+    {
+      "action_id": "house:119:1:131",
+      "action_date": "2025-05-15",
+      "disposition": "interpreted_substantive_directional",
+      "review_friendliness": {
+        "substantive_candidate": true,
+        "stable_canonical_action_identity": true,
+        "service_status": "in_service",
+        "member_action": "Yea",
+        "exact_action_issue_eligibility": "eligible",
+        "action_meaning_evidence": "sufficient",
+        "vote_provenance": "authoritative",
+        "action_meaning_provenance": "authoritative",
+        "source_conflict_state": "none",
+        "is_review_friendly": true
+      },
+      "episode_id": "officer-safety-data-reporting",
+      "interpretation": {
+        "exact_action_meaning": "House passage of DOJ reporting requirements on attacks, reporting systems, and officer wellness resources.",
+        "member_action": "Yea",
+        "evidence_status": "official_record_resolved",
+        "service_status": "in_service",
+        "vote_source_refs": [
+          "clerk_roll_131"
+        ],
+        "action_meaning_source_refs": [
+          "congress_hr2240",
+          "hrpt_119_079"
+        ],
+        "episode_id": "officer-safety-data-reporting",
+        "review_state": "accepted_semantic_reference",
+        "interpretation_receipt_refs": [
+          "docs/semantic_ir/accepted/acceptance_receipt.json",
+          "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json"
+        ]
+      }
+    },
+    {
+      "action_id": "house:119:1:166",
+      "action_date": "2025-06-12",
+      "disposition": "interpreted_substantive_directional",
+      "review_friendliness": {
+        "substantive_candidate": true,
+        "stable_canonical_action_identity": true,
+        "service_status": "in_service",
+        "member_action": "Yea",
+        "exact_action_issue_eligibility": "eligible",
+        "action_meaning_evidence": "sufficient",
+        "vote_provenance": "authoritative",
+        "action_meaning_provenance": "authoritative",
+        "source_conflict_state": "none",
+        "is_review_friendly": true
+      },
+      "episode_id": "halt-fentanyl-legislative-path",
+      "interpretation": {
+        "exact_action_meaning": "House passage of the later fentanyl framework combining permanent scheduling and enforcement consequences with research provisions.",
+        "member_action": "Yea",
+        "evidence_status": "official_record_resolved",
+        "service_status": "in_service",
+        "vote_source_refs": [
+          "clerk_roll_166"
+        ],
+        "action_meaning_source_refs": [
+          "congress_s331",
+          "public_law_119_26",
+          "cbo_s331"
+        ],
+        "episode_id": "halt-fentanyl-legislative-path",
+        "review_state": "accepted_semantic_reference",
+        "interpretation_receipt_refs": [
+          "docs/semantic_ir/accepted/acceptance_receipt.json",
+          "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json"
+        ]
+      }
+    },
+    {
+      "action_id": "house:119:1:275",
+      "action_date": "2025-09-17",
+      "disposition": "interpreted_substantive_directional",
+      "review_friendliness": {
+        "substantive_candidate": true,
+        "stable_canonical_action_identity": true,
+        "service_status": "in_service",
+        "member_action": "Nay",
+        "exact_action_issue_eligibility": "eligible",
+        "action_meaning_evidence": "sufficient",
+        "vote_provenance": "authoritative",
+        "action_meaning_provenance": "authoritative",
+        "source_conflict_state": "none",
+        "is_review_friendly": true
+      },
+      "episode_id": "dc-police-pursuit-rules",
+      "interpretation": {
+        "exact_action_meaning": "House passage of a substitute replacing D.C. pursuit restrictions with broader pursuit authority and exceptions.",
+        "member_action": "Nay",
+        "evidence_status": "official_record_resolved",
+        "service_status": "in_service",
+        "vote_source_refs": [
+          "clerk_roll_275"
+        ],
+        "action_meaning_source_refs": [
+          "congress_hr5143",
+          "rules_print_119_11"
+        ],
+        "episode_id": "dc-police-pursuit-rules",
+        "review_state": "accepted_semantic_reference",
+        "interpretation_receipt_refs": [
+          "docs/semantic_ir/accepted/acceptance_receipt.json",
+          "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json"
+        ]
+      }
+    },
+    {
+      "action_id": "house:119:1:299",
+      "action_date": "2025-11-19",
+      "disposition": "interpreted_substantive_directional",
+      "review_friendliness": {
+        "substantive_candidate": true,
+        "stable_canonical_action_identity": true,
+        "service_status": "in_service",
+        "member_action": "Nay",
+        "exact_action_issue_eligibility": "eligible",
+        "action_meaning_evidence": "sufficient",
+        "vote_provenance": "authoritative",
+        "action_meaning_provenance": "authoritative",
+        "source_conflict_state": "none",
+        "is_review_friendly": true
+      },
+      "episode_id": "dc-policing-reform-repeal",
+      "interpretation": {
+        "exact_action_meaning": "House passage of a substitute repealing most of D.C.'s 2022 policing reform law while retaining specified exceptions.",
+        "member_action": "Nay",
+        "evidence_status": "official_record_resolved",
+        "service_status": "in_service",
+        "vote_source_refs": [
+          "clerk_roll_299"
+        ],
+        "action_meaning_source_refs": [
+          "congress_hr5107",
+          "hrpt_119_317"
+        ],
+        "episode_id": "dc-policing-reform-repeal",
+        "review_state": "accepted_semantic_reference",
+        "interpretation_receipt_refs": [
+          "docs/semantic_ir/accepted/acceptance_receipt.json",
+          "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json"
+        ]
+      }
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "dc-policing-reform-repeal",
+      "action_ids": [
+        "house:119:1:299"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:299"
+      ],
+      "latest_action_date": "2025-11-19",
+      "policy_question": "Whether Congress should repeal most of D.C.'s 2022 policing reform law and restore prior provisions.",
+      "action_meanings": [
+        {
+          "action_id": "house:119:1:299",
+          "meaning": "Passage of a substitute repealing most reviewed D.C. policing reforms while retaining specified exceptions."
+        }
+      ],
+      "member_record": [
+        {
+          "action_id": "house:119:1:299",
+          "member_action": "Nay"
+        }
+      ],
+      "outcome": "directional_opposition",
+      "contrary_or_limiting_evidence": [
+        "The substitute retained the neck-restraint and vehicular-pursuit subtitles and did not repeal every provision."
+      ],
+      "source_completeness": "complete",
+      "source_refs": [
+        "clerk_roll_299",
+        "congress_hr5107",
+        "hrpt_119_317"
+      ],
+      "completion_state": "complete",
+      "unresolved_action_ids": []
+    },
+    {
+      "episode_id": "dc-police-pursuit-rules",
+      "action_ids": [
+        "house:119:1:275"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:275"
+      ],
+      "latest_action_date": "2025-09-17",
+      "policy_question": "Whether Congress should replace D.C.'s pursuit restrictions with a broader pursuit requirement and exceptions.",
+      "action_meanings": [
+        {
+          "action_id": "house:119:1:275",
+          "meaning": "Passage of a substitute broadening D.C. police pursuit authority subject to stated exceptions."
+        }
+      ],
+      "member_record": [
+        {
+          "action_id": "house:119:1:275",
+          "member_action": "Nay"
+        }
+      ],
+      "outcome": "directional_opposition",
+      "contrary_or_limiting_evidence": [
+        "The proposal included risk, futility, and alternative-apprehension exceptions."
+      ],
+      "source_completeness": "complete",
+      "source_refs": [
+        "clerk_roll_275",
+        "congress_hr5143",
+        "rules_print_119_11"
+      ],
+      "completion_state": "complete",
+      "unresolved_action_ids": []
+    },
+    {
+      "episode_id": "halt-fentanyl-legislative-path",
+      "action_ids": [
+        "house:119:1:32",
+        "house:119:1:33",
+        "house:119:1:166"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:32",
+        "house:119:1:33",
+        "house:119:1:166"
+      ],
+      "latest_action_date": "2025-06-12",
+      "policy_question": "Whether and under what conditions to make classwide Schedule I treatment and associated penalty and research rules permanent.",
+      "action_meanings": [
+        {
+          "action_id": "house:119:1:32",
+          "meaning": "Certification amendment to the earlier House fentanyl framework."
+        },
+        {
+          "action_id": "house:119:1:33",
+          "meaning": "Passage of the earlier House fentanyl framework."
+        },
+        {
+          "action_id": "house:119:1:166",
+          "meaning": "Passage of the later related framework with permanent scheduling and research provisions."
+        }
+      ],
+      "member_record": [
+        {
+          "action_id": "house:119:1:32",
+          "member_action": "Yea"
+        },
+        {
+          "action_id": "house:119:1:33",
+          "member_action": "Nay"
+        },
+        {
+          "action_id": "house:119:1:166",
+          "member_action": "Yea"
+        }
+      ],
+      "outcome": "mixed",
+      "contrary_or_limiting_evidence": [
+        "Later support for a permanent enforcement framework means the episode is not blanket opposition to fentanyl enforcement.",
+        "The related House and Senate measures were not identical, so the sequence does not establish a change in position or motive."
+      ],
+      "source_completeness": "complete",
+      "source_refs": [
+        "clerk_roll_032",
+        "clerk_roll_033",
+        "clerk_roll_166",
+        "congress_hamdt5",
+        "congress_hr27",
+        "congress_s331",
+        "public_law_119_26",
+        "cbo_s331"
+      ],
+      "completion_state": "complete",
+      "unresolved_action_ids": []
+    },
+    {
+      "episode_id": "officer-safety-data-reporting",
+      "action_ids": [
+        "house:119:1:131"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:131"
+      ],
+      "latest_action_date": "2025-05-15",
+      "policy_question": "Whether to require DOJ reports on attacks, reporting systems, and officer mental-health resources.",
+      "action_meanings": [
+        {
+          "action_id": "house:119:1:131",
+          "meaning": "Passage of reporting requirements on attacks, data-system feasibility, and officer wellness resources."
+        }
+      ],
+      "member_record": [
+        {
+          "action_id": "house:119:1:131",
+          "member_action": "Yea"
+        }
+      ],
+      "outcome": "directional_support",
+      "contrary_or_limiting_evidence": [
+        "The reporting vote does not establish support for policies Congress might later develop from the reports.",
+        "Reviewed official argument evidence was one-sided; no opposing argument was synthesized."
+      ],
+      "source_completeness": "complete",
+      "source_refs": [
+        "clerk_roll_131",
+        "congress_hr2240",
+        "hrpt_119_079"
+      ],
+      "completion_state": "complete",
+      "unresolved_action_ids": []
+    },
+    {
+      "episode_id": "retired-service-weapon-purchases",
+      "action_ids": [
+        "house:119:1:130"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:130"
+      ],
+      "latest_action_date": "2025-05-15",
+      "policy_question": "Whether to create a federal program for eligible officers to buy retired agency-issued firearms.",
+      "action_meanings": [
+        {
+          "action_id": "house:119:1:130",
+          "meaning": "Passage of a purchase program for eligible officers and qualifying retired agency firearms."
+        }
+      ],
+      "member_record": [
+        {
+          "action_id": "house:119:1:130",
+          "member_action": "Nay"
+        }
+      ],
+      "outcome": "directional_opposition",
+      "contrary_or_limiting_evidence": [
+        "This choice does not establish a general position on police tools or police equipment."
+      ],
+      "source_completeness": "complete",
+      "source_refs": [
+        "clerk_roll_130",
+        "congress_hr2255_text"
+      ],
+      "completion_state": "complete",
+      "unresolved_action_ids": []
+    }
+  ],
+  "synthesis": {
+    "outcome": "mechanism_divide",
+    "full_record_action_accounting": "not_passed",
+    "all_interpreted_episode_outcomes_supplied": true,
+    "contradictory_and_mixed_evidence_retained": true,
+    "source_boundaries": "resolved",
+    "semantic_validation": "passed",
+    "human_editorial_review": "approved",
+    "human_approval_receipt_refs": [
+      "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json"
+    ],
+    "full_issue_synthesis_eligible": false,
+    "eligibility_blockers": [
+      "review_scope_not_full_defined_issue_record",
+      "action_accounting_incomplete"
+    ]
+  },
+  "benchmark": {
+    "benchmark_sample_available": true,
+    "role": "immutable_reference",
+    "benchmark_refs": [
+      "docs/semantic_ir/accepted/development_cases.json#semir-dev-05-justice-mechanism-divide",
+      "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/",
+      "docs/review_packets/ir_native_foushee_justice_public_safety_presentation.md"
+    ],
+    "confers_full_record_scope": false,
+    "confers_full_record_completion": false
+  },
+  "historical_publication": {
+    "state": "active",
+    "artifact_id": "f000477:justice_public_safety:119:v1",
+    "effective_semantic_tier": "reviewed_conclusion",
+    "publication_receipt_refs": [
+      "docs/editorial/publication_activations/foushee_justice_public_safety_119_successful_activation_receipt_v1.json"
+    ],
+    "historical_truth_note": "The approved seven-action, five-episode benchmark-sample finding was successfully activated on 2026-07-29 and remains historically valid within that declared sample.",
+    "mutated_by_this_record": false
+  },
+  "frontend_state": {
+    "review_scope": "benchmark_sample",
+    "review_completion_state": "complete",
+    "public_claim_class": "reviewed_sample_finding",
+    "total_recorded_actions": 7,
+    "review_friendly_actions": 7,
+    "interpreted_actions": 7,
+    "unresolved_actions": 0,
+    "procedural_context_actions": 0,
+    "present_actions": 0,
+    "not_voting_actions": 0,
+    "complete_episode_count": 5,
+    "partial_episode_count": 0,
+    "full_issue_synthesis_eligible": false,
+    "benchmark_sample_available": true,
+    "conclusion_teaser": {
+      "text": "The reviewed 119th-Congress sample shows support for reporting and for evidence, research, or implementation conditions in two independent episodes, alongside opposition to three specific proposals concerning retired-service firearm access, broader D.C. police pursuit authority, or repeal of most reviewed D.C. policing restrictions.",
+      "valid_scope": "benchmark_sample"
+    },
+    "available_labels": [
+      "Reviewed benchmark sample",
+      "Vote receipts available"
+    ]
+  },
+  "provenance": {
+    "contract_path": "docs/methodology/full_record_issue_interpretation_v1.md",
+    "schema_path": "docs/methodology/full_record_issue_interpretation_v1.schema.json",
+    "created_from_repository_commit": "80208ab7050f1af6543185175c68219c5b59ecee",
+    "source_refs": [
+      "docs/semantic_ir/accepted/development_cases.json",
+      "docs/semantic_ir/accepted/held_out_cases.json",
+      "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+      "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json",
+      "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/claim_source_map.json",
+      "docs/editorial/action_source_contracts/foushee_justice_public_safety_119_v1.json",
+      "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json",
+      "docs/editorial/publication_activations/foushee_justice_public_safety_119_publication_activation_v1.json",
+      "docs/editorial/publication_activations/foushee_justice_public_safety_119_successful_activation_receipt_v1.json",
+      "docs/incidents/2026-07-28-foushee-justice-activation-http500.md"
+    ],
+    "protected_files": [
+      {
+        "path": "docs/semantic_ir/accepted/development_cases.json",
+        "sha256": "d898ce00660d184043af5b971dd24788b888409f490c45c121328f47cab2b31f"
+      },
+      {
+        "path": "docs/semantic_ir/accepted/held_out_cases.json",
+        "sha256": "77b203f25e4bf41527e1502da071bbac2fd60e1c84a69f5a12508ca754f30eb6"
+      },
+      {
+        "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/measures/halt_fentanyl.json",
+        "sha256": "67b7178b8be0cc7724ff40dea6fae96a5d12dc8b0173a87c38373b56e4ac5d7a"
+      },
+      {
+        "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/measures/hr2240.json",
+        "sha256": "71ac0a0b812c4693e11bd768d16ef7d83eb49c1a452afa6837d07ddf7cf854e6"
+      },
+      {
+        "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/measures/hr2255.json",
+        "sha256": "23799deb56a7c77a8cdf1e8091bd25657ad3a17cb3e76a2f5327163d72ae9e45"
+      },
+      {
+        "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/measures/hr5107.json",
+        "sha256": "553fd72df641066aedc2a664613a80ef0467f16bda63b2b0dd7752f83c24b4e1"
+      },
+      {
+        "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/measures/hr5143.json",
+        "sha256": "6839536a51c5922b5dc97f26fcc8cbf87d14653b3278ba0d8e6023a938e390a2"
+      },
+      {
+        "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/policy_episode_map.json",
+        "sha256": "db71ad9ad41f5734a245fd29f5c00e90f737a4162ac108d0f95809476089a88d"
+      },
+      {
+        "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json",
+        "sha256": "8c03c55079b8e499e88a25381d0b7e3e641ecb393391029a023f37dcda4f2424"
+      },
+      {
+        "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/claim_source_map.json",
+        "sha256": "602967fdf693ffffde0d951604db9d9b51c91b9c8dfa269780a71541ccd5d554"
+      },
+      {
+        "path": "docs/editorial/action_source_contracts/foushee_justice_public_safety_119_v1.json",
+        "sha256": "33a746b7ba1700b8834e82c10ecd5742ee4be3b453bff06ea802b45f1f3e9299"
+      },
+      {
+        "path": "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json",
+        "sha256": "cf269a276de19902f9b5c8a2c6af9416ede981b658bc1867f9bdec5aea94a112"
+      },
+      {
+        "path": "docs/editorial/publication_activations/foushee_justice_public_safety_119_publication_activation_v1.json",
+        "sha256": "a14208577a581f9fc2137eeae465803e700cbb48ac021345492a6cc678921aa2"
+      },
+      {
+        "path": "docs/editorial/publication_activations/foushee_justice_public_safety_119_successful_activation_receipt_v1.json",
+        "sha256": "8ae66dd29af63ba447b029db87ae5e56c5a6ccbd826330cb05ef2d2a993cce04"
+      },
+      {
+        "path": "docs/incidents/2026-07-28-foushee-justice-activation-http500.md",
+        "sha256": "6ddeb942cdda6b581ae6b95b73637a11ad72a1475669dffc0380266a46081d93"
+      }
+    ]
+  }
+}

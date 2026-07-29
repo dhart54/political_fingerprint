@@ -228,6 +228,8 @@ Maintain the repository structure:
 - Codex operating model: `docs/workflows/codex-operating-model.md`
 - Editorial generation: `docs/workflows/editorial-standardization-pipeline.md`
 - Semantic IR contract: `docs/semantic_ir/editorial_semantic_ir_v1.md`
+- Full-record issue interpretation:
+  `docs/methodology/full_record_issue_interpretation_v1.md`
 - Planning convention: `docs/PLANS.md`
 - Milestone execution: `docs/workflows/milestone-execution.md`
 - Bounded production writes: `docs/workflows/bounded-production-write.md`
