@@ -14,7 +14,11 @@ V1 remains the July 30 discovery result for the June 11 boundary. The completed 
 - Unresolved candidates: 0
 - Newly observed actions reviewed exactly once: 61
 
-Source-completeness claim: No official-source gaps remain for universe-boundary review of the declared candidate set through the stated cutoff.
+Source-completeness claim: Official evidence is sufficient for universe-boundary review through the declared cutoff. This does not claim action-interpretation, episode, synthesis, or public-wording readiness.
+
+- Remaining Congress-metadata gaps: 34
+- Gap counts by disposition: {"expressive": 2, "ineligible": 11, "procedural": 21, "proposed": 0}
+- The seven reviewed proposed-action defects now bind exact official action meaning sources, and all 22 V1-to-V2 corrections carry exact source IDs, content digests, evidence roles, and sufficiency states.
 
 ## V1-to-V2 boundary changes
 

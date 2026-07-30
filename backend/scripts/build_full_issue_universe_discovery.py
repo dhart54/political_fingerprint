@@ -383,6 +383,177 @@ def _duplicates(values) -> list[str]:
     return sorted_action_ids(duplicates)
 
 
+def _house_action_stage(question: str, disposition: str) -> str:
+    normalized = question.lower()
+    if "amendment" in normalized:
+        return (
+            "amendment_to_rule"
+            if disposition == "procedural_context"
+            else "amendment"
+        )
+    if "previous question" in normalized:
+        return "previous_question"
+    if "retaining division" in normalized:
+        return "division_retention"
+    if "motion to recommit" in normalized:
+        return "motion_to_recommit"
+    if "suspend the rules and pass" in normalized:
+        return (
+            "suspension_passage_as_amended"
+            if "as amended" in normalized
+            else "suspension_passage"
+        )
+    if "passage" in normalized:
+        return "passage"
+    if "agree" in normalized and "resolution" in normalized:
+        return (
+            "resolution_adoption_as_amended"
+            if "as amended" in normalized
+            else "resolution_adoption"
+        )
+    return "other_house_action"
+
+
+def _measure_identity(bill_ref: str) -> str:
+    prefix = "bill_"
+    if not bill_ref.startswith(prefix):
+        return bill_ref
+    return bill_ref[len(prefix) :].replace("_", ":")
+
+
+def _action_source_binding(
+    action: dict[str, Any],
+    disposition: str,
+    metadata: dict[str, Any] | None,
+    config: dict[str, Any],
+) -> dict[str, Any] | None:
+    action_id = action["canonical_action_id"]
+    configured = config.get("action_source_bindings", {}).get(action_id)
+    registry = {
+        row["source_id"]: row
+        for row in config.get("official_exact_action_source_registry", [])
+    }
+    vote_binding = {
+        "source_id": (
+            f"clerk:{action['congress']}:{action['session']}:"
+            f"{action['rollcall_number']}"
+        ),
+        "source_type": "house_clerk_roll_call",
+        "url": action["source_url"],
+        "source_content_sha256": sha256_json(_official_projection(action)),
+        "source_subject": action_id,
+        "text_version": str(action["vote_date"]),
+        "evidence_role": "recorded_house_action_and_member_vote",
+        "digest_basis": "canonical_clerk_action_projection_sha256",
+    }
+    if configured is not None:
+        missing = [
+            source_id
+            for source_id in configured["meaning_source_ids"]
+            if source_id not in registry
+        ]
+        if missing:
+            raise ValueError(
+                f"{action_id} references unknown exact sources: {missing}"
+            )
+        meaning_sources = [
+            dict(registry[source_id])
+            for source_id in configured["meaning_source_ids"]
+        ]
+        return {
+            "canonical_action_id": action_id,
+            "exact_measure_or_amendment_identity": configured[
+                "exact_action_identity"
+            ],
+            "house_action_stage": configured["house_action_stage"],
+            "vote_source_bindings": [vote_binding],
+            "exact_action_meaning_source_bindings": meaning_sources,
+            "boundary_review_sufficiency_state": configured[
+                "review_sufficiency_status"
+            ],
+            "boundary_review_sufficiency_basis": configured[
+                "methodology_or_source_basis"
+            ],
+        }
+    configured_exact_sources = [
+        dict(source)
+        for source in config.get("exact_action_sources", {}).get(action_id, [])
+    ]
+    for group in config.get("exact_action_source_groups", []):
+        if action_id in set(group["action_ids"]):
+            configured_exact_sources.append(
+                {
+                    "source_id": f"{group['source_id_prefix']}:{action_id}",
+                    "source_type": group["source_type"],
+                    "url": group["url"],
+                    "source_content_sha256": group[
+                        "source_content_sha256"
+                    ],
+                    "source_subject": action_id,
+                    "text_version": group["text_version"],
+                    "evidence_role": group["evidence_role"],
+                    "digest_basis": group["digest_basis"],
+                }
+            )
+    if configured_exact_sources and disposition.startswith(
+        "proposed_in_scope_"
+    ):
+        return {
+            "canonical_action_id": action_id,
+            "exact_measure_or_amendment_identity": (
+                action_id
+                if _house_action_stage(action["question"], disposition)
+                == "amendment"
+                else _measure_identity(action["bill_ref"])
+            ),
+            "house_action_stage": _house_action_stage(
+                action["question"], disposition
+            ),
+            "vote_source_bindings": [vote_binding],
+            "exact_action_meaning_source_bindings": configured_exact_sources,
+            "boundary_review_sufficiency_state": "sufficient",
+            "boundary_review_sufficiency_basis": (
+                "The official House Rules Committee report binds the exact "
+                "amendment or passage text to this reviewed action."
+            ),
+        }
+    if not disposition.startswith("proposed_in_scope_"):
+        return None
+    stage = _house_action_stage(action["question"], disposition)
+    if stage in {"amendment", "amendment_to_rule"}:
+        raise ValueError(
+            f"{action_id} amendment lacks amendment-specific exact source"
+        )
+    if metadata is None or not metadata.get("legislation_url"):
+        raise ValueError(
+            f"{action_id} proposed action lacks exact official action metadata"
+        )
+    meaning_source = {
+        "source_id": f"congress_action_record:{action_id}",
+        "source_type": "congress_gov_action_record",
+        "url": metadata["legislation_url"],
+        "source_content_sha256": sha256_json(metadata),
+        "source_subject": _measure_identity(action["bill_ref"]),
+        "text_version": "official_action_record",
+        "evidence_role": "exact_house_stage_and_measure_identity",
+        "digest_basis": "canonical_congress_metadata_sha256",
+    }
+    return {
+        "canonical_action_id": action_id,
+        "exact_measure_or_amendment_identity": _measure_identity(
+            action["bill_ref"]
+        ),
+        "house_action_stage": stage,
+        "vote_source_bindings": [vote_binding],
+        "exact_action_meaning_source_bindings": [meaning_source],
+        "boundary_review_sufficiency_state": "sufficient",
+        "boundary_review_sufficiency_basis": (
+            "The official Congress action record binds the exact House stage "
+            "and measure identity for the reviewed passage action."
+        ),
+    }
+
+
 def _candidate_records(
     candidate_ids: list[str],
     recall_reasons: dict[str, list[str]],
@@ -408,6 +579,26 @@ def _candidate_records(
         secondary = sorted(
             domain for domain in breakdown if domain != primary
         )
+        action_source_binding = _action_source_binding(
+            action,
+            disposition,
+            metadata,
+            config,
+        )
+        status_metadata_resolved = bool(
+            action_source_binding
+            and any(
+                source["source_type"] == "govinfo_bill_status"
+                for source in action_source_binding[
+                    "exact_action_meaning_source_bindings"
+                ]
+            )
+        )
+        remaining_source_gaps = (
+            []
+            if metadata or status_metadata_resolved
+            else ["congress_metadata_missing"]
+        )
         source_references = [
             {
                 "source_type": "house_clerk_roll_call",
@@ -429,7 +620,29 @@ def _candidate_records(
         for source in config.get("exact_action_sources", {}).get(
             action_id, []
         ):
-            source_references.append(dict(source))
+            source_references.append(
+                {
+                    "source_type": source["source_type"],
+                    "source_id": source["source_id"],
+                    "url": source["url"],
+                }
+            )
+        if action_source_binding:
+            existing_source_ids = {
+                source["source_id"] for source in source_references
+            }
+            for source in action_source_binding[
+                "exact_action_meaning_source_bindings"
+            ]:
+                if source["source_id"] not in existing_source_ids:
+                    source_references.append(
+                        {
+                            "source_type": source["source_type"],
+                            "source_id": source["source_id"],
+                            "url": source["url"],
+                        }
+                    )
+                    existing_source_ids.add(source["source_id"])
         for group in config.get("exact_action_source_groups", []):
             if action_id in set(group["action_ids"]):
                 source_references.append(
@@ -462,7 +675,7 @@ def _candidate_records(
                 "repository_acquisition_state": "present",
                 "official_source_state": (
                     "clerk_and_congress_resolved"
-                    if metadata
+                    if metadata or status_metadata_resolved
                     else "clerk_resolved_congress_metadata_missing"
                 ),
                 "official_policy_area": (
@@ -487,6 +700,25 @@ def _candidate_records(
                 "public_action_digest": sha256_json(
                     _official_projection(action)
                 ),
+                "exact_action_source_binding": action_source_binding,
+                "source_readiness": {
+                    "boundary_review_source_state": (
+                        "sufficient"
+                        if disposition not in UNRESOLVED_DISPOSITIONS
+                        else "insufficient"
+                    ),
+                    "action_interpretation_source_state": "not_started",
+                    "episode_construction_source_state": "not_started",
+                    "synthesis_provenance_source_state": "not_started",
+                    "remaining_source_gaps": remaining_source_gaps,
+                    "boundary_gap_nonblocking_reason": (
+                        "The exact official evidence supporting the reviewed "
+                        "disposition is sufficient even though general "
+                        "Congress metadata remains unavailable."
+                        if remaining_source_gaps
+                        else None
+                    ),
+                },
                 **(
                     {
                         "issue_memberships": config[
@@ -607,6 +839,7 @@ def _source_inventory(
     production_snapshot: dict[str, Any],
     official_rows: list[dict[str, Any]],
     post_cutoff_rows: list[dict[str, Any]],
+    candidate_records: list[dict[str, Any]],
 ) -> dict[str, Any]:
     query_audit = production_snapshot["query_audit"]
     public_api_records = [
@@ -616,6 +849,46 @@ def _source_inventory(
         }
         for path in sorted(args.public_api_dir.glob("*.json"))
     ]
+    action_meaning_sources_by_id: dict[str, dict[str, Any]] = {}
+    for row in candidate_records:
+        binding = row["exact_action_source_binding"]
+        if binding is None:
+            continue
+        for source in binding["exact_action_meaning_source_bindings"]:
+            existing = action_meaning_sources_by_id.get(source["source_id"])
+            if existing is not None and existing != source:
+                raise ValueError(
+                    "exact source identity/digest mismatch for "
+                    f"{source['source_id']}"
+                )
+            action_meaning_sources_by_id[source["source_id"]] = source
+    action_meaning_sources = [
+        action_meaning_sources_by_id[source_id]
+        for source_id in sorted(action_meaning_sources_by_id)
+    ]
+    gap_disposition_names = {
+        "proposed_in_scope_substantive": "proposed",
+        "proposed_in_scope_non_directional": "proposed",
+        "expressive_nonbinding_context": "expressive",
+        "procedural_context": "procedural",
+        "proposed_exact_action_ineligible": "ineligible",
+    }
+    metadata_gap_counts = {
+        "proposed": 0,
+        "expressive": 0,
+        "procedural": 0,
+        "ineligible": 0,
+    }
+    metadata_gap_action_ids = []
+    for row in candidate_records:
+        if "congress_metadata_missing" not in row["source_readiness"][
+            "remaining_source_gaps"
+        ]:
+            continue
+        metadata_gap_action_ids.append(row["action_id"])
+        metadata_gap_counts[
+            gap_disposition_names[row["disposition"]]
+        ] += 1
     return {
         "schema_version": "full_issue_universe_source_inventory_v1",
         "inventory_id": (
@@ -739,7 +1012,46 @@ def _source_inventory(
                     list(args.exact_action_dir.glob("*.pdf"))
                 ),
             },
+            {
+                "source_id": "official-exact-action-correction-files",
+                "source_kind": "official_action_text_and_status",
+                "storage_scope": "secure_external",
+                "artifact_count": len(
+                    config.get(
+                        "official_exact_action_source_registry", []
+                    )
+                ),
+                "artifact_set_sha256": sha256_json(
+                    [
+                        {
+                            "source_id": source["source_id"],
+                            "source_content_sha256": source[
+                                "source_content_sha256"
+                            ],
+                        }
+                        for source in config.get(
+                            "official_exact_action_source_registry", []
+                        )
+                    ]
+                ),
+                "record_count": len(
+                    config.get(
+                        "official_exact_action_source_registry", []
+                    )
+                ),
+            },
         ],
+        "action_meaning_sources": action_meaning_sources,
+        "stage_source_gap_summary": {
+            "gap_type": "congress_metadata_missing",
+            "total_candidate_count": len(metadata_gap_action_ids),
+            "action_ids": sorted_action_ids(metadata_gap_action_ids),
+            "counts_by_disposition": metadata_gap_counts,
+            "boundary_review_effect": "nonblocking_when_exact_official_evidence_sufficient",
+            "later_stage_effect": (
+                "visible_gap_for_action_interpretation_episode_and_synthesis"
+            ),
+        },
         "production_query_audit": {
             "query_count": len(query_audit),
             "query_audit_sha256": sha256_json(query_audit),
@@ -902,6 +1214,7 @@ def main() -> int:
         production_snapshot,
         official_rows,
         post_cutoff_rows,
+        candidate_records,
     )
     source_inventory_path = args.output_root / SOURCE_INVENTORY_REL
     _write_json(source_inventory_path, source_inventory)
@@ -1157,7 +1470,29 @@ def main() -> int:
             config["benchmark_action_ids"],
         ),
         "final_freshness_check": final_freshness_check,
-        "source_gaps": [],
+        "source_gaps": (
+            [
+                {
+                    "classification": "congress_metadata_missing",
+                    "action_ids": source_inventory[
+                        "stage_source_gap_summary"
+                    ]["action_ids"],
+                    "counts_by_disposition": source_inventory[
+                        "stage_source_gap_summary"
+                    ]["counts_by_disposition"],
+                    "boundary_review_effect": (
+                        "nonblocking_exact_official_boundary_evidence_sufficient"
+                    ),
+                    "later_stage_effect": (
+                        "not_interpretation_episode_or_synthesis_ready"
+                    ),
+                }
+            ]
+            if source_inventory["stage_source_gap_summary"][
+                "total_candidate_count"
+            ]
+            else []
+        ),
         "acquisition_gaps": [
             {
                 "classification": "potential_production_ingestion_gap",
@@ -1253,6 +1588,58 @@ def main() -> int:
                 "v2_source_references": (
                     after["source_references"] if after else []
                 ),
+                "exact_source_ids": (
+                    [
+                        source["source_id"]
+                        for source in after[
+                            "exact_action_source_binding"
+                        ]["exact_action_meaning_source_bindings"]
+                    ]
+                    if after
+                    and after["exact_action_source_binding"] is not None
+                    else []
+                ),
+                "content_digests": (
+                    [
+                        source["source_content_sha256"]
+                        for source in after[
+                            "exact_action_source_binding"
+                        ]["exact_action_meaning_source_bindings"]
+                    ]
+                    if after
+                    and after["exact_action_source_binding"] is not None
+                    else []
+                ),
+                "evidence_roles": (
+                    [
+                        source["evidence_role"]
+                        for source in after[
+                            "exact_action_source_binding"
+                        ]["exact_action_meaning_source_bindings"]
+                    ]
+                    if after
+                    and after["exact_action_source_binding"] is not None
+                    else []
+                ),
+                "previous_disposition": before_disposition,
+                "new_disposition": after_disposition,
+                "methodology_or_source_basis": (
+                    after["exact_action_source_binding"][
+                        "boundary_review_sufficiency_basis"
+                    ]
+                    if after
+                    and after["exact_action_source_binding"] is not None
+                    else after["rationale"]
+                    if after
+                    else "Removed from refreshed official boundary."
+                ),
+                "review_sufficiency_status": (
+                    after["source_readiness"][
+                        "boundary_review_source_state"
+                    ]
+                    if after
+                    else "not_applicable"
+                ),
                 "change_authority": (
                     "complete_human_universe_boundary_review"
                     if before is not None
@@ -1271,10 +1658,7 @@ def main() -> int:
     source_readiness = [
         {
             "action_id": row["action_id"],
-            "universe_boundary_review": "resolved",
-            "exact_action_interpretation": "not_started",
-            "episode_grouping": "not_started",
-            "synthesis_provenance": "not_started",
+            **row["source_readiness"],
         }
         for row in candidate_records
     ]
@@ -1385,9 +1769,14 @@ def main() -> int:
             "status": "candidate_pending_human_universe_review",
         },
         "source_completeness_statement": (
-            "No official-source gaps remain for universe-boundary review of "
-            "the declared candidate set through the stated cutoff."
+            "Official evidence is sufficient for universe-boundary review "
+            "through the declared cutoff; remaining stage-specific metadata "
+            "gaps are explicit and do not imply interpretation, episode, or "
+            "synthesis readiness."
         ),
+        "remaining_source_gaps_by_disposition": source_inventory[
+            "stage_source_gap_summary"
+        ],
         "new_action_ids": new_action_ids,
         "unchanged_action_ids": sorted_action_ids(
             set(complete_set["action_ids"])
@@ -1622,9 +2011,17 @@ def main() -> int:
         f"- Unresolved candidates: {unresolved_set['action_count']}\n"
         f"- Newly observed actions reviewed exactly once: "
         f"{len(new_action_ids)}\n\n"
-        "Source-completeness claim: No official-source gaps remain for "
-        "universe-boundary review of the declared candidate set through the "
-        "stated cutoff.\n\n"
+        "Source-completeness claim: Official evidence is sufficient for "
+        "universe-boundary review through the declared cutoff. This does not "
+        "claim action-interpretation, episode, synthesis, or public-wording "
+        "readiness.\n\n"
+        f"- Remaining Congress-metadata gaps: "
+        f"{source_inventory['stage_source_gap_summary']['total_candidate_count']}\n"
+        f"- Gap counts by disposition: "
+        f"{json.dumps(source_inventory['stage_source_gap_summary']['counts_by_disposition'], sort_keys=True)}\n"
+        "- The seven reviewed proposed-action defects now bind exact official "
+        "action meaning sources, and all 22 V1-to-V2 corrections carry exact "
+        "source IDs, content digests, evidence roles, and sufficiency states.\n\n"
         "## V1-to-V2 boundary changes\n\n"
         "| Action | V1 disposition | V2 disposition |\n"
         "|---|---|---|\n"

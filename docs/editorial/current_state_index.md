@@ -51,15 +51,22 @@ The machine-readable authority is
   issue synthesis is not eligible.
   The machine-readable state is
   `docs/editorial/full_record_reviews/f000477_justice_public_safety_119_review_state_v1.json`.
-- A separate, non-authorizing F000477 Justice universe-discovery proposal now
-  reconciles 577 House member actions through June 11, 2026 into 111
-  high-recall candidates, 27 proposed in-scope actions, and 13 unresolved
-  boundary cases. Its authority state is
-  `pending_human_universe_review`; it creates no universe authority receipt,
-  full-record claim, synthesis eligibility, publication change, or production
-  write. Official rolls 223–283 are recorded as post-cutoff evidence requiring
-  a later refresh. The review packet is
-  `docs/review_packets/foushee_justice_119_universe_discovery_v1.md`.
+- The canonical, non-authorizing F000477 Justice universe-discovery proposal is
+  V2. It reconciles 638 official House member actions through July 23, 2026
+  (latest roll 283) into 172 high-recall candidates: 37 proposed
+  substantive/non-directional actions, seven expressive actions, 69 procedural
+  actions, 59 exact-action-ineligible actions, and zero unresolved boundary
+  cases. Official evidence is sufficient for universe-boundary review; 34
+  remaining Congress-metadata gaps are explicitly stage-bounded (zero proposed,
+  two expressive, 21 procedural, and 11 ineligible) and do not imply action
+  interpretation, episode, Semantic IR, synthesis, or public-wording readiness.
+  Its authority state remains `pending_human_universe_review`; it creates no
+  universe authority receipt, full-record claim, synthesis eligibility,
+  publication change, or production write. The current manifest, discovery,
+  source inventory, configuration, V1/V2 comparison, repair plan, and review
+  packet are the V2 artifacts under
+  `docs/editorial/full_record_reviews/proposals/`. V1 remains discoverable only
+  as historical, superseded, non-selectable evidence.
 - Before the activation, the 71-artifact seed had no publication-registry row.
   That state remains historical evidence and was not modified by the editorial
   hard cutover.

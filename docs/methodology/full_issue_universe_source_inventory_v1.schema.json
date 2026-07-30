@@ -11,6 +11,8 @@
     "snapshot_source_commit",
     "acquisition_as_of_utc",
     "sources",
+    "action_meaning_sources",
+    "stage_source_gap_summary",
     "production_query_audit",
     "public_api_response_manifest_sha256"
   ],
@@ -77,6 +79,52 @@
             "minimum": 0
           }
         }
+      }
+    },
+    "action_meaning_sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/exactSource"
+      }
+    },
+    "stage_source_gap_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gap_type",
+        "total_candidate_count",
+        "action_ids",
+        "counts_by_disposition",
+        "boundary_review_effect",
+        "later_stage_effect"
+      ],
+      "properties": {
+        "gap_type": {"const": "congress_metadata_missing"},
+        "total_candidate_count": {"type": "integer", "minimum": 0},
+        "action_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "counts_by_disposition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "proposed",
+            "expressive",
+            "procedural",
+            "ineligible"
+          ],
+          "properties": {
+            "proposed": {"type": "integer", "minimum": 0},
+            "expressive": {"type": "integer", "minimum": 0},
+            "procedural": {"type": "integer", "minimum": 0},
+            "ineligible": {"type": "integer", "minimum": 0}
+          }
+        },
+        "boundary_review_effect": {"type": "string", "minLength": 1},
+        "later_stage_effect": {"type": "string", "minLength": 1}
       }
     },
     "production_query_audit": {
@@ -147,6 +195,30 @@
     "commit": {
       "type": "string",
       "pattern": "^[a-f0-9]{40}$"
+    },
+    "exactSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_type",
+        "url",
+        "source_content_sha256",
+        "source_subject",
+        "text_version",
+        "evidence_role",
+        "digest_basis"
+      ],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "source_type": {"type": "string", "minLength": 1},
+        "url": {"type": "string", "format": "uri"},
+        "source_content_sha256": {"$ref": "#/definitions/sha256"},
+        "source_subject": {"type": "string", "minLength": 1},
+        "text_version": {"type": "string", "minLength": 1},
+        "evidence_role": {"type": "string", "minLength": 1},
+        "digest_basis": {"type": "string", "minLength": 1}
+      }
     }
   }
 }

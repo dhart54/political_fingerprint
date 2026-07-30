@@ -24,6 +24,7 @@ from scripts.validate_full_issue_universe_discovery import (
     DISCOVERY_SCHEMA,
     REPAIR_PLAN_PATH,
     UniverseDiscoveryValidationError,
+    validate_action_source_bindings,
     validate_candidate_accounting,
     validate_bundle,
     validate_source_completeness_statement,
@@ -38,6 +39,91 @@ class FullIssueUniverseDiscoveryTests(unittest.TestCase):
         )
         cls.repair_plan = json.loads(
             REPAIR_PLAN_PATH.read_text(encoding="utf-8")
+        )
+        source_path = (
+            DISCOVERY_PATH.parents[4]
+            / cls.discovery["source_inventory"]["path"]
+        )
+        cls.source_inventory = json.loads(
+            source_path.read_text(encoding="utf-8")
+        )
+        cls.current_state = json.loads(
+            (
+                DISCOVERY_PATH.parents[4]
+                / "docs/editorial/current_state_index.json"
+            ).read_text(encoding="utf-8")
+        )
+        cls.current_state_markdown = (
+            DISCOVERY_PATH.parents[4]
+            / "docs/editorial/current_state_index.md"
+        ).read_text(encoding="utf-8")
+
+    @staticmethod
+    def _source_binding_fixture(
+        *,
+        stage: str = "passage",
+        source_type: str = "govinfo_bill_text",
+        source_subject: str = "119:hr:1",
+        text_version: str = "eh",
+    ) -> tuple[dict, dict]:
+        action_id = "house:119:1:1"
+        meaning = {
+            "source_id": "official-text",
+            "source_type": source_type,
+            "url": "https://www.govinfo.gov/example.xml",
+            "source_content_sha256": "a" * 64,
+            "source_subject": source_subject,
+            "text_version": text_version,
+            "evidence_role": (
+                "exact_amendment_text"
+                if stage == "amendment"
+                else "exact_house_passage_text"
+            ),
+            "digest_basis": "raw_official_file_sha256",
+        }
+        row = {
+            "action_id": action_id,
+            "disposition": "proposed_in_scope_substantive",
+            "exact_action_source_binding": {
+                "canonical_action_id": action_id,
+                "exact_measure_or_amendment_identity": (
+                    "119:hamdt:1"
+                    if stage == "amendment"
+                    else "119:hr:1"
+                ),
+                "house_action_stage": stage,
+                "vote_source_bindings": [
+                    {
+                        "source_id": "clerk:119:1:1",
+                        "source_type": "house_clerk_roll_call",
+                        "url": "https://clerk.house.gov/evs/2025/roll001.xml",
+                        "source_content_sha256": "b" * 64,
+                        "source_subject": action_id,
+                        "text_version": "2025-01-03",
+                        "evidence_role": (
+                            "recorded_house_action_and_member_vote"
+                        ),
+                        "digest_basis": (
+                            "canonical_clerk_action_projection_sha256"
+                        ),
+                    }
+                ],
+                "exact_action_meaning_source_bindings": [meaning],
+                "boundary_review_sufficiency_state": "sufficient",
+                "boundary_review_sufficiency_basis": "Exact official source.",
+            },
+            "source_readiness": {
+                "boundary_review_source_state": "sufficient",
+                "action_interpretation_source_state": "not_started",
+                "episode_construction_source_state": "not_started",
+                "synthesis_provenance_source_state": "not_started",
+                "remaining_source_gaps": [],
+                "boundary_gap_nonblocking_reason": None,
+            },
+        }
+        return (
+            {"candidate_dispositions": [row]},
+            {"action_meaning_sources": [copy.deepcopy(meaning)]},
         )
 
     def test_repository_discovery_bundle_validates(self) -> None:
@@ -360,6 +446,177 @@ class FullIssueUniverseDiscoveryTests(unittest.TestCase):
             validate_source_completeness_statement(
                 "No candidate official-source gaps remain."
             )
+
+    def test_proposed_clerk_only_source_is_rejected(self) -> None:
+        discovery, inventory = self._source_binding_fixture()
+        discovery["candidate_dispositions"][0][
+            "exact_action_source_binding"
+        ] = None
+        with self.assertRaisesRegex(
+            UniverseDiscoveryValidationError,
+            "Clerk-only",
+        ):
+            validate_action_source_bindings(discovery, inventory)
+
+    def test_proposed_passage_exact_text_passes(self) -> None:
+        discovery, inventory = self._source_binding_fixture()
+        validate_action_source_bindings(discovery, inventory)
+
+    def test_amendment_parent_only_source_is_rejected(self) -> None:
+        discovery, inventory = self._source_binding_fixture(
+            stage="amendment",
+            source_type="congress_gov_action_record",
+            source_subject="119:hr:1",
+        )
+        with self.assertRaisesRegex(
+            UniverseDiscoveryValidationError,
+            "wrong subject|parent-only",
+        ):
+            validate_action_source_bindings(discovery, inventory)
+
+    def test_amendment_exact_source_passes(self) -> None:
+        discovery, inventory = self._source_binding_fixture(
+            stage="amendment",
+            source_type="congress_gov_amendment",
+            source_subject="119:hamdt:1",
+        )
+        validate_action_source_bindings(discovery, inventory)
+
+    def test_wrong_action_source_is_rejected(self) -> None:
+        discovery, inventory = self._source_binding_fixture()
+        discovery["candidate_dispositions"][0][
+            "exact_action_source_binding"
+        ]["canonical_action_id"] = "house:119:1:2"
+        with self.assertRaisesRegex(
+            UniverseDiscoveryValidationError,
+            "another action",
+        ):
+            validate_action_source_bindings(discovery, inventory)
+
+    def test_wrong_text_version_is_rejected(self) -> None:
+        discovery, inventory = self._source_binding_fixture(
+            text_version="ih"
+        )
+        with self.assertRaisesRegex(
+            UniverseDiscoveryValidationError,
+            "wrong text version",
+        ):
+            validate_action_source_bindings(discovery, inventory)
+
+    def test_substituted_source_digest_is_rejected(self) -> None:
+        discovery, inventory = self._source_binding_fixture()
+        inventory["action_meaning_sources"][0][
+            "source_content_sha256"
+        ] = "c" * 64
+        with self.assertRaisesRegex(
+            UniverseDiscoveryValidationError,
+            "identity/digest mismatch",
+        ):
+            validate_action_source_bindings(discovery, inventory)
+
+    def test_seven_corrected_actions_have_exact_bindings(self) -> None:
+        expected = {
+            "house:119:1:32": ("119:hamdt:5", "congress_hamdt5"),
+            "house:119:2:155": ("119:s:4465", "govinfo_text_119_s4465_es"),
+            "house:119:2:157": ("119:hr:2853", "govinfo_text_119_hr2853_eh"),
+            "house:119:2:169": ("119:hr:6260", "govinfo_text_119_hr6260_eh"),
+            "house:119:2:171": ("119:hr:5625", "govinfo_text_119_hr5625_eh"),
+            "house:119:2:218": ("119:hr:8312", "govinfo_text_119_hr8312_eh"),
+            "house:119:2:221": ("119:hr:9238", "govinfo_text_119_hr9238_cdh"),
+        }
+        rows = {
+            row["action_id"]: row
+            for row in self.discovery["candidate_dispositions"]
+        }
+        for action_id, (identity, source_id) in expected.items():
+            binding = rows[action_id]["exact_action_source_binding"]
+            self.assertEqual(
+                binding["exact_measure_or_amendment_identity"],
+                identity,
+            )
+            self.assertIn(
+                source_id,
+                {
+                    source["source_id"]
+                    for source in binding[
+                        "exact_action_meaning_source_bindings"
+                    ]
+                },
+            )
+
+    def test_all_22_review_corrections_are_source_bound(self) -> None:
+        corrections = [
+            row
+            for row in self.comparison["boundary_diff"]
+            if row["change_type"] == "review_correction"
+        ]
+        self.assertEqual(len(corrections), 22)
+        self.assertTrue(
+            all(
+                row["exact_source_ids"]
+                and row["content_digests"]
+                and row["evidence_roles"]
+                and row["review_sufficiency_status"] == "sufficient"
+                for row in corrections
+            )
+        )
+
+    def test_stage_readiness_and_metadata_gaps_remain_distinct(self) -> None:
+        rows = self.comparison["source_readiness_by_candidate"]
+        self.assertTrue(
+            all(
+                row["boundary_review_source_state"] == "sufficient"
+                and row["action_interpretation_source_state"]
+                == "not_started"
+                for row in rows
+            )
+        )
+        self.assertEqual(
+            self.source_inventory["stage_source_gap_summary"][
+                "counts_by_disposition"
+            ],
+            {
+                "proposed": 0,
+                "expressive": 2,
+                "procedural": 21,
+                "ineligible": 11,
+            },
+        )
+
+    def test_current_state_selects_v2_and_preserves_v1_as_history(self) -> None:
+        state = self.current_state["full_record_issue_interpretation"]
+        self.assertEqual(
+            state["f000477_justice_119_current_universe_proposal_version"],
+            2,
+        )
+        for selector in (
+            "f000477_justice_119_authority_review_selector",
+            "f000477_justice_119_interpretation_planning_selector",
+            "f000477_justice_119_universe_discovery_artifact",
+            "f000477_justice_119_source_inventory",
+        ):
+            self.assertIn("_v2.", state[selector])
+            self.assertNotIn("_v1.", state[selector])
+        historical = state[
+            "f000477_justice_119_historical_universe_discovery_v1"
+        ]
+        self.assertIn("_v1.", historical["discovery"])
+        self.assertFalse(historical["selectable_for_authority_review"])
+        self.assertFalse(
+            historical["selectable_for_interpretation_planning"]
+        )
+
+    def test_current_state_json_and_markdown_agree(self) -> None:
+        state = self.current_state["full_record_issue_interpretation"]
+        for value in (
+            state["f000477_justice_119_complete_member_action_count"],
+            state["f000477_justice_119_candidate_recall_count"],
+            state["f000477_justice_119_proposed_universe_count"],
+            state["f000477_justice_119_latest_official_roll"],
+        ):
+            self.assertIn(str(value), self.current_state_markdown)
+        self.assertIn("July 23, 2026", self.current_state_markdown)
+        self.assertIn("V1 remains discoverable", self.current_state_markdown)
 
     def test_boundary_diff_digest_recomputes(self) -> None:
         self.assertEqual(

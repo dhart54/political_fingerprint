@@ -174,10 +174,136 @@ def validate_source_completeness_statement(value: str) -> None:
     _require(
         value
         == (
-            "No official-source gaps remain for universe-boundary review "
-            "of the declared candidate set through the stated cutoff."
+            "Official evidence is sufficient for universe-boundary review "
+            "through the declared cutoff; remaining stage-specific metadata "
+            "gaps are explicit and do not imply interpretation, episode, or "
+            "synthesis readiness."
         ),
         "source-completeness claim exceeds the approved boundary",
+    )
+
+
+def validate_action_source_bindings(
+    discovery: dict[str, Any],
+    source_inventory: dict[str, Any],
+) -> None:
+    inventory_sources = {
+        source["source_id"]: source
+        for source in source_inventory["action_meaning_sources"]
+    }
+    seen_binding_sources: set[str] = set()
+    for row in discovery["candidate_dispositions"]:
+        binding = row["exact_action_source_binding"]
+        readiness = row["source_readiness"]
+        _require(
+            readiness["boundary_review_source_state"]
+            in {"sufficient", "insufficient"},
+            f"{row['action_id']} lacks boundary source readiness",
+        )
+        _require(
+            readiness["action_interpretation_source_state"]
+            != "ready"
+            or readiness["boundary_review_source_state"] == "sufficient",
+            "boundary-complete and interpretation-ready states are conflated",
+        )
+        if not row["disposition"].startswith("proposed_in_scope_"):
+            if binding is not None:
+                seen_binding_sources.update(
+                    source["source_id"]
+                    for source in binding[
+                        "exact_action_meaning_source_bindings"
+                    ]
+                )
+            continue
+        _require(
+            binding is not None,
+            f"{row['action_id']} proposed action is Clerk-only",
+        )
+        _require(
+            binding["canonical_action_id"] == row["action_id"],
+            f"{row['action_id']} binds a source for another action",
+        )
+        _require(
+            binding["boundary_review_sufficiency_state"] == "sufficient",
+            f"{row['action_id']} exact-action source is insufficient",
+        )
+        vote_sources = binding["vote_source_bindings"]
+        _require(
+            any(
+                source["source_type"] == "house_clerk_roll_call"
+                and source["source_subject"] == row["action_id"]
+                for source in vote_sources
+            ),
+            f"{row['action_id']} lacks its House Clerk vote source",
+        )
+        meaning_sources = binding["exact_action_meaning_source_bindings"]
+        _require(
+            meaning_sources
+            and all(
+                source["source_type"] != "house_clerk_roll_call"
+                for source in meaning_sources
+            ),
+            f"{row['action_id']} lacks a non-Clerk meaning source",
+        )
+        exact_identity = binding[
+            "exact_measure_or_amendment_identity"
+        ]
+        for source in meaning_sources:
+            seen_binding_sources.add(source["source_id"])
+            _require(
+                source["source_id"] in inventory_sources,
+                f"{row['action_id']} exact source is absent from inventory",
+            )
+            _require(
+                inventory_sources[source["source_id"]] == source,
+                f"{row['action_id']} source identity/digest mismatch",
+            )
+            subject_matches = (
+                source["source_subject"] == exact_identity
+                or exact_identity.startswith(
+                    f"{source['source_subject']}:"
+                )
+                or source["source_subject"] == row["action_id"]
+            )
+            _require(
+                subject_matches,
+                f"{row['action_id']} exact source has wrong subject",
+            )
+            _require(
+                len(source["source_content_sha256"]) == 64,
+                f"{row['action_id']} exact source lacks content digest",
+            )
+        if binding["house_action_stage"] == "amendment":
+            _require(
+                any(
+                    source["source_type"]
+                    in {
+                        "congress_gov_amendment",
+                        "congressional_record_pdf",
+                        "house_rules_committee_report",
+                    }
+                    and (
+                        "amendment" in source["evidence_role"]
+                        or ":hamdt:" in source["source_subject"]
+                        or source["source_subject"] == row["action_id"]
+                    )
+                    for source in meaning_sources
+                ),
+                f"{row['action_id']} amendment has parent-only source",
+            )
+        if "passage" in binding["house_action_stage"]:
+            _require(
+                all(
+                    source["text_version"] not in {"ih", "is"}
+                    for source in meaning_sources
+                    if source["source_type"]
+                    in {"govinfo_bill_text", "govinfo_resolution_text"}
+                ),
+                f"{row['action_id']} binds the wrong text version",
+            )
+    _require(
+        seen_binding_sources == set(inventory_sources),
+        "source inventory contains an unbound or omitted action source",
     )
 
 
@@ -245,6 +371,7 @@ def validate_bundle(
         source_inventory["inventory_id"] == source_ref["inventory_id"],
         "source inventory identity mismatch",
     )
+    validate_action_source_bindings(discovery, source_inventory)
 
     manifest_ref = discovery["proposed_manifest"]
     manifest_path = (root / manifest_ref["path"]).resolve()
@@ -435,6 +562,30 @@ def validate_bundle(
         )
         validate_source_completeness_statement(
             comparison["source_completeness_statement"]
+        )
+        corrected_rows = [
+            row
+            for row in comparison["boundary_diff"]
+            if row["change_type"] == "review_correction"
+        ]
+        _require(
+            len(corrected_rows) == 22
+            and all(
+                row["exact_source_ids"]
+                and row["content_digests"]
+                and row["evidence_roles"]
+                and row["review_sufficiency_status"] == "sufficient"
+                for row in corrected_rows
+            ),
+            "all 22 V1-to-V2 corrections must be source-bound",
+        )
+        gap_summary = source_inventory["stage_source_gap_summary"]
+        _require(
+            discovery["source_gaps"][0]["action_ids"]
+            == gap_summary["action_ids"]
+            and sum(gap_summary["counts_by_disposition"].values())
+            == gap_summary["total_candidate_count"],
+            "remaining stage-specific source gaps are not fully visible",
         )
         _require(
             comparison["authorizing"] is False
