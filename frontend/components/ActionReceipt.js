@@ -66,56 +66,64 @@ export default function ActionReceipt({
 function ExpandedReceipt({ row }) {
   const sources = normalizeSources(row.source_basis);
   return (
-    <div className="grid gap-5 border-t border-stone-200 bg-white px-4 py-6 text-base leading-7 text-stone-700 md:grid-cols-2">
-      <ReceiptField label="Policy question" value={row.question || row.description} />
-      <ReceiptField
-        label="Exact-action meaning"
-        value={row.plain_english_summary || row.interpretation_reason}
-      />
-      <ReceiptField label="Policy-episode relationship" value={row.episode_relationship} />
-      <ReceiptField label="What the action would change" value={row.policy_effect || row.what_happened} />
-      <ReceiptField label="Outcome and current status" value={formatOutcomeAndStatus(row)} />
-      <ReceiptField
-        label="Context and source limits"
-        value={row.uncertainty_note || row.what_not_to_infer || limitedContext(row)}
-      />
-      <ReceiptField label="Why this exact action mattered" value={row.why_it_mattered} />
-      <div>
-        <h4 className="text-sm font-semibold uppercase tracking-[0.1em] text-stone-600">
-          Official sources
-        </h4>
-        <div className="mt-2 flex flex-col items-start gap-2">
-          {row.source_url ? (
-            <a className="source-link" href={row.source_url} rel="noreferrer" target="_blank">
-              Official vote source
-            </a>
-          ) : (
-            <p>Official vote link not supplied.</p>
-          )}
-          {sources.map((source, index) => (
-            <a
-              className="source-link"
-              href={source.url}
-              key={`${source.url}-${index}`}
-              rel="noreferrer"
-              target="_blank"
-            >
-              {source.label}
-            </a>
-          ))}
+    <div className="border-t border-stone-200 bg-stone-50/70 px-4 py-6 sm:px-6 sm:py-8">
+      <div className="max-w-3xl">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">
+          Expanded vote receipt
+        </p>
+        <div className="mt-5 divide-y divide-stone-200 rounded-xl border border-stone-200 bg-white px-5 sm:px-6">
+          <ReceiptField
+            label="Exact-action meaning"
+            value={row.plain_english_summary || row.interpretation_reason}
+          />
+          <ReceiptField
+            label="What this action would change"
+            value={row.policy_effect || row.what_happened}
+          />
+          <ReceiptField label="Question put to a vote" value={row.question || row.description} />
+          <ReceiptField label="Result and current status" value={formatOutcomeAndStatus(row)} />
+          <ReceiptField label="Why this action mattered" value={row.why_it_mattered} />
+          <ReceiptField label="Policy-episode relationship" value={row.episode_relationship} />
+          <ReceiptField
+            label="Context and source limits"
+            value={row.uncertainty_note || row.what_not_to_infer || limitedContext(row)}
+          />
+        </div>
+        <div className="mt-5 grid gap-5 text-sm leading-6 text-stone-600 sm:grid-cols-2">
+          <div>
+            <h4 className="font-semibold text-stone-800">Official sources</h4>
+            <div className="mt-2 flex flex-col items-start gap-2">
+              {row.source_url ? (
+                <a className="source-link" href={row.source_url} rel="noreferrer" target="_blank">
+                  Official vote source
+                </a>
+              ) : (
+                <p>Official vote link not supplied.</p>
+              )}
+              {sources.map((source, index) => (
+                <a
+                  className="source-link"
+                  href={source.url}
+                  key={`${source.url}-${index}`}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {source.label}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h4 className="font-semibold text-stone-800">Receipt reference</h4>
+            <p className="mt-2 break-all">
+              {canonicalActionId(row) || "Canonical action ID not supplied"}
+            </p>
+          </div>
+          <ReceiptReferences
+            references={row.provenance_refs || row.receipt_refs}
+          />
         </div>
       </div>
-      <div>
-        <h4 className="text-sm font-semibold uppercase tracking-[0.1em] text-stone-600">
-          Receipt reference
-        </h4>
-        <p className="mt-2 break-all text-sm leading-6 text-stone-600">
-          {canonicalActionId(row) || "Canonical action ID not supplied"}
-        </p>
-      </div>
-      <ReceiptReferences
-        references={row.provenance_refs || row.receipt_refs}
-      />
     </div>
   );
 }
@@ -125,11 +133,11 @@ function ReceiptField({ label, value }) {
     return null;
   }
   return (
-    <div>
-      <h4 className="text-sm font-semibold uppercase tracking-[0.1em] text-stone-600">
+    <div className="py-5">
+      <h4 className="text-sm font-semibold text-stone-900">
         {label}
       </h4>
-      <p className="mt-2">{value}</p>
+      <p className="mt-2 max-w-2xl text-base leading-7 text-stone-700">{value}</p>
     </div>
   );
 }
@@ -155,8 +163,8 @@ function ReceiptReferences({ references }) {
     return null;
   }
   return (
-    <div>
-      <h4 className="text-sm font-semibold uppercase tracking-[0.1em] text-stone-600">
+    <div className="sm:col-span-2">
+      <h4 className="font-semibold text-stone-800">
         Provenance references
       </h4>
       <ul className="mt-2 space-y-1 text-sm leading-6 text-stone-600">

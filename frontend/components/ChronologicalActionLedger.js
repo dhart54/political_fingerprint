@@ -42,9 +42,10 @@ export default function ChronologicalActionLedger({
     if (!highlightedFinding?.requestedAt) {
       return;
     }
+    const matching = filterActions(ordered, "highlighted", highlightedIds);
     setFilter("highlighted");
     setVisibleCount(INITIAL_BATCH);
-    setExpandedId(null);
+    setExpandedId(matching.length ? canonicalActionId(matching[0]) : null);
     window.requestAnimationFrame(() => {
       document.getElementById("vote-record")?.scrollIntoView({
         behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
@@ -54,7 +55,7 @@ export default function ChronologicalActionLedger({
       });
       headingRef.current?.focus({ preventScroll: true });
     });
-  }, [highlightedFinding?.requestedAt]);
+  }, [highlightedFinding?.requestedAt, highlightedIds, ordered]);
 
   function chooseFilter(value) {
     setFilter(value);
@@ -78,11 +79,18 @@ export default function ChronologicalActionLedger({
 
       {filter === "highlighted" ? (
         <div className="mt-5 rounded-xl border border-teal-900/20 bg-teal-50 p-4 text-sm leading-6 text-teal-950">
-          Showing {filtered.length} exact {filtered.length === 1 ? "action" : "actions"} supplied for the bounded finding
-          {highlightedFinding?.label ? ` “${highlightedFinding.label}.”` : "."}
-          {" "}These are not presented as the complete issue record.
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-teal-800">
+            Selected reviewed finding
+          </p>
+          <p className="mt-1 text-base font-semibold leading-7">
+            {highlightedFinding?.label || "Exact actions"}
+          </p>
+          <p className="mt-1">
+            Showing {filtered.length} exact {filtered.length === 1 ? "action" : "actions"} supplied for this bounded finding.
+            {" "}The first receipt is open below. These actions are not presented as the complete issue record.
+          </p>
           <button
-            className="ml-2 font-semibold underline underline-offset-4"
+            className="mt-2 font-semibold underline underline-offset-4"
             onClick={() => chooseFilter("all")}
             type="button"
           >

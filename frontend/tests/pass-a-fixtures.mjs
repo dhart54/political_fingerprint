@@ -239,7 +239,7 @@ export function vote(roll, overrides = {}) {
 }
 
 export const justiceEvidence = [32, 33, 130, 131, 166, 275, 299].map(
-  (roll) => vote(roll),
+  (roll) => vote(roll, { roll_call_id: String(9000 + roll) }),
 );
 
 export const economyEvidence = Array.from({ length: 13 }, (_, index) => (

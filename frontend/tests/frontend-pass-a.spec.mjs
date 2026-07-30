@@ -66,6 +66,42 @@ test("chronological ledger filters, progressive reveal, and single receipt expan
   await expect(page.getByText(/Showing 6 of 6 matching actions/)).toBeVisible();
 });
 
+test("reviewed finding links resolve live-shaped evidence IDs and open the first receipt", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.addInitScript(() => {
+    window.__exactActionsScroll = [];
+    const original = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function patched(options) {
+      window.__exactActionsScroll.push(options?.behavior || null);
+      return original.call(this, options);
+    };
+  });
+  await page.goto("/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY");
+  await page.getByRole("button", {
+    name: /Show 3 exact actions for Certification, fentanyl research provisions/,
+  }).click();
+  await expect(page.getByText("Selected reviewed finding")).toBeVisible();
+  await expect(page.getByText(/Showing 3 exact actions supplied/)).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Chronological action ledger" }),
+  ).toBeFocused();
+  expect(await page.evaluate(() => window.__exactActionsScroll)).toContain("auto");
+  const receipts = page.locator("[data-canonical-action-id]");
+  await expect(receipts).toHaveCount(3);
+  await expect(receipts.first()).toHaveAttribute(
+    "data-canonical-action-id",
+    "house:119:1:166",
+  );
+  await expect(receipts.first().getByRole("button")).toHaveAttribute(
+    "aria-expanded",
+    "true",
+  );
+  await expect(receipts.first()).toContainText("Expanded vote receipt");
+  await page.getByRole("button", { name: "Return to all 7 actions" }).click();
+  await expect(page.getByRole("button", { name: "All", exact: true })).toBeVisible();
+  await expect(receipts).toHaveCount(7);
+});
+
 test("episode component uses supplied order, keeps one open, and preserves oldest-first actions", async ({ page }) => {
   await page.goto("/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY");
   const episodes = page.locator("#policy-episodes article");

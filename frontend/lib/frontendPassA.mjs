@@ -183,8 +183,37 @@ export function filterActions(rows = [], filter = "all", highlightedIds = []) {
 }
 
 export function canonicalActionId(row) {
-  const value = row?.canonical_action_id || row?.roll_call_id;
-  return typeof value === "string" ? value : "";
+  const supplied = [row?.canonical_action_id, row?.roll_call_id].find(
+    (value) => typeof value === "string" && /^[a-z]+:\d+:\d+:\d+$/.test(value),
+  );
+  if (supplied) {
+    return supplied;
+  }
+
+  const chamber = normalize(row?.chamber);
+  const congress = Number(row?.congress);
+  const rollCall = Number(row?.rollcall_number);
+  const voteYear = Number(String(row?.vote_date || "").slice(0, 4));
+  const congressStartYear = 1789 + ((congress - 1) * 2);
+  const session = voteYear === congressStartYear
+    ? 1
+    : voteYear === congressStartYear + 1
+      ? 2
+      : null;
+
+  if (
+    ["house", "senate"].includes(chamber)
+    && Number.isInteger(congress)
+    && congress > 0
+    && Number.isInteger(session)
+    && Number.isInteger(rollCall)
+    && rollCall > 0
+  ) {
+    return `${chamber}:${congress}:${session}:${rollCall}`;
+  }
+
+  const fallback = row?.canonical_action_id || row?.roll_call_id;
+  return typeof fallback === "string" ? fallback : "";
 }
 
 export function isSubstantiveReceipt(row) {

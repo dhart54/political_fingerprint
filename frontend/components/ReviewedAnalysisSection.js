@@ -112,12 +112,12 @@ function FindingGroup({ items, onSeeActions, title, tone = "standard" }) {
             </p>
             {item.action_ids?.length ? (
               <button
-                aria-label={`See exact actions for ${item.heading}`}
+                aria-label={`Show ${item.action_ids.length} exact ${item.action_ids.length === 1 ? "action" : "actions"} for ${item.heading}`}
                 className="secondary-button mt-4"
                 onClick={() => onSeeActions(item.action_ids, item.heading)}
                 type="button"
               >
-                See exact actions
+                Show {item.action_ids.length} exact {item.action_ids.length === 1 ? "action" : "actions"}
               </button>
             ) : null}
           </article>

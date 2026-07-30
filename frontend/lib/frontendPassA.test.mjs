@@ -8,6 +8,7 @@ import {
   actionReceiptId,
   buildIssueOverviewRows,
   buildPassAUrl,
+  canonicalActionId,
   chronologicalActions,
   filterActions,
   isPublicAnalysisAvailable,
@@ -201,6 +202,37 @@ test("ledger orders newest first and applies non-analytical filters", () => {
   assert.equal(
     actionReceiptId(actions[0]),
     "action-receipt-house-119-1-1",
+  );
+});
+
+test("live evidence rows derive canonical IDs for reviewed-finding links", () => {
+  const liveShapedRows = [
+    {
+      chamber: "house",
+      congress: 119,
+      roll_call_id: "1635",
+      rollcall_number: 131,
+      vote_date: "2025-05-15 00:00:00+00:00",
+    },
+    {
+      chamber: "house",
+      congress: 119,
+      roll_call_id: "2450",
+      rollcall_number: 55,
+      vote_date: "2026-02-04 00:00:00+00:00",
+    },
+  ];
+  assert.deepEqual(
+    liveShapedRows.map(canonicalActionId),
+    ["house:119:1:131", "house:119:2:55"],
+  );
+  assert.deepEqual(
+    filterActions(liveShapedRows, "highlighted", ["house:119:1:131"]),
+    [liveShapedRows[0]],
+  );
+  assert.equal(
+    actionReceiptId(liveShapedRows[0]),
+    "action-receipt-house-119-1-131",
   );
 });
 
