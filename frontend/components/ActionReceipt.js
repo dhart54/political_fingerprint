@@ -13,10 +13,11 @@ export default function ActionReceipt({
 }) {
   const id = actionReceiptId(row);
   const actionId = canonicalActionId(row);
+  const projection = row.governed_receipt_projection || null;
   const title = formatDisplayMeasureTitle(
     row.bill_title || row.description || row.question || "Untitled recorded action",
   );
-  const position = formatPosition(row.position);
+  const position = formatPosition(projection?.member_action || row.position);
   return (
     <article
       className={`scroll-mt-28 border-b border-stone-200 ${
@@ -44,9 +45,9 @@ export default function ActionReceipt({
             {formatChamber(row.chamber)} · Roll {row.rollcall_number || "not supplied"}
             {formatActionType(row) ? ` · ${formatActionType(row)}` : ""}
           </span>
-          {row.plain_english_summary ? (
+          {projection?.exact_action_meaning || row.plain_english_summary ? (
             <span className="mt-1 block text-sm leading-6 text-stone-700">
-              {row.plain_english_summary}
+              {projection?.exact_action_meaning || row.plain_english_summary}
             </span>
           ) : null}
           <span className="mt-1 block text-xs leading-5 text-stone-500">
@@ -64,7 +65,23 @@ export default function ActionReceipt({
 }
 
 function ExpandedReceipt({ row }) {
-  const sources = normalizeSources(row.source_basis);
+  const projection = row.governed_receipt_projection || null;
+  const voteSources = projection
+    ? normalizeSources(projection.vote_sources, "Official vote source")
+    : row.source_url
+      ? [{ label: "Official vote source", url: row.source_url }]
+      : [];
+  const meaningSources = normalizeSources(
+    projection?.action_meaning_sources || row.source_basis,
+    "Official action-meaning source",
+  );
+  const references = projection
+    ? [
+        projection.action_interpretation_id,
+        `Interpretation digest: ${projection.action_interpretation_sha256}`,
+        ...projection.interpretation_receipt_refs,
+      ]
+    : row.provenance_refs || row.receipt_refs;
   return (
     <div className="border-t border-stone-200 bg-stone-50/70 px-4 py-6 sm:px-6 sm:py-8">
       <div className="max-w-3xl">
@@ -74,33 +91,36 @@ function ExpandedReceipt({ row }) {
         <div className="mt-5 divide-y divide-stone-200 rounded-xl border border-stone-200 bg-white px-5 sm:px-6">
           <ReceiptField
             label="Exact-action meaning"
-            value={row.plain_english_summary || row.interpretation_reason}
+            value={projection?.exact_action_meaning || row.plain_english_summary || row.interpretation_reason}
           />
           <ReceiptField
             label="What this action would change"
-            value={row.policy_effect || row.what_happened}
+            value={projection ? null : row.policy_effect || row.what_happened}
           />
-          <ReceiptField label="Question put to a vote" value={row.question || row.description} />
-          <ReceiptField label="Result and current status" value={formatOutcomeAndStatus(row)} />
-          <ReceiptField label="Why this action mattered" value={row.why_it_mattered} />
-          <ReceiptField label="Policy-episode relationship" value={row.episode_relationship} />
           <ReceiptField
+            label={projection ? "Governed policy question" : "Question put to a vote"}
+            value={projection?.policy_question || row.question || row.description}
+          />
+          <ReceiptField label="Result and current status" value={formatOutcomeAndStatus(row)} />
+          <ReceiptField
+            label="Why this action mattered"
+            value={projection ? null : row.why_it_mattered}
+          />
+          <ReceiptField
+            label={projection ? "Governed policy episode" : "Policy-episode relationship"}
+            value={projection?.episode_id || row.episode_relationship}
+          />
+          <ReceiptFieldList
             label="Context and source limits"
-            value={row.uncertainty_note || row.what_not_to_infer || limitedContext(row)}
+            values={projection?.caveats}
+            fallback={row.uncertainty_note || row.what_not_to_infer || limitedContext(row)}
           />
         </div>
         <div className="mt-5 grid gap-5 text-sm leading-6 text-stone-600 sm:grid-cols-2">
           <div>
             <h4 className="font-semibold text-stone-800">Official sources</h4>
             <div className="mt-2 flex flex-col items-start gap-2">
-              {row.source_url ? (
-                <a className="source-link" href={row.source_url} rel="noreferrer" target="_blank">
-                  Official vote source
-                </a>
-              ) : (
-                <p>Official vote link not supplied.</p>
-              )}
-              {sources.map((source, index) => (
+              {[...voteSources, ...meaningSources].map((source, index) => (
                 <a
                   className="source-link"
                   href={source.url}
@@ -111,6 +131,9 @@ function ExpandedReceipt({ row }) {
                   {source.label}
                 </a>
               ))}
+              {!voteSources.length && !meaningSources.length ? (
+                <p>Official vote link not supplied.</p>
+              ) : null}
             </div>
           </div>
           <div>
@@ -120,10 +143,25 @@ function ExpandedReceipt({ row }) {
             </p>
           </div>
           <ReceiptReferences
-            references={row.provenance_refs || row.receipt_refs}
+            references={references}
           />
         </div>
       </div>
+    </div>
+  );
+}
+
+function ReceiptFieldList({ fallback, label, values }) {
+  const normalized = Array.isArray(values) ? values.filter(Boolean) : [];
+  if (!normalized.length) {
+    return <ReceiptField label={label} value={fallback} />;
+  }
+  return (
+    <div className="py-5">
+      <h4 className="text-sm font-semibold text-stone-900">{label}</h4>
+      <ul className="mt-2 max-w-2xl space-y-2 text-base leading-7 text-stone-700">
+        {normalized.map((value) => <li key={value}>{value}</li>)}
+      </ul>
     </div>
   );
 }
@@ -176,17 +214,20 @@ function ReceiptReferences({ references }) {
   );
 }
 
-function normalizeSources(sourceBasis) {
+function normalizeSources(sourceBasis, fallbackLabel) {
   return (Array.isArray(sourceBasis) ? sourceBasis : [])
     .map((source) => {
       if (typeof source === "string" && /^https?:\/\//.test(source)) {
-        return { label: "Official action-meaning source", url: source };
+        return { label: fallbackLabel, url: source };
       }
       if (source && typeof source === "object") {
         const url = source.url || source.source_url;
         if (typeof url === "string" && /^https?:\/\//.test(url)) {
           return {
-            label: source.label || source.source_type || "Official action-meaning source",
+            label: [
+              source.label || source.name || source.source_type || fallbackLabel,
+              source.source_id,
+            ].filter(Boolean).join(" · "),
             url,
           };
         }

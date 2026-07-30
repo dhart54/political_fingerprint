@@ -42,6 +42,37 @@ ENTRY_FIELDS = {
     "benchmark_sample_available",
     "scope_bounded_teaser",
     "public_status_label",
+    "exact_action_receipts",
+}
+SOURCE_FIELDS = {"source_id", "source_type", "name", "url"}
+PROJECTION_SOURCE_FIELDS = {
+    "review_id",
+    "source_contract_id",
+    "source_manifest_sha256",
+}
+RECEIPT_FIELDS = {
+    "projection_key",
+    "member_id",
+    "issue_id",
+    "congress_scope",
+    "published_artifact_identity",
+    "canonical_action_id",
+    "action_interpretation_id",
+    "action_interpretation_sha256",
+    "action_meaning_id",
+    "member_action",
+    "interpretation_disposition",
+    "interpretation_status",
+    "exact_action_meaning",
+    "policy_question",
+    "episode_id",
+    "vote_sources",
+    "action_meaning_sources",
+    "interpretation_receipt_refs",
+    "review_scope",
+    "public_claim_class",
+    "caveats",
+    "projection_source",
 }
 COUNT_FIELDS = {
     "total_recorded_actions",
@@ -75,6 +106,139 @@ def catalog_key(
     scope = ",".join(str(item) for item in sorted(congress_scope))
     artifact = published_artifact_identity or "none"
     return f"{member_id}:{issue_id}:{scope}:{artifact}"
+
+
+def receipt_projection_key(
+    *,
+    member_id: str,
+    issue_id: str,
+    congress_scope: Iterable[int],
+    published_artifact_identity: str,
+    canonical_action_id: str,
+    action_interpretation_id: str,
+    action_interpretation_sha256: str,
+) -> str:
+    scope = ",".join(str(item) for item in sorted(congress_scope))
+    return (
+        f"{member_id}:{issue_id}:{scope}:{published_artifact_identity}:"
+        f"{canonical_action_id}:{action_interpretation_id}:"
+        f"{action_interpretation_sha256}"
+    )
+
+
+def _validate_source(source: dict[str, Any], *, action_id: str) -> None:
+    _require(
+        isinstance(source, dict) and set(source) == SOURCE_FIELDS,
+        f"{action_id}: receipt source contains missing or non-public fields",
+    )
+    _require(
+        all(isinstance(source[field], str) and source[field].strip() for field in SOURCE_FIELDS),
+        f"{action_id}: receipt source fields must be non-empty strings",
+    )
+    _require(
+        source["url"].startswith("https://"),
+        f"{action_id}: receipt source URL must use HTTPS",
+    )
+
+
+def _validate_receipt(receipt: dict[str, Any], *, entry: dict[str, Any]) -> None:
+    action_id = str(receipt.get("canonical_action_id") or "<unknown>")
+    _require(
+        isinstance(receipt, dict) and set(receipt) == RECEIPT_FIELDS,
+        f"{action_id}: receipt projection contains missing or non-public fields",
+    )
+    _require(
+        receipt["member_id"] == entry["member_id"]
+        and receipt["issue_id"] == entry["issue_id"]
+        and receipt["congress_scope"] == entry["congress_scope"]
+        and receipt["published_artifact_identity"]
+        == entry["published_artifact_identity"],
+        f"{action_id}: receipt projection identity differs from its catalog entry",
+    )
+    _require(
+        receipt["review_scope"] == entry["review_scope"]
+        and receipt["public_claim_class"] == entry["public_claim_class"],
+        f"{action_id}: receipt projection broadens the governed claim scope",
+    )
+    expected_key = receipt_projection_key(
+        member_id=receipt["member_id"],
+        issue_id=receipt["issue_id"],
+        congress_scope=receipt["congress_scope"],
+        published_artifact_identity=receipt["published_artifact_identity"],
+        canonical_action_id=receipt["canonical_action_id"],
+        action_interpretation_id=receipt["action_interpretation_id"],
+        action_interpretation_sha256=receipt["action_interpretation_sha256"],
+    )
+    _require(
+        receipt["projection_key"] == expected_key,
+        f"{action_id}: receipt projection key does not match its bound identity",
+    )
+    _require(
+        isinstance(receipt["canonical_action_id"], str)
+        and receipt["canonical_action_id"].count(":") == 3,
+        f"{action_id}: canonical action identity is invalid",
+    )
+    _require(
+        isinstance(receipt["action_interpretation_id"], str)
+        and receipt["action_interpretation_id"].strip()
+        and isinstance(receipt["action_meaning_id"], str)
+        and receipt["action_meaning_id"].strip()
+        and isinstance(receipt["action_interpretation_sha256"], str)
+        and len(receipt["action_interpretation_sha256"]) == 64,
+        f"{action_id}: governed interpretation identity is incomplete",
+    )
+    _require(
+        receipt["member_action"] in {"Yea", "Nay", "Present", "Not Voting"}
+        and receipt["interpretation_disposition"]
+        in {
+            "interpreted_substantive_directional",
+            "interpreted_substantive_non_directional",
+        }
+        and receipt["interpretation_status"] == "interpreted",
+        f"{action_id}: receipt projection is not a governed interpreted action",
+    )
+    _require(
+        isinstance(receipt["exact_action_meaning"], str)
+        and receipt["exact_action_meaning"].strip()
+        and isinstance(receipt["policy_question"], str)
+        and receipt["policy_question"].strip()
+        and isinstance(receipt["episode_id"], str)
+        and receipt["episode_id"].strip(),
+        f"{action_id}: receipt projection lacks governed public meaning",
+    )
+    for field in ("vote_sources", "action_meaning_sources"):
+        _require(
+            isinstance(receipt[field], list) and receipt[field],
+            f"{action_id}: {field} must contain governed official sources",
+        )
+        for source in receipt[field]:
+            _validate_source(source, action_id=action_id)
+        source_ids = [source["source_id"] for source in receipt[field]]
+        _require(
+            len(source_ids) == len(set(source_ids)),
+            f"{action_id}: {field} repeats a source identity",
+        )
+    _require(
+        isinstance(receipt["interpretation_receipt_refs"], list)
+        and receipt["interpretation_receipt_refs"]
+        and all(
+            isinstance(reference, str) and reference.strip()
+            for reference in receipt["interpretation_receipt_refs"]
+        ),
+        f"{action_id}: interpretation receipt references are incomplete",
+    )
+    _require(
+        isinstance(receipt["caveats"], list)
+        and all(isinstance(caveat, str) and caveat.strip() for caveat in receipt["caveats"]),
+        f"{action_id}: caveats must be governed strings",
+    )
+    source = receipt["projection_source"]
+    _require(
+        isinstance(source, dict)
+        and set(source) == PROJECTION_SOURCE_FIELDS
+        and all(isinstance(source[field], str) and source[field].strip() for field in source),
+        f"{action_id}: projection source identity is incomplete",
+    )
 
 
 def validate_public_catalog(catalog: dict[str, Any]) -> None:
@@ -168,6 +332,25 @@ def validate_public_catalog(catalog: dict[str, Any]) -> None:
             _require(
                 entry["full_issue_synthesis_eligible"] is False,
                 "partial or benchmark state cannot expose full synthesis eligibility",
+            )
+        receipts = entry["exact_action_receipts"]
+        _require(
+            isinstance(receipts, list),
+            "exact-action receipt projections must be an array",
+        )
+        receipt_ids: set[str] = set()
+        for receipt in receipts:
+            _validate_receipt(receipt, entry=entry)
+            action_id = receipt["canonical_action_id"]
+            _require(
+                action_id not in receipt_ids,
+                "duplicate exact-action receipt projection",
+            )
+            receipt_ids.add(action_id)
+        if entry["public_claim_class"] != "vote_record_only":
+            _require(
+                len(receipts) == entry["interpreted_actions"],
+                "analytical review-state receipts must cover every interpreted action",
             )
 
 

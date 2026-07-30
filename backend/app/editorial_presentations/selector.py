@@ -148,6 +148,52 @@ def _eligible_row(
     return payload
 
 
+def _display_action_ids(display: dict[str, Any]) -> set[str]:
+    return {
+        action_id
+        for field in ("repeated_patterns", "policy_trajectories")
+        for item in display.get(field, [])
+        for action_id in item.get("action_ids", [])
+    }
+
+
+def _receipt_projections_agree(
+    artifact: dict[str, Any],
+    display: dict[str, Any],
+    review_state: dict[str, Any],
+) -> bool:
+    identity = artifact["artifact_identity"]
+    receipts = review_state.get("exact_action_receipts")
+    if not isinstance(receipts, list):
+        return False
+    by_action = {
+        receipt.get("canonical_action_id"): receipt
+        for receipt in receipts
+        if isinstance(receipt, dict)
+    }
+    sample_action_ids = set(artifact["evidence_metadata"]["action_ids"])
+    if (
+        len(by_action) != len(receipts)
+        or set(by_action) != sample_action_ids
+        or not _display_action_ids(display) <= sample_action_ids
+    ):
+        return False
+    for action_id, receipt in by_action.items():
+        if (
+            receipt.get("member_id") != identity["member_id"]
+            or receipt.get("issue_id") != identity["issue_id"]
+            or identity["congress"] not in receipt.get("congress_scope", [])
+            or receipt.get("published_artifact_identity")
+            != identity["artifact_id"]
+            or receipt.get("interpretation_status") != "interpreted"
+            or receipt.get("canonical_action_id") != action_id
+            or not receipt.get("vote_sources")
+            or not receipt.get("action_meaning_sources")
+        ):
+            return False
+    return True
+
+
 def select_public_presentations(
     rows: Iterable[dict[str, Any]],
     *,
@@ -191,8 +237,14 @@ def select_public_presentations(
             review_state["semantic_tier"] != display["tier"]
             or review_state["scope_bounded_teaser"] is None
             or review_state["scope_bounded_teaser"]["text"] != display["teaser"]
+            or not _receipt_projections_agree(artifact, display, review_state)
         ):
             continue
+        exact_action_receipts = copy.deepcopy(
+            review_state["exact_action_receipts"]
+        )
+        public_review_state = copy.deepcopy(review_state)
+        public_review_state.pop("exact_action_receipts", None)
         proposition_index = {
             item["proposition_id"]: item
             for item in artifact["compiled_semantic_meaning"]["propositions"]
@@ -227,7 +279,8 @@ def select_public_presentations(
             ),
             "policy_episodes": [],
             "public_status_label": review_state["public_status_label"],
-            "review_state": review_state,
+            "review_state": public_review_state,
+            "exact_action_receipts": exact_action_receipts,
             "evidence_metadata": copy.deepcopy(artifact["evidence_metadata"]),
             "provenance": {
                 "artifact_id": identity["artifact_id"],

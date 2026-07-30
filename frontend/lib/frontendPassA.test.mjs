@@ -13,6 +13,7 @@ import {
   filterActions,
   isPublicAnalysisAvailable,
   parsePassARouteState,
+  resolveExactActionRequest,
   sortAndFilterIssues,
 } from "./frontendPassA.mjs";
 
@@ -235,6 +236,45 @@ test("live evidence rows derive canonical IDs for reviewed-finding links", () =>
     "action-receipt-house-119-1-131",
   );
 });
+
+test("exact-action resolution safely preserves the complete ledger for zero matches", () => {
+  const actionRows = exactActionRows();
+  const resolution = resolveExactActionRequest(
+    actionRows,
+    ["house:119:1:999"],
+  );
+  assert.equal(resolution.filter, "all");
+  assert.deepEqual(resolution.highlightedIds, []);
+  assert.equal(resolution.expandedId, null);
+  assert.deepEqual(resolution.matchingRows, []);
+  assert.match(resolution.notice, /complete chronological record remains available/);
+});
+
+for (const count of [1, 2, 3]) {
+  test(`exact-action resolution exposes and opens ${count} matched action${count === 1 ? "" : "s"}`, () => {
+    const actionRows = exactActionRows();
+    const requested = actionRows.slice(0, count).map(canonicalActionId);
+    const resolution = resolveExactActionRequest(actionRows, requested);
+    assert.equal(resolution.filter, "highlighted");
+    assert.equal(resolution.matchingRows.length, count);
+    assert.equal(resolution.highlightedIds.length, count);
+    assert.equal(
+      resolution.expandedId,
+      canonicalActionId(resolution.matchingRows[0]),
+    );
+    assert.equal(resolution.notice, "");
+  });
+}
+
+function exactActionRows() {
+  return [32, 33, 166].map((rollcall_number) => ({
+    chamber: "house",
+    congress: 119,
+    roll_call_id: `house:119:1:${rollcall_number}`,
+    rollcall_number,
+    vote_date: rollcall_number === 166 ? "2025-06-12" : "2025-02-06",
+  }));
+}
 
 test("primary Pass A journey contains no representative profile image", () => {
   for (const relative of [

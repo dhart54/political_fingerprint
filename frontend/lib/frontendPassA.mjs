@@ -182,6 +182,29 @@ export function filterActions(rows = [], filter = "all", highlightedIds = []) {
   return rows;
 }
 
+export function resolveExactActionRequest(rows = [], requestedIds = []) {
+  const ordered = chronologicalActions(rows);
+  const matchingRows = filterActions(ordered, "highlighted", requestedIds);
+  if (!matchingRows.length) {
+    return {
+      filter: "all",
+      highlightedIds: [],
+      expandedId: null,
+      matchingRows: [],
+      notice:
+        "The linked exact actions are unavailable in the selected scope. The complete chronological record remains available.",
+    };
+  }
+  const highlightedIds = matchingRows.map(canonicalActionId);
+  return {
+    filter: "highlighted",
+    highlightedIds,
+    expandedId: highlightedIds[0],
+    matchingRows,
+    notice: "",
+  };
+}
+
 export function canonicalActionId(row) {
   const supplied = [row?.canonical_action_id, row?.roll_call_id].find(
     (value) => typeof value === "string" && /^[a-z]+:\d+:\d+:\d+$/.test(value),

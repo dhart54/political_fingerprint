@@ -5,6 +5,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from app.api.name_search import filter_name_matches
 from app.db import get_connection
 from app.etl.classify import run_classification
 from app.etl.compute import run_etl
@@ -225,19 +226,18 @@ def search_legislators(*, query: str = "") -> list[dict[str, object]]:
     if database_results is not None:
         return database_results
 
-    normalized_query = query.strip().lower()
-    matches = [
+    candidates = [
         _serialize_legislator(legislator)
         for legislator in FALLBACK_FIXTURE_DATA.legislators
-        if not normalized_query or normalized_query in str(legislator["name_display"]).lower()
     ]
-    return sorted(
-        matches,
+    ordered = sorted(
+        candidates,
         key=lambda legislator: (
-            str(legislator["name_display"]).lower(),
-            str(legislator["id"]).lower(),
+            str(legislator["name_display"]).casefold(),
+            str(legislator["id"]).casefold(),
         ),
     )
+    return filter_name_matches(ordered, query=query)
 
 
 def get_coverage_metadata() -> dict[str, object]:
@@ -1340,20 +1340,19 @@ def _get_fallback_alignment_response(*, legislator_id: str, preferences: dict[st
 
 
 def _search_db_legislators(*, query: str) -> list[dict[str, object]] | None:
-    normalized_query = query.strip().lower()
-    search_value = f"%{normalized_query}%"
     rows = _query_all_dicts(
         """
         SELECT id, bioguide_id, name_display, chamber, state, district, party
         FROM legislators
-        WHERE (%s = '' OR lower(name_display) LIKE %s)
         ORDER BY lower(name_display), id
+        LIMIT %s
         """,
-        (normalized_query, search_value),
+        (1000,),
     )
     if rows is None:
         return None
-    return [_serialize_legislator(row) for row in rows]
+    serialized = [_serialize_legislator(row) for row in rows]
+    return filter_name_matches(serialized, query=query)
 
 
 def _get_db_legislator_by_external_id(legislator_id: str) -> dict[str, Any] | None:

@@ -93,6 +93,16 @@ export const reviewState = {
   public_status_label: "Reviewed benchmark sample",
 };
 
+export const governedReceiptProjections = [
+  32,
+  33,
+  130,
+  131,
+  166,
+  275,
+  299,
+].map(buildGovernedReceiptProjection);
+
 export const justicePresentation = {
   issue_id: "JUSTICE_PUBLIC_SAFETY",
   requested_scope: "all",
@@ -106,6 +116,7 @@ export const justicePresentation = {
     "This conclusion remains bounded to the reviewed 119th-Congress sample. The conclusion remains bounded to the reviewed 119th-Congress record.",
   public_status_label: "Reviewed benchmark sample",
   review_state: reviewState,
+  exact_action_receipts: governedReceiptProjections,
   conclusion: {
     headline: "A divide by policy mechanism in the reviewed sample",
     body: "In this reviewed 119th-Congress sample, Foushee supported reporting and evidence, research, or implementation conditions in two independent episodes, while opposing three specific proposals concerning retired-service firearm access, broader D.C. police pursuit authority, and repeal of most reviewed D.C. policing restrictions.",
@@ -234,7 +245,63 @@ export function vote(roll, overrides = {}) {
     vote_type: roll === 32 ? "amendment" : "final_passage",
     what_happened: `Justice measure ${roll} action.`,
     why_it_mattered: `Justice measure ${roll} stakes.`,
+    governed_receipt_projection:
+      governedReceiptProjections.find(
+        (projection) => projection.canonical_action_id === `house:119:1:${roll}`,
+      ) || null,
     ...overrides,
+  };
+}
+
+function buildGovernedReceiptProjection(roll) {
+  const actionId = `house:119:1:${roll}`;
+  const memberAction = [32, 131, 166].includes(roll) ? "Yea" : "Nay";
+  const exactMeaning = roll === 32
+    ? "An amendment requiring an overdose-reduction certification before classwide fentanyl scheduling took effect."
+    : `Governed exact-action meaning for House roll ${roll}.`;
+  const policyQuestion = [32, 33, 166].includes(roll)
+    ? "Whether and under what conditions to make classwide Schedule I treatment and associated penalty and research rules permanent."
+    : `Whether to adopt the governed policy action in House roll ${roll}.`;
+  const episodeId = [32, 33, 166].includes(roll)
+    ? "halt-fentanyl-legislative-path"
+    : `governed-episode-${roll}`;
+  return {
+    projection_key: `fixture:${actionId}`,
+    member_id: "F000477",
+    issue_id: "JUSTICE_PUBLIC_SAFETY",
+    congress_scope: [119],
+    published_artifact_identity: "f000477:justice_public_safety:119:v1",
+    canonical_action_id: actionId,
+    action_interpretation_id: `action-interpretation:${actionId}:v1`,
+    action_interpretation_sha256: String(roll).padStart(64, "0"),
+    action_meaning_id: `action-meaning:${actionId}:v1`,
+    member_action: memberAction,
+    interpretation_disposition: "interpreted_substantive_directional",
+    interpretation_status: "interpreted",
+    exact_action_meaning: exactMeaning,
+    policy_question: policyQuestion,
+    episode_id: episodeId,
+    vote_sources: [{
+      source_id: `clerk_roll_${String(roll).padStart(3, "0")}`,
+      source_type: "house_clerk_roll_call",
+      name: `House Clerk roll call ${roll}`,
+      url: `https://clerk.house.gov/Votes/2025${roll}`,
+    }],
+    action_meaning_sources: [{
+      source_id: roll === 32 ? "congress_hamdt5" : `governed_source_${roll}`,
+      source_type: roll === 32 ? "congress_gov_amendment" : "congress_gov_bill",
+      name: roll === 32 ? "H.Amdt. 5 to H.R. 27" : `Official action source ${roll}`,
+      url: `https://www.congress.gov/example/${roll}`,
+    }],
+    interpretation_receipt_refs: [`receipt-${roll}`],
+    review_scope: "benchmark_sample",
+    public_claim_class: "reviewed_sample_finding",
+    caveats: ["This receipt remains bounded to the reviewed action and sample."],
+    projection_source: {
+      review_id: "full-review:f000477:justice_public_safety:119:v1",
+      source_contract_id: "foushee_justice_public_safety_119_v1",
+      source_manifest_sha256: "fixture",
+    },
   };
 }
 

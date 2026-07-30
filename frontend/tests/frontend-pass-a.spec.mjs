@@ -3,7 +3,11 @@ import path from "node:path";
 
 import { expect, test } from "@playwright/test";
 
-import { installPassARoutes } from "./pass-a-fixtures.mjs";
+import {
+  foushee,
+  installPassARoutes,
+  justicePresentation,
+} from "./pass-a-fixtures.mjs";
 
 test.beforeEach(async ({ page }, testInfo) => {
   await installPassARoutes(page, {
@@ -31,6 +35,15 @@ test("finder, compact selected header, issue URL state, and browser history work
   await expect(page.getByTestId("issue-detail")).toHaveCount(0);
   await page.goForward();
   await expect(page.getByTestId("issue-detail")).toBeVisible();
+});
+
+test("finder accepts an ordinary first-and-last-name query", async ({ page }) => {
+  await page.goto("/");
+  await page.getByLabel("Search by name").fill("Valerie Foushee");
+  await page.getByRole("button", { name: "Search names" }).click();
+  await expect(
+    page.getByRole("button", { name: /Select Valerie P\. Foushee/ }),
+  ).toBeVisible();
 });
 
 test("issue sort and filter controls expose evidence and reviewed states", async ({ page }) => {
@@ -97,9 +110,73 @@ test("reviewed finding links resolve live-shaped evidence IDs and open the first
     "true",
   );
   await expect(receipts.first()).toContainText("Expanded vote receipt");
+  const roll32 = page.locator(
+    '[data-canonical-action-id="house:119:1:32"]',
+  );
+  await roll32.getByRole("button").click();
+  await expect(roll32).toContainText("overdose-reduction certification");
+  await expect(roll32).toContainText("congress_hamdt5");
+  await expect(roll32).toContainText("clerk_roll_032");
+  await expect(roll32).not.toContainText("Limited context");
+  await expect(roll32).not.toContainText("insufficient");
+  await expect(roll32).not.toContainText("Justice measure 32 stakes.");
   await page.getByRole("button", { name: "Return to all 7 actions" }).click();
   await expect(page.getByRole("button", { name: "All", exact: true })).toBeVisible();
   await expect(receipts).toHaveCount(7);
+});
+
+test("zero-match exact-action request keeps the complete ledger and announces the fallback", async ({ page }) => {
+  await page.route("**/editorial-presentations*", async (route) => {
+    const stale = {
+      ...justicePresentation,
+      repeated_patterns: justicePresentation.repeated_patterns.map(
+        (finding, index) => index === 0
+          ? { ...finding, action_ids: ["house:119:1:999"] }
+          : finding,
+      ),
+    };
+    await route.fulfill({
+      json: {
+        schema_version: "editorial_public_presentations_api_v1",
+        legislator_id: foushee.id,
+        member_bioguide_id: foushee.bioguide_id,
+        scope: "all",
+        presentations: [stale],
+      },
+    });
+  });
+  await page.goto(
+    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY",
+  );
+  await page.getByRole("button", {
+    name: /Show 1 exact action for Certification, fentanyl research provisions/,
+  }).click();
+  await expect(page.getByRole("status").filter({
+    hasText: "linked exact actions are unavailable",
+  })).toBeVisible();
+  await expect(page.getByRole("button", { name: "All", exact: true })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(7);
+  await expect(page.getByText(/Showing 7 of 7 matching actions \(7 total\)/)).toBeVisible();
+  await expect(page.getByText("No recorded actions match this filter.")).toHaveCount(0);
+});
+
+test("changing scope clears stale exact-action filtering", async ({ page }) => {
+  await page.goto(
+    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY",
+  );
+  await page.getByRole("button", {
+    name: /Show 3 exact actions for Certification, fentanyl research provisions/,
+  }).click();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
+  await page.getByRole("button", { name: "118th Congress" }).click();
+  await expect(page.getByRole("button", { name: "All", exact: true })).toHaveAttribute(
+    "aria-pressed",
+    "true",
+  );
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(7);
 });
 
 test("episode component uses supplied order, keeps one open, and preserves oldest-first actions", async ({ page }) => {

@@ -43,6 +43,7 @@ async function assertBounded(page) {
 test("capture the matching branch full-stack Frontend Pass A review package", async ({
   page,
 }) => {
+  test.setTimeout(120_000);
   test.skip(
     !output,
     "Set PASS_A_LIVE_REVIEW_DIR and run against the matching local backend.",
@@ -61,10 +62,12 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/");
   await expect(page.getByTestId("representative-finder")).toBeVisible();
-  await capture(page, "01-finder-1440.png");
-
-  await page.getByLabel("Search by ZIP").fill("27701");
-  await page.getByRole("button", { name: "Find by ZIP" }).click();
+  await page.getByLabel("Search by name").fill("Valerie Foushee");
+  await page.getByRole("button", { name: "Search names" }).click();
+  await expect(
+    page.getByRole("button", { name: /Select Valerie P\. Foushee/ }),
+  ).toBeVisible();
+  await capture(page, "01-finder-full-name-results-1440.png");
   await page.getByRole("button", { name: /Select Valerie P\. Foushee/ }).click();
   await expect(page).toHaveURL(/representative=leg_valerie_p_foushee/);
   const cards = page.getByTestId("issue-card");
@@ -147,20 +150,45 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
   await assertBounded(page);
   await capture(page, "05-exact-actions-focused-1440.png");
 
+  const roll32 = page.locator(
+    '[data-canonical-action-id="house:119:1:32"]',
+  );
+  await roll32.getByRole("button").click();
+  await expect(roll32.getByRole("button")).toHaveAttribute(
+    "aria-expanded",
+    "true",
+  );
+  await expect(roll32).toContainText(
+    "overdose-reduction certification",
+  );
+  await expect(roll32).toContainText("house:119:1:32");
+  await expect(roll32).toContainText("clerk_roll_032");
+  await expect(roll32).toContainText("congress_hamdt5");
+  await expect(roll32).not.toContainText("Limited context");
+  await expect(roll32).not.toContainText("insufficient amendment text");
+  await capture(page, "06-corrected-roll-32-expanded-1440.png");
+
   await page.getByRole("button", { name: "Return to all 76 actions" }).click();
   await expect(page.getByText(/Showing 12 of 76 matching actions/)).toBeVisible();
   await expect(page.getByRole("button", { name: "All", exact: true })).toBeVisible();
-  await capture(page, "06-returned-to-complete-record-1440.png");
+  await capture(page, "07-returned-to-complete-record-1440.png");
 
   for (const [width, height, name] of [
-    [1024, 900, "07-filtered-ledger-1024.png"],
-    [390, 844, "08-filtered-ledger-390.png"],
-    [320, 844, "09-filtered-ledger-320.png"],
+    [1024, 900, "08-filtered-ledger-1024.png"],
+    [390, 844, "09-corrected-roll-32-expanded-390.png"],
+    [320, 844, "10-filtered-ledger-320.png"],
   ]) {
     await page.setViewportSize({ width, height });
     await page.goto(selectedUrl);
     await page.getByRole("button", { name: supportFinding }).click();
     await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
+    if (width === 390) {
+      const mobileRoll32 = page.locator(
+        '[data-canonical-action-id="house:119:1:32"]',
+      );
+      await mobileRoll32.getByRole("button").click();
+      await expect(mobileRoll32).toContainText("congress_hamdt5");
+    }
     await expect(
       page.getByRole("navigation", { name: "Selected issue sections" }),
     ).toBeVisible();
@@ -176,5 +204,33 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
   await page.getByRole("button", { name: supportFinding }).click();
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
   await assertBounded(page);
-  await capture(page, "10-effective-zoom-200.png", { fullPage: false });
+  await capture(page, "11-effective-zoom-200.png", { fullPage: false });
+
+  await page.unrouteAll({ behavior: "wait" });
+  await page.route("**/editorial-presentations*", async (route) => {
+    const response = await route.fetch();
+    const payload = await response.json();
+    const presentation = payload.presentations.find(
+      (item) => item.issue_id === "JUSTICE_PUBLIC_SAFETY",
+    );
+    presentation.repeated_patterns = presentation.repeated_patterns.map(
+      (finding, index) => index === 0
+        ? { ...finding, action_ids: ["house:119:1:999"] }
+        : finding,
+    );
+    await route.fulfill({ response, json: payload });
+  });
+  await page.evaluate(() => {
+    document.documentElement.style.zoom = "1";
+  });
+  await page.goto(selectedUrl);
+  await page.getByRole("button", {
+    name: /Show 1 exact action for Certification, fentanyl research provisions/,
+  }).click();
+  await expect(page.getByRole("status").filter({
+    hasText: "complete chronological record remains available",
+  })).toBeVisible();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(12);
+  await expect(page.getByText(/Showing 12 of 76 matching actions/)).toBeVisible();
+  await capture(page, "12-zero-match-fallback-full-ledger-1440.png");
 });

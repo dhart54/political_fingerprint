@@ -7,6 +7,7 @@ import {
   canonicalActionId,
   chronologicalActions,
   filterActions,
+  resolveExactActionRequest,
 } from "../lib/frontendPassA.mjs";
 
 const INITIAL_BATCH = 12;
@@ -26,15 +27,17 @@ export default function ChronologicalActionLedger({
   const [filter, setFilter] = useState("all");
   const [visibleCount, setVisibleCount] = useState(INITIAL_BATCH);
   const [expandedId, setExpandedId] = useState(null);
+  const [activeHighlightedIds, setActiveHighlightedIds] = useState([]);
+  const [linkedActionNotice, setLinkedActionNotice] = useState("");
   const headingRef = useRef(null);
   const ordered = useMemo(() => chronologicalActions(rows), [rows]);
-  const highlightedIds = useMemo(
+  const requestedHighlightedIds = useMemo(
     () => highlightedFinding?.actionIds || [],
     [highlightedFinding?.actionIds],
   );
   const filtered = useMemo(
-    () => filterActions(ordered, filter, highlightedIds),
-    [filter, highlightedIds, ordered],
+    () => filterActions(ordered, filter, activeHighlightedIds),
+    [activeHighlightedIds, filter, ordered],
   );
   const visible = filtered.slice(0, visibleCount);
 
@@ -42,10 +45,15 @@ export default function ChronologicalActionLedger({
     if (!highlightedFinding?.requestedAt) {
       return;
     }
-    const matching = filterActions(ordered, "highlighted", highlightedIds);
-    setFilter("highlighted");
+    const resolution = resolveExactActionRequest(
+      ordered,
+      requestedHighlightedIds,
+    );
+    setFilter(resolution.filter);
     setVisibleCount(INITIAL_BATCH);
-    setExpandedId(matching.length ? canonicalActionId(matching[0]) : null);
+    setActiveHighlightedIds(resolution.highlightedIds);
+    setExpandedId(resolution.expandedId);
+    setLinkedActionNotice(resolution.notice);
     window.requestAnimationFrame(() => {
       document.getElementById("vote-record")?.scrollIntoView({
         behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
@@ -55,12 +63,14 @@ export default function ChronologicalActionLedger({
       });
       headingRef.current?.focus({ preventScroll: true });
     });
-  }, [highlightedFinding?.requestedAt, highlightedIds, ordered]);
+  }, [highlightedFinding?.requestedAt, ordered, requestedHighlightedIds]);
 
   function chooseFilter(value) {
     setFilter(value);
     setVisibleCount(INITIAL_BATCH);
     setExpandedId(null);
+    setActiveHighlightedIds([]);
+    setLinkedActionNotice("");
   }
 
   return (
@@ -76,6 +86,16 @@ export default function ChronologicalActionLedger({
       <p className="mt-3 max-w-3xl text-base leading-7 text-stone-700">
         Newest actions appear first. All {ordered.length} recorded {ordered.length === 1 ? "action remains" : "actions remain"} available.
       </p>
+
+      {linkedActionNotice ? (
+        <p
+          aria-live="polite"
+          className="mt-5 rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm leading-6 text-amber-950"
+          role="status"
+        >
+          {linkedActionNotice}
+        </p>
+      ) : null}
 
       {filter === "highlighted" ? (
         <div className="mt-5 rounded-xl border border-teal-900/20 bg-teal-50 p-4 text-sm leading-6 text-teal-950">
@@ -129,7 +149,7 @@ export default function ChronologicalActionLedger({
             return (
               <ActionReceipt
                 expanded={expandedId === actionId}
-                highlighted={highlightedIds.includes(actionId)}
+                highlighted={activeHighlightedIds.includes(actionId)}
                 key={actionId || `${row.vote_date}-${row.rollcall_number}`}
                 onToggle={() => setExpandedId(expandedId === actionId ? null : actionId)}
                 row={row}
