@@ -340,6 +340,207 @@ def write_raw_snapshot(
     return path
 
 
+def write_completion_record(
+    output_dir: Path,
+    *,
+    snapshot_id: str,
+    raw_snapshot_path: Path,
+    results: dict[str, list[dict[str, Any]]],
+    audit: list[dict[str, Any]],
+    command_ids: Sequence[str],
+    rollback_attempted: bool,
+    rollback_succeeded: bool,
+    connection_close_attempted: bool,
+    connection_close_succeeded: bool,
+    connection_closed_state_supported: bool,
+    connection_closed_state_verified: bool,
+) -> Path:
+    """Write the post-close, digest-bound completion envelope for a snapshot."""
+    result_digests = {
+        key: sha256_json(value) for key, value in sorted(results.items())
+    }
+    data_query_ids = [
+        row["query_id"]
+        for row in audit
+        if row["query_id"]
+        not in {
+            "transaction_begin",
+            PROOF_QUERY_ID,
+            "set_local_statement_timeout",
+            "set_local_lock_timeout",
+            "set_local_idle_timeout",
+            "set_local_application_name",
+            "transaction_rollback",
+        }
+    ]
+    payload = {
+        "schema_version": "readonly_discovery_completion_v1",
+        "snapshot_id": snapshot_id,
+        "first_sql_command": BEGIN_SQL,
+        "final_data_query_id": data_query_ids[-1] if data_query_ids else None,
+        "executed_query_ids": list(command_ids),
+        "rollback": {
+            "attempted": rollback_attempted,
+            "succeeded": rollback_succeeded,
+            "audit_query_id": "transaction_rollback",
+        },
+        "connection_close": {
+            "attempted": connection_close_attempted,
+            "succeeded": connection_close_succeeded,
+            "client_closed_state_supported": connection_closed_state_supported,
+            "client_closed_state_verified": connection_closed_state_verified,
+        },
+        "raw_snapshot": {
+            "filename": raw_snapshot_path.name,
+            "sha256": hashlib.sha256(raw_snapshot_path.read_bytes()).hexdigest(),
+        },
+        "result_digests": result_digests,
+        "result_bundle_sha256": sha256_json(result_digests),
+        "query_audit_sha256": sha256_json(audit),
+        "completion_sequence": [
+            "final_data_query_completed",
+            "transaction_rollback_succeeded",
+            "connection_close_succeeded",
+            "client_closed_state_verified",
+            "raw_snapshot_written",
+            "completion_record_written",
+        ],
+        "completion_subject_sha256": "",
+    }
+    payload["completion_subject_sha256"] = sha256_json(
+        {
+            key: value
+            for key, value in payload.items()
+            if key != "completion_subject_sha256"
+        }
+    )
+    path = output_dir / f"{snapshot_id}.completion.json"
+    path.write_bytes(canonical_json_bytes(payload) + b"\n")
+    return path
+
+
+def validate_completion_record(
+    raw_snapshot_path: Path,
+    completion_record_path: Path,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Reject missing, false, malformed, substituted, or cross-run proof."""
+    snapshot = json.loads(raw_snapshot_path.read_text(encoding="utf-8"))
+    completion = json.loads(completion_record_path.read_text(encoding="utf-8"))
+    required_sequence = [
+        "final_data_query_completed",
+        "transaction_rollback_succeeded",
+        "connection_close_succeeded",
+        "client_closed_state_verified",
+        "raw_snapshot_written",
+        "completion_record_written",
+    ]
+    control_query_ids = {
+        "transaction_begin",
+        PROOF_QUERY_ID,
+        "set_local_statement_timeout",
+        "set_local_lock_timeout",
+        "set_local_idle_timeout",
+        "set_local_application_name",
+        "transaction_rollback",
+    }
+    data_query_ids = [
+        row["query_id"]
+        for row in snapshot.get("query_audit", [])
+        if row["query_id"] not in control_query_ids
+    ]
+    checks = {
+        "schema_version": (
+            completion.get("schema_version")
+            == "readonly_discovery_completion_v1"
+        ),
+        "snapshot_identity": (
+            completion.get("snapshot_id") == snapshot.get("snapshot_id")
+        ),
+        "raw_filename": (
+            completion.get("raw_snapshot", {}).get("filename")
+            == raw_snapshot_path.name
+        ),
+        "raw_sha256": (
+            completion.get("raw_snapshot", {}).get("sha256")
+            == hashlib.sha256(raw_snapshot_path.read_bytes()).hexdigest()
+        ),
+        "first_sql_command": completion.get("first_sql_command") == BEGIN_SQL,
+        "executed_query_ids": (
+            completion.get("executed_query_ids")
+            == [row["query_id"] for row in snapshot.get("query_audit", [])]
+        ),
+        "final_data_query_id": (
+            bool(data_query_ids)
+            and completion.get("final_data_query_id")
+            == data_query_ids[-1]
+        ),
+        "rollback_audit_last": bool(snapshot.get("query_audit"))
+        and snapshot["query_audit"][-1].get("query_id")
+        == "transaction_rollback",
+        "rollback_attempted": (
+            completion.get("rollback", {}).get("attempted") is True
+        ),
+        "rollback_succeeded": (
+            completion.get("rollback", {}).get("succeeded") is True
+        ),
+        "rollback_audit_query_id": (
+            completion.get("rollback", {}).get("audit_query_id")
+            == "transaction_rollback"
+        ),
+        "close_attempted": (
+            completion.get("connection_close", {}).get("attempted") is True
+        ),
+        "close_succeeded": (
+            completion.get("connection_close", {}).get("succeeded") is True
+        ),
+        "closed_state_supported": (
+            completion.get("connection_close", {}).get(
+                "client_closed_state_supported"
+            )
+            is True
+        ),
+        "closed_state_verified": (
+            completion.get("connection_close", {}).get(
+                "client_closed_state_verified"
+            )
+            is True
+        ),
+        "result_digests": completion.get("result_digests")
+        == {
+            key: sha256_json(value)
+            for key, value in sorted(snapshot.get("results", {}).items())
+        },
+        "query_audit_sha256": (
+            completion.get("query_audit_sha256")
+            == sha256_json(snapshot.get("query_audit", []))
+        ),
+        "completion_sequence": (
+            completion.get("completion_sequence") == required_sequence
+        ),
+        "completion_subject_sha256": (
+            completion.get("completion_subject_sha256")
+            == sha256_json(
+                {
+                    key: value
+                    for key, value in completion.items()
+                    if key != "completion_subject_sha256"
+                }
+            )
+        ),
+    }
+    if completion.get("result_digests") is not None:
+        checks["result_bundle_sha256"] = (
+            completion.get("result_bundle_sha256")
+            == sha256_json(completion["result_digests"])
+        )
+    failed = sorted(key for key, value in checks.items() if not value)
+    if failed:
+        raise ValueError(
+            "invalid read-only completion record: " + ", ".join(failed)
+        )
+    return snapshot, completion
+
+
 def sanitized_session_proof(proof: dict[str, Any]) -> dict[str, Any]:
     database_identity = hashlib.sha256(
         str(proof["database_name"]).encode("utf-8")

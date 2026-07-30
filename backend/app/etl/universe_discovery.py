@@ -204,6 +204,8 @@ def build_candidate_recall(
         include(action_id, "governed_benchmark")
     for action_id in config["explicit_recall_action_ids"]:
         include(action_id, "structured_cross_domain_recall")
+    for action_id in config.get("refresh_review_action_ids", []):
+        include(action_id, "newly_observed_full_boundary_review")
 
     return (
         sorted_action_ids(reasons),
@@ -236,6 +238,13 @@ def discovery_disposition(
     config: dict[str, Any],
 ) -> tuple[str, str, str]:
     action_id = str(action["canonical_action_id"])
+    reviewed = config.get("reviewed_dispositions", {}).get(action_id)
+    if reviewed:
+        return (
+            str(reviewed["disposition"]),
+            str(reviewed.get("confidence", "high")),
+            str(reviewed["rationale"]),
+        )
     if is_procedural_context(action):
         return (
             "procedural_context",

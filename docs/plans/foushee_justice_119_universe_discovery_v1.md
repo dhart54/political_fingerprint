@@ -1,5 +1,12 @@
 # Milestone Plan: Foushee Justice 119 Universe Discovery V1
 
+> Historical status (2026-07-30): this June 11 non-authorizing proposal is
+> preserved as the original PR #123 discovery result. The completed human
+> boundary review found proof-chain, methodology, boundary, and freshness
+> corrections. V1 is therefore superseded for authority and interpretation by
+> the V2 refresh proposal; neither version is authoritative without a detached
+> receipt.
+
 ## Intent
 
 - Discover, content-address, and reconcile Valerie Foushee's recorded

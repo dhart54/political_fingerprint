@@ -24,6 +24,7 @@ from app.etl.readonly_discovery import (  # noqa: E402
     execute_query_pack,
     sanitized_session_proof,
     sha256_json,
+    write_completion_record,
     write_raw_snapshot,
 )
 
@@ -151,6 +152,36 @@ def _queries_for_catalog(catalog: list[dict[str, Any]], bioguide_id: str, congre
                 WHERE l.bioguide_id = %s
                   AND rc.congress = %s
                 ORDER BY rc.chamber, rc.congress, rc.session, rc.rollcall_number
+            """,
+            (bioguide_id, congress),
+            ("bioguide_id:text", "congress:integer"),
+        ),
+        QuerySpec(
+            "member_roll_call_coverage",
+            (
+                "Distinguish missing production roll-call ingestion from "
+                "missing member-vote ingestion for the requested Congress."
+            ),
+            """
+                SELECT
+                    lower(rc.chamber::text) || ':' || rc.congress::text || ':' ||
+                        rc.session::text || ':' || rc.rollcall_number::text
+                        AS canonical_action_id,
+                    rc.id AS production_roll_call_id,
+                    vc.id AS production_vote_id,
+                    rc.vote_date,
+                    rc.source_url,
+                    b.bill_type,
+                    b.bill_number
+                FROM roll_calls rc
+                LEFT JOIN legislators l ON l.bioguide_id = %s
+                LEFT JOIN votes_cast vc
+                  ON vc.roll_call_id = rc.id
+                 AND vc.legislator_id = l.id
+                LEFT JOIN bills b ON b.id = rc.bill_id
+                WHERE rc.congress = %s
+                  AND lower(rc.chamber::text) = 'house'
+                ORDER BY rc.session, rc.rollcall_number
             """,
             (bioguide_id, congress),
             ("bioguide_id:text", "congress:integer"),
@@ -331,6 +362,8 @@ def main() -> int:
         expected_database_name=expected_database_name,
     )
     success = False
+    close_attempted = False
+    close_succeeded = False
     try:
         session.begin()
         proof = session.prove(snapshot_started_at=started)
@@ -349,13 +382,21 @@ def main() -> int:
         success = True
     finally:
         session.rollback()
+        close_attempted = True
         connection.close()
+        close_succeeded = True
 
     if not success:
         raise RuntimeError("production discovery transaction did not complete")
     if not session.rollback_succeeded:
         raise RuntimeError("production discovery transaction did not roll back")
     audit = list(session.audit)
+    closed_state_supported = hasattr(connection, "closed")
+    closed_state_verified = (
+        closed_state_supported and bool(getattr(connection, "closed", False))
+    )
+    if not close_succeeded or not closed_state_verified:
+        raise RuntimeError("production discovery connection close was not verified")
 
     raw_path = write_raw_snapshot(
         args.output_dir,
@@ -364,6 +405,20 @@ def main() -> int:
         results=results,
         audit=audit,
     )
+    completion_path = write_completion_record(
+        args.output_dir,
+        snapshot_id=snapshot_id,
+        raw_snapshot_path=raw_path,
+        results=results,
+        audit=audit,
+        command_ids=session.command_ids,
+        rollback_attempted=session.rollback_attempted,
+        rollback_succeeded=session.rollback_succeeded,
+        connection_close_attempted=close_attempted,
+        connection_close_succeeded=close_succeeded,
+        connection_closed_state_supported=closed_state_supported,
+        connection_closed_state_verified=closed_state_verified,
+    )
     summary = {
         "snapshot_id": snapshot_id,
         "discovery_as_of_utc": started,
@@ -371,7 +426,7 @@ def main() -> int:
         "connection_mode": connection_mode,
         "first_sql_command": "BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY",
         "transaction_rollback_succeeded": session.rollback_succeeded,
-        "connection_closed": bool(getattr(connection, "closed", False)),
+        "connection_closed": closed_state_verified,
         "executed_query_ids": session.command_ids,
         "query_audit": audit,
         "result_counts": {key: len(value) for key, value in sorted(results.items())},
@@ -380,6 +435,10 @@ def main() -> int:
         },
         "raw_snapshot_path": str(raw_path),
         "raw_snapshot_sha256": hashlib.sha256(raw_path.read_bytes()).hexdigest(),
+        "completion_record_path": str(completion_path),
+        "completion_record_sha256": hashlib.sha256(
+            completion_path.read_bytes()
+        ).hexdigest(),
     }
     print(json.dumps(summary, ensure_ascii=False, sort_keys=True, indent=2))
     return 0

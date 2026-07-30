@@ -658,6 +658,7 @@
             "proposed_in_scope_substantive",
             "proposed_in_scope_non_directional",
             "procedural_context",
+            "expressive_nonbinding_context",
             "proposed_exact_action_ineligible",
             "outside_service",
             "source_missing",
@@ -775,6 +776,12 @@
         },
         "public_action_digest": {
           "$ref": "#/definitions/sha256"
+        },
+        "issue_memberships": {
+          "$ref": "#/definitions/nonemptyStrings"
+        },
+        "cross_domain_scope_limitations": {
+          "$ref": "#/definitions/nonemptyStrings"
         }
       }
     },
@@ -984,6 +991,12 @@
           "$ref": "#/definitions/sha256"
         },
         "freshness_result_bundle_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "baseline_completion_subject_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "freshness_completion_subject_sha256": {
           "$ref": "#/definitions/sha256"
         },
         "complete_member_action_set": {

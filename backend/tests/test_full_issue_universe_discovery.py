@@ -3,12 +3,15 @@ from __future__ import annotations
 import copy
 import json
 import unittest
+from pathlib import Path
 
 from jsonschema import Draft7Validator
 
 from backend.app.etl.universe_discovery import (
     action_set,
     discovery_disposition,
+    load_congress_metadata,
+    load_house_clerk_member_actions,
     sha256_json,
 )
 from backend.scripts.build_full_issue_universe_discovery import (
@@ -16,17 +19,26 @@ from backend.scripts.build_full_issue_universe_discovery import (
     _final_freshness_check,
 )
 from scripts.validate_full_issue_universe_discovery import (
+    COMPARISON_PATH,
     DISCOVERY_PATH,
     DISCOVERY_SCHEMA,
+    REPAIR_PLAN_PATH,
     UniverseDiscoveryValidationError,
     validate_candidate_accounting,
     validate_bundle,
+    validate_source_completeness_statement,
 )
 
 class FullIssueUniverseDiscoveryTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.discovery = json.loads(DISCOVERY_PATH.read_text(encoding="utf-8"))
+        cls.comparison = json.loads(
+            COMPARISON_PATH.read_text(encoding="utf-8")
+        )
+        cls.repair_plan = json.loads(
+            REPAIR_PLAN_PATH.read_text(encoding="utf-8")
+        )
 
     def test_repository_discovery_bundle_validates(self) -> None:
         validated = validate_bundle()
@@ -178,6 +190,183 @@ class FullIssueUniverseDiscoveryTests(unittest.TestCase):
         ):
             validate_candidate_accounting(altered)
 
+    def test_v1_is_preserved_but_superseded_for_authority(self) -> None:
+        historical = self.comparison["historical_v1"]
+        self.assertEqual(
+            historical["status"],
+            "historical_non_authoritative_superseded_for_review",
+        )
+        self.assertFalse(self.comparison["authorizing"])
+        self.assertIsNone(self.comparison["authority_receipt"])
+
+    def test_every_official_action_through_roll_283_is_in_v2(self) -> None:
+        ids = self.discovery["complete_member_action_snapshot"]["action_ids"]
+        self.assertEqual(len(ids), 638)
+        self.assertIn("house:119:2:283", ids)
+        self.assertEqual(
+            self.discovery["cutoff"]["boundary"]["end_date"],
+            "2026-07-23",
+        )
+
+    def test_repository_official_sources_parse_deterministically(self) -> None:
+        root = Path(__file__).resolve().parents[2]
+        actions = load_house_clerk_member_actions(
+            (
+                root / "backend/data_sources/house_clerk",
+                root / "backend/data_sources/house_clerk/2026",
+            ),
+            bioguide_id="F000477",
+        )
+        metadata = load_congress_metadata(
+            (root / "backend/data_sources/congress/bills",)
+        )
+        self.assertEqual(len(actions), 577)
+        self.assertIn("bill_119_hr_1", metadata)
+
+    def test_expressive_actions_are_visible_but_never_substantive(self) -> None:
+        expected = {
+            "house:119:1:123",
+            "house:119:1:158",
+            "house:119:1:159",
+            "house:119:1:179",
+            "house:119:1:185",
+            "house:119:2:162",
+            "house:119:2:165",
+        }
+        rows = {
+            row["action_id"]: row["disposition"]
+            for row in self.discovery["candidate_dispositions"]
+        }
+        self.assertEqual(
+            {action_id for action_id, value in rows.items()
+             if value == "expressive_nonbinding_context"},
+            expected,
+        )
+        self.assertTrue(
+            expected.isdisjoint(
+                self.discovery["proposed_universe_set"]["action_ids"]
+            )
+        )
+
+    def test_fisa_cross_domain_membership_is_vote_invariant(self) -> None:
+        config = {
+            "reviewed_dispositions": {
+                action_id: {
+                    "disposition": "proposed_in_scope_substantive",
+                    "confidence": "high",
+                    "rationale": "FISA exact-action cross-domain review.",
+                }
+                for action_id in (
+                    "house:119:2:155",
+                    "house:119:2:221",
+                )
+            },
+            "boundary_review_action_ids": [],
+            "official_in_scope_policy_areas": [],
+            "benchmark_action_ids": [],
+            "subject": {"issue_id": "JUSTICE_PUBLIC_SAFETY"},
+        }
+        outcomes = set()
+        for action_id in config["reviewed_dispositions"]:
+            for member_action, party in (
+                ("yea", "D"),
+                ("nay", "R"),
+            ):
+                action = {
+                    "canonical_action_id": action_id,
+                    "question": "On Passage",
+                    "description": "FISA",
+                    "member_action": member_action,
+                    "bill_ref": "bill_119_hr_1",
+                }
+                outcomes.add(
+                    discovery_disposition(
+                        action,
+                        production_row={"party": party},
+                        metadata={"policy_area": "National Security"},
+                        config=config,
+                    )[0]
+                )
+        self.assertEqual(outcomes, {"proposed_in_scope_substantive"})
+
+    def test_reviewed_june_11_corrections_are_present(self) -> None:
+        rows = {
+            row["action_id"]: row["disposition"]
+            for row in self.discovery["candidate_dispositions"]
+        }
+        expected = {
+            "house:119:1:6": "proposed_in_scope_substantive",
+            "house:119:1:17": "proposed_exact_action_ineligible",
+            "house:119:2:40": "procedural_context",
+            "house:119:2:155": "proposed_in_scope_substantive",
+            "house:119:2:162": "expressive_nonbinding_context",
+            "house:119:2:221": "proposed_in_scope_substantive",
+        }
+        self.assertEqual(
+            {key: rows[key] for key in expected},
+            expected,
+        )
+
+    def test_all_post_cutoff_actions_have_one_resolved_disposition(self) -> None:
+        new_ids = self.comparison["new_action_ids"]
+        rows = self.comparison["new_action_dispositions"]
+        self.assertEqual(len(new_ids), 61)
+        self.assertEqual([row["action_id"] for row in rows], new_ids)
+        self.assertTrue(
+            all(row["boundary_evidence_sufficient"] for row in rows)
+        )
+        self.assertFalse(
+            {
+                row["disposition"] for row in rows
+            } & {
+                "source_missing",
+                "source_unresolved",
+                "source_conflicting",
+                "boundary_review_required",
+            }
+        )
+
+    def test_exact_amendments_have_exact_action_sources(self) -> None:
+        for row in self.comparison["new_action_dispositions"]:
+            if row["action_stage"] != "amendment":
+                continue
+            self.assertTrue(
+                any(
+                    source["source_type"]
+                    == "house_rules_committee_report"
+                    for source in row["source_references"]
+                ),
+                row["action_id"],
+            )
+
+    def test_production_gaps_do_not_remove_official_actions(self) -> None:
+        complete = set(
+            self.discovery["complete_member_action_snapshot"]["action_ids"]
+        )
+        gaps = set(
+            self.repair_plan["member_action_ingestion_gaps"]["action_ids"]
+        )
+        self.assertEqual(len(gaps), 83)
+        self.assertTrue(gaps <= complete)
+
+    def test_narrow_source_completeness_wording_is_enforced(self) -> None:
+        validate_source_completeness_statement(
+            self.comparison["source_completeness_statement"]
+        )
+        with self.assertRaisesRegex(
+            UniverseDiscoveryValidationError,
+            "exceeds the approved boundary",
+        ):
+            validate_source_completeness_statement(
+                "No candidate official-source gaps remain."
+            )
+
+    def test_boundary_diff_digest_recomputes(self) -> None:
+        self.assertEqual(
+            self.comparison["boundary_diff_sha256"],
+            sha256_json(self.comparison["boundary_diff"]),
+        )
+
     def test_freshness_check_rejects_changed_query_result(self) -> None:
         baseline = {
             "snapshot_id": "baseline",
@@ -235,6 +424,20 @@ class FullIssueUniverseDiscoveryTests(unittest.TestCase):
                 freshness_snapshot_path=DISCOVERY_PATH,
                 issue_id="JUSTICE_PUBLIC_SAFETY",
                 benchmark_action_ids=["house:119:1:1"],
+                baseline_completion={
+                    "completion_subject_sha256": "a" * 64,
+                    "rollback": {"succeeded": True},
+                    "connection_close": {
+                        "client_closed_state_verified": True
+                    },
+                },
+                freshness_completion={
+                    "completion_subject_sha256": "b" * 64,
+                    "rollback": {"succeeded": True},
+                    "connection_close": {
+                        "client_closed_state_verified": True
+                    },
+                },
             )
 
 

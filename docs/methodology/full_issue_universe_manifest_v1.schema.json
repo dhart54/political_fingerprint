@@ -49,10 +49,66 @@
         }
       }
     },
+    "production_snapshot_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["snapshot_id", "raw_snapshot_sha256", "completion_subject_sha256"],
+      "properties": {
+        "snapshot_id": {"type": "string", "minLength": 1},
+        "raw_snapshot_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "completion_subject_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "official_member_action_snapshot": {"$ref": "#/definitions/actionSet"},
+    "substantive_action_set": {"$ref": "#/definitions/actionSet"},
+    "non_directional_substantive_action_set": {"$ref": "#/definitions/actionSet"},
+    "expressive_nonbinding_action_set": {"$ref": "#/definitions/actionSet"},
+    "procedural_context_action_set": {"$ref": "#/definitions/actionSet"},
+    "exact_action_ineligible_set": {"$ref": "#/definitions/actionSet"},
+    "unresolved_candidate_set": {"$ref": "#/definitions/actionSet"},
+    "cross_domain_memberships": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 2,
+        "uniqueItems": true,
+        "items": {"type": "string", "minLength": 1}
+      }
+    },
+    "cross_domain_scope_limitations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {"type": "string", "minLength": 1}
+      }
+    },
+    "source_inventory_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inventory_id", "sha256"],
+      "properties": {
+        "inventory_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
     "action_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
     "action_count": {"type": "integer", "minimum": 1},
     "action_set_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
     "snapshot_source_commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
     "universe_subject_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "definitions": {
+    "actionSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action_ids", "action_count", "action_set_sha256"],
+      "properties": {
+        "action_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "action_count": {"type": "integer", "minimum": 0},
+        "action_set_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    }
   }
 }

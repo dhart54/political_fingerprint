@@ -25,7 +25,17 @@ MANIFEST_SCHEMA = (
 DISCOVERY_PATH = (
     ROOT
     / "docs/editorial/full_record_reviews/proposals/"
-    "f000477_justice_public_safety_119_full_issue_universe_discovery_v1.json"
+    "f000477_justice_public_safety_119_full_issue_universe_discovery_v2.json"
+)
+COMPARISON_PATH = (
+    ROOT
+    / "docs/editorial/full_record_reviews/proposals/"
+    "f000477_justice_public_safety_119_universe_refresh_comparison_v2.json"
+)
+REPAIR_PLAN_PATH = (
+    ROOT
+    / "docs/editorial/full_record_reviews/proposals/"
+    "f000477_justice_public_safety_119_production_repair_plan_v2.json"
 )
 
 UNRESOLVED_DISPOSITIONS = {
@@ -160,6 +170,17 @@ def validate_candidate_accounting(discovery: dict[str, Any]) -> None:
     )
 
 
+def validate_source_completeness_statement(value: str) -> None:
+    _require(
+        value
+        == (
+            "No official-source gaps remain for universe-boundary review "
+            "of the declared candidate set through the stated cutoff."
+        ),
+        "source-completeness claim exceeds the approved boundary",
+    )
+
+
 def validate_bundle(
     discovery_path: Path = DISCOVERY_PATH,
     *,
@@ -190,14 +211,8 @@ def validate_bundle(
         set(proposed_ids) <= set(complete_ids),
         "proposed universe contains an action outside the complete snapshot",
     )
-    _require(
-        all(
-            row["production_classification_state"]["present"]
-            for row in dispositions
-            if row["action_id"] in set(proposed_ids)
-        ),
-        "proposed manifest and production snapshot do not agree on membership presence",
-    )
+    # Production ingestion is compared independently and cannot erase an
+    # official exact action from the candidate or proposed universe.
 
     benchmark = discovery["benchmark_reconciliation"]
     _require(
@@ -282,6 +297,103 @@ def validate_bundle(
         == manifest["universe_subject_sha256"],
         "discovery does not bind the proposed manifest subject",
     )
+    if manifest["manifest_version"] >= 2:
+        _require(
+            manifest["official_member_action_snapshot"]
+            == {
+                key: discovery["complete_member_action_snapshot"][key]
+                for key in (
+                    "action_ids",
+                    "action_count",
+                    "action_set_sha256",
+                )
+            },
+            "V2 manifest does not bind the complete official snapshot",
+        )
+        _require(
+            manifest["substantive_action_set"]
+            == discovery["proposed_universe_set"],
+            "V2 manifest does not bind proposed substantive membership",
+        )
+        non_directional = sorted(
+            row["action_id"]
+            for row in dispositions
+            if row["disposition"]
+            == "proposed_in_scope_non_directional"
+        )
+        _require(
+            set(
+                manifest[
+                    "non_directional_substantive_action_set"
+                ]["action_ids"]
+            )
+            == set(non_directional),
+            "V2 manifest non-directional binding mismatch",
+        )
+        disposition_sets = {
+            "expressive_nonbinding_action_set": "expressive_nonbinding_context",
+            "procedural_context_action_set": "procedural_context",
+            "exact_action_ineligible_set": "proposed_exact_action_ineligible",
+        }
+        for field, disposition in disposition_sets.items():
+            expected = sorted(
+                row["action_id"]
+                for row in dispositions
+                if row["disposition"] == disposition
+            )
+            actual = manifest[field]
+            _require(
+                set(actual["action_ids"]) == set(expected)
+                and actual["action_count"] == len(expected)
+                and actual["action_set_sha256"]
+                == sha256_json(expected),
+                f"V2 manifest {field} binding mismatch",
+            )
+        _require(
+            manifest["unresolved_candidate_set"]
+            == discovery["unresolved_candidate_set"],
+            "V2 manifest unresolved-set binding mismatch",
+        )
+        _require(
+            manifest["source_inventory_binding"]["inventory_id"]
+            == source_inventory["inventory_id"]
+            and manifest["source_inventory_binding"]["sha256"]
+            == source_ref["sha256"],
+            "V2 manifest source-inventory binding mismatch",
+        )
+        _require(
+            manifest["production_snapshot_identity"]["snapshot_id"]
+            == discovery["cutoff"]["production_snapshot_id"]
+            and manifest["production_snapshot_identity"][
+                "raw_snapshot_sha256"
+            ]
+            == discovery["cutoff"]["production_snapshot_sha256"]
+            and manifest["production_snapshot_identity"][
+                "completion_subject_sha256"
+            ]
+            == discovery["final_freshness_check"][
+                "baseline_completion_subject_sha256"
+            ],
+            "V2 manifest production snapshot binding mismatch",
+        )
+        cross_domain_rows = {
+            row["action_id"]: row
+            for row in dispositions
+            if "issue_memberships" in row
+        }
+        _require(
+            manifest["cross_domain_memberships"]
+            == {
+                action_id: row["issue_memberships"]
+                for action_id, row in cross_domain_rows.items()
+            }
+            and manifest["cross_domain_scope_limitations"]
+            == {
+                action_id: row["cross_domain_scope_limitations"]
+                for action_id, row in cross_domain_rows.items()
+            },
+            "V2 manifest cross-domain binding mismatch",
+        )
     for source in manifest["source_manifests"]:
         path = (root / source["path"]).resolve()
         _require(
@@ -307,6 +419,37 @@ def validate_bundle(
         and not discovery["synthesis_eligible"],
         "discovery cannot claim full-record authority or synthesis eligibility",
     )
+    if discovery["discovery_version"] >= 2:
+        _require(
+            not unresolved_ids,
+            "V2 refresh must route every candidate to a resolved disposition",
+        )
+        comparison = _load_json(COMPARISON_PATH)
+        repair_plan = _load_json(REPAIR_PLAN_PATH)
+        new_ids = comparison["new_action_ids"]
+        new_rows = comparison["new_action_dispositions"]
+        _require(
+            len(new_ids) == len(set(new_ids))
+            and [row["action_id"] for row in new_rows] == new_ids,
+            "newly observed actions are not dispositioned exactly once",
+        )
+        validate_source_completeness_statement(
+            comparison["source_completeness_statement"]
+        )
+        _require(
+            comparison["authorizing"] is False
+            and comparison["authority_receipt"] is None
+            and comparison["interpretation_artifact"] is None
+            and comparison["episode_artifact"] is None
+            and comparison["semantic_ir_artifact"] is None
+            and comparison["publication_artifact"] is None,
+            "V2 comparison crossed an unauthorized downstream boundary",
+        )
+        _require(
+            repair_plan["execution_authorized"] is False
+            and repair_plan["production_writes_performed"] is False,
+            "production repair plan must remain non-mutating",
+        )
     authority_receipts = list(
         discovery_path.parent.glob("*full_issue_universe_authority_receipt*.json")
     )

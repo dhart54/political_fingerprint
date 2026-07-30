@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import sys
+import json
+import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -14,6 +16,9 @@ from backend.app.etl.readonly_discovery import (
     normalize_sql,
     sha256_json,
     validate_read_query,
+    validate_completion_record,
+    write_completion_record,
+    write_raw_snapshot,
 )
 
 PROOF = {
@@ -24,6 +29,8 @@ PROOF = {
     "current_schema": "public",
     "postgres_version": "PostgreSQL 17.4 on test",
 }
+TEST_TEMP_ROOT = Path.cwd() / ".local"
+TEST_TEMP_ROOT.mkdir(exist_ok=True)
 
 
 class FakeResult:
@@ -223,6 +230,183 @@ class ReadonlyDiscoveryTransactionTests(unittest.TestCase):
         self.assertFalse(output_dir.exists())
         self.assertEqual(connection.commands[-1][0], "ROLLBACK")
         self.assertTrue(connection.closed)
+
+    def test_completion_record_is_bound_to_closed_rolled_back_snapshot(self) -> None:
+        results = {"complete_member_actions": [{"canonical_action_id": "a"}]}
+        audit = [
+            {"query_id": "complete_member_actions"},
+            {"query_id": "transaction_rollback"},
+        ]
+        with tempfile.TemporaryDirectory(dir=TEST_TEMP_ROOT) as directory:
+            output = Path(directory)
+            raw = write_raw_snapshot(
+                output,
+                snapshot_id="snapshot-a",
+                proof=PROOF,
+                results=results,
+                audit=audit,
+            )
+            completion = write_completion_record(
+                output,
+                snapshot_id="snapshot-a",
+                raw_snapshot_path=raw,
+                results=results,
+                audit=audit,
+                command_ids=[
+                    "complete_member_actions",
+                    "transaction_rollback",
+                ],
+                rollback_attempted=True,
+                rollback_succeeded=True,
+                connection_close_attempted=True,
+                connection_close_succeeded=True,
+                connection_closed_state_supported=True,
+                connection_closed_state_verified=True,
+            )
+            snapshot, proof = validate_completion_record(raw, completion)
+        self.assertEqual(snapshot["snapshot_id"], "snapshot-a")
+        self.assertTrue(proof["rollback"]["succeeded"])
+        self.assertTrue(
+            proof["connection_close"]["client_closed_state_verified"]
+        )
+
+    def test_completion_record_rejects_substitution_and_false_states(self) -> None:
+        results = {"complete_member_actions": [{"canonical_action_id": "a"}]}
+        audit = [
+            {"query_id": "complete_member_actions"},
+            {"query_id": "transaction_rollback"},
+        ]
+        with tempfile.TemporaryDirectory(dir=TEST_TEMP_ROOT) as directory:
+            output = Path(directory)
+            raw = write_raw_snapshot(
+                output,
+                snapshot_id="snapshot-a",
+                proof=PROOF,
+                results=results,
+                audit=audit,
+            )
+            completion = write_completion_record(
+                output,
+                snapshot_id="snapshot-a",
+                raw_snapshot_path=raw,
+                results=results,
+                audit=audit,
+                command_ids=[
+                    "complete_member_actions",
+                    "transaction_rollback",
+                ],
+                rollback_attempted=True,
+                rollback_succeeded=True,
+                connection_close_attempted=True,
+                connection_close_succeeded=True,
+                connection_closed_state_supported=True,
+                connection_closed_state_verified=True,
+            )
+            original = json.loads(completion.read_text(encoding="utf-8"))
+            for field_path in (
+                ("snapshot_id",),
+                ("raw_snapshot", "sha256"),
+                ("rollback", "succeeded"),
+                ("connection_close", "succeeded"),
+                ("connection_close", "client_closed_state_verified"),
+            ):
+                altered = json.loads(json.dumps(original))
+                target = altered
+                for key in field_path[:-1]:
+                    target = target[key]
+                key = field_path[-1]
+                target[key] = (
+                    "snapshot-b"
+                    if field_path == ("snapshot_id",)
+                    else "0" * 64
+                    if field_path == ("raw_snapshot", "sha256")
+                    else False
+                )
+                altered["completion_subject_sha256"] = sha256_json(
+                    {
+                        key: value
+                        for key, value in altered.items()
+                        if key != "completion_subject_sha256"
+                    }
+                )
+                completion.write_text(json.dumps(altered), encoding="utf-8")
+                with self.subTest(field_path=field_path):
+                    with self.assertRaises(ValueError):
+                        validate_completion_record(raw, completion)
+
+    def test_completion_record_rejects_cross_run_pair(self) -> None:
+        audit = [
+            {"query_id": "complete_member_actions"},
+            {"query_id": "transaction_rollback"},
+        ]
+        with tempfile.TemporaryDirectory(dir=TEST_TEMP_ROOT) as directory:
+            output = Path(directory)
+            raw_a = write_raw_snapshot(
+                output,
+                snapshot_id="snapshot-a",
+                proof=PROOF,
+                results={"x": [{"run": "a"}]},
+                audit=audit,
+            )
+            raw_b = write_raw_snapshot(
+                output,
+                snapshot_id="snapshot-b",
+                proof=PROOF,
+                results={"x": [{"run": "b"}]},
+                audit=audit,
+            )
+            completion_b = write_completion_record(
+                output,
+                snapshot_id="snapshot-b",
+                raw_snapshot_path=raw_b,
+                results={"x": [{"run": "b"}]},
+                audit=audit,
+                command_ids=[
+                    "complete_member_actions",
+                    "transaction_rollback",
+                ],
+                rollback_attempted=True,
+                rollback_succeeded=True,
+                connection_close_attempted=True,
+                connection_close_succeeded=True,
+                connection_closed_state_supported=True,
+                connection_closed_state_verified=True,
+            )
+            with self.assertRaises(ValueError):
+                validate_completion_record(raw_a, completion_b)
+
+    def test_copied_true_without_bound_runner_proof_fails(self) -> None:
+        audit = [
+            {"query_id": "complete_member_actions"},
+            {"query_id": "transaction_rollback"},
+        ]
+        with tempfile.TemporaryDirectory(dir=TEST_TEMP_ROOT) as directory:
+            output = Path(directory)
+            raw = write_raw_snapshot(
+                output,
+                snapshot_id="snapshot-a",
+                proof=PROOF,
+                results={"x": []},
+                audit=audit,
+            )
+            authored = output / "authored.completion.json"
+            authored.write_text(
+                json.dumps(
+                    {
+                        "snapshot_id": "snapshot-a",
+                        "rollback": {"attempted": True, "succeeded": True},
+                        "connection_close": {
+                            "attempted": True,
+                            "succeeded": True,
+                            "client_closed_state_supported": True,
+                            "client_closed_state_verified": True,
+                        },
+                    }
+                ),
+                encoding="utf-8",
+            )
+            with self.assertRaises(ValueError):
+                validate_completion_record(raw, authored)
 
 
 if __name__ == "__main__":
