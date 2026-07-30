@@ -19,6 +19,7 @@ from app.editorial_artifacts.publication_activation import (
     load_activation_bundle,
     load_pre_activation_baseline_manifests,
 )
+from scripts.disposable_database_url import require_exact_loopback_postgres_url
 from scripts import editorial_artifact_store as store
 
 FOUSHEE_JUSTICE_119_POSITIONS = {
@@ -51,9 +52,12 @@ def main() -> int:
         ),
     )
     args = parser.parse_args()
-    db_url = os.getenv(args.database_url_env)
-    if not db_url or "localhost" not in db_url and "127.0.0.1" not in db_url:
-        raise SystemExit("disposable initializer requires a loopback PostgreSQL URL")
+    try:
+        db_url = require_exact_loopback_postgres_url(
+            os.getenv(args.database_url_env)
+        )
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
 
     import psycopg
     from psycopg.rows import dict_row
