@@ -19,6 +19,8 @@
     "full_record_issue_interpretation_contract": "docs/methodology/full_record_issue_interpretation_v1.md",
     "full_record_issue_interpretation_schema": "docs/methodology/full_record_issue_interpretation_v1.schema.json",
     "full_record_issue_interpretation_validator": "scripts/validate_full_record_issue_interpretation.py",
+    "full_issue_universe_discovery_schema": "docs/methodology/full_issue_universe_discovery_v1.schema.json",
+    "full_issue_universe_discovery_validator": "scripts/validate_full_issue_universe_discovery.py",
     "public_review_state_catalog": "backend/app/editorial_presentations/public_review_state_catalog_v1.json",
     "public_review_state_catalog_builder": "scripts/build_public_review_state_catalog.py",
     "frontend_pass_a_design": "docs/design/frontend_pass_a_v1.md",
@@ -43,6 +45,64 @@
     "f000477_justice_119_full_record_semantic_validation": "absent",
     "f000477_justice_119_full_record_human_approval": "absent",
     "f000477_justice_119_full_issue_synthesis_eligible": false,
+    "f000477_justice_119_universe_discovery_state": "pending_human_universe_review",
+    "f000477_justice_119_current_universe_proposal_version": 2,
+    "f000477_justice_119_universe_discovery_cutoff": "2026-07-23",
+    "f000477_justice_119_latest_official_roll": 283,
+    "f000477_justice_119_complete_member_action_count": 638,
+    "f000477_justice_119_candidate_recall_count": 172,
+    "f000477_justice_119_proposed_universe_count": 37,
+    "f000477_justice_119_expressive_count": 7,
+    "f000477_justice_119_procedural_count": 69,
+    "f000477_justice_119_exact_action_ineligible_count": 59,
+    "f000477_justice_119_unresolved_boundary_count": 0,
+    "f000477_justice_119_proposed_universe_manifest": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_full_issue_universe_manifest_v2.json",
+    "f000477_justice_119_universe_discovery_artifact": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_full_issue_universe_discovery_v2.json",
+    "f000477_justice_119_source_inventory": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_source_inventory_v2.json",
+    "f000477_justice_119_universe_discovery_configuration": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_universe_discovery_config_v2.json",
+    "f000477_justice_119_universe_refresh_comparison": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_universe_refresh_comparison_v2.json",
+    "f000477_justice_119_production_repair_plan": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_production_repair_plan_v2.json",
+    "f000477_justice_119_universe_discovery_review_packet": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_universe_review_packet_v2.md",
+    "f000477_justice_119_authority_review_selector": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_full_issue_universe_manifest_v2.json",
+    "f000477_justice_119_interpretation_planning_selector": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_full_issue_universe_discovery_v2.json",
+    "f000477_justice_119_current_universe_identities": {
+      "source_inventory": {
+        "id": "source-inventory:F000477:JUSTICE_PUBLIC_SAFETY:119:v2",
+        "sha256": "2a8213b2b787a9fef0e330d26df86628dc47bde476a0642a8fcfb194e2394aec"
+      },
+      "discovery": {
+        "id": "universe-discovery:F000477:JUSTICE_PUBLIC_SAFETY:119:v2",
+        "sha256": "4235fa721c7f0d55e62a9ce3b908e958346df7b7e396014898e2c5850ff8bbb1"
+      },
+      "manifest": {
+        "id": "full-universe:f000477:justice_public_safety:119:proposed:v2",
+        "sha256": "17cc2d30c51dadc0e1d6afe3eb927fb8a3f798b909d6558abb116108c46cd88c"
+      },
+      "configuration": {
+        "id": "universe-discovery-config:F000477:JUSTICE_PUBLIC_SAFETY:119:v2",
+        "sha256": "36006a41625bd6b6fdcab3a3dd8ae346e310ffa73828df1e60b509b9b1528f7c"
+      },
+      "comparison": {
+        "id": "universe-refresh-comparison:F000477:JUSTICE_PUBLIC_SAFETY:119:v2",
+        "sha256": "24b1ad0a3d7dcfa0fad3a3e622ef8b2b7439ab6c4b5e00894f55f9843a2a85b7"
+      },
+      "boundary_diff_sha256": "8082573c1fb0b4261476a93f0d3fba5171c41e4ce4f8569816f15972e5c751e8",
+      "repair_plan": {
+        "id": "production-repair-plan:F000477:JUSTICE_PUBLIC_SAFETY:119:v2",
+        "sha256": "87761d9e52cc88246c662b805b214f90d2b87246252b4f7d14c6230faf036f00"
+      },
+      "review_packet_sha256": "d98f4fab5418ec468a82fba65992600930dc6b74a1aaeb2dea7447f89658b054"
+    },
+    "f000477_justice_119_historical_universe_discovery_v1": {
+      "status": "historical_non_authoritative_superseded",
+      "manifest": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_full_issue_universe_manifest_v1.json",
+      "discovery": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_full_issue_universe_discovery_v1.json",
+      "source_inventory": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_source_inventory_v1.json",
+      "review_packet": "docs/review_packets/foushee_justice_119_universe_discovery_v1.md",
+      "selectable_for_authority_review": false,
+      "selectable_for_interpretation_planning": false
+    },
+    "f000477_justice_119_universe_authority_receipt": "absent",
     "frontend_pass_a_state_contract": "implemented_closed_public_catalog",
     "frontend_pass_a_public_label": "Reviewed benchmark sample",
     "frontend_pass_a_catalog_authority": "descriptive_non_authorizing"

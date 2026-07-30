@@ -266,6 +266,7 @@
             "eligible",
             "ineligible",
             "procedural_context",
+            "expressive_nonbinding_context",
             "unresolved"
           ]
         },
@@ -385,6 +386,7 @@
             "interpreted_substantive_non_directional",
             "pending_interpretation",
             "procedural_context",
+            "expressive_nonbinding_context",
             "exact_action_ineligible",
             "outside_service",
             "missing_evidence",
@@ -395,6 +397,12 @@
         },
         "review_friendliness": {
           "$ref": "#/definitions/reviewFriendliness"
+        },
+        "issue_memberships": {
+          "$ref": "#/definitions/nonEmptyUniqueStrings"
+        },
+        "cross_domain_scope_limitations": {
+          "$ref": "#/definitions/nonEmptyUniqueStrings"
         },
         "episode_id": {
           "anyOf": [
@@ -456,9 +464,31 @@
             }
           },
           "else": {
-            "properties": {
-              "interpretation": {
-                "type": "null"
+            "if": {
+              "properties": {
+                "disposition": {
+                  "const": "expressive_nonbinding_context"
+                }
+              },
+              "required": [
+                "disposition"
+              ]
+            },
+            "then": {
+              "properties": {
+                "episode_id": {
+                  "type": "null"
+                },
+                "episode_membership_state": {
+                  "const": "not_applicable"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "interpretation": {
+                  "type": "null"
+                }
               }
             }
           }
@@ -839,6 +869,10 @@
           "minimum": 0
         },
         "procedural_context_actions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "expressive_nonbinding_actions": {
           "type": "integer",
           "minimum": 0
         },

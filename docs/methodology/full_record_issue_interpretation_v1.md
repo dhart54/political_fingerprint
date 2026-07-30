@@ -83,7 +83,11 @@ cannot assert it independently.
 
 `Yea` and `Nay` may contribute directional evidence. `Present` and `Not Voting`
 are resolved review-friendly actions but remain non-directional. Procedural and
-context-only actions remain visible and non-counting. Verified
+context-only actions remain visible and non-counting. Expressive nonbinding
+actions are a separate visible context class: they record what a chamber
+expressed without creating, amending, funding, directing, or otherwise changing
+operative law or administration. They are not procedural, remain non-counting,
+and cannot enter synthesis or support/opposition accounting. Verified
 `not_yet_serving` and `no_longer_serving` actions remain outside service.
 Missing, unresolved, conflicting, and source-constraint-blocked actions retain
 their exact states.
@@ -146,6 +150,7 @@ and no outside action may appear. Each receives one closed disposition:
 - `interpreted_substantive_non_directional`
 - `pending_interpretation`
 - `procedural_context`
+- `expressive_nonbinding_context`
 - `exact_action_ineligible`
 - `outside_service`
 - `missing_evidence`
@@ -176,7 +181,7 @@ emerging pattern.
 
 When more than one non-interpreted state is true, V1 assigns the single
 disposition in this deterministic precedence: verified outside service;
-procedural context; exact-action ineligibility; source conflict; source
+procedural context; expressive nonbinding context; exact-action ineligibility; source conflict; source
 constraint; missing evidence; then unresolved source or identity. Orthogonal
 detail remains present in `review_friendliness`; precedence prevents duplicate
 accounting without erasing the underlying state.
@@ -184,6 +189,22 @@ accounting without erasing the underlying state.
 `full_record_action_accounting=passed` is reserved for a complete
 `full_defined_issue_record`. Exact accounting of a benchmark sample remains
 valid but does not pass the full-record gate.
+
+## Cross-domain exact actions
+
+An exact action may belong to more than one issue only when its own operative
+choice independently changes a substantive mechanism in each named domain.
+Membership is invariant to the member's vote direction and party.
+
+For Justice & Public Safety, an otherwise National Security FISA action may be
+included when the exact House choice directly changes surveillance authority;
+FISC or other court authority; warrant, query, collection, or review powers;
+law-enforcement use or oversight of surveillance; or civil-liberty protections
+attached to those powers. The record must retain explicit National Security
+membership and explicit cross-domain metadata. Any later Justice interpretation
+is limited to surveillance, court authority, and attached civil-liberty
+protections; it cannot establish a general policing, criminal-law, or domestic
+public-safety position.
 
 ## Episode completion
 

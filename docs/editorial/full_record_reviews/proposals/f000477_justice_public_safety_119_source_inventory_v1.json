@@ -1,0 +1,87 @@
+{
+  "acquisition_as_of_utc": "2026-07-30T17:35:00Z",
+  "inventory_id": "source-inventory:F000477:JUSTICE_PUBLIC_SAFETY:119:v1",
+  "inventory_version": 1,
+  "production_query_audit": {
+    "all_queries_bounded_or_transaction_control": true,
+    "query_audit_sha256": "0c240c102e57f81d947149544a0ba19d9616a825704811da9f9cd633f7a484fa",
+    "query_count": 15,
+    "query_ids": [
+      "transaction_begin",
+      "transaction_safety_proof",
+      "set_local_statement_timeout",
+      "set_local_lock_timeout",
+      "set_local_idle_timeout",
+      "set_local_application_name",
+      "public_schema_catalog",
+      "member_identity",
+      "complete_member_actions",
+      "latest_classification_state",
+      "member_fingerprints",
+      "member_service_evidence",
+      "member_editorial_artifacts",
+      "member_publication_registry",
+      "transaction_rollback"
+    ]
+  },
+  "public_api_response_manifest_sha256": "181195d379686810cffa20837b38643002802f2e93f83f24a281aee5ce13523e",
+  "schema_version": "full_issue_universe_source_inventory_v1",
+  "snapshot_source_commit": "9d053e1bdabb2a2caf9e3f392d72d119a9c25983",
+  "sources": [
+    {
+      "artifact_count": 1,
+      "artifact_set_sha256": "ed366c5b89c275fd6fd861dee976ba51ae0590af7e6a1b7da2bf9d5f74c7adb8",
+      "record_count": 555,
+      "source_id": "production-readonly-snapshot",
+      "source_kind": "production_postgresql_readonly_snapshot",
+      "storage_scope": "secure_external"
+    },
+    {
+      "artifact_count": 584,
+      "artifact_set_sha256": "dca5f12049f5e56cff2c70492c79c5484a88911b80ded897cb2d1057eb558d15",
+      "record_count": 577,
+      "source_id": "repository-house-clerk-through-cutoff",
+      "source_kind": "house_clerk_xml",
+      "storage_scope": "repository"
+    },
+    {
+      "artifact_count": 61,
+      "artifact_set_sha256": "c2fe7ce8c8399aba16388089fa9962322631afa028ccb722c8c269252d6ab403",
+      "record_count": 61,
+      "source_id": "official-house-clerk-after-cutoff",
+      "source_kind": "house_clerk_xml",
+      "storage_scope": "secure_external"
+    },
+    {
+      "artifact_count": 233,
+      "artifact_set_sha256": "1dbfc9c40f3a54a3d2c39872c8412d1cbbda542c446115cc006a5c7bb11e2fbb",
+      "record_count": 233,
+      "source_id": "repository-congress-gov-cache",
+      "source_kind": "congress_gov_json",
+      "storage_scope": "repository"
+    },
+    {
+      "artifact_count": 175,
+      "artifact_set_sha256": "6db1b0152d774fcea53c9903230791c7327dc015a4dbbe9e5763abe90551dc8f",
+      "record_count": 175,
+      "source_id": "candidate-congress-gov-acquisition",
+      "source_kind": "congress_gov_json",
+      "storage_scope": "secure_external"
+    },
+    {
+      "artifact_count": 9,
+      "artifact_set_sha256": "181195d379686810cffa20837b38643002802f2e93f83f24a281aee5ce13523e",
+      "record_count": 9,
+      "source_id": "deployed-public-api-reconciliation",
+      "source_kind": "public_api_json",
+      "storage_scope": "secure_external"
+    }
+  ],
+  "subject": {
+    "congress_scope": [
+      119
+    ],
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "member_id": "F000477"
+  }
+}

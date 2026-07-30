@@ -1,0 +1,86 @@
+{
+  "action_count": 27,
+  "action_ids": [
+    "house:119:1:27",
+    "house:119:1:32",
+    "house:119:1:33",
+    "house:119:1:42",
+    "house:119:1:98",
+    "house:119:1:123",
+    "house:119:1:128",
+    "house:119:1:130",
+    "house:119:1:131",
+    "house:119:1:158",
+    "house:119:1:162",
+    "house:119:1:166",
+    "house:119:1:185",
+    "house:119:1:270",
+    "house:119:1:271",
+    "house:119:1:274",
+    "house:119:1:275",
+    "house:119:1:289",
+    "house:119:1:298",
+    "house:119:1:299",
+    "house:119:1:340",
+    "house:119:1:351",
+    "house:119:2:157",
+    "house:119:2:162",
+    "house:119:2:165",
+    "house:119:2:169",
+    "house:119:2:171"
+  ],
+  "action_set_sha256": "852100ab4a1056b071c2dfe60acd1fd08f9bdd6f8c6bcc1cff0e0b213e41638e",
+  "boundary": {
+    "as_of_date": "2026-07-30",
+    "chambers": [
+      "house"
+    ],
+    "end_date": "2026-06-11",
+    "service_boundary": "Valerie Foushee (F000477) is represented as the serving NC-04 House member throughout the included 119th-Congress action dates; the governed production service record reports service beginning in 2023 with year-level precision and no service end.",
+    "sessions": [
+      1,
+      2
+    ],
+    "start_date": "2025-01-03"
+  },
+  "manifest_id": "full-universe:f000477:justice_public_safety:119:proposed:v1",
+  "manifest_version": 1,
+  "rules": {
+    "exclusion": [
+      "Keyword recall alone cannot establish Justice membership.",
+      "Parent-measure or rule context cannot establish the issue eligibility of a narrower exact action.",
+      "Procedural controls remain context-only and non-counting.",
+      "Actions assigned by official metadata to another policy area are excluded unless carried explicitly for human boundary review.",
+      "Actions after 2026-06-11 are outside this content-addressed snapshot and require a later refresh."
+    ],
+    "inclusion": [
+      "The member action is inside the declared House, Congress, session, date, and service boundary.",
+      "The exact action has an official House Clerk identity and resolved member action.",
+      "The exact action is substantive rather than a rule, previous-question vote, recommit/commit motion, tabling/referral/discharge motion, or other procedural control.",
+      "Congress.gov assigns the acted-on measure to Crime and Law Enforcement or Law, or the governed seven-action benchmark supplies exact-action Justice membership.",
+      "Present or Not Voting actions may remain in the universe as non-directional records; they do not become support or opposition evidence."
+    ]
+  },
+  "schema_version": "full_issue_universe_manifest_v1",
+  "snapshot_source_commit": "9d053e1bdabb2a2caf9e3f392d72d119a9c25983",
+  "source_manifests": [
+    {
+      "artifact_id": "source-inventory:F000477:JUSTICE_PUBLIC_SAFETY:119:v1",
+      "path": "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_source_inventory_v1.json",
+      "sha256": "30b6c0097e2b34b494f2aa95ac0c8236782399495dd1c4abb6bbdb84dfc0a85d"
+    },
+    {
+      "artifact_id": "foushee_justice_public_safety_119_v1",
+      "path": "docs/editorial/valerie_foushee_justice_public_safety_gold_v1/source_manifest.json",
+      "sha256": "8c03c55079b8e499e88a25381d0b7e3e641ecb393391029a023f37dcda4f2424"
+    }
+  ],
+  "subject": {
+    "congress_scope": [
+      119
+    ],
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "member_id": "F000477"
+  },
+  "universe_subject_sha256": "d312b23ca67541b227270203b7cdab4fd51818eb3900c73d98c0bce13b3f98e7"
+}

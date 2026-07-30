@@ -1,0 +1,74 @@
+{
+  "schema_version": "full_issue_universe_discovery_config_v1",
+  "config_id": "universe-discovery-config:F000477:JUSTICE_PUBLIC_SAFETY:119:v1",
+  "subject": {
+    "member_id": "F000477",
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "congress_scope": [
+      119
+    ]
+  },
+  "boundary": {
+    "sessions": [
+      1,
+      2
+    ],
+    "start_date": "2025-01-03",
+    "end_date": "2026-06-11",
+    "as_of_date": "2026-07-30",
+    "chambers": [
+      "house"
+    ],
+    "service_boundary": "Valerie Foushee (F000477) is represented as the serving NC-04 House member throughout the included 119th-Congress action dates; the governed production service record reports service beginning in 2023 with year-level precision and no service end."
+  },
+  "acquisition_as_of_utc": "2026-07-30T17:35:00Z",
+  "connection_mode_used": "supavisor_session_pooler",
+  "snapshot_source_commit": "9d053e1bdabb2a2caf9e3f392d72d119a9c25983",
+  "benchmark_action_ids": [
+    "house:119:1:32",
+    "house:119:1:33",
+    "house:119:1:130",
+    "house:119:1:131",
+    "house:119:1:166",
+    "house:119:1:275",
+    "house:119:1:299"
+  ],
+  "explicit_recall_action_ids": [
+    "house:119:1:6",
+    "house:119:1:23"
+  ],
+  "candidate_recall_regex": "\\b(crime|criminal|police|policing|law enforcement|fentanyl|firearm|weapon|prison|sentenc\\w*|offender|bail|court|judicial|justice|public safety|riot|terror\\w*|fraud|controlled substances?|drug\\w*|juvenile|homicide|murder|assault|prosecut\\w*|attorney general|homeland security|immigration enforcement|deport\\w*|violence|violent|victim|traffick\\w*|detention|injunction|surveillance|fisa|warrant|sex offense|sexual abuse|child abuse|domestic violence|impeach\\w*|censur\\w*)\\b",
+  "official_in_scope_policy_areas": [
+    "Crime and Law Enforcement",
+    "Law"
+  ],
+  "boundary_review_action_ids": [
+    "house:119:1:6",
+    "house:119:1:17",
+    "house:119:1:23",
+    "house:119:1:159",
+    "house:119:1:179",
+    "house:119:1:220",
+    "house:119:1:286",
+    "house:119:2:5",
+    "house:119:2:7",
+    "house:119:2:87",
+    "house:119:2:102",
+    "house:119:2:155",
+    "house:119:2:221"
+  ],
+  "inclusion_rules": [
+    "The member action is inside the declared House, Congress, session, date, and service boundary.",
+    "The exact action has an official House Clerk identity and resolved member action.",
+    "The exact action is substantive rather than a rule, previous-question vote, recommit/commit motion, tabling/referral/discharge motion, or other procedural control.",
+    "Congress.gov assigns the acted-on measure to Crime and Law Enforcement or Law, or the governed seven-action benchmark supplies exact-action Justice membership.",
+    "Present or Not Voting actions may remain in the universe as non-directional records; they do not become support or opposition evidence."
+  ],
+  "exclusion_rules": [
+    "Keyword recall alone cannot establish Justice membership.",
+    "Parent-measure or rule context cannot establish the issue eligibility of a narrower exact action.",
+    "Procedural controls remain context-only and non-counting.",
+    "Actions assigned by official metadata to another policy area are excluded unless carried explicitly for human boundary review.",
+    "Actions after 2026-06-11 are outside this content-addressed snapshot and require a later refresh."
+  ]
+}
