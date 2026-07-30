@@ -246,3 +246,33 @@ def test_evidence_api_exposes_projection_source_and_preserved_raw_layer(
         "raw_evidence" in row and "governed_receipt_projection" in row
         for row in response["evidence"]
     )
+
+
+def test_receipts_only_member_does_not_query_publication_state(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    raw_response = {
+        "legislator_id": "leg_alex_morgan",
+        "domain": "EDUCATION_WORKFORCE",
+        "evidence": [],
+    }
+    monkeypatch.setattr(
+        "app.api.positions.get_position_evidence_response",
+        lambda **_kwargs: raw_response,
+    )
+    monkeypatch.setattr(
+        "app.api.positions.get_legislator_profile",
+        lambda **_kwargs: {"bioguide_id": "A000001"},
+    )
+    monkeypatch.setattr(
+        "app.api.positions._load_publication_rows",
+        lambda: pytest.fail("receipts-only member queried publication state"),
+    )
+
+    response = get_legislator_position_evidence(
+        "leg_alex_morgan",
+        "EDUCATION_WORKFORCE",
+        scope="all",
+    )
+
+    assert response is raw_response
