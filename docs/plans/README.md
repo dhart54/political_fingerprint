@@ -8,6 +8,10 @@ This index distinguishes the branch's one active execution plan from unresolved 
 
 ## Retained unresolved plans
 
+- [Foushee Justice 119 Universe Discovery V1](foushee_justice_119_universe_discovery_v1.md)
+  — completed non-authorizing discovery proposal retained pending human review
+  of the proposed universe boundary and unresolved candidates.
+
 - [Full-Record Issue Interpretation Contract V1](full_record_issue_interpretation_contract_v1.md) — completed contract milestone retained for its review-scope and claim-authority record.
 
 - [Editorial Hard Cutover V1](editorial_hard_cutover_v1_spec.md) — completed

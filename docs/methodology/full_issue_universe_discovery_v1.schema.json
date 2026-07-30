@@ -1,0 +1,1093 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://political-fingerprint.local/schemas/full_issue_universe_discovery_v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "discovery_id",
+    "discovery_version",
+    "subject",
+    "authority_status",
+    "scope_claim",
+    "full_record_claim",
+    "synthesis_eligible",
+    "cutoff",
+    "read_only_session_proof",
+    "query_allowlist_audit",
+    "data_lineage",
+    "complete_member_action_snapshot",
+    "candidate_recall_set",
+    "proposed_universe_set",
+    "unresolved_candidate_set",
+    "candidate_dispositions",
+    "comparison",
+    "classification_reconciliation",
+    "benchmark_reconciliation",
+    "public_api_reconciliation",
+    "final_freshness_check",
+    "source_gaps",
+    "acquisition_gaps",
+    "blockers",
+    "proposed_manifest",
+    "source_inventory",
+    "universe_authority_receipt"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "full_issue_universe_discovery_v1"
+    },
+    "discovery_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "discovery_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "subject": {
+      "$ref": "#/definitions/subject"
+    },
+    "authority_status": {
+      "const": "pending_human_universe_review"
+    },
+    "scope_claim": {
+      "const": "proposed_through_recorded_cutoff"
+    },
+    "full_record_claim": {
+      "const": false
+    },
+    "synthesis_eligible": {
+      "const": false
+    },
+    "cutoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "discovery_as_of_utc",
+        "latest_included_vote_date",
+        "latest_production_member_vote_date",
+        "latest_production_source_ingest_at",
+        "latest_official_observed_vote_date",
+        "acquisition_as_of_utc",
+        "boundary",
+        "production_snapshot_id",
+        "production_snapshot_sha256"
+      ],
+      "properties": {
+        "discovery_as_of_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "latest_included_vote_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "latest_production_member_vote_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "latest_production_source_ingest_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "latest_official_observed_vote_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "acquisition_as_of_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "boundary": {
+          "$ref": "#/definitions/boundary"
+        },
+        "production_snapshot_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "production_snapshot_sha256": {
+          "$ref": "#/definitions/sha256"
+        }
+      }
+    },
+    "read_only_session_proof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_transaction_read_only",
+        "transaction_read_only",
+        "transaction_isolation",
+        "statement_timeout_ms",
+        "lock_timeout_ms",
+        "idle_in_transaction_session_timeout_ms",
+        "application_name",
+        "database_identity_sha256",
+        "schema",
+        "postgres_version",
+        "connection_mode",
+        "first_sql_command",
+        "all_production_queries_inside_single_proven_transaction",
+        "transaction_ended_with_rollback",
+        "connection_closed"
+      ],
+      "properties": {
+        "default_transaction_read_only": {
+          "enum": [
+            "on",
+            "off"
+          ]
+        },
+        "transaction_read_only": {
+          "const": "on"
+        },
+        "transaction_isolation": {
+          "const": "repeatable read"
+        },
+        "statement_timeout_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "lock_timeout_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "idle_in_transaction_session_timeout_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "application_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "database_identity_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "schema": {
+          "const": "public"
+        },
+        "postgres_version": {
+          "type": "string",
+          "pattern": "^PostgreSQL "
+        },
+        "connection_mode": {
+          "enum": [
+            "direct_supabase",
+            "supavisor_session_pooler",
+            "supavisor_transaction_pooler"
+          ]
+        },
+        "first_sql_command": {
+          "const": "BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY"
+        },
+        "all_production_queries_inside_single_proven_transaction": {
+          "const": true
+        },
+        "transaction_ended_with_rollback": {
+          "const": true
+        },
+        "connection_closed": {
+          "const": true
+        }
+      }
+    },
+    "query_allowlist_audit": {
+      "$ref": "#/definitions/queryAudit"
+    },
+    "data_lineage": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component",
+          "production_objects",
+          "stable_keys",
+          "consumer_paths"
+        ],
+        "properties": {
+          "component": {
+            "type": "string",
+            "minLength": 1
+          },
+          "production_objects": {
+            "$ref": "#/definitions/nonemptyStrings"
+          },
+          "stable_keys": {
+            "$ref": "#/definitions/nonemptyStrings"
+          },
+          "consumer_paths": {
+            "$ref": "#/definitions/nonemptyStrings"
+          }
+        }
+      }
+    },
+    "complete_member_action_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_ids",
+        "action_count",
+        "action_set_sha256",
+        "sanitized_records_sha256",
+        "production_action_count",
+        "repository_official_action_count"
+      ],
+      "properties": {
+        "action_ids": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "action_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "action_set_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "sanitized_records_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "production_action_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "repository_official_action_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "candidate_recall_set": {
+      "$ref": "#/definitions/actionSet"
+    },
+    "proposed_universe_set": {
+      "$ref": "#/definitions/actionSet"
+    },
+    "unresolved_candidate_set": {
+      "$ref": "#/definitions/actionSet"
+    },
+    "candidate_dispositions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/candidateDisposition"
+      }
+    },
+    "comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "production_only_before_cutoff",
+        "repository_official_only_before_cutoff",
+        "official_only_after_cutoff",
+        "duplicate_production_canonical_ids",
+        "duplicate_official_canonical_ids",
+        "conflicting_vote_or_measure_state",
+        "benign_question_or_description_representation_differences"
+      ],
+      "properties": {
+        "production_only_before_cutoff": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "repository_official_only_before_cutoff": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "official_only_after_cutoff": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "duplicate_production_canonical_ids": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "duplicate_official_canonical_ids": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "conflicting_vote_or_measure_state": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "action_id",
+              "fields",
+              "classification",
+              "note"
+            ],
+            "properties": {
+              "action_id": {
+                "$ref": "#/definitions/actionId"
+              },
+              "fields": {
+                "$ref": "#/definitions/nonemptyStrings"
+              },
+              "classification": {
+                "enum": [
+                  "benign_representation_difference",
+                  "stale_derived_data",
+                  "missing_acquisition",
+                  "potential_production_defect",
+                  "methodology_boundary_requiring_human_decision"
+                ]
+              },
+              "note": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "benign_question_or_description_representation_differences": {
+          "$ref": "#/definitions/actionIds"
+        }
+      }
+    },
+    "classification_reconciliation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "production_primary_justice_set",
+        "proposed_not_primary_justice",
+        "primary_justice_not_proposed"
+      ],
+      "properties": {
+        "production_primary_justice_set": {
+          "$ref": "#/definitions/actionSet"
+        },
+        "proposed_not_primary_justice": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "primary_justice_not_proposed": {
+          "$ref": "#/definitions/actionIds"
+        }
+      }
+    },
+    "benchmark_reconciliation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "expected_action_ids",
+        "missing_action_ids",
+        "all_present",
+        "all_proposed_in_scope"
+      ],
+      "properties": {
+        "expected_action_ids": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "missing_action_ids": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "all_present": {
+          "const": true
+        },
+        "all_proposed_in_scope": {
+          "const": true
+        }
+      }
+    },
+    "public_api_reconciliation": {
+      "$ref": "#/definitions/publicApi"
+    },
+    "final_freshness_check": {
+      "$ref": "#/definitions/finalFreshnessCheck"
+    },
+    "source_gaps": {
+      "$ref": "#/definitions/stringArray"
+    },
+    "acquisition_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "classification",
+          "action_ids",
+          "note"
+        ],
+        "properties": {
+          "classification": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action_ids": {
+            "$ref": "#/definitions/actionIds"
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "blockers": {
+      "$ref": "#/definitions/stringArray"
+    },
+    "proposed_manifest": {
+      "$ref": "#/definitions/artifactReference"
+    },
+    "source_inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inventory_id",
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "inventory_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/definitions/sha256"
+        }
+      }
+    },
+    "universe_authority_receipt": {
+      "type": "null"
+    }
+  },
+  "definitions": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "actionId": {
+      "type": "string",
+      "pattern": "^(house|senate):[0-9]+:[0-9]+:[0-9]+$"
+    },
+    "actionIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/actionId"
+      }
+    },
+    "actionSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_ids",
+        "action_count",
+        "action_set_sha256"
+      ],
+      "properties": {
+        "action_ids": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "action_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "action_set_sha256": {
+          "$ref": "#/definitions/sha256"
+        }
+      }
+    },
+    "actionSetDigestComparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "baseline_action_count",
+        "baseline_action_set_sha256",
+        "freshness_action_count",
+        "freshness_action_set_sha256"
+      ],
+      "properties": {
+        "baseline_action_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "baseline_action_set_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "freshness_action_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "freshness_action_set_sha256": {
+          "$ref": "#/definitions/sha256"
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "member_id",
+        "issue_id",
+        "congress_scope"
+      ],
+      "properties": {
+        "member_id": {
+          "type": "string",
+          "pattern": "^[A-Z][0-9]{6}$"
+        },
+        "issue_id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]+$"
+        },
+        "congress_scope": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sessions",
+        "start_date",
+        "end_date",
+        "as_of_date",
+        "chambers",
+        "service_boundary"
+      ],
+      "properties": {
+        "sessions": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "as_of_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "chambers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "house",
+              "senate"
+            ]
+          }
+        },
+        "service_boundary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "queryAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "query_count",
+        "query_audit_sha256",
+        "query_ids",
+        "all_queries_bounded_or_transaction_control"
+      ],
+      "properties": {
+        "query_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "query_audit_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "query_ids": {
+          "$ref": "#/definitions/nonemptyStrings"
+        },
+        "all_queries_bounded_or_transaction_control": {
+          "const": true
+        }
+      }
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "nonemptyStrings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "candidateDisposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "disposition",
+        "evidence_basis",
+        "source_references",
+        "production_classification_state",
+        "repository_acquisition_state",
+        "official_source_state",
+        "official_policy_area",
+        "rationale",
+        "confidence",
+        "review_requirement",
+        "benchmark_sample",
+        "public_action_digest"
+      ],
+      "properties": {
+        "action_id": {
+          "$ref": "#/definitions/actionId"
+        },
+        "disposition": {
+          "enum": [
+            "proposed_in_scope_substantive",
+            "proposed_in_scope_non_directional",
+            "procedural_context",
+            "proposed_exact_action_ineligible",
+            "outside_service",
+            "source_missing",
+            "source_unresolved",
+            "source_conflicting",
+            "boundary_review_required"
+          ]
+        },
+        "evidence_basis": {
+          "$ref": "#/definitions/nonemptyStrings"
+        },
+        "source_references": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_type",
+              "source_id",
+              "url"
+            ],
+            "properties": {
+              "source_type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        },
+        "production_classification_state": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "present",
+            "primary_domain",
+            "secondary_or_provisional_domains",
+            "exact_action_eligible",
+            "interpretation_status",
+            "procedural_context"
+          ],
+          "properties": {
+            "present": {
+              "type": "boolean"
+            },
+            "primary_domain": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "secondary_or_provisional_domains": {
+              "$ref": "#/definitions/stringArray"
+            },
+            "exact_action_eligible": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "interpretation_status": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "procedural_context": {
+              "type": "boolean"
+            }
+          }
+        },
+        "repository_acquisition_state": {
+          "const": "present"
+        },
+        "official_source_state": {
+          "enum": [
+            "clerk_and_congress_resolved",
+            "clerk_resolved_congress_metadata_missing",
+            "source_conflicting"
+          ]
+        },
+        "official_policy_area": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "review_requirement": {
+          "enum": [
+            "human_universe_boundary_review",
+            "none_for_discovery_disposition"
+          ]
+        },
+        "benchmark_sample": {
+          "type": "boolean"
+        },
+        "public_action_digest": {
+          "$ref": "#/definitions/sha256"
+        }
+      }
+    },
+    "publicApi": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "responses",
+        "scope_119_evidence_matches_production_primary_justice",
+        "scope_119_governed_benchmark_action_ids",
+        "scope_119_governed_benchmark_complete",
+        "scope_119_governed_overlay_changes_raw_interpretation_status",
+        "fallback_or_fixture_evidence_detected"
+      ],
+      "properties": {
+        "responses": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "endpoint",
+              "scope",
+              "response_sha256",
+              "identity_matches",
+              "row_count"
+            ],
+            "properties": {
+              "endpoint": {
+                "enum": [
+                  "positions",
+                  "justice_evidence",
+                  "editorial_presentations"
+                ]
+              },
+              "scope": {
+                "enum": [
+                  "119",
+                  "all",
+                  "118"
+                ]
+              },
+              "response_sha256": {
+                "$ref": "#/definitions/sha256"
+              },
+              "identity_matches": {
+                "const": true
+              },
+              "row_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "justice_action_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "window_end": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "canonical_action_set_sha256": {
+                "$ref": "#/definitions/sha256"
+              },
+              "governed_projection_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "tiers": {
+                "$ref": "#/definitions/stringArray"
+              }
+            }
+          }
+        },
+        "scope_119_evidence_matches_production_primary_justice": {
+          "const": true
+        },
+        "scope_119_governed_benchmark_action_ids": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "scope_119_governed_benchmark_complete": {
+          "const": true
+        },
+        "scope_119_governed_overlay_changes_raw_interpretation_status": {
+          "$ref": "#/definitions/actionIds"
+        },
+        "fallback_or_fixture_evidence_detected": {
+          "const": false
+        }
+      }
+    },
+    "finalFreshnessCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "baseline_snapshot_id",
+        "baseline_snapshot_sha256",
+        "freshness_snapshot_id",
+        "freshness_snapshot_sha256",
+        "checked_at_utc",
+        "database_identity_sha256",
+        "first_sql_command",
+        "transaction_read_only",
+        "transaction_isolation",
+        "checks",
+        "changed_result_ids",
+        "baseline_result_bundle_sha256",
+        "freshness_result_bundle_sha256",
+        "complete_member_action_set",
+        "complete_member_action_records",
+        "production_primary_justice_set",
+        "benchmark_reconciliation",
+        "latest_member_vote_date",
+        "latest_production_source_ingest_at"
+      ],
+      "properties": {
+        "baseline_snapshot_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "baseline_snapshot_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "freshness_snapshot_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "freshness_snapshot_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "checked_at_utc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "database_identity_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "first_sql_command": {
+          "const": "BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY"
+        },
+        "transaction_read_only": {
+          "const": "on"
+        },
+        "transaction_isolation": {
+          "const": "repeatable read"
+        },
+        "checks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "database_identity_matches",
+            "query_ids_match",
+            "all_result_digests_match",
+            "complete_member_action_set_matches",
+            "complete_member_action_records_match",
+            "production_primary_justice_set_matches",
+            "benchmark_actions_present",
+            "latest_member_vote_date_matches",
+            "latest_production_source_ingest_at_matches",
+            "transaction_ended_with_rollback",
+            "connection_closed"
+          ],
+          "properties": {
+            "database_identity_matches": {
+              "const": true
+            },
+            "query_ids_match": {
+              "const": true
+            },
+            "all_result_digests_match": {
+              "const": true
+            },
+            "complete_member_action_set_matches": {
+              "const": true
+            },
+            "complete_member_action_records_match": {
+              "const": true
+            },
+            "production_primary_justice_set_matches": {
+              "const": true
+            },
+            "benchmark_actions_present": {
+              "const": true
+            },
+            "latest_member_vote_date_matches": {
+              "const": true
+            },
+            "latest_production_source_ingest_at_matches": {
+              "const": true
+            },
+            "transaction_ended_with_rollback": {
+              "const": true
+            },
+            "connection_closed": {
+              "const": true
+            }
+          }
+        },
+        "changed_result_ids": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "baseline_result_bundle_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "freshness_result_bundle_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "complete_member_action_set": {
+          "$ref": "#/definitions/actionSetDigestComparison"
+        },
+        "complete_member_action_records": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "baseline_sha256",
+            "freshness_sha256"
+          ],
+          "properties": {
+            "baseline_sha256": {
+              "$ref": "#/definitions/sha256"
+            },
+            "freshness_sha256": {
+              "$ref": "#/definitions/sha256"
+            }
+          }
+        },
+        "production_primary_justice_set": {
+          "$ref": "#/definitions/actionSetDigestComparison"
+        },
+        "benchmark_reconciliation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "expected_action_ids",
+            "missing_action_ids"
+          ],
+          "properties": {
+            "expected_action_ids": {
+              "$ref": "#/definitions/actionIds"
+            },
+            "missing_action_ids": {
+              "type": "array",
+              "maxItems": 0
+            }
+          }
+        },
+        "latest_member_vote_date": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "baseline",
+            "freshness"
+          ],
+          "properties": {
+            "baseline": {
+              "type": "string",
+              "format": "date"
+            },
+            "freshness": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        },
+        "latest_production_source_ingest_at": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "baseline",
+            "freshness"
+          ],
+          "properties": {
+            "baseline": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "freshness": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    },
+    "artifactReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifest_id",
+        "path",
+        "sha256",
+        "universe_subject_sha256"
+      ],
+      "properties": {
+        "manifest_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "universe_subject_sha256": {
+          "$ref": "#/definitions/sha256"
+        }
+      }
+    }
+  }
+}

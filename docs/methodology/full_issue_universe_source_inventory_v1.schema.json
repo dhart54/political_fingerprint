@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://political-fingerprint.local/schemas/full_issue_universe_source_inventory_v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "inventory_id",
+    "inventory_version",
+    "subject",
+    "snapshot_source_commit",
+    "acquisition_as_of_utc",
+    "sources",
+    "production_query_audit",
+    "public_api_response_manifest_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "full_issue_universe_source_inventory_v1"
+    },
+    "inventory_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inventory_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "subject": {
+      "$ref": "#/definitions/subject"
+    },
+    "snapshot_source_commit": {
+      "$ref": "#/definitions/commit"
+    },
+    "acquisition_as_of_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "source_kind",
+          "storage_scope",
+          "artifact_count",
+          "artifact_set_sha256",
+          "record_count"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "storage_scope": {
+            "enum": [
+              "repository",
+              "secure_external"
+            ]
+          },
+          "artifact_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "artifact_set_sha256": {
+            "$ref": "#/definitions/sha256"
+          },
+          "record_count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "production_query_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "query_count",
+        "query_audit_sha256",
+        "query_ids",
+        "all_queries_bounded_or_transaction_control"
+      ],
+      "properties": {
+        "query_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "query_audit_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "query_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "all_queries_bounded_or_transaction_control": {
+          "const": true
+        }
+      }
+    },
+    "public_api_response_manifest_sha256": {
+      "$ref": "#/definitions/sha256"
+    }
+  },
+  "definitions": {
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "member_id",
+        "issue_id",
+        "congress_scope"
+      ],
+      "properties": {
+        "member_id": {
+          "pattern": "^[A-Z][0-9]{6}$"
+        },
+        "issue_id": {
+          "pattern": "^[A-Z][A-Z0-9_]+$"
+        },
+        "congress_scope": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    }
+  }
+}

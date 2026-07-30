@@ -51,6 +51,15 @@ The machine-readable authority is
   issue synthesis is not eligible.
   The machine-readable state is
   `docs/editorial/full_record_reviews/f000477_justice_public_safety_119_review_state_v1.json`.
+- A separate, non-authorizing F000477 Justice universe-discovery proposal now
+  reconciles 577 House member actions through June 11, 2026 into 111
+  high-recall candidates, 27 proposed in-scope actions, and 13 unresolved
+  boundary cases. Its authority state is
+  `pending_human_universe_review`; it creates no universe authority receipt,
+  full-record claim, synthesis eligibility, publication change, or production
+  write. Official rolls 223–283 are recorded as post-cutoff evidence requiring
+  a later refresh. The review packet is
+  `docs/review_packets/foushee_justice_119_universe_discovery_v1.md`.
 - Before the activation, the 71-artifact seed had no publication-registry row.
   That state remains historical evidence and was not modified by the editorial
   hard cutover.
