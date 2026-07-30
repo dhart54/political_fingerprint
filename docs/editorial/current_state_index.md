@@ -12,25 +12,34 @@ The machine-readable authority is
   generated historical evidence remain in place as noncanonical evidence. A
   119-file whole-tree manifest locks those roots to the cutover base.
 - Acquisition capability and tests remain intact.
-- The representative route retains basic vote evidence and source receipts and
-  can layer publication-gated IR-native presentation fields. Its top panel
-  orders issue cards by available action count, reviewed
-  substantive Yes/No count, non-directional or limited/context availability,
-  and stable domain order. This is evidence coverage, not an analytical,
-  ideological, or vote-direction ranking. Shared member-neutral domain
-  descriptions and an accessible `Recorded action composition` bar explain the
-  cards. Its Yea, Nay, and combined non-directional/context segments use only
-  supplied action counts. The ranked grid is the primary selector and compact
-  jump navigation is retained in the evidence section; the duplicative third
-  issue list is absent. Party benchmarking remains deferred. Actual Present and
-  Not Voting-only issue areas remain selectable. Expected-but-missing actions
-  are not emitted by the current API and are not synthesized in React. The former
-  `/golden-render-fixture` route is absent. Presentation tiers and wording are
-  supplied by the backend; React does not infer them. The human-approved, gold,
-  production-eligible F000477 Justice 119th presentation is publication-active:
-  `scope=119` and `scope=all` return `reviewed_conclusion`, with `scope=all`
-  explicitly bounded to the reviewed 119th-Congress record; `scope=118` remains
-  `receipts_only`.
+- Frontend Pass A implements a finder-first, URL-backed representative journey
+  on `/`: compact overview, truthful Congress scope, responsive issue discovery,
+  conditional reviewed analysis, conditional reviewed policy episodes, and a
+  newest-first chronological exact-receipt ledger. No representative or sample
+  is automatically selected. Recommended issue ordering uses only
+  backend-supplied public claim rank, evidence usefulness, and stable domain
+  order; party, ideology, conclusion substance, and Yea/Nay direction do not
+  affect it. Shared member-neutral descriptions and the accessible `Recorded
+  action composition` display use supplied counts only. Present, Not Voting,
+  procedural, and limited-context distinctions remain visible.
+  Expected-but-missing actions are not emitted by the current API and are not
+  synthesized in React. Comparison, preference/alignment, race, alerts,
+  contact, methodology explorers, and across-Congress analytical tools are
+  deferred from the primary route without deleting their components. The former
+  `/golden-render-fixture` route remains absent.
+- A deterministic public-field-only review-state catalog is now generated from
+  merged-validator-approved full-record review manifests. It is descriptive,
+  not authorizing: public analysis still requires an independently eligible
+  active presentation and exact member, issue, artifact, semantic-tier, teaser,
+  and scope agreement. Repeated-pattern/trajectory semantic roles and
+  directions are backend-supplied. The live selector supplies no policy
+  episodes until a separately reviewed contract does so.
+- The human-approved, gold, production-eligible F000477 Justice 119th
+  presentation remains publication-active and semantic tier
+  `reviewed_conclusion`, but Pass A displays its independent review state as
+  `Reviewed benchmark sample`. `scope=119` and `scope=all` may return that
+  bounded sample, with `scope=all` explicitly limited to the reviewed
+  119th-Congress record; `scope=118` remains `receipts_only`.
 - Full-Record Issue Interpretation V1 now keeps semantic tier, review scope,
   review completion, and public claim class separate. The active F000477 Justice
   artifact remains a valid `reviewed_conclusion` within its completely

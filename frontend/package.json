@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "test:cutover-smoke": "playwright test tests/editorial-cutover.spec.mjs",
-    "test:ir-presentation": "playwright test tests/ir-presentation.spec.mjs"
+    "test:ir-presentation": "playwright test tests/ir-presentation.spec.mjs",
+    "test:frontend-pass-a": "playwright test tests/frontend-pass-a.spec.mjs"
   },
   "dependencies": {
     "next": "^15.3.0",

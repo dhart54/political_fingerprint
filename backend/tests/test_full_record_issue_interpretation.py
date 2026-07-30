@@ -20,6 +20,7 @@ from backend.app.semantic_ir.compiler import (  # noqa: E402
 )
 from scripts.validate_full_record_issue_interpretation import (  # noqa: E402
     FullRecordValidationError,
+    _file_digest_matches,
     compute_universe_sha256,
     interpretation_digest,
     validate_review,
@@ -686,8 +687,11 @@ class ContractTests(unittest.TestCase):
         with self.assertRaisesRegex(FullRecordValidationError, "schema validation failed"):
             validate_review(party)
         for protected in _review()["provenance"]["protected_files"]:
-            self.assertEqual(
-                _file_digest(ROOT / protected["path"]), protected["sha256"]
+            self.assertTrue(
+                _file_digest_matches(
+                    ROOT / protected["path"], protected["sha256"]
+                ),
+                protected["path"],
             )
 
 
