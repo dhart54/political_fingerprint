@@ -1,0 +1,90 @@
+{
+  "schema_version": "frontend_pass_a_visual_review_manifest_v1",
+  "capture": {
+    "captured_at": "2026-07-30T00:02:19-04:00",
+    "branch": "codex/frontend-pass-a-representative-issue-foundation",
+    "runtime_commit": "d49de4c07634675de7951c80ef94226df02e1dc5",
+    "frontend_url": "http://127.0.0.1:3100",
+    "backend_url": "http://127.0.0.1:8000",
+    "data_source": "verified loopback-only disposable PostgreSQL: seven governed receipts plus 69 explicitly unreviewed navigation receipts",
+    "capture_production_accessed": false,
+    "production_written": false,
+    "fixture_route_used": false,
+    "command": "PASS_A_LIVE_REVIEW_DIR=<artifact-dir> npx playwright test tests/frontend-pass-a-live-review.spec.mjs",
+    "validation_boundary_incident": "An earlier local validation attempt made read-only requests through a remote Supabase pooler before the .env boundary was detected. No write occurred; those artifacts were discarded. Every screenshot in this manifest was recaptured from the loopback-only disposable database."
+  },
+  "screenshots": [
+    {
+      "file": "01-finder-full-name-results-1440.png",
+      "identity": "ordinary first-and-last-name search returns Valerie P. Foushee",
+      "viewport": "1440x1000",
+      "sha256": "e4d27bcee4f5662f92d588005f5713a234af4d62b7d7871143faa6a3d57a30f2"
+    },
+    {
+      "file": "02-selected-overview-recommended-1440.png",
+      "identity": "selected compact header, Recommended issue grid, reviewed Justice card",
+      "viewport": "1440x1000",
+      "sha256": "4c6052e92fb761c7f58595a91eb0f8dfed40c964d4d04ca337b15228f079d244"
+    },
+    {
+      "file": "03-visible-focus-issue-selection-1440.png",
+      "identity": "visible keyboard focus on Justice issue selection",
+      "viewport": "1440x1000",
+      "sha256": "cd56a5a828a15659923a47c6e2dc2260f425d306de0afc788c3dc010f5dda3b1"
+    },
+    {
+      "file": "04-justice-detail-ledger-1440.png",
+      "identity": "Justice detail, reviewed findings, evidence limits, and full ledger",
+      "viewport": "1440x1000",
+      "sha256": "9f4510e032eff6cba8c6e18b217b81a7498d56a1e5cbda740287575d482b12d6"
+    },
+    {
+      "file": "05-exact-actions-focused-1440.png",
+      "identity": "three matched actions, ledger focus, first matching receipt expanded",
+      "viewport": "1440x1000",
+      "sha256": "23799c19106336d7cc1f4ba4a91722e342bb4a8daa450dbc0f900a6056d24911"
+    },
+    {
+      "file": "06-corrected-roll-32-expanded-1440.png",
+      "identity": "governed Roll 32 certification meaning, canonical action, and official source identities",
+      "viewport": "1440x1000",
+      "sha256": "b334d54ffa7a9fc52e960345f608b201df725cc2d6330addfdb18c9bc7a6678f"
+    },
+    {
+      "file": "07-returned-to-complete-record-1440.png",
+      "identity": "one-click return to the complete 76-action ledger",
+      "viewport": "1440x1000",
+      "sha256": "9addfa3aa9bcdb8b2ecef42926e77be64caa49f29ddbb620214f3dbb65de3e5f"
+    },
+    {
+      "file": "08-filtered-ledger-1024.png",
+      "identity": "tablet issue cards, sticky navigation, and filtered ledger",
+      "viewport": "1024x900",
+      "sha256": "8170fc3fbc0c02e5a25ea6666d00cb51676aa589a807073464b16826db7ee77d"
+    },
+    {
+      "file": "09-corrected-roll-32-expanded-390.png",
+      "identity": "mobile governed Roll 32 receipt with single-column hierarchy",
+      "viewport": "390x844",
+      "sha256": "3dcf9468d8fb895fcdaf3e69ff5992822c6e57036f047a13efb617b4ba045abf"
+    },
+    {
+      "file": "10-filtered-ledger-320.png",
+      "identity": "narrow mobile filtered ledger",
+      "viewport": "320x844",
+      "sha256": "dbe1bd94178cc99bd5a76df20c47964aa6273c27fbabda54961d5d519370ad48"
+    },
+    {
+      "file": "11-effective-zoom-200.png",
+      "identity": "200 percent effective zoom with accessible matched-action count",
+      "viewport": "1440x1000 at document zoom 2",
+      "sha256": "c4c1108b471c4b12836c8aa6d282508c9f4dcc970401e653d781799522f79e6a"
+    },
+    {
+      "file": "12-zero-match-fallback-full-ledger-1440.png",
+      "identity": "zero-match status announcement with complete ledger retained",
+      "viewport": "1440x1000",
+      "sha256": "9c7617bce2da8783082798e43b62b84cf6590a2c6fb2bba48c60c40b77a6baf9"
+    }
+  ]
+}

@@ -151,24 +151,20 @@ test("show votes proof view starts bounded and keeps the full receipt list avail
   assert.ok(sourceDrawerStart > voteRowStart, "vote-level source and caveat drawers should remain inside vote rows");
 });
 
-test("secondary profile tools are consolidated below the evidence path", () => {
+test("Pass A defers secondary profile tools from the primary route", () => {
   const source = readFileSync(new URL("../app/page.js", import.meta.url), "utf8");
 
-  assert.match(source, /Tools: preferences, comparison, and switching officials/);
-  assert.match(source, /Search or switch official/);
-  assert.match(source, /Procedural votes may appear as context/);
-  assert.doesNotMatch(source, /Procedural votes are excluded before issue reads/);
+  assert.doesNotMatch(source, /AlignmentPanel|ComparisonPanel|IssuePreferencePanel/);
+  assert.doesNotMatch(source, /RecordAcrossCongressesPanel|UpcomingRacePanel/);
+  assert.match(source, /RepresentativeFinder/);
+  assert.match(source, /Switch representative/);
 });
 
-test("first-render profile shell avoids stale fallback metrics and labels sample state", () => {
+test("first render requires representative selection and contains no sample profile", () => {
   const source = readFileSync(new URL("../app/page.js", import.meta.url), "utf8");
 
-  assert.match(source, /Reviewed vote evidence with source receipts loads from the live coverage record/);
-  assert.match(source, /Sample profile shown until you search your ZIP/);
-  assert.match(source, /Sample profile/);
-  assert.match(source, /handleSelectLegislator/);
-  assert.doesNotMatch(source, /formatNumber\(coverageMetadata\?\.legislator_count, "548"\)/);
-  assert.doesNotMatch(source, /formatNumber\(coverageMetadata\?\.eligible_roll_call_count, "8"\)/);
-  assert.doesNotMatch(source, /formatPercent\(coverageMetadata\?\.source_url_share\)/);
-  assert.doesNotMatch(source, /QuickMetric eyebrow="Best read"|QuickMetric eyebrow="Change"|Steady mix/);
+  assert.match(source, /!route\.legislatorId/);
+  assert.match(source, /Who represents you, and what have they done/);
+  assert.doesNotMatch(source, /DEFAULT_LEGISLATOR|Sample profile|Aaron Bean/);
+  assert.doesNotMatch(source, /<img|<Image/);
 });

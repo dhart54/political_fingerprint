@@ -16,6 +16,11 @@ from .compiler import (
     semantic_tier_for_artifact,
 )
 from .validation import validate_public_issue_presentation
+from .review_state_catalog import (
+    PublicReviewStateCatalogError,
+    public_review_state_entries,
+    select_public_review_state,
+)
 
 
 RECEIPTS_ONLY_BADGE = "Vote receipts"
@@ -48,6 +53,9 @@ def _fallback(issue_id: str, scope: str) -> dict[str, Any]:
         "repeated_patterns": [],
         "policy_trajectories": [],
         "limitations": [],
+        "policy_episodes": [],
+        "public_status_label": "Vote receipts available",
+        "review_state": None,
         "evidence_metadata": None,
         "provenance": None,
     }
@@ -140,15 +148,68 @@ def _eligible_row(
     return payload
 
 
+def _display_action_ids(display: dict[str, Any]) -> set[str]:
+    return {
+        action_id
+        for field in ("repeated_patterns", "policy_trajectories")
+        for item in display.get(field, [])
+        for action_id in item.get("action_ids", [])
+    }
+
+
+def _receipt_projections_agree(
+    artifact: dict[str, Any],
+    display: dict[str, Any],
+    review_state: dict[str, Any],
+) -> bool:
+    identity = artifact["artifact_identity"]
+    receipts = review_state.get("exact_action_receipts")
+    if not isinstance(receipts, list):
+        return False
+    by_action = {
+        receipt.get("canonical_action_id"): receipt
+        for receipt in receipts
+        if isinstance(receipt, dict)
+    }
+    sample_action_ids = set(artifact["evidence_metadata"]["action_ids"])
+    if (
+        len(by_action) != len(receipts)
+        or set(by_action) != sample_action_ids
+        or not _display_action_ids(display) <= sample_action_ids
+    ):
+        return False
+    for action_id, receipt in by_action.items():
+        if (
+            receipt.get("member_id") != identity["member_id"]
+            or receipt.get("issue_id") != identity["issue_id"]
+            or identity["congress"] not in receipt.get("congress_scope", [])
+            or receipt.get("published_artifact_identity")
+            != identity["artifact_id"]
+            or receipt.get("interpretation_status") != "interpreted"
+            or receipt.get("canonical_action_id") != action_id
+            or not receipt.get("vote_sources")
+            or not receipt.get("action_meaning_sources")
+        ):
+            return False
+    return True
+
+
 def select_public_presentations(
     rows: Iterable[dict[str, Any]],
     *,
     legislator_id: str,
     member_bioguide_id: str,
     scope: str,
+    review_states: Iterable[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Return only active eligible display fields, with supplied fallbacks."""
 
+    if review_states is None:
+        try:
+            review_states = public_review_state_entries()
+        except PublicReviewStateCatalogError:
+            review_states = []
+    review_states = list(review_states)
     result = {
         issue_id: _fallback(issue_id, scope) for issue_id in SUPPORTED_ISSUES
     }
@@ -162,7 +223,50 @@ def select_public_presentations(
             continue
         identity = artifact["artifact_identity"]
         issue_id = identity["issue_id"]
+        review_state = select_public_review_state(
+            review_states,
+            member_id=member_bioguide_id,
+            issue_id=issue_id,
+            requested_scope=scope,
+            published_artifact_identity=identity["artifact_id"],
+        )
+        if review_state is None:
+            continue
         display = copy.deepcopy(artifact["frontend_display"])
+        if (
+            review_state["semantic_tier"] != display["tier"]
+            or review_state["scope_bounded_teaser"] is None
+            or review_state["scope_bounded_teaser"]["text"] != display["teaser"]
+            or not _receipt_projections_agree(artifact, display, review_state)
+        ):
+            continue
+        exact_action_receipts = copy.deepcopy(
+            review_state["exact_action_receipts"]
+        )
+        public_review_state = copy.deepcopy(review_state)
+        public_review_state.pop("exact_action_receipts", None)
+        proposition_index = {
+            item["proposition_id"]: item
+            for item in artifact["compiled_semantic_meaning"]["propositions"]
+        }
+        findings_are_bound = True
+        for field in ("repeated_patterns", "policy_trajectories"):
+            enriched = []
+            for item in display[field]:
+                proposition = proposition_index.get(item.get("proposition_id"))
+                if proposition is None:
+                    findings_are_bound = False
+                    break
+                enriched.append(
+                    {
+                        **item,
+                        "semantic_role": proposition["semantic_role"],
+                        "direction": proposition["direction"],
+                    }
+                )
+            display[field] = enriched
+        if not findings_are_bound:
+            continue
         result[issue_id] = {
             "issue_id": issue_id,
             "requested_scope": scope,
@@ -173,6 +277,10 @@ def select_public_presentations(
                 if scope == "119"
                 else f"{display['scope_boundary']} The conclusion remains bounded to the reviewed 119th-Congress record."
             ),
+            "policy_episodes": [],
+            "public_status_label": review_state["public_status_label"],
+            "review_state": public_review_state,
+            "exact_action_receipts": exact_action_receipts,
             "evidence_metadata": copy.deepcopy(artifact["evidence_metadata"]),
             "provenance": {
                 "artifact_id": identity["artifact_id"],

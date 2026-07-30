@@ -1,13 +1,14 @@
 from __future__ import annotations
 
-import os
 import copy
 import hashlib
 import json
+import os
+from contextlib import contextmanager
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
-from uuid import uuid4
 from unittest.mock import patch
+from uuid import uuid4
 
 import pytest
 from fastapi.testclient import TestClient
@@ -35,6 +36,7 @@ from scripts.foushee_justice_publication_activation import (
     _preflight_report,
     _prepare_backup,
     _rollback,
+    _rollback_identity,
     _verify_backup_proof,
     _verify_preflight_report,
     _write_json,
@@ -45,55 +47,166 @@ from scripts.foushee_justice_publication_activation import (
 DATABASE_URL = os.getenv("EDITORIAL_DISPOSABLE_DATABASE_URL")
 
 
+EXPECTED_REPEATED_PATTERNS = [
+    {
+        "heading": (
+            "Certification, fentanyl research provisions, and "
+            "officer-safety reporting"
+        ),
+        "body": (
+            "Across independent episodes, Foushee supported an "
+            "overdose-reduction certification condition, a later fentanyl "
+            "framework with research provisions, and officer-safety "
+            "reporting requirements."
+        ),
+        "action_ids": [
+            "house:119:1:131",
+            "house:119:1:166",
+            "house:119:1:32",
+        ],
+        "proposition_id": "prop:c428677c0dbee5e0",
+        "semantic_role": "behavioral",
+        "direction": "support",
+    },
+    {
+        "heading": (
+            "Retired-service firearm access, D.C. pursuit authority, and "
+            "policing-rule rollbacks"
+        ),
+        "body": (
+            "Across independent episodes, Foushee opposed creating a "
+            "reviewed federal program for eligible current and retired "
+            "officers to buy qualifying retired agency firearms, broader "
+            "D.C. police pursuit authority, and repeal of most reviewed "
+            "D.C. policing restrictions."
+        ),
+        "action_ids": [
+            "house:119:1:130",
+            "house:119:1:275",
+            "house:119:1:299",
+        ],
+        "proposition_id": "prop:abbe87a63baefb7d",
+        "semantic_role": "behavioral",
+        "direction": "opposition",
+    },
+]
+
+EXPECTED_POLICY_TRAJECTORIES = [
+    {
+        "heading": "The fentanyl episode is mixed",
+        "body": (
+            "Within one fentanyl legislative episode, Foushee supported a "
+            "certification amendment, opposed the earlier House bill, and "
+            "supported a later related framework that permanently scheduled "
+            "fentanyl-related substances and included research provisions. "
+            "These related stages count as one episode for breadth and do not "
+            "establish a change in position, motive, or philosophy."
+        ),
+        "action_ids": [
+            "house:119:1:166",
+            "house:119:1:32",
+            "house:119:1:33",
+        ],
+        "proposition_id": "prop:bc08a2271517ebb7",
+        "semantic_role": "behavioral",
+        "direction": "mixed",
+    }
+]
+
+
+@contextmanager
+def _activated_disposable(bundle: dict):
+    """Apply once, capture exact identities, and always restore the baseline."""
+
+    captured_identity = None
+    with _connect(DATABASE_URL) as conn:
+        try:
+            with conn.transaction():
+                preflight = _preflight(conn, bundle)
+                conn.execute(
+                    "SELECT pg_advisory_xact_lock(hashtext(%s))", (LOCK_KEY,)
+                )
+                applied = _apply(conn, bundle)
+                captured_identity = _rollback_identity(conn, bundle)
+            yield conn, preflight, applied, captured_identity
+        finally:
+            if captured_identity is not None:
+                with conn.transaction():
+                    conn.execute(
+                        "SELECT pg_advisory_xact_lock(hashtext(%s))",
+                        (LOCK_KEY,),
+                    )
+                    rolled_back = _rollback(
+                        conn,
+                        bundle,
+                        expected_identity=captured_identity,
+                    )
+                    assert (
+                        rolled_back["counts"]
+                        == bundle["expected_counts"]["before"]
+                    )
+                    assert rolled_back["target_absent"] is True
+            with conn.transaction():
+                restored = _preflight(conn, bundle)
+                assert restored["counts"] == bundle["expected_counts"]["before"]
+                assert restored["target_absent"] is True
+                assert restored["governed_baseline"][
+                    "reconciled_fingerprint"
+                ] == bundle["pre_activation_baseline"]["reconciled_fingerprint"]
+
+
 @pytest.mark.skipif(
     not DATABASE_URL,
     reason="requires an explicitly provisioned disposable PostgreSQL database",
 )
 def test_transactional_apply_idempotency_postcheck_and_rollback() -> None:
     bundle = load_activation_bundle()
-    with _connect(DATABASE_URL) as conn:
-        with conn.transaction():
-            preflight = _preflight(conn, bundle)
-            assert preflight["counts"] == {
-                "batches": 2,
-                "artifacts": 140,
-                "relationships": 155,
-                "publication_registry": 0,
-            }
-            assert [item["database_batch_id"] for item in preflight[
-                "governed_baseline"
-            ]["batches"]] == [1, 8]
-            assert [
-                item["graph_sha256"]
-                for item in preflight["governed_baseline"]["batches"]
-            ] == [
-                item["graph_sha256"]
-                for item in bundle["pre_activation_baseline"][
-                    "governed_batches"
-                ]
+    with _activated_disposable(bundle) as (
+        conn,
+        preflight,
+        applied,
+        captured_identity,
+    ):
+        assert captured_identity["batch_id"] == applied["postcheck"]["batch_id"]
+        assert captured_identity["artifact_ids"] == applied["postcheck"][
+            "artifact_ids"
+        ]
+        assert preflight["counts"] == {
+            "batches": 2,
+            "artifacts": 140,
+            "relationships": 155,
+            "publication_registry": 0,
+        }
+        assert [item["database_batch_id"] for item in preflight[
+            "governed_baseline"
+        ]["batches"]] == [1, 8]
+        assert [
+            item["graph_sha256"]
+            for item in preflight["governed_baseline"]["batches"]
+        ] == [
+            item["graph_sha256"]
+            for item in bundle["pre_activation_baseline"][
+                "governed_batches"
             ]
-            assert preflight["governed_baseline"][
-                "canonical_semantic_hashes"
-            ] == bundle["pre_activation_baseline"][
-                "canonical_semantic_hashes"
-            ]
-            assert preflight["governed_baseline"][
-                "reconciled_fingerprint"
-            ] == bundle["pre_activation_baseline"]["reconciled_fingerprint"]
-            assert preflight["selector"] == {
-                "rows": 0,
-                "F000477": {
-                    "119": "receipts_only",
-                    "all": "receipts_only",
-                    "118": "receipts_only",
-                },
-            }
-            conn.execute(
-                "SELECT pg_advisory_xact_lock(hashtext(%s))", (LOCK_KEY,)
-            )
-            applied = _apply(conn, bundle)
-            assert applied["already_applied"] is False
-            assert applied["rows_inserted"] == 7
+        ]
+        assert preflight["governed_baseline"][
+            "canonical_semantic_hashes"
+        ] == bundle["pre_activation_baseline"][
+            "canonical_semantic_hashes"
+        ]
+        assert preflight["governed_baseline"][
+            "reconciled_fingerprint"
+        ] == bundle["pre_activation_baseline"]["reconciled_fingerprint"]
+        assert preflight["selector"] == {
+            "rows": 0,
+            "F000477": {
+                "119": "receipts_only",
+                "all": "receipts_only",
+                "118": "receipts_only",
+            },
+        }
+        assert applied["already_applied"] is False
+        assert applied["rows_inserted"] == 7
         with conn.transaction():
             conn.execute(
                 "SELECT pg_advisory_xact_lock(hashtext(%s))", (LOCK_KEY,)
@@ -202,11 +315,14 @@ def test_transactional_apply_idempotency_postcheck_and_rollback() -> None:
             "coverage_text",
             "scope_boundary",
             "conclusion",
-            "repeated_patterns",
-            "policy_trajectories",
             "limitations",
         ):
             assert justice_119[field] == approved[field]
+        assert justice_119["repeated_patterns"] == EXPECTED_REPEATED_PATTERNS
+        assert (
+            justice_119["policy_trajectories"]
+            == EXPECTED_POLICY_TRAJECTORIES
+        )
         assert "119th-Congress" in justice["scope_boundary"]
         assert len(justice["evidence_metadata"]["action_ids"]) == 7
         assert len(justice["evidence_metadata"]["episode_ids"]) == 5
@@ -221,34 +337,40 @@ def test_transactional_apply_idempotency_postcheck_and_rollback() -> None:
             "approval-receipt:f000477-justice-public-safety-119-v1-"
             "20260727-dhart54"
         )
-        with conn.transaction():
-            conn.execute(
-                "SELECT pg_advisory_xact_lock(hashtext(%s))", (LOCK_KEY,)
-            )
-            rolled_back = _rollback(conn, bundle)
-            assert rolled_back["counts"] == bundle["expected_counts"]["before"]
-            assert rolled_back["governed_baseline"][
+    with patch.dict(os.environ, {"DATABASE_URL": DATABASE_URL}):
+        response = TestClient(app).get(
+            "/legislators/leg_valerie_p_foushee/editorial-presentations",
+            params={"scope": "119"},
+        )
+    justice = next(
+        item
+        for item in response.json()["presentations"]
+        if item["issue_id"] == "JUSTICE_PUBLIC_SAFETY"
+    )
+    assert justice["tier"] == "receipts_only"
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires an explicitly provisioned disposable PostgreSQL database",
+)
+def test_assertion_failure_after_activation_restores_next_baseline() -> None:
+    bundle = load_activation_bundle()
+    with pytest.raises(RuntimeError, match="intentional post-activation failure"):
+        with _activated_disposable(bundle) as (conn, _pre, _applied, identity):
+            assert identity["bundle_sha256"] == bundle["bundle_sha256"]
+            with conn.transaction():
+                assert _counts(conn) == bundle["expected_counts"]["after"]
+            raise RuntimeError("intentional post-activation failure")
+
+    with _connect(DATABASE_URL) as next_conn:
+        with next_conn.transaction():
+            baseline = _preflight(next_conn, bundle)
+            assert baseline["counts"] == bundle["expected_counts"]["before"]
+            assert baseline["target_absent"] is True
+            assert baseline["governed_baseline"][
                 "reconciled_fingerprint"
             ] == bundle["pre_activation_baseline"]["reconciled_fingerprint"]
-            assert rolled_back["target_absent"] is True
-            assert rolled_back["selector"]["F000477"] == {
-                "119": "receipts_only",
-                "all": "receipts_only",
-                "118": "receipts_only",
-            }
-        with conn.transaction():
-            assert _counts(conn) == bundle["expected_counts"]["before"]
-        with patch.dict(os.environ, {"DATABASE_URL": DATABASE_URL}):
-            response = TestClient(app).get(
-                "/legislators/leg_valerie_p_foushee/editorial-presentations",
-                params={"scope": "119"},
-            )
-        justice = next(
-            item
-            for item in response.json()["presentations"]
-            if item["issue_id"] == "JUSTICE_PUBLIC_SAFETY"
-        )
-        assert justice["tier"] == "receipts_only"
 
 
 @pytest.mark.skipif(

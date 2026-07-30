@@ -101,6 +101,19 @@ def _file_sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _file_digest_matches(path: Path, expected: str) -> bool:
+    content = path.read_bytes()
+    if hashlib.sha256(content).hexdigest() == expected:
+        return True
+    if path.suffix.lower() in {".json", ".md", ".sql", ".txt"}:
+        # Git stores governed text artifacts with LF. Native Windows checkouts may
+        # materialize CRLF even when indexed bytes and semantic content are
+        # unchanged, so accept only that canonical repository-byte equivalent.
+        canonical = content.replace(b"\r\n", b"\n")
+        return hashlib.sha256(canonical).hexdigest() == expected
+    return False
+
+
 def interpretation_digest(interpretation: dict[str, Any]) -> str:
     return _sha256(
         {key: value for key, value in interpretation.items() if key != "interpretation_sha256"}
@@ -135,7 +148,7 @@ def _load_authority_reference(
         )
     _require(path.is_file(), f"missing authority artifact: {reference['path']}")
     _require(
-        _file_sha256(path) == reference["sha256"],
+        _file_digest_matches(path, reference["sha256"]),
         f"authority artifact digest mismatch: {reference['path']}",
     )
     value = json.loads(path.read_text(encoding="utf-8"))
@@ -201,7 +214,10 @@ def _validate_external_authority(
         source_path = (authority_root.resolve() / source["path"]).resolve()
         _require(source_path.is_relative_to(authority_root.resolve()), "source path escapes authority root")
         _require(source_path.is_file(), f"missing acquisition/source manifest: {source['path']}")
-        _require(_file_sha256(source_path) == source["sha256"], "source/acquisition digest mismatch")
+        _require(
+            _file_digest_matches(source_path, source["sha256"]),
+            "source/acquisition digest mismatch",
+        )
     review_subject = review["subject"]
     _require(manifest["subject"] == review_subject, "universe member, issue, or Congress mismatch")
     _require(action_ids == sorted(review["issue_universe"]["action_ids"]), "universe membership mismatch")
@@ -278,7 +294,7 @@ def _validate_external_authority(
         )
     _require(compiled_path.is_file(), "compiled Semantic IR artifact is missing")
     _require(
-        _file_sha256(compiled_path) == semantic["compiled_ir_sha256"],
+        _file_digest_matches(compiled_path, semantic["compiled_ir_sha256"]),
         "compiled Semantic IR file digest mismatch",
     )
     compiled_ir = json.loads(compiled_path.read_text(encoding="utf-8"))
@@ -999,9 +1015,8 @@ def _validate_provenance(review: dict[str, Any]) -> None:
     for item in protected:
         path = ROOT / item["path"]
         _require(path.is_file(), f"protected file is missing: {item['path']}")
-        actual = hashlib.sha256(path.read_bytes()).hexdigest()
         _require(
-            actual == item["sha256"],
+            _file_digest_matches(path, item["sha256"]),
             f"protected historical file changed: {item['path']}",
         )
 

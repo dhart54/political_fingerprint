@@ -1,35 +1,33 @@
 # Public Editorial Frontend Contract
 
-## Current hard-cutover state
+## Current Frontend Pass A state
 
 The old-format public editorial selector, production and review registries,
 presentation adapters, rich React renderer, fixture data, and review route were
 removed in Editorial Hard Cutover V1. They are not supported fallbacks.
 
-The representative route at `/` retains the basic vote-evidence experience and
-may layer fields from the IR-native
-`editorial_public_issue_presentation_v1` API. When no eligible active artifact
-exists, that API supplies `receipts_only`. The removed
-`/golden-render-fixture` route remains absent and returns 404.
+The representative route at `/` implements the finder-first Frontend Pass A
+journey. No representative or sample is selected automatically. The selected
+representative, issue, and Congress scope are URL-backed and survive refresh,
+Back, and Forward. When no eligible active artifact exists, the
+`editorial_public_issue_presentation_v1` API supplies `receipts_only`. The
+removed `/golden-render-fixture` route remains absent and returns 404.
 
 ## Basic evidence contract
 
-`frontend/app/page.js` supplies the selected representative to
-`frontend/components/ProfileQuickRead.js` and
-`frontend/components/PositionByIssue.js`. The former renders neutral coverage
-counts and issue links ordered by evidence usefulness. That order compares total
-available actions, reviewed substantive Yes/No counts, non-directional or
-limited/context availability, and finally the stable domain order. It never uses
-Yea versus Nay direction, party, ideology, or a generated conclusion. The latter
-loads issue summaries and exact vote evidence with `fetchPositions` and
-`fetchPositionEvidence`, then renders:
+`frontend/app/page.js` composes the route-ready components documented in
+`docs/design/frontend_pass_a_v1.md`. Issue discovery uses actual supplied
+coverage and an optional backend-supplied public review state. Recommended
+ordering compares public claim rank, evidence usefulness, and stable domain
+order. It never uses Yea versus Nay direction, party, ideology, or a generated
+conclusion. The selected issue renders:
 
-1. issue selection based on actual evidence availability;
-2. a bounded basic-evidence notice;
-3. representative Yes/No vote examples;
-4. the complete grouped vote list;
-5. source links and vote-level receipts;
-6. procedural and limited-context disclosures.
+1. one issue explanation and truthful vote-record scope;
+2. reviewed analysis only when the API supplies governed review state;
+3. reviewed policy episodes only when the API supplies them;
+4. a newest-first chronological ledger with the complete record available;
+5. source links, exact vote receipts, and provenance references; and
+6. Present, Not Voting, procedural, and limited-context disclosures.
 
 The current React path may count and label already-supplied basic evidence
 states for display. It must not infer support or opposition, service
@@ -49,9 +47,9 @@ in the opened vote receipts. No expected-action denominator is invented. Party
 benchmarking is deferred because raw party-level Yea/Nay aggregates would not
 establish reviewed action-level meaning.
 
-The evidence-ranked card grid is the primary issue selector. The compact
-`Jump to issue` control remains inside the evidence section for local
-navigation. A third repeated issue list is intentionally omitted.
+The overview card grid is the primary issue selector. Conditional sticky
+section navigation links only to sections that exist. A repeated issue selector
+inside the detail view is intentionally omitted.
 
 These states remain distinct:
 
@@ -75,12 +73,15 @@ compiler, validator, controls, and API serializer. It consumes compiled Semantic
 IR as the only source of analytical meaning, matches wording to stable
 proposition identities, and may not reintroduce the deleted format.
 
-Issue-card order remains evidence-first and is unchanged by presentation tier or
-availability. Cards show only the API-supplied tier badge and teaser. The opened
-issue may show supplied coverage, conclusion or narrower tier message, repeated
-patterns, a limiting trajectory, limitations, and canonical supporting-action
-controls before the unchanged receipts. `scope=all` preserves an explicit
-reviewed-119th boundary; `scope=118` cannot display the 119th artifact.
+Recommended issue-card order may use the closed API-supplied public claim rank
+before evidence usefulness; alternative controls expose most-evidence,
+reviewed-analysis-only, and alphabetical views. The order never uses the
+substance or direction of a conclusion. Cards show only the API-supplied public
+status label and teaser. The opened issue may show supplied coverage,
+conclusion or narrower tier message, repeated patterns, a limiting trajectory,
+limitations, and canonical supporting-action controls before receipts.
+`scope=all` preserves an explicit reviewed-119th boundary; `scope=118` cannot
+display the 119th artifact.
 
 React renders a presentation only when the API payload's legislator and
 bioguide identities match the currently displayed representative and the
@@ -130,5 +131,15 @@ synthesis available`, and `Vote receipts available`. The current Foushee
 Justice artifact is labeled `Reviewed benchmark sample`; it is not labeled
 `Full review complete` or `Full issue interpretation available`.
 
-This section specifies future input fields and labels only. No current API or
-React implementation supplies or renders this full-record state contract.
+Frontend Pass A now supplies this state through the deterministic,
+public-field-only catalog
+`backend/app/editorial_presentations/public_review_state_catalog_v1.json`.
+The catalog is built from merged-validator-approved review manifests. It is
+non-authorizing: an independently eligible active presentation and exact
+member, issue, artifact, semantic-tier, teaser, and scope agreement remain
+required. Any mismatch produces receipts-only.
+
+The API also supplies compiled `semantic_role` and `direction` on analytical
+findings and an empty `policy_episodes` array until reviewed episode
+presentation is separately implemented. React renders these fields and never
+derives them.

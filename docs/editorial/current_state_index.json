@@ -18,7 +18,11 @@
     "public_presentation_selector": "backend/app/editorial_presentations/selector.py",
     "full_record_issue_interpretation_contract": "docs/methodology/full_record_issue_interpretation_v1.md",
     "full_record_issue_interpretation_schema": "docs/methodology/full_record_issue_interpretation_v1.schema.json",
-    "full_record_issue_interpretation_validator": "scripts/validate_full_record_issue_interpretation.py"
+    "full_record_issue_interpretation_validator": "scripts/validate_full_record_issue_interpretation.py",
+    "public_review_state_catalog": "backend/app/editorial_presentations/public_review_state_catalog_v1.json",
+    "public_review_state_catalog_builder": "scripts/build_public_review_state_catalog.py",
+    "frontend_pass_a_design": "docs/design/frontend_pass_a_v1.md",
+    "frontend_pass_a_review_packet": "docs/review_packets/frontend_pass_a_v1.md"
   },
   "full_record_issue_interpretation": {
     "schema_version": "full_record_issue_interpretation_v1",
@@ -39,7 +43,9 @@
     "f000477_justice_119_full_record_semantic_validation": "absent",
     "f000477_justice_119_full_record_human_approval": "absent",
     "f000477_justice_119_full_issue_synthesis_eligible": false,
-    "frontend_pass_a_state_contract": "specified_not_implemented"
+    "frontend_pass_a_state_contract": "implemented_closed_public_catalog",
+    "frontend_pass_a_public_label": "Reviewed benchmark sample",
+    "frontend_pass_a_catalog_authority": "descriptive_non_authorizing"
   },
   "accepted_reference_corpora": [
     {
@@ -75,13 +81,18 @@
   "frontend": {
     "rich_editorial_runtime_available": false,
     "representative_route": "/",
-    "representative_route_state": "coverage_first_with_publication_gated_ir_native_presentation_and_receipts",
-    "profile_summary_state": "evidence_coverage_ordered_issue_cards_and_receipt_links",
+    "representative_route_state": "finder_first_route_ready_overview_issue_analysis_optional_episodes_chronological_receipts",
+    "finder_auto_selection": false,
+    "route_state_query_parameters": [
+      "representative",
+      "issue",
+      "scope"
+    ],
+    "profile_summary_state": "compact_identity_scope_and_switch_control",
     "issue_availability_basis": "actual_position_action_counts",
     "issue_ordering_basis": [
-      "available_action_count",
-      "reviewed_substantive_yes_no_count",
-      "non_directional_or_limited_context_availability",
+      "backend_supplied_public_claim_rank",
+      "evidence_usefulness",
       "stable_domain_order"
     ],
     "issue_ordering_excludes": [
@@ -100,8 +111,8 @@
     ],
     "overview_gauge_denominator": "sum_of_supplied_overview_action_counts",
     "issue_navigation": [
-      "primary_evidence_ranked_card_grid",
-      "compact_in_section_jump_navigation"
+      "primary_issue_overview_grid",
+      "conditional_sticky_section_navigation"
     ],
     "duplicative_third_issue_selector": false,
     "party_benchmarking": "deferred",
@@ -118,6 +129,19 @@
     ],
     "presentation_ordering_effect": "none",
     "presentation_react_analytical_inference": false,
+    "public_review_state_catalog": "implemented_fail_closed_non_authorizing",
+    "policy_episodes": "component_supported_live_selector_empty",
+    "receipt_ledger": "chronological_newest_first_progressive_complete_record",
+    "deferred_primary_route_tools": [
+      "comparison",
+      "preference_alignment",
+      "race_context",
+      "alerts",
+      "contact",
+      "methodology_explorers",
+      "across_congress_analytical_tools"
+    ],
+    "frontend_pass_a_source_commit": "13a51154c3c5dfce38ca717db1f3819b1fef9e23",
     "f000477_justice_119_publication_state": "human_approved_gold_production_eligible_publication_active",
     "f000477_justice_119_activation_bundle": "docs/editorial/publication_activations/foushee_justice_public_safety_119_publication_activation_v1.json",
     "f000477_justice_119_activation_bundle_state": "applied_production_active",

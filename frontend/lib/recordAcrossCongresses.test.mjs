@@ -308,17 +308,15 @@ test("approved visible copy has no disallowed wording", () => {
   );
 });
 
-test("panel is collapsed by default and placed below strongest issue evidence", () => {
+test("deferred panel remains available but is absent from the Pass A primary route", () => {
   const panelSource = readFileSync(new URL("../components/RecordAcrossCongressesPanel.js", import.meta.url), "utf8");
   const pageSource = readFileSync(new URL("../app/page.js", import.meta.url), "utf8");
-  const evidenceIndex = pageSource.indexOf("<PositionByIssue");
-  const panelIndex = pageSource.indexOf("<RecordAcrossCongressesPanel");
 
   assert.match(panelSource, /<details className=/);
   assert.doesNotMatch(panelSource, /<details[^>]*open=/);
   assert.match(panelSource, /data-testid="record-across-congresses-summary"/);
   assert.match(panelSource, /RECORD_ACROSS_COPY\.collapsedSummaryLabel/);
-  assert.ok(evidenceIndex > 0 && panelIndex > evidenceIndex);
+  assert.doesNotMatch(pageSource, /RecordAcrossCongressesPanel/);
 });
 
 test("family card button opens inline drilldown and source links render when available", () => {

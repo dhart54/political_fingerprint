@@ -1,388 +1,229 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
-import AlignmentPanel from "../components/AlignmentPanel";
-import IssuePreferencePanel from "../components/IssuePreferencePanel";
-import ComparisonPanel from "../components/ComparisonPanel";
-import LegislatorPicker from "../components/LegislatorPicker";
-import PositionByIssue from "../components/PositionByIssue";
-import ProfileQuickRead from "../components/ProfileQuickRead";
-import RecordAcrossCongressesPanel from "../components/RecordAcrossCongressesPanel";
-import ZipLookupPanel, { UpcomingRacePanel } from "../components/ZipLookupPanel";
-import { fetchCoverageMetadata } from "../lib/api";
-import { pluralizeCountNoun } from "../lib/issueEvidenceCoverage.mjs";
+import RepresentativeExperience from "../components/RepresentativeExperience";
+import RepresentativeFinder from "../components/RepresentativeFinder";
+import RepresentativeHeader from "../components/RepresentativeHeader";
+import ScopeControl from "../components/ScopeControl";
+import { fetchLegislatorProfile } from "../lib/api";
+import {
+  buildPassAUrl,
+  parsePassARouteState,
+} from "../lib/frontendPassA.mjs";
 
-const DEFAULT_LEGISLATOR = {
-  id: "leg_aaron_bean",
-  bioguide_id: "B001317",
-  name_display: "Aaron Bean",
-  chamber: "house",
-  state: "FL",
-  district: "04",
-  party: "R",
-};
-
-const DEFAULT_COMPARE_RIGHT = {
-  id: "leg_adam_smith",
-  bioguide_id: "S000510",
-  name_display: "Adam Smith",
-  chamber: "house",
-  state: "WA",
-  district: "09",
-  party: "D",
+const EMPTY_ROUTE = {
+  legislatorId: null,
+  issue: null,
+  scope: "all",
 };
 
 export default function HomePage() {
-  const [selectedLegislator, setSelectedLegislator] = useState(DEFAULT_LEGISLATOR);
-  const [hasSelectedLegislator, setHasSelectedLegislator] = useState(false);
-  const [profileScope, setProfileScope] = useState("all");
-  const [issuePreferences, setIssuePreferences] = useState({});
-  const [profileRead, setProfileRead] = useState(null);
-  const [evidenceRequest, setEvidenceRequest] = useState(null);
-  const [comparisonSeed, setComparisonSeed] = useState({
-    left: DEFAULT_LEGISLATOR,
-    right: DEFAULT_COMPARE_RIGHT,
-  });
-  const [coverageMetadata, setCoverageMetadata] = useState(null);
-  const [zipRaceState, setZipRaceState] = useState({
+  const [routeReady, setRouteReady] = useState(false);
+  const [route, setRoute] = useState(EMPTY_ROUTE);
+  const [legislatorState, setLegislatorState] = useState({
     status: "idle",
-    payload: null,
+    legislator: null,
     error: null,
   });
+  const [finderOpen, setFinderOpen] = useState(false);
 
   useEffect(() => {
-    let active = true;
-
-    async function loadCoverageMetadata() {
-      try {
-        const payload = await fetchCoverageMetadata();
-        if (active) {
-          setCoverageMetadata(payload);
-        }
-      } catch (error) {
-        if (active) {
-          setCoverageMetadata(null);
-        }
-      }
+    function syncFromLocation() {
+      setRoute(parsePassARouteState(window.location.search));
+      setFinderOpen(false);
+      setRouteReady(true);
     }
-
-    loadCoverageMetadata();
-
-    return () => {
-      active = false;
-    };
+    syncFromLocation();
+    window.addEventListener("popstate", syncFromLocation);
+    return () => window.removeEventListener("popstate", syncFromLocation);
   }, []);
 
   useEffect(() => {
-    setProfileRead(null);
-  }, [selectedLegislator.id]);
+    let active = true;
+    if (!routeReady || !route.legislatorId) {
+      setLegislatorState({
+        status: "idle",
+        legislator: null,
+        error: null,
+      });
+      return () => {
+        active = false;
+      };
+    }
+    setLegislatorState((current) => (
+      current.legislator?.id === route.legislatorId
+        ? current
+        : { status: "loading", legislator: null, error: null }
+    ));
+    async function loadProfile() {
+      try {
+        const legislator = await fetchLegislatorProfile({
+          legislatorId: route.legislatorId,
+        });
+        if (active) {
+          setLegislatorState({
+            status: "ready",
+            legislator,
+            error: null,
+          });
+        }
+      } catch {
+        if (active) {
+          setLegislatorState({
+            status: "error",
+            legislator: null,
+            error: "That representative record is unavailable. Search again to continue.",
+          });
+        }
+      }
+    }
+    loadProfile();
+    return () => {
+      active = false;
+    };
+  }, [route.legislatorId, routeReady]);
 
-  function handleSelectLegislator(legislator) {
-    setHasSelectedLegislator(true);
-    setSelectedLegislator(legislator);
+  function navigate(next, { replace = false } = {}) {
+    const resolved = { ...route, ...next };
+    const url = buildPassAUrl(window.location.href, resolved);
+    window.history[replace ? "replaceState" : "pushState"]({}, "", url);
+    setRoute(resolved);
   }
 
-  const showingSampleProfile = selectedLegislator.id === DEFAULT_LEGISLATOR.id && !hasSelectedLegislator;
+  function selectRepresentative(legislator) {
+    setLegislatorState({
+      status: "ready",
+      legislator,
+      error: null,
+    });
+    setFinderOpen(false);
+    navigate({
+      legislatorId: legislator.id,
+      issue: null,
+    });
+    window.requestAnimationFrame(() => {
+      document.getElementById("representative-name")?.focus?.();
+      window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+      });
+    });
+  }
+
+  const legislator = legislatorState.legislator;
 
   return (
-    <main className="min-h-screen bg-[#f7f4ec] text-stone-900">
-      <section className="mx-auto max-w-[1440px] px-4 py-4 sm:px-6 lg:py-5">
-        <div className="grid gap-3 lg:grid-cols-[minmax(0,0.55fr)_minmax(520px,1.45fr)] lg:items-start">
-          <div className="rounded-2xl border border-stone-200 bg-white/75 px-4 py-2.5 shadow-[0_8px_22px_rgba(15,23,42,0.05)]">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">
-                  Political Fingerprint
-                </p>
-                <h1 className="mt-1 font-serif text-[1.65rem] leading-[1] text-stone-950 sm:text-[2rem] lg:text-[2.25rem]">
-                  Voting record, explained.
-                </h1>
-              </div>
-              <p className="max-w-[300px] text-sm leading-5 text-stone-700">
-                Start with the best-covered issue areas, then inspect the receipts.
-              </p>
-            </div>
-            {coverageMetadata ? (
-              <div className="mt-2 grid gap-2 sm:grid-cols-3">
-                <HeroStat
-                  value={formatNumber(coverageMetadata.legislator_count)}
-                  label={pluralizeCountNoun(coverageMetadata.legislator_count, "legislator")}
-                />
-                <HeroStat
-                  value={formatNumber(coverageMetadata.eligible_roll_call_count)}
-                  label={pluralizeCountNoun(coverageMetadata.eligible_roll_call_count, "eligible roll call")}
-                />
-                <HeroStat value={formatPercent(coverageMetadata.source_url_share)} label="source links" />
-              </div>
-            ) : (
-              <div className="mt-2 rounded-xl border border-cyan-900/10 bg-cyan-50 px-3 py-3 text-sm font-medium leading-5 text-cyan-950">
-                Reviewed vote evidence with source receipts loads from the live coverage record.
-              </div>
-            )}
-          </div>
-          <ZipLookupPanel
-            onComparePair={setComparisonSeed}
-            onRaceStateChange={setZipRaceState}
-            onSelectLegislator={handleSelectLegislator}
-            showElectionContext={false}
-            variant="hero"
-          />
-        </div>
-
-        <section className="mt-3 rounded-2xl border border-stone-200 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(15,23,42,0.06)] lg:px-5">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <div className="min-w-0">
-              <p className="text-xs uppercase tracking-[0.2em] text-stone-500">
-                Current Profile
-              </p>
-              <h2 className="mt-1 truncate font-serif text-[1.75rem] leading-none text-stone-950 sm:text-[2.15rem]">
-                {selectedLegislator.name_display}
-              </h2>
-              {showingSampleProfile ? (
-                <p className="mt-1 text-sm leading-5 text-stone-600">
-                  Sample profile shown until you search your ZIP.
-                </p>
-              ) : null}
-            </div>
-            <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.14em] text-stone-700">
-              {showingSampleProfile ? (
-                <span className="rounded-full border border-cyan-900/20 bg-cyan-50 px-3 py-1.5 text-cyan-900">
-                  Sample profile
-                </span>
-              ) : null}
-              <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5">
-                {formatChamber(selectedLegislator.chamber)}
-              </span>
-              <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5">
-                {selectedLegislator.party} - {selectedLegislator.state}
-                {selectedLegislator.district ? `-${selectedLegislator.district}` : " statewide"}
-              </span>
-              <a className="rounded-full border border-cyan-900/20 bg-cyan-50 px-3 py-1.5 text-cyan-900" href="#position-by-issue">
-                Jump to evidence
-              </a>
-            </div>
-          </div>
-          <ProfileScopeControl scope={profileScope} onChange={setProfileScope} />
-        </section>
-
-        <ProfileQuickRead
-          legislator={selectedLegislator}
-          onInspectDomain={(domain) =>
-            setEvidenceRequest({
-              domain,
-              requestedAt: Date.now(),
-            })
-          }
-          onProfileRead={setProfileRead}
-          scope={profileScope}
-        />
-
-        <PositionByIssue
-          evidenceRequest={evidenceRequest}
-          legislator={selectedLegislator}
-          legislatorId={selectedLegislator.id}
-          scope={profileScope}
-          title={`${selectedLegislator.name_display}'s issue evidence`}
-        />
-
-        <RecordAcrossCongressesPanel
-          legislator={selectedLegislator}
-          onInspectDomain={(domain) =>
-            setEvidenceRequest({
-              domain,
-              requestedAt: Date.now(),
-            })
-          }
-        />
-
-        <details className="mt-5 rounded-2xl border border-stone-200 bg-white px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.06)]" open={Object.keys(issuePreferences).length > 0}>
-          <summary className="cursor-pointer text-sm font-semibold uppercase tracking-[0.18em] text-stone-700 marker:text-cyan-900">
-            Tools: preferences, comparison, and switching officials
-          </summary>
-          <div className="mt-4 grid gap-4 border-t border-stone-200 pt-4">
-            <IssuePreferencePanel
-              positionRows={profileRead?.positions?.positions || []}
-              preferences={issuePreferences}
-              onChange={setIssuePreferences}
-            />
-
-            <AlignmentPanel
-              legislator={selectedLegislator}
-              preferences={issuePreferences}
-              scope={profileScope}
-              onInspectDomain={(domain) =>
-                setEvidenceRequest({
-                  domain,
-                  requestedAt: Date.now(),
-                })
-              }
-            />
-
-            <details className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3">
-              <summary className="cursor-pointer text-sm font-medium text-stone-900 marker:text-cyan-900">
-                Compare with another official
-              </summary>
-              <div className="mt-3 border-t border-stone-200 pt-3">
-                <ComparisonPanel
-                  defaultLeftLegislator={selectedLegislator}
-                  defaultRightLegislator={DEFAULT_COMPARE_RIGHT}
-                  onInspectDomain={(legislator, domain) => {
-                    handleSelectLegislator(legislator);
-                    setEvidenceRequest({
-                      domain,
-                      requestedAt: Date.now(),
-                    });
-                  }}
-                  preferences={issuePreferences}
-                  seedPair={comparisonSeed}
-                />
-              </div>
-            </details>
-
-            {zipRaceState.status === "ready" && (zipRaceState.payload?.races || []).length > 0 ? (
-              <UpcomingRacePanel
-                onSelectLegislator={handleSelectLegislator}
-                preferences={issuePreferences}
-                raceState={zipRaceState}
-              />
-            ) : null}
-
-            <details
-              className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-3"
-              id="manual-representative-search"
-            >
-              <summary className="cursor-pointer text-sm font-medium text-stone-900 marker:text-cyan-900">
-                Search or switch official
-              </summary>
-              <div className="mt-3 border-t border-stone-200 pt-3">
-                <LegislatorPicker
-                  onSelect={handleSelectLegislator}
-                  selectedLegislator={selectedLegislator}
-                />
-              </div>
-            </details>
-          </div>
-        </details>
-
-        <footer className="mt-8 border-t border-stone-300/80 py-6">
-          <div className="grid gap-3 md:grid-cols-3">
-            <TrustNote
-              eyebrow="Method"
-              text="Procedural votes may appear as context, but they do not count toward issue reads or alignment labels."
-            />
-            <TrustNote
-              eyebrow="Evidence"
-              text="Open Votes and Inspect Votes show the roll calls, vote position, classification reason, and source link when available."
-            />
-            <TrustNote
-              eyebrow="Limits"
-              text="Limited, ambiguous, and not-voting rows remain inspectable but do not drive support or opposition conclusions."
-            />
-          </div>
-          <p className="mt-4 text-sm leading-6 text-stone-600 md:text-right">
-            Data window: {formatDate(coverageMetadata?.window_start)} to {formatDate(coverageMetadata?.window_end)}.
+    <main className="min-h-screen bg-[#f7f3e9] text-stone-900">
+      <header className="border-b border-stone-200/90 bg-[#fbf8f1]">
+        <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-10">
+          <Link className="font-serif text-xl font-semibold text-stone-950" href="/">
+            Political Fingerprint
+          </Link>
+          <p className="hidden text-sm text-stone-600 sm:block">
+            Voting records, explained with receipts.
           </p>
-        </footer>
-      </section>
+        </div>
+      </header>
+
+      <div className="mx-auto max-w-[90rem] px-4 py-8 sm:px-6 lg:px-10 lg:py-10">
+        {!routeReady || legislatorState.status === "loading" ? (
+          <p className="py-20 text-center text-base text-stone-700" role="status">
+            Loading representative journey…
+          </p>
+        ) : null}
+
+        {routeReady && !route.legislatorId ? (
+          <div className="mx-auto max-w-5xl py-4 sm:py-10">
+            <p className="eyebrow">Understand the record in one intentional scroll</p>
+            <h1 className="mt-3 max-w-4xl font-serif text-5xl leading-[1.05] text-stone-950 sm:text-6xl">
+              Who represents you, and what have they done?
+            </h1>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-stone-700">
+              Find a federal representative, choose an issue, and inspect scoped reviewed analysis when available alongside chronological exact vote receipts.
+            </p>
+            <div className="mt-9">
+              <RepresentativeFinder onSelect={selectRepresentative} />
+            </div>
+          </div>
+        ) : null}
+
+        {routeReady && route.legislatorId && legislatorState.status === "error" ? (
+          <div className="mx-auto max-w-4xl">
+            <p className="rounded-xl border border-rose-200 bg-rose-50 p-4 text-base text-rose-800" role="alert">
+              {legislatorState.error}
+            </p>
+            <div className="mt-5">
+              <RepresentativeFinder onSelect={selectRepresentative} />
+            </div>
+          </div>
+        ) : null}
+
+        {legislator ? (
+          <>
+            <RepresentativeHeader
+              legislator={legislator}
+              onSwitch={() => setFinderOpen(true)}
+              scope={route.scope}
+            />
+            {finderOpen ? (
+              <div className="my-5" role="region" aria-label="Switch representative">
+                <RepresentativeFinder
+                  compact
+                  onCancel={() => setFinderOpen(false)}
+                  onSelect={selectRepresentative}
+                />
+              </div>
+            ) : null}
+            <ScopeControl
+              onChange={(scope) => navigate({ scope })}
+              scope={route.scope}
+            />
+            <RepresentativeExperience
+              legislator={legislator}
+              onSelectIssue={(issue) => navigate({ issue })}
+              scope={route.scope}
+              selectedIssue={route.issue}
+            />
+            <MethodFooter />
+          </>
+        ) : null}
+      </div>
     </main>
   );
 }
 
-const PROFILE_SCOPE_OPTIONS = [
-  {
-    value: "all",
-    label: "Full record",
-    detail: "118th + 119th",
-  },
-  {
-    value: "119",
-    label: "Recent Congress",
-    detail: "119th",
-  },
-  {
-    value: "118",
-    label: "Prior Congress",
-    detail: "118th",
-  },
-];
-
-function ProfileScopeControl({ scope, onChange }) {
+function MethodFooter() {
   return (
-    <div className="mt-3 flex flex-col gap-2 border-t border-stone-200 pt-3 sm:flex-row sm:items-center sm:justify-between">
-      <p className="text-sm leading-5 text-stone-600">
-        {scope === "all"
-          ? "Full available record is shown by default, with Congresses kept separate underneath."
-          : scope === "119"
-            ? "Showing the recent Congress view only."
-            : "Showing the prior Congress view only."}
-      </p>
-      <div className="flex w-full gap-1 rounded-xl border border-stone-200 bg-stone-50 p-1 sm:w-auto" role="group" aria-label="Profile record scope">
-        {PROFILE_SCOPE_OPTIONS.map((option) => (
-          <button
-            aria-pressed={scope === option.value}
-            className={`min-w-0 flex-1 rounded-lg px-3 py-2 text-left transition sm:min-w-[128px] ${
-              scope === option.value
-                ? "bg-cyan-900 text-white shadow-sm"
-                : "text-stone-700 hover:bg-white"
-            }`}
-            key={option.value}
-            onClick={() => onChange(option.value)}
-            type="button"
-          >
-            <span className="block text-xs font-semibold uppercase tracking-[0.12em]">{option.label}</span>
-            <span className={`mt-0.5 block text-[11px] ${scope === option.value ? "text-cyan-100" : "text-stone-500"}`}>
-              {option.detail}
-            </span>
-          </button>
-        ))}
+    <footer className="mt-12 border-t border-stone-300 py-8">
+      <div className="grid gap-5 md:grid-cols-3">
+        <FooterNote
+          heading="Recorded behavior"
+          text="The page maps supplied legislative actions. It does not infer motive, character, ideology, or how anyone should vote."
+        />
+        <FooterNote
+          heading="Evidence boundaries"
+          text="Present, Not Voting, procedural, limited-context, and unresolved records remain distinct and do not become support or opposition."
+        />
+        <FooterNote
+          heading="Reviewed analysis"
+          text="Benchmark findings stay bounded to their declared sample and Congress. Full representative-level issue synthesis is a later milestone."
+        />
       </div>
-    </div>
+    </footer>
   );
 }
 
-function HeroStat({ value, label }) {
+function FooterNote({ heading, text }) {
   return (
-    <div className="border-l border-cyan-700/30 pl-3">
-      <p className="font-serif text-[1.5rem] leading-none text-cyan-900 sm:text-[1.8rem]">{value}</p>
-      <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-stone-600">{label}</p>
+    <div>
+      <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-teal-900">
+        {heading}
+      </h2>
+      <p className="mt-2 text-base leading-7 text-stone-700">{text}</p>
     </div>
   );
-}
-
-function formatNumber(value) {
-  if (typeof value !== "number") {
-    return "Coverage loading";
-  }
-
-  return new Intl.NumberFormat("en-US").format(value);
-}
-
-function formatPercent(value) {
-  if (typeof value !== "number") {
-    return "Receipts loading";
-  }
-
-  return `${Math.round(value * 100)}%`;
-}
-
-function formatDate(value) {
-  if (!value) {
-    return "unknown";
-  }
-
-  return String(value).slice(0, 10);
-}
-
-function TrustNote({ eyebrow, text }) {
-  return (
-    <div className="rounded-2xl border border-stone-200 bg-white/70 px-4 py-4">
-      <p className="text-xs uppercase tracking-[0.24em] text-cyan-800">{eyebrow}</p>
-      <p className="mt-2 text-sm leading-6 text-stone-600">{text}</p>
-    </div>
-  );
-}
-
-function formatChamber(chamber) {
-  return chamber ? chamber[0].toUpperCase() + chamber.slice(1) : "";
 }

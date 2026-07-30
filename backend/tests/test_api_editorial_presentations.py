@@ -162,7 +162,7 @@ def test_approved_artifact_is_not_visible_for_118() -> None:
     assert result["presentations"][6]["tier"] == "receipts_only"
 
 
-def test_non_directional_tier_is_returned_without_analytical_sections() -> None:
+def test_missing_review_catalog_state_keeps_synthetic_tier_receipts_only() -> None:
     compiled = _compiled("semir-dev-09-not-voting-heavy-record")
     artifact = compile_public_issue_presentation(compiled, _input_for(compiled))
     member_id = artifact["artifact_identity"]["member_id"]
@@ -173,7 +173,7 @@ def test_non_directional_tier_is_returned_without_analytical_sections() -> None:
         scope="119",
     )
     justice = result["presentations"][6]
-    assert justice["tier"] == "non_directional_or_limited_evidence"
+    assert justice["tier"] == "receipts_only"
     assert justice["conclusion"] is None
     assert justice["repeated_patterns"] == []
     assert justice["policy_trajectories"] == []

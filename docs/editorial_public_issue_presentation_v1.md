@@ -172,6 +172,15 @@ closed to `receipts_only`.
 Any invalid or mismatched row fails closed to the supplied `receipts_only`
 result rather than causing a public-route failure.
 
+Frontend Pass A adds a second, non-authorizing agreement check against the
+generated `public_review_state_catalog_v1`. The catalog is derived from
+merged-validator-approved full-record review manifests and exposes only the
+closed public review fields. Analytical display requires exact catalog
+agreement on member, issue, artifact identity, Congress scope, semantic tier,
+and teaser after the publication gate has independently passed. The catalog
+cannot create an eligible presentation. Missing, stale, or mismatched catalog
+state fails closed to receipts-only.
+
 - `scope=119` may show an eligible 119th-Congress artifact.
 - `scope=all` may show that artifact only with an explicit reviewed-119th-
   Congress boundary.
@@ -187,6 +196,12 @@ receipt, preserves visible focus/highlight styling, and uses non-smooth
 scrolling when the user requests reduced motion. React also requires the API
 payload's legislator and bioguide identities to match the displayed
 representative before rendering presentation content.
+
+Repeated patterns and trajectories include compiler-supplied `semantic_role`
+and `direction`; React may group or label these values but may not infer them
+from wording, order, vote position, or party. `policy_episodes` is a reserved
+presentation array and is empty in the live Pass A selector until a separately
+reviewed episode contract supplies content.
 
 ## Current Foushee state
 

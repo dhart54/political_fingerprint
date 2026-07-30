@@ -220,6 +220,19 @@ export async function fetchLegislatorSearch({ query = "" } = {}) {
   return response.json();
 }
 
+export async function fetchLegislatorProfile({ legislatorId }) {
+  const response = await fetch(
+    `${API_BASE_URL}/legislators/${encodeURIComponent(legislatorId)}/profile`,
+    { cache: "no-store" },
+  );
+
+  if (!response.ok) {
+    throw new Error(`Legislator profile request failed with status ${response.status}`);
+  }
+
+  return response.json();
+}
+
 export async function fetchLegislatorComparison({
   leftLegislatorId,
   rightLegislatorId,
