@@ -1557,6 +1557,36 @@ def _api_receipts_only_smoke(base_url: str) -> dict[str, Any]:
     }
 
 
+def _approved_public_display(approved: dict[str, Any]) -> dict[str, Any]:
+    """Build the closed public shape from approved wording and bound semantics."""
+
+    display = _copy_display_wording(
+        approved["editorial_wording"],
+        semantic_tier=semantic_tier_for_artifact(approved),
+    )
+    propositions = {
+        item["proposition_id"]: item
+        for item in approved["compiled_semantic_meaning"]["propositions"]
+    }
+    for field in ("repeated_patterns", "policy_trajectories"):
+        enriched = []
+        for item in display[field]:
+            proposition = propositions.get(item.get("proposition_id"))
+            if proposition is None:
+                raise StoreSafetyError(
+                    f"approved public display is missing a proposition binding: {field}"
+                )
+            enriched.append(
+                {
+                    **item,
+                    "semantic_role": proposition["semantic_role"],
+                    "direction": proposition["direction"],
+                }
+            )
+        display[field] = enriched
+    return display
+
+
 def _api_smoke(base_url: str) -> dict[str, Any]:
     base = base_url.rstrip("/")
     with urlopen(f"{base}/health", timeout=20) as response:
@@ -1570,10 +1600,7 @@ def _api_smoke(base_url: str) -> dict[str, Any]:
         if item["artifact_type"] == "issue_public_presentation"
     )
     approved = presentation_artifact["payload"]
-    approved_display = _copy_display_wording(
-        approved["editorial_wording"],
-        semantic_tier=semantic_tier_for_artifact(approved),
-    )
+    approved_display = _approved_public_display(approved)
     tiers: dict[str, str] = {}
     selected: dict[str, dict[str, Any]] = {}
     for scope in ("119", "all", "118"):

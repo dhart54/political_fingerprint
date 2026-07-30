@@ -34,10 +34,11 @@ test("scope all preserves 119th boundary and scope 118 removes analysis", async 
 
 test("exact-action control highlights only supplied actions and keeps full ledger available", async ({ page }) => {
   await page.getByRole("button", {
-    name: /See exact actions for Certification, fentanyl research provisions/,
+    name: /Show 3 exact actions for Certification, fentanyl research provisions/,
   }).click();
   await expect(page.getByRole("heading", { name: "Chronological action ledger" })).toBeFocused();
-  await expect(page.getByText(/These are not presented as the complete issue record/)).toBeVisible();
+  await expect(page.getByText("Selected reviewed finding")).toBeVisible();
+  await expect(page.getByText(/Showing 3 exact actions supplied/)).toBeVisible();
   await expect(page.locator('[data-canonical-action-id="house:119:1:32"]')).toBeVisible();
   await page.getByRole("button", { name: /Return to all 7 actions/ }).click();
   await expect(page.getByRole("button", { name: "All", exact: true })).toHaveAttribute("aria-pressed", "true");

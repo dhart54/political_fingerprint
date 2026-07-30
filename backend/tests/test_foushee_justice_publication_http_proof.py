@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 from pathlib import Path
 from typing import Any
@@ -8,6 +9,50 @@ from typing import Any
 import pytest
 
 from scripts import foushee_justice_publication_http_proof as proof
+
+
+def test_approved_public_display_requires_closed_bound_semantics() -> None:
+    bundle = proof.activation.load_activation_bundle()
+    approved = next(
+        item["payload"]
+        for item in bundle["artifacts"]
+        if item["artifact_type"] == "issue_public_presentation"
+    )
+    display = proof.activation._approved_public_display(approved)
+
+    assert display["repeated_patterns"][0]["semantic_role"] == "behavioral"
+    assert display["repeated_patterns"][0]["direction"] == "support"
+    assert display["repeated_patterns"][1]["semantic_role"] == "behavioral"
+    assert display["repeated_patterns"][1]["direction"] == "opposition"
+    assert display["policy_trajectories"][0]["semantic_role"] == "behavioral"
+    assert display["policy_trajectories"][0]["direction"] == "mixed"
+    assert all(
+        set(item)
+        == {
+            "heading",
+            "body",
+            "action_ids",
+            "proposition_id",
+            "semantic_role",
+            "direction",
+        }
+        for item in [
+            *display["repeated_patterns"],
+            *display["policy_trajectories"],
+        ]
+    )
+
+    unbound = copy.deepcopy(approved)
+    unbound["compiled_semantic_meaning"]["propositions"] = [
+        item
+        for item in unbound["compiled_semantic_meaning"]["propositions"]
+        if item["proposition_id"] != "prop:bc08a2271517ebb7"
+    ]
+    with pytest.raises(
+        proof.StoreSafetyError,
+        match="missing a proposition binding: policy_trajectories",
+    ):
+        proof.activation._approved_public_display(unbound)
 
 
 class FakeLifecycle:

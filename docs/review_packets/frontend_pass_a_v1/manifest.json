@@ -1,0 +1,76 @@
+{
+  "schema_version": "frontend_pass_a_visual_review_manifest_v1",
+  "capture": {
+    "captured_at": "2026-07-29T22:02:17-04:00",
+    "branch": "codex/frontend-pass-a-representative-issue-foundation",
+    "runtime_commit": "9f79bcf75c60ce92bd19d7ce930acc38d206dfd8",
+    "frontend_url": "http://127.0.0.1:3100",
+    "backend_url": "http://127.0.0.1:8000",
+    "data_source": "established live-shaped local data",
+    "production_accessed": false,
+    "fixture_route_used": false,
+    "command": "PASS_A_LIVE_REVIEW_DIR=<artifact-dir> node ./node_modules/@playwright/test/cli.js test tests/frontend-pass-a-live-review.spec.mjs"
+  },
+  "screenshots": [
+    {
+      "file": "01-finder-1440.png",
+      "identity": "representative finder",
+      "viewport": "1440x1000",
+      "sha256": "3e99aa3ccf4cc2ef5f63911c28c494e08d71c0bc48d93c505a23cbe291056344"
+    },
+    {
+      "file": "02-selected-overview-recommended-1440.png",
+      "identity": "selected compact header, Recommended issue grid, reviewed Justice card",
+      "viewport": "1440x1000",
+      "sha256": "3d70e26808523a5e64a25be88a2406ccecc10fd7d1bab444ebbb49d7b0d30398"
+    },
+    {
+      "file": "03-visible-focus-issue-selection-1440.png",
+      "identity": "visible keyboard focus on Justice issue selection",
+      "viewport": "1440x1000",
+      "sha256": "7114705829e2ba8a1bdc3f3cd6cd2920f9e8d3504b80b7ab07b341c420455936"
+    },
+    {
+      "file": "04-justice-detail-ledger-1440.png",
+      "identity": "Justice detail, support/opposition/mixed findings, global evidence limits, full ledger",
+      "viewport": "1440x1000",
+      "sha256": "bc1fe81dac358bc9045b866db368c3827b381426ce0bd3f6b1bd041cdf60dfc1"
+    },
+    {
+      "file": "05-exact-actions-focused-1440.png",
+      "identity": "three matched actions, ledger focus, newest receipt expanded, canonical receipt identity",
+      "viewport": "1440x1000",
+      "sha256": "25ec2cadc9324f622a267a2933196934f09d33d561b015c69dca097c54a0579e"
+    },
+    {
+      "file": "06-returned-to-complete-record-1440.png",
+      "identity": "one-click return to the complete 76-action ledger",
+      "viewport": "1440x1000",
+      "sha256": "4ae333587e1b55c656358e5c3b099ba594cc7967bad609351c496c0cef166a5d"
+    },
+    {
+      "file": "07-filtered-ledger-1024.png",
+      "identity": "tablet issue cards, sticky navigation, filtered ledger, expanded receipt",
+      "viewport": "1024x900",
+      "sha256": "0bb67ac168d2489c24e4dd207de96acd21999a0f514b1ea3e11f572628f005aa"
+    },
+    {
+      "file": "08-filtered-ledger-390.png",
+      "identity": "mobile issue cards, sticky navigation, filtered ledger, expanded receipt",
+      "viewport": "390x844",
+      "sha256": "1bf18eff535cf379ea2672d89db043e5cd4fe7a9999145e99559dcb81a175e64"
+    },
+    {
+      "file": "09-filtered-ledger-320.png",
+      "identity": "narrow mobile issue cards, sticky navigation, filtered ledger, expanded receipt",
+      "viewport": "320x844",
+      "sha256": "75a75a1ee796a1d6ed875bc370945a0cdc105cf3e5da94df3c6359b5bea2dadb"
+    },
+    {
+      "file": "10-effective-zoom-200.png",
+      "identity": "200 percent effective zoom with accessible matched-action count",
+      "viewport": "1440x1000 at document zoom 2",
+      "sha256": "161f5be640c9aeb30f3e68dbefb1a653861bfc0c7e40e4b5218f8f6a91a42628"
+    }
+  ]
+}

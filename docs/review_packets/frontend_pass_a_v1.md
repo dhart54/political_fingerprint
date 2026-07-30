@@ -2,10 +2,30 @@
 
 ## Review decision requested
 
-Review the implemented representative journey and recommend whether this branch
-is ready to merge after CI and the Vercel preview are green. This packet does
-not request editorial approval, publication activation, production data writes,
-manual deployment, or a full-record methodology decision.
+Review the implemented representative journey using the matching branch
+backend and the durable local full-stack evidence recorded below. PR #121 must
+remain draft during this review. This packet does not request editorial
+approval, publication activation, production data writes, manual deployment,
+or a full-record methodology decision.
+
+## Delivery identity and preview boundary
+
+- PR: `dhart54/political_fingerprint#121`
+- Branch: `codex/frontend-pass-a-representative-issue-foundation`
+- Captured runtime commit:
+  `9f79bcf75c60ce92bd19d7ce930acc38d206dfd8`
+- Base: `13a51154c3c5dfce38ca717db1f3819b1fef9e23`
+
+PR #121 changes both backend and frontend contracts. Vercel deploys only the
+frontend branch and has no matching branch backend, so its representative
+search is a frontend-shell check rather than authoritative end-to-end product
+proof. No public fixture API, wildcard CORS policy, compatibility proxy, or
+temporary backend is added for this PR.
+
+The authoritative product proof is the matching branch backend on loopback,
+the established live-shaped local data path, and real Chromium tests. After
+merge, the automatically deployed matching backend/frontend pair should
+receive a separate bounded public smoke validation.
 
 ## Implemented surface
 
@@ -40,6 +60,11 @@ React receives repeated-pattern/trajectory semantic roles and direction from
 compiled backend meaning. It does not classify prose, infer direction from
 Yea/Nay, or change ordering by party.
 
+The PostgreSQL activation and real-Uvicorn proof contracts require the closed
+enriched finding shape. Repeated support is `behavioral/support`, repeated
+opposition is `behavioral/opposition`, and the fentanyl trajectory is
+`behavioral/mixed`. Missing proposition bindings fail closed.
+
 ## Episode gap inventory
 
 The live API intentionally returns `policy_episodes: []`. The component and
@@ -49,18 +74,84 @@ limitation, caveats, official sources, and oldest-first exact actions. A later
 milestone must define the reviewed backend episode payload and its approval and
 publication gates before live episode prose appears.
 
-## Validation evidence to record before handoff
+## Durable visual review package
 
-- deterministic catalog build/check and full-record merged validation;
-- focused catalog, selector/API, profile endpoint, and Semantic IR tests;
-- all frontend unit tests, lint, and production build;
-- cutover, IR-presentation, and Pass A Playwright suites;
-- 1440, 1024, 390, and 320 pixel overflow checks;
-- keyboard, visible-focus, reduced-motion, and 200% zoom checks;
-- local in-app browser inspection with console-error review;
-- generated desktop/mobile screenshot evidence;
-- documentation governance, terminology, and JSON parsing;
-- final status/diff inspection.
+The bounded package is
+`docs/review_packets/frontend_pass_a_v1/screenshots/`, with identities,
+viewports, data-source details, commands, and SHA-256 digests in
+`docs/review_packets/frontend_pass_a_v1/manifest.json`.
+
+The capture used:
+
+- frontend `http://127.0.0.1:3100`;
+- matching branch backend `http://127.0.0.1:8000`;
+- established live-shaped local data;
+- ZIP `27701`, representative `leg_valerie_p_foushee`, and issue
+  `JUSTICE_PUBLIC_SAFETY`;
+- no production access and no public fixture route.
+
+Screenshot identities:
+
+- `01-finder-1440.png`: finder at 1440x1000;
+- `02-selected-overview-recommended-1440.png`: compact selected header,
+  Recommended grid, and reviewed Justice card;
+- `03-visible-focus-issue-selection-1440.png`: visible keyboard focus;
+- `04-justice-detail-ledger-1440.png`: Justice detail, support, opposition,
+  mixed finding, global evidence limits, and chronological ledger;
+- `05-exact-actions-focused-1440.png`: three exact actions, focused ledger,
+  newest expanded receipt, and canonical identity;
+- `06-returned-to-complete-record-1440.png`: one-click return to all 76
+  actions;
+- `07-filtered-ledger-1024.png`, `08-filtered-ledger-390.png`, and
+  `09-filtered-ledger-320.png`: responsive cards, sticky navigation, filtered
+  ledger, and expanded receipt;
+- `10-effective-zoom-200.png`: 200% effective zoom and accessible matched
+  count.
+
+The capture asserts no horizontal overflow, no profile image, no deferred
+Across Congresses, Compare, Preferences, or Alerts tools, keyboard issue and
+exact-action focus transfer, reduced-motion scrolling, and the accessible
+matched-action count.
+
+## Validation evidence
+
+- Deterministic public review-state catalog build/check: passed.
+- Semantic pipeline: all seven schema, Semantic IR, full-record, reference,
+  contract-test, documentation, and terminology commands passed.
+- Focused presentation, catalog, profile/search, and API tests: 105 passed.
+- Publication activation PostgreSQL suite: 23 passed with no skips.
+- PostgreSQL row-contract and owned-lifecycle fault tests: 58 passed.
+- Fresh disposable backup evidence and authoritative owned-lifecycle real-
+  Uvicorn proof: passed; the exact baseline and fingerprint were restored.
+- Frontend unit tests: 106 passed.
+- Lint: zero errors and eight pre-existing warnings in deferred components.
+- Production frontend build: passed.
+- Cutover browser suite: 3 passed. IR presentation suite: 4 passed. Pass A
+  suite: 12 passed and the opt-in capture case skipped as designed.
+- Live local-data visual capture: 1 passed, including 1440, 1024, 390, 320,
+  keyboard focus, reduced motion, and 200% effective zoom checks.
+- Documentation and full-record terminology governance: passed.
+- Repository parsing: 249 JSON files and 2 YAML files passed.
+- Screenshot integrity: all 10 SHA-256 digests matched the manifest.
+- Final Docker proof-resource and disposable-database absence checks: passed.
+- Final status, intended-file diff, and `git diff --check`: passed.
+
+GitHub and Vercel check results are recorded on PR #121 after the delivery-gate
+commit is pushed.
+
+## Known visual imperfections
+
+- The selected representative journey is intentionally long on 390px and
+  320px screens because it preserves the complete issue-discovery grid before
+  the selected issue detail.
+- The expanded receipt uses a narrow reading column on desktop, leaving
+  deliberate unused space to the right.
+- The governed live presentation currently supplies no issue-specific
+  limitation cards. The full-page evidence instead captures the global
+  `Evidence boundaries` and `Reviewed analysis` limitation hierarchy.
+- A full-page screenshot can show the sticky section navigation at an
+  intermediate document position; normal viewport scrolling keeps it at the
+  top edge as intended.
 
 ## Deferred, unchanged authority
 
@@ -81,4 +172,5 @@ approval receipt, or source report is intentionally changed by this milestone.
 - [ ] Present, Not Voting, procedural, and limited-context states remain
       distinct.
 - [ ] Mobile and zoom views remain readable with no horizontal overflow.
-- [ ] CI and preview checks are green.
+- [ ] Required GitHub checks are green; Vercel is reviewed only as a
+      non-authoritative frontend shell.
