@@ -73,6 +73,12 @@ The machine-readable authority is
   packet are the V2 artifacts under
   `docs/editorial/full_record_reviews/proposals/`. V1 remains discoverable only
   as historical, superseded, non-selectable evidence.
+- Interpretation-source readiness is now mechanically complete and ready for
+  all 37 authorized actions under the detached, non-authorizing artifact
+  `docs/editorial/full_record_reviews/source_readiness/f000477_justice_public_safety_119_interpretation_source_readiness_v1.json`.
+  This source accounting generated no action interpretations and does not
+  authorize M3, episodes, propositions, Semantic IR, synthesis, persistence,
+  deployment, or publication. Action interpretation remains not started.
 - Before the activation, the 71-artifact seed had no publication-registry row.
   That state remains historical evidence and was not modified by the editorial
   hard cutover.

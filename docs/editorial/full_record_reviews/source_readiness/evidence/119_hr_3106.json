@@ -1,0 +1,78 @@
+{
+    "bill": {
+        "actions": {
+            "count": 21,
+            "url": "https://api.congress.gov/v3/bill/119/hr/3106/actions?format=json"
+        },
+        "committeeReports": [
+            {
+                "citation": "H. Rept. 119-744",
+                "url": "https://api.congress.gov/v3/committee-report/119/HRPT/744?format=json"
+            }
+        ],
+        "committees": {
+            "count": 2,
+            "url": "https://api.congress.gov/v3/bill/119/hr/3106/committees?format=json"
+        },
+        "congress": 119,
+        "constitutionalAuthorityStatementText": "<pre>\n[Congressional Record Volume 171, Number 72 (Wednesday, April 30, 2025)]\n[House]\nFrom the Congressional Record Online through the Government Publishing Office [<a href=\"https://www.gpo.gov\">www.gpo.gov</a>]\nBy Mr. KENNEDY of New York:\nH.R. 3106.\nCongress has the power to enact this legislation pursuant\nto the following:\nArticle I, Section 8, Clause 18\n[Page H1776]\n</pre>",
+        "cosponsors": {
+            "count": 1,
+            "countIncludingWithdrawnCosponsors": 1,
+            "url": "https://api.congress.gov/v3/bill/119/hr/3106/cosponsors?format=json"
+        },
+        "introducedDate": "2025-04-30",
+        "latestAction": {
+            "actionDate": "2026-07-14",
+            "text": "Received in the Senate and Read twice and referred to the Committee on Homeland Security and Governmental Affairs."
+        },
+        "legislationUrl": "https://www.congress.gov/bill/119th-congress/house-bill/3106",
+        "number": "3106",
+        "originChamber": "House",
+        "originChamberCode": "H",
+        "policyArea": {
+            "name": "Emergency Management"
+        },
+        "sponsors": [
+            {
+                "bioguideId": "K000402",
+                "district": 26,
+                "firstName": "Timothy",
+                "fullName": "Rep. Kennedy, Timothy M. [D-NY-26]",
+                "isByRequest": "N",
+                "lastName": "Kennedy",
+                "middleName": "M.",
+                "party": "D",
+                "state": "NY",
+                "url": "https://api.congress.gov/v3/member/K000402?format=json"
+            }
+        ],
+        "subjects": {
+            "count": 6,
+            "url": "https://api.congress.gov/v3/bill/119/hr/3106/subjects?format=json"
+        },
+        "summaries": {
+            "count": 1,
+            "url": "https://api.congress.gov/v3/bill/119/hr/3106/summaries?format=json"
+        },
+        "textVersions": {
+            "count": 4,
+            "url": "https://api.congress.gov/v3/bill/119/hr/3106/text?format=json"
+        },
+        "title": "Weatherizing Infrastructure in the North and Terrorism Emergency Readiness Act of 2025",
+        "titles": {
+            "count": 7,
+            "url": "https://api.congress.gov/v3/bill/119/hr/3106/titles?format=json"
+        },
+        "type": "HR",
+        "updateDate": "2026-07-23T18:06:32Z",
+        "updateDateIncludingText": "2026-07-23T18:06:32Z"
+    },
+    "request": {
+        "billNumber": "3106",
+        "billType": "hr",
+        "congress": "119",
+        "contentType": "application/json",
+        "format": "json"
+    }
+}

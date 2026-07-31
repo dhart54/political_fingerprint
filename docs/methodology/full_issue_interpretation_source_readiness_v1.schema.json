@@ -1,0 +1,357 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "full_issue_interpretation_source_readiness_v1.schema.json",
+  "title": "Full issue interpretation source readiness V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "artifact_role",
+    "result",
+    "subject",
+    "source_readiness_subject_sha256",
+    "authorizations",
+    "input_contract"
+  ],
+  "properties": {
+    "schema_version": {"const": "full_issue_interpretation_source_readiness_v1"},
+    "artifact_id": {"const": "interpretation-source-readiness:f000477:justice_public_safety:119:v1"},
+    "artifact_role": {"const": "detached_non_authorizing_source_readiness_metadata"},
+    "result": {"enum": ["complete_ready", "complete_blocked"]},
+    "subject": {"$ref": "#/definitions/subject"},
+    "source_readiness_subject_sha256": {"$ref": "#/definitions/sha256"},
+    "authorizations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_interpretation",
+        "episode_authority",
+        "semantic_authority",
+        "synthesis_eligibility",
+        "persistence_eligibility",
+        "publication_eligibility"
+      ],
+      "properties": {
+        "action_interpretation": {"const": false},
+        "episode_authority": {"const": false},
+        "semantic_authority": {"const": false},
+        "synthesis_eligibility": {"const": false},
+        "persistence_eligibility": {"const": false},
+        "publication_eligibility": {"const": false}
+      }
+    },
+    "input_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowlisted_input_classes", "excluded_input_classes"],
+      "properties": {
+        "allowlisted_input_classes": {
+          "const": [
+            "approved_v2_universe_manifest",
+            "detached_m1_universe_authority_receipt",
+            "v2_universe_discovery",
+            "v2_source_inventory",
+            "v2_universe_discovery_configuration",
+            "v2_universe_comparison",
+            "governed_official_source_files_and_projections",
+            "neutral_source_sufficiency_and_action_identity_methodology"
+          ]
+        },
+        "excluded_input_classes": {
+          "const": [
+            "member_party",
+            "accepted_seven_action_interpretations",
+            "benchmark_conclusion",
+            "accepted_semantic_ir_propositions",
+            "public_presentation_wording",
+            "episode_outcomes",
+            "desired_synthesis_outcomes",
+            "other_action_interpretations",
+            "secondary_or_partisan_descriptions"
+          ]
+        }
+      }
+    }
+  },
+  "definitions": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "sourceBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_type",
+        "source_subject",
+        "url",
+        "text_version",
+        "evidence_role",
+        "digest_basis",
+        "source_content_sha256"
+      ],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "source_type": {
+          "enum": [
+            "house_clerk_roll_call",
+            "congress_gov_action_record",
+            "congressional_record_pdf",
+            "govinfo_bill_status",
+            "govinfo_bill_text",
+            "house_rules_committee_report"
+          ]
+        },
+        "source_subject": {"type": "string", "minLength": 1},
+        "url": {"type": "string", "pattern": "^https://"},
+        "text_version": {"type": "string", "minLength": 1},
+        "evidence_role": {"type": "string", "minLength": 1},
+        "digest_basis": {
+          "enum": [
+            "canonical_clerk_action_projection_sha256",
+            "canonical_congress_metadata_sha256",
+            "raw_official_file_sha256"
+          ]
+        },
+        "source_content_sha256": {"$ref": "#/definitions/sha256"},
+        "governed_local_path": {"type": "string", "minLength": 1},
+        "raw_file_sha256": {"$ref": "#/definitions/sha256"},
+        "acquisition_authority": {"const": "api.congress.gov/v3/bill"},
+        "v2_projection_sha256": {"$ref": "#/definitions/sha256"},
+        "v2_projection_digest_basis": {"const": "canonical_congress_metadata_sha256"}
+      }
+    },
+    "criteria": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approved_universe_member",
+        "stable_action_identity",
+        "official_member_action_resolved",
+        "exact_action_identity",
+        "house_stage_resolved",
+        "vote_source_present",
+        "exact_action_source_present",
+        "exact_action_not_parent_only",
+        "governed_source_exists",
+        "text_version_explicit",
+        "all_source_digests_valid",
+        "no_source_conflict",
+        "no_source_constraint",
+        "all_paths_governed",
+        "approved_source_types_only",
+        "cross_domain_scope_complete",
+        "no_semantic_leakage"
+      ],
+      "properties": {
+        "approved_universe_member": {"type": "boolean"},
+        "stable_action_identity": {"type": "boolean"},
+        "official_member_action_resolved": {"type": "boolean"},
+        "exact_action_identity": {"type": "boolean"},
+        "house_stage_resolved": {"type": "boolean"},
+        "vote_source_present": {"type": "boolean"},
+        "exact_action_source_present": {"type": "boolean"},
+        "exact_action_not_parent_only": {"type": "boolean"},
+        "governed_source_exists": {"type": "boolean"},
+        "text_version_explicit": {"type": "boolean"},
+        "all_source_digests_valid": {"type": "boolean"},
+        "no_source_conflict": {"type": "boolean"},
+        "no_source_constraint": {"type": "boolean"},
+        "all_paths_governed": {"type": "boolean"},
+        "approved_source_types_only": {"type": "boolean"},
+        "cross_domain_scope_complete": {"type": "boolean"},
+        "no_semantic_leakage": {"type": "boolean"}
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "official_action_date",
+        "congress",
+        "session",
+        "roll_number",
+        "official_member_action",
+        "exact_action_identity",
+        "house_action_stage",
+        "vote_source_bindings",
+        "exact_action_source_bindings",
+        "source_availability_state",
+        "source_conflict_state",
+        "source_constraint_state",
+        "cross_domain_memberships",
+        "cross_domain_scope_limitations",
+        "readiness_criteria",
+        "blocker_codes",
+        "readiness_state",
+        "source_packet_sha256"
+      ],
+      "properties": {
+        "action_id": {"type": "string", "pattern": "^house:119:[12]:[0-9]+$"},
+        "official_action_date": {"type": "string", "format": "date"},
+        "congress": {"const": 119},
+        "session": {"enum": [1, 2]},
+        "roll_number": {"type": "integer", "minimum": 1},
+        "official_member_action": {"enum": ["yea", "nay", "present", "not_voting"]},
+        "exact_action_identity": {"type": "string", "minLength": 1},
+        "house_action_stage": {
+          "enum": ["passage", "amendment", "suspension_passage", "suspension_passage_as_amended"]
+        },
+        "vote_source_bindings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/definitions/sourceBinding"}
+        },
+        "exact_action_source_bindings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/definitions/sourceBinding"}
+        },
+        "source_availability_state": {"enum": ["available", "missing"]},
+        "source_conflict_state": {"enum": ["none", "unresolved"]},
+        "source_constraint_state": {"enum": ["none", "blocked"]},
+        "cross_domain_memberships": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"enum": ["JUSTICE_PUBLIC_SAFETY", "NATIONAL_SECURITY"]}
+        },
+        "cross_domain_scope_limitations": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": ["surveillance_authority", "fisc_and_court_authority", "civil_liberty_protections"]
+          }
+        },
+        "readiness_criteria": {"$ref": "#/definitions/criteria"},
+        "blocker_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/definitions/blockerCode"}
+        },
+        "readiness_state": {"$ref": "#/definitions/readinessState"},
+        "source_packet_sha256": {"$ref": "#/definitions/sha256"}
+      }
+    },
+    "readinessState": {
+      "enum": [
+        "ready",
+        "blocked_missing_official_source",
+        "blocked_exact_action_identity",
+        "blocked_parent_only_source",
+        "blocked_wrong_text_version",
+        "blocked_source_digest",
+        "blocked_source_conflict",
+        "blocked_source_constraint",
+        "blocked_cross_domain_scope",
+        "blocked_semantic_leakage"
+      ]
+    },
+    "blockerCode": {
+      "type": "string",
+      "enum": [
+        "blocked_missing_official_source",
+        "blocked_exact_action_identity",
+        "blocked_parent_only_source",
+        "blocked_wrong_text_version",
+        "blocked_source_digest",
+        "blocked_source_conflict",
+        "blocked_source_constraint",
+        "blocked_cross_domain_scope",
+        "blocked_semantic_leakage"
+      ]
+    },
+    "aggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_action_count", "ready_count", "blocked_count", "counts_by_readiness_state", "counts_by_blocker"],
+      "properties": {
+        "total_action_count": {"const": 37},
+        "ready_count": {"type": "integer", "minimum": 0, "maximum": 37},
+        "blocked_count": {"type": "integer", "minimum": 0, "maximum": 37},
+        "counts_by_readiness_state": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "ready": {"type": "integer", "minimum": 0},
+            "blocked_missing_official_source": {"type": "integer", "minimum": 0},
+            "blocked_exact_action_identity": {"type": "integer", "minimum": 0},
+            "blocked_parent_only_source": {"type": "integer", "minimum": 0},
+            "blocked_wrong_text_version": {"type": "integer", "minimum": 0},
+            "blocked_source_digest": {"type": "integer", "minimum": 0},
+            "blocked_source_conflict": {"type": "integer", "minimum": 0},
+            "blocked_source_constraint": {"type": "integer", "minimum": 0},
+            "blocked_cross_domain_scope": {"type": "integer", "minimum": 0},
+            "blocked_semantic_leakage": {"type": "integer", "minimum": 0}
+          }
+        },
+        "counts_by_blocker": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "blocked_missing_official_source": {"type": "integer", "minimum": 0},
+            "blocked_exact_action_identity": {"type": "integer", "minimum": 0},
+            "blocked_parent_only_source": {"type": "integer", "minimum": 0},
+            "blocked_wrong_text_version": {"type": "integer", "minimum": 0},
+            "blocked_source_digest": {"type": "integer", "minimum": 0},
+            "blocked_source_conflict": {"type": "integer", "minimum": 0},
+            "blocked_source_constraint": {"type": "integer", "minimum": 0},
+            "blocked_cross_domain_scope": {"type": "integer", "minimum": 0},
+            "blocked_semantic_leakage": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "member_id",
+        "issue_id",
+        "chamber",
+        "congress",
+        "approved_manifest_id",
+        "approved_manifest_sha256",
+        "universe_subject_sha256",
+        "authority_receipt_id",
+        "authority_receipt_sha256",
+        "action_ids",
+        "action_set_sha256",
+        "source_manifest_id",
+        "source_manifest_sha256",
+        "criteria_version",
+        "action_readiness",
+        "aggregate"
+      ],
+      "properties": {
+        "member_id": {"const": "F000477"},
+        "issue_id": {"const": "JUSTICE_PUBLIC_SAFETY"},
+        "chamber": {"const": "house"},
+        "congress": {"const": 119},
+        "approved_manifest_id": {"const": "full-universe:f000477:justice_public_safety:119:proposed:v2"},
+        "approved_manifest_sha256": {"$ref": "#/definitions/sha256"},
+        "universe_subject_sha256": {"$ref": "#/definitions/sha256"},
+        "authority_receipt_id": {"const": "universe-authority:f000477:justice_public_safety:119:v2"},
+        "authority_receipt_sha256": {"$ref": "#/definitions/sha256"},
+        "action_ids": {
+          "type": "array",
+          "minItems": 37,
+          "maxItems": 37,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "action_set_sha256": {"$ref": "#/definitions/sha256"},
+        "source_manifest_id": {"const": "interpretation-source-manifest:f000477:justice_public_safety:119:v1"},
+        "source_manifest_sha256": {"$ref": "#/definitions/sha256"},
+        "criteria_version": {"const": "full_issue_interpretation_source_readiness_criteria_v1"},
+        "action_readiness": {
+          "type": "array",
+          "minItems": 37,
+          "maxItems": 37,
+          "items": {"$ref": "#/definitions/record"}
+        },
+        "aggregate": {"$ref": "#/definitions/aggregate"}
+      }
+    }
+  }
+}

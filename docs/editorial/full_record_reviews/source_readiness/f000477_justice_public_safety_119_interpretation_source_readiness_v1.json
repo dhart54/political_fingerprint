@@ -1,0 +1,2584 @@
+{
+  "artifact_id": "interpretation-source-readiness:f000477:justice_public_safety:119:v1",
+  "artifact_role": "detached_non_authorizing_source_readiness_metadata",
+  "authorizations": {
+    "action_interpretation": false,
+    "episode_authority": false,
+    "persistence_eligibility": false,
+    "publication_eligibility": false,
+    "semantic_authority": false,
+    "synthesis_eligibility": false
+  },
+  "input_contract": {
+    "allowlisted_input_classes": [
+      "approved_v2_universe_manifest",
+      "detached_m1_universe_authority_receipt",
+      "v2_universe_discovery",
+      "v2_source_inventory",
+      "v2_universe_discovery_configuration",
+      "v2_universe_comparison",
+      "governed_official_source_files_and_projections",
+      "neutral_source_sufficiency_and_action_identity_methodology"
+    ],
+    "excluded_input_classes": [
+      "member_party",
+      "accepted_seven_action_interpretations",
+      "benchmark_conclusion",
+      "accepted_semantic_ir_propositions",
+      "public_presentation_wording",
+      "episode_outcomes",
+      "desired_synthesis_outcomes",
+      "other_action_interpretations",
+      "secondary_or_partisan_descriptions"
+    ]
+  },
+  "result": "complete_ready",
+  "schema_version": "full_issue_interpretation_source_readiness_v1",
+  "source_readiness_subject_sha256": "104ad1aedfbe484fb9844e3fae91075ac9e6c758a10efe3c56ab43a40ce8f483",
+  "subject": {
+    "action_ids": [
+      "house:119:1:6",
+      "house:119:1:23",
+      "house:119:1:27",
+      "house:119:1:32",
+      "house:119:1:33",
+      "house:119:1:42",
+      "house:119:1:68",
+      "house:119:1:98",
+      "house:119:1:128",
+      "house:119:1:130",
+      "house:119:1:131",
+      "house:119:1:162",
+      "house:119:1:166",
+      "house:119:1:270",
+      "house:119:1:271",
+      "house:119:1:274",
+      "house:119:1:275",
+      "house:119:1:286",
+      "house:119:1:289",
+      "house:119:1:298",
+      "house:119:1:299",
+      "house:119:1:340",
+      "house:119:1:351",
+      "house:119:2:155",
+      "house:119:2:157",
+      "house:119:2:169",
+      "house:119:2:171",
+      "house:119:2:218",
+      "house:119:2:221",
+      "house:119:2:227",
+      "house:119:2:234",
+      "house:119:2:240",
+      "house:119:2:259",
+      "house:119:2:265",
+      "house:119:2:273",
+      "house:119:2:275",
+      "house:119:2:278"
+    ],
+    "action_readiness": [
+      {
+        "action_id": "house:119:1:6",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:29",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_house_passage_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/80a2ae96116e4886767c9b70ec7125d93d42728164338c4f4bba3e010045e180.xml",
+            "source_content_sha256": "80a2ae96116e4886767c9b70ec7125d93d42728164338c4f4bba3e010045e180",
+            "source_id": "govinfo_text_119_hr29_eh",
+            "source_subject": "119:hr:29",
+            "source_type": "govinfo_bill_text",
+            "text_version": "eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr29eh/xml/BILLS-119hr29eh.xml"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-01-07",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 6,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "2ae326a25eb82c09c2b6abd011fec20f11726f01b7fe9c04ae7da97054d0c2f7",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "29e3808d4ad0c07e65512c41bab4d92ca94d606d9dea17c781c7e46e3bc950c4",
+            "source_id": "clerk:119:1:6",
+            "source_subject": "house:119:1:6",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-01-07",
+            "url": "https://clerk.house.gov/evs/2025/roll006.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:23",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:s:5",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_house_passage_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/bebf01a558f947933e2d9ff55403cdec0bff030a51782456457baff66e2e7a9f.xml",
+            "source_content_sha256": "bebf01a558f947933e2d9ff55403cdec0bff030a51782456457baff66e2e7a9f",
+            "source_id": "govinfo_text_119_s5_es",
+            "source_subject": "119:s:5",
+            "source_type": "govinfo_bill_text",
+            "text_version": "es",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119s5es/xml/BILLS-119s5es.xml"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-01-22",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 23,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "63373d26686bc4246db61e54f9ae6ed807b75f674c9b86e818689274a86f89ed",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "724cf544a182cbcf70fbe779bc6a3ee13bf78a1feb4faf50d8a57de2017e02c7",
+            "source_id": "clerk:119:1:23",
+            "source_subject": "house:119:1:23",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-01-22",
+            "url": "https://clerk.house.gov/evs/2025/roll023.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:27",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:21",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "bdd5fe0e8c4013f1891067c6e1d621249a8b4707a353926eeba8aec1990b7fd6",
+            "source_id": "congress_action_record:house:119:1:27",
+            "source_subject": "119:hr:21",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/21"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-01-23",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 27,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "8d2572b529f0f2400ab1f664ca747a718da29a505a0a7f9348682ebe447f6b70",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "308f696be68254f53378258c0027aa77f61c7396c11749f3b68d24a6d3e057fc",
+            "source_id": "clerk:119:1:27",
+            "source_subject": "house:119:1:27",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-01-23",
+            "url": "https://clerk.house.gov/evs/2025/roll027.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:32",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hamdt:5",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_amendment_text_and_floor_action",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/87d7c29b56af89044e2e2b65af7bafebc247a6d54542c39fca9ac866bb00db80.pdf",
+            "source_content_sha256": "87d7c29b56af89044e2e2b65af7bafebc247a6d54542c39fca9ac866bb00db80",
+            "source_id": "record_hamdt5",
+            "source_subject": "119:hamdt:5",
+            "source_type": "congressional_record_pdf",
+            "text_version": "2025-02-06-house",
+            "url": "https://www.congress.gov/119/crec/2025/02/06/171/25/CREC-2025-02-06-house.pdf"
+          }
+        ],
+        "house_action_stage": "amendment",
+        "official_action_date": "2025-02-06",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 32,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "cc6bf4f3f03ff44104d4a3b462e9cc9b1858d779c2799e3878787dfc2e0cc3d7",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "e028e8a8916add7ac59c6df725dbd1cad559fd7bb520b3673bda8e34e51592ae",
+            "source_id": "clerk:119:1:32",
+            "source_subject": "house:119:1:32",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-02-06",
+            "url": "https://clerk.house.gov/evs/2025/roll032.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:33",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:27",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "ccf02a66bb8409d7f5fec48d4d8548e0f7c3b77cae56b1aabd3e2cdc2202bfaa",
+            "source_id": "congress_action_record:house:119:1:33",
+            "source_subject": "119:hr:27",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/27"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-02-06",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 33,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "15d1f85cf6e182e3aea92ea9c00d349a3cffcef86aceec7c2b96e786d73addf4",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "3dddf166b03424b877f5ab5db2ed4cc8294e27406375a69506418b4f72a37618",
+            "source_id": "clerk:119:1:33",
+            "source_subject": "house:119:1:33",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-02-06",
+            "url": "https://clerk.house.gov/evs/2025/roll033.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:42",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:35",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "61ecaa9cd1596f6b2c8008dc11c29204ff617200eba20b35e7800540ab9c11ac",
+            "source_id": "congress_action_record:house:119:1:42",
+            "source_subject": "119:hr:35",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/35"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-02-13",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 42,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "68d4983498dff34e507c1e37282227a4f1ab29d9b2c68e0b594141650cb279e2",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "aafb9e3032eda087e137cdfc2eafd06a6f37bb5198f08bcaa20bbf7fc8a0c2a6",
+            "source_id": "clerk:119:1:42",
+            "source_subject": "house:119:1:42",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-02-13",
+            "url": "https://clerk.house.gov/evs/2025/roll042.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:68",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:1156",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_house_passage_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/b3586b2581d6200006e6f25121b486a1f1d34dddb5192be7ae4a3c6a9492c160.xml",
+            "source_content_sha256": "b3586b2581d6200006e6f25121b486a1f1d34dddb5192be7ae4a3c6a9492c160",
+            "source_id": "govinfo_text_119_hr1156_eh",
+            "source_subject": "119:hr:1156",
+            "source_type": "govinfo_bill_text",
+            "text_version": "eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1156eh/xml/BILLS-119hr1156eh.xml"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-03-11",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 68,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "9b0120b95f945d30d8122c7a2e4279832ea3b93c1d334c18f86dc033126708dc",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "14a61a71aade47bd6d99af1b7b2712d0bacb6c2daa1b928d1889e18e041a7d31",
+            "source_id": "clerk:119:1:68",
+            "source_subject": "house:119:1:68",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-03-11",
+            "url": "https://clerk.house.gov/evs/2025/roll068.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:98",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:1526",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "42f47eac4639fa155988bbd333bbdfa19441e99bf0247a44f546a083a8e4b120",
+            "source_id": "congress_action_record:house:119:1:98",
+            "source_subject": "119:hr:1526",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/1526"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-04-09",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 98,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "92b5065da7dc72290860781f49fe58467e45549fb10f057f3a4d4c7b943638be",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "b9d8dccaa4d087d8cf056c4880316a61b4a11db8ff59ffe9078e5c92fe307ddc",
+            "source_id": "clerk:119:1:98",
+            "source_subject": "house:119:1:98",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-04-09",
+            "url": "https://clerk.house.gov/evs/2025/roll098.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:128",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:2243",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "4f4aa7022556b780462ac50afa84de4c31b311e831086f8e7067a9c832ebe964",
+            "source_id": "congress_action_record:house:119:1:128",
+            "source_subject": "119:hr:2243",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/2243"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-05-14",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 128,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "0065819d02e9e3f33adb68f08d2126064d9a67684624bb81d91ee5074924ba58",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "34519d13bbaf87b93215e15e14806682a9e5a366440a148e4b1cdaa0e4ef1c04",
+            "source_id": "clerk:119:1:128",
+            "source_subject": "house:119:1:128",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-05-14",
+            "url": "https://clerk.house.gov/evs/2025/roll128.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:130",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:2255",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "014bbd929b4744f6a5df44643016018576b2fa39e503b6ae98f316f6a22f1abe",
+            "source_id": "congress_action_record:house:119:1:130",
+            "source_subject": "119:hr:2255",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/2255"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-05-15",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 130,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "f35a36a5eb6bf346e18bb9eb65472245d1149a17d7e9b0a79f88f50f9ba971ce",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "dd90b45c77a54540f2b1e1728e46852bb103e7601ae6e71cd332232afe715462",
+            "source_id": "clerk:119:1:130",
+            "source_subject": "house:119:1:130",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-05-15",
+            "url": "https://clerk.house.gov/evs/2025/roll130.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:131",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:2240",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "8cb41354180609ef92fd821d12789851c9819b0912f301e71e85b5f367bef0b4",
+            "source_id": "congress_action_record:house:119:1:131",
+            "source_subject": "119:hr:2240",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/2240"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-05-15",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 131,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "c92112b08835b134f86f39120ad191129dae3c526d36e048c93d4b904943d83b",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "0c98d263b21193e6d52cf412046e0d7d4959d74e83d1eb30e19b274fb028d51f",
+            "source_id": "clerk:119:1:131",
+            "source_subject": "house:119:1:131",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-05-15",
+            "url": "https://clerk.house.gov/evs/2025/roll131.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:162",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:2096",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "c94dfe8913ff313ee57ef7590a61c80cd4faf54ec9810c3ad3afdc4830ec0ca1",
+            "source_id": "congress_action_record:house:119:1:162",
+            "source_subject": "119:hr:2096",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/2096"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-06-10",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 162,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "28cfb6700b2c658a9d101214ea34c07621cbaef80fea5e6301041aea7fd50081",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "7e950c716a2277be79fa7ae442bc2f137a8837d5076466b9eecd14ee930ab7ef",
+            "source_id": "clerk:119:1:162",
+            "source_subject": "house:119:1:162",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-06-10",
+            "url": "https://clerk.house.gov/evs/2025/roll162.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:166",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:s:331",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "aaf8e92f7e51f5a6fabe7abdde0d449b2b7f62ed2fea58c179f25810c4fab7d5",
+            "source_id": "congress_action_record:house:119:1:166",
+            "source_subject": "119:s:331",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/senate-bill/331"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-06-12",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 166,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "166e89c1a44452b3de0275eda2b4855938c88f6fb036dd16f09b2f7d2f4474c0",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "128fb9fc1c4cedbb095a490856a837d732c1f21a20c4892a2fae735de322db58",
+            "source_id": "clerk:119:1:166",
+            "source_subject": "house:119:1:166",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-06-12",
+            "url": "https://clerk.house.gov/evs/2025/roll166.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:270",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:4922",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "a0290450efcd42094c7d42ef9c3433bae42097c69763042e85af4737420b5b6e",
+            "source_id": "congress_action_record:house:119:1:270",
+            "source_subject": "119:hr:4922",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/4922"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-09-16",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 270,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "54c7c1b29886a85710461a092f46216cdb3f752b895f4ebc09d6ab882f65f161",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "5d7d42ec033f72effa5bab619e8077221b2d1da5ff3e4e9b59d3ec29223e913e",
+            "source_id": "clerk:119:1:270",
+            "source_subject": "house:119:1:270",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-09-16",
+            "url": "https://clerk.house.gov/evs/2025/roll270.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:271",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:5140",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "2e20fdfd5655cdce093b998cefb1a9061bd4b13c94af9ed9cdf22ecacf0cfe19",
+            "source_id": "congress_action_record:house:119:1:271",
+            "source_subject": "119:hr:5140",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/5140"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-09-16",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 271,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "fd102f568e7c95ccd05ffa74062f08be6554585d34f713e37fd40bda5a00eea0",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "caf38d3dfd2cd33544afb698bdf7c3fab341ade70c6305efe933df35b8ba9cff",
+            "source_id": "clerk:119:1:271",
+            "source_subject": "house:119:1:271",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-09-16",
+            "url": "https://clerk.house.gov/evs/2025/roll271.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:274",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:5125",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "99e5994394a252fda28be3c938c08ffaac0c6cb6261cb5a11dae9b41eb8793c0",
+            "source_id": "congress_action_record:house:119:1:274",
+            "source_subject": "119:hr:5125",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/5125"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-09-17",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 274,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "d2b375f13b7bfdffe2fb9c0d8ca4713b5971bb8732609e8aed22b0b4c0858de1",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "5d48141952701a2be5a999dfffba9e985467543f8e78b20e2a91f083e8af7d4c",
+            "source_id": "clerk:119:1:274",
+            "source_subject": "house:119:1:274",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-09-17",
+            "url": "https://clerk.house.gov/evs/2025/roll274.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:275",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:5143",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "23e93edef4ed39fda46becfa345774af663c5b885261e07982790cf148f4c944",
+            "source_id": "congress_action_record:house:119:1:275",
+            "source_subject": "119:hr:5143",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/5143"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-09-17",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 275,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "d3b749af795c2795d471661f1ba22db12716a79e82c11866e9db8d282caa99c0",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "ede4050d6f8ff501221c7b056be43d4990a2b257366d8826324d17bd70b8d307",
+            "source_id": "clerk:119:1:275",
+            "source_subject": "house:119:1:275",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-09-17",
+            "url": "https://clerk.house.gov/evs/2025/roll275.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:286",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:1608",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_house_passage_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/46f15ea0d7bbc88e6eddd91dd6fbca8db5c591daf4d765794116b643753944cd.xml",
+            "source_content_sha256": "46f15ea0d7bbc88e6eddd91dd6fbca8db5c591daf4d765794116b643753944cd",
+            "source_id": "govinfo_text_119_hr1608_eh",
+            "source_subject": "119:hr:1608",
+            "source_type": "govinfo_bill_text",
+            "text_version": "eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1608eh/xml/BILLS-119hr1608eh.xml"
+          }
+        ],
+        "house_action_stage": "suspension_passage_as_amended",
+        "official_action_date": "2025-11-17",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 286,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "8c6e0835556d668cf8ee8c3797802c53814555ee760e391fa8f186aff6fa3f4b",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "d8a1b932cfd598460a87260c49a5367aeb90fbab0aa74bfe31d505ee718131fe",
+            "source_id": "clerk:119:1:286",
+            "source_subject": "house:119:1:286",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-11-17",
+            "url": "https://clerk.house.gov/evs/2025/roll286.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:289",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:4405",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "1047a64ac0754277fe4af78708bd9fd252a52ace908fff493a5cbfcf1784fcb0",
+            "source_id": "congress_action_record:house:119:1:289",
+            "source_subject": "119:hr:4405",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/4405"
+          }
+        ],
+        "house_action_stage": "suspension_passage",
+        "official_action_date": "2025-11-18",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 289,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "f35ec136d62376441e2fe31d7264e5e6fb0a1fce387f37b19c2fab972e308a4c",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "71af629d4e246fb5691645c784f68a1091b28689dd709c8088535b1cd6438e92",
+            "source_id": "clerk:119:1:289",
+            "source_subject": "house:119:1:289",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-11-18",
+            "url": "https://clerk.house.gov/evs/2025/roll289.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:298",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:5214",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "3a3cab65807a19bedbcf0085f2ce5f2c1e3b9d7c02120e64a6989e6476fd9f6a",
+            "source_id": "congress_action_record:house:119:1:298",
+            "source_subject": "119:hr:5214",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/5214"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-11-19",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 298,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "6c2d9e20330cfb12d007d153b6c09a6a0781066582b1e14de5ebad223cab164b",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "913502c9bb99e537f08e4c69bfeb499cf2a2b7878f27a7bfd7bb7c7829cf3919",
+            "source_id": "clerk:119:1:298",
+            "source_subject": "house:119:1:298",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-11-19",
+            "url": "https://clerk.house.gov/evs/2025/roll298.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:299",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:5107",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "367e5f9762655ef8f8654852244f846cb6f60d9d988a46a31730dc500781299f",
+            "source_id": "congress_action_record:house:119:1:299",
+            "source_subject": "119:hr:5107",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/5107"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-11-19",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 299,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "55ac52635e71a6e7e66262c35dc644ed1ceed10bc51393f892ff1a164c82b16e",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "b50c37928a7d82a165c345b880919b0d56f476288c0f81d80a4d2e2d7edc6f1f",
+            "source_id": "clerk:119:1:299",
+            "source_subject": "house:119:1:299",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-11-19",
+            "url": "https://clerk.house.gov/evs/2025/roll299.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:340",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:4371",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "c64a63e676bd6485f11426d346910e280b994f8823e4c9d60f4ad2a94545f330",
+            "source_id": "congress_action_record:house:119:1:340",
+            "source_subject": "119:hr:4371",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/4371"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-12-16",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 340,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "f9c1fca1396c82c52abf2472f2c430206b377ff49caf2933f74fad69793affe5",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "a79653cdf0d5f66eb5d4569ecbaafb81ebb8f1aa7446d477c5d8d3ad97693b95",
+            "source_id": "clerk:119:1:340",
+            "source_subject": "house:119:1:340",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-12-16",
+            "url": "https://clerk.house.gov/evs/2025/roll340.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:351",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:3492",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "canonical_congress_metadata_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "source_content_sha256": "17084671e011d8e6814e4a86a2a36f32244ab391085ccce722e15b67f29ca22c",
+            "source_id": "congress_action_record:house:119:1:351",
+            "source_subject": "119:hr:3492",
+            "source_type": "congress_gov_action_record",
+            "text_version": "official_action_record",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/3492"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2025-12-17",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 351,
+        "session": 1,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "7d7761728a81beb3167d7ec9a21cd503977e64deeef3c6e5e1a268b06a094f0a",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "c29845f4ae9dd7c96bd3031799930c3f2e8f535be4f900739e5a3b0d0a567ac6",
+            "source_id": "clerk:119:1:351",
+            "source_subject": "house:119:1:351",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2025-12-17",
+            "url": "https://clerk.house.gov/evs/2025/roll351.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:155",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY",
+          "NATIONAL_SECURITY"
+        ],
+        "cross_domain_scope_limitations": [
+          "surveillance_authority",
+          "fisc_and_court_authority",
+          "civil_liberty_protections"
+        ],
+        "exact_action_identity": "119:s:4465",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "official_measure_identity_house_action_and_text_version",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/157c6a78824a870a74e48670ed18ad3252056bf82920dbd66cb1b018134026cd.xml",
+            "source_content_sha256": "157c6a78824a870a74e48670ed18ad3252056bf82920dbd66cb1b018134026cd",
+            "source_id": "govinfo_billstatus_119_s4465",
+            "source_subject": "119:s:4465",
+            "source_type": "govinfo_bill_status",
+            "text_version": "billstatus-3.0.0",
+            "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/s/BILLSTATUS-119s4465.xml"
+          },
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_fisa_surveillance_authority_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/56e0385ad632b4d058e2a66fa6a4f327853b38a088da644b804a43342fea6106.xml",
+            "source_content_sha256": "56e0385ad632b4d058e2a66fa6a4f327853b38a088da644b804a43342fea6106",
+            "source_id": "govinfo_text_119_s4465_es",
+            "source_subject": "119:s:4465",
+            "source_type": "govinfo_bill_text",
+            "text_version": "es",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119s4465es/xml/BILLS-119s4465es.xml"
+          }
+        ],
+        "house_action_stage": "suspension_passage",
+        "official_action_date": "2026-04-30",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 155,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "0330b1a96a0d4494cc06f461f84e3513c27ebc09d4109bf15c3766904f49ebf5",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "f45e81f6b9d64fcb5c6cb40da2bbad4bf1db5fa39143acb984c5cab73b90f13c",
+            "source_id": "clerk:119:2:155",
+            "source_subject": "house:119:2:155",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-04-30",
+            "url": "https://clerk.house.gov/evs/2026/roll155.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:157",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:2853",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "official_measure_identity_house_action_and_text_version",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/20b7dca5500a8a0e4413ec1e732f9ef0f09596c8e012431a46f863d030ea1ed7.xml",
+            "source_content_sha256": "20b7dca5500a8a0e4413ec1e732f9ef0f09596c8e012431a46f863d030ea1ed7",
+            "source_id": "govinfo_billstatus_119_hr2853",
+            "source_subject": "119:hr:2853",
+            "source_type": "govinfo_bill_status",
+            "text_version": "billstatus-3.0.0",
+            "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr2853.xml"
+          },
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_organized_retail_crime_mechanism_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/e438be1aef325b8317e9a21678788dfa4cacb5f676cf7c3c40719de3c70ed404.xml",
+            "source_content_sha256": "e438be1aef325b8317e9a21678788dfa4cacb5f676cf7c3c40719de3c70ed404",
+            "source_id": "govinfo_text_119_hr2853_eh",
+            "source_subject": "119:hr:2853",
+            "source_type": "govinfo_bill_text",
+            "text_version": "eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2853eh/xml/BILLS-119hr2853eh.xml"
+          }
+        ],
+        "house_action_stage": "suspension_passage_as_amended",
+        "official_action_date": "2026-05-12",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 157,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "a735eb773f4e46a573e592b0f0d8c839bc59b76177811fb0299e3a18613db5f7",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "5d0a913691c2edfa283275df80db42262ec9c811bceeb17ec697ad93d309e1bc",
+            "source_id": "clerk:119:2:157",
+            "source_subject": "house:119:2:157",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-05-12",
+            "url": "https://clerk.house.gov/evs/2026/roll157.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:169",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:6260",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "official_measure_identity_house_action_and_text_version",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/055279948b5619c7c9199b6969a56375b3f56f807ade4e2a53835989b52d3927.xml",
+            "source_content_sha256": "055279948b5619c7c9199b6969a56375b3f56f807ade4e2a53835989b52d3927",
+            "source_id": "govinfo_billstatus_119_hr6260",
+            "source_subject": "119:hr:6260",
+            "source_type": "govinfo_bill_status",
+            "text_version": "billstatus-3.0.0",
+            "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr6260.xml"
+          },
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_bail_fraud_mechanism_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/1537c6a2e973bb38c361952f91bbd344f542c95627150bf288cd01bfc3068d76.xml",
+            "source_content_sha256": "1537c6a2e973bb38c361952f91bbd344f542c95627150bf288cd01bfc3068d76",
+            "source_id": "govinfo_text_119_hr6260_eh",
+            "source_subject": "119:hr:6260",
+            "source_type": "govinfo_bill_text",
+            "text_version": "eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6260eh/xml/BILLS-119hr6260eh.xml"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2026-05-14",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 169,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "e5c89b295dedff7e5e115714fde14c9693066c3d216dc3b9a0b4e707fcf2251c",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "f8c1f4a62194329adafc7458d6e0b89572cc99d595c3f7de7213a95bdb1cc909",
+            "source_id": "clerk:119:2:169",
+            "source_subject": "house:119:2:169",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-05-14",
+            "url": "https://clerk.house.gov/evs/2026/roll169.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:171",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:5625",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "official_measure_identity_house_action_and_text_version",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/25e47dc6acabfff368a03c380e34ebebfb24fa032c0e429ac45f0f629d5fbe3a.xml",
+            "source_content_sha256": "25e47dc6acabfff368a03c380e34ebebfb24fa032c0e429ac45f0f629d5fbe3a",
+            "source_id": "govinfo_billstatus_119_hr5625",
+            "source_subject": "119:hr:5625",
+            "source_type": "govinfo_bill_status",
+            "text_version": "billstatus-3.0.0",
+            "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr5625.xml"
+          },
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_cashless_bail_reporting_mechanism_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/6fc394d8c05851976f332e2f0647d1b68303e3c78c7f9f48256e626ee8c5355d.xml",
+            "source_content_sha256": "6fc394d8c05851976f332e2f0647d1b68303e3c78c7f9f48256e626ee8c5355d",
+            "source_id": "govinfo_text_119_hr5625_eh",
+            "source_subject": "119:hr:5625",
+            "source_type": "govinfo_bill_text",
+            "text_version": "eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5625eh/xml/BILLS-119hr5625eh.xml"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2026-05-14",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 171,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "5fed7156d80d6859954b37c501541fab02c424bce0e0630f4a8277e6c89f9dd5",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "55d25a5914760813fc5b06fa9b8e759835f837b3291c91f7c62683caf9720c20",
+            "source_id": "clerk:119:2:171",
+            "source_subject": "house:119:2:171",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-05-14",
+            "url": "https://clerk.house.gov/evs/2026/roll171.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:218",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:8312",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "official_measure_identity_house_action_and_text_version",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f8a4f408c1423eb27595794b732e43c8e42fea1eee3c02dc2cca05938b627be1.xml",
+            "source_content_sha256": "f8a4f408c1423eb27595794b732e43c8e42fea1eee3c02dc2cca05938b627be1",
+            "source_id": "govinfo_billstatus_119_hr8312",
+            "source_subject": "119:hr:8312",
+            "source_type": "govinfo_bill_status",
+            "text_version": "billstatus-3.0.0",
+            "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr8312.xml"
+          },
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_fraud_integrity_mechanism_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/bbb0948b48fc338cef984ec419e77d75afed9b04db63b23ebe2c81a95482fe9d.xml",
+            "source_content_sha256": "bbb0948b48fc338cef984ec419e77d75afed9b04db63b23ebe2c81a95482fe9d",
+            "source_id": "govinfo_text_119_hr8312_eh",
+            "source_subject": "119:hr:8312",
+            "source_type": "govinfo_bill_text",
+            "text_version": "eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8312eh/xml/BILLS-119hr8312eh.xml"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2026-06-10",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 218,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "59bd00eb8d28b37763b693c089afabf537608af8702daa29b5b53b2bf551b81e",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "e07e6be4a97eee5166ae9be3cc8319129f286e26af5f0e7f98153a63b58cb1e6",
+            "source_id": "clerk:119:2:218",
+            "source_subject": "house:119:2:218",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-06-10",
+            "url": "https://clerk.house.gov/evs/2026/roll218.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:221",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY",
+          "NATIONAL_SECURITY"
+        ],
+        "cross_domain_scope_limitations": [
+          "surveillance_authority",
+          "fisc_and_court_authority",
+          "civil_liberty_protections"
+        ],
+        "exact_action_identity": "119:hr:9238",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "official_measure_identity_house_action_and_text_version",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/fa3684b7df8491da339feebcb59960793bd5fa7c29d72aaf172571a542337a50.xml",
+            "source_content_sha256": "fa3684b7df8491da339feebcb59960793bd5fa7c29d72aaf172571a542337a50",
+            "source_id": "govinfo_billstatus_119_hr9238",
+            "source_subject": "119:hr:9238",
+            "source_type": "govinfo_bill_status",
+            "text_version": "billstatus-3.0.0",
+            "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr9238.xml"
+          },
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_fisa_surveillance_authority_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/824340dd94cafc02f5b4549a310e5b843ea62288b0583d0937e0761e6dc2b1f5.xml",
+            "source_content_sha256": "824340dd94cafc02f5b4549a310e5b843ea62288b0583d0937e0761e6dc2b1f5",
+            "source_id": "govinfo_text_119_hr9238_cdh",
+            "source_subject": "119:hr:9238",
+            "source_type": "govinfo_bill_text",
+            "text_version": "cdh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9238cdh/xml/BILLS-119hr9238cdh.xml"
+          }
+        ],
+        "house_action_stage": "suspension_passage",
+        "official_action_date": "2026-06-11",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 221,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "fbf4e28d8660e28b494783f75ea9281b92bcc52b22f4622afdcb227b8d098dc9",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "f4706442f1790323e7bcc79a15b6532448b91814f4f8ecbd009ec42d5a71e751",
+            "source_id": "clerk:119:2:221",
+            "source_subject": "house:119:2:221",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-06-11",
+            "url": "https://clerk.house.gov/evs/2026/roll221.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:227",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:2478",
+        "exact_action_source_bindings": [
+          {
+            "acquisition_authority": "api.congress.gov/v3/bill",
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/119_hr_2478.json",
+            "source_content_sha256": "9c3f178caaafa66702b4c86934ea24789533aa6c6ba13b20c200dc985feb66ee",
+            "source_id": "congress_action_record:house:119:2:227",
+            "source_subject": "119:hr:2478",
+            "source_type": "congress_gov_action_record",
+            "text_version": "congress_api_v3_acquired_2026-07-31",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/2478",
+            "v2_projection_digest_basis": "canonical_congress_metadata_sha256",
+            "v2_projection_sha256": "d339755c9e8e0d3ed5f56bd96100f0c91096fa48acc6b685dbc1fb97a75910ba"
+          }
+        ],
+        "house_action_stage": "suspension_passage_as_amended",
+        "official_action_date": "2026-06-25",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 227,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "625966a061c3d1575ef4eb6040cfb6c1ec9d7a8b2094a8e8f322409045fc739d",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_227.xml",
+            "raw_file_sha256": "ca3748fac2dafceecb690e61ca4d09345872ac26296ffb214438e012c127669b",
+            "source_content_sha256": "a2b74f42f40d40053fce4e4218a74f87e95a19e998459adb60a39a2fe1ef3687",
+            "source_id": "clerk:119:2:227",
+            "source_subject": "house:119:2:227",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-06-25",
+            "url": "https://clerk.house.gov/evs/2026/roll227.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:234",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:3106",
+        "exact_action_source_bindings": [
+          {
+            "acquisition_authority": "api.congress.gov/v3/bill",
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/119_hr_3106.json",
+            "source_content_sha256": "3bd5ff441131e632d435981123add41ba35f8731c67d1c1ee3ad276f744e4a85",
+            "source_id": "congress_action_record:house:119:2:234",
+            "source_subject": "119:hr:3106",
+            "source_type": "congress_gov_action_record",
+            "text_version": "congress_api_v3_acquired_2026-07-31",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/3106",
+            "v2_projection_digest_basis": "canonical_congress_metadata_sha256",
+            "v2_projection_sha256": "597593243d4d68c4c9a04cdf3e592fd5d8748e0f426930b514ede5fd7ac02ce9"
+          }
+        ],
+        "house_action_stage": "suspension_passage",
+        "official_action_date": "2026-07-13",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 234,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "0158f5fa84298cc8c6cd38b8f03316e03b56166840ec2fdb682c6bfc7b37d7ea",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "296670af2058d7bfd999dc84b93eecec2d2eed7c96233d22f0cdf45ab13df5c3",
+            "source_id": "clerk:119:2:234",
+            "source_subject": "house:119:2:234",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-07-13",
+            "url": "https://clerk.house.gov/evs/2026/roll234.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:240",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:1181",
+        "exact_action_source_bindings": [
+          {
+            "acquisition_authority": "api.congress.gov/v3/bill",
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_house_stage_and_measure_identity",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/119_hr_1181.json",
+            "source_content_sha256": "8246128285c8c012782c60a352f4bb6ac8d24cb62d5fe725d9bb7036a0748e30",
+            "source_id": "congress_action_record:house:119:2:240",
+            "source_subject": "119:hr:1181",
+            "source_type": "congress_gov_action_record",
+            "text_version": "congress_api_v3_acquired_2026-07-31",
+            "url": "https://www.congress.gov/bill/119th-congress/house-bill/1181",
+            "v2_projection_digest_basis": "canonical_congress_metadata_sha256",
+            "v2_projection_sha256": "f0cb32161ae79267235c2298d6de08906536ee502a0e03dcd0dde41a472ed25d"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2026-07-14",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 240,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "fadcbeefc947bf532efabba9ad57a112fba8eca37f49cfe2b883a2ffd36a7db0",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "32f5601ef67c15cce1a5d578b0d69e358d5a4e89c204d2d538b3f9bd8888553a",
+            "source_id": "clerk:119:2:240",
+            "source_subject": "house:119:2:240",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-07-14",
+            "url": "https://clerk.house.gov/evs/2026/roll240.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:259",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "house:119:2:259",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_amendment_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab.pdf",
+            "source_content_sha256": "10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab",
+            "source_id": "rules-report-2026-07-20-amendment-6",
+            "source_subject": "house:119:2:259",
+            "source_type": "house_rules_committee_report",
+            "text_version": "RulesReport07202026-amendment-6",
+            "url": "https://docs.house.gov/billsthisweek/20260720/RulesReport07202026.pdf"
+          },
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_rule_or_amendment_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab.pdf",
+            "source_content_sha256": "10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab",
+            "source_id": "rules-report-2026-07-20:house:119:2:259",
+            "source_subject": "house:119:2:259",
+            "source_type": "house_rules_committee_report",
+            "text_version": "RulesReport07202026",
+            "url": "https://docs.house.gov/billsthisweek/20260720/RulesReport07202026.pdf"
+          }
+        ],
+        "house_action_stage": "amendment",
+        "official_action_date": "2026-07-21",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 259,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "29c9791106fe1f6ce0f46bcf3898d68f3dc0c52f1194df9076dc647b7e1961e5",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "2e2ff9f79d04be59c7f645cb7d5252ec631b31e154e430ee6c48ef0785a70086",
+            "source_id": "clerk:119:2:259",
+            "source_subject": "house:119:2:259",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-07-21",
+            "url": "https://clerk.house.gov/evs/2026/roll259.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:265",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "house:119:2:265",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_amendment_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab.pdf",
+            "source_content_sha256": "10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab",
+            "source_id": "rules-report-2026-07-20-amendment-17",
+            "source_subject": "house:119:2:265",
+            "source_type": "house_rules_committee_report",
+            "text_version": "RulesReport07202026-amendment-17",
+            "url": "https://docs.house.gov/billsthisweek/20260720/RulesReport07202026.pdf"
+          },
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_rule_or_amendment_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab.pdf",
+            "source_content_sha256": "10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab",
+            "source_id": "rules-report-2026-07-20:house:119:2:265",
+            "source_subject": "house:119:2:265",
+            "source_type": "house_rules_committee_report",
+            "text_version": "RulesReport07202026",
+            "url": "https://docs.house.gov/billsthisweek/20260720/RulesReport07202026.pdf"
+          }
+        ],
+        "house_action_stage": "amendment",
+        "official_action_date": "2026-07-21",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 265,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "2a8c510a4c37c79a446d893b984d8043edd20b2eeadb56a01369f95c95625d35",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "537b0d98e326be3e8a91019850a67fd30924d6564ee203f403994e5d2ba5e09b",
+            "source_id": "clerk:119:2:265",
+            "source_subject": "house:119:2:265",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-07-21",
+            "url": "https://clerk.house.gov/evs/2026/roll265.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:273",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "house:119:2:273",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_amendment_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab.pdf",
+            "source_content_sha256": "10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab",
+            "source_id": "rules-report-2026-07-20-amendment-28",
+            "source_subject": "house:119:2:273",
+            "source_type": "house_rules_committee_report",
+            "text_version": "RulesReport07202026-amendment-28",
+            "url": "https://docs.house.gov/billsthisweek/20260720/RulesReport07202026.pdf"
+          },
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_rule_or_amendment_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab.pdf",
+            "source_content_sha256": "10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab",
+            "source_id": "rules-report-2026-07-20:house:119:2:273",
+            "source_subject": "house:119:2:273",
+            "source_type": "house_rules_committee_report",
+            "text_version": "RulesReport07202026",
+            "url": "https://docs.house.gov/billsthisweek/20260720/RulesReport07202026.pdf"
+          }
+        ],
+        "house_action_stage": "amendment",
+        "official_action_date": "2026-07-22",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 273,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "20bf68acced71613944ff0f7a334ba079cf6ed40ee98836aba97523a5ce1a04f",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "6882e6705b29a5422c9f6294c37b6c9d8536307545f95923831ea637325855c4",
+            "source_id": "clerk:119:2:273",
+            "source_subject": "house:119:2:273",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-07-22",
+            "url": "https://clerk.house.gov/evs/2026/roll273.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:275",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "house:119:2:275",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_amendment_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab.pdf",
+            "source_content_sha256": "10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab",
+            "source_id": "rules-report-2026-07-20-amendment-44",
+            "source_subject": "house:119:2:275",
+            "source_type": "house_rules_committee_report",
+            "text_version": "RulesReport07202026-amendment-44",
+            "url": "https://docs.house.gov/billsthisweek/20260720/RulesReport07202026.pdf"
+          },
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_rule_or_amendment_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab.pdf",
+            "source_content_sha256": "10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab",
+            "source_id": "rules-report-2026-07-20:house:119:2:275",
+            "source_subject": "house:119:2:275",
+            "source_type": "house_rules_committee_report",
+            "text_version": "RulesReport07202026",
+            "url": "https://docs.house.gov/billsthisweek/20260720/RulesReport07202026.pdf"
+          }
+        ],
+        "house_action_stage": "amendment",
+        "official_action_date": "2026-07-22",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 275,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "64ac650db44fea02943a1c7f1645162f3ad5bb375314cd6cc7a769dc641ce8d5",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "31f2b4b5a243eb72bf55fd3400f1e2ea7f439d0de1d0824208993bfaa5072071",
+            "source_id": "clerk:119:2:275",
+            "source_subject": "house:119:2:275",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-07-22",
+            "url": "https://clerk.house.gov/evs/2026/roll275.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:278",
+        "blocker_codes": [],
+        "congress": 119,
+        "cross_domain_memberships": [
+          "JUSTICE_PUBLIC_SAFETY"
+        ],
+        "cross_domain_scope_limitations": [],
+        "exact_action_identity": "119:hr:8800",
+        "exact_action_source_bindings": [
+          {
+            "digest_basis": "raw_official_file_sha256",
+            "evidence_role": "exact_house_passage_text",
+            "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab.pdf",
+            "source_content_sha256": "10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab",
+            "source_id": "rules-report-2026-07-20-final-passage-context",
+            "source_subject": "119:hr:8800",
+            "source_type": "house_rules_committee_report",
+            "text_version": "RulesReport07202026-final-passage",
+            "url": "https://docs.house.gov/billsthisweek/20260720/RulesReport07202026.pdf"
+          }
+        ],
+        "house_action_stage": "passage",
+        "official_action_date": "2026-07-22",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_paths_governed": true,
+          "all_source_digests_valid": true,
+          "approved_source_types_only": true,
+          "approved_universe_member": true,
+          "cross_domain_scope_complete": true,
+          "exact_action_identity": true,
+          "exact_action_not_parent_only": true,
+          "exact_action_source_present": true,
+          "governed_source_exists": true,
+          "house_stage_resolved": true,
+          "no_semantic_leakage": true,
+          "no_source_conflict": true,
+          "no_source_constraint": true,
+          "official_member_action_resolved": true,
+          "stable_action_identity": true,
+          "text_version_explicit": true,
+          "vote_source_present": true
+        },
+        "readiness_state": "ready",
+        "roll_number": 278,
+        "session": 2,
+        "source_availability_state": "available",
+        "source_conflict_state": "none",
+        "source_constraint_state": "none",
+        "source_packet_sha256": "f6ba57dca777dc57406e3e4d6a2e369e7b80b36275f12879ecd10e0ff7260c12",
+        "vote_source_bindings": [
+          {
+            "digest_basis": "canonical_clerk_action_projection_sha256",
+            "evidence_role": "recorded_house_action_and_member_vote",
+            "source_content_sha256": "b39aab2f3d166ac77373f1c55a8562303f95a4b07b2cf1a1bc5bba4a600ab089",
+            "source_id": "clerk:119:2:278",
+            "source_subject": "house:119:2:278",
+            "source_type": "house_clerk_roll_call",
+            "text_version": "2026-07-22",
+            "url": "https://clerk.house.gov/evs/2026/roll278.xml"
+          }
+        ]
+      }
+    ],
+    "action_set_sha256": "51fff89a65e8fb869e4072a8b91c1301f0bc07ee8ba6bf090ee9a23450a94ba5",
+    "aggregate": {
+      "blocked_count": 0,
+      "counts_by_blocker": {},
+      "counts_by_readiness_state": {
+        "ready": 37
+      },
+      "ready_count": 37,
+      "total_action_count": 37
+    },
+    "approved_manifest_id": "full-universe:f000477:justice_public_safety:119:proposed:v2",
+    "approved_manifest_sha256": "7659b0cbbd2bd72ef266e415eeca73be1c80bd5a7eb352310a1e6bbb6a8b4d96",
+    "authority_receipt_id": "universe-authority:f000477:justice_public_safety:119:v2",
+    "authority_receipt_sha256": "3da8b8fd05d6f3f22f365105b7c1397283d7be2524fa69e00315a4554731f815",
+    "chamber": "house",
+    "congress": 119,
+    "criteria_version": "full_issue_interpretation_source_readiness_criteria_v1",
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "member_id": "F000477",
+    "source_manifest_id": "interpretation-source-manifest:f000477:justice_public_safety:119:v1",
+    "source_manifest_sha256": "cfc869dd1f6fb3942ae9c90c2cf0d903558e991ddda7a4e7bd057733c02e0be2",
+    "universe_subject_sha256": "d778bff4019e893f378fbd38a76b4cf108967784a4829d58b7004e2b3a578077"
+  }
+}
