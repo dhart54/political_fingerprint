@@ -6,11 +6,15 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [Foushee Justice 119 Universe Refresh V2](foushee_justice_119_universe_refresh_v2.md)
-  - corrective refresh work for draft PR #123 through House roll 283.
+- [Foushee Justice 119 Universe Authority Receipt V1](foushee_justice_119_universe_authority_receipt_v1.md)
+  - content-bound human authority for the exact V2 universe through House roll
+    283, without action interpretation, synthesis, persistence, or publication.
 
 ## Retained unresolved plans
 
+- [Foushee Justice 119 Universe Refresh V2](foushee_justice_119_universe_refresh_v2.md)
+  - completed corrective refresh merged by PR #123; retained as the discovery
+    and accounting record governed by the current authority receipt.
 - [Foushee Justice 119 Universe Discovery V1](foushee_justice_119_universe_discovery_v1.md)
   - historical June 11 proposal retained unchanged, but superseded for
   authority and interpretation by the V2 corrective refresh.

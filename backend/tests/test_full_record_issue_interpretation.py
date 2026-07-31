@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import copy
 import hashlib
 import json
 import sys
@@ -487,6 +486,13 @@ def _synthetic_review(
 
 
 class ContractTests(unittest.TestCase):
+    def test_test_only_authority_requires_explicit_test_opt_in(self) -> None:
+        with tempfile.TemporaryDirectory(dir=ROOT / "backend/tests") as temp:
+            root = Path(temp)
+            review = _synthetic_review(root)
+            with self.assertRaisesRegex(FullRecordValidationError, "test authority"):
+                validate_review(review, authority_root=root)
+
     def test_committed_benchmark_state_validates_without_full_authority(self) -> None:
         review = _review()
         self.assertEqual(validate_review(review)["action_count"], 7)

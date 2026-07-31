@@ -15,7 +15,11 @@ from app.editorial_presentations.review_state_catalog import (
 )
 from app.editorial_presentations.selector import select_public_presentations
 from backend.tests.test_api_editorial_presentations import _approved_artifact, _row
-from scripts.build_public_review_state_catalog import build_catalog, catalog_bytes
+from scripts.build_public_review_state_catalog import (
+    build_catalog,
+    catalog_bytes,
+    catalog_bytes_match_checkout,
+)
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -31,7 +35,10 @@ def _justice(result: dict) -> dict:
 
 def test_generated_catalog_is_deterministic_current_and_public_only() -> None:
     expected = catalog_bytes(build_catalog())
-    assert CATALOG_PATH.read_bytes() == expected
+    materialized = CATALOG_PATH.read_bytes()
+    assert catalog_bytes_match_checkout(materialized, expected)
+    assert materialized.replace(b"\r\n", b"\n") == expected
+    assert not catalog_bytes_match_checkout(materialized + b" ", expected)
     catalog = json.loads(expected)
     validate_public_catalog(catalog)
     assert len(catalog["entries"]) == 1
@@ -47,6 +54,51 @@ def test_generated_catalog_is_deterministic_current_and_public_only() -> None:
     assert "provenance" not in entry
     assert "external_authority" not in entry
     assert "historical_publication" not in entry
+
+
+def test_catalog_discovery_uses_review_schema_semantics(tmp_path: Path) -> None:
+    review = json.loads(
+        (
+            ROOT
+            / "docs/editorial/full_record_reviews/"
+            "f000477_justice_public_safety_119_review_state_v1.json"
+        ).read_text(encoding="utf-8")
+    )
+    receipt = json.loads(
+        (
+            ROOT
+            / "docs/editorial/full_record_reviews/"
+            "f000477_justice_public_safety_119_"
+            "full_issue_universe_authority_receipt_v2.json"
+        ).read_text(encoding="utf-8")
+    )
+    (tmp_path / "arbitrary-valid-name.json").write_text(
+        json.dumps(review), encoding="utf-8"
+    )
+    (tmp_path / "detached-authority.json").write_text(
+        json.dumps(receipt), encoding="utf-8"
+    )
+    (tmp_path / "unrelated.json").write_text(
+        json.dumps({"schema_version": "unrelated_artifact_v1"}),
+        encoding="utf-8",
+    )
+
+    catalog = build_catalog(review_root=tmp_path)
+
+    assert len(catalog["entries"]) == 1
+    assert catalog["entries"][0]["member_id"] == "F000477"
+
+
+def test_claimed_review_state_contract_violation_fails_closed(
+    tmp_path: Path,
+) -> None:
+    (tmp_path / "claimed-review.json").write_text(
+        json.dumps({"schema_version": "full_record_issue_interpretation_v1"}),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match="schema validation failed"):
+        build_catalog(review_root=tmp_path)
 
 
 def test_catalog_is_closed_and_sample_cannot_acquire_full_record_label() -> None:

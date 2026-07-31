@@ -15,9 +15,14 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from backend.app.semantic_ir.validation import (
+from backend.app.semantic_ir.validation import (  # noqa: E402
     CompiledSemanticIRError,
     validate_compiled_ir,
+)
+from backend.app.etl.universe_authority import (  # noqa: E402
+    UniverseAuthorityError,
+    file_digest_matches as authority_file_digest_matches,
+    verify_manifest_and_receipt,
 )
 
 
@@ -102,16 +107,7 @@ def _file_sha256(path: Path) -> str:
 
 
 def _file_digest_matches(path: Path, expected: str) -> bool:
-    content = path.read_bytes()
-    if hashlib.sha256(content).hexdigest() == expected:
-        return True
-    if path.suffix.lower() in {".json", ".md", ".sql", ".txt"}:
-        # Git stores governed text artifacts with LF. Native Windows checkouts may
-        # materialize CRLF even when indexed bytes and semantic content are
-        # unchanged, so accept only that canonical repository-byte equivalent.
-        canonical = content.replace(b"\r\n", b"\n")
-        return hashlib.sha256(canonical).hexdigest() == expected
-    return False
+    return authority_file_digest_matches(path, expected)
 
 
 def interpretation_digest(interpretation: dict[str, Any]) -> str:
@@ -198,43 +194,21 @@ def _validate_external_authority(
         authority_root=authority_root,
         allow_test_authority=allow_test_authority,
     )
-    action_ids = sorted(manifest["action_ids"])
-    action_set_sha = _sha256(action_ids)
-    _require(manifest["action_count"] == len(action_ids), "universe action count mismatch")
-    _require(manifest["action_set_sha256"] == action_set_sha, "universe action-set digest mismatch")
-    subject_input = {
-        key: value for key, value in manifest.items() if key != "universe_subject_sha256"
-    }
-    subject_sha = _sha256(subject_input)
-    _require(
-        manifest["universe_subject_sha256"] == subject_sha,
-        "universe subject digest mismatch",
-    )
-    for source in manifest["source_manifests"]:
-        source_path = (authority_root.resolve() / source["path"]).resolve()
-        _require(source_path.is_relative_to(authority_root.resolve()), "source path escapes authority root")
-        _require(source_path.is_file(), f"missing acquisition/source manifest: {source['path']}")
-        _require(
-            _file_digest_matches(source_path, source["sha256"]),
-            "source/acquisition digest mismatch",
+    try:
+        verified_universe = verify_manifest_and_receipt(
+            manifest,
+            receipt,
+            manifest_path=(authority_root.resolve() / refs["universe_manifest"]["path"]),
+            authority_root=authority_root,
         )
+    except UniverseAuthorityError as error:
+        raise FullRecordValidationError(str(error)) from error
+    action_ids = verified_universe["action_ids"]
+    subject_sha = verified_universe["universe_subject_sha256"]
     review_subject = review["subject"]
     _require(manifest["subject"] == review_subject, "universe member, issue, or Congress mismatch")
     _require(action_ids == sorted(review["issue_universe"]["action_ids"]), "universe membership mismatch")
-    _require(receipt["manifest_id"] == manifest["manifest_id"], "receipt is for another universe")
     _require(receipt["manifest_sha256"] == refs["universe_manifest"]["sha256"], "receipt manifest digest mismatch")
-    _require(receipt["member_id"] == review_subject["member_id"], "receipt member mismatch")
-    _require(receipt["issue_id"] == review_subject["issue_id"], "receipt issue mismatch")
-    _require(receipt["boundary"] == manifest["boundary"], "receipt boundary definition mismatch")
-    _require(receipt["boundary_sha256"] == _sha256(manifest["boundary"]), "receipt boundary mismatch")
-    _require(receipt["action_set_sha256"] == action_set_sha, "receipt action-set mismatch")
-    _require(receipt["action_count"] == len(action_ids), "receipt action count mismatch")
-    _require(
-        receipt["source_manifest_identities"]
-        == [source["artifact_id"] for source in manifest["source_manifests"]],
-        "receipt source/acquisition identities mismatch",
-    )
-    _require(receipt["universe_subject_sha256"] == subject_sha, "receipt subject mismatch")
     _require(
         refs["universe_manifest"]["subject_sha256"] == subject_sha
         and refs["universe_manifest"]["bound_receipt_id"] == receipt["receipt_id"],
@@ -1058,7 +1032,7 @@ def validate_review(
 
 
 def main() -> int:
-    paths = sorted(REVIEW_ROOT.glob("*.json"))
+    paths = sorted(REVIEW_ROOT.glob("*_review_state_v1.json"))
     if not paths:
         print("ERROR: no full-record review manifests found", file=sys.stderr)
         return 1

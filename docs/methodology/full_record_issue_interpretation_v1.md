@@ -356,12 +356,14 @@ It separates three truths:
    `reviewed_conclusion`, its review scope is `benchmark_sample`, the declared
    seven-action sample is completely accounted for, and its public claim class
    is `reviewed_sample_finding`.
-3. **Future full-record product eligibility.** A content-addressed
+3. **Future full-record product eligibility.** The exact 37-action V2
    `full_defined_issue_record` for F000477, `JUSTICE_PUBLIC_SAFETY`, Congress
-   119 has not been established or completed under this contract. Full-record
-   action accounting has not passed, so `full_issue_synthesis_eligible=false`.
-   External full-universe authority, full-record Semantic IR validation, and
-   full-record synthesis approval references are all absent.
+   119 is established through the declared July 23, 2026 cutoff by a detached,
+   content-bound human authority receipt. That decision establishes universe
+   membership only. Action interpretation and episode construction have not
+   started; full-record Semantic IR validation and synthesis remain absent;
+   production persistence is not authorized; and
+   `full_issue_synthesis_eligible=false`.
 
 This classification does not rewrite, invalidate, deactivate, or mutate the
 active artifact, its approved wording, its approval receipt, its publication
