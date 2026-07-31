@@ -44,15 +44,17 @@ The machine-readable authority is
   review completion, and public claim class separate. The active F000477 Justice
   artifact remains a valid `reviewed_conclusion` within its completely
   accounted seven-action `benchmark_sample`, with public claim class
-  `reviewed_sample_finding`. A content-addressed
-  `full_defined_issue_record` has not been established, full-record action
-  accounting has not passed, external universe authority and full-record
-  semantic-validation/human-approval receipts are absent, and a final full
-  issue synthesis is not eligible.
+  `reviewed_sample_finding`. Separately, the exact 37-action V2 universe is now
+  established as a content-addressed `full_defined_issue_record` through the
+  declared July 23, 2026 cutoff. The detached human authority receipt binds the
+  reviewer, decision, manifest, action set, subject, boundary, and governed
+  sources. Action interpretation and policy-episode work have not started;
+  full-record Semantic IR and synthesis remain absent, production persistence
+  is not authorized, and a final full-issue synthesis is not eligible.
   The machine-readable state is
   `docs/editorial/full_record_reviews/f000477_justice_public_safety_119_review_state_v1.json`.
-- The canonical, non-authorizing F000477 Justice universe-discovery proposal is
-  V2. It reconciles 638 official House member actions through July 23, 2026
+- The canonical F000477 Justice V2 universe discovery reconciles 638 official
+  House member actions through July 23, 2026
   (latest roll 283) into 172 high-recall candidates: 37 proposed
   substantive/non-directional actions, seven expressive actions, 69 procedural
   actions, 59 exact-action-ineligible actions, and zero unresolved boundary
@@ -60,9 +62,13 @@ The machine-readable authority is
   remaining Congress-metadata gaps are explicitly stage-bounded (zero proposed,
   two expressive, 21 procedural, and 11 ineligible) and do not imply action
   interpretation, episode, Semantic IR, synthesis, or public-wording readiness.
-  Its authority state remains `pending_human_universe_review`; it creates no
-  universe authority receipt, full-record claim, synthesis eligibility,
-  publication change, or production write. The current manifest, discovery,
+  Human reviewer `dhart54`, acting under
+  `full_issue_universe_review_authority_v1`, approved that exact complete issue
+  universe. The detached receipt is
+  `docs/editorial/full_record_reviews/f000477_justice_public_safety_119_full_issue_universe_authority_receipt_v2.json`.
+  This authority establishes membership only; it creates no action
+  interpretation, synthesis eligibility, publication change, or production
+  write. The current manifest, discovery,
   source inventory, configuration, V1/V2 comparison, repair plan, and review
   packet are the V2 artifacts under
   `docs/editorial/full_record_reviews/proposals/`. V1 remains discoverable only

@@ -291,11 +291,27 @@ def _entry(review: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def build_catalog() -> dict[str, Any]:
+def discover_review_states(
+    review_root: Path = REVIEW_ROOT,
+) -> list[dict[str, Any]]:
+    reviews: list[dict[str, Any]] = []
+    for path in sorted(review_root.glob("*.json"), key=lambda item: item.name):
+        try:
+            candidate = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(candidate, dict):
+            continue
+        if candidate.get("schema_version") != "full_record_issue_interpretation_v1":
+            continue
+        validate_review(candidate)
+        reviews.append(candidate)
+    return reviews
+
+
+def build_catalog(*, review_root: Path = REVIEW_ROOT) -> dict[str, Any]:
     entries = []
-    for path in sorted(REVIEW_ROOT.glob("*.json")):
-        review = json.loads(path.read_text(encoding="utf-8"))
-        validate_review(review)
+    for review in discover_review_states(review_root):
         entries.append(_entry(review))
     catalog = {
         "schema_version": CATALOG_SCHEMA_VERSION,
@@ -312,6 +328,10 @@ def catalog_bytes(catalog: dict[str, Any]) -> bytes:
     ).encode("utf-8")
 
 
+def catalog_bytes_match_checkout(materialized: bytes, canonical: bytes) -> bool:
+    return materialized in (canonical, canonical.replace(b"\n", b"\r\n"))
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
@@ -322,7 +342,9 @@ def main() -> int:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
     if args.check:
-        if not OUTPUT_PATH.is_file() or OUTPUT_PATH.read_bytes() != expected:
+        if not OUTPUT_PATH.is_file() or not catalog_bytes_match_checkout(
+            OUTPUT_PATH.read_bytes(), expected
+        ):
             print("ERROR: public review-state catalog is missing or stale", file=sys.stderr)
             return 1
         print("Public review-state catalog is deterministic and current.")
