@@ -1,0 +1,184 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/bounded_correction_diff_v3",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "benchmark_used": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "correction_count": {
+      "type": "integer"
+    },
+    "correction_cycle_count": {
+      "type": "integer"
+    },
+    "corrections": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "changed_fields": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "final_value": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "component_id": {
+                            "type": "string"
+                          },
+                          "limitation": {
+                            "type": "null"
+                          },
+                          "locator": {
+                            "type": "string"
+                          },
+                          "provision_id": {
+                            "type": "string"
+                          },
+                          "representation_state": {
+                            "type": "string"
+                          },
+                          "source_id": {
+                            "type": "string"
+                          },
+                          "support_state": {
+                            "type": "string"
+                          },
+                          "wording": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "locator",
+                          "source_id",
+                          "support_state",
+                          "wording"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "initial_value": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "component_id": {
+                            "type": "string"
+                          },
+                          "limitation": {
+                            "type": "null"
+                          },
+                          "locator": {
+                            "type": "string"
+                          },
+                          "provision_id": {
+                            "type": "string"
+                          },
+                          "representation_state": {
+                            "type": "string"
+                          },
+                          "source_id": {
+                            "type": "string"
+                          },
+                          "support_state": {
+                            "type": "string"
+                          },
+                          "wording": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "locator",
+                          "source_id",
+                          "support_state",
+                          "wording"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "field",
+                "final_value",
+                "initial_value"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "final_candidate_content_subject_sha256": {
+            "type": "string"
+          },
+          "initial_candidate_content_subject_sha256": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "changed_fields",
+          "final_candidate_content_subject_sha256",
+          "initial_candidate_content_subject_sha256"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "evidence_acquisition_performed": {
+      "type": "boolean"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "unchanged_action_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "benchmark_used",
+    "content_subject_sha256",
+    "correction_count",
+    "correction_cycle_count",
+    "corrections",
+    "evidence_acquisition_performed",
+    "non_authorizing",
+    "schema_version",
+    "unchanged_action_ids"
+  ],
+  "title": "bounded_correction_diff_v3",
+  "type": "object"
+}

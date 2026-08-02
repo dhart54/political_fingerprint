@@ -1,0 +1,278 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/action_interpretation_worker_packet_v3",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "action_id": {
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "cross_domain_limitations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "exact_action_identity": {
+      "type": "string"
+    },
+    "house_stage": {
+      "type": "string"
+    },
+    "neutral_methodology": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "official_action_date": {
+      "type": "string"
+    },
+    "official_member_action": {
+      "type": "string"
+    },
+    "operative_text_versions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "packet_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "sources": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "deterministic_extraction": {
+            "additionalProperties": false,
+            "properties": {
+              "document_title": {
+                "type": "string"
+              },
+              "extraction_engine": {
+                "type": "string"
+              },
+              "extraction_limitation": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              },
+              "official_title": {
+                "type": "string"
+              },
+              "pages": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "page": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "page",
+                    "text"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "projection": {
+                "additionalProperties": false,
+                "properties": {
+                  "action_date": {
+                    "type": "string"
+                  },
+                  "action_id": {
+                    "type": "string"
+                  },
+                  "chamber": {
+                    "type": "string"
+                  },
+                  "congress": {
+                    "type": "integer"
+                  },
+                  "house_action_stage": {
+                    "type": "string"
+                  },
+                  "measure_identity": {
+                    "type": "string"
+                  },
+                  "member_action": {
+                    "type": "string"
+                  },
+                  "official_action_description": {
+                    "type": "string"
+                  },
+                  "operative_content_sha256": {
+                    "type": "null"
+                  },
+                  "raw_provenance_sha256": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "roll_number": {
+                    "type": "integer"
+                  },
+                  "schema_version": {
+                    "type": "string"
+                  },
+                  "source_url": {
+                    "type": "string"
+                  },
+                  "text_version": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "action_date",
+                  "action_id",
+                  "chamber",
+                  "congress",
+                  "house_action_stage",
+                  "measure_identity",
+                  "member_action",
+                  "official_action_description",
+                  "operative_content_sha256",
+                  "raw_provenance_sha256",
+                  "roll_number",
+                  "schema_version",
+                  "source_url",
+                  "text_version"
+                ],
+                "type": "object"
+              },
+              "section_headings": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "structured_sections": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "enum": {
+                      "type": "string"
+                    },
+                    "header": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "enum",
+                    "header",
+                    "text"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            },
+            "required": [],
+            "type": "object"
+          },
+          "neutral_projection_sha256": {
+            "type": "string"
+          },
+          "raw_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "raw_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "role": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "text_version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "deterministic_extraction",
+          "neutral_projection_sha256",
+          "raw_path",
+          "raw_sha256",
+          "role",
+          "source_id",
+          "source_type",
+          "text_version"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "worker_input_allowlist": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "worker_input_forbidden": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "action_id",
+    "content_subject_sha256",
+    "cross_domain_limitations",
+    "exact_action_identity",
+    "house_stage",
+    "neutral_methodology",
+    "official_action_date",
+    "official_member_action",
+    "operative_text_versions",
+    "packet_id",
+    "schema_version",
+    "sources",
+    "worker_input_allowlist",
+    "worker_input_forbidden"
+  ],
+  "title": "action_interpretation_worker_packet_v3",
+  "type": "object"
+}

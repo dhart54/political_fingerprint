@@ -1,0 +1,1257 @@
+{
+  "artifact_id": "cross-field-consistency-reviews:f000477:justice_public_safety:119:v3",
+  "content_subject_sha256": "b8fb631e8142b302c2f0be38a691f58cd0856ea5cda9782ad843ae26170a558c",
+  "non_authorizing": true,
+  "review_count": 37,
+  "reviews": [
+    {
+      "action_id": "house:119:1:6",
+      "benchmark_used": false,
+      "content_subject_sha256": "67051359377809fc342666bddb874ac1ad21b9a5efef7e1ece44307236002e2e",
+      "final_candidate_content_subject_sha256": "8387438547697ca0d1b7dc5f6120fbeae876de2ea1ddfc4262869d7dba6c3e9e",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "8387438547697ca0d1b7dc5f6120fbeae876de2ea1ddfc4262869d7dba6c3e9e",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "a25a581d8eec1ee97ee14895ff73a10220c7dcc9719be53ea9cbe4268231354b",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:6:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:23",
+      "benchmark_used": false,
+      "content_subject_sha256": "b3aa5fc773ee744f68210cde20e4306acb4c6ad48de1fd08b9b8603553f9f569",
+      "final_candidate_content_subject_sha256": "bb46e6902c59f3a194d29e523dcf662f71973389cb8dc76d83148bdfabdd72df",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [
+          {
+            "all_items_present_across_candidate_fields": true,
+            "candidate_uses_accurate_bounded_count": true,
+            "contradictory_count_detected": false,
+            "enumeration_id": "detention-trigger-categories",
+            "expected_count": 6,
+            "expected_items": [
+              "burglary",
+              "theft",
+              "larceny",
+              "shoplifting",
+              "assault of a law-enforcement officer",
+              "crimes resulting in death or serious bodily injury"
+            ],
+            "result": "pass"
+          }
+        ],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "3c1cf40dd7f740b2478e9c74c688f65374fb1b1e903be60f3a760d41c196187b",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": true,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [
+          {
+            "all_items_present_across_candidate_fields": false,
+            "candidate_uses_accurate_bounded_count": false,
+            "contradictory_count_detected": false,
+            "enumeration_id": "detention-trigger-categories",
+            "expected_count": 6,
+            "expected_items": [
+              "burglary",
+              "theft",
+              "larceny",
+              "shoplifting",
+              "assault of a law-enforcement officer",
+              "crimes resulting in death or serious bodily injury"
+            ],
+            "result": "fail"
+          }
+        ],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "1e0251ed95551cc903ff7b4c58b4073faf8e9cb25ffc42a53b9e2738103f7756",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:23:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:27",
+      "benchmark_used": false,
+      "content_subject_sha256": "a5b765a1dcaf7cec3910364c21ec174076a8924dfa047a89b34b96230d6628d6",
+      "final_candidate_content_subject_sha256": "f7b4539a00f20b883fec620f7490c310eea2b7f8f187dd31588fdca5f4a71858",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "f7b4539a00f20b883fec620f7490c310eea2b7f8f187dd31588fdca5f4a71858",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "864c69ffc55d475846438dc1ef564d8e4569a1894509016de13acb2fb29bb0d2",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:27:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:32",
+      "benchmark_used": false,
+      "content_subject_sha256": "0a0cef32de4e60cfe77f152b85f3bc3c709f705f346625a9d08e7c9bfe09e3a6",
+      "final_candidate_content_subject_sha256": "6c50e0899d1d2a17f4b65caacb5a2f1e4e9946fa2b919fd44113f632e58bab86",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "6c50e0899d1d2a17f4b65caacb5a2f1e4e9946fa2b919fd44113f632e58bab86",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "aa2e43477dba80a81e7234044ca628c302a67f5c0b0c838875d86e3d649465bf",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:32:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:33",
+      "benchmark_used": false,
+      "content_subject_sha256": "601c4b73afe932637756c36ff0094f5f72cfa4a1b1f37c351bccf8a13e6ba875",
+      "final_candidate_content_subject_sha256": "5821b773b3f5323ad57ad08368631c88de1ddc6f62759b34287f053165c5396d",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "5821b773b3f5323ad57ad08368631c88de1ddc6f62759b34287f053165c5396d",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "6ee37445251d30d69ed6065da6a23215028d24632a88e4471103c9520005ac29",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:33:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:42",
+      "benchmark_used": false,
+      "content_subject_sha256": "04abc02ca22e7e3a2c47748f5d2609f0b3c0693bf2a15fca6cc91b601a01487c",
+      "final_candidate_content_subject_sha256": "7a8032bda478790e03baafea6960fc493132e544dbdf49021100d0403a5a1d01",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "7a8032bda478790e03baafea6960fc493132e544dbdf49021100d0403a5a1d01",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "1ef8f4f8ae320f7208adadb3ad8d45fafc4d95cc550347e87d9b9cc2a1601e8c",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:42:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:68",
+      "benchmark_used": false,
+      "content_subject_sha256": "4c1bfed7fb796042b723d0100e4076032fe6f60612a46d5ac1a95ef502c05a96",
+      "final_candidate_content_subject_sha256": "7a6b86da61819d7a2aa08cb9616e38cbf74bd6e4bf6eae29d42bde97b3aa41c4",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [
+          {
+            "all_items_present_across_candidate_fields": true,
+            "candidate_uses_accurate_bounded_count": true,
+            "contradictory_count_detected": false,
+            "enumeration_id": "pandemic-unemployment-programs",
+            "expected_count": 4,
+            "expected_items": [
+              "Pandemic Unemployment Assistance",
+              "Federal Pandemic Unemployment Compensation",
+              "Mixed Earner Unemployment Compensation",
+              "Pandemic Emergency Unemployment Compensation"
+            ],
+            "result": "pass"
+          }
+        ],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "major",
+      "initial_candidate_content_subject_sha256": "545408a7241feb4ffabb6464bcbe35be9f9620101fa75da39c33006d3723fcd2",
+      "initial_checks": {
+        "high_confidence_consistent": false,
+        "internal_contradiction_detected": true,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [
+          {
+            "all_items_present_across_candidate_fields": true,
+            "candidate_uses_accurate_bounded_count": false,
+            "contradictory_count_detected": true,
+            "enumeration_id": "pandemic-unemployment-programs",
+            "expected_count": 4,
+            "expected_items": [
+              "Pandemic Unemployment Assistance",
+              "Federal Pandemic Unemployment Compensation",
+              "Mixed Earner Unemployment Compensation",
+              "Pandemic Emergency Unemployment Compensation"
+            ],
+            "result": "fail"
+          }
+        ],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "fail"
+      },
+      "inventory_content_subject_sha256": "650fadb64a978ec084feca81d8a53595cf5018e72d5e38337ce27e7d819d3360",
+      "remaining_severity_after_correction": "none",
+      "required_correction": "Reconcile candidate prose, structured inventory, enumerations, and confidence.",
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:68:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:98",
+      "benchmark_used": false,
+      "content_subject_sha256": "6176c7e526b3043683586ad7068d7267aae9707f18e65c587e09100f7a7e4b72",
+      "final_candidate_content_subject_sha256": "af4db1aba247cb53ac571708d6ea14b98a7bebf6238a1c441042a645cf112ad0",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "af4db1aba247cb53ac571708d6ea14b98a7bebf6238a1c441042a645cf112ad0",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "e56a10f6a312443bb7847f908acb686cb1d0c8f80a61b952abcc456868c450d6",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:98:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:128",
+      "benchmark_used": false,
+      "content_subject_sha256": "159bb1b6b30cb558fbb68d9e3fb47c4fd565e35cf4f4b638abc8793b914ce771",
+      "final_candidate_content_subject_sha256": "1653471c362e1a34cc184d0ecd8b82e0a228d70780e3132ffc97d8222cb4847d",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "1653471c362e1a34cc184d0ecd8b82e0a228d70780e3132ffc97d8222cb4847d",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "8a64a7be3e5f848f93d3489f21a7cbeb59b0bfe771566ad7ba5eeec96c5336b1",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:128:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:130",
+      "benchmark_used": false,
+      "content_subject_sha256": "4e64ed4295eee66e631de54889a780e3b98addcef6fc859444b87163af135958",
+      "final_candidate_content_subject_sha256": "fdbe8a24450f0fdb535d218ce524f46d6b7a4c472f67034788697f7efa7b7f44",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "fdbe8a24450f0fdb535d218ce524f46d6b7a4c472f67034788697f7efa7b7f44",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "9f63dc4d8cdbd9e3a7409821822c6960b724b8e3f52c17e894470ccd70aeb348",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:130:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:131",
+      "benchmark_used": false,
+      "content_subject_sha256": "28f9c292f5dc091deca9698e17527853d790f468b5306d9f13877d4af076fdd2",
+      "final_candidate_content_subject_sha256": "dd3b8185da79a060f38319e44e5de0f7c17f7b8c0310197931958eceac82195f",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "dd3b8185da79a060f38319e44e5de0f7c17f7b8c0310197931958eceac82195f",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "a4120fc29f83f117938244406785ff1b758d6f1aa74ad1f06561ccdcd21592b3",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:131:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:162",
+      "benchmark_used": false,
+      "content_subject_sha256": "9d56e822df6bc4c60a24eb97d4f9176daa1a4c964814e3c58336b5f10042bd0d",
+      "final_candidate_content_subject_sha256": "ba2fdf769469b074f0f2dfd06e4d3d601a80235b66311904547f66252fd8141b",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "ba2fdf769469b074f0f2dfd06e4d3d601a80235b66311904547f66252fd8141b",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "67ae610b5951afe11b1e42251762699f6f688d6af584c7421752da1429811be9",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:162:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:166",
+      "benchmark_used": false,
+      "content_subject_sha256": "1f1071f4eb526a9c78d01d36f3a08285af576ddde69fdb620b8f685e218533dc",
+      "final_candidate_content_subject_sha256": "052bb4205c4457c4ec2ae6543384c44de22ed693884da32d08d539e170a4368f",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "052bb4205c4457c4ec2ae6543384c44de22ed693884da32d08d539e170a4368f",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "faeb5eb0911fc151ea49368a8cc0bb94b4c8a5ba6dd8866d4ff8e8e028a70dac",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:166:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:270",
+      "benchmark_used": false,
+      "content_subject_sha256": "815f8bd6c8dfca0d402523217b9457794b290e3ea050df9f1e62fe954944ede2",
+      "final_candidate_content_subject_sha256": "effd62679b1687e1e07d5ed766cd30f05ed2bbb53bf8d5fe47fc20606fca2603",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "effd62679b1687e1e07d5ed766cd30f05ed2bbb53bf8d5fe47fc20606fca2603",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "664565f315e06f0aa4b4b88104899b076253aef5d808cc0995acc9cbf1dacd20",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:270:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:271",
+      "benchmark_used": false,
+      "content_subject_sha256": "86dd7a8be06a2346131079b75be3d437d23268bda432e1046ecc1c5d4e2fe202",
+      "final_candidate_content_subject_sha256": "1d8d6475234335eccb200a10551bcf408a954a9817ab43632707c2fde690d058",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "1d8d6475234335eccb200a10551bcf408a954a9817ab43632707c2fde690d058",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "bd097bba1691592e5ab4e1ce15c878d56b078e37c87de3ac04f8a29303585423",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:271:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:274",
+      "benchmark_used": false,
+      "content_subject_sha256": "37de1688507067c8972021220596f8da2202675a615fbf0d7a9be2083ded541d",
+      "final_candidate_content_subject_sha256": "69ec452d504d42838a3383582e284f0f9edb008642169d01b519a7e3d77ebd4e",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "69ec452d504d42838a3383582e284f0f9edb008642169d01b519a7e3d77ebd4e",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "4b3b7cdd6b93f01712ee3a686192d9528a8f8453a8615ced092fbc379591f2d5",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:274:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:275",
+      "benchmark_used": false,
+      "content_subject_sha256": "e80ce9d6534cc604a15901393ddf4804d516b7373b0f73f5332226b28c52110b",
+      "final_candidate_content_subject_sha256": "78b1d44b2c3ebe2f469b7a0a2b8931c7c6b02f8103fbd1883f72a6d2d625a48f",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "78b1d44b2c3ebe2f469b7a0a2b8931c7c6b02f8103fbd1883f72a6d2d625a48f",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "bf6190e704d662733f3ac70e6ce9d3d5e5c4ea2c856f88d6164074655f80a0c1",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:275:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:286",
+      "benchmark_used": false,
+      "content_subject_sha256": "c0558494070e233fac05c69669b59b9946c6c27c8d6068e718bc923f0454e166",
+      "final_candidate_content_subject_sha256": "186449af00d8ccee6ff1f8274d82b655d599b1356b6f08e952c3356a8780ba80",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "186449af00d8ccee6ff1f8274d82b655d599b1356b6f08e952c3356a8780ba80",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "83fe3c2ba3b7cd33c8618ca5550118a02b30b081e5a89e6125d35ed7f0b62ac5",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:286:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:289",
+      "benchmark_used": false,
+      "content_subject_sha256": "d531cb233c67d6522055fd8fe6fde80fb8c29776ef9d3e425c4933efaca4c048",
+      "final_candidate_content_subject_sha256": "6ba1b604f70fbe45e2db4466994633f692569af6ef336124f42a07c1d5e5742a",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "6ba1b604f70fbe45e2db4466994633f692569af6ef336124f42a07c1d5e5742a",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "95a098bdd57f24115f1a4b51327b712edd5f79379e58354b04e84c6ccc097b05",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:289:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:298",
+      "benchmark_used": false,
+      "content_subject_sha256": "f9a94cb65dfece5d7012408ab3cd82c0798bd9e5665dc428a70c39c075141f93",
+      "final_candidate_content_subject_sha256": "61ec9d90008a8e10ac21cd3f61dd107aa7f86e1affe1b8272562c3c8cf009013",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "61ec9d90008a8e10ac21cd3f61dd107aa7f86e1affe1b8272562c3c8cf009013",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "3863e934e5bcb1e6bae7b1fbe1eb2a4279b494509c38e295dc230faa65e7cbdd",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:298:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:299",
+      "benchmark_used": false,
+      "content_subject_sha256": "bcb5130baa9d0316c03997b2faa0f1fa940f1a656e48a46fb8a1beb2e564f1b8",
+      "final_candidate_content_subject_sha256": "3c96a581103ed59f465dff4ff19fb934ee3aeec48e745f44b2340331290886b0",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "3c96a581103ed59f465dff4ff19fb934ee3aeec48e745f44b2340331290886b0",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "dd6d4f05f0730edaae08c2e6950be160fc5e1ec190cdf499f9b48c0a929a2254",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:299:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:340",
+      "benchmark_used": false,
+      "content_subject_sha256": "7957e2ed35139e614135113162d980e8cf2beef62b0eb7bdb7ed97c218c25f5c",
+      "final_candidate_content_subject_sha256": "1fde1cacd27f2cb59dcc97043c2c4b7d657b017049ea9556082f08ecba401ac6",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "1fde1cacd27f2cb59dcc97043c2c4b7d657b017049ea9556082f08ecba401ac6",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "1e83c185f30255a3ba57ca72c9a1b40fe434e7723986be57b46b715449ecb306",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:340:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:1:351",
+      "benchmark_used": false,
+      "content_subject_sha256": "e215b2b52e36cdc12a14d484b6a0174c2b610fa432f579a8fee394dd26922c01",
+      "final_candidate_content_subject_sha256": "0bfde1a0677ef9d5bd42e7ab1d8042e4bba4b273f4fd1b74539b44f8bd1639ff",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "0bfde1a0677ef9d5bd42e7ab1d8042e4bba4b273f4fd1b74539b44f8bd1639ff",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "a74674a7ee350f39d9683371a4b4c64d24da0218634dbc216c301c49faead30f",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:1:351:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:155",
+      "benchmark_used": false,
+      "content_subject_sha256": "7e2fc030fc6af4f1b3ccaca16d49113dcbe407ccf7bf031617ee4d99a9c6673f",
+      "final_candidate_content_subject_sha256": "21455a604ad27eafc551792442a5eb91c447f5e8af7e36374e9110bd4324df05",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "21455a604ad27eafc551792442a5eb91c447f5e8af7e36374e9110bd4324df05",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "5b797c431cbbe61c17aca245741395c7f15c78356f67ddb8865415ce99410d12",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:155:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:157",
+      "benchmark_used": false,
+      "content_subject_sha256": "1b6a80dc2e2411cd364a00570ed1f782d3196225b5435b1c58b23e424ab2d4b5",
+      "final_candidate_content_subject_sha256": "ee4dc84c3575898bd553e0b29fdcb3356c8d0a34e2975ac07292b27cb74aaa4f",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "ee4dc84c3575898bd553e0b29fdcb3356c8d0a34e2975ac07292b27cb74aaa4f",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "8e09f293f2585d11990e79296d2dbc17d42dc0a996fdcc8b8b93dcb6233446ce",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:157:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:169",
+      "benchmark_used": false,
+      "content_subject_sha256": "d9fdcdd64db626eadac15e6353ac82be98a3831f569c49466d8f68da7e5853db",
+      "final_candidate_content_subject_sha256": "2f974bc19e42ed62431778668a12caefbf64afc35f7485c9c3e5bdb2de7ea66f",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "2f974bc19e42ed62431778668a12caefbf64afc35f7485c9c3e5bdb2de7ea66f",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "70959f267b6d20ee03edcfa639d5b2d747876d65bf4b581d1b228e7e21a3315d",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:169:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:171",
+      "benchmark_used": false,
+      "content_subject_sha256": "11bb0332fd20c617f87eae971d0e6c473530ebd2bf10d2022ed5b23dc22b2411",
+      "final_candidate_content_subject_sha256": "70f9beeef26aed90710446051f5e3ea144c2e224b2666b44a268a5b35550819c",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "70f9beeef26aed90710446051f5e3ea144c2e224b2666b44a268a5b35550819c",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "138a5317a751121770cb8e51ba6fc0fdc654ea5a22dd751bd49f594ad98aa8fc",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:171:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:218",
+      "benchmark_used": false,
+      "content_subject_sha256": "b6301dfaf21c329f24888a4e4cd8af322e01abb84b1d3ba4ee666948f6589c2c",
+      "final_candidate_content_subject_sha256": "b83c09cecff735b8c270a2da9e9a06a25d45d8650f7ba889a473a3fa926483fd",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "b83c09cecff735b8c270a2da9e9a06a25d45d8650f7ba889a473a3fa926483fd",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "fc112b9f336f9c819dbfcbf0a437e6086a2f1c1adfc1d9574a84d1fc40edcebc",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:218:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:221",
+      "benchmark_used": false,
+      "content_subject_sha256": "00cf010d6ae9feadb9ce955ad83073ccc34f69f8e8298890dfb4f92a124d719c",
+      "final_candidate_content_subject_sha256": "e39bc54fac56af85f4b17949eac05d6d362d142f5da346000e79100bddbdd8b0",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "e39bc54fac56af85f4b17949eac05d6d362d142f5da346000e79100bddbdd8b0",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "b21cd948a9eaef505228d92164ea4e10aadb8791dd30b6f93300a369b838b338",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:221:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:227",
+      "benchmark_used": false,
+      "content_subject_sha256": "2056a831925578fee8b77ad57ede88c22ad404c6b935a22fb10f94cf84cdcfc2",
+      "final_candidate_content_subject_sha256": "a089dbc8d0bdc6fc67a1bdf328c35373be1456f6424ba725494f411fce2dc208",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "a089dbc8d0bdc6fc67a1bdf328c35373be1456f6424ba725494f411fce2dc208",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "8a84507775ad6c47b1990dc082b78e6c2425556e0a6380934bf5e172c11226a8",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:227:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:234",
+      "benchmark_used": false,
+      "content_subject_sha256": "d4bf1a07b48ba93761adea90468ca48922df34aac27ed1ec60fa6ffee7804bd2",
+      "final_candidate_content_subject_sha256": "5e1b06cfe4d35d500c5d7dca7473614e38448e624be59834b914efabe832f6b4",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "5e1b06cfe4d35d500c5d7dca7473614e38448e624be59834b914efabe832f6b4",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "70430ae7515e0f57b728ad88c96a6d0555518c858dae07bc53f21a9cd67e2a62",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:234:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:240",
+      "benchmark_used": false,
+      "content_subject_sha256": "b217991e38951e775a42c828aa7790deef10f52cc9d06703dddb9e03b50e0e13",
+      "final_candidate_content_subject_sha256": "79599783350f78aea251985e9cfdcbd7dadbfcee497861b8c9969e1a2ddd844c",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "79599783350f78aea251985e9cfdcbd7dadbfcee497861b8c9969e1a2ddd844c",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "c20bf1ff1a96c35d50cfbc3e4135868a01c7f0f83927bf14a89e6d85833a806e",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:240:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:259",
+      "benchmark_used": false,
+      "content_subject_sha256": "bdc95e828bbedbae9a5f448163c633ec3b85c3c1fe8b43a42eb53f114de1e3e5",
+      "final_candidate_content_subject_sha256": "b7bb758ceb6b21b0d4a26a57cbc8cfc1e04a0a64da2254e0a76da52a70746511",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "b7bb758ceb6b21b0d4a26a57cbc8cfc1e04a0a64da2254e0a76da52a70746511",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "4b2540ba9f41fd63ebf82db071cf4a02cf94ac23140b012fdec5e6969fdf0d60",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:259:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:265",
+      "benchmark_used": false,
+      "content_subject_sha256": "aa59defc1193627e7ecf718670f9e89647d22a6109a08a28ea0866f3a9d9e031",
+      "final_candidate_content_subject_sha256": "5a52c387b56ad192398b95d2666813cec701d6466c18731239c5fe7109bdd623",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "5a52c387b56ad192398b95d2666813cec701d6466c18731239c5fe7109bdd623",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "aaa070fbd55782dc8c0dc1aeeeb7df9846a7d4ee305bb72fa93a79f32aaccc96",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:265:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:273",
+      "benchmark_used": false,
+      "content_subject_sha256": "1f82d957ab53ce5a436184d2a717ee04902d4bd2334ca750566743543d197148",
+      "final_candidate_content_subject_sha256": "17fae6d4066cf3cee44112542b6f83bb6ecfc823f5d2d25ce7173b48f47571f7",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "17fae6d4066cf3cee44112542b6f83bb6ecfc823f5d2d25ce7173b48f47571f7",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "1618c9a9ea3abfa7ed37b284c45a57b3aba737893e30ac7e31c8d7fee6d46e92",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:273:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:275",
+      "benchmark_used": false,
+      "content_subject_sha256": "25e84bcc78ee1eff5a839d257b89358dd3bfbbeed42dad4397080625386a75a5",
+      "final_candidate_content_subject_sha256": "6e7872aa94041f53d9abc22f91864eefafce202ac8326daac1d6f02e4eda5d60",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "6e7872aa94041f53d9abc22f91864eefafce202ac8326daac1d6f02e4eda5d60",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "389b234de9aa4b388b941aa0afc9117e72dca6354e19058b30030f597a96fd56",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:275:v3",
+      "reviewer_cannot_accept": true
+    },
+    {
+      "action_id": "house:119:2:278",
+      "benchmark_used": false,
+      "content_subject_sha256": "eaf9101ba7147afc0e99183b5849d3535750eb0e5447665498b6ae1381750f27",
+      "final_candidate_content_subject_sha256": "c8c98c205903fcc9c9996449ea9f5c533012108e8f1897c369b562ab21e2c918",
+      "final_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "highest_severity": "none",
+      "initial_candidate_content_subject_sha256": "c8c98c205903fcc9c9996449ea9f5c533012108e8f1897c369b562ab21e2c918",
+      "initial_checks": {
+        "high_confidence_consistent": true,
+        "internal_contradiction_detected": false,
+        "missing_quantities_dates_amounts_thresholds_or_penalties": [],
+        "named_count_and_enumeration_checks": [],
+        "official_member_action_and_position_effect_consistent": true,
+        "represented_provisions_and_limits_consistent": true,
+        "result": "pass"
+      },
+      "inventory_content_subject_sha256": "a665b0053344d0d1e243fccb9c201e9b3e4d0bcca573d0ec51e8df877c8e123d",
+      "remaining_severity_after_correction": "none",
+      "required_correction": null,
+      "review_contract_version": "cross_field_semantic_consistency_review_v3",
+      "review_id": "cross-field-consistency-review:house:119:2:278:v3",
+      "reviewer_cannot_accept": true
+    }
+  ],
+  "schema_version": "cross_field_consistency_reviews_v3"
+}

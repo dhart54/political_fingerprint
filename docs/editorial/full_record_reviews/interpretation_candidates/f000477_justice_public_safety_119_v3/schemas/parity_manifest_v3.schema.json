@@ -1,0 +1,121 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/action_interpretation_final_byte_parity_v3",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "all_final_file_sha256_recomputed": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "candidate_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "candidate_batch_file_sha256": {
+      "type": "string"
+    },
+    "canonical_artifacts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "digest_semantics": {
+            "type": "string"
+          },
+          "file_sha256": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content_subject_sha256",
+          "digest_semantics",
+          "file_sha256",
+          "path"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "digest_field_convention": {
+      "additionalProperties": false,
+      "properties": {
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "file_sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "content_subject_sha256",
+        "file_sha256"
+      ],
+      "type": "object"
+    },
+    "dossier": {
+      "additionalProperties": false,
+      "properties": {
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "digest_semantics": {
+          "type": "string"
+        },
+        "file_sha256": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "content_subject_sha256",
+        "digest_semantics",
+        "file_sha256",
+        "path"
+      ],
+      "type": "object"
+    },
+    "dossier_contains_every_canonical_path_and_hash": {
+      "type": "boolean"
+    },
+    "generated_last": {
+      "type": "boolean"
+    },
+    "parity_state": {
+      "type": "string"
+    },
+    "referenced_file_count": {
+      "type": "integer"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "all_final_file_sha256_recomputed",
+    "artifact_id",
+    "candidate_batch_content_subject_sha256",
+    "candidate_batch_file_sha256",
+    "canonical_artifacts",
+    "content_subject_sha256",
+    "digest_field_convention",
+    "dossier",
+    "dossier_contains_every_canonical_path_and_hash",
+    "generated_last",
+    "parity_state",
+    "referenced_file_count",
+    "schema_version"
+  ],
+  "title": "action_interpretation_final_byte_parity_v3",
+  "type": "object"
+}

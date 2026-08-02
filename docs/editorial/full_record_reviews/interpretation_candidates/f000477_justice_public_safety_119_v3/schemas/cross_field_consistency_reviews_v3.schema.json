@@ -1,0 +1,252 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/cross_field_consistency_reviews_v3",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "review_count": {
+      "type": "integer"
+    },
+    "reviews": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "benchmark_used": {
+            "type": "boolean"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "final_candidate_content_subject_sha256": {
+            "type": "string"
+          },
+          "final_checks": {
+            "additionalProperties": false,
+            "properties": {
+              "high_confidence_consistent": {
+                "type": "boolean"
+              },
+              "internal_contradiction_detected": {
+                "type": "boolean"
+              },
+              "missing_quantities_dates_amounts_thresholds_or_penalties": {
+                "items": false,
+                "type": "array"
+              },
+              "named_count_and_enumeration_checks": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "all_items_present_across_candidate_fields": {
+                      "type": "boolean"
+                    },
+                    "candidate_uses_accurate_bounded_count": {
+                      "type": "boolean"
+                    },
+                    "contradictory_count_detected": {
+                      "type": "boolean"
+                    },
+                    "enumeration_id": {
+                      "type": "string"
+                    },
+                    "expected_count": {
+                      "type": "integer"
+                    },
+                    "expected_items": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "result": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "all_items_present_across_candidate_fields",
+                    "candidate_uses_accurate_bounded_count",
+                    "contradictory_count_detected",
+                    "enumeration_id",
+                    "expected_count",
+                    "expected_items",
+                    "result"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "official_member_action_and_position_effect_consistent": {
+                "type": "boolean"
+              },
+              "represented_provisions_and_limits_consistent": {
+                "type": "boolean"
+              },
+              "result": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "high_confidence_consistent",
+              "internal_contradiction_detected",
+              "missing_quantities_dates_amounts_thresholds_or_penalties",
+              "named_count_and_enumeration_checks",
+              "official_member_action_and_position_effect_consistent",
+              "represented_provisions_and_limits_consistent",
+              "result"
+            ],
+            "type": "object"
+          },
+          "highest_severity": {
+            "type": "string"
+          },
+          "initial_candidate_content_subject_sha256": {
+            "type": "string"
+          },
+          "initial_checks": {
+            "additionalProperties": false,
+            "properties": {
+              "high_confidence_consistent": {
+                "type": "boolean"
+              },
+              "internal_contradiction_detected": {
+                "type": "boolean"
+              },
+              "missing_quantities_dates_amounts_thresholds_or_penalties": {
+                "items": false,
+                "type": "array"
+              },
+              "named_count_and_enumeration_checks": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "all_items_present_across_candidate_fields": {
+                      "type": "boolean"
+                    },
+                    "candidate_uses_accurate_bounded_count": {
+                      "type": "boolean"
+                    },
+                    "contradictory_count_detected": {
+                      "type": "boolean"
+                    },
+                    "enumeration_id": {
+                      "type": "string"
+                    },
+                    "expected_count": {
+                      "type": "integer"
+                    },
+                    "expected_items": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "result": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "all_items_present_across_candidate_fields",
+                    "candidate_uses_accurate_bounded_count",
+                    "contradictory_count_detected",
+                    "enumeration_id",
+                    "expected_count",
+                    "expected_items",
+                    "result"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "official_member_action_and_position_effect_consistent": {
+                "type": "boolean"
+              },
+              "represented_provisions_and_limits_consistent": {
+                "type": "boolean"
+              },
+              "result": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "high_confidence_consistent",
+              "internal_contradiction_detected",
+              "missing_quantities_dates_amounts_thresholds_or_penalties",
+              "named_count_and_enumeration_checks",
+              "official_member_action_and_position_effect_consistent",
+              "represented_provisions_and_limits_consistent",
+              "result"
+            ],
+            "type": "object"
+          },
+          "inventory_content_subject_sha256": {
+            "type": "string"
+          },
+          "remaining_severity_after_correction": {
+            "type": "string"
+          },
+          "required_correction": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "review_contract_version": {
+            "type": "string"
+          },
+          "review_id": {
+            "type": "string"
+          },
+          "reviewer_cannot_accept": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "action_id",
+          "benchmark_used",
+          "content_subject_sha256",
+          "final_candidate_content_subject_sha256",
+          "final_checks",
+          "highest_severity",
+          "initial_candidate_content_subject_sha256",
+          "initial_checks",
+          "inventory_content_subject_sha256",
+          "remaining_severity_after_correction",
+          "required_correction",
+          "review_contract_version",
+          "review_id",
+          "reviewer_cannot_accept"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "content_subject_sha256",
+    "non_authorizing",
+    "review_count",
+    "reviews",
+    "schema_version"
+  ],
+  "title": "cross_field_consistency_reviews_v3",
+  "type": "object"
+}

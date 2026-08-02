@@ -1,0 +1,158 @@
+{
+  "artifact_id": "bounded-correction-diff:f000477:justice_public_safety:119:v3",
+  "benchmark_used": false,
+  "content_subject_sha256": "09a63f1674e87d8ec3c189aa90e44a21f1903c9d500e1bec9f6fa2554ee90c8e",
+  "correction_count": 2,
+  "correction_cycle_count": 1,
+  "corrections": [
+    {
+      "action_id": "house:119:1:23",
+      "changed_fields": [
+        {
+          "field": "claim_components",
+          "final_value": [
+            {
+              "component_id": "house:119:1:23:meaning",
+              "limitation": null,
+              "locator": "section 2; section 3; section 3",
+              "source_id": "govinfo_text_119_s5_es",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass the Senate version of the Laken Riley Act, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or crimes resulting in death or serious bodily injury. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions."
+            }
+          ],
+          "initial_value": [
+            {
+              "component_id": "house:119:1:23:meaning",
+              "limitation": null,
+              "locator": "section 2; section 3; section 3",
+              "source_id": "govinfo_text_119_s5_es",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass the Senate version of the Laken Riley Act, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, or shoplifting offenses. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions."
+            }
+          ]
+        },
+        {
+          "field": "material_provisions",
+          "final_value": [
+            {
+              "locator": "section 2",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "govinfo_text_119_s5_es",
+              "support_state": "directly_supported",
+              "wording": "Require detention and DHS detainers for covered noncitizens connected to burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or crimes resulting in death or serious bodily injury."
+            },
+            {
+              "locator": "section 3",
+              "provision_id": "p2",
+              "representation_state": "represented_in_meaning",
+              "source_id": "govinfo_text_119_s5_es",
+              "support_state": "directly_supported",
+              "wording": "Create State attorney-general enforcement actions concerning specified immigration detention, release, parole, and visa duties."
+            }
+          ],
+          "initial_value": [
+            {
+              "locator": "section 2",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "govinfo_text_119_s5_es",
+              "support_state": "directly_supported",
+              "wording": "Require detention and DHS detainers for covered noncitizens connected to specified theft offenses."
+            },
+            {
+              "locator": "section 3",
+              "provision_id": "p2",
+              "representation_state": "represented_in_meaning",
+              "source_id": "govinfo_text_119_s5_es",
+              "support_state": "directly_supported",
+              "wording": "Create State attorney-general enforcement actions concerning specified immigration detention, release, parole, and visa duties."
+            }
+          ]
+        },
+        {
+          "field": "proposed_exact_action_meaning",
+          "final_value": "The House choice was whether to pass the Senate version of the Laken Riley Act, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or crimes resulting in death or serious bodily injury. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions.",
+          "initial_value": "The House choice was whether to pass the Senate version of the Laken Riley Act, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, or shoplifting offenses. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions."
+        }
+      ],
+      "final_candidate_content_subject_sha256": "bb46e6902c59f3a194d29e523dcf662f71973389cb8dc76d83148bdfabdd72df",
+      "initial_candidate_content_subject_sha256": "3c1cf40dd7f740b2478e9c74c688f65374fb1b1e903be60f3a760d41c196187b"
+    },
+    {
+      "action_id": "house:119:1:68",
+      "changed_fields": [
+        {
+          "field": "claim_components",
+          "final_value": [
+            {
+              "component_id": "house:119:1:68:meaning",
+              "limitation": null,
+              "locator": "section 2; section 2; section 3; section 2 exceptions",
+              "source_id": "govinfo_text_119_hr1156_eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 1156, establishing a 10-year limitations period for specified criminal prosecutions and civil enforcement actions involving fraud in four pandemic unemployment programs. It also would rescind $5 million in unobligated administrative funding."
+            }
+          ],
+          "initial_value": [
+            {
+              "component_id": "house:119:1:68:meaning",
+              "limitation": null,
+              "locator": "section 2; section 2; section 3; section 2 exceptions",
+              "source_id": "govinfo_text_119_hr1156_eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 1156, establishing a 10-year limitations period for specified criminal prosecutions and civil enforcement actions involving fraud in three pandemic unemployment programs. It also would rescind $5 million in unobligated administrative funding."
+            }
+          ]
+        },
+        {
+          "field": "proposed_exact_action_meaning",
+          "final_value": "The House choice was whether to pass H.R. 1156, establishing a 10-year limitations period for specified criminal prosecutions and civil enforcement actions involving fraud in four pandemic unemployment programs. It also would rescind $5 million in unobligated administrative funding.",
+          "initial_value": "The House choice was whether to pass H.R. 1156, establishing a 10-year limitations period for specified criminal prosecutions and civil enforcement actions involving fraud in three pandemic unemployment programs. It also would rescind $5 million in unobligated administrative funding."
+        }
+      ],
+      "final_candidate_content_subject_sha256": "7a6b86da61819d7a2aa08cb9616e38cbf74bd6e4bf6eae29d42bde97b3aa41c4",
+      "initial_candidate_content_subject_sha256": "545408a7241feb4ffabb6464bcbe35be9f9620101fa75da39c33006d3723fcd2"
+    }
+  ],
+  "evidence_acquisition_performed": false,
+  "non_authorizing": true,
+  "schema_version": "bounded_correction_diff_v3",
+  "unchanged_action_ids": [
+    "house:119:1:6",
+    "house:119:1:27",
+    "house:119:1:32",
+    "house:119:1:33",
+    "house:119:1:42",
+    "house:119:1:98",
+    "house:119:1:128",
+    "house:119:1:130",
+    "house:119:1:131",
+    "house:119:1:162",
+    "house:119:1:166",
+    "house:119:1:270",
+    "house:119:1:271",
+    "house:119:1:274",
+    "house:119:1:275",
+    "house:119:1:286",
+    "house:119:1:289",
+    "house:119:1:298",
+    "house:119:1:299",
+    "house:119:1:340",
+    "house:119:1:351",
+    "house:119:2:155",
+    "house:119:2:157",
+    "house:119:2:169",
+    "house:119:2:171",
+    "house:119:2:218",
+    "house:119:2:221",
+    "house:119:2:227",
+    "house:119:2:234",
+    "house:119:2:240",
+    "house:119:2:259",
+    "house:119:2:265",
+    "house:119:2:273",
+    "house:119:2:275",
+    "house:119:2:278"
+  ]
+}

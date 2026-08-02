@@ -1,0 +1,134 @@
+{
+  "action_id": "house:119:1:130",
+  "content_subject_sha256": "bf270fd14092d37b14bc371b845c96b06b5823b3555743da637b87105ddc0652",
+  "cross_domain_limitations": [],
+  "exact_action_identity": "119:hr:2255",
+  "house_stage": "passage",
+  "neutral_methodology": [
+    "inventory_material_provisions_before_drafting",
+    "separate_official_title_from_interpretation",
+    "title_only_prohibited_without_independent_single_mechanism_finding",
+    "exact_choice_only",
+    "preserve_house_stage",
+    "yea_supports_exact_choice_only",
+    "nay_opposes_exact_choice_only",
+    "present_and_not_voting_non_directional",
+    "no_motive_or_broader_issue_inference",
+    "parent_context_cannot_replace_narrow_action",
+    "account_for_material_limits_exceptions_and_retained_provisions",
+    "preserve_ambiguity",
+    "no_safe_candidate_when_required",
+    "derive_each_exact_version_inventory_independently",
+    "do_not_reuse_related_action_inventory_or_conclusion",
+    "freeze_expected_inventory_before_candidate_comparison",
+    "verify_enumerated_categories_and_quantities_across_fields"
+  ],
+  "official_action_date": "2025-05-15",
+  "official_member_action": "nay",
+  "operative_text_versions": [
+    "eh"
+  ],
+  "packet_id": "action-interpretation-worker-packet:house:119:1:130:v3",
+  "schema_version": "action_interpretation_worker_packet_v3",
+  "sources": [
+    {
+      "deterministic_extraction": {
+        "projection": {
+          "action_date": "2025-05-15",
+          "action_id": "house:119:1:130",
+          "chamber": "house",
+          "congress": 119,
+          "house_action_stage": "passage",
+          "measure_identity": "119:hr:2255",
+          "member_action": "nay",
+          "official_action_description": "On Passage",
+          "operative_content_sha256": null,
+          "raw_provenance_sha256": "53ad0db19a9715025dd17d6cf7c6d8a58713775cabcbbbb00b2b1deafacfb19f",
+          "roll_number": 130,
+          "schema_version": "neutral_m3_source_projection_v1",
+          "source_url": "https://clerk.house.gov/evs/2025/roll130.xml",
+          "text_version": "2025-05-15"
+        }
+      },
+      "neutral_projection_sha256": "a685478c8d8a5aa7d9ee7b304c8928b1da97daa309e04e4bf6bd493d604e7f7f",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_130.xml",
+      "raw_sha256": "53ad0db19a9715025dd17d6cf7c6d8a58713775cabcbbbb00b2b1deafacfb19f",
+      "role": "member_action_evidence",
+      "source_id": "clerk:119:1:130",
+      "source_type": "house_clerk_roll_call",
+      "text_version": "2025-05-15"
+    },
+    {
+      "deterministic_extraction": {
+        "document_title": "119 HR 2255 EH: Federal Law Enforcement Officer Service Weapon Purchase Act of 2025",
+        "extraction_engine": "python_xml_elementtree_v1",
+        "extraction_limitation": null,
+        "official_title": "To allow Federal law enforcement officers to purchase retired service weapons, and for other purposes.",
+        "section_headings": [
+          "Short title",
+          "Purchase of retired firearms by Federal law enforcement officers",
+          "In general",
+          "Limitations",
+          "Cost",
+          "Definitions"
+        ],
+        "structured_sections": [
+          {
+            "enum": "1.",
+            "header": "Short title",
+            "text": "1.Short titleThis Act may be cited as the Federal Law Enforcement Officer Service Weapon Purchase Act of 2025."
+          },
+          {
+            "enum": "2.",
+            "header": "Purchase of retired firearms by Federal law enforcement officers",
+            "text": "2.Purchase of retired firearms by Federal law enforcement officers (a)In generalNot later than 1 year after the date of enactment of this Act, the Administrator of General Services shall establish a program under which a Federal law enforcement officer may purchase a retired firearm from the Federal agency that issued the firearm to such officer. (b)LimitationsA Federal law enforcement officer may purchase a retired firearm under subsection (a) if— (1)the purchase is made during the six-month period beginning on the date the firearm was so retired; and (2)with respect to such purchase, the officer is in good standing with the Federal agency that employs or employed such officer. (c)CostA firearm purchased under this section shall be sold at the salvage value for such firearm taking into account the age and condition of the firearm. (d)DefinitionsIn this section— (1)the term Federal law enforcement officer has the meaning given that term in section 115(c)(1) of title 18, United States Code, and includes a retired Federal law enforcement officer; (2)the term firearm has the meaning given that term in section 921(a) of title 18, United States Code, excluding any machinegun (as defined in section 921(a)(24) of such title) not lawfully possessed before section 922(o) of such title took effect; (3)the term retired firearm means any firearm that has been declared surplus by the applicable agency; and (4)the term salvage value means the value of an asset after it has become useless to the owner or the amount expected to be obtained when a fixed asset is disposed of at the end of its useful life."
+          }
+        ]
+      },
+      "neutral_projection_sha256": "d1b4ba596d378d449882e6b1b405f4f0f6461743a7201d098dc5e0c5fb4359b7",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/c598943a0e2ae7a4847f47d328c568f5a590756c0903eadfa3ccfa88033d637a_BILLS-119hr2255eh.xml",
+      "raw_sha256": "c598943a0e2ae7a4847f47d328c568f5a590756c0903eadfa3ccfa88033d637a",
+      "role": "operative_content_interpretation_input",
+      "source_id": "congress_text:119:hr:2255:eh",
+      "source_type": "congress_gov_bill_text",
+      "text_version": "eh"
+    }
+  ],
+  "worker_input_allowlist": [
+    "action_id",
+    "official_action_date",
+    "house_stage",
+    "official_member_action",
+    "exact_action_identity",
+    "neutral_projections",
+    "operative_content",
+    "cross_domain_limitations",
+    "neutral_methodology",
+    "materiality_rubric"
+  ],
+  "worker_input_forbidden": [
+    "accepted_benchmark_interpretations",
+    "accepted_benchmark_text",
+    "advocacy",
+    "benchmark_conclusion",
+    "benchmark_membership",
+    "cosponsor_party",
+    "episode_membership",
+    "generic_bill_metadata",
+    "member_party",
+    "news",
+    "other_action_candidates",
+    "partisan_descriptions",
+    "political_commentary",
+    "public_language",
+    "related_action_candidate_conclusions",
+    "semantic_ir",
+    "sponsor_party",
+    "synthesis_outcomes",
+    "v1_action_candidates",
+    "v1_adversarial_reviews",
+    "v2_action_candidates",
+    "v2_benchmark_comparison",
+    "v2_provision_coverage_reviews"
+  ]
+}

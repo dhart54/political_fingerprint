@@ -1,0 +1,106 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/revision_directive_v3",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepts_any_v1_candidate": {
+      "type": "boolean"
+    },
+    "accepts_any_v2_candidate": {
+      "type": "boolean"
+    },
+    "accepts_any_v3_candidate": {
+      "type": "boolean"
+    },
+    "attributed_human_reviewer": {
+      "type": "null"
+    },
+    "authorizes_m3b": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "directive_id": {
+      "type": "string"
+    },
+    "executed_human_acceptance_receipt": {
+      "type": "boolean"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "required_reviewer_changes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "reviewed_failures": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "failure_id": {
+            "type": "string"
+          },
+          "finding": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "failure_id",
+          "finding",
+          "severity"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "v2_batch_id": {
+      "type": "string"
+    },
+    "v2_content_subject_sha256": {
+      "type": "string"
+    },
+    "v2_final_candidate_batch_file_sha256": {
+      "type": "string"
+    },
+    "v2_parity_manifest_file_sha256": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "accepts_any_v1_candidate",
+    "accepts_any_v2_candidate",
+    "accepts_any_v3_candidate",
+    "attributed_human_reviewer",
+    "authorizes_m3b",
+    "content_subject_sha256",
+    "decision",
+    "directive_id",
+    "executed_human_acceptance_receipt",
+    "non_authorizing",
+    "required_reviewer_changes",
+    "reviewed_failures",
+    "schema_version",
+    "v2_batch_id",
+    "v2_content_subject_sha256",
+    "v2_final_candidate_batch_file_sha256",
+    "v2_parity_manifest_file_sha256"
+  ],
+  "title": "revision_directive_v3",
+  "type": "object"
+}

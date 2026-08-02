@@ -1,0 +1,86 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/related_action_lineage_map_v3",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "audit_aid_only": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "groups": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "relationship_basis": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "required_differences": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "shared_provisions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "action_ids",
+          "group_id",
+          "relationship_basis",
+          "required_differences",
+          "shared_provisions"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "neutral_fact_bases": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "primary_worker_inaccessible": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "audit_aid_only",
+    "content_subject_sha256",
+    "groups",
+    "neutral_fact_bases",
+    "non_authorizing",
+    "primary_worker_inaccessible",
+    "schema_version"
+  ],
+  "title": "related_action_lineage_map_v3",
+  "type": "object"
+}

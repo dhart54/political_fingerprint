@@ -1,0 +1,37 @@
+{
+  "accepts_any_v1_candidate": false,
+  "accepts_any_v2_candidate": false,
+  "accepts_any_v3_candidate": false,
+  "attributed_human_reviewer": null,
+  "authorizes_m3b": false,
+  "content_subject_sha256": "9e934228258416f4ce296a8fb931f92441e4c0c55b345d965d143fd73ee29282",
+  "decision": "global_revision_required",
+  "directive_id": "action-interpretation-global-revision-directive:f000477:justice_public_safety:119:v2-to-v3",
+  "executed_human_acceptance_receipt": false,
+  "non_authorizing": true,
+  "required_reviewer_changes": [
+    "freeze a candidate-blind expected inventory before comparison",
+    "compare related exact versions after independent primary generation",
+    "review cross-field enumerations, quantities, limits, action effects, and confidence",
+    "apply at most one evidence-bound correction cycle"
+  ],
+  "reviewed_failures": [
+    {
+      "action_id": "house:119:1:23",
+      "failure_id": "exact-version-collapse-s5",
+      "finding": "V2 omitted the S. 5 assault-of-an-officer and death-or-serious-bodily-injury detention triggers.",
+      "severity": "major"
+    },
+    {
+      "action_id": "house:119:1:68",
+      "failure_id": "cross-field-four-program-contradiction",
+      "finding": "V2 prose said three pandemic unemployment programs while its inventory and source identify four.",
+      "severity": "major"
+    }
+  ],
+  "schema_version": "action_interpretation_revision_directive_v3",
+  "v2_batch_id": "action-interpretation-candidates:f000477:justice_public_safety:119:v2",
+  "v2_content_subject_sha256": "c68aee15312ff3259fff1b7dcaf1dd293665b88290a80d17c216cfe5530a4c85",
+  "v2_final_candidate_batch_file_sha256": "23fcdb4144e19d6ff40f5920859af9a35f587dad678d2ed138a5234dc8b8bc02",
+  "v2_parity_manifest_file_sha256": "f902ffa0a0f84384f9e63a33c8b16527d07f25e8ee6a5ec9a01c4796b3037593"
+}

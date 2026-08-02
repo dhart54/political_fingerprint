@@ -1,0 +1,364 @@
+{
+  "artifact_id": "related-action-differential-reviews:f000477:justice_public_safety:119:v3",
+  "content_subject_sha256": "ceae7c37709a5973d92c4535d14948128e539f80450bafe205d6a790fdef7218",
+  "non_authorizing": true,
+  "review_count": 4,
+  "reviews": [
+    {
+      "action_ids": [
+        "house:119:1:6",
+        "house:119:1:23"
+      ],
+      "added_or_removed_provisions": [
+        "S. 5 adds assault of a law-enforcement officer to the detention triggers",
+        "S. 5 adds crimes resulting in death or serious bodily injury to the detention triggers"
+      ],
+      "benchmark_used": false,
+      "candidate_blind_primary_generation": true,
+      "changed_thresholds_dates_penalties_or_exceptions": [
+        "S. 5 adds assault of a law-enforcement officer to the detention triggers",
+        "S. 5 adds crimes resulting in death or serious bodily injury to the detention triggers"
+      ],
+      "content_subject_sha256": "f34531fb3738c5d43de2e1cfb2e079acb963e580d6ec5390320b9d79761ecfa2",
+      "group_id": "laken-riley-house-senate-versions",
+      "highest_severity": "major",
+      "initial_findings": [
+        {
+          "final_state": "represented",
+          "finding_id": "s5-added-detention-triggers",
+          "initial_state": "omitted",
+          "required_exact_version_difference": [
+            "assault of a law-enforcement officer",
+            "crimes resulting in death or serious bodily injury"
+          ],
+          "severity": "major"
+        }
+      ],
+      "near_duplicate_wording_rejected_when_text_differs": true,
+      "relationship_basis": [
+        "shared official short title",
+        "same detention-and-State-enforcement policy mechanism",
+        "different exact measure identity and governed operative version"
+      ],
+      "remaining_severity_after_correction": "none",
+      "required_differences": [
+        "S. 5 adds assault of a law-enforcement officer to the detention triggers",
+        "S. 5 adds crimes resulting in death or serious bodily injury to the detention triggers"
+      ],
+      "review_contract_version": "related_action_differential_review_v3",
+      "review_id": "related-action-differential-review:laken-riley-house-senate-versions:v3",
+      "shared_provisions": [
+        "detention and DHS-detainer coverage for burglary, theft, larceny, and shoplifting triggers",
+        "State attorney-general enforcement over specified detention, release, parole, and visa duties, including the governed financial-harm threshold"
+      ],
+      "source_first_fingerprints": [
+        {
+          "action_id": "house:119:1:6",
+          "expected_limit_wordings": [
+            "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100."
+          ],
+          "expected_provision_wordings": [
+            "Require detention and DHS detainers for covered noncitizens connected to specified theft offenses.",
+            "Create State attorney-general enforcement actions concerning specified immigration detention, release, parole, and visa duties."
+          ],
+          "inventory_content_subject_sha256": "a25a581d8eec1ee97ee14895ff73a10220c7dcc9719be53ea9cbe4268231354b",
+          "quantities_and_enumerations": []
+        },
+        {
+          "action_id": "house:119:1:23",
+          "expected_limit_wordings": [
+            "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100."
+          ],
+          "expected_provision_wordings": [
+            "Require detention and DHS detainers for covered noncitizens connected to burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or crimes resulting in death or serious bodily injury.",
+            "Create State attorney-general enforcement actions concerning specified immigration detention, release, parole, and visa duties."
+          ],
+          "inventory_content_subject_sha256": "1e0251ed95551cc903ff7b4c58b4073faf8e9cb25ffc42a53b9e2738103f7756",
+          "quantities_and_enumerations": [
+            {
+              "count": 6,
+              "enumeration_id": "detention-trigger-categories",
+              "items": [
+                "burglary",
+                "theft",
+                "larceny",
+                "shoplifting",
+                "assault of a law-enforcement officer",
+                "crimes resulting in death or serious bodily injury"
+              ],
+              "locator": "section 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "action_ids": [
+        "house:119:1:33",
+        "house:119:1:166"
+      ],
+      "added_or_removed_provisions": [
+        "S. 331 is the Senate-origin enrolled version",
+        "the exact operative packages use distinct technical-correction and implementation structures"
+      ],
+      "benchmark_used": false,
+      "candidate_blind_primary_generation": true,
+      "changed_thresholds_dates_penalties_or_exceptions": [
+        "S. 331 is the Senate-origin enrolled version",
+        "the exact operative packages use distinct technical-correction and implementation structures"
+      ],
+      "content_subject_sha256": "b96a6f7541254b2e6350c512bc25755af68a25bad6ba19f450692bdebe2d9024",
+      "group_id": "halt-fentanyl-house-senate-versions",
+      "highest_severity": "none",
+      "initial_findings": [],
+      "near_duplicate_wording_rejected_when_text_differs": true,
+      "relationship_basis": [
+        "same fentanyl-related-substances scheduling policy family",
+        "House and Senate-origin measures with distinct governed texts"
+      ],
+      "remaining_severity_after_correction": "none",
+      "required_differences": [
+        "S. 331 is the Senate-origin enrolled version",
+        "the exact operative packages use distinct technical-correction and implementation structures"
+      ],
+      "review_contract_version": "related_action_differential_review_v3",
+      "review_id": "related-action-differential-review:halt-fentanyl-house-senate-versions:v3",
+      "shared_provisions": [
+        "permanent Schedule I treatment for fentanyl-related substances as a class",
+        "research registration pathways for Schedule I work",
+        "specified Controlled Substances Act and import-export penalty treatment"
+      ],
+      "source_first_fingerprints": [
+        {
+          "action_id": "house:119:1:33",
+          "expected_limit_wordings": [
+            "The class definition excludes substances specifically exempted or listed in another schedule."
+          ],
+          "expected_provision_wordings": [
+            "Place fentanyl-related substances in schedule I as a class.",
+            "Create alternative and expedited registration procedures for specified schedule I research.",
+            "Apply specified Controlled Substances Act penalties to fentanyl-related substances.",
+            "Require implementing rules and address applicability."
+          ],
+          "inventory_content_subject_sha256": "6ee37445251d30d69ed6065da6a23215028d24632a88e4471103c9520005ac29",
+          "quantities_and_enumerations": []
+        },
+        {
+          "action_id": "house:119:1:166",
+          "expected_limit_wordings": [
+            "The class definition excludes substances specifically exempted or listed in another schedule."
+          ],
+          "expected_provision_wordings": [
+            "Permanently place fentanyl-related substances in schedule I as a class.",
+            "Create alternative and expedited registration pathways for schedule I research.",
+            "Require implementing rules and technical corrections.",
+            "Apply specified Controlled Substances Act and import-export penalties."
+          ],
+          "inventory_content_subject_sha256": "faeb5eb0911fc151ea49368a8cc0bb94b4c8a5ba6dd8866d4ff8e8e028a70dac",
+          "quantities_and_enumerations": []
+        }
+      ]
+    },
+    {
+      "action_ids": [
+        "house:119:2:155",
+        "house:119:2:221"
+      ],
+      "added_or_removed_provisions": [
+        "roll 155 changes April 30, 2026 to June 12, 2026",
+        "roll 221 changes June 12, 2026 to July 2, 2026",
+        "roll 155 retains a governed source-identity conflict not present for roll 221"
+      ],
+      "benchmark_used": false,
+      "candidate_blind_primary_generation": true,
+      "changed_thresholds_dates_penalties_or_exceptions": [
+        "roll 155 changes April 30, 2026 to June 12, 2026",
+        "roll 221 changes June 12, 2026 to July 2, 2026",
+        "roll 155 retains a governed source-identity conflict not present for roll 221"
+      ],
+      "content_subject_sha256": "c937dadecb385fa14d1a03b58d8dd110385eb50472177421f657087c91af1dde",
+      "group_id": "fisa-short-term-extensions",
+      "highest_severity": "none",
+      "initial_findings": [],
+      "near_duplicate_wording_rejected_when_text_differs": true,
+      "relationship_basis": [
+        "same two Title VII sunset references",
+        "same short-term extension mechanism with different dates"
+      ],
+      "remaining_severity_after_correction": "none",
+      "required_differences": [
+        "roll 155 changes April 30, 2026 to June 12, 2026",
+        "roll 221 changes June 12, 2026 to July 2, 2026",
+        "roll 155 retains a governed source-identity conflict not present for roll 221"
+      ],
+      "review_contract_version": "related_action_differential_review_v3",
+      "review_id": "related-action-differential-review:fisa-short-term-extensions:v3",
+      "shared_provisions": [
+        "short-term extension of the same two Title VII FISA repeal-date references"
+      ],
+      "source_first_fingerprints": [
+        {
+          "action_id": "house:119:2:155",
+          "expected_limit_wordings": [
+            "Take effect on the earlier of enactment or April 29, 2026."
+          ],
+          "expected_provision_wordings": [
+            "Extend two Title VII repeal-date references from April 30, 2026, to June 12, 2026."
+          ],
+          "inventory_content_subject_sha256": "5b797c431cbbe61c17aca245741395c7f15c78356f67ddb8865415ce99410d12",
+          "quantities_and_enumerations": []
+        },
+        {
+          "action_id": "house:119:2:221",
+          "expected_limit_wordings": [
+            "Take effect on the earlier of enactment or June 11, 2026."
+          ],
+          "expected_provision_wordings": [
+            "Extend two Title VII repeal-date references from June 12, 2026, to July 2, 2026."
+          ],
+          "inventory_content_subject_sha256": "b21cd948a9eaef505228d92164ea4e10aadb8791dd30b6f93300a369b838b338",
+          "quantities_and_enumerations": []
+        }
+      ]
+    },
+    {
+      "action_ids": [
+        "house:119:1:162",
+        "house:119:1:270",
+        "house:119:1:271",
+        "house:119:1:274",
+        "house:119:1:275",
+        "house:119:1:298",
+        "house:119:1:299"
+      ],
+      "added_or_removed_provisions": [
+        "collective-bargaining and discipline rules",
+        "youth-offender sentencing and public statistics",
+        "Family Court and transfer ages",
+        "judicial nomination governance",
+        "vehicle-pursuit standards and alert technology",
+        "detention and secured-cash-bail rules",
+        "repeal with specified policing-law subtitles retained"
+      ],
+      "benchmark_used": false,
+      "candidate_blind_primary_generation": true,
+      "changed_thresholds_dates_penalties_or_exceptions": [
+        "collective-bargaining and discipline rules",
+        "youth-offender sentencing and public statistics",
+        "Family Court and transfer ages",
+        "judicial nomination governance",
+        "vehicle-pursuit standards and alert technology",
+        "detention and secured-cash-bail rules",
+        "repeal with specified policing-law subtitles retained"
+      ],
+      "content_subject_sha256": "cf5db092af5ba82254e692a8f9d0251758037ae19793dccf81bf3673da2f1521",
+      "group_id": "dc-criminal-justice-and-policing",
+      "highest_severity": "none",
+      "initial_findings": [],
+      "near_duplicate_wording_rejected_when_text_differs": true,
+      "relationship_basis": [
+        "shared D.C. criminal-justice or policing subject",
+        "distinct measure identities and non-interchangeable operative mechanisms"
+      ],
+      "remaining_severity_after_correction": "none",
+      "required_differences": [
+        "collective-bargaining and discipline rules",
+        "youth-offender sentencing and public statistics",
+        "Family Court and transfer ages",
+        "judicial nomination governance",
+        "vehicle-pursuit standards and alert technology",
+        "detention and secured-cash-bail rules",
+        "repeal with specified policing-law subtitles retained"
+      ],
+      "review_contract_version": "related_action_differential_review_v3",
+      "review_id": "related-action-differential-review:dc-criminal-justice-and-policing:v3",
+      "shared_provisions": [],
+      "source_first_fingerprints": [
+        {
+          "action_id": "house:119:1:162",
+          "expected_limit_wordings": [],
+          "expected_provision_wordings": [
+            "Restore collective bargaining over D.C. law-enforcement discipline.",
+            "Repeal the 2022 subtitle that changed limitations rules for disciplinary claims and revive the prior law."
+          ],
+          "inventory_content_subject_sha256": "67ae610b5951afe11b1e42251762699f6f688d6af584c7421752da1429811be9",
+          "quantities_and_enumerations": []
+        },
+        {
+          "action_id": "house:119:1:270",
+          "expected_limit_wordings": [
+            "The public website may not disclose a juvenile's personally identifiable information."
+          ],
+          "expected_provision_wordings": [
+            "Limit D.C. youth-offender status to people under 18 and make conforming changes.",
+            "Remove authority for a sentence below a mandatory-minimum term under the Youth Rehabilitation Act.",
+            "Require a monthly, archived, machine-readable public juvenile-crime statistics website."
+          ],
+          "inventory_content_subject_sha256": "664565f315e06f0aa4b4b88104899b076253aef5d808cc0995acc9cbf1dacd20",
+          "quantities_and_enumerations": []
+        },
+        {
+          "action_id": "house:119:1:271",
+          "expected_limit_wordings": [
+            "The changes apply to offenses committed on or after enactment."
+          ],
+          "expected_provision_wordings": [
+            "Lower the specified Family Court exclusion age from 16 to 14.",
+            "Lower specified transfer-to-criminal-proceeding ages to 14."
+          ],
+          "inventory_content_subject_sha256": "bd097bba1691592e5ab4e1ce15c878d56b078e37c87de3ac04f8a29303585423",
+          "quantities_and_enumerations": []
+        },
+        {
+          "action_id": "house:119:1:274",
+          "expected_limit_wordings": [
+            "The changes apply to appointments made on or after enactment."
+          ],
+          "expected_provision_wordings": [
+            "Terminate the D.C. Judicial Nomination Commission.",
+            "Remove the Commission's candidate-list role and assign specified chief-judge designation and nomination functions to the President."
+          ],
+          "inventory_content_subject_sha256": "4b3b7cdd6b93f01712ee3a686192d9528a8f8453a8615ced092fbc379591f2d5",
+          "quantities_and_enumerations": []
+        },
+        {
+          "action_id": "house:119:1:275",
+          "expected_limit_wordings": [
+            "Pursuit remains limited when it poses unacceptable third-party harm, would be futile, or another means would be more effective or expeditious."
+          ],
+          "expected_provision_wordings": [
+            "Replace existing D.C. vehicular-pursuit restrictions with broader pursuit authority.",
+            "Require a Justice Department evaluation and report on PursuitAlert or similar technology."
+          ],
+          "inventory_content_subject_sha256": "bf6190e704d662733f3ac70e6ce9d3d5e5c4ea2c856f88d6164074655f80a0c1",
+          "quantities_and_enumerations": []
+        },
+        {
+          "action_id": "house:119:1:298",
+          "expected_limit_wordings": [
+            "The changes apply to people charged on or after 30 days following enactment."
+          ],
+          "expected_provision_wordings": [
+            "Require pretrial and post-conviction detention for defined crimes of violence or dangerous crimes.",
+            "Require secured appearance bonds for defined public-safety or public-order crimes.",
+            "Revise definitions and related release procedures."
+          ],
+          "inventory_content_subject_sha256": "3863e934e5bcb1e6bae7b1fbe1eb2a4279b494509c38e295dc230faa65e7cbdd",
+          "quantities_and_enumerations": []
+        },
+        {
+          "action_id": "house:119:1:299",
+          "expected_limit_wordings": [
+            "Retain subtitles S and A of title I rather than repealing the entire 2022 Act."
+          ],
+          "expected_provision_wordings": [
+            "Repeal most of D.C.'s 2022 policing reform law and restore or revive prior law."
+          ],
+          "inventory_content_subject_sha256": "dd6d4f05f0730edaae08c2e6950be160fc5e1ec190cdf499f9b48c0a929a2254",
+          "quantities_and_enumerations": []
+        }
+      ]
+    }
+  ],
+  "schema_version": "related_action_differential_reviews_v3"
+}
