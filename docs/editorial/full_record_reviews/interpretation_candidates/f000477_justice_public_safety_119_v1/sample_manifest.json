@@ -1,0 +1,103 @@
+{
+  "artifact_id": "action-interpretation-generalization-sample:f000477:justice_public_safety:119:v1",
+  "artifact_sha256": "f2b6a849a5c245fa4d6473d61af325d39f6612597910c2fcf483c32006baab72",
+  "benchmark_actions_excluded": true,
+  "candidate_batch_frozen": true,
+  "candidate_batch_subject_sha256": "78c210d38f67e3ba357af4bd8f077673b05fcfc4a6b61881727789087cd17c00",
+  "challenge_actions": [
+    {
+      "action_id": "house:119:1:166",
+      "inclusion_reasons": [
+        "required Senate-origin S. 331 action"
+      ]
+    },
+    {
+      "action_id": "house:119:2:155",
+      "inclusion_reasons": [
+        "required FISA roll 155",
+        "low confidence",
+        "candidate status ambiguous",
+        "unresolved generator/reviewer disposition",
+        "major adversarial finding"
+      ]
+    },
+    {
+      "action_id": "house:119:2:157",
+      "inclusion_reasons": [
+        "highest deterministic source-complexity suspension passage as amended"
+      ]
+    },
+    {
+      "action_id": "house:119:2:221",
+      "inclusion_reasons": [
+        "required FISA roll 221"
+      ]
+    },
+    {
+      "action_id": "house:119:2:273",
+      "inclusion_reasons": [
+        "highest deterministic source-complexity amendment"
+      ]
+    },
+    {
+      "action_id": "house:119:2:278",
+      "inclusion_reasons": [
+        "low confidence",
+        "candidate status no_safe_candidate",
+        "unresolved generator/reviewer disposition",
+        "major adversarial finding"
+      ]
+    }
+  ],
+  "non_authorizing": true,
+  "ordered_population": [
+    "house:119:1:128",
+    "house:119:1:162",
+    "house:119:1:23",
+    "house:119:1:27",
+    "house:119:1:270",
+    "house:119:1:271",
+    "house:119:1:274",
+    "house:119:1:286",
+    "house:119:1:289",
+    "house:119:1:298",
+    "house:119:1:340",
+    "house:119:1:351",
+    "house:119:1:42",
+    "house:119:1:6",
+    "house:119:1:68",
+    "house:119:1:98",
+    "house:119:2:155",
+    "house:119:2:157",
+    "house:119:2:169",
+    "house:119:2:171",
+    "house:119:2:218",
+    "house:119:2:221",
+    "house:119:2:227",
+    "house:119:2:234",
+    "house:119:2:240",
+    "house:119:2:259",
+    "house:119:2:265",
+    "house:119:2:273",
+    "house:119:2:275",
+    "house:119:2:278"
+  ],
+  "schema_version": "action_interpretation_generalization_sample_v1",
+  "seed_input": "78c210d38f67e3ba357af4bd8f077673b05fcfc4a6b61881727789087cd17c00\n62a33bcbb1c4eecc267f33be1740c7ee4db59e617a150b6d837c1aa30930bd91\nfoushee-justice-action-interpretation-generalization-audit-v1",
+  "seed_sha256": "bed1535aa44be6c9f8a897684e2290cb1ef5a854f783e853487f4568f6bfda38",
+  "selected_random_action_ids": [
+    "house:119:1:351",
+    "house:119:1:68",
+    "house:119:1:162",
+    "house:119:2:155",
+    "house:119:1:270",
+    "house:119:2:234",
+    "house:119:2:171",
+    "house:119:1:340",
+    "house:119:1:274",
+    "house:119:2:273",
+    "house:119:1:42",
+    "house:119:1:298"
+  ],
+  "selection_algorithm": "sha256_rank_without_replacement_v1: sort by SHA-256(seed_sha256 + LF + action_id), then action_id; take first 12"
+}

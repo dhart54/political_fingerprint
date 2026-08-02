@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "artifact_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "benchmark_actions_excluded": {
+      "const": true
+    },
+    "candidate_batch_frozen": {
+      "const": true
+    },
+    "candidate_batch_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "challenge_actions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "inclusion_reasons": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "action_id",
+          "inclusion_reasons"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "non_authorizing": {
+      "const": true
+    },
+    "ordered_population": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 30,
+      "minItems": 30,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "action_interpretation_generalization_sample_v1"
+    },
+    "seed_input": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "seed_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "selected_random_action_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 12,
+      "minItems": 12,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "selection_algorithm": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "non_authorizing",
+    "candidate_batch_frozen",
+    "candidate_batch_subject_sha256",
+    "seed_input",
+    "seed_sha256",
+    "selection_algorithm",
+    "ordered_population",
+    "benchmark_actions_excluded",
+    "selected_random_action_ids",
+    "challenge_actions",
+    "artifact_sha256"
+  ],
+  "type": "object"
+}

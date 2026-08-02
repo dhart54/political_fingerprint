@@ -1,0 +1,110 @@
+{
+  "action_id": "house:119:1:271",
+  "cross_domain_limitations": [],
+  "exact_action_identity": "119:hr:5140",
+  "house_stage": "passage",
+  "input_packet_sha256": "8566dad596bd6b522fecbae374955cea3004473f0af7c400fe623665b713a023",
+  "neutral_methodology": [
+    "exact_choice_only",
+    "preserve_house_stage",
+    "yea_supports_exact_choice_only",
+    "nay_opposes_exact_choice_only",
+    "present_and_not_voting_non_directional",
+    "no_motive_or_broader_issue_inference",
+    "parent_context_cannot_replace_narrow_action",
+    "preserve_ambiguity",
+    "no_safe_candidate_when_required"
+  ],
+  "official_action_date": "2025-09-16",
+  "official_member_action": "nay",
+  "operative_text_versions": [
+    "eh"
+  ],
+  "packet_id": "m3-input-packet:house:119:1:271:v1",
+  "schema_version": "blind_action_interpretation_worker_packet_v1",
+  "sources": [
+    {
+      "deterministic_extraction": {
+        "projection": {
+          "action_date": "2025-09-16",
+          "action_id": "house:119:1:271",
+          "chamber": "house",
+          "congress": 119,
+          "house_action_stage": "passage",
+          "measure_identity": "119:hr:5140",
+          "member_action": "nay",
+          "official_action_description": "On Passage",
+          "operative_content_sha256": null,
+          "raw_provenance_sha256": "ea078629f8c5917060805a0199e5c139ca02037b397c1f024606781e457a165e",
+          "roll_number": 271,
+          "schema_version": "neutral_m3_source_projection_v1",
+          "source_url": "https://clerk.house.gov/evs/2025/roll271.xml",
+          "text_version": "2025-09-16"
+        }
+      },
+      "neutral_projection_sha256": "b7f86051a191ef5f4704fdd1b90c272e5dc053f1752ec672b1002152320f2b2a",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_271.xml",
+      "raw_sha256": "ea078629f8c5917060805a0199e5c139ca02037b397c1f024606781e457a165e",
+      "role": "member_action_evidence",
+      "source_id": "clerk:119:1:271",
+      "source_type": "house_clerk_roll_call",
+      "text_version": "2025-09-16"
+    },
+    {
+      "deterministic_extraction": {
+        "document_title": "119 HR 5140 EH: To lower the age at which a minor may be tried as an adult for certain criminal offenses in the District of Columbia to 14 years of age.",
+        "extraction_engine": "python_xml_elementtree_v1",
+        "extraction_limitation": null,
+        "official_title": "To lower the age at which a minor may be tried as an adult for certain criminal offenses in the District of Columbia to 14 years of age.",
+        "section_headings": [
+          "Lowering age at which a minor may be tried as adult for certain criminal offenses in District of Columbia",
+          "Lowering age at which minor may be excluded from jurisdiction of Family Court",
+          "Lowering age at which minor may be transferred to criminal proceeding",
+          "Applicability"
+        ],
+        "structured_sections": [
+          {
+            "enum": "1.",
+            "header": "Lowering age at which a minor may be tried as adult for certain criminal offenses in District of Columbia",
+            "text": "1.Lowering age at which a minor may be tried as adult for certain criminal offenses in District of Columbia (a)Lowering age at which minor may be excluded from jurisdiction of Family CourtSection 16–2301, District of Columbia Official Code, is amended— (1)in paragraph (3), by striking sixteen years of age and inserting fourteen years of age; and (2)in paragraph (3) in the matter following subparagraph (C), by striking the age of sixteen and inserting the age of fourteen. (b)Lowering age at which minor may be transferred to criminal proceedingSection 16–2307(a), District of Columbia Official Code, is amended— (1)in paragraph (1), by striking fifteen and inserting fourteen; and (2)in paragraph (2), by striking sixteen and inserting fourteen. (c)ApplicabilityThis Act, and the amendments made by this Act, shall apply with respect to criminal offenses committed on and after the date of the enactment of this Act."
+          }
+        ]
+      },
+      "neutral_projection_sha256": "19716d5b9b2bb9717c8124360f9f736abca5dace7d047342a5dd2f147a12d8d8",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/394946273cc269b141fdea134ecd0b9ecc1e755520a2af7045bfc499b850815f_BILLS-119hr5140eh.xml",
+      "raw_sha256": "394946273cc269b141fdea134ecd0b9ecc1e755520a2af7045bfc499b850815f",
+      "role": "operative_content_interpretation_input",
+      "source_id": "congress_text:119:hr:5140:eh",
+      "source_type": "congress_gov_bill_text",
+      "text_version": "eh"
+    }
+  ],
+  "worker_input_allowlist": [
+    "action_id",
+    "official_action_date",
+    "house_stage",
+    "official_member_action",
+    "exact_action_identity",
+    "neutral_projections",
+    "operative_content",
+    "cross_domain_limitations",
+    "neutral_methodology"
+  ],
+  "worker_input_forbidden": [
+    "member_party",
+    "sponsor_party",
+    "cosponsor_party",
+    "generic_bill_metadata",
+    "accepted_benchmark_interpretations",
+    "benchmark_conclusion",
+    "semantic_ir",
+    "public_language",
+    "episode_membership",
+    "synthesis_outcomes",
+    "other_action_candidates",
+    "political_commentary",
+    "news",
+    "advocacy",
+    "partisan_descriptions"
+  ]
+}
