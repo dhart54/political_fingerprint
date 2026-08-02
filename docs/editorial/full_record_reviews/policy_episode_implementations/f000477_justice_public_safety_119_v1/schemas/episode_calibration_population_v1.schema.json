@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "eligibility_rule": {
+      "type": "string"
+    },
+    "eligible_count": {
+      "type": "integer"
+    },
+    "eligible_items": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_count": {
+            "type": "integer"
+          },
+          "behavior": {
+            "type": "string"
+          },
+          "candidate_episode_content_subject_sha256": {
+            "type": "string"
+          },
+          "complexity": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "eligibility_id": {
+            "type": "string"
+          },
+          "episode_id": {
+            "type": "string"
+          },
+          "implemented_episode_content_subject_sha256": {
+            "type": "string"
+          },
+          "implemented_episode_record_id": {
+            "type": "string"
+          },
+          "legislative_stages": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "not_held_for_launch_review": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "action_count",
+          "behavior",
+          "candidate_episode_content_subject_sha256",
+          "complexity",
+          "confidence",
+          "content_subject_sha256",
+          "eligibility_id",
+          "episode_id",
+          "implemented_episode_content_subject_sha256",
+          "implemented_episode_record_id",
+          "legislative_stages",
+          "not_held_for_launch_review"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "future_seed_inputs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "implementation_bundle_content_subject_sha256": {
+      "type": "string"
+    },
+    "prior_population_binding": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "final_file_sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "content_subject_sha256",
+        "final_file_sha256"
+      ],
+      "type": "object"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "sample_selected": {
+      "type": "boolean"
+    },
+    "sample_selection_deferred_until": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "selected_sample": {
+      "items": {},
+      "type": "array"
+    }
+  },
+  "required": [
+    "accepted",
+    "artifact_id",
+    "authorizing",
+    "canonical",
+    "content_subject_sha256",
+    "eligibility_rule",
+    "eligible_count",
+    "eligible_items",
+    "future_seed_inputs",
+    "implementation_bundle_content_subject_sha256",
+    "prior_population_binding",
+    "public",
+    "sample_selected",
+    "sample_selection_deferred_until",
+    "schema_version",
+    "selected_sample"
+  ],
+  "type": "object"
+}

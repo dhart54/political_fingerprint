@@ -1,0 +1,453 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_internal_state": {
+      "additionalProperties": false,
+      "properties": {
+        "episode_candidates_available_for_internal_implementation": {
+          "type": "boolean"
+        },
+        "episode_candidates_canonical": {
+          "type": "boolean"
+        },
+        "episode_candidates_delegated_editorial_acceptance": {
+          "type": "boolean"
+        },
+        "episode_candidates_public": {
+          "type": "boolean"
+        },
+        "launch_ratification_state": {
+          "type": "string"
+        },
+        "semantic_ir_candidate_construction_eligible_after_episode_implementation": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "episode_candidates_available_for_internal_implementation",
+        "episode_candidates_canonical",
+        "episode_candidates_delegated_editorial_acceptance",
+        "episode_candidates_public",
+        "launch_ratification_state",
+        "semantic_ir_candidate_construction_eligible_after_episode_implementation"
+      ],
+      "type": "object"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorization": {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_semantic_reference": {
+          "type": "boolean"
+        },
+        "canonical_episode_acceptance": {
+          "type": "boolean"
+        },
+        "deployment": {
+          "type": "boolean"
+        },
+        "final_user_launch_ratification": {
+          "type": "boolean"
+        },
+        "implement_episode_candidates_under_separate_bounded_prompt": {
+          "type": "boolean"
+        },
+        "import_this_acceptance_record": {
+          "type": "boolean"
+        },
+        "merge": {
+          "type": "boolean"
+        },
+        "production_persistence": {
+          "type": "boolean"
+        },
+        "publication": {
+          "type": "boolean"
+        },
+        "pull_request": {
+          "type": "boolean"
+        },
+        "push": {
+          "type": "boolean"
+        },
+        "semantic_ir_compilation": {
+          "type": "boolean"
+        },
+        "synthesis": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "accepted_semantic_reference",
+        "canonical_episode_acceptance",
+        "deployment",
+        "final_user_launch_ratification",
+        "implement_episode_candidates_under_separate_bounded_prompt",
+        "import_this_acceptance_record",
+        "merge",
+        "production_persistence",
+        "publication",
+        "pull_request",
+        "push",
+        "semantic_ir_compilation",
+        "synthesis"
+      ],
+      "type": "object"
+    },
+    "carried_risk_dispositions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_disposition": {
+            "type": "string"
+          },
+          "risk_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "risk_id",
+          "status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "decision": {
+      "additionalProperties": false,
+      "properties": {
+        "action_accounting": {
+          "additionalProperties": false,
+          "properties": {
+            "assigned_primary_episode": {
+              "type": "integer"
+            },
+            "retained_ambiguous_episode_assignment": {
+              "type": "integer"
+            },
+            "unassigned_no_safe_interpretation": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "assigned_primary_episode",
+            "retained_ambiguous_episode_assignment",
+            "unassigned_no_safe_interpretation"
+          ],
+          "type": "object"
+        },
+        "blocking_findings": {
+          "items": {},
+          "type": "array"
+        },
+        "decision": {
+          "type": "string"
+        },
+        "decision_timestamp": {
+          "type": "string"
+        },
+        "episode_decision_accounting": {
+          "additionalProperties": false,
+          "properties": {
+            "accepted_episode_candidates": {
+              "type": "integer"
+            },
+            "bounded_episode_revision_required": {
+              "type": "integer"
+            },
+            "rejected_episode_candidates": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "accepted_episode_candidates",
+            "bounded_episode_revision_required",
+            "rejected_episode_candidates"
+          ],
+          "type": "object"
+        },
+        "episode_decisions": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "decision": {
+                "type": "string"
+              },
+              "episode_content_subject_sha256": {
+                "type": "string"
+              },
+              "episode_id": {
+                "type": "string"
+              },
+              "rationale": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "decision",
+              "episode_content_subject_sha256",
+              "episode_id",
+              "rationale"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "not_user_signature": {
+          "type": "boolean"
+        },
+        "review_findings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "reviewer_authority": {
+          "type": "string"
+        },
+        "reviewer_identity": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "action_accounting",
+        "blocking_findings",
+        "decision",
+        "decision_timestamp",
+        "episode_decision_accounting",
+        "episode_decisions",
+        "not_user_signature",
+        "review_findings",
+        "reviewer_authority",
+        "reviewer_identity"
+      ],
+      "type": "object"
+    },
+    "input_bindings": {
+      "additionalProperties": false,
+      "properties": {
+        "delegated_implementation_acceptance": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        },
+        "episode_calibration_population": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "eligible_count": {
+              "type": "integer"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            },
+            "sample_selected": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "eligible_count",
+            "final_file_sha256",
+            "sample_selected"
+          ],
+          "type": "object"
+        },
+        "episode_candidate_batch": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "episode_count": {
+              "type": "integer"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            },
+            "multi_action_episode_count": {
+              "type": "integer"
+            },
+            "single_action_episode_count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "episode_count",
+            "final_file_sha256",
+            "multi_action_episode_count",
+            "single_action_episode_count"
+          ],
+          "type": "object"
+        },
+        "episode_parity_manifest": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            },
+            "referenced_file_count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256",
+            "referenced_file_count"
+          ],
+          "type": "object"
+        },
+        "launch_risk_register": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "entry_count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "entry_count"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "delegated_implementation_acceptance",
+        "episode_calibration_population",
+        "episode_candidate_batch",
+        "episode_parity_manifest",
+        "launch_risk_register"
+      ],
+      "type": "object"
+    },
+    "next_required_state": {
+      "type": "string"
+    },
+    "reviewed_snapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "branch": {
+          "type": "string"
+        },
+        "cached_origin_main": {
+          "type": "string"
+        },
+        "parent_commit": {
+          "type": "string"
+        },
+        "repository": {
+          "type": "string"
+        },
+        "review_archive_final_file_sha256": {
+          "type": "string"
+        },
+        "reviewed_commit": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "branch",
+        "cached_origin_main",
+        "parent_commit",
+        "repository",
+        "review_archive_final_file_sha256",
+        "reviewed_commit"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "subject": {
+      "additionalProperties": false,
+      "properties": {
+        "approved_action_count": {
+          "type": "integer"
+        },
+        "chamber": {
+          "type": "string"
+        },
+        "congress": {
+          "type": "integer"
+        },
+        "issue_id": {
+          "type": "string"
+        },
+        "member_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "approved_action_count",
+        "chamber",
+        "congress",
+        "issue_id",
+        "member_id"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "accepted_internal_state",
+    "artifact_id",
+    "authorization",
+    "carried_risk_dispositions",
+    "content_subject_sha256",
+    "decision",
+    "input_bindings",
+    "next_required_state",
+    "reviewed_snapshot",
+    "schema_version",
+    "subject"
+  ],
+  "type": "object"
+}

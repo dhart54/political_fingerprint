@@ -1,0 +1,526 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "accepted_semantic_reference": {
+      "type": "boolean"
+    },
+    "action_accounting": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "action_interpretation_record_content_subject_sha256": {
+            "type": "string"
+          },
+          "candidate_accounting_content_subject_sha256": {
+            "type": "string"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "counts_toward_episode_behavior": {
+            "type": "boolean"
+          },
+          "implemented_episode_content_subject_sha256": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "implemented_episode_record_id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "primary_accounting_state": {
+            "type": "string"
+          },
+          "primary_episode_id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "related_episode_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "schema_version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "action_interpretation_record_content_subject_sha256",
+          "candidate_accounting_content_subject_sha256",
+          "content_subject_sha256",
+          "counts_toward_episode_behavior",
+          "implemented_episode_content_subject_sha256",
+          "implemented_episode_record_id",
+          "primary_accounting_state",
+          "primary_episode_id",
+          "related_episode_ids",
+          "schema_version"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "action_accounting_counts": {
+      "additionalProperties": false,
+      "properties": {
+        "assigned_primary_episode": {
+          "type": "integer"
+        },
+        "retained_ambiguous_episode_assignment": {
+          "type": "integer"
+        },
+        "unassigned_no_safe_interpretation": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "assigned_primary_episode",
+        "retained_ambiguous_episode_assignment",
+        "unassigned_no_safe_interpretation"
+      ],
+      "type": "object"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "delegated_internal_implementation_pending_acceptance": {
+      "type": "boolean"
+    },
+    "episode_count": {
+      "type": "integer"
+    },
+    "implementation_state_counts": {
+      "additionalProperties": false,
+      "properties": {
+        "implemented_delegated_episode_candidate": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "implemented_delegated_episode_candidate"
+      ],
+      "type": "object"
+    },
+    "implemented_episodes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_roles": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "action_id": {
+                  "type": "string"
+                },
+                "action_role": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "action_id",
+                "action_role"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "authorizing": {
+            "type": "boolean"
+          },
+          "behavior_derivation": {
+            "additionalProperties": false,
+            "properties": {
+              "ambiguous_actions": {
+                "type": "integer"
+              },
+              "derivation_rule": {
+                "type": "string"
+              },
+              "opposes": {
+                "type": "integer"
+              },
+              "supports": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "ambiguous_actions",
+              "derivation_rule",
+              "opposes",
+              "supports"
+            ],
+            "type": "object"
+          },
+          "candidate_episode_content_subject_sha256": {
+            "type": "string"
+          },
+          "candidate_episode_delegated_accepted": {
+            "type": "boolean"
+          },
+          "canonical": {
+            "type": "boolean"
+          },
+          "chamber": {
+            "type": "string"
+          },
+          "chronological_action_sequence": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "action_id": {
+                  "type": "string"
+                },
+                "action_role": {
+                  "type": "string"
+                },
+                "implementation_record_content_subject_sha256": {
+                  "type": "string"
+                },
+                "implementation_record_id": {
+                  "type": "string"
+                },
+                "implemented_exact_action_meaning": {
+                  "type": "string"
+                },
+                "implemented_exact_choice_position_effect": {
+                  "type": "string"
+                },
+                "interpretation_status": {
+                  "type": "string"
+                },
+                "official_action_date": {
+                  "type": "string"
+                },
+                "official_member_action": {
+                  "type": "string"
+                },
+                "source_references": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "action_id",
+                "action_role",
+                "implementation_record_content_subject_sha256",
+                "implementation_record_id",
+                "implemented_exact_action_meaning",
+                "implemented_exact_choice_position_effect",
+                "interpretation_status",
+                "official_action_date",
+                "official_member_action",
+                "source_references"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "competing_plausible_episode_groupings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "confidence": {
+            "type": "string"
+          },
+          "congress": {
+            "type": "integer"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "delegated_acceptance_artifact_id": {
+            "type": "string"
+          },
+          "delegated_acceptance_content_subject_sha256": {
+            "type": "string"
+          },
+          "delegated_acceptance_decision": {
+            "type": "string"
+          },
+          "episode_id": {
+            "type": "string"
+          },
+          "exact_action_interpretation_references": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "action_id": {
+                  "type": "string"
+                },
+                "evidence_map_content_subject_sha256": {
+                  "type": "string"
+                },
+                "implementation_record_content_subject_sha256": {
+                  "type": "string"
+                },
+                "source_references": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "action_id",
+                "evidence_map_content_subject_sha256",
+                "implementation_record_content_subject_sha256",
+                "source_references"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "implementation_accepted": {
+            "type": "boolean"
+          },
+          "implementation_state": {
+            "type": "string"
+          },
+          "implemented_episode_level_behavior": {
+            "type": "string"
+          },
+          "implemented_episode_scope": {
+            "type": "string"
+          },
+          "internal_neutral_label": {
+            "type": "string"
+          },
+          "issue_id": {
+            "type": "string"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "material_policy_continuity": {
+            "type": "string"
+          },
+          "material_policy_differences": {
+            "type": "string"
+          },
+          "neutral_policy_question": {
+            "type": "string"
+          },
+          "persisted": {
+            "type": "boolean"
+          },
+          "primary_action_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "public": {
+            "type": "boolean"
+          },
+          "published": {
+            "type": "boolean"
+          },
+          "record_id": {
+            "type": "string"
+          },
+          "relationship_rationale": {
+            "type": "string"
+          },
+          "schema_version": {
+            "type": "string"
+          },
+          "unresolved_editorial_questions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "action_roles",
+          "authorizing",
+          "behavior_derivation",
+          "candidate_episode_content_subject_sha256",
+          "candidate_episode_delegated_accepted",
+          "canonical",
+          "chamber",
+          "chronological_action_sequence",
+          "competing_plausible_episode_groupings",
+          "confidence",
+          "congress",
+          "content_subject_sha256",
+          "delegated_acceptance_artifact_id",
+          "delegated_acceptance_content_subject_sha256",
+          "delegated_acceptance_decision",
+          "episode_id",
+          "exact_action_interpretation_references",
+          "implementation_accepted",
+          "implementation_state",
+          "implemented_episode_level_behavior",
+          "implemented_episode_scope",
+          "internal_neutral_label",
+          "issue_id",
+          "limitations",
+          "material_policy_continuity",
+          "material_policy_differences",
+          "neutral_policy_question",
+          "persisted",
+          "primary_action_ids",
+          "public",
+          "published",
+          "record_id",
+          "relationship_rationale",
+          "schema_version",
+          "unresolved_editorial_questions"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "input_bindings": {
+      "additionalProperties": false,
+      "properties": {
+        "action_interpretation_implementation": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        },
+        "delegated_episode_acceptance": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        },
+        "frozen_episode_candidates": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "action_interpretation_implementation",
+        "delegated_episode_acceptance",
+        "frozen_episode_candidates"
+      ],
+      "type": "object"
+    },
+    "multi_action_episode_count": {
+      "type": "integer"
+    },
+    "persisted": {
+      "type": "boolean"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "published": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "semantic_ir_exists": {
+      "type": "boolean"
+    },
+    "single_action_episode_count": {
+      "type": "integer"
+    },
+    "synthesis_eligible": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "accepted",
+    "accepted_semantic_reference",
+    "action_accounting",
+    "action_accounting_counts",
+    "artifact_id",
+    "authorizing",
+    "canonical",
+    "content_subject_sha256",
+    "delegated_internal_implementation_pending_acceptance",
+    "episode_count",
+    "implementation_state_counts",
+    "implemented_episodes",
+    "input_bindings",
+    "multi_action_episode_count",
+    "persisted",
+    "public",
+    "published",
+    "schema_version",
+    "semantic_ir_exists",
+    "single_action_episode_count",
+    "synthesis_eligible"
+  ],
+  "type": "object"
+}
