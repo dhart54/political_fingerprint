@@ -1,0 +1,133 @@
+{
+  "action_id": "house:119:2:221",
+  "content_subject_sha256": "07d4e580699663565cb91cedab69be29d7a3bfc75a0d46f3bd653a48d9b763b9",
+  "cross_domain_limitations": [
+    "surveillance_authority",
+    "fisc_and_court_authority",
+    "civil_liberty_protections"
+  ],
+  "exact_action_identity": "119:hr:9238",
+  "house_stage": "suspension_passage",
+  "neutral_methodology": [
+    "inventory_material_provisions_before_drafting",
+    "separate_official_title_from_interpretation",
+    "title_only_prohibited_without_independent_single_mechanism_finding",
+    "exact_choice_only",
+    "preserve_house_stage",
+    "yea_supports_exact_choice_only",
+    "nay_opposes_exact_choice_only",
+    "present_and_not_voting_non_directional",
+    "no_motive_or_broader_issue_inference",
+    "parent_context_cannot_replace_narrow_action",
+    "account_for_material_limits_exceptions_and_retained_provisions",
+    "preserve_ambiguity",
+    "no_safe_candidate_when_required",
+    "derive_each_exact_version_inventory_independently",
+    "do_not_reuse_related_action_inventory_or_conclusion",
+    "freeze_expected_inventory_before_candidate_comparison",
+    "verify_enumerated_categories_and_quantities_across_fields"
+  ],
+  "official_action_date": "2026-06-11",
+  "official_member_action": "nay",
+  "operative_text_versions": [
+    "cdh"
+  ],
+  "packet_id": "action-interpretation-worker-packet:house:119:2:221:v4",
+  "schema_version": "action_interpretation_worker_packet_v4",
+  "sources": [
+    {
+      "deterministic_extraction": {
+        "projection": {
+          "action_date": "2026-06-11",
+          "action_id": "house:119:2:221",
+          "chamber": "house",
+          "congress": 119,
+          "house_action_stage": "suspension_passage",
+          "measure_identity": "119:hr:9238",
+          "member_action": "nay",
+          "official_action_description": "On Motion to Suspend the Rules and Pass",
+          "operative_content_sha256": null,
+          "raw_provenance_sha256": "8169dafbd550e5926300a5370f51c1b744640e3b8563c5eb5d1525e9dbb56277",
+          "roll_number": 221,
+          "schema_version": "neutral_m3_source_projection_v1",
+          "source_url": "https://clerk.house.gov/evs/2026/roll221.xml",
+          "text_version": "2026-06-11"
+        }
+      },
+      "neutral_projection_sha256": "373df15d96c3d58e1aa1fb11d3b240fa986bcc2edf36ac16e281b346b7a1cbc0",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_221.xml",
+      "raw_sha256": "8169dafbd550e5926300a5370f51c1b744640e3b8563c5eb5d1525e9dbb56277",
+      "role": "member_action_evidence",
+      "source_id": "clerk:119:2:221",
+      "source_type": "house_clerk_roll_call",
+      "text_version": "2026-06-11"
+    },
+    {
+      "deterministic_extraction": {
+        "document_title": "119 HR 9238 : To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes.",
+        "extraction_engine": "python_xml_elementtree_v1",
+        "extraction_limitation": null,
+        "official_title": "To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes.",
+        "section_headings": [
+          "Extension of authorities of title VII of the Foreign Intelligence Surveillance Act of 1978",
+          "Extension of repeal date of title VII",
+          "Effective date"
+        ],
+        "structured_sections": [
+          {
+            "enum": "1.",
+            "header": "Extension of authorities of title VII of the Foreign Intelligence Surveillance Act of 1978",
+            "text": "1.Extension of authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 (a)Extension of repeal date of title VIISection 403(b) of the FISA Amendments Act of 2008 (Public Law 110–261), as most recently amended by Public Law 119‑87, is further amended— (1)in paragraph (1) (50 U.S.C. 1881 note), by striking June 12, 2026 and inserting July 2, 2026; and (2)in paragraph (2) (18 U.S.C. 2511 note) in the matter preceding subparagraph (A), by striking June 12, 2026 and inserting July 2, 2026. (b)Effective dateThe amendments made by this section shall take effect on the earlier of the date of the enactment of this Act or June 11, 2026."
+          }
+        ]
+      },
+      "neutral_projection_sha256": "ea5f27afb3a3c94d45c5eb7dadbce4a0f91f4dc183692ca5a3384ab7d3eaa7af",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/824340dd94cafc02f5b4549a310e5b843ea62288b0583d0937e0761e6dc2b1f5.xml",
+      "raw_sha256": "824340dd94cafc02f5b4549a310e5b843ea62288b0583d0937e0761e6dc2b1f5",
+      "role": "operative_content_interpretation_input",
+      "source_id": "govinfo_text_119_hr9238_cdh",
+      "source_type": "govinfo_bill_text",
+      "text_version": "cdh"
+    }
+  ],
+  "worker_input_allowlist": [
+    "action_id",
+    "official_action_date",
+    "house_stage",
+    "official_member_action",
+    "exact_action_identity",
+    "neutral_projections",
+    "operative_content",
+    "cross_domain_limitations",
+    "neutral_methodology",
+    "materiality_rubric"
+  ],
+  "worker_input_forbidden": [
+    "accepted_benchmark_interpretations",
+    "accepted_benchmark_text",
+    "advocacy",
+    "benchmark_conclusion",
+    "benchmark_membership",
+    "cosponsor_party",
+    "episode_membership",
+    "generic_bill_metadata",
+    "member_party",
+    "news",
+    "other_action_candidates",
+    "partisan_descriptions",
+    "political_commentary",
+    "public_language",
+    "related_action_candidate_conclusions",
+    "semantic_ir",
+    "sponsor_party",
+    "synthesis_outcomes",
+    "v1_action_candidates",
+    "v1_adversarial_reviews",
+    "v2_action_candidates",
+    "v2_benchmark_comparison",
+    "v2_provision_coverage_reviews",
+    "v3_action_candidates",
+    "v3_benchmark_comparison",
+    "v3_material_scope_reviews"
+  ]
+}

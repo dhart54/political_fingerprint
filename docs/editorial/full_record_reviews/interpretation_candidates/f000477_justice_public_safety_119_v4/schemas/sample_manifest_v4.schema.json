@@ -1,0 +1,95 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/sample_manifest_v4",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "benchmark_actions_excluded": {
+      "type": "boolean"
+    },
+    "candidate_batch_frozen": {
+      "type": "boolean"
+    },
+    "complexity_challenge_action_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "material_detail_challenge_action_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "random_sample_count": {
+      "type": "integer"
+    },
+    "related_action_contrast_sets": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "group_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_ids",
+          "group_id"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "seed_label": {
+      "type": "string"
+    },
+    "seed_material_convention": {
+      "type": "string"
+    },
+    "seed_sha256": {
+      "type": "string"
+    },
+    "selected_random_action_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "benchmark_actions_excluded",
+    "candidate_batch_frozen",
+    "complexity_challenge_action_ids",
+    "content_subject_sha256",
+    "material_detail_challenge_action_ids",
+    "non_authorizing",
+    "random_sample_count",
+    "related_action_contrast_sets",
+    "schema_version",
+    "seed_label",
+    "seed_material_convention",
+    "seed_sha256",
+    "selected_random_action_ids"
+  ],
+  "title": "sample_manifest_v4",
+  "type": "object"
+}
