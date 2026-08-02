@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "authority_record": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "final_file_sha256": {
+          "type": "string"
+        },
+        "immutable": {
+          "type": "boolean"
+        },
+        "legacy_decision_record_status": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "content_subject_sha256",
+        "final_file_sha256",
+        "immutable",
+        "legacy_decision_record_status",
+        "path"
+      ],
+      "type": "object"
+    },
+    "authorized_scope": {
+      "additionalProperties": false,
+      "properties": {
+        "action_count": {
+          "type": "integer"
+        },
+        "internal_decision_implementation": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "action_count",
+        "internal_decision_implementation"
+      ],
+      "type": "object"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "decision_state": {
+      "type": "string"
+    },
+    "delegated_decision_maker": {
+      "additionalProperties": false,
+      "properties": {
+        "reviewer_authority": {
+          "type": "string"
+        },
+        "reviewer_identity": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "reviewer_authority",
+        "reviewer_identity"
+      ],
+      "type": "object"
+    },
+    "delegated_editorial_acceptance_state": {
+      "type": "string"
+    },
+    "implementation_state": {
+      "type": "string"
+    },
+    "launch_ratification_state": {
+      "type": "string"
+    },
+    "not_user_signature": {
+      "type": "boolean"
+    },
+    "publication_authorized": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "unauthorized_scope": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_semantic_acceptance": {
+          "type": "boolean"
+        },
+        "deployment": {
+          "type": "boolean"
+        },
+        "production_persistence": {
+          "type": "boolean"
+        },
+        "publication": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "canonical_semantic_acceptance",
+        "deployment",
+        "production_persistence",
+        "publication"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "authority_record",
+    "authorized_scope",
+    "content_subject_sha256",
+    "decision_state",
+    "delegated_decision_maker",
+    "delegated_editorial_acceptance_state",
+    "implementation_state",
+    "launch_ratification_state",
+    "not_user_signature",
+    "publication_authorized",
+    "schema_version",
+    "unauthorized_scope"
+  ],
+  "type": "object"
+}
