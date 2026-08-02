@@ -6,12 +6,15 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [Foushee Justice 119 Universe Authority Receipt V1](foushee_justice_119_universe_authority_receipt_v1.md)
-  - content-bound human authority for the exact V2 universe through House roll
-    283, without action interpretation, synthesis, persistence, or publication.
+- [Foushee Justice 119 Interpretation Source Readiness V1](foushee_justice_119_interpretation_source_readiness_v1.md)
+  - deterministic source and identity readiness for the exact authorized
+    37-action universe, without action interpretation or downstream authority.
 
 ## Retained unresolved plans
 
+- [Foushee Justice 119 Universe Authority Receipt V1](foushee_justice_119_universe_authority_receipt_v1.md)
+  - completed content-bound authority milestone retained as M2's immutable
+    37-action input boundary.
 - [Foushee Justice 119 Universe Refresh V2](foushee_justice_119_universe_refresh_v2.md)
   - completed corrective refresh merged by PR #123; retained as the discovery
     and accounting record governed by the current authority receipt.
