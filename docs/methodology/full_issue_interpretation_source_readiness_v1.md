@@ -31,7 +31,8 @@ An action is ready only when it is one of the exact approved actions; its stable
 identity, member action, exact measure or amendment, and House stage are
 resolved; vote evidence and exact-action evidence are present and digest-valid;
 narrower actions do not rely on a parent measure alone; required governed files
-or projections and explicit versions exist; no conflict or source constraint
+or projections and explicit versions exist; at least one stage-compatible
+mechanism-bearing official source is present; no conflict or source constraint
 remains; all paths and source types are allowed; applicable cross-domain scope
 is complete; and no semantic material enters the packet.
 
@@ -46,24 +47,40 @@ assert readiness independently. Blocker precedence is:
 6. source conflict;
 7. source constraint;
 8. cross-domain scope; and
-9. missing official source.
+9. missing operative-content source; and
+10. missing official source.
 
 All applicable blocker codes remain visible even though one deterministic
 primary state is selected.
 
 ## Evidence separation
 
-House Clerk evidence resolves the recorded member action. Exact-action sources
-resolve the measure, amendment, or governed House stage that a future
-interpreter may inspect. These roles remain separate. A vote record alone never
-supplies action meaning, and parent-measure evidence cannot satisfy a narrower
-amendment or motion.
+Every action has three independently populated roles:
+
+1. `member_action_evidence` resolves Foushee's recorded action;
+2. `exact_action_identity_and_stage_evidence` resolves the exact House choice
+   and legislative stage; and
+3. `operative_content_interpretation_input` supplies stage-compatible official
+   legislative text or exact amendment/rule material.
+
+Identity-and-stage evidence never satisfies the operative-content role. A bill
+title, policy area, generic bill page, or generic `/v3/bill` response is not
+mechanism-bearing. Passage and suspension actions require the exact House
+engrossed text or a verified stage-equivalent official version. Amendments
+require exact amendment material rather than parent-bill context alone.
 
 Raw official files are SHA-256 content-addressed. Canonical Clerk and
-Congress.gov projections are compact, key-sorted JSON and are independently
-rehashed by the verifier. Newly acquired evidence is limited to already
-identified sources for approved actions and is preserved under the governed M2
-evidence root.
+Congress.gov projections use the closed `neutral_m3_source_projection_v1`
+contract and are independently rehashed by the verifier. Raw provenance and
+neutral projections are bound separately. Generic Congress bill metadata may
+remain as raw provenance but is never M3-input eligible; no sponsor, cosponsor,
+party, benchmark, presentation, episode, or synthesis field is permitted in a
+neutral projection.
+
+Availability, conflict, constraint, path, digest, source-type, and role states
+are derived from the actual manifest, governed files, neutral projections,
+canonical action identity, and stage compatibility. They are not authorable
+readiness assertions.
 
 ## Cross-domain constraints
 

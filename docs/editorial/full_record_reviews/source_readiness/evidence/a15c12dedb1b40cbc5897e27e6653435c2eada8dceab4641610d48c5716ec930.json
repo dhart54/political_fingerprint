@@ -1,0 +1,153 @@
+{
+    "actions": [
+        {
+            "actionDate": "2025-02-13",
+            "committees": [
+                {
+                    "name": "Judiciary Committee",
+                    "systemCode": "ssju00",
+                    "url": "https://api.congress.gov/v3/committee/senate/ssju00?format=json"
+                }
+            ],
+            "sourceSystem": {
+                "name": "Senate"
+            },
+            "text": "Received in the Senate and Read twice and referred to the Committee on the Judiciary.",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "H38310",
+            "actionDate": "2025-02-13",
+            "actionTime": "10:47:20",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H37100",
+            "actionDate": "2025-02-13",
+            "actionTime": "10:47:19",
+            "recordedVotes": [
+                {
+                    "chamber": "House",
+                    "congress": 119,
+                    "date": "2025-02-13T15:47:19Z",
+                    "rollNumber": 42,
+                    "sessionNumber": 1,
+                    "url": "https://clerk.house.gov/evs/2025/roll042.xml"
+                }
+            ],
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "On passage Passed by the Yeas and Nays: 264 - 155 (Roll no. 42). (text: CR H683)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "8000",
+            "actionDate": "2025-02-13",
+            "actionTime": "10:47:19",
+            "recordedVotes": [
+                {
+                    "chamber": "House",
+                    "congress": 119,
+                    "date": "2025-02-13T15:47:19Z",
+                    "rollNumber": 42,
+                    "sessionNumber": 1,
+                    "url": "https://clerk.house.gov/evs/2025/roll042.xml"
+                }
+            ],
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 264 - 155 (Roll no. 42). (text: CR H683)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H35000",
+            "actionDate": "2025-02-13",
+            "actionTime": "10:15:35",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "The previous question was ordered pursuant to the rule.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H8D000",
+            "actionDate": "2025-02-13",
+            "actionTime": "09:14:33",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "DEBATE - The House proceeded with one hour of debate on H.R. 35.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H30000",
+            "actionDate": "2025-02-13",
+            "actionTime": "09:13:45",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Considered under the provisions of rule H. Res. 5. (consideration: CR H682-691)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H11100",
+            "actionDate": "2025-01-03",
+            "committees": [
+                {
+                    "name": "Judiciary Committee",
+                    "systemCode": "hsju00",
+                    "url": "https://api.congress.gov/v3/committee/house/hsju00?format=json"
+                }
+            ],
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Referred to the House Committee on the Judiciary.",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "Intro-H",
+            "actionDate": "2025-01-03",
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Introduced in House",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "1000",
+            "actionDate": "2025-01-03",
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Introduced in House",
+            "type": "IntroReferral"
+        }
+    ],
+    "pagination": {
+        "count": 10
+    },
+    "request": {
+        "billNumber": "35",
+        "billType": "hr",
+        "billUrl": "https://api.congress.gov/v3/bill/119/hr/35?format=json",
+        "congress": "119",
+        "contentType": "application/json",
+        "format": "json"
+    }
+}

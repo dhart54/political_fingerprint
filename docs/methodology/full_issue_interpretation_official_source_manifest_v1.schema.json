@@ -1,0 +1,233 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "full_issue_interpretation_official_source_manifest_v1.schema.json",
+  "title": "Full Issue Interpretation Official Source Manifest V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "source_manifest_id",
+    "projection_schema_version",
+    "allowlisted_source_types",
+    "m3_eligible_source_types",
+    "raw_provenance_only_source_types",
+    "governed_roots",
+    "subject",
+    "source_manifest_subject_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "full_issue_interpretation_official_source_manifest_v1"},
+    "source_manifest_id": {"const": "interpretation-source-manifest:f000477:justice_public_safety:119:v1"},
+    "projection_schema_version": {"const": "neutral_m3_source_projection_v1"},
+    "allowlisted_source_types": {"$ref": "#/definitions/sourceTypeList"},
+    "m3_eligible_source_types": {"$ref": "#/definitions/sourceTypeList"},
+    "raw_provenance_only_source_types": {
+      "type": "array",
+      "const": ["congress_gov_bill_metadata"]
+    },
+    "governed_roots": {
+      "type": "array",
+      "const": ["docs/editorial/full_record_reviews/source_readiness/evidence/"]
+    },
+    "subject": {"$ref": "#/definitions/subject"},
+    "source_manifest_subject_sha256": {"$ref": "#/definitions/sha256"}
+  },
+  "definitions": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "sourceType": {
+      "enum": [
+        "congress_gov_bill_actions",
+        "congress_gov_bill_metadata",
+        "congress_gov_bill_text",
+        "congressional_record_pdf",
+        "govinfo_bill_status",
+        "govinfo_bill_text",
+        "house_clerk_roll_call",
+        "house_rules_committee_report"
+      ]
+    },
+    "sourceTypeList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"$ref": "#/definitions/sourceType"}
+    },
+    "rawProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["governed_local_path", "sha256"],
+      "properties": {
+        "governed_local_path": {
+          "type": "string",
+          "pattern": "^docs/editorial/full_record_reviews/source_readiness/evidence/[^/]+$"
+        },
+        "sha256": {"$ref": "#/definitions/sha256"}
+      }
+    },
+    "neutralProjection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "action_id",
+        "congress",
+        "chamber",
+        "measure_identity",
+        "house_action_stage",
+        "action_date",
+        "roll_number",
+        "member_action",
+        "official_action_description",
+        "text_version",
+        "source_url",
+        "raw_provenance_sha256",
+        "operative_content_sha256"
+      ],
+      "properties": {
+        "schema_version": {"const": "neutral_m3_source_projection_v1"},
+        "action_id": {"type": "string", "pattern": "^house:119:[12]:[1-9][0-9]*$"},
+        "congress": {"const": 119},
+        "chamber": {"const": "house"},
+        "measure_identity": {"type": "string", "minLength": 1},
+        "house_action_stage": {
+          "enum": ["passage", "suspension_passage", "suspension_passage_as_amended", "amendment"]
+        },
+        "action_date": {"type": "string", "format": "date"},
+        "roll_number": {"type": "integer", "minimum": 1},
+        "member_action": {"enum": ["yea", "nay", "present", "not_voting"]},
+        "official_action_description": {"type": ["string", "null"]},
+        "text_version": {"type": "string", "minLength": 1},
+        "source_url": {"type": "string", "pattern": "^https://"},
+        "raw_provenance_sha256": {
+          "anyOf": [{"$ref": "#/definitions/sha256"}, {"type": "null"}]
+        },
+        "operative_content_sha256": {
+          "anyOf": [{"$ref": "#/definitions/sha256"}, {"type": "null"}]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_type",
+        "source_subject",
+        "url",
+        "text_version",
+        "content_class",
+        "raw_provenance",
+        "neutral_projection",
+        "neutral_projection_sha256",
+        "m3_input_eligible",
+        "constraint_codes"
+      ],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "source_type": {"$ref": "#/definitions/sourceType"},
+        "source_subject": {"type": "string", "minLength": 1},
+        "url": {"type": "string", "pattern": "^https://"},
+        "text_version": {"type": "string", "minLength": 1},
+        "content_class": {
+          "enum": [
+            "member_action_record",
+            "exact_house_action_record",
+            "official_status_record",
+            "operative_legislative_text",
+            "exact_amendment_or_rule_text"
+          ]
+        },
+        "raw_provenance": {
+          "anyOf": [{"$ref": "#/definitions/rawProvenance"}, {"type": "null"}]
+        },
+        "neutral_projection": {
+          "anyOf": [{"$ref": "#/definitions/neutralProjection"}, {"type": "null"}]
+        },
+        "neutral_projection_sha256": {
+          "anyOf": [{"$ref": "#/definitions/sha256"}, {"type": "null"}]
+        },
+        "m3_input_eligible": {"type": "boolean"},
+        "constraint_codes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "rawOnlySource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_type",
+        "source_subject",
+        "url",
+        "raw_provenance",
+        "m3_input_eligible",
+        "exclusion_reason"
+      ],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "source_type": {"const": "congress_gov_bill_metadata"},
+        "source_subject": {"type": "string", "minLength": 1},
+        "url": {"type": "string", "pattern": "^https://"},
+        "raw_provenance": {"$ref": "#/definitions/rawProvenance"},
+        "m3_input_eligible": {"const": false},
+        "exclusion_reason": {"const": "generic_bill_metadata_contains_non_allowlisted_fields"}
+      }
+    },
+    "roleBindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "member_action_evidence",
+        "exact_action_identity_and_stage_evidence",
+        "operative_content_interpretation_input"
+      ],
+      "properties": {
+        "member_action_evidence": {"$ref": "#/definitions/sourceIdList"},
+        "exact_action_identity_and_stage_evidence": {"$ref": "#/definitions/sourceIdList"},
+        "operative_content_interpretation_input": {"$ref": "#/definitions/sourceIdList"}
+      }
+    },
+    "sourceIdList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "actionSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action_id", "role_bindings", "sources", "raw_provenance_only_sources"],
+      "properties": {
+        "action_id": {"type": "string", "pattern": "^house:119:[12]:[1-9][0-9]*$"},
+        "role_bindings": {"$ref": "#/definitions/roleBindings"},
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/definitions/source"}
+        },
+        "raw_provenance_only_sources": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/rawOnlySource"}
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["member_id", "issue_id", "congress", "action_set_sha256", "action_sources"],
+      "properties": {
+        "member_id": {"const": "F000477"},
+        "issue_id": {"const": "JUSTICE_PUBLIC_SAFETY"},
+        "congress": {"const": 119},
+        "action_set_sha256": {"$ref": "#/definitions/sha256"},
+        "action_sources": {
+          "type": "array",
+          "minItems": 37,
+          "maxItems": 37,
+          "items": {"$ref": "#/definitions/actionSource"}
+        }
+      }
+    }
+  }
+}

@@ -12,6 +12,9 @@
 - A closed Draft-07 contract, deterministic source manifest/artifact/report
   builder, independent verifier, and focused negative tests establish whether
   each approved action has exact official evidence ready for later use.
+- The correction pass distinguishes member-action, exact identity/stage, and
+  mechanism-bearing operative-content roles and supplies only closed neutral
+  projections to a future M3 interpreter.
 
 ## Scope And Boundaries
 
@@ -39,9 +42,13 @@
   counts independently verify under a closed schema.
 - [x] No semantic, benchmark-conclusion, episode, proposition, synthesis, party,
   production, or publication input enters any packet.
+- [x] Every action has independently verified stage-compatible operative
+  content; identity-only evidence cannot satisfy the operative-content gate.
+- [x] Offline backend validation fails before a subprocess when an inherited
+  database target is remote.
 - [x] Targeted, governance, deterministic, compilation, and broad backend
   validation is recorded.
-- [ ] Final diff is scoped and a draft PR is opened without merge.
+- [x] Final diff is scoped and prepared for the existing draft PR without merge.
 
 ## Baseline
 
@@ -71,7 +78,7 @@
 - [x] Implementation
 - [x] Validation
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -81,12 +88,24 @@
 - Ignored acquisition caches are not governed repository evidence. M2 therefore
   needs governed projections and/or content-addressed official files that the
   repository verifier can validate without production access.
+- The reviewed M2 head overstated readiness for 21 actions whose only
+  exact-action source was a title/policy-area bill projection. Three preserved
+  `/v3/bill` payloads also contain sponsor, cosponsor, and party metadata.
+- Official Congress action lists resolved one exact House action for each of the
+  21 gaps. Twenty House bills have action-date-matched `eh` text; S.331 has an
+  enrolled version whose action list proves House passage without amendment.
 
 ## Decisions And Rationale
 
 - Keep member-action evidence distinct from exact-action interpretation-input
   evidence and derive readiness from closed criteria with deterministic blocker
   precedence.
+- Split exact-action evidence into identity/stage and operative-content roles.
+  Bind raw official bytes separately from closed neutral M3 projections.
+- Preserve generic bill metadata only as explicitly M3-ineligible raw
+  provenance.
+- Use the reusable offline database preflight runner for every broad backend
+  test; disposable integration requires an explicit opt-in and loopback target.
 - Treat M2 as detached and non-authorizing; it does not mutate the approved V2
   universe or seven-action benchmark.
 
@@ -105,20 +124,37 @@
   temporary-directory permissions. The exact three branch failures were then
   rerun directly at baseline and reproduced 3/3, establishing that they are not
   caused by M2.
+- The correction pass replaces the accepted-but-insufficient 37/37 result with
+  a newly derived result. Readiness was not preserved as a target; it returned
+  to 37/37 only after all 21 identity-only gaps acquired and validated exact
+  action records plus stage-compatible operative content.
 
 ## Validation Results
 
 - M1 authority verifier: passed, 37 actions and all expected authority digests.
-- M2 verifier and deterministic builder check: passed.
-- Focused M2 tests: 13 passed.
-- Existing universe discovery/full-record validators and public-review catalog:
-  passed; public-review catalog tests: 11 passed.
-- Semantic validation tier: 7/7 commands passed.
-- Ruff check/format check, Python compilation, JSON parsing, terminology check,
-  and `git diff --check`: passed.
-- Broad backend suite with database access disabled: 1053 passed, 33 skipped,
-  3 failed. All three failures reproduced exactly at the immutable baseline and
-  are therefore unrelated baseline failures.
+- Corrected M2 verifier and deterministic builder check: passed at 37 ready,
+  0 blocked; both closed Draft-07 schemas, governed evidence bytes, raw and
+  neutral digests, and current-state identity verified.
+- Corrected focused M2 and offline-preflight tests: 26 passed; the dedicated
+  offline-preflight file contributed 9 passing tests.
+- Existing universe-discovery, full-record, and public-catalog validators:
+  passed. Full-record tests: 19 passed. Public-catalog tests: 11 passed. The
+  universe-discovery cache-parsing test remains unavailable because its ignored
+  House source cache is absent from this checkout.
+- Semantic validation: Python corpus validation passed; Draft-07 Node validation
+  passed after lockfile-pinned local dependencies were installed; Semantic IR
+  tests: 26 passed.
+- Directly affected Ruff check/format check, Python compilation, JSON parsing,
+  and terminology governance: passed. Repository-wide Ruff still reports the
+  pre-existing lint backlog and is not a correction regression.
+- Broad backend suite through the fail-closed offline runner: 1051 passed,
+  33 skipped, 18 failed. Failures are outside this correction: two existing
+  editorial API expectations, missing ignored House/Senate source caches,
+  one pre-existing source-manifest byte mismatch, and the initially missing
+  local `ajv` dependency (subsequently installed and its focused checks passed).
+- Correction-pass network access was limited to official Congress.gov/GovInfo/
+  House Clerk source acquisition for the approved 37-action set and the local
+  lockfile dependency install. No database access occurred during correction.
 
 ## Production Writes
 
@@ -140,8 +176,9 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: implementation and validation complete; draft
-  PR delivery pending.
+- Definition of done satisfied: implementation, validation, and scoped delivery
+  preparation complete; commit/push and draft-PR metadata update are the
+  remaining delivery operations.
 - Remaining limitations: three pre-existing broad-suite failures; the recorded
   read-only production-access boundary incident.
 - Recommended next step: review the 37-ready/0-blocked M2 packet; do not begin M3

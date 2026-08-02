@@ -5,6 +5,7 @@ import json
 import sys
 from pathlib import Path
 
+from jsonschema import Draft7Validator
 
 BACKEND = Path(__file__).resolve().parents[1]
 ROOT = BACKEND.parent
@@ -37,6 +38,12 @@ AUTHORITY_PATH = (
 )
 SOURCE_MANIFEST_PATH = (
     SOURCE_ROOT / "f000477_justice_public_safety_119_official_source_manifest_v1.json"
+)
+SOURCE_MANIFEST_SCHEMA_PATH = Path(
+    "docs/methodology/full_issue_interpretation_official_source_manifest_v1.schema.json"
+)
+READINESS_SCHEMA_PATH = Path(
+    "docs/methodology/full_issue_interpretation_source_readiness_v1.schema.json"
 )
 ARTIFACT_PATH = (
     SOURCE_ROOT
@@ -80,6 +87,20 @@ def main() -> int:
         default=[],
         help="Official Congress.gov cache directory used only to prepare the governed source manifest.",
     )
+    parser.add_argument(
+        "--congress-actions-dir",
+        action="append",
+        type=Path,
+        default=[],
+        help="Official Congress.gov bill-action response directory used to prepare neutral exact-action projections.",
+    )
+    parser.add_argument(
+        "--congress-text-dir",
+        action="append",
+        type=Path,
+        default=[],
+        help="Official Congress.gov text-version response directory used to select exact operative text.",
+    )
     args = parser.parse_args()
 
     manifest = load_json(ROOT / MANIFEST_PATH)
@@ -101,12 +122,24 @@ def main() -> int:
             discovery=discovery,
             clerk_dirs=clerk_dirs,
             congress_dirs=congress_dirs,
+            congress_actions_dirs=args.congress_actions_dir,
+            congress_text_dirs=args.congress_text_dir,
             evidence_dir=ROOT / EVIDENCE_PATH,
             acquire_missing=args.acquire_missing,
         )
         write_json(source_path, source_manifest)
 
     source_manifest = load_json(source_path)
+    source_schema = load_json(ROOT / SOURCE_MANIFEST_SCHEMA_PATH)
+    Draft7Validator.check_schema(source_schema)
+    source_errors = sorted(
+        Draft7Validator(source_schema).iter_errors(source_manifest),
+        key=lambda error: list(error.path),
+    )
+    if source_errors:
+        raise ValueError(
+            f"source-manifest schema validation failed: {source_errors[0].message}"
+        )
     validate_source_manifest(
         source_manifest,
         repository_root=ROOT,
@@ -122,6 +155,16 @@ def main() -> int:
         source_manifest_sha256=canonical_file_sha256(source_path),
         discovery=discovery,
     )
+    readiness_schema = load_json(ROOT / READINESS_SCHEMA_PATH)
+    Draft7Validator.check_schema(readiness_schema)
+    readiness_errors = sorted(
+        Draft7Validator(readiness_schema).iter_errors(artifact),
+        key=lambda error: list(error.path),
+    )
+    if readiness_errors:
+        raise ValueError(
+            f"readiness schema validation failed: {readiness_errors[0].message}"
+        )
     report = render_report(artifact).encode("utf-8")
     artifact_bytes = _json_bytes(artifact)
     artifact_path = ROOT / ARTIFACT_PATH
