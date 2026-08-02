@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_semantic_reference": {
+      "const": false
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "const": false
+    },
+    "behavioral_proposition_count": {
+      "type": "integer"
+    },
+    "bindings": {
+      "type": "object"
+    },
+    "canonical": {
+      "const": false
+    },
+    "content_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "full_action_accounting_count": {
+      "const": 37
+    },
+    "implementation_core": {
+      "type": "object"
+    },
+    "implementation_core_content_subject_sha256": {
+      "type": "string"
+    },
+    "implementation_state": {
+      "const": "implemented_pending_delegated_authority_review"
+    },
+    "persisted": {
+      "const": false
+    },
+    "production_eligible": {
+      "const": false
+    },
+    "public": {
+      "const": false
+    },
+    "published": {
+      "const": false
+    },
+    "render_plan": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "full_record_semantic_ir_provisional_implementation_v1"
+    },
+    "synthesis_proposition_count": {
+      "type": "integer"
+    },
+    "user_approved": {
+      "const": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "implementation_state",
+    "implementation_core",
+    "implementation_core_content_subject_sha256",
+    "bindings",
+    "behavioral_proposition_count",
+    "synthesis_proposition_count",
+    "full_action_accounting_count",
+    "render_plan",
+    "accepted_semantic_reference",
+    "canonical",
+    "public",
+    "persisted",
+    "published",
+    "production_eligible",
+    "user_approved",
+    "authorizing",
+    "content_subject_sha256"
+  ],
+  "title": "M5 provisional implementation",
+  "type": "object"
+}

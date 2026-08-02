@@ -1,0 +1,85 @@
+{
+  "artifact_id": "semantic-ir-independent-reviews:f000477:justice_public_safety:119:v1",
+  "authorizing": false,
+  "content_subject_sha256": "5d31975a682efe6d154baba55f8cf5bc639e596e160c512e5862a5b0ae7fef01",
+  "finding_accounting": {
+    "critical": 0,
+    "major": 1,
+    "minor": 0
+  },
+  "passes": [
+    {
+      "critical_count": 0,
+      "findings": [],
+      "lens": "shared_semantics",
+      "major_count": 0,
+      "review_identity": "independent-review-a",
+      "review_pass": "A"
+    },
+    {
+      "critical_count": 0,
+      "findings": [
+        {
+          "detail": "Officer-safety data reporting does not share the bounded terrorism-preparedness mechanism used by the vehicular-threat assessment and cold-weather exercise.",
+          "finding_id": "m5-review-b-1",
+          "severity": "major",
+          "state": "correction_required"
+        }
+      ],
+      "lens": "family_and_trait_overreach",
+      "major_count": 1,
+      "review_identity": "independent-review-b",
+      "review_pass": "B"
+    },
+    {
+      "critical_count": 0,
+      "findings": [],
+      "lens": "proposition_eligibility",
+      "major_count": 0,
+      "review_identity": "independent-review-c",
+      "review_pass": "C"
+    },
+    {
+      "critical_count": 0,
+      "findings": [],
+      "lens": "direction_and_evidence",
+      "major_count": 0,
+      "review_identity": "independent-review-d",
+      "review_pass": "D"
+    },
+    {
+      "critical_count": 0,
+      "findings": [],
+      "lens": "independence_and_counting",
+      "major_count": 0,
+      "review_identity": "independent-review-e",
+      "review_pass": "E"
+    },
+    {
+      "critical_count": 0,
+      "findings": [],
+      "lens": "synthesis_and_conclusion_plan",
+      "major_count": 0,
+      "review_identity": "independent-review-f",
+      "review_pass": "F"
+    },
+    {
+      "critical_count": 0,
+      "findings": [],
+      "lens": "ambiguity_and_source_constraints",
+      "major_count": 0,
+      "review_identity": "independent-review-g",
+      "review_pass": "G"
+    },
+    {
+      "critical_count": 0,
+      "findings": [],
+      "lens": "compiler_invariance_and_anti_leakage",
+      "major_count": 0,
+      "review_identity": "independent-review-h",
+      "review_pass": "H"
+    }
+  ],
+  "reviewed_initial_graph_content_subject_sha256": "5b472ea862eee24fb3a5ffaf194e386b8e166237ef602e52ab87b3dc3f400050",
+  "schema_version": "semantic_ir_independent_reviews_v1"
+}

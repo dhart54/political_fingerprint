@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_semantic_reference": {
+      "const": false
+    },
+    "action_accounting_counts": {
+      "type": "object"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "const": false
+    },
+    "candidate_state": {
+      "type": "string"
+    },
+    "canonical": {
+      "const": false
+    },
+    "compiled_ir": {
+      "type": "object"
+    },
+    "content_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "full_universe_action_accounting": {
+      "maxItems": 37,
+      "minItems": 37,
+      "type": "array"
+    },
+    "persisted": {
+      "const": false
+    },
+    "public": {
+      "const": false
+    },
+    "published": {
+      "const": false
+    },
+    "render_plan": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "full_record_semantic_ir_candidate_v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "candidate_state",
+    "compiled_ir",
+    "full_universe_action_accounting",
+    "action_accounting_counts",
+    "render_plan",
+    "accepted_semantic_reference",
+    "canonical",
+    "public",
+    "persisted",
+    "published",
+    "authorizing",
+    "content_subject_sha256"
+  ],
+  "title": "M5 compiled graph envelope",
+  "type": "object"
+}

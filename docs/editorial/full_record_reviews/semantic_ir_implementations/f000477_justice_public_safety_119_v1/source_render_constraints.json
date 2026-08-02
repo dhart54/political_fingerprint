@@ -1,0 +1,33 @@
+{
+  "artifact_id": "semantic-ir-source-render-constraints:f000477:justice_public_safety:119:v1",
+  "authorizing": false,
+  "constraint_count": 3,
+  "constraints": [
+    {
+      "action_ids": [
+        "house:119:1:128"
+      ],
+      "constraint_id": "roll-128-unresolved-text-limit",
+      "detail": "Only the resolved concealed-carry meaning may be used; the 'any magazine and' insertion remains unresolved.",
+      "semantic_effect": "limits_argument_rendering"
+    },
+    {
+      "action_ids": [
+        "house:119:2:155"
+      ],
+      "constraint_id": "roll-155-source-identity-block",
+      "detail": "The preserved 110th/119th-Congress source-identity conflict blocks behavioral use.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    },
+    {
+      "action_ids": [
+        "house:119:2:278"
+      ],
+      "constraint_id": "roll-278-no-safe-interpretation-block",
+      "detail": "Incomplete final-package evidence leaves no safe interpretation and blocks behavioral use.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    }
+  ],
+  "content_subject_sha256": "41e968856fa23a8878375f219c6c941aa55997b1d3f86f3ed4dc5add2985431f",
+  "schema_version": "semantic_ir_source_render_constraint_collection_v1"
+}

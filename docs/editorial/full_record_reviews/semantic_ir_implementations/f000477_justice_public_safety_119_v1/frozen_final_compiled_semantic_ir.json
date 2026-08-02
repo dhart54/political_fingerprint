@@ -1,0 +1,873 @@
+{
+  "accepted_semantic_reference": false,
+  "action_accounting_counts": {
+    "included_in_behavioral_proposition": 35,
+    "non_proposition": 2
+  },
+  "artifact_id": "full-record-semantic-ir-candidate:f000477:justice_public_safety:119:v1",
+  "authorizing": false,
+  "candidate_state": "frozen_candidate_pending_delegated_authority_review",
+  "canonical": false,
+  "compiled_ir": {
+    "members": [
+      {
+        "action_accounting": {
+          "behavioral_proposition_action_ids": [
+            "house:119:1:128",
+            "house:119:1:130",
+            "house:119:1:131",
+            "house:119:1:162",
+            "house:119:1:166",
+            "house:119:1:23",
+            "house:119:1:27",
+            "house:119:1:270",
+            "house:119:1:271",
+            "house:119:1:274",
+            "house:119:1:275",
+            "house:119:1:286",
+            "house:119:1:289",
+            "house:119:1:298",
+            "house:119:1:299",
+            "house:119:1:32",
+            "house:119:1:33",
+            "house:119:1:340",
+            "house:119:1:351",
+            "house:119:1:42",
+            "house:119:1:6",
+            "house:119:1:68",
+            "house:119:1:98",
+            "house:119:2:157",
+            "house:119:2:169",
+            "house:119:2:171",
+            "house:119:2:218",
+            "house:119:2:221",
+            "house:119:2:227",
+            "house:119:2:234",
+            "house:119:2:240",
+            "house:119:2:259",
+            "house:119:2:265",
+            "house:119:2:273",
+            "house:119:2:275"
+          ],
+          "non_proposition_reasons": []
+        },
+        "composition": {
+          "conclusion_plan": {
+            "limiting_proposition_ids": [
+              "prop:53cda8d886a88f12"
+            ],
+            "primary_proposition_ids": [
+              "prop:354da734fec2fcf6",
+              "prop:e76b98cf92ef34cb",
+              "prop:e75e7aebbd7b2d29",
+              "prop:95cf7861641b499e",
+              "prop:d7e189366b477118",
+              "prop:7a5b23c610dc467e"
+            ]
+          },
+          "coverage_boundaries": [],
+          "method_boundaries": [
+            {
+              "action_ids": [
+                "house:119:2:155"
+              ],
+              "boundary_id": "method:b424184b53369286",
+              "boundary_type": "context_only_control_exclusion",
+              "detail": "Context-only controls do not enter substantive coverage.",
+              "presentation_target": "method_note"
+            },
+            {
+              "action_ids": [
+                "house:119:2:278"
+              ],
+              "boundary_id": "method:fb088ccee9896241",
+              "boundary_type": "exact_action_eligibility",
+              "detail": "Rejected exact actions remain outside substantive coverage.",
+              "presentation_target": "method_note"
+            },
+            {
+              "action_ids": [
+                "house:119:1:23",
+                "house:119:1:6"
+              ],
+              "boundary_id": "method:891ee09f2c0c3bad",
+              "boundary_type": "episode_counting",
+              "detail": "Multiple legislative actions count as one reviewed episode.",
+              "presentation_target": "method_note"
+            },
+            {
+              "action_ids": [
+                "house:119:1:166",
+                "house:119:1:32",
+                "house:119:1:33"
+              ],
+              "boundary_id": "method:5beea1ee1425b51d",
+              "boundary_type": "episode_counting",
+              "detail": "Multiple legislative actions count as one reviewed episode.",
+              "presentation_target": "method_note"
+            }
+          ],
+          "presentation_ownership": {
+            "conclusion_only": [
+              "prop:7a5b23c610dc467e"
+            ],
+            "other_notable_choices": [
+              "prop:1360ffd8a7fa2a32",
+              "prop:8b11a16988d7f16c",
+              "prop:45867d2e0b7149bc",
+              "prop:144368886e27b4e2",
+              "prop:a842904a2893b8e8",
+              "prop:9ae5c013f4966c2e",
+              "prop:f44f50007be4895e",
+              "prop:b44499d0ef869a4f",
+              "prop:7869b50840f846ce",
+              "prop:90c35b95af9e4158",
+              "prop:485eaf2e761d8e3e",
+              "prop:698e503c786f2f72",
+              "prop:349a2f4ee6f03872",
+              "prop:398d7dc863c45224",
+              "prop:d551f0945f2ae132",
+              "prop:7d09cdb8b517d1d6"
+            ],
+            "policy_trajectories": [
+              "prop:53cda8d886a88f12",
+              "prop:d5781e356c454c70"
+            ],
+            "repeated_patterns": [
+              "prop:354da734fec2fcf6",
+              "prop:e76b98cf92ef34cb",
+              "prop:e75e7aebbd7b2d29",
+              "prop:95cf7861641b499e",
+              "prop:d7e189366b477118"
+            ]
+          }
+        },
+        "coverage": {
+          "complete_episodes": 32,
+          "context_only_control_actions": 2,
+          "directional_yes_no_positions": 35,
+          "eligible_substantive_actions": 35,
+          "in_service_eligible_actions": 35,
+          "missing_evidence_actions": 0,
+          "not_voting_actions": 0,
+          "outside_service_actions": 0,
+          "partial_episodes": 0,
+          "present_actions": 0,
+          "resolved_eligible_actions": 35,
+          "unresolved_service_actions": 0
+        },
+        "member_id": "F000477",
+        "party": "D",
+        "proposition_graph": {
+          "propositions": [
+            {
+              "conclusion_relevance": "limiting",
+              "direction": "mixed",
+              "evidence_action_ids": [
+                "house:119:1:166",
+                "house:119:1:32",
+                "house:119:1:33"
+              ],
+              "evidence_episode_ids": [
+                "halt-fentanyl-legislative-path"
+              ],
+              "mechanism_or_trait_refs": [
+                "halt_fentanyl_scheduling_path"
+              ],
+              "presentation_target": "policy_trajectories",
+              "proposition_id": "prop:53cda8d886a88f12",
+              "proposition_type": "trajectory",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:23",
+                "house:119:1:6"
+              ],
+              "evidence_episode_ids": [
+                "laken-riley-detention-enforcement"
+              ],
+              "mechanism_or_trait_refs": [
+                "laken_riley_detention_and_state_remedies"
+              ],
+              "presentation_target": "policy_trajectories",
+              "proposition_id": "prop:d5781e356c454c70",
+              "proposition_type": "trajectory",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "primary",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:162",
+                "house:119:1:270",
+                "house:119:1:271",
+                "house:119:1:275",
+                "house:119:1:298",
+                "house:119:1:299"
+              ],
+              "evidence_episode_ids": [
+                "dc-juvenile-court-transfer-age",
+                "dc-police-discipline-bargaining",
+                "dc-police-pursuit-rules",
+                "dc-policing-reform-repeal",
+                "dc-pretrial-detention-cash-bail",
+                "dc-youth-offender-sentencing"
+              ],
+              "mechanism_or_trait_refs": [
+                "dc_public_safety_rule_displacement"
+              ],
+              "presentation_target": "repeated_patterns",
+              "proposition_id": "prop:354da734fec2fcf6",
+              "proposition_type": "repeated_pattern",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "primary",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:130",
+                "house:119:2:240",
+                "house:119:2:265"
+              ],
+              "evidence_episode_ids": [
+                "defense-facility-personal-firearm-process",
+                "firearms-merchant-category-code-restrictions",
+                "retired-service-weapon-purchases"
+              ],
+              "mechanism_or_trait_refs": [
+                "firearm_access_barrier_reduction"
+              ],
+              "presentation_target": "repeated_patterns",
+              "proposition_id": "prop:e76b98cf92ef34cb",
+              "proposition_type": "repeated_pattern",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "primary",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:68",
+                "house:119:2:218"
+              ],
+              "evidence_episode_ids": [
+                "federal-fraud-payment-integrity-oversight",
+                "pandemic-unemployment-fraud-limitations"
+              ],
+              "mechanism_or_trait_refs": [
+                "fraud_enforcement_capacity_expansion"
+              ],
+              "presentation_target": "repeated_patterns",
+              "proposition_id": "prop:e75e7aebbd7b2d29",
+              "proposition_type": "repeated_pattern",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "primary",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:298",
+                "house:119:2:171"
+              ],
+              "evidence_episode_ids": [
+                "cashless-bail-jurisdiction-reporting",
+                "dc-pretrial-detention-cash-bail"
+              ],
+              "mechanism_or_trait_refs": [
+                "pretrial_release_regulation"
+              ],
+              "presentation_target": "repeated_patterns",
+              "proposition_id": "prop:95cf7861641b499e",
+              "proposition_type": "repeated_pattern",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "primary",
+              "direction": "support",
+              "evidence_action_ids": [
+                "house:119:1:286",
+                "house:119:2:234"
+              ],
+              "evidence_episode_ids": [
+                "cold-weather-terrorism-response-exercise",
+                "vehicular-terrorism-assessment"
+              ],
+              "mechanism_or_trait_refs": [
+                "terrorism_preparedness_mandate"
+              ],
+              "presentation_target": "repeated_patterns",
+              "proposition_id": "prop:d7e189366b477118",
+              "proposition_type": "repeated_pattern",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:128"
+              ],
+              "evidence_episode_ids": [
+                "law-enforcement-concealed-carry-expansion"
+              ],
+              "mechanism_or_trait_refs": [
+                "concealed_carry_resolved_scope"
+              ],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:1360ffd8a7fa2a32",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "support",
+              "evidence_action_ids": [
+                "house:119:1:131"
+              ],
+              "evidence_episode_ids": [
+                "officer-safety-data-reporting"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:8b11a16988d7f16c",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:27"
+              ],
+              "evidence_episode_ids": [
+                "born-alive-care-and-remedies"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:45867d2e0b7149bc",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:274"
+              ],
+              "evidence_episode_ids": [
+                "dc-judicial-nomination-commission"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:144368886e27b4e2",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "support",
+              "evidence_action_ids": [
+                "house:119:1:289"
+              ],
+              "evidence_episode_ids": [
+                "epstein-records-disclosure"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:a842904a2893b8e8",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:340"
+              ],
+              "evidence_episode_ids": [
+                "unaccompanied-child-placement-screening"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:9ae5c013f4966c2e",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:351"
+              ],
+              "evidence_episode_ids": [
+                "minor-procedure-criminal-offenses"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:f44f50007be4895e",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:42"
+              ],
+              "evidence_episode_ids": [
+                "border-vehicle-flight-offense"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:b44499d0ef869a4f",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:1:98"
+              ],
+              "evidence_episode_ids": [
+                "federal-injunction-remedy-scope"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:7869b50840f846ce",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:2:157"
+              ],
+              "evidence_episode_ids": [
+                "organized-retail-crime-coordination"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:90c35b95af9e4158",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:2:169"
+              ],
+              "evidence_episode_ids": [
+                "bail-bond-false-statements"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:485eaf2e761d8e3e",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:2:221"
+              ],
+              "evidence_episode_ids": [
+                "fisa-title-vii-short-term-extension"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:698e503c786f2f72",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "support",
+              "evidence_action_ids": [
+                "house:119:2:227"
+              ],
+              "evidence_episode_ids": [
+                "senior-investor-exploitation-delays"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:349a2f4ee6f03872",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:2:259"
+              ],
+              "evidence_episode_ids": [
+                "defense-energy-infrastructure-certification"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:398d7dc863c45224",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:2:273"
+              ],
+              "evidence_episode_ids": [
+                "military-chaplain-protections"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:d551f0945f2ae132",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "excluded",
+              "direction": "opposition",
+              "evidence_action_ids": [
+                "house:119:2:275"
+              ],
+              "evidence_episode_ids": [
+                "military-speed-camera-funding-ban"
+              ],
+              "mechanism_or_trait_refs": [],
+              "presentation_target": "other_notable_choices",
+              "proposition_id": "prop:7d09cdb8b517d1d6",
+              "proposition_type": "notable_choice",
+              "relationships": {
+                "limited_by": [],
+                "supported_by": []
+              },
+              "semantic_role": "behavioral"
+            },
+            {
+              "conclusion_relevance": "primary",
+              "direction": "mixed",
+              "evidence_action_ids": [
+                "house:119:1:162",
+                "house:119:1:270",
+                "house:119:1:271",
+                "house:119:1:275",
+                "house:119:1:286",
+                "house:119:1:298",
+                "house:119:1:299",
+                "house:119:2:234"
+              ],
+              "evidence_episode_ids": [
+                "cold-weather-terrorism-response-exercise",
+                "dc-juvenile-court-transfer-age",
+                "dc-police-discipline-bargaining",
+                "dc-police-pursuit-rules",
+                "dc-policing-reform-repeal",
+                "dc-pretrial-detention-cash-bail",
+                "dc-youth-offender-sentencing",
+                "vehicular-terrorism-assessment"
+              ],
+              "mechanism_or_trait_refs": [
+                "dc_public_safety_rule_displacement",
+                "terrorism_preparedness_mandate"
+              ],
+              "presentation_target": "conclusion_only",
+              "proposition_id": "prop:7a5b23c610dc467e",
+              "proposition_type": "mechanism_divide",
+              "relationships": {
+                "limited_by": [
+                  "prop:53cda8d886a88f12"
+                ],
+                "supported_by": [
+                  "prop:354da734fec2fcf6",
+                  "prop:d7e189366b477118"
+                ]
+              },
+              "semantic_role": "synthesis"
+            }
+          ]
+        },
+        "review_route": "human_exception_required"
+      }
+    ],
+    "source_render_constraints": [
+      {
+        "action_ids": [
+          "house:119:1:128"
+        ],
+        "constraint_id": "roll-128-unresolved-text-limit",
+        "detail": "Only the resolved concealed-carry meaning may be used; the 'any magazine and' insertion remains unresolved.",
+        "semantic_effect": "limits_argument_rendering"
+      },
+      {
+        "action_ids": [
+          "house:119:2:155"
+        ],
+        "constraint_id": "roll-155-source-identity-block",
+        "detail": "The preserved 110th/119th-Congress source-identity conflict blocks behavioral use.",
+        "semantic_effect": "blocks_behavioral_propositions"
+      },
+      {
+        "action_ids": [
+          "house:119:2:278"
+        ],
+        "constraint_id": "roll-278-no-safe-interpretation-block",
+        "detail": "Incomplete final-package evidence leaves no safe interpretation and blocks behavioral use.",
+        "semantic_effect": "blocks_behavioral_propositions"
+      }
+    ]
+  },
+  "content_subject_sha256": "05821b7ad36f09d27768d0f12aac223513e343f2e2f72328d4f294e9027c55bf",
+  "full_universe_action_accounting": [
+    {
+      "action_id": "house:119:1:128",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:130",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:131",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:162",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:166",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:23",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:27",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:270",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:271",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:274",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:275",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:286",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:289",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:298",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:299",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:32",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:33",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:340",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:351",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:42",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:6",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:68",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:1:98",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:155",
+      "outcome": "non_proposition",
+      "reason_code": "source_identity_conflict_blocks_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:157",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:169",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:171",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:218",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:221",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:227",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:234",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:240",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:259",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:265",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:273",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:275",
+      "outcome": "included_in_behavioral_proposition"
+    },
+    {
+      "action_id": "house:119:2:278",
+      "outcome": "non_proposition",
+      "reason_code": "no_safe_interpretation_blocks_behavioral_proposition"
+    }
+  ],
+  "persisted": false,
+  "public": false,
+  "published": false,
+  "render_plan": {
+    "analytical_additions_allowed": false,
+    "example_prose": null
+  },
+  "schema_version": "full_record_semantic_ir_candidate_v1"
+}

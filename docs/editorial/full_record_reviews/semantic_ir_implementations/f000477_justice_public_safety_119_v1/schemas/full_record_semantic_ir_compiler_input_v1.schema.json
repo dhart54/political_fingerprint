@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_reference_output_included": {
+      "const": false
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "const": false
+    },
+    "candidate_state": {
+      "type": "string"
+    },
+    "compiler_input": {
+      "type": "object"
+    },
+    "content_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "expected_output_fields_included": {
+      "const": false
+    },
+    "public_language_included": {
+      "const": false
+    },
+    "schema_version": {
+      "const": "full_record_semantic_ir_compiler_input_v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "candidate_state",
+    "compiler_input",
+    "public_language_included",
+    "expected_output_fields_included",
+    "accepted_reference_output_included",
+    "authorizing",
+    "content_subject_sha256"
+  ],
+  "title": "M5 compiler input envelope",
+  "type": "object"
+}

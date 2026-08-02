@@ -1,0 +1,31 @@
+{
+  "artifact_id": "semantic-ir-correction-cycle:f000477:justice_public_safety:119:1",
+  "content_subject_sha256": "88730077360ae1c9d4a5210f71e42321a4cb528d447b245aeb3bb47f986a9c61",
+  "cycle": 1,
+  "initial_graph_content_subject_sha256": "5b472ea862eee24fb3a5ffaf194e386b8e166237ef602e52ab87b3dc3f400050",
+  "manual_compiled_output_edits": false,
+  "post_correction_critical_findings": 0,
+  "post_correction_major_findings": 0,
+  "regenerated_graph_content_subject_sha256": "05821b7ad36f09d27768d0f12aac223513e343f2e2f72328d4f294e9027c55bf",
+  "schema_version": "semantic_ir_correction_cycle_v1",
+  "structured_input_changes": [
+    {
+      "from": "federal-information-and-preparedness-mandates",
+      "operation": "replace_family",
+      "to": "terrorism-preparedness-mandates"
+    },
+    {
+      "from": "federal_information_and_preparedness_mandate",
+      "operation": "replace_trait",
+      "to": "terrorism_preparedness_mandate"
+    },
+    {
+      "action_id": "house:119:1:131",
+      "operation": "remove_action_from_mechanism",
+      "rationale": "Officer-safety reporting is not terrorism preparedness."
+    }
+  ],
+  "trigger_finding_ids": [
+    "m5-review-b-1"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "artifact_id": "semantic-ir-m5-validation:f000477:justice_public_safety:119:v1",
+  "canonical_and_public_state_unchanged": true,
+  "content_subject_sha256": "30900f57aebce98c7d53cc9f3d9452247b11919c512b6a1af01a63c021fbe001",
+  "database_access": false,
+  "incorrect_or_baseline_attempts": [
+    {
+      "cause": "script execution import root omitted",
+      "command": "python scripts/build_foushee_justice_semantic_ir_m5.py",
+      "correction": "resolved repository root inserted before canonical imports",
+      "initial_exit_code": 1
+    },
+    {
+      "accounting": {
+        "errors": 35,
+        "failures": 1,
+        "ran": 304
+      },
+      "cause": "unsupported discovery import roots plus database and missing-fixture cases",
+      "command": "python -m unittest discover -s backend/tests -p test_*.py",
+      "exit_code": 1
+    },
+    {
+      "accounting": {
+        "errors": 10,
+        "failed": 40,
+        "passed": 1194
+      },
+      "cause": "database-only tests used the invalid sentinel; missing local Senate/House fixtures and four disclosed baseline-incompatible tests remained",
+      "command": "pytest --basetemp=..\\.local\\pytest_basetemp",
+      "exit_code": 1
+    },
+    {
+      "accounting": {
+        "failed": 6,
+        "passed": 1187
+      },
+      "cause": "four baseline deselections did not bind as intended and two deterministic M5 checks observed a deliberate artifact regeneration while the suite was running",
+      "command": "first broad safe offline pytest subset attempt",
+      "correction": "reran after freeze with a negative selection expression; 1189 passed and 4 baseline cases were deselected",
+      "exit_code": 1
+    }
+  ],
+  "initial_command_mistakes": [
+    "PowerShell ConvertFrom-Json -Depth was unsupported; Python JSON parsing was used.",
+    "Initial offline preflight path omitted backend/; supported module import was then used."
+  ],
+  "network_access": false,
+  "sandbox_restrictions": [
+    "Pre-existing inaccessible backend/tests temporary directories produced warnings during broad file enumeration.",
+    "Python TemporaryDirectory writes were denied inside the filesystem sandbox; the same 52-test regression suite passed outside it."
+  ],
+  "schema_version": "semantic_ir_m5_validation_report_v1",
+  "successful_commands": [
+    {
+      "command": "supported offline database preflight module import",
+      "exit_code": 0,
+      "result": "invalid_sentinel"
+    },
+    {
+      "command": "python scripts/validate_full_issue_universe_authority.py",
+      "exit_code": 0,
+      "result": "37 actions"
+    },
+    {
+      "command": "python scripts/validate_full_issue_interpretation_source_readiness.py",
+      "exit_code": 0,
+      "result": "37 ready, 0 blocked"
+    },
+    {
+      "command": "python backend/scripts/build_full_issue_interpretation_source_readiness.py --check",
+      "exit_code": 0
+    },
+    {
+      "command": "V1-V4 action candidate validators",
+      "exit_code": 0,
+      "result": "4 validators"
+    },
+    {
+      "command": "M3B-A/M3B-B validators",
+      "exit_code": 0,
+      "result": "2 validators"
+    },
+    {
+      "command": "M4A/M4B validators",
+      "exit_code": 0,
+      "result": "32 episodes; 35/1/1 actions"
+    },
+    {
+      "command": "node scripts/validate_editorial_semantic_ir_schema.mjs",
+      "exit_code": 0,
+      "result": "Draft-07 pass"
+    },
+    {
+      "command": "python scripts/validate_editorial_semantic_ir.py",
+      "exit_code": 0,
+      "result": "12 accepted + 4 accepted held-out + 4 held-out"
+    },
+    {
+      "command": "python scripts/compare_accepted_semantic_references.py",
+      "exit_code": 0,
+      "result": "16 cases"
+    },
+    {
+      "command": "python -m unittest backend.tests.test_editorial_semantic_ir backend.tests.test_editorial_pipeline backend.tests.test_full_record_issue_interpretation",
+      "exit_code": 0,
+      "result": "52 passed"
+    },
+    {
+      "command": "python scripts/build_foushee_justice_semantic_ir_m5.py --check",
+      "exit_code": 0
+    },
+    {
+      "command": "python scripts/validate_foushee_justice_semantic_ir_m5.py",
+      "exit_code": 0,
+      "result": "independent verification pass"
+    },
+    {
+      "command": "python -m unittest backend.tests.test_foushee_justice_semantic_ir_m5",
+      "exit_code": 0,
+      "result": "5 passed"
+    },
+    {
+      "command": "broad safe offline pytest subset",
+      "exit_code": 0,
+      "result": "1189 passed, 4 disclosed baseline tests deselected"
+    },
+    {
+      "command": "ruff check + ruff format --check on directly affected Python",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m py_compile on directly affected Python",
+      "exit_code": 0
+    },
+    {
+      "command": "JSON parse, credential scan, and git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "validation_accounting": {
+    "broad_safe_offline_deselected_baseline_tests": 4,
+    "broad_safe_offline_tests": 1189,
+    "prior_integrity_gates": "pass",
+    "remaining_m5_failures": 0,
+    "semantic_ir_full_record_regression_tests": 52,
+    "targeted_m5_tests": 5
+  }
+}
