@@ -1,0 +1,56 @@
+{
+  "accepted": false,
+  "artifact_id": "episode-review-sample:f000477:justice_public_safety:119:v1",
+  "authorizing": false,
+  "candidate": true,
+  "canonical": false,
+  "challenge_episode_ids": [
+    "dc-juvenile-court-transfer-age",
+    "dc-youth-offender-sentencing",
+    "fisa-title-vii-short-term-extension",
+    "halt-fentanyl-legislative-path",
+    "laken-riley-detention-enforcement",
+    "law-enforcement-concealed-carry-expansion"
+  ],
+  "challenge_reasons": {
+    "dc-juvenile-court-transfer-age": [
+      "major_pre_correction_finding"
+    ],
+    "dc-youth-offender-sentencing": [
+      "major_pre_correction_finding"
+    ],
+    "fisa-title-vii-short-term-extension": [
+      "cross_domain",
+      "significant_competing_grouping",
+      "related_preserved_ambiguous_action"
+    ],
+    "halt-fentanyl-legislative-path": [
+      "more_than_two_actions",
+      "amendment_and_final_passage",
+      "mixed_member_actions"
+    ],
+    "laken-riley-detention-enforcement": [
+      "predecessor_successor_versions"
+    ],
+    "law-enforcement-concealed-carry-expansion": [
+      "preserved_ambiguous_action"
+    ]
+  },
+  "content_subject_sha256": "69ccd30278685adab50683edf939377de95f275c2ae065ab89570c4c3b39fc2e",
+  "deterministic": true,
+  "episode_review_sample_ids": [
+    "laken-riley-detention-enforcement",
+    "defense-energy-infrastructure-certification",
+    "retired-service-weapon-purchases",
+    "fisa-title-vii-short-term-extension",
+    "dc-policing-reform-repeal",
+    "dc-pretrial-detention-cash-bail"
+  ],
+  "frozen_batch_content_subject_sha256": "c7d5c3567fa606420a9e49fd01b4dcef70a728295626b3b9c9d4dfad6ec097b6",
+  "no_safe_accounting_action_id": "house:119:2:278",
+  "public": false,
+  "schema_version": "episode_review_sample_manifest_v1",
+  "seed_formula": "SHA-256(batch_content_subject_sha256 + '*' + implementation_content_subject_sha256 + '*foushee-justice-policy-episode-audit-v1')",
+  "seed_sha256": "8d2400f016c91feca000ac10ab2249ad6f3cf11485ab0898b5b20590f4ea06da",
+  "selection_after_freeze": true
+}

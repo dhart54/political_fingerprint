@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "batch_decision_options": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "candidate": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "decision_count": {
+      "type": "integer"
+    },
+    "decision_state": {
+      "type": "string"
+    },
+    "decisions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "allowed_decisions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "decision_timestamp": {
+            "type": "null"
+          },
+          "episode_content_subject_sha256": {
+            "type": "string"
+          },
+          "episode_id": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "null"
+          },
+          "reviewer_authority": {
+            "type": "null"
+          },
+          "reviewer_identity": {
+            "type": "null"
+          },
+          "selected_decision": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "allowed_decisions",
+          "content_subject_sha256",
+          "decision_timestamp",
+          "episode_content_subject_sha256",
+          "episode_id",
+          "rationale",
+          "reviewer_authority",
+          "reviewer_identity",
+          "selected_decision"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "explicit_non_acceptance": {
+      "type": "string"
+    },
+    "frozen_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "selected_batch_decision": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "accepted",
+    "artifact_id",
+    "authorizing",
+    "batch_decision_options",
+    "candidate",
+    "canonical",
+    "content_subject_sha256",
+    "decision_count",
+    "decision_state",
+    "decisions",
+    "explicit_non_acceptance",
+    "frozen_batch_content_subject_sha256",
+    "public",
+    "schema_version",
+    "selected_batch_decision"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "action_count": {
+      "type": "integer"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "candidate": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "input_implementation_content_subject_sha256": {
+      "type": "string"
+    },
+    "neutral_no_episode_conclusions": {
+      "type": "boolean"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "relationship_count": {
+      "type": "integer"
+    },
+    "relationships": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "chronological_action_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "does_not_establish": {
+            "type": "string"
+          },
+          "lineage_id": {
+            "type": "string"
+          },
+          "relationship_evidence": {
+            "type": "string"
+          },
+          "relationship_state": {
+            "type": "string"
+          },
+          "relationship_type": {
+            "type": "string"
+          },
+          "unresolved_relationship_question": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "action_ids",
+          "chronological_action_ids",
+          "content_subject_sha256",
+          "does_not_establish",
+          "lineage_id",
+          "relationship_evidence",
+          "relationship_state",
+          "relationship_type",
+          "unresolved_relationship_question"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "accepted",
+    "action_count",
+    "artifact_id",
+    "authorizing",
+    "candidate",
+    "canonical",
+    "content_subject_sha256",
+    "input_implementation_content_subject_sha256",
+    "neutral_no_episode_conclusions",
+    "public",
+    "relationship_count",
+    "relationships",
+    "schema_version"
+  ],
+  "type": "object"
+}

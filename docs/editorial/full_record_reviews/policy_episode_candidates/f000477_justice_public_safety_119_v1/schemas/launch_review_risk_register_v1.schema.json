@@ -1,0 +1,232 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "candidate": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "carried_entry_count": {
+      "type": "integer"
+    },
+    "carry_forward_required": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "entries": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "codex_recommendation": {
+            "type": "string"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "current_status": {
+            "type": "string"
+          },
+          "delegated_authority_disposition": {
+            "type": "string"
+          },
+          "downstream_artifacts_affected": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "exact_unresolved_question": {
+            "type": "string"
+          },
+          "governed_evidence": {
+            "additionalProperties": false,
+            "properties": {
+              "authority_decision_content_subject_sha256": {
+                "type": "string"
+              },
+              "evidence_map_content_subject_sha256": {
+                "type": "string"
+              },
+              "evidence_map_id": {
+                "type": "string"
+              },
+              "frozen_episode_content_subject_sha256": {
+                "type": "string"
+              },
+              "implementation_record_content_subject_sha256": {
+                "type": "string"
+              },
+              "source_references": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [],
+            "type": "object"
+          },
+          "likely_public_output_consequence": {
+            "type": "string"
+          },
+          "resolution_history": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "authority": {
+                  "type": "string"
+                },
+                "disposition": {
+                  "type": "string"
+                },
+                "stage": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "authority",
+                "disposition",
+                "stage"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "risk_class": {
+            "type": "string"
+          },
+          "risk_id": {
+            "type": "string"
+          },
+          "strongest_competing_interpretations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "subject": {
+            "additionalProperties": false,
+            "properties": {
+              "action_id": {
+                "type": "string"
+              },
+              "episode_id": {
+                "type": "string"
+              },
+              "related_action_id": {
+                "type": "string"
+              },
+              "subject_type": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "subject_type"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "codex_recommendation",
+          "content_subject_sha256",
+          "current_status",
+          "delegated_authority_disposition",
+          "downstream_artifacts_affected",
+          "exact_unresolved_question",
+          "governed_evidence",
+          "likely_public_output_consequence",
+          "resolution_history",
+          "risk_class",
+          "risk_id",
+          "strongest_competing_interpretations",
+          "subject"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "entry_count": {
+      "type": "integer"
+    },
+    "new_entry_count": {
+      "type": "integer"
+    },
+    "prior_register_binding": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "final_file_sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "content_subject_sha256",
+        "final_file_sha256"
+      ],
+      "type": "object"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "status_counts": {
+      "additionalProperties": false,
+      "properties": {
+        "resolved_internal": {
+          "type": "integer"
+        },
+        "retained_ambiguous": {
+          "type": "integer"
+        },
+        "retained_no_safe": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "resolved_internal",
+        "retained_ambiguous",
+        "retained_no_safe"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "accepted",
+    "artifact_id",
+    "authorizing",
+    "candidate",
+    "canonical",
+    "carried_entry_count",
+    "carry_forward_required",
+    "content_subject_sha256",
+    "entries",
+    "entry_count",
+    "new_entry_count",
+    "prior_register_binding",
+    "public",
+    "schema_version",
+    "status_counts"
+  ],
+  "type": "object"
+}

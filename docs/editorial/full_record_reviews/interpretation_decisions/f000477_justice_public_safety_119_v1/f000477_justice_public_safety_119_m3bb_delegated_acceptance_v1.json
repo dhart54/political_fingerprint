@@ -1,0 +1,130 @@
+{
+  "accepted_internal_state": {
+    "accepted_semantic_reference": false,
+    "action_interpretations_available_for_downstream_candidate_work": true,
+    "canonical_semantic_acceptance": false,
+    "implementation_state": "delegated_editorial_accepted_internal",
+    "launch_ratification_state": "launch_ratification_pending",
+    "policy_episode_candidate_construction_eligible": true,
+    "public": false,
+    "publication_authorized": false
+  },
+  "artifact_id": "delegated-implementation-acceptance:f000477:justice_public_safety:119:v1",
+  "authorization": {
+    "canonical_semantic_acceptance": false,
+    "deployment": false,
+    "episode_acceptance": false,
+    "final_user_launch_ratification": false,
+    "import_this_acceptance_record": true,
+    "merge": false,
+    "prepare_policy_episode_candidates_under_separate_bounded_prompt": true,
+    "production_persistence": false,
+    "publication": false,
+    "pull_request": false,
+    "push": false,
+    "record_delegated_internal_acceptance": true,
+    "semantic_ir_compilation": false,
+    "synthesis": false
+  },
+  "carried_launch_risks": [
+    {
+      "action_id": "house:119:1:128",
+      "status": "retained_ambiguous",
+      "unresolved_question": "What is the exact legal effect of inserting ‘any magazine and’ into 18 U.S.C. 926B(e)(2) and 926C(e)(1)(B)?"
+    },
+    {
+      "action_id": "house:119:2:155",
+      "status": "retained_ambiguous",
+      "unresolved_question": "Can the operative body be treated as authoritative despite the preserved 110th/119th Congress metadata conflict?"
+    },
+    {
+      "action_id": "house:119:2:278",
+      "status": "retained_no_safe",
+      "unresolved_question": "What was the complete final House-passed H.R. 8800 package after all adopted amendments?"
+    }
+  ],
+  "content_subject_sha256": "01f93eb8a8bef9eb270b864e5aa37b791496c48822ad3b10b1195a6fdff41ce7",
+  "decision": {
+    "accepted_limitation_count": 44,
+    "blocking_findings": [],
+    "decision": "delegated_authority_accepts_implementation",
+    "decision_timestamp": "2026-08-02T12:51:00-04:00",
+    "implementation_accounting": {
+      "implemented_accepted_candidate": 32,
+      "implemented_accepted_with_revision": 2,
+      "implemented_preserved_ambiguous": 2,
+      "implemented_preserved_no_safe_candidate": 1
+    },
+    "not_user_signature": true,
+    "review_findings": [
+      "All 37 action IDs and decision-unit bindings match the delegated authority record.",
+      "The 32 unchanged acceptances match the frozen V4 candidates.",
+      "Rolls 27 and 157 implement the authorized replacement wording exactly.",
+      "Rolls 128 and 155 preserve their required ambiguity, low confidence, limitations, and unresolved questions.",
+      "Roll 278 preserves a null meaning and no-safe-candidate status.",
+      "All 30 secondary-detail decisions and 44 accepted limitations match the authority record.",
+      "The launch-risk register retains two ambiguous and one no-safe item and records four resolved internal risks.",
+      "The 34-item calibration population excludes retained launch risks and no sample has been selected.",
+      "The reviewed commit adds detached implementation and governance artifacts without modifying canonical or public semantic state.",
+      "All included review-package repository files match their recorded final-byte hashes."
+    ],
+    "reviewer_authority": "delegated_product_methodology_editorial_authority_v1",
+    "reviewer_identity": "chatgpt:political_fingerprint_authority_thread",
+    "secondary_detail_decision_accounting": {
+      "include_as_accepted_limitation": 6,
+      "include_in_revised_meaning": 2,
+      "safely_compressed": 22
+    }
+  },
+  "input_bindings": {
+    "authority_record": {
+      "artifact_id": "action-interpretation-authority-decisions:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "08c0c09580e86af21a09158193d296989017a0c2aa239b19be0794c9b677ff7f",
+      "final_file_sha256": "f1eededb0d3c8a895607eae1fe4e0f93734f80c5e6d1540c772756e7dfb60f35"
+    },
+    "delegated_authority_mapping": {
+      "artifact_id": "delegated-editorial-authority-mapping:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "d078956ec1b97e6f6c819d1d876dd4396a5a62139a40d6056eef79c876727c0c",
+      "final_file_sha256": "4edbf1dd863e2d3be7e4ced85f7a47878d95fd99f48b2df3a028e7ab29cd9ab0"
+    },
+    "implementation_bundle": {
+      "artifact_id": "action-interpretation-decision-implementation:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "148fd8247b688ad17a751470471ce11e0dc1c7ae0ebef22876622c306ba617f0",
+      "final_file_sha256": "bfc94bc5a9aa3149dd3d62dd0486e613a1cbeedf263f7f9226969d5af16888c6"
+    },
+    "implementation_parity_manifest": {
+      "artifact_id": "action-interpretation-decision-implementation-parity:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "d55c9e2ef7d52af17cf74278468601238de580df430acf0d4b01ea2c91ea5e76",
+      "final_file_sha256": "0680dababb2f24afb51cd6093cb15f3e94fe94f337b6f50f8442a01945273019"
+    },
+    "launch_calibration_population": {
+      "artifact_id": "launch-calibration-eligibility:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "a0a6887fbae30b3e21c7ea2b7793c8392bddedfdea780a7fbab4ab6b39a4406a",
+      "final_file_sha256": "374b0a48fb0c326fdc61bba4cba32b591e4d079c640ed042775c8768b838651a"
+    },
+    "launch_risk_register": {
+      "artifact_id": "launch-review-risk-register:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "a6f5f39177ebcb57a10f390bb8011b6486db185bf99fd42a5956e3108a411af2",
+      "final_file_sha256": "6acdd9d7ea0392ca6973b54a715a3ba5d7aa0aeac706435ded1c27486739febf"
+    }
+  },
+  "next_required_state": "policy_episode_candidate_review",
+  "reviewed_implementation": {
+    "branch": "codex/foushee-justice-action-interpretation-candidates-v1",
+    "cached_origin_main": "24a2bcb37347f74c6c40261930024e85676cd8d0",
+    "commit_tree_sha": "96a5161925a486d99970a496fe8666a7aad014ea",
+    "parent_commit": "d6990afdbc23745d3c8f0906c2c101664e34f5f0",
+    "repository": "dhart54/political_fingerprint",
+    "review_archive_final_file_sha256": "d40895f883dc8c1b42fe6990ea30407c3ee96bfa14b917bfe7295c461dfc134c",
+    "review_manifest_final_file_sha256": "11dcfc22f1f52d6fcd512dce599c8d439496e59c858e84b2317a53deb6b1c23a",
+    "reviewed_commit": "dd6b09e198e9b4513956d4f8db29ca08ebfa0f2a"
+  },
+  "schema_version": "delegated_action_interpretation_implementation_acceptance_v1",
+  "subject": {
+    "action_count": 37,
+    "chamber": "house",
+    "congress": 119,
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "member_id": "F000477"
+  }
+}

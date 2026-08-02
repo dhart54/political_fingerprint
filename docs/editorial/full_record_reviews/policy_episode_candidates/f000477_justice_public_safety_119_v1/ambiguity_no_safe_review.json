@@ -1,0 +1,31 @@
+{
+  "accepted": false,
+  "artifact_id": "episode-ambiguity-no-safe-review:f000477:justice_public_safety:119:v1",
+  "authorizing": false,
+  "candidate": true,
+  "canonical": false,
+  "content_subject_sha256": "145bf8f0ed00492a528de1cc0d732142cf3fe457b3e91bbd72af1768d078296d",
+  "finding_counts": {
+    "critical": 0,
+    "major": 1,
+    "none": 1
+  },
+  "findings": [
+    {
+      "action_id": "house:119:2:155",
+      "content_subject_sha256": "515d9b43ad6cc396aed455f4ad71122ae3c1790a7e1620723a5793c1a86a4343",
+      "episode_id": "fisa-title-vii-successive-extensions",
+      "finding": "The preserved 110th/119th-Congress identity conflict materially affects whether roll 155 can anchor a predecessor relationship with roll 221.",
+      "finding_id": "ambiguity:fisa-roll-155-lineage:v1",
+      "required_general_correction": "When unresolved source identity materially affects grouping, retain the action as ambiguous unassigned and use only a non-counting related reference.",
+      "resolved_post_correction": true,
+      "severity": "major"
+    }
+  ],
+  "public": false,
+  "reviewed_initial_batch_content_subject_sha256": "265a458e3146ba06a902f02fe439799a9808b132467d1fb687641e8cbec85b11",
+  "roll_128_result": "Ambiguity retained; resolved carry provisions support only a bounded ambiguous standalone candidate.",
+  "roll_155_result": "Source-identity conflict blocks primary predecessor grouping.",
+  "roll_278_result": "No meaning and no primary episode; final H.R. 8800 package does not complete amendment narratives.",
+  "schema_version": "episode_ambiguity_no_safe_review_v1"
+}

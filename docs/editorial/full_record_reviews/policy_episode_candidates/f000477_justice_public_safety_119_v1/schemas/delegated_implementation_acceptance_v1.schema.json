@@ -1,0 +1,451 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_internal_state": {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_semantic_reference": {
+          "type": "boolean"
+        },
+        "action_interpretations_available_for_downstream_candidate_work": {
+          "type": "boolean"
+        },
+        "canonical_semantic_acceptance": {
+          "type": "boolean"
+        },
+        "implementation_state": {
+          "type": "string"
+        },
+        "launch_ratification_state": {
+          "type": "string"
+        },
+        "policy_episode_candidate_construction_eligible": {
+          "type": "boolean"
+        },
+        "public": {
+          "type": "boolean"
+        },
+        "publication_authorized": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "accepted_semantic_reference",
+        "action_interpretations_available_for_downstream_candidate_work",
+        "canonical_semantic_acceptance",
+        "implementation_state",
+        "launch_ratification_state",
+        "policy_episode_candidate_construction_eligible",
+        "public",
+        "publication_authorized"
+      ],
+      "type": "object"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorization": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_semantic_acceptance": {
+          "type": "boolean"
+        },
+        "deployment": {
+          "type": "boolean"
+        },
+        "episode_acceptance": {
+          "type": "boolean"
+        },
+        "final_user_launch_ratification": {
+          "type": "boolean"
+        },
+        "import_this_acceptance_record": {
+          "type": "boolean"
+        },
+        "merge": {
+          "type": "boolean"
+        },
+        "prepare_policy_episode_candidates_under_separate_bounded_prompt": {
+          "type": "boolean"
+        },
+        "production_persistence": {
+          "type": "boolean"
+        },
+        "publication": {
+          "type": "boolean"
+        },
+        "pull_request": {
+          "type": "boolean"
+        },
+        "push": {
+          "type": "boolean"
+        },
+        "record_delegated_internal_acceptance": {
+          "type": "boolean"
+        },
+        "semantic_ir_compilation": {
+          "type": "boolean"
+        },
+        "synthesis": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "canonical_semantic_acceptance",
+        "deployment",
+        "episode_acceptance",
+        "final_user_launch_ratification",
+        "import_this_acceptance_record",
+        "merge",
+        "prepare_policy_episode_candidates_under_separate_bounded_prompt",
+        "production_persistence",
+        "publication",
+        "pull_request",
+        "push",
+        "record_delegated_internal_acceptance",
+        "semantic_ir_compilation",
+        "synthesis"
+      ],
+      "type": "object"
+    },
+    "carried_launch_risks": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "unresolved_question": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "status",
+          "unresolved_question"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "decision": {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_limitation_count": {
+          "type": "integer"
+        },
+        "blocking_findings": {
+          "items": {},
+          "type": "array"
+        },
+        "decision": {
+          "type": "string"
+        },
+        "decision_timestamp": {
+          "type": "string"
+        },
+        "implementation_accounting": {
+          "additionalProperties": false,
+          "properties": {
+            "implemented_accepted_candidate": {
+              "type": "integer"
+            },
+            "implemented_accepted_with_revision": {
+              "type": "integer"
+            },
+            "implemented_preserved_ambiguous": {
+              "type": "integer"
+            },
+            "implemented_preserved_no_safe_candidate": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "implemented_accepted_candidate",
+            "implemented_accepted_with_revision",
+            "implemented_preserved_ambiguous",
+            "implemented_preserved_no_safe_candidate"
+          ],
+          "type": "object"
+        },
+        "not_user_signature": {
+          "type": "boolean"
+        },
+        "review_findings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "reviewer_authority": {
+          "type": "string"
+        },
+        "reviewer_identity": {
+          "type": "string"
+        },
+        "secondary_detail_decision_accounting": {
+          "additionalProperties": false,
+          "properties": {
+            "include_as_accepted_limitation": {
+              "type": "integer"
+            },
+            "include_in_revised_meaning": {
+              "type": "integer"
+            },
+            "safely_compressed": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "include_as_accepted_limitation",
+            "include_in_revised_meaning",
+            "safely_compressed"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "accepted_limitation_count",
+        "blocking_findings",
+        "decision",
+        "decision_timestamp",
+        "implementation_accounting",
+        "not_user_signature",
+        "review_findings",
+        "reviewer_authority",
+        "reviewer_identity",
+        "secondary_detail_decision_accounting"
+      ],
+      "type": "object"
+    },
+    "input_bindings": {
+      "additionalProperties": false,
+      "properties": {
+        "authority_record": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        },
+        "delegated_authority_mapping": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        },
+        "implementation_bundle": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        },
+        "implementation_parity_manifest": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        },
+        "launch_calibration_population": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        },
+        "launch_risk_register": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "authority_record",
+        "delegated_authority_mapping",
+        "implementation_bundle",
+        "implementation_parity_manifest",
+        "launch_calibration_population",
+        "launch_risk_register"
+      ],
+      "type": "object"
+    },
+    "next_required_state": {
+      "type": "string"
+    },
+    "reviewed_implementation": {
+      "additionalProperties": false,
+      "properties": {
+        "branch": {
+          "type": "string"
+        },
+        "cached_origin_main": {
+          "type": "string"
+        },
+        "commit_tree_sha": {
+          "type": "string"
+        },
+        "parent_commit": {
+          "type": "string"
+        },
+        "repository": {
+          "type": "string"
+        },
+        "review_archive_final_file_sha256": {
+          "type": "string"
+        },
+        "review_manifest_final_file_sha256": {
+          "type": "string"
+        },
+        "reviewed_commit": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "branch",
+        "cached_origin_main",
+        "commit_tree_sha",
+        "parent_commit",
+        "repository",
+        "review_archive_final_file_sha256",
+        "review_manifest_final_file_sha256",
+        "reviewed_commit"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "subject": {
+      "additionalProperties": false,
+      "properties": {
+        "action_count": {
+          "type": "integer"
+        },
+        "chamber": {
+          "type": "string"
+        },
+        "congress": {
+          "type": "integer"
+        },
+        "issue_id": {
+          "type": "string"
+        },
+        "member_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "action_count",
+        "chamber",
+        "congress",
+        "issue_id",
+        "member_id"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "accepted_internal_state",
+    "artifact_id",
+    "authorization",
+    "carried_launch_risks",
+    "content_subject_sha256",
+    "decision",
+    "input_bindings",
+    "next_required_state",
+    "reviewed_implementation",
+    "schema_version",
+    "subject"
+  ],
+  "type": "object"
+}
