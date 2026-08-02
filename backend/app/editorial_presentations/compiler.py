@@ -43,9 +43,7 @@ AUTHORING_PROVENANCE_FIELDS = (
 RECOGNIZED_REVIEWER_AUTHORITIES = {
     "editorial_publication_review_authority_v1",
 }
-APPROVAL_RECEIPT_ID = re.compile(
-    r"^approval-receipt:[a-z0-9][a-z0-9._-]{2,127}$"
-)
+APPROVAL_RECEIPT_ID = re.compile(r"^approval-receipt:[a-z0-9][a-z0-9._-]{2,127}$")
 REVIEWER_ID = re.compile(r"^reviewer:[a-z0-9][a-z0-9._-]{2,127}$")
 ANALYTICAL_TIERS = PUBLIC_TIERS - {"receipts_only"}
 BENCHMARK_STATUSES = {"not_promoted", "gold_benchmark"}
@@ -173,9 +171,7 @@ def validate_trusted_action_source_contract(
         "source_authorities",
         "actions",
     }:
-        raise EditorialPresentationError(
-            "trusted action/source contract is malformed"
-        )
+        raise EditorialPresentationError("trusted action/source contract is malformed")
     if (
         contract["schema_version"] != "editorial_action_source_contract_v1"
         or not isinstance(contract["contract_id"], str)
@@ -203,9 +199,7 @@ def validate_trusted_action_source_contract(
         )
     for source_id, source_type in authorities.items():
         if not source_id or not isinstance(source_type, str) or not source_type:
-            raise EditorialPresentationError(
-                "trusted source authority is invalid"
-            )
+            raise EditorialPresentationError("trusted source authority is invalid")
     for action_id, requirement in actions.items():
         if (
             not isinstance(action_id, str)
@@ -259,15 +253,11 @@ def _prepare_provenance(
             "authoring provenance must contain exactly the permitted fields"
         )
     result = copy.deepcopy(provenance)
-    result["review_limitations"] = canonical_limitations(
-        result["review_limitations"]
-    )
+    result["review_limitations"] = canonical_limitations(result["review_limitations"])
     contract_sha256 = validate_trusted_action_source_contract(
         trusted_action_source_contract
     )
-    result["action_source_contract_id"] = trusted_action_source_contract[
-        "contract_id"
-    ]
+    result["action_source_contract_id"] = trusted_action_source_contract["contract_id"]
     result["action_source_contract_sha256"] = contract_sha256
     return result
 
@@ -342,9 +332,7 @@ def _semantic_tier_from_parts(
 
 def semantic_tier_for_artifact(artifact: dict[str, Any]) -> str:
     meaning = artifact["compiled_semantic_meaning"]
-    propositions = {
-        item["proposition_id"]: item for item in meaning["propositions"]
-    }
+    propositions = {item["proposition_id"]: item for item in meaning["propositions"]}
     return _semantic_tier_from_parts(
         coverage=artifact["evidence_metadata"]["coverage"],
         primary_propositions=[
@@ -361,19 +349,44 @@ def _presentation_boundaries(
     member: dict[str, Any],
     propositions: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
+    planned_action_ids = {
+        action_id
+        for proposition in propositions
+        for action_id in proposition["evidence_action_ids"]
+    }
+    planned_episode_ids = {
+        episode_id
+        for proposition in propositions
+        for episode_id in proposition["evidence_episode_ids"]
+    }
+    complete_action_ids = {
+        action_id
+        for proposition in member["proposition_graph"]["propositions"]
+        for action_id in proposition["evidence_action_ids"]
+    }
+    complete_action_ids.update(
+        action_id
+        for boundary in member["composition"]["method_boundaries"]
+        for action_id in boundary.get("action_ids", [])
+    )
+    complete_episode_ids = {
+        episode_id
+        for proposition in member["proposition_graph"]["propositions"]
+        for episode_id in proposition["evidence_episode_ids"]
+    }
+    full_record_boundary = (
+        member["coverage"]["missing_evidence_actions"] == 0
+        and member["coverage"]["partial_episodes"] == 0
+        and member["coverage"]["complete_episodes"] == len(complete_episode_ids)
+        and member["coverage"]["resolved_eligible_actions"]
+        + member["coverage"]["context_only_control_actions"]
+        == len(complete_action_ids)
+    )
     action_ids = sorted(
-        {
-            action_id
-            for proposition in propositions
-            for action_id in proposition["evidence_action_ids"]
-        }
+        complete_action_ids if full_record_boundary else planned_action_ids
     )
     episode_ids = sorted(
-        {
-            episode_id
-            for proposition in propositions
-            for episode_id in proposition["evidence_episode_ids"]
-        }
+        complete_episode_ids if full_record_boundary else planned_episode_ids
     )
     suffix = (
         f"{identity['member_id']}:{identity['issue_id']}:{identity['scope']}"
@@ -405,8 +418,8 @@ def source_constraint_boundaries(
     return [
         {
             "boundary_id": item["constraint_id"],
-            "boundary_type": item["constraint_type"],
-            "presentation_target": item["presentation_target"],
+            "boundary_type": item.get("constraint_type", "source_render_constraint"),
+            "presentation_target": item.get("presentation_target", "source_note"),
             "action_ids": copy.deepcopy(item.get("action_ids", [])),
             "episode_ids": copy.deepcopy(item.get("episode_ids", [])),
         }
@@ -420,9 +433,7 @@ def _mapping_ids(wording: dict[str, Any]) -> list[str]:
     def collect(record: Any) -> None:
         if isinstance(record, dict):
             mapping = record.get("mapping")
-            if isinstance(mapping, dict) and isinstance(
-                mapping.get("mapping_id"), str
-            ):
+            if isinstance(mapping, dict) and isinstance(mapping.get("mapping_id"), str):
                 result.append(mapping["mapping_id"])
             for value in record.values():
                 collect(value)
@@ -444,11 +455,13 @@ def _validate_analytical_text(
     receipt_refs: set[str],
     trusted_action_source_contract: dict[str, Any] | None,
 ) -> None:
-    if set(record) != {"statement_id", "text", "mapping"} or not isinstance(
-        record["statement_id"], str
-    ) or not record["statement_id"].strip() or not isinstance(
-        record["text"], str
-    ) or not record["text"].strip():
+    if (
+        set(record) != {"statement_id", "text", "mapping"}
+        or not isinstance(record["statement_id"], str)
+        or not record["statement_id"].strip()
+        or not isinstance(record["text"], str)
+        or not record["text"].strip()
+    ):
         raise EditorialPresentationError(
             "analytical wording must contain a statement ID, text, and an explicit mapping"
         )
@@ -464,9 +477,7 @@ def _validate_analytical_text(
         "receipt_refs",
     }
     if set(mapping) != required or not mapping["mapping_id"]:
-        raise EditorialPresentationError(
-            "analytical wording mapping is incomplete"
-        )
+        raise EditorialPresentationError("analytical wording mapping is incomplete")
     proposition_ids = set(mapping["proposition_ids"])
     boundary_ids = set(mapping["boundary_ids"])
     if bool(proposition_ids) == bool(boundary_ids):
@@ -484,10 +495,9 @@ def _validate_analytical_text(
         *(boundaries[item] for item in boundary_ids),
     ]
     targets = {item["presentation_target"] for item in referenced}
-    if (
-        mapping["presentation_target"] not in allowed_targets
-        or targets != {mapping["presentation_target"]}
-    ):
+    if mapping["presentation_target"] not in allowed_targets or targets != {
+        mapping["presentation_target"]
+    }:
         raise EditorialPresentationError(
             "analytical wording is mapped to the wrong presentation section"
         )
@@ -499,9 +509,7 @@ def _validate_analytical_text(
     expected_episodes = {
         episode_id
         for item in referenced
-        for episode_id in item.get(
-            "evidence_episode_ids", item.get("episode_ids", [])
-        )
+        for episode_id in item.get("evidence_episode_ids", item.get("episode_ids", []))
     }
     if set(mapping["action_ids"]) != expected_actions:
         raise EditorialPresentationError(
@@ -539,9 +547,7 @@ def _validate_analytical_text(
                 f"analytical wording lacks source requirements for {action_id}"
             )
         permitted_sources.update(requirement.get("vote_source_refs", []))
-        permitted_sources.update(
-            requirement.get("action_meaning_source_refs", [])
-        )
+        permitted_sources.update(requirement.get("action_meaning_source_refs", []))
     if (
         not mapped_sources <= set(authorities)
         or not mapped_sources <= permitted_sources
@@ -556,15 +562,12 @@ def _validate_analytical_text(
                 f"analytical wording lacks source requirements for {action_id}"
             )
         vote_sources = set(requirement.get("vote_source_refs", []))
-        meaning_sources = set(
-            requirement.get("action_meaning_source_refs", [])
-        )
+        meaning_sources = set(requirement.get("action_meaning_source_refs", []))
         required_types = set(
             requirement.get("required_action_meaning_source_types", [])
         )
         mapped_meaning_types = {
-            authorities[source]
-            for source in mapped_sources & meaning_sources
+            authorities[source] for source in mapped_sources & meaning_sources
         }
         if (
             not vote_sources
@@ -693,9 +696,7 @@ def validate_editorial_wording(
         raise EditorialPresentationError(
             "every analytical display field requires a unique mapping identity"
         )
-    statement_ids = [
-        item["statement_id"] for item in _mapped_records(wording)
-    ]
+    statement_ids = [item["statement_id"] for item in _mapped_records(wording)]
     if len(statement_ids) != len(set(statement_ids)):
         raise EditorialPresentationError(
             "every analytical display field requires a unique statement identity"
@@ -722,9 +723,7 @@ def expected_approval_subject(
     presentation_content = {
         "schema_version": schema_version,
         "artifact_identity": copy.deepcopy(identity),
-        "compiled_semantic_meaning": copy.deepcopy(
-            compiled_semantic_meaning
-        ),
+        "compiled_semantic_meaning": copy.deepcopy(compiled_semantic_meaning),
         "editorial_wording": copy.deepcopy(wording),
         "evidence_metadata": copy.deepcopy(evidence_metadata),
         "evidence_provenance": provenance_identity,
@@ -740,25 +739,18 @@ def expected_approval_subject(
         "compiled_ir_sha256": compiled_ir_sha256,
         "reviewed_wording_sha256": reviewed_wording_digest(wording),
         "mapping_set_sha256": mapping_set_digest(wording),
-        "evidence_provenance_sha256": canonical_digest(
-            provenance_identity
-        ),
-        "action_source_contract_id": provenance_identity[
-            "action_source_contract_id"
-        ],
+        "evidence_provenance_sha256": canonical_digest(provenance_identity),
+        "action_source_contract_id": provenance_identity["action_source_contract_id"],
         "action_source_contract_sha256": provenance_identity[
             "action_source_contract_sha256"
         ],
         "limitation_ids": [
-            item["limitation_id"]
-            for item in provenance_identity["review_limitations"]
+            item["limitation_id"] for item in provenance_identity["review_limitations"]
         ],
         "limitations_sha256": limitations_digest(
             provenance_identity["review_limitations"]
         ),
-        "presentation_content_sha256": canonical_digest(
-            presentation_content
-        ),
+        "presentation_content_sha256": canonical_digest(presentation_content),
         "statement_ids": _statement_ids(wording),
         "mapping_ids": sorted(mapping_ids),
     }
@@ -808,30 +800,27 @@ def detached_receipt_matches(
     limitations = receipt.get("limitations_acknowledged", [])
     timestamp = receipt.get("decision_timestamp")
     try:
-        parsed_timestamp = datetime.fromisoformat(
-            timestamp.replace("Z", "+00:00")
+        parsed_timestamp = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+        normalized_receipt_limitations = canonical_limitations(
+            [
+                {
+                    "limitation_id": item.get("limitation_id"),
+                    "text": item.get("text"),
+                }
+                for item in limitations
+                if isinstance(item, dict)
+            ]
         )
-        normalized_receipt_limitations = canonical_limitations([
-            {
-                "limitation_id": item.get("limitation_id"),
-                "text": item.get("text"),
-            }
-            for item in limitations
-            if isinstance(item, dict)
-        ])
     except (AttributeError, ValueError, EditorialPresentationError):
         return False
     return bool(
-        receipt.get("schema_version")
-        == "editorial_public_issue_approval_receipt_v1"
+        receipt.get("schema_version") == "editorial_public_issue_approval_receipt_v1"
         and isinstance(receipt.get("receipt_id"), str)
         and APPROVAL_RECEIPT_ID.fullmatch(receipt["receipt_id"])
         and receipt.get("status") == "approved"
         and receipt.get("binding") == expected_subject
-        and receipt.get("approved_statement_ids")
-        == expected_subject["statement_ids"]
-        and receipt.get("approved_mapping_ids")
-        == expected_subject["mapping_ids"]
+        and receipt.get("approved_statement_ids") == expected_subject["statement_ids"]
+        and receipt.get("approved_mapping_ids") == expected_subject["mapping_ids"]
         and isinstance(reviewer, dict)
         and set(reviewer) == {"reviewer_id", "authority"}
         and isinstance(reviewer.get("reviewer_id"), str)
@@ -839,8 +828,7 @@ def detached_receipt_matches(
         and reviewer.get("authority") in RECOGNIZED_REVIEWER_AUTHORITIES
         and parsed_timestamp.tzinfo is not None
         and isinstance(limitations, list)
-        and receipt.get("limitations_sha256")
-        == expected_subject["limitations_sha256"]
+        and receipt.get("limitations_sha256") == expected_subject["limitations_sha256"]
         and [item["limitation_id"] for item in normalized_receipt_limitations]
         == expected_subject["limitation_ids"]
         and limitations_digest(normalized_receipt_limitations)
@@ -901,9 +889,7 @@ def build_approval_subject(
     boundaries = _presentation_boundaries(identity, member, planned)
     mapping_boundaries = [
         *boundaries,
-        *source_constraint_boundaries(
-            snapshot.get("source_render_constraints", [])
-        ),
+        *source_constraint_boundaries(snapshot.get("source_render_constraints", [])),
     ]
     provenance = _prepare_provenance(
         editorial_input["provenance"],
@@ -933,12 +919,8 @@ def build_approval_subject(
         }
     )
     meaning = {
-        "primary_proposition_ids": copy.deepcopy(
-            plan["primary_proposition_ids"]
-        ),
-        "limiting_proposition_ids": copy.deepcopy(
-            plan["limiting_proposition_ids"]
-        ),
+        "primary_proposition_ids": copy.deepcopy(plan["primary_proposition_ids"]),
+        "limiting_proposition_ids": copy.deepcopy(plan["limiting_proposition_ids"]),
         "propositions": planned,
         "source_render_constraints": copy.deepcopy(
             snapshot.get("source_render_constraints", [])
@@ -1011,9 +993,7 @@ def _copy_display_wording(
         "policy_trajectories": [
             section_item(item) for item in wording.get("policy_trajectories", [])
         ],
-        "limitations": [
-            section_item(item) for item in wording.get("limitations", [])
-        ],
+        "limitations": [section_item(item) for item in wording.get("limitations", [])],
     }
 
 
@@ -1054,15 +1034,12 @@ def compile_public_issue_presentation(
         raise EditorialPresentationError("compiled conclusion plan is unresolved")
 
     planned_propositions = [
-        copy.deepcopy(propositions[proposition_id])
-        for proposition_id in all_plan_ids
+        copy.deepcopy(propositions[proposition_id]) for proposition_id in all_plan_ids
     ]
     boundaries = _presentation_boundaries(identity, member, planned_propositions)
     mapping_boundaries = [
         *boundaries,
-        *source_constraint_boundaries(
-            snapshot.get("source_render_constraints", [])
-        ),
+        *source_constraint_boundaries(snapshot.get("source_render_constraints", [])),
     ]
     wording = editorial_input["editorial_wording"]
     provenance_input = _prepare_provenance(
@@ -1104,12 +1081,8 @@ def compile_public_issue_presentation(
         }
     )
     meaning = {
-        "primary_proposition_ids": copy.deepcopy(
-            plan["primary_proposition_ids"]
-        ),
-        "limiting_proposition_ids": copy.deepcopy(
-            plan["limiting_proposition_ids"]
-        ),
+        "primary_proposition_ids": copy.deepcopy(plan["primary_proposition_ids"]),
+        "limiting_proposition_ids": copy.deepcopy(plan["limiting_proposition_ids"]),
         "propositions": planned_propositions,
         "source_render_constraints": copy.deepcopy(
             snapshot.get("source_render_constraints", [])
@@ -1146,20 +1119,12 @@ def compile_public_issue_presentation(
     )
     provenance = copy.deepcopy(provenance_input)
     provenance["compiled_ir_sha256"] = compiled_digest
-    provenance["reviewed_wording_sha256"] = subject[
-        "reviewed_wording_sha256"
-    ]
+    provenance["reviewed_wording_sha256"] = subject["reviewed_wording_sha256"]
     provenance["mapping_set_sha256"] = subject["mapping_set_sha256"]
-    provenance["evidence_provenance_sha256"] = subject[
-        "evidence_provenance_sha256"
-    ]
-    provenance["presentation_content_sha256"] = subject[
-        "presentation_content_sha256"
-    ]
+    provenance["evidence_provenance_sha256"] = subject["evidence_provenance_sha256"]
+    provenance["presentation_content_sha256"] = subject["presentation_content_sha256"]
     provenance["limitations_sha256"] = subject["limitations_sha256"]
-    provenance["approval_subject_sha256"] = subject[
-        "approval_subject_sha256"
-    ]
+    provenance["approval_subject_sha256"] = subject["approval_subject_sha256"]
     provenance["compiler_receipt"] = copy.deepcopy(subject)
 
     artifact = {

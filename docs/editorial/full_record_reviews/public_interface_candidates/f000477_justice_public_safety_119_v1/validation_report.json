@@ -1,0 +1,56 @@
+{
+  "artifact_id": "m6-validation:f000477:justice_public_safety:119:v1",
+  "schema_version": "m6_public_interface_validation_report_v1",
+  "status": "passed_with_disclosed_unrelated_baseline_failures",
+  "database_access": false,
+  "evidence_acquisition": false,
+  "network_access": false,
+  "production_effects": false,
+  "remaining_m6_major_or_critical_findings": 0,
+  "successful_commands": [
+    {"command": "supported offline database preflight with all ordinary/disposable variables set to postgresql://invalid", "exit_code": 0, "result": "invalid_sentinel; disposable integration disabled"},
+    {"command": "python scripts/validate_full_issue_universe_authority.py", "exit_code": 0, "result": "37 actions; exact authority identity passed"},
+    {"command": "python scripts/validate_foushee_justice_semantic_ir_m5r1.py", "exit_code": 0, "result": "M1-M5-R1 chain, compiler reconstruction, 35/2 accounting, 32 episodes, 23 behavioral propositions, zero corrected overlap rows"},
+    {"command": "python scripts/validate_editorial_semantic_ir.py", "exit_code": 0, "result": "12 accepted references, 4 accepted held-out references, 4 held-out"},
+    {"command": "python scripts/verify_foushee_justice_launch_review_m6.py", "exit_code": 0, "result": "22 mappings, 37 actions, 4 primary patterns, 8 screenshots, 4 calibration samples, 4 risks, selector isolated"},
+    {"command": "focused public presentation, API serializer, and M5-R1 pytest suite", "exit_code": 0, "result": "100 passed"},
+    {"command": "M6 adversarial pytest suite outside Windows filesystem sandbox", "exit_code": 0, "result": "13 passed"},
+    {"command": "node --test lib/*.test.mjs", "exit_code": 0, "result": "110 passed"},
+    {"command": "npm run test:m6-review", "exit_code": 0, "result": "10 passed; screenshots generated"},
+    {"command": "npm run test:ir-presentation", "exit_code": 0, "result": "4 passed"},
+    {"command": "npm run test:frontend-pass-a", "exit_code": 0, "result": "15 passed, 1 optional screenshot test skipped"},
+    {"command": "npm run build", "exit_code": 0, "result": "production build compiled, typechecked, prerendered, and traced"},
+    {"command": "npm run lint", "exit_code": 0, "result": "0 errors; 8 unrelated existing hook-dependency warnings"},
+    {"command": "python -m compileall -q backend scripts", "exit_code": 0, "result": "passed with inaccessible historical temp-directory notices"},
+    {"command": "Ruff check and focused format check", "exit_code": 0, "result": "passed"},
+    {"command": "JSON parse, credential scan, git diff --check", "exit_code": 0, "result": "19 JSON files parsed; no credential-like assignment found; diff check passed"}
+  ],
+  "broad_safe_offline_attempt": {
+    "command": "python -m pytest backend/tests -q with invalid database sentinels",
+    "exit_code": 1,
+    "accounting": {"passed": 1221, "failed": 40, "errors": 10},
+    "m6_failures": 0,
+    "unrelated_baseline_groups": {
+      "database_only_or_publication_postgres": "invalid sentinel intentionally prevented connections",
+      "missing_house_or_senate_source_fixtures": "repository-local XML fixture families are absent",
+      "source_manifest_exact_byte_mismatch": "pre-existing ZIP population manifest hash mismatch",
+      "stale_api_environment_expectations": "two existing API tests assume DATABASE_URL is unset rather than the required invalid sentinel"
+    }
+  },
+  "incorrect_initial_commands_and_corrections": [
+    {"initial": "python -m unittest from repository root", "failure": "backend app module was not on Python path", "correction": "used PYTHONPATH=backend;. and pytest", "corrected_result": "52 then 100 focused tests passed"},
+    {"initial": "pytest adversarial suite in default and repository sandbox temp roots", "failure": "Windows denied pytest access to generated temp directories", "correction": "reran exact suite outside the filesystem sandbox", "corrected_result": "13 passed"},
+    {"initial": "overlapping frontend build while visual-review server was active", "failure": "duplicate Next processes contended and did not return an exit code", "correction": "stopped only exact verified local process IDs and ran one clean build", "corrected_result": "exit 0"},
+    {"initial": "independent in-app browser navigation", "failure": "the temporary background server did not become reachable", "correction": "used the passing loopback Playwright suite and independently inspected generated desktop and mobile image bytes", "corrected_result": "rendered evidence accepted"}
+  ],
+  "sandbox_restrictions": [
+    "Chromium and Next local-server spawning required approved execution outside the filesystem sandbox.",
+    "Pytest temporary directories were inaccessible inside the Windows filesystem sandbox; the exact adversarial suite passed with approved isolated execution.",
+    "Historical inaccessible backend test temporary directories emitted enumeration and compileall notices and were not modified."
+  ],
+  "intentionally_skipped": [
+    "Production and disposable PostgreSQL integration tests: no database connection or data access was authorized.",
+    "Publication activation, persistence, registry, deployment, remote HTTP, and evidence-acquisition tests: outside milestone authority.",
+    "Optional Frontend Pass A screenshot capture test: fixture flag not requested for that historical suite; M6 captured all required evidence separately."
+  ]
+}

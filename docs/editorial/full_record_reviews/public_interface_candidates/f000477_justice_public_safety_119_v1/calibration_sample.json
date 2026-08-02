@@ -1,0 +1,209 @@
+{
+  "artifact_id": "launch-calibration:f000477:justice_public_safety:119:v1",
+  "content_subject_sha256": "3282355ab57b86b547ffe6eb04dbf16865f9d9c1099f8cc4ee4d2110fd740f04",
+  "excluded_objects": [
+    "house:119:1:128",
+    "house:119:2:155",
+    "house:119:2:278",
+    "prop:7a5b23c610dc467e"
+  ],
+  "freeze_artifact_id": "public-interface-freeze:f000477:justice_public_safety:119:v1",
+  "freeze_content_subject_sha256": "2167fe967e42aca292bac399ddb74fe99d727fdcc7583dc19e8be5f844237192",
+  "sample_count": 4,
+  "samples": [
+    {
+      "accepted_internal_interpretation": "The House choice was whether to pass H.R. 5107, repealing most of D.C.'s 2022 Comprehensive Policing and Justice Reform Amendment Act and reviving prior law, while retaining subtitles S and A of title I of that Act.",
+      "calibration_question": "Does this receipt state the exact House choice clearly without broadening the policy position?",
+      "eligibility": "Internally implemented, source-resolved, not held, and no major or critical finding.",
+      "episode_and_proposition_context": {
+        "episode_id": "dc-policing-reform-repeal",
+        "proposition_ids": [
+          "prop:354da734fec2fcf6",
+          "prop:7a5b23c610dc467e"
+        ]
+      },
+      "object_id": "house:119:1:299",
+      "object_type": "action_interpretation",
+      "original_evidence": {
+        "meaning_sources": [
+          {
+            "source_id": "congress_text:119:hr:5107:eh",
+            "url": "https://www.congress.gov/"
+          }
+        ],
+        "member_action": "nay",
+        "vote_source": [
+          {
+            "source_id": "clerk:119:1:299",
+            "url": "https://clerk.house.gov/evs/2025/roll299.xml"
+          }
+        ]
+      },
+      "rendered_public_wording": "The House choice was whether to pass H.R. 5107, repealing most of D.C.'s 2022 Comprehensive Policing and Justice Reform Amendment Act and reviving prior law, while retaining subtitles S and A of title I of that Act.",
+      "sample_id": "calibration:action",
+      "selection_proof": "09431391933a64f88c92f8c0d4134c4b3bfea3817cbe9f8121254360eb3d2214",
+      "ui_location": "exact-action ledger"
+    },
+    {
+      "accepted_internal_interpretation": "Only the exact House choices listed for: Whether to require detention and State enforcement remedies for covered inadmissible noncitizens connected to specified offenses.",
+      "calibration_question": "Does the interface preserve one episode without multiplying analytical weight?",
+      "eligibility": "Multi-action, internally cleared, source-resolved, and not held.",
+      "episode_and_proposition_context": {
+        "action_ids": [
+          "house:119:1:6",
+          "house:119:1:23"
+        ],
+        "episode_id": "laken-riley-detention-enforcement"
+      },
+      "object_id": "laken-riley-detention-enforcement",
+      "object_type": "multi_action_episode_or_trajectory",
+      "original_evidence": [
+        {
+          "action_id": "house:119:1:6",
+          "action_role": "initial_passage",
+          "implementation_record_content_subject_sha256": "93031f30d9dc8dc4cf17e8449515697a6d492d714f0ed3fc47104a65e422f1e8",
+          "implementation_record_id": "action-interpretation-decision-implementation:house:119:1:6:v1",
+          "implemented_exact_action_meaning": "The House choice was whether to pass H.R. 29, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, or shoplifting offenses. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions.",
+          "implemented_exact_choice_position_effect": "opposes_exact_choice",
+          "interpretation_status": "internally_implemented",
+          "official_action_date": "2025-01-07",
+          "official_member_action": "nay",
+          "source_references": [
+            "clerk:119:1:6",
+            "govinfo_text_119_hr29_eh"
+          ]
+        },
+        {
+          "action_id": "house:119:1:23",
+          "action_role": "later_version",
+          "implementation_record_content_subject_sha256": "56ff1458082fed0feaec215842bb7753023f21c119b2dadc2ce67e1bb2a54f7a",
+          "implementation_record_id": "action-interpretation-decision-implementation:house:119:1:23:v1",
+          "implemented_exact_action_meaning": "The House choice was whether to pass the Senate version of the Laken Riley Act, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or crimes resulting in death or serious bodily injury. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions.",
+          "implemented_exact_choice_position_effect": "opposes_exact_choice",
+          "interpretation_status": "internally_implemented",
+          "official_action_date": "2025-01-22",
+          "official_member_action": "nay",
+          "source_references": [
+            "clerk:119:1:23",
+            "govinfo_text_119_s5_es"
+          ]
+        }
+      ],
+      "rendered_public_wording": "Available through the exact-action ledger as one governed episode.",
+      "sample_id": "calibration:episode",
+      "selection_proof": "b8698f7643b94649c1f7ce7ee15eaec57ed0100712cbfdd5bb790ffee98a3efb",
+      "ui_location": "trajectory or exact-action ledger"
+    },
+    {
+      "accepted_internal_interpretation": {
+        "conclusion_relevance": "primary",
+        "direction": "opposition",
+        "evidence_action_ids": [
+          "house:119:1:68",
+          "house:119:2:218"
+        ],
+        "evidence_episode_ids": [
+          "federal-fraud-payment-integrity-oversight",
+          "pandemic-unemployment-fraud-limitations"
+        ],
+        "mechanism_or_trait_refs": [
+          "fraud_enforcement_capacity_expansion"
+        ],
+        "presentation_target": "repeated_patterns",
+        "proposition_id": "prop:e75e7aebbd7b2d29",
+        "proposition_type": "repeated_pattern",
+        "relationships": {
+          "limited_by": [],
+          "supported_by": []
+        },
+        "semantic_role": "behavioral"
+      },
+      "calibration_question": "Does this pattern remain concrete, neutral, and proportionate to its episodes?",
+      "eligibility": "Primary repeated pattern with no unresolved major or critical finding.",
+      "episode_and_proposition_context": {
+        "limited_by": [],
+        "supported_by": []
+      },
+      "object_id": "prop:e75e7aebbd7b2d29",
+      "object_type": "repeated_pattern",
+      "original_evidence": {
+        "action_ids": [
+          "house:119:1:68",
+          "house:119:2:218"
+        ],
+        "episode_ids": [
+          "federal-fraud-payment-integrity-oversight",
+          "pandemic-unemployment-fraud-limitations"
+        ]
+      },
+      "rendered_public_wording": {
+        "action_ids": [
+          "house:119:1:68",
+          "house:119:2:218"
+        ],
+        "body": "Across two separate episodes, Foushee opposed the reviewed proposals to expand federal payment-integrity oversight and extend the time available to pursue pandemic unemployment fraud.",
+        "direction": "opposition",
+        "heading": "Opposition to expanding fraud-enforcement capacity",
+        "proposition_id": "prop:e75e7aebbd7b2d29"
+      },
+      "sample_id": "calibration:pattern",
+      "selection_proof": "4b53d9ea95edbbde80a31b23398aef51e1602764808a28b46f2508ed6e2380e0",
+      "ui_location": "primary repeated patterns"
+    },
+    {
+      "accepted_internal_interpretation": {
+        "boundary_ids": [],
+        "proposition_ids": [
+          "prop:e75e7aebbd7b2d29"
+        ]
+      },
+      "calibration_question": "Does the displayed sentence stay within the exact mapped meaning and limitation set?",
+      "eligibility": "Exact mapped wording with no held-risk object and no unresolved finding.",
+      "episode_and_proposition_context": {
+        "action_ids": [
+          "house:119:1:68",
+          "house:119:2:218"
+        ],
+        "episode_ids": [
+          "federal-fraud-payment-integrity-oversight",
+          "pandemic-unemployment-fraud-limitations"
+        ]
+      },
+      "object_id": "statement:pattern:prop:e75e7aebbd7b2d29:heading",
+      "object_type": "presentation_mapping",
+      "original_evidence": {
+        "action_ids": [
+          "house:119:1:68",
+          "house:119:2:218"
+        ],
+        "boundary_ids": [],
+        "episode_ids": [
+          "federal-fraud-payment-integrity-oversight",
+          "pandemic-unemployment-fraud-limitations"
+        ],
+        "mapping_id": "mapping:pattern:prop:e75e7aebbd7b2d29:heading",
+        "presentation_target": "repeated_patterns",
+        "proposition_ids": [
+          "prop:e75e7aebbd7b2d29"
+        ],
+        "receipt_refs": [
+          "full-record-semantic-validation:f000477:justice_public_safety:119:v1"
+        ],
+        "source_refs": [
+          "clerk:119:1:68",
+          "clerk:119:2:218",
+          "govinfo_text_119_hr1156_eh",
+          "govinfo_text_119_hr8312_eh"
+        ]
+      },
+      "rendered_public_wording": "Opposition to expanding fraud-enforcement capacity",
+      "sample_id": "calibration:mapping",
+      "selection_proof": "0f20dabbc8a47f842e066610172a85c8853994fc609e3cba471a230e4349af9d",
+      "ui_location": "repeated_patterns"
+    }
+  ],
+  "schema_version": "blind_launch_calibration_sample_v1",
+  "seed_formula": "SHA256(candidate_content_subject_sha256 + risk_register_content_subject_sha256 + political-fingerprint-launch-calibration-v1)",
+  "seed_sha256": "294f0d6e4e4fe4b7d8b92259de2b54745b11465f16ce0ad067c37bdc139e2f90",
+  "selected_after_freeze": true
+}
