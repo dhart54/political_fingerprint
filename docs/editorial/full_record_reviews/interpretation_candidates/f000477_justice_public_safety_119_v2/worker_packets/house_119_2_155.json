@@ -1,0 +1,122 @@
+{
+  "action_id": "house:119:2:155",
+  "content_subject_sha256": "1dd7c0bf55b8c7aa738ca6a6c516e795caeadef1458b60cbcdc5d2fdcc922601",
+  "cross_domain_limitations": [
+    "surveillance_authority",
+    "fisc_and_court_authority",
+    "civil_liberty_protections"
+  ],
+  "exact_action_identity": "119:s:4465",
+  "house_stage": "suspension_passage",
+  "neutral_methodology": [
+    "inventory_material_provisions_before_drafting",
+    "separate_official_title_from_interpretation",
+    "title_only_prohibited_without_independent_single_mechanism_finding",
+    "exact_choice_only",
+    "preserve_house_stage",
+    "yea_supports_exact_choice_only",
+    "nay_opposes_exact_choice_only",
+    "present_and_not_voting_non_directional",
+    "no_motive_or_broader_issue_inference",
+    "parent_context_cannot_replace_narrow_action",
+    "account_for_material_limits_exceptions_and_retained_provisions",
+    "preserve_ambiguity",
+    "no_safe_candidate_when_required"
+  ],
+  "official_action_date": "2026-04-30",
+  "official_member_action": "nay",
+  "operative_text_versions": [
+    "es"
+  ],
+  "packet_id": "action-interpretation-worker-packet:house:119:2:155:v2",
+  "schema_version": "action_interpretation_worker_packet_v2",
+  "sources": [
+    {
+      "deterministic_extraction": {
+        "projection": {
+          "action_date": "2026-04-30",
+          "action_id": "house:119:2:155",
+          "chamber": "house",
+          "congress": 119,
+          "house_action_stage": "suspension_passage",
+          "measure_identity": "119:s:4465",
+          "member_action": "nay",
+          "official_action_description": "On Motion to Suspend the Rules and Pass",
+          "operative_content_sha256": null,
+          "raw_provenance_sha256": "5c5763bb89f86d92a86dbb09c6ce916d40f14db699bf5f180b68f06be3b3a8c9",
+          "roll_number": 155,
+          "schema_version": "neutral_m3_source_projection_v1",
+          "source_url": "https://clerk.house.gov/evs/2026/roll155.xml",
+          "text_version": "2026-04-30"
+        }
+      },
+      "neutral_projection_sha256": "a2f81dfda147cf571b5903174a10a40f130766777602f5b05301601c718f56d0",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_155.xml",
+      "raw_sha256": "5c5763bb89f86d92a86dbb09c6ce916d40f14db699bf5f180b68f06be3b3a8c9",
+      "role": "member_action_evidence",
+      "source_id": "clerk:119:2:155",
+      "source_type": "house_clerk_roll_call",
+      "text_version": "2026-04-30"
+    },
+    {
+      "deterministic_extraction": {
+        "document_title": "110 S4465 ES: To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes.",
+        "extraction_engine": "python_xml_elementtree_v1",
+        "extraction_limitation": null,
+        "official_title": "To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes.",
+        "section_headings": [
+          "Extension of authorities of title VII of the Foreign Intelligence Surveillance Act of 1978",
+          "Extension of repeal date of title VII",
+          "Effective date"
+        ],
+        "structured_sections": [
+          {
+            "enum": "1.",
+            "header": "Extension of authorities of title VII of the Foreign Intelligence Surveillance Act of 1978",
+            "text": "1.Extension of authorities of title VII of the Foreign Intelligence Surveillance Act of 1978(a)Extension of repeal date of title VIISection 403(b) of the FISA Amendments Act of 2008 (Public Law 110–261) is amended—(1)in paragraph (1) (50 U.S.C. 1881 note), by striking April 30, 2026 and inserting June 12, 2026; and(2)in paragraph (2) (18 U.S.C. 2511 note), in the matter preceding subparagraph (A), by striking April 30, 2026 and inserting June 12, 2026.(b)Effective dateThe amendments made by this section shall take effect on the earlier of the date of the enactment of this Act or April 29, 2026."
+          }
+        ]
+      },
+      "neutral_projection_sha256": "b61d4f623893bc6d010cd566366b1e7521147e312cac36c476780ba21914dde2",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/56e0385ad632b4d058e2a66fa6a4f327853b38a088da644b804a43342fea6106.xml",
+      "raw_sha256": "56e0385ad632b4d058e2a66fa6a4f327853b38a088da644b804a43342fea6106",
+      "role": "operative_content_interpretation_input",
+      "source_id": "govinfo_text_119_s4465_es",
+      "source_type": "govinfo_bill_text",
+      "text_version": "es"
+    }
+  ],
+  "worker_input_allowlist": [
+    "action_id",
+    "official_action_date",
+    "house_stage",
+    "official_member_action",
+    "exact_action_identity",
+    "neutral_projections",
+    "operative_content",
+    "cross_domain_limitations",
+    "neutral_methodology",
+    "materiality_rubric"
+  ],
+  "worker_input_forbidden": [
+    "accepted_benchmark_interpretations",
+    "accepted_benchmark_text",
+    "advocacy",
+    "benchmark_conclusion",
+    "benchmark_membership",
+    "cosponsor_party",
+    "episode_membership",
+    "generic_bill_metadata",
+    "member_party",
+    "news",
+    "other_action_candidates",
+    "partisan_descriptions",
+    "political_commentary",
+    "public_language",
+    "semantic_ir",
+    "sponsor_party",
+    "synthesis_outcomes",
+    "v1_action_candidates",
+    "v1_adversarial_reviews"
+  ]
+}

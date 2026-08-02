@@ -1,0 +1,125 @@
+{
+  "action_id": "house:119:2:234",
+  "content_subject_sha256": "128f14688b7e97747fa4674eed86e2b3df0204446626d33bea1ccaf5670bc8ed",
+  "cross_domain_limitations": [],
+  "exact_action_identity": "119:hr:3106",
+  "house_stage": "suspension_passage",
+  "neutral_methodology": [
+    "inventory_material_provisions_before_drafting",
+    "separate_official_title_from_interpretation",
+    "title_only_prohibited_without_independent_single_mechanism_finding",
+    "exact_choice_only",
+    "preserve_house_stage",
+    "yea_supports_exact_choice_only",
+    "nay_opposes_exact_choice_only",
+    "present_and_not_voting_non_directional",
+    "no_motive_or_broader_issue_inference",
+    "parent_context_cannot_replace_narrow_action",
+    "account_for_material_limits_exceptions_and_retained_provisions",
+    "preserve_ambiguity",
+    "no_safe_candidate_when_required"
+  ],
+  "official_action_date": "2026-07-13",
+  "official_member_action": "yea",
+  "operative_text_versions": [
+    "eh"
+  ],
+  "packet_id": "action-interpretation-worker-packet:house:119:2:234:v2",
+  "schema_version": "action_interpretation_worker_packet_v2",
+  "sources": [
+    {
+      "deterministic_extraction": {
+        "projection": {
+          "action_date": "2026-07-13",
+          "action_id": "house:119:2:234",
+          "chamber": "house",
+          "congress": 119,
+          "house_action_stage": "suspension_passage",
+          "measure_identity": "119:hr:3106",
+          "member_action": "yea",
+          "official_action_description": "On Motion to Suspend the Rules and Pass",
+          "operative_content_sha256": null,
+          "raw_provenance_sha256": null,
+          "roll_number": 234,
+          "schema_version": "neutral_m3_source_projection_v1",
+          "source_url": "https://clerk.house.gov/evs/2026/roll234.xml",
+          "text_version": "2026-07-13"
+        }
+      },
+      "neutral_projection_sha256": "a28fad10cb91ed4c27ff9e0a7cca48ffdb2b8e04b852c9a233b0f6cac61a79f3",
+      "raw_path": null,
+      "raw_sha256": null,
+      "role": "member_action_evidence",
+      "source_id": "clerk:119:2:234",
+      "source_type": "house_clerk_roll_call",
+      "text_version": "2026-07-13"
+    },
+    {
+      "deterministic_extraction": {
+        "document_title": "119 HR 3106 EH: Weatherizing Infrastructure in the North and Terrorism Emergency Readiness Act of 2025",
+        "extraction_engine": "python_xml_elementtree_v1",
+        "extraction_limitation": null,
+        "official_title": "To require the Secretary of Homeland Security to conduct a collective response to a terrorism exercise that includes the management of cascading effects on critical infrastructure during times of extreme cold weather, and for other purposes.",
+        "section_headings": [
+          "Short title",
+          "Exercise on terrorist attack during extreme cold",
+          "In general",
+          "Exercise requirements",
+          "Report"
+        ],
+        "structured_sections": [
+          {
+            "enum": "1.",
+            "header": "Short title",
+            "text": "1.Short titleThis Act may be cited as the Weatherizing Infrastructure in the North and Terrorism Emergency Readiness Act of 2025."
+          },
+          {
+            "enum": "2.",
+            "header": "Exercise on terrorist attack during extreme cold",
+            "text": "2.Exercise on terrorist attack during extreme cold (a)In generalIn addition to, or as part of exercise programs currently carried out by the Department of Homeland Security, to enhance domestic preparedness for terrorism, promote the dissemination of homeland security information, and test the homeland security posture of the United States, the Secretary of Homeland Security, acting through appropriate offices and components of the Department, shall develop and conduct a collective response to terrorism exercise that includes management of cascading effects on critical infrastructure (as such term is defined in section 1016(e) of Public Law 107–56 (42 U.S.C. 5195c(e))) in accordance with the requirements relating to a scenario specified in subsection (b). (b)Exercise requirementsThe requirements relating to a scenario specified in this subsection are the following: (1)An extreme cold weather event, such as an event caused by a polar vortex, with respect to access to critical services. (2)Any cascading effects on critical infrastructure. (3)How the effects of a successful terrorist attack against critical infrastructure could be mitigated by emergency managers, State officials, and appropriate private sector and community stakeholders. (4)How the resilience of communities that could be impacted by such an attack could be bolstered. (5)Coordination with appropriate Federal departments and agencies, and State, local, Tribal, and territorial agencies. (6)Coordination with appropriate private sector and community stakeholders. (c)ReportNot later than 60 days after the completion of the exercise required under subsection (a), the Secretary of Homeland Security shall, consistent with the protection of classified information, submit to the Committee on Homeland Security of the House of Representatives and the Committee on Homeland Security and Governmental Affairs of the Senate an after-action report presenting the initial findings of such exercise, any immediate and longer-term plans for incorporating lessons learned into future operations of the Department of Homeland Security, and any proposed legislative changes informed by such exercise."
+          }
+        ]
+      },
+      "neutral_projection_sha256": "bda738e00778d49345031023d76df96667d396a8fff6d9a6dd2c5e6432a7822b",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/a6dc072062d86c0f73bbc7f2ca16c9cce70612d743fc7b794dc3bc690d41fd92_BILLS-119hr3106eh.xml",
+      "raw_sha256": "a6dc072062d86c0f73bbc7f2ca16c9cce70612d743fc7b794dc3bc690d41fd92",
+      "role": "operative_content_interpretation_input",
+      "source_id": "congress_text:119:hr:3106:eh",
+      "source_type": "congress_gov_bill_text",
+      "text_version": "eh"
+    }
+  ],
+  "worker_input_allowlist": [
+    "action_id",
+    "official_action_date",
+    "house_stage",
+    "official_member_action",
+    "exact_action_identity",
+    "neutral_projections",
+    "operative_content",
+    "cross_domain_limitations",
+    "neutral_methodology",
+    "materiality_rubric"
+  ],
+  "worker_input_forbidden": [
+    "accepted_benchmark_interpretations",
+    "accepted_benchmark_text",
+    "advocacy",
+    "benchmark_conclusion",
+    "benchmark_membership",
+    "cosponsor_party",
+    "episode_membership",
+    "generic_bill_metadata",
+    "member_party",
+    "news",
+    "other_action_candidates",
+    "partisan_descriptions",
+    "political_commentary",
+    "public_language",
+    "semantic_ir",
+    "sponsor_party",
+    "synthesis_outcomes",
+    "v1_action_candidates",
+    "v1_adversarial_reviews"
+  ]
+}

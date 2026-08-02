@@ -1,0 +1,85 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/human_decision_template_v2",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "allowed_top_level_decisions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "candidate_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "sample_action_decisions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "allowed_decisions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "decision": {
+            "type": "null"
+          },
+          "does_not_accept_full_batch": {
+            "type": "boolean"
+          },
+          "does_not_authorize_implementation": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "action_id",
+          "allowed_decisions",
+          "decision",
+          "does_not_accept_full_batch",
+          "does_not_authorize_implementation",
+          "notes"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "template_id": {
+      "type": "string"
+    },
+    "top_level_decision": {
+      "type": "null"
+    },
+    "unfilled": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "allowed_top_level_decisions",
+    "candidate_batch_content_subject_sha256",
+    "content_subject_sha256",
+    "non_authorizing",
+    "sample_action_decisions",
+    "schema_version",
+    "template_id",
+    "top_level_decision",
+    "unfilled"
+  ],
+  "title": "human_decision_template_v2",
+  "type": "object"
+}

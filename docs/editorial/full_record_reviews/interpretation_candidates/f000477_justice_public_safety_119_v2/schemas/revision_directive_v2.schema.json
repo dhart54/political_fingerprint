@@ -1,0 +1,122 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/revision_directive_v2",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepts_any_interpretation": {
+      "type": "boolean"
+    },
+    "accepts_any_v1_candidate": {
+      "type": "boolean"
+    },
+    "authority_kind": {
+      "type": "string"
+    },
+    "authority_source": {
+      "type": "string"
+    },
+    "authorizes_canonical_review_state": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "directive_id": {
+      "type": "string"
+    },
+    "frozen_v1_subject_sha256": {
+      "type": "string"
+    },
+    "human_approval": {
+      "type": "boolean"
+    },
+    "required_global_changes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "reviewed_v1_batch_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "systematic_failure_classes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "class": {
+            "type": "string"
+          },
+          "count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "denominator": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "class",
+          "count",
+          "denominator"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "v1_final_file_sha256": {
+      "additionalProperties": false,
+      "properties": {
+        "human_review_dossier.md": {
+          "type": "string"
+        },
+        "parity_manifest.json": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "human_review_dossier.md",
+        "parity_manifest.json"
+      ],
+      "type": "object"
+    },
+    "v1_generalization_state": {
+      "type": "string"
+    },
+    "v1_production_selector_eligibility": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "accepts_any_interpretation",
+    "accepts_any_v1_candidate",
+    "authority_kind",
+    "authority_source",
+    "authorizes_canonical_review_state",
+    "content_subject_sha256",
+    "decision",
+    "directive_id",
+    "frozen_v1_subject_sha256",
+    "human_approval",
+    "required_global_changes",
+    "reviewed_v1_batch_id",
+    "schema_version",
+    "systematic_failure_classes",
+    "v1_final_file_sha256",
+    "v1_generalization_state",
+    "v1_production_selector_eligibility"
+  ],
+  "title": "revision_directive_v2",
+  "type": "object"
+}

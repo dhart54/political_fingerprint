@@ -1,0 +1,62 @@
+{
+  "artifact_id": "action-interpretation-candidate-review-contracts:f000477:justice_public_safety:119:v2",
+  "content_subject_sha256": "8e8577d1bbb743e3f0bdf88d56f7a24e8d396ddbe98686dc0341c31d1423fcaf",
+  "correction_contract": {
+    "benchmark_inaccessible": true,
+    "cycles": 1,
+    "field_level_diff_required": true,
+    "global_failure_classes_only": true
+  },
+  "coverage_reviewer_contract": {
+    "cannot_accept_candidate": true,
+    "independent_from_scope_reviewer": true,
+    "inputs": [
+      "operative text",
+      "material inventory",
+      "candidate meaning",
+      "limits and exceptions"
+    ],
+    "version": "independent_provision_coverage_review_v2"
+  },
+  "materiality_rubric": [
+    "legal conduct authorized, prohibited, required, or funded",
+    "covered people, institutions, offenses, programs, or jurisdictions",
+    "criminal or civil penalties and enforcement powers",
+    "eligibility, detention, release, appointment, reporting, or procedure",
+    "thresholds and triggering conditions",
+    "exceptions, exemptions, defenses, retained provisions, and carve-outs",
+    "effective dates and expiration changes",
+    "implementation bodies, programs, databases, and coordination centers",
+    "exact amendment effect on its parent measure"
+  ],
+  "non_authorizing": true,
+  "primary_worker_contract": {
+    "benchmark_blind": true,
+    "inventory_precedes_drafting": true,
+    "meaning_sentence_range": [
+      1,
+      3
+    ],
+    "official_title_separate_from_interpretation": true,
+    "other_candidate_blind": true,
+    "party_blind": true,
+    "title_only_prohibited_without_independent_single_mechanism_finding": true,
+    "version": "blind_material_provision_action_interpretation_v2"
+  },
+  "schema_version": "action_interpretation_candidate_review_contracts_v2",
+  "scope_reviewer_contract": {
+    "cannot_accept_candidate": true,
+    "checks": [
+      "identity",
+      "stage",
+      "member action",
+      "source support",
+      "Justice scope",
+      "FISA limits",
+      "neutrality",
+      "confidence"
+    ],
+    "independent_from_coverage_reviewer": true,
+    "version": "independent_scope_neutrality_review_v2"
+  }
+}
