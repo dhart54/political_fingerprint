@@ -1,0 +1,367 @@
+{
+  "artifact_id": "semantic-ir-launch-risk-register:f000477:justice_public_safety:119:v2",
+  "carried_m5_register": {
+    "artifact_id": "semantic-ir-launch-risk-register:f000477:justice_public_safety:119:v1",
+    "carried_m4b_register": {
+      "accepted": false,
+      "artifact_id": "launch-review-risk-register:f000477:justice_public_safety:119:m4b:v1",
+      "authorizing": false,
+      "canonical": false,
+      "carried_entry_count": 8,
+      "compact_launch_risk_packet_eligible_count": 8,
+      "content_subject_sha256": "f7a1f7914e86844ba138f12db0c8cd5bc487a5d69bf8b5fa9351914affac26bb",
+      "entries": [
+        {
+          "codex_recommendation": "Preserve the delegated decision and its explicit boundary; do not infer beyond the governed evidence.",
+          "content_subject_sha256": "bbbe63dee2d55497f4c007fb11abfea811936ff0df6ba858e5956a26306da7b6",
+          "current_status": "resolved_internal",
+          "delegated_authority_disposition": "accept_with_required_revision",
+          "downstream_artifacts_affected": [
+            "policy_episode_candidates",
+            "semantic_ir_candidates",
+            "public_language_candidates",
+            "launch_review_packet"
+          ],
+          "exact_unresolved_question": "Does the concise public meaning surface the general five-year maximum without overstating the separate civil remedy?",
+          "governed_evidence": {
+            "authority_decision_content_subject_sha256": "900fd1e426c35019991c5e899c820147f0eca063a9235b86efedb29c31806720",
+            "evidence_map_content_subject_sha256": "8b7caff50fb4445d3b5456d0b1530ac7cdc57c229851a8599a6840c73dbd9494",
+            "evidence_map_id": "action-interpretation-evidence-map:house:119:1:27:v4",
+            "source_references": [
+              "clerk:119:1:27",
+              "congress_text:119:hr:21:eh"
+            ]
+          },
+          "likely_public_output_consequence": "Later public-language work must carry this boundary or omit the unsupported meaning.",
+          "resolution_history": [
+            {
+              "authority": "delegated_product_methodology_editorial_authority_v1",
+              "disposition": "accept_with_required_revision",
+              "stage": "M3B-B"
+            }
+          ],
+          "risk_class": "material_compression",
+          "risk_id": "launch-risk:house:119:1:27:v1",
+          "strongest_competing_interpretations": [],
+          "subject": {
+            "action_id": "house:119:1:27",
+            "subject_type": "action"
+          }
+        },
+        {
+          "codex_recommendation": "Preserve the delegated decision and its explicit boundary; do not infer beyond the governed evidence.",
+          "content_subject_sha256": "aadafdb5b223f03cbbfac3d700677f29966ea2d7c521ff17ec1502daf080bc87",
+          "current_status": "retained_ambiguous",
+          "delegated_authority_disposition": "preserve_ambiguous",
+          "downstream_artifacts_affected": [
+            "policy_episode_candidates",
+            "semantic_ir_candidates",
+            "public_language_candidates",
+            "launch_review_packet"
+          ],
+          "exact_unresolved_question": "What is the exact legal effect of inserting ‘any magazine and’ into 18 U.S.C. 926B(e)(2) and 926C(e)(1)(B)?",
+          "governed_evidence": {
+            "authority_decision_content_subject_sha256": "95ef9c2fbcda36bf3f6ae28599be309a498b078affb2c0d2b83a1ea56983a75a",
+            "evidence_map_content_subject_sha256": "359e6c625ad45304574f9de104019cb2edbe249d1c8b6d54d30b1aca20bb8be9",
+            "evidence_map_id": "action-interpretation-evidence-map:house:119:1:128:v4",
+            "source_references": [
+              "clerk:119:1:128",
+              "congress_text:119:hr:2243:eh"
+            ]
+          },
+          "likely_public_output_consequence": "Later public-language work must carry this boundary or omit the unsupported meaning.",
+          "resolution_history": [
+            {
+              "authority": "delegated_product_methodology_editorial_authority_v1",
+              "disposition": "preserve_ambiguous",
+              "stage": "M3B-B"
+            }
+          ],
+          "risk_class": "unresolved_statutory_context",
+          "risk_id": "launch-risk:house:119:1:128:v1",
+          "strongest_competing_interpretations": [
+            "Accept only the resolved carry-expansion and qualification provisions while preserving section 3(c)’s legal effect as unresolved."
+          ],
+          "subject": {
+            "action_id": "house:119:1:128",
+            "subject_type": "action"
+          }
+        },
+        {
+          "codex_recommendation": "Preserve the delegated decision and its explicit boundary; do not infer beyond the governed evidence.",
+          "content_subject_sha256": "46e8d32282412479ce48684d10cc4dfc0e283632541d5796260f1607dda672ae",
+          "current_status": "retained_ambiguous",
+          "delegated_authority_disposition": "preserve_ambiguous",
+          "downstream_artifacts_affected": [
+            "policy_episode_candidates",
+            "semantic_ir_candidates",
+            "public_language_candidates",
+            "launch_review_packet"
+          ],
+          "exact_unresolved_question": "Can the operative body be treated as authoritative despite the preserved 110th/119th Congress metadata conflict?",
+          "governed_evidence": {
+            "authority_decision_content_subject_sha256": "75d549ea9fa533dd5d956d255aa1864d3104e0b3291104b3ca8209500563e49a",
+            "evidence_map_content_subject_sha256": "4678573047243009028bb086b3af7d5d7b17faec9a9fd094b9b39da90a73e7dd",
+            "evidence_map_id": "action-interpretation-evidence-map:house:119:2:155:v4",
+            "source_references": [
+              "clerk:119:2:155",
+              "govinfo_text_119_s4465_es"
+            ]
+          },
+          "likely_public_output_consequence": "Later public-language work must carry this boundary or omit the unsupported meaning.",
+          "resolution_history": [
+            {
+              "authority": "delegated_product_methodology_editorial_authority_v1",
+              "disposition": "preserve_ambiguous",
+              "stage": "M3B-B"
+            }
+          ],
+          "risk_class": "unresolved_source_conflict",
+          "risk_id": "launch-risk:house:119:2:155:v1",
+          "strongest_competing_interpretations": [
+            "Use the operative body only as a bounded description of the sunset extension while withholding an unqualified measure-identity conclusion."
+          ],
+          "subject": {
+            "action_id": "house:119:2:155",
+            "subject_type": "action"
+          }
+        },
+        {
+          "codex_recommendation": "Preserve the delegated decision and its explicit boundary; do not infer beyond the governed evidence.",
+          "content_subject_sha256": "270124e1ba36da6101000644ba7497898c8305ca5e0f4b89fa68f7b37e37c41e",
+          "current_status": "resolved_internal",
+          "delegated_authority_disposition": "accept_with_required_revision",
+          "downstream_artifacts_affected": [
+            "policy_episode_candidates",
+            "semantic_ir_candidates",
+            "public_language_candidates",
+            "launch_review_packet"
+          ],
+          "exact_unresolved_question": "Does the concise public meaning make the coordination center's seven-year sunset visible?",
+          "governed_evidence": {
+            "authority_decision_content_subject_sha256": "0ff3dfbe05b8f7678519d70c7a381356dc7484ad7d33fc9516d0a91ef43db772",
+            "evidence_map_content_subject_sha256": "1072fda1d3897ab2ba0ef8064f6c82a6b61821a2c6e2355c0694d9cf1331606f",
+            "evidence_map_id": "action-interpretation-evidence-map:house:119:2:157:v4",
+            "source_references": [
+              "clerk:119:2:157",
+              "govinfo_text_119_hr2853_eh"
+            ]
+          },
+          "likely_public_output_consequence": "Later public-language work must carry this boundary or omit the unsupported meaning.",
+          "resolution_history": [
+            {
+              "authority": "delegated_product_methodology_editorial_authority_v1",
+              "disposition": "accept_with_required_revision",
+              "stage": "M3B-B"
+            }
+          ],
+          "risk_class": "material_compression",
+          "risk_id": "launch-risk:house:119:2:157:v1",
+          "strongest_competing_interpretations": [],
+          "subject": {
+            "action_id": "house:119:2:157",
+            "subject_type": "action"
+          }
+        },
+        {
+          "codex_recommendation": "Preserve the delegated decision and its explicit boundary; do not infer beyond the governed evidence.",
+          "content_subject_sha256": "618ebe26310c048c0b4802fde27f5ef09d633a8e3ddc794899e6c95ba8ed9dd4",
+          "current_status": "resolved_internal",
+          "delegated_authority_disposition": "accept_candidate",
+          "downstream_artifacts_affected": [
+            "policy_episode_candidates",
+            "semantic_ir_candidates",
+            "public_language_candidates",
+            "launch_review_packet"
+          ],
+          "exact_unresolved_question": "Could omission of the funding and covered-award thresholds materially overstate H.R. 8312's scope?",
+          "governed_evidence": {
+            "authority_decision_content_subject_sha256": "b540271093ee0d403113a783db91637f6b1e425453ac4605deddbc3e5987db86",
+            "evidence_map_content_subject_sha256": "55bcd7ee822a8e60cce2fbefb738a43a80f68047d25d3cc42be854154f6e7767",
+            "evidence_map_id": "action-interpretation-evidence-map:house:119:2:218:v4",
+            "source_references": [
+              "clerk:119:2:218",
+              "govinfo_text_119_hr8312_eh"
+            ]
+          },
+          "likely_public_output_consequence": "Later public-language work must carry this boundary or omit the unsupported meaning.",
+          "resolution_history": [
+            {
+              "authority": "delegated_product_methodology_editorial_authority_v1",
+              "disposition": "accept_candidate",
+              "stage": "M3B-B"
+            }
+          ],
+          "risk_class": "material_scope_boundary",
+          "risk_id": "launch-risk:house:119:2:218:v1",
+          "strongest_competing_interpretations": [],
+          "subject": {
+            "action_id": "house:119:2:218",
+            "subject_type": "action"
+          }
+        },
+        {
+          "codex_recommendation": "Preserve the delegated decision and its explicit boundary; do not infer beyond the governed evidence.",
+          "content_subject_sha256": "a53f27b07761cac42255a5507126c8395f0984643c5f1e94cc921280af0fea7a",
+          "current_status": "resolved_internal",
+          "delegated_authority_disposition": "accept_candidate",
+          "downstream_artifacts_affected": [
+            "policy_episode_candidates",
+            "semantic_ir_candidates",
+            "public_language_candidates",
+            "launch_review_packet"
+          ],
+          "exact_unresolved_question": "Could omission of the complaint-process and cure deadlines materially overstate immediate enforceability?",
+          "governed_evidence": {
+            "authority_decision_content_subject_sha256": "beb576ba3a2620925da9f4b073eae00bbf666c96bd04393a5455164e52500b8a",
+            "evidence_map_content_subject_sha256": "a05d5a061407a4298df6fc94a33aec28082af67ce265cab7cb6ef00058c5459e",
+            "evidence_map_id": "action-interpretation-evidence-map:house:119:2:240:v4",
+            "source_references": [
+              "clerk:119:2:240",
+              "congress_text:119:hr:1181:eh"
+            ]
+          },
+          "likely_public_output_consequence": "Later public-language work must carry this boundary or omit the unsupported meaning.",
+          "resolution_history": [
+            {
+              "authority": "delegated_product_methodology_editorial_authority_v1",
+              "disposition": "accept_candidate",
+              "stage": "M3B-B"
+            }
+          ],
+          "risk_class": "material_process_boundary",
+          "risk_id": "launch-risk:house:119:2:240:v1",
+          "strongest_competing_interpretations": [],
+          "subject": {
+            "action_id": "house:119:2:240",
+            "subject_type": "action"
+          }
+        },
+        {
+          "codex_recommendation": "Preserve the delegated decision and its explicit boundary; do not infer beyond the governed evidence.",
+          "content_subject_sha256": "79384e07c45e8aedb4cc7063b198557f48e432f67c259dc274825e0e5abbd235",
+          "current_status": "retained_no_safe",
+          "delegated_authority_disposition": "preserve_no_safe_candidate",
+          "downstream_artifacts_affected": [
+            "policy_episode_candidates",
+            "semantic_ir_candidates",
+            "public_language_candidates",
+            "launch_review_packet"
+          ],
+          "exact_unresolved_question": "What was the complete final House-passed H.R. 8800 package after all adopted amendments?",
+          "governed_evidence": {
+            "authority_decision_content_subject_sha256": "c37581371d4ae090453b20f4b7980fde365633ed8e1de9bbbda5458455ae4ce6",
+            "evidence_map_content_subject_sha256": "2f72c5d8fc5bf5e2719d7edb33dc32995f861323dbbc053792fe6c9fde5c1db1",
+            "evidence_map_id": "action-interpretation-evidence-map:house:119:2:278:v4",
+            "source_references": [
+              "clerk:119:2:278",
+              "rules-report-2026-07-20-final-passage-context"
+            ]
+          },
+          "likely_public_output_consequence": "Later public-language work must carry this boundary or omit the unsupported meaning.",
+          "resolution_history": [
+            {
+              "authority": "delegated_product_methodology_editorial_authority_v1",
+              "disposition": "preserve_no_safe_candidate",
+              "stage": "M3B-B"
+            }
+          ],
+          "risk_class": "incomplete_governed_evidence",
+          "risk_id": "launch-risk:house:119:2:278:v1",
+          "strongest_competing_interpretations": [],
+          "subject": {
+            "action_id": "house:119:2:278",
+            "subject_type": "action"
+          }
+        },
+        {
+          "codex_recommendation": "Retain roll 155 as ambiguous unassigned and relate it non-countingly to roll 221.",
+          "content_subject_sha256": "1cc960e656595bb1dad6313c052eb2378f4ea03de9dfc967d8e783b5dd12f063",
+          "current_status": "retained_ambiguous",
+          "delegated_authority_disposition": "delegated_authority_accepts_retained_ambiguous_assignment",
+          "downstream_artifacts_affected": [
+            "policy_episode_candidates",
+            "semantic_ir_candidates",
+            "synthesis_candidates",
+            "launch_review_packet"
+          ],
+          "exact_unresolved_question": "Can the operative body be treated as authoritative despite the preserved 110th/119th Congress metadata conflict?",
+          "governed_evidence": {
+            "frozen_episode_content_subject_sha256": "484957d0d3219159f31b8762739c58ad3fe9c54417129fa55317526e22901049",
+            "implementation_record_content_subject_sha256": "7bc355a7a347c153a00011822d78b0e81b2d9aa4e7e9610d4cf3b22351c81a71"
+          },
+          "likely_public_output_consequence": "A later episode count or trajectory must not treat roll 155 as resolved predecessor evidence.",
+          "resolution_history": [
+            {
+              "authority": "candidate_review_pending",
+              "disposition": "retained_ambiguous_episode_assignment",
+              "stage": "M4A"
+            },
+            {
+              "acceptance_content_subject_sha256": "825a5dc71f08a9e174c17d7c96cfeb38024e55ec75eab05ec02d6192a9787e94",
+              "authority": "delegated_product_methodology_editorial_authority_v1",
+              "disposition": "roll_155_outside_primary_membership_with_non_counting_roll_221_relationship_retained_ambiguous",
+              "stage": "M4B"
+            }
+          ],
+          "risk_class": "ambiguous_predecessor_relationship",
+          "risk_id": "launch-risk:episode-grouping:fisa-title-vii-short-term-extension:v1",
+          "strongest_competing_interpretations": [
+            "Treat roll 155 and roll 221 as successive extension actions.",
+            "Retain roll 155 outside primary episode membership until its source identity is resolved."
+          ],
+          "subject": {
+            "episode_id": "fisa-title-vii-short-term-extension",
+            "related_action_id": "house:119:2:155",
+            "subject_type": "episode_candidate"
+          }
+        }
+      ],
+      "entry_count": 8,
+      "implementation_bundle_content_subject_sha256": "2f9bb7669adf81758ad82e941cdaab88b7cf4f113f51eec25db49c3bb01f0155",
+      "prior_register_binding": {
+        "artifact_id": "launch-review-risk-register:f000477:justice_public_safety:119:m4a:v1",
+        "content_subject_sha256": "878c90eb67c7aa8afa934c92203c894493c2d1dcb81f966fd5809a4fb454fd00",
+        "final_file_sha256": "70c78ad519396db08a4fd2f6c3f1045e40721132058c620028aa8b9f2bedeaff"
+      },
+      "public": false,
+      "schema_version": "episode_implementation_launch_risk_register_v1",
+      "updated_entry_count": 1
+    },
+    "carried_risk_count": 8,
+    "content_subject_sha256": "8cb5e8404a1176edab5f7dc472d5f56fbd9c6b9ff42c681cb690eb340938bdbc",
+    "history_preserved": true,
+    "launch_authorized": false,
+    "new_risks": [
+      {
+        "detail": "The bounded contrast between opposed D.C. rule displacement and supported terrorism-preparedness mandates materially shapes synthesis.",
+        "risk_id": "launch-risk:semantic-ir:mechanism-divide:v1",
+        "state": "held_for_delegated_review"
+      }
+    ],
+    "schema_version": "semantic_ir_launch_risk_register_successor_v1"
+  },
+  "carried_risk_count": 9,
+  "content_subject_sha256": "344411010f862279ba4fd3443f240e83836260c405a63f0140380dad49825182",
+  "history_preserved": true,
+  "launch_authorized": false,
+  "risk_count": 9,
+  "schema_version": "semantic_ir_m5r1_launch_risk_register_successor_v1",
+  "updated_risks": [
+    {
+      "codex_recommendation": "Retain the bounded mechanism-divide candidate and all competing interpretations for delegated launch review.",
+      "competing_interpretations": [
+        "mechanism_divide",
+        "no_common_throughline",
+        "no_synthesis_proposition"
+      ],
+      "corrected_graph_content_subject_sha256": "f561d3eda50e164a6cbf98520e8c9831468f607e8ed32d333ee6905f4737f7a8",
+      "delegated_authority_decision": "pending",
+      "overlap_defect": "V1 allowed the D.C. pretrial episode to supply primary evidence to two repeated patterns.",
+      "previous_state": "held_for_delegated_review",
+      "public_output_consequence": "Later public language must not imply that the selected divide explains all primary patterns or that roll 298 supplies two independent weights.",
+      "risk_id": "launch-risk:semantic-ir:mechanism-divide:v1",
+      "state": "held_for_launch_review"
+    }
+  ]
+}

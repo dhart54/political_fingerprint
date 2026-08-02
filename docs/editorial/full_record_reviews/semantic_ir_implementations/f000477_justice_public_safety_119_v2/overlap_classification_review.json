@@ -1,0 +1,25 @@
+{
+  "artifact_id": "semantic-ir-m5r1-overlap-review:f000477:justice_public_safety:119:v2",
+  "authorizing": false,
+  "content_subject_sha256": "1545eed883d8bcbfd82ee9d94c0e890651929b13acb1140501364155ee16c785",
+  "corrected_prohibited_overlap_count": 0,
+  "initial_action_mapping_count": 37,
+  "initial_episode_mapping_count": 32,
+  "initial_prohibited_overlap_count": 2,
+  "review_status": "pass_after_structured_input_correction",
+  "reviewed_all_behavioral_propositions": true,
+  "same_role_overlaps": [
+    {
+      "action_id": "house:119:1:298",
+      "classification": "prohibited_inflating_overlap",
+      "correction": "remove the executable pretrial trait and recompile roll 171 as a notable choice",
+      "episode_id": "dc-pretrial-detention-cash-bail",
+      "independent_reviewer_rationale": "One episode cannot supply apparent independent primary repeated-pattern weight twice without canonical subordinate ownership.",
+      "proposition_ids": [
+        "prop:354da734fec2fcf6",
+        "prop:95cf7861641b499e"
+      ]
+    }
+  ],
+  "schema_version": "semantic_ir_m5r1_overlap_classification_review_v1"
+}

@@ -1,0 +1,74 @@
+{
+  "artifact_id": "semantic-ir-m5r1-validation:f000477:justice_public_safety:119:v2",
+  "canonical_and_public_state_unchanged": true,
+  "content_subject_sha256": "c5c8d5995f1d0d2e95d24cb1d34f600dc3856e4ae2a6b7790e5c8ba2a1b2ddbb",
+  "corrected_command_mistakes": [],
+  "database_access": false,
+  "disclosed_baseline_attempts": [
+    {
+      "accounting": {
+        "failed": 17,
+        "passed": 1208,
+        "skipped": 33
+      },
+      "command": "supported fail-closed offline backend runner over backend/tests",
+      "exit_code": 1,
+      "m5r1_failures": 0,
+      "unrelated_failures": {
+        "missing_house_fixture": 1,
+        "missing_senate_xml_fixture_cases": 13,
+        "pre_existing_source_manifest_hash_mismatch": 1,
+        "stale_api_expectations": 2
+      }
+    }
+  ],
+  "evidence_acquisition": false,
+  "network_access": false,
+  "sandbox_restrictions": [
+    "Pre-existing inaccessible backend/tests temporary directories emitted enumeration warnings.",
+    "The first 52-test full-record regression attempt produced 12 temporary-directory permission errors inside the filesystem sandbox; the exact suite passed outside it."
+  ],
+  "schema_version": "semantic_ir_m5r1_validation_report_v1",
+  "successful_commands": [
+    {
+      "command": "complete M1-M5 authority and integrity chain",
+      "exit_code": 0
+    },
+    {
+      "command": "python scripts/build_foushee_justice_semantic_ir_m5r1.py --check",
+      "exit_code": 0
+    },
+    {
+      "command": "python scripts/validate_foushee_justice_semantic_ir_m5r1.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m unittest backend.tests.test_foushee_justice_semantic_ir_m5r1",
+      "exit_code": 0
+    },
+    {
+      "command": "canonical Semantic IR and full-record regressions",
+      "exit_code": 0,
+      "result": "52 passed outside sandbox"
+    },
+    {
+      "command": "supported fail-closed broad safe offline backend suite with 17 disclosed baseline node IDs deselected",
+      "exit_code": 0,
+      "result": "1208 passed, 33 skipped, 17 deselected"
+    },
+    {
+      "command": "Ruff, Python compilation, JSON/schema, credential, and diff checks",
+      "exit_code": 0
+    }
+  ],
+  "validation_accounting": {
+    "broad_safe_offline_deselected_baseline": 17,
+    "broad_safe_offline_passed": 1208,
+    "broad_safe_offline_skipped": 33,
+    "corrected_prohibited_overlap_rows": 0,
+    "initial_prohibited_overlap_rows": 2,
+    "remaining_major_or_critical_findings": 0,
+    "semantic_ir_full_record_regression_tests": 52,
+    "targeted_m5r1_tests": 14
+  }
+}
