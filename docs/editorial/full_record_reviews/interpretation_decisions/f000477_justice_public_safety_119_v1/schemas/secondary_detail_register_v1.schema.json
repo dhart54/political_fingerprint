@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "bundle_content_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "entries": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "appears_in": {
+            "type": "string"
+          },
+          "codex_materiality_recommendation": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "entry_id": {
+            "type": "string"
+          },
+          "exact_source_locator": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "source_bound_detail": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "appears_in",
+          "codex_materiality_recommendation",
+          "confidence",
+          "content_subject_sha256",
+          "entry_id",
+          "exact_source_locator",
+          "rationale",
+          "source_bound_detail",
+          "source_id"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "entry_count": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "non_authorizing": {
+      "const": true
+    },
+    "recommendation_counts": {
+      "additionalProperties": false,
+      "properties": {
+        "human_judgment_required": {
+          "type": "integer"
+        },
+        "include_as_limitation": {
+          "type": "integer"
+        },
+        "include_in_accepted_meaning": {
+          "type": "integer"
+        },
+        "safely_compressed": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "human_judgment_required",
+        "include_as_limitation",
+        "include_in_accepted_meaning",
+        "safely_compressed"
+      ],
+      "type": "object"
+    },
+    "review_aid_only": {
+      "const": true
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "non_authorizing",
+    "content_subject_sha256",
+    "bundle_content_subject_sha256",
+    "entry_count",
+    "review_aid_only",
+    "entries",
+    "recommendation_counts"
+  ],
+  "type": "object"
+}

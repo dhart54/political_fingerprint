@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "bundle_content_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "decision_count": {
+      "const": 37
+    },
+    "decision_record_status": {
+      "const": "awaiting_human_decision"
+    },
+    "decisions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_competing_interpretation": {
+            "type": "null"
+          },
+          "accepted_limitations": {
+            "items": {},
+            "type": "array"
+          },
+          "action_id": {
+            "type": "string"
+          },
+          "confidence_decision": {
+            "type": "null"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "decision_timestamp": {
+            "type": "null"
+          },
+          "decision_unit_content_subject_sha256": {
+            "type": "string"
+          },
+          "required_wording_or_field_revisions": {
+            "items": {},
+            "type": "array"
+          },
+          "reviewer_identity": {
+            "type": "null"
+          },
+          "selected_decision": {
+            "type": "null"
+          },
+          "structured_rationale": {
+            "type": "null"
+          },
+          "unresolved_question": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "accepted_competing_interpretation",
+          "accepted_limitations",
+          "action_id",
+          "confidence_decision",
+          "content_subject_sha256",
+          "decision_timestamp",
+          "decision_unit_content_subject_sha256",
+          "required_wording_or_field_revisions",
+          "reviewer_identity",
+          "selected_decision",
+          "structured_rationale",
+          "unresolved_question"
+        ],
+        "type": "object"
+      },
+      "maxItems": 37,
+      "minItems": 37,
+      "type": "array"
+    },
+    "explicit_non_acceptance": {
+      "const": "No V4 candidate interpretation is accepted by this record."
+    },
+    "generalization_decision": {
+      "const": "generalization_pass"
+    },
+    "non_authorizing": {
+      "const": true
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "non_authorizing",
+    "content_subject_sha256",
+    "bundle_content_subject_sha256",
+    "decision_record_status",
+    "generalization_decision",
+    "explicit_non_acceptance",
+    "decision_count",
+    "decisions"
+  ],
+  "type": "object"
+}
