@@ -1,0 +1,36 @@
+{
+  "artifact_id": "user-launch-ratification-state:f000477:justice_public_safety:119:v1",
+  "candidate_artifact_id": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+  "candidate_presentation_content_sha256": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55",
+  "candidate_publicly_selectable": false,
+  "content_subject_sha256": "6c4bd5e39d91329d5f0b0782a88df8decc33e74a2416658f2f185e7b6179ff5b",
+  "controls": {
+    "benchmark": "not_promoted",
+    "blind_calibration": "user_approved",
+    "deployment": "unauthorized",
+    "editorial_wording": "user_approved",
+    "launch_ratification": "user_ratified_with_production_eligibility_deferred",
+    "production_eligible": false,
+    "public_selector": "unchanged",
+    "publication": "inactive",
+    "risk_treatments": "user_approved"
+  },
+  "historical_active_publication_unchanged": true,
+  "next_separate_decisions": [
+    "production_eligibility",
+    "benchmark_promotion",
+    "publication_activation"
+  ],
+  "ratification_receipt_artifact_id": "user-launch-ratification-receipt:f000477:justice_public_safety:119:v1",
+  "ratification_receipt_content_subject_sha256": "67e7737091af7c35b06a36d2855df72085b875656b21ab77ae9caba41a9a9c80",
+  "risk_register_artifact_id": "launch-risk-register:f000477:justice_public_safety:119:m7:v1",
+  "risk_register_content_subject_sha256": "905e77346171aa16943522f68e8ab1a347465e3efe453c75843625ea2df7f616",
+  "schema_version": "user_launch_ratification_state_v1",
+  "subject": {
+    "congress_scope": [
+      119
+    ],
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "member_id": "F000477"
+  }
+}

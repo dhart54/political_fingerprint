@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {"const": "user-launch-ratification-receipt:f000477:justice_public_safety:119:v1"},
+    "calibration_approvals": {"items": {"additionalProperties": false, "properties": {"decision": {"const": "approved"}, "sample_content_subject_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}, "sample_id": {"type": "string"}, "selection_proof": {"pattern": "^[0-9a-f]{64}$", "type": "string"}}, "required": ["decision", "sample_content_subject_sha256", "sample_id", "selection_proof"], "type": "object"}, "maxItems": 4, "minItems": 4, "type": "array"},
+    "candidate_binding": {"additionalProperties": false, "properties": {"artifact_id": {"type": "string"}, "final_file_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}, "presentation_content_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}}, "required": ["artifact_id", "final_file_sha256", "presentation_content_sha256"], "type": "object"},
+    "content_subject_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "control_state": {"additionalProperties": false, "properties": {"benchmark": {"const": "not_promoted"}, "blind_calibration": {"const": "user_approved"}, "deployment": {"const": "unauthorized"}, "editorial_wording": {"const": "user_approved"}, "launch_ratification": {"const": "user_ratified_with_production_eligibility_deferred"}, "production_eligible": {"const": false}, "public_selector": {"const": "unchanged"}, "publication": {"const": "inactive"}, "risk_treatments": {"const": "user_approved"}}, "required": ["benchmark", "blind_calibration", "deployment", "editorial_wording", "launch_ratification", "production_eligible", "public_selector", "publication", "risk_treatments"], "type": "object"},
+    "decision_timestamp": {"const": "2026-08-02T17:35:00-04:00"},
+    "immutable_file_bindings": {"additionalProperties": {"pattern": "^[0-9a-f]{64}$", "type": "string"}, "minProperties": 6, "type": "object"},
+    "ratification_record_binding": {"additionalProperties": false, "properties": {"artifact_id": {"type": "string"}, "content_subject_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}, "final_file_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}}, "required": ["artifact_id", "content_subject_sha256", "final_file_sha256"], "type": "object"},
+    "risk_selections": {"items": {"additionalProperties": false, "properties": {"historical_limitation_retained": {"const": true}, "review_state": {"const": "user_ratified_treatment"}, "risk_id": {"type": "string"}, "selection": {"type": "string"}}, "required": ["historical_limitation_retained", "review_state", "risk_id", "selection"], "type": "object"}, "maxItems": 4, "minItems": 4, "type": "array"},
+    "schema_version": {"const": "user_launch_ratification_receipt_v1"},
+    "subject_binding": {"additionalProperties": {"type": "string"}, "required": ["artifact_id", "content_subject_sha256", "universe", "semantic_validation_receipt", "public_presentation_content", "reviewed_wording", "mapping_set", "evidence_provenance", "limitations", "risk_packet", "screenshot_manifest", "calibration_sample", "freeze"], "type": "object"},
+    "user_identity": {"const": "dhart54"}
+  },
+  "required": ["artifact_id", "calibration_approvals", "candidate_binding", "content_subject_sha256", "control_state", "decision_timestamp", "immutable_file_bindings", "ratification_record_binding", "risk_selections", "schema_version", "subject_binding", "user_identity"],
+  "type": "object"
+}
