@@ -131,8 +131,17 @@ def write_json(path: Path, value: dict[str, Any]) -> None:
     )
 
 
-def canonical_file_sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+def canonical_file_sha256(path: Path, *, text_line_endings: str | None = None) -> str:
+    content = path.read_bytes()
+    if text_line_endings is not None:
+        if path.suffix.lower() not in {".json", ".md", ".sql", ".txt"}:
+            raise ValueError("line-ending normalization requires a text artifact")
+        content = content.replace(b"\r\n", b"\n")
+        if text_line_endings == "crlf":
+            content = content.replace(b"\n", b"\r\n")
+        elif text_line_endings != "lf":
+            raise ValueError("text_line_endings must be 'lf' or 'crlf'")
+    return hashlib.sha256(content).hexdigest()
 
 
 def _walk_keys(value: Any) -> Iterable[str]:

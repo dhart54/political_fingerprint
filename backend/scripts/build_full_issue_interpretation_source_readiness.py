@@ -149,10 +149,16 @@ def main() -> int:
     artifact = build_readiness_artifact(
         approved_manifest=manifest,
         authority_receipt=authority,
-        authority_receipt_sha256=canonical_file_sha256(ROOT / AUTHORITY_PATH),
-        manifest_sha256=canonical_file_sha256(ROOT / MANIFEST_PATH),
+        authority_receipt_sha256=canonical_file_sha256(
+            ROOT / AUTHORITY_PATH, text_line_endings="crlf"
+        ),
+        manifest_sha256=canonical_file_sha256(
+            ROOT / MANIFEST_PATH, text_line_endings="crlf"
+        ),
         source_manifest=source_manifest,
-        source_manifest_sha256=canonical_file_sha256(source_path),
+        source_manifest_sha256=canonical_file_sha256(
+            source_path, text_line_endings="lf"
+        ),
         discovery=discovery,
     )
     readiness_schema = load_json(ROOT / READINESS_SCHEMA_PATH)
