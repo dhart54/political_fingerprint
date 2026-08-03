@@ -11,9 +11,11 @@ from typing import Any
 
 from jsonschema import Draft7Validator
 
-
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
+
+from backend.app.etl.universe_authority import content_digest_matches  # noqa: E402
 
 from build_action_interpretation_decision_implementation_v1 import (  # noqa: E402
     AUTHORITY_CONTENT_SHA256,
@@ -34,7 +36,6 @@ from build_action_interpretation_decision_implementation_v1 import (  # noqa: E4
     V4_ROOT,
     build,
     digest,
-    file_digest,
     load,
     preflight,
 )
@@ -357,14 +358,22 @@ def validate_parity(
         "parity authority final-byte digest differs",
     )
     require(
-        file_digest(AUTHORITY_MARKDOWN_PATH) == AUTHORITY_MARKDOWN_FILE_SHA256,
+        content_digest_matches(
+            AUTHORITY_MARKDOWN_PATH.read_bytes(),
+            AUTHORITY_MARKDOWN_FILE_SHA256,
+            suffix=AUTHORITY_MARKDOWN_PATH.suffix,
+        ),
         "authority companion Markdown final bytes differ",
     )
     for item in parity["referenced_artifacts"]:
         path = ROOT / item["path"]
         raw = overrides.get(item["path"], path.read_bytes())
         require(
-            __import__("hashlib").sha256(raw).hexdigest() == item["final_file_sha256"],
+            content_digest_matches(
+                raw,
+                item["final_file_sha256"],
+                suffix=Path(item["path"]).suffix,
+            ),
             f"{item['path']}: stale final-file hash",
         )
         if "content_subject_sha256" in item:

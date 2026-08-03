@@ -20,9 +20,6 @@ jobs:
       EDITORIAL_DISPOSABLE_DATABASE_URL: postgresql://invalid
       UNIVERSE_DISCOVERY_DISPOSABLE_DATABASE_URL: postgresql://invalid
     steps:
-      - name: Preserve ratified text-file checkout identities
-        run: git config --global core.autocrlf true
-
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5

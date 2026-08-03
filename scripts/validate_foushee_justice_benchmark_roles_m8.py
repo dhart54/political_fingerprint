@@ -6,12 +6,17 @@ import hashlib
 import json
 from collections import Counter
 from pathlib import Path
+import sys
 from typing import Any
 
 from jsonschema import Draft202012Validator
 
-
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from backend.app.etl.universe_authority import file_digest_matches  # noqa: E402
+
+
 RECORD = (
     ROOT / "docs/benchmarks/foushee_justice_public_safety_119_benchmark_roles_v1.json"
 )
@@ -41,10 +46,6 @@ def _canonical(value: Any) -> bytes:
 
 def _digest(value: Any) -> str:
     return hashlib.sha256(_canonical(value)).hexdigest()
-
-
-def _file_digest(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def _content_digest(value: dict[str, Any]) -> str:
@@ -116,7 +117,7 @@ def validate(record: dict[str, Any] | None = None) -> dict[str, Any]:
         path = ROOT / artifact["path"]
         _require(path.is_file(), f"missing benchmark artifact: {artifact['path']}")
         _require(
-            _file_digest(path) == artifact["final_file_sha256"],
+            file_digest_matches(path, artifact["final_file_sha256"]),
             f"artifact byte drift: {artifact['path']}",
         )
         for binding in artifact.get("supporting_bindings", []):
@@ -125,7 +126,7 @@ def validate(record: dict[str, Any] | None = None) -> dict[str, Any]:
                 bound_path.is_file(), f"missing supporting binding: {binding['path']}"
             )
             _require(
-                _file_digest(bound_path) == binding["final_file_sha256"],
+                file_digest_matches(bound_path, binding["final_file_sha256"]),
                 f"supporting byte drift: {binding['path']}",
             )
 

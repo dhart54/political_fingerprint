@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from collections import Counter
 import copy
-import hashlib
 import json
 from pathlib import Path
 import subprocess
@@ -13,9 +12,14 @@ from typing import Any
 
 from jsonschema import Draft7Validator
 
-
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
+
+from backend.app.etl.universe_authority import (  # noqa: E402
+    content_digest_matches,
+    file_digest_matches,
+)
 
 from build_policy_episode_decision_implementation_v1 import (  # noqa: E402
     ACCEPTANCE_CONTENT_SHA256,
@@ -34,7 +38,6 @@ from build_policy_episode_decision_implementation_v1 import (  # noqa: E402
     SCHEMA_ROOT,
     build,
     digest,
-    file_digest,
     load,
     preflight,
 )
@@ -538,7 +541,11 @@ def validate_final_byte_parity(
     for item in parity["referenced_artifacts"]:
         raw = overrides.get(item["path"], (ROOT / item["path"]).read_bytes())
         require(
-            hashlib.sha256(raw).hexdigest() == item["final_file_sha256"],
+            content_digest_matches(
+                raw,
+                item["final_file_sha256"],
+                suffix=Path(item["path"]).suffix,
+            ),
             f"{item['path']}: stale final-file SHA-256",
         )
         if "content_subject_sha256" in item:
@@ -583,7 +590,7 @@ def validate() -> dict[str, Any]:
     preflight()
     require(
         ACCEPTANCE_OUTPUT.read_bytes() == ACCEPTANCE_SOURCE.read_bytes()
-        and file_digest(ACCEPTANCE_OUTPUT) == ACCEPTANCE_FILE_SHA256,
+        and file_digest_matches(ACCEPTANCE_OUTPUT, ACCEPTANCE_FILE_SHA256),
         "imported delegated acceptance final bytes differ",
     )
     schema_inputs = {

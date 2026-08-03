@@ -7,10 +7,15 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+import sys
 from typing import Any
 
-
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from backend.app.etl.universe_authority import file_digest_matches  # noqa: E402
+
+
 DECISION_ROOT = (
     ROOT
     / "docs/editorial/full_record_reviews/interpretation_decisions/f000477_justice_public_safety_119_v1"
@@ -73,7 +78,10 @@ def digest(value: object) -> str:
 
 
 def file_digest(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    content = path.read_bytes()
+    if path.suffix.lower() in {".json", ".md", ".txt"}:
+        content = content.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    return hashlib.sha256(content).hexdigest()
 
 
 def seal(value: dict[str, Any]) -> dict[str, Any]:
@@ -119,9 +127,9 @@ def verify_seal(value: dict[str, Any], label: str) -> None:
 
 
 def preflight() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
-    if file_digest(AUTHORITY_PATH) != AUTHORITY_FILE_SHA256:
+    if not file_digest_matches(AUTHORITY_PATH, AUTHORITY_FILE_SHA256):
         raise ValueError("authority final bytes differ")
-    if file_digest(AUTHORITY_MARKDOWN_PATH) != AUTHORITY_MARKDOWN_FILE_SHA256:
+    if not file_digest_matches(AUTHORITY_MARKDOWN_PATH, AUTHORITY_MARKDOWN_FILE_SHA256):
         raise ValueError("authority companion Markdown final bytes differ")
     authority = load(AUTHORITY_PATH)
     verify_seal(authority, "authority")
@@ -168,9 +176,8 @@ def preflight() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
     v4_path = V4_ROOT / "candidate_batch.json"
     v4 = load(v4_path)
     verify_seal(v4, "V4 candidate batch")
-    if (
-        v4["content_subject_sha256"] != V4_CONTENT_SHA256
-        or file_digest(v4_path) != V4_FILE_SHA256
+    if v4["content_subject_sha256"] != V4_CONTENT_SHA256 or not file_digest_matches(
+        v4_path, V4_FILE_SHA256
     ):
         raise ValueError("V4 candidate identity differs")
     return authority, preparation, v4

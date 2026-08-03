@@ -89,10 +89,16 @@ class FullIssueInterpretationSourceReadinessTests(unittest.TestCase):
         return build_readiness_artifact(
             approved_manifest=self.manifest,
             authority_receipt=self.authority,
-            authority_receipt_sha256=canonical_file_sha256(ROOT / AUTHORITY_PATH),
-            manifest_sha256=canonical_file_sha256(ROOT / MANIFEST_PATH),
+            authority_receipt_sha256=canonical_file_sha256(
+                ROOT / AUTHORITY_PATH, text_line_endings="crlf"
+            ),
+            manifest_sha256=canonical_file_sha256(
+                ROOT / MANIFEST_PATH, text_line_endings="crlf"
+            ),
             source_manifest=source_manifest,
-            source_manifest_sha256=canonical_file_sha256(ROOT / SOURCE_MANIFEST_PATH),
+            source_manifest_sha256=canonical_file_sha256(
+                ROOT / SOURCE_MANIFEST_PATH, text_line_endings="lf"
+            ),
             discovery=self.discovery,
         )
 

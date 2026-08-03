@@ -8,10 +8,15 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+import sys
 from typing import Any
 
-
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from backend.app.etl.universe_authority import file_digest_matches  # noqa: E402
+
+
 DECISION_ROOT = (
     ROOT
     / "docs/editorial/full_record_reviews/interpretation_decisions/f000477_justice_public_safety_119_v1"
@@ -83,6 +88,11 @@ def file_digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def ratified_text_file_digest(path: Path) -> str:
+    content = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    return hashlib.sha256(content).hexdigest()
+
+
 def seal(value: dict[str, Any]) -> dict[str, Any]:
     value["content_subject_sha256"] = digest(value)
     return value
@@ -122,7 +132,7 @@ def write_json_or_check(path: Path, value: object, *, check: bool) -> None:
 
 
 def preflight() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
-    if file_digest(ACCEPTANCE_SOURCE) != ACCEPTANCE_FILE_SHA256:
+    if not file_digest_matches(ACCEPTANCE_SOURCE, ACCEPTANCE_FILE_SHA256):
         raise ValueError("delegated M4A acceptance final-file SHA-256 differs")
     acceptance = load(ACCEPTANCE_SOURCE)
     verify_seal(acceptance, "delegated M4A acceptance")
@@ -157,7 +167,7 @@ def preflight() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
     ):
         raise ValueError("delegated M4A episode decisions differ")
 
-    if file_digest(CANDIDATE_PATH) != CANDIDATE_FILE_SHA256:
+    if not file_digest_matches(CANDIDATE_PATH, CANDIDATE_FILE_SHA256):
         raise ValueError("frozen M4A candidate final-file SHA-256 differs")
     candidates = load(CANDIDATE_PATH)
     verify_seal(candidates, "frozen M4A candidates")
@@ -181,7 +191,7 @@ def preflight() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
             "delegated episode decisions do not bind the frozen candidates"
         )
 
-    if file_digest(M3BB_PATH) != M3BB_FILE_SHA256:
+    if not file_digest_matches(M3BB_PATH, M3BB_FILE_SHA256):
         raise ValueError("M3B-B implementation final-file SHA-256 differs")
     action_implementation = load(M3BB_PATH)
     verify_seal(action_implementation, "M3B-B implementation")
@@ -382,7 +392,7 @@ def risk_successor(
             "prior_register_binding": {
                 "artifact_id": prior["artifact_id"],
                 "content_subject_sha256": prior["content_subject_sha256"],
-                "final_file_sha256": file_digest(M4A_RISK_PATH),
+                "final_file_sha256": ratified_text_file_digest(M4A_RISK_PATH),
             },
             "implementation_bundle_content_subject_sha256": bundle[
                 "content_subject_sha256"
@@ -427,7 +437,7 @@ def calibration_successor(bundle: dict[str, Any]) -> dict[str, Any]:
             "prior_population_binding": {
                 "artifact_id": prior["artifact_id"],
                 "content_subject_sha256": prior["content_subject_sha256"],
-                "final_file_sha256": file_digest(M4A_CALIBRATION_PATH),
+                "final_file_sha256": ratified_text_file_digest(M4A_CALIBRATION_PATH),
             },
             "implementation_bundle_content_subject_sha256": bundle[
                 "content_subject_sha256"
