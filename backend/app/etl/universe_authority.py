@@ -49,9 +49,17 @@ def file_digest_matches(path: Path, expected: str) -> bool:
     content = path.read_bytes()
     if hashlib.sha256(content).hexdigest() == expected:
         return True
-    return (
-        path.suffix.lower() in TEXT_SUFFIXES
-        and hashlib.sha256(content.replace(b"\r\n", b"\n")).hexdigest() == expected
+    if path.suffix.lower() not in TEXT_SUFFIXES:
+        return False
+
+    # Historical protected-file receipts were created on both Windows and
+    # POSIX checkouts. Treat only CRLF/LF representation as equivalent while
+    # preserving exact byte matching for every other change.
+    lf_content = content.replace(b"\r\n", b"\n")
+    crlf_content = lf_content.replace(b"\n", b"\r\n")
+    return any(
+        hashlib.sha256(candidate).hexdigest() == expected
+        for candidate in (lf_content, crlf_content)
     )
 
 

@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from typing import Any, Callable
@@ -15,6 +17,7 @@ if str(ROOT) not in sys.path:
 from backend.app.etl.universe_authority import (  # noqa: E402
     UniverseAuthorityError,
     canonical_file_sha256,
+    file_digest_matches,
     sha256_json,
 )
 from scripts.validate_full_issue_universe_authority import (  # noqa: E402
@@ -68,6 +71,25 @@ class FullIssueUniverseAuthorityTests(unittest.TestCase):
     ) -> None:
         with self.assertRaises(UniverseAuthorityError):
             self._validate(mutator)
+
+    def test_text_digest_matching_is_checkout_line_ending_portable(self) -> None:
+        lf_content = b'{\n  "status": "approved"\n}\n'
+        crlf_content = lf_content.replace(b"\n", b"\r\n")
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "authority.json"
+            for content, expected_content in (
+                (lf_content, crlf_content),
+                (crlf_content, lf_content),
+            ):
+                with self.subTest(content=content[:3]):
+                    path.write_bytes(content)
+                    expected = hashlib.sha256(expected_content).hexdigest()
+                    self.assertTrue(file_digest_matches(path, expected))
+
+            path.write_bytes(lf_content + b" ")
+            self.assertFalse(
+                file_digest_matches(path, hashlib.sha256(crlf_content).hexdigest())
+            )
 
     def test_repository_authority_reproduces_all_approved_values(self) -> None:
         result = validate_repository_authority()
