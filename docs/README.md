@@ -34,7 +34,7 @@ The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-Active plan: [Frontend Pass A V1](plans/frontend_pass_a_v1.md)
+Active plan: [Foushee Justice Full-Record Integration V1](plans/foushee_justice_full_record_integration_v1.md)
 
 The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 

@@ -13,6 +13,46 @@ on:
       - ".github/workflows/backend-tests.yml"
 
 jobs:
+  foushee-full-record-benchmark:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql://invalid
+      EDITORIAL_DISPOSABLE_DATABASE_URL: postgresql://invalid
+      UNIVERSE_DISCOVERY_DISPOSABLE_DATABASE_URL: postgresql://invalid
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install backend dependencies
+        run: python -m pip install -r backend/requirements.txt
+
+      - name: Validate governed M1-M7 chain and layered benchmark
+        run: |
+          python scripts/validate_full_issue_universe_authority.py
+          python scripts/validate_full_issue_interpretation_source_readiness.py
+          python backend/scripts/build_full_issue_interpretation_source_readiness.py --check
+          python scripts/validate_action_interpretation_decision_implementation_v1.py
+          python scripts/validate_policy_episode_decision_implementation_v1.py
+          python scripts/validate_foushee_justice_semantic_ir_m5r1.py
+          python scripts/verify_foushee_justice_launch_review_m6.py
+          python scripts/verify_foushee_justice_launch_ratification_m7.py
+          python scripts/validate_foushee_justice_benchmark_roles_m8.py
+
+      - name: Run full-record integration tests
+        run: >-
+          python -m pytest -q
+          backend/tests/test_full_issue_universe_authority.py
+          backend/tests/test_full_issue_interpretation_source_readiness.py
+          backend/tests/test_action_interpretation_decision_implementation_v1.py
+          backend/tests/test_policy_episode_decision_implementation_v1.py
+          backend/tests/test_foushee_justice_semantic_ir_m5r1.py
+          backend/tests/test_foushee_justice_launch_review_m6.py
+          backend/tests/test_foushee_justice_launch_ratification_m7.py
+          backend/tests/test_foushee_justice_benchmark_roles_m8.py
+
   amendment-evidence-contracts:
     runs-on: ubuntu-latest
     defaults:

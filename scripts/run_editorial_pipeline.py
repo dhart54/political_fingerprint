@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -26,9 +27,15 @@ CORPORA = (
 
 def _run(command: list[str]) -> dict[str, Any]:
     started = time.perf_counter()
+    environment = dict(os.environ)
+    existing_pythonpath = environment.get("PYTHONPATH")
+    environment["PYTHONPATH"] = os.pathsep.join(
+        part for part in (str(ROOT / "backend"), existing_pythonpath) if part
+    )
     completed = subprocess.run(
         command,
         cwd=ROOT,
+        env=environment,
         check=False,
         capture_output=True,
         text=True,
@@ -130,8 +137,11 @@ def _release_loop(
                 [
                     sys.executable,
                     "-m",
-                    "unittest",
-                    "backend.tests.test_editorial_artifact_persistence",
+                    "pytest",
+                    "-q",
+                    "-p",
+                    "no:cacheprovider",
+                    "backend/tests/test_editorial_artifact_persistence.py",
                 ]
             )
         )
@@ -139,9 +149,7 @@ def _release_loop(
         npm = shutil.which("npm")
         if npm is None:
             raise RuntimeError("npm is required for frontend release validation")
-        result["commands"].append(
-            _run([npm, "run", "build", "--prefix", "frontend"])
-        )
+        result["commands"].append(_run([npm, "run", "build", "--prefix", "frontend"]))
     result["frontend_included"] = include_frontend
     result["persistence_included"] = include_persistence
     return result

@@ -1,0 +1,164 @@
+{
+  "schema_version": "layered_benchmark_roles_v1",
+  "artifact_id": "layered-benchmark-roles:f000477:justice_public_safety:119:v1",
+  "content_subject_sha256": "7973e4f7eae7bf8451acd1a2500752e2b4bce548f70365fb01e0bf1dec0cb082",
+  "authority": {
+    "decision_source": "user_m8_prompt_2026-08-03",
+    "benchmark_promotion_authorized": true,
+    "compact_replacement_authorized": false,
+    "production_eligibility_authorized": false,
+    "publication_authorized": false,
+    "merge_authorized": false
+  },
+  "subject": {
+    "member_id": "F000477",
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "congress": 119
+  },
+  "governed_history": {
+    "baseline_commit": "24a2bcb37347f74c6c40261930024e85676cd8d0",
+    "frozen_candidate_commit": "caddc9a2ace8e737495e4a0124cf2dc13e1995e6",
+    "ratified_head_commit": "55f9e201afea051556f436e83e7e9e16ad3cb99b"
+  },
+  "roles": [
+    {
+      "role": "compact_regression_fixture",
+      "benchmark_status": "gold_benchmark",
+      "purpose": [
+        "fast_compiler_regression",
+        "focused_presentation_regression",
+        "easy_human_reasoning",
+        "stable_seven_action_structure"
+      ],
+      "artifact": {
+        "path": "docs/editorial/presentations/f000477_justice_public_safety_119_review_fixture.json",
+        "artifact_id": "f000477:justice_public_safety:119:v1",
+        "source_commit_sha": "751754534945ac1a6e4731cb265e179ac65e0f90",
+        "final_file_sha256": "a2f611c8b9bc2194a27839dd0d8f3af2124f9c26285318af612f361adb878d3c",
+        "supporting_bindings": [
+          {
+            "path": "docs/editorial/presentations/f000477_justice_public_safety_119_approval_receipt.json",
+            "artifact_id": "f000477:justice_public_safety:119:v1:approval",
+            "final_file_sha256": "cf269a276de19902f9b5c8a2c6af9416ede981b658bc1867f9bdec5aea94a112"
+          }
+        ]
+      },
+      "scope": {
+        "action_count": 7,
+        "episode_count": 5,
+        "review_scope": "bounded_reviewed_sample"
+      }
+    },
+    {
+      "role": "full_record_reference",
+      "benchmark_status": "gold_benchmark",
+      "purpose": [
+        "complete_issue_universe_validation",
+        "action_and_episode_accounting",
+        "source_conflict_and_no_safe_handling",
+        "overlapping_pattern_prevention",
+        "full_semantic_ir_and_synthesis",
+        "mapped_public_interface",
+        "launch_risk_and_blind_calibration",
+        "scalability_and_performance_validation"
+      ],
+      "artifact": {
+        "path": "docs/editorial/full_record_reviews/public_interface_candidates/f000477_justice_public_safety_119_v1/full_record_semantic_artifact.json",
+        "artifact_id": "full-record-semantic-artifact:f000477:justice_public_safety:119:v1",
+        "source_commit_sha": "55f9e201afea051556f436e83e7e9e16ad3cb99b",
+        "content_subject_sha256": "5f969c7911249836db107676516b3258b24a0995fcb95c0d36ef2adbfdfe9213",
+        "final_file_sha256": "049299dcfdd25f2c6c5deffda1e3e1226be9614cccd0216ec18ec36cc3e712b6",
+        "supporting_bindings": [
+          {
+            "path": "docs/editorial/full_record_reviews/f000477_justice_public_safety_119_full_issue_universe_authority_receipt_v2.json",
+            "artifact_id": "universe-authority:f000477:justice_public_safety:119:v2",
+            "content_subject_sha256": "d778bff4019e893f378fbd38a76b4cf108967784a4829d58b7004e2b3a578077",
+            "final_file_sha256": "3da8b8fd05d6f3f22f365105b7c1397283d7be2524fa69e00315a4554731f815"
+          },
+          {
+            "path": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_justice_public_safety_119_v1/decision_implementation_bundle.json",
+            "artifact_id": "action-interpretation-decision-implementation:f000477:justice_public_safety:119:v1",
+            "content_subject_sha256": "148fd8247b688ad17a751470471ce11e0dc1c7ae0ebef22876622c306ba617f0",
+            "final_file_sha256": "bfc94bc5a9aa3149dd3d62dd0486e613a1cbeedf263f7f9226969d5af16888c6"
+          },
+          {
+            "path": "docs/editorial/full_record_reviews/policy_episode_implementations/f000477_justice_public_safety_119_v1/episode_implementation_bundle.json",
+            "artifact_id": "policy-episode-decision-implementation:f000477:justice_public_safety:119:v1",
+            "content_subject_sha256": "2f9bb7669adf81758ad82e941cdaab88b7cf4f113f51eec25db49c3bb01f0155",
+            "final_file_sha256": "b54690dcb3b2648bb2a23c6a3cdb3d2d5f66731c5958c4b80ee0940e1688953e"
+          },
+          {
+            "path": "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_justice_public_safety_119_v2/frozen_final_compiled_semantic_ir.json",
+            "artifact_id": "full-record-semantic-ir-candidate:f000477:justice_public_safety:119:v2",
+            "content_subject_sha256": "f561d3eda50e164a6cbf98520e8c9831468f607e8ed32d333ee6905f4737f7a8",
+            "final_file_sha256": "6a385770ce670e19329e56dfde13c48ae4b581bd740eac7dd7a54bed692abc14"
+          },
+          {
+            "path": "docs/editorial/full_record_reviews/public_interface_candidates/f000477_justice_public_safety_119_v1/public_presentation_candidate.json",
+            "artifact_id": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+            "content_subject_sha256": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55",
+            "final_file_sha256": "9254e396c85b442e605203f2ebb48f4bbc28cb1c4709ad10bbb084445f5c6021"
+          },
+          {
+            "path": "docs/editorial/full_record_reviews/public_interface_candidates/f000477_justice_public_safety_119_v1/user_launch_ratification_receipt.json",
+            "artifact_id": "user-launch-ratification-receipt:f000477:justice_public_safety:119:v1",
+            "content_subject_sha256": "67e7737091af7c35b06a36d2855df72085b875656b21ab77ae9caba41a9a9c80",
+            "final_file_sha256": "40754c51f1832afbeaaccb9624dc7c505a2882b13e6b8f6095cc14fba1f8aef4"
+          }
+        ]
+      },
+      "scope": {
+        "action_count": 37,
+        "episode_count": 32,
+        "directional_action_count": 35,
+        "non_proposition_control_count": 2,
+        "review_scope": "complete_foushee_justice_119_record_through_2026_07_23"
+      }
+    }
+  ],
+  "semantic_comparison": {
+    "strategy": "semantic_identity_without_authoring_ids",
+    "identity_fields": [
+      "semantic_role",
+      "proposition_type",
+      "direction",
+      "evidence_actions",
+      "evidence_episodes",
+      "traits",
+      "relationships",
+      "boundaries",
+      "conclusion_membership"
+    ],
+    "normalized_graph_sha256": "be90c8ed5ccf4393d0563451440be0a6e53134b92d051b4929b21638706278f3",
+    "normalized_boundary_sha256": "c8108499c1fefa2a68a7d8a9c081116ddfdf1593536b02e2f0e0203d7806cdf5"
+  },
+  "protected_invariants": {
+    "total_actions": 37,
+    "total_episodes": 32,
+    "directional_actions": 35,
+    "non_proposition_controls": 2,
+    "special_action_treatments": {
+      "house:119:1:128": "bounded_meaning_with_adjacent_limitation",
+      "house:119:2:155": "non_counting_ambiguous_control",
+      "house:119:2:278": "no_safe_interpretation_control"
+    },
+    "primary_repeated_pattern_count": 4,
+    "halt_fentanyl_trajectory_required": true,
+    "same_role_primary_evidence_overlap_max": 1,
+    "mechanism_contrast": "option_a_bounded_mechanism_contrast",
+    "reviewed_wording_sha256": "58722f5f61ea0b2eb3b41b3cbf58009971c6fcfd184e189117715e2955627fc7",
+    "mapping_set_sha256": "db7cf375dd81d9d9fbe4c842b7d796bc4b4a928233501bd314ffdde3e099adf6",
+    "risk_packet_sha256": "72dddee5f5accb63c5e8cf337aa4c9aae2098356272f5e4a524dd21f6e8a3353",
+    "calibration_sample_sha256": "3282355ab57b86b547ffe6eb04dbf16865f9d9c1099f8cc4ee4d2110fd740f04"
+  },
+  "runtime_boundaries": {
+    "compact_fixture_preserved": true,
+    "full_record_is_accepted_semantic_development_case": false,
+    "full_record_production_eligible": false,
+    "full_record_publication_active": false,
+    "full_record_public_selector_active": false,
+    "cross_member_generalization_claimed": false,
+    "cross_issue_generalization_claimed": false,
+    "screenshots_are_universal_design_standard": false
+  }
+}

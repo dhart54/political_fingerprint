@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://political-fingerprint.local/schemas/foushee_justice_public_safety_119_benchmark_roles_v1.schema.json",
+  "title": "Foushee Justice layered benchmark roles V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "content_subject_sha256",
+    "authority",
+    "subject",
+    "governed_history",
+    "roles",
+    "semantic_comparison",
+    "protected_invariants",
+    "runtime_boundaries"
+  ],
+  "properties": {
+    "schema_version": {"const": "layered_benchmark_roles_v1"},
+    "artifact_id": {"const": "layered-benchmark-roles:f000477:justice_public_safety:119:v1"},
+    "content_subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision_source", "benchmark_promotion_authorized", "compact_replacement_authorized", "production_eligibility_authorized", "publication_authorized", "merge_authorized"],
+      "properties": {
+        "decision_source": {"const": "user_m8_prompt_2026-08-03"},
+        "benchmark_promotion_authorized": {"const": true},
+        "compact_replacement_authorized": {"const": false},
+        "production_eligibility_authorized": {"const": false},
+        "publication_authorized": {"const": false},
+        "merge_authorized": {"const": false}
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["member_id", "issue_id", "congress"],
+      "properties": {
+        "member_id": {"const": "F000477"},
+        "issue_id": {"const": "JUSTICE_PUBLIC_SAFETY"},
+        "congress": {"const": 119}
+      }
+    },
+    "governed_history": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["baseline_commit", "frozen_candidate_commit", "ratified_head_commit"],
+      "properties": {
+        "baseline_commit": {"const": "24a2bcb37347f74c6c40261930024e85676cd8d0"},
+        "frozen_candidate_commit": {"const": "caddc9a2ace8e737495e4a0124cf2dc13e1995e6"},
+        "ratified_head_commit": {"const": "55f9e201afea051556f436e83e7e9e16ad3cb99b"}
+      }
+    },
+    "roles": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/role"}
+    },
+    "semantic_comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strategy", "identity_fields", "normalized_graph_sha256", "normalized_boundary_sha256"],
+      "properties": {
+        "strategy": {"const": "semantic_identity_without_authoring_ids"},
+        "identity_fields": {
+          "const": ["semantic_role", "proposition_type", "direction", "evidence_actions", "evidence_episodes", "traits", "relationships", "boundaries", "conclusion_membership"]
+        },
+        "normalized_graph_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "normalized_boundary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "protected_invariants": {"type": "object"},
+    "runtime_boundaries": {"type": "object"}
+  },
+  "$defs": {
+    "role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "benchmark_status", "purpose", "artifact", "scope"],
+      "properties": {
+        "role": {"enum": ["compact_regression_fixture", "full_record_reference"]},
+        "benchmark_status": {"const": "gold_benchmark"},
+        "purpose": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "artifact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "artifact_id", "source_commit_sha", "final_file_sha256"],
+          "properties": {
+            "path": {"type": "string"},
+            "artifact_id": {"type": "string"},
+            "source_commit_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+            "content_subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "final_file_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "supporting_bindings": {"type": "array", "items": {"$ref": "#/$defs/binding"}}
+          }
+        },
+        "scope": {"type": "object"}
+      }
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "artifact_id", "final_file_sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "artifact_id": {"type": "string"},
+        "content_subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "final_file_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
