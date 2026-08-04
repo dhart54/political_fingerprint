@@ -85,7 +85,7 @@ def digest(value: object) -> str:
 
 
 def file_digest(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
 
 def ratified_text_file_digest(path: Path) -> str:
@@ -118,7 +118,11 @@ def serialized(value: object) -> bytes:
 
 def write_bytes_or_check(path: Path, raw: bytes, *, check: bool) -> None:
     if check:
-        if not path.exists() or path.read_bytes() != raw:
+        if (
+            not path.exists()
+            or path.read_bytes().replace(b"\r\n", b"\n")
+            != raw.replace(b"\r\n", b"\n")
+        ):
             raise ValueError(
                 f"{path.relative_to(ROOT)} differs from deterministic output"
             )

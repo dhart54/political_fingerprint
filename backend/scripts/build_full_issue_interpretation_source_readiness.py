@@ -64,7 +64,7 @@ def _json_bytes(value: dict[str, object]) -> bytes:
 
 
 def _check(path: Path, expected: bytes) -> None:
-    if not path.is_file() or path.read_bytes() != expected:
+    if not path.is_file() or path.read_bytes().replace(b"\r\n", b"\n") != expected:
         raise ValueError(f"generated output differs: {path.as_posix()}")
 
 

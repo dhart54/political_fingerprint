@@ -166,7 +166,10 @@ def _preflight() -> None:
     for path, expected in EXPECTED_FILES.items():
         actual = _raw_file_digest(path)
         normalized = _normalized_file_digest(path)
-        if expected not in {actual, normalized}:
+        crlf = hashlib.sha256(
+            path.read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+        ).hexdigest()
+        if expected not in {actual, normalized, crlf}:
             raise ValueError(
                 f"{path.relative_to(ROOT)} final-file digest differs: "
                 f"raw={actual}, lf={normalized}"

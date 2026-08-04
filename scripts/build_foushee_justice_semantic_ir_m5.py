@@ -72,7 +72,16 @@ def serialized(value: object) -> bytes:
 
 
 def file_digest(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
+def file_digest_matches(path: Path, expected: str) -> bool:
+    raw = path.read_bytes()
+    lf = raw.replace(b"\r\n", b"\n")
+    crlf = lf.replace(b"\n", b"\r\n")
+    return expected in {
+        hashlib.sha256(candidate).hexdigest() for candidate in (raw, lf, crlf)
+    }
 
 
 def seal(value: dict[str, Any]) -> dict[str, Any]:
@@ -94,7 +103,11 @@ def load(path: Path) -> dict[str, Any]:
 
 def write(path: Path, raw: bytes, check: bool) -> None:
     if check:
-        if not path.exists() or path.read_bytes() != raw:
+        if (
+            not path.exists()
+            or path.read_bytes().replace(b"\r\n", b"\n")
+            != raw.replace(b"\r\n", b"\n")
+        ):
             raise ValueError(
                 f"{path.relative_to(ROOT)} differs from deterministic output"
             )
@@ -108,7 +121,7 @@ def write_json(name: str, value: object, check: bool) -> None:
 
 
 def preflight() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
-    if file_digest(ACCEPTANCE_SOURCE) != ACCEPTANCE_FILE:
+    if not file_digest_matches(ACCEPTANCE_SOURCE, ACCEPTANCE_FILE):
         raise ValueError("M4B delegated acceptance final-file digest differs")
     acceptance = load(ACCEPTANCE_SOURCE)
     verify_seal(acceptance, "M4B delegated acceptance")
@@ -161,7 +174,7 @@ def preflight() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
     bundle = load(M4B_BUNDLE)
     verify_seal(bundle, "M4B implementation")
     if not (
-        file_digest(M4B_BUNDLE) == M4B_FILE
+        file_digest_matches(M4B_BUNDLE, M4B_FILE)
         and bundle["artifact_id"] == M4B_ID
         and bundle["content_subject_sha256"] == M4B_CONTENT
         and bundle["episode_count"] == 32
@@ -1241,7 +1254,7 @@ def build(check: bool) -> dict[str, Any]:
     for name in tracked_names:
         path = OUTPUT_ROOT / name
         if check:
-            raw = path.read_bytes()
+            raw = path.read_bytes().replace(b"\r\n", b"\n")
         elif name == "imported_m4b_delegated_acceptance.json":
             raw = ACCEPTANCE_SOURCE.read_bytes()
         elif name == "review_dossier.md":
