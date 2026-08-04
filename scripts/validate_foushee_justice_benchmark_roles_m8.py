@@ -92,6 +92,37 @@ def _require(condition: bool, message: str) -> None:
         raise BenchmarkRoleValidationError(message)
 
 
+def validate_primary_proposition_overlap(
+    propositions: list[dict[str, Any]],
+) -> dict[str, int]:
+    """Require independent primary action and episode evidence."""
+    primary = [
+        item
+        for item in propositions
+        if item["semantic_role"] == "behavioral"
+        and item["conclusion_relevance"] == "primary"
+    ]
+    action_roles = Counter(
+        action for item in primary for action in item["evidence_action_ids"]
+    )
+    _require(
+        max(action_roles.values(), default=0) <= 1,
+        "primary action reused across primary behavioral propositions",
+    )
+    episode_roles = Counter(
+        episode for item in primary for episode in item["evidence_episode_ids"]
+    )
+    _require(
+        max(episode_roles.values(), default=0) <= 1,
+        "primary episode reused across primary behavioral propositions",
+    )
+    return {
+        "primary_propositions": len(primary),
+        "primary_actions": len(action_roles),
+        "primary_episodes": len(episode_roles),
+    }
+
+
 def validate(record: dict[str, Any] | None = None) -> dict[str, Any]:
     role_record = _load(RECORD) if record is None else record
     errors = sorted(
@@ -195,18 +226,10 @@ def validate(record: dict[str, Any] | None = None) -> dict[str, Any]:
         ),
         "HALT Fentanyl trajectory missing",
     )
-    primary = [
-        item
-        for item in propositions
-        if item["semantic_role"] == "behavioral"
-        and item["conclusion_relevance"] == "primary"
-    ]
-    action_roles = Counter(
-        action for item in primary for action in item["evidence_action_ids"]
-    )
+    overlap = validate_primary_proposition_overlap(propositions)
     _require(
-        max(action_roles.values(), default=0) <= 1,
-        "same-role primary proposition overlap",
+        overlap["primary_propositions"] == 4,
+        "four primary behavioral propositions required",
     )
     _require(
         any(
