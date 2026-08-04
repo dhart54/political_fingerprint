@@ -6,11 +6,15 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [Foushee Justice 119 Interpretation Source Readiness V1](foushee_justice_119_interpretation_source_readiness_v1.md)
-  - deterministic source and identity readiness for the exact authorized
-    37-action universe, without action interpretation or downstream authority.
+- [Foushee Justice Full-Record Integration V1](foushee_justice_full_record_integration_v1.md)
+  - integrates the ratified 37-action record, promotes layered benchmark roles,
+    and prepares non-authorizing production-readiness evidence.
 
 ## Retained unresolved plans
+
+- [Foushee Justice 119 Interpretation Source Readiness V1](foushee_justice_119_interpretation_source_readiness_v1.md)
+  - completed source-readiness milestone retained as the immutable M2 input to
+    the governed M3-M7 chain.
 
 - [Foushee Justice 119 Universe Authority Receipt V1](foushee_justice_119_universe_authority_receipt_v1.md)
   - completed content-bound authority milestone retained as M2's immutable

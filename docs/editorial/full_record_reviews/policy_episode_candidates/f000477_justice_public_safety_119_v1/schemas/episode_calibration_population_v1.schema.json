@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "candidate": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "eligibility_rule": {
+      "type": "string"
+    },
+    "eligible_count": {
+      "type": "integer"
+    },
+    "eligible_items": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_count": {
+            "type": "integer"
+          },
+          "behavior": {
+            "type": "string"
+          },
+          "complexity": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "eligibility_id": {
+            "type": "string"
+          },
+          "episode_content_subject_sha256": {
+            "type": "string"
+          },
+          "episode_id": {
+            "type": "string"
+          },
+          "legislative_stages": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "not_held_for_launch_review": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "action_count",
+          "behavior",
+          "complexity",
+          "confidence",
+          "content_subject_sha256",
+          "eligibility_id",
+          "episode_content_subject_sha256",
+          "episode_id",
+          "legislative_stages",
+          "not_held_for_launch_review"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "frozen_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "future_seed_inputs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "sample_selected": {
+      "type": "boolean"
+    },
+    "sample_selection_deferred_until": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "selected_sample": {
+      "items": {},
+      "type": "array"
+    }
+  },
+  "required": [
+    "accepted",
+    "artifact_id",
+    "authorizing",
+    "candidate",
+    "canonical",
+    "content_subject_sha256",
+    "eligibility_rule",
+    "eligible_count",
+    "eligible_items",
+    "frozen_batch_content_subject_sha256",
+    "future_seed_inputs",
+    "public",
+    "sample_selected",
+    "sample_selection_deferred_until",
+    "schema_version",
+    "selected_sample"
+  ],
+  "type": "object"
+}

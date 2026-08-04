@@ -1,0 +1,122 @@
+{
+  "artifact_id": "sample-manifest:f000477:justice_public_safety:119:v3",
+  "benchmark_actions_excluded": true,
+  "candidate_batch_content_subject_sha256": "d906902fcf80192b4a966bf7f9934d2346d505be1a4e0c830b20e1a019dd6219",
+  "candidate_batch_frozen": true,
+  "challenge_actions": [
+    {
+      "action_id": "house:119:1:23",
+      "reasons": [
+        "Senate-origin action and pre-correction major finding",
+        "pre-correction source-first coverage finding"
+      ]
+    },
+    {
+      "action_id": "house:119:1:68",
+      "reasons": [
+        "pre-correction consistency finding",
+        "pre-correction cross-field major finding"
+      ]
+    },
+    {
+      "action_id": "house:119:2:155",
+      "reasons": [
+        "FISA action and preserved source conflict",
+        "final status ambiguous and confidence low",
+        "scope or safe-routing challenge"
+      ]
+    },
+    {
+      "action_id": "house:119:2:157",
+      "reasons": [
+        "highest-complexity suspension passage as amended"
+      ]
+    },
+    {
+      "action_id": "house:119:2:218",
+      "reasons": [
+        "highest-complexity passage"
+      ]
+    },
+    {
+      "action_id": "house:119:2:221",
+      "reasons": [
+        "FISA related-action contrast"
+      ]
+    },
+    {
+      "action_id": "house:119:2:273",
+      "reasons": [
+        "highest-complexity amendment"
+      ]
+    },
+    {
+      "action_id": "house:119:2:278",
+      "reasons": [
+        "final status no_safe_candidate and confidence low",
+        "scope or safe-routing challenge"
+      ]
+    }
+  ],
+  "challenge_count": 8,
+  "content_subject_sha256": "511c5587c887d738a7b6d05bf73410866583ddff2e546c4ab37441a9c72526d6",
+  "contrast_group_count": 4,
+  "m2_source_readiness_file_sha256": "62a33bcbb1c4eecc267f33be1740c7ee4db59e617a150b6d837c1aa30930bd91",
+  "non_authorizing": true,
+  "non_benchmark_population_count": 30,
+  "random_sample_count": 12,
+  "related_action_contrast_sets": [
+    {
+      "action_ids": [
+        "house:119:1:6",
+        "house:119:1:23"
+      ],
+      "group_id": "laken-riley-house-senate-versions"
+    },
+    {
+      "action_ids": [
+        "house:119:1:33",
+        "house:119:1:166"
+      ],
+      "group_id": "halt-fentanyl-house-senate-versions"
+    },
+    {
+      "action_ids": [
+        "house:119:2:155",
+        "house:119:2:221"
+      ],
+      "group_id": "fisa-short-term-extensions"
+    },
+    {
+      "action_ids": [
+        "house:119:1:162",
+        "house:119:1:270",
+        "house:119:1:271",
+        "house:119:1:274",
+        "house:119:1:275",
+        "house:119:1:298",
+        "house:119:1:299"
+      ],
+      "group_id": "dc-criminal-justice-and-policing"
+    }
+  ],
+  "schema_version": "sample_manifest_v3",
+  "seed_label": "foushee-justice-action-interpretation-generalization-audit-v3",
+  "seed_material_convention": "SHA-256(batch subject + '*' + M2 file SHA + '*' + label)",
+  "seed_sha256": "382bd42c881b8d5ae897a14753e24bfc732bf9c737fe8bd3d4906d7be226d26f",
+  "selected_random_action_ids": [
+    "house:119:2:169",
+    "house:119:1:27",
+    "house:119:2:227",
+    "house:119:1:128",
+    "house:119:2:234",
+    "house:119:1:351",
+    "house:119:1:42",
+    "house:119:2:278",
+    "house:119:1:6",
+    "house:119:1:68",
+    "house:119:2:218",
+    "house:119:1:340"
+  ],
+  "selection_algorithm": "rank non-benchmark IDs by SHA-256(seed + newline + action_id), then action_id; take first 12"
+}

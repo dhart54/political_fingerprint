@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "allowed_top_level_decisions": {
+      "items": {
+        "enum": [
+          "generalization_pass",
+          "global_revision_required",
+          "generalization_rejected"
+        ]
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "type": "array"
+    },
+    "artifact_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "non_authorizing": {
+      "const": true
+    },
+    "sample_action_decisions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "allowed_decisions": {
+            "items": {
+              "enum": [
+                "accept_candidate_for_later_full_review",
+                "accept_with_required_revision",
+                "reject_candidate",
+                "unresolved"
+              ]
+            },
+            "maxItems": 4,
+            "minItems": 4,
+            "type": "array"
+          },
+          "decision": {
+            "type": "null"
+          },
+          "does_not_accept_full_batch": {
+            "const": true
+          },
+          "does_not_authorize_implementation": {
+            "const": true
+          },
+          "notes": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "action_id",
+          "decision",
+          "allowed_decisions",
+          "notes",
+          "does_not_accept_full_batch",
+          "does_not_authorize_implementation"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "action_interpretation_generalization_human_decision_v1"
+    },
+    "template_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "top_level_decision": {
+      "type": "null"
+    },
+    "unfilled": {
+      "const": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "template_id",
+    "unfilled",
+    "non_authorizing",
+    "top_level_decision",
+    "allowed_top_level_decisions",
+    "sample_action_decisions",
+    "artifact_sha256"
+  ],
+  "type": "object"
+}

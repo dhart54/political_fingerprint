@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "artifact_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "non_authorizing": {
+      "const": true
+    },
+    "review_count": {
+      "const": 37
+    },
+    "reviews": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "candidate_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "candidate_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "findings": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "competing_plausible_interpretation": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "evidence": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "finding_id": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "finding_type": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "recommended_candidate_correction": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "severity": {
+                  "enum": [
+                    "minor",
+                    "major",
+                    "critical"
+                  ]
+                },
+                "unresolved_editorial_question": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "finding_id",
+                "severity",
+                "finding_type",
+                "evidence",
+                "competing_plausible_interpretation",
+                "recommended_candidate_correction",
+                "unresolved_editorial_question"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "highest_severity": {
+            "enum": [
+              "none",
+              "minor",
+              "major",
+              "critical"
+            ]
+          },
+          "reviewer_cannot_accept": {
+            "const": true
+          },
+          "reviewer_recommendation": {
+            "enum": [
+              "retain_candidate",
+              "revise_candidate",
+              "candidate_ambiguous",
+              "no_safe_candidate"
+            ]
+          }
+        },
+        "required": [
+          "candidate_id",
+          "candidate_sha256",
+          "action_id",
+          "findings",
+          "highest_severity",
+          "reviewer_recommendation",
+          "reviewer_cannot_accept"
+        ],
+        "type": "object"
+      },
+      "maxItems": 37,
+      "minItems": 37,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "action_interpretation_adversarial_reviews_v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "non_authorizing",
+    "review_count",
+    "reviews",
+    "artifact_sha256"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,88 @@
+{
+  "artifact_id": "public-wording-review:f000477:justice_public_safety:119:v1",
+  "content_subject_sha256": "2c957e7bed44a8b9119c5a0bd2fcbd279b3bfb1e7474034c1f97530833655ad6",
+  "correction_cycles": [
+    {
+      "changes": [
+        "Replaced complete-record divide language with ‘one meaningful contrast’.",
+        "Placed firearm and fraud findings immediately after the contrast.",
+        "Added complete 37/35/32/2 accounting."
+      ],
+      "cycle": 1,
+      "rationale": "Bound synthesis scope and preserve all primary evidence."
+    },
+    {
+      "changes": [
+        "Added explicit HALT one-episode language and visible roll 128/155/278 boundaries.",
+        "Separated no-safe meaning from low-confidence meaning."
+      ],
+      "cycle": 2,
+      "rationale": "Prevent duplicated weight and unsupported public meaning."
+    }
+  ],
+  "final_statement_ids": [
+    "statement:conclusion:body",
+    "statement:conclusion:headline",
+    "statement:coverage:full-record",
+    "statement:limitation:roll-128-unresolved-text-limit:body",
+    "statement:limitation:roll-128-unresolved-text-limit:heading",
+    "statement:limitation:roll-155-source-identity-block:body",
+    "statement:limitation:roll-155-source-identity-block:heading",
+    "statement:limitation:roll-278-no-safe-interpretation-block:body",
+    "statement:limitation:roll-278-no-safe-interpretation-block:heading",
+    "statement:other-notable:disclosure",
+    "statement:pattern:prop:354da734fec2fcf6:body",
+    "statement:pattern:prop:354da734fec2fcf6:heading",
+    "statement:pattern:prop:d7e189366b477118:body",
+    "statement:pattern:prop:d7e189366b477118:heading",
+    "statement:pattern:prop:e75e7aebbd7b2d29:body",
+    "statement:pattern:prop:e75e7aebbd7b2d29:heading",
+    "statement:pattern:prop:e76b98cf92ef34cb:body",
+    "statement:pattern:prop:e76b98cf92ef34cb:heading",
+    "statement:scope:119",
+    "statement:teaser:mechanism-contrast",
+    "statement:trajectory:halt:body",
+    "statement:trajectory:halt:heading"
+  ],
+  "initial_wording": {
+    "conclusion": "Her record divides between opposition to D.C. rule displacement and support for terrorism preparedness.",
+    "headline": "Her record divides between local-rule displacement and federal preparedness mandates."
+  },
+  "passes": [
+    {
+      "findings": [
+        "Initial headline overclaimed the synthesis as a complete-record explanation.",
+        "Coverage copy initially lacked the two governed non-proposition controls."
+      ],
+      "review": "fidelity"
+    },
+    {
+      "findings": [
+        "No partisan, motive, ideological, emotional, or strategic language remained after correction."
+      ],
+      "review": "neutrality"
+    },
+    {
+      "findings": [
+        "Firearm and fraud patterns must immediately follow the bounded contrast.",
+        "HALT must be one mixed episode, not three positions."
+      ],
+      "review": "compression_and_completeness"
+    },
+    {
+      "findings": [
+        "Action and episode counts needed explicit separation.",
+        "Special-roll limits needed visible headings."
+      ],
+      "review": "reader_interpretation"
+    },
+    {
+      "findings": [
+        "A hostile excerpt of the initial headline could imply a comprehensive political philosophy."
+      ],
+      "review": "civic_risk"
+    }
+  ],
+  "remaining_major_or_critical_findings": 0,
+  "schema_version": "public_wording_review_v1"
+}

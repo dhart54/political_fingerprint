@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "candidate": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "derivation_inputs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "finding_counts": {
+      "additionalProperties": false,
+      "properties": {
+        "critical": {
+          "type": "integer"
+        },
+        "major": {
+          "type": "integer"
+        },
+        "none": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "critical",
+        "major",
+        "none"
+      ],
+      "type": "object"
+    },
+    "findings": {
+      "items": {},
+      "type": "array"
+    },
+    "forbidden_inputs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "reviewed_initial_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "accepted",
+    "artifact_id",
+    "authorizing",
+    "candidate",
+    "canonical",
+    "content_subject_sha256",
+    "derivation_inputs",
+    "finding_counts",
+    "findings",
+    "forbidden_inputs",
+    "public",
+    "reviewed_initial_batch_content_subject_sha256",
+    "schema_version"
+  ],
+  "type": "object"
+}

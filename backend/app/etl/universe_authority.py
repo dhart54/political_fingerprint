@@ -45,14 +45,25 @@ def canonical_file_sha256(path: Path) -> str:
     return hashlib.sha256(content).hexdigest()
 
 
-def file_digest_matches(path: Path, expected: str) -> bool:
-    content = path.read_bytes()
+def content_digest_matches(content: bytes, expected: str, *, suffix: str) -> bool:
     if hashlib.sha256(content).hexdigest() == expected:
         return True
-    return (
-        path.suffix.lower() in TEXT_SUFFIXES
-        and hashlib.sha256(content.replace(b"\r\n", b"\n")).hexdigest() == expected
+    if suffix.lower() not in TEXT_SUFFIXES:
+        return False
+
+    # Historical protected-file receipts were created on both Windows and
+    # POSIX checkouts. Treat only CRLF/LF representation as equivalent while
+    # preserving exact byte matching for every other change.
+    lf_content = content.replace(b"\r\n", b"\n")
+    crlf_content = lf_content.replace(b"\n", b"\r\n")
+    return any(
+        hashlib.sha256(candidate).hexdigest() == expected
+        for candidate in (lf_content, crlf_content)
     )
+
+
+def file_digest_matches(path: Path, expected: str) -> bool:
+    return content_digest_matches(path.read_bytes(), expected, suffix=path.suffix)
 
 
 def _validate_schema(value: dict[str, Any], path: Path, label: str) -> None:

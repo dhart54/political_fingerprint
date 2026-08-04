@@ -1,0 +1,463 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "authority": {
+      "additionalProperties": false,
+      "properties": {
+        "decision_timestamp": {
+          "type": "string"
+        },
+        "delegation_basis": {
+          "type": "string"
+        },
+        "not_user_signature": {
+          "type": "boolean"
+        },
+        "reviewer_authority": {
+          "type": "string"
+        },
+        "reviewer_identity": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision_timestamp",
+        "delegation_basis",
+        "not_user_signature",
+        "reviewer_authority",
+        "reviewer_identity"
+      ],
+      "type": "object"
+    },
+    "authorization": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_semantic_acceptance": {
+          "type": "boolean"
+        },
+        "deployment": {
+          "type": "boolean"
+        },
+        "final_human_acceptance": {
+          "type": "boolean"
+        },
+        "generate_structured_accepted_interpretation_candidate_state": {
+          "type": "boolean"
+        },
+        "implement_approved_decisions": {
+          "type": "boolean"
+        },
+        "merge": {
+          "type": "boolean"
+        },
+        "policy_episode_construction": {
+          "type": "boolean"
+        },
+        "production_persistence": {
+          "type": "boolean"
+        },
+        "publication": {
+          "type": "boolean"
+        },
+        "pull_request": {
+          "type": "boolean"
+        },
+        "push": {
+          "type": "boolean"
+        },
+        "semantic_ir_compilation": {
+          "type": "boolean"
+        },
+        "synthesis": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "canonical_semantic_acceptance",
+        "deployment",
+        "final_human_acceptance",
+        "generate_structured_accepted_interpretation_candidate_state",
+        "implement_approved_decisions",
+        "merge",
+        "policy_episode_construction",
+        "production_persistence",
+        "publication",
+        "pull_request",
+        "push",
+        "semantic_ir_compilation",
+        "synthesis"
+      ],
+      "type": "object"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "decision_accounting": {
+      "additionalProperties": false,
+      "properties": {
+        "accept_candidate": {
+          "type": "integer"
+        },
+        "accept_with_required_revision": {
+          "type": "integer"
+        },
+        "preserve_ambiguous": {
+          "type": "integer"
+        },
+        "preserve_no_safe_candidate": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "accept_candidate",
+        "accept_with_required_revision",
+        "preserve_ambiguous",
+        "preserve_no_safe_candidate"
+      ],
+      "type": "object"
+    },
+    "decision_record_status": {
+      "type": "string"
+    },
+    "decisions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_competing_interpretation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "accepted_exact_action_meaning": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "accepted_exact_choice_position_effect": {
+            "type": "string"
+          },
+          "accepted_limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "action_id": {
+            "type": "string"
+          },
+          "candidate_content_subject_sha256": {
+            "type": "string"
+          },
+          "candidate_id": {
+            "type": "string"
+          },
+          "confidence_decision": {
+            "type": "string"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "decision_timestamp": {
+            "type": "string"
+          },
+          "decision_unit_content_subject_sha256": {
+            "type": "string"
+          },
+          "required_wording_or_field_revisions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "approved_value": {
+                  "type": "string"
+                },
+                "field": {
+                  "type": "string"
+                },
+                "operation": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "approved_value",
+                "field",
+                "operation",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "reviewer_authority": {
+            "type": "string"
+          },
+          "reviewer_identity": {
+            "type": "string"
+          },
+          "secondary_detail_decisions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "decision": {
+                  "type": "string"
+                },
+                "entry_id": {
+                  "type": "string"
+                },
+                "rationale": {
+                  "type": "string"
+                },
+                "source_bound_detail": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "decision",
+                "entry_id",
+                "rationale",
+                "source_bound_detail"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "selected_decision": {
+            "type": "string"
+          },
+          "structured_rationale": {
+            "type": "string"
+          },
+          "unresolved_question": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "accepted_competing_interpretation",
+          "accepted_exact_action_meaning",
+          "accepted_exact_choice_position_effect",
+          "accepted_limitations",
+          "action_id",
+          "candidate_content_subject_sha256",
+          "candidate_id",
+          "confidence_decision",
+          "content_subject_sha256",
+          "decision_timestamp",
+          "decision_unit_content_subject_sha256",
+          "required_wording_or_field_revisions",
+          "reviewer_authority",
+          "reviewer_identity",
+          "secondary_detail_decisions",
+          "selected_decision",
+          "structured_rationale",
+          "unresolved_question"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "generalization_decision": {
+      "type": "string"
+    },
+    "input_bindings": {
+      "additionalProperties": false,
+      "properties": {
+        "decision_preparation_bundle": {
+          "additionalProperties": false,
+          "properties": {
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "content_subject_sha256",
+            "final_file_sha256",
+            "id"
+          ],
+          "type": "object"
+        },
+        "empty_human_decision_record": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        },
+        "m1": {
+          "additionalProperties": false,
+          "properties": {
+            "file_sha256": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_sha256",
+            "path"
+          ],
+          "type": "object"
+        },
+        "m2": {
+          "additionalProperties": false,
+          "properties": {
+            "file_sha256": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_sha256",
+            "path"
+          ],
+          "type": "object"
+        },
+        "m3b_a_parity_manifest": {
+          "additionalProperties": false,
+          "properties": {
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "final_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "content_subject_sha256",
+            "final_file_sha256"
+          ],
+          "type": "object"
+        },
+        "m3b_a_snapshot_commit": {
+          "type": "string"
+        },
+        "repository_baseline": {
+          "type": "string"
+        },
+        "v4_candidate_batch": {
+          "additionalProperties": false,
+          "properties": {
+            "batch_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "parity_manifest_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "batch_id",
+            "content_subject_sha256",
+            "file_sha256",
+            "parity_manifest_file_sha256"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "decision_preparation_bundle",
+        "empty_human_decision_record",
+        "m1",
+        "m2",
+        "m3b_a_parity_manifest",
+        "m3b_a_snapshot_commit",
+        "repository_baseline",
+        "v4_candidate_batch"
+      ],
+      "type": "object"
+    },
+    "next_required_state": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "subject": {
+      "additionalProperties": false,
+      "properties": {
+        "action_count": {
+          "type": "integer"
+        },
+        "action_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "chamber": {
+          "type": "string"
+        },
+        "congress": {
+          "type": "integer"
+        },
+        "issue_id": {
+          "type": "string"
+        },
+        "member_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "action_count",
+        "action_ids",
+        "chamber",
+        "congress",
+        "issue_id",
+        "member_id"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "authority",
+    "authorization",
+    "content_subject_sha256",
+    "decision_accounting",
+    "decision_record_status",
+    "decisions",
+    "generalization_decision",
+    "input_bindings",
+    "next_required_state",
+    "schema_version",
+    "subject"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,159 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/review_contracts_v2",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "correction_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "benchmark_inaccessible": {
+          "type": "boolean"
+        },
+        "cycles": {
+          "type": "integer"
+        },
+        "field_level_diff_required": {
+          "type": "boolean"
+        },
+        "global_failure_classes_only": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "benchmark_inaccessible",
+        "cycles",
+        "field_level_diff_required",
+        "global_failure_classes_only"
+      ],
+      "type": "object"
+    },
+    "coverage_reviewer_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "cannot_accept_candidate": {
+          "type": "boolean"
+        },
+        "independent_from_scope_reviewer": {
+          "type": "boolean"
+        },
+        "inputs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cannot_accept_candidate",
+        "independent_from_scope_reviewer",
+        "inputs",
+        "version"
+      ],
+      "type": "object"
+    },
+    "materiality_rubric": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "primary_worker_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "benchmark_blind": {
+          "type": "boolean"
+        },
+        "inventory_precedes_drafting": {
+          "type": "boolean"
+        },
+        "meaning_sentence_range": {
+          "items": {
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "official_title_separate_from_interpretation": {
+          "type": "boolean"
+        },
+        "other_candidate_blind": {
+          "type": "boolean"
+        },
+        "party_blind": {
+          "type": "boolean"
+        },
+        "title_only_prohibited_without_independent_single_mechanism_finding": {
+          "type": "boolean"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "benchmark_blind",
+        "inventory_precedes_drafting",
+        "meaning_sentence_range",
+        "official_title_separate_from_interpretation",
+        "other_candidate_blind",
+        "party_blind",
+        "title_only_prohibited_without_independent_single_mechanism_finding",
+        "version"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "scope_reviewer_contract": {
+      "additionalProperties": false,
+      "properties": {
+        "cannot_accept_candidate": {
+          "type": "boolean"
+        },
+        "checks": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "independent_from_coverage_reviewer": {
+          "type": "boolean"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cannot_accept_candidate",
+        "checks",
+        "independent_from_coverage_reviewer",
+        "version"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "content_subject_sha256",
+    "correction_contract",
+    "coverage_reviewer_contract",
+    "materiality_rubric",
+    "non_authorizing",
+    "primary_worker_contract",
+    "schema_version",
+    "scope_reviewer_contract"
+  ],
+  "title": "review_contracts_v2",
+  "type": "object"
+}

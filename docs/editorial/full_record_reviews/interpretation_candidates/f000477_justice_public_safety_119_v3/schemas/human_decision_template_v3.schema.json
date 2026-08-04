@@ -1,0 +1,69 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/human_decision_template_v3",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepts_any_candidate": {
+      "type": "boolean"
+    },
+    "allowed_decisions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizes_m3b": {
+      "type": "boolean"
+    },
+    "candidate_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "decision_state": {
+      "type": "string"
+    },
+    "human_reviewer": {
+      "type": "null"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "reviewed_action_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "reviewed_at": {
+      "type": "null"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "selected_decision": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "accepts_any_candidate",
+    "allowed_decisions",
+    "artifact_id",
+    "authorizes_m3b",
+    "candidate_batch_content_subject_sha256",
+    "content_subject_sha256",
+    "decision_state",
+    "human_reviewer",
+    "non_authorizing",
+    "reviewed_action_ids",
+    "reviewed_at",
+    "schema_version",
+    "selected_decision"
+  ],
+  "title": "human_decision_template_v3",
+  "type": "object"
+}

@@ -1,0 +1,124 @@
+{
+  "action_id": "house:119:1:275",
+  "content_subject_sha256": "22def678b783f14220d745db83558d8084a6c3b805f1f2454420559c33261df7",
+  "cross_domain_limitations": [],
+  "exact_action_identity": "119:hr:5143",
+  "house_stage": "passage",
+  "neutral_methodology": [
+    "inventory_material_provisions_before_drafting",
+    "separate_official_title_from_interpretation",
+    "title_only_prohibited_without_independent_single_mechanism_finding",
+    "exact_choice_only",
+    "preserve_house_stage",
+    "yea_supports_exact_choice_only",
+    "nay_opposes_exact_choice_only",
+    "present_and_not_voting_non_directional",
+    "no_motive_or_broader_issue_inference",
+    "parent_context_cannot_replace_narrow_action",
+    "account_for_material_limits_exceptions_and_retained_provisions",
+    "preserve_ambiguity",
+    "no_safe_candidate_when_required"
+  ],
+  "official_action_date": "2025-09-17",
+  "official_member_action": "nay",
+  "operative_text_versions": [
+    "eh"
+  ],
+  "packet_id": "action-interpretation-worker-packet:house:119:1:275:v2",
+  "schema_version": "action_interpretation_worker_packet_v2",
+  "sources": [
+    {
+      "deterministic_extraction": {
+        "projection": {
+          "action_date": "2025-09-17",
+          "action_id": "house:119:1:275",
+          "chamber": "house",
+          "congress": 119,
+          "house_action_stage": "passage",
+          "measure_identity": "119:hr:5143",
+          "member_action": "nay",
+          "official_action_description": "On Passage",
+          "operative_content_sha256": null,
+          "raw_provenance_sha256": "0a94030431b84103984c55af4ea9c6229e75a288020e3169e8fa91b82949171f",
+          "roll_number": 275,
+          "schema_version": "neutral_m3_source_projection_v1",
+          "source_url": "https://clerk.house.gov/evs/2025/roll275.xml",
+          "text_version": "2025-09-17"
+        }
+      },
+      "neutral_projection_sha256": "84253feee1beb5ee05b81045d2f3ac5eb09ce92503596db75bd4e59fcd90e70d",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_275.xml",
+      "raw_sha256": "0a94030431b84103984c55af4ea9c6229e75a288020e3169e8fa91b82949171f",
+      "role": "member_action_evidence",
+      "source_id": "clerk:119:1:275",
+      "source_type": "house_clerk_roll_call",
+      "text_version": "2025-09-17"
+    },
+    {
+      "deterministic_extraction": {
+        "document_title": "119 HR 5143 EH: District of Columbia Policing Protection Act of 2025",
+        "extraction_engine": "python_xml_elementtree_v1",
+        "extraction_limitation": null,
+        "official_title": "To establish standards for law enforcement officers in the District of Columbia to engage in vehicular pursuits of suspects, and for other purposes.",
+        "section_headings": [
+          "Short title",
+          "Vehicular pursuits by law enforcement officers in District of Columbia",
+          "Amendment",
+          "Department of Justice report on PursuitAlert"
+        ],
+        "structured_sections": [
+          {
+            "enum": "1.",
+            "header": "Short title",
+            "text": "1.Short titleThis Act may be cited as the District of Columbia Policing Protection Act of 2025."
+          },
+          {
+            "enum": "2.",
+            "header": "Vehicular pursuits by law enforcement officers in District of Columbia",
+            "text": "2.Vehicular pursuits by law enforcement officers in District of Columbia (a)AmendmentThe Comprehensive Policing and Justice Reform Amendment Act of 2022 (D.C. Law 24–345) is amended— (1)in subtitle S of title I— (A)in the heading, by striking LIMITATIONS ON THE; (B)in section 127(a) (sec. 5–365.01(a), D.C. Official Code)— (i)by striking paragraphs (1) through (5); (ii)in paragraph (6), by striking the period at the end and inserting the following: , except that such term does not include a sworn federal law enforcement officer of a covered federal law enforcement agency as defined in section 11712(d) of the National Capital Revitalization and Self-Government Improvement Act of 1997 (sec. 5–133.17(d), D.C. Official Code).; (iii)by redesignating paragraphs (6) and (7) as paragraphs (1) and (2), respectively; (iv)by striking paragraphs (8) through (11); and (v)by redesignating paragraph (12) as paragraph (3); and (C)in section 128 (sec. 5–365.02, D.C. Official Code), by striking subsections (a), (b), and (c) and inserting the following: If a law enforcement officer encounters a suspect fleeing in a motor vehicle, the officer may engage in a vehicular pursuit of the suspect unless the officer, or a higher-ranking official with supervisory authority over the officer, reasonably believes that— (1)vehicular pursuit would— (A)entail an unacceptable risk of harm to a person other than the suspect; or (B)be futile; or (2)the suspect can be apprehended more effectively or expeditiously by a means other than vehicular pursuit.; and (2)in the table of contents, by striking the item relating to subtitle S of title I and inserting the following: SUBTITLE S.USE OF VEHICULAR PURSUITS BY LAW ENFORCEMENT OFFICERS33. (b)Department of Justice report on PursuitAlertNot later than 3 years after the date of enactment of this Act, the Attorney General shall— (1)evaluate the costs and benefits of the Metropolitan Police Department of the District of Columbia adopting PursuitAlert or another similar technology capable of alerting members of the public to the presence of a police pursuit in their immediate vicinity; and (2)publish a report on the evaluation conducted under paragraph (1) and submit the report to— (A)the Committee on Homeland Security and Governmental Affairs of the Senate; (B)the Committee on the Judiciary of the Senate; (C)the Committee on Oversight and Government Reform of the House of Representatives; and (D)the Committee on the Judiciary of the House of Representatives."
+          }
+        ]
+      },
+      "neutral_projection_sha256": "c7c583dca7ede7d270bc5ad14a0e20a5d2cb5598e7be925e3b863233a0df29f9",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/e58ea4f3081606547bc495d2e37ab7d6c9be66384449889e7e5ce2602db04052_BILLS-119hr5143eh.xml",
+      "raw_sha256": "e58ea4f3081606547bc495d2e37ab7d6c9be66384449889e7e5ce2602db04052",
+      "role": "operative_content_interpretation_input",
+      "source_id": "congress_text:119:hr:5143:eh",
+      "source_type": "congress_gov_bill_text",
+      "text_version": "eh"
+    }
+  ],
+  "worker_input_allowlist": [
+    "action_id",
+    "official_action_date",
+    "house_stage",
+    "official_member_action",
+    "exact_action_identity",
+    "neutral_projections",
+    "operative_content",
+    "cross_domain_limitations",
+    "neutral_methodology",
+    "materiality_rubric"
+  ],
+  "worker_input_forbidden": [
+    "accepted_benchmark_interpretations",
+    "accepted_benchmark_text",
+    "advocacy",
+    "benchmark_conclusion",
+    "benchmark_membership",
+    "cosponsor_party",
+    "episode_membership",
+    "generic_bill_metadata",
+    "member_party",
+    "news",
+    "other_action_candidates",
+    "partisan_descriptions",
+    "political_commentary",
+    "public_language",
+    "semantic_ir",
+    "sponsor_party",
+    "synthesis_outcomes",
+    "v1_action_candidates",
+    "v1_adversarial_reviews"
+  ]
+}

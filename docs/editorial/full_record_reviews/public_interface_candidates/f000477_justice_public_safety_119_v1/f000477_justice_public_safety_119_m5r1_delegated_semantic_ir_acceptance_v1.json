@@ -1,0 +1,131 @@
+{
+  "accepted_internal_state": {
+    "accepted_semantic_reference": false,
+    "available_for_public_presentation_candidate_work": true,
+    "canonical": false,
+    "launch_ratification_state": "launch_ratification_pending",
+    "persisted": false,
+    "public": false,
+    "publication_authorized": false,
+    "runtime_selectable": false,
+    "semantic_ir_state": "delegated_editorial_accepted_internal",
+    "synthesis_state": "delegated_editorial_accepted_internal_with_launch_risk"
+  },
+  "artifact_id": "delegated-semantic-ir-acceptance:f000477:justice_public_safety:119:v1",
+  "authorization": {
+    "accepted_semantic_reference": false,
+    "canonical": false,
+    "construct_and_implement_public_presentation_candidates_under_one_consolidated_milestone": true,
+    "create_compact_launch_review_packet": true,
+    "deployment": false,
+    "final_user_launch_ratification": false,
+    "freeze_public_interface_before_calibration_sampling": true,
+    "import_this_acceptance_record": true,
+    "merge": false,
+    "production_persistence": false,
+    "publication": false,
+    "pull_request": false,
+    "push": false,
+    "runtime_activation": false,
+    "select_three_to_five_blind_calibration_samples_after_freeze": true
+  },
+  "content_subject_sha256": "fe434b3c3bcb0d6235003d144ad25c4e207d0dc104ec42fec1ec8e75d3514db9",
+  "decision": {
+    "action_accounting": {
+      "included_in_behavioral_proposition": 35,
+      "non_proposition": 2
+    },
+    "blocking_findings": [],
+    "decision": "delegated_authority_accepts_semantic_ir_and_synthesis_implementation",
+    "decision_timestamp": "2026-08-02T16:19:00-04:00",
+    "direction_accounting": {
+      "mixed_behavioral": 1,
+      "opposition": 18,
+      "support": 4
+    },
+    "not_user_signature": true,
+    "overlap_accounting": {
+      "corrected_prohibited_rows": 0,
+      "initial_prohibited_rows": 2
+    },
+    "review_findings": [
+      "The prohibited same-role overlap involving roll 298 and the D.C. pretrial episode is removed globally.",
+      "Roll 298 supplies primary repeated-pattern weight only once, within D.C. public-safety rule displacement.",
+      "Roll 171 remains explicitly accounted for as a bounded excluded notable choice.",
+      "No action or episode appears in more than one behavioral proposition in the corrected graph.",
+      "All 37 actions are accounted for: 35 in behavioral propositions and two governed non-proposition controls.",
+      "Roll 128 remains bounded to resolved meaning; rolls 155 and 278 remain blocked from behavioral and synthesis support.",
+      "The corrected graph was generated through the canonical compiler and pipeline and independently reconstructed.",
+      "The mechanism-divide synthesis is acceptable as a bounded internal candidate because all four primary repeated patterns remain visible.",
+      "The mechanism divide does not explain the firearm and fraud patterns and must remain held for launch review.",
+      "No accepted-reference, canonical, runtime, persistence, public, production, or publication state changed."
+    ],
+    "reviewer_authority": "delegated_product_methodology_editorial_authority_v1",
+    "reviewer_identity": "chatgpt:political_fingerprint_authority_thread",
+    "semantic_accounting": {
+      "behavioral_propositions": 23,
+      "limiting_conclusion_objects": 1,
+      "mechanism_divides": 1,
+      "notable_choices": 17,
+      "primary_conclusion_objects": 5,
+      "repeated_patterns": 4,
+      "synthesis_propositions": 1,
+      "trajectories": 2
+    }
+  },
+  "held_launch_review": [
+    {
+      "question": "Should the eventual public conclusion foreground the D.C.-versus-terrorism mechanism divide, use a no-common-throughline framing, or omit an overarching synthesis?",
+      "reason": "The divide is supported by two repeated patterns, but separate firearm-access and fraud-enforcement patterns remain primary and do not participate in it.",
+      "required_public_boundary": "Public language must not imply that the mechanism divide explains the complete record or that roll 298 supplies two independent evidentiary weights.",
+      "risk_id": "launch-risk:semantic-ir:mechanism-divide:v1",
+      "state": "held_for_launch_review"
+    }
+  ],
+  "input_bindings": {
+    "m4b_delegated_episode_implementation_acceptance": {
+      "artifact_id": "delegated-episode-implementation-acceptance:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "370f7b7668eb775cb56b283e7c4261c908a977d0b2e60054e6dc396940ea669e",
+      "final_file_sha256": "5e32e938aa9867524413c6329ebfa32fc42b24e793e25cddb36b8e3b6f100997"
+    },
+    "parity_manifest": {
+      "artifact_id": "semantic-ir-implementation-parity:f000477:justice_public_safety:119:v2",
+      "content_subject_sha256": "e2a2a5443e53885aacd6f2f2164be9ec25342a494a87cfe87005fef45ee27fa8",
+      "final_file_sha256": "1626b327473e7610d7d917cde30586c024cb657b028ddca566d02561c7fcbb61"
+    },
+    "v2_compiled_graph": {
+      "artifact_id": "full-record-semantic-ir-candidate:f000477:justice_public_safety:119:v2",
+      "content_subject_sha256": "f561d3eda50e164a6cbf98520e8c9831468f607e8ed32d333ee6905f4737f7a8",
+      "final_file_sha256": "6a385770ce670e19329e56dfde13c48ae4b581bd740eac7dd7a54bed692abc14"
+    },
+    "v2_compiler_input": {
+      "artifact_id": "full-record-semantic-ir-compiler-input:f000477:justice_public_safety:119:v2",
+      "content_subject_sha256": "d7db11e6f26acaabee7f7a70319d2fe4906514452ef59f46b43fafef77a5ff5b",
+      "final_file_sha256": "c5ab8e48404bb163da08f85449b20fe132d423294c2235c7be697bb34ed1f53a"
+    },
+    "v2_provisional_implementation": {
+      "artifact_id": "full-record-semantic-ir-provisional-implementation:f000477:justice_public_safety:119:v2",
+      "content_subject_sha256": "99f9a4f09e3d849d689047789b7757a5d28d632c88a2ac760a72790396ef50be",
+      "final_file_sha256": "88ede2762a4bc3570c42263e7fcf0bd0a4347e6d0823daa22064a236ce886ced"
+    }
+  },
+  "next_required_state": "public_interface_and_launch_review_packet",
+  "reviewed_snapshot": {
+    "branch": "codex/foushee-justice-action-interpretation-candidates-v1",
+    "cached_origin_main": "24a2bcb37347f74c6c40261930024e85676cd8d0",
+    "commit_tree_sha": "52a76312bace6521304ff66f097cb1d536811b19",
+    "parent_commit": "c8c2ca71d3c1837735bc54bde7d0ca597eac891c",
+    "repository": "dhart54/political_fingerprint",
+    "review_archive_final_file_sha256": "72449d61a30d5fa2da91c3e923177ef5d58e76874cfb4c220cbda69db02ac2e5",
+    "reviewed_commit": "e53abbf52fefd0c3d313287cab750e811a5b1b64"
+  },
+  "schema_version": "delegated_full_record_semantic_ir_acceptance_v1",
+  "subject": {
+    "action_count": 37,
+    "chamber": "house",
+    "congress": 119,
+    "episode_count": 32,
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "member_id": "F000477"
+  }
+}

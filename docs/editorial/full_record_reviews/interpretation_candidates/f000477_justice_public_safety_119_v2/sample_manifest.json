@@ -1,0 +1,137 @@
+{
+  "artifact_id": "action-interpretation-sample-manifest:f000477:justice_public_safety:119:v2",
+  "benchmark_actions_excluded": true,
+  "candidate_batch_content_subject_sha256": "c68aee15312ff3259fff1b7dcaf1dd293665b88290a80d17c216cfe5530a4c85",
+  "candidate_batch_frozen": true,
+  "challenge_actions": [
+    {
+      "action_id": "house:119:1:131",
+      "inclusion_reasons": [
+        "major initial provision-coverage finding"
+      ],
+      "packet_complexity_bytes": 11140
+    },
+    {
+      "action_id": "house:119:1:166",
+      "inclusion_reasons": [
+        "Senate-origin S. 331",
+        "Senate-origin S. 331 and multi-mechanism scheduling, enforcement, and research framework",
+        "major initial provision-coverage finding"
+      ],
+      "packet_complexity_bytes": 23733
+    },
+    {
+      "action_id": "house:119:1:275",
+      "inclusion_reasons": [
+        "major initial provision-coverage finding"
+      ],
+      "packet_complexity_bytes": 3301
+    },
+    {
+      "action_id": "house:119:1:298",
+      "inclusion_reasons": [
+        "complex passage bill with detention, bail, definitions, and applicability mechanisms"
+      ],
+      "packet_complexity_bytes": 9883
+    },
+    {
+      "action_id": "house:119:1:299",
+      "inclusion_reasons": [
+        "major initial provision-coverage finding"
+      ],
+      "packet_complexity_bytes": 1426
+    },
+    {
+      "action_id": "house:119:1:340",
+      "inclusion_reasons": [
+        "complex passage bill with placement, screening, secure-facility, sponsor, and implementation mechanisms",
+        "major initial provision-coverage finding"
+      ],
+      "packet_complexity_bytes": 11837
+    },
+    {
+      "action_id": "house:119:1:351",
+      "inclusion_reasons": [
+        "highest-complexity passage bill by governed operative-text byte count",
+        "major initial provision-coverage finding"
+      ],
+      "packet_complexity_bytes": 9930
+    },
+    {
+      "action_id": "house:119:1:42",
+      "inclusion_reasons": [
+        "major initial provision-coverage finding"
+      ],
+      "packet_complexity_bytes": 5342
+    },
+    {
+      "action_id": "house:119:2:155",
+      "inclusion_reasons": [
+        "FISA action with surveillance, FISC, and civil-liberty scope limits",
+        "final status ambiguous and confidence low",
+        "major initial scope/neutrality finding"
+      ],
+      "packet_complexity_bytes": 1372
+    },
+    {
+      "action_id": "house:119:2:157",
+      "inclusion_reasons": [
+        "highest-complexity suspension passage as amended by deterministic governed-extraction byte count",
+        "highest-complexity suspension passage as amended by governed operative-text byte count"
+      ],
+      "packet_complexity_bytes": 18412
+    },
+    {
+      "action_id": "house:119:2:221",
+      "inclusion_reasons": [
+        "FISA action with surveillance, FISC, and civil-liberty scope limits"
+      ],
+      "packet_complexity_bytes": 1428
+    },
+    {
+      "action_id": "house:119:2:273",
+      "inclusion_reasons": [
+        "highest-complexity amendment by deterministic governed-extraction byte count",
+        "highest-complexity amendment by governed operative-text byte count"
+      ],
+      "packet_complexity_bytes": 77040
+    },
+    {
+      "action_id": "house:119:2:278",
+      "inclusion_reasons": [
+        "final status no_safe_candidate and confidence low",
+        "major initial provision-coverage finding",
+        "major initial scope/neutrality finding"
+      ],
+      "packet_complexity_bytes": 9355
+    }
+  ],
+  "challenge_count": 13,
+  "content_subject_sha256": "4e75dc152fb5b3404eb27f33ab5fd8dff2b2f22f7e7d14d71dba1c5c23527bd4",
+  "m2_source_readiness_file_sha256": "62a33bcbb1c4eecc267f33be1740c7ee4db59e617a150b6d837c1aa30930bd91",
+  "non_authorizing": true,
+  "random_population_count": 30,
+  "random_sample_count": 12,
+  "schema_version": "action_interpretation_sample_manifest_v2",
+  "seed_input_components": [
+    "c68aee15312ff3259fff1b7dcaf1dd293665b88290a80d17c216cfe5530a4c85",
+    "62a33bcbb1c4eecc267f33be1740c7ee4db59e617a150b6d837c1aa30930bd91",
+    "foushee-justice-action-interpretation-generalization-audit-v2"
+  ],
+  "seed_sha256": "1c10fde910b06e915a9baf43f7c6184af7b69c25c2ad5ec378d46ea72fd8dd53",
+  "selected_random_action_ids": [
+    "house:119:1:128",
+    "house:119:2:275",
+    "house:119:2:259",
+    "house:119:2:171",
+    "house:119:1:270",
+    "house:119:2:218",
+    "house:119:1:271",
+    "house:119:1:68",
+    "house:119:1:162",
+    "house:119:1:42",
+    "house:119:1:98",
+    "house:119:1:286"
+  ],
+  "selection_algorithm": "rank non-benchmark action IDs by SHA-256(seed + newline + action_id), then action_id; take first 12"
+}

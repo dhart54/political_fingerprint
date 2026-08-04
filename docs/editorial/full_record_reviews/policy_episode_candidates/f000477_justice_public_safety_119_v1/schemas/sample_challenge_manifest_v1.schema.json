@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "candidate": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "challenge_episode_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "challenge_reasons": {
+      "additionalProperties": false,
+      "properties": {
+        "dc-juvenile-court-transfer-age": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "dc-youth-offender-sentencing": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "fisa-title-vii-short-term-extension": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "halt-fentanyl-legislative-path": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "laken-riley-detention-enforcement": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "law-enforcement-concealed-carry-expansion": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "dc-juvenile-court-transfer-age",
+        "dc-youth-offender-sentencing",
+        "fisa-title-vii-short-term-extension",
+        "halt-fentanyl-legislative-path",
+        "laken-riley-detention-enforcement",
+        "law-enforcement-concealed-carry-expansion"
+      ],
+      "type": "object"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "deterministic": {
+      "type": "boolean"
+    },
+    "episode_review_sample_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "frozen_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "no_safe_accounting_action_id": {
+      "type": "string"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "seed_formula": {
+      "type": "string"
+    },
+    "seed_sha256": {
+      "type": "string"
+    },
+    "selection_after_freeze": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "accepted",
+    "artifact_id",
+    "authorizing",
+    "candidate",
+    "canonical",
+    "challenge_episode_ids",
+    "challenge_reasons",
+    "content_subject_sha256",
+    "deterministic",
+    "episode_review_sample_ids",
+    "frozen_batch_content_subject_sha256",
+    "no_safe_accounting_action_id",
+    "public",
+    "schema_version",
+    "seed_formula",
+    "seed_sha256",
+    "selection_after_freeze"
+  ],
+  "type": "object"
+}

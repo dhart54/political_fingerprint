@@ -1,0 +1,51 @@
+{
+  "artifact_id": "semantic-ir-post-freeze-benchmark:f000477:justice_public_safety:119:v1",
+  "benchmark_action_ids": [
+    "house:119:1:130",
+    "house:119:1:131",
+    "house:119:1:166",
+    "house:119:1:275",
+    "house:119:1:299",
+    "house:119:1:32",
+    "house:119:1:33"
+  ],
+  "comparisons": [
+    {
+      "case_id": "semir-dev-04-justice-mixed-fentanyl-trajectory",
+      "comparison": "compatible_at_bounded_semantic_structure",
+      "exact_prose_compared": false,
+      "overlap_action_ids": [
+        "house:119:1:166",
+        "house:119:1:32",
+        "house:119:1:33"
+      ]
+    },
+    {
+      "case_id": "semir-dev-05-justice-mechanism-divide",
+      "comparison": "compatible_at_bounded_semantic_structure",
+      "exact_prose_compared": false,
+      "overlap_action_ids": [
+        "house:119:1:130",
+        "house:119:1:131",
+        "house:119:1:166",
+        "house:119:1:275",
+        "house:119:1:299",
+        "house:119:1:32",
+        "house:119:1:33"
+      ]
+    },
+    {
+      "case_id": "semir-dev-06-justice-one-sided-argument",
+      "comparison": "compatible_at_bounded_semantic_structure",
+      "exact_prose_compared": false,
+      "overlap_action_ids": [
+        "house:119:1:131"
+      ]
+    }
+  ],
+  "content_subject_sha256": "02843275d1c3dd6f329e276054bde70fe67bfd66bc87fe4390290d05bff27f86",
+  "frozen_graph_content_subject_sha256": "05821b7ad36f09d27768d0f12aac223513e343f2e2f72328d4f294e9027c55bf",
+  "frozen_graph_mutated": false,
+  "material_disagreement_count": 0,
+  "schema_version": "semantic_ir_post_freeze_benchmark_comparison_v1"
+}

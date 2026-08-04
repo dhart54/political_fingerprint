@@ -1,0 +1,68 @@
+{
+  "accepted": false,
+  "artifact_id": "episode-bounded-correction:f000477:justice_public_safety:119:v1",
+  "authorizing": false,
+  "candidate": true,
+  "canonical": false,
+  "content_subject_sha256": "339f09dc8d5e90ea89ba8d7d924a21b231346fbabd08a7be581aab978a7c8f9e",
+  "correction_cycle_count": 1,
+  "corrections": [
+    {
+      "after_episode_ids": [
+        "dc-youth-offender-sentencing",
+        "dc-juvenile-court-transfer-age"
+      ],
+      "before_episode_ids": [
+        "dc-juvenile-justice-age-thresholds"
+      ],
+      "content_subject_sha256": "3a3436e1ba1448dfa2a914d714b661bc15c0acd951506ed9b60fce31c704b245",
+      "correction_id": "episode-correction:separate-dc-juvenile-mechanisms:v1",
+      "general_rule": "Separate materially different legal mechanisms despite shared jurisdiction/topic/date.",
+      "membership_diff": {
+        "house:119:1:270": [
+          "dc-juvenile-justice-age-thresholds",
+          "dc-youth-offender-sentencing"
+        ],
+        "house:119:1:271": [
+          "dc-juvenile-justice-age-thresholds",
+          "dc-juvenile-court-transfer-age"
+        ]
+      },
+      "source_finding_id": "overgrouping:dc-juvenile-mechanisms:v1"
+    },
+    {
+      "after_episode_ids": [
+        "fisa-title-vii-short-term-extension"
+      ],
+      "before_episode_ids": [
+        "fisa-title-vii-successive-extensions"
+      ],
+      "content_subject_sha256": "8e9973a7c618930a4f8e5e843931cf00aae9da754a9ee8bf143b51b8a5096a41",
+      "correction_id": "episode-correction:retain-fisa-identity-ambiguity:v1",
+      "general_rule": "Unresolved source identity that materially affects grouping blocks primary episode assignment.",
+      "membership_diff": {
+        "house:119:2:155": [
+          "assigned_primary_episode",
+          "retained_ambiguous_episode_assignment"
+        ],
+        "house:119:2:221": [
+          "fisa-title-vii-successive-extensions",
+          "fisa-title-vii-short-term-extension"
+        ]
+      },
+      "source_finding_id": "ambiguity:fisa-roll-155-lineage:v1"
+    }
+  ],
+  "final_batch_content_subject_sha256": "c7d5c3567fa606420a9e49fd01b4dcef70a728295626b3b9c9d4dfad6ec097b6",
+  "initial_batch_content_subject_sha256": "265a458e3146ba06a902f02fe439799a9808b132467d1fb687641e8cbec85b11",
+  "post_correction_severity_counts": {
+    "critical": 0,
+    "major": 0
+  },
+  "pre_correction_severity_counts": {
+    "critical": 0,
+    "major": 2
+  },
+  "public": false,
+  "schema_version": "episode_bounded_correction_diff_v1"
+}

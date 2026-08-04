@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "test:cutover-smoke": "playwright test tests/editorial-cutover.spec.mjs",
     "test:ir-presentation": "playwright test tests/ir-presentation.spec.mjs",
+    "test:m6-review": "playwright test tests/m6-review.spec.mjs",
     "test:frontend-pass-a": "playwright test tests/frontend-pass-a.spec.mjs"
   },
   "dependencies": {

@@ -1,0 +1,532 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "const": false
+    },
+    "action_count": {
+      "const": 37
+    },
+    "artifact_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "batch_id": {
+      "const": "action-interpretation-candidates:f000477:justice_public_safety:119:v1"
+    },
+    "candidate_batch_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "corrections": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "benchmark_used": {
+            "const": false
+          },
+          "correction_cycle": {
+            "const": 1
+          },
+          "field_differences": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "after": {},
+                "before": {},
+                "field": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "reason": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "field",
+                "before",
+                "after",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "original_candidate_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "original_candidate_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "revised_candidate_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "original_candidate_id",
+          "original_candidate_sha256",
+          "revised_candidate_sha256",
+          "field_differences",
+          "correction_cycle",
+          "benchmark_used"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "final_candidates": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "candidate_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "candidate_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "claim_components": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "component_id": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "limitation": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "locator": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "source_id": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "support_state": {
+                  "enum": [
+                    "directly_supported",
+                    "supported_with_limitation",
+                    "unresolved"
+                  ]
+                },
+                "wording": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "component_id",
+                "wording",
+                "source_id",
+                "locator",
+                "support_state",
+                "limitation"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "competing_plausible_interpretations": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "cross_domain_limitations": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "does_not_establish": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "evidence_map_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "evidence_map_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "exact_action_identity": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "generator_prompt_contract_version": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "generator_run_identity": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "house_stage": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "limitations": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "official_member_action": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "proposed_exact_action_meaning": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "proposed_member_position_effect": {
+            "enum": [
+              "supports_exact_choice",
+              "opposes_exact_choice",
+              "non_directional_present",
+              "non_directional_not_voting"
+            ]
+          },
+          "rules_applied": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "source_references": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "ambiguous",
+              "no_safe_candidate"
+            ]
+          },
+          "uncertainty_reasons": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "unresolved_editorial_questions": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "action_id",
+          "exact_action_identity",
+          "house_stage",
+          "official_member_action",
+          "evidence_map_id",
+          "evidence_map_sha256",
+          "source_references",
+          "status",
+          "proposed_exact_action_meaning",
+          "proposed_member_position_effect",
+          "claim_components",
+          "rules_applied",
+          "confidence",
+          "uncertainty_reasons",
+          "competing_plausible_interpretations",
+          "limitations",
+          "does_not_establish",
+          "cross_domain_limitations",
+          "unresolved_editorial_questions",
+          "generator_prompt_contract_version",
+          "generator_run_identity",
+          "candidate_sha256"
+        ],
+        "type": "object"
+      },
+      "maxItems": 37,
+      "minItems": 37,
+      "type": "array"
+    },
+    "freeze_precedes_benchmark_access": {
+      "const": true
+    },
+    "frozen": {
+      "const": true
+    },
+    "non_authorizing": {
+      "const": true
+    },
+    "non_public": {
+      "const": true
+    },
+    "primary_candidates": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "candidate_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "candidate_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "claim_components": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "component_id": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "limitation": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "locator": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "source_id": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "support_state": {
+                  "enum": [
+                    "directly_supported",
+                    "supported_with_limitation",
+                    "unresolved"
+                  ]
+                },
+                "wording": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "component_id",
+                "wording",
+                "source_id",
+                "locator",
+                "support_state",
+                "limitation"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "competing_plausible_interpretations": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "cross_domain_limitations": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "does_not_establish": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "evidence_map_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "evidence_map_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "exact_action_identity": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "generator_prompt_contract_version": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "generator_run_identity": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "house_stage": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "limitations": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "official_member_action": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "proposed_exact_action_meaning": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "proposed_member_position_effect": {
+            "enum": [
+              "supports_exact_choice",
+              "opposes_exact_choice",
+              "non_directional_present",
+              "non_directional_not_voting"
+            ]
+          },
+          "rules_applied": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "source_references": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "ambiguous",
+              "no_safe_candidate"
+            ]
+          },
+          "uncertainty_reasons": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "unresolved_editorial_questions": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "action_id",
+          "exact_action_identity",
+          "house_stage",
+          "official_member_action",
+          "evidence_map_id",
+          "evidence_map_sha256",
+          "source_references",
+          "status",
+          "proposed_exact_action_meaning",
+          "proposed_member_position_effect",
+          "claim_components",
+          "rules_applied",
+          "confidence",
+          "uncertainty_reasons",
+          "competing_plausible_interpretations",
+          "limitations",
+          "does_not_establish",
+          "cross_domain_limitations",
+          "unresolved_editorial_questions",
+          "generator_prompt_contract_version",
+          "generator_run_identity",
+          "candidate_sha256"
+        ],
+        "type": "object"
+      },
+      "maxItems": 37,
+      "minItems": 37,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "action_interpretation_candidate_batch_v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "batch_id",
+    "non_authorizing",
+    "non_public",
+    "accepted",
+    "frozen",
+    "freeze_precedes_benchmark_access",
+    "action_count",
+    "primary_candidates",
+    "final_candidates",
+    "corrections",
+    "candidate_batch_subject_sha256",
+    "artifact_sha256"
+  ],
+  "type": "object"
+}

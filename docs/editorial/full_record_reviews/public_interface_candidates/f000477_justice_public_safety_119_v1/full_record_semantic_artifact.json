@@ -1,0 +1,215 @@
+{
+  "accounting": {
+    "complete_episodes": 32,
+    "directional_actions": 35,
+    "missing_actions": 0,
+    "non_proposition_controls": 2,
+    "total_actions": 37
+  },
+  "artifact_id": "full-record-semantic-artifact:f000477:justice_public_safety:119:v1",
+  "authority": {
+    "acceptance_artifact_id": "delegated-semantic-ir-acceptance:f000477:justice_public_safety:119:v1",
+    "acceptance_content_subject_sha256": "fe434b3c3bcb0d6235003d144ad25c4e207d0dc104ec42fec1ec8e75d3514db9",
+    "acceptance_final_file_sha256": "23d27f84ce196380b6d02ca2d1a2e679847e7a0855c00d60b6df1542d499b405",
+    "decision": "delegated_authority_accepts_semantic_ir_and_synthesis_implementation"
+  },
+  "content_subject_sha256": "5f969c7911249836db107676516b3258b24a0995fcb95c0d36ef2adbfdfe9213",
+  "controls": {
+    "authorizing": false,
+    "canonical": false,
+    "production_eligible": false,
+    "public": false,
+    "publication_active": false,
+    "runtime_selectable": false
+  },
+  "launch_risk_ids": [
+    "launch-risk:semantic-ir:mechanism-divide:v1",
+    "launch-risk:roll-128:v1",
+    "launch-risk:roll-155-and-fisa-grouping:v1",
+    "launch-risk:roll-278:v1"
+  ],
+  "schema_version": "full_record_semantic_artifact_v1",
+  "semantic_bindings": {
+    "behavioral_proposition_count": 23,
+    "compiled_graph": {
+      "artifact_id": "full-record-semantic-ir-candidate:f000477:justice_public_safety:119:v2",
+      "content_subject_sha256": "f561d3eda50e164a6cbf98520e8c9831468f607e8ed32d333ee6905f4737f7a8",
+      "final_file_sha256": "6a385770ce670e19329e56dfde13c48ae4b581bd740eac7dd7a54bed692abc14"
+    },
+    "compiler_input": {
+      "artifact_id": "full-record-semantic-ir-compiler-input:f000477:justice_public_safety:119:v2",
+      "content_subject_sha256": "d7db11e6f26acaabee7f7a70319d2fe4906514452ef59f46b43fafef77a5ff5b",
+      "final_file_sha256": "c5ab8e48404bb163da08f85449b20fe132d423294c2235c7be697bb34ed1f53a"
+    },
+    "conclusion_plan": {
+      "limiting_proposition_ids": [
+        "prop:53cda8d886a88f12"
+      ],
+      "primary_proposition_ids": [
+        "prop:354da734fec2fcf6",
+        "prop:e76b98cf92ef34cb",
+        "prop:e75e7aebbd7b2d29",
+        "prop:d7e189366b477118",
+        "prop:7a5b23c610dc467e"
+      ]
+    },
+    "proposition_ids": [
+      "prop:07a6c7d97f7b597c",
+      "prop:1360ffd8a7fa2a32",
+      "prop:144368886e27b4e2",
+      "prop:349a2f4ee6f03872",
+      "prop:354da734fec2fcf6",
+      "prop:398d7dc863c45224",
+      "prop:45867d2e0b7149bc",
+      "prop:485eaf2e761d8e3e",
+      "prop:53cda8d886a88f12",
+      "prop:698e503c786f2f72",
+      "prop:7869b50840f846ce",
+      "prop:7a5b23c610dc467e",
+      "prop:7d09cdb8b517d1d6",
+      "prop:8b11a16988d7f16c",
+      "prop:90c35b95af9e4158",
+      "prop:9ae5c013f4966c2e",
+      "prop:a842904a2893b8e8",
+      "prop:b44499d0ef869a4f",
+      "prop:d551f0945f2ae132",
+      "prop:d5781e356c454c70",
+      "prop:d7e189366b477118",
+      "prop:e75e7aebbd7b2d29",
+      "prop:e76b98cf92ef34cb",
+      "prop:f44f50007be4895e"
+    ],
+    "provisional_implementation": {
+      "artifact_id": "full-record-semantic-ir-provisional-implementation:f000477:justice_public_safety:119:v2",
+      "content_subject_sha256": "99f9a4f09e3d849d689047789b7757a5d28d632c88a2ac760a72790396ef50be",
+      "final_file_sha256": "88ede2762a4bc3570c42263e7fcf0bd0a4347e6d0823daa22064a236ce886ced"
+    },
+    "synthesis": {
+      "conclusion_relevance": "primary",
+      "direction": "mixed",
+      "evidence_action_ids": [
+        "house:119:1:162",
+        "house:119:1:270",
+        "house:119:1:271",
+        "house:119:1:275",
+        "house:119:1:286",
+        "house:119:1:298",
+        "house:119:1:299",
+        "house:119:2:234"
+      ],
+      "evidence_episode_ids": [
+        "cold-weather-terrorism-response-exercise",
+        "dc-juvenile-court-transfer-age",
+        "dc-police-discipline-bargaining",
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal",
+        "dc-pretrial-detention-cash-bail",
+        "dc-youth-offender-sentencing",
+        "vehicular-terrorism-assessment"
+      ],
+      "mechanism_or_trait_refs": [
+        "dc_public_safety_rule_displacement",
+        "terrorism_preparedness_mandate"
+      ],
+      "presentation_target": "conclusion_only",
+      "proposition_id": "prop:7a5b23c610dc467e",
+      "proposition_type": "mechanism_divide",
+      "relationships": {
+        "limited_by": [
+          "prop:53cda8d886a88f12"
+        ],
+        "supported_by": [
+          "prop:354da734fec2fcf6",
+          "prop:d7e189366b477118"
+        ]
+      },
+      "semantic_role": "synthesis"
+    }
+  },
+  "semantic_tier": "reviewed_conclusion_candidate_held_for_launch_review",
+  "subject": {
+    "action_count": 37,
+    "chamber": "house",
+    "congress": 119,
+    "episode_count": 32,
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "member_id": "F000477"
+  },
+  "synthesis_outcome": "mechanism_divide",
+  "universe": {
+    "action_ids": [
+      "house:119:1:128",
+      "house:119:1:130",
+      "house:119:1:131",
+      "house:119:1:162",
+      "house:119:1:166",
+      "house:119:1:23",
+      "house:119:1:27",
+      "house:119:1:270",
+      "house:119:1:271",
+      "house:119:1:274",
+      "house:119:1:275",
+      "house:119:1:286",
+      "house:119:1:289",
+      "house:119:1:298",
+      "house:119:1:299",
+      "house:119:1:32",
+      "house:119:1:33",
+      "house:119:1:340",
+      "house:119:1:351",
+      "house:119:1:42",
+      "house:119:1:6",
+      "house:119:1:68",
+      "house:119:1:98",
+      "house:119:2:155",
+      "house:119:2:157",
+      "house:119:2:169",
+      "house:119:2:171",
+      "house:119:2:218",
+      "house:119:2:221",
+      "house:119:2:227",
+      "house:119:2:234",
+      "house:119:2:240",
+      "house:119:2:259",
+      "house:119:2:265",
+      "house:119:2:273",
+      "house:119:2:275",
+      "house:119:2:278"
+    ],
+    "episode_ids": [
+      "bail-bond-false-statements",
+      "border-vehicle-flight-offense",
+      "born-alive-care-and-remedies",
+      "cashless-bail-jurisdiction-reporting",
+      "cold-weather-terrorism-response-exercise",
+      "dc-judicial-nomination-commission",
+      "dc-juvenile-court-transfer-age",
+      "dc-police-discipline-bargaining",
+      "dc-police-pursuit-rules",
+      "dc-policing-reform-repeal",
+      "dc-pretrial-detention-cash-bail",
+      "dc-youth-offender-sentencing",
+      "defense-energy-infrastructure-certification",
+      "defense-facility-personal-firearm-process",
+      "epstein-records-disclosure",
+      "federal-fraud-payment-integrity-oversight",
+      "federal-injunction-remedy-scope",
+      "firearms-merchant-category-code-restrictions",
+      "fisa-title-vii-short-term-extension",
+      "halt-fentanyl-legislative-path",
+      "laken-riley-detention-enforcement",
+      "law-enforcement-concealed-carry-expansion",
+      "military-chaplain-protections",
+      "military-speed-camera-funding-ban",
+      "minor-procedure-criminal-offenses",
+      "officer-safety-data-reporting",
+      "organized-retail-crime-coordination",
+      "pandemic-unemployment-fraud-limitations",
+      "retired-service-weapon-purchases",
+      "senior-investor-exploitation-delays",
+      "unaccompanied-child-placement-screening",
+      "vehicular-terrorism-assessment"
+    ],
+    "review_cutoff": "2026-07-23"
+  }
+}

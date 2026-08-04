@@ -426,13 +426,17 @@ def validate_values(
     _require(
         subject["approved_manifest_id"] == approved_manifest["manifest_id"]
         and subject["approved_manifest_sha256"]
-        == canonical_file_sha256(repository_root / MANIFEST_PATH),
+        == canonical_file_sha256(
+            repository_root / MANIFEST_PATH, text_line_endings="crlf"
+        ),
         "approved manifest binding mismatch",
     )
     _require(
         subject["authority_receipt_id"] == authority["receipt_id"]
         and subject["authority_receipt_sha256"]
-        == canonical_file_sha256(repository_root / AUTHORITY_PATH),
+        == canonical_file_sha256(
+            repository_root / AUTHORITY_PATH, text_line_endings="crlf"
+        ),
         "authority receipt binding mismatch",
     )
     _require(
@@ -442,7 +446,9 @@ def validate_values(
     )
     _require(
         subject["source_manifest_sha256"]
-        == canonical_file_sha256(repository_root / SOURCE_MANIFEST_PATH),
+        == canonical_file_sha256(
+            repository_root / SOURCE_MANIFEST_PATH, text_line_endings="lf"
+        ),
         "source manifest file digest mismatch",
     )
     _require(

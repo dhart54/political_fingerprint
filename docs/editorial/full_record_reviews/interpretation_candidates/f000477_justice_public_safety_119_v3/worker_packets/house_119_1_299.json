@@ -1,0 +1,132 @@
+{
+  "action_id": "house:119:1:299",
+  "content_subject_sha256": "3e5c59411ba16be5241c8c7220311e13a33ebf0b42628940f01ae9ae0a985a9b",
+  "cross_domain_limitations": [],
+  "exact_action_identity": "119:hr:5107",
+  "house_stage": "passage",
+  "neutral_methodology": [
+    "inventory_material_provisions_before_drafting",
+    "separate_official_title_from_interpretation",
+    "title_only_prohibited_without_independent_single_mechanism_finding",
+    "exact_choice_only",
+    "preserve_house_stage",
+    "yea_supports_exact_choice_only",
+    "nay_opposes_exact_choice_only",
+    "present_and_not_voting_non_directional",
+    "no_motive_or_broader_issue_inference",
+    "parent_context_cannot_replace_narrow_action",
+    "account_for_material_limits_exceptions_and_retained_provisions",
+    "preserve_ambiguity",
+    "no_safe_candidate_when_required",
+    "derive_each_exact_version_inventory_independently",
+    "do_not_reuse_related_action_inventory_or_conclusion",
+    "freeze_expected_inventory_before_candidate_comparison",
+    "verify_enumerated_categories_and_quantities_across_fields"
+  ],
+  "official_action_date": "2025-11-19",
+  "official_member_action": "nay",
+  "operative_text_versions": [
+    "eh"
+  ],
+  "packet_id": "action-interpretation-worker-packet:house:119:1:299:v3",
+  "schema_version": "action_interpretation_worker_packet_v3",
+  "sources": [
+    {
+      "deterministic_extraction": {
+        "projection": {
+          "action_date": "2025-11-19",
+          "action_id": "house:119:1:299",
+          "chamber": "house",
+          "congress": 119,
+          "house_action_stage": "passage",
+          "measure_identity": "119:hr:5107",
+          "member_action": "nay",
+          "official_action_description": "On Passage",
+          "operative_content_sha256": null,
+          "raw_provenance_sha256": "cd1a3f5cb92b4c4dfd10b9e12502088bbea5d1d495e79da3ea8445dff800a83a",
+          "roll_number": 299,
+          "schema_version": "neutral_m3_source_projection_v1",
+          "source_url": "https://clerk.house.gov/evs/2025/roll299.xml",
+          "text_version": "2025-11-19"
+        }
+      },
+      "neutral_projection_sha256": "79b9522bfb13f06982018954e8e28fdeca486caa4c54692c867f8afff5a5e253",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_299.xml",
+      "raw_sha256": "cd1a3f5cb92b4c4dfd10b9e12502088bbea5d1d495e79da3ea8445dff800a83a",
+      "role": "member_action_evidence",
+      "source_id": "clerk:119:1:299",
+      "source_type": "house_clerk_roll_call",
+      "text_version": "2025-11-19"
+    },
+    {
+      "deterministic_extraction": {
+        "document_title": "119 HR 5107 EH: CLEAN DC Act of 2025",
+        "extraction_engine": "python_xml_elementtree_v1",
+        "extraction_limitation": null,
+        "official_title": "To repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council.",
+        "section_headings": [
+          "Short title",
+          "Repeal of certain provisions of Comprehensive Policing and Justice Reform Amendment Act of 2022",
+          "In general",
+          "Exception"
+        ],
+        "structured_sections": [
+          {
+            "enum": "1.",
+            "header": "Short title",
+            "text": "1.Short titleThis Act may be cited as the Common-Sense Law Enforcement and Accountability Now in DC Act of 2025 or the CLEAN DC Act of 2025."
+          },
+          {
+            "enum": "2.",
+            "header": "Repeal of certain provisions of Comprehensive Policing and Justice Reform Amendment Act of 2022",
+            "text": "2.Repeal of certain provisions of Comprehensive Policing and Justice Reform Amendment Act of 2022 (a)In generalExcept as provided in subsection (b), the Comprehensive Policing and Justice Reform Amendment Act of 2022 (D.C. Law 24–345) is hereby repealed, and any provision of law amended or repealed by such Act is restored or revived as if such Act had not been enacted into law. (b)ExceptionThe repeal under subsection (a) shall not apply with respect to— (1)subtitle S of title I of such Act (sec. 5–365.01 et seq., D.C. Official Code); and (2)subtitle A of title I of such Act (sec. 5–125.01 et seq. and sec. 5–302, D.C. Official Code)."
+          }
+        ]
+      },
+      "neutral_projection_sha256": "f404959cc6f8baf71b17928ac901ff00cd83660acb672a376406bc41362308a3",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/43aa8571cfd08ebf7e533fbf03eb06d0c012b6d31c4d1402cbc23820022d5741_BILLS-119hr5107eh.xml",
+      "raw_sha256": "43aa8571cfd08ebf7e533fbf03eb06d0c012b6d31c4d1402cbc23820022d5741",
+      "role": "operative_content_interpretation_input",
+      "source_id": "congress_text:119:hr:5107:eh",
+      "source_type": "congress_gov_bill_text",
+      "text_version": "eh"
+    }
+  ],
+  "worker_input_allowlist": [
+    "action_id",
+    "official_action_date",
+    "house_stage",
+    "official_member_action",
+    "exact_action_identity",
+    "neutral_projections",
+    "operative_content",
+    "cross_domain_limitations",
+    "neutral_methodology",
+    "materiality_rubric"
+  ],
+  "worker_input_forbidden": [
+    "accepted_benchmark_interpretations",
+    "accepted_benchmark_text",
+    "advocacy",
+    "benchmark_conclusion",
+    "benchmark_membership",
+    "cosponsor_party",
+    "episode_membership",
+    "generic_bill_metadata",
+    "member_party",
+    "news",
+    "other_action_candidates",
+    "partisan_descriptions",
+    "political_commentary",
+    "public_language",
+    "related_action_candidate_conclusions",
+    "semantic_ir",
+    "sponsor_party",
+    "synthesis_outcomes",
+    "v1_action_candidates",
+    "v1_adversarial_reviews",
+    "v2_action_candidates",
+    "v2_benchmark_comparison",
+    "v2_provision_coverage_reviews"
+  ]
+}

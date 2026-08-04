@@ -1,0 +1,113 @@
+{
+  "action_id": "house:119:2:169",
+  "cross_domain_limitations": [],
+  "exact_action_identity": "119:hr:6260",
+  "house_stage": "passage",
+  "input_packet_sha256": "509a814c3c6ce13ca707248984da272eb4273768f0c966028445f27d95d09733",
+  "neutral_methodology": [
+    "exact_choice_only",
+    "preserve_house_stage",
+    "yea_supports_exact_choice_only",
+    "nay_opposes_exact_choice_only",
+    "present_and_not_voting_non_directional",
+    "no_motive_or_broader_issue_inference",
+    "parent_context_cannot_replace_narrow_action",
+    "preserve_ambiguity",
+    "no_safe_candidate_when_required"
+  ],
+  "official_action_date": "2026-05-14",
+  "official_member_action": "nay",
+  "operative_text_versions": [
+    "eh"
+  ],
+  "packet_id": "m3-input-packet:house:119:2:169:v1",
+  "schema_version": "blind_action_interpretation_worker_packet_v1",
+  "sources": [
+    {
+      "deterministic_extraction": {
+        "projection": {
+          "action_date": "2026-05-14",
+          "action_id": "house:119:2:169",
+          "chamber": "house",
+          "congress": 119,
+          "house_action_stage": "passage",
+          "measure_identity": "119:hr:6260",
+          "member_action": "nay",
+          "official_action_description": "On Passage",
+          "operative_content_sha256": null,
+          "raw_provenance_sha256": "13b543082316c4c0162f19126773ae967fa8c515f028b5acdf6df0fd599d3f4c",
+          "roll_number": 169,
+          "schema_version": "neutral_m3_source_projection_v1",
+          "source_url": "https://clerk.house.gov/evs/2026/roll169.xml",
+          "text_version": "2026-05-14"
+        }
+      },
+      "neutral_projection_sha256": "ebc2782f58f00a3a2210ec28312fae4fc4c3914e3f4425d20d09b40ace21e365",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_169.xml",
+      "raw_sha256": "13b543082316c4c0162f19126773ae967fa8c515f028b5acdf6df0fd599d3f4c",
+      "role": "member_action_evidence",
+      "source_id": "clerk:119:2:169",
+      "source_type": "house_clerk_roll_call",
+      "text_version": "2026-05-14"
+    },
+    {
+      "deterministic_extraction": {
+        "document_title": "119 HR 6260 EH: Keeping Violent Offenders Off Our Streets Act of 2025",
+        "extraction_engine": "python_xml_elementtree_v1",
+        "extraction_limitation": null,
+        "official_title": "To amend title 18, United States Code, to prohibit fraud in connection with posting bail.",
+        "section_headings": [
+          "Short title",
+          "Fraud in connection with posting bail"
+        ],
+        "structured_sections": [
+          {
+            "enum": "1.",
+            "header": "Short title",
+            "text": "1.Short titleThis Act may be cited as the Keeping Violent Offenders Off Our Streets Act of 2025."
+          },
+          {
+            "enum": "2.",
+            "header": "Fraud in connection with posting bail",
+            "text": "2.Fraud in connection with posting bailSection 1033(f)(1)(A) of title 18, United States Code, is amended by inserting before the comma the following: (including the posting of monetary bail, criminal bail bonds, and Federal immigration bail bonds)."
+          }
+        ]
+      },
+      "neutral_projection_sha256": "9645de6179a1bed4bdf4bf5fdc568af50d7d3c1a657fc5145ac8d4260b322bd0",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/1537c6a2e973bb38c361952f91bbd344f542c95627150bf288cd01bfc3068d76.xml",
+      "raw_sha256": "1537c6a2e973bb38c361952f91bbd344f542c95627150bf288cd01bfc3068d76",
+      "role": "operative_content_interpretation_input",
+      "source_id": "govinfo_text_119_hr6260_eh",
+      "source_type": "govinfo_bill_text",
+      "text_version": "eh"
+    }
+  ],
+  "worker_input_allowlist": [
+    "action_id",
+    "official_action_date",
+    "house_stage",
+    "official_member_action",
+    "exact_action_identity",
+    "neutral_projections",
+    "operative_content",
+    "cross_domain_limitations",
+    "neutral_methodology"
+  ],
+  "worker_input_forbidden": [
+    "member_party",
+    "sponsor_party",
+    "cosponsor_party",
+    "generic_bill_metadata",
+    "accepted_benchmark_interpretations",
+    "benchmark_conclusion",
+    "semantic_ir",
+    "public_language",
+    "episode_membership",
+    "synthesis_outcomes",
+    "other_action_candidates",
+    "political_commentary",
+    "news",
+    "advocacy",
+    "partisan_descriptions"
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "oneOf": [
+    {
+      "additionalProperties": false,
+      "properties": {
+        "action_count": {},
+        "artifact_id": {},
+        "authorizing": {},
+        "candidate_state": {},
+        "content_subject_sha256": {},
+        "implemented_episode_count": {},
+        "input_bindings": {},
+        "policy_family_ids": {},
+        "policy_trait_ids": {},
+        "public_prose_included": {},
+        "schema_version": {
+          "const": "full_record_semantic_ir_projection_manifest_v1"
+        },
+        "source_render_constraint_ids": {},
+        "subject": {}
+      },
+      "required": [
+        "action_count",
+        "artifact_id",
+        "authorizing",
+        "candidate_state",
+        "content_subject_sha256",
+        "implemented_episode_count",
+        "input_bindings",
+        "policy_family_ids",
+        "policy_trait_ids",
+        "public_prose_included",
+        "schema_version",
+        "source_render_constraint_ids",
+        "subject"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "authorizing": {},
+        "content_subject_sha256": {},
+        "families": {},
+        "family_count": {},
+        "schema_version": {
+          "const": "semantic_ir_policy_family_collection_v1"
+        },
+        "state": {}
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "families",
+        "family_count",
+        "schema_version",
+        "state"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "authorizing": {},
+        "content_subject_sha256": {},
+        "schema_version": {
+          "const": "semantic_ir_policy_trait_collection_v1"
+        },
+        "state": {},
+        "trait_count": {},
+        "traits": {}
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "schema_version",
+        "state",
+        "trait_count",
+        "traits"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "authorizing": {},
+        "content_subject_sha256": {},
+        "relationship_count": {},
+        "relationships": {},
+        "schema_version": {
+          "const": "semantic_ir_trait_relationship_collection_v1"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "relationship_count",
+        "relationships",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "authorizing": {},
+        "constraint_count": {},
+        "constraints": {},
+        "content_subject_sha256": {},
+        "schema_version": {
+          "const": "semantic_ir_source_render_constraint_collection_v1"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "constraint_count",
+        "constraints",
+        "content_subject_sha256",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "authorizing": {},
+        "content_subject_sha256": {},
+        "dependencies": {},
+        "schema_version": {
+          "const": "semantic_ir_shared_review_dependency_collection_v1"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "dependencies",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "authorizing": {},
+        "content_subject_sha256": {},
+        "finding_accounting": {},
+        "passes": {},
+        "reviewed_initial_graph_content_subject_sha256": {},
+        "schema_version": {
+          "const": "semantic_ir_independent_reviews_v1"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "finding_accounting",
+        "passes",
+        "reviewed_initial_graph_content_subject_sha256",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "content_subject_sha256": {},
+        "cycle": {},
+        "initial_graph_content_subject_sha256": {},
+        "manual_compiled_output_edits": {},
+        "post_correction_critical_findings": {},
+        "post_correction_major_findings": {},
+        "regenerated_graph_content_subject_sha256": {},
+        "schema_version": {
+          "const": "semantic_ir_correction_cycle_v1"
+        },
+        "structured_input_changes": {},
+        "trigger_finding_ids": {}
+      },
+      "required": [
+        "artifact_id",
+        "content_subject_sha256",
+        "cycle",
+        "initial_graph_content_subject_sha256",
+        "manual_compiled_output_edits",
+        "post_correction_critical_findings",
+        "post_correction_major_findings",
+        "regenerated_graph_content_subject_sha256",
+        "schema_version",
+        "structured_input_changes",
+        "trigger_finding_ids"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "benchmark_action_ids": {},
+        "comparisons": {},
+        "content_subject_sha256": {},
+        "frozen_graph_content_subject_sha256": {},
+        "frozen_graph_mutated": {},
+        "material_disagreement_count": {},
+        "schema_version": {
+          "const": "semantic_ir_post_freeze_benchmark_comparison_v1"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "benchmark_action_ids",
+        "comparisons",
+        "content_subject_sha256",
+        "frozen_graph_content_subject_sha256",
+        "frozen_graph_mutated",
+        "material_disagreement_count",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "challenge_proposition_ids": {},
+        "conclusion_plan_audit": {},
+        "content_subject_sha256": {},
+        "explicit_non_proposition_action_ids": {},
+        "launch_sample_selected": {},
+        "random_behavioral_proposition_ids": {},
+        "schema_version": {
+          "const": "semantic_ir_sample_challenge_manifest_v1"
+        },
+        "seed": {}
+      },
+      "required": [
+        "artifact_id",
+        "challenge_proposition_ids",
+        "conclusion_plan_audit",
+        "content_subject_sha256",
+        "explicit_non_proposition_action_ids",
+        "launch_sample_selected",
+        "random_behavioral_proposition_ids",
+        "schema_version",
+        "seed"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "checks": {},
+        "content_subject_sha256": {},
+        "expected_graph_content_subject_sha256": {},
+        "reconstructed_graph_content_subject_sha256": {},
+        "schema_version": {
+          "const": "semantic_ir_independent_implementation_verification_v1"
+        },
+        "status": {}
+      },
+      "required": [
+        "artifact_id",
+        "checks",
+        "content_subject_sha256",
+        "expected_graph_content_subject_sha256",
+        "reconstructed_graph_content_subject_sha256",
+        "schema_version",
+        "status"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "carried_m4b_register": {},
+        "carried_risk_count": {},
+        "content_subject_sha256": {},
+        "history_preserved": {},
+        "launch_authorized": {},
+        "new_risks": {},
+        "schema_version": {
+          "const": "semantic_ir_launch_risk_register_successor_v1"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "carried_m4b_register",
+        "carried_risk_count",
+        "content_subject_sha256",
+        "history_preserved",
+        "launch_authorized",
+        "new_risks",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "content_subject_sha256": {},
+        "eligible_count": {},
+        "eligible_objects": {},
+        "excluded_action_ids": {},
+        "implementation_core_content_subject_sha256": {},
+        "implementation_id": {},
+        "launch_sample_selected": {},
+        "schema_version": {
+          "const": "semantic_ir_calibration_population_v1"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "content_subject_sha256",
+        "eligible_count",
+        "eligible_objects",
+        "excluded_action_ids",
+        "implementation_core_content_subject_sha256",
+        "implementation_id",
+        "launch_sample_selected",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "allowed_decisions": {},
+        "artifact_id": {},
+        "authorizing_when_empty": {},
+        "content_subject_sha256": {},
+        "decision": {},
+        "not_user_signature": {},
+        "reviewer_authority": {},
+        "reviewer_identity": {},
+        "schema_version": {
+          "const": "delegated_semantic_ir_synthesis_decision_template_v1"
+        }
+      },
+      "required": [
+        "allowed_decisions",
+        "artifact_id",
+        "authorizing_when_empty",
+        "content_subject_sha256",
+        "decision",
+        "not_user_signature",
+        "reviewer_authority",
+        "reviewer_identity",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {},
+        "canonical_and_public_state_unchanged": {},
+        "content_subject_sha256": {},
+        "database_access": {},
+        "incorrect_or_baseline_attempts": {},
+        "initial_command_mistakes": {},
+        "network_access": {},
+        "sandbox_restrictions": {},
+        "schema_version": {
+          "const": "semantic_ir_m5_validation_report_v1"
+        },
+        "successful_commands": {},
+        "validation_accounting": {}
+      },
+      "required": [
+        "artifact_id",
+        "canonical_and_public_state_unchanged",
+        "content_subject_sha256",
+        "database_access",
+        "incorrect_or_baseline_attempts",
+        "initial_command_mistakes",
+        "network_access",
+        "sandbox_restrictions",
+        "schema_version",
+        "successful_commands",
+        "validation_accounting"
+      ],
+      "type": "object"
+    }
+  ],
+  "title": "M5 closed supporting artifact envelopes"
+}

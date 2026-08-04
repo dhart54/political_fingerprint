@@ -1,0 +1,702 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_candidate_count": {
+      "const": 0
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authority_chain": {
+      "additionalProperties": false,
+      "properties": {
+        "m1": {
+          "additionalProperties": false,
+          "properties": {
+            "file_sha256": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_sha256",
+            "path"
+          ],
+          "type": "object"
+        },
+        "m2": {
+          "additionalProperties": false,
+          "properties": {
+            "file_sha256": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_sha256",
+            "path"
+          ],
+          "type": "object"
+        },
+        "v4": {
+          "additionalProperties": false,
+          "properties": {
+            "batch_id": {
+              "type": "string"
+            },
+            "content_subject_sha256": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "parity_manifest_file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "batch_id",
+            "content_subject_sha256",
+            "file_sha256",
+            "parity_manifest_file_sha256"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "m1",
+        "m2",
+        "v4"
+      ],
+      "type": "object"
+    },
+    "bundle_id": {
+      "type": "string"
+    },
+    "canonical": {
+      "const": false
+    },
+    "content_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "decision_unit_count": {
+      "const": 37
+    },
+    "decision_units": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted": {
+            "type": "boolean"
+          },
+          "action_id": {
+            "type": "string"
+          },
+          "benchmark_comparison": {
+            "additionalProperties": false,
+            "properties": {
+              "accepted_benchmark_meaning": {
+                "type": "string"
+              },
+              "comparison_only": {
+                "type": "boolean"
+              },
+              "v4_comparison": {
+                "additionalProperties": false,
+                "properties": {
+                  "action_id": {
+                    "type": "string"
+                  },
+                  "confidence": {
+                    "type": "string"
+                  },
+                  "covered_population_definitions": {
+                    "type": "string"
+                  },
+                  "evaluation_only_no_candidate_mutation": {
+                    "type": "boolean"
+                  },
+                  "limits_and_exceptions": {
+                    "type": "string"
+                  },
+                  "material_mechanisms": {
+                    "type": "string"
+                  },
+                  "quantities_and_thresholds": {
+                    "type": "string"
+                  },
+                  "scope": {
+                    "type": "string"
+                  },
+                  "severity": {
+                    "type": "string"
+                  },
+                  "textual_amendments": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "action_id",
+                  "confidence",
+                  "covered_population_definitions",
+                  "evaluation_only_no_candidate_mutation",
+                  "limits_and_exceptions",
+                  "material_mechanisms",
+                  "quantities_and_thresholds",
+                  "scope",
+                  "severity",
+                  "textual_amendments"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "accepted_benchmark_meaning",
+              "comparison_only",
+              "v4_comparison"
+            ],
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "candidate_confidence": {
+            "type": "string"
+          },
+          "candidate_content_subject_sha256": {
+            "type": "string"
+          },
+          "candidate_id": {
+            "type": "string"
+          },
+          "candidate_status": {
+            "type": "string"
+          },
+          "canonical": {
+            "type": "boolean"
+          },
+          "closure_review_outcomes": {
+            "additionalProperties": false,
+            "properties": {
+              "cross_field": {
+                "additionalProperties": false,
+                "properties": {
+                  "content_subject_sha256": {
+                    "type": "string"
+                  },
+                  "remaining_severity": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "content_subject_sha256",
+                  "remaining_severity"
+                ],
+                "type": "object"
+              },
+              "material_scope": {
+                "additionalProperties": false,
+                "properties": {
+                  "content_subject_sha256": {
+                    "type": "string"
+                  },
+                  "remaining_severity": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "content_subject_sha256",
+                  "remaining_severity"
+                ],
+                "type": "object"
+              },
+              "quantitative": {
+                "additionalProperties": false,
+                "properties": {
+                  "content_subject_sha256": {
+                    "type": "string"
+                  },
+                  "remaining_severity": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "content_subject_sha256",
+                  "remaining_severity"
+                ],
+                "type": "object"
+              },
+              "textual_amendment": {
+                "additionalProperties": false,
+                "properties": {
+                  "content_subject_sha256": {
+                    "type": "string"
+                  },
+                  "remaining_severity": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "content_subject_sha256",
+                  "remaining_severity"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "cross_field",
+              "material_scope",
+              "quantitative",
+              "textual_amendment"
+            ],
+            "type": "object"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "covered_population_and_definition_items": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "bounded_wording": {
+                  "type": "string"
+                },
+                "content_subject_sha256": {
+                  "type": "string"
+                },
+                "item_class": {
+                  "type": "string"
+                },
+                "item_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "materiality_rationale": {
+                  "type": "string"
+                },
+                "materiality_state": {
+                  "type": "string"
+                },
+                "quantitative_or_enumerated_values": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "source_id": {
+                  "type": "string"
+                },
+                "source_kind": {
+                  "type": "string"
+                },
+                "support_state": {
+                  "type": "string"
+                },
+                "surrounding_context_sufficiency": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "bounded_wording",
+                "content_subject_sha256",
+                "item_class",
+                "item_id",
+                "locator",
+                "materiality_rationale",
+                "materiality_state",
+                "quantitative_or_enumerated_values",
+                "source_id",
+                "source_kind",
+                "support_state",
+                "surrounding_context_sufficiency"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "decision_unit_id": {
+            "type": "string"
+          },
+          "does_not_establish": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "evidence_map_content_subject_sha256": {
+            "type": "string"
+          },
+          "evidence_map_id": {
+            "type": "string"
+          },
+          "exact_action_identity": {
+            "type": "string"
+          },
+          "house_stage": {
+            "type": "string"
+          },
+          "human_decision_options": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "material_limits_and_exceptions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "limit_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "representation_state": {
+                  "type": "string"
+                },
+                "source_id": {
+                  "type": "string"
+                },
+                "support_state": {
+                  "type": "string"
+                },
+                "wording": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "limit_id",
+                "locator",
+                "representation_state",
+                "source_id",
+                "support_state",
+                "wording"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "material_provisions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "locator": {
+                  "type": "string"
+                },
+                "provision_id": {
+                  "type": "string"
+                },
+                "representation_state": {
+                  "type": "string"
+                },
+                "source_id": {
+                  "type": "string"
+                },
+                "support_state": {
+                  "type": "string"
+                },
+                "wording": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "locator",
+                "provision_id",
+                "representation_state",
+                "source_id",
+                "support_state",
+                "wording"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "official_member_action": {
+            "type": "string"
+          },
+          "proposed_exact_action_meaning": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "proposed_exact_choice_position_effect": {
+            "type": "string"
+          },
+          "quantitative_and_enumerated_facts": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "candidate_representation": {
+                  "type": "string"
+                },
+                "compression_changes_scope": {
+                  "type": "boolean"
+                },
+                "exact_source_value": {
+                  "type": "string"
+                },
+                "exactness_required": {
+                  "type": "boolean"
+                },
+                "item_id": {
+                  "type": "string"
+                },
+                "representation_state": {
+                  "type": "string"
+                },
+                "required_correction": {
+                  "type": "null"
+                },
+                "severity": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "candidate_representation",
+                "compression_changes_scope",
+                "exact_source_value",
+                "exactness_required",
+                "item_id",
+                "representation_state",
+                "required_correction",
+                "severity"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "review_tier": {
+            "type": "integer"
+          },
+          "review_tier_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "sample_memberships": {
+            "additionalProperties": false,
+            "properties": {
+              "benchmark": {
+                "type": "boolean"
+              },
+              "complexity": {
+                "type": "boolean"
+              },
+              "contrast_groups": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "material_detail": {
+                "type": "boolean"
+              },
+              "random": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "benchmark",
+              "complexity",
+              "contrast_groups",
+              "material_detail",
+              "random"
+            ],
+            "type": "object"
+          },
+          "secondary_detail_entry_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "source_references": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "textual_amendments": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "candidate_disposition": {
+                  "type": "string"
+                },
+                "context_sufficiency": {
+                  "type": "string"
+                },
+                "exact_change": {
+                  "type": "string"
+                },
+                "expected_effect": {
+                  "type": "null"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "materiality_state": {
+                  "type": "string"
+                },
+                "severity": {
+                  "type": "string"
+                },
+                "unresolved_effect": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "candidate_disposition",
+                "context_sufficiency",
+                "exact_change",
+                "expected_effect",
+                "locator",
+                "materiality_state",
+                "severity",
+                "unresolved_effect"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "uncertainty_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "unresolved_editorial_questions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "accepted",
+          "action_id",
+          "benchmark_comparison",
+          "candidate_confidence",
+          "candidate_content_subject_sha256",
+          "candidate_id",
+          "candidate_status",
+          "canonical",
+          "closure_review_outcomes",
+          "content_subject_sha256",
+          "covered_population_and_definition_items",
+          "decision_unit_id",
+          "does_not_establish",
+          "evidence_map_content_subject_sha256",
+          "evidence_map_id",
+          "exact_action_identity",
+          "house_stage",
+          "human_decision_options",
+          "limitations",
+          "material_limits_and_exceptions",
+          "material_provisions",
+          "official_member_action",
+          "proposed_exact_action_meaning",
+          "proposed_exact_choice_position_effect",
+          "quantitative_and_enumerated_facts",
+          "review_tier",
+          "review_tier_reasons",
+          "sample_memberships",
+          "secondary_detail_entry_ids",
+          "source_references",
+          "textual_amendments",
+          "uncertainty_reasons",
+          "unresolved_editorial_questions"
+        ],
+        "type": "object"
+      },
+      "maxItems": 37,
+      "minItems": 37,
+      "type": "array"
+    },
+    "generalization_decision": {
+      "const": "generalization_pass"
+    },
+    "non_authorizing": {
+      "const": true
+    },
+    "review_tier_counts": {
+      "additionalProperties": false,
+      "properties": {
+        "1": {
+          "type": "integer"
+        },
+        "2": {
+          "type": "integer"
+        },
+        "3": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "1",
+        "2",
+        "3"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "subject": {
+      "additionalProperties": false,
+      "properties": {
+        "action_count": {
+          "type": "integer"
+        },
+        "congress": {
+          "type": "integer"
+        },
+        "issue_id": {
+          "type": "string"
+        },
+        "member_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "action_count",
+        "congress",
+        "issue_id",
+        "member_id"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "non_authorizing",
+    "content_subject_sha256",
+    "bundle_id",
+    "subject",
+    "authority_chain",
+    "generalization_decision",
+    "decision_unit_count",
+    "review_tier_counts",
+    "decision_units",
+    "accepted_candidate_count",
+    "canonical"
+  ],
+  "type": "object"
+}

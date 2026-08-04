@@ -1,0 +1,221 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/related_action_differential_reviews_v3",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "review_count": {
+      "type": "integer"
+    },
+    "reviews": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "added_or_removed_provisions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "benchmark_used": {
+            "type": "boolean"
+          },
+          "candidate_blind_primary_generation": {
+            "type": "boolean"
+          },
+          "changed_thresholds_dates_penalties_or_exceptions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "highest_severity": {
+            "type": "string"
+          },
+          "initial_findings": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "final_state": {
+                  "type": "string"
+                },
+                "finding_id": {
+                  "type": "string"
+                },
+                "initial_state": {
+                  "type": "string"
+                },
+                "required_exact_version_difference": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "severity": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "final_state",
+                "finding_id",
+                "initial_state",
+                "required_exact_version_difference",
+                "severity"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "near_duplicate_wording_rejected_when_text_differs": {
+            "type": "boolean"
+          },
+          "relationship_basis": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "remaining_severity_after_correction": {
+            "type": "string"
+          },
+          "required_differences": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "review_contract_version": {
+            "type": "string"
+          },
+          "review_id": {
+            "type": "string"
+          },
+          "shared_provisions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "source_first_fingerprints": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "action_id": {
+                  "type": "string"
+                },
+                "expected_limit_wordings": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "expected_provision_wordings": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "inventory_content_subject_sha256": {
+                  "type": "string"
+                },
+                "quantities_and_enumerations": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "count": {
+                        "type": "integer"
+                      },
+                      "enumeration_id": {
+                        "type": "string"
+                      },
+                      "items": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "locator": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "count",
+                      "enumeration_id",
+                      "items",
+                      "locator"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "action_id",
+                "expected_limit_wordings",
+                "expected_provision_wordings",
+                "inventory_content_subject_sha256",
+                "quantities_and_enumerations"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "action_ids",
+          "added_or_removed_provisions",
+          "benchmark_used",
+          "candidate_blind_primary_generation",
+          "changed_thresholds_dates_penalties_or_exceptions",
+          "content_subject_sha256",
+          "group_id",
+          "highest_severity",
+          "initial_findings",
+          "near_duplicate_wording_rejected_when_text_differs",
+          "relationship_basis",
+          "remaining_severity_after_correction",
+          "required_differences",
+          "review_contract_version",
+          "review_id",
+          "shared_provisions",
+          "source_first_fingerprints"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "content_subject_sha256",
+    "non_authorizing",
+    "review_count",
+    "reviews",
+    "schema_version"
+  ],
+  "title": "related_action_differential_reviews_v3",
+  "type": "object"
+}

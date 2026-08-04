@@ -1,0 +1,226 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/bounded_corrections_v2",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "applied_count": {
+      "type": "integer"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "correction_cycles": {
+      "type": "integer"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "record_count": {
+      "type": "integer"
+    },
+    "records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "applied": {
+            "type": "boolean"
+          },
+          "benchmark_used": {
+            "type": "boolean"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "correction_cycle": {
+            "type": "integer"
+          },
+          "field_differences": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "after": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "component_id": {
+                            "type": "string"
+                          },
+                          "limit_id": {
+                            "type": "string"
+                          },
+                          "limitation": {
+                            "type": "null"
+                          },
+                          "locator": {
+                            "type": "string"
+                          },
+                          "provision_id": {
+                            "type": "string"
+                          },
+                          "representation_state": {
+                            "type": "string"
+                          },
+                          "source_id": {
+                            "type": "string"
+                          },
+                          "support_state": {
+                            "type": "string"
+                          },
+                          "wording": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "locator",
+                          "source_id",
+                          "support_state",
+                          "wording"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "before": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "component_id": {
+                            "type": "string"
+                          },
+                          "limit_id": {
+                            "type": "string"
+                          },
+                          "limitation": {
+                            "type": "null"
+                          },
+                          "locator": {
+                            "type": "string"
+                          },
+                          "provision_id": {
+                            "type": "string"
+                          },
+                          "representation_state": {
+                            "type": "string"
+                          },
+                          "source_id": {
+                            "type": "string"
+                          },
+                          "support_state": {
+                            "type": "string"
+                          },
+                          "wording": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "locator",
+                          "source_id",
+                          "support_state",
+                          "wording"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "field": {
+                  "type": "string"
+                },
+                "source_backed_reason": {
+                  "type": "string"
+                },
+                "source_bindings": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "locator": {
+                        "type": "string"
+                      },
+                      "source_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "locator",
+                      "source_id"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "after",
+                "before",
+                "field",
+                "source_backed_reason",
+                "source_bindings"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "final_candidate_content_subject_sha256": {
+            "type": "string"
+          },
+          "global_failure_classes_addressed": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "initial_candidate_content_subject_sha256": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "applied",
+          "benchmark_used",
+          "content_subject_sha256",
+          "correction_cycle",
+          "field_differences",
+          "final_candidate_content_subject_sha256",
+          "global_failure_classes_addressed",
+          "initial_candidate_content_subject_sha256"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "applied_count",
+    "artifact_id",
+    "content_subject_sha256",
+    "correction_cycles",
+    "non_authorizing",
+    "record_count",
+    "records",
+    "schema_version"
+  ],
+  "title": "bounded_corrections_v2",
+  "type": "object"
+}

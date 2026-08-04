@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "all_final_file_sha256_recomputed": {
+      "const": true
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "bundle_content_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "canonical_artifacts": {
+      "items": {
+        "type": "object"
+      },
+      "minItems": 4,
+      "type": "array"
+    },
+    "content_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "dossier": {
+      "type": "object"
+    },
+    "generated_last": {
+      "const": true
+    },
+    "json_markdown_semantic_parity": {
+      "const": true
+    },
+    "non_authorizing": {
+      "const": true
+    },
+    "parity_state": {
+      "const": "pass"
+    },
+    "referenced_file_count": {
+      "minimum": 5,
+      "type": "integer"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "non_authorizing",
+    "content_subject_sha256",
+    "generated_last",
+    "parity_state",
+    "bundle_content_subject_sha256",
+    "canonical_artifacts",
+    "dossier",
+    "referenced_file_count",
+    "all_final_file_sha256_recomputed",
+    "json_markdown_semantic_parity"
+  ],
+  "type": "object"
+}

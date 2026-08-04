@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "candidate": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "finding_counts": {
+      "additionalProperties": false,
+      "properties": {
+        "critical": {
+          "type": "integer"
+        },
+        "major": {
+          "type": "integer"
+        },
+        "none": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "critical",
+        "major",
+        "none"
+      ],
+      "type": "object"
+    },
+    "findings": {
+      "items": {},
+      "type": "array"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "reviewed_initial_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "rules": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "verified_action_count": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "accepted",
+    "artifact_id",
+    "authorizing",
+    "candidate",
+    "canonical",
+    "content_subject_sha256",
+    "finding_counts",
+    "findings",
+    "public",
+    "reviewed_initial_batch_content_subject_sha256",
+    "rules",
+    "schema_version",
+    "verified_action_count"
+  ],
+  "type": "object"
+}

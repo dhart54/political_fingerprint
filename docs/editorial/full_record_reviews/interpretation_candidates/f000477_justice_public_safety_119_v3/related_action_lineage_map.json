@@ -1,0 +1,102 @@
+{
+  "artifact_id": "related-action-lineage-map:f000477:justice_public_safety:119:v3",
+  "audit_aid_only": true,
+  "content_subject_sha256": "38483c767b481cf722068db937ddbdb9624a586e4555ea532604d8955c565a41",
+  "groups": [
+    {
+      "action_ids": [
+        "house:119:1:6",
+        "house:119:1:23"
+      ],
+      "group_id": "laken-riley-house-senate-versions",
+      "relationship_basis": [
+        "shared official short title",
+        "same detention-and-State-enforcement policy mechanism",
+        "different exact measure identity and governed operative version"
+      ],
+      "required_differences": [
+        "S. 5 adds assault of a law-enforcement officer to the detention triggers",
+        "S. 5 adds crimes resulting in death or serious bodily injury to the detention triggers"
+      ],
+      "shared_provisions": [
+        "detention and DHS-detainer coverage for burglary, theft, larceny, and shoplifting triggers",
+        "State attorney-general enforcement over specified detention, release, parole, and visa duties, including the governed financial-harm threshold"
+      ]
+    },
+    {
+      "action_ids": [
+        "house:119:1:33",
+        "house:119:1:166"
+      ],
+      "group_id": "halt-fentanyl-house-senate-versions",
+      "relationship_basis": [
+        "same fentanyl-related-substances scheduling policy family",
+        "House and Senate-origin measures with distinct governed texts"
+      ],
+      "required_differences": [
+        "S. 331 is the Senate-origin enrolled version",
+        "the exact operative packages use distinct technical-correction and implementation structures"
+      ],
+      "shared_provisions": [
+        "permanent Schedule I treatment for fentanyl-related substances as a class",
+        "research registration pathways for Schedule I work",
+        "specified Controlled Substances Act and import-export penalty treatment"
+      ]
+    },
+    {
+      "action_ids": [
+        "house:119:2:155",
+        "house:119:2:221"
+      ],
+      "group_id": "fisa-short-term-extensions",
+      "relationship_basis": [
+        "same two Title VII sunset references",
+        "same short-term extension mechanism with different dates"
+      ],
+      "required_differences": [
+        "roll 155 changes April 30, 2026 to June 12, 2026",
+        "roll 221 changes June 12, 2026 to July 2, 2026",
+        "roll 155 retains a governed source-identity conflict not present for roll 221"
+      ],
+      "shared_provisions": [
+        "short-term extension of the same two Title VII FISA repeal-date references"
+      ]
+    },
+    {
+      "action_ids": [
+        "house:119:1:162",
+        "house:119:1:270",
+        "house:119:1:271",
+        "house:119:1:274",
+        "house:119:1:275",
+        "house:119:1:298",
+        "house:119:1:299"
+      ],
+      "group_id": "dc-criminal-justice-and-policing",
+      "relationship_basis": [
+        "shared D.C. criminal-justice or policing subject",
+        "distinct measure identities and non-interchangeable operative mechanisms"
+      ],
+      "required_differences": [
+        "collective-bargaining and discipline rules",
+        "youth-offender sentencing and public statistics",
+        "Family Court and transfer ages",
+        "judicial nomination governance",
+        "vehicle-pursuit standards and alert technology",
+        "detention and secured-cash-bail rules",
+        "repeal with specified policing-law subtitles retained"
+      ],
+      "shared_provisions": []
+    }
+  ],
+  "neutral_fact_bases": [
+    "official titles",
+    "measure identity and bill family",
+    "operative section structures",
+    "policy mechanism",
+    "explicit benchmark or historical relationship"
+  ],
+  "non_authorizing": true,
+  "primary_worker_inaccessible": true,
+  "schema_version": "related_action_lineage_map_v3"
+}

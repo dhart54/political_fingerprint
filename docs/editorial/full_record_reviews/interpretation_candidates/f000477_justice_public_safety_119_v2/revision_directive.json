@@ -1,0 +1,67 @@
+{
+  "accepts_any_interpretation": false,
+  "accepts_any_v1_candidate": false,
+  "authority_kind": "non_authorizing_governing_revision_directive",
+  "authority_source": "Political Fingerprint authority thread",
+  "authorizes_canonical_review_state": false,
+  "content_subject_sha256": "b278e4c55cee5c71bb4e274e6acadfa82a60506073fe380e658af59221cb2084",
+  "decision": "global_revision_required",
+  "directive_id": "action-interpretation-global-revision-directive:f000477:justice_public_safety:119:v1-to-v2",
+  "frozen_v1_subject_sha256": "78c210d38f67e3ba357af4bd8f077673b05fcfc4a6b61881727789087cd17c00",
+  "human_approval": false,
+  "required_global_changes": [
+    "inventory material operative provisions before drafting",
+    "prohibit title-only meaning absent a documented single-mechanism exception",
+    "separate provision-coverage review from scope and neutrality review",
+    "apply one evidence-bound global correction cycle",
+    "freeze all candidates before benchmark access and sampling",
+    "evaluate benchmark mechanism and exception coverage rather than topic overlap",
+    "use explicit content_subject_sha256 and file_sha256 conventions",
+    "generate final-byte parity last"
+  ],
+  "reviewed_v1_batch_id": "action-interpretation-candidates:f000477:justice_public_safety:119:v1",
+  "schema_version": "action_interpretation_global_revision_directive_v1",
+  "systematic_failure_classes": [
+    {
+      "class": "title_only_substantive_locator",
+      "count": 31,
+      "denominator": 37
+    },
+    {
+      "class": "random_sample_title_only",
+      "count": 11,
+      "denominator": 12
+    },
+    {
+      "class": "title_only_without_adversarial_finding",
+      "count": 30,
+      "denominator": 31
+    },
+    {
+      "class": "material_mechanism_penalty_threshold_exception_or_structure_omitted",
+      "count": null,
+      "denominator": 37
+    },
+    {
+      "class": "benchmark_topic_overlap_treated_as_alignment",
+      "count": 4,
+      "denominator": 7
+    },
+    {
+      "class": "stale_or_mixed_final_file_hashes",
+      "count": 3,
+      "denominator": 3
+    },
+    {
+      "class": "roll_155_official_source_identity_conflict",
+      "count": 1,
+      "denominator": 37
+    }
+  ],
+  "v1_final_file_sha256": {
+    "human_review_dossier.md": "09c0b3a4d6633c84693d385bd3cba165837bd552fb46a3612a5963af2a923f81",
+    "parity_manifest.json": "1b3c70da0f614f307480b492c1fdfc625bb19dbe9cd9617b15c28bec536b8180"
+  },
+  "v1_generalization_state": "superseded_for_generalization_review",
+  "v1_production_selector_eligibility": false
+}

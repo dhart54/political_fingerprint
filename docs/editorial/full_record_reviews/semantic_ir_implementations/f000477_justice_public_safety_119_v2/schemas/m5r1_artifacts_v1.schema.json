@@ -1,0 +1,971 @@
+{
+  "$id": "https://political-fingerprint.local/schemas/foushee-justice-m5r1-artifacts-v1.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "oneOf": [
+    {
+      "additionalProperties": false,
+      "properties": {
+        "acceptance_authority": {
+          "type": "boolean"
+        },
+        "artifact_id": {
+          "const": "semantic-ir-m5r1-correction-authority:f000477:justice_public_safety:119:v1"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "correction_scope": {
+          "type": "string"
+        },
+        "decision": {
+          "type": "string"
+        },
+        "not_user_signature": {
+          "type": "boolean"
+        },
+        "reviewed_identities": {
+          "type": "object"
+        },
+        "reviewed_snapshot": {
+          "type": "object"
+        },
+        "reviewer_authority": {
+          "type": "string"
+        },
+        "reviewer_identity": {
+          "type": "string"
+        },
+        "schema_version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "acceptance_authority",
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "correction_scope",
+        "decision",
+        "not_user_signature",
+        "reviewed_identities",
+        "reviewed_snapshot",
+        "reviewer_authority",
+        "reviewer_identity",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "action_mapping_count": {
+          "type": "integer"
+        },
+        "action_mappings": {
+          "type": "array"
+        },
+        "artifact_id": {
+          "const": "semantic-ir-proposition-overlap-ledger:f000477:justice_public_safety:119:v1_reviewed"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "episode_mapping_count": {
+          "type": "integer"
+        },
+        "episode_mappings": {
+          "type": "array"
+        },
+        "graph_content_subject_sha256": {
+          "type": "string"
+        },
+        "prohibited_overlap_count": {
+          "type": "integer"
+        },
+        "prohibited_overlaps": {
+          "type": "array"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "set_based_accounting_is_noninflation_proof": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "action_mapping_count",
+        "action_mappings",
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "episode_mapping_count",
+        "episode_mappings",
+        "graph_content_subject_sha256",
+        "prohibited_overlap_count",
+        "prohibited_overlaps",
+        "schema_version",
+        "set_based_accounting_is_noninflation_proof"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "const": "semantic-ir-m5r1-overlap-review:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "corrected_prohibited_overlap_count": {
+          "type": "integer"
+        },
+        "initial_action_mapping_count": {
+          "type": "integer"
+        },
+        "initial_episode_mapping_count": {
+          "type": "integer"
+        },
+        "initial_prohibited_overlap_count": {
+          "type": "integer"
+        },
+        "review_status": {
+          "type": "string"
+        },
+        "reviewed_all_behavioral_propositions": {
+          "type": "boolean"
+        },
+        "same_role_overlaps": {
+          "type": "array"
+        },
+        "schema_version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "corrected_prohibited_overlap_count",
+        "initial_action_mapping_count",
+        "initial_episode_mapping_count",
+        "initial_prohibited_overlap_count",
+        "review_status",
+        "reviewed_all_behavioral_propositions",
+        "same_role_overlaps",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "action_mapping_count": {
+          "type": "integer"
+        },
+        "action_mappings": {
+          "type": "array"
+        },
+        "artifact_id": {
+          "const": "semantic-ir-proposition-overlap-ledger:f000477:justice_public_safety:119:v2_corrected"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "episode_mapping_count": {
+          "type": "integer"
+        },
+        "episode_mappings": {
+          "type": "array"
+        },
+        "graph_content_subject_sha256": {
+          "type": "string"
+        },
+        "prohibited_overlap_count": {
+          "type": "integer"
+        },
+        "prohibited_overlaps": {
+          "type": "array"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "set_based_accounting_is_noninflation_proof": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "action_mapping_count",
+        "action_mappings",
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "episode_mapping_count",
+        "episode_mappings",
+        "graph_content_subject_sha256",
+        "prohibited_overlap_count",
+        "prohibited_overlaps",
+        "schema_version",
+        "set_based_accounting_is_noninflation_proof"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "const": "semantic-ir-policy-families:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "families": {
+          "type": "array"
+        },
+        "family_count": {
+          "type": "integer"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "families",
+        "family_count",
+        "schema_version",
+        "state"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "const": "semantic-ir-policy-traits:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "trait_count": {
+          "type": "integer"
+        },
+        "traits": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "schema_version",
+        "state",
+        "trait_count",
+        "traits"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "const": "semantic-ir-trait-relationships:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "relationship_count": {
+          "type": "integer"
+        },
+        "relationships": {
+          "type": "array"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "relationship_count",
+        "relationships",
+        "schema_version",
+        "state"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "const": "semantic-ir-source-render-constraints:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "constraint_count": {
+          "type": "integer"
+        },
+        "constraints": {
+          "type": "array"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "constraint_count",
+        "constraints",
+        "content_subject_sha256",
+        "schema_version",
+        "state"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "const": "semantic-ir-shared-review-dependencies:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "dependencies": {
+          "type": "array"
+        },
+        "dependency_count": {
+          "type": "integer"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "content_subject_sha256",
+        "dependencies",
+        "dependency_count",
+        "schema_version",
+        "state"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_reference_output_included": {
+          "type": "boolean"
+        },
+        "artifact_id": {
+          "const": "full-record-semantic-ir-compiler-input:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "candidate_state": {
+          "type": "string"
+        },
+        "compiler_input": {
+          "type": "object"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "expected_output_fields_included": {
+          "type": "boolean"
+        },
+        "public_language_included": {
+          "type": "boolean"
+        },
+        "schema_version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "accepted_reference_output_included",
+        "artifact_id",
+        "authorizing",
+        "candidate_state",
+        "compiler_input",
+        "content_subject_sha256",
+        "expected_output_fields_included",
+        "public_language_included",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_semantic_reference": {
+          "type": "boolean"
+        },
+        "action_accounting_counts": {
+          "type": "object"
+        },
+        "artifact_id": {
+          "const": "full-record-semantic-ir-candidate:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "candidate_state": {
+          "type": "string"
+        },
+        "canonical": {
+          "type": "boolean"
+        },
+        "compiled_ir": {
+          "type": "object"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "full_universe_action_accounting": {
+          "type": "array"
+        },
+        "persisted": {
+          "type": "boolean"
+        },
+        "public": {
+          "type": "boolean"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "render_plan": {
+          "type": "object"
+        },
+        "schema_version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "accepted_semantic_reference",
+        "action_accounting_counts",
+        "artifact_id",
+        "authorizing",
+        "candidate_state",
+        "canonical",
+        "compiled_ir",
+        "content_subject_sha256",
+        "full_universe_action_accounting",
+        "persisted",
+        "public",
+        "published",
+        "render_plan",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "action_accounting_changed": {
+          "type": "boolean"
+        },
+        "added_proposition_ids": {
+          "type": "array"
+        },
+        "artifact_id": {
+          "const": "semantic-ir-m5r1-semantic-diff:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "conclusion_plan_changes": {
+          "type": "object"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "manual_compiled_output_edits": {
+          "type": "boolean"
+        },
+        "removed_proposition_ids": {
+          "type": "array"
+        },
+        "roll_171_disposition": {
+          "type": "string"
+        },
+        "roll_298_disposition": {
+          "type": "string"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "structured_input_changes": {
+          "type": "array"
+        },
+        "synthesis_freshly_recompiled": {
+          "type": "boolean"
+        },
+        "unchanged_proposition_ids": {
+          "type": "array"
+        },
+        "v1_graph_content_subject_sha256": {
+          "type": "string"
+        },
+        "v2_graph_content_subject_sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "action_accounting_changed",
+        "added_proposition_ids",
+        "artifact_id",
+        "authorizing",
+        "conclusion_plan_changes",
+        "content_subject_sha256",
+        "manual_compiled_output_edits",
+        "removed_proposition_ids",
+        "roll_171_disposition",
+        "roll_298_disposition",
+        "schema_version",
+        "structured_input_changes",
+        "synthesis_freshly_recompiled",
+        "unchanged_proposition_ids",
+        "v1_graph_content_subject_sha256",
+        "v2_graph_content_subject_sha256"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "alternatives": {
+          "type": "array"
+        },
+        "artifact_id": {
+          "const": "semantic-ir-m5r1-synthesis-review:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "conclusion_only": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "corrected_graph_content_subject_sha256": {
+          "type": "string"
+        },
+        "delegated_authority_pending": {
+          "type": "boolean"
+        },
+        "limiting_proposition_ids": {
+          "type": "array"
+        },
+        "mixed_halt_fentanyl_limitation_retained": {
+          "type": "boolean"
+        },
+        "primary_proposition_ids": {
+          "type": "array"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "selected_synthesis_proposition_id": {
+          "type": "string"
+        },
+        "selected_synthesis_type": {
+          "type": "string"
+        },
+        "tied_material_patterns_visible": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "alternatives",
+        "artifact_id",
+        "authorizing",
+        "conclusion_only",
+        "content_subject_sha256",
+        "corrected_graph_content_subject_sha256",
+        "delegated_authority_pending",
+        "limiting_proposition_ids",
+        "mixed_halt_fentanyl_limitation_retained",
+        "primary_proposition_ids",
+        "schema_version",
+        "selected_synthesis_proposition_id",
+        "selected_synthesis_type",
+        "tied_material_patterns_visible"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_semantic_reference": {
+          "type": "boolean"
+        },
+        "artifact_id": {
+          "const": "full-record-semantic-ir-provisional-implementation:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "behavioral_proposition_count": {
+          "type": "integer"
+        },
+        "bindings": {
+          "type": "object"
+        },
+        "canonical": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "full_action_accounting_count": {
+          "type": "integer"
+        },
+        "implementation_core": {
+          "type": "object"
+        },
+        "implementation_core_content_subject_sha256": {
+          "type": "string"
+        },
+        "implementation_state": {
+          "type": "string"
+        },
+        "persisted": {
+          "type": "boolean"
+        },
+        "production_eligible": {
+          "type": "boolean"
+        },
+        "public": {
+          "type": "boolean"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "render_plan": {
+          "type": "object"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "synthesis_proposition_count": {
+          "type": "integer"
+        },
+        "user_approved": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "accepted_semantic_reference",
+        "artifact_id",
+        "authorizing",
+        "behavioral_proposition_count",
+        "bindings",
+        "canonical",
+        "content_subject_sha256",
+        "full_action_accounting_count",
+        "implementation_core",
+        "implementation_core_content_subject_sha256",
+        "implementation_state",
+        "persisted",
+        "production_eligible",
+        "public",
+        "published",
+        "render_plan",
+        "schema_version",
+        "synthesis_proposition_count",
+        "user_approved"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "const": "semantic-ir-independent-verification:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing": {
+          "type": "boolean"
+        },
+        "checks": {
+          "type": "object"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "expected_graph_content_subject_sha256": {
+          "type": "string"
+        },
+        "reconstructed_graph_content_subject_sha256": {
+          "type": "string"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authorizing",
+        "checks",
+        "content_subject_sha256",
+        "expected_graph_content_subject_sha256",
+        "reconstructed_graph_content_subject_sha256",
+        "schema_version",
+        "status"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "const": "semantic-ir-launch-risk-register:f000477:justice_public_safety:119:v2"
+        },
+        "carried_m5_register": {
+          "type": "object"
+        },
+        "carried_risk_count": {
+          "type": "integer"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "history_preserved": {
+          "type": "boolean"
+        },
+        "launch_authorized": {
+          "type": "boolean"
+        },
+        "risk_count": {
+          "type": "integer"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "updated_risks": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "carried_m5_register",
+        "carried_risk_count",
+        "content_subject_sha256",
+        "history_preserved",
+        "launch_authorized",
+        "risk_count",
+        "schema_version",
+        "updated_risks"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "const": "semantic-ir-calibration-population:f000477:justice_public_safety:119:v2"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "eligible_count": {
+          "type": "integer"
+        },
+        "eligible_objects": {
+          "type": "array"
+        },
+        "excluded_action_ids": {
+          "type": "array"
+        },
+        "excluded_held_risk_object_ids": {
+          "type": "array"
+        },
+        "implementation_core_content_subject_sha256": {
+          "type": "string"
+        },
+        "implementation_id": {
+          "type": "string"
+        },
+        "launch_sample_selected": {
+          "type": "boolean"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "superseded_v1_proposition_ids": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "content_subject_sha256",
+        "eligible_count",
+        "eligible_objects",
+        "excluded_action_ids",
+        "excluded_held_risk_object_ids",
+        "implementation_core_content_subject_sha256",
+        "implementation_id",
+        "launch_sample_selected",
+        "schema_version",
+        "superseded_v1_proposition_ids"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "allowed_decisions": {
+          "type": "array"
+        },
+        "artifact_id": {
+          "const": "delegated-semantic-ir-synthesis-decision-template:f000477:justice_public_safety:119:v2"
+        },
+        "authorizing_when_empty": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "decision": {
+          "type": "null"
+        },
+        "not_user_signature": {
+          "type": "boolean"
+        },
+        "reviewer_authority": {
+          "type": "null"
+        },
+        "reviewer_identity": {
+          "type": "null"
+        },
+        "schema_version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "allowed_decisions",
+        "artifact_id",
+        "authorizing_when_empty",
+        "content_subject_sha256",
+        "decision",
+        "not_user_signature",
+        "reviewer_authority",
+        "reviewer_identity",
+        "schema_version"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "const": "semantic-ir-m5r1-validation:f000477:justice_public_safety:119:v2"
+        },
+        "canonical_and_public_state_unchanged": {
+          "type": "boolean"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "corrected_command_mistakes": {
+          "type": "array"
+        },
+        "database_access": {
+          "type": "boolean"
+        },
+        "disclosed_baseline_attempts": {
+          "type": "array"
+        },
+        "evidence_acquisition": {
+          "type": "boolean"
+        },
+        "network_access": {
+          "type": "boolean"
+        },
+        "sandbox_restrictions": {
+          "type": "array"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "successful_commands": {
+          "type": "array"
+        },
+        "validation_accounting": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "canonical_and_public_state_unchanged",
+        "content_subject_sha256",
+        "corrected_command_mistakes",
+        "database_access",
+        "disclosed_baseline_attempts",
+        "evidence_acquisition",
+        "network_access",
+        "sandbox_restrictions",
+        "schema_version",
+        "successful_commands",
+        "validation_accounting"
+      ],
+      "type": "object"
+    }
+  ],
+  "title": "Foushee Justice M5-R1 closed artifact envelopes"
+}

@@ -1,0 +1,141 @@
+{
+  "action_id": "house:119:1:274",
+  "content_subject_sha256": "72b586079b9ff2b6b774621ca6181836a6c7c9e9556d281a0556f99b251e9075",
+  "cross_domain_limitations": [],
+  "exact_action_identity": "119:hr:5125",
+  "house_stage": "passage",
+  "neutral_methodology": [
+    "inventory_material_provisions_before_drafting",
+    "separate_official_title_from_interpretation",
+    "title_only_prohibited_without_independent_single_mechanism_finding",
+    "exact_choice_only",
+    "preserve_house_stage",
+    "yea_supports_exact_choice_only",
+    "nay_opposes_exact_choice_only",
+    "present_and_not_voting_non_directional",
+    "no_motive_or_broader_issue_inference",
+    "parent_context_cannot_replace_narrow_action",
+    "account_for_material_limits_exceptions_and_retained_provisions",
+    "preserve_ambiguity",
+    "no_safe_candidate_when_required",
+    "derive_each_exact_version_inventory_independently",
+    "do_not_reuse_related_action_inventory_or_conclusion",
+    "freeze_expected_inventory_before_candidate_comparison",
+    "verify_enumerated_categories_and_quantities_across_fields"
+  ],
+  "official_action_date": "2025-09-17",
+  "official_member_action": "nay",
+  "operative_text_versions": [
+    "eh"
+  ],
+  "packet_id": "action-interpretation-worker-packet:house:119:1:274:v4",
+  "schema_version": "action_interpretation_worker_packet_v4",
+  "sources": [
+    {
+      "deterministic_extraction": {
+        "projection": {
+          "action_date": "2025-09-17",
+          "action_id": "house:119:1:274",
+          "chamber": "house",
+          "congress": 119,
+          "house_action_stage": "passage",
+          "measure_identity": "119:hr:5125",
+          "member_action": "nay",
+          "official_action_description": "On Passage",
+          "operative_content_sha256": null,
+          "raw_provenance_sha256": "d720654d7585239c2aeb99197c5acfdc00d3c5f78f2f86eeb6f407117edfce09",
+          "roll_number": 274,
+          "schema_version": "neutral_m3_source_projection_v1",
+          "source_url": "https://clerk.house.gov/evs/2025/roll274.xml",
+          "text_version": "2025-09-17"
+        }
+      },
+      "neutral_projection_sha256": "6bbd450c3b937484db7dabf9fdb280b8cb0a88e87216866c07befd90e78b3291",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_274.xml",
+      "raw_sha256": "d720654d7585239c2aeb99197c5acfdc00d3c5f78f2f86eeb6f407117edfce09",
+      "role": "member_action_evidence",
+      "source_id": "clerk:119:1:274",
+      "source_type": "house_clerk_roll_call",
+      "text_version": "2025-09-17"
+    },
+    {
+      "deterministic_extraction": {
+        "document_title": "119 HR 5125 EH: District of Columbia Judicial Nominations Reform Act of 2025",
+        "extraction_engine": "python_xml_elementtree_v1",
+        "extraction_limitation": null,
+        "official_title": "To amend the District of Columbia Home Rule Act to terminate the District of Columbia Judicial Nomination Commission, and for other purposes.",
+        "section_headings": [
+          "Short title",
+          "Termination of District of Columbia Judicial Nomination Commission",
+          "Termination",
+          "Conforming amendments relating to appointment of judges",
+          "Designation of chief judges by President",
+          "Appointment by President",
+          "Qualifications of judges",
+          "Other conforming amendment",
+          "Clerical amendment",
+          "Effective date"
+        ],
+        "structured_sections": [
+          {
+            "enum": "1.",
+            "header": "Short title",
+            "text": "1.Short titleThis Act may be cited as the District of Columbia Judicial Nominations Reform Act of 2025."
+          },
+          {
+            "enum": "2.",
+            "header": "Termination of District of Columbia Judicial Nomination Commission",
+            "text": "2.Termination of District of Columbia Judicial Nomination Commission (a)TerminationThe District of Columbia Home Rule Act is amended by striking section 434 (sec. 1–204.34, D.C. Official Code). (b)Conforming amendments relating to appointment of judges (1)Designation of chief judges by PresidentSection 431(b) of such Act (sec. 1–204.31(b), D.C. Official Code) is amended by striking the District of Columbia Judicial Nominating Commission established by section 434 and inserting the President. (2)Appointment by PresidentSection 433(a) of such Act (sec. 1–204.33(a), D.C. Official Code) is amended by striking Except as provided in section 434(d)(1), the President shall nominate, from the list of persons recommended to him by the District of Columbia Judicial Nomination Commission established under section 434, and inserting The President shall nominate,. (3)Qualifications of judgesSection 433(b) of such Act (sec. 1–204.33(b), D.C. Official Code) is amended— (A)by adding and at the end of paragraph (3); (B)by striking paragraph (4) and redesignating paragraph (5) as paragraph (4); and (C)in paragraph (4), as so redesignated, by striking or of the District of Columbia Judicial Nomination Commission. (c)Other conforming amendmentSection 11–1528(a)(2), District of Columbia Official Code, is amended by striking subparagraph (C). (d)Clerical amendmentThe table of contents of the District of Columbia Home Rule Act is amended by striking the item relating to section 434. (e)Effective dateThe amendments made by this section shall apply with respect to appointments made on or after the date of the enactment of this Act."
+          }
+        ]
+      },
+      "neutral_projection_sha256": "90cb6630bfed28e928bc20fcddd85554c741dc9a9cb8233716f82840d24de076",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/0df63fc02b31dc6cfe01a4ef1fa3cb87c02d5c56be9210da3910426ee02b47ed_BILLS-119hr5125eh.xml",
+      "raw_sha256": "0df63fc02b31dc6cfe01a4ef1fa3cb87c02d5c56be9210da3910426ee02b47ed",
+      "role": "operative_content_interpretation_input",
+      "source_id": "congress_text:119:hr:5125:eh",
+      "source_type": "congress_gov_bill_text",
+      "text_version": "eh"
+    }
+  ],
+  "worker_input_allowlist": [
+    "action_id",
+    "official_action_date",
+    "house_stage",
+    "official_member_action",
+    "exact_action_identity",
+    "neutral_projections",
+    "operative_content",
+    "cross_domain_limitations",
+    "neutral_methodology",
+    "materiality_rubric"
+  ],
+  "worker_input_forbidden": [
+    "accepted_benchmark_interpretations",
+    "accepted_benchmark_text",
+    "advocacy",
+    "benchmark_conclusion",
+    "benchmark_membership",
+    "cosponsor_party",
+    "episode_membership",
+    "generic_bill_metadata",
+    "member_party",
+    "news",
+    "other_action_candidates",
+    "partisan_descriptions",
+    "political_commentary",
+    "public_language",
+    "related_action_candidate_conclusions",
+    "semantic_ir",
+    "sponsor_party",
+    "synthesis_outcomes",
+    "v1_action_candidates",
+    "v1_adversarial_reviews",
+    "v2_action_candidates",
+    "v2_benchmark_comparison",
+    "v2_provision_coverage_reviews",
+    "v3_action_candidates",
+    "v3_benchmark_comparison",
+    "v3_material_scope_reviews"
+  ]
+}

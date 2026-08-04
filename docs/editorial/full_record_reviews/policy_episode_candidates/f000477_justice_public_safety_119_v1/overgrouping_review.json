@@ -1,0 +1,28 @@
+{
+  "accepted": false,
+  "artifact_id": "episode-overgrouping-review:f000477:justice_public_safety:119:v1",
+  "authorizing": false,
+  "candidate": true,
+  "canonical": false,
+  "content_subject_sha256": "aef25870a7dd79f7b763d07fbf5a91ec4d0ed17ff747d91611ba72841e46ce43",
+  "episode_count": 31,
+  "finding_counts": {
+    "critical": 0,
+    "major": 1,
+    "none": 30
+  },
+  "findings": [
+    {
+      "content_subject_sha256": "6eceee55bd62d9c95af7f0eb525ba5a1b4f65a5ae752bb3bfaacc9ed15c339c8",
+      "episode_id": "dc-juvenile-justice-age-thresholds",
+      "finding": "The episode combines sentencing/youth-offender eligibility with Family Court jurisdiction and transfer thresholds; shared D.C. juvenile context is insufficient mechanism continuity.",
+      "finding_id": "overgrouping:dc-juvenile-mechanisms:v1",
+      "required_general_correction": "Separate materially different legal mechanisms even when measures share jurisdiction, topic, and consideration date.",
+      "resolved_post_correction": true,
+      "severity": "major"
+    }
+  ],
+  "public": false,
+  "reviewed_initial_batch_content_subject_sha256": "265a458e3146ba06a902f02fe439799a9808b132467d1fb687641e8cbec85b11",
+  "schema_version": "episode_overgrouping_review_v1"
+}

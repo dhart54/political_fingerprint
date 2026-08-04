@@ -1,0 +1,370 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "action_count": {
+      "const": 37
+    },
+    "artifact_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "artifact_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "evidence_maps": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "cross_domain_limitations": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "evidence_map_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "evidence_map_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "exact_action_identity": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "house_stage": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "input_packet_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "official_action_date": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "official_member_action": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "operative_text_versions": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "source_packet_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "sources": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "deterministic_extraction": {
+                  "oneOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "document_title": {
+                          "type": "string"
+                        },
+                        "extraction_engine": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "extraction_limitation": {
+                          "type": "null"
+                        },
+                        "official_title": {
+                          "type": "string"
+                        },
+                        "section_headings": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "structured_sections": {
+                          "items": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "enum": {
+                                "type": "string"
+                              },
+                              "header": {
+                                "type": "string"
+                              },
+                              "text": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "enum",
+                              "header",
+                              "text"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "required": [
+                        "extraction_engine",
+                        "document_title",
+                        "official_title",
+                        "section_headings",
+                        "structured_sections",
+                        "extraction_limitation"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "extraction_engine": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "extraction_limitation": {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "pages": {
+                          "items": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "page": {
+                                "minimum": 1,
+                                "type": "integer"
+                              },
+                              "text": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "page",
+                              "text"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "required": [
+                        "extraction_engine",
+                        "pages",
+                        "extraction_limitation"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "projection": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "action_date": {
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "action_id": {
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "chamber": {
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "congress": {
+                              "type": "integer"
+                            },
+                            "house_action_stage": {
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "measure_identity": {
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "member_action": {
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "official_action_description": {
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "operative_content_sha256": {
+                              "type": "null"
+                            },
+                            "raw_provenance_sha256": {
+                              "anyOf": [
+                                {
+                                  "pattern": "^[0-9a-f]{64}$",
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "roll_number": {
+                              "type": "integer"
+                            },
+                            "schema_version": {
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "source_url": {
+                              "minLength": 1,
+                              "type": "string"
+                            },
+                            "text_version": {
+                              "minLength": 1,
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "action_date",
+                            "action_id",
+                            "chamber",
+                            "congress",
+                            "house_action_stage",
+                            "measure_identity",
+                            "member_action",
+                            "official_action_description",
+                            "operative_content_sha256",
+                            "raw_provenance_sha256",
+                            "roll_number",
+                            "schema_version",
+                            "source_url",
+                            "text_version"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "projection"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                },
+                "neutral_projection_sha256": {
+                  "pattern": "^[0-9a-f]{64}$",
+                  "type": "string"
+                },
+                "raw_path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "raw_sha256": {
+                  "anyOf": [
+                    {
+                      "pattern": "^[0-9a-f]{64}$",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "role": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "source_id": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "source_type": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "text_version": {
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id",
+                "source_type",
+                "text_version",
+                "neutral_projection_sha256",
+                "raw_path",
+                "raw_sha256",
+                "role",
+                "deterministic_extraction"
+              ],
+              "type": "object"
+            },
+            "minItems": 2,
+            "type": "array"
+          },
+          "worker_input_allowlist": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "worker_input_forbidden": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "evidence_map_id",
+          "action_id",
+          "exact_action_identity",
+          "house_stage",
+          "official_action_date",
+          "official_member_action",
+          "source_packet_sha256",
+          "sources",
+          "operative_text_versions",
+          "cross_domain_limitations",
+          "worker_input_allowlist",
+          "worker_input_forbidden",
+          "input_packet_sha256",
+          "evidence_map_sha256"
+        ],
+        "type": "object"
+      },
+      "maxItems": 37,
+      "minItems": 37,
+      "type": "array"
+    },
+    "non_authorizing": {
+      "const": true
+    },
+    "schema_version": {
+      "const": "action_interpretation_evidence_maps_v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "non_authorizing",
+    "action_count",
+    "evidence_maps",
+    "artifact_sha256"
+  ],
+  "type": "object"
+}

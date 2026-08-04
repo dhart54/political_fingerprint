@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "action_accounting_match": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "calibration_successor_eligible_count": {
+      "type": "integer"
+    },
+    "candidate_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "episode_count": {
+      "type": "integer"
+    },
+    "episode_parity": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_roles_match": {
+            "type": "boolean"
+          },
+          "behavior_and_derivation_match": {
+            "type": "boolean"
+          },
+          "candidate_content_subject_sha256": {
+            "type": "string"
+          },
+          "chronology_match": {
+            "type": "boolean"
+          },
+          "confidence_match": {
+            "type": "boolean"
+          },
+          "episode_id": {
+            "type": "string"
+          },
+          "implementation_content_subject_sha256": {
+            "type": "string"
+          },
+          "limitations_and_ambiguity_match": {
+            "type": "boolean"
+          },
+          "membership_match": {
+            "type": "boolean"
+          },
+          "policy_question_match": {
+            "type": "boolean"
+          },
+          "scope_match": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "action_roles_match",
+          "behavior_and_derivation_match",
+          "candidate_content_subject_sha256",
+          "chronology_match",
+          "confidence_match",
+          "episode_id",
+          "implementation_content_subject_sha256",
+          "limitations_and_ambiguity_match",
+          "membership_match",
+          "policy_question_match",
+          "scope_match"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "implementation_bundle_content_subject_sha256": {
+      "type": "string"
+    },
+    "not_user_signature": {
+      "type": "boolean"
+    },
+    "parity_state": {
+      "type": "string"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "reviewer_identity": {
+      "type": "string"
+    },
+    "risk_successor_entry_count": {
+      "type": "integer"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "accepted",
+    "action_accounting_match",
+    "artifact_id",
+    "authorizing",
+    "calibration_successor_eligible_count",
+    "candidate_batch_content_subject_sha256",
+    "canonical",
+    "content_subject_sha256",
+    "episode_count",
+    "episode_parity",
+    "implementation_bundle_content_subject_sha256",
+    "not_user_signature",
+    "parity_state",
+    "public",
+    "reviewer_identity",
+    "risk_successor_entry_count",
+    "schema_version"
+  ],
+  "type": "object"
+}

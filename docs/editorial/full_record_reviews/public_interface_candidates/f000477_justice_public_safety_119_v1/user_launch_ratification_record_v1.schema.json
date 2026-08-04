@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "approved_public_candidate": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {"const": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1"},
+        "calibration_sample_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+        "freeze_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+        "mapping_set_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+        "presentation_content_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+        "reviewed_wording_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+        "risk_packet_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+        "screenshot_manifest_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"}
+      },
+      "required": ["artifact_id", "calibration_sample_sha256", "freeze_sha256", "mapping_set_sha256", "presentation_content_sha256", "reviewed_wording_sha256", "risk_packet_sha256", "screenshot_manifest_sha256"],
+      "type": "object"
+    },
+    "artifact_id": {"const": "launch-ratification:f000477:justice_public_safety:119:v1"},
+    "authority_boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "calibration_samples_user_approved": {"const": true},
+        "deployment_authorized": {"const": false},
+        "editorial_wording_user_approved": {"const": true},
+        "merge_authorized": {"const": false},
+        "production_eligible": {"const": false},
+        "publication_active": {"const": false},
+        "pull_request_authorized": {"const": false},
+        "push_authorized": {"const": false},
+        "risk_treatments_user_approved": {"const": true}
+      },
+      "required": ["calibration_samples_user_approved", "deployment_authorized", "editorial_wording_user_approved", "merge_authorized", "production_eligible", "publication_active", "pull_request_authorized", "push_authorized", "risk_treatments_user_approved"],
+      "type": "object"
+    },
+    "benchmark_promotion_decision": {"const": "deferred"},
+    "calibration_sample_decisions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {"decision": {"const": "approved"}, "sample_id": {"enum": ["calibration:action", "calibration:episode", "calibration:pattern", "calibration:mapping"]}},
+        "required": ["decision", "sample_id"],
+        "type": "object"
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "type": "array"
+    },
+    "content_subject_sha256": {"const": "22faba18c447ba9ebd5045b74666c09cb0d030f36187e727732c68d561f0721e"},
+    "decision_timestamp": {"const": "2026-08-02T17:35:00-04:00"},
+    "notice": {"minLength": 1, "type": "string"},
+    "production_eligibility_decision": {"const": "deferred"},
+    "publication_activation_decision": {"const": "deferred_separate_operational_decision"},
+    "risk_specific_selections": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {"risk_id": {"type": "string"}, "selection": {"type": "string"}},
+        "required": ["risk_id", "selection"],
+        "type": "object"
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "type": "array"
+    },
+    "schema_version": {"const": "user_launch_ratification_record_v1"},
+    "subject_artifact_id": {"const": "launch-ratification-subject:f000477:justice_public_safety:119:v1"},
+    "subject_content_subject_sha256": {"const": "10d61d55a83177a1cb8c6b65e76fa11199a1bca0b46098c467012c429fcf28c2"},
+    "user_decision": {"const": "approve_m6_wording_and_recommended_risk_treatments"},
+    "user_identity": {"const": "dhart54"},
+    "wording_approval": {"const": true}
+  },
+  "required": ["approved_public_candidate", "artifact_id", "authority_boundary", "benchmark_promotion_decision", "calibration_sample_decisions", "content_subject_sha256", "decision_timestamp", "notice", "production_eligibility_decision", "publication_activation_decision", "risk_specific_selections", "schema_version", "subject_artifact_id", "subject_content_subject_sha256", "user_decision", "user_identity", "wording_approval"],
+  "type": "object"
+}

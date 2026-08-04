@@ -1,0 +1,102 @@
+{
+  "artifact_id": "sample-manifest:f000477:justice_public_safety:119:v4",
+  "benchmark_actions_excluded": true,
+  "candidate_batch_frozen": true,
+  "complexity_challenge_action_ids": [
+    "house:119:1:23",
+    "house:119:2:155",
+    "house:119:2:157",
+    "house:119:2:218",
+    "house:119:2:221",
+    "house:119:2:227",
+    "house:119:2:273",
+    "house:119:2:278"
+  ],
+  "content_subject_sha256": "bc1c870a38aff993f767e5461c6bb5b8c3efeb5b1b5218aedc2235e6954ac4a5",
+  "material_detail_challenge_action_ids": [
+    "house:119:1:128",
+    "house:119:1:130",
+    "house:119:1:131",
+    "house:119:1:162",
+    "house:119:1:166",
+    "house:119:1:23",
+    "house:119:1:27",
+    "house:119:1:270",
+    "house:119:1:271",
+    "house:119:1:275",
+    "house:119:1:289",
+    "house:119:1:298",
+    "house:119:1:299",
+    "house:119:1:33",
+    "house:119:1:340",
+    "house:119:1:351",
+    "house:119:1:42",
+    "house:119:1:6",
+    "house:119:1:68",
+    "house:119:2:155",
+    "house:119:2:157",
+    "house:119:2:171",
+    "house:119:2:218",
+    "house:119:2:221",
+    "house:119:2:227",
+    "house:119:2:234",
+    "house:119:2:265",
+    "house:119:2:275",
+    "house:119:2:278"
+  ],
+  "non_authorizing": true,
+  "random_sample_count": 12,
+  "related_action_contrast_sets": [
+    {
+      "action_ids": [
+        "house:119:1:6",
+        "house:119:1:23"
+      ],
+      "group_id": "laken-riley-house-senate-versions"
+    },
+    {
+      "action_ids": [
+        "house:119:1:33",
+        "house:119:1:166"
+      ],
+      "group_id": "halt-fentanyl-house-senate-versions"
+    },
+    {
+      "action_ids": [
+        "house:119:2:155",
+        "house:119:2:221"
+      ],
+      "group_id": "fisa-short-term-extensions"
+    },
+    {
+      "action_ids": [
+        "house:119:1:162",
+        "house:119:1:270",
+        "house:119:1:271",
+        "house:119:1:274",
+        "house:119:1:275",
+        "house:119:1:298",
+        "house:119:1:299"
+      ],
+      "group_id": "dc-criminal-justice-and-policing"
+    }
+  ],
+  "schema_version": "sample_manifest_v4",
+  "seed_label": "foushee-justice-action-interpretation-generalization-audit-v4",
+  "seed_material_convention": "SHA-256(batch subject + '*' + M2 file SHA + '*' + label)",
+  "seed_sha256": "8f942684f19064010587797f3d78a91cf078c3cbd689e46a15acfd1d96ef01e9",
+  "selected_random_action_ids": [
+    "house:119:2:169",
+    "house:119:1:271",
+    "house:119:1:274",
+    "house:119:1:340",
+    "house:119:1:270",
+    "house:119:1:128",
+    "house:119:2:157",
+    "house:119:2:240",
+    "house:119:1:27",
+    "house:119:1:289",
+    "house:119:1:162",
+    "house:119:2:234"
+  ]
+}

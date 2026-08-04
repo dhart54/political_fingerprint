@@ -1,0 +1,171 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/provision_coverage_reviews_v2",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "independent_reviewer_role": {
+      "type": "boolean"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "review_count": {
+      "type": "integer"
+    },
+    "reviews": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "benchmark_used": {
+            "type": "boolean"
+          },
+          "candidate_content_subject_sha256": {
+            "type": "string"
+          },
+          "candidate_id": {
+            "type": "string"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "coverage_recommendation": {
+            "type": "string"
+          },
+          "covered_provision_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "expected_material_provision_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "final_routing": {
+            "type": "string"
+          },
+          "highest_severity": {
+            "type": "string"
+          },
+          "omitted_provisions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "item_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "omission_classification": {
+                  "type": "string"
+                },
+                "required_correction": {
+                  "type": "string"
+                },
+                "severity": {
+                  "type": "string"
+                },
+                "source_id": {
+                  "type": "string"
+                },
+                "wording": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "item_id",
+                "locator",
+                "omission_classification",
+                "required_correction",
+                "severity",
+                "source_id",
+                "wording"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "remaining_severity_after_routing": {
+            "type": "string"
+          },
+          "required_correction": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "review_contract_version": {
+            "type": "string"
+          },
+          "review_id": {
+            "type": "string"
+          },
+          "reviewed_inputs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "reviewer_cannot_accept": {
+            "type": "boolean"
+          },
+          "reviewer_role": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "benchmark_used",
+          "candidate_content_subject_sha256",
+          "candidate_id",
+          "content_subject_sha256",
+          "coverage_recommendation",
+          "covered_provision_ids",
+          "expected_material_provision_ids",
+          "final_routing",
+          "highest_severity",
+          "omitted_provisions",
+          "remaining_severity_after_routing",
+          "required_correction",
+          "review_contract_version",
+          "review_id",
+          "reviewed_inputs",
+          "reviewer_cannot_accept",
+          "reviewer_role"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "content_subject_sha256",
+    "independent_reviewer_role",
+    "non_authorizing",
+    "review_count",
+    "reviews",
+    "schema_version"
+  ],
+  "title": "provision_coverage_reviews_v2",
+  "type": "object"
+}

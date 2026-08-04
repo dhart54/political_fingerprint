@@ -1,0 +1,161 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "candidate": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "correction_cycle_count": {
+      "type": "integer"
+    },
+    "corrections": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "after_episode_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "before_episode_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "correction_id": {
+            "type": "string"
+          },
+          "general_rule": {
+            "type": "string"
+          },
+          "membership_diff": {
+            "additionalProperties": false,
+            "properties": {
+              "house:119:1:270": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "house:119:1:271": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "house:119:2:155": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "house:119:2:221": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [],
+            "type": "object"
+          },
+          "source_finding_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "after_episode_ids",
+          "before_episode_ids",
+          "content_subject_sha256",
+          "correction_id",
+          "general_rule",
+          "membership_diff",
+          "source_finding_id"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "final_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "initial_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "post_correction_severity_counts": {
+      "additionalProperties": false,
+      "properties": {
+        "critical": {
+          "type": "integer"
+        },
+        "major": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "critical",
+        "major"
+      ],
+      "type": "object"
+    },
+    "pre_correction_severity_counts": {
+      "additionalProperties": false,
+      "properties": {
+        "critical": {
+          "type": "integer"
+        },
+        "major": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "critical",
+        "major"
+      ],
+      "type": "object"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "accepted",
+    "artifact_id",
+    "authorizing",
+    "candidate",
+    "canonical",
+    "content_subject_sha256",
+    "correction_cycle_count",
+    "corrections",
+    "final_batch_content_subject_sha256",
+    "initial_batch_content_subject_sha256",
+    "post_correction_severity_counts",
+    "pre_correction_severity_counts",
+    "public",
+    "schema_version"
+  ],
+  "type": "object"
+}

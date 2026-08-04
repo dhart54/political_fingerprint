@@ -1,0 +1,281 @@
+{
+  "artifact_id": "launch-review-packet:f000477:justice_public_safety:119:v1",
+  "blind_calibration_samples": [
+    {
+      "accepted_internal_interpretation": "The House choice was whether to pass H.R. 5107, repealing most of D.C.'s 2022 Comprehensive Policing and Justice Reform Amendment Act and reviving prior law, while retaining subtitles S and A of title I of that Act.",
+      "calibration_question": "Does this receipt state the exact House choice clearly without broadening the policy position?",
+      "eligibility": "Internally implemented, source-resolved, not held, and no major or critical finding.",
+      "episode_and_proposition_context": {
+        "episode_id": "dc-policing-reform-repeal",
+        "proposition_ids": [
+          "prop:354da734fec2fcf6",
+          "prop:7a5b23c610dc467e"
+        ]
+      },
+      "object_id": "house:119:1:299",
+      "object_type": "action_interpretation",
+      "original_evidence": {
+        "meaning_sources": [
+          {
+            "source_id": "congress_text:119:hr:5107:eh",
+            "url": "https://www.congress.gov/"
+          }
+        ],
+        "member_action": "nay",
+        "vote_source": [
+          {
+            "source_id": "clerk:119:1:299",
+            "url": "https://clerk.house.gov/evs/2025/roll299.xml"
+          }
+        ]
+      },
+      "rendered_public_wording": "The House choice was whether to pass H.R. 5107, repealing most of D.C.'s 2022 Comprehensive Policing and Justice Reform Amendment Act and reviving prior law, while retaining subtitles S and A of title I of that Act.",
+      "sample_id": "calibration:action",
+      "selection_proof": "09431391933a64f88c92f8c0d4134c4b3bfea3817cbe9f8121254360eb3d2214",
+      "ui_location": "exact-action ledger"
+    },
+    {
+      "accepted_internal_interpretation": "Only the exact House choices listed for: Whether to require detention and State enforcement remedies for covered inadmissible noncitizens connected to specified offenses.",
+      "calibration_question": "Does the interface preserve one episode without multiplying analytical weight?",
+      "eligibility": "Multi-action, internally cleared, source-resolved, and not held.",
+      "episode_and_proposition_context": {
+        "action_ids": [
+          "house:119:1:6",
+          "house:119:1:23"
+        ],
+        "episode_id": "laken-riley-detention-enforcement"
+      },
+      "object_id": "laken-riley-detention-enforcement",
+      "object_type": "multi_action_episode_or_trajectory",
+      "original_evidence": [
+        {
+          "action_id": "house:119:1:6",
+          "action_role": "initial_passage",
+          "implementation_record_content_subject_sha256": "93031f30d9dc8dc4cf17e8449515697a6d492d714f0ed3fc47104a65e422f1e8",
+          "implementation_record_id": "action-interpretation-decision-implementation:house:119:1:6:v1",
+          "implemented_exact_action_meaning": "The House choice was whether to pass H.R. 29, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, or shoplifting offenses. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions.",
+          "implemented_exact_choice_position_effect": "opposes_exact_choice",
+          "interpretation_status": "internally_implemented",
+          "official_action_date": "2025-01-07",
+          "official_member_action": "nay",
+          "source_references": [
+            "clerk:119:1:6",
+            "govinfo_text_119_hr29_eh"
+          ]
+        },
+        {
+          "action_id": "house:119:1:23",
+          "action_role": "later_version",
+          "implementation_record_content_subject_sha256": "56ff1458082fed0feaec215842bb7753023f21c119b2dadc2ce67e1bb2a54f7a",
+          "implementation_record_id": "action-interpretation-decision-implementation:house:119:1:23:v1",
+          "implemented_exact_action_meaning": "The House choice was whether to pass the Senate version of the Laken Riley Act, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or crimes resulting in death or serious bodily injury. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions.",
+          "implemented_exact_choice_position_effect": "opposes_exact_choice",
+          "interpretation_status": "internally_implemented",
+          "official_action_date": "2025-01-22",
+          "official_member_action": "nay",
+          "source_references": [
+            "clerk:119:1:23",
+            "govinfo_text_119_s5_es"
+          ]
+        }
+      ],
+      "rendered_public_wording": "Available through the exact-action ledger as one governed episode.",
+      "sample_id": "calibration:episode",
+      "selection_proof": "b8698f7643b94649c1f7ce7ee15eaec57ed0100712cbfdd5bb790ffee98a3efb",
+      "ui_location": "trajectory or exact-action ledger"
+    },
+    {
+      "accepted_internal_interpretation": {
+        "conclusion_relevance": "primary",
+        "direction": "opposition",
+        "evidence_action_ids": [
+          "house:119:1:68",
+          "house:119:2:218"
+        ],
+        "evidence_episode_ids": [
+          "federal-fraud-payment-integrity-oversight",
+          "pandemic-unemployment-fraud-limitations"
+        ],
+        "mechanism_or_trait_refs": [
+          "fraud_enforcement_capacity_expansion"
+        ],
+        "presentation_target": "repeated_patterns",
+        "proposition_id": "prop:e75e7aebbd7b2d29",
+        "proposition_type": "repeated_pattern",
+        "relationships": {
+          "limited_by": [],
+          "supported_by": []
+        },
+        "semantic_role": "behavioral"
+      },
+      "calibration_question": "Does this pattern remain concrete, neutral, and proportionate to its episodes?",
+      "eligibility": "Primary repeated pattern with no unresolved major or critical finding.",
+      "episode_and_proposition_context": {
+        "limited_by": [],
+        "supported_by": []
+      },
+      "object_id": "prop:e75e7aebbd7b2d29",
+      "object_type": "repeated_pattern",
+      "original_evidence": {
+        "action_ids": [
+          "house:119:1:68",
+          "house:119:2:218"
+        ],
+        "episode_ids": [
+          "federal-fraud-payment-integrity-oversight",
+          "pandemic-unemployment-fraud-limitations"
+        ]
+      },
+      "rendered_public_wording": {
+        "action_ids": [
+          "house:119:1:68",
+          "house:119:2:218"
+        ],
+        "body": "Across two separate episodes, Foushee opposed the reviewed proposals to expand federal payment-integrity oversight and extend the time available to pursue pandemic unemployment fraud.",
+        "direction": "opposition",
+        "heading": "Opposition to expanding fraud-enforcement capacity",
+        "proposition_id": "prop:e75e7aebbd7b2d29"
+      },
+      "sample_id": "calibration:pattern",
+      "selection_proof": "4b53d9ea95edbbde80a31b23398aef51e1602764808a28b46f2508ed6e2380e0",
+      "ui_location": "primary repeated patterns"
+    },
+    {
+      "accepted_internal_interpretation": {
+        "boundary_ids": [],
+        "proposition_ids": [
+          "prop:e75e7aebbd7b2d29"
+        ]
+      },
+      "calibration_question": "Does the displayed sentence stay within the exact mapped meaning and limitation set?",
+      "eligibility": "Exact mapped wording with no held-risk object and no unresolved finding.",
+      "episode_and_proposition_context": {
+        "action_ids": [
+          "house:119:1:68",
+          "house:119:2:218"
+        ],
+        "episode_ids": [
+          "federal-fraud-payment-integrity-oversight",
+          "pandemic-unemployment-fraud-limitations"
+        ]
+      },
+      "object_id": "statement:pattern:prop:e75e7aebbd7b2d29:heading",
+      "object_type": "presentation_mapping",
+      "original_evidence": {
+        "action_ids": [
+          "house:119:1:68",
+          "house:119:2:218"
+        ],
+        "boundary_ids": [],
+        "episode_ids": [
+          "federal-fraud-payment-integrity-oversight",
+          "pandemic-unemployment-fraud-limitations"
+        ],
+        "mapping_id": "mapping:pattern:prop:e75e7aebbd7b2d29:heading",
+        "presentation_target": "repeated_patterns",
+        "proposition_ids": [
+          "prop:e75e7aebbd7b2d29"
+        ],
+        "receipt_refs": [
+          "full-record-semantic-validation:f000477:justice_public_safety:119:v1"
+        ],
+        "source_refs": [
+          "clerk:119:1:68",
+          "clerk:119:2:218",
+          "govinfo_text_119_hr1156_eh",
+          "govinfo_text_119_hr8312_eh"
+        ]
+      },
+      "rendered_public_wording": "Opposition to expanding fraud-enforcement capacity",
+      "sample_id": "calibration:mapping",
+      "selection_proof": "0f20dabbc8a47f842e066610172a85c8853994fc609e3cba471a230e4349af9d",
+      "ui_location": "repeated_patterns"
+    }
+  ],
+  "content_subject_sha256": "1e85a43aac36dec69020c81868d28c49f3cbfcc0e4efd2effb739531088812dc",
+  "decision_requested": [
+    "delegated_authority_accepts_public_interface_and_launch_packet",
+    "bounded_public_interface_correction_required",
+    "delegated_authority_rejects_public_interface_method"
+  ],
+  "empty_ratification_template_path": "docs/editorial/full_record_reviews/public_interface_candidates/f000477_justice_public_safety_119_v1/empty_launch_ratification_template.json",
+  "quality_summary": {
+    "action_accounting_complete": true,
+    "action_universe": 37,
+    "behavioral_propositions": 23,
+    "calibration_samples": 4,
+    "correction_cycles": 2,
+    "episodes": 32,
+    "known_methodology_limitations": [
+      "roll 128 unresolved textual insertion",
+      "roll 155 source-identity conflict and non-counting FISA relationship",
+      "roll 278 incomplete final-package evidence",
+      "mechanism divide is one bounded contrast only"
+    ],
+    "limiting_trajectories": 1,
+    "presentation_validation": "passed",
+    "primary_repeated_patterns": 4,
+    "sample_selected_after_freeze": true,
+    "semantic_validation": "passed",
+    "unresolved_launch_risks": 4
+  },
+  "ratification_subject": {
+    "artifact_id": "launch-ratification-subject:f000477:justice_public_safety:119:v1",
+    "calibration_sample": "3282355ab57b86b547ffe6eb04dbf16865f9d9c1099f8cc4ee4d2110fd740f04",
+    "content_subject_sha256": "10d61d55a83177a1cb8c6b65e76fa11199a1bca0b46098c467012c429fcf28c2",
+    "evidence_provenance": "4e04e4f9db6e5b029b35be203c0a39f5e6186028df6dfdad5ba65ce8b49f12f2",
+    "freeze": "2167fe967e42aca292bac399ddb74fe99d727fdcc7583dc19e8be5f844237192",
+    "limitations": "e65b01bed2dce6ead9e3eee45093bc609690c75c1c8e6ac6b1c654f081292a34",
+    "mapping_set": "db7cf375dd81d9d9fbe4c842b7d796bc4b4a928233501bd314ffdde3e099adf6",
+    "public_presentation_content": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55",
+    "reviewed_wording": "58722f5f61ea0b2eb3b41b3cbf58009971c6fcfd184e189117715e2955627fc7",
+    "risk_packet": "72dddee5f5accb63c5e8cf337aa4c9aae2098356272f5e4a524dd21f6e8a3353",
+    "schema_version": "user_launch_ratification_subject_v1",
+    "screenshot_manifest": "4fe054d911eee178736489e55294177d17414099148ab839a91320f69e31cad0",
+    "semantic_validation_receipt": "f7f36ce0194f508c4aad54032b3f94991535477a3f26c9e51ddf54cc4fc4b7a4",
+    "universe": "5f969c7911249836db107676516b3258b24a0995fcb95c0d36ef2adbfdfe9213"
+  },
+  "schema_version": "compact_launch_review_packet_v1",
+  "unresolved_launch_risks": [
+    {
+      "codex_recommendation": "Retain the bounded action meaning with the limitation adjacent.",
+      "competing_interpretation": "Withhold the entire action from analytical display.",
+      "current_treatment": "Render resolved scope and disclose the insertion limitation.",
+      "delegated_authority_recommendation": null,
+      "effect": "One notable choice remains low-confidence and explicitly limited.",
+      "question": "Is the bounded resolved meaning sufficient while the textual insertion remains unresolved?",
+      "risk_id": "launch-risk:roll-128:v1",
+      "user_decision_required": "Acknowledge or require withholding roll 128."
+    },
+    {
+      "codex_recommendation": "Launch only with the current non-counting treatment unless source identity is resolved.",
+      "competing_interpretation": "Resolve identity later and reconsider episode grouping.",
+      "current_treatment": "Keep roll 155 non-counting and outside substantive FISA weight.",
+      "delegated_authority_recommendation": null,
+      "effect": "The ledger exposes the control but assigns no behavioral meaning.",
+      "question": "How should the source-identity conflict and resulting FISA grouping consequence be treated?",
+      "risk_id": "launch-risk:roll-155-and-fisa-grouping:v1",
+      "user_decision_required": "Acknowledge the non-counting treatment or require renewed evidence review."
+    },
+    {
+      "codex_recommendation": "Retain no-safe state.",
+      "competing_interpretation": "Acquire complete final-package evidence in a later milestone.",
+      "current_treatment": "No safe public analytical meaning; ledger-only boundary.",
+      "delegated_authority_recommendation": null,
+      "effect": "The action is accounted for but contributes no proposition.",
+      "question": "Can any final-package meaning be stated without the complete House-passed package?",
+      "risk_id": "launch-risk:roll-278:v1",
+      "user_decision_required": "Acknowledge the no-safe treatment or require later evidence acquisition."
+    },
+    {
+      "codex_recommendation": "Retain Option A if the bounded wording is acceptable.",
+      "competing_interpretation": "Option B requires Semantic IR revision to no_common_throughline; Option C requires conclusion-plan revision to omit synthesis.",
+      "current_treatment": "Option A: one bounded contrast, with firearm and fraud adjacent.",
+      "delegated_authority_recommendation": null,
+      "effect": "Only Option A is rendered; B and C remain visibly non-authoritative review alternatives.",
+      "question": "Should launch retain the bounded mechanism divide, require no_common_throughline, or omit overarching synthesis?",
+      "risk_id": "launch-risk:semantic-ir:mechanism-divide:v1",
+      "user_decision_required": "Choose A, require B revision, or require C revision."
+    }
+  ]
+}

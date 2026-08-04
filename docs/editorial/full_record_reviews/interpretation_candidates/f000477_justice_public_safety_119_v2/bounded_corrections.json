@@ -1,0 +1,2105 @@
+{
+  "applied_count": 8,
+  "artifact_id": "action-interpretation-bounded-corrections:f000477:justice_public_safety:119:v2",
+  "content_subject_sha256": "f016869e2e82baf970bbaab4b09da43d1ee3240796e535dccb7c4d50edb7f77d",
+  "correction_cycles": 1,
+  "non_authorizing": true,
+  "record_count": 37,
+  "records": [
+    {
+      "action_id": "house:119:1:6",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "696f0106ee8bc33c1b48d82ac45ea5359f1c41da7aa36c5dbe710a2a69483982",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "e86d244e772556373a28cde6cc075c8c7e96df6587ca7a20b14bb0463900d265",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "e86d244e772556373a28cde6cc075c8c7e96df6587ca7a20b14bb0463900d265"
+    },
+    {
+      "action_id": "house:119:1:23",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "e7d17d661ae97fb3e188637bcd7f6c88046c65ccaab64a4ca9fb84bbdd338354",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "1f4041fed2209cf2d1528adea971092275ad15e6c4f444bc5af21cba93b1b451",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "1f4041fed2209cf2d1528adea971092275ad15e6c4f444bc5af21cba93b1b451"
+    },
+    {
+      "action_id": "house:119:1:27",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "ecb767dba47ac41f43844ab1028596ef7055610ffd320d596e0a14fa71203508",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "10fbdee9d5ef9c00e5f714097b9e178b48e370a96e67924ccdf1c0eb5b227d63",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "10fbdee9d5ef9c00e5f714097b9e178b48e370a96e67924ccdf1c0eb5b227d63"
+    },
+    {
+      "action_id": "house:119:1:32",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "9198051d629cf05ef961651de0b918d27de188a73755f2ce611a1ee8aa8a7465",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "27dabf16bd893fe238432a1f6f08ebf1df3aa8f661da8a1184bba69d590aafe8",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "27dabf16bd893fe238432a1f6f08ebf1df3aa8f661da8a1184bba69d590aafe8"
+    },
+    {
+      "action_id": "house:119:1:33",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "d2461fa2166f4d524680fda464159d9c796966fc995e14b73ab61ad41d321cd3",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "6a791c9f88827a59a3ff4002a1c520d7815b26cec323f7d3e8bc99a5d3bc8f2c",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "6a791c9f88827a59a3ff4002a1c520d7815b26cec323f7d3e8bc99a5d3bc8f2c"
+    },
+    {
+      "action_id": "house:119:1:42",
+      "applied": true,
+      "benchmark_used": false,
+      "content_subject_sha256": "0d9af765413ab1b0f70784de910fc0d9cf723257d8a2f9fc4ad081b6a5facb41",
+      "correction_cycle": 1,
+      "field_differences": [
+        {
+          "after": [
+            {
+              "component_id": "house:119:1:42:meaning",
+              "limitation": null,
+              "locator": "section 2; section 2(b); section 3; section 4",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 35, creating a federal offense for intentionally fleeing specified pursuing officers by motor vehicle within 100 miles of the border, with penalties escalating when serious injury or death results. The bill also would impose specified immigration consequences and require annual Justice and Homeland Security reporting on enforcement of the offense."
+            }
+          ],
+          "before": [
+            {
+              "component_id": "house:119:1:42:meaning",
+              "limitation": null,
+              "locator": "section 2; section 2(b); section 3",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 35, creating criminal and immigration consequences for intentionally fleeing specified pursuing officers by motor vehicle within 100 miles of the border."
+            }
+          ],
+          "field": "claim_components",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 4",
+              "source_id": "congress_text:119:hr:35:eh"
+            }
+          ]
+        },
+        {
+          "after": "complete_bounded_summary",
+          "before": "materially_incomplete",
+          "field": "coverage_assessment",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 4",
+              "source_id": "congress_text:119:hr:35:eh"
+            }
+          ]
+        },
+        {
+          "after": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+          "before": "The initial draft leaves one or more source-identified material items for independent coverage review.",
+          "field": "coverage_rationale",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 4",
+              "source_id": "congress_text:119:hr:35:eh"
+            }
+          ]
+        },
+        {
+          "after": [
+            {
+              "locator": "section 2",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "Create a federal offense for intentional motor-vehicle flight from specified pursuing officers within 100 miles of the border."
+            },
+            {
+              "locator": "section 2(b)",
+              "provision_id": "p2",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "Set a maximum two-year term generally, five-to-20 years for serious bodily injury, and 10 years to life when death results."
+            },
+            {
+              "locator": "section 3",
+              "provision_id": "p3",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "Make covered conduct a basis for inadmissibility, deportability, and ineligibility for immigration relief."
+            },
+            {
+              "locator": "section 4",
+              "provision_id": "p4",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "Require annual reporting on charges, apprehensions, sought penalties, and imposed penalties."
+            }
+          ],
+          "before": [
+            {
+              "locator": "section 2",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "Create a federal offense for intentional motor-vehicle flight from specified pursuing officers within 100 miles of the border."
+            },
+            {
+              "locator": "section 2(b)",
+              "provision_id": "p2",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "Set a maximum two-year term generally, five-to-20 years for serious bodily injury, and 10 years to life when death results."
+            },
+            {
+              "locator": "section 3",
+              "provision_id": "p3",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "Make covered conduct a basis for inadmissibility, deportability, and ineligibility for immigration relief."
+            },
+            {
+              "locator": "section 4",
+              "provision_id": "p4",
+              "representation_state": "omitted_pending_coverage_review",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "Require annual reporting on charges, apprehensions, sought penalties, and imposed penalties."
+            }
+          ],
+          "field": "material_provisions",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 4",
+              "source_id": "congress_text:119:hr:35:eh"
+            }
+          ]
+        },
+        {
+          "after": "The House choice was whether to pass H.R. 35, creating a federal offense for intentionally fleeing specified pursuing officers by motor vehicle within 100 miles of the border, with penalties escalating when serious injury or death results. The bill also would impose specified immigration consequences and require annual Justice and Homeland Security reporting on enforcement of the offense.",
+          "before": "The House choice was whether to pass H.R. 35, creating criminal and immigration consequences for intentionally fleeing specified pursuing officers by motor vehicle within 100 miles of the border.",
+          "field": "proposed_exact_action_meaning",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:35:eh"
+            },
+            {
+              "locator": "section 4",
+              "source_id": "congress_text:119:hr:35:eh"
+            }
+          ]
+        }
+      ],
+      "final_candidate_content_subject_sha256": "f3371b7c71bd7583ea7e4c598b830ec89655260206958e6798ba2dc7fae759ff",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "aae0f92e900d6be8f4b2ece6999884ce5f5e0dc48407889d25ea1aa77e23de2c"
+    },
+    {
+      "action_id": "house:119:1:68",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "a1da34de2acdf09713145bb56577cc96d22f3f7eba6d11221d585476c1e57e25",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "107f1fa5b6a70a499aa6f0e2110510ba1bd040ee19e82e5b42d14a22e721def4",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "107f1fa5b6a70a499aa6f0e2110510ba1bd040ee19e82e5b42d14a22e721def4"
+    },
+    {
+      "action_id": "house:119:1:98",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "e6565f4b3ae403d407b76c42249a82ac87aefe91cf84cf71ad0d48202e790d6d",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "b1a88faa1a5df2e1c8a7b1c411ca942af7487550a75d46df05b4351d1b85881a",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "b1a88faa1a5df2e1c8a7b1c411ca942af7487550a75d46df05b4351d1b85881a"
+    },
+    {
+      "action_id": "house:119:1:128",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "ab6c4ca2d13b3cd785e6513ab427f28d7dd3370056d59b460f4ec7a878e06de8",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "d837875910e6ab3f0bb6cac7b7afb6c575cb6edc2e2a3b471f6a5e3fad7d7925",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "d837875910e6ab3f0bb6cac7b7afb6c575cb6edc2e2a3b471f6a5e3fad7d7925"
+    },
+    {
+      "action_id": "house:119:1:130",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "11d1d594c6b5cdc6a056604912e3528e1db915434d2dddc8b7c6c934c42c77c9",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "5d0dead3a28420a6637077cae3edb4b4e2f1775467e28cbc4cedfc83576245ee",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "5d0dead3a28420a6637077cae3edb4b4e2f1775467e28cbc4cedfc83576245ee"
+    },
+    {
+      "action_id": "house:119:1:131",
+      "applied": true,
+      "benchmark_used": false,
+      "content_subject_sha256": "2b1c4aa917ad2e6b9465cb7c84f58eb03ffe449a75e0c7a3d772d72676615cb9",
+      "correction_cycle": 1,
+      "field_differences": [
+        {
+          "after": [
+            {
+              "component_id": "house:119:1:131:meaning",
+              "limitation": null,
+              "locator": "section 3; section 4; section 5",
+              "source_id": "congress_text:119:hr:2240:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 2240, requiring the Attorney General to develop reports on violent attacks against officers and the systems used to collect attack data, on aggression against officers, and on officer mental-health and wellness programs and resources."
+            }
+          ],
+          "before": [
+            {
+              "component_id": "house:119:1:131:meaning",
+              "limitation": null,
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:2240:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 2240, requiring Attorney General reporting related to attacks against law-enforcement officers."
+            }
+          ],
+          "field": "claim_components",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 4",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 5",
+              "source_id": "congress_text:119:hr:2240:eh"
+            }
+          ]
+        },
+        {
+          "after": "high",
+          "before": "medium",
+          "field": "confidence",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 4",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 5",
+              "source_id": "congress_text:119:hr:2240:eh"
+            }
+          ]
+        },
+        {
+          "after": "complete_bounded_summary",
+          "before": "materially_incomplete",
+          "field": "coverage_assessment",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 4",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 5",
+              "source_id": "congress_text:119:hr:2240:eh"
+            }
+          ]
+        },
+        {
+          "after": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+          "before": "The initial draft leaves one or more source-identified material items for independent coverage review.",
+          "field": "coverage_rationale",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 4",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 5",
+              "source_id": "congress_text:119:hr:2240:eh"
+            }
+          ]
+        },
+        {
+          "after": [
+            {
+              "locator": "section 3",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2240:eh",
+              "support_state": "directly_supported",
+              "wording": "Report on attacks against officers and development of the underlying reporting system and data."
+            },
+            {
+              "locator": "section 4",
+              "provision_id": "p2",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2240:eh",
+              "support_state": "directly_supported",
+              "wording": "Report on aggression against law-enforcement officers."
+            },
+            {
+              "locator": "section 5",
+              "provision_id": "p3",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2240:eh",
+              "support_state": "directly_supported",
+              "wording": "Report on officer mental-health and wellness needs, programs, and resources."
+            }
+          ],
+          "before": [
+            {
+              "locator": "section 3",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2240:eh",
+              "support_state": "directly_supported",
+              "wording": "Report on attacks against officers and development of the underlying reporting system and data."
+            },
+            {
+              "locator": "section 4",
+              "provision_id": "p2",
+              "representation_state": "omitted_pending_coverage_review",
+              "source_id": "congress_text:119:hr:2240:eh",
+              "support_state": "directly_supported",
+              "wording": "Report on aggression against law-enforcement officers."
+            },
+            {
+              "locator": "section 5",
+              "provision_id": "p3",
+              "representation_state": "omitted_pending_coverage_review",
+              "source_id": "congress_text:119:hr:2240:eh",
+              "support_state": "directly_supported",
+              "wording": "Report on officer mental-health and wellness needs, programs, and resources."
+            }
+          ],
+          "field": "material_provisions",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 4",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 5",
+              "source_id": "congress_text:119:hr:2240:eh"
+            }
+          ]
+        },
+        {
+          "after": "The House choice was whether to pass H.R. 2240, requiring the Attorney General to develop reports on violent attacks against officers and the systems used to collect attack data, on aggression against officers, and on officer mental-health and wellness programs and resources.",
+          "before": "The House choice was whether to pass H.R. 2240, requiring Attorney General reporting related to attacks against law-enforcement officers.",
+          "field": "proposed_exact_action_meaning",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 4",
+              "source_id": "congress_text:119:hr:2240:eh"
+            },
+            {
+              "locator": "section 5",
+              "source_id": "congress_text:119:hr:2240:eh"
+            }
+          ]
+        }
+      ],
+      "final_candidate_content_subject_sha256": "a1a9c1b86185d2dde8c5f3569a4f167b99b75d44aa59479b0f92d0b40fdfa605",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "388144224b0da883e52fdecceeb48ec55d911c5b6462237e79bc03cad681c018"
+    },
+    {
+      "action_id": "house:119:1:162",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "96b2f8fad407b54f6a130db807790b343a23df2be4dae58d42646e122c0c1468",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "0b8f5f5c214edc846f4c35b0aee1f321da4f77b38f8e82e2c83435ab6ae511fe",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "0b8f5f5c214edc846f4c35b0aee1f321da4f77b38f8e82e2c83435ab6ae511fe"
+    },
+    {
+      "action_id": "house:119:1:166",
+      "applied": true,
+      "benchmark_used": false,
+      "content_subject_sha256": "808e841999a14e4e558c4740ca2bf67cd59052e3f0e3a8653395dd01248943d4",
+      "correction_cycle": 1,
+      "field_differences": [
+        {
+          "after": [
+            {
+              "component_id": "house:119:1:166:meaning",
+              "limitation": null,
+              "locator": "section 2; section 3; sections 4-5; section 6; section 2",
+              "source_id": "congress_text:119:s:331:enr",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass S. 331, permanently placing fentanyl-related substances in schedule I as a class and applying specified trafficking penalties. The bill also would establish alternative and expedited research-registration procedures, technical corrections, and implementing rules."
+            }
+          ],
+          "before": [
+            {
+              "component_id": "house:119:1:166:meaning",
+              "limitation": null,
+              "locator": "section 2; sections 4-5; section 6; section 2",
+              "source_id": "congress_text:119:s:331:enr",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass S. 331, permanently placing fentanyl-related substances in schedule I as a class and applying specified trafficking penalties."
+            }
+          ],
+          "field": "claim_components",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "sections 4-5",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 6",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:s:331:enr"
+            }
+          ]
+        },
+        {
+          "after": "complete_bounded_summary",
+          "before": "materially_incomplete",
+          "field": "coverage_assessment",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "sections 4-5",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 6",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:s:331:enr"
+            }
+          ]
+        },
+        {
+          "after": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+          "before": "The initial draft leaves one or more source-identified material items for independent coverage review.",
+          "field": "coverage_rationale",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "sections 4-5",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 6",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:s:331:enr"
+            }
+          ]
+        },
+        {
+          "after": [
+            {
+              "locator": "section 2",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:s:331:enr",
+              "support_state": "directly_supported",
+              "wording": "Permanently place fentanyl-related substances in schedule I as a class."
+            },
+            {
+              "locator": "section 3",
+              "provision_id": "p2",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:s:331:enr",
+              "support_state": "directly_supported",
+              "wording": "Create alternative and expedited registration pathways for schedule I research."
+            },
+            {
+              "locator": "sections 4-5",
+              "provision_id": "p3",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:s:331:enr",
+              "support_state": "directly_supported",
+              "wording": "Require implementing rules and technical corrections."
+            },
+            {
+              "locator": "section 6",
+              "provision_id": "p4",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:s:331:enr",
+              "support_state": "directly_supported",
+              "wording": "Apply specified Controlled Substances Act and import-export penalties."
+            }
+          ],
+          "before": [
+            {
+              "locator": "section 2",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:s:331:enr",
+              "support_state": "directly_supported",
+              "wording": "Permanently place fentanyl-related substances in schedule I as a class."
+            },
+            {
+              "locator": "section 3",
+              "provision_id": "p2",
+              "representation_state": "omitted_pending_coverage_review",
+              "source_id": "congress_text:119:s:331:enr",
+              "support_state": "directly_supported",
+              "wording": "Create alternative and expedited registration pathways for schedule I research."
+            },
+            {
+              "locator": "sections 4-5",
+              "provision_id": "p3",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:s:331:enr",
+              "support_state": "directly_supported",
+              "wording": "Require implementing rules and technical corrections."
+            },
+            {
+              "locator": "section 6",
+              "provision_id": "p4",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:s:331:enr",
+              "support_state": "directly_supported",
+              "wording": "Apply specified Controlled Substances Act and import-export penalties."
+            }
+          ],
+          "field": "material_provisions",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "sections 4-5",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 6",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:s:331:enr"
+            }
+          ]
+        },
+        {
+          "after": "The House choice was whether to pass S. 331, permanently placing fentanyl-related substances in schedule I as a class and applying specified trafficking penalties. The bill also would establish alternative and expedited research-registration procedures, technical corrections, and implementing rules.",
+          "before": "The House choice was whether to pass S. 331, permanently placing fentanyl-related substances in schedule I as a class and applying specified trafficking penalties.",
+          "field": "proposed_exact_action_meaning",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 3",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "sections 4-5",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 6",
+              "source_id": "congress_text:119:s:331:enr"
+            },
+            {
+              "locator": "section 2",
+              "source_id": "congress_text:119:s:331:enr"
+            }
+          ]
+        }
+      ],
+      "final_candidate_content_subject_sha256": "332c9f619544c3e03efe63c46818aef3c5d46d1ba4bfb17860cecc9cb0d211fd",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "42a61d264fe9ed7c8df6b1277073c1c18db3a4acbcf0959d68ed3052160577d9"
+    },
+    {
+      "action_id": "house:119:1:270",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "6f18605a69fb85a7b190d2d3c8bfb4510b1e8bc7223a1f9c43821e42325b4421",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "2137763b141449120d0a1d421020137aa24be06b40ea9f30250619ed40838bec",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "2137763b141449120d0a1d421020137aa24be06b40ea9f30250619ed40838bec"
+    },
+    {
+      "action_id": "house:119:1:271",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "b1c59d49f14babe866138cfc71d0da503de542474531c35fca8fa613a0e767fd",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "22dae8121536562ef98e53dd3595844c98ce46eef92e46c5836b3a3aacd3b839",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "22dae8121536562ef98e53dd3595844c98ce46eef92e46c5836b3a3aacd3b839"
+    },
+    {
+      "action_id": "house:119:1:274",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "357a8359dbd149a3c802feeaafcff70ba0ce9b30d3bf21830ad1728dbd87041e",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "2037ca21bb4391c1b5b2dd8553b5d2586957643643d8dbe8eaa110b7aad39e48",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "2037ca21bb4391c1b5b2dd8553b5d2586957643643d8dbe8eaa110b7aad39e48"
+    },
+    {
+      "action_id": "house:119:1:275",
+      "applied": true,
+      "benchmark_used": false,
+      "content_subject_sha256": "c851496f3941bb4a133b748d4ac48448f9f91c9d36ef31edb292b5843de59562",
+      "correction_cycle": 1,
+      "field_differences": [
+        {
+          "after": [
+            {
+              "component_id": "house:119:1:275:meaning",
+              "limitation": null,
+              "locator": "section 2(a); section 2(b); section 2(a)",
+              "source_id": "congress_text:119:hr:5143:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 5143, replacing D.C. pursuit restrictions with authority for an officer to pursue a fleeing motor-vehicle suspect unless the pursuit presents an unacceptable risk, would be futile, or another means would be more effective or faster. It also would require a Justice Department evaluation and report on public pursuit-alert technology."
+            }
+          ],
+          "before": [
+            {
+              "component_id": "house:119:1:275:meaning",
+              "limitation": null,
+              "locator": "section 2(a); section 2(b)",
+              "source_id": "congress_text:119:hr:5143:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 5143, establishing standards for D.C. law-enforcement vehicular pursuits and requiring a report on pursuit-alert technology."
+            }
+          ],
+          "field": "claim_components",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            },
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            }
+          ]
+        },
+        {
+          "after": "complete_bounded_summary",
+          "before": "materially_incomplete",
+          "field": "coverage_assessment",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            },
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            }
+          ]
+        },
+        {
+          "after": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+          "before": "The initial draft leaves one or more source-identified material items for independent coverage review.",
+          "field": "coverage_rationale",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            },
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            }
+          ]
+        },
+        {
+          "after": [
+            {
+              "limit_id": "l1",
+              "locator": "section 2(a)",
+              "representation_state": "represented_as_limit",
+              "source_id": "congress_text:119:hr:5143:eh",
+              "support_state": "directly_supported",
+              "wording": "Pursuit remains limited when it poses unacceptable third-party harm, would be futile, or another means would be more effective or expeditious."
+            }
+          ],
+          "before": [
+            {
+              "limit_id": "l1",
+              "locator": "section 2(a)",
+              "representation_state": "omitted_pending_coverage_review",
+              "source_id": "congress_text:119:hr:5143:eh",
+              "support_state": "directly_supported",
+              "wording": "Pursuit remains limited when it poses unacceptable third-party harm, would be futile, or another means would be more effective or expeditious."
+            }
+          ],
+          "field": "material_limits_and_exceptions",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            },
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            }
+          ]
+        },
+        {
+          "after": "The House choice was whether to pass H.R. 5143, replacing D.C. pursuit restrictions with authority for an officer to pursue a fleeing motor-vehicle suspect unless the pursuit presents an unacceptable risk, would be futile, or another means would be more effective or faster. It also would require a Justice Department evaluation and report on public pursuit-alert technology.",
+          "before": "The House choice was whether to pass H.R. 5143, establishing standards for D.C. law-enforcement vehicular pursuits and requiring a report on pursuit-alert technology.",
+          "field": "proposed_exact_action_meaning",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            },
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5143:eh"
+            }
+          ]
+        }
+      ],
+      "final_candidate_content_subject_sha256": "95ebde968ae730783dad678c9779ba4f27cc64c3995766b0dd271db20d8f20e2",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "c3430019b173836429715530547c8f78b610c3255cc599ec3a48973484978022"
+    },
+    {
+      "action_id": "house:119:1:286",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "30407cd57505b5238375dc62a6b2ab525ba10579c3665e551fea213054860fbd",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "758a233f58042f1ea4f217800deff5a54cd895b83e4788960a48d5aa6dfa9766",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "758a233f58042f1ea4f217800deff5a54cd895b83e4788960a48d5aa6dfa9766"
+    },
+    {
+      "action_id": "house:119:1:289",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "f5deccd6972d6b1db981846d6148f8ccab6614431fc253c904af3f39f8dd7731",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "a4ba06869607aef58cbac922d735d34d5bee436366f1cf513358e65a4d78ae12",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "a4ba06869607aef58cbac922d735d34d5bee436366f1cf513358e65a4d78ae12"
+    },
+    {
+      "action_id": "house:119:1:298",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "53478dfa610a4cbdefc038b9fb27914d3e8c9176c882b7606992e20b5595cd97",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "e7c18ebd1cc8e9fd2531cb105ce11c90f2994fb407e836c9a8f3a6404b5ddead",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "e7c18ebd1cc8e9fd2531cb105ce11c90f2994fb407e836c9a8f3a6404b5ddead"
+    },
+    {
+      "action_id": "house:119:1:299",
+      "applied": true,
+      "benchmark_used": false,
+      "content_subject_sha256": "2d23f21e1f59196e35b867eb5935053437e632aa653b556dc20264f9e1d0f7eb",
+      "correction_cycle": 1,
+      "field_differences": [
+        {
+          "after": [
+            {
+              "component_id": "house:119:1:299:meaning",
+              "limitation": null,
+              "locator": "section 2(a); section 2(b)",
+              "source_id": "congress_text:119:hr:5107:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 5107, repealing most of D.C.'s 2022 Comprehensive Policing and Justice Reform Amendment Act and reviving prior law, while retaining subtitles S and A of title I of that Act."
+            }
+          ],
+          "before": [
+            {
+              "component_id": "house:119:1:299:meaning",
+              "limitation": null,
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5107:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 5107, repealing D.C.'s 2022 Comprehensive Policing and Justice Reform Amendment Act and reviving prior law."
+            }
+          ],
+          "field": "claim_components",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            }
+          ]
+        },
+        {
+          "after": "high",
+          "before": "medium",
+          "field": "confidence",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            }
+          ]
+        },
+        {
+          "after": "complete_bounded_summary",
+          "before": "materially_incomplete",
+          "field": "coverage_assessment",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            }
+          ]
+        },
+        {
+          "after": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+          "before": "The initial draft leaves one or more source-identified material items for independent coverage review.",
+          "field": "coverage_rationale",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            }
+          ]
+        },
+        {
+          "after": [
+            {
+              "limit_id": "l1",
+              "locator": "section 2(b)",
+              "representation_state": "represented_as_limit",
+              "source_id": "congress_text:119:hr:5107:eh",
+              "support_state": "directly_supported",
+              "wording": "Retain subtitles S and A of title I rather than repealing the entire 2022 Act."
+            }
+          ],
+          "before": [
+            {
+              "limit_id": "l1",
+              "locator": "section 2(b)",
+              "representation_state": "omitted_pending_coverage_review",
+              "source_id": "congress_text:119:hr:5107:eh",
+              "support_state": "directly_supported",
+              "wording": "Retain subtitles S and A of title I rather than repealing the entire 2022 Act."
+            }
+          ],
+          "field": "material_limits_and_exceptions",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            }
+          ]
+        },
+        {
+          "after": "The House choice was whether to pass H.R. 5107, repealing most of D.C.'s 2022 Comprehensive Policing and Justice Reform Amendment Act and reviving prior law, while retaining subtitles S and A of title I of that Act.",
+          "before": "The House choice was whether to pass H.R. 5107, repealing D.C.'s 2022 Comprehensive Policing and Justice Reform Amendment Act and reviving prior law.",
+          "field": "proposed_exact_action_meaning",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2(a)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            },
+            {
+              "locator": "section 2(b)",
+              "source_id": "congress_text:119:hr:5107:eh"
+            }
+          ]
+        }
+      ],
+      "final_candidate_content_subject_sha256": "257efff1b64778a384d385be0f3147c5c96ead1a21de5434fd6ba0b5547334e2",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "e57df0d76b0ea1097221817540df8665f8c1eadd192fe6519b83571b9d0f413a"
+    },
+    {
+      "action_id": "house:119:1:340",
+      "applied": true,
+      "benchmark_used": false,
+      "content_subject_sha256": "3625e428bb1386e0d999066df294b3e9ff3a48576cf2cc39a36572b1c132c22a",
+      "correction_cycle": 1,
+      "field_differences": [
+        {
+          "after": [
+            {
+              "component_id": "house:119:1:340:meaning",
+              "limitation": null,
+              "locator": "sections 2-3; section 3, secure-facility provision; section 3, placement generally; section 3, sponsor provisions; section 6; section 5",
+              "source_id": "congress_text:119:hr:4371:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 4371, requiring consultation, criminal-record collection, and gang-related screening before specified placements of unaccompanied children, and secure-facility placement for certain children age 12 or older who are flight risks or dangers. It also would bar release on recognizance, restrict sponsors by immigration status and household criminal history, require sponsor-household information sharing, and allow specified immediate-implementation exemptions."
+            }
+          ],
+          "before": [
+            {
+              "component_id": "house:119:1:340:meaning",
+              "limitation": null,
+              "locator": "sections 2-3; section 3, placement generally; section 6; section 5",
+              "source_id": "congress_text:119:hr:4371:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 4371, changing placement and screening rules for unaccompanied children in federal custody."
+            }
+          ],
+          "field": "claim_components",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "sections 2-3",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, secure-facility provision",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, placement generally",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, sponsor provisions",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 6",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 5",
+              "source_id": "congress_text:119:hr:4371:eh"
+            }
+          ]
+        },
+        {
+          "after": "complete_bounded_summary",
+          "before": "materially_incomplete",
+          "field": "coverage_assessment",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "sections 2-3",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, secure-facility provision",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, placement generally",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, sponsor provisions",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 6",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 5",
+              "source_id": "congress_text:119:hr:4371:eh"
+            }
+          ]
+        },
+        {
+          "after": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+          "before": "The initial draft leaves one or more source-identified material items for independent coverage review.",
+          "field": "coverage_rationale",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "sections 2-3",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, secure-facility provision",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, placement generally",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, sponsor provisions",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 6",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 5",
+              "source_id": "congress_text:119:hr:4371:eh"
+            }
+          ]
+        },
+        {
+          "after": [
+            {
+              "locator": "sections 2-3",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:4371:eh",
+              "support_state": "directly_supported",
+              "wording": "Require interagency consultation, foreign criminal-record requests, and gang-related screening before placement."
+            },
+            {
+              "locator": "section 3, secure-facility provision",
+              "provision_id": "p2",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:4371:eh",
+              "support_state": "directly_supported",
+              "wording": "Require secure placement for specified children age 12 or older who are flight risks or dangers."
+            },
+            {
+              "locator": "section 3, placement generally",
+              "provision_id": "p3",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:4371:eh",
+              "support_state": "directly_supported",
+              "wording": "Prohibit release on the child's own recognizance."
+            },
+            {
+              "locator": "section 3, sponsor provisions",
+              "provision_id": "p4",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:4371:eh",
+              "support_state": "directly_supported",
+              "wording": "Restrict sponsors and household members by status and criminal history and require household information sharing."
+            }
+          ],
+          "before": [
+            {
+              "locator": "sections 2-3",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:4371:eh",
+              "support_state": "directly_supported",
+              "wording": "Require interagency consultation, foreign criminal-record requests, and gang-related screening before placement."
+            },
+            {
+              "locator": "section 3, secure-facility provision",
+              "provision_id": "p2",
+              "representation_state": "omitted_pending_coverage_review",
+              "source_id": "congress_text:119:hr:4371:eh",
+              "support_state": "directly_supported",
+              "wording": "Require secure placement for specified children age 12 or older who are flight risks or dangers."
+            },
+            {
+              "locator": "section 3, placement generally",
+              "provision_id": "p3",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:4371:eh",
+              "support_state": "directly_supported",
+              "wording": "Prohibit release on the child's own recognizance."
+            },
+            {
+              "locator": "section 3, sponsor provisions",
+              "provision_id": "p4",
+              "representation_state": "omitted_pending_coverage_review",
+              "source_id": "congress_text:119:hr:4371:eh",
+              "support_state": "directly_supported",
+              "wording": "Restrict sponsors and household members by status and criminal history and require household information sharing."
+            }
+          ],
+          "field": "material_provisions",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "sections 2-3",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, secure-facility provision",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, placement generally",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, sponsor provisions",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 6",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 5",
+              "source_id": "congress_text:119:hr:4371:eh"
+            }
+          ]
+        },
+        {
+          "after": "The House choice was whether to pass H.R. 4371, requiring consultation, criminal-record collection, and gang-related screening before specified placements of unaccompanied children, and secure-facility placement for certain children age 12 or older who are flight risks or dangers. It also would bar release on recognizance, restrict sponsors by immigration status and household criminal history, require sponsor-household information sharing, and allow specified immediate-implementation exemptions.",
+          "before": "The House choice was whether to pass H.R. 4371, changing placement and screening rules for unaccompanied children in federal custody.",
+          "field": "proposed_exact_action_meaning",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "sections 2-3",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, secure-facility provision",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, placement generally",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 3, sponsor provisions",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 6",
+              "source_id": "congress_text:119:hr:4371:eh"
+            },
+            {
+              "locator": "section 5",
+              "source_id": "congress_text:119:hr:4371:eh"
+            }
+          ]
+        }
+      ],
+      "final_candidate_content_subject_sha256": "758c7dcb3594139a553f47da975afa1c10eef36e42850b4d651d13548927fbce",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "4edac9e4d783a5b8d8a70003199ce324da9b5859dcadcbbe7b5435ebe2acc699"
+    },
+    {
+      "action_id": "house:119:1:351",
+      "applied": true,
+      "benchmark_used": false,
+      "content_subject_sha256": "4929c5d1fa87dc8e9e7953b69da466f4a989a216a0af4005086b17da80974742",
+      "correction_cycle": 1,
+      "field_differences": [
+        {
+          "after": [
+            {
+              "component_id": "house:119:1:351:meaning",
+              "limitation": null,
+              "locator": "section 2, new 18 U.S.C. 116(a)-(b); section 2, new 18 U.S.C. 116(c); section 2, new 18 U.S.C. 116(a)-(c); section 2, new 18 U.S.C. 116(d), (h); section 2, new 18 U.S.C. 116(f); section 2, new 18 U.S.C. 116(g); section 2, new 18 U.S.C. 116(g)(1)(B)",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 3492, creating federal offenses for specified genital or bodily procedures, administration of puberty-blocking or cross-sex hormones, and facilitation or transport for female genital mutilation involving minors, with maximum prison terms of 10 years. The bill would bar prosecution of the minor and preserve specified medical, intersex-condition, injury-treatment, imminent-health, and precocious-puberty exceptions while excluding mental or emotional distress alone from its health exception."
+            }
+          ],
+          "before": [
+            {
+              "component_id": "house:119:1:351:meaning",
+              "limitation": null,
+              "locator": "section 2, new 18 U.S.C. 116(a)-(b); section 2, new 18 U.S.C. 116(c); section 2, new 18 U.S.C. 116(d), (h); section 2, new 18 U.S.C. 116(f)",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 3492, creating federal offenses for specified genital or bodily procedures and administration of puberty-blocking or cross-sex hormones involving minors."
+            }
+          ],
+          "field": "claim_components",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(b)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(d), (h)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(f)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)(1)(B)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            }
+          ]
+        },
+        {
+          "after": "complete_bounded_summary",
+          "before": "materially_incomplete",
+          "field": "coverage_assessment",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(b)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(d), (h)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(f)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)(1)(B)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            }
+          ]
+        },
+        {
+          "after": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+          "before": "The initial draft leaves one or more source-identified material items for independent coverage review.",
+          "field": "coverage_rationale",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(b)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(d), (h)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(f)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)(1)(B)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            }
+          ]
+        },
+        {
+          "after": [
+            {
+              "limit_id": "l1",
+              "locator": "section 2, new 18 U.S.C. 116(f)",
+              "representation_state": "represented_as_limit",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "The minor who undergoes a covered procedure may not be prosecuted under the section."
+            },
+            {
+              "limit_id": "l2",
+              "locator": "section 2, new 18 U.S.C. 116(g)",
+              "representation_state": "represented_as_limit",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Specified medical, intersex-condition, prior-injury, imminent-physical-health, and precocious-puberty exceptions remain."
+            },
+            {
+              "limit_id": "l3",
+              "locator": "section 2, new 18 U.S.C. 116(g)(1)(B)",
+              "representation_state": "represented_as_limit",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Mental, behavioral, or emotional distress or disorder alone does not satisfy the minor-health exception."
+            }
+          ],
+          "before": [
+            {
+              "limit_id": "l1",
+              "locator": "section 2, new 18 U.S.C. 116(f)",
+              "representation_state": "represented_as_limit",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "The minor who undergoes a covered procedure may not be prosecuted under the section."
+            },
+            {
+              "limit_id": "l2",
+              "locator": "section 2, new 18 U.S.C. 116(g)",
+              "representation_state": "omitted_pending_coverage_review",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Specified medical, intersex-condition, prior-injury, imminent-physical-health, and precocious-puberty exceptions remain."
+            },
+            {
+              "limit_id": "l3",
+              "locator": "section 2, new 18 U.S.C. 116(g)(1)(B)",
+              "representation_state": "omitted_pending_coverage_review",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Mental, behavioral, or emotional distress or disorder alone does not satisfy the minor-health exception."
+            }
+          ],
+          "field": "material_limits_and_exceptions",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(b)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(d), (h)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(f)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)(1)(B)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            }
+          ]
+        },
+        {
+          "after": [
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(b)",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Create offenses covering defined genital or bodily procedures and chemical castration involving minors."
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(c)",
+              "provision_id": "p2",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Cover facilitation, consent, or transport for female genital mutilation of a minor."
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(c)",
+              "provision_id": "p3",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Set fines and maximum 10-year imprisonment for the covered offenses."
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(d), (h)",
+              "provision_id": "p4",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Define covered procedures, medications, minors, and jurisdictional connections."
+            }
+          ],
+          "before": [
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(b)",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Create offenses covering defined genital or bodily procedures and chemical castration involving minors."
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(c)",
+              "provision_id": "p2",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Cover facilitation, consent, or transport for female genital mutilation of a minor."
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(c)",
+              "provision_id": "p3",
+              "representation_state": "omitted_pending_coverage_review",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Set fines and maximum 10-year imprisonment for the covered offenses."
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(d), (h)",
+              "provision_id": "p4",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:3492:eh",
+              "support_state": "directly_supported",
+              "wording": "Define covered procedures, medications, minors, and jurisdictional connections."
+            }
+          ],
+          "field": "material_provisions",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(b)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(d), (h)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(f)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)(1)(B)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            }
+          ]
+        },
+        {
+          "after": "The House choice was whether to pass H.R. 3492, creating federal offenses for specified genital or bodily procedures, administration of puberty-blocking or cross-sex hormones, and facilitation or transport for female genital mutilation involving minors, with maximum prison terms of 10 years. The bill would bar prosecution of the minor and preserve specified medical, intersex-condition, injury-treatment, imminent-health, and precocious-puberty exceptions while excluding mental or emotional distress alone from its health exception.",
+          "before": "The House choice was whether to pass H.R. 3492, creating federal offenses for specified genital or bodily procedures and administration of puberty-blocking or cross-sex hormones involving minors.",
+          "field": "proposed_exact_action_meaning",
+          "source_backed_reason": "Apply the general provision-accounting correction to every omitted item before freeze.",
+          "source_bindings": [
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(b)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(a)-(c)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(d), (h)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(f)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            },
+            {
+              "locator": "section 2, new 18 U.S.C. 116(g)(1)(B)",
+              "source_id": "congress_text:119:hr:3492:eh"
+            }
+          ]
+        }
+      ],
+      "final_candidate_content_subject_sha256": "62749008bf3f425a57b1670f69883f15a940e968d2bcda36cc8333d696363bbd",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "7c954de282845dc159347a1e99cf298f985fea2f00bdb58ca8c757f409d2ed50"
+    },
+    {
+      "action_id": "house:119:2:155",
+      "applied": true,
+      "benchmark_used": false,
+      "content_subject_sha256": "324e06c8cca9fd39d9bc880bfa825203910988c4feb08e3549ffbc8390357823",
+      "correction_cycle": 1,
+      "field_differences": [
+        {
+          "after": "ambiguous",
+          "before": "proposed",
+          "field": "status",
+          "source_backed_reason": "Preserve the conflict, explain bounded body use, lower confidence, and route the final candidate as ambiguous.",
+          "source_bindings": [
+            {
+              "locator": "section 1(a)",
+              "source_id": "govinfo_text_119_s4465_es"
+            },
+            {
+              "locator": "section 1(b)",
+              "source_id": "govinfo_text_119_s4465_es"
+            }
+          ]
+        }
+      ],
+      "final_candidate_content_subject_sha256": "2568420ed86ca955b66fc3b5e94e1edd39fedc87149d1d06d6a6e050ca210536",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "f7fc5912baad2a0c02cb58ce4e12dddf7ea7f0e173c3c6e2cf842ea7c6441dbb"
+    },
+    {
+      "action_id": "house:119:2:157",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "ff66e401f7f0de702f7df3c45e73831c3041803b415134d897ca5d28d02d4655",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "48e39c029b3f3a304f17c69f20600895dece44098ed23da4a02ff94e4d1c51c9",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "48e39c029b3f3a304f17c69f20600895dece44098ed23da4a02ff94e4d1c51c9"
+    },
+    {
+      "action_id": "house:119:2:169",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "633130dcc939800a5d76d4fc9a902f73051e67ec5f255f4543a56b767d3ec4fd",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "0997f448a44429b5483158da6e557291cb7e61018792dd9e392b668ffe631a02",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "0997f448a44429b5483158da6e557291cb7e61018792dd9e392b668ffe631a02"
+    },
+    {
+      "action_id": "house:119:2:171",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "7a6d23666775c62816a55e299aa960b8ed90dfd9c68d30039e2a73e192cf6479",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "155d150c5a124c3d3b4c5d14a0fba1b6f316975df306c21503fa6b73efbc62e1",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "155d150c5a124c3d3b4c5d14a0fba1b6f316975df306c21503fa6b73efbc62e1"
+    },
+    {
+      "action_id": "house:119:2:218",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "8223878ff8906f26195f5b8919a7983ccfb5cde98c4d20015baa85bd90cdd1e6",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "55074b4fdb35533c5ea7d7899613f4403b340818308d4b97342a4834d5df3a31",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "55074b4fdb35533c5ea7d7899613f4403b340818308d4b97342a4834d5df3a31"
+    },
+    {
+      "action_id": "house:119:2:221",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "a6c4405a35b1ec62f88a3de6e0b609a0960e493ad42d1ced1b4e48a0fa8f00ea",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "cb9b4338fa0c8b1d6a43377c928fbc7a796bc646aab3b0907df408e702094497",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "cb9b4338fa0c8b1d6a43377c928fbc7a796bc646aab3b0907df408e702094497"
+    },
+    {
+      "action_id": "house:119:2:227",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "1c349565f8f0dc0f119cac00c5ed3ad5b09c48363ba40297dbd5b6c41e74b772",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "7bf5573fd43d35888bcc90f8d15a65b9b0a53f94fdcedd6ac780b1176c5449f7",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "7bf5573fd43d35888bcc90f8d15a65b9b0a53f94fdcedd6ac780b1176c5449f7"
+    },
+    {
+      "action_id": "house:119:2:234",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "b00b1565815f38eafed3d3d7d0210eb167367af3800588c6ad90cf466520daaa",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "149f4516e8347770cf6b9ce3c0298349383e72ec72632515f54a1fa4dda37353",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "149f4516e8347770cf6b9ce3c0298349383e72ec72632515f54a1fa4dda37353"
+    },
+    {
+      "action_id": "house:119:2:240",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "f91725bc2a6e72e1d56ef07131523fffb1d2b0dcec6b74f3224f9eb605d4efcc",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "60d87fe0d96c76e26299944e9568173302748395e3e118c146681daa43b6a596",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "60d87fe0d96c76e26299944e9568173302748395e3e118c146681daa43b6a596"
+    },
+    {
+      "action_id": "house:119:2:259",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "698834fab5e08791c2f68190ad937c3a91d38bb956923abad4d0a6c753bbfd9f",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "ef3ccb5da27ed8daef9040e0fd673938d7a4334eaba907325b737c9174a39a04",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "ef3ccb5da27ed8daef9040e0fd673938d7a4334eaba907325b737c9174a39a04"
+    },
+    {
+      "action_id": "house:119:2:265",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "5eb7746617315e7a54b0c185b9c047ea861c6c183d6f2381e25aee0c8b55458e",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "30d0add3ee74125209d5f27788f210c63089e21feee87cc8862503799eaadd5f",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "30d0add3ee74125209d5f27788f210c63089e21feee87cc8862503799eaadd5f"
+    },
+    {
+      "action_id": "house:119:2:273",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "3becdcc91ec0fde67eaa40925c23120f40000229dc22294c8962811c21c73f85",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "e0b08eb09f50b26bd00f5b78c9352243529b08cd71df615cd10a1b92e2d477db",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "e0b08eb09f50b26bd00f5b78c9352243529b08cd71df615cd10a1b92e2d477db"
+    },
+    {
+      "action_id": "house:119:2:275",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "b8637ee7d34d66c507af12ba728b7fc7187a1ab8dbc90d69a724542cf679b8da",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "f48223774bcec60d36c77acaca5150c38605ee897d4b2f69912161de14c10dd0",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "f48223774bcec60d36c77acaca5150c38605ee897d4b2f69912161de14c10dd0"
+    },
+    {
+      "action_id": "house:119:2:278",
+      "applied": false,
+      "benchmark_used": false,
+      "content_subject_sha256": "526b02ac02c96733e4d0b8788413c100cd8f054b3fe70c1c01cd223b2272046d",
+      "correction_cycle": 1,
+      "field_differences": [],
+      "final_candidate_content_subject_sha256": "5ba0f55c2458695101357b7b05de752e50f2739ac2a8b047776fea18f7670498",
+      "global_failure_classes_addressed": [
+        "title_only_shortcut",
+        "material_mechanism_omission",
+        "material_limit_or_exception_omission",
+        "confidence_overstatement"
+      ],
+      "initial_candidate_content_subject_sha256": "5ba0f55c2458695101357b7b05de752e50f2739ac2a8b047776fea18f7670498"
+    }
+  ],
+  "schema_version": "action_interpretation_bounded_corrections_v2"
+}

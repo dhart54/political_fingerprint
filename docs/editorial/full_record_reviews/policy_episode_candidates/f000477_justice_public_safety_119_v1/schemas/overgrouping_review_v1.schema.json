@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "candidate": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "episode_count": {
+      "type": "integer"
+    },
+    "finding_counts": {
+      "additionalProperties": false,
+      "properties": {
+        "critical": {
+          "type": "integer"
+        },
+        "major": {
+          "type": "integer"
+        },
+        "none": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "critical",
+        "major",
+        "none"
+      ],
+      "type": "object"
+    },
+    "findings": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "episode_id": {
+            "type": "string"
+          },
+          "finding": {
+            "type": "string"
+          },
+          "finding_id": {
+            "type": "string"
+          },
+          "required_general_correction": {
+            "type": "string"
+          },
+          "resolved_post_correction": {
+            "type": "boolean"
+          },
+          "severity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content_subject_sha256",
+          "episode_id",
+          "finding",
+          "finding_id",
+          "required_general_correction",
+          "resolved_post_correction",
+          "severity"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "reviewed_initial_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "accepted",
+    "artifact_id",
+    "authorizing",
+    "candidate",
+    "canonical",
+    "content_subject_sha256",
+    "episode_count",
+    "finding_counts",
+    "findings",
+    "public",
+    "reviewed_initial_batch_content_subject_sha256",
+    "schema_version"
+  ],
+  "type": "object"
+}

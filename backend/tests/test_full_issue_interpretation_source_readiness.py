@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 import sys
+import tempfile
 import unittest
 from collections import Counter
 from pathlib import Path
@@ -32,6 +34,27 @@ from scripts.validate_full_issue_interpretation_source_readiness import (  # noq
 
 
 class FullIssueInterpretationSourceReadinessTests(unittest.TestCase):
+    def test_authority_file_digest_supports_explicit_line_ending_contracts(
+        self,
+    ) -> None:
+        lf_content = b'{\n  "status": "ready"\n}\n'
+        crlf_content = lf_content.replace(b"\n", b"\r\n")
+        expected_lf = hashlib.sha256(lf_content).hexdigest()
+        expected_crlf = hashlib.sha256(crlf_content).hexdigest()
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "authority.json"
+            for content in (lf_content, crlf_content):
+                with self.subTest(content=content[:3]):
+                    path.write_bytes(content)
+                    self.assertEqual(
+                        canonical_file_sha256(path, text_line_endings="lf"),
+                        expected_lf,
+                    )
+                    self.assertEqual(
+                        canonical_file_sha256(path, text_line_endings="crlf"),
+                        expected_crlf,
+                    )
+
     @classmethod
     def setUpClass(cls) -> None:
         cls.artifact = load_json(ROOT / ARTIFACT_PATH)
@@ -66,10 +89,16 @@ class FullIssueInterpretationSourceReadinessTests(unittest.TestCase):
         return build_readiness_artifact(
             approved_manifest=self.manifest,
             authority_receipt=self.authority,
-            authority_receipt_sha256=canonical_file_sha256(ROOT / AUTHORITY_PATH),
-            manifest_sha256=canonical_file_sha256(ROOT / MANIFEST_PATH),
+            authority_receipt_sha256=canonical_file_sha256(
+                ROOT / AUTHORITY_PATH, text_line_endings="crlf"
+            ),
+            manifest_sha256=canonical_file_sha256(
+                ROOT / MANIFEST_PATH, text_line_endings="crlf"
+            ),
             source_manifest=source_manifest,
-            source_manifest_sha256=canonical_file_sha256(ROOT / SOURCE_MANIFEST_PATH),
+            source_manifest_sha256=canonical_file_sha256(
+                ROOT / SOURCE_MANIFEST_PATH, text_line_endings="lf"
+            ),
             discovery=self.discovery,
         )
 

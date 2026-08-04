@@ -1,0 +1,114 @@
+{
+  "artifact_id": "semantic-ir-policy-families:f000477:justice_public_safety:119:initial",
+  "authorizing": false,
+  "content_subject_sha256": "0c01986978ef6147f8d27f30561707bb7045e166c901a2a775a184d23c1939ad",
+  "families": [
+    {
+      "authorizing": false,
+      "commonality": "Congress would replace or repeal an operative D.C. public-safety rule.",
+      "confidence": "medium",
+      "content_subject_sha256": "7b148a1103e00cc4769e270e3bf6e4b96f607fc40e4c4dc9b0e505c8edacac28",
+      "episode_ids": [
+        "dc-juvenile-court-transfer-age",
+        "dc-police-discipline-bargaining",
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal",
+        "dc-pretrial-detention-cash-bail",
+        "dc-youth-offender-sentencing"
+      ],
+      "exact_shared_mechanism": "Congress would replace or repeal an operative D.C. public-safety rule.",
+      "exclusion_boundary": "Issue similarity, title similarity, party valence, and non-primary relations are insufficient.",
+      "inclusion_rationale": "Each episode independently uses the stated bounded mechanism.",
+      "material_differences": "The episodes concern different institutions, offenses, and procedural mechanisms.",
+      "neutral_internal_label": "D.C. public-safety rule displacement",
+      "policy_family_id": "dc-public-safety-rule-displacement",
+      "review_state": "candidate_pending_delegated_authority_review",
+      "schema_version": "semantic_ir_policy_family_candidate_v1",
+      "source_and_episode_bindings": [
+        "dc-juvenile-court-transfer-age",
+        "dc-police-discipline-bargaining",
+        "dc-police-pursuit-rules",
+        "dc-policing-reform-repeal",
+        "dc-pretrial-detention-cash-bail",
+        "dc-youth-offender-sentencing"
+      ],
+      "strongest_competing_family_construction": "Leave the episodes ungrouped where the shared mechanism is not useful beyond issue proximity."
+    },
+    {
+      "authorizing": false,
+      "commonality": "The measure would reduce a specified legal, institutional, or commercial barrier affecting firearm access or use.",
+      "confidence": "medium",
+      "content_subject_sha256": "23877243ba1fe1e46d5fd56a1da30e7dc931bc7408b6c65f6e37368dca61a764",
+      "episode_ids": [
+        "defense-facility-personal-firearm-process",
+        "firearms-merchant-category-code-restrictions",
+        "retired-service-weapon-purchases"
+      ],
+      "exact_shared_mechanism": "The measure would reduce a specified legal, institutional, or commercial barrier affecting firearm access or use.",
+      "exclusion_boundary": "Issue similarity, title similarity, party valence, and non-primary relations are insufficient.",
+      "inclusion_rationale": "Each episode independently uses the stated bounded mechanism.",
+      "material_differences": "The episodes concern purchases, payment coding, and facility carry permission.",
+      "neutral_internal_label": "Firearm access barrier reduction",
+      "policy_family_id": "firearm-access-barrier-reduction",
+      "review_state": "candidate_pending_delegated_authority_review",
+      "schema_version": "semantic_ir_policy_family_candidate_v1",
+      "source_and_episode_bindings": [
+        "defense-facility-personal-firearm-process",
+        "firearms-merchant-category-code-restrictions",
+        "retired-service-weapon-purchases"
+      ],
+      "strongest_competing_family_construction": "Leave the episodes ungrouped where the shared mechanism is not useful beyond issue proximity."
+    },
+    {
+      "authorizing": false,
+      "commonality": "The measure would expand a specified federal fraud enforcement or detection tool.",
+      "confidence": "medium",
+      "content_subject_sha256": "6a2665d2363e5c9305f2b129e70e0e15f9b0e8cde33da6c2ea89df5416c06642",
+      "episode_ids": [
+        "federal-fraud-payment-integrity-oversight",
+        "pandemic-unemployment-fraud-limitations"
+      ],
+      "exact_shared_mechanism": "The measure would expand a specified federal fraud enforcement or detection tool.",
+      "exclusion_boundary": "Issue similarity, title similarity, party valence, and non-primary relations are insufficient.",
+      "inclusion_rationale": "Each episode independently uses the stated bounded mechanism.",
+      "material_differences": "One changes limitations periods; the other creates data and oversight functions.",
+      "neutral_internal_label": "Fraud enforcement capacity",
+      "policy_family_id": "fraud-enforcement-capacity",
+      "review_state": "candidate_pending_delegated_authority_review",
+      "schema_version": "semantic_ir_policy_family_candidate_v1",
+      "source_and_episode_bindings": [
+        "federal-fraud-payment-integrity-oversight",
+        "pandemic-unemployment-fraud-limitations"
+      ],
+      "strongest_competing_family_construction": "Leave the episodes ungrouped where the shared mechanism is not useful beyond issue proximity."
+    },
+    {
+      "authorizing": false,
+      "commonality": "The measure would mandate federal reporting, assessment, disclosure, or preparedness activity.",
+      "confidence": "medium",
+      "content_subject_sha256": "43a518edc474c8795195aaa0bd9c8802921ed025c5c058bb5eaabd83de0b5977",
+      "episode_ids": [
+        "cold-weather-terrorism-response-exercise",
+        "officer-safety-data-reporting",
+        "vehicular-terrorism-assessment"
+      ],
+      "exact_shared_mechanism": "The measure would mandate federal reporting, assessment, disclosure, or preparedness activity.",
+      "exclusion_boundary": "Issue similarity, title similarity, party valence, and non-primary relations are insufficient.",
+      "inclusion_rationale": "Each episode independently uses the stated bounded mechanism.",
+      "material_differences": "The initial construction spans officer safety, threat assessment, and an operational exercise.",
+      "neutral_internal_label": "Federal information and preparedness mandates",
+      "policy_family_id": "federal-information-and-preparedness-mandates",
+      "review_state": "candidate_pending_delegated_authority_review",
+      "schema_version": "semantic_ir_policy_family_candidate_v1",
+      "source_and_episode_bindings": [
+        "cold-weather-terrorism-response-exercise",
+        "officer-safety-data-reporting",
+        "vehicular-terrorism-assessment"
+      ],
+      "strongest_competing_family_construction": "Leave the episodes ungrouped where the shared mechanism is not useful beyond issue proximity."
+    }
+  ],
+  "family_count": 4,
+  "schema_version": "semantic_ir_policy_family_collection_v1",
+  "state": "initial"
+}

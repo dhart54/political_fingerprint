@@ -1,0 +1,314 @@
+{
+  "artifact_id": "bounded-correction-diff:f000477:justice_public_safety:119:v4",
+  "benchmark_used": false,
+  "content_subject_sha256": "6e619eb64dc19571394b0073316251211df6e8db112828859fc73caf7de5eeb4",
+  "correction_count": 6,
+  "correction_cycle_count": 1,
+  "corrections": [
+    {
+      "action_id": "house:119:1:42",
+      "changed_fields": [
+        {
+          "field": "claim_components",
+          "final_value": [
+            {
+              "component_id": "house:119:1:42:meaning",
+              "limitation": null,
+              "locator": "section 2; section 2(b); section 3; section 4",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 35, creating a federal offense for intentionally fleeing specified pursuing officers by motor vehicle within 100 miles of the border. The offense carries a general maximum of two years, five to 20 years when serious bodily injury results, and 10 years to life when death results. The bill also would impose specified immigration consequences and require annual Justice and Homeland Security reporting."
+            }
+          ],
+          "initial_value": [
+            {
+              "component_id": "house:119:1:42:meaning",
+              "limitation": null,
+              "locator": "section 2; section 2(b); section 3; section 4",
+              "source_id": "congress_text:119:hr:35:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 35, creating a federal offense for intentionally fleeing specified pursuing officers by motor vehicle within 100 miles of the border, with penalties escalating when serious injury or death results. The bill also would impose specified immigration consequences and require annual Justice and Homeland Security reporting on enforcement of the offense."
+            }
+          ]
+        },
+        {
+          "field": "proposed_exact_action_meaning",
+          "final_value": "The House choice was whether to pass H.R. 35, creating a federal offense for intentionally fleeing specified pursuing officers by motor vehicle within 100 miles of the border. The offense carries a general maximum of two years, five to 20 years when serious bodily injury results, and 10 years to life when death results. The bill also would impose specified immigration consequences and require annual Justice and Homeland Security reporting.",
+          "initial_value": "The House choice was whether to pass H.R. 35, creating a federal offense for intentionally fleeing specified pursuing officers by motor vehicle within 100 miles of the border, with penalties escalating when serious injury or death results. The bill also would impose specified immigration consequences and require annual Justice and Homeland Security reporting on enforcement of the offense."
+        }
+      ],
+      "final_candidate_content_subject_sha256": "5b5daac325a3db38520d4317ccb958b27f5129052f4a3b741869bb66948e3d7a",
+      "initial_candidate_content_subject_sha256": "6e01c7ca1ecfc983b415b9ca93c7033c0041c63f3ffff97510075ccc4aa8b59d"
+    },
+    {
+      "action_id": "house:119:1:128",
+      "changed_fields": [
+        {
+          "field": "claim_components",
+          "final_value": [
+            {
+              "component_id": "house:119:1:128:meaning",
+              "limitation": null,
+              "locator": "section 2; section 3; section 3; section 4; section 3(c)",
+              "source_id": "congress_text:119:hr:2243:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 2243, expanding where qualified current and retired law-enforcement officers may carry concealed firearms, including specified school zones, publicly accessible transport property, National Park System units, and lower-security federal public facilities. It also would revise retired-officer qualification periods and documentation. Section 3(c) separately inserts the words ‘any magazine and’ into two LEOSA provisions; the governed packet identifies the insertion but lacks enough surrounding statutory context to state its exact legal effect safely."
+            }
+          ],
+          "initial_value": [
+            {
+              "component_id": "house:119:1:128:meaning",
+              "limitation": null,
+              "locator": "section 2; section 3; section 3; section 4",
+              "source_id": "congress_text:119:hr:2243:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 2243, expanding where qualified current and retired law-enforcement officers may carry concealed firearms, including specified school zones, publicly accessible transport property, National Park System units, and lower-security federal public facilities. It also would revise retired-officer qualification periods and documentation."
+            }
+          ]
+        },
+        {
+          "field": "confidence",
+          "final_value": "low",
+          "initial_value": "medium"
+        },
+        {
+          "field": "limitations",
+          "final_value": [
+            "Section 3(c) inserts ‘any magazine and’ into 18 U.S.C. 926B(e)(2) and 926C(e)(1)(B); its exact legal effect remains unresolved because the governed packet does not include sufficient surrounding statutory context."
+          ],
+          "initial_value": []
+        },
+        {
+          "field": "material_limits_and_exceptions",
+          "final_value": [
+            {
+              "limit_id": "l1",
+              "locator": "section 3(c)",
+              "representation_state": "represented_as_limit",
+              "source_id": "congress_text:119:hr:2243:eh",
+              "support_state": "directly_supported",
+              "wording": "Section 3(c) inserts ‘any magazine and’ into 18 U.S.C. 926B(e)(2) and 926C(e)(1)(B); its exact legal effect remains unresolved because the governed packet does not include sufficient surrounding statutory context."
+            }
+          ],
+          "initial_value": []
+        },
+        {
+          "field": "proposed_exact_action_meaning",
+          "final_value": "The House choice was whether to pass H.R. 2243, expanding where qualified current and retired law-enforcement officers may carry concealed firearms, including specified school zones, publicly accessible transport property, National Park System units, and lower-security federal public facilities. It also would revise retired-officer qualification periods and documentation. Section 3(c) separately inserts the words ‘any magazine and’ into two LEOSA provisions; the governed packet identifies the insertion but lacks enough surrounding statutory context to state its exact legal effect safely.",
+          "initial_value": "The House choice was whether to pass H.R. 2243, expanding where qualified current and retired law-enforcement officers may carry concealed firearms, including specified school zones, publicly accessible transport property, National Park System units, and lower-security federal public facilities. It also would revise retired-officer qualification periods and documentation."
+        },
+        {
+          "field": "status",
+          "final_value": "ambiguous",
+          "initial_value": "proposed"
+        },
+        {
+          "field": "uncertainty_reasons",
+          "final_value": [
+            "The governed packet preserves a material textual insertion but lacks sufficient surrounding statutory context to state its exact effect."
+          ],
+          "initial_value": []
+        }
+      ],
+      "final_candidate_content_subject_sha256": "4e5a0b46c5cdc8dce0f7617d8dc0f1b38d3175f281a91ea37e1e8a0cbe599590",
+      "initial_candidate_content_subject_sha256": "de60725df87102a441af64a9157909265750d4cc72aeabae6ce052f37bf4fd21"
+    },
+    {
+      "action_id": "house:119:1:162",
+      "changed_fields": [
+        {
+          "field": "limitations",
+          "final_value": [
+            "Repeal the 2022 subtitle that changed limitations rules for disciplinary claims and revive the prior law."
+          ],
+          "initial_value": []
+        }
+      ],
+      "final_candidate_content_subject_sha256": "3c8e6c8bdf5be43c7f1ce5feffe91f24d120b601c8e55f84157e398b35bc12e1",
+      "initial_candidate_content_subject_sha256": "2fe3f3da208f523e95846fb66fcbff177230acd643003ed37acfb545d3403ed4"
+    },
+    {
+      "action_id": "house:119:1:351",
+      "changed_fields": [
+        {
+          "field": "limitations",
+          "final_value": [
+            "The minor who undergoes a covered procedure may not be prosecuted under the section.",
+            "Specified medical, intersex-condition, prior-injury, imminent-physical-health, and precocious-puberty exceptions remain.",
+            "Mental, behavioral, or emotional distress or disorder alone does not satisfy the minor-health exception.",
+            "Set fines and maximum 10-year imprisonment for the covered offenses."
+          ],
+          "initial_value": [
+            "The minor who undergoes a covered procedure may not be prosecuted under the section.",
+            "Specified medical, intersex-condition, prior-injury, imminent-physical-health, and precocious-puberty exceptions remain.",
+            "Mental, behavioral, or emotional distress or disorder alone does not satisfy the minor-health exception."
+          ]
+        }
+      ],
+      "final_candidate_content_subject_sha256": "4efc9c68190a2223d743a52010c835b6d5454b521775bf64b17cfed38c7ea795",
+      "initial_candidate_content_subject_sha256": "8e3ae5b9ee5c454f54d2eba4913816a2f8b00a138b98fbbd22bd595dfe92eb96"
+    },
+    {
+      "action_id": "house:119:2:157",
+      "changed_fields": [
+        {
+          "field": "claim_components",
+          "final_value": [
+            {
+              "component_id": "house:119:2:157:meaning",
+              "limitation": null,
+              "locator": "section 3; section 3; section 4; section 4",
+              "source_id": "govinfo_text_119_hr2853_eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 2853 as amended, expanding specified federal theft, stolen-goods, forfeiture, and money-laundering rules for organized retail and supply-chain crime, including a $5,000 aggregate threshold over 12 months for specified transported or received stolen goods. It also would establish a Homeland Security coordination center for federal, State, local, and private-sector investigations and information sharing."
+            }
+          ],
+          "initial_value": [
+            {
+              "component_id": "house:119:2:157:meaning",
+              "limitation": null,
+              "locator": "section 3; section 3; section 4; section 4",
+              "source_id": "govinfo_text_119_hr2853_eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 2853 as amended, expanding specified federal theft, stolen-goods, forfeiture, and money-laundering rules for organized retail and supply-chain crime and aggregated conduct. It also would establish a Homeland Security coordination center for federal, State, local, and private-sector investigations and information sharing."
+            }
+          ]
+        },
+        {
+          "field": "proposed_exact_action_meaning",
+          "final_value": "The House choice was whether to pass H.R. 2853 as amended, expanding specified federal theft, stolen-goods, forfeiture, and money-laundering rules for organized retail and supply-chain crime, including a $5,000 aggregate threshold over 12 months for specified transported or received stolen goods. It also would establish a Homeland Security coordination center for federal, State, local, and private-sector investigations and information sharing.",
+          "initial_value": "The House choice was whether to pass H.R. 2853 as amended, expanding specified federal theft, stolen-goods, forfeiture, and money-laundering rules for organized retail and supply-chain crime and aggregated conduct. It also would establish a Homeland Security coordination center for federal, State, local, and private-sector investigations and information sharing."
+        }
+      ],
+      "final_candidate_content_subject_sha256": "444a4793f0fd1795dc82db7e7012bb53e71d2f1d7c5fbd8cd8933953873f2308",
+      "initial_candidate_content_subject_sha256": "9b9975cea14473d71b1cda4085ffd143cfc9f8176812abe57c109b90bfea1518"
+    },
+    {
+      "action_id": "house:119:2:227",
+      "changed_fields": [
+        {
+          "field": "claim_components",
+          "final_value": [
+            {
+              "component_id": "house:119:2:227:meaning",
+              "limitation": null,
+              "locator": "section 2(a), new subsection (h); section 2(a), new subsection (i)(3); section 2(a), new subsection (i)(2); section 2(a), new subsection (i); section 2(b); section 2(a), new subsection (i)(2)(D)",
+              "source_id": "congress_text:119:hr:2478:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 2478 as amended, allowing participating open-end investment companies and transfer agents to delay specified-adult account redemptions when they reasonably believe financial exploitation occurred, is occurring, or was attempted. A specified adult is a person age 65 or older, or age 18 or older whom the company or agent reasonably believes has a mental or physical impairment preventing the person from protecting their interests. The ordinary delay is up to 15 business days, with a possible additional 10-business-day internal extension and further government extension. The elective direct-at-fund regime includes trusted-contact requests, a trusted-contact notice exception when exploitation is suspected, internal review and records, and SEC recommendations."
+            }
+          ],
+          "initial_value": [
+            {
+              "component_id": "house:119:2:227:meaning",
+              "limitation": null,
+              "locator": "section 2(a), new subsection (h); section 2(a), new subsection (i); section 2(a), new subsection (i); section 2(b); section 2(a), new subsection (i)(2)(D)",
+              "source_id": "congress_text:119:hr:2478:eh",
+              "support_state": "directly_supported",
+              "wording": "The House choice was whether to pass H.R. 2478 as amended, allowing participating open-end investment companies and transfer agents to delay specified-adult account redemptions when they reasonably believe financial exploitation has occurred, is occurring, or was attempted. The bill sets contact, notice, review, recordkeeping, duration, and government-extension rules and requires SEC recommendations."
+            }
+          ]
+        },
+        {
+          "field": "limitations",
+          "final_value": [
+            "Notice to a trusted contact is not required when the firm reasonably believes that contact is involved in exploitation.",
+            "Permit an ordinary 15-business-day redemption delay, a possible additional 10-business-day internal extension, and further extension by a competent government authority."
+          ],
+          "initial_value": [
+            "Notice to a trusted contact is not required when the firm reasonably believes that contact is involved in exploitation."
+          ]
+        },
+        {
+          "field": "material_provisions",
+          "final_value": [
+            {
+              "locator": "section 2(a), new subsection (h)",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2478:eh",
+              "support_state": "directly_supported",
+              "wording": "Allow an elective trusted-contact and financial-exploitation protection regime for non-institutional direct-at-fund accounts."
+            },
+            {
+              "locator": "section 2(a), new subsection (i)(3)",
+              "provision_id": "p2",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2478:eh",
+              "support_state": "directly_supported",
+              "wording": "Define a specified adult as an individual age 65 or older, or age 18 or older whom the company or transfer agent reasonably believes has a mental or physical impairment preventing the individual from protecting their interests."
+            },
+            {
+              "locator": "section 2(a), new subsection (i)(2)",
+              "provision_id": "p3",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2478:eh",
+              "support_state": "directly_supported",
+              "wording": "Permit an ordinary 15-business-day redemption delay, a possible additional 10-business-day internal extension, and further extension by a competent government authority."
+            },
+            {
+              "locator": "section 2(a), new subsection (i)",
+              "provision_id": "p4",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2478:eh",
+              "support_state": "directly_supported",
+              "wording": "Require internal review, notices, procedures, disclosures, and retained records."
+            },
+            {
+              "locator": "section 2(b)",
+              "provision_id": "p5",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2478:eh",
+              "support_state": "directly_supported",
+              "wording": "Require SEC regulatory and legislative recommendations."
+            }
+          ],
+          "initial_value": [
+            {
+              "locator": "section 2(a), new subsection (h)",
+              "provision_id": "p1",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2478:eh",
+              "support_state": "directly_supported",
+              "wording": "Allow an elective trusted-contact and financial-exploitation protection regime for direct-at-fund accounts."
+            },
+            {
+              "locator": "section 2(a), new subsection (i)",
+              "provision_id": "p2",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2478:eh",
+              "support_state": "directly_supported",
+              "wording": "Permit a 15-business-day redemption delay, with a possible 10-business-day internal extension and further government extension."
+            },
+            {
+              "locator": "section 2(a), new subsection (i)",
+              "provision_id": "p3",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2478:eh",
+              "support_state": "directly_supported",
+              "wording": "Require internal review, notices, procedures, disclosures, and retained records."
+            },
+            {
+              "locator": "section 2(b)",
+              "provision_id": "p4",
+              "representation_state": "represented_in_meaning",
+              "source_id": "congress_text:119:hr:2478:eh",
+              "support_state": "directly_supported",
+              "wording": "Require SEC regulatory and legislative recommendations."
+            }
+          ]
+        },
+        {
+          "field": "proposed_exact_action_meaning",
+          "final_value": "The House choice was whether to pass H.R. 2478 as amended, allowing participating open-end investment companies and transfer agents to delay specified-adult account redemptions when they reasonably believe financial exploitation occurred, is occurring, or was attempted. A specified adult is a person age 65 or older, or age 18 or older whom the company or agent reasonably believes has a mental or physical impairment preventing the person from protecting their interests. The ordinary delay is up to 15 business days, with a possible additional 10-business-day internal extension and further government extension. The elective direct-at-fund regime includes trusted-contact requests, a trusted-contact notice exception when exploitation is suspected, internal review and records, and SEC recommendations.",
+          "initial_value": "The House choice was whether to pass H.R. 2478 as amended, allowing participating open-end investment companies and transfer agents to delay specified-adult account redemptions when they reasonably believe financial exploitation has occurred, is occurring, or was attempted. The bill sets contact, notice, review, recordkeeping, duration, and government-extension rules and requires SEC recommendations."
+        }
+      ],
+      "final_candidate_content_subject_sha256": "7774a23908630d2d7864d6559b4422c53eb16ae5c3da4698f6606e9740c3e313",
+      "initial_candidate_content_subject_sha256": "e0d2f57b77c73ba5ce3c2af6a48749e71a00f7c5c6a17c1fb50d1a06a7e70433"
+    }
+  ],
+  "evidence_acquisition_performed": false,
+  "non_authorizing": true,
+  "schema_version": "bounded_correction_diff_v4"
+}

@@ -1,0 +1,72 @@
+{
+  "approved_public_candidate": {
+    "artifact_id": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+    "calibration_sample_sha256": "3282355ab57b86b547ffe6eb04dbf16865f9d9c1099f8cc4ee4d2110fd740f04",
+    "freeze_sha256": "2167fe967e42aca292bac399ddb74fe99d727fdcc7583dc19e8be5f844237192",
+    "mapping_set_sha256": "db7cf375dd81d9d9fbe4c842b7d796bc4b4a928233501bd314ffdde3e099adf6",
+    "presentation_content_sha256": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55",
+    "reviewed_wording_sha256": "58722f5f61ea0b2eb3b41b3cbf58009971c6fcfd184e189117715e2955627fc7",
+    "risk_packet_sha256": "72dddee5f5accb63c5e8cf337aa4c9aae2098356272f5e4a524dd21f6e8a3353",
+    "screenshot_manifest_sha256": "4fe054d911eee178736489e55294177d17414099148ab839a91320f69e31cad0"
+  },
+  "artifact_id": "launch-ratification:f000477:justice_public_safety:119:v1",
+  "authority_boundary": {
+    "calibration_samples_user_approved": true,
+    "deployment_authorized": false,
+    "editorial_wording_user_approved": true,
+    "merge_authorized": false,
+    "production_eligible": false,
+    "publication_active": false,
+    "pull_request_authorized": false,
+    "push_authorized": false,
+    "risk_treatments_user_approved": true
+  },
+  "benchmark_promotion_decision": "deferred",
+  "calibration_sample_decisions": [
+    {
+      "decision": "approved",
+      "sample_id": "calibration:action"
+    },
+    {
+      "decision": "approved",
+      "sample_id": "calibration:episode"
+    },
+    {
+      "decision": "approved",
+      "sample_id": "calibration:pattern"
+    },
+    {
+      "decision": "approved",
+      "sample_id": "calibration:mapping"
+    }
+  ],
+  "content_subject_sha256": "22faba18c447ba9ebd5045b74666c09cb0d030f36187e727732c68d561f0721e",
+  "decision_timestamp": "2026-08-02T17:35:00-04:00",
+  "notice": "The frozen M6 wording, four recommended risk treatments, and four blind calibration samples are user-ratified. Production eligibility, benchmark promotion, publication activation, deployment, push, PR creation, and merge remain separate explicit decisions.",
+  "production_eligibility_decision": "deferred",
+  "publication_activation_decision": "deferred_separate_operational_decision",
+  "risk_specific_selections": [
+    {
+      "risk_id": "launch-risk:roll-128:v1",
+      "selection": "retain_bounded_meaning_with_adjacent_limitation"
+    },
+    {
+      "risk_id": "launch-risk:roll-155-and-fisa-grouping:v1",
+      "selection": "retain_non_counting_treatment"
+    },
+    {
+      "risk_id": "launch-risk:roll-278:v1",
+      "selection": "retain_no_safe_ledger_only_state"
+    },
+    {
+      "risk_id": "launch-risk:semantic-ir:mechanism-divide:v1",
+      "selection": "option_a_retain_bounded_mechanism_contrast"
+    }
+  ],
+  "schema_version": "user_launch_ratification_record_v1",
+  "subject_artifact_id": "launch-ratification-subject:f000477:justice_public_safety:119:v1",
+  "subject_content_subject_sha256": "10d61d55a83177a1cb8c6b65e76fa11199a1bca0b46098c467012c429fcf28c2",
+  "user_decision": "approve_m6_wording_and_recommended_risk_treatments",
+  "user_identity": "dhart54",
+  "wording_approval": true
+}

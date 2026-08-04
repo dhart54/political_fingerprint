@@ -1,0 +1,148 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/scope_neutrality_reviews_v3",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "review_count": {
+      "type": "integer"
+    },
+    "reviews": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "benchmark_used": {
+            "type": "boolean"
+          },
+          "checks": {
+            "additionalProperties": false,
+            "properties": {
+              "cross_domain_limits_preserved": {
+                "type": "boolean"
+              },
+              "exact_action_only": {
+                "type": "boolean"
+              },
+              "no_episode_synthesis_or_public_copy": {
+                "type": "boolean"
+              },
+              "no_party_or_motive_claim": {
+                "type": "boolean"
+              },
+              "official_member_action_preserved": {
+                "type": "boolean"
+              },
+              "required_uncertainty_routing_preserved": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "cross_domain_limits_preserved",
+              "exact_action_only",
+              "no_episode_synthesis_or_public_copy",
+              "no_party_or_motive_claim",
+              "official_member_action_preserved",
+              "required_uncertainty_routing_preserved"
+            ],
+            "type": "object"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "final_candidate_content_subject_sha256": {
+            "type": "string"
+          },
+          "final_routing": {
+            "type": "string"
+          },
+          "findings": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "finding": {
+                  "type": "string"
+                },
+                "severity": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "finding",
+                "severity"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "highest_severity": {
+            "type": "string"
+          },
+          "initial_candidate_content_subject_sha256": {
+            "type": "string"
+          },
+          "remaining_severity_after_routing": {
+            "type": "string"
+          },
+          "review_contract_version": {
+            "type": "string"
+          },
+          "review_id": {
+            "type": "string"
+          },
+          "reviewer_cannot_accept": {
+            "type": "boolean"
+          },
+          "reviewer_role": {
+            "type": "string"
+          },
+          "scope_recommendation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "benchmark_used",
+          "checks",
+          "content_subject_sha256",
+          "final_candidate_content_subject_sha256",
+          "final_routing",
+          "findings",
+          "highest_severity",
+          "initial_candidate_content_subject_sha256",
+          "remaining_severity_after_routing",
+          "review_contract_version",
+          "review_id",
+          "reviewer_cannot_accept",
+          "reviewer_role",
+          "scope_recommendation"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "content_subject_sha256",
+    "non_authorizing",
+    "review_count",
+    "reviews",
+    "schema_version"
+  ],
+  "title": "scope_neutrality_reviews_v3",
+  "type": "object"
+}

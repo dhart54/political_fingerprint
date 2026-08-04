@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "allowed_batch_decisions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "decision_state": {
+      "type": "string"
+    },
+    "decision_timestamp": {
+      "type": "null"
+    },
+    "episode_decisions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "episode_id": {
+            "type": "string"
+          },
+          "implementation_content_subject_sha256": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "null"
+          },
+          "selected_decision": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "episode_id",
+          "implementation_content_subject_sha256",
+          "rationale",
+          "selected_decision"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "explicit_non_acceptance": {
+      "type": "string"
+    },
+    "implementation_bundle": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "content_subject_sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "content_subject_sha256"
+      ],
+      "type": "object"
+    },
+    "not_user_signature": {
+      "type": "null"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "reviewer_authority": {
+      "type": "null"
+    },
+    "reviewer_identity": {
+      "type": "null"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "selected_batch_decision": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "accepted",
+    "allowed_batch_decisions",
+    "artifact_id",
+    "authorizing",
+    "canonical",
+    "content_subject_sha256",
+    "decision_state",
+    "decision_timestamp",
+    "episode_decisions",
+    "explicit_non_acceptance",
+    "implementation_bundle",
+    "not_user_signature",
+    "public",
+    "reviewer_authority",
+    "reviewer_identity",
+    "schema_version",
+    "selected_batch_decision"
+  ],
+  "type": "object"
+}

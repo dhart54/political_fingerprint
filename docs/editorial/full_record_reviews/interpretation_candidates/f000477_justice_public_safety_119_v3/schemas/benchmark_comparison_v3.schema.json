@@ -1,0 +1,110 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/benchmark_comparison_v3",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "candidate_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "comparison_count": {
+      "type": "integer"
+    },
+    "comparison_standard": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "comparisons": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_reference_id": {
+            "type": "string"
+          },
+          "accepted_reference_sha256": {
+            "type": "string"
+          },
+          "action_id": {
+            "type": "string"
+          },
+          "candidate_content_subject_sha256": {
+            "type": "string"
+          },
+          "candidate_id": {
+            "type": "string"
+          },
+          "confidence_calibration": {
+            "type": "string"
+          },
+          "enumerated_category_accuracy": {
+            "type": "string"
+          },
+          "evaluation_only_no_candidate_mutation": {
+            "type": "boolean"
+          },
+          "limits_and_exceptions": {
+            "type": "string"
+          },
+          "mechanism_coverage": {
+            "type": "string"
+          },
+          "quantities_and_thresholds": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "accepted_reference_id",
+          "accepted_reference_sha256",
+          "action_id",
+          "candidate_content_subject_sha256",
+          "candidate_id",
+          "confidence_calibration",
+          "enumerated_category_accuracy",
+          "evaluation_only_no_candidate_mutation",
+          "limits_and_exceptions",
+          "mechanism_coverage",
+          "quantities_and_thresholds",
+          "scope",
+          "severity"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "post_freeze_only": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "candidate_batch_content_subject_sha256",
+    "comparison_count",
+    "comparison_standard",
+    "comparisons",
+    "content_subject_sha256",
+    "non_authorizing",
+    "post_freeze_only",
+    "schema_version"
+  ],
+  "title": "benchmark_comparison_v3",
+  "type": "object"
+}

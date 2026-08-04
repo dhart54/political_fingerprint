@@ -1,0 +1,104 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/parity_manifest_v4",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "all_final_file_sha256_recomputed": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "candidate_batch_content_subject_sha256": {
+      "type": "string"
+    },
+    "candidate_batch_file_sha256": {
+      "type": "string"
+    },
+    "canonical_artifacts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "digest_semantics": {
+            "type": "string"
+          },
+          "file_sha256": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content_subject_sha256",
+          "digest_semantics",
+          "file_sha256",
+          "path"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "dossier": {
+      "additionalProperties": false,
+      "properties": {
+        "content_subject_sha256": {
+          "type": "string"
+        },
+        "digest_semantics": {
+          "type": "string"
+        },
+        "file_sha256": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "content_subject_sha256",
+        "digest_semantics",
+        "file_sha256",
+        "path"
+      ],
+      "type": "object"
+    },
+    "generated_last": {
+      "type": "boolean"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "parity_state": {
+      "type": "string"
+    },
+    "referenced_file_count": {
+      "type": "integer"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "all_final_file_sha256_recomputed",
+    "artifact_id",
+    "candidate_batch_content_subject_sha256",
+    "candidate_batch_file_sha256",
+    "canonical_artifacts",
+    "content_subject_sha256",
+    "dossier",
+    "generated_last",
+    "non_authorizing",
+    "parity_state",
+    "referenced_file_count",
+    "schema_version"
+  ],
+  "title": "parity_manifest_v4",
+  "type": "object"
+}

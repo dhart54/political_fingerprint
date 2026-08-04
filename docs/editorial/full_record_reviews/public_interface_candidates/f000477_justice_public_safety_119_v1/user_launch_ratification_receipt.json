@@ -1,0 +1,108 @@
+{
+  "artifact_id": "user-launch-ratification-receipt:f000477:justice_public_safety:119:v1",
+  "calibration_approvals": [
+    {
+      "decision": "approved",
+      "sample_content_subject_sha256": "3bb4d771eaf3f20bc5ebc092de21daeafd67d60c915bbd60c9f5c039988babdd",
+      "sample_id": "calibration:action",
+      "selection_proof": "09431391933a64f88c92f8c0d4134c4b3bfea3817cbe9f8121254360eb3d2214"
+    },
+    {
+      "decision": "approved",
+      "sample_content_subject_sha256": "ad1d7255276d700aa3e6645f64774212b255de648421df5eb18175e4aa781963",
+      "sample_id": "calibration:episode",
+      "selection_proof": "b8698f7643b94649c1f7ce7ee15eaec57ed0100712cbfdd5bb790ffee98a3efb"
+    },
+    {
+      "decision": "approved",
+      "sample_content_subject_sha256": "72cda1350cc31bb7e27d00cf27789be0108c77633de41112ba94bd068c9ef77e",
+      "sample_id": "calibration:pattern",
+      "selection_proof": "4b53d9ea95edbbde80a31b23398aef51e1602764808a28b46f2508ed6e2380e0"
+    },
+    {
+      "decision": "approved",
+      "sample_content_subject_sha256": "f19c93aa09446b2de6b0ce3be650e8b6ef3e32c535bdad5d0604486cec46760d",
+      "sample_id": "calibration:mapping",
+      "selection_proof": "0f20dabbc8a47f842e066610172a85c8853994fc609e3cba471a230e4349af9d"
+    }
+  ],
+  "candidate_binding": {
+    "artifact_id": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+    "final_file_sha256": "9254e396c85b442e605203f2ebb48f4bbc28cb1c4709ad10bbb084445f5c6021",
+    "presentation_content_sha256": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55"
+  },
+  "content_subject_sha256": "67e7737091af7c35b06a36d2855df72085b875656b21ab77ae9caba41a9a9c80",
+  "control_state": {
+    "benchmark": "not_promoted",
+    "blind_calibration": "user_approved",
+    "deployment": "unauthorized",
+    "editorial_wording": "user_approved",
+    "launch_ratification": "user_ratified_with_production_eligibility_deferred",
+    "production_eligible": false,
+    "public_selector": "unchanged",
+    "publication": "inactive",
+    "risk_treatments": "user_approved"
+  },
+  "decision_timestamp": "2026-08-02T17:35:00-04:00",
+  "immutable_file_bindings": {
+    "analytical_string_mappings.json": "a4b95555f2517bfce0eec3118765e813f6fd802ac48935281667c2339865d7fe",
+    "calibration_sample.json": "a5ec2a2e70161eee1fc99e8f32822a94eca7d9649837e28763ef2d3c884b3306",
+    "exact_action_ledger.json": "aa0aa7e468006ee8bcad40560540656a6628e1e540bdae7c6941329eaf15c9ce",
+    "full_record_semantic_artifact.json": "049299dcfdd25f2c6c5deffda1e3e1226be9614cccd0216ec18ec36cc3e712b6",
+    "full_record_semantic_validation_receipt.json": "86747bc3777c0b514c1d1089afa8274a66792e780b9b5d93823e1f98d937b1a2",
+    "launch_ratification_subject.json": "c779f33fefdc5dc0a66eefec8455361c092227328611ae5810a034d51067fb68",
+    "launch_risk_register.json": "64d385a108e3d25420b0728fef65429f11b4a5a5ef04f0aff5b4515ee97b7c11",
+    "public_interface_freeze.json": "288aea32a22f45d712cd90f11cb280ce1bdf13785c8a24ba9f4da75cbca12eaf",
+    "public_presentation_candidate.json": "9254e396c85b442e605203f2ebb48f4bbc28cb1c4709ad10bbb084445f5c6021",
+    "screenshot_manifest.json": "bc534211fa3ac53eb4790e2b3999f217baf90c0d1d99bb542c8803d37a5e6d98"
+  },
+  "ratification_record_binding": {
+    "artifact_id": "launch-ratification:f000477:justice_public_safety:119:v1",
+    "content_subject_sha256": "22faba18c447ba9ebd5045b74666c09cb0d030f36187e727732c68d561f0721e",
+    "final_file_sha256": "eb5f6aa7775f8765c1319d80849dfeedbb41c85f8e30f30a21a53819a0f615d8"
+  },
+  "risk_selections": [
+    {
+      "historical_limitation_retained": true,
+      "review_state": "user_ratified_treatment",
+      "risk_id": "launch-risk:roll-128:v1",
+      "selection": "retain_bounded_meaning_with_adjacent_limitation"
+    },
+    {
+      "historical_limitation_retained": true,
+      "review_state": "user_ratified_treatment",
+      "risk_id": "launch-risk:roll-155-and-fisa-grouping:v1",
+      "selection": "retain_non_counting_treatment"
+    },
+    {
+      "historical_limitation_retained": true,
+      "review_state": "user_ratified_treatment",
+      "risk_id": "launch-risk:roll-278:v1",
+      "selection": "retain_no_safe_ledger_only_state"
+    },
+    {
+      "historical_limitation_retained": true,
+      "review_state": "user_ratified_treatment",
+      "risk_id": "launch-risk:semantic-ir:mechanism-divide:v1",
+      "selection": "option_a_retain_bounded_mechanism_contrast"
+    }
+  ],
+  "schema_version": "user_launch_ratification_receipt_v1",
+  "subject_binding": {
+    "artifact_id": "launch-ratification-subject:f000477:justice_public_safety:119:v1",
+    "calibration_sample": "3282355ab57b86b547ffe6eb04dbf16865f9d9c1099f8cc4ee4d2110fd740f04",
+    "content_subject_sha256": "10d61d55a83177a1cb8c6b65e76fa11199a1bca0b46098c467012c429fcf28c2",
+    "evidence_provenance": "4e04e4f9db6e5b029b35be203c0a39f5e6186028df6dfdad5ba65ce8b49f12f2",
+    "freeze": "2167fe967e42aca292bac399ddb74fe99d727fdcc7583dc19e8be5f844237192",
+    "limitations": "e65b01bed2dce6ead9e3eee45093bc609690c75c1c8e6ac6b1c654f081292a34",
+    "mapping_set": "db7cf375dd81d9d9fbe4c842b7d796bc4b4a928233501bd314ffdde3e099adf6",
+    "public_presentation_content": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55",
+    "reviewed_wording": "58722f5f61ea0b2eb3b41b3cbf58009971c6fcfd184e189117715e2955627fc7",
+    "risk_packet": "72dddee5f5accb63c5e8cf337aa4c9aae2098356272f5e4a524dd21f6e8a3353",
+    "schema_version": "user_launch_ratification_subject_v1",
+    "screenshot_manifest": "4fe054d911eee178736489e55294177d17414099148ab839a91320f69e31cad0",
+    "semantic_validation_receipt": "f7f36ce0194f508c4aad54032b3f94991535477a3f26c9e51ddf54cc4fc4b7a4",
+    "universe": "5f969c7911249836db107676516b3258b24a0995fcb95c0d36ef2adbfdfe9213"
+  },
+  "user_identity": "dhart54"
+}

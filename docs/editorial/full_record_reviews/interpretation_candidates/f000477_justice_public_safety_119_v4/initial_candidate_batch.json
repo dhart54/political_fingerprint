@@ -1,0 +1,3569 @@
+{
+  "artifact_id": "initial-candidate-batch:f000477:justice_public_safety:119:v4",
+  "batch_id": "action-interpretation-candidates:f000477:justice_public_safety:119:v4",
+  "benchmark_inaccessible": true,
+  "candidate_count": 37,
+  "candidates": [
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:6",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "0e41ca10b79facf7bb62a5f74d0f02b61f5da2ec227037a89387564aef90002d",
+      "candidate_id": "action-interpretation-candidate:house:119:1:6:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:6:meaning",
+          "limitation": null,
+          "locator": "section 2; section 3; section 3",
+          "source_id": "govinfo_text_119_hr29_eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 29, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, or shoplifting offenses. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "c509bb552454d6fcd03f1a836181b2970bfca728a4d5f27e9c72151f58dc50fc",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:6:v4",
+      "exact_action_identity": "119:hr:29",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 3",
+          "representation_state": "represented_as_limit",
+          "source_id": "govinfo_text_119_hr29_eh",
+          "support_state": "directly_supported",
+          "wording": "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr29_eh",
+          "support_state": "directly_supported",
+          "wording": "Require detention and DHS detainers for covered noncitizens connected to specified theft offenses."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr29_eh",
+          "support_state": "directly_supported",
+          "wording": "Create State attorney-general enforcement actions concerning specified immigration detention, release, parole, and visa duties."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "govinfo_text_119_hr29_eh",
+        "wording": "To require the Secretary of Homeland Security to take into custody aliens who have been charged in the United States with theft, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 29, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, or shoplifting offenses. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:6",
+        "govinfo_text_119_hr29_eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:23",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "f2766e8d82d4cdab722c9b77a1691de30b4b60963e24e75c5f97c46e7f3b48a3",
+      "candidate_id": "action-interpretation-candidate:house:119:1:23:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:23:meaning",
+          "limitation": null,
+          "locator": "section 2; section 3; section 3",
+          "source_id": "govinfo_text_119_s5_es",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass the Senate version of the Laken Riley Act, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or crimes resulting in death or serious bodily injury. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "47cc790fc99a8aeb2dd13e7d3311faa1e0e3bc70f04717fb039232be73d5e5d8",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:23:v4",
+      "exact_action_identity": "119:s:5",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 3",
+          "representation_state": "represented_as_limit",
+          "source_id": "govinfo_text_119_s5_es",
+          "support_state": "directly_supported",
+          "wording": "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_s5_es",
+          "support_state": "directly_supported",
+          "wording": "Require detention and DHS detainers for covered noncitizens connected to burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or crimes resulting in death or serious bodily injury."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_s5_es",
+          "support_state": "directly_supported",
+          "wording": "Create State attorney-general enforcement actions concerning specified immigration detention, release, parole, and visa duties."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "govinfo_text_119_s5_es",
+        "wording": "To require the Secretary of Homeland Security to take into custody aliens who have been charged in the United States with theft, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass the Senate version of the Laken Riley Act, requiring federal detention and DHS detainers for certain inadmissible noncitizens connected to burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or crimes resulting in death or serious bodily injury. It also would give State attorneys general standing to seek expedited injunctive relief over specified federal detention, release, parole, and visa actions.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:23",
+        "govinfo_text_119_s5_es"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:27",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "73da014cccfb4bfe7312ad5b168453eafc4ce5aa3aac5076c26d682f91f42967",
+      "candidate_id": "action-interpretation-candidate:house:119:1:27:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:27:meaning",
+          "limitation": null,
+          "locator": "section 3(a); section 3(a); section 3(a); section 3(a), bar to prosecution",
+          "source_id": "congress_text:119:hr:21:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 21, requiring practitioners to provide a child born alive after an abortion or attempted abortion the same care as another child at the same gestational age, ensure immediate hospital admission when needed, and report known violations. The bill also would create criminal penalties and civil remedies while barring prosecution of the woman on whom the abortion was performed."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "8b7caff50fb4445d3b5456d0b1530ac7cdc57c229851a8599a6840c73dbd9494",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:27:v4",
+      "exact_action_identity": "119:hr:21",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The woman on whom the abortion was performed may not be prosecuted under the new offense."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 3(a), bar to prosecution",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:21:eh",
+          "support_state": "directly_supported",
+          "wording": "The woman on whom the abortion was performed may not be prosecuted under the new offense."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 3(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:21:eh",
+          "support_state": "directly_supported",
+          "wording": "Require equivalent professional care for a child born alive after an abortion or attempted abortion."
+        },
+        {
+          "locator": "section 3(a)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:21:eh",
+          "support_state": "directly_supported",
+          "wording": "Require immediate hospital admission and mandatory reporting in specified circumstances."
+        },
+        {
+          "locator": "section 3(a)",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:21:eh",
+          "support_state": "directly_supported",
+          "wording": "Create criminal penalties and a civil action for violations."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:21:eh",
+        "wording": "To amend title 18, United States Code, to prohibit a health care practitioner from failing to exercise the proper degree of care in the case of a child who survives an abortion or attempted abortion."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 21, requiring practitioners to provide a child born alive after an abortion or attempted abortion the same care as another child at the same gestational age, ensure immediate hospital admission when needed, and report known violations. The bill also would create criminal penalties and civil remedies while barring prosecution of the woman on whom the abortion was performed.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:27",
+        "congress_text:119:hr:21:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:32",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "3f8c9faa002dab3ba2a5b096b048bceb1e2deec35415ed99275c24a64dc3bc89",
+      "candidate_id": "action-interpretation-candidate:house:119:1:32:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:32:meaning",
+          "limitation": null,
+          "locator": "governed Congressional Record pages 24-25; governed Congressional Record pages 24-25",
+          "source_id": "record_hamdt5",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to amend H.R. 27 so its classwide fentanyl scheduling and related amendments would take effect only after the Health and Human Services Secretary and Attorney General jointly certified in the Federal Register that the Act would reduce overdose deaths."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "8f9b3c06d0eecce28e47630edaf9cd69211ee1cb3fa085fb3dec078aae6fa2b0",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:32:v4",
+      "exact_action_identity": "119:hamdt:5",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "amendment",
+      "limitations": [
+        "The amendment addressed when the parent bill would take effect; it did not itself replace the parent bill's scheduling framework."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "governed Congressional Record pages 24-25",
+          "representation_state": "represented_as_limit",
+          "source_id": "record_hamdt5",
+          "support_state": "directly_supported",
+          "wording": "The amendment addressed when the parent bill would take effect; it did not itself replace the parent bill's scheduling framework."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "governed Congressional Record pages 24-25",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "record_hamdt5",
+          "support_state": "directly_supported",
+          "wording": "Condition the Act's effective operation on a joint overdose-reduction certification."
+        }
+      ],
+      "official_member_action": "yea",
+      "official_title_or_purpose": {
+        "locator": "governed Congressional Record pages 24-25",
+        "projection_state": "faithful_projection",
+        "source_id": "record_hamdt5",
+        "wording": "Trahan amendment requiring a joint overdose-reduction certification before H.R. 27 would take effect."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to amend H.R. 27 so its classwide fentanyl scheduling and related amendments would take effect only after the Health and Human Services Secretary and Attorney General jointly certified in the Federal Register that the Act would reduce overdose deaths.",
+      "proposed_member_position_effect": "supports_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:32",
+        "record_hamdt5"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:33",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "9e248424aab5f6f596f8752fc186efc73cdecd80a0090d921ed6ec26ba5b177f",
+      "candidate_id": "action-interpretation-candidate:house:119:1:33:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:33:meaning",
+          "limitation": null,
+          "locator": "section 2; section 3; section 6; sections 5 and 7; section 2",
+          "source_id": "congress_text:119:hr:27:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 27, placing fentanyl-related substances in schedule I as a class, applying specified trafficking penalties, and establishing registration pathways and procedures for research involving schedule I substances."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "e9fdef3978acb6d8d4cca2b0aa7f99578cc274d7f564dcb8cee138a4d3df4cd0",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:33:v4",
+      "exact_action_identity": "119:hr:27",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The class definition excludes substances specifically exempted or listed in another schedule."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:27:eh",
+          "support_state": "directly_supported",
+          "wording": "The class definition excludes substances specifically exempted or listed in another schedule."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:27:eh",
+          "support_state": "directly_supported",
+          "wording": "Place fentanyl-related substances in schedule I as a class."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:27:eh",
+          "support_state": "directly_supported",
+          "wording": "Create alternative and expedited registration procedures for specified schedule I research."
+        },
+        {
+          "locator": "section 6",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:27:eh",
+          "support_state": "directly_supported",
+          "wording": "Apply specified Controlled Substances Act penalties to fentanyl-related substances."
+        },
+        {
+          "locator": "sections 5 and 7",
+          "provision_id": "p4",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:27:eh",
+          "support_state": "directly_supported",
+          "wording": "Require implementing rules and address applicability."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:27:eh",
+        "wording": "To amend the Controlled Substances Act with respect to the scheduling of fentanyl-related substances, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 27, placing fentanyl-related substances in schedule I as a class, applying specified trafficking penalties, and establishing registration pathways and procedures for research involving schedule I substances.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:33",
+        "congress_text:119:hr:27:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:42",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "6e01c7ca1ecfc983b415b9ca93c7033c0041c63f3ffff97510075ccc4aa8b59d",
+      "candidate_id": "action-interpretation-candidate:house:119:1:42:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:42:meaning",
+          "limitation": null,
+          "locator": "section 2; section 2(b); section 3; section 4",
+          "source_id": "congress_text:119:hr:35:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 35, creating a federal offense for intentionally fleeing specified pursuing officers by motor vehicle within 100 miles of the border, with penalties escalating when serious injury or death results. The bill also would impose specified immigration consequences and require annual Justice and Homeland Security reporting on enforcement of the offense."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "111050611f58fc3f175d191bb7a09ee1d4f5ec8200fb73edbdec11c7b6d5528f",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:42:v4",
+      "exact_action_identity": "119:hr:35",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [],
+      "material_limits_and_exceptions": [],
+      "material_provisions": [
+        {
+          "locator": "section 2",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:35:eh",
+          "support_state": "directly_supported",
+          "wording": "Create a federal offense for intentional motor-vehicle flight from specified pursuing officers within 100 miles of the border."
+        },
+        {
+          "locator": "section 2(b)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:35:eh",
+          "support_state": "directly_supported",
+          "wording": "Set a maximum two-year term generally, five-to-20 years for serious bodily injury, and 10 years to life when death results."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:35:eh",
+          "support_state": "directly_supported",
+          "wording": "Make covered conduct a basis for inadmissibility, deportability, and ineligibility for immigration relief."
+        },
+        {
+          "locator": "section 4",
+          "provision_id": "p4",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:35:eh",
+          "support_state": "directly_supported",
+          "wording": "Require annual reporting on charges, apprehensions, sought penalties, and imposed penalties."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:35:eh",
+        "wording": "To impose criminal and immigration penalties for intentionally fleeing a pursuing Federal officer while operating a motor vehicle."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 35, creating a federal offense for intentionally fleeing specified pursuing officers by motor vehicle within 100 miles of the border, with penalties escalating when serious injury or death results. The bill also would impose specified immigration consequences and require annual Justice and Homeland Security reporting on enforcement of the offense.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:42",
+        "congress_text:119:hr:35:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:68",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "5f22266e451a5ae7cbbec766f1043eb32ae70a74ca20cd7057878d0424b5327d",
+      "candidate_id": "action-interpretation-candidate:house:119:1:68:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:68:meaning",
+          "limitation": null,
+          "locator": "section 2; section 2; section 3; section 2 exceptions",
+          "source_id": "govinfo_text_119_hr1156_eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 1156, establishing a 10-year limitations period for specified criminal prosecutions and civil enforcement actions involving fraud in four pandemic unemployment programs. It also would rescind $5 million in unobligated administrative funding."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "4a9ae3270dd9e3e7c9164a95b8f8f63c61197cbfd39c816e8ef94e3faefafcda",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:68:v4",
+      "exact_action_identity": "119:hr:1156",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The extension does not revive an action whose prior limitations period expired before enactment."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2 exceptions",
+          "representation_state": "represented_as_limit",
+          "source_id": "govinfo_text_119_hr1156_eh",
+          "support_state": "directly_supported",
+          "wording": "The extension does not revive an action whose prior limitations period expired before enactment."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr1156_eh",
+          "support_state": "directly_supported",
+          "wording": "Create a 10-year limitations period for covered pandemic unemployment fraud actions."
+        },
+        {
+          "locator": "section 2",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr1156_eh",
+          "support_state": "directly_supported",
+          "wording": "Apply the period to Pandemic Unemployment Assistance, Federal Pandemic Unemployment Compensation, Mixed Earner Unemployment Compensation, and Pandemic Emergency Unemployment Compensation."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr1156_eh",
+          "support_state": "directly_supported",
+          "wording": "Rescind $5 million in unobligated administrative balances."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "govinfo_text_119_hr1156_eh",
+        "wording": "To amend the CARES Act to extend the statute of limitations for fraud under certain unemployment programs, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 1156, establishing a 10-year limitations period for specified criminal prosecutions and civil enforcement actions involving fraud in four pandemic unemployment programs. It also would rescind $5 million in unobligated administrative funding.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:68",
+        "govinfo_text_119_hr1156_eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:98",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "f454c65708fe4b337d18ebfeb740dbc295d15e3da8096cf0fc034806e5c27eed",
+      "candidate_id": "action-interpretation-candidate:house:119:1:98:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:98:meaning",
+          "limitation": null,
+          "locator": "section 2(a), new 28 U.S.C. 1370(a); section 2(a), new 28 U.S.C. 1370(b); section 2(a), new 28 U.S.C. 1370(b)-(c)",
+          "source_id": "congress_text:119:hr:1526:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 1526, generally limiting federal district-court injunctions to the parties and represented nonparties in the case. A challenge brought by two or more States in different circuits would instead go to a randomly selected three-judge panel that could issue broader relief under specified considerations."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "ac30506a7b39e1daffa0029e83f47eb826f4672fd7c594dd06ca9882a09cb03a",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:98:v4",
+      "exact_action_identity": "119:hr:1526",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The three-judge panel may grant relief otherwise barred after considering justice, nonparty harm, and separation of powers."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2(a), new 28 U.S.C. 1370(b)-(c)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:1526:eh",
+          "support_state": "directly_supported",
+          "wording": "The three-judge panel may grant relief otherwise barred after considering justice, nonparty harm, and separation of powers."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2(a), new 28 U.S.C. 1370(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:1526:eh",
+          "support_state": "directly_supported",
+          "wording": "Limit district-court injunctive relief to parties and represented nonparties in the case."
+        },
+        {
+          "locator": "section 2(a), new 28 U.S.C. 1370(b)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:1526:eh",
+          "support_state": "directly_supported",
+          "wording": "Create a three-judge-panel process for executive-action challenges brought by multiple States in different circuits."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:1526:eh",
+        "wording": "To amend title 28, United States Code, to limit the authority of district courts to provide injunctive relief, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 1526, generally limiting federal district-court injunctions to the parties and represented nonparties in the case. A challenge brought by two or more States in different circuits would instead go to a randomly selected three-judge panel that could issue broader relief under specified considerations.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:98",
+        "congress_text:119:hr:1526:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:128",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "de60725df87102a441af64a9157909265750d4cc72aeabae6ce052f37bf4fd21",
+      "candidate_id": "action-interpretation-candidate:house:119:1:128:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:128:meaning",
+          "limitation": null,
+          "locator": "section 2; section 3; section 3; section 4",
+          "source_id": "congress_text:119:hr:2243:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 2243, expanding where qualified current and retired law-enforcement officers may carry concealed firearms, including specified school zones, publicly accessible transport property, National Park System units, and lower-security federal public facilities. It also would revise retired-officer qualification periods and documentation."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "359e6c625ad45304574f9de104019cb2edbe249d1c8b6d54d30b1aca20bb8be9",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:128:v4",
+      "exact_action_identity": "119:hr:2243",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [],
+      "material_limits_and_exceptions": [],
+      "material_provisions": [
+        {
+          "locator": "section 2",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2243:eh",
+          "support_state": "directly_supported",
+          "wording": "Conform school-zone rules to LEOSA concealed-carry authority."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2243:eh",
+          "support_state": "directly_supported",
+          "wording": "Expand LEOSA preemption for specified National Park, transportation, and public-access property."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2243:eh",
+          "support_state": "directly_supported",
+          "wording": "Revise retired-officer firearm qualification standards and documentation."
+        },
+        {
+          "locator": "section 4",
+          "provision_id": "p4",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2243:eh",
+          "support_state": "directly_supported",
+          "wording": "Permit qualified officers to carry in Facility Security Level I or II civilian public-access federal facilities."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:2243:eh",
+        "wording": "To amend title 18, United States Code, to improve the Law Enforcement Officer Safety Act and provisions relating to the carrying of concealed weapons by law enforcement officers, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 2243, expanding where qualified current and retired law-enforcement officers may carry concealed firearms, including specified school zones, publicly accessible transport property, National Park System units, and lower-security federal public facilities. It also would revise retired-officer qualification periods and documentation.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:128",
+        "congress_text:119:hr:2243:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:130",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "cb83535444e754d96c62d2589c8651a2d4029d1e47c7f65c9bbc7c915bbed33a",
+      "candidate_id": "action-interpretation-candidate:house:119:1:130:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:130:meaning",
+          "limitation": null,
+          "locator": "section 2(a); section 2(b); section 2(c)-(d)",
+          "source_id": "congress_text:119:hr:2255:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 2255, requiring a program that lets eligible current or retired federal law-enforcement officers buy qualifying surplus firearms issued to them. Purchases would be limited to a six-month window, officers in good standing, and salvage-value pricing."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "8f8acfdd2fec072032c3026a234e996425420a429b307d64dfad228ddca94e26",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:130:v4",
+      "exact_action_identity": "119:hr:2255",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "A purchase must occur within six months after retirement of the firearm and the officer must be in good standing.",
+        "The firearm is sold at salvage value and specified machineguns are excluded."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2(b)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:2255:eh",
+          "support_state": "directly_supported",
+          "wording": "A purchase must occur within six months after retirement of the firearm and the officer must be in good standing."
+        },
+        {
+          "limit_id": "l2",
+          "locator": "section 2(c)-(d)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:2255:eh",
+          "support_state": "directly_supported",
+          "wording": "The firearm is sold at salvage value and specified machineguns are excluded."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2255:eh",
+          "support_state": "directly_supported",
+          "wording": "Require GSA to establish the retired-service-firearm purchase program within one year."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:2255:eh",
+        "wording": "To allow Federal law enforcement officers to purchase retired service weapons, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 2255, requiring a program that lets eligible current or retired federal law-enforcement officers buy qualifying surplus firearms issued to them. Purchases would be limited to a six-month window, officers in good standing, and salvage-value pricing.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:130",
+        "congress_text:119:hr:2255:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:131",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "3459392fa7d56c85daa1bdf727e0b8f464fe93328468d633d0db93325fe85ee0",
+      "candidate_id": "action-interpretation-candidate:house:119:1:131:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:131:meaning",
+          "limitation": null,
+          "locator": "section 3; section 4; section 5",
+          "source_id": "congress_text:119:hr:2240:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 2240, requiring the Attorney General to develop reports on violent attacks against officers and the systems used to collect attack data, on aggression against officers, and on officer mental-health and wellness programs and resources."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "c0ed523ce28e4363e95c8f02538d569884d18bba32619670221ff6a5eadd9693",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:131:v4",
+      "exact_action_identity": "119:hr:2240",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [],
+      "material_limits_and_exceptions": [],
+      "material_provisions": [
+        {
+          "locator": "section 3",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2240:eh",
+          "support_state": "directly_supported",
+          "wording": "Report on attacks against officers and development of the underlying reporting system and data."
+        },
+        {
+          "locator": "section 4",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2240:eh",
+          "support_state": "directly_supported",
+          "wording": "Report on aggression against law-enforcement officers."
+        },
+        {
+          "locator": "section 5",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2240:eh",
+          "support_state": "directly_supported",
+          "wording": "Report on officer mental-health and wellness needs, programs, and resources."
+        }
+      ],
+      "official_member_action": "yea",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:2240:eh",
+        "wording": "To require the Attorney General to develop reports relating to violent attacks against law enforcement officers, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 2240, requiring the Attorney General to develop reports on violent attacks against officers and the systems used to collect attack data, on aggression against officers, and on officer mental-health and wellness programs and resources.",
+      "proposed_member_position_effect": "supports_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:131",
+        "congress_text:119:hr:2240:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:162",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "2fe3f3da208f523e95846fb66fcbff177230acd643003ed37acfb545d3403ed4",
+      "candidate_id": "action-interpretation-candidate:house:119:1:162:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:162:meaning",
+          "limitation": null,
+          "locator": "section 2(a); section 2(b)",
+          "source_id": "congress_text:119:hr:2096:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 2096, restoring collective bargaining over discipline for D.C. law-enforcement officers and restoring the prior limitations rules for disciplinary claims against Metropolitan Police Department members and civilian employees."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "4b17d8b1c020868070dc4c4ae6622a561b3c75cef20e332780d2d5981b6bde26",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:162:v4",
+      "exact_action_identity": "119:hr:2096",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [],
+      "material_limits_and_exceptions": [],
+      "material_provisions": [
+        {
+          "locator": "section 2(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2096:eh",
+          "support_state": "directly_supported",
+          "wording": "Restore collective bargaining over D.C. law-enforcement discipline."
+        },
+        {
+          "locator": "section 2(b)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2096:eh",
+          "support_state": "directly_supported",
+          "wording": "Repeal the 2022 subtitle that changed limitations rules for disciplinary claims and revive the prior law."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:2096:eh",
+        "wording": "To restore the right to negotiate matters pertaining to the discipline of law enforcement officers of the District of Columbia through collective bargaining, to restore the statute of limitations for bringing disciplinary cases against members or civilian employees of the Metropolitan Police Department of the District of Columbia, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 2096, restoring collective bargaining over discipline for D.C. law-enforcement officers and restoring the prior limitations rules for disciplinary claims against Metropolitan Police Department members and civilian employees.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:162",
+        "congress_text:119:hr:2096:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:166",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "d959296370caf00712253172aa40eda48be0af5da89d26c3299b324e9a92bda7",
+      "candidate_id": "action-interpretation-candidate:house:119:1:166:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:166:meaning",
+          "limitation": null,
+          "locator": "section 2; section 3; sections 4-5; section 6; section 2",
+          "source_id": "congress_text:119:s:331:enr",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass S. 331, permanently placing fentanyl-related substances in schedule I as a class and applying specified trafficking penalties. The bill also would establish alternative and expedited research-registration procedures, technical corrections, and implementing rules."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "dbc8a5053ecf6a28b848e754917af532fa2867c674f43a76696e512bb74dc6c0",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:166:v4",
+      "exact_action_identity": "119:s:331",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The class definition excludes substances specifically exempted or listed in another schedule."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:s:331:enr",
+          "support_state": "directly_supported",
+          "wording": "The class definition excludes substances specifically exempted or listed in another schedule."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:s:331:enr",
+          "support_state": "directly_supported",
+          "wording": "Permanently place fentanyl-related substances in schedule I as a class."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:s:331:enr",
+          "support_state": "directly_supported",
+          "wording": "Create alternative and expedited registration pathways for schedule I research."
+        },
+        {
+          "locator": "sections 4-5",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:s:331:enr",
+          "support_state": "directly_supported",
+          "wording": "Require implementing rules and technical corrections."
+        },
+        {
+          "locator": "section 6",
+          "provision_id": "p4",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:s:331:enr",
+          "support_state": "directly_supported",
+          "wording": "Apply specified Controlled Substances Act and import-export penalties."
+        }
+      ],
+      "official_member_action": "yea",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:s:331:enr",
+        "wording": "To amend the Controlled Substances Act with respect to the scheduling of fentanyl-related substances, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass S. 331, permanently placing fentanyl-related substances in schedule I as a class and applying specified trafficking penalties. The bill also would establish alternative and expedited research-registration procedures, technical corrections, and implementing rules.",
+      "proposed_member_position_effect": "supports_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:166",
+        "congress_text:119:s:331:enr"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:270",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "cfcb7428e0eb62745f5205e986e9cdfbf18dcab91327ffaa837d5e62ecb1d882",
+      "candidate_id": "action-interpretation-candidate:house:119:1:270:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:270:meaning",
+          "limitation": null,
+          "locator": "section 2(a); section 2(b); section 3; section 3(a), new D.C. Code 16-2340a(e)",
+          "source_id": "congress_text:119:hr:4922:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 4922, limiting D.C. youth-offender status to people under 18, removing authority to impose a sentence below a mandatory minimum under that statute, and requiring a monthly, downloadable public juvenile-crime statistics website. The website would use specified arrest and case measures while excluding personally identifiable information."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "0aa9e2f482e16269abe1801e71c93f71ab5c851f5fa54a7f5b6aa1682f6cea00",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:270:v4",
+      "exact_action_identity": "119:hr:4922",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The public website may not disclose a juvenile's personally identifiable information."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 3(a), new D.C. Code 16-2340a(e)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:4922:eh",
+          "support_state": "directly_supported",
+          "wording": "The public website may not disclose a juvenile's personally identifiable information."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:4922:eh",
+          "support_state": "directly_supported",
+          "wording": "Limit D.C. youth-offender status to people under 18 and make conforming changes."
+        },
+        {
+          "locator": "section 2(b)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:4922:eh",
+          "support_state": "directly_supported",
+          "wording": "Remove authority for a sentence below a mandatory-minimum term under the Youth Rehabilitation Act."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:4922:eh",
+          "support_state": "directly_supported",
+          "wording": "Require a monthly, archived, machine-readable public juvenile-crime statistics website."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:4922:eh",
+        "wording": "To limit youth offender status in the District of Columbia to individuals 18 years of age or younger, to direct the Attorney General of the District of Columbia to establish and operate a publicly accessible website containing updated statistics on juvenile crime in the District of Columbia, to amend the District of Columbia Home Rule Act to prohibit the Council of the District of Columbia from enacting changes to existing criminal liability sentences, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 4922, limiting D.C. youth-offender status to people under 18, removing authority to impose a sentence below a mandatory minimum under that statute, and requiring a monthly, downloadable public juvenile-crime statistics website. The website would use specified arrest and case measures while excluding personally identifiable information.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:270",
+        "congress_text:119:hr:4922:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:271",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "eb06fd79f58d164cdee9cdc3c7f9406e3190b8fac5d65f72d7a9a10c33b9cbbc",
+      "candidate_id": "action-interpretation-candidate:house:119:1:271:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:271:meaning",
+          "limitation": null,
+          "locator": "section 1(a); section 1(b); section 1(c)",
+          "source_id": "congress_text:119:hr:5140:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 5140, lowering from 16 to 14 the age at which specified D.C. minors may be excluded from Family Court jurisdiction and lowering related transfer thresholds to 14 for covered criminal proceedings."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "d50b619a3bea79413035c496f454afef2f998b4f550e29f6112725a7fa2c2d59",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:271:v4",
+      "exact_action_identity": "119:hr:5140",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The changes apply to offenses committed on or after enactment."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 1(c)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:5140:eh",
+          "support_state": "directly_supported",
+          "wording": "The changes apply to offenses committed on or after enactment."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 1(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:5140:eh",
+          "support_state": "directly_supported",
+          "wording": "Lower the specified Family Court exclusion age from 16 to 14."
+        },
+        {
+          "locator": "section 1(b)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:5140:eh",
+          "support_state": "directly_supported",
+          "wording": "Lower specified transfer-to-criminal-proceeding ages to 14."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:5140:eh",
+        "wording": "To lower the age at which a minor may be tried as an adult for certain criminal offenses in the District of Columbia to 14 years of age."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 5140, lowering from 16 to 14 the age at which specified D.C. minors may be excluded from Family Court jurisdiction and lowering related transfer thresholds to 14 for covered criminal proceedings.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:271",
+        "congress_text:119:hr:5140:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:274",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "60c0ffc13d8a20e90d37e8be84a4ee17466a58ad0baae463f92ed0253ae412d3",
+      "candidate_id": "action-interpretation-candidate:house:119:1:274:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:274:meaning",
+          "limitation": null,
+          "locator": "section 2(a); section 2(b)-(d); section 2(e)",
+          "source_id": "congress_text:119:hr:5125:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 5125, terminating the D.C. Judicial Nomination Commission and removing its nomination-list role, while shifting specified chief-judge designation and judicial nomination functions to the President."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "ab2b6e55ff0804ccb0f6133180e4946e7091b37a11a306e42292374db09cb937",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:274:v4",
+      "exact_action_identity": "119:hr:5125",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The changes apply to appointments made on or after enactment."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2(e)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:5125:eh",
+          "support_state": "directly_supported",
+          "wording": "The changes apply to appointments made on or after enactment."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:5125:eh",
+          "support_state": "directly_supported",
+          "wording": "Terminate the D.C. Judicial Nomination Commission."
+        },
+        {
+          "locator": "section 2(b)-(d)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:5125:eh",
+          "support_state": "directly_supported",
+          "wording": "Remove the Commission's candidate-list role and assign specified chief-judge designation and nomination functions to the President."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:5125:eh",
+        "wording": "To amend the District of Columbia Home Rule Act to terminate the District of Columbia Judicial Nomination Commission, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 5125, terminating the D.C. Judicial Nomination Commission and removing its nomination-list role, while shifting specified chief-judge designation and judicial nomination functions to the President.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:274",
+        "congress_text:119:hr:5125:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:275",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "f01ed860455a7470c648d7e3efd4ce0c1796ac1dc6222feb5e6a0678c6f87aea",
+      "candidate_id": "action-interpretation-candidate:house:119:1:275:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:275:meaning",
+          "limitation": null,
+          "locator": "section 2(a); section 2(b); section 2(a)",
+          "source_id": "congress_text:119:hr:5143:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 5143, replacing D.C. pursuit restrictions with authority for an officer to pursue a fleeing motor-vehicle suspect unless the pursuit presents an unacceptable risk, would be futile, or another means would be more effective or faster. It also would require a Justice Department evaluation and report on public pursuit-alert technology."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "e82a2c825d2b416e862295e73f25e5d6e9e35814b7d92d500a1b843dda313ac7",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:275:v4",
+      "exact_action_identity": "119:hr:5143",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "Pursuit remains limited when it poses unacceptable third-party harm, would be futile, or another means would be more effective or expeditious."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2(a)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:5143:eh",
+          "support_state": "directly_supported",
+          "wording": "Pursuit remains limited when it poses unacceptable third-party harm, would be futile, or another means would be more effective or expeditious."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:5143:eh",
+          "support_state": "directly_supported",
+          "wording": "Replace existing D.C. vehicular-pursuit restrictions with broader pursuit authority."
+        },
+        {
+          "locator": "section 2(b)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:5143:eh",
+          "support_state": "directly_supported",
+          "wording": "Require a Justice Department evaluation and report on PursuitAlert or similar technology."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:5143:eh",
+        "wording": "To establish standards for law enforcement officers in the District of Columbia to engage in vehicular pursuits of suspects, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 5143, replacing D.C. pursuit restrictions with authority for an officer to pursue a fleeing motor-vehicle suspect unless the pursuit presents an unacceptable risk, would be futile, or another means would be more effective or faster. It also would require a Justice Department evaluation and report on public pursuit-alert technology.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:275",
+        "congress_text:119:hr:5143:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:286",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "485bf0f1c383ca2adc92ec065cec6f03b2d42af77974e329889ea4745ccfd0bd",
+      "candidate_id": "action-interpretation-candidate:house:119:1:286:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:286:meaning",
+          "limitation": null,
+          "locator": "section 3(a); section 3(a)(2); section 3",
+          "source_id": "govinfo_text_119_hr1608_eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 1608 as amended, requiring Homeland Security to assess emerging vehicular-terrorism threats and countermeasures, including risks involving connected and autonomous vehicles, higher-risk locations, and protective technologies. DHS would report to Congress within 180 days and brief the committees after submission."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "10ebc33b3433f30b6adadc808c6f91d0d5078b1762473e9a40600f91b24c06c1",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:286:v4",
+      "exact_action_identity": "119:hr:1608",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "suspension_passage_as_amended",
+      "limitations": [],
+      "material_limits_and_exceptions": [],
+      "material_provisions": [
+        {
+          "locator": "section 3(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr1608_eh",
+          "support_state": "directly_supported",
+          "wording": "Require a DHS assessment of current and emerging vehicular-terrorism threats."
+        },
+        {
+          "locator": "section 3(a)(2)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr1608_eh",
+          "support_state": "directly_supported",
+          "wording": "Cover higher-risk locations, protective infrastructure, technology, coordination, and response measures."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr1608_eh",
+          "support_state": "directly_supported",
+          "wording": "Require a congressional report and subsequent briefing."
+        }
+      ],
+      "official_member_action": "yea",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "govinfo_text_119_hr1608_eh",
+        "wording": "To require the Secretary of Homeland Security to produce a report on emerging threats and countermeasures related to vehicular terrorism, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 1608 as amended, requiring Homeland Security to assess emerging vehicular-terrorism threats and countermeasures, including risks involving connected and autonomous vehicles, higher-risk locations, and protective technologies. DHS would report to Congress within 180 days and brief the committees after submission.",
+      "proposed_member_position_effect": "supports_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:286",
+        "govinfo_text_119_hr1608_eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:289",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "46f8d9eb8ddcc9a7b2d246cee1f613ea05e496649998e39980b253b44a5b19df",
+      "candidate_id": "action-interpretation-candidate:house:119:1:289:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:289:meaning",
+          "limitation": null,
+          "locator": "section 2(a); section 2(b); section 3; section 2(c)",
+          "source_id": "congress_text:119:hr:4405:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 4405, requiring the Attorney General within 30 days to release searchable, downloadable unclassified Justice Department records concerning Jeffrey Epstein and related people, entities, agreements, investigations, detention, and death. It would limit withholding to specified privacy, victim-safety, investigative, graphic-content, and classified-information grounds and require a follow-up report to Congress."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "b079812dcff6e58149d44630abea75aa9d6eac8914f0a91daeae2369364c57ed",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:289:v4",
+      "exact_action_identity": "119:hr:4405",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "suspension_passage",
+      "limitations": [
+        "Permit tailored withholding or redaction for victim privacy, child sexual-abuse material, temporary active-investigation needs, graphic images, and properly classified information."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2(c)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:4405:eh",
+          "support_state": "directly_supported",
+          "wording": "Permit tailored withholding or redaction for victim privacy, child sexual-abuse material, temporary active-investigation needs, graphic images, and properly classified information."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:4405:eh",
+          "support_state": "directly_supported",
+          "wording": "Require release of specified unclassified DOJ and FBI Epstein-related records within 30 days."
+        },
+        {
+          "locator": "section 2(b)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:4405:eh",
+          "support_state": "directly_supported",
+          "wording": "Bar withholding based only on embarrassment, reputational harm, or political sensitivity."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:4405:eh",
+          "support_state": "directly_supported",
+          "wording": "Require a congressional report on releases, withholdings, redactions, and named officials."
+        }
+      ],
+      "official_member_action": "yea",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:4405:eh",
+        "wording": "To require the Attorney General to release all documents and records in possession of the Department of Justice relating to Jeffrey Epstein, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 4405, requiring the Attorney General within 30 days to release searchable, downloadable unclassified Justice Department records concerning Jeffrey Epstein and related people, entities, agreements, investigations, detention, and death. It would limit withholding to specified privacy, victim-safety, investigative, graphic-content, and classified-information grounds and require a follow-up report to Congress.",
+      "proposed_member_position_effect": "supports_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:289",
+        "congress_text:119:hr:4405:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:298",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "28ec88a1ca1a371061a82ab3be0d32e1e076a4e8e19e3ed8367f6a6f8819da21",
+      "candidate_id": "action-interpretation-candidate:house:119:1:298:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:298:meaning",
+          "limitation": null,
+          "locator": "section 2; section 3; sections 2-3; section 4",
+          "source_id": "congress_text:119:hr:5214:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 5214, requiring pretrial and post-conviction detention for defined D.C. crimes of violence or dangerous crimes and secured cash bail for a separate group of public-safety or public-order offenses. It also would revise covered-offense definitions and apply to charges filed at least 30 days after enactment."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "8ad9b9769f2991b891683e74df48d3b3f32acbf34f57abd30e0fa8e61c917a0a",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:298:v4",
+      "exact_action_identity": "119:hr:5214",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The changes apply to people charged on or after 30 days following enactment."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 4",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:5214:eh",
+          "support_state": "directly_supported",
+          "wording": "The changes apply to people charged on or after 30 days following enactment."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:5214:eh",
+          "support_state": "directly_supported",
+          "wording": "Require pretrial and post-conviction detention for defined crimes of violence or dangerous crimes."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:5214:eh",
+          "support_state": "directly_supported",
+          "wording": "Require secured appearance bonds for defined public-safety or public-order crimes."
+        },
+        {
+          "locator": "sections 2-3",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:5214:eh",
+          "support_state": "directly_supported",
+          "wording": "Revise definitions and related release procedures."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:5214:eh",
+        "wording": "To require mandatory pretrial and post conviction detention for crimes of violence and dangerous crimes and require mandatory cash bail for certain offenses that pose a threat to public safety or order in the District of Columbia, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 5214, requiring pretrial and post-conviction detention for defined D.C. crimes of violence or dangerous crimes and secured cash bail for a separate group of public-safety or public-order offenses. It also would revise covered-offense definitions and apply to charges filed at least 30 days after enactment.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:298",
+        "congress_text:119:hr:5214:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:299",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "4e3307690cdf649c3fe00b60c33fe484887d1dfab85656659127903c8bd9d6d8",
+      "candidate_id": "action-interpretation-candidate:house:119:1:299:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:299:meaning",
+          "limitation": null,
+          "locator": "section 2(a); section 2(b)",
+          "source_id": "congress_text:119:hr:5107:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 5107, repealing most of D.C.'s 2022 Comprehensive Policing and Justice Reform Amendment Act and reviving prior law, while retaining subtitles S and A of title I of that Act."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "216465b51e3edb42578cfdeac21250bbc2c4947be5b4838bd255155c4aa1db11",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:299:v4",
+      "exact_action_identity": "119:hr:5107",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "Retain subtitles S and A of title I rather than repealing the entire 2022 Act."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2(b)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:5107:eh",
+          "support_state": "directly_supported",
+          "wording": "Retain subtitles S and A of title I rather than repealing the entire 2022 Act."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:5107:eh",
+          "support_state": "directly_supported",
+          "wording": "Repeal most of D.C.'s 2022 policing reform law and restore or revive prior law."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:5107:eh",
+        "wording": "To repeal the Comprehensive Policing and Justice Reform Amendment Act of 2022 enacted by the District of Columbia Council."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 5107, repealing most of D.C.'s 2022 Comprehensive Policing and Justice Reform Amendment Act and reviving prior law, while retaining subtitles S and A of title I of that Act.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:299",
+        "congress_text:119:hr:5107:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:340",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "7e287a65538d55ca287afcff20bfe67f9d5eeeabe6f239cd0e86bc645bafdfa4",
+      "candidate_id": "action-interpretation-candidate:house:119:1:340:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:340:meaning",
+          "limitation": null,
+          "locator": "sections 2-3; section 3, secure-facility provision; section 3, placement generally; section 3, sponsor provisions; section 6; section 5",
+          "source_id": "congress_text:119:hr:4371:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 4371, requiring consultation, criminal-record collection, and gang-related screening before specified placements of unaccompanied children, and secure-facility placement for certain children age 12 or older who are flight risks or dangers. It also would bar release on recognizance, restrict sponsors by immigration status and household criminal history, require sponsor-household information sharing, and allow specified immediate-implementation exemptions."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "bc28a431e3ca90556b0bc89a9ec9d752aad63c3bbb0cabb5923e34dde128f22f",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:340:v4",
+      "exact_action_identity": "119:hr:4371",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The placement rules apply to pending and future release and custody determinations.",
+        "Officials may bypass specified Paperwork Reduction Act or Administrative Procedure Act steps when they determine compliance would impede immediate implementation."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 6",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:4371:eh",
+          "support_state": "directly_supported",
+          "wording": "The placement rules apply to pending and future release and custody determinations."
+        },
+        {
+          "limit_id": "l2",
+          "locator": "section 5",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:4371:eh",
+          "support_state": "directly_supported",
+          "wording": "Officials may bypass specified Paperwork Reduction Act or Administrative Procedure Act steps when they determine compliance would impede immediate implementation."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "sections 2-3",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:4371:eh",
+          "support_state": "directly_supported",
+          "wording": "Require interagency consultation, foreign criminal-record requests, and gang-related screening before placement."
+        },
+        {
+          "locator": "section 3, secure-facility provision",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:4371:eh",
+          "support_state": "directly_supported",
+          "wording": "Require secure placement for specified children age 12 or older who are flight risks or dangers."
+        },
+        {
+          "locator": "section 3, placement generally",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:4371:eh",
+          "support_state": "directly_supported",
+          "wording": "Prohibit release on the child's own recognizance."
+        },
+        {
+          "locator": "section 3, sponsor provisions",
+          "provision_id": "p4",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:4371:eh",
+          "support_state": "directly_supported",
+          "wording": "Restrict sponsors and household members by status and criminal history and require household information sharing."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:4371:eh",
+        "wording": "To amend the William Wilberforce Trafficking Victims Protection Reauthorization Act of 2008 and the Homeland Security Act of 2002 to enhance efforts to combat the trafficking of children."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 4371, requiring consultation, criminal-record collection, and gang-related screening before specified placements of unaccompanied children, and secure-facility placement for certain children age 12 or older who are flight risks or dangers. It also would bar release on recognizance, restrict sponsors by immigration status and household criminal history, require sponsor-household information sharing, and allow specified immediate-implementation exemptions.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:340",
+        "congress_text:119:hr:4371:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:1:351",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "8e3ae5b9ee5c454f54d2eba4913816a2f8b00a138b98fbbd22bd595dfe92eb96",
+      "candidate_id": "action-interpretation-candidate:house:119:1:351:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:1:351:meaning",
+          "limitation": null,
+          "locator": "section 2, new 18 U.S.C. 116(a)-(b); section 2, new 18 U.S.C. 116(c); section 2, new 18 U.S.C. 116(a)-(c); section 2, new 18 U.S.C. 116(d), (h); section 2, new 18 U.S.C. 116(f); section 2, new 18 U.S.C. 116(g); section 2, new 18 U.S.C. 116(g)(1)(B)",
+          "source_id": "congress_text:119:hr:3492:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 3492, creating federal offenses for specified genital or bodily procedures, administration of puberty-blocking or cross-sex hormones, and facilitation or transport for female genital mutilation involving minors, with maximum prison terms of 10 years. The bill would bar prosecution of the minor and preserve specified medical, intersex-condition, injury-treatment, imminent-health, and precocious-puberty exceptions while excluding mental or emotional distress alone from its health exception."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "75cba4909b37aeeb7b3a63221006768c2c87552aebc3d62e82d14c03056b9a68",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:1:351:v4",
+      "exact_action_identity": "119:hr:3492",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The minor who undergoes a covered procedure may not be prosecuted under the section.",
+        "Specified medical, intersex-condition, prior-injury, imminent-physical-health, and precocious-puberty exceptions remain.",
+        "Mental, behavioral, or emotional distress or disorder alone does not satisfy the minor-health exception."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2, new 18 U.S.C. 116(f)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:3492:eh",
+          "support_state": "directly_supported",
+          "wording": "The minor who undergoes a covered procedure may not be prosecuted under the section."
+        },
+        {
+          "limit_id": "l2",
+          "locator": "section 2, new 18 U.S.C. 116(g)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:3492:eh",
+          "support_state": "directly_supported",
+          "wording": "Specified medical, intersex-condition, prior-injury, imminent-physical-health, and precocious-puberty exceptions remain."
+        },
+        {
+          "limit_id": "l3",
+          "locator": "section 2, new 18 U.S.C. 116(g)(1)(B)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:3492:eh",
+          "support_state": "directly_supported",
+          "wording": "Mental, behavioral, or emotional distress or disorder alone does not satisfy the minor-health exception."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2, new 18 U.S.C. 116(a)-(b)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:3492:eh",
+          "support_state": "directly_supported",
+          "wording": "Create offenses covering defined genital or bodily procedures and chemical castration involving minors."
+        },
+        {
+          "locator": "section 2, new 18 U.S.C. 116(c)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:3492:eh",
+          "support_state": "directly_supported",
+          "wording": "Cover facilitation, consent, or transport for female genital mutilation of a minor."
+        },
+        {
+          "locator": "section 2, new 18 U.S.C. 116(a)-(c)",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:3492:eh",
+          "support_state": "directly_supported",
+          "wording": "Set fines and maximum 10-year imprisonment for the covered offenses."
+        },
+        {
+          "locator": "section 2, new 18 U.S.C. 116(d), (h)",
+          "provision_id": "p4",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:3492:eh",
+          "support_state": "directly_supported",
+          "wording": "Define covered procedures, medications, minors, and jurisdictional connections."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:3492:eh",
+        "wording": "To amend section 116 of title 18, United States Code, with respect to genital and bodily mutilation and chemical castration of minors."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 3492, creating federal offenses for specified genital or bodily procedures, administration of puberty-blocking or cross-sex hormones, and facilitation or transport for female genital mutilation involving minors, with maximum prison terms of 10 years. The bill would bar prosecution of the minor and preserve specified medical, intersex-condition, injury-treatment, imminent-health, and precocious-puberty exceptions while excluding mental or emotional distress alone from its health exception.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:1:351",
+        "congress_text:119:hr:3492:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:155",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "4b55c182985d6d3e8c39cc92bbcf8d78cc8ea8abada4e97520130255f48fbc2b",
+      "candidate_id": "action-interpretation-candidate:house:119:2:155:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:155:meaning",
+          "limitation": "Official source identity conflict remains visible.",
+          "locator": "section 1(a); section 1(b)",
+          "source_id": "govinfo_text_119_s4465_es",
+          "support_state": "supported_with_visible_identity_conflict",
+          "wording": "The House choice was whether to pass S. 4465, whose operative body would extend two Title VII FISA sunset references from April 30, 2026, to June 12, 2026, effective on the earlier of enactment or April 29, 2026. The action is kept ambiguous because the governed XML's Dublin Core title identifies the 110th Congress while its structured fields and governed action identify the 119th Congress and S. 4465."
+        }
+      ],
+      "competing_plausible_interpretations": [
+        "The operative body matches the governed 119th-Congress action while the Dublin Core title may be stale metadata."
+      ],
+      "confidence": "low",
+      "coverage_assessment": "source_limited",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [
+        "surveillance_authority",
+        "fisc_and_court_authority",
+        "civil_liberty_protections"
+      ],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "4678573047243009028bb086b3af7d5d7b17faec9a9fd094b9b39da90a73e7dd",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:155:v4",
+      "exact_action_identity": "119:s:4465",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "suspension_passage",
+      "limitations": [
+        "Take effect on the earlier of enactment or April 29, 2026."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 1(b)",
+          "representation_state": "represented_as_limit",
+          "source_id": "govinfo_text_119_s4465_es",
+          "support_state": "directly_supported",
+          "wording": "Take effect on the earlier of enactment or April 29, 2026."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 1(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_s4465_es",
+          "support_state": "directly_supported",
+          "wording": "Extend two Title VII repeal-date references from April 30, 2026, to June 12, 2026."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "govinfo_text_119_s4465_es",
+        "wording": "To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass S. 4465, whose operative body would extend two Title VII FISA sunset references from April 30, 2026, to June 12, 2026, effective on the earlier of enactment or April 29, 2026. The action is kept ambiguous because the governed XML's Dublin Core title identifies the 110th Congress while its structured fields and governed action identify the 119th Congress and S. 4465.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": {
+        "dublin_core_title": "110 S4465 ES: To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes.",
+        "editorial_disposition": "ambiguous",
+        "governed_house_action_id": "house:119:2:155",
+        "governed_measure_identity": "119:s:4465",
+        "mechanical_reconciliation": "The structured congress and legis-num fields agree with the governed House action and measure identity; the Dublin Core title's 110th-Congress token conflicts and is preserved rather than rewritten.",
+        "operative_body_use": "The body can support the two explicit date substitutions and effective-date clause, but the candidate remains ambiguous because the official metadata conflict is unresolved editorially.",
+        "state": "conflict_visible_body_usable_with_ambiguity",
+        "structured_congress": "119th CONGRESS",
+        "structured_legis_num": "S. 4465"
+      },
+      "source_references": [
+        "clerk:119:2:155",
+        "govinfo_text_119_s4465_es"
+      ],
+      "status": "ambiguous",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [
+        "The governed XML's Dublin Core title conflicts with its structured 119th-Congress identity fields."
+      ],
+      "unresolved_editorial_questions": [
+        "Can a human editor accept use of the operative body despite the preserved official metadata conflict?"
+      ]
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:157",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "9b9975cea14473d71b1cda4085ffd143cfc9f8176812abe57c109b90bfea1518",
+      "candidate_id": "action-interpretation-candidate:house:119:2:157:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:157:meaning",
+          "limitation": null,
+          "locator": "section 3; section 3; section 4; section 4",
+          "source_id": "govinfo_text_119_hr2853_eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 2853 as amended, expanding specified federal theft, stolen-goods, forfeiture, and money-laundering rules for organized retail and supply-chain crime and aggregated conduct. It also would establish a Homeland Security coordination center for federal, State, local, and private-sector investigations and information sharing."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "1072fda1d3897ab2ba0ef8064f6c82a6b61821a2c6e2355c0694d9cf1331606f",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:157:v4",
+      "exact_action_identity": "119:hr:2853",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "suspension_passage_as_amended",
+      "limitations": [],
+      "material_limits_and_exceptions": [],
+      "material_provisions": [
+        {
+          "locator": "section 3",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr2853_eh",
+          "support_state": "directly_supported",
+          "wording": "Expand specified forfeiture, laundering, interstate-shipment, and stolen-goods provisions."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr2853_eh",
+          "support_state": "directly_supported",
+          "wording": "Apply an aggregate $5,000 threshold over 12 months to specified transported or received stolen goods."
+        },
+        {
+          "locator": "section 4",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr2853_eh",
+          "support_state": "directly_supported",
+          "wording": "Establish an Organized Retail and Supply Chain Crime Coordination Center."
+        },
+        {
+          "locator": "section 4",
+          "provision_id": "p4",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr2853_eh",
+          "support_state": "directly_supported",
+          "wording": "Require federal, State, local, and private-sector coordination and secure information sharing."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "govinfo_text_119_hr2853_eh",
+        "wording": "To combat organized crime involving the illegal acquisition of retail goods and cargo for the purpose of selling those illegally obtained goods through physical and online retail marketplaces."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 2853 as amended, expanding specified federal theft, stolen-goods, forfeiture, and money-laundering rules for organized retail and supply-chain crime and aggregated conduct. It also would establish a Homeland Security coordination center for federal, State, local, and private-sector investigations and information sharing.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:157",
+        "govinfo_text_119_hr2853_eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:169",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "a056e6f282435bd0e98682ea2370803e9751c14f1bb6cb12b23beee7e37a32d0",
+      "candidate_id": "action-interpretation-candidate:house:119:2:169:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:169:meaning",
+          "limitation": null,
+          "locator": "section 2",
+          "source_id": "govinfo_text_119_hr6260_eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 6260, extending the existing federal offense for false statements and overvaluation in insurance business to include posting monetary bail, criminal bail bonds, and federal immigration bail bonds."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "a91370f61153068a40ec9a42f1efadeef208dc3bc0be7b734f99602a5ccd3f15",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:169:v4",
+      "exact_action_identity": "119:hr:6260",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [],
+      "material_limits_and_exceptions": [],
+      "material_provisions": [
+        {
+          "locator": "section 2",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr6260_eh",
+          "support_state": "directly_supported",
+          "wording": "Add monetary bail, criminal bail bonds, and federal immigration bail bonds to the covered insurance-business transaction provision."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "govinfo_text_119_hr6260_eh",
+        "wording": "To amend title 18, United States Code, to prohibit fraud in connection with posting bail."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 6260, extending the existing federal offense for false statements and overvaluation in insurance business to include posting monetary bail, criminal bail bonds, and federal immigration bail bonds.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:169",
+        "govinfo_text_119_hr6260_eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:171",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "ad35e5d7dc9e69691eed2f967fd999a23648401eeab9263fa847119fa6309637",
+      "candidate_id": "action-interpretation-candidate:house:119:2:171:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:171:meaning",
+          "limitation": null,
+          "locator": "section 2(a); section 2(b)",
+          "source_id": "govinfo_text_119_hr5625_eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 5625, requiring the Attorney General within one year and annually thereafter to publish a list of States and local governments that allow personal-recognizance or unsecured-bond release for offenses the Attorney General determines threaten public safety or order."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "6a98a160ae8488ffc7a80778077b590466b9187fdae915fb167ac821fbe420db",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:171:v4",
+      "exact_action_identity": "119:hr:5625",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The Attorney General defines the covered public-safety or public-order offenses, with violent, sexual, disorder, property-destruction, and flight examples."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2(b)",
+          "representation_state": "represented_as_limit",
+          "source_id": "govinfo_text_119_hr5625_eh",
+          "support_state": "directly_supported",
+          "wording": "The Attorney General defines the covered public-safety or public-order offenses, with violent, sexual, disorder, property-destruction, and flight examples."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr5625_eh",
+          "support_state": "directly_supported",
+          "wording": "Require annual publication of jurisdictions permitting cashless pretrial release for covered offenses."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "govinfo_text_119_hr5625_eh",
+        "wording": "To direct the Attorney General to make publicly available a list of each State and unit of local government that permits cashless bail, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 5625, requiring the Attorney General within one year and annually thereafter to publish a list of States and local governments that allow personal-recognizance or unsecured-bond release for offenses the Attorney General determines threaten public safety or order.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:171",
+        "govinfo_text_119_hr5625_eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:218",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "d21506e45f352ad12e411aaacc93cee4fa6c1c7a258fdd88401ca0ab37fcdb74",
+      "candidate_id": "action-interpretation-candidate:house:119:2:218:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:218:meaning",
+          "limitation": null,
+          "locator": "section 2; section 3; section 4; section 5; section 2",
+          "source_id": "govinfo_text_119_hr8312_eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 8312, establishing Treasury fraud-prevention and payment-integrity data functions, a permanent Inspector General for Fraud, Accountability, and Recovery, and expanded fraud-related data-sharing authority. It also would transfer the Pandemic Response Accountability Committee's assets and obligations to the new office at the end of 2028."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "55bcd7ee822a8e60cce2fbefb738a43a80f68047d25d3cc42be854154f6e7767",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:218:v4",
+      "exact_action_identity": "119:hr:8312",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The Fiscal Service data-analysis function excludes investigative and law-enforcement functions and is bounded by applicable privacy and security law."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2",
+          "representation_state": "represented_as_limit",
+          "source_id": "govinfo_text_119_hr8312_eh",
+          "support_state": "directly_supported",
+          "wording": "The Fiscal Service data-analysis function excludes investigative and law-enforcement functions and is bounded by applicable privacy and security law."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr8312_eh",
+          "support_state": "directly_supported",
+          "wording": "Establish Treasury fraud-prevention, Do Not Pay, and voluntary governmentwide data-analysis functions."
+        },
+        {
+          "locator": "section 3",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr8312_eh",
+          "support_state": "directly_supported",
+          "wording": "Create a permanent Inspector General for Fraud, Accountability, and Recovery."
+        },
+        {
+          "locator": "section 4",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr8312_eh",
+          "support_state": "directly_supported",
+          "wording": "Authorize specified interagency and private-entity data-sharing agreements and legislative recommendations."
+        },
+        {
+          "locator": "section 5",
+          "provision_id": "p4",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr8312_eh",
+          "support_state": "directly_supported",
+          "wording": "Terminate the pandemic committee and transfer its assets and obligations at the end of 2028."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "govinfo_text_119_hr8312_eh",
+        "wording": "To establish fraud prevention and program integrity functions and data sharing authorities within the Department of Treasury and a permanent governmentwide Inspector General for Fraud, Accountability, and Recovery, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 8312, establishing Treasury fraud-prevention and payment-integrity data functions, a permanent Inspector General for Fraud, Accountability, and Recovery, and expanded fraud-related data-sharing authority. It also would transfer the Pandemic Response Accountability Committee's assets and obligations to the new office at the end of 2028.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:218",
+        "govinfo_text_119_hr8312_eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:221",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "5dc92c868830e0389af6211a01208b704212ec83763918fd86d5a63c96c54a8c",
+      "candidate_id": "action-interpretation-candidate:house:119:2:221:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:221:meaning",
+          "limitation": null,
+          "locator": "section 1(a); section 1(b)",
+          "source_id": "govinfo_text_119_hr9238_cdh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 9238, extending two Title VII FISA sunset references from June 12, 2026, to July 2, 2026. The extension would take effect on the earlier of enactment or June 11, 2026."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [
+        "surveillance_authority",
+        "fisc_and_court_authority",
+        "civil_liberty_protections"
+      ],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "57eb6fd70a8f70a952a1547faa07d3857555243c8fd13746aae6ce1ae2320e2a",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:221:v4",
+      "exact_action_identity": "119:hr:9238",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "suspension_passage",
+      "limitations": [
+        "Take effect on the earlier of enactment or June 11, 2026."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 1(b)",
+          "representation_state": "represented_as_limit",
+          "source_id": "govinfo_text_119_hr9238_cdh",
+          "support_state": "directly_supported",
+          "wording": "Take effect on the earlier of enactment or June 11, 2026."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 1(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "govinfo_text_119_hr9238_cdh",
+          "support_state": "directly_supported",
+          "wording": "Extend two Title VII repeal-date references from June 12, 2026, to July 2, 2026."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "govinfo_text_119_hr9238_cdh",
+        "wording": "To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 9238, extending two Title VII FISA sunset references from June 12, 2026, to July 2, 2026. The extension would take effect on the earlier of enactment or June 11, 2026.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:221",
+        "govinfo_text_119_hr9238_cdh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:227",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "e0d2f57b77c73ba5ce3c2af6a48749e71a00f7c5c6a17c1fb50d1a06a7e70433",
+      "candidate_id": "action-interpretation-candidate:house:119:2:227:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:227:meaning",
+          "limitation": null,
+          "locator": "section 2(a), new subsection (h); section 2(a), new subsection (i); section 2(a), new subsection (i); section 2(b); section 2(a), new subsection (i)(2)(D)",
+          "source_id": "congress_text:119:hr:2478:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 2478 as amended, allowing participating open-end investment companies and transfer agents to delay specified-adult account redemptions when they reasonably believe financial exploitation has occurred, is occurring, or was attempted. The bill sets contact, notice, review, recordkeeping, duration, and government-extension rules and requires SEC recommendations."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "eba472d609b60fe035d3439820c5ab3401fbe9a7f4876c49416a0085679552f5",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:227:v4",
+      "exact_action_identity": "119:hr:2478",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "suspension_passage_as_amended",
+      "limitations": [
+        "Notice to a trusted contact is not required when the firm reasonably believes that contact is involved in exploitation."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2(a), new subsection (i)(2)(D)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:2478:eh",
+          "support_state": "directly_supported",
+          "wording": "Notice to a trusted contact is not required when the firm reasonably believes that contact is involved in exploitation."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2(a), new subsection (h)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2478:eh",
+          "support_state": "directly_supported",
+          "wording": "Allow an elective trusted-contact and financial-exploitation protection regime for direct-at-fund accounts."
+        },
+        {
+          "locator": "section 2(a), new subsection (i)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2478:eh",
+          "support_state": "directly_supported",
+          "wording": "Permit a 15-business-day redemption delay, with a possible 10-business-day internal extension and further government extension."
+        },
+        {
+          "locator": "section 2(a), new subsection (i)",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2478:eh",
+          "support_state": "directly_supported",
+          "wording": "Require internal review, notices, procedures, disclosures, and retained records."
+        },
+        {
+          "locator": "section 2(b)",
+          "provision_id": "p4",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:2478:eh",
+          "support_state": "directly_supported",
+          "wording": "Require SEC regulatory and legislative recommendations."
+        }
+      ],
+      "official_member_action": "yea",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:2478:eh",
+        "wording": "To amend the Investment Company Act of 1940 to postpone the date of payment or satisfaction upon redemption of certain securities in the case of the financial exploitation of specified adults, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 2478 as amended, allowing participating open-end investment companies and transfer agents to delay specified-adult account redemptions when they reasonably believe financial exploitation has occurred, is occurring, or was attempted. The bill sets contact, notice, review, recordkeeping, duration, and government-extension rules and requires SEC recommendations.",
+      "proposed_member_position_effect": "supports_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:227",
+        "congress_text:119:hr:2478:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:234",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "d4922b8c93cce1b6036c50f735a7b87ba4a1a6423e131df4cf212a34ff029992",
+      "candidate_id": "action-interpretation-candidate:house:119:2:234:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:234:meaning",
+          "limitation": null,
+          "locator": "section 2(a)-(b); section 2(b); section 2(c)",
+          "source_id": "congress_text:119:hr:3106:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 3106, requiring Homeland Security to conduct a terrorism-response exercise involving extreme cold and cascading critical-infrastructure failures, with federal, State, Tribal, local, private-sector, and community coordination. DHS would submit an after-action report within 60 days after the exercise."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "794d122ae3df1fe7d67cec15e0936c9196871874db8addaa2e7382c703f758e5",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:234:v4",
+      "exact_action_identity": "119:hr:3106",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "suspension_passage",
+      "limitations": [],
+      "material_limits_and_exceptions": [],
+      "material_provisions": [
+        {
+          "locator": "section 2(a)-(b)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:3106:eh",
+          "support_state": "directly_supported",
+          "wording": "Conduct a terrorism exercise involving extreme cold and cascading critical-infrastructure effects."
+        },
+        {
+          "locator": "section 2(b)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:3106:eh",
+          "support_state": "directly_supported",
+          "wording": "Coordinate federal, State, local, Tribal, territorial, private-sector, and community participants."
+        },
+        {
+          "locator": "section 2(c)",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:3106:eh",
+          "support_state": "directly_supported",
+          "wording": "Submit a protected after-action report within 60 days."
+        }
+      ],
+      "official_member_action": "yea",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:3106:eh",
+        "wording": "To require the Secretary of Homeland Security to conduct a collective response to a terrorism exercise that includes the management of cascading effects on critical infrastructure during times of extreme cold weather, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 3106, requiring Homeland Security to conduct a terrorism-response exercise involving extreme cold and cascading critical-infrastructure failures, with federal, State, Tribal, local, private-sector, and community coordination. DHS would submit an after-action report within 60 days after the exercise.",
+      "proposed_member_position_effect": "supports_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:234",
+        "congress_text:119:hr:3106:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:240",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "b5a9ed64fb5efcb7071f1fae4ea17258eac9b11a3c40c2d47334ad7f9568098a",
+      "candidate_id": "action-interpretation-candidate:house:119:2:240:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:240:meaning",
+          "limitation": null,
+          "locator": "section 2(a); section 2(b); section 2(c); section 2(d); section 2(b)(4)(B); section 2(c)(2)",
+          "source_id": "congress_text:119:hr:1181:eh",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to pass H.R. 1181, barring payment-card networks and covered processors from requiring or assigning merchant category codes that specifically identify firearms retailers. The Attorney General would investigate complaints and could seek an injunction after notice and a cure period, while the bill would preempt related State and local code rules subject to specified transaction-integrity exceptions."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "a05d5a061407a4298df6fc94a33aec28082af67ce265cab7cb6ef00058c5459e",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:240:v4",
+      "exact_action_identity": "119:hr:1181",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The bill creates no private right of action.",
+        "The preemption rule preserves compliance with laws on disputes, fraud, illegal or suspicious activity, data breaches, and cyber risks."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "section 2(b)(4)(B)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:1181:eh",
+          "support_state": "directly_supported",
+          "wording": "The bill creates no private right of action."
+        },
+        {
+          "limit_id": "l2",
+          "locator": "section 2(c)(2)",
+          "representation_state": "represented_as_limit",
+          "source_id": "congress_text:119:hr:1181:eh",
+          "support_state": "directly_supported",
+          "wording": "The preemption rule preserves compliance with laws on disputes, fraud, illegal or suspicious activity, data breaches, and cyber risks."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "section 2(a)",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:1181:eh",
+          "support_state": "directly_supported",
+          "wording": "Prohibit required or assigned merchant codes that specifically distinguish firearms retailers."
+        },
+        {
+          "locator": "section 2(b)",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:1181:eh",
+          "support_state": "directly_supported",
+          "wording": "Create Attorney General complaint, investigation, notice, cure, and injunction procedures."
+        },
+        {
+          "locator": "section 2(c)",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:1181:eh",
+          "support_state": "directly_supported",
+          "wording": "Preempt State and local laws regulating the covered merchant codes."
+        },
+        {
+          "locator": "section 2(d)",
+          "provision_id": "p4",
+          "representation_state": "represented_in_meaning",
+          "source_id": "congress_text:119:hr:1181:eh",
+          "support_state": "directly_supported",
+          "wording": "Require annual congressional reporting on enforcement."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "official-title",
+        "projection_state": "verbatim_official_language",
+        "source_id": "congress_text:119:hr:1181:eh",
+        "wording": "To prohibit payment card networks and covered entities from requiring the use of or assigning merchant category codes that distinguish a firearms retailer from general-merchandise retailer or sporting-goods retailer, and for other purposes."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to pass H.R. 1181, barring payment-card networks and covered processors from requiring or assigning merchant category codes that specifically identify firearms retailers. The Attorney General would investigate complaints and could seek an injunction after notice and a cure period, while the bill would preempt related State and local code rules subject to specified transaction-integrity exceptions.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:240",
+        "congress_text:119:hr:1181:eh"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:259",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "40328e43afa22e88ab28ed7badd8ca463069d611232ba5e1fdcc80e0e03bea5c",
+      "candidate_id": "action-interpretation-candidate:house:119:2:259:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:259:meaning",
+          "limitation": null,
+          "locator": "governed Rules report pages 51-58; governed Rules report pages 51-57; governed Rules report pages 54-57; governed Rules report page 57",
+          "source_id": "rules-report-2026-07-20-amendment-6",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to add a Defense Secretary certification regime for domestic energy infrastructure tied to military readiness, fuel supply, or logistics, limiting State and local interference and creating operator enforcement rights and federal-court procedures. The amendment would establish heightened preliminary-relief standards while preserving specified federal safety, environmental, property, criminal, and operational boundaries."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "d1d2b402a4a6dee225dc2feb4183bad8f7606c0d5fe2ea454002d8c88088c954",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:259:v4",
+      "exact_action_identity": "house:119:2:259",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "amendment",
+      "limitations": [
+        "Preserve specified federal environmental, pipeline-safety, occupational-safety, property, criminal, and operational authorities."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "governed Rules report page 57",
+          "representation_state": "represented_as_limit",
+          "source_id": "rules-report-2026-07-20-amendment-6",
+          "support_state": "directly_supported",
+          "wording": "Preserve specified federal environmental, pipeline-safety, occupational-safety, property, criminal, and operational authorities."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "governed Rules report pages 51-58",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-6",
+          "support_state": "directly_supported",
+          "wording": "Authorize Defense certification of qualifying domestic energy infrastructure tied to military needs."
+        },
+        {
+          "locator": "governed Rules report pages 51-57",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-6",
+          "support_state": "directly_supported",
+          "wording": "Limit specified State and local actions that halt, condition, restrict, or substantially delay certified infrastructure."
+        },
+        {
+          "locator": "governed Rules report pages 54-57",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-6",
+          "support_state": "directly_supported",
+          "wording": "Create operator causes of action, venue rules, intervention rights, and preliminary-relief standards."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "governed Rules report pages 51-58",
+        "projection_state": "faithful_projection",
+        "source_id": "rules-report-2026-07-20-amendment-6",
+        "wording": "Amendment establishing protections and federal judicial procedures for Defense-certified domestic energy infrastructure."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to add a Defense Secretary certification regime for domestic energy infrastructure tied to military readiness, fuel supply, or logistics, limiting State and local interference and creating operator enforcement rights and federal-court procedures. The amendment would establish heightened preliminary-relief standards while preserving specified federal safety, environmental, property, criminal, and operational boundaries.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:259",
+        "rules-report-2026-07-20-amendment-6",
+        "rules-report-2026-07-20:house:119:2:259"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:265",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "90d4c165c1ee9dcdb9b50d8bb7f334ac480a92d714ea17a9b2202c99515cd5c1",
+      "candidate_id": "action-interpretation-candidate:house:119:2:265:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:265:meaning",
+          "limitation": null,
+          "locator": "governed Rules report page 75; governed Rules report page 75; governed Rules report page 75; governed Rules report page 75",
+          "source_id": "rules-report-2026-07-20-amendment-17",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to create a process allowing assigned service members and Defense civilian employees to request permission from designated commanders to carry personal firearms at specified Defense facilities, with denial limited to objective individualized reasons. The process would be due by December 31, 2027, and would repeal the prior FY2016 provision."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "078c869aa90d6bea85edad8a04bf50ad1f8f744156e12c27140713458f455f5e",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:265:v4",
+      "exact_action_identity": "house:119:2:265",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "amendment",
+      "limitations": [
+        "Commander permission remains required, and the rule does not limit broader Defense authority to permit additional people."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "governed Rules report page 75",
+          "representation_state": "represented_as_limit",
+          "source_id": "rules-report-2026-07-20-amendment-17",
+          "support_state": "directly_supported",
+          "wording": "Commander permission remains required, and the rule does not limit broader Defense authority to permit additional people."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "governed Rules report page 75",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-17",
+          "support_state": "directly_supported",
+          "wording": "Authorize assigned military and Defense civilian personnel to carry when permitted by a designated commander."
+        },
+        {
+          "locator": "governed Rules report page 75",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-17",
+          "support_state": "directly_supported",
+          "wording": "Create a presumption of approval with denial limited to objective, clearly described, individualized reasons."
+        },
+        {
+          "locator": "governed Rules report page 75",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-17",
+          "support_state": "directly_supported",
+          "wording": "Require implementation by December 31, 2027, and repeal the prior FY2016 provision."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "governed Rules report page 75",
+        "projection_state": "faithful_projection",
+        "source_id": "rules-report-2026-07-20-amendment-17",
+        "wording": "Amendment codifying and revising the process for certain Defense personnel to carry firearms at Defense facilities."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to create a process allowing assigned service members and Defense civilian employees to request permission from designated commanders to carry personal firearms at specified Defense facilities, with denial limited to objective individualized reasons. The process would be due by December 31, 2027, and would repeal the prior FY2016 provision.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:265",
+        "rules-report-2026-07-20-amendment-17",
+        "rules-report-2026-07-20:house:119:2:265"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:273",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "3dfe9bf6444797ede6abf8a76e07cdd3ea6e08027d77789122ef283e24fbb1dc",
+      "candidate_id": "action-interpretation-candidate:house:119:2:273:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:273:meaning",
+          "limitation": null,
+          "locator": "governed Rules report pages 87-97; governed Rules report pages 89-97; governed Rules report pages 89-97; governed Rules report pages 90-98",
+          "source_id": "rules-report-2026-07-20-amendment-28",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to add the Military Chaplains Modernization Act to H.R. 8800, codifying duties for Army, Navy, and Air Force chaplaincies; protecting chaplains from compelled actions contrary to their faith or endorsing organization; protecting religious exercise and confidential communications; and applying specified enforcement consequences through military law."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "medium",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "2eb483ff6736c29f38ac0b2a538a4d82de9e9f495731869216cf3fa752382521",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:273:v4",
+      "exact_action_identity": "house:119:2:273",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "amendment",
+      "limitations": [],
+      "material_limits_and_exceptions": [],
+      "material_provisions": [
+        {
+          "locator": "governed Rules report pages 87-97",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-28",
+          "support_state": "directly_supported",
+          "wording": "Codify duties and advisory responsibilities for the service chaplaincies."
+        },
+        {
+          "locator": "governed Rules report pages 89-97",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-28",
+          "support_state": "directly_supported",
+          "wording": "Protect chaplains against compelled contrary rites, speech, or tasks and against retaliation or discrimination."
+        },
+        {
+          "locator": "governed Rules report pages 89-97",
+          "provision_id": "p3",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-28",
+          "support_state": "directly_supported",
+          "wording": "Protect religious exercise and confidential, sacramental, and privileged communications."
+        },
+        {
+          "locator": "governed Rules report pages 90-98",
+          "provision_id": "p4",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-28",
+          "support_state": "directly_supported",
+          "wording": "Make specified violations enforceable under the Uniform Code of Military Justice and revise related statutes."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "governed Rules report pages 87-97",
+        "projection_state": "faithful_projection",
+        "source_id": "rules-report-2026-07-20-amendment-28",
+        "wording": "Military Chaplains Modernization Act of 2026 amendment to H.R. 8800."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to add the Military Chaplains Modernization Act to H.R. 8800, codifying duties for Army, Navy, and Air Force chaplaincies; protecting chaplains from compelled actions contrary to their faith or endorsing organization; protecting religious exercise and confidential communications; and applying specified enforcement consequences through military law.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:273",
+        "rules-report-2026-07-20-amendment-28",
+        "rules-report-2026-07-20:house:119:2:273"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:275",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "f2f61451114a3a3790de6faf25e80c8a9406b851bf43ac5a4c2c36e3fe839f6a",
+      "candidate_id": "action-interpretation-candidate:house:119:2:275:v4",
+      "claim_components": [
+        {
+          "component_id": "house:119:2:275:meaning",
+          "limitation": null,
+          "locator": "governed Rules report page 117; governed Rules report page 117; governed Rules report page 117",
+          "source_id": "rules-report-2026-07-20-amendment-44",
+          "support_state": "directly_supported",
+          "wording": "The House choice was whether to bar federal funds from purchasing, installing, operating, maintaining, or contracting for automated speed-enforcement camera systems on military installations and require existing systems to be removed within 180 days. The amendment would preserve commander authority to enforce speed limits by other means and cameras used primarily for security, access control, force protection, or criminal investigations."
+        }
+      ],
+      "competing_plausible_interpretations": [],
+      "confidence": "high",
+      "coverage_assessment": "complete_bounded_summary",
+      "coverage_rationale": "Every material mechanism and qualification identified from the governed operative representation is mapped to the meaning or an explicit limit.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "862f9b23733fe2e63a83c24c9c3f82bf0414a5020e7a0abfacd468ea0bcfe016",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:275:v4",
+      "exact_action_identity": "house:119:2:275",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "amendment",
+      "limitations": [
+        "Preserve other speed-enforcement methods and cameras primarily used for security, access control, force protection, or criminal investigation."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "governed Rules report page 117",
+          "representation_state": "represented_as_limit",
+          "source_id": "rules-report-2026-07-20-amendment-44",
+          "support_state": "directly_supported",
+          "wording": "Preserve other speed-enforcement methods and cameras primarily used for security, access control, force protection, or criminal investigation."
+        }
+      ],
+      "material_provisions": [
+        {
+          "locator": "governed Rules report page 117",
+          "provision_id": "p1",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-44",
+          "support_state": "directly_supported",
+          "wording": "Bar federal funds for automated speed-enforcement cameras on military installations."
+        },
+        {
+          "locator": "governed Rules report page 117",
+          "provision_id": "p2",
+          "representation_state": "represented_in_meaning",
+          "source_id": "rules-report-2026-07-20-amendment-44",
+          "support_state": "directly_supported",
+          "wording": "Require existing covered systems to be decommissioned and removed within 180 days."
+        }
+      ],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "governed Rules report page 117",
+        "projection_state": "faithful_projection",
+        "source_id": "rules-report-2026-07-20-amendment-44",
+        "wording": "Amendment prohibiting automated speed-enforcement cameras on military installations."
+      },
+      "proposed_exact_action_meaning": "The House choice was whether to bar federal funds from purchasing, installing, operating, maintaining, or contracting for automated speed-enforcement camera systems on military installations and require existing systems to be removed within 180 days. The amendment would preserve commander authority to enforce speed limits by other means and cameras used primarily for security, access control, force protection, or criminal investigations.",
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:275",
+        "rules-report-2026-07-20-amendment-44",
+        "rules-report-2026-07-20:house:119:2:275"
+      ],
+      "status": "proposed",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [],
+      "unresolved_editorial_questions": []
+    },
+    {
+      "accepted_candidate_used": false,
+      "action_id": "house:119:2:278",
+      "benchmark_used": false,
+      "candidate_content_subject_sha256": "6d120551f618414b3de9e2947c0d51e9e483daae55a617a81146a7b3d9769a9d",
+      "candidate_id": "action-interpretation-candidate:house:119:2:278:v4",
+      "claim_components": [],
+      "competing_plausible_interpretations": [
+        "Only the identity and final-passage stage can be stated safely from the governed packet."
+      ],
+      "confidence": "low",
+      "coverage_assessment": "no_safe_candidate",
+      "coverage_rationale": "No final-package inventory is safe because the supplied Rules report does not reproduce the complete House-passed text.",
+      "cross_domain_limitations": [],
+      "does_not_establish": [
+        "motive",
+        "ideology",
+        "party loyalty",
+        "a general issue position",
+        "support or opposition beyond the exact House choice",
+        "a policy trajectory",
+        "an episode-level position",
+        "a repeated pattern",
+        "a synthesis conclusion"
+      ],
+      "evidence_map_content_subject_sha256": "2f72c5d8fc5bf5e2719d7edb33dc32995f861323dbbc053792fe6c9fde5c1db1",
+      "evidence_map_id": "action-interpretation-evidence-map:house:119:2:278:v4",
+      "exact_action_identity": "119:hr:8800",
+      "generator_prompt_contract_version": "blind_material_detail_closure_v4",
+      "generator_run_identity": "m3a-r3-primary-offline-2026-08-02-v4",
+      "house_stage": "passage",
+      "limitations": [
+        "The governed Rules report supplies floor structure but not the complete final House-passed package after amendments."
+      ],
+      "material_limits_and_exceptions": [
+        {
+          "limit_id": "l1",
+          "locator": "governed Rules report pages 1-3",
+          "representation_state": "represented_as_limit",
+          "source_id": "rules-report-2026-07-20-final-passage-context",
+          "support_state": "directly_supported",
+          "wording": "The governed Rules report supplies floor structure but not the complete final House-passed package after amendments."
+        }
+      ],
+      "material_provisions": [],
+      "official_member_action": "nay",
+      "official_title_or_purpose": {
+        "locator": "governed Rules report pages 1-3",
+        "projection_state": "faithful_projection",
+        "source_id": "rules-report-2026-07-20-final-passage-context",
+        "wording": "Final passage of H.R. 8800, the National Defense Authorization Act for Fiscal Year 2027, as amended."
+      },
+      "proposed_exact_action_meaning": null,
+      "proposed_member_position_effect": "opposes_exact_choice",
+      "single_mechanism_exception_assessment": {
+        "eligible": false,
+        "rationale": "V2 uses operative provision locators; no candidate relies solely on the official title."
+      },
+      "source_identity_reconciliation": null,
+      "source_references": [
+        "clerk:119:2:278",
+        "rules-report-2026-07-20-final-passage-context"
+      ],
+      "status": "no_safe_candidate",
+      "title_only_exception_used": false,
+      "uncertainty_reasons": [
+        "The governed packet does not contain the complete final House-passed package after floor amendments."
+      ],
+      "unresolved_editorial_questions": [
+        "A complete governed final House-passed text would be required for a substantive candidate."
+      ]
+    }
+  ],
+  "content_subject_sha256": "ceceb2d032d16efa313e0ace677d6c7cfc7d67a2337d59eba4b5a3367ca46c7e",
+  "non_authorizing": true,
+  "schema_version": "initial_candidate_batch_v4"
+}

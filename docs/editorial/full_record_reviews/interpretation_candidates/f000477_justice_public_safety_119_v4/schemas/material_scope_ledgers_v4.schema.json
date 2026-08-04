@@ -1,0 +1,145 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/material_scope_ledgers_v4",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "candidate_blind": {
+      "type": "boolean"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "ledger_count": {
+      "type": "integer"
+    },
+    "ledgers": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "candidate_inaccessible_during_derivation": {
+            "type": "boolean"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "items": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "bounded_wording": {
+                  "type": "string"
+                },
+                "content_subject_sha256": {
+                  "type": "string"
+                },
+                "item_class": {
+                  "type": "string"
+                },
+                "item_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "materiality_rationale": {
+                  "type": "string"
+                },
+                "materiality_state": {
+                  "type": "string"
+                },
+                "quantitative_or_enumerated_values": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "source_id": {
+                  "type": "string"
+                },
+                "source_kind": {
+                  "type": "string"
+                },
+                "support_state": {
+                  "type": "string"
+                },
+                "surrounding_context_sufficiency": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "bounded_wording",
+                "content_subject_sha256",
+                "item_class",
+                "item_id",
+                "locator",
+                "materiality_rationale",
+                "materiality_state",
+                "quantitative_or_enumerated_values",
+                "source_id",
+                "source_kind",
+                "support_state",
+                "surrounding_context_sufficiency"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "ledger_id": {
+            "type": "string"
+          },
+          "operative_section_count": {
+            "type": "integer"
+          },
+          "source_packet_content_subject_sha256": {
+            "type": "string"
+          },
+          "source_packet_id": {
+            "type": "string"
+          },
+          "unresolved_context_questions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "action_id",
+          "candidate_inaccessible_during_derivation",
+          "content_subject_sha256",
+          "items",
+          "ledger_id",
+          "operative_section_count",
+          "source_packet_content_subject_sha256",
+          "source_packet_id",
+          "unresolved_context_questions"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "candidate_blind",
+    "content_subject_sha256",
+    "ledger_count",
+    "ledgers",
+    "non_authorizing",
+    "schema_version"
+  ],
+  "title": "material_scope_ledgers_v4",
+  "type": "object"
+}

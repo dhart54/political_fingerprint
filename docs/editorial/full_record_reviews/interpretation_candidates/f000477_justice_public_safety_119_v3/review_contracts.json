@@ -1,0 +1,48 @@
+{
+  "artifact_id": "action-interpretation-review-contracts:f000477:justice_public_safety:119:v3",
+  "consistency_reviewer": {
+    "checks_named_counts_enumerations_numbers_and_cross_fields": true,
+    "contract_version": "cross_field_semantic_consistency_review_v3",
+    "high_confidence_contradiction_forbidden": true
+  },
+  "content_subject_sha256": "bdf628789a980c2477e3553689d97ac07fdb88abe8e16325fd49f541f92020ac",
+  "coverage_reviewer": {
+    "cannot_accept_candidate": true,
+    "contract_version": "source_first_coverage_comparison_v3",
+    "receives_candidate_only_after_inventory_freeze": true
+  },
+  "differential_reviewer": {
+    "cannot_feed_related_candidate_into_primary_worker": true,
+    "contract_version": "related_action_differential_review_v3",
+    "runs_after_independent_primary_generation": true
+  },
+  "freeze_boundary": {
+    "benchmark_inaccessible": true,
+    "candidate_mutation_after_freeze": false,
+    "sampling_inaccessible": true
+  },
+  "non_authorizing": true,
+  "primary_worker": {
+    "benchmark_blind": true,
+    "episode_and_synthesis_blind": true,
+    "exact_packet_only": true,
+    "must_inventory_exact_version": true,
+    "other_candidate_conclusion_blind": true,
+    "party_blind": true,
+    "prompt_contract_version": "blind_source_first_action_interpretation_v3",
+    "public_copy_blind": true
+  },
+  "schema_version": "action_interpretation_review_contracts_v3",
+  "scope_reviewer": {
+    "cannot_accept_candidate": true,
+    "contract_version": "independent_scope_neutrality_review_v3",
+    "independent_from_other_reviewers": true
+  },
+  "source_first_inventory_reviewer": {
+    "candidate_authored_ids_do_not_define_inventory": true,
+    "contract_version": "candidate_blind_expected_inventory_v3",
+    "inventory_frozen_before_stage_2": true,
+    "must_bind_exact_source_locators": true,
+    "stage_1_candidate_inaccessible": true
+  }
+}

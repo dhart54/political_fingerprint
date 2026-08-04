@@ -72,22 +72,16 @@ class EditorialPipelineV1Tests(unittest.TestCase):
         self.assertFalse(proposal["persistence_authorized"])
         self.assertFalse(proposal["publication_authorized"])
         for source, adapted in zip(compiled["members"], presentation["members"]):
-            self.assertEqual(
-                source["proposition_graph"], adapted["proposition_graph"]
-            )
+            self.assertEqual(source["proposition_graph"], adapted["proposition_graph"])
             self.assertEqual(source["composition"], adapted["composition"])
 
     def test_optional_persistence_stage_is_inert_and_explicit(self) -> None:
         case = _cases()["semir-held-01-partial-service-missing-evidence"]
         default = replay_accepted_reference(case)
-        requested = replay_accepted_reference(
-            case, prepare_persistence_proposal=True
-        )
+        requested = replay_accepted_reference(case, prepare_persistence_proposal=True)
         self.assertIsNone(default.persistence_proposal)
         self.assertIsNotNone(requested.persistence_proposal)
-        self.assertFalse(
-            requested.persistence_proposal["production_write_performed"]
-        )
+        self.assertFalse(requested.persistence_proposal["production_write_performed"])
         self.assertEqual(
             default.compiled_ir,
             requested.persistence_proposal["compiled_ir"],
@@ -141,6 +135,36 @@ class EditorialPipelineV1Tests(unittest.TestCase):
             [r"C:\tools\npm.cmd", "run", "build", "--prefix", "frontend"]
         )
         self.assertTrue(result["frontend_included"])
+
+    def test_persistence_release_uses_pytest_collection(self) -> None:
+        with (
+            patch.object(
+                pipeline_command,
+                "_semantic_loop",
+                return_value={"tier": "semantic", "commands": []},
+            ),
+            patch.object(
+                pipeline_command,
+                "_run",
+                return_value={"command": "pytest persistence", "status": "pass"},
+            ) as run,
+        ):
+            result = pipeline_command._release_loop(
+                include_frontend=False,
+                include_persistence=True,
+            )
+        run.assert_called_once_with(
+            [
+                pipeline_command.sys.executable,
+                "-m",
+                "pytest",
+                "-q",
+                "-p",
+                "no:cacheprovider",
+                "backend/tests/test_editorial_artifact_persistence.py",
+            ]
+        )
+        self.assertTrue(result["persistence_included"])
 
     def test_representative_boundary_routes_are_preserved(self) -> None:
         cases = _cases()

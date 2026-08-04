@@ -1,0 +1,209 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/expected_provision_inventories_v3",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "content_subject_sha256": {
+      "type": "string"
+    },
+    "inventories": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "candidate_inaccessible_during_inventory_derivation": {
+            "type": "boolean"
+          },
+          "content_subject_sha256": {
+            "type": "string"
+          },
+          "expected_limits_and_exceptions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "expected_limit_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "quantitative_facts": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "source_id": {
+                  "type": "string"
+                },
+                "support_state": {
+                  "type": "string"
+                },
+                "wording": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "expected_limit_id",
+                "locator",
+                "quantitative_facts",
+                "source_id",
+                "support_state",
+                "wording"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "expected_provisions": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "expected_provision_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "quantitative_facts": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "source_id": {
+                  "type": "string"
+                },
+                "support_state": {
+                  "type": "string"
+                },
+                "wording": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "expected_provision_id",
+                "locator",
+                "quantitative_facts",
+                "source_id",
+                "support_state",
+                "wording"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "extraction_confidence": {
+            "type": "string"
+          },
+          "inventory_id": {
+            "type": "string"
+          },
+          "material_dates_and_thresholds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "quantities_and_enumerations": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "enumeration_id": {
+                  "type": "string"
+                },
+                "items": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "locator": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "count",
+                "enumeration_id",
+                "items",
+                "locator"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "review_contract_version": {
+            "type": "string"
+          },
+          "source_locators": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "source_packet_content_subject_sha256": {
+            "type": "string"
+          },
+          "source_packet_id": {
+            "type": "string"
+          },
+          "unresolved_source_questions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "action_id",
+          "candidate_inaccessible_during_inventory_derivation",
+          "content_subject_sha256",
+          "expected_limits_and_exceptions",
+          "expected_provisions",
+          "extraction_confidence",
+          "inventory_id",
+          "material_dates_and_thresholds",
+          "quantities_and_enumerations",
+          "review_contract_version",
+          "source_locators",
+          "source_packet_content_subject_sha256",
+          "source_packet_id",
+          "unresolved_source_questions"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "inventory_count": {
+      "type": "integer"
+    },
+    "non_authorizing": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "stage_1_candidate_inaccessible": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "content_subject_sha256",
+    "inventories",
+    "inventory_count",
+    "non_authorizing",
+    "schema_version",
+    "stage_1_candidate_inaccessible"
+  ],
+  "title": "expected_provision_inventories_v3",
+  "type": "object"
+}

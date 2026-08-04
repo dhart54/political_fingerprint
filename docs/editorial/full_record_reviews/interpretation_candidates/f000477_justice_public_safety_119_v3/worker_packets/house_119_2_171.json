@@ -1,0 +1,132 @@
+{
+  "action_id": "house:119:2:171",
+  "content_subject_sha256": "153823c572e943ac8b0faf59c1fb9ae2750699811944930c8ce5777fef75f7f0",
+  "cross_domain_limitations": [],
+  "exact_action_identity": "119:hr:5625",
+  "house_stage": "passage",
+  "neutral_methodology": [
+    "inventory_material_provisions_before_drafting",
+    "separate_official_title_from_interpretation",
+    "title_only_prohibited_without_independent_single_mechanism_finding",
+    "exact_choice_only",
+    "preserve_house_stage",
+    "yea_supports_exact_choice_only",
+    "nay_opposes_exact_choice_only",
+    "present_and_not_voting_non_directional",
+    "no_motive_or_broader_issue_inference",
+    "parent_context_cannot_replace_narrow_action",
+    "account_for_material_limits_exceptions_and_retained_provisions",
+    "preserve_ambiguity",
+    "no_safe_candidate_when_required",
+    "derive_each_exact_version_inventory_independently",
+    "do_not_reuse_related_action_inventory_or_conclusion",
+    "freeze_expected_inventory_before_candidate_comparison",
+    "verify_enumerated_categories_and_quantities_across_fields"
+  ],
+  "official_action_date": "2026-05-14",
+  "official_member_action": "nay",
+  "operative_text_versions": [
+    "eh"
+  ],
+  "packet_id": "action-interpretation-worker-packet:house:119:2:171:v3",
+  "schema_version": "action_interpretation_worker_packet_v3",
+  "sources": [
+    {
+      "deterministic_extraction": {
+        "projection": {
+          "action_date": "2026-05-14",
+          "action_id": "house:119:2:171",
+          "chamber": "house",
+          "congress": 119,
+          "house_action_stage": "passage",
+          "measure_identity": "119:hr:5625",
+          "member_action": "nay",
+          "official_action_description": "On Passage",
+          "operative_content_sha256": null,
+          "raw_provenance_sha256": "66bfbeae84fe3156fa76eb785c79c718b743f4191f027469fdc1685717376fc3",
+          "roll_number": 171,
+          "schema_version": "neutral_m3_source_projection_v1",
+          "source_url": "https://clerk.house.gov/evs/2026/roll171.xml",
+          "text_version": "2026-05-14"
+        }
+      },
+      "neutral_projection_sha256": "67c3b7c87b8d441e028613933dff1aba07f62822abaa48fa6e96b56729860d4f",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_171.xml",
+      "raw_sha256": "66bfbeae84fe3156fa76eb785c79c718b743f4191f027469fdc1685717376fc3",
+      "role": "member_action_evidence",
+      "source_id": "clerk:119:2:171",
+      "source_type": "house_clerk_roll_call",
+      "text_version": "2026-05-14"
+    },
+    {
+      "deterministic_extraction": {
+        "document_title": "119 HR 5625 EH: Cashless Bail Reporting Act",
+        "extraction_engine": "python_xml_elementtree_v1",
+        "extraction_limitation": null,
+        "official_title": "To direct the Attorney General to make publicly available a list of each State and unit of local government that permits cashless bail, and for other purposes.",
+        "section_headings": [
+          "Short title",
+          "Publication of cashless bail jurisdictions",
+          "In general",
+          "Covered offense defined"
+        ],
+        "structured_sections": [
+          {
+            "enum": "1.",
+            "header": "Short title",
+            "text": "1.Short titleThis Act may be cited as the Cashless Bail Reporting Act."
+          },
+          {
+            "enum": "2.",
+            "header": "Publication of cashless bail jurisdictions",
+            "text": "2.Publication of cashless bail jurisdictions (a)In generalNot later than one year after the date of enactment of this Act, and annually thereafter, the Attorney General shall make publicly available a list of each State and unit of local government that permits the release pending trial of a person charged with a covered offense on personal recognizance or upon execution of an unsecured appearance bond. (b)Covered offense definedIn this section, the term covered offense means a criminal offense that the Attorney General determines poses a clear threat to public safety and order, including— (1)an offense involving a violent or sexual act, such as murder, rape, sexual assault, carjacking, robbery, burglary, and assault; and (2)an offense that promotes public disorder, such as looting, vandalism, destruction of property, rioting or inciting to riot, or fleeing from a law enforcement officer."
+          }
+        ]
+      },
+      "neutral_projection_sha256": "7132417d49bd54380cc9aa73307c67da287be105bee3a6161262eb0e0025a277",
+      "raw_path": "docs/editorial/full_record_reviews/source_readiness/evidence/6fc394d8c05851976f332e2f0647d1b68303e3c78c7f9f48256e626ee8c5355d.xml",
+      "raw_sha256": "6fc394d8c05851976f332e2f0647d1b68303e3c78c7f9f48256e626ee8c5355d",
+      "role": "operative_content_interpretation_input",
+      "source_id": "govinfo_text_119_hr5625_eh",
+      "source_type": "govinfo_bill_text",
+      "text_version": "eh"
+    }
+  ],
+  "worker_input_allowlist": [
+    "action_id",
+    "official_action_date",
+    "house_stage",
+    "official_member_action",
+    "exact_action_identity",
+    "neutral_projections",
+    "operative_content",
+    "cross_domain_limitations",
+    "neutral_methodology",
+    "materiality_rubric"
+  ],
+  "worker_input_forbidden": [
+    "accepted_benchmark_interpretations",
+    "accepted_benchmark_text",
+    "advocacy",
+    "benchmark_conclusion",
+    "benchmark_membership",
+    "cosponsor_party",
+    "episode_membership",
+    "generic_bill_metadata",
+    "member_party",
+    "news",
+    "other_action_candidates",
+    "partisan_descriptions",
+    "political_commentary",
+    "public_language",
+    "related_action_candidate_conclusions",
+    "semantic_ir",
+    "sponsor_party",
+    "synthesis_outcomes",
+    "v1_action_candidates",
+    "v1_adversarial_reviews",
+    "v2_action_candidates",
+    "v2_benchmark_comparison",
+    "v2_provision_coverage_reviews"
+  ]
+}

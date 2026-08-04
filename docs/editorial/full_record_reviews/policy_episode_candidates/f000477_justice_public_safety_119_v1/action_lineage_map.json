@@ -1,0 +1,196 @@
+{
+  "accepted": false,
+  "action_count": 37,
+  "artifact_id": "action-lineage-map:f000477:justice_public_safety:119:v1",
+  "authorizing": false,
+  "candidate": true,
+  "canonical": false,
+  "content_subject_sha256": "015c269c8f5ffc32ad2feb03f890d15c7d860ea5632f278b16f189d4d97458ff",
+  "input_implementation_content_subject_sha256": "148fd8247b688ad17a751470471ce11e0dc1c7ae0ebef22876622c306ba617f0",
+  "neutral_no_episode_conclusions": true,
+  "public": false,
+  "relationship_count": 10,
+  "relationships": [
+    {
+      "action_ids": [
+        "house:119:1:6",
+        "house:119:1:23"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:6",
+        "house:119:1:23"
+      ],
+      "content_subject_sha256": "625894a646859c1054da48bba341e999cd59244f7863c5f074a8f906e9cc94ee",
+      "does_not_establish": "Episode membership or episode-level behavior.",
+      "lineage_id": "laken-riley-versions",
+      "relationship_evidence": "House and Senate versions of the same named detention-and-enforcement legislation.",
+      "relationship_state": "resolved",
+      "relationship_type": "near_duplicate_legislative_versions",
+      "unresolved_relationship_question": null
+    },
+    {
+      "action_ids": [
+        "house:119:1:32",
+        "house:119:1:33"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:32",
+        "house:119:1:33"
+      ],
+      "content_subject_sha256": "071490e0be216abbf73f359f99090253c091e4ace453560d9b07330d75d74358",
+      "does_not_establish": "Episode membership or episode-level behavior.",
+      "lineage_id": "halt-fentanyl-parent",
+      "relationship_evidence": "Roll 32 amended H.R. 27 before the roll 33 passage choice.",
+      "relationship_state": "resolved",
+      "relationship_type": "amendment_parent",
+      "unresolved_relationship_question": null
+    },
+    {
+      "action_ids": [
+        "house:119:1:33",
+        "house:119:1:166"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:33",
+        "house:119:1:166"
+      ],
+      "content_subject_sha256": "e856255cc4b239588c9075688390dd14d0527082aeaa35cc6c730cee847d0632",
+      "does_not_establish": "Episode membership or episode-level behavior.",
+      "lineage_id": "halt-fentanyl-successor",
+      "relationship_evidence": "H.R. 27 and S. 331 are successive classwide fentanyl scheduling and research frameworks.",
+      "relationship_state": "resolved",
+      "relationship_type": "predecessor_successor_framework",
+      "unresolved_relationship_question": null
+    },
+    {
+      "action_ids": [
+        "house:119:2:155",
+        "house:119:2:221"
+      ],
+      "chronological_action_ids": [
+        "house:119:2:155",
+        "house:119:2:221"
+      ],
+      "content_subject_sha256": "554b27bd5e9629944b62804234d18ae6a8298cc3171a62a2cd2b4c44c3603e83",
+      "does_not_establish": "Episode membership or episode-level behavior.",
+      "lineage_id": "fisa-short-extensions",
+      "relationship_evidence": "Operative dates and sunset references are successive, but roll 155 retains a source-identity conflict.",
+      "relationship_state": "unresolved",
+      "relationship_type": "possible_predecessor_successor",
+      "unresolved_relationship_question": "Can the operative body be treated as authoritative despite the preserved 110th/119th Congress metadata conflict?"
+    },
+    {
+      "action_ids": [
+        "house:119:1:270",
+        "house:119:1:271"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:270",
+        "house:119:1:271"
+      ],
+      "content_subject_sha256": "891c6048164dea58677f82601b62e043311c403cecc02c1eab603d536efb5271",
+      "does_not_establish": "Episode membership or episode-level behavior.",
+      "lineage_id": "dc-juvenile-measures",
+      "relationship_evidence": "Same-day D.C. juvenile-justice measures with different sentencing and jurisdiction mechanisms.",
+      "relationship_state": "resolved",
+      "relationship_type": "related_measure_family",
+      "unresolved_relationship_question": null
+    },
+    {
+      "action_ids": [
+        "house:119:1:162",
+        "house:119:1:275",
+        "house:119:1:299"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:162",
+        "house:119:1:275",
+        "house:119:1:299"
+      ],
+      "content_subject_sha256": "799a290cd8939dcb9b6d2931d6e55859eb734d5f7563788930b4618f70354889",
+      "does_not_establish": "Episode membership or episode-level behavior.",
+      "lineage_id": "dc-policing-family",
+      "relationship_evidence": "D.C. policing measures with distinct labor, pursuit, and statutory-repeal mechanisms.",
+      "relationship_state": "resolved",
+      "relationship_type": "related_measure_family",
+      "unresolved_relationship_question": null
+    },
+    {
+      "action_ids": [
+        "house:119:1:298",
+        "house:119:2:169",
+        "house:119:2:171"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:298",
+        "house:119:2:169",
+        "house:119:2:171"
+      ],
+      "content_subject_sha256": "e4e9998206e7c8ccded0a925a2baffd4469f5afbe487465805df40c927bc5c0d",
+      "does_not_establish": "Episode membership or episode-level behavior.",
+      "lineage_id": "bail-policy-family",
+      "relationship_evidence": "Bail-related measures with distinct D.C. detention, bond-business offense, and reporting mechanisms.",
+      "relationship_state": "resolved",
+      "relationship_type": "related_policy_family",
+      "unresolved_relationship_question": null
+    },
+    {
+      "action_ids": [
+        "house:119:1:68",
+        "house:119:2:218"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:68",
+        "house:119:2:218"
+      ],
+      "content_subject_sha256": "2f7482ccdd07546762981721fd521ea8d2e670b73c44be54dc0f212c45a3c2db",
+      "does_not_establish": "Episode membership or episode-level behavior.",
+      "lineage_id": "pandemic-fraud-family",
+      "relationship_evidence": "Fraud-control measures using distinct limitations-period and institutional oversight mechanisms.",
+      "relationship_state": "resolved",
+      "relationship_type": "related_policy_family",
+      "unresolved_relationship_question": null
+    },
+    {
+      "action_ids": [
+        "house:119:1:286",
+        "house:119:2:234"
+      ],
+      "chronological_action_ids": [
+        "house:119:1:286",
+        "house:119:2:234"
+      ],
+      "content_subject_sha256": "ffe66cd9a9f2b6d3eb36341691b0de6f9646a343f96cb83951833dc044328ba9",
+      "does_not_establish": "Episode membership or episode-level behavior.",
+      "lineage_id": "terrorism-preparedness-family",
+      "relationship_evidence": "Threat-preparedness measures using distinct assessment and exercise mechanisms.",
+      "relationship_state": "resolved",
+      "relationship_type": "related_policy_family",
+      "unresolved_relationship_question": null
+    },
+    {
+      "action_ids": [
+        "house:119:2:259",
+        "house:119:2:265",
+        "house:119:2:273",
+        "house:119:2:275",
+        "house:119:2:278"
+      ],
+      "chronological_action_ids": [
+        "house:119:2:259",
+        "house:119:2:265",
+        "house:119:2:273",
+        "house:119:2:275",
+        "house:119:2:278"
+      ],
+      "content_subject_sha256": "70e3133204e4cc915e29bea2af9197abe4653733179b038191ec0401ac7107a7",
+      "does_not_establish": "Episode membership or episode-level behavior.",
+      "lineage_id": "hr8800-parent-path",
+      "relationship_evidence": "Four distinct amendments share H.R. 8800 as parent; the final passage package remains no-safe.",
+      "relationship_state": "resolved",
+      "relationship_type": "shared_parent_measure",
+      "unresolved_relationship_question": null
+    }
+  ],
+  "schema_version": "neutral_action_lineage_map_v1"
+}
