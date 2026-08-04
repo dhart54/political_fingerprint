@@ -1,0 +1,83 @@
+{
+  "approval_bindings": [
+    {
+      "artifact_id": "delegated-semantic-ir-acceptance:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "fe434b3c3bcb0d6235003d144ad25c4e207d0dc104ec42fec1ec8e75d3514db9",
+      "decision": "approved",
+      "final_file_sha256": "23d27f84ce196380b6d02ca2d1a2e679847e7a0855c00d60b6df1542d499b405",
+      "role": "semantic_ir_acceptance"
+    },
+    {
+      "artifact_id": "full-record-semantic-validation:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "f7f36ce0194f508c4aad54032b3f94991535477a3f26c9e51ddf54cc4fc4b7a4",
+      "decision": "approved",
+      "final_file_sha256": "86747bc3777c0b514c1d1089afa8274a66792e780b9b5d93823e1f98d937b1a2",
+      "role": "semantic_validation"
+    },
+    {
+      "artifact_id": "launch-ratification:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "22faba18c447ba9ebd5045b74666c09cb0d030f36187e727732c68d561f0721e",
+      "decision": "approved",
+      "final_file_sha256": "eb5f6aa7775f8765c1319d80849dfeedbb41c85f8e30f30a21a53819a0f615d8",
+      "role": "user_ratification"
+    },
+    {
+      "artifact_id": "user-launch-ratification-receipt:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "67e7737091af7c35b06a36d2855df72085b875656b21ab77ae9caba41a9a9c80",
+      "decision": "approved",
+      "final_file_sha256": "40754c51f1832afbeaaccb9624dc7c505a2882b13e6b8f6095cc14fba1f8aef4",
+      "role": "risk_treatments"
+    },
+    {
+      "artifact_id": "full-record-synthesis-approval-projection:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "22faba18c447ba9ebd5045b74666c09cb0d030f36187e727732c68d561f0721e",
+      "decision": "approved",
+      "final_file_sha256": "eb5f6aa7775f8765c1319d80849dfeedbb41c85f8e30f30a21a53819a0f615d8",
+      "role": "full_record_synthesis_approval"
+    },
+    {
+      "artifact_id": "production-eligibility-approval:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "947e9e370a16a7823fb4a7ab3f6371949cf8bea9dfd5dbbc7a15b59c9727c451",
+      "decision": "approved",
+      "final_file_sha256": "432123d7e27a3505e0e8039594a8b15fa260a60205ff56b52c78bfddca9c3ca9",
+      "role": "production_eligibility"
+    },
+    {
+      "artifact_id": "semantic-routing-correction-authorization:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "199367a4d214ab1cb30ba63a06100040c15df8ce7f1cbf8f48f84bed1a7d517f",
+      "decision": "approved",
+      "final_file_sha256": "059a3bb4008909009aaef0e365ac8d94b8b53fd35bd37455bcba7312c3d6ae7a",
+      "role": "semantic_routing_correction_authorization"
+    }
+  ],
+  "binding": {
+    "action_accounting_sha256": "5558e769a0f76cb2e70b88cd9e510fb1740c04504dfdf163d4b1e6ebb1b491ad",
+    "artifact_id": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+    "artifact_version": 1,
+    "compiled_ir_sha256": "becb730af6c9ca6a08ecf6afb885503df99131530b4dc852a8e3e5817aab8fb3",
+    "congress": 119,
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "limitations_sha256": "e65b01bed2dce6ead9e3eee45093bc609690c75c1c8e6ac6b1c654f081292a34",
+    "mapping_set_sha256": "f627d073ab621c10a0a02666e7626ee96aeaacc1a09f07adf68222f639b49d59",
+    "member_id": "F000477",
+    "presentation_content_sha256": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55",
+    "review_route": "human_exception_required",
+    "reviewed_wording_sha256": "58722f5f61ea0b2eb3b41b3cbf58009971c6fcfd184e189117715e2955627fc7"
+  },
+  "decision_timestamp": "2026-08-04T13:32:00-04:00",
+  "receipt_id": "semantic-review-exception-resolution:f000477:justice_public_safety:119:v1",
+  "resolution": {
+    "accepted_substantive_blocker_count": 0,
+    "all_triggers_accounted": true,
+    "compiled_ir_unchanged": true,
+    "resulting_semantic_tier": "reviewed_conclusion",
+    "wording_and_mappings_unchanged": true
+  },
+  "reviewer": {
+    "authority": "delegated_product_methodology_editorial_authority_v1",
+    "reviewer_id": "reviewer:political-fingerprint-authority-thread"
+  },
+  "routing_trigger_ledger_sha256": "85edc5af4d3b31e791bfd23aba80a32cf11d9f176a236f243a6101b950aaa932",
+  "schema_version": "semantic_review_exception_resolution_v1",
+  "status": "approved"
+}

@@ -1,0 +1,107 @@
+{
+  "artifact_id": "production-eligibility-approval:f000477:justice_public_safety:119:v1",
+  "authorization": {
+    "create_candidate_bound_activation_bundle": true,
+    "manual_deployment": false,
+    "perform_fresh_read_only_production_preflight": true,
+    "prepare_content_addressed_production_backup": true,
+    "prepare_publication_activation_decision_packet": true,
+    "prepare_transactional_activation_and_rollback_plan": true,
+    "production_database_write": false,
+    "prove_backup_restore_in_disposable_database": true,
+    "publication_activation": false,
+    "publication_registry_mutation": false,
+    "push_unrelated_changes": false,
+    "record_production_eligibility": true
+  },
+  "content_subject_sha256": "947e9e370a16a7823fb4a7ab3f6371949cf8bea9dfd5dbbc7a15b59c9727c451",
+  "decision": {
+    "blocking_findings": [],
+    "decision": "approve_production_eligibility",
+    "decision_timestamp": "2026-08-04T10:22:00-04:00",
+    "findings": [
+      "PR #126 is merged through a normal merge commit and preserves the governed history.",
+      "The deployed inactive frontend and backend report the exact merge commit.",
+      "The existing compact seven-action publication remains active and unchanged.",
+      "The 37-action full-record candidate remains absent from ordinary public selectors.",
+      "The review-only route remains unpublished.",
+      "The full-record semantic, presentation, ratification, and benchmark identities remain unchanged.",
+      "Local, isolated-checkout, remote CI, release, frontend, and inactive-deployment validations pass.",
+      "No database or publication-registry mutation occurred.",
+      "A new candidate-bound activation bundle, fresh production preflight, backup/restore proof, and rollback receipt are still required before publication activation."
+    ],
+    "reviewer_authority": "delegated_product_methodology_editorial_authority_v1",
+    "reviewer_identity": "chatgpt:political_fingerprint_authority_thread",
+    "user_authority_basis": "The user explicitly approved the recommended roadmap, including production eligibility after merge and successful inactive-deployment evidence."
+  },
+  "evidence_bindings": {
+    "compact_regression_fixture": {
+      "final_file_sha256": "a2f611c8b9bc2194a27839dd0d8f3af2124f9c26285318af612f361adb878d3c",
+      "role": "compact_regression_fixture"
+    },
+    "full_record_presentation_candidate": {
+      "artifact_id": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+      "content_subject_sha256": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55",
+      "final_file_sha256": "9254e396c85b442e605203f2ebb48f4bbc28cb1c4709ad10bbb084445f5c6021"
+    },
+    "production_eligibility_packet": {
+      "artifact_id": "production-eligibility-review:f000477:justice_public_safety:119:m9:v1",
+      "content_subject_sha256": "b2dc557d4629c191f677a0b6c6bbf94b97813f274b1212c544b8359b47af3561",
+      "final_file_sha256": "91368a909ea8646e30ff9e5dce12a849e2845b81d1d2fefff98feb0c7baad9a7"
+    },
+    "production_readiness_report": {
+      "final_file_sha256": "2e357b9e18636f0c684822792e792581406d484296d3c7c914ab543b70849d0a",
+      "report_id": "full-record-production-readiness:f000477:justice_public_safety:119:v1"
+    },
+    "semantic_ir": {
+      "artifact_id": "full-record-semantic-ir-candidate:f000477:justice_public_safety:119:v2",
+      "final_file_sha256": "6a385770ce670e19329e56dfde13c48ae4b581bd740eac7dd7a54bed692abc14"
+    },
+    "user_ratification": {
+      "receipt_final_file_sha256": "40754c51f1832afbeaaccb9624dc7c505a2882b13e6b8f6095cc14fba1f8aef4",
+      "record_final_file_sha256": "eb5f6aa7775f8765c1319d80849dfeedbb41c85f8e30f30a21a53819a0f615d8"
+    }
+  },
+  "next_required_decision": "publication_activation_after_fresh_activation_preparation",
+  "repository": {
+    "deployed_inactive_commit_sha": "88af03cf3f2719f1884d36dbbcae9a3a88c2a68d",
+    "merge_commit_sha": "88af03cf3f2719f1884d36dbbcae9a3a88c2a68d",
+    "merge_first_parent": "24a2bcb37347f74c6c40261930024e85676cd8d0",
+    "merge_second_parent": "95eb4a141b6a2b3fd0b0145e91cfe99f021e1ad7",
+    "merged_pr": 126,
+    "name": "dhart54/political_fingerprint",
+    "pr_head_sha": "95eb4a141b6a2b3fd0b0145e91cfe99f021e1ad7"
+  },
+  "required_before_publication_activation": [
+    "candidate-bound activation bundle for the 37-action full-record artifact",
+    "fresh read-only production identity and drift preflight",
+    "content-addressed production backup",
+    "fresh disposable restore and semantic-equivalence proof",
+    "transactional activation scope and write caps",
+    "validated rollback receipt and post-rollback public-state proof",
+    "exact deployed commit and activation-bundle agreement",
+    "separate explicit publication-activation authorization"
+  ],
+  "resulting_state": {
+    "benchmark_role": "full_record_reference",
+    "current_active_publication": "compact_seven_action_benchmark",
+    "deployment_state": "merged_code_deployed_inactive",
+    "editorial_wording": "user_approved",
+    "ordinary_public_selector": "full_record_candidate_inactive",
+    "production_eligibility": "approved",
+    "publication": "inactive"
+  },
+  "review_package": {
+    "filename": "m9_foushee_justice_production_eligibility_review_88af03c.zip",
+    "final_file_sha256": "f7e47276851ef52ea4580c542cbea5e91cd1c0dd107024a0ac85c1b20eb26917",
+    "manifest_file_count": 25,
+    "manifest_hash_mismatches": 0
+  },
+  "schema_version": "production_eligibility_approval_record_v1",
+  "subject": {
+    "congress": 119,
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "member_id": "F000477",
+    "scope": "full_record"
+  }
+}

@@ -107,6 +107,17 @@ Full-record public claim classes additionally require the detached universe,
 compiled Semantic IR, semantic-validation, and content-bound synthesis-approval
 chain defined by Full-Record Issue Interpretation V1.
 
+`review_route` records compiler-owned workflow routing; it is not itself a final
+approval state. `human_exception_required` must remain visible when exceptional
+review was required, but an exact content-bound external review chain may
+complete that route. `blocked` cannot be completed or overridden. A
+`blocks_behavioral_propositions` constraint is a global tier blocker only when
+its exact action scope intersects accepted substantive action accounting.
+Constraints attached solely to context-only, rejected, or otherwise explicit
+non-counting controls remain visible without entering the substantive
+denominator. Missing evidence, unresolved service, partial episodes, and any
+accepted-substantive source block always fail closed.
+
 Public analytical display requires:
 
 - accepted semantic-reference status;
@@ -168,6 +179,12 @@ The selector reads a detached approval receipt from publication metadata. It
 never treats cached artifact gate fields as receipt authority. A missing,
 pending, malformed, stale, substituted, or content-mismatched receipt fails
 closed to `receipts_only`.
+
+For a completed `human_exception_required` route that contains non-counting
+blocking-source controls, the selector also requires the closed semantic-review
+exception resolution bound to the compiled IR, exact trigger ledger, wording,
+mappings, limitations, and approval chain. This compatibility receipt resolves
+only workflow routing. It cannot approve away a semantic blocker.
 
 Any invalid or mismatched row fails closed to the supplied `receipts_only`
 result rather than causing a public-route failure.

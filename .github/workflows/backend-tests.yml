@@ -4,12 +4,16 @@ on:
   pull_request:
     paths:
       - "backend/**"
+      - "scripts/**"
+      - "docs/**"
       - ".github/workflows/backend-tests.yml"
   push:
     branches:
       - main
     paths:
       - "backend/**"
+      - "scripts/**"
+      - "docs/**"
       - ".github/workflows/backend-tests.yml"
 
 jobs:
@@ -40,6 +44,8 @@ jobs:
           python scripts/verify_foushee_justice_launch_review_m6.py
           python scripts/verify_foushee_justice_launch_ratification_m7.py
           python scripts/validate_foushee_justice_benchmark_roles_m8.py
+          python scripts/build_foushee_justice_semantic_routing_m10r1.py --check
+          python scripts/build_public_review_state_catalog.py --check
 
       - name: Run full-record integration tests
         run: >-
@@ -52,6 +58,10 @@ jobs:
           backend/tests/test_foushee_justice_launch_review_m6.py
           backend/tests/test_foushee_justice_launch_ratification_m7.py
           backend/tests/test_foushee_justice_benchmark_roles_m8.py
+          backend/tests/test_semantic_review_exception_routing.py
+          backend/tests/test_foushee_justice_full_record_activation.py
+          backend/tests/test_editorial_public_presentation.py
+          backend/tests/test_public_review_state_catalog.py
 
   amendment-evidence-contracts:
     runs-on: ubuntu-latest

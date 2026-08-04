@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://political-fingerprint.local/schemas/semantic_routing_trigger_ledger_v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "ledger_id", "artifact_id", "review_route", "triggers", "summary", "content_subject_sha256"],
+  "properties": {
+    "schema_version": {"const": "semantic_routing_trigger_ledger_v1"},
+    "ledger_id": {"type": "string", "minLength": 1},
+    "artifact_id": {"type": "string", "minLength": 1},
+    "review_route": {"const": "human_exception_required"},
+    "triggers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["trigger_id", "trigger_type", "triggered", "action_ids", "episode_ids", "eligibility_state", "enters_substantive_denominator", "true_semantic_blocker", "human_review_can_resolve", "controlling_approval_or_boundary", "routing_treatment"],
+        "properties": {
+          "trigger_id": {"type": "string", "minLength": 1},
+          "trigger_type": {"enum": ["nonaccepted_action", "source_render_constraint", "mixed_trajectory", "pending_shared_review", "present_or_not_voting", "outside_service", "single_episode_record"]},
+          "triggered": {"type": "boolean"},
+          "action_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "episode_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "eligibility_state": {"type": "string", "minLength": 1},
+          "enters_substantive_denominator": {"type": "boolean"},
+          "true_semantic_blocker": {"type": "boolean"},
+          "human_review_can_resolve": {"type": "boolean"},
+          "controlling_approval_or_boundary": {"type": "string", "minLength": 1},
+          "routing_treatment": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["triggered_condition_count", "accepted_substantive_action_count", "noncounting_control_count", "accepted_substantive_blocker_count", "all_exception_choices_content_bound", "resulting_semantic_tier"],
+      "properties": {
+        "triggered_condition_count": {"type": "integer", "minimum": 1},
+        "accepted_substantive_action_count": {"type": "integer", "minimum": 1},
+        "noncounting_control_count": {"type": "integer", "minimum": 0},
+        "accepted_substantive_blocker_count": {"const": 0},
+        "all_exception_choices_content_bound": {"const": true},
+        "resulting_semantic_tier": {"const": "reviewed_conclusion"}
+      }
+    },
+    "content_subject_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}
