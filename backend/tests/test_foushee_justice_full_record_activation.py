@@ -7,6 +7,7 @@ import pytest
 from app.editorial_artifacts.bundle import semantic_hash
 from scripts.foushee_justice_full_record_activation import (
     BUNDLE_ID,
+    _state_fingerprint,
     build_bundle,
     validate_bundle,
 )
@@ -14,6 +15,20 @@ from scripts.editorial_artifact_store import StoreSafetyError
 
 
 DEPLOYED = "a" * 40
+
+
+class _EmptyResult:
+    def fetchall(self) -> list:
+        return []
+
+
+class _FingerprintConnection:
+    def __init__(self) -> None:
+        self.queries: list[str] = []
+
+    def execute(self, query: str) -> _EmptyResult:
+        self.queries.append(query)
+        return _EmptyResult()
 
 
 def _preflight() -> dict:
@@ -45,6 +60,16 @@ def _preflight() -> dict:
     }
     value["preflight_sha256"] = semantic_hash(value)
     return value
+
+
+def test_state_fingerprint_qualifies_registry_identity_columns() -> None:
+    conn = _FingerprintConnection()
+    _state_fingerprint(conn)
+    registry_query = next(
+        query for query in conn.queries if "FROM editorial_publication_registry" in query
+    )
+    assert "registry.member_bioguide_id" in registry_query
+    assert "registry.issue_id" in registry_query
 
 
 def test_bundle_is_candidate_bound_and_has_exact_write_caps() -> None:

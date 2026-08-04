@@ -110,7 +110,7 @@ def _state_fingerprint(conn: Any) -> str:
              JOIN editorial_artifact_versions child
                ON child.artifact_id=rel.child_artifact_id
              ORDER BY parent.natural_key,relationship_type,ordinal,child.natural_key""",
-        """SELECT member_bioguide_id,issue_id,artifact.natural_key,
+        """SELECT registry.member_bioguide_id,registry.issue_id,artifact.natural_key,
                   artifact.artifact_version,registry.publicly_active,
                   registry.publication_metadata_jsonb
              FROM editorial_publication_registry registry
