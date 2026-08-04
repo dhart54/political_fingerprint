@@ -67,8 +67,23 @@ def test_bundle_is_candidate_bound_and_has_exact_write_caps() -> None:
         "registry_updates": 1,
         "deletes_during_activation": 0,
     }
-    assert bundle["public_smoke_contract"]["119"]["receipt_count"] == 35
-    assert bundle["public_smoke_contract"]["118"]["tier"] == "receipts_only"
+    assert bundle["public_smoke_contract"] == {
+        "119": {
+            "tier": "reviewed_conclusion",
+            "receipt_count": 35,
+            "review_scope": "full_defined_issue_record",
+        },
+        "all": {
+            "tier": "reviewed_conclusion",
+            "receipt_count": 35,
+            "review_scope": "full_defined_issue_record",
+        },
+        "118": {
+            "tier": "receipts_only",
+            "receipt_count": 0,
+            "review_scope": None,
+        },
+    }
 
 
 def test_changed_preflight_or_deployed_commit_fails_closed() -> None:

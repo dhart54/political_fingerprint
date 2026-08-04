@@ -403,9 +403,21 @@ def build_bundle(
             "deletes_during_activation": 0,
         },
         "public_smoke_contract": {
-            "119": {"tier": "reviewed_conclusion", "receipt_count": 35},
-            "all": {"tier": "reviewed_conclusion", "receipt_count": 35},
-            "118": {"tier": "receipts_only", "receipt_count": 0},
+            "119": {
+                "tier": "reviewed_conclusion",
+                "receipt_count": 35,
+                "review_scope": "full_defined_issue_record",
+            },
+            "all": {
+                "tier": "reviewed_conclusion",
+                "receipt_count": 35,
+                "review_scope": "full_defined_issue_record",
+            },
+            "118": {
+                "tier": "receipts_only",
+                "receipt_count": 0,
+                "review_scope": None,
+            },
         },
         "rollback": {
             "restore_predecessor_artifact_id": preflight_report["predecessor"][
