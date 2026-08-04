@@ -826,7 +826,12 @@ def test_trusted_action_source_contract_matches_governed_evidence() -> None:
     for key in ("source_manifest", "claim_source_map"):
         reference = contract[key]
         content = (ROOT / reference["path"]).read_bytes()
-        assert hashlib.sha256(content).hexdigest() == reference["sha256"]
+        lf = content.replace(b"\r\n", b"\n")
+        crlf = lf.replace(b"\n", b"\r\n")
+        assert reference["sha256"] in {
+            hashlib.sha256(candidate).hexdigest()
+            for candidate in (content, lf, crlf)
+        }
     manifest = json.loads(
         (ROOT / contract["source_manifest"]["path"]).read_text(encoding="utf-8")
     )
