@@ -208,6 +208,17 @@ status but produces no behavioral proposition, receives an explicit
 `source_constraint_blocks_behavioral_proposition` accounting reason, is absent
 from the conclusion plan, and blocks the result.
 
+`review_route` is workflow provenance, not a publication decision.
+`human_exception_required` records that an exceptional review path was needed
+and remains unchanged after that review is completed by an exact external,
+content-bound chain. `blocked` remains a semantic stop and cannot be overridden.
+Blocking-source effects are scoped by compiler-owned exact-action eligibility:
+only a constraint intersecting accepted substantive accounting blocks the
+overall semantic tier. A constraint attached solely to a context-only or
+rejected non-counting control remains explicit in method boundaries without
+entering the substantive denominator. Titles, wording, votes, party, member
+identity, and hard-coded action IDs never determine that scope.
+
 ## Identity rules
 
 - Action IDs use `house:{congress}:{session}:{roll}` for this corpus.

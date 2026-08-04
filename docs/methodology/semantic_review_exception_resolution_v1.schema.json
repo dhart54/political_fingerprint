@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://political-fingerprint.local/schemas/semantic_review_exception_resolution_v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "receipt_id", "status", "binding", "routing_trigger_ledger_sha256", "approval_bindings", "resolution", "reviewer", "decision_timestamp"],
+  "properties": {
+    "schema_version": {"const": "semantic_review_exception_resolution_v1"},
+    "receipt_id": {"type": "string", "pattern": "^semantic-review-exception-resolution:[a-z0-9][a-z0-9._:-]+$"},
+    "status": {"const": "approved"},
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "artifact_version", "member_id", "issue_id", "congress", "compiled_ir_sha256", "presentation_content_sha256", "reviewed_wording_sha256", "mapping_set_sha256", "limitations_sha256", "action_accounting_sha256", "review_route"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "artifact_version": {"type": "integer", "minimum": 1},
+        "member_id": {"type": "string", "minLength": 1},
+        "issue_id": {"type": "string", "minLength": 1},
+        "congress": {"type": "integer", "minimum": 1},
+        "compiled_ir_sha256": {"$ref": "#/definitions/digest"},
+        "presentation_content_sha256": {"$ref": "#/definitions/digest"},
+        "reviewed_wording_sha256": {"$ref": "#/definitions/digest"},
+        "mapping_set_sha256": {"$ref": "#/definitions/digest"},
+        "limitations_sha256": {"$ref": "#/definitions/digest"},
+        "action_accounting_sha256": {"$ref": "#/definitions/digest"},
+        "review_route": {"const": "human_exception_required"}
+      }
+    },
+    "routing_trigger_ledger_sha256": {"$ref": "#/definitions/digest"},
+    "approval_bindings": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role", "artifact_id", "content_subject_sha256", "final_file_sha256", "decision"],
+        "properties": {
+          "role": {"enum": ["semantic_ir_acceptance", "semantic_validation", "user_ratification", "risk_treatments", "full_record_synthesis_approval", "production_eligibility", "semantic_routing_correction_authorization"]},
+          "artifact_id": {"type": "string", "minLength": 1},
+          "content_subject_sha256": {"$ref": "#/definitions/digest"},
+          "final_file_sha256": {"$ref": "#/definitions/digest"},
+          "decision": {"const": "approved"}
+        }
+      }
+    },
+    "resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["all_triggers_accounted", "accepted_substantive_blocker_count", "compiled_ir_unchanged", "wording_and_mappings_unchanged", "resulting_semantic_tier"],
+      "properties": {
+        "all_triggers_accounted": {"const": true},
+        "accepted_substantive_blocker_count": {"const": 0},
+        "compiled_ir_unchanged": {"const": true},
+        "wording_and_mappings_unchanged": {"const": true},
+        "resulting_semantic_tier": {"const": "reviewed_conclusion"}
+      }
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewer_id", "authority"],
+      "properties": {
+        "reviewer_id": {"type": "string", "pattern": "^reviewer:[a-z0-9][a-z0-9._-]{2,127}$"},
+        "authority": {"const": "delegated_product_methodology_editorial_authority_v1"}
+      }
+    },
+    "decision_timestamp": {"type": "string", "format": "date-time"}
+  },
+  "definitions": {
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

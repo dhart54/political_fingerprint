@@ -43,7 +43,13 @@ AUTHORING_PROVENANCE_FIELDS = (
 RECOGNIZED_REVIEWER_AUTHORITIES = {
     "editorial_publication_review_authority_v1",
 }
+SEMANTIC_EXCEPTION_REVIEWER_AUTHORITIES = {
+    "delegated_product_methodology_editorial_authority_v1",
+}
 APPROVAL_RECEIPT_ID = re.compile(r"^approval-receipt:[a-z0-9][a-z0-9._-]{2,127}$")
+SEMANTIC_EXCEPTION_RECEIPT_ID = re.compile(
+    r"^semantic-review-exception-resolution:[a-z0-9][a-z0-9._:-]+$"
+)
 REVIEWER_ID = re.compile(r"^reviewer:[a-z0-9][a-z0-9._-]{2,127}$")
 ANALYTICAL_TIERS = PUBLIC_TIERS - {"receipts_only"}
 BENCHMARK_STATUSES = {"not_promoted", "gold_benchmark"}
@@ -292,15 +298,37 @@ def _semantic_tier_from_parts(
     review_route: str,
     source_constraints: list[dict[str, Any]],
     coverage_boundaries: list[dict[str, Any]],
+    action_accounting: dict[str, Any],
 ) -> str:
+    accepted_action_ids = _accepted_substantive_action_ids(
+        coverage=coverage,
+        action_accounting=action_accounting,
+    )
+    noncounting_control_ids = {
+        action_id
+        for boundary in coverage_boundaries
+        if boundary.get("boundary_type")
+        in {"context_only_control_exclusion", "exact_action_eligibility"}
+        for action_id in boundary.get("action_ids", [])
+    }
+    substantive_source_block = False
+    for constraint in source_constraints:
+        if constraint.get("semantic_effect") != "blocks_behavioral_propositions":
+            continue
+        action_ids = set(constraint.get("action_ids", []))
+        if (
+            not action_ids
+            or bool(action_ids & accepted_action_ids)
+            or not action_ids <= noncounting_control_ids
+        ):
+            substantive_source_block = True
+            break
     if (
         review_route == "blocked"
         or coverage["missing_evidence_actions"]
         or coverage["unresolved_service_actions"]
-        or any(
-            item.get("semantic_effect") == "blocks_behavioral_propositions"
-            for item in source_constraints
-        )
+        or coverage["partial_episodes"]
+        or substantive_source_block
     ):
         return "receipts_only"
 
@@ -330,7 +358,171 @@ def _semantic_tier_from_parts(
     return "developing_read"
 
 
-def semantic_tier_for_artifact(artifact: dict[str, Any]) -> str:
+def _accepted_substantive_action_ids(
+    *,
+    coverage: dict[str, Any],
+    action_accounting: dict[str, Any],
+) -> set[str]:
+    try:
+        behavioral = set(action_accounting["behavioral_proposition_action_ids"])
+        reasons = action_accounting["non_proposition_reasons"]
+        nonproposition = {item["action_id"] for item in reasons}
+    except (KeyError, TypeError) as exc:
+        raise EditorialPresentationError(
+            "compiled action accounting is incomplete"
+        ) from exc
+    if (
+        len(behavioral) != len(action_accounting["behavioral_proposition_action_ids"])
+        or len(nonproposition) != len(reasons)
+        or behavioral & nonproposition
+        or len(behavioral | nonproposition) != coverage["eligible_substantive_actions"]
+    ):
+        raise EditorialPresentationError(
+            "compiled action accounting differs from substantive coverage"
+        )
+    return behavioral | nonproposition
+
+
+def accepted_substantive_action_ids_for_artifact(
+    artifact: dict[str, Any],
+) -> set[str]:
+    return _accepted_substantive_action_ids(
+        coverage=artifact["evidence_metadata"]["coverage"],
+        action_accounting=artifact["evidence_metadata"]["action_accounting"],
+    )
+
+
+def semantic_review_exception_subject_for_artifact(
+    artifact: dict[str, Any],
+) -> dict[str, Any]:
+    identity = artifact["artifact_identity"]
+    provenance = artifact["provenance"]
+    meaning = artifact["compiled_semantic_meaning"]
+    approval_subject = approval_subject_for_artifact(artifact)
+    return {
+        "artifact_id": identity["artifact_id"],
+        "artifact_version": identity["artifact_version"],
+        "member_id": identity["member_id"],
+        "issue_id": identity["issue_id"],
+        "congress": identity["congress"],
+        "compiled_ir_sha256": provenance["compiled_ir_sha256"],
+        "presentation_content_sha256": approval_subject["presentation_content_sha256"],
+        "reviewed_wording_sha256": approval_subject["reviewed_wording_sha256"],
+        "mapping_set_sha256": approval_subject["mapping_set_sha256"],
+        "limitations_sha256": approval_subject["limitations_sha256"],
+        "action_accounting_sha256": canonical_digest(
+            artifact["evidence_metadata"]["action_accounting"]
+        ),
+        "review_route": meaning["review_route"],
+    }
+
+
+def semantic_review_exception_resolution_matches(
+    receipt: dict[str, Any] | None,
+    *,
+    artifact: dict[str, Any],
+) -> bool:
+    if not isinstance(receipt, dict):
+        return False
+    required = {
+        "schema_version",
+        "receipt_id",
+        "status",
+        "binding",
+        "routing_trigger_ledger_sha256",
+        "approval_bindings",
+        "resolution",
+        "reviewer",
+        "decision_timestamp",
+    }
+    if set(receipt) != required:
+        return False
+    expected_subject = semantic_review_exception_subject_for_artifact(artifact)
+    reviewer = receipt.get("reviewer")
+    resolution = receipt.get("resolution")
+    approvals = receipt.get("approval_bindings")
+    timestamp = receipt.get("decision_timestamp")
+    try:
+        parsed_timestamp = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+    except (AttributeError, ValueError):
+        return False
+    required_approval_roles = {
+        "semantic_ir_acceptance",
+        "semantic_validation",
+        "user_ratification",
+        "risk_treatments",
+        "full_record_synthesis_approval",
+        "production_eligibility",
+        "semantic_routing_correction_authorization",
+    }
+    approval_roles: set[str] = set()
+    if isinstance(approvals, list):
+        for approval in approvals:
+            if (
+                not isinstance(approval, dict)
+                or set(approval)
+                != {
+                    "role",
+                    "artifact_id",
+                    "content_subject_sha256",
+                    "final_file_sha256",
+                    "decision",
+                }
+                or not all(
+                    isinstance(value, str) and value for value in approval.values()
+                )
+                or not re.fullmatch(r"[0-9a-f]{64}", approval["content_subject_sha256"])
+                or not re.fullmatch(r"[0-9a-f]{64}", approval["final_file_sha256"])
+            ):
+                return False
+            approval_roles.add(approval["role"])
+    return bool(
+        receipt.get("schema_version") == "semantic_review_exception_resolution_v1"
+        and isinstance(receipt.get("receipt_id"), str)
+        and SEMANTIC_EXCEPTION_RECEIPT_ID.fullmatch(receipt["receipt_id"])
+        and receipt.get("status") == "approved"
+        and receipt.get("binding") == expected_subject
+        and expected_subject["review_route"] == "human_exception_required"
+        and isinstance(receipt.get("routing_trigger_ledger_sha256"), str)
+        and re.fullmatch(r"[0-9a-f]{64}", receipt["routing_trigger_ledger_sha256"])
+        and approval_roles == required_approval_roles
+        and isinstance(approvals, list)
+        and len(approvals) == len(required_approval_roles)
+        and resolution
+        == {
+            "all_triggers_accounted": True,
+            "accepted_substantive_blocker_count": 0,
+            "compiled_ir_unchanged": True,
+            "wording_and_mappings_unchanged": True,
+            "resulting_semantic_tier": "reviewed_conclusion",
+        }
+        and isinstance(reviewer, dict)
+        and set(reviewer) == {"reviewer_id", "authority"}
+        and isinstance(reviewer.get("reviewer_id"), str)
+        and REVIEWER_ID.fullmatch(reviewer["reviewer_id"])
+        and reviewer.get("authority") in SEMANTIC_EXCEPTION_REVIEWER_AUTHORITIES
+        and parsed_timestamp.tzinfo is not None
+    )
+
+
+def semantic_review_exception_resolution_required(
+    artifact: dict[str, Any],
+) -> bool:
+    meaning = artifact["compiled_semantic_meaning"]
+    return bool(
+        meaning["review_route"] == "human_exception_required"
+        and any(
+            item.get("semantic_effect") == "blocks_behavioral_propositions"
+            for item in meaning["source_render_constraints"]
+        )
+    )
+
+
+def semantic_tier_for_artifact(
+    artifact: dict[str, Any],
+    *,
+    semantic_review_exception_resolution: dict[str, Any] | None = None,
+) -> str:
     meaning = artifact["compiled_semantic_meaning"]
     propositions = {item["proposition_id"]: item for item in meaning["propositions"]}
     return _semantic_tier_from_parts(
@@ -340,7 +532,8 @@ def semantic_tier_for_artifact(artifact: dict[str, Any]) -> str:
         ],
         review_route=meaning["review_route"],
         source_constraints=meaning["source_render_constraints"],
-        coverage_boundaries=meaning["coverage_boundaries"],
+        coverage_boundaries=meaning["presentation_boundaries"],
+        action_accounting=artifact["evidence_metadata"]["action_accounting"],
     )
 
 
@@ -852,6 +1045,9 @@ def publication_gates_pass(
     *,
     expected_subject: dict[str, Any],
     detached_receipt: dict[str, Any] | None = None,
+    review_route: str = "standard_generation_pass",
+    semantic_review_exception_resolution_required: bool = False,
+    semantic_review_exception_resolution_valid: bool = False,
 ) -> bool:
     if controls["benchmark"]["status"] not in BENCHMARK_STATUSES:
         return False
@@ -860,6 +1056,12 @@ def publication_gates_pass(
         and controls["semantic"]["validation_status"] == "passed"
         and controls["editorial"]["human_approval_status"] == "human_approved"
         and controls["approval_mode"] == "detached_receipt_required"
+        and review_route != "blocked"
+        and (
+            review_route != "human_exception_required"
+            or not semantic_review_exception_resolution_required
+            or semantic_review_exception_resolution_valid
+        )
         and detached_receipt_matches(
             detached_receipt,
             expected_subject=expected_subject,
@@ -1064,7 +1266,8 @@ def compile_public_issue_presentation(
         ],
         review_route=member["review_route"],
         source_constraints=snapshot.get("source_render_constraints", []),
-        coverage_boundaries=member["composition"]["coverage_boundaries"],
+        coverage_boundaries=boundaries,
+        action_accounting=member["action_accounting"],
     )
     action_ids = sorted(
         {
@@ -1111,6 +1314,7 @@ def compile_public_issue_presentation(
     gates_pass = publication_gates_pass(
         controls,
         expected_subject=subject,
+        review_route=member["review_route"],
     )
     public_tier = (
         semantic_tier

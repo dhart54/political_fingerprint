@@ -20,6 +20,14 @@ These axes must remain independent. `reviewed_conclusion` describes semantic
 quality inside supplied reviewed evidence; it never establishes the size or
 completion of that evidence universe.
 
+Workflow review routing is independent as well. A compiled
+`human_exception_required` route records that exceptional review was necessary;
+it is not equivalent to `blocked` and may be completed only by an exact,
+content-bound review-resolution chain. A `blocked` route, missing evidence,
+unresolved service, partial episodes, or a source block on any accepted
+substantive action cannot be approved away. Context-only and rejected actions
+remain visible controls but do not enter the substantive denominator.
+
 ### Semantic tier
 
 - `reviewed_conclusion`: the reviewed evidence supports the established
@@ -291,6 +299,10 @@ limitation, or provenance invalidates the chain.
 
 Production eligibility, publication activation, registry selection, deployment,
 and merge remain separate later gates.
+
+Semantic tier, human approval, benchmark status, production eligibility, and
+publication activation are independent atomic states. No state implies or
+silently promotes another.
 
 The reviewed outcome may be:
 

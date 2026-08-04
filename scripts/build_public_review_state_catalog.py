@@ -33,11 +33,13 @@ from scripts.validate_full_record_issue_interpretation import (  # noqa: E402
 
 
 OUTPUT_PATH = (
-    ROOT
-    / "backend/app/editorial_presentations/public_review_state_catalog_v1.json"
+    ROOT / "backend/app/editorial_presentations/public_review_state_catalog_v1.json"
 )
 SOURCE_CONTRACT_ROOT = ROOT / "docs/editorial/action_source_contracts"
 PRESENTATION_ROOT = ROOT / "docs/editorial/presentations"
+PUBLICATION_PREPARATION_ROOT = (
+    ROOT / "docs/editorial/full_record_reviews/publication_preparations"
+)
 
 
 def _repository_sha256(path: Path) -> str:
@@ -111,8 +113,7 @@ def _mapped_action_ids(fixture: dict[str, Any]) -> set[str]:
             action_ids = value.get("action_ids")
             if isinstance(action_ids, list):
                 linked.update(
-                    action_id for action_id in action_ids
-                    if isinstance(action_id, str)
+                    action_id for action_id in action_ids if isinstance(action_id, str)
                 )
             for child in value.values():
                 collect(child)
@@ -145,7 +146,10 @@ def _exact_action_receipts(review: dict[str, Any]) -> list[dict[str, Any]]:
     review_actions = {
         action["action_id"]: action for action in review["action_accounting"]
     }
-    if set(review_actions) != published_action_ids or set(contract["actions"]) != published_action_ids:
+    if (
+        set(review_actions) != published_action_ids
+        or set(contract["actions"]) != published_action_ids
+    ):
         raise ValueError(
             f"{review['review_id']}: review, source contract, and published sample differ"
         )
@@ -161,12 +165,13 @@ def _exact_action_receipts(review: dict[str, Any]) -> list[dict[str, Any]]:
             interpretation["member_action"]
             != action["review_friendliness"]["member_action"]
             or interpretation["episode_id"] != action["episode_id"]
-            or interpretation["vote_source_refs"]
-            != contract_action["vote_source_refs"]
+            or interpretation["vote_source_refs"] != contract_action["vote_source_refs"]
             or interpretation["action_meaning_source_refs"]
             != contract_action["action_meaning_source_refs"]
         ):
-            raise ValueError(f"{action_id}: governed action sources or meaning conflict")
+            raise ValueError(
+                f"{action_id}: governed action sources or meaning conflict"
+            )
         episode = episodes.get(action["episode_id"])
         if episode is None or action_id not in episode["action_ids"]:
             raise ValueError(f"{action_id}: governed episode identity is missing")
@@ -181,7 +186,9 @@ def _exact_action_receipts(review: dict[str, Any]) -> list[dict[str, Any]]:
         if [source["source_type"] for source in meaning_sources] != contract_action[
             "required_action_meaning_source_types"
         ]:
-            raise ValueError(f"{action_id}: required action-meaning source type is missing")
+            raise ValueError(
+                f"{action_id}: required action-meaning source type is missing"
+            )
         receipt = {
             "projection_key": receipt_projection_key(
                 member_id=subject["member_id"],
@@ -281,9 +288,7 @@ def _entry(review: dict[str, Any]) -> dict[str, Any]:
         "not_voting_actions": frontend["not_voting_actions"],
         "complete_episode_count": frontend["complete_episode_count"],
         "partial_episode_count": frontend["partial_episode_count"],
-        "full_issue_synthesis_eligible": frontend[
-            "full_issue_synthesis_eligible"
-        ],
+        "full_issue_synthesis_eligible": frontend["full_issue_synthesis_eligible"],
         "benchmark_sample_available": frontend["benchmark_sample_available"],
         "scope_bounded_teaser": frontend["conclusion_teaser"],
         "public_status_label": _public_status_label(review),
@@ -309,10 +314,22 @@ def discover_review_states(
     return reviews
 
 
-def build_catalog(*, review_root: Path = REVIEW_ROOT) -> dict[str, Any]:
+def build_catalog(
+    *,
+    review_root: Path = REVIEW_ROOT,
+    publication_preparation_root: Path = PUBLICATION_PREPARATION_ROOT,
+) -> dict[str, Any]:
     entries = []
     for review in discover_review_states(review_root):
         entries.append(_entry(review))
+    for path in sorted(
+        publication_preparation_root.glob("*/public_review_state_projection.json")
+    ):
+        projection = json.loads(path.read_text(encoding="utf-8"))
+        validate_public_catalog(
+            {"schema_version": CATALOG_SCHEMA_VERSION, "entries": [projection]}
+        )
+        entries.append(projection)
     catalog = {
         "schema_version": CATALOG_SCHEMA_VERSION,
         "entries": sorted(entries, key=lambda item: item["catalog_key"]),
@@ -345,7 +362,10 @@ def main() -> int:
         if not OUTPUT_PATH.is_file() or not catalog_bytes_match_checkout(
             OUTPUT_PATH.read_bytes(), expected
         ):
-            print("ERROR: public review-state catalog is missing or stale", file=sys.stderr)
+            print(
+                "ERROR: public review-state catalog is missing or stale",
+                file=sys.stderr,
+            )
             return 1
         print("Public review-state catalog is deterministic and current.")
         return 0

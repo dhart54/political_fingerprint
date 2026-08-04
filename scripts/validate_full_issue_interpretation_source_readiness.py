@@ -613,7 +613,9 @@ def validate_values(
         current_identity
         == {
             "id": artifact["artifact_id"],
-            "sha256": canonical_file_sha256(repository_root / ARTIFACT_PATH),
+            "sha256": canonical_file_sha256(
+                repository_root / ARTIFACT_PATH, text_line_endings="lf"
+            ),
             "ready_count": aggregate["ready_count"],
             "blocked_count": aggregate["blocked_count"],
             "authorizing": False,
@@ -630,7 +632,9 @@ def validate_values(
     )
     return {
         **aggregate,
-        "artifact_sha256": canonical_file_sha256(repository_root / ARTIFACT_PATH),
+        "artifact_sha256": canonical_file_sha256(
+            repository_root / ARTIFACT_PATH, text_line_endings="lf"
+        ),
     }
 
 

@@ -224,7 +224,8 @@ def validate_parity(parity: dict[str, Any]) -> None:
         path = OUTPUT_ROOT / entry["path"]
         require(path.is_file(), f"missing parity path: {entry['path']}")
         require(
-            hashlib.sha256(path.read_bytes()).hexdigest() == entry["final_file_sha256"],
+            hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+            == entry["final_file_sha256"],
             f"stale parity file digest: {entry['path']}",
         )
         if entry["content_subject_sha256"]:

@@ -67,7 +67,16 @@ def digest(value: object) -> str:
 
 
 def file_digest(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
+def file_digest_matches(path: Path, expected: str) -> bool:
+    raw = path.read_bytes()
+    lf = raw.replace(b"\r\n", b"\n")
+    crlf = lf.replace(b"\n", b"\r\n")
+    return expected in {
+        hashlib.sha256(candidate).hexdigest() for candidate in (raw, lf, crlf)
+    }
 
 
 def seal(value: dict[str, Any]) -> dict[str, Any]:
@@ -81,7 +90,11 @@ def load(path: Path) -> dict[str, Any]:
 
 def write(path: Path, raw: bytes, check: bool) -> None:
     if check:
-        if not path.exists() or path.read_bytes() != raw:
+        if (
+            not path.exists()
+            or path.read_bytes().replace(b"\r\n", b"\n")
+            != raw.replace(b"\r\n", b"\n")
+        ):
             raise ValueError(
                 f"{path.relative_to(ROOT)} differs from deterministic output"
             )
@@ -405,13 +418,18 @@ def build(check: bool = False) -> dict[str, Any]:
     v1_implementation = load(V1_ROOT / "provisional_implementation_bundle.json")
     if not (
         v1_input_artifact["content_subject_sha256"] == V1_INPUT_CONTENT
-        and file_digest(V1_ROOT / "frozen_final_compiler_input.json") == V1_INPUT_FILE
+        and file_digest_matches(
+            V1_ROOT / "frozen_final_compiler_input.json", V1_INPUT_FILE
+        )
         and v1_graph["content_subject_sha256"] == V1_GRAPH_CONTENT
-        and file_digest(V1_ROOT / "frozen_final_compiled_semantic_ir.json")
-        == V1_GRAPH_FILE
+        and file_digest_matches(
+            V1_ROOT / "frozen_final_compiled_semantic_ir.json", V1_GRAPH_FILE
+        )
         and v1_implementation["content_subject_sha256"] == V1_IMPLEMENTATION_CONTENT
-        and file_digest(V1_ROOT / "provisional_implementation_bundle.json")
-        == V1_IMPLEMENTATION_FILE
+        and file_digest_matches(
+            V1_ROOT / "provisional_implementation_bundle.json",
+            V1_IMPLEMENTATION_FILE,
+        )
     ):
         raise ValueError("reviewed M5 V1 identities differ")
 
@@ -896,7 +914,7 @@ def build(check: bool = False) -> dict[str, Any]:
     for name in parity_names:
         path = OUTPUT_ROOT / name
         if check:
-            raw = path.read_bytes()
+            raw = path.read_bytes().replace(b"\r\n", b"\n")
         elif name == "review_dossier.md":
             raw = dossier.encode()
         elif name.startswith("schemas/"):

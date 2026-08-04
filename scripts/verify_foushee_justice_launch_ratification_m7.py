@@ -43,6 +43,17 @@ def file_sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def file_sha_matches(path: Path, expected: str) -> bool:
+    import hashlib
+
+    raw = path.read_bytes()
+    lf = raw.replace(b"\r\n", b"\n")
+    crlf = lf.replace(b"\n", b"\r\n")
+    return expected in {
+        hashlib.sha256(candidate).hexdigest() for candidate in (raw, lf, crlf)
+    }
+
+
 def require(condition: bool, message: str) -> None:
     if not condition:
         raise AssertionError(message)
@@ -66,7 +77,8 @@ def verify(root: Path = OUT) -> dict[str, object]:
         load(root / "user_launch_ratification_record_v1.schema.json")
     ).validate(record)
     require(
-        file_sha(record_path) == EXPECTED_FILE_SHA, "ratification final bytes differ"
+        file_sha_matches(record_path, EXPECTED_FILE_SHA),
+        "ratification final bytes differ",
     )
     require(
         record["content_subject_sha256"] == EXPECTED_CONTENT_SHA,
@@ -98,11 +110,11 @@ def verify(root: Path = OUT) -> dict[str, object]:
     candidate_path = root / "public_presentation_candidate.json"
     mappings_path = root / "analytical_string_mappings.json"
     require(
-        file_sha(candidate_path) == EXPECTED_CANDIDATE_FILE_SHA,
+        file_sha_matches(candidate_path, EXPECTED_CANDIDATE_FILE_SHA),
         "frozen candidate bytes changed",
     )
     require(
-        file_sha(mappings_path) == EXPECTED_MAPPING_FILE_SHA,
+        file_sha_matches(mappings_path, EXPECTED_MAPPING_FILE_SHA),
         "frozen mappings bytes changed",
     )
 
@@ -135,7 +147,10 @@ def verify(root: Path = OUT) -> dict[str, object]:
         "user identity or timestamp differs",
     )
     for name, digest in receipt["immutable_file_bindings"].items():
-        require(file_sha(root / name) == digest, f"immutable M6 file changed: {name}")
+        require(
+            file_sha_matches(root / name, digest),
+            f"immutable M6 file changed: {name}",
+        )
 
     risks = load(root / "launch_risk_register_m7.json")
     require_digest(risks, "risk successor")

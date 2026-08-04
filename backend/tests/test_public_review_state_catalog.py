@@ -41,8 +41,12 @@ def test_generated_catalog_is_deterministic_current_and_public_only() -> None:
     assert not catalog_bytes_match_checkout(materialized + b" ", expected)
     catalog = json.loads(expected)
     validate_public_catalog(catalog)
-    assert len(catalog["entries"]) == 1
-    entry = catalog["entries"][0]
+    assert len(catalog["entries"]) == 2
+    entry = next(
+        item
+        for item in catalog["entries"]
+        if item["review_scope"] == "benchmark_sample"
+    )
     assert entry["semantic_tier"] == "reviewed_conclusion"
     assert entry["review_scope"] == "benchmark_sample"
     assert entry["review_completion_state"] == "complete"
@@ -54,20 +58,31 @@ def test_generated_catalog_is_deterministic_current_and_public_only() -> None:
     assert "provenance" not in entry
     assert "external_authority" not in entry
     assert "historical_publication" not in entry
+    full_record = next(
+        item
+        for item in catalog["entries"]
+        if item["review_scope"] == "full_defined_issue_record"
+    )
+    assert full_record["semantic_tier"] == "reviewed_conclusion"
+    assert full_record["review_completion_state"] == "complete"
+    assert full_record["public_claim_class"] == "full_issue_synthesis"
+    assert full_record["total_recorded_actions"] == 37
+    assert full_record["interpreted_actions"] == 35
+    assert full_record["procedural_context_actions"] == 2
+    assert full_record["complete_episode_count"] == 32
+    assert full_record["full_issue_synthesis_eligible"] is True
 
 
 def test_catalog_discovery_uses_review_schema_semantics(tmp_path: Path) -> None:
     review = json.loads(
         (
-            ROOT
-            / "docs/editorial/full_record_reviews/"
+            ROOT / "docs/editorial/full_record_reviews/"
             "f000477_justice_public_safety_119_review_state_v1.json"
         ).read_text(encoding="utf-8")
     )
     receipt = json.loads(
         (
-            ROOT
-            / "docs/editorial/full_record_reviews/"
+            ROOT / "docs/editorial/full_record_reviews/"
             "f000477_justice_public_safety_119_"
             "full_issue_universe_authority_receipt_v2.json"
         ).read_text(encoding="utf-8")
@@ -83,7 +98,10 @@ def test_catalog_discovery_uses_review_schema_semantics(tmp_path: Path) -> None:
         encoding="utf-8",
     )
 
-    catalog = build_catalog(review_root=tmp_path)
+    catalog = build_catalog(
+        review_root=tmp_path,
+        publication_preparation_root=tmp_path / "publication-preparations",
+    )
 
     assert len(catalog["entries"]) == 1
     assert catalog["entries"][0]["member_id"] == "F000477"
@@ -98,7 +116,10 @@ def test_claimed_review_state_contract_violation_fails_closed(
     )
 
     with pytest.raises(ValueError, match="schema validation failed"):
-        build_catalog(review_root=tmp_path)
+        build_catalog(
+            review_root=tmp_path,
+            publication_preparation_root=tmp_path / "publication-preparations",
+        )
 
 
 def test_catalog_is_closed_and_sample_cannot_acquire_full_record_label() -> None:

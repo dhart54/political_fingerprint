@@ -10,9 +10,12 @@ from typing import Any, Iterable
 from .compiler import (
     EditorialPresentationError,
     _copy_display_wording,
+    accepted_substantive_action_ids_for_artifact,
     approval_subject_for_artifact,
     artifact_digest,
     publication_gates_pass,
+    semantic_review_exception_resolution_matches,
+    semantic_review_exception_resolution_required,
     semantic_tier_for_artifact,
 )
 from .validation import validate_public_issue_presentation
@@ -89,6 +92,26 @@ def _detached_receipt(row: dict[str, Any]) -> dict[str, Any] | None:
     return receipt if isinstance(receipt, dict) else None
 
 
+def _semantic_review_exception_resolution(
+    row: dict[str, Any],
+) -> dict[str, Any] | None:
+    metadata = row.get("publication_metadata_jsonb")
+    if isinstance(metadata, str):
+        try:
+            metadata = json.loads(metadata)
+        except json.JSONDecodeError:
+            return None
+    if not isinstance(metadata, dict):
+        return None
+    receipt = metadata.get("semantic_review_exception_resolution")
+    if isinstance(receipt, str):
+        try:
+            receipt = json.loads(receipt)
+        except json.JSONDecodeError:
+            return None
+    return receipt if isinstance(receipt, dict) else None
+
+
 def _eligible_row(
     row: dict[str, Any],
     *,
@@ -107,8 +130,12 @@ def _eligible_row(
     payload = _payload(row)
     if payload is None:
         return None
+    exception_resolution = _semantic_review_exception_resolution(row)
     try:
-        validate_public_issue_presentation(payload)
+        validate_public_issue_presentation(
+            payload,
+            semantic_review_exception_resolution=exception_resolution,
+        )
     except (KeyError, TypeError, EditorialPresentationError):
         return None
     identity = payload["artifact_identity"]
@@ -137,12 +164,25 @@ def _eligible_row(
         controls,
         expected_subject=approval_subject_for_artifact(payload),
         detached_receipt=detached_receipt,
+        review_route=payload["compiled_semantic_meaning"]["review_route"],
+        semantic_review_exception_resolution_required=(
+            semantic_review_exception_resolution_required(payload)
+        ),
+        semantic_review_exception_resolution_valid=(
+            semantic_review_exception_resolution_matches(
+                exception_resolution,
+                artifact=payload,
+            )
+        ),
     ):
         return None
     payload = copy.deepcopy(payload)
     payload["frontend_display"] = _copy_display_wording(
         payload["editorial_wording"],
-        semantic_tier=semantic_tier_for_artifact(payload),
+        semantic_tier=semantic_tier_for_artifact(
+            payload,
+            semantic_review_exception_resolution=exception_resolution,
+        ),
     )
     payload["_detached_approval_receipt_id"] = detached_receipt["receipt_id"]
     return payload
@@ -171,7 +211,7 @@ def _receipt_projections_agree(
         for receipt in receipts
         if isinstance(receipt, dict)
     }
-    sample_action_ids = set(artifact["evidence_metadata"]["action_ids"])
+    sample_action_ids = accepted_substantive_action_ids_for_artifact(artifact)
     if (
         len(by_action) != len(receipts)
         or set(by_action) != sample_action_ids
@@ -183,8 +223,7 @@ def _receipt_projections_agree(
             receipt.get("member_id") != identity["member_id"]
             or receipt.get("issue_id") != identity["issue_id"]
             or identity["congress"] not in receipt.get("congress_scope", [])
-            or receipt.get("published_artifact_identity")
-            != identity["artifact_id"]
+            or receipt.get("published_artifact_identity") != identity["artifact_id"]
             or receipt.get("interpretation_status") != "interpreted"
             or receipt.get("canonical_action_id") != action_id
             or not receipt.get("vote_sources")
@@ -210,9 +249,7 @@ def select_public_presentations(
         except PublicReviewStateCatalogError:
             review_states = []
     review_states = list(review_states)
-    result = {
-        issue_id: _fallback(issue_id, scope) for issue_id in SUPPORTED_ISSUES
-    }
+    result = {issue_id: _fallback(issue_id, scope) for issue_id in SUPPORTED_ISSUES}
     for row in rows:
         artifact = _eligible_row(
             row,
@@ -240,9 +277,7 @@ def select_public_presentations(
             or not _receipt_projections_agree(artifact, display, review_state)
         ):
             continue
-        exact_action_receipts = copy.deepcopy(
-            review_state["exact_action_receipts"]
-        )
+        exact_action_receipts = copy.deepcopy(review_state["exact_action_receipts"])
         public_review_state = copy.deepcopy(review_state)
         public_review_state.pop("exact_action_receipts", None)
         proposition_index = {
@@ -285,15 +320,11 @@ def select_public_presentations(
             "provenance": {
                 "artifact_id": identity["artifact_id"],
                 "artifact_version": identity["artifact_version"],
-                "compiled_ir_sha256": artifact["provenance"][
-                    "compiled_ir_sha256"
-                ],
+                "compiled_ir_sha256": artifact["provenance"]["compiled_ir_sha256"],
                 "reviewed_wording_sha256": artifact["provenance"][
                     "reviewed_wording_sha256"
                 ],
-                "review_receipt_id": artifact[
-                    "_detached_approval_receipt_id"
-                ],
+                "review_receipt_id": artifact["_detached_approval_receipt_id"],
             },
         }
     return {

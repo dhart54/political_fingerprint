@@ -25,6 +25,8 @@ from .compiler import (
 
 def validate_public_issue_presentation(
     artifact: dict[str, Any],
+    *,
+    semantic_review_exception_resolution: dict[str, Any] | None = None,
 ) -> dict[str, int]:
     required = {
         "schema_version",
@@ -122,9 +124,7 @@ def validate_public_issue_presentation(
             f"compiled evidence belongs to the {evidence_scope}"
         )
 
-    propositions = {
-        item["proposition_id"]: item for item in meaning["propositions"]
-    }
+    propositions = {item["proposition_id"]: item for item in meaning["propositions"]}
     validate_editorial_wording(
         artifact["editorial_wording"],
         primary_ids=meaning["primary_proposition_ids"],
@@ -132,9 +132,7 @@ def validate_public_issue_presentation(
         propositions=propositions,
         boundaries=[
             *meaning["presentation_boundaries"],
-            *source_constraint_boundaries(
-                meaning["source_render_constraints"]
-            ),
+            *source_constraint_boundaries(meaning["source_render_constraints"]),
         ],
         provenance=artifact["provenance"],
     )
@@ -170,17 +168,13 @@ def validate_public_issue_presentation(
         "approval_subject_sha256",
     ):
         if provenance[field] != expected_subject[field]:
-            raise EditorialPresentationError(
-                f"{field.replace('_', ' ')} mismatch"
-            )
+            raise EditorialPresentationError(f"{field.replace('_', ' ')} mismatch")
     if provenance["limitations_sha256"] != limitations_digest(
         provenance["review_limitations"]
     ):
         raise EditorialPresentationError("limitations digest mismatch")
     if provenance["compiler_receipt"] != expected_subject:
-        raise EditorialPresentationError(
-            "compiler receipt identity or digest mismatch"
-        )
+        raise EditorialPresentationError("compiler receipt identity or digest mismatch")
 
     controls = artifact["controls"]
     if controls["benchmark"]["status"] not in BENCHMARK_STATUSES:
@@ -189,7 +183,10 @@ def validate_public_issue_presentation(
         raise EditorialPresentationError(
             "public presentation requires detached approval receipts"
         )
-    semantic_tier = semantic_tier_for_artifact(artifact)
+    semantic_tier = semantic_tier_for_artifact(
+        artifact,
+        semantic_review_exception_resolution=semantic_review_exception_resolution,
+    )
     gates_pass = publication_gates_pass(
         controls,
         expected_subject=expected_subject,

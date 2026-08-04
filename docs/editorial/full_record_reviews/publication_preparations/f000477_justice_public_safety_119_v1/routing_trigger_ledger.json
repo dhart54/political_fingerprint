@@ -1,0 +1,169 @@
+{
+  "artifact_id": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+  "content_subject_sha256": "85edc5af4d3b31e791bfd23aba80a32cf11d9f176a236f243a6101b950aaa932",
+  "ledger_id": "semantic-routing-trigger-ledger:f000477:justice_public_safety:119:v1",
+  "review_route": "human_exception_required",
+  "schema_version": "semantic_routing_trigger_ledger_v1",
+  "summary": {
+    "accepted_substantive_action_count": 35,
+    "accepted_substantive_blocker_count": 0,
+    "all_exception_choices_content_bound": true,
+    "noncounting_control_count": 2,
+    "resulting_semantic_tier": "reviewed_conclusion",
+    "triggered_condition_count": 6
+  },
+  "triggers": [
+    {
+      "action_ids": [
+        "house:119:2:155"
+      ],
+      "controlling_approval_or_boundary": "method:b424184b53369286",
+      "eligibility_state": "context_only",
+      "enters_substantive_denominator": false,
+      "episode_ids": [
+        "fisa-title-vii-short-term-extension"
+      ],
+      "human_review_can_resolve": true,
+      "routing_treatment": "retain_visible_context_only_nonproposition_control",
+      "trigger_id": "nonaccepted:house:119:2:155",
+      "trigger_type": "nonaccepted_action",
+      "triggered": true,
+      "true_semantic_blocker": false
+    },
+    {
+      "action_ids": [
+        "house:119:2:278"
+      ],
+      "controlling_approval_or_boundary": "method:fb088ccee9896241",
+      "eligibility_state": "rejected",
+      "enters_substantive_denominator": false,
+      "episode_ids": [],
+      "human_review_can_resolve": true,
+      "routing_treatment": "retain_visible_rejected_no_safe_ledger_only_control",
+      "trigger_id": "nonaccepted:house:119:2:278",
+      "trigger_type": "nonaccepted_action",
+      "triggered": true,
+      "true_semantic_blocker": false
+    },
+    {
+      "action_ids": [
+        "house:119:1:128"
+      ],
+      "controlling_approval_or_boundary": "launch-risk:roll-128:v1",
+      "eligibility_state": "accepted_substantive",
+      "enters_substantive_denominator": true,
+      "episode_ids": [
+        "law-enforcement-concealed-carry-expansion"
+      ],
+      "human_review_can_resolve": true,
+      "routing_treatment": "retain_bounded_interpretation_and_rendering_limitation",
+      "trigger_id": "source:roll-128-unresolved-text-limit",
+      "trigger_type": "source_render_constraint",
+      "triggered": true,
+      "true_semantic_blocker": false
+    },
+    {
+      "action_ids": [
+        "house:119:2:155"
+      ],
+      "controlling_approval_or_boundary": "method:b424184b53369286",
+      "eligibility_state": "noncounting_control",
+      "enters_substantive_denominator": false,
+      "episode_ids": [
+        "fisa-title-vii-short-term-extension"
+      ],
+      "human_review_can_resolve": true,
+      "routing_treatment": "retain_noncounting_source_block_as_visible_control",
+      "trigger_id": "source:roll-155-source-identity-block",
+      "trigger_type": "source_render_constraint",
+      "triggered": true,
+      "true_semantic_blocker": false
+    },
+    {
+      "action_ids": [
+        "house:119:2:278"
+      ],
+      "controlling_approval_or_boundary": "method:fb088ccee9896241",
+      "eligibility_state": "noncounting_control",
+      "enters_substantive_denominator": false,
+      "episode_ids": [],
+      "human_review_can_resolve": true,
+      "routing_treatment": "retain_noncounting_source_block_as_visible_control",
+      "trigger_id": "source:roll-278-no-safe-interpretation-block",
+      "trigger_type": "source_render_constraint",
+      "triggered": true,
+      "true_semantic_blocker": false
+    },
+    {
+      "action_ids": [
+        "house:119:1:166",
+        "house:119:1:32",
+        "house:119:1:33"
+      ],
+      "controlling_approval_or_boundary": "launch-risk:semantic-ir:mechanism-divide:v1",
+      "eligibility_state": "accepted_substantive",
+      "enters_substantive_denominator": true,
+      "episode_ids": [
+        "halt-fentanyl-legislative-path"
+      ],
+      "human_review_can_resolve": true,
+      "routing_treatment": "retain_explicit_limiting_proposition",
+      "trigger_id": "mixed:prop:53cda8d886a88f12",
+      "trigger_type": "mixed_trajectory",
+      "triggered": true,
+      "true_semantic_blocker": false
+    },
+    {
+      "action_ids": [],
+      "controlling_approval_or_boundary": "delegated-semantic-ir-acceptance:f000477:justice_public_safety:119:v1",
+      "eligibility_state": "not_applicable",
+      "enters_substantive_denominator": false,
+      "episode_ids": [],
+      "human_review_can_resolve": true,
+      "routing_treatment": "no_pending_shared_relationship_review",
+      "trigger_id": "compiler-condition:pending-shared-review",
+      "trigger_type": "pending_shared_review",
+      "triggered": false,
+      "true_semantic_blocker": false
+    },
+    {
+      "action_ids": [],
+      "controlling_approval_or_boundary": "Editorial Semantic IR V1 coverage contract",
+      "eligibility_state": "accepted_non_directional",
+      "enters_substantive_denominator": true,
+      "episode_ids": [],
+      "human_review_can_resolve": true,
+      "routing_treatment": "none_present_or_not_voting",
+      "trigger_id": "compiler-condition:present-or-not-voting",
+      "trigger_type": "present_or_not_voting",
+      "triggered": false,
+      "true_semantic_blocker": false
+    },
+    {
+      "action_ids": [],
+      "controlling_approval_or_boundary": "Editorial Semantic IR V1 service boundary",
+      "eligibility_state": "accepted_outside_verified_service",
+      "enters_substantive_denominator": true,
+      "episode_ids": [],
+      "human_review_can_resolve": true,
+      "routing_treatment": "none_outside_service",
+      "trigger_id": "compiler-condition:outside-service",
+      "trigger_type": "outside_service",
+      "triggered": false,
+      "true_semantic_blocker": false
+    },
+    {
+      "action_ids": [],
+      "controlling_approval_or_boundary": "Editorial Semantic IR V1 synthesis threshold",
+      "eligibility_state": "accepted_substantive",
+      "enters_substantive_denominator": true,
+      "episode_ids": [],
+      "human_review_can_resolve": true,
+      "routing_treatment": "not_applicable_32_complete_episodes",
+      "trigger_id": "compiler-condition:single-episode-record",
+      "trigger_type": "single_episode_record",
+      "triggered": false,
+      "true_semantic_blocker": false
+    }
+  ]
+}
