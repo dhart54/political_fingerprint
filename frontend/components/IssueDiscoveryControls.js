@@ -1,17 +1,17 @@
 const OPTIONS = [
   ["recommended", "Recommended"],
   ["most_evidence", "Most evidence"],
-  ["reviewed_analysis", "Reviewed analysis"],
+  ["reviewed_analysis", "Issue summaries"],
   ["a_z", "A–Z"],
 ];
 
 const EXPLANATIONS = {
   recommended:
-    "Reviewed public analysis appears first, followed by evidence usefulness and stable issue order.",
+    "Plain-language issue summaries appear first, followed by evidence usefulness and stable issue order.",
   most_evidence:
     "Orders by recorded actions, then substantive Yea/Nay receipts.",
   reviewed_analysis:
-    "Shows only issues with a valid backend-supplied public analytical claim.",
+    "Shows only issues with a bounded plain-language summary.",
   a_z: "Orders by the public issue name.",
 };
 

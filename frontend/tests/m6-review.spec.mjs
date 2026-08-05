@@ -1,9 +1,7 @@
 import { expect, test } from "@playwright/test";
 import path from "node:path";
 
-const screenshots = path.resolve(
-  "../docs/editorial/full_record_reviews/public_interface_candidates/f000477_justice_public_safety_119_v1/screenshots",
-);
+const screenshots = process.env.M6_REVIEW_SCREENSHOT_DIR;
 
 async function openReview(page) {
   await page.goto("/review/foushee-justice-m6");
@@ -11,6 +9,9 @@ async function openReview(page) {
 }
 
 async function capture(page, name, options = {}) {
+  if (!screenshots) {
+    return;
+  }
   await page.screenshot({ path: path.join(screenshots, name), fullPage: true, ...options });
 }
 
@@ -30,9 +31,9 @@ test("desktop candidate preserves all primary and limiting meaning", async ({ pa
 test("desktop ledger exposes all 37 actions and special boundaries", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1050 });
   await openReview(page);
-  await expect(page.getByText(/All 37 recorded actions remain available/)).toBeVisible();
-  while (await page.getByRole("button", { name: /Show \d+ more/ }).count()) {
-    await page.getByRole("button", { name: /Show \d+ more/ }).click();
+  await expect(page.getByText(/37 recorded actions\. Newest first/)).toBeVisible();
+  while (await page.getByRole("button", { name: "Show more actions" }).count()) {
+    await page.getByRole("button", { name: "Show more actions" }).click();
   }
   for (const action of ["house:119:1:128", "house:119:2:155", "house:119:2:278"]) {
     await expect(page.locator(`[data-canonical-action-id="${action}"]`)).toBeVisible();

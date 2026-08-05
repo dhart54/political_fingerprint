@@ -1,74 +1,89 @@
+import { buildPatternIndex } from "../lib/selectedIssueExperience.mjs";
+
 export default function ReviewedAnalysisSection({
   onSeeActions,
   presentation,
+  rows = [],
 }) {
   if (!presentation?.review_state || presentation.tier === "receipts_only") {
     return null;
   }
-  const support = (presentation.repeated_patterns || []).filter(
-    (item) => item.direction === "support",
+  const patterns = buildPatternIndex(presentation, rows);
+  const reviewState = presentation.review_state;
+  const conclusionBody = presentation.conclusion?.body || presentation.teaser;
+  const hasLongConclusion = Boolean(
+    presentation.conclusion?.body
+    && presentation.conclusion.body !== presentation.teaser,
   );
-  const opposition = (presentation.repeated_patterns || []).filter(
-    (item) => item.direction === "opposition",
-  );
-  const mixed = [
-    ...(presentation.repeated_patterns || []).filter(
-      (item) => item.direction === "mixed",
-    ),
-    ...(presentation.policy_trajectories || []).filter(
-      (item) => item.direction === "mixed",
-    ),
-  ];
-  const copy = reviewCopy(presentation.review_state);
 
   return (
     <section
-      className="scroll-mt-24 border-t border-stone-200 py-10"
+      className="scroll-mt-24 border-t border-stone-200 py-10 sm:py-12"
       data-testid="reviewed-analysis"
       id="reviewed-analysis"
     >
-      <div className="rounded-2xl border border-teal-900/15 bg-teal-50/60 p-5 sm:p-7">
-        <span className="status-pill status-reviewed">
-          {presentation.public_status_label}
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-stone-600">
+        <span className="rounded-full bg-teal-950 px-3 py-1 font-semibold text-white">
+          {reviewTypeLabel(reviewState.review_scope)}
         </span>
-        <p className="mt-4 text-sm font-semibold text-teal-950">
-          Reviewed scope: {formatCongressScope(presentation.review_state.congress_scope)}
-          {" · "}
-          {presentation.review_state.total_recorded_actions} actions in {copy.scopeNoun}
-          {" · "}
-          {presentation.review_state.complete_episode_count} policy episodes
-        </p>
-        <h3 className="mt-6 font-serif text-3xl leading-tight text-stone-950">
-          {copy.conclusionTitle}
-        </h3>
-        <p className="mt-3 max-w-4xl text-lg leading-8 text-stone-800">
-          {presentation.conclusion?.body || presentation.teaser}
-        </p>
+        <span>{reviewState.total_recorded_actions} reviewed actions</span>
+        <span aria-hidden="true">·</span>
+        <span>{reviewState.complete_episode_count} policy episodes</span>
+        <span aria-hidden="true">·</span>
+        <span>{formatCongressScope(reviewState.congress_scope)}</span>
       </div>
 
-      <FindingGroup
-        items={support}
-        onSeeActions={onSeeActions}
-        title={`Where ${copy.subject} shows support`}
-      />
-      <FindingGroup
-        items={opposition}
-        onSeeActions={onSeeActions}
-        title={`Where ${copy.subject} shows opposition`}
-      />
-      <FindingGroup
-        items={mixed}
-        onSeeActions={onSeeActions}
-        tone="mixed"
-        title="Where the record is mixed"
-      />
+      <div className="mt-7 max-w-5xl border-l-4 border-teal-800 pl-5 sm:pl-7">
+        <p className="eyebrow text-teal-800">Main takeaway</p>
+        <h3 className="mt-2 font-serif text-3xl leading-tight text-stone-950 sm:text-4xl">
+          {presentation.conclusion?.headline || "What this issue record shows"}
+        </h3>
+        <p className="mt-4 max-w-4xl text-lg leading-8 text-stone-800">
+          {presentation.teaser || conclusionBody}
+        </p>
+        {hasLongConclusion ? (
+          <details className="mt-4 max-w-4xl text-base leading-7 text-stone-700">
+            <summary className="cursor-pointer font-semibold text-teal-900 underline decoration-teal-800/30 underline-offset-4">
+              Read the full reviewed conclusion
+            </summary>
+            <p className="mt-3">{conclusionBody}</p>
+          </details>
+        ) : null}
+      </div>
+
+      {patterns.length ? (
+        <div className="mt-12">
+          <div className="max-w-3xl">
+            <p className="eyebrow">Pattern index</p>
+            <h3 className="mt-2 font-serif text-3xl leading-tight text-stone-950">
+              The strongest repeated patterns, in proportion
+            </h3>
+            <p className="mt-3 text-base leading-7 text-stone-700">
+              Bar length reflects the number of exact actions attached to each reviewed pattern. It is not a score.
+            </p>
+          </div>
+          <div className="mt-6 divide-y divide-stone-200 border-y border-stone-200">
+            {patterns.map((pattern) => (
+              <PatternRow
+                key={pattern.proposition_id}
+                onSeeActions={onSeeActions}
+                pattern={pattern}
+              />
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      <p className="mt-10 max-w-4xl border-l-2 border-stone-300 pl-4 text-sm leading-6 text-stone-600">
+        Based on reviewed recorded actions; this does not infer motive, ideology, character, future behavior, or voting advice.
+      </p>
 
       {presentation.limitations?.length ? (
-        <div className="mt-10 border-t border-stone-200 pt-8">
-          <h3 className="font-serif text-3xl leading-tight text-stone-950">
-            {copy.limitationTitle}
-          </h3>
-          <div className="mt-5 grid gap-5 md:grid-cols-2">
+        <details className="mt-8 border-y border-stone-200 py-5">
+          <summary className="cursor-pointer text-base font-semibold text-stone-950">
+            Limitations and unresolved actions · {presentation.limitations.length}
+          </summary>
+          <div className="mt-5 grid gap-6 md:grid-cols-2">
             {presentation.limitations.map((limitation, index) => (
               <article key={`${limitation.heading}-${index}`}>
                 <h4 className="text-base font-semibold text-stone-950">
@@ -80,50 +95,70 @@ export default function ReviewedAnalysisSection({
               </article>
             ))}
           </div>
-          {presentation.scope_boundary ? (
-            <p className="mt-6 max-w-4xl border-l-2 border-stone-300 pl-4 text-base leading-7 text-stone-700">
-              {presentation.scope_boundary}
-            </p>
-          ) : null}
-        </div>
+        </details>
+      ) : null}
+
+      {presentation.scope_boundary ? (
+        <details className="mt-4 max-w-4xl text-sm leading-6 text-stone-600">
+          <summary className="cursor-pointer font-semibold text-stone-800">
+            Scope boundary
+          </summary>
+          <p className="mt-3 border-l-2 border-stone-300 pl-4">
+            {presentation.scope_boundary}
+          </p>
+        </details>
       ) : null}
     </section>
   );
 }
 
-function FindingGroup({ items, onSeeActions, title, tone = "standard" }) {
-  if (!items.length) {
-    return null;
-  }
+function PatternRow({ onSeeActions, pattern }) {
+  const episodeText = pattern.episodeCount
+    ? `${pattern.episodeCount} ${pattern.episodeCount === 1 ? "episode" : "episodes"}`
+    : "episode count not supplied";
   return (
-    <div className="mt-10">
-      <h3 className="font-serif text-3xl leading-tight text-stone-950">{title}</h3>
-      <div className="mt-5 divide-y divide-stone-200 border-y border-stone-200">
-        {items.map((item) => (
-          <article
-            className={tone === "mixed" ? "bg-amber-50/60 px-4 py-6" : "py-6"}
-            key={item.proposition_id}
-          >
-            <h4 className="text-lg font-semibold leading-7 text-stone-950">
-              {item.heading}
-            </h4>
-            <p className="mt-2 max-w-4xl text-base leading-7 text-stone-700">
-              {item.body}
-            </p>
-            {item.action_ids?.length ? (
-              <button
-                aria-label={`Show ${item.action_ids.length} exact ${item.action_ids.length === 1 ? "action" : "actions"} for ${item.heading}`}
-                className="secondary-button mt-4"
-                onClick={() => onSeeActions(item.action_ids, item.heading)}
-                type="button"
-              >
-                Show {item.action_ids.length} exact {item.action_ids.length === 1 ? "action" : "actions"}
-              </button>
-            ) : null}
-          </article>
-        ))}
+    <article className="grid gap-4 py-6 md:grid-cols-[minmax(0,1fr)_12rem] md:items-center">
+      <div>
+        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.1em]">
+          <span className={pattern.direction === "mixed" ? "text-amber-800" : "text-teal-800"}>
+            {pattern.statusLabel}
+          </span>
+          <span className="text-stone-500">
+            {pattern.actionCount} exact {pattern.actionCount === 1 ? "action" : "actions"} · {episodeText}
+          </span>
+        </div>
+        <h4 className="mt-2 text-lg font-semibold leading-7 text-stone-950">
+          {pattern.heading}
+        </h4>
+        {pattern.shortExplanation ? (
+          <p className="mt-1 text-sm leading-6 text-stone-600">{pattern.shortExplanation}.</p>
+        ) : null}
+        <details className="mt-3 text-sm leading-6 text-stone-700">
+          <summary className="cursor-pointer font-semibold text-stone-800">Read pattern explanation</summary>
+          <p className="mt-2 max-w-3xl">{pattern.body}</p>
+        </details>
+        <button
+          aria-label={`Show ${pattern.actionCount} exact ${pattern.actionCount === 1 ? "action" : "actions"} for ${pattern.heading}`}
+          className="mt-4 font-semibold text-teal-900 underline decoration-teal-800/30 underline-offset-4"
+          onClick={() => onSeeActions(pattern.actionIds, pattern.heading, {
+            direction: pattern.direction,
+            episodeCount: pattern.episodeCount,
+          })}
+          type="button"
+        >
+          Show exact actions
+        </button>
       </div>
-    </div>
+      <div aria-label={`${pattern.actionCount} exact actions relative to the largest pattern`}>
+        <div className="h-2 overflow-hidden rounded-full bg-stone-200">
+          <div
+            className={`h-full rounded-full ${pattern.direction === "mixed" ? "bg-amber-500" : "bg-teal-700"}`}
+            style={{ width: `${pattern.relativeWeight}%` }}
+          />
+        </div>
+        <p className="mt-2 text-right text-xs text-stone-500">{pattern.actionCount} actions</p>
+      </div>
+    </article>
   );
 }
 
@@ -131,19 +166,12 @@ function formatCongressScope(scope) {
   return (scope || []).map((congress) => `${congress}th Congress`).join(", ");
 }
 
-function reviewCopy(reviewState) {
-  const sample = reviewState.review_scope !== "full_defined_issue_record";
-  return sample
-    ? {
-        conclusionTitle: "What this reviewed sample found",
-        limitationTitle: "What this sample does not establish",
-        scopeNoun: "the declared benchmark sample",
-        subject: "the reviewed sample",
-      }
-    : {
-        conclusionTitle: "What this full review found",
-        limitationTitle: "What this review does not establish",
-        scopeNoun: "the full defined issue record",
-        subject: "the reviewed record",
-      };
+function reviewTypeLabel(value) {
+  if (value === "full_defined_issue_record") {
+    return "Full reviewed record";
+  }
+  if (value === "benchmark_sample") {
+    return "Reviewed record sample";
+  }
+  return "Bounded reviewed record";
 }

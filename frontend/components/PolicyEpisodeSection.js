@@ -20,7 +20,7 @@ export default function PolicyEpisodeSection({ episodes = [] }) {
 
   return (
     <section className="scroll-mt-24 border-t border-stone-200 py-10" id="policy-episodes">
-      <p className="eyebrow">Reviewed episode presentation</p>
+      <p className="eyebrow">Connected actions</p>
       <h3 className="mt-2 font-serif text-3xl leading-tight text-stone-950">
         Policy episodes
       </h3>

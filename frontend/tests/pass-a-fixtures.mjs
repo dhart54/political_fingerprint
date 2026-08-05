@@ -293,7 +293,13 @@ function buildGovernedReceiptProjection(roll) {
       name: roll === 32 ? "H.Amdt. 5 to H.R. 27" : `Official action source ${roll}`,
       url: `https://www.congress.gov/example/${roll}`,
     }],
-    interpretation_receipt_refs: [`receipt-${roll}`],
+    interpretation_receipt_refs: [
+      "docs/semantic_ir/accepted/acceptance_receipt.json",
+      "docs/editorial/user_launch_ratification_receipt.json",
+    ],
+    implementation_id: `m10r1-receipt-${roll}`,
+    milestone_name: "M10R1 launch",
+    reviewed_at: "2026-08-04",
     review_scope: "benchmark_sample",
     public_claim_class: "reviewed_sample_finding",
     caveats: ["This receipt remains bounded to the reviewed action and sample."],
@@ -335,10 +341,10 @@ export async function installPassARoutes(page, {
   episodes = false,
   justiceEvidenceOverride = null,
   justicePresentationOverride = null,
+  positionsOverride = null,
 } = {}) {
   const presentation = justicePresentationOverride
     || (episodes ? episodePresentation : justicePresentation);
-  const suppliedJusticeEvidence = justiceEvidenceOverride || justiceEvidence;
   await page.route("**/*", async (route) => {
     const requestUrl = new URL(route.request().url());
     if (!requestUrl.href.startsWith("http://localhost:8000")) {
@@ -400,10 +406,16 @@ export async function installPassARoutes(page, {
       return;
     }
     if (path.endsWith("/positions")) {
-      await route.fulfill({ json: positions });
+      const suppliedPositions = typeof positionsOverride === "function"
+        ? positionsOverride(scope)
+        : positionsOverride || positions;
+      await route.fulfill({ json: suppliedPositions });
       return;
     }
     if (path.endsWith("/positions/JUSTICE_PUBLIC_SAFETY/evidence")) {
+      const suppliedJusticeEvidence = typeof justiceEvidenceOverride === "function"
+        ? justiceEvidenceOverride(scope)
+        : justiceEvidenceOverride || justiceEvidence;
       await route.fulfill({
         json: { domain: "JUSTICE_PUBLIC_SAFETY", evidence: suppliedJusticeEvidence },
       });

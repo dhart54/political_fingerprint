@@ -146,7 +146,7 @@ export default function RepresentativeExperience({
           Choose an issue
         </h2>
         <p className="mt-3 max-w-3xl text-base leading-7 text-stone-700">
-          Each card shows recorded evidence in the selected Congress scope and whether governed public analysis is available.
+          Each card shows recorded evidence in the selected Congress scope and whether a plain-language issue summary is available.
         </p>
         <IssueDiscoveryControls mode={mode} onChange={setMode} />
         {state.status === "loading" ? (

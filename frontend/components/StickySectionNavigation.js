@@ -1,7 +1,7 @@
 export default function StickySectionNavigation({ hasAnalysis, hasEpisodes }) {
   const links = [
     ["issues", "Issues"],
-    ...(hasAnalysis ? [["reviewed-analysis", "Reviewed analysis"]] : []),
+    ...(hasAnalysis ? [["reviewed-analysis", "Issue summary"]] : []),
     ...(hasEpisodes ? [["policy-episodes", "Policy episodes"]] : []),
     ["vote-record", "Vote record"],
   ];

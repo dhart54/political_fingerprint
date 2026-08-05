@@ -143,7 +143,7 @@ export default function HomePage() {
               Who represents you, and what have they done?
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-stone-700">
-              Find a federal representative, choose an issue, and inspect scoped reviewed analysis when available alongside chronological exact vote receipts.
+              Find a federal representative, choose an issue, and inspect bounded plain-language summaries alongside chronological exact vote receipts.
             </p>
             <div className="mt-9">
               <RepresentativeFinder onSelect={selectRepresentative} />
@@ -209,8 +209,8 @@ function MethodFooter() {
           text="Present, Not Voting, procedural, limited-context, and unresolved records remain distinct and do not become support or opposition."
         />
         <FooterNote
-          heading="Reviewed analysis"
-          text="Benchmark findings stay bounded to their declared sample and Congress. Full representative-level issue synthesis is a later milestone."
+          heading="Issue summaries"
+          text="Issue summaries stay bounded to the stated actions and Congress. Vote receipts remain available for direct inspection."
         />
       </div>
     </footer>
