@@ -52,9 +52,9 @@ test("issue sort and filter controls expose evidence and reviewed states", async
   await expect(cards.nth(0)).toContainText("Justice & Public Safety");
   await page.getByRole("button", { name: "Most evidence" }).click();
   await expect(cards.nth(0)).toContainText("Economy & Taxes");
-  await page.getByRole("button", { name: "Reviewed analysis" }).click();
+  await page.getByRole("button", { name: "Issue summaries" }).click();
   await expect(cards).toHaveCount(1);
-  await expect(cards.first()).toContainText("Reviewed benchmark sample");
+  await expect(cards.first()).toContainText("Issue summary available");
   await page.getByRole("button", { name: "A–Z" }).click();
   await expect(cards.nth(0)).toContainText("Economy & Taxes");
 });
@@ -64,14 +64,16 @@ test("chronological ledger filters, progressive reveal, and single receipt expan
   const receipts = page.locator("[data-canonical-action-id]");
   await expect(receipts).toHaveCount(12);
   await expect(receipts.first()).toHaveAttribute("data-canonical-action-id", "house:119:1:412");
-  await page.getByRole("button", { name: "Show 1 more" }).click();
+  await page.getByRole("button", { name: "Show more actions" }).click();
   await expect(receipts).toHaveCount(13);
   const first = receipts.nth(0).getByRole("button");
   const second = receipts.nth(1).getByRole("button");
   await first.click();
   await expect(first).toHaveAttribute("aria-expanded", "true");
   await expect(receipts.nth(0)).toContainText("Policy-episode relationship");
-  await expect(receipts.nth(0)).toContainText("Provenance references");
+  await expect(receipts.nth(0)).toContainText("Representative vote");
+  await expect(receipts.nth(0)).toContainText("Official vote");
+  await expect(receipts.nth(0)).not.toContainText("Provenance references");
   await second.click();
   await expect(first).toHaveAttribute("aria-expanded", "false");
   await expect(second).toHaveAttribute("aria-expanded", "true");
@@ -93,8 +95,8 @@ test("reviewed finding links resolve live-shaped evidence IDs and open the first
   await page.getByRole("button", {
     name: /Show 3 exact actions for Certification, fentanyl research provisions/,
   }).click();
-  await expect(page.getByText("Selected reviewed finding")).toBeVisible();
-  await expect(page.getByText(/Showing 3 exact actions supplied/)).toBeVisible();
+  await expect(page.getByText("Selected pattern")).toBeVisible();
+  await expect(page.getByText(/Showing 3 exact actions across 2 policy episodes/)).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Chronological action ledger" }),
   ).toBeFocused();
@@ -109,14 +111,28 @@ test("reviewed finding links resolve live-shaped evidence IDs and open the first
     "aria-expanded",
     "true",
   );
-  await expect(receipts.first()).toContainText("Expanded vote receipt");
+  await expect(receipts.first()).toContainText("Vote details");
   const roll32 = page.locator(
     '[data-canonical-action-id="house:119:1:32"]',
   );
   await roll32.getByRole("button").click();
   await expect(roll32).toContainText("overdose-reduction certification");
-  await expect(roll32).toContainText("congress_hamdt5");
-  await expect(roll32).toContainText("clerk_roll_032");
+  await expect(roll32).toContainText("Official vote");
+  await expect(roll32).toContainText("Official bill or amendment material");
+  for (const forbidden of [
+    "congress_hamdt5",
+    "clerk_roll_032",
+    "acceptance_receipt.json",
+    "launch_ratification",
+    "m10r1-receipt",
+    "M10R1 launch",
+    "2026-08-04",
+    "Interpretation digest",
+    "Provenance references",
+    "Reviewed exact-action meaning supplied",
+  ]) {
+    await expect(roll32).not.toContainText(forbidden);
+  }
   await expect(roll32).not.toContainText("Limited context");
   await expect(roll32).not.toContainText("insufficient");
   await expect(roll32).not.toContainText("Justice measure 32 stakes.");
@@ -159,7 +175,7 @@ test("zero-match exact-action request keeps the complete ledger and announces th
     "true",
   );
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(7);
-  await expect(page.getByText(/Showing 7 of 7 matching actions \(7 total\)/)).toBeVisible();
+  await expect(page.getByText(/Showing all 7 actions/)).toBeVisible();
   await expect(page.getByText("No recorded actions match this filter.")).toHaveCount(0);
 });
 

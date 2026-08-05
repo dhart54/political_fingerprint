@@ -289,12 +289,20 @@ test("primary Pass A journey contains no representative profile image", () => {
 });
 
 test("reviewed-analysis rendering uses supplied finding direction", () => {
-  const source = fs.readFileSync(
+  const componentSource = fs.readFileSync(
     path.join(here, "../components/ReviewedAnalysisSection.js"),
     "utf8",
   );
-  assert.match(source, /item\.direction === "support"/);
-  assert.match(source, /item\.direction === "opposition"/);
+  const modelSource = fs.readFileSync(
+    path.join(here, "selectedIssueExperience.mjs"),
+    "utf8",
+  );
+  const source = `${componentSource}\n${modelSource}`;
+  assert.match(modelSource, /\.\.\.\(presentation\.repeated_patterns \|\| \[\]\)/);
+  assert.match(modelSource, /formatDirection\(item\.direction\)/);
+  assert.match(modelSource, /value === "support"/);
+  assert.match(modelSource, /value === "opposition"/);
+  assert.match(componentSource, /pattern\.direction === "mixed"/);
   for (const forbidden of ["yea_count", "nay_count", "member_party", "keywords"]) {
     assert.equal(source.includes(forbidden), false, forbidden);
   }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import ChronologicalActionLedger from "./ChronologicalActionLedger";
 import PolicyEpisodeSection from "./PolicyEpisodeSection";
@@ -8,7 +8,7 @@ import ReviewedAnalysisSection from "./ReviewedAnalysisSection";
 import { fetchPositionEvidence } from "../lib/api";
 import { formatDomainLabel } from "../lib/issueDomains";
 import { getDomainDescription } from "../lib/issueEvidenceCoverage.mjs";
-import { scopeLabel } from "../lib/frontendPassA.mjs";
+import { buildSelectedIssueModel } from "../lib/selectedIssueExperience.mjs";
 
 export default function IssueDetail({
   fixtureEvidence = null,
@@ -23,6 +23,11 @@ export default function IssueDetail({
     error: null,
   });
   const [highlightedFinding, setHighlightedFinding] = useState(null);
+  const selectedIssue = useMemo(() => buildSelectedIssueModel({
+    presentation,
+    rows: state.rows,
+    scope,
+  }), [presentation, scope, state.rows]);
 
   useEffect(() => {
     let active = true;
@@ -55,10 +60,11 @@ export default function IssueDetail({
     };
   }, [fixtureEvidence, issue, legislatorId, scope]);
 
-  function showExactActions(actionIds, label) {
+  function showExactActions(actionIds, label, metadata = {}) {
     setHighlightedFinding({
       actionIds,
       label,
+      ...metadata,
       requestedAt: Date.now(),
     });
   }
@@ -66,36 +72,45 @@ export default function IssueDetail({
   return (
     <section
       aria-labelledby="selected-issue-heading"
-      className="mt-8 rounded-[1.75rem] border border-stone-200 bg-white px-5 sm:px-8"
+      className="mt-10 border-t border-stone-300"
       data-testid="issue-detail"
       id="issue-detail"
     >
-      <div className="py-9">
+      <header className="py-10 sm:py-12">
         <p className="eyebrow">Selected issue</p>
         <h2
-          className="mt-2 font-serif text-4xl leading-tight text-stone-950"
+          className="mt-2 max-w-4xl font-serif text-4xl leading-tight text-stone-950 sm:text-5xl"
           id="selected-issue-heading"
           tabIndex="-1"
         >
           {formatDomainLabel(issue)}
         </h2>
-        <h3 className="mt-7 font-serif text-3xl leading-tight text-stone-950">
-          What this issue covers
-        </h3>
-        <p className="mt-3 max-w-4xl text-lg leading-8 text-stone-700">
+        <p className="mt-4 max-w-4xl text-lg leading-8 text-stone-700">
           {getDomainDescription(issue)}
         </p>
-        <p className="mt-4 text-sm font-medium text-stone-600">
-          Vote-record scope: {scopeLabel(scope)}
-          {presentation?.review_state
-            ? ` · Reviewed analysis scope: ${presentation.review_state.congress_scope.map((value) => `${value}th Congress`).join(", ")} ${formatReviewScope(presentation.review_state.review_scope)}`
-            : " · No public reviewed analysis is supplied for this scope"}
-        </p>
-      </div>
+
+        {state.status === "ready" ? (
+          <dl className="mt-7 grid max-w-4xl gap-px overflow-hidden rounded-xl border border-stone-200 bg-stone-200 sm:grid-cols-2">
+            <ScopeCell
+              description={selectedIssue.evidence.countText}
+              label="Recorded actions shown"
+              value={selectedIssue.evidence.label}
+            />
+            <ScopeCell
+              description={selectedIssue.interpretation
+                ? `${selectedIssue.interpretation.actionCount} reviewed actions · ${selectedIssue.interpretation.episodeCount} policy episodes`
+                : "Exact vote receipts are available without a reviewed synthesis."}
+              label="Reviewed interpretation"
+              value={selectedIssue.interpretation?.scope || "Not published for this scope"}
+            />
+          </dl>
+        ) : null}
+      </header>
 
       <ReviewedAnalysisSection
         onSeeActions={showExactActions}
         presentation={presentation}
+        rows={state.rows}
       />
       <PolicyEpisodeSection episodes={presentation?.policy_episodes || []} />
 
@@ -119,15 +134,14 @@ export default function IssueDetail({
   );
 }
 
-function formatReviewScope(value) {
-  if (value === "benchmark_sample") {
-    return "benchmark sample";
-  }
-  if (value === "bounded_partial_record") {
-    return "bounded partial record";
-  }
-  if (value === "full_defined_issue_record") {
-    return "full defined issue record";
-  }
-  return "review scope";
+function ScopeCell({ description, label, value }) {
+  return (
+    <div className="bg-stone-50 px-5 py-4">
+      <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">
+        {label}
+      </dt>
+      <dd className="mt-1 text-base font-semibold leading-6 text-stone-950">{value}</dd>
+      <dd className="mt-1 text-sm leading-6 text-stone-600">{description}</dd>
+    </div>
+  );
 }

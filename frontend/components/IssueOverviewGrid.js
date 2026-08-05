@@ -14,7 +14,7 @@ export default function IssueOverviewGrid({
     return (
       <p className="mt-6 rounded-2xl border border-stone-200 bg-white p-5 text-base leading-7 text-stone-700">
         {mode === "reviewed_analysis"
-          ? "No reviewed public analysis is available in this representative and Congress scope. Vote receipts remain available under the other views."
+          ? "No plain-language issue summary is available in this representative and Congress scope. Vote receipts remain available under the other views."
           : "No recorded issue actions are available in this Congress scope."}
       </p>
     );
@@ -39,7 +39,7 @@ function IssueCard({ isRecommended, isSelected, onSelect, row }) {
   const composition = getRecordedActionComposition(row);
   const label = formatDomainLabel(row.domain);
   const status = row.analysisAvailable
-    ? row.presentation.public_status_label
+    ? "Issue summary available"
     : "Vote receipts available";
   return (
     <article
@@ -98,7 +98,7 @@ function IssueCard({ isRecommended, isSelected, onSelect, row }) {
         <p className="mt-4 line-clamp-2 text-sm leading-6 text-teal-950">
           {row.presentation.review_state.scope_bounded_teaser?.text
             || row.presentation.teaser
-            || "Reviewed public analysis is available for this declared scope."}
+            || "A plain-language issue summary is available for this scope."}
         </p>
       ) : (
         <p className="mt-4 text-sm leading-6 text-stone-600">

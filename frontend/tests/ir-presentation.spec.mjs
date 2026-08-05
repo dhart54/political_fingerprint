@@ -10,12 +10,15 @@ test.beforeEach(async ({ page }) => {
 
 test("benchmark analysis uses the public sample label and supplied finding directions", async ({ page }) => {
   const analysis = page.getByTestId("reviewed-analysis");
-  await expect(analysis).toContainText("Reviewed benchmark sample");
-  await expect(analysis).toContainText("What this reviewed sample found");
-  await expect(analysis).toContainText("Where the reviewed sample shows support");
-  await expect(analysis).toContainText("Where the reviewed sample shows opposition");
-  await expect(analysis).toContainText("Where the record is mixed");
-  await expect(analysis).toContainText("What this sample does not establish");
+  await expect(analysis).toContainText("Reviewed record sample");
+  await expect(analysis).toContainText("7 reviewed actions");
+  await expect(analysis).toContainText("5 policy episodes");
+  await expect(analysis).toContainText("Main takeaway");
+  await expect(analysis).toContainText("Patterns in this issue record");
+  await expect(analysis).toContainText("Support");
+  await expect(analysis).toContainText("Opposition");
+  await expect(analysis).toContainText("Mixed");
+  await expect(analysis).toContainText("Limitations and unresolved actions · 1");
   await expect(analysis).not.toContainText("Full review complete");
   await expect(analysis).not.toContainText("Full issue interpretation available");
 });
@@ -28,7 +31,7 @@ test("scope all preserves 119th boundary and scope 118 removes analysis", async 
   await expect(page).toHaveURL(/scope=118/);
   await expect(page.getByTestId("reviewed-analysis")).toHaveCount(0);
   await expect(
-    page.getByRole("link", { name: "Reviewed analysis" }),
+    page.getByRole("link", { name: "Issue summary" }),
   ).toHaveCount(0);
 });
 
@@ -37,8 +40,8 @@ test("exact-action control highlights only supplied actions and keeps full ledge
     name: /Show 3 exact actions for Certification, fentanyl research provisions/,
   }).click();
   await expect(page.getByRole("heading", { name: "Chronological action ledger" })).toBeFocused();
-  await expect(page.getByText("Selected reviewed finding")).toBeVisible();
-  await expect(page.getByText(/Showing 3 exact actions supplied/)).toBeVisible();
+  await expect(page.getByText("Selected pattern")).toBeVisible();
+  await expect(page.getByText(/Showing 3 exact actions across 2 policy episodes/)).toBeVisible();
   await expect(page.locator('[data-canonical-action-id="house:119:1:32"]')).toBeVisible();
   await page.getByRole("button", { name: /Return to all 7 actions/ }).click();
   await expect(page.getByRole("button", { name: "All", exact: true })).toHaveAttribute("aria-pressed", "true");

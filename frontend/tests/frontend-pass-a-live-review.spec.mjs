@@ -74,7 +74,7 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
   await expect(cards.first()).toContainText("Justice & Public Safety");
   await expect(
     cards.filter({ hasText: "Justice & Public Safety" }),
-  ).toContainText("Reviewed benchmark sample");
+  ).toContainText("Issue summary available");
   await expect(
     page.getByRole("button", { name: "Recommended" }),
   ).toHaveAttribute("aria-pressed", "true");
@@ -100,22 +100,22 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
   await expect(page.getByTestId("reviewed-analysis")).toBeVisible();
   await expect(
     page.getByRole("heading", {
-      name: "Where the reviewed sample shows support",
+      name: "Patterns in this issue record",
     }),
   ).toBeVisible();
   await expect(
     page.getByRole("heading", {
-      name: "Where the reviewed sample shows opposition",
+      name: "Certification, fentanyl research provisions, and officer-safety reporting",
     }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Where the record is mixed" }),
+    page.getByRole("heading", { name: "The fentanyl episode is mixed" }),
   ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Evidence boundaries" }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Reviewed analysis", exact: true }),
+    page.getByRole("heading", { name: "Issue summaries", exact: true }),
   ).toBeVisible();
   await expect(
     page.getByRole("navigation", { name: "Selected issue sections" }),
@@ -145,7 +145,7 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
     "aria-expanded",
     "true",
   );
-  await expect(receipts.first()).toContainText("house:119:1:166");
+  await expect(receipts.first()).not.toContainText("house:119:1:166");
   await expect(page.getByText("1635", { exact: true })).toHaveCount(0);
   await assertBounded(page);
   await capture(page, "05-exact-actions-focused-1440.png");
@@ -161,15 +161,16 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
   await expect(roll32).toContainText(
     "overdose-reduction certification",
   );
-  await expect(roll32).toContainText("house:119:1:32");
-  await expect(roll32).toContainText("clerk_roll_032");
-  await expect(roll32).toContainText("congress_hamdt5");
+  await expect(roll32).not.toContainText("house:119:1:32");
+  await expect(roll32).not.toContainText("clerk_roll_032");
+  await expect(roll32).not.toContainText("congress_hamdt5");
+  await expect(roll32).toContainText("Official vote");
   await expect(roll32).not.toContainText("Limited context");
   await expect(roll32).not.toContainText("insufficient amendment text");
   await capture(page, "06-corrected-roll-32-expanded-1440.png");
 
   await page.getByRole("button", { name: "Return to all 76 actions" }).click();
-  await expect(page.getByText(/Showing 12 of 76 matching actions/)).toBeVisible();
+  await expect(page.getByText(/Showing the first 12/)).toBeVisible();
   await expect(page.getByRole("button", { name: "All", exact: true })).toBeVisible();
   await capture(page, "07-returned-to-complete-record-1440.png");
 
@@ -187,7 +188,8 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
         '[data-canonical-action-id="house:119:1:32"]',
       );
       await mobileRoll32.getByRole("button").click();
-      await expect(mobileRoll32).toContainText("congress_hamdt5");
+      await expect(mobileRoll32).not.toContainText("congress_hamdt5");
+      await expect(mobileRoll32).toContainText("Official vote");
     }
     await expect(
       page.getByRole("navigation", { name: "Selected issue sections" }),
@@ -231,6 +233,6 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
     hasText: "complete chronological record remains available",
   })).toBeVisible();
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(12);
-  await expect(page.getByText(/Showing 12 of 76 matching actions/)).toBeVisible();
+  await expect(page.getByText(/Showing the first 12/)).toBeVisible();
   await capture(page, "12-zero-match-fallback-full-ledger-1440.png");
 });
