@@ -69,8 +69,14 @@ test("scan-first pattern index preserves governed action and episode accounting"
 
   const analysis = page.getByTestId("reviewed-analysis");
   await expect(analysis).toContainText(
+    "One meaningful contrast in the reviewed record is opposition to the reviewed displacement of D.C. public-safety rules alongside support for two terrorism-preparedness mandates; separate firearm-access and fraud-enforcement patterns remain primary findings.",
+  );
+  await expect(analysis).not.toContainText(
     "One bounded contrast within a record with four primary patterns",
   );
+  await expect(analysis).toContainText("Patterns in this issue record");
+  await expect(analysis).not.toContainText("Bar length reflects");
+  await expect(analysis).not.toContainText("Across six separate episodes.");
   await expect(analysis).toContainText("6 exact actions · 6 episodes");
   await expect(analysis).toContainText("3 exact actions · 3 episodes");
   await expect(analysis).toContainText("2 exact actions · 2 episodes");
@@ -172,6 +178,28 @@ test("related NDAA actions remain five independent receipts with the control vis
   );
 });
 
+test("standard rows omit review status and representative standalone actions use meaningful titles", async ({ page }) => {
+  await page.goto(
+    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY&scope=119",
+  );
+  while (await page.getByRole("button", { name: "Show more actions" }).count()) {
+    await page.getByRole("button", { name: "Show more actions" }).click();
+  }
+  const expectedTitles = new Map([
+    [218, "Fraud Prevention and Accountability Act"],
+    [221, "To amend the FISA Amendments Act of 2008"],
+    [227, "Financial Exploitation Prevention Act"],
+    [234, "Weatherizing Infrastructure in the North and Terrorism Emergency Readiness Act"],
+    [240, "Protecting Privacy in Purchases Act"],
+  ]);
+  for (const [roll, title] of expectedTitles) {
+    const row = page.locator(`[data-canonical-action-id="house:119:2:${roll}"]`);
+    await expect(row.getByRole("button")).toContainText(title);
+    await expect(row.getByRole("button")).not.toContainText("Reviewed");
+    await expect(row.getByRole("button")).not.toContainText(new RegExp(`(?:Passage|Suspension passage) · Roll ${roll}`));
+  }
+});
+
 test("compact rows defer exact meaning to the expanded voter receipt and expose no internal metadata", async ({ page }) => {
   await page.goto(
     "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY&scope=119",
@@ -185,8 +213,10 @@ test("compact rows defer exact meaning to the expanded voter receipt and expose 
   );
   await roll275.getByRole("button").click();
   await expect(roll275).toContainText("Exact-action meaning");
-  await expect(roll275).toContainText("Policy question");
+  await expect(roll275).not.toContainText("Policy question");
   await expect(roll275).toContainText("Representative vote");
+  await expect(roll275).toContainText("Chamber result: passed");
+  await expect(roll275).not.toContainText("Policy-episode relationship");
   await expect(roll275).toContainText("Official vote");
   await expect(roll275).toContainText("Official bill or amendment material");
 

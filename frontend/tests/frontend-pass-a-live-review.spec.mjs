@@ -100,7 +100,7 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
   await expect(page.getByTestId("reviewed-analysis")).toBeVisible();
   await expect(
     page.getByRole("heading", {
-      name: "The strongest repeated patterns, in proportion",
+      name: "Patterns in this issue record",
     }),
   ).toBeVisible();
   await expect(

@@ -18,6 +18,13 @@ const amendmentTitles = new Map([
   [275, "Bar federal funding for automated speed-enforcement cameras"],
   [278, "Final passage after amendments"],
 ]);
+const standaloneTitles = new Map([
+  [218, "Fraud Prevention and Accountability Act"],
+  [221, "To amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978, and for other purposes"],
+  [227, "Financial Exploitation Prevention Act"],
+  [234, "Weatherizing Infrastructure in the North and Terrorism Emergency Readiness Act"],
+  [240, "Protecting Privacy in Purchases Act"],
+]);
 
 export const selectedIssueEvidence119 = selectedIssueReview.ledger.map((record) => {
   const isControl = controls.has(record.canonical_action_id);
@@ -45,7 +52,9 @@ export const selectedIssueEvidence119 = selectedIssueReview.ledger.map((record) 
     })),
     bill_title: record.session === 2 && ndaaRolls.has(record.roll_call)
       ? "National Defense Authorization Act for Fiscal Year 2027"
-      : undefined,
+      : record.session === 2
+        ? standaloneTitles.get(record.roll_call)
+        : undefined,
     amendment_purpose: record.session === 2
       ? amendmentTitles.get(record.roll_call)
       : undefined,
@@ -62,6 +71,9 @@ export const selectedIssueEvidence119 = selectedIssueReview.ledger.map((record) 
       vote_sources: record.official_vote_source,
       action_meaning_sources: record.official_action_meaning_sources,
     },
+    vote_context: record.session === 2 && record.roll_call === 275
+      ? { final_result: "passed" }
+      : undefined,
     governed_receipt_control: isControl
       ? {
           status: "noncounting_control",

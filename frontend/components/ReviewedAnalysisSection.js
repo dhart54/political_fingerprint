@@ -11,6 +11,7 @@ export default function ReviewedAnalysisSection({
   const patterns = buildPatternIndex(presentation, rows);
   const reviewState = presentation.review_state;
   const conclusionBody = presentation.conclusion?.body || presentation.teaser;
+  const takeaway = splitFirstSentence(presentation.teaser || conclusionBody);
   const hasLongConclusion = Boolean(
     presentation.conclusion?.body
     && presentation.conclusion.body !== presentation.teaser,
@@ -36,15 +37,17 @@ export default function ReviewedAnalysisSection({
       <div className="mt-7 max-w-5xl border-l-4 border-teal-800 pl-5 sm:pl-7">
         <p className="eyebrow text-teal-800">Main takeaway</p>
         <h3 className="mt-2 font-serif text-3xl leading-tight text-stone-950 sm:text-4xl">
-          {presentation.conclusion?.headline || "What this issue record shows"}
+          {takeaway.lead || "What this issue record shows"}
         </h3>
-        <p className="mt-4 max-w-4xl text-lg leading-8 text-stone-800">
-          {presentation.teaser || conclusionBody}
-        </p>
+        {takeaway.remainder ? (
+          <p className="mt-4 max-w-4xl text-lg leading-8 text-stone-800">
+            {takeaway.remainder}
+          </p>
+        ) : null}
         {hasLongConclusion ? (
           <details className="mt-4 max-w-4xl text-base leading-7 text-stone-700">
             <summary className="cursor-pointer font-semibold text-teal-900 underline decoration-teal-800/30 underline-offset-4">
-              Read the full reviewed conclusion
+              Read the complete conclusion
             </summary>
             <p className="mt-3">{conclusionBody}</p>
           </details>
@@ -54,13 +57,9 @@ export default function ReviewedAnalysisSection({
       {patterns.length ? (
         <div className="mt-12">
           <div className="max-w-3xl">
-            <p className="eyebrow">Pattern index</p>
             <h3 className="mt-2 font-serif text-3xl leading-tight text-stone-950">
-              The strongest repeated patterns, in proportion
+              Patterns in this issue record
             </h3>
-            <p className="mt-3 text-base leading-7 text-stone-700">
-              Bar length reflects the number of exact actions attached to each reviewed pattern. It is not a score.
-            </p>
           </div>
           <div className="mt-6 divide-y divide-stone-200 border-y border-stone-200">
             {patterns.map((pattern) => (
@@ -117,7 +116,7 @@ function PatternRow({ onSeeActions, pattern }) {
     ? `${pattern.episodeCount} ${pattern.episodeCount === 1 ? "episode" : "episodes"}`
     : "episode count not supplied";
   return (
-    <article className="grid gap-4 py-6 md:grid-cols-[minmax(0,1fr)_12rem] md:items-center">
+    <article className="py-6">
       <div>
         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.1em]">
           <span className={pattern.direction === "mixed" ? "text-amber-800" : "text-teal-800"}>
@@ -130,9 +129,6 @@ function PatternRow({ onSeeActions, pattern }) {
         <h4 className="mt-2 text-lg font-semibold leading-7 text-stone-950">
           {pattern.heading}
         </h4>
-        {pattern.shortExplanation ? (
-          <p className="mt-1 text-sm leading-6 text-stone-600">{pattern.shortExplanation}.</p>
-        ) : null}
         <details className="mt-3 text-sm leading-6 text-stone-700">
           <summary className="cursor-pointer font-semibold text-stone-800">Read pattern explanation</summary>
           <p className="mt-2 max-w-3xl">{pattern.body}</p>
@@ -149,17 +145,22 @@ function PatternRow({ onSeeActions, pattern }) {
           Show exact actions
         </button>
       </div>
-      <div aria-label={`${pattern.actionCount} exact actions relative to the largest pattern`}>
-        <div className="h-2 overflow-hidden rounded-full bg-stone-200">
-          <div
-            className={`h-full rounded-full ${pattern.direction === "mixed" ? "bg-amber-500" : "bg-teal-700"}`}
-            style={{ width: `${pattern.relativeWeight}%` }}
-          />
-        </div>
-        <p className="mt-2 text-right text-xs text-stone-500">{pattern.actionCount} actions</p>
-      </div>
     </article>
   );
+}
+
+function splitFirstSentence(value) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  if (!text) {
+    return { lead: "", remainder: "" };
+  }
+  const boundary = text.search(/[.!?](?=\s+[A-Z]|$)/);
+  return boundary >= 0
+    ? {
+        lead: text.slice(0, boundary + 1),
+        remainder: text.slice(boundary + 1).trim(),
+      }
+    : { lead: text, remainder: "" };
 }
 
 function formatCongressScope(scope) {

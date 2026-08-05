@@ -7,6 +7,7 @@ import {
   buildSelectedIssueModel,
   completeVisibleRows,
   getActionPresentation,
+  getPublicChamberResult,
 } from "./selectedIssueExperience.mjs";
 
 const presentation = {
@@ -59,7 +60,6 @@ test("pattern index derives independent episode counts from governed receipt bin
   ]);
   assert.equal(patterns[0].actionCount, 2);
   assert.equal(patterns[0].episodeCount, 2);
-  assert.equal(patterns[0].shortExplanation, "Across two separate episodes");
   assert.equal(patterns[0].statusLabel, "Opposition");
 });
 
@@ -118,7 +118,7 @@ test("compact action presentation uses amendment purpose and preserves parent me
   const compact = getActionPresentation(row);
   assert.equal(compact.title, "Limit military speed-camera funding");
   assert.equal(compact.parentMeasure, "National Defense Authorization Act for Fiscal Year 2027");
-  assert.equal(compact.status, "Reviewed");
+  assert.equal(compact.status, "");
 });
 
 test("a supplied final-passage label remains more specific than fallback question text", () => {
@@ -131,7 +131,7 @@ test("a supplied final-passage label remains more specific than fallback questio
   assert.equal(compact.status, "Governed non-counting control");
 });
 
-test("long governed questions stay in expanded receipts instead of compact titles", () => {
+test("approved exact-action meaning supplies a concise title when official labels are absent", () => {
   const compact = getActionPresentation({
     canonical_action_id: "house:119:2:240",
     chamber: "house",
@@ -139,9 +139,18 @@ test("long governed questions stay in expanded receipts instead of compact title
     rollcall_number: 240,
     vote_type: "suspension_passage",
     description: "House roll 240",
-    question: "The House choice was whether to pass a lengthy supplied policy question that belongs in the expanded exact-action receipt.",
+    question: "On Passage",
+    governed_receipt_projection: {
+      exact_action_meaning: "The House choice was whether to pass H.R. 1181, barring payment-card networks from assigning firearm-retailer category codes.",
+    },
   });
-  assert.equal(compact.title, "Suspension passage · Roll 240");
+  assert.equal(compact.title, "The House choice was whether to pass H.R. 1181");
+});
+
+test("chamber result supports nested and top-level public response shapes", () => {
+  assert.equal(getPublicChamberResult({ vote_context: { final_result: "passed" } }), "passed");
+  assert.equal(getPublicChamberResult({ final_result: "failed" }), "failed");
+  assert.equal(getPublicChamberResult({ vote_result: "agreed to" }), "agreed to");
 });
 
 function governedRow(roll, episodeId) {

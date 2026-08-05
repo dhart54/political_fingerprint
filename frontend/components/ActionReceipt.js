@@ -7,7 +7,10 @@ import {
   buildPublicReceipt,
   publicLimitations,
 } from "../lib/publicReceipt.mjs";
-import { getActionPresentation } from "../lib/selectedIssueExperience.mjs";
+import {
+  getActionPresentation,
+  getPublicChamberResult,
+} from "../lib/selectedIssueExperience.mjs";
 
 export default function ActionReceipt({
   expanded,
@@ -53,7 +56,7 @@ export default function ActionReceipt({
             {action.actionType ? ` · ${action.actionType}` : ""}
           </span>
           <span className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs leading-5 text-stone-500">
-            <span>{action.status}</span>
+            {action.status ? <span>{action.status}</span> : null}
             {outcome ? <span>{outcome}</span> : null}
           </span>
         </span>
@@ -158,7 +161,7 @@ function limitedContext(row) {
 }
 
 function formatOutcome(row) {
-  const result = row.vote_context?.final_result;
+  const result = getPublicChamberResult(row);
   if (!result) {
     return "";
   }

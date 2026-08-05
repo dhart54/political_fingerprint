@@ -48,10 +48,6 @@ export function buildPatternIndex(presentation, rows = []) {
     ...(presentation.repeated_patterns || []),
     ...(presentation.policy_trajectories || []),
   ];
-  const maxActionCount = Math.max(
-    1,
-    ...items.map((item) => uniqueStrings(item.action_ids).length),
-  );
   return items.map((item) => {
     const actionIds = uniqueStrings(item.action_ids);
     const episodeIds = uniqueStrings(
@@ -63,8 +59,6 @@ export function buildPatternIndex(presentation, rows = []) {
       actionCount: actionIds.length,
       episodeCount: episodeIds.length || null,
       statusLabel: formatDirection(item.direction),
-      shortExplanation: approvedLead(item.body),
-      relativeWeight: Math.max(18, Math.round((actionIds.length / maxActionCount) * 100)),
     };
   });
 }
@@ -146,11 +140,15 @@ export function getActionPresentation(row = {}) {
     row.amendment_purpose,
     row.action_label,
   );
-  const specificTitle = suppliedActionLabel || firstSpecificText(
-    row.description,
-    row.question,
+  const officialActionLabel = firstSpecificText(row.description);
+  const approvedMeaningTitle = conciseApprovedLead(
+    projection?.exact_action_meaning,
   );
-  const title = specificTitle || billTitle || `${actionType || "Recorded action"} · Roll ${row.rollcall_number || "not supplied"}`;
+  const title = suppliedActionLabel
+    || billTitle
+    || officialActionLabel
+    || approvedMeaningTitle
+    || `${actionType || "Recorded action"} · Roll ${row.rollcall_number || "not supplied"}`;
   return {
     actionType,
     parentMeasure: billTitle && normalizeText(billTitle) !== normalizeText(title)
@@ -176,10 +174,15 @@ export function publicActionStatus(row = {}) {
   if (status === "insufficient evidence") {
     return "Unresolved evidence";
   }
-  if (row.governed_receipt_projection || status === "interpreted") {
-    return "Reviewed";
-  }
-  return "Recorded action";
+  return "";
+}
+
+export function getPublicChamberResult(row = {}) {
+  return firstText(
+    row.vote_context?.final_result,
+    row.final_result,
+    row.vote_result,
+  );
 }
 
 function buildEpisodeIndex(presentation, rows) {
@@ -258,15 +261,21 @@ function groupComposition(rows) {
   };
 }
 
-function approvedLead(value) {
-  const text = String(value || "").trim();
+function conciseApprovedLead(value) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
   if (!text) {
     return "";
   }
-  const boundary = [text.indexOf(","), text.indexOf(";"), text.indexOf(".")]
+  const sentenceBoundary = text.search(/[.!?](?=\s+[A-Z]|$)/);
+  const boundary = [text.indexOf(","), text.indexOf(";"), sentenceBoundary]
     .filter((index) => index > 0)
     .sort((left, right) => left - right)[0];
-  return boundary ? text.slice(0, boundary).trim() : text;
+  const clause = boundary ? text.slice(0, boundary).trim() : text;
+  if (clause.length <= 120) {
+    return clause;
+  }
+  const lastSpace = clause.lastIndexOf(" ", 117);
+  return `${clause.slice(0, lastSpace > 40 ? lastSpace : 117).trim()}…`;
 }
 
 function reviewTypeLabel(value) {

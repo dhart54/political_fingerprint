@@ -47,7 +47,10 @@ test("public receipt projection exposes voter content and excludes governance me
     proposedChange: "",
     representativeVote: "Nay",
     episodeRelationship: "This amendment was one step in the bill's legislative path.",
-    limitations: ["The exception applies only to the listed institutions."],
+    limitations: [
+      "The exception applies only to the listed institutions.",
+      "This receipt remains bounded to the reviewed benchmark sample.",
+    ],
     voteSources: [{
       label: "Official vote",
       url: "https://clerk.house.gov/Votes/2025032",
@@ -90,4 +93,43 @@ test("technical episode identifiers are not presented as policy relationships", 
     episode_relationship: "halt-fentanyl-legislative-path",
   });
   assert.equal(receipt.episodeRelationship, "");
+});
+
+test("materially identical receipt fields are deduplicated after punctuation normalization", () => {
+  const receipt = buildPublicReceipt({
+    governed_receipt_projection: {
+      exact_action_meaning: "Whether to preserve the listed exception.",
+      policy_question: " Whether to preserve the listed exception ",
+      member_action: "Yea",
+    },
+  });
+  assert.equal(receipt.exactActionMeaning, "Whether to preserve the listed exception.");
+  assert.equal(receipt.policyQuestion, "");
+});
+
+test("generic episode process copy is omitted while substantive relationships remain", () => {
+  assert.equal(buildPublicReceipt({
+    governed_receipt_projection: {
+      episode_relationship: "This action is one independently expandable part of the related policy episode.",
+    },
+  }).episodeRelationship, "");
+  assert.equal(buildPublicReceipt({
+    governed_receipt_projection: {
+      episode_relationship: "This amendment preceded final passage of the same defense authorization bill.",
+    },
+  }).episodeRelationship, "This amendment preceded final passage of the same defense authorization bill.");
+});
+
+test("approved caveats retain voter-relevant review words but reject structural internals", () => {
+  const receipt = buildPublicReceipt({
+    governed_receipt_projection: {
+      caveats: [
+        "The reviewed interpretation remains a candidate because implementation depends on incomplete official amendment text.",
+        "See docs/semantic_ir/candidate.json and implementation_id M10R1.",
+      ],
+    },
+  });
+  assert.deepEqual(receipt.limitations, [
+    "The reviewed interpretation remains a candidate because implementation depends on incomplete official amendment text.",
+  ]);
 });

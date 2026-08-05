@@ -14,7 +14,7 @@ test("benchmark analysis uses the public sample label and supplied finding direc
   await expect(analysis).toContainText("7 reviewed actions");
   await expect(analysis).toContainText("5 policy episodes");
   await expect(analysis).toContainText("Main takeaway");
-  await expect(analysis).toContainText("Pattern index");
+  await expect(analysis).toContainText("Patterns in this issue record");
   await expect(analysis).toContainText("Support");
   await expect(analysis).toContainText("Opposition");
   await expect(analysis).toContainText("Mixed");

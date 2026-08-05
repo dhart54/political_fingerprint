@@ -28,7 +28,9 @@
 - [x] Public receipt metadata is simplified while internal governance records remain unchanged.
 - [x] Responsive, keyboard, focus, disclosure, reduced-motion, zoom, leakage, build, and contract validation pass.
 - [x] Deterministic after-state packet and manifest are produced outside governed product content.
-- [ ] Final diff is bounded, committed, pushed, and opened as one draft PR.
+- [x] Final diff is bounded, committed, pushed, and opened as one draft PR.
+- [x] PR #131 correction removes ordinary row-status theater, receipt duplication, meta takeaway copy, proportional pattern bars, generic title fallbacks, and overbroad governed-caveat filtering.
+- [x] The correction implementation is locally validated and prepared as one bounded commit; post-commit push, CI, and exact-commit live-preview capture are reported outside this commit-boundary plan.
 
 ## Baseline
 
@@ -68,6 +70,7 @@
 ## Deviations Or Corrections
 
 - The earlier receipt-only prompt is treated as an accepted internal phase, not a separate milestone.
+- Product review of PR #131 accepted the architecture and required a bounded voter-facing correction at reviewed head `448ef3a9e02497748974b1cc9692c1400891fb62`; governed backend content and identities remain out of scope.
 
 ## Validation Results
 
@@ -78,6 +81,8 @@
 - Semantic IR validator passed; 26 governed contract tests passed.
 - Diff check and rendered public-leakage audit passed.
 - Production-build review packet: 16 captures and manifest generated outside the repository and visually inspected.
+- PR #131 correction: 127 frontend unit tests passed; the complete Playwright suite passed 45 tests with 3 opt-in captures skipped; the focused production-shaped suite passed 9 of 9.
+- PR #131 correction: production build, Semantic IR validation, 26 governed contracts, diff check, and leakage coverage passed; lint remained at 0 errors with 8 unrelated baseline hook warnings.
 
 ## Production Writes
 
@@ -94,6 +99,4 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: implementation and validation complete; commit, exact-commit packet regeneration, push, and draft PR remain.
-- Remaining limitations: no hosted preview was created because deployment is outside this milestone; deterministic local production-build captures were used.
-- Next step: publish one draft PR and stop for delegated product review.
+- Initial milestone implementation was delivered in draft PR #131. At this correction commit boundary, implementation and local validation are complete; push, CI verification, and the production-data Vercel preview packet remain external post-commit steps and will be reported without another repository mutation.
