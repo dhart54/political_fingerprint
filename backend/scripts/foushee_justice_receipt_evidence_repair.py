@@ -67,6 +67,23 @@ WRITE_CAPS = {
     "updates": 0,
     "deletes": 0,
 }
+CONTEXT_FIELDS = (
+    "chamber_session",
+    "vote_type",
+    "member_position",
+    "final_result",
+    "vote_margin",
+    "winning_position",
+    "party_vote_totals",
+    "member_party",
+    "member_party_majority_position",
+    "member_voted_with_party_majority",
+    "member_voted_with_winning_side",
+    "bipartisan_majority",
+    "sponsor_party",
+    "context_source_list",
+    "context_version",
+)
 
 load_dotenv(BACKEND / ".env")
 
@@ -95,6 +112,23 @@ def _action_id(row: dict[str, Any]) -> str:
 def _bill_key_from_ref(value: str) -> tuple[int, str, int]:
     _, congress, bill_type, bill_number = value.split("_")
     return int(congress), bill_type, int(bill_number)
+
+
+def _bill_identity(congress: Any, bill_type: Any, bill_number: Any) -> str:
+    return f"{int(congress)}:{str(bill_type)}:{int(bill_number)}"
+
+
+def _semantic_vote_date(value: Any) -> str:
+    if isinstance(value, datetime):
+        if value.tzinfo is None:
+            value = value.replace(tzinfo=timezone.utc)
+        return value.astimezone(timezone.utc).isoformat()
+    if isinstance(value, date):
+        return datetime(value.year, value.month, value.day, tzinfo=timezone.utc).isoformat()
+    parsed = datetime.fromisoformat(str(value))
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc).isoformat()
 
 
 def _source_facts(source_dir: Path) -> dict[str, Any]:
@@ -204,12 +238,15 @@ def _target_state(conn: Any) -> dict[str, Any]:
     rolls = [
         _jsonable(dict(row))
         for row in conn.execute(
-            """SELECT id,chamber,congress,session,rollcall_number,vote_date,question,
-                      description,bill_id,source_url
-                 FROM roll_calls
-                WHERE chamber='house' AND congress=119 AND session=2
-                  AND rollcall_number=ANY(%s)
-                ORDER BY rollcall_number""",
+            """SELECT r.id,r.chamber,r.congress,r.session,r.rollcall_number,r.vote_date,
+                      r.question,r.description,r.bill_id,r.source_url,
+                      b.congress AS bill_congress,b.bill_type AS bill_type,
+                      b.bill_number AS bill_number
+                 FROM roll_calls r
+                 LEFT JOIN bills b ON b.id=r.bill_id
+                WHERE r.chamber='house' AND r.congress=119 AND r.session=2
+                  AND r.rollcall_number=ANY(%s)
+                ORDER BY r.rollcall_number""",
             (roll_numbers,),
         ).fetchall()
     ]
@@ -316,23 +353,134 @@ def preflight(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
 
 
 def _matches_post_state(state: dict[str, Any], bundle: dict[str, Any]) -> bool:
-    rows = state["rows"]
-    if not (
-        len(rows["bills"]) == 4
-        and len(rows["roll_calls"]) == 8
-        and len(rows["votes_cast"]) == 8
-        and len(rows["vote_contexts"]) == 8
-        and not rows["vote_classifications"]
-        and not rows["vote_interpretations"]
-    ):
-        return False
-    actual_positions = {
-        int(roll["rollcall_number"]): vote["position"]
-        for roll, vote in zip(rows["roll_calls"], rows["votes_cast"], strict=True)
+    return _actual_semantic_post_state(state) == _expected_semantic_post_state(bundle)
+
+
+def _expected_semantic_post_state(bundle: dict[str, Any]) -> dict[str, Any]:
+    facts = bundle["facts"]
+    bills = [
+        {
+            "bill_identity": _bill_identity(
+                bill["congress"], bill["bill_type"], bill["bill_number"]
+            ),
+            "congress": int(bill["congress"]),
+            "bill_type": str(bill["bill_type"]),
+            "bill_number": int(bill["bill_number"]),
+            "title": bill["title"],
+            "summary": bill.get("summary") or "",
+            "committee": bill.get("committee"),
+            "subjects": _jsonable(bill.get("subjects") or []),
+        }
+        for bill in facts["bills"]
+    ]
+    rolls = [
+        {
+            "action_id": _action_id(roll),
+            "chamber": str(roll["chamber"]),
+            "congress": int(roll["congress"]),
+            "session": int(roll["session"]),
+            "rollcall_number": int(roll["rollcall_number"]),
+            "vote_date": _semantic_vote_date(roll["vote_date"]),
+            "question": roll["question"],
+            "description": roll["description"],
+            "bill_identity": _bill_identity(*_bill_key_from_ref(roll["bill_ref"])),
+            "source_url": roll["source_url"],
+        }
+        for roll in facts["roll_calls"]
+    ]
+    votes = [
+        {
+            "action_id": vote["action_id"],
+            "member_bioguide_id": MEMBER_BIOGUIDE_ID,
+            "position": vote["position"],
+        }
+        for vote in facts["votes_cast"]
+    ]
+    contexts = [
+        {
+            "action_id": context["action_id"],
+            "member_bioguide_id": MEMBER_BIOGUIDE_ID,
+            **{field: _jsonable(context[field]) for field in CONTEXT_FIELDS},
+        }
+        for context in facts["vote_contexts"]
+    ]
+    return {
+        "bills": sorted(bills, key=lambda row: row["bill_identity"]),
+        "roll_calls": sorted(rolls, key=lambda row: row["action_id"]),
+        "votes_cast": sorted(votes, key=lambda row: row["action_id"]),
+        "vote_contexts": sorted(contexts, key=lambda row: row["action_id"]),
+        "vote_classifications": [],
+        "vote_interpretations": [],
     }
-    return actual_positions == {
-        int(action.rsplit(":", 1)[1]): position
-        for action, position in EXPECTED_ACTIONS.items()
+
+
+def _actual_semantic_post_state(state: dict[str, Any]) -> dict[str, Any]:
+    rows = state["rows"]
+    roll_actions = {
+        int(roll["id"]): _action_id(roll) for roll in rows["roll_calls"]
+    }
+    bills = [
+        {
+            "bill_identity": _bill_identity(
+                bill["congress"], bill["bill_type"], bill["bill_number"]
+            ),
+            "congress": int(bill["congress"]),
+            "bill_type": str(bill["bill_type"]),
+            "bill_number": int(bill["bill_number"]),
+            "title": bill["title"],
+            "summary": bill["summary"],
+            "committee": bill["committee"],
+            "subjects": _jsonable(bill["subjects"]),
+        }
+        for bill in rows["bills"]
+    ]
+    rolls = [
+        {
+            "action_id": _action_id(roll),
+            "chamber": str(roll["chamber"]),
+            "congress": int(roll["congress"]),
+            "session": int(roll["session"]),
+            "rollcall_number": int(roll["rollcall_number"]),
+            "vote_date": _semantic_vote_date(roll["vote_date"]),
+            "question": roll["question"],
+            "description": roll["description"],
+            "bill_identity": (
+                _bill_identity(
+                    roll["bill_congress"], roll["bill_type"], roll["bill_number"]
+                )
+                if roll["bill_id"] is not None
+                and roll["bill_congress"] is not None
+                and roll["bill_type"] is not None
+                and roll["bill_number"] is not None
+                else None
+            ),
+            "source_url": roll["source_url"],
+        }
+        for roll in rows["roll_calls"]
+    ]
+    votes = [
+        {
+            "action_id": roll_actions.get(int(vote["roll_call_id"])),
+            "member_bioguide_id": MEMBER_BIOGUIDE_ID,
+            "position": vote["position"],
+        }
+        for vote in rows["votes_cast"]
+    ]
+    contexts = [
+        {
+            "action_id": roll_actions.get(int(context["roll_call_id"])),
+            "member_bioguide_id": MEMBER_BIOGUIDE_ID,
+            **{field: _jsonable(context[field]) for field in CONTEXT_FIELDS},
+        }
+        for context in rows["vote_contexts"]
+    ]
+    return {
+        "bills": sorted(bills, key=lambda row: row["bill_identity"]),
+        "roll_calls": sorted(rolls, key=lambda row: row["action_id"]),
+        "votes_cast": sorted(votes, key=lambda row: str(row["action_id"])),
+        "vote_contexts": sorted(contexts, key=lambda row: str(row["action_id"])),
+        "vote_classifications": _jsonable(rows["vote_classifications"]),
+        "vote_interpretations": _jsonable(rows["vote_interpretations"]),
     }
 
 

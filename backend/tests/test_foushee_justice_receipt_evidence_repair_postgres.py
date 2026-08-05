@@ -10,6 +10,7 @@ from psycopg.types.json import Jsonb
 from scripts.editorial_artifact_store import StoreSafetyError, _connect
 from scripts.foushee_justice_receipt_evidence_repair import (
     WRITE_CAPS,
+    _matches_post_state,
     _publication_guard,
     _target_state,
     apply,
@@ -109,6 +110,9 @@ def test_exact_apply_idempotency_postcheck_and_rollback() -> None:
 
     with _connect(DATABASE_URL) as conn:
         with conn.transaction():
+            conn.execute("SELECT setval('bills_id_seq',7000,false)")
+            conn.execute("SELECT setval('roll_calls_id_seq',8000,false)")
+            conn.execute("SELECT setval('votes_cast_id_seq',9000,false)")
             before = preflight(conn, bundle)
             assert before["already_applied"] is False
             assert before["target_state_sha256"] == bundle["expected_baseline"]["sha256"]
@@ -167,3 +171,104 @@ def test_preflight_rejects_any_target_baseline_drift() -> None:
         with conn.transaction():
             with pytest.raises(StoreSafetyError, match="baseline fingerprint drifted"):
                 preflight(conn, bundle)
+
+
+def _apply_then_mutate(bundle: dict, statement: str, params: tuple = ()) -> None:
+    _prepare_disposable(bundle)
+    with _connect(DATABASE_URL) as conn:
+        with conn.transaction():
+            assert apply(conn, bundle)["writes"] == WRITE_CAPS
+        with conn.transaction():
+            conn.execute(statement, params)
+        with conn.transaction():
+            assert _matches_post_state(_target_state(conn), bundle) is False
+            with pytest.raises(StoreSafetyError, match="baseline fingerprint drifted"):
+                preflight(conn, bundle)
+        with conn.transaction():
+            with pytest.raises(StoreSafetyError, match="does not exactly match"):
+                rollback(conn, bundle)
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires a dedicated disposable PostgreSQL database",
+)
+def test_exact_post_state_rejects_mutated_bill_field() -> None:
+    _apply_then_mutate(
+        _load_bundle(),
+        """UPDATE bills SET title='Altered title'
+             WHERE congress=119 AND bill_type='hr' AND bill_number=1181""",
+    )
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires a dedicated disposable PostgreSQL database",
+)
+def test_exact_post_state_rejects_mutated_roll_source_url() -> None:
+    _apply_then_mutate(
+        _load_bundle(),
+        """UPDATE roll_calls
+              SET source_url='https://example.invalid/altered.xml'
+            WHERE chamber='house' AND congress=119 AND rollcall_number=227""",
+    )
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires a dedicated disposable PostgreSQL database",
+)
+def test_exact_post_state_rejects_mutated_vote_to_roll_identity() -> None:
+    bundle = _load_bundle()
+    _prepare_disposable(bundle)
+    with _connect(DATABASE_URL) as conn:
+        with conn.transaction():
+            assert apply(conn, bundle)["writes"] == WRITE_CAPS
+        with conn.transaction():
+            rows = conn.execute(
+                """SELECT v.id,r.id AS roll_call_id,r.rollcall_number,v.position
+                     FROM votes_cast v JOIN roll_calls r ON r.id=v.roll_call_id
+                    WHERE v.legislator_id=239 AND r.rollcall_number=ANY(%s)
+                    ORDER BY r.rollcall_number""",
+                ([227, 240],),
+            ).fetchall()
+            assert [(row["rollcall_number"], row["position"]) for row in rows] == [
+                (227, "yea"), (240, "nay")
+            ]
+            vote_by_roll = {int(row["rollcall_number"]): row for row in rows}
+            conn.execute(
+                "DELETE FROM votes_cast WHERE id=%s",
+                (int(vote_by_roll[227]["id"]),),
+            )
+            conn.execute(
+                "UPDATE votes_cast SET roll_call_id=%s WHERE id=%s",
+                (
+                    int(vote_by_roll[227]["roll_call_id"]),
+                    int(vote_by_roll[240]["id"]),
+                ),
+            )
+            conn.execute(
+                """INSERT INTO votes_cast (roll_call_id,legislator_id,position)
+                     VALUES (%s,239,%s)""",
+                (int(vote_by_roll[240]["roll_call_id"]), vote_by_roll[227]["position"]),
+            )
+        with conn.transaction():
+            assert _matches_post_state(_target_state(conn), bundle) is False
+            with pytest.raises(StoreSafetyError, match="baseline fingerprint drifted"):
+                preflight(conn, bundle)
+        with conn.transaction():
+            with pytest.raises(StoreSafetyError, match="does not exactly match"):
+                rollback(conn, bundle)
+
+
+@pytest.mark.skipif(
+    not DATABASE_URL,
+    reason="requires a dedicated disposable PostgreSQL database",
+)
+def test_exact_post_state_rejects_mutated_vote_context_field() -> None:
+    _apply_then_mutate(
+        _load_bundle(),
+        """UPDATE vote_contexts c SET vote_margin=vote_margin+1
+             FROM roll_calls r
+            WHERE c.roll_call_id=r.id AND c.legislator_id=239 AND r.rollcall_number=227""",
+    )
