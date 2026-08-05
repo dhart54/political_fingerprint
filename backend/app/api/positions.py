@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, Query
 
 from app.api.precomputed import (
+    get_governed_position_evidence_rows,
     get_legislator_profile,
     get_position_evidence_response,
     get_position_response,
@@ -86,8 +87,15 @@ def get_legislator_position_evidence(
             None,
         )
         if presentation is not None and presentation["tier"] != "receipts_only":
+            governed_rows = get_governed_position_evidence_rows(
+                legislator_id=legislator_id,
+                canonical_action_ids=presentation["reviewed_action_ids"],
+            )
+            if governed_rows is None:
+                raise RuntimeError("governed raw evidence query failed")
             response = attach_governed_receipt_projections(
                 response,
                 presentation,
+                governed_evidence=governed_rows,
             )
     return response

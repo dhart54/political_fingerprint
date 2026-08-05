@@ -76,6 +76,17 @@ test("interpreted substantive row is never overridden by procedural metadata or 
   }), false);
 });
 
+test("published non-counting control overrides stale interpreted raw metadata", () => {
+  assert.equal(isProceduralContextRow({
+    interpretation_status: "interpreted",
+    vote_type: "final_passage",
+    governed_receipt_control: {
+      status: "noncounting_control",
+      boundary_type: "exact_action_eligibility",
+    },
+  }), true);
+});
+
 test("all six Justice controls classify as floor-process context in production fallback", () => {
   const controls = [160, 161, 267, 268, 290, 291].map((rollcall_number) => proceduralRow({
     classification_reason: "procedural_context",

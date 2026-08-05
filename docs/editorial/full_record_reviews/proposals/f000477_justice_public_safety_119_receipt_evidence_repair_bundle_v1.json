@@ -1,0 +1,880 @@
+{
+  "bundle_sha256": "2955c8b94e4525cd36e11617485ce61d24ab79701ccd0d6f467b8b791ffc2919",
+  "canonical_action_ids": [
+    "house:119:2:227",
+    "house:119:2:234",
+    "house:119:2:240",
+    "house:119:2:259",
+    "house:119:2:265",
+    "house:119:2:273",
+    "house:119:2:275",
+    "house:119:2:278"
+  ],
+  "expected_baseline": {
+    "rows": {
+      "bills": [],
+      "legislator_id": 239,
+      "roll_calls": [],
+      "vote_classifications": [],
+      "vote_contexts": [],
+      "vote_interpretations": [],
+      "votes_cast": []
+    },
+    "sha256": "73f63d4da4a998fa520885e02cd3e6b0e97d421c438b5b74ba72489e64d3e24f"
+  },
+  "facts": {
+    "bills": [
+      {
+        "bill_number": 1181,
+        "bill_type": "hr",
+        "committee": null,
+        "congress": 119,
+        "id": "bill_119_hr_1181",
+        "subjects": [],
+        "summary": "",
+        "title": "Protecting Privacy in Purchases Act"
+      },
+      {
+        "bill_number": 2478,
+        "bill_type": "hr",
+        "committee": null,
+        "congress": 119,
+        "id": "bill_119_hr_2478",
+        "subjects": [],
+        "summary": "",
+        "title": "Financial Exploitation Prevention Act"
+      },
+      {
+        "bill_number": 3106,
+        "bill_type": "hr",
+        "committee": null,
+        "congress": 119,
+        "id": "bill_119_hr_3106",
+        "subjects": [],
+        "summary": "",
+        "title": "Weatherizing Infrastructure in the North and Terrorism Emergency Readiness Act"
+      },
+      {
+        "bill_number": 8800,
+        "bill_type": "hr",
+        "committee": null,
+        "congress": 119,
+        "id": "bill_119_hr_8800",
+        "subjects": [],
+        "summary": "",
+        "title": "National Defense Authorization Act for Fiscal Year 2027"
+      }
+    ],
+    "member_roster_sha256": "4ccea8259aff2df6a175545e45bdac2dfcdf0085a9cc7ab6c46aa80527bc524b",
+    "official_sources": [
+      {
+        "filename": "roll227.xml",
+        "sha256": "ca3748fac2dafceecb690e61ca4d09345872ac26296ffb214438e012c127669b"
+      },
+      {
+        "filename": "roll234.xml",
+        "sha256": "31be3c2f95e9869c95230e3d51c54c4477fb28cc0e86409442a3485f901d287e"
+      },
+      {
+        "filename": "roll240.xml",
+        "sha256": "0947b0014b41aa36e21bea99d91deeca220b7349e5ba7f3381e4098d7bb1ced9"
+      },
+      {
+        "filename": "roll259.xml",
+        "sha256": "ab51ade3ec96483c519c9640e5c936cbf292dd5e1d4235f80419a7604f3e89e2"
+      },
+      {
+        "filename": "roll265.xml",
+        "sha256": "baceb48520bd60338c3163fefa738baa5d0749da25c20375e1a1048a07dd02e9"
+      },
+      {
+        "filename": "roll273.xml",
+        "sha256": "6549ec1f36b0897cafdb4e67e6d860403f1d2f1514816654e9a31dd1d59eda21"
+      },
+      {
+        "filename": "roll275.xml",
+        "sha256": "ad07cb974f5d2b14f3ccb22866392107a27d8a84eaafd4b3bbc65092674c5968"
+      },
+      {
+        "filename": "roll278.xml",
+        "sha256": "dad4d3b2a853d794e8d760a02c5cc04b8d5e6b19db019ed2cc12cb3a797d175a"
+      }
+    ],
+    "roll_calls": [
+      {
+        "bill_ref": "bill_119_hr_2478",
+        "chamber": "house",
+        "congress": 119,
+        "description": "Financial Exploitation Prevention Act",
+        "id": "rc_house_119_2_227",
+        "question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "rollcall_number": 227,
+        "session": 2,
+        "source_url": "https://clerk.house.gov/evs/2026/roll227.xml",
+        "vote_date": "2026-06-25"
+      },
+      {
+        "bill_ref": "bill_119_hr_3106",
+        "chamber": "house",
+        "congress": 119,
+        "description": "Weatherizing Infrastructure in the North and Terrorism Emergency Readiness Act",
+        "id": "rc_house_119_2_234",
+        "question": "On Motion to Suspend the Rules and Pass",
+        "rollcall_number": 234,
+        "session": 2,
+        "source_url": "https://clerk.house.gov/evs/2026/roll234.xml",
+        "vote_date": "2026-07-13"
+      },
+      {
+        "bill_ref": "bill_119_hr_1181",
+        "chamber": "house",
+        "congress": 119,
+        "description": "Protecting Privacy in Purchases Act",
+        "id": "rc_house_119_2_240",
+        "question": "On Passage",
+        "rollcall_number": 240,
+        "session": 2,
+        "source_url": "https://clerk.house.gov/evs/2026/roll240.xml",
+        "vote_date": "2026-07-14"
+      },
+      {
+        "bill_ref": "bill_119_hr_8800",
+        "chamber": "house",
+        "congress": 119,
+        "description": "Hunt of Texas Part A Amendment No. 6",
+        "id": "rc_house_119_2_259",
+        "question": "On Agreeing to the Amendment",
+        "rollcall_number": 259,
+        "session": 2,
+        "source_url": "https://clerk.house.gov/evs/2026/roll259.xml",
+        "vote_date": "2026-07-21"
+      },
+      {
+        "bill_ref": "bill_119_hr_8800",
+        "chamber": "house",
+        "congress": 119,
+        "description": "Crank of Colorado Part A Amendment No. 17",
+        "id": "rc_house_119_2_265",
+        "question": "On Agreeing to the Amendment",
+        "rollcall_number": 265,
+        "session": 2,
+        "source_url": "https://clerk.house.gov/evs/2026/roll265.xml",
+        "vote_date": "2026-07-21"
+      },
+      {
+        "bill_ref": "bill_119_hr_8800",
+        "chamber": "house",
+        "congress": 119,
+        "description": "Self of Texas Part A Amendment No. 28",
+        "id": "rc_house_119_2_273",
+        "question": "On Agreeing to the Amendment",
+        "rollcall_number": 273,
+        "session": 2,
+        "source_url": "https://clerk.house.gov/evs/2026/roll273.xml",
+        "vote_date": "2026-07-22"
+      },
+      {
+        "bill_ref": "bill_119_hr_8800",
+        "chamber": "house",
+        "congress": 119,
+        "description": "Harrigan of North Carolina Part A Amendment No. 44",
+        "id": "rc_house_119_2_275",
+        "question": "On Agreeing to the Amendment",
+        "rollcall_number": 275,
+        "session": 2,
+        "source_url": "https://clerk.house.gov/evs/2026/roll275.xml",
+        "vote_date": "2026-07-22"
+      },
+      {
+        "bill_ref": "bill_119_hr_8800",
+        "chamber": "house",
+        "congress": 119,
+        "description": "National Defense Authorization Act for Fiscal Year 2027",
+        "id": "rc_house_119_2_278",
+        "question": "On Passage",
+        "rollcall_number": 278,
+        "session": 2,
+        "source_url": "https://clerk.house.gov/evs/2026/roll278.xml",
+        "vote_date": "2026-07-22"
+      }
+    ],
+    "vote_contexts": [
+      {
+        "action_id": "house:119:2:227",
+        "bipartisan_majority": true,
+        "chamber_session": 2,
+        "context_source_list": [
+          {
+            "source_type": "official_roll_call",
+            "url": "https://clerk.house.gov/evs/2026/roll227.xml"
+          }
+        ],
+        "context_version": "vote_context_v1",
+        "final_result": "passed",
+        "legislator_id": "leg_valerie_p_foushee",
+        "member_party": "D",
+        "member_party_majority_position": "yea",
+        "member_position": "yea",
+        "member_voted_with_party_majority": true,
+        "member_voted_with_winning_side": true,
+        "party_vote_totals": {
+          "D": {
+            "nay": 0,
+            "not_voting": 5,
+            "present": 0,
+            "yea": 207
+          },
+          "I": {
+            "nay": 0,
+            "not_voting": 0,
+            "present": 0,
+            "yea": 1
+          },
+          "R": {
+            "nay": 2,
+            "not_voting": 9,
+            "present": 0,
+            "yea": 206
+          }
+        },
+        "roll_call_id": "rc_house_119_2_227",
+        "sponsor_party": null,
+        "vote_margin": 412,
+        "vote_type": "motion",
+        "winning_position": "yea"
+      },
+      {
+        "action_id": "house:119:2:234",
+        "bipartisan_majority": true,
+        "chamber_session": 2,
+        "context_source_list": [
+          {
+            "source_type": "official_roll_call",
+            "url": "https://clerk.house.gov/evs/2026/roll234.xml"
+          }
+        ],
+        "context_version": "vote_context_v1",
+        "final_result": "passed",
+        "legislator_id": "leg_valerie_p_foushee",
+        "member_party": "D",
+        "member_party_majority_position": "yea",
+        "member_position": "yea",
+        "member_voted_with_party_majority": true,
+        "member_voted_with_winning_side": true,
+        "party_vote_totals": {
+          "D": {
+            "nay": 0,
+            "not_voting": 11,
+            "present": 0,
+            "yea": 201
+          },
+          "I": {
+            "nay": 0,
+            "not_voting": 0,
+            "present": 0,
+            "yea": 1
+          },
+          "R": {
+            "nay": 7,
+            "not_voting": 12,
+            "present": 0,
+            "yea": 198
+          }
+        },
+        "roll_call_id": "rc_house_119_2_234",
+        "sponsor_party": null,
+        "vote_margin": 393,
+        "vote_type": "motion",
+        "winning_position": "yea"
+      },
+      {
+        "action_id": "house:119:2:240",
+        "bipartisan_majority": true,
+        "chamber_session": 2,
+        "context_source_list": [
+          {
+            "source_type": "official_roll_call",
+            "url": "https://clerk.house.gov/evs/2026/roll240.xml"
+          }
+        ],
+        "context_version": "vote_context_v1",
+        "final_result": "passed",
+        "legislator_id": "leg_valerie_p_foushee",
+        "member_party": "D",
+        "member_party_majority_position": "nay",
+        "member_position": "nay",
+        "member_voted_with_party_majority": true,
+        "member_voted_with_winning_side": false,
+        "party_vote_totals": {
+          "D": {
+            "nay": 200,
+            "not_voting": 7,
+            "present": 0,
+            "yea": 5
+          },
+          "I": {
+            "nay": 0,
+            "not_voting": 0,
+            "present": 0,
+            "yea": 1
+          },
+          "R": {
+            "nay": 1,
+            "not_voting": 2,
+            "present": 0,
+            "yea": 215
+          }
+        },
+        "roll_call_id": "rc_house_119_2_240",
+        "sponsor_party": null,
+        "vote_margin": 20,
+        "vote_type": "final_passage",
+        "winning_position": "yea"
+      },
+      {
+        "action_id": "house:119:2:259",
+        "bipartisan_majority": true,
+        "chamber_session": 2,
+        "context_source_list": [
+          {
+            "source_type": "official_roll_call",
+            "url": "https://clerk.house.gov/evs/2026/roll259.xml"
+          }
+        ],
+        "context_version": "vote_context_v1",
+        "final_result": "failed",
+        "legislator_id": "leg_valerie_p_foushee",
+        "member_party": "D",
+        "member_party_majority_position": "nay",
+        "member_position": "nay",
+        "member_voted_with_party_majority": true,
+        "member_voted_with_winning_side": true,
+        "party_vote_totals": {
+          "D": {
+            "nay": 210,
+            "not_voting": 3,
+            "present": 0,
+            "yea": 2
+          },
+          "I": {
+            "nay": 1,
+            "not_voting": 0,
+            "present": 0,
+            "yea": 0
+          },
+          "R": {
+            "nay": 8,
+            "not_voting": 6,
+            "present": 0,
+            "yea": 206
+          }
+        },
+        "roll_call_id": "rc_house_119_2_259",
+        "sponsor_party": null,
+        "vote_margin": 11,
+        "vote_type": "amendment",
+        "winning_position": "nay"
+      },
+      {
+        "action_id": "house:119:2:265",
+        "bipartisan_majority": true,
+        "chamber_session": 2,
+        "context_source_list": [
+          {
+            "source_type": "official_roll_call",
+            "url": "https://clerk.house.gov/evs/2026/roll265.xml"
+          }
+        ],
+        "context_version": "vote_context_v1",
+        "final_result": "passed",
+        "legislator_id": "leg_valerie_p_foushee",
+        "member_party": "D",
+        "member_party_majority_position": "nay",
+        "member_position": "nay",
+        "member_voted_with_party_majority": true,
+        "member_voted_with_winning_side": false,
+        "party_vote_totals": {
+          "D": {
+            "nay": 210,
+            "not_voting": 2,
+            "present": 0,
+            "yea": 3
+          },
+          "I": {
+            "nay": 1,
+            "not_voting": 0,
+            "present": 0,
+            "yea": 0
+          },
+          "R": {
+            "nay": 3,
+            "not_voting": 6,
+            "present": 0,
+            "yea": 212
+          }
+        },
+        "roll_call_id": "rc_house_119_2_265",
+        "sponsor_party": null,
+        "vote_margin": 1,
+        "vote_type": "amendment",
+        "winning_position": "yea"
+      },
+      {
+        "action_id": "house:119:2:273",
+        "bipartisan_majority": true,
+        "chamber_session": 2,
+        "context_source_list": [
+          {
+            "source_type": "official_roll_call",
+            "url": "https://clerk.house.gov/evs/2026/roll273.xml"
+          }
+        ],
+        "context_version": "vote_context_v1",
+        "final_result": "passed",
+        "legislator_id": "leg_valerie_p_foushee",
+        "member_party": "D",
+        "member_party_majority_position": "nay",
+        "member_position": "nay",
+        "member_voted_with_party_majority": true,
+        "member_voted_with_winning_side": false,
+        "party_vote_totals": {
+          "D": {
+            "nay": 210,
+            "not_voting": 2,
+            "present": 0,
+            "yea": 3
+          },
+          "I": {
+            "nay": 0,
+            "not_voting": 0,
+            "present": 0,
+            "yea": 1
+          },
+          "R": {
+            "nay": 0,
+            "not_voting": 3,
+            "present": 0,
+            "yea": 217
+          }
+        },
+        "roll_call_id": "rc_house_119_2_273",
+        "sponsor_party": null,
+        "vote_margin": 11,
+        "vote_type": "amendment",
+        "winning_position": "yea"
+      },
+      {
+        "action_id": "house:119:2:275",
+        "bipartisan_majority": true,
+        "chamber_session": 2,
+        "context_source_list": [
+          {
+            "source_type": "official_roll_call",
+            "url": "https://clerk.house.gov/evs/2026/roll275.xml"
+          }
+        ],
+        "context_version": "vote_context_v1",
+        "final_result": "passed",
+        "legislator_id": "leg_valerie_p_foushee",
+        "member_party": "D",
+        "member_party_majority_position": "nay",
+        "member_position": "nay",
+        "member_voted_with_party_majority": true,
+        "member_voted_with_winning_side": false,
+        "party_vote_totals": {
+          "D": {
+            "nay": 196,
+            "not_voting": 2,
+            "present": 0,
+            "yea": 17
+          },
+          "I": {
+            "nay": 1,
+            "not_voting": 0,
+            "present": 0,
+            "yea": 0
+          },
+          "R": {
+            "nay": 2,
+            "not_voting": 4,
+            "present": 0,
+            "yea": 215
+          }
+        },
+        "roll_call_id": "rc_house_119_2_275",
+        "sponsor_party": null,
+        "vote_margin": 33,
+        "vote_type": "amendment",
+        "winning_position": "yea"
+      },
+      {
+        "action_id": "house:119:2:278",
+        "bipartisan_majority": true,
+        "chamber_session": 2,
+        "context_source_list": [
+          {
+            "source_type": "official_roll_call",
+            "url": "https://clerk.house.gov/evs/2026/roll278.xml"
+          }
+        ],
+        "context_version": "vote_context_v1",
+        "final_result": "passed",
+        "legislator_id": "leg_valerie_p_foushee",
+        "member_party": "D",
+        "member_party_majority_position": "nay",
+        "member_position": "nay",
+        "member_voted_with_party_majority": true,
+        "member_voted_with_winning_side": false,
+        "party_vote_totals": {
+          "D": {
+            "nay": 205,
+            "not_voting": 1,
+            "present": 0,
+            "yea": 6
+          },
+          "I": {
+            "nay": 0,
+            "not_voting": 0,
+            "present": 0,
+            "yea": 1
+          },
+          "R": {
+            "nay": 7,
+            "not_voting": 2,
+            "present": 0,
+            "yea": 209
+          }
+        },
+        "roll_call_id": "rc_house_119_2_278",
+        "sponsor_party": null,
+        "vote_margin": 4,
+        "vote_type": "final_passage",
+        "winning_position": "yea"
+      }
+    ],
+    "votes_cast": [
+      {
+        "action_id": "house:119:2:227",
+        "position": "yea"
+      },
+      {
+        "action_id": "house:119:2:234",
+        "position": "yea"
+      },
+      {
+        "action_id": "house:119:2:240",
+        "position": "nay"
+      },
+      {
+        "action_id": "house:119:2:259",
+        "position": "nay"
+      },
+      {
+        "action_id": "house:119:2:265",
+        "position": "nay"
+      },
+      {
+        "action_id": "house:119:2:273",
+        "position": "nay"
+      },
+      {
+        "action_id": "house:119:2:275",
+        "position": "nay"
+      },
+      {
+        "action_id": "house:119:2:278",
+        "position": "nay"
+      }
+    ]
+  },
+  "issue_id": "JUSTICE_PUBLIC_SAFETY",
+  "member_bioguide_id": "F000477",
+  "prepared_at": "2026-08-05T00:32:55.187576+00:00",
+  "publication_guard": {
+    "rows": {
+      "artifact": {
+        "artifact_id": 221,
+        "artifact_version": 1,
+        "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+        "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1"
+      },
+      "registry": {
+        "artifact_id": 221,
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "member_bioguide_id": "F000477",
+        "publication_metadata_jsonb": {
+          "activation_bundle_id": "foushee_justice_public_safety_119_full_record_activation_v1",
+          "active_artifact_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+          "approval_receipt": {
+            "approved_mapping_ids": [
+              "mapping:conclusion:body",
+              "mapping:conclusion:headline",
+              "mapping:coverage:full-record",
+              "mapping:limitation:roll-128-unresolved-text-limit:body",
+              "mapping:limitation:roll-128-unresolved-text-limit:heading",
+              "mapping:limitation:roll-155-source-identity-block:body",
+              "mapping:limitation:roll-155-source-identity-block:heading",
+              "mapping:limitation:roll-278-no-safe-interpretation-block:body",
+              "mapping:limitation:roll-278-no-safe-interpretation-block:heading",
+              "mapping:pattern:prop:354da734fec2fcf6:body",
+              "mapping:pattern:prop:354da734fec2fcf6:heading",
+              "mapping:pattern:prop:d7e189366b477118:body",
+              "mapping:pattern:prop:d7e189366b477118:heading",
+              "mapping:pattern:prop:e75e7aebbd7b2d29:body",
+              "mapping:pattern:prop:e75e7aebbd7b2d29:heading",
+              "mapping:pattern:prop:e76b98cf92ef34cb:body",
+              "mapping:pattern:prop:e76b98cf92ef34cb:heading",
+              "mapping:scope:119",
+              "mapping:teaser:mechanism-contrast",
+              "mapping:trajectory:halt:body",
+              "mapping:trajectory:halt:heading"
+            ],
+            "approved_statement_ids": [
+              "statement:conclusion:body",
+              "statement:conclusion:headline",
+              "statement:coverage:full-record",
+              "statement:limitation:roll-128-unresolved-text-limit:body",
+              "statement:limitation:roll-128-unresolved-text-limit:heading",
+              "statement:limitation:roll-155-source-identity-block:body",
+              "statement:limitation:roll-155-source-identity-block:heading",
+              "statement:limitation:roll-278-no-safe-interpretation-block:body",
+              "statement:limitation:roll-278-no-safe-interpretation-block:heading",
+              "statement:pattern:prop:354da734fec2fcf6:body",
+              "statement:pattern:prop:354da734fec2fcf6:heading",
+              "statement:pattern:prop:d7e189366b477118:body",
+              "statement:pattern:prop:d7e189366b477118:heading",
+              "statement:pattern:prop:e75e7aebbd7b2d29:body",
+              "statement:pattern:prop:e75e7aebbd7b2d29:heading",
+              "statement:pattern:prop:e76b98cf92ef34cb:body",
+              "statement:pattern:prop:e76b98cf92ef34cb:heading",
+              "statement:scope:119",
+              "statement:teaser:mechanism-contrast",
+              "statement:trajectory:halt:body",
+              "statement:trajectory:halt:heading"
+            ],
+            "binding": {
+              "action_source_contract_id": "foushee_justice_public_safety_119_full_record_m6_v1",
+              "action_source_contract_sha256": "c76c459e2a2e7ef5035426cbdad106faf5b5df4c0262fda27baf02e3bf2c5dd8",
+              "approval_subject_sha256": "e54332f8f041c29bb4a77da6a07d54ac47565e9bbe51447b588f7c5e86e555c9",
+              "approved_scope": "119",
+              "artifact_id": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+              "artifact_version": 1,
+              "compiled_ir_sha256": "becb730af6c9ca6a08ecf6afb885503df99131530b4dc852a8e3e5817aab8fb3",
+              "congress": 119,
+              "evidence_provenance_sha256": "4e04e4f9db6e5b029b35be203c0a39f5e6186028df6dfdad5ba65ce8b49f12f2",
+              "issue_id": "JUSTICE_PUBLIC_SAFETY",
+              "limitation_ids": [
+                "mechanism-divide-held",
+                "roll-128-unresolved-insertion",
+                "roll-155-source-conflict",
+                "roll-278-no-safe-package"
+              ],
+              "limitations_sha256": "e65b01bed2dce6ead9e3eee45093bc609690c75c1c8e6ac6b1c654f081292a34",
+              "mapping_ids": [
+                "mapping:conclusion:body",
+                "mapping:conclusion:headline",
+                "mapping:coverage:full-record",
+                "mapping:limitation:roll-128-unresolved-text-limit:body",
+                "mapping:limitation:roll-128-unresolved-text-limit:heading",
+                "mapping:limitation:roll-155-source-identity-block:body",
+                "mapping:limitation:roll-155-source-identity-block:heading",
+                "mapping:limitation:roll-278-no-safe-interpretation-block:body",
+                "mapping:limitation:roll-278-no-safe-interpretation-block:heading",
+                "mapping:pattern:prop:354da734fec2fcf6:body",
+                "mapping:pattern:prop:354da734fec2fcf6:heading",
+                "mapping:pattern:prop:d7e189366b477118:body",
+                "mapping:pattern:prop:d7e189366b477118:heading",
+                "mapping:pattern:prop:e75e7aebbd7b2d29:body",
+                "mapping:pattern:prop:e75e7aebbd7b2d29:heading",
+                "mapping:pattern:prop:e76b98cf92ef34cb:body",
+                "mapping:pattern:prop:e76b98cf92ef34cb:heading",
+                "mapping:scope:119",
+                "mapping:teaser:mechanism-contrast",
+                "mapping:trajectory:halt:body",
+                "mapping:trajectory:halt:heading"
+              ],
+              "mapping_set_sha256": "f627d073ab621c10a0a02666e7626ee96aeaacc1a09f07adf68222f639b49d59",
+              "member_id": "F000477",
+              "presentation_content_sha256": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55",
+              "reviewed_wording_sha256": "58722f5f61ea0b2eb3b41b3cbf58009971c6fcfd184e189117715e2955627fc7",
+              "schema_version": "editorial_public_issue_presentation_v1",
+              "statement_ids": [
+                "statement:conclusion:body",
+                "statement:conclusion:headline",
+                "statement:coverage:full-record",
+                "statement:limitation:roll-128-unresolved-text-limit:body",
+                "statement:limitation:roll-128-unresolved-text-limit:heading",
+                "statement:limitation:roll-155-source-identity-block:body",
+                "statement:limitation:roll-155-source-identity-block:heading",
+                "statement:limitation:roll-278-no-safe-interpretation-block:body",
+                "statement:limitation:roll-278-no-safe-interpretation-block:heading",
+                "statement:pattern:prop:354da734fec2fcf6:body",
+                "statement:pattern:prop:354da734fec2fcf6:heading",
+                "statement:pattern:prop:d7e189366b477118:body",
+                "statement:pattern:prop:d7e189366b477118:heading",
+                "statement:pattern:prop:e75e7aebbd7b2d29:body",
+                "statement:pattern:prop:e75e7aebbd7b2d29:heading",
+                "statement:pattern:prop:e76b98cf92ef34cb:body",
+                "statement:pattern:prop:e76b98cf92ef34cb:heading",
+                "statement:scope:119",
+                "statement:teaser:mechanism-contrast",
+                "statement:trajectory:halt:body",
+                "statement:trajectory:halt:heading"
+              ]
+            },
+            "decision_timestamp": "2026-08-04T10:22:00-04:00",
+            "decisions": {
+              "editorial_wording": "approved",
+              "gold_benchmark_promotion": "approved",
+              "production_eligibility": "approved"
+            },
+            "limitations_acknowledged": [
+              {
+                "acknowledged": true,
+                "limitation_id": "mechanism-divide-held",
+                "text": "The mechanism divide is one bounded contrast, not a complete explanation of the record, and remains held for launch review."
+              },
+              {
+                "acknowledged": true,
+                "limitation_id": "roll-128-unresolved-insertion",
+                "text": "The reviewed record supports the concealed-carry expansion meaning, but the exact legal effect of the separate \u2018any magazine and\u2019 insertion remains unresolved."
+              },
+              {
+                "acknowledged": true,
+                "limitation_id": "roll-155-source-conflict",
+                "text": "A preserved 110th/119th-Congress source-identity conflict keeps roll 155 out of behavioral propositions and prevents it from adding substantive weight to the FISA relationship."
+              },
+              {
+                "acknowledged": true,
+                "limitation_id": "roll-278-no-safe-package",
+                "text": "The available official material does not establish the complete final House-passed package after amendments, so this action receives no public analytical meaning."
+              }
+            ],
+            "limitations_sha256": "e65b01bed2dce6ead9e3eee45093bc609690c75c1c8e6ac6b1c654f081292a34",
+            "publication_activation": {
+              "active": false,
+              "decision_scope": "out_of_scope"
+            },
+            "receipt_id": "approval-receipt:f000477-full-record-justice-119-m10r1",
+            "reviewer": {
+              "authority": "editorial_publication_review_authority_v1",
+              "reviewer_id": "reviewer:dhart54"
+            },
+            "schema_version": "editorial_public_issue_approval_receipt_v1",
+            "status": "approved"
+          },
+          "approval_subject_sha256": "e54332f8f041c29bb4a77da6a07d54ac47565e9bbe51447b588f7c5e86e555c9",
+          "presentation_artifact_version": 1,
+          "presentation_natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+          "relationship_metadata": {
+            "activation_bundle_id": "foushee_justice_public_safety_119_full_record_activation_v1"
+          },
+          "semantic_review_exception_resolution": {
+            "approval_bindings": [
+              {
+                "artifact_id": "delegated-semantic-ir-acceptance:f000477:justice_public_safety:119:v1",
+                "content_subject_sha256": "fe434b3c3bcb0d6235003d144ad25c4e207d0dc104ec42fec1ec8e75d3514db9",
+                "decision": "approved",
+                "final_file_sha256": "23d27f84ce196380b6d02ca2d1a2e679847e7a0855c00d60b6df1542d499b405",
+                "role": "semantic_ir_acceptance"
+              },
+              {
+                "artifact_id": "full-record-semantic-validation:f000477:justice_public_safety:119:v1",
+                "content_subject_sha256": "f7f36ce0194f508c4aad54032b3f94991535477a3f26c9e51ddf54cc4fc4b7a4",
+                "decision": "approved",
+                "final_file_sha256": "86747bc3777c0b514c1d1089afa8274a66792e780b9b5d93823e1f98d937b1a2",
+                "role": "semantic_validation"
+              },
+              {
+                "artifact_id": "launch-ratification:f000477:justice_public_safety:119:v1",
+                "content_subject_sha256": "22faba18c447ba9ebd5045b74666c09cb0d030f36187e727732c68d561f0721e",
+                "decision": "approved",
+                "final_file_sha256": "eb5f6aa7775f8765c1319d80849dfeedbb41c85f8e30f30a21a53819a0f615d8",
+                "role": "user_ratification"
+              },
+              {
+                "artifact_id": "user-launch-ratification-receipt:f000477:justice_public_safety:119:v1",
+                "content_subject_sha256": "67e7737091af7c35b06a36d2855df72085b875656b21ab77ae9caba41a9a9c80",
+                "decision": "approved",
+                "final_file_sha256": "40754c51f1832afbeaaccb9624dc7c505a2882b13e6b8f6095cc14fba1f8aef4",
+                "role": "risk_treatments"
+              },
+              {
+                "artifact_id": "full-record-synthesis-approval-projection:f000477:justice_public_safety:119:v1",
+                "content_subject_sha256": "22faba18c447ba9ebd5045b74666c09cb0d030f36187e727732c68d561f0721e",
+                "decision": "approved",
+                "final_file_sha256": "eb5f6aa7775f8765c1319d80849dfeedbb41c85f8e30f30a21a53819a0f615d8",
+                "role": "full_record_synthesis_approval"
+              },
+              {
+                "artifact_id": "production-eligibility-approval:f000477:justice_public_safety:119:v1",
+                "content_subject_sha256": "947e9e370a16a7823fb4a7ab3f6371949cf8bea9dfd5dbbc7a15b59c9727c451",
+                "decision": "approved",
+                "final_file_sha256": "432123d7e27a3505e0e8039594a8b15fa260a60205ff56b52c78bfddca9c3ca9",
+                "role": "production_eligibility"
+              },
+              {
+                "artifact_id": "semantic-routing-correction-authorization:f000477:justice_public_safety:119:v1",
+                "content_subject_sha256": "199367a4d214ab1cb30ba63a06100040c15df8ce7f1cbf8f48f84bed1a7d517f",
+                "decision": "approved",
+                "final_file_sha256": "059a3bb4008909009aaef0e365ac8d94b8b53fd35bd37455bcba7312c3d6ae7a",
+                "role": "semantic_routing_correction_authorization"
+              }
+            ],
+            "binding": {
+              "action_accounting_sha256": "5558e769a0f76cb2e70b88cd9e510fb1740c04504dfdf163d4b1e6ebb1b491ad",
+              "artifact_id": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+              "artifact_version": 1,
+              "compiled_ir_sha256": "becb730af6c9ca6a08ecf6afb885503df99131530b4dc852a8e3e5817aab8fb3",
+              "congress": 119,
+              "issue_id": "JUSTICE_PUBLIC_SAFETY",
+              "limitations_sha256": "e65b01bed2dce6ead9e3eee45093bc609690c75c1c8e6ac6b1c654f081292a34",
+              "mapping_set_sha256": "f627d073ab621c10a0a02666e7626ee96aeaacc1a09f07adf68222f639b49d59",
+              "member_id": "F000477",
+              "presentation_content_sha256": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55",
+              "review_route": "human_exception_required",
+              "reviewed_wording_sha256": "58722f5f61ea0b2eb3b41b3cbf58009971c6fcfd184e189117715e2955627fc7"
+            },
+            "decision_timestamp": "2026-08-04T13:32:00-04:00",
+            "receipt_id": "semantic-review-exception-resolution:f000477:justice_public_safety:119:v1",
+            "resolution": {
+              "accepted_substantive_blocker_count": 0,
+              "all_triggers_accounted": true,
+              "compiled_ir_unchanged": true,
+              "resulting_semantic_tier": "reviewed_conclusion",
+              "wording_and_mappings_unchanged": true
+            },
+            "reviewer": {
+              "authority": "delegated_product_methodology_editorial_authority_v1",
+              "reviewer_id": "reviewer:political-fingerprint-authority-thread"
+            },
+            "routing_trigger_ledger_sha256": "85edc5af4d3b31e791bfd23aba80a32cf11d9f176a236f243a6101b950aaa932",
+            "schema_version": "semantic_review_exception_resolution_v1",
+            "status": "approved"
+          },
+          "source_manifest_artifact_version": 1,
+          "source_manifest_content_sha256": "03face2e772e391fa65ca82bec333e84c0da0b5ed469cbaa907ab3c8cce9e9f1",
+          "source_manifest_natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1:publication-source-manifest",
+          "validation_artifact_version": 1,
+          "validation_content_sha256": "5e03b0de67505b66a48d37a99762adcfe24d5907c51759e10700b4afec372894",
+          "validation_natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1:publication-validation"
+        },
+        "publicly_active": true
+      }
+    },
+    "sha256": "4546026f82b0c9587ec9d7dc2ec48852fa70034735913e689a4b566dde1b35d3"
+  },
+  "schema_version": "foushee_justice_receipt_evidence_repair_bundle_v1",
+  "write_caps": {
+    "bills": 4,
+    "deletes": 0,
+    "editorial_artifacts": 0,
+    "publication_registry": 0,
+    "roll_calls": 8,
+    "updates": 0,
+    "vote_classifications": 0,
+    "vote_contexts": 8,
+    "vote_interpretations": 0,
+    "votes_cast": 8
+  }
+}

@@ -315,6 +315,24 @@ def get_position_evidence_response(
     )
 
 
+def get_governed_position_evidence_rows(
+    *,
+    legislator_id: str,
+    canonical_action_ids: list[str],
+) -> list[dict[str, object]] | None:
+    legislator = _get_db_legislator_by_external_id(legislator_id)
+    if legislator is None:
+        return None
+    identities = [_parse_canonical_action_id(value) for value in canonical_action_ids]
+    rows = _get_db_governed_position_evidence_rows(
+        legislator_db_id=int(legislator["id"]),
+        identities=identities,
+    )
+    if rows is None:
+        return None
+    return [_serialize_evidence_row(row) for row in rows]
+
+
 def get_alignment_response(
     *,
     legislator_id: str,
@@ -1872,6 +1890,105 @@ def _get_db_scoped_position_evidence_rows(
     )
 
 
+def _parse_canonical_action_id(value: str) -> tuple[str, int, int, int]:
+    parts = str(value).split(":")
+    if len(parts) != 4:
+        raise ValueError(f"invalid canonical action identity: {value}")
+    chamber, congress, session, rollcall_number = parts
+    identity = (chamber.lower(), int(congress), int(session), int(rollcall_number))
+    if (
+        identity[0] not in {"house", "senate"}
+        or identity[1] <= 0
+        or identity[2] not in {1, 2}
+        or identity[3] <= 0
+    ):
+        raise ValueError(f"invalid canonical action identity: {value}")
+    return identity
+
+
+def _get_db_governed_position_evidence_rows(
+    *,
+    legislator_db_id: int,
+    identities: list[tuple[str, int, int, int]],
+) -> list[dict[str, Any]] | None:
+    if not identities:
+        return []
+    placeholders = ", ".join(["(%s, %s, %s, %s)"] * len(identities))
+    params = tuple(item for identity in identities for item in identity)
+    return _query_all_dicts(
+        f"""
+        SELECT
+            rc.id AS roll_call_id,
+            rc.vote_date,
+            rc.chamber,
+            rc.congress,
+            rc.session,
+            rc.rollcall_number,
+            vc.position,
+            rc.question,
+            rc.description,
+            b.title AS bill_title,
+            b.summary AS bill_summary,
+            COALESCE(vcf.eligibility_reason, 'governed_publication_evidence')
+              AS classification_reason,
+            COALESCE(vcf.score_breakdown, '{{}}'::jsonb) AS score_breakdown,
+            rc.source_url,
+            vi.interpretation_status,
+            vi.support_position,
+            vi.oppose_position,
+            vi.interpretation_reason,
+            vi.plain_english_summary,
+            vi.yea_meaning,
+            vi.nay_meaning,
+            vi.policy_effect,
+            vi.issue_facet,
+            vi.confidence,
+            vi.what_happened,
+            vi.why_it_mattered,
+            vi.member_vote_context,
+            vi.what_not_to_infer,
+            vi.source_basis,
+            vi.uncertainty_note,
+            vctx.vote_type,
+            vctx.final_result,
+            vctx.vote_margin,
+            vctx.winning_position,
+            vctx.party_vote_totals,
+            vctx.member_party,
+            vctx.member_party_majority_position,
+            vctx.member_voted_with_party_majority,
+            vctx.member_voted_with_winning_side,
+            vctx.bipartisan_majority,
+            vctx.sponsor_party,
+            vctx.context_source_list,
+            vctx.context_version,
+            sar.amendment_number,
+            sar.amendment_type,
+            sar.amendment_to_amendment_number,
+            sar.parent_bill_type,
+            sar.parent_bill_number,
+            sar.parent_bill_display,
+            sar.amendment_purpose,
+            sar.fact_status AS amendment_fact_status,
+            sar.source_url AS amendment_source_url
+        FROM votes_cast vc
+        JOIN roll_calls rc ON rc.id = vc.roll_call_id
+        LEFT JOIN vote_classifications vcf ON vcf.roll_call_id = rc.id
+        LEFT JOIN vote_interpretations vi ON vi.roll_call_id = rc.id
+        LEFT JOIN vote_contexts vctx
+          ON vctx.roll_call_id = rc.id
+         AND vctx.legislator_id = vc.legislator_id
+        LEFT JOIN senate_amendment_references sar ON sar.roll_call_id = rc.id
+        LEFT JOIN bills b ON b.id = rc.bill_id
+        WHERE vc.legislator_id = %s
+          AND (lower(rc.chamber::text), rc.congress, rc.session, rc.rollcall_number)
+              IN ({placeholders})
+        ORDER BY rc.vote_date, rc.rollcall_number
+        """,
+        (legislator_db_id, *params),
+    )
+
+
 def _get_db_alignment_rows(
     *,
     legislator_db_id: int,
@@ -2302,7 +2419,7 @@ def _query_one_dict(query: str, params: tuple[Any, ...] = ()) -> dict[str, Any] 
 
 
 def _serialize_evidence_row(row: dict[str, Any]) -> dict[str, object]:
-    return {
+    serialized = {
         "roll_call_id": str(row["roll_call_id"]),
         "vote_date": str(row["vote_date"]),
         "chamber": str(row["chamber"]),
@@ -2336,6 +2453,12 @@ def _serialize_evidence_row(row: dict[str, Any]) -> dict[str, object]:
         "amendment_reference": _serialize_amendment_reference(row),
         "vote_context": _serialize_vote_context(row),
     }
+    if row.get("session") is not None:
+        serialized["canonical_action_id"] = (
+            f"{str(row['chamber']).lower()}:{int(row['congress'])}:"
+            f"{int(row['session'])}:{int(row['rollcall_number'])}"
+        )
+    return serialized
 
 
 def _evidence_type(row: dict[str, Any]) -> str:

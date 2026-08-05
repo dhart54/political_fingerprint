@@ -45,6 +45,8 @@ def _normalized_member_action(value: object) -> str:
 def attach_governed_receipt_projections(
     evidence_response: dict[str, Any],
     presentation: dict[str, Any],
+    *,
+    governed_evidence: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     """Return a copied payload whose public display fields come from the projection."""
 
@@ -66,7 +68,45 @@ def attach_governed_receipt_projections(
         len(projections) == len(receipts),
         "governed receipt projection repeats an action identity",
     )
+    reviewed_action_ids = presentation.get("reviewed_action_ids")
+    controls = presentation.get("noncounting_controls")
+    _require(
+        isinstance(reviewed_action_ids, list)
+        and reviewed_action_ids
+        and len(set(reviewed_action_ids)) == len(reviewed_action_ids),
+        "analytical presentation lacks an exact reviewed action universe",
+    )
+    _require(
+        isinstance(controls, list)
+        and all(isinstance(control, dict) for control in controls),
+        "analytical presentation lacks governed non-counting controls",
+    )
+    controls_by_action = {
+        control.get("canonical_action_id"): control for control in controls
+    }
+    _require(
+        len(controls_by_action) == len(controls)
+        and set(reviewed_action_ids) == set(projections) | set(controls_by_action),
+        "governed receipts and controls do not close the reviewed action universe",
+    )
     result = copy.deepcopy(evidence_response)
+    if governed_evidence is not None:
+        governed_congresses = {
+            int(value)
+            for receipt in receipts
+            for value in receipt["congress_scope"]
+        }
+        result["evidence"] = [
+            row
+            for row in result.get("evidence", [])
+            if int(row.get("congress") or 0) not in governed_congresses
+        ] + copy.deepcopy(governed_evidence)
+        result["evidence"].sort(
+            key=lambda row: (
+                str(row.get("vote_date") or ""),
+                int(row.get("rollcall_number") or 0),
+            )
+        )
     rows_by_action: dict[str, dict[str, Any]] = {}
     for row in result.get("evidence", []):
         action_id = _canonical_action_id(row)
@@ -75,6 +115,12 @@ def attach_governed_receipt_projections(
             f"{action_id}: raw evidence repeats a canonical action",
         )
         rows_by_action[action_id] = row
+
+    for action_id in reviewed_action_ids:
+        _require(
+            action_id in rows_by_action,
+            f"{action_id}: governed reviewed action is missing",
+        )
 
     for action_id, projection in projections.items():
         row = rows_by_action.get(action_id)
@@ -105,10 +151,21 @@ def attach_governed_receipt_projections(
                 "raw_evidence": raw_evidence,
             }
         )
+    for action_id, control in controls_by_action.items():
+        row = rows_by_action[action_id]
+        row["canonical_action_id"] = action_id
+        row["governed_receipt_control"] = {
+            "status": "noncounting_control",
+            "boundary_type": control["boundary_type"],
+            "detail": control.get("detail"),
+            "published_artifact_identity": presentation["provenance"]["artifact_id"],
+        }
     result["governed_receipt_projection"] = {
         "published_artifact_identity": presentation["provenance"]["artifact_id"],
         "review_receipt_id": presentation["provenance"]["review_receipt_id"],
         "projected_action_count": len(projections),
+        "reviewed_action_count": len(reviewed_action_ids),
+        "noncounting_control_count": len(controls_by_action),
         "projection_keys": sorted(
             projection["projection_key"] for projection in projections.values()
         ),

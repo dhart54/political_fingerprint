@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import copy
+import json
+from pathlib import Path
 
 import pytest
 
@@ -15,10 +17,14 @@ from app.editorial_presentations.review_state_catalog import (
 )
 from app.editorial_presentations.selector import select_public_presentations
 from app.api.positions import get_legislator_position_evidence
+from app.api import precomputed
 from backend.tests.test_api_editorial_presentations import (
     _approved_artifact,
     _row,
 )
+
+
+ROOT = Path(__file__).resolve().parents[2]
 
 
 def _catalog(receipts: list[dict] | None = None) -> dict:
@@ -231,6 +237,10 @@ def test_evidence_api_exposes_projection_source_and_preserved_raw_layer(
         lambda **_kwargs: {"bioguide_id": "F000477"},
     )
     monkeypatch.setattr(
+        "app.api.positions.get_governed_position_evidence_rows",
+        lambda **_kwargs: rows,
+    )
+    monkeypatch.setattr(
         "app.api.positions._load_publication_rows",
         lambda: [_row(_approved_artifact())],
     )
@@ -276,3 +286,205 @@ def test_receipts_only_member_does_not_query_publication_state(
     )
 
     assert response is raw_response
+
+
+def test_exact_governed_rows_replace_only_governed_congress_and_keep_controls() -> None:
+    presentation = _presentation()
+    control_action = "house:119:1:999"
+    presentation["reviewed_action_ids"].append(control_action)
+    presentation["noncounting_controls"] = [
+        {
+            "canonical_action_id": control_action,
+            "boundary_type": "exact_action_eligibility",
+            "detail": "Approved non-counting control.",
+        }
+    ]
+    governed_rows = [
+        _raw_row(receipt) for receipt in presentation["exact_action_receipts"]
+    ]
+    governed_rows.append(
+        {
+            **_raw_row(
+                {
+                    "canonical_action_id": control_action,
+                    "member_action": "Nay",
+                }
+            ),
+            "position": "nay",
+        }
+    )
+    congress_118 = {
+        **governed_rows[0],
+        "canonical_action_id": "house:118:2:32",
+        "congress": 118,
+        "vote_date": "2024-02-06",
+    }
+    stale_119 = {**governed_rows[0], "rollcall_number": 888}
+
+    response = attach_governed_receipt_projections(
+        {
+            "domain": "JUSTICE_PUBLIC_SAFETY",
+            "evidence": [congress_118, stale_119],
+        },
+        presentation,
+        governed_evidence=governed_rows,
+    )
+
+    identities = {
+        row.get("canonical_action_id")
+        for row in response["evidence"]
+    }
+    assert "house:118:2:32" in identities
+    assert all(row["rollcall_number"] != 888 for row in response["evidence"])
+    control = next(
+        row for row in response["evidence"]
+        if row.get("canonical_action_id") == control_action
+    )
+    assert control["governed_receipt_control"]["status"] == "noncounting_control"
+    assert "governed_receipt_projection" not in control
+    summary = response["governed_receipt_projection"]
+    assert summary["projected_action_count"] == 7
+    assert summary["reviewed_action_count"] == 8
+    assert summary["noncounting_control_count"] == 1
+
+
+def test_exact_governed_query_failure_stays_fail_closed(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(
+        "app.api.positions.get_position_evidence_response",
+        lambda **_kwargs: {
+            "legislator_id": "leg_valerie_p_foushee",
+            "domain": "JUSTICE_PUBLIC_SAFETY",
+            "evidence": [],
+        },
+    )
+    monkeypatch.setattr(
+        "app.api.positions.get_legislator_profile",
+        lambda **_kwargs: {"bioguide_id": "F000477"},
+    )
+    monkeypatch.setattr(
+        "app.api.positions._load_publication_rows",
+        lambda: [_row(_approved_artifact())],
+    )
+    monkeypatch.setattr(
+        "app.api.positions.get_governed_position_evidence_rows",
+        lambda **_kwargs: None,
+    )
+
+    with pytest.raises(RuntimeError, match="governed raw evidence query failed"):
+        get_legislator_position_evidence(
+            "leg_valerie_p_foushee",
+            "JUSTICE_PUBLIC_SAFETY",
+            scope="119",
+        )
+
+
+def test_full_record_projects_35_receipts_and_keeps_two_controls_noncounting() -> None:
+    preparation = (
+        ROOT
+        / "docs/editorial/full_record_reviews/publication_preparations"
+        / "f000477_justice_public_safety_119_v1"
+    )
+    artifact = json.loads(
+        (preparation / "approved_public_presentation_projection.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    review_state = json.loads(
+        (preparation / "public_review_state_projection.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    boundaries = artifact["compiled_semantic_meaning"]["presentation_boundaries"]
+    reviewed = next(
+        boundary["action_ids"]
+        for boundary in boundaries
+        if boundary["boundary_type"] == "reviewed_evidence_coverage"
+    )
+    controls = [
+        {
+            "canonical_action_id": action_id,
+            "boundary_type": boundary["boundary_type"],
+            "detail": boundary.get("detail"),
+        }
+        for boundary in boundaries
+        if boundary["boundary_type"]
+        in {"context_only_control_exclusion", "exact_action_eligibility"}
+        for action_id in boundary["action_ids"]
+    ]
+    presentation = {
+        "tier": "reviewed_conclusion",
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "exact_action_receipts": review_state["exact_action_receipts"],
+        "reviewed_action_ids": reviewed,
+        "noncounting_controls": controls,
+        "provenance": {
+            "artifact_id": artifact["artifact_identity"]["artifact_id"],
+            "review_receipt_id": "full-record-test-receipt",
+        },
+    }
+    receipts = {
+        row["canonical_action_id"]: row
+        for row in review_state["exact_action_receipts"]
+    }
+    rows = []
+    for action_id in reviewed:
+        chamber, congress, session, rollcall = action_id.split(":")
+        receipt = receipts.get(action_id)
+        rows.append(
+            {
+                "canonical_action_id": action_id,
+                "roll_call_id": action_id,
+                "vote_date": f"{2024 + int(session)}-01-01",
+                "chamber": chamber,
+                "congress": int(congress),
+                "rollcall_number": int(rollcall),
+                "position": (
+                    receipt["member_action"].lower().replace(" ", "_")
+                    if receipt is not None
+                    else "nay"
+                ),
+                "interpretation_status": "ambiguous",
+                "source_url": "https://clerk.house.gov/raw",
+                "source_basis": [],
+            }
+        )
+
+    response = attach_governed_receipt_projections(
+        {"domain": "JUSTICE_PUBLIC_SAFETY", "evidence": []},
+        presentation,
+        governed_evidence=rows,
+    )
+
+    assert len(response["evidence"]) == 37
+    assert sum("governed_receipt_projection" in row for row in response["evidence"]) == 35
+    assert sum("governed_receipt_control" in row for row in response["evidence"]) == 2
+    assert all(
+        "raw_evidence" in row
+        for row in response["evidence"]
+        if "governed_receipt_projection" in row
+    )
+
+
+def test_exact_governed_raw_query_does_not_depend_on_legacy_eligibility(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    captured = {}
+
+    def query(sql: str, params: tuple) -> list[dict]:
+        captured["sql"] = sql
+        captured["params"] = params
+        return []
+
+    monkeypatch.setattr(precomputed, "_query_all_dicts", query)
+    assert precomputed._get_db_governed_position_evidence_rows(
+        legislator_db_id=239,
+        identities=[("house", 119, 2, 227)],
+    ) == []
+    normalized_sql = " ".join(captured["sql"].split()).lower()
+    assert "left join vote_classifications" in normalized_sql
+    assert "vcf.is_eligible" not in normalized_sql
+    assert "vcf.primary_domain =" not in normalized_sql
+    assert "rc.session" in normalized_sql
+    assert captured["params"] == (239, "house", 119, 2, 227)

@@ -202,3 +202,42 @@ jobs:
             --filter label=political-fingerprint.http-proof-run)"
           test -z "$(docker network ls -q \
             --filter label=political-fingerprint.http-proof-run)"
+
+  receipt-evidence-repair-postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      RECEIPT_EVIDENCE_REPAIR_DISPOSABLE_DATABASE_URL: >-
+        postgresql://postgres:postgres@127.0.0.1:5432/pf_receipt_repair
+      PGPASSWORD: postgres
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install backend dependencies
+        run: python -m pip install -r backend/requirements.txt
+
+      - name: Create dedicated disposable database
+        run: createdb -h 127.0.0.1 -U postgres pf_receipt_repair
+
+      - name: Prove exact repair apply, idempotency, drift guard, and rollback
+        run: >-
+          pytest -q
+          backend/tests/test_foushee_justice_receipt_evidence_repair_postgres.py
+          -rs
