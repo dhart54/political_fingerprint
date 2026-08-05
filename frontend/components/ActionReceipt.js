@@ -238,6 +238,11 @@ function normalizeSources(sourceBasis, fallbackLabel) {
 }
 
 function limitedContext(row) {
+  const governedControl = row.governed_receipt_control;
+  if (governedControl?.status === "noncounting_control") {
+    return governedControl.detail
+      || "This governed control remains visible but does not count as support or opposition.";
+  }
   if (isProceduralContextRow(row)) {
     return "This procedural or context record does not establish support or opposition on the underlying policy.";
   }
@@ -248,6 +253,9 @@ function limitedContext(row) {
 }
 
 function formatReviewState(row) {
+  if (row.governed_receipt_control?.status === "noncounting_control") {
+    return "Governed non-counting control";
+  }
   if (isProceduralContextRow(row)) {
     return "Procedural / context record";
   }

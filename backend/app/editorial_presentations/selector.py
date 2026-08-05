@@ -197,6 +197,49 @@ def _display_action_ids(display: dict[str, Any]) -> set[str]:
     }
 
 
+def _reviewed_action_ids(artifact: dict[str, Any]) -> list[str]:
+    boundaries = artifact["compiled_semantic_meaning"]["presentation_boundaries"]
+    matches = [
+        boundary
+        for boundary in boundaries
+        if boundary.get("boundary_type") == "reviewed_evidence_coverage"
+    ]
+    if len(matches) != 1:
+        return []
+    action_ids = matches[0].get("action_ids")
+    if not isinstance(action_ids, list) or not all(
+        isinstance(action_id, str) for action_id in action_ids
+    ):
+        return []
+    return sorted(set(action_ids)) if len(set(action_ids)) == len(action_ids) else []
+
+
+def _noncounting_controls(artifact: dict[str, Any]) -> list[dict[str, Any]]:
+    controls = []
+    for boundary in artifact["compiled_semantic_meaning"]["presentation_boundaries"]:
+        boundary_type = boundary.get("boundary_type")
+        if boundary_type not in {
+            "context_only_control_exclusion",
+            "exact_action_eligibility",
+        }:
+            continue
+        for action_id in boundary.get("action_ids", []):
+            controls.append(
+                {
+                    "canonical_action_id": action_id,
+                    "boundary_type": boundary_type,
+                    "detail": boundary.get("detail"),
+                }
+            )
+    identities = [item["canonical_action_id"] for item in controls]
+    if (
+        not all(isinstance(action_id, str) for action_id in identities)
+        or len(set(identities)) != len(identities)
+    ):
+        return []
+    return sorted(controls, key=lambda item: item["canonical_action_id"])
+
+
 def _receipt_projections_agree(
     artifact: dict[str, Any],
     display: dict[str, Any],
@@ -212,9 +255,17 @@ def _receipt_projections_agree(
         if isinstance(receipt, dict)
     }
     sample_action_ids = accepted_substantive_action_ids_for_artifact(artifact)
+    reviewed_action_ids = set(_reviewed_action_ids(artifact))
+    noncounting_control_ids = {
+        item["canonical_action_id"] for item in _noncounting_controls(artifact)
+    }
     if (
         len(by_action) != len(receipts)
         or set(by_action) != sample_action_ids
+        or reviewed_action_ids != sample_action_ids | noncounting_control_ids
+        or len(reviewed_action_ids) != review_state["total_recorded_actions"]
+        or len(noncounting_control_ids)
+        != review_state["procedural_context_actions"]
         or not _display_action_ids(display) <= sample_action_ids
     ):
         return False
@@ -278,6 +329,8 @@ def select_public_presentations(
         ):
             continue
         exact_action_receipts = copy.deepcopy(review_state["exact_action_receipts"])
+        reviewed_action_ids = _reviewed_action_ids(artifact)
+        noncounting_controls = _noncounting_controls(artifact)
         public_review_state = copy.deepcopy(review_state)
         public_review_state.pop("exact_action_receipts", None)
         proposition_index = {
@@ -316,6 +369,8 @@ def select_public_presentations(
             "public_status_label": review_state["public_status_label"],
             "review_state": public_review_state,
             "exact_action_receipts": exact_action_receipts,
+            "reviewed_action_ids": reviewed_action_ids,
+            "noncounting_controls": noncounting_controls,
             "evidence_metadata": copy.deepcopy(artifact["evidence_metadata"]),
             "provenance": {
                 "artifact_id": identity["artifact_id"],

@@ -331,8 +331,14 @@ export const educationEvidence = [
   }),
 ];
 
-export async function installPassARoutes(page, { episodes = false } = {}) {
-  const presentation = episodes ? episodePresentation : justicePresentation;
+export async function installPassARoutes(page, {
+  episodes = false,
+  justiceEvidenceOverride = null,
+  justicePresentationOverride = null,
+} = {}) {
+  const presentation = justicePresentationOverride
+    || (episodes ? episodePresentation : justicePresentation);
+  const suppliedJusticeEvidence = justiceEvidenceOverride || justiceEvidence;
   await page.route("**/*", async (route) => {
     const requestUrl = new URL(route.request().url());
     if (!requestUrl.href.startsWith("http://localhost:8000")) {
@@ -399,7 +405,7 @@ export async function installPassARoutes(page, { episodes = false } = {}) {
     }
     if (path.endsWith("/positions/JUSTICE_PUBLIC_SAFETY/evidence")) {
       await route.fulfill({
-        json: { domain: "JUSTICE_PUBLIC_SAFETY", evidence: justiceEvidence },
+        json: { domain: "JUSTICE_PUBLIC_SAFETY", evidence: suppliedJusticeEvidence },
       });
       return;
     }

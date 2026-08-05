@@ -12,7 +12,13 @@ const PROCEDURAL_VOTE_TYPES = new Set([
 ]);
 
 export function isProceduralContextRow(row) {
-  if (!row || row.interpretation_status === "interpreted") {
+  if (!row) {
+    return false;
+  }
+  if (row.governed_receipt_control?.status === "noncounting_control") {
+    return true;
+  }
+  if (row.interpretation_status === "interpreted") {
     return false;
   }
 
