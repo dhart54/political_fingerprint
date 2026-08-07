@@ -25,6 +25,7 @@ test("public receipt projection exposes voter content and excludes governance me
       ],
       caveats: [
         "The exception applies only to the listed institutions.",
+        "Human-reviewed on 2026-08-04.",
         "This receipt remains bounded to the reviewed benchmark sample.",
         "Review candidate accepted in the launch ratification milestone.",
       ],
@@ -49,14 +50,13 @@ test("public receipt projection exposes voter content and excludes governance me
     episodeRelationship: "This amendment was one step in the bill's legislative path.",
     limitations: [
       "The exception applies only to the listed institutions.",
-      "This receipt remains bounded to the reviewed benchmark sample.",
     ],
     voteSources: [{
       label: "Official vote",
       url: "https://clerk.house.gov/Votes/2025032",
     }],
     actionSources: [{
-      label: "Official amendment",
+      label: "Bill or amendment text",
       url: "https://www.congress.gov/amendment/119th-congress/house-amendment/5",
     }],
   });
@@ -120,7 +120,7 @@ test("generic episode process copy is omitted while substantive relationships re
   }).episodeRelationship, "This amendment preceded final passage of the same defense authorization bill.");
 });
 
-test("approved caveats retain voter-relevant review words but reject structural internals", () => {
+test("receipt caveats omit generic candidate language and structural internals", () => {
   const receipt = buildPublicReceipt({
     governed_receipt_projection: {
       caveats: [
@@ -129,7 +129,5 @@ test("approved caveats retain voter-relevant review words but reject structural 
       ],
     },
   });
-  assert.deepEqual(receipt.limitations, [
-    "The reviewed interpretation remains a candidate because implementation depends on incomplete official amendment text.",
-  ]);
+  assert.deepEqual(receipt.limitations, []);
 });

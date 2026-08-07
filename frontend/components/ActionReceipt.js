@@ -11,21 +11,22 @@ import {
   getActionPresentation,
   getPublicChamberResult,
 } from "../lib/selectedIssueExperience.mjs";
+import SemanticIcon from "./SemanticIcon";
 
 export default function ActionReceipt({
   expanded,
   highlighted,
   onToggle,
+  representativeName,
   row,
 }) {
   const id = actionReceiptId(row);
   const actionId = canonicalActionId(row);
   const action = getActionPresentation(row);
   const position = formatPosition(action.vote || row.position);
-  const outcome = formatOutcome(row);
   return (
     <article
-      className={`scroll-mt-28 border-b border-stone-200 ${
+      className={`scroll-mt-28 border-b border-stone-200 last:border-b-0 ${
         highlighted ? "bg-teal-50/70 ring-2 ring-inset ring-teal-700/20" : ""
       }`}
       data-canonical-action-id={actionId}
@@ -35,113 +36,167 @@ export default function ActionReceipt({
       <button
         aria-expanded={expanded}
         aria-label={`${expanded ? "Collapse" : "Expand"} ${action.title}, ${formatDate(row.vote_date)}, ${position}`}
-        className="grid min-h-20 w-full gap-3 px-2 py-5 text-left sm:grid-cols-[7.5rem_minmax(0,1fr)_auto] sm:items-start"
+        className="grid min-h-16 w-full grid-cols-[minmax(0,1fr)_auto_auto] items-start gap-x-3 gap-y-1 px-3 py-3 text-left sm:grid-cols-[7.5rem_minmax(0,1fr)_auto_auto] sm:px-4"
         onClick={onToggle}
         type="button"
       >
-        <span className="text-sm font-medium text-stone-600">
+        <span className="col-span-2 text-sm font-medium text-stone-600 sm:col-span-1 sm:col-start-1 sm:row-start-1">
           {formatDate(row.vote_date)}
         </span>
-        <span>
+        <span className="col-start-1 row-start-2 min-w-0 sm:col-start-2 sm:row-start-1">
           <span className="block text-base font-semibold leading-6 text-stone-950">
             {action.title}
           </span>
           {action.parentMeasure ? (
-            <span className="mt-1 block text-sm leading-6 text-stone-700">
+            <span className="mt-0.5 block text-sm leading-5 text-stone-600">
               Parent measure: {action.parentMeasure}
             </span>
           ) : null}
-          <span className="mt-1 block text-sm leading-6 text-stone-600">
+          <span className="mt-0.5 block text-sm leading-5 text-stone-600">
             {formatChamber(row.chamber)} · Roll {row.rollcall_number || "not supplied"}
             {action.actionType ? ` · ${action.actionType}` : ""}
           </span>
-          <span className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs leading-5 text-stone-500">
-            {action.status ? <span>{action.status}</span> : null}
-            {outcome ? <span>{outcome}</span> : null}
-          </span>
+          {action.status ? <ActionStatus label={action.status} /> : null}
         </span>
-        <span className={`vote-pill vote-${normalize(row.position)}`}>
+        <span className={`vote-pill vote-${normalize(row.position)} col-start-2 row-start-2 sm:col-start-3 sm:row-start-1`}>
           {position}
         </span>
+        <span
+          aria-hidden="true"
+          className="col-start-3 row-start-2 pt-1 text-lg leading-none text-stone-600 sm:col-start-4 sm:row-start-1"
+        >
+          {expanded ? "⌃" : "⌄"}
+        </span>
       </button>
-      {expanded ? <ExpandedReceipt row={row} /> : null}
+      {expanded ? (
+        <ExpandedReceipt representativeName={representativeName} row={row} />
+      ) : null}
     </article>
   );
 }
 
-function ExpandedReceipt({ row }) {
+function ActionStatus({ label }) {
+  const kind = label === "Non-counting control" ? "noncounting" : "procedural";
+  return (
+    <span className="mt-1 flex items-center gap-1.5 text-xs font-semibold leading-5 text-stone-600">
+      <SemanticIcon kind={kind} />
+      <span>{label}</span>
+    </span>
+  );
+}
+
+function ExpandedReceipt({ representativeName, row }) {
   const receipt = buildPublicReceipt(row);
   const limitations = receipt.limitations.length
     ? receipt.limitations
     : publicLimitations([limitedContext(row)]);
   const sources = [...receipt.voteSources, ...receipt.actionSources];
+  const about = receipt.exactActionMeaning
+    || receipt.proposedChange
+    || receipt.policyQuestion;
+  const proposal = receipt.exactActionMeaning
+    ? receipt.proposedChange || receipt.policyQuestion
+    : "";
+  const result = formatReadableResult(row);
+  const sectionCount = [
+    about,
+    proposal,
+    receipt.representativeVote || result,
+    limitations.length,
+    sources.length,
+  ].filter(Boolean).length;
   return (
-    <div className="border-t border-stone-200 bg-stone-50/70 px-4 py-6 sm:px-6 sm:py-8">
-      <div className="max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">
-          Vote details
-        </p>
-        <div className="mt-5 divide-y divide-stone-200 rounded-xl border border-stone-200 bg-white px-5 sm:px-6">
-          <ReceiptField label="Exact-action meaning" value={receipt.exactActionMeaning} />
-          <ReceiptField label="What this action would change" value={receipt.proposedChange} />
-          <ReceiptField label="Policy question" value={receipt.policyQuestion} />
-          <ReceiptField label="Representative vote" value={formatPosition(receipt.representativeVote)} />
-          <ReceiptField label="Result and current status" value={formatOutcomeAndStatus(row)} />
-          <ReceiptField
-            label="Policy-episode relationship"
-            value={receipt.episodeRelationship}
-          />
-          <ReceiptFieldList
-            label="Material context or limitations"
-            values={limitations}
-          />
-        </div>
-        <div className="mt-5 text-sm leading-6 text-stone-600">
-          <h4 className="font-semibold text-stone-800">Official sources</h4>
-          <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2">
-            {sources.map((source, index) => (
-              <a
-                className="source-link"
-                href={source.url}
-                key={`${source.url}-${index}`}
-                rel="noreferrer"
-                target="_blank"
-              >
-                {source.label}
-              </a>
-            ))}
-            {!sources.length ? <p>Official source links not supplied.</p> : null}
-          </div>
-        </div>
+    <div className="border-t border-stone-200 bg-stone-50/70 px-4 py-5 sm:px-5">
+      <div className={`grid gap-x-6 md:grid-cols-2 xl:gap-x-0 xl:divide-x xl:divide-stone-200 ${DETAIL_GRID_COLUMNS[sectionCount] || "xl:grid-cols-5"}`}>
+        <DetailSection heading="What this vote was about" value={about} />
+        <DetailSection heading="What the proposal would do" value={proposal} />
+        <VoteResultSection
+          position={formatPosition(receipt.representativeVote)}
+          representativeName={representativeName}
+          result={result}
+        />
+        <ContextSection values={limitations} />
+        <SourcesSection sources={sources} />
       </div>
     </div>
   );
 }
 
-function ReceiptFieldList({ label, values }) {
-  const normalized = Array.isArray(values) ? values.filter(Boolean) : [];
-  if (!normalized.length) {
-    return null;
-  }
-  return (
-    <div className="py-5">
-      <h4 className="text-sm font-semibold text-stone-900">{label}</h4>
-      <ul className="mt-2 max-w-2xl space-y-2 text-base leading-7 text-stone-700">
-        {normalized.map((value) => <li key={value}>{value}</li>)}
-      </ul>
-    </div>
-  );
-}
-
-function ReceiptField({ label, value }) {
+function DetailSection({ heading, value }) {
   if (!value) {
     return null;
   }
   return (
-    <div className="py-5">
-      <h4 className="text-sm font-semibold text-stone-900">{label}</h4>
-      <p className="mt-2 max-w-2xl text-base leading-7 text-stone-700">{value}</p>
-    </div>
+    <section className="min-w-0 border-t border-stone-200 py-4 first:border-t-0 first:pt-0 md:border-t-0 md:py-0 xl:px-5 xl:first:pl-0">
+      <h4 className="text-sm font-semibold text-stone-950">{heading}</h4>
+      <p className="mt-2 text-sm leading-6 text-stone-700">{value}</p>
+    </section>
+  );
+}
+
+function VoteResultSection({ position, representativeName, result }) {
+  if (!position && !result) {
+    return null;
+  }
+  return (
+    <section className="min-w-0 border-t border-stone-200 py-4 first:border-t-0 first:pt-0 md:border-t-0 md:py-0 xl:px-5">
+      {position ? (
+        <>
+          <h4 className="text-sm font-semibold text-stone-950">
+            How {representativeName || "the representative"} voted
+          </h4>
+          <span className={`vote-pill vote-${normalize(position)} mt-2`}>{position}</span>
+        </>
+      ) : null}
+      {result ? (
+        <div className={position ? "mt-4" : ""}>
+          <h4 className="text-sm font-semibold text-stone-950">Result</h4>
+          <p className="mt-1 text-sm leading-6 text-stone-700">{result}</p>
+        </div>
+      ) : null}
+    </section>
+  );
+}
+
+function ContextSection({ values }) {
+  if (!values.length) {
+    return null;
+  }
+  return (
+    <section className="min-w-0 border-t border-stone-200 py-4 first:border-t-0 first:pt-0 md:border-t-0 md:py-0 xl:px-5">
+      <h4 className="text-sm font-semibold text-stone-950">Important context</h4>
+      <ul className="mt-2 list-disc space-y-1 pl-4 text-sm leading-6 text-stone-700">
+        {values.map((value) => <li key={value}>{value}</li>)}
+      </ul>
+    </section>
+  );
+}
+
+function SourcesSection({ sources }) {
+  if (!sources.length) {
+    return null;
+  }
+  return (
+    <section className="min-w-0 border-t border-stone-200 py-4 first:border-t-0 first:pt-0 md:border-t-0 md:py-0 xl:px-5">
+      <h4 className="text-sm font-semibold text-stone-950">Official sources</h4>
+      <div className="mt-2 flex flex-col items-start gap-3">
+        {sources.map((source, index) => (
+          <a
+            className="source-link inline-flex items-center gap-2 text-sm"
+            href={source.url}
+            key={`${source.url}-${index}`}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <SemanticIcon
+              className="h-5 w-5 shrink-0"
+              kind={source.label === "Official vote" ? "vote-source" : "document-source"}
+            />
+            <span>{source.label}</span>
+          </a>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -149,7 +204,7 @@ function limitedContext(row) {
   const governedControl = row.governed_receipt_control;
   if (governedControl?.status === "noncounting_control") {
     return governedControl.detail
-      || "This action is governed as non-counting and does not establish support or opposition.";
+      || "This action is non-counting and does not establish support or opposition.";
   }
   if (isProceduralContextRow(row)) {
     return "This procedural or context action does not establish support or opposition on the underlying policy.";
@@ -160,19 +215,19 @@ function limitedContext(row) {
   return "";
 }
 
-function formatOutcome(row) {
-  const result = getPublicChamberResult(row);
-  if (!result) {
-    return "";
+function formatReadableResult(row) {
+  const supplied = getPublicChamberResult(row);
+  const status = row.current_status
+    ? `Current status: ${String(row.current_status).replaceAll("_", " ")}`
+    : "";
+  if (!supplied) {
+    return status;
   }
-  return `Chamber result: ${String(result).replaceAll("_", " ")}`;
-}
-
-function formatOutcomeAndStatus(row) {
-  return [
-    formatOutcome(row),
-    row.current_status ? `Current status: ${row.current_status}` : "",
-  ].filter(Boolean).join(" · ");
+  const result = String(supplied).replaceAll("_", " ");
+  const readable = ["passed", "failed"].includes(result.toLowerCase())
+    ? `${capitalize(result)} in the ${formatChamber(row.chamber)}`
+    : capitalize(result);
+  return [readable, status].filter(Boolean).join(" · ");
 }
 
 function formatPosition(value) {
@@ -186,7 +241,7 @@ function formatPosition(value) {
 }
 
 function formatChamber(value) {
-  return String(value || "Chamber").replace(/^\w/, (letter) => letter.toUpperCase());
+  return String(value || "chamber").replace(/^\w/, (letter) => letter.toUpperCase());
 }
 
 function formatDate(value) {
@@ -203,6 +258,18 @@ function formatDate(value) {
       }).format(parsed);
 }
 
+function capitalize(value) {
+  return String(value || "").replace(/^\w/, (letter) => letter.toUpperCase());
+}
+
 function normalize(value) {
   return String(value || "").trim().toLowerCase().replaceAll(" ", "_");
 }
+
+const DETAIL_GRID_COLUMNS = {
+  1: "xl:grid-cols-1",
+  2: "xl:grid-cols-2",
+  3: "xl:grid-cols-3",
+  4: "xl:grid-cols-4",
+  5: "xl:grid-cols-5",
+};

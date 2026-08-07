@@ -3,10 +3,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import ActionReceipt from "./ActionReceipt";
+import SemanticIcon from "./SemanticIcon";
 import {
   canonicalActionId,
   chronologicalActions,
   filterActions,
+  filterActionsByDimensions,
   resolveExactActionRequest,
 } from "../lib/frontendPassA.mjs";
 import {
@@ -15,23 +17,29 @@ import {
 } from "../lib/selectedIssueExperience.mjs";
 
 const INITIAL_BATCH = 12;
-const FILTERS = [
+const VOTE_FILTERS = [
   ["all", "All"],
   ["yea", "Yea"],
   ["nay", "Nay"],
-  ["non_directional", "Present / Not Voting"],
+  ["non_directional", "Present / Not voting"],
+];
+const TYPE_FILTERS = [
+  ["all", "All actions"],
   ["substantive", "Substantive"],
   ["procedural_context", "Procedural / context"],
 ];
 
 export default function ChronologicalActionLedger({
   highlightedFinding,
+  representativeName,
   rows = [],
 }) {
-  const [filter, setFilter] = useState("all");
+  const [voteFilter, setVoteFilter] = useState("all");
+  const [typeFilter, setTypeFilter] = useState("all");
   const [visibleCount, setVisibleCount] = useState(INITIAL_BATCH);
   const [expandedId, setExpandedId] = useState(null);
   const [activeHighlightedIds, setActiveHighlightedIds] = useState([]);
+  const [patternActive, setPatternActive] = useState(false);
   const [linkedActionNotice, setLinkedActionNotice] = useState("");
   const headingRef = useRef(null);
   const ordered = useMemo(() => chronologicalActions(rows), [rows]);
@@ -40,16 +48,21 @@ export default function ChronologicalActionLedger({
     [highlightedFinding?.actionIds],
   );
   const filtered = useMemo(
-    () => filterActions(ordered, filter, activeHighlightedIds),
-    [activeHighlightedIds, filter, ordered],
+    () => patternActive
+      ? filterActions(ordered, "highlighted", activeHighlightedIds)
+      : filterActionsByDimensions(ordered, {
+          vote: voteFilter,
+          type: typeFilter,
+        }),
+    [activeHighlightedIds, ordered, patternActive, typeFilter, voteFilter],
   );
   const visible = useMemo(
     () => completeVisibleRows(filtered, visibleCount),
     [filtered, visibleCount],
   );
   const ledgerItems = useMemo(
-    () => buildLedgerItems(visible, { groupRelated: filter !== "highlighted" }),
-    [filter, visible],
+    () => buildLedgerItems(visible, { groupRelated: !patternActive }),
+    [patternActive, visible],
   );
 
   useEffect(() => {
@@ -60,9 +73,11 @@ export default function ChronologicalActionLedger({
       ordered,
       requestedHighlightedIds,
     );
-    setFilter(resolution.filter);
+    setVoteFilter("all");
+    setTypeFilter("all");
     setVisibleCount(INITIAL_BATCH);
     setActiveHighlightedIds(resolution.highlightedIds);
+    setPatternActive(resolution.filter === "highlighted");
     setExpandedId(resolution.expandedId);
     setLinkedActionNotice(resolution.notice);
     window.requestAnimationFrame(() => {
@@ -76,100 +91,100 @@ export default function ChronologicalActionLedger({
     });
   }, [highlightedFinding?.requestedAt, ordered, requestedHighlightedIds]);
 
-  function chooseFilter(value) {
-    setFilter(value);
+  function clearPattern() {
+    setPatternActive(false);
+    setActiveHighlightedIds([]);
+    setVoteFilter("all");
+    setTypeFilter("all");
     setVisibleCount(INITIAL_BATCH);
     setExpandedId(null);
+    setLinkedActionNotice("");
+  }
+
+  function chooseVoteFilter(value) {
+    setVoteFilter(value);
+    clearPatternState();
+  }
+
+  function chooseTypeFilter(value) {
+    setTypeFilter(value);
+    clearPatternState();
+  }
+
+  function clearPatternState() {
+    setPatternActive(false);
     setActiveHighlightedIds([]);
+    setVisibleCount(INITIAL_BATCH);
+    setExpandedId(null);
     setLinkedActionNotice("");
   }
 
   return (
-    <section className="scroll-mt-24 border-t border-stone-200 py-10 sm:py-12" id="vote-record">
-      <p className="eyebrow">Exact vote receipts</p>
-      <h3
-        className="mt-2 font-serif text-3xl leading-tight text-stone-950"
-        ref={headingRef}
-        tabIndex="-1"
-      >
-        Chronological action ledger
-      </h3>
-      <p className="mt-3 max-w-3xl text-base leading-7 text-stone-700">
-        {ordered.length} recorded {ordered.length === 1 ? "action" : "actions"}. Newest first; every action remains independently expandable.
-      </p>
+    <section className="scroll-mt-24 border-t border-stone-200 py-8 sm:py-10" id="vote-record">
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <h3
+          className="font-serif text-3xl leading-tight text-stone-950"
+          ref={headingRef}
+          tabIndex="-1"
+        >
+          Vote record
+        </h3>
+        <p className="text-sm leading-6 text-stone-600">
+          {ordered.length} recorded {ordered.length === 1 ? "action" : "actions"} · Newest first · Every vote remains individually expandable
+        </p>
+      </div>
 
       {linkedActionNotice ? (
         <p
           aria-live="polite"
-          className="mt-5 rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm leading-6 text-amber-950"
+          className="mt-5 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm leading-6 text-amber-950"
           role="status"
         >
           {linkedActionNotice}
         </p>
       ) : null}
 
-      {filter === "highlighted" ? (
-        <div className="mt-5 rounded-xl border border-teal-900/20 bg-teal-50 p-4 text-sm leading-6 text-teal-950">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-teal-800">
-            Selected pattern
-          </p>
-          <p className="mt-1 text-base font-semibold leading-7">
-            {highlightedFinding?.label || "Exact actions"}
-          </p>
-          <p className="mt-1">
-            Showing {filtered.length} exact {filtered.length === 1 ? "action" : "actions"}
-            {highlightedFinding?.episodeCount
-              ? ` across ${highlightedFinding.episodeCount} ${highlightedFinding.episodeCount === 1 ? "policy episode" : "policy episodes"}`
-              : ""}.
-            {highlightedFinding?.direction === "mixed"
-              ? " Together they form a mixed episode; no single action or stage is presented as the complete episode."
-              : " These actions are the bounded evidence for this pattern, not the complete issue record."}
-            {" "}The first receipt is open below.
-          </p>
-          <button
-            className="mt-2 font-semibold underline underline-offset-4"
-            onClick={() => chooseFilter("all")}
-            type="button"
-          >
-            Return to all {ordered.length} actions
-          </button>
-        </div>
-      ) : (
-        <div
-          aria-label="Vote record filters"
-          className="mt-5 flex flex-wrap gap-2"
-          role="group"
-        >
-          {FILTERS.map(([value, label]) => (
-            <button
-              aria-pressed={filter === value}
-              className={`filter-button ${filter === value ? "filter-button-selected" : ""}`}
-              key={value}
-              onClick={() => chooseFilter(value)}
-              type="button"
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-      )}
+      <div className="mt-5 flex flex-wrap gap-x-8 gap-y-4 border-y border-stone-200 py-4">
+        <FilterGroup
+          label="Vote"
+          onChange={chooseVoteFilter}
+          options={VOTE_FILTERS}
+          selected={voteFilter}
+        />
+        <FilterGroup
+          label="Type"
+          onChange={chooseTypeFilter}
+          options={TYPE_FILTERS}
+          selected={typeFilter}
+        />
+      </div>
+
+      {patternActive ? (
+        <SelectedPatternStrip
+          finding={highlightedFinding}
+          matchCount={filtered.length}
+          onClear={clearPattern}
+          total={ordered.length}
+        />
+      ) : null}
 
       <p aria-live="polite" className="mt-4 text-sm text-stone-600" role="status">
-        {filter === "all"
-          ? visible.length < filtered.length
-            ? `Showing the first ${visible.length}. Each action has an expandable exact vote receipt.`
-            : `Showing all ${filtered.length} actions. Each action has an expandable exact vote receipt.`
-          : `Showing ${visible.length} of ${filtered.length} matching actions.`}
+        {patternActive
+          ? `Showing ${visible.length} of ${filtered.length} matching votes.`
+          : visible.length < filtered.length
+            ? `Showing the first ${visible.length} of ${filtered.length} matching votes.`
+            : `Showing all ${filtered.length} matching votes.`}
       </p>
 
       {ledgerItems.length ? (
-        <div className="mt-4 border-t border-stone-200">
+        <div className="mt-4 overflow-hidden rounded-xl border border-stone-300 bg-white">
           {ledgerItems.map((item) => item.type === "group" ? (
             <RelatedActionGroup
               expandedId={expandedId}
               item={item}
               key={item.id}
               onToggle={setExpandedId}
+              representativeName={representativeName}
             />
           ) : (
             <ActionReceipt
@@ -181,13 +196,14 @@ export default function ChronologicalActionLedger({
                   ? null
                   : canonicalActionId(item.row),
               )}
+              representativeName={representativeName}
               row={item.row}
             />
           ))}
         </div>
       ) : (
         <p className="mt-5 rounded-xl border border-stone-200 bg-stone-50 p-4 text-base text-stone-700">
-          No recorded actions match this filter.
+          No recorded actions match these filters.
         </p>
       )}
 
@@ -197,37 +213,88 @@ export default function ChronologicalActionLedger({
           onClick={() => setVisibleCount((count) => count + INITIAL_BATCH)}
           type="button"
         >
-          Show more actions
+          Show more votes
         </button>
       ) : null}
     </section>
   );
 }
 
-function RelatedActionGroup({ expandedId, item, onToggle }) {
+function FilterGroup({ label, onChange, options, selected }) {
+  return (
+    <fieldset className="flex min-w-0 flex-wrap items-center gap-2">
+      <legend className="float-left mr-2 py-3 text-sm font-semibold text-stone-900">
+        {label}
+      </legend>
+      {options.map(([value, text]) => (
+        <button
+          aria-pressed={selected === value}
+          className={`filter-button ${selected === value ? "filter-button-selected" : ""}`}
+          key={value}
+          onClick={() => onChange(value)}
+          type="button"
+        >
+          {text}
+        </button>
+      ))}
+    </fieldset>
+  );
+}
+
+function SelectedPatternStrip({ finding, matchCount, onClear, total }) {
+  const direction = finding?.direction || "mixed";
+  const status = finding?.statusLabel || formatDirection(direction);
+  const subject = patternSubject(finding?.label, direction);
+  const accounting = direction === "mixed" && finding?.episodeCount
+    ? `${matchCount} votes within ${finding.episodeCount} ${finding.episodeCount === 1 ? "legislative episode" : "legislative episodes"}`
+    : `${matchCount} matching ${matchCount === 1 ? "vote" : "votes"}`;
+  return (
+    <div className={`pattern-strip pattern-strip-${direction} mt-4 flex flex-wrap items-center justify-between gap-3 px-4 py-3`}>
+      <div className={`flex min-w-0 items-center gap-3 pattern-${direction}`}>
+        <SemanticIcon kind={direction} />
+        <p className="min-w-0 text-sm font-semibold leading-6 text-stone-900">
+          <span className="semantic-label">{status}</span>
+          <span aria-hidden="true"> · </span>
+          <span>{subject}</span>
+          <span aria-hidden="true"> · </span>
+          <span className="font-medium text-stone-700">{accounting}</span>
+        </p>
+      </div>
+      <button
+        className="font-semibold text-teal-900 underline decoration-teal-800/30 underline-offset-4"
+        onClick={onClear}
+        type="button"
+      >
+        Show all {total} votes
+      </button>
+    </div>
+  );
+}
+
+function RelatedActionGroup({
+  expandedId,
+  item,
+  onToggle,
+  representativeName,
+}) {
   const composition = item.composition.positions
     .map(({ count, label }) => `${count} ${label}`)
     .join(" · ");
   return (
-    <details className="border-b border-stone-300 bg-stone-50/60" data-testid="related-action-group" open>
-      <summary className="cursor-pointer px-3 py-5 sm:px-5">
-        <span className="block text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">
-          Related actions · {item.rows.length} individual votes
-        </span>
-        <span className="mt-1 block text-lg font-semibold leading-7 text-stone-950">
-          {item.label}
-        </span>
-        <span className="mt-1 block text-sm leading-6 text-stone-600">
+    <section className="border-b border-stone-300 last:border-b-0" data-testid="related-action-group">
+      <header className="border-b border-stone-200 bg-stone-50 px-4 py-3 sm:px-5">
+        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+          <h4 className="text-base font-semibold leading-6 text-stone-950">{item.label}</h4>
+          <span className="text-sm text-stone-600">· {item.rows.length} votes</span>
+        </div>
+        <p className="mt-1 text-sm leading-6 text-stone-600">
           {composition}
           {item.composition.controls
-            ? ` · ${item.composition.controls} governed non-counting ${item.composition.controls === 1 ? "control" : "controls"}`
+            ? ` · ${item.composition.controls} non-counting ${item.composition.controls === 1 ? "control" : "controls"}`
             : ""}
-        </span>
-        <span className="mt-1 block text-xs leading-5 text-stone-500">
-          This is a navigation group, not an aggregate vote. Each action remains separate below.
-        </span>
-      </summary>
-      <div className="border-t border-stone-200 bg-white pl-3 sm:pl-6">
+        </p>
+      </header>
+      <div>
         {item.rows.map((row) => {
           const actionId = canonicalActionId(row);
           return (
@@ -236,11 +303,28 @@ function RelatedActionGroup({ expandedId, item, onToggle }) {
               highlighted={false}
               key={actionId || `${row.vote_date}-${row.rollcall_number}`}
               onToggle={() => onToggle(expandedId === actionId ? null : actionId)}
+              representativeName={representativeName}
               row={row}
             />
           );
         })}
       </div>
-    </details>
+    </section>
   );
+}
+
+function patternSubject(label, direction) {
+  const value = String(label || "Pattern");
+  if (direction === "opposition") {
+    return value.replace(/^Opposition to\s+/i, "");
+  }
+  if (direction === "support") {
+    return value.replace(/^Support for\s+/i, "");
+  }
+  return value;
+}
+
+function formatDirection(direction) {
+  return { opposition: "Opposition", support: "Support", mixed: "Mixed" }[direction]
+    || "Pattern";
 }

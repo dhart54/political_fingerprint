@@ -1,5 +1,9 @@
 import { expect, test } from "@playwright/test";
 
+import {
+  canonicalActionId,
+  filterActionsByDimensions,
+} from "../lib/frontendPassA.mjs";
 import { installPassARoutes } from "./pass-a-fixtures.mjs";
 import {
   selectedIssueEvidence118 as evidence118,
@@ -8,6 +12,8 @@ import {
   selectedIssueReview as fixture,
 } from "./selected-issue-fixtures.mjs";
 
+const selectedPath = "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY";
+
 test.beforeEach(async ({ page }) => {
   await installPassARoutes(page, {
     justiceEvidenceOverride: evidenceForScope,
@@ -15,210 +21,227 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
-test("selected issue separates all-Congress evidence from the governed interpretation scope", async ({ page }) => {
+test("header and scope strip preserve one bounded selected-issue hierarchy", async ({ page }) => {
   expect(evidence119).toHaveLength(37);
   expect(evidence119.filter((row) => row.governed_receipt_projection)).toHaveLength(35);
   expect(evidence119.filter((row) => row.governed_receipt_control)).toHaveLength(2);
   expect(evidence118).toHaveLength(52);
-  expect(evidence118.filter((row) => row.governed_receipt_projection)).toHaveLength(0);
-  await page.goto(
-    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY",
-  );
+  await page.goto(selectedPath);
 
-  const detail = page.getByTestId("issue-detail");
-  await expect(detail).toContainText("Recorded actions shown");
-  await expect(detail).toContainText("All available Congresses");
-  await expect(detail).toContainText("89 recorded actions currently visible");
-  await expect(detail).toContainText("Reviewed interpretation");
-  await expect(detail).toContainText("119th Congress · full defined issue record");
-  await expect(detail).toContainText("37 reviewed actions · 32 policy episodes");
-  await expect(page.getByTestId("reviewed-analysis")).toBeVisible();
-  await expect(page.getByText("89 recorded actions. Newest first")).toBeVisible();
+  const header = page.locator("main > header");
+  await expect(header.getByRole("link", { name: "Political Fingerprint" })).toBeVisible();
+  await expect(header.getByRole("navigation", { name: "Selected issue sections" })).toContainText(
+    "IssuesIssue summaryVote record",
+  );
+  await expect(header.getByRole("link", { name: "Valerie P. Foushee" })).toHaveAttribute(
+    "href",
+    "#representative-name",
+  );
+  for (const absent of ["About", "How it works", "Save", "Search"]) {
+    await expect(header).not.toContainText(absent);
+  }
+
+  const summary = page.locator("#issue-summary");
+  await expect(summary).toContainText("Recorded actions shown");
+  await expect(summary).toContainText("All available Congresses");
+  await expect(summary).toContainText("89 recorded actions currently visible");
+  await expect(summary).toContainText("Issue summary covers");
+  await expect(summary).toContainText("119th Congress");
+  await expect(summary).toContainText("37 votes across 32 legislative episodes");
+  await expect(page.getByTestId("reviewed-analysis")).not.toContainText("37 reviewed actions");
+  await expect(page.getByRole("heading", { name: "Vote record" })).toBeVisible();
 });
 
-test("119th and 118th scope states preserve their distinct evidence contracts", async ({ page }) => {
-  await page.goto(
-    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY&scope=119",
+test("119th and 118th scope states remain distinct", async ({ page }) => {
+  await page.goto(`${selectedPath}&scope=119`);
+  await expect(page.locator("#issue-summary")).toContainText("37 recorded actions currently visible");
+  await expect(page.locator("#issue-summary")).toContainText(
+    "37 votes across 32 legislative episodes",
   );
-  await expect(page.getByTestId("issue-detail")).toContainText(
-    "37 recorded actions currently visible",
-  );
-  await expect(page.getByTestId("reviewed-analysis")).toContainText(
-    "Full reviewed record",
-  );
-  await expect(page.getByTestId("reviewed-analysis")).toContainText(
-    "37 reviewed actions",
-  );
+  await expect(page.getByTestId("reviewed-analysis")).toBeVisible();
 
   await page.getByRole("button", { name: "118th Congress" }).click();
   await expect(page).toHaveURL(/scope=118/);
-  await expect(page.getByTestId("issue-detail")).toContainText(
-    "52 recorded actions currently visible",
-  );
-  await expect(page.getByTestId("issue-detail")).toContainText(
-    "Not published for this scope",
-  );
+  const summary118 = page.locator("#issue-summary");
+  await expect(summary118).toContainText("52 recorded actions currently visible");
+  await expect(summary118).toContainText("No issue summary for this scope");
+  await expect(summary118).toContainText("Vote receipts remain available");
   await expect(page.getByTestId("reviewed-analysis")).toHaveCount(0);
-  await expect(page.getByText("52 recorded actions. Newest first")).toBeVisible();
+  await expect(page.getByText(/52 recorded actions · Newest first/)).toBeVisible();
 });
 
-test("scan-first pattern index preserves governed action and episode accounting", async ({ page }) => {
-  await page.goto(
-    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY&scope=119",
-  );
-
+test("all governed patterns are visible with symbols, copy, counts, and one action", async ({ page }) => {
+  await page.goto(`${selectedPath}&scope=119`);
   const analysis = page.getByTestId("reviewed-analysis");
   await expect(analysis).toContainText(
     "One meaningful contrast in the reviewed record is opposition to the reviewed displacement of D.C. public-safety rules alongside support for two terrorism-preparedness mandates; separate firearm-access and fraud-enforcement patterns remain primary findings.",
   );
-  await expect(analysis).not.toContainText(
-    "One bounded contrast within a record with four primary patterns",
-  );
   await expect(analysis).toContainText("Patterns in this issue record");
+  await expect(analysis).not.toContainText("Read pattern explanation");
   await expect(analysis).not.toContainText("Bar length reflects");
-  await expect(analysis).not.toContainText("Across six separate episodes.");
-  await expect(analysis).toContainText("6 exact actions · 6 episodes");
-  await expect(analysis).toContainText("3 exact actions · 3 episodes");
-  await expect(analysis).toContainText("2 exact actions · 2 episodes");
-  await expect(analysis.getByText("2 exact actions · 2 episodes")).toHaveCount(2);
-  await expect(analysis).toContainText("3 exact actions · 1 episode");
-  await expect(analysis.getByRole("button", { name: /Show .* exact actions for/ })).toHaveCount(5);
+
+  const patterns = [
+    ["Opposition to displacing D.C. public-safety rules", "Opposition", "6 votes · 6 episodes", "−"],
+    ["Opposition to reducing firearm-access barriers", "Opposition", "3 votes · 3 episodes", "−"],
+    ["Opposition to expanding fraud-enforcement capacity", "Opposition", "2 votes · 2 episodes", "−"],
+    ["Support for terrorism-preparedness mandates", "Support", "2 votes · 2 episodes", "+"],
+    ["The HALT Fentanyl path is one mixed episode", "Mixed", "3 votes within 1 episode", "±"],
+  ];
+  for (const [heading, status, accounting, symbol] of patterns) {
+    const row = analysis.locator("article").filter({ hasText: heading });
+    await expect(row).toContainText(status);
+    await expect(row).toContainText(symbol);
+    await expect(row).toContainText(accounting);
+    await expect(row.locator("p")).not.toBeEmpty();
+    await expect(row.getByRole("button", { name: new RegExp(`View \\d+ votes for ${escapeRegex(heading)}`) })).toHaveCount(1);
+  }
   await expect(analysis).toContainText(
-    "Based on reviewed recorded actions; this does not infer motive, ideology, character, future behavior, or voting advice.",
+    "This issue summary describes the reviewed record; it does not infer motive, character, future behavior, or voting advice.",
   );
 });
 
-test("pattern focus filters exact actions, explains mixed episode accounting, and clears", async ({ page }) => {
-  await page.goto(
-    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY&scope=119",
-  );
-
-  await page.getByRole("button", {
-    name: /Show 3 exact actions for The HALT Fentanyl path is one mixed episode/,
-  }).click();
-  await expect(page.getByText("Selected pattern")).toBeVisible();
-  await expect(page.getByText(/Showing 3 exact actions across 1 policy episode/)).toBeVisible();
-  await expect(page.getByText(/no single action or stage is presented as the complete episode/)).toBeVisible();
+test("pattern navigation alone creates the compact selected-pattern strip and clears", async ({ page }) => {
+  await page.goto(`${selectedPath}&scope=119`);
+  const action = page.getByRole("button", {
+    name: /View 3 votes for The HALT Fentanyl path is one mixed episode/,
+  });
+  await action.focus();
+  await page.keyboard.press("Enter");
+  const strip = page.locator(".pattern-strip");
+  await expect(strip).toContainText("Mixed");
+  await expect(strip).toContainText("3 votes within 1 legislative episode");
+  await expect(strip).not.toContainText("bounded evidence");
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
-  await expect(
-    page.getByRole("heading", { name: "Chronological action ledger" }),
-  ).toBeFocused();
+  await expect(page.getByRole("heading", { name: "Vote record" })).toBeFocused();
 
-  await page.getByRole("button", { name: "Return to all 37 actions" }).click();
-  await expect(page.getByRole("button", { name: "All", exact: true })).toHaveAttribute(
+  await strip.getByRole("button", { name: "Show all 37 votes" }).click();
+  await expect(strip).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "All", exact: true }).first()).toHaveAttribute(
     "aria-pressed",
     "true",
   );
-  await expect(page.getByText(/Showing the first 12/)).toBeVisible();
 });
 
-test("all five pattern controls resolve exact governed counts and scope-all clear restores 89", async ({ page }) => {
-  await page.goto(
-    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY",
-  );
+test("every pattern action resolves its exact canonical identities", async ({ page }) => {
+  await page.goto(selectedPath);
+  await expect(page.getByTestId("issue-detail")).toBeVisible();
   const patterns = [
-    ["Opposition to displacing D.C. public-safety rules", 6],
-    ["Opposition to reducing firearm-access barriers", 3],
-    ["Opposition to expanding fraud-enforcement capacity", 2],
-    ["Support for terrorism-preparedness mandates", 2],
-    ["The HALT Fentanyl path is one mixed episode", 3],
+    ...(fixture.presentation.repeated_patterns || []),
+    ...(fixture.presentation.policy_trajectories || []),
   ];
-  for (const [name, count] of patterns) {
+  for (const pattern of patterns) {
     await page.getByRole("button", {
-      name: new RegExp(`Show ${count} exact actions for ${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`),
+      name: new RegExp(`View ${pattern.action_ids.length} votes for ${escapeRegex(pattern.heading)}`),
     }).click();
-    await expect(page.locator("[data-canonical-action-id]")).toHaveCount(count);
-    await page.getByRole("button", { name: "Return to all 89 actions" }).click();
+    await expect(page.locator(".pattern-strip")).toBeVisible();
+    const actual = await page.locator("[data-canonical-action-id]").evaluateAll(
+      (elements) => elements.map((element) => element.dataset.canonicalActionId).sort(),
+    );
+    expect(actual).toEqual([...pattern.action_ids].sort());
+    await page.getByRole("button", { name: "Show all 89 votes" }).click();
   }
-  await expect(page.getByText(/89 recorded actions\. Newest first/)).toBeVisible();
-  await expect(page.getByText(/Showing the first 12/)).toBeVisible();
 });
 
-test("limitations are collapsed, complete, and bounded to supplied review language", async ({ page }) => {
-  await page.goto(
-    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY&scope=119",
+test("ordinary Nay expansion and Nay filtering never create Opposition state", async ({ page }) => {
+  await page.goto(`${selectedPath}&scope=119`);
+  const roll240 = page.locator('[data-canonical-action-id="house:119:2:240"]');
+  await roll240.getByRole("button").click();
+  await expect(roll240.getByRole("button")).toHaveAttribute("aria-expanded", "true");
+  await expect(page.locator(".pattern-strip")).toHaveCount(0);
+
+  const voteFilters = page.getByRole("group", { name: "Vote" });
+  await voteFilters.getByRole("button", { name: "Nay" }).click();
+  await expect(page.locator(".pattern-strip")).toHaveCount(0);
+  await expect(voteFilters.getByRole("button", { name: "Nay" })).toHaveAttribute(
+    "aria-pressed",
+    "true",
   );
-  const summary = page.getByText("Limitations and unresolved actions · 3");
-  await expect(summary).toBeVisible();
-  await expect(page.getByText("Roll 128: resolved scope only")).not.toBeVisible();
-  await summary.click();
-  await expect(page.getByText("Roll 128: resolved scope only")).toBeVisible();
-  await expect(page.getByText("Roll 155: source identity conflict")).toBeVisible();
-  await expect(page.getByText("Roll 278: no safe final-package meaning")).toBeVisible();
 });
 
-test("related NDAA actions remain five independent receipts with the control visible", async ({ page }) => {
-  await page.goto(
-    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY&scope=119",
+test("Vote and Type filters combine over exact production-shaped actions", async ({ page }) => {
+  await page.goto(`${selectedPath}&scope=119`);
+  const expectedIds = filterActionsByDimensions(evidence119, {
+    vote: "nay",
+    type: "substantive",
+  }).map(canonicalActionId).sort();
+  await page.getByRole("group", { name: "Vote" }).getByRole("button", { name: "Nay" }).click();
+  await page.getByRole("group", { name: "Type" }).getByRole("button", { name: "Substantive" }).click();
+  while (await page.getByRole("button", { name: "Show more votes" }).count()) {
+    await page.getByRole("button", { name: "Show more votes" }).click();
+  }
+  const actualIds = await page.locator("[data-canonical-action-id]").evaluateAll(
+    (elements) => elements.map((element) => element.dataset.canonicalActionId).sort(),
   );
+  expect(actualIds).toEqual(expectedIds);
+  await expect(page.locator(".pattern-strip")).toHaveCount(0);
+});
+
+test("related actions use a non-collapsible parent and keep every child independently usable", async ({ page }) => {
+  await page.goto(`${selectedPath}&scope=119`);
   const group = page.getByTestId("related-action-group").filter({
     hasText: "National Defense Authorization Act for Fiscal Year 2027",
   });
-  await expect(group).toHaveCount(1);
-  await expect(group).toContainText("Related actions · 5 individual votes");
-  await expect(group).toContainText("5 Nay");
-  await expect(group).toContainText("1 governed non-counting control");
+  await expect(group).toContainText("· 5 votes");
+  await expect(group).toContainText("5 Nay · 1 non-counting control");
+  await expect(group.locator("summary")).toHaveCount(0);
+  await expect(group).not.toContainText("navigation group");
   await expect(group.locator("[data-canonical-action-id]")).toHaveCount(5);
-  await expect(group).toContainText(
-    "This is a navigation group, not an aggregate vote.",
-  );
 
-  const roll278 = group.locator('[data-canonical-action-id="house:119:2:278"]');
-  await expect(roll278).toContainText("Governed non-counting control");
-  await roll278.getByRole("button").click();
-  await expect(roll278).toContainText("Material context or limitations");
-
-  await page.getByRole("button", { name: "Procedural / context" }).click();
-  await expect(page.getByText(/Showing 2 of 2 matching actions/)).toBeVisible();
-  await expect(page.locator('[data-canonical-action-id="house:119:2:155"]')).toContainText(
-    "Governed non-counting control",
-  );
-  await expect(page.locator('[data-canonical-action-id="house:119:2:278"]')).toContainText(
-    "Governed non-counting control",
+  for (const receipt of await group.locator("[data-canonical-action-id]").all()) {
+    const button = receipt.getByRole("button");
+    await button.focus();
+    await expect(button).toBeFocused();
+    await page.keyboard.press("Enter");
+    await expect(button).toHaveAttribute("aria-expanded", "true");
+    await expect(receipt.getByRole("link").first()).toBeVisible();
+  }
+  await expect(group.locator('[data-canonical-action-id="house:119:2:278"]')).toContainText(
+    "Non-counting control",
   );
 });
 
-test("standard rows omit review status and representative standalone actions use meaningful titles", async ({ page }) => {
-  await page.goto(
-    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY&scope=119",
+test("pagination reaches all 89 unique actions without group omissions", async ({ page }) => {
+  await page.goto(selectedPath);
+  await expect(page.getByTestId("issue-detail")).toBeVisible();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(12);
+  while (await page.getByRole("button", { name: "Show more votes" }).count()) {
+    await page.getByRole("button", { name: "Show more votes" }).click();
+  }
+  const ids = await page.locator("[data-canonical-action-id]").evaluateAll(
+    (elements) => elements.map((element) => element.dataset.canonicalActionId),
   );
-  while (await page.getByRole("button", { name: "Show more actions" }).count()) {
-    await page.getByRole("button", { name: "Show more actions" }).click();
-  }
-  const expectedTitles = new Map([
-    [218, "Fraud Prevention and Accountability Act"],
-    [221, "To amend the FISA Amendments Act of 2008"],
-    [227, "Financial Exploitation Prevention Act"],
-    [234, "Weatherizing Infrastructure in the North and Terrorism Emergency Readiness Act"],
-    [240, "Protecting Privacy in Purchases Act"],
-  ]);
-  for (const [roll, title] of expectedTitles) {
-    const row = page.locator(`[data-canonical-action-id="house:119:2:${roll}"]`);
-    await expect(row.getByRole("button")).toContainText(title);
-    await expect(row.getByRole("button")).not.toContainText("Reviewed");
-    await expect(row.getByRole("button")).not.toContainText(new RegExp(`(?:Passage|Suspension passage) · Roll ${roll}`));
-  }
+  expect(ids).toHaveLength(89);
+  expect(new Set(ids).size).toBe(89);
 });
 
-test("compact rows defer exact meaning to the expanded voter receipt and expose no internal metadata", async ({ page }) => {
-  await page.goto(
-    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY&scope=119",
-  );
+test("expanded receipts use voter-facing organization and remain metadata-clean", async ({ page }) => {
+  await page.goto(`${selectedPath}&scope=119`);
   const roll275 = page.locator('[data-canonical-action-id="house:119:2:275"]');
-  await expect(roll275.getByRole("button")).toContainText(
-    "Bar federal funding for automated speed-enforcement cameras",
-  );
-  await expect(roll275.getByRole("button")).not.toContainText(
-    "The House choice was whether",
-  );
+  await expect(roll275.getByRole("button")).not.toContainText("Chamber result");
   await roll275.getByRole("button").click();
-  await expect(roll275).toContainText("Exact-action meaning");
-  await expect(roll275).not.toContainText("Policy question");
-  await expect(roll275).toContainText("Representative vote");
-  await expect(roll275).toContainText("Chamber result: passed");
-  await expect(roll275).not.toContainText("Policy-episode relationship");
+  for (const label of [
+    "What this vote was about",
+    "How Valerie P. Foushee voted",
+    "Result",
+    "Important context",
+    "Official sources",
+  ]) {
+    await expect(roll275).toContainText(label);
+  }
+  await expect(roll275).not.toContainText("What the proposal would do");
+  await expect(roll275).toContainText("Passed in the House");
   await expect(roll275).toContainText("Official vote");
-  await expect(roll275).toContainText("Official bill or amendment material");
+  await expect(roll275).toContainText(/Bill or amendment text|Official report/);
+  for (const oldLabel of [
+    "Exact-action meaning",
+    "Policy question",
+    "Material context or limitations",
+    "Representative vote",
+    "Result and current status",
+  ]) {
+    await expect(roll275).not.toContainText(oldLabel);
+  }
+  await expect(roll275).not.toContainText(/candidate|does not establish motive/i);
 
   const publicText = await page.locator("body").textContent();
   for (const forbidden of [
@@ -248,3 +271,39 @@ test("compact rows defer exact meaning to the expanded voter receipt and expose 
   expect(publicText).not.toMatch(/docs[\\/]/i);
   expect(publicText).not.toMatch(/\b[a-f0-9]{40,}\b/i);
 });
+
+test("keyboard, reduced motion, mobile reflow, and 200 percent zoom remain bounded", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`${selectedPath}&scope=119`);
+  await expect(page.getByRole("group", { name: "Vote" })).toBeVisible();
+  await expect(page.getByRole("group", { name: "Type" })).toBeVisible();
+  const scopeCells = await page.locator("#issue-summary dl > div").evaluateAll((cells) => (
+    cells.map((cell) => cell.getBoundingClientRect().top)
+  ));
+  expect(scopeCells[1]).toBeGreaterThan(scopeCells[0]);
+  await assertNoHorizontalOverflow(page);
+
+  const roll275 = page.locator('[data-canonical-action-id="house:119:2:275"]');
+  await roll275.getByRole("button").focus();
+  await page.keyboard.press("Enter");
+  await expect(roll275.getByRole("button")).toHaveAttribute("aria-expanded", "true");
+  await expect(roll275.getByRole("link", { name: "Official vote" })).toBeVisible();
+  await assertNoHorizontalOverflow(page);
+
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.evaluate(() => { document.documentElement.style.zoom = "2"; });
+  await assertNoHorizontalOverflow(page);
+  await expect(page.getByRole("heading", { name: "Vote record" })).toBeVisible();
+});
+
+async function assertNoHorizontalOverflow(page) {
+  const overflow = await page.evaluate(
+    () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+  );
+  expect(overflow).toBeLessThanOrEqual(1);
+}
+
+function escapeRegex(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}

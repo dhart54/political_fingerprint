@@ -64,21 +64,20 @@ test("chronological ledger filters, progressive reveal, and single receipt expan
   const receipts = page.locator("[data-canonical-action-id]");
   await expect(receipts).toHaveCount(12);
   await expect(receipts.first()).toHaveAttribute("data-canonical-action-id", "house:119:1:412");
-  await page.getByRole("button", { name: "Show more actions" }).click();
+  await page.getByRole("button", { name: "Show more votes" }).click();
   await expect(receipts).toHaveCount(13);
   const first = receipts.nth(0).getByRole("button");
   const second = receipts.nth(1).getByRole("button");
   await first.click();
   await expect(first).toHaveAttribute("aria-expanded", "true");
-  await expect(receipts.nth(0)).toContainText("Policy-episode relationship");
-  await expect(receipts.nth(0)).toContainText("Representative vote");
+  await expect(receipts.nth(0)).toContainText("How Valerie P. Foushee voted");
   await expect(receipts.nth(0)).toContainText("Official vote");
   await expect(receipts.nth(0)).not.toContainText("Provenance references");
   await second.click();
   await expect(first).toHaveAttribute("aria-expanded", "false");
   await expect(second).toHaveAttribute("aria-expanded", "true");
   await page.getByRole("button", { name: "Nay", exact: true }).click();
-  await expect(page.getByText(/Showing 6 of 6 matching actions/)).toBeVisible();
+  await expect(page.getByText(/Showing all 6 matching votes/)).toBeVisible();
 });
 
 test("reviewed finding links resolve live-shaped evidence IDs and open the first receipt", async ({ page }) => {
@@ -93,12 +92,12 @@ test("reviewed finding links resolve live-shaped evidence IDs and open the first
   });
   await page.goto("/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY");
   await page.getByRole("button", {
-    name: /Show 3 exact actions for Certification, fentanyl research provisions/,
+    name: /View 3 votes for Certification, fentanyl research provisions/,
   }).click();
-  await expect(page.getByText("Selected pattern")).toBeVisible();
-  await expect(page.getByText(/Showing 3 exact actions across 2 policy episodes/)).toBeVisible();
+  await expect(page.locator(".pattern-strip")).toBeVisible();
+  await expect(page.getByText("3 matching votes", { exact: true })).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Chronological action ledger" }),
+    page.getByRole("heading", { name: "Vote record" }),
   ).toBeFocused();
   expect(await page.evaluate(() => window.__exactActionsScroll)).toContain("auto");
   const receipts = page.locator("[data-canonical-action-id]");
@@ -111,14 +110,14 @@ test("reviewed finding links resolve live-shaped evidence IDs and open the first
     "aria-expanded",
     "true",
   );
-  await expect(receipts.first()).toContainText("Vote details");
+  await expect(receipts.first()).toContainText("What this vote was about");
   const roll32 = page.locator(
     '[data-canonical-action-id="house:119:1:32"]',
   );
   await roll32.getByRole("button").click();
   await expect(roll32).toContainText("overdose-reduction certification");
   await expect(roll32).toContainText("Official vote");
-  await expect(roll32).toContainText("Official bill or amendment material");
+  await expect(roll32).toContainText("Bill or amendment text");
   for (const forbidden of [
     "congress_hamdt5",
     "clerk_roll_032",
@@ -136,7 +135,7 @@ test("reviewed finding links resolve live-shaped evidence IDs and open the first
   await expect(roll32).not.toContainText("Limited context");
   await expect(roll32).not.toContainText("insufficient");
   await expect(roll32).not.toContainText("Justice measure 32 stakes.");
-  await page.getByRole("button", { name: "Return to all 7 actions" }).click();
+  await page.getByRole("button", { name: "Show all 7 votes" }).click();
   await expect(page.getByRole("button", { name: "All", exact: true })).toBeVisible();
   await expect(receipts).toHaveCount(7);
 });
@@ -165,7 +164,7 @@ test("zero-match exact-action request keeps the complete ledger and announces th
     "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY",
   );
   await page.getByRole("button", {
-    name: /Show 1 exact action for Certification, fentanyl research provisions/,
+    name: /View 1 vote for Certification, fentanyl research provisions/,
   }).click();
   await expect(page.getByRole("status").filter({
     hasText: "linked exact actions are unavailable",
@@ -175,7 +174,7 @@ test("zero-match exact-action request keeps the complete ledger and announces th
     "true",
   );
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(7);
-  await expect(page.getByText(/Showing all 7 actions/)).toBeVisible();
+  await expect(page.getByText(/Showing all 7 matching votes/)).toBeVisible();
   await expect(page.getByText("No recorded actions match this filter.")).toHaveCount(0);
 });
 
@@ -184,7 +183,7 @@ test("changing scope clears stale exact-action filtering", async ({ page }) => {
     "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY",
   );
   await page.getByRole("button", {
-    name: /Show 3 exact actions for Certification, fentanyl research provisions/,
+    name: /View 3 votes for Certification, fentanyl research provisions/,
   }).click();
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
   await page.getByRole("button", { name: "118th Congress" }).click();
@@ -257,7 +256,7 @@ test("200 percent zoom keeps the primary journey readable and bounded", async ({
     () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
   );
   expect(overflow).toBeLessThanOrEqual(1);
-  await expect(page.getByRole("heading", { name: "Chronological action ledger" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Vote record" })).toBeVisible();
 });
 
 test("desktop and mobile rendered evidence can be captured for review", async ({ page }) => {
@@ -268,7 +267,7 @@ test("desktop and mobile rendered evidence can be captured for review", async ({
   await page.goto("/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY");
   await expect(page.getByTestId("issue-card")).toHaveCount(3);
   await expect(
-    page.getByRole("heading", { name: "Chronological action ledger" }),
+    page.getByRole("heading", { name: "Vote record" }),
   ).toBeVisible();
   const devPortal = page.locator("nextjs-portal");
   if (await devPortal.count()) {

@@ -37,6 +37,7 @@ test("selected issue model keeps all-Congress evidence distinct from 119th inter
   assert.equal(model.evidence.count, 89);
   assert.equal(model.interpretation.type, "Full reviewed record");
   assert.equal(model.interpretation.scope, "119th Congress · full defined issue record");
+  assert.equal(model.interpretation.congressLabel, "119th Congress");
   assert.equal(model.interpretation.actionCount, 37);
   assert.equal(model.interpretation.episodeCount, 32);
   assert.equal(model.scopesAlign, false);
@@ -128,7 +129,7 @@ test("a supplied final-passage label remains more specific than fallback questio
     question: "The exact final-package policy question remains unresolved.",
   });
   assert.equal(compact.title, "Final passage after amendments");
-  assert.equal(compact.status, "Governed non-counting control");
+  assert.equal(compact.status, "Non-counting control");
 });
 
 test("approved exact-action meaning supplies a concise title when official labels are absent", () => {

@@ -7,7 +7,7 @@ const output = process.env.PASS_A_LIVE_REVIEW_DIR;
 const selectedUrl =
   "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY";
 const supportFinding =
-  /Show 3 exact actions for Certification, fentanyl research provisions/;
+  /View 3 votes for Certification, fentanyl research provisions/;
 
 async function removeDevelopmentPortal(page) {
   const portal = page.locator("nextjs-portal");
@@ -112,16 +112,7 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
     page.getByRole("heading", { name: "The fentanyl episode is mixed" }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Evidence boundaries" }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { name: "Issue summaries", exact: true }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("navigation", { name: "Selected issue sections" }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { name: "Chronological action ledger" }),
+    page.getByRole("heading", { name: "Vote record" }),
   ).toBeVisible();
   await assertBounded(page);
   await capture(page, "04-justice-detail-ledger-1440.png");
@@ -129,10 +120,10 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
   const exactActionButton = page.getByRole("button", {
     name: supportFinding,
   });
-  await expect(exactActionButton).toHaveText("Show 3 exact actions");
+  await expect(exactActionButton).toHaveText("View 3 votes");
   await exactActionButton.click();
   await expect(
-    page.getByRole("heading", { name: "Chronological action ledger" }),
+    page.getByRole("heading", { name: "Vote record" }),
   ).toBeFocused();
   expect(await page.evaluate(() => window.__passALiveScroll)).toContain("auto");
   const receipts = page.locator("[data-canonical-action-id]");
@@ -169,7 +160,7 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
   await expect(roll32).not.toContainText("insufficient amendment text");
   await capture(page, "06-corrected-roll-32-expanded-1440.png");
 
-  await page.getByRole("button", { name: "Return to all 76 actions" }).click();
+  await page.getByRole("button", { name: "Show all 76 votes" }).click();
   await expect(page.getByText(/Showing the first 12/)).toBeVisible();
   await expect(page.getByRole("button", { name: "All", exact: true })).toBeVisible();
   await capture(page, "07-returned-to-complete-record-1440.png");
@@ -191,9 +182,6 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
       await expect(mobileRoll32).not.toContainText("congress_hamdt5");
       await expect(mobileRoll32).toContainText("Official vote");
     }
-    await expect(
-      page.getByRole("navigation", { name: "Selected issue sections" }),
-    ).toBeVisible();
     await assertBounded(page);
     await capture(page, name);
   }
@@ -227,7 +215,7 @@ test("capture the matching branch full-stack Frontend Pass A review package", as
   });
   await page.goto(selectedUrl);
   await page.getByRole("button", {
-    name: /Show 1 exact action for Certification, fentanyl research provisions/,
+    name: /View 1 vote for Certification, fentanyl research provisions/,
   }).click();
   await expect(page.getByRole("status").filter({
     hasText: "complete chronological record remains available",
