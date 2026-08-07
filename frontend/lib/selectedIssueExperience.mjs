@@ -178,6 +178,15 @@ export function publicActionStatus(row = {}) {
   return "";
 }
 
+export function publicActionStatusKind(label = "") {
+  return {
+    "Procedural / context": "procedural",
+    "Non-counting control": "noncounting",
+    "Limited context": "limited",
+    "Unresolved evidence": "unresolved",
+  }[label] || "";
+}
+
 export function getPublicChamberResult(row = {}) {
   return firstText(
     row.vote_context?.final_result,

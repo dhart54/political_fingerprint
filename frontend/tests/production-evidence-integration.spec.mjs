@@ -96,8 +96,47 @@ test("all governed patterns are visible with symbols, copy, counts, and one acti
     await expect(row.getByRole("button", { name: new RegExp(`View \\d+ votes for ${escapeRegex(heading)}`) })).toHaveCount(1);
   }
   await expect(analysis).toContainText(
-    "This issue summary describes the reviewed record; it does not infer motive, character, future behavior, or voting advice.",
+    "Based on reviewed recorded actions; this does not infer motive, ideology, character, future behavior, or voting advice.",
   );
+});
+
+test("exceptional action states render distinct symbols with text while substantive actions stay plain", async ({ page }) => {
+  await page.unrouteAll({ behavior: "wait" });
+  const base = evidence119.find((row) => !row.governed_receipt_control);
+  const rows = [
+    exceptionalRow(base, 901, { interpretation_status: "interpreted" }),
+    exceptionalRow(base, 902, {
+      vote_type: "procedural",
+      interpretation_status: "procedural_context",
+    }),
+    exceptionalRow(base, 903, {
+      governed_receipt_control: { status: "noncounting_control" },
+    }),
+    exceptionalRow(base, 904, { interpretation_status: "ambiguous" }),
+    exceptionalRow(base, 905, { interpretation_status: "insufficient_evidence" }),
+  ];
+  await installPassARoutes(page, {
+    justiceEvidenceOverride: rows,
+    justicePresentationOverride: fixture.presentation,
+  });
+  await page.goto(`${selectedPath}&scope=119`);
+
+  const expectations = [
+    [902, "procedural", "Procedural / context", "↪"],
+    [903, "noncounting", "Non-counting control", "○"],
+    [904, "limited", "Limited context", "?"],
+    [905, "unresolved", "Unresolved evidence", "!"],
+  ];
+  for (const [roll, kind, label, symbol] of expectations) {
+    const receipt = page.locator(`[data-canonical-action-id="house:119:2:${roll}"]`);
+    const status = receipt.locator(`[data-action-status="${kind}"]`);
+    await expect(status).toContainText(label);
+    await expect(status).toContainText(symbol);
+    await expect(receipt.locator("[data-action-status]")).toHaveCount(1);
+  }
+  await expect(
+    page.locator('[data-canonical-action-id="house:119:2:901"] [data-action-status]'),
+  ).toHaveCount(0);
 });
 
 test("pattern navigation alone creates the compact selected-pattern strip and clears", async ({ page }) => {
@@ -306,4 +345,21 @@ async function assertNoHorizontalOverflow(page) {
 
 function escapeRegex(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function exceptionalRow(base, roll, overrides = {}) {
+  return {
+    ...base,
+    canonical_action_id: `house:119:2:${roll}`,
+    rollcall_number: roll,
+    vote_date: `2026-07-${String(roll - 900).padStart(2, "0")}`,
+    vote_type: "passage",
+    description: `Exceptional action fixture ${roll}`,
+    interpretation_status: "interpreted",
+    bill_title: undefined,
+    amendment_purpose: undefined,
+    governed_receipt_projection: undefined,
+    governed_receipt_control: undefined,
+    ...overrides,
+  };
 }

@@ -55,7 +55,7 @@ export default function ReviewedAnalysisSection({
       ) : null}
 
       <p className="mt-6 max-w-4xl text-sm leading-6 text-stone-600">
-        This issue summary describes the reviewed record; it does not infer motive, character, future behavior, or voting advice.
+        Based on reviewed recorded actions; this does not infer motive, ideology, character, future behavior, or voting advice.
       </p>
 
       {presentation.limitations?.length ? (

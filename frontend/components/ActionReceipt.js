@@ -10,6 +10,7 @@ import {
 import {
   getActionPresentation,
   getPublicChamberResult,
+  publicActionStatusKind,
 } from "../lib/selectedIssueExperience.mjs";
 import SemanticIcon from "./SemanticIcon";
 
@@ -76,9 +77,15 @@ export default function ActionReceipt({
 }
 
 function ActionStatus({ label }) {
-  const kind = label === "Non-counting control" ? "noncounting" : "procedural";
+  const kind = publicActionStatusKind(label);
+  if (!kind) {
+    return null;
+  }
   return (
-    <span className="mt-1 flex items-center gap-1.5 text-xs font-semibold leading-5 text-stone-600">
+    <span
+      className="mt-1 flex items-center gap-1.5 text-xs font-semibold leading-5 text-stone-600"
+      data-action-status={kind}
+    >
       <SemanticIcon kind={kind} />
       <span>{label}</span>
     </span>

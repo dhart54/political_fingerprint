@@ -56,12 +56,18 @@ export default function SemanticIcon({ className = "", kind }) {
     );
   }
 
-  if (kind === "procedural") {
-    return <span aria-hidden="true" className={`semantic-state ${className}`}>↪</span>;
-  }
-
-  if (kind === "noncounting") {
-    return <span aria-hidden="true" className={`semantic-state ${className}`}>○</span>;
+  if (["procedural", "noncounting", "limited", "unresolved"].includes(kind)) {
+    const symbols = {
+      procedural: "↪",
+      noncounting: "○",
+      limited: "?",
+      unresolved: "!",
+    };
+    return (
+      <span aria-hidden="true" className={`semantic-state ${className}`}>
+        {symbols[kind]}
+      </span>
+    );
   }
 
   return null;

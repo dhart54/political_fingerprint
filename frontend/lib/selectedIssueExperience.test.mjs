@@ -8,6 +8,8 @@ import {
   completeVisibleRows,
   getActionPresentation,
   getPublicChamberResult,
+  publicActionStatus,
+  publicActionStatusKind,
 } from "./selectedIssueExperience.mjs";
 
 const presentation = {
@@ -120,6 +122,21 @@ test("compact action presentation uses amendment purpose and preserves parent me
   assert.equal(compact.title, "Limit military speed-camera funding");
   assert.equal(compact.parentMeasure, "National Defense Authorization Act for Fiscal Year 2027");
   assert.equal(compact.status, "");
+});
+
+test("exceptional action statuses have distinct stable semantic treatments", () => {
+  const cases = [
+    [{ vote_type: "procedural" }, "Procedural / context", "procedural"],
+    [{ governed_receipt_control: { status: "noncounting_control" } }, "Non-counting control", "noncounting"],
+    [{ interpretation_status: "ambiguous" }, "Limited context", "limited"],
+    [{ interpretation_status: "insufficient_evidence" }, "Unresolved evidence", "unresolved"],
+  ];
+  for (const [row, label, kind] of cases) {
+    assert.equal(publicActionStatus(row), label);
+    assert.equal(publicActionStatusKind(label), kind);
+  }
+  assert.equal(publicActionStatus({ interpretation_status: "interpreted" }), "");
+  assert.equal(publicActionStatusKind(""), "");
 });
 
 test("a supplied final-passage label remains more specific than fallback question text", () => {
