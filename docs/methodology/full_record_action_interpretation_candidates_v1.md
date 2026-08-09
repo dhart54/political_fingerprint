@@ -33,6 +33,17 @@ synthesis, and public wording are forbidden meaning inputs.
   description for the meaning claim. Parent-measure content cannot substitute.
 - A whole-measure or resolution candidate uses the stage-compatible operative
   text bound by readiness.
+- A descriptive official long title beginning with an operative form such as
+  `To`, `Making`, or `Directing` may support the bounded-title path. A short or
+  proper act title identifies the object but does not, by itself, establish
+  what the choice would do.
+- When only a short or proper title is available, the evaluator must inspect
+  source-native top-level divisions, top-level titles, or equivalent directly
+  encoded structural headings in the already accepted exact operative XML. A
+  `structured_operative_summary` must bind every stated component to those
+  headings, preserve a whole-package boundary, and use less than high
+  confidence. If no safe structure exists beyond the short title, candidate
+  generation fails closed.
 - Yea/Nay is an official member action. It becomes
   `supports_exact_choice`/`opposes_exact_choice` only after the exact choice is
   established.
@@ -51,6 +62,12 @@ authorization, appropriations, omnibus, and other multi-part measures. It says
 what whole package the chamber considered while expressly refusing to attribute
 the member's action to any individual component. This state is cross-issue; it
 contains no National-Security-specific semantic exception.
+
+The closed structural locators are `top-level-division-header`,
+`top-level-title-header`, and `direct-section-header`. They record source-native
+structure, not separate member positions. A structured summary cannot omit or
+invent components relative to the deterministic structural projection used for
+that candidate.
 
 ## Candidate/decision separation
 

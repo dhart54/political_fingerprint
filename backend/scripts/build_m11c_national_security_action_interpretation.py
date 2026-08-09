@@ -177,7 +177,9 @@ def render_dossier(artifact: dict[str, Any]) -> str:
     lines = [
         "# M11C National Security Action-Interpretation Human Review",
         "",
-        "Status: detached candidate package; no action meaning is accepted.",
+        "Status: corrected detached candidate package; the reviewed decision "
+        "accepts 79 meanings and all 81 exact-choice effects, while the two "
+        "corrected meanings remain pending the final bounded human gate.",
         "",
         f"- Exact post-M11B merge base: `{subject['post_m11b_merge_base']}`",
         f"- Candidate artifact: `{artifact['artifact_id']}`",
@@ -238,11 +240,12 @@ def render_dossier(artifact: dict[str, Any]) -> str:
             "",
             "## Human decisions required",
             "",
-            "Review every candidate against its evidence-map digest and official "
-            "source bindings. For each row, the separate empty decision template "
-            "must later record accept, revise, ambiguity-preserving disposition, "
-            "or reject/no-safe-meaning. Package-level candidates require explicit "
-            "judgment about whether the bounded whole-package meaning is sufficient.",
+            "The next review is bounded to `house:119:1:320` / S. 1071 and "
+            "`house:119:2:142` / S. 1318, the generic short-title/structured-summary "
+            "rule, deterministic artifact changes, and preservation evidence. The "
+            "other 79 meanings and all 81 exact-choice effects are not reopened. "
+            "The empty decision template remains non-authorizing until the final "
+            "bounded review is consolidated.",
             "",
             "No decision in this package authorizes episodes, Semantic IR, "
             "synthesis, public wording, publication, persistence, production, or "

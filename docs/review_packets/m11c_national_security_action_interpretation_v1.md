@@ -6,10 +6,10 @@
   `13f8ad58f3aee32eb90369e8b454830cfbbf130b`.
 - Candidate artifact:
   `action-interpretation-candidates:f000477:national_security_foreign:119:v1`.
-- Artifact SHA-256:
-  `293f6168677fa52eccfbb016276aa6d6d30b5623c794256b490d701bf40d831d`.
-- Interpretation-subject SHA-256:
-  `6bded561801fdd10454cb3f28b8602fda4dc15057e4b8b01c336dbabba504f77`.
+- Corrected artifact SHA-256:
+  `6d3c0c26d56b7ace999debbc45efc0945f27320425b0f2bda55aca013630543d`.
+- Corrected interpretation-subject SHA-256:
+  `db88b7e4e5f180fa72f901132b56e8f41b975a5e12d102600b45a7df766ad840`.
 - Full candidate ledger and evidence-linked human-review surface:
   `docs/editorial/full_record_reviews/interpretation_candidates/f000477_national_security_foreign_119_v1/human_review_dossier.md`.
 - Empty, non-authorizing human-decision template:
@@ -43,18 +43,20 @@ complete content subject because a commit cannot contain its own SHA.
 - Member actions within candidates: 39 Yea, 42 Nay.
 - Candidate exact-choice effects: 39 `supports_exact_choice`, 42
   `opposes_exact_choice`.
-- Coverage: 72 `bounded_official_purpose_summary`, nine
+- Coverage: 71 `bounded_official_purpose_summary`, ten
   `package_level_bounded_summary`.
-- Candidate statuses: 12 `proposed`, 69
+- Candidate statuses: 11 `proposed`, 70
   `proposed_with_material_limitation`.
 
 ## Human decisions required
 
-Review all 81 exact-action meanings and their resulting exact-choice position
-effects. In particular, decide whether each of the nine package-level bounded
-summaries is sufficient for later action-meaning acceptance, and preserve or
-revise every recorded source limitation. The template must remain empty until
-that separate human decision is made.
+The review of head `1a5d60cea6e8712d2bc1e20019ac37505adf39ff`
+accepted the other 79 meanings, all 81 exact-choice position effects, and the
+existing limitations for the eight package candidates other than S. 1071. The
+next review is bounded to the corrected S. 1071 and S. 1318 meanings, the generic
+short-title/structured-summary rule, deterministic artifact changes, and the
+preservation evidence. The empty template remains non-authorizing until that
+bounded decision is consolidated.
 
 This review cannot interpret H.R. 8800 and cannot authorize policy episodes,
 Semantic IR, synthesis, public wording, publication, persistence, production,

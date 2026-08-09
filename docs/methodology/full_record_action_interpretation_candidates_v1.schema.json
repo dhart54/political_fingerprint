@@ -124,7 +124,16 @@
         "component_id": {"type": "string", "minLength": 1},
         "wording": {"type": "string", "minLength": 1},
         "source_id": {"type": "string", "minLength": 1},
-        "locator": {"type": "string", "minLength": 1},
+        "locator": {
+          "enum": [
+            "official-title",
+            "official_purpose_or_description",
+            "structured_operative_summary",
+            "top-level-division-header",
+            "top-level-title-header",
+            "direct-section-header"
+          ]
+        },
         "support_state": {
           "enum": ["directly_supported", "supported_with_limitation"]
         }
@@ -187,7 +196,13 @@
           "properties": {
             "wording": {"type": "string", "minLength": 1},
             "source_id": {"type": "string", "minLength": 1},
-            "locator": {"type": "string", "minLength": 1}
+            "locator": {
+              "enum": [
+                "official-title",
+                "official_purpose_or_description",
+                "structured_operative_summary"
+              ]
+            }
           }
         },
         "proposed_exact_action_meaning": {"type": "string", "minLength": 1},

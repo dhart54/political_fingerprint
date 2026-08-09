@@ -146,6 +146,124 @@ class FullRecordActionInterpretationTests(unittest.TestCase):
         ):
             self._validate(artifact)
 
+    def test_short_title_alone_cannot_be_high_confidence_meaning(self) -> None:
+        artifact = deepcopy(self.artifact)
+        candidate = next(
+            item
+            for item in artifact["subject"]["candidates"]
+            if item["action_id"] == "house:119:2:142"
+        )
+        candidate["official_title_or_purpose"]["locator"] = "official-title"
+        candidate["proposed_exact_action_meaning"] = (
+            "The House choice was whether to pass S. 1318, an operative measure "
+            "identified only by its short title."
+        )
+        candidate["claim_components"] = candidate["claim_components"][:1]
+        candidate["claim_components"][0]["wording"] = candidate[
+            "proposed_exact_action_meaning"
+        ]
+        candidate["claim_components"][0]["locator"] = "official-title"
+        candidate["coverage_assessment"] = "bounded_official_purpose_summary"
+        candidate["confidence"] = "high"
+        candidate["limitations"] = []
+        candidate["unresolved_editorial_questions"] = []
+        self._resign_candidate(candidate)
+        self._resign_artifact(artifact)
+        with self.assertRaisesRegex(
+            ActionInterpretationError, "short-title-only meaning treated as complete"
+        ):
+            self._validate(artifact)
+
+    def test_compound_package_cannot_collapse_to_first_short_title(self) -> None:
+        artifact = deepcopy(self.artifact)
+        candidate = next(
+            item
+            for item in artifact["subject"]["candidates"]
+            if item["action_id"] == "house:119:2:142"
+        )
+        candidate["proposed_exact_action_meaning"] = (
+            "The House choice was whether to pass S. 1318, the Foreign "
+            "Intelligence Accountability Act."
+        )
+        candidate["claim_components"] = candidate["claim_components"][:1]
+        candidate["claim_components"][0]["wording"] = candidate[
+            "proposed_exact_action_meaning"
+        ]
+        self._resign_candidate(candidate)
+        self._resign_artifact(artifact)
+        with self.assertRaisesRegex(
+            ActionInterpretationError, "structured operative components mismatch"
+        ):
+            self._validate(artifact)
+
+    def test_source_native_structured_package_summaries_validate(self) -> None:
+        candidates = {
+            item["action_id"]: item for item in self.artifact["subject"]["candidates"]
+        }
+        for action_id in ("house:119:1:320", "house:119:2:142"):
+            candidate = candidates[action_id]
+            self.assertEqual(
+                "structured_operative_summary",
+                candidate["official_title_or_purpose"]["locator"],
+            )
+            self.assertEqual(
+                "package_level_bounded_summary", candidate["coverage_assessment"]
+            )
+            self.assertEqual("medium", candidate["confidence"])
+        self._validate(self.artifact)
+
+    def test_fabricated_structural_component_fails_validation(self) -> None:
+        artifact = deepcopy(self.artifact)
+        candidate = next(
+            item
+            for item in artifact["subject"]["candidates"]
+            if item["action_id"] == "house:119:1:320"
+        )
+        fabricated = deepcopy(candidate["claim_components"][-1])
+        fabricated["component_id"] += ":fabricated"
+        fabricated["wording"] = "Fabricated authorization component"
+        candidate["claim_components"].append(fabricated)
+        self._resign_candidate(candidate)
+        self._resign_artifact(artifact)
+        with self.assertRaisesRegex(
+            ActionInterpretationError, "structured operative components mismatch"
+        ):
+            self._validate(artifact)
+
+    def test_package_component_position_attribution_is_prohibited(self) -> None:
+        artifact = deepcopy(self.artifact)
+        candidate = next(
+            item
+            for item in artifact["subject"]["candidates"]
+            if item["action_id"] == "house:119:1:320"
+        )
+        candidate["proposed_exact_action_meaning"] += (
+            " The member supported the Department of Defense component."
+        )
+        candidate["claim_components"][0]["wording"] = candidate[
+            "proposed_exact_action_meaning"
+        ]
+        self._resign_candidate(candidate)
+        self._resign_artifact(artifact)
+        with self.assertRaisesRegex(
+            ActionInterpretationError, "component-level member attribution prohibited"
+        ):
+            self._validate(artifact)
+
+    def test_governed_structured_meaning_regressions(self) -> None:
+        candidates = {
+            item["action_id"]: item for item in self.artifact["subject"]["candidates"]
+        }
+        s1071 = candidates["house:119:1:320"]["proposed_exact_action_meaning"]
+        self.assertIn("top-level divisions", s1071)
+        self.assertIn("Department of Defense Authorizations", s1071)
+        self.assertIn("Intelligence Authorization Act", s1071)
+        s1318 = candidates["house:119:2:142"]["proposed_exact_action_meaning"]
+        self.assertIn("Foreign Intelligence Accountability Act", s1318)
+        self.assertIn("Extension of authorities of title VII", s1318)
+        self.assertIn("Anti-CBDC Surveillance State Act", s1318)
+        self.assertIn("central bank digital currency", s1318)
+
     def test_source_digest_mutation_fails_closed(self) -> None:
         artifact = deepcopy(self.artifact)
         evidence = artifact["subject"]["evidence_maps"][0]

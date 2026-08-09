@@ -62,6 +62,21 @@ EXPECTED_SELECTION_SHA256 = (
 EXPECTED_ACTION_SET_SHA256 = (
     "190bda45c25cd32ae0a6847c862f85837eafc4a82dfda237746a66467c550400"
 )
+REVIEWED_OTHER_79_MEANINGS_SHA256 = (
+    "688fb9533641267a095507a8ed9cab82fbe8c8b328c96491b4b05f4229476521"
+)
+REVIEWED_81_POSITION_EFFECTS_SHA256 = (
+    "4d2d949bac2332caf109cff7de5bb980b855b68114df7c7f9ab9a8f5f6ce2095"
+)
+REVIEWED_EIGHT_PACKAGE_MEANINGS_SHA256 = (
+    "1136d579295c18c37dcfb6ca17c4c86c42dbeeb1e6bebeaa5210d78f1c6a422c"
+)
+REVISED_ACTION_IDS = {"house:119:1:320", "house:119:2:142"}
+STRUCTURAL_LOCATORS = {
+    "top-level-division-header",
+    "top-level-title-header",
+    "direct-section-header",
+}
 CURRENT_STATE_PATH = ROOT / "docs/editorial/current_state_index.json"
 
 
@@ -90,22 +105,112 @@ def _raw_path(source: dict[str, Any]) -> Path:
     return path
 
 
-def _xml_title(path: Path) -> str:
+def _normalized_text(element: ElementTree.Element) -> str:
+    return re.sub(r"\s+", " ", "".join(element.itertext())).strip()
+
+
+def _direct_header(element: ElementTree.Element) -> str | None:
+    for child in element:
+        if _local_name(child.tag) == "header":
+            wording = _normalized_text(child)
+            return wording or None
+    return None
+
+
+def _xml_evidence(path: Path) -> dict[str, Any]:
     root = ElementTree.parse(path).getroot()
-    short_title = None
+    official_titles: list[str] = []
+    short_titles: list[str] = []
     for element in root.iter():
         name = _local_name(element.tag)
         if name not in {"official-title", "short-title"}:
             continue
-        wording = re.sub(r"\s+", " ", "".join(element.itertext())).strip()
+        wording = _normalized_text(element)
         if not wording:
             continue
         if name == "official-title":
-            return wording
-        if short_title is None:
-            short_title = wording
-    _require(short_title is not None, f"operative XML title missing: {path}")
-    return short_title
+            if wording not in official_titles:
+                official_titles.append(wording)
+        elif wording not in short_titles:
+            short_titles.append(wording)
+    title = next(iter(official_titles), None) or next(iter(short_titles), None)
+    _require(title is not None, f"operative XML title missing: {path}")
+
+    parent_by_id = {
+        id(child): parent for parent in root.iter() for child in list(parent)
+    }
+
+    def ancestors(element: ElementTree.Element) -> list[str]:
+        names: list[str] = []
+        parent = parent_by_id.get(id(element))
+        while parent is not None:
+            names.append(_local_name(parent.tag))
+            parent = parent_by_id.get(id(parent))
+        return names
+
+    divisions: list[tuple[str, str]] = []
+    for element in root.iter():
+        if _local_name(element.tag) != "division":
+            continue
+        ancestor_names = ancestors(element)
+        if {"quoted-block", "toc", "table"}.intersection(
+            ancestor_names
+        ) or "division" in ancestor_names:
+            continue
+        header = _direct_header(element)
+        if header:
+            divisions.append(("top-level-division-header", header))
+
+    structural_components: list[tuple[str, str]] = []
+    if len(divisions) >= 2:
+        structural_components = divisions
+    else:
+        titles: list[tuple[str, str]] = []
+        for element in root.iter():
+            if _local_name(element.tag) != "title":
+                continue
+            ancestor_names = ancestors(element)
+            if (
+                {"quoted-block", "toc", "table"}.intersection(ancestor_names)
+                or "division" in ancestor_names
+                or "title" in ancestor_names
+            ):
+                continue
+            header = _direct_header(element)
+            if not header:
+                continue
+            title_components = [("top-level-title-header", header)]
+            for child in element:
+                if _local_name(child.tag) != "section":
+                    continue
+                section_header = _direct_header(child)
+                if not section_header:
+                    continue
+                normalized = section_header.casefold()
+                if (
+                    normalized.startswith("short title")
+                    or "table of contents" in normalized
+                ):
+                    continue
+                title_components.append(("direct-section-header", section_header))
+            titles.extend(title_components)
+        title_header_count = sum(
+            locator == "top-level-title-header" for locator, _ in titles
+        )
+        section_header_count = sum(
+            locator == "direct-section-header" for locator, _ in titles
+        )
+        if title_header_count >= 2 or (
+            title_header_count == 1 and section_header_count >= 2
+        ):
+            structural_components = titles
+
+    return {
+        "title": title,
+        "descriptive_official_title": bool(official_titles)
+        and title.startswith(("To ", "Making ", "Directing ")),
+        "structural_components": structural_components,
+    }
 
 
 def _validate_official_meanings(
@@ -143,11 +248,57 @@ def _validate_official_meanings(
                 f"exact amendment meaning source mismatch: {action_id}",
             )
         else:
+            xml_evidence = _xml_evidence(_raw_path(operative))
             _require(
-                official["wording"] == _xml_title(_raw_path(operative))
-                and official["locator"] == "official-title",
+                official["wording"] == xml_evidence["title"],
                 f"operative text title mismatch: {action_id}",
             )
+            if xml_evidence["descriptive_official_title"]:
+                _require(
+                    official["locator"] == "official-title"
+                    and not any(
+                        component["locator"] in STRUCTURAL_LOCATORS
+                        for component in candidate["claim_components"]
+                    ),
+                    f"descriptive official-title handling mismatch: {action_id}",
+                )
+            else:
+                expected_components = xml_evidence["structural_components"]
+                actual_components = [
+                    (component["locator"], component["wording"])
+                    for component in candidate["claim_components"]
+                    if component["locator"] in STRUCTURAL_LOCATORS
+                ]
+                _require(
+                    bool(expected_components),
+                    f"short/proper title lacks safe operative structure: {action_id}",
+                )
+                _require(
+                    official["locator"] == "structured_operative_summary"
+                    and candidate["confidence"] != "high"
+                    and candidate["coverage_assessment"]
+                    == "package_level_bounded_summary",
+                    f"short/proper title treated as complete meaning: {action_id}",
+                )
+                _require(
+                    actual_components == expected_components,
+                    f"structured component/source mismatch: {action_id}",
+                )
+                meaning_casefold = candidate["proposed_exact_action_meaning"].casefold()
+                _require(
+                    all(
+                        wording.casefold() in meaning_casefold
+                        for _, wording in expected_components
+                    ),
+                    f"fabricated or omitted structured component: {action_id}",
+                )
+                _require(
+                    not re.search(
+                        r"\b(?:the )?member (?:supported|opposed|endorsed|rejected)\b",
+                        meaning_casefold,
+                    ),
+                    f"component-level position attribution: {action_id}",
+                )
         meaning = candidate["proposed_exact_action_meaning"]
         _require(
             candidate["exact_action_identity"].split(":")[-1] in meaning,
@@ -309,6 +460,61 @@ def validate_repository() -> dict[str, Any]:
     )
 
     _validate_official_meanings(artifact, readiness)
+    candidates_by_id = {
+        candidate["action_id"]: candidate for candidate in subject["candidates"]
+    }
+    _require(
+        sha256_json(
+            {
+                action_id: candidate["proposed_exact_action_meaning"]
+                for action_id, candidate in candidates_by_id.items()
+                if action_id not in REVISED_ACTION_IDS
+            }
+        )
+        == REVIEWED_OTHER_79_MEANINGS_SHA256,
+        "one or more of the other 79 reviewed meanings changed",
+    )
+    _require(
+        sha256_json(
+            {
+                action_id: candidate["proposed_member_position_effect"]
+                for action_id, candidate in candidates_by_id.items()
+            }
+        )
+        == REVIEWED_81_POSITION_EFFECTS_SHA256,
+        "one or more of the 81 accepted position effects changed",
+    )
+    _require(
+        sha256_json(
+            {
+                action_id: candidate["proposed_exact_action_meaning"]
+                for action_id, candidate in candidates_by_id.items()
+                if action_id not in REVISED_ACTION_IDS
+                and candidate["coverage_assessment"] == "package_level_bounded_summary"
+            }
+        )
+        == REVIEWED_EIGHT_PACKAGE_MEANINGS_SHA256,
+        "one or more of the eight accepted package meanings changed",
+    )
+    s1071_meaning = candidates_by_id["house:119:1:320"]["proposed_exact_action_meaning"]
+    s1318_meaning = candidates_by_id["house:119:2:142"]["proposed_exact_action_meaning"]
+    _require(
+        "top-level divisions" in s1071_meaning
+        and "Department of Defense Authorizations" in s1071_meaning
+        and "Military Construction Authorizations" in s1071_meaning
+        and "Department of Energy National Security Authorizations" in s1071_meaning
+        and "Intelligence Authorization Act" in s1071_meaning
+        and "Coast Guard Authorization Act" in s1071_meaning,
+        "S. 1071 governed structured-package regression",
+    )
+    _require(
+        "Foreign Intelligence Accountability Act" in s1318_meaning
+        and "Civil liberties review of FBI queries" in s1318_meaning
+        and "Extension of authorities of title VII" in s1318_meaning
+        and "Anti-CBDC Surveillance State Act" in s1318_meaning
+        and "central bank digital currency" in s1318_meaning,
+        "S. 1318 governed compound-package regression",
+    )
     _validate_decision_template(artifact)
     _validate_parity(artifact)
 
@@ -358,6 +564,19 @@ def validate_repository() -> dict[str, Any]:
         and m11c_state["interpretation_eligible_count"] == 81
         and m11c_state["candidate_count"] == 81
         and m11c_state["source_blocked_action_ids"] == ["house:119:2:278"]
+        and m11c_state["reviewed_head"] == "1a5d60cea6e8712d2bc1e20019ac37505adf39ff"
+        and m11c_state["human_review_result"] == "bounded_correction_required"
+        and m11c_state["reviewed_meaning_acceptance_count"] == 79
+        and m11c_state["reviewed_position_effect_acceptance_count"] == 81
+        and set(m11c_state["meaning_corrections_pending_final_review"])
+        == REVISED_ACTION_IDS
+        and m11c_state["candidate_status_counts"]
+        == {"proposed": 11, "proposed_with_material_limitation": 70}
+        and m11c_state["coverage_assessment_counts"]
+        == {
+            "bounded_official_purpose_summary": 71,
+            "package_level_bounded_summary": 10,
+        }
         and m11c_state["candidate_identity"]
         == {
             "id": artifact["artifact_id"],
@@ -386,6 +605,9 @@ def validate_repository() -> dict[str, Any]:
             candidate["coverage_assessment"] == "package_level_bounded_summary"
             for candidate in subject["candidates"]
         ),
+        "preserved_other_meaning_count": 79,
+        "preserved_position_effect_count": 81,
+        "corrected_action_ids": sorted(REVISED_ACTION_IDS),
         "downstream_authorizations": subject["downstream_authorizations"],
         "m11a": m11a,
         "m11b": m11b,

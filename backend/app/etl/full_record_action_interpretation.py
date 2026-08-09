@@ -30,6 +30,13 @@ ALLOWED_POSITION_EFFECTS = {
     "non_directional_present",
     "non_directional_not_voting",
 }
+DESCRIPTIVE_OFFICIAL_TITLE_PREFIXES = ("To ", "Making ", "Directing ")
+STRUCTURAL_CLAIM_LOCATORS = {
+    "top-level-division-header",
+    "top-level-title-header",
+    "direct-section-header",
+}
+STRUCTURE_EXCLUDED_ANCESTORS = {"quoted-block", "toc", "table"}
 FORBIDDEN_MEANING_TERMS = (
     "democrat",
     "republican",
@@ -65,6 +72,144 @@ def _require(condition: bool, message: str) -> None:
 
 def _local_name(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
+
+
+def _normalized_element_text(element: ElementTree.Element) -> str:
+    return re.sub(r"\s+", " ", "".join(element.itertext())).strip()
+
+
+def _direct_header(element: ElementTree.Element) -> str | None:
+    for child in element:
+        if _local_name(child.tag) == "header":
+            wording = _normalized_element_text(child)
+            return wording or None
+    return None
+
+
+def _top_level_structure(root: ElementTree.Element) -> dict[str, Any] | None:
+    parent_by_id = {
+        id(child): parent for parent in root.iter() for child in list(parent)
+    }
+
+    def ancestors(element: ElementTree.Element) -> list[str]:
+        names: list[str] = []
+        parent = parent_by_id.get(id(element))
+        while parent is not None:
+            names.append(_local_name(parent.tag))
+            parent = parent_by_id.get(id(parent))
+        return names
+
+    divisions: list[dict[str, Any]] = []
+    for element in root.iter():
+        if _local_name(element.tag) != "division":
+            continue
+        ancestor_names = ancestors(element)
+        if (
+            STRUCTURE_EXCLUDED_ANCESTORS.intersection(ancestor_names)
+            or "division" in ancestor_names
+        ):
+            continue
+        header = _direct_header(element)
+        if header:
+            divisions.append({"heading": header, "subheadings": []})
+    if len(divisions) >= 2:
+        return {"level": "division", "components": divisions}
+
+    titles: list[dict[str, Any]] = []
+    for element in root.iter():
+        if _local_name(element.tag) != "title":
+            continue
+        ancestor_names = ancestors(element)
+        if (
+            STRUCTURE_EXCLUDED_ANCESTORS.intersection(ancestor_names)
+            or "division" in ancestor_names
+            or "title" in ancestor_names
+        ):
+            continue
+        header = _direct_header(element)
+        if not header:
+            continue
+        section_headers: list[str] = []
+        for child in element:
+            if _local_name(child.tag) != "section":
+                continue
+            section_header = _direct_header(child)
+            if not section_header:
+                continue
+            normalized = section_header.casefold()
+            if (
+                normalized.startswith("short title")
+                or "table of contents" in normalized
+            ):
+                continue
+            section_headers.append(section_header)
+        titles.append({"heading": header, "subheadings": section_headers})
+    if len(titles) >= 2 or (len(titles) == 1 and len(titles[0]["subheadings"]) >= 2):
+        return {"level": "title", "components": titles}
+    return None
+
+
+def _format_series(items: list[str]) -> str:
+    _require(bool(items), "cannot format empty structural series")
+    if len(items) == 1:
+        return items[0]
+    if len(items) == 2:
+        return f"{items[0]} and {items[1]}"
+    return "; ".join(items[:-1]) + f"; and {items[-1]}"
+
+
+def _structured_meaning(
+    *, label: str, action_verb: str, title: str, structure: dict[str, Any]
+) -> str:
+    components = structure["components"]
+    if structure["level"] == "division":
+        headings = [item["heading"] for item in components]
+        return (
+            f"The House choice was whether to {action_verb} {label}, the {title} "
+            f"package, whose top-level divisions cover {_format_series(headings)}."
+        )
+
+    title_summaries = []
+    for component in components:
+        wording = component["heading"]
+        if component["subheadings"]:
+            wording += f" (sections on {_format_series(component['subheadings'])})"
+        title_summaries.append(wording)
+    return (
+        f"The House choice was whether to {action_verb} {label} as a multi-title "
+        "operative package. Its directly encoded structure includes "
+        f"{_format_series(title_summaries)}."
+    )
+
+
+def _structural_claim_components(
+    *, action_id: str, source_id: str, structure: dict[str, Any]
+) -> list[dict[str, Any]]:
+    claims: list[dict[str, Any]] = []
+    index = 0
+    for component in structure["components"]:
+        index += 1
+        claims.append(
+            {
+                "component_id": f"{action_id}:structure:{index}",
+                "wording": component["heading"],
+                "source_id": source_id,
+                "locator": f"top-level-{structure['level']}-header",
+                "support_state": "directly_supported",
+            }
+        )
+        for subheading in component["subheadings"]:
+            index += 1
+            claims.append(
+                {
+                    "component_id": f"{action_id}:structure:{index}",
+                    "wording": subheading,
+                    "source_id": source_id,
+                    "locator": "direct-section-header",
+                    "support_state": "directly_supported",
+                }
+            )
+    return claims
 
 
 def _governed_path(relative: str, *, repository_root: Path) -> Path:
@@ -122,7 +267,7 @@ def _xml_summary(path: Path) -> dict[str, Any]:
     headers: list[str] = []
     for element in root.iter():
         name = _local_name(element.tag)
-        text = re.sub(r"\s+", " ", "".join(element.itertext())).strip()
+        text = _normalized_element_text(element)
         if not text:
             continue
         if name == "official-title" and text not in official_titles:
@@ -139,6 +284,9 @@ def _xml_summary(path: Path) -> dict[str, Any]:
         "official_titles": official_titles,
         "short_titles": short_titles,
         "sample_headers": headers[:12],
+        "descriptive_official_title": bool(official_titles)
+        and title.startswith(DESCRIPTIVE_OFFICIAL_TITLE_PREFIXES),
+        "top_level_structure": _top_level_structure(root),
     }
 
 
@@ -148,20 +296,50 @@ def _measure_meaning(
     mechanism_class: str,
     source: dict[str, Any],
     repository_root: Path,
-) -> tuple[str, str, str, list[str], list[str]]:
+) -> tuple[
+    str,
+    str,
+    str,
+    list[str],
+    list[str],
+    str,
+    list[dict[str, Any]],
+]:
     raw = source["raw_provenance"]
     path = _governed_path(raw["governed_local_path"], repository_root=repository_root)
     summary = _xml_summary(path)
     title = summary["official_title"]
     label = _identity_label(identity)
+    descriptive_title = summary["descriptive_official_title"]
+    structure = summary["top_level_structure"]
     package_level = (
         path.stat().st_size >= 100_000
         or len(summary["short_titles"]) >= 3
         or title.casefold().startswith("making appropriations")
+        or (not descriptive_title and structure is not None)
     )
     action_verb = "adopt" if mechanism_class == "resolution" else "pass"
+    locator = "official-title" if descriptive_title else "structured_operative_summary"
+    structural_claims: list[dict[str, Any]] = []
 
-    if title.startswith("To "):
+    if not descriptive_title:
+        _require(
+            structure is not None,
+            "short or proper title lacks safe top-level operative structure: "
+            f"{identity}",
+        )
+        meaning = _structured_meaning(
+            label=label,
+            action_verb=action_verb,
+            title=title,
+            structure=structure,
+        )
+        structural_claims = _structural_claim_components(
+            action_id="pending",
+            source_id=source["source_id"],
+            structure=structure,
+        )
+    elif title.startswith("To "):
         meaning = (
             f"The House choice was whether to {action_verb} {label}, which would "
             f"{title[3:]}"
@@ -206,7 +384,15 @@ def _measure_meaning(
                 "candidate states the bounded official purpose and does not imply "
                 "that it exhaustively enumerates every provision."
             )
-    return meaning, title, coverage, limitations, uncertainty
+    return (
+        meaning,
+        title,
+        coverage,
+        limitations,
+        uncertainty,
+        locator,
+        structural_claims,
+    )
 
 
 def _amendment_meaning(
@@ -285,14 +471,24 @@ def _build_candidate(
             identity=identity, source=operative
         )
         locator = "official_purpose_or_description"
+        structural_claims: list[dict[str, Any]] = []
     else:
-        meaning, official, coverage, limitations, uncertainty = _measure_meaning(
+        (
+            meaning,
+            official,
+            coverage,
+            limitations,
+            uncertainty,
+            locator,
+            structural_claims,
+        ) = _measure_meaning(
             identity=identity,
             mechanism_class=record["mechanism_class"],
             source=operative,
             repository_root=repository_root,
         )
-        locator = "official-title"
+        for index, claim in enumerate(structural_claims, start=1):
+            claim["component_id"] = f"{action_id}:structure:{index}"
 
     limitations.extend(record.get("material_limitations", []))
     position_effect = _position_effect(record["official_member_action"])
@@ -335,7 +531,8 @@ def _build_candidate(
                     "supported_with_limitation" if limitations else "directly_supported"
                 ),
             }
-        ],
+        ]
+        + structural_claims,
         "rules_applied": [
             "exact_recorded_action_controls",
             "meaning_before_member_position_effect",
@@ -344,7 +541,12 @@ def _build_candidate(
             else "stage_compatible_operative_text_controls",
             "party_sponsor_ideology_and_synthesis_excluded",
             "material_ambiguity_preserved",
-        ],
+        ]
+        + (
+            ["short_or_proper_title_requires_structured_operative_summary"]
+            if locator == "structured_operative_summary"
+            else []
+        ),
         "confidence": confidence,
         "uncertainty_reasons": uncertainty,
         "limitations": limitations,
@@ -600,6 +802,72 @@ def validate_candidate_artifact(
         meaning = candidate["proposed_exact_action_meaning"].casefold()
         leaked = [term for term in FORBIDDEN_MEANING_TERMS if term in meaning]
         _require(not leaked, f"forbidden semantic input in meaning: {action_id}")
+        if record["mechanism_class"] != "amendment":
+            operative_id = record["source_roles"][
+                "operative_content_interpretation_input"
+            ][0]
+            operative = next(
+                source
+                for source in record["sources"]
+                if source["source_id"] == operative_id
+            )
+            operative_path = _governed_path(
+                operative["raw_provenance"]["governed_local_path"],
+                repository_root=repository_root,
+            )
+            xml_summary = _xml_summary(operative_path)
+            official = candidate["official_title_or_purpose"]
+            structural_claims = [
+                component
+                for component in candidate["claim_components"]
+                if component["locator"] in STRUCTURAL_CLAIM_LOCATORS
+            ]
+            _require(
+                official["wording"] == xml_summary["official_title"]
+                and official["source_id"] == operative_id,
+                f"operative title/source mismatch: {action_id}",
+            )
+            if xml_summary["descriptive_official_title"]:
+                _require(
+                    official["locator"] == "official-title" and not structural_claims,
+                    f"descriptive title handling mismatch: {action_id}",
+                )
+            else:
+                structure = xml_summary["top_level_structure"]
+                _require(
+                    structure is not None,
+                    f"short-title-only meaning lacks safe structure: {action_id}",
+                )
+                expected_claims = _structural_claim_components(
+                    action_id=action_id,
+                    source_id=operative_id,
+                    structure=structure,
+                )
+                _require(
+                    official["locator"] == "structured_operative_summary"
+                    and candidate["confidence"] != "high"
+                    and candidate["coverage_assessment"]
+                    == "package_level_bounded_summary",
+                    f"short-title-only meaning treated as complete: {action_id}",
+                )
+                _require(
+                    structural_claims == expected_claims,
+                    f"structured operative components mismatch: {action_id}",
+                )
+                _require(
+                    all(
+                        component["wording"].casefold() in meaning
+                        for component in expected_claims
+                    ),
+                    f"structured operative component absent from meaning: {action_id}",
+                )
+                _require(
+                    not re.search(
+                        r"\b(?:the )?member (?:supported|opposed|endorsed|rejected)\b",
+                        meaning,
+                    ),
+                    f"component-level member attribution prohibited: {action_id}",
+                )
         evidence_map = evidence_by_id[candidate["evidence_map_id"]]
         evidence_subject = {
             key: value

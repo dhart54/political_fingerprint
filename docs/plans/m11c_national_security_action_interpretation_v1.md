@@ -1,7 +1,8 @@
 # M11C National Security Action Interpretation V1
 
-Status: implementation and local validation complete; human action-meaning
-review required before acceptance.
+Status: bounded correction to the reviewed head is implemented; final human
+review is limited to the corrected S. 1071 and S. 1318 meanings and generic
+structured-summary rule.
 
 ## Intent
 
@@ -16,6 +17,10 @@ source-blocked and uninterpreted.
 - Accepted M11A universe: 82 actions, content-bound membership authority only.
 - Accepted M11B readiness: 81 ready and one `blocked_stage_mismatch`.
 - Candidate judgments are non-authorizing and require human review.
+- Human review of PR #135 head
+  `1a5d60cea6e8712d2bc1e20019ac37505adf39ff` accepted the other 79
+  meanings and all 81 exact-choice effects, while requiring bounded corrections
+  to `house:119:1:320` / S. 1071 and `house:119:2:142` / S. 1318.
 
 ## Scope
 
@@ -71,7 +76,11 @@ downstream boundary.
   82/81/1 accounting and 211 eligible-action source bindings.
 - Deterministic M11C regeneration and all three Draft-07 M11C schemas pass.
 - The focused generic, authority, readiness, Justice decision, Justice Semantic
-  IR, and full-record contract set passes 120 tests.
+  IR, and full-record contract set passes 126 tests, including six new
+  structured-summary and governed two-action regressions.
+- Content-addressed preservation checks prove that the other 79 meanings, all
+  81 position effects, and the eight previously accepted package meanings are
+  unchanged from reviewed head `1a5d60c`.
 - Justice decision implementation, Justice M5R1 Semantic IR, and the
   full-record contract validators pass without changing accepted Justice state.
 - The historical Justice V4 candidate validator retains a pre-existing frozen

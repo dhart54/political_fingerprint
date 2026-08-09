@@ -272,6 +272,14 @@
     "post_m11b_merge_base": "13f8ad58f3aee32eb90369e8b454830cfbbf130b",
     "milestone_state": "complete_pending_human_action_meaning_review",
     "authority_effect": "detached_candidate_generation_only",
+    "reviewed_head": "1a5d60cea6e8712d2bc1e20019ac37505adf39ff",
+    "human_review_result": "bounded_correction_required",
+    "reviewed_meaning_acceptance_count": 79,
+    "reviewed_position_effect_acceptance_count": 81,
+    "meaning_corrections_pending_final_review": [
+      "house:119:1:320",
+      "house:119:2:142"
+    ],
     "approved_universe_count": 82,
     "interpretation_eligible_count": 81,
     "candidate_count": 81,
@@ -282,18 +290,18 @@
     "candidate_artifact": "docs/editorial/full_record_reviews/interpretation_candidates/f000477_national_security_foreign_119_v1/candidate_batch.json",
     "candidate_identity": {
       "id": "action-interpretation-candidates:f000477:national_security_foreign:119:v1",
-      "sha256": "293f6168677fa52eccfbb016276aa6d6d30b5623c794256b490d701bf40d831d",
-      "interpretation_subject_sha256": "6bded561801fdd10454cb3f28b8602fda4dc15057e4b8b01c336dbabba504f77",
+      "sha256": "6d3c0c26d56b7ace999debbc45efc0945f27320425b0f2bda55aca013630543d",
+      "interpretation_subject_sha256": "db88b7e4e5f180fa72f901132b56e8f41b975a5e12d102600b45a7df766ad840",
       "accepted": false,
       "authorizing": false
     },
     "candidate_status_counts": {
-      "proposed": 12,
-      "proposed_with_material_limitation": 69
+      "proposed": 11,
+      "proposed_with_material_limitation": 70
     },
     "coverage_assessment_counts": {
-      "bounded_official_purpose_summary": 72,
-      "package_level_bounded_summary": 9
+      "bounded_official_purpose_summary": 71,
+      "package_level_bounded_summary": 10
     },
     "evidence_source_binding_count": 211,
     "human_review_dossier": "docs/editorial/full_record_reviews/interpretation_candidates/f000477_national_security_foreign_119_v1/human_review_dossier.md",
