@@ -1,0 +1,103 @@
+# Milestone Plan: M11A Cross-Issue Full-Record Expansion V1
+
+## Intent
+
+- Immediate task: select the next Valerie Foushee issue from current authoritative House evidence and construct a reviewable full issue-universe proposal.
+- Larger-goal alignment: prove the Justice full-record method can begin scaling across issues without carrying Justice-specific semantic assumptions into a new domain.
+
+## Outcome
+
+- A deterministic National Security & Foreign Policy selection, complete candidate accounting, source-bound universe proposal, and human review packet through the July 23, 2026 official cutoff.
+
+## Scope And Boundaries
+
+- In scope: canonical-state reconciliation; six-domain selection; official-source acquisition; full-universe discovery; candidate dispositions; non-authorizing episode candidates; genericity audit; validation; draft PR.
+- Out of scope: Justice or Economy selection; action interpretation; accepted episode modeling; synthesis; Semantic IR conclusions; public wording; frontend work; publication; deployment; promotion; production writes.
+- Files/systems likely touched: M11A builder, artifacts, validator/tests, methodology schema, review packet, plan index, and current-state index.
+
+## Decision Envelope
+
+- Codex may decide and execute: deterministic evidence-based selection and exact-action-supported universe proposals under existing contracts.
+- Explicit approval required for: accepting the universe boundary; beginning interpretation; any semantic/model change affecting accepted Justice outputs; publication, deployment, or production mutation.
+
+## Definition Of Done
+
+- [x] Exact checkpoint and merged PR #132 state reconciled before work.
+- [x] Every non-excluded domain receives complete, deterministic accounting.
+- [x] Winner selected without political-interest criteria.
+- [x] Selected issue receives a complete high-recall, exact-source-bound universe proposal.
+- [x] Unresolved and non-counting actions remain outside the substantive proposal.
+- [x] Genericity findings and human-readable/JSON review artifacts recorded.
+- [x] Tests/build/validation recorded.
+- [x] Review packet or final documentation updated.
+- [x] Final reconciliation completed.
+
+## Baseline
+
+- Branch/base commit: `codex/m11a-cross-issue-expansion` from `f16bc73fb4e60d34fe75b17e58cb4f224e5b7fcd`.
+- Production/deployment state, if relevant: read-only evidence confirms F000477 Justice artifact 221 is the sole active publication; M11A authorizes no write.
+- Tracked working tree: clean at branch creation.
+- Known unrelated untracked artifacts: protected user-owned `docs/editorial/full_record_reviews/policy_episode_implementations/f000477_justice_public_safety_119_v1.zip`; excluded and untouched.
+
+## Implementation Sequence
+
+1. Reconcile authoritative current state and rerun domain selection on the governed House cutoff.
+2. Acquire exact official Clerk, Congress.gov measure, and Congress.gov amendment-index evidence and construct the selected universe proposal.
+3. Validate accounting, bindings, parent-child and cross-domain boundaries, genericity, deterministic digests, and Justice regressions; commit, push, and open a draft PR.
+
+## Progress Checklist
+
+- [x] Discovery
+- [x] Implementation
+- [x] Validation
+- [x] Documentation
+- [x] Commit/PR readiness
+
+## Discoveries
+
+- The official House Clerk index remains complete through roll 283 on July 23, 2026.
+- National Security & Foreign Policy is the only eligible non-excluded domain after exact child-action binding is enforced.
+- The selected high-recall set has 149 candidates: 84 proposed substantive, 33 procedural/context, two expressive, 24 exact-action ineligible, and six unresolved.
+- The 84 proposed actions form 47 non-authorizing episode candidates, seven with multiple actions.
+- All proposed actions have exact official membership evidence; six narrower child actions without exact bindings remain unresolved and excluded.
+
+## Decisions And Rationale
+
+- Selection ranks only official-source completeness, independent episode count, mechanism variation, legitimate multi-action episodes, smallest unresolved boundary, and canonical ID tie-breaking.
+- Parent-measure policy area and title are recall aids only. They never establish narrower child-action membership.
+- Episode grouping is labeled non-authorizing because this milestone discovers a boundary; it does not approve semantic episodes.
+
+## Deviations Or Corrections
+
+- An initial Environment & Energy result incorrectly treated retained divisions of an appropriations measure as if the parent title established their issue meaning. The builder was corrected to require exact child-action binding; the affected rows became unresolved rather than substantive, leaving National Security & Foreign Policy as the only eligible domain.
+
+## Validation Results
+
+- M11A schema, accounting, exact-source, digest, unresolved-boundary, and source-inventory validator: passed.
+- Focused amendment parent/child, cross-domain, procedural, and expressive tests: 4 passed.
+- Deterministic generated-artifact check: passed.
+- Justice Editorial Semantic IR validator and regression suite: passed; 26 tests.
+- Full-Record Issue Interpretation validator and regression suite: passed; 19 tests.
+- Ruff lint and format checks: passed.
+- Python compilation, JSON parsing, and `git diff --check`: passed.
+
+## Production Writes
+
+- Performed: no
+- Scope: read-only repeatable-read production discovery with explicit rollback and connection close.
+- Expected effects: none.
+- Actual effects: none.
+
+## Rollback Paths
+
+- All changes are branch-local files. No publication, production, deployment, or accepted semantic state changed.
+
+## Blockers
+
+- None for the M11A review packet. Human approval is intentionally required before any interpretation milestone.
+
+## Final Reconciliation
+
+- Definition of done satisfied: yes; implementation and validation are complete, with draft PR creation as the delivery operation.
+- Remaining limitations: six exact child-action boundaries remain unresolved and excluded; episode candidates are not accepted episodes.
+- Recommended next step: human review of the domain selection and complete universe-boundary packet.

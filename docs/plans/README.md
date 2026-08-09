@@ -6,11 +6,17 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [Foushee Justice Full-Record Integration V1](foushee_justice_full_record_integration_v1.md)
-  - integrates the ratified 37-action record, promotes layered benchmark roles,
-    and prepares non-authorizing production-readiness evidence.
+- [M11A Cross-Issue Full-Record Expansion V1](m11a_cross_issue_full_record_expansion_v1.md)
+  - selects the next Foushee issue deterministically and constructs a
+    source-bound universe proposal without beginning interpretation or
+    publication work.
 
 ## Retained unresolved plans
+
+- [Foushee Justice Full-Record Integration V1](foushee_justice_full_record_integration_v1.md)
+  - completed M3-M10 integration chain retained as the accepted 37-action,
+    32-episode Semantic IR, synthesis, presentation, and production-activation
+    record; it is no longer active.
 
 - [Foushee Justice 119 Interpretation Source Readiness V1](foushee_justice_119_interpretation_source_readiness_v1.md)
   - completed source-readiness milestone retained as the immutable M2 input to

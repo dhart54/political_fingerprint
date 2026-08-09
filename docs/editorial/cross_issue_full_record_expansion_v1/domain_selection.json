@@ -1,0 +1,1980 @@
+{
+  "schema_version": "cross_issue_domain_selection_v2",
+  "milestone": "m11a_cross_issue_full_record_expansion_v1",
+  "starting_commit": "f16bc73fb4e60d34fe75b17e58cb4f224e5b7fcd",
+  "subject": {
+    "member_id": "F000477",
+    "legislator_id": "leg_valerie_p_foushee",
+    "congress": 119,
+    "chamber": "house"
+  },
+  "cutoff": "2026-07-23",
+  "excluded_domains": [
+    "ECONOMY_TAXES",
+    "JUSTICE_PUBLIC_SAFETY"
+  ],
+  "complete_official_action_count": 638,
+  "complete_official_action_set_sha256": "a4d228a74004de61f78827ef85bd5a59cb4f5c3dddf9b55e9e3e154a44cd7fde",
+  "production_snapshot": {
+    "snapshot_id": "m11a-domain-selection-20260809T022252Z",
+    "sha256": "9d012de0df98ad9059c7dbea17d12cce2732123c310d6c432e73e5920150e7f4",
+    "read_only": true,
+    "transaction_rolled_back": true,
+    "production_action_count": 563
+  },
+  "candidate_domains": [
+    {
+      "domain_id": "EDUCATION_WORKFORCE",
+      "display_name": "Education & Workforce",
+      "eligible": false,
+      "exclusion_reasons": [
+        "no_legitimate_multi_action_episode"
+      ],
+      "total_candidate_actions": 50,
+      "substantive_eligible_actions": 18,
+      "procedural_context_actions": 26,
+      "expressive_nonbinding_actions": 0,
+      "exact_action_ineligible_actions": 0,
+      "unresolved_boundary_cases": 6,
+      "independent_episode_count": 18,
+      "multi_action_episode_count": 0,
+      "mechanism_types": [
+        "passage"
+      ],
+      "official_source_readiness": {
+        "state": "complete_for_proposed_membership",
+        "ready_substantive_actions": 18,
+        "substantive_actions": 18
+      },
+      "material_source_gaps": [
+        "missing_exact_child_action_binding",
+        "production_official_boundary_mismatch"
+      ],
+      "episodes": [
+        {
+          "episode_candidate_id": "episode-candidate:hr:1005",
+          "action_ids": [
+            "house:119:1:312"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1048",
+          "action_ids": [
+            "house:119:1:83"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1049",
+          "action_ids": [
+            "house:119:1:314"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1069",
+          "action_ids": [
+            "house:119:1:313"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1156",
+          "action_ids": [
+            "house:119:1:68"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1642",
+          "action_ids": [
+            "house:119:1:146"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2262",
+          "action_ids": [
+            "house:119:2:19"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2550",
+          "action_ids": [
+            "house:119:1:332"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2616",
+          "action_ids": [
+            "house:119:2:184"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2988",
+          "action_ids": [
+            "house:119:2:31"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4541",
+          "action_ids": [
+            "house:119:2:250"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:5408",
+          "action_ids": [
+            "house:119:2:216"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:6359",
+          "action_ids": [
+            "house:119:2:47"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:6472",
+          "action_ids": [
+            "house:119:2:82"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:7892",
+          "action_ids": [
+            "house:119:2:217"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:8428",
+          "action_ids": [
+            "house:119:2:209"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:881",
+          "action_ids": [
+            "house:119:1:120"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:356",
+          "action_ids": [
+            "house:119:1:315"
+          ]
+        }
+      ],
+      "multi_action_episodes": [],
+      "action_ids_by_disposition": {
+        "boundary_review_required": [
+          "house:119:1:79",
+          "house:119:1:80",
+          "house:119:1:81",
+          "house:119:1:82",
+          "house:119:2:29",
+          "house:119:2:188"
+        ],
+        "procedural_context": [
+          "house:119:1:75",
+          "house:119:1:76",
+          "house:119:1:117",
+          "house:119:1:118",
+          "house:119:1:276",
+          "house:119:1:308",
+          "house:119:1:309",
+          "house:119:1:321",
+          "house:119:1:331",
+          "house:119:2:16",
+          "house:119:2:17",
+          "house:119:2:18",
+          "house:119:2:20",
+          "house:119:2:21",
+          "house:119:2:30",
+          "house:119:2:34",
+          "house:119:2:35",
+          "house:119:2:46",
+          "house:119:2:140",
+          "house:119:2:141",
+          "house:119:2:183",
+          "house:119:2:187",
+          "house:119:2:194",
+          "house:119:2:195",
+          "house:119:2:212",
+          "house:119:2:215"
+        ],
+        "proposed_in_scope_non_directional": [
+          "house:119:1:312"
+        ],
+        "proposed_in_scope_substantive": [
+          "house:119:1:68",
+          "house:119:1:83",
+          "house:119:1:120",
+          "house:119:1:146",
+          "house:119:1:313",
+          "house:119:1:314",
+          "house:119:1:315",
+          "house:119:1:332",
+          "house:119:2:19",
+          "house:119:2:31",
+          "house:119:2:47",
+          "house:119:2:82",
+          "house:119:2:184",
+          "house:119:2:209",
+          "house:119:2:216",
+          "house:119:2:217",
+          "house:119:2:250"
+        ]
+      }
+    },
+    {
+      "domain_id": "ENVIRONMENT_ENERGY",
+      "display_name": "Environment & Energy",
+      "eligible": false,
+      "exclusion_reasons": [
+        "no_legitimate_multi_action_episode"
+      ],
+      "total_candidate_actions": 153,
+      "substantive_eligible_actions": 72,
+      "procedural_context_actions": 64,
+      "expressive_nonbinding_actions": 1,
+      "exact_action_ineligible_actions": 0,
+      "unresolved_boundary_cases": 16,
+      "independent_episode_count": 72,
+      "multi_action_episode_count": 0,
+      "mechanism_types": [
+        "passage"
+      ],
+      "official_source_readiness": {
+        "state": "complete_for_proposed_membership",
+        "ready_substantive_actions": 72,
+        "substantive_actions": 72
+      },
+      "material_source_gaps": [
+        "missing_exact_child_action_binding"
+      ],
+      "episodes": [
+        {
+          "episode_candidate_id": "episode-candidate:hjres:104",
+          "action_ids": [
+            "house:119:1:224"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:105",
+          "action_ids": [
+            "house:119:1:226"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:106",
+          "action_ids": [
+            "house:119:1:225"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:130",
+          "action_ids": [
+            "house:119:1:294"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:131",
+          "action_ids": [
+            "house:119:1:295"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:140",
+          "action_ids": [
+            "house:119:2:38"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:20",
+          "action_ids": [
+            "house:119:1:53"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:24",
+          "action_ids": [
+            "house:119:1:77"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:35",
+          "action_ids": [
+            "house:119:1:52"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:42",
+          "action_ids": [
+            "house:119:1:59"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:60",
+          "action_ids": [
+            "house:119:1:110"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:61",
+          "action_ids": [
+            "house:119:1:58"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:75",
+          "action_ids": [
+            "house:119:1:78"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:87",
+          "action_ids": [
+            "house:119:1:111"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:88",
+          "action_ids": [
+            "house:119:1:114"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hjres:89",
+          "action_ids": [
+            "house:119:1:112"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1011",
+          "action_ids": [
+            "house:119:2:109"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1047",
+          "action_ids": [
+            "house:119:1:279"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1346",
+          "action_ids": [
+            "house:119:2:164"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1366",
+          "action_ids": [
+            "house:119:1:358"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1676",
+          "action_ids": [
+            "house:119:1:316"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:186",
+          "action_ids": [
+            "house:119:1:18"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:187",
+          "action_ids": [
+            "house:119:1:19"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1917",
+          "action_ids": [
+            "house:119:1:216"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1949",
+          "action_ids": [
+            "house:119:1:304"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2215",
+          "action_ids": [
+            "house:119:1:125"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:249",
+          "action_ids": [
+            "house:119:1:124"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:26",
+          "action_ids": [
+            "house:119:1:35"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:261",
+          "action_ids": [
+            "house:119:2:67"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:276",
+          "action_ids": [
+            "house:119:1:122"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2860",
+          "action_ids": [
+            "house:119:2:196"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3015",
+          "action_ids": [
+            "house:119:1:278"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3062",
+          "action_ids": [
+            "house:119:1:277"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3109",
+          "action_ids": [
+            "house:119:1:303"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3187",
+          "action_ids": [
+            "house:119:1:336"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:359",
+          "action_ids": [
+            "house:119:1:72"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3616",
+          "action_ids": [
+            "house:119:1:347"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3617",
+          "action_ids": [
+            "house:119:2:64"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3628",
+          "action_ids": [
+            "house:119:1:323"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3632",
+          "action_ids": [
+            "house:119:1:342"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3638",
+          "action_ids": [
+            "house:119:1:324"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3668",
+          "action_ids": [
+            "house:119:1:334"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:375",
+          "action_ids": [
+            "house:119:1:24"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3898",
+          "action_ids": [
+            "house:119:1:330"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3937",
+          "action_ids": [
+            "house:119:1:215"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4090",
+          "action_ids": [
+            "house:119:2:55"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4294",
+          "action_ids": [
+            "house:119:2:88"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4553",
+          "action_ids": [
+            "house:119:1:239"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4593",
+          "action_ids": [
+            "house:119:2:23"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4626",
+          "action_ids": [
+            "house:119:2:76"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4690",
+          "action_ids": [
+            "house:119:2:134"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:471",
+          "action_ids": [
+            "house:119:1:25"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4758",
+          "action_ids": [
+            "house:119:2:78"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4776",
+          "action_ids": [
+            "house:119:1:356"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:5103",
+          "action_ids": [
+            "house:119:2:101"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:5184",
+          "action_ids": [
+            "house:119:2:12"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:556",
+          "action_ids": [
+            "house:119:2:93"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:5587",
+          "action_ids": [
+            "house:119:2:137"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:6387",
+          "action_ids": [
+            "house:119:2:136"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:6398",
+          "action_ids": [
+            "house:119:2:118"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:6409",
+          "action_ids": [
+            "house:119:2:116"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:6422",
+          "action_ids": [
+            "house:119:2:97"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:6938",
+          "action_ids": [
+            "house:119:2:7"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:7618",
+          "action_ids": [
+            "house:119:2:192"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:845",
+          "action_ids": [
+            "house:119:1:360"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:1020",
+          "action_ids": [
+            "house:119:2:129"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:1596",
+          "action_ids": [
+            "house:119:1:193"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:356",
+          "action_ids": [
+            "house:119:1:315"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:629",
+          "action_ids": [
+            "house:119:2:223"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:sjres:11",
+          "action_ids": [
+            "house:119:1:61"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:sjres:31",
+          "action_ids": [
+            "house:119:1:143"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:sjres:80",
+          "action_ids": [
+            "house:119:1:296"
+          ]
+        }
+      ],
+      "multi_action_episodes": [],
+      "action_ids_by_disposition": {
+        "boundary_review_required": [
+          "house:119:1:227",
+          "house:119:1:228",
+          "house:119:1:229",
+          "house:119:1:230",
+          "house:119:1:231",
+          "house:119:1:232",
+          "house:119:1:233",
+          "house:119:1:234",
+          "house:119:1:235",
+          "house:119:1:236",
+          "house:119:1:237",
+          "house:119:1:352",
+          "house:119:1:353",
+          "house:119:1:354",
+          "house:119:2:5",
+          "house:119:2:6"
+        ],
+        "expressive_nonbinding_context": [
+          "house:119:2:132"
+        ],
+        "procedural_context": [
+          "house:119:1:20",
+          "house:119:1:21",
+          "house:119:1:34",
+          "house:119:1:46",
+          "house:119:1:47",
+          "house:119:1:56",
+          "house:119:1:57",
+          "house:119:1:75",
+          "house:119:1:76",
+          "house:119:1:105",
+          "house:119:1:106",
+          "house:119:1:121",
+          "house:119:1:134",
+          "house:119:1:135",
+          "house:119:1:221",
+          "house:119:1:222",
+          "house:119:1:238",
+          "house:119:1:242",
+          "house:119:1:243",
+          "house:119:1:267",
+          "house:119:1:268",
+          "house:119:1:290",
+          "house:119:1:291",
+          "house:119:1:317",
+          "house:119:1:318",
+          "house:119:1:329",
+          "house:119:1:333",
+          "house:119:1:337",
+          "house:119:1:338",
+          "house:119:1:341",
+          "house:119:1:343",
+          "house:119:1:344",
+          "house:119:1:355",
+          "house:119:1:357",
+          "house:119:1:359",
+          "house:119:2:2",
+          "house:119:2:3",
+          "house:119:2:22",
+          "house:119:2:54",
+          "house:119:2:59",
+          "house:119:2:60",
+          "house:119:2:61",
+          "house:119:2:62",
+          "house:119:2:63",
+          "house:119:2:66",
+          "house:119:2:73",
+          "house:119:2:74",
+          "house:119:2:75",
+          "house:119:2:77",
+          "house:119:2:92",
+          "house:119:2:100",
+          "house:119:2:111",
+          "house:119:2:112",
+          "house:119:2:115",
+          "house:119:2:117",
+          "house:119:2:130",
+          "house:119:2:131",
+          "house:119:2:133",
+          "house:119:2:135",
+          "house:119:2:163",
+          "house:119:2:230",
+          "house:119:2:231",
+          "house:119:2:253",
+          "house:119:2:254"
+        ],
+        "proposed_in_scope_non_directional": [
+          "house:119:2:134",
+          "house:119:2:136"
+        ],
+        "proposed_in_scope_substantive": [
+          "house:119:1:18",
+          "house:119:1:19",
+          "house:119:1:24",
+          "house:119:1:25",
+          "house:119:1:35",
+          "house:119:1:52",
+          "house:119:1:53",
+          "house:119:1:58",
+          "house:119:1:59",
+          "house:119:1:61",
+          "house:119:1:72",
+          "house:119:1:77",
+          "house:119:1:78",
+          "house:119:1:110",
+          "house:119:1:111",
+          "house:119:1:112",
+          "house:119:1:114",
+          "house:119:1:122",
+          "house:119:1:124",
+          "house:119:1:125",
+          "house:119:1:143",
+          "house:119:1:193",
+          "house:119:1:215",
+          "house:119:1:216",
+          "house:119:1:224",
+          "house:119:1:225",
+          "house:119:1:226",
+          "house:119:1:239",
+          "house:119:1:277",
+          "house:119:1:278",
+          "house:119:1:279",
+          "house:119:1:294",
+          "house:119:1:295",
+          "house:119:1:296",
+          "house:119:1:303",
+          "house:119:1:304",
+          "house:119:1:315",
+          "house:119:1:316",
+          "house:119:1:323",
+          "house:119:1:324",
+          "house:119:1:330",
+          "house:119:1:334",
+          "house:119:1:336",
+          "house:119:1:342",
+          "house:119:1:347",
+          "house:119:1:356",
+          "house:119:1:358",
+          "house:119:1:360",
+          "house:119:2:7",
+          "house:119:2:12",
+          "house:119:2:23",
+          "house:119:2:38",
+          "house:119:2:55",
+          "house:119:2:64",
+          "house:119:2:67",
+          "house:119:2:76",
+          "house:119:2:78",
+          "house:119:2:88",
+          "house:119:2:93",
+          "house:119:2:97",
+          "house:119:2:101",
+          "house:119:2:109",
+          "house:119:2:116",
+          "house:119:2:118",
+          "house:119:2:129",
+          "house:119:2:137",
+          "house:119:2:164",
+          "house:119:2:192",
+          "house:119:2:196",
+          "house:119:2:223"
+        ]
+      }
+    },
+    {
+      "domain_id": "HEALTH_SOCIAL",
+      "display_name": "Health & Social Policy",
+      "eligible": false,
+      "exclusion_reasons": [
+        "no_legitimate_multi_action_episode"
+      ],
+      "total_candidate_actions": 25,
+      "substantive_eligible_actions": 11,
+      "procedural_context_actions": 12,
+      "expressive_nonbinding_actions": 1,
+      "exact_action_ineligible_actions": 0,
+      "unresolved_boundary_cases": 1,
+      "independent_episode_count": 11,
+      "multi_action_episode_count": 0,
+      "mechanism_types": [
+        "passage"
+      ],
+      "official_source_readiness": {
+        "state": "complete_for_proposed_membership",
+        "ready_substantive_actions": 11,
+        "substantive_actions": 11
+      },
+      "material_source_gaps": [
+        "missing_exact_child_action_binding"
+      ],
+      "episodes": [
+        {
+          "episode_candidate_id": "episode-candidate:hr:227",
+          "action_ids": [
+            "house:119:2:139"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2483",
+          "action_ids": [
+            "house:119:1:151"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2493",
+          "action_ids": [
+            "house:119:2:128"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4541",
+          "action_ids": [
+            "house:119:2:250"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:498",
+          "action_ids": [
+            "house:119:1:362"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:5348",
+          "action_ids": [
+            "house:119:1:306"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:6703",
+          "action_ids": [
+            "house:119:1:349"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:6945",
+          "action_ids": [
+            "house:119:2:37"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:7726",
+          "action_ids": [
+            "house:119:2:198"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:8884",
+          "action_ids": [
+            "house:119:2:283"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:8897",
+          "action_ids": [
+            "house:119:2:235"
+          ]
+        }
+      ],
+      "multi_action_episodes": [],
+      "action_ids_by_disposition": {
+        "boundary_review_required": [
+          "house:119:1:150"
+        ],
+        "expressive_nonbinding_context": [
+          "house:119:2:121"
+        ],
+        "procedural_context": [
+          "house:119:1:343",
+          "house:119:1:344",
+          "house:119:1:348",
+          "house:119:1:361",
+          "house:119:2:36",
+          "house:119:2:111",
+          "house:119:2:112",
+          "house:119:2:194",
+          "house:119:2:195",
+          "house:119:2:197",
+          "house:119:2:230",
+          "house:119:2:231"
+        ],
+        "proposed_in_scope_substantive": [
+          "house:119:1:151",
+          "house:119:1:306",
+          "house:119:1:349",
+          "house:119:1:362",
+          "house:119:2:37",
+          "house:119:2:128",
+          "house:119:2:139",
+          "house:119:2:198",
+          "house:119:2:235",
+          "house:119:2:250",
+          "house:119:2:283"
+        ]
+      }
+    },
+    {
+      "domain_id": "IMMIGRATION_BORDER",
+      "display_name": "Immigration & Border",
+      "eligible": false,
+      "exclusion_reasons": [
+        "no_legitimate_multi_action_episode"
+      ],
+      "total_candidate_actions": 32,
+      "substantive_eligible_actions": 14,
+      "procedural_context_actions": 15,
+      "expressive_nonbinding_actions": 1,
+      "exact_action_ineligible_actions": 0,
+      "unresolved_boundary_cases": 2,
+      "independent_episode_count": 14,
+      "multi_action_episode_count": 0,
+      "mechanism_types": [
+        "passage"
+      ],
+      "official_source_readiness": {
+        "state": "complete_for_proposed_membership",
+        "ready_substantive_actions": 14,
+        "substantive_actions": 14
+      },
+      "material_source_gaps": [
+        "production_official_boundary_mismatch"
+      ],
+      "episodes": [
+        {
+          "episode_candidate_id": "episode-candidate:hjres:72",
+          "action_ids": [
+            "house:119:2:65"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1958",
+          "action_ids": [
+            "house:119:2:94"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2056",
+          "action_ids": [
+            "house:119:1:171"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:275",
+          "action_ids": [
+            "house:119:1:184"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:29",
+          "action_ids": [
+            "house:119:1:6"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:30",
+          "action_ids": [
+            "house:119:1:17"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3062",
+          "action_ids": [
+            "house:119:1:277"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3486",
+          "action_ids": [
+            "house:119:1:264"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4638",
+          "action_ids": [
+            "house:119:2:96"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:495",
+          "action_ids": [
+            "house:119:1:63"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:875",
+          "action_ids": [
+            "house:119:1:183"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:993",
+          "action_ids": [
+            "house:119:1:65"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:2",
+          "action_ids": [
+            "house:119:2:214"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:5",
+          "action_ids": [
+            "house:119:1:23"
+          ]
+        }
+      ],
+      "multi_action_episodes": [],
+      "action_ids_by_disposition": {
+        "boundary_review_required": [
+          "house:119:2:15",
+          "house:119:2:120"
+        ],
+        "expressive_nonbinding_context": [
+          "house:119:2:102"
+        ],
+        "procedural_context": [
+          "house:119:1:16",
+          "house:119:1:160",
+          "house:119:1:161",
+          "house:119:1:170",
+          "house:119:1:176",
+          "house:119:1:177",
+          "house:119:1:242",
+          "house:119:1:243",
+          "house:119:1:267",
+          "house:119:1:268",
+          "house:119:2:90",
+          "house:119:2:91",
+          "house:119:2:113",
+          "house:119:2:119",
+          "house:119:2:213"
+        ],
+        "proposed_in_scope_substantive": [
+          "house:119:1:6",
+          "house:119:1:17",
+          "house:119:1:23",
+          "house:119:1:63",
+          "house:119:1:65",
+          "house:119:1:171",
+          "house:119:1:183",
+          "house:119:1:184",
+          "house:119:1:264",
+          "house:119:1:277",
+          "house:119:2:65",
+          "house:119:2:94",
+          "house:119:2:96",
+          "house:119:2:214"
+        ]
+      }
+    },
+    {
+      "domain_id": "INFRASTRUCTURE_TECH_TRANSPORT",
+      "display_name": "Infrastructure, Technology & Transportation",
+      "eligible": false,
+      "exclusion_reasons": [
+        "no_legitimate_multi_action_episode"
+      ],
+      "total_candidate_actions": 38,
+      "substantive_eligible_actions": 26,
+      "procedural_context_actions": 11,
+      "expressive_nonbinding_actions": 0,
+      "exact_action_ineligible_actions": 0,
+      "unresolved_boundary_cases": 1,
+      "independent_episode_count": 26,
+      "multi_action_episode_count": 0,
+      "mechanism_types": [
+        "passage"
+      ],
+      "official_source_readiness": {
+        "state": "complete_for_proposed_membership",
+        "ready_substantive_actions": 26,
+        "substantive_actions": 26
+      },
+      "material_source_gaps": [
+        "production_official_boundary_mismatch"
+      ],
+      "episodes": [
+        {
+          "episode_candidate_id": "episode-candidate:hjres:87",
+          "action_ids": [
+            "house:119:1:111"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1223",
+          "action_ids": [
+            "house:119:1:136"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:139",
+          "action_ids": [
+            "house:119:2:238"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1534",
+          "action_ids": [
+            "house:119:1:74"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1608",
+          "action_ids": [
+            "house:119:1:286"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1681",
+          "action_ids": [
+            "house:119:2:125"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1709",
+          "action_ids": [
+            "house:119:1:191"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1717",
+          "action_ids": [
+            "house:119:1:196"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1770",
+          "action_ids": [
+            "house:119:1:192"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:192",
+          "action_ids": [
+            "house:119:1:8"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2035",
+          "action_ids": [
+            "house:119:1:157"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2189",
+          "action_ids": [
+            "house:119:2:70"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2659",
+          "action_ids": [
+            "house:119:1:287"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3062",
+          "action_ids": [
+            "house:119:1:277"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3106",
+          "action_ids": [
+            "house:119:2:234"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4275",
+          "action_ids": [
+            "house:119:1:218"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4690",
+          "action_ids": [
+            "house:119:2:134"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:5200",
+          "action_ids": [
+            "house:119:2:126"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:5201",
+          "action_ids": [
+            "house:119:2:127"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:7084",
+          "action_ids": [
+            "house:119:2:105"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:7613",
+          "action_ids": [
+            "house:119:2:110"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:8897",
+          "action_ids": [
+            "house:119:2:235"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:901",
+          "action_ids": [
+            "house:119:1:64"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:1003",
+          "action_ids": [
+            "house:119:2:181"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:146",
+          "action_ids": [
+            "house:119:1:104"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:2503",
+          "action_ids": [
+            "house:119:2:72"
+          ]
+        }
+      ],
+      "multi_action_episodes": [],
+      "action_ids_by_disposition": {
+        "boundary_review_required": [
+          "house:119:2:13"
+        ],
+        "procedural_context": [
+          "house:119:1:105",
+          "house:119:1:106",
+          "house:119:1:343",
+          "house:119:1:344",
+          "house:119:2:59",
+          "house:119:2:60",
+          "house:119:2:61",
+          "house:119:2:62",
+          "house:119:2:133",
+          "house:119:2:194",
+          "house:119:2:195"
+        ],
+        "proposed_in_scope_non_directional": [
+          "house:119:1:157",
+          "house:119:2:134"
+        ],
+        "proposed_in_scope_substantive": [
+          "house:119:1:8",
+          "house:119:1:64",
+          "house:119:1:74",
+          "house:119:1:104",
+          "house:119:1:111",
+          "house:119:1:136",
+          "house:119:1:191",
+          "house:119:1:192",
+          "house:119:1:196",
+          "house:119:1:218",
+          "house:119:1:277",
+          "house:119:1:286",
+          "house:119:1:287",
+          "house:119:2:70",
+          "house:119:2:72",
+          "house:119:2:105",
+          "house:119:2:110",
+          "house:119:2:125",
+          "house:119:2:126",
+          "house:119:2:127",
+          "house:119:2:181",
+          "house:119:2:234",
+          "house:119:2:235",
+          "house:119:2:238"
+        ]
+      }
+    },
+    {
+      "domain_id": "NATIONAL_SECURITY_FOREIGN",
+      "display_name": "National Security & Foreign Policy",
+      "eligible": true,
+      "exclusion_reasons": [],
+      "total_candidate_actions": 149,
+      "substantive_eligible_actions": 84,
+      "procedural_context_actions": 33,
+      "expressive_nonbinding_actions": 2,
+      "exact_action_ineligible_actions": 24,
+      "unresolved_boundary_cases": 6,
+      "independent_episode_count": 47,
+      "multi_action_episode_count": 7,
+      "mechanism_types": [
+        "amendment",
+        "passage",
+        "resolution"
+      ],
+      "official_source_readiness": {
+        "state": "complete_for_proposed_membership",
+        "ready_substantive_actions": 84,
+        "substantive_actions": 84
+      },
+      "material_source_gaps": [
+        "missing_exact_child_action_binding",
+        "production_official_boundary_mismatch"
+      ],
+      "episodes": [
+        {
+          "episode_candidate_id": "episode-candidate:hconres:61",
+          "action_ids": [
+            "house:119:1:345"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hconres:68",
+          "action_ids": [
+            "house:119:2:48"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1039",
+          "action_ids": [
+            "house:119:1:90"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1041",
+          "action_ids": [
+            "house:119:2:190"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1228",
+          "action_ids": [
+            "house:119:1:99"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1263",
+          "action_ids": [
+            "house:119:1:132"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1286",
+          "action_ids": [
+            "house:119:1:133"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1503",
+          "action_ids": [
+            "house:119:1:119"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1531",
+          "action_ids": [
+            "house:119:2:58"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1608",
+          "action_ids": [
+            "house:119:1:286"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1689",
+          "action_ids": [
+            "house:119:2:120"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:1998",
+          "action_ids": [
+            "house:119:1:172"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:23",
+          "action_ids": [
+            "house:119:1:7"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2721",
+          "action_ids": [
+            "house:119:1:269"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:2913",
+          "action_ids": [
+            "house:119:2:207"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3106",
+          "action_ids": [
+            "house:119:2:234"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3123",
+          "action_ids": [
+            "house:119:2:50"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3400",
+          "action_ids": [
+            "house:119:1:266"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:36",
+          "action_ids": [
+            "house:119:1:116"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3838",
+          "action_ids": [
+            "house:119:1:244",
+            "house:119:1:246",
+            "house:119:1:248",
+            "house:119:1:249",
+            "house:119:1:250",
+            "house:119:1:251",
+            "house:119:1:252",
+            "house:119:1:255",
+            "house:119:1:257",
+            "house:119:1:258",
+            "house:119:1:259",
+            "house:119:1:260",
+            "house:119:1:262"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:3944",
+          "action_ids": [
+            "house:119:1:182"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4016",
+          "action_ids": [
+            "house:119:1:208",
+            "house:119:1:209",
+            "house:119:1:210",
+            "house:119:1:212"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4216",
+          "action_ids": [
+            "house:119:1:219"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4423",
+          "action_ids": [
+            "house:119:1:307"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:495",
+          "action_ids": [
+            "house:119:1:63"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:530",
+          "action_ids": [
+            "house:119:1:115"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:5362",
+          "action_ids": [
+            "house:119:2:248"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:5371",
+          "action_ids": [
+            "house:119:1:281"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:586",
+          "action_ids": [
+            "house:119:1:89"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:6047",
+          "action_ids": [
+            "house:119:2:191"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:692",
+          "action_ids": [
+            "house:119:1:36"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:695",
+          "action_ids": [
+            "house:119:1:51"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:7006",
+          "action_ids": [
+            "house:119:2:28"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:747",
+          "action_ids": [
+            "house:119:1:220"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:7567",
+          "action_ids": [
+            "house:119:2:154"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:8469",
+          "action_ids": [
+            "house:119:2:174",
+            "house:119:2:175"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:8595",
+          "action_ids": [
+            "house:119:2:243",
+            "house:119:2:244",
+            "house:119:2:247"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:8800",
+          "action_ids": [
+            "house:119:2:256",
+            "house:119:2:259",
+            "house:119:2:260",
+            "house:119:2:261",
+            "house:119:2:262",
+            "house:119:2:263",
+            "house:119:2:264",
+            "house:119:2:265",
+            "house:119:2:266",
+            "house:119:2:268",
+            "house:119:2:269",
+            "house:119:2:273",
+            "house:119:2:275",
+            "house:119:2:276",
+            "house:119:2:278"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:9238",
+          "action_ids": [
+            "house:119:2:221"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:980",
+          "action_ids": [
+            "house:119:2:49"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:1071",
+          "action_ids": [
+            "house:119:1:320"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:1318",
+          "action_ids": [
+            "house:119:2:142"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:2393",
+          "action_ids": [
+            "house:119:2:180"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:s:4465",
+          "action_ids": [
+            "house:119:2:155"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:war-powers:iran",
+          "action_ids": [
+            "house:119:2:85",
+            "house:119:2:114",
+            "house:119:2:170",
+            "house:119:2:199",
+            "house:119:2:282"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:war-powers:lebanon",
+          "action_ids": [
+            "house:119:2:201",
+            "house:119:2:232"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:war-powers:venezuela",
+          "action_ids": [
+            "house:119:1:346"
+          ]
+        }
+      ],
+      "multi_action_episodes": [
+        {
+          "episode_candidate_id": "episode-candidate:hr:3838",
+          "action_ids": [
+            "house:119:1:244",
+            "house:119:1:246",
+            "house:119:1:248",
+            "house:119:1:249",
+            "house:119:1:250",
+            "house:119:1:251",
+            "house:119:1:252",
+            "house:119:1:255",
+            "house:119:1:257",
+            "house:119:1:258",
+            "house:119:1:259",
+            "house:119:1:260",
+            "house:119:1:262"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:4016",
+          "action_ids": [
+            "house:119:1:208",
+            "house:119:1:209",
+            "house:119:1:210",
+            "house:119:1:212"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:8469",
+          "action_ids": [
+            "house:119:2:174",
+            "house:119:2:175"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:8595",
+          "action_ids": [
+            "house:119:2:243",
+            "house:119:2:244",
+            "house:119:2:247"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:hr:8800",
+          "action_ids": [
+            "house:119:2:256",
+            "house:119:2:259",
+            "house:119:2:260",
+            "house:119:2:261",
+            "house:119:2:262",
+            "house:119:2:263",
+            "house:119:2:264",
+            "house:119:2:265",
+            "house:119:2:266",
+            "house:119:2:268",
+            "house:119:2:269",
+            "house:119:2:273",
+            "house:119:2:275",
+            "house:119:2:276",
+            "house:119:2:278"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:war-powers:iran",
+          "action_ids": [
+            "house:119:2:85",
+            "house:119:2:114",
+            "house:119:2:170",
+            "house:119:2:199",
+            "house:119:2:282"
+          ]
+        },
+        {
+          "episode_candidate_id": "episode-candidate:war-powers:lebanon",
+          "action_ids": [
+            "house:119:2:201",
+            "house:119:2:232"
+          ]
+        }
+      ],
+      "action_ids_by_disposition": {
+        "boundary_review_required": [
+          "house:119:1:245",
+          "house:119:1:247",
+          "house:119:1:253",
+          "house:119:1:254",
+          "house:119:1:256",
+          "house:119:1:285"
+        ],
+        "exact_action_ineligible": [
+          "house:119:1:180",
+          "house:119:1:204",
+          "house:119:1:205",
+          "house:119:1:206",
+          "house:119:1:207",
+          "house:119:2:26",
+          "house:119:2:27",
+          "house:119:2:144",
+          "house:119:2:145",
+          "house:119:2:146",
+          "house:119:2:147",
+          "house:119:2:148",
+          "house:119:2:149",
+          "house:119:2:150",
+          "house:119:2:151",
+          "house:119:2:152",
+          "house:119:2:241",
+          "house:119:2:242",
+          "house:119:2:245",
+          "house:119:2:255",
+          "house:119:2:257",
+          "house:119:2:258",
+          "house:119:2:267",
+          "house:119:2:274"
+        ],
+        "expressive_nonbinding_context": [
+          "house:119:2:84",
+          "house:119:2:167"
+        ],
+        "procedural_context": [
+          "house:119:1:176",
+          "house:119:1:177",
+          "house:119:1:181",
+          "house:119:1:194",
+          "house:119:1:195",
+          "house:119:1:197",
+          "house:119:1:198",
+          "house:119:1:211",
+          "house:119:1:242",
+          "house:119:1:243",
+          "house:119:1:261",
+          "house:119:1:263",
+          "house:119:1:280",
+          "house:119:1:319",
+          "house:119:2:24",
+          "house:119:2:25",
+          "house:119:2:140",
+          "house:119:2:141",
+          "house:119:2:153",
+          "house:119:2:158",
+          "house:119:2:159",
+          "house:119:2:189",
+          "house:119:2:200",
+          "house:119:2:206",
+          "house:119:2:230",
+          "house:119:2:231",
+          "house:119:2:236",
+          "house:119:2:237",
+          "house:119:2:246",
+          "house:119:2:249",
+          "house:119:2:253",
+          "house:119:2:254",
+          "house:119:2:277"
+        ],
+        "proposed_in_scope_substantive": [
+          "house:119:1:7",
+          "house:119:1:36",
+          "house:119:1:51",
+          "house:119:1:63",
+          "house:119:1:89",
+          "house:119:1:90",
+          "house:119:1:99",
+          "house:119:1:115",
+          "house:119:1:116",
+          "house:119:1:119",
+          "house:119:1:132",
+          "house:119:1:133",
+          "house:119:1:172",
+          "house:119:1:182",
+          "house:119:1:208",
+          "house:119:1:209",
+          "house:119:1:210",
+          "house:119:1:212",
+          "house:119:1:219",
+          "house:119:1:220",
+          "house:119:1:244",
+          "house:119:1:246",
+          "house:119:1:248",
+          "house:119:1:249",
+          "house:119:1:250",
+          "house:119:1:251",
+          "house:119:1:252",
+          "house:119:1:255",
+          "house:119:1:257",
+          "house:119:1:258",
+          "house:119:1:259",
+          "house:119:1:260",
+          "house:119:1:262",
+          "house:119:1:266",
+          "house:119:1:269",
+          "house:119:1:281",
+          "house:119:1:286",
+          "house:119:1:307",
+          "house:119:1:320",
+          "house:119:1:345",
+          "house:119:1:346",
+          "house:119:2:28",
+          "house:119:2:48",
+          "house:119:2:49",
+          "house:119:2:50",
+          "house:119:2:58",
+          "house:119:2:85",
+          "house:119:2:114",
+          "house:119:2:120",
+          "house:119:2:142",
+          "house:119:2:154",
+          "house:119:2:155",
+          "house:119:2:170",
+          "house:119:2:174",
+          "house:119:2:175",
+          "house:119:2:180",
+          "house:119:2:190",
+          "house:119:2:191",
+          "house:119:2:199",
+          "house:119:2:201",
+          "house:119:2:207",
+          "house:119:2:221",
+          "house:119:2:232",
+          "house:119:2:234",
+          "house:119:2:243",
+          "house:119:2:244",
+          "house:119:2:247",
+          "house:119:2:248",
+          "house:119:2:256",
+          "house:119:2:259",
+          "house:119:2:260",
+          "house:119:2:261",
+          "house:119:2:262",
+          "house:119:2:263",
+          "house:119:2:264",
+          "house:119:2:265",
+          "house:119:2:266",
+          "house:119:2:268",
+          "house:119:2:269",
+          "house:119:2:273",
+          "house:119:2:275",
+          "house:119:2:276",
+          "house:119:2:278",
+          "house:119:2:282"
+        ]
+      }
+    }
+  ],
+  "eligible_domains_ranked": [
+    "NATIONAL_SECURITY_FOREIGN"
+  ],
+  "selected_domain": "NATIONAL_SECURITY_FOREIGN",
+  "selection_state": "selected",
+  "selection_basis": [
+    "complete_official_source_evidence",
+    "independent_policy_episode_count",
+    "policy_mechanism_variation",
+    "legitimate_multi_action_episode",
+    "smallest_unresolved_boundary_set",
+    "canonical_domain_id_tie_breaker"
+  ],
+  "selection_sha256": "efa8526f049d6d3fcabccc1d8c12c91b167abaed1e952fbf62282df8d3645e38",
+  "next_stage_authorized": true
+}
