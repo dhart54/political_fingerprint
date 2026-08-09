@@ -162,6 +162,48 @@ def schema(value: dict[str, Any], schema_id: str) -> dict[str, Any]:
                 relax_dynamic_maps(child)
 
     relax_dynamic_maps(result)
+    if schema_id.endswith("full_record_policy_episode_decision_implementation_v1"):
+        record = result["properties"]["subject"]["properties"][
+            "implementation_records"
+        ]["items"]
+        record["properties"]["grouping_type"] = {
+            "enum": [
+                "single_action",
+                "same_measure_multi_action",
+                "cross_measure",
+            ],
+            "type": "string",
+        }
+        record["properties"]["legislative_event_continuity"] = {
+            "type": "object",
+            "additionalProperties": False,
+            "required": [
+                "state",
+                "same_legislative_path_or_event",
+                "evidence",
+            ],
+            "properties": {
+                "state": {"const": "established", "type": "string"},
+                "same_legislative_path_or_event": {
+                    "const": True,
+                    "type": "boolean",
+                },
+                "evidence": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {"type": "string", "minLength": 1},
+                },
+            },
+        }
+        record["allOf"] = [
+            {
+                "if": {
+                    "properties": {"grouping_type": {"const": "cross_measure"}},
+                    "required": ["grouping_type"],
+                },
+                "then": {"required": ["legislative_event_continuity"]},
+            }
+        ]
     return result
 
 

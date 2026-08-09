@@ -189,6 +189,25 @@
         "implementation_records": {
           "items": {
             "additionalProperties": false,
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "grouping_type": {
+                      "const": "cross_measure"
+                    }
+                  },
+                  "required": [
+                    "grouping_type"
+                  ]
+                },
+                "then": {
+                  "required": [
+                    "legislative_event_continuity"
+                  ]
+                }
+              }
+            ],
             "properties": {
               "actions": {
                 "items": {
@@ -329,10 +348,42 @@
                 "type": "string"
               },
               "grouping_type": {
+                "enum": [
+                  "single_action",
+                  "same_measure_multi_action",
+                  "cross_measure"
+                ],
                 "type": "string"
               },
               "implementation_state": {
                 "type": "string"
+              },
+              "legislative_event_continuity": {
+                "additionalProperties": false,
+                "properties": {
+                  "evidence": {
+                    "items": {
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "same_legislative_path_or_event": {
+                    "const": true,
+                    "type": "boolean"
+                  },
+                  "state": {
+                    "const": "established",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "state",
+                  "same_legislative_path_or_event",
+                  "evidence"
+                ],
+                "type": "object"
               },
               "material_limitations": {
                 "items": {
