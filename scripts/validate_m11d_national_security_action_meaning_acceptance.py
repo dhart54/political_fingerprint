@@ -360,7 +360,11 @@ def validate_repository() -> dict[str, Any]:
     )
     _require(
         m11d_state["milestone"] == "m11d_national_security_action_meaning_acceptance_v1"
-        and m11d_state["milestone_state"] == "complete_pending_human_mechanical_review"
+        and m11d_state["milestone_state"]
+        in {
+            "complete_pending_human_mechanical_review",
+            "completed_human_accepted",
+        }
         and m11d_state["accepted_decision_count"] == 81
         and m11d_state["source_blocked_action_ids"] == ["house:119:2:278"]
         and m11d_state["authority_identity"]
@@ -379,7 +383,22 @@ def validate_repository() -> dict[str, Any]:
         }
         and m11d_state["internal_action_meanings_canonical"] is True
         and m11d_state["canonical_semantic_acceptance"] is False
-        and m11d_state["policy_episode_state"] == "not_started_not_authorized"
+        and m11d_state["policy_episode_state"]
+        in {
+            "not_started_not_authorized",
+            "candidate_generation_completed_by_m11e_not_accepted",
+        }
+        and (
+            m11d_state["milestone_state"] != "completed_human_accepted"
+            or (
+                m11d_state["human_mechanical_review"] == "accepted"
+                and m11d_state["accepted_pr"] == 136
+                and m11d_state["accepted_head"]
+                == "8452ca3dfb5ba740343983c2288303fe87064b19"
+                and m11d_state["post_merge_main"]
+                == "104e0bf67854342b0cde5c7247cfa302a338c527"
+            )
+        )
         and all(
             value is False for value in m11d_state["downstream_authorizations"].values()
         ),

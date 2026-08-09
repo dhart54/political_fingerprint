@@ -33,6 +33,10 @@
     "full_record_action_interpretation_implementation_schema": "docs/methodology/full_record_action_interpretation_decision_implementation_v1.schema.json",
     "full_record_action_interpretation_implementation_parity_schema": "docs/methodology/full_record_action_interpretation_implementation_parity_v1.schema.json",
     "m11d_action_meaning_acceptance_validator": "scripts/validate_m11d_national_security_action_meaning_acceptance.py",
+    "full_record_policy_episode_candidate_contract": "docs/methodology/full_record_policy_episode_candidates_v1.md",
+    "full_record_policy_episode_candidate_schema": "docs/methodology/full_record_policy_episode_candidate_batch_v1.schema.json",
+    "full_record_policy_episode_human_decision_schema": "docs/methodology/full_record_policy_episode_human_decision_v1.schema.json",
+    "m11e_policy_episode_candidate_validator": "scripts/validate_m11e_national_security_policy_episode_candidates.py",
     "public_review_state_catalog": "backend/app/editorial_presentations/public_review_state_catalog_v1.json",
     "public_review_state_catalog_builder": "scripts/build_public_review_state_catalog.py",
     "frontend_pass_a_design": "docs/design/frontend_pass_a_v1.md",
@@ -345,8 +349,12 @@
       "issue_id": "NATIONAL_SECURITY_FOREIGN"
     },
     "post_m11c_merge_base": "6b11a20b18d8e98df3ed5d63606f0e94e8ed47f1",
-    "milestone_state": "complete_pending_human_mechanical_review",
+    "milestone_state": "completed_human_accepted",
     "authority_effect": "internal_action_interpretation_acceptance_only",
+    "human_mechanical_review": "accepted",
+    "accepted_pr": 136,
+    "accepted_head": "8452ca3dfb5ba740343983c2288303fe87064b19",
+    "post_merge_main": "104e0bf67854342b0cde5c7247cfa302a338c527",
     "accepted_decision_count": 81,
     "source_blocked_count": 1,
     "source_blocked_action_ids": [
@@ -372,8 +380,8 @@
     "internal_action_interpretation_state": "human_accepted_internal",
     "internal_action_meanings_canonical": true,
     "canonical_semantic_acceptance": false,
-    "mechanical_review_state": "pending_human_review",
-    "policy_episode_state": "not_started_not_authorized",
+    "mechanical_review_state": "accepted",
+    "policy_episode_state": "candidate_generation_completed_by_m11e_not_accepted",
     "semantic_ir_state": "absent",
     "synthesis_state": "absent",
     "public_wording_state": "absent",
@@ -389,6 +397,68 @@
       "public_wording": false,
       "publication": false,
       "production_persistence": false,
+      "deployment": false
+    }
+  },
+  "active_policy_episode_candidate_milestone": {
+    "milestone": "m11e_national_security_policy_episode_candidates_v1",
+    "plan": "docs/plans/m11e_national_security_policy_episode_candidates_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "NATIONAL_SECURITY_FOREIGN"
+    },
+    "post_m11d_merge_base": "104e0bf67854342b0cde5c7247cfa302a338c527",
+    "milestone_state": "complete_pending_human_policy_episode_review",
+    "authority_effect": "detached_non_authorizing_policy_episode_candidates_only",
+    "accepted_m11d_action_count": 81,
+    "proposed_episode_count": 74,
+    "single_action_episode_count": 70,
+    "multi_action_episode_count": 4,
+    "cross_measure_episode_count": 4,
+    "ambiguous_or_unassigned_action_count": 0,
+    "source_blocked_count": 1,
+    "source_blocked_action_ids": [
+      "house:119:2:278"
+    ],
+    "candidate_artifact": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_national_security_foreign_119_v1/policy_episode_candidate_batch.json",
+    "candidate_identity": {
+      "id": "policy-episode-candidates:f000477:national_security_foreign:119:v1",
+      "sha256": "907fe610aa859ae9ea43f1febd0f0e824bf081ccdeab6193ce4355989871df8b",
+      "episode_candidate_subject_sha256": "3d2d14f2d9a9e76624a97202fbe648b70a3f71d20076ba76e9966f277954d7af",
+      "accepted": false,
+      "canonical": false,
+      "authorizing": false
+    },
+    "decision_template": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_national_security_foreign_119_v1/human_episode_decision_template.json",
+    "decision_template_identity": {
+      "sha256": "bbc01ac460e410c9b7c1cd61964fd8e7d961b39c36b0d7174ef375686e2d8ca6",
+      "decision_template_subject_sha256": "68d17d415851cf0e16bad5f1d787014004f88f2e5c50f4055b847d6854fec543"
+    },
+    "parity_manifest": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_national_security_foreign_119_v1/parity_manifest.json",
+    "parity_identity": {
+      "sha256": "a5a0d2bf7ee830b0062c8fc940a23184e1f68e947fc217525f17b0b49ab74ffb",
+      "parity_subject_sha256": "d5a487792b5637ed8f5df3674f3ae875af4591d11956e27c2c54dae2b1b2b3ab"
+    },
+    "episode_candidate_state": "complete_non_authorizing",
+    "episode_acceptance_state": "not_started_not_authorized",
+    "semantic_ir_state": "absent",
+    "synthesis_state": "absent",
+    "public_wording_state": "absent",
+    "publication_state": "inactive",
+    "production_persistence": "not_authorized",
+    "production_writes": false,
+    "downstream_authorizations": {
+      "episode_acceptance": false,
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
       "deployment": false
     }
   },

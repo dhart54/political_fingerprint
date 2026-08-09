@@ -1,0 +1,171 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/full_record_policy_episode_human_decision_v1",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "candidate_batch": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "episode_candidate_subject_sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "episode_candidate_subject_sha256"
+      ],
+      "type": "object"
+    },
+    "canonical": {
+      "type": "boolean"
+    },
+    "decision_count": {
+      "type": "integer"
+    },
+    "decision_state": {
+      "type": "string"
+    },
+    "decision_template_subject_sha256": {
+      "type": "string"
+    },
+    "decisions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "allowed_decisions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "bounded_revision": {
+            "type": "null"
+          },
+          "decision_subject_sha256": {
+            "type": "string"
+          },
+          "decision_timestamp": {
+            "type": "null"
+          },
+          "episode_id": {
+            "type": "string"
+          },
+          "episode_subject_sha256": {
+            "type": "string"
+          },
+          "grouping_type": {
+            "type": "string"
+          },
+          "human_review_priority": {
+            "type": "string"
+          },
+          "reviewer_authority": {
+            "type": "null"
+          },
+          "reviewer_id": {
+            "type": "null"
+          },
+          "selected_decision": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "allowed_decisions",
+          "bounded_revision",
+          "decision_subject_sha256",
+          "decision_timestamp",
+          "episode_id",
+          "episode_subject_sha256",
+          "grouping_type",
+          "human_review_priority",
+          "reviewer_authority",
+          "reviewer_id",
+          "selected_decision"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "downstream_authorizations": {
+      "additionalProperties": false,
+      "properties": {
+        "database_writes": {
+          "type": "boolean"
+        },
+        "deployment": {
+          "type": "boolean"
+        },
+        "episode_acceptance": {
+          "type": "boolean"
+        },
+        "production_persistence": {
+          "type": "boolean"
+        },
+        "public_wording": {
+          "type": "boolean"
+        },
+        "publication": {
+          "type": "boolean"
+        },
+        "semantic_ir": {
+          "type": "boolean"
+        },
+        "synthesis": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "database_writes",
+        "deployment",
+        "episode_acceptance",
+        "production_persistence",
+        "public_wording",
+        "publication",
+        "semantic_ir",
+        "synthesis"
+      ],
+      "type": "object"
+    },
+    "explicit_non_acceptance": {
+      "type": "string"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "selected_batch_decision": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "accepted",
+    "artifact_id",
+    "authorizing",
+    "candidate_batch",
+    "canonical",
+    "decision_count",
+    "decision_state",
+    "decision_template_subject_sha256",
+    "decisions",
+    "downstream_authorizations",
+    "explicit_non_acceptance",
+    "public",
+    "schema_version",
+    "selected_batch_decision"
+  ],
+  "type": "object"
+}
