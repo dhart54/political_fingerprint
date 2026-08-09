@@ -5,7 +5,6 @@ import { useEffect, useMemo, useState } from "react";
 import IssueDetail from "./IssueDetail";
 import IssueDiscoveryControls from "./IssueDiscoveryControls";
 import IssueOverviewGrid from "./IssueOverviewGrid";
-import StickySectionNavigation from "./StickySectionNavigation";
 import {
   fetchEditorialPresentations,
   fetchPositions,
@@ -16,10 +15,10 @@ import {
   indexEditorialPresentations,
   presentationIdentityMatches,
 } from "../lib/editorialPresentation.mjs";
+import { formatDomainLabel } from "../lib/issueDomains";
 import { DOMAIN_ORDER } from "../lib/issueEvidenceCoverage.mjs";
 import {
   buildIssueOverviewRows,
-  isPublicAnalysisAvailable,
   sortAndFilterIssues,
 } from "../lib/frontendPassA.mjs";
 
@@ -118,8 +117,6 @@ export default function RepresentativeExperience({
       memberBioguideId: legislator.bioguide_id,
     },
   );
-  const hasAnalysis = isPublicAnalysisAvailable(selectedPresentation);
-  const hasEpisodes = Boolean(selectedPresentation?.policy_episodes?.length);
 
   function selectIssue(issue) {
     onSelectIssue(issue);
@@ -170,34 +167,19 @@ export default function RepresentativeExperience({
       </section>
 
       {selectedRow ? (
-        <>
-          <StickySectionNavigation
-            hasAnalysis={hasAnalysis}
-            hasEpisodes={hasEpisodes}
-          />
-          <IssueDetail
-            fixtureEvidence={fixtureData?.evidenceByDomain?.[selectedIssue] || null}
-            issue={selectedIssue}
-            legislatorId={legislator.id}
-            presentation={selectedPresentation}
-            scope={scope}
-          />
-        </>
+        <IssueDetail
+          fixtureEvidence={fixtureData?.evidenceByDomain?.[selectedIssue] || null}
+          issue={selectedIssue}
+          legislatorId={legislator.id}
+          presentation={selectedPresentation}
+          representativeName={legislator.name_display}
+          scope={scope}
+        />
       ) : null}
     </>
   );
 }
 
 function publicLabel(domain) {
-  const labels = {
-    ECONOMY_TAXES: "Economy & Taxes",
-    EDUCATION_WORKFORCE: "Education & Workforce",
-    ENVIRONMENT_ENERGY: "Environment & Energy",
-    HEALTH_SOCIAL: "Health & Social Services",
-    IMMIGRATION_BORDER: "Immigration & Border",
-    INFRASTRUCTURE_TECH_TRANSPORT: "Infrastructure, Tech & Transportation",
-    JUSTICE_PUBLIC_SAFETY: "Justice & Public Safety",
-    NATIONAL_SECURITY_FOREIGN: "National Security & Foreign Policy",
-  };
-  return labels[domain] || domain;
+  return formatDomainLabel(domain);
 }

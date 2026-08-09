@@ -11,6 +11,7 @@ import {
 } from "./selected-issue-fixtures.mjs";
 
 const output = process.env.SELECTED_ISSUE_REVIEW_DIR;
+const finalVisualOutput = process.env.SELECTED_ISSUE_FINAL_VISUAL_DIR;
 const testedCommit = process.env.SELECTED_ISSUE_TESTED_COMMIT;
 const selectedPath = "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY";
 const manifest = [];
@@ -23,7 +24,7 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
-test("capture Selected Issue Experience V1 after-state packet", async ({ page }) => {
+test("capture Selected Issue Experience V1.1 exact-commit packet", async ({ page }) => {
   test.setTimeout(180_000);
   test.skip(
     !output || !testedCommit,
@@ -34,142 +35,114 @@ test("capture Selected Issue Experience V1 after-state packet", async ({ page })
 
   await setViewport(page, 1440, 1000);
   await openSelectedIssue(page, "all");
-  await capturePage(page, "01-full-selected-issue-desktop.png", {
-    scope: "all",
-    state: "default full page",
-    description: "Full selected-issue desktop experience.",
-  }, { fullPage: true });
-
   await page.locator("#issue-detail > header").scrollIntoViewIfNeeded();
-  await capturePage(page, "02-selected-issue-opening-summary.png", {
+  await capturePage(page, "01-header-selected-issue-opening-1440.png", {
     scope: "all",
-    state: "opening and reviewed summary",
-    description: "Selected issue identity, distinct scopes, and reviewed-summary opening.",
+    state: "header and selected-issue opening",
+    description: "Bounded header and selected-issue opening at 1440px.",
   });
 
-  const patternIndex = page.getByText("Pattern index", { exact: true })
-    .locator("..")
-    .locator("..");
-  await captureLocator(page, patternIndex, "03-compact-pattern-index.png", {
+  await page.locator("#issue-summary").scrollIntoViewIfNeeded();
+  await capturePage(page, "02-scope-strip-takeaway-1440.png", {
     scope: "all",
-    state: "pattern index default",
-    description: "Compact proportional index for all five governed patterns.",
+    state: "scope strip and takeaway",
+    description: "Distinct action and summary scopes with the approved substantive takeaway.",
   });
 
-  await page.getByRole("button", {
-    name: /Show 3 exact actions for The HALT Fentanyl path is one mixed episode/,
-  }).click();
-  await captureLocator(page, page.locator("#vote-record"), "04-pattern-filtered-ledger.png", {
+  await captureLocator(page, page.getByTestId("reviewed-analysis"), "03-complete-pattern-list-1440.png", {
     scope: "all",
-    state: "HALT Fentanyl pattern filter",
-    expandedAction: "house:119:1:166",
-    description: "Pattern-filtered ledger showing three actions as one mixed episode.",
+    state: "complete visible pattern list",
+    description: "All five governed patterns with symbols, explanations, counts, and one action each.",
   });
 
   await openSelectedIssue(page, "119");
-  await captureLocator(page, page.locator("#vote-record"), "05-default-compact-ledger.png", {
+  await scrollSectionBelowHeader(page, "#vote-record");
+  await capturePage(page, "04-default-vote-record-1440.png", {
     scope: "119",
-    state: "default compact ledger",
-    description: "Compact chronological ledger with the first action batch visible.",
+    state: "default vote record",
+    description: "Default compact vote record with independent Vote and Type filters.",
   });
+
+  await page.getByRole("button", {
+    name: /View 2 votes for Opposition to expanding fraud-enforcement capacity/,
+  }).click();
+  await capturePage(page, "05-selected-opposition-pattern-1440.png", {
+    scope: "119",
+    state: "selected Opposition pattern",
+    description: "Compact governed Opposition state with only exact matching votes.",
+  });
+
+  await openSelectedIssue(page, "119");
+  const normalNay = page.locator('[data-canonical-action-id="house:119:2:275"]');
+  await normalNay.getByRole("button").click();
+  await expect(page.locator(".pattern-strip")).toHaveCount(0);
+  await captureLocator(page, normalNay, "06-normal-nay-no-pattern-strip-1440.png", {
+    scope: "119",
+    state: "normal Nay expanded without pattern state",
+    expandedAction: "house:119:2:275",
+    description: "A normal Nay opened from the unfiltered record without creating an Opposition strip.",
+  });
+  await normalNay.getByRole("button").click();
 
   const ndaaGroup = page.getByTestId("related-action-group").filter({
     hasText: "National Defense Authorization Act for Fiscal Year 2027",
   });
-  await captureLocator(page, ndaaGroup, "06-ndaa-related-action-group.png", {
+  await captureLocator(page, ndaaGroup, "07-ndaa-parent-all-children-1440.png", {
     scope: "119",
-    state: "NDAA group expanded",
-    description: "Five independent NDAA actions with vote and control composition.",
+    state: "NDAA parent and all children visible",
+    description: "Thin contextual parent with every independent child action visible.",
   });
 
   const roll275 = page.locator('[data-canonical-action-id="house:119:2:275"]');
-  await roll275.getByRole("button").click();
-  await captureLocator(page, roll275, "07-expanded-substantive-receipt.png", {
+  if (await roll275.getByRole("button").getAttribute("aria-expanded") !== "true") {
+    await roll275.getByRole("button").click();
+  }
+  await captureLocator(page, roll275, "08-expanded-standard-vote-1440.png", {
     scope: "119",
-    state: "substantive receipt expanded",
+    state: "standard vote expanded",
     expandedAction: "house:119:2:275",
-    description: "Expanded substantive voter receipt with official links.",
+    description: "Expanded standard vote with natural voter-facing fields and official sources.",
   });
 
   const roll278 = page.locator('[data-canonical-action-id="house:119:2:278"]');
   await roll278.getByRole("button").click();
-  await captureLocator(page, roll278, "08-expanded-non-counting-control.png", {
+  await captureLocator(page, roll278, "09-expanded-non-counting-control-1440.png", {
     scope: "119",
     state: "non-counting control expanded",
     expandedAction: "house:119:2:278",
-    description: "Expanded governed non-counting control with material limitation.",
-  });
-
-  const limitations = page.getByText("Limitations and unresolved actions · 3")
-    .locator("..");
-  await captureLocator(page, limitations, "09-limitations-collapsed.png", {
-    scope: "119",
-    state: "limitations collapsed",
-    description: "Collapsed limitations state with visible item count.",
-  });
-  await page.getByText("Limitations and unresolved actions · 3").click();
-  await captureLocator(page, limitations, "10-limitations-expanded.png", {
-    scope: "119",
-    state: "limitations expanded",
-    description: "All three governed issue limitations expanded.",
-  });
-
-  await openSelectedIssue(page, "all");
-  await captureLocator(page, page.locator("#issue-detail > header"), "11-scope-all-distinction.png", {
-    scope: "all",
-    state: "scope distinction",
-    description: "All-Congress 89-action evidence distinguished from 119th-Congress interpretation.",
-  });
-
-  await openSelectedIssue(page, "119");
-  await captureLocator(page, page.locator("#issue-detail > header"), "12-scope-119.png", {
-    scope: "119",
-    state: "119th Congress scope",
-    description: "119th-Congress 37-action governed state.",
-  });
-
-  await openSelectedIssue(page, "118");
-  await capturePage(page, "13-scope-118-receipts-only.png", {
-    scope: "118",
-    state: "receipts only",
-    description: "118th-Congress 52-action receipts-only state without synthesis.",
+    description: "Expanded non-counting control with its exceptional status and material limitation.",
   });
 
   await setViewport(page, 390, 844);
   await openSelectedIssue(page, "all");
-  await capturePage(page, "14-mobile-selected-issue-390.png", {
+  await capturePage(page, "10-selected-issue-390.png", {
     scope: "all",
     state: "mobile selected issue",
-    description: "Selected issue at 390px without horizontal overflow.",
+    description: "Complete selected issue at 390px without horizontal overflow.",
   }, { fullPage: true });
 
-  await setViewport(page, 320, 844);
   await openSelectedIssue(page, "119");
-  await captureLocator(page, page.locator("#vote-record"), "15-mobile-ledger-320.png", {
+  await scrollSectionBelowHeader(page, "#vote-record");
+  await capturePage(page, "11-vote-record-390.png", {
     scope: "119",
-    state: "narrow mobile ledger",
-    description: "Compact grouped ledger at 320px.",
+    state: "mobile vote record",
+    description: "Vote record at 390px with separate wrapping filters and visible child actions.",
   });
 
-  await setViewport(page, 1440, 1000);
-  await openSelectedIssue(page, "119");
-  const focusControl = page.getByRole("button", {
-    name: /Show 2 exact actions for Support for terrorism-preparedness mandates/,
-  });
-  await focusControl.focus();
-  await expect(focusControl).toBeFocused();
-  await focusControl.scrollIntoViewIfNeeded();
-  await capturePage(page, "16-keyboard-focus-pattern-control.png", {
+  const mobileRoll275 = page.locator('[data-canonical-action-id="house:119:2:275"]');
+  await mobileRoll275.getByRole("button").click();
+  await captureLocator(page, mobileRoll275, "12-expanded-vote-390.png", {
     scope: "119",
-    state: "keyboard focus",
-    description: "Visible keyboard focus on a meaningful pattern-to-ledger control.",
+    state: "mobile expanded vote",
+    expandedAction: "house:119:2:275",
+    description: "Expanded voter receipt stacked at 390px with usable source links.",
   });
 
-  expect(manifest).toHaveLength(16);
+  expect(manifest).toHaveLength(12);
   fs.writeFileSync(
     path.join(output, "manifest.json"),
     `${JSON.stringify({
-      schema_version: "selected_issue_experience_review_packet_v1",
+      schema_version: "selected_issue_experience_review_packet_v1_1",
       tested_commit: testedCommit,
       generated_at: new Date().toISOString(),
       captures: manifest,
@@ -178,16 +151,67 @@ test("capture Selected Issue Experience V1 after-state packet", async ({ page })
   );
 });
 
+test("capture the two final V1.1 visual-sign-off states", async ({ page }) => {
+  test.skip(
+    !finalVisualOutput || !testedCommit,
+    "Set SELECTED_ISSUE_FINAL_VISUAL_DIR and SELECTED_ISSUE_TESTED_COMMIT.",
+  );
+  fs.mkdirSync(finalVisualOutput, { recursive: true });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await setViewport(page, 1440, 1000);
+  await openSelectedIssue(page, "119");
+
+  const group = page.getByTestId("related-action-group").filter({
+    hasText: "National Defense Authorization Act for Fiscal Year 2027",
+  });
+  await expect(group.locator("[data-canonical-action-id]")).toHaveCount(5);
+  await expect(group).not.toContainText("Parent measure:");
+  await group.screenshot({
+    path: path.join(
+      finalVisualOutput,
+      `A-ndaa-related-action-group-${testedCommit.slice(0, 7)}.png`,
+    ),
+  });
+
+  await openSelectedIssue(page, "119");
+  await page.getByRole("button", {
+    name: "View 3 votes for Opposition to reducing firearm-access barriers",
+  }).click();
+  const strip = page.locator(".pattern-strip");
+  await expect(strip).toContainText("Opposition");
+  await expect(strip).toContainText("reducing firearm-access barriers");
+  await expect(strip).toContainText("3 matching votes");
+  await expect(strip.getByRole("button", { name: "Show all 37 votes" })).toBeVisible();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
+  await page.locator("#vote-record").screenshot({
+    path: path.join(
+      finalVisualOutput,
+      `B-selected-opposition-pattern-${testedCommit.slice(0, 7)}.png`,
+    ),
+  });
+});
+
 async function openSelectedIssue(page, scope) {
   const suffix = scope === "all" ? "" : `&scope=${scope}`;
   await page.goto(`${selectedPath}${suffix}`);
   await expect(page.getByTestId("issue-detail")).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Chronological action ledger" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Vote record" })).toBeVisible();
   await removeDevelopmentPortal(page);
 }
 
 async function setViewport(page, width, height) {
   await page.setViewportSize({ width, height });
+}
+
+async function scrollSectionBelowHeader(page, selector) {
+  await page.locator(selector).evaluate((element) => {
+    const headerHeight = document.querySelector("main > header")
+      ?.getBoundingClientRect().height || 0;
+    window.scrollTo({
+      behavior: "instant",
+      top: element.getBoundingClientRect().top + window.scrollY - headerHeight - 16,
+    });
+  });
 }
 
 async function capturePage(page, filename, metadata, options = {}) {
@@ -200,6 +224,7 @@ async function capturePage(page, filename, metadata, options = {}) {
 async function captureLocator(page, locator, filename, metadata) {
   const target = path.join(output, filename);
   await removeDevelopmentPortal(page);
+  await locator.scrollIntoViewIfNeeded();
   await locator.screenshot({ path: target });
   recordCapture(page, target, filename, metadata);
 }

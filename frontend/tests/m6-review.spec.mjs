@@ -31,9 +31,9 @@ test("desktop candidate preserves all primary and limiting meaning", async ({ pa
 test("desktop ledger exposes all 37 actions and special boundaries", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1050 });
   await openReview(page);
-  await expect(page.getByText(/37 recorded actions\. Newest first/)).toBeVisible();
-  while (await page.getByRole("button", { name: "Show more actions" }).count()) {
-    await page.getByRole("button", { name: "Show more actions" }).click();
+  await expect(page.getByText(/37 recorded actions .* Newest first/)).toBeVisible();
+  while (await page.getByRole("button", { name: "Show more votes" }).count()) {
+    await page.getByRole("button", { name: "Show more votes" }).click();
   }
   for (const action of ["house:119:1:128", "house:119:2:155", "house:119:2:278"]) {
     await expect(page.locator(`[data-canonical-action-id="${action}"]`)).toBeVisible();
@@ -69,10 +69,10 @@ test("200 percent zoom retains content without horizontal overflow", async ({ pa
 
 test("keyboard route reaches analysis, supporting votes, and receipt expansion", async ({ page }) => {
   await openReview(page);
-  const button = page.getByRole("button", { name: /Show 6 exact actions for Opposition to displacing/ });
+  const button = page.getByRole("button", { name: /View 6 votes for Opposition to displacing/ });
   await button.focus();
   await page.keyboard.press("Enter");
-  await expect(page.getByRole("heading", { name: "Chronological action ledger" })).toBeFocused();
+  await expect(page.getByRole("heading", { name: "Vote record" })).toBeFocused();
   const receipt = page.locator('[data-canonical-action-id="house:119:1:162"] button');
   await receipt.focus();
   await page.keyboard.press("Enter");

@@ -118,16 +118,10 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-[#f7f3e9] text-stone-900">
-      <header className="border-b border-stone-200/90 bg-[#fbf8f1]">
-        <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-10">
-          <Link className="font-serif text-xl font-semibold text-stone-950" href="/">
-            Political Fingerprint
-          </Link>
-          <p className="hidden text-sm text-stone-600 sm:block">
-            Voting records, explained with receipts.
-          </p>
-        </div>
-      </header>
+      <SiteHeader
+        representativeName={legislator?.name_display}
+        selectedIssue={route.issue}
+      />
 
       <div className="mx-auto max-w-[90rem] px-4 py-8 sm:px-6 lg:px-10 lg:py-10">
         {!routeReady || legislatorState.status === "loading" ? (
@@ -193,6 +187,51 @@ export default function HomePage() {
         ) : null}
       </div>
     </main>
+  );
+}
+
+function SiteHeader({ representativeName, selectedIssue }) {
+  const showSelectedIssueNavigation = Boolean(representativeName && selectedIssue);
+  return (
+    <header className="sticky top-0 z-30 border-b border-stone-200/90 bg-[#fbf8f1]/95 backdrop-blur">
+      <div className="mx-auto grid max-w-[90rem] grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 px-4 py-3 sm:px-6 lg:grid-cols-[1fr_auto_1fr] lg:px-10">
+        <Link className="font-serif text-xl font-semibold leading-none text-stone-950" href="/">
+          Political Fingerprint
+        </Link>
+        {showSelectedIssueNavigation ? (
+          <nav
+            aria-label="Selected issue sections"
+            className="order-3 col-span-2 flex items-center justify-center gap-1 overflow-x-auto lg:order-none lg:col-span-1"
+          >
+            {[
+              ["issues", "Issues"],
+              ["issue-summary", "Issue summary"],
+              ["vote-record", "Vote record"],
+            ].map(([id, label]) => (
+              <a
+                className="min-h-11 shrink-0 border-b-2 border-transparent px-3 py-3 text-sm font-semibold text-stone-700 hover:border-teal-700 hover:text-teal-900 focus-visible:border-teal-700"
+                href={`#${id}`}
+                key={id}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        ) : (
+          <p className="hidden text-sm text-stone-600 lg:block">
+            Voting records, explained with receipts.
+          </p>
+        )}
+        {showSelectedIssueNavigation ? (
+          <a
+            className="justify-self-end text-sm font-semibold text-stone-900 hover:text-teal-900"
+            href="#representative-name"
+          >
+            {representativeName}
+          </a>
+        ) : null}
+      </div>
+    </header>
   );
 }
 

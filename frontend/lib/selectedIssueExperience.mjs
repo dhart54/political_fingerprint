@@ -29,6 +29,7 @@ export function buildSelectedIssueModel({ presentation, rows = [], scope = "all"
     interpretation: hasInterpretation
       ? {
           scope: interpretationScope,
+          congressLabel: formatCongressScope(congresses),
           type: reviewTypeLabel(reviewState.review_scope),
           actionCount: nonNegativeNumber(reviewState.total_recorded_actions),
           episodeCount: nonNegativeNumber(reviewState.complete_episode_count),
@@ -162,7 +163,7 @@ export function getActionPresentation(row = {}) {
 
 export function publicActionStatus(row = {}) {
   if (row.governed_receipt_control?.status === "noncounting_control") {
-    return "Governed non-counting control";
+    return "Non-counting control";
   }
   if (isProceduralContextRow(row)) {
     return "Procedural / context";
@@ -175,6 +176,15 @@ export function publicActionStatus(row = {}) {
     return "Unresolved evidence";
   }
   return "";
+}
+
+export function publicActionStatusKind(label = "") {
+  return {
+    "Procedural / context": "procedural",
+    "Non-counting control": "noncounting",
+    "Limited context": "limited",
+    "Unresolved evidence": "unresolved",
+  }[label] || "";
 }
 
 export function getPublicChamberResult(row = {}) {

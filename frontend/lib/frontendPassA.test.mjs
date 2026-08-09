@@ -11,6 +11,7 @@ import {
   canonicalActionId,
   chronologicalActions,
   filterActions,
+  filterActionsByDimensions,
   isPublicAnalysisAvailable,
   parsePassARouteState,
   resolveExactActionRequest,
@@ -203,6 +204,38 @@ test("ledger orders newest first and applies non-analytical filters", () => {
   assert.equal(
     actionReceiptId(actions[0]),
     "action-receipt-house-119-1-1",
+  );
+});
+
+test("vote and type filters combine without creating analytical direction", () => {
+  const actionRows = [
+    {
+      roll_call_id: "house:119:1:1",
+      position: "yea",
+      interpretation_status: "interpreted",
+      vote_type: "passage",
+    },
+    {
+      roll_call_id: "house:119:1:2",
+      position: "nay",
+      interpretation_status: "ambiguous",
+      classification_reason: "procedural_vote",
+      vote_type: "procedural",
+    },
+  ];
+  assert.deepEqual(
+    filterActionsByDimensions(actionRows, {
+      vote: "yea",
+      type: "substantive",
+    }).map((row) => row.roll_call_id),
+    ["house:119:1:1"],
+  );
+  assert.deepEqual(
+    filterActionsByDimensions(actionRows, {
+      vote: "nay",
+      type: "procedural_context",
+    }).map((row) => row.roll_call_id),
+    ["house:119:1:2"],
   );
 });
 

@@ -8,6 +8,8 @@ import {
   completeVisibleRows,
   getActionPresentation,
   getPublicChamberResult,
+  publicActionStatus,
+  publicActionStatusKind,
 } from "./selectedIssueExperience.mjs";
 
 const presentation = {
@@ -37,6 +39,7 @@ test("selected issue model keeps all-Congress evidence distinct from 119th inter
   assert.equal(model.evidence.count, 89);
   assert.equal(model.interpretation.type, "Full reviewed record");
   assert.equal(model.interpretation.scope, "119th Congress · full defined issue record");
+  assert.equal(model.interpretation.congressLabel, "119th Congress");
   assert.equal(model.interpretation.actionCount, 37);
   assert.equal(model.interpretation.episodeCount, 32);
   assert.equal(model.scopesAlign, false);
@@ -121,6 +124,21 @@ test("compact action presentation uses amendment purpose and preserves parent me
   assert.equal(compact.status, "");
 });
 
+test("exceptional action statuses have distinct stable semantic treatments", () => {
+  const cases = [
+    [{ vote_type: "procedural" }, "Procedural / context", "procedural"],
+    [{ governed_receipt_control: { status: "noncounting_control" } }, "Non-counting control", "noncounting"],
+    [{ interpretation_status: "ambiguous" }, "Limited context", "limited"],
+    [{ interpretation_status: "insufficient_evidence" }, "Unresolved evidence", "unresolved"],
+  ];
+  for (const [row, label, kind] of cases) {
+    assert.equal(publicActionStatus(row), label);
+    assert.equal(publicActionStatusKind(label), kind);
+  }
+  assert.equal(publicActionStatus({ interpretation_status: "interpreted" }), "");
+  assert.equal(publicActionStatusKind(""), "");
+});
+
 test("a supplied final-passage label remains more specific than fallback question text", () => {
   const compact = getActionPresentation({
     ...ledgerRow(278, "final_passage", { control: true }),
@@ -128,7 +146,7 @@ test("a supplied final-passage label remains more specific than fallback questio
     question: "The exact final-package policy question remains unresolved.",
   });
   assert.equal(compact.title, "Final passage after amendments");
-  assert.equal(compact.status, "Governed non-counting control");
+  assert.equal(compact.status, "Non-counting control");
 });
 
 test("approved exact-action meaning supplies a concise title when official labels are absent", () => {

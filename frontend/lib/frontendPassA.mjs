@@ -182,6 +182,14 @@ export function filterActions(rows = [], filter = "all", highlightedIds = []) {
   return rows;
 }
 
+export function filterActionsByDimensions(
+  rows = [],
+  { vote = "all", type = "all" } = {},
+) {
+  const voteFiltered = filterActions(rows, vote);
+  return filterActions(voteFiltered, type);
+}
+
 export function resolveExactActionRequest(rows = [], requestedIds = []) {
   const ordered = chronologicalActions(rows);
   const matchingRows = filterActions(ordered, "highlighted", requestedIds);

@@ -1,6 +1,7 @@
 const RAW_REVIEW_PROCESS_DISCLOSURE = /\b(?:about this interpretation|human[- ]reviewed|review(?:ed| status)? on|editorial process|provenance references?)\b/i;
 const STRUCTURALLY_INTERNAL = /(?:^|[\\/])(?:backend|docs|frontend|scripts)[\\/]|\.json\b|\b(?:candidate_content_)?sha-?256\b|\b(?:interpretation|content)[_ -]digest\b|\b[a-f0-9]{40,}\b|\b(?:implementation[_ -]?id|[a-z0-9-]+-implementation|acceptance[_ -](?:receipt|ref)|delegated[_ -]acceptance|launch[_ -]ratification|ratification[_ -](?:receipt|ref)|semantic[_ -]ir[_ -]acceptance)\b/i;
 const GENERIC_EPISODE_PROCESS = /^this action is one independently expandable part of the related policy episode\.?$/i;
+const GENERIC_RECEIPT_CAVEAT = /^(?:this (?:candidate|receipt|interpretation) does not establish|the (?:candidate|receipt|interpretation) does not establish|this receipt remains bounded to the reviewed|the reviewed interpretation remains a candidate)\b/i;
 
 export function buildPublicReceipt(row = {}) {
   const projection = row.governed_receipt_projection || null;
@@ -26,7 +27,6 @@ export function buildPublicReceipt(row = {}) {
     limitations: publicLimitations(
       projection?.caveats,
       row.uncertainty_note,
-      { governed: Boolean(projection?.caveats) },
     ),
     voteSources: publicSources(
       projection?.vote_sources || (row.source_url ? [row.source_url] : []),
@@ -39,13 +39,13 @@ export function buildPublicReceipt(row = {}) {
   };
 }
 
-export function publicLimitations(values, fallback = "", { governed = false } = {}) {
+export function publicLimitations(values, fallback = "") {
   const supplied = Array.isArray(values) && values.length ? values : [fallback];
   return supplied
     .filter((value) => typeof value === "string")
     .map((value) => value.trim())
     .filter(Boolean)
-    .filter((value) => isVoterRelevantLimitation(value, { governed }));
+    .filter(isVoterRelevantLimitation);
 }
 
 export function publicSources(values, kind = "action") {
@@ -62,9 +62,10 @@ export function publicSources(values, kind = "action") {
     });
 }
 
-function isVoterRelevantLimitation(value, { governed }) {
+function isVoterRelevantLimitation(value) {
   return !STRUCTURALLY_INTERNAL.test(value)
-    && (governed || !RAW_REVIEW_PROCESS_DISCLOSURE.test(value));
+    && !GENERIC_RECEIPT_CAVEAT.test(value)
+    && !RAW_REVIEW_PROCESS_DISCLOSURE.test(value);
 }
 
 function publicEpisodeRelationship(value) {
@@ -126,10 +127,10 @@ function actionSourceLabel(url) {
     return "Official cost estimate";
   }
   if (normalized.includes("/amendment/") || normalized.includes("hamdt")) {
-    return "Official amendment";
+    return "Bill or amendment text";
   }
   if (normalized.includes("/bill/") || normalized.includes("/bills/")) {
-    return "Official bill";
+    return "Bill or amendment text";
   }
   if (
     normalized.includes("committee-report")
@@ -141,5 +142,5 @@ function actionSourceLabel(url) {
   if (normalized.includes("/plaws/") || normalized.includes("public-law")) {
     return "Official law text";
   }
-  return "Official bill or amendment material";
+  return "Bill or amendment text";
 }
