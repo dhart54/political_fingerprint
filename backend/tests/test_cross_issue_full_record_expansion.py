@@ -44,7 +44,107 @@ METADATA = {
 }
 
 
+def summary(text: str) -> dict:
+    return {
+        "text": text,
+        "url": "https://api.congress.gov/v3/bill/119/hr/100/summaries?format=json",
+        "sha256": "e" * 64,
+        "source_id": "congress-summary:bill_119_hr_100",
+    }
+
+
 class CrossIssueExpansionTests(unittest.TestCase):
+    def test_defense_title_does_not_override_immigration_policy_area(self) -> None:
+        metadata = {
+            **METADATA,
+            "title": "Subterranean Border Defense Act",
+            "policy_area": "Immigration",
+        }
+        record = MODULE.build_candidate_record(
+            "NATIONAL_SECURITY_FOREIGN",
+            action(
+                question="On Motion to Suspend the Rules and Pass",
+                description="Subterranean Border Defense Act",
+                roll=63,
+            ),
+            metadata,
+            None,
+            None,
+        )
+        self.assertEqual(record["disposition"], "boundary_review_required")
+        self.assertEqual(
+            record["unresolved_reason"],
+            "missing_action_specific_cross_domain_evidence",
+        )
+
+    def test_hr495_cannot_be_auto_promoted_from_title(self) -> None:
+        metadata = {
+            **METADATA,
+            "title": "Subterranean Border Defense Act",
+            "policy_area": "Immigration",
+        }
+        record = MODULE.build_candidate_record(
+            "NATIONAL_SECURITY_FOREIGN",
+            action(
+                question="On Motion to Suspend the Rules and Pass",
+                description="Subterranean Border Defense Act",
+                roll=63,
+            ),
+            metadata,
+            None,
+            None,
+            summary(
+                "This bill requires recurring Customs and Border Protection reporting on illicit cross-border tunnels."
+            ),
+        )
+        self.assertEqual(record["disposition"], "exact_action_ineligible")
+        self.assertFalse(
+            record["cross_domain_boundary_evidence"]["supports_target_domain"]
+        )
+
+    def test_direct_canonical_policy_area_needs_no_deeper_source(self) -> None:
+        record = MODULE.build_candidate_record(
+            "NATIONAL_SECURITY_FOREIGN",
+            action(question="On Passage", description="Foreign Assistance Act"),
+            {
+                **METADATA,
+                "title": "Foreign Assistance Act",
+                "policy_area": "International Affairs",
+            },
+            None,
+            None,
+        )
+        self.assertEqual(record["disposition"], "proposed_in_scope_substantive")
+        self.assertEqual(record["issue_boundary_status"], "direct_target_policy_area")
+        self.assertIsNone(record["cross_domain_boundary_evidence"])
+
+    def test_cross_domain_measure_requires_and_uses_deeper_official_evidence(
+        self,
+    ) -> None:
+        record = MODULE.build_candidate_record(
+            "NATIONAL_SECURITY_FOREIGN",
+            action(question="On Passage", description="Combined Appropriations Act"),
+            {
+                **METADATA,
+                "title": "Military Construction Combined Appropriations Act",
+                "policy_area": "Economics and Public Finance",
+            },
+            None,
+            None,
+            summary(
+                "This bill provides Department of Defense military construction and NATO security investment funding."
+            ),
+        )
+        self.assertEqual(record["disposition"], "proposed_in_scope_substantive")
+        self.assertEqual(
+            record["issue_boundary_status"],
+            "retained_cross_domain_action_specific_official_evidence",
+        )
+        self.assertEqual(
+            record["exact_action_source_binding"]["source_type"],
+            "congress_gov_crs_summary",
+        )
+
     def test_exact_amendment_binding_owns_child_membership(self) -> None:
         amendment = {
             "identity": "119:hamdt:20",
@@ -129,6 +229,49 @@ class CrossIssueExpansionTests(unittest.TestCase):
         self.assertEqual(accounting["substantive_eligible_actions"], 0)
         self.assertEqual(accounting["procedural_context_actions"], 1)
         self.assertEqual(accounting["expressive_nonbinding_actions"], 1)
+
+    def test_cross_measure_war_powers_notes_do_not_affect_episode_counts(self) -> None:
+        records = []
+        for roll, number in ((80, 10), (81, 11)):
+            vote = action(
+                question="On Agreeing to the Resolution",
+                description="Directing removal of Armed Forces from hostilities with Iran",
+                roll=roll,
+            )
+            vote["bill_ref"] = f"bill_119_hconres_{number}"
+            records.append(
+                MODULE.build_candidate_record(
+                    "NATIONAL_SECURITY_FOREIGN",
+                    vote,
+                    {
+                        **METADATA,
+                        "title": "Directing removal of Armed Forces from hostilities with Iran",
+                    },
+                    None,
+                    None,
+                )
+            )
+        accounting = MODULE.domain_accounting("NATIONAL_SECURITY_FOREIGN", records)
+        future = MODULE.future_episode_review_candidates(records)
+        self.assertEqual(accounting["independent_episode_count"], 2)
+        self.assertEqual(accounting["multi_action_episode_count"], 0)
+        self.assertEqual(len(future), 1)
+        self.assertFalse(future[0]["contributes_to_m11a_episode_accounting"])
+
+    def test_same_parent_multi_action_episode_still_counts(self) -> None:
+        records = [
+            MODULE.build_candidate_record(
+                "NATIONAL_SECURITY_FOREIGN",
+                action(question="On Passage", roll=roll),
+                METADATA,
+                None,
+                None,
+            )
+            for roll in (12, 13)
+        ]
+        accounting = MODULE.domain_accounting("NATIONAL_SECURITY_FOREIGN", records)
+        self.assertEqual(accounting["independent_episode_count"], 1)
+        self.assertEqual(accounting["multi_action_episode_count"], 1)
 
 
 if __name__ == "__main__":

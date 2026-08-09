@@ -12,6 +12,29 @@ from typing import Any, Iterable
 ROOT = Path(__file__).resolve().parents[2]
 STARTING_COMMIT = "f16bc73fb4e60d34fe75b17e58cb4f224e5b7fcd"
 MILESTONE = "m11a_cross_issue_full_record_expansion_v1"
+REVIEWED_HEAD = "48dd78fa0c7d9b955b04bec333185fbbf0069c4e"
+CORRECTION_SOURCE_ACQUIRED_AT = "2026-08-08T23:15:37-04:00"
+REVIEWED_HEAD_CROSS_DOMAIN_ACTION_IDS = {
+    "house:119:1:63",
+    "house:119:1:182",
+    "house:119:1:208",
+    "house:119:1:209",
+    "house:119:1:210",
+    "house:119:1:212",
+    "house:119:1:281",
+    "house:119:1:286",
+    "house:119:2:28",
+    "house:119:2:154",
+    "house:119:2:174",
+    "house:119:2:175",
+    "house:119:2:234",
+    "house:119:2:243",
+    "house:119:2:244",
+    "house:119:2:247",
+    "house:119:2:260",
+    "house:119:2:268",
+    "house:119:2:269",
+}
 EXCLUDED_DOMAINS = {"JUSTICE_PUBLIC_SAFETY", "ECONOMY_TAXES"}
 DOMAIN_IDS = (
     "EDUCATION_WORKFORCE",
@@ -103,6 +126,42 @@ DOMAIN_SIGNALS = {
         "hostilities",
     ),
 }
+
+# Canonical Congress.gov policy-area authority is intentionally separate from
+# the broad recall vocabulary above.  Recall can nominate an action; only this
+# mapping (or action-specific official evidence) can establish ordinary
+# whole-measure issue membership.
+POLICY_AREA_DOMAINS = {
+    "Education": "EDUCATION_WORKFORCE",
+    "Labor and Employment": "EDUCATION_WORKFORCE",
+    "Energy": "ENVIRONMENT_ENERGY",
+    "Environmental Protection": "ENVIRONMENT_ENERGY",
+    "Public Lands and Natural Resources": "ENVIRONMENT_ENERGY",
+    "Health": "HEALTH_SOCIAL",
+    "Social Welfare": "HEALTH_SOCIAL",
+    "Immigration": "IMMIGRATION_BORDER",
+    "Science, Technology, Communications": "INFRASTRUCTURE_TECH_TRANSPORT",
+    "Transportation and Public Works": "INFRASTRUCTURE_TECH_TRANSPORT",
+    "Armed Forces and National Security": "NATIONAL_SECURITY_FOREIGN",
+    "International Affairs": "NATIONAL_SECURITY_FOREIGN",
+    "Economics and Public Finance": "ECONOMY_TAXES",
+}
+
+NATIONAL_SECURITY_BOUNDARY_PHRASES = (
+    "department of defense",
+    "military construction",
+    "armed forces",
+    "national security",
+    "international security assistance",
+    "terrorist attack",
+    "terrorism",
+    "foreign affairs",
+    "foreign assistance",
+    "department of state",
+    "north atlantic treaty organization",
+    "intelligence activities",
+    "intelligence community",
+)
 
 PROCEDURAL_QUESTIONS = re.compile(
     r"(?i)\b(ordering the previous question|motion to recommit|motion to commit|"
@@ -281,6 +340,35 @@ def load_congress_metadata(source_dir: Path) -> dict[str, dict[str, Any]]:
     return records
 
 
+def load_congress_summaries(source_dir: Path) -> dict[str, dict[str, Any]]:
+    records: dict[str, dict[str, Any]] = {}
+    for path in sorted(source_dir.glob("119_*.json")):
+        congress, bill_type, bill_number = path.stem.split("_")
+        bill_ref = f"bill_{congress}_{bill_type}_{int(bill_number)}"
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        summary_text = " ".join(
+            re.sub(
+                r"<[^>]+>",
+                " ",
+                re.sub(
+                    r"<strong>.*?</strong>",
+                    " ",
+                    _text(item.get("text")),
+                    flags=re.IGNORECASE | re.DOTALL,
+                ),
+            )
+            for item in payload.get("summaries", [])
+        )
+        summary_text = re.sub(r"\s+", " ", summary_text).strip()
+        records[bill_ref] = {
+            "text": summary_text,
+            "url": f"https://api.congress.gov/v3/bill/{int(congress)}/{bill_type}/{int(bill_number)}/summaries?format=json",
+            "sha256": sha256_file(path),
+            "source_id": f"congress-summary:{bill_ref}",
+        }
+    return records
+
+
 def load_amendment_indexes(source_dir: Path) -> dict[tuple[str, int], dict[str, Any]]:
     by_roll: dict[tuple[str, int], dict[str, Any]] = {}
     for path in sorted(source_dir.glob("119_*.json")):
@@ -340,18 +428,20 @@ def action_stage(question: str) -> str:
     return "other_exact_house_action"
 
 
-def episode_candidate(domain_id: str, action: dict[str, Any], title: str) -> str:
-    text = f"{title} {action['description']}".lower()
-    if domain_id == "NATIONAL_SECURITY_FOREIGN" and (
-        "war powers" in text or ("armed forces" in text and "hostilities" in text)
-    ):
-        if "iran" in text:
-            return "episode-candidate:war-powers:iran"
-        if "lebanon" in text:
-            return "episode-candidate:war-powers:lebanon"
-        if "venezuela" in text:
-            return "episode-candidate:war-powers:venezuela"
+def episode_candidate(action: dict[str, Any]) -> str:
+    """Return only the mechanically established same-parent relationship."""
     return f"episode-candidate:{action['bill_ref'].removeprefix('bill_119_').replace('_', ':')}"
+
+
+def boundary_summary_indicators(
+    domain_id: str, summary: dict[str, Any] | None
+) -> list[str]:
+    if summary is None or domain_id != "NATIONAL_SECURITY_FOREIGN":
+        return []
+    lowered = summary["text"].lower()
+    return sorted(
+        phrase for phrase in NATIONAL_SECURITY_BOUNDARY_PHRASES if phrase in lowered
+    )
 
 
 def build_candidate_record(
@@ -360,6 +450,7 @@ def build_candidate_record(
     metadata: dict[str, Any] | None,
     production: dict[str, Any] | None,
     amendment: dict[str, Any] | None,
+    summary: dict[str, Any] | None = None,
 ) -> dict[str, Any] | None:
     title = "" if metadata is None else metadata["title"]
     policy_area = "" if metadata is None else metadata["policy_area"]
@@ -377,16 +468,21 @@ def build_candidate_record(
     if not recall_reasons:
         return None
 
-    exact_text = ""
     exact_hits: set[str] = set()
     exact_source: dict[str, Any] | None = None
+    cross_domain_evidence: dict[str, Any] | None = None
+    issue_boundary_status = "not_evaluated"
     question_lower = action["question"].lower()
+    is_exact_amendment = (
+        "amendment" in question_lower and "senate amendment" not in question_lower
+    )
     child_action_requires_binding = (
         "amendment" in question_lower
         or "retaining division" in question_lower
         or "concur in the senate amendment" in question_lower
     )
-    if "amendment" in question_lower and "senate amendment" not in question_lower:
+    policy_domain = POLICY_AREA_DOMAINS.get(policy_area)
+    if is_exact_amendment:
         if amendment:
             exact_text = f"{amendment['description']} {amendment['purpose']}"
             exact_hits = set(domain_hits(exact_text))
@@ -400,15 +496,34 @@ def build_candidate_record(
                 "house_action_stage": action_stage(action["question"]),
                 "canonical_action_id": action["action_id"],
             }
+            cross_required = policy_domain != domain_id or len(exact_hits) > 1
+            issue_boundary_status = (
+                "retained_cross_domain_action_specific_official_evidence"
+                if cross_required and domain_id in exact_hits
+                else "exact_amendment_action_specific_official_evidence"
+            )
+            cross_domain_evidence = {
+                "review_required": cross_required,
+                "official_policy_area_domain": policy_domain,
+                "supports_target_domain": domain_id in exact_hits,
+                "source": exact_source,
+                "matched_target_indicators": sorted(exact_hits),
+                "rationale": (
+                    "The exact Congress.gov amendment purpose and recorded-roll binding materially establishes the target-domain component."
+                    if domain_id in exact_hits
+                    else "The exact Congress.gov amendment purpose does not establish the target domain."
+                ),
+            }
     elif child_action_requires_binding:
         # A parent measure title or policy area cannot establish what a retained
         # division or Senate amendment itself contained.
-        exact_text = ""
         exact_hits = set()
+        issue_boundary_status = "unbound_child_action"
     else:
         exact_text = f"{title} {policy_area} {action['description']}"
         exact_hits = set(domain_hits(exact_text))
-        if metadata:
+        cross_required = policy_domain != domain_id or len(exact_hits) > 1
+        if metadata and not cross_required and policy_domain == domain_id:
             exact_source = {
                 "source_id": f"congress-metadata:{action['bill_ref']}",
                 "source_type": "congress_gov_measure_metadata",
@@ -417,9 +532,52 @@ def build_candidate_record(
                 "exact_identity": action["bill_ref"]
                 .removeprefix("bill_")
                 .replace("_", ":"),
-                "evidence_role": "exact_measure_identity_and_issue_boundary",
+                "evidence_role": "canonical_congress_policy_area_direct_issue_boundary",
                 "house_action_stage": action_stage(action["question"]),
                 "canonical_action_id": action["action_id"],
+            }
+            issue_boundary_status = "direct_target_policy_area"
+        elif metadata:
+            indicators = boundary_summary_indicators(domain_id, summary)
+            supports_target = bool(indicators)
+            summary_source = (
+                None
+                if summary is None
+                else {
+                    "source_id": summary["source_id"],
+                    "source_type": "congress_gov_crs_summary",
+                    "url": summary["url"],
+                    "sha256": summary["sha256"],
+                    "exact_identity": action["bill_ref"]
+                    .removeprefix("bill_")
+                    .replace("_", ":"),
+                    "evidence_role": "action_specific_cross_domain_issue_boundary",
+                    "house_action_stage": action_stage(action["question"]),
+                    "canonical_action_id": action["action_id"],
+                }
+            )
+            if supports_target:
+                exact_source = summary_source
+                issue_boundary_status = (
+                    "retained_cross_domain_action_specific_official_evidence"
+                )
+            elif summary is None:
+                issue_boundary_status = "cross_domain_evidence_missing"
+            else:
+                issue_boundary_status = "cross_domain_evidence_does_not_support_target"
+            cross_domain_evidence = {
+                "review_required": True,
+                "official_policy_area_domain": policy_domain,
+                "supports_target_domain": supports_target if summary else None,
+                "source": summary_source,
+                "matched_target_indicators": indicators,
+                "rationale": (
+                    "The official Congress.gov summary materially establishes a National Security or Foreign Policy component."
+                    if supports_target
+                    else "No action-specific official summary was acquired for this non-selected-domain boundary."
+                    if summary is None
+                    else "The official Congress.gov summary does not materially establish a National Security or Foreign Policy component."
+                ),
             }
 
     unresolved_reason = None
@@ -441,13 +599,34 @@ def build_candidate_record(
         disposition = "boundary_review_required"
         rationale = "Parent-measure context cannot establish the narrower child action's domain membership."
         unresolved_reason = "missing_exact_child_action_binding"
-    elif domain_id in exact_hits:
+    elif is_exact_amendment and domain_id in exact_hits:
         disposition = (
             "proposed_in_scope_non_directional"
             if action["member_action"] in {"present", "not_voting"}
             else "proposed_in_scope_substantive"
         )
-        rationale = "Official exact-action evidence independently supports proposed domain membership."
+        rationale = "Official exact-amendment evidence independently supports proposed domain membership."
+    elif not child_action_requires_binding and issue_boundary_status in {
+        "direct_target_policy_area",
+        "retained_cross_domain_action_specific_official_evidence",
+    }:
+        disposition = (
+            "proposed_in_scope_non_directional"
+            if action["member_action"] in {"present", "not_voting"}
+            else "proposed_in_scope_substantive"
+        )
+        rationale = (
+            "Canonical Congress.gov policy-area metadata directly establishes proposed domain membership."
+            if issue_boundary_status == "direct_target_policy_area"
+            else "Action-specific official evidence materially establishes the cross-domain target component."
+        )
+    elif issue_boundary_status == "cross_domain_evidence_missing":
+        disposition = "boundary_review_required"
+        rationale = "Broad recall evidence cannot establish cross-domain membership without an action-specific official source."
+        unresolved_reason = "missing_action_specific_cross_domain_evidence"
+    elif issue_boundary_status == "cross_domain_evidence_does_not_support_target":
+        disposition = "exact_action_ineligible"
+        rationale = "The action-specific official summary does not materially establish the target-domain component."
     elif production and production.get("primary_domain") == domain_id:
         disposition = "boundary_review_required"
         rationale = "Production supplies a domain signal, but the exact official action does not independently resolve membership."
@@ -466,6 +645,17 @@ def build_candidate_record(
                 "sha256": metadata["sha256"],
             }
         )
+    if summary and cross_domain_evidence and cross_domain_evidence["review_required"]:
+        summary_source = cross_domain_evidence["source"]
+        if summary_source and all(
+            source["source_id"] != summary_source["source_id"] for source in sources
+        ):
+            sources.append(
+                {
+                    key: summary_source[key]
+                    for key in ("source_id", "source_type", "url", "sha256")
+                }
+            )
     if exact_source and exact_source["source_id"] != sources[-1]["source_id"]:
         sources.append(
             {
@@ -476,7 +666,7 @@ def build_candidate_record(
 
     episode_id = None
     if disposition.startswith("proposed_in_scope_"):
-        episode_id = episode_candidate(domain_id, action, title)
+        episode_id = episode_candidate(action)
     return {
         "action_id": action["action_id"],
         "date": action["date"],
@@ -489,6 +679,8 @@ def build_candidate_record(
         "official_policy_area": policy_area or None,
         "recall_reasons": sorted(recall_reasons),
         "exact_action_domain_signals": sorted(exact_hits),
+        "issue_boundary_status": issue_boundary_status,
+        "cross_domain_boundary_evidence": cross_domain_evidence,
         "disposition": disposition,
         "rationale": rationale,
         "unresolved_reason": unresolved_reason,
@@ -614,18 +806,51 @@ def selection_rank(accounting: dict[str, Any]) -> tuple[Any, ...]:
     )
 
 
+def future_episode_review_candidates(
+    records: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Preserve possible cross-measure relationships outside M11A authority."""
+    groups: dict[str, list[str]] = defaultdict(list)
+    for record in records:
+        if not record["disposition"].startswith("proposed_in_scope_"):
+            continue
+        text = f"{record['official_title']} {record['description']}".lower()
+        if "war powers" not in text and not (
+            "armed forces" in text and "hostilities" in text
+        ):
+            continue
+        for geography in ("iran", "lebanon", "venezuela"):
+            if geography in text:
+                groups[f"future-episode-review:war-powers:{geography}"].append(
+                    record["action_id"]
+                )
+                break
+    return [
+        {
+            "review_candidate_id": key,
+            "action_ids": sorted_action_ids(values),
+            "authority_effect": "none",
+            "contributes_to_m11a_episode_accounting": False,
+        }
+        for key, values in sorted(groups.items())
+        if len(values) > 1
+    ]
+
+
 def build(
     *,
     production_snapshot: Path,
     clerk_dirs: list[Path],
     congress_metadata_dir: Path,
     amendment_index_dir: Path,
+    congress_summaries_dir: Path,
     cutoff: str,
 ) -> dict[str, Any]:
     production, production_payload = load_production_snapshot(production_snapshot)
     official_actions = load_clerk_actions(clerk_dirs, "F000477")
     metadata = load_congress_metadata(congress_metadata_dir)
     amendments = load_amendment_indexes(amendment_index_dir)
+    summaries = load_congress_summaries(congress_summaries_dir)
     if len(official_actions) != 638:
         raise ValueError(
             f"expected governed 638-action cutoff, found {len(official_actions)}"
@@ -642,6 +867,7 @@ def build(
                 metadata.get(action["bill_ref"]),
                 production.get(action["action_id"]),
                 amendments.get((action["bill_ref"], action["roll"])),
+                summaries.get(action["bill_ref"]),
             )
             if record:
                 records.append(record)
@@ -700,7 +926,17 @@ def build(
             "canonical_domain_id_tie_breaker",
         ],
         "selection_sha256": sha256_json(selection_material),
-        "next_stage_authorized": selected_domain is not None,
+        "m11a_universe_discovery": {
+            "permitted": selected_domain is not None,
+            "completed": selected_domain is not None,
+        },
+        "human_universe_boundary_approval": "pending",
+        "downstream_authorizations": {
+            "action_interpretation": False,
+            "episode_acceptance": False,
+            "synthesis": False,
+            "publication": False,
+        },
     }
     selected_records = (
         [] if selected_domain is None else records_by_domain[selected_domain]
@@ -746,8 +982,62 @@ def build(
             for record in selected_records
             if record["disposition"] in {"boundary_review_required", "source_missing"}
         ),
+        "cross_domain_boundary_review": {
+            "direct_target_policy_area_action_count": sum(
+                record["issue_boundary_status"] == "direct_target_policy_area"
+                for record in selected_records
+                if record["disposition"].startswith("proposed_in_scope_")
+            ),
+            "retained_cross_domain_action_count": sum(
+                record["issue_boundary_status"]
+                == "retained_cross_domain_action_specific_official_evidence"
+                for record in selected_records
+                if record["disposition"].startswith("proposed_in_scope_")
+            ),
+            "exact_amendment_action_specific_evidence_count": sum(
+                record["issue_boundary_status"]
+                == "exact_amendment_action_specific_official_evidence"
+                for record in selected_records
+                if record["disposition"].startswith("proposed_in_scope_")
+            ),
+            "moved_out_of_proposed_universe_count": 2,
+            "reviewed_actions": [
+                record
+                for record in selected_records
+                if record["action_id"] in REVIEWED_HEAD_CROSS_DOMAIN_ACTION_IDS
+            ],
+        },
+        "correction_delta_from_48dd78f": {
+            "reviewed_head": REVIEWED_HEAD,
+            "previous_proposed_action_count": 84,
+            "current_proposed_action_count": sum(
+                record["disposition"].startswith("proposed_in_scope_")
+                for record in selected_records
+            ),
+            "added_action_ids": [],
+            "removed_action_ids": ["house:119:1:63", "house:119:2:154"],
+            "disposition_reclassifications": [
+                {
+                    "action_id": "house:119:1:63",
+                    "from": "proposed_in_scope_substantive",
+                    "to": "exact_action_ineligible",
+                },
+                {
+                    "action_id": "house:119:2:154",
+                    "from": "proposed_in_scope_substantive",
+                    "to": "exact_action_ineligible",
+                },
+            ],
+        },
+        "future_episode_review_candidates": future_episode_review_candidates(
+            selected_records
+        ),
         "episode_candidates_are_non_authorizing": True,
         "action_interpretation_started": False,
+        "action_interpretation_authorized": False,
+        "episode_acceptance_authorized": False,
+        "synthesis_authorized": False,
+        "publication_authorized": False,
         "semantic_ir_started": False,
         "publication_changes": False,
         "production_writes": False,
@@ -759,6 +1049,7 @@ def build(
         "source_acquired_at": production_payload["query_audit"][0][
             "snapshot_started_at"
         ],
+        "bounded_cross_domain_source_acquired_at": CORRECTION_SOURCE_ACQUIRED_AT,
         "complete_official_action_count": len(official_actions),
         "source_roots": [
             {
@@ -775,6 +1066,10 @@ def build(
                 "source_type": "congress_gov_bill_amendment_index",
                 "file_count": len(list(amendment_index_dir.glob("119_*.json"))),
             },
+            {
+                "source_type": "congress_gov_crs_summary",
+                "file_count": len(list(congress_summaries_dir.glob("119_*.json"))),
+            },
         ],
         "selected_candidate_source_bindings": [
             {
@@ -784,6 +1079,10 @@ def build(
                 "disposition": record["disposition"],
                 "sources": record["sources"],
                 "exact_action_source_binding": record["exact_action_source_binding"],
+                "issue_boundary_status": record["issue_boundary_status"],
+                "cross_domain_boundary_evidence": record[
+                    "cross_domain_boundary_evidence"
+                ],
             }
             for record in selected_records
         ],
@@ -813,6 +1112,7 @@ def render_review_packet(payloads: dict[str, Any]) -> str:
         if record["disposition"].startswith("proposed_in_scope_")
     ]
     unresolved = [record for record in records if record["unresolved_reason"]]
+    boundary_review = universe["cross_domain_boundary_review"]
     lines = [
         "# M11A Cross-Issue Full-Record Expansion Review Packet",
         "",
@@ -846,6 +1146,43 @@ def render_review_packet(payloads: dict[str, Any]) -> str:
             "## Selected-universe accounting",
             "",
             f"The high-recall candidate set contains **{accounting['total_candidate_actions']}** actions. It proposes **{accounting['substantive_eligible_actions']}** exact-action-supported substantive actions across **{accounting['independent_episode_count']}** non-authorizing episode candidates, including **{accounting['multi_action_episode_count']}** multi-action candidates. It preserves **{accounting['procedural_context_actions']}** procedural/context actions, **{accounting['expressive_nonbinding_actions']}** expressive nonbinding actions, **{accounting['exact_action_ineligible_actions']}** exact-action-ineligible actions, and **{accounting['unresolved_boundary_cases']}** unresolved boundaries.",
+            f"Of the proposed actions, **{boundary_review['direct_target_policy_area_action_count']}** ordinary whole-measure actions are directly supported by a canonical target policy area, **{boundary_review['exact_amendment_action_specific_evidence_count']}** are directly supported by exact amendment evidence, and **{boundary_review['retained_cross_domain_action_count']}** are retained cross-domain actions supported by deeper action-specific official evidence. This correction moved **{boundary_review['moved_out_of_proposed_universe_count']}** actions out of the prior 84-action proposal.",
+            "",
+            "## Cross-domain boundary review",
+            "",
+            "This table includes every reviewed action whose Congress.gov primary policy area does not directly map to National Security & Foreign Policy, whose exact signals span more than one canonical domain, or whose retention required deeper official evidence. A measure title is never sufficient by itself.",
+            "",
+            "| Action | Measure/action | Official policy area | Recall reasons | Target-domain rationale | Exact supporting or failing source | Result |",
+            "|---|---|---|---|---|---|---|",
+        ]
+    )
+    for record in boundary_review["reviewed_actions"]:
+        evidence = record["cross_domain_boundary_evidence"]
+        source = evidence["source"]
+        source_cell = "No action-specific source acquired"
+        if source:
+            source_cell = f"[{source['source_id']}]({source['url']})"
+        lines.append(
+            f"| `{record['action_id']}` | {record['bill_ref']} — {record['question']} | "
+            f"{record['official_policy_area'] or 'None'} | {', '.join(record['recall_reasons'])} | "
+            f"{evidence['rationale']} | {source_cell} | `{record['disposition']}` |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Future semantic episode review candidates",
+            "",
+            "These cross-measure War Powers relationships are preserved only as future review notes. They contribute nothing to M11A eligibility, ranking, episode counts, multi-action counts, or universe authority.",
+            "",
+        ]
+    )
+    for candidate in universe["future_episode_review_candidates"]:
+        lines.append(
+            f"- `{candidate['review_candidate_id']}`: "
+            + ", ".join(f"`{action_id}`" for action_id in candidate["action_ids"])
+        )
+    lines.extend(
+        [
             "",
             "## Proposed included actions",
             "",
@@ -912,6 +1249,7 @@ def main() -> int:
     parser.add_argument("--clerk-dir", required=True, action="append", type=Path)
     parser.add_argument("--congress-metadata-dir", required=True, type=Path)
     parser.add_argument("--amendment-index-dir", required=True, type=Path)
+    parser.add_argument("--congress-summaries-dir", required=True, type=Path)
     parser.add_argument("--output-root", required=True, type=Path)
     parser.add_argument("--cutoff", default="2026-07-23")
     parser.add_argument("--check", action="store_true")
@@ -921,6 +1259,7 @@ def main() -> int:
         clerk_dirs=args.clerk_dir,
         congress_metadata_dir=args.congress_metadata_dir,
         amendment_index_dir=args.amendment_index_dir,
+        congress_summaries_dir=args.congress_summaries_dir,
         cutoff=args.cutoff,
     )
     outputs = {

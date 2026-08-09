@@ -57,24 +57,27 @@
 
 - The official House Clerk index remains complete through roll 283 on July 23, 2026.
 - National Security & Foreign Policy is the only eligible non-excluded domain after exact child-action binding is enforced.
-- The selected high-recall set has 149 candidates: 84 proposed substantive, 33 procedural/context, two expressive, 24 exact-action ineligible, and six unresolved.
-- The 84 proposed actions form 47 non-authorizing episode candidates, seven with multiple actions.
-- All proposed actions have exact official membership evidence; six narrower child actions without exact bindings remain unresolved and excluded.
+- The corrected selected high-recall set has 149 candidates: 82 proposed substantive, 33 procedural/context, two expressive, 26 exact-action ineligible, and six unresolved.
+- The 82 proposed actions form 50 mechanically same-parent, non-authorizing episode candidates, five with multiple actions.
+- Forty-two whole-measure actions have direct target-policy-area authority, 23 amendments have exact action-specific authority, and 17 cross-domain actions are retained with deeper official evidence.
+- H.R. 495 and H.R. 7567 moved out of the proposal because their official summaries do not materially establish National Security membership; six narrower child actions without exact bindings remain unresolved and excluded.
 
 ## Decisions And Rationale
 
 - Selection ranks only official-source completeness, independent episode count, mechanism variation, legitimate multi-action episodes, smallest unresolved boundary, and canonical ID tie-breaking.
 - Parent-measure policy area and title are recall aids only. They never establish narrower child-action membership.
-- Episode grouping is labeled non-authorizing because this milestone discovers a boundary; it does not approve semantic episodes.
+- A title hit cannot override a non-target official policy area; cross-domain retention requires deeper action-specific official evidence.
+- Counted episode grouping uses only same-parent legislative identity and remains non-authorizing. Possible cross-measure War Powers relationships are future review notes with no M11A authority effect.
 
 ## Deviations Or Corrections
 
 - An initial Environment & Energy result incorrectly treated retained divisions of an appropriations measure as if the parent title established their issue meaning. The builder was corrected to require exact child-action binding; the affected rows became unresolved rather than substantive, leaving National Security & Foreign Policy as the only eligible domain.
+- Human review of head `48dd78f` found recall keywords were still being used as ordinary whole-measure boundary authority and that cross-measure War Powers grouping affected counts. The bounded correction separates canonical policy-area/deeper-source authority from recall, removes semantic grouping from accounting, and makes every downstream authorization explicitly false.
 
 ## Validation Results
 
 - M11A schema, accounting, exact-source, digest, unresolved-boundary, and source-inventory validator: passed.
-- Focused amendment parent/child, cross-domain, procedural, and expressive tests: 4 passed.
+- Focused policy-authority, parent/child, cross-domain, procedural, expressive, and episode-accounting tests: 10 passed.
 - Deterministic generated-artifact check: passed.
 - Justice Editorial Semantic IR validator and regression suite: passed; 26 tests.
 - Full-Record Issue Interpretation validator and regression suite: passed; 19 tests.
@@ -98,6 +101,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: yes; implementation and validation are complete, with draft PR creation as the delivery operation.
+- Definition of done satisfied: yes; implementation and validation are complete, with a bounded correction commit to the existing draft PR as the delivery operation.
 - Remaining limitations: six exact child-action boundaries remain unresolved and excluded; episode candidates are not accepted episodes.
 - Recommended next step: human review of the domain selection and complete universe-boundary packet.

@@ -105,6 +105,18 @@ def validate() -> None:
         selection["eligible_domains_ranked"] == ["NATIONAL_SECURITY_FOREIGN"],
         "eligible ranking drifted",
     )
+    require(
+        selection["m11a_universe_discovery"] == {"permitted": True, "completed": True},
+        "M11A discovery gate is ambiguous",
+    )
+    require(
+        selection["human_universe_boundary_approval"] == "pending",
+        "human universe approval was inferred",
+    )
+    require(
+        set(selection["downstream_authorizations"].values()) == {False},
+        "a downstream stage was authorized",
+    )
 
     for domain in selection["candidate_domains"]:
         disposition_counts = sum(
@@ -158,8 +170,25 @@ def validate() -> None:
         "unresolved action entered proposed universe",
     )
     require(
-        len(proposed) == 84 and len(unresolved) == 6,
+        len(proposed) == 82 and len(unresolved) == 6,
         "selected universe accounting drifted",
+    )
+    require(
+        universe["accounting"]["independent_episode_count"] == 50
+        and universe["accounting"]["multi_action_episode_count"] == 5,
+        "mechanical episode accounting drifted",
+    )
+    require(
+        all(
+            universe[field] is False
+            for field in (
+                "action_interpretation_authorized",
+                "episode_acceptance_authorized",
+                "synthesis_authorized",
+                "publication_authorized",
+            )
+        ),
+        "universe artifact authorizes a downstream stage",
     )
 
     for record in proposed:
@@ -191,6 +220,17 @@ def validate() -> None:
                 binding["source_type"] == "congress_gov_bill_amendment_index",
                 f"{record['action_id']} inherited parent-measure meaning",
             )
+        elif record["issue_boundary_status"] == "direct_target_policy_area":
+            require(
+                binding["source_type"] == "congress_gov_measure_metadata",
+                f"{record['action_id']} direct policy-area authority drifted",
+            )
+        else:
+            evidence = record["cross_domain_boundary_evidence"]
+            require(
+                evidence is not None and evidence["supports_target_domain"] is True,
+                f"{record['action_id']} lacks explicit cross-domain support",
+            )
 
     for record in unresolved:
         require(
@@ -202,6 +242,69 @@ def validate() -> None:
                 record["exact_action_source_binding"] is None,
                 "unresolved child action inherited a parent binding",
             )
+
+    by_id = {record["action_id"]: record for record in records}
+    for action_id in ("house:119:1:63", "house:119:2:154"):
+        require(
+            by_id[action_id]["disposition"] == "exact_action_ineligible",
+            f"{action_id} was auto-promoted from title vocabulary",
+        )
+        evidence = by_id[action_id]["cross_domain_boundary_evidence"]
+        require(
+            evidence["supports_target_domain"] is False,
+            f"{action_id} failing boundary evidence is not explicit",
+        )
+
+    episode_by_id = {
+        episode["episode_candidate_id"]: episode
+        for episode in universe["accounting"]["episodes"]
+    }
+    for episode_id, episode in episode_by_id.items():
+        bill_refs = {
+            by_id[action_id]["bill_ref"] for action_id in episode["action_ids"]
+        }
+        require(len(bill_refs) == 1, f"{episode_id} combines separate parent measures")
+        require(
+            "war-powers" not in episode_id,
+            "semantic War Powers episode entered accounting",
+        )
+    require(
+        all(
+            candidate["contributes_to_m11a_episode_accounting"] is False
+            and candidate["authority_effect"] == "none"
+            for candidate in universe["future_episode_review_candidates"]
+        ),
+        "future semantic episode candidate affects M11A authority",
+    )
+
+    boundary = universe["cross_domain_boundary_review"]
+    require(
+        boundary["direct_target_policy_area_action_count"] == 42
+        and boundary["exact_amendment_action_specific_evidence_count"] == 23
+        and boundary["retained_cross_domain_action_count"] == 17
+        and boundary["moved_out_of_proposed_universe_count"] == 2,
+        "cross-domain correction accounting drifted",
+    )
+    require(
+        len(boundary["reviewed_actions"]) == 19,
+        "cross-domain review table does not cover the reviewed-head cases",
+    )
+    require(
+        all(
+            record["cross_domain_boundary_evidence"] is not None
+            for record in boundary["reviewed_actions"]
+        ),
+        "cross-domain review row lacks explicit evidence",
+    )
+    delta = universe["correction_delta_from_48dd78f"]
+    require(
+        delta["reviewed_head"] == "48dd78fa0c7d9b955b04bec333185fbbf0069c4e"
+        and delta["previous_proposed_action_count"] == 84
+        and delta["current_proposed_action_count"] == 82
+        and delta["added_action_ids"] == []
+        and delta["removed_action_ids"] == ["house:119:1:63", "house:119:2:154"],
+        "reviewed-head correction delta drifted",
+    )
 
     universe_material = {
         "subject": universe["subject"],
@@ -235,6 +338,12 @@ def validate() -> None:
         require(
             row["house_action_stage"] == record["house_action_stage"],
             "source inventory stage mismatch",
+        )
+        require(
+            row["issue_boundary_status"] == record["issue_boundary_status"]
+            and row["cross_domain_boundary_evidence"]
+            == record["cross_domain_boundary_evidence"],
+            "source inventory boundary evidence mismatch",
         )
 
 
