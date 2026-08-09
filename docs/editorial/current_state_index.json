@@ -478,7 +478,11 @@
       "issue_id": "NATIONAL_SECURITY_FOREIGN"
     },
     "post_m11e_merge_base": "bf2f6f7f9c132c06b614f1d0bf59e50b21817c2a",
-    "milestone_state": "complete_pending_human_mechanical_review",
+    "milestone_state": "completed_human_mechanically_accepted",
+    "human_mechanical_review": "accepted",
+    "accepted_pr": 138,
+    "accepted_head": "326baa61ec44c5a560b98e3208ec990ff9bd2308",
+    "post_merge_main": "43caaf4b0087ab473ee771ed9c8c4acde68be554",
     "authority_effect": "canonical_internal_policy_episode_membership_only",
     "human_episode_decision_count": 74,
     "accepted_as_written_decision_count": 70,
@@ -518,7 +522,7 @@
     ],
     "relationship_evidence_state": "preserved_non_primary_non_authorizing",
     "internal_episode_state": "human_accepted_canonical_internal_organization",
-    "semantic_ir_state": "absent_not_authorized",
+    "semantic_ir_state": "m11g_candidate_generation_in_progress_not_accepted",
     "synthesis_state": "absent_not_authorized",
     "public_wording_state": "absent_not_authorized",
     "publication_state": "inactive",
@@ -526,6 +530,67 @@
     "production_writes": false,
     "downstream_authorizations": {
       "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "deployment": false
+    }
+  },
+  "active_behavioral_semantic_ir_candidate_milestone": {
+    "milestone": "m11g_national_security_behavioral_semantic_ir_candidates_v1",
+    "plan": "docs/plans/m11g_national_security_behavioral_semantic_ir_candidates_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "NATIONAL_SECURITY_FOREIGN"
+    },
+    "post_m11f_merge_base": "43caaf4b0087ab473ee771ed9c8c4acde68be554",
+    "milestone_state": "complete_pending_human_substantive_review",
+    "authority_effect": "detached_non_authorizing_behavioral_semantic_ir_candidates_only",
+    "accepted_episode_count": 81,
+    "proposed_repeated_pattern_count": 4,
+    "proposed_notable_choice_count": 0,
+    "proposed_trajectory_count": 0,
+    "proposition_episode_count": 11,
+    "unused_episode_count": 70,
+    "limit_or_contrast_episode_count": 39,
+    "no_safe_higher_level_proposition_episode_count": 31,
+    "overlapping_primary_owner_count": 0,
+    "blocked_action_ids": [
+      "house:119:2:278"
+    ],
+    "candidate_artifact": "docs/editorial/full_record_reviews/semantic_ir_candidates/f000477_national_security_foreign_119_v1/behavioral_semantic_ir_candidate_graph.json",
+    "candidate_identity": {
+      "id": "behavioral-semantic-ir-candidates:f000477:national_security_foreign:119:v1",
+      "sha256": "6cec54113be8ec3367f689fe8f3488a2509b6dea65ef96308a75a1da97d665fb",
+      "candidate_subject_sha256": "cc951c6c3af02868d35618a9e5387c42c68a8da2901b97499a41546d7999c7f8",
+      "accepted": false,
+      "canonical": false,
+      "authorizing": false
+    },
+    "decision_template": "docs/editorial/full_record_reviews/semantic_ir_candidates/f000477_national_security_foreign_119_v1/human_behavioral_semantic_ir_decision_template.json",
+    "decision_template_identity": {
+      "sha256": "e4a1b72ba42500f76b141b0e76f3664266028412367808db611c98351d3fc2c3",
+      "decision_template_subject_sha256": "932aa6ee22109b94e2719f21310bb0a90789c7f960e86d740d71574681dd7565"
+    },
+    "parity_manifest": "docs/editorial/full_record_reviews/semantic_ir_candidates/f000477_national_security_foreign_119_v1/parity_manifest.json",
+    "parity_identity": {
+      "sha256": "719526307e27eae12bf0e4d683d55a23904c0f273a5f93abf8d3f03bc4ac4837",
+      "parity_subject_sha256": "8b7870f5d0306d7b58a8af2a7f17436d0d017d3a6c3603810f4e8e472bd14f64"
+    },
+    "semantic_ir_acceptance_state": "not_started_not_authorized",
+    "synthesis_state": "absent_not_authorized",
+    "public_wording_state": "absent_not_authorized",
+    "publication_state": "inactive",
+    "production_persistence": "not_authorized",
+    "production_writes": false,
+    "downstream_authorizations": {
+      "semantic_ir_acceptance": false,
       "synthesis": false,
       "public_wording": false,
       "publication": false,

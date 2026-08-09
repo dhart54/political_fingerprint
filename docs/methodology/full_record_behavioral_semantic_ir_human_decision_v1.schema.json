@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "full_record_behavioral_semantic_ir_human_decision_v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_id",
+    "authorizing",
+    "candidate_artifact_id",
+    "candidate_subject_sha256",
+    "decision_state",
+    "decision_template_subject_sha256",
+    "decisions",
+    "reviewed_at_utc",
+    "reviewer",
+    "schema_version"
+  ],
+  "properties": {
+    "schema_version": {"const": "full_record_behavioral_semantic_ir_human_decision_template_v1"},
+    "artifact_id": {"type": "string"},
+    "candidate_artifact_id": {"type": "string"},
+    "candidate_subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "decision_state": {"const": "empty_not_authorizing"},
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["bounded_revision", "decision", "proposition_id", "reviewer_notes"],
+        "properties": {
+          "proposition_id": {"type": "string"},
+          "decision": {"type": "null"},
+          "bounded_revision": {"type": "null"},
+          "reviewer_notes": {"type": "null"}
+        }
+      }
+    },
+    "reviewer": {"type": "null"},
+    "reviewed_at_utc": {"type": "null"},
+    "authorizing": {"const": false},
+    "decision_template_subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

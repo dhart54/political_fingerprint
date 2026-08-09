@@ -142,8 +142,11 @@ The machine-readable authority is
   excluded; no accepted action is ambiguous or unassigned. Human review
   accepted the 70 singleton candidates and rejected all four cross-measure
   primary groupings, requiring their eleven actions to remain distinct.
-- M11F binds that exact decision into a governed human episode authority and a
-  deterministic 81-episode implementation. Every accepted M11D action now has
+- M11F was mechanically accepted at PR #138 head
+  `326baa61ec44c5a560b98e3208ec990ff9bd2308` and merged to main as
+  `43caaf4b0087ab473ee771ed9c8c4acde68be554`. It binds that exact decision
+  into a governed human episode authority and a deterministic 81-episode
+  implementation. Every accepted M11D action now has
   exactly one canonical internal singleton episode; there are zero primary
   multi-action or cross-measure episodes and zero ambiguous/unassigned actions.
   The rejected Iran, Lebanon, Venezuela, and FISA groupings remain only
@@ -151,6 +154,16 @@ The machine-readable authority is
   remains blocked. Semantic IR, synthesis, public wording, publication,
   persistence, database writes, production, and deployment remain unauthorized.
   The Justice publication-active production reference is unchanged.
+- M11G proposes a detached behavioral Semantic IR candidate package from those
+  exact 81 accepted episodes. Four repeated-pattern candidates use eleven
+  episodes: Iran, Lebanon, and Venezuela War Powers removal choices and FISA
+  title VII extension opposition. Seventy episodes remain explicitly accounted
+  for without promotion; no notable choice or trajectory is proposed, and no
+  episode has multiple primary proposition owners. The four M11F relationship
+  records were independently re-tested and retain zero inherited authority.
+  H.R. 8800 remains unavailable. Semantic IR acceptance, synthesis, public
+  wording, publication, persistence, database writes, production, and
+  deployment remain unauthorized pending human substantive review.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

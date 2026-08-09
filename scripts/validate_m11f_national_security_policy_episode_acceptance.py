@@ -190,7 +190,11 @@ def validate_repository() -> dict[str, Any]:
     state = load(CURRENT_STATE_PATH)
     milestone = state["active_policy_episode_decision_milestone"]
     require(
-        milestone["milestone_state"] == "complete_pending_human_mechanical_review"
+        milestone["milestone_state"] == "completed_human_mechanically_accepted"
+        and milestone["human_mechanical_review"] == "accepted"
+        and milestone["accepted_pr"] == 138
+        and milestone["accepted_head"] == "326baa61ec44c5a560b98e3208ec990ff9bd2308"
+        and milestone["post_merge_main"] == "43caaf4b0087ab473ee771ed9c8c4acde68be554"
         and milestone["accepted_episode_count"] == 81
         and milestone["single_action_episode_count"] == 81
         and milestone["multi_action_episode_count"] == 0
