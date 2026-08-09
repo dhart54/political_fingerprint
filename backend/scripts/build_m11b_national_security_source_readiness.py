@@ -393,14 +393,14 @@ def _whole_measure_sources(
             "governed_local_path": RULES_REPORT_PATH.relative_to(ROOT).as_posix(),
             "sha256": sha256_file(RULES_REPORT_PATH),
         }
-        text_source_id = "house-rules-report:119:hr:8800:final-passage"
+        text_source_id = "house-rules-report:119:hr:8800:pre-floor-context"
         text_projection = _projection(
             action=action,
             source_id=text_source_id,
             exact_identity=identity,
             stage=stage,
             source_url=RULES_REPORT_URL,
-            text_version="RulesReport07202026-final-passage",
+            text_version="RulesReport07202026-pre-floor",
             raw_sha256=text_raw["sha256"],
             official_action_description=exact_description,
         )
@@ -408,7 +408,7 @@ def _whole_measure_sources(
             source_id=text_source_id,
             source_type="house_rules_committee_report",
             source_subject=identity,
-            content_class="house_rules_report_final_text",
+            content_class="pre_floor_house_rules_report_context",
             source_url=RULES_REPORT_URL,
             raw=text_raw,
             projection=text_projection,
@@ -513,7 +513,9 @@ def build(
                 acquire_missing=acquire_missing,
             )
             sources = [clerk, action_source, operative]
-            identity_roles = [action_source["source_id"], operative["source_id"]]
+            identity_roles = [action_source["source_id"]]
+            if identity != "119:hr:8800":
+                identity_roles.append(operative["source_id"])
             operative_roles = [operative["source_id"]]
             mechanism = (
                 "resolution" if stage == "resolution_adoption" else "whole_measure"
@@ -535,7 +537,11 @@ def build(
                 )
             if identity == "119:hr:8800":
                 limitations.append(
-                    "Congress.gov had not exposed a House-engrossed text at the cutoff; the governed House Rules Committee final text is used."
+                    "Live Congress.gov and GovInfo checks did not expose an exact House-engrossed text. The July 20 House Rules Committee report predates later floor amendment dispositions and engrossment instructions, is retained only as contextual provenance, and cannot prove the final-passage operative object."
+                )
+            if identity == "119:hr:2721":
+                limitations.append(
+                    "House Clerk and Congress.gov actionDate establish the vote on 2025-09-16, while Congress.gov's source-native Congressional Record parenthetical says 09/16/2026. The discrepancy does not redefine the canonical action date or House-engrossed text identity."
                 )
             if identity == "119:s:4465":
                 limitations.append(

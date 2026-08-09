@@ -45,7 +45,9 @@ metadata cannot establish action meaning.
 
 - Whole House measures require the House-passed text for the recorded passage
   stage. A failed passage action requires the exact text placed before the
-  House, not a later version.
+  House, not a later version. A pre-floor House Rules Committee report is
+  contextual provenance only and cannot satisfy final-passage operative-content
+  readiness, including when relabeled as final text.
 - Amendments require an exact amendment identity bound to the roll plus official
   amendment purpose, description, or text. Parent-measure content is
   insufficient.
@@ -55,6 +57,11 @@ metadata cannot establish action meaning.
 - Senate-origin measures require proof of the version before the House. A House
   amendment in the nature of a substitute requires an `eah` text; passage
   without House amendment requires the Senate-engrossed (`es`) text.
+
+The universe cutoff controls action membership, not when an authoritative
+official representation of an already-approved action may be published or
+acquired. A later-published exact House-engrossed text may therefore cure a
+source-readiness block without changing the approved universe.
 
 ## Raw provenance and neutral projections
 

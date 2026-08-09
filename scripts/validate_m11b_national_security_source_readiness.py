@@ -268,8 +268,17 @@ def _validate_record(
         _require(
             identity == "119:hr:8800"
             and operative["neutral_projection"]["text_version"]
-            == "RulesReport07202026-final-passage",
-            f"unapproved Rules report substitution: {action_id}",
+            == "RulesReport07202026-pre-floor"
+            and operative["content_class"] == "pre_floor_house_rules_report_context",
+            f"unapproved Rules report context binding: {action_id}",
+        )
+        _require(
+            record["readiness_state"] == "blocked_stage_mismatch"
+            and not record["readiness_criteria"][
+                "operative_text_version_stage_compatible"
+            ]
+            and not record["readiness_criteria"]["operative_context_sufficient"],
+            f"pre-floor Rules report incorrectly satisfies final passage: {action_id}",
         )
         return
     _require(
@@ -392,6 +401,41 @@ def validate_repository() -> dict[str, Any]:
             clerk=clerk_rows[record["action_id"]],
         )
     aggregate = validate_artifact(artifact, repository_root=ROOT)
+    records_by_id = {
+        record["action_id"]: record for record in subject["action_readiness"]
+    }
+    _require(
+        records_by_id["house:119:2:278"]["readiness_state"] == "blocked_stage_mismatch"
+        and aggregate
+        == {
+            "total_action_count": 82,
+            "ready_count": 81,
+            "blocked_count": 1,
+            "counts_by_readiness_state": {
+                "blocked_stage_mismatch": 1,
+                "ready_for_action_interpretation": 81,
+            },
+        },
+        "roll 278 fail-closed accounting mismatch",
+    )
+    _require(
+        all(
+            record["readiness_state"] == "ready_for_action_interpretation"
+            for action_id, record in records_by_id.items()
+            if action_id != "house:119:2:278"
+        ),
+        "an unaffected M11B action changed readiness state",
+    )
+    hr2721 = records_by_id["house:119:1:269"]
+    _require(
+        hr2721["official_action_date"] == "2025-09-16"
+        and any(
+            "source-native Congressional Record parenthetical says 09/16/2026"
+            in limitation
+            for limitation in hr2721["material_limitations"]
+        ),
+        "H.R. 2721 date-text discrepancy limitation missing",
+    )
 
     current = load_json(CURRENT_STATE_PATH)["active_source_readiness_milestone"]
     identity = current["interpretation_source_readiness_identity"]

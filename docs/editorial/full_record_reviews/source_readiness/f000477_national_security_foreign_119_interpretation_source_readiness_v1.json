@@ -54,7 +54,7 @@
     ]
   },
   "schema_version": "full_record_interpretation_source_readiness_v1",
-  "source_readiness_subject_sha256": "58e6f4d017a4f8cd59a38a3d78e80878985fc850560974ca981e5f4b22762499",
+  "source_readiness_subject_sha256": "53af365c4b06d4cc96fdeba17a1d65c80d89ae960d8cf986b7a5bf9599ec51bd",
   "subject": {
     "action_ids": [
       "house:119:1:7",
@@ -4168,7 +4168,9 @@
         "congress": 119,
         "exact_action_identity": "119:hr:2721",
         "house_action_stage": "final_passage_or_suspension_passage",
-        "material_limitations": [],
+        "material_limitations": [
+          "House Clerk and Congress.gov actionDate establish the vote on 2025-09-16, while Congress.gov's source-native Congressional Record parenthetical says 09/16/2026. The discrepancy does not redefine the canonical action date or House-engrossed text identity."
+        ],
         "mechanism_class": "whole_measure",
         "official_action_date": "2025-09-16",
         "official_member_action": "yea",
@@ -4190,7 +4192,7 @@
         "roll_number": 269,
         "session": 1,
         "source_conflict": false,
-        "source_packet_sha256": "ed03aae841be527e150ff29bfabd14be0f92976c739bb20dd92cac9b2e764700",
+        "source_packet_sha256": "7fa3214f484ad1c1c69468a7c45694fe3f15fa4ac3c543c27bb18b5e8119d560",
         "source_roles": {
           "exact_action_identity_and_stage_evidence": [
             "congress-actions:house:119:1:269",
@@ -10036,12 +10038,15 @@
       {
         "action_id": "house:119:2:278",
         "approved_universe_member": true,
-        "blocker_codes": [],
+        "blocker_codes": [
+          "blocked_stage_mismatch",
+          "blocked_insufficient_context"
+        ],
         "congress": 119,
         "exact_action_identity": "119:hr:8800",
         "house_action_stage": "final_passage_or_suspension_passage",
         "material_limitations": [
-          "Congress.gov had not exposed a House-engrossed text at the cutoff; the governed House Rules Committee final text is used."
+          "Live Congress.gov and GovInfo checks did not expose an exact House-engrossed text. The July 20 House Rules Committee report predates later floor amendment dispositions and engrossment instructions, is retained only as contextual provenance, and cannot prove the final-passage operative object."
         ],
         "mechanism_class": "whole_measure",
         "official_action_date": "2026-07-22",
@@ -10056,25 +10061,24 @@
           "no_source_conflict": true,
           "official_source_types_and_hosts": true,
           "operative_content_present": true,
-          "operative_context_sufficient": true,
-          "operative_text_version_stage_compatible": true,
+          "operative_context_sufficient": false,
+          "operative_text_version_stage_compatible": false,
           "raw_and_projection_digests_valid": true
         },
-        "readiness_state": "ready_for_action_interpretation",
+        "readiness_state": "blocked_stage_mismatch",
         "roll_number": 278,
         "session": 2,
         "source_conflict": false,
-        "source_packet_sha256": "f68990562012db477abae802bca5c1b0e4d2b06f70ded416df6aca46aee58686",
+        "source_packet_sha256": "7dcf457054698d135f3e32933935ba1a3a5b391fa828e61916ee41e49ea521f8",
         "source_roles": {
           "exact_action_identity_and_stage_evidence": [
-            "congress-actions:house:119:2:278",
-            "house-rules-report:119:hr:8800:final-passage"
+            "congress-actions:house:119:2:278"
           ],
           "member_action_evidence": [
             "clerk:house:119:2:278"
           ],
           "operative_content_interpretation_input": [
-            "house-rules-report:119:hr:8800:final-passage"
+            "house-rules-report:119:hr:8800:pre-floor-context"
           ]
         },
         "sources": [
@@ -10139,7 +10143,7 @@
             "source_url": "https://api.congress.gov/v3/bill/119/hr/8800/actions"
           },
           {
-            "content_class": "house_rules_report_final_text",
+            "content_class": "pre_floor_house_rules_report_context",
             "neutral_projection": {
               "action_date": "2026-07-22",
               "action_id": "house:119:2:278",
@@ -10154,16 +10158,16 @@
               "raw_provenance_sha256": "10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab",
               "roll_number": 278,
               "schema_version": "neutral_interpretation_source_projection_v1",
-              "source_id": "house-rules-report:119:hr:8800:final-passage",
+              "source_id": "house-rules-report:119:hr:8800:pre-floor-context",
               "source_url": "https://docs.house.gov/billsthisweek/20260720/RulesReport07202026.pdf",
-              "text_version": "RulesReport07202026-final-passage"
+              "text_version": "RulesReport07202026-pre-floor"
             },
-            "neutral_projection_sha256": "6684090f57db25e1843275e077cc009bfd4bb7e8e3be420a09c38e73c957980e",
+            "neutral_projection_sha256": "640dd47533454fe00724809d93f5bd32f3182011d196c9a5e324c80c53d64702",
             "raw_provenance": {
               "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab.pdf",
               "sha256": "10371c5bbbd18827c0aa7b59c41fb9e7c5fc938a80388ef10ae5cafb3c5aebab"
             },
-            "source_id": "house-rules-report:119:hr:8800:final-passage",
+            "source_id": "house-rules-report:119:hr:8800:pre-floor-context",
             "source_subject": "119:hr:8800",
             "source_type": "house_rules_committee_report",
             "source_url": "https://docs.house.gov/billsthisweek/20260720/RulesReport07202026.pdf"
@@ -10308,11 +10312,12 @@
     ],
     "action_set_sha256": "190bda45c25cd32ae0a6847c862f85837eafc4a82dfda237746a66467c550400",
     "aggregate": {
-      "blocked_count": 0,
+      "blocked_count": 1,
       "counts_by_readiness_state": {
-        "ready_for_action_interpretation": 82
+        "blocked_stage_mismatch": 1,
+        "ready_for_action_interpretation": 81
       },
-      "ready_count": 82,
+      "ready_count": 81,
       "total_action_count": 82
     },
     "chamber": "house",

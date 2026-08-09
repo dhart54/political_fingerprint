@@ -100,9 +100,11 @@ The machine-readable authority is
   production persistence remains unauthorized. The active Justice full-record
   publication state is unchanged.
 - M11B has completed its non-authorizing source-readiness build for the exact
-  M11A-approved 82-action National Security & Foreign Policy universe. All 82
-  actions have digest-verified official member-action, exact identity/stage,
-  and mechanism-appropriate operative-content inputs in the detached artifact
+  M11A-approved 82-action National Security & Foreign Policy universe. Eighty-one
+  actions are ready; `house:119:2:278` is fail-closed as
+  `blocked_stage_mismatch` because the available July 20 H.R. 8800 Rules report
+  predates the final-passage object and no exact House-engrossed text is
+  available. The detached artifact is
   `docs/editorial/full_record_reviews/source_readiness/f000477_national_security_foreign_119_interpretation_source_readiness_v1.json`.
   Raw official provenance remains separate from the closed neutral projections.
   This result authorizes source readiness only: action interpretation has not

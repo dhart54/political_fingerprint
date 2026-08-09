@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import unittest
 from pathlib import Path
 
@@ -164,9 +165,55 @@ class FullRecordSourceReadinessTests(unittest.TestCase):
     def _state(self, record: dict[str, object]) -> str:
         return derive_readiness(record, repository_root=ROOT)[2]
 
+    def _rules_report_record(
+        self, *, renamed_as_final_text: bool = False
+    ) -> dict[str, object]:
+        record = self._ready_record()
+        raw = self._raw("RulesReport.pdf", b"%PDF-1.7 pre-floor rules report")
+        projection = self._projection(source_id="operative")
+        projection["source_url"] = (
+            "https://docs.house.gov/billsthisweek/20260720/RulesReport.pdf"
+        )
+        projection["text_version"] = (
+            "eh" if renamed_as_final_text else "pre-floor-rules-report"
+        )
+        record["sources"][1] = self._source(
+            source_id="operative",
+            source_type="house_rules_committee_report",
+            content_class=(
+                "operative_measure_text"
+                if renamed_as_final_text
+                else "pre_floor_house_rules_report_context"
+            ),
+            raw=raw,
+            projection=projection,
+        )
+        return record
+
     def test_whole_measure_with_stage_compatible_operative_text_is_ready(self) -> None:
         self.assertEqual(
             self._state(self._ready_record()), "ready_for_action_interpretation"
+        )
+
+    def test_exact_official_house_engrossed_xml_is_ready(self) -> None:
+        record = self._ready_record()
+        operative = record["sources"][1]
+        self.assertEqual(operative["content_class"], "operative_measure_text")
+        self.assertEqual(operative["neutral_projection"]["text_version"], "eh")
+        self.assertTrue(operative["source_url"].endswith("eh.xml"))
+        self.assertEqual(self._state(record), "ready_for_action_interpretation")
+
+    def test_pre_floor_rules_report_alone_cannot_satisfy_final_passage(self) -> None:
+        self.assertEqual(
+            self._state(self._rules_report_record()), "blocked_stage_mismatch"
+        )
+
+    def test_renaming_pre_floor_rules_report_final_text_does_not_make_it_ready(
+        self,
+    ) -> None:
+        self.assertNotEqual(
+            self._state(self._rules_report_record(renamed_as_final_text=True)),
+            "ready_for_action_interpretation",
         )
 
     def test_exact_amendment_purpose_is_ready(self) -> None:
@@ -207,6 +254,19 @@ class FullRecordSourceReadinessTests(unittest.TestCase):
             operative["neutral_projection"]
         )
         self.assertEqual(self._state(record), "blocked_stage_mismatch")
+
+    def test_source_native_description_date_cannot_override_action_date(self) -> None:
+        record = self._ready_record()
+        operative = record["sources"][1]
+        operative["neutral_projection"]["official_action_description"] = (
+            "Passed House (text: 01/03/2026 CR H1)"
+        )
+        operative["neutral_projection_sha256"] = sha256_json(
+            operative["neutral_projection"]
+        )
+        self.assertEqual(record["official_action_date"], "2025-01-03")
+        self.assertEqual(operative["neutral_projection"]["action_date"], "2025-01-03")
+        self.assertEqual(self._state(record), "ready_for_action_interpretation")
 
     def test_exact_action_identity_mismatch_fails_closed(self) -> None:
         record = self._ready_record()
@@ -305,6 +365,26 @@ class FullRecordSourceReadinessTests(unittest.TestCase):
         )
         self.assertNotIn("F000477", module)
         self.assertNotIn("NATIONAL_SECURITY_FOREIGN", module)
+        self.assertNotIn("RulesReport07202026-final-passage", module)
+        self.assertNotIn("house_rules_report_final_text", module)
+
+    def test_m11b_correction_preserves_other_81_ready_actions(self) -> None:
+        artifact_path = (
+            ROOT / "docs/editorial/full_record_reviews/source_readiness/"
+            "f000477_national_security_foreign_119_interpretation_source_readiness_v1.json"
+        )
+        artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
+        records = artifact["subject"]["action_readiness"]
+        self.assertEqual(len(records), 82)
+        blocked = [
+            record
+            for record in records
+            if record["readiness_state"] != "ready_for_action_interpretation"
+        ]
+        self.assertEqual(
+            [(record["action_id"], record["readiness_state"]) for record in blocked],
+            [("house:119:2:278", "blocked_stage_mismatch")],
+        )
 
 
 if __name__ == "__main__":

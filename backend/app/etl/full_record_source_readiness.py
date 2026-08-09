@@ -41,8 +41,8 @@ ALLOWED_CONTENT_CLASSES = {
     "member_action_record",
     "operative_measure_text",
     "operative_resolution_text",
+    "pre_floor_house_rules_report_context",
     "stage_compatible_senate_origin_text",
-    "house_rules_report_final_text",
 }
 ALLOWED_HOSTS = {
     "api.congress.gov",
@@ -146,9 +146,22 @@ def _source_integrity(
     source: dict[str, Any], *, repository_root: Path
 ) -> tuple[bool, bool]:
     host = (urlparse(source["source_url"]).hostname or "").casefold()
+    allowed_classes_by_source_type = {
+        "congress_gov_amendment_index": {"exact_amendment_purpose"},
+        "congress_gov_bill_actions": {"exact_house_action_record"},
+        "congress_gov_bill_text": {
+            "operative_measure_text",
+            "operative_resolution_text",
+            "stage_compatible_senate_origin_text",
+        },
+        "house_clerk_roll_call": {"member_action_record"},
+        "house_rules_committee_report": {"pre_floor_house_rules_report_context"},
+    }
     official = (
         source["source_type"] in ALLOWED_SOURCE_TYPES
         and source["content_class"] in ALLOWED_CONTENT_CLASSES
+        and source["content_class"]
+        in allowed_classes_by_source_type.get(source["source_type"], set())
         and host in ALLOWED_HOSTS
     )
     raw = source["raw_provenance"]
@@ -260,19 +273,19 @@ def _derive_criteria(
                 "operative_measure_text",
                 "operative_resolution_text",
                 "stage_compatible_senate_origin_text",
-                "house_rules_report_final_text",
             }
             content_ok = content_class in accepted_classes
-            if raw_path.suffix.lower() == ".xml":
-                content_ok = content_ok and _xml_has_operative_body(raw_path)
-            elif raw_path.suffix.lower() != ".pdf":
-                content_ok = False
+            content_ok = (
+                content_ok
+                and source["source_type"] == "congress_gov_bill_text"
+                and raw_path.suffix.lower() == ".xml"
+                and _xml_has_operative_body(raw_path)
+            )
             operative_context_sufficient = operative_context_sufficient and content_ok
             allowed_versions = {
                 "operative_measure_text": {"eh", "cdh"},
                 "operative_resolution_text": {"eh", "ih"},
                 "stage_compatible_senate_origin_text": {"es", "eah"},
-                "house_rules_report_final_text": {"RulesReport07202026-final-passage"},
             }
             operative_text_version_stage_compatible = (
                 operative_text_version_stage_compatible

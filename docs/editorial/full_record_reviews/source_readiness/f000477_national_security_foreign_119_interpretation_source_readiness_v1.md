@@ -14,14 +14,14 @@ This packet evaluates official-source readiness only. It does not establish acti
 
 ## Readiness result
 
-- Ready for action interpretation: `82`
-- Blocked: `0`
-- Counts by state: `{"ready_for_action_interpretation": 82}`
-- Source-readiness subject digest: `58e6f4d017a4f8cd59a38a3d78e80878985fc850560974ca981e5f4b22762499`
+- Ready for action interpretation: `81`
+- Blocked: `1`
+- Counts by state: `{"blocked_stage_mismatch": 1, "ready_for_action_interpretation": 81}`
+- Source-readiness subject digest: `53af365c4b06d4cc96fdeba17a1d65c80d89ae960d8cf986b7a5bf9599ec51bd`
 
 ## Blocked actions
 
-- None.
+- `house:119:2:278`: `blocked_stage_mismatch`
 
 ## Authorization boundary
 
