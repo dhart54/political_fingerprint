@@ -52,6 +52,8 @@ jobs:
       - name: Run full-record integration tests
         run: >-
           python -m pytest -q
+          backend/tests/test_full_record_source_readiness.py
+          backend/tests/test_full_record_action_interpretation.py
           backend/tests/test_full_issue_universe_authority.py
           backend/tests/test_full_issue_interpretation_source_readiness.py
           backend/tests/test_action_interpretation_decision_implementation_v1.py

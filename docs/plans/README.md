@@ -6,12 +6,16 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M11B National Security Source Readiness V1](m11b_national_security_source_readiness_v1.md)
-  - evaluates exact-action official-source readiness across the M11A-authorized
-    82-action National Security & Foreign Policy universe without beginning
-    interpretation, episodes, Semantic IR, synthesis, or publication work.
+- [M11C National Security Action Interpretation V1](m11c_national_security_action_interpretation_v1.md)
+  - creates detached source-bound candidates for the 81 M11B-ready actions,
+    preserves H.R. 8800 as source-blocked and uninterpreted, and stops for human
+    action-meaning review before episodes or later semantic work.
 
 ## Retained unresolved plans
+
+- [M11B National Security Source Readiness V1](m11b_national_security_source_readiness_v1.md)
+  - human-accepted at PR #134 and retained as M11C's immutable 81-ready,
+    one-blocked source boundary.
 
 - [M11A Cross-Issue Full-Record Expansion V1](m11a_cross_issue_full_record_expansion_v1.md)
   - completed 82-action National Security & Foreign Policy universe selection

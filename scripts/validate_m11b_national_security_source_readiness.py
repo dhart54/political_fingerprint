@@ -439,15 +439,29 @@ def validate_repository() -> dict[str, Any]:
 
     current = load_json(CURRENT_STATE_PATH)["active_source_readiness_milestone"]
     identity = current["interpretation_source_readiness_identity"]
+    accepted_state = current["milestone_state"] == "completed_human_accepted"
     _require(
         current["milestone"] == "m11b_national_security_source_readiness_v1"
-        and current["milestone_state"] == "complete_pending_human_review"
+        and current["milestone_state"]
+        in {"complete_pending_human_review", "completed_human_accepted"}
         and current["interpretation_state"] == "not_started"
         and all(
             value is False for value in current["downstream_authorizations"].values()
         ),
         "current M11B state crosses source-readiness boundary",
     )
+    if accepted_state:
+        _require(
+            current.get("human_review_decision") == "accepted"
+            and current.get("accepted_pr") == 134
+            and current.get("accepted_head")
+            == "fcc988b867a49086d7545832f9575130aef0f8ea"
+            and current.get("reviewed_base")
+            == "434c972132e99628bddec4cc6392adc741e03205"
+            and current.get("post_merge_main")
+            == "13f8ad58f3aee32eb90369e8b454830cfbbf130b",
+            "current M11B human-acceptance binding mismatch",
+        )
     _require(
         identity
         == {

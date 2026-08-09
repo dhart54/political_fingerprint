@@ -1,0 +1,364 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://politicalfingerprint.example/schemas/full_record_action_interpretation_candidates_v1.schema.json",
+  "title": "Full-Record Action Interpretation Candidates V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "criteria_version",
+    "artifact_id",
+    "artifact_role",
+    "accepted",
+    "canonical",
+    "non_public",
+    "production_selectable",
+    "subject",
+    "interpretation_subject_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "full_record_action_interpretation_candidates_v1"
+    },
+    "criteria_version": {
+      "const": "source_first_exact_action_interpretation_v1"
+    },
+    "artifact_id": {"type": "string", "minLength": 1},
+    "artifact_role": {
+      "const": "detached_non_authorizing_human_review_candidate_package"
+    },
+    "accepted": {"const": false},
+    "canonical": {"const": false},
+    "non_public": {"const": true},
+    "production_selectable": {"const": false},
+    "interpretation_subject_sha256": {"$ref": "#/definitions/sha256"},
+    "subject": {"$ref": "#/definitions/subject"}
+  },
+  "definitions": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "gitSha": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "nullableSha256": {
+      "anyOf": [
+        {"$ref": "#/definitions/sha256"},
+        {"type": "null"}
+      ]
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "sourceBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "roles",
+        "source_type",
+        "content_class",
+        "source_url",
+        "raw_provenance",
+        "neutral_projection_sha256"
+      ],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "roles": {"$ref": "#/definitions/stringArray"},
+        "source_type": {"type": "string", "minLength": 1},
+        "content_class": {"type": "string", "minLength": 1},
+        "source_url": {"type": "string", "format": "uri"},
+        "neutral_projection_sha256": {"$ref": "#/definitions/sha256"},
+        "raw_provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["governed_local_path", "sha256"],
+          "properties": {
+            "governed_local_path": {"type": "string", "minLength": 1},
+            "sha256": {"$ref": "#/definitions/sha256"}
+          }
+        }
+      }
+    },
+    "evidenceMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_map_id",
+        "action_id",
+        "exact_action_identity",
+        "house_action_stage",
+        "source_packet_sha256",
+        "source_bindings",
+        "evidence_map_subject_sha256"
+      ],
+      "properties": {
+        "evidence_map_id": {"type": "string", "minLength": 1},
+        "action_id": {"type": "string", "pattern": "^house:119:[12]:[0-9]+$"},
+        "exact_action_identity": {"type": "string", "minLength": 1},
+        "house_action_stage": {"type": "string", "minLength": 1},
+        "source_packet_sha256": {"$ref": "#/definitions/sha256"},
+        "source_bindings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/definitions/sourceBinding"}
+        },
+        "evidence_map_subject_sha256": {"$ref": "#/definitions/sha256"}
+      }
+    },
+    "claimComponent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component_id",
+        "wording",
+        "source_id",
+        "locator",
+        "support_state"
+      ],
+      "properties": {
+        "component_id": {"type": "string", "minLength": 1},
+        "wording": {"type": "string", "minLength": 1},
+        "source_id": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1},
+        "support_state": {
+          "enum": ["directly_supported", "supported_with_limitation"]
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "candidate_id",
+        "exact_action_identity",
+        "house_action_stage",
+        "mechanism_class",
+        "official_member_action",
+        "official_action_date",
+        "evidence_map_id",
+        "evidence_map_subject_sha256",
+        "source_references",
+        "status",
+        "coverage_assessment",
+        "official_title_or_purpose",
+        "proposed_exact_action_meaning",
+        "proposed_member_position_effect",
+        "claim_components",
+        "rules_applied",
+        "confidence",
+        "uncertainty_reasons",
+        "limitations",
+        "competing_plausible_interpretations",
+        "does_not_establish",
+        "unresolved_editorial_questions",
+        "review_route",
+        "accepted",
+        "authorizing",
+        "candidate_content_subject_sha256"
+      ],
+      "properties": {
+        "action_id": {"type": "string", "pattern": "^house:119:[12]:[0-9]+$"},
+        "candidate_id": {"type": "string", "minLength": 1},
+        "exact_action_identity": {"type": "string", "minLength": 1},
+        "house_action_stage": {"type": "string", "minLength": 1},
+        "mechanism_class": {"enum": ["amendment", "resolution", "whole_measure"]},
+        "official_member_action": {"enum": ["yea", "nay", "present", "not_voting"]},
+        "official_action_date": {"type": "string", "format": "date"},
+        "evidence_map_id": {"type": "string", "minLength": 1},
+        "evidence_map_subject_sha256": {"$ref": "#/definitions/sha256"},
+        "source_references": {"$ref": "#/definitions/stringArray"},
+        "status": {"enum": ["proposed", "proposed_with_material_limitation"]},
+        "coverage_assessment": {
+          "enum": [
+            "bounded_official_purpose_summary",
+            "package_level_bounded_summary"
+          ]
+        },
+        "official_title_or_purpose": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["wording", "source_id", "locator"],
+          "properties": {
+            "wording": {"type": "string", "minLength": 1},
+            "source_id": {"type": "string", "minLength": 1},
+            "locator": {"type": "string", "minLength": 1}
+          }
+        },
+        "proposed_exact_action_meaning": {"type": "string", "minLength": 1},
+        "proposed_member_position_effect": {
+          "enum": [
+            "supports_exact_choice",
+            "opposes_exact_choice",
+            "non_directional_present",
+            "non_directional_not_voting"
+          ]
+        },
+        "claim_components": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/definitions/claimComponent"}
+        },
+        "rules_applied": {"$ref": "#/definitions/stringArray"},
+        "confidence": {"enum": ["high", "medium", "low"]},
+        "uncertainty_reasons": {"$ref": "#/definitions/stringArray"},
+        "limitations": {"$ref": "#/definitions/stringArray"},
+        "competing_plausible_interpretations": {"$ref": "#/definitions/stringArray"},
+        "does_not_establish": {"$ref": "#/definitions/stringArray"},
+        "unresolved_editorial_questions": {"$ref": "#/definitions/stringArray"},
+        "review_route": {"const": "human_action_meaning_review_required"},
+        "accepted": {"const": false},
+        "authorizing": {"const": false},
+        "candidate_content_subject_sha256": {"$ref": "#/definitions/sha256"}
+      }
+    },
+    "accounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_id",
+        "readiness_state",
+        "disposition",
+        "candidate_id",
+        "candidate_content_subject_sha256",
+        "source_packet_sha256"
+      ],
+      "properties": {
+        "action_id": {"type": "string", "pattern": "^house:119:[12]:[0-9]+$"},
+        "readiness_state": {"type": "string", "minLength": 1},
+        "disposition": {
+          "enum": [
+            "candidate_interpretation_proposed",
+            "source_blocked_not_interpreted"
+          ]
+        },
+        "candidate_id": {"type": ["string", "null"]},
+        "candidate_content_subject_sha256": {"$ref": "#/definitions/nullableSha256"},
+        "source_packet_sha256": {"$ref": "#/definitions/sha256"}
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "post_m11b_merge_base",
+        "upstream_bindings",
+        "member_id",
+        "legislator_id",
+        "issue_id",
+        "congress",
+        "official_cutoff",
+        "action_ids",
+        "accounting",
+        "evidence_maps",
+        "candidates",
+        "aggregate",
+        "blocked_action_ids",
+        "review_state",
+        "downstream_authorizations"
+      ],
+      "properties": {
+        "post_m11b_merge_base": {"$ref": "#/definitions/gitSha"},
+        "upstream_bindings": {"type": "object"},
+        "member_id": {"const": "F000477"},
+        "legislator_id": {"const": "leg_valerie_p_foushee"},
+        "issue_id": {"const": "NATIONAL_SECURITY_FOREIGN"},
+        "congress": {"const": 119},
+        "official_cutoff": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["end_date", "latest_action_id"],
+          "properties": {
+            "end_date": {"const": "2026-07-23"},
+            "latest_action_id": {"const": "house:119:2:283"}
+          }
+        },
+        "action_ids": {"$ref": "#/definitions/stringArray"},
+        "accounting": {
+          "type": "array",
+          "minItems": 82,
+          "maxItems": 82,
+          "items": {"$ref": "#/definitions/accounting"}
+        },
+        "evidence_maps": {
+          "type": "array",
+          "minItems": 81,
+          "maxItems": 81,
+          "items": {"$ref": "#/definitions/evidenceMap"}
+        },
+        "candidates": {
+          "type": "array",
+          "minItems": 81,
+          "maxItems": 81,
+          "items": {"$ref": "#/definitions/candidate"}
+        },
+        "aggregate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "approved_universe_count",
+            "interpretation_eligible_count",
+            "candidate_count",
+            "source_blocked_count",
+            "evidence_source_binding_count",
+            "unique_evidence_source_count",
+            "candidate_status_counts",
+            "coverage_assessment_counts",
+            "member_action_counts",
+            "position_effect_counts"
+          ],
+          "properties": {
+            "approved_universe_count": {"const": 82},
+            "interpretation_eligible_count": {"const": 81},
+            "candidate_count": {"const": 81},
+            "source_blocked_count": {"const": 1},
+            "evidence_source_binding_count": {"const": 211},
+            "unique_evidence_source_count": {"const": 211},
+            "candidate_status_counts": {"type": "object"},
+            "coverage_assessment_counts": {"type": "object"},
+            "member_action_counts": {"type": "object"},
+            "position_effect_counts": {"type": "object"}
+          }
+        },
+        "blocked_action_ids": {
+          "type": "array",
+          "const": ["house:119:2:278"]
+        },
+        "review_state": {
+          "const": "candidate_package_pending_human_action_meaning_review"
+        },
+        "downstream_authorizations": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "action_meaning_acceptance",
+            "policy_episode_construction",
+            "policy_episode_acceptance",
+            "semantic_ir",
+            "synthesis",
+            "public_wording",
+            "publication",
+            "production_persistence",
+            "deployment"
+          ],
+          "properties": {
+            "action_meaning_acceptance": {"const": false},
+            "policy_episode_construction": {"const": false},
+            "policy_episode_acceptance": {"const": false},
+            "semantic_ir": {"const": false},
+            "synthesis": {"const": false},
+            "public_wording": {"const": false},
+            "publication": {"const": false},
+            "production_persistence": {"const": false},
+            "deployment": {"const": false}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://politicalfingerprint.example/schemas/human_action_interpretation_decision_template_v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "template_id",
+    "empty_non_authorizing_template",
+    "subject",
+    "decision_template_subject_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "human_action_interpretation_decision_template_v1"},
+    "template_id": {"type": "string", "minLength": 1},
+    "empty_non_authorizing_template": {"const": true},
+    "decision_template_subject_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_artifact_id",
+        "candidate_interpretation_subject_sha256",
+        "decision_count",
+        "decisions",
+        "authority_effect",
+        "downstream_authorizations"
+      ],
+      "properties": {
+        "candidate_artifact_id": {"type": "string", "minLength": 1},
+        "candidate_interpretation_subject_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "decision_count": {"const": 81},
+        "decisions": {
+          "type": "array",
+          "minItems": 81,
+          "maxItems": 81,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "action_id",
+              "candidate_id",
+              "candidate_content_subject_sha256",
+              "decision",
+              "reviewer_id",
+              "reviewer_authority",
+              "rationale",
+              "decision_timestamp"
+            ],
+            "properties": {
+              "action_id": {"type": "string", "minLength": 1},
+              "candidate_id": {"type": "string", "minLength": 1},
+              "candidate_content_subject_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "decision": {"type": "null"},
+              "reviewer_id": {"type": "null"},
+              "reviewer_authority": {"type": "null"},
+              "rationale": {"type": "null"},
+              "decision_timestamp": {"type": "null"}
+            }
+          }
+        },
+        "authority_effect": {"const": "none_until_completed_and_separately_validated"},
+        "downstream_authorizations": {
+          "type": "object",
+          "additionalProperties": {"const": false},
+          "minProperties": 9,
+          "maxProperties": 9
+        }
+      }
+    }
+  }
+}
