@@ -558,18 +558,31 @@ def validate_repository() -> dict[str, Any]:
         and m11b_state["post_merge_main"] == POST_M11B_MERGE_BASE,
         "current-state M11B acceptance mismatch",
     )
+    m11c_completed = m11c_state["milestone_state"] == "completed_human_accepted"
     _require(
-        m11c_state["post_m11b_merge_base"] == POST_M11B_MERGE_BASE
+        m11c_state["milestone_state"]
+        in {
+            "complete_pending_human_action_meaning_review",
+            "completed_human_accepted",
+        }
+        and m11c_state["post_m11b_merge_base"] == POST_M11B_MERGE_BASE
         and m11c_state["approved_universe_count"] == 82
         and m11c_state["interpretation_eligible_count"] == 81
         and m11c_state["candidate_count"] == 81
         and m11c_state["source_blocked_action_ids"] == ["house:119:2:278"]
-        and m11c_state["reviewed_head"] == "1a5d60cea6e8712d2bc1e20019ac37505adf39ff"
-        and m11c_state["human_review_result"] == "bounded_correction_required"
-        and m11c_state["reviewed_meaning_acceptance_count"] == 79
+        and m11c_state["reviewed_head"]
+        == (
+            "59ecdf805ca89ce01d8dc6eeb441542a9f68571f"
+            if m11c_completed
+            else "1a5d60cea6e8712d2bc1e20019ac37505adf39ff"
+        )
+        and m11c_state["human_review_result"]
+        == ("accepted" if m11c_completed else "bounded_correction_required")
+        and m11c_state["reviewed_meaning_acceptance_count"]
+        == (81 if m11c_completed else 79)
         and m11c_state["reviewed_position_effect_acceptance_count"] == 81
         and set(m11c_state["meaning_corrections_pending_final_review"])
-        == REVISED_ACTION_IDS
+        == (set() if m11c_completed else REVISED_ACTION_IDS)
         and m11c_state["candidate_status_counts"]
         == {"proposed": 11, "proposed_with_material_limitation": 70}
         and m11c_state["coverage_assessment_counts"]
@@ -577,16 +590,33 @@ def validate_repository() -> dict[str, Any]:
             "bounded_official_purpose_summary": 71,
             "package_level_bounded_summary": 10,
         }
-        and m11c_state["candidate_identity"]
-        == {
-            "id": artifact["artifact_id"],
-            "sha256": canonical_file_sha256(ARTIFACT_PATH),
-            "interpretation_subject_sha256": artifact["interpretation_subject_sha256"],
-            "accepted": False,
-            "authorizing": False,
-        }
+        and m11c_state["candidate_identity"]["id"] == artifact["artifact_id"]
+        and m11c_state["candidate_identity"]["sha256"]
+        == canonical_file_sha256(ARTIFACT_PATH)
+        and m11c_state["candidate_identity"]["interpretation_subject_sha256"]
+        == artifact["interpretation_subject_sha256"]
+        and m11c_state["candidate_identity"]["accepted"] is False
+        and m11c_state["candidate_identity"]["authorizing"] is False
+        and (
+            not m11c_completed
+            or m11c_state["candidate_identity"]["human_review_accepted"] is True
+        )
         and m11c_state["action_meaning_state"]
-        == "not_accepted_candidates_pending_human_review"
+        == (
+            "human_accepted_input_bound_by_m11d_authority"
+            if m11c_completed
+            else "not_accepted_candidates_pending_human_review"
+        )
+        and (
+            not m11c_completed
+            or (
+                m11c_state["accepted_pr"] == 135
+                and m11c_state["accepted_head"]
+                == "59ecdf805ca89ce01d8dc6eeb441542a9f68571f"
+                and m11c_state["post_merge_main"]
+                == "6b11a20b18d8e98df3ed5d63606f0e94e8ed47f1"
+            )
+        )
         and all(
             value is False for value in m11c_state["downstream_authorizations"].values()
         ),

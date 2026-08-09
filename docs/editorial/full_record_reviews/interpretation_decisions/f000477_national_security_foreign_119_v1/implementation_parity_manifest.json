@@ -1,0 +1,43 @@
+{
+  "accepted_candidate_binding": {
+    "accepted_head": "59ecdf805ca89ce01d8dc6eeb441542a9f68571f",
+    "accepted_pr": 135,
+    "artifact_id": "action-interpretation-candidates:f000477:national_security_foreign:119:v1",
+    "file_sha256": "6d3c0c26d56b7ace999debbc45efc0945f27320425b0f2bda55aca013630543d",
+    "interpretation_subject_sha256": "db88b7e4e5f180fa72f901132b56e8f41b975a5e12d102600b45a7df766ad840",
+    "post_merge_main": "6b11a20b18d8e98df3ed5d63606f0e94e8ed47f1"
+  },
+  "artifact_id": "action-interpretation-decision-implementation-parity:f000477:national_security_foreign:119:v1",
+  "decision_count": 81,
+  "downstream_authorizations": {
+    "deployment": false,
+    "policy_episode_acceptance": false,
+    "policy_episode_construction": false,
+    "production_persistence": false,
+    "public_wording": false,
+    "publication": false,
+    "semantic_ir": false,
+    "synthesis": false
+  },
+  "generated_artifacts": [
+    {
+      "content_subject_sha256": "cde23f35cf8f876909dc5e7b779dbb600f919dc4aaa36dcd37cd08aecbacfa82",
+      "file_sha256": "b67fc818a59e441055a6b6ca32ee0f09cc91c0eec1ec99e6d4f6cd61499cc544",
+      "path": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_national_security_foreign_119_v1/human_action_meaning_authority.json"
+    },
+    {
+      "content_subject_sha256": "360f0ce47d52cb5a0d0234a88026411e94697c38cac9fca8dc87a7db6ad9ad5b",
+      "file_sha256": "402928780286f98fec90242132a829058f57517328c532e60371afab3c2173ff",
+      "path": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_national_security_foreign_119_v1/decision_implementation_bundle.json"
+    },
+    {
+      "file_sha256": "6f61b37baed5d139d494838fc1f2d5280a8336b4bf136d85bd299f6748835ba4",
+      "path": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_national_security_foreign_119_v1/decision_implementation_dossier.md"
+    }
+  ],
+  "generated_last": true,
+  "parity_state": "pass",
+  "parity_subject_sha256": "98e325472a234aabc8aae0844e6294ff14cd76e69f4b861740639a4515a3ee92",
+  "schema_version": "full_record_action_interpretation_implementation_parity_v1",
+  "source_blocked_count": 1
+}

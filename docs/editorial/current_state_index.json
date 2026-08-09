@@ -28,6 +28,11 @@
     "full_record_action_interpretation_candidate_contract": "docs/methodology/full_record_action_interpretation_candidates_v1.md",
     "full_record_action_interpretation_candidate_schema": "docs/methodology/full_record_action_interpretation_candidates_v1.schema.json",
     "m11c_action_interpretation_validator": "scripts/validate_m11c_national_security_action_interpretation.py",
+    "full_record_action_interpretation_decision_authority_contract": "docs/methodology/full_record_action_interpretation_decision_authority_v1.md",
+    "full_record_action_interpretation_authority_schema": "docs/methodology/full_record_action_interpretation_authority_v1.schema.json",
+    "full_record_action_interpretation_implementation_schema": "docs/methodology/full_record_action_interpretation_decision_implementation_v1.schema.json",
+    "full_record_action_interpretation_implementation_parity_schema": "docs/methodology/full_record_action_interpretation_implementation_parity_v1.schema.json",
+    "m11d_action_meaning_acceptance_validator": "scripts/validate_m11d_national_security_action_meaning_acceptance.py",
     "public_review_state_catalog": "backend/app/editorial_presentations/public_review_state_catalog_v1.json",
     "public_review_state_catalog_builder": "scripts/build_public_review_state_catalog.py",
     "frontend_pass_a_design": "docs/design/frontend_pass_a_v1.md",
@@ -270,16 +275,16 @@
       "issue_id": "NATIONAL_SECURITY_FOREIGN"
     },
     "post_m11b_merge_base": "13f8ad58f3aee32eb90369e8b454830cfbbf130b",
-    "milestone_state": "complete_pending_human_action_meaning_review",
-    "authority_effect": "detached_candidate_generation_only",
-    "reviewed_head": "1a5d60cea6e8712d2bc1e20019ac37505adf39ff",
-    "human_review_result": "bounded_correction_required",
-    "reviewed_meaning_acceptance_count": 79,
+    "milestone_state": "completed_human_accepted",
+    "authority_effect": "human_accepted_candidate_input_for_m11d",
+    "reviewed_head": "59ecdf805ca89ce01d8dc6eeb441542a9f68571f",
+    "human_review_result": "accepted",
+    "accepted_pr": 135,
+    "accepted_head": "59ecdf805ca89ce01d8dc6eeb441542a9f68571f",
+    "post_merge_main": "6b11a20b18d8e98df3ed5d63606f0e94e8ed47f1",
+    "reviewed_meaning_acceptance_count": 81,
     "reviewed_position_effect_acceptance_count": 81,
-    "meaning_corrections_pending_final_review": [
-      "house:119:1:320",
-      "house:119:2:142"
-    ],
+    "meaning_corrections_pending_final_review": [],
     "approved_universe_count": 82,
     "interpretation_eligible_count": 81,
     "candidate_count": 81,
@@ -293,7 +298,8 @@
       "sha256": "6d3c0c26d56b7ace999debbc45efc0945f27320425b0f2bda55aca013630543d",
       "interpretation_subject_sha256": "db88b7e4e5f180fa72f901132b56e8f41b975a5e12d102600b45a7df766ad840",
       "accepted": false,
-      "authorizing": false
+      "authorizing": false,
+      "human_review_accepted": true
     },
     "candidate_status_counts": {
       "proposed": 11,
@@ -307,7 +313,7 @@
     "human_review_dossier": "docs/editorial/full_record_reviews/interpretation_candidates/f000477_national_security_foreign_119_v1/human_review_dossier.md",
     "human_decision_template": "docs/editorial/full_record_reviews/interpretation_candidates/f000477_national_security_foreign_119_v1/human_decision_template.json",
     "parity_manifest": "docs/editorial/full_record_reviews/interpretation_candidates/f000477_national_security_foreign_119_v1/parity_manifest.json",
-    "action_meaning_state": "not_accepted_candidates_pending_human_review",
+    "action_meaning_state": "human_accepted_input_bound_by_m11d_authority",
     "policy_episode_state": "not_started_not_accepted",
     "semantic_ir_state": "absent",
     "synthesis_state": "absent",
@@ -317,6 +323,65 @@
     "production_writes": false,
     "downstream_authorizations": {
       "action_meaning_acceptance": false,
+      "policy_episode_construction": false,
+      "policy_episode_acceptance": false,
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "deployment": false
+    }
+  },
+  "active_action_interpretation_decision_milestone": {
+    "milestone": "m11d_national_security_action_meaning_acceptance_v1",
+    "plan": "docs/plans/m11d_national_security_action_meaning_acceptance_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "NATIONAL_SECURITY_FOREIGN"
+    },
+    "post_m11c_merge_base": "6b11a20b18d8e98df3ed5d63606f0e94e8ed47f1",
+    "milestone_state": "complete_pending_human_mechanical_review",
+    "authority_effect": "internal_action_interpretation_acceptance_only",
+    "accepted_decision_count": 81,
+    "source_blocked_count": 1,
+    "source_blocked_action_ids": [
+      "house:119:2:278"
+    ],
+    "authority_artifact": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_national_security_foreign_119_v1/human_action_meaning_authority.json",
+    "authority_identity": {
+      "id": "human-action-interpretation-authority:f000477:national_security_foreign:119:v1",
+      "sha256": "b67fc818a59e441055a6b6ca32ee0f09cc91c0eec1ec99e6d4f6cd61499cc544",
+      "authority_subject_sha256": "cde23f35cf8f876909dc5e7b779dbb600f919dc4aaa36dcd37cd08aecbacfa82"
+    },
+    "implementation_artifact": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_national_security_foreign_119_v1/decision_implementation_bundle.json",
+    "implementation_identity": {
+      "id": "action-interpretation-decision-implementation:f000477:national_security_foreign:119:v1",
+      "sha256": "402928780286f98fec90242132a829058f57517328c532e60371afab3c2173ff",
+      "implementation_subject_sha256": "360f0ce47d52cb5a0d0234a88026411e94697c38cac9fca8dc87a7db6ad9ad5b"
+    },
+    "parity_manifest": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_national_security_foreign_119_v1/implementation_parity_manifest.json",
+    "parity_identity": {
+      "sha256": "dc508a8e7cd742abaee64d347427d11b4be775a65eac5afdd13df44231262990",
+      "parity_subject_sha256": "98e325472a234aabc8aae0844e6294ff14cd76e69f4b861740639a4515a3ee92"
+    },
+    "internal_action_interpretation_state": "human_accepted_internal",
+    "internal_action_meanings_canonical": true,
+    "canonical_semantic_acceptance": false,
+    "mechanical_review_state": "pending_human_review",
+    "policy_episode_state": "not_started_not_authorized",
+    "semantic_ir_state": "absent",
+    "synthesis_state": "absent",
+    "public_wording_state": "absent",
+    "publication_state": "inactive",
+    "production_persistence": "not_authorized",
+    "production_writes": false,
+    "presentation_boundary": "Detailed accepted meanings are internal evidence-backed semantic inputs; later public wording requires separate authority and should be concise by default with progressive disclosure of details and sources.",
+    "downstream_authorizations": {
       "policy_episode_construction": false,
       "policy_episode_acceptance": false,
       "semantic_ir": false,

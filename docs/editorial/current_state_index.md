@@ -112,21 +112,27 @@ The machine-readable authority is
   Raw official provenance remains separate from the closed neutral projections.
   This accepted result establishes source readiness only and does not itself
   accept action meaning or any later semantic stage.
-- M11C has generated a detached, non-authorizing candidate interpretation for
-  each of those 81 ready actions. The candidate artifact is
+- M11C is human-accepted at PR #135 head
+  `59ecdf805ca89ce01d8dc6eeb441542a9f68571f` and merged to main as
+  `6b11a20b18d8e98df3ed5d63606f0e94e8ed47f1`. Its detached candidate
+  interpretation covers each of the 81 ready actions. The candidate artifact is
   `docs/editorial/full_record_reviews/interpretation_candidates/f000477_national_security_foreign_119_v1/candidate_batch.json`.
   Seventy-one candidates use bounded official-purpose summaries; ten broad
   authorization, appropriations, or other multi-part measures use an explicit
   package-level bounded-summary state that does not attribute the member's
-  action to any individual component. The review of head `1a5d60c` accepted 79
-  meanings and all 81 exact-choice effects while requiring bounded corrections
-  to S. 1071 and S. 1318. Those two corrected meanings remain pending the final
-  bounded human gate, so the candidate package remains non-authorizing. H.R.
-  8800 remains in the universe as the one source-blocked action and has no
-  candidate. Policy episodes have not started and are not accepted; Semantic
-  IR, synthesis, and public wording remain absent;
-  publication is inactive; and production persistence is unauthorized. The
-  Justice publication-active production reference is unchanged.
+  action to any individual component. Human reviewer `dhart54` accepted all 81
+  meanings, all 81 exact-choice effects, and every recorded limitation at that
+  exact corrected head. The candidate artifact itself remains non-authorizing.
+- M11D has deterministically bound that exact M11C artifact and subject digest
+  into a governed human action-meaning authority record and an 81-record
+  implementation bundle. Those meanings and effects are canonical internal
+  action-interpretation inputs only; they are not canonical Semantic IR or
+  default public wording. H.R. 8800 remains in the approved universe as the one
+  source-blocked, uninterpreted action. M11D is complete pending human mechanical
+  review. Policy episodes have not started and are not authorized; Semantic IR,
+  synthesis, public wording, publication, persistence, production, and
+  deployment remain unauthorized. The Justice publication-active production
+  reference is unchanged.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

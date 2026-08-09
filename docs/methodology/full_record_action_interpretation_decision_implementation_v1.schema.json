@@ -1,0 +1,342 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_human_decisions_implemented": {
+      "const": true
+    },
+    "artifact_id": {
+      "const": "action-interpretation-decision-implementation:f000477:national_security_foreign:119:v1"
+    },
+    "artifact_role": {
+      "const": "detached_human_accepted_action_interpretation_implementation"
+    },
+    "canonical_internal_action_interpretation": {
+      "const": true
+    },
+    "canonical_semantic_acceptance": {
+      "const": false
+    },
+    "implementation_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "production_selectable": {
+      "const": false
+    },
+    "public": {
+      "const": false
+    },
+    "publication_authorized": {
+      "const": false
+    },
+    "schema_version": {
+      "const": "full_record_action_interpretation_decision_implementation_v1"
+    },
+    "subject": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical_semantic_acceptance": {
+          "const": false
+        },
+        "congress": {
+          "const": 119
+        },
+        "downstream_authorizations": {
+          "additionalProperties": false,
+          "properties": {
+            "deployment": {
+              "const": false
+            },
+            "policy_episode_acceptance": {
+              "const": false
+            },
+            "policy_episode_construction": {
+              "const": false
+            },
+            "production_persistence": {
+              "const": false
+            },
+            "public_wording": {
+              "const": false
+            },
+            "publication": {
+              "const": false
+            },
+            "semantic_ir": {
+              "const": false
+            },
+            "synthesis": {
+              "const": false
+            }
+          },
+          "required": [
+            "policy_episode_construction",
+            "policy_episode_acceptance",
+            "semantic_ir",
+            "synthesis",
+            "public_wording",
+            "publication",
+            "production_persistence",
+            "deployment"
+          ],
+          "type": "object"
+        },
+        "implementation_accounting": {
+          "additionalProperties": false,
+          "properties": {
+            "implemented_human_accepted_as_written": {
+              "const": 81
+            }
+          },
+          "required": [
+            "implemented_human_accepted_as_written"
+          ],
+          "type": "object"
+        },
+        "implementation_record_count": {
+          "const": 81
+        },
+        "implementation_records": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "accepted_confidence": {
+                "enum": [
+                  "high",
+                  "medium",
+                  "low"
+                ]
+              },
+              "accepted_coverage_assessment": {
+                "enum": [
+                  "bounded_official_purpose_summary",
+                  "package_level_bounded_summary"
+                ]
+              },
+              "accepted_exact_action_meaning": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "accepted_exact_choice_position_effect": {
+                "enum": [
+                  "supports_exact_choice",
+                  "opposes_exact_choice"
+                ]
+              },
+              "accepted_limitations": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "action_id": {
+                "type": "string"
+              },
+              "authority_artifact_id": {
+                "const": "human-action-interpretation-authority:f000477:national_security_foreign:119:v1"
+              },
+              "authority_decision_subject_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "authority_file_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "authority_subject_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "candidate_content_subject_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "candidate_id": {
+                "type": "string"
+              },
+              "canonical_internal_action_interpretation": {
+                "const": true
+              },
+              "canonical_semantic_acceptance": {
+                "const": false
+              },
+              "downstream_authorizations": {
+                "additionalProperties": false,
+                "properties": {
+                  "deployment": {
+                    "const": false
+                  },
+                  "policy_episode_acceptance": {
+                    "const": false
+                  },
+                  "policy_episode_construction": {
+                    "const": false
+                  },
+                  "production_persistence": {
+                    "const": false
+                  },
+                  "public_wording": {
+                    "const": false
+                  },
+                  "publication": {
+                    "const": false
+                  },
+                  "semantic_ir": {
+                    "const": false
+                  },
+                  "synthesis": {
+                    "const": false
+                  }
+                },
+                "required": [
+                  "policy_episode_construction",
+                  "policy_episode_acceptance",
+                  "semantic_ir",
+                  "synthesis",
+                  "public_wording",
+                  "publication",
+                  "production_persistence",
+                  "deployment"
+                ],
+                "type": "object"
+              },
+              "evidence_map_id": {
+                "type": "string"
+              },
+              "evidence_map_subject_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "implementation_state": {
+                "const": "implemented_human_accepted_as_written"
+              },
+              "presentation_state": {
+                "const": "internal_evidence_backed_semantic_input"
+              },
+              "public": {
+                "const": false
+              },
+              "publication_authorized": {
+                "const": false
+              },
+              "record_id": {
+                "type": "string"
+              },
+              "record_subject_sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "source_references": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "action_id",
+              "record_id",
+              "candidate_id",
+              "candidate_content_subject_sha256",
+              "authority_artifact_id",
+              "authority_subject_sha256",
+              "authority_file_sha256",
+              "authority_decision_subject_sha256",
+              "implementation_state",
+              "accepted_exact_action_meaning",
+              "accepted_exact_choice_position_effect",
+              "accepted_confidence",
+              "accepted_limitations",
+              "accepted_coverage_assessment",
+              "source_references",
+              "evidence_map_id",
+              "evidence_map_subject_sha256",
+              "canonical_internal_action_interpretation",
+              "canonical_semantic_acceptance",
+              "public",
+              "publication_authorized",
+              "presentation_state",
+              "downstream_authorizations",
+              "record_subject_sha256"
+            ],
+            "type": "object"
+          },
+          "maxItems": 81,
+          "minItems": 81,
+          "type": "array"
+        },
+        "input_bindings": {
+          "type": "object"
+        },
+        "internal_action_interpretation_state": {
+          "const": "human_accepted_internal"
+        },
+        "internal_action_meanings_canonical": {
+          "const": true
+        },
+        "issue_id": {
+          "const": "NATIONAL_SECURITY_FOREIGN"
+        },
+        "legislator_id": {
+          "const": "leg_valerie_p_foushee"
+        },
+        "mechanical_review_state": {
+          "const": "pending_human_review"
+        },
+        "member_id": {
+          "const": "F000477"
+        },
+        "official_cutoff": {
+          "type": "object"
+        },
+        "policy_episode_state": {
+          "const": "not_started_not_authorized"
+        },
+        "source_blocked_actions": {
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "source_blocked_count": {
+          "const": 1
+        }
+      },
+      "required": [
+        "member_id",
+        "legislator_id",
+        "issue_id",
+        "congress",
+        "official_cutoff",
+        "input_bindings",
+        "implementation_record_count",
+        "implementation_records",
+        "implementation_accounting",
+        "source_blocked_actions",
+        "source_blocked_count",
+        "internal_action_interpretation_state",
+        "internal_action_meanings_canonical",
+        "canonical_semantic_acceptance",
+        "mechanical_review_state",
+        "policy_episode_state",
+        "downstream_authorizations"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "artifact_role",
+    "accepted_human_decisions_implemented",
+    "canonical_internal_action_interpretation",
+    "canonical_semantic_acceptance",
+    "public",
+    "publication_authorized",
+    "production_selectable",
+    "subject",
+    "implementation_subject_sha256"
+  ],
+  "title": "Full-Record Action Interpretation Decision Implementation V1",
+  "type": "object"
+}

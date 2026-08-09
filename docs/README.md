@@ -34,7 +34,7 @@ The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-Active plan: [M11C National Security Action Interpretation V1](plans/m11c_national_security_action_interpretation_v1.md)
+Active plan: [M11D National Security Action-Meaning Acceptance V1](plans/m11d_national_security_action_meaning_acceptance_v1.md)
 
 The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 
