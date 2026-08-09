@@ -623,12 +623,17 @@ def validate_values(
         "current-state readiness identity mismatch",
     )
     _require(
-        current["f000477_justice_119_action_interpretation_state"] == "not_started"
-        and current["f000477_justice_119_policy_episode_state"] == "not_started"
-        and current["f000477_justice_119_full_record_semantic_ir"] == "absent"
-        and current["f000477_justice_119_full_record_synthesis"] == "absent"
-        and current["f000477_justice_119_production_persistence"] == "not_authorized",
-        "current state crosses M2 boundary",
+        current["f000477_justice_119_action_interpretation_state"]
+        == "complete_37_actions_35_substantive_2_controls"
+        and current["f000477_justice_119_policy_episode_state"]
+        == "complete_32_episodes"
+        and current["f000477_justice_119_full_record_semantic_ir"]
+        == "accepted_compiled_v2"
+        and current["f000477_justice_119_full_record_synthesis"]
+        == "accepted_full_issue_synthesis"
+        and current["f000477_justice_119_production_persistence"]
+        == "completed_and_read_only_verified",
+        "current state does not preserve the accepted full-record boundary",
     )
     return {
         **aggregate,

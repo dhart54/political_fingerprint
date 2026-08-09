@@ -361,12 +361,16 @@ def validate_current_state(
         "f000477_justice_119_full_defined_issue_record_established": True,
         "f000477_justice_119_external_universe_authority": "approved_content_bound",
         "f000477_justice_119_universe_discovery_state": "complete",
-        "f000477_justice_119_action_interpretation_state": "not_started",
-        "f000477_justice_119_policy_episode_state": "not_started",
-        "f000477_justice_119_full_record_semantic_ir": "absent",
-        "f000477_justice_119_full_record_synthesis": "absent",
-        "f000477_justice_119_production_persistence": "not_authorized",
-        "f000477_justice_119_publication_state": "unchanged_reviewed_benchmark_sample_active",
+        "f000477_justice_119_action_interpretation_state": (
+            "complete_37_actions_35_substantive_2_controls"
+        ),
+        "f000477_justice_119_policy_episode_state": "complete_32_episodes",
+        "f000477_justice_119_full_record_semantic_ir": "accepted_compiled_v2",
+        "f000477_justice_119_full_record_synthesis": ("accepted_full_issue_synthesis"),
+        "f000477_justice_119_production_persistence": (
+            "completed_and_read_only_verified"
+        ),
+        "f000477_justice_119_publication_state": "full_record_publication_active",
     }
     _require(
         all(current.get(key) == value for key, value in expected.items()),
@@ -386,16 +390,16 @@ def validate_current_state(
         identity["sha256"] == receipt_sha256, "current-state receipt digest mismatch"
     )
     _require(
-        current["f000477_justice_119_review_scope"] == "benchmark_sample",
-        "benchmark review scope changed",
+        current["f000477_justice_119_review_scope"] == "full_defined_issue_record",
+        "full-record review scope changed",
     )
     _require(
-        current["f000477_justice_119_public_claim_class"] == "reviewed_sample_finding",
-        "benchmark public claim changed",
+        current["f000477_justice_119_public_claim_class"] == "full_issue_synthesis",
+        "full-record public claim changed",
     )
     _require(
-        current["f000477_justice_119_full_issue_synthesis_eligible"] is False,
-        "state claims full synthesis authority",
+        current["f000477_justice_119_full_issue_synthesis_eligible"] is True,
+        "state lost accepted full synthesis authority",
     )
 
 
