@@ -123,16 +123,27 @@ The machine-readable authority is
   action to any individual component. Human reviewer `dhart54` accepted all 81
   meanings, all 81 exact-choice effects, and every recorded limitation at that
   exact corrected head. The candidate artifact itself remains non-authorizing.
-- M11D has deterministically bound that exact M11C artifact and subject digest
+- M11D is human-accepted at PR #136 head
+  `8452ca3dfb5ba740343983c2288303fe87064b19` and merged to main as
+  `104e0bf67854342b0cde5c7247cfa302a338c527`. It deterministically binds
+  the exact M11C artifact and subject digest
   into a governed human action-meaning authority record and an 81-record
   implementation bundle. Those meanings and effects are canonical internal
   action-interpretation inputs only; they are not canonical Semantic IR or
   default public wording. H.R. 8800 remains in the approved universe as the one
-  source-blocked, uninterpreted action. M11D is complete pending human mechanical
-  review. Policy episodes have not started and are not authorized; Semantic IR,
-  synthesis, public wording, publication, persistence, production, and
-  deployment remain unauthorized. The Justice publication-active production
-  reference is unchanged.
+  source-blocked, uninterpreted action.
+- M11E has generated a detached, non-authorizing policy-episode candidate
+  package from those exact 81 records: 74 proposed episodes, comprising 70
+  single-action and four cross-measure multi-action candidates. The four
+  high-priority groupings cover repeated Iran, Lebanon, and Venezuela War Powers
+  choices and successive FISA title VII extension measures. Same-parent package
+  relationships and topic-only similarities remain contrasts, not automatic
+  membership. All 81 accepted actions are assigned exactly once; H.R. 8800 is
+  excluded; no accepted action is ambiguous or unassigned. Episode acceptance
+  has not started and is unauthorized. Semantic IR, synthesis, public wording,
+  publication, persistence, database writes, production, and deployment remain
+  unauthorized. The Justice publication-active production reference is
+  unchanged.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

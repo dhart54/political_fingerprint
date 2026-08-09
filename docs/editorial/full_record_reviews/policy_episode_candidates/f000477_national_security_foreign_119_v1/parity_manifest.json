@@ -1,0 +1,40 @@
+{
+  "accepted": false,
+  "artifact_id": "policy-episode-candidate-parity:f000477:national_security_foreign:119:v1",
+  "authorizing": false,
+  "candidate": true,
+  "candidate_batch": {
+    "artifact_id": "policy-episode-candidates:f000477:national_security_foreign:119:v1",
+    "episode_candidate_subject_sha256": "3d2d14f2d9a9e76624a97202fbe648b70a3f71d20076ba76e9966f277954d7af"
+  },
+  "canonical": false,
+  "generated_last": true,
+  "parity_state": "pass",
+  "parity_subject_sha256": "d5a487792b5637ed8f5df3674f3ae875af4591d11956e27c2c54dae2b1b2b3ab",
+  "public": false,
+  "referenced_artifacts": [
+    {
+      "episode_candidate_subject_sha256": "3d2d14f2d9a9e76624a97202fbe648b70a3f71d20076ba76e9966f277954d7af",
+      "final_file_sha256": "907fe610aa859ae9ea43f1febd0f0e824bf081ccdeab6193ce4355989871df8b",
+      "path": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_national_security_foreign_119_v1/policy_episode_candidate_batch.json"
+    },
+    {
+      "decision_template_subject_sha256": "68d17d415851cf0e16bad5f1d787014004f88f2e5c50f4055b847d6854fec543",
+      "final_file_sha256": "bbc01ac460e410c9b7c1cd61964fd8e7d961b39c36b0d7174ef375686e2d8ca6",
+      "path": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_national_security_foreign_119_v1/human_episode_decision_template.json"
+    },
+    {
+      "final_file_sha256": "3e4c9a2220afa8c37dd551d7003b3a9029b750281774658b1d4e55ef084f06f8",
+      "path": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_national_security_foreign_119_v1/human_review_dossier.md"
+    },
+    {
+      "final_file_sha256": "2a321003ea8fde274f66cf1f14284e8604b7d677a186299da9ed27d627922e62",
+      "path": "docs/methodology/full_record_policy_episode_candidate_batch_v1.schema.json"
+    },
+    {
+      "final_file_sha256": "9c7703fd8cee0965e85510238da5ba2918c8bbcd273565cbd9c341977a8ea115",
+      "path": "docs/methodology/full_record_policy_episode_human_decision_v1.schema.json"
+    }
+  ],
+  "schema_version": "full_record_policy_episode_candidate_parity_v1"
+}

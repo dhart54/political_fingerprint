@@ -6,12 +6,16 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M11D National Security Action-Meaning Acceptance V1](m11d_national_security_action_meaning_acceptance_v1.md)
-  - binds the exact human-accepted M11C candidates into governed internal
-    action-interpretation authority and deterministic implementation, preserves
-    H.R. 8800 as source-blocked, and stops before policy episodes.
+- [M11E National Security Policy-Episode Candidates V1](m11e_national_security_policy_episode_candidates_v1.md)
+  - proposes a detached, non-authorizing 74-episode review package over the 81
+    M11D-accepted actions, preserves H.R. 8800 as blocked, and stops for human
+    episode decisions.
 
 ## Retained unresolved plans
+
+- [M11D National Security Action-Meaning Acceptance V1](m11d_national_security_action_meaning_acceptance_v1.md)
+  - human-accepted at PR #136 and retained as M11E's immutable 81-action
+    interpretation authority and implementation boundary.
 
 - [M11C National Security Action Interpretation V1](m11c_national_security_action_interpretation_v1.md)
   - human-accepted at PR #135 and retained as M11D's immutable 81-candidate,
