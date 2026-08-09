@@ -32,27 +32,24 @@ The machine-readable authority is
   not authorizing: public analysis still requires an independently eligible
   active presentation and exact member, issue, artifact, semantic-tier, teaser,
   and scope agreement. Repeated-pattern/trajectory semantic roles and
-  directions are backend-supplied. The live selector supplies no policy
-  episodes until a separately reviewed contract does so.
+  directions are backend-supplied. The active Justice full-record presentation
+  supplies 32 reviewed policy episodes through that governed contract.
 - The human-approved, gold, production-eligible F000477 Justice 119th
   presentation remains publication-active and semantic tier
-  `reviewed_conclusion`, but Pass A displays its independent review state as
-  `Reviewed benchmark sample`. `scope=119` and `scope=all` may return that
-  bounded sample, with `scope=all` explicitly limited to the reviewed
+  `reviewed_conclusion`. The selected issue experience displays the completed
+  37-action record as `Full issue interpretation available`. `scope=119` and
+  `scope=all` may return that bounded full record, with `scope=all` explicitly limited to the reviewed
   119th-Congress record; `scope=118` remains `receipts_only`.
 - Full-Record Issue Interpretation V1 now keeps semantic tier, review scope,
   review completion, and public claim class separate. The active F000477 Justice
-  artifact remains a valid `reviewed_conclusion` within its completely
-  accounted seven-action `benchmark_sample`, with public claim class
-  `reviewed_sample_finding`. Separately, the exact 37-action V2 universe is now
-  established as a content-addressed `full_defined_issue_record` through the
-  declared July 23, 2026 cutoff. The detached human authority receipt binds the
-  reviewer, decision, manifest, action set, subject, boundary, and governed
-  sources. Action interpretation and policy-episode work have not started;
-  full-record Semantic IR and synthesis remain absent, production persistence
-  is not authorized, and a final full-issue synthesis is not eligible.
-  The machine-readable state is
-  `docs/editorial/full_record_reviews/f000477_justice_public_safety_119_review_state_v1.json`.
+  artifact is a `reviewed_conclusion` over the content-addressed 37-action
+  `full_defined_issue_record` through July 23, 2026. All 37 actions are
+  accounted for as 35 substantive projections and two explicit controls; 32
+  policy episodes, the compiled Semantic IR, full-issue synthesis, and public
+  presentation have completed their governed acceptance chain. Production now
+  selects the human-approved full-record candidate, not the historical
+  seven-action presentation. The historical seven-action review-state record
+  remains immutable evidence and is no longer the active publication boundary.
 - The canonical F000477 Justice V2 universe discovery reconciles 638 official
   House member actions through July 23, 2026
   (latest roll 283) into 172 high-recall candidates: 37 proposed
@@ -66,9 +63,9 @@ The machine-readable authority is
   `full_issue_universe_review_authority_v1`, approved that exact complete issue
   universe. The detached receipt is
   `docs/editorial/full_record_reviews/f000477_justice_public_safety_119_full_issue_universe_authority_receipt_v2.json`.
-  This authority establishes membership only; it creates no action
-  interpretation, synthesis eligibility, publication change, or production
-  write. The current manifest, discovery,
+  That authority originally established membership only; the later governed
+  M3-M10 chain completed interpretation, episodes, Semantic IR, synthesis,
+  public presentation acceptance, production eligibility, and activation. The current manifest, discovery,
   source inventory, configuration, V1/V2 comparison, repair plan, and review
   packet are the V2 artifacts under
   `docs/editorial/full_record_reviews/proposals/`. V1 remains discoverable only
@@ -76,18 +73,32 @@ The machine-readable authority is
 - Interpretation-source readiness is now mechanically complete and ready for
   all 37 authorized actions under the detached, non-authorizing artifact
   `docs/editorial/full_record_reviews/source_readiness/f000477_justice_public_safety_119_interpretation_source_readiness_v1.json`.
-  This source accounting generated no action interpretations and does not
-  authorize M3, episodes, propositions, Semantic IR, synthesis, persistence,
-  deployment, or publication. Action interpretation remains not started.
+  This source-readiness artifact remains the immutable M2 input to the now
+  completed M3-M10 chain; it does not independently authorize those later
+  results.
 - Before the activation, the 71-artifact seed had no publication-registry row.
   That state remains historical evidence and was not modified by the editorial
   hard cutover.
-- The separate deterministic Foushee activation bundle was applied successfully
-  on 2026-07-29 as one exact seven-row transaction. Its immutable closeout
-  receipt is
+- The historical seven-action activation was applied successfully on
+  2026-07-29. Its immutable closeout receipt remains
   `docs/editorial/publication_activations/foushee_justice_public_safety_119_successful_activation_receipt_v1.json`.
-  The rollback was not triggered; its identity-bound guardrails remain
-  documented but are not authorized by the receipt.
+  It was superseded in the active registry on 2026-08-05 by full-record artifact
+  221 (`1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943`).
+  A fresh read-only production snapshot on 2026-08-08 verified exactly one
+  active F000477 publication with that identity. Selected Issue Experience
+  V1.1 is the accepted public presentation layer at checkpoint `f16bc73`.
+- M11A is complete at the universe-membership checkpoint. Human reviewer
+  `dhart54`, acting under `full_issue_universe_review_authority_v1`, approved
+  the exact content-bound 82-action F000477 National Security & Foreign Policy
+  universe through House roll 283 on July 23, 2026. The detached receipt is
+  `docs/editorial/full_record_reviews/f000477_national_security_foreign_119_full_issue_universe_authority_receipt_v1.json`.
+  Six unresolved actions remain outside the approved universe. The 50
+  same-parent episode candidates remain non-authorizing organizational evidence,
+  and the Iran/Lebanon cross-measure notes retain zero authority effect. Action
+  interpretation has not started; episodes are not accepted; Semantic IR,
+  synthesis, and public wording are absent; publication is inactive; and
+  production persistence remains unauthorized. The active Justice full-record
+  publication state is unchanged.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

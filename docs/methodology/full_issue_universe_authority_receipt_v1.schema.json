@@ -38,6 +38,149 @@
       }
     },
     "decision_timestamp": {"type": "string", "format": "date-time"},
-    "decision": {"const": "approved_complete_issue_universe"}
+    "decision": {"const": "approved_complete_issue_universe"},
+    "approval_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority_effect",
+        "subject",
+        "selected_domain",
+        "official_cutoff",
+        "complete_house_action_set",
+        "selection",
+        "universe_proposal",
+        "approved_action_ids",
+        "exclusion_categories",
+        "source_inventory",
+        "accepted_pull_request",
+        "downstream_authorizations"
+      ],
+      "properties": {
+        "authority_effect": {"const": "universe_membership_only"},
+        "subject": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["member_name", "member_id", "legislator_id", "chamber", "congress", "issue_id"],
+          "properties": {
+            "member_name": {"type": "string", "minLength": 1},
+            "member_id": {"type": "string", "pattern": "^[A-Z][0-9]{6}$"},
+            "legislator_id": {"type": "string", "minLength": 1},
+            "chamber": {"const": "house"},
+            "congress": {"type": "integer", "minimum": 1},
+            "issue_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]+$"}
+          }
+        },
+        "selected_domain": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]+$"},
+        "official_cutoff": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["end_date", "latest_action_id"],
+          "properties": {
+            "end_date": {"type": "string", "format": "date"},
+            "latest_action_id": {"type": "string", "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$"}
+          }
+        },
+        "complete_house_action_set": {"$ref": "#/$defs/actionSetBinding"},
+        "selection": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["artifact_path", "sha256"],
+          "properties": {
+            "artifact_path": {"type": "string", "minLength": 1},
+            "sha256": {"$ref": "#/$defs/sha256"}
+          }
+        },
+        "universe_proposal": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["artifact_path", "file_sha256", "universe_subject_sha256"],
+          "properties": {
+            "artifact_path": {"type": "string", "minLength": 1},
+            "file_sha256": {"$ref": "#/$defs/sha256"},
+            "universe_subject_sha256": {"$ref": "#/$defs/sha256"}
+          }
+        },
+        "approved_action_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$"}
+        },
+        "exclusion_categories": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["procedural_context", "expressive_nonbinding_context", "exact_action_ineligible", "boundary_review_required"],
+          "properties": {
+            "procedural_context": {"$ref": "#/$defs/actionSetBindingWithMembers"},
+            "expressive_nonbinding_context": {"$ref": "#/$defs/actionSetBindingWithMembers"},
+            "exact_action_ineligible": {"$ref": "#/$defs/actionSetBindingWithMembers"},
+            "boundary_review_required": {"$ref": "#/$defs/actionSetBindingWithMembers"}
+          }
+        },
+        "source_inventory": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["artifact_id", "artifact_path", "file_sha256", "inventory_sha256"],
+          "properties": {
+            "artifact_id": {"type": "string", "minLength": 1},
+            "artifact_path": {"type": "string", "minLength": 1},
+            "file_sha256": {"$ref": "#/$defs/sha256"},
+            "inventory_sha256": {"$ref": "#/$defs/sha256"}
+          }
+        },
+        "accepted_pull_request": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["number", "head_sha"],
+          "properties": {
+            "number": {"type": "integer", "minimum": 1},
+            "head_sha": {"type": "string", "pattern": "^[a-f0-9]{40}$"}
+          }
+        },
+        "downstream_authorizations": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["action_interpretation", "episode_acceptance", "semantic_ir", "synthesis", "public_wording", "publication", "production_persistence"],
+          "properties": {
+            "action_interpretation": {"const": false},
+            "episode_acceptance": {"const": false},
+            "semantic_ir": {"const": false},
+            "synthesis": {"const": false},
+            "public_wording": {"const": false},
+            "publication": {"const": false},
+            "production_persistence": {"const": false}
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "actionSetBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "action_count", "action_set_sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "action_count": {"type": "integer", "minimum": 0},
+        "action_set_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "actionSetBindingWithMembers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "action_count", "action_set_sha256", "action_ids"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "action_count": {"type": "integer", "minimum": 0},
+        "action_set_sha256": {"$ref": "#/$defs/sha256"},
+        "action_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$"}
+        }
+      }
+    }
   }
 }
