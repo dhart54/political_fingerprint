@@ -1,0 +1,192 @@
+{
+    "actions": [
+        {
+            "actionDate": "2025-04-08",
+            "committees": [
+                {
+                    "name": "Veterans' Affairs Committee",
+                    "systemCode": "ssva00",
+                    "url": "https://api.congress.gov/v3/committee/senate/ssva00?format=json"
+                }
+            ],
+            "sourceSystem": {
+                "name": "Senate"
+            },
+            "text": "Received in the Senate and Read twice and referred to the Committee on Veterans' Affairs.",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "H38310",
+            "actionDate": "2025-04-07",
+            "actionTime": "18:56:39",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H37300",
+            "actionDate": "2025-04-07",
+            "actionTime": "18:56:38",
+            "recordedVotes": [
+                {
+                    "chamber": "House",
+                    "congress": 119,
+                    "date": "2025-04-07T22:56:38Z",
+                    "rollNumber": 89,
+                    "sessionNumber": 1,
+                    "url": "https://clerk.house.gov/evs/2025/roll089.xml"
+                }
+            ],
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "On motion to suspend the rules and pass the bill, as amended Agreed to by the Yeas and Nays: (2/3 required): 411 - 0 (Roll no. 89). (text: CR H1435-1436)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "8000",
+            "actionDate": "2025-04-07",
+            "actionTime": "18:56:38",
+            "recordedVotes": [
+                {
+                    "chamber": "House",
+                    "congress": 119,
+                    "date": "2025-04-07T22:56:38Z",
+                    "rollNumber": 89,
+                    "sessionNumber": 1,
+                    "url": "https://clerk.house.gov/evs/2025/roll089.xml"
+                }
+            ],
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On motion to suspend the rules and pass the bill, as amended Agreed to by the Yeas and Nays: (2/3 required): 411 - 0 (Roll no. 89). (text: CR H1435-1436: 1)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H30000",
+            "actionDate": "2025-04-07",
+            "actionTime": "18:31:04",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H1441-1442)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H37220",
+            "actionDate": "2025-04-07",
+            "actionTime": "16:59:47",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "At the conclusion of debate, the Yeas and Nays were demanded and ordered. Pursuant to the provisions of clause 8, rule XX, the Chair announced that further proceedings on the motion would be postponed.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H8D000",
+            "actionDate": "2025-04-07",
+            "actionTime": "16:48:26",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "DEBATE - The House proceeded with forty minutes of debate on H.R. 586.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H30000",
+            "actionDate": "2025-04-07",
+            "actionTime": "16:48:25",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Considered under suspension of the rules. (consideration: CR H1435-1437)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H30300",
+            "actionDate": "2025-04-07",
+            "actionTime": "16:48:13",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Mr. Bost moved to suspend the rules and pass the bill, as amended.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H11000",
+            "actionDate": "2025-02-25",
+            "committees": [
+                {
+                    "name": "Health Subcommittee",
+                    "systemCode": "hsvr03",
+                    "url": "https://api.congress.gov/v3/committee/house/hsvr03?format=json"
+                }
+            ],
+            "sourceSystem": {
+                "code": 1,
+                "name": "House committee actions"
+            },
+            "text": "Referred to the Subcommittee on Health.",
+            "type": "Committee"
+        },
+        {
+            "actionCode": "H11100",
+            "actionDate": "2025-01-21",
+            "committees": [
+                {
+                    "name": "Veterans' Affairs Committee",
+                    "systemCode": "hsvr00",
+                    "url": "https://api.congress.gov/v3/committee/house/hsvr00?format=json"
+                }
+            ],
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Referred to the House Committee on Veterans' Affairs.",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "Intro-H",
+            "actionDate": "2025-01-21",
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Introduced in House",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "1000",
+            "actionDate": "2025-01-21",
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Introduced in House",
+            "type": "IntroReferral"
+        }
+    ],
+    "pagination": {
+        "count": 13
+    },
+    "request": {
+        "billNumber": "586",
+        "billType": "hr",
+        "billUrl": "https://api.congress.gov/v3/bill/119/hr/586?format=json",
+        "congress": "119",
+        "contentType": "application/json",
+        "format": "json"
+    }
+}

@@ -23,6 +23,8 @@
     "full_issue_universe_discovery_validator": "scripts/validate_full_issue_universe_discovery.py",
     "full_issue_universe_authority_receipt_schema": "docs/methodology/full_issue_universe_authority_receipt_v1.schema.json",
     "full_issue_universe_authority_validator": "scripts/validate_full_issue_universe_authority.py",
+    "full_record_source_readiness_schema": "docs/methodology/full_record_interpretation_source_readiness_v1.schema.json",
+    "m11b_source_readiness_validator": "scripts/validate_m11b_national_security_source_readiness.py",
     "public_review_state_catalog": "backend/app/editorial_presentations/public_review_state_catalog_v1.json",
     "public_review_state_catalog_builder": "scripts/build_public_review_state_catalog.py",
     "frontend_pass_a_design": "docs/design/frontend_pass_a_v1.md",
@@ -202,6 +204,50 @@
       "decision_timestamp": "2026-08-09T03:45:32.2350019Z",
       "accepted_pr": 133,
       "accepted_head": "1860ef0fab3f65ffb303c5b74b380f41fe929421"
+    }
+  },
+  "active_source_readiness_milestone": {
+    "milestone": "m11b_national_security_source_readiness_v1",
+    "plan": "docs/plans/m11b_national_security_source_readiness_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "NATIONAL_SECURITY_FOREIGN"
+    },
+    "milestone_state": "complete_pending_human_review",
+    "authority_effect": "source_readiness_only",
+    "approved_universe_count": 82,
+    "approved_action_set_sha256": "190bda45c25cd32ae0a6847c862f85837eafc4a82dfda237746a66467c550400",
+    "universe_subject_sha256": "b1e1a4588a4fcef6beb9dfd836ff5c2f32d8fdb340359f11453c6a0c947a17a5",
+    "interpretation_source_readiness": "complete_81_ready_1_blocked_stage_mismatch",
+    "interpretation_source_readiness_artifact": "docs/editorial/full_record_reviews/source_readiness/f000477_national_security_foreign_119_interpretation_source_readiness_v1.json",
+    "interpretation_source_readiness_identity": {
+      "id": "interpretation-source-readiness:f000477:national_security_foreign:119:v1",
+      "sha256": "acfd656ccce57e8ef0668bcedeb5c51b0ea6342097310db13236ffc5d16bf86c",
+      "source_readiness_subject_sha256": "53af365c4b06d4cc96fdeba17a1d65c80d89ae960d8cf986b7a5bf9599ec51bd",
+      "ready_count": 81,
+      "blocked_count": 1,
+      "authorizing": false
+    },
+    "interpretation_state": "not_started",
+    "policy_episode_state": "not_accepted",
+    "semantic_ir_state": "absent",
+    "synthesis_state": "absent",
+    "publication_state": "inactive",
+    "production_persistence": "not_authorized",
+    "publication_changes": false,
+    "production_writes": false,
+    "downstream_authorizations": {
+      "action_interpretation": false,
+      "episode_acceptance": false,
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false
     }
   },
   "accepted_reference_corpora": [

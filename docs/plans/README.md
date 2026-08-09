@@ -6,12 +6,16 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M11A Cross-Issue Full-Record Expansion V1](m11a_cross_issue_full_record_expansion_v1.md)
-  - selects the next Foushee issue deterministically and constructs a
-    source-bound universe proposal without beginning interpretation or
-    publication work.
+- [M11B National Security Source Readiness V1](m11b_national_security_source_readiness_v1.md)
+  - evaluates exact-action official-source readiness across the M11A-authorized
+    82-action National Security & Foreign Policy universe without beginning
+    interpretation, episodes, Semantic IR, synthesis, or publication work.
 
 ## Retained unresolved plans
+
+- [M11A Cross-Issue Full-Record Expansion V1](m11a_cross_issue_full_record_expansion_v1.md)
+  - completed 82-action National Security & Foreign Policy universe selection
+    and human-authority closeout retained as M11B's immutable input boundary.
 
 - [Foushee Justice Full-Record Integration V1](foushee_justice_full_record_integration_v1.md)
   - completed M3-M10 integration chain retained as the accepted 37-action,
