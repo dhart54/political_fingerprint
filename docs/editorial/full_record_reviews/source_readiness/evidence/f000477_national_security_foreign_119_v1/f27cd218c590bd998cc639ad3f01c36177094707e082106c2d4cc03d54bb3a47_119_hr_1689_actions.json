@@ -1,0 +1,173 @@
+{
+    "actions": [
+        {
+            "actionDate": "2026-04-21",
+            "sourceSystem": {
+                "name": "Senate"
+            },
+            "text": "Read the second time. Placed on Senate Legislative Calendar under General Orders. Calendar No. 374.",
+            "type": "Calendars"
+        },
+        {
+            "actionDate": "2026-04-20",
+            "sourceSystem": {
+                "name": "Senate"
+            },
+            "text": "Read the first time. Placed on Senate Legislative Calendar under Read the First Time.",
+            "type": "Calendars"
+        },
+        {
+            "actionDate": "2026-04-17",
+            "sourceSystem": {
+                "name": "Senate"
+            },
+            "text": "Received in the Senate.",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "H38310",
+            "actionDate": "2026-04-16",
+            "actionTime": "14:22:04",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H37100",
+            "actionDate": "2026-04-16",
+            "actionTime": "14:22:01",
+            "recordedVotes": [
+                {
+                    "chamber": "House",
+                    "congress": 119,
+                    "date": "2026-04-16T18:22:01Z",
+                    "rollNumber": 120,
+                    "sessionNumber": 2,
+                    "url": "https://clerk.house.gov/evs/2026/roll120.xml"
+                }
+            ],
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "On passage Passed by the Yeas and Nays: 224 - 204 (Roll no. 120). (text of amendment in the nature of a substitute: CR H2940)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "8000",
+            "actionDate": "2026-04-16",
+            "actionTime": "14:22:01",
+            "recordedVotes": [
+                {
+                    "chamber": "House",
+                    "congress": 119,
+                    "date": "2026-04-16T18:22:01Z",
+                    "rollNumber": 120,
+                    "sessionNumber": 2,
+                    "url": "https://clerk.house.gov/evs/2026/roll120.xml"
+                }
+            ],
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 224 - 204 (Roll no. 120). (text of amendment in the nature of a substitute: CR H2940)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H35000",
+            "actionDate": "2026-04-16",
+            "actionTime": "13:43:47",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "The previous question was ordered pursuant to the rule.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H8D000",
+            "actionDate": "2026-04-16",
+            "actionTime": "13:11:51",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "DEBATE - The House resumed debate on H.R. 1689.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H8D000",
+            "actionDate": "2026-04-16",
+            "actionTime": "12:47:17",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "DEBATE - The House proceeded with one hour of debate on H.R. 1689.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H30000",
+            "actionDate": "2026-04-16",
+            "actionTime": "12:44:46",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Considered under the provisions of rule H. Res. 965. (consideration: CR H2940-2947)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H11100",
+            "actionDate": "2025-02-27",
+            "committees": [
+                {
+                    "name": "Judiciary Committee",
+                    "systemCode": "hsju00",
+                    "url": "https://api.congress.gov/v3/committee/house/hsju00?format=json"
+                }
+            ],
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Referred to the House Committee on the Judiciary.",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "Intro-H",
+            "actionDate": "2025-02-27",
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Introduced in House",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "1000",
+            "actionDate": "2025-02-27",
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Introduced in House",
+            "type": "IntroReferral"
+        }
+    ],
+    "pagination": {
+        "count": 13
+    },
+    "request": {
+        "billNumber": "1689",
+        "billType": "hr",
+        "billUrl": "https://api.congress.gov/v3/bill/119/hr/1689?format=json",
+        "congress": "119",
+        "contentType": "application/json",
+        "format": "json"
+    }
+}
