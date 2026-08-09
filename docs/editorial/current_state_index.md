@@ -155,15 +155,16 @@ The machine-readable authority is
   persistence, database writes, production, and deployment remain unauthorized.
   The Justice publication-active production reference is unchanged.
 - M11G proposes a detached behavioral Semantic IR candidate package from those
-  exact 81 accepted episodes. Four repeated-pattern candidates use eleven
-  episodes: Iran, Lebanon, and Venezuela War Powers removal choices and FISA
-  title VII extension opposition. Seventy episodes remain explicitly accounted
-  for without promotion; no notable choice or trajectory is proposed, and no
+  exact 81 accepted episodes. Its bounded correction contains eight repeated
+  patterns, one structured direction-change trajectory, and six selective
+  notable choices. Thirty-two episodes are primary evidence; 24 remain as
+  limit/contrast evidence and 25 have no safe higher-level proposition. No
   episode has multiple primary proposition owners. The four M11F relationship
-  records were independently re-tested and retain zero inherited authority.
+  records were independently re-tested and retain zero inherited authority;
+  the additional candidates derive independently from accepted M11F episodes.
   H.R. 8800 remains unavailable. Semantic IR acceptance, synthesis, public
   wording, publication, persistence, database writes, production, and
-  deployment remain unauthorized pending human substantive review.
+  deployment remain unauthorized pending bounded human re-review.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+from collections import Counter
 import unittest
 
 from backend.app.semantic_ir.compiler import (
@@ -23,7 +24,13 @@ class BehavioralSemanticIrCandidateTests(unittest.TestCase):
         result = build(True)
         graph = result["graph"]["compiled_candidate_ir"]
         self.assertEqual(len(graph["episode_accounting"]), 81)
-        self.assertEqual(len(graph["proposition_graph"]["propositions"]), 4)
+        self.assertEqual(
+            Counter(
+                row["proposition_type"]
+                for row in graph["proposition_graph"]["propositions"]
+            ),
+            Counter({"repeated_pattern": 8, "trajectory": 1, "notable_choice": 6}),
+        )
         self.assertEqual(graph["synthesis_propositions"], [])
         self.assertFalse(any(graph["downstream_authorizations"].values()))
 
@@ -45,6 +52,164 @@ class BehavioralSemanticIrCandidateTests(unittest.TestCase):
         ][0]["evidence_episode_ids"][:1]
         with self.assertRaises(SemanticCompilerInputError):
             compile_behavioral_candidate_ir(changed)
+
+    @staticmethod
+    def _generic_input(
+        *,
+        before: str = "opposes_policy_proposition",
+        after: str = "supports_policy_proposition",
+    ) -> dict:
+        episodes = [
+            {
+                "episode_id": "before",
+                "canonical_internal_policy_episode": True,
+                "member_direction": before,
+                "primary_action_ids": ["action-before"],
+                "actions": [{"official_action_date": "2025-01-01"}],
+            },
+            {
+                "episode_id": "after",
+                "canonical_internal_policy_episode": True,
+                "member_direction": after,
+                "primary_action_ids": ["action-after"],
+                "actions": [{"official_action_date": "2026-01-01"}],
+            },
+        ]
+        return {
+            "subject": {"member_id": "TEST"},
+            "episodes": episodes,
+            "blocked_action_ids": [],
+            "proposition_candidates": [
+                {
+                    "proposition_id": "trajectory-test",
+                    "proposition_type": "trajectory",
+                    "proposition": "A bounded direction change.",
+                    "direction": "mixed" if before != after else "support",
+                    "evidence_episode_ids": ["before", "after"],
+                    "episode_semantic_evidence": {
+                        "before": "Accepted before meaning.",
+                        "after": "Accepted after meaning.",
+                    },
+                    "overlap_relationships": [],
+                    "trajectory_change": {
+                        "change_type": "direction_change",
+                        "ordered_evidence_episode_ids": ["before", "after"],
+                        "accepted_chronology": [
+                            {"episode_id": "before", "accepted_date": "2025-01-01"},
+                            {"episode_id": "after", "accepted_date": "2026-01-01"},
+                        ],
+                        "accepted_before_direction": before,
+                        "accepted_after_direction": after,
+                        "bounded_change_description": "The accepted direction changed across successive annual packages.",
+                    },
+                }
+            ],
+            "episode_accounting": [
+                {"episode_id": "before", "primary_proposition_id": "trajectory-test"},
+                {"episode_id": "after", "primary_proposition_id": "trajectory-test"},
+            ],
+        }
+
+    def test_valid_structured_direction_change_trajectory(self) -> None:
+        graph = compile_behavioral_candidate_ir(self._generic_input())
+        proposition = graph["proposition_graph"]["propositions"][0]
+        self.assertEqual(proposition["direction"], "mixed")
+
+    def test_trajectory_rejects_reversed_chronology(self) -> None:
+        changed = self._generic_input()
+        proposition = changed["proposition_candidates"][0]
+        proposition["evidence_episode_ids"].reverse()
+        change = proposition["trajectory_change"]
+        change["ordered_evidence_episode_ids"].reverse()
+        change["accepted_chronology"].reverse()
+        change["accepted_before_direction"] = "supports_policy_proposition"
+        change["accepted_after_direction"] = "opposes_policy_proposition"
+        with self.assertRaisesRegex(
+            SemanticCompilerInputError, "strictly chronological"
+        ):
+            compile_behavioral_candidate_ir(changed)
+
+    def test_trajectory_rejects_duplicate_episodes(self) -> None:
+        changed = self._generic_input()
+        changed["proposition_candidates"][0]["evidence_episode_ids"][1] = "before"
+        with self.assertRaisesRegex(SemanticCompilerInputError, "duplicate episode"):
+            compile_behavioral_candidate_ir(changed)
+
+    def test_trajectory_rejects_claimed_direction_mismatches(self) -> None:
+        for field, value in (
+            ("accepted_before_direction", "supports_policy_proposition"),
+            ("accepted_after_direction", "opposes_policy_proposition"),
+        ):
+            with self.subTest(field=field):
+                changed = self._generic_input()
+                changed["proposition_candidates"][0]["trajectory_change"][field] = value
+                with self.assertRaises(SemanticCompilerInputError):
+                    compile_behavioral_candidate_ir(changed)
+
+    def test_trajectory_rejects_identical_directions(self) -> None:
+        changed = self._generic_input(
+            before="supports_policy_proposition", after="supports_policy_proposition"
+        )
+        with self.assertRaisesRegex(SemanticCompilerInputError, "differing directions"):
+            compile_behavioral_candidate_ir(changed)
+
+    def test_trajectory_rejects_chronology_without_substantive_change(self) -> None:
+        changed = self._generic_input()
+        changed["proposition_candidates"][0]["trajectory_change"][
+            "bounded_change_description"
+        ] = ""
+        with self.assertRaisesRegex(SemanticCompilerInputError, "substantive-change"):
+            compile_behavioral_candidate_ir(changed)
+
+    def test_canonical_mixed_episode_direction_compiles(self) -> None:
+        payload = {
+            "subject": {"member_id": "TEST"},
+            "episodes": [
+                {
+                    "episode_id": "mixed-episode",
+                    "canonical_internal_policy_episode": True,
+                    "member_direction": "mixed_on_episode_choices",
+                    "primary_action_ids": ["action-a", "action-b"],
+                    "actions": [
+                        {"official_action_date": "2026-01-01"},
+                        {"official_action_date": "2026-01-01"},
+                    ],
+                }
+            ],
+            "blocked_action_ids": [],
+            "proposition_candidates": [
+                {
+                    "proposition_id": "mixed-notable",
+                    "proposition_type": "notable_choice",
+                    "proposition": "A bounded mixed episode.",
+                    "direction": "mixed",
+                    "evidence_episode_ids": ["mixed-episode"],
+                    "episode_semantic_evidence": {
+                        "mixed-episode": "Accepted mixed choices."
+                    },
+                    "overlap_relationships": [],
+                    "trajectory_change": None,
+                }
+            ],
+            "episode_accounting": [
+                {
+                    "episode_id": "mixed-episode",
+                    "primary_proposition_id": "mixed-notable",
+                }
+            ],
+        }
+        for episode_direction in (
+            "mixed_on_episode_choices",
+            "mixed_or_non_directional",
+        ):
+            with self.subTest(episode_direction=episode_direction):
+                changed = copy.deepcopy(payload)
+                changed["episodes"][0]["member_direction"] = episode_direction
+                graph = compile_behavioral_candidate_ir(changed)
+                self.assertEqual(
+                    graph["proposition_graph"]["propositions"][0]["direction"],
+                    "mixed",
+                )
 
     def test_direction_cannot_override_accepted_episode_effects(self) -> None:
         changed = copy.deepcopy(self.compiler_input)

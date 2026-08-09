@@ -12,10 +12,16 @@ compiler architecture; it does not replace accepted Semantic IR V1.
   `trajectory`.
 - A notable choice has exactly one episode. A repeated pattern has at least two
   distinct episodes and explicit episode-level semantic evidence. A trajectory
-  additionally requires an explicit substantive change record; chronology alone
-  is insufficient.
+  additionally requires a structured substantive change record; chronology alone
+  is insufficient. A direction-change record binds the ordered evidence episode
+  IDs, accepted dates, accepted before/after episode directions, change type, and
+  a nonempty bounded change description. Dates must be strictly chronological,
+  directions must match the accepted episodes, and before/after directions must
+  differ.
 - Direction is derived from accepted episode direction. Mixed accepted episode
-  directions compile to `mixed`.
+  directions compile to `mixed`. The canonical M11F
+  `mixed_on_episode_choices` value and the retained historical
+  `mixed_or_non_directional` value both compile to `mixed`.
 - Each accepted episode receives exactly one accounting row. A proposition is
   the primary owner of an episode at most once unless a declared overlap names
   the prior owner.

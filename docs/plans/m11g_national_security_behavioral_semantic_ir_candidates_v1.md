@@ -1,6 +1,6 @@
 # M11G National Security Behavioral Semantic IR Candidates V1
 
-Status: implementation complete pending human substantive review.
+Status: bounded correction complete pending human substantive re-review.
 
 ## Intent
 
@@ -21,12 +21,15 @@ production effects.
 
 ## Implemented candidate decision surface
 
-- Four repeated-pattern candidates independently reconsider the Iran, Lebanon,
-  Venezuela, and FISA relationship hints.
-- Eleven episodes support those candidates; 70 episodes remain explicitly
-  accounted for without promotion.
-- No notable choice or trajectory is proposed. No evidence episode has more
-  than one primary proposition owner.
+- Eight repeated-pattern candidates cover the corrected FISA boundary, the
+  accepted Iran/Lebanon/Venezuela patterns, terrorism preparedness, Ukraine
+  assistance, Jordan assistance, and bounded military/DoD sex-and-gender
+  restrictions.
+- One structured trajectory records the accepted direction change between the
+  successive FY2026 and FY2027 Military Construction/VA packages.
+- Six deliberately selective notable choices are proposed. Thirty-two episodes
+  support candidates, 24 remain limit/contrast only, and 25 retain no safe
+  higher-level proposition. No evidence episode has more than one owner.
 - Relationship hints retain zero inherited authority.
 
 ## Definition of done
@@ -37,8 +40,7 @@ production effects.
 - [x] Deterministic governed JSON, empty human-decision template, readable
   dossier, and parity manifest.
 - [ ] Draft-PR CI passes at the final head.
-- [ ] Human substantive review decides the four propositions and any proposed
-  revisions or additional bounded notable choices.
+- [ ] Human substantive re-review decides all 15 corrected candidates.
 
 ## Authority boundary
 

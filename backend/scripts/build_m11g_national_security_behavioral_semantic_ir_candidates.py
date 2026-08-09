@@ -14,6 +14,9 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 from backend.app.semantic_ir.compiler import compile_behavioral_candidate_ir  # noqa: E402
+from scripts.m11g_behavioral_semantic_ir_candidate_data import (  # noqa: E402
+    CORRECTED_PROPOSITIONS,
+)
 
 
 POST_M11F_MERGE_MAIN = "43caaf4b0087ab473ee771ed9c8c4acde68be554"
@@ -45,7 +48,7 @@ PARITY_PATH = OUTPUT_ROOT / "parity_manifest.json"
 GRAPH_ID = "behavioral-semantic-ir-candidates:f000477:national_security_foreign:119:v1"
 DECISION_ID = "behavioral-semantic-ir-human-decision-template:f000477:national_security_foreign:119:v1"
 
-PROPOSITIONS = [
+REVIEWED_HEAD_PROPOSITIONS = [
     {
         "proposition_id": "pattern-fisa-title-vii-extension-opposition",
         "source_relationship_id": "fisa-title-vii-extension-attempts",
@@ -143,6 +146,10 @@ PROPOSITIONS = [
         "trajectory_change": None,
     },
 ]
+
+# Preserve the reviewed-head definitions above as correction history while the
+# deterministic build uses the bounded human-corrected candidate set.
+PROPOSITIONS = CORRECTED_PROPOSITIONS
 
 REVIEW_CONTRAST_ACTIONS = {
     "same-parent-amendments": {
@@ -282,19 +289,30 @@ def build_input(
     }
     candidates = []
     owners: dict[str, str] = {}
+    owner_types: dict[str, str] = {}
     for definition in PROPOSITIONS:
-        relationship = relationships[definition["source_relationship_id"]]
-        episode_ids = relationship["replacement_primary_episode_ids"]
-        candidate = {
-            **definition,
-            "evidence_episode_ids": episode_ids,
-            "source_relationship_binding": {
+        episode_ids = definition["evidence_episode_ids"]
+        relationship_id = definition["source_relationship_id"]
+        if relationship_id is not None:
+            relationship = relationships[relationship_id]
+            if episode_ids != relationship["replacement_primary_episode_ids"]:
+                raise ValueError(f"relationship evidence differs for {relationship_id}")
+            relationship_binding = {
                 "relationship_subject_sha256": relationship[
                     "relationship_subject_sha256"
                 ],
                 "inherited_authority": False,
                 "use": "review_hint_retested_against_accepted_episode_meanings_and_directions",
-            },
+            }
+        else:
+            relationship_binding = {
+                "relationship_subject_sha256": None,
+                "inherited_authority": False,
+                "use": "none_independently_derived_from_accepted_m11f_episodes",
+            }
+        candidate = {
+            **definition,
+            "source_relationship_binding": relationship_binding,
             "episode_semantic_evidence": {
                 episode_id: episodes_by_id[episode_id]["policy_proposition"]
                 for episode_id in episode_ids
@@ -305,12 +323,15 @@ def build_input(
             if episode_id in owners:
                 raise ValueError(f"inflated primary ownership for {episode_id}")
             owners[episode_id] = definition["proposition_id"]
+            owner_types[episode_id] = definition["proposition_type"]
 
     relationship_episode_ids = {
         episode_id
         for relationship in relationships.values()
         for episode_id in relationship["replacement_primary_episode_ids"]
     }
+    if not relationship_episode_ids <= set(owners):
+        raise ValueError("preserved relationship evidence lacks corrected disposition")
     accounting = []
     for episode in sorted(episodes, key=lambda row: row["episode_id"]):
         episode_id = episode["episode_id"]
@@ -321,12 +342,12 @@ def build_input(
             if action_ids & contrast_action_ids
         )
         if episode_id in owners:
-            disposition = "supports_proposed_repeated_pattern"
-            reason = "Accepted episode meaning and direction independently satisfy the bounded repeated proposition."
-        elif episode_id in relationship_episode_ids:
-            raise ValueError(
-                "relationship episode omitted from proposed relationship disposition"
-            )
+            disposition = {
+                "repeated_pattern": "supports_proposed_repeated_pattern",
+                "trajectory": "supports_proposed_trajectory",
+                "notable_choice": "supports_proposed_notable_choice",
+            }[owner_types[episode_id]]
+            reason = "Accepted episode meaning, direction, and lineage independently satisfy the bounded candidate proposition."
         elif contrast_ids:
             disposition = "retained_as_limit_or_contrast"
             reason = (
@@ -355,21 +376,29 @@ def build_input(
     return compiler_input, list(relationships.values())
 
 
+def concise(value: str, limit: int = 220) -> str:
+    compact = " ".join(value.split())
+    return compact if len(compact) <= limit else compact[: limit - 1] + "…"
+
+
 def dossier(graph: dict[str, Any], relationships: list[dict[str, Any]]) -> str:
     propositions = graph["proposition_graph"]["propositions"]
     counts = Counter(row["disposition"] for row in graph["episode_accounting"])
+    type_counts = Counter(row["proposition_type"] for row in propositions)
     lines = [
         "# M11G Behavioral Semantic IR Candidate Review",
         "",
-        "This is a detached, non-authorizing review package. It proposes four repeated behavioral patterns from accepted M11F episodes. It accepts no Semantic IR, creates no synthesis, and contains no public wording.",
+        "This is a detached, non-authorizing review package. It proposes 15 selective behavioral propositions from accepted M11F episodes. It accepts no Semantic IR, creates no synthesis, and contains no public wording.",
         "",
         "## Accounting",
         "",
         f"- Accepted M11F episodes accounted for: {len(graph['episode_accounting'])} of 81.",
-        f"- Proposed repeated patterns: {len(propositions)}.",
-        "- Proposed notable choices: 0.",
-        "- Proposed trajectories: 0.",
+        f"- Proposed repeated patterns: {type_counts['repeated_pattern']}.",
+        f"- Proposed notable choices: {type_counts['notable_choice']}.",
+        f"- Proposed trajectories: {type_counts['trajectory']}.",
         f"- Episodes supporting a proposed pattern: {counts['supports_proposed_repeated_pattern']}.",
+        f"- Episodes supporting a proposed trajectory: {counts['supports_proposed_trajectory']}.",
+        f"- Episodes supporting a proposed notable choice: {counts['supports_proposed_notable_choice']}.",
         f"- Episodes retained as limits or contrasts: {counts['retained_as_limit_or_contrast']}.",
         f"- Episodes retained without a safe higher-level proposition: {counts['no_safe_higher_level_behavioral_proposition']}.",
         "- Overlapping primary evidence owners: 0.",
@@ -393,21 +422,25 @@ def dossier(graph: dict[str, Any], relationships: list[dict[str, Any]]) -> str:
                 f"- Rationale: {proposition['rationale']}",
                 f"- Limitations: {'; '.join(proposition['material_limitations'])}",
                 f"- Competing interpretation: {'; '.join(proposition['competing_interpretations'])}",
-                f"- Relevant contrasts: {'; '.join(contrast['reason'] for contrast in proposition['relevant_contrasts'])}",
+                f"- Relevant contrasts: {'; '.join(contrast['reason'] for contrast in proposition['relevant_contrasts']) or 'None identified beyond the recorded limitations.'}",
+                f"- Conclusion relevance: `{proposition['conclusion_relevance']}`.",
                 "- Chronology and accepted choices:",
                 "",
             ]
         )
-        for episode_id in proposition["evidence_episode_ids"]:
+        for episode_id in sorted(
+            proposition["evidence_episode_ids"],
+            key=lambda value: episodes[value]["actions"][0]["official_action_date"],
+        ):
             episode = episodes[episode_id]
             action = episode["actions"][0]
             lines.append(
-                f"  - {action['official_action_date']} — `{episode_id}` / `{action['action_id']}` — {action['accepted_exact_action_meaning']}"
+                f"  - {action['official_action_date']} — `{episode_id}` / `{action['action_id']}` — {concise(action['accepted_exact_action_meaning'])}"
             )
         lines.extend(
             [
                 "",
-                "Conclusion relevance if later accepted: primary behavioral proposition; no synthesis effect.",
+                "This candidate has no synthesis effect.",
                 "",
             ]
         )
@@ -426,13 +459,13 @@ def dossier(graph: dict[str, Any], relationships: list[dict[str, Any]]) -> str:
             "",
             "## Non-proposition ledger",
             "",
-            "The governed JSON retains all 70 unused episode IDs and the reason for each. They are not silently omitted: each remains a canonical internal episode but is not promoted merely for sharing a topic, parent package, vocabulary, date sequence, or broad policy area.",
+            "The governed JSON retains all 49 non-proposition episode IDs and the reason for each. They are not silently omitted: each remains a canonical internal episode but is not promoted merely for sharing a topic, parent package, vocabulary, date sequence, or broad policy area.",
             "",
-            "The Ukraine, Jordan, military sex/gender, defense/energy, and same-parent amendment contrast groups remain outside proposed patterns. Their accepted meanings concern materially different mechanisms or scopes. Broad package votes do not supply component positions.",
+            "The corrected Ukraine, Jordan, and military/DoD sex-and-gender candidates remain bounded across their expressly enumerated mechanisms. The defense/energy group remains too heterogeneous, and remaining same-parent relationships do not become patterns automatically. Broad package votes do not supply component positions.",
             "",
             "## Human decisions required",
             "",
-            "Review each of the four proposed repeated patterns as accept, revise, or reject. Also decide whether any of the 70 explicitly unused episodes is sufficiently informative for a bounded notable-choice candidate. No trajectory is proposed because no substantive change in position, mechanism, scope, or direction was safely established.",
+            "Review each of the 15 candidates as accept, revise, or reject: eight repeated patterns, one trajectory, and six notable choices. No additional routine or lower-signal singleton is proposed.",
             "",
             "Semantic IR acceptance, synthesis, public wording, publication, persistence, database writes, production, and deployment remain unauthorized.",
             "",

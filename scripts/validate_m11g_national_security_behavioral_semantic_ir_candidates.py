@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+from collections import Counter
 import json
 from pathlib import Path
 import sys
@@ -44,6 +45,64 @@ def expect_rejected(payload: dict, message: str) -> None:
     except (SemanticCompilerInputError, KeyError):
         return
     raise ValueError(message)
+
+
+EXPECTED_CANDIDATE_EPISODES = {
+    "pattern-fisa-title-vii-extension-opposition": [
+        "single-119-s-4465-2-155",
+        "single-119-hr-9238-2-221",
+    ],
+    "pattern-iran-war-powers-removal-support": [
+        "single-119-hconres-38-2-85",
+        "single-119-hconres-40-2-114",
+        "single-119-hconres-75-2-170",
+        "single-119-hconres-86-2-199",
+        "single-119-hconres-89-2-282",
+    ],
+    "pattern-lebanon-war-powers-removal-support": [
+        "single-119-hconres-84-2-201",
+        "single-119-hconres-108-2-232",
+    ],
+    "pattern-venezuela-war-powers-removal-support": [
+        "single-119-hconres-64-1-346",
+        "single-119-hconres-68-2-48",
+    ],
+    "pattern-terrorism-preparedness-support": [
+        "single-119-hr-1608-1-286",
+        "single-119-hr-3106-2-234",
+    ],
+    "pattern-ukraine-assistance-mixed": [
+        "single-119-hamdt-57-1-209",
+        "single-119-hamdt-93-1-255",
+        "single-119-hamdt-252-2-264",
+        "single-119-hr-2913-2-207",
+    ],
+    "pattern-jordan-assistance-restriction-opposition": [
+        "single-119-hamdt-56-1-208",
+        "single-119-hamdt-236-2-244",
+    ],
+    "pattern-military-dod-sex-gender-restriction-opposition": [
+        "single-119-hamdt-86-1-246",
+        "single-119-hamdt-88-1-248",
+        "single-119-hamdt-89-1-249",
+        "single-119-hamdt-254-2-266",
+        "single-119-hamdt-256-2-268",
+    ],
+    "trajectory-milcon-va-appropriations-direction-change": [
+        "single-119-hr-3944-1-182",
+        "single-119-hr-8469-2-175",
+    ],
+    "notable-israel-foreign-military-financing-reduction": [
+        "single-119-hamdt-235-2-243"
+    ],
+    "notable-aumf-repeal-1991-2002": ["single-119-hamdt-99-1-244"],
+    "notable-international-criminal-court-sanctions-opposition": [
+        "single-119-hr-23-1-7"
+    ],
+    "notable-taiwan-security-cooperation-funding": ["single-119-hamdt-95-1-257"],
+    "notable-haiti-temporary-protected-status": ["single-119-hr-1689-2-120"],
+    "notable-fy2026-ndaa-package-opposition": ["single-119-s-1071-1-320"],
+}
 
 
 def validate() -> dict[str, object]:
@@ -96,16 +155,42 @@ def validate() -> dict[str, object]:
         "complete episode accounting differs",
     )
     propositions = graph["proposition_graph"]["propositions"]
+    proposition_counts = Counter(row["proposition_type"] for row in propositions)
     require(
-        len(propositions) == 4
-        and {row["proposition_type"] for row in propositions} == {"repeated_pattern"},
+        len(propositions) == 15
+        and proposition_counts
+        == {"repeated_pattern": 8, "trajectory": 1, "notable_choice": 6},
         "bounded proposition set differs",
     )
     require(
-        all(len(row["evidence_episode_ids"]) >= 2 for row in propositions),
+        {row["proposition_id"]: row["evidence_episode_ids"] for row in propositions}
+        == EXPECTED_CANDIDATE_EPISODES,
+        "exact corrected candidate/evidence set differs",
+    )
+    require(
+        all(
+            len(row["evidence_episode_ids"]) >= 2
+            for row in propositions
+            if row["proposition_type"] == "repeated_pattern"
+        ),
         "repeated-pattern minimum differs",
     )
+    require(
+        all(
+            len(row["evidence_episode_ids"]) == 1
+            for row in propositions
+            if row["proposition_type"] == "notable_choice"
+        ),
+        "notable-choice episode boundary differs",
+    )
     require(not graph["synthesis_propositions"], "synthesis leaked into M11G")
+    require(
+        graph_artifact["public_wording_included"] is False
+        and graph_artifact["accepted_semantic_ir"] is False
+        and graph_artifact["canonical_semantic_ir"] is False
+        and graph_artifact["authorizing"] is False,
+        "candidate/public/acceptance authority leaked",
+    )
     require(
         all(value is False for value in graph["downstream_authorizations"].values()),
         "downstream authority leaked",
@@ -143,12 +228,12 @@ def validate() -> dict[str, object]:
         "primary evidence inflation detected",
     )
     require(
-        set(owners)
-        == {
+        {
             episode_id
             for relationship in relationships
             for episode_id in relationship["replacement_primary_episode_ids"]
-        },
+        }
+        <= set(owners),
         "four relationship dispositions differ",
     )
     require(
@@ -157,6 +242,58 @@ def validate() -> dict[str, object]:
             for row in propositions
         ),
         "relationship hint gained authority",
+    )
+    accounting_counts = Counter(
+        row["disposition"] for row in graph["episode_accounting"]
+    )
+    require(
+        accounting_counts
+        == {
+            "supports_proposed_repeated_pattern": 24,
+            "supports_proposed_trajectory": 2,
+            "supports_proposed_notable_choice": 6,
+            "retained_as_limit_or_contrast": 24,
+            "no_safe_higher_level_behavioral_proposition": 25,
+        },
+        "corrected primary episode accounting differs",
+    )
+    trajectory = next(
+        row for row in propositions if row["proposition_type"] == "trajectory"
+    )
+    require(
+        trajectory["direction"] == "mixed"
+        and trajectory["conclusion_relevance"] == "limiting"
+        and trajectory["trajectory_change"]["change_type"] == "direction_change",
+        "structured trajectory differs",
+    )
+    fisa = next(
+        row
+        for row in propositions
+        if row["proposition_id"] == "pattern-fisa-title-vii-extension-opposition"
+    )
+    require(
+        "stated purpose included extending" in fisa["proposition"]
+        and any("complete measures" in value for value in fisa["material_limitations"]),
+        "FISA whole-measure boundary differs",
+    )
+    ukraine = next(
+        row
+        for row in propositions
+        if row["proposition_id"] == "pattern-ukraine-assistance-mixed"
+    )
+    require(
+        ukraine["direction"] == "mixed"
+        and any("whole measure" in value for value in ukraine["material_limitations"]),
+        "Ukraine mixed/package boundary differs",
+    )
+    ndaa = next(
+        row
+        for row in propositions
+        if row["proposition_id"] == "notable-fy2026-ndaa-package-opposition"
+    )
+    require(
+        any("whole-package choice" in value for value in ndaa["material_limitations"]),
+        "NDAA component-inference boundary differs",
     )
 
     # Generic adversarial checks.
@@ -231,11 +368,19 @@ def validate() -> dict[str, object]:
         and all(row["decision"] is None for row in decision["decisions"]),
         "decision template is not empty/non-authorizing",
     )
+    require(
+        {row["proposition_id"] for row in decision["decisions"]}
+        == {row["proposition_id"] for row in propositions}
+        and len(decision["decisions"]) == 15,
+        "decision template candidate set differs",
+    )
     dossier = DOSSIER_PATH.read_text(encoding="utf-8")
     require(
-        "Proposed repeated patterns: 4" in dossier
-        and "retained as limits or contrasts: 39" in dossier
-        and "retained without a safe higher-level proposition: 31" in dossier,
+        "Proposed repeated patterns: 8" in dossier
+        and "Proposed notable choices: 6" in dossier
+        and "Proposed trajectories: 1" in dossier
+        and "retained as limits or contrasts: 24" in dossier
+        and "retained without a safe higher-level proposition: 25" in dossier,
         "dossier parity differs",
     )
     state = load(ROOT / "docs/editorial/current_state_index.json")[
@@ -245,21 +390,18 @@ def validate() -> dict[str, object]:
         state["post_m11f_merge_base"] == POST_M11F_MERGE_MAIN
         and state["candidate_identity"]["candidate_subject_sha256"]
         == graph_artifact["candidate_subject_sha256"]
-        and state["milestone_state"] == "complete_pending_human_substantive_review",
+        and state["milestone_state"]
+        == "bounded_correction_complete_pending_human_re_review",
         "canonical current state differs",
     )
     return {
         "status": "pass",
         "episode_count": 81,
-        "proposition_counts": {
-            "notable_choice": 0,
-            "repeated_pattern": 4,
-            "trajectory": 0,
-        },
+        "proposition_counts": dict(proposition_counts),
         "proposition_episode_count": len(owners),
         "unused_episode_count": 81 - len(owners),
-        "limit_or_contrast_episode_count": 39,
-        "no_safe_proposition_episode_count": 31,
+        "limit_or_contrast_episode_count": 24,
+        "no_safe_proposition_episode_count": 25,
         "blocked_action_ids": ["house:119:2:278"],
     }
 

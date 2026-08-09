@@ -7,9 +7,10 @@ product, civic, publication, or production semantics.
 ## Active plan
 
 - [M11G National Security Behavioral Semantic IR Candidates V1](m11g_national_security_behavioral_semantic_ir_candidates_v1.md)
-  - proposes four detached repeated-pattern candidates over 11 of the 81
-    M11F-accepted episodes, explicitly accounts for all remaining episodes,
-    preserves H.R. 8800 as blocked, and stops for human substantive review.
+  - bounded correction proposes eight repeated patterns, one structured
+    trajectory, and six selective notable choices over 32 of the 81
+    M11F-accepted episodes; it preserves H.R. 8800 as blocked and stops for
+    human substantive re-review.
 
 ## Retained unresolved plans
 
