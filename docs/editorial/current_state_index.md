@@ -87,10 +87,18 @@ The machine-readable authority is
   A fresh read-only production snapshot on 2026-08-08 verified exactly one
   active F000477 publication with that identity. Selected Issue Experience
   V1.1 is the accepted public presentation layer at checkpoint `f16bc73`.
-- M11A is now the active content-expansion milestone. It selects National
-  Security & Foreign Policy deterministically and constructs only a proposed
-  universe boundary; no new action interpretation, Semantic IR, publication,
-  deployment, or production write is authorized.
+- M11A is complete at the universe-membership checkpoint. Human reviewer
+  `dhart54`, acting under `full_issue_universe_review_authority_v1`, approved
+  the exact content-bound 82-action F000477 National Security & Foreign Policy
+  universe through House roll 283 on July 23, 2026. The detached receipt is
+  `docs/editorial/full_record_reviews/f000477_national_security_foreign_119_full_issue_universe_authority_receipt_v1.json`.
+  Six unresolved actions remain outside the approved universe. The 50
+  same-parent episode candidates remain non-authorizing organizational evidence,
+  and the Iran/Lebanon cross-measure notes retain zero authority effect. Action
+  interpretation has not started; episodes are not accepted; Semantic IR,
+  synthesis, and public wording are absent; publication is inactive; and
+  production persistence remains unauthorized. The active Justice full-record
+  publication state is unchanged.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

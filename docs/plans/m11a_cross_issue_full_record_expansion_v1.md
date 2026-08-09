@@ -83,6 +83,9 @@
 - Full-Record Issue Interpretation validator and regression suite: passed; 19 tests.
 - Ruff lint and format checks: passed.
 - Python compilation, JSON parsing, and `git diff --check`: passed.
+- Detached M11A universe-authority receipt validator and adversarial regression suite: passed; 11 tests.
+- Existing generic universe-authority regression suite: passed; 12 tests.
+- Documentation and full-record terminology governance: passed.
 
 ## Production Writes
 
@@ -103,4 +106,8 @@
 
 - Definition of done satisfied: yes; implementation and validation are complete, with a bounded correction commit to the existing draft PR as the delivery operation.
 - Remaining limitations: six exact child-action boundaries remain unresolved and excluded; episode candidates are not accepted episodes.
-- Recommended next step: human review of the domain selection and complete universe-boundary packet.
+- Human universe-boundary decision: approved by `dhart54` under `full_issue_universe_review_authority_v1` against PR #133 head `1860ef0fab3f65ffb303c5b74b380f41fe929421`.
+- Approved boundary: 82 substantive actions; 33 procedural/context, two expressive/nonbinding, 26 exact-action-ineligible, and six unresolved actions remain outside the approved universe.
+- Authority effect: universe membership only. Action interpretation has not started; episode acceptance, Semantic IR, synthesis, public wording, publication, and production persistence remain unauthorized.
+- Detached authority receipt: `docs/editorial/full_record_reviews/f000477_national_security_foreign_119_full_issue_universe_authority_receipt_v1.json`.
+- Recommended next step: final mechanical review of the authority receipt and closeout commit. Do not begin M11B in PR #133.
