@@ -390,8 +390,9 @@ def validate() -> dict[str, object]:
         state["post_m11f_merge_base"] == POST_M11F_MERGE_MAIN
         and state["candidate_identity"]["candidate_subject_sha256"]
         == graph_artifact["candidate_subject_sha256"]
-        and state["milestone_state"]
-        == "bounded_correction_complete_pending_human_re_review",
+        and state["milestone_state"] == "completed_human_reviewed_accepted"
+        and state["accepted_head"] == "8ef00da6c0d92662c887874d015024a5b038d66a"
+        and state["post_merge_main"] == "8bd2ec2da7c5da6828c28217cc035c651c7c6f76",
         "canonical current state differs",
     )
     return {

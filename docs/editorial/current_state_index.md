@@ -154,7 +154,10 @@ The machine-readable authority is
   remains blocked. Semantic IR, synthesis, public wording, publication,
   persistence, database writes, production, and deployment remain unauthorized.
   The Justice publication-active production reference is unchanged.
-- M11G proposes a detached behavioral Semantic IR candidate package from those
+- M11G was human-accepted at PR #139 head
+  `8ef00da6c0d92662c887874d015024a5b038d66a` and merged to main as
+  `8bd2ec2da7c5da6828c28217cc035c651c7c6f76`. Its detached Behavioral
+  Semantic IR candidate package derives from those
   exact 81 accepted episodes. Its bounded correction contains eight repeated
   patterns, one structured direction-change trajectory, and six selective
   notable choices. Thirty-two episodes are primary evidence; 24 remain as
@@ -164,7 +167,17 @@ The machine-readable authority is
   the additional candidates derive independently from accepted M11F episodes.
   H.R. 8800 remains unavailable. Semantic IR acceptance, synthesis, public
   wording, publication, persistence, database writes, production, and
-  deployment remain unauthorized pending bounded human re-review.
+  deployment remain unauthorized.
+- M11H deterministically records all 15 human decisions as
+  `accept_candidate_as_written` and binds the complete accepted 81-episode
+  disposition ledger. The canonical internal graph contains eight primary
+  repeated patterns, one limiting trajectory, and six excluded notable choices;
+  24 episodes remain contrast-only, 25 remain without a safe higher-level
+  proposition, and no primary episode overlaps. H.R. 8800 remains blocked. The
+  human authority and implementation are complete pending mechanical review.
+  They do not authorize synthesis, public wording, publication, persistence,
+  database writes, production, or deployment. Justice remains the only active
+  publication reference.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

@@ -1,0 +1,88 @@
+{
+  "$id": "https://politicalfingerprint.org/schemas/full_record_behavioral_semantic_ir_implementation_parity_v1",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "authority_binding": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "authority_subject_sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authority_subject_sha256"
+      ],
+      "type": "object"
+    },
+    "blocked_action_excluded": {
+      "type": "boolean"
+    },
+    "candidate_file_sha256_after": {
+      "type": "string"
+    },
+    "candidate_file_sha256_before": {
+      "type": "string"
+    },
+    "candidate_immutable": {
+      "type": "boolean"
+    },
+    "downstream_authority_leakage": {
+      "type": "boolean"
+    },
+    "episode_disposition_parity": {
+      "type": "boolean"
+    },
+    "evidence_lineage_validated": {
+      "type": "boolean"
+    },
+    "implementation_binding": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "implementation_subject_sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "implementation_subject_sha256"
+      ],
+      "type": "object"
+    },
+    "parity_subject_sha256": {
+      "type": "string"
+    },
+    "proposition_content_parity": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "authority_binding",
+    "blocked_action_excluded",
+    "candidate_file_sha256_after",
+    "candidate_file_sha256_before",
+    "candidate_immutable",
+    "downstream_authority_leakage",
+    "episode_disposition_parity",
+    "evidence_lineage_validated",
+    "implementation_binding",
+    "parity_subject_sha256",
+    "proposition_content_parity",
+    "schema_version"
+  ],
+  "type": "object"
+}
