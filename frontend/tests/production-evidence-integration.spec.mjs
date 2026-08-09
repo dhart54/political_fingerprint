@@ -224,6 +224,7 @@ test("related actions use a non-collapsible parent and keep every child independ
   await expect(group).toContainText("5 Nay · 1 non-counting control");
   await expect(group.locator("summary")).toHaveCount(0);
   await expect(group).not.toContainText("navigation group");
+  await expect(group).not.toContainText("Parent measure:");
   await expect(group.locator("[data-canonical-action-id]")).toHaveCount(5);
 
   for (const receipt of await group.locator("[data-canonical-action-id]").all()) {
@@ -237,6 +238,23 @@ test("related actions use a non-collapsible parent and keep every child independ
   await expect(group.locator('[data-canonical-action-id="house:119:2:278"]')).toContainText(
     "Non-counting control",
   );
+});
+
+test("an NDAA action filtered out of its group retains parent-measure context", async ({ page }) => {
+  await page.goto(`${selectedPath}&scope=119`);
+  await page.getByRole("button", {
+    name: "View 3 votes for Opposition to reducing firearm-access barriers",
+  }).click();
+
+  const strip = page.locator(".pattern-strip");
+  await expect(strip).toContainText("Opposition");
+  await expect(strip).toContainText("reducing firearm-access barriers");
+  await expect(strip).toContainText("3 matching votes");
+  await expect(strip.getByRole("button", { name: "Show all 37 votes" })).toBeVisible();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
+  await expect(
+    page.locator('[data-canonical-action-id="house:119:2:265"]'),
+  ).toContainText("Parent measure: National Defense Authorization Act for Fiscal Year 2027");
 });
 
 test("pagination reaches all 89 unique actions without group omissions", async ({ page }) => {

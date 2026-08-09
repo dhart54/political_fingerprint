@@ -305,6 +305,7 @@ function RelatedActionGroup({
               onToggle={() => onToggle(expandedId === actionId ? null : actionId)}
               representativeName={representativeName}
               row={row}
+              showParentMeasure={false}
             />
           );
         })}

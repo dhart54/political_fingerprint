@@ -11,6 +11,7 @@ import {
 } from "./selected-issue-fixtures.mjs";
 
 const output = process.env.SELECTED_ISSUE_REVIEW_DIR;
+const finalVisualOutput = process.env.SELECTED_ISSUE_FINAL_VISUAL_DIR;
 const testedCommit = process.env.SELECTED_ISSUE_TESTED_COMMIT;
 const selectedPath = "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY";
 const manifest = [];
@@ -148,6 +149,46 @@ test("capture Selected Issue Experience V1.1 exact-commit packet", async ({ page
     }, null, 2)}\n`,
     "utf8",
   );
+});
+
+test("capture the two final V1.1 visual-sign-off states", async ({ page }) => {
+  test.skip(
+    !finalVisualOutput || !testedCommit,
+    "Set SELECTED_ISSUE_FINAL_VISUAL_DIR and SELECTED_ISSUE_TESTED_COMMIT.",
+  );
+  fs.mkdirSync(finalVisualOutput, { recursive: true });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await setViewport(page, 1440, 1000);
+  await openSelectedIssue(page, "119");
+
+  const group = page.getByTestId("related-action-group").filter({
+    hasText: "National Defense Authorization Act for Fiscal Year 2027",
+  });
+  await expect(group.locator("[data-canonical-action-id]")).toHaveCount(5);
+  await expect(group).not.toContainText("Parent measure:");
+  await group.screenshot({
+    path: path.join(
+      finalVisualOutput,
+      `A-ndaa-related-action-group-${testedCommit.slice(0, 7)}.png`,
+    ),
+  });
+
+  await openSelectedIssue(page, "119");
+  await page.getByRole("button", {
+    name: "View 3 votes for Opposition to reducing firearm-access barriers",
+  }).click();
+  const strip = page.locator(".pattern-strip");
+  await expect(strip).toContainText("Opposition");
+  await expect(strip).toContainText("reducing firearm-access barriers");
+  await expect(strip).toContainText("3 matching votes");
+  await expect(strip.getByRole("button", { name: "Show all 37 votes" })).toBeVisible();
+  await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
+  await page.locator("#vote-record").screenshot({
+    path: path.join(
+      finalVisualOutput,
+      `B-selected-opposition-pattern-${testedCommit.slice(0, 7)}.png`,
+    ),
+  });
 });
 
 async function openSelectedIssue(page, scope) {

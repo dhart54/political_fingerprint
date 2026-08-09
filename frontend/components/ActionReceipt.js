@@ -20,6 +20,7 @@ export default function ActionReceipt({
   onToggle,
   representativeName,
   row,
+  showParentMeasure = true,
 }) {
   const id = actionReceiptId(row);
   const actionId = canonicalActionId(row);
@@ -48,7 +49,7 @@ export default function ActionReceipt({
           <span className="block text-base font-semibold leading-6 text-stone-950">
             {action.title}
           </span>
-          {action.parentMeasure ? (
+          {showParentMeasure && action.parentMeasure ? (
             <span className="mt-0.5 block text-sm leading-5 text-stone-600">
               Parent measure: {action.parentMeasure}
             </span>
