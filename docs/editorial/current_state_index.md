@@ -99,7 +99,10 @@ The machine-readable authority is
   synthesis, and public wording are absent; publication is inactive; and
   production persistence remains unauthorized. The active Justice full-record
   publication state is unchanged.
-- M11B has completed its non-authorizing source-readiness build for the exact
+- M11B is human-accepted at PR #134 head
+  `fcc988b867a49086d7545832f9575130aef0f8ea` and merged to main as
+  `13f8ad58f3aee32eb90369e8b454830cfbbf130b`. It completed its
+  non-authorizing source-readiness build for the exact
   M11A-approved 82-action National Security & Foreign Policy universe. Eighty-one
   actions are ready; `house:119:2:278` is fail-closed as
   `blocked_stage_mismatch` because the available July 20 H.R. 8800 Rules report
@@ -107,11 +110,23 @@ The machine-readable authority is
   available. The detached artifact is
   `docs/editorial/full_record_reviews/source_readiness/f000477_national_security_foreign_119_interpretation_source_readiness_v1.json`.
   Raw official provenance remains separate from the closed neutral projections.
-  This result authorizes source readiness only: action interpretation has not
-  started; episodes are not accepted; Semantic IR, synthesis, and public
-  wording are absent; publication is inactive; and production persistence is
-  unauthorized. The Justice publication-active production reference is
-  unchanged.
+  This accepted result establishes source readiness only and does not itself
+  accept action meaning or any later semantic stage.
+- M11C has generated a detached, non-authorizing candidate interpretation for
+  each of those 81 ready actions. The candidate artifact is
+  `docs/editorial/full_record_reviews/interpretation_candidates/f000477_national_security_foreign_119_v1/candidate_batch.json`.
+  Seventy-one candidates use bounded official-purpose summaries; ten broad
+  authorization, appropriations, or other multi-part measures use an explicit
+  package-level bounded-summary state that does not attribute the member's
+  action to any individual component. The review of head `1a5d60c` accepted 79
+  meanings and all 81 exact-choice effects while requiring bounded corrections
+  to S. 1071 and S. 1318. Those two corrected meanings remain pending the final
+  bounded human gate, so the candidate package remains non-authorizing. H.R.
+  8800 remains in the universe as the one source-blocked action and has no
+  candidate. Policy episodes have not started and are not accepted; Semantic
+  IR, synthesis, and public wording remain absent;
+  publication is inactive; and production persistence is unauthorized. The
+  Justice publication-active production reference is unchanged.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

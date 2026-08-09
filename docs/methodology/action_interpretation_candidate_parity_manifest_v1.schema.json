@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://politicalfingerprint.example/schemas/action_interpretation_candidate_parity_manifest_v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "manifest_id", "subject", "parity_subject_sha256"],
+  "properties": {
+    "schema_version": {"const": "action_interpretation_candidate_parity_manifest_v1"},
+    "manifest_id": {"type": "string", "minLength": 1},
+    "parity_subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_artifact_id",
+        "candidate_interpretation_subject_sha256",
+        "files",
+        "candidate_count",
+        "blocked_count",
+        "json_markdown_substantive_parity"
+      ],
+      "properties": {
+        "candidate_artifact_id": {"type": "string", "minLength": 1},
+        "candidate_interpretation_subject_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "files": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "candidate_count": {"const": 81},
+        "blocked_count": {"const": 1},
+        "json_markdown_substantive_parity": {"const": true}
+      }
+    }
+  }
+}
