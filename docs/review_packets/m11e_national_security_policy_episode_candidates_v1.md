@@ -1,5 +1,11 @@
 # M11E National Security Policy-Episode Candidate Review Packet
 
+Human review completed at PR #137 head
+`1256bb84603305c6f2da037a80d5c167e805a503`. The 70 singleton candidates were
+accepted; all four cross-measure primary candidates were rejected and routed to
+11 singleton replacements in M11F. This packet remains the immutable review
+surface and is not itself authorizing.
+
 ## Exact review object
 
 - Base: `104e0bf67854342b0cde5c7247cfa302a338c527`.

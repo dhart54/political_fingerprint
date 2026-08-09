@@ -13,6 +13,11 @@ product, civic, publication, or production semantics.
 
 ## Retained unresolved plans
 
+- [M11F National Security Policy-Episode Acceptance V1](m11f_national_security_policy_episode_acceptance_v1.md)
+  - implementation complete pending human mechanical review; binds 74 M11E
+    decisions into 81 canonical internal singleton episodes with all downstream
+    authorities false.
+
 - [M11D National Security Action-Meaning Acceptance V1](m11d_national_security_action_meaning_acceptance_v1.md)
   - human-accepted at PR #136 and retained as M11E's immutable 81-action
     interpretation authority and implementation boundary.

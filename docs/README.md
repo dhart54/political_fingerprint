@@ -78,6 +78,10 @@ Committed generated artifacts are required when builders or tests drift-check th
 
 Generated does not mean disposable. Regeneration must remain deterministic, and publication status must not change through regeneration.
 
+The active National Security full-record chain has reached M11F internal
+policy-episode acceptance: 81 accepted action interpretations map one-to-one to
+81 singleton episodes. Semantic IR and all later authorities remain inactive.
+
 ## Local-only caches and output
 
 Local dependency, build, test, and source caches belong outside version control according to `.gitignore`. Examples include `.local/`, Python virtual environments and caches, `frontend/node_modules/`, `frontend/.next/`, Playwright `frontend/test-results/`, and external sibling worktrees.

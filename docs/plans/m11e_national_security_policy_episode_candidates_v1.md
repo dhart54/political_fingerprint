@@ -1,6 +1,8 @@
 # M11E National Security Policy-Episode Candidates V1
 
-Status: implementation complete pending human policy-episode review.
+Status: human review complete; accepted as the exact non-authorizing candidate
+input to M11F at PR #137 head
+`1256bb84603305c6f2da037a80d5c167e805a503`.
 
 ## Intent and larger-goal alignment
 
@@ -47,8 +49,9 @@ production writes, deployment, and merge of the M11E PR.
 - [x] Same-parent, package, topic-only, direction, and cross-measure boundaries
       are explicit and adversarially tested.
 - [x] Concise human review surface and detailed governed JSON generated.
-- [ ] Full regression validation and CI pass at the final draft-PR head.
-- [ ] Human decisions are recorded in a later acceptance milestone.
+- [x] Full regression validation and CI pass at the final draft-PR head.
+- [x] Human decisions are recorded in M11F: 70 candidates accepted as written
+      and four cross-measure candidates rejected/reassigned to 11 singletons.
 
 ## Current candidate accounting
 

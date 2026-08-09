@@ -1,0 +1,913 @@
+{
+  "accepted": true,
+  "artifact_id": "human-policy-episode-authority:f000477:national_security_foreign:119:v1",
+  "artifact_role": "immutable_human_policy_episode_authority",
+  "authority_subject_sha256": "cc24113a101b68874d6e37869b4de4c8ec72e553687a11bab8d3abe7248a149f",
+  "authorizing": true,
+  "canonical_internal_episode_authority": true,
+  "canonical_semantic_acceptance": false,
+  "immutable": true,
+  "production_selectable": false,
+  "public": false,
+  "schema_version": "full_record_policy_episode_authority_v1",
+  "subject": {
+    "authority_decision": {
+      "decision": "approve_policy_episodes_with_rejected_group_reassignments",
+      "decision_timestamp": "2026-08-09T19:37:33Z",
+      "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+      "reviewer_id": "dhart54"
+    },
+    "authority_effect": "canonical_internal_policy_episode_membership_only",
+    "blocked_actions": [
+      {
+        "action_id": "house:119:2:278",
+        "disposition": "source_blocked_uninterpreted_outside_episode_acceptance"
+      }
+    ],
+    "candidate_binding": {
+      "accepted_head": "1256bb84603305c6f2da037a80d5c167e805a503",
+      "accepted_pr": 137,
+      "artifact_id": "policy-episode-candidates:f000477:national_security_foreign:119:v1",
+      "episode_candidate_subject_sha256": "3d2d14f2d9a9e76624a97202fbe648b70a3f71d20076ba76e9966f277954d7af",
+      "file_sha256": "907fe610aa859ae9ea43f1febd0f0e824bf081ccdeab6193ce4355989871df8b",
+      "post_merge_main": "bf2f6f7f9c132c06b614f1d0bf59e50b21817c2a"
+    },
+    "decision_accounting": {
+      "accept_candidate_as_written": 70,
+      "reject_and_reassign_actions": 4
+    },
+    "decision_template_binding": {
+      "artifact_id": "policy-episode-human-decision-template:f000477:national_security_foreign:119:v1",
+      "decision_template_subject_sha256": "68d17d415851cf0e16bad5f1d787014004f88f2e5c50f4055b847d6854fec543",
+      "file_sha256": "bbc01ac460e410c9b7c1cd61964fd8e7d961b39c36b0d7174ef375686e2d8ca6"
+    },
+    "downstream_authorizations": {
+      "database_writes": false,
+      "deployment": false,
+      "production_persistence": false,
+      "public_wording": false,
+      "publication": false,
+      "semantic_ir": false,
+      "synthesis": false
+    },
+    "episode_decisions": [
+      {
+        "candidate_episode_subject_sha256": "59aa3fcdd1b639812de60bd2a7ccee519c1d28c355a3ac79fa00822dcdc9ecbe",
+        "decision": "reject_and_reassign_actions",
+        "decision_rationale": "The repeated measures share a proposition but do not establish genuine legislative-path or event continuity; preserve each House event as a distinct singleton episode.",
+        "decision_subject_sha256": "7a004a5493c3666c0f2e8155a2b04ae0855cd07adf0b7f22c27f8c000699decf",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "iran-war-powers-hostilities-removal",
+        "replacement_episode_ids": [
+          "single-119-hconres-38-2-85",
+          "single-119-hconres-40-2-114",
+          "single-119-hconres-75-2-170",
+          "single-119-hconres-86-2-199",
+          "single-119-hconres-89-2-282"
+        ],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "a08d5d844e7d56c57891baaf7920c254f33a3efc185b9483aab975670a1db5f3",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "a66a0dc9e71b092ff35b708f995a947ad6bc1b6afc1d35140d9a7d7697836baa",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-266-2-276",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "cd4e00f88057d8387ad11448fee278fcab9fee48fe022a8423632fc65068918f",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "08c268dce569161d1531d29ce6e775ac320240afe294cd078faa920077f99145",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-261-2-275",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "f7666b92532d1f6668e9d743680842fd9c064c67cc74750ac9e80d8749c958c2",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "268587228b6ff7c7977de23d715b2415a98c5161e1f9ac73f7b006643bacc396",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-258-2-273",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "b1fa7201f0e373990b929a2011efc17fc5b31f25eaf7d66e5e4e1dfb3bcbbbb5",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "c888f25f7ed01bdcb1dae18321c23a0a714149aeddb74d5df7bd87b1e62f9ade",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-257-2-269",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "83a3f2b7542b07fda3f560172d593b0d176181ab1b24402780a9c7d272782cdd",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "3f68cc6e22a1c6df87c1a26826e145b6de8b2771d67c1a6225e3346b49cd2a1f",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-256-2-268",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "2da1b0389b20bf61ab30e8f3bc33dbab452ffeb5406df3e3dda034ebffbcb714",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "eda40390aeb45004ada89bb5a62e2a2f4741e667f56e9ffea5322afe5b4c6a8a",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-254-2-266",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "cd12307688da5343f2888dfb1760df87bd07f9c4d5ae143ee37dc0667a6723cf",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "1a24953197372bc54e916fe4b02d28015d4689234bdb9630161077d033768c0c",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-253-2-265",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "5aba385e61c30ce9fb84b259fa1175f3d7fb32234e8315aa300ad0e05e100bd5",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "b5286ded94fab49532ac436ecd5a7b950d0a585b771781d81cb61959f351f97e",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-252-2-264",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "09fde41a8a4643c4e4b7f7e184b95a4afcc21d110e0c1b263d990838af0824a0",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "bfc90bd06aeb0eeb1b743d1c878132e07a7fcb36f0b35c3bb3e91ba0f802004b",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-251-2-263",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "beb1989acbd85e82d7c597c27e59c81d04381df96a63f50be3a9856abbee3a10",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "2d2e315f87a2dcef1f870d07b1746bc305def189ba3da703e54c52c9c0c30b5c",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-250-2-262",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "84be477304feed5805a6564bec5451e679473b3893440cab926f58f18c3e4f63",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "5d9de5aa1e304aa80ce290f482fd508d6b73af0acb83457922a979b18fdf0945",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-249-2-261",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "bb7047860c5609f54756462a67f42527a0779d74087ab78f0cd06bd32fce4d07",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "098153c7ae9b08f7e5cc0e45e8a3fc405b57a78531654f86017916e6e8c48af6",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-248-2-260",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "d84950c6fa4b667e400fc5cf44bbb29db5a569336e3b75f84f1236c7480be421",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "9e7c2ef9b5dda5bf4bbae3416524f5d93f128737f5dd026eb4c728e5cfa23451",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-247-2-259",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "d204eff46475fdaf8ca58fa7276bbad65a96ca34305c00c96be89c686d667b45",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "43a63b93361653f8083c1c271cd8f26ad2a402ad2e8f841848101758144aa40a",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-243-2-256",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "35309c12c27de19fd77dbd639c4eee710ffb8e7db3ac15373b02e5b89ccc817d",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "0926944b4f928b30b08752302793cd931d8832d0ac4fede24ad989d9fafdce12",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-5362-2-248",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "dc21b97ba21f0d70cc299f1436f13760eb0813a51d51a77313b84eb52d768c3b",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "7cbcd05197e4a8192dc2669673de80882072dd54c14033d45270e2d746369b22",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-8595-2-247",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "ad356889ac4ec46e9f06305964398f00a22cfa4dafb3b8468bf17336846002b7",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "cfc1edd81be57061dbdde60b93fdd534f2f99fccd0e137a555b0239d4b5241ce",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-236-2-244",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "2ac4b4d716268e609c2cf843c29ad6986aa9febb27cca0f77b60d68c5559c640",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "e67e092aa2d326b95b6c1f3fc39d783d474542ee855faf5d090d427849bcb625",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-235-2-243",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "9e062dfb809dcb3824634651c507d6ce1de0a510462f0af07a365989f6b03b1d",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "2809f45113220a16bab40ac25fad4053dd96f4ad8136eab308a8b5c91ea2ae35",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-3106-2-234",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "84c4ced02f9588d2922eb99b39cccceab465445b185d81aeb8b26bde675e40dd",
+        "decision": "reject_and_reassign_actions",
+        "decision_rationale": "The repeated measures share a proposition but do not establish genuine legislative-path or event continuity; preserve each House event as a distinct singleton episode.",
+        "decision_subject_sha256": "a46efcaed66ebd252f676015c6861de3f73ffc957fdfd8666e3af143fff6a52d",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "lebanon-war-powers-hostilities-removal",
+        "replacement_episode_ids": [
+          "single-119-hconres-84-2-201",
+          "single-119-hconres-108-2-232"
+        ],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "9d988d66dbacedd606fcb2464281cfe6ec87778821e9e0e3b2f176f006e8b725",
+        "decision": "reject_and_reassign_actions",
+        "decision_rationale": "The repeated measures share a proposition but do not establish genuine legislative-path or event continuity; preserve each House event as a distinct singleton episode.",
+        "decision_subject_sha256": "4b0c091a965db258b6a912f465cc87bddbdb39f9a338161bb440cb18e7167b25",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "fisa-title-vii-extension-attempts",
+        "replacement_episode_ids": [
+          "single-119-s-4465-2-155",
+          "single-119-hr-9238-2-221"
+        ],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "454ff73f936c9d6c07245c5539557539c3706e860bd55f534b98b2955c2f468c",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "1e7a26a877199408534652c8ad03f30cf8df68c981f9e49c3338a2f06b10babd",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-2913-2-207",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "f50709c9cc6299dab6dfe401a9180297f8f5df7528a374531c47c6af3e039b6a",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "89c03b43aa835d5e1aa66da2f0e7ad25db98a3cb3124fcc8e5423d9340f0c2a7",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-6047-2-191",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "2bff83205768b42b52e264750bfbe78fb836d9dafcb1d9def64fbcc4a431f8be",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "042856d170ae1eae26fb6125a2806686a2437b2a667bb977d8d8b0eeaeb425f5",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-1041-2-190",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "f4910430cca89e4b91b73b5034ac9e711cfb9a96628fc1db532103a748a5d5d8",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "63479bcd9fc0c5c659045eb57eeec671bf3976319c67e24325e4b76aabc574b9",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-s-2393-2-180",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "9c60046e6ad1805de3e203aeb8a436303624c2a018884c102f14cb64cdf24bb8",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "5c43960af80d50203dfaf08ad0931b6e6a3ce0fac694c0cae1ab2d84aa992c41",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-8469-2-175",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "59067f8fb892db4a8714992eed648fc5bc71acba2cb3c87f417d66b00015a9cf",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "83bea38ec934249b4384ef93de57e8529c228da1d7a09d4a37d3f8e53d60b667",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-219-2-174",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "ee95a7a99c03263fe45189c5167b60b9396ef0e69b63767eb7e6fdc32ac8847c",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "1a8a68b433c3a657936ba122b1d0b85752bc3560c8b60bc308fcfa8d082ab241",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-s-1318-2-142",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "473ad20591aa9c3b9fac8d6c29c5fa07467554e2a95d1df1420754690cbc84da",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "3ebc795f1f697fbac459e223ee007b24c3b9c2cd530f72c2baf73b6047625f97",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-1689-2-120",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "f060b0a2ff2775710b51bb0d3870ada23d77ff0cbbe82e296583d345207ef06a",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "38072dc29ccb2c150232399f9a9bea5a16e9fd6f6b9f86246d0f4d00a6d5ad49",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-1531-2-58",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "413ef03db2f355b6ab0cfc9e99b85188e9f159b22035174a5bb6c68e170a76fd",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "2b06cb3d6177f688c41cd0b45e73edee32a01b8ab368b7a5881572a665ba0f62",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-980-2-49",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "4a07d06ea793bc220d8decd63cef7443dcc5ea931f97d7e8e5d9c92d04036f32",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "574cd6a8197b2cc74cf04e30aef21b68bd3791ec4c2a0ab38e65f2ad69a034ab",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-3123-2-50",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "f3757fa5098623445626ac177889cbe89b5212e6c9c8302b313e635f5fc84aa5",
+        "decision": "reject_and_reassign_actions",
+        "decision_rationale": "The repeated measures share a proposition but do not establish genuine legislative-path or event continuity; preserve each House event as a distinct singleton episode.",
+        "decision_subject_sha256": "014cd1cfcba241f2723794090f90a8a56b9bf07aa0283f7332592cd0b6dccf27",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "venezuela-war-powers-hostilities-removal",
+        "replacement_episode_ids": [
+          "single-119-hconres-64-1-346",
+          "single-119-hconres-68-2-48"
+        ],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "c55dd3c1493b3320846f73599a5390244e219056b37f83fec4223b197c40ff8a",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "77f5b589f2c592c2f45af1df26dc2cc19e0ca7a36072b5db01824ec22987f090",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-7006-2-28",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "f82d6bb2dc85c8fbab3e958d24f58375056d68dd4a6d0c19580ca7a72035f987",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "3c68359131b0a9ad9a534ebbd7faf828fd96090232e8485c37e77544a1cf3626",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hconres-61-1-345",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "5112e189bf44fb7935c9b6375b32e4b046fe7f9d77ea9a5327629440fc655192",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "c44bbe4f3b7c7b4525c09246194575a161b5a834d66426024ebd3459439ca77d",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-s-1071-1-320",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "748980d11be95072b2c55396a8ec2d5706303682fb780a1ffb30a85d40e70258",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "12631edebb64ab3519f746e38b3a5c6b8a076ff0fce68223d907e5639b32595a",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-4423-1-307",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "5d52e953ba17015f54129c1e8acfeae81bcd57759fd44df43f7fd300fc2918af",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "5e845e70ffe54f415bc12f4e9e3d255076d8ce8616fa347615b20c183660f84e",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-1608-1-286",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "b193ee6692ef915b6b624921b2155ec340677d68133228df8adac23b42f25c18",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "74fdfc3ffed205bc02e89a8e589af6f273262871e777cbbf378a2f5790b5155f",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-5371-1-281",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "f25a0404dadde612c381dfa8dfeffde6a565eec9a4bb422e3486f46d4ae057f5",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "dfcf2366d0d87ff7b1b209cb806d67ee576f1448098cf677bc14306dd5a79df8",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-2721-1-269",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "4245640f7a78104c6eac4da9b8e2af2494b8b61bd1dc83c38b3342d9fc110894",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "a061882e6dcf153bb35dd4a8efd8bf901d960f608b86e7fb78396505cf0363e0",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-3400-1-266",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "730334bddd4a28e93674ebe5af9a83ba99411627310e8d5271e0a593c7065d8a",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "8cc5eb8aae2b0f6051add776aae1f4f1255cf18b21fada6bf64e269454aee66d",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-3838-1-262",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "14ce257b90c120a2c9ebfd79d7207580114716a3c8ef9d4a33a66750353ed6c4",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "468474d606d275720843945ebc55a109b5c06acff6506f3be91b8bb88828531e",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-99-1-244",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "ba0b6406ed92d40ce7e61b14235c63ce3bae696b12fe08d60190d4b56eee3e81",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "4187d6bad650081a3b4eeb001123cf03f77957c303e5883a47e6ad0fc6e9f4a5",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-97-1-259",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "9154086aa281d54dc7d09f0a839cc7780ddc4a0e21849ff5130902831b5b0b21",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "46e7e54970c3f34187849dd54fe272e2218348206b1ef6ee5bf2d2fb5408ad22",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-96-1-258",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "a4d5c53334c78116a4cc28d856faef13fcc497a29448cba809851a350a8d86cd",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "563247abed2fd8e13f5300580e47280dff9a1a4d30a07da1ce5b5106e35f6231",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-95-1-257",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "ca283ca3f62b05e0f2deda0d24dc9b33578427f877b3610464e3de6a14e623ad",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "6646813fa32883cf7b46f3cdf3c01bcbfc6a0b635d0dab1f60159e51a39cf2fe",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-93-1-255",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "4f4146eac413ce6405dad9f28064fb4da2cbf005edec0167d51b0b59694ccb5b",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "4c01bf8f2a359fb6c4a10c6a3a1521f3a2d6b5da4b6fc575c401571abe9254f2",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-89-1-249",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "75b28aa3ff34556a0a1f3a5d65796d5e7e38de026e37a8dc6b622c250baaf9b0",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "f599aa586d9eeaff6cc15cf1c730ecc5aa506b89fabdb32597ec62a7c81d79e7",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-88-1-248",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "23f295c53c65f25e3421b79631553802245130b72ed1db8c87045a0702185570",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "bbe93cc6f6105a25b5f2e86d13bb1b5fe526a069e33e59826784e17064b5e67c",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-86-1-246",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "60ebbeb9a3b1b4c9316e1969c8da1670e6af2c19a40aa0bf5700881466d128f6",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "678b2b9399e8d0903e94c27bbf11b4297f6287bb26082067e45794f8e6479498",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-81-1-252",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "8c82b4c651b37f1afb42831ae2d00ae13d1399ff2fa66fb13f06b369f8f60480",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "17eaa26091d2e623e83009eed69e1b8d0e1aebe9f281b6a89dd6590ca0cd2698",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-79-1-251",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "8855d37b6bf6a60b9faec0960a9d8f0bce108c1cbfe0989889b4e441dc3ecf17",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "6431c4099f8e6597d9322d24945781cfec7b674e8e5676da4f1e9d752673f1a2",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-78-1-250",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "0d3277267a6aca295a3857cc564dc3308200eb81f06213312ebf8aa24b04e09b",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "8b48922ef9d5980c725e0bf7de9dbe398a066432ea41f7ef574d2521b05554a7",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-100-1-260",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "3906943d82645234141944a01d5ce112b472ee7380488761ff3fc3b1c2f04910",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "d70ec27464ce02e210da029d7213c4aa1e0c8d7b3d7c572cfa36da1f09c55c34",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-747-1-220",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "cf88171a336ec775fb315e8886a0fa7cd1f3ad6d563cb93cc9513f5eb69f0d81",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "08c21b825954b606601ac686fcdbafce2c4138a0306b1d9a1c940810ee8713ff",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-4216-1-219",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "60c27f8cc2b947a98c5a5a745fd86aafbbe40e37064eea845ea2e1d5a30a16cf",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "629612934388f4a2c9b2808d6512a65baff482ce6e7dd6af6768054270d83a00",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-4016-1-212",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "66b0aad7b19280a30b4adf1bd3a533f1133d07edadf45149257d97435c2fc0e9",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "25e2a912b8abba6df7c45d6143fe59a014eea085ee96aa88510dcc6ff5da44bb",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-60-1-210",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "2ad2ab4eeabb392cb533a60c4ec717c55e87c001be2802215dbabc2766313f74",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "72e07e285fc96c6ed39be7728f808b6423ee776a0511439ed5ac4e16cf65d8f2",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-57-1-209",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "b5bd10b9c44b3369ffe4070810b73ea018b525c2086930e26e2447baf4e4404e",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "63fc5a0632b489b07cf5a3fc23b77e3c06050a16430c7e7b8b65629fc092ffd3",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hamdt-56-1-208",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "d9cee8315ea523f0ae67398c0d9283579a7786756c52ac1bd9d0d4aa44ecab4e",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "8987b0026fc4a2d58856b46b9ef3861b276e70f4446376842f98ad6c1e43e851",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-3944-1-182",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "66fc4e0f8fa5e222ec981c1adebf42de5f39951d7177e692eee9c6dc263f5a2b",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "49e470e287892d2d61d627a5edbb60932d97f9a59126fd2f2b7e6697a5439110",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-1998-1-172",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "abf5846c495764f4a664669c9326d700b8cbea4aca18202f5f2264e5176f87bc",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "2e56aa20fab5281c34e118bdacaa8ca5e30009836c21ec684330e3c313b03767",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-1286-1-133",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "39e57fd7ed4cade1dfe5e9f6c3b5f6cc2a546153264be46f97ca8b104518aa7a",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "3c2440168855a6c61ddee334d67f29fd4c5ff38261a207e1e187ff387d5dd4c7",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-1263-1-132",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "96b8179924c0aeb800668f1e6e57cbcf3b2c7bab45d5a194cd318739484bb2c7",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "3aa3963c7b4900dde604382ef3592a6ed33b214db7bd1392226a2630944272f1",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-1503-1-119",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "21ba66c919acad922490c1c670886b2630af78cb6f7710e0464bd9e609d194e0",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "ff0dbb3b8ffc7816c382b99969d6492fffd5e9b78898cb87ce7dfcdd7533ceb5",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-530-1-115",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "71c1491a1a7e32484ad11031fb9eaaef9192a34adbce60cc9669ad8459b02a4d",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "8f71735527bbeb8c90f85f18c7d567fe9abf6870833c3259d91f94edaa924aff",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-36-1-116",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "cc52fd9aca405ac9336c160ddc378a0ecda1a73cbb3346e83cf71fea78fa2653",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "ebd0e1c24d6e93d9e12b571b69b64682de987be1f94b1b14630e43c015695800",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-1228-1-99",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "c18ead58fd57fac0065591baddc09216625c30a5f895c2532b087efd78f4f653",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "a5488f1d1520e15b35baafa0353c8256c82d9605407959b1602fa5a31b06e80c",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-586-1-89",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "6bad073343390a8bd0b28d1fa8e583bfe0fd0d8ac4d9d73bead3fed27868a8f3",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "069877a548e22dbbd1e70c197601eda1bd7ca639af2742034b7eadd9128aa6a8",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-1039-1-90",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "f96235fed03eea7f1f69996808f4e8d4d427e00fdb9b6c87b3d328aeaf1c8a56",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "ed2128223dbb99e0599d36a016f81e25513b0e1da49891d78dbed7425a89f15e",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-695-1-51",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "6ff46c404b006054bb93540ee0ada2adb5eb776b9854e08ac4ae48beb22b1d3c",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "499138a0ac911b765d628e87018a1aff4b603cd9b404ce84777bed3fb0371044",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-692-1-36",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      },
+      {
+        "candidate_episode_subject_sha256": "4b613d54a68e63a302d5ca2ab8ba17740fc073e3e8f00aa58ed698c22b5a759b",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Human review accepts the bounded singleton candidate as written.",
+        "decision_subject_sha256": "c41f3d6f5597df061a57d93e20dc0644b8df030713542650a4dd53fe921ff762",
+        "decision_timestamp": "2026-08-09T19:37:33Z",
+        "episode_id": "single-119-hr-23-1-7",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "dhart54"
+      }
+    ],
+    "m11d_implementation_binding": {
+      "artifact_id": "action-interpretation-decision-implementation:f000477:national_security_foreign:119:v1",
+      "file_sha256": "402928780286f98fec90242132a829058f57517328c532e60371afab3c2173ff",
+      "implementation_subject_sha256": "360f0ce47d52cb5a0d0234a88026411e94697c38cac9fca8dc87a7db6ad9ad5b"
+    },
+    "resulting_episode_accounting": {
+      "accepted_action_count": 81,
+      "accepted_episode_count": 81,
+      "ambiguous_or_unassigned_action_count": 0,
+      "cross_measure_episode_count": 0,
+      "multi_action_episode_count": 0,
+      "replacement_singleton_episode_count": 11,
+      "single_action_episode_count": 81
+    },
+    "semantic_ir_state": "absent_not_authorized",
+    "subject": {
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "NATIONAL_SECURITY_FOREIGN",
+      "legislator_id": "leg_valerie_p_foushee",
+      "member_id": "F000477",
+      "member_name": "Valerie Foushee",
+      "official_cutoff": {
+        "end_date": "2026-07-23",
+        "latest_action_id": "house:119:2:283"
+      }
+    },
+    "synthesis_state": "absent_not_authorized"
+  }
+}

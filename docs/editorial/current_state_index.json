@@ -412,7 +412,11 @@
       "issue_id": "NATIONAL_SECURITY_FOREIGN"
     },
     "post_m11d_merge_base": "104e0bf67854342b0cde5c7247cfa302a338c527",
-    "milestone_state": "complete_pending_human_policy_episode_review",
+    "milestone_state": "completed_human_reviewed",
+    "human_review_result": "accepted_with_four_rejected_group_reassignments",
+    "accepted_pr": 137,
+    "accepted_head": "1256bb84603305c6f2da037a80d5c167e805a503",
+    "post_merge_main": "bf2f6f7f9c132c06b614f1d0bf59e50b21817c2a",
     "authority_effect": "detached_non_authorizing_policy_episode_candidates_only",
     "accepted_m11d_action_count": 81,
     "proposed_episode_count": 74,
@@ -444,7 +448,7 @@
       "parity_subject_sha256": "d5a487792b5637ed8f5df3674f3ae875af4591d11956e27c2c54dae2b1b2b3ab"
     },
     "episode_candidate_state": "complete_non_authorizing",
-    "episode_acceptance_state": "not_started_not_authorized",
+    "episode_acceptance_state": "implemented_by_m11f_pending_human_mechanical_review",
     "semantic_ir_state": "absent",
     "synthesis_state": "absent",
     "public_wording_state": "absent",
@@ -453,6 +457,74 @@
     "production_writes": false,
     "downstream_authorizations": {
       "episode_acceptance": false,
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "deployment": false
+    }
+  },
+  "active_policy_episode_decision_milestone": {
+    "milestone": "m11f_national_security_policy_episode_acceptance_v1",
+    "plan": "docs/plans/m11f_national_security_policy_episode_acceptance_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "NATIONAL_SECURITY_FOREIGN"
+    },
+    "post_m11e_merge_base": "bf2f6f7f9c132c06b614f1d0bf59e50b21817c2a",
+    "milestone_state": "complete_pending_human_mechanical_review",
+    "authority_effect": "canonical_internal_policy_episode_membership_only",
+    "human_episode_decision_count": 74,
+    "accepted_as_written_decision_count": 70,
+    "rejected_and_reassigned_decision_count": 4,
+    "replacement_singleton_episode_count": 11,
+    "accepted_action_count": 81,
+    "accepted_episode_count": 81,
+    "single_action_episode_count": 81,
+    "multi_action_episode_count": 0,
+    "cross_measure_episode_count": 0,
+    "ambiguous_or_unassigned_action_count": 0,
+    "source_blocked_action_ids": [
+      "house:119:2:278"
+    ],
+    "authority_artifact": "docs/editorial/full_record_reviews/policy_episode_implementations/f000477_national_security_foreign_119_v1/human_policy_episode_authority.json",
+    "authority_identity": {
+      "id": "human-policy-episode-authority:f000477:national_security_foreign:119:v1",
+      "sha256": "bd3ee15f7cd4508a194df4bb093da673889d460b073af21d7235cf62d9f6f627",
+      "authority_subject_sha256": "cc24113a101b68874d6e37869b4de4c8ec72e553687a11bab8d3abe7248a149f"
+    },
+    "implementation_artifact": "docs/editorial/full_record_reviews/policy_episode_implementations/f000477_national_security_foreign_119_v1/episode_decision_implementation_bundle.json",
+    "implementation_identity": {
+      "id": "policy-episode-decision-implementation:f000477:national_security_foreign:119:v1",
+      "sha256": "546441f951b1788f248520ee9cfef7f718c6ea8225f98818aa35c17220e60239",
+      "implementation_subject_sha256": "0d4c9e65ae8e9432103b961a59f2816436cd51a7dae0448ce54b55d5bd94397d"
+    },
+    "parity_manifest": "docs/editorial/full_record_reviews/policy_episode_implementations/f000477_national_security_foreign_119_v1/implementation_parity_manifest.json",
+    "parity_identity": {
+      "sha256": "e6233b158120358f70235d3795f30266b8da7e25970dd46736e7eba88d422c35",
+      "parity_subject_sha256": "6cfc6ce0588697870596b50129677032ea859be74b810fcd00589c1b16eefbbe"
+    },
+    "rejected_primary_groupings": [
+      "fisa-title-vii-extension-attempts",
+      "iran-war-powers-hostilities-removal",
+      "lebanon-war-powers-hostilities-removal",
+      "venezuela-war-powers-hostilities-removal"
+    ],
+    "relationship_evidence_state": "preserved_non_primary_non_authorizing",
+    "internal_episode_state": "human_accepted_canonical_internal_organization",
+    "semantic_ir_state": "absent_not_authorized",
+    "synthesis_state": "absent_not_authorized",
+    "public_wording_state": "absent_not_authorized",
+    "publication_state": "inactive",
+    "production_persistence": "not_authorized",
+    "production_writes": false,
+    "downstream_authorizations": {
       "semantic_ir": false,
       "synthesis": false,
       "public_wording": false,
