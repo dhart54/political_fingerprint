@@ -1,0 +1,387 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/full_record_policy_episode_authority_v1",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "artifact_role": {
+      "type": "string"
+    },
+    "authority_subject_sha256": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "canonical_internal_episode_authority": {
+      "type": "boolean"
+    },
+    "canonical_semantic_acceptance": {
+      "type": "boolean"
+    },
+    "immutable": {
+      "type": "boolean"
+    },
+    "production_selectable": {
+      "type": "boolean"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "subject": {
+      "additionalProperties": false,
+      "properties": {
+        "authority_decision": {
+          "additionalProperties": false,
+          "properties": {
+            "decision": {
+              "type": "string"
+            },
+            "decision_timestamp": {
+              "type": "string"
+            },
+            "reviewer_authority": {
+              "type": "string"
+            },
+            "reviewer_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "decision",
+            "decision_timestamp",
+            "reviewer_authority",
+            "reviewer_id"
+          ],
+          "type": "object"
+        },
+        "authority_effect": {
+          "type": "string"
+        },
+        "blocked_actions": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "action_id": {
+                "type": "string"
+              },
+              "disposition": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "action_id",
+              "disposition"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "candidate_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "accepted_head": {
+              "type": "string"
+            },
+            "accepted_pr": {
+              "type": "integer"
+            },
+            "artifact_id": {
+              "type": "string"
+            },
+            "episode_candidate_subject_sha256": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "post_merge_main": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "accepted_head",
+            "accepted_pr",
+            "artifact_id",
+            "episode_candidate_subject_sha256",
+            "file_sha256",
+            "post_merge_main"
+          ],
+          "type": "object"
+        },
+        "decision_accounting": {
+          "additionalProperties": false,
+          "properties": {
+            "accept_candidate_as_written": {
+              "type": "integer"
+            },
+            "reject_and_reassign_actions": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "accept_candidate_as_written",
+            "reject_and_reassign_actions"
+          ],
+          "type": "object"
+        },
+        "decision_template_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "decision_template_subject_sha256": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "decision_template_subject_sha256",
+            "file_sha256"
+          ],
+          "type": "object"
+        },
+        "downstream_authorizations": {
+          "additionalProperties": false,
+          "properties": {
+            "database_writes": {
+              "type": "boolean"
+            },
+            "deployment": {
+              "type": "boolean"
+            },
+            "production_persistence": {
+              "type": "boolean"
+            },
+            "public_wording": {
+              "type": "boolean"
+            },
+            "publication": {
+              "type": "boolean"
+            },
+            "semantic_ir": {
+              "type": "boolean"
+            },
+            "synthesis": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "database_writes",
+            "deployment",
+            "production_persistence",
+            "public_wording",
+            "publication",
+            "semantic_ir",
+            "synthesis"
+          ],
+          "type": "object"
+        },
+        "episode_decisions": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "candidate_episode_subject_sha256": {
+                "type": "string"
+              },
+              "decision": {
+                "type": "string"
+              },
+              "decision_rationale": {
+                "type": "string"
+              },
+              "decision_subject_sha256": {
+                "type": "string"
+              },
+              "decision_timestamp": {
+                "type": "string"
+              },
+              "episode_id": {
+                "type": "string"
+              },
+              "replacement_episode_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "reviewer_authority": {
+                "type": "string"
+              },
+              "reviewer_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "candidate_episode_subject_sha256",
+              "decision",
+              "decision_rationale",
+              "decision_subject_sha256",
+              "decision_timestamp",
+              "episode_id",
+              "replacement_episode_ids",
+              "reviewer_authority",
+              "reviewer_id"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "m11d_implementation_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "implementation_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "file_sha256",
+            "implementation_subject_sha256"
+          ],
+          "type": "object"
+        },
+        "resulting_episode_accounting": {
+          "additionalProperties": false,
+          "properties": {
+            "accepted_action_count": {
+              "type": "integer"
+            },
+            "accepted_episode_count": {
+              "type": "integer"
+            },
+            "ambiguous_or_unassigned_action_count": {
+              "type": "integer"
+            },
+            "cross_measure_episode_count": {
+              "type": "integer"
+            },
+            "multi_action_episode_count": {
+              "type": "integer"
+            },
+            "replacement_singleton_episode_count": {
+              "type": "integer"
+            },
+            "single_action_episode_count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "accepted_action_count",
+            "accepted_episode_count",
+            "ambiguous_or_unassigned_action_count",
+            "cross_measure_episode_count",
+            "multi_action_episode_count",
+            "replacement_singleton_episode_count",
+            "single_action_episode_count"
+          ],
+          "type": "object"
+        },
+        "semantic_ir_state": {
+          "type": "string"
+        },
+        "subject": {
+          "additionalProperties": false,
+          "properties": {
+            "chamber": {
+              "type": "string"
+            },
+            "congress": {
+              "type": "integer"
+            },
+            "issue_id": {
+              "type": "string"
+            },
+            "legislator_id": {
+              "type": "string"
+            },
+            "member_id": {
+              "type": "string"
+            },
+            "member_name": {
+              "type": "string"
+            },
+            "official_cutoff": {
+              "additionalProperties": false,
+              "properties": {
+                "end_date": {
+                  "type": "string"
+                },
+                "latest_action_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "end_date",
+                "latest_action_id"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "chamber",
+            "congress",
+            "issue_id",
+            "legislator_id",
+            "member_id",
+            "member_name",
+            "official_cutoff"
+          ],
+          "type": "object"
+        },
+        "synthesis_state": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "authority_decision",
+        "authority_effect",
+        "blocked_actions",
+        "candidate_binding",
+        "decision_accounting",
+        "decision_template_binding",
+        "downstream_authorizations",
+        "episode_decisions",
+        "m11d_implementation_binding",
+        "resulting_episode_accounting",
+        "semantic_ir_state",
+        "subject",
+        "synthesis_state"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "accepted",
+    "artifact_id",
+    "artifact_role",
+    "authority_subject_sha256",
+    "authorizing",
+    "canonical_internal_episode_authority",
+    "canonical_semantic_acceptance",
+    "immutable",
+    "production_selectable",
+    "public",
+    "schema_version",
+    "subject"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,66 @@
+{
+  "$id": "https://politicalfingerprint.example/schemas/full_record_policy_episode_implementation_parity_v1",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "authority_subject_sha256": {
+      "type": "string"
+    },
+    "authorizing": {
+      "type": "boolean"
+    },
+    "generated_last": {
+      "type": "boolean"
+    },
+    "implementation_subject_sha256": {
+      "type": "string"
+    },
+    "parity_state": {
+      "type": "string"
+    },
+    "parity_subject_sha256": {
+      "type": "string"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "referenced_artifacts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "final_file_sha256": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "final_file_sha256",
+          "path"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "authority_subject_sha256",
+    "authorizing",
+    "generated_last",
+    "implementation_subject_sha256",
+    "parity_state",
+    "parity_subject_sha256",
+    "public",
+    "referenced_artifacts",
+    "schema_version"
+  ],
+  "type": "object"
+}

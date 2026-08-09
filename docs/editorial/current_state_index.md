@@ -132,18 +132,25 @@ The machine-readable authority is
   action-interpretation inputs only; they are not canonical Semantic IR or
   default public wording. H.R. 8800 remains in the approved universe as the one
   source-blocked, uninterpreted action.
-- M11E has generated a detached, non-authorizing policy-episode candidate
+- M11E generated a detached, non-authorizing policy-episode candidate
   package from those exact 81 records: 74 proposed episodes, comprising 70
   single-action and four cross-measure multi-action candidates. The four
   high-priority groupings cover repeated Iran, Lebanon, and Venezuela War Powers
   choices and successive FISA title VII extension measures. Same-parent package
   relationships and topic-only similarities remain contrasts, not automatic
   membership. All 81 accepted actions are assigned exactly once; H.R. 8800 is
-  excluded; no accepted action is ambiguous or unassigned. Episode acceptance
-  has not started and is unauthorized. Semantic IR, synthesis, public wording,
-  publication, persistence, database writes, production, and deployment remain
-  unauthorized. The Justice publication-active production reference is
-  unchanged.
+  excluded; no accepted action is ambiguous or unassigned. Human review
+  accepted the 70 singleton candidates and rejected all four cross-measure
+  primary groupings, requiring their eleven actions to remain distinct.
+- M11F binds that exact decision into a governed human episode authority and a
+  deterministic 81-episode implementation. Every accepted M11D action now has
+  exactly one canonical internal singleton episode; there are zero primary
+  multi-action or cross-measure episodes and zero ambiguous/unassigned actions.
+  The rejected Iran, Lebanon, Venezuela, and FISA groupings remain only
+  non-primary relationship evidence with zero authority effect. H.R. 8800
+  remains blocked. Semantic IR, synthesis, public wording, publication,
+  persistence, database writes, production, and deployment remain unauthorized.
+  The Justice publication-active production reference is unchanged.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

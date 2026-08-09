@@ -302,7 +302,7 @@ def validate_repository() -> dict[str, Any]:
     require(
         m11e_state["post_m11d_merge_base"] == POST_M11D_MERGE_MAIN
         and m11e_state["milestone_state"]
-        == "complete_pending_human_policy_episode_review"
+        in {"complete_pending_human_policy_episode_review", "completed_human_reviewed"}
         and m11e_state["proposed_episode_count"] == 74
         and m11e_state["single_action_episode_count"] == 70
         and m11e_state["multi_action_episode_count"] == 4

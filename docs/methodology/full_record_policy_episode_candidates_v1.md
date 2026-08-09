@@ -21,8 +21,11 @@ derivation inputs.
   steps or choices in one coherent proposition. Same-parent identity alone has
   no authority.
 - Cross-measure grouping requires explicit semantic evidence from accepted
-  meanings that the measures express the same bounded policy episode. Topic
-  similarity is insufficient.
+  meanings that the measures express the same bounded policy proposition and
+  evidence of genuine legislative-path or event continuity. A shared
+  proposition, repeated mechanism, or topical similarity alone is
+  insufficient. Separate repeated measures or House events remain distinct
+  primary episodes unless that continuity is established.
 - Different mechanisms, targets, packages, or propositions remain distinct.
 - A whole-package vote cannot absorb narrower amendment positions or establish
   a position on an individual package provision.
@@ -32,6 +35,13 @@ derivation inputs.
 Every accepted action has exactly one primary candidate membership or one
 governed ambiguous/unassigned state. Secondary contrasts may be recorded without
 duplicating primary membership.
+
+Rejected primary groupings may be retained as non-authorizing relationship
+evidence for later repeated-pattern or trajectory review. That evidence has
+zero effect on primary episode accounting and cannot itself authorize Semantic
+IR or synthesis. This rule does not prohibit all cross-measure grouping: an
+explicitly evidenced continuation along one legislative path or within one
+legislative event may still qualify.
 
 ## Review and authority boundary
 
