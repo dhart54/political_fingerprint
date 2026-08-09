@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_candidate_binding": {
+      "type": "object"
+    },
+    "artifact_id": {
+      "const": "action-interpretation-decision-implementation-parity:f000477:national_security_foreign:119:v1"
+    },
+    "decision_count": {
+      "const": 81
+    },
+    "downstream_authorizations": {
+      "additionalProperties": false,
+      "properties": {
+        "deployment": {
+          "const": false
+        },
+        "policy_episode_acceptance": {
+          "const": false
+        },
+        "policy_episode_construction": {
+          "const": false
+        },
+        "production_persistence": {
+          "const": false
+        },
+        "public_wording": {
+          "const": false
+        },
+        "publication": {
+          "const": false
+        },
+        "semantic_ir": {
+          "const": false
+        },
+        "synthesis": {
+          "const": false
+        }
+      },
+      "required": [
+        "policy_episode_construction",
+        "policy_episode_acceptance",
+        "semantic_ir",
+        "synthesis",
+        "public_wording",
+        "publication",
+        "production_persistence",
+        "deployment"
+      ],
+      "type": "object"
+    },
+    "generated_artifacts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "content_subject_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "file_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "file_sha256"
+        ],
+        "type": "object"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "type": "array"
+    },
+    "generated_last": {
+      "const": true
+    },
+    "parity_state": {
+      "const": "pass"
+    },
+    "parity_subject_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "full_record_action_interpretation_implementation_parity_v1"
+    },
+    "source_blocked_count": {
+      "const": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "generated_last",
+    "parity_state",
+    "accepted_candidate_binding",
+    "generated_artifacts",
+    "decision_count",
+    "source_blocked_count",
+    "downstream_authorizations",
+    "parity_subject_sha256"
+  ],
+  "title": "Full-Record Action Interpretation Implementation Parity V1",
+  "type": "object"
+}
