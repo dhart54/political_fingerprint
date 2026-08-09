@@ -6,17 +6,20 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M11E National Security Policy-Episode Candidates V1](m11e_national_security_policy_episode_candidates_v1.md)
-  - proposes a detached, non-authorizing 74-episode review package over the 81
-    M11D-accepted actions, preserves H.R. 8800 as blocked, and stops for human
-    episode decisions.
+- [M11G National Security Behavioral Semantic IR Candidates V1](m11g_national_security_behavioral_semantic_ir_candidates_v1.md)
+  - bounded correction proposes eight repeated patterns, one structured
+    trajectory, and six selective notable choices over 32 of the 81
+    M11F-accepted episodes; it preserves H.R. 8800 as blocked and stops for
+    human substantive re-review.
 
 ## Retained unresolved plans
 
+- [M11E National Security Policy-Episode Candidates V1](m11e_national_security_policy_episode_candidates_v1.md)
+  - completed human review and retained as M11F's immutable proposal history.
+
 - [M11F National Security Policy-Episode Acceptance V1](m11f_national_security_policy_episode_acceptance_v1.md)
-  - implementation complete pending human mechanical review; binds 74 M11E
-    decisions into 81 canonical internal singleton episodes with all downstream
-    authorities false.
+  - mechanically accepted at PR #138; binds 74 M11E decisions into 81 canonical
+    internal singleton episodes with all downstream authorities false.
 
 - [M11D National Security Action-Meaning Acceptance V1](m11d_national_security_action_meaning_acceptance_v1.md)
   - human-accepted at PR #136 and retained as M11E's immutable 81-action

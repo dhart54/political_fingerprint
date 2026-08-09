@@ -955,3 +955,238 @@ def compile_semantic_ir(payload: dict[str, Any]) -> dict[str, Any]:
             payload["shared_semantics"].get("source_render_constraints", [])
         ),
     }
+
+
+BEHAVIORAL_CANDIDATE_TYPES = {"notable_choice", "repeated_pattern", "trajectory"}
+EPISODE_DIRECTION = {
+    "supports_policy_proposition": "support",
+    "opposes_policy_proposition": "opposition",
+    "mixed_on_episode_choices": "mixed",
+    "mixed_or_non_directional": "mixed",
+}
+
+
+def compile_behavioral_candidate_ir(payload: dict[str, Any]) -> dict[str, Any]:
+    """Compile explicit, episode-first behavioral candidates without synthesis.
+
+    This opt-in path is for pre-acceptance review packages.  It deliberately does
+    not use the legacy full-record fallback that promotes every uncovered
+    directional action to a notable choice.  Accepted episode meanings are the
+    only primary evidence units; action lineage is projected from those episodes.
+    """
+
+    required = {
+        "subject",
+        "episodes",
+        "proposition_candidates",
+        "episode_accounting",
+        "blocked_action_ids",
+    }
+    missing = required - payload.keys()
+    if missing:
+        raise SemanticCompilerInputError(
+            f"behavioral candidate input missing: {', '.join(sorted(missing))}"
+        )
+    episodes = {row["episode_id"]: row for row in payload["episodes"]}
+    if len(episodes) != len(payload["episodes"]):
+        raise SemanticCompilerInputError(
+            "behavioral candidate episode identities must be unique"
+        )
+    if any(
+        row.get("canonical_internal_policy_episode") is not True
+        for row in episodes.values()
+    ):
+        raise SemanticCompilerInputError(
+            "behavioral candidates require accepted canonical episodes"
+        )
+    blocked_action_ids = set(payload["blocked_action_ids"])
+    if any(
+        blocked_action_ids & set(row["primary_action_ids"]) for row in episodes.values()
+    ):
+        raise SemanticCompilerInputError(
+            "blocked actions cannot enter behavioral candidate episodes"
+        )
+
+    accounting = {row["episode_id"]: row for row in payload["episode_accounting"]}
+    if len(accounting) != len(payload["episode_accounting"]) or set(accounting) != set(
+        episodes
+    ):
+        raise SemanticCompilerInputError(
+            "every accepted episode must have exactly one accounting row"
+        )
+
+    propositions: list[dict[str, Any]] = []
+    primary_owners: dict[str, str] = {}
+    candidate_ids: set[str] = set()
+    for candidate in payload["proposition_candidates"]:
+        proposition_id = candidate["proposition_id"]
+        proposition_type = candidate["proposition_type"]
+        evidence_episode_ids = candidate["evidence_episode_ids"]
+        if proposition_id in candidate_ids:
+            raise SemanticCompilerInputError(
+                "behavioral candidate identities must be unique"
+            )
+        candidate_ids.add(proposition_id)
+        if proposition_type not in BEHAVIORAL_CANDIDATE_TYPES:
+            raise SemanticCompilerInputError(
+                f"unsupported behavioral candidate type: {proposition_type}"
+            )
+        if not evidence_episode_ids or not set(evidence_episode_ids) <= set(episodes):
+            raise SemanticCompilerInputError(
+                f"{proposition_id} has unknown or empty episode evidence"
+            )
+        if len(evidence_episode_ids) != len(set(evidence_episode_ids)):
+            raise SemanticCompilerInputError(
+                f"{proposition_id} contains duplicate episode evidence"
+            )
+        if proposition_type == "notable_choice" and len(evidence_episode_ids) != 1:
+            raise SemanticCompilerInputError(
+                "notable choices require exactly one episode"
+            )
+        if (
+            proposition_type in {"repeated_pattern", "trajectory"}
+            and len(evidence_episode_ids) < 2
+        ):
+            raise SemanticCompilerInputError(
+                f"{proposition_type} requires at least two episodes"
+            )
+        trajectory_change = candidate.get("trajectory_change")
+        if proposition_type == "trajectory":
+            if not isinstance(trajectory_change, dict):
+                raise SemanticCompilerInputError(
+                    "trajectory requires a structured substantive change record"
+                )
+            ordered_ids = trajectory_change.get("ordered_evidence_episode_ids")
+            chronology = trajectory_change.get("accepted_chronology")
+            before_direction = trajectory_change.get("accepted_before_direction")
+            after_direction = trajectory_change.get("accepted_after_direction")
+            description = trajectory_change.get("bounded_change_description")
+            if ordered_ids != evidence_episode_ids:
+                raise SemanticCompilerInputError(
+                    "trajectory ordered evidence must equal proposition evidence"
+                )
+            if not isinstance(chronology, list) or len(chronology) != len(ordered_ids):
+                raise SemanticCompilerInputError(
+                    "trajectory chronology must bind every evidence episode"
+                )
+            accepted_dates = []
+            for episode_id, chronology_row in zip(ordered_ids, chronology, strict=True):
+                dates = {
+                    action["official_action_date"]
+                    for action in episodes[episode_id]["actions"]
+                }
+                if len(dates) != 1:
+                    raise SemanticCompilerInputError(
+                        f"trajectory episode {episode_id} lacks one accepted date"
+                    )
+                accepted_date = next(iter(dates))
+                if chronology_row != {
+                    "episode_id": episode_id,
+                    "accepted_date": accepted_date,
+                }:
+                    raise SemanticCompilerInputError(
+                        "trajectory chronology differs from accepted episode dates"
+                    )
+                accepted_dates.append(accepted_date)
+            if any(
+                left >= right for left, right in zip(accepted_dates, accepted_dates[1:])
+            ):
+                raise SemanticCompilerInputError(
+                    "trajectory evidence must be strictly chronological"
+                )
+            if before_direction != episodes[ordered_ids[0]]["member_direction"]:
+                raise SemanticCompilerInputError(
+                    "trajectory before direction differs from accepted episode"
+                )
+            if after_direction != episodes[ordered_ids[-1]]["member_direction"]:
+                raise SemanticCompilerInputError(
+                    "trajectory after direction differs from accepted episode"
+                )
+            if trajectory_change.get("change_type") != "direction_change":
+                raise SemanticCompilerInputError(
+                    "trajectory change type is not supported"
+                )
+            if before_direction == after_direction:
+                raise SemanticCompilerInputError(
+                    "direction-change trajectory requires differing directions"
+                )
+            if not isinstance(description, str) or not description.strip():
+                raise SemanticCompilerInputError(
+                    "trajectory requires bounded substantive-change evidence"
+                )
+        elif trajectory_change is not None:
+            raise SemanticCompilerInputError(
+                "non-trajectory candidate cannot carry trajectory change evidence"
+            )
+        semantic_evidence = candidate.get("episode_semantic_evidence", {})
+        if set(semantic_evidence) != set(evidence_episode_ids) or not all(
+            isinstance(detail, str) and detail.strip()
+            for detail in semantic_evidence.values()
+        ):
+            raise SemanticCompilerInputError(
+                f"{proposition_id} requires explicit semantic evidence for every episode"
+            )
+
+        directions = {
+            EPISODE_DIRECTION[episodes[episode_id]["member_direction"]]
+            for episode_id in evidence_episode_ids
+        }
+        derived_direction = next(iter(directions)) if len(directions) == 1 else "mixed"
+        if candidate.get("direction") != derived_direction:
+            raise SemanticCompilerInputError(
+                f"{proposition_id} direction differs from accepted episode directions"
+            )
+        evidence_action_ids = sorted(
+            {
+                action_id
+                for episode_id in evidence_episode_ids
+                for action_id in episodes[episode_id]["primary_action_ids"]
+            }
+        )
+        for episode_id in evidence_episode_ids:
+            if episode_id in primary_owners:
+                declared = set(candidate.get("overlap_relationships", []))
+                if primary_owners[episode_id] not in declared:
+                    raise SemanticCompilerInputError(
+                        f"episode {episode_id} has multiple owners without an explicit overlap"
+                    )
+            else:
+                primary_owners[episode_id] = proposition_id
+        propositions.append(
+            {
+                **copy.deepcopy(candidate),
+                "semantic_role": "behavioral",
+                "evidence_action_ids": evidence_action_ids,
+                "candidate_state": "proposed_not_accepted",
+                "canonical": False,
+                "authorizing": False,
+            }
+        )
+
+    for episode_id, row in accounting.items():
+        owner = row.get("primary_proposition_id")
+        if owner is not None and primary_owners.get(episode_id) != owner:
+            raise SemanticCompilerInputError(
+                f"accounting owner differs for {episode_id}"
+            )
+        if owner is None and episode_id in primary_owners:
+            raise SemanticCompilerInputError(
+                f"accounting silently omits owner for {episode_id}"
+            )
+
+    return {
+        "schema_version": "behavioral_semantic_ir_candidate_graph_v1",
+        "subject": copy.deepcopy(payload["subject"]),
+        "proposition_graph": {"propositions": propositions},
+        "episode_accounting": copy.deepcopy(payload["episode_accounting"]),
+        "synthesis_propositions": [],
+        "downstream_authorizations": {
+            "semantic_ir_acceptance": False,
+            "synthesis": False,
+            "public_wording": False,
+            "publication": False,
+            "production_persistence": False,
+            "database_writes": False,
+            "deployment": False,
+        },
+    }
