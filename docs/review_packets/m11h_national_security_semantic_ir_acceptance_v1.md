@@ -27,11 +27,11 @@ human decision without modifying the accepted candidate artifact.
 ## M11H identities
 
 - Authority: `human-behavioral-semantic-ir-authority:f000477:national_security_foreign:119:v1`
-- Authority file SHA-256: `7e24e12a80e15edbe361156035a169f1c78b615b4911627d7428f2c87094f872`
-- Authority subject SHA-256: `de61e14d7a3b3479ed41e061a39971f3936398c9e55ec926ca7d2d5582170b1b`
+- Authority file SHA-256: `d1de0f28a09a01ea9b5bbe5607128564daa6aedb929a2be1255cb50f1a99fc93`
+- Authority subject SHA-256: `22262c77622df938b3ab3642bf49452005b549706bb20160dd7c91a88ba29714`
 - Implementation: `behavioral-semantic-ir-decision-implementation:f000477:national_security_foreign:119:v1`
-- Implementation file SHA-256: `3edd23682d514b1b28c81a0ffa79f8f97537d4c17fef85982d67b837422f69f6`
-- Implementation subject SHA-256: `97ea2b13bd3622d8068cc8dfb519ddcdb40aa0b7af3beb4e5498c71671fbadb0`
+- Implementation file SHA-256: `13927cade21c85f95c097acf7afe831e55bdb0de79c93e54646e14640d444ecc`
+- Implementation subject SHA-256: `6113be3d0fad4d8da21a47ed76c089f5a7d96becd45abb9c888cf2a437bf8d67`
 
 ## Authority boundary
 
