@@ -684,7 +684,11 @@
     },
     "post_m11h_merge_base": "21ea1a201cdfb58ff66af0abf98fb1ea49b1b9f6",
     "accepted_m11h_head": "211691c367f653539146b9b52931093f93def3a0",
-    "milestone_state": "candidate_package_complete_pending_human_substantive_review",
+    "milestone_state": "completed_human_substantive_review_merged",
+    "human_review_result": "accepted_with_one_bounded_revision",
+    "accepted_pr": 141,
+    "accepted_head": "8535163aee1d2a548ec7d0c23935b1322a05b863",
+    "post_merge_main": "e9e771b23eb65629e0a3ed7ecb6c32748d7ebf59",
     "authority_effect": "detached_non_authorizing_synthesis_candidates_only",
     "source_behavioral_proposition_count": 15,
     "candidate_count": 2,
@@ -714,13 +718,77 @@
       "sha256": "412103e7c380c6da506b9a03512626cd35b613af9782676572a87f7c3757b7e0",
       "parity_subject_sha256": "eb857e98f7a1c824116537967d08c61bb6d846eb47f08be359c04bc38ead4ea4"
     },
-    "synthesis_state": "candidate_complete_pending_human_substantive_review",
+    "synthesis_state": "human_decisions_implemented_by_m11j_pending_mechanical_review",
     "public_wording_state": "absent_not_authorized",
     "publication_state": "inactive",
     "production_persistence": "not_authorized",
     "production_writes": false,
     "downstream_authorizations": {
       "synthesis_acceptance": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "production_writes": false,
+      "deployment": false
+    }
+  },
+  "active_synthesis_decision_milestone": {
+    "milestone": "m11j_national_security_synthesis_acceptance_v1",
+    "plan": "docs/plans/m11j_national_security_synthesis_acceptance_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "NATIONAL_SECURITY_FOREIGN"
+    },
+    "accepted_m11i_head": "8535163aee1d2a548ec7d0c23935b1322a05b863",
+    "post_m11i_merge_base": "e9e771b23eb65629e0a3ed7ecb6c32748d7ebf59",
+    "milestone_state": "complete_pending_human_mechanical_review",
+    "authority_effect": "canonical_internal_synthesis_only_pending_final_mechanical_review",
+    "decision_accounting": {
+      "accept_candidate_as_written": 1,
+      "accept_with_bounded_revision": 1,
+      "rejected": 0,
+      "unresolved": 0
+    },
+    "canonical_internal_synthesis_count": 2,
+    "authority": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_implementations/f000477_national_security_foreign_119_v1/human_synthesis_authority.json",
+      "id": "human-synthesis-authority:f000477:national_security_foreign:119:v1",
+      "sha256": "4fd4f7b1490415df3c1f10cc088fcc95d9f48f3eec3504b9312cb447b8e0a1cc",
+      "authority_subject_sha256": "fdbf0b068e117322da5388c3ebc17c21d2b9a3bfbc81f4e7b92654972a9fe407"
+    },
+    "implementation": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_implementations/f000477_national_security_foreign_119_v1/synthesis_decision_implementation.json",
+      "id": "synthesis-decision-implementation:f000477:national_security_foreign:119:v1",
+      "sha256": "bd2a08caa9100cf3b5326cb739f0ce99db2f6c4650667df8087dc254d1509500",
+      "implementation_subject_sha256": "d960dd7512b36c6b5b0d10c4cecc0c66251906ac624873e8618e7168bf50333f"
+    },
+    "parity": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_implementations/f000477_national_security_foreign_119_v1/implementation_parity_manifest.json",
+      "id": "synthesis-implementation-parity:f000477:national_security_foreign:119:v1",
+      "sha256": "0405ef569cff277e861f1453707d22427b9191c2d3bad5033d4704625190211e",
+      "parity_subject_sha256": "e988811fd6d0a2d70a480cb9da8beab2912383d34ffa4b837cdc918a9ba88a95"
+    },
+    "proposition_role_accounting": {
+      "primary_input": 5,
+      "contextual_input": 2,
+      "contrast_input": 1,
+      "intentionally_standalone_no_safe_synthesis": 7
+    },
+    "candidate_episode_reference_count": 18,
+    "candidate_action_reference_count": 18,
+    "cross_candidate_episode_overlap_count": 0,
+    "cross_candidate_action_overlap_count": 0,
+    "source_direction_semantic_guard": "accepted_proposition_content_controls_interpretation",
+    "public_wording_state": "absent_not_authorized",
+    "publication_state": "inactive",
+    "production_persistence": "not_authorized",
+    "production_writes": false,
+    "downstream_authorizations": {
       "public_wording": false,
       "publication": false,
       "production_persistence": false,

@@ -1,0 +1,163 @@
+{
+  "$id": "https://politicalfingerprint.org/schemas/full_record_synthesis_implementation_parity_v1",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "authority_binding": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "authority_subject_sha256": {
+          "type": "string"
+        },
+        "file_sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "authority_subject_sha256",
+        "file_sha256"
+      ],
+      "type": "object"
+    },
+    "decision_accounting": {
+      "additionalProperties": false,
+      "properties": {
+        "accept_candidate_as_written": {
+          "type": "integer"
+        },
+        "accept_with_bounded_revision": {
+          "type": "integer"
+        },
+        "rejected": {
+          "type": "integer"
+        },
+        "unresolved": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "accept_candidate_as_written",
+        "accept_with_bounded_revision",
+        "rejected",
+        "unresolved"
+      ],
+      "type": "object"
+    },
+    "downstream_authorizations": {
+      "additionalProperties": false,
+      "properties": {
+        "database_writes": {
+          "type": "boolean"
+        },
+        "deployment": {
+          "type": "boolean"
+        },
+        "production_persistence": {
+          "type": "boolean"
+        },
+        "production_writes": {
+          "type": "boolean"
+        },
+        "public_wording": {
+          "type": "boolean"
+        },
+        "publication": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "database_writes",
+        "deployment",
+        "production_persistence",
+        "production_writes",
+        "public_wording",
+        "publication"
+      ],
+      "type": "object"
+    },
+    "final_accounting": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate_action_reference_count": {
+          "type": "integer"
+        },
+        "candidate_episode_reference_count": {
+          "type": "integer"
+        },
+        "canonical_internal_synthesis_count": {
+          "type": "integer"
+        },
+        "cross_candidate_action_overlap_count": {
+          "type": "integer"
+        },
+        "cross_candidate_episode_overlap_count": {
+          "type": "integer"
+        },
+        "standalone_proposition_count": {
+          "type": "integer"
+        },
+        "unique_behavioral_proposition_input_count": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "candidate_action_reference_count",
+        "candidate_episode_reference_count",
+        "canonical_internal_synthesis_count",
+        "cross_candidate_action_overlap_count",
+        "cross_candidate_episode_overlap_count",
+        "standalone_proposition_count",
+        "unique_behavioral_proposition_input_count"
+      ],
+      "type": "object"
+    },
+    "implementation_binding": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "type": "string"
+        },
+        "file_sha256": {
+          "type": "string"
+        },
+        "implementation_subject_sha256": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "file_sha256",
+        "implementation_subject_sha256"
+      ],
+      "type": "object"
+    },
+    "parity_subject_sha256": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "upstream_candidate_subject_sha256": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_id",
+    "authority_binding",
+    "decision_accounting",
+    "downstream_authorizations",
+    "final_accounting",
+    "implementation_binding",
+    "parity_subject_sha256",
+    "schema_version",
+    "upstream_candidate_subject_sha256"
+  ],
+  "type": "object"
+}

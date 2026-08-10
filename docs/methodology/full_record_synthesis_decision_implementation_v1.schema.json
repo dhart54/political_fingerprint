@@ -1,0 +1,1455 @@
+{
+  "$id": "https://politicalfingerprint.org/schemas/full_record_synthesis_decision_implementation_v1",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "accepted_human_decisions_implemented": {
+      "type": "boolean"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "artifact_role": {
+      "type": "string"
+    },
+    "canonical_internal_synthesis": {
+      "type": "boolean"
+    },
+    "implementation_subject_sha256": {
+      "type": "string"
+    },
+    "mechanical_review_state": {
+      "type": "string"
+    },
+    "production_selectable": {
+      "type": "boolean"
+    },
+    "public": {
+      "type": "boolean"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "subject": {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_episode_disposition_accounting": {
+          "additionalProperties": false,
+          "properties": {
+            "accepted_episode_count": {
+              "type": "integer"
+            },
+            "contrast_only_episode_count": {
+              "type": "integer"
+            },
+            "no_safe_proposition_episode_count": {
+              "type": "integer"
+            },
+            "notable_choice_evidence_episode_count": {
+              "type": "integer"
+            },
+            "primary_overlap_count": {
+              "type": "integer"
+            },
+            "repeated_pattern_evidence_episode_count": {
+              "type": "integer"
+            },
+            "trajectory_evidence_episode_count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "accepted_episode_count",
+            "contrast_only_episode_count",
+            "no_safe_proposition_episode_count",
+            "notable_choice_evidence_episode_count",
+            "primary_overlap_count",
+            "repeated_pattern_evidence_episode_count",
+            "trajectory_evidence_episode_count"
+          ],
+          "type": "object"
+        },
+        "accepted_proposition_role_accounting": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "accepted_candidate_content_sha256": {
+                "type": "string"
+              },
+              "accounting_role": {
+                "type": "string"
+              },
+              "candidate_relationships": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "relationship_role": {
+                          "type": "string"
+                        },
+                        "synthesis_candidate_id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "relationship_role",
+                        "synthesis_candidate_id"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "items": {},
+                    "type": "array"
+                  }
+                ]
+              },
+              "implementation_record_id": {
+                "type": "string"
+              },
+              "implementation_record_subject_sha256": {
+                "type": "string"
+              },
+              "proposition_id": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "source_conclusion_relevance": {
+                "type": "string"
+              },
+              "source_proposition_type": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "accepted_candidate_content_sha256",
+              "accounting_role",
+              "candidate_relationships",
+              "implementation_record_id",
+              "implementation_record_subject_sha256",
+              "proposition_id",
+              "reason",
+              "source_conclusion_relevance",
+              "source_proposition_type"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "authority_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "authority_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "authority_subject_sha256"
+          ],
+          "type": "object"
+        },
+        "candidate_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "accepted_head": {
+              "type": "string"
+            },
+            "accepted_pr": {
+              "type": "integer"
+            },
+            "artifact_id": {
+              "type": "string"
+            },
+            "candidate_subject_sha256": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "post_merge_main": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "accepted_head",
+            "accepted_pr",
+            "artifact_id",
+            "candidate_subject_sha256",
+            "file_sha256",
+            "post_merge_main"
+          ],
+          "type": "object"
+        },
+        "candidate_overlap_accounting": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "left_candidate_id": {
+                "type": "string"
+              },
+              "overlap_does_not_create_independent_evidence": {
+                "type": "boolean"
+              },
+              "overlap_state": {
+                "type": "string"
+              },
+              "right_candidate_id": {
+                "type": "string"
+              },
+              "shared_episode_ids": {
+                "items": {},
+                "type": "array"
+              },
+              "shared_proposition_ids": {
+                "items": {},
+                "type": "array"
+              }
+            },
+            "required": [
+              "left_candidate_id",
+              "overlap_does_not_create_independent_evidence",
+              "overlap_state",
+              "right_candidate_id",
+              "shared_episode_ids",
+              "shared_proposition_ids"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "canonical_internal_synthesis_state": {
+          "type": "string"
+        },
+        "decision_template_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "decision_template_subject_sha256": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "decision_template_subject_sha256",
+            "file_sha256"
+          ],
+          "type": "object"
+        },
+        "downstream_authorizations": {
+          "additionalProperties": false,
+          "properties": {
+            "database_writes": {
+              "type": "boolean"
+            },
+            "deployment": {
+              "type": "boolean"
+            },
+            "production_persistence": {
+              "type": "boolean"
+            },
+            "production_writes": {
+              "type": "boolean"
+            },
+            "public_wording": {
+              "type": "boolean"
+            },
+            "publication": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "database_writes",
+            "deployment",
+            "production_persistence",
+            "production_writes",
+            "public_wording",
+            "publication"
+          ],
+          "type": "object"
+        },
+        "final_accounting": {
+          "additionalProperties": false,
+          "properties": {
+            "candidate_action_reference_count": {
+              "type": "integer"
+            },
+            "candidate_episode_reference_count": {
+              "type": "integer"
+            },
+            "canonical_internal_synthesis_count": {
+              "type": "integer"
+            },
+            "cross_candidate_action_overlap_count": {
+              "type": "integer"
+            },
+            "cross_candidate_episode_overlap_count": {
+              "type": "integer"
+            },
+            "standalone_proposition_count": {
+              "type": "integer"
+            },
+            "unique_behavioral_proposition_input_count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "candidate_action_reference_count",
+            "candidate_episode_reference_count",
+            "canonical_internal_synthesis_count",
+            "cross_candidate_action_overlap_count",
+            "cross_candidate_episode_overlap_count",
+            "standalone_proposition_count",
+            "unique_behavioral_proposition_input_count"
+          ],
+          "type": "object"
+        },
+        "implementation_records": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "authority_decision_subject_sha256": {
+                "type": "string"
+              },
+              "behavioral_proposition_lineage": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "accepted_candidate_content_sha256": {
+                      "type": "string"
+                    },
+                    "evidence_action_ids": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "evidence_episode_ids": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "m11h_record_id": {
+                      "type": "string"
+                    },
+                    "m11h_record_subject_sha256": {
+                      "type": "string"
+                    },
+                    "proposition_id": {
+                      "type": "string"
+                    },
+                    "relationship_role": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "accepted_candidate_content_sha256",
+                    "evidence_action_ids",
+                    "evidence_episode_ids",
+                    "m11h_record_id",
+                    "m11h_record_subject_sha256",
+                    "proposition_id",
+                    "relationship_role"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "bounded_revision": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "field_replacements": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "original_value_sha256": {
+                              "type": "string"
+                            },
+                            "path": {
+                              "anyOf": [
+                                {
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "type": "array"
+                                },
+                                {
+                                  "items": {
+                                    "anyOf": [
+                                      {
+                                        "type": "string"
+                                      },
+                                      {
+                                        "type": "integer"
+                                      }
+                                    ]
+                                  },
+                                  "type": "array"
+                                }
+                              ]
+                            },
+                            "revised_value": {
+                              "anyOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "type": "array"
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "original_value_sha256",
+                            "path",
+                            "revised_value"
+                          ],
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "revised_candidate_content_sha256": {
+                        "type": "string"
+                      },
+                      "revision_scope": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "field_replacements",
+                      "revised_candidate_content_sha256",
+                      "revision_scope"
+                    ],
+                    "type": "object"
+                  }
+                ]
+              },
+              "canonical_internal_synthesis": {
+                "type": "boolean"
+              },
+              "decision": {
+                "type": "string"
+              },
+              "downstream_authorizations": {
+                "additionalProperties": false,
+                "properties": {
+                  "database_writes": {
+                    "type": "boolean"
+                  },
+                  "deployment": {
+                    "type": "boolean"
+                  },
+                  "production_persistence": {
+                    "type": "boolean"
+                  },
+                  "production_writes": {
+                    "type": "boolean"
+                  },
+                  "public_wording": {
+                    "type": "boolean"
+                  },
+                  "publication": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "database_writes",
+                  "deployment",
+                  "production_persistence",
+                  "production_writes",
+                  "public_wording",
+                  "publication"
+                ],
+                "type": "object"
+              },
+              "implemented_synthesis_content": {
+                "additionalProperties": false,
+                "properties": {
+                  "accepted": {
+                    "type": "boolean"
+                  },
+                  "authorizing": {
+                    "type": "boolean"
+                  },
+                  "candidate_state": {
+                    "type": "string"
+                  },
+                  "canonical": {
+                    "type": "boolean"
+                  },
+                  "competing_interpretation": {
+                    "type": "string"
+                  },
+                  "conclusion_relevance": {
+                    "type": "string"
+                  },
+                  "direction": {
+                    "type": "string"
+                  },
+                  "downstream_authorizations": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "database_writes": {
+                        "type": "boolean"
+                      },
+                      "deployment": {
+                        "type": "boolean"
+                      },
+                      "production_persistence": {
+                        "type": "boolean"
+                      },
+                      "production_writes": {
+                        "type": "boolean"
+                      },
+                      "public_wording": {
+                        "type": "boolean"
+                      },
+                      "publication": {
+                        "type": "boolean"
+                      },
+                      "synthesis_acceptance": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "database_writes",
+                      "deployment",
+                      "production_persistence",
+                      "production_writes",
+                      "public_wording",
+                      "publication",
+                      "synthesis_acceptance"
+                    ],
+                    "type": "object"
+                  },
+                  "input_bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "accepted_candidate_content_sha256": {
+                          "type": "string"
+                        },
+                        "concise_input_summary": {
+                          "type": "string"
+                        },
+                        "evidence_action_ids": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "evidence_episode_ids": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "implementation_record_id": {
+                          "type": "string"
+                        },
+                        "implementation_record_subject_sha256": {
+                          "type": "string"
+                        },
+                        "proposition_id": {
+                          "type": "string"
+                        },
+                        "relationship_role": {
+                          "type": "string"
+                        },
+                        "source_conclusion_relevance": {
+                          "type": "string"
+                        },
+                        "source_direction": {
+                          "type": "string"
+                        },
+                        "source_proposition_type": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "accepted_candidate_content_sha256",
+                        "concise_input_summary",
+                        "evidence_action_ids",
+                        "evidence_episode_ids",
+                        "implementation_record_id",
+                        "implementation_record_subject_sha256",
+                        "proposition_id",
+                        "relationship_role",
+                        "source_conclusion_relevance",
+                        "source_direction",
+                        "source_proposition_type"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "material_limitations": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "prohibited_inferences": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "proposition": {
+                    "type": "string"
+                  },
+                  "relationship_basis": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "basis_type": {
+                        "type": "string"
+                      },
+                      "semantic_relationship": {
+                        "type": "string"
+                      },
+                      "topic_similarity_only": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "basis_type",
+                      "semantic_relationship",
+                      "topic_similarity_only"
+                    ],
+                    "type": "object"
+                  },
+                  "relationship_rationale": {
+                    "type": "string"
+                  },
+                  "relationships": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "contextualized_by": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "contrasted_by": {
+                        "anyOf": [
+                          {
+                            "items": {},
+                            "type": "array"
+                          },
+                          {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          }
+                        ]
+                      },
+                      "limited_by": {
+                        "items": {},
+                        "type": "array"
+                      },
+                      "supported_by": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "contextualized_by",
+                      "contrasted_by",
+                      "limited_by",
+                      "supported_by"
+                    ],
+                    "type": "object"
+                  },
+                  "semantic_role": {
+                    "type": "string"
+                  },
+                  "synthesis_candidate_id": {
+                    "type": "string"
+                  },
+                  "synthesis_candidate_subject_sha256": {
+                    "type": "string"
+                  },
+                  "synthesis_type": {
+                    "type": "string"
+                  },
+                  "underlying_evidence": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "behavioral_proposition_input_count": {
+                        "type": "integer"
+                      },
+                      "episode_ids_by_relationship_role": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "contextual_support": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "contrast": {
+                            "anyOf": [
+                              {
+                                "items": {},
+                                "type": "array"
+                              },
+                              {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              }
+                            ]
+                          },
+                          "limitation": {
+                            "items": {},
+                            "type": "array"
+                          },
+                          "primary_support": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "contextual_support",
+                          "contrast",
+                          "limitation",
+                          "primary_support"
+                        ],
+                        "type": "object"
+                      },
+                      "independent_evidence_unit": {
+                        "type": "string"
+                      },
+                      "pattern_nodes_and_episodes_are_not_additive": {
+                        "type": "boolean"
+                      },
+                      "unique_action_count": {
+                        "type": "integer"
+                      },
+                      "unique_action_ids": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "unique_episode_count": {
+                        "type": "integer"
+                      },
+                      "unique_episode_ids": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "behavioral_proposition_input_count",
+                      "episode_ids_by_relationship_role",
+                      "independent_evidence_unit",
+                      "pattern_nodes_and_episodes_are_not_additive",
+                      "unique_action_count",
+                      "unique_action_ids",
+                      "unique_episode_count",
+                      "unique_episode_ids"
+                    ],
+                    "type": "object"
+                  },
+                  "unresolved_ambiguity": {
+                    "type": "string"
+                  },
+                  "why_synthesis_not_topic_grouping": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "accepted",
+                  "authorizing",
+                  "candidate_state",
+                  "canonical",
+                  "competing_interpretation",
+                  "conclusion_relevance",
+                  "direction",
+                  "downstream_authorizations",
+                  "input_bindings",
+                  "material_limitations",
+                  "prohibited_inferences",
+                  "proposition",
+                  "relationship_basis",
+                  "relationship_rationale",
+                  "relationships",
+                  "semantic_role",
+                  "synthesis_candidate_id",
+                  "synthesis_candidate_subject_sha256",
+                  "synthesis_type",
+                  "underlying_evidence",
+                  "unresolved_ambiguity",
+                  "why_synthesis_not_topic_grouping"
+                ],
+                "type": "object"
+              },
+              "implemented_synthesis_content_sha256": {
+                "type": "string"
+              },
+              "original_candidate_content": {
+                "additionalProperties": false,
+                "properties": {
+                  "accepted": {
+                    "type": "boolean"
+                  },
+                  "authorizing": {
+                    "type": "boolean"
+                  },
+                  "candidate_state": {
+                    "type": "string"
+                  },
+                  "canonical": {
+                    "type": "boolean"
+                  },
+                  "competing_interpretation": {
+                    "type": "string"
+                  },
+                  "conclusion_relevance": {
+                    "type": "string"
+                  },
+                  "direction": {
+                    "type": "string"
+                  },
+                  "downstream_authorizations": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "database_writes": {
+                        "type": "boolean"
+                      },
+                      "deployment": {
+                        "type": "boolean"
+                      },
+                      "production_persistence": {
+                        "type": "boolean"
+                      },
+                      "production_writes": {
+                        "type": "boolean"
+                      },
+                      "public_wording": {
+                        "type": "boolean"
+                      },
+                      "publication": {
+                        "type": "boolean"
+                      },
+                      "synthesis_acceptance": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "database_writes",
+                      "deployment",
+                      "production_persistence",
+                      "production_writes",
+                      "public_wording",
+                      "publication",
+                      "synthesis_acceptance"
+                    ],
+                    "type": "object"
+                  },
+                  "input_bindings": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "accepted_candidate_content_sha256": {
+                          "type": "string"
+                        },
+                        "concise_input_summary": {
+                          "type": "string"
+                        },
+                        "evidence_action_ids": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "evidence_episode_ids": {
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "implementation_record_id": {
+                          "type": "string"
+                        },
+                        "implementation_record_subject_sha256": {
+                          "type": "string"
+                        },
+                        "proposition_id": {
+                          "type": "string"
+                        },
+                        "relationship_role": {
+                          "type": "string"
+                        },
+                        "source_conclusion_relevance": {
+                          "type": "string"
+                        },
+                        "source_direction": {
+                          "type": "string"
+                        },
+                        "source_proposition_type": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "accepted_candidate_content_sha256",
+                        "concise_input_summary",
+                        "evidence_action_ids",
+                        "evidence_episode_ids",
+                        "implementation_record_id",
+                        "implementation_record_subject_sha256",
+                        "proposition_id",
+                        "relationship_role",
+                        "source_conclusion_relevance",
+                        "source_direction",
+                        "source_proposition_type"
+                      ],
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "material_limitations": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "prohibited_inferences": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "proposition": {
+                    "type": "string"
+                  },
+                  "relationship_basis": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "basis_type": {
+                        "type": "string"
+                      },
+                      "semantic_relationship": {
+                        "type": "string"
+                      },
+                      "topic_similarity_only": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "basis_type",
+                      "semantic_relationship",
+                      "topic_similarity_only"
+                    ],
+                    "type": "object"
+                  },
+                  "relationship_rationale": {
+                    "type": "string"
+                  },
+                  "relationships": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "contextualized_by": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "contrasted_by": {
+                        "anyOf": [
+                          {
+                            "items": {},
+                            "type": "array"
+                          },
+                          {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          }
+                        ]
+                      },
+                      "limited_by": {
+                        "items": {},
+                        "type": "array"
+                      },
+                      "supported_by": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "contextualized_by",
+                      "contrasted_by",
+                      "limited_by",
+                      "supported_by"
+                    ],
+                    "type": "object"
+                  },
+                  "semantic_role": {
+                    "type": "string"
+                  },
+                  "synthesis_candidate_id": {
+                    "type": "string"
+                  },
+                  "synthesis_candidate_subject_sha256": {
+                    "type": "string"
+                  },
+                  "synthesis_type": {
+                    "type": "string"
+                  },
+                  "underlying_evidence": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "behavioral_proposition_input_count": {
+                        "type": "integer"
+                      },
+                      "episode_ids_by_relationship_role": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "contextual_support": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "contrast": {
+                            "anyOf": [
+                              {
+                                "items": {},
+                                "type": "array"
+                              },
+                              {
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              }
+                            ]
+                          },
+                          "limitation": {
+                            "items": {},
+                            "type": "array"
+                          },
+                          "primary_support": {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "contextual_support",
+                          "contrast",
+                          "limitation",
+                          "primary_support"
+                        ],
+                        "type": "object"
+                      },
+                      "independent_evidence_unit": {
+                        "type": "string"
+                      },
+                      "pattern_nodes_and_episodes_are_not_additive": {
+                        "type": "boolean"
+                      },
+                      "unique_action_count": {
+                        "type": "integer"
+                      },
+                      "unique_action_ids": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "unique_episode_count": {
+                        "type": "integer"
+                      },
+                      "unique_episode_ids": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "behavioral_proposition_input_count",
+                      "episode_ids_by_relationship_role",
+                      "independent_evidence_unit",
+                      "pattern_nodes_and_episodes_are_not_additive",
+                      "unique_action_count",
+                      "unique_action_ids",
+                      "unique_episode_count",
+                      "unique_episode_ids"
+                    ],
+                    "type": "object"
+                  },
+                  "unresolved_ambiguity": {
+                    "type": "string"
+                  },
+                  "why_synthesis_not_topic_grouping": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "accepted",
+                  "authorizing",
+                  "candidate_state",
+                  "canonical",
+                  "competing_interpretation",
+                  "conclusion_relevance",
+                  "direction",
+                  "downstream_authorizations",
+                  "input_bindings",
+                  "material_limitations",
+                  "prohibited_inferences",
+                  "proposition",
+                  "relationship_basis",
+                  "relationship_rationale",
+                  "relationships",
+                  "semantic_role",
+                  "synthesis_candidate_id",
+                  "synthesis_candidate_subject_sha256",
+                  "synthesis_type",
+                  "underlying_evidence",
+                  "unresolved_ambiguity",
+                  "why_synthesis_not_topic_grouping"
+                ],
+                "type": "object"
+              },
+              "original_candidate_content_sha256": {
+                "type": "string"
+              },
+              "original_candidate_subject_sha256": {
+                "type": "string"
+              },
+              "production_selectable": {
+                "type": "boolean"
+              },
+              "public": {
+                "type": "boolean"
+              },
+              "record_id": {
+                "type": "string"
+              },
+              "record_subject_sha256": {
+                "type": "string"
+              },
+              "schema_version": {
+                "type": "string"
+              },
+              "source_direction_semantic_guard": {
+                "additionalProperties": false,
+                "properties": {
+                  "accepted_input_content_sha256s": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "direction_metadata_role": {
+                    "type": "string"
+                  },
+                  "mixed_direction_alone_establishes_mixed_policy_orientation": {
+                    "type": "boolean"
+                  },
+                  "semantic_claim_basis": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "accepted_input_content_sha256s",
+                  "direction_metadata_role",
+                  "mixed_direction_alone_establishes_mixed_policy_orientation",
+                  "semantic_claim_basis"
+                ],
+                "type": "object"
+              },
+              "synthesis_candidate_id": {
+                "type": "string"
+              },
+              "underlying_evidence": {
+                "additionalProperties": false,
+                "properties": {
+                  "behavioral_proposition_input_count": {
+                    "type": "integer"
+                  },
+                  "episode_ids_by_relationship_role": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "contextual_support": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "contrast": {
+                        "anyOf": [
+                          {
+                            "items": {},
+                            "type": "array"
+                          },
+                          {
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          }
+                        ]
+                      },
+                      "limitation": {
+                        "items": {},
+                        "type": "array"
+                      },
+                      "primary_support": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "contextual_support",
+                      "contrast",
+                      "limitation",
+                      "primary_support"
+                    ],
+                    "type": "object"
+                  },
+                  "independent_evidence_unit": {
+                    "type": "string"
+                  },
+                  "pattern_nodes_and_episodes_are_not_additive": {
+                    "type": "boolean"
+                  },
+                  "unique_action_count": {
+                    "type": "integer"
+                  },
+                  "unique_action_ids": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "unique_episode_count": {
+                    "type": "integer"
+                  },
+                  "unique_episode_ids": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "behavioral_proposition_input_count",
+                  "episode_ids_by_relationship_role",
+                  "independent_evidence_unit",
+                  "pattern_nodes_and_episodes_are_not_additive",
+                  "unique_action_count",
+                  "unique_action_ids",
+                  "unique_episode_count",
+                  "unique_episode_ids"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "authority_decision_subject_sha256",
+              "behavioral_proposition_lineage",
+              "bounded_revision",
+              "canonical_internal_synthesis",
+              "decision",
+              "downstream_authorizations",
+              "implemented_synthesis_content",
+              "implemented_synthesis_content_sha256",
+              "original_candidate_content",
+              "original_candidate_content_sha256",
+              "original_candidate_subject_sha256",
+              "production_selectable",
+              "public",
+              "record_id",
+              "record_subject_sha256",
+              "schema_version",
+              "source_direction_semantic_guard",
+              "synthesis_candidate_id",
+              "underlying_evidence"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "m11h_authority_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "authority_subject_sha256": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "authority_subject_sha256",
+            "file_sha256"
+          ],
+          "type": "object"
+        },
+        "m11h_implementation_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "implementation_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "file_sha256",
+            "implementation_subject_sha256"
+          ],
+          "type": "object"
+        },
+        "m11h_parity_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "file_sha256": {
+              "type": "string"
+            },
+            "parity_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_sha256",
+            "parity_subject_sha256"
+          ],
+          "type": "object"
+        },
+        "m11i_parity_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "parity_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "file_sha256",
+            "parity_subject_sha256"
+          ],
+          "type": "object"
+        },
+        "subject": {
+          "additionalProperties": false,
+          "properties": {
+            "chamber": {
+              "type": "string"
+            },
+            "congress": {
+              "type": "integer"
+            },
+            "issue_id": {
+              "type": "string"
+            },
+            "legislator_id": {
+              "type": "string"
+            },
+            "member_id": {
+              "type": "string"
+            },
+            "member_name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "chamber",
+            "congress",
+            "issue_id",
+            "legislator_id",
+            "member_id",
+            "member_name"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "accepted_episode_disposition_accounting",
+        "accepted_proposition_role_accounting",
+        "authority_binding",
+        "candidate_binding",
+        "candidate_overlap_accounting",
+        "canonical_internal_synthesis_state",
+        "decision_template_binding",
+        "downstream_authorizations",
+        "final_accounting",
+        "implementation_records",
+        "m11h_authority_binding",
+        "m11h_implementation_binding",
+        "m11h_parity_binding",
+        "m11i_parity_binding",
+        "subject"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "accepted_human_decisions_implemented",
+    "artifact_id",
+    "artifact_role",
+    "canonical_internal_synthesis",
+    "implementation_subject_sha256",
+    "mechanical_review_state",
+    "production_selectable",
+    "public",
+    "schema_version",
+    "subject"
+  ],
+  "type": "object"
+}
