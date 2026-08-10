@@ -6,12 +6,15 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M11J National Security Synthesis Acceptance V1](m11j_national_security_synthesis_acceptance_v1.md)
-  - implements one exact acceptance and one bounded human revision from the
-    immutable M11I package as canonical internal synthesis, with public and
-    production authorities false.
+- [M11K National Security Public-Wording Candidates V1](m11k_national_security_public_wording_candidates_v1.md)
+  - proposes detached public wording from exact accepted M11H/M11J semantics;
+    human wording review, publication, and production authority remain absent.
 
 ## Retained unresolved plans
+
+- [M11J National Security Synthesis Acceptance V1](m11j_national_security_synthesis_acceptance_v1.md)
+  - mechanically accepted at PR #142 and merged as M11K's exact canonical
+    internal synthesis input.
 
 - [M11I National Security Synthesis Candidates V1](m11i_national_security_synthesis_candidates_v1.md)
   - human-reviewed and merged at PR #141; retained unchanged as M11J's exact

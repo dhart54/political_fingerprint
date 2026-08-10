@@ -746,8 +746,10 @@
     },
     "accepted_m11i_head": "8535163aee1d2a548ec7d0c23935b1322a05b863",
     "post_m11i_merge_base": "e9e771b23eb65629e0a3ed7ecb6c32748d7ebf59",
-    "milestone_state": "complete_pending_human_mechanical_review",
-    "authority_effect": "canonical_internal_synthesis_only_pending_final_mechanical_review",
+    "accepted_m11j_head": "ed0d3b65f287b3bc1b8985a7ef85a72a9e574043",
+    "post_merge_main": "03b14aa030ea302c1c109b0efd6a2ad7cef23f1b",
+    "milestone_state": "completed_human_mechanical_review_merged",
+    "authority_effect": "canonical_internal_synthesis_only",
     "decision_accounting": {
       "accept_candidate_as_written": 1,
       "accept_with_bounded_revision": 1,
@@ -784,12 +786,72 @@
     "cross_candidate_episode_overlap_count": 0,
     "cross_candidate_action_overlap_count": 0,
     "source_direction_semantic_guard": "accepted_proposition_content_controls_interpretation",
-    "public_wording_state": "absent_not_authorized",
+    "public_wording_state": "detached_m11k_candidates_pending_human_review_not_authorized",
     "publication_state": "inactive",
     "production_persistence": "not_authorized",
     "production_writes": false,
     "downstream_authorizations": {
       "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "production_writes": false,
+      "deployment": false
+    }
+  },
+  "active_public_wording_candidate_milestone": {
+    "milestone": "m11k_national_security_public_wording_candidates_v1",
+    "plan": "docs/plans/m11k_national_security_public_wording_candidates_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "NATIONAL_SECURITY_FOREIGN"
+    },
+    "accepted_m11j_head": "ed0d3b65f287b3bc1b8985a7ef85a72a9e574043",
+    "post_m11j_main": "03b14aa030ea302c1c109b0efd6a2ad7cef23f1b",
+    "milestone_state": "candidate_package_complete_pending_human_substantive_wording_review",
+    "authority_effect": "detached_non_authorizing_public_wording_candidates_only",
+    "wording_item_count": 18,
+    "wording_item_accounting": {
+      "issue_overview": 1,
+      "synthesis": 2,
+      "repeated_pattern": 8,
+      "trajectory": 1,
+      "notable_choice": 6
+    },
+    "source_accounting": {
+      "behavioral_propositions": 15,
+      "canonical_internal_syntheses": 2,
+      "behavioral_action_references": 32,
+      "behavioral_episode_references": 32,
+      "blocked_uninterpreted_actions": 1
+    },
+    "package": {
+      "artifact": "docs/editorial/full_record_reviews/public_wording_candidates/f000477_national_security_foreign_119_v1/public_wording_candidate_package.json",
+      "id": "public-wording-candidates:f000477:national_security_foreign:119:v1",
+      "sha256": "eef9c35e08fd0ccecf931c1a47d6f88793954f92a649386a2032b305b3cc24bb",
+      "public_wording_candidate_package_subject_sha256": "7647db4d58cdfc34c7ee6f5aef955ea67eef650e43084e1ed58383a0b64ddd93"
+    },
+    "decision_template": {
+      "artifact": "docs/editorial/full_record_reviews/public_wording_candidates/f000477_national_security_foreign_119_v1/human_public_wording_decision_template.json",
+      "id": "human-public-wording-decision-template:f000477:national_security_foreign:119:v1",
+      "sha256": "6e96a461d2d052906b038a8ddf6d7d6fa92ba4309f292f45f88da9fcbf225def",
+      "decision_template_subject_sha256": "16b146441ff93797301467f64b58d66da45796fdfc8091d6e3b1c6f08353c50a"
+    },
+    "parity": {
+      "artifact": "docs/editorial/full_record_reviews/public_wording_candidates/f000477_national_security_foreign_119_v1/parity_manifest.json",
+      "id": "public-wording-candidate-parity:f000477:national_security_foreign:119:v1",
+      "sha256": "1d9f02eba933033e6b794d451f93603d826f1e3b0d6565b871ed1fd8512e541d",
+      "parity_subject_sha256": "8d79f1fb7ca6bbc7ac25c26ca764760c1de2b736ff57882c682458a5ea0be235"
+    },
+    "public_wording_state": "candidate_only_noncanonical_pending_human_substantive_review",
+    "publication_state": "inactive",
+    "production_persistence": "not_authorized",
+    "production_writes": false,
+    "downstream_authorizations": {
       "publication": false,
       "production_persistence": false,
       "database_writes": false,

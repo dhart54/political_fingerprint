@@ -190,7 +190,12 @@ def validate_repository() -> dict[str, Any]:
     )
     require(
         m11j["post_m11i_merge_base"] == POST_M11I_MERGE_MAIN
-        and m11j["milestone_state"] == "complete_pending_human_mechanical_review"
+        and m11j["accepted_m11j_head"]
+        == "ed0d3b65f287b3bc1b8985a7ef85a72a9e574043"
+        and m11j["post_merge_main"]
+        == "03b14aa030ea302c1c109b0efd6a2ad7cef23f1b"
+        and m11j["milestone_state"]
+        == "completed_human_mechanical_review_merged"
         and not any(m11j["downstream_authorizations"].values()),
         "M11J current-state boundary differs",
     )
