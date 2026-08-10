@@ -518,7 +518,6 @@ def build_implementation(
         m11f_authority=m11f_authority,
         m11f_implementation=m11f_implementation,
         m11d_implementation=m11d_implementation,
-        blocked_action_id=BLOCKED_ACTION_ID,
     )
     return implementation
 

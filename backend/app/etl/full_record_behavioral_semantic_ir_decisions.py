@@ -43,8 +43,83 @@ def verify_seal(value: dict[str, Any], field: str, label: str) -> None:
         raise BehavioralSemanticIRDecisionError(f"{label}: {field} differs")
 
 
+def verify_subject_seal(value: dict[str, Any], field: str, label: str) -> None:
+    if value.get(field) != digest(value["subject"]):
+        raise BehavioralSemanticIRDecisionError(f"{label}: {field} differs")
+
+
 def _propositions(candidate: dict[str, Any]) -> list[dict[str, Any]]:
     return candidate["compiled_candidate_ir"]["proposition_graph"]["propositions"]
+
+
+def _proposition_accounting(
+    propositions: list[dict[str, Any]],
+) -> dict[str, int]:
+    types = Counter(row["proposition_type"] for row in propositions)
+    relevance = Counter(row["conclusion_relevance"] for row in propositions)
+    return {
+        "total": len(propositions),
+        "repeated_pattern": types["repeated_pattern"],
+        "trajectory": types["trajectory"],
+        "notable_choice": types["notable_choice"],
+        "primary_conclusion_relevance": relevance["primary"],
+        "limiting_conclusion_relevance": relevance["limiting"],
+        "excluded_conclusion_relevance": relevance["excluded"],
+    }
+
+
+def _episode_disposition_accounting(
+    ledger: list[dict[str, Any]],
+) -> dict[str, int]:
+    dispositions = Counter(row["disposition"] for row in ledger)
+    primary_rows = Counter(
+        row["episode_id"] for row in ledger if row["primary_proposition_id"] is not None
+    )
+    return {
+        "accepted_episode_count": len(ledger),
+        "repeated_pattern_evidence_episode_count": dispositions[
+            "supports_proposed_repeated_pattern"
+        ],
+        "trajectory_evidence_episode_count": dispositions[
+            "supports_proposed_trajectory"
+        ],
+        "notable_choice_evidence_episode_count": dispositions[
+            "supports_proposed_notable_choice"
+        ],
+        "contrast_only_episode_count": dispositions["retained_as_limit_or_contrast"],
+        "no_safe_proposition_episode_count": dispositions[
+            "no_safe_higher_level_behavioral_proposition"
+        ],
+        "primary_overlap_count": sum(count > 1 for count in primary_rows.values()),
+    }
+
+
+def _final_accounting(
+    *,
+    propositions: list[dict[str, Any]],
+    ledger: list[dict[str, Any]],
+    blocked_action_ids: set[str],
+) -> dict[str, int]:
+    proposition_counts = _proposition_accounting(propositions)
+    episode_counts = _episode_disposition_accounting(ledger)
+    return {
+        "accepted_proposition_count": proposition_counts["total"],
+        "repeated_pattern_count": proposition_counts["repeated_pattern"],
+        "trajectory_count": proposition_counts["trajectory"],
+        "notable_choice_count": proposition_counts["notable_choice"],
+        "primary_evidence_episode_count": (
+            episode_counts["repeated_pattern_evidence_episode_count"]
+            + episode_counts["trajectory_evidence_episode_count"]
+            + episode_counts["notable_choice_evidence_episode_count"]
+        ),
+        "primary_overlap_count": episode_counts["primary_overlap_count"],
+        "accepted_episode_count": episode_counts["accepted_episode_count"],
+        "contrast_only_episode_count": episode_counts["contrast_only_episode_count"],
+        "no_safe_proposition_episode_count": episode_counts[
+            "no_safe_proposition_episode_count"
+        ],
+        "blocked_action_count": len(blocked_action_ids),
+    }
 
 
 def validate_authority(
@@ -66,6 +141,12 @@ def validate_authority(
         == candidate["candidate_subject_sha256"]
     ):
         raise BehavioralSemanticIRDecisionError("candidate authority binding differs")
+    blocked_action_ids = [row["action_id"] for row in subject["blocked_actions"]]
+    if not (
+        len(blocked_action_ids) == len(set(blocked_action_ids))
+        and set(blocked_action_ids) == set(candidate["blocked_action_ids"])
+    ):
+        raise BehavioralSemanticIRDecisionError("governed blocked action set differs")
 
     propositions = _propositions(candidate)
     by_id = {row["proposition_id"]: row for row in propositions}
@@ -100,48 +181,22 @@ def validate_authority(
         != candidate["compiled_candidate_ir"]["episode_accounting"]
     ):
         raise BehavioralSemanticIRDecisionError("accepted episode ledger differs")
-    proposition_counts = Counter(row["proposition_type"] for row in propositions)
-    relevance_counts = Counter(row["conclusion_relevance"] for row in propositions)
-    if not (
-        subject["accepted_proposition_accounting"]
-        == {
-            "total": 15,
-            "repeated_pattern": 8,
-            "trajectory": 1,
-            "notable_choice": 6,
-            "primary_conclusion_relevance": 8,
-            "limiting_conclusion_relevance": 1,
-            "excluded_conclusion_relevance": 6,
-        }
-        and proposition_counts
-        == Counter({"repeated_pattern": 8, "trajectory": 1, "notable_choice": 6})
-        and relevance_counts == Counter({"primary": 8, "excluded": 6, "limiting": 1})
+    if subject["accepted_proposition_accounting"] != _proposition_accounting(
+        propositions
     ):
         raise BehavioralSemanticIRDecisionError(
             "accepted proposition accounting differs"
         )
-    disposition_counts = Counter(
-        row["disposition"] for row in subject["accepted_episode_disposition_ledger"]
-    )
-    if disposition_counts != Counter(
-        {
-            "supports_proposed_repeated_pattern": 24,
-            "supports_proposed_trajectory": 2,
-            "supports_proposed_notable_choice": 6,
-            "retained_as_limit_or_contrast": 24,
-            "no_safe_higher_level_behavioral_proposition": 25,
-        }
+    ledger = subject["accepted_episode_disposition_ledger"]
+    if len({row["episode_id"] for row in ledger}) != len(ledger):
+        raise BehavioralSemanticIRDecisionError("duplicate episode disposition")
+    expected_episode_accounting = _episode_disposition_accounting(ledger)
+    if expected_episode_accounting["primary_overlap_count"] != 0:
+        raise BehavioralSemanticIRDecisionError("primary episode overlap")
+    if (
+        subject["accepted_episode_disposition_accounting"]
+        != expected_episode_accounting
     ):
-        raise BehavioralSemanticIRDecisionError("accepted episode accounting differs")
-    if subject["accepted_episode_disposition_accounting"] != {
-        "accepted_episode_count": 81,
-        "repeated_pattern_evidence_episode_count": 24,
-        "trajectory_evidence_episode_count": 2,
-        "notable_choice_evidence_episode_count": 6,
-        "contrast_only_episode_count": 24,
-        "no_safe_proposition_episode_count": 25,
-        "primary_overlap_count": 0,
-    }:
         raise BehavioralSemanticIRDecisionError(
             "accepted episode disposition summary differs"
         )
@@ -156,7 +211,6 @@ def validate_implementation(
     m11f_authority: dict[str, Any],
     m11f_implementation: dict[str, Any],
     m11d_implementation: dict[str, Any],
-    blocked_action_id: str,
 ) -> dict[str, int]:
     validate_authority(authority, candidate=candidate)
     verify_seal(
@@ -173,6 +227,29 @@ def validate_implementation(
         == authority["authority_subject_sha256"]
     ):
         raise BehavioralSemanticIRDecisionError("implementation authority differs")
+    verify_seal(m11f_authority, "authority_subject_sha256", "M11F authority")
+    verify_seal(
+        m11f_implementation,
+        "implementation_subject_sha256",
+        "M11F implementation",
+    )
+    verify_subject_seal(
+        m11d_implementation,
+        "implementation_subject_sha256",
+        "M11D implementation",
+    )
+    m11f_subject = m11f_implementation["subject"]
+    if not (
+        m11f_subject["authority_binding"]["artifact_id"]
+        == m11f_authority["artifact_id"]
+        and m11f_subject["authority_binding"]["authority_subject_sha256"]
+        == m11f_authority["authority_subject_sha256"]
+        and m11f_subject["m11d_implementation_binding"]["artifact_id"]
+        == m11d_implementation["artifact_id"]
+        and m11f_subject["m11d_implementation_binding"]["implementation_subject_sha256"]
+        == m11d_implementation["implementation_subject_sha256"]
+    ):
+        raise BehavioralSemanticIRDecisionError("accepted M11F lineage binding differs")
     if not (
         subject["m11f_authority_binding"]["artifact_id"]
         == m11f_authority["artifact_id"]
@@ -202,14 +279,53 @@ def validate_implementation(
         row["episode_id"]: row
         for row in m11f_implementation["subject"]["implementation_records"]
     }
-    if len(episode_records) != 81:
-        raise BehavioralSemanticIRDecisionError("M11F episode set differs")
+    if len(episode_records) != len(
+        m11f_implementation["subject"]["implementation_records"]
+    ):
+        raise BehavioralSemanticIRDecisionError("duplicate M11F episode identity")
     m11d_records = {
         row["action_id"]: row
         for row in m11d_implementation["subject"]["implementation_records"]
     }
-    if len(m11d_records) != 81:
-        raise BehavioralSemanticIRDecisionError("M11D action set differs")
+    if len(m11d_records) != len(
+        m11d_implementation["subject"]["implementation_records"]
+    ):
+        raise BehavioralSemanticIRDecisionError("duplicate M11D action identity")
+    for action in m11d_records.values():
+        verify_seal(
+            action,
+            "record_subject_sha256",
+            f"M11D action {action['action_id']}",
+        )
+    blocked_rows = authority["subject"]["blocked_actions"]
+    blocked_action_ids = {row["action_id"] for row in blocked_rows}
+    if len(blocked_action_ids) != len(blocked_rows):
+        raise BehavioralSemanticIRDecisionError("duplicate governed blocked action")
+    if subject["blocked_actions"] != blocked_rows:
+        raise BehavioralSemanticIRDecisionError("blocked action binding differs")
+
+    episode_action_owners: Counter[str] = Counter()
+    for episode in episode_records.values():
+        verify_seal(
+            episode,
+            "record_subject_sha256",
+            f"M11F episode {episode['episode_id']}",
+        )
+        action_ids = [row["action_id"] for row in episode["actions"]]
+        if not (
+            action_ids == episode["primary_action_ids"]
+            and len(action_ids) == len(set(action_ids))
+        ):
+            raise BehavioralSemanticIRDecisionError(
+                "M11F episode action membership differs"
+            )
+        episode_action_owners.update(action_ids)
+    if any(count != 1 for count in episode_action_owners.values()):
+        raise BehavioralSemanticIRDecisionError("M11F action assigned more than once")
+    if set(episode_action_owners) != set(m11d_records):
+        raise BehavioralSemanticIRDecisionError(
+            "M11F episodes do not exhaust accepted M11D actions"
+        )
     records = subject["implementation_records"]
     if len(records) != len(by_id) or {row["proposition_id"] for row in records} != set(
         by_id
@@ -239,7 +355,7 @@ def validate_implementation(
             raise BehavioralSemanticIRDecisionError(
                 "implemented proposition differs from accepted candidate"
             )
-        if blocked_action_id in source["evidence_action_ids"]:
+        if blocked_action_ids.intersection(source["evidence_action_ids"]):
             raise BehavioralSemanticIRDecisionError("blocked action entered evidence")
         lineage = record["evidence_lineage"]
         if [row["episode_id"] for row in lineage] != source["evidence_episode_ids"]:
@@ -321,24 +437,12 @@ def validate_implementation(
         ):
             raise BehavioralSemanticIRDecisionError("primary episode owner differs")
 
-    counts = Counter(
-        row["accepted_candidate_content"]["proposition_type"] for row in records
+    implemented_propositions = [row["accepted_candidate_content"] for row in records]
+    expected = _final_accounting(
+        propositions=implemented_propositions,
+        ledger=ledger,
+        blocked_action_ids=blocked_action_ids,
     )
-    expected = {
-        "accepted_proposition_count": 15,
-        "repeated_pattern_count": 8,
-        "trajectory_count": 1,
-        "notable_choice_count": 6,
-        "primary_evidence_episode_count": 32,
-        "primary_overlap_count": 0,
-        "accepted_episode_count": 81,
-        "contrast_only_episode_count": 24,
-        "no_safe_proposition_episode_count": 25,
-        "blocked_action_count": 1,
-    }
-    if not (
-        counts == Counter({"repeated_pattern": 8, "trajectory": 1, "notable_choice": 6})
-        and subject["final_accounting"] == expected
-    ):
+    if subject["final_accounting"] != expected:
         raise BehavioralSemanticIRDecisionError("final semantic accounting differs")
     return expected

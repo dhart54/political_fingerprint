@@ -34,7 +34,6 @@ def validate_paths(
     m11d_implementation_path: Path,
     authority_schema_path: Path,
     implementation_schema_path: Path,
-    blocked_action_id: str,
 ) -> dict[str, Any]:
     authority = load(authority_path)
     implementation = load(implementation_path)
@@ -52,7 +51,6 @@ def validate_paths(
         m11f_authority=m11f_authority,
         m11f_implementation=m11f_implementation,
         m11d_implementation=m11d_implementation,
-        blocked_action_id=blocked_action_id,
     )
     return {
         "status": "valid",
@@ -77,7 +75,6 @@ def main() -> int:
     parser.add_argument("--m11d-implementation", type=Path, required=True)
     parser.add_argument("--authority-schema", type=Path, required=True)
     parser.add_argument("--implementation-schema", type=Path, required=True)
-    parser.add_argument("--blocked-action-id", required=True)
     args = parser.parse_args()
     print(
         json.dumps(
@@ -90,7 +87,6 @@ def main() -> int:
                 m11d_implementation_path=args.m11d_implementation,
                 authority_schema_path=args.authority_schema,
                 implementation_schema_path=args.implementation_schema,
-                blocked_action_id=args.blocked_action_id,
             ),
             indent=2,
             sort_keys=True,
