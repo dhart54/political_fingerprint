@@ -48,6 +48,59 @@ def _candidates(package: dict[str, Any]) -> list[dict[str, Any]]:
     return package["subject"]["synthesis_candidates"]
 
 
+def structural_projection(candidate: dict[str, Any]) -> dict[str, Any]:
+    """Return the synthesis fields that a wording revision cannot change."""
+
+    input_fields = (
+        "proposition_id",
+        "relationship_role",
+        "implementation_record_id",
+        "implementation_record_subject_sha256",
+        "accepted_candidate_content_sha256",
+        "source_proposition_type",
+        "source_direction",
+        "source_conclusion_relevance",
+        "evidence_episode_ids",
+        "evidence_action_ids",
+    )
+    return {
+        "synthesis_candidate_id": candidate["synthesis_candidate_id"],
+        "synthesis_candidate_subject_sha256": candidate.get(
+            "synthesis_candidate_subject_sha256"
+        ),
+        "semantic_role": candidate["semantic_role"],
+        "synthesis_type": candidate["synthesis_type"],
+        "direction": candidate["direction"],
+        "conclusion_relevance": candidate["conclusion_relevance"],
+        "input_bindings": [
+            {field: deepcopy(row[field]) for field in input_fields}
+            for row in candidate["input_bindings"]
+        ],
+        "relationships": deepcopy(candidate["relationships"]),
+        "relationship_basis": {
+            "basis_type": candidate["relationship_basis"]["basis_type"],
+            "topic_similarity_only": candidate["relationship_basis"][
+                "topic_similarity_only"
+            ],
+        },
+        "underlying_evidence": deepcopy(candidate["underlying_evidence"]),
+        "candidate_state": candidate["candidate_state"],
+        "accepted": candidate["accepted"],
+        "canonical": candidate["canonical"],
+        "authorizing": candidate["authorizing"],
+        "downstream_authorizations": deepcopy(candidate["downstream_authorizations"]),
+    }
+
+
+def require_structural_invariance(
+    original: dict[str, Any], revised: dict[str, Any]
+) -> None:
+    if structural_projection(original) != structural_projection(revised):
+        raise SynthesisDecisionError(
+            "bounded revision changed structural or evidence identity"
+        )
+
+
 def _replace_path(value: object, path: list[object], replacement: object) -> None:
     if not path:
         raise SynthesisDecisionError("bounded revision path is empty")
@@ -110,7 +163,7 @@ def _validate_direction_guard(record: dict[str, Any]) -> None:
         and guard["accepted_input_content_sha256s"]
         == [
             row["accepted_candidate_content_sha256"]
-            for row in record["implemented_synthesis_content"]["input_bindings"]
+            for row in record["original_candidate_content"]["input_bindings"]
         ]
     ):
         raise SynthesisDecisionError("source-direction semantic guard differs")
@@ -175,7 +228,8 @@ def validate_authority(
             raise SynthesisDecisionError("accepted-as-written decision has revision")
         if decision["decision"] == "accept_with_bounded_revision" and revision is None:
             raise SynthesisDecisionError("bounded revision is absent")
-        apply_bounded_revision(original, revision)
+        revised = apply_bounded_revision(original, revision)
+        require_structural_invariance(original, revised)
     counts = Counter(row["decision"] for row in decisions)
     expected_counts = {
         "accept_candidate_as_written": counts["accept_candidate_as_written"],
@@ -262,6 +316,11 @@ def validate_implementation(
         original = candidates[record["synthesis_candidate_id"]]
         decision = decisions[record["synthesis_candidate_id"]]
         expected = apply_bounded_revision(original, decision["bounded_revision"])
+        require_structural_invariance(original, expected)
+        require_structural_invariance(
+            record["original_candidate_content"],
+            record["implemented_synthesis_content"],
+        )
         if not (
             record["original_candidate_content"] == original
             and record["original_candidate_content_sha256"] == digest(original)

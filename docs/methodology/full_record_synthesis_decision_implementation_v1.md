@@ -10,6 +10,14 @@ bounded revision is represented as sealed, explicit field-path replacements;
 the implementation must equal the result of applying only those replacements.
 The original candidate remains embedded unchanged beside the implementation.
 
+A deterministic structural projection is invariant across every bounded
+revision. It freezes the synthesis identity, type, direction, relevance,
+candidate authority state, all input proposition and implementation bindings,
+relationship roles, relationship structure, structural relationship-basis
+flags, complete underlying episode/action evidence, and downstream authority
+state. Human-readable summaries and other explanatory semantic fields may be
+revised; structural or evidence changes require a new candidate/review cycle.
+
 Behavioral Semantic IR `direction` is proposition-relative structural metadata.
 It may support structural direction accounting, but it cannot substitute for
 the accepted proposition's semantic content. In particular, `mixed` direction

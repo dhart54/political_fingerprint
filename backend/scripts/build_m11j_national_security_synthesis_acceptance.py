@@ -496,7 +496,7 @@ def build_implementation(
                         "mixed_direction_alone_establishes_mixed_policy_orientation": False,
                         "accepted_input_content_sha256s": [
                             row["accepted_candidate_content_sha256"]
-                            for row in implemented["input_bindings"]
+                            for row in original["input_bindings"]
                         ],
                     },
                     "canonical_internal_synthesis": True,

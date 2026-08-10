@@ -5,7 +5,9 @@ import unittest
 
 from backend.app.etl.full_record_synthesis_decisions import (
     SynthesisDecisionError,
+    digest,
     seal,
+    validate_authority,
     validate_implementation,
 )
 from backend.scripts.build_m11j_national_security_synthesis_acceptance import (
@@ -37,6 +39,68 @@ class SynthesisDecisionTests(unittest.TestCase):
                 cls.implementation["subject"]["implementation_records"]
             )
         }
+        cls.candidates = {
+            row["synthesis_candidate_id"]: row
+            for row in cls.package["subject"]["synthesis_candidates"]
+        }
+
+    @staticmethod
+    def replace_path(value, path, replacement) -> None:
+        cursor = value
+        for key in path[:-1]:
+            cursor = cursor[key]
+        cursor[path[-1]] = deepcopy(replacement)
+
+    def authority_with_revision(self, candidate_id, path, revised_value):
+        authority = deepcopy(self.authority)
+        decision_index = next(
+            index
+            for index, row in enumerate(authority["subject"]["synthesis_decisions"])
+            if row["synthesis_candidate_id"] == candidate_id
+        )
+        decision = authority["subject"]["synthesis_decisions"][decision_index]
+        original = self.candidates[candidate_id]
+        cursor = original
+        for key in path:
+            cursor = cursor[key]
+        revision = deepcopy(decision["bounded_revision"])
+        if revision is None:
+            revision = {
+                "field_replacements": [],
+                "revision_scope": "synthetic_generic_bounded_revision",
+            }
+        revision["field_replacements"].append(
+            {
+                "path": path,
+                "original_value_sha256": digest(cursor),
+                "revised_value": deepcopy(revised_value),
+            }
+        )
+        revised_candidate = deepcopy(original)
+        for replacement in revision["field_replacements"]:
+            self.replace_path(
+                revised_candidate,
+                replacement["path"],
+                replacement["revised_value"],
+            )
+        revision["revised_candidate_content_sha256"] = digest(revised_candidate)
+        decision["decision"] = "accept_with_bounded_revision"
+        decision["bounded_revision"] = revision
+        authority["subject"]["synthesis_decisions"][decision_index] = seal(
+            decision, "decision_subject_sha256"
+        )
+        decisions = authority["subject"]["synthesis_decisions"]
+        authority["subject"]["decision_accounting"] = {
+            "accept_candidate_as_written": sum(
+                row["decision"] == "accept_candidate_as_written" for row in decisions
+            ),
+            "accept_with_bounded_revision": sum(
+                row["decision"] == "accept_with_bounded_revision" for row in decisions
+            ),
+            "rejected": 0,
+            "unresolved": 0,
+        }
+        return seal(authority, "authority_subject_sha256")
 
     def reseal_record(self, value, candidate_id: str) -> None:
         index = self.by_id[candidate_id]
@@ -78,6 +142,62 @@ class SynthesisDecisionTests(unittest.TestCase):
             },
         )
         self.assertEqual(result["final_accounting"]["standalone_proposition_count"], 7)
+
+    def test_allowed_generic_semantic_wording_revision_passes_authority(self) -> None:
+        authority = self.authority_with_revision(
+            WAR_POWERS_ID,
+            ["proposition"],
+            "A different bounded explanatory synthesis wording.",
+        )
+        result = validate_authority(
+            authority, package=self.package, decision_template=self.template
+        )
+        self.assertEqual(result["accept_with_bounded_revision"], 2)
+
+    def test_sealed_human_authority_cannot_revise_structural_fields(self) -> None:
+        assistance = self.candidates[ASSISTANCE_ID]
+        cases = [
+            (["input_bindings", 0, "proposition_id"], "replacement-proposition"),
+            (["input_bindings", 0, "relationship_role"], "contrast"),
+            (["input_bindings", 2, "relationship_role"], "primary_support"),
+            (["input_bindings", 0, "accepted_candidate_content_sha256"], "0" * 64),
+            (
+                ["input_bindings", 0, "implementation_record_subject_sha256"],
+                "0" * 64,
+            ),
+            (["direction"], "support"),
+            (["synthesis_type"], "uniform_direction"),
+            (["conclusion_relevance"], "limiting"),
+            (
+                ["underlying_evidence", "unique_episode_ids"],
+                assistance["underlying_evidence"]["unique_episode_ids"]
+                + ["injected-episode"],
+            ),
+            (
+                ["underlying_evidence", "unique_action_ids"],
+                assistance["underlying_evidence"]["unique_action_ids"]
+                + ["injected-action"],
+            ),
+            (
+                ["underlying_evidence", "unique_episode_count"],
+                assistance["underlying_evidence"]["unique_episode_count"] + 1,
+            ),
+            (
+                ["underlying_evidence", "unique_action_count"],
+                assistance["underlying_evidence"]["unique_action_count"] + 1,
+            ),
+        ]
+        for path, revised_value in cases:
+            with self.subTest(path=path):
+                authority = self.authority_with_revision(
+                    ASSISTANCE_ID, path, revised_value
+                )
+                with self.assertRaises(SynthesisDecisionError):
+                    validate_authority(
+                        authority,
+                        package=self.package,
+                        decision_template=self.template,
+                    )
 
     def test_modified_accepted_as_written_synthesis_fails(self) -> None:
         def mutate(value):
