@@ -52,6 +52,8 @@ EXPECTED_IMPLEMENTATION_SUBJECT_SHA256 = (
 EXPECTED_PARITY_SUBJECT_SHA256 = (
     "fcd319db713eb15d65c5cef380d9800db51a3ab1d578925a6131ed63ae78859e"
 )
+ACCEPTED_M11H_HEAD = "211691c367f653539146b9b52931093f93def3a0"
+POST_M11H_MERGE_MAIN = "21ea1a201cdfb58ff66af0abf98fb1ea49b1b9f6"
 EXPECTED_PROPOSITION_ACCOUNTING = {
     "total": 15,
     "repeated_pattern": 8,
@@ -177,8 +179,17 @@ def validate_repository() -> dict[str, Any]:
         "M11G candidate changed",
     )
     require(
-        milestone["milestone_state"] == "complete_pending_human_mechanical_review",
+        milestone["milestone_state"] == "completed_human_reviewed_accepted_merged",
         "M11H state differs",
+    )
+    require(milestone["accepted_pr"] == 140, "M11H accepted PR differs")
+    require(
+        milestone["accepted_head"] == ACCEPTED_M11H_HEAD,
+        "M11H accepted head differs",
+    )
+    require(
+        milestone["post_merge_main"] == POST_M11H_MERGE_MAIN,
+        "M11H post-merge main differs",
     )
     require(milestone["accepted_decision_count"] == 15, "M11H decision count differs")
     require(milestone["accepted_episode_count"] == 81, "M11H episode count differs")
@@ -189,6 +200,23 @@ def validate_repository() -> dict[str, Any]:
     require(
         not any(milestone["downstream_authorizations"].values()),
         "downstream state leaked",
+    )
+    synthesis = state["active_synthesis_candidate_milestone"]
+    require(
+        synthesis["post_m11h_merge_base"] == POST_M11H_MERGE_MAIN
+        and synthesis["accepted_m11h_head"] == ACCEPTED_M11H_HEAD,
+        "M11I upstream M11H binding differs",
+    )
+    require(
+        synthesis["milestone_state"]
+        == "candidate_package_complete_pending_human_substantive_review"
+        and synthesis["authority_effect"]
+        == "detached_non_authorizing_synthesis_candidates_only",
+        "M11I candidate state differs",
+    )
+    require(
+        not any(synthesis["downstream_authorizations"].values()),
+        "M11I downstream state leaked",
     )
     require(
         state["production_publication_state"]["active_publication"]["issue_id"]

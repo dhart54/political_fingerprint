@@ -168,15 +168,26 @@ The machine-readable authority is
   H.R. 8800 remains unavailable. Semantic IR acceptance, synthesis, public
   wording, publication, persistence, database writes, production, and
   deployment remain unauthorized.
-- M11H deterministically records all 15 human decisions as
-  `accept_candidate_as_written` and binds the complete accepted 81-episode
-  disposition ledger. The canonical internal graph contains eight primary
-  repeated patterns, one limiting trajectory, and six excluded notable choices;
-  24 episodes remain contrast-only, 25 remain without a safe higher-level
-  proposition, and no primary episode overlaps. H.R. 8800 remains blocked. The
-  human authority and implementation are complete pending mechanical review.
-  They do not authorize synthesis, public wording, publication, persistence,
-  database writes, production, or deployment. Justice remains the only active
+- M11H was human-accepted at PR #140 head
+  `211691c367f653539146b9b52931093f93def3a0` and merged to main as
+  `21ea1a201cdfb58ff66af0abf98fb1ea49b1b9f6`. It deterministically records all
+  15 human decisions as `accept_candidate_as_written` and binds the complete
+  accepted 81-episode disposition ledger. The canonical internal graph contains
+  eight primary repeated patterns, one limiting trajectory, and six excluded
+  notable choices; 24 episodes remain contrast-only, 25 remain without a safe
+  higher-level proposition, and no primary episode overlaps. H.R. 8800 remains
+  blocked. The authority and implementation authorize canonical internal
+  Behavioral Semantic IR only.
+- M11I now supplies a detached, non-authorizing synthesis candidate package from
+  those exact M11H propositions. It proposes two human-review candidates: a
+  bounded uniform-direction relationship across the accepted Iran, Lebanon, and
+  Venezuela War Powers patterns, and an interpretive boundary across accepted
+  country-specific security-assistance choices. Five propositions are primary
+  inputs, two are contextual inputs, one is contrast evidence, and seven remain
+  intentionally standalone. All 15 propositions are accounted for; the two
+  candidates share no propositions or underlying episodes. Synthesis remains
+  unaccepted. Public wording, publication, persistence, database and production
+  writes, and deployment remain unauthorized. Justice remains the only active
   publication reference.
 
 The exact deletion, test-transfer, preservation, route, and validation record is

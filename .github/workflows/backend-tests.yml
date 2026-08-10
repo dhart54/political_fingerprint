@@ -45,6 +45,7 @@ jobs:
           python scripts/validate_m11f_national_security_policy_episode_acceptance.py
           python scripts/validate_m11g_national_security_behavioral_semantic_ir_candidates.py
           python scripts/validate_m11h_national_security_semantic_ir_acceptance.py
+          python scripts/validate_m11i_national_security_synthesis_candidates.py
           python scripts/validate_foushee_justice_semantic_ir_m5r1.py
           python scripts/verify_foushee_justice_launch_review_m6.py
           python scripts/verify_foushee_justice_launch_ratification_m7.py
@@ -62,6 +63,7 @@ jobs:
           backend/tests/test_full_record_policy_episode_decisions.py
           backend/tests/test_full_record_behavioral_semantic_ir_candidates.py
           backend/tests/test_full_record_behavioral_semantic_ir_decisions.py
+          backend/tests/test_full_record_synthesis_candidates.py
           backend/tests/test_full_issue_universe_authority.py
           backend/tests/test_full_issue_interpretation_source_readiness.py
           backend/tests/test_action_interpretation_decision_implementation_v1.py
