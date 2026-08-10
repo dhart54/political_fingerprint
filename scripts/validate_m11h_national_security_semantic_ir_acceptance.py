@@ -208,11 +208,15 @@ def validate_repository() -> dict[str, Any]:
         "M11I upstream M11H binding differs",
     )
     require(
-        synthesis["milestone_state"]
-        == "candidate_package_complete_pending_human_substantive_review"
+        synthesis["milestone_state"] == "completed_human_substantive_review_merged"
         and synthesis["authority_effect"]
         == "detached_non_authorizing_synthesis_candidates_only",
         "M11I candidate state differs",
+    )
+    require(
+        synthesis["accepted_head"] == "8535163aee1d2a548ec7d0c23935b1322a05b863"
+        and synthesis["post_merge_main"] == "e9e771b23eb65629e0a3ed7ecb6c32748d7ebf59",
+        "accepted M11I merge identity differs",
     )
     require(
         not any(synthesis["downstream_authorizations"].values()),

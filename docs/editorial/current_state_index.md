@@ -178,17 +178,30 @@ The machine-readable authority is
   higher-level proposition, and no primary episode overlaps. H.R. 8800 remains
   blocked. The authority and implementation authorize canonical internal
   Behavioral Semantic IR only.
-- M11I now supplies a detached, non-authorizing synthesis candidate package from
+- M11I was human-reviewed at PR #141 head
+  `8535163aee1d2a548ec7d0c23935b1322a05b863` and merged to main as
+  `e9e771b23eb65629e0a3ed7ecb6c32748d7ebf59`. It supplies a detached,
+  immutable synthesis candidate package from
   those exact M11H propositions. It proposes two human-review candidates: a
   bounded uniform-direction relationship across the accepted Iran, Lebanon, and
   Venezuela War Powers patterns, and an interpretive boundary across accepted
   country-specific security-assistance choices. Five propositions are primary
   inputs, two are contextual inputs, one is contrast evidence, and seven remain
   intentionally standalone. All 15 propositions are accounted for; the two
-  candidates share no propositions or underlying episodes. Synthesis remains
-  unaccepted. Public wording, publication, persistence, database and production
-  writes, and deployment remain unauthorized. Justice remains the only active
-  publication reference.
+  candidates share no propositions or underlying episodes. Human review
+  accepted the War Powers candidate as written, accepted the assistance
+  relationship with one bounded semantic-wording revision, and confirmed all
+  seven standalone dispositions.
+- M11J deterministically records those two human decisions. The assistance
+  implementation preserves its original candidate binding while clarifying
+  that Ukraine, Jordan, and Taiwan choices generally preserved or authorized
+  the bounded assistance and the Israel singleton supported a specific $3.3
+  billion FMF reduction. Its canonical `mixed` direction remains
+  proposition-relative metadata and is not treated as a mixed substantive
+  Ukraine-assistance orientation. M11J establishes canonical internal synthesis
+  only and is pending final human mechanical review. Public wording,
+  publication, persistence, database and production writes, and deployment
+  remain unauthorized. Justice remains the only active publication reference.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

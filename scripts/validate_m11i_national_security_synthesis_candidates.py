@@ -214,7 +214,9 @@ def validate_repository() -> dict[str, Any]:
         and milestone["candidate_count"] == 2
         and milestone["source_behavioral_proposition_count"] == 15
         and milestone["synthesis_state"]
-        == "candidate_complete_pending_human_substantive_review"
+        == "human_decisions_implemented_by_m11j_pending_mechanical_review"
+        and milestone["accepted_head"] == "8535163aee1d2a548ec7d0c23935b1322a05b863"
+        and milestone["post_merge_main"] == "e9e771b23eb65629e0a3ed7ecb6c32748d7ebf59"
         and not any(milestone["downstream_authorizations"].values()),
         "M11I current-state boundary differs",
     )

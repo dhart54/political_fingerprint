@@ -6,12 +6,16 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M11I National Security Synthesis Candidates V1](m11i_national_security_synthesis_candidates_v1.md)
-  - builds a detached two-candidate synthesis review package from the exact
-    human-accepted M11H Behavioral Semantic IR, with complete 15-proposition
-    accounting and every downstream authority false.
+- [M11J National Security Synthesis Acceptance V1](m11j_national_security_synthesis_acceptance_v1.md)
+  - implements one exact acceptance and one bounded human revision from the
+    immutable M11I package as canonical internal synthesis, with public and
+    production authorities false.
 
 ## Retained unresolved plans
+
+- [M11I National Security Synthesis Candidates V1](m11i_national_security_synthesis_candidates_v1.md)
+  - human-reviewed and merged at PR #141; retained unchanged as M11J's exact
+    two-candidate input and complete 15-proposition accounting boundary.
 
 - [M11H National Security Behavioral Semantic IR Acceptance V1](m11h_national_security_semantic_ir_acceptance_v1.md)
   - human-accepted at PR #140 and retained as M11I's immutable canonical internal

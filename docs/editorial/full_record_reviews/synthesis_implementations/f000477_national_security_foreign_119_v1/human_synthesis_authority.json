@@ -1,0 +1,371 @@
+{
+  "accepted": true,
+  "artifact_id": "human-synthesis-authority:f000477:national_security_foreign:119:v1",
+  "artifact_role": "immutable_human_full_record_synthesis_authority",
+  "authority_subject_sha256": "fdbf0b068e117322da5388c3ebc17c21d2b9a3bfbc81f4e7b92654972a9fe407",
+  "authorizing": true,
+  "canonical_internal_synthesis_authority": true,
+  "immutable": true,
+  "production_selectable": false,
+  "public": false,
+  "schema_version": "full_record_synthesis_authority_v1",
+  "subject": {
+    "accepted_episode_disposition_accounting": {
+      "accepted_episode_count": 81,
+      "contrast_only_episode_count": 24,
+      "no_safe_proposition_episode_count": 25,
+      "notable_choice_evidence_episode_count": 6,
+      "primary_overlap_count": 0,
+      "repeated_pattern_evidence_episode_count": 24,
+      "trajectory_evidence_episode_count": 2
+    },
+    "accepted_proposition_role_accounting": [
+      {
+        "accepted_candidate_content_sha256": "8174e9c60ef65c638fd51ed283b3304831e61b0886f79d5364fa58d44e747095",
+        "accounting_role": "contextual_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "contextual_support",
+            "synthesis_candidate_id": "synthesis-war-powers-cross-target-uniform-direction"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-aumf-repeal-1991-2002:m11h:v1",
+        "implementation_record_subject_sha256": "22b9af25b3307b724b35cfced8bf0ff3772ed0cd465450c656f725ab734b28e6",
+        "proposition_id": "notable-aumf-repeal-1991-2002",
+        "reason": "Excluded singleton retained only as contextual authorization evidence for the War Powers candidate.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "809ee6af7604948a43388455279de6dda33a44b1988deacec1bed8153d7ba324",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-fy2026-ndaa-package-opposition:m11h:v1",
+        "implementation_record_subject_sha256": "231acbe5cc32dcba094589fbf5606d9e4461a5ce9f52fdbe2eb7bd231979006d",
+        "proposition_id": "notable-fy2026-ndaa-package-opposition",
+        "reason": "The broad whole-package NDAA choice cannot safely establish a component or cross-mechanism synthesis.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "8e8b24e112e12591cd8a53f026672d2b1ccfa6f12a6409fd10e81219191e2771",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-haiti-temporary-protected-status:m11h:v1",
+        "implementation_record_subject_sha256": "ace200d55888998c1d42ccab62d4682c22a8f2e84f827ab87f102e6b5e6c7316",
+        "proposition_id": "notable-haiti-temporary-protected-status",
+        "reason": "The Haiti TPS choice is a singleton and does not safely combine with the proposed security mechanism relationships.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "8eddeaf8224c5093bb44e1f46a9589f76e701270cc89515b18449e0a8e173b23",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-international-criminal-court-sanctions-opposition:m11h:v1",
+        "implementation_record_subject_sha256": "72c990081f072ec112b73a3d7096dc29b660f9e65dbb02f1490127c3a4895eaf",
+        "proposition_id": "notable-international-criminal-court-sanctions-opposition",
+        "reason": "The sanctions choice is a singleton with no safe accepted recurring relationship.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "3b46c4b89579b28e76e8ccfa7960c91d1b7439ff565b381501850264527b2fb1",
+        "accounting_role": "contrast_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "contrast",
+            "synthesis_candidate_id": "synthesis-security-assistance-interpretive-boundary"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-israel-foreign-military-financing-reduction:m11h:v1",
+        "implementation_record_subject_sha256": "67b28549bf2a766bf2ec042bb4b998351377f3d41a18feeb7d68c7b8f866e2cd",
+        "proposition_id": "notable-israel-foreign-military-financing-reduction",
+        "reason": "Excluded singleton retained only as a country-specific contrast within the assistance boundary candidate.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "b9cc33cbd73051985fac830d7219a7677c27f52555697870274feb34c366c549",
+        "accounting_role": "contextual_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "contextual_support",
+            "synthesis_candidate_id": "synthesis-security-assistance-interpretive-boundary"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-taiwan-security-cooperation-funding:m11h:v1",
+        "implementation_record_subject_sha256": "7f306c3d739d0f3ee5c2a89500e2eecbf4e803437a115cac4957531cf043d71d",
+        "proposition_id": "notable-taiwan-security-cooperation-funding",
+        "reason": "Excluded singleton retained only as contextual evidence within the assistance boundary candidate.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "e3c3d47a7eb0bfa3ffb8598d0e18ef3ea8984c7b2c42d538a1a337e9630b2603",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-fisa-title-vii-extension-opposition:m11h:v1",
+        "implementation_record_subject_sha256": "7133e450d130a4fa2566941b8158deef0345035841eb81b20c1675b163b37506",
+        "proposition_id": "pattern-fisa-title-vii-extension-opposition",
+        "reason": "Title VII extension opposition concerns a surveillance-authority mechanism not safely related to the proposed War Powers or assistance syntheses.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "1b4868d3e123414e513767fcf6f038bd448cd20d6f0b90f326e30b6cb2e7d2c4",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-war-powers-cross-target-uniform-direction"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-iran-war-powers-removal-support:m11h:v1",
+        "implementation_record_subject_sha256": "e991915497ee94d54c53392c263d1c7b3e2d4d455dafbcea4d3a1a7b35c7ed0e",
+        "proposition_id": "pattern-iran-war-powers-removal-support",
+        "reason": "Primary recurring input to the bounded cross-target War Powers candidate.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "f90bbbdc7a2aa13036345c783d6e3d0b6548e2d2627fd72f7521f19eeb95d96a",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-security-assistance-interpretive-boundary"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-jordan-assistance-restriction-opposition:m11h:v1",
+        "implementation_record_subject_sha256": "9138f39da3a426f5470e853d28d2c76325fc13923d6b411cf0f983cd0ce0c5f3",
+        "proposition_id": "pattern-jordan-assistance-restriction-opposition",
+        "reason": "Primary accepted pattern supporting the country-specific assistance interpretive boundary.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "fc2536d220fad42d864316e9652a56780bf107f16320e3e37113c8437bb3fbf3",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-war-powers-cross-target-uniform-direction"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-lebanon-war-powers-removal-support:m11h:v1",
+        "implementation_record_subject_sha256": "9dc34a8540204e8d131354282c7f0059e2791ec448a97adbaf03b26380d2923c",
+        "proposition_id": "pattern-lebanon-war-powers-removal-support",
+        "reason": "Primary recurring input to the bounded cross-target War Powers candidate.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "cc8d830c3bad6f5221f86a0be635c0109bb58dfaae7d239ebf27d66bc44ff183",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-military-dod-sex-gender-restriction-opposition:m11h:v1",
+        "implementation_record_subject_sha256": "5a3f7ad82c16f00b28250066c37bb28f7e8dbfc101105196ddfbf90b5c0fa92e",
+        "proposition_id": "pattern-military-dod-sex-gender-restriction-opposition",
+        "reason": "The enumerated military and DoD restrictions do not share a safe mechanism-level relationship with the proposed candidates.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "d150cedb3a5d2f1e737cb6cd5c8c3271d62512f7b134330319fd47e9320f318c",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-terrorism-preparedness-support:m11h:v1",
+        "implementation_record_subject_sha256": "314c7e1be64d5563c9f761c931ec575ac382383644854195b8bbffa4223d818f",
+        "proposition_id": "pattern-terrorism-preparedness-support",
+        "reason": "Preparedness requirements use distinct domestic security mechanisms and do not safely combine with surveillance, military, or assistance propositions.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "540ff249be62f90426cbdc85244d10d59ba7ae1868cc2597d1a21016c09233d8",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-security-assistance-interpretive-boundary"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-ukraine-assistance-mixed:m11h:v1",
+        "implementation_record_subject_sha256": "c939b14cbfc9e70665b9529d1caa55f285293e7aff124a73357ff523a24f2a25",
+        "proposition_id": "pattern-ukraine-assistance-mixed",
+        "reason": "Primary accepted pattern supporting the country-specific assistance interpretive boundary.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "c2f7377670a0e62851023b510c59738c6041e53918a5921752c8948dfa409286",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-war-powers-cross-target-uniform-direction"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-venezuela-war-powers-removal-support:m11h:v1",
+        "implementation_record_subject_sha256": "9bc00bdabfeb2777a859192e4c1ac33afb68902b792af1861d45e05d80632cf9",
+        "proposition_id": "pattern-venezuela-war-powers-removal-support",
+        "reason": "Primary recurring input to the bounded cross-target War Powers candidate.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "398088ac89461f9e4109096546fccdf96067961b4d6772b739cdc4005db0472b",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:trajectory-milcon-va-appropriations-direction-change:m11h:v1",
+        "implementation_record_subject_sha256": "ae6fc52ad7721f17081fcdc7dae1a370cec32495f72183aee74a6298029361e4",
+        "proposition_id": "trajectory-milcon-va-appropriations-direction-change",
+        "reason": "The limiting annual-package trajectory has no accepted broader appropriations synthesis to limit and cannot safely become a primary synthesis input.",
+        "source_conclusion_relevance": "limiting",
+        "source_proposition_type": "trajectory"
+      }
+    ],
+    "authority_decision": {
+      "decision": "approve_complete_full_record_synthesis_as_reviewed",
+      "decision_timestamp": "2026-08-10T01:47:27Z",
+      "reviewer_authority": "full_record_synthesis_review_authority_v1",
+      "reviewer_id": "dhart54"
+    },
+    "authority_effect": "canonical_internal_synthesis_only",
+    "candidate_binding": {
+      "accepted_head": "8535163aee1d2a548ec7d0c23935b1322a05b863",
+      "accepted_pr": 141,
+      "artifact_id": "synthesis-candidates:f000477:national_security_foreign:119:v1",
+      "candidate_subject_sha256": "662917b23193042cd8bfd2b8db3666fa951351ef988fe37056902236109ea1ad",
+      "file_sha256": "e5cfd7305babb5690d496a02b3c1dcc056d4368d980f0d25e5dd1c8d988345c8",
+      "post_merge_main": "e9e771b23eb65629e0a3ed7ecb6c32748d7ebf59"
+    },
+    "decision_accounting": {
+      "accept_candidate_as_written": 1,
+      "accept_with_bounded_revision": 1,
+      "rejected": 0,
+      "unresolved": 0
+    },
+    "decision_template_binding": {
+      "artifact_id": "human-synthesis-decision-template:f000477:national_security_foreign:119:v1",
+      "decision_template_subject_sha256": "0a1bbbf303fb5ddb364fc646d67d74c8f8b0d5e40164a257ea413ed01f566a39",
+      "file_sha256": "9727717a17b5cbf48786f8eee0f1ece71f347dff1d9fceec983eaa060f2f3a11"
+    },
+    "downstream_authorizations": {
+      "database_writes": false,
+      "deployment": false,
+      "production_persistence": false,
+      "production_writes": false,
+      "public_wording": false,
+      "publication": false
+    },
+    "m11h_authority_binding": {
+      "artifact_id": "human-behavioral-semantic-ir-authority:f000477:national_security_foreign:119:v1",
+      "authority_subject_sha256": "22262c77622df938b3ab3642bf49452005b549706bb20160dd7c91a88ba29714",
+      "file_sha256": "d1de0f28a09a01ea9b5bbe5607128564daa6aedb929a2be1255cb50f1a99fc93"
+    },
+    "m11h_implementation_binding": {
+      "artifact_id": "behavioral-semantic-ir-decision-implementation:f000477:national_security_foreign:119:v1",
+      "file_sha256": "13927cade21c85f95c097acf7afe831e55bdb0de79c93e54646e14640d444ecc",
+      "implementation_subject_sha256": "6113be3d0fad4d8da21a47ed76c089f5a7d96becd45abb9c888cf2a437bf8d67"
+    },
+    "m11h_parity_binding": {
+      "file_sha256": "c797e00d3aa13825361c878e84ed7b3607d5a705d64674ca3a01cada9952a8b9",
+      "parity_subject_sha256": "fcd319db713eb15d65c5cef380d9800db51a3ab1d578925a6131ed63ae78859e"
+    },
+    "m11i_parity_binding": {
+      "artifact_id": "synthesis-candidate-parity:f000477:national_security_foreign:119:v1",
+      "file_sha256": "412103e7c380c6da506b9a03512626cd35b613af9782676572a87f7c3757b7e0",
+      "parity_subject_sha256": "eb857e98f7a1c824116537967d08c61bb6d846eb47f08be359c04bc38ead4ea4"
+    },
+    "subject": {
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "NATIONAL_SECURITY_FOREIGN",
+      "legislator_id": "leg_valerie_p_foushee",
+      "member_id": "F000477",
+      "member_name": "Valerie Foushee"
+    },
+    "synthesis_decisions": [
+      {
+        "bounded_revision": null,
+        "decision": "accept_candidate_as_written",
+        "decision_subject_sha256": "6b491dc0cdfcd766a78e0bb24b60c907ccea17b8e4569a39e5c12822a2864bf0",
+        "decision_timestamp": "2026-08-10T01:47:27Z",
+        "original_candidate_content_sha256": "d85e43947842ae35cc6f802d245ec8f1881f63b89c53b3bf3a70a3fe9b21baa7",
+        "original_candidate_subject_sha256": "e04fe13638e4d4e4ebc272510d7a2c4646dba4b1a4f3be2ad2f61b9ac528ce33",
+        "reviewer_authority": "full_record_synthesis_review_authority_v1",
+        "reviewer_id": "dhart54",
+        "synthesis_candidate_id": "synthesis-war-powers-cross-target-uniform-direction"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "cd4d4018075880f3c7e0b5e3ec28c2043c492b343d0cb9d8c4fb85c7ceb9686b",
+              "path": [
+                "proposition"
+              ],
+              "revised_value": "Across the accepted Ukraine, Jordan, Taiwan, and Israel assistance propositions, Foushee’s Ukraine, Jordan, and Taiwan choices generally preserved or authorized assistance, while the Israel choice supported a specific $3.3 billion Foreign Military Financing reduction; these accepted inputs therefore do not support a single uniform cross-country assistance position."
+            },
+            {
+              "original_value_sha256": "ad77805de2d50718b85be252be795603bfe3aad91b5bd2acd80d442207de8826",
+              "path": [
+                "input_bindings",
+                0,
+                "concise_input_summary"
+              ],
+              "revised_value": "Opposed three Ukraine-assistance restrictions and supported one Ukraine-support authorization."
+            },
+            {
+              "original_value_sha256": "f5f3b7b6c34e5797ad786c6778c11795e6c5028259396fbac1c37b3c4d331702",
+              "path": [
+                "relationship_basis",
+                "semantic_relationship"
+              ],
+              "revised_value": "The accepted Ukraine, Jordan, and Taiwan choices generally preserve or authorize the bounded assistance at issue, while the accepted Israel choice supports a specific $3.3 billion FMF reduction; that country-specific contrast prevents a uniform cross-country conclusion."
+            },
+            {
+              "original_value_sha256": "8ac091f367013059af351e3b4ef7c7029276e47a07c3ba54733dbdb2a2394fd7",
+              "path": [
+                "relationship_rationale"
+              ],
+              "revised_value": "The accepted semantic content—not proposition-relative direction labels—shows assistance-preserving or authorizing choices for Ukraine, Jordan, and Taiwan and a specific Israel FMF reduction choice. The contrast supports an interpretive boundary rather than a general pro-aid or anti-aid conclusion."
+            },
+            {
+              "original_value_sha256": "c3f812961758d740b7f36af1437b98ccffee27d3abb9c7726ee401a14ebc2574",
+              "path": [
+                "material_limitations"
+              ],
+              "revised_value": [
+                "The countries, accounts, measures, and restriction mechanisms differ.",
+                "The Ukraine proposition includes one whole-measure authorization.",
+                "The Taiwan and Israel inputs are singleton notable choices and remain excluded at the Behavioral Semantic IR layer.",
+                "No reason for the country-specific differences is inferred.",
+                "The Ukraine source direction `mixed` is proposition-relative mechanical metadata reflecting opposition to restrictive propositions plus support for an authorizing proposition; it does not itself establish mixed substantive orientation toward Ukraine assistance."
+              ]
+            },
+            {
+              "original_value_sha256": "5b15772761bfe16e456050cd40f8cd094113aba3f968cf60d28167cd4f85dd55",
+              "path": [
+                "why_synthesis_not_topic_grouping"
+              ],
+              "revised_value": "The relationship is an explicit interpretive boundary grounded in the accepted semantic effects of four country-specific assistance propositions, not topic similarity or direction metadata alone."
+            }
+          ],
+          "revised_candidate_content_sha256": "ec39dfcded81c52613c0288950a1ae371eb8190ac3e81258faae7d2af78be451",
+          "revision_scope": "exact_human_bounded_semantic_wording_revision"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "582922dfddb71a10d789f6f3343843b48cc8ee9307cdc0a7c4856664a386e4ad",
+        "decision_timestamp": "2026-08-10T01:47:27Z",
+        "original_candidate_content_sha256": "3c6ca6b305b6e4357e898c81342f64b3480c1de5632f9eb62273d2d1c64c1cc2",
+        "original_candidate_subject_sha256": "59756705710182825d8da8154b82478475e481918a4018e31c509015e7ab61f2",
+        "reviewer_authority": "full_record_synthesis_review_authority_v1",
+        "reviewer_id": "dhart54",
+        "synthesis_candidate_id": "synthesis-security-assistance-interpretive-boundary"
+      }
+    ]
+  }
+}
