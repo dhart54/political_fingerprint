@@ -6,12 +6,16 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M11H National Security Behavioral Semantic IR Acceptance V1](m11h_national_security_semantic_ir_acceptance_v1.md)
-  - implements the 15 human-accepted M11G propositions and complete 81-episode
-    disposition ledger as canonical internal Semantic IR, with every downstream
-    authority false, then stops for human mechanical review.
+- [M11I National Security Synthesis Candidates V1](m11i_national_security_synthesis_candidates_v1.md)
+  - builds a detached two-candidate synthesis review package from the exact
+    human-accepted M11H Behavioral Semantic IR, with complete 15-proposition
+    accounting and every downstream authority false.
 
 ## Retained unresolved plans
+
+- [M11H National Security Behavioral Semantic IR Acceptance V1](m11h_national_security_semantic_ir_acceptance_v1.md)
+  - human-accepted at PR #140 and retained as M11I's immutable canonical internal
+    Behavioral Semantic IR input.
 
 - [M11G National Security Behavioral Semantic IR Candidates V1](m11g_national_security_behavioral_semantic_ir_candidates_v1.md)
   - human-accepted at PR #139 and retained as M11H's immutable candidate input.

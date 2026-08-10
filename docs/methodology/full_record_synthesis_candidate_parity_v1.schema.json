@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Full-Record Synthesis Candidate Parity V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact_id", "package_binding", "entries", "parity_subject_sha256"],
+  "properties": {
+    "schema_version": {"const": "full_record_synthesis_candidate_parity_v1"},
+    "artifact_id": {"type": "string", "minLength": 1},
+    "package_binding": {
+      "type": "object",
+      "required": ["artifact_id", "synthesis_candidate_package_subject_sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "synthesis_candidate_package_subject_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["path", "file_sha256", "content_subject_sha256"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "file_sha256": {"$ref": "#/$defs/sha256"},
+          "content_subject_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]}
+        }
+      }
+    },
+    "parity_subject_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
