@@ -550,7 +550,11 @@
       "issue_id": "NATIONAL_SECURITY_FOREIGN"
     },
     "post_m11f_merge_base": "43caaf4b0087ab473ee771ed9c8c4acde68be554",
-    "milestone_state": "bounded_correction_complete_pending_human_re_review",
+    "milestone_state": "completed_human_reviewed_accepted",
+    "human_review_result": "accepted_as_corrected",
+    "accepted_pr": 139,
+    "accepted_head": "8ef00da6c0d92662c887874d015024a5b038d66a",
+    "post_merge_main": "8bd2ec2da7c5da6828c28217cc035c651c7c6f76",
     "prior_human_review_result": "bounded_correction_required",
     "prior_reviewed_head": "18e8527319367ea2d398ccb0dd70ec3fad81c09d",
     "authority_effect": "detached_non_authorizing_behavioral_semantic_ir_candidates_only",
@@ -585,7 +589,7 @@
       "sha256": "f701bd297249f17abf0cf8ec5a64339fadd9a0d53b238e7f57e1b3bca19cb425",
       "parity_subject_sha256": "e7c6f87833e6eaaef73d005af03a947dfbdf286e4e982b4e6fe5dc8f890c799a"
     },
-    "semantic_ir_acceptance_state": "not_started_not_authorized",
+    "semantic_ir_acceptance_state": "implemented_by_m11h_pending_human_mechanical_review",
     "synthesis_state": "absent_not_authorized",
     "public_wording_state": "absent_not_authorized",
     "publication_state": "inactive",
@@ -593,6 +597,68 @@
     "production_writes": false,
     "downstream_authorizations": {
       "semantic_ir_acceptance": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "deployment": false
+    }
+  },
+  "active_behavioral_semantic_ir_decision_milestone": {
+    "milestone": "m11h_national_security_semantic_ir_acceptance_v1",
+    "plan": "docs/plans/m11h_national_security_semantic_ir_acceptance_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "NATIONAL_SECURITY_FOREIGN"
+    },
+    "accepted_m11g_head": "8ef00da6c0d92662c887874d015024a5b038d66a",
+    "post_m11g_merge_base": "8bd2ec2da7c5da6828c28217cc035c651c7c6f76",
+    "milestone_state": "complete_pending_human_mechanical_review",
+    "authority_effect": "canonical_internal_behavioral_semantic_ir_only",
+    "accepted_decision_count": 15,
+    "accept_candidate_as_written_count": 15,
+    "accepted_repeated_pattern_count": 8,
+    "accepted_trajectory_count": 1,
+    "accepted_notable_choice_count": 6,
+    "primary_repeated_pattern_episode_count": 24,
+    "primary_trajectory_episode_count": 2,
+    "primary_notable_choice_episode_count": 6,
+    "accepted_episode_count": 81,
+    "contrast_only_episode_count": 24,
+    "no_safe_higher_level_proposition_episode_count": 25,
+    "primary_overlap_count": 0,
+    "source_blocked_action_ids": [
+      "house:119:2:278"
+    ],
+    "authority_artifact": "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_national_security_foreign_119_v1/human_behavioral_semantic_ir_authority.json",
+    "authority_identity": {
+      "id": "human-behavioral-semantic-ir-authority:f000477:national_security_foreign:119:v1",
+      "sha256": "d1de0f28a09a01ea9b5bbe5607128564daa6aedb929a2be1255cb50f1a99fc93",
+      "authority_subject_sha256": "22262c77622df938b3ab3642bf49452005b549706bb20160dd7c91a88ba29714"
+    },
+    "implementation_artifact": "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_national_security_foreign_119_v1/behavioral_semantic_ir_decision_implementation.json",
+    "implementation_identity": {
+      "id": "behavioral-semantic-ir-decision-implementation:f000477:national_security_foreign:119:v1",
+      "sha256": "13927cade21c85f95c097acf7afe831e55bdb0de79c93e54646e14640d444ecc",
+      "implementation_subject_sha256": "6113be3d0fad4d8da21a47ed76c089f5a7d96becd45abb9c888cf2a437bf8d67"
+    },
+    "parity_manifest": "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_national_security_foreign_119_v1/implementation_parity_manifest.json",
+    "parity_identity": {
+      "sha256": "c797e00d3aa13825361c878e84ed7b3607d5a705d64674ca3a01cada9952a8b9",
+      "parity_subject_sha256": "fcd319db713eb15d65c5cef380d9800db51a3ab1d578925a6131ed63ae78859e"
+    },
+    "canonical_internal_semantic_state": "human_authority_implementation_present_pending_final_mechanical_gate",
+    "synthesis_state": "absent_not_authorized",
+    "public_wording_state": "absent_not_authorized",
+    "publication_state": "inactive",
+    "production_persistence": "not_authorized",
+    "production_writes": false,
+    "downstream_authorizations": {
       "synthesis": false,
       "public_wording": false,
       "publication": false,

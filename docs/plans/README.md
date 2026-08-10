@@ -6,13 +6,15 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M11G National Security Behavioral Semantic IR Candidates V1](m11g_national_security_behavioral_semantic_ir_candidates_v1.md)
-  - bounded correction proposes eight repeated patterns, one structured
-    trajectory, and six selective notable choices over 32 of the 81
-    M11F-accepted episodes; it preserves H.R. 8800 as blocked and stops for
-    human substantive re-review.
+- [M11H National Security Behavioral Semantic IR Acceptance V1](m11h_national_security_semantic_ir_acceptance_v1.md)
+  - implements the 15 human-accepted M11G propositions and complete 81-episode
+    disposition ledger as canonical internal Semantic IR, with every downstream
+    authority false, then stops for human mechanical review.
 
 ## Retained unresolved plans
+
+- [M11G National Security Behavioral Semantic IR Candidates V1](m11g_national_security_behavioral_semantic_ir_candidates_v1.md)
+  - human-accepted at PR #139 and retained as M11H's immutable candidate input.
 
 - [M11E National Security Policy-Episode Candidates V1](m11e_national_security_policy_episode_candidates_v1.md)
   - completed human review and retained as M11F's immutable proposal history.
