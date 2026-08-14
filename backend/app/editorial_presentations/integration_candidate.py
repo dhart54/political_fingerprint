@@ -9,6 +9,7 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -55,6 +56,29 @@ def _compile_wording_item(item: dict[str, Any]) -> dict[str, Any]:
     source_ids = sorted(
         {binding["source_id"] for binding in item["semantic_source_bindings"]}
     )
+    semantic_lineage_directions = sorted(
+        {
+            binding["source_direction"]
+            for binding in item["semantic_source_bindings"]
+            if binding.get("source_direction")
+        }
+    )
+    lineage_action_ids = _unique_binding_values(item, "evidence_action_ids")
+    lineage_episode_ids = _unique_binding_values(item, "evidence_episode_ids")
+    relationship_roles = sorted(
+        [
+            {
+                "proposition_id": relationship["proposition_id"],
+                "relationship_role": relationship["relationship_role"],
+            }
+            for binding in item["semantic_source_bindings"]
+            for relationship in (binding.get("relationship_roles") or [])
+        ],
+        key=lambda relationship: (
+            relationship["relationship_role"],
+            relationship["proposition_id"],
+        ),
+    )
     return {
         "wording_item_id": item["wording_item_id"],
         "surface": item["surface"],
@@ -66,9 +90,14 @@ def _compile_wording_item(item: dict[str, Any]) -> dict[str, Any]:
         "direction_label": direction["label"] if direction else None,
         "direction_symbol": direction["symbol"] if direction else None,
         "show_direction": direction is not None,
-        "action_ids": _unique_binding_values(item, "evidence_action_ids"),
-        "episode_ids": _unique_binding_values(item, "evidence_episode_ids"),
+        "action_ids": lineage_action_ids,
+        "episode_ids": lineage_episode_ids,
+        "public_supporting_action_ids": lineage_action_ids,
+        "public_supporting_episode_ids": lineage_episode_ids,
+        "semantic_lineage_action_ids": lineage_action_ids,
+        "semantic_lineage_episode_ids": lineage_episode_ids,
         "semantic_source_ids": source_ids,
+        "semantic_lineage_directions": semantic_lineage_directions,
         "limitations": public_limitations,
         "mapping": {
             "wording_item_subject_sha256": item["wording_item_subject_sha256"],
@@ -77,8 +106,71 @@ def _compile_wording_item(item: dict[str, Any]) -> dict[str, Any]:
             "raw_yea_nay_maps_to_direction": item["semantic_guard"][
                 "raw_yea_nay_maps_to_direction"
             ],
+            "relationship_roles": relationship_roles,
+            "public_support_projection": {
+                "strategy": "complete_semantic_lineage",
+                "excluded_contextual_action_ids": [],
+                "excluded_contextual_episode_ids": [],
+            },
         },
     }
+
+
+def _public_vote_count(label: str) -> int | None:
+    match = re.match(r"^(\d+)\s+votes?\b", label)
+    return int(match.group(1)) if match else None
+
+
+def _project_public_supporting_actions(items: list[dict[str, Any]]) -> None:
+    """Narrow public controls only when accepted copy excludes contextual lineage."""
+
+    by_source_id = {
+        source_id: item for item in items for source_id in item["semantic_source_ids"]
+    }
+    for item in items:
+        if item["surface"] != "synthesis":
+            continue
+        expected_count = _public_vote_count(item["evidence_count_label"])
+        lineage_actions = set(item["semantic_lineage_action_ids"])
+        if expected_count is None or len(lineage_actions) == expected_count:
+            continue
+        contextual_source_ids = {
+            relationship["proposition_id"]
+            for relationship in item["mapping"]["relationship_roles"]
+            if relationship["relationship_role"] == "contextual_support"
+        }
+        contextual_items = [
+            by_source_id[source_id]
+            for source_id in sorted(contextual_source_ids)
+            if source_id in by_source_id
+        ]
+        excluded_actions = lineage_actions & {
+            action_id
+            for contextual_item in contextual_items
+            for action_id in contextual_item["semantic_lineage_action_ids"]
+        }
+        projected_actions = sorted(lineage_actions - excluded_actions)
+        _require(
+            len(projected_actions) == expected_count,
+            f"{item['wording_item_id']} public evidence count cannot be projected",
+        )
+        excluded_episodes = set(item["semantic_lineage_episode_ids"]) & {
+            episode_id
+            for contextual_item in contextual_items
+            for episode_id in contextual_item["semantic_lineage_episode_ids"]
+        }
+        projected_episodes = sorted(
+            set(item["semantic_lineage_episode_ids"]) - excluded_episodes
+        )
+        item["action_ids"] = projected_actions
+        item["episode_ids"] = projected_episodes
+        item["public_supporting_action_ids"] = projected_actions
+        item["public_supporting_episode_ids"] = projected_episodes
+        item["mapping"]["public_support_projection"] = {
+            "strategy": "exclude_contextual_semantic_lineage_to_match_public_copy",
+            "excluded_contextual_action_ids": sorted(excluded_actions),
+            "excluded_contextual_episode_ids": sorted(excluded_episodes),
+        }
 
 
 def compile_site_integration_candidate(
@@ -100,6 +192,7 @@ def compile_site_integration_candidate(
         _compile_wording_item(record["implemented_reviewed_wording"])
         for record in records
     ]
+    _project_public_supporting_actions(compiled)
     by_surface: dict[str, list[dict[str, Any]]] = {}
     for item in compiled:
         by_surface.setdefault(item["surface"], []).append(item)
@@ -115,7 +208,9 @@ def compile_site_integration_candidate(
         "M11L surface accounting differs",
     )
     all_action_ids = {
-        action_id for item in compiled for action_id in item["action_ids"]
+        action_id
+        for item in compiled
+        for action_id in item["semantic_lineage_action_ids"]
     }
     _require(
         BLOCKED_ACTION_ID not in all_action_ids,
@@ -276,11 +371,15 @@ def validate_site_integration_candidate(candidate: dict[str, Any]) -> None:
             == "accepted_semantic_proposition_content"
             and item["mapping"]["raw_yea_nay_maps_to_direction"] is False
             and item["action_ids"]
+            and set(item["action_ids"]) == set(item["public_supporting_action_ids"])
+            and set(item["action_ids"]) <= set(item["semantic_lineage_action_ids"])
             for item in items
         ),
         "M11M semantic mapping is incomplete",
     )
-    all_actions = {action_id for item in items for action_id in item["action_ids"]}
+    all_actions = {
+        action_id for item in items for action_id in item["semantic_lineage_action_ids"]
+    }
     _require(BLOCKED_ACTION_ID not in all_actions, "blocked action entered M11M")
     preview_data = subject["preview_data"]
     evidence = preview_data["evidence_119"]
@@ -320,8 +419,27 @@ def validate_site_integration_candidate(candidate: dict[str, Any]) -> None:
         and ukraine["evidence_count_label"] == "4 votes · 4 assistance choices"
         and ukraine["show_direction"] is False
         and ukraine["direction_symbol"] is None
-        and ukraine["direction_label"] is None,
+        and ukraine["direction_label"] is None
+        and ukraine["semantic_lineage_directions"] == ["mixed"],
         "Ukraine public semantic guard differs",
+    )
+    war_powers = next(
+        item
+        for item in presentation["syntheses"]
+        if item["wording_item_id"] == "wording:synthesis:war-powers"
+    )
+    _require(
+        war_powers["evidence_count_label"]
+        == "9 votes \u00b7 9 country-specific resolutions"
+        and len(war_powers["semantic_lineage_action_ids"]) == 10
+        and len(war_powers["public_supporting_action_ids"]) == 9
+        and "house:119:1:244" in war_powers["semantic_lineage_action_ids"]
+        and "house:119:1:244" not in war_powers["public_supporting_action_ids"]
+        and war_powers["mapping"]["public_support_projection"][
+            "excluded_contextual_action_ids"
+        ]
+        == ["house:119:1:244"],
+        "War Powers public-support projection differs",
     )
 
 

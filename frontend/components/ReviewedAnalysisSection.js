@@ -25,8 +25,10 @@ export default function ReviewedAnalysisSection({
     || presentation.teaser
     || presentation.conclusion?.body
     || "";
-  const additionalConclusion = overview?.secondary_clarification
-    || additionalConclusionText(takeaway, presentation.conclusion?.body);
+  const overviewClarification = overview?.secondary_clarification || "";
+  const legacyAdditionalConclusion = overview
+    ? ""
+    : additionalConclusionText(takeaway, presentation.conclusion?.body);
 
   return (
     <section
@@ -39,10 +41,18 @@ export default function ReviewedAnalysisSection({
         <p className="mt-3 font-serif text-2xl leading-[1.38] text-stone-950 sm:text-[1.7rem]">
           {takeaway}
         </p>
-        {additionalConclusion ? (
+        {overviewClarification ? (
           <p className="mt-4 text-base leading-7 text-stone-700">
-            {additionalConclusion}
+            {overviewClarification}
           </p>
+        ) : null}
+        {legacyAdditionalConclusion ? (
+          <details className="mt-4 text-base leading-7 text-stone-700">
+            <summary className="cursor-pointer font-semibold text-teal-900 underline decoration-teal-800/30 underline-offset-4">
+              Read the complete conclusion
+            </summary>
+            <p className="mt-3 max-w-4xl">{legacyAdditionalConclusion}</p>
+          </details>
         ) : null}
         {overview ? (
           <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
@@ -168,17 +178,19 @@ function FindingRow({ item, onSeeActions }) {
   const showDirection = item.showDirection !== false && Boolean(item.direction);
   const limitations = item.limitations || [];
   return (
-    <article className="grid gap-3 py-4 sm:grid-cols-[8.5rem_minmax(0,1fr)_auto] sm:items-start sm:gap-5">
-      <div className={`flex min-h-8 items-center gap-3 pattern-${item.direction || "bounded"}`}>
-        {showDirection ? <SemanticIcon kind={item.direction} /> : null}
-        {showDirection ? (
+    <article className={`grid gap-3 py-4 sm:items-start sm:gap-5 ${
+      showDirection
+        ? "sm:grid-cols-[8.5rem_minmax(0,1fr)_auto]"
+        : "sm:grid-cols-[minmax(0,1fr)_auto]"
+    }`}>
+      {showDirection ? (
+        <div className={`flex min-h-8 items-center gap-3 pattern-${item.direction}`}>
+          <SemanticIcon kind={item.direction} />
           <span className="semantic-label text-sm font-semibold">
             {item.statusLabel}
           </span>
-        ) : (
-          <span className="text-sm font-semibold text-stone-600">Bounded finding</span>
-        )}
-      </div>
+        </div>
+      ) : null}
       <div className="min-w-0">
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <h4 className="text-base font-semibold leading-6 text-stone-950">
@@ -224,6 +236,7 @@ function SupportingVotesButton({ item, onSeeActions }) {
       onClick={() => onSeeActions(item.actionIds, item.heading, {
         direction: item.direction,
         episodeCount: item.episodeCount,
+        showDirection: item.showDirection,
         statusLabel: item.statusLabel,
       })}
       type="button"

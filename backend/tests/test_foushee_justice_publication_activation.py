@@ -570,7 +570,7 @@ def test_current_state_records_active_publication_and_exact_scope_boundary() -> 
         "human_approved_gold_production_eligible_publication_active"
     )
     assert frontend["f000477_justice_119_activation_bundle_state"] == (
-        "applied_production_active"
+        "full_record_applied_production_active_read_only_verified"
     )
     assert frontend["f000477_justice_effective_tiers"] == {
         "119": "reviewed_conclusion",

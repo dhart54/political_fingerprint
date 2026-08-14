@@ -91,3 +91,14 @@ None.
 ## Final reconciliation
 
 The candidate provides the requested real-route review experience behind two exact opt-ins, retains the active publication selector unchanged, preserves the accepted M11L text and upstream identities, and keeps H.R. 8800 outside all analysis. No database, publication, production, deployment, or live-site state changed. Draft PR #145 is the independent human-review stop.
+
+## Bounded correction after mechanical review
+
+The PR #145 re-review authorized four implementation-only corrections:
+
+- Separate complete semantic lineage from public supporting-action projection. The War Powers synthesis retains 10 lineage actions while its public control exposes the 9 country-specific resolutions; the AUMF action remains in lineage, its notable choice, and the complete ledger.
+- Remove the invented no-direction status from Ukraine and the security-assistance synthesis, including their selected-vote strips. Their accepted wording remains unchanged, and the MilCon/VA trajectory retains its approved Mixed status.
+- Restore the legacy Justice `Read the complete conclusion` progressive disclosure while keeping M11M overview clarification inline.
+- Add deterministic M11M generation and its backend integration test to the hosted GitHub full-record workflow.
+
+Correction validation passed: 369 M11A-M11M and Justice/API tests, 134 frontend Node tests, 24 M11M/Justice Playwright tests, 13 production-evidence Playwright tests, 1 dedicated screenshot capture test, all M11A-M11L validators, Semantic IR validation/tests, deterministic regeneration, Next.js production build, Ruff, formatting, compilation, JSON parsing, and diff checks. The eight existing frontend hook warnings remain warnings only.

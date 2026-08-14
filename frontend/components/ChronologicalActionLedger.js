@@ -242,19 +242,26 @@ function FilterGroup({ label, onChange, options, selected }) {
 }
 
 function SelectedPatternStrip({ finding, matchCount, onClear, total }) {
-  const direction = finding?.direction || "bounded";
-  const status = finding?.statusLabel || formatDirection(direction);
+  const showDirection = finding?.showDirection !== false && Boolean(finding?.direction);
+  const direction = showDirection ? finding.direction : null;
+  const status = showDirection
+    ? finding.statusLabel || formatDirection(direction)
+    : null;
   const subject = patternSubject(finding?.label, direction);
   const accounting = direction === "mixed" && finding?.episodeCount
     ? `${matchCount} votes within ${finding.episodeCount} ${finding.episodeCount === 1 ? "legislative episode" : "legislative episodes"}`
     : `${matchCount} matching ${matchCount === 1 ? "vote" : "votes"}`;
   return (
-    <div className={`pattern-strip pattern-strip-${direction} mt-4 flex flex-wrap items-center justify-between gap-3 px-4 py-3`}>
-      <div className={`flex min-w-0 items-center gap-3 pattern-${direction}`}>
-        <SemanticIcon kind={direction} />
+    <div className={`pattern-strip pattern-strip-${direction || "bounded"} mt-4 flex flex-wrap items-center justify-between gap-3 px-4 py-3`}>
+      <div className={`flex min-w-0 items-center gap-3 pattern-${direction || "bounded"}`}>
+        {showDirection ? <SemanticIcon kind={direction} /> : null}
         <p className="min-w-0 text-sm font-semibold leading-6 text-stone-900">
-          <span className="semantic-label">{status}</span>
-          <span aria-hidden="true"> · </span>
+          {showDirection ? (
+            <>
+              <span className="semantic-label">{status}</span>
+              <span aria-hidden="true"> · </span>
+            </>
+          ) : null}
           <span>{subject}</span>
           <span aria-hidden="true"> · </span>
           <span className="font-medium text-stone-700">{accounting}</span>

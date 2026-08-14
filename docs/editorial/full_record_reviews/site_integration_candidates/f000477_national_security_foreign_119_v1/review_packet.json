@@ -7,6 +7,8 @@
     ],
     "mapped_unique_actions": 32,
     "mapped_unique_episodes": 32,
+    "semantic_lineage_unique_actions": 32,
+    "semantic_lineage_unique_episodes": 32,
     "wording_items": 18
   },
   "artifact_bindings": {
@@ -40,8 +42,8 @@
   "base_sha": "55dd4a2e05bdd3d61a328793b8349a952df000d6",
   "candidate_binding": {
     "artifact_id": "site-integration-candidate:f000477:national_security_foreign:119:v1",
-    "candidate_subject_sha256": "24c018b735b033ee2ac38c5c3b22dd71e4398401efaa8a560fbbce1da26ff123",
-    "file_sha256": "b0b332be27d501f4d7a1049dc12ece46d0dc23e96c9245d8f67684abfb452e80"
+    "candidate_subject_sha256": "c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9ad04c5df",
+    "file_sha256": "d2a7a65eb56f4be68b0d0477eeb8f75f793be5bbb458c86db13560b8eae35cc4"
   },
   "controls": {
     "authorizing": false,
@@ -125,6 +127,111 @@
         "single-119-s-1071-1-320",
         "single-119-s-4465-2-155"
       ],
+      "public_supporting_action_count": 32,
+      "public_supporting_action_ids": [
+        "house:119:1:182",
+        "house:119:1:208",
+        "house:119:1:209",
+        "house:119:1:244",
+        "house:119:1:246",
+        "house:119:1:248",
+        "house:119:1:249",
+        "house:119:1:255",
+        "house:119:1:257",
+        "house:119:1:286",
+        "house:119:1:320",
+        "house:119:1:346",
+        "house:119:1:7",
+        "house:119:2:114",
+        "house:119:2:120",
+        "house:119:2:155",
+        "house:119:2:170",
+        "house:119:2:175",
+        "house:119:2:199",
+        "house:119:2:201",
+        "house:119:2:207",
+        "house:119:2:221",
+        "house:119:2:232",
+        "house:119:2:234",
+        "house:119:2:243",
+        "house:119:2:244",
+        "house:119:2:264",
+        "house:119:2:266",
+        "house:119:2:268",
+        "house:119:2:282",
+        "house:119:2:48",
+        "house:119:2:85"
+      ],
+      "semantic_lineage_action_count": 32,
+      "semantic_lineage_action_ids": [
+        "house:119:1:182",
+        "house:119:1:208",
+        "house:119:1:209",
+        "house:119:1:244",
+        "house:119:1:246",
+        "house:119:1:248",
+        "house:119:1:249",
+        "house:119:1:255",
+        "house:119:1:257",
+        "house:119:1:286",
+        "house:119:1:320",
+        "house:119:1:346",
+        "house:119:1:7",
+        "house:119:2:114",
+        "house:119:2:120",
+        "house:119:2:155",
+        "house:119:2:170",
+        "house:119:2:175",
+        "house:119:2:199",
+        "house:119:2:201",
+        "house:119:2:207",
+        "house:119:2:221",
+        "house:119:2:232",
+        "house:119:2:234",
+        "house:119:2:243",
+        "house:119:2:244",
+        "house:119:2:264",
+        "house:119:2:266",
+        "house:119:2:268",
+        "house:119:2:282",
+        "house:119:2:48",
+        "house:119:2:85"
+      ],
+      "semantic_lineage_episode_count": 32,
+      "semantic_lineage_episode_ids": [
+        "single-119-hamdt-235-2-243",
+        "single-119-hamdt-236-2-244",
+        "single-119-hamdt-252-2-264",
+        "single-119-hamdt-254-2-266",
+        "single-119-hamdt-256-2-268",
+        "single-119-hamdt-56-1-208",
+        "single-119-hamdt-57-1-209",
+        "single-119-hamdt-86-1-246",
+        "single-119-hamdt-88-1-248",
+        "single-119-hamdt-89-1-249",
+        "single-119-hamdt-93-1-255",
+        "single-119-hamdt-95-1-257",
+        "single-119-hamdt-99-1-244",
+        "single-119-hconres-108-2-232",
+        "single-119-hconres-38-2-85",
+        "single-119-hconres-40-2-114",
+        "single-119-hconres-64-1-346",
+        "single-119-hconres-68-2-48",
+        "single-119-hconres-75-2-170",
+        "single-119-hconres-84-2-201",
+        "single-119-hconres-86-2-199",
+        "single-119-hconres-89-2-282",
+        "single-119-hr-1608-1-286",
+        "single-119-hr-1689-2-120",
+        "single-119-hr-23-1-7",
+        "single-119-hr-2913-2-207",
+        "single-119-hr-3106-2-234",
+        "single-119-hr-3944-1-182",
+        "single-119-hr-8469-2-175",
+        "single-119-hr-9238-2-221",
+        "single-119-s-1071-1-320",
+        "single-119-s-4465-2-155"
+      ],
       "semantic_source_ids": [
         "notable-aumf-repeal-1991-2002",
         "notable-fy2026-ndaa-package-opposition",
@@ -150,8 +257,44 @@
       "wording_item_subject_sha256": "557fd5a1d660de32cce2d101f22387c6db8b5d653dd87ccfcc450611e8827cc6"
     },
     {
-      "action_count": 10,
+      "action_count": 9,
       "action_ids": [
+        "house:119:1:346",
+        "house:119:2:114",
+        "house:119:2:170",
+        "house:119:2:199",
+        "house:119:2:201",
+        "house:119:2:232",
+        "house:119:2:282",
+        "house:119:2:48",
+        "house:119:2:85"
+      ],
+      "episode_count": 9,
+      "episode_ids": [
+        "single-119-hconres-108-2-232",
+        "single-119-hconres-38-2-85",
+        "single-119-hconres-40-2-114",
+        "single-119-hconres-64-1-346",
+        "single-119-hconres-68-2-48",
+        "single-119-hconres-75-2-170",
+        "single-119-hconres-84-2-201",
+        "single-119-hconres-86-2-199",
+        "single-119-hconres-89-2-282"
+      ],
+      "public_supporting_action_count": 9,
+      "public_supporting_action_ids": [
+        "house:119:1:346",
+        "house:119:2:114",
+        "house:119:2:170",
+        "house:119:2:199",
+        "house:119:2:201",
+        "house:119:2:232",
+        "house:119:2:282",
+        "house:119:2:48",
+        "house:119:2:85"
+      ],
+      "semantic_lineage_action_count": 10,
+      "semantic_lineage_action_ids": [
         "house:119:1:244",
         "house:119:1:346",
         "house:119:2:114",
@@ -163,8 +306,8 @@
         "house:119:2:48",
         "house:119:2:85"
       ],
-      "episode_count": 10,
-      "episode_ids": [
+      "semantic_lineage_episode_count": 10,
+      "semantic_lineage_episode_ids": [
         "single-119-hamdt-99-1-244",
         "single-119-hconres-108-2-232",
         "single-119-hconres-38-2-85",
@@ -207,6 +350,39 @@
         "single-119-hamdt-95-1-257",
         "single-119-hr-2913-2-207"
       ],
+      "public_supporting_action_count": 8,
+      "public_supporting_action_ids": [
+        "house:119:1:208",
+        "house:119:1:209",
+        "house:119:1:255",
+        "house:119:1:257",
+        "house:119:2:207",
+        "house:119:2:243",
+        "house:119:2:244",
+        "house:119:2:264"
+      ],
+      "semantic_lineage_action_count": 8,
+      "semantic_lineage_action_ids": [
+        "house:119:1:208",
+        "house:119:1:209",
+        "house:119:1:255",
+        "house:119:1:257",
+        "house:119:2:207",
+        "house:119:2:243",
+        "house:119:2:244",
+        "house:119:2:264"
+      ],
+      "semantic_lineage_episode_count": 8,
+      "semantic_lineage_episode_ids": [
+        "single-119-hamdt-235-2-243",
+        "single-119-hamdt-236-2-244",
+        "single-119-hamdt-252-2-264",
+        "single-119-hamdt-56-1-208",
+        "single-119-hamdt-57-1-209",
+        "single-119-hamdt-93-1-255",
+        "single-119-hamdt-95-1-257",
+        "single-119-hr-2913-2-207"
+      ],
       "semantic_source_ids": [
         "synthesis-security-assistance-interpretive-boundary"
       ],
@@ -223,6 +399,21 @@
       ],
       "episode_count": 2,
       "episode_ids": [
+        "single-119-hr-9238-2-221",
+        "single-119-s-4465-2-155"
+      ],
+      "public_supporting_action_count": 2,
+      "public_supporting_action_ids": [
+        "house:119:2:155",
+        "house:119:2:221"
+      ],
+      "semantic_lineage_action_count": 2,
+      "semantic_lineage_action_ids": [
+        "house:119:2:155",
+        "house:119:2:221"
+      ],
+      "semantic_lineage_episode_count": 2,
+      "semantic_lineage_episode_ids": [
         "single-119-hr-9238-2-221",
         "single-119-s-4465-2-155"
       ],
@@ -251,6 +442,30 @@
         "single-119-hconres-86-2-199",
         "single-119-hconres-89-2-282"
       ],
+      "public_supporting_action_count": 5,
+      "public_supporting_action_ids": [
+        "house:119:2:114",
+        "house:119:2:170",
+        "house:119:2:199",
+        "house:119:2:282",
+        "house:119:2:85"
+      ],
+      "semantic_lineage_action_count": 5,
+      "semantic_lineage_action_ids": [
+        "house:119:2:114",
+        "house:119:2:170",
+        "house:119:2:199",
+        "house:119:2:282",
+        "house:119:2:85"
+      ],
+      "semantic_lineage_episode_count": 5,
+      "semantic_lineage_episode_ids": [
+        "single-119-hconres-38-2-85",
+        "single-119-hconres-40-2-114",
+        "single-119-hconres-75-2-170",
+        "single-119-hconres-86-2-199",
+        "single-119-hconres-89-2-282"
+      ],
       "semantic_source_ids": [
         "pattern-iran-war-powers-removal-support"
       ],
@@ -267,6 +482,21 @@
       ],
       "episode_count": 2,
       "episode_ids": [
+        "single-119-hconres-108-2-232",
+        "single-119-hconres-84-2-201"
+      ],
+      "public_supporting_action_count": 2,
+      "public_supporting_action_ids": [
+        "house:119:2:201",
+        "house:119:2:232"
+      ],
+      "semantic_lineage_action_count": 2,
+      "semantic_lineage_action_ids": [
+        "house:119:2:201",
+        "house:119:2:232"
+      ],
+      "semantic_lineage_episode_count": 2,
+      "semantic_lineage_episode_ids": [
         "single-119-hconres-108-2-232",
         "single-119-hconres-84-2-201"
       ],
@@ -289,6 +519,21 @@
         "single-119-hconres-64-1-346",
         "single-119-hconres-68-2-48"
       ],
+      "public_supporting_action_count": 2,
+      "public_supporting_action_ids": [
+        "house:119:1:346",
+        "house:119:2:48"
+      ],
+      "semantic_lineage_action_count": 2,
+      "semantic_lineage_action_ids": [
+        "house:119:1:346",
+        "house:119:2:48"
+      ],
+      "semantic_lineage_episode_count": 2,
+      "semantic_lineage_episode_ids": [
+        "single-119-hconres-64-1-346",
+        "single-119-hconres-68-2-48"
+      ],
       "semantic_source_ids": [
         "pattern-venezuela-war-powers-removal-support"
       ],
@@ -305,6 +550,21 @@
       ],
       "episode_count": 2,
       "episode_ids": [
+        "single-119-hr-1608-1-286",
+        "single-119-hr-3106-2-234"
+      ],
+      "public_supporting_action_count": 2,
+      "public_supporting_action_ids": [
+        "house:119:1:286",
+        "house:119:2:234"
+      ],
+      "semantic_lineage_action_count": 2,
+      "semantic_lineage_action_ids": [
+        "house:119:1:286",
+        "house:119:2:234"
+      ],
+      "semantic_lineage_episode_count": 2,
+      "semantic_lineage_episode_ids": [
         "single-119-hr-1608-1-286",
         "single-119-hr-3106-2-234"
       ],
@@ -331,6 +591,27 @@
         "single-119-hamdt-93-1-255",
         "single-119-hr-2913-2-207"
       ],
+      "public_supporting_action_count": 4,
+      "public_supporting_action_ids": [
+        "house:119:1:209",
+        "house:119:1:255",
+        "house:119:2:207",
+        "house:119:2:264"
+      ],
+      "semantic_lineage_action_count": 4,
+      "semantic_lineage_action_ids": [
+        "house:119:1:209",
+        "house:119:1:255",
+        "house:119:2:207",
+        "house:119:2:264"
+      ],
+      "semantic_lineage_episode_count": 4,
+      "semantic_lineage_episode_ids": [
+        "single-119-hamdt-252-2-264",
+        "single-119-hamdt-57-1-209",
+        "single-119-hamdt-93-1-255",
+        "single-119-hr-2913-2-207"
+      ],
       "semantic_source_ids": [
         "pattern-ukraine-assistance-mixed"
       ],
@@ -347,6 +628,21 @@
       ],
       "episode_count": 2,
       "episode_ids": [
+        "single-119-hamdt-236-2-244",
+        "single-119-hamdt-56-1-208"
+      ],
+      "public_supporting_action_count": 2,
+      "public_supporting_action_ids": [
+        "house:119:1:208",
+        "house:119:2:244"
+      ],
+      "semantic_lineage_action_count": 2,
+      "semantic_lineage_action_ids": [
+        "house:119:1:208",
+        "house:119:2:244"
+      ],
+      "semantic_lineage_episode_count": 2,
+      "semantic_lineage_episode_ids": [
         "single-119-hamdt-236-2-244",
         "single-119-hamdt-56-1-208"
       ],
@@ -375,6 +671,30 @@
         "single-119-hamdt-88-1-248",
         "single-119-hamdt-89-1-249"
       ],
+      "public_supporting_action_count": 5,
+      "public_supporting_action_ids": [
+        "house:119:1:246",
+        "house:119:1:248",
+        "house:119:1:249",
+        "house:119:2:266",
+        "house:119:2:268"
+      ],
+      "semantic_lineage_action_count": 5,
+      "semantic_lineage_action_ids": [
+        "house:119:1:246",
+        "house:119:1:248",
+        "house:119:1:249",
+        "house:119:2:266",
+        "house:119:2:268"
+      ],
+      "semantic_lineage_episode_count": 5,
+      "semantic_lineage_episode_ids": [
+        "single-119-hamdt-254-2-266",
+        "single-119-hamdt-256-2-268",
+        "single-119-hamdt-86-1-246",
+        "single-119-hamdt-88-1-248",
+        "single-119-hamdt-89-1-249"
+      ],
       "semantic_source_ids": [
         "pattern-military-dod-sex-gender-restriction-opposition"
       ],
@@ -391,6 +711,21 @@
       ],
       "episode_count": 2,
       "episode_ids": [
+        "single-119-hr-3944-1-182",
+        "single-119-hr-8469-2-175"
+      ],
+      "public_supporting_action_count": 2,
+      "public_supporting_action_ids": [
+        "house:119:1:182",
+        "house:119:2:175"
+      ],
+      "semantic_lineage_action_count": 2,
+      "semantic_lineage_action_ids": [
+        "house:119:1:182",
+        "house:119:2:175"
+      ],
+      "semantic_lineage_episode_count": 2,
+      "semantic_lineage_episode_ids": [
         "single-119-hr-3944-1-182",
         "single-119-hr-8469-2-175"
       ],
@@ -411,6 +746,18 @@
       "episode_ids": [
         "single-119-hamdt-235-2-243"
       ],
+      "public_supporting_action_count": 1,
+      "public_supporting_action_ids": [
+        "house:119:2:243"
+      ],
+      "semantic_lineage_action_count": 1,
+      "semantic_lineage_action_ids": [
+        "house:119:2:243"
+      ],
+      "semantic_lineage_episode_count": 1,
+      "semantic_lineage_episode_ids": [
+        "single-119-hamdt-235-2-243"
+      ],
       "semantic_source_ids": [
         "notable-israel-foreign-military-financing-reduction"
       ],
@@ -426,6 +773,18 @@
       ],
       "episode_count": 1,
       "episode_ids": [
+        "single-119-hamdt-99-1-244"
+      ],
+      "public_supporting_action_count": 1,
+      "public_supporting_action_ids": [
+        "house:119:1:244"
+      ],
+      "semantic_lineage_action_count": 1,
+      "semantic_lineage_action_ids": [
+        "house:119:1:244"
+      ],
+      "semantic_lineage_episode_count": 1,
+      "semantic_lineage_episode_ids": [
         "single-119-hamdt-99-1-244"
       ],
       "semantic_source_ids": [
@@ -445,6 +804,18 @@
       "episode_ids": [
         "single-119-hr-23-1-7"
       ],
+      "public_supporting_action_count": 1,
+      "public_supporting_action_ids": [
+        "house:119:1:7"
+      ],
+      "semantic_lineage_action_count": 1,
+      "semantic_lineage_action_ids": [
+        "house:119:1:7"
+      ],
+      "semantic_lineage_episode_count": 1,
+      "semantic_lineage_episode_ids": [
+        "single-119-hr-23-1-7"
+      ],
       "semantic_source_ids": [
         "notable-international-criminal-court-sanctions-opposition"
       ],
@@ -460,6 +831,18 @@
       ],
       "episode_count": 1,
       "episode_ids": [
+        "single-119-hamdt-95-1-257"
+      ],
+      "public_supporting_action_count": 1,
+      "public_supporting_action_ids": [
+        "house:119:1:257"
+      ],
+      "semantic_lineage_action_count": 1,
+      "semantic_lineage_action_ids": [
+        "house:119:1:257"
+      ],
+      "semantic_lineage_episode_count": 1,
+      "semantic_lineage_episode_ids": [
         "single-119-hamdt-95-1-257"
       ],
       "semantic_source_ids": [
@@ -479,6 +862,18 @@
       "episode_ids": [
         "single-119-hr-1689-2-120"
       ],
+      "public_supporting_action_count": 1,
+      "public_supporting_action_ids": [
+        "house:119:2:120"
+      ],
+      "semantic_lineage_action_count": 1,
+      "semantic_lineage_action_ids": [
+        "house:119:2:120"
+      ],
+      "semantic_lineage_episode_count": 1,
+      "semantic_lineage_episode_ids": [
+        "single-119-hr-1689-2-120"
+      ],
       "semantic_source_ids": [
         "notable-haiti-temporary-protected-status"
       ],
@@ -494,6 +889,18 @@
       ],
       "episode_count": 1,
       "episode_ids": [
+        "single-119-s-1071-1-320"
+      ],
+      "public_supporting_action_count": 1,
+      "public_supporting_action_ids": [
+        "house:119:1:320"
+      ],
+      "semantic_lineage_action_count": 1,
+      "semantic_lineage_action_ids": [
+        "house:119:1:320"
+      ],
+      "semantic_lineage_episode_count": 1,
+      "semantic_lineage_episode_ids": [
         "single-119-s-1071-1-320"
       ],
       "semantic_source_ids": [
@@ -515,14 +922,18 @@
   "screenshot_manifest": {
     "artifact_id": "site-integration-screenshot-manifest:f000477:national_security_foreign:119:v1",
     "capture_count": 5,
-    "file_sha256": "cff91062c5a5b7f613a6df6d26fa87b208baeb102fb2454a669fa058cc1b822e"
+    "file_sha256": "49d53ae748155c762d915666d95922c02a2668ee09c7fec4aa5578bcc4b0d618"
   },
   "semantic_proofs": {
     "blocked_action_excluded": true,
     "every_mapping_uses_accepted_semantic_content": true,
     "mapped_actions_subset_of_m11d": true,
     "mapped_episodes_subset_of_m11f": true,
+    "no_direction_items_have_no_public_status": true,
+    "public_support_may_be_narrower_than_semantic_lineage": true,
     "raw_vote_direction_inference": false,
+    "semantic_lineage_actions_subset_of_m11d": true,
+    "semantic_lineage_episodes_subset_of_m11f": true,
     "ukraine_public_mixed_label_suppressed": true
   }
 }

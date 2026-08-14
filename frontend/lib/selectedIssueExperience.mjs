@@ -85,7 +85,7 @@ export function buildFindingIndex(
       actionCount: actionIds.length,
       episodeCount: episodeIds.length || null,
       statusLabel: item.direction_label
-        || (item.direction ? formatDirection(item.direction) : "Bounded finding"),
+        || (item.direction ? formatDirection(item.direction) : null),
       showDirection: item.show_direction !== false && Boolean(item.direction),
     };
   });

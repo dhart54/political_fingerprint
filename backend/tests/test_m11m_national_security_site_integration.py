@@ -41,12 +41,14 @@ def _national_security(payload: dict) -> dict:
 def test_m11m_regeneration_is_deterministic() -> None:
     result = build(check=True)
     assert result["candidate"]["candidate_subject_sha256"] == (
-        "24c018b735b033ee2ac38c5c3b22dd71e4398401efaa8a560fbbce1da26ff123"
+        "c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9ad04c5df"
     )
     assert result["review_packet"]["accounting"] == {
         "wording_items": 18,
         "mapped_unique_actions": 32,
         "mapped_unique_episodes": 32,
+        "semantic_lineage_unique_actions": 32,
+        "semantic_lineage_unique_episodes": 32,
         "accepted_interpreted_actions": 81,
         "accepted_episodes": 81,
         "blocked_actions": [BLOCKED_ACTION_ID],
@@ -77,6 +79,7 @@ def test_candidate_has_exact_surface_and_ukraine_accounting() -> None:
     assert ukraine["direction"] is None
     assert ukraine["direction_symbol"] is None
     assert ukraine["show_direction"] is False
+    assert ukraine["semantic_lineage_directions"] == ["mixed"]
     assert BLOCKED_ACTION_ID not in {
         action_id
         for field in (
@@ -88,6 +91,57 @@ def test_candidate_has_exact_surface_and_ukraine_accounting() -> None:
         for row in presentation[field]
         for action_id in row["action_ids"]
     }
+
+
+def test_war_powers_public_support_is_narrower_than_semantic_lineage() -> None:
+    candidate = _candidate()
+    presentation = candidate["subject"]["presentation"]
+    war_powers = next(
+        row
+        for row in presentation["syntheses"]
+        if row["wording_item_id"] == "wording:synthesis:war-powers"
+    )
+    country_patterns = {
+        row["wording_item_id"]: set(row["public_supporting_action_ids"])
+        for row in presentation["repeated_patterns"]
+        if row["wording_item_id"]
+        in {
+            "wording:pattern:iran-war-powers",
+            "wording:pattern:lebanon-war-powers",
+            "wording:pattern:venezuela-war-powers",
+        }
+    }
+    expected_country_actions = set().union(*country_patterns.values())
+    assert war_powers["evidence_count_label"] == (
+        "9 votes \u00b7 9 country-specific resolutions"
+    )
+    assert len(war_powers["semantic_lineage_action_ids"]) == 10
+    assert len(war_powers["public_supporting_action_ids"]) == 9
+    assert set(war_powers["action_ids"]) == expected_country_actions
+    assert set(war_powers["public_supporting_action_ids"]) == expected_country_actions
+    assert "house:119:1:244" in war_powers["semantic_lineage_action_ids"]
+    assert "house:119:1:244" not in war_powers["public_supporting_action_ids"]
+
+    aumf = next(
+        row
+        for row in presentation["notable_choices"]
+        if row["wording_item_id"] == "wording:notable:aumf-repeal"
+    )
+    assert aumf["public_supporting_action_ids"] == ["house:119:1:244"]
+    assert "house:119:1:244" in candidate["subject"]["preview_data"]["action_ids_119"]
+
+    for row in [
+        presentation["overview"],
+        *presentation["syntheses"],
+        *presentation["repeated_patterns"],
+        *presentation["policy_trajectories"],
+        *presentation["notable_choices"],
+    ]:
+        if row["wording_item_id"] != "wording:synthesis:war-powers":
+            assert (
+                row["public_supporting_action_ids"]
+                == row["semantic_lineage_action_ids"]
+            )
 
 
 def test_preview_scope_is_bounded_and_other_scope_fails_closed() -> None:
@@ -117,9 +171,16 @@ def test_preview_scope_is_bounded_and_other_scope_fails_closed() -> None:
             "authority leaked",
         ),
         (
-            lambda value: value["subject"]["presentation"]["repeated_patterns"][0][
-                "action_ids"
-            ].append(BLOCKED_ACTION_ID),
+            lambda value: [
+                value["subject"]["presentation"]["repeated_patterns"][0][field].append(
+                    BLOCKED_ACTION_ID
+                )
+                for field in (
+                    "action_ids",
+                    "public_supporting_action_ids",
+                    "semantic_lineage_action_ids",
+                )
+            ],
             "blocked action",
         ),
         (

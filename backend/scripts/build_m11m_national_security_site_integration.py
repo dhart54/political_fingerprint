@@ -135,6 +135,12 @@ def mapping_rows(candidate: dict[str, Any]) -> list[dict[str, Any]]:
             "episode_count": len(item["episode_ids"]),
             "action_ids": item["action_ids"],
             "episode_ids": item["episode_ids"],
+            "public_supporting_action_count": len(item["public_supporting_action_ids"]),
+            "public_supporting_action_ids": item["public_supporting_action_ids"],
+            "semantic_lineage_action_count": len(item["semantic_lineage_action_ids"]),
+            "semantic_lineage_action_ids": item["semantic_lineage_action_ids"],
+            "semantic_lineage_episode_count": len(item["semantic_lineage_episode_ids"]),
+            "semantic_lineage_episode_ids": item["semantic_lineage_episode_ids"],
             "semantic_source_ids": item["semantic_source_ids"],
             "wording_item_subject_sha256": item["mapping"][
                 "wording_item_subject_sha256"
@@ -287,8 +293,21 @@ def review_packet(
     mapped_episodes = {
         episode_id for row in mappings for episode_id in row["episode_ids"]
     }
+    lineage_actions = {
+        action_id
+        for row in mappings
+        for action_id in row["semantic_lineage_action_ids"]
+    }
+    lineage_episodes = {
+        episode_id
+        for row in mappings
+        for episode_id in row["semantic_lineage_episode_ids"]
+    }
     if not (
-        mapped_actions <= accepted_actions and mapped_episodes <= accepted_episodes
+        mapped_actions <= accepted_actions
+        and mapped_episodes <= accepted_episodes
+        and lineage_actions <= accepted_actions
+        and lineage_episodes <= accepted_episodes
     ):
         raise ValueError("M11M mapping exceeds accepted M11D/M11F evidence")
     return {
@@ -318,6 +337,8 @@ def review_packet(
             "wording_items": len(mappings),
             "mapped_unique_actions": len(mapped_actions),
             "mapped_unique_episodes": len(mapped_episodes),
+            "semantic_lineage_unique_actions": len(lineage_actions),
+            "semantic_lineage_unique_episodes": len(lineage_episodes),
             "accepted_interpreted_actions": len(accepted_actions),
             "accepted_episodes": len(accepted_episodes),
             "blocked_actions": [BLOCKED_ACTION_ID],
@@ -328,8 +349,16 @@ def review_packet(
             "raw_vote_direction_inference": False,
             "mapped_actions_subset_of_m11d": mapped_actions <= accepted_actions,
             "mapped_episodes_subset_of_m11f": mapped_episodes <= accepted_episodes,
+            "semantic_lineage_actions_subset_of_m11d": (
+                lineage_actions <= accepted_actions
+            ),
+            "semantic_lineage_episodes_subset_of_m11f": (
+                lineage_episodes <= accepted_episodes
+            ),
             "blocked_action_excluded": BLOCKED_ACTION_ID not in mapped_actions,
             "ukraine_public_mixed_label_suppressed": True,
+            "no_direction_items_have_no_public_status": True,
+            "public_support_may_be_narrower_than_semantic_lineage": True,
         },
         "scope_behavior": {
             "119": "candidate_available_with_explicit_server_preview_opt_in",
@@ -354,12 +383,13 @@ def packet_markdown(packet: dict[str, Any]) -> str:
         "",
         "## Exact 18-item mapping",
         "",
-        "| Surface | Public title | Actions | Episodes |",
-        "|---|---|---:|---:|",
+        "| Surface | Public title | Public actions | Lineage actions | Episodes |",
+        "|---|---|---:|---:|---:|",
     ]
     for row in packet["mapping_rows"]:
         lines.append(
-            f"| {row['surface']} | {row['title']} | {row['action_count']} | {row['episode_count']} |"
+            f"| {row['surface']} | {row['title']} | {row['action_count']} | "
+            f"{row['semantic_lineage_action_count']} | {row['episode_count']} |"
         )
     lines.extend(
         [
