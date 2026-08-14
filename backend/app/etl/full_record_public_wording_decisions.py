@@ -170,10 +170,11 @@ def validate_authority(
     )
     subject = authority["subject"]
     _require(
-        subject["reviewer"] == "dhart54"
-        and subject["reviewer_authority"]
-        == "full_record_public_wording_review_authority_v1",
-        "public wording reviewer authority differs",
+        isinstance(subject.get("reviewer"), str)
+        and bool(subject["reviewer"].strip())
+        and isinstance(subject.get("reviewer_authority"), str)
+        and bool(subject["reviewer_authority"].strip()),
+        "public wording reviewer identity or authority is absent",
     )
     _require(
         not any(subject["downstream_authorizations"].values()),
@@ -190,7 +191,7 @@ def validate_authority(
         and subject["parity_binding"]["artifact_id"] == parity["artifact_id"]
         and subject["parity_binding"]["parity_subject_sha256"]
         == parity["parity_subject_sha256"],
-        "M11K binding differs",
+        "public wording candidate binding differs",
     )
     for binding in (
         "m11h_authority_binding",
@@ -207,7 +208,7 @@ def validate_authority(
             f"{binding} upstream binding differs",
         )
     candidates = {row["wording_item_id"]: row for row in _items(package)}
-    _require(len(candidates) == len(_items(package)), "duplicate M11K wording item")
+    _require(len(candidates) == len(_items(package)), "duplicate wording candidate")
     decisions = subject["wording_decisions"]
     _require(
         len(decisions) == len(candidates)
@@ -223,6 +224,8 @@ def validate_authority(
         original = candidates[decision["wording_item_id"]]
         _require(
             decision["decision"] in ALLOWED_DECISIONS
+            and decision.get("reviewer") == subject["reviewer"]
+            and decision.get("reviewer_authority") == subject["reviewer_authority"]
             and decision["original_wording_item_subject_sha256"]
             == original["wording_item_subject_sha256"]
             and decision["original_wording_item_content_sha256"] == digest(original),
@@ -313,9 +316,11 @@ def validate_implementation(
         row["wording_item_id"]: row for row in authority["subject"]["wording_decisions"]
     }
     records = subject["implementation_records"]
+    record_ids = [row["wording_item_id"] for row in records]
     _require(
-        len(records) == 18
-        and {row["wording_item_id"] for row in records} == set(candidates),
+        len(records) == len(candidates)
+        and len(record_ids) == len(set(record_ids))
+        and set(record_ids) == set(candidates),
         "canonical reviewed wording record set differs",
     )
     for record in records:
@@ -347,27 +352,10 @@ def validate_implementation(
         require_structural_invariance(original, expected)
         if decision["decision"] == "accept_candidate_as_written":
             _require(expected == original, "accepted-as-written wording changed")
-    ukraine = next(
-        row
-        for row in records
-        if row["wording_item_id"] == "wording:pattern:ukraine-assistance"
-    )["implemented_reviewed_wording"]
-    _require(
-        ukraine["direction_display"] is None
-        and "Mixed" not in ukraine["primary_sentence"]
-        and "±" not in ukraine["primary_sentence"],
-        "Ukraine public mixed-label guard differs",
-    )
     surfaces = Counter(
         row["implemented_reviewed_wording"]["surface"] for row in records
     )
-    expected_surfaces = {
-        "issue_overview": 1,
-        "synthesis": 2,
-        "repeated_pattern": 8,
-        "trajectory": 1,
-        "notable_choice": 6,
-    }
+    expected_surfaces = dict(Counter(row["surface"] for row in candidates.values()))
     _require(
         dict(surfaces) == expected_surfaces,
         "reviewed wording surface accounting differs",

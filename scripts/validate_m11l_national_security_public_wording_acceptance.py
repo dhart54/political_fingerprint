@@ -112,6 +112,50 @@ def main() -> int:
         decision_template=template,
         parity=candidate_parity,
     )
+    if (
+        authority["subject"]["reviewer"] != "dhart54"
+        or authority["subject"]["reviewer_authority"]
+        != "full_record_public_wording_review_authority_v1"
+    ):
+        raise ValueError("exact M11L reviewer authority differs")
+    expected_surfaces = {
+        "issue_overview": 1,
+        "synthesis": 2,
+        "repeated_pattern": 8,
+        "trajectory": 1,
+        "notable_choice": 6,
+    }
+    if result != {
+        "canonical_reviewed_wording_count": 18,
+        "surface_accounting": expected_surfaces,
+        "decision_accounting": {
+            "accept_candidate_as_written": 4,
+            "accept_with_bounded_revision": 14,
+            "rejected": 0,
+            "unresolved": 0,
+        },
+    }:
+        raise ValueError("exact M11L implementation accounting differs")
+    ukraine = next(
+        row["implemented_reviewed_wording"]
+        for row in implementation["subject"]["implementation_records"]
+        if row["wording_item_id"] == "wording:pattern:ukraine-assistance"
+    )
+    if (
+        [
+            (source["source_id"], source["source_direction"])
+            for source in ukraine["semantic_source_bindings"]
+        ]
+        != [("pattern-ukraine-assistance-mixed", "mixed")]
+        or ukraine["direction_display"] is not None
+        or "Mixed" in ukraine["primary_sentence"]
+        or "±" in ukraine["primary_sentence"]
+        or "Â±" in ukraine["primary_sentence"]
+        or ukraine["primary_sentence"]
+        != "Opposed three proposals to restrict Ukraine aid and supported one measure authorizing support for Ukraine."
+        or ukraine["evidence_count_label"] != "4 votes · 4 assistance choices"
+    ):
+        raise ValueError("exact M11L Ukraine public-copy guard differs")
     decisions = {
         row["wording_item_id"]: row for row in authority["subject"]["wording_decisions"]
     }
