@@ -48,7 +48,7 @@ The milestone may add an inactive candidate compiler, validator, opt-in preview 
 - [x] Extend generic frontend sections and evidence navigation.
 - [x] Add backend/frontend/adversarial tests and render packet.
 - [x] Run required validation and inspect diff.
-- [ ] Commit, push, open draft PR, and stop.
+- [x] Commit, push, open draft PR, and stop.
 
 ## Discoveries and decisions
 
@@ -90,4 +90,4 @@ None.
 
 ## Final reconciliation
 
-The candidate provides the requested real-route review experience behind two exact opt-ins, retains the active publication selector unchanged, preserves the accepted M11L text and upstream identities, and keeps H.R. 8800 outside all analysis. No database, publication, production, deployment, or live-site state changed. Final completion is the draft PR and independent human review stop.
+The candidate provides the requested real-route review experience behind two exact opt-ins, retains the active publication selector unchanged, preserves the accepted M11L text and upstream identities, and keeps H.R. 8800 outside all analysis. No database, publication, production, deployment, or live-site state changed. Draft PR #145 is the independent human-review stop.
