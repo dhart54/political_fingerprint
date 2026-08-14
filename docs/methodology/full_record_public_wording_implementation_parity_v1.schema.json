@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "full_record_public_wording_implementation_parity_v1.schema.json",
+  "title": "Full-Record Public-Wording Implementation Parity V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact_id", "authority_binding", "implementation_binding", "entries", "parity_subject_sha256"],
+  "properties": {
+    "schema_version": {"const": "full_record_public_wording_implementation_parity_v1"},
+    "artifact_id": {"type": "string"},
+    "authority_binding": {"type": "object"},
+    "implementation_binding": {"type": "object"},
+    "entries": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "file_sha256", "content_subject_sha256"],
+        "properties": {
+          "path": {"type": "string"},
+          "file_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "content_subject_sha256": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "parity_subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

@@ -1,0 +1,702 @@
+{
+  "accepted": true,
+  "artifact_id": "human-public-wording-authority:f000477:national_security_foreign:119:v1",
+  "authority_subject_sha256": "43e83cd72a7af1124854cfcc0830442210d45276201ef39ca5e5fe5134492c89",
+  "canonical_reviewed_wording_authority": true,
+  "immutable": true,
+  "production_selectable": false,
+  "public": false,
+  "schema_version": "full_record_public_wording_authority_v1",
+  "subject": {
+    "approved_at_utc": "2026-08-14T00:10:44Z",
+    "authority_effect": "canonical_reviewed_wording_internal_only",
+    "base_binding": {
+      "accepted_m11k_head": "57f29bd156c0f6c747fd21084491558d3277bd22",
+      "accepted_m11k_pr": 143,
+      "post_m11k_main": "649bb508e2cdb92ab8cb0afe82dd266c2f503944"
+    },
+    "blocked_action_boundary": {
+      "action_id": "house:119:2:278",
+      "state": "source_blocked_uninterpreted_unavailable_for_public_wording"
+    },
+    "blocked_actions": [
+      {
+        "action_id": "house:119:2:278",
+        "disposition": "source_blocked_uninterpreted_outside_behavioral_semantic_ir"
+      }
+    ],
+    "candidate_binding": {
+      "artifact_id": "public-wording-candidates:f000477:national_security_foreign:119:v1",
+      "file_sha256": "eef9c35e08fd0ccecf931c1a47d6f88793954f92a649386a2032b305b3cc24bb",
+      "package_subject_sha256": "7647db4d58cdfc34c7ee6f5aef955ea67eef650e43084e1ed58383a0b64ddd93"
+    },
+    "chamber": "House",
+    "complete_source_accounting": {
+      "behavioral_primary_wording_count": 15,
+      "behavioral_proposition_count": 15,
+      "synthesis_primary_wording_count": 2,
+      "synthesis_record_count": 2
+    },
+    "complete_synthesis_role_accounting": [
+      {
+        "accepted_candidate_content_sha256": "8174e9c60ef65c638fd51ed283b3304831e61b0886f79d5364fa58d44e747095",
+        "accounting_role": "contextual_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "contextual_support",
+            "synthesis_candidate_id": "synthesis-war-powers-cross-target-uniform-direction"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-aumf-repeal-1991-2002:m11h:v1",
+        "implementation_record_subject_sha256": "22b9af25b3307b724b35cfced8bf0ff3772ed0cd465450c656f725ab734b28e6",
+        "proposition_id": "notable-aumf-repeal-1991-2002",
+        "reason": "Excluded singleton retained only as contextual authorization evidence for the War Powers candidate.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "809ee6af7604948a43388455279de6dda33a44b1988deacec1bed8153d7ba324",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-fy2026-ndaa-package-opposition:m11h:v1",
+        "implementation_record_subject_sha256": "231acbe5cc32dcba094589fbf5606d9e4461a5ce9f52fdbe2eb7bd231979006d",
+        "proposition_id": "notable-fy2026-ndaa-package-opposition",
+        "reason": "The broad whole-package NDAA choice cannot safely establish a component or cross-mechanism synthesis.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "8e8b24e112e12591cd8a53f026672d2b1ccfa6f12a6409fd10e81219191e2771",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-haiti-temporary-protected-status:m11h:v1",
+        "implementation_record_subject_sha256": "ace200d55888998c1d42ccab62d4682c22a8f2e84f827ab87f102e6b5e6c7316",
+        "proposition_id": "notable-haiti-temporary-protected-status",
+        "reason": "The Haiti TPS choice is a singleton and does not safely combine with the proposed security mechanism relationships.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "8eddeaf8224c5093bb44e1f46a9589f76e701270cc89515b18449e0a8e173b23",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-international-criminal-court-sanctions-opposition:m11h:v1",
+        "implementation_record_subject_sha256": "72c990081f072ec112b73a3d7096dc29b660f9e65dbb02f1490127c3a4895eaf",
+        "proposition_id": "notable-international-criminal-court-sanctions-opposition",
+        "reason": "The sanctions choice is a singleton with no safe accepted recurring relationship.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "3b46c4b89579b28e76e8ccfa7960c91d1b7439ff565b381501850264527b2fb1",
+        "accounting_role": "contrast_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "contrast",
+            "synthesis_candidate_id": "synthesis-security-assistance-interpretive-boundary"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-israel-foreign-military-financing-reduction:m11h:v1",
+        "implementation_record_subject_sha256": "67b28549bf2a766bf2ec042bb4b998351377f3d41a18feeb7d68c7b8f866e2cd",
+        "proposition_id": "notable-israel-foreign-military-financing-reduction",
+        "reason": "Excluded singleton retained only as a country-specific contrast within the assistance boundary candidate.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "b9cc33cbd73051985fac830d7219a7677c27f52555697870274feb34c366c549",
+        "accounting_role": "contextual_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "contextual_support",
+            "synthesis_candidate_id": "synthesis-security-assistance-interpretive-boundary"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-taiwan-security-cooperation-funding:m11h:v1",
+        "implementation_record_subject_sha256": "7f306c3d739d0f3ee5c2a89500e2eecbf4e803437a115cac4957531cf043d71d",
+        "proposition_id": "notable-taiwan-security-cooperation-funding",
+        "reason": "Excluded singleton retained only as contextual evidence within the assistance boundary candidate.",
+        "source_conclusion_relevance": "excluded",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "e3c3d47a7eb0bfa3ffb8598d0e18ef3ea8984c7b2c42d538a1a337e9630b2603",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-fisa-title-vii-extension-opposition:m11h:v1",
+        "implementation_record_subject_sha256": "7133e450d130a4fa2566941b8158deef0345035841eb81b20c1675b163b37506",
+        "proposition_id": "pattern-fisa-title-vii-extension-opposition",
+        "reason": "Title VII extension opposition concerns a surveillance-authority mechanism not safely related to the proposed War Powers or assistance syntheses.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "1b4868d3e123414e513767fcf6f038bd448cd20d6f0b90f326e30b6cb2e7d2c4",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-war-powers-cross-target-uniform-direction"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-iran-war-powers-removal-support:m11h:v1",
+        "implementation_record_subject_sha256": "e991915497ee94d54c53392c263d1c7b3e2d4d455dafbcea4d3a1a7b35c7ed0e",
+        "proposition_id": "pattern-iran-war-powers-removal-support",
+        "reason": "Primary recurring input to the bounded cross-target War Powers candidate.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "f90bbbdc7a2aa13036345c783d6e3d0b6548e2d2627fd72f7521f19eeb95d96a",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-security-assistance-interpretive-boundary"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-jordan-assistance-restriction-opposition:m11h:v1",
+        "implementation_record_subject_sha256": "9138f39da3a426f5470e853d28d2c76325fc13923d6b411cf0f983cd0ce0c5f3",
+        "proposition_id": "pattern-jordan-assistance-restriction-opposition",
+        "reason": "Primary accepted pattern supporting the country-specific assistance interpretive boundary.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "fc2536d220fad42d864316e9652a56780bf107f16320e3e37113c8437bb3fbf3",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-war-powers-cross-target-uniform-direction"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-lebanon-war-powers-removal-support:m11h:v1",
+        "implementation_record_subject_sha256": "9dc34a8540204e8d131354282c7f0059e2791ec448a97adbaf03b26380d2923c",
+        "proposition_id": "pattern-lebanon-war-powers-removal-support",
+        "reason": "Primary recurring input to the bounded cross-target War Powers candidate.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "cc8d830c3bad6f5221f86a0be635c0109bb58dfaae7d239ebf27d66bc44ff183",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-military-dod-sex-gender-restriction-opposition:m11h:v1",
+        "implementation_record_subject_sha256": "5a3f7ad82c16f00b28250066c37bb28f7e8dbfc101105196ddfbf90b5c0fa92e",
+        "proposition_id": "pattern-military-dod-sex-gender-restriction-opposition",
+        "reason": "The enumerated military and DoD restrictions do not share a safe mechanism-level relationship with the proposed candidates.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "d150cedb3a5d2f1e737cb6cd5c8c3271d62512f7b134330319fd47e9320f318c",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-terrorism-preparedness-support:m11h:v1",
+        "implementation_record_subject_sha256": "314c7e1be64d5563c9f761c931ec575ac382383644854195b8bbffa4223d818f",
+        "proposition_id": "pattern-terrorism-preparedness-support",
+        "reason": "Preparedness requirements use distinct domestic security mechanisms and do not safely combine with surveillance, military, or assistance propositions.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "540ff249be62f90426cbdc85244d10d59ba7ae1868cc2597d1a21016c09233d8",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-security-assistance-interpretive-boundary"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-ukraine-assistance-mixed:m11h:v1",
+        "implementation_record_subject_sha256": "c939b14cbfc9e70665b9529d1caa55f285293e7aff124a73357ff523a24f2a25",
+        "proposition_id": "pattern-ukraine-assistance-mixed",
+        "reason": "Primary accepted pattern supporting the country-specific assistance interpretive boundary.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "c2f7377670a0e62851023b510c59738c6041e53918a5921752c8948dfa409286",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-war-powers-cross-target-uniform-direction"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-venezuela-war-powers-removal-support:m11h:v1",
+        "implementation_record_subject_sha256": "9bc00bdabfeb2777a859192e4c1ac33afb68902b792af1861d45e05d80632cf9",
+        "proposition_id": "pattern-venezuela-war-powers-removal-support",
+        "reason": "Primary recurring input to the bounded cross-target War Powers candidate.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "398088ac89461f9e4109096546fccdf96067961b4d6772b739cdc4005db0472b",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:trajectory-milcon-va-appropriations-direction-change:m11h:v1",
+        "implementation_record_subject_sha256": "ae6fc52ad7721f17081fcdc7dae1a370cec32495f72183aee74a6298029361e4",
+        "proposition_id": "trajectory-milcon-va-appropriations-direction-change",
+        "reason": "The limiting annual-package trajectory has no accepted broader appropriations synthesis to limit and cannot safely become a primary synthesis input.",
+        "source_conclusion_relevance": "limiting",
+        "source_proposition_type": "trajectory"
+      }
+    ],
+    "congress": 119,
+    "decision_accounting": {
+      "accept_candidate_as_written": 4,
+      "accept_with_bounded_revision": 14,
+      "rejected": 0,
+      "unresolved": 0
+    },
+    "decision_template_binding": {
+      "artifact_id": "human-public-wording-decision-template:f000477:national_security_foreign:119:v1",
+      "decision_template_subject_sha256": "16b146441ff93797301467f64b58d66da45796fdfc8091d6e3b1c6f08353c50a",
+      "file_sha256": "6e96a461d2d052906b038a8ddf6d7d6fa92ba4309f292f45f88da9fcbf225def"
+    },
+    "downstream_authorizations": {
+      "database_writes": false,
+      "deployment": false,
+      "production_persistence": false,
+      "production_writes": false,
+      "publication": false
+    },
+    "issue_id": "NATIONAL_SECURITY_FOREIGN",
+    "m11h_authority_binding": {
+      "artifact_id": "human-behavioral-semantic-ir-authority:f000477:national_security_foreign:119:v1",
+      "authority_subject_sha256": "22262c77622df938b3ab3642bf49452005b549706bb20160dd7c91a88ba29714",
+      "file_sha256": "d1de0f28a09a01ea9b5bbe5607128564daa6aedb929a2be1255cb50f1a99fc93"
+    },
+    "m11h_implementation_binding": {
+      "artifact_id": "behavioral-semantic-ir-decision-implementation:f000477:national_security_foreign:119:v1",
+      "file_sha256": "13927cade21c85f95c097acf7afe831e55bdb0de79c93e54646e14640d444ecc",
+      "implementation_subject_sha256": "6113be3d0fad4d8da21a47ed76c089f5a7d96becd45abb9c888cf2a437bf8d67"
+    },
+    "m11j_authority_binding": {
+      "artifact_id": "human-synthesis-authority:f000477:national_security_foreign:119:v1",
+      "authority_subject_sha256": "fdbf0b068e117322da5388c3ebc17c21d2b9a3bfbc81f4e7b92654972a9fe407",
+      "file_sha256": "4fd4f7b1490415df3c1f10cc088fcc95d9f48f3eec3504b9312cb447b8e0a1cc"
+    },
+    "m11j_implementation_binding": {
+      "artifact_id": "synthesis-decision-implementation:f000477:national_security_foreign:119:v1",
+      "file_sha256": "bd2a08caa9100cf3b5326cb739f0ce99db2f6c4650667df8087dc254d1509500",
+      "implementation_subject_sha256": "d960dd7512b36c6b5b0d10c4cecc0c66251906ac624873e8618e7168bf50333f"
+    },
+    "member_bioguide_id": "F000477",
+    "member_slug": "leg_valerie_p_foushee",
+    "parity_binding": {
+      "artifact_id": "public-wording-candidate-parity:f000477:national_security_foreign:119:v1",
+      "file_sha256": "1d9f02eba933033e6b794d451f93603d826f1e3b0d6565b871ed1fd8512e541d",
+      "parity_subject_sha256": "8d79f1fb7ca6bbc7ac25c26ca764760c1de2b736ff57882c682458a5ea0be235"
+    },
+    "reviewer": "dhart54",
+    "reviewer_authority": "full_record_public_wording_review_authority_v1",
+    "wording_decisions": [
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "218d7d7c6c031f59bcf0cdf6779a15305cc9fae2661abf3d19388ffddf3f946e",
+              "path": [
+                "primary_sentence"
+              ],
+              "revised_value": "Foushee repeatedly supported War Powers resolutions to remove U.S. forces from specified hostilities involving Iran, Lebanon, and Venezuela. Her security-assistance choices differed by country and proposal."
+            },
+            {
+              "original_value_sha256": "f820417095a4a8e1dab7f9eb415b5d7cd4ae5694beba861fcadde84563c42c29",
+              "path": [
+                "secondary_clarification"
+              ],
+              "revised_value": "Other findings cover FISA, terrorism preparedness, military and Defense Department policy, annual appropriations, ICC sanctions, Haiti TPS, and military-force authorizations."
+            },
+            {
+              "original_value_sha256": "88db556d1b931e5e6bb5e2c0e59988d2197a5389ebb4c63cb8013f1d1a7981f6",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "15 findings · 32 votes"
+            }
+          ],
+          "revised_wording_item_content_sha256": "02c22f5bb78833fe3ee34d9e020ebe904a010eea68398e400a751df72d9178e1"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "9b454a844005f6e2b1489ad3ff44db14d031b24577c1a314ca12921659266e22",
+        "original_wording_item_content_sha256": "09060302015f4d8f04aa327841859a941c0216cd2f7cb72d560293503d386d1f",
+        "original_wording_item_subject_sha256": "d7d0c61c995002e2f95c100404f2f7f878947eb9f78462276afc3a82232e4301",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:issue-overview:national-security-foreign:119"
+      },
+      {
+        "bounded_revision": null,
+        "decision": "accept_candidate_as_written",
+        "decision_subject_sha256": "6a02ddf055a878eaf57b1b8058db6fbb21f3aaf5fd4d548b1e2b6474246a5424",
+        "original_wording_item_content_sha256": "cc53dce8c4ae85f72feab78fc2e654591c17d580e34c6fb36f92e379e627ca7e",
+        "original_wording_item_subject_sha256": "441d2626c28a14b40f769fff4fcb55b1fa9b0b979ba63c7583b895eefefabdbe",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:synthesis:war-powers"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "03518c89861f55b23cf4fa9e9047f7b878b1cf2c10a7c3a5e9ea9a26829c052a",
+              "path": [
+                "primary_sentence"
+              ],
+              "revised_value": "Foushee opposed proposals to restrict aid to Ukraine and Jordan, supported a measure authorizing support for Ukraine, opposed removing Taiwan security-cooperation funding, and supported an amendment barring funds in the bill from being used for Israel and reducing the Foreign Military Financing account by $3.3 billion."
+            }
+          ],
+          "revised_wording_item_content_sha256": "b0c45265ecb5b36e0f99fc86e003c4261c4fa66b3d555dacb8221968d80682ef"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "a06210ecd944aeea4abc4d9187ad934bcb7169a8bb47024696264f64c98e9ed1",
+        "original_wording_item_content_sha256": "0cc34808fe977f5a9b1f462a208e3b565f37460c2fbb91aa12f971a7d3cb30f0",
+        "original_wording_item_subject_sha256": "548448d409f5975db42670857a282bc628932ebc7b51d04dcef809e993b4a59c",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:synthesis:security-assistance"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "db161738c7b3850c1a37d50ddcadb30bcb398df2f38e6f9eeec34ce242ece4b0",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "2 votes · 2 bills"
+            }
+          ],
+          "revised_wording_item_content_sha256": "53d1b125d02a041a04399662c519a68b18625f46b5ee4efd609a49fcd811de7a"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "4ebe10e0f0713628793eb547f19f2d24a6e03d49b61d5d4746e46222ba414ffa",
+        "original_wording_item_content_sha256": "b75d2f5e9596b13631395f85338da7018d4dbac58e89e42fe4edeebd019ac21a",
+        "original_wording_item_subject_sha256": "4a0ba0ed718e616f5d0e3f1054ad6c76458ec566646835d1f3806d1ffc7c3545",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:pattern:fisa-title-vii"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "fcfec1a6470385ee449917b698d72b288cd7f3c7082b9a108da4665d67e17432",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "5 votes · 5 resolutions"
+            }
+          ],
+          "revised_wording_item_content_sha256": "06bbeacc4a68164ada7a8429eed2bb2352472ee33e5310e9e5535da9db93744c"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "061055d516718fa21bdccdca88a219549b0a580625f4d93e888c3ebfc2ee8a1b",
+        "original_wording_item_content_sha256": "1a12dbfc772a92b7f2d0c69dce07c2f72aa310a19a38d5ce0db59777362ab4fc",
+        "original_wording_item_subject_sha256": "3b7510840e75b72cf184ba17f88a49dd2c758362ac5fa0cbdc5ce13245c1b2f4",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:pattern:iran-war-powers"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "db161738c7b3850c1a37d50ddcadb30bcb398df2f38e6f9eeec34ce242ece4b0",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "2 votes · 2 resolutions"
+            },
+            {
+              "original_value_sha256": "d41aa1ff737e49e1bb73cf27eda6f849ad5014810b6ad21ffe3cf8d1c958fb45",
+              "path": [
+                "limitation_treatments",
+                0,
+                "public_copy"
+              ],
+              "revised_value": "These were separate resolutions, not one continuing legislative action."
+            }
+          ],
+          "revised_wording_item_content_sha256": "688683eed8c1b1851b482cf61bb2c9bf45be1c28de2abcc18155236730624843"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "b9330cbdd0ba71bb3da6ac6d32e383cbb224cbfbfd76681ebbdd70dbf289fcbe",
+        "original_wording_item_content_sha256": "3a6e60364d0f8c7edd0483a685e46e1dc17c27db18e622172940763364c947fa",
+        "original_wording_item_subject_sha256": "e49cef2419c76de4840e8c6fa05c4c95e3856cbd5f005048b6f71c4e0edf862f",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:pattern:lebanon-war-powers"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "db161738c7b3850c1a37d50ddcadb30bcb398df2f38e6f9eeec34ce242ece4b0",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "2 votes · 2 resolutions"
+            }
+          ],
+          "revised_wording_item_content_sha256": "8a4ba06dbb8b609c27623078973187e37ed7dfe2d9f687404d03fc58b91ea4c8"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "68fa2aa65981200bd10b0298754df55334e8ea03ad92ce2a36a272dc901d83f9",
+        "original_wording_item_content_sha256": "acef3c3d7633509954b39bb1fdd1793a661c417b17057888788087f945fb8a44",
+        "original_wording_item_subject_sha256": "dc7479f8e44f7f7133d352adf24d65af28495f3e90fbee8387b4a0a21b896174",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:pattern:venezuela-war-powers"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "07a325e288f34212eaa86ab7f89e8092ee46056c3a6688405418b832e2f43067",
+              "path": [
+                "primary_sentence"
+              ],
+              "revised_value": "Supported two federal preparedness measures addressing vehicle attacks and cascading effects on critical infrastructure."
+            },
+            {
+              "original_value_sha256": "db161738c7b3850c1a37d50ddcadb30bcb398df2f38e6f9eeec34ce242ece4b0",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "2 votes · 2 measures"
+            }
+          ],
+          "revised_wording_item_content_sha256": "f611175769b33a647a25f91da2054f526f1fabf7afc9e343979378afbcbb1072"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "f392fec554319f0261a3e8cfcf5aad4afb68a87b28c52b9dcbf043542d07a92c",
+        "original_wording_item_content_sha256": "ce4817978e91fcf5e393484f44a2a59c29ee3082b9a49fff7e4462af3fee1cfa",
+        "original_wording_item_subject_sha256": "ec89807f4cd4574e087cfcdf1cdf3f407aac0ce25eded08d7e6caab108c30043",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:pattern:terrorism-preparedness"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "d2f2ae57008d4d864ffefd5bf0b71c2e7db11928c3acba87891e5f1ed9f3b7f6",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "4 votes · 4 assistance choices"
+            }
+          ],
+          "revised_wording_item_content_sha256": "391186293a1769830413f6e1a2f01f08b3a0a6e37a659d0fc93c74a04948db1d"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "1cb3a6f9ec13a627269361705584f6bdac175971309cb203781aeb6fcd25cded",
+        "original_wording_item_content_sha256": "2b79ae732102e472763ca577f6c089eb685ea0c10fd07ebc66dbd8fb5b965009",
+        "original_wording_item_subject_sha256": "7e3d03ee6682ba999ff36d7a421550f6b986b40dea07bc5180bf2fec1b688b76",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:pattern:ukraine-assistance"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "db161738c7b3850c1a37d50ddcadb30bcb398df2f38e6f9eeec34ce242ece4b0",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "2 votes · 2 amendments"
+            }
+          ],
+          "revised_wording_item_content_sha256": "2a2f1d690aff1a73d0eb554b5edc8b7d6dde04fb13874fcce6aab095d3a308b9"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "19be7f1e2762cc670a922e4abf894ebce617588292b6a773b5ed921d74fba8b8",
+        "original_wording_item_content_sha256": "53356bcfd4ab8bf7a4771e61f4b69164bf09d8f2ad2363ecb535cac0763ee501",
+        "original_wording_item_subject_sha256": "b79cde9dd84d86a1e111b2f3c171ff7ac6ae24c76ac969bb3dd2ea188eec09cf",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:pattern:jordan-assistance"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "ab4e28aa4d7a6258edefb97d047ef166510adcacc101d9424a88f2605dc0affe",
+              "path": [
+                "public_title"
+              ],
+              "revised_value": "Military and DoD sex-and-gender amendments"
+            },
+            {
+              "original_value_sha256": "02be0d7863593f380702e752e572df10af0a5151794caa9639db1f96039d83fb",
+              "path": [
+                "primary_sentence"
+              ],
+              "revised_value": "Opposed five amendments restricting gender-related health care or imposing requirements based on biological sex in specified military and Defense Department settings."
+            },
+            {
+              "original_value_sha256": "fcfec1a6470385ee449917b698d72b288cd7f3c7082b9a108da4665d67e17432",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "5 votes · 5 amendments"
+            }
+          ],
+          "revised_wording_item_content_sha256": "8c01362fa283125a5f39579ff1f3ab4993663fd55ba25a333e00342ec1193c45"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "8de4f3061986789914bbbbdbcac4256e9189a32bc4d1d0779d46cabc825dc1de",
+        "original_wording_item_content_sha256": "f49206d812a86bb4f63121cf4611c168af19cc6868ed66dacbb2ce586302ccb5",
+        "original_wording_item_subject_sha256": "61cfef3dd39dd938b9256a265c751a90f185e7c8caceeb4c134037de46d325aa",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:pattern:military-dod-sex-gender"
+      },
+      {
+        "bounded_revision": null,
+        "decision": "accept_candidate_as_written",
+        "decision_subject_sha256": "74e194d6dc1985c67cfb84ee576d79632b613f0e5053c25cca616756a26305a0",
+        "original_wording_item_content_sha256": "4b1489609f6d9836eabbcbbbae1fa27b84b915b879a7a9607778ee6f82ca304c",
+        "original_wording_item_subject_sha256": "feed6c8a5a0b367e9e6070a5da0b647581749f7948bd5056c25b9bfd41700ef6",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:trajectory:milcon-va"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "42dfee5f70b49f81f77c2d9977adb86e9c25b9bb65eecb063b2985cadafd5ef5",
+              "path": [
+                "public_title"
+              ],
+              "revised_value": "Israel funding and Foreign Military Financing reduction"
+            },
+            {
+              "original_value_sha256": "46ea6c37ef6294e03ecb58a0d054180ba78e380f70d7d1d0ee226e155ce4f2e9",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "1 vote · amendment"
+            }
+          ],
+          "revised_wording_item_content_sha256": "f1b18a0d89640a82078a4f099b76e3c80779d84c8add4f9f23ae00a9855a4008"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "408d63feec71a491405852da39a514331198c1690ea0f24a62259066e9de75ae",
+        "original_wording_item_content_sha256": "9f500f502eea8336fe40701e6d1ce2038de9b36683e82c0a01d883b38ea82d4c",
+        "original_wording_item_subject_sha256": "c20ee6c2a257e4b0b055d08b2d56f37d8a104df4be552b5ad35de0e50a7327a0",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:notable:israel-fmf-reduction"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "46ea6c37ef6294e03ecb58a0d054180ba78e380f70d7d1d0ee226e155ce4f2e9",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "1 vote · amendment"
+            }
+          ],
+          "revised_wording_item_content_sha256": "e5ea728b7f687c4e75f1e2023cd8f653c03905ef7e82e3247d9441bddde7b23b"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "2d196ec0e180889eb31fc25d79025d3afa25f84c5557b3e40064bccaafec9520",
+        "original_wording_item_content_sha256": "9a3850cc8c73934e230c05401537aadfb09d15b730e1161f8295d855c4c98eef",
+        "original_wording_item_subject_sha256": "4c8e9dec10c3847b17d0c3fde040ab0dfd048e61b0641047eba8ea47476b87d2",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:notable:aumf-repeal"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "4419db1b6620a146002d0f5c36e7de03373eadd180a4a085c994591bd07c8548",
+              "path": [
+                "primary_sentence"
+              ],
+              "revised_value": "Opposed a bill imposing sanctions over ICC efforts to investigate, arrest, detain, or prosecute protected people from the United States and its allies."
+            }
+          ],
+          "revised_wording_item_content_sha256": "52310441b7e779cb6cefedc6892906999814eceb05e3876adf13d712938d5b82"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "0862b308813d640dc39742a26491fd91934af023237ddaf2c8d99dd517ffc051",
+        "original_wording_item_content_sha256": "0da18cc00caeb102aef9b253b8bd995e0c70af031d41d64c11c7e570350c5f33",
+        "original_wording_item_subject_sha256": "8cff4599d5bce3f4c68de353c7d348ac8ff70d21f0d236f18883791028321f18",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:notable:icc-sanctions"
+      },
+      {
+        "bounded_revision": {
+          "field_replacements": [
+            {
+              "original_value_sha256": "46ea6c37ef6294e03ecb58a0d054180ba78e380f70d7d1d0ee226e155ce4f2e9",
+              "path": [
+                "evidence_count_label"
+              ],
+              "revised_value": "1 vote · amendment"
+            }
+          ],
+          "revised_wording_item_content_sha256": "a3642f6fb933d6933c66716525766cf1d78e48b4a6cfe42a525276803ac4d438"
+        },
+        "decision": "accept_with_bounded_revision",
+        "decision_subject_sha256": "1fcde7b5f03eb16f7d576564718f44c0342c51e0303363c1b5e4b21ad331db69",
+        "original_wording_item_content_sha256": "fcb84b14c33448efd603ba0087f64b1ffa731d6be444f5b40bfd1e36ba1a7d1f",
+        "original_wording_item_subject_sha256": "82bb98ce64ea73159b7e8ccb4225192740bdcfb86c2d275356fe4da019b99252",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:notable:taiwan-funding"
+      },
+      {
+        "bounded_revision": null,
+        "decision": "accept_candidate_as_written",
+        "decision_subject_sha256": "14adba9c9c9560b156df2c03140d85263fa83b58c266f04655b023297670ebed",
+        "original_wording_item_content_sha256": "4a5ce3215c67dd3b91931f67846def653cb58e62a8168f446fbe60ed438da613",
+        "original_wording_item_subject_sha256": "cb0a65d381e72fd713f7fda19530c132eac3dea5544fdcdfb9d9f62499bc4e37",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:notable:haiti-tps"
+      },
+      {
+        "bounded_revision": null,
+        "decision": "accept_candidate_as_written",
+        "decision_subject_sha256": "578899449404ef84ff629cd1f557e28a874a1de999c523a03396954555de9ea0",
+        "original_wording_item_content_sha256": "cf0fe77ca3df854fdc95a3227b7585eac3df7a67789cf563b88eb1f6c09f22f2",
+        "original_wording_item_subject_sha256": "4fda4679239e212b4a5739f9d3e2187705246c1b7f0afc78634e8b02e5a35867",
+        "reviewed_at_utc": "2026-08-14T00:10:44Z",
+        "reviewer": "dhart54",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:notable:fy2026-ndaa"
+      }
+    ]
+  }
+}

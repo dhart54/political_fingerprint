@@ -150,7 +150,10 @@ def validate_repository() -> dict[str, Any]:
     m11k = state["active_public_wording_candidate_milestone"]
     require(
         m11k["milestone_state"]
-        == "candidate_package_complete_pending_human_substantive_wording_review"
+        in {
+            "candidate_package_complete_pending_human_substantive_wording_review",
+            "completed_human_substantive_review_merged",
+        }
         and m11k["wording_item_count"] == 18
         and not any(m11k["downstream_authorizations"].values()),
         "M11K current state differs",

@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "full_record_public_wording_authority_v1.schema.json",
+  "title": "Full-Record Public-Wording Authority V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact_id", "accepted", "immutable", "canonical_reviewed_wording_authority", "public", "production_selectable", "subject", "authority_subject_sha256"],
+  "properties": {
+    "schema_version": {"const": "full_record_public_wording_authority_v1"},
+    "artifact_id": {"type": "string"},
+    "accepted": {"const": true},
+    "immutable": {"const": true},
+    "canonical_reviewed_wording_authority": {"const": true},
+    "public": {"const": false},
+    "production_selectable": {"const": false},
+    "authority_subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "subject": {
+      "type": "object",
+      "required": ["member_bioguide_id", "member_slug", "issue_id", "congress", "chamber", "reviewer", "reviewer_authority", "approved_at_utc", "base_binding", "candidate_binding", "decision_template_binding", "parity_binding", "m11h_authority_binding", "m11h_implementation_binding", "m11j_authority_binding", "m11j_implementation_binding", "wording_decisions", "decision_accounting", "complete_source_accounting", "complete_synthesis_role_accounting", "blocked_actions", "blocked_action_boundary", "authority_effect", "downstream_authorizations"],
+      "properties": {
+        "wording_decisions": {"type": "array", "minItems": 1},
+        "authority_effect": {"const": "canonical_reviewed_wording_internal_only"},
+        "downstream_authorizations": {"$ref": "#/definitions/closedAuthorities"}
+      }
+    }
+  },
+  "definitions": {
+    "closedAuthorities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publication", "production_persistence", "database_writes", "production_writes", "deployment"],
+      "properties": {
+        "publication": {"const": false},
+        "production_persistence": {"const": false},
+        "database_writes": {"const": false},
+        "production_writes": {"const": false},
+        "deployment": {"const": false}
+      }
+    }
+  }
+}
