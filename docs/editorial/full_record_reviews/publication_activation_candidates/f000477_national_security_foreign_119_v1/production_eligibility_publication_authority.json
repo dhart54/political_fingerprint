@@ -1,0 +1,51 @@
+{
+  "accepted": true,
+  "artifact_id": "production-eligibility-publication-authority:f000477:national_security_foreign:119:v1",
+  "authority_subject_sha256": "2c784f3771ccbe8edc71d3799438a5ea2cd5ec54b3334321a2782fb0e2873f8b",
+  "immutable": true,
+  "schema_version": "site_integration_production_eligibility_publication_authority_v1",
+  "subject": {
+    "accepted_m11m_binding": {
+      "artifact_id": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+      "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+      "file_sha256": "d2a7a65eb56f4be68b0d0477eeb8f75f793be5bbb458c86db13560b8eae35cc4",
+      "subject_sha256": "c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9ad04c5df"
+    },
+    "authorizations": {
+      "build_expected_production_write_set": true,
+      "build_publication_activation_candidate": true,
+      "deployment": false,
+      "perform_fresh_read_only_production_preflight": true,
+      "prepare_rollback_and_disposable_proof": true,
+      "production_database_write": false,
+      "publication_activation": false,
+      "publication_registry_mutation": false,
+      "record_production_eligibility": true
+    },
+    "congress": 119,
+    "current_production_preflight_binding": {
+      "deployed_commit": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd",
+      "preflight_subject_sha256": "ff2fae0eb17610584f8b31dbff178231e62c163645b2275a1715b2384945d7da",
+      "state_fingerprint_sha256": "2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db"
+    },
+    "decision": "approve_production_eligibility_and_publication_activation_candidate",
+    "decision_recorded_at_utc": "2026-08-14T02:49:38Z",
+    "downstream_boundary": "Independent ChatGPT review is required before any later production activation authorization. This authority cannot authorize its own database write, registry mutation, deployment, or publication.",
+    "issue_id": "NATIONAL_SECURITY_FOREIGN",
+    "member_bioguide_id": "F000477",
+    "member_slug": "leg_valerie_p_foushee",
+    "repository_binding": {
+      "accepted_m11m_head": "7e1d399e4dc2a2b49b083c7b4ed117a256293050",
+      "accepted_m11m_pr": 145,
+      "post_m11m_main": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd"
+    },
+    "reviewer": "dhart54",
+    "reviewer_authority": "publication_candidate_preparation_authority_v1",
+    "storage_gate_decision": {
+      "benchmark_status": "gold_benchmark",
+      "editorial_status": "human_approved",
+      "production_eligible": true,
+      "reason": "These are the existing immutable publication-table gates for an accepted full-record reference; they do not activate publication."
+    }
+  }
+}

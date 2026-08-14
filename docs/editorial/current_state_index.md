@@ -220,10 +220,21 @@ The machine-readable authority is
   wording replacements; semantic identities, evidence, direction, conclusion
   relevance, relationship roles, source limitations, blocked actions, and
   downstream authority remain invariant. The result is canonical reviewed
-  wording for internal use only and is pending mechanical review. It is not
-  public or production-selectable. Publication, persistence, database and
-  production writes, runtime changes, and deployment remain unauthorized.
-  Justice remains the only active publication reference.
+  wording for internal use only. Its accepted PR #144 head
+  `f8073c38b9672fe6bcb0fcffbb4c24b798a49ac4` merged to main as
+  `55dd4a2e05bdd3d61a328793b8349a952df000d6`.
+- M11M binds that exact M11L wording into the established representative-site
+  presentation shape without changing semantics. Its accepted PR #145 head
+  `7e1d399e4dc2a2b49b083c7b4ed117a256293050` merged to main as
+  `b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd`. The accepted candidate is
+  `site-integration-candidate:f000477:national_security_foreign:119:v1`, subject
+  `c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9ad04c5df`.
+- M11N prepares the exact content-bound publication eligibility authority,
+  deterministic expected write set, rollback, and drift proof for that accepted
+  M11M candidate. It remains pending independent ChatGPT review. National
+  Security is still receipts-only in every public scope, no production or
+  registry write has occurred, H.R. 8800 remains blocked and outside every
+  analytical finding, and Justice remains the only active publication.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.

@@ -1,0 +1,61 @@
+{
+  "captured_at_utc": "2026-08-14T02:55:53.271766+00:00",
+  "counts": {
+    "artifacts": 146,
+    "batches": 4,
+    "publication_registry": 1,
+    "relationships": 159
+  },
+  "deployed_commit": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd",
+  "justice_registry_row": {
+    "artifact_id": 221,
+    "artifact_version": 1,
+    "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "member_bioguide_id": "F000477",
+    "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+    "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+    "publicly_active": true,
+    "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+  },
+  "m11n_target_rows": [],
+  "preflight_subject_sha256": "ff2fae0eb17610584f8b31dbff178231e62c163645b2275a1715b2384945d7da",
+  "schema_version": "m11n_current_production_preflight_v1",
+  "selector_pre_activation": {
+    "scopes": {
+      "118": {
+        "JUSTICE_PUBLIC_SAFETY": {
+          "requested_scope": "118",
+          "tier": "receipts_only"
+        },
+        "NATIONAL_SECURITY_FOREIGN": {
+          "requested_scope": "118",
+          "tier": "receipts_only"
+        }
+      },
+      "119": {
+        "JUSTICE_PUBLIC_SAFETY": {
+          "requested_scope": "119",
+          "tier": "reviewed_conclusion"
+        },
+        "NATIONAL_SECURITY_FOREIGN": {
+          "requested_scope": "119",
+          "tier": "receipts_only"
+        }
+      },
+      "all": {
+        "JUSTICE_PUBLIC_SAFETY": {
+          "requested_scope": "all",
+          "tier": "reviewed_conclusion"
+        },
+        "NATIONAL_SECURITY_FOREIGN": {
+          "requested_scope": "all",
+          "tier": "receipts_only"
+        }
+      }
+    },
+    "selector_rows": 1
+  },
+  "state_fingerprint_sha256": "2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db",
+  "transaction_read_only": true
+}

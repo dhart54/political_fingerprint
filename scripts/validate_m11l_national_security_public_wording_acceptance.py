@@ -195,7 +195,11 @@ def main() -> int:
         raise ValueError("M11K closeout state differs")
     if (
         m11l["milestone_state"]
-        != "human_decisions_implemented_pending_mechanical_review"
+        != "completed_mechanical_review_merged"
+        or m11l["accepted_m11l_head"]
+        != "f8073c38b9672fe6bcb0fcffbb4c24b798a49ac4"
+        or m11l["post_merge_main"]
+        != "55dd4a2e05bdd3d61a328793b8349a952df000d6"
         or m11l["canonical_reviewed_wording_count"] != 18
         or any(m11l["downstream_authorizations"].values())
     ):

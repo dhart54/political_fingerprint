@@ -22,6 +22,9 @@ from app.editorial_presentations.review_state_catalog import (
     public_review_state_entries,
 )
 from app.editorial_presentations.selector import select_public_presentations
+from app.editorial_presentations.site_publication import (
+    active_site_integration_candidate,
+)
 
 
 router = APIRouter()
@@ -37,6 +40,18 @@ def _m11m_preview(candidate: str | None) -> dict[str, object] | None:
         return load_site_integration_candidate(M11M_CANDIDATE_PATH)
     except (OSError, KeyError, TypeError, ValueError):
         return None
+
+
+def _active_m11m_publication(
+    *, member_bioguide_id: str, issue_id: str
+) -> dict[str, object] | None:
+    try:
+        rows = _load_publication_rows()
+    except Exception:  # pragma: no cover - database availability stays fail-closed
+        return None
+    return active_site_integration_candidate(
+        rows, member_bioguide_id=member_bioguide_id, issue_id=issue_id
+    )
 
 
 def _has_governed_presentation_candidate(
@@ -69,8 +84,13 @@ def get_legislator_positions(
     response = get_position_response(legislator_id=legislator_id, scope=scope)
     if response is None:
         raise HTTPException(status_code=404, detail="Legislator not found")
-    preview = _m11m_preview(candidate)
     profile = get_legislator_profile(legislator_id=legislator_id)
+    preview = _m11m_preview(candidate)
+    if preview is None and profile is not None:
+        preview = _active_m11m_publication(
+            member_bioguide_id=str(profile["bioguide_id"]),
+            issue_id="NATIONAL_SECURITY_FOREIGN",
+        )
     if (
         preview is not None
         and profile is not None
@@ -112,6 +132,14 @@ def get_legislator_position_evidence(
         raise HTTPException(status_code=404, detail="Evidence not found")
     profile = get_legislator_profile(legislator_id=legislator_id)
     normalized_domain = domain.strip().upper()
+    active_site_candidate = (
+        _active_m11m_publication(
+            member_bioguide_id=str(profile["bioguide_id"]),
+            issue_id=normalized_domain,
+        )
+        if profile is not None
+        else None
+    )
     if profile is not None and _has_governed_presentation_candidate(
         member_bioguide_id=str(profile["bioguide_id"]),
         issue_id=normalized_domain,
@@ -143,7 +171,7 @@ def get_legislator_position_evidence(
                 presentation,
                 governed_evidence=governed_rows,
             )
-    preview = _m11m_preview(candidate)
+    preview = _m11m_preview(candidate) or active_site_candidate
     if (
         preview is not None
         and profile is not None
