@@ -203,9 +203,15 @@ def test_adversarial_candidate_mutations_fail_closed(mutation, message: str) -> 
 
 def test_api_requires_server_opt_in_and_exact_preview_token(monkeypatch) -> None:
     profile = {"bioguide_id": "F000477"}
-    with patch(
-        "app.api.editorial_presentations.get_legislator_profile",
-        return_value=profile,
+    with (
+        patch(
+            "app.api.editorial_presentations.get_legislator_profile",
+            return_value=profile,
+        ),
+        patch(
+            "app.api.editorial_presentations._load_publication_rows",
+            return_value=[],
+        ),
     ):
         client = TestClient(app)
         default = client.get(
@@ -236,6 +242,29 @@ def test_api_requires_server_opt_in_and_exact_preview_token(monkeypatch) -> None
 
 def test_preview_positions_and_evidence_close_the_82_action_record(monkeypatch) -> None:
     monkeypatch.setenv("ENABLE_EDITORIAL_PRESENTATION_PREVIEW", "1")
+    candidate = _candidate()
+    evidence_119 = candidate["subject"]["preview_data"]["evidence_119"]
+    monkeypatch.setattr(
+        "app.api.positions.get_position_response",
+        lambda **_kwargs: {
+            "legislator_id": "leg_valerie_p_foushee",
+            "scope": "119",
+            "positions": [],
+        },
+    )
+    monkeypatch.setattr(
+        "app.api.positions.get_position_evidence_response",
+        lambda **kwargs: {
+            "legislator_id": "leg_valerie_p_foushee",
+            "domain": kwargs["domain"],
+            "evidence": evidence_119,
+        },
+    )
+    monkeypatch.setattr(
+        "app.api.positions.get_legislator_profile",
+        lambda **_kwargs: {"bioguide_id": "F000477"},
+    )
+    monkeypatch.setattr("app.api.positions._load_publication_rows", lambda: [])
     client = TestClient(app)
     params = {"scope": "119", "candidate": "m11m-national-security"}
     positions = client.get(
