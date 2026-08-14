@@ -6,11 +6,16 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M11K National Security Public-Wording Candidates V1](m11k_national_security_public_wording_candidates_v1.md)
-  - proposes detached public wording from exact accepted M11H/M11J semantics;
-    human wording review, publication, and production authority remain absent.
+- [M11L National Security Public-Wording Acceptance V1](m11l_national_security_public_wording_acceptance_v1.md)
+  - implements the 18 accepted human wording decisions as canonical reviewed
+    wording for internal use; mechanical review is pending and all publication
+    and production authorities remain false.
 
 ## Retained unresolved plans
+
+- [M11K National Security Public-Wording Candidates V1](m11k_national_security_public_wording_candidates_v1.md)
+  - human-substantively accepted at PR #143 and merged unchanged as M11L's exact
+    candidate input.
 
 - [M11J National Security Synthesis Acceptance V1](m11j_national_security_synthesis_acceptance_v1.md)
   - mechanically accepted at PR #142 and merged as M11K's exact canonical

@@ -202,7 +202,7 @@ The machine-readable authority is
   only. Its mechanically accepted PR #142 head
   `ed0d3b65f287b3bc1b8985a7ef85a72a9e574043` merged to main as
   `03b14aa030ea302c1c109b0efd6a2ad7cef23f1b`.
-- M11K derives 18 detached public-wording candidates from those exact accepted
+- M11K derived 18 detached public-wording candidates from those exact accepted
   sources: one issue overview, two synthesis statements, eight repeated
   patterns, one limiting trajectory, and six notable choices. All 15
   Behavioral Semantic IR propositions, both canonical internal synthesis
@@ -210,11 +210,20 @@ The machine-readable authority is
   content-bound and accounted for. Ukraine wording states the three
   restriction oppositions and one authorization support directly rather than
   exposing `mixed` as a substantive policy label. H.R. 8800 remains
-  source-blocked and unavailable for wording. The package is pending human
-  substantive wording review and is neither canonical public copy nor
-  production-selectable. Publication, persistence, database and production
-  writes, and deployment remain unauthorized. Justice remains the only active
-  publication reference.
+  source-blocked and unavailable for wording. Human reviewer `dhart54` accepted
+  four items as written and fourteen with bounded wording revisions at exact PR
+  #143 head `57f29bd156c0f6c747fd21084491558d3277bd22`; that unchanged head merged
+  to main as `649bb508e2cdb92ab8cb0afe82dd266c2f503944`.
+- M11L deterministically records those 18 decisions and embeds every original
+  M11K candidate unchanged beside its implemented reviewed wording. Its generic
+  fail-closed contract permits only sealed copy-field and existing-limitation
+  wording replacements; semantic identities, evidence, direction, conclusion
+  relevance, relationship roles, source limitations, blocked actions, and
+  downstream authority remain invariant. The result is canonical reviewed
+  wording for internal use only and is pending mechanical review. It is not
+  public or production-selectable. Publication, persistence, database and
+  production writes, runtime changes, and deployment remain unauthorized.
+  Justice remains the only active publication reference.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.
