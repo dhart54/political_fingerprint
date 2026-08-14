@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "full_record_public_wording_candidates_v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "artifact_id",
+    "subject",
+    "public",
+    "production_selectable",
+    "public_wording_candidate_package_subject_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "full_record_public_wording_candidates_v1"},
+    "artifact_id": {"type": "string", "minLength": 1},
+    "subject": {
+      "type": "object",
+      "required": [
+        "artifact_id", "member_bioguide_id", "member_slug", "issue_id",
+        "congress", "chamber", "base_binding", "source_authority_boundary",
+        "presentation_contract", "blocked_action_boundary",
+        "m11h_authority_binding", "m11h_implementation_binding",
+        "m11j_authority_binding", "m11j_implementation_binding",
+        "wording_definitions", "wording_items", "wording_item_accounting",
+        "complete_behavioral_synthesis_role_accounting", "blocked_actions",
+        "source_accounting", "candidate_state", "accepted",
+        "canonical_public_copy", "authorizing", "production_selectable",
+        "downstream_authorizations"
+      ],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "member_bioguide_id": {"type": "string"},
+        "member_slug": {"type": "string"},
+        "issue_id": {"type": "string"},
+        "congress": {"type": "integer"},
+        "chamber": {"type": "string"},
+        "base_binding": {"type": "object"},
+        "source_authority_boundary": {"type": "string"},
+        "presentation_contract": {"type": "string"},
+        "blocked_action_boundary": {"type": "object"},
+        "m11h_authority_binding": {"$ref": "#/definitions/identity_binding"},
+        "m11h_implementation_binding": {"$ref": "#/definitions/implementation_binding"},
+        "m11j_authority_binding": {"$ref": "#/definitions/identity_binding"},
+        "m11j_implementation_binding": {"$ref": "#/definitions/implementation_binding"},
+        "wording_definitions": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+        "wording_items": {"type": "array", "minItems": 1, "items": {"$ref": "#/definitions/wording_item"}},
+        "wording_item_accounting": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "complete_behavioral_synthesis_role_accounting": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+        "blocked_actions": {"type": "array", "items": {"type": "object"}},
+        "source_accounting": {"type": "object"},
+        "candidate_state": {"const": "complete_pending_human_substantive_wording_review"},
+        "accepted": {"const": false},
+        "canonical_public_copy": {"const": false},
+        "authorizing": {"const": false},
+        "production_selectable": {"const": false},
+        "downstream_authorizations": {"$ref": "#/definitions/downstream"}
+      },
+      "additionalProperties": false
+    },
+    "public": {"const": false},
+    "production_selectable": {"const": false},
+    "public_wording_candidate_package_subject_sha256": {"$ref": "#/definitions/sha256"}
+  },
+  "definitions": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identity_binding": {
+      "type": "object",
+      "required": ["artifact_id", "authority_subject_sha256"],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "authority_subject_sha256": {"$ref": "#/definitions/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "implementation_binding": {
+      "type": "object",
+      "required": ["artifact_id", "implementation_subject_sha256"],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "implementation_subject_sha256": {"$ref": "#/definitions/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "downstream": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publication", "production_persistence", "database_writes", "production_writes", "deployment"],
+      "properties": {
+        "publication": {"const": false},
+        "production_persistence": {"const": false},
+        "database_writes": {"const": false},
+        "production_writes": {"const": false},
+        "deployment": {"const": false}
+      }
+    },
+    "wording_item": {
+      "type": "object",
+      "required": [
+        "wording_item_id", "surface", "public_title", "primary_sentence",
+        "secondary_clarification", "evidence_count_label", "direction_display",
+        "compression_notes", "prohibited_inference_risks", "semantic_guard",
+        "limitation_treatments", "semantic_source_bindings", "candidate_state",
+        "accepted", "canonical_public_copy", "authorizing",
+        "production_selectable", "downstream_authorizations",
+        "wording_item_subject_sha256"
+      ],
+      "properties": {
+        "wording_item_id": {"type": "string", "minLength": 1},
+        "surface": {"enum": ["issue_overview", "synthesis", "repeated_pattern", "trajectory", "notable_choice"]},
+        "public_title": {"type": "string", "minLength": 1},
+        "primary_sentence": {"type": "string", "minLength": 1},
+        "secondary_clarification": {"type": ["string", "null"]},
+        "evidence_count_label": {"type": "string", "minLength": 1},
+        "direction_display": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["label", "symbol"],
+              "properties": {
+                "label": {"enum": ["Support", "Opposition", "Mixed"]},
+                "symbol": {"enum": ["+", "−", "±"]}
+              }
+            }
+          ]
+        },
+        "compression_notes": {"type": "string", "minLength": 1},
+        "prohibited_inference_risks": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "semantic_guard": {"type": "object"},
+        "limitation_treatments": {"type": "array", "items": {"type": "object"}},
+        "semantic_source_bindings": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+        "candidate_state": {"const": "pending_human_substantive_wording_review"},
+        "accepted": {"const": false},
+        "canonical_public_copy": {"const": false},
+        "authorizing": {"const": false},
+        "production_selectable": {"const": false},
+        "downstream_authorizations": {"$ref": "#/definitions/downstream"},
+        "wording_item_subject_sha256": {"$ref": "#/definitions/sha256"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

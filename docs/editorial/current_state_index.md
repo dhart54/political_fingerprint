@@ -199,9 +199,22 @@ The machine-readable authority is
   billion FMF reduction. Its canonical `mixed` direction remains
   proposition-relative metadata and is not treated as a mixed substantive
   Ukraine-assistance orientation. M11J establishes canonical internal synthesis
-  only and is pending final human mechanical review. Public wording,
-  publication, persistence, database and production writes, and deployment
-  remain unauthorized. Justice remains the only active publication reference.
+  only. Its mechanically accepted PR #142 head
+  `ed0d3b65f287b3bc1b8985a7ef85a72a9e574043` merged to main as
+  `03b14aa030ea302c1c109b0efd6a2ad7cef23f1b`.
+- M11K derives 18 detached public-wording candidates from those exact accepted
+  sources: one issue overview, two synthesis statements, eight repeated
+  patterns, one limiting trajectory, and six notable choices. All 15
+  Behavioral Semantic IR propositions, both canonical internal synthesis
+  records, their exact relationship roles, and every source limitation are
+  content-bound and accounted for. Ukraine wording states the three
+  restriction oppositions and one authorization support directly rather than
+  exposing `mixed` as a substantive policy label. H.R. 8800 remains
+  source-blocked and unavailable for wording. The package is pending human
+  substantive wording review and is neither canonical public copy nor
+  production-selectable. Publication, persistence, database and production
+  writes, and deployment remain unauthorized. Justice remains the only active
+  publication reference.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.
