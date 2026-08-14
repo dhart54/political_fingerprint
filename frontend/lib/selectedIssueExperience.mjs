@@ -64,6 +64,33 @@ export function buildPatternIndex(presentation, rows = []) {
   });
 }
 
+export function buildFindingIndex(
+  presentation,
+  rows = [],
+  field = "repeated_patterns",
+) {
+  if (!presentation?.review_state || presentation.tier === "receipts_only") {
+    return [];
+  }
+  const episodeByAction = buildEpisodeIndex(presentation, rows);
+  return (presentation?.[field] || []).map((item) => {
+    const actionIds = uniqueStrings(item.action_ids);
+    const suppliedEpisodeIds = uniqueStrings(item.episode_ids);
+    const episodeIds = suppliedEpisodeIds.length
+      ? suppliedEpisodeIds
+      : uniqueStrings(actionIds.map((actionId) => episodeByAction.get(actionId)));
+    return {
+      ...item,
+      actionIds,
+      actionCount: actionIds.length,
+      episodeCount: episodeIds.length || null,
+      statusLabel: item.direction_label
+        || (item.direction ? formatDirection(item.direction) : null),
+      showDirection: item.show_direction !== false && Boolean(item.direction),
+    };
+  });
+}
+
 export function buildLedgerItems(rows = [], { groupRelated = true } = {}) {
   if (!groupRelated) {
     return rows.map((row) => ({

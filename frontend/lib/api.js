@@ -75,6 +75,7 @@ export async function fetchDrift({ legislatorId }) {
 
 export async function fetchPositions({ legislatorId, scope = "all" }) {
   const searchParams = new URLSearchParams({ scope });
+  addEditorialPreviewCandidate(searchParams);
   const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/positions?${searchParams.toString()}`, {
     cache: "no-store",
   });
@@ -88,6 +89,7 @@ export async function fetchPositions({ legislatorId, scope = "all" }) {
 
 export async function fetchPositionEvidence({ legislatorId, domain, scope = "all" }) {
   const searchParams = new URLSearchParams({ scope });
+  addEditorialPreviewCandidate(searchParams);
   const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/positions/${domain}/evidence?${searchParams.toString()}`, {
     cache: "no-store",
   });
@@ -101,6 +103,7 @@ export async function fetchPositionEvidence({ legislatorId, domain, scope = "all
 
 export async function fetchEditorialPresentations({ legislatorId, scope = "all" }) {
   const searchParams = new URLSearchParams({ scope });
+  addEditorialPreviewCandidate(searchParams);
   const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/editorial-presentations?${searchParams.toString()}`, {
     cache: "no-store",
   });
@@ -110,6 +113,15 @@ export async function fetchEditorialPresentations({ legislatorId, scope = "all" 
   }
 
   return response.json();
+}
+
+function addEditorialPreviewCandidate(searchParams) {
+  if (
+    process.env.NEXT_PUBLIC_EDITORIAL_PRESENTATION_PREVIEW
+    === "m11m-national-security"
+  ) {
+    searchParams.set("candidate", "m11m-national-security");
+  }
 }
 
 export async function fetchAlignment({ legislatorId, preferences, scope = "all" }) {

@@ -46,6 +46,27 @@ test("finder accepts an ordinary first-and-last-name query", async ({ page }) =>
   ).toBeVisible();
 });
 
+test("Justice keeps its complete conclusion under progressive disclosure", async ({ page }) => {
+  await page.goto(
+    "/?representative=leg_valerie_p_foushee&issue=JUSTICE_PUBLIC_SAFETY&scope=119",
+  );
+  const analysis = page.getByTestId("reviewed-analysis");
+  await expect(analysis).toContainText(justicePresentation.teaser);
+  const disclosure = analysis.locator("details").filter({
+    hasText: "Read the complete conclusion",
+  });
+  await expect(disclosure).toHaveCount(1);
+  await expect(disclosure).not.toHaveAttribute("open", "");
+  await expect(disclosure.locator("p")).not.toBeVisible();
+  await disclosure.getByText("Read the complete conclusion").click();
+  await expect(disclosure).toHaveAttribute("open", "");
+  await expect(disclosure.locator("p")).toContainText(
+    "In this reviewed 119th-Congress sample",
+  );
+  await expect(analysis).toContainText("Patterns in this issue record");
+  await expect(analysis).toContainText("Limitations and unresolved actions · 1");
+});
+
 test("issue sort and filter controls expose evidence and reviewed states", async ({ page }) => {
   await page.goto("/?representative=leg_valerie_p_foushee");
   const cards = page.getByTestId("issue-card");
