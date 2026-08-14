@@ -339,11 +339,13 @@ export const educationEvidence = [
 
 export async function installPassARoutes(page, {
   episodes = false,
+  evidenceOverrides = {},
   justiceEvidenceOverride = null,
   justicePresentationOverride = null,
+  presentationOverride = null,
   positionsOverride = null,
 } = {}) {
-  const presentation = justicePresentationOverride
+  const presentation = presentationOverride || justicePresentationOverride
     || (episodes ? episodePresentation : justicePresentation);
   await page.route("**/*", async (route) => {
     const requestUrl = new URL(route.request().url());
@@ -381,7 +383,7 @@ export async function installPassARoutes(page, {
     if (path.endsWith("/editorial-presentations")) {
       const scopedPresentation = scope === "118"
         ? {
-            ...justicePresentation,
+            ...presentation,
             tier: "receipts_only",
             tier_badge: "Vote receipts",
             teaser: "Reviewed analytical wording is not published for this record scope.",
@@ -420,6 +422,13 @@ export async function installPassARoutes(page, {
         json: { domain: "JUSTICE_PUBLIC_SAFETY", evidence: suppliedJusticeEvidence },
       });
       return;
+    }
+    for (const [domain, supplied] of Object.entries(evidenceOverrides)) {
+      if (path.endsWith(`/positions/${domain}/evidence`)) {
+        const evidence = typeof supplied === "function" ? supplied(scope) : supplied;
+        await route.fulfill({ json: { domain, evidence } });
+        return;
+      }
     }
     if (path.endsWith("/positions/ECONOMY_TAXES/evidence")) {
       await route.fulfill({

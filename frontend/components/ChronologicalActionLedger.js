@@ -242,7 +242,7 @@ function FilterGroup({ label, onChange, options, selected }) {
 }
 
 function SelectedPatternStrip({ finding, matchCount, onClear, total }) {
-  const direction = finding?.direction || "mixed";
+  const direction = finding?.direction || "bounded";
   const status = finding?.statusLabel || formatDirection(direction);
   const subject = patternSubject(finding?.label, direction);
   const accounting = direction === "mixed" && finding?.episodeCount

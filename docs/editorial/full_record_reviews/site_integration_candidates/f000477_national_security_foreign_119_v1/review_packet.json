@@ -1,0 +1,528 @@
+{
+  "accounting": {
+    "accepted_episodes": 81,
+    "accepted_interpreted_actions": 81,
+    "blocked_actions": [
+      "house:119:2:278"
+    ],
+    "mapped_unique_actions": 32,
+    "mapped_unique_episodes": 32,
+    "wording_items": 18
+  },
+  "artifact_bindings": {
+    "m11d_implementation": {
+      "artifact_id": "action-interpretation-decision-implementation:f000477:national_security_foreign:119:v1",
+      "file_sha256": "402928780286f98fec90242132a829058f57517328c532e60371afab3c2173ff",
+      "subject_sha256": "360f0ce47d52cb5a0d0234a88026411e94697c38cac9fca8dc87a7db6ad9ad5b"
+    },
+    "m11f_implementation": {
+      "artifact_id": "policy-episode-decision-implementation:f000477:national_security_foreign:119:v1",
+      "file_sha256": "546441f951b1788f248520ee9cfef7f718c6ea8225f98818aa35c17220e60239",
+      "subject_sha256": "0d4c9e65ae8e9432103b961a59f2816436cd51a7dae0448ce54b55d5bd94397d"
+    },
+    "m11l_authority": {
+      "artifact_id": "human-public-wording-authority:f000477:national_security_foreign:119:v1",
+      "file_sha256": "5c0c888c6c3569b2434fa6057d8be9290b22b7ed019e25e9a245150feaf5fffb",
+      "subject_sha256": "43e83cd72a7af1124854cfcc0830442210d45276201ef39ca5e5fe5134492c89"
+    },
+    "m11l_implementation": {
+      "artifact_id": "reviewed-wording-decision-implementation:f000477:national_security_foreign:119:v1",
+      "file_sha256": "42c4888fbc48eef65fb8038d89006fed225ded40361686561f893885902a285b",
+      "subject_sha256": "57b042e1c36250683ce57820088123f34fb221c438f41aca076156751e3335f9"
+    },
+    "m11l_parity": {
+      "artifact_id": "public-wording-implementation-parity:f000477:national_security_foreign:119:v1",
+      "file_sha256": "3798d412ffc782759f15dc5d5f5a961f08c4a56897a07a50fd6d37bca4696686",
+      "subject_sha256": "824692a57894175b9c09e7af73a21d194a4facae68c466eb40a9e6704e3bc5c1"
+    }
+  },
+  "artifact_id": "site-integration-review-packet:f000477:national_security_foreign:119:v1",
+  "base_sha": "55dd4a2e05bdd3d61a328793b8349a952df000d6",
+  "candidate_binding": {
+    "artifact_id": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+    "candidate_subject_sha256": "24c018b735b033ee2ac38c5c3b22dd71e4398401efaa8a560fbbce1da26ff123",
+    "file_sha256": "b0b332be27d501f4d7a1049dc12ece46d0dc23e96c9245d8f67684abfb452e80"
+  },
+  "controls": {
+    "authorizing": false,
+    "database_writes": false,
+    "deployment": false,
+    "preview_requires_server_opt_in": true,
+    "production_persistence": false,
+    "production_selectable": false,
+    "public": false,
+    "publication_active": false
+  },
+  "mapping_rows": [
+    {
+      "action_count": 32,
+      "action_ids": [
+        "house:119:1:182",
+        "house:119:1:208",
+        "house:119:1:209",
+        "house:119:1:244",
+        "house:119:1:246",
+        "house:119:1:248",
+        "house:119:1:249",
+        "house:119:1:255",
+        "house:119:1:257",
+        "house:119:1:286",
+        "house:119:1:320",
+        "house:119:1:346",
+        "house:119:1:7",
+        "house:119:2:114",
+        "house:119:2:120",
+        "house:119:2:155",
+        "house:119:2:170",
+        "house:119:2:175",
+        "house:119:2:199",
+        "house:119:2:201",
+        "house:119:2:207",
+        "house:119:2:221",
+        "house:119:2:232",
+        "house:119:2:234",
+        "house:119:2:243",
+        "house:119:2:244",
+        "house:119:2:264",
+        "house:119:2:266",
+        "house:119:2:268",
+        "house:119:2:282",
+        "house:119:2:48",
+        "house:119:2:85"
+      ],
+      "episode_count": 32,
+      "episode_ids": [
+        "single-119-hamdt-235-2-243",
+        "single-119-hamdt-236-2-244",
+        "single-119-hamdt-252-2-264",
+        "single-119-hamdt-254-2-266",
+        "single-119-hamdt-256-2-268",
+        "single-119-hamdt-56-1-208",
+        "single-119-hamdt-57-1-209",
+        "single-119-hamdt-86-1-246",
+        "single-119-hamdt-88-1-248",
+        "single-119-hamdt-89-1-249",
+        "single-119-hamdt-93-1-255",
+        "single-119-hamdt-95-1-257",
+        "single-119-hamdt-99-1-244",
+        "single-119-hconres-108-2-232",
+        "single-119-hconres-38-2-85",
+        "single-119-hconres-40-2-114",
+        "single-119-hconres-64-1-346",
+        "single-119-hconres-68-2-48",
+        "single-119-hconres-75-2-170",
+        "single-119-hconres-84-2-201",
+        "single-119-hconres-86-2-199",
+        "single-119-hconres-89-2-282",
+        "single-119-hr-1608-1-286",
+        "single-119-hr-1689-2-120",
+        "single-119-hr-23-1-7",
+        "single-119-hr-2913-2-207",
+        "single-119-hr-3106-2-234",
+        "single-119-hr-3944-1-182",
+        "single-119-hr-8469-2-175",
+        "single-119-hr-9238-2-221",
+        "single-119-s-1071-1-320",
+        "single-119-s-4465-2-155"
+      ],
+      "semantic_source_ids": [
+        "notable-aumf-repeal-1991-2002",
+        "notable-fy2026-ndaa-package-opposition",
+        "notable-haiti-temporary-protected-status",
+        "notable-international-criminal-court-sanctions-opposition",
+        "notable-israel-foreign-military-financing-reduction",
+        "notable-taiwan-security-cooperation-funding",
+        "pattern-fisa-title-vii-extension-opposition",
+        "pattern-iran-war-powers-removal-support",
+        "pattern-jordan-assistance-restriction-opposition",
+        "pattern-lebanon-war-powers-removal-support",
+        "pattern-military-dod-sex-gender-restriction-opposition",
+        "pattern-terrorism-preparedness-support",
+        "pattern-ukraine-assistance-mixed",
+        "pattern-venezuela-war-powers-removal-support",
+        "synthesis-security-assistance-interpretive-boundary",
+        "synthesis-war-powers-cross-target-uniform-direction",
+        "trajectory-milcon-va-appropriations-direction-change"
+      ],
+      "surface": "issue_overview",
+      "title": "National security and foreign policy",
+      "wording_item_id": "wording:issue-overview:national-security-foreign:119",
+      "wording_item_subject_sha256": "557fd5a1d660de32cce2d101f22387c6db8b5d653dd87ccfcc450611e8827cc6"
+    },
+    {
+      "action_count": 10,
+      "action_ids": [
+        "house:119:1:244",
+        "house:119:1:346",
+        "house:119:2:114",
+        "house:119:2:170",
+        "house:119:2:199",
+        "house:119:2:201",
+        "house:119:2:232",
+        "house:119:2:282",
+        "house:119:2:48",
+        "house:119:2:85"
+      ],
+      "episode_count": 10,
+      "episode_ids": [
+        "single-119-hamdt-99-1-244",
+        "single-119-hconres-108-2-232",
+        "single-119-hconres-38-2-85",
+        "single-119-hconres-40-2-114",
+        "single-119-hconres-64-1-346",
+        "single-119-hconres-68-2-48",
+        "single-119-hconres-75-2-170",
+        "single-119-hconres-84-2-201",
+        "single-119-hconres-86-2-199",
+        "single-119-hconres-89-2-282"
+      ],
+      "semantic_source_ids": [
+        "synthesis-war-powers-cross-target-uniform-direction"
+      ],
+      "surface": "synthesis",
+      "title": "War Powers resolutions across three countries",
+      "wording_item_id": "wording:synthesis:war-powers",
+      "wording_item_subject_sha256": "441d2626c28a14b40f769fff4fcb55b1fa9b0b979ba63c7583b895eefefabdbe"
+    },
+    {
+      "action_count": 8,
+      "action_ids": [
+        "house:119:1:208",
+        "house:119:1:209",
+        "house:119:1:255",
+        "house:119:1:257",
+        "house:119:2:207",
+        "house:119:2:243",
+        "house:119:2:244",
+        "house:119:2:264"
+      ],
+      "episode_count": 8,
+      "episode_ids": [
+        "single-119-hamdt-235-2-243",
+        "single-119-hamdt-236-2-244",
+        "single-119-hamdt-252-2-264",
+        "single-119-hamdt-56-1-208",
+        "single-119-hamdt-57-1-209",
+        "single-119-hamdt-93-1-255",
+        "single-119-hamdt-95-1-257",
+        "single-119-hr-2913-2-207"
+      ],
+      "semantic_source_ids": [
+        "synthesis-security-assistance-interpretive-boundary"
+      ],
+      "surface": "synthesis",
+      "title": "Security assistance differed by country and proposal",
+      "wording_item_id": "wording:synthesis:security-assistance",
+      "wording_item_subject_sha256": "71c7a82b050cfcccf84924005d036d59a2c79c8adf04c82b9991fd6802ade23d"
+    },
+    {
+      "action_count": 2,
+      "action_ids": [
+        "house:119:2:155",
+        "house:119:2:221"
+      ],
+      "episode_count": 2,
+      "episode_ids": [
+        "single-119-hr-9238-2-221",
+        "single-119-s-4465-2-155"
+      ],
+      "semantic_source_ids": [
+        "pattern-fisa-title-vii-extension-opposition"
+      ],
+      "surface": "repeated_pattern",
+      "title": "FISA Title VII extensions",
+      "wording_item_id": "wording:pattern:fisa-title-vii",
+      "wording_item_subject_sha256": "c959f3531c3e5e85bb65e831059ebb71db4ca54b625471a8f40862f14f2b42ca"
+    },
+    {
+      "action_count": 5,
+      "action_ids": [
+        "house:119:2:114",
+        "house:119:2:170",
+        "house:119:2:199",
+        "house:119:2:282",
+        "house:119:2:85"
+      ],
+      "episode_count": 5,
+      "episode_ids": [
+        "single-119-hconres-38-2-85",
+        "single-119-hconres-40-2-114",
+        "single-119-hconres-75-2-170",
+        "single-119-hconres-86-2-199",
+        "single-119-hconres-89-2-282"
+      ],
+      "semantic_source_ids": [
+        "pattern-iran-war-powers-removal-support"
+      ],
+      "surface": "repeated_pattern",
+      "title": "Iran War Powers resolutions",
+      "wording_item_id": "wording:pattern:iran-war-powers",
+      "wording_item_subject_sha256": "f42d6f942ee945f516ae46cf914be88f35ab60db1a0b69bb1d0ffbdc7b300249"
+    },
+    {
+      "action_count": 2,
+      "action_ids": [
+        "house:119:2:201",
+        "house:119:2:232"
+      ],
+      "episode_count": 2,
+      "episode_ids": [
+        "single-119-hconres-108-2-232",
+        "single-119-hconres-84-2-201"
+      ],
+      "semantic_source_ids": [
+        "pattern-lebanon-war-powers-removal-support"
+      ],
+      "surface": "repeated_pattern",
+      "title": "Lebanon War Powers resolutions",
+      "wording_item_id": "wording:pattern:lebanon-war-powers",
+      "wording_item_subject_sha256": "af2bd380b9c7858729071e108cc21ea1e9673ccd99894750592992d18768e50e"
+    },
+    {
+      "action_count": 2,
+      "action_ids": [
+        "house:119:1:346",
+        "house:119:2:48"
+      ],
+      "episode_count": 2,
+      "episode_ids": [
+        "single-119-hconres-64-1-346",
+        "single-119-hconres-68-2-48"
+      ],
+      "semantic_source_ids": [
+        "pattern-venezuela-war-powers-removal-support"
+      ],
+      "surface": "repeated_pattern",
+      "title": "Venezuela War Powers resolutions",
+      "wording_item_id": "wording:pattern:venezuela-war-powers",
+      "wording_item_subject_sha256": "0372700df4625728b28d38bc9b20122f837e5b04edf29935fa197a97b8a4c0e4"
+    },
+    {
+      "action_count": 2,
+      "action_ids": [
+        "house:119:1:286",
+        "house:119:2:234"
+      ],
+      "episode_count": 2,
+      "episode_ids": [
+        "single-119-hr-1608-1-286",
+        "single-119-hr-3106-2-234"
+      ],
+      "semantic_source_ids": [
+        "pattern-terrorism-preparedness-support"
+      ],
+      "surface": "repeated_pattern",
+      "title": "Terrorism preparedness requirements",
+      "wording_item_id": "wording:pattern:terrorism-preparedness",
+      "wording_item_subject_sha256": "62a3965982d287fc20048e2e295bb3ae9e5215727940adb292d3ad2f184b670b"
+    },
+    {
+      "action_count": 4,
+      "action_ids": [
+        "house:119:1:209",
+        "house:119:1:255",
+        "house:119:2:207",
+        "house:119:2:264"
+      ],
+      "episode_count": 4,
+      "episode_ids": [
+        "single-119-hamdt-252-2-264",
+        "single-119-hamdt-57-1-209",
+        "single-119-hamdt-93-1-255",
+        "single-119-hr-2913-2-207"
+      ],
+      "semantic_source_ids": [
+        "pattern-ukraine-assistance-mixed"
+      ],
+      "surface": "repeated_pattern",
+      "title": "Ukraine assistance",
+      "wording_item_id": "wording:pattern:ukraine-assistance",
+      "wording_item_subject_sha256": "07b98c187d7ad3f8be978f05632bcb97c645f63c77d220643b8c812e1a9a80e9"
+    },
+    {
+      "action_count": 2,
+      "action_ids": [
+        "house:119:1:208",
+        "house:119:2:244"
+      ],
+      "episode_count": 2,
+      "episode_ids": [
+        "single-119-hamdt-236-2-244",
+        "single-119-hamdt-56-1-208"
+      ],
+      "semantic_source_ids": [
+        "pattern-jordan-assistance-restriction-opposition"
+      ],
+      "surface": "repeated_pattern",
+      "title": "Jordan assistance restrictions",
+      "wording_item_id": "wording:pattern:jordan-assistance",
+      "wording_item_subject_sha256": "96dcd066756ce86bfed7780c37864c2f35945aadc9103424e3a90cccc190f3e7"
+    },
+    {
+      "action_count": 5,
+      "action_ids": [
+        "house:119:1:246",
+        "house:119:1:248",
+        "house:119:1:249",
+        "house:119:2:266",
+        "house:119:2:268"
+      ],
+      "episode_count": 5,
+      "episode_ids": [
+        "single-119-hamdt-254-2-266",
+        "single-119-hamdt-256-2-268",
+        "single-119-hamdt-86-1-246",
+        "single-119-hamdt-88-1-248",
+        "single-119-hamdt-89-1-249"
+      ],
+      "semantic_source_ids": [
+        "pattern-military-dod-sex-gender-restriction-opposition"
+      ],
+      "surface": "repeated_pattern",
+      "title": "Military and DoD sex-and-gender amendments",
+      "wording_item_id": "wording:pattern:military-dod-sex-gender",
+      "wording_item_subject_sha256": "dab428b960cd66bb804f225726754cc185b7fb9119aae3aa9b8ddeb0e5e0df6b"
+    },
+    {
+      "action_count": 2,
+      "action_ids": [
+        "house:119:1:182",
+        "house:119:2:175"
+      ],
+      "episode_count": 2,
+      "episode_ids": [
+        "single-119-hr-3944-1-182",
+        "single-119-hr-8469-2-175"
+      ],
+      "semantic_source_ids": [
+        "trajectory-milcon-va-appropriations-direction-change"
+      ],
+      "surface": "trajectory",
+      "title": "Successive military construction and veterans appropriations packages",
+      "wording_item_id": "wording:trajectory:milcon-va",
+      "wording_item_subject_sha256": "feed6c8a5a0b367e9e6070a5da0b647581749f7948bd5056c25b9bfd41700ef6"
+    },
+    {
+      "action_count": 1,
+      "action_ids": [
+        "house:119:2:243"
+      ],
+      "episode_count": 1,
+      "episode_ids": [
+        "single-119-hamdt-235-2-243"
+      ],
+      "semantic_source_ids": [
+        "notable-israel-foreign-military-financing-reduction"
+      ],
+      "surface": "notable_choice",
+      "title": "Israel funding and Foreign Military Financing reduction",
+      "wording_item_id": "wording:notable:israel-fmf-reduction",
+      "wording_item_subject_sha256": "eb948e443eb83c8348d002c20cc36e6b7bf7ce50214b490ea0919ed7e59161d9"
+    },
+    {
+      "action_count": 1,
+      "action_ids": [
+        "house:119:1:244"
+      ],
+      "episode_count": 1,
+      "episode_ids": [
+        "single-119-hamdt-99-1-244"
+      ],
+      "semantic_source_ids": [
+        "notable-aumf-repeal-1991-2002"
+      ],
+      "surface": "notable_choice",
+      "title": "1991 and 2002 military-force authorizations",
+      "wording_item_id": "wording:notable:aumf-repeal",
+      "wording_item_subject_sha256": "567d6a5681e0ff47ba0f1cb28661d5eea87bbf2debda2b1a3ff630506cc55b18"
+    },
+    {
+      "action_count": 1,
+      "action_ids": [
+        "house:119:1:7"
+      ],
+      "episode_count": 1,
+      "episode_ids": [
+        "single-119-hr-23-1-7"
+      ],
+      "semantic_source_ids": [
+        "notable-international-criminal-court-sanctions-opposition"
+      ],
+      "surface": "notable_choice",
+      "title": "International Criminal Court sanctions bill",
+      "wording_item_id": "wording:notable:icc-sanctions",
+      "wording_item_subject_sha256": "d8a47c6ee56069357b171617750e5f5255c55af43f7e6171aedd4abf1d954366"
+    },
+    {
+      "action_count": 1,
+      "action_ids": [
+        "house:119:1:257"
+      ],
+      "episode_count": 1,
+      "episode_ids": [
+        "single-119-hamdt-95-1-257"
+      ],
+      "semantic_source_ids": [
+        "notable-taiwan-security-cooperation-funding"
+      ],
+      "surface": "notable_choice",
+      "title": "Taiwan security-cooperation funding",
+      "wording_item_id": "wording:notable:taiwan-funding",
+      "wording_item_subject_sha256": "daf93da3556d01bbcd12902eae35415aafb90098f83ce9b8aa52c012e1d1df9e"
+    },
+    {
+      "action_count": 1,
+      "action_ids": [
+        "house:119:2:120"
+      ],
+      "episode_count": 1,
+      "episode_ids": [
+        "single-119-hr-1689-2-120"
+      ],
+      "semantic_source_ids": [
+        "notable-haiti-temporary-protected-status"
+      ],
+      "surface": "notable_choice",
+      "title": "Temporary Protected Status for Haiti",
+      "wording_item_id": "wording:notable:haiti-tps",
+      "wording_item_subject_sha256": "cb0a65d381e72fd713f7fda19530c132eac3dea5544fdcdfb9d9f62499bc4e37"
+    },
+    {
+      "action_count": 1,
+      "action_ids": [
+        "house:119:1:320"
+      ],
+      "episode_count": 1,
+      "episode_ids": [
+        "single-119-s-1071-1-320"
+      ],
+      "semantic_source_ids": [
+        "notable-fy2026-ndaa-package-opposition"
+      ],
+      "surface": "notable_choice",
+      "title": "FY2026 defense authorization package",
+      "wording_item_id": "wording:notable:fy2026-ndaa",
+      "wording_item_subject_sha256": "4fda4679239e212b4a5739f9d3e2187705246c1b7f0afc78634e8b02e5a35867"
+    }
+  ],
+  "schema_version": "m11m_site_integration_review_packet_v1",
+  "scope_behavior": {
+    "118": "receipts_only_fail_closed",
+    "119": "candidate_available_with_explicit_server_preview_opt_in",
+    "all": "candidate_available_with_explicit_119th_congress_boundary",
+    "other": "request_validation_failure"
+  },
+  "screenshot_manifest": {
+    "artifact_id": "site-integration-screenshot-manifest:f000477:national_security_foreign:119:v1",
+    "capture_count": 5,
+    "file_sha256": "cff91062c5a5b7f613a6df6d26fa87b208baeb102fb2454a669fa058cc1b822e"
+  },
+  "semantic_proofs": {
+    "blocked_action_excluded": true,
+    "every_mapping_uses_accepted_semantic_content": true,
+    "mapped_actions_subset_of_m11d": true,
+    "mapped_episodes_subset_of_m11f": true,
+    "raw_vote_direction_inference": false,
+    "ukraine_public_mixed_label_suppressed": true
+  }
+}
