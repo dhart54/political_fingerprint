@@ -1,0 +1,90 @@
+{
+  "accepted": true,
+  "activation_authority_subject_sha256": "c5cafee8ba03719a070fe01f410f2e30c230eff94ed0a23adcc093c77adb21bb",
+  "artifact_id": "publication-activation-authority:f000477:national_security_foreign:119:v1",
+  "immutable": true,
+  "schema_version": "site_integration_publication_activation_authority_v1",
+  "sealed": true,
+  "subject": {
+    "accepted_m11m_binding": {
+      "artifact_id": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+      "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+      "file_sha256": "d2a7a65eb56f4be68b0d0477eeb8f75f793be5bbb458c86db13560b8eae35cc4",
+      "subject_sha256": "c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9ad04c5df"
+    },
+    "activation_write_set_binding": {
+      "artifact_id": "publication-activation-write-set:f000477:national_security_foreign:119:v1",
+      "write_set_subject_sha256": "af3aacffc69ec14003b7a32e02366cc9c642769d9551f4d103748c2dd204078f"
+    },
+    "authorizations": {
+      "deploy_exact_reviewed_runtime": true,
+      "exact_bounded_rollback": true,
+      "production_database_write": true,
+      "publication_activation": true,
+      "publication_registry_mutation": true
+    },
+    "candidate_preparation_authority_binding": {
+      "artifact_id": "production-eligibility-publication-authority:f000477:national_security_foreign:119:v1",
+      "authority_file_sha256": "c257e6935f53ff23083e161704094f98cbfd19b901a24710077df7c279abfd96",
+      "authority_subject_sha256": "6c0038c80a9b4802dc6451f3efc2ce1d7ce5a4e1b139f24f6bef830dddcc6e6f"
+    },
+    "congress": 119,
+    "decision": "approve_exact_publication_activation",
+    "decision_recorded_at_utc": "2026-08-15T03:05:42Z",
+    "issue_id": "NATIONAL_SECURITY_FOREIGN",
+    "member_bioguide_id": "F000477",
+    "preflight_binding": {
+      "preflight_subject_sha256": "ed814396f50e264ab0562510aa8df2c34fd53350cde7bc33a22450417dfe55f2",
+      "state_fingerprint_sha256": "2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db"
+    },
+    "presentation_content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+    "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+    "product_owner": "dhart54",
+    "publication_registry_target": {
+      "issue_id": "NATIONAL_SECURITY_FOREIGN",
+      "member_bioguide_id": "F000477",
+      "presentation_artifact_version": 1,
+      "presentation_natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1"
+    },
+    "reviewer": "ChatGPT",
+    "reviewer_authority": "publication_activation_review_authority_v1",
+    "rollback_binding": {
+      "delete_artifact_natural_keys": [
+        "site-integration-candidate:f000477:national_security_foreign:119:v1",
+        "site-integration-candidate:f000477:national_security_foreign:119:v1:publication-source-manifest",
+        "site-integration-candidate:f000477:national_security_foreign:119:v1:publication-validation"
+      ],
+      "delete_batch_key": "foushee_national_security_foreign_119_publication_activation_v1-b12a0939",
+      "delete_registry_primary_key": {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "member_bioguide_id": "F000477"
+      },
+      "delete_relationship_count": 2,
+      "justice_registry_row_unchanged": {
+        "artifact_id": 221,
+        "artifact_version": 1,
+        "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "member_bioguide_id": "F000477",
+        "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+        "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+        "publicly_active": true,
+        "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+      },
+      "restore_counts": {
+        "artifacts": 146,
+        "batches": 4,
+        "publication_registry": 1,
+        "relationships": 159
+      },
+      "restore_state_fingerprint_sha256": "2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db"
+    },
+    "runtime_binding": {
+      "deployed_commit": "5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38",
+      "health_commit": "5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38",
+      "health_proof_subject_sha256": "63925ad7c6bb8d28460554d459e953e9427b88ae55b04d25c53a20e1b6e0071a",
+      "reviewed_commit": "5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38",
+      "reviewed_runtime_manifest_sha256": "1c7762cb06730de22b37c79b8df8f09cd97ddfec8320e521fc95cbeb049c41a8"
+    }
+  }
+}

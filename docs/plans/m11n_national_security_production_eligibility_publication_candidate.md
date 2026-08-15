@@ -95,3 +95,18 @@ The full postcheck verifies the batch, all three artifacts, both relationships,
 the additive registry row and both authority bindings, global counts, Justice,
 and the fingerprint of every pre-existing non-M11N row. A second apply performs
 the same postcheck; rollback must restore the original complete fingerprint.
+
+## Production-specific ratification checkpoint
+
+PR #146 merged as `5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38`. Render's
+actual `/health` response reports that exact commit, and a fresh read-only
+production preflight bound to that proof retained the reviewed counts and state
+fingerprint with no M11N rows. Justice remains the sole active publication and
+National Security remains receipts-only for `119`, `all`, and `118`.
+
+The preparation authority, expected write set, and decision template were
+truthfully regenerated against those production-specific bindings. The proposed
+positive authority exists only inside an immutable ratification-candidate
+wrapper with `accepted=false` and `sealed=false`. No production database write or
+registry mutation may occur until ChatGPT ratifies the exact prospective subject
+digest and a separate sealed authority is subsequently materialized.

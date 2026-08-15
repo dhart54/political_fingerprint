@@ -8,9 +8,9 @@
   "activation_authority_template": {
     "accepted": false,
     "artifact_id": "human-publication-activation-decision-template:f000477:national_security_foreign:119:v1",
-    "file_sha256": "bec14ae3de6ebc01416cacb938deb2e396eabf598878fd9ee99ffbd090f43620",
+    "file_sha256": "e9f0d34dcf785bcd67d417cf21c5eca92cbe1cb10f2090630b50885dd3551b7f",
     "sealed": false,
-    "template_subject_sha256": "5b012ece419f52381367e8a17ed8aea07fc6f9f59ec74d0265e5799df679fc97"
+    "template_subject_sha256": "8f46af15f5535483a359c8aa21fed83b683133e3ffe5a91b7aac22c898b1b0b7"
   },
   "authorization_boundary": {
     "deployment": false,
@@ -24,18 +24,18 @@
   },
   "candidate_preparation_authority": {
     "artifact_id": "production-eligibility-publication-authority:f000477:national_security_foreign:119:v1",
-    "authority_subject_sha256": "2c784f3771ccbe8edc71d3799438a5ea2cd5ec54b3334321a2782fb0e2873f8b",
-    "file_sha256": "ea36c3c52944dc203f2b28ea382b0185d7db189a5953895f1d1d597f5c7679f2"
+    "authority_subject_sha256": "6c0038c80a9b4802dc6451f3efc2ce1d7ce5a4e1b139f24f6bef830dddcc6e6f",
+    "file_sha256": "c257e6935f53ff23083e161704094f98cbfd19b901a24710077df7c279abfd96"
   },
   "current_production_state": {
-    "captured_at_utc": "2026-08-14T02:55:53.271766+00:00",
+    "captured_at_utc": "2026-08-15T03:05:32.459110+00:00",
     "counts": {
       "artifacts": 146,
       "batches": 4,
       "publication_registry": 1,
       "relationships": 159
     },
-    "deployed_commit": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd",
+    "deployed_commit": "5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38",
     "selector_pre_activation": {
       "scopes": {
         "118": {
@@ -115,7 +115,7 @@
   },
   "milestone": "M11N",
   "required_review": "independent_chatgpt_mechanical_review",
-  "review_packet_subject_sha256": "067f4e650ee548993858eba811c4be99d2694bb919d39d992cd5eef95613833f",
+  "review_packet_subject_sha256": "0aea7c8f31854d1488263595b7de3d7661f5427a22eea3f1a0aef8bd2cbe76c9",
   "rollback": {
     "delete_artifact_natural_keys": [
       "site-integration-candidate:f000477:national_security_foreign:119:v1",
@@ -150,7 +150,7 @@
   "schema_version": "m11n_review_packet_v1",
   "write_set": {
     "artifact_id": "publication-activation-write-set:f000477:national_security_foreign:119:v1",
-    "file_sha256": "9fc6c39cc9b65c81774897544551068850d8cfac23bd5931694dd76000233fd3",
-    "write_set_subject_sha256": "55813a159573f17090e48848dfd5aee942754e2ac4776b4ce8976fbce5a9f5fe"
+    "file_sha256": "5bd0f662e9f512af817d02943490c7f04ed0bc3b1e3b10c949bdc017bb5c1c9e",
+    "write_set_subject_sha256": "af3aacffc69ec14003b7a32e02366cc9c642769d9551f4d103748c2dd204078f"
   }
 }

@@ -5,9 +5,9 @@ This is a content-bound publication-activation candidate. It does not authorize 
 - Exact base: `b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd`
 - Accepted M11M artifact: `site-integration-candidate:f000477:national_security_foreign:119:v1`
 - M11M subject: `c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9ad04c5df`
-- Preparation authority subject: `2c784f3771ccbe8edc71d3799438a5ea2cd5ec54b3334321a2782fb0e2873f8b`
-- Write-set subject: `55813a159573f17090e48848dfd5aee942754e2ac4776b4ce8976fbce5a9f5fe`
-- Unsealed activation template: `5b012ece419f52381367e8a17ed8aea07fc6f9f59ec74d0265e5799df679fc97`
+- Preparation authority subject: `6c0038c80a9b4802dc6451f3efc2ce1d7ce5a4e1b139f24f6bef830dddcc6e6f`
+- Write-set subject: `af3aacffc69ec14003b7a32e02366cc9c642769d9551f4d103748c2dd204078f`
+- Unsealed activation template: `8f46af15f5535483a359c8aa21fed83b683133e3ffe5a91b7aac22c898b1b0b7`
 
 ## Expected write envelope
 

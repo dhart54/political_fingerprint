@@ -229,16 +229,22 @@ The machine-readable authority is
   `b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd`. The accepted candidate is
   `site-integration-candidate:f000477:national_security_foreign:119:v1`, subject
   `c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9ad04c5df`.
-- M11N preserves its non-activating candidate-preparation authority and now
-  prepares a separate, deterministic, unsealed positive-activation decision
-  template. Public selection requires both the exact preparation authority and
-  a later sealed positive authority bound to the finalized write set, fresh
-  preflight, actual live runtime, production target, and exact rollback. No such
-  positive authority exists yet. The deterministic expected write set, rollback,
-  and drift proof remain pending independent ChatGPT review. National
-  Security is still receipts-only in every public scope, no production or
-  registry write has occurred, H.R. 8800 remains blocked and outside every
-  analytical finding, and Justice remains the only active publication.
+- M11N PR #146 head `dae0065b9bbdcc129d104a02e8d646c115802d54`
+  merged as `5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38`. After ChatGPT
+  ratified the exact positive activation structure, a freshness-only rebind
+  confirmed that same live runtime, the unchanged reviewed production target,
+  the exact `4 / 146 / 159 / 1` pre-state, and fingerprint
+  `2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db`.
+  The sealed authority subject is
+  `c5cafee8ba03719a070fe01f410f2e30c230eff94ed0a23adcc093c77adb21bb`.
+  Its bounded write applied on August 15, 2026 as batch 16 and produced exact
+  counts `5 / 149 / 161 / 2`; the idempotent re-check made no further writes.
+  National Security now selects the reviewed conclusion for `scope=119` and
+  `scope=all`, with `all` explicitly bounded to the 119th-Congress record;
+  `scope=118` remains receipts-only. Justice is byte/state-identical and active.
+  H.R. 8800 remains source-blocked, uninterpreted, a non-counting public control,
+  and outside all analytical findings. The immutable closeout receipt is
+  `docs/editorial/full_record_reviews/publication_activation_candidates/f000477_national_security_foreign_119_v1/production_activation_receipt.json`.
 
 The exact deletion, test-transfer, preservation, route, and validation record is
 `docs/editorial/editorial_hard_cutover_v1_receipt.json`.
