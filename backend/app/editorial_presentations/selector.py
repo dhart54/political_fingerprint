@@ -24,6 +24,10 @@ from .review_state_catalog import (
     public_review_state_entries,
     select_public_review_state,
 )
+from .site_publication import (
+    eligible_site_integration_candidate,
+    select_site_integration_public,
+)
 
 
 RECEIPTS_ONLY_BADGE = "Vote receipts"
@@ -232,10 +236,9 @@ def _noncounting_controls(artifact: dict[str, Any]) -> list[dict[str, Any]]:
                 }
             )
     identities = [item["canonical_action_id"] for item in controls]
-    if (
-        not all(isinstance(action_id, str) for action_id in identities)
-        or len(set(identities)) != len(identities)
-    ):
+    if not all(isinstance(action_id, str) for action_id in identities) or len(
+        set(identities)
+    ) != len(identities):
         return []
     return sorted(controls, key=lambda item: item["canonical_action_id"])
 
@@ -264,8 +267,7 @@ def _receipt_projections_agree(
         or set(by_action) != sample_action_ids
         or reviewed_action_ids != sample_action_ids | noncounting_control_ids
         or len(reviewed_action_ids) != review_state["total_recorded_actions"]
-        or len(noncounting_control_ids)
-        != review_state["procedural_context_actions"]
+        or len(noncounting_control_ids) != review_state["procedural_context_actions"]
         or not _display_action_ids(display) <= sample_action_ids
     ):
         return False
@@ -291,6 +293,7 @@ def select_public_presentations(
     member_bioguide_id: str,
     scope: str,
     review_states: Iterable[dict[str, Any]] | None = None,
+    allow_test_activation_authority: bool = False,
 ) -> dict[str, Any]:
     """Return only active eligible display fields, with supplied fallbacks."""
 
@@ -302,6 +305,27 @@ def select_public_presentations(
     review_states = list(review_states)
     result = {issue_id: _fallback(issue_id, scope) for issue_id in SUPPORTED_ISSUES}
     for row in rows:
+        site_candidate = eligible_site_integration_candidate(
+            row,
+            member_bioguide_id=member_bioguide_id,
+            allow_test_authority=allow_test_activation_authority,
+        )
+        if site_candidate is not None:
+            projected = select_site_integration_public(
+                site_candidate,
+                legislator_id=legislator_id,
+                member_bioguide_id=member_bioguide_id,
+                scope=scope,
+            )
+            site_issue = site_candidate["subject"]["issue_id"]
+            selected = next(
+                item
+                for item in projected["presentations"]
+                if item["issue_id"] == site_issue
+            )
+            if selected["tier"] != "receipts_only":
+                result[site_issue] = selected
+            continue
         artifact = _eligible_row(
             row,
             member_bioguide_id=member_bioguide_id,

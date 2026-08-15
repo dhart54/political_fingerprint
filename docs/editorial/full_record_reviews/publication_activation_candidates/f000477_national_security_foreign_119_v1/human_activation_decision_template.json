@@ -1,0 +1,98 @@
+{
+  "accepted": false,
+  "artifact_id": "human-publication-activation-decision-template:f000477:national_security_foreign:119:v1",
+  "immutable": true,
+  "schema_version": "m11n_publication_activation_decision_template_v1",
+  "sealed": false,
+  "subject": {
+    "completion_required_after_live_runtime_deployment": {
+      "authorizations": {
+        "deploy_exact_reviewed_runtime": null,
+        "exact_bounded_rollback": null,
+        "production_database_write": null,
+        "publication_activation": null,
+        "publication_registry_mutation": null
+      },
+      "decision": null,
+      "decision_recorded_at_utc": null,
+      "deployed_runtime_commit": null,
+      "fresh_preflight_state_fingerprint_sha256": null,
+      "fresh_preflight_subject_sha256": null,
+      "live_health_proof_subject_sha256": null,
+      "reviewed_runtime_commit": null,
+      "reviewer": null
+    },
+    "decision_options": [
+      "approve_exact_publication_activation",
+      "reject_publication_activation"
+    ],
+    "fixed_bindings": {
+      "accepted_m11m_binding": {
+        "artifact_id": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+        "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+        "file_sha256": "d2a7a65eb56f4be68b0d0477eeb8f75f793be5bbb458c86db13560b8eae35cc4",
+        "subject_sha256": "c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9ad04c5df"
+      },
+      "activation_write_set_binding": {
+        "artifact_id": "publication-activation-write-set:f000477:national_security_foreign:119:v1",
+        "write_set_subject_sha256": "55813a159573f17090e48848dfd5aee942754e2ac4776b4ce8976fbce5a9f5fe"
+      },
+      "candidate_preflight_binding": {
+        "preflight_subject_sha256": "ff2fae0eb17610584f8b31dbff178231e62c163645b2275a1715b2384945d7da",
+        "state_fingerprint_sha256": "2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db"
+      },
+      "candidate_preparation_authority_binding": {
+        "artifact_id": "production-eligibility-publication-authority:f000477:national_security_foreign:119:v1",
+        "authority_file_sha256": "ea36c3c52944dc203f2b28ea382b0185d7db189a5953895f1d1d597f5c7679f2",
+        "authority_subject_sha256": "2c784f3771ccbe8edc71d3799438a5ea2cd5ec54b3334321a2782fb0e2873f8b"
+      },
+      "congress": 119,
+      "exact_bounded_rollback": {
+        "delete_artifact_natural_keys": [
+          "site-integration-candidate:f000477:national_security_foreign:119:v1",
+          "site-integration-candidate:f000477:national_security_foreign:119:v1:publication-source-manifest",
+          "site-integration-candidate:f000477:national_security_foreign:119:v1:publication-validation"
+        ],
+        "delete_batch_key": "foushee_national_security_foreign_119_publication_activation_v1-b12a0939",
+        "delete_registry_primary_key": {
+          "issue_id": "NATIONAL_SECURITY_FOREIGN",
+          "member_bioguide_id": "F000477"
+        },
+        "delete_relationship_count": 2,
+        "justice_registry_row_unchanged": {
+          "artifact_id": 221,
+          "artifact_version": 1,
+          "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+          "issue_id": "JUSTICE_PUBLIC_SAFETY",
+          "member_bioguide_id": "F000477",
+          "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+          "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+          "publicly_active": true,
+          "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+        },
+        "restore_counts": {
+          "artifacts": 146,
+          "batches": 4,
+          "publication_registry": 1,
+          "relationships": 159
+        },
+        "restore_state_fingerprint_sha256": "2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db"
+      },
+      "issue_id": "NATIONAL_SECURITY_FOREIGN",
+      "member_bioguide_id": "F000477",
+      "presentation_content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+      "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+      "publication_registry_target": {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "member_bioguide_id": "F000477",
+        "presentation_artifact_version": 1,
+        "presentation_natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1"
+      },
+      "reviewed_runtime_manifest_sha256": "1c7762cb06730de22b37c79b8df8f09cd97ddfec8320e521fc95cbeb049c41a8"
+    },
+    "product_owner": "dhart54",
+    "ratification_boundary": "This unsealed template cannot authorize selection or mutation. A fresh live-runtime health proof and production preflight must be filled and the exact sealed authority mechanically ratified before apply.",
+    "required_reviewer_authority": "publication_activation_review_authority_v1"
+  },
+  "template_subject_sha256": "5b012ece419f52381367e8a17ed8aea07fc6f9f59ec74d0265e5799df679fc97"
+}

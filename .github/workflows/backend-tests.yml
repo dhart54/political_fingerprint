@@ -52,6 +52,7 @@ jobs:
           python scripts/validate_public_wording_decision_implementation_v1.py --authority docs/editorial/full_record_reviews/public_wording_implementations/f000477_national_security_foreign_119_v1/human_public_wording_authority.json --implementation docs/editorial/full_record_reviews/public_wording_implementations/f000477_national_security_foreign_119_v1/reviewed_wording_decision_implementation.json --package docs/editorial/full_record_reviews/public_wording_candidates/f000477_national_security_foreign_119_v1/public_wording_candidate_package.json --decision-template docs/editorial/full_record_reviews/public_wording_candidates/f000477_national_security_foreign_119_v1/human_public_wording_decision_template.json --candidate-parity docs/editorial/full_record_reviews/public_wording_candidates/f000477_national_security_foreign_119_v1/parity_manifest.json
           python scripts/validate_m11l_national_security_public_wording_acceptance.py
           python backend/scripts/build_m11m_national_security_site_integration.py --check
+          python backend/scripts/foushee_national_security_publication_activation.py build --check
           python scripts/validate_foushee_justice_semantic_ir_m5r1.py
           python scripts/verify_foushee_justice_launch_review_m6.py
           python scripts/verify_foushee_justice_launch_ratification_m7.py
@@ -74,6 +75,7 @@ jobs:
           backend/tests/test_full_record_public_wording_candidates.py
           backend/tests/test_full_record_public_wording_decisions.py
           backend/tests/test_m11m_national_security_site_integration.py
+          backend/tests/test_m11n_national_security_publication_activation.py
           backend/tests/test_full_issue_universe_authority.py
           backend/tests/test_full_issue_interpretation_source_readiness.py
           backend/tests/test_action_interpretation_decision_implementation_v1.py
@@ -137,6 +139,7 @@ jobs:
     env:
       DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_activation
       EDITORIAL_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_activation
+      M11N_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_m11n_activation
       PGPASSWORD: postgres
     steps:
       - uses: actions/checkout@v4
@@ -169,6 +172,16 @@ jobs:
           python -m pytest -q
           backend/tests/test_api_editorial_presentations.py
           backend/tests/test_foushee_justice_publication_http_proof.py
+
+      - name: Prove M11N authority closure, exact graph, idempotency, drift, and rollback
+        run: |
+          createdb -h 127.0.0.1 -U postgres pf_m11n_activation
+          python backend/scripts/prepare_editorial_artifact_disposable.py \
+            --database-url-env M11N_DISPOSABLE_DATABASE_URL \
+            --seed-foushee-activation-baseline
+          pytest -q \
+            backend/tests/test_m11n_national_security_publication_activation_postgres.py \
+            -rs
 
       - name: Build fresh disposable backup evidence
         shell: bash
