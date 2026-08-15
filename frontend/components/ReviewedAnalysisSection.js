@@ -63,6 +63,7 @@ export default function ReviewedAnalysisSection({
               item={{
                 actionCount: overview.action_ids.length,
                 actionIds: overview.action_ids,
+                evidence_count_label: overview.evidence_count_label,
                 heading: overview.public_title || overview.title,
                 wording_item_id: overview.wording_item_id,
               }}
@@ -71,6 +72,10 @@ export default function ReviewedAnalysisSection({
           </div>
         ) : null}
       </div>
+
+      <p className="mt-6 max-w-4xl text-sm leading-6 text-stone-600">
+        Support and Opposition describe the policy choice; Yea and Nay show the recorded vote.
+      </p>
 
       {syntheses.length ? (
         <FindingSection
@@ -91,7 +96,7 @@ export default function ReviewedAnalysisSection({
 
       {trajectories.length ? (
         <FindingSection
-          heading="A limiting trajectory"
+          heading="A change over time"
           items={trajectories}
           onSeeActions={onSeeActions}
         />
@@ -115,7 +120,7 @@ export default function ReviewedAnalysisSection({
       ) : null}
 
       <p className="mt-6 max-w-4xl text-sm leading-6 text-stone-600">
-        Based on reviewed recorded actions; this does not infer motive, ideology, character, future behavior, or voting advice.
+        Based on recorded actions in this issue; this does not infer motive, ideology, character, future behavior, or voting advice.
       </p>
 
       {presentation.limitations?.length ? (
@@ -235,6 +240,7 @@ function SupportingVotesButton({ item, onSeeActions }) {
       className="justify-self-start font-semibold text-teal-900 underline decoration-teal-800/30 underline-offset-4 sm:justify-self-end"
       onClick={() => onSeeActions(item.actionIds, item.heading, {
         direction: item.direction,
+        evidenceCountLabel: item.evidence_count_label || fallbackAccounting(item),
         episodeCount: item.episodeCount,
         showDirection: item.showDirection,
         statusLabel: item.statusLabel,
@@ -249,13 +255,7 @@ function SupportingVotesButton({ item, onSeeActions }) {
 }
 
 function fallbackAccounting(pattern) {
-  const voteText = `${pattern.actionCount} ${pattern.actionCount === 1 ? "vote" : "votes"}`;
-  const episodeText = pattern.episodeCount
-    ? `${pattern.episodeCount} ${pattern.episodeCount === 1 ? "episode" : "episodes"}`
-    : "episode count unavailable";
-  return pattern.direction === "mixed"
-    ? `${voteText} within ${episodeText}`
-    : `${voteText} · ${episodeText}`;
+  return `${pattern.actionCount} ${pattern.actionCount === 1 ? "vote" : "votes"}`;
 }
 
 function additionalConclusionText(teaser, conclusion) {

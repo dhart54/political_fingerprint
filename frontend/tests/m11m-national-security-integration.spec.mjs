@@ -28,7 +28,10 @@ test("real selected-issue path renders all 18 governed public wording items", as
 
   await expect(page.locator("#selected-issue-heading")).toHaveText("National Security & Foreign Policy");
   await expect(page.locator("#issue-summary")).toContainText("82 recorded actions currently visible");
-  await expect(page.locator("#issue-summary")).toContainText("82 votes across 81 legislative episodes");
+  await expect(page.locator("#issue-summary")).toContainText(
+    "82 recorded actions in scope · 15 findings supported by 32 votes",
+  );
+  await expect(page.locator("#issue-summary")).not.toContainText("legislative episode");
 
   const analysis = page.getByTestId("reviewed-analysis");
   await expect(analysis).toContainText(
@@ -37,7 +40,13 @@ test("real selected-issue path renders all 18 governed public wording items", as
   await expect(analysis).toContainText("15 findings · 32 votes");
   await expect(analysis.getByRole("heading", { name: "What the record shows across choices" })).toBeVisible();
   await expect(analysis.getByRole("heading", { name: "Patterns in this issue record" })).toBeVisible();
-  await expect(analysis.getByRole("heading", { name: "A limiting trajectory" })).toBeVisible();
+  await expect(analysis.getByRole("heading", { name: "A change over time" })).toBeVisible();
+  await expect(analysis).toContainText(
+    "Support and Opposition describe the policy choice; Yea and Nay show the recorded vote.",
+  );
+  await expect(analysis).toContainText(
+    "Based on recorded actions in this issue; this does not infer motive, ideology, character, future behavior, or voting advice.",
+  );
   await expect(analysis.locator("article")).toHaveCount(17);
   await expect(analysis).not.toContainText("Bounded finding");
 
@@ -77,6 +86,10 @@ test("real selected-issue path renders all 18 governed public wording items", as
   });
   await expect(trajectory).toContainText("Mixed");
   await expect(trajectory).toContainText("±");
+  await expect(trajectory).toContainText("2 votes · 2 annual packages");
+
+  const fisa = analysis.locator("article").filter({ hasText: "FISA Title VII extensions" });
+  await expect(fisa).toContainText("2 votes · 2 bills");
 
   await analysis.getByText("Other notable choices · 6").click();
   for (const title of [
@@ -99,7 +112,7 @@ test("every finding links to exact supporting votes and H.R. 8800 stays outside"
   const analysis = page.getByTestId("reviewed-analysis");
   const ukraine = analysis.locator("article").filter({ hasText: "Ukraine assistance" });
   await ukraine.getByRole("button", { name: /View supporting votes/ }).click();
-  await expect(page.locator(".pattern-strip")).toContainText("4 matching votes");
+  await expect(page.locator(".pattern-strip")).toContainText("4 votes · 4 assistance choices");
   await expect(page.locator(".pattern-strip")).not.toContainText("Mixed");
   await expect(page.locator(".pattern-strip")).not.toContainText("±");
   await expect(page.locator(".pattern-strip")).not.toContainText("Bounded finding");
@@ -112,7 +125,7 @@ test("every finding links to exact supporting votes and H.R. 8800 stays outside"
   });
   await expect(warPowers).toContainText("9 votes \u00b7 9 country-specific resolutions");
   await warPowers.getByRole("button", { name: /View supporting votes/ }).click();
-  await expect(page.locator(".pattern-strip")).toContainText("9 matching votes");
+  await expect(page.locator(".pattern-strip")).toContainText("9 votes · 9 country-specific resolutions");
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(9);
   await expect(page.locator('[data-canonical-action-id="house:119:1:244"]')).toHaveCount(0);
   for (const actionId of [
@@ -154,6 +167,39 @@ test("scope all stays explicitly bounded and 118 fails closed", async ({ page })
   await page.getByRole("button", { name: "118th Congress" }).click();
   await expect(page).toHaveURL(/scope=118/);
   await expect(page.getByTestId("reviewed-analysis")).toHaveCount(0);
+});
+
+test("fresh direct issue links land once at the selected summary and respect reduced motion", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.addInitScript(() => {
+    window.__directIssueScrolls = [];
+    const original = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function patched(options) {
+      window.__directIssueScrolls.push({ id: this.id, behavior: options?.behavior || null });
+      return original.call(this, options);
+    };
+  });
+  await page.goto(selectedPath);
+  await expect(page.locator("#selected-issue-heading")).toBeFocused();
+  await expect.poll(() => page.evaluate(() => window.__directIssueScrolls)).toEqual([
+    { id: "issue-summary", behavior: "auto" },
+  ]);
+  await page.waitForTimeout(100);
+  expect(await page.evaluate(() => window.__directIssueScrolls)).toHaveLength(1);
+});
+
+test("an explicit hash anchor is not overridden by direct issue landing", async ({ page }) => {
+  await page.addInitScript(() => {
+    window.__issueSummaryScrolls = 0;
+    const original = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function patched(options) {
+      if (this.id === "issue-summary") window.__issueSummaryScrolls += 1;
+      return original.call(this, options);
+    };
+  });
+  await page.goto(`${selectedPath}#vote-record`);
+  await expect(page.getByRole("heading", { name: "Vote record" })).toBeVisible();
+  expect(await page.evaluate(() => window.__issueSummaryScrolls)).toBe(0);
 });
 
 for (const width of [1440, 1024, 390, 320]) {

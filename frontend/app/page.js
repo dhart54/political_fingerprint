@@ -22,6 +22,7 @@ const EMPTY_ROUTE = {
 export default function HomePage() {
   const [routeReady, setRouteReady] = useState(false);
   const [route, setRoute] = useState(EMPTY_ROUTE);
+  const [routeNavigation, setRouteNavigation] = useState("initial");
   const [legislatorState, setLegislatorState] = useState({
     status: "idle",
     legislator: null,
@@ -30,14 +31,16 @@ export default function HomePage() {
   const [finderOpen, setFinderOpen] = useState(false);
 
   useEffect(() => {
-    function syncFromLocation() {
+    function syncFromLocation(navigation = "history") {
       setRoute(parsePassARouteState(window.location.search));
+      setRouteNavigation(navigation);
       setFinderOpen(false);
       setRouteReady(true);
     }
-    syncFromLocation();
-    window.addEventListener("popstate", syncFromLocation);
-    return () => window.removeEventListener("popstate", syncFromLocation);
+    syncFromLocation("initial");
+    const handlePopState = () => syncFromLocation("history");
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
   useEffect(() => {
@@ -90,6 +93,7 @@ export default function HomePage() {
     const url = buildPassAUrl(window.location.href, resolved);
     window.history[replace ? "replaceState" : "pushState"]({}, "", url);
     setRoute(resolved);
+    setRouteNavigation("user");
   }
 
   function selectRepresentative(legislator) {
@@ -177,6 +181,7 @@ export default function HomePage() {
               scope={route.scope}
             />
             <RepresentativeExperience
+              directIssueLanding={routeNavigation === "initial" && Boolean(route.issue)}
               legislator={legislator}
               onSelectIssue={(issue) => navigate({ issue })}
               scope={route.scope}

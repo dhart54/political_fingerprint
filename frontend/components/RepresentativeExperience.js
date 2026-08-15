@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import IssueDetail from "./IssueDetail";
 import IssueDiscoveryControls from "./IssueDiscoveryControls";
@@ -23,6 +23,7 @@ import {
 } from "../lib/frontendPassA.mjs";
 
 export default function RepresentativeExperience({
+  directIssueLanding = false,
   fixtureData = null,
   legislator,
   onSelectIssue,
@@ -30,6 +31,8 @@ export default function RepresentativeExperience({
   selectedIssue,
 }) {
   const [mode, setMode] = useState("recommended");
+  const initialLandingHandled = useRef(false);
+  const movedBeforeInitialLanding = useRef(false);
   const [state, setState] = useState({
     status: "loading",
     positions: null,
@@ -117,6 +120,63 @@ export default function RepresentativeExperience({
       memberBioguideId: legislator.bioguide_id,
     },
   );
+
+  useEffect(() => {
+    if (!directIssueLanding || initialLandingHandled.current) {
+      return undefined;
+    }
+    const markMoved = () => {
+      movedBeforeInitialLanding.current = true;
+    };
+    const movementKeys = new Set([
+      "ArrowDown", "ArrowUp", "End", "Home", "PageDown", "PageUp", " ",
+    ]);
+    const markKeyboardMove = (event) => {
+      if (movementKeys.has(event.key)) {
+        markMoved();
+      }
+    };
+    window.addEventListener("wheel", markMoved, { passive: true });
+    window.addEventListener("touchmove", markMoved, { passive: true });
+    window.addEventListener("pointerdown", markMoved, { passive: true });
+    window.addEventListener("keydown", markKeyboardMove);
+    return () => {
+      window.removeEventListener("wheel", markMoved);
+      window.removeEventListener("touchmove", markMoved);
+      window.removeEventListener("pointerdown", markMoved);
+      window.removeEventListener("keydown", markKeyboardMove);
+    };
+  }, [directIssueLanding]);
+
+  useEffect(() => {
+    if (
+      !directIssueLanding
+      || initialLandingHandled.current
+      || movedBeforeInitialLanding.current
+      || window.scrollY > 24
+      || state.status !== "ready"
+      || !selectedRow
+    ) {
+      return;
+    }
+    initialLandingHandled.current = true;
+    if (window.location.hash) {
+      return;
+    }
+    window.requestAnimationFrame(() => {
+      document.getElementById("issue-summary")?.scrollIntoView({
+        behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+        block: "start",
+      });
+      window.requestAnimationFrame(() => {
+        document.getElementById("selected-issue-heading")?.focus({
+          preventScroll: true,
+        });
+      });
+    });
+  }, [directIssueLanding, selectedRow, state.status]);
 
   function selectIssue(issue) {
     onSelectIssue(issue);

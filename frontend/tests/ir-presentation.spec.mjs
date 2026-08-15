@@ -38,7 +38,7 @@ test("exact-action control highlights only supplied actions and keeps full ledge
   }).click();
   await expect(page.getByRole("heading", { name: "Vote record" })).toBeFocused();
   await expect(page.locator(".pattern-strip")).toBeVisible();
-  await expect(page.getByText("3 matching votes", { exact: true })).toBeVisible();
+  await expect(page.locator(".pattern-strip")).toContainText("3 votes");
   await expect(page.locator('[data-canonical-action-id="house:119:1:32"]')).toBeVisible();
   await page.getByRole("button", { name: /Show all 7 votes/ }).click();
   await expect(page.getByRole("button", { name: "All", exact: true })).toHaveAttribute("aria-pressed", "true");

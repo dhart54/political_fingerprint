@@ -27,6 +27,11 @@ const presentation = {
     direction: "opposition",
     action_ids: ["house:119:2:1", "house:119:2:2"],
   }],
+  policy_trajectories: [{ proposition_id: "trajectory-1" }],
+  notable_choices: [{ proposition_id: "choice-1" }],
+  evidence_metadata: {
+    display_action_ids: ["house:119:2:1", "house:119:2:2"],
+  },
 };
 
 test("selected issue model keeps all-Congress evidence distinct from 119th interpretation", () => {
@@ -42,6 +47,8 @@ test("selected issue model keeps all-Congress evidence distinct from 119th inter
   assert.equal(model.interpretation.congressLabel, "119th Congress");
   assert.equal(model.interpretation.actionCount, 37);
   assert.equal(model.interpretation.episodeCount, 32);
+  assert.equal(model.interpretation.findingCount, 3);
+  assert.equal(model.interpretation.supportingVoteCount, 2);
   assert.equal(model.scopesAlign, false);
 });
 

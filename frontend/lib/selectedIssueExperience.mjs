@@ -33,11 +33,22 @@ export function buildSelectedIssueModel({ presentation, rows = [], scope = "all"
           type: reviewTypeLabel(reviewState.review_scope),
           actionCount: nonNegativeNumber(reviewState.total_recorded_actions),
           episodeCount: nonNegativeNumber(reviewState.complete_episode_count),
+          findingCount: findingCount(presentation),
+          supportingVoteCount: uniqueStrings(
+            presentation?.evidence_metadata?.display_action_ids,
+          ).length,
           congresses,
         }
       : null,
     scopesAlign,
   };
+}
+
+function findingCount(presentation) {
+  return ["repeated_patterns", "policy_trajectories", "notable_choices"]
+    .reduce((count, field) => (
+      count + (Array.isArray(presentation?.[field]) ? presentation[field].length : 0)
+    ), 0);
 }
 
 export function buildPatternIndex(presentation, rows = []) {

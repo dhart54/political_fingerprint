@@ -248,9 +248,8 @@ function SelectedPatternStrip({ finding, matchCount, onClear, total }) {
     ? finding.statusLabel || formatDirection(direction)
     : null;
   const subject = patternSubject(finding?.label, direction);
-  const accounting = direction === "mixed" && finding?.episodeCount
-    ? `${matchCount} votes within ${finding.episodeCount} ${finding.episodeCount === 1 ? "legislative episode" : "legislative episodes"}`
-    : `${matchCount} matching ${matchCount === 1 ? "vote" : "votes"}`;
+  const accounting = finding?.evidenceCountLabel
+    || `${matchCount} matching ${matchCount === 1 ? "vote" : "votes"}`;
   return (
     <div className={`pattern-strip pattern-strip-${direction || "bounded"} mt-4 flex flex-wrap items-center justify-between gap-3 px-4 py-3`}>
       <div className={`flex min-w-0 items-center gap-3 pattern-${direction || "bounded"}`}>
