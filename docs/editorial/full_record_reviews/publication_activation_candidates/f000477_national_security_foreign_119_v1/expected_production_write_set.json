@@ -6109,8 +6109,8 @@
   ],
   "authority_binding": {
     "artifact_id": "production-eligibility-publication-authority:f000477:national_security_foreign:119:v1",
-    "authority_file_sha256": "ea36c3c52944dc203f2b28ea382b0185d7db189a5953895f1d1d597f5c7679f2",
-    "authority_subject_sha256": "2c784f3771ccbe8edc71d3799438a5ea2cd5ec54b3334321a2782fb0e2873f8b"
+    "authority_file_sha256": "03c200d594d00617c3755c2e028cccda2248d5dae306e5c140ebe9d69a9e367c",
+    "authority_subject_sha256": "4f7150c95dc290dae03425e1436e34ce9a2f62b94421fe5ae736a4c6e46521bf"
   },
   "bundle_id": "foushee_national_security_foreign_119_publication_activation_v1",
   "deterministic_batch_key": "foushee_national_security_foreign_119_publication_activation_v1-b12a0939",
@@ -6141,10 +6141,14 @@
       "publication_registry": 1,
       "relationships": 159
     },
-    "deployed_commit": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd",
-    "preflight_subject_sha256": "ff2fae0eb17610584f8b31dbff178231e62c163645b2275a1715b2384945d7da",
-    "production_target_identity_sha256": null,
-    "runtime_health_proof_binding": null,
+    "deployed_commit": "5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38",
+    "preflight_subject_sha256": "820b84eb29cc090acd8ab048740ae526d0b5a589053d6b22f682d85d7a7dd197",
+    "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+    "runtime_health_proof_binding": {
+      "deployed_commit": "5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38",
+      "reviewed_runtime_manifest_sha256": "1c7762cb06730de22b37c79b8df8f09cd97ddfec8320e521fc95cbeb049c41a8",
+      "runtime_health_proof_subject_sha256": "026fff02b78d73c7799156a714b67808191ae834b3af84173d683afbbedce4d7"
+    },
     "state_fingerprint_sha256": "2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db"
   },
   "production_write_authorized": false,
@@ -6182,15 +6186,15 @@
       },
       "activation_bundle_id": "foushee_national_security_foreign_119_publication_activation_v1",
       "active_artifact_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
-      "authority_file_sha256": "ea36c3c52944dc203f2b28ea382b0185d7db189a5953895f1d1d597f5c7679f2",
-      "authority_subject_sha256": "2c784f3771ccbe8edc71d3799438a5ea2cd5ec54b3334321a2782fb0e2873f8b",
+      "authority_file_sha256": "03c200d594d00617c3755c2e028cccda2248d5dae306e5c140ebe9d69a9e367c",
+      "authority_subject_sha256": "4f7150c95dc290dae03425e1436e34ce9a2f62b94421fe5ae736a4c6e46521bf",
       "candidate_preparation_authority_binding": {
         "artifact_id": "production-eligibility-publication-authority:f000477:national_security_foreign:119:v1",
-        "authority_file_sha256": "ea36c3c52944dc203f2b28ea382b0185d7db189a5953895f1d1d597f5c7679f2",
-        "authority_subject_sha256": "2c784f3771ccbe8edc71d3799438a5ea2cd5ec54b3334321a2782fb0e2873f8b"
+        "authority_file_sha256": "03c200d594d00617c3755c2e028cccda2248d5dae306e5c140ebe9d69a9e367c",
+        "authority_subject_sha256": "4f7150c95dc290dae03425e1436e34ce9a2f62b94421fe5ae736a4c6e46521bf"
       },
       "preflight_binding": {
-        "preflight_subject_sha256": "ff2fae0eb17610584f8b31dbff178231e62c163645b2275a1715b2384945d7da",
+        "preflight_subject_sha256": "820b84eb29cc090acd8ab048740ae526d0b5a589053d6b22f682d85d7a7dd197",
         "state_fingerprint_sha256": "2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db"
       },
       "presentation_artifact_version": 1,
@@ -6198,7 +6202,7 @@
       "production_eligibility_publication_authority": {
         "accepted": true,
         "artifact_id": "production-eligibility-publication-authority:f000477:national_security_foreign:119:v1",
-        "authority_subject_sha256": "2c784f3771ccbe8edc71d3799438a5ea2cd5ec54b3334321a2782fb0e2873f8b",
+        "authority_subject_sha256": "4f7150c95dc290dae03425e1436e34ce9a2f62b94421fe5ae736a4c6e46521bf",
         "immutable": true,
         "schema_version": "site_integration_production_eligibility_publication_authority_v1",
         "subject": {
@@ -6221,8 +6225,8 @@
           },
           "congress": 119,
           "current_production_preflight_binding": {
-            "deployed_commit": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd",
-            "preflight_subject_sha256": "ff2fae0eb17610584f8b31dbff178231e62c163645b2275a1715b2384945d7da",
+            "deployed_commit": "5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38",
+            "preflight_subject_sha256": "820b84eb29cc090acd8ab048740ae526d0b5a589053d6b22f682d85d7a7dd197",
             "state_fingerprint_sha256": "2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db"
           },
           "decision": "approve_production_eligibility_and_publication_activation_candidate",
@@ -6374,5 +6378,5 @@
     "registry_updates": 0,
     "relationship_inserts": 2
   },
-  "write_set_subject_sha256": "55813a159573f17090e48848dfd5aee942754e2ac4776b4ce8976fbce5a9f5fe"
+  "write_set_subject_sha256": "4ce3a83ae84fbc544d1ffe21b6ee8424784094aabaef5b67879942e1f720341c"
 }

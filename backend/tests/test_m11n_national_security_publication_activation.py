@@ -152,7 +152,7 @@ def _row(
 def test_m11n_regeneration_is_deterministic() -> None:
     result = build(check=True)
     assert result["authority"]["authority_subject_sha256"] == (
-        "2c784f3771ccbe8edc71d3799438a5ea2cd5ec54b3334321a2782fb0e2873f8b"
+        "4f7150c95dc290dae03425e1436e34ce9a2f62b94421fe5ae736a4c6e46521bf"
     )
     assert (
         result["write_set"]["write_set_subject_sha256"]

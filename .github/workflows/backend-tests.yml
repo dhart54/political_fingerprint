@@ -53,6 +53,7 @@ jobs:
           python scripts/validate_m11l_national_security_public_wording_acceptance.py
           python backend/scripts/build_m11m_national_security_site_integration.py --check
           python backend/scripts/foushee_national_security_publication_activation.py build --check
+          python scripts/validate_m11n_publication_activation_ratification_candidate.py
           python scripts/validate_foushee_justice_semantic_ir_m5r1.py
           python scripts/verify_foushee_justice_launch_review_m6.py
           python scripts/verify_foushee_justice_launch_ratification_m7.py

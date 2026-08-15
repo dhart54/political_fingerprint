@@ -234,8 +234,15 @@ The machine-readable authority is
   template. Public selection requires both the exact preparation authority and
   a later sealed positive authority bound to the finalized write set, fresh
   preflight, actual live runtime, production target, and exact rollback. No such
-  positive authority exists yet. The deterministic expected write set, rollback,
-  and drift proof remain pending independent ChatGPT review. National
+  positive authority exists yet. PR #146 head
+  `dae0065b9bbdcc129d104a02e8d646c115802d54` merged as
+  `5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38`, and production `/health`
+  reports that exact runtime. A fresh read-only preflight retained the reviewed
+  `4 / 146 / 159 / 1` counts and
+  `2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db`
+  fingerprint with no M11N target rows. The finalized preparation package and
+  non-authorizing positive-activation ratification candidate are pending ChatGPT
+  ratification. National
   Security is still receipts-only in every public scope, no production or
   registry write has occurred, H.R. 8800 remains blocked and outside every
   analytical finding, and Justice remains the only active publication.
