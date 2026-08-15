@@ -17,14 +17,19 @@ The machine-readable authority is
   Security & Foreign Policy. The completed M11N chain performed its bounded
   production write, National Security is not receipts-only for `scope=119` or
   `scope=all`, and both active artifacts remain live-verified.
-- M12A is the active scaling milestone. It starts from exact main
+- M12A is the active scaling milestone. It started from exact main
   `44d966a7b3c36494b4965db6d4b00d6ba6d6a332` and proposes Environment &
   Energy as the next full-record domain through House roll 283 on July 23,
   2026. Its 153 high-recall candidates resolve to 62 directional and one
   non-directional proposed substantive action, 64 procedural/context actions,
   one expressive action, zero exact-action-ineligible actions, and 25
-  fail-closed unresolved boundaries. The proposal is pending independent
-  review and authorizes no source-readiness or downstream semantic work.
+  fail-closed unresolved boundaries. Independent ChatGPT governance accepted
+  the exact 63-action membership candidate at PR #149 head
+  `3d031790a072ed0194720931aef0c587ecf0d8b6`. The detached authority
+  receipt records membership-only approval; all 25 unresolved actions remain
+  outside the approved universe, including 16 missing exact child bindings
+  (14 amendments and two division-retention actions). No source-readiness or
+  downstream semantic work is authorized.
 - Frontend Pass A implements a finder-first, URL-backed representative journey
   on `/`: compact overview, truthful Congress scope, responsive issue discovery,
   conditional reviewed analysis, conditional reviewed policy episodes, and a

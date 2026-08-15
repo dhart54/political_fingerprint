@@ -103,5 +103,37 @@
 ## Final Reconciliation
 
 - Definition of done satisfied: yes; implementation, local validation, draft-PR delivery, and hosted-check recording are complete.
-- Remaining limitations: the selected universe is a review proposal only; its 25 unresolved cases remain excluded, including 14 child/amendment actions without exact child binding.
+- Authority closeout: independent ChatGPT governance accepted the exact
+  candidate at `3d031790a072ed0194720931aef0c587ecf0d8b6`. The detached
+  receipt authorizes only the 63-action universe membership; all downstream
+  authorizations remain false.
+- Wording correction: the 25 unresolved cases remain excluded, including 16
+  records with `missing_exact_child_action_binding`—14 amendments plus two
+  division-retention child actions.
+- Remaining limitations: M12B source readiness and all interpretation,
+  episode, Semantic IR, synthesis, wording, publication, and production work
+  remain unauthorized and unstarted.
 - Recommended next step: independent ChatGPT review of the exact draft-PR head; do not begin M12B.
+
+## Universe-Authority Closeout
+
+- Independent ChatGPT governance accepted the exact review candidate at
+  `3d031790a072ed0194720931aef0c587ecf0d8b6` for universe membership only.
+- Detached receipt:
+  `universe-authority:f000477:environment_energy:119:v1`.
+- Approved membership: 63 exact action IDs /
+  `843740a27ef191294bcf0cc3d2b29aeda1751351d775f8fadd7f44708e2312c8`.
+- Outside authority: 64 procedural/context, one expressive/nonbinding, zero
+  exact-action-ineligible, and 25 unresolved actions.
+- Corrected review shorthand: 16 unresolved records have
+  `missing_exact_child_action_binding`—14 amendments and two
+  division-retention child actions.
+- M12A artifact, receipt, deterministic rebuild, historical M11A, Semantic IR,
+  full-record, Justice/National Security publication, API, and repository
+  quality validation passed. The combined authority/full-record/publication
+  regression run passed 182 tests; API regressions passed 71; Semantic IR
+  passed 26 unit tests plus 12 accepted and four held-out references.
+- Production writes: none. Justice and National Security publication and
+  production state remain unchanged.
+- Stop boundary: return for independent mechanical review of the exact closeout
+  head. Do not merge PR #149 or begin M12B.
