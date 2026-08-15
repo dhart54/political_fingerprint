@@ -28,7 +28,7 @@
 - [x] Selected proposal has closed high-recall accounting, exact source bindings, and human-readable boundary tables.
 - [x] Economy compatibility and genericity audits are complete.
 - [x] Justice and National Security active state is unchanged and validation is recorded.
-- [ ] Final diff is inspected, PR #147 is corrected, and a draft M12A PR is open.
+- [x] Final diff is inspected, PR #147 is corrected, and a draft M12A PR is open.
 
 ## Baseline
 
@@ -83,6 +83,7 @@
 - Justice/National Security publication regressions: 113 passed; API route regressions: 71 passed.
 - Ruff, formatting, Python compilation, JSON parsing, documentation governance, full-record terminology governance, and diff whitespace checks: passed.
 - Live rendered review: National Security showed the reviewed 82-action record and non-counting H.R. 8800 control; Justice showed its reviewed 37-action record. M12A introduced no frontend or runtime change.
+- Draft PR #149 opened from the exact reviewed branch head. Vercel, Vercel Preview Comments, amendment-evidence-contracts, foushee-full-record-benchmark, publication-activation-postgres, and receipt-evidence-repair-postgres all passed on the initial M12A implementation head.
 
 ## Production Writes
 
@@ -101,6 +102,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: implementation and local validation complete; draft-PR creation and hosted-check recording remain as the delivery step.
+- Definition of done satisfied: yes; implementation, local validation, draft-PR delivery, and hosted-check recording are complete.
 - Remaining limitations: the selected universe is a review proposal only; its 25 unresolved cases remain excluded, including 14 child/amendment actions without exact child binding.
 - Recommended next step: independent ChatGPT review of the exact draft-PR head; do not begin M12B.
