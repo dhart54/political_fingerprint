@@ -12,6 +12,24 @@ The machine-readable authority is
   generated historical evidence remain in place as noncanonical evidence. A
   119-file whole-tree manifest locks those roots to the cutover base.
 - Acquisition capability and tests remain intact.
+- Current production state as of August 15, 2026 has exactly two active
+  F000477 full-record publications: Justice & Public Safety and National
+  Security & Foreign Policy. The completed M11N chain performed its bounded
+  production write, National Security is not receipts-only for `scope=119` or
+  `scope=all`, and both active artifacts remain live-verified.
+- M12A is the active scaling milestone. It started from exact main
+  `44d966a7b3c36494b4965db6d4b00d6ba6d6a332` and proposes Environment &
+  Energy as the next full-record domain through House roll 283 on July 23,
+  2026. Its 153 high-recall candidates resolve to 62 directional and one
+  non-directional proposed substantive action, 64 procedural/context actions,
+  one expressive action, zero exact-action-ineligible actions, and 25
+  fail-closed unresolved boundaries. Independent ChatGPT governance accepted
+  the exact 63-action membership candidate at PR #149 head
+  `3d031790a072ed0194720931aef0c587ecf0d8b6`. The detached authority
+  receipt records membership-only approval; all 25 unresolved actions remain
+  outside the approved universe, including 16 missing exact child bindings
+  (14 amendments and two division-retention actions). No source-readiness or
+  downstream semantic work is authorized.
 - Frontend Pass A implements a finder-first, URL-backed representative journey
   on `/`: compact overview, truthful Congress scope, responsive issue discovery,
   conditional reviewed analysis, conditional reviewed policy episodes, and a
@@ -87,7 +105,11 @@ The machine-readable authority is
   A fresh read-only production snapshot on 2026-08-08 verified exactly one
   active F000477 publication with that identity. Selected Issue Experience
   V1.1 is the accepted public presentation layer at checkpoint `f16bc73`.
-- M11A is complete at the universe-membership checkpoint. Human reviewer
+- The M11A-M11M entries below are historical checkpoint records. Statements
+  that later authority, publication, persistence, or production was false
+  describe the named checkpoint only; they do not override the current M11N
+  production-active state above.
+- M11A was complete at its universe-membership checkpoint. Human reviewer
   `dhart54`, acting under `full_issue_universe_review_authority_v1`, approved
   the exact content-bound 82-action F000477 National Security & Foreign Policy
   universe through House roll 283 on July 23, 2026. The detached receipt is
@@ -95,10 +117,10 @@ The machine-readable authority is
   Six unresolved actions remain outside the approved universe. The 50
   same-parent episode candidates remain non-authorizing organizational evidence,
   and the Iran/Lebanon cross-measure notes retain zero authority effect. Action
-  interpretation has not started; episodes are not accepted; Semantic IR,
-  synthesis, and public wording are absent; publication is inactive; and
-  production persistence remains unauthorized. The active Justice full-record
-  publication state is unchanged.
+  At that checkpoint, action interpretation had not started, episodes were not
+  accepted, Semantic IR, synthesis, and public wording were absent, and
+  publication/persistence were unauthorized. M11B-M11N later superseded those
+  checkpoint-only downstream statements without rewriting the M11A artifacts.
 - M11B is human-accepted at PR #134 head
   `fcc988b867a49086d7545832f9575130aef0f8ea` and merged to main as
   `13f8ad58f3aee32eb90369e8b454830cfbbf130b`. It completed its

@@ -10,41 +10,20 @@ from typing import Any, Iterable
 
 
 ROOT = Path(__file__).resolve().parents[2]
-STARTING_COMMIT = "f16bc73fb4e60d34fe75b17e58cb4f224e5b7fcd"
-MILESTONE = "m11a_cross_issue_full_record_expansion_v1"
-REVIEWED_HEAD = "48dd78fa0c7d9b955b04bec333185fbbf0069c4e"
-CORRECTION_SOURCE_ACQUIRED_AT = "2026-08-08T23:15:37-04:00"
-REVIEWED_HEAD_CROSS_DOMAIN_ACTION_IDS = {
-    "house:119:1:63",
-    "house:119:1:182",
-    "house:119:1:208",
-    "house:119:1:209",
-    "house:119:1:210",
-    "house:119:1:212",
-    "house:119:1:281",
-    "house:119:1:286",
-    "house:119:2:28",
-    "house:119:2:154",
-    "house:119:2:174",
-    "house:119:2:175",
-    "house:119:2:234",
-    "house:119:2:243",
-    "house:119:2:244",
-    "house:119:2:247",
-    "house:119:2:260",
-    "house:119:2:268",
-    "house:119:2:269",
-}
-EXCLUDED_DOMAINS = {"JUSTICE_PUBLIC_SAFETY", "ECONOMY_TAXES"}
+STARTING_COMMIT = "44d966a7b3c36494b4965db6d4b00d6ba6d6a332"
+MILESTONE = "m12a_next_full_record_issue_selection_v1"
+OFFICIAL_CUTOFF_VERIFIED_AT = "2026-08-15T19:11:02-04:00"
+EXCLUDED_DOMAINS = {"JUSTICE_PUBLIC_SAFETY", "NATIONAL_SECURITY_FOREIGN"}
 DOMAIN_IDS = (
+    "ECONOMY_TAXES",
     "EDUCATION_WORKFORCE",
     "ENVIRONMENT_ENERGY",
     "HEALTH_SOCIAL",
     "IMMIGRATION_BORDER",
     "INFRASTRUCTURE_TECH_TRANSPORT",
-    "NATIONAL_SECURITY_FOREIGN",
 )
 DISPLAY_NAMES = {
+    "ECONOMY_TAXES": "Economy & Taxes",
     "EDUCATION_WORKFORCE": "Education & Workforce",
     "ENVIRONMENT_ENERGY": "Environment & Energy",
     "HEALTH_SOCIAL": "Health & Social Policy",
@@ -56,6 +35,22 @@ DISPLAY_NAMES = {
 # These are the current classifier's shared, member-neutral signals. Selection
 # uses any hit for high recall; hits never establish membership by themselves.
 DOMAIN_SIGNALS = {
+    "ECONOMY_TAXES": (
+        "economy",
+        "economic",
+        "public finance",
+        "tax",
+        "taxation",
+        "budget",
+        "debt",
+        "deficit",
+        "inflation",
+        "small business",
+        "bank",
+        "trade",
+        "tariff",
+        "internal revenue",
+    ),
     "EDUCATION_WORKFORCE": (
         "education",
         "school",
@@ -147,22 +142,6 @@ POLICY_AREA_DOMAINS = {
     "Economics and Public Finance": "ECONOMY_TAXES",
 }
 
-NATIONAL_SECURITY_BOUNDARY_PHRASES = (
-    "department of defense",
-    "military construction",
-    "armed forces",
-    "national security",
-    "international security assistance",
-    "terrorist attack",
-    "terrorism",
-    "foreign affairs",
-    "foreign assistance",
-    "department of state",
-    "north atlantic treaty organization",
-    "intelligence activities",
-    "intelligence community",
-)
-
 PROCEDURAL_QUESTIONS = re.compile(
     r"(?i)\b(ordering the previous question|motion to recommit|motion to commit|"
     r"motion to table|motion to refer|motion to discharge|motion to reconsider|"
@@ -205,7 +184,7 @@ def domain_hits(*values: Any) -> list[str]:
     haystack = " ".join(_text(value) for value in values).lower()
     return [
         domain_id
-        for domain_id in DOMAIN_IDS
+        for domain_id in DOMAIN_SIGNALS
         if any(signal in haystack for signal in DOMAIN_SIGNALS[domain_id])
     ]
 
@@ -436,12 +415,10 @@ def episode_candidate(action: dict[str, Any]) -> str:
 def boundary_summary_indicators(
     domain_id: str, summary: dict[str, Any] | None
 ) -> list[str]:
-    if summary is None or domain_id != "NATIONAL_SECURITY_FOREIGN":
+    if summary is None:
         return []
     lowered = summary["text"].lower()
-    return sorted(
-        phrase for phrase in NATIONAL_SECURITY_BOUNDARY_PHRASES if phrase in lowered
-    )
+    return sorted(phrase for phrase in DOMAIN_SIGNALS[domain_id] if phrase in lowered)
 
 
 def build_candidate_record(
@@ -572,11 +549,11 @@ def build_candidate_record(
                 "source": summary_source,
                 "matched_target_indicators": indicators,
                 "rationale": (
-                    "The official Congress.gov summary materially establishes a National Security or Foreign Policy component."
+                    f"The official Congress.gov summary materially establishes a {DISPLAY_NAMES[domain_id]} component."
                     if supports_target
                     else "No action-specific official summary was acquired for this non-selected-domain boundary."
                     if summary is None
-                    else "The official Congress.gov summary does not materially establish a National Security or Foreign Policy component."
+                    else f"The official Congress.gov summary does not materially establish a {DISPLAY_NAMES[domain_id]} component."
                 ),
             }
 
@@ -730,16 +707,26 @@ def domain_accounting(domain_id: str, records: list[dict[str, Any]]) -> dict[str
     expressive_count = counts["expressive_nonbinding_context"]
     ineligible_count = counts["exact_action_ineligible"]
     substantive_count = len(substantive)
+    directional_count = sum(
+        record["disposition"] == "proposed_in_scope_substantive"
+        for record in substantive
+    )
+    non_directional_count = sum(
+        record["disposition"] == "proposed_in_scope_non_directional"
+        for record in substantive
+    )
     exclusion_reasons: list[str] = []
     if substantive_count < 5:
         exclusion_reasons.append("fewer_than_five_substantive_actions")
     if len(episodes) < 3:
         exclusion_reasons.append("fewer_than_three_independent_episode_candidates")
-    if not multi:
-        exclusion_reasons.append("no_legitimate_multi_action_episode")
     source_ready = sum(
         bool(record["exact_action_source_binding"]) for record in substantive
     )
+    if source_ready != substantive_count:
+        exclusion_reasons.append("incomplete_official_source_binding_for_proposal")
+    if len(unresolved) > substantive_count:
+        exclusion_reasons.append("unresolved_boundary_set_exceeds_substantive_set")
     mechanisms = sorted(
         {
             "amendment"
@@ -759,6 +746,8 @@ def domain_accounting(domain_id: str, records: list[dict[str, Any]]) -> dict[str
         "exclusion_reasons": exclusion_reasons,
         "total_candidate_actions": len(records),
         "substantive_eligible_actions": substantive_count,
+        "directional_substantive_actions": directional_count,
+        "non_directional_substantive_actions": non_directional_count,
         "procedural_context_actions": procedural_count,
         "expressive_nonbinding_actions": expressive_count,
         "exact_action_ineligible_actions": ineligible_count,
@@ -798,10 +787,10 @@ def selection_rank(accounting: dict[str, Any]) -> tuple[Any, ...]:
     complete = readiness["state"] == "complete_for_proposed_membership"
     return (
         0 if complete else 1,
+        -accounting["substantive_eligible_actions"],
         -accounting["independent_episode_count"],
-        -len(accounting["mechanism_types"]),
-        -accounting["multi_action_episode_count"],
         accounting["unresolved_boundary_cases"],
+        -len(accounting["mechanism_types"]),
         accounting["domain_id"],
     )
 
@@ -809,32 +798,9 @@ def selection_rank(accounting: dict[str, Any]) -> tuple[Any, ...]:
 def future_episode_review_candidates(
     records: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    """Preserve possible cross-measure relationships outside M11A authority."""
-    groups: dict[str, list[str]] = defaultdict(list)
-    for record in records:
-        if not record["disposition"].startswith("proposed_in_scope_"):
-            continue
-        text = f"{record['official_title']} {record['description']}".lower()
-        if "war powers" not in text and not (
-            "armed forces" in text and "hostilities" in text
-        ):
-            continue
-        for geography in ("iran", "lebanon", "venezuela"):
-            if geography in text:
-                groups[f"future-episode-review:war-powers:{geography}"].append(
-                    record["action_id"]
-                )
-                break
-    return [
-        {
-            "review_candidate_id": key,
-            "action_ids": sorted_action_ids(values),
-            "authority_effect": "none",
-            "contributes_to_m11a_episode_accounting": False,
-        }
-        for key, values in sorted(groups.items())
-        if len(values) > 1
-    ]
+    """Discovery records no semantic cross-measure episode candidates."""
+    del records
+    return []
 
 
 def build(
@@ -889,8 +855,9 @@ def build(
         "selection_order": [item["domain_id"] for item in eligible],
     }
     selection = {
-        "schema_version": "cross_issue_domain_selection_v2",
+        "schema_version": "cross_issue_domain_selection_v3",
         "milestone": MILESTONE,
+        "selection_id": "cross-issue-selection:F000477:119:m12a:v1",
         "starting_commit": STARTING_COMMIT,
         "subject": {
             "member_id": "F000477",
@@ -910,6 +877,14 @@ def build(
             "read_only": True,
             "transaction_rolled_back": True,
             "production_action_count": len(production),
+            "publication_registry_count": len(
+                production_payload["results"]["member_publication_registry"]
+            ),
+            "publication_registry_result_sha256": next(
+                row["result_set_sha256"]
+                for row in production_payload["query_audit"]
+                if row["query_id"] == "member_publication_registry"
+            ),
         },
         "candidate_domains": accounting,
         "eligible_domains_ranked": [item["domain_id"] for item in eligible],
@@ -918,15 +893,22 @@ def build(
         if selected_domain
         else "blocked_no_eligible_domain",
         "selection_basis": [
-            "complete_official_source_evidence",
-            "independent_policy_episode_count",
+            "complete_official_source_binding_for_every_proposed_action",
+            "largest_nontrivial_substantive_exact_action_set",
+            "independent_mechanical_event_count",
+            "manageable_fail_closed_unresolved_boundary_set",
             "policy_mechanism_variation",
-            "legitimate_multi_action_episode",
-            "smallest_unresolved_boundary_set",
             "canonical_domain_id_tie_breaker",
         ],
+        "selection_exclusions": {
+            "vote_direction": True,
+            "party": True,
+            "ideology_or_political_interest": True,
+            "multi_action_episode_requirement_or_reward": True,
+            "future_pattern_or_synthesis": True,
+        },
         "selection_sha256": sha256_json(selection_material),
-        "m11a_universe_discovery": {
+        "universe_discovery": {
             "permitted": selected_domain is not None,
             "completed": selected_domain is not None,
         },
@@ -956,8 +938,13 @@ def build(
         "candidate_records": selected_records,
     }
     universe = {
-        "schema_version": "cross_issue_universe_proposal_v1",
+        "schema_version": "cross_issue_universe_proposal_v2",
         "milestone": MILESTONE,
+        "proposal_id": (
+            None
+            if selected_domain is None
+            else f"full-universe-proposal:f000477:{selected_domain.lower()}:119:m12a:v1"
+        ),
         "subject": universe_material["subject"],
         "authority_status": "pending_human_universe_boundary_review",
         "full_record_claim": False,
@@ -1000,33 +987,10 @@ def build(
                 for record in selected_records
                 if record["disposition"].startswith("proposed_in_scope_")
             ),
-            "moved_out_of_proposed_universe_count": 2,
             "reviewed_actions": [
                 record
                 for record in selected_records
-                if record["action_id"] in REVIEWED_HEAD_CROSS_DOMAIN_ACTION_IDS
-            ],
-        },
-        "correction_delta_from_48dd78f": {
-            "reviewed_head": REVIEWED_HEAD,
-            "previous_proposed_action_count": 84,
-            "current_proposed_action_count": sum(
-                record["disposition"].startswith("proposed_in_scope_")
-                for record in selected_records
-            ),
-            "added_action_ids": [],
-            "removed_action_ids": ["house:119:1:63", "house:119:2:154"],
-            "disposition_reclassifications": [
-                {
-                    "action_id": "house:119:1:63",
-                    "from": "proposed_in_scope_substantive",
-                    "to": "exact_action_ineligible",
-                },
-                {
-                    "action_id": "house:119:2:154",
-                    "from": "proposed_in_scope_substantive",
-                    "to": "exact_action_ineligible",
-                },
+                if record["issue_boundary_status"] != "direct_target_policy_area"
             ],
         },
         "future_episode_review_candidates": future_episode_review_candidates(
@@ -1042,15 +1006,42 @@ def build(
         "publication_changes": False,
         "production_writes": False,
     }
+    universe["proposal_sha256"] = sha256_json(
+        {key: value for key, value in universe.items() if key != "proposal_sha256"}
+    )
     source_inventory = {
-        "schema_version": "cross_issue_source_inventory_v1",
+        "schema_version": "cross_issue_source_inventory_v2",
+        "milestone": MILESTONE,
+        "inventory_id": (
+            None
+            if selected_domain is None
+            else f"source-inventory:F000477:{selected_domain}:119:m12a:v1"
+        ),
         "subject": universe_material["subject"],
         "cutoff": cutoff,
+        "official_cutoff_verified_at": OFFICIAL_CUTOFF_VERIFIED_AT,
+        "official_cutoff_index_url": "https://clerk.house.gov/evs/2026/index.asp",
         "source_acquired_at": production_payload["query_audit"][0][
             "snapshot_started_at"
         ],
-        "bounded_cross_domain_source_acquired_at": CORRECTION_SOURCE_ACQUIRED_AT,
         "complete_official_action_count": len(official_actions),
+        "complete_official_action_set_sha256": selection[
+            "complete_official_action_set_sha256"
+        ],
+        "complete_official_action_ids": [
+            action["action_id"] for action in official_actions
+        ],
+        "governed_ingestion": {
+            "member_action_count": len(production),
+            "member_action_result_sha256": next(
+                row["result_set_sha256"]
+                for row in production_payload["query_audit"]
+                if row["query_id"] == "complete_member_actions"
+            ),
+            "newer_than_official_cutoff": False,
+            "read_only": True,
+            "transaction_rolled_back": True,
+        },
         "source_roots": [
             {
                 "source_type": "house_clerk_roll_call_xml",
@@ -1114,7 +1105,7 @@ def render_review_packet(payloads: dict[str, Any]) -> str:
     unresolved = [record for record in records if record["unresolved_reason"]]
     boundary_review = universe["cross_domain_boundary_review"]
     lines = [
-        "# M11A Cross-Issue Full-Record Expansion Review Packet",
+        "# M12A Next Full-Record Issue Selection Review Packet",
         "",
         "## Decision boundary",
         "",
@@ -1127,60 +1118,64 @@ def render_review_packet(payloads: dict[str, Any]) -> str:
         "",
         "## Why this domain was selected",
         "",
-        "The deterministic selector excludes Justice & Public Safety and Economy & Taxes, applies the same eligibility gates to every remaining canonical domain, then ranks eligible domains by official-source completeness, episode count, mechanism variation, legitimate multi-action episodes, smallest unresolved boundary, and canonical ID as the final tie-breaker. No party, vote direction, ideology, or political-interest signal participates.",
+        "The deterministic selector hard-excludes only the two production-active completed domains, applies the same minimum evidence gates to all six remaining domains, then ranks eligible domains by complete exact-source binding, substantive action count, independent mechanical event count, unresolved-boundary count, mechanism diversity, and canonical ID. Same-parent multi-action structure is descriptive only and has no eligibility or ranking effect. No party, vote direction, ideology, controversy, expected finding, or political-interest signal participates.",
         "",
-        "| Domain | Candidates | Proposed substantive | Procedural/context | Expressive | Exact-action ineligible | Unresolved | Episode candidates | Multi-action | Eligible |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---|",
+        "| Domain | Candidates | Directional | Non-directional | Procedural/context | Expressive | Ineligible | Unresolved | Independent events | Mechanisms | Source readiness | Material gaps | Result |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|---|---|",
     ]
     for item in selection["candidate_domains"]:
+        result = (
+            "selected"
+            if item["domain_id"] == selection["selected_domain"]
+            else "eligible; lower generic rank"
+            if item["eligible"]
+            else "ineligible: " + ", ".join(item["exclusion_reasons"])
+        )
         lines.append(
-            f"| {item['display_name']} | {item['total_candidate_actions']} | {item['substantive_eligible_actions']} | "
+            f"| {item['display_name']} | {item['total_candidate_actions']} | {item['directional_substantive_actions']} | {item['non_directional_substantive_actions']} | "
             f"{item['procedural_context_actions']} | {item['expressive_nonbinding_actions']} | "
             f"{item['exact_action_ineligible_actions']} | {item['unresolved_boundary_cases']} | "
-            f"{item['independent_episode_count']} | {item['multi_action_episode_count']} | "
-            f"{'yes' if item['eligible'] else 'no: ' + ', '.join(item['exclusion_reasons'])} |"
+            f"{item['independent_episode_count']} | {', '.join(item['mechanism_types'])} | "
+            f"{item['official_source_readiness']['state']} | "
+            f"{', '.join(item['material_source_gaps']) or 'none'} | {result} |"
         )
     lines.extend(
         [
             "",
             "## Selected-universe accounting",
             "",
-            f"The high-recall candidate set contains **{accounting['total_candidate_actions']}** actions. It proposes **{accounting['substantive_eligible_actions']}** exact-action-supported substantive actions across **{accounting['independent_episode_count']}** non-authorizing episode candidates, including **{accounting['multi_action_episode_count']}** multi-action candidates. It preserves **{accounting['procedural_context_actions']}** procedural/context actions, **{accounting['expressive_nonbinding_actions']}** expressive nonbinding actions, **{accounting['exact_action_ineligible_actions']}** exact-action-ineligible actions, and **{accounting['unresolved_boundary_cases']}** unresolved boundaries.",
-            f"Of the proposed actions, **{boundary_review['direct_target_policy_area_action_count']}** ordinary whole-measure actions are directly supported by a canonical target policy area, **{boundary_review['exact_amendment_action_specific_evidence_count']}** are directly supported by exact amendment evidence, and **{boundary_review['retained_cross_domain_action_count']}** are retained cross-domain actions supported by deeper action-specific official evidence. This correction moved **{boundary_review['moved_out_of_proposed_universe_count']}** actions out of the prior 84-action proposal.",
+            f"The high-recall candidate set contains **{accounting['total_candidate_actions']}** actions. It proposes **{accounting['directional_substantive_actions']}** directional and **{accounting['non_directional_substantive_actions']}** non-directional exact-action-supported substantive actions across **{accounting['independent_episode_count']}** independent mechanical events. It preserves **{accounting['procedural_context_actions']}** procedural/context actions, **{accounting['expressive_nonbinding_actions']}** expressive nonbinding actions, **{accounting['exact_action_ineligible_actions']}** exact-action-ineligible actions, and **{accounting['unresolved_boundary_cases']}** unresolved boundaries.",
+            f"Of the proposed actions, **{boundary_review['direct_target_policy_area_action_count']}** ordinary whole-measure actions are directly supported by a canonical target policy area, **{boundary_review['exact_amendment_action_specific_evidence_count']}** are directly supported by exact amendment evidence, and **{boundary_review['retained_cross_domain_action_count']}** are retained cross-domain actions supported by deeper action-specific official evidence.",
             "",
             "## Cross-domain boundary review",
             "",
-            "This table includes every reviewed action whose Congress.gov primary policy area does not directly map to National Security & Foreign Policy, whose exact signals span more than one canonical domain, or whose retention required deeper official evidence. A measure title is never sufficient by itself.",
+            f"This table includes every {accounting['display_name']} candidate for which ordinary target-policy-area authority does not straightforwardly resolve membership. A measure title is never sufficient by itself.",
             "",
-            "| Action | Measure/action | Official policy area | Recall reasons | Target-domain rationale | Exact supporting or failing source | Result |",
-            "|---|---|---|---|---|---|---|",
+            "| Action | Parent measure | Action type | Official policy area | Recall reason | Exact action-specific evidence | Disposition | Rationale | Material limitation |",
+            "|---|---|---|---|---|---|---|---|---|",
         ]
     )
     for record in boundary_review["reviewed_actions"]:
         evidence = record["cross_domain_boundary_evidence"]
-        source = evidence["source"]
+        source = None if evidence is None else evidence["source"]
         source_cell = "No action-specific source acquired"
         if source:
             source_cell = f"[{source['source_id']}]({source['url']})"
+        limitation = record["unresolved_reason"] or "None"
         lines.append(
-            f"| `{record['action_id']}` | {record['bill_ref']} — {record['question']} | "
+            f"| `{record['action_id']}` | {record['bill_ref']} | {record['house_action_stage']} | "
             f"{record['official_policy_area'] or 'None'} | {', '.join(record['recall_reasons'])} | "
-            f"{evidence['rationale']} | {source_cell} | `{record['disposition']}` |"
+            f"{source_cell} | `{record['disposition']}` | {record['rationale']} | `{limitation}` |"
         )
     lines.extend(
         [
             "",
-            "## Future semantic episode review candidates",
+            "## Episode boundary",
             "",
-            "These cross-measure War Powers relationships are preserved only as future review notes. They contribute nothing to M11A eligibility, ranking, episode counts, multi-action counts, or universe authority.",
+            "Same-parent groupings are reported as mechanical organization only. No cross-measure episode inference is performed, and multi-action structure contributes nothing to eligibility or ranking.",
             "",
         ]
     )
-    for candidate in universe["future_episode_review_candidates"]:
-        lines.append(
-            f"- `{candidate['review_candidate_id']}`: "
-            + ", ".join(f"`{action_id}`" for action_id in candidate["action_ids"])
-        )
     lines.extend(
         [
             "",
@@ -1231,16 +1226,117 @@ def render_review_packet(payloads: dict[str, Any]) -> str:
         lines.append(
             f"| `{record['action_id']}` | {record['question']} | `{record['unresolved_reason']}` |"
         )
+    child_unresolved = [
+        record
+        for record in unresolved
+        if record["unresolved_reason"] == "missing_exact_child_action_binding"
+    ]
+    lines.extend(
+        [
+            "",
+            "## Child/amendment unresolved review",
+            "",
+            "These narrower actions remain excluded because the exact child action lacks an independent official binding; parent-measure evidence was not inherited.",
+            "",
+            "| Action | Parent measure | Action type | Question | Disposition |",
+            "|---|---|---|---|---|",
+        ]
+    )
+    for record in child_unresolved:
+        lines.append(
+            f"| `{record['action_id']}` | {record['bill_ref']} | {record['house_action_stage']} | "
+            f"{record['question']} | `{record['disposition']}` |"
+        )
     lines.extend(
         [
             "",
             "## Human review requested",
             "",
-            "Review the selected-domain decision, every proposed inclusion, the preserved exclusion categories, the six unresolved child-action boundaries, the non-authorizing episode candidates, and the genericity audit. Acceptance would authorize only a later, separate action-interpretation milestone; it would not approve any interpretation, synthesis, public wording, publication, or production operation.",
+            "Review the selected-domain decision, every proposed inclusion, every excluded or unresolved action, the non-authorizing mechanical groupings, the Economy compatibility audit, and the genericity audit. Acceptance would authorize only a later, separate source-readiness milestone; it would not approve any action interpretation, episode, synthesis, wording, publication, or production operation.",
             "",
         ]
     )
     return "\n".join(lines)
+
+
+def render_genericity_audit(payloads: dict[str, Any]) -> str:
+    selection = payloads["selection"]
+    checks = [
+        (
+            "Foushee-specific semantic exceptions",
+            "none; member identity is only the bounded subject and production-recall lookup",
+        ),
+        (
+            "Justice-specific semantic assumptions",
+            "none; Justice is excluded only because its full record is production-active",
+        ),
+        (
+            "National-Security-specific semantic assumptions",
+            "none; National Security is excluded only because its full record is production-active",
+        ),
+        (
+            "Domain-name branches replacing generic evidence",
+            "none in eligibility, ranking, or boundary authority; taxonomy vocabularies and canonical policy-area mappings are data",
+        ),
+        ("Hard-coded legislation IDs forcing selection", "none"),
+        (
+            "Raw Yea/Nay used for membership or direction",
+            "none; member action only separates directional from Present/Not Voting accounting",
+        ),
+        ("Title/keyword authority leakage", "blocked; signals nominate recall only"),
+        (
+            "Parent-to-child evidence leakage",
+            "blocked; child actions require exact bindings",
+        ),
+        (
+            "Multi-action episode requirement or reward",
+            "absent; same-parent counts are descriptive only",
+        ),
+        (
+            "Future-pattern or synthesis assumptions",
+            "absent; discovery creates no cross-measure semantic episodes or future conclusions",
+        ),
+    ]
+    lines = [
+        "# M12A Genericity Audit",
+        "",
+        f"Selected domain: `{selection['selected_domain']}`. Selection digest: `{selection['selection_sha256']}`.",
+        "",
+        "| Risk | Result |",
+        "|---|---|",
+    ]
+    lines.extend(f"| {risk} | {result} |" for risk, result in checks)
+    lines.extend(
+        [
+            "",
+            "The same minimum gates and rank tuple apply to all six candidate domains. The winner changes only if the source-grounded candidate accounting changes; no action direction, party context, expected narrative, or desired finding count is an input.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def render_economy_compatibility_audit(payloads: dict[str, Any]) -> str:
+    economy = next(
+        item
+        for item in payloads["selection"]["candidate_domains"]
+        if item["domain_id"] == "ECONOMY_TAXES"
+    )
+    return "\n".join(
+        [
+            "# M12A Economy / Prior Benchmark Compatibility Audit",
+            "",
+            "Economy & Taxes is eligible for consideration because the existing Economy materials are a bounded benchmark/reference slice and receipts-only public fallback, not a complete full-defined-issue universe authority.",
+            "",
+            "- Existing Semantic IR/reference artifacts remain accepted benchmark fixtures only.",
+            "- The prior reviewed slice does not establish `full_defined_issue_record` scope or complete-universe authority.",
+            "- Economy remains receipts-only in production and has no full-record publication.",
+            "- M12A is additive and does not overwrite any benchmark artifact.",
+            f"- Current high-recall accounting: {economy['total_candidate_actions']} candidates; {economy['directional_substantive_actions']} directional and {economy['non_directional_substantive_actions']} non-directional proposed substantive actions; {economy['unresolved_boundary_cases']} unresolved cases.",
+            f"- Selection result: {'eligible but not selected' if economy['eligible'] else 'not eligible: ' + ', '.join(economy['exclusion_reasons'])}.",
+            "",
+        ]
+    )
 
 
 def main() -> int:
@@ -1272,9 +1368,19 @@ def main() -> int:
     review_packet_path = (
         args.output_root.parents[1]
         / "review_packets"
-        / "m11a_cross_issue_full_record_expansion_v1.md"
+        / "m12a_next_full_record_issue_selection_v1.md"
+    )
+    genericity_audit_path = (
+        args.output_root.parents[1] / "review_packets" / "m12a_genericity_audit_v1.md"
+    )
+    economy_audit_path = (
+        args.output_root.parents[1]
+        / "review_packets"
+        / "m12a_economy_compatibility_audit_v1.md"
     )
     review_packet = render_review_packet(payloads)
+    genericity_audit = render_genericity_audit(payloads)
+    economy_audit = render_economy_compatibility_audit(payloads)
     if args.check:
         drift = [
             str(path)
@@ -1287,8 +1393,18 @@ def main() -> int:
             or review_packet_path.read_text(encoding="utf-8") != review_packet
         ):
             drift.append(str(review_packet_path))
+        if (
+            not genericity_audit_path.exists()
+            or genericity_audit_path.read_text(encoding="utf-8") != genericity_audit
+        ):
+            drift.append(str(genericity_audit_path))
+        if (
+            not economy_audit_path.exists()
+            or economy_audit_path.read_text(encoding="utf-8") != economy_audit
+        ):
+            drift.append(str(economy_audit_path))
         if drift:
-            raise SystemExit("generated M11A artifacts differ: " + ", ".join(drift))
+            raise SystemExit("generated M12A artifacts differ: " + ", ".join(drift))
     else:
         args.output_root.mkdir(parents=True, exist_ok=True)
         for path, payload in outputs.items():
@@ -1298,6 +1414,8 @@ def main() -> int:
             )
         review_packet_path.parent.mkdir(parents=True, exist_ok=True)
         review_packet_path.write_text(review_packet, encoding="utf-8")
+        genericity_audit_path.write_text(genericity_audit, encoding="utf-8")
+        economy_audit_path.write_text(economy_audit, encoding="utf-8")
     print(
         json.dumps(
             {

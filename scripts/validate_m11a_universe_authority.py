@@ -401,7 +401,7 @@ def validate_values(
         "historical proposal boundary changed or authorizes downstream work",
     )
 
-    milestone = current_state["active_scaling_milestone"]
+    milestone = current_state["completed_m11a_scaling_milestone"]
     _require(
         milestone["milestone"] == "m11a_cross_issue_full_record_expansion_v1"
         and milestone["milestone_state"] == "completed_human_approved"
