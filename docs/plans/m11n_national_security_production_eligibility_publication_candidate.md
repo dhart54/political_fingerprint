@@ -58,5 +58,40 @@ counts and state fingerprint.
 
 ## Production effects
 
-None. M11N performs production reads only. Its command surface rejects production
-`dry-run`, `apply`, and `rollback` before opening a database connection.
+None. M11N performs production reads only. Production `dry-run`, `apply`,
+`postcheck`, and `rollback` require an exact sealed positive activation authority;
+none has been accepted or materialized.
+
+## Authorization-closure correction
+
+The accepted M11N authority remains candidate-preparation authority. It retains
+false authorization for production database writes, registry mutation,
+publication activation, and deployment, and cannot make a row publicly
+selectable. A distinct positive activation contract now binds the exact M11M
+content, preparation authority, finalized write set, fresh preflight, actual live
+runtime health proof, production target, registry target, presentation digest,
+reviewer authority, and rollback. The governed decision form is intentionally
+unsealed and unaccepted pending independent review.
+
+The public selector fails closed unless both authority layers validate. The
+future production command also requires the finalized write-set digest, sealed
+positive-authority digest, exact production target, fresh runtime-bound
+preflight, and explicit operation confirmation. Disposable tests alone may opt
+into a clearly marked synthetic authority.
+
+The intended later sequence is:
+
+1. Merge and deploy the accepted runtime while the National Security registry
+   target remains absent.
+2. Confirm National Security remains receipts-only and capture the actual live
+   backend commit from `/health`.
+3. Bind that proof to a fresh read-only production preflight and finalize the
+   exact write set and positive authority.
+4. Stop for a small mechanical ratification of those exact identities.
+5. Only after ratification, apply the bounded graph, perform the full exact-graph
+   postcheck, verify the live API, and retain the exact rollback path.
+
+The full postcheck verifies the batch, all three artifacts, both relationships,
+the additive registry row and both authority bindings, global counts, Justice,
+and the fingerprint of every pre-existing non-M11N row. A second apply performs
+the same postcheck; rollback must restore the original complete fingerprint.

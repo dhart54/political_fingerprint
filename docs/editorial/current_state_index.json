@@ -952,7 +952,7 @@
     "milestone": "m11n_national_security_production_eligibility_publication_candidate_v1",
     "plan": "docs/plans/m11n_national_security_production_eligibility_publication_candidate.md",
     "exact_base": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd",
-    "milestone_state": "candidate_pending_independent_chatgpt_review",
+    "milestone_state": "authorization_closure_correction_pending_independent_chatgpt_review",
     "accepted_m11m_binding": {
       "id": "site-integration-candidate:f000477:national_security_foreign:119:v1",
       "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
@@ -967,7 +967,14 @@
     "expected_write_set": {
       "artifact": "docs/editorial/full_record_reviews/publication_activation_candidates/f000477_national_security_foreign_119_v1/expected_production_write_set.json",
       "id": "publication-activation-write-set:f000477:national_security_foreign:119:v1",
-      "write_set_subject_sha256": "e81343483d38598b27f90bd0ee91f389d7dbdea23d411900ec795b34337c03b7"
+      "write_set_subject_sha256": "55813a159573f17090e48848dfd5aee942754e2ac4776b4ce8976fbce5a9f5fe"
+    },
+    "activation_decision_template": {
+      "artifact": "docs/editorial/full_record_reviews/publication_activation_candidates/f000477_national_security_foreign_119_v1/human_activation_decision_template.json",
+      "id": "human-publication-activation-decision-template:f000477:national_security_foreign:119:v1",
+      "template_subject_sha256": "5b012ece419f52381367e8a17ed8aea07fc6f9f59ec74d0265e5799df679fc97",
+      "sealed": false,
+      "accepted": false
     },
     "current_production_preflight": {
       "counts": {
@@ -988,7 +995,7 @@
       "justice_rows_touched": 0
     },
     "blocked_action": "house:119:2:278_source_blocked_uninterpreted_outside_findings",
-    "publication_state": "inactive_pending_independent_review",
+    "publication_state": "inactive_positive_activation_authority_absent",
     "production_writes": false,
     "downstream_authorizations": {
       "publication_activation": false,

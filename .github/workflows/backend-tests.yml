@@ -173,7 +173,7 @@ jobs:
           backend/tests/test_api_editorial_presentations.py
           backend/tests/test_foushee_justice_publication_http_proof.py
 
-      - name: Prove M11N disposable apply, idempotency, drift guard, and rollback
+      - name: Prove M11N authority closure, exact graph, idempotency, drift, and rollback
         run: |
           createdb -h 127.0.0.1 -U postgres pf_m11n_activation
           python backend/scripts/prepare_editorial_artifact_disposable.py \

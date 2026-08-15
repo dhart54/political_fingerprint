@@ -5,10 +5,12 @@
     "file_sha256": "d2a7a65eb56f4be68b0d0477eeb8f75f793be5bbb458c86db13560b8eae35cc4",
     "subject_sha256": "c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9ad04c5df"
   },
-  "authority": {
-    "artifact_id": "production-eligibility-publication-authority:f000477:national_security_foreign:119:v1",
-    "authority_subject_sha256": "2c784f3771ccbe8edc71d3799438a5ea2cd5ec54b3334321a2782fb0e2873f8b",
-    "file_sha256": "ea36c3c52944dc203f2b28ea382b0185d7db189a5953895f1d1d597f5c7679f2"
+  "activation_authority_template": {
+    "accepted": false,
+    "artifact_id": "human-publication-activation-decision-template:f000477:national_security_foreign:119:v1",
+    "file_sha256": "bec14ae3de6ebc01416cacb938deb2e396eabf598878fd9ee99ffbd090f43620",
+    "sealed": false,
+    "template_subject_sha256": "5b012ece419f52381367e8a17ed8aea07fc6f9f59ec74d0265e5799df679fc97"
   },
   "authorization_boundary": {
     "deployment": false,
@@ -19,6 +21,11 @@
   "blocked_action": {
     "action_id": "house:119:2:278",
     "state": "source_blocked_uninterpreted_outside_public_findings"
+  },
+  "candidate_preparation_authority": {
+    "artifact_id": "production-eligibility-publication-authority:f000477:national_security_foreign:119:v1",
+    "authority_subject_sha256": "2c784f3771ccbe8edc71d3799438a5ea2cd5ec54b3334321a2782fb0e2873f8b",
+    "file_sha256": "ea36c3c52944dc203f2b28ea382b0185d7db189a5953895f1d1d597f5c7679f2"
   },
   "current_production_state": {
     "captured_at_utc": "2026-08-14T02:55:53.271766+00:00",
@@ -91,6 +98,16 @@
     "registry_updates": 0,
     "relationship_inserts": 2
   },
+  "future_activation_sequence": [
+    "merge the mechanically accepted M11N runtime",
+    "deploy that exact runtime while the registry target remains absent",
+    "verify National Security remains receipts-only",
+    "capture the actual live /health commit identity",
+    "capture a fresh read-only production preflight bound to that health proof",
+    "finalize the write set and seal a distinct positive activation authority",
+    "stop for a small mechanical ratification",
+    "apply the exact authority-bound write and verify live production"
+  ],
   "justice_isolation": {
     "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
     "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
@@ -98,7 +115,7 @@
   },
   "milestone": "M11N",
   "required_review": "independent_chatgpt_mechanical_review",
-  "review_packet_subject_sha256": "b4eb285a0fa533b2d308b76fe66f0f50191e8283da24c7289f5d7d26047b27ee",
+  "review_packet_subject_sha256": "067f4e650ee548993858eba811c4be99d2694bb919d39d992cd5eef95613833f",
   "rollback": {
     "delete_artifact_natural_keys": [
       "site-integration-candidate:f000477:national_security_foreign:119:v1",
@@ -133,7 +150,7 @@
   "schema_version": "m11n_review_packet_v1",
   "write_set": {
     "artifact_id": "publication-activation-write-set:f000477:national_security_foreign:119:v1",
-    "file_sha256": "bec6fb7a98d12a1a4e8fdf3b0830d81517d8ec1763866ce92ff181ab1e1bd624",
-    "write_set_subject_sha256": "e81343483d38598b27f90bd0ee91f389d7dbdea23d411900ec795b34337c03b7"
+    "file_sha256": "9fc6c39cc9b65c81774897544551068850d8cfac23bd5931694dd76000233fd3",
+    "write_set_subject_sha256": "55813a159573f17090e48848dfd5aee942754e2ac4776b4ce8976fbce5a9f5fe"
   }
 }

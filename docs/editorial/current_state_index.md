@@ -229,9 +229,13 @@ The machine-readable authority is
   `b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd`. The accepted candidate is
   `site-integration-candidate:f000477:national_security_foreign:119:v1`, subject
   `c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9ad04c5df`.
-- M11N prepares the exact content-bound publication eligibility authority,
-  deterministic expected write set, rollback, and drift proof for that accepted
-  M11M candidate. It remains pending independent ChatGPT review. National
+- M11N preserves its non-activating candidate-preparation authority and now
+  prepares a separate, deterministic, unsealed positive-activation decision
+  template. Public selection requires both the exact preparation authority and
+  a later sealed positive authority bound to the finalized write set, fresh
+  preflight, actual live runtime, production target, and exact rollback. No such
+  positive authority exists yet. The deterministic expected write set, rollback,
+  and drift proof remain pending independent ChatGPT review. National
   Security is still receipts-only in every public scope, no production or
   registry write has occurred, H.R. 8800 remains blocked and outside every
   analytical finding, and Justice remains the only active publication.

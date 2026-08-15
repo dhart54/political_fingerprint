@@ -24,7 +24,10 @@ from .review_state_catalog import (
     public_review_state_entries,
     select_public_review_state,
 )
-from .site_publication import eligible_site_integration_candidate
+from .site_publication import (
+    eligible_site_integration_candidate,
+    select_site_integration_public,
+)
 
 
 RECEIPTS_ONLY_BADGE = "Vote receipts"
@@ -290,6 +293,7 @@ def select_public_presentations(
     member_bioguide_id: str,
     scope: str,
     review_states: Iterable[dict[str, Any]] | None = None,
+    allow_test_activation_authority: bool = False,
 ) -> dict[str, Any]:
     """Return only active eligible display fields, with supplied fallbacks."""
 
@@ -302,12 +306,12 @@ def select_public_presentations(
     result = {issue_id: _fallback(issue_id, scope) for issue_id in SUPPORTED_ISSUES}
     for row in rows:
         site_candidate = eligible_site_integration_candidate(
-            row, member_bioguide_id=member_bioguide_id
+            row,
+            member_bioguide_id=member_bioguide_id,
+            allow_test_authority=allow_test_activation_authority,
         )
         if site_candidate is not None:
-            from .integration_candidate import select_site_integration_preview
-
-            projected = select_site_integration_preview(
+            projected = select_site_integration_public(
                 site_candidate,
                 legislator_id=legislator_id,
                 member_bioguide_id=member_bioguide_id,

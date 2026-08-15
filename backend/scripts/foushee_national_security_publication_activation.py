@@ -16,6 +16,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urljoin
+from urllib.request import urlopen
 
 from dotenv import load_dotenv
 
@@ -35,12 +37,18 @@ from app.editorial_presentations.selector import (  # noqa: E402
     select_public_presentations,
 )
 from app.editorial_presentations.site_publication import (  # noqa: E402
+    ACTIVATION_AUTHORITY_ID,
+    ACTIVATION_AUTHORITY_SCHEMA_VERSION,
+    ACTIVATION_REVIEWER_AUTHORITY,
     M11M_ARTIFACT_ID,
     M11M_FILE_SHA256,
     M11M_SUBJECT_SHA256,
+    POSITIVE_AUTHORIZATIONS,
+    validate_positive_activation_authority,
     validate_publication_authority,
 )
 from scripts.editorial_artifact_store import (  # noqa: E402
+    EXPECTED_PRODUCTION_TARGET,
     StoreSafetyError,
     _connect,
     target_info,
@@ -60,6 +68,10 @@ AUTHORITY_ID = (
 )
 WRITE_SET_ID = (
     "publication-activation-write-set:f000477:national_security_foreign:119:v1"
+)
+ACTIVATION_TEMPLATE_ID = (
+    "human-publication-activation-decision-template:"
+    "f000477:national_security_foreign:119:v1"
 )
 BUNDLE_ID = "foushee_national_security_foreign_119_publication_activation_v1"
 SOURCE_KEY = f"{M11M_ARTIFACT_ID}:publication-source-manifest"
@@ -88,6 +100,16 @@ AUTHORITY_PATH = OUTPUT_ROOT / "production_eligibility_publication_authority.jso
 WRITE_SET_PATH = OUTPUT_ROOT / "expected_production_write_set.json"
 REVIEW_PACKET_PATH = OUTPUT_ROOT / "review_packet.json"
 REVIEW_DOSSIER_PATH = OUTPUT_ROOT / "review_packet.md"
+ACTIVATION_TEMPLATE_PATH = OUTPUT_ROOT / "human_activation_decision_template.json"
+RUNTIME_PROOF_PATH = OUTPUT_ROOT / "runtime_health_proof.json"
+
+RUNTIME_SOURCE_PATHS = (
+    BACKEND / "app/api/positions.py",
+    BACKEND / "app/editorial_presentations/selector.py",
+    BACKEND / "app/editorial_presentations/site_publication.py",
+    BACKEND / "scripts/foushee_national_security_publication_activation.py",
+)
+PRODUCTION_TARGET_IDENTITY_SHA256 = semantic_hash(EXPECTED_PRODUCTION_TARGET)
 
 EXPECTED_M11L = {
     M11L_AUTHORITY_PATH: (
@@ -157,6 +179,69 @@ def _file_record(path: Path) -> dict[str, Any]:
         "path": path.relative_to(ROOT).as_posix(),
         "file_sha256": canonical_file_sha256(path),
     }
+
+
+def reviewed_runtime_manifest() -> dict[str, Any]:
+    files = [_file_record(path) for path in RUNTIME_SOURCE_PATHS]
+    return {
+        "schema_version": "m11n_reviewed_runtime_manifest_v1",
+        "files": files,
+        "reviewed_runtime_manifest_sha256": semantic_hash(files),
+    }
+
+
+def capture_runtime_health(base_url: str) -> dict[str, Any]:
+    """Read the actual deployed health identity; never accept an expected SHA."""
+
+    endpoint = urljoin(base_url.rstrip("/") + "/", "health")
+    with urlopen(endpoint, timeout=20) as response:  # noqa: S310 - bounded operator URL
+        health = json.load(response)
+    commit = health.get("commit_sha")
+    if not isinstance(commit, str) or not SHA40.fullmatch(commit):
+        raise StoreSafetyError("live health endpoint lacks an exact commit SHA")
+    body = {
+        "schema_version": "m11n_live_runtime_health_proof_v1",
+        "captured_at_utc": datetime.now(timezone.utc).isoformat(),
+        "health_endpoint": endpoint,
+        "deployed_commit": commit,
+        "health_commit": commit,
+        "reviewed_runtime_manifest_sha256": reviewed_runtime_manifest()[
+            "reviewed_runtime_manifest_sha256"
+        ],
+        "health_payload_sha256": semantic_hash(health),
+    }
+    body["runtime_health_proof_subject_sha256"] = semantic_hash(body)
+    return body
+
+
+def validate_runtime_health_proof(
+    proof: dict[str, Any], *, require_fresh: bool = False
+) -> None:
+    body = copy.deepcopy(proof)
+    claimed = body.pop("runtime_health_proof_subject_sha256", None)
+    if claimed != semantic_hash(body):
+        raise StoreSafetyError("runtime health proof digest mismatch")
+    if (
+        proof.get("schema_version") != "m11n_live_runtime_health_proof_v1"
+        or proof.get("deployed_commit") != proof.get("health_commit")
+        or not SHA40.fullmatch(proof.get("deployed_commit", ""))
+        or proof.get("reviewed_runtime_manifest_sha256")
+        != reviewed_runtime_manifest()["reviewed_runtime_manifest_sha256"]
+    ):
+        raise StoreSafetyError("runtime health proof does not bind reviewed runtime")
+    if require_fresh:
+        try:
+            captured = datetime.fromisoformat(proof["captured_at_utc"])
+        except (KeyError, TypeError, ValueError) as exc:
+            raise StoreSafetyError("runtime health proof timestamp is invalid") from exc
+        age = datetime.now(timezone.utc) - captured.astimezone(timezone.utc)
+        if age.total_seconds() < 0 or age.total_seconds() > 1800:
+            raise StoreSafetyError("runtime health proof is not fresh")
+
+
+def target_identity_sha256(info: dict[str, Any]) -> str:
+    identity = {key: info[key] for key in ("scheme", "host", "port", "database")}
+    return semantic_hash(identity)
 
 
 def _counts(conn: Any) -> dict[str, int]:
@@ -257,7 +342,9 @@ def _target_rows(conn: Any) -> list[dict[str, Any]]:
     ]
 
 
-def _selector_state(conn: Any) -> dict[str, Any]:
+def _selector_state(
+    conn: Any, *, allow_test_activation_authority: bool = False
+) -> dict[str, Any]:
     rows = EditorialArtifactRepository(conn).publication_selector()
     scopes: dict[str, Any] = {}
     for scope in ("119", "all", "118"):
@@ -266,6 +353,7 @@ def _selector_state(conn: Any) -> dict[str, Any]:
             legislator_id=MEMBER_SLUG,
             member_bioguide_id=MEMBER_ID,
             scope=scope,
+            allow_test_activation_authority=allow_test_activation_authority,
         )
         scopes[scope] = {
             item["issue_id"]: {
@@ -278,7 +366,13 @@ def _selector_state(conn: Any) -> dict[str, Any]:
     return {"selector_rows": len(rows), "scopes": scopes}
 
 
-def capture_preflight(conn: Any, *, deployed_commit: str) -> dict[str, Any]:
+def capture_preflight(
+    conn: Any,
+    *,
+    deployed_commit: str,
+    runtime_health_proof: dict[str, Any] | None = None,
+    production_target_identity_sha256: str | None = None,
+) -> dict[str, Any]:
     if not SHA40.fullmatch(deployed_commit):
         raise StoreSafetyError("deployed commit must be an exact lowercase SHA-40")
     counts = _counts(conn)
@@ -324,6 +418,23 @@ def capture_preflight(conn: Any, *, deployed_commit: str) -> dict[str, Any]:
         "m11n_target_rows": targets,
         "selector_pre_activation": selector,
     }
+    if runtime_health_proof is not None:
+        validate_runtime_health_proof(runtime_health_proof)
+        if runtime_health_proof["deployed_commit"] != deployed_commit:
+            raise StoreSafetyError("preflight runtime proof commit differs")
+        report["runtime_health_proof_binding"] = {
+            "runtime_health_proof_subject_sha256": runtime_health_proof[
+                "runtime_health_proof_subject_sha256"
+            ],
+            "reviewed_runtime_manifest_sha256": runtime_health_proof[
+                "reviewed_runtime_manifest_sha256"
+            ],
+            "deployed_commit": deployed_commit,
+        }
+    if production_target_identity_sha256 is not None:
+        if production_target_identity_sha256 != PRODUCTION_TARGET_IDENTITY_SHA256:
+            raise StoreSafetyError("preflight production target identity differs")
+        report["production_target_identity_sha256"] = production_target_identity_sha256
     report["preflight_subject_sha256"] = semantic_hash(report)
     return report
 
@@ -350,6 +461,22 @@ def validate_preflight(report: dict[str, Any]) -> None:
         or justice["publicly_active"] is not True
     ):
         raise StoreSafetyError("M11N preflight Justice binding differs")
+    runtime_binding = report.get("runtime_health_proof_binding")
+    if runtime_binding is not None and (
+        runtime_binding.get("deployed_commit") != report["deployed_commit"]
+        or runtime_binding.get("reviewed_runtime_manifest_sha256")
+        != reviewed_runtime_manifest()["reviewed_runtime_manifest_sha256"]
+        or not SHA256.fullmatch(
+            runtime_binding.get("runtime_health_proof_subject_sha256", "")
+        )
+    ):
+        raise StoreSafetyError("M11N preflight live-runtime binding differs")
+    target_binding = report.get("production_target_identity_sha256")
+    if (
+        target_binding is not None
+        and target_binding != PRODUCTION_TARGET_IDENTITY_SHA256
+    ):
+        raise StoreSafetyError("M11N preflight target binding differs")
 
 
 def build_authority(preflight: dict[str, Any]) -> dict[str, Any]:
@@ -535,6 +662,20 @@ def build_write_set(
         ],
         key=lambda item: item["relationship_type"],
     )
+    rollback_contract = {
+        "delete_registry_primary_key": {
+            "member_bioguide_id": MEMBER_ID,
+            "issue_id": ISSUE_ID,
+        },
+        "delete_relationship_count": 2,
+        "delete_artifact_natural_keys": sorted(
+            [M11M_ARTIFACT_ID, SOURCE_KEY, VALIDATION_KEY]
+        ),
+        "delete_batch_key": f"{BUNDLE_ID}-{POST_M11M_MAIN[:8]}",
+        "restore_counts": CURRENT_COUNTS,
+        "restore_state_fingerprint_sha256": preflight["state_fingerprint_sha256"],
+        "justice_registry_row_unchanged": preflight["justice_registry_row"],
+    }
     authority_text = _json_text(authority)
     metadata = {
         "activation_bundle_id": BUNDLE_ID,
@@ -555,6 +696,26 @@ def build_write_set(
         "source_manifest_artifact_version": 1,
         "source_manifest_content_sha256": by_key[SOURCE_KEY]["content_sha256"],
         "relationship_metadata": {"activation_bundle_id": BUNDLE_ID},
+        "candidate_preparation_authority_binding": {
+            "artifact_id": AUTHORITY_ID,
+            "authority_subject_sha256": authority["authority_subject_sha256"],
+            "authority_file_sha256": hashlib.sha256(
+                authority_text.encode("utf-8")
+            ).hexdigest(),
+        },
+        "preflight_binding": {
+            "preflight_subject_sha256": preflight["preflight_subject_sha256"],
+            "state_fingerprint_sha256": preflight["state_fingerprint_sha256"],
+        },
+        "reviewed_runtime_binding": reviewed_runtime_manifest(),
+        "production_target_identity_sha256": PRODUCTION_TARGET_IDENTITY_SHA256,
+        "rollback_binding": rollback_contract,
+        "activation_authority_contract": {
+            "artifact_id": ACTIVATION_AUTHORITY_ID,
+            "schema_version": ACTIVATION_AUTHORITY_SCHEMA_VERSION,
+            "reviewer_authority": ACTIVATION_REVIEWER_AUTHORITY,
+            "required_authorizations": POSITIVE_AUTHORIZATIONS,
+        },
     }
     body = {
         "schema_version": "site_integration_publication_activation_write_set_v1",
@@ -573,6 +734,12 @@ def build_write_set(
             "state_fingerprint_sha256": preflight["state_fingerprint_sha256"],
             "counts": preflight["counts"],
             "deployed_commit": preflight["deployed_commit"],
+            "runtime_health_proof_binding": preflight.get(
+                "runtime_health_proof_binding"
+            ),
+            "production_target_identity_sha256": preflight.get(
+                "production_target_identity_sha256"
+            ),
         },
         "artifacts": artifacts,
         "relationships": relationships,
@@ -609,23 +776,15 @@ def build_write_set(
                 "118": "receipts_only_unchanged",
             },
         },
-        "rollback": {
-            "delete_registry_primary_key": {
-                "member_bioguide_id": MEMBER_ID,
-                "issue_id": ISSUE_ID,
-            },
-            "delete_relationship_count": 2,
-            "delete_artifact_natural_keys": sorted(
-                [M11M_ARTIFACT_ID, SOURCE_KEY, VALIDATION_KEY]
-            ),
-            "delete_batch_key": f"{BUNDLE_ID}-{POST_M11M_MAIN[:8]}",
-            "restore_counts": CURRENT_COUNTS,
-            "restore_state_fingerprint_sha256": preflight["state_fingerprint_sha256"],
-            "justice_registry_row_unchanged": preflight["justice_registry_row"],
-        },
+        "rollback": rollback_contract,
         "activation_authorized": False,
         "production_write_authorized": False,
         "next_required_gate": "independent_chatgpt_mechanical_review",
+        "finalization_required": {
+            "fresh_live_runtime_health_proof": True,
+            "fresh_production_preflight": True,
+            "sealed_positive_activation_authority": True,
+        },
     }
     body["write_set_subject_sha256"] = semantic_hash(body)
     validate_write_set(body, authority=authority)
@@ -695,19 +854,169 @@ def validate_write_set(write_set: dict[str, Any], *, authority: dict[str, Any]) 
         != JUSTICE_CONTENT_SHA256
     ):
         raise StoreSafetyError("M11N rollback does not isolate Justice")
+    metadata = write_set["publication_registry"]["publication_metadata"]
+    if (
+        metadata.get("candidate_preparation_authority_binding")
+        != write_set["authority_binding"]
+        or metadata.get("preflight_binding")
+        != {
+            "preflight_subject_sha256": write_set["preflight_binding"][
+                "preflight_subject_sha256"
+            ],
+            "state_fingerprint_sha256": write_set["preflight_binding"][
+                "state_fingerprint_sha256"
+            ],
+        }
+        or metadata.get("production_target_identity_sha256")
+        != PRODUCTION_TARGET_IDENTITY_SHA256
+        or metadata.get("rollback_binding") != write_set.get("rollback")
+        or metadata.get("activation_authority_contract")
+        != {
+            "artifact_id": ACTIVATION_AUTHORITY_ID,
+            "schema_version": ACTIVATION_AUTHORITY_SCHEMA_VERSION,
+            "reviewer_authority": ACTIVATION_REVIEWER_AUTHORITY,
+            "required_authorizations": POSITIVE_AUTHORIZATIONS,
+        }
+    ):
+        raise StoreSafetyError("M11N activation-authority contract differs")
+
+
+def activation_write_set_binding(write_set: dict[str, Any]) -> dict[str, str]:
+    return {
+        "artifact_id": WRITE_SET_ID,
+        "write_set_subject_sha256": write_set["write_set_subject_sha256"],
+    }
+
+
+def build_activation_decision_template(
+    write_set: dict[str, Any], authority: dict[str, Any]
+) -> dict[str, Any]:
+    """Create an unsealed decision form; this is not live authority."""
+
+    validate_write_set(write_set, authority=authority)
+    metadata = write_set["publication_registry"]["publication_metadata"]
+    subject = {
+        "decision_options": [
+            "approve_exact_publication_activation",
+            "reject_publication_activation",
+        ],
+        "required_reviewer_authority": ACTIVATION_REVIEWER_AUTHORITY,
+        "product_owner": "dhart54",
+        "fixed_bindings": {
+            "member_bioguide_id": MEMBER_ID,
+            "issue_id": ISSUE_ID,
+            "congress": CONGRESS,
+            "accepted_m11m_binding": write_set["accepted_m11m_binding"],
+            "candidate_preparation_authority_binding": write_set["authority_binding"],
+            "activation_write_set_binding": activation_write_set_binding(write_set),
+            "publication_registry_target": {
+                "member_bioguide_id": MEMBER_ID,
+                "issue_id": ISSUE_ID,
+                "presentation_natural_key": M11M_ARTIFACT_ID,
+                "presentation_artifact_version": 1,
+            },
+            "presentation_content_sha256": metadata["active_artifact_sha256"],
+            "candidate_preflight_binding": metadata["preflight_binding"],
+            "reviewed_runtime_manifest_sha256": metadata["reviewed_runtime_binding"][
+                "reviewed_runtime_manifest_sha256"
+            ],
+            "production_target_identity_sha256": (PRODUCTION_TARGET_IDENTITY_SHA256),
+            "exact_bounded_rollback": write_set["rollback"],
+        },
+        "completion_required_after_live_runtime_deployment": {
+            "decision": None,
+            "reviewer": None,
+            "decision_recorded_at_utc": None,
+            "fresh_preflight_subject_sha256": None,
+            "fresh_preflight_state_fingerprint_sha256": None,
+            "reviewed_runtime_commit": None,
+            "deployed_runtime_commit": None,
+            "live_health_proof_subject_sha256": None,
+            "authorizations": {key: None for key in POSITIVE_AUTHORIZATIONS},
+        },
+        "ratification_boundary": (
+            "This unsealed template cannot authorize selection or mutation. A fresh "
+            "live-runtime health proof and production preflight must be filled and "
+            "the exact sealed authority mechanically ratified before apply."
+        ),
+    }
+    template = {
+        "schema_version": "m11n_publication_activation_decision_template_v1",
+        "artifact_id": ACTIVATION_TEMPLATE_ID,
+        "immutable": True,
+        "sealed": False,
+        "accepted": False,
+        "subject": subject,
+        "template_subject_sha256": semantic_hash(subject),
+    }
+    validate_activation_decision_template(template, write_set, authority)
+    return template
+
+
+def validate_activation_decision_template(
+    template: dict[str, Any],
+    write_set: dict[str, Any],
+    authority: dict[str, Any],
+) -> None:
+    validate_write_set(write_set, authority=authority)
+    subject = template.get("subject")
+    if (
+        template.get("schema_version")
+        != "m11n_publication_activation_decision_template_v1"
+        or template.get("artifact_id") != ACTIVATION_TEMPLATE_ID
+        or template.get("immutable") is not True
+        or template.get("sealed") is not False
+        or template.get("accepted") is not False
+        or not isinstance(subject, dict)
+        or template.get("template_subject_sha256") != semantic_hash(subject)
+        or subject["fixed_bindings"]["activation_write_set_binding"]
+        != activation_write_set_binding(write_set)
+        or any(
+            value is not None
+            for value in subject["completion_required_after_live_runtime_deployment"][
+                "authorizations"
+            ].values()
+        )
+    ):
+        raise StoreSafetyError("M11N activation decision template differs")
+
+
+def publication_metadata_for_activation(
+    write_set: dict[str, Any],
+    candidate_authority: dict[str, Any],
+    activation_authority: dict[str, Any],
+    *,
+    allow_test_authority: bool = False,
+) -> dict[str, Any]:
+    candidate = load_site_integration_candidate(M11M_PATH)
+    metadata = copy.deepcopy(write_set["publication_registry"]["publication_metadata"])
+    metadata["activation_write_set_binding"] = activation_write_set_binding(write_set)
+    metadata["publication_activation_authority"] = copy.deepcopy(activation_authority)
+    metadata["activation_authority_subject_sha256"] = activation_authority.get(
+        "activation_authority_subject_sha256"
+    )
+    validate_positive_activation_authority(
+        activation_authority,
+        candidate=candidate,
+        candidate_authority=candidate_authority,
+        metadata=metadata,
+        allow_test_authority=allow_test_authority,
+    )
+    return metadata
 
 
 def _review_packet(
     preflight: dict[str, Any],
     authority: dict[str, Any],
     write_set: dict[str, Any],
+    activation_template: dict[str, Any],
 ) -> dict[str, Any]:
     packet = {
         "schema_version": "m11n_review_packet_v1",
         "milestone": "M11N",
         "exact_base": POST_M11M_MAIN,
         "accepted_m11m_binding": authority["subject"]["accepted_m11m_binding"],
-        "authority": {
+        "candidate_preparation_authority": {
             "artifact_id": AUTHORITY_ID,
             "authority_subject_sha256": authority["authority_subject_sha256"],
             "file_sha256": hashlib.sha256(
@@ -720,6 +1029,15 @@ def _review_packet(
             "file_sha256": hashlib.sha256(
                 _json_text(write_set).encode("utf-8")
             ).hexdigest(),
+        },
+        "activation_authority_template": {
+            "artifact_id": ACTIVATION_TEMPLATE_ID,
+            "template_subject_sha256": activation_template["template_subject_sha256"],
+            "file_sha256": hashlib.sha256(
+                _json_text(activation_template).encode("utf-8")
+            ).hexdigest(),
+            "sealed": False,
+            "accepted": False,
         },
         "current_production_state": {
             "captured_at_utc": preflight["captured_at_utc"],
@@ -747,6 +1065,16 @@ def _review_packet(
             "registry_mutation": False,
             "deployment": False,
         },
+        "future_activation_sequence": [
+            "merge the mechanically accepted M11N runtime",
+            "deploy that exact runtime while the registry target remains absent",
+            "verify National Security remains receipts-only",
+            "capture the actual live /health commit identity",
+            "capture a fresh read-only production preflight bound to that health proof",
+            "finalize the write set and seal a distinct positive activation authority",
+            "stop for a small mechanical ratification",
+            "apply the exact authority-bound write and verify live production",
+        ],
         "required_review": "independent_chatgpt_mechanical_review",
     }
     packet["review_packet_subject_sha256"] = semantic_hash(packet)
@@ -764,8 +1092,9 @@ def _review_markdown(packet: dict[str, Any]) -> str:
             f"- Exact base: `{packet['exact_base']}`",
             f"- Accepted M11M artifact: `{packet['accepted_m11m_binding']['artifact_id']}`",
             f"- M11M subject: `{packet['accepted_m11m_binding']['subject_sha256']}`",
-            f"- Authority subject: `{packet['authority']['authority_subject_sha256']}`",
+            f"- Preparation authority subject: `{packet['candidate_preparation_authority']['authority_subject_sha256']}`",
             f"- Write-set subject: `{packet['write_set']['write_set_subject_sha256']}`",
+            f"- Unsealed activation template: `{packet['activation_authority_template']['template_subject_sha256']}`",
             "",
             "## Expected write envelope",
             "",
@@ -779,6 +1108,7 @@ def _review_markdown(packet: dict[str, Any]) -> str:
             "- National Security remains receipts-only before activation.",
             "- H.R. 8800 remains source-blocked, uninterpreted, and excluded from public findings.",
             "- Production write, publication activation, registry mutation, and deployment remain unauthorized.",
+            "- The preparation authority alone cannot make the candidate publicly selectable.",
             "",
             "## Required next decision",
             "",
@@ -788,15 +1118,19 @@ def _review_markdown(packet: dict[str, Any]) -> str:
     )
 
 
-def build(*, check: bool = False) -> dict[str, Any]:
-    preflight = _load(PREFLIGHT_PATH)
+def build(
+    *, check: bool = False, preflight_path: Path = PREFLIGHT_PATH
+) -> dict[str, Any]:
+    preflight = _load(preflight_path)
     validate_preflight(preflight)
     authority = build_authority(preflight)
     write_set = build_write_set(preflight, authority)
-    packet = _review_packet(preflight, authority, write_set)
+    activation_template = build_activation_decision_template(write_set, authority)
+    packet = _review_packet(preflight, authority, write_set, activation_template)
     outputs = {
         AUTHORITY_PATH: _json_text(authority),
         WRITE_SET_PATH: _json_text(write_set),
+        ACTIVATION_TEMPLATE_PATH: _json_text(activation_template),
         REVIEW_PACKET_PATH: _json_text(packet),
         REVIEW_DOSSIER_PATH: _review_markdown(packet),
     }
@@ -805,6 +1139,7 @@ def build(*, check: bool = False) -> dict[str, Any]:
     return {
         "authority": authority,
         "write_set": write_set,
+        "activation_template": activation_template,
         "review_packet": packet,
     }
 
@@ -821,9 +1156,143 @@ def _assert_bound_preflight(conn: Any, write_set: dict[str, Any]) -> dict[str, A
     return actual
 
 
-def _postcheck(conn: Any, write_set: dict[str, Any]) -> dict[str, Any]:
+def _baseline_fingerprint_without_m11n(conn: Any, *, batch_key: str) -> str:
+    keys = [M11M_ARTIFACT_ID, SOURCE_KEY, VALIDATION_KEY]
+    queries = (
+        (
+            """SELECT deterministic_batch_key,source_commit_sha,manifest_sha256,status,
+                      artifact_count,relationship_count
+                 FROM editorial_artifact_batches
+                WHERE deterministic_batch_key<>%s ORDER BY deterministic_batch_key""",
+            (batch_key,),
+        ),
+        (
+            """SELECT artifact_type,natural_key,schema_version,artifact_version,
+                      content_sha256,source_manifest_sha256,source_commit_sha,batch_id,
+                      member_bioguide_id,issue_id,congress,chamber,canonical_action_id,
+                      episode_id,policy_family_id,editorial_status,benchmark_status,
+                      production_eligible,review_route
+                 FROM editorial_artifact_versions
+                WHERE NOT natural_key=ANY(%s)
+                ORDER BY natural_key,artifact_version,content_sha256""",
+            (keys,),
+        ),
+        (
+            """SELECT parent.natural_key AS parent_natural_key,
+                      child.natural_key AS child_natural_key,relationship_type,ordinal,
+                      metadata_jsonb
+                 FROM editorial_artifact_relationships rel
+                 JOIN editorial_artifact_versions parent
+                   ON parent.artifact_id=rel.parent_artifact_id
+                 JOIN editorial_artifact_versions child
+                   ON child.artifact_id=rel.child_artifact_id
+                WHERE NOT parent.natural_key=ANY(%s)
+                  AND NOT child.natural_key=ANY(%s)
+                ORDER BY parent.natural_key,relationship_type,ordinal,child.natural_key""",
+            (keys, keys),
+        ),
+        (
+            """SELECT registry.member_bioguide_id,registry.issue_id,artifact.natural_key,
+                      artifact.artifact_version,registry.publicly_active,
+                      registry.publication_metadata_jsonb
+                 FROM editorial_publication_registry registry
+                 JOIN editorial_artifact_versions artifact
+                   ON artifact.artifact_id=registry.artifact_id
+                WHERE NOT (registry.member_bioguide_id=%s AND registry.issue_id=%s)
+                ORDER BY registry.member_bioguide_id,registry.issue_id""",
+            (MEMBER_ID, ISSUE_ID),
+        ),
+    )
+    return semantic_hash(
+        [
+            [_jsonable(dict(row)) for row in conn.execute(query, params).fetchall()]
+            for query, params in queries
+        ]
+    )
+
+
+def _postcheck(
+    conn: Any,
+    write_set: dict[str, Any],
+    candidate_authority: dict[str, Any],
+    activation_authority: dict[str, Any],
+    *,
+    allow_test_authority: bool = False,
+) -> dict[str, Any]:
     if _counts(conn) != write_set["expected_counts"]["after"]:
         raise StoreSafetyError("M11N post-activation counts differ")
+    batch = conn.execute(
+        """SELECT deterministic_batch_key,source_commit_sha,manifest_sha256,status,
+                  artifact_count,relationship_count
+             FROM editorial_artifact_batches WHERE deterministic_batch_key=%s""",
+        (write_set["deterministic_batch_key"],),
+    ).fetchall()
+    expected_batch = {
+        "deterministic_batch_key": write_set["deterministic_batch_key"],
+        "source_commit_sha": write_set["source_commit_sha"],
+        "manifest_sha256": write_set["write_set_subject_sha256"],
+        "status": "applied",
+        "artifact_count": 3,
+        "relationship_count": 2,
+    }
+    if [_jsonable(dict(row)) for row in batch] != [expected_batch]:
+        raise StoreSafetyError("M11N exact batch graph differs")
+    artifact_rows = [
+        _jsonable(dict(row))
+        for row in conn.execute(
+            """SELECT natural_key,artifact_type,schema_version,artifact_version,
+                      content_sha256,source_manifest_sha256,source_commit_sha,
+                      member_bioguide_id,issue_id,congress,chamber,editorial_status,
+                      benchmark_status,production_eligible,payload_jsonb
+                 FROM editorial_artifact_versions WHERE natural_key=ANY(%s)
+                 ORDER BY natural_key""",
+            ([M11M_ARTIFACT_ID, SOURCE_KEY, VALIDATION_KEY],),
+        ).fetchall()
+    ]
+    expected_artifacts = []
+    for item in sorted(write_set["artifacts"], key=lambda row: row["natural_key"]):
+        expected_artifacts.append(
+            {
+                key: item[key]
+                for key in (
+                    "natural_key",
+                    "artifact_type",
+                    "schema_version",
+                    "artifact_version",
+                    "content_sha256",
+                    "source_manifest_sha256",
+                    "source_commit_sha",
+                    "member_bioguide_id",
+                    "issue_id",
+                    "congress",
+                    "chamber",
+                    "editorial_status",
+                    "benchmark_status",
+                    "production_eligible",
+                )
+            }
+            | {"payload_jsonb": item["payload"]}
+        )
+    if artifact_rows != expected_artifacts:
+        raise StoreSafetyError("M11N exact artifact graph differs")
+    relationship_rows = [
+        _jsonable(dict(row))
+        for row in conn.execute(
+            """SELECT parent.natural_key AS parent_natural_key,
+                      child.natural_key AS child_natural_key,
+                      rel.relationship_type,rel.ordinal,rel.metadata_jsonb AS metadata
+                 FROM editorial_artifact_relationships rel
+                 JOIN editorial_artifact_versions parent
+                   ON parent.artifact_id=rel.parent_artifact_id
+                 JOIN editorial_artifact_versions child
+                   ON child.artifact_id=rel.child_artifact_id
+                WHERE parent.natural_key=%s
+                ORDER BY rel.relationship_type,rel.ordinal,child.natural_key""",
+            (M11M_ARTIFACT_ID,),
+        ).fetchall()
+    ]
+    if relationship_rows != write_set["relationships"]:
+        raise StoreSafetyError("M11N exact relationship graph differs")
     registry = _registry_rows(conn)
     justice = next(
         row for row in registry if row["issue_id"] == "JUSTICE_PUBLIC_SAFETY"
@@ -845,7 +1314,25 @@ def _postcheck(conn: Any, write_set: dict[str, Any]) -> dict[str, Any]:
         ]
     ):
         raise StoreSafetyError("M11N National Security registry identity differs")
-    selector = _selector_state(conn)
+    expected_metadata = publication_metadata_for_activation(
+        write_set,
+        candidate_authority,
+        activation_authority,
+        allow_test_authority=allow_test_authority,
+    )
+    if national_security["publication_metadata_jsonb"] != expected_metadata:
+        raise StoreSafetyError("M11N exact publication registry metadata differs")
+    if (
+        len(registry) != 2
+        or _baseline_fingerprint_without_m11n(
+            conn, batch_key=write_set["deterministic_batch_key"]
+        )
+        != write_set["preflight_binding"]["state_fingerprint_sha256"]
+    ):
+        raise StoreSafetyError("M11N changed Justice or unrelated production rows")
+    selector = _selector_state(
+        conn, allow_test_activation_authority=allow_test_authority
+    )
     ns = selector["scopes"]
     if (
         ns["119"][ISSUE_ID]["tier"] != "reviewed_conclusion"
@@ -853,14 +1340,45 @@ def _postcheck(conn: Any, write_set: dict[str, Any]) -> dict[str, Any]:
         or ns["118"][ISSUE_ID]["tier"] != "receipts_only"
     ):
         raise StoreSafetyError("M11N public selector postcondition differs")
-    return {"counts": _counts(conn), "registry": registry, "selector": selector}
+    return {
+        "counts": _counts(conn),
+        "batch": expected_batch,
+        "artifacts": artifact_rows,
+        "relationships": relationship_rows,
+        "registry": registry,
+        "selector": selector,
+        "baseline_fingerprint_unchanged": True,
+    }
 
 
-def _apply(conn: Any, write_set: dict[str, Any]) -> dict[str, Any]:
+def _apply(
+    conn: Any,
+    write_set: dict[str, Any],
+    candidate_authority: dict[str, Any],
+    activation_authority: dict[str, Any],
+    *,
+    allow_test_authority: bool = False,
+) -> dict[str, Any]:
     from psycopg.types.json import Jsonb
 
+    validate_write_set(write_set, authority=candidate_authority)
+    publication_metadata = publication_metadata_for_activation(
+        write_set,
+        candidate_authority,
+        activation_authority,
+        allow_test_authority=allow_test_authority,
+    )
     if _counts(conn) == write_set["expected_counts"]["after"]:
-        return {"already_applied": True, "postcheck": _postcheck(conn, write_set)}
+        return {
+            "already_applied": True,
+            "postcheck": _postcheck(
+                conn,
+                write_set,
+                candidate_authority,
+                activation_authority,
+                allow_test_authority=allow_test_authority,
+            ),
+        }
     bound = _assert_bound_preflight(conn, write_set)
     batch = conn.execute(
         """INSERT INTO editorial_artifact_batches
@@ -922,7 +1440,6 @@ def _apply(conn: Any, write_set: dict[str, Any]) -> dict[str, Any]:
                 Jsonb(relation["metadata"]),
             ),
         )
-    registry = write_set["publication_registry"]
     inserted = conn.execute(
         """INSERT INTO editorial_publication_registry
            (member_bioguide_id,issue_id,artifact_id,publicly_active,activated_at,
@@ -932,7 +1449,7 @@ def _apply(conn: Any, write_set: dict[str, Any]) -> dict[str, Any]:
             MEMBER_ID,
             ISSUE_ID,
             ids[M11M_ARTIFACT_ID],
-            Jsonb(registry["publication_metadata"]),
+            Jsonb(publication_metadata),
         ),
     )
     if inserted.rowcount != 1:
@@ -942,12 +1459,31 @@ def _apply(conn: Any, write_set: dict[str, Any]) -> dict[str, Any]:
         "batch_id": batch_id,
         "artifact_ids": sorted(ids.values()),
         "preflight": bound,
-        "postcheck": _postcheck(conn, write_set),
+        "postcheck": _postcheck(
+            conn,
+            write_set,
+            candidate_authority,
+            activation_authority,
+            allow_test_authority=allow_test_authority,
+        ),
     }
 
 
-def _rollback(conn: Any, write_set: dict[str, Any]) -> dict[str, Any]:
-    _postcheck(conn, write_set)
+def _rollback(
+    conn: Any,
+    write_set: dict[str, Any],
+    candidate_authority: dict[str, Any],
+    activation_authority: dict[str, Any],
+    *,
+    allow_test_authority: bool = False,
+) -> dict[str, Any]:
+    _postcheck(
+        conn,
+        write_set,
+        candidate_authority,
+        activation_authority,
+        allow_test_authority=allow_test_authority,
+    )
     batch = conn.execute(
         "SELECT batch_id FROM editorial_artifact_batches WHERE deterministic_batch_key=%s",
         (write_set["deterministic_batch_key"],),
@@ -999,6 +1535,7 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "mode",
         choices=(
+            "capture-runtime",
             "capture-preflight",
             "build",
             "dry-run",
@@ -1013,17 +1550,31 @@ def _parser() -> argparse.ArgumentParser:
         "--target", choices=("disposable", "production"), default="disposable"
     )
     parser.add_argument("--deployed-commit", default=POST_M11M_MAIN)
+    parser.add_argument("--health-base-url")
+    parser.add_argument("--runtime-proof-path", type=Path, default=RUNTIME_PROOF_PATH)
+    parser.add_argument("--preflight-path", type=Path, default=PREFLIGHT_PATH)
     parser.add_argument("--report-path", type=Path, default=PREFLIGHT_PATH)
     parser.add_argument("--write-set-path", type=Path, default=WRITE_SET_PATH)
     parser.add_argument("--authority-path", type=Path, default=AUTHORITY_PATH)
+    parser.add_argument("--activation-authority-path", type=Path)
     parser.add_argument("--confirm-write-set-digest")
+    parser.add_argument("--confirm-activation-authority-digest")
+    parser.add_argument("--confirm-production-activation", action="store_true")
+    parser.add_argument("--confirm-production-rollback", action="store_true")
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
+    if args.mode == "capture-runtime":
+        if not args.health_base_url:
+            raise StoreSafetyError("capture-runtime requires --health-base-url")
+        proof = capture_runtime_health(args.health_base_url)
+        _write(args.runtime_proof_path, _json_text(proof))
+        print(_json_text(proof))
+        return 0
     if args.mode == "build":
-        result = build(check=args.check)
+        result = build(check=args.check, preflight_path=args.preflight_path)
         print(
             json.dumps(
                 {
@@ -1039,14 +1590,10 @@ def main(argv: list[str] | None = None) -> int:
             )
         )
         return 0
-    if args.target == "production" and args.mode in {
-        "dry-run",
-        "apply",
-        "rollback",
-    }:
-        raise StoreSafetyError(
-            "M11N does not authorize a production mutation; stop for review"
-        )
+    if args.mode in {"dry-run", "apply", "postcheck", "rollback"} and (
+        args.activation_authority_path is None
+    ):
+        raise StoreSafetyError("exact positive activation authority is required")
     load_dotenv(BACKEND / ".env")
     db_url = args.database_url or (
         os.getenv("DATABASE_URL")
@@ -1055,19 +1602,82 @@ def main(argv: list[str] | None = None) -> int:
     )
     if not db_url:
         raise StoreSafetyError("an explicit database URL is required")
-    target_info(db_url, args.target, None)
+    db_target = target_info(db_url, args.target, None)
     if args.mode == "capture-preflight":
+        runtime_proof = (
+            _load(args.runtime_proof_path) if args.runtime_proof_path.exists() else None
+        )
+        if args.target == "production" and runtime_proof is None:
+            raise StoreSafetyError(
+                "production preflight requires a fresh live runtime health proof"
+            )
+        deployed_commit = (
+            runtime_proof["deployed_commit"]
+            if runtime_proof is not None
+            else args.deployed_commit
+        )
         with _connect(db_url, autocommit=True) as conn:
             conn.execute("SET default_transaction_read_only=on")
             with conn.transaction():
                 conn.execute("SET TRANSACTION READ ONLY")
-                report = capture_preflight(conn, deployed_commit=args.deployed_commit)
+                report = capture_preflight(
+                    conn,
+                    deployed_commit=deployed_commit,
+                    runtime_health_proof=runtime_proof,
+                    production_target_identity_sha256=(
+                        target_identity_sha256(db_target)
+                        if args.target == "production"
+                        else None
+                    ),
+                )
         _write(args.report_path, _json_text(report))
         print(_json_text(report))
         return 0
     authority = _load(args.authority_path)
     write_set = _load(args.write_set_path)
     validate_write_set(write_set, authority=authority)
+    activation_authority = _load(args.activation_authority_path)
+    activation_digest = activation_authority.get("activation_authority_subject_sha256")
+    if args.confirm_activation_authority_digest != activation_digest:
+        raise StoreSafetyError(
+            "exact activation-authority digest confirmation required"
+        )
+    allow_test_authority = args.target == "disposable"
+    publication_metadata_for_activation(
+        write_set,
+        authority,
+        activation_authority,
+        allow_test_authority=allow_test_authority,
+    )
+    if args.target == "production":
+        if activation_authority.get("test_only_synthetic") is True:
+            raise StoreSafetyError(
+                "synthetic activation authority cannot target production"
+            )
+        if not args.runtime_proof_path.exists():
+            raise StoreSafetyError("production operation requires live runtime proof")
+        runtime_proof = _load(args.runtime_proof_path)
+        validate_runtime_health_proof(runtime_proof, require_fresh=True)
+        authority_runtime = activation_authority["subject"]["runtime_binding"]
+        if (
+            write_set["preflight_binding"].get("runtime_health_proof_binding") is None
+            or write_set["preflight_binding"].get("production_target_identity_sha256")
+            != target_identity_sha256(db_target)
+            or activation_authority["subject"]["production_target_identity_sha256"]
+            != target_identity_sha256(db_target)
+            or authority_runtime["deployed_commit"] != runtime_proof["deployed_commit"]
+            or authority_runtime["health_proof_subject_sha256"]
+            != runtime_proof["runtime_health_proof_subject_sha256"]
+        ):
+            raise StoreSafetyError(
+                "production operation lacks fresh runtime/preflight/target binding"
+            )
+        if args.mode in {"dry-run", "apply"} and not args.confirm_production_activation:
+            raise StoreSafetyError(
+                "explicit production activation confirmation required"
+            )
+        if args.mode == "rollback" and not args.confirm_production_rollback:
+            raise StoreSafetyError("explicit production rollback confirmation required")
     if args.mode in {"dry-run", "apply", "rollback"} and (
         args.confirm_write_set_digest != write_set["write_set_subject_sha256"]
     ):
@@ -1082,11 +1692,29 @@ def main(argv: list[str] | None = None) -> int:
             if not read_only:
                 conn.execute("SELECT pg_advisory_xact_lock(hashtext(%s))", (LOCK_KEY,))
             if args.mode in {"dry-run", "apply"}:
-                result = _apply(conn, write_set)
+                result = _apply(
+                    conn,
+                    write_set,
+                    authority,
+                    activation_authority,
+                    allow_test_authority=allow_test_authority,
+                )
             elif args.mode == "postcheck":
-                result = _postcheck(conn, write_set)
+                result = _postcheck(
+                    conn,
+                    write_set,
+                    authority,
+                    activation_authority,
+                    allow_test_authority=allow_test_authority,
+                )
             else:
-                result = _rollback(conn, write_set)
+                result = _rollback(
+                    conn,
+                    write_set,
+                    authority,
+                    activation_authority,
+                    allow_test_authority=allow_test_authority,
+                )
     print(json.dumps({"mode": args.mode, "result": result}, indent=2, default=str))
     return 0
 
