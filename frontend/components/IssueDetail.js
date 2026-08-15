@@ -101,7 +101,7 @@ export default function IssueDetail({
             />
             <ScopeCell
               description={selectedIssue.interpretation
-                ? `${selectedIssue.interpretation.actionCount} votes across ${selectedIssue.interpretation.episodeCount} legislative episodes`
+                ? issueSummaryAccounting(selectedIssue.interpretation)
                 : "Vote receipts remain available"}
               icon="summary"
               label="Issue summary covers"
@@ -137,6 +137,14 @@ export default function IssueDetail({
       ) : null}
     </section>
   );
+}
+
+function issueSummaryAccounting(interpretation) {
+  const actionText = `${interpretation.actionCount} recorded ${interpretation.actionCount === 1 ? "action" : "actions"} in scope`;
+  if (!interpretation.findingCount || !interpretation.supportingVoteCount) {
+    return actionText;
+  }
+  return `${actionText} · ${interpretation.findingCount} findings supported by ${interpretation.supportingVoteCount} votes`;
 }
 
 function ScopeCell({ description, icon, label, value }) {

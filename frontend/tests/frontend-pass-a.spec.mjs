@@ -116,7 +116,7 @@ test("reviewed finding links resolve live-shaped evidence IDs and open the first
     name: /View 3 votes for Certification, fentanyl research provisions/,
   }).click();
   await expect(page.locator(".pattern-strip")).toBeVisible();
-  await expect(page.getByText("3 matching votes", { exact: true })).toBeVisible();
+  await expect(page.locator(".pattern-strip")).toContainText("3 votes");
   await expect(
     page.getByRole("heading", { name: "Vote record" }),
   ).toBeFocused();

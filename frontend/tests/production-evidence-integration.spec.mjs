@@ -47,7 +47,8 @@ test("header and scope strip preserve one bounded selected-issue hierarchy", asy
   await expect(summary).toContainText("89 recorded actions currently visible");
   await expect(summary).toContainText("Issue summary covers");
   await expect(summary).toContainText("119th Congress");
-  await expect(summary).toContainText("37 votes across 32 legislative episodes");
+  await expect(summary).toContainText("37 recorded actions in scope");
+  await expect(summary).not.toContainText("legislative episode");
   await expect(page.getByTestId("reviewed-analysis")).not.toContainText("37 reviewed actions");
   await expect(page.getByRole("heading", { name: "Vote record" })).toBeVisible();
 });
@@ -56,7 +57,7 @@ test("119th and 118th scope states remain distinct", async ({ page }) => {
   await page.goto(`${selectedPath}&scope=119`);
   await expect(page.locator("#issue-summary")).toContainText("37 recorded actions currently visible");
   await expect(page.locator("#issue-summary")).toContainText(
-    "37 votes across 32 legislative episodes",
+    "37 recorded actions in scope",
   );
   await expect(page.getByTestId("reviewed-analysis")).toBeVisible();
 
@@ -81,11 +82,11 @@ test("all governed patterns are visible with symbols, copy, counts, and one acti
   await expect(analysis).not.toContainText("Bar length reflects");
 
   const patterns = [
-    ["Opposition to displacing D.C. public-safety rules", "Opposition", "6 votes · 6 episodes", "−"],
-    ["Opposition to reducing firearm-access barriers", "Opposition", "3 votes · 3 episodes", "−"],
-    ["Opposition to expanding fraud-enforcement capacity", "Opposition", "2 votes · 2 episodes", "−"],
-    ["Support for terrorism-preparedness mandates", "Support", "2 votes · 2 episodes", "+"],
-    ["The HALT Fentanyl path is one mixed episode", "Mixed", "3 votes within 1 episode", "±"],
+    ["Opposition to displacing D.C. public-safety rules", "Opposition", "6 votes", "−"],
+    ["Opposition to reducing firearm-access barriers", "Opposition", "3 votes", "−"],
+    ["Opposition to expanding fraud-enforcement capacity", "Opposition", "2 votes", "−"],
+    ["Support for terrorism-preparedness mandates", "Support", "2 votes", "+"],
+    ["The HALT Fentanyl path is one mixed episode", "Mixed", "3 votes", "±"],
   ];
   for (const [heading, status, accounting, symbol] of patterns) {
     const row = analysis.locator("article").filter({ hasText: heading });
@@ -96,7 +97,7 @@ test("all governed patterns are visible with symbols, copy, counts, and one acti
     await expect(row.getByRole("button", { name: new RegExp(`View \\d+ votes for ${escapeRegex(heading)}`) })).toHaveCount(1);
   }
   await expect(analysis).toContainText(
-    "Based on reviewed recorded actions; this does not infer motive, ideology, character, future behavior, or voting advice.",
+    "Based on recorded actions in this issue; this does not infer motive, ideology, character, future behavior, or voting advice.",
   );
 });
 
@@ -148,7 +149,8 @@ test("pattern navigation alone creates the compact selected-pattern strip and cl
   await page.keyboard.press("Enter");
   const strip = page.locator(".pattern-strip");
   await expect(strip).toContainText("Mixed");
-  await expect(strip).toContainText("3 votes within 1 legislative episode");
+  await expect(strip).toContainText("3 votes");
+  await expect(strip).not.toContainText("legislative episode");
   await expect(strip).not.toContainText("bounded evidence");
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
   await expect(page.getByRole("heading", { name: "Vote record" })).toBeFocused();
@@ -249,7 +251,7 @@ test("an NDAA action filtered out of its group retains parent-measure context", 
   const strip = page.locator(".pattern-strip");
   await expect(strip).toContainText("Opposition");
   await expect(strip).toContainText("reducing firearm-access barriers");
-  await expect(strip).toContainText("3 matching votes");
+  await expect(strip).toContainText("3 votes");
   await expect(strip.getByRole("button", { name: "Show all 37 votes" })).toBeVisible();
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(3);
   await expect(
