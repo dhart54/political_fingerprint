@@ -1,0 +1,129 @@
+{
+  "schema_version": "m11n_production_activation_receipt_v1",
+  "receipt_id": "production-activation-receipt:f000477:national_security_foreign:119:v1",
+  "immutable": true,
+  "receipt_subject_sha256": "71c572e21bf62e8522f720a80166df62ed11fb6415bd646523605422e0dfa07a",
+  "subject": {
+    "accepted_m11m_binding": {
+      "artifact_id": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+      "file_sha256": "d2a7a65eb56f4be68b0d0477eeb8f75f793be5bbb458c86db13560b8eae35cc4",
+      "subject_sha256": "c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9ad04c5df"
+    },
+    "activation_authority": {
+      "accepted": true,
+      "artifact_id": "publication-activation-authority:f000477:national_security_foreign:119:v1",
+      "decision": "approve_exact_publication_activation",
+      "file_sha256": "2c628dd113e0026a6a1c989cfd1fba20660b71353d8fe11c9af91d74c7f9a122",
+      "sealed": true,
+      "subject_sha256": "c5cafee8ba03719a070fe01f410f2e30c230eff94ed0a23adcc093c77adb21bb"
+    },
+    "apply": {
+      "applied_at_utc": "2026-08-15T03:07:07.426473+00:00",
+      "artifact_ids": [
+        227,
+        228,
+        229
+      ],
+      "batch_id": 16,
+      "batch_status": "applied",
+      "deterministic_batch_key": "foushee_national_security_foreign_119_publication_activation_v1-b12a0939",
+      "idempotent_recheck": {
+        "already_applied": true,
+        "additional_writes": 0
+      },
+      "mode": "exact_authority_bound_production_apply",
+      "rollback_triggered": false
+    },
+    "blocked_action_control": {
+      "action_id": "house:119:2:278",
+      "analytical_findings_inclusion": false,
+      "public_state": "noncounting_control",
+      "state": "source_blocked_uninterpreted"
+    },
+    "fresh_preflight": {
+      "captured_at_utc": "2026-08-15T03:05:32.459110+00:00",
+      "counts": {
+        "artifacts": 146,
+        "batches": 4,
+        "publication_registry": 1,
+        "relationships": 159
+      },
+      "preflight_subject_sha256": "ed814396f50e264ab0562510aa8df2c34fd53350cde7bc33a22450417dfe55f2",
+      "production_target_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+      "state_fingerprint_sha256": "2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db",
+      "target_rows": []
+    },
+    "fresh_runtime_health": {
+      "captured_at_utc": "2026-08-15T03:05:26.002553+00:00",
+      "commit_sha": "5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38",
+      "endpoint": "https://political-fingerprint.onrender.com/health",
+      "proof_subject_sha256": "63925ad7c6bb8d28460554d459e953e9427b88ae55b04d25c53a20e1b6e0071a"
+    },
+    "justice_isolation": {
+      "artifact_id": 221,
+      "artifact_natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+      "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+      "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+      "publicly_active": true,
+      "rows_touched": 0,
+      "state_identical": true
+    },
+    "post_activation": {
+      "baseline_fingerprint_unchanged": true,
+      "counts": {
+        "artifacts": 149,
+        "batches": 5,
+        "publication_registry": 2,
+        "relationships": 161
+      },
+      "national_security_selector": {
+        "118": "receipts_only",
+        "119": "reviewed_conclusion",
+        "all": "reviewed_conclusion_bounded_to_119"
+      }
+    },
+    "production_write_set": {
+      "artifact_id": "publication-activation-write-set:f000477:national_security_foreign:119:v1",
+      "file_sha256": "5bd0f662e9f512af817d02943490c7f04ed0bc3b1e3b10c949bdc017bb5c1c9e",
+      "subject_sha256": "af3aacffc69ec14003b7a32e02366cc9c642769d9551f4d103748c2dd204078f",
+      "write_envelope": {
+        "artifact_inserts": 3,
+        "batch_inserts": 1,
+        "deletes_during_activation": 0,
+        "justice_rows_touched": 0,
+        "registry_inserts": 1,
+        "registry_updates": 0,
+        "relationship_inserts": 2
+      }
+    },
+    "public_verification": {
+      "api_operational_candidate_terminology_absent": true,
+      "backend_url": "https://political-fingerprint.onrender.com",
+      "desktop": {
+        "horizontal_overflow": false,
+        "viewport": "1366x900"
+      },
+      "frontend_route": "https://political-fingerprint.vercel.app/?representative=leg_valerie_p_foushee&issue=NATIONAL_SECURITY_FOREIGN&scope=119",
+      "mobile": {
+        "horizontal_overflow": false,
+        "viewport": "390x844"
+      },
+      "verified_at_utc": "2026-08-15T03:13:19.0142362Z"
+    },
+    "rollback": {
+      "binding_state_fingerprint_sha256": "2388462c457136a23ed043c4295dd1f26a6ab8bf935f616aa56f77531f8fe6db",
+      "delete_artifact_count": 3,
+      "delete_batch_count": 1,
+      "delete_registry_count": 1,
+      "delete_relationship_count": 2,
+      "justice_registry_row_unchanged": true,
+      "ready": true,
+      "restore_counts": {
+        "artifacts": 146,
+        "batches": 4,
+        "publication_registry": 1,
+        "relationships": 159
+      }
+    }
+  }
+}

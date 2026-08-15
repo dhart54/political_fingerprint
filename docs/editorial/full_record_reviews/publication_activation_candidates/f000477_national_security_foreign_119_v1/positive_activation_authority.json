@@ -1,13 +1,11 @@
 {
-  "accepted": false,
-  "artifact_id": "publication-activation-ratification-candidate:f000477:national_security_foreign:119:v1",
-  "authority_contract": {
-    "artifact_id": "publication-activation-authority:f000477:national_security_foreign:119:v1",
-    "schema_version": "site_integration_publication_activation_authority_v1"
-  },
-  "authorization_boundary": "This is a non-authorizing ratification candidate. It cannot be used for public selection, database mutation, registry mutation, rollback, or deployment unless the exact prospective subject is independently ratified and separately materialized as an accepted, sealed authority.",
+  "accepted": true,
+  "activation_authority_subject_sha256": "c5cafee8ba03719a070fe01f410f2e30c230eff94ed0a23adcc093c77adb21bb",
+  "artifact_id": "publication-activation-authority:f000477:national_security_foreign:119:v1",
   "immutable": true,
-  "prospective_authority_subject": {
+  "schema_version": "site_integration_publication_activation_authority_v1",
+  "sealed": true,
+  "subject": {
     "accepted_m11m_binding": {
       "artifact_id": "site-integration-candidate:f000477:national_security_foreign:119:v1",
       "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
@@ -88,8 +86,5 @@
       "reviewed_commit": "5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38",
       "reviewed_runtime_manifest_sha256": "1c7762cb06730de22b37c79b8df8f09cd97ddfec8320e521fc95cbeb049c41a8"
     }
-  },
-  "prospective_authority_subject_sha256": "c5cafee8ba03719a070fe01f410f2e30c230eff94ed0a23adcc093c77adb21bb",
-  "schema_version": "m11n_publication_activation_ratification_candidate_v1",
-  "sealed": false
+  }
 }
