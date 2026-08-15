@@ -230,7 +230,7 @@ class CrossIssueExpansionTests(unittest.TestCase):
         self.assertEqual(accounting["procedural_context_actions"], 1)
         self.assertEqual(accounting["expressive_nonbinding_actions"], 1)
 
-    def test_cross_measure_war_powers_notes_do_not_affect_episode_counts(self) -> None:
+    def test_cross_measure_similarity_creates_no_discovery_episode(self) -> None:
         records = []
         for roll, number in ((80, 10), (81, 11)):
             vote = action(
@@ -255,8 +255,7 @@ class CrossIssueExpansionTests(unittest.TestCase):
         future = MODULE.future_episode_review_candidates(records)
         self.assertEqual(accounting["independent_episode_count"], 2)
         self.assertEqual(accounting["multi_action_episode_count"], 0)
-        self.assertEqual(len(future), 1)
-        self.assertFalse(future[0]["contributes_to_m11a_episode_accounting"])
+        self.assertEqual(future, [])
 
     def test_same_parent_multi_action_episode_still_counts(self) -> None:
         records = [
@@ -272,6 +271,58 @@ class CrossIssueExpansionTests(unittest.TestCase):
         accounting = MODULE.domain_accounting("NATIONAL_SECURITY_FOREIGN", records)
         self.assertEqual(accounting["independent_episode_count"], 1)
         self.assertEqual(accounting["multi_action_episode_count"], 1)
+
+    def test_multi_action_episode_is_not_an_eligibility_requirement(self) -> None:
+        records = []
+        for roll in range(20, 25):
+            vote = action(question="On Passage", roll=roll)
+            vote["bill_ref"] = f"bill_119_hr_{roll}"
+            records.append(
+                MODULE.build_candidate_record(
+                    "NATIONAL_SECURITY_FOREIGN", vote, METADATA, None, None
+                )
+            )
+        accounting = MODULE.domain_accounting("NATIONAL_SECURITY_FOREIGN", records)
+        self.assertTrue(accounting["eligible"])
+        self.assertEqual(accounting["multi_action_episode_count"], 0)
+        self.assertNotIn(
+            "no_legitimate_multi_action_episode", accounting["exclusion_reasons"]
+        )
+
+    def test_multi_action_count_has_no_ranking_effect(self) -> None:
+        base = {
+            "domain_id": "A",
+            "substantive_eligible_actions": 10,
+            "independent_episode_count": 8,
+            "unresolved_boundary_cases": 2,
+            "mechanism_types": ["passage"],
+            "official_source_readiness": {"state": "complete_for_proposed_membership"},
+            "multi_action_episode_count": 0,
+        }
+        with_multi = {**base, "multi_action_episode_count": 7}
+        self.assertEqual(MODULE.selection_rank(base), MODULE.selection_rank(with_multi))
+
+    def test_vote_direction_does_not_change_issue_membership(self) -> None:
+        yea = action(question="On Passage", roll=30)
+        nay = {**yea, "member_action": "nay"}
+        yea_record = MODULE.build_candidate_record(
+            "NATIONAL_SECURITY_FOREIGN", yea, METADATA, None, None
+        )
+        nay_record = MODULE.build_candidate_record(
+            "NATIONAL_SECURITY_FOREIGN", nay, METADATA, None, None
+        )
+        self.assertEqual(yea_record["disposition"], nay_record["disposition"])
+        self.assertEqual(
+            yea_record["issue_boundary_status"], nay_record["issue_boundary_status"]
+        )
+
+    def test_economy_is_a_candidate_and_completed_domains_are_excluded(self) -> None:
+        self.assertIn("ECONOMY_TAXES", MODULE.DOMAIN_IDS)
+        self.assertNotIn("NATIONAL_SECURITY_FOREIGN", MODULE.DOMAIN_IDS)
+        self.assertEqual(
+            MODULE.EXCLUDED_DOMAINS,
+            {"JUSTICE_PUBLIC_SAFETY", "NATIONAL_SECURITY_FOREIGN"},
+        )
 
 
 if __name__ == "__main__":

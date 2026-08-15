@@ -1,8 +1,23 @@
 {
   "schema_version": "editorial_current_state_index_v1",
-  "source_baseline_commit": "f16bc73fb4e60d34fe75b17e58cb4f224e5b7fcd",
+  "source_baseline_commit": "44d966a7b3c36494b4965db6d4b00d6ba6d6a332",
   "owning_pipeline_for_new_work": "backend.app.semantic_ir.pipeline.run_editorial_pipeline",
   "only_executable_editorial_semantic_architecture": "editorial_semantic_ir_v1",
+  "current_project_state": {
+    "as_of": "2026-08-15",
+    "active_full_record_publications": [
+      "JUSTICE_PUBLIC_SAFETY",
+      "NATIONAL_SECURITY_FOREIGN"
+    ],
+    "active_publication_count": 2,
+    "national_security_full_record_state": "production_active_live_verified",
+    "national_security_downstream_chain_complete": true,
+    "national_security_production_database_write_completed": true,
+    "national_security_receipts_only": false,
+    "justice_full_record_state": "production_active_live_verified",
+    "active_selection_milestone": "m12a_next_full_record_issue_selection_v1",
+    "historical_milestone_sections_are_checkpoint_state": true
+  },
   "canonical": {
     "schema": "docs/semantic_ir/editorial_semantic_ir_v1.schema.json",
     "contract": "docs/semantic_ir/editorial_semantic_ir_v1.md",
@@ -19,6 +34,8 @@
     "full_record_issue_interpretation_contract": "docs/methodology/full_record_issue_interpretation_v1.md",
     "full_record_issue_interpretation_schema": "docs/methodology/full_record_issue_interpretation_v1.schema.json",
     "full_record_issue_interpretation_validator": "scripts/validate_full_record_issue_interpretation.py",
+    "cross_issue_full_record_expansion_schema": "docs/methodology/cross_issue_full_record_expansion_v2.schema.json",
+    "m12a_next_full_record_issue_selection_validator": "scripts/validate_m12a_next_full_record_issue_selection.py",
     "full_issue_universe_discovery_schema": "docs/methodology/full_issue_universe_discovery_v1.schema.json",
     "full_issue_universe_discovery_validator": "scripts/validate_full_issue_universe_discovery.py",
     "full_issue_universe_authority_receipt_schema": "docs/methodology/full_issue_universe_authority_receipt_v1.schema.json",
@@ -155,6 +172,51 @@
     "frontend_pass_a_catalog_authority": "descriptive_non_authorizing"
   },
   "active_scaling_milestone": {
+    "milestone": "m12a_next_full_record_issue_selection_v1",
+    "plan": "docs/plans/m12a_next_full_record_issue_selection_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "ENVIRONMENT_ENERGY"
+    },
+    "milestone_state": "proposed_universe_pending_independent_review",
+    "selected_domain": "ENVIRONMENT_ENERGY",
+    "official_cutoff": "2026-07-23",
+    "latest_official_roll": 283,
+    "complete_member_action_count": 638,
+    "candidate_count": 153,
+    "proposed_directional_substantive_count": 62,
+    "proposed_non_directional_substantive_count": 1,
+    "procedural_context_count": 64,
+    "expressive_nonbinding_count": 1,
+    "exact_action_ineligible_count": 0,
+    "unresolved_boundary_count": 25,
+    "independent_mechanical_event_count": 63,
+    "multi_action_episode_requirement": false,
+    "selection_sha256": "e18fcf736f5febac352d823b35c5a81b2c18deb36fda26b41acbef0005755fa1",
+    "proposal_sha256": "18967832549bd90353bc0d265f48793b6932bd7d57a49bcca95795820115f5ea",
+    "source_inventory_sha256": "e2b8d790cd9c16076241a8fb79215170718251eabf3b7b225280a7a5fe888ca8",
+    "human_universe_boundary_approval": "pending",
+    "downstream_authorizations": {
+      "source_readiness": false,
+      "action_interpretation": false,
+      "episode_acceptance": false,
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false
+    },
+    "selection_artifact": "docs/editorial/cross_issue_full_record_expansion_m12a_v1/domain_selection.json",
+    "universe_proposal": "docs/editorial/cross_issue_full_record_expansion_m12a_v1/selected_domain_universe_proposal.json",
+    "source_inventory": "docs/editorial/cross_issue_full_record_expansion_m12a_v1/source_inventory.json",
+    "review_packet": "docs/review_packets/m12a_next_full_record_issue_selection_v1.md",
+    "validator": "scripts/validate_m12a_next_full_record_issue_selection.py"
+  },
+  "completed_m11a_scaling_milestone": {
     "milestone": "m11a_cross_issue_full_record_expansion_v1",
     "plan": "docs/plans/m11a_cross_issue_full_record_expansion_v1.md",
     "subject": {

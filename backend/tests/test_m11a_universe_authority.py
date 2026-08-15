@@ -185,11 +185,11 @@ class M11AUniverseAuthorityTests(unittest.TestCase):
     def test_current_state_cannot_cross_universe_only_boundary(self) -> None:
         self.assert_rejected(
             lambda values: values["current_state"][
-                "active_scaling_milestone"
+                "completed_m11a_scaling_milestone"
             ].__setitem__("interpretation_state", "started")
         )
         self.assert_rejected(
-            lambda values: values["current_state"]["active_scaling_milestone"][
+            lambda values: values["current_state"]["completed_m11a_scaling_milestone"][
                 "downstream_authorizations"
             ].__setitem__("episode_acceptance", True)
         )

@@ -6,12 +6,15 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M11L National Security Public-Wording Acceptance V1](m11l_national_security_public_wording_acceptance_v1.md)
-  - implements the 18 accepted human wording decisions as canonical reviewed
-    wording for internal use; mechanical review is pending and all publication
-    and production authorities remain false.
+- [M12A Next Full-Record Issue Selection V1](m12a_next_full_record_issue_selection_v1.md)
+  - selects the next Valerie Foushee 119th-Congress full-record issue under
+    generic evidence rules and stops at a pending-review universe proposal.
 
 ## Retained unresolved plans
+
+- [M11L National Security Public-Wording Acceptance V1](m11l_national_security_public_wording_acceptance_v1.md)
+  - historical wording-acceptance plan retained as an input to the completed
+    M11M-M11N publication and production-activation chain; it is not active.
 
 - [M11K National Security Public-Wording Candidates V1](m11k_national_security_public_wording_candidates_v1.md)
   - human-substantively accepted at PR #143 and merged unchanged as M11L's exact

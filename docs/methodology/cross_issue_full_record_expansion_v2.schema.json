@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://political-fingerprint.local/schemas/cross_issue_full_record_expansion_v2.schema.json",
+  "title": "Cross-Issue Full-Record Expansion V2",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "schema_version", "milestone", "selection_id", "starting_commit",
+        "subject", "cutoff", "excluded_domains", "complete_official_action_count",
+        "complete_official_action_set_sha256", "production_snapshot",
+        "candidate_domains", "eligible_domains_ranked", "selected_domain",
+        "selection_state", "selection_basis", "selection_exclusions",
+        "selection_sha256", "universe_discovery", "human_universe_boundary_approval",
+        "downstream_authorizations"
+      ],
+      "properties": {
+        "schema_version": {"const": "cross_issue_domain_selection_v3"},
+        "milestone": {"const": "m12a_next_full_record_issue_selection_v1"},
+        "selection_id": {"type": "string"},
+        "starting_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "excluded_domains": {"type": "array", "uniqueItems": true},
+        "complete_official_action_count": {"type": "integer", "minimum": 1},
+        "complete_official_action_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "candidate_domains": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/domainAccounting"}
+        },
+        "eligible_domains_ranked": {"type": "array", "uniqueItems": true},
+        "selected_domain": {"type": ["string", "null"]},
+        "selection_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "schema_version", "milestone", "proposal_id", "proposal_sha256", "subject",
+        "authority_status", "full_record_claim", "synthesis_eligible", "cutoff",
+        "complete_member_action_count", "selection_sha256", "universe_subject_sha256",
+        "accounting", "candidate_dispositions", "proposed_action_ids",
+        "unresolved_action_ids", "cross_domain_boundary_review",
+        "episode_candidates_are_non_authorizing", "action_interpretation_started",
+        "action_interpretation_authorized", "episode_acceptance_authorized",
+        "synthesis_authorized", "publication_authorized", "semantic_ir_started",
+        "publication_changes", "production_writes"
+      ],
+      "properties": {
+        "schema_version": {"const": "cross_issue_universe_proposal_v2"},
+        "milestone": {"const": "m12a_next_full_record_issue_selection_v1"},
+        "proposal_id": {"type": "string"},
+        "proposal_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "accounting": {"$ref": "#/$defs/domainAccounting"},
+        "candidate_dispositions": {"type": "array", "items": {"$ref": "#/$defs/action"}},
+        "proposed_action_ids": {"type": "array", "uniqueItems": true},
+        "unresolved_action_ids": {"type": "array", "uniqueItems": true}
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "schema_version", "milestone", "inventory_id", "subject", "cutoff",
+        "official_cutoff_verified_at", "official_cutoff_index_url", "source_acquired_at",
+        "complete_official_action_count", "complete_official_action_set_sha256",
+        "complete_official_action_ids", "governed_ingestion", "source_roots",
+        "selected_candidate_source_bindings", "inventory_sha256"
+      ],
+      "properties": {
+        "schema_version": {"const": "cross_issue_source_inventory_v2"},
+        "milestone": {"const": "m12a_next_full_record_issue_selection_v1"},
+        "inventory_id": {"type": "string"},
+        "complete_official_action_count": {"type": "integer", "minimum": 1},
+        "complete_official_action_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "complete_official_action_ids": {"type": "array", "uniqueItems": true},
+        "inventory_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  ],
+  "$defs": {
+    "domainAccounting": {
+      "type": "object",
+      "required": [
+        "domain_id", "display_name", "eligible", "exclusion_reasons",
+        "total_candidate_actions", "substantive_eligible_actions",
+        "directional_substantive_actions", "non_directional_substantive_actions",
+        "procedural_context_actions", "expressive_nonbinding_actions",
+        "exact_action_ineligible_actions", "unresolved_boundary_cases",
+        "independent_episode_count", "multi_action_episode_count", "mechanism_types",
+        "official_source_readiness", "material_source_gaps", "action_ids_by_disposition"
+      ]
+    },
+    "action": {
+      "type": "object",
+      "required": [
+        "action_id", "bill_ref", "member_action", "house_action_stage",
+        "official_policy_area", "recall_reasons", "issue_boundary_status",
+        "disposition", "rationale", "unresolved_reason", "sources",
+        "exact_action_source_binding", "public_action_sha256"
+      ]
+    }
+  }
+}
