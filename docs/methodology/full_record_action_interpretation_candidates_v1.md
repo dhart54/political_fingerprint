@@ -13,6 +13,14 @@ The closed schema is
 implementation is
 `backend/app/etl/full_record_action_interpretation.py`.
 
+The schema does not set milestone-specific member, issue, cutoff, action,
+cardinality, blocked-action, or evidence-count values. Those exact constraints
+belong in each milestone validator. New packages use
+`post_source_readiness_merge_base` and a milestone namespace for candidate and
+evidence-map identifiers. The historical `post_m11b_merge_base` field and the
+default `m11c` namespace remain supported only so the accepted National Security
+package continues to reproduce byte-for-byte.
+
 ## Required order
 
 1. Validate the independently accepted issue universe and readiness artifact.
@@ -34,7 +42,8 @@ synthesis, and public wording are forbidden meaning inputs.
 - A whole-measure or resolution candidate uses the stage-compatible operative
   text bound by readiness.
 - A descriptive official long title beginning with an operative form such as
-  `To`, `Making`, or `Directing` may support the bounded-title path. A short or
+  `To`, `Making`, `Directing`, or `Providing` may support the bounded-title path.
+  A short or
   proper act title identifies the object but does not, by itself, establish
   what the choice would do.
 - When only a short or proper title is available, the evaluator must inspect

@@ -39,8 +39,8 @@
             }
           }
         },
-        "candidate_count": {"const": 81},
-        "blocked_count": {"const": 1},
+        "candidate_count": {"type": "integer", "minimum": 0},
+        "blocked_count": {"type": "integer", "minimum": 0},
         "json_markdown_substantive_parity": {"const": true}
       }
     }

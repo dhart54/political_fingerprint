@@ -113,11 +113,13 @@ fields.
 ## Current State And Review Stop
 
 `completed_m11b_source_readiness_milestone` preserves the accepted National
-Security checkpoint unchanged. `active_source_readiness_milestone` now records
-M12B as `source_readiness_only`, pending independent review. All interpretation,
-episode, Semantic IR, synthesis, wording, publication, and production gates are
-false. Justice and National Security remain the only production-active
-full-record publications.
+Security checkpoint unchanged. Independent governance accepted M12B at PR #150
+head `2973fc234de292ed6e61cadca966fcc2f586ca4f`; it merged to main as
+`7d4754aed87296796a1ead277a8dab242ab26027`. The accepted result remains
+`source_readiness_only`. M12C may consume it as an immutable input, but M12B does
+not accept action meaning or authorize any later semantic, wording, publication,
+or production stage. Justice and National Security remain the only
+production-active full-record publications.
 
 The dedicated validator and adversarial tests cover receipt equality, excluded
 IDs, role resolution, raw/projection digests, cross-action substitution,
@@ -125,5 +127,5 @@ stage/version mismatch, contextual evidence masquerading as operative content,
 missing content, source-conflict precedence, readiness-state tampering, neutral
 projection leakage, and the unchanged M11B artifact.
 
-Independent review should stop at this source-readiness boundary. Any later
-action interpretation requires a separate milestone and authority.
+M12B review is complete. Its artifact and semantic boundary remain unchanged by
+the separate M12C candidate milestone.

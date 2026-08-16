@@ -6,11 +6,15 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M12B Environment & Energy Source Readiness V1](m12b_environment_energy_source_readiness_v1.md)
-  - evaluates official-source readiness for exactly the 63 actions authorized
-    by the accepted M12A receipt and stops at a draft PR before interpretation.
+- [M12C Environment & Energy Action Interpretation Candidates V1](m12c_environment_energy_action_interpretation_v1.md)
+  - proposes detached, non-authorizing exact-action meanings for all 63 actions
+    that passed the accepted M12B source-readiness checkpoint.
 
 ## Retained unresolved plans
+
+- [M12B Environment & Energy Source Readiness V1](m12b_environment_energy_source_readiness_v1.md)
+  - independently accepted at PR #150 and retained as M12C's immutable
+    63-ready/zero-blocked source checkpoint.
 
 - [M12A Next Full-Record Issue Selection V1](m12a_next_full_record_issue_selection_v1.md)
   - completed at PR #149 as the accepted 63-action Environment & Energy

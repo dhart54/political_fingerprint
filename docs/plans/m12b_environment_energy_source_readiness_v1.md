@@ -130,6 +130,12 @@
 
 ## Production, Rollback, Blockers, And Reconciliation
 
+- Independent governance accepted PR #150 at exact head
+  `2973fc234de292ed6e61cadca966fcc2f586ca4f`; the guarded merge commit and exact
+  post-M12B main are `7d4754aed87296796a1ead277a8dab242ab26027`.
+- The accepted authority effect remains source-readiness-only: 63 ready, zero
+  blocked. M12C consumes this checkpoint without changing it.
+
 - Production/database/publication writes authorized: no.
 - Production/database/publication writes performed: no.
 - Rollback: revert only the scoped M12B commit; no external state changes exist
