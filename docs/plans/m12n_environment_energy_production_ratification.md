@@ -71,6 +71,7 @@
 
 - Initial linked-worktree paths exceeded Windows path limits; repository-local `core.longpaths` and a short `.w/r` path resolved checkout without changing content.
 - Two historical validators still exceeded the linked-worktree path ceiling for one frozen source; both passed unchanged from the shorter original checkout. No historical artifact was rewritten.
+- The first hosted PostgreSQL attempt correctly rejected direct use of the production-bound fingerprint because disposable surrogate IDs differ. The test now proves semantic graph parity with the finalized governed write set, then applies a disposable-state binding without weakening production drift protection.
 
 ## Validation Results
 

@@ -26,6 +26,7 @@ from scripts.foushee_justice_publication_activation import (
 from scripts.foushee_environment_energy_publication_preparation import (
     AUTHORITY_PATH,
     ISSUE_ID,
+    POST_M12M_MAIN,
     WRITE_SET_PATH,
     _apply,
     _counts,
@@ -35,6 +36,9 @@ from scripts.foushee_environment_energy_publication_preparation import (
     _selector_state,
     _state_fingerprint,
     activation_write_set_binding,
+    build_authority,
+    build_write_set,
+    capture_preflight,
 )
 from scripts.foushee_national_security_publication_activation import (
     POST_M11M_MAIN,
@@ -187,8 +191,71 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback() -> None:
     assert DATABASE_URL is not None
     with _connect(DATABASE_URL, autocommit=False) as conn:
         _prepare_current_justice_state(conn)
-        authority = _load(AUTHORITY_PATH)
-        write_set = _load(WRITE_SET_PATH)
+        governed_authority = _load(AUTHORITY_PATH)
+        governed_write_set = _load(WRITE_SET_PATH)
+        preflight = capture_preflight(
+            conn,
+            deployed_commit=POST_M12M_MAIN,
+            allow_test_activation_authority=True,
+        )
+        authority = build_authority(preflight)
+        write_set = build_write_set(preflight, authority)
+        assert governed_authority["authority_subject_sha256"] == (
+            "891256c341e8b4c97949559fb6a6016f926451a8aec7af15084b2d6212c31077"
+        )
+        assert governed_write_set["write_set_subject_sha256"] == (
+            "b4a3a446ffb125459db63be746535b13663baa28c6c029eae32d7dfa99db9f98"
+        )
+        for key in (
+            "accepted_site_integration_binding",
+            "artifacts",
+            "relationships",
+            "expected_counts",
+            "write_caps",
+            "public_smoke_contract",
+            "activation_authorized",
+            "production_write_authorized",
+        ):
+            assert write_set[key] == governed_write_set[key]
+        assert {
+            key: write_set["publication_registry"][key]
+            for key in (
+                "member_bioguide_id",
+                "issue_id",
+                "presentation_natural_key",
+                "presentation_artifact_version",
+                "publicly_active",
+            )
+        } == {
+            key: governed_write_set["publication_registry"][key]
+            for key in (
+                "member_bioguide_id",
+                "issue_id",
+                "presentation_natural_key",
+                "presentation_artifact_version",
+                "publicly_active",
+            )
+        }
+        for key in (
+            "delete_registry_primary_key",
+            "delete_relationship_count",
+            "delete_artifact_natural_keys",
+            "delete_batch_key",
+            "restore_counts",
+        ):
+            assert write_set["rollback"][key] == governed_write_set["rollback"][key]
+        for issue_key in (
+            "justice_registry_row_unchanged",
+            "national_security_registry_row_unchanged",
+        ):
+            assert (
+                write_set["rollback"][issue_key]["content_sha256"]
+                == (governed_write_set["rollback"][issue_key]["content_sha256"])
+            )
+            assert (
+                write_set["rollback"][issue_key]["natural_key"]
+                == (governed_write_set["rollback"][issue_key]["natural_key"])
+            )
         activation_authority = _synthetic_activation_authority(write_set)
         before_counts = _counts(conn)
         before_fingerprint = _state_fingerprint(conn)
