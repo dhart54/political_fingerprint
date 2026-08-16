@@ -209,11 +209,76 @@ def merge_schemas(schemas: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def schema(value: dict[str, Any], schema_id: str) -> dict[str, Any]:
-    return {
+    result = {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "$id": schema_id,
         **inferred_schema(value),
     }
+
+    def generalize(node: object) -> None:
+        if not isinstance(node, dict):
+            return
+        properties = node.get("properties")
+        if isinstance(properties, dict):
+            if (
+                "source_relationship_id" in properties
+                and "proposition_id" in properties
+                and isinstance(node.get("required"), list)
+                and "source_relationship_id" in node["required"]
+            ):
+                node["required"].remove("source_relationship_id")
+            episode_evidence = properties.get("episode_semantic_evidence")
+            if isinstance(episode_evidence, dict):
+                episode_evidence.clear()
+                episode_evidence.update(
+                    {
+                        "type": "object",
+                        "properties": {},
+                        "required": [],
+                        "additionalProperties": {"type": "string"},
+                    }
+                )
+            for accounting_name in (
+                "accepted_episode_disposition_accounting",
+                "final_accounting",
+            ):
+                accounting = properties.get(accounting_name)
+                if isinstance(accounting, dict):
+                    accounting.setdefault("properties", {})[
+                        "unused_non_directional_evidence_episode_count"
+                    ] = {"type": "integer"}
+        for child in node.values():
+            if isinstance(child, dict):
+                generalize(child)
+
+    generalize(result)
+    subject_schema = result["properties"].get("subject")
+    if subject_schema is None:
+        return result
+    subject_properties = subject_schema["properties"]
+    subject_required = subject_schema["required"]
+
+    def add_binding_alias(legacy: str, generic: str) -> None:
+        if legacy not in subject_properties:
+            return
+        subject_properties[generic] = deepcopy(subject_properties[legacy])
+        subject_required.remove(legacy)
+        subject_schema.setdefault("allOf", []).append(
+            {"oneOf": [{"required": [legacy]}, {"required": [generic]}]}
+        )
+
+    add_binding_alias(
+        "m11d_implementation_binding",
+        "action_interpretation_implementation_binding",
+    )
+    add_binding_alias("m11f_authority_binding", "policy_episode_authority_binding")
+    add_binding_alias(
+        "m11f_implementation_binding", "policy_episode_implementation_binding"
+    )
+    add_binding_alias(
+        "m11g_parity_binding", "behavioral_semantic_ir_candidate_parity_binding"
+    )
+    return result
 
 
 def preflight() -> tuple[

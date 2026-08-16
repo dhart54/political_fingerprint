@@ -62,7 +62,11 @@ public authority.
 - [x] Candidate decisions remain entirely empty and all downstream authorities
   remain false.
 - [x] Applicable broad semantic regressions and exact diff review pass locally.
-- [ ] Draft PR and hosted checks pass.
+- [x] Draft PR #153 and its six hosted checks passed at exact head
+  `ab35caf3fb8ff80961da990b742bd42f7c4e56ba`.
+- [x] Independent M12G substantive review accepted all three candidates as
+  written, and the guarded merge produced exact main
+  `d3bc0fddad701e0621c87857ed80288c23a867aa`.
 
 ## Stop condition
 

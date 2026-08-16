@@ -22,6 +22,8 @@
     "active_policy_episode_candidate_milestone": "m12e_environment_energy_policy_episode_candidates_v1",
     "active_policy_episode_decision_milestone": "m12f_environment_energy_policy_episode_acceptance_v1",
     "active_behavioral_semantic_ir_candidate_milestone": "m12g_environment_energy_behavioral_semantic_ir_candidates_v1",
+    "active_behavioral_semantic_ir_decision_milestone": "m12h_environment_energy_semantic_ir_acceptance_v1",
+    "active_synthesis_candidate_milestone": "m12i_environment_energy_synthesis_candidates_v1",
     "historical_milestone_sections_are_checkpoint_state": true
   },
   "canonical": {
@@ -688,7 +690,10 @@
       "issue_id": "ENVIRONMENT_ENERGY"
     },
     "post_m12e_merge_main": "450a759c5a2d0eaf767e68bc999c7d3ec8e9ca1e",
-    "milestone_state": "complete_pending_independent_substantive_review",
+    "milestone_state": "completed_independently_accepted_merged",
+    "accepted_pr": 153,
+    "accepted_head": "ab35caf3fb8ff80961da990b742bd42f7c4e56ba",
+    "post_merge_main": "d3bc0fddad701e0621c87857ed80288c23a867aa",
     "authority_effect": "detached_non_authorizing_behavioral_semantic_ir_candidates_only",
     "accepted_episode_count": 63,
     "proposed_repeated_pattern_count": 3,
@@ -725,19 +730,135 @@
       "sha256": "e73b71dd314d781ab8aad71e3015ee8fbb7e7e6600c5fa056ba576b3db792f5e",
       "parity_subject_sha256": "8acc08db968619d75b0daa7375afc3f734bf9a9d0c78979229086975ea72850f"
     },
-    "semantic_ir_acceptance_state": "not_started_not_authorized",
-    "synthesis_state": "absent_not_authorized",
+    "semantic_ir_acceptance_state": "canonical_internal_by_m12h",
+    "synthesis_state": "detached_candidates_created_by_m12i_not_accepted",
     "public_wording_state": "absent_not_authorized",
     "publication_state": "inactive_environment_energy",
     "production_persistence": "not_authorized",
     "production_writes": false,
     "downstream_authorizations": {
-      "semantic_ir_acceptance": false,
+      "semantic_ir_acceptance": true,
       "synthesis": false,
       "public_wording": false,
       "publication": false,
       "production_persistence": false,
       "database_writes": false,
+      "deployment": false
+    }
+  },
+  "active_m12h_behavioral_semantic_ir_decision_milestone": {
+    "milestone": "m12h_environment_energy_semantic_ir_acceptance_v1",
+    "plan": "docs/plans/m12hi_environment_energy_semantic_ir_acceptance_synthesis_v1.md",
+    "review_packet": "docs/review_packets/m12hi_environment_energy_semantic_ir_acceptance_synthesis_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "ENVIRONMENT_ENERGY"
+    },
+    "post_m12g_merge_main": "d3bc0fddad701e0621c87857ed80288c23a867aa",
+    "milestone_state": "completed_mechanical_acceptance_validated",
+    "reviewer_id": "chatgpt:political_fingerprint_authority_thread",
+    "reviewer_authority": "full_record_behavioral_semantic_ir_review_authority_v1",
+    "review_decision": "approved_all_behavioral_semantic_ir_candidates_as_written",
+    "reviewed_at_utc": "2026-08-16T02:58:00Z",
+    "decision_accounting": {"accept_candidate_as_written": 3},
+    "accepted_repeated_pattern_count": 3,
+    "accepted_trajectory_count": 0,
+    "accepted_notable_choice_count": 0,
+    "primary_evidence_episode_count": 13,
+    "accepted_episode_count": 63,
+    "contrast_only_episode_count": 25,
+    "no_safe_higher_level_proposition_episode_count": 24,
+    "unused_non_directional_evidence_episode_count": 1,
+    "primary_overlap_count": 0,
+    "authority_identity": {
+      "artifact": "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_environment_energy_119_v1/human_behavioral_semantic_ir_authority.json",
+      "id": "human-behavioral-semantic-ir-authority:f000477:environment_energy:119:v1",
+      "sha256": "eb6388827648aaa6ee6cabda3e45cf0c93f35116a6f97e9540263dec7ae7c4af",
+      "authority_subject_sha256": "31b26aa0a671a3ffb5226a26862df3bca10de3aee93a795d92cfc3abe26be276"
+    },
+    "implementation_identity": {
+      "artifact": "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_environment_energy_119_v1/behavioral_semantic_ir_decision_implementation.json",
+      "id": "behavioral-semantic-ir-decision-implementation:f000477:environment_energy:119:v1",
+      "sha256": "ae403e7334f02f4135e857d4663efa79a75540648184a444572138f1812da491",
+      "implementation_subject_sha256": "8621aecaafc8352c31b16284ed6acde9d0d290f3e345af41ec6e231d774c9c32"
+    },
+    "parity_identity": {
+      "artifact": "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_environment_energy_119_v1/implementation_parity_manifest.json",
+      "sha256": "0b03010e8038c7cce45cdc97b39e725329d807279a0ebf2bc50956aa4b5f431a",
+      "parity_subject_sha256": "ef8fbbb4b7a15a03518f140a47e9d57d7a2690b19e5d4a60ce24ed350325da04"
+    },
+    "synthesis_acceptance": false,
+    "public": false,
+    "publication_state": "inactive_environment_energy",
+    "production_writes": false,
+    "downstream_authorizations": {
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "deployment": false
+    }
+  },
+  "active_m12i_synthesis_candidate_milestone": {
+    "milestone": "m12i_environment_energy_synthesis_candidates_v1",
+    "plan": "docs/plans/m12hi_environment_energy_semantic_ir_acceptance_synthesis_v1.md",
+    "review_packet": "docs/review_packets/m12hi_environment_energy_semantic_ir_acceptance_synthesis_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "ENVIRONMENT_ENERGY"
+    },
+    "post_m12g_merge_main": "d3bc0fddad701e0621c87857ed80288c23a867aa",
+    "milestone_state": "complete_pending_independent_substantive_review",
+    "authority_effect": "detached_non_authorizing_synthesis_candidates_only",
+    "source_behavioral_proposition_count": 3,
+    "synthesis_candidate_count": 1,
+    "candidate_ids": ["synthesis-congressional-disapproval-uniform-opposition"],
+    "candidate_input_proposition_count": 3,
+    "unique_underlying_episode_count": 13,
+    "unique_underlying_action_count": 13,
+    "intentionally_standalone_proposition_ids": [],
+    "candidate_overlap_count": 0,
+    "package_identity": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_candidates/f000477_environment_energy_119_v1/synthesis_candidate_package.json",
+      "id": "synthesis-candidates:f000477:environment_energy:119:v1",
+      "sha256": "d6518f33bffacc4b2953e967098979d39cb5bb19e1b995a5376831e8cd69e378",
+      "synthesis_candidate_package_subject_sha256": "df5d7209f7cc08b80e6164a5952fa08549e0dc9b6b4627db8d6fe2a7fc7cddae"
+    },
+    "decision_template_identity": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_candidates/f000477_environment_energy_119_v1/human_synthesis_decision_template.json",
+      "sha256": "1e8eaff4d410d11942fc6bd1b57aed05957e720b4d2b7b9dc74f68f17fb0114c",
+      "decision_template_subject_sha256": "b3f8f69f5cdb357b4f84c29af423162138c5128328a0d9cfe0898edb8ef66f1f",
+      "all_decisions_empty": true
+    },
+    "dossier_identity": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_candidates/f000477_environment_energy_119_v1/human_review_dossier.md",
+      "sha256": "0f010db1fae62bc59a4616ce4c4d6012eeba62491c52c071ac201a0f54e6087d"
+    },
+    "parity_identity": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_candidates/f000477_environment_energy_119_v1/parity_manifest.json",
+      "sha256": "f93435edb5fa347310a089366993ae57a51c86daf3ec344a56a9b9fa7cb38b8f",
+      "parity_subject_sha256": "f9fd4cf93d403d600fa1c55921275be25ca713e30f6d260c4a704c5d9998dc21"
+    },
+    "synthesis_acceptance": false,
+    "public_wording_state": "absent_not_authorized",
+    "publication_state": "inactive_environment_energy",
+    "production_writes": false,
+    "downstream_authorizations": {
+      "synthesis_acceptance": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "production_writes": false,
       "deployment": false
     }
   },

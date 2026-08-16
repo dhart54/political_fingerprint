@@ -17,6 +17,7 @@ DOWNSTREAM_AUTHORIZATIONS = {
     "database_writes": False,
     "deployment": False,
 }
+REVIEWER_AUTHORITY = "full_record_behavioral_semantic_ir_review_authority_v1"
 
 
 class BehavioralSemanticIRDecisionError(ValueError):
@@ -75,7 +76,7 @@ def _episode_disposition_accounting(
     primary_rows = Counter(
         row["episode_id"] for row in ledger if row["primary_proposition_id"] is not None
     )
-    return {
+    result = {
         "accepted_episode_count": len(ledger),
         "repeated_pattern_evidence_episode_count": dispositions[
             "supports_proposed_repeated_pattern"
@@ -92,6 +93,11 @@ def _episode_disposition_accounting(
         ],
         "primary_overlap_count": sum(count > 1 for count in primary_rows.values()),
     }
+    if dispositions["unused_non_directional_evidence"]:
+        result["unused_non_directional_evidence_episode_count"] = dispositions[
+            "unused_non_directional_evidence"
+        ]
+    return result
 
 
 def _final_accounting(
@@ -102,7 +108,7 @@ def _final_accounting(
 ) -> dict[str, int]:
     proposition_counts = _proposition_accounting(propositions)
     episode_counts = _episode_disposition_accounting(ledger)
-    return {
+    result = {
         "accepted_proposition_count": proposition_counts["total"],
         "repeated_pattern_count": proposition_counts["repeated_pattern"],
         "trajectory_count": proposition_counts["trajectory"],
@@ -120,6 +126,11 @@ def _final_accounting(
         ],
         "blocked_action_count": len(blocked_action_ids),
     }
+    if "unused_non_directional_evidence_episode_count" in episode_counts:
+        result["unused_non_directional_evidence_episode_count"] = episode_counts[
+            "unused_non_directional_evidence_episode_count"
+        ]
+    return result
 
 
 def validate_authority(
@@ -135,6 +146,14 @@ def validate_authority(
     subject = authority["subject"]
     if any(subject["downstream_authorizations"].values()):
         raise BehavioralSemanticIRDecisionError("downstream authority leakage")
+    authority_decision = subject.get("authority_decision")
+    if authority_decision is not None and not (
+        authority_decision["reviewer_id"].strip()
+        and authority_decision["reviewer_authority"] == REVIEWER_AUTHORITY
+    ):
+        raise BehavioralSemanticIRDecisionError(
+            "reviewer identity or authority differs"
+        )
     if not (
         subject["candidate_binding"]["artifact_id"] == candidate["artifact_id"]
         and subject["candidate_binding"]["candidate_subject_sha256"]
@@ -208,9 +227,12 @@ def validate_implementation(
     *,
     authority: dict[str, Any],
     candidate: dict[str, Any],
-    m11f_authority: dict[str, Any],
-    m11f_implementation: dict[str, Any],
-    m11d_implementation: dict[str, Any],
+    m11f_authority: dict[str, Any] | None = None,
+    m11f_implementation: dict[str, Any] | None = None,
+    m11d_implementation: dict[str, Any] | None = None,
+    accepted_episode_authority: dict[str, Any] | None = None,
+    accepted_episode_implementation: dict[str, Any] | None = None,
+    accepted_action_interpretation_implementation: dict[str, Any] | None = None,
 ) -> dict[str, int]:
     validate_authority(authority, candidate=candidate)
     verify_seal(
@@ -227,47 +249,100 @@ def validate_implementation(
         == authority["authority_subject_sha256"]
     ):
         raise BehavioralSemanticIRDecisionError("implementation authority differs")
-    verify_seal(m11f_authority, "authority_subject_sha256", "M11F authority")
+    if (m11f_authority is None) == (accepted_episode_authority is None):
+        raise BehavioralSemanticIRDecisionError(
+            "provide exactly one accepted policy-episode authority"
+        )
+    if (m11f_implementation is None) == (accepted_episode_implementation is None):
+        raise BehavioralSemanticIRDecisionError(
+            "provide exactly one accepted policy-episode implementation"
+        )
+    if (m11d_implementation is None) == (
+        accepted_action_interpretation_implementation is None
+    ):
+        raise BehavioralSemanticIRDecisionError(
+            "provide exactly one accepted action-interpretation implementation"
+        )
+    episode_authority = accepted_episode_authority or m11f_authority
+    episode_implementation = accepted_episode_implementation or m11f_implementation
+    action_implementation = (
+        accepted_action_interpretation_implementation or m11d_implementation
+    )
+    assert episode_authority is not None
+    assert episode_implementation is not None
+    assert action_implementation is not None
+
+    def binding(container: dict[str, Any], generic: str, legacy: str) -> dict[str, Any]:
+        present = [name for name in (generic, legacy) if name in container]
+        if len(present) != 1:
+            raise BehavioralSemanticIRDecisionError(
+                f"provide exactly one {generic} binding"
+            )
+        return container[present[0]]
+
     verify_seal(
-        m11f_implementation,
+        episode_authority, "authority_subject_sha256", "policy-episode authority"
+    )
+    verify_seal(
+        episode_implementation,
         "implementation_subject_sha256",
-        "M11F implementation",
+        "policy-episode implementation",
     )
     verify_subject_seal(
-        m11d_implementation,
+        action_implementation,
         "implementation_subject_sha256",
-        "M11D implementation",
+        "action-interpretation implementation",
     )
-    m11f_subject = m11f_implementation["subject"]
+    episode_subject = episode_implementation["subject"]
+    action_binding = binding(
+        episode_subject,
+        "interpretation_implementation_binding",
+        "m11d_implementation_binding",
+    )
     if not (
-        m11f_subject["authority_binding"]["artifact_id"]
-        == m11f_authority["artifact_id"]
-        and m11f_subject["authority_binding"]["authority_subject_sha256"]
-        == m11f_authority["authority_subject_sha256"]
-        and m11f_subject["m11d_implementation_binding"]["artifact_id"]
-        == m11d_implementation["artifact_id"]
-        and m11f_subject["m11d_implementation_binding"]["implementation_subject_sha256"]
-        == m11d_implementation["implementation_subject_sha256"]
+        episode_subject["authority_binding"]["artifact_id"]
+        == episode_authority["artifact_id"]
+        and episode_subject["authority_binding"]["authority_subject_sha256"]
+        == episode_authority["authority_subject_sha256"]
+        and action_binding["artifact_id"] == action_implementation["artifact_id"]
+        and action_binding["implementation_subject_sha256"]
+        == action_implementation["implementation_subject_sha256"]
     ):
-        raise BehavioralSemanticIRDecisionError("accepted M11F lineage binding differs")
+        raise BehavioralSemanticIRDecisionError(
+            "accepted policy-episode lineage binding differs"
+        )
+    episode_authority_binding = binding(
+        subject, "policy_episode_authority_binding", "m11f_authority_binding"
+    )
+    episode_implementation_binding = binding(
+        subject,
+        "policy_episode_implementation_binding",
+        "m11f_implementation_binding",
+    )
     if not (
-        subject["m11f_authority_binding"]["artifact_id"]
-        == m11f_authority["artifact_id"]
-        and subject["m11f_authority_binding"]["authority_subject_sha256"]
-        == m11f_authority["authority_subject_sha256"]
-        and subject["m11f_implementation_binding"]["artifact_id"]
-        == m11f_implementation["artifact_id"]
-        and subject["m11f_implementation_binding"]["implementation_subject_sha256"]
-        == m11f_implementation["implementation_subject_sha256"]
+        episode_authority_binding["artifact_id"] == episode_authority["artifact_id"]
+        and episode_authority_binding["authority_subject_sha256"]
+        == episode_authority["authority_subject_sha256"]
+        and episode_implementation_binding["artifact_id"]
+        == episode_implementation["artifact_id"]
+        and episode_implementation_binding["implementation_subject_sha256"]
+        == episode_implementation["implementation_subject_sha256"]
     ):
-        raise BehavioralSemanticIRDecisionError("M11F identity differs")
+        raise BehavioralSemanticIRDecisionError("policy-episode identity differs")
+    action_interpretation_binding = binding(
+        subject,
+        "action_interpretation_implementation_binding",
+        "m11d_implementation_binding",
+    )
     if not (
-        subject["m11d_implementation_binding"]["artifact_id"]
-        == m11d_implementation["artifact_id"]
-        and subject["m11d_implementation_binding"]["implementation_subject_sha256"]
-        == m11d_implementation["implementation_subject_sha256"]
+        action_interpretation_binding["artifact_id"]
+        == action_implementation["artifact_id"]
+        and action_interpretation_binding["implementation_subject_sha256"]
+        == action_implementation["implementation_subject_sha256"]
     ):
-        raise BehavioralSemanticIRDecisionError("M11D identity differs")
+        raise BehavioralSemanticIRDecisionError(
+            "action-interpretation identity differs"
+        )
 
     candidate_props = _propositions(candidate)
     by_id = {row["proposition_id"]: row for row in candidate_props}
@@ -277,25 +352,27 @@ def validate_implementation(
     }
     episode_records = {
         row["episode_id"]: row
-        for row in m11f_implementation["subject"]["implementation_records"]
+        for row in episode_implementation["subject"]["implementation_records"]
     }
     if len(episode_records) != len(
-        m11f_implementation["subject"]["implementation_records"]
+        episode_implementation["subject"]["implementation_records"]
     ):
-        raise BehavioralSemanticIRDecisionError("duplicate M11F episode identity")
-    m11d_records = {
+        raise BehavioralSemanticIRDecisionError("duplicate policy-episode identity")
+    action_records = {
         row["action_id"]: row
-        for row in m11d_implementation["subject"]["implementation_records"]
+        for row in action_implementation["subject"]["implementation_records"]
     }
-    if len(m11d_records) != len(
-        m11d_implementation["subject"]["implementation_records"]
+    if len(action_records) != len(
+        action_implementation["subject"]["implementation_records"]
     ):
-        raise BehavioralSemanticIRDecisionError("duplicate M11D action identity")
-    for action in m11d_records.values():
+        raise BehavioralSemanticIRDecisionError(
+            "duplicate action-interpretation identity"
+        )
+    for action in action_records.values():
         verify_seal(
             action,
             "record_subject_sha256",
-            f"M11D action {action['action_id']}",
+            f"accepted action {action['action_id']}",
         )
     blocked_rows = authority["subject"]["blocked_actions"]
     blocked_action_ids = {row["action_id"] for row in blocked_rows}
@@ -309,7 +386,7 @@ def validate_implementation(
         verify_seal(
             episode,
             "record_subject_sha256",
-            f"M11F episode {episode['episode_id']}",
+            f"accepted episode {episode['episode_id']}",
         )
         action_ids = [row["action_id"] for row in episode["actions"]]
         if not (
@@ -317,14 +394,16 @@ def validate_implementation(
             and len(action_ids) == len(set(action_ids))
         ):
             raise BehavioralSemanticIRDecisionError(
-                "M11F episode action membership differs"
+                "policy-episode action membership differs"
             )
         episode_action_owners.update(action_ids)
     if any(count != 1 for count in episode_action_owners.values()):
-        raise BehavioralSemanticIRDecisionError("M11F action assigned more than once")
-    if set(episode_action_owners) != set(m11d_records):
         raise BehavioralSemanticIRDecisionError(
-            "M11F episodes do not exhaust accepted M11D actions"
+            "policy-episode action assigned more than once"
+        )
+    if set(episode_action_owners) != set(action_records):
+        raise BehavioralSemanticIRDecisionError(
+            "policy episodes do not exhaust accepted action interpretations"
         )
     records = subject["implementation_records"]
     if len(records) != len(by_id) or {row["proposition_id"] for row in records} != set(
@@ -389,7 +468,7 @@ def validate_implementation(
                     "accepted action lineage differs"
                 )
             for action in episode["actions"]:
-                source_action = m11d_records.get(action["action_id"])
+                source_action = action_records.get(action["action_id"])
                 if source_action is None or not (
                     action["accepted_interpretation_record_id"]
                     == source_action["record_id"]
@@ -401,7 +480,7 @@ def validate_implementation(
                     == source_action["accepted_exact_choice_position_effect"]
                 ):
                     raise BehavioralSemanticIRDecisionError(
-                        "M11D action interpretation lineage differs"
+                        "action-interpretation lineage differs"
                     )
             derived_actions.extend(episode["primary_action_ids"])
             primary_owners[row["episode_id"]] += 1

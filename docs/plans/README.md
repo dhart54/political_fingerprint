@@ -6,12 +6,16 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M12F/G Environment & Energy Episode Acceptance and Semantic IR Candidates V1](m12fg_environment_energy_episode_acceptance_semantic_ir_v1.md)
-  - mechanically implements all 63 independently accepted M12E singleton
-    episodes, then proposes three detached repeated-pattern candidates pending
-    independent M12G substantive review.
+- [M12H/I Environment & Energy Semantic IR Acceptance and Synthesis Candidates V1](m12hi_environment_energy_semantic_ir_acceptance_synthesis_v1.md)
+  - mechanically accepts all three independently reviewed M12G repeated
+    patterns, then proposes one detached synthesis candidate pending independent
+    M12I substantive review.
 
 ## Retained unresolved plans
+
+- [M12F/G Environment & Energy Episode Acceptance and Semantic IR Candidates V1](m12fg_environment_energy_episode_acceptance_semantic_ir_v1.md)
+  - independently accepted at PR #153 and retained as M12H's immutable
+    candidate input.
 
 - [M12D/E Environment & Energy Action Meaning and Episode Candidates V1](m12de_environment_energy_action_meaning_episodes_v1.md)
   - independently accepted at PR #152 and retained as M12F's immutable

@@ -46,15 +46,18 @@ The machine-readable authority is
   internal policy-episode membership. H.R. 6387 remains a non-directional Not
   Voting singleton, and H.R. 471 and H.R. 3898 remain indivisible whole-package
   singletons. Accepted M11F artifacts remain byte-identical.
-- M12G is the active detached behavioral Semantic IR candidate stage. It proposes
-  three bounded repeated patterns covering two California vehicle-emissions
-  waiver-disapproval choices, four DOE appliance/equipment rule-disapproval
-  choices, and seven BLM land-decision disapproval choices. There are no
-  trajectories, notable choices, or overlaps. Twenty-five episodes remain
-  contrasts, 24 have no safe higher-level proposition, and H.R. 6387 is explicit
-  unused non-directional evidence. The human decision template is empty; M12H
-  and every synthesis, wording, publication, deployment, persistence, database,
-  and production authority remain false.
+- M12G was independently accepted at exact PR #153 head
+  `ab35caf3fb8ff80961da990b742bd42f7c4e56ba` and merged as
+  `d3bc0fddad701e0621c87857ed80288c23a867aa`. M12H now canonically implements
+  all three accepted repeated patterns exactly as written: 13 primary evidence
+  episodes, zero primary overlap, zero trajectories, zero notable choices, and
+  the complete 63-episode ledger (25 contrast-only, 24 no-safe, and one unused
+  non-directional episode). M12I is the active detached synthesis-candidate
+  stage. It proposes one bounded `uniform_direction` candidate from the exact
+  three accepted proposition records, with 13 deduplicated episode/action lineage
+  records and no intentionally standalone proposition. Its human decision
+  template remains empty; synthesis acceptance and every wording, publication,
+  deployment, persistence, database, and production authority remain false.
 - Frontend Pass A implements a finder-first, URL-backed representative journey
   on `/`: compact overview, truthful Congress scope, responsive issue discovery,
   conditional reviewed analysis, conditional reviewed policy episodes, and a
