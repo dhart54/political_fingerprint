@@ -35,6 +35,36 @@
     },
     "subject": {
       "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11d_implementation_binding"
+              ]
+            },
+            {
+              "required": [
+                "interpretation_implementation_binding"
+              ]
+            }
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11e_candidate_binding"
+              ]
+            },
+            {
+              "required": [
+                "policy_episode_candidate_binding"
+              ]
+            }
+          ]
+        }
+      ],
       "properties": {
         "action_accounting": {
           "items": {
@@ -480,6 +510,26 @@
         "internal_episode_state": {
           "type": "string"
         },
+        "interpretation_implementation_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "implementation_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "file_sha256",
+            "implementation_subject_sha256"
+          ],
+          "type": "object"
+        },
         "m11d_implementation_binding": {
           "additionalProperties": false,
           "properties": {
@@ -597,6 +647,38 @@
           },
           "type": "array"
         },
+        "policy_episode_candidate_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "accepted_head": {
+              "type": "string"
+            },
+            "accepted_pr": {
+              "type": "integer"
+            },
+            "artifact_id": {
+              "type": "string"
+            },
+            "episode_candidate_subject_sha256": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "post_merge_main": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "accepted_head",
+            "accepted_pr",
+            "artifact_id",
+            "episode_candidate_subject_sha256",
+            "file_sha256",
+            "post_merge_main"
+          ],
+          "type": "object"
+        },
         "semantic_ir_state": {
           "type": "string"
         },
@@ -661,8 +743,6 @@
         "final_accounting",
         "implementation_records",
         "internal_episode_state",
-        "m11d_implementation_binding",
-        "m11e_candidate_binding",
         "non_primary_relationship_evidence",
         "semantic_ir_state",
         "subject",

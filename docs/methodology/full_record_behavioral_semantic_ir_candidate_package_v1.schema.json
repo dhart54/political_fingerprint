@@ -14,8 +14,6 @@
     "canonical_semantic_ir",
     "compiled_candidate_ir",
     "episode_evidence_ledger",
-    "m11f_authority_binding",
-    "m11f_implementation_binding",
     "public_wording_included",
     "schema_version",
     "synthesis_included"
@@ -27,6 +25,8 @@
     "base_binding": {"type": "object"},
     "m11f_authority_binding": {"type": "object"},
     "m11f_implementation_binding": {"type": "object"},
+    "accepted_policy_episode_authority_binding": {"type": "object"},
+    "accepted_policy_episode_implementation_binding": {"type": "object"},
     "blocked_action_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
     "episode_evidence_ledger": {"type": "array", "minItems": 1},
     "compiled_candidate_ir": {
@@ -120,5 +120,19 @@
     "public_wording_included": {"const": false},
     "authorizing": {"const": false},
     "candidate_subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
-  }
+  },
+  "allOf": [
+    {
+      "oneOf": [
+        {"required": ["m11f_authority_binding"]},
+        {"required": ["accepted_policy_episode_authority_binding"]}
+      ]
+    },
+    {
+      "oneOf": [
+        {"required": ["m11f_implementation_binding"]},
+        {"required": ["accepted_policy_episode_implementation_binding"]}
+      ]
+    }
+  ]
 }

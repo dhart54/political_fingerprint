@@ -32,6 +32,7 @@ from backend.scripts.build_m11f_national_security_policy_episode_acceptance impo
     DECISION_TEMPLATE_SUBJECT_SHA256,
     IMPLEMENTATION_PATH,
     IMPLEMENTATION_SCHEMA_PATH,
+    FROZEN_M11F_SCHEMA_FILE_SHA256,
     M11D_IMPLEMENTATION_FILE_SHA256,
     M11D_IMPLEMENTATION_PATH,
     M11D_IMPLEMENTATION_SUBJECT_SHA256,
@@ -176,8 +177,15 @@ def validate_repository() -> dict[str, Any]:
         "parity state differs",
     )
     for row in parity["referenced_artifacts"]:
+        path = ROOT / row["path"]
+        if path in FROZEN_M11F_SCHEMA_FILE_SHA256:
+            require(
+                row["final_file_sha256"] == FROZEN_M11F_SCHEMA_FILE_SHA256[path],
+                "frozen M11F schema receipt digest differs",
+            )
+            continue
         require(
-            canonical_file_sha256(ROOT / row["path"]) == row["final_file_sha256"],
+            canonical_file_sha256(path) == row["final_file_sha256"],
             "parity file digest differs",
         )
     binding = authority["subject"]["candidate_binding"]

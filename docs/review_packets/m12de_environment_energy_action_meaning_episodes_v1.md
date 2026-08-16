@@ -75,3 +75,11 @@ The human episode-decision template is empty. M12E is candidate-only,
 noncanonical, nonpublic, nonauthorizing, and non-production-selectable. M12F,
 Semantic IR, synthesis, public wording, site integration, publication,
 persistence, database writes, production, and deployment remain unauthorized.
+
+## Independent review disposition
+
+M12D passed independent mechanical review and M12E passed independent semantic
+review at exact PR #152 head
+`ecf087f0a6c916ef457014a75381198a16f54857`. All 63 singleton candidates and all
+seven contrast conclusions were accepted as written. PR #152 merged as
+`450a759c5a2d0eaf767e68bc999c7d3ec8e9ca1e`.

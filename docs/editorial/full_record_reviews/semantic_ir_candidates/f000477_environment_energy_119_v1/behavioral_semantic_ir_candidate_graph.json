@@ -1,0 +1,2319 @@
+{
+  "accepted_policy_episode_authority_binding": {
+    "artifact_id": "human-policy-episode-authority:f000477:environment_energy:119:v1",
+    "authority_subject_sha256": "4c678975138f16380eb7df853a71a7024e1f8a49e42c4d8c9399819949b013fa",
+    "file_sha256": "fc25868d77a1bb7091d4556b566da6819659e5cb756dc29c89bafa66711cfbff"
+  },
+  "accepted_policy_episode_implementation_binding": {
+    "artifact_id": "policy-episode-decision-implementation:f000477:environment_energy:119:v1",
+    "file_sha256": "ab2bc01875239e65a5224dbc4b718e18b9a301b304f78ff642b97f2f33be039d",
+    "implementation_subject_sha256": "0ee66969a8d2514cce322d6ed437119cc2b1612fb53092cc0754e0ba2a2637d2"
+  },
+  "accepted_semantic_ir": false,
+  "artifact_id": "behavioral-semantic-ir-candidates:f000477:environment_energy:119:v1",
+  "authorizing": false,
+  "base_binding": {
+    "post_m12e_merge_main": "450a759c5a2d0eaf767e68bc999c7d3ec8e9ca1e"
+  },
+  "blocked_action_ids": [],
+  "candidate_state": "complete_pending_human_substantive_review",
+  "candidate_subject_sha256": "4cc502b76e1f603eef8276bf8632daa25153b0e5d07cf2e99e1c27514c36d023",
+  "canonical_semantic_ir": false,
+  "compiled_candidate_ir": {
+    "downstream_authorizations": {
+      "database_writes": false,
+      "deployment": false,
+      "production_persistence": false,
+      "public_wording": false,
+      "publication": false,
+      "semantic_ir_acceptance": false,
+      "synthesis": false
+    },
+    "episode_accounting": [
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-104-1-224",
+        "primary_proposition_id": "pattern-blm-land-decision-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-105-1-226",
+        "primary_proposition_id": "pattern-blm-land-decision-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-106-1-225",
+        "primary_proposition_id": "pattern-blm-land-decision-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-130-1-294",
+        "primary_proposition_id": "pattern-blm-land-decision-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-131-1-295",
+        "primary_proposition_id": "pattern-blm-land-decision-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-140-2-38",
+        "primary_proposition_id": "pattern-blm-land-decision-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-20-1-53",
+        "primary_proposition_id": "pattern-doe-appliance-efficiency-rule-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-24-1-77",
+        "primary_proposition_id": "pattern-doe-appliance-efficiency-rule-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hjres-35-1-52",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for other-distinct-cra-rules; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-42-1-59",
+        "primary_proposition_id": "pattern-doe-appliance-efficiency-rule-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hjres-60-1-110",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for other-distinct-cra-rules; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hjres-61-1-58",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for other-distinct-cra-rules; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-75-1-78",
+        "primary_proposition_id": "pattern-doe-appliance-efficiency-rule-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-88-1-114",
+        "primary_proposition_id": "pattern-california-vehicle-emissions-waiver-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hjres-89-1-112",
+        "primary_proposition_id": "pattern-california-vehicle-emissions-waiver-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-1047-1-279",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-electricity-reliability-proposals; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-1346-2-164",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-clean-air-act-choices; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-1366-1-358",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-mining-and-mineral-proposals; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-1676-1-316",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-186-1-18",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-187-1-19",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-1917-1-216",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-1949-1-304",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-natural-gas-and-petrochemical-proposals; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-2215-1-125",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-249-1-124",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-26-1-35",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-261-2-67",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-276-1-122",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-2860-2-196",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-3015-1-278",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-3109-1-303",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-natural-gas-and-petrochemical-proposals; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-3187-1-336",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-359-1-72",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-3616-1-347",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-electricity-reliability-proposals; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-3617-2-64",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-mining-and-mineral-proposals; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-3628-1-323",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-electricity-reliability-proposals; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-3632-1-342",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-electricity-reliability-proposals; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-3638-1-324",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-electricity-reliability-proposals; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-3668-1-334",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-natural-gas-and-petrochemical-proposals; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-375-1-24",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-3898-1-330",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for indivisible-whole-packages; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-4090-2-55",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-mining-and-mineral-proposals; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-4294-2-88",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-4593-2-23",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for other-appliance-efficiency-choices; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-4626-2-76",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for other-appliance-efficiency-choices; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-471-1-25",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for indivisible-whole-packages; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-4758-2-78",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for other-appliance-efficiency-choices; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-4776-1-356",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-5103-2-101",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-5184-2-12",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for other-appliance-efficiency-choices; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-556-2-93",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-5587-2-137",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "unused_non_directional_evidence",
+        "episode_id": "single-119-hr-6387-2-136",
+        "primary_proposition_id": null,
+        "reason": "Not Voting is resolved but non-directional and cannot support a directional behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-6398-2-118",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-clean-air-act-choices; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-6409-2-116",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for distinct-clean-air-act-choices; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-6422-2-97",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-7618-2-192",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-845-1-360",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-s-1020-2-129",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-s-1596-1-193",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-sjres-11-1-61",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for other-distinct-cra-rules; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-sjres-31-1-143",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for other-distinct-cra-rules; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-sjres-80-1-296",
+        "primary_proposition_id": "pattern-blm-land-decision-disapproval-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-choice proposition."
+      }
+    ],
+    "proposition_graph": {
+      "propositions": [
+        {
+          "authorizing": false,
+          "candidate_state": "proposed_not_accepted",
+          "canonical": false,
+          "competing_interpretations": [
+            "Keep the resolutions only as separate episodes because the underlying California standards and waiver decisions differ."
+          ],
+          "conclusion_relevance": "primary",
+          "direction": "opposition",
+          "episode_semantic_evidence": {
+            "single-119-hjres-88-1-114": "Whether to adopt H.J.Res. 88, which would provide congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to California State Motor Vehicle and Engine Pollution Control Standards; Advanced Clean Cars II; Waiver of Preemption; Notice of Decision.",
+            "single-119-hjres-89-1-112": "Whether to adopt H.J.Res. 89, which would provide congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to California State Motor Vehicle and Engine and Nonroad Engine Pollution Control Standards; The Omnibus Low NOX Regulation; Waiver of Preemption; Notice of Decision."
+          },
+          "evidence_action_ids": [
+            "house:119:1:112",
+            "house:119:1:114"
+          ],
+          "evidence_episode_ids": [
+            "single-119-hjres-89-1-112",
+            "single-119-hjres-88-1-114"
+          ],
+          "material_limitations": [
+            "H.J.Res. 88 and H.J.Res. 89 concern distinct waiver decisions and distinct emissions standards.",
+            "Opposition to congressional disapproval does not establish unrestricted support for every aspect of either underlying rule or waiver decision."
+          ],
+          "overlap_relationships": [],
+          "proposition": "Across two separate resolutions, Foushee opposed congressional disapproval of two distinct EPA California vehicle-emissions waiver-of-preemption decisions.",
+          "proposition_id": "pattern-california-vehicle-emissions-waiver-disapproval-opposition",
+          "proposition_type": "repeated_pattern",
+          "rationale": "Both accepted meanings concern the same bounded congressional choice: whether to disapprove an EPA California vehicle-emissions waiver-of-preemption decision; both accepted directions oppose disapproval.",
+          "relevant_contrasts": [],
+          "semantic_role": "behavioral",
+          "source_relationship_binding": {
+            "inherited_authority": false,
+            "relationship_subject_sha256": null,
+            "use": "independently_derived_from_accepted_m12f_episode_meanings_and_directions"
+          },
+          "trajectory_change": null
+        },
+        {
+          "authorizing": false,
+          "candidate_state": "proposed_not_accepted",
+          "canonical": false,
+          "competing_interpretations": [
+            "Treat the product and regulatory-function differences as too material for one repeated pattern."
+          ],
+          "conclusion_relevance": "primary",
+          "direction": "opposition",
+          "episode_semantic_evidence": {
+            "single-119-hjres-20-1-53": "Whether to adopt H.J.Res. 20, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to Energy Conservation Program: Energy Conservation Standards for Consumer Gas-fired Instantaneous Water Heaters.",
+            "single-119-hjres-24-1-77": "Whether to adopt H.J.Res. 24, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to Energy Conservation Program: Energy Conservation Standards for Walk-In Coolers and Walk-In Freezers.",
+            "single-119-hjres-42-1-59": "Whether to adopt H.J.Res. 42, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to Energy Conservation Program for Appliance Standards: Certification Requirements, Labeling Requirements, and Enforcement Provisions for Certain Consumer Products and Commercial Equipment.",
+            "single-119-hjres-75-1-78": "Whether to adopt H.J.Res. 75, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Office of Energy Efficiency and Renewable Energy, Department of Energy relating to Energy Conservation Program: Energy Conservation Standards for Commercial Refrigerators, Freezers, and Refrigerator-Freezers."
+          },
+          "evidence_action_ids": [
+            "house:119:1:53",
+            "house:119:1:59",
+            "house:119:1:77",
+            "house:119:1:78"
+          ],
+          "evidence_episode_ids": [
+            "single-119-hjres-20-1-53",
+            "single-119-hjres-42-1-59",
+            "single-119-hjres-24-1-77",
+            "single-119-hjres-75-1-78"
+          ],
+          "material_limitations": [
+            "The four resolutions concern different products and different regulatory functions, including standards, certification, labeling, and enforcement.",
+            "The pattern is limited to the disapproval choices and does not establish general support for regulation or for every underlying requirement."
+          ],
+          "overlap_relationships": [],
+          "proposition": "Across four separate resolutions, Foushee opposed congressional disapproval of distinct Department of Energy appliance or commercial-equipment energy-conservation standards, certification, labeling, or enforcement rules.",
+          "proposition_id": "pattern-doe-appliance-efficiency-rule-disapproval-opposition",
+          "proposition_type": "repeated_pattern",
+          "rationale": "Each accepted meaning states a congressional-disapproval choice over a DOE energy-conservation rule governing appliances or commercial equipment, and every accepted direction opposes disapproval.",
+          "relevant_contrasts": [
+            {
+              "episode_ids": [
+                "single-119-hr-5184-2-12",
+                "single-119-hr-4593-2-23",
+                "single-119-hr-4626-2-76",
+                "single-119-hr-4758-2-78"
+              ],
+              "reason": "These related energy-efficiency measures use different statutory choices rather than congressional disapproval of the four identified rules."
+            }
+          ],
+          "semantic_role": "behavioral",
+          "source_relationship_binding": {
+            "inherited_authority": false,
+            "relationship_subject_sha256": null,
+            "use": "independently_derived_from_accepted_m12f_episode_meanings_and_directions"
+          },
+          "trajectory_change": null
+        },
+        {
+          "authorizing": false,
+          "candidate_state": "proposed_not_accepted",
+          "canonical": false,
+          "competing_interpretations": [
+            "Retain only the seven separate episodes because their geographies and operative land decisions differ materially."
+          ],
+          "conclusion_relevance": "primary",
+          "direction": "opposition",
+          "episode_semantic_evidence": {
+            "single-119-hjres-104-1-224": "Whether to adopt H.J.Res. 104, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment.",
+            "single-119-hjres-105-1-226": "Whether to adopt H.J.Res. 105, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to North Dakota Field Office Record of Decision and Approved Resource Management Plan.",
+            "single-119-hjres-106-1-225": "Whether to adopt H.J.Res. 106, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Central Yukon Record of Decision and Approved Resource Management Plan.",
+            "single-119-hjres-130-1-294": "Whether to adopt H.J.Res. 130, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment.",
+            "single-119-hjres-131-1-295": "Whether to adopt H.J.Res. 131, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Coastal Plain Oil and Gas Leasing Program Record of Decision.",
+            "single-119-hjres-140-2-38": "Whether to adopt H.J.Res. 140, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Public Land Order No. 7917 for Withdrawal of Federal Lands; Cook, Lake, and Saint Louis Counties, MN.",
+            "single-119-sjres-80-1-296": "Whether to adopt SJRES 80, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision."
+          },
+          "evidence_action_ids": [
+            "house:119:1:224",
+            "house:119:1:225",
+            "house:119:1:226",
+            "house:119:1:294",
+            "house:119:1:295",
+            "house:119:1:296",
+            "house:119:2:38"
+          ],
+          "evidence_episode_ids": [
+            "single-119-hjres-104-1-224",
+            "single-119-hjres-106-1-225",
+            "single-119-hjres-105-1-226",
+            "single-119-hjres-130-1-294",
+            "single-119-hjres-131-1-295",
+            "single-119-sjres-80-1-296",
+            "single-119-hjres-140-2-38"
+          ],
+          "material_limitations": [
+            "Each resolution concerns a separate geographic area and distinct plan, amendment, leasing decision, activity plan, or withdrawal order.",
+            "Opposition to disapproval does not establish support for every component of every underlying BLM decision."
+          ],
+          "overlap_relationships": [],
+          "proposition": "Across seven separate resolutions, Foushee opposed congressional disapproval of distinct Bureau of Land Management land-management, leasing, activity-plan, or withdrawal decisions.",
+          "proposition_id": "pattern-blm-land-decision-disapproval-opposition",
+          "proposition_type": "repeated_pattern",
+          "rationale": "Every accepted meaning states a congressional-disapproval choice over a distinct BLM land-management, leasing, activity-plan, or withdrawal decision, and every accepted direction opposes disapproval.",
+          "relevant_contrasts": [
+            {
+              "episode_ids": [
+                "single-119-hjres-60-1-110"
+              ],
+              "reason": "The National Park Service motor-vehicle rule is a different agency, land unit, and regulatory choice."
+            }
+          ],
+          "semantic_role": "behavioral",
+          "source_relationship_binding": {
+            "inherited_authority": false,
+            "relationship_subject_sha256": null,
+            "use": "independently_derived_from_accepted_m12f_episode_meanings_and_directions"
+          },
+          "trajectory_change": null
+        }
+      ]
+    },
+    "schema_version": "behavioral_semantic_ir_candidate_graph_v1",
+    "subject": {
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "ENVIRONMENT_ENERGY",
+      "legislator_id": "leg_valerie_p_foushee",
+      "member_id": "F000477",
+      "member_name": "Valerie Foushee",
+      "official_cutoff": {
+        "end_date": "2026-07-23",
+        "latest_action_id": "house:119:2:283"
+      }
+    },
+    "synthesis_propositions": []
+  },
+  "episode_evidence_ledger": [
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 104, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:224:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "dae6441f95d63ec9e36608bb938c081e8bd4c6d65f3c11ab436940728f133e5e",
+          "action_id": "house:119:1:224",
+          "official_action_date": "2025-09-03",
+          "source_references": [
+            "clerk:house:119:1:224",
+            "congress-actions:house:119:1:224",
+            "congress-text:119:hjres:104:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-104-1-224",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-104-1-224:m12f:v1",
+      "episode_record_subject_sha256": "bfd9a37ff01cb5af0fd57dd69c13ae5a8365854558a9ba5b512ba2e650917fa0",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 104, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Miles City Field Office Record of Decision and Approved Resource Management Plan Amendment.",
+      "primary_action_ids": [
+        "house:119:1:224"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 105, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to North Dakota Field Office Record of Decision and Approved Resource Management Plan.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:226:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "c07d2e462b2f02ddae8b565875f4bea70b535ee4dfb81ba81e37a480487553b1",
+          "action_id": "house:119:1:226",
+          "official_action_date": "2025-09-03",
+          "source_references": [
+            "clerk:house:119:1:226",
+            "congress-actions:house:119:1:226",
+            "congress-text:119:hjres:105:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-105-1-226",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-105-1-226:m12f:v1",
+      "episode_record_subject_sha256": "6f208182d12112cb37f00513b4d687868e1f1091afaa7bb415a5912f1747eb39",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 105, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to North Dakota Field Office Record of Decision and Approved Resource Management Plan.",
+      "primary_action_ids": [
+        "house:119:1:226"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 106, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Central Yukon Record of Decision and Approved Resource Management Plan.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:225:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "e85378fee7a704af27c32cf7373050c6dafbd3286ef5c226d63e2adf1e4ebbb0",
+          "action_id": "house:119:1:225",
+          "official_action_date": "2025-09-03",
+          "source_references": [
+            "clerk:house:119:1:225",
+            "congress-actions:house:119:1:225",
+            "congress-text:119:hjres:106:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-106-1-225",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-106-1-225:m12f:v1",
+      "episode_record_subject_sha256": "24259bdbd47783907e758aa30d43a59d4c69da2b9bceb573093562d0ce7f453c",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 106, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Central Yukon Record of Decision and Approved Resource Management Plan.",
+      "primary_action_ids": [
+        "house:119:1:225"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 130, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:294:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "beef105f8eacd83867948d9fba270512d684ceccfad10e8a731883d2c4fc29ac",
+          "action_id": "house:119:1:294",
+          "official_action_date": "2025-11-18",
+          "source_references": [
+            "clerk:house:119:1:294",
+            "congress-actions:house:119:1:294",
+            "congress-text:119:hjres:130:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-130-1-294",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-130-1-294:m12f:v1",
+      "episode_record_subject_sha256": "c31c7517780807275c216092d99c550e2859d49c9b2bf984dd1dbc603199d631",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 130, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Buffalo Field Office Record of Decision and Approved Resource Management Plan Amendment.",
+      "primary_action_ids": [
+        "house:119:1:294"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 131, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Coastal Plain Oil and Gas Leasing Program Record of Decision.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:295:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "6c147bf3352008d3ba66d71be2b9e6ba01c00ab6a246f1daf09bac3490e9a6d2",
+          "action_id": "house:119:1:295",
+          "official_action_date": "2025-11-18",
+          "source_references": [
+            "clerk:house:119:1:295",
+            "congress-actions:house:119:1:295",
+            "congress-text:119:hjres:131:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-131-1-295",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-131-1-295:m12f:v1",
+      "episode_record_subject_sha256": "908c417419bc160c237f677e25e30f620f2ab148e5ca1562454c53dd5bed5813",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 131, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Coastal Plain Oil and Gas Leasing Program Record of Decision.",
+      "primary_action_ids": [
+        "house:119:1:295"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 140, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Public Land Order No. 7917 for Withdrawal of Federal Lands; Cook, Lake, and Saint Louis Counties, MN.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:38:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "324a4394a8c9d223dfb10dfd6b74878c083920c7eb6b0c4db598ff5653132931",
+          "action_id": "house:119:2:38",
+          "official_action_date": "2026-01-21",
+          "source_references": [
+            "clerk:house:119:2:38",
+            "congress-actions:house:119:2:38",
+            "congress-text:119:hjres:140:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-140-2-38",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-140-2-38:m12f:v1",
+      "episode_record_subject_sha256": "6baa0735fee367d985c84d217925f998c29a26dbfa858894d6746b05af8b4d7f",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 140, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to Public Land Order No. 7917 for Withdrawal of Federal Lands; Cook, Lake, and Saint Louis Counties, MN.",
+      "primary_action_ids": [
+        "house:119:2:38"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 20, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to Energy Conservation Program: Energy Conservation Standards for Consumer Gas-fired Instantaneous Water Heaters.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:53:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "be420060989d65fbfddb69b39d0ea0a7c6ba83e2074799c41d7194594eb72a96",
+          "action_id": "house:119:1:53",
+          "official_action_date": "2025-02-27",
+          "source_references": [
+            "clerk:house:119:1:53",
+            "congress-actions:house:119:1:53",
+            "congress-text:119:hjres:20:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-20-1-53",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-20-1-53:m12f:v1",
+      "episode_record_subject_sha256": "37becc9a44efb6e32c44d98dd067a752f847c5ac725c74d710dfdc0544a9682a",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 20, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to Energy Conservation Program: Energy Conservation Standards for Consumer Gas-fired Instantaneous Water Heaters.",
+      "primary_action_ids": [
+        "house:119:1:53"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 24, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to Energy Conservation Program: Energy Conservation Standards for Walk-In Coolers and Walk-In Freezers.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:77:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "594f66a8405a1ffeb1b1ae2363214e25af66ba44f67717171761549f56730acf",
+          "action_id": "house:119:1:77",
+          "official_action_date": "2025-03-27",
+          "source_references": [
+            "clerk:house:119:1:77",
+            "congress-actions:house:119:1:77",
+            "congress-text:119:hjres:24:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-24-1-77",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-24-1-77:m12f:v1",
+      "episode_record_subject_sha256": "6c37e1a842b2df9bacd16ce5e70b44ec1e82a8135526dcf5229333c43114fdfa",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 24, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to Energy Conservation Program: Energy Conservation Standards for Walk-In Coolers and Walk-In Freezers.",
+      "primary_action_ids": [
+        "house:119:1:77"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 35, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to Waste Emissions Charge for Petroleum and Natural Gas Systems: Procedures for Facilitating Compliance, Including Netting and Exemptions.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:52:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "acd8f8233836ce4aaad7ca7feb73aa8d6c129dbd641f141ed1edbdc3a6a0fbd2",
+          "action_id": "house:119:1:52",
+          "official_action_date": "2025-02-26",
+          "source_references": [
+            "clerk:house:119:1:52",
+            "congress-actions:house:119:1:52",
+            "congress-text:119:hjres:35:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-35-1-52",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-35-1-52:m12f:v1",
+      "episode_record_subject_sha256": "df2b441b86f5b05d248e7840d0e39be8f44c7664a173dcf0a79d1fecf46e8ef7",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 35, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to Waste Emissions Charge for Petroleum and Natural Gas Systems: Procedures for Facilitating Compliance, Including Netting and Exemptions.",
+      "primary_action_ids": [
+        "house:119:1:52"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 42, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to Energy Conservation Program for Appliance Standards: Certification Requirements, Labeling Requirements, and Enforcement Provisions for Certain Consumer Products and Commercial Equipment.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:59:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "c5d72c509b43f1c37c03d91d88288f7e462dff97e909b79d705f2a5ef713e52a",
+          "action_id": "house:119:1:59",
+          "official_action_date": "2025-03-05",
+          "source_references": [
+            "clerk:house:119:1:59",
+            "congress-actions:house:119:1:59",
+            "congress-text:119:hjres:42:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-42-1-59",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-42-1-59:m12f:v1",
+      "episode_record_subject_sha256": "cd987985a33180f3c3c551e7f3e2b81f1cf4f8813b43c37d3c81b3af4db1cfe0",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 42, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to Energy Conservation Program for Appliance Standards: Certification Requirements, Labeling Requirements, and Enforcement Provisions for Certain Consumer Products and Commercial Equipment.",
+      "primary_action_ids": [
+        "house:119:1:59"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 60, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the National Park Service relating to Glen Canyon National Recreation Area: Motor Vehicles.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:110:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "885450171b360272ef9303ce80763e09a9f4dbcbf0f5a16006d4b732a3626034",
+          "action_id": "house:119:1:110",
+          "official_action_date": "2025-04-29",
+          "source_references": [
+            "clerk:house:119:1:110",
+            "congress-actions:house:119:1:110",
+            "congress-text:119:hjres:60:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-60-1-110",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-60-1-110:m12f:v1",
+      "episode_record_subject_sha256": "d9e7bbb0741640a0deab9e23eb6d9fd59ec9ab494acb716d71d13030aa0d68f6",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 60, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the National Park Service relating to Glen Canyon National Recreation Area: Motor Vehicles.",
+      "primary_action_ids": [
+        "house:119:1:110"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 61, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to National Emission Standards for Hazardous Air Pollutants: Rubber Tire Manufacturing.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:58:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "4aceba3db56cf94a6af0d2782dc12a66735925413894a5f9caaa20296899faf0",
+          "action_id": "house:119:1:58",
+          "official_action_date": "2025-03-05",
+          "source_references": [
+            "clerk:house:119:1:58",
+            "congress-actions:house:119:1:58",
+            "congress-text:119:hjres:61:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-61-1-58",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-61-1-58:m12f:v1",
+      "episode_record_subject_sha256": "a58f51cb1e8b660c07f7e9f30e533f23409e7c14f0cf3b6168674990424c8807",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 61, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to National Emission Standards for Hazardous Air Pollutants: Rubber Tire Manufacturing.",
+      "primary_action_ids": [
+        "house:119:1:58"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 75, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Office of Energy Efficiency and Renewable Energy, Department of Energy relating to Energy Conservation Program: Energy Conservation Standards for Commercial Refrigerators, Freezers, and Refrigerator-Freezers.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:78:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "0bf6bf25fd8038a83918e9394cd77f76393ca57fd58561523d41fb5eb6854853",
+          "action_id": "house:119:1:78",
+          "official_action_date": "2025-03-27",
+          "source_references": [
+            "clerk:house:119:1:78",
+            "congress-actions:house:119:1:78",
+            "congress-text:119:hjres:75:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-75-1-78",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-75-1-78:m12f:v1",
+      "episode_record_subject_sha256": "a55342f6d74912f391ec38343b25094882380b68b521e4206353a8a13fcafb72",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 75, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Office of Energy Efficiency and Renewable Energy, Department of Energy relating to Energy Conservation Program: Energy Conservation Standards for Commercial Refrigerators, Freezers, and Refrigerator-Freezers.",
+      "primary_action_ids": [
+        "house:119:1:78"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 88, which would provide congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to California State Motor Vehicle and Engine Pollution Control Standards; Advanced Clean Cars II; Waiver of Preemption; Notice of Decision.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:114:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "f1dadfb493f5e863d6ac68abfc1f3b6ff240c4dbb2058b531c1913fec4ec9c6c",
+          "action_id": "house:119:1:114",
+          "official_action_date": "2025-05-01",
+          "source_references": [
+            "clerk:house:119:1:114",
+            "congress-actions:house:119:1:114",
+            "congress-text:119:hjres:88:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-88-1-114",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-88-1-114:m12f:v1",
+      "episode_record_subject_sha256": "ac294c4aed6622d070dc6c34717377421d3aef5ebcb441795c5c2dd46b0d5640",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 88, which would provide congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to California State Motor Vehicle and Engine Pollution Control Standards; Advanced Clean Cars II; Waiver of Preemption; Notice of Decision.",
+      "primary_action_ids": [
+        "house:119:1:114"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt H.J.Res. 89, which would provide congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to California State Motor Vehicle and Engine and Nonroad Engine Pollution Control Standards; The Omnibus Low NOX Regulation; Waiver of Preemption; Notice of Decision.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:112:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "958bd4b0605bd744e4febb34f551e224111637429a025166de743f61e077074d",
+          "action_id": "house:119:1:112",
+          "official_action_date": "2025-04-30",
+          "source_references": [
+            "clerk:house:119:1:112",
+            "congress-actions:house:119:1:112",
+            "congress-text:119:hjres:89:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hjres-89-1-112",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hjres-89-1-112:m12f:v1",
+      "episode_record_subject_sha256": "786155515c0f101cf97e060fe1f52db37558b0a42eab947ff52ae7848963150c",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt H.J.Res. 89, which would provide congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to California State Motor Vehicle and Engine and Nonroad Engine Pollution Control Standards; The Omnibus Low NOX Regulation; Waiver of Preemption; Notice of Decision.",
+      "primary_action_ids": [
+        "house:119:1:112"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 1047, which would require the Federal Energy Regulatory Commission to reform the interconnection queue process for the prioritization and approval of certain projects, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:279:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "541c1e918216a41f5ba017197748fabe74e9a9bcda7c34f112116ca323446713",
+          "action_id": "house:119:1:279",
+          "official_action_date": "2025-09-18",
+          "source_references": [
+            "clerk:house:119:1:279",
+            "congress-actions:house:119:1:279",
+            "congress-text:119:hr:1047:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-1047-1-279",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-1047-1-279:m12f:v1",
+      "episode_record_subject_sha256": "51269fda39b2a8e8dbad34789b3870c8d751da29b47872741651b9963ba76b6e",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 1047, which would require the Federal Energy Regulatory Commission to reform the interconnection queue process for the prioritization and approval of certain projects, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:279"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 1346, which would amend the Clean Air Act with respect to the ethanol waiver for Reid Vapor Pressure under that Act, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:164:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "5ced5858c8c66a1803ebf997cf2cc51060304a2d20fc89bfccb157884e0dfc3d",
+          "action_id": "house:119:2:164",
+          "official_action_date": "2026-05-13",
+          "source_references": [
+            "clerk:house:119:2:164",
+            "congress-actions:house:119:2:164",
+            "congress-text:119:hr:1346:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-1346-2-164",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-1346-2-164:m12f:v1",
+      "episode_record_subject_sha256": "40acc8dfe7f4253cf7e702fd73dc3515b802ce8dd048113b871a50b151d10a65",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 1346, which would amend the Clean Air Act with respect to the ethanol waiver for Reid Vapor Pressure under that Act, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:2:164"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 1366, which would provide for the location of multiple hardrock mining mill sites, to establish the Abandoned Hardrock Mine Fund, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:358:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "641a2bd26fd68df7c1239adac883aec4fe8b9c66415dcbf39cb8b0ac6f1441c7",
+          "action_id": "house:119:1:358",
+          "official_action_date": "2025-12-18",
+          "source_references": [
+            "clerk:house:119:1:358",
+            "congress-actions:house:119:1:358",
+            "congress-text:119:hr:1366:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-1366-1-358",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-1366-1-358:m12f:v1",
+      "episode_record_subject_sha256": "eb936659632659c28b0150d1cc9bfbe4572fa8a28ca0f047c6ae99cda9cd8a6d",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 1366, which would provide for the location of multiple hardrock mining mill sites, to establish the Abandoned Hardrock Mine Fund, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:358"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 1676, which would amend the Pittman-Robertson Wildlife Restoration Act to require the Secretary of the Interior to approve the wildlife conservation and restoration program of a State within a certain period of time.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:316:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "13a47d4a12e2ddbd830e50ee6f87b1a4e93d473728bdb0cb6b1efee81d0b8732",
+          "action_id": "house:119:1:316",
+          "official_action_date": "2025-12-09",
+          "source_references": [
+            "clerk:house:119:1:316",
+            "congress-actions:house:119:1:316",
+            "congress-text:119:hr:1676:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-1676-1-316",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-1676-1-316:m12f:v1",
+      "episode_record_subject_sha256": "b0b71fedc4ffda5c501ee8e8a5b90410dbe9bcf4bd33c4a27c8e428a00d5cab1",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 1676, which would amend the Pittman-Robertson Wildlife Restoration Act to require the Secretary of the Interior to approve the wildlife conservation and restoration program of a State within a certain period of time.",
+      "primary_action_ids": [
+        "house:119:1:316"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 186, which would authorize the National Medal of Honor Museum Foundation to establish a commemorative work on the National Mall to honor the extraordinary acts of valor, selfless service, and sacrifice displayed by Medal of Honor recipients.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:18:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "08106ad050a73efc195f23b86bcfa93cdac6334a80100ea4947381445d847dd9",
+          "action_id": "house:119:1:18",
+          "official_action_date": "2025-01-21",
+          "source_references": [
+            "clerk:house:119:1:18",
+            "congress-actions:house:119:1:18",
+            "congress-text:119:hr:186:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-186-1-18",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-186-1-18:m12f:v1",
+      "episode_record_subject_sha256": "671b3ab07d3c21829eb4695aeea1fa24dcf4e7aab5f9567f307771c0eb1e3a10",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 186, which would authorize the National Medal of Honor Museum Foundation to establish a commemorative work on the National Mall to honor the extraordinary acts of valor, selfless service, and sacrifice displayed by Medal of Honor recipients.",
+      "primary_action_ids": [
+        "house:119:1:18"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 187, which would provide for the standardization, consolidation, and publication of data relating to public outdoor recreational use of Federal waterways among Federal land and water management agencies, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:19:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "d72d67cd79dc7134bb095f9d4935062a610da9a93ce6d5a05e9d092a1a5df730",
+          "action_id": "house:119:1:19",
+          "official_action_date": "2025-01-21",
+          "source_references": [
+            "clerk:house:119:1:19",
+            "congress-actions:house:119:1:19",
+            "congress-text:119:hr:187:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-187-1-19",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-187-1-19:m12f:v1",
+      "episode_record_subject_sha256": "cf281c1cc05a5f158f32b1e389c1e4ccf54b5e0776020b3ea71d592e0951090c",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 187, which would provide for the standardization, consolidation, and publication of data relating to public outdoor recreational use of Federal waterways among Federal land and water management agencies, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:19"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 1917, which would establish the Great Lakes Mass Marking Program, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:216:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "aa9f44eae97589ca1f3bce107ae1afb36c521e9579784dc16473611f9ac6d1ee",
+          "action_id": "house:119:1:216",
+          "official_action_date": "2025-07-22",
+          "source_references": [
+            "clerk:house:119:1:216",
+            "congress-actions:house:119:1:216",
+            "congress-text:119:hr:1917:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-1917-1-216",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-1917-1-216:m12f:v1",
+      "episode_record_subject_sha256": "2f124d6b255f983ec758d89d69e1dedfe3ef2c156af180ca25eeafa2ea6522af",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 1917, which would establish the Great Lakes Mass Marking Program, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:216"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 1949, which would repeal restrictions on the export and import of natural gas.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:304:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "c18a2006ac8c9f9f4db945028011f346bb6735fdabadd8aad1347774f5b6a6a3",
+          "action_id": "house:119:1:304",
+          "official_action_date": "2025-11-20",
+          "source_references": [
+            "clerk:house:119:1:304",
+            "congress-actions:house:119:1:304",
+            "congress-text:119:hr:1949:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-1949-1-304",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-1949-1-304:m12f:v1",
+      "episode_record_subject_sha256": "15c6154b3ff6778090aa85c9b4b934822769738957b663e3e5269039bad73f42",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 1949, which would repeal restrictions on the export and import of natural gas.",
+      "primary_action_ids": [
+        "house:119:1:304"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 2215, which would redesignate the Salem Maritime National Historic Site as the Salem Maritime National Historical Park, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:125:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "34e276b1c365eca5da0bb5dd8ef9efe684120a55c41c3a95b2b8d43abcbb323b",
+          "action_id": "house:119:1:125",
+          "official_action_date": "2025-05-14",
+          "source_references": [
+            "clerk:house:119:1:125",
+            "congress-actions:house:119:1:125",
+            "congress-text:119:hr:2215:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-2215-1-125",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-2215-1-125:m12f:v1",
+      "episode_record_subject_sha256": "c7a3fed5f5658af0738201351173fff47677ff82298814491e3d69d6e669ec56",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 2215, which would redesignate the Salem Maritime National Historic Site as the Salem Maritime National Historical Park, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:125"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 249, which would redesignate certain facilities at Paterson Great Falls National Historical Park in honor of Congressman Bill Pascrell, Jr.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:124:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "9fc1bef7e7cb1cf1f28d61085ed7ce45a8d5d22c1a01c780c6b138ec3ff98ba1",
+          "action_id": "house:119:1:124",
+          "official_action_date": "2025-05-13",
+          "source_references": [
+            "clerk:house:119:1:124",
+            "congress-actions:house:119:1:124",
+            "congress-text:119:hr:249:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-249-1-124",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-249-1-124:m12f:v1",
+      "episode_record_subject_sha256": "0f667c9d489088048d20b7db7363318af6df75256355c3ca472ca782f82352d2",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 249, which would redesignate certain facilities at Paterson Great Falls National Historical Park in honor of Congressman Bill Pascrell, Jr.",
+      "primary_action_ids": [
+        "house:119:1:124"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 26, which would prohibit a moratorium on the use of hydraulic fracturing.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:35:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "64d0b8afbbefe17e10f6ce3e1b9d094f2ce11125dd7ebc5d4fefc25bd31f7f26",
+          "action_id": "house:119:1:35",
+          "official_action_date": "2025-02-07",
+          "source_references": [
+            "clerk:house:119:1:35",
+            "congress-actions:house:119:1:35",
+            "congress-text:119:hr:26:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-26-1-35",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-26-1-35:m12f:v1",
+      "episode_record_subject_sha256": "9a257801b65d201fa853db3bb4e96d68c213fbb4d9131b7215c64ef26cff5b71",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 26, which would prohibit a moratorium on the use of hydraulic fracturing.",
+      "primary_action_ids": [
+        "house:119:1:35"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 261, which would amend the National Marine Sanctuaries Act to prohibit the Secretary of Commerce from prohibiting, or requiring any permit or other authorization for, the installation, continued presence, operation, maintenance, repair, or recovery of undersea fiber optic cables in a national marine sanctuary if such activities have been authorized by a Federal or State agency.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:67:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "7457adc1fe2ab9d14ec34bacb59c6596e041d3de342a39af7d46655b463127bb",
+          "action_id": "house:119:2:67",
+          "official_action_date": "2026-02-11",
+          "source_references": [
+            "clerk:house:119:2:67",
+            "congress-actions:house:119:2:67",
+            "congress-text:119:hr:261:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-261-2-67",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-261-2-67:m12f:v1",
+      "episode_record_subject_sha256": "4cfb8076437c048acc502fa0b779c0de2eefd72dbc2182f519bbbea8eee4b441",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 261, which would amend the National Marine Sanctuaries Act to prohibit the Secretary of Commerce from prohibiting, or requiring any permit or other authorization for, the installation, continued presence, operation, maintenance, repair, or recovery of undersea fiber optic cables in a national marine sanctuary if such activities have been authorized by a Federal or State agency.",
+      "primary_action_ids": [
+        "house:119:2:67"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 276, which would rename the Gulf of Mexico as the Gulf of America.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:122:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "5c3da6f40f8e4085841ef0b811304fb4ab765d5576e3f80f284fc68230eaf70b",
+          "action_id": "house:119:1:122",
+          "official_action_date": "2025-05-08",
+          "source_references": [
+            "clerk:house:119:1:122",
+            "congress-actions:house:119:1:122",
+            "congress-text:119:hr:276:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-276-1-122",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-276-1-122:m12f:v1",
+      "episode_record_subject_sha256": "5ca5fe62c6b85f8a0cf0277d040f06332dea86583dffd5113bc1220fe5b1ecbf",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 276, which would rename the Gulf of Mexico as the Gulf of America.",
+      "primary_action_ids": [
+        "house:119:1:122"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 2860, which would reauthorize the Northwest Straits Marine Conservation Initiative Act to promote the protection of the resources of the Northwest Straits, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:196:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "f438d8df3e876ea79f7ee06473c3c0467c30ded661cb8b080a496d1f5fabb221",
+          "action_id": "house:119:2:196",
+          "official_action_date": "2026-06-03",
+          "source_references": [
+            "clerk:house:119:2:196",
+            "congress-actions:house:119:2:196",
+            "congress-text:119:hr:2860:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-2860-2-196",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-2860-2-196:m12f:v1",
+      "episode_record_subject_sha256": "cf01d676d2fc29452821e4bfac55582424cf5d8f2ed2ffa4abfb293277f1ab5b",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 2860, which would reauthorize the Northwest Straits Marine Conservation Initiative Act to promote the protection of the resources of the Northwest Straits, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:2:196"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 3015, which would reestablish the National Coal Council in the Department of Energy to provide advice and recommendations to the Secretary of Energy on matters related to coal and the coal industry, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:278:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "e6182c23395dff1e8f5ce4303bf7e367b23b81059d5c20b7b4880b674f0933f0",
+          "action_id": "house:119:1:278",
+          "official_action_date": "2025-09-18",
+          "source_references": [
+            "clerk:house:119:1:278",
+            "congress-actions:house:119:1:278",
+            "congress-text:119:hr:3015:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-3015-1-278",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-3015-1-278:m12f:v1",
+      "episode_record_subject_sha256": "8a82b70fcc732423c27241b62b1cf1600b1bc0ca45f30249143753bae01f46c9",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 3015, which would reestablish the National Coal Council in the Department of Energy to provide advice and recommendations to the Secretary of Energy on matters related to coal and the coal industry, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:278"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 3109, which would require the Secretary of Energy to direct the National Petroleum Council to issue a report with respect to petrochemical refineries in the United States, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:303:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "af682ac1d2541fa4891ec160bc1fdd75bb9c0c368668681dc74b898c99f1eb3a",
+          "action_id": "house:119:1:303",
+          "official_action_date": "2025-11-20",
+          "source_references": [
+            "clerk:house:119:1:303",
+            "congress-actions:house:119:1:303",
+            "congress-text:119:hr:3109:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-3109-1-303",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-3109-1-303:m12f:v1",
+      "episode_record_subject_sha256": "e4147385daeba80f9e7deef389dec43e15f08e1f7b15d8ec32d6d41c5202756a",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 3109, which would require the Secretary of Energy to direct the National Petroleum Council to issue a report with respect to petrochemical refineries in the United States, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:303"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 3187, which would require the Secretary of Agriculture to convey a parcel of property of the Forest Service to Perry County, Arkansas, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:336:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "b2c667b5b9858ca83305ea5af36b61cf488af046b2c4c072522884e5e0f7c64c",
+          "action_id": "house:119:1:336",
+          "official_action_date": "2025-12-15",
+          "source_references": [
+            "clerk:house:119:1:336",
+            "congress-actions:house:119:1:336",
+            "congress-text:119:hr:3187:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-3187-1-336",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-3187-1-336:m12f:v1",
+      "episode_record_subject_sha256": "adc3e31be62d91ff739db3a0f03459813c964ce3c85ff9467ce5e5c3bdc590c1",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 3187, which would require the Secretary of Agriculture to convey a parcel of property of the Forest Service to Perry County, Arkansas, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:336"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 359, which would amend the Energy Policy Act of 2005 to require reporting relating to certain cost-share requirements, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:72:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "f668a234321373a85dabfafd72dcb37619b252f5da1e27149667148d2f11a9b2",
+          "action_id": "house:119:1:72",
+          "official_action_date": "2025-03-24",
+          "source_references": [
+            "clerk:house:119:1:72",
+            "congress-actions:house:119:1:72",
+            "congress-text:119:hr:359:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-359-1-72",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-359-1-72:m12f:v1",
+      "episode_record_subject_sha256": "c6d62eb1f9381ac206f1f98dd0c707faf4775e28eca249b197d1bcf137a74a98",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 359, which would amend the Energy Policy Act of 2005 to require reporting relating to certain cost-share requirements, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:72"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 3616, which would require the Federal Energy Regulatory Commission to review regulations that may affect the reliable operation of the bulk-power system.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:347:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "ad1590433c6bb9eb1ac0d41133ece1067ccb07646d8e76548310a51701c1d5d4",
+          "action_id": "house:119:1:347",
+          "official_action_date": "2025-12-17",
+          "source_references": [
+            "clerk:house:119:1:347",
+            "congress-actions:house:119:1:347",
+            "congress-text:119:hr:3616:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-3616-1-347",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-3616-1-347:m12f:v1",
+      "episode_record_subject_sha256": "e0922495e2902bf8c3e910ab97f18a5f2e600f86ed9f44ae239f3bcf39f8f135",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 3616, which would require the Federal Energy Regulatory Commission to review regulations that may affect the reliable operation of the bulk-power system.",
+      "primary_action_ids": [
+        "house:119:1:347"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 3617, which would amend the Department of Energy Organization Act to secure the supply of critical energy resources, including critical minerals and other materials, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:64:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "3b70a4cd49fb18d716c2d26ceb7af9fae19d2399f62f0491eadc00d0d6ccac7c",
+          "action_id": "house:119:2:64",
+          "official_action_date": "2026-02-11",
+          "source_references": [
+            "clerk:house:119:2:64",
+            "congress-actions:house:119:2:64",
+            "congress-text:119:hr:3617:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-3617-2-64",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-3617-2-64:m12f:v1",
+      "episode_record_subject_sha256": "e5efe830dcb48176af13f85a5c29b29dd827e728ce58d90d6d28a4cd8ea59df8",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 3617, which would amend the Department of Energy Organization Act to secure the supply of critical energy resources, including critical minerals and other materials, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:2:64"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 3628, which would amend the Public Utility Regulatory Policies Act of 1978 to add a standard related to State consideration of reliable generation, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:323:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "d9b81ff0c92212da12cf6144737156e9533b0b671de579cce04ead23b5d6aa32",
+          "action_id": "house:119:1:323",
+          "official_action_date": "2025-12-11",
+          "source_references": [
+            "clerk:house:119:1:323",
+            "congress-actions:house:119:1:323",
+            "congress-text:119:hr:3628:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-3628-1-323",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-3628-1-323:m12f:v1",
+      "episode_record_subject_sha256": "eabb5783321ddde0954fa35e3fdb4d0c09d659ee39105f23c1ca2f409c487ca5",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 3628, which would amend the Public Utility Regulatory Policies Act of 1978 to add a standard related to State consideration of reliable generation, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:323"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 3632, which would amend the Federal Power Act to adjust the requirements for orders, rules, and regulations relating to furnishing adequate service, to require owners or operators of generating facilities to provide notice of planned retirements of certain electric generating units, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:342:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "e4e18f9060025099d972a64bf7184c7261f94eb3997eb9134b2c3a1211f22e5d",
+          "action_id": "house:119:1:342",
+          "official_action_date": "2025-12-16",
+          "source_references": [
+            "clerk:house:119:1:342",
+            "congress-actions:house:119:1:342",
+            "congress-text:119:hr:3632:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-3632-1-342",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-3632-1-342:m12f:v1",
+      "episode_record_subject_sha256": "ead6aa6e7e7f0f596c3127e2eefe4f284e052e47fe60d1c6f039c9b24bb48892",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 3632, which would amend the Federal Power Act to adjust the requirements for orders, rules, and regulations relating to furnishing adequate service, to require owners or operators of generating facilities to provide notice of planned retirements of certain electric generating units, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:342"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 3638, which would direct the Secretary of Energy to prepare periodic assessments and submit reports on the supply chain for the generation and transmission of electricity, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:324:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "5502f2b728ea08aaf70096207d87ac083d490123612e7df1d573c9b5be785cd4",
+          "action_id": "house:119:1:324",
+          "official_action_date": "2025-12-11",
+          "source_references": [
+            "clerk:house:119:1:324",
+            "congress-actions:house:119:1:324",
+            "congress-text:119:hr:3638:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-3638-1-324",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-3638-1-324:m12f:v1",
+      "episode_record_subject_sha256": "2c896aab95bfb9108552e211d27fe96dbbf5b63d2339fedb4c4265da64042112",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 3638, which would direct the Secretary of Energy to prepare periodic assessments and submit reports on the supply chain for the generation and transmission of electricity, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:324"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 3668, which would promote interagency coordination for reviewing certain authorizations under section 3 of the Natural Gas Act, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:334:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "2dc34074d60c82ff2d2e17436c3b7dd93d3aee23f774ee8b6debe7b2ba83a2da",
+          "action_id": "house:119:1:334",
+          "official_action_date": "2025-12-12",
+          "source_references": [
+            "clerk:house:119:1:334",
+            "congress-actions:house:119:1:334",
+            "congress-text:119:hr:3668:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-3668-1-334",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-3668-1-334:m12f:v1",
+      "episode_record_subject_sha256": "78f4ce1e6ae494952193316075b6de3c427bda16ef16e992f1a7d53b460fdd8b",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 3668, which would promote interagency coordination for reviewing certain authorizations under section 3 of the Natural Gas Act, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:334"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 375, which would require the Secretary of the Interior to partner and collaborate with the Secretary of Agriculture and the State of Hawaii to address Rapid Ohia Death, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:24:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "c2da9afd76f0f9a3d489bd30cc850d95efca4ba395ce678b9930cd8a250cb48d",
+          "action_id": "house:119:1:24",
+          "official_action_date": "2025-01-23",
+          "source_references": [
+            "clerk:house:119:1:24",
+            "congress-actions:house:119:1:24",
+            "congress-text:119:hr:375:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-375-1-24",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-375-1-24:m12f:v1",
+      "episode_record_subject_sha256": "e13e0e82fd70390790c22f44fba71330c71fc49486857bd374778965a632e865",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 375, which would require the Secretary of the Interior to partner and collaborate with the Secretary of Agriculture and the State of Hawaii to address Rapid Ohia Death, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:24"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 3898, which would amend the Federal Water Pollution Control Act to make targeted reforms with respect to waters of the United States and other matters, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:330:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "00c8d579b648cc9f06b1d314ceb7d3706dc33a0cb19f826830f54cd3a19f41c9",
+          "action_id": "house:119:1:330",
+          "official_action_date": "2025-12-11",
+          "source_references": [
+            "clerk:house:119:1:330",
+            "congress-actions:house:119:1:330",
+            "congress-text:119:hr:3898:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-3898-1-330",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-3898-1-330:m12f:v1",
+      "episode_record_subject_sha256": "0aad5f8459e7a309a44c026452423c9d731705ae3a3d829df8d125a328bfe203",
+      "material_limitations": [
+        "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 3898, which would amend the Federal Water Pollution Control Act to make targeted reforms with respect to waters of the United States and other matters, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:330"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 4090, which would codify certain provisions of certain Executive Orders relating to domestic mining and hardrock mineral resources, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:55:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "148ff47191dc65cb221ab672e705cd2ca1d5b2377b6bc64acd5f219e8588e2c5",
+          "action_id": "house:119:2:55",
+          "official_action_date": "2026-02-04",
+          "source_references": [
+            "clerk:house:119:2:55",
+            "congress-actions:house:119:2:55",
+            "congress-text:119:hr:4090:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-4090-2-55",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-4090-2-55:m12f:v1",
+      "episode_record_subject_sha256": "8de0c1e7f41ca48905f1a9dea0ca38b835360ec28b013fb49983b95570a0f16b",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 4090, which would codify certain provisions of certain Executive Orders relating to domestic mining and hardrock mineral resources, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:2:55"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 4294, which would direct the Secretary of Commerce to establish a pilot program with respect to the sale of blue catfish caught within the Chesapeake Bay Watershed.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:88:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "f98b6b90ee655404edcb58785417d80be5d127ed3d2d8b70af8a3c50fc1ccdb4",
+          "action_id": "house:119:2:88",
+          "official_action_date": "2026-03-17",
+          "source_references": [
+            "clerk:house:119:2:88",
+            "congress-actions:house:119:2:88",
+            "congress-text:119:hr:4294:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-4294-2-88",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-4294-2-88:m12f:v1",
+      "episode_record_subject_sha256": "e1515d3db2d2c70684031573298bdb459e1405644c9934490c2cea549652492a",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 4294, which would direct the Secretary of Commerce to establish a pilot program with respect to the sale of blue catfish caught within the Chesapeake Bay Watershed.",
+      "primary_action_ids": [
+        "house:119:2:88"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 4593, which would amend the Energy Policy and Conservation Act to revise the definition of showerhead.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:23:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "e2d01806deabb92417dcdca257d3a6d93ea1714abf37e3da8c4d53b8a53c6299",
+          "action_id": "house:119:2:23",
+          "official_action_date": "2026-01-13",
+          "source_references": [
+            "clerk:house:119:2:23",
+            "congress-actions:house:119:2:23",
+            "congress-text:119:hr:4593:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-4593-2-23",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-4593-2-23:m12f:v1",
+      "episode_record_subject_sha256": "93ed0618d8decb88bddb8eb6e1ef7b1fed1d54ab857b237d53380214e90a2071",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 4593, which would amend the Energy Policy and Conservation Act to revise the definition of showerhead.",
+      "primary_action_ids": [
+        "house:119:2:23"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 4626, which would amend the Energy Policy and Conservation Act to prohibit the Secretary of Energy from prescribing any new or amended energy conservation standard for a product that is not technologically feasible and economically justified, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:76:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "9377033b2033401e1f6eb064ea9d46c814f9f6555df7b4b5f8eeb2337c3df41a",
+          "action_id": "house:119:2:76",
+          "official_action_date": "2026-02-24",
+          "source_references": [
+            "clerk:house:119:2:76",
+            "congress-actions:house:119:2:76",
+            "congress-text:119:hr:4626:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-4626-2-76",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-4626-2-76:m12f:v1",
+      "episode_record_subject_sha256": "0b1a817152650ca682e0c0266926aa3eefab9c6dc8d3b299825c00ba49ac32c7",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 4626, which would amend the Energy Policy and Conservation Act to prohibit the Secretary of Energy from prescribing any new or amended energy conservation standard for a product that is not technologically feasible and economically justified, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:2:76"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 471, which would expedite under the National Environmental Policy Act of 1969 and improve forest management activities on National Forest System lands, on public lands under the jurisdiction of the Bureau of Land Management, and on Tribal lands to return resilience to overgrown, fire-prone forested lands, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:25:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "f89de6ed273ef28d30e19090bfdc42838b98a49c9c041d7b143fa6eabadb29c8",
+          "action_id": "house:119:1:25",
+          "official_action_date": "2025-01-23",
+          "source_references": [
+            "clerk:house:119:1:25",
+            "congress-actions:house:119:1:25",
+            "congress-text:119:hr:471:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-471-1-25",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-471-1-25:m12f:v1",
+      "episode_record_subject_sha256": "49f2ea7775bfac3c518f33b65c56ae0a296c4bd15cfafff4f10c8d3e49bd0e36",
+      "material_limitations": [
+        "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 471, which would expedite under the National Environmental Policy Act of 1969 and improve forest management activities on National Forest System lands, on public lands under the jurisdiction of the Bureau of Land Management, and on Tribal lands to return resilience to overgrown, fire-prone forested lands, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:1:25"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 4758, which would repeal provisions of Public Law 117–169 relating to taxpayer subsidies for home electrification, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:78:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "dd501aba767a33baa35ef7edc2424b335aa8bce8353fb31ce13e53f3166de877",
+          "action_id": "house:119:2:78",
+          "official_action_date": "2026-02-25",
+          "source_references": [
+            "clerk:house:119:2:78",
+            "congress-actions:house:119:2:78",
+            "congress-text:119:hr:4758:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-4758-2-78",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-4758-2-78:m12f:v1",
+      "episode_record_subject_sha256": "1245cd511b6cd5f6456daf2e17930876d3b7b8f3cf8e34234ff068b86dcb87ca",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 4758, which would repeal provisions of Public Law 117–169 relating to taxpayer subsidies for home electrification, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:2:78"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 4776, which would amend the National Environmental Policy Act of 1969 to clarify ambiguous provisions and facilitate a more efficient, effective, and timely environmental review process.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:356:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "02ef1b2440739393ae642a5f00e13cb2ee875824c3864ac59f7f7d317a5e19ac",
+          "action_id": "house:119:1:356",
+          "official_action_date": "2025-12-18",
+          "source_references": [
+            "clerk:house:119:1:356",
+            "congress-actions:house:119:1:356",
+            "congress-text:119:hr:4776:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-4776-1-356",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-4776-1-356:m12f:v1",
+      "episode_record_subject_sha256": "ad07ad3156f51bfabafcefb3b959987e05ae2281fec4371a59bbb5acb1e3499f",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 4776, which would amend the National Environmental Policy Act of 1969 to clarify ambiguous provisions and facilitate a more efficient, effective, and timely environmental review process.",
+      "primary_action_ids": [
+        "house:119:1:356"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 5103, which would establish a program to Beautify the District of Columbia and establish the District of Columbia Safe and Beautiful Commission.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:101:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "2c2157d0a6d74245b1dfb1946cc3f94e077684e8ca005f4a477ee4838e5776ce",
+          "action_id": "house:119:2:101",
+          "official_action_date": "2026-03-25",
+          "source_references": [
+            "clerk:house:119:2:101",
+            "congress-actions:house:119:2:101",
+            "congress-text:119:hr:5103:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-5103-2-101",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-5103-2-101:m12f:v1",
+      "episode_record_subject_sha256": "1dc999e57199317f8b903681ea626bbd2b1ebf6db092e41ce732a70f18f99be8",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 5103, which would establish a program to Beautify the District of Columbia and establish the District of Columbia Safe and Beautiful Commission.",
+      "primary_action_ids": [
+        "house:119:2:101"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 5184, which would authorize the Secretary of Energy to transmit to the Secretary of Housing and Urban Development recommendations for changes to preemptive energy conservation standards applicable to manufactured homes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:12:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "98e7ca1cb928ed4b2322be340e6cf8327b1c408819c88906b869c1c8cd59be16",
+          "action_id": "house:119:2:12",
+          "official_action_date": "2026-01-09",
+          "source_references": [
+            "clerk:house:119:2:12",
+            "congress-actions:house:119:2:12",
+            "congress-text:119:hr:5184:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-5184-2-12",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-5184-2-12:m12f:v1",
+      "episode_record_subject_sha256": "0a11868cf7f36d99f6fa25a11fa3b13fb382783909911d533da3d3fab4568a16",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 5184, which would authorize the Secretary of Energy to transmit to the Secretary of Housing and Urban Development recommendations for changes to preemptive energy conservation standards applicable to manufactured homes.",
+      "primary_action_ids": [
+        "house:119:2:12"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 556, which would prohibit the Secretary of the Interior and the Secretary of Agriculture from prohibiting the use of lead ammunition or tackle on certain Federal land or water under the jurisdiction of the Secretary of the Interior and the Secretary of Agriculture, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:93:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "248bd76358e76de7acdfa38b4d98b8cbc879d1d26bf0f47951fd9ad49e22d460",
+          "action_id": "house:119:2:93",
+          "official_action_date": "2026-03-18",
+          "source_references": [
+            "clerk:house:119:2:93",
+            "congress-actions:house:119:2:93",
+            "congress-text:119:hr:556:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-556-2-93",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-556-2-93:m12f:v1",
+      "episode_record_subject_sha256": "c76f2a5c17d7aabcba7982db0eca34fbd415e14ccb0c5200b8c6b9f47888ebac",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 556, which would prohibit the Secretary of the Interior and the Secretary of Agriculture from prohibiting the use of lead ammunition or tackle on certain Federal land or water under the jurisdiction of the Secretary of the Interior and the Secretary of Agriculture, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:2:93"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 5587, which would amend the Geothermal Steam Act of 1970 to waive the requirement for a Federal drilling permit for certain activities, to exempt certain activities from the requirements of the National Environmental Policy Act of 1969, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:137:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "dc76bae03ce59d48275bd3f23737343400b740c2b83e7f4bd734caa59e45a784",
+          "action_id": "house:119:2:137",
+          "official_action_date": "2026-04-23",
+          "source_references": [
+            "clerk:house:119:2:137",
+            "congress-actions:house:119:2:137",
+            "congress-text:119:hr:5587:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-5587-2-137",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-5587-2-137:m12f:v1",
+      "episode_record_subject_sha256": "ad1815348a61f06b964bbdbbe93b6667326e42bb611c2b111c4714a77aedaa0b",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 5587, which would amend the Geothermal Steam Act of 1970 to waive the requirement for a Federal drilling permit for certain activities, to exempt certain activities from the requirements of the National Environmental Policy Act of 1969, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:2:137"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 6387, which would amend the Clean Air Act to require revisions to regulations governing the review and handling of air quality monitoring data influenced by exceptional events or actions to mitigate wildfire risk.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:136:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "2ca9edc1dc0f5be6f40616f1ee7530106692ff561c59054ef39f035a9e7374a8",
+          "action_id": "house:119:2:136",
+          "official_action_date": "2026-04-22",
+          "source_references": [
+            "clerk:house:119:2:136",
+            "congress-actions:house:119:2:136",
+            "congress-text:119:hr:6387:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-6387-2-136",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-6387-2-136:m12f:v1",
+      "episode_record_subject_sha256": "c8ce45d1edbc30a4f695f15c4cdc85afa3302a1cfcfa95c337f1f94ca9ea629c",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "non_directional_not_voting",
+      "policy_proposition": "Whether to pass H.R. 6387, which would amend the Clean Air Act to require revisions to regulations governing the review and handling of air quality monitoring data influenced by exceptional events or actions to mitigate wildfire risk.",
+      "primary_action_ids": [
+        "house:119:2:136"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 6398, which would amend the Clean Air Act relating to review by the Environmental Protection Agency of proposed legislation.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:118:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "5c39aaecfe069456d00f6301ea713bb8ef7758e2fdb2bc51f5c4d8c2cdb8c770",
+          "action_id": "house:119:2:118",
+          "official_action_date": "2026-04-16",
+          "source_references": [
+            "clerk:house:119:2:118",
+            "congress-actions:house:119:2:118",
+            "congress-text:119:hr:6398:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-6398-2-118",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-6398-2-118:m12f:v1",
+      "episode_record_subject_sha256": "1117c3cda03d7cd37b2bd92fafb998acf6cf8326c7b42315862525f440d55394",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 6398, which would amend the Clean Air Act relating to review by the Environmental Protection Agency of proposed legislation.",
+      "primary_action_ids": [
+        "house:119:2:118"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 6409, which would amend the Clean Air Act to clarify standards for emissions emanating from outside of the United States, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:116:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "23d3464a369369d81e23a3dd45c9ec9f622a3a5fce713ddc53c347de089faa06",
+          "action_id": "house:119:2:116",
+          "official_action_date": "2026-04-16",
+          "source_references": [
+            "clerk:house:119:2:116",
+            "congress-actions:house:119:2:116",
+            "congress-text:119:hr:6409:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-6409-2-116",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-6409-2-116:m12f:v1",
+      "episode_record_subject_sha256": "3ab16ad0386bb2ee6fa5c1776b91cb7fb203b7c676e3f0c3f14d5d0c66ef6f6d",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 6409, which would amend the Clean Air Act to clarify standards for emissions emanating from outside of the United States, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:2:116"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 6422, which would amend the Federal Water Pollution Control Act to reauthorize certain EPA geographic programs, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:97:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "6ad0df993f96320746a2b33b87ec56bfc185306d53046ec4107e451b186446ae",
+          "action_id": "house:119:2:97",
+          "official_action_date": "2026-03-24",
+          "source_references": [
+            "clerk:house:119:2:97",
+            "congress-actions:house:119:2:97",
+            "congress-text:119:hr:6422:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-6422-2-97",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-6422-2-97:m12f:v1",
+      "episode_record_subject_sha256": "9b41d97532ab405c00454fca4506e9ef90aae3b106615bf62bcc001f2d5b59b5",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 6422, which would amend the Federal Water Pollution Control Act to reauthorize certain EPA geographic programs, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:2:97"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 7618, which would amend title 54, United States Code, to modify certain cost-sharing requirements for grant programs under the American Battlefield Protection Program, and for other purposes.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:192:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "f7e1c95d6814555479a584b05e3d5dc4586a3619239e80090418a8bef4975d97",
+          "action_id": "house:119:2:192",
+          "official_action_date": "2026-06-03",
+          "source_references": [
+            "clerk:house:119:2:192",
+            "congress-actions:house:119:2:192",
+            "congress-text:119:hr:7618:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-7618-2-192",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-7618-2-192:m12f:v1",
+      "episode_record_subject_sha256": "9d387666cf86059e0b384b3e9ecea0dab6f985ad04b2fa4d89b80a409c691225",
+      "material_limitations": [
+        "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 7618, which would amend title 54, United States Code, to modify certain cost-sharing requirements for grant programs under the American Battlefield Protection Program, and for other purposes.",
+      "primary_action_ids": [
+        "house:119:2:192"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 845, which would require the Secretary of the Interior to reissue regulations removing the gray wolf from the list of endangered and threatened wildlife under the Endangered Species Act of 1973.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:360:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "2377950fdcdc1dd0f10658eb93a4973902229a564b9e779e8497665f291c7602",
+          "action_id": "house:119:1:360",
+          "official_action_date": "2025-12-18",
+          "source_references": [
+            "clerk:house:119:1:360",
+            "congress-actions:house:119:1:360",
+            "congress-text:119:hr:845:eh"
+          ]
+        }
+      ],
+      "episode_id": "single-119-hr-845-1-360",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-hr-845-1-360:m12f:v1",
+      "episode_record_subject_sha256": "e3777ae9d2d16981ae89cece2daae82a0e62402ff5c47a1da0651e4c7ffc1257",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to pass H.R. 845, which would require the Secretary of the Interior to reissue regulations removing the gray wolf from the list of endangered and threatened wildlife under the Endangered Species Act of 1973.",
+      "primary_action_ids": [
+        "house:119:1:360"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass S. 1020, which would require the Federal Energy Regulatory Commission to extend the time period during which licensees are required to commence construction of certain hydropower projects.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:129:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "da9409dd091ab33c40868c4f9e39c32b54dad2f1bb0f9b728bba819eef60b4d1",
+          "action_id": "house:119:2:129",
+          "official_action_date": "2026-04-21",
+          "source_references": [
+            "clerk:house:119:2:129",
+            "congress-actions:house:119:2:129",
+            "congress-text:119:s:1020:es"
+          ]
+        }
+      ],
+      "episode_id": "single-119-s-1020-2-129",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-s-1020-2-129:m12f:v1",
+      "episode_record_subject_sha256": "e93b0d650f5c198650e3792fb124809a060e4630a838107548c73c31f39c11a1",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass S. 1020, which would require the Federal Energy Regulatory Commission to extend the time period during which licensees are required to commence construction of certain hydropower projects.",
+      "primary_action_ids": [
+        "house:119:2:129"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to pass S. 1596, which would rename the Anahuac National Wildlife Refuge located in the State of Texas as the Jocelyn Nungaray National Wildlife Refuge.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:193:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "2479704d6ad7f86ee7fa04888deb4532ac79f95874616e3673f971d4fbb61c95",
+          "action_id": "house:119:1:193",
+          "official_action_date": "2025-07-14",
+          "source_references": [
+            "clerk:house:119:1:193",
+            "congress-actions:house:119:1:193",
+            "congress-text:119:s:1596:es"
+          ]
+        }
+      ],
+      "episode_id": "single-119-s-1596-1-193",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-s-1596-1-193:m12f:v1",
+      "episode_record_subject_sha256": "df0a01b2f7d6c67296ffd527a63c6528f91586f18916fe2b2cc55d3578e39faa",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "supports_policy_proposition",
+      "policy_proposition": "Whether to pass S. 1596, which would rename the Anahuac National Wildlife Refuge located in the State of Texas as the Jocelyn Nungaray National Wildlife Refuge.",
+      "primary_action_ids": [
+        "house:119:1:193"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt SJRES 11, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Ocean Energy Management relating to Protection of Marine Archaeological Resources.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:61:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "f7840c9fcf69741b72deca29d0a8b205d0e2850fe1c0e96a4263eea3f4b38451",
+          "action_id": "house:119:1:61",
+          "official_action_date": "2025-03-06",
+          "source_references": [
+            "clerk:house:119:1:61",
+            "congress-actions:house:119:1:61",
+            "congress-text:119:sjres:11:es"
+          ]
+        }
+      ],
+      "episode_id": "single-119-sjres-11-1-61",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-sjres-11-1-61:m12f:v1",
+      "episode_record_subject_sha256": "f7997d4ef1a1bcbf279166dc85b3c4d95434bb472d0b8aa4e1fa7b9e3eb3c6c9",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt SJRES 11, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Ocean Energy Management relating to Protection of Marine Archaeological Resources.",
+      "primary_action_ids": [
+        "house:119:1:61"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt SJRES 31, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to Review of Final Rule Reclassification of Major Sources as Area Sources Under Section 112 of the Clean Air Act.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:143:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "f7a53129e927f8008e157693ae993605c0be9b479ca093f7361c5162dd0254a6",
+          "action_id": "house:119:1:143",
+          "official_action_date": "2025-05-22",
+          "source_references": [
+            "clerk:house:119:1:143",
+            "congress-actions:house:119:1:143",
+            "congress-text:119:sjres:31:es"
+          ]
+        }
+      ],
+      "episode_id": "single-119-sjres-31-1-143",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-sjres-31-1-143:m12f:v1",
+      "episode_record_subject_sha256": "086df54b70ecfb1b9cd3b431175153eed817ab2c80d1ac18ab56b0c6f7f166ad",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt SJRES 31, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to Review of Final Rule Reclassification of Major Sources as Area Sources Under Section 112 of the Clean Air Act.",
+      "primary_action_ids": [
+        "house:119:1:143"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "accepted_exact_action_meaning": "The House choice was whether to adopt SJRES 80, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision.",
+          "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:296:m12d:v1",
+          "accepted_interpretation_record_subject_sha256": "4c84f31be64eae7c3c5a30b94f9a687d2f9c8463731ab668b17f685c526875e9",
+          "action_id": "house:119:1:296",
+          "official_action_date": "2025-11-18",
+          "source_references": [
+            "clerk:house:119:1:296",
+            "congress-actions:house:119:1:296",
+            "congress-text:119:sjres:80:es"
+          ]
+        }
+      ],
+      "episode_id": "single-119-sjres-80-1-296",
+      "episode_record_id": "policy-episode-decision-implementation:single-119-sjres-80-1-296:m12f:v1",
+      "episode_record_subject_sha256": "ac04017a219aa4951ba479cc1276a4dc6817e2f352dcede9358f61f07af1048b",
+      "material_limitations": [
+        "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+      ],
+      "member_direction": "opposes_policy_proposition",
+      "policy_proposition": "Whether to adopt SJRES 80, which would provide for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Land Management relating to National Petroleum Reserve in Alaska Integrated Activity Plan Record of Decision.",
+      "primary_action_ids": [
+        "house:119:1:296"
+      ]
+    }
+  ],
+  "public_wording_included": false,
+  "schema_version": "full_record_behavioral_semantic_ir_candidate_package_v1",
+  "synthesis_included": false
+}

@@ -38,6 +38,22 @@
     },
     "subject": {
       "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11d_implementation_binding"
+              ]
+            },
+            {
+              "required": [
+                "interpretation_implementation_binding"
+              ]
+            }
+          ]
+        }
+      ],
       "properties": {
         "authority_decision": {
           "additionalProperties": false,
@@ -127,10 +143,7 @@
               "type": "integer"
             }
           },
-          "required": [
-            "accept_candidate_as_written",
-            "reject_and_reassign_actions"
-          ],
+          "required": [],
           "type": "object"
         },
         "decision_template_binding": {
@@ -238,6 +251,26 @@
             "type": "object"
           },
           "type": "array"
+        },
+        "interpretation_implementation_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "implementation_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "file_sha256",
+            "implementation_subject_sha256"
+          ],
+          "type": "object"
         },
         "m11d_implementation_binding": {
           "additionalProperties": false,
@@ -360,7 +393,6 @@
         "decision_template_binding",
         "downstream_authorizations",
         "episode_decisions",
-        "m11d_implementation_binding",
         "resulting_episode_accounting",
         "semantic_ir_state",
         "subject",
