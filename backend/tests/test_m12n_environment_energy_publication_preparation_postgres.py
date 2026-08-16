@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import copy
-import json
 import os
 
 import pytest
@@ -9,6 +8,7 @@ import pytest
 from app.editorial_artifacts.bundle import semantic_hash
 from app.editorial_artifacts.publication_activation import load_activation_bundle
 from app.editorial_presentations.site_publication import (
+    ACTIVATION_AUTHORITY_ID as NATIONAL_SECURITY_ACTIVATION_AUTHORITY_ID,
     ACTIVATION_AUTHORITY_SCHEMA_VERSION,
     ACTIVATION_REVIEWER_AUTHORITY,
     ENVIRONMENT_ACTIVATION_AUTHORITY_ID,
@@ -38,10 +38,12 @@ from scripts.foushee_environment_energy_publication_preparation import (
     capture_preflight,
 )
 from scripts.foushee_national_security_publication_activation import (
-    AUTHORITY_PATH as M11N_AUTHORITY_PATH,
     POST_M11M_MAIN,
-    WRITE_SET_PATH as M11N_WRITE_SET_PATH,
     _apply as apply_national_security,
+    activation_write_set_binding as national_security_write_set_binding,
+    build_authority as build_national_security_authority,
+    build_write_set as build_national_security_write_set,
+    capture_preflight as capture_national_security_preflight,
 )
 
 
@@ -62,17 +64,71 @@ def _prepare_current_justice_state(conn) -> None:
     justice_bundle = build_justice_full_record_bundle(justice_preflight, POST_M11M_MAIN)
     with conn.transaction():
         apply_justice_full_record(conn, justice_bundle)
-    m11n_authority = json.loads(M11N_AUTHORITY_PATH.read_text(encoding="utf-8"))
-    m11n_write_set = json.loads(M11N_WRITE_SET_PATH.read_text(encoding="utf-8"))
-    activation_path = M11N_AUTHORITY_PATH.parent / "positive_activation_authority.json"
-    m11n_activation = json.loads(activation_path.read_text(encoding="utf-8"))
+    m11n_preflight = capture_national_security_preflight(
+        conn, deployed_commit=POST_M11M_MAIN
+    )
+    m11n_authority = build_national_security_authority(m11n_preflight)
+    m11n_write_set = build_national_security_write_set(m11n_preflight, m11n_authority)
+    m11n_activation = _synthetic_national_security_authority(m11n_write_set)
     with conn.transaction():
         apply_national_security(
             conn,
             m11n_write_set,
             m11n_authority,
             m11n_activation,
+            allow_test_authority=True,
         )
+
+
+def _synthetic_national_security_authority(write_set: dict) -> dict:
+    metadata = write_set["publication_registry"]["publication_metadata"]
+    subject = {
+        "decision": "approve_exact_publication_activation",
+        "decision_recorded_at_utc": "2026-08-14T12:00:00Z",
+        "reviewer": "synthetic-disposable-reviewer",
+        "reviewer_authority": ACTIVATION_REVIEWER_AUTHORITY,
+        "product_owner": "dhart54",
+        "member_bioguide_id": "F000477",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "congress": 119,
+        "accepted_m11m_binding": write_set["accepted_m11m_binding"],
+        "candidate_preparation_authority_binding": write_set["authority_binding"],
+        "activation_write_set_binding": national_security_write_set_binding(write_set),
+        "publication_registry_target": {
+            "member_bioguide_id": "F000477",
+            "issue_id": "NATIONAL_SECURITY_FOREIGN",
+            "presentation_natural_key": write_set["publication_registry"][
+                "presentation_natural_key"
+            ],
+            "presentation_artifact_version": 1,
+        },
+        "presentation_content_sha256": metadata["active_artifact_sha256"],
+        "preflight_binding": metadata["preflight_binding"],
+        "rollback_binding": metadata["rollback_binding"],
+        "runtime_binding": {
+            "reviewed_runtime_manifest_sha256": metadata["reviewed_runtime_binding"][
+                "reviewed_runtime_manifest_sha256"
+            ],
+            "reviewed_commit": write_set["preflight_binding"]["deployed_commit"],
+            "deployed_commit": write_set["preflight_binding"]["deployed_commit"],
+            "health_commit": write_set["preflight_binding"]["deployed_commit"],
+            "health_proof_subject_sha256": "b" * 64,
+        },
+        "production_target_identity_sha256": metadata[
+            "production_target_identity_sha256"
+        ],
+        "authorizations": copy.deepcopy(POSITIVE_AUTHORIZATIONS),
+    }
+    return {
+        "schema_version": ACTIVATION_AUTHORITY_SCHEMA_VERSION,
+        "artifact_id": NATIONAL_SECURITY_ACTIVATION_AUTHORITY_ID,
+        "immutable": True,
+        "sealed": True,
+        "accepted": True,
+        "test_only_synthetic": True,
+        "subject": subject,
+        "activation_authority_subject_sha256": semantic_hash(subject),
+    }
 
 
 def _synthetic_activation_authority(write_set: dict) -> dict:
