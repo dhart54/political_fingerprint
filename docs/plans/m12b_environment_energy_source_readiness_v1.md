@@ -80,7 +80,7 @@
 - [x] Authority-bound acquisition and generic schema correction
 - [x] M12B artifact, validator, tests, and documentation
 - [x] Targeted and broader validation
-- [ ] Commit, push, draft PR, and hosted checks
+- [x] Commit, push, draft PR, and hosted checks
 
 ## Discoveries And Decisions
 
