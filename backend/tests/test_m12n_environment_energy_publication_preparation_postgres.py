@@ -24,18 +24,17 @@ from scripts.foushee_justice_publication_activation import (
     _apply as apply_justice_compact,
 )
 from scripts.foushee_environment_energy_publication_preparation import (
+    AUTHORITY_PATH,
     ISSUE_ID,
-    POST_M12M_MAIN,
+    WRITE_SET_PATH,
     _apply,
     _counts,
+    _load,
     _registry_rows,
     _rollback,
     _selector_state,
     _state_fingerprint,
     activation_write_set_binding,
-    build_authority,
-    build_write_set,
-    capture_preflight,
 )
 from scripts.foushee_national_security_publication_activation import (
     POST_M11M_MAIN,
@@ -188,18 +187,45 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback() -> None:
     assert DATABASE_URL is not None
     with _connect(DATABASE_URL, autocommit=False) as conn:
         _prepare_current_justice_state(conn)
-        preflight = capture_preflight(
-            conn,
-            deployed_commit=POST_M12M_MAIN,
-            allow_test_activation_authority=True,
-        )
-        authority = build_authority(preflight)
-        write_set = build_write_set(preflight, authority)
+        authority = _load(AUTHORITY_PATH)
+        write_set = _load(WRITE_SET_PATH)
         activation_authority = _synthetic_activation_authority(write_set)
         before_counts = _counts(conn)
         before_fingerprint = _state_fingerprint(conn)
         before_registry = _registry_rows(conn)
         before_selector = _selector_state(conn)
+        assert before_counts == write_set["expected_counts"]["before"]
+        assert (
+            before_fingerprint
+            == write_set["preflight_binding"]["state_fingerprint_sha256"]
+        )
+
+        with pytest.raises(ValueError, match="synthetic activation authority"):
+            with conn.transaction(force_rollback=True):
+                _apply(
+                    conn,
+                    write_set,
+                    authority,
+                    activation_authority,
+                    allow_test_authority=False,
+                )
+
+        wrong_binding = copy.deepcopy(activation_authority)
+        wrong_binding["subject"]["activation_write_set_binding"][
+            "write_set_subject_sha256"
+        ] = "f" * 64
+        wrong_binding["activation_authority_subject_sha256"] = semantic_hash(
+            wrong_binding["subject"]
+        )
+        with pytest.raises(ValueError, match="binding differs"):
+            with conn.transaction(force_rollback=True):
+                _apply(
+                    conn,
+                    write_set,
+                    authority,
+                    wrong_binding,
+                    allow_test_authority=True,
+                )
 
         drifted = copy.deepcopy(write_set)
         drifted["preflight_binding"]["state_fingerprint_sha256"] = "0" * 64
@@ -231,6 +257,12 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback() -> None:
         assert first["already_applied"] is False
         assert first["postcheck"]["counts"] == write_set["expected_counts"]["after"]
         assert len(first["artifact_ids"]) == 3
+        active_selector = _selector_state(conn, allow_test_activation_authority=True)[
+            "scopes"
+        ]
+        assert active_selector["119"][ISSUE_ID]["tier"] == "reviewed_conclusion"
+        assert active_selector["all"][ISSUE_ID]["tier"] == "reviewed_conclusion"
+        assert active_selector["118"][ISSUE_ID]["tier"] == "receipts_only"
 
         with conn.transaction():
             second = _apply(
