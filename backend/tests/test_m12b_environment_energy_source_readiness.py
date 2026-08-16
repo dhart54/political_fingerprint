@@ -25,10 +25,14 @@ from scripts.validate_m12b_environment_energy_source_readiness import (  # noqa:
     AUTHORITY_PATH,
     EXPECTED_ACTION_SET_SHA,
     EXPECTED_RECEIPT_SHA,
+    INVENTORY_PATH,
+    PROPOSAL_PATH,
     SCHEMA_PATH,
     validate_repository,
 )
-
+from scripts.validate_m11b_national_security_source_readiness import (  # noqa: E402
+    _governed_clerk_rows,
+)
 
 M11B_ARTIFACT_PATH = ROOT / (
     "docs/editorial/full_record_reviews/source_readiness/"
@@ -71,6 +75,34 @@ class M12BEnvironmentEnergySourceReadinessTests(unittest.TestCase):
         )
         self.assertEqual([record["action_id"] for record in records], approved)
         self.assertEqual(len(approved), len(set(approved)), 63)
+
+    def test_clerk_digest_is_bound_before_governed_xml_parse(self) -> None:
+        record = copy.deepcopy(self.artifact["subject"]["action_readiness"][0])
+        action_id = record["action_id"]
+        clerk = next(
+            source
+            for source in record["sources"]
+            if source["source_type"] == "house_clerk_roll_call"
+        )
+        clerk["raw_provenance"]["sha256"] = "0" * 64
+        proposal = _load(PROPOSAL_PATH)
+        inventory = _load(INVENTORY_PATH)
+        candidates = {
+            row["action_id"]: row
+            for row in proposal["candidate_dispositions"]
+            if row["action_id"] == action_id
+        }
+        inventory_rows = {
+            row["action_id"]: row
+            for row in inventory["selected_candidate_source_bindings"]
+            if row["action_id"] == action_id
+        }
+        with self.assertRaisesRegex(SourceReadinessError, "approved Clerk digest"):
+            _governed_clerk_rows(
+                [record],
+                candidates=candidates,
+                source_inventory_bindings=inventory_rows,
+            )
 
     def test_all_25_unresolved_and_every_outside_action_are_absent(self) -> None:
         approved = set(self.artifact["subject"]["action_ids"])

@@ -17,10 +17,8 @@ from backend.app.etl.full_record_source_readiness import (  # noqa: E402
     load_json,
     validate_artifact,
 )
-from backend.app.etl.universe_discovery import (  # noqa: E402
-    load_house_clerk_member_actions,
-)
 from scripts.validate_m11b_national_security_source_readiness import (  # noqa: E402
+    _governed_clerk_rows,
     _validate_record,
     validate_repository as validate_m11b,
 )
@@ -45,11 +43,6 @@ PROPOSAL_PATH = M12A_ROOT / "selected_domain_universe_proposal.json"
 SELECTION_PATH = M12A_ROOT / "domain_selection.json"
 INVENTORY_PATH = M12A_ROOT / "source_inventory.json"
 CURRENT_STATE_PATH = ROOT / "docs/editorial/current_state_index.json"
-CLERK_DIRS = (
-    ROOT / ".local/m11a_house_clerk/2025",
-    ROOT / ".local/m11a_house_clerk/2026",
-)
-
 EXPECTED_RECEIPT_SHA = (
     "58a0d7a4f59069d747629311fdf0680385d6d802b506d585699904859773a31e"
 )
@@ -184,11 +177,15 @@ def validate_repository() -> dict[str, Any]:
         for row in proposal["candidate_dispositions"]
         if row["action_id"] in set(approved)
     }
-    clerk_rows = {
-        row["canonical_action_id"]: row
-        for row in load_house_clerk_member_actions(CLERK_DIRS, bioguide_id="F000477")
-    }
     records = subject["action_readiness"]
+    inventory_rows = {
+        row["action_id"]: row for row in inventory["selected_candidate_source_bindings"]
+    }
+    clerk_rows = _governed_clerk_rows(
+        records,
+        candidates=candidates,
+        source_inventory_bindings=inventory_rows,
+    )
     _require(
         [record["action_id"] for record in records] == approved,
         "readiness record order or membership mismatch",

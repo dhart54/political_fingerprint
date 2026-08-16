@@ -92,6 +92,10 @@
 - Cardinality constants belong in the milestone validator, not the reusable JSON
   schema. All source, stage, neutrality, digest, and enum constraints remain
   unchanged.
+- Validation of an already governed artifact reads each committed Clerk XML only
+  after its raw digest matches both the approved proposal and source inventory.
+  The `.local` Clerk cache remains a builder input, not a hosted-validation
+  dependency.
 
 ## Validation Plan
 
@@ -112,9 +116,9 @@
 - The unchanged M11B artifact validated at 82 actions, 81 ready, and one
   `blocked_stage_mismatch`; the downstream M11C validator also passed against
   the completed M11B state key.
-- Dedicated plus generic source-readiness tests passed (35 tests). The combined
+- Dedicated plus generic source-readiness tests passed (36 tests). The combined
   authority, source-readiness, full-record, Semantic IR, publication, current-
-  state, and API matrix passed 324 tests in one clean run.
+  state, and API matrix passed 325 tests in one clean run.
 - Accepted Semantic IR references (12 plus four held-out) and 26 Semantic IR
   unit tests passed; Justice and National Security semantic/publication
   validators passed.
