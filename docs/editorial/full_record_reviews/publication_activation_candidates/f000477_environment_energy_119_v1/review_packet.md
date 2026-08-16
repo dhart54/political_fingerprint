@@ -5,9 +5,9 @@ This is a content-bound publication-activation candidate. It does not authorize 
 - Exact base: `0f34962526a693625f7b15a96baec95121c2f6c9`
 - Accepted M12M artifact: `site-integration-candidate:f000477:environment_energy:119:v1`
 - M12M subject: `d4c64fb13a356fe80e13cfad529b1d8c5b79858e23542291185fe2bbc98183f3`
-- Preparation authority subject: `d7e176b7f561069146ca985a2dcdd2a26c7f1b167b7e4b5279eb5caff611f7f1`
-- Write-set subject: `a3fc79e4aaaa7c49a21944aaaafadd58f6a3bfe813b781ccc18878a4b3a7cd74`
-- Unsealed activation template: `acab3dc4441aa1d3820ba18146e88f4762c01cc3a32ae712e3623005bca5b757`
+- Preparation authority subject: `7b35b732d715387325e203f0c2177ab82e0b745b7ad2792f395ee3258c75be68`
+- Write-set subject: `536de170f48f7405e7358be4c53b341e4b3e995d60d3f2dc9e186e21af4411c6`
+- Unsealed activation template: `8661ddf0ad0e61c82ea5df183e35d3fe402e32ab9f14557b6dddf66c9c5d5073`
 
 ## Expected write envelope
 

@@ -188,7 +188,11 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback() -> None:
     assert DATABASE_URL is not None
     with _connect(DATABASE_URL, autocommit=False) as conn:
         _prepare_current_justice_state(conn)
-        preflight = capture_preflight(conn, deployed_commit=POST_M12M_MAIN)
+        preflight = capture_preflight(
+            conn,
+            deployed_commit=POST_M12M_MAIN,
+            allow_test_activation_authority=True,
+        )
         authority = build_authority(preflight)
         write_set = build_write_set(preflight, authority)
         activation_authority = _synthetic_activation_authority(write_set)

@@ -440,13 +440,16 @@ def capture_preflight(
     deployed_commit: str,
     runtime_health_proof: dict[str, Any] | None = None,
     production_target_identity_sha256: str | None = None,
+    allow_test_activation_authority: bool = False,
 ) -> dict[str, Any]:
     if not SHA40.fullmatch(deployed_commit):
         raise StoreSafetyError("deployed commit must be an exact lowercase SHA-40")
     counts = _counts(conn)
     registry = _registry_rows(conn)
     targets = _target_rows(conn)
-    selector = _selector_state(conn)
+    selector = _selector_state(
+        conn, allow_test_activation_authority=allow_test_activation_authority
+    )
     if counts != CURRENT_COUNTS:
         raise StoreSafetyError(f"unexpected current production counts: {counts}")
     if len(registry) != 2:
@@ -1359,9 +1362,16 @@ def build(
     }
 
 
-def _assert_bound_preflight(conn: Any, write_set: dict[str, Any]) -> dict[str, Any]:
+def _assert_bound_preflight(
+    conn: Any,
+    write_set: dict[str, Any],
+    *,
+    allow_test_activation_authority: bool = False,
+) -> dict[str, Any]:
     actual = capture_preflight(
-        conn, deployed_commit=write_set["preflight_binding"]["deployed_commit"]
+        conn,
+        deployed_commit=write_set["preflight_binding"]["deployed_commit"],
+        allow_test_activation_authority=allow_test_activation_authority,
     )
     if (
         actual["state_fingerprint_sha256"]
@@ -1607,7 +1617,11 @@ def _apply(
                 allow_test_authority=allow_test_authority,
             ),
         }
-    bound = _assert_bound_preflight(conn, write_set)
+    bound = _assert_bound_preflight(
+        conn,
+        write_set,
+        allow_test_activation_authority=allow_test_authority,
+    )
     batch = conn.execute(
         """INSERT INTO editorial_artifact_batches
            (deterministic_batch_key,source_commit_sha,manifest_sha256,status,
