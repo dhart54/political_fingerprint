@@ -122,9 +122,14 @@ def _xml_title_and_body(path: Path) -> tuple[str, bool]:
 
 def _identity_title_signal(identity: str) -> str:
     _congress, kind, number = identity.split(":")
-    title_kind = {"hconres": "HCON", "hjres": "HJ", "hres": "HRES"}.get(
-        kind, kind.upper()
-    )
+    title_kind = {
+        "hconres": "HCON",
+        "hjres": "HJ",
+        "hres": "HRES",
+        "sconres": "SCON",
+        "sjres": "SJ",
+        "sres": "SRES",
+    }.get(kind, kind.upper())
     return f"119{title_kind}{number}"
 
 
@@ -297,7 +302,7 @@ def _validate_record(
     version = operative["neutral_projection"]["text_version"]
     lowered = description.casefold()
     measure_type = identity.split(":")[1]
-    if measure_type == "s":
+    if measure_type in {"s", "sjres"}:
         expected_version = (
             "eah" if "amendment in the nature of a substitute" in lowered else "es"
         )
@@ -437,7 +442,7 @@ def validate_repository() -> dict[str, Any]:
         "H.R. 2721 date-text discrepancy limitation missing",
     )
 
-    current = load_json(CURRENT_STATE_PATH)["active_source_readiness_milestone"]
+    current = load_json(CURRENT_STATE_PATH)["completed_m11b_source_readiness_milestone"]
     identity = current["interpretation_source_readiness_identity"]
     accepted_state = current["milestone_state"] == "completed_human_accepted"
     _require(

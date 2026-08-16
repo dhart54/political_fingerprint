@@ -1,0 +1,190 @@
+{
+    "actions": [
+        {
+            "actionDate": "2025-12-09",
+            "committees": [
+                {
+                    "name": "National Parks Subcommittee",
+                    "systemCode": "sseg04",
+                    "url": "https://api.congress.gov/v3/committee/senate/sseg04?format=json"
+                }
+            ],
+            "sourceSystem": {
+                "name": "Senate"
+            },
+            "text": "Committee on Energy and Natural Resources Subcommittee on National Parks. Hearings held.",
+            "type": "Committee"
+        },
+        {
+            "actionDate": "2025-01-22",
+            "committees": [
+                {
+                    "name": "Energy and Natural Resources Committee",
+                    "systemCode": "sseg00",
+                    "url": "https://api.congress.gov/v3/committee/senate/sseg00?format=json"
+                }
+            ],
+            "sourceSystem": {
+                "name": "Senate"
+            },
+            "text": "Received in the Senate and Read twice and referred to the Committee on Energy and Natural Resources.",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "H38310",
+            "actionDate": "2025-01-21",
+            "actionTime": "19:01:24",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H37300",
+            "actionDate": "2025-01-21",
+            "actionTime": "19:01:23",
+            "recordedVotes": [
+                {
+                    "chamber": "House",
+                    "congress": 119,
+                    "date": "2025-01-22T00:01:23Z",
+                    "rollNumber": 18,
+                    "sessionNumber": 1,
+                    "url": "https://clerk.house.gov/evs/2025/roll018.xml"
+                }
+            ],
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "On motion to suspend the rules and pass the bill Agreed to by the Yeas and Nays: (2/3 required): 414 - 0 (Roll no. 18). (text: CR H237)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "8000",
+            "actionDate": "2025-01-21",
+            "actionTime": "19:01:23",
+            "recordedVotes": [
+                {
+                    "chamber": "House",
+                    "congress": 119,
+                    "date": "2025-01-22T00:01:23Z",
+                    "rollNumber": 18,
+                    "sessionNumber": 1,
+                    "url": "https://clerk.house.gov/evs/2025/roll018.xml"
+                }
+            ],
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On motion to suspend the rules and pass the bill Agreed to by the Yeas and Nays: (2/3 required): 414 - 0 (Roll no. 18). (text: CR H237)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H30000",
+            "actionDate": "2025-01-21",
+            "actionTime": "18:30:54",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Considered as unfinished business. (consideration: CR H250)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H37220",
+            "actionDate": "2025-01-21",
+            "actionTime": "14:22:14",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "At the conclusion of debate, the Yeas and Nays were demanded and ordered. Pursuant to the provisions of clause 8, rule XX, the Chair announced that further proceedings on the motion would be postponed.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H8D000",
+            "actionDate": "2025-01-21",
+            "actionTime": "14:13:22",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "DEBATE - The House proceeded with forty minutes of debate on H.R. 186.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H30000",
+            "actionDate": "2025-01-21",
+            "actionTime": "14:13:20",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Considered under suspension of the rules. (consideration: CR H237-238)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H30300",
+            "actionDate": "2025-01-21",
+            "actionTime": "14:13:06",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Mr. Westerman moved to suspend the rules and pass the bill.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H11100",
+            "actionDate": "2025-01-03",
+            "committees": [
+                {
+                    "name": "Natural Resources Committee",
+                    "systemCode": "hsii00",
+                    "url": "https://api.congress.gov/v3/committee/house/hsii00?format=json"
+                }
+            ],
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Referred to the House Committee on Natural Resources.",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "Intro-H",
+            "actionDate": "2025-01-03",
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Introduced in House",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "1000",
+            "actionDate": "2025-01-03",
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Introduced in House",
+            "type": "IntroReferral"
+        }
+    ],
+    "pagination": {
+        "count": 13
+    },
+    "request": {
+        "billNumber": "186",
+        "billType": "hr",
+        "billUrl": "https://api.congress.gov/v3/bill/119/hr/186?format=json",
+        "congress": "119",
+        "contentType": "application/json",
+        "format": "json"
+    }
+}

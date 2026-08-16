@@ -57,9 +57,11 @@ FORBIDDEN_PROJECTION_KEYS = {
     "conclusion",
     "cosponsor",
     "cosponsors",
+    "episode",
     "episode_id",
     "exact_action_meaning",
     "issue_meaning",
+    "ideology",
     "member_party",
     "party",
     "policy_question",
@@ -68,10 +70,15 @@ FORBIDDEN_PROJECTION_KEYS = {
     "recommended_public_wording",
     "sponsor",
     "sponsors",
+    "support",
+    "opposition",
+    "support_opposition",
     "support_opposition_direction",
     "synthesis",
     "synthesis_relevance",
     "vote_direction_interpretation",
+    "motive",
+    "voting_advice",
 }
 
 
