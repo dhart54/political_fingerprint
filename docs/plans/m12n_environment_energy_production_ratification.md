@@ -24,12 +24,12 @@
 
 - [x] Exact deployed commit and runtime manifest proven.
 - [x] Fresh read-only production state matches the accepted 5/149/161/2 baseline and issue boundaries.
-- [ ] Finalized 1/3/2/1 additive write set passes disposable apply, rejection, idempotency, and rollback proof (hosted PostgreSQL pending).
+- [x] Finalized 1/3/2/1 additive write set passes disposable semantic-parity, apply, rejection, idempotency, and rollback proof.
 - [x] Immutable accepted=false/sealed=false ratification candidate validates and grants no authority.
 - [x] Tests/build/validation recorded.
 - [x] Review packet or final documentation updated.
-- [ ] Exact-head hosted checks obtained on one draft PR.
-- [ ] Final reconciliation completed.
+- [x] Exact-head hosted checks obtained on one draft PR.
+- [x] Final reconciliation completed.
 
 ## Baseline
 
@@ -49,9 +49,9 @@
 
 - [x] Discovery
 - [x] Implementation
-- [ ] Validation
+- [x] Validation
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -80,7 +80,8 @@
 - Editorial presentations API suite with read-only profile environment: 48 passed.
 - Candidate validator, deterministic build check, JSON parse, Ruff lint/format, compileall, and `git diff --check`: passed.
 - Frozen reviewed-runtime files, M11N governed artifacts, and accepted M12L/M12M governed artifacts: no Git diff.
-- Disposable PostgreSQL proof is configured against the finalized governed write set and awaits hosted execution.
+- Disposable PostgreSQL proof established semantic parity with the finalized governed write set and passed all bounded lifecycle checks.
+- Hosted exact-head signals passed: amendment evidence 13s, publication activation PostgreSQL 1m25s, receipt repair PostgreSQL 33s, full-record benchmark 2m31s, Vercel, and Vercel Preview Comments.
 
 ## Production Writes
 
@@ -95,10 +96,10 @@
 
 ## Blockers
 
-- Exact-head hosted CI and its disposable PostgreSQL proof remain pending until the draft PR is opened.
+- None.
 
 ## Final Reconciliation
 
-- Definition of done satisfied: pending.
-- Remaining limitations: pending.
+- Definition of done satisfied: yes; the branch stops at an immutable unaccepted/unsealed ratification candidate.
+- Remaining limitations: local disposable PostgreSQL was unavailable; hosted Linux/PostgreSQL supplied the authoritative proof. Two historical local validators required the shorter original checkout because of Windows path length.
 - Recommended next step: independent ratification of the exact prospective authority subject only.
