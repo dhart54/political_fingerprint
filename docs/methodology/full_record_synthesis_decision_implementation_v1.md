@@ -24,9 +24,14 @@ the accepted proposition's semantic content. In particular, `mixed` direction
 metadata alone cannot establish mixed substantive policy orientation.
 
 All Behavioral Semantic IR inputs, relationship roles, episode/action lineage,
-complete proposition-role accounting, and overlap accounting remain exact.
-Standalone propositions and M11H contrast-only/no-safe episodes cannot be
-promoted or injected as raw synthesis evidence.
+complete proposition-role accounting, overlap accounting, and accepted episode
+disposition accounting remain exact. The generic authority and implementation
+use milestone-neutral accepted Behavioral Semantic IR bindings; validators also
+accept the frozen M11J binding vocabulary for historical compatibility. A
+separate unused non-directional disposition, when present, cannot be folded into
+the no-safe-proposition count. Standalone propositions and contrast-only,
+no-safe, or non-directional episodes cannot be promoted or injected as raw
+synthesis evidence.
 
 Synthesis acceptance is internal only. It does not authorize public wording,
 publication, persistence, database or production writes, production effects,

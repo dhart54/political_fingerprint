@@ -24,6 +24,8 @@
     "active_behavioral_semantic_ir_candidate_milestone": "m12g_environment_energy_behavioral_semantic_ir_candidates_v1",
     "active_behavioral_semantic_ir_decision_milestone": "m12h_environment_energy_semantic_ir_acceptance_v1",
     "active_synthesis_candidate_milestone": "m12i_environment_energy_synthesis_candidates_v1",
+    "active_synthesis_decision_milestone": "m12j_environment_energy_synthesis_acceptance_v1",
+    "active_public_wording_candidate_milestone": "m12k_environment_energy_public_wording_candidates_v1",
     "historical_milestone_sections_are_checkpoint_state": true
   },
   "canonical": {
@@ -74,6 +76,8 @@
     "full_record_behavioral_semantic_ir_candidate_contract": "docs/methodology/full_record_behavioral_semantic_ir_candidates_v1.md",
     "full_record_behavioral_semantic_ir_candidate_schema": "docs/methodology/full_record_behavioral_semantic_ir_candidate_package_v1.schema.json",
     "m12g_behavioral_semantic_ir_candidate_validator": "scripts/validate_m12g_environment_energy_behavioral_semantic_ir_candidates.py",
+    "m12j_synthesis_acceptance_validator": "scripts/validate_m12j_environment_energy_synthesis_acceptance.py",
+    "m12k_public_wording_candidate_validator": "scripts/validate_m12k_environment_energy_public_wording_candidates.py",
     "full_record_public_wording_decision_contract": "docs/methodology/full_record_public_wording_decision_implementation_v1.md",
     "full_record_public_wording_authority_schema": "docs/methodology/full_record_public_wording_authority_v1.schema.json",
     "full_record_public_wording_implementation_schema": "docs/methodology/full_record_public_wording_decision_implementation_v1.schema.json",
@@ -817,7 +821,7 @@
       "issue_id": "ENVIRONMENT_ENERGY"
     },
     "post_m12g_merge_main": "d3bc0fddad701e0621c87857ed80288c23a867aa",
-    "milestone_state": "complete_pending_independent_substantive_review",
+    "milestone_state": "completed_independent_substantive_review_accepted",
     "authority_effect": "detached_non_authorizing_synthesis_candidates_only",
     "source_behavioral_proposition_count": 3,
     "synthesis_candidate_count": 1,
@@ -849,12 +853,148 @@
       "parity_subject_sha256": "f9fd4cf93d403d600fa1c55921275be25ca713e30f6d260c4a704c5d9998dc21"
     },
     "synthesis_acceptance": false,
-    "public_wording_state": "absent_not_authorized",
+    "public_wording_state": "m12k_candidates_pending_independent_substantive_review",
     "publication_state": "inactive_environment_energy",
     "production_writes": false,
     "downstream_authorizations": {
       "synthesis_acceptance": false,
       "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "production_writes": false,
+      "deployment": false
+    }
+  },
+  "active_m12j_synthesis_decision_milestone": {
+    "milestone": "m12j_environment_energy_synthesis_acceptance_v1",
+    "plan": "docs/plans/m12jk_environment_energy_synthesis_acceptance_public_wording_v1.md",
+    "review_packet": "docs/review_packets/m12jk_environment_energy_synthesis_acceptance_public_wording_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "ENVIRONMENT_ENERGY"
+    },
+    "accepted_m12i_pr": 154,
+    "accepted_m12i_head": "95a7c59cd1876c7934fea9547008e2b8e86e8be0",
+    "reviewed_base": "d3bc0fddad701e0621c87857ed80288c23a867aa",
+    "post_m12i_main": "ea6b93cd51110dd2e8da71448ce2a5b14f864ba3",
+    "milestone_state": "completed_mechanical_acceptance_validated",
+    "authority_effect": "canonical_internal_synthesis_only",
+    "decision_accounting": {
+      "accept_candidate_as_written": 1,
+      "accept_with_bounded_revision": 0,
+      "rejected": 0,
+      "unresolved": 0
+    },
+    "canonical_internal_synthesis_count": 1,
+    "input_behavioral_proposition_count": 3,
+    "unique_underlying_episode_count": 13,
+    "unique_underlying_action_count": 13,
+    "accepted_episode_disposition_accounting": {
+      "accepted_episode_count": 63,
+      "repeated_pattern_evidence_episode_count": 13,
+      "trajectory_evidence_episode_count": 0,
+      "notable_choice_evidence_episode_count": 0,
+      "contrast_only_episode_count": 25,
+      "no_safe_proposition_episode_count": 24,
+      "unused_non_directional_evidence_episode_count": 1,
+      "primary_overlap_count": 0
+    },
+    "authority": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_implementations/f000477_environment_energy_119_v1/human_synthesis_authority.json",
+      "id": "human-synthesis-authority:f000477:environment_energy:119:v1",
+      "sha256": "edf92b4543376b94ccebbc87d3ec85ea734d0ab7a38952848062bfe7cc78be5c",
+      "authority_subject_sha256": "060386625bebf6095bd91e20c7a63578b170cd94ced89a0d58996adbf606a187"
+    },
+    "implementation": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_implementations/f000477_environment_energy_119_v1/synthesis_decision_implementation.json",
+      "id": "synthesis-decision-implementation:f000477:environment_energy:119:v1",
+      "sha256": "74f573f40e8f26eadb6b126a0d0ecaa0b6abb5ca5ac539dd8c4a80d8851692cd",
+      "implementation_subject_sha256": "bd7a786523fb2e969f44c1374edc96ea59d0885a4d83ceafb5ff14d9cb135a72"
+    },
+    "parity": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_implementations/f000477_environment_energy_119_v1/implementation_parity_manifest.json",
+      "id": "synthesis-implementation-parity:f000477:environment_energy:119:v1",
+      "sha256": "4217db5b09a0c07031154fa8dc090c9d7640e37b98035aa82abfb1e919824f4b",
+      "parity_subject_sha256": "7be6d35570088bbaaa377be09a03112e186238c63962aab8cab0c88e55661dae"
+    },
+    "public_wording_state": "m12k_candidates_pending_independent_substantive_review",
+    "publication_state": "inactive_environment_energy",
+    "production_writes": false,
+    "downstream_authorizations": {
+      "public_wording_acceptance": false,
+      "site_integration": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "production_writes": false,
+      "deployment": false
+    }
+  },
+  "active_m12k_public_wording_candidate_milestone": {
+    "milestone": "m12k_environment_energy_public_wording_candidates_v1",
+    "plan": "docs/plans/m12jk_environment_energy_synthesis_acceptance_public_wording_v1.md",
+    "review_packet": "docs/review_packets/m12jk_environment_energy_synthesis_acceptance_public_wording_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "ENVIRONMENT_ENERGY"
+    },
+    "milestone_state": "complete_pending_independent_substantive_wording_review",
+    "authority_effect": "detached_non_authorizing_public_wording_candidates_only",
+    "wording_item_count": 5,
+    "wording_item_accounting": {
+      "issue_overview": 1,
+      "synthesis": 1,
+      "repeated_pattern": 3,
+      "trajectory": 0,
+      "notable_choice": 0
+    },
+    "source_accounting": {
+      "behavioral_propositions": 3,
+      "canonical_internal_syntheses": 1,
+      "unique_episode_lineage": 13,
+      "unique_action_lineage": 13,
+      "blocked_uninterpreted_actions": 0
+    },
+    "package": {
+      "artifact": "docs/editorial/full_record_reviews/public_wording_candidates/f000477_environment_energy_119_v1/public_wording_candidate_package.json",
+      "id": "public-wording-candidates:f000477:environment_energy:119:v1",
+      "sha256": "805ac5a3231d5a611037a59d9cb38b80875c746bb16a4c8db307dd36a090af00",
+      "public_wording_candidate_package_subject_sha256": "4729332d5481ee9d0ef28cc393a875de875d9d7ccea6160a77e53a1f7218b231"
+    },
+    "decision_template": {
+      "artifact": "docs/editorial/full_record_reviews/public_wording_candidates/f000477_environment_energy_119_v1/human_public_wording_decision_template.json",
+      "id": "human-public-wording-decision-template:f000477:environment_energy:119:v1",
+      "sha256": "34206d07fedcc0bf70e3bb207e5c4eb784c35c5377097582f5a1e4d612c2c3c2",
+      "decision_template_subject_sha256": "a61523d4765794a71b3ae8d8b3b718bd56f56030d3946ae8f0094f2277296a6f",
+      "all_decisions_empty": true
+    },
+    "dossier": {
+      "artifact": "docs/editorial/full_record_reviews/public_wording_candidates/f000477_environment_energy_119_v1/human_review_dossier.md",
+      "sha256": "d361d6b2be00f42935fb0a92d629e89cb10c4cd827c0a9619138e5caa154ec71"
+    },
+    "parity": {
+      "artifact": "docs/editorial/full_record_reviews/public_wording_candidates/f000477_environment_energy_119_v1/parity_manifest.json",
+      "id": "public-wording-candidate-parity:f000477:environment_energy:119:v1",
+      "sha256": "774a415fc9ed0e46c78f7fa8cdff829af831fac685243d95bc20925b82019e07",
+      "parity_subject_sha256": "fbb3c0cfac631a53f4f9eec3ace2533af4ea8343677236f40cf0d617e27184bc"
+    },
+    "direction_display": "omitted_for_all_five_items_to_keep_the_object_of_opposition_explicit",
+    "canonical_public_copy": false,
+    "publication_state": "inactive_environment_energy",
+    "production_selectable": false,
+    "production_writes": false,
+    "downstream_authorizations": {
+      "public_wording_acceptance": false,
+      "site_integration": false,
       "publication": false,
       "production_persistence": false,
       "database_writes": false,

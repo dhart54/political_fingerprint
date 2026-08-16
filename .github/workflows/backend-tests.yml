@@ -61,7 +61,9 @@ jobs:
           python scripts/validate_m11i_national_security_synthesis_candidates.py
           python scripts/validate_m12i_environment_energy_synthesis_candidates.py
           python scripts/validate_m11j_national_security_synthesis_acceptance.py
+          python scripts/validate_m12j_environment_energy_synthesis_acceptance.py
           python scripts/validate_m11k_national_security_public_wording_candidates.py
+          python scripts/validate_m12k_environment_energy_public_wording_candidates.py
           python backend/scripts/build_m11l_national_security_public_wording_acceptance.py --check
           python scripts/validate_public_wording_decision_implementation_v1.py --authority docs/editorial/full_record_reviews/public_wording_implementations/f000477_national_security_foreign_119_v1/human_public_wording_authority.json --implementation docs/editorial/full_record_reviews/public_wording_implementations/f000477_national_security_foreign_119_v1/reviewed_wording_decision_implementation.json --package docs/editorial/full_record_reviews/public_wording_candidates/f000477_national_security_foreign_119_v1/public_wording_candidate_package.json --decision-template docs/editorial/full_record_reviews/public_wording_candidates/f000477_national_security_foreign_119_v1/human_public_wording_decision_template.json --candidate-parity docs/editorial/full_record_reviews/public_wording_candidates/f000477_national_security_foreign_119_v1/parity_manifest.json
           python scripts/validate_m11l_national_security_public_wording_acceptance.py
@@ -89,6 +91,8 @@ jobs:
           backend/tests/test_m12g_environment_energy_behavioral_semantic_ir_candidates.py
           backend/tests/test_m12h_environment_energy_semantic_ir_acceptance.py
           backend/tests/test_m12i_environment_energy_synthesis_candidates.py
+          backend/tests/test_m12j_environment_energy_synthesis_acceptance.py
+          backend/tests/test_m12k_environment_energy_public_wording_candidates.py
           backend/tests/test_full_record_action_interpretation.py
           backend/tests/test_full_record_action_interpretation_decisions.py
           backend/tests/test_full_record_policy_episode_candidates.py

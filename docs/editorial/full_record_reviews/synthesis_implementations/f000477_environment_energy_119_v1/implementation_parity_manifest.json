@@ -1,0 +1,39 @@
+{
+  "artifact_id": "synthesis-implementation-parity:f000477:environment_energy:119:v1",
+  "authority_binding": {
+    "artifact_id": "human-synthesis-authority:f000477:environment_energy:119:v1",
+    "authority_subject_sha256": "060386625bebf6095bd91e20c7a63578b170cd94ced89a0d58996adbf606a187",
+    "file_sha256": "edf92b4543376b94ccebbc87d3ec85ea734d0ab7a38952848062bfe7cc78be5c"
+  },
+  "decision_accounting": {
+    "accept_candidate_as_written": 1,
+    "accept_with_bounded_revision": 0,
+    "rejected": 0,
+    "unresolved": 0
+  },
+  "downstream_authorizations": {
+    "database_writes": false,
+    "deployment": false,
+    "production_persistence": false,
+    "production_writes": false,
+    "public_wording": false,
+    "publication": false
+  },
+  "final_accounting": {
+    "candidate_action_reference_count": 13,
+    "candidate_episode_reference_count": 13,
+    "canonical_internal_synthesis_count": 1,
+    "cross_candidate_action_overlap_count": 0,
+    "cross_candidate_episode_overlap_count": 0,
+    "standalone_proposition_count": 0,
+    "unique_behavioral_proposition_input_count": 3
+  },
+  "implementation_binding": {
+    "artifact_id": "synthesis-decision-implementation:f000477:environment_energy:119:v1",
+    "file_sha256": "74f573f40e8f26eadb6b126a0d0ecaa0b6abb5ca5ac539dd8c4a80d8851692cd",
+    "implementation_subject_sha256": "bd7a786523fb2e969f44c1374edc96ea59d0885a4d83ceafb5ff14d9cb135a72"
+  },
+  "parity_subject_sha256": "7be6d35570088bbaaa377be09a03112e186238c63962aab8cab0c88e55661dae",
+  "schema_version": "full_record_synthesis_implementation_parity_v1",
+  "upstream_candidate_subject_sha256": "df5d7209f7cc08b80e6164a5952fa08549e0dc9b6b4627db8d6fe2a7fc7cddae"
+}

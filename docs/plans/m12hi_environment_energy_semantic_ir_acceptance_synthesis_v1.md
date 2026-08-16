@@ -67,7 +67,9 @@ proposition records.
   accepted inputs.
 - [x] The human decision template is empty and every downstream authority is
   false.
-- [ ] Draft PR hosted checks pass on the exact final head.
+- [x] Draft PR #154 hosted checks passed on exact accepted head
+  `95a7c59cd1876c7934fea9547008e2b8e86e8be0`; independent substantive review
+  accepted the sole candidate exactly as written.
 
 ## Validation approach
 
@@ -80,9 +82,8 @@ baseline condition.
 
 ## Stop condition
 
-Stop at the combined draft PR for independent M12I substantive review. Do not
-begin M12J or any public wording, publication, persistence, production, or
-deployment work.
+This stop condition was satisfied at PR #154. M12I is now an immutable accepted
+checkpoint and M12J/K proceeds under its separate plan and authority layers.
 
 ## Local validation results
 
