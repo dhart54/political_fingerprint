@@ -99,6 +99,14 @@ PARITY_SCHEMA_PATH = (
     / "docs/methodology/full_record_policy_episode_implementation_parity_v1.schema.json"
 )
 
+# The M11F parity receipt is a frozen historical artifact. Its schema references
+# bind the schema bytes that existed when M11F was accepted; later compatible
+# schema expansion must not rewrite that receipt.
+FROZEN_M11F_SCHEMA_FILE_SHA256 = {
+    AUTHORITY_SCHEMA_PATH: "0b7e61129400d041a0c2c535d00e955ada5ff64173e756d39af4919e081ea23d",
+    IMPLEMENTATION_SCHEMA_PATH: "f42a9b4dd854ab0fd63fd93e562a3426264a82a0fe5c397616e900cde2cad8de",
+}
+
 
 def load(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -157,11 +165,39 @@ def schema(value: dict[str, Any], schema_id: str) -> dict[str, Any]:
                 effects["additionalProperties"] = {"type": "string"}
                 effects["required"] = []
                 effects["properties"] = {}
+            decision_accounting = properties.get("decision_accounting")
+            if isinstance(decision_accounting, dict):
+                decision_accounting["required"] = []
         for child in node.values():
             if isinstance(child, dict):
                 relax_dynamic_maps(child)
 
     relax_dynamic_maps(result)
+    subject_schema = result["properties"].get("subject")
+    if subject_schema is not None:
+        subject_properties = subject_schema["properties"]
+        subject_required = subject_schema["required"]
+
+        def add_legacy_binding_alias(legacy: str, generic: str) -> None:
+            if legacy not in subject_properties:
+                return
+            subject_properties[generic] = deepcopy(subject_properties[legacy])
+            subject_required.remove(legacy)
+            subject_schema.setdefault("allOf", []).append(
+                {
+                    "oneOf": [
+                        {"required": [legacy]},
+                        {"required": [generic]},
+                    ]
+                }
+            )
+
+        add_legacy_binding_alias(
+            "m11d_implementation_binding", "interpretation_implementation_binding"
+        )
+        add_legacy_binding_alias(
+            "m11e_candidate_binding", "policy_episode_candidate_binding"
+        )
     if schema_id.endswith("full_record_policy_episode_decision_implementation_v1"):
         record = result["properties"]["subject"]["properties"][
             "implementation_records"
@@ -647,7 +683,9 @@ def build(*, check: bool = False) -> dict[str, Any]:
         references.append(
             {
                 "path": path.relative_to(ROOT).as_posix(),
-                "final_file_sha256": canonical_file_sha256(path),
+                "final_file_sha256": FROZEN_M11F_SCHEMA_FILE_SHA256.get(
+                    path, canonical_file_sha256(path)
+                ),
             }
         )
     parity = seal(

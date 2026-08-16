@@ -58,7 +58,12 @@ policy-episode candidates on the same branch without collapsing authority states
   remain false.
 - [x] Broad regression validation and exact diff review pass, apart from the
   unchanged historical Windows checkout byte-hash baseline noted below.
-- [ ] Draft PR and hosted checks pass.
+- [x] Draft PR #152 and six hosted checks passed at exact head
+  `ecf087f0a6c916ef457014a75381198a16f54857`.
+
+Independent review accepted M12D mechanically and all 63 M12E singleton
+candidates semantically as written. PR #152 merged as
+`450a759c5a2d0eaf767e68bc999c7d3ec8e9ca1e`.
 
 ## Stop condition
 
@@ -70,7 +75,7 @@ candidates or begin M12F or any later semantic/publication stage.
 Focused M12D and M12E validators, deterministic rebuilds, generic-schema
 cross-domain checks, adversarial tests, historical M11 and justice routing
 validators, documentation governance, terminology, Ruff, compile, JSON parsing,
-and diff checks pass. The explicit 557-test regression run has 556 passing and
+and diff checks pass. The explicit 557-test regression run had 556 passing and
 one unchanged historical Windows checkout-only byte-hash failure in
-`test_imported_acceptance_exact_bytes`; the two governed files still match each
-other and have no Git diff. Hosted validation remains pending.
+`test_imported_acceptance_exact_bytes`; the two governed files still matched each
+other and had no Git diff. All six hosted signals passed.

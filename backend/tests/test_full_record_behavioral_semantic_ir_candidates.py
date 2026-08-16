@@ -53,6 +53,29 @@ class BehavioralSemanticIrCandidateTests(unittest.TestCase):
         with self.assertRaises(SemanticCompilerInputError):
             compile_behavioral_candidate_ir(changed)
 
+    def test_topic_or_mechanism_only_relationship_evidence_is_rejected(self) -> None:
+        changed = copy.deepcopy(self.compiler_input)
+        proposition = next(
+            row
+            for row in changed["proposition_candidates"]
+            if row["proposition_type"] == "repeated_pattern"
+        )
+        evidence = changed["relationship_evidence_by_proposition"][
+            proposition["proposition_id"]
+        ]
+        evidence["insufficient_bases_rejected"] = [
+            "shared_topic",
+            "shared_cra_mechanism",
+        ]
+        with self.assertRaisesRegex(SemanticCompilerInputError, "incomplete"):
+            compile_behavioral_candidate_ir(changed)
+
+    def test_tampered_accepted_episode_record_is_rejected(self) -> None:
+        changed = copy.deepcopy(self.compiler_input)
+        changed["episodes"][0]["primary_action_ids"] = ["invented-component"]
+        with self.assertRaisesRegex(SemanticCompilerInputError, "seal differs"):
+            compile_behavioral_candidate_ir(changed)
+
     @staticmethod
     def _generic_input(
         *,
@@ -79,6 +102,7 @@ class BehavioralSemanticIrCandidateTests(unittest.TestCase):
             "subject": {"member_id": "TEST"},
             "episodes": episodes,
             "blocked_action_ids": [],
+            "relationship_evidence_by_proposition": {},
             "proposition_candidates": [
                 {
                     "proposition_id": "trajectory-test",
@@ -177,6 +201,7 @@ class BehavioralSemanticIrCandidateTests(unittest.TestCase):
                 }
             ],
             "blocked_action_ids": [],
+            "relationship_evidence_by_proposition": {},
             "proposition_candidates": [
                 {
                     "proposition_id": "mixed-notable",
@@ -210,6 +235,35 @@ class BehavioralSemanticIrCandidateTests(unittest.TestCase):
                     graph["proposition_graph"]["propositions"][0]["direction"],
                     "mixed",
                 )
+
+    def test_non_directional_episode_cannot_enter_directional_evidence(self) -> None:
+        changed = self._generic_input()
+        proposition = changed["proposition_candidates"][0]
+        proposition["proposition_type"] = "repeated_pattern"
+        proposition["trajectory_change"] = None
+        changed["episodes"][0]["member_direction"] = "non_directional_not_voting"
+        changed["relationship_evidence_by_proposition"] = {
+            proposition["proposition_id"]: {
+                "shared_bounded_choice": "Synthetic bounded repeated choice.",
+                "episode_support": {
+                    "before": "Accepted before meaning.",
+                    "after": "Accepted after meaning.",
+                },
+                "insufficient_bases_rejected": [
+                    "shared_topic",
+                    "shared_agency",
+                    "shared_statute",
+                    "shared_cra_mechanism",
+                    "shared_vote_direction",
+                    "party",
+                    "sponsor",
+                    "ideology",
+                ],
+                "material_differences_preserved": ["Synthetic difference."],
+            }
+        }
+        with self.assertRaisesRegex(SemanticCompilerInputError, "non-directional"):
+            compile_behavioral_candidate_ir(changed)
 
     def test_direction_cannot_override_accepted_episode_effects(self) -> None:
         changed = copy.deepcopy(self.compiler_input)

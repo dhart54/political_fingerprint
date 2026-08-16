@@ -74,10 +74,7 @@ def _assert_input_only(value: Any, path: str = "$") -> None:
         forbidden = {
             key
             for key in OUTPUT_FIELDS.intersection(value)
-            if not (
-                key == "review_route"
-                and dependency_index.isdigit()
-            )
+            if not (key == "review_route" and dependency_index.isdigit())
         }
         if forbidden:
             names = ", ".join(sorted(forbidden))
@@ -457,9 +454,7 @@ def _method_boundaries(shared: dict[str, Any]) -> list[dict[str, Any]]:
     return result
 
 
-def _compile_member(
-    payload: dict[str, Any], member: dict[str, Any]
-) -> dict[str, Any]:
+def _compile_member(payload: dict[str, Any], member: dict[str, Any]) -> dict[str, Any]:
     shared = payload["shared_semantics"]
     actions = {action["action_id"]: action for action in shared["actions"]}
     episodes = {episode["episode_id"]: episode for episode in shared["episodes"]}
@@ -474,9 +469,7 @@ def _compile_member(
         return min(
             action_ids,
             key=lambda action_id: (
-                actions[action_id]
-                .get("structural_metadata", {})
-                .get("stage_order", 1),
+                actions[action_id].get("structural_metadata", {}).get("stage_order", 1),
                 action_id,
             ),
         )
@@ -498,8 +491,7 @@ def _compile_member(
         for action_id in accepted_ids
         if action_id in member_actions
         and member_actions[action_id]["service_status"] == "in_service"
-        and member_actions[action_id]["evidence_status"]
-        == "official_record_resolved"
+        and member_actions[action_id]["evidence_status"] == "official_record_resolved"
         and member_actions[action_id]["status"] in DIRECTIONAL_STATUS
         and action_id not in blocked_action_ids
     }
@@ -606,8 +598,7 @@ def _compile_member(
             (
                 proposition
                 for proposition in behavioral
-                if relationship["left"]
-                in proposition["mechanism_or_trait_refs"]
+                if relationship["left"] in proposition["mechanism_or_trait_refs"]
                 and proposition["proposition_type"] == "repeated_pattern"
             ),
             None,
@@ -616,8 +607,7 @@ def _compile_member(
             (
                 proposition
                 for proposition in behavioral
-                if relationship["right"]
-                in proposition["mechanism_or_trait_refs"]
+                if relationship["right"] in proposition["mechanism_or_trait_refs"]
                 and proposition["proposition_type"] == "repeated_pattern"
             ),
             None,
@@ -627,9 +617,9 @@ def _compile_member(
             representative_actions = []
             for proposition in supporters:
                 for episode_id in proposition["evidence_episode_ids"]:
-                    candidates = set(
-                        proposition["evidence_action_ids"]
-                    ) & set(episodes[episode_id]["action_ids"])
+                    candidates = set(proposition["evidence_action_ids"]) & set(
+                        episodes[episode_id]["action_ids"]
+                    )
                     representative_actions.append(first_stage(candidates))
             mechanism = _proposition(
                 semantic_role="synthesis",
@@ -662,8 +652,7 @@ def _compile_member(
                 semantic_role="synthesis",
                 proposition_type="interpretive_boundary",
                 direction=_direction(
-                    member_actions[action_id]["status"]
-                    for action_id in boundary_ids
+                    member_actions[action_id]["status"] for action_id in boundary_ids
                 ),
                 action_ids=boundary_ids,
                 episode_ids=[
@@ -720,8 +709,7 @@ def _compile_member(
         and len(behavioral) > 1
         and len(independent_episodes) > 1
         and len(directional_directions) == 1
-        and coverage["not_voting_actions"]
-        <= coverage["directional_yes_no_positions"]
+        and coverage["not_voting_actions"] <= coverage["directional_yes_no_positions"]
     ):
         uniform = _proposition(
             semantic_role="synthesis",
@@ -884,8 +872,7 @@ def _compile_member(
         )
 
     has_nonaccepted_actions = any(
-        action["eligibility"]["decision"] != "accepted"
-        for action in shared["actions"]
+        action["eligibility"]["decision"] != "accepted" for action in shared["actions"]
     )
     if (
         coverage["missing_evidence_actions"]
@@ -958,6 +945,16 @@ def compile_semantic_ir(payload: dict[str, Any]) -> dict[str, Any]:
 
 
 BEHAVIORAL_CANDIDATE_TYPES = {"notable_choice", "repeated_pattern", "trajectory"}
+INSUFFICIENT_PATTERN_BASES = {
+    "shared_topic",
+    "shared_agency",
+    "shared_statute",
+    "shared_cra_mechanism",
+    "shared_vote_direction",
+    "party",
+    "sponsor",
+    "ideology",
+}
 EPISODE_DIRECTION = {
     "supports_policy_proposition": "support",
     "opposes_policy_proposition": "opposition",
@@ -981,6 +978,7 @@ def compile_behavioral_candidate_ir(payload: dict[str, Any]) -> dict[str, Any]:
         "proposition_candidates",
         "episode_accounting",
         "blocked_action_ids",
+        "relationship_evidence_by_proposition",
     }
     missing = required - payload.keys()
     if missing:
@@ -999,6 +997,23 @@ def compile_behavioral_candidate_ir(payload: dict[str, Any]) -> dict[str, Any]:
         raise SemanticCompilerInputError(
             "behavioral candidates require accepted canonical episodes"
         )
+    for episode in episodes.values():
+        if "record_subject_sha256" in episode:
+            subject = {
+                key: value
+                for key, value in episode.items()
+                if key != "record_subject_sha256"
+            }
+            encoded = json.dumps(
+                subject,
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+            ).encode("utf-8")
+            if episode["record_subject_sha256"] != hashlib.sha256(encoded).hexdigest():
+                raise SemanticCompilerInputError(
+                    f"accepted episode record seal differs: {episode['episode_id']}"
+                )
     blocked_action_ids = set(payload["blocked_action_ids"])
     if any(
         blocked_action_ids & set(row["primary_action_ids"]) for row in episodes.values()
@@ -1018,6 +1033,12 @@ def compile_behavioral_candidate_ir(payload: dict[str, Any]) -> dict[str, Any]:
     propositions: list[dict[str, Any]] = []
     primary_owners: dict[str, str] = {}
     candidate_ids: set[str] = set()
+    repeated_pattern_ids: set[str] = set()
+    relationship_evidence = payload["relationship_evidence_by_proposition"]
+    if not isinstance(relationship_evidence, dict):
+        raise SemanticCompilerInputError(
+            "behavioral relationship evidence must be proposition-keyed"
+        )
     for candidate in payload["proposition_candidates"]:
         proposition_id = candidate["proposition_id"]
         proposition_type = candidate["proposition_type"]
@@ -1050,6 +1071,38 @@ def compile_behavioral_candidate_ir(payload: dict[str, Any]) -> dict[str, Any]:
             raise SemanticCompilerInputError(
                 f"{proposition_type} requires at least two episodes"
             )
+        if proposition_type == "repeated_pattern":
+            repeated_pattern_ids.add(proposition_id)
+            evidence = relationship_evidence.get(proposition_id)
+            if not isinstance(evidence, dict) or set(evidence) != {
+                "shared_bounded_choice",
+                "episode_support",
+                "insufficient_bases_rejected",
+                "material_differences_preserved",
+            }:
+                raise SemanticCompilerInputError(
+                    f"{proposition_id} lacks explicit bounded relationship evidence"
+                )
+            if not (
+                isinstance(evidence["shared_bounded_choice"], str)
+                and evidence["shared_bounded_choice"].strip()
+                and set(evidence["episode_support"]) == set(evidence_episode_ids)
+                and all(
+                    isinstance(detail, str) and detail.strip()
+                    for detail in evidence["episode_support"].values()
+                )
+                and set(evidence["insufficient_bases_rejected"])
+                >= INSUFFICIENT_PATTERN_BASES
+                and isinstance(evidence["material_differences_preserved"], list)
+                and evidence["material_differences_preserved"]
+                and all(
+                    isinstance(detail, str) and detail.strip()
+                    for detail in evidence["material_differences_preserved"]
+                )
+            ):
+                raise SemanticCompilerInputError(
+                    f"{proposition_id} relationship evidence is incomplete"
+                )
         trajectory_change = candidate.get("trajectory_change")
         if proposition_type == "trajectory":
             if not isinstance(trajectory_change, dict):
@@ -1127,9 +1180,23 @@ def compile_behavioral_candidate_ir(payload: dict[str, Any]) -> dict[str, Any]:
                 f"{proposition_id} requires explicit semantic evidence for every episode"
             )
 
-        directions = {
-            EPISODE_DIRECTION[episodes[episode_id]["member_direction"]]
+        accepted_episode_directions = {
+            episode_id: episodes[episode_id]["member_direction"]
             for episode_id in evidence_episode_ids
+        }
+        non_directional_episode_ids = sorted(
+            episode_id
+            for episode_id, direction in accepted_episode_directions.items()
+            if direction not in EPISODE_DIRECTION
+        )
+        if non_directional_episode_ids:
+            raise SemanticCompilerInputError(
+                "non-directional episodes cannot enter directional behavioral "
+                "proposition evidence: " + ", ".join(non_directional_episode_ids)
+            )
+        directions = {
+            EPISODE_DIRECTION[direction]
+            for direction in accepted_episode_directions.values()
         }
         derived_direction = next(iter(directions)) if len(directions) == 1 else "mixed"
         if candidate.get("direction") != derived_direction:
@@ -1161,6 +1228,11 @@ def compile_behavioral_candidate_ir(payload: dict[str, Any]) -> dict[str, Any]:
                 "canonical": False,
                 "authorizing": False,
             }
+        )
+
+    if set(relationship_evidence) != repeated_pattern_ids:
+        raise SemanticCompilerInputError(
+            "relationship evidence must bind exactly the repeated-pattern candidates"
         )
 
     for episode_id, row in accounting.items():

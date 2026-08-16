@@ -288,6 +288,7 @@ def build_input(
         for row in subject["non_primary_relationship_evidence"]
     }
     candidates = []
+    relationship_evidence_by_proposition = {}
     owners: dict[str, str] = {}
     owner_types: dict[str, str] = {}
     for definition in PROPOSITIONS:
@@ -319,6 +320,25 @@ def build_input(
             },
         }
         candidates.append(candidate)
+        if definition["proposition_type"] == "repeated_pattern":
+            relationship_evidence_by_proposition[definition["proposition_id"]] = {
+                "shared_bounded_choice": definition["rationale"],
+                "episode_support": {
+                    episode_id: episodes_by_id[episode_id]["policy_proposition"]
+                    for episode_id in episode_ids
+                },
+                "insufficient_bases_rejected": [
+                    "shared_topic",
+                    "shared_agency",
+                    "shared_statute",
+                    "shared_cra_mechanism",
+                    "shared_vote_direction",
+                    "party",
+                    "sponsor",
+                    "ideology",
+                ],
+                "material_differences_preserved": definition["material_limitations"],
+            }
         for episode_id in episode_ids:
             if episode_id in owners:
                 raise ValueError(f"inflated primary ownership for {episode_id}")
@@ -372,6 +392,7 @@ def build_input(
         "blocked_action_ids": ["house:119:2:278"],
         "proposition_candidates": candidates,
         "episode_accounting": accounting,
+        "relationship_evidence_by_proposition": relationship_evidence_by_proposition,
     }
     return compiler_input, list(relationships.values())
 

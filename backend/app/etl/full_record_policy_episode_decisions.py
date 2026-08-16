@@ -18,6 +18,7 @@ DOWNSTREAM_AUTHORIZATIONS = {
     "database_writes": False,
     "deployment": False,
 }
+REVIEWER_AUTHORITY = "full_record_policy_episode_review_authority_v1"
 
 
 class PolicyEpisodeDecisionError(ValueError):
@@ -72,6 +73,19 @@ def _member_direction(records: list[dict[str, Any]]) -> str:
         return "opposes_policy_proposition"
     if effects <= {"supports_exact_choice", "opposes_exact_choice"}:
         return "mixed_on_episode_choices"
+    if effects == {"non_directional_present"}:
+        return "non_directional_present"
+    if effects == {"non_directional_not_voting"}:
+        return "non_directional_not_voting"
+    if effects <= {"non_directional_present", "non_directional_not_voting"}:
+        return "non_directional_mixed_statuses"
+    if effects <= {
+        "supports_exact_choice",
+        "opposes_exact_choice",
+        "non_directional_present",
+        "non_directional_not_voting",
+    }:
+        return "mixed_directional_and_non_directional_choices"
     raise PolicyEpisodeDecisionError("unsupported accepted exact-choice effect")
 
 
@@ -90,6 +104,12 @@ def validate_authority(
         raise PolicyEpisodeDecisionError("internal episode authority missing")
     if any(subject["downstream_authorizations"].values()):
         raise PolicyEpisodeDecisionError("downstream authority leakage")
+    authority_decision = subject["authority_decision"]
+    if not (
+        authority_decision["reviewer_id"].strip()
+        and authority_decision["reviewer_authority"] == REVIEWER_AUTHORITY
+    ):
+        raise PolicyEpisodeDecisionError("reviewer identity or authority differs")
     if subject["candidate_binding"]["artifact_id"] != candidate["artifact_id"]:
         raise PolicyEpisodeDecisionError("candidate identity differs")
     candidate_by_id = {
@@ -131,8 +151,9 @@ def validate_implementation(
     bundle: dict[str, Any],
     *,
     authority: dict[str, Any],
-    m11d_records: list[dict[str, Any]],
-    blocked_action_id: str,
+    m11d_records: list[dict[str, Any]] | None = None,
+    accepted_interpretation_records: list[dict[str, Any]] | None = None,
+    blocked_action_id: str | None,
     rejected_episode_ids: set[str],
 ) -> dict[str, int]:
     verify_seal(authority, "authority_subject_sha256", "episode authority")
@@ -145,9 +166,19 @@ def validate_implementation(
         != authority["authority_subject_sha256"]
     ):
         raise PolicyEpisodeDecisionError("authority implementation binding differs")
-    upstream = {row["action_id"]: row for row in m11d_records}
-    if len(upstream) != len(m11d_records):
-        raise PolicyEpisodeDecisionError("duplicate M11D action identity")
+    if (m11d_records is None) == (accepted_interpretation_records is None):
+        raise PolicyEpisodeDecisionError(
+            "provide exactly one accepted interpretation record collection"
+        )
+    interpretation_records = (
+        accepted_interpretation_records
+        if accepted_interpretation_records is not None
+        else m11d_records
+    )
+    assert interpretation_records is not None
+    upstream = {row["action_id"]: row for row in interpretation_records}
+    if len(upstream) != len(interpretation_records):
+        raise PolicyEpisodeDecisionError("duplicate accepted action identity")
     for row in authority["subject"]["episode_decisions"]:
         verify_seal(row, "decision_subject_sha256", row["episode_id"])
     authority_decisions = {
@@ -204,14 +235,16 @@ def validate_implementation(
         episode_sources = []
         for action in actions:
             action_id = action["action_id"]
-            if action_id == blocked_action_id:
+            if blocked_action_id is not None and action_id == blocked_action_id:
                 raise PolicyEpisodeDecisionError(
                     "blocked action entered episode implementation"
                 )
             if action_id in action_to_episode:
                 raise PolicyEpisodeDecisionError("action assigned more than once")
             if action_id not in upstream:
-                raise PolicyEpisodeDecisionError("episode action outside M11D")
+                raise PolicyEpisodeDecisionError(
+                    "episode action outside accepted interpretation implementation"
+                )
             action_to_episode[action_id] = episode["episode_id"]
             source = upstream[action_id]
             episode_sources.append(source)
@@ -246,7 +279,7 @@ def validate_implementation(
                 "episode direction not derived from accepted effects"
             )
     if set(action_to_episode) != set(upstream):
-        raise PolicyEpisodeDecisionError("accepted M11D action omitted")
+        raise PolicyEpisodeDecisionError("accepted interpretation action omitted")
     accounting = subject["action_accounting"]
     if len(accounting) != len(upstream) or {
         row["action_id"] for row in accounting
@@ -291,7 +324,7 @@ def validate_implementation(
             row["grouping_type"] == "cross_measure" for row in records
         ),
         "ambiguous_or_unassigned_action_count": 0,
-        "blocked_action_count": 1,
+        "blocked_action_count": int(blocked_action_id is not None),
     }
     if subject["final_accounting"] != expected:
         raise PolicyEpisodeDecisionError("final episode accounting differs")

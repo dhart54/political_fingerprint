@@ -36,13 +36,25 @@ The machine-readable authority is
   action interpretations. H.R. 6387 remains `non_directional_not_voting`; H.R.
   471 and H.R. 3898 retain their whole-package limits. M11D remains byte-identical,
   and canonical Semantic IR and all public/downstream authorities remain false.
-- M12E is the active detached policy-episode candidate stage. All 63 unique
-  measures fail closed to 63 singleton episodes, with zero multi-action,
-  cross-measure, ambiguous, unassigned, or blocked actions. Seven contrast
-  reviews record why common topic, agency, statute, CRA mechanism, direction, or
-  package breadth cannot create a primary grouping. The episode decision template
-  is empty; M12F and every later semantic, wording, publication, deployment,
-  persistence, database, and production authority remain false.
+- M12E was independently accepted at exact PR #152 head
+  `ecf087f0a6c916ef457014a75381198a16f54857` and merged as
+  `450a759c5a2d0eaf767e68bc999c7d3ec8e9ca1e`. All 63 unique measures remain
+  63 accepted singleton episodes, with zero multi-action, cross-measure,
+  ambiguous, unassigned, or blocked actions. Its seven contrast conclusions
+  remain accepted review evidence for keeping the affected actions separate.
+- M12F deterministically implements all 63 accepted M12E decisions as canonical
+  internal policy-episode membership. H.R. 6387 remains a non-directional Not
+  Voting singleton, and H.R. 471 and H.R. 3898 remain indivisible whole-package
+  singletons. Accepted M11F artifacts remain byte-identical.
+- M12G is the active detached behavioral Semantic IR candidate stage. It proposes
+  three bounded repeated patterns covering two California vehicle-emissions
+  waiver-disapproval choices, four DOE appliance/equipment rule-disapproval
+  choices, and seven BLM land-decision disapproval choices. There are no
+  trajectories, notable choices, or overlaps. Twenty-five episodes remain
+  contrasts, 24 have no safe higher-level proposition, and H.R. 6387 is explicit
+  unused non-directional evidence. The human decision template is empty; M12H
+  and every synthesis, wording, publication, deployment, persistence, database,
+  and production authority remain false.
 - Frontend Pass A implements a finder-first, URL-backed representative journey
   on `/`: compact overview, truthful Congress scope, responsive issue discovery,
   conditional reviewed analysis, conditional reviewed policy episodes, and a

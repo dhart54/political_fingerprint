@@ -34,9 +34,9 @@ The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-Active plan: [M12D/E Environment & Energy Action Meaning and Episode Candidates V1](plans/m12de_environment_energy_action_meaning_episodes_v1.md)
+Active plan: [M12F/G Environment & Energy Episode Acceptance and Semantic IR Candidates V1](plans/m12fg_environment_energy_episode_acceptance_semantic_ir_v1.md)
 
-Current review packet: [M12D/E Environment & Energy Review Packet](review_packets/m12de_environment_energy_action_meaning_episodes_v1.md)
+Current review packet: [M12F/G Environment & Energy Review Packet](review_packets/m12fg_environment_energy_episode_acceptance_semantic_ir_v1.md)
 
 The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 
@@ -80,11 +80,11 @@ Committed generated artifacts are required when builders or tests drift-check th
 
 Generated does not mean disposable. Regeneration must remain deterministic, and publication status must not change through regeneration.
 
-The Environment & Energy chain has reached M12D internal action-meaning
-acceptance and M12E detached episode candidates: 63 accepted action
-interpretations currently map one-to-one to 63 non-authorizing singleton
-candidates pending independent review. M12F and all later authorities remain
-inactive.
+The Environment & Energy chain has reached M12F canonical internal episode
+membership and M12G detached behavioral Semantic IR candidates. All 63 accepted
+actions remain in 63 singleton episodes; three bounded repeated patterns are
+pending independent substantive review. Behavioral Semantic IR acceptance and
+all later authorities remain inactive.
 
 ## Local-only caches and output
 

@@ -222,7 +222,12 @@ def validate_repository() -> dict[str, Any]:
     state = load(ROOT / "docs/editorial/current_state_index.json")
     m12e = state["active_m12e_policy_episode_candidate_milestone"]
     require(
-        m12e["milestone_state"] == "complete_pending_independent_semantic_review"
+        m12e["milestone_state"] == "completed_independent_semantic_review_merged"
+        and m12e["reviewed_pr"] == 152
+        and m12e["reviewed_head"] == "ecf087f0a6c916ef457014a75381198a16f54857"
+        and m12e["post_merge_main"] == "450a759c5a2d0eaf767e68bc999c7d3ec8e9ca1e"
+        and m12e["review_decision"]
+        == "approved_all_policy_episode_candidates_as_written"
         and m12e["accepted_action_count"] == 63
         and m12e["episode_count"] == 63
         and m12e["single_action_episode_count"] == 63
@@ -234,7 +239,8 @@ def validate_repository() -> dict[str, Any]:
         == batch["episode_candidate_subject_sha256"]
         and m12e["decision_template"]["sha256"] == file_sha256(DECISION_PATH)
         and m12e["decision_template"]["all_decisions_empty"] is True
-        and m12e["episode_acceptance_state"] == "not_started_not_authorized"
+        and m12e["episode_acceptance_state"]
+        == "accepted_as_written_implemented_by_m12f"
         and all(value is False for value in m12e["downstream_authorizations"].values()),
         "M12E current state differs",
     )
