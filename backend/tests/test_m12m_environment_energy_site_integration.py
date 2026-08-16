@@ -10,6 +10,7 @@ from app.editorial_presentations.environment_integration_candidate import (
     select_environment_site_integration_preview,
     validate_environment_site_integration_candidate,
 )
+from app.editorial_presentations.integration_candidate import governed_position_summary
 from app.main import app
 from backend.scripts.build_m12m_environment_energy_site_integration import build
 
@@ -165,9 +166,69 @@ def test_m12m_positions_and_evidence_use_all_63_governed_rows(monkeypatch) -> No
         for item in positions.json()["positions"]
         if item["domain"] == "ENVIRONMENT_ENERGY"
     )
-    assert row["total_votes"] == row["interpreted_total"] == 63
+    assert row == {
+        "domain": "ENVIRONMENT_ENERGY",
+        "yea_count": 15,
+        "nay_count": 47,
+        "other_count": 1,
+        "total_votes": 63,
+        "recorded_votes": 62,
+        "interpreted_support_count": 15,
+        "interpreted_oppose_count": 47,
+        "interpreted_other_count": 1,
+        "interpreted_total": 63,
+    }
+    assert row["total_votes"] == (
+        row["yea_count"] + row["nay_count"] + row["other_count"]
+    )
+    assert row["recorded_votes"] == row["yea_count"] + row["nay_count"]
+    assert row["interpreted_total"] == (
+        row["interpreted_support_count"]
+        + row["interpreted_oppose_count"]
+        + row["interpreted_other_count"]
+    )
     receipts = client.get(
         "/legislators/leg_valerie_p_foushee/positions/ENVIRONMENT_ENERGY/evidence",
         params=params,
     )
-    assert len(receipts.json()["evidence"]) == 63
+    receipt_rows = receipts.json()["evidence"]
+    assert len(receipt_rows) == 63
+    hr_6387 = next(
+        row for row in receipt_rows if row["canonical_action_id"] == "house:119:2:136"
+    )
+    assert (
+        hr_6387["governed_receipt_projection"]["exact_choice_position_effect"]
+        == "non_directional_not_voting"
+    )
+
+
+def test_governed_position_summary_retains_resolved_non_directional_effect() -> None:
+    rows = [
+        {
+            "issue_domain": "TEST_ISSUE",
+            "position": "yea",
+            "governed_receipt_projection": {
+                "exact_choice_position_effect": "supports_exact_choice"
+            },
+        },
+        {
+            "issue_domain": "TEST_ISSUE",
+            "position": "not_voting",
+            "governed_receipt_projection": {
+                "exact_choice_position_effect": "non_directional_not_voting"
+            },
+        },
+    ]
+    summary = governed_position_summary(rows, domain="TEST_ISSUE")
+    assert summary == {
+        "domain": "TEST_ISSUE",
+        "yea_count": 1,
+        "nay_count": 0,
+        "other_count": 1,
+        "total_votes": 2,
+        "recorded_votes": 1,
+        "interpreted_support_count": 1,
+        "interpreted_oppose_count": 0,
+        "interpreted_other_count": 1,
+        "interpreted_total": 2,
+    }

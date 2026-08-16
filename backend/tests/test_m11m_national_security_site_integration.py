@@ -276,8 +276,18 @@ def test_preview_positions_and_evidence_close_the_82_action_record(monkeypatch) 
         for row in positions.json()["positions"]
         if row["domain"] == "NATIONAL_SECURITY_FOREIGN"
     )
-    assert national_security["total_votes"] == 82
-    assert national_security["interpreted_total"] == 81
+    assert national_security == {
+        "domain": "NATIONAL_SECURITY_FOREIGN",
+        "yea_count": 39,
+        "nay_count": 43,
+        "other_count": 0,
+        "total_votes": 82,
+        "recorded_votes": 82,
+        "interpreted_support_count": 39,
+        "interpreted_oppose_count": 42,
+        "interpreted_other_count": 0,
+        "interpreted_total": 81,
+    }
 
     evidence = client.get(
         "/legislators/leg_valerie_p_foushee/positions/"

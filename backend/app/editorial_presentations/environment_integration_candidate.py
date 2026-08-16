@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from .compiler import canonical_digest
-from .integration_candidate import _compile_wording_item
+from .integration_candidate import _compile_wording_item, governed_position_summary
 from .selector import SUPPORTED_ISSUES, _fallback
 
 M12M_PREVIEW_TOKEN = "m12m-environment-energy"
@@ -321,34 +321,7 @@ def merge_environment_preview_positions(
     """Recompute only the inactive Environment preview summary from governed rows."""
 
     result = copy.deepcopy(base_response)
-    rows = [
-        row
-        for row in governed_evidence
-        if row.get("issue_domain") == "ENVIRONMENT_ENERGY"
-    ]
-    yea = sum(str(row.get("position", "")).lower() == "yea" for row in rows)
-    nay = sum(str(row.get("position", "")).lower() == "nay" for row in rows)
-    accepted = [row for row in rows if row.get("governed_receipt_projection")]
-    summary = {
-        "domain": "ENVIRONMENT_ENERGY",
-        "yea_count": yea,
-        "nay_count": nay,
-        "other_count": len(rows) - yea - nay,
-        "total_votes": len(rows),
-        "recorded_votes": len(rows),
-        "interpreted_support_count": sum(
-            row["governed_receipt_projection"]["exact_choice_position_effect"]
-            == "supports_exact_choice"
-            for row in accepted
-        ),
-        "interpreted_oppose_count": sum(
-            row["governed_receipt_projection"]["exact_choice_position_effect"]
-            == "opposes_exact_choice"
-            for row in accepted
-        ),
-        "interpreted_other_count": 0,
-        "interpreted_total": len(accepted),
-    }
+    summary = governed_position_summary(governed_evidence, domain="ENVIRONMENT_ENERGY")
     result["positions"] = [
         row
         for row in result.get("positions", [])
