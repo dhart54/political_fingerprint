@@ -29,6 +29,13 @@ digests, and every preserved limitation.
 Each accepted decision must equal its candidate as written. A source-blocked
 action cannot receive an authority decision or implementation record.
 
+The schemas are issue-, member-, reviewer-, and cardinality-neutral. Reviewer
+identity is a nonempty content-bound identity; the closed authority class remains
+`full_record_action_interpretation_review_authority_v1`. The accepted position-
+effect vocabulary includes support, opposition, Present, and Not Voting states.
+Zero or more source-blocked actions are permitted, with exact accounting enforced
+against the candidate artifact rather than a fixed historical count.
+
 ## Internal canonical boundary
 
 Human acceptance makes the implemented action meanings canonical internal
@@ -51,6 +58,9 @@ Every implementation record must reproduce its authority decision exactly and
 bind the authority artifact, authority decision, candidate, evidence map, and
 source references. The implementation may not revise wording, confidence,
 limitations, coverage, or position effect.
+
+Issue-cycle namespaces may distinguish deterministic record identities (for
+example, historical `m11d` and current `m12d`) without changing accepted content.
 
 Independent validation must recompute all decision and record digests, prove
 exact action-set equality, preserve blocked actions, validate schemas and final

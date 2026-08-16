@@ -77,6 +77,19 @@ def _direction(records: list[dict[str, Any]]) -> str:
         return "opposes_policy_proposition"
     if effects <= {"supports_exact_choice", "opposes_exact_choice"}:
         return "mixed_on_episode_choices"
+    if effects == {"non_directional_present"}:
+        return "non_directional_present"
+    if effects == {"non_directional_not_voting"}:
+        return "non_directional_not_voting"
+    if effects <= {"non_directional_present", "non_directional_not_voting"}:
+        return "non_directional_mixed_statuses"
+    if effects <= {
+        "supports_exact_choice",
+        "opposes_exact_choice",
+        "non_directional_present",
+        "non_directional_not_voting",
+    }:
+        return "mixed_directional_and_non_directional_choices"
     raise PolicyEpisodeCandidateError("unsupported accepted exact-choice effect")
 
 
@@ -97,7 +110,8 @@ def build_candidate_batch(
     candidate_artifact: dict[str, Any],
     multi_action_definitions: list[dict[str, Any]],
     contrast_groups: list[dict[str, Any]],
-    blocked_action: dict[str, Any],
+    blocked_action: dict[str, Any] | None,
+    accepted_interpretation_stage: str = "M11D",
 ) -> dict[str, Any]:
     records = implementation["subject"]["implementation_records"]
     candidates = candidate_artifact["subject"]["candidates"]
@@ -212,7 +226,11 @@ def build_candidate_batch(
                     row["action_id"]: row["accepted_exact_choice_position_effect"]
                     for row in episode_records
                 },
-                "rule": "Derive only from M11D accepted exact-choice position effects after episode membership is proposed; never derive from raw Yea/Nay, party, sponsor, ideology, or expected behavior.",
+                "rule": (
+                    f"Derive only from {accepted_interpretation_stage} accepted "
+                    "exact-choice position effects after episode membership is proposed; "
+                    "never derive from raw Yea/Nay, party, sponsor, ideology, or expected behavior."
+                ),
             },
             "grouping_type": grouping_type,
             "primary_action_ids": ordered_ids,
@@ -311,7 +329,7 @@ def build_candidate_batch(
             Counter(row["primary_accounting_state"] for row in accounting)
         ),
         "ambiguous_or_unassigned_action_ids": [],
-        "blocked_actions": [deepcopy(blocked_action)],
+        "blocked_actions": [] if blocked_action is None else [deepcopy(blocked_action)],
         "contrast_reviews": contrast_reviews,
         "episode_candidate_generation_state": "complete_non_authorizing",
         "episode_acceptance_state": "not_started_not_authorized",
@@ -339,7 +357,7 @@ def validate_candidate_batch(
     candidate_artifact: dict[str, Any],
     permitted_cross_measure_sets: set[frozenset[str]],
     prohibited_grouped_sets: list[set[str]],
-    blocked_action_id: str,
+    blocked_action_id: str | None,
 ) -> dict[str, Any]:
     verify_seal(batch, "episode_candidate_subject_sha256", "candidate batch")
     if not (
@@ -359,15 +377,22 @@ def validate_candidate_batch(
     }
     if set(by_id) != set(candidate_by_id):
         raise PolicyEpisodeCandidateError("upstream action sets differ")
-    if blocked_action_id in by_id:
-        raise PolicyEpisodeCandidateError("blocked action entered M11D implementation")
-    if subject["blocked_actions"] != [
-        {
-            "action_id": blocked_action_id,
-            "state": "source_blocked_uninterpreted_unavailable_for_episode_construction",
-            "primary_episode_id": None,
-        }
-    ]:
+    if blocked_action_id is not None and blocked_action_id in by_id:
+        raise PolicyEpisodeCandidateError(
+            "blocked action entered accepted interpretation implementation"
+        )
+    expected_blocked_actions = (
+        []
+        if blocked_action_id is None
+        else [
+            {
+                "action_id": blocked_action_id,
+                "state": "source_blocked_uninterpreted_unavailable_for_episode_construction",
+                "primary_episode_id": None,
+            }
+        ]
+    )
+    if subject["blocked_actions"] != expected_blocked_actions:
         raise PolicyEpisodeCandidateError("blocked-action boundary differs")
 
     primary: dict[str, str] = {}
@@ -379,7 +404,7 @@ def validate_candidate_batch(
             raise PolicyEpisodeCandidateError("episode action sequence differs")
         if len(action_ids) != len(set(action_ids)):
             raise PolicyEpisodeCandidateError("duplicate action within episode")
-        if blocked_action_id in action_ids:
+        if blocked_action_id is not None and blocked_action_id in action_ids:
             raise PolicyEpisodeCandidateError("blocked action included in episode")
         for prohibited in prohibited_grouped_sets:
             if len(set(action_ids) & prohibited) > 1:
@@ -435,6 +460,14 @@ def validate_candidate_batch(
                     f"{action_id}: action chronology or role differs"
                 )
         episode_records = [by_id[action_id] for action_id in action_ids]
+        if len(action_ids) == 1 and not (
+            episode["grouping_type"] == "single_action"
+            and episode["policy_proposition"]
+            == _policy_proposition(episode_records[0]["accepted_exact_action_meaning"])
+        ):
+            raise PolicyEpisodeCandidateError(
+                "singleton proposition differs from accepted action meaning"
+            )
         if episode["member_direction_candidate"] != _direction(episode_records):
             raise PolicyEpisodeCandidateError(
                 "episode direction not derived from accepted meaning/effect"
@@ -496,7 +529,7 @@ def validate_candidate_batch(
         "cross_measure_episode_count": cross_measure_count,
         "assigned_action_count": len(primary),
         "ambiguous_or_unassigned_count": 0,
-        "blocked_count": 1,
+        "blocked_count": len(expected_blocked_actions),
     }
 
 

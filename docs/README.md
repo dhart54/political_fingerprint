@@ -34,9 +34,9 @@ The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-Active plan: [M12C Environment & Energy Action Interpretation Candidates V1](plans/m12c_environment_energy_action_interpretation_v1.md)
+Active plan: [M12D/E Environment & Energy Action Meaning and Episode Candidates V1](plans/m12de_environment_energy_action_meaning_episodes_v1.md)
 
-Current review packet: [M12C Environment & Energy Action Interpretation Candidates V1](review_packets/m12c_environment_energy_action_interpretation_v1.md)
+Current review packet: [M12D/E Environment & Energy Review Packet](review_packets/m12de_environment_energy_action_meaning_episodes_v1.md)
 
 The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 
@@ -80,9 +80,11 @@ Committed generated artifacts are required when builders or tests drift-check th
 
 Generated does not mean disposable. Regeneration must remain deterministic, and publication status must not change through regeneration.
 
-The active National Security full-record chain has reached M11F internal
-policy-episode acceptance: 81 accepted action interpretations map one-to-one to
-81 singleton episodes. Semantic IR and all later authorities remain inactive.
+The Environment & Energy chain has reached M12D internal action-meaning
+acceptance and M12E detached episode candidates: 63 accepted action
+interpretations currently map one-to-one to 63 non-authorizing singleton
+candidates pending independent review. M12F and all later authorities remain
+inactive.
 
 ## Local-only caches and output
 

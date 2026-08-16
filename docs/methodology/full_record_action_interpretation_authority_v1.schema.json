@@ -6,7 +6,8 @@
       "const": true
     },
     "artifact_id": {
-      "const": "human-action-interpretation-authority:f000477:national_security_foreign:119:v1"
+      "minLength": 1,
+      "type": "string"
     },
     "artifact_role": {
       "const": "immutable_human_action_interpretation_authority"
@@ -40,19 +41,19 @@
       "additionalProperties": false,
       "properties": {
         "accepted_decision_count": {
-          "const": 81
+          "minimum": 0,
+          "type": "integer"
         },
         "action_ids": {
           "items": {
             "type": "string"
           },
-          "maxItems": 82,
-          "minItems": 82,
           "type": "array",
           "uniqueItems": true
         },
         "approved_universe_count": {
-          "const": 82
+          "minimum": 0,
+          "type": "integer"
         },
         "authority_decision": {
           "additionalProperties": false,
@@ -68,7 +69,8 @@
               "const": "full_record_action_interpretation_review_authority_v1"
             },
             "reviewer_identity": {
-              "const": "dhart54"
+              "minLength": 1,
+              "type": "string"
             }
           },
           "required": [
@@ -83,13 +85,15 @@
           "const": false
         },
         "congress": {
-          "const": 119
+          "minimum": 1,
+          "type": "integer"
         },
         "decision_accounting": {
           "additionalProperties": false,
           "properties": {
             "accept_candidate_as_written": {
-              "const": 81
+              "minimum": 0,
+              "type": "integer"
             }
           },
           "required": [
@@ -129,7 +133,9 @@
               "accepted_exact_choice_position_effect": {
                 "enum": [
                   "supports_exact_choice",
-                  "opposes_exact_choice"
+                  "opposes_exact_choice",
+                  "non_directional_present",
+                  "non_directional_not_voting"
                 ]
               },
               "accepted_limitations": {
@@ -150,7 +156,7 @@
                 "uniqueItems": true
               },
               "action_id": {
-                "pattern": "^house:119:[12]:[0-9]+$",
+                "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$",
                 "type": "string"
               },
               "candidate_content_subject_sha256": {
@@ -186,8 +192,6 @@
             ],
             "type": "object"
           },
-          "maxItems": 81,
-          "minItems": 81,
           "type": "array"
         },
         "downstream_authorizations": {
@@ -240,13 +244,16 @@
           "const": true
         },
         "issue_id": {
-          "const": "NATIONAL_SECURITY_FOREIGN"
+          "minLength": 1,
+          "type": "string"
         },
         "legislator_id": {
-          "const": "leg_valerie_p_foushee"
+          "minLength": 1,
+          "type": "string"
         },
         "member_id": {
-          "const": "F000477"
+          "minLength": 1,
+          "type": "string"
         },
         "official_cutoff": {
           "type": "object"
@@ -285,12 +292,11 @@
             ],
             "type": "object"
           },
-          "maxItems": 1,
-          "minItems": 1,
           "type": "array"
         },
         "source_blocked_count": {
-          "const": 1
+          "minimum": 0,
+          "type": "integer"
         }
       },
       "required": [

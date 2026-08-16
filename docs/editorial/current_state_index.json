@@ -4,7 +4,7 @@
   "owning_pipeline_for_new_work": "backend.app.semantic_ir.pipeline.run_editorial_pipeline",
   "only_executable_editorial_semantic_architecture": "editorial_semantic_ir_v1",
   "current_project_state": {
-    "as_of": "2026-08-15",
+    "as_of": "2026-08-16",
     "active_full_record_publications": [
       "JUSTICE_PUBLIC_SAFETY",
       "NATIONAL_SECURITY_FOREIGN"
@@ -18,6 +18,8 @@
     "active_selection_milestone": "m12a_next_full_record_issue_selection_v1",
     "active_source_readiness_milestone": "m12b_environment_energy_source_readiness_v1",
     "active_action_interpretation_candidate_milestone": "m12c_environment_energy_action_interpretation_v1",
+    "active_action_interpretation_decision_milestone": "m12d_environment_energy_action_meaning_acceptance_v1",
+    "active_policy_episode_candidate_milestone": "m12e_environment_energy_policy_episode_candidates_v1",
     "historical_milestone_sections_are_checkpoint_state": true
   },
   "canonical": {
@@ -54,10 +56,13 @@
     "full_record_action_interpretation_implementation_schema": "docs/methodology/full_record_action_interpretation_decision_implementation_v1.schema.json",
     "full_record_action_interpretation_implementation_parity_schema": "docs/methodology/full_record_action_interpretation_implementation_parity_v1.schema.json",
     "m11d_action_meaning_acceptance_validator": "scripts/validate_m11d_national_security_action_meaning_acceptance.py",
+    "m12d_action_meaning_acceptance_validator": "scripts/validate_m12d_environment_energy_action_meaning_acceptance.py",
     "full_record_policy_episode_candidate_contract": "docs/methodology/full_record_policy_episode_candidates_v1.md",
     "full_record_policy_episode_candidate_schema": "docs/methodology/full_record_policy_episode_candidate_batch_v1.schema.json",
+    "full_record_policy_episode_generic_candidate_schema": "docs/methodology/full_record_policy_episode_candidate_batch_generic_v1.schema.json",
     "full_record_policy_episode_human_decision_schema": "docs/methodology/full_record_policy_episode_human_decision_v1.schema.json",
     "m11e_policy_episode_candidate_validator": "scripts/validate_m11e_national_security_policy_episode_candidates.py",
+    "m12e_policy_episode_candidate_validator": "scripts/validate_m12e_environment_energy_policy_episode_candidates.py",
     "full_record_public_wording_decision_contract": "docs/methodology/full_record_public_wording_decision_implementation_v1.md",
     "full_record_public_wording_authority_schema": "docs/methodology/full_record_public_wording_authority_v1.schema.json",
     "full_record_public_wording_implementation_schema": "docs/methodology/full_record_public_wording_decision_implementation_v1.schema.json",
@@ -422,8 +427,15 @@
       "issue_id": "ENVIRONMENT_ENERGY"
     },
     "post_m12b_merge_base": "7d4754aed87296796a1ead277a8dab242ab26027",
-    "milestone_state": "complete_pending_independent_semantic_review",
-    "authority_effect": "detached_non_authorizing_candidates_only",
+    "milestone_state": "completed_independent_semantic_review_merged",
+    "authority_effect": "accepted_exact_input_to_m12d_authority",
+    "reviewed_pr": 151,
+    "reviewed_head": "013fc57dbff538fd9d2b0b99b85c0a2285c2faba",
+    "post_merge_main": "cdd1cf652b92b9577f698149534b7683d47c554e",
+    "reviewer_identity": "chatgpt:political_fingerprint_authority_thread",
+    "reviewer_authority": "full_record_action_interpretation_review_authority_v1",
+    "review_decision": "approved_all_candidate_meanings_and_position_effects",
+    "review_decision_timestamp": "2026-08-16T01:01:00Z",
     "approved_universe_count": 63,
     "interpretation_eligible_count": 63,
     "candidate_count": 63,
@@ -447,8 +459,8 @@
       "accepted": false,
       "authorizing": false
     },
-    "action_meaning_state": "not_accepted_candidates_pending_human_review",
-    "policy_episode_state": "not_started_unauthorized",
+    "action_meaning_state": "accepted_as_written_implemented_by_m12d",
+    "policy_episode_state": "m12e_candidates_active_pending_independent_review",
     "semantic_ir_state": "absent_unauthorized",
     "synthesis_state": "absent_unauthorized",
     "public_wording_state": "absent_unauthorized",
@@ -464,6 +476,132 @@
       "public_wording": false,
       "publication": false,
       "production_persistence": false,
+      "deployment": false
+    }
+  },
+  "active_m12d_action_interpretation_decision_milestone": {
+    "milestone": "m12d_environment_energy_action_meaning_acceptance_v1",
+    "plan": "docs/plans/m12de_environment_energy_action_meaning_episodes_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "ENVIRONMENT_ENERGY"
+    },
+    "post_m12c_merge_main": "cdd1cf652b92b9577f698149534b7683d47c554e",
+    "milestone_state": "completed_mechanical_acceptance_validated",
+    "accepted_decision_count": 63,
+    "source_blocked_count": 0,
+    "decision_accounting": {
+      "accept_candidate_as_written": 63
+    },
+    "position_effect_counts": {
+      "opposes_exact_choice": 47,
+      "supports_exact_choice": 15,
+      "non_directional_not_voting": 1
+    },
+    "coverage_assessment_counts": {
+      "bounded_official_purpose_summary": 61,
+      "package_level_bounded_summary": 2
+    },
+    "non_directional_action_ids": ["house:119:2:136"],
+    "broad_package_action_ids": ["house:119:1:25", "house:119:1:330"],
+    "authority": {
+      "artifact": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_environment_energy_119_v1/human_action_meaning_authority.json",
+      "id": "human-action-interpretation-authority:f000477:environment_energy:119:v1",
+      "sha256": "f5e0fa3b94e533ac8a23c8886d227c7fa26e33da83e40ef989da5941d0cd245c",
+      "authority_subject_sha256": "1186dfbef8a611396766f0eedc94d0773ae7b5020e197b6c02b7acfc9c119709"
+    },
+    "implementation": {
+      "artifact": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_environment_energy_119_v1/decision_implementation_bundle.json",
+      "id": "action-interpretation-decision-implementation:f000477:environment_energy:119:v1",
+      "sha256": "8cd447d71e606064c04caec0f34901e3b3bce2fb515e4dba4718806a06fff507",
+      "implementation_subject_sha256": "3dac037f28ec97416094b9d80337caddd4a3cf79e9d3bff40065a1c8fa49f9a3",
+      "record_count": 63
+    },
+    "canonical_internal_action_interpretation": true,
+    "canonical_semantic_acceptance": false,
+    "policy_episode_acceptance": false,
+    "public": false,
+    "publication_authorized": false,
+    "production_selectable": false,
+    "production_writes": false,
+    "downstream_authorizations": {
+      "policy_episode_acceptance": false,
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "deployment": false
+    }
+  },
+  "active_m12e_policy_episode_candidate_milestone": {
+    "milestone": "m12e_environment_energy_policy_episode_candidates_v1",
+    "plan": "docs/plans/m12de_environment_energy_action_meaning_episodes_v1.md",
+    "review_packet": "docs/review_packets/m12de_environment_energy_action_meaning_episodes_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "ENVIRONMENT_ENERGY"
+    },
+    "milestone_state": "complete_pending_independent_semantic_review",
+    "authority_effect": "detached_non_authorizing_candidates_only",
+    "accepted_action_count": 63,
+    "episode_count": 63,
+    "single_action_episode_count": 63,
+    "multi_action_episode_count": 0,
+    "cross_measure_episode_count": 0,
+    "ambiguous_or_unassigned_action_ids": [],
+    "blocked_action_ids": [],
+    "non_directional_action_ids": ["house:119:2:136"],
+    "multi_action_candidates": [],
+    "cross_measure_candidates": [],
+    "ambiguous_or_competing_groupings": [],
+    "contrast_review_count": 7,
+    "candidate": {
+      "artifact": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_environment_energy_119_v1/policy_episode_candidate_batch.json",
+      "id": "policy-episode-candidates:f000477:environment_energy:119:v1",
+      "sha256": "889c8f109f9b5b2fcd1652de9dcd14aa1735079db10c569c39fbc80c0d3d3e53",
+      "episode_candidate_subject_sha256": "8a8bf897e4a782a597ce28417cbda74503e8b3d93f5b547fc768be9e972c3adf"
+    },
+    "decision_template": {
+      "artifact": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_environment_energy_119_v1/human_episode_decision_template.json",
+      "sha256": "9b092c0eb8737299b1cb7b397ee00ec980650ff947f1c8fc1906fe0140b43b75",
+      "decision_template_subject_sha256": "1c52cfd58bec5ebb13970c2139c0403ec312b0ef1fcb4cd20d4db1afc5be2fbd",
+      "decision_count": 63,
+      "all_decisions_empty": true
+    },
+    "dossier": {
+      "artifact": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_environment_energy_119_v1/human_review_dossier.md",
+      "sha256": "189e813f417e58912a85984d269bdbc67115c8383622bfac2058f729c913dbd5"
+    },
+    "parity": {
+      "artifact": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_environment_energy_119_v1/parity_manifest.json",
+      "sha256": "03a52f9a3195959cfd122f402efc6eb71b624bd7420b651adf42185905c6f2ac",
+      "parity_subject_sha256": "6dd1eae788066803542a267f2a9b1ff126d4d84171853f4dcea7d3fd5fe9c71d"
+    },
+    "episode_acceptance_state": "not_started_not_authorized",
+    "semantic_ir_state": "absent_unauthorized",
+    "synthesis_state": "absent_unauthorized",
+    "public_wording_state": "absent_unauthorized",
+    "publication_state": "inactive_environment_energy",
+    "production_persistence": "not_authorized",
+    "production_writes": false,
+    "downstream_authorizations": {
+      "episode_acceptance": false,
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
       "deployment": false
     }
   },

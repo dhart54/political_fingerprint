@@ -7,6 +7,10 @@ Produce detached, non-authorizing exact-action interpretation candidates for all
 the accepted M12B source-readiness checkpoint. Stop for independent semantic
 review without accepting any candidate meaning.
 
+Independent review later accepted all 63 candidates as written at PR #151 head
+`013fc57dbff538fd9d2b0b99b85c0a2285c2faba`; that exact head merged as
+`cdd1cf652b92b9577f698149534b7683d47c554e` and became M12D's immutable input.
+
 ## Baseline and authority
 
 - Exact post-M12B main: `7d4754aed87296796a1ead277a8dab242ab26027`.

@@ -13,6 +13,11 @@ position effects after episode membership is proposed. Raw Yea/Nay, party,
 sponsor, ideology, expected behavior, and desired synthesis are forbidden
 derivation inputs.
 
+Present and Not Voting remain non-directional episode states. They participate
+in complete episode accounting but cannot become support or opposition. Candidate
+batches may have zero or more source-blocked actions; validation derives the
+exact blocked count from the accepted interpretation implementation.
+
 ## Grouping rules
 
 - A single accepted action may form a bounded episode when no broader grouping
@@ -55,3 +60,7 @@ production, or deployment.
 The human dossier prioritizes practical judgments. Detailed source bindings and
 content hashes remain in governed JSON rather than overwhelming the primary
 review surface.
+
+The generic batch schema accepts both the historical M11 binding shape and the
+stage-neutral action-interpretation binding shape used by later issue cycles.
+Historical candidate artifacts and parity manifests remain unchanged.

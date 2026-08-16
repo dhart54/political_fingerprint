@@ -3,6 +3,7 @@ from __future__ import annotations
 from collections import Counter
 from copy import deepcopy
 from pathlib import Path
+import re
 from typing import Any
 
 from backend.app.etl.full_record_action_interpretation import (
@@ -18,6 +19,7 @@ IMPLEMENTATION_SCHEMA_VERSION = (
 )
 ACCEPTED_DECISION = "accept_candidate_as_written"
 IMPLEMENTATION_STATE = "implemented_human_accepted_as_written"
+REVIEWER_AUTHORITY = "full_record_action_interpretation_review_authority_v1"
 
 DOWNSTREAM_AUTHORIZATIONS = {
     "policy_episode_construction": False,
@@ -70,6 +72,11 @@ def build_authority_record(
     reviewer_authority: str,
     decision_timestamp: str,
 ) -> dict[str, Any]:
+    _require(bool(reviewer_identity.strip()), "reviewer identity must be nonempty")
+    _require(
+        reviewer_authority == REVIEWER_AUTHORITY,
+        "reviewer authority class differs",
+    )
     validate_candidate_artifact(
         candidate_artifact,
         readiness_artifact=readiness_artifact,
@@ -190,6 +197,11 @@ def validate_authority_record(
     )
     subject = authority["subject"]
     _require(
+        bool(subject["authority_decision"]["reviewer_identity"].strip())
+        and subject["authority_decision"]["reviewer_authority"] == REVIEWER_AUTHORITY,
+        "authority reviewer identity/class differs",
+    )
+    _require(
         sha256_json(subject) == authority["authority_subject_sha256"],
         "authority subject digest mismatch",
     )
@@ -263,7 +275,12 @@ def build_implementation_bundle(
     authority_file_sha256: str,
     candidate_artifact: dict[str, Any],
     artifact_id: str,
+    implementation_namespace: str = "m11d",
 ) -> dict[str, Any]:
+    _require(
+        bool(re.fullmatch(r"[a-z][a-z0-9_]*", implementation_namespace)),
+        "invalid implementation namespace",
+    )
     validate_authority_record(authority, candidate_artifact=candidate_artifact)
     decisions = {item["action_id"]: item for item in authority["subject"]["decisions"]}
     candidates = {
@@ -275,7 +292,10 @@ def build_implementation_bundle(
         candidate = candidates[action_id]
         record_subject = {
             "action_id": action_id,
-            "record_id": f"action-interpretation-decision-implementation:{action_id}:m11d:v1",
+            "record_id": (
+                "action-interpretation-decision-implementation:"
+                f"{action_id}:{implementation_namespace}:v1"
+            ),
             "candidate_id": candidate["candidate_id"],
             "candidate_content_subject_sha256": candidate[
                 "candidate_content_subject_sha256"
