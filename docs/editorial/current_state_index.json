@@ -16,6 +16,7 @@
     "national_security_receipts_only": false,
     "justice_full_record_state": "production_active_live_verified",
     "active_selection_milestone": "m12a_next_full_record_issue_selection_v1",
+    "active_source_readiness_milestone": "m12b_environment_energy_source_readiness_v1",
     "historical_milestone_sections_are_checkpoint_state": true
   },
   "canonical": {
@@ -42,6 +43,7 @@
     "full_issue_universe_authority_validator": "scripts/validate_full_issue_universe_authority.py",
     "full_record_source_readiness_schema": "docs/methodology/full_record_interpretation_source_readiness_v1.schema.json",
     "m11b_source_readiness_validator": "scripts/validate_m11b_national_security_source_readiness.py",
+    "m12b_source_readiness_validator": "scripts/validate_m12b_environment_energy_source_readiness.py",
     "full_record_action_interpretation_candidate_contract": "docs/methodology/full_record_action_interpretation_candidates_v1.md",
     "full_record_action_interpretation_candidate_schema": "docs/methodology/full_record_action_interpretation_candidates_v1.schema.json",
     "m11c_action_interpretation_validator": "scripts/validate_m11c_national_security_action_interpretation.py",
@@ -306,7 +308,7 @@
       "accepted_head": "1860ef0fab3f65ffb303c5b74b380f41fe929421"
     }
   },
-  "active_source_readiness_milestone": {
+  "completed_m11b_source_readiness_milestone": {
     "milestone": "m11b_national_security_source_readiness_v1",
     "plan": "docs/plans/m11b_national_security_source_readiness_v1.md",
     "subject": {
@@ -335,6 +337,53 @@
       "source_readiness_subject_sha256": "53af365c4b06d4cc96fdeba17a1d65c80d89ae960d8cf986b7a5bf9599ec51bd",
       "ready_count": 81,
       "blocked_count": 1,
+      "authorizing": false
+    },
+    "interpretation_state": "not_started",
+    "policy_episode_state": "not_accepted",
+    "semantic_ir_state": "absent",
+    "synthesis_state": "absent",
+    "publication_state": "inactive",
+    "production_persistence": "not_authorized",
+    "publication_changes": false,
+    "production_writes": false,
+    "downstream_authorizations": {
+      "action_interpretation": false,
+      "episode_acceptance": false,
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false
+    }
+  },
+  "active_source_readiness_milestone": {
+    "milestone": "m12b_environment_energy_source_readiness_v1",
+    "plan": "docs/plans/m12b_environment_energy_source_readiness_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "ENVIRONMENT_ENERGY"
+    },
+    "milestone_state": "complete_pending_independent_review",
+    "authority_effect": "source_readiness_only",
+    "authority_receipt": "universe-authority:f000477:environment_energy:119:v1",
+    "approved_universe_count": 63,
+    "approved_action_set_sha256": "843740a27ef191294bcf0cc3d2b29aeda1751351d775f8fadd7f44708e2312c8",
+    "universe_subject_sha256": "29b42a593639a1c62745e959554596a40a8dbf8205e1b3a6af83234c8f49866e",
+    "interpretation_source_readiness": "complete_63_ready_0_blocked",
+    "interpretation_source_readiness_artifact": "docs/editorial/full_record_reviews/source_readiness/f000477_environment_energy_119_interpretation_source_readiness_v1.json",
+    "review_packet": "docs/review_packets/m12b_environment_energy_source_readiness_v1.md",
+    "validator": "scripts/validate_m12b_environment_energy_source_readiness.py",
+    "interpretation_source_readiness_identity": {
+      "id": "interpretation-source-readiness:f000477:environment_energy:119:v1",
+      "sha256": "ebdb1ba1a3fc40394ebd108e229a885a27eaadd964151a0843fa64e8c5e947ba",
+      "source_readiness_subject_sha256": "3d86b24930c0f4d1e97612da60b4b6dcba8aaadd712c12df01ce62c409a63a95",
+      "ready_count": 63,
+      "blocked_count": 0,
       "authorizing": false
     },
     "interpretation_state": "not_started",

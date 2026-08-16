@@ -200,7 +200,7 @@ def _select_text_version(
 ) -> tuple[str, str, str]:
     _congress, measure_type, _number = identity.split(":")
     lowered = official_action_description.casefold()
-    if measure_type == "s":
+    if measure_type in {"s", "sjres"}:
         wanted = (
             "Engrossed Amendment House"
             if "amendment in the nature of a substitute" in lowered
@@ -237,7 +237,10 @@ def _select_text_version(
             f"stage-compatible text is not unique: {identity} {wanted} {action_date}"
         )
     url = _formatted_xml(candidates[0])
-    match = re.search(r"BILLS-119(?:hr|s|hconres)\d+([a-z]+)\.xml$", url)
+    match = re.search(
+        r"BILLS-119(?:hr|s|hconres|hjres|hres|sconres|sjres)\d+([a-z]+)\.xml$",
+        url,
+    )
     if not match:
         raise ValueError(f"official text URL lacks version code: {url}")
     return wanted, match.group(1), url
@@ -429,7 +432,7 @@ def _whole_measure_sources(
         xml_path, logical_name=xml_path.name, evidence_root=evidence_root
     )
     measure_type = identity.split(":")[1]
-    if measure_type == "s":
+    if measure_type in {"s", "sjres"}:
         content_class = "stage_compatible_senate_origin_text"
     elif measure_type in {"hconres", "hjres", "hres"}:
         content_class = "operative_resolution_text"

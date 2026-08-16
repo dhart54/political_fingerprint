@@ -65,77 +65,80 @@ def load_house_clerk_member_actions(
     source_dirs: Iterable[Path],
     *,
     bioguide_id: str,
+    source_paths: Iterable[Path] = (),
 ) -> list[dict[str, Any]]:
     actions: list[dict[str, Any]] = []
-    for source_dir in source_dirs:
-        for path in sorted(source_dir.glob("roll*.xml")):
-            root = ElementTree.parse(path).getroot()
-            metadata = root.find("vote-metadata")
-            if metadata is None:
-                raise ValueError(f"missing vote metadata: {path}")
-            member_vote = None
-            for recorded_vote in root.findall("./vote-data/recorded-vote"):
-                legislator = recorded_vote.find("legislator")
-                if legislator is None:
-                    continue
-                identity = (
-                    legislator.attrib.get("bioguide-id")
-                    or legislator.attrib.get("name-id")
-                )
-                if identity == bioguide_id:
-                    member_vote = _required_text(recorded_vote.find("vote"))
-                    break
-            if member_vote is None:
-                raise ValueError(
-                    f"{bioguide_id} missing from official roll call {path.name}"
-                )
-            congress = int(_required_text(metadata.find("congress")))
-            session = _session_number(_required_text(metadata.find("session")))
-            roll = int(_required_text(metadata.find("rollcall-num")))
-            description = (
-                _optional_text(metadata.find("vote-desc"))
-                or _optional_text(metadata.find("amendment-author"))
-                or _required_text(metadata.find("vote-question"))
-            )
-            bill_text = _optional_text(metadata.find("legis-num"))
-            if bill_text is None:
+    paths = [
+        path
+        for source_dir in source_dirs
+        for path in sorted(source_dir.glob("roll*.xml"))
+    ]
+    paths.extend(source_paths)
+    for path in sorted(set(paths)):
+        root = ElementTree.parse(path).getroot()
+        metadata = root.find("vote-metadata")
+        if metadata is None:
+            raise ValueError(f"missing vote metadata: {path}")
+        member_vote = None
+        for recorded_vote in root.findall("./vote-data/recorded-vote"):
+            legislator = recorded_vote.find("legislator")
+            if legislator is None:
                 continue
-            try:
-                bill_ref = _bill_ref(congress, bill_text)
-            except ValueError:
-                # Match the repository House adapter: organizational votes
-                # such as QUORUM lack a supported legislative measure identity
-                # and are not member legislative actions in this inventory.
-                continue
-            actions.append(
-                {
-                    "canonical_action_id": (
-                        f"house:{congress}:{session}:{roll}"
-                    ),
-                    "chamber": "house",
-                    "congress": congress,
-                    "session": session,
-                    "rollcall_number": roll,
-                    "vote_date": _house_date(
-                        _required_text(metadata.find("action-date"))
-                    ),
-                    "bill_ref": bill_ref,
-                    "question": _required_text(metadata.find("vote-question")),
-                    "description": description,
-                    "member_action": _member_action(member_vote),
-                    "source_url": (
-                        f"https://clerk.house.gov/evs/"
-                        f"{_house_year(congress, session)}/roll{roll:03d}.xml"
-                    ),
-                }
+            identity = legislator.attrib.get("bioguide-id") or legislator.attrib.get(
+                "name-id"
             )
+            if identity == bioguide_id:
+                member_vote = _required_text(recorded_vote.find("vote"))
+                break
+        if member_vote is None:
+            raise ValueError(
+                f"{bioguide_id} missing from official roll call {path.name}"
+            )
+        congress = int(_required_text(metadata.find("congress")))
+        session = _session_number(_required_text(metadata.find("session")))
+        roll = int(_required_text(metadata.find("rollcall-num")))
+        description = (
+            _optional_text(metadata.find("vote-desc"))
+            or _optional_text(metadata.find("amendment-author"))
+            or _required_text(metadata.find("vote-question"))
+        )
+        bill_text = _optional_text(metadata.find("legis-num"))
+        if bill_text is None:
+            continue
+        try:
+            bill_ref = _bill_ref(congress, bill_text)
+        except ValueError:
+            # Match the repository House adapter: organizational votes
+            # such as QUORUM lack a supported legislative measure identity
+            # and are not member legislative actions in this inventory.
+            continue
+        actions.append(
+            {
+                "canonical_action_id": f"house:{congress}:{session}:{roll}",
+                "chamber": "house",
+                "congress": congress,
+                "session": session,
+                "rollcall_number": roll,
+                "vote_date": _house_date(_required_text(metadata.find("action-date"))),
+                "bill_ref": bill_ref,
+                "question": _required_text(metadata.find("vote-question")),
+                "description": description,
+                "member_action": _member_action(member_vote),
+                "source_url": (
+                    f"https://clerk.house.gov/evs/"
+                    f"{_house_year(congress, session)}/roll{roll:03d}.xml"
+                ),
+            }
+        )
     by_id: dict[str, dict[str, Any]] = {}
     for action in actions:
         action_id = action["canonical_action_id"]
         if action_id in by_id:
             raise ValueError(f"duplicate official action: {action_id}")
         by_id[action_id] = action
-    return sorted(by_id.values(), key=lambda row: action_sort_key(row["canonical_action_id"]))
+    return sorted(
+        by_id.values(), key=lambda row: action_sort_key(row["canonical_action_id"])
+    )
 
 
 def load_congress_metadata(

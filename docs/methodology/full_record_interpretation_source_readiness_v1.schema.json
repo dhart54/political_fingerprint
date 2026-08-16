@@ -282,9 +282,9 @@
       "additionalProperties": false,
       "required": ["total_action_count", "ready_count", "blocked_count", "counts_by_readiness_state"],
       "properties": {
-        "total_action_count": {"const": 82},
-        "ready_count": {"type": "integer", "minimum": 0, "maximum": 82},
-        "blocked_count": {"type": "integer", "minimum": 0, "maximum": 82},
+        "total_action_count": {"type": "integer", "minimum": 1},
+        "ready_count": {"type": "integer", "minimum": 0},
+        "blocked_count": {"type": "integer", "minimum": 0},
         "counts_by_readiness_state": {
           "type": "object",
           "additionalProperties": false,
@@ -335,8 +335,7 @@
         },
         "action_ids": {
           "type": "array",
-          "minItems": 82,
-          "maxItems": 82,
+          "minItems": 1,
           "uniqueItems": true,
           "items": {"type": "string"}
         },
@@ -345,8 +344,7 @@
         "criteria_version": {"const": "full_record_interpretation_source_readiness_criteria_v1"},
         "action_readiness": {
           "type": "array",
-          "minItems": 82,
-          "maxItems": 82,
+          "minItems": 1,
           "items": {"$ref": "#/definitions/actionRecord"}
         },
         "aggregate": {"$ref": "#/definitions/aggregate"}

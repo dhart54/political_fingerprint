@@ -34,7 +34,9 @@ The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-Active plan: [M12A Next Full-Record Issue Selection V1](plans/m12a_next_full_record_issue_selection_v1.md)
+Active plan: [M12B Environment & Energy Source Readiness V1](plans/m12b_environment_energy_source_readiness_v1.md)
+
+Current review packet: [M12B Environment & Energy Interpretation Source Readiness V1](review_packets/m12b_environment_energy_source_readiness_v1.md)
 
 The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 

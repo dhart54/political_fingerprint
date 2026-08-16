@@ -6,11 +6,15 @@ product, civic, publication, or production semantics.
 
 ## Active plan
 
-- [M12A Next Full-Record Issue Selection V1](m12a_next_full_record_issue_selection_v1.md)
-  - selects the next Valerie Foushee 119th-Congress full-record issue under
-    generic evidence rules and stops at a pending-review universe proposal.
+- [M12B Environment & Energy Source Readiness V1](m12b_environment_energy_source_readiness_v1.md)
+  - evaluates official-source readiness for exactly the 63 actions authorized
+    by the accepted M12A receipt and stops at a draft PR before interpretation.
 
 ## Retained unresolved plans
+
+- [M12A Next Full-Record Issue Selection V1](m12a_next_full_record_issue_selection_v1.md)
+  - completed at PR #149 as the accepted 63-action Environment & Energy
+    universe-membership checkpoint retained as M12B's immutable input.
 
 - [M11L National Security Public-Wording Acceptance V1](m11l_national_security_public_wording_acceptance_v1.md)
   - historical wording-acceptance plan retained as an input to the completed

@@ -106,6 +106,58 @@ def _raw_path(source: dict[str, Any]) -> Path:
     return path
 
 
+def _governed_clerk_rows(
+    records: list[dict[str, Any]],
+    *,
+    candidates: dict[str, dict[str, Any]],
+    source_inventory_bindings: dict[str, dict[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    rows: dict[str, dict[str, Any]] = {}
+    for record in records:
+        action_id = record["action_id"]
+        governed_sources = [
+            source
+            for source in record["sources"]
+            if source["source_type"] == "house_clerk_roll_call"
+        ]
+        approved_sources = [
+            source
+            for source in candidates[action_id]["sources"]
+            if source["source_type"] == "house_clerk_roll_call_xml"
+        ]
+        inventory_sources = [
+            source
+            for source in source_inventory_bindings[action_id]["sources"]
+            if source["source_type"] == "house_clerk_roll_call_xml"
+        ]
+        _require(
+            len(governed_sources)
+            == len(approved_sources)
+            == len(inventory_sources)
+            == 1,
+            f"Clerk source count mismatch: {action_id}",
+        )
+        governed = governed_sources[0]
+        approved = approved_sources[0]
+        inventory = inventory_sources[0]
+        _require(
+            governed["raw_provenance"]["sha256"]
+            == approved["sha256"]
+            == inventory["sha256"],
+            f"approved Clerk digest mismatch: {action_id}",
+        )
+        path = _raw_path(governed)
+        parsed = load_house_clerk_member_actions(
+            (), bioguide_id="F000477", source_paths=[path]
+        )
+        _require(
+            len(parsed) == 1 and parsed[0]["canonical_action_id"] == action_id,
+            f"governed Clerk action identity mismatch: {action_id}",
+        )
+        rows[action_id] = parsed[0]
+    return rows
+
+
 def _xml_title_and_body(path: Path) -> tuple[str, bool]:
     root = ElementTree.parse(path).getroot()
     title = ""
@@ -122,9 +174,14 @@ def _xml_title_and_body(path: Path) -> tuple[str, bool]:
 
 def _identity_title_signal(identity: str) -> str:
     _congress, kind, number = identity.split(":")
-    title_kind = {"hconres": "HCON", "hjres": "HJ", "hres": "HRES"}.get(
-        kind, kind.upper()
-    )
+    title_kind = {
+        "hconres": "HCON",
+        "hjres": "HJ",
+        "hres": "HRES",
+        "sconres": "SCON",
+        "sjres": "SJ",
+        "sres": "SRES",
+    }.get(kind, kind.upper())
     return f"119{title_kind}{number}"
 
 
@@ -144,7 +201,9 @@ def _validate_record(
         f"stage mismatch: {action_id}",
     )
     _require(
-        record["official_member_action"] == clerk["member_action"]
+        action_id == clerk["canonical_action_id"]
+        and candidate["bill_ref"] == clerk["bill_ref"]
+        and record["official_member_action"] == clerk["member_action"]
         and record["official_action_date"] == clerk["vote_date"]
         and record["roll_number"] == clerk["rollcall_number"],
         f"Clerk action mismatch: {action_id}",
@@ -297,7 +356,7 @@ def _validate_record(
     version = operative["neutral_projection"]["text_version"]
     lowered = description.casefold()
     measure_type = identity.split(":")[1]
-    if measure_type == "s":
+    if measure_type in {"s", "sjres"}:
         expected_version = (
             "eah" if "amendment in the nature of a substitute" in lowered else "es"
         )
@@ -390,10 +449,14 @@ def validate_repository() -> dict[str, Any]:
         for row in proposal["candidate_dispositions"]
         if row["action_id"] in set(approved)
     }
-    clerk_rows = {
-        row["canonical_action_id"]: row
-        for row in load_house_clerk_member_actions(CLERK_DIRS, bioguide_id="F000477")
+    inventory_rows = {
+        row["action_id"]: row for row in inventory["selected_candidate_source_bindings"]
     }
+    clerk_rows = _governed_clerk_rows(
+        subject["action_readiness"],
+        candidates=candidate_rows,
+        source_inventory_bindings=inventory_rows,
+    )
     for record in subject["action_readiness"]:
         _validate_record(
             record,
@@ -437,7 +500,7 @@ def validate_repository() -> dict[str, Any]:
         "H.R. 2721 date-text discrepancy limitation missing",
     )
 
-    current = load_json(CURRENT_STATE_PATH)["active_source_readiness_milestone"]
+    current = load_json(CURRENT_STATE_PATH)["completed_m11b_source_readiness_milestone"]
     identity = current["interpretation_source_readiness_identity"]
     accepted_state = current["milestone_state"] == "completed_human_accepted"
     _require(
