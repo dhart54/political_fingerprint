@@ -54,7 +54,7 @@ deployment promotion, persistence, production/database writes, and M12D.
 - [x] Empty human decisions and all downstream authorizations remain false.
 - [x] Accepted M11C output and the Justice/National Security chains remain
   unchanged.
-- [ ] Deterministic generation, adversarial coverage, full validation, draft PR,
+- [x] Deterministic generation, adversarial coverage, full validation, draft PR,
   and hosted checks pass.
 
 ## Stop conditions
@@ -86,4 +86,5 @@ would change, or any forbidden downstream/production boundary would be crossed.
 - Documentation governance, terminology governance, Ruff, compile checks,
   tracked-JSON parsing, public review-state catalog determinism, and
   `git diff --check` pass.
-- Draft-PR publication and hosted checks remain pending.
+- Draft PR #151 is open against `main`; all six hosted checks passed on its exact
+  initial implementation head.
