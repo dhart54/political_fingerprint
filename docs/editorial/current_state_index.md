@@ -12,7 +12,7 @@ The machine-readable authority is
   generated historical evidence remain in place as noncanonical evidence. A
   119-file whole-tree manifest locks those roots to the cutover base.
 - Acquisition capability and tests remain intact.
-- Current production state as of August 15, 2026 has exactly two active
+- Current production state as of August 16, 2026 has exactly two active
   F000477 full-record publications: Justice & Public Safety and National
   Security & Foreign Policy. The completed M11N chain performed its bounded
   production write, National Security is not receipts-only for `scope=119` or
@@ -27,13 +27,22 @@ The machine-readable authority is
   `7d4754aed87296796a1ead277a8dab242ab26027`. Its source-readiness-only
   artifact records all 63 authorized actions as ready and zero blocked. It does
   not itself accept any action meaning.
-- M12C is the active Environment & Energy action-interpretation-candidate
-  milestone. It proposes one detached, non-authorizing exact-action meaning for
-  each of the 63 ready actions and routes all of them to independent semantic
-  review. `house:119:2:136` remains Not Voting and non-directional. Two broad
-  packages retain explicit whole-package limits. The decision template is empty;
-  action-meaning acceptance and every later semantic, wording, publication,
-  deployment, persistence, and production authority remain false.
+- M12C was independently accepted at exact PR #151 head
+  `013fc57dbff538fd9d2b0b99b85c0a2285c2faba` and merged as
+  `cdd1cf652b92b9577f698149534b7683d47c554e`. All 63 exact-action meanings,
+  effects, confidence and coverage states, limitations, evidence maps, and source
+  bindings were accepted as written.
+- M12D deterministically implements those 63 decisions as canonical internal
+  action interpretations. H.R. 6387 remains `non_directional_not_voting`; H.R.
+  471 and H.R. 3898 retain their whole-package limits. M11D remains byte-identical,
+  and canonical Semantic IR and all public/downstream authorities remain false.
+- M12E is the active detached policy-episode candidate stage. All 63 unique
+  measures fail closed to 63 singleton episodes, with zero multi-action,
+  cross-measure, ambiguous, unassigned, or blocked actions. Seven contrast
+  reviews record why common topic, agency, statute, CRA mechanism, direction, or
+  package breadth cannot create a primary grouping. The episode decision template
+  is empty; M12F and every later semantic, wording, publication, deployment,
+  persistence, database, and production authority remain false.
 - Frontend Pass A implements a finder-first, URL-backed representative journey
   on `/`: compact overview, truthful Congress scope, responsive issue discovery,
   conditional reviewed analysis, conditional reviewed policy episodes, and a

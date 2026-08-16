@@ -6,10 +6,12 @@
       "type": "object"
     },
     "artifact_id": {
-      "const": "action-interpretation-decision-implementation-parity:f000477:national_security_foreign:119:v1"
+      "minLength": 1,
+      "type": "string"
     },
     "decision_count": {
-      "const": 81
+      "minimum": 0,
+      "type": "integer"
     },
     "downstream_authorizations": {
       "additionalProperties": false,
@@ -91,7 +93,8 @@
       "const": "full_record_action_interpretation_implementation_parity_v1"
     },
     "source_blocked_count": {
-      "const": 1
+      "minimum": 0,
+      "type": "integer"
     }
   },
   "required": [

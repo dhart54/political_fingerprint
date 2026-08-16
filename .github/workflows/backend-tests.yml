@@ -46,6 +46,10 @@ jobs:
           python scripts/validate_m12a_universe_authority.py
           python scripts/validate_m12b_environment_energy_source_readiness.py
           python scripts/validate_m12c_environment_energy_action_interpretation.py
+          python scripts/validate_m11d_national_security_action_meaning_acceptance.py
+          python scripts/validate_m12d_environment_energy_action_meaning_acceptance.py
+          python scripts/validate_m11e_national_security_policy_episode_candidates.py
+          python scripts/validate_m12e_environment_energy_policy_episode_candidates.py
           python scripts/validate_action_interpretation_decision_implementation_v1.py
           python scripts/validate_policy_episode_decision_implementation_v1.py
           python scripts/validate_m11f_national_security_policy_episode_acceptance.py
@@ -75,6 +79,8 @@ jobs:
           backend/tests/test_m12a_universe_authority.py
           backend/tests/test_m12b_environment_energy_source_readiness.py
           backend/tests/test_m12c_environment_energy_action_interpretation.py
+          backend/tests/test_m12d_environment_energy_action_meaning_acceptance.py
+          backend/tests/test_m12e_environment_energy_policy_episode_candidates.py
           backend/tests/test_full_record_action_interpretation.py
           backend/tests/test_full_record_action_interpretation_decisions.py
           backend/tests/test_full_record_policy_episode_candidates.py

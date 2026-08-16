@@ -292,11 +292,14 @@ def validate_repository() -> dict[str, Any]:
     _require(
         m12c_state["milestone"] == "m12c_environment_energy_action_interpretation_v1"
         and m12c_state["milestone_state"]
-        == "complete_pending_independent_semantic_review"
+        == "completed_independent_semantic_review_merged"
+        and m12c_state["reviewed_pr"] == 151
+        and m12c_state["reviewed_head"] == "013fc57dbff538fd9d2b0b99b85c0a2285c2faba"
+        and m12c_state["post_merge_main"] == "cdd1cf652b92b9577f698149534b7683d47c554e"
         and m12c_state["approved_universe_count"] == 63
         and m12c_state["candidate_count"] == 63
         and m12c_state["action_meaning_state"]
-        == "not_accepted_candidates_pending_human_review"
+        == "accepted_as_written_implemented_by_m12d"
         and m12c_state["candidate_identity"]["sha256"]
         == canonical_file_sha256(ARTIFACT_PATH)
         and m12c_state["candidate_identity"]["interpretation_subject_sha256"]

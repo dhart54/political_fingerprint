@@ -1,0 +1,36 @@
+{
+  "accepted": false,
+  "artifact_id": "policy-episode-candidate-parity:f000477:environment_energy:119:v1",
+  "authorizing": false,
+  "candidate": true,
+  "candidate_batch": {
+    "artifact_id": "policy-episode-candidates:f000477:environment_energy:119:v1",
+    "episode_candidate_subject_sha256": "8a8bf897e4a782a597ce28417cbda74503e8b3d93f5b547fc768be9e972c3adf"
+  },
+  "canonical": false,
+  "generated_last": true,
+  "parity_state": "pass",
+  "parity_subject_sha256": "6dd1eae788066803542a267f2a9b1ff126d4d84171853f4dcea7d3fd5fe9c71d",
+  "public": false,
+  "referenced_artifacts": [
+    {
+      "episode_candidate_subject_sha256": "8a8bf897e4a782a597ce28417cbda74503e8b3d93f5b547fc768be9e972c3adf",
+      "final_file_sha256": "889c8f109f9b5b2fcd1652de9dcd14aa1735079db10c569c39fbc80c0d3d3e53",
+      "path": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_environment_energy_119_v1/policy_episode_candidate_batch.json"
+    },
+    {
+      "decision_template_subject_sha256": "1c52cfd58bec5ebb13970c2139c0403ec312b0ef1fcb4cd20d4db1afc5be2fbd",
+      "final_file_sha256": "9b092c0eb8737299b1cb7b397ee00ec980650ff947f1c8fc1906fe0140b43b75",
+      "path": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_environment_energy_119_v1/human_episode_decision_template.json"
+    },
+    {
+      "final_file_sha256": "189e813f417e58912a85984d269bdbc67115c8383622bfac2058f729c913dbd5",
+      "path": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_environment_energy_119_v1/human_review_dossier.md"
+    },
+    {
+      "final_file_sha256": "a893c2961fdfdae85dcd3f51866136558bc524d838a1500f84c84472d4cc35be",
+      "path": "docs/methodology/full_record_policy_episode_candidate_batch_generic_v1.schema.json"
+    }
+  ],
+  "schema_version": "full_record_policy_episode_candidate_parity_v1"
+}

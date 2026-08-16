@@ -125,13 +125,21 @@ def _downstream_schema() -> dict[str, Any]:
 
 def authority_schema() -> dict[str, Any]:
     decision_properties = {
-        "action_id": {"type": "string", "pattern": "^house:119:[12]:[0-9]+$"},
+        "action_id": {
+            "type": "string",
+            "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$",
+        },
         "candidate_id": {"type": "string", "minLength": 1},
         "candidate_content_subject_sha256": _sha_schema(),
         "decision": {"const": ACCEPTED_DECISION},
         "accepted_exact_action_meaning": {"type": "string", "minLength": 1},
         "accepted_exact_choice_position_effect": {
-            "enum": ["supports_exact_choice", "opposes_exact_choice"]
+            "enum": [
+                "supports_exact_choice",
+                "opposes_exact_choice",
+                "non_directional_present",
+                "non_directional_not_voting",
+            ]
         },
         "accepted_confidence": {"enum": ["high", "medium", "low"]},
         "accepted_limitations": {
@@ -163,10 +171,10 @@ def authority_schema() -> dict[str, Any]:
         "accepted_for_interpretation": {"const": False},
     }
     subject_properties = {
-        "member_id": {"const": "F000477"},
-        "legislator_id": {"const": "leg_valerie_p_foushee"},
-        "issue_id": {"const": "NATIONAL_SECURITY_FOREIGN"},
-        "congress": {"const": 119},
+        "member_id": {"type": "string", "minLength": 1},
+        "legislator_id": {"type": "string", "minLength": 1},
+        "issue_id": {"type": "string", "minLength": 1},
+        "congress": {"type": "integer", "minimum": 1},
         "official_cutoff": {"type": "object"},
         "authority_decision": {
             "type": "object",
@@ -178,7 +186,7 @@ def authority_schema() -> dict[str, Any]:
                 "decision_timestamp",
             ],
             "properties": {
-                "reviewer_identity": {"const": REVIEWER_IDENTITY},
+                "reviewer_identity": {"type": "string", "minLength": 1},
                 "reviewer_authority": {"const": REVIEWER_AUTHORITY},
                 "decision": {
                     "const": "approved_all_candidate_meanings_and_position_effects"
@@ -187,20 +195,16 @@ def authority_schema() -> dict[str, Any]:
             },
         },
         "input_bindings": {"type": "object"},
-        "approved_universe_count": {"const": 82},
-        "accepted_decision_count": {"const": 81},
-        "source_blocked_count": {"const": 1},
+        "approved_universe_count": {"type": "integer", "minimum": 0},
+        "accepted_decision_count": {"type": "integer", "minimum": 0},
+        "source_blocked_count": {"type": "integer", "minimum": 0},
         "action_ids": {
             "type": "array",
-            "minItems": 82,
-            "maxItems": 82,
             "uniqueItems": True,
             "items": {"type": "string"},
         },
         "decisions": {
             "type": "array",
-            "minItems": 81,
-            "maxItems": 81,
             "items": {
                 "type": "object",
                 "additionalProperties": False,
@@ -210,8 +214,6 @@ def authority_schema() -> dict[str, Any]:
         },
         "source_blocked_actions": {
             "type": "array",
-            "minItems": 1,
-            "maxItems": 1,
             "items": {
                 "type": "object",
                 "additionalProperties": False,
@@ -223,7 +225,7 @@ def authority_schema() -> dict[str, Any]:
             "type": "object",
             "additionalProperties": False,
             "required": [ACCEPTED_DECISION],
-            "properties": {ACCEPTED_DECISION: {"const": 81}},
+            "properties": {ACCEPTED_DECISION: {"type": "integer", "minimum": 0}},
         },
         "internal_action_interpretation_state": {"const": "human_accepted_internal"},
         "internal_action_meanings_canonical": {"const": True},
@@ -233,7 +235,7 @@ def authority_schema() -> dict[str, Any]:
     }
     properties = {
         "schema_version": {"const": "full_record_action_interpretation_authority_v1"},
-        "artifact_id": {"const": AUTHORITY_ID},
+        "artifact_id": {"type": "string", "minLength": 1},
         "artifact_role": {"const": "immutable_human_action_interpretation_authority"},
         "accepted": {"const": True},
         "immutable": {"const": True},
@@ -266,14 +268,19 @@ def implementation_schema() -> dict[str, Any]:
         "record_id": {"type": "string"},
         "candidate_id": {"type": "string"},
         "candidate_content_subject_sha256": _sha_schema(),
-        "authority_artifact_id": {"const": AUTHORITY_ID},
+        "authority_artifact_id": {"type": "string", "minLength": 1},
         "authority_subject_sha256": _sha_schema(),
         "authority_file_sha256": _sha_schema(),
         "authority_decision_subject_sha256": _sha_schema(),
         "implementation_state": {"const": IMPLEMENTATION_STATE},
         "accepted_exact_action_meaning": {"type": "string", "minLength": 1},
         "accepted_exact_choice_position_effect": {
-            "enum": ["supports_exact_choice", "opposes_exact_choice"]
+            "enum": [
+                "supports_exact_choice",
+                "opposes_exact_choice",
+                "non_directional_present",
+                "non_directional_not_voting",
+            ]
         },
         "accepted_confidence": {"enum": ["high", "medium", "low"]},
         "accepted_limitations": {"type": "array", "items": {"type": "string"}},
@@ -295,17 +302,15 @@ def implementation_schema() -> dict[str, Any]:
         "record_subject_sha256": _sha_schema(),
     }
     subject_properties = {
-        "member_id": {"const": "F000477"},
-        "legislator_id": {"const": "leg_valerie_p_foushee"},
-        "issue_id": {"const": "NATIONAL_SECURITY_FOREIGN"},
-        "congress": {"const": 119},
+        "member_id": {"type": "string", "minLength": 1},
+        "legislator_id": {"type": "string", "minLength": 1},
+        "issue_id": {"type": "string", "minLength": 1},
+        "congress": {"type": "integer", "minimum": 1},
         "official_cutoff": {"type": "object"},
         "input_bindings": {"type": "object"},
-        "implementation_record_count": {"const": 81},
+        "implementation_record_count": {"type": "integer", "minimum": 0},
         "implementation_records": {
             "type": "array",
-            "minItems": 81,
-            "maxItems": 81,
             "items": {
                 "type": "object",
                 "additionalProperties": False,
@@ -317,10 +322,10 @@ def implementation_schema() -> dict[str, Any]:
             "type": "object",
             "additionalProperties": False,
             "required": [IMPLEMENTATION_STATE],
-            "properties": {IMPLEMENTATION_STATE: {"const": 81}},
+            "properties": {IMPLEMENTATION_STATE: {"type": "integer", "minimum": 0}},
         },
-        "source_blocked_actions": {"type": "array", "minItems": 1, "maxItems": 1},
-        "source_blocked_count": {"const": 1},
+        "source_blocked_actions": {"type": "array"},
+        "source_blocked_count": {"type": "integer", "minimum": 0},
         "internal_action_interpretation_state": {"const": "human_accepted_internal"},
         "internal_action_meanings_canonical": {"const": True},
         "canonical_semantic_acceptance": {"const": False},
@@ -332,7 +337,7 @@ def implementation_schema() -> dict[str, Any]:
         "schema_version": {
             "const": "full_record_action_interpretation_decision_implementation_v1"
         },
-        "artifact_id": {"const": IMPLEMENTATION_ID},
+        "artifact_id": {"type": "string", "minLength": 1},
         "artifact_role": {
             "const": "detached_human_accepted_action_interpretation_implementation"
         },
@@ -365,7 +370,7 @@ def parity_schema() -> dict[str, Any]:
         "schema_version": {
             "const": "full_record_action_interpretation_implementation_parity_v1"
         },
-        "artifact_id": {"const": PARITY_ID},
+        "artifact_id": {"type": "string", "minLength": 1},
         "generated_last": {"const": True},
         "parity_state": {"const": "pass"},
         "accepted_candidate_binding": {"type": "object"},
@@ -384,8 +389,8 @@ def parity_schema() -> dict[str, Any]:
                 },
             },
         },
-        "decision_count": {"const": 81},
-        "source_blocked_count": {"const": 1},
+        "decision_count": {"type": "integer", "minimum": 0},
+        "source_blocked_count": {"type": "integer", "minimum": 0},
         "downstream_authorizations": _downstream_schema(),
         "parity_subject_sha256": _sha_schema(),
     }
