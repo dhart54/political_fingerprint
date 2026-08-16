@@ -1,0 +1,53 @@
+{
+  "accepted": true,
+  "artifact_id": "production-eligibility-publication-authority:f000477:environment_energy:119:v1",
+  "authority_subject_sha256": "7b35b732d715387325e203f0c2177ab82e0b745b7ad2792f395ee3258c75be68",
+  "immutable": true,
+  "schema_version": "site_integration_production_eligibility_publication_authority_v1",
+  "subject": {
+    "accepted_site_integration_binding": {
+      "artifact_id": "site-integration-candidate:f000477:environment_energy:119:v1",
+      "content_sha256": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53",
+      "file_sha256": "1d040db73b2d223942f8226764dbd0906cb56cfa83108cd4993c234a1df803c5",
+      "subject_sha256": "d4c64fb13a356fe80e13cfad529b1d8c5b79858e23542291185fe2bbc98183f3"
+    },
+    "authorizations": {
+      "build_expected_production_write_set": true,
+      "build_publication_activation_candidate": true,
+      "deployment": false,
+      "live_activation": false,
+      "perform_fresh_read_only_production_preflight": true,
+      "prepare_rollback_and_disposable_proof": true,
+      "production_database_write": false,
+      "production_persistence": false,
+      "publication_activation": false,
+      "publication_registry_mutation": false,
+      "record_production_eligibility": true
+    },
+    "congress": 119,
+    "current_production_preflight_binding": {
+      "deployed_commit": "0f34962526a693625f7b15a96baec95121c2f6c9",
+      "preflight_subject_sha256": "e0995a17e15e813bd9336dcf68336969291ac53e490b90d0bc55a2ed60e68a46",
+      "state_fingerprint_sha256": "b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb"
+    },
+    "decision": "approve_production_eligibility_and_publication_preparation_candidate",
+    "decision_recorded_at_utc": "2026-08-16T22:36:45Z",
+    "downstream_boundary": "Independent ChatGPT review is required before any later production activation authorization. This authority cannot authorize its own database write, registry mutation, deployment, or publication.",
+    "issue_id": "ENVIRONMENT_ENERGY",
+    "member_bioguide_id": "F000477",
+    "member_slug": "leg_valerie_p_foushee",
+    "repository_binding": {
+      "accepted_m12m_head": "bfcfff5f962dd7cc5911764f1690edbe36564d03",
+      "accepted_m12m_pr": 156,
+      "post_m12m_main": "0f34962526a693625f7b15a96baec95121c2f6c9"
+    },
+    "reviewer": "dhart54",
+    "reviewer_authority": "publication_candidate_preparation_authority_v1",
+    "storage_gate_decision": {
+      "benchmark_status": "gold_benchmark",
+      "editorial_status": "human_approved",
+      "production_eligible": true,
+      "reason": "These are the existing immutable publication-table gates for an accepted full-record reference; they do not activate publication."
+    }
+  }
+}

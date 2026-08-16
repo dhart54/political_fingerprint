@@ -27,6 +27,19 @@ M11M_SUBJECT_SHA256 = "c0fa5282f061c4d27c259968dd08b5f7a804fdbe60c4b8794714e0c9a
 MEMBER_ID = "F000477"
 ISSUE_ID = "NATIONAL_SECURITY_FOREIGN"
 CONGRESS = 119
+ENVIRONMENT_ARTIFACT_ID = "site-integration-candidate:f000477:environment_energy:119:v1"
+ENVIRONMENT_FILE_SHA256 = (
+    "1d040db73b2d223942f8226764dbd0906cb56cfa83108cd4993c234a1df803c5"
+)
+ENVIRONMENT_SUBJECT_SHA256 = (
+    "d4c64fb13a356fe80e13cfad529b1d8c5b79858e23542291185fe2bbc98183f3"
+)
+ENVIRONMENT_AUTHORITY_ID = (
+    "production-eligibility-publication-authority:f000477:environment_energy:119:v1"
+)
+ENVIRONMENT_ACTIVATION_AUTHORITY_ID = (
+    "publication-activation-authority:f000477:environment_energy:119:v1"
+)
 
 POSITIVE_AUTHORIZATIONS = {
     "production_database_write": True,
@@ -97,6 +110,75 @@ def validate_candidate_preparation_authority(
 
 # Backwards-compatible name for the accepted candidate-preparation contract.
 validate_publication_authority = validate_candidate_preparation_authority
+
+
+def validate_environment_candidate_preparation_authority(
+    authority: dict[str, Any], *, candidate: dict[str, Any]
+) -> None:
+    """Validate non-activating preparation authority for accepted Environment copy."""
+
+    from .environment_integration_candidate import (
+        validate_environment_site_integration_candidate,
+    )
+
+    validate_environment_site_integration_candidate(candidate)
+    subject = authority.get("subject")
+    binding = (
+        subject.get("accepted_site_integration_binding")
+        if isinstance(subject, dict)
+        else None
+    )
+    authorizations = (
+        subject.get("authorizations") if isinstance(subject, dict) else None
+    )
+    if (
+        authority.get("schema_version") != CANDIDATE_AUTHORITY_SCHEMA_VERSION
+        or authority.get("artifact_id") != ENVIRONMENT_AUTHORITY_ID
+        or authority.get("immutable") is not True
+        or authority.get("accepted") is not True
+        or not isinstance(subject, dict)
+        or authority.get("authority_subject_sha256") != canonical_digest(subject)
+        or binding
+        != {
+            "artifact_id": ENVIRONMENT_ARTIFACT_ID,
+            "subject_sha256": ENVIRONMENT_SUBJECT_SHA256,
+            "file_sha256": ENVIRONMENT_FILE_SHA256,
+            "content_sha256": canonical_digest(candidate),
+        }
+        or subject.get("member_bioguide_id") != MEMBER_ID
+        or subject.get("issue_id") != "ENVIRONMENT_ENERGY"
+        or subject.get("congress") != CONGRESS
+        or subject.get("decision")
+        != "approve_production_eligibility_and_publication_preparation_candidate"
+        or not isinstance(authorizations, dict)
+        or authorizations.get("record_production_eligibility") is not True
+        or authorizations.get("build_publication_activation_candidate") is not True
+        or any(
+            authorizations.get(key) is not False
+            for key in (
+                "production_database_write",
+                "publication_registry_mutation",
+                "publication_activation",
+                "production_persistence",
+                "deployment",
+                "live_activation",
+            )
+        )
+    ):
+        raise ValueError("Environment candidate-preparation authority differs")
+
+
+def validate_preparation_authority(
+    authority: dict[str, Any], *, candidate: dict[str, Any]
+) -> None:
+    """Dispatch the reusable preparation contract by immutable candidate identity."""
+
+    if candidate.get("artifact_id") == ENVIRONMENT_ARTIFACT_ID:
+        validate_environment_candidate_preparation_authority(
+            authority, candidate=candidate
+        )
+    else:
+        validate_candidate_preparation_authority(authority, candidate=candidate)
 
 
 def validate_positive_activation_authority(
@@ -179,7 +261,75 @@ def validate_positive_activation_authority(
         raise ValueError("positive publication-activation authority binding differs")
 
 
-def eligible_site_integration_candidate(
+def validate_environment_positive_activation_authority(
+    authority: dict[str, Any],
+    *,
+    candidate: dict[str, Any],
+    candidate_authority: dict[str, Any],
+    metadata: dict[str, Any],
+    allow_test_authority: bool = False,
+) -> None:
+    """Validate the distinct future Environment activation authority."""
+
+    validate_environment_candidate_preparation_authority(
+        candidate_authority, candidate=candidate
+    )
+    subject = authority.get("subject")
+    synthetic = authority.get("test_only_synthetic") is True
+    if synthetic and not allow_test_authority:
+        raise ValueError("synthetic activation authority cannot publish")
+    runtime = subject.get("runtime_binding") if isinstance(subject, dict) else None
+    expected_runtime = _object(metadata.get("reviewed_runtime_binding")) or {}
+    if (
+        authority.get("schema_version") != ACTIVATION_AUTHORITY_SCHEMA_VERSION
+        or authority.get("artifact_id") != ENVIRONMENT_ACTIVATION_AUTHORITY_ID
+        or authority.get("immutable") is not True
+        or authority.get("sealed") is not True
+        or authority.get("accepted") is not True
+        or not isinstance(subject, dict)
+        or authority.get("activation_authority_subject_sha256")
+        != canonical_digest(subject)
+        or subject.get("decision") != "approve_exact_publication_activation"
+        or subject.get("member_bioguide_id") != MEMBER_ID
+        or subject.get("issue_id") != "ENVIRONMENT_ENERGY"
+        or subject.get("congress") != CONGRESS
+        or subject.get("accepted_site_integration_binding")
+        != {
+            "artifact_id": ENVIRONMENT_ARTIFACT_ID,
+            "subject_sha256": ENVIRONMENT_SUBJECT_SHA256,
+            "file_sha256": ENVIRONMENT_FILE_SHA256,
+            "content_sha256": canonical_digest(candidate),
+        }
+        or subject.get("candidate_preparation_authority_binding")
+        != metadata.get("candidate_preparation_authority_binding")
+        or subject.get("activation_write_set_binding")
+        != metadata.get("activation_write_set_binding")
+        or subject.get("publication_registry_target")
+        != {
+            "member_bioguide_id": MEMBER_ID,
+            "issue_id": "ENVIRONMENT_ENERGY",
+            "presentation_natural_key": ENVIRONMENT_ARTIFACT_ID,
+            "presentation_artifact_version": 1,
+        }
+        or subject.get("presentation_content_sha256")
+        != metadata.get("active_artifact_sha256")
+        or subject.get("preflight_binding") != metadata.get("preflight_binding")
+        or subject.get("rollback_binding") != metadata.get("rollback_binding")
+        or not isinstance(runtime, dict)
+        or runtime.get("reviewed_runtime_manifest_sha256")
+        != expected_runtime.get("reviewed_runtime_manifest_sha256")
+        or runtime.get("reviewed_commit") != runtime.get("deployed_commit")
+        or runtime.get("deployed_commit") != runtime.get("health_commit")
+        or not SHA40.fullmatch(runtime.get("deployed_commit", ""))
+        or not SHA256.fullmatch(runtime.get("health_proof_subject_sha256", ""))
+        or subject.get("production_target_identity_sha256")
+        != metadata.get("production_target_identity_sha256")
+        or subject.get("authorizations") != POSITIVE_AUTHORIZATIONS
+    ):
+        raise ValueError("Environment positive activation authority binding differs")
+
+
+def _eligible_national_security_candidate(
     row: dict[str, Any],
     *,
     member_bioguide_id: str,
@@ -244,6 +394,88 @@ def eligible_site_integration_candidate(
     return payload
 
 
+def _eligible_environment_candidate(
+    row: dict[str, Any],
+    *,
+    member_bioguide_id: str,
+    allow_test_authority: bool = False,
+) -> dict[str, Any] | None:
+    from .environment_integration_candidate import (
+        validate_environment_site_integration_candidate,
+    )
+
+    payload = _object(row.get("payload_jsonb", row.get("payload")))
+    metadata = _object(row.get("publication_metadata_jsonb"))
+    if (
+        payload is None
+        or metadata is None
+        or payload.get("artifact_id") != ENVIRONMENT_ARTIFACT_ID
+    ):
+        return None
+    try:
+        validate_environment_site_integration_candidate(payload)
+        preparation = _object(
+            metadata.get("production_eligibility_publication_authority")
+        )
+        activation = _object(metadata.get("publication_activation_authority"))
+        if preparation is None or activation is None:
+            return None
+        validate_environment_candidate_preparation_authority(
+            preparation, candidate=payload
+        )
+        validate_environment_positive_activation_authority(
+            activation,
+            candidate=payload,
+            candidate_authority=preparation,
+            metadata=metadata,
+            allow_test_authority=allow_test_authority,
+        )
+    except (KeyError, TypeError, ValueError):
+        return None
+    subject = payload["subject"]
+    content_sha256 = canonical_digest(payload)
+    if (
+        row.get("member_bioguide_id") != member_bioguide_id
+        or subject["member_bioguide_id"] != member_bioguide_id
+        or row.get("issue_id") != "ENVIRONMENT_ENERGY"
+        or row.get("publicly_active") is not True
+        or row.get("deactivated_at") is not None
+        or row.get("editorial_status") != "human_approved"
+        or row.get("benchmark_status") != "gold_benchmark"
+        or row.get("production_eligible") is not True
+        or row.get("natural_key") != ENVIRONMENT_ARTIFACT_ID
+        or row.get("artifact_version") != 1
+        or not isinstance(row.get("content_sha256"), str)
+        or not hmac.compare_digest(row["content_sha256"], content_sha256)
+        or metadata.get("presentation_natural_key") != ENVIRONMENT_ARTIFACT_ID
+        or metadata.get("active_artifact_sha256") != content_sha256
+    ):
+        return None
+    return payload
+
+
+def eligible_site_integration_candidate(
+    row: dict[str, Any],
+    *,
+    member_bioguide_id: str,
+    allow_test_authority: bool = False,
+) -> dict[str, Any] | None:
+    """Dispatch publication selection without allowing issue identity drift."""
+
+    payload = _object(row.get("payload_jsonb", row.get("payload"))) or {}
+    if payload.get("artifact_id") == ENVIRONMENT_ARTIFACT_ID:
+        return _eligible_environment_candidate(
+            row,
+            member_bioguide_id=member_bioguide_id,
+            allow_test_authority=allow_test_authority,
+        )
+    return _eligible_national_security_candidate(
+        row,
+        member_bioguide_id=member_bioguide_id,
+        allow_test_authority=allow_test_authority,
+    )
+
+
 def active_site_integration_candidate(
     rows: Iterable[dict[str, Any]], *, member_bioguide_id: str, issue_id: str
 ) -> dict[str, Any] | None:
@@ -270,18 +502,32 @@ def select_site_integration_public(
 ) -> dict[str, Any]:
     """Project accepted bytes to public output without preview-only state."""
 
-    from .integration_candidate import select_site_integration_preview
+    if candidate.get("artifact_id") == ENVIRONMENT_ARTIFACT_ID:
+        from .environment_integration_candidate import (
+            select_environment_site_integration_preview,
+        )
 
-    projected = select_site_integration_preview(
-        candidate,
-        legislator_id=legislator_id,
-        member_bioguide_id=member_bioguide_id,
-        scope=scope,
-    )
+        projected = select_environment_site_integration_preview(
+            candidate,
+            legislator_id=legislator_id,
+            member_bioguide_id=member_bioguide_id,
+            scope=scope,
+        )
+        issue_id = "ENVIRONMENT_ENERGY"
+    else:
+        from .integration_candidate import select_site_integration_preview
+
+        projected = select_site_integration_preview(
+            candidate,
+            legislator_id=legislator_id,
+            member_bioguide_id=member_bioguide_id,
+            scope=scope,
+        )
+        issue_id = ISSUE_ID
     result = copy.deepcopy(projected)
     for presentation in result["presentations"]:
         if (
-            presentation["issue_id"] != ISSUE_ID
+            presentation["issue_id"] != issue_id
             or presentation["tier"] == "receipts_only"
         ):
             continue

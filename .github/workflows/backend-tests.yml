@@ -173,6 +173,7 @@ jobs:
       DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_activation
       EDITORIAL_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_activation
       M11N_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_m11n_activation
+      M12N_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_m12n_preparation
       PGPASSWORD: postgres
     steps:
       - uses: actions/checkout@v4
@@ -214,6 +215,16 @@ jobs:
             --seed-foushee-activation-baseline
           pytest -q \
             backend/tests/test_m11n_national_security_publication_activation_postgres.py \
+            -rs
+
+      - name: Prove M12N preparation graph, isolation, idempotency, drift, and rollback
+        run: |
+          createdb -h 127.0.0.1 -U postgres pf_m12n_preparation
+          python backend/scripts/prepare_editorial_artifact_disposable.py \
+            --database-url-env M12N_DISPOSABLE_DATABASE_URL \
+            --seed-foushee-activation-baseline
+          pytest -q \
+            backend/tests/test_m12n_environment_energy_publication_preparation_postgres.py \
             -rs
 
       - name: Build fresh disposable backup evidence

@@ -1,0 +1,187 @@
+{
+  "accepted_site_integration_binding": {
+    "artifact_id": "site-integration-candidate:f000477:environment_energy:119:v1",
+    "content_sha256": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53",
+    "file_sha256": "1d040db73b2d223942f8226764dbd0906cb56cfa83108cd4993c234a1df803c5",
+    "subject_sha256": "d4c64fb13a356fe80e13cfad529b1d8c5b79858e23542291185fe2bbc98183f3"
+  },
+  "activation_authority_template": {
+    "accepted": false,
+    "artifact_id": "human-publication-activation-decision-template:f000477:environment_energy:119:v1",
+    "file_sha256": "f938b3871bb8a953d3595df7db28823a2e111bdda2d224be828cde437322b5a8",
+    "sealed": false,
+    "template_subject_sha256": "8661ddf0ad0e61c82ea5df183e35d3fe402e32ab9f14557b6dddf66c9c5d5073"
+  },
+  "authorization_boundary": {
+    "deployment": false,
+    "live_activation": false,
+    "production_persistence": false,
+    "production_write": false,
+    "publication_activation": false,
+    "registry_mutation": false
+  },
+  "candidate_preparation_authority": {
+    "artifact_id": "production-eligibility-publication-authority:f000477:environment_energy:119:v1",
+    "authority_subject_sha256": "7b35b732d715387325e203f0c2177ab82e0b745b7ad2792f395ee3258c75be68",
+    "file_sha256": "344840c1f7177c3be7ffb85a81c0c0d13d60a4209d5100e1c13c9c3e6c0f8222"
+  },
+  "current_production_state": {
+    "captured_at_utc": "2026-08-16T22:47:05.151280+00:00",
+    "counts": {
+      "artifacts": 149,
+      "batches": 5,
+      "publication_registry": 2,
+      "relationships": 161
+    },
+    "deployed_commit": "0f34962526a693625f7b15a96baec95121c2f6c9",
+    "selector_pre_activation": {
+      "scopes": {
+        "118": {
+          "ENVIRONMENT_ENERGY": {
+            "requested_scope": "118",
+            "tier": "receipts_only"
+          },
+          "JUSTICE_PUBLIC_SAFETY": {
+            "requested_scope": "118",
+            "tier": "receipts_only"
+          },
+          "NATIONAL_SECURITY_FOREIGN": {
+            "requested_scope": "118",
+            "tier": "receipts_only"
+          }
+        },
+        "119": {
+          "ENVIRONMENT_ENERGY": {
+            "requested_scope": "119",
+            "tier": "receipts_only"
+          },
+          "JUSTICE_PUBLIC_SAFETY": {
+            "requested_scope": "119",
+            "tier": "reviewed_conclusion"
+          },
+          "NATIONAL_SECURITY_FOREIGN": {
+            "requested_scope": "119",
+            "tier": "reviewed_conclusion"
+          }
+        },
+        "all": {
+          "ENVIRONMENT_ENERGY": {
+            "requested_scope": "all",
+            "tier": "receipts_only"
+          },
+          "JUSTICE_PUBLIC_SAFETY": {
+            "requested_scope": "all",
+            "tier": "reviewed_conclusion"
+          },
+          "NATIONAL_SECURITY_FOREIGN": {
+            "requested_scope": "all",
+            "tier": "reviewed_conclusion"
+          }
+        }
+      },
+      "selector_rows": 2
+    },
+    "state_fingerprint_sha256": "b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb",
+    "transaction_read_only": true
+  },
+  "exact_base": "0f34962526a693625f7b15a96baec95121c2f6c9",
+  "expected_counts": {
+    "after": {
+      "artifacts": 152,
+      "batches": 6,
+      "publication_registry": 3,
+      "relationships": 163
+    },
+    "before": {
+      "artifacts": 149,
+      "batches": 5,
+      "publication_registry": 2,
+      "relationships": 161
+    }
+  },
+  "expected_production_writes": {
+    "artifact_inserts": 3,
+    "batch_inserts": 1,
+    "deletes_during_activation": 0,
+    "justice_rows_touched": 0,
+    "national_security_rows_touched": 0,
+    "registry_inserts": 1,
+    "registry_updates": 0,
+    "relationship_inserts": 2
+  },
+  "future_activation_sequence": [
+    "merge the mechanically accepted M12N runtime",
+    "deploy that exact runtime while the registry target remains absent",
+    "verify Environment & Energy remains receipts-only",
+    "capture the actual live /health commit identity",
+    "capture a fresh read-only production preflight bound to that health proof",
+    "finalize the write set and seal a distinct positive activation authority",
+    "stop for a small mechanical ratification",
+    "apply the exact authority-bound write and verify live production"
+  ],
+  "justice_isolation": {
+    "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+    "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+    "rows_touched": 0
+  },
+  "milestone": "M12N",
+  "national_security_isolation": {
+    "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+    "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+    "rows_touched": 0
+  },
+  "required_review": "independent_chatgpt_mechanical_review",
+  "review_packet_subject_sha256": "08b0027bae1850845aacc2b467277574b93e9b209d901ca78aab5c284797b616",
+  "rollback": {
+    "delete_artifact_natural_keys": [
+      "site-integration-candidate:f000477:environment_energy:119:v1",
+      "site-integration-candidate:f000477:environment_energy:119:v1:publication-source-manifest",
+      "site-integration-candidate:f000477:environment_energy:119:v1:publication-validation"
+    ],
+    "delete_batch_key": "foushee_environment_energy_119_publication_activation_v1-0f349625",
+    "delete_registry_primary_key": {
+      "issue_id": "ENVIRONMENT_ENERGY",
+      "member_bioguide_id": "F000477"
+    },
+    "delete_relationship_count": 2,
+    "justice_registry_row_unchanged": {
+      "artifact_id": 221,
+      "artifact_version": 1,
+      "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+      "issue_id": "JUSTICE_PUBLIC_SAFETY",
+      "member_bioguide_id": "F000477",
+      "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+      "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+      "publicly_active": true,
+      "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+    },
+    "national_security_registry_row_unchanged": {
+      "artifact_id": 227,
+      "artifact_version": 1,
+      "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+      "issue_id": "NATIONAL_SECURITY_FOREIGN",
+      "member_bioguide_id": "F000477",
+      "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+      "publication_metadata_sha256": "401a2767c9779aaa30a6be0bf013e0a63087496a314dacadf04e12b9aac78bf0",
+      "publicly_active": true,
+      "source_commit_sha": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd"
+    },
+    "restore_counts": {
+      "artifacts": 149,
+      "batches": 5,
+      "publication_registry": 2,
+      "relationships": 161
+    },
+    "restore_state_fingerprint_sha256": "b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb"
+  },
+  "schema_version": "m12n_review_packet_v1",
+  "unused_non_directional_action": {
+    "action_id": "house:119:2:136",
+    "state": "non_directional_not_voting_outside_public_findings"
+  },
+  "write_set": {
+    "artifact_id": "publication-activation-write-set:f000477:environment_energy:119:v1",
+    "file_sha256": "299fccc72112dbef27f8834b55dd44e0f4335896a473dff004b3157e83ee02fd",
+    "write_set_subject_sha256": "536de170f48f7405e7358be4c53b341e4b3e995d60d3f2dc9e186e21af4411c6"
+  }
+}
