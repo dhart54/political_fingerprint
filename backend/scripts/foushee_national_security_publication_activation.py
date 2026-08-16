@@ -109,6 +109,38 @@ RUNTIME_SOURCE_PATHS = (
     BACKEND / "app/editorial_presentations/site_publication.py",
     BACKEND / "scripts/foushee_national_security_publication_activation.py",
 )
+FROZEN_M11N_REVIEWED_RUNTIME_MANIFEST = {
+    "schema_version": "m11n_reviewed_runtime_manifest_v1",
+    "files": [
+        {
+            "path": "backend/app/api/positions.py",
+            "file_sha256": (
+                "61569df59aedead79c5829902c0e3e51d95db9bab6c1220e4faf89b2f0841525"
+            ),
+        },
+        {
+            "path": "backend/app/editorial_presentations/selector.py",
+            "file_sha256": (
+                "bdc58c3e79c96844ae2f7c5fd18a846349503286cb406a5717aace7010f12d20"
+            ),
+        },
+        {
+            "path": "backend/app/editorial_presentations/site_publication.py",
+            "file_sha256": (
+                "9f43aa1f181d054cbb45570d15b9f6e60964c9d359c891722529250758ab8111"
+            ),
+        },
+        {
+            "path": "backend/scripts/foushee_national_security_publication_activation.py",
+            "file_sha256": (
+                "3d3f4ae6c06d566e3565f24a961f3f3d214de92a64e6d957292de2880a3fb1ac"
+            ),
+        },
+    ],
+    "reviewed_runtime_manifest_sha256": (
+        "1c7762cb06730de22b37c79b8df8f09cd97ddfec8320e521fc95cbeb049c41a8"
+    ),
+}
 PRODUCTION_TARGET_IDENTITY_SHA256 = semantic_hash(EXPECTED_PRODUCTION_TARGET)
 
 EXPECTED_M11L = {
@@ -190,6 +222,24 @@ def reviewed_runtime_manifest() -> dict[str, Any]:
     }
 
 
+def reviewed_runtime_manifest_for_preflight(
+    preflight: dict[str, Any],
+) -> dict[str, Any]:
+    """Replay a governed runtime snapshot without treating it as current proof."""
+
+    binding = preflight.get("runtime_health_proof_binding") or {}
+    recorded = binding.get("reviewed_runtime_manifest_sha256")
+    frozen = FROZEN_M11N_REVIEWED_RUNTIME_MANIFEST
+    current = reviewed_runtime_manifest()
+    if recorded is None:
+        return current
+    if recorded == frozen["reviewed_runtime_manifest_sha256"]:
+        return copy.deepcopy(frozen)
+    if recorded != current["reviewed_runtime_manifest_sha256"]:
+        raise StoreSafetyError("preflight runtime manifest is not reproducible")
+    return current
+
+
 def capture_runtime_health(base_url: str) -> dict[str, Any]:
     """Read the actual deployed health identity; never accept an expected SHA."""
 
@@ -215,7 +265,10 @@ def capture_runtime_health(base_url: str) -> dict[str, Any]:
 
 
 def validate_runtime_health_proof(
-    proof: dict[str, Any], *, require_fresh: bool = False
+    proof: dict[str, Any],
+    *,
+    require_fresh: bool = False,
+    require_current_runtime: bool = False,
 ) -> None:
     body = copy.deepcopy(proof)
     claimed = body.pop("runtime_health_proof_subject_sha256", None)
@@ -225,10 +278,14 @@ def validate_runtime_health_proof(
         proof.get("schema_version") != "m11n_live_runtime_health_proof_v1"
         or proof.get("deployed_commit") != proof.get("health_commit")
         or not SHA40.fullmatch(proof.get("deployed_commit", ""))
-        or proof.get("reviewed_runtime_manifest_sha256")
-        != reviewed_runtime_manifest()["reviewed_runtime_manifest_sha256"]
     ):
         raise StoreSafetyError("runtime health proof does not bind reviewed runtime")
+    if (
+        require_current_runtime
+        and proof.get("reviewed_runtime_manifest_sha256")
+        != reviewed_runtime_manifest()["reviewed_runtime_manifest_sha256"]
+    ):
+        raise StoreSafetyError("runtime health proof does not bind current runtime")
     if require_fresh:
         try:
             captured = datetime.fromisoformat(proof["captured_at_utc"])
@@ -439,7 +496,9 @@ def capture_preflight(
     return report
 
 
-def validate_preflight(report: dict[str, Any]) -> None:
+def validate_preflight(
+    report: dict[str, Any], *, require_current_runtime: bool = False
+) -> None:
     body = copy.deepcopy(report)
     claimed = body.pop("preflight_subject_sha256", None)
     if claimed != semantic_hash(body):
@@ -464,13 +523,18 @@ def validate_preflight(report: dict[str, Any]) -> None:
     runtime_binding = report.get("runtime_health_proof_binding")
     if runtime_binding is not None and (
         runtime_binding.get("deployed_commit") != report["deployed_commit"]
-        or runtime_binding.get("reviewed_runtime_manifest_sha256")
-        != reviewed_runtime_manifest()["reviewed_runtime_manifest_sha256"]
         or not SHA256.fullmatch(
             runtime_binding.get("runtime_health_proof_subject_sha256", "")
         )
     ):
         raise StoreSafetyError("M11N preflight live-runtime binding differs")
+    if (
+        require_current_runtime
+        and runtime_binding is not None
+        and runtime_binding.get("reviewed_runtime_manifest_sha256")
+        != reviewed_runtime_manifest()["reviewed_runtime_manifest_sha256"]
+    ):
+        raise StoreSafetyError("M11N preflight current-runtime binding differs")
     target_binding = report.get("production_target_identity_sha256")
     if (
         target_binding is not None
@@ -707,7 +771,7 @@ def build_write_set(
             "preflight_subject_sha256": preflight["preflight_subject_sha256"],
             "state_fingerprint_sha256": preflight["state_fingerprint_sha256"],
         },
-        "reviewed_runtime_binding": reviewed_runtime_manifest(),
+        "reviewed_runtime_binding": reviewed_runtime_manifest_for_preflight(preflight),
         "production_target_identity_sha256": PRODUCTION_TARGET_IDENTITY_SHA256,
         "rollback_binding": rollback_contract,
         "activation_authority_contract": {
@@ -1657,7 +1721,11 @@ def main(argv: list[str] | None = None) -> int:
         if not args.runtime_proof_path.exists():
             raise StoreSafetyError("production operation requires live runtime proof")
         runtime_proof = _load(args.runtime_proof_path)
-        validate_runtime_health_proof(runtime_proof, require_fresh=True)
+        validate_runtime_health_proof(
+            runtime_proof,
+            require_fresh=True,
+            require_current_runtime=True,
+        )
         authority_runtime = activation_authority["subject"]["runtime_binding"]
         if (
             write_set["preflight_binding"].get("runtime_health_proof_binding") is None

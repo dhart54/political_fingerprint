@@ -40,6 +40,8 @@ from scripts.foushee_national_security_publication_activation import (
     capture_runtime_health,
     main,
     publication_metadata_for_activation,
+    reviewed_runtime_manifest,
+    reviewed_runtime_manifest_for_preflight,
     validate_preflight,
     validate_runtime_health_proof,
     validate_write_set,
@@ -219,6 +221,13 @@ def test_live_runtime_proof_uses_health_response_not_expected_input(
     assert proof["deployed_commit"] == deployed_commit
     assert proof["health_commit"] == deployed_commit
     validate_runtime_health_proof(proof, require_fresh=True)
+    validate_runtime_health_proof(
+        proof, require_fresh=True, require_current_runtime=True
+    )
+
+
+def test_unbound_disposable_preflight_uses_current_runtime_manifest() -> None:
+    assert reviewed_runtime_manifest_for_preflight({}) == reviewed_runtime_manifest()
 
 
 def test_write_set_is_exact_additive_graph_and_preserves_m11m() -> None:
